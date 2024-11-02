@@ -42,10 +42,10 @@ struct CXUnsavedFile:
 struct CXCursor:
     var kind: c_int
     var xdata: c_int
-    var data0: OpaquePointer
-    var data1: OpaquePointer
-    var data2: OpaquePointer
-    # var data: InlineArray[OpaquePointer, 3]
+    # var data: OpaquePointer
+    # var data1: OpaquePointer
+    # var data2: OpaquePointer
+    var data: InlineArray[OpaquePointer, 3]
 
 # Define CXString structure
 struct CXString:
@@ -117,6 +117,6 @@ fn clang_ast(filename: UnsafePointer[c_char]) -> StringLiteral:
     # clang_disposeString(spelling_cxstring)
 
     # Dispose of resources
-    clang_disposeTranslationUnit(tu)
-    clang_disposeIndex(index)
+    # clang_disposeTranslationUnit(tu)
+    # clang_disposeIndex(index)
     return 'Success'

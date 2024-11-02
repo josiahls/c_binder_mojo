@@ -20,7 +20,7 @@ To get the ast
 clang -Xclang -ast-dump -fsyntax-only -fno-show-source-location -fno-show-column -DmjUSESINGLE -I/home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include  /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujoco/mjtnum.h
 ```
 
-## Wtih Tests
+## With Tests
 Currently testing against mujoco c API.
 
 ```bash

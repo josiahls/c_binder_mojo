@@ -3,6 +3,7 @@ from sys.info import os_is_linux, os_is_windows, is_64bit, os_is_macos
 from sys.ffi import c_char, c_int, c_uint, OpaquePointer, c_long, _external_call_const, external_call, DLHandle
 from os import abort
 from collections import InlineArray
+from memory import bitcast
 
 
 fn _c_ulong_dtype() -> DType:
@@ -24,13 +25,16 @@ alias c_ulong = Scalar[_c_ulong_dtype()]
 
 # Define opaque structures
 struct CXIndexStruct:
-    pass
+    var _prt:UnsafePointer[NoneType]
 
-struct CXTranslationUnitStruct:
-    pass
+# @value
+# @register_passable
+struct CXTranslationUnitImpl:
+    var _prt:UnsafePointer[NoneType]
+    # var _ptr:OpaquePointer
+alias CXTranslationUnit = UnsafePointer[CXTranslationUnitImpl]
 
-alias CXIndex = UnsafePointer[CXIndexStruct]
-alias CXTranslationUnit = UnsafePointer[CXTranslationUnitStruct]
+alias CXIndex = OpaquePointer
 
 # Define CXUnsavedFile structure
 struct CXUnsavedFile:
@@ -42,10 +46,18 @@ struct CXUnsavedFile:
 struct CXCursor:
     var kind: c_int
     var xdata: c_int
-    # var data: OpaquePointer
-    # var data1: OpaquePointer
-    # var data2: OpaquePointer
-    var data: InlineArray[OpaquePointer, 3]
+    # var data: UnsafePointer[OpaquePointer] # This is probably wrong
+    # or
+    # data0: OpaquePointer
+    # data1: OpaquePointer
+    # data2: OpaquePointer
+    # or
+    var data: InlineArray[UnsafePointer[UInt8], 3]
+    #     data_array = UnsafePointer[OpaquePointer].alloc(3)
+    #     # for i in range(3):
+    #     #     data_array[i] = data[i]
+    #     self.data = data_array.bitcast[OpaquePointer]()
+    # var data: InlineArray[OpaquePointer, 3]
 
 # Define CXString structure
 struct CXString:
@@ -58,7 +70,7 @@ fn clang_ast(filename: UnsafePointer[c_char]) -> StringLiteral:
 
     # Load functions
     clang_createIndex = dl.get_function[fn (c_int, c_int) -> CXIndex]("clang_createIndex")
-    clang_parseTranslationUnit = dl.get_function[
+    clang_parseTranslationUnit2 = dl.get_function[
         fn (
             CXIndex,
             UnsafePointer[c_char],
@@ -66,9 +78,10 @@ fn clang_ast(filename: UnsafePointer[c_char]) -> StringLiteral:
             c_int,
             UnsafePointer[CXUnsavedFile],
             c_uint,
-            c_uint
-        ) -> CXTranslationUnit
-    ]("clang_parseTranslationUnit")
+            c_uint,
+            UnsafePointer[CXTranslationUnit]
+        ) -> c_int
+    ]("clang_parseTranslationUnit2")
     clang_disposeTranslationUnit = dl.get_function[fn (CXTranslationUnit) -> NoneType]("clang_disposeTranslationUnit")
     clang_disposeIndex = dl.get_function[fn (CXIndex) -> NoneType]("clang_disposeIndex")
     clang_getTranslationUnitCursor = dl.get_function[fn (CXTranslationUnit) -> CXCursor]("clang_getTranslationUnitCursor")
@@ -77,7 +90,7 @@ fn clang_ast(filename: UnsafePointer[c_char]) -> StringLiteral:
     clang_disposeString = dl.get_function[fn (CXString) -> NoneType]("clang_disposeString")
 
     # Create an index
-    index = clang_createIndex(0, 0)
+    index = clang_createIndex(0, 1)
     if not index.__bool__():
         print("Failed to create index.")
         return 'Failed to create index'
@@ -87,15 +100,23 @@ fn clang_ast(filename: UnsafePointer[c_char]) -> StringLiteral:
     null_unsaved_files = UnsafePointer[CXUnsavedFile]()
 
     # Parse the translation unit
-    tu = clang_parseTranslationUnit(
+    tu = CXTranslationUnit()
+    error_code = clang_parseTranslationUnit2(
         index,
         filename,
         null_args,           # No command-line arguments
         0,                   # Number of command-line arguments
         null_unsaved_files,  # No unsaved files
         0,                   # Number of unsaved files
-        0                    # Options (0 for default)
+        0,                    # Options (0 for default)
+        UnsafePointer.address_of(tu)
     )
+
+    if error_code != 0:
+        print(str(error_code))
+        return "Failed to parse translation unit"
+    else:
+        print('it worked')
 
     if not tu.__bool__():
         print("Failed to parse translation unit.")
@@ -103,20 +124,21 @@ fn clang_ast(filename: UnsafePointer[c_char]) -> StringLiteral:
         return 'Failed to parse translation unit'
     else:
         print("Successfully parsed translation unit.")
+    print("tu address:", tu)
 
     # Get the root cursor of the AST
     root_cursor = clang_getTranslationUnitCursor(tu)
 
     # Get the spelling of the root cursor
-    # spelling_cxstring = clang_getCursorSpelling(root_cursor)
-    # spelling_cstr = clang_getCString(spelling_cxstring)
-    # spelling = String(spelling_cstr)
-    # print("Root cursor spelling: " + str(spelling))
+    spelling_cxstring = clang_getCursorSpelling(root_cursor)
+    spelling_cstr = clang_getCString(spelling_cxstring)
+    spelling = String(spelling_cstr)
+    print("Root cursor spelling: " + str(spelling))
 
     # Dispose of the CXString
-    # clang_disposeString(spelling_cxstring)
+    clang_disposeString(spelling_cxstring)
 
     # Dispose of resources
-    # clang_disposeTranslationUnit(tu)
-    # clang_disposeIndex(index)
+    clang_disposeTranslationUnit(tu)
+    clang_disposeIndex(index)
     return 'Success'

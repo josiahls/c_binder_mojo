@@ -12,38 +12,6 @@ from c_binder_mojo.ast_statements.ast_statements import (
 from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
 
 
-@value
-struct DisplayCol:
-    var s:String 
-    var length:Int
-    var parent_col:Int
-
-
-@value
-struct DisplayTree:
-    var rows:Dict[Int, List[DisplayCol]]
-
-    fn __init__(inout self):
-        self.rows = Dict[Int,List[DisplayCol]]()
-
-    fn add(inout self, parent_col:Int, row: UInt, ast_statement:UnsafePointer[AstStatements]):
-        s = to_string(ast_statement[])
-        try:
-            if row not in self.rows:
-                self.rows[row] = List[DisplayCol]()
-            self.rows[row].append(DisplayCol(s, len(s), parent_col))
-        except Exceptions:
-            print('some issue!')
-
-    fn __str__(self) -> String:
-        var s:String = ""
-        for row_cols in self.rows.items():
-            row,cols = row_cols[].key,row_cols[].value
-            for col in cols:
-                s += col[].s
-            s += "\n"
-        return s
-
 
 
 @value
@@ -75,20 +43,6 @@ struct AstNode(CollectionElement):
 
     fn get_current_node(self, line:String, line_num:Int) -> UnsafePointer[Self]:
         return UnsafePointer.address_of(self)
-
-
-    fn append_tree(self, inout tree: DisplayTree, row:Int, col:Int):
-        for child in self.children:
-            tree.add(row, col, child[].ast_statement)
-            child[].append_tree(tree, row + 1, col)
-
-
-    fn __str__(self) -> String: 
-        "Prints the current node and all of its children."
-        var tree: DisplayTree = DisplayTree()
-        tree.add(0, 0, self.ast_statement) # Row zero
-        self.append_tree(tree, 1, 0) # Make a new first row, col 0
-        return str(tree)
 
 
 fn make_graph(path:Path) raises -> UnsafePointer[AstNode]:

@@ -27,17 +27,17 @@ fn to_do_accumulate(x:AstStatements, line:String, line_num:Int) -> Bool:
     elif x.isa[AstStatementOtherRoot](): return x[AstStatementOtherRoot].do_accumulate(line,line_num)
     return False
 
-fn to_accumulate(x:AstStatements, line:String, line_num:Int) -> Bool:
-    if   x.isa[AstStatementRoot]():      return x[AstStatementRoot].accumulate(line,line_num)
-    elif x.isa[AstStatementOtherRoot](): return x[AstStatementOtherRoot].accumulate(line,line_num)
-    return False
+fn to_accumulate(x:AstStatements, line:String, line_num:Int) -> None:
+    if   x.isa[AstStatementRoot]():      x[AstStatementRoot].accumulate(line,line_num)
+    elif x.isa[AstStatementOtherRoot](): x[AstStatementOtherRoot].accumulate(line,line_num)
 
 fn to_do_make_new(x:AstStatements, line:String, line_num:Int) -> Bool:
     if   x.isa[AstStatementRoot]():      return x[AstStatementRoot].do_make_new(line,line_num)
     elif x.isa[AstStatementOtherRoot](): return x[AstStatementOtherRoot].do_make_new(line,line_num)
     return False
 
-fn to_make_new(x:AstStatements, line:String, line_num:Int) -> Bool:
+fn to_make_new(x:AstStatements, line:String, line_num:Int) raises -> AstStatements:
     if   x.isa[AstStatementRoot]():      return x[AstStatementRoot].make_new(line,line_num)
     elif x.isa[AstStatementOtherRoot](): return x[AstStatementOtherRoot].make_new(line,line_num)
-    return False
+    
+    raise Error('Failed line: ' + line + ' ' + str(line_num))

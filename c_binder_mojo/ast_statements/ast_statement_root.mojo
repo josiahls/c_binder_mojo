@@ -19,7 +19,8 @@ struct AstStatementRoot(AbstractAstStatement):
     fn __str__(self) -> String:
         return "I'm a root ast statement"
 
-    fn do_accumulate(self) -> Bool: return False
+    @staticmethod
+    fn do_accumulate(text:String, line_num:Int) -> Bool: return False
     fn accumulate(self, text:String, line_num:Int) -> None: ...
     @staticmethod
     fn do_make_new(text:String, line_num:Int) -> Bool: return False

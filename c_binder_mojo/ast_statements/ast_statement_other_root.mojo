@@ -8,7 +8,8 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 
 @value
 struct AstStatementOtherRoot(AbstractAstStatement):
-    fn accept(self, line:String) -> Bool:
+    @staticmethod
+    fn accept(line:String) -> Bool:
         return True
 
     fn done(self) -> Bool:
@@ -16,3 +17,10 @@ struct AstStatementOtherRoot(AbstractAstStatement):
 
     fn __str__(self) -> String:
         return "I'm a other root ast statement"
+
+    fn do_accumulate(self) -> Bool: return False
+    fn accumulate(self, text:String, line_num:Int) -> None: ...
+    @staticmethod
+    fn do_make_new(text:String, line_num:Int) -> Bool: return False
+    @staticmethod
+    fn make_new(text:String, line_num:Int) -> Self: return Self()

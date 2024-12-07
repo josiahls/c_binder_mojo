@@ -15,7 +15,9 @@ fn test_ast_node() raises:
     
     root_node = make_graph(num_mojo_path)
     display_node = DisplayAstNode(root_node[])
+    print('DisplayTree:')
     print(str(display_node))
+    print('done')
 
 
 fn main() raises:

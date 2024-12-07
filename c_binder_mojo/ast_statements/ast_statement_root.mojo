@@ -10,19 +10,20 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 struct AstStatementRoot(AbstractAstStatement):
     @staticmethod
     fn accept(line:String) -> Bool:
-        return True
+        "This should only be instantiated once."
+        return False
 
     fn done(self) -> Bool:
         "Root statment will not be done until the end of the file."
         return False
 
     fn __str__(self) -> String:
-        return "I'm a root ast statement"
+        return "AstStatementRoot()"
 
     @staticmethod
     fn do_accumulate(text:String, line_num:Int) -> Bool: return False
     fn accumulate(self, text:String, line_num:Int) -> None: ...
     @staticmethod
-    fn do_make_new(text:String, line_num:Int) -> Bool: return False
+    fn do_make_child(text:String, line_num:Int) -> Bool: return True
     @staticmethod
-    fn make_new(text:String, line_num:Int) -> Self: return Self()
+    fn make_child(text:String, line_num:Int) -> Self: return Self()

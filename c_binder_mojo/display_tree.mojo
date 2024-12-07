@@ -23,8 +23,11 @@ struct DisplayAstNode(CollectionElement):
     var children: List[Self]
     var string:  String
 
-    fn __init__(inout self, node:AstNode):
-        self.string = to_string(node.ast_statement[])
+    fn __init__(mut self, read node:AstNode):
+        try:
+            self.string = to_string(node.ast_statement[])
+        except e:
+            self.string = "missing ast statement support, got: " + str(e)
         self.parent = UnsafePointer[Self]()
         self.children = List[Self]()
         for child in node.children:

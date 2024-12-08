@@ -3,7 +3,7 @@ from pathlib import Path
 from memory import UnsafePointer
 from c_binder_mojo.ast_node import make_graph
 from c_binder_mojo.ast_statements.ast_statements import AstStatements
-from c_binder_mojo.ast_statements.ast_statement_other_root import AstStatementOtherRoot
+from c_binder_mojo.ast_statements.ast_statement_place_holder import AstStatementPlaceHolder
 from c_binder_mojo.display_tree import DisplayAstNode
 
 

@@ -7,16 +7,16 @@ from utils import Variant
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
 
 @value
-struct AstStatementOtherRoot(AbstractAstStatement):
+struct AstStatementPlaceHolder(AbstractAstStatement):
     @staticmethod
     fn accept(line:String) -> Bool:
-        return False
+        return True
 
     fn done(self) -> Bool:
         return True
 
     fn __str__(self) -> String:
-        return "AstStatementOtherRoot()"
+        return "AstStatementPlaceHolder()"
 
     @staticmethod
     fn do_accumulate(text:String, line_num:Int) -> Bool: return False

@@ -14,10 +14,10 @@ struct AstStatementMultilineComment(AbstractAstStatement):
 
     fn done(self) -> Bool:
         "Multiline statment will not be done until the end of the file."
-        return False
+        return True
 
     fn __str__(self) -> String:
-        return "I'm a multiline comment ast statement"
+        return "AstStatementMultilineComment()"
 
     @staticmethod
     fn do_accumulate(text:String, line_num:Int) -> Bool: return False

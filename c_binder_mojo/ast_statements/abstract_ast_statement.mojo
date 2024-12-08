@@ -70,16 +70,3 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         """
         
         ...
-
-    @staticmethod
-    fn make_child(text:String, line_num:Int) -> Self: 
-        """Creates a new AST statement.
-
-        Args:
-            text: The text to accumulate.
-            line_num: The specific line number this text is from.
-
-        Returns: A new AST statement.
-        """
-        ...
-

@@ -24,5 +24,3 @@ struct AstStatementMultilineComment(AbstractAstStatement):
     fn accumulate(self, text:String, line_num:Int) -> None: ...
     @staticmethod
     fn do_make_child(text:String, line_num:Int) -> Bool: return False
-    @staticmethod
-    fn make_child(text:String, line_num:Int) -> Self: return Self()

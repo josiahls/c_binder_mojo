@@ -10,7 +10,7 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 struct AstStatementOtherRoot(AbstractAstStatement):
     @staticmethod
     fn accept(line:String) -> Bool:
-        return True
+        return False
 
     fn done(self) -> Bool:
         return True
@@ -23,5 +23,3 @@ struct AstStatementOtherRoot(AbstractAstStatement):
     fn accumulate(self, text:String, line_num:Int) -> None: ...
     @staticmethod
     fn do_make_child(text:String, line_num:Int) -> Bool: return False
-    @staticmethod
-    fn make_child(text:String, line_num:Int) -> Self: return Self()

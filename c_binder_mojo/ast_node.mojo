@@ -81,7 +81,8 @@ struct AstNode(CollectionElement):
                 of interest to accumulate the line, and just return the current node to
                 either accumulate more lines, or complete.
             - If make child
-                - 
+                - Create a new ASTNode based on line
+                - Add to the children list.
 
         """
         if to_done(self.ast_statement[]):

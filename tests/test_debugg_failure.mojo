@@ -1,30 +1,18 @@
+import os 
+from pathlib import Path
 from memory import UnsafePointer
-from collections import List
-from utils import Variant
+from c_binder_mojo.minimal_example import make_graph
 
 
-@value
-struct Statement1:
-    pass
+fn test_ast_node() raises:
+    num_mojo_path = Path('fdsfdas') # Works when debug-level is not full
+    root_node = make_graph(num_mojo_path)
+    print('done')
 
-@value
-struct Statement2:
-    pass
-
-alias AstStatements = Variant[Statement1, Statement2]
-
-@value
-struct AstNode:
-    var parent: UnsafePointer[AstNode]
-    var children: List[AstNode]
-    var ast_statement: UnsafePointer[AstStatements]
-    
-    fn __init__(mut self):
-        self.parent = UnsafePointer[AstNode] ()
-        self.children = List[AstNode] ()
-        self.ast_statement = UnsafePointer[AstStatements] ()
 
 fn main():
-    node = AstNode()
-    print("AstNode initialized")
-    _ = node
+    try:
+        test_ast_node()
+        print('succeeded')
+    except e:
+        print('failed')

@@ -1,6 +1,8 @@
 # Native Mojo Modules
 from collections import Optional,Dict,Set
 from memory import UnsafePointer
+from memory import UnsafePointer,bitcast, OwnedPointer, ArcPointer
+from sys.ffi import OpaquePointer
 from utils import Variant
 from pathlib import Path
 # Third Party Mojo Modules
@@ -19,8 +21,8 @@ struct DisplayAstNode(CollectionElement):
 
     This node is part of a bidirectional acyclical graph.    
     """
-    var parent:   UnsafePointer[Self]
-    var children: List[Self]
+    var parent:   OpaquePointer
+    var children: List[OpaquePointer]
     var string:  String
 
     fn __init__(mut self, read node:AstNode):
@@ -28,24 +30,27 @@ struct DisplayAstNode(CollectionElement):
             self.string = to_string(node.ast_statement[])
         except e:
             self.string = "missing ast statement support, got: " + str(e)
-        self.parent = UnsafePointer[Self]()
-        self.children = List[Self]()
+        self.parent = OpaquePointer()
+        self.children = List[OpaquePointer]()
         for child in node.children:
-            self.children.append(Self(child[]))
+            typed_child = child[].bitcast[AstNode]()[] # segfaults here
+            _ = typed_child
+            # display_node_child = Self(typed_child[])
+            # self.children.append(UnsafePointer.address_of(display_node_child).bitcast[NoneType]())
 
     fn indents(self) -> Int:
         indent = 0
-        node = self
-        while node.parent:
-            node = node.parent[]
-            indent += 1
+        # node = self
+        # while node.parent:
+        #     node = node.parent.bitcast[Self]()[]
+        #     indent += 1
         return indent
 
     def __str__(self) -> String: 
         var s = self.string
-        for child in self.children:
-            s += "\n"
-            for _ in range(self.indents()):
-                s += "\t"
-            s += str(child[])
+        # for child in self.children:
+        #     s += "\n"
+        #     for _ in range(self.indents()):
+        #         s += "\t"
+        #     s += str(child[])
         return s

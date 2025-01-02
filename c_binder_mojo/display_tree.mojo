@@ -12,7 +12,7 @@ from c_binder_mojo.ast_statements.ast_statements import (
     to_string
 )
 from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
-from c_binder_mojo.ast_node import AstNode
+from c_binder_mojo.ast_node import AstNode, RootASTNode
 
 
 @value
@@ -21,22 +21,16 @@ struct DisplayAstNode(CollectionElement):
 
     This node is part of a bidirectional acyclical graph.    
     """
-    var parent:   OpaquePointer
-    var children: List[OpaquePointer]
+    var parent: Int
+    var children: List[Int]
     var string:  String
+    var root: UnsafePointer[RootDisplayASTNode]
 
-    fn __init__(mut self, read node:AstNode):
-        try:
-            self.string = to_string(node.ast_statement[])
-        except e:
-            self.string = "missing ast statement support, got: " + str(e)
-        self.parent = OpaquePointer()
-        self.children = List[OpaquePointer]()
-        for child in node.children:
-            typed_child = child[].bitcast[AstNode]()[] # segfaults here
-            _ = typed_child
-            # display_node_child = Self(typed_child[])
-            # self.children.append(UnsafePointer.address_of(display_node_child).bitcast[NoneType]())
+    fn __init__(mut self, root:UnsafePointer[RootDisplayASTNode]):
+        self.parent = -1
+        self.children = List[Int]()
+        self.string = "root"
+        self.root = root
 
     fn indents(self) -> Int:
         indent = 0
@@ -48,9 +42,56 @@ struct DisplayAstNode(CollectionElement):
 
     def __str__(self) -> String: 
         var s = self.string
-        # for child in self.children:
-        #     s += "\n"
-        #     for _ in range(self.indents()):
-        #         s += "\t"
-        #     s += str(child[])
+        print(len(self.children))
+        for child in self.children:
+            s += "\n"
+            for _ in range(self.indents()):
+                s += "\t"
+            print(child[])
+            s += str(self.root[].nodes[child[]])
+        return s
+
+@value
+struct RootDisplayASTNode(AnyType):
+    var nodes:List[DisplayAstNode]
+
+    fn __init__(mut self, read root:RootASTNode) raises:
+        self.nodes = List[DisplayAstNode]()
+        self.update_nodes(0, root)
+
+    fn update_nodes(mut self, other_idx: Int, read root:RootASTNode) raises:
+        idx = other_idx
+        node = root.nodes[idx]
+        self.nodes.append(
+            DisplayAstNode(
+                idx,
+                List[Int](),
+                to_string(node.ast_statement),
+                UnsafePointer[mut=True].address_of(self)
+            )
+        )
+        if len(node.children) == 0:
+            return None
+
+        for child in node.children:
+            self.update_nodes(child[], root)
+            print('appending children to node at index: ' + str(idx))
+            # NOTE: still needs work. Indicies seem stuck at the root
+            self.nodes[idx].children.append(child[])
+        
+    fn __del__(owned self):
+        self.nodes.clear()
+
+    fn indents(self) -> Int:
+        indent = 0
+        # node = self
+        # while node.parent:
+        #     node = node.parent.bitcast[Self]()[]
+        #     indent += 1
+        return indent
+
+    def __str__(self) -> String: 
+        idx = 0
+        node = self.nodes[idx]
+        var s = str(node)
         return s

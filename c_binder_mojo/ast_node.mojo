@@ -14,6 +14,7 @@ from c_binder_mojo.ast_statements.ast_statements import (
     to_make_child
 )
 from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
+from c_binder_mojo.ast_statements.ast_statement_place_holder import AstStatementPlaceHolder
 
 
 
@@ -24,10 +25,16 @@ struct AstNode(CollectionElement):
     var ast_statement: AstStatements
     var root: UnsafePointer[RootASTNode]
 
-    fn __init__(mut self, mut root:UnsafePointer[RootASTNode]):
+    fn __init__(mut self, root:UnsafePointer[RootASTNode]):
         self.parent = -1
         self.children = List[Int]()
-        self.ast_statement = AstStatements(AstStatementRoot())
+        self.ast_statement = AstStatements(AstStatementPlaceHolder())
+        self.root = root
+
+    fn __init__(mut self, root:UnsafePointer[RootASTNode], path:Path):
+        self.parent = -1
+        self.children = List[Int]()
+        self.ast_statement = AstStatements(AstStatementRoot(path))
         self.root = root
 
 
@@ -35,13 +42,14 @@ struct AstNode(CollectionElement):
 struct RootASTNode(AnyType):
     var nodes:List[AstNode]
 
-    fn __init__(mut self):
+    fn __init__(mut self, path:Path):
         self.nodes = List[AstNode]()
         self.nodes.append(
-            AstNode(UnsafePointer.address_of(self))
+            AstNode(UnsafePointer[mut=True].address_of(self), path)
         )
 
     fn __del__(owned self):
+        print('RootASTNode deleting')
         self.nodes.clear()
 
     fn get_current_node(mut self, idx:Int, line:String, line_num:Int) raises -> Int:
@@ -64,21 +72,48 @@ struct RootASTNode(AnyType):
                 - Create a new ASTNode based on line
                 - Add to the children list.
         """
-        current_node = self.nodes[idx]
+        node = self.nodes[idx]
+        if to_done(node.ast_statement):
+            if node.parent != -1:
+                # TODO(josiahls): might be able to just return this index, but 
+                # raising an error might be easlier to debug.
+                return node.parent
 
+            # I don't think this should even happen.
+            raise Error('Failure at: ' + line + '. For statement: ' + to_string(node.ast_statement) +' No way to handle')
 
-        return 100
+        if to_do_accumulate(node.ast_statement, line, line_num):
+            to_accumulate(node.ast_statement, line, line_num)
+            return idx
+
+        if to_do_make_child(node.ast_statement, line, line_num):
+            # print(line)
+            statement = to_make_child(node.ast_statement, line, line_num)
+            child = AstNode(
+                idx,
+                List[Int](),
+                statement,
+                UnsafePointer[mut=True].address_of(self)
+            )
+            # print('statement: ' + to_string(statement))
+            self.nodes.append(child)
+            # Note: Tried node.children.append(...) but looks like node gets decostructed.
+            # Is the node a copy???????
+            self.nodes[idx].children.append(idx + 1)
+            return idx + 1
+
+        raise Error('Dont know how to handle: ' + line + ' ' + str(line_num))
         
 
 
 fn make_graph(path:Path) raises -> RootASTNode:
-    root_node = RootASTNode()
+    root_node = RootASTNode(path)
     line_num = 0
     current_idx = 0
     for line in path.read_text().split('\n'):
         current_idx = root_node.get_current_node(current_idx, line[],line_num)
         line_num += 1
-        print(line[])
-        break
+        # print(line[])
+        # break
 
     return root_node

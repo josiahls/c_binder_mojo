@@ -8,6 +8,8 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 
 @value
 struct AstStatementMultilineComment(AbstractAstStatement):
+    var line:String
+
     @staticmethod
     fn accept(line:String) -> Bool:
         return True
@@ -17,7 +19,7 @@ struct AstStatementMultilineComment(AbstractAstStatement):
         return True
 
     fn __str__(self) -> String:
-        return "AstStatementMultilineComment()"
+        return "AstStatementMultilineComment()" + self.line
 
     @staticmethod
     fn do_accumulate(text:String, line_num:Int) -> Bool: return False

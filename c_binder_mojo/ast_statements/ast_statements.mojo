@@ -51,10 +51,10 @@ fn to_do_make_child(x:AstStatements, line:String, line_num:Int) raises -> Bool:
 fn to_make_child(x:AstStatements, line:String, line_num:Int) raises -> AstStatements:
     if AstStatementRoot.accept(line):      
         print('accepted AstStatementRoot')
-        return AstStatements(AstStatementRoot())
+        return AstStatements(AstStatementRoot(line))
     elif AstStatementMultilineComment.accept(line):
         print('accepted AstStatementMultilineComment')
-        return AstStatements(AstStatementMultilineComment())
+        return AstStatements(AstStatementMultilineComment(line))
     elif AstStatementPlaceHolder.accept(line): 
         print('accepted AstStatementPlaceHolder')
         return AstStatements(AstStatementPlaceHolder()) 

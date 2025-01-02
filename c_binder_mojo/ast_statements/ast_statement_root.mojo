@@ -2,12 +2,18 @@
 from collections import Optional
 from memory import UnsafePointer
 from utils import Variant
+from pathlib import Path
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
 
 @value
 struct AstStatementRoot(AbstractAstStatement):
+    var text:String
+
+    fn __init__(mut self, path:Path):
+        self.text = str(path)
+
     @staticmethod
     fn accept(line:String) -> Bool:
         "This should only be instantiated once."
@@ -18,7 +24,7 @@ struct AstStatementRoot(AbstractAstStatement):
         return False
 
     fn __str__(self) -> String:
-        return "AstStatementRoot()"
+        return "AstStatementRoot(): text: " + self.text
 
     @staticmethod
     fn do_accumulate(text:String, line_num:Int) -> Bool: return False

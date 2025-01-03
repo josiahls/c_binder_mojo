@@ -5,7 +5,7 @@ from memory import UnsafePointer
 from c_binder_mojo.ast_node import make_graph
 # from c_binder_mojo.ast_statements.ast_statements import AstStatements
 # from c_binder_mojo.ast_statements.ast_statement_place_holder import AstStatementPlaceHolder
-from c_binder_mojo.display_tree import RootDisplayASTNode
+from c_binder_mojo.display_tree import RootDisplayAstNode
 
 
 fn test_ast_node() raises:
@@ -17,7 +17,7 @@ fn test_ast_node() raises:
     root_node = make_graph(num_mojo_path)
     print('exited graph making')
     # root_node = test_fn(num_mojo_path)
-    display_node = RootDisplayASTNode(root_node)
+    display_node = RootDisplayAstNode(root_node)
     print('DisplayTree:')
     print(str(display_node))
     print('done')

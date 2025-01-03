@@ -11,7 +11,7 @@ from c_binder_mojo.ast_statements.ast_statements import (
     to_string
 )
 from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
-from c_binder_mojo.ast_node import AstNode, RootASTNode
+from c_binder_mojo.ast_node import AstNode, RootAstNode
 
 
 @value
@@ -23,7 +23,7 @@ struct DisplayAstNode(CollectionElement):
     var parent: Int
     var children: List[Int]
     var string:  String
-    var root: UnsafePointer[RootDisplayASTNode]
+    var root: UnsafePointer[RootDisplayAstNode]
 
     fn indents(self) -> Int:
         var indent = 0
@@ -44,14 +44,14 @@ struct DisplayAstNode(CollectionElement):
         return s
 
 @value
-struct RootDisplayASTNode(AnyType):
+struct RootDisplayAstNode(AnyType):
     var nodes:List[DisplayAstNode]
 
-    fn __init__(mut self, read root:RootASTNode) raises:
+    fn __init__(mut self, read root:RootAstNode) raises:
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root)
 
-    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootASTNode) raises:
+    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootAstNode) raises:
         node = root.nodes[idx]
 
         self.nodes.append(

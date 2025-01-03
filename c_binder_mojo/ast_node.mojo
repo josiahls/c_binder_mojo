@@ -23,15 +23,15 @@ struct AstNode(CollectionElement):
     var parent: Int
     var children: List[Int]
     var ast_statement: AstStatements
-    var root: UnsafePointer[RootASTNode]
+    var root: UnsafePointer[RootAstNode]
 
-    fn __init__(mut self, root:UnsafePointer[RootASTNode]):
+    fn __init__(mut self, root:UnsafePointer[RootAstNode]):
         self.parent = -1
         self.children = List[Int]()
         self.ast_statement = AstStatements(AstStatementPlaceHolder())
         self.root = root
 
-    fn __init__(mut self, root:UnsafePointer[RootASTNode], path:Path):
+    fn __init__(mut self, root:UnsafePointer[RootAstNode], path:Path):
         self.parent = -1
         self.children = List[Int]()
         self.ast_statement = AstStatements(AstStatementRoot(path))
@@ -39,7 +39,7 @@ struct AstNode(CollectionElement):
 
 
 @value
-struct RootASTNode(AnyType):
+struct RootAstNode(AnyType):
     var nodes:List[AstNode]
 
     fn __init__(mut self, path:Path):
@@ -49,7 +49,7 @@ struct RootASTNode(AnyType):
         )
 
     fn __del__(owned self):
-        print('RootASTNode deleting')
+        print('RootAstNode deleting')
         self.nodes.clear()
 
     fn get_current_node(mut self, idx:Int, line:String, line_num:Int) raises -> Int:
@@ -106,8 +106,8 @@ struct RootASTNode(AnyType):
         
 
 
-fn make_graph(path:Path) raises -> RootASTNode:
-    root_node = RootASTNode(path)
+fn make_graph(path:Path) raises -> RootAstNode:
+    root_node = RootAstNode(path)
     line_num = 0
     current_idx = 0
     for line in path.read_text().split('\n'):

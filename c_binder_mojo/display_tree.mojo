@@ -1,7 +1,6 @@
 # Native Mojo Modules
 from collections import Optional,Dict,Set
-from memory import UnsafePointer
-from memory import UnsafePointer,bitcast, OwnedPointer, ArcPointer
+from memory import UnsafePointer, bitcast, OwnedPointer, ArcPointer
 from sys.ffi import OpaquePointer
 from utils import Variant
 from pathlib import Path

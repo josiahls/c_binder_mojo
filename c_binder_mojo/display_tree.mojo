@@ -75,7 +75,6 @@ struct RootDisplayASTNode(AnyType):
 
         for child in node.children:
             self.update_nodes(child[], root)
-            print('appending children to node at index: ' + str(idx))
             # NOTE: still needs work. Indicies seem stuck at the root
             self.nodes[idx].children.append(child[])
         

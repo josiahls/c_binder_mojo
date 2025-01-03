@@ -99,8 +99,8 @@ struct RootASTNode(AnyType):
             self.nodes.append(child)
             # Note: Tried node.children.append(...) but looks like node gets decostructed.
             # Is the node a copy???????
-            self.nodes[idx].children.append(idx + 1)
-            return idx + 1
+            self.nodes[idx].children.append(len(self.nodes) - 1)
+            return len(self.nodes) - 1
 
         raise Error('Dont know how to handle: ' + line + ' ' + str(line_num))
         

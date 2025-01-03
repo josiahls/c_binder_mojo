@@ -74,14 +74,6 @@ struct RootDisplayASTNode(AnyType):
     fn __del__(owned self):
         self.nodes.clear()
 
-    fn indents(self) -> Int:
-        indent = 0
-        # node = self
-        # while node.parent:
-        #     node = node.parent.bitcast[Self]()[]
-        #     indent += 1
-        return indent
-
     def __str__(self) -> String: 
         idx = 0
         node = self.nodes[idx]

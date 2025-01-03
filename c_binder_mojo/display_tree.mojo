@@ -26,28 +26,21 @@ struct DisplayAstNode(CollectionElement):
     var string:  String
     var root: UnsafePointer[RootDisplayASTNode]
 
-    fn __init__(mut self, root:UnsafePointer[RootDisplayASTNode]):
-        self.parent = -1
-        self.children = List[Int]()
-        self.string = "root"
-        self.root = root
-
     fn indents(self) -> Int:
-        indent = 0
-        # node = self
-        # while node.parent:
-        #     node = node.parent.bitcast[Self]()[]
-        #     indent += 1
+        var indent = 0
+        var _parent = self.parent
+        while _parent != -1:
+            _parent = self.root[].nodes[_parent].parent
+            indent += 1
         return indent
 
     def __str__(self) -> String: 
-        var s = self.string
-        print(len(self.children))
+        var s = String("")
+        for _ in range(self.indents()):
+            s += "\t"
+        s += self.string
         for child in self.children:
             s += "\n"
-            for _ in range(self.indents()):
-                s += "\t"
-            print(child[])
             s += str(self.root[].nodes[child[]])
         return s
 
@@ -57,26 +50,27 @@ struct RootDisplayASTNode(AnyType):
 
     fn __init__(mut self, read root:RootASTNode) raises:
         self.nodes = List[DisplayAstNode]()
-        self.update_nodes(0, root)
+        self.update_nodes(-1, 0, root)
 
-    fn update_nodes(mut self, other_idx: Int, read root:RootASTNode) raises:
-        idx = other_idx
+    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootASTNode) raises:
         node = root.nodes[idx]
+
         self.nodes.append(
             DisplayAstNode(
-                idx,
+                parent_idx, 
                 List[Int](),
                 to_string(node.ast_statement),
                 UnsafePointer[mut=True].address_of(self)
             )
         )
+
         if len(node.children) == 0:
             return None
 
         for child in node.children:
-            self.update_nodes(child[], root)
-            # NOTE: still needs work. Indicies seem stuck at the root
+            self.update_nodes(idx, child[], root)
             self.nodes[idx].children.append(child[])
+
         
     fn __del__(owned self):
         self.nodes.clear()

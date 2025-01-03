@@ -49,14 +49,11 @@ fn to_do_make_child(x:AstStatements, line:String, line_num:Int) raises -> Bool:
     raise Error('to_do_make_child does not exist to handle line: ' + line + ' ' + str(line_num))
 
 fn to_make_child(x:AstStatements, line:String, line_num:Int) raises -> AstStatements:
-    if AstStatementRoot.accept(line):      
-        print('accepted AstStatementRoot')
+    if AstStatementRoot.accept(line):     
         return AstStatements(AstStatementRoot(line))
     elif AstStatementMultilineComment.accept(line):
-        print('accepted AstStatementMultilineComment')
         return AstStatements(AstStatementMultilineComment(line))
     elif AstStatementPlaceHolder.accept(line): 
-        print('accepted AstStatementPlaceHolder')
         return AstStatements(AstStatementPlaceHolder()) 
     
     raise Error('to_make_child does not exist to handle line: ' + line + ' ' + str(line_num))

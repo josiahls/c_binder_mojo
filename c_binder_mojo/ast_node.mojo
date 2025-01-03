@@ -77,7 +77,7 @@ struct RootASTNode(AnyType):
             if node.parent != -1:
                 # TODO(josiahls): might be able to just return this index, but 
                 # raising an error might be easlier to debug.
-                return node.parent
+                return self.get_current_node(node.parent, line, line_num)
 
             # I don't think this should even happen.
             raise Error('Failure at: ' + line + '. For statement: ' + to_string(node.ast_statement) +' No way to handle')

@@ -35,9 +35,10 @@ struct DisplayAstNode(CollectionElement):
 
     def __str__(self) -> String: 
         var s = String("")
+        var indents = String("")
         for _ in range(self.indents()):
-            s += "\t"
-        s += self.string
+            indents += "\t"
+        s += indents + self.string.replace('\n','\n' + indents)
         for child in self.children:
             s += "\n"
             s += str(self.root[].nodes[child[]])

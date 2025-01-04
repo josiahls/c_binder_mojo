@@ -11,22 +11,27 @@ from c_binder_mojo.ast_node import TokenBundle
 struct AstStatementSingleLineComment(AbstractAstStatement):
     var token_bundles: List[TokenBundle]
     var _done: Bool
+    var line_num: Int
 
     fn __init__(mut self, token_bundle: TokenBundle):
         self.token_bundles = List[TokenBundle]()
         self.token_bundles.append(token_bundle)
+        self.line_num = token_bundle.line_num
         self._done = False
 
-    fn __del__(owned self):
-        print('deleting')
-        self.token_bundles.clear()
+    # fn __del__(owned self):
+    #     print('deleting')
+    #     self.token_bundles.clear()
 
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool:
-        return True
+        var s = token_bundle.token
+        if s.lstrip(' ').startswith('//'):
+            return True
+        return False
 
     fn _is_valid(self,token_bundle:TokenBundle) -> Bool:
-        if '\n' in token_bundle.token:
+        if self.line_num != token_bundle.line_num:
             return False
         return True
 
@@ -49,7 +54,11 @@ struct AstStatementSingleLineComment(AbstractAstStatement):
         return s
 
     fn __str__(self) -> String:
-        return "AstStatementSingleLineComment() " + self._string_bundles()
+        var s:String = "AstStatementSingleLineComment("
+        s += 'line_num=' + str(self.line_num)
+        s += ') '
+
+        return s + self._string_bundles()
 
     fn accumulate(mut self, token_bundle:TokenBundle) -> Bool: 
         var valid = self._is_valid(token_bundle)

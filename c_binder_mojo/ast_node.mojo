@@ -36,9 +36,9 @@ struct AstNode(CollectionElement):
     var ast_statement: AstStatements
     var root: UnsafePointer[RootAstNode]
 
-    fn __del__(owned self):
-        # self.root.de
-        print('destroying ast node')
+    # fn __del__(owned self):
+    #     # self.root.de
+    #     print('destroying ast node')
 
     fn __init__(mut self, root:UnsafePointer[RootAstNode]):
         self.parent = -1

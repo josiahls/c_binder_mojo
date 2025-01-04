@@ -18,13 +18,8 @@ alias AstStatements = Variant[
 ]
 
 fn to_replace(read x:AstStatements, token_bundle: TokenBundle) -> AstStatements:
-    if x.isa[AstStatementSingleLineComment]() and AstStatementMultiLineComment.accept(token_bundle):
-        try:
-            return AstStatementMultiLineComment(x[AstStatementSingleLineComment],token_bundle)
-        except e:
-            #TODO(josiahls): Just go like usual I think. Would like to at least log to a debug level though
-            pass 
-
+    if AstStatementMultiLineComment.do_replace(x,token_bundle):
+        return AstStatements(AstStatementMultiLineComment(x[AstStatementSingleLineComment], token_bundle))
     return x
 
 fn to_string(read x:AstStatements) raises -> String:

@@ -77,7 +77,7 @@ struct RootAstNode(AnyType):
                 - Create a new ASTNode based on line
                 - Add to the children list.
         """
-        # node.ast_statement = to_replace(node.ast_statement, token_bundle)
+        self.nodes[idx].ast_statement = to_replace(self.nodes[idx].ast_statement, token_bundle)
 
         if to_done(self.nodes[idx].ast_statement, token_bundle):
             if self.nodes[idx].parent != -1:
@@ -107,7 +107,7 @@ struct RootAstNode(AnyType):
 
 fn make_graph(path:Path) raises -> RootAstNode:
     root_node = RootAstNode(path)
-    line_num = 0
+    line_num = 1 # Line numbers start at 1 for vscode at least
     col_num = 0
     current_idx = 0
     for line in path.read_text().split('\n'):

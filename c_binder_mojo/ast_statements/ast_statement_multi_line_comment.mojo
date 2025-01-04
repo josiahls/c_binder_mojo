@@ -5,14 +5,9 @@ from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
+from c_binder_mojo.ast_statements.ast_statements import AstStatements
 from c_binder_mojo.ast_statements.ast_statement_single_line_comment import AstStatementSingleLineComment
-from c_binder_mojo.primitives import TokenBundle
-
-
-struct MultilineCommentType:
-    alias SINGLE_LINE_COMMENT = "SINGLE_LINE_COMMENT"
-    alias MULTI_LINE_COMMENT = "MULTI_LINE_COMMENT"
-    alias UNKNOWN = "UNKNOWN"
+from c_binder_mojo.primitives import TokenBundle, comment_type, CommentEnum
 
 
 @value
@@ -23,29 +18,29 @@ struct AstStatementMultiLineComment(AbstractAstStatement):
     fn __init__(mut self, token_bundle: TokenBundle):
         "AstStatementMultiLineComment represents a block of multiple lines of comments."
         self.lines = List[TokenBundle]()
-        self.multiline_comment_type = self.comment_type(token_bundle.token)
+        self.multiline_comment_type = comment_type(token_bundle.token)
         self.lines.append(token_bundle)
 
-    fn __init__(mut self, statement:AstStatementSingleLineComment, token_bundle: TokenBundle) raises:
+    fn __init__(mut self, statement:AstStatementSingleLineComment, token_bundle: TokenBundle):
         "AstStatementMultiLineComment represents a block of multiple lines of comments."
         self.lines = List[TokenBundle]()
-        self.multiline_comment_type = self.comment_type(token_bundle.token)
+        self.multiline_comment_type = comment_type(token_bundle.token)
         for token_bundle in statement.token_bundles:
-            var multiline_comment_type = self.comment_type(token_bundle[].token)
             self.lines.append(token_bundle[])
-            if multiline_comment_type != self.multiline_comment_type:
-                raise Error('AstStatementMultiLineComment got conflicting stuff')
         self.lines.append(token_bundle)
 
     @staticmethod
-    fn comment_type(line:String) -> StringLiteral:
-        var line_:String = line.lstrip(" ")
-        if line_.startswith('//'):
-            return MultilineCommentType.SINGLE_LINE_COMMENT
-        elif line_.startswith('/*'):
-            return MultilineCommentType.MULTI_LINE_COMMENT
-        else:
-            return MultilineCommentType.UNKNOWN
+    fn do_replace(x:AstStatements, token_bundle:TokenBundle) -> Bool:
+        if x.isa[AstStatementSingleLineComment]() and AstStatementMultiLineComment.accept(token_bundle):
+            # Check if the current `token_bundle`  is the same comment type as 
+            # the ones in `x`
+            var multiline_comment_type = comment_type(token_bundle.token)
+            for _token_bundle in x[AstStatementSingleLineComment].token_bundles:
+                var other_multiline_comment_type = comment_type(_token_bundle[].token)
+                if multiline_comment_type != other_multiline_comment_type:
+                    return False
+            return True
+        return False
 
     @staticmethod
     fn accept(token_bundle: TokenBundle) -> Bool:
@@ -57,10 +52,10 @@ struct AstStatementMultiLineComment(AbstractAstStatement):
         Spaces are removed at the beginning of the lines.
 
         Args:
-            line: A line of code from a c header.
+            token_bundle: A line of code from a c header.
         """
-        s = AstStatementMultiLineComment.comment_type(token_bundle.token)
-        return s != MultilineCommentType.UNKNOWN
+        s = comment_type(token_bundle.token)
+        return s != CommentEnum.UNKNOWN
 
     fn done(self, token_bundle: TokenBundle) -> Bool:
         "Multiline statment will not be done until the end of the file."

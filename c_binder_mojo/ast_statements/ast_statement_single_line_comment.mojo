@@ -63,8 +63,9 @@ struct AstStatementSingleLineComment(AbstractAstStatement):
     fn accumulate(mut self, token_bundle:TokenBundle) -> Bool: 
         var valid = self._is_valid(token_bundle)
         if valid:
-            print('accumulating ' + str(len(self.token_bundles)))
             self.token_bundles.append(token_bundle)
+        else:
+            self._done = False
 
         return valid
 

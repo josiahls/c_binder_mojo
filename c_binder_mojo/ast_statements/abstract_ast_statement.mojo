@@ -31,7 +31,7 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         """
         ...
 
-    fn accumulate(self, token_bundle: TokenBundle) -> Bool: 
+    fn accumulate(mut self, token_bundle: TokenBundle) -> Bool: 
         """Accumulate text into a private buffer.
         
         Some AST statements span multiple lines and require the full

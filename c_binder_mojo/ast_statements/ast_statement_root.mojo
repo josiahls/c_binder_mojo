@@ -30,6 +30,6 @@ struct AstStatementRoot(AbstractAstStatement):
     fn __str__(self) -> String:
         return "AstStatementRoot(): text: " + self.text
 
-    fn accumulate(self, token_bundle: TokenBundle) -> Bool: return False
+    fn accumulate(mut self, token_bundle: TokenBundle) -> Bool: return False
 
     fn do_make_child(self, token_bundle: TokenBundle) -> Bool: return True

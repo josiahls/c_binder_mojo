@@ -29,11 +29,12 @@ struct AstStatementMultiLineComment(AbstractAstStatement):
     fn __init__(mut self, statement:AstStatementSingleLineComment, token_bundle: TokenBundle) raises:
         "AstStatementMultiLineComment represents a block of multiple lines of comments."
         self.lines = List[TokenBundle]()
-        self.multiline_comment_type = self.comment_type(statement.token_bundle.token)
-        var multiline_comment_type = self.comment_type(statement.token_bundle.token)
-        self.lines.append(statement.token_bundle)
-        if multiline_comment_type != self.multiline_comment_type:
-            raise Error('AstStatementMultiLineComment got conflicting stuff')
+        self.multiline_comment_type = self.comment_type(token_bundle.token)
+        for token_bundle in statement.token_bundles:
+            var multiline_comment_type = self.comment_type(token_bundle[].token)
+            self.lines.append(token_bundle[])
+            if multiline_comment_type != self.multiline_comment_type:
+                raise Error('AstStatementMultiLineComment got conflicting stuff')
         self.lines.append(token_bundle)
 
     @staticmethod
@@ -79,7 +80,7 @@ struct AstStatementMultiLineComment(AbstractAstStatement):
             idx += 1
         return s
 
-    fn accumulate(self, token_bundle: TokenBundle) -> Bool: return False
+    fn accumulate(mut self, token_bundle: TokenBundle) -> Bool: return False
     
     # TODO(josiahls): Would be nice of a ast statement could return an alternate version of it. 
     # e.g.: Return a single line comment over multiple lines.

@@ -9,18 +9,54 @@ from c_binder_mojo.ast_node import TokenBundle
 
 @value
 struct AstStatementSingleLineComment(AbstractAstStatement):
-    var token_bundle:TokenBundle
+    var token_bundles: List[TokenBundle]
+    var _done: Bool
+
+    fn __init__(mut self, token_bundle: TokenBundle):
+        self.token_bundles = List[TokenBundle]()
+        self.token_bundles.append(token_bundle)
+        self._done = False
+
+    fn __del__(owned self):
+        print('deleting')
+        self.token_bundles.clear()
 
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool:
         return True
 
-    fn done(self,token_bundle: TokenBundle) -> Bool:
+    fn _is_valid(self,token_bundle:TokenBundle) -> Bool:
+        if '\n' in token_bundle.token:
+            return False
         return True
 
-    fn __str__(self) -> String:
-        return "AstStatementSingleLineComment() " + str(self.token_bundle)
+    fn done(self,token_bundle: TokenBundle) -> Bool:
+        if not self._is_valid(token_bundle):
+            return True
+        return self._done
 
-    fn accumulate(self, token_bundle:TokenBundle) -> Bool: return False
+    fn _string_bundles(self) -> String:
+        var s:String = ""
+        var line_num = -1
+        for token in self.token_bundles:
+            if line_num == -1:
+                line_num = token[].line_num
+            elif line_num != token[].line_num:
+                s += "AstStatementSingleLineComment some how has multiple lines worth of tokens. This should never happen."
+                line_num = token[].line_num
+                s += '\n'
+            s += str(token[].token) + " "
+        return s
+
+    fn __str__(self) -> String:
+        return "AstStatementSingleLineComment() " + self._string_bundles()
+
+    fn accumulate(mut self, token_bundle:TokenBundle) -> Bool: 
+        var valid = self._is_valid(token_bundle)
+        if valid:
+            print('accumulating ' + str(len(self.token_bundles)))
+            self.token_bundles.append(token_bundle)
+
+        return valid
 
     fn do_make_child(self, token_bundle:TokenBundle) -> Bool: return False

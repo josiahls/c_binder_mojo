@@ -36,6 +36,10 @@ struct AstNode(CollectionElement):
     var ast_statement: AstStatements
     var root: UnsafePointer[RootAstNode]
 
+    fn __del__(owned self):
+        # self.root.de
+        print('destroying ast node')
+
     fn __init__(mut self, root:UnsafePointer[RootAstNode]):
         self.parent = -1
         self.children = List[Int]()
@@ -84,22 +88,20 @@ struct RootAstNode(AnyType):
                 - Create a new ASTNode based on line
                 - Add to the children list.
         """
-        node = self.nodes[idx]
+        # node.ast_statement = to_replace(node.ast_statement, token_bundle)
 
-        node.ast_statement = to_replace(node.ast_statement, token_bundle)
-
-        if to_done(node.ast_statement, token_bundle):
-            if node.parent != -1:
-                return self.get_current_node(node.parent, token_bundle)
+        if to_done(self.nodes[idx].ast_statement, token_bundle):
+            if self.nodes[idx].parent != -1:
+                return self.get_current_node(self.nodes[idx].parent, token_bundle)
 
             # I don't think this should even happen.
-            raise Error('Failure at: ' + token_bundle.token + '. For statement: ' + to_string(node.ast_statement) +' No way to handle')
+            raise Error('Failure at: ' + token_bundle.token + '. For statement: ' + to_string(self.nodes[idx].ast_statement) +' No way to handle')
 
-        if to_accumulate(node.ast_statement, token_bundle):
+        if to_accumulate(self.nodes[idx].ast_statement, token_bundle):
             return idx
 
-        if to_do_make_child(node.ast_statement, token_bundle):
-            statement = to_make_child(node.ast_statement, token_bundle)
+        if to_do_make_child(self.nodes[idx].ast_statement, token_bundle):
+            statement = to_make_child(self.nodes[idx].ast_statement, token_bundle)
             child = AstNode(
                 idx,
                 List[Int](),

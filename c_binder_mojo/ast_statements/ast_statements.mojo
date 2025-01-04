@@ -44,7 +44,7 @@ fn to_done(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
 
     raise Error('to_done does not exist for input x!')
 
-fn to_accumulate(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
+fn to_accumulate(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     if   x.isa[AstStatementRoot]():             return x[AstStatementRoot].accumulate(token_bundle)
     elif x.isa[AstStatementSingleLineComment](): return x[AstStatementSingleLineComment].accumulate(token_bundle)
     elif x.isa[AstStatementMultiLineComment](): return x[AstStatementMultiLineComment].accumulate(token_bundle)

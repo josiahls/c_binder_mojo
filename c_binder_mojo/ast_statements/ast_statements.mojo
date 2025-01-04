@@ -15,9 +15,9 @@ alias AstStatements = Variant[
 ]
 
 fn to_string(read x:AstStatements) raises -> String:
-    if   x.isa[AstStatementRoot]():      return str(x[AstStatementRoot])
+    if   x.isa[AstStatementRoot]():             return str(x[AstStatementRoot])
     elif x.isa[AstStatementMultilineComment](): return str(x[AstStatementMultilineComment])
-    elif x.isa[AstStatementPlaceHolder](): return str(x[AstStatementPlaceHolder])
+    elif x.isa[AstStatementPlaceHolder]():      return str(x[AstStatementPlaceHolder])
 
     raise Error('to_string does not exist for input x!')
 

@@ -45,8 +45,7 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         """        
         ...
 
-    @staticmethod
-    fn do_make_child(text:String, line_num:Int) -> Bool: 
+    fn do_make_child(self, text:String, line_num:Int) -> Bool: 
         """Whether to create a child AST statement.
 
         TODO: Is this needed? If the given the current line, and if we are not
@@ -59,5 +58,4 @@ trait AbstractAstStatement(CollectionElement,Stringable):
 
         Returns: Whether to create a child AST statement.
         """
-        
         ...

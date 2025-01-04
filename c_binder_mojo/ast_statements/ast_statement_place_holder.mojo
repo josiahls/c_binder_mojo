@@ -19,5 +19,5 @@ struct AstStatementPlaceHolder(AbstractAstStatement):
         return "AstStatementPlaceHolder()"
 
     fn accumulate(self, text:String, line_num:Int) -> Bool: return False
-    @staticmethod
-    fn do_make_child(text:String, line_num:Int) -> Bool: return False
+
+    fn do_make_child(self, text:String, line_num:Int) -> Bool: return False

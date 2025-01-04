@@ -27,5 +27,5 @@ struct AstStatementRoot(AbstractAstStatement):
         return "AstStatementRoot(): text: " + self.text
 
     fn accumulate(self, text:String, line_num:Int) -> Bool: return False
-    @staticmethod
-    fn do_make_child(text:String, line_num:Int) -> Bool: return True
+
+    fn do_make_child(self, text:String, line_num:Int) -> Bool: return True

@@ -8,7 +8,7 @@ from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
 from c_binder_mojo.ast_statements.ast_statement_place_holder import AstStatementPlaceHolder
 from c_binder_mojo.ast_statements.ast_statement_multi_line_comment import AstStatementMultiLineComment
 from c_binder_mojo.ast_statements.ast_statement_single_line_comment import AstStatementSingleLineComment
-from c_binder_mojo.ast_node import TokenBundle
+from c_binder_mojo.primitives import TokenBundle
 
 alias AstStatements = Variant[
     AstStatementRoot,

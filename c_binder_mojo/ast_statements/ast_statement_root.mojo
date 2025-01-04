@@ -6,7 +6,7 @@ from pathlib import Path
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.ast_node import TokenBundle
+from c_binder_mojo.primitives import TokenBundle
 
 @value
 struct AstStatementRoot(AbstractAstStatement):

@@ -6,7 +6,7 @@ from utils import Variant
 # First Party Modules
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
 from c_binder_mojo.ast_statements.ast_statement_single_line_comment import AstStatementSingleLineComment
-from c_binder_mojo.ast_node import TokenBundle
+from c_binder_mojo.primitives import TokenBundle
 
 
 struct MultilineCommentType:

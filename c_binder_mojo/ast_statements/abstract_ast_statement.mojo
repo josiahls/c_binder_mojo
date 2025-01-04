@@ -4,48 +4,47 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-
-
-@value
-struct OriginalText(CollectionElement):
-    var raw_text:String
-    var line_num:Int 
+from c_binder_mojo.ast_node import TokenBundle
 
 
 trait AbstractAstStatement(CollectionElement,Stringable):
     @staticmethod
-    fn accept(text:String) -> Bool: 
+    fn accept(token_bundle: TokenBundle) -> Bool: 
         """Whether the current text is something this statement can process.
         
         Args:
-            text: A line of text from the .h or .cpp file we are processing.
+            token_bundle: A line of text from the .h or .cpp file we are processing.
 
         Returns: Bool whether this statement will accept the current text.
         """
         ...
 
-    fn done(self) -> Bool: 
+    fn done(self, token_bundle: TokenBundle) -> Bool: 
         """Whether the current statement is finished accepting code lines.
+
+        This is called before any processing is done.
+
+        Args:
+            token_bundle: The text to accumulate.
 
         Returns: Bool whether the statement is finished processing lines.
         """
         ...
 
-    fn accumulate(self, text:String, line_num:Int) -> Bool: 
+    fn accumulate(self, token_bundle: TokenBundle) -> Bool: 
         """Accumulate text into a private buffer.
         
         Some AST statements span multiple lines and require the full
         context to do their respective ops.
 
         Args:
-            text: The text to accumulate.
-            line_num: The specific line number this text is from.
+            token_bundle: The text to accumulate.
 
         Returns: Bool whether this statement accumulated text
         """        
         ...
 
-    fn do_make_child(self, text:String, line_num:Int) -> Bool: 
+    fn do_make_child(self, token_bundle: TokenBundle) -> Bool: 
         """Whether to create a child AST statement.
 
         TODO: Is this needed? If the given the current line, and if we are not
@@ -53,8 +52,7 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         just create a new line anyways. 
 
         Args:
-            text: The text to accumulate.
-            line_num: The specific line number this text is from.
+            token_bundle: The text to accumulate.
 
         Returns: Whether to create a child AST statement.
         """

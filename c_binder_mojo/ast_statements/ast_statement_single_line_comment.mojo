@@ -8,7 +8,9 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 from c_binder_mojo.ast_node import TokenBundle
 
 @value
-struct AstStatementPlaceHolder(AbstractAstStatement):
+struct AstStatementSingleLineComment(AbstractAstStatement):
+    var token_bundle:TokenBundle
+
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool:
         return True
@@ -17,7 +19,7 @@ struct AstStatementPlaceHolder(AbstractAstStatement):
         return True
 
     fn __str__(self) -> String:
-        return "AstStatementPlaceHolder()"
+        return "AstStatementSingleLineComment() " + str(self.token_bundle)
 
     fn accumulate(self, token_bundle:TokenBundle) -> Bool: return False
 

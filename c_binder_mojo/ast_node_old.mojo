@@ -60,7 +60,7 @@ struct AstNode(CollectionElement):
         self.ast_statement = OwnedPointer(other=existing.ast_statement)
 
 
-    fn get_current_node(mut self, line:String, line_num:Int) raises -> UnsafePointer[Self]:
+    fn get_current_node(mut self, token_bundle: TokenBundle) raises -> UnsafePointer[Self]:
         """Recursive function for getting the currently active node + aststatement.
 
         The flow of operations is:
@@ -84,7 +84,7 @@ struct AstNode(CollectionElement):
         if to_done(self.ast_statement[]):
             # If the current statement is done, see if we can move up a parent.
             if self.parent:
-                return self.parent.bitcast[Self]()[].get_current_node(line, line_num)
+                return self.parent.bitcast[Self]()[].get_current_node(token_bundle)
             # I don't think this should even happen.
             raise Error('Failure at: ' + line + '. For statement: ' + to_string(self.ast_statement[]) +' No way to handle')
         # If the current statement is not done, then we can either

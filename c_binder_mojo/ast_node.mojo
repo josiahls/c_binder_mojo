@@ -10,11 +10,23 @@ from c_binder_mojo.ast_statements.ast_statements import (
     to_done,
     to_accumulate,
     to_do_make_child,
+    to_replace,
     to_make_child
 )
 from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
 from c_binder_mojo.ast_statements.ast_statement_place_holder import AstStatementPlaceHolder
 
+
+@value
+struct TokenBundle:
+    var token:String
+    var line_num:Int
+    var col_num:Int
+
+    fn __str__(self) -> String:
+        return self.token \
+            + ' line_num=' + str(self.line_num) \
+            + ' col_num=' + str(self.col_num)
 
 
 @value
@@ -48,13 +60,14 @@ struct RootAstNode(AnyType):
         )
 
     fn __del__(owned self):
-        print('RootAstNode deleting')
         self.nodes.clear()
 
-    fn get_current_node(mut self, idx:Int, line:String, line_num:Int) raises -> Int:
+    fn get_current_node(mut self, idx:Int, token_bundle: TokenBundle) raises -> Int:
         """Recursive function for getting the currently active node + aststatement.
 
         The flow of operations is:
+        - to_replace ast statements
+            - some ast statements can be converted to another ast statement.
         - If done
             - If has a parent
                 - go up to the parent, and call get_current_node again
@@ -72,18 +85,21 @@ struct RootAstNode(AnyType):
                 - Add to the children list.
         """
         node = self.nodes[idx]
-        if to_done(node.ast_statement):
+
+        node.ast_statement = to_replace(node.ast_statement, token_bundle)
+
+        if to_done(node.ast_statement, token_bundle):
             if node.parent != -1:
-                return self.get_current_node(node.parent, line, line_num)
+                return self.get_current_node(node.parent, token_bundle)
 
             # I don't think this should even happen.
-            raise Error('Failure at: ' + line + '. For statement: ' + to_string(node.ast_statement) +' No way to handle')
+            raise Error('Failure at: ' + token_bundle.token + '. For statement: ' + to_string(node.ast_statement) +' No way to handle')
 
-        if to_accumulate(node.ast_statement, line, line_num):
+        if to_accumulate(node.ast_statement, token_bundle):
             return idx
 
-        if to_do_make_child(node.ast_statement, line, line_num):
-            statement = to_make_child(node.ast_statement, line, line_num)
+        if to_do_make_child(node.ast_statement, token_bundle):
+            statement = to_make_child(node.ast_statement, token_bundle)
             child = AstNode(
                 idx,
                 List[Int](),
@@ -94,16 +110,21 @@ struct RootAstNode(AnyType):
             self.nodes[idx].children.append(len(self.nodes) - 1)
             return len(self.nodes) - 1
 
-        raise Error('Dont know how to handle: ' + line + ' ' + str(line_num))
+        raise Error('Dont know how to handle: ' + token_bundle.token + ' ' + str(token_bundle))
         
 
 
 fn make_graph(path:Path) raises -> RootAstNode:
     root_node = RootAstNode(path)
     line_num = 0
+    col_num = 0
     current_idx = 0
     for line in path.read_text().split('\n'):
-        current_idx = root_node.get_current_node(current_idx, line[],line_num)
+        col_num = 0
+        for token in line[].split(' '):
+            token_bundle = TokenBundle(token[], line_num, col_num)
+            current_idx = root_node.get_current_node(current_idx, token_bundle)
+            col_num += len(token[])
         line_num += 1
         # print(line[])
         # break

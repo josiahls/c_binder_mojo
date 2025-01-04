@@ -31,18 +31,7 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         """
         ...
 
-    @staticmethod
-    fn do_accumulate(text:String, line_num:Int) -> Bool: 
-        """Whether this current statement should append the text to itself and do nothing.
-        
-        Args:
-            text: The text to accumulate.
-            line_num: The specific line number this text is from.
-
-        Returns: Bool whether this statement should accumulate the text.
-        """
-        ...
-    fn accumulate(self, text:String, line_num:Int) -> None: 
+    fn accumulate(self, text:String, line_num:Int) -> Bool: 
         """Accumulate text into a private buffer.
         
         Some AST statements span multiple lines and require the full
@@ -51,6 +40,8 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         Args:
             text: The text to accumulate.
             line_num: The specific line number this text is from.
+
+        Returns: Bool whether this statement accumulated text
         """        
         ...
 

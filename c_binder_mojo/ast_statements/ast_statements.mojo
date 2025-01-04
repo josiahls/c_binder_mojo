@@ -29,17 +29,12 @@ fn to_done(x:AstStatements) raises -> Bool:
 
     raise Error('to_done does not exist for input x!')
 
-fn to_do_accumulate(x:AstStatements, line:String, line_num:Int) raises -> Bool:
-    if   x.isa[AstStatementRoot]():      return x[AstStatementRoot].do_accumulate(line,line_num)
-    elif x.isa[AstStatementMultilineComment](): return x[AstStatementMultilineComment].do_accumulate(line,line_num)
-    elif x.isa[AstStatementPlaceHolder](): return x[AstStatementPlaceHolder].do_accumulate(line,line_num)
+fn to_accumulate(x:AstStatements, line:String, line_num:Int) raises -> Bool:
+    if   x.isa[AstStatementRoot]():             return x[AstStatementRoot].accumulate(line,line_num)
+    elif x.isa[AstStatementMultilineComment](): return x[AstStatementMultilineComment].accumulate(line,line_num)
+    elif x.isa[AstStatementPlaceHolder]():      return x[AstStatementPlaceHolder].accumulate(line,line_num)
 
-    raise Error('to_do_accumulate does not exist to handle line: ' + line + ' ' + str(line_num))
-
-fn to_accumulate(x:AstStatements, line:String, line_num:Int) -> None:
-    if   x.isa[AstStatementRoot]():      x[AstStatementRoot].accumulate(line,line_num)
-    elif x.isa[AstStatementMultilineComment](): x[AstStatementMultilineComment].accumulate(line,line_num)
-    elif x.isa[AstStatementPlaceHolder](): x[AstStatementPlaceHolder].accumulate(line,line_num)
+    raise Error('to_accumulate does not exist to handle line: ' + line + ' ' + str(line_num))
 
 fn to_do_make_child(x:AstStatements, line:String, line_num:Int) raises -> Bool:
     if   x.isa[AstStatementRoot]():      return x[AstStatementRoot].do_make_child(line,line_num)
@@ -52,7 +47,7 @@ fn to_make_child(x:AstStatements, line:String, line_num:Int) raises -> AstStatem
     if AstStatementRoot.accept(line):     
         return AstStatements(AstStatementRoot(line))
     elif AstStatementMultilineComment.accept(line):
-        return AstStatements(AstStatementMultilineComment(line))
+        return AstStatements(AstStatementMultilineComment(line, line_num))
     elif AstStatementPlaceHolder.accept(line): 
         return AstStatements(AstStatementPlaceHolder()) 
     

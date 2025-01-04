@@ -9,6 +9,7 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 @value
 struct AstStatementMultilineComment(AbstractAstStatement):
     var line:String
+    var line_num: Int
 
     @staticmethod
     fn accept(line:String) -> Bool:
@@ -19,10 +20,9 @@ struct AstStatementMultilineComment(AbstractAstStatement):
         return True
 
     fn __str__(self) -> String:
-        return "AstStatementMultilineComment()" + self.line
+        return "AstStatementMultilineComment() \\ \n\t" + self.line
 
-    @staticmethod
-    fn do_accumulate(text:String, line_num:Int) -> Bool: return False
-    fn accumulate(self, text:String, line_num:Int) -> None: ...
+    fn accumulate(self, text:String, line_num:Int) -> Bool: return False
+    
     @staticmethod
     fn do_make_child(text:String, line_num:Int) -> Bool: return False

@@ -8,7 +8,6 @@ from c_binder_mojo.ast_statements.ast_statements import (
     AstStatements,
     to_string,
     to_done,
-    to_do_accumulate,
     to_accumulate,
     to_do_make_child,
     to_make_child
@@ -75,19 +74,15 @@ struct RootAstNode(AnyType):
         node = self.nodes[idx]
         if to_done(node.ast_statement):
             if node.parent != -1:
-                # TODO(josiahls): might be able to just return this index, but 
-                # raising an error might be easlier to debug.
                 return self.get_current_node(node.parent, line, line_num)
 
             # I don't think this should even happen.
             raise Error('Failure at: ' + line + '. For statement: ' + to_string(node.ast_statement) +' No way to handle')
 
-        if to_do_accumulate(node.ast_statement, line, line_num):
-            to_accumulate(node.ast_statement, line, line_num)
+        if to_accumulate(node.ast_statement, line, line_num):
             return idx
 
         if to_do_make_child(node.ast_statement, line, line_num):
-            # print(line)
             statement = to_make_child(node.ast_statement, line, line_num)
             child = AstNode(
                 idx,
@@ -95,10 +90,7 @@ struct RootAstNode(AnyType):
                 statement,
                 UnsafePointer[mut=True].address_of(self)
             )
-            # print('statement: ' + to_string(statement))
             self.nodes.append(child)
-            # Note: Tried node.children.append(...) but looks like node gets decostructed.
-            # Is the node a copy???????
             self.nodes[idx].children.append(len(self.nodes) - 1)
             return len(self.nodes) - 1
 

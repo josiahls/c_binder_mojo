@@ -5,17 +5,21 @@ from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.primitives import TokenBundle
+from c_binder_mojo.primitives import TokenBundle, comment_type, comment_token, CommentEnum, CTokens
 
 @value
 struct AstStatementSingleLineComment(AbstractAstStatement):
     var token_bundles: List[TokenBundle]
     var _done: Bool
     var line_num: Int
+    var comment_type: String
 
     fn __init__(mut self, token_bundle: TokenBundle):
         self.token_bundles = List[TokenBundle]()
         self.token_bundles.append(token_bundle)
+        # TODO(josiahls): note we don't actually know if this is inline or
+        # multiline yet....
+        self.comment_type = comment_type(token_bundle.token)
         self.line_num = token_bundle.line_num
         self._done = False
 
@@ -25,8 +29,8 @@ struct AstStatementSingleLineComment(AbstractAstStatement):
 
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool:
-        var s = token_bundle.token
-        if s.lstrip(' ').startswith('//'):
+        var s = comment_token(token_bundle.token)
+        if s.lstrip(' ').startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
             return True
         return False
 

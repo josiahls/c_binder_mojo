@@ -18,8 +18,8 @@ alias AstStatements = Variant[
 ]
 
 fn to_replace(read x:AstStatements, token_bundle: TokenBundle) -> AstStatements:
-    if AstStatementMultiLineComment.do_replace(x,token_bundle):
-        return AstStatements(AstStatementMultiLineComment(x[AstStatementSingleLineComment], token_bundle))
+    # if AstStatementMultiLineComment.do_replace(x,token_bundle):
+    #     return AstStatements(AstStatementMultiLineComment(x[AstStatementSingleLineComment], token_bundle))
     return x
 
 fn to_string(read x:AstStatements) raises -> String:

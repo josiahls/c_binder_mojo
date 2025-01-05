@@ -7,39 +7,24 @@ from utils import Variant
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
 from c_binder_mojo.ast_statements.ast_statements import AstStatements
 from c_binder_mojo.ast_statements.ast_statement_single_line_comment import AstStatementSingleLineComment
-from c_binder_mojo.primitives import TokenBundle, comment_type, CommentEnum
+from c_binder_mojo.primitives import TokenBundle, comment_type, comment_token, CommentEnum,CTokens
 
 
 @value
 struct AstStatementMultiLineComment(AbstractAstStatement):
-    var lines: List[TokenBundle]
-    var multiline_comment_type:StringLiteral
+    var token_bundles: List[TokenBundle]
+    var comment_type:StringLiteral
+    var _done:Bool
 
     fn __init__(mut self, token_bundle: TokenBundle):
         "AstStatementMultiLineComment represents a block of multiple lines of comments."
-        self.lines = List[TokenBundle]()
-        self.multiline_comment_type = comment_type(token_bundle.token)
-        self.lines.append(token_bundle)
-
-    fn __init__(mut self, statement:AstStatementSingleLineComment, token_bundle: TokenBundle):
-        "AstStatementMultiLineComment represents a block of multiple lines of comments."
-        self.lines = List[TokenBundle]()
-        self.multiline_comment_type = comment_type(token_bundle.token)
-        for token_bundle in statement.token_bundles:
-            self.lines.append(token_bundle[])
-        self.lines.append(token_bundle)
+        self.token_bundles = List[TokenBundle]()
+        self.comment_type = comment_type(token_bundle.token)
+        self.token_bundles.append(token_bundle)
+        self._done = False
 
     @staticmethod
     fn do_replace(x:AstStatements, token_bundle:TokenBundle) -> Bool:
-        if x.isa[AstStatementSingleLineComment]() and AstStatementMultiLineComment.accept(token_bundle):
-            # Check if the current `token_bundle`  is the same comment type as 
-            # the ones in `x`
-            var multiline_comment_type = comment_type(token_bundle.token)
-            for _token_bundle in x[AstStatementSingleLineComment].token_bundles:
-                var other_multiline_comment_type = comment_type(_token_bundle[].token)
-                if multiline_comment_type != other_multiline_comment_type:
-                    return False
-            return True
         return False
 
     @staticmethod
@@ -55,28 +40,40 @@ struct AstStatementMultiLineComment(AbstractAstStatement):
             token_bundle: A line of code from a c header.
         """
         s = comment_type(token_bundle.token)
-        return s != CommentEnum.UNKNOWN
+        return s in [CommentEnum.COMMENT_MULTI_LINE,CommentEnum.COMMENT_MULTI_LINE_INLINE]
 
     fn done(self, token_bundle: TokenBundle) -> Bool:
-        "Multiline statment will not be done until the end of the file."
-        return True
+        return self._done
 
     fn __str__(self) -> String:
         var s = String("AstStatementMultiLineComment")
         s += "("
-        s += "multiline_comment_type=" + String(self.multiline_comment_type)
+        s += "comment_type=" + String(self.comment_type)
+        s += ", line_num="
+        var unique_nums = List[Int]()
+        for token_bundle in self.token_bundles:
+            if token_bundle[].line_num not in unique_nums:
+                unique_nums.append(token_bundle[].line_num)
+        for n in unique_nums:
+            s += str(n[]) + ','
         s += ") \\ \n\t"
-        var idx = 0
-        for line in self.lines:
-            if idx > 0:
-                s += "\n\t" + line[].token
-            else:
-                s += line[].token
-            idx += 1
+        var line_num = -1
+        for token_bundle in self.token_bundles:
+            if line_num != -1 and token_bundle[].line_num != line_num:
+                s += '\n\t'
+
+            s += token_bundle[].token
+            s += ' '
+            line_num = token_bundle[].line_num
         return s
 
-    fn accumulate(mut self, token_bundle: TokenBundle) -> Bool: return False
+    fn accumulate(mut self, token_bundle: TokenBundle) -> Bool: 
+        if self.comment_type == CommentEnum.COMMENT_MULTI_LINE:
+            self._done = comment_token(token_bundle.token) == CTokens.COMMENT_MULTI_LINE_END
+        if self.comment_type == CommentEnum.COMMENT_MULTI_LINE_INLINE:
+            # NOTE(josiahls): I think it can either be a inline end or regular end actually. 
+            self._done = comment_token(token_bundle.token) == CTokens.COMMENT_MULTI_LINE_INLINE_END
+        self.token_bundles.append(token_bundle)
+        return True
     
-    # TODO(josiahls): Would be nice of a ast statement could return an alternate version of it. 
-    # e.g.: Return a single line comment over multiple lines.
     fn do_make_child(self, token_bundle: TokenBundle) -> Bool: return False

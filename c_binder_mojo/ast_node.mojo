@@ -101,7 +101,7 @@ struct RootAstNode(AnyType):
             self.nodes[idx].children.append(len(self.nodes) - 1)
             return len(self.nodes) - 1
 
-        raise Error('Dont know how to handle: ' + token_bundle.token + ' ' + str(token_bundle))
+        raise Error('Cannot Handle:\n' + to_string(self.nodes[idx].ast_statement)  + '\nToken: ' + str(token_bundle))
         
 
 

@@ -15,30 +15,45 @@ struct TokenBundle:
             + ' col_num=' + str(self.col_num)
 
 
-
-struct CommentEnum:
-    alias SINGLE_LINE_COMMENT = "SINGLE_LINE_COMMENT"
-    alias MULTI_LINE_INLINE_COMMENT = "MULTI_LINE_INLINE_COMMENT"
-    alias MULTI_LINE_COMMENT = "MULTI_LINE_COMMENT"
+struct CTokens:
+    alias COMMENT_SINGLE_LINE_BEGIN = "//"
+    alias COMMENT_MULTI_LINE_INLINE_BEGIN = "/*"
+    alias COMMENT_MULTI_LINE_INLINE_END = "*/"
+    alias COMMENT_MULTI_LINE_BEGIN = "/**"
+    alias COMMENT_MULTI_LINE_END = "**/"
     alias UNKNOWN = "UNKNOWN"
 
 
-fn comment_type(line:String) -> StringLiteral:
-    var line_:String = line.lstrip(" ")
-    if line_.startswith('//'):
-        return CommentEnum.SINGLE_LINE_COMMENT
-    elif line_.startswith('/**'):
-        # TODO(josiahls): kind of naive, really we need to make sure that /** 
-        # comes before **/
-        if '**/' in line_:
-            return CommentEnum.MULTI_LINE_INLINE_COMMENT
-        else:
-            return CommentEnum.MULTI_LINE_COMMENT
-    elif line_.startswith('/*'):
-        # TODO(josiahls): Same deal as above
-        if '*/' in line_:
-            return CommentEnum.MULTI_LINE_INLINE_COMMENT
-        else:
-            return CommentEnum.MULTI_LINE_COMMENT
+struct CommentEnum:
+    alias COMMENT_SINGLE_LINE = "COMMENT_SINGLE_LINE"
+    alias COMMENT_MULTI_LINE_INLINE = "COMMENT_MULTI_LINE_INLINE"
+    alias COMMENT_MULTI_LINE = "COMMENT_MULTI_LINE"
+    alias UNKNOWN = "UNKNOWN"
+
+
+fn comment_token(token:String) -> StringLiteral:
+    var token_:String = token.lstrip(" ")
+    if token_ == CTokens.COMMENT_SINGLE_LINE_BEGIN:
+        return CTokens.COMMENT_SINGLE_LINE_BEGIN
+    elif token_ == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
+        return CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN
+    elif token_ == CTokens.COMMENT_MULTI_LINE_INLINE_END:
+        return CTokens.COMMENT_MULTI_LINE_INLINE_END
+    elif token_ == CTokens.COMMENT_MULTI_LINE_BEGIN:
+        return CTokens.COMMENT_MULTI_LINE_BEGIN
+    elif token_ == CTokens.COMMENT_MULTI_LINE_END:
+        return CTokens.COMMENT_MULTI_LINE_END
+    return CTokens.UNKNOWN
+
+
+fn comment_type(token:String) -> StringLiteral:
+    var _token = comment_token(token)
+    if _token in [CTokens.COMMENT_SINGLE_LINE_BEGIN]:
+        return CommentEnum.COMMENT_SINGLE_LINE
+    elif _token in [CTokens.COMMENT_MULTI_LINE_BEGIN,CTokens.COMMENT_MULTI_LINE_END]:
+        return CommentEnum.COMMENT_MULTI_LINE
+    elif _token in [CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN, CTokens.COMMENT_MULTI_LINE_INLINE_END]:
+        return CommentEnum.COMMENT_MULTI_LINE_INLINE
     else:
         return CommentEnum.UNKNOWN
+    

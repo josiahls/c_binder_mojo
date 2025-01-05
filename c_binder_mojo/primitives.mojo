@@ -21,6 +21,10 @@ struct CTokens:
     alias COMMENT_MULTI_LINE_INLINE_END = "*/"
     alias COMMENT_MULTI_LINE_BEGIN = "/**"
     alias COMMENT_MULTI_LINE_END = "**/"
+    alias MACRO_IFNDEF = "#ifndef"
+    alias MACRO_DEFINE = "#define"
+    alias MACRO_ELSE = "#else"
+    alias MACRO_ENDIF = "#endif"
     alias UNKNOWN = "UNKNOWN"
 
 

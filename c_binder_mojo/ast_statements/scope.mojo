@@ -48,6 +48,7 @@ struct Scope(AbstractAstStatement):
         """
         Simple curly bracket scoping.
         """
+        print('given token bundle: ' + str(token_bundle)) # TODO: Need to add struct supports. Its getting confused without it.
         self.token_bundles = List[TokenBundle]()
         self.token_bundles.append(token_bundle)
         self.scopeable_type = scopeable_type
@@ -63,7 +64,7 @@ struct Scope(AbstractAstStatement):
 
     fn done(self,token_bundle: TokenBundle) -> Bool:
         if self.token_bundles[-1].token.strip(' ')[-1] == CTokens.SCOPE_END:
-            print('scope is done')
+            # print('scope is done')
             return True
 
         return False

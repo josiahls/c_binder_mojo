@@ -33,7 +33,7 @@ struct TypeDef(AbstractAstStatement):
 
     fn done(self,token_bundle: TokenBundle) -> Bool:
         if self.token_bundles[-1].token.strip(' ')[-1] == CTokens.END_STATEMENT:
-            print('type def is done because of: ' + self.token_bundles[-1].token)
+            # print('type def is done because of: ' + self.token_bundles[-1].token)
             return True
 
         return False

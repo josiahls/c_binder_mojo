@@ -8,7 +8,7 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 from c_binder_mojo.primitives import TokenBundle, comment_type, comment_token, CommentEnum, CTokens
 
 @value
-struct AstStatementSingleLineComment(AbstractAstStatement):
+struct SingleLineComment(AbstractAstStatement):
     var token_bundles: List[TokenBundle]
     var _done: Bool
     var line_num: Int
@@ -51,14 +51,14 @@ struct AstStatementSingleLineComment(AbstractAstStatement):
             if line_num == -1:
                 line_num = token[].line_num
             elif line_num != token[].line_num:
-                s += "AstStatementSingleLineComment some how has multiple lines worth of tokens. This should never happen."
+                s += "SingleLineComment some how has multiple lines worth of tokens. This should never happen."
                 line_num = token[].line_num
                 s += '\n'
             s += str(token[].token) + " "
         return s
 
     fn __str__(self) -> String:
-        var s:String = "AstStatementSingleLineComment("
+        var s:String = "SingleLineComment("
         s += 'line_num=' + str(self.line_num)
         s += ') '
 

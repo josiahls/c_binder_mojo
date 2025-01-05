@@ -9,7 +9,7 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 from c_binder_mojo.primitives import TokenBundle
 
 @value
-struct AstStatementRoot(AbstractAstStatement):
+struct Root(AbstractAstStatement):
     var text:String
 
     fn __init__(mut self, path:Path):
@@ -28,7 +28,7 @@ struct AstStatementRoot(AbstractAstStatement):
         return False
 
     fn __str__(self) -> String:
-        return "AstStatementRoot(): text: " + self.text
+        return "Root(): text: " + self.text
 
     fn accumulate(mut self, token_bundle: TokenBundle) -> Bool: return False
 

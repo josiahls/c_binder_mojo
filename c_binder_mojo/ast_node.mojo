@@ -13,8 +13,8 @@ from c_binder_mojo.ast_statements.ast_statements import (
     to_replace,
     to_make_child
 )
-from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
-from c_binder_mojo.ast_statements.ast_statement_place_holder import AstStatementPlaceHolder
+from c_binder_mojo.ast_statements.root import Root
+from c_binder_mojo.ast_statements.place_holder import PlaceHolder
 from c_binder_mojo.primitives import TokenBundle
 
 
@@ -32,13 +32,13 @@ struct AstNode(CollectionElement):
     fn __init__(mut self, root:UnsafePointer[RootAstNode]):
         self.parent = -1
         self.children = List[Int]()
-        self.ast_statement = AstStatements(AstStatementPlaceHolder())
+        self.ast_statement = AstStatements(PlaceHolder())
         self.root = root
 
     fn __init__(mut self, root:UnsafePointer[RootAstNode], path:Path):
         self.parent = -1
         self.children = List[Int]()
-        self.ast_statement = AstStatements(AstStatementRoot(path))
+        self.ast_statement = AstStatements(Root(path))
         self.root = root
 
 

@@ -6,18 +6,18 @@ from utils import Variant
 # First Party Modules
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
 from c_binder_mojo.ast_statements.ast_statements import AstStatements
-from c_binder_mojo.ast_statements.ast_statement_single_line_comment import AstStatementSingleLineComment
+from c_binder_mojo.ast_statements.single_line_comment import SingleLineComment
 from c_binder_mojo.primitives import TokenBundle, comment_type, comment_token, CommentEnum,CTokens
 
 
 @value
-struct AstStatementMultiLineComment(AbstractAstStatement):
+struct MultiLineComment(AbstractAstStatement):
     var token_bundles: List[TokenBundle]
     var comment_type:StringLiteral
     var _done:Bool
 
     fn __init__(mut self, token_bundle: TokenBundle):
-        "AstStatementMultiLineComment represents a block of multiple lines of comments."
+        "MultiLineComment represents a block of multiple lines of comments."
         self.token_bundles = List[TokenBundle]()
         self.comment_type = comment_type(token_bundle.token)
         self.token_bundles.append(token_bundle)
@@ -29,7 +29,7 @@ struct AstStatementMultiLineComment(AbstractAstStatement):
 
     @staticmethod
     fn accept(token_bundle: TokenBundle) -> Bool:
-        """AstStatementMultiLineComment will accept the following conditions for its creation.
+        """MultiLineComment will accept the following conditions for its creation.
 
         - Single comment lines starting with //
         - Single comment lines starting with /*
@@ -46,7 +46,7 @@ struct AstStatementMultiLineComment(AbstractAstStatement):
         return self._done
 
     fn __str__(self) -> String:
-        var s = String("AstStatementMultiLineComment")
+        var s = String("MultiLineComment")
         s += "("
         s += "comment_type=" + String(self.comment_type)
         s += ", line_num="

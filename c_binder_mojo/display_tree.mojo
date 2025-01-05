@@ -10,7 +10,7 @@ from c_binder_mojo.ast_statements.ast_statements import (
     AstStatements,
     to_string
 )
-from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
+from c_binder_mojo.ast_statements.root import Root
 from c_binder_mojo.ast_node import AstNode, RootAstNode
 
 

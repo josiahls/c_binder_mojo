@@ -4,65 +4,65 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.ast_statements.ast_statement_root import AstStatementRoot
-from c_binder_mojo.ast_statements.ast_statement_place_holder import AstStatementPlaceHolder
-from c_binder_mojo.ast_statements.ast_statement_multi_line_comment import AstStatementMultiLineComment
-from c_binder_mojo.ast_statements.ast_statement_single_line_comment import AstStatementSingleLineComment
+from c_binder_mojo.ast_statements.root import Root
+from c_binder_mojo.ast_statements.place_holder import PlaceHolder
+from c_binder_mojo.ast_statements.multi_line_comment import MultiLineComment
+from c_binder_mojo.ast_statements.single_line_comment import SingleLineComment
 from c_binder_mojo.primitives import TokenBundle
 
 alias AstStatements = Variant[
-    AstStatementRoot,
-    AstStatementPlaceHolder,
-    AstStatementMultiLineComment,
-    AstStatementSingleLineComment
+    Root,
+    PlaceHolder,
+    MultiLineComment,
+    SingleLineComment
 ]
 
 fn to_replace(read x:AstStatements, token_bundle: TokenBundle) -> AstStatements:
-    # if AstStatementMultiLineComment.do_replace(x,token_bundle):
-    #     return AstStatements(AstStatementMultiLineComment(x[AstStatementSingleLineComment], token_bundle))
+    # if MultiLineComment.do_replace(x,token_bundle):
+    #     return AstStatements(MultiLineComment(x[SingleLineComment], token_bundle))
     return x
 
 fn to_string(read x:AstStatements) raises -> String:
-    if   x.isa[AstStatementRoot]():             return str(x[AstStatementRoot])
-    elif x.isa[AstStatementSingleLineComment](): return str(x[AstStatementSingleLineComment])
-    elif x.isa[AstStatementMultiLineComment](): return str(x[AstStatementMultiLineComment])
-    elif x.isa[AstStatementPlaceHolder]():      return str(x[AstStatementPlaceHolder])
+    if   x.isa[Root]():             return str(x[Root])
+    elif x.isa[SingleLineComment](): return str(x[SingleLineComment])
+    elif x.isa[MultiLineComment](): return str(x[MultiLineComment])
+    elif x.isa[PlaceHolder]():      return str(x[PlaceHolder])
 
     raise Error('to_string does not exist for input x!')
 
 
 fn to_done(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
-    if   x.isa[AstStatementRoot]():      return x[AstStatementRoot].done(token_bundle)
-    elif x.isa[AstStatementSingleLineComment](): return x[AstStatementSingleLineComment].done(token_bundle)
-    elif x.isa[AstStatementMultiLineComment](): return x[AstStatementMultiLineComment].done(token_bundle)
-    elif x.isa[AstStatementPlaceHolder](): return x[AstStatementPlaceHolder].done(token_bundle)
+    if   x.isa[Root]():      return x[Root].done(token_bundle)
+    elif x.isa[SingleLineComment](): return x[SingleLineComment].done(token_bundle)
+    elif x.isa[MultiLineComment](): return x[MultiLineComment].done(token_bundle)
+    elif x.isa[PlaceHolder](): return x[PlaceHolder].done(token_bundle)
 
     raise Error('to_done does not exist for input x!')
 
 fn to_accumulate(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
-    if   x.isa[AstStatementRoot]():             return x[AstStatementRoot].accumulate(token_bundle)
-    elif x.isa[AstStatementSingleLineComment](): return x[AstStatementSingleLineComment].accumulate(token_bundle)
-    elif x.isa[AstStatementMultiLineComment](): return x[AstStatementMultiLineComment].accumulate(token_bundle)
-    elif x.isa[AstStatementPlaceHolder]():      return x[AstStatementPlaceHolder].accumulate(token_bundle)
+    if   x.isa[Root]():             return x[Root].accumulate(token_bundle)
+    elif x.isa[SingleLineComment](): return x[SingleLineComment].accumulate(token_bundle)
+    elif x.isa[MultiLineComment](): return x[MultiLineComment].accumulate(token_bundle)
+    elif x.isa[PlaceHolder]():      return x[PlaceHolder].accumulate(token_bundle)
 
     raise Error('to_accumulate does not exist to handle line: ' + str(token_bundle))
 
 fn to_do_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
-    if   x.isa[AstStatementRoot]():      return x[AstStatementRoot].do_make_child(token_bundle)
-    elif x.isa[AstStatementSingleLineComment](): return x[AstStatementSingleLineComment].do_make_child(token_bundle)
-    elif x.isa[AstStatementMultiLineComment](): return x[AstStatementMultiLineComment].do_make_child(token_bundle)
-    elif x.isa[AstStatementPlaceHolder](): return x[AstStatementPlaceHolder].do_make_child(token_bundle)
+    if   x.isa[Root]():      return x[Root].do_make_child(token_bundle)
+    elif x.isa[SingleLineComment](): return x[SingleLineComment].do_make_child(token_bundle)
+    elif x.isa[MultiLineComment](): return x[MultiLineComment].do_make_child(token_bundle)
+    elif x.isa[PlaceHolder](): return x[PlaceHolder].do_make_child(token_bundle)
 
     raise Error('to_do_make_child does not exist to handle line: ' + str(token_bundle))
 
 fn to_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> AstStatements:
-    if AstStatementRoot.accept(token_bundle):     
-        return AstStatements(AstStatementRoot(token_bundle))
-    elif AstStatementSingleLineComment.accept(token_bundle):
-        return AstStatements(AstStatementSingleLineComment(token_bundle))
-    elif AstStatementMultiLineComment.accept(token_bundle):
-        return AstStatements(AstStatementMultiLineComment(token_bundle))
-    elif AstStatementPlaceHolder.accept(token_bundle): 
-        return AstStatements(AstStatementPlaceHolder()) 
+    if Root.accept(token_bundle):     
+        return AstStatements(Root(token_bundle))
+    elif SingleLineComment.accept(token_bundle):
+        return AstStatements(SingleLineComment(token_bundle))
+    elif MultiLineComment.accept(token_bundle):
+        return AstStatements(MultiLineComment(token_bundle))
+    elif PlaceHolder.accept(token_bundle): 
+        return AstStatements(PlaceHolder()) 
     
     raise Error('to_make_child does not exist to handle line: ' + str(token_bundle))

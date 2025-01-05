@@ -33,14 +33,15 @@ struct CommentEnum:
 
 fn comment_token(token:String) -> StringLiteral:
     var token_:String = token.lstrip(" ")
-    if token_ == CTokens.COMMENT_SINGLE_LINE_BEGIN:
+    if token_.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
         return CTokens.COMMENT_SINGLE_LINE_BEGIN
-    elif token_ == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
+    elif token_.startswith(CTokens.COMMENT_MULTI_LINE_BEGIN):
+        return CTokens.COMMENT_MULTI_LINE_BEGIN
+    elif token_.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN):
         return CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN
+    # NOTE: order matters `startswith('/*')` is true for both /** and /*.
     elif token_ == CTokens.COMMENT_MULTI_LINE_INLINE_END:
         return CTokens.COMMENT_MULTI_LINE_INLINE_END
-    elif token_ == CTokens.COMMENT_MULTI_LINE_BEGIN:
-        return CTokens.COMMENT_MULTI_LINE_BEGIN
     elif token_ == CTokens.COMMENT_MULTI_LINE_END:
         return CTokens.COMMENT_MULTI_LINE_END
     return CTokens.UNKNOWN

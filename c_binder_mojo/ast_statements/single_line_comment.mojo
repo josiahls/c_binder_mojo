@@ -17,15 +17,9 @@ struct SingleLineComment(AbstractAstStatement):
     fn __init__(mut self, token_bundle: TokenBundle):
         self.token_bundles = List[TokenBundle]()
         self.token_bundles.append(token_bundle)
-        # TODO(josiahls): note we don't actually know if this is inline or
-        # multiline yet....
         self.comment_type = comment_type(token_bundle.token)
         self.line_num = token_bundle.line_num
         self._done = False
-
-    # fn __del__(owned self):
-    #     print('deleting')
-    #     self.token_bundles.clear()
 
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool:

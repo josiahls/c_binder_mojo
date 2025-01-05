@@ -9,6 +9,15 @@ from c_binder_mojo.primitives import TokenBundle
 
 @value
 struct PlaceHolder(AbstractAstStatement):
+    var s:String
+
+    fn __init__(mut self):
+        self.s = String("")
+
+    fn __init__(mut self, token_bundle:TokenBundle):
+        self.s = String("")
+        self.s += token_bundle.token
+
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool:
         return True
@@ -17,7 +26,7 @@ struct PlaceHolder(AbstractAstStatement):
         return True
 
     fn __str__(self) -> String:
-        return "PlaceHolder()"
+        return "PlaceHolder() " + self.s
 
     fn accumulate(mut self, token_bundle:TokenBundle) -> Bool: return False
 

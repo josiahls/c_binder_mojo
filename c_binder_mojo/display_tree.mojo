@@ -48,8 +48,8 @@ struct DisplayAstNode(CollectionElement):
             s += str(self.root[].nodes[child[]])
 
         if len(begin_end_s) > 1:
-            s += "\n"
-            s += indents + begin_end_s[1].replace('\n','\n' + indents)
+            s += "\n" 
+            s += indents + STRING_SPLIT_AT + " " + begin_end_s[1].replace('\n','\n' + indents)
         return s
 
 @value

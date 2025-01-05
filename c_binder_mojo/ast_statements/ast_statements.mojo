@@ -15,6 +15,7 @@ from c_binder_mojo.ast_statements.macro_else import MacroElse
 from c_binder_mojo.ast_statements.endif import EndIf
 from c_binder_mojo.ast_statements.typedef import TypeDef
 from c_binder_mojo.ast_statements.include import Include
+from c_binder_mojo.ast_statements.scope import Scope
 from c_binder_mojo.primitives import TokenBundle
 
 alias AstStatements = Variant[
@@ -28,7 +29,8 @@ alias AstStatements = Variant[
     MacroElse,
     EndIf,
     TypeDef,
-    Include
+    Include,
+    Scope
 ]
 
 fn to_replace(read x:AstStatements, token_bundle: TokenBundle) -> AstStatements:
@@ -45,6 +47,7 @@ fn to_string(read x:AstStatements) raises -> String:
     elif x.isa[EndIf]():      return str(x[EndIf])
     elif x.isa[TypeDef]():      return str(x[TypeDef])
     elif x.isa[Define]():      return str(x[Define])
+    elif x.isa[Scope]():      return str(x[Scope])
     elif x.isa[Include]():      return str(x[Include])
     elif x.isa[BlankSpace]():      return str(x[BlankSpace])
     elif x.isa[PlaceHolder]():      return str(x[PlaceHolder])
@@ -61,6 +64,7 @@ fn to_done(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[EndIf](): return x[EndIf].done(token_bundle)
     elif x.isa[Define](): return x[Define].done(token_bundle)
     elif x.isa[TypeDef](): return x[TypeDef].done(token_bundle)
+    elif x.isa[Scope](): return x[Scope].done(token_bundle)
     elif x.isa[Include](): return x[Include].done(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].done(token_bundle)
     elif x.isa[PlaceHolder](): return x[PlaceHolder].done(token_bundle)
@@ -76,6 +80,7 @@ fn to_accumulate(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[EndIf](): return x[EndIf].accumulate(token_bundle)
     elif x.isa[TypeDef](): return x[TypeDef].accumulate(token_bundle)
     elif x.isa[Define](): return x[Define].accumulate(token_bundle)
+    elif x.isa[Scope](): return x[Scope].accumulate(token_bundle)
     elif x.isa[Include](): return x[Include].accumulate(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].accumulate(token_bundle)
     elif x.isa[PlaceHolder]():      return x[PlaceHolder].accumulate(token_bundle)
@@ -91,6 +96,7 @@ fn to_do_make_child(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bo
     elif x.isa[EndIf](): return x[EndIf].do_make_child(token_bundle)
     elif x.isa[TypeDef](): return x[TypeDef].do_make_child(token_bundle)
     elif x.isa[Define](): return x[Define].do_make_child(token_bundle)
+    elif x.isa[Scope](): return x[Scope].do_make_child(token_bundle)
     elif x.isa[Include](): return x[Include].do_make_child(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].do_make_child(token_bundle)
     elif x.isa[PlaceHolder](): return x[PlaceHolder].do_make_child(token_bundle)
@@ -98,12 +104,18 @@ fn to_do_make_child(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bo
     raise Error('to_do_make_child does not exist to handle line: ' + str(token_bundle))
 
 fn to_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> AstStatements:
+    """Creates a child statement.
+    
+    Note that the order is very important here.
+    """
     if Root.accept(token_bundle):     
         return AstStatements(Root(token_bundle))
     elif SingleLineComment.accept(token_bundle):
         return AstStatements(SingleLineComment(token_bundle))
     elif MultiLineComment.accept(token_bundle):
         return AstStatements(MultiLineComment(token_bundle))
+    elif Scope.accept(token_bundle): 
+        return AstStatements(Scope(token_bundle))  
     elif IfNDef.accept(token_bundle): 
         return AstStatements(IfNDef(token_bundle)) 
     elif MacroElse.accept(token_bundle): 

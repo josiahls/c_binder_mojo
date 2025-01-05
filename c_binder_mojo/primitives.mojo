@@ -26,8 +26,12 @@ struct CTokens:
     alias MACRO_ELSE = "#else"
     alias MACRO_ENDIF = "#endif"
     alias TYPE_DEF = "typedef"
+    alias ENUM = "enum"
+    alias SCOPE_BEGIN = "{"
+    alias SCOPE_END = "}"
     alias END_STATEMENT = ";"
     alias UNKNOWN = "UNKNOWN"
+    alias MACRO_INCLUDE = "#include"
 
 
 struct CommentEnum:

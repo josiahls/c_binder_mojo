@@ -17,7 +17,7 @@ fn test_ast_node_mjtnum() raises:
     root_node = make_graph(num_mojo_path)
     # root_node = test_fn(num_mojo_path)
     display_node = RootDisplayAstNode(root_node)
-    print('DisplayTree:')
+    # print('DisplayTree:')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(str(display_node))
     # print(str(display_node))
 
@@ -30,7 +30,7 @@ fn test_ast_node_model() raises:
     root_node = make_graph(num_mojo_path)
     # root_node = test_fn(num_mojo_path)
     display_node = RootDisplayAstNode(root_node)
-    print('DisplayTree:')
+    # print('DisplayTree:')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtmodel.ast').write_text(str(display_node))
     # print(str(display_node))
 

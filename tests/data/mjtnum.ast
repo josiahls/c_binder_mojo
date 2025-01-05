@@ -21,13 +21,13 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 		SingleLineComment(line_num=20) // floating point data type and minval 
 		IfNDef(line_num=21) #ifndef mjUSESINGLE 
 			BlankSpace(line_num=22)
-			EndIf(line_num=22) typedef double mjtNum; 
+			TypeDef(line_num=22) typedef double mjtNum; 
 			BlankSpace(line_num=23)
 			Define(line_num=23) #define mjMINVAL    1E-15       
 			SingleLineComment(line_num=23) // minimum value in any denominator 
 	MacroElse(line_num=24) #else 
 		BlankSpace(line_num=25)
-		EndIf(line_num=25) typedef float mjtNum; 
+		TypeDef(line_num=25) typedef float mjtNum; 
 		BlankSpace(line_num=26)
 		Define(line_num=26) #define mjMINVAL    1E-15f 
 	EndIf(line_num=27) #endif
@@ -49,7 +49,8 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 	BlankSpace(line_num=39)
 	SingleLineComment(line_num=40) //-------------------------------------- byte definition ------------------------------------------- 
 	BlankSpace(line_num=41)
-	EndIf(line_num=42) typedef unsigned char mjtByte;    
+	TypeDef(line_num=42) typedef unsigned char mjtByte; 
+	BlankSpace(line_num=42)
 	SingleLineComment(line_num=42) // used for true/false 
 	BlankSpace(line_num=43)
 	BlankSpace(line_num=44)

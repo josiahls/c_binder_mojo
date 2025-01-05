@@ -12,6 +12,8 @@ from c_binder_mojo.ast_statements.blank_space import BlankSpace
 from c_binder_mojo.ast_statements.ifndef import IfNDef
 from c_binder_mojo.ast_statements.define import Define
 from c_binder_mojo.ast_statements.macro_else import MacroElse
+from c_binder_mojo.ast_statements.endif import EndIf
+from c_binder_mojo.ast_statements.typedef import TypeDef
 from c_binder_mojo.primitives import TokenBundle
 
 alias AstStatements = Variant[
@@ -22,7 +24,9 @@ alias AstStatements = Variant[
     BlankSpace,
     IfNDef,
     Define,
-    MacroElse
+    MacroElse,
+    EndIf,
+    TypeDef
 ]
 
 fn to_replace(read x:AstStatements, token_bundle: TokenBundle) -> AstStatements:
@@ -36,6 +40,8 @@ fn to_string(read x:AstStatements) raises -> String:
     elif x.isa[MultiLineComment](): return str(x[MultiLineComment])
     elif x.isa[IfNDef]():      return str(x[IfNDef])
     elif x.isa[MacroElse]():      return str(x[MacroElse])
+    elif x.isa[EndIf]():      return str(x[EndIf])
+    elif x.isa[TypeDef]():      return str(x[TypeDef])
     elif x.isa[Define]():      return str(x[Define])
     elif x.isa[BlankSpace]():      return str(x[BlankSpace])
     elif x.isa[PlaceHolder]():      return str(x[PlaceHolder])
@@ -49,6 +55,8 @@ fn to_done(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[MultiLineComment](): return x[MultiLineComment].done(token_bundle)
     elif x.isa[IfNDef](): return x[IfNDef].done(token_bundle)
     elif x.isa[MacroElse](): return x[MacroElse].done(token_bundle)
+    elif x.isa[EndIf](): return x[EndIf].done(token_bundle)
+    elif x.isa[TypeDef](): return x[TypeDef].done(token_bundle)
     elif x.isa[Define](): return x[Define].done(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].done(token_bundle)
     elif x.isa[PlaceHolder](): return x[PlaceHolder].done(token_bundle)
@@ -61,6 +69,8 @@ fn to_accumulate(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[MultiLineComment](): return x[MultiLineComment].accumulate(token_bundle)
     elif x.isa[IfNDef](): return x[IfNDef].accumulate(token_bundle)
     elif x.isa[MacroElse](): return x[MacroElse].accumulate(token_bundle)
+    elif x.isa[EndIf](): return x[EndIf].accumulate(token_bundle)
+    elif x.isa[TypeDef](): return x[TypeDef].accumulate(token_bundle)
     elif x.isa[Define](): return x[Define].accumulate(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].accumulate(token_bundle)
     elif x.isa[PlaceHolder]():      return x[PlaceHolder].accumulate(token_bundle)
@@ -73,6 +83,8 @@ fn to_do_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[MultiLineComment](): return x[MultiLineComment].do_make_child(token_bundle)
     elif x.isa[IfNDef](): return x[IfNDef].do_make_child(token_bundle)
     elif x.isa[MacroElse](): return x[MacroElse].do_make_child(token_bundle)
+    elif x.isa[EndIf](): return x[EndIf].do_make_child(token_bundle)
+    elif x.isa[TypeDef](): return x[TypeDef].do_make_child(token_bundle)
     elif x.isa[Define](): return x[Define].do_make_child(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].do_make_child(token_bundle)
     elif x.isa[PlaceHolder](): return x[PlaceHolder].do_make_child(token_bundle)
@@ -90,6 +102,10 @@ fn to_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> AstStatem
         return AstStatements(IfNDef(token_bundle)) 
     elif MacroElse.accept(token_bundle): 
         return AstStatements(MacroElse(token_bundle)) 
+    elif EndIf.accept(token_bundle): 
+        return AstStatements(EndIf(token_bundle))  
+    elif TypeDef.accept(token_bundle): 
+        return AstStatements(TypeDef(token_bundle)) 
     elif Define.accept(token_bundle): 
         return AstStatements(Define(token_bundle)) 
     elif BlankSpace.accept(token_bundle): 

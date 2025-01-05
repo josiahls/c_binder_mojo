@@ -25,6 +25,8 @@ struct CTokens:
     alias MACRO_DEFINE = "#define"
     alias MACRO_ELSE = "#else"
     alias MACRO_ENDIF = "#endif"
+    alias TYPE_DEF = "typedef"
+    alias END_STATEMENT = ";"
     alias UNKNOWN = "UNKNOWN"
 
 

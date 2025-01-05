@@ -15,7 +15,7 @@ from c_binder_mojo.ast_statements.macro_else import MacroElse
 from c_binder_mojo.ast_statements.endif import EndIf
 from c_binder_mojo.ast_statements.typedef import TypeDef
 from c_binder_mojo.ast_statements.include import Include
-from c_binder_mojo.ast_statements.scope import Scope
+from c_binder_mojo.ast_statements.scope import Scope, is_scopeable,make_scopeable
 from c_binder_mojo.primitives import TokenBundle
 
 alias AstStatements = Variant[
@@ -114,8 +114,8 @@ fn to_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> AstStatem
         return AstStatements(SingleLineComment(token_bundle))
     elif MultiLineComment.accept(token_bundle):
         return AstStatements(MultiLineComment(token_bundle))
-    elif Scope.accept(token_bundle): 
-        return AstStatements(Scope(token_bundle))  
+    elif Scope.accept(token_bundle):
+        return AstStatements(Scope(make_scopeable(x),token_bundle))  
     elif IfNDef.accept(token_bundle): 
         return AstStatements(IfNDef(token_bundle)) 
     elif MacroElse.accept(token_bundle): 

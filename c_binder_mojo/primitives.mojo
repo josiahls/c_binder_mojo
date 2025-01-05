@@ -15,6 +15,11 @@ struct TokenBundle:
             + ' col_num=' + str(self.col_num)
 
 
+# TODO(josiahls): looks ugly. I think its better to just have start_statement_string, 
+# end_statement_string methods instead.
+alias STRING_SPLIT_AT = "<AST-SPLIT>"
+
+
 struct CTokens:
     alias COMMENT_SINGLE_LINE_BEGIN = "//"
     alias COMMENT_MULTI_LINE_INLINE_BEGIN = "/*"

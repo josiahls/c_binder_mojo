@@ -57,4 +57,4 @@ struct Define(AbstractAstStatement):
             return True
         return False
 
-    fn do_make_child(self, token_bundle:TokenBundle) -> Bool: return False
+    fn do_make_child(mut self, token_bundle:TokenBundle) -> Bool: return False

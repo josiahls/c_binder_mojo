@@ -76,4 +76,4 @@ struct MultiLineComment(AbstractAstStatement):
         self.token_bundles.append(token_bundle)
         return True
     
-    fn do_make_child(self, token_bundle: TokenBundle) -> Bool: return False
+    fn do_make_child(mut self, token_bundle: TokenBundle) -> Bool: return False

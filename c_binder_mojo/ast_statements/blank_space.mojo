@@ -44,4 +44,4 @@ struct BlankSpace(AbstractAstStatement):
             return False
         return self.is_blank(token_bundle)
 
-    fn do_make_child(self, token_bundle:TokenBundle) -> Bool: return False
+    fn do_make_child(mut self, token_bundle:TokenBundle) -> Bool: return False

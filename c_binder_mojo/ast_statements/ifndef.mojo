@@ -49,4 +49,4 @@ struct IfNDef(AbstractAstStatement):
             self.token_bundles.append(token_bundle)
             return True
         return False
-    fn do_make_child(self, token_bundle:TokenBundle) -> Bool: return True
+    fn do_make_child(mut self, token_bundle:TokenBundle) -> Bool: return True

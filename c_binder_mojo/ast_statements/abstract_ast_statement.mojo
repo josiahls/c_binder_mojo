@@ -44,7 +44,7 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         """        
         ...
 
-    fn do_make_child(self, token_bundle: TokenBundle) -> Bool: 
+    fn do_make_child(mut self, token_bundle: TokenBundle) -> Bool: 
         """Whether to create a child AST statement.
 
         TODO: Is this needed? If the given the current line, and if we are not

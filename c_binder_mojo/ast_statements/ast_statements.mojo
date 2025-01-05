@@ -82,7 +82,7 @@ fn to_accumulate(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
 
     raise Error('to_accumulate does not exist to handle line: ' + str(token_bundle))
 
-fn to_do_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
+fn to_do_make_child(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     if   x.isa[Root]():      return x[Root].do_make_child(token_bundle)
     elif x.isa[SingleLineComment](): return x[SingleLineComment].do_make_child(token_bundle)
     elif x.isa[MultiLineComment](): return x[MultiLineComment].do_make_child(token_bundle)

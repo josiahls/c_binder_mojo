@@ -12,6 +12,7 @@ from c_binder_mojo.ast_statements.ast_statements import (
 )
 from c_binder_mojo.ast_statements.root import Root
 from c_binder_mojo.ast_node import AstNode, RootAstNode
+from c_binder_mojo.primitives import STRING_SPLIT_AT
 
 
 @value
@@ -38,10 +39,17 @@ struct DisplayAstNode(CollectionElement):
         var indents = String("")
         for _ in range(self.indents()):
             indents += "\t"
-        s += indents + self.string.replace('\n','\n' + indents)
+
+        var begin_end_s = self.string.split(STRING_SPLIT_AT)
+
+        s += indents + begin_end_s[0].replace('\n','\n' + indents)
         for child in self.children:
             s += "\n"
             s += str(self.root[].nodes[child[]])
+
+        if len(begin_end_s) > 1:
+            s += "\n"
+            s += indents + begin_end_s[1].replace('\n','\n' + indents)
         return s
 
 @value

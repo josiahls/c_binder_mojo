@@ -63,8 +63,8 @@ struct Scope(AbstractAstStatement):
         return False
 
     fn done(self,token_bundle: TokenBundle) -> Bool:
-        if self.token_bundles[-1].token.strip(' ')[-1] == CTokens.SCOPE_END:
-            # print('scope is done')
+        recent_token = String(self.token_bundles[-1].token.strip(' ')).replace(CTokens.END_STATEMENT,'')
+        if recent_token[-1] == CTokens.SCOPE_END:
             return True
 
         return False

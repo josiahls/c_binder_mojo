@@ -1,7 +1,7 @@
 Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujoco/mjtnum.h
 	SingleLineComment(line_num=1) // Copyright 2021 DeepMind Technologies Limited 
 	SingleLineComment(line_num=2) // 
-	SingleLineComment(line_num=3) // Licensed under the Apache License, Version 2.0 (the "License"); 
+	SingleLineComment(line_num=3) // Licensed under the Apache License, Version 2.0 (the "License") ;  
 	SingleLineComment(line_num=4) // you may not use this file except in compliance with the License. 
 	SingleLineComment(line_num=5) // You may obtain a copy of the License at 
 	SingleLineComment(line_num=6) // 
@@ -21,13 +21,15 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 		SingleLineComment(line_num=20) // floating point data type and minval 
 		IfNDef(line_num=21) #ifndef mjUSESINGLE 
 			BlankSpace(line_num=22)
-			TypeDef(line_num=22) typedef double mjtNum; 
+			TypeDef(line_num=22) typedef double mjtNum ; 
+			BlankSpace(line_num=22)
 			BlankSpace(line_num=23)
 			Define(line_num=23) #define mjMINVAL    1E-15       
 			SingleLineComment(line_num=23) // minimum value in any denominator 
 	MacroElse(line_num=24) #else 
 		BlankSpace(line_num=25)
-		TypeDef(line_num=25) typedef float mjtNum; 
+		TypeDef(line_num=25) typedef float mjtNum ; 
+		BlankSpace(line_num=25)
 		BlankSpace(line_num=26)
 		Define(line_num=26) #define mjMINVAL    1E-15f 
 	EndIf(line_num=27) #endif
@@ -49,7 +51,7 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 	BlankSpace(line_num=39)
 	SingleLineComment(line_num=40) //-------------------------------------- byte definition ------------------------------------------- 
 	BlankSpace(line_num=41)
-	TypeDef(line_num=42) typedef unsigned char mjtByte; 
+	TypeDef(line_num=42) typedef unsigned char mjtByte ; 
 	BlankSpace(line_num=42)
 	SingleLineComment(line_num=42) // used for true/false 
 	BlankSpace(line_num=43)

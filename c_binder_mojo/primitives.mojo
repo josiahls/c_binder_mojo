@@ -31,6 +31,7 @@ struct CTokens:
     alias MACRO_ELSE = "#else"
     alias MACRO_ENDIF = "#endif"
     alias TYPE_DEF = "typedef"
+    alias CSTRUCT = "struct"
     alias ENUM = "enum"
     alias SCOPE_BEGIN = "{"
     alias SCOPE_END = "}"

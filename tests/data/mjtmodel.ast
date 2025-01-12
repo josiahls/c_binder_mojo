@@ -61,7 +61,7 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 		BlankSpace(line_num=45)
 		SingleLineComment(line_num=46) //---------------------------------- enum types (mjt) ---------------------------------------------- 
 		BlankSpace(line_num=47)
-		TypeDef(line_num=48) typedef enum mjtDisableBit_ ; 
+		TypeDef(line_num=48) typedef enum mjtDisableBit_ 
 			Scope(line_num=48,scope_type=type_def) { 
 				BlankSpace(line_num=48)
 				SingleLineComment(line_num=48) // disable default feature bitflags 
@@ -184,11 +184,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=66)
 				SingleLineComment(line_num=66) // number of disable flags 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtDisableBit
+		<AST-SPLIT>  mjtDisableBit ; 
 		BlankSpace(line_num=67)
 		BlankSpace(line_num=68)
 		BlankSpace(line_num=69)
-		TypeDef(line_num=70) typedef enum mjtEnableBit_ ; 
+		TypeDef(line_num=70) typedef enum mjtEnableBit_ 
 			Scope(line_num=70,scope_type=type_def) { 
 				BlankSpace(line_num=70)
 				SingleLineComment(line_num=70) // enable optional feature bitflags 
@@ -252,11 +252,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=80)
 				SingleLineComment(line_num=80) // number of enable flags 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtEnableBit
+		<AST-SPLIT>  mjtEnableBit ; 
 		BlankSpace(line_num=81)
 		BlankSpace(line_num=82)
 		BlankSpace(line_num=83)
-		TypeDef(line_num=84) typedef enum mjtJoint_ ; 
+		TypeDef(line_num=84) typedef enum mjtJoint_ 
 			Scope(line_num=84,scope_type=type_def) { 
 				BlankSpace(line_num=84)
 				SingleLineComment(line_num=84) // type of degree of freedom 
@@ -280,11 +280,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=88)
 				SingleLineComment(line_num=88) // rotation angle (rad) around body-fixed axis  (1) 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtJoint
+		<AST-SPLIT>  mjtJoint ; 
 		BlankSpace(line_num=89)
 		BlankSpace(line_num=90)
 		BlankSpace(line_num=91)
-		TypeDef(line_num=92) typedef enum mjtGeom_ ; 
+		TypeDef(line_num=92) typedef enum mjtGeom_ 
 			Scope(line_num=92,scope_type=type_def) { 
 				BlankSpace(line_num=92)
 				SingleLineComment(line_num=92) // type of geometric shape 
@@ -385,11 +385,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=117)
 				SingleLineComment(line_num=117) // missing geom type 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtGeom
+		<AST-SPLIT>  mjtGeom ; 
 		BlankSpace(line_num=118)
 		BlankSpace(line_num=119)
 		BlankSpace(line_num=120)
-		TypeDef(line_num=121) typedef enum mjtCamLight_ ; 
+		TypeDef(line_num=121) typedef enum mjtCamLight_ 
 			Scope(line_num=121,scope_type=type_def) { 
 				BlankSpace(line_num=121)
 				SingleLineComment(line_num=121) // tracking mode for camera and light 
@@ -417,11 +417,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=126)
 				SingleLineComment(line_num=126) // pos fixed in body, rot tracks target subtree com 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtCamLight
+		<AST-SPLIT>  mjtCamLight ; 
 		BlankSpace(line_num=127)
 		BlankSpace(line_num=128)
 		BlankSpace(line_num=129)
-		TypeDef(line_num=130) typedef enum mjtTexture_ ; 
+		TypeDef(line_num=130) typedef enum mjtTexture_ 
 			Scope(line_num=130,scope_type=type_def) { 
 				BlankSpace(line_num=130)
 				SingleLineComment(line_num=130) // type of texture 
@@ -441,11 +441,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=133)
 				SingleLineComment(line_num=133) // cube texture used as skybox 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtTexture
+		<AST-SPLIT>  mjtTexture ; 
 		BlankSpace(line_num=134)
 		BlankSpace(line_num=135)
 		BlankSpace(line_num=136)
-		TypeDef(line_num=137) typedef enum mjtTextureRole_ ; 
+		TypeDef(line_num=137) typedef enum mjtTextureRole_ 
 			Scope(line_num=137,scope_type=type_def) { 
 				BlankSpace(line_num=137)
 				SingleLineComment(line_num=137) // role of texture map in rendering 
@@ -495,11 +495,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=148)
 				PlaceHolder() mjNTEXROLE
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtTextureRole
+		<AST-SPLIT>  mjtTextureRole ; 
 		BlankSpace(line_num=149)
 		BlankSpace(line_num=150)
 		BlankSpace(line_num=151)
-		TypeDef(line_num=152) typedef enum mjtIntegrator_ ; 
+		TypeDef(line_num=152) typedef enum mjtIntegrator_ 
 			Scope(line_num=152,scope_type=type_def) { 
 				BlankSpace(line_num=152)
 				SingleLineComment(line_num=152) // integrator mode 
@@ -523,11 +523,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=156)
 				SingleLineComment(line_num=156) // implicit in velocity, no rne derivative 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtIntegrator
+		<AST-SPLIT>  mjtIntegrator ; 
 		BlankSpace(line_num=157)
 		BlankSpace(line_num=158)
 		BlankSpace(line_num=159)
-		TypeDef(line_num=160) typedef enum mjtCone_ ; 
+		TypeDef(line_num=160) typedef enum mjtCone_ 
 			Scope(line_num=160,scope_type=type_def) { 
 				BlankSpace(line_num=160)
 				SingleLineComment(line_num=160) // type of friction cone 
@@ -543,11 +543,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=162)
 				SingleLineComment(line_num=162) // elliptic 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtCone
+		<AST-SPLIT>  mjtCone ; 
 		BlankSpace(line_num=163)
 		BlankSpace(line_num=164)
 		BlankSpace(line_num=165)
-		TypeDef(line_num=166) typedef enum mjtJacobian_ ; 
+		TypeDef(line_num=166) typedef enum mjtJacobian_ 
 			Scope(line_num=166,scope_type=type_def) { 
 				BlankSpace(line_num=166)
 				SingleLineComment(line_num=166) // type of constraint Jacobian 
@@ -567,11 +567,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=169)
 				SingleLineComment(line_num=169) // dense if nv<60, sparse otherwise 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtJacobian
+		<AST-SPLIT>  mjtJacobian ; 
 		BlankSpace(line_num=170)
 		BlankSpace(line_num=171)
 		BlankSpace(line_num=172)
-		TypeDef(line_num=173) typedef enum mjtSolver_ ; 
+		TypeDef(line_num=173) typedef enum mjtSolver_ 
 			Scope(line_num=173,scope_type=type_def) { 
 				BlankSpace(line_num=173)
 				SingleLineComment(line_num=173) // constraint solver algorithm 
@@ -591,11 +591,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=176)
 				SingleLineComment(line_num=176) // Newton (primal) 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtSolver
+		<AST-SPLIT>  mjtSolver ; 
 		BlankSpace(line_num=177)
 		BlankSpace(line_num=178)
 		BlankSpace(line_num=179)
-		TypeDef(line_num=180) typedef enum mjtEq_ ; 
+		TypeDef(line_num=180) typedef enum mjtEq_ 
 			Scope(line_num=180,scope_type=type_def) { 
 				BlankSpace(line_num=180)
 				SingleLineComment(line_num=180) // type of equality constraint 
@@ -627,11 +627,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=186)
 				SingleLineComment(line_num=186) // unsupported, will cause an error if used 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtEq
+		<AST-SPLIT>  mjtEq ; 
 		BlankSpace(line_num=187)
 		BlankSpace(line_num=188)
 		BlankSpace(line_num=189)
-		TypeDef(line_num=190) typedef enum mjtWrap_ ; 
+		TypeDef(line_num=190) typedef enum mjtWrap_ 
 			Scope(line_num=190,scope_type=type_def) { 
 				BlankSpace(line_num=190)
 				SingleLineComment(line_num=190) // type of tendon wrap object 
@@ -663,11 +663,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=196)
 				SingleLineComment(line_num=196) // wrap around (infinite) cylinder 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtWrap
+		<AST-SPLIT>  mjtWrap ; 
 		BlankSpace(line_num=197)
 		BlankSpace(line_num=198)
 		BlankSpace(line_num=199)
-		TypeDef(line_num=200) typedef enum mjtTrn_ ; 
+		TypeDef(line_num=200) typedef enum mjtTrn_ 
 			Scope(line_num=200,scope_type=type_def) { 
 				BlankSpace(line_num=200)
 				SingleLineComment(line_num=200) // type of actuator transmission 
@@ -707,11 +707,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=208)
 				SingleLineComment(line_num=208) // undefined transmission type 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtTrn
+		<AST-SPLIT>  mjtTrn ; 
 		BlankSpace(line_num=209)
 		BlankSpace(line_num=210)
 		BlankSpace(line_num=211)
-		TypeDef(line_num=212) typedef enum mjtDyn_ ; 
+		TypeDef(line_num=212) typedef enum mjtDyn_ 
 			Scope(line_num=212,scope_type=type_def) { 
 				BlankSpace(line_num=212)
 				SingleLineComment(line_num=212) // type of actuator dynamics 
@@ -743,11 +743,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=218)
 				SingleLineComment(line_num=218) // user-defined dynamics type 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtDyn
+		<AST-SPLIT>  mjtDyn ; 
 		BlankSpace(line_num=219)
 		BlankSpace(line_num=220)
 		BlankSpace(line_num=221)
-		TypeDef(line_num=222) typedef enum mjtGain_ ; 
+		TypeDef(line_num=222) typedef enum mjtGain_ 
 			Scope(line_num=222,scope_type=type_def) { 
 				BlankSpace(line_num=222)
 				SingleLineComment(line_num=222) // type of actuator gain 
@@ -771,11 +771,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=226)
 				SingleLineComment(line_num=226) // user-defined gain type 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtGain
+		<AST-SPLIT>  mjtGain ; 
 		BlankSpace(line_num=227)
 		BlankSpace(line_num=228)
 		BlankSpace(line_num=229)
-		TypeDef(line_num=230) typedef enum mjtBias_ ; 
+		TypeDef(line_num=230) typedef enum mjtBias_ 
 			Scope(line_num=230,scope_type=type_def) { 
 				BlankSpace(line_num=230)
 				SingleLineComment(line_num=230) // type of actuator bias 
@@ -799,11 +799,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=234)
 				SingleLineComment(line_num=234) // user-defined bias type 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtBias
+		<AST-SPLIT>  mjtBias ; 
 		BlankSpace(line_num=235)
 		BlankSpace(line_num=236)
 		BlankSpace(line_num=237)
-		TypeDef(line_num=238) typedef enum mjtObj_ ; 
+		TypeDef(line_num=238) typedef enum mjtObj_ 
 			Scope(line_num=238,scope_type=type_def) { 
 				BlankSpace(line_num=238)
 				SingleLineComment(line_num=238) // type of MujoCo object 
@@ -930,11 +930,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=269)
 				SingleLineComment(line_num=269) // frame 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtObj
+		<AST-SPLIT>  mjtObj ; 
 		BlankSpace(line_num=270)
 		BlankSpace(line_num=271)
 		BlankSpace(line_num=272)
-		TypeDef(line_num=273) typedef enum mjtConstraint_ ; 
+		TypeDef(line_num=273) typedef enum mjtConstraint_ 
 			Scope(line_num=273,scope_type=type_def) { 
 				BlankSpace(line_num=273)
 				SingleLineComment(line_num=273) // type of constraint 
@@ -974,11 +974,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=281)
 				SingleLineComment(line_num=281) // frictional contact, elliptic friction cone 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtConstraint
+		<AST-SPLIT>  mjtConstraint ; 
 		BlankSpace(line_num=282)
 		BlankSpace(line_num=283)
 		BlankSpace(line_num=284)
-		TypeDef(line_num=285) typedef enum mjtConstraintState_ ; 
+		TypeDef(line_num=285) typedef enum mjtConstraintState_ 
 			Scope(line_num=285,scope_type=type_def) { 
 				BlankSpace(line_num=285)
 				SingleLineComment(line_num=285) // constraint state 
@@ -1005,11 +1005,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=290)
 				SingleLineComment(line_num=290) // squared distance to cone cost (elliptic contact) 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtConstraintState
+		<AST-SPLIT>  mjtConstraintState ; 
 		BlankSpace(line_num=291)
 		BlankSpace(line_num=292)
 		BlankSpace(line_num=293)
-		TypeDef(line_num=294) typedef enum mjtSensor_ ; 
+		TypeDef(line_num=294) typedef enum mjtSensor_ 
 			Scope(line_num=294,scope_type=type_def) { 
 				BlankSpace(line_num=294)
 				SingleLineComment(line_num=294) // type of sensor 
@@ -1218,11 +1218,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=356)
 				SingleLineComment(line_num=356) // sensor data provided by mjcb_sensor callback 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtSensor
+		<AST-SPLIT>  mjtSensor ; 
 		BlankSpace(line_num=357)
 		BlankSpace(line_num=358)
 		BlankSpace(line_num=359)
-		TypeDef(line_num=360) typedef enum mjtStage_ ; 
+		TypeDef(line_num=360) typedef enum mjtStage_ 
 			Scope(line_num=360,scope_type=type_def) { 
 				BlankSpace(line_num=360)
 				SingleLineComment(line_num=360) // computation stage 
@@ -1246,11 +1246,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=364)
 				SingleLineComment(line_num=364) // acceleration/force-dependent computations 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtStage
+		<AST-SPLIT>  mjtStage ; 
 		BlankSpace(line_num=365)
 		BlankSpace(line_num=366)
 		BlankSpace(line_num=367)
-		TypeDef(line_num=368) typedef enum mjtDataType_ ; 
+		TypeDef(line_num=368) typedef enum mjtDataType_ 
 			Scope(line_num=368,scope_type=type_def) { 
 				BlankSpace(line_num=368)
 				SingleLineComment(line_num=368) // data type for sensors 
@@ -1274,11 +1274,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=372)
 				SingleLineComment(line_num=372) // unit quaternion 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtDataType
+		<AST-SPLIT>  mjtDataType ; 
 		BlankSpace(line_num=373)
 		BlankSpace(line_num=374)
 		BlankSpace(line_num=375)
-		TypeDef(line_num=376) typedef enum mjtSameFrame_ ; 
+		TypeDef(line_num=376) typedef enum mjtSameFrame_ 
 			Scope(line_num=376,scope_type=type_def) { 
 				BlankSpace(line_num=376)
 				SingleLineComment(line_num=376) // frame alignment of bodies with their children 
@@ -1306,11 +1306,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=381)
 				SingleLineComment(line_num=381) // frame orientation is same as inertia orientation 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtSameFrame
+		<AST-SPLIT>  mjtSameFrame ; 
 		BlankSpace(line_num=382)
 		BlankSpace(line_num=383)
 		BlankSpace(line_num=384)
-		TypeDef(line_num=385) typedef enum mjtLRMode_ ; 
+		TypeDef(line_num=385) typedef enum mjtLRMode_ 
 			Scope(line_num=385,scope_type=type_def) { 
 				BlankSpace(line_num=385)
 				SingleLineComment(line_num=385) // mode for actuator length range computation 
@@ -1334,11 +1334,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=389)
 				SingleLineComment(line_num=389) // process all actuators 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtLRMode
+		<AST-SPLIT>  mjtLRMode ; 
 		BlankSpace(line_num=390)
 		BlankSpace(line_num=391)
 		BlankSpace(line_num=392)
-		TypeDef(line_num=393) typedef enum mjtFlexSelf_ ; 
+		TypeDef(line_num=393) typedef enum mjtFlexSelf_ 
 			Scope(line_num=393,scope_type=type_def) { 
 				BlankSpace(line_num=393)
 				SingleLineComment(line_num=393) // mode for flex selfcollide 
@@ -1366,7 +1366,7 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=398)
 				SingleLineComment(line_num=398) // choose between BVH and SAP automatically 
 			<AST-SPLIT>  } 
-			PlaceHolder() mjtFlexSelf
+		<AST-SPLIT>  mjtFlexSelf ; 
 		BlankSpace(line_num=399)
 		BlankSpace(line_num=400)
 		BlankSpace(line_num=401)

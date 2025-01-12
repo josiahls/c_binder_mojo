@@ -32,8 +32,7 @@ struct TypeDef(AbstractAstStatement):
         return False
 
     fn done(self,token_bundle: TokenBundle) -> Bool:
-        if self.token_bundles[-1].token.strip(' ')[-1] == CTokens.END_STATEMENT:
-            # print('type def is done because of: ' + self.token_bundles[-1].token)
+        if self.token_bundles[-1].token.strip(' ') == CTokens.END_STATEMENT:
             return True
 
         return False
@@ -50,32 +49,13 @@ struct TypeDef(AbstractAstStatement):
     fn accumulate(mut self, token_bundle:TokenBundle) -> Bool:
         var token = token_bundle.token.strip(' ')
         if token == CTokens.SCOPE_BEGIN:
-            self.make_children = True
-            self.stop_making_children = False
-            return False
-
-        if self.stop_making_children and self.make_children:
-            self.make_children = False
             self.token_bundles.append(
                 TokenBundle(STRING_SPLIT_AT, token_bundle.line_num, token_bundle.col_num)
             )
+            return False
 
-        if CTokens.END_STATEMENT in token:
-            self.make_children = False
-            self.stop_making_children = True
-
-        if not self.make_children:
-            self.token_bundles.append(token_bundle)
-            return True
-        return False
+        self.token_bundles.append(token_bundle)
+        return True
 
     fn do_make_child(mut self, token_bundle:TokenBundle) -> Bool:
-        # var token = token_bundle.token.strip(' ')
-        # if CTokens.END_STATEMENT in token:
-        #     print('typedef topped make children: token: ' + str(token_bundle) + ' ' + str(self.line_num()))
-        #     # print('stopped making children')
-        #     self.stop_making_children = True
-        # else:
-        #     print('typedef make children: token: ' + str(token_bundle) + ' ' + str(self.line_num()))
-
-        return self.make_children
+        return True

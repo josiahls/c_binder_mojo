@@ -29,6 +29,13 @@ struct AstNode(CollectionElement):
     #     # self.root.de
     #     print('destroying ast node')
 
+    # fn __copyinit__(out self, existing: Self):
+    #     self.parent = existing.parent
+    #     self.children = existing.children
+    #     self.ast_statement = existing.ast_statement
+    #     self.root = existing.root
+
+
     fn __init__(mut self, root:UnsafePointer[RootAstNode]):
         self.parent = -1
         self.children = List[Int]()

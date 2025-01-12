@@ -30,7 +30,7 @@ struct Define(AbstractAstStatement):
     fn done(self,token_bundle: TokenBundle) -> Bool:
         # We need to wait to see if there is a single comment at the end of the 
         # endif
-        var _token:String = token_bundle.token.strip(' ')
+        var _token:String = String(token_bundle.token.strip(' '))
         if _token in [
             str(CTokens.COMMENT_SINGLE_LINE_BEGIN),
             str(CTokens.COMMENT_MULTI_LINE_BEGIN),

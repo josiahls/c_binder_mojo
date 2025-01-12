@@ -47,7 +47,7 @@ struct CommentEnum:
 
 
 fn comment_token(token:String) -> StringLiteral:
-    var token_:String = token.lstrip(" ")
+    token_ = String(token.lstrip(" "))
     if token_.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
         return CTokens.COMMENT_SINGLE_LINE_BEGIN
     elif token_.startswith(CTokens.COMMENT_MULTI_LINE_BEGIN):

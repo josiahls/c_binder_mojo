@@ -57,12 +57,10 @@ struct Scope(AbstractAstStatement):
     var token_bundles:List[TokenBundle]
     var scopeable_type:ScopeableTypes
 
-    # fn __init__(mut self, scopeable_type:ScopeableTypes, token_bundle:TokenBundle):
     fn __init__(mut self, scopeable_type:ScopeableTypes, token_bundle:TokenBundle):
         """
         Simple curly bracket scoping.
         """
-        print('given token bundle: ' + str(token_bundle)) # TODO: Need to add struct supports. Its getting confused without it.
         self.token_bundles = List[TokenBundle]()
         self.token_bundles.append(token_bundle)
         self.scopeable_type = scopeable_type

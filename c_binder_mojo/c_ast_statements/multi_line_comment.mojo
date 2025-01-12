@@ -4,10 +4,10 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.ast_statements.ast_statements import AstStatements
-from c_binder_mojo.ast_statements.single_line_comment import SingleLineComment
-from c_binder_mojo.primitives import TokenBundle, comment_type, comment_token, CommentEnum,CTokens
+from c_binder_mojo.c_ast_statements.abstract_ast_statement import AbstractAstStatement
+from c_binder_mojo.c_ast_statements.ast_statements import AstStatements
+from c_binder_mojo.c_ast_statements.single_line_comment import SingleLineComment
+from c_binder_mojo.c_primitives import TokenBundle, comment_type, comment_token, CommentEnum,CTokens
 
 
 @value

@@ -5,13 +5,13 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.primitives import TokenBundle, CTokens, STRING_SPLIT_AT
-from c_binder_mojo.ast_statements.ast_statements import AstStatements,to_string
-from c_binder_mojo.ast_statements.typedef import TypeDef
-from c_binder_mojo.ast_statements.cstruct import CStruct
-from c_binder_mojo.ast_statements.blank_space import BlankSpace
-from c_binder_mojo.ast_statements.place_holder import PlaceHolder
+from c_binder_mojo.c_ast_statements.abstract_ast_statement import AbstractAstStatement
+from c_binder_mojo.c_primitives import TokenBundle, CTokens, STRING_SPLIT_AT
+from c_binder_mojo.c_ast_statements.ast_statements import AstStatements,to_string
+from c_binder_mojo.c_ast_statements.typedef import TypeDef
+from c_binder_mojo.c_ast_statements.cstruct import CStruct
+from c_binder_mojo.c_ast_statements.blank_space import BlankSpace
+from c_binder_mojo.c_ast_statements.place_holder import PlaceHolder
 
 
 alias ScopeableTypes = Variant[

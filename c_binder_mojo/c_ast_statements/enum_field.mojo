@@ -4,22 +4,22 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.ast_statements.ast_statements import AstStatements
-from c_binder_mojo.ast_statements.scope import Scope
-from c_binder_mojo.ast_statements.cstruct import CStruct
-from c_binder_mojo.primitives import TokenBundle, CTokens, STRING_SPLIT_AT
+from c_binder_mojo.c_ast_statements.abstract_ast_statement import AbstractAstStatement
+from c_binder_mojo.c_ast_statements.ast_statements import AstStatements
+from c_binder_mojo.c_ast_statements.scope import Scope
+from c_binder_mojo.c_ast_statements.typedef import TypeDef
+from c_binder_mojo.c_primitives import TokenBundle, CTokens, STRING_SPLIT_AT
 
 
-fn is_valid_scope(x:AstStatements) -> Bool:
+fn is_valid_enum_scope(x:AstStatements) -> Bool:
     if x.isa[Scope]():
         scope = x[Scope]
-        return scope.scopeable_type.isa[CStruct]()
+        return scope.scopeable_type.isa[TypeDef]()
     return False
 
 
 @value
-struct CStructField(AbstractAstStatement):
+struct EnumField(AbstractAstStatement):
     var token_bundles:List[TokenBundle]
 
     fn __init__(mut self, token_bundle:TokenBundle):
@@ -43,7 +43,19 @@ struct CStructField(AbstractAstStatement):
         # print('stripeped token: '  + recent_token)
         if recent_token == '':
             return False
-        if recent_token[-1] == CTokens.END_STATEMENT:
+        if recent_token[-1] == ',':
+            return True
+
+        current_token = token_bundle.token.strip(' ')
+
+        # TODO(josiahls): The last field might not have a comma...
+        if current_token[-1] == CTokens.COMMENT_MULTI_LINE_BEGIN:
+            return True
+        if current_token[-1] == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
+            return True
+        if current_token[-1] == CTokens.COMMENT_MULTI_LINE_BEGIN:
+            return True
+        if current_token[-1] == CTokens.SCOPE_END:
             return True
         return False
 
@@ -51,7 +63,7 @@ struct CStructField(AbstractAstStatement):
         return self.token_bundles[0].line_num
 
     fn __str__(self) -> String:
-        var s:String = "CStructField("
+        var s:String = "EnumField("
         s += "line_num=" + str(self.line_num())
         s += ") "
         for token in self.token_bundles:

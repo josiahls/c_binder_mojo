@@ -4,7 +4,7 @@ from memory import UnsafePointer,bitcast, OwnedPointer, ArcPointer
 from pathlib import Path
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.ast_statements.ast_statements import (
+from c_binder_mojo.c_ast_statements.ast_statements import (
     AstStatements,
     to_string,
     to_done,
@@ -13,9 +13,9 @@ from c_binder_mojo.ast_statements.ast_statements import (
     to_replace,
     to_make_child
 )
-from c_binder_mojo.ast_statements.root import Root
-from c_binder_mojo.ast_statements.place_holder import PlaceHolder
-from c_binder_mojo.primitives import TokenBundle
+from c_binder_mojo.c_ast_statements.root import Root
+from c_binder_mojo.c_ast_statements.place_holder import PlaceHolder
+from c_binder_mojo.c_primitives import TokenBundle
 
 
 @value

@@ -66,123 +66,72 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=48)
 				SingleLineComment(line_num=48) // disable default feature bitflags 
 				BlankSpace(line_num=49)
-				PlaceHolder() mjDSBL_CONSTRAINT
-				BlankSpace(line_num=49)
-				PlaceHolder() =
-				PlaceHolder() 1<<0,
+				EnumField(line_num=49) mjDSBL_CONSTRAINT   = 1<<0, 
 				BlankSpace(line_num=49)
 				SingleLineComment(line_num=49) // entire constraint solver 
 				BlankSpace(line_num=50)
-				PlaceHolder() mjDSBL_EQUALITY
-				BlankSpace(line_num=50)
-				PlaceHolder() =
-				PlaceHolder() 1<<1,
+				EnumField(line_num=50) mjDSBL_EQUALITY     = 1<<1, 
 				BlankSpace(line_num=50)
 				SingleLineComment(line_num=50) // equality constraints 
 				BlankSpace(line_num=51)
-				PlaceHolder() mjDSBL_FRICTIONLOSS
-				PlaceHolder() =
-				PlaceHolder() 1<<2,
+				EnumField(line_num=51) mjDSBL_FRICTIONLOSS = 1<<2, 
 				BlankSpace(line_num=51)
 				SingleLineComment(line_num=51) // joint and tendon frictionloss constraints 
 				BlankSpace(line_num=52)
-				PlaceHolder() mjDSBL_LIMIT
-				BlankSpace(line_num=52)
-				PlaceHolder() =
-				PlaceHolder() 1<<3,
+				EnumField(line_num=52) mjDSBL_LIMIT        = 1<<3, 
 				BlankSpace(line_num=52)
 				SingleLineComment(line_num=52) // joint and tendon limit constraints 
 				BlankSpace(line_num=53)
-				PlaceHolder() mjDSBL_CONTACT
-				BlankSpace(line_num=53)
-				PlaceHolder() =
-				PlaceHolder() 1<<4,
+				EnumField(line_num=53) mjDSBL_CONTACT      = 1<<4, 
 				BlankSpace(line_num=53)
 				SingleLineComment(line_num=53) // contact constraints 
 				BlankSpace(line_num=54)
-				PlaceHolder() mjDSBL_PASSIVE
-				BlankSpace(line_num=54)
-				PlaceHolder() =
-				PlaceHolder() 1<<5,
+				EnumField(line_num=54) mjDSBL_PASSIVE      = 1<<5, 
 				BlankSpace(line_num=54)
 				SingleLineComment(line_num=54) // passive forces 
 				BlankSpace(line_num=55)
-				PlaceHolder() mjDSBL_GRAVITY
-				BlankSpace(line_num=55)
-				PlaceHolder() =
-				PlaceHolder() 1<<6,
+				EnumField(line_num=55) mjDSBL_GRAVITY      = 1<<6, 
 				BlankSpace(line_num=55)
 				SingleLineComment(line_num=55) // gravitational forces 
 				BlankSpace(line_num=56)
-				PlaceHolder() mjDSBL_CLAMPCTRL
-				BlankSpace(line_num=56)
-				PlaceHolder() =
-				PlaceHolder() 1<<7,
+				EnumField(line_num=56) mjDSBL_CLAMPCTRL    = 1<<7, 
 				BlankSpace(line_num=56)
 				SingleLineComment(line_num=56) // clamp control to specified range 
 				BlankSpace(line_num=57)
-				PlaceHolder() mjDSBL_WARMSTART
-				BlankSpace(line_num=57)
-				PlaceHolder() =
-				PlaceHolder() 1<<8,
+				EnumField(line_num=57) mjDSBL_WARMSTART    = 1<<8, 
 				BlankSpace(line_num=57)
 				SingleLineComment(line_num=57) // warmstart constraint solver 
 				BlankSpace(line_num=58)
-				PlaceHolder() mjDSBL_FILTERPARENT
-				PlaceHolder() =
-				PlaceHolder() 1<<9,
+				EnumField(line_num=58) mjDSBL_FILTERPARENT = 1<<9, 
 				BlankSpace(line_num=58)
 				SingleLineComment(line_num=58) // remove collisions with parent body 
 				BlankSpace(line_num=59)
-				PlaceHolder() mjDSBL_ACTUATION
-				BlankSpace(line_num=59)
-				PlaceHolder() =
-				PlaceHolder() 1<<10,
+				EnumField(line_num=59) mjDSBL_ACTUATION    = 1<<10, 
 				BlankSpace(line_num=59)
 				SingleLineComment(line_num=59) // apply actuation forces 
 				BlankSpace(line_num=60)
-				PlaceHolder() mjDSBL_REFSAFE
-				BlankSpace(line_num=60)
-				PlaceHolder() =
-				PlaceHolder() 1<<11,
+				EnumField(line_num=60) mjDSBL_REFSAFE      = 1<<11, 
 				BlankSpace(line_num=60)
 				SingleLineComment(line_num=60) // integrator safety: make ref[0]>=2*timestep 
 				BlankSpace(line_num=61)
-				PlaceHolder() mjDSBL_SENSOR
-				BlankSpace(line_num=61)
-				PlaceHolder() =
-				PlaceHolder() 1<<12,
+				EnumField(line_num=61) mjDSBL_SENSOR       = 1<<12, 
 				BlankSpace(line_num=61)
 				SingleLineComment(line_num=61) // sensors 
 				BlankSpace(line_num=62)
-				PlaceHolder() mjDSBL_MIDPHASE
-				BlankSpace(line_num=62)
-				PlaceHolder() =
-				PlaceHolder() 1<<13,
+				EnumField(line_num=62) mjDSBL_MIDPHASE     = 1<<13, 
 				BlankSpace(line_num=62)
 				SingleLineComment(line_num=62) // mid-phase collision filtering 
 				BlankSpace(line_num=63)
-				PlaceHolder() mjDSBL_EULERDAMP
-				BlankSpace(line_num=63)
-				PlaceHolder() =
-				PlaceHolder() 1<<14,
+				EnumField(line_num=63) mjDSBL_EULERDAMP    = 1<<14, 
 				BlankSpace(line_num=63)
 				SingleLineComment(line_num=63) // implicit integration of joint damping in Euler integrator 
 				BlankSpace(line_num=64)
-				PlaceHolder() mjDSBL_AUTORESET
-				BlankSpace(line_num=64)
-				PlaceHolder() =
-				PlaceHolder() 1<<15,
+				EnumField(line_num=64) mjDSBL_AUTORESET    = 1<<15, 
 				BlankSpace(line_num=64)
 				SingleLineComment(line_num=64) // automatic reset when numerical issues are detected 
 				BlankSpace(line_num=65)
 				BlankSpace(line_num=66)
-				PlaceHolder() mjNDISABLE
-				BlankSpace(line_num=66)
-				PlaceHolder() =
-				PlaceHolder() 16
-				BlankSpace(line_num=66)
-				SingleLineComment(line_num=66) // number of disable flags 
+				EnumField(line_num=66) mjNDISABLE          = 16        // number of disable flags 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtDisableBit ; 
 		BlankSpace(line_num=67)
@@ -193,64 +142,38 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=70)
 				SingleLineComment(line_num=70) // enable optional feature bitflags 
 				BlankSpace(line_num=71)
-				PlaceHolder() mjENBL_OVERRIDE
-				BlankSpace(line_num=71)
-				PlaceHolder() =
-				PlaceHolder() 1<<0,
+				EnumField(line_num=71) mjENBL_OVERRIDE     = 1<<0, 
 				BlankSpace(line_num=71)
 				SingleLineComment(line_num=71) // override contact parameters 
 				BlankSpace(line_num=72)
-				PlaceHolder() mjENBL_ENERGY
-				BlankSpace(line_num=72)
-				PlaceHolder() =
-				PlaceHolder() 1<<1,
+				EnumField(line_num=72) mjENBL_ENERGY       = 1<<1, 
 				BlankSpace(line_num=72)
 				SingleLineComment(line_num=72) // energy computation 
 				BlankSpace(line_num=73)
-				PlaceHolder() mjENBL_FWDINV
-				BlankSpace(line_num=73)
-				PlaceHolder() =
-				PlaceHolder() 1<<2,
+				EnumField(line_num=73) mjENBL_FWDINV       = 1<<2, 
 				BlankSpace(line_num=73)
 				SingleLineComment(line_num=73) // record solver statistics 
 				BlankSpace(line_num=74)
-				PlaceHolder() mjENBL_INVDISCRETE
-				BlankSpace(line_num=74)
-				PlaceHolder() =
-				PlaceHolder() 1<<3,
+				EnumField(line_num=74) mjENBL_INVDISCRETE  = 1<<3, 
 				BlankSpace(line_num=74)
 				SingleLineComment(line_num=74) // discrete-time inverse dynamics 
 				BlankSpace(line_num=75)
 				SingleLineComment(line_num=75) // experimental features: 
 				BlankSpace(line_num=76)
-				PlaceHolder() mjENBL_MULTICCD
-				BlankSpace(line_num=76)
-				PlaceHolder() =
-				PlaceHolder() 1<<4,
+				EnumField(line_num=76) mjENBL_MULTICCD     = 1<<4, 
 				BlankSpace(line_num=76)
 				SingleLineComment(line_num=76) // multi-point convex collision detection 
 				BlankSpace(line_num=77)
-				PlaceHolder() mjENBL_ISLAND
-				BlankSpace(line_num=77)
-				PlaceHolder() =
-				PlaceHolder() 1<<5,
+				EnumField(line_num=77) mjENBL_ISLAND       = 1<<5, 
 				BlankSpace(line_num=77)
 				SingleLineComment(line_num=77) // constraint island discovery 
 				BlankSpace(line_num=78)
-				PlaceHolder() mjENBL_NATIVECCD
-				BlankSpace(line_num=78)
-				PlaceHolder() =
-				PlaceHolder() 1<<6,
+				EnumField(line_num=78) mjENBL_NATIVECCD    = 1<<6, 
 				BlankSpace(line_num=78)
 				SingleLineComment(line_num=78) // native convex collision detection 
 				BlankSpace(line_num=79)
 				BlankSpace(line_num=80)
-				PlaceHolder() mjNENABLE
-				BlankSpace(line_num=80)
-				PlaceHolder() =
-				PlaceHolder() 7
-				BlankSpace(line_num=80)
-				SingleLineComment(line_num=80) // number of enable flags 
+				EnumField(line_num=80) mjNENABLE           = 7         // number of enable flags 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtEnableBit ; 
 		BlankSpace(line_num=81)
@@ -261,24 +184,19 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=84)
 				SingleLineComment(line_num=84) // type of degree of freedom 
 				BlankSpace(line_num=85)
-				PlaceHolder() mjJNT_FREE
-				BlankSpace(line_num=85)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=85) mjJNT_FREE          = 0, 
 				BlankSpace(line_num=85)
 				SingleLineComment(line_num=85) // global position and orientation (quat)       (7) 
 				BlankSpace(line_num=86)
-				PlaceHolder() mjJNT_BALL,
+				EnumField(line_num=86) mjJNT_BALL, 
 				BlankSpace(line_num=86)
 				SingleLineComment(line_num=86) // orientation (quat) relative to parent        (4) 
 				BlankSpace(line_num=87)
-				PlaceHolder() mjJNT_SLIDE,
+				EnumField(line_num=87) mjJNT_SLIDE, 
 				BlankSpace(line_num=87)
 				SingleLineComment(line_num=87) // sliding distance along body-fixed axis       (1) 
 				BlankSpace(line_num=88)
-				PlaceHolder() mjJNT_HINGE
-				BlankSpace(line_num=88)
-				SingleLineComment(line_num=88) // rotation angle (rad) around body-fixed axis  (1) 
+				EnumField(line_num=88) mjJNT_HINGE                     // rotation angle (rad) around body-fixed axis  (1) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtJoint ; 
 		BlankSpace(line_num=89)
@@ -291,99 +209,88 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=93)
 				SingleLineComment(line_num=93) // regular geom types 
 				BlankSpace(line_num=94)
-				PlaceHolder() mjGEOM_PLANE
-				BlankSpace(line_num=94)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=94) mjGEOM_PLANE        = 0, 
 				BlankSpace(line_num=94)
 				SingleLineComment(line_num=94) // plane 
 				BlankSpace(line_num=95)
-				PlaceHolder() mjGEOM_HFIELD,
+				EnumField(line_num=95) mjGEOM_HFIELD, 
 				BlankSpace(line_num=95)
 				SingleLineComment(line_num=95) // height field 
 				BlankSpace(line_num=96)
-				PlaceHolder() mjGEOM_SPHERE,
+				EnumField(line_num=96) mjGEOM_SPHERE, 
 				BlankSpace(line_num=96)
 				SingleLineComment(line_num=96) // sphere 
 				BlankSpace(line_num=97)
-				PlaceHolder() mjGEOM_CAPSULE,
+				EnumField(line_num=97) mjGEOM_CAPSULE, 
 				BlankSpace(line_num=97)
 				SingleLineComment(line_num=97) // capsule 
 				BlankSpace(line_num=98)
-				PlaceHolder() mjGEOM_ELLIPSOID,
+				EnumField(line_num=98) mjGEOM_ELLIPSOID, 
 				BlankSpace(line_num=98)
 				SingleLineComment(line_num=98) // ellipsoid 
 				BlankSpace(line_num=99)
-				PlaceHolder() mjGEOM_CYLINDER,
+				EnumField(line_num=99) mjGEOM_CYLINDER, 
 				BlankSpace(line_num=99)
 				SingleLineComment(line_num=99) // cylinder 
 				BlankSpace(line_num=100)
-				PlaceHolder() mjGEOM_BOX,
+				EnumField(line_num=100) mjGEOM_BOX, 
 				BlankSpace(line_num=100)
 				SingleLineComment(line_num=100) // box 
 				BlankSpace(line_num=101)
-				PlaceHolder() mjGEOM_MESH,
+				EnumField(line_num=101) mjGEOM_MESH, 
 				BlankSpace(line_num=101)
 				SingleLineComment(line_num=101) // mesh 
 				BlankSpace(line_num=102)
-				PlaceHolder() mjGEOM_SDF,
+				EnumField(line_num=102) mjGEOM_SDF, 
 				BlankSpace(line_num=102)
 				SingleLineComment(line_num=102) // signed distance field 
 				BlankSpace(line_num=103)
 				BlankSpace(line_num=104)
-				PlaceHolder() mjNGEOMTYPES,
+				EnumField(line_num=104) mjNGEOMTYPES, 
 				BlankSpace(line_num=104)
 				SingleLineComment(line_num=104) // number of regular geom types 
 				BlankSpace(line_num=105)
 				BlankSpace(line_num=106)
 				SingleLineComment(line_num=106) // rendering-only geom types: not used in mjModel, not counted in mjNGEOMTYPES 
 				BlankSpace(line_num=107)
-				PlaceHolder() mjGEOM_ARROW
-				BlankSpace(line_num=107)
-				PlaceHolder() =
-				PlaceHolder() 100,
+				EnumField(line_num=107) mjGEOM_ARROW        = 100, 
 				BlankSpace(line_num=107)
 				SingleLineComment(line_num=107) // arrow 
 				BlankSpace(line_num=108)
-				PlaceHolder() mjGEOM_ARROW1,
+				EnumField(line_num=108) mjGEOM_ARROW1, 
 				BlankSpace(line_num=108)
 				SingleLineComment(line_num=108) // arrow without wedges 
 				BlankSpace(line_num=109)
-				PlaceHolder() mjGEOM_ARROW2,
+				EnumField(line_num=109) mjGEOM_ARROW2, 
 				BlankSpace(line_num=109)
 				SingleLineComment(line_num=109) // arrow in both directions 
 				BlankSpace(line_num=110)
-				PlaceHolder() mjGEOM_LINE,
+				EnumField(line_num=110) mjGEOM_LINE, 
 				BlankSpace(line_num=110)
 				SingleLineComment(line_num=110) // line 
 				BlankSpace(line_num=111)
-				PlaceHolder() mjGEOM_LINEBOX,
+				EnumField(line_num=111) mjGEOM_LINEBOX, 
 				BlankSpace(line_num=111)
 				SingleLineComment(line_num=111) // box with line edges 
 				BlankSpace(line_num=112)
-				PlaceHolder() mjGEOM_FLEX,
+				EnumField(line_num=112) mjGEOM_FLEX, 
 				BlankSpace(line_num=112)
 				SingleLineComment(line_num=112) // flex 
 				BlankSpace(line_num=113)
-				PlaceHolder() mjGEOM_SKIN,
+				EnumField(line_num=113) mjGEOM_SKIN, 
 				BlankSpace(line_num=113)
 				SingleLineComment(line_num=113) // skin 
 				BlankSpace(line_num=114)
-				PlaceHolder() mjGEOM_LABEL,
+				EnumField(line_num=114) mjGEOM_LABEL, 
 				BlankSpace(line_num=114)
 				SingleLineComment(line_num=114) // text label 
 				BlankSpace(line_num=115)
-				PlaceHolder() mjGEOM_TRIANGLE,
+				EnumField(line_num=115) mjGEOM_TRIANGLE, 
 				BlankSpace(line_num=115)
 				SingleLineComment(line_num=115) // triangle 
 				BlankSpace(line_num=116)
 				BlankSpace(line_num=117)
-				PlaceHolder() mjGEOM_NONE
-				BlankSpace(line_num=117)
-				PlaceHolder() =
-				PlaceHolder() 1001
-				BlankSpace(line_num=117)
-				SingleLineComment(line_num=117) // missing geom type 
+				EnumField(line_num=117) mjGEOM_NONE         = 1001      // missing geom type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtGeom ; 
 		BlankSpace(line_num=118)
@@ -394,28 +301,24 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=121)
 				SingleLineComment(line_num=121) // tracking mode for camera and light 
 				BlankSpace(line_num=122)
-				PlaceHolder() mjCAMLIGHT_FIXED
-				BlankSpace(line_num=122)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=122) mjCAMLIGHT_FIXED    = 0, 
 				BlankSpace(line_num=122)
 				SingleLineComment(line_num=122) // pos and rot fixed in body 
 				BlankSpace(line_num=123)
-				PlaceHolder() mjCAMLIGHT_TRACK,
+				EnumField(line_num=123) mjCAMLIGHT_TRACK, 
 				BlankSpace(line_num=123)
 				SingleLineComment(line_num=123) // pos tracks body, rot fixed in global 
 				BlankSpace(line_num=124)
-				PlaceHolder() mjCAMLIGHT_TRACKCOM,
+				EnumField(line_num=124) mjCAMLIGHT_TRACKCOM, 
 				BlankSpace(line_num=124)
 				SingleLineComment(line_num=124) // pos tracks subtree com, rot fixed in body 
 				BlankSpace(line_num=125)
-				PlaceHolder() mjCAMLIGHT_TARGETBODY,
+				EnumField(line_num=125) mjCAMLIGHT_TARGETBODY, 
 				BlankSpace(line_num=125)
 				SingleLineComment(line_num=125) // pos fixed in body, rot tracks target body 
 				BlankSpace(line_num=126)
-				PlaceHolder() mjCAMLIGHT_TARGETBODYCOM
-				BlankSpace(line_num=126)
-				SingleLineComment(line_num=126) // pos fixed in body, rot tracks target subtree com 
+				EnumField(line_num=126) mjCAMLIGHT_TARGETBODYCOM        // pos fixed in body, 
+				EnumField(line_num=126) rot tracks target subtree com 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtCamLight ; 
 		BlankSpace(line_num=127)
@@ -426,20 +329,15 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=130)
 				SingleLineComment(line_num=130) // type of texture 
 				BlankSpace(line_num=131)
-				PlaceHolder() mjTEXTURE_2D
-				BlankSpace(line_num=131)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=131) mjTEXTURE_2D        = 0, 
 				BlankSpace(line_num=131)
 				SingleLineComment(line_num=131) // 2d texture, suitable for planes and hfields 
 				BlankSpace(line_num=132)
-				PlaceHolder() mjTEXTURE_CUBE,
+				EnumField(line_num=132) mjTEXTURE_CUBE, 
 				BlankSpace(line_num=132)
 				SingleLineComment(line_num=132) // cube texture, suitable for all other geom types 
 				BlankSpace(line_num=133)
-				PlaceHolder() mjTEXTURE_SKYBOX
-				BlankSpace(line_num=133)
-				SingleLineComment(line_num=133) // cube texture used as skybox 
+				EnumField(line_num=133) mjTEXTURE_SKYBOX                // cube texture used as skybox 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtTexture ; 
 		BlankSpace(line_num=134)
@@ -450,50 +348,47 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=137)
 				SingleLineComment(line_num=137) // role of texture map in rendering 
 				BlankSpace(line_num=138)
-				PlaceHolder() mjTEXROLE_USER
-				BlankSpace(line_num=138)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=138) mjTEXROLE_USER      = 0, 
 				BlankSpace(line_num=138)
 				SingleLineComment(line_num=138) // unspecified 
 				BlankSpace(line_num=139)
-				PlaceHolder() mjTEXROLE_RGB,
+				EnumField(line_num=139) mjTEXROLE_RGB, 
 				BlankSpace(line_num=139)
 				SingleLineComment(line_num=139) // base color (albedo) 
 				BlankSpace(line_num=140)
-				PlaceHolder() mjTEXROLE_OCCLUSION,
+				EnumField(line_num=140) mjTEXROLE_OCCLUSION, 
 				BlankSpace(line_num=140)
 				SingleLineComment(line_num=140) // ambient occlusion 
 				BlankSpace(line_num=141)
-				PlaceHolder() mjTEXROLE_ROUGHNESS,
+				EnumField(line_num=141) mjTEXROLE_ROUGHNESS, 
 				BlankSpace(line_num=141)
 				SingleLineComment(line_num=141) // roughness 
 				BlankSpace(line_num=142)
-				PlaceHolder() mjTEXROLE_METALLIC,
+				EnumField(line_num=142) mjTEXROLE_METALLIC, 
 				BlankSpace(line_num=142)
 				SingleLineComment(line_num=142) // metallic 
 				BlankSpace(line_num=143)
-				PlaceHolder() mjTEXROLE_NORMAL,
+				EnumField(line_num=143) mjTEXROLE_NORMAL, 
 				BlankSpace(line_num=143)
 				SingleLineComment(line_num=143) // normal (bump) map 
 				BlankSpace(line_num=144)
-				PlaceHolder() mjTEXROLE_OPACITY,
+				EnumField(line_num=144) mjTEXROLE_OPACITY, 
 				BlankSpace(line_num=144)
 				SingleLineComment(line_num=144) // transperancy 
 				BlankSpace(line_num=145)
-				PlaceHolder() mjTEXROLE_EMISSIVE,
+				EnumField(line_num=145) mjTEXROLE_EMISSIVE, 
 				BlankSpace(line_num=145)
 				SingleLineComment(line_num=145) // light emission 
 				BlankSpace(line_num=146)
-				PlaceHolder() mjTEXROLE_RGBA,
+				EnumField(line_num=146) mjTEXROLE_RGBA, 
 				BlankSpace(line_num=146)
 				SingleLineComment(line_num=146) // base color, opacity 
 				BlankSpace(line_num=147)
-				PlaceHolder() mjTEXROLE_ORM,
+				EnumField(line_num=147) mjTEXROLE_ORM, 
 				BlankSpace(line_num=147)
 				SingleLineComment(line_num=147) // occlusion, roughness, metallic 
 				BlankSpace(line_num=148)
-				PlaceHolder() mjNTEXROLE
+				EnumField(line_num=148) mjNTEXROLE 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtTextureRole ; 
 		BlankSpace(line_num=149)
@@ -504,24 +399,20 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=152)
 				SingleLineComment(line_num=152) // integrator mode 
 				BlankSpace(line_num=153)
-				PlaceHolder() mjINT_EULER
-				BlankSpace(line_num=153)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=153) mjINT_EULER         = 0, 
 				BlankSpace(line_num=153)
 				SingleLineComment(line_num=153) // semi-implicit Euler 
 				BlankSpace(line_num=154)
-				PlaceHolder() mjINT_RK4,
+				EnumField(line_num=154) mjINT_RK4, 
 				BlankSpace(line_num=154)
 				SingleLineComment(line_num=154) // 4th-order Runge Kutta 
 				BlankSpace(line_num=155)
-				PlaceHolder() mjINT_IMPLICIT,
+				EnumField(line_num=155) mjINT_IMPLICIT, 
 				BlankSpace(line_num=155)
 				SingleLineComment(line_num=155) // implicit in velocity 
 				BlankSpace(line_num=156)
-				PlaceHolder() mjINT_IMPLICITFAST
-				BlankSpace(line_num=156)
-				SingleLineComment(line_num=156) // implicit in velocity, no rne derivative 
+				EnumField(line_num=156) mjINT_IMPLICITFAST              // implicit in velocity, 
+				EnumField(line_num=156) no rne derivative 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtIntegrator ; 
 		BlankSpace(line_num=157)
@@ -532,16 +423,11 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=160)
 				SingleLineComment(line_num=160) // type of friction cone 
 				BlankSpace(line_num=161)
-				PlaceHolder() mjCONE_PYRAMIDAL
-				BlankSpace(line_num=161)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=161) mjCONE_PYRAMIDAL     = 0, 
 				BlankSpace(line_num=161)
 				SingleLineComment(line_num=161) // pyramidal 
 				BlankSpace(line_num=162)
-				PlaceHolder() mjCONE_ELLIPTIC
-				BlankSpace(line_num=162)
-				SingleLineComment(line_num=162) // elliptic 
+				EnumField(line_num=162) mjCONE_ELLIPTIC                 // elliptic 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtCone ; 
 		BlankSpace(line_num=163)
@@ -552,20 +438,16 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=166)
 				SingleLineComment(line_num=166) // type of constraint Jacobian 
 				BlankSpace(line_num=167)
-				PlaceHolder() mjJAC_DENSE
-				BlankSpace(line_num=167)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=167) mjJAC_DENSE          = 0, 
 				BlankSpace(line_num=167)
 				SingleLineComment(line_num=167) // dense 
 				BlankSpace(line_num=168)
-				PlaceHolder() mjJAC_SPARSE,
+				EnumField(line_num=168) mjJAC_SPARSE, 
 				BlankSpace(line_num=168)
 				SingleLineComment(line_num=168) // sparse 
 				BlankSpace(line_num=169)
-				PlaceHolder() mjJAC_AUTO
-				BlankSpace(line_num=169)
-				SingleLineComment(line_num=169) // dense if nv<60, sparse otherwise 
+				EnumField(line_num=169) mjJAC_AUTO                      // dense if nv<60, 
+				EnumField(line_num=169) sparse otherwise 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtJacobian ; 
 		BlankSpace(line_num=170)
@@ -576,20 +458,15 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=173)
 				SingleLineComment(line_num=173) // constraint solver algorithm 
 				BlankSpace(line_num=174)
-				PlaceHolder() mjSOL_PGS
-				BlankSpace(line_num=174)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=174) mjSOL_PGS            = 0, 
 				BlankSpace(line_num=174)
 				SingleLineComment(line_num=174) // PGS    (dual) 
 				BlankSpace(line_num=175)
-				PlaceHolder() mjSOL_CG,
+				EnumField(line_num=175) mjSOL_CG, 
 				BlankSpace(line_num=175)
 				SingleLineComment(line_num=175) // CG     (primal) 
 				BlankSpace(line_num=176)
-				PlaceHolder() mjSOL_NEWTON
-				BlankSpace(line_num=176)
-				SingleLineComment(line_num=176) // Newton (primal) 
+				EnumField(line_num=176) mjSOL_NEWTON                    // Newton (primal) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtSolver ; 
 		BlankSpace(line_num=177)
@@ -600,32 +477,28 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=180)
 				SingleLineComment(line_num=180) // type of equality constraint 
 				BlankSpace(line_num=181)
-				PlaceHolder() mjEQ_CONNECT
-				BlankSpace(line_num=181)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=181) mjEQ_CONNECT        = 0, 
 				BlankSpace(line_num=181)
 				SingleLineComment(line_num=181) // connect two bodies at a point (ball joint) 
 				BlankSpace(line_num=182)
-				PlaceHolder() mjEQ_WELD,
+				EnumField(line_num=182) mjEQ_WELD, 
 				BlankSpace(line_num=182)
 				SingleLineComment(line_num=182) // fix relative position and orientation of two bodies 
 				BlankSpace(line_num=183)
-				PlaceHolder() mjEQ_JOINT,
+				EnumField(line_num=183) mjEQ_JOINT, 
 				BlankSpace(line_num=183)
 				SingleLineComment(line_num=183) // couple the values of two scalar joints with cubic 
 				BlankSpace(line_num=184)
-				PlaceHolder() mjEQ_TENDON,
+				EnumField(line_num=184) mjEQ_TENDON, 
 				BlankSpace(line_num=184)
 				SingleLineComment(line_num=184) // couple the lengths of two tendons with cubic 
 				BlankSpace(line_num=185)
-				PlaceHolder() mjEQ_FLEX,
+				EnumField(line_num=185) mjEQ_FLEX, 
 				BlankSpace(line_num=185)
 				SingleLineComment(line_num=185) // fix all edge lengths of a flex 
 				BlankSpace(line_num=186)
-				PlaceHolder() mjEQ_DISTANCE
-				BlankSpace(line_num=186)
-				SingleLineComment(line_num=186) // unsupported, will cause an error if used 
+				EnumField(line_num=186) mjEQ_DISTANCE                   // unsupported, 
+				EnumField(line_num=186) will cause an error if used 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtEq ; 
 		BlankSpace(line_num=187)
@@ -636,32 +509,27 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=190)
 				SingleLineComment(line_num=190) // type of tendon wrap object 
 				BlankSpace(line_num=191)
-				PlaceHolder() mjWRAP_NONE
-				BlankSpace(line_num=191)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=191) mjWRAP_NONE         = 0, 
 				BlankSpace(line_num=191)
 				SingleLineComment(line_num=191) // null object 
 				BlankSpace(line_num=192)
-				PlaceHolder() mjWRAP_JOINT,
+				EnumField(line_num=192) mjWRAP_JOINT, 
 				BlankSpace(line_num=192)
 				SingleLineComment(line_num=192) // constant moment arm 
 				BlankSpace(line_num=193)
-				PlaceHolder() mjWRAP_PULLEY,
+				EnumField(line_num=193) mjWRAP_PULLEY, 
 				BlankSpace(line_num=193)
 				SingleLineComment(line_num=193) // pulley used to split tendon 
 				BlankSpace(line_num=194)
-				PlaceHolder() mjWRAP_SITE,
+				EnumField(line_num=194) mjWRAP_SITE, 
 				BlankSpace(line_num=194)
 				SingleLineComment(line_num=194) // pass through site 
 				BlankSpace(line_num=195)
-				PlaceHolder() mjWRAP_SPHERE,
+				EnumField(line_num=195) mjWRAP_SPHERE, 
 				BlankSpace(line_num=195)
 				SingleLineComment(line_num=195) // wrap around sphere 
 				BlankSpace(line_num=196)
-				PlaceHolder() mjWRAP_CYLINDER
-				BlankSpace(line_num=196)
-				SingleLineComment(line_num=196) // wrap around (infinite) cylinder 
+				EnumField(line_num=196) mjWRAP_CYLINDER                 // wrap around (infinite) cylinder 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtWrap ; 
 		BlankSpace(line_num=197)
@@ -672,40 +540,32 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=200)
 				SingleLineComment(line_num=200) // type of actuator transmission 
 				BlankSpace(line_num=201)
-				PlaceHolder() mjTRN_JOINT
-				BlankSpace(line_num=201)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=201) mjTRN_JOINT         = 0, 
 				BlankSpace(line_num=201)
 				SingleLineComment(line_num=201) // force on joint 
 				BlankSpace(line_num=202)
-				PlaceHolder() mjTRN_JOINTINPARENT,
+				EnumField(line_num=202) mjTRN_JOINTINPARENT, 
 				BlankSpace(line_num=202)
 				SingleLineComment(line_num=202) // force on joint, expressed in parent frame 
 				BlankSpace(line_num=203)
-				PlaceHolder() mjTRN_SLIDERCRANK,
+				EnumField(line_num=203) mjTRN_SLIDERCRANK, 
 				BlankSpace(line_num=203)
 				SingleLineComment(line_num=203) // force via slider-crank linkage 
 				BlankSpace(line_num=204)
-				PlaceHolder() mjTRN_TENDON,
+				EnumField(line_num=204) mjTRN_TENDON, 
 				BlankSpace(line_num=204)
 				SingleLineComment(line_num=204) // force on tendon 
 				BlankSpace(line_num=205)
-				PlaceHolder() mjTRN_SITE,
+				EnumField(line_num=205) mjTRN_SITE, 
 				BlankSpace(line_num=205)
 				SingleLineComment(line_num=205) // force on site 
 				BlankSpace(line_num=206)
-				PlaceHolder() mjTRN_BODY,
+				EnumField(line_num=206) mjTRN_BODY, 
 				BlankSpace(line_num=206)
 				SingleLineComment(line_num=206) // adhesion force on a body's geoms 
 				BlankSpace(line_num=207)
 				BlankSpace(line_num=208)
-				PlaceHolder() mjTRN_UNDEFINED
-				BlankSpace(line_num=208)
-				PlaceHolder() =
-				PlaceHolder() 1000
-				BlankSpace(line_num=208)
-				SingleLineComment(line_num=208) // undefined transmission type 
+				EnumField(line_num=208) mjTRN_UNDEFINED     = 1000      // undefined transmission type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtTrn ; 
 		BlankSpace(line_num=209)
@@ -716,32 +576,27 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=212)
 				SingleLineComment(line_num=212) // type of actuator dynamics 
 				BlankSpace(line_num=213)
-				PlaceHolder() mjDYN_NONE
-				BlankSpace(line_num=213)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=213) mjDYN_NONE          = 0, 
 				BlankSpace(line_num=213)
 				SingleLineComment(line_num=213) // no internal dynamics ;  ctrl specifies force 
 				BlankSpace(line_num=214)
-				PlaceHolder() mjDYN_INTEGRATOR,
+				EnumField(line_num=214) mjDYN_INTEGRATOR, 
 				BlankSpace(line_num=214)
 				SingleLineComment(line_num=214) // integrator: da/dt = u 
 				BlankSpace(line_num=215)
-				PlaceHolder() mjDYN_FILTER,
+				EnumField(line_num=215) mjDYN_FILTER, 
 				BlankSpace(line_num=215)
 				SingleLineComment(line_num=215) // linear filter: da/dt = (u-a) / tau 
 				BlankSpace(line_num=216)
-				PlaceHolder() mjDYN_FILTEREXACT,
+				EnumField(line_num=216) mjDYN_FILTEREXACT, 
 				BlankSpace(line_num=216)
 				SingleLineComment(line_num=216) // linear filter: da/dt = (u-a) / tau, with exact integration 
 				BlankSpace(line_num=217)
-				PlaceHolder() mjDYN_MUSCLE,
+				EnumField(line_num=217) mjDYN_MUSCLE, 
 				BlankSpace(line_num=217)
 				SingleLineComment(line_num=217) // piece-wise linear filter with two time constants 
 				BlankSpace(line_num=218)
-				PlaceHolder() mjDYN_USER
-				BlankSpace(line_num=218)
-				SingleLineComment(line_num=218) // user-defined dynamics type 
+				EnumField(line_num=218) mjDYN_USER                      // user-defined dynamics type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtDyn ; 
 		BlankSpace(line_num=219)
@@ -752,24 +607,19 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=222)
 				SingleLineComment(line_num=222) // type of actuator gain 
 				BlankSpace(line_num=223)
-				PlaceHolder() mjGAIN_FIXED
-				BlankSpace(line_num=223)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=223) mjGAIN_FIXED        = 0, 
 				BlankSpace(line_num=223)
 				SingleLineComment(line_num=223) // fixed gain 
 				BlankSpace(line_num=224)
-				PlaceHolder() mjGAIN_AFFINE,
+				EnumField(line_num=224) mjGAIN_AFFINE, 
 				BlankSpace(line_num=224)
 				SingleLineComment(line_num=224) // const + kp*length + kv*velocity 
 				BlankSpace(line_num=225)
-				PlaceHolder() mjGAIN_MUSCLE,
+				EnumField(line_num=225) mjGAIN_MUSCLE, 
 				BlankSpace(line_num=225)
 				SingleLineComment(line_num=225) // muscle FLV curve computed by mju_muscleGain() 
 				BlankSpace(line_num=226)
-				PlaceHolder() mjGAIN_USER
-				BlankSpace(line_num=226)
-				SingleLineComment(line_num=226) // user-defined gain type 
+				EnumField(line_num=226) mjGAIN_USER                     // user-defined gain type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtGain ; 
 		BlankSpace(line_num=227)
@@ -780,24 +630,19 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=230)
 				SingleLineComment(line_num=230) // type of actuator bias 
 				BlankSpace(line_num=231)
-				PlaceHolder() mjBIAS_NONE
-				BlankSpace(line_num=231)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=231) mjBIAS_NONE         = 0, 
 				BlankSpace(line_num=231)
 				SingleLineComment(line_num=231) // no bias 
 				BlankSpace(line_num=232)
-				PlaceHolder() mjBIAS_AFFINE,
+				EnumField(line_num=232) mjBIAS_AFFINE, 
 				BlankSpace(line_num=232)
 				SingleLineComment(line_num=232) // const + kp*length + kv*velocity 
 				BlankSpace(line_num=233)
-				PlaceHolder() mjBIAS_MUSCLE,
+				EnumField(line_num=233) mjBIAS_MUSCLE, 
 				BlankSpace(line_num=233)
 				SingleLineComment(line_num=233) // muscle passive force computed by mju_muscleBias() 
 				BlankSpace(line_num=234)
-				PlaceHolder() mjBIAS_USER
-				BlankSpace(line_num=234)
-				SingleLineComment(line_num=234) // user-defined bias type 
+				EnumField(line_num=234) mjBIAS_USER                     // user-defined bias type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtBias ; 
 		BlankSpace(line_num=235)
@@ -808,127 +653,119 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=238)
 				SingleLineComment(line_num=238) // type of MujoCo object 
 				BlankSpace(line_num=239)
-				PlaceHolder() mjOBJ_UNKNOWN
-				BlankSpace(line_num=239)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=239) mjOBJ_UNKNOWN       = 0, 
 				BlankSpace(line_num=239)
 				SingleLineComment(line_num=239) // unknown object type 
 				BlankSpace(line_num=240)
-				PlaceHolder() mjOBJ_BODY,
+				EnumField(line_num=240) mjOBJ_BODY, 
 				BlankSpace(line_num=240)
 				SingleLineComment(line_num=240) // body 
 				BlankSpace(line_num=241)
-				PlaceHolder() mjOBJ_XBODY,
+				EnumField(line_num=241) mjOBJ_XBODY, 
 				BlankSpace(line_num=241)
 				SingleLineComment(line_num=241) // body, used to access regular frame instead of i-frame 
 				BlankSpace(line_num=242)
-				PlaceHolder() mjOBJ_JOINT,
+				EnumField(line_num=242) mjOBJ_JOINT, 
 				BlankSpace(line_num=242)
 				SingleLineComment(line_num=242) // joint 
 				BlankSpace(line_num=243)
-				PlaceHolder() mjOBJ_DOF,
+				EnumField(line_num=243) mjOBJ_DOF, 
 				BlankSpace(line_num=243)
 				SingleLineComment(line_num=243) // dof 
 				BlankSpace(line_num=244)
-				PlaceHolder() mjOBJ_GEOM,
+				EnumField(line_num=244) mjOBJ_GEOM, 
 				BlankSpace(line_num=244)
 				SingleLineComment(line_num=244) // geom 
 				BlankSpace(line_num=245)
-				PlaceHolder() mjOBJ_SITE,
+				EnumField(line_num=245) mjOBJ_SITE, 
 				BlankSpace(line_num=245)
 				SingleLineComment(line_num=245) // site 
 				BlankSpace(line_num=246)
-				PlaceHolder() mjOBJ_CAMERA,
+				EnumField(line_num=246) mjOBJ_CAMERA, 
 				BlankSpace(line_num=246)
 				SingleLineComment(line_num=246) // camera 
 				BlankSpace(line_num=247)
-				PlaceHolder() mjOBJ_LIGHT,
+				EnumField(line_num=247) mjOBJ_LIGHT, 
 				BlankSpace(line_num=247)
 				SingleLineComment(line_num=247) // light 
 				BlankSpace(line_num=248)
-				PlaceHolder() mjOBJ_FLEX,
+				EnumField(line_num=248) mjOBJ_FLEX, 
 				BlankSpace(line_num=248)
 				SingleLineComment(line_num=248) // flex 
 				BlankSpace(line_num=249)
-				PlaceHolder() mjOBJ_MESH,
+				EnumField(line_num=249) mjOBJ_MESH, 
 				BlankSpace(line_num=249)
 				SingleLineComment(line_num=249) // mesh 
 				BlankSpace(line_num=250)
-				PlaceHolder() mjOBJ_SKIN,
+				EnumField(line_num=250) mjOBJ_SKIN, 
 				BlankSpace(line_num=250)
 				SingleLineComment(line_num=250) // skin 
 				BlankSpace(line_num=251)
-				PlaceHolder() mjOBJ_HFIELD,
+				EnumField(line_num=251) mjOBJ_HFIELD, 
 				BlankSpace(line_num=251)
 				SingleLineComment(line_num=251) // heightfield 
 				BlankSpace(line_num=252)
-				PlaceHolder() mjOBJ_TEXTURE,
+				EnumField(line_num=252) mjOBJ_TEXTURE, 
 				BlankSpace(line_num=252)
 				SingleLineComment(line_num=252) // texture 
 				BlankSpace(line_num=253)
-				PlaceHolder() mjOBJ_MATERIAL,
+				EnumField(line_num=253) mjOBJ_MATERIAL, 
 				BlankSpace(line_num=253)
 				SingleLineComment(line_num=253) // material for rendering 
 				BlankSpace(line_num=254)
-				PlaceHolder() mjOBJ_PAIR,
+				EnumField(line_num=254) mjOBJ_PAIR, 
 				BlankSpace(line_num=254)
 				SingleLineComment(line_num=254) // geom pair to include 
 				BlankSpace(line_num=255)
-				PlaceHolder() mjOBJ_EXCLUDE,
+				EnumField(line_num=255) mjOBJ_EXCLUDE, 
 				BlankSpace(line_num=255)
 				SingleLineComment(line_num=255) // body pair to exclude 
 				BlankSpace(line_num=256)
-				PlaceHolder() mjOBJ_EQUALITY,
+				EnumField(line_num=256) mjOBJ_EQUALITY, 
 				BlankSpace(line_num=256)
 				SingleLineComment(line_num=256) // equality constraint 
 				BlankSpace(line_num=257)
-				PlaceHolder() mjOBJ_TENDON,
+				EnumField(line_num=257) mjOBJ_TENDON, 
 				BlankSpace(line_num=257)
 				SingleLineComment(line_num=257) // tendon 
 				BlankSpace(line_num=258)
-				PlaceHolder() mjOBJ_ACTUATOR,
+				EnumField(line_num=258) mjOBJ_ACTUATOR, 
 				BlankSpace(line_num=258)
 				SingleLineComment(line_num=258) // actuator 
 				BlankSpace(line_num=259)
-				PlaceHolder() mjOBJ_SENSOR,
+				EnumField(line_num=259) mjOBJ_SENSOR, 
 				BlankSpace(line_num=259)
 				SingleLineComment(line_num=259) // sensor 
 				BlankSpace(line_num=260)
-				PlaceHolder() mjOBJ_NUMERIC,
+				EnumField(line_num=260) mjOBJ_NUMERIC, 
 				BlankSpace(line_num=260)
 				SingleLineComment(line_num=260) // numeric 
 				BlankSpace(line_num=261)
-				PlaceHolder() mjOBJ_TEXT,
+				EnumField(line_num=261) mjOBJ_TEXT, 
 				BlankSpace(line_num=261)
 				SingleLineComment(line_num=261) // text 
 				BlankSpace(line_num=262)
-				PlaceHolder() mjOBJ_TUPLE,
+				EnumField(line_num=262) mjOBJ_TUPLE, 
 				BlankSpace(line_num=262)
 				SingleLineComment(line_num=262) // tuple 
 				BlankSpace(line_num=263)
-				PlaceHolder() mjOBJ_KEY,
+				EnumField(line_num=263) mjOBJ_KEY, 
 				BlankSpace(line_num=263)
 				SingleLineComment(line_num=263) // keyframe 
 				BlankSpace(line_num=264)
-				PlaceHolder() mjOBJ_PLUGIN,
+				EnumField(line_num=264) mjOBJ_PLUGIN, 
 				BlankSpace(line_num=264)
 				SingleLineComment(line_num=264) // plugin instance 
 				BlankSpace(line_num=265)
 				BlankSpace(line_num=266)
-				PlaceHolder() mjNOBJECT,
+				EnumField(line_num=266) mjNOBJECT, 
 				BlankSpace(line_num=266)
 				SingleLineComment(line_num=266) // number of object types 
 				BlankSpace(line_num=267)
 				BlankSpace(line_num=268)
 				SingleLineComment(line_num=268) // meta elements, do not appear in mjModel 
 				BlankSpace(line_num=269)
-				PlaceHolder() mjOBJ_FRAME
-				BlankSpace(line_num=269)
-				PlaceHolder() =
-				PlaceHolder() 100
-				BlankSpace(line_num=269)
-				SingleLineComment(line_num=269) // frame 
+				EnumField(line_num=269) mjOBJ_FRAME         = 100       // frame 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtObj ; 
 		BlankSpace(line_num=270)
@@ -939,40 +776,36 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=273)
 				SingleLineComment(line_num=273) // type of constraint 
 				BlankSpace(line_num=274)
-				PlaceHolder() mjCNSTR_EQUALITY
-				BlankSpace(line_num=274)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=274) mjCNSTR_EQUALITY    = 0, 
 				BlankSpace(line_num=274)
 				SingleLineComment(line_num=274) // equality constraint 
 				BlankSpace(line_num=275)
-				PlaceHolder() mjCNSTR_FRICTION_DOF,
+				EnumField(line_num=275) mjCNSTR_FRICTION_DOF, 
 				BlankSpace(line_num=275)
 				SingleLineComment(line_num=275) // dof friction 
 				BlankSpace(line_num=276)
-				PlaceHolder() mjCNSTR_FRICTION_TENDON,
+				EnumField(line_num=276) mjCNSTR_FRICTION_TENDON, 
 				BlankSpace(line_num=276)
 				SingleLineComment(line_num=276) // tendon friction 
 				BlankSpace(line_num=277)
-				PlaceHolder() mjCNSTR_LIMIT_JOINT,
+				EnumField(line_num=277) mjCNSTR_LIMIT_JOINT, 
 				BlankSpace(line_num=277)
 				SingleLineComment(line_num=277) // joint limit 
 				BlankSpace(line_num=278)
-				PlaceHolder() mjCNSTR_LIMIT_TENDON,
+				EnumField(line_num=278) mjCNSTR_LIMIT_TENDON, 
 				BlankSpace(line_num=278)
 				SingleLineComment(line_num=278) // tendon limit 
 				BlankSpace(line_num=279)
-				PlaceHolder() mjCNSTR_CONTACT_FRICTIONLESS,
+				EnumField(line_num=279) mjCNSTR_CONTACT_FRICTIONLESS, 
 				BlankSpace(line_num=279)
 				SingleLineComment(line_num=279) // frictionless contact 
 				BlankSpace(line_num=280)
-				PlaceHolder() mjCNSTR_CONTACT_PYRAMIDAL,
+				EnumField(line_num=280) mjCNSTR_CONTACT_PYRAMIDAL, 
 				BlankSpace(line_num=280)
 				SingleLineComment(line_num=280) // frictional contact, pyramidal friction cone 
 				BlankSpace(line_num=281)
-				PlaceHolder() mjCNSTR_CONTACT_ELLIPTIC
-				BlankSpace(line_num=281)
-				SingleLineComment(line_num=281) // frictional contact, elliptic friction cone 
+				EnumField(line_num=281) mjCNSTR_CONTACT_ELLIPTIC        // frictional contact, 
+				EnumField(line_num=281) elliptic friction cone 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtConstraint ; 
 		BlankSpace(line_num=282)
@@ -983,27 +816,23 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=285)
 				SingleLineComment(line_num=285) // constraint state 
 				BlankSpace(line_num=286)
-				PlaceHolder() mjCNSTRSTATE_SATISFIED
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=286) mjCNSTRSTATE_SATISFIED = 0, 
 				BlankSpace(line_num=286)
 				SingleLineComment(line_num=286) // constraint satisfied, zero cost (limit, contact) 
 				BlankSpace(line_num=287)
-				PlaceHolder() mjCNSTRSTATE_QUADRATIC,
+				EnumField(line_num=287) mjCNSTRSTATE_QUADRATIC, 
 				BlankSpace(line_num=287)
 				SingleLineComment(line_num=287) // quadratic cost (equality, friction, limit, contact) 
 				BlankSpace(line_num=288)
-				PlaceHolder() mjCNSTRSTATE_LINEARNEG,
+				EnumField(line_num=288) mjCNSTRSTATE_LINEARNEG, 
 				BlankSpace(line_num=288)
 				SingleLineComment(line_num=288) // linear cost, negative side (friction) 
 				BlankSpace(line_num=289)
-				PlaceHolder() mjCNSTRSTATE_LINEARPOS,
+				EnumField(line_num=289) mjCNSTRSTATE_LINEARPOS, 
 				BlankSpace(line_num=289)
 				SingleLineComment(line_num=289) // linear cost, positive side (friction) 
 				BlankSpace(line_num=290)
-				PlaceHolder() mjCNSTRSTATE_CONE
-				BlankSpace(line_num=290)
-				SingleLineComment(line_num=290) // squared distance to cone cost (elliptic contact) 
+				EnumField(line_num=290) mjCNSTRSTATE_CONE                 // squared distance to cone cost (elliptic contact) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtConstraintState ; 
 		BlankSpace(line_num=291)
@@ -1016,207 +845,202 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=295)
 				SingleLineComment(line_num=295) // common robotic sensors, attached to a site 
 				BlankSpace(line_num=296)
-				PlaceHolder() mjSENS_TOUCH
-				BlankSpace(line_num=296)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=296) mjSENS_TOUCH        = 0, 
 				BlankSpace(line_num=296)
 				SingleLineComment(line_num=296) // scalar contact normal forces summed over sensor zone 
 				BlankSpace(line_num=297)
-				PlaceHolder() mjSENS_ACCELEROMETER,
+				EnumField(line_num=297) mjSENS_ACCELEROMETER, 
 				BlankSpace(line_num=297)
 				SingleLineComment(line_num=297) // 3D linear acceleration, in local frame 
 				BlankSpace(line_num=298)
-				PlaceHolder() mjSENS_VELOCIMETER,
+				EnumField(line_num=298) mjSENS_VELOCIMETER, 
 				BlankSpace(line_num=298)
 				SingleLineComment(line_num=298) // 3D linear velocity, in local frame 
 				BlankSpace(line_num=299)
-				PlaceHolder() mjSENS_GYRO,
+				EnumField(line_num=299) mjSENS_GYRO, 
 				BlankSpace(line_num=299)
 				SingleLineComment(line_num=299) // 3D angular velocity, in local frame 
 				BlankSpace(line_num=300)
-				PlaceHolder() mjSENS_FORCE,
+				EnumField(line_num=300) mjSENS_FORCE, 
 				BlankSpace(line_num=300)
 				SingleLineComment(line_num=300) // 3D force between site's body and its parent body 
 				BlankSpace(line_num=301)
-				PlaceHolder() mjSENS_TORQUE,
+				EnumField(line_num=301) mjSENS_TORQUE, 
 				BlankSpace(line_num=301)
 				SingleLineComment(line_num=301) // 3D torque between site's body and its parent body 
 				BlankSpace(line_num=302)
-				PlaceHolder() mjSENS_MAGNETOMETER,
+				EnumField(line_num=302) mjSENS_MAGNETOMETER, 
 				BlankSpace(line_num=302)
 				SingleLineComment(line_num=302) // 3D magnetometer 
 				BlankSpace(line_num=303)
-				PlaceHolder() mjSENS_RANGEFINDER,
+				EnumField(line_num=303) mjSENS_RANGEFINDER, 
 				BlankSpace(line_num=303)
 				SingleLineComment(line_num=303) // scalar distance to nearest geom or site along z-axis 
 				BlankSpace(line_num=304)
-				PlaceHolder() mjSENS_CAMPROJECTION,
+				EnumField(line_num=304) mjSENS_CAMPROJECTION, 
 				BlankSpace(line_num=304)
 				SingleLineComment(line_num=304) // pixel coordinates of a site in the camera image 
 				BlankSpace(line_num=305)
 				BlankSpace(line_num=306)
 				SingleLineComment(line_num=306) // sensors related to scalar joints, tendons, actuators 
 				BlankSpace(line_num=307)
-				PlaceHolder() mjSENS_JOINTPOS,
+				EnumField(line_num=307) mjSENS_JOINTPOS, 
 				BlankSpace(line_num=307)
 				SingleLineComment(line_num=307) // scalar joint position (hinge and slide only) 
 				BlankSpace(line_num=308)
-				PlaceHolder() mjSENS_JOINTVEL,
+				EnumField(line_num=308) mjSENS_JOINTVEL, 
 				BlankSpace(line_num=308)
 				SingleLineComment(line_num=308) // scalar joint velocity (hinge and slide only) 
 				BlankSpace(line_num=309)
-				PlaceHolder() mjSENS_TENDONPOS,
+				EnumField(line_num=309) mjSENS_TENDONPOS, 
 				BlankSpace(line_num=309)
 				SingleLineComment(line_num=309) // scalar tendon position 
 				BlankSpace(line_num=310)
-				PlaceHolder() mjSENS_TENDONVEL,
+				EnumField(line_num=310) mjSENS_TENDONVEL, 
 				BlankSpace(line_num=310)
 				SingleLineComment(line_num=310) // scalar tendon velocity 
 				BlankSpace(line_num=311)
-				PlaceHolder() mjSENS_ACTUATORPOS,
+				EnumField(line_num=311) mjSENS_ACTUATORPOS, 
 				BlankSpace(line_num=311)
 				SingleLineComment(line_num=311) // scalar actuator position 
 				BlankSpace(line_num=312)
-				PlaceHolder() mjSENS_ACTUATORVEL,
+				EnumField(line_num=312) mjSENS_ACTUATORVEL, 
 				BlankSpace(line_num=312)
 				SingleLineComment(line_num=312) // scalar actuator velocity 
 				BlankSpace(line_num=313)
-				PlaceHolder() mjSENS_ACTUATORFRC,
+				EnumField(line_num=313) mjSENS_ACTUATORFRC, 
 				BlankSpace(line_num=313)
 				SingleLineComment(line_num=313) // scalar actuator force 
 				BlankSpace(line_num=314)
-				PlaceHolder() mjSENS_JOINTACTFRC,
+				EnumField(line_num=314) mjSENS_JOINTACTFRC, 
 				BlankSpace(line_num=314)
 				SingleLineComment(line_num=314) // scalar actuator force, measured at the joint 
 				BlankSpace(line_num=315)
 				BlankSpace(line_num=316)
 				SingleLineComment(line_num=316) // sensors related to ball joints 
 				BlankSpace(line_num=317)
-				PlaceHolder() mjSENS_BALLQUAT,
+				EnumField(line_num=317) mjSENS_BALLQUAT, 
 				BlankSpace(line_num=317)
 				SingleLineComment(line_num=317) // 4D ball joint quaternion 
 				BlankSpace(line_num=318)
-				PlaceHolder() mjSENS_BALLANGVEL,
+				EnumField(line_num=318) mjSENS_BALLANGVEL, 
 				BlankSpace(line_num=318)
 				SingleLineComment(line_num=318) // 3D ball joint angular velocity 
 				BlankSpace(line_num=319)
 				BlankSpace(line_num=320)
 				SingleLineComment(line_num=320) // joint and tendon limit sensors, in constraint space 
 				BlankSpace(line_num=321)
-				PlaceHolder() mjSENS_JOINTLIMITPOS,
+				EnumField(line_num=321) mjSENS_JOINTLIMITPOS, 
 				BlankSpace(line_num=321)
 				SingleLineComment(line_num=321) // joint limit distance-margin 
 				BlankSpace(line_num=322)
-				PlaceHolder() mjSENS_JOINTLIMITVEL,
+				EnumField(line_num=322) mjSENS_JOINTLIMITVEL, 
 				BlankSpace(line_num=322)
 				SingleLineComment(line_num=322) // joint limit velocity 
 				BlankSpace(line_num=323)
-				PlaceHolder() mjSENS_JOINTLIMITFRC,
+				EnumField(line_num=323) mjSENS_JOINTLIMITFRC, 
 				BlankSpace(line_num=323)
 				SingleLineComment(line_num=323) // joint limit force 
 				BlankSpace(line_num=324)
-				PlaceHolder() mjSENS_TENDONLIMITPOS,
+				EnumField(line_num=324) mjSENS_TENDONLIMITPOS, 
 				BlankSpace(line_num=324)
 				SingleLineComment(line_num=324) // tendon limit distance-margin 
 				BlankSpace(line_num=325)
-				PlaceHolder() mjSENS_TENDONLIMITVEL,
+				EnumField(line_num=325) mjSENS_TENDONLIMITVEL, 
 				BlankSpace(line_num=325)
 				SingleLineComment(line_num=325) // tendon limit velocity 
 				BlankSpace(line_num=326)
-				PlaceHolder() mjSENS_TENDONLIMITFRC,
+				EnumField(line_num=326) mjSENS_TENDONLIMITFRC, 
 				BlankSpace(line_num=326)
 				SingleLineComment(line_num=326) // tendon limit force 
 				BlankSpace(line_num=327)
 				BlankSpace(line_num=328)
 				SingleLineComment(line_num=328) // sensors attached to an object with spatial frame: (x)body, geom, site, camera 
 				BlankSpace(line_num=329)
-				PlaceHolder() mjSENS_FRAMEPOS,
+				EnumField(line_num=329) mjSENS_FRAMEPOS, 
 				BlankSpace(line_num=329)
 				SingleLineComment(line_num=329) // 3D position 
 				BlankSpace(line_num=330)
-				PlaceHolder() mjSENS_FRAMEQUAT,
+				EnumField(line_num=330) mjSENS_FRAMEQUAT, 
 				BlankSpace(line_num=330)
 				SingleLineComment(line_num=330) // 4D unit quaternion orientation 
 				BlankSpace(line_num=331)
-				PlaceHolder() mjSENS_FRAMEXAXIS,
+				EnumField(line_num=331) mjSENS_FRAMEXAXIS, 
 				BlankSpace(line_num=331)
 				SingleLineComment(line_num=331) // 3D unit vector: x-axis of object's frame 
 				BlankSpace(line_num=332)
-				PlaceHolder() mjSENS_FRAMEYAXIS,
+				EnumField(line_num=332) mjSENS_FRAMEYAXIS, 
 				BlankSpace(line_num=332)
 				SingleLineComment(line_num=332) // 3D unit vector: y-axis of object's frame 
 				BlankSpace(line_num=333)
-				PlaceHolder() mjSENS_FRAMEZAXIS,
+				EnumField(line_num=333) mjSENS_FRAMEZAXIS, 
 				BlankSpace(line_num=333)
 				SingleLineComment(line_num=333) // 3D unit vector: z-axis of object's frame 
 				BlankSpace(line_num=334)
-				PlaceHolder() mjSENS_FRAMELINVEL,
+				EnumField(line_num=334) mjSENS_FRAMELINVEL, 
 				BlankSpace(line_num=334)
 				SingleLineComment(line_num=334) // 3D linear velocity 
 				BlankSpace(line_num=335)
-				PlaceHolder() mjSENS_FRAMEANGVEL,
+				EnumField(line_num=335) mjSENS_FRAMEANGVEL, 
 				BlankSpace(line_num=335)
 				SingleLineComment(line_num=335) // 3D angular velocity 
 				BlankSpace(line_num=336)
-				PlaceHolder() mjSENS_FRAMELINACC,
+				EnumField(line_num=336) mjSENS_FRAMELINACC, 
 				BlankSpace(line_num=336)
 				SingleLineComment(line_num=336) // 3D linear acceleration 
 				BlankSpace(line_num=337)
-				PlaceHolder() mjSENS_FRAMEANGACC,
+				EnumField(line_num=337) mjSENS_FRAMEANGACC, 
 				BlankSpace(line_num=337)
 				SingleLineComment(line_num=337) // 3D angular acceleration 
 				BlankSpace(line_num=338)
 				BlankSpace(line_num=339)
 				SingleLineComment(line_num=339) // sensors related to kinematic subtrees ;  attached to a body (which is the subtree root) 
 				BlankSpace(line_num=340)
-				PlaceHolder() mjSENS_SUBTREECOM,
+				EnumField(line_num=340) mjSENS_SUBTREECOM, 
 				BlankSpace(line_num=340)
 				SingleLineComment(line_num=340) // 3D center of mass of subtree 
 				BlankSpace(line_num=341)
-				PlaceHolder() mjSENS_SUBTREELINVEL,
+				EnumField(line_num=341) mjSENS_SUBTREELINVEL, 
 				BlankSpace(line_num=341)
 				SingleLineComment(line_num=341) // 3D linear velocity of subtree 
 				BlankSpace(line_num=342)
-				PlaceHolder() mjSENS_SUBTREEANGMOM,
+				EnumField(line_num=342) mjSENS_SUBTREEANGMOM, 
 				BlankSpace(line_num=342)
 				SingleLineComment(line_num=342) // 3D angular momentum of subtree 
 				BlankSpace(line_num=343)
 				BlankSpace(line_num=344)
 				SingleLineComment(line_num=344) // sensors for geometric distance ;  attached to geoms or bodies 
 				BlankSpace(line_num=345)
-				PlaceHolder() mjSENS_GEOMDIST,
+				EnumField(line_num=345) mjSENS_GEOMDIST, 
 				BlankSpace(line_num=345)
 				SingleLineComment(line_num=345) // signed distance between two geoms 
 				BlankSpace(line_num=346)
-				PlaceHolder() mjSENS_GEOMNORMAL,
+				EnumField(line_num=346) mjSENS_GEOMNORMAL, 
 				BlankSpace(line_num=346)
 				SingleLineComment(line_num=346) // normal direction between two geoms 
 				BlankSpace(line_num=347)
-				PlaceHolder() mjSENS_GEOMFROMTO,
+				EnumField(line_num=347) mjSENS_GEOMFROMTO, 
 				BlankSpace(line_num=347)
 				SingleLineComment(line_num=347) // segment between two geoms 
 				BlankSpace(line_num=348)
 				BlankSpace(line_num=349)
 				SingleLineComment(line_num=349) // global sensors 
 				BlankSpace(line_num=350)
-				PlaceHolder() mjSENS_CLOCK,
+				EnumField(line_num=350) mjSENS_CLOCK, 
 				BlankSpace(line_num=350)
 				SingleLineComment(line_num=350) // simulation time 
 				BlankSpace(line_num=351)
 				BlankSpace(line_num=352)
 				SingleLineComment(line_num=352) // plugin-controlled sensors 
 				BlankSpace(line_num=353)
-				PlaceHolder() mjSENS_PLUGIN,
+				EnumField(line_num=353) mjSENS_PLUGIN, 
 				BlankSpace(line_num=353)
 				SingleLineComment(line_num=353) // plugin-controlled 
 				BlankSpace(line_num=354)
 				BlankSpace(line_num=355)
 				SingleLineComment(line_num=355) // user-defined sensor 
 				BlankSpace(line_num=356)
-				PlaceHolder() mjSENS_USER
-				BlankSpace(line_num=356)
-				SingleLineComment(line_num=356) // sensor data provided by mjcb_sensor callback 
+				EnumField(line_num=356) mjSENS_USER                     // sensor data provided by mjcb_sensor callback 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtSensor ; 
 		BlankSpace(line_num=357)
@@ -1227,24 +1051,19 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=360)
 				SingleLineComment(line_num=360) // computation stage 
 				BlankSpace(line_num=361)
-				PlaceHolder() mjSTAGE_NONE
-				BlankSpace(line_num=361)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=361) mjSTAGE_NONE        = 0, 
 				BlankSpace(line_num=361)
 				SingleLineComment(line_num=361) // no computations 
 				BlankSpace(line_num=362)
-				PlaceHolder() mjSTAGE_POS,
+				EnumField(line_num=362) mjSTAGE_POS, 
 				BlankSpace(line_num=362)
 				SingleLineComment(line_num=362) // position-dependent computations 
 				BlankSpace(line_num=363)
-				PlaceHolder() mjSTAGE_VEL,
+				EnumField(line_num=363) mjSTAGE_VEL, 
 				BlankSpace(line_num=363)
 				SingleLineComment(line_num=363) // velocity-dependent computations 
 				BlankSpace(line_num=364)
-				PlaceHolder() mjSTAGE_ACC
-				BlankSpace(line_num=364)
-				SingleLineComment(line_num=364) // acceleration/force-dependent computations 
+				EnumField(line_num=364) mjSTAGE_ACC                     // acceleration/force-dependent computations 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtStage ; 
 		BlankSpace(line_num=365)
@@ -1255,24 +1074,19 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=368)
 				SingleLineComment(line_num=368) // data type for sensors 
 				BlankSpace(line_num=369)
-				PlaceHolder() mjDATATYPE_REAL
-				BlankSpace(line_num=369)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=369) mjDATATYPE_REAL     = 0, 
 				BlankSpace(line_num=369)
 				SingleLineComment(line_num=369) // real values, no constraints 
 				BlankSpace(line_num=370)
-				PlaceHolder() mjDATATYPE_POSITIVE,
+				EnumField(line_num=370) mjDATATYPE_POSITIVE, 
 				BlankSpace(line_num=370)
 				SingleLineComment(line_num=370) // positive values ;  0 or negative: inactive 
 				BlankSpace(line_num=371)
-				PlaceHolder() mjDATATYPE_AXIS,
+				EnumField(line_num=371) mjDATATYPE_AXIS, 
 				BlankSpace(line_num=371)
 				SingleLineComment(line_num=371) // 3D unit vector 
 				BlankSpace(line_num=372)
-				PlaceHolder() mjDATATYPE_QUATERNION
-				BlankSpace(line_num=372)
-				SingleLineComment(line_num=372) // unit quaternion 
+				EnumField(line_num=372) mjDATATYPE_QUATERNION           // unit quaternion 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtDataType ; 
 		BlankSpace(line_num=373)
@@ -1283,28 +1097,23 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=376)
 				SingleLineComment(line_num=376) // frame alignment of bodies with their children 
 				BlankSpace(line_num=377)
-				PlaceHolder() mjSAMEFRAME_NONE
-				BlankSpace(line_num=377)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=377) mjSAMEFRAME_NONE    = 0, 
 				BlankSpace(line_num=377)
 				SingleLineComment(line_num=377) // no alignment 
 				BlankSpace(line_num=378)
-				PlaceHolder() mjSAMEFRAME_BODY,
+				EnumField(line_num=378) mjSAMEFRAME_BODY, 
 				BlankSpace(line_num=378)
 				SingleLineComment(line_num=378) // frame is same as body frame 
 				BlankSpace(line_num=379)
-				PlaceHolder() mjSAMEFRAME_INERTIA,
+				EnumField(line_num=379) mjSAMEFRAME_INERTIA, 
 				BlankSpace(line_num=379)
 				SingleLineComment(line_num=379) // frame is same as inertial frame 
 				BlankSpace(line_num=380)
-				PlaceHolder() mjSAMEFRAME_BODYROT,
+				EnumField(line_num=380) mjSAMEFRAME_BODYROT, 
 				BlankSpace(line_num=380)
 				SingleLineComment(line_num=380) // frame orientation is same as body orientation 
 				BlankSpace(line_num=381)
-				PlaceHolder() mjSAMEFRAME_INERTIAROT
-				BlankSpace(line_num=381)
-				SingleLineComment(line_num=381) // frame orientation is same as inertia orientation 
+				EnumField(line_num=381) mjSAMEFRAME_INERTIAROT          // frame orientation is same as inertia orientation 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtSameFrame ; 
 		BlankSpace(line_num=382)
@@ -1315,24 +1124,19 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=385)
 				SingleLineComment(line_num=385) // mode for actuator length range computation 
 				BlankSpace(line_num=386)
-				PlaceHolder() mjLRMODE_NONE
-				BlankSpace(line_num=386)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=386) mjLRMODE_NONE   = 0, 
 				BlankSpace(line_num=386)
 				SingleLineComment(line_num=386) // do not process any actuators 
 				BlankSpace(line_num=387)
-				PlaceHolder() mjLRMODE_MUSCLE,
+				EnumField(line_num=387) mjLRMODE_MUSCLE, 
 				BlankSpace(line_num=387)
 				SingleLineComment(line_num=387) // process muscle actuators 
 				BlankSpace(line_num=388)
-				PlaceHolder() mjLRMODE_MUSCLEUSER,
+				EnumField(line_num=388) mjLRMODE_MUSCLEUSER, 
 				BlankSpace(line_num=388)
 				SingleLineComment(line_num=388) // process muscle and user actuators 
 				BlankSpace(line_num=389)
-				PlaceHolder() mjLRMODE_ALL
-				BlankSpace(line_num=389)
-				SingleLineComment(line_num=389) // process all actuators 
+				EnumField(line_num=389) mjLRMODE_ALL                    // process all actuators 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtLRMode ; 
 		BlankSpace(line_num=390)
@@ -1343,28 +1147,23 @@ Root(): text: /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujo
 				BlankSpace(line_num=393)
 				SingleLineComment(line_num=393) // mode for flex selfcollide 
 				BlankSpace(line_num=394)
-				PlaceHolder() mjFLEXSELF_NONE
-				BlankSpace(line_num=394)
-				PlaceHolder() =
-				PlaceHolder() 0,
+				EnumField(line_num=394) mjFLEXSELF_NONE   = 0, 
 				BlankSpace(line_num=394)
 				SingleLineComment(line_num=394) // no self-collisions 
 				BlankSpace(line_num=395)
-				PlaceHolder() mjFLEXSELF_NARROW,
+				EnumField(line_num=395) mjFLEXSELF_NARROW, 
 				BlankSpace(line_num=395)
 				SingleLineComment(line_num=395) // skip midphase, go directly to narrowphase 
 				BlankSpace(line_num=396)
-				PlaceHolder() mjFLEXSELF_BVH,
+				EnumField(line_num=396) mjFLEXSELF_BVH, 
 				BlankSpace(line_num=396)
 				SingleLineComment(line_num=396) // use BVH in midphase (if midphase enabled) 
 				BlankSpace(line_num=397)
-				PlaceHolder() mjFLEXSELF_SAP,
+				EnumField(line_num=397) mjFLEXSELF_SAP, 
 				BlankSpace(line_num=397)
 				SingleLineComment(line_num=397) // use SAP in midphase 
 				BlankSpace(line_num=398)
-				PlaceHolder() mjFLEXSELF_AUTO
-				BlankSpace(line_num=398)
-				SingleLineComment(line_num=398) // choose between BVH and SAP automatically 
+				EnumField(line_num=398) mjFLEXSELF_AUTO                 // choose between BVH and SAP automatically 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtFlexSelf ; 
 		BlankSpace(line_num=399)

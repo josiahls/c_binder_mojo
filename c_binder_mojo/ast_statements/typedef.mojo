@@ -9,6 +9,8 @@ from c_binder_mojo.primitives import TokenBundle, CTokens, STRING_SPLIT_AT
 
 @value
 struct TypeDef(AbstractAstStatement):
+    # TODO(josiahls): Might still be better to have a completely separate
+    # enum type def statement tbh.
     var token_bundles:List[TokenBundle]
     var make_children:Bool
     var stop_making_children:Bool

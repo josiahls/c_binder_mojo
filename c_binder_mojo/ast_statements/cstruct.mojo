@@ -5,7 +5,7 @@ from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.primitives import TokenBundle, CTokens
+from c_binder_mojo.primitives import TokenBundle, CTokens, STRING_SPLIT_AT
 
 @value
 struct CStruct(AbstractAstStatement):
@@ -25,10 +25,12 @@ struct CStruct(AbstractAstStatement):
         return False
 
     fn done(self,token_bundle: TokenBundle) -> Bool:
-        if len(self.token_bundles) == 2:
-            # I think structs have struct NAME ... (;).
-            # But the semi colon is usually tied to another character. 
-            # I'm thinking that semi colons need to be separated into their own token tbh.
+        recent_token = String(self.token_bundles[-1].token.strip(' '))
+        # print('original token: '  + self.token_bundles[-1].token)
+        # print('stripeped token: '  + recent_token)
+        if recent_token == '':
+            return False
+        if recent_token[-1] == CTokens.END_STATEMENT:
             return True
         return False
 
@@ -44,6 +46,23 @@ struct CStruct(AbstractAstStatement):
             s += " "
         return s 
 
-    fn accumulate(mut self, token_bundle:TokenBundle) -> Bool: return False
+    fn accumulate(mut self, token_bundle:TokenBundle) -> Bool: 
+        recent_token = String(token_bundle.token.strip(' '))
+        if len(self.token_bundles) < 3:
+            if recent_token != CTokens.SCOPE_BEGIN:
+                self.token_bundles.append(token_bundle)
+                return True
 
-    fn do_make_child(mut self, token_bundle:TokenBundle) -> Bool: return False
+        if recent_token[-1] == CTokens.END_STATEMENT:
+            self.token_bundles.append(
+                TokenBundle(
+                    STRING_SPLIT_AT,
+                    token_bundle.line_num,
+                    token_bundle.col_num
+                )
+            )
+            self.token_bundles.append(token_bundle)
+        return False
+
+    fn do_make_child(mut self, token_bundle:TokenBundle) -> Bool: 
+        return True

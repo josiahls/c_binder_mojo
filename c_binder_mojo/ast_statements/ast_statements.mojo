@@ -15,6 +15,7 @@ from c_binder_mojo.ast_statements.macro_else import MacroElse
 from c_binder_mojo.ast_statements.endif import EndIf
 from c_binder_mojo.ast_statements.typedef import TypeDef
 from c_binder_mojo.ast_statements.include import Include
+from c_binder_mojo.ast_statements.cstruct import CStruct
 from c_binder_mojo.ast_statements.scope import Scope, is_scopeable,make_scopeable
 from c_binder_mojo.primitives import TokenBundle
 
@@ -30,7 +31,8 @@ alias AstStatements = Variant[
     EndIf,
     TypeDef,
     Include,
-    Scope
+    Scope,
+    CStruct
 ]
 
 fn to_replace(read x:AstStatements, token_bundle: TokenBundle) -> AstStatements:
@@ -49,6 +51,7 @@ fn to_string(read x:AstStatements) raises -> String:
     elif x.isa[Define]():      return str(x[Define])
     elif x.isa[Scope]():      return str(x[Scope])
     elif x.isa[Include]():      return str(x[Include])
+    elif x.isa[CStruct]():      return str(x[CStruct])
     elif x.isa[BlankSpace]():      return str(x[BlankSpace])
     elif x.isa[PlaceHolder]():      return str(x[PlaceHolder])
 
@@ -66,6 +69,7 @@ fn to_done(x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[TypeDef](): return x[TypeDef].done(token_bundle)
     elif x.isa[Scope](): return x[Scope].done(token_bundle)
     elif x.isa[Include](): return x[Include].done(token_bundle)
+    elif x.isa[CStruct](): return x[CStruct].done(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].done(token_bundle)
     elif x.isa[PlaceHolder](): return x[PlaceHolder].done(token_bundle)
 
@@ -81,6 +85,7 @@ fn to_accumulate(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[TypeDef](): return x[TypeDef].accumulate(token_bundle)
     elif x.isa[Define](): return x[Define].accumulate(token_bundle)
     elif x.isa[Scope](): return x[Scope].accumulate(token_bundle)
+    elif x.isa[CStruct](): return x[CStruct].accumulate(token_bundle)
     elif x.isa[Include](): return x[Include].accumulate(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].accumulate(token_bundle)
     elif x.isa[PlaceHolder]():      return x[PlaceHolder].accumulate(token_bundle)
@@ -96,6 +101,7 @@ fn to_do_make_child(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bo
     elif x.isa[EndIf](): return x[EndIf].do_make_child(token_bundle)
     elif x.isa[TypeDef](): return x[TypeDef].do_make_child(token_bundle)
     elif x.isa[Define](): return x[Define].do_make_child(token_bundle)
+    elif x.isa[CStruct](): return x[CStruct].do_make_child(token_bundle)
     elif x.isa[Scope](): return x[Scope].do_make_child(token_bundle)
     elif x.isa[Include](): return x[Include].do_make_child(token_bundle)
     elif x.isa[BlankSpace](): return x[BlankSpace].do_make_child(token_bundle)
@@ -124,6 +130,8 @@ fn to_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> AstStatem
         return AstStatements(EndIf(token_bundle))  
     elif TypeDef.accept(token_bundle): 
         return AstStatements(TypeDef(token_bundle)) 
+    elif CStruct.accept(token_bundle): 
+        return AstStatements(CStruct(token_bundle)) 
     elif Define.accept(token_bundle): 
         return AstStatements(Define(token_bundle)) 
     elif Include.accept(token_bundle): 

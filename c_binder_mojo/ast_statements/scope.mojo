@@ -1,5 +1,6 @@
 # Native Mojo Modules
 from collections import Optional
+from collections.string.string_slice import StringSlice
 from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
@@ -8,6 +9,7 @@ from c_binder_mojo.ast_statements.abstract_ast_statement import AbstractAstState
 from c_binder_mojo.primitives import TokenBundle, CTokens, STRING_SPLIT_AT
 from c_binder_mojo.ast_statements.ast_statements import AstStatements,to_string
 from c_binder_mojo.ast_statements.typedef import TypeDef
+from c_binder_mojo.ast_statements.cstruct import CStruct
 from c_binder_mojo.ast_statements.blank_space import BlankSpace
 from c_binder_mojo.ast_statements.place_holder import PlaceHolder
 
@@ -15,7 +17,8 @@ from c_binder_mojo.ast_statements.place_holder import PlaceHolder
 alias ScopeableTypes = Variant[
     TypeDef, 
     BlankSpace, #TODO(josiahls) Not really implimented, but you can do this I think
-    PlaceHolder
+    PlaceHolder,
+    CStruct
 ]
 
 
@@ -24,13 +27,24 @@ fn is_scopeable(x:AstStatements) -> Bool:
     # be able to handle every case.
     if x.isa[TypeDef](): return True
     if x.isa[BlankSpace](): return True
+    if x.isa[CStruct](): return True
     return False
+
+
+fn scopeable_to_str(x:ScopeableTypes) -> String:
+    # TODO(josiahls): Noto sure I want this. Id rather raise an error since I need to 
+    # be able to handle every case.
+    if x.isa[TypeDef](): return 'type_def'
+    if x.isa[BlankSpace](): return 'blank_space'
+    if x.isa[CStruct](): return 'struct'
+    return '?'
 
 
 fn make_scopeable(x:AstStatements) raises -> ScopeableTypes:
     if x.isa[TypeDef]():      return ScopeableTypes(x[TypeDef])
     elif x.isa[BlankSpace](): return ScopeableTypes(x[BlankSpace])
     elif x.isa[PlaceHolder](): return ScopeableTypes(x[PlaceHolder])
+    elif x.isa[CStruct](): return ScopeableTypes(x[CStruct])
 
     # raise Error('Failed to make type scopeable! for type: ' + to_string(x))
     print('Failed to make type scopeable! for type: ' + to_string(x))
@@ -72,6 +86,7 @@ struct Scope(AbstractAstStatement):
     fn __str__(self) -> String:
         var s:String = "Scope("
         s += "line_num=" + str(self.line_num())
+        s += ",scope_type=" + scopeable_to_str(self.scopeable_type)
         s += ") "
         for token in self.token_bundles:
             s += token[].token

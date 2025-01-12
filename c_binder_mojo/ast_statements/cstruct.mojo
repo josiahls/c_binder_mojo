@@ -50,18 +50,16 @@ struct CStruct(AbstractAstStatement):
         recent_token = String(token_bundle.token.strip(' '))
         if len(self.token_bundles) < 3:
             if recent_token != CTokens.SCOPE_BEGIN:
+                if recent_token[-1] == CTokens.END_STATEMENT:
+                    self.token_bundles.append(
+                        TokenBundle(
+                            STRING_SPLIT_AT,
+                            token_bundle.line_num,
+                            token_bundle.col_num
+                        )
+                    )
                 self.token_bundles.append(token_bundle)
                 return True
-
-        if recent_token[-1] == CTokens.END_STATEMENT:
-            self.token_bundles.append(
-                TokenBundle(
-                    STRING_SPLIT_AT,
-                    token_bundle.line_num,
-                    token_bundle.col_num
-                )
-            )
-            self.token_bundles.append(token_bundle)
         return False
 
     fn do_make_child(mut self, token_bundle:TokenBundle) -> Bool: 

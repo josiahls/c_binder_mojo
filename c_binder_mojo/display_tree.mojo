@@ -6,10 +6,9 @@ from utils import Variant
 from pathlib import Path
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.c_ast_statements.ast_statements import (
-    AstStatements,
-    to_string
-)
+from c_binder_mojo import c_ast_statements
+from c_binder_mojo import mojo_ast_statements
+
 from c_binder_mojo.c_ast_node import RootAstNode
 from c_binder_mojo.mojo_ast_node import RootMojoAstNode
 from c_binder_mojo.base import STRING_SPLIT_AT
@@ -71,7 +70,7 @@ struct RootDisplayAstNode(AnyType):
             DisplayAstNode(
                 parent_idx, 
                 List[Int](),
-                to_string(node.ast_statement),
+                mojo_ast_statements.ast_statements.to_string(node.ast_statement),
                 UnsafePointer[mut=True].address_of(self)
             )
         )
@@ -91,7 +90,7 @@ struct RootDisplayAstNode(AnyType):
             DisplayAstNode(
                 parent_idx, 
                 List[Int](),
-                to_string(node.ast_statement),
+                c_ast_statements.ast_statements.to_string(node.ast_statement),
                 UnsafePointer[mut=True].address_of(self)
             )
         )

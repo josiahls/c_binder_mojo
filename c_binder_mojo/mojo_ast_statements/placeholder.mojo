@@ -36,6 +36,6 @@ struct PlaceHolder(AbstractAstStatement):
     fn __str__(self) -> String:
         if self.string_just_code:
             # Roots don't have any code themselves.
-            return "#PlaceHolder (not a comment): " + self.s
+            return "# PlaceHolder (not a comment): " + self.s
         return "PlaceHolder() for: " + self.s
 

@@ -54,8 +54,6 @@ struct SingleLineComment(AbstractAstStatement):
             else:
                 self.token_bundles.append(token[])
 
-
-
     @staticmethod
     fn accept(ast_statement: c_ast_statements.ast_statements.AstStatements) -> Bool:
         if ast_statement.isa[c_ast_statements.SingleLineComment]():
@@ -65,25 +63,12 @@ struct SingleLineComment(AbstractAstStatement):
     fn togggle_string_just_code(mut self, string_just_code:Bool) -> None:
         self.string_just_code = string_just_code
 
-    fn _string_bundles(self) -> String:
-        var s:String = ""
-        var line_num = -1
-        for token in self.token_bundles:
-            if line_num == -1:
-                line_num = token[].line_num
-            elif line_num != token[].line_num:
-                s += "SingleLineComment some how has multiple lines worth of tokens. This should never happen."
-                line_num = token[].line_num
-                s += '\n'
-            s += String(token[].token) + " "
-        return s
-
     fn __str__(self) -> String:
         if self.string_just_code:
-            return self._string_bundles()
+            return String(self.token_bundles)
         var s:String = "SingleLineComment("
         s += 'line_num=' + String(self.line_num)
         s += ') '
 
-        return s + self._string_bundles()
+        return s + String(self.token_bundles)
 

@@ -3,20 +3,20 @@
 # First Party Modules
 from c_binder_mojo.mojo_ast_statements.abstract_ast_statement import AbstractAstStatement
 from c_binder_mojo import c_ast_statements
-from c_binder_mojo.base import TokenBundle
+from c_binder_mojo.base import TokenBundle, TokenBundles
 
 
 @value
 struct Skip(AbstractAstStatement):
-    var tokens:List[TokenBundle]
+    var token_bundles:TokenBundles
     var string_just_code:Bool
 
     fn __init__(mut self, x:c_ast_statements.AstStatements) raises:
         self.string_just_code = False
         if x.isa[c_ast_statements.IfNDef]():
-            self.tokens = List[TokenBundle]()
+            self.token_bundles = TokenBundles()
             for token in x[c_ast_statements.IfNDef].token_bundles:
-                self.tokens.append(token[])
+                self.token_bundles.append(token[])
         else:
             raise Error('Skip does not support: ' + c_ast_statements.to_string(x))
 
@@ -33,7 +33,7 @@ struct Skip(AbstractAstStatement):
         self.string_just_code = string_just_code
 
     fn __str__(self) -> String:
-        var s = "Skip() unsupported in mojo: "
+        var s = "Skip() unsupported in mojo: " + String(self.token_bundles)
         if self.string_just_code:
             return "# " + s
         return s

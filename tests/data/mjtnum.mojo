@@ -1,0 +1,63 @@
+Root() at /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujoco/mjtnum.h
+	SingleLineComment(line_num=1) # Copyright 2021 DeepMind Technologies Limited 
+	SingleLineComment(line_num=2) # 
+	SingleLineComment(line_num=3) # Licensed under the Apache License, Version 2.0 (the "License") ;  
+	SingleLineComment(line_num=4) # you may not use this file except in compliance with the License. 
+	SingleLineComment(line_num=5) # You may obtain a copy of the License at 
+	SingleLineComment(line_num=6) # 
+	SingleLineComment(line_num=7) #     http://www.apache.org/licenses/LICENSE-2.0 
+	SingleLineComment(line_num=8) # 
+	SingleLineComment(line_num=9) # Unless required by applicable law or agreed to in writing, software 
+	SingleLineComment(line_num=10) # distributed under the License is distributed on an "AS IS" BASIS, 
+	SingleLineComment(line_num=11) # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+	SingleLineComment(line_num=12) # See the License for the specific language governing permissions and 
+	SingleLineComment(line_num=13) # limitations under the License. 
+	PlaceHolder() for: BlankSpace(line_num=14)
+	PlaceHolder() for: IfNDef(line_num=15) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ 
+		PlaceHolder() for: Define(line_num=16) #define MUJOCO_INCLUDE_MJTNUM_H_ 
+		PlaceHolder() for: BlankSpace(line_num=17)
+		SingleLineComment(line_num=18) //---------------------------------- floating-point definition ------------------------------------- 
+		PlaceHolder() for: BlankSpace(line_num=19)
+		SingleLineComment(line_num=20) # floating point data type and minval 
+		PlaceHolder() for: IfNDef(line_num=21) #ifndef mjUSESINGLE 
+			PlaceHolder() for: BlankSpace(line_num=22)
+			PlaceHolder() for: TypeDef(line_num=22) typedef double mjtNum ; 
+			PlaceHolder() for: BlankSpace(line_num=22)
+			PlaceHolder() for: BlankSpace(line_num=23)
+			PlaceHolder() for: Define(line_num=23) #define mjMINVAL    1E-15       
+			SingleLineComment(line_num=23) # minimum value in any denominator 
+	PlaceHolder() for: MacroElse(line_num=24) #else 
+		PlaceHolder() for: BlankSpace(line_num=25)
+		PlaceHolder() for: TypeDef(line_num=25) typedef float mjtNum ; 
+		PlaceHolder() for: BlankSpace(line_num=25)
+		PlaceHolder() for: BlankSpace(line_num=26)
+		PlaceHolder() for: Define(line_num=26) #define mjMINVAL    1E-15f 
+	PlaceHolder() for: EndIf(line_num=27) #endif
+	PlaceHolder() for: BlankSpace(line_num=28)
+	PlaceHolder() for: MultiLineComment(comment_type=COMMENT_MULTI_LINE_INLINE, line_num=29,) \ 
+		/* silly comment */ 
+	PlaceHolder() for: MultiLineComment(comment_type=COMMENT_MULTI_LINE, line_num=29,) \ 
+		/** another one??????? **/ 
+	PlaceHolder() for: BlankSpace(line_num=30)
+	PlaceHolder() for: MultiLineComment(comment_type=COMMENT_MULTI_LINE, line_num=31,32,33,34,35,36,37,) \ 
+		/**  
+		So  
+		many  
+		lines 
+		 
+		 
+		**/ 
+	PlaceHolder() for: BlankSpace(line_num=38)
+	PlaceHolder() for: BlankSpace(line_num=39)
+	SingleLineComment(line_num=40) //-------------------------------------- byte definition ------------------------------------------- 
+	PlaceHolder() for: BlankSpace(line_num=41)
+	PlaceHolder() for: TypeDef(line_num=42) typedef unsigned char mjtByte ; 
+	PlaceHolder() for: BlankSpace(line_num=42)
+	SingleLineComment(line_num=42) # used for true/false 
+	PlaceHolder() for: BlankSpace(line_num=43)
+	PlaceHolder() for: BlankSpace(line_num=44)
+	PlaceHolder() for: BlankSpace(line_num=45)
+	PlaceHolder() for: EndIf(line_num=46) #endif
+	PlaceHolder() for: BlankSpace(line_num=46)
+	SingleLineComment(line_num=46) # MUJOCO_INCLUDE_MJTNUM_H_ 
+	PlaceHolder() for: BlankSpace(line_num=47)

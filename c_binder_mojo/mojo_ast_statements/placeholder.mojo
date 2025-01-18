@@ -8,6 +8,7 @@ from c_binder_mojo.mojo_ast_statements.abstract_ast_statement import AbstractAst
 from c_binder_mojo.base import TokenBundle
 from c_binder_mojo import c_ast_statements
 
+
 @value
 struct PlaceHolder(AbstractAstStatement):
     var s:String

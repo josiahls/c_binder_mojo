@@ -6,19 +6,7 @@ being developed for it so far will be esentially Alpha builds. This means
 they very likely will break between versions. This project I am using for mujoco c binding. If you would like to use this for your project, I welcome contributions.
 
 # Installation
-```
-sudo apt install clang
-```
 
-
-To get the macros
-```bash
-clang -Xclang -dM -E -DmjUSESINGLE -I/home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include  /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujoco/mjtnum.h
-```
-To get the ast
-```bash
-clang -Xclang -ast-dump -fsyntax-only -fno-show-source-location -fno-show-column -DmjUSESINGLE -I/home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include  /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujoco/mjtnum.h
-```
 
 ## With Tests
 Currently testing against mujoco c API.

@@ -32,6 +32,14 @@ fn to_toggle_string_just_code(mut x:AstStatements,string_just_code:Bool) raises 
         raise Error('to_toggle_string_just_code does not exist for input:' + to_string(x))
 
 
+fn indent_children(read x:AstStatements) -> Bool:
+    if x.isa[Skip]():
+        return False
+
+
+    return True
+
+
 fn to_accept(read x:c_ast_statements.ast_statements.AstStatements) raises -> AstStatements:
     if Root.accept(x):
         return AstStatements(Root(x))

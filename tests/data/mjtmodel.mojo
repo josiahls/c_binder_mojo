@@ -14,7 +14,7 @@
 	# limitations under the License. 
 	# PlaceHolder (not a comment): BlankSpace(line_num=14)
 	# Skip() unsupported in mojo: #ifndef MUJOCO_MJMODEL_H_ 
-		# PlaceHolder (not a comment): Define(line_num=16) #define MUJOCO_MJMODEL_H_ 
+	# PlaceHolder (not a comment): Define(line_num=16) #define MUJOCO_MJMODEL_H_ 
 		# PlaceHolder (not a comment): BlankSpace(line_num=17)
 		# PlaceHolder (not a comment): Include(line_num=18) #include <stddef.h> 
 		# PlaceHolder (not a comment): Include(line_num=19) #include <stdint.h> 

@@ -6,10 +6,11 @@ from utils import Variant
 from pathlib import Path
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.mojo_ast_statements.ast_statements import (
+from c_binder_mojo.mojo_ast_statements import (
     AstStatements,
     to_string,
-    to_accept
+    to_accept,
+    indent_children
 )
 from c_binder_mojo.c_ast_statements.root import Root
 from c_binder_mojo.c_ast_node import AstNode, RootAstNode
@@ -59,8 +60,13 @@ struct RootMojoAstNode(AnyType):
             return None
 
         for child in node.children:
-            self.update_nodes(idx, child[], root)
-            self.nodes[idx].children.append(child[])
+            if indent_children(self.nodes[-1].ast_statement):
+            # if True:
+                self.update_nodes(idx, child[], root)
+                self.nodes[idx].children.append(child[])
+            else:
+                self.update_nodes(parent_idx, child[], root)
+                self.nodes[parent_idx].children.append(child[])
 
         
     fn __del__(owned self):

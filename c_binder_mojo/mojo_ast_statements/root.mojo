@@ -20,9 +20,11 @@ fn make_token(x:c_ast_statements.AstStatements) raises -> TokenBundle:
 @value
 struct Root(AbstractAstStatement):
     var s:TokenBundle
+    var string_just_code:Bool
 
     fn __init__(mut self, x: c_ast_statements.AstStatements) raises:
         self.s = make_token(x)
+        self.string_just_code = False
 
     @staticmethod
     fn accept(ast_statement: c_ast_statements.ast_statements.AstStatements) -> Bool:
@@ -30,6 +32,12 @@ struct Root(AbstractAstStatement):
             return True
         return False
 
+    fn togggle_string_just_code(mut self, string_just_code:Bool) -> None:
+        self.string_just_code = string_just_code
+
     fn __str__(self) -> String:
+        if self.string_just_code:
+            # Roots don't have any code themselves.
+            return ""
         return "Root() at " + self.s.token
 

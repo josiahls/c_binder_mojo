@@ -54,17 +54,21 @@ struct DisplayAstNode(CollectionElement):
 @value
 struct RootDisplayAstNode(AnyType):
     var nodes:List[DisplayAstNode]
+    var string_just_code:Bool
 
     fn __init__(mut self, read root:RootAstNode) raises:
+        self.string_just_code = False
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root)
 
     fn __init__(mut self, read root:RootMojoAstNode) raises:
+        self.string_just_code = False
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root) 
 
     fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootMojoAstNode) raises:
         node = root.nodes[idx]
+        mojo_ast_statements.to_toggle_string_just_code(node.ast_statement,True)
 
         self.nodes.append(
             DisplayAstNode(

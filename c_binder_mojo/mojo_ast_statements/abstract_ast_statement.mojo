@@ -20,3 +20,6 @@ trait AbstractAstStatement(CollectionElement,Stringable):
         """
         ...
 
+    fn togggle_string_just_code(mut self, string_just_code:Bool) -> None:
+      ...
+

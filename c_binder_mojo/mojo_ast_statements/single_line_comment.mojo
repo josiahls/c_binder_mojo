@@ -7,7 +7,7 @@ from utils import Variant
 from c_binder_mojo.mojo_ast_statements.abstract_ast_statement import AbstractAstStatement
 from c_binder_mojo.base import TokenBundle
 from c_binder_mojo import c_ast_statements
-from c_binder_mojo.c_primitives import CTokens
+from c_binder_mojo.c_primitives import CTokens,CommentEnum
 from c_binder_mojo.mojo_ast_statements import MojoTokens
 
 
@@ -24,8 +24,10 @@ struct SingleLineComment(AbstractAstStatement):
     var token_bundles: List[TokenBundle]
     var line_num: Int
     var comment_type: String
+    var string_just_code:Bool
 
     fn __init__(mut self, x: c_ast_statements.AstStatements) raises:
+        self.string_just_code = False
         if x.isa[c_ast_statements.SingleLineComment]():
             statement = x[c_ast_statements.SingleLineComment]
             self.token_bundles = List[TokenBundle]()
@@ -38,11 +40,13 @@ struct SingleLineComment(AbstractAstStatement):
     fn translate(mut self, token_bundles:List[TokenBundle]) -> None:
         translated_beginning = False
         for token in token_bundles:
-            if not translated_beginning and token[].token == CTokens.COMMENT_SINGLE_LINE_BEGIN:
+            if not translated_beginning and self.comment_type==CommentEnum.COMMENT_SINGLE_LINE and token[].token.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
                 translated_beginning = True
+                # TODO(josiahls): Feeling lazy, really I need to find the first instance of the
+                # beginning comment and just replace that.
                 self.token_bundles.append(
                     TokenBundle(
-                        MojoTokens.COMMENT_SINGLE_LINE_BEGIN, 
+                        token[].token.replace(CTokens.COMMENT_SINGLE_LINE_BEGIN,MojoTokens.COMMENT_SINGLE_LINE_BEGIN), 
                         token[].line_num, 
                         token[].col_num
                     )
@@ -58,6 +62,9 @@ struct SingleLineComment(AbstractAstStatement):
             return True
         return False
 
+    fn togggle_string_just_code(mut self, string_just_code:Bool) -> None:
+        self.string_just_code = string_just_code
+
     fn _string_bundles(self) -> String:
         var s:String = ""
         var line_num = -1
@@ -72,6 +79,8 @@ struct SingleLineComment(AbstractAstStatement):
         return s
 
     fn __str__(self) -> String:
+        if self.string_just_code:
+            return self._string_bundles()
         var s:String = "SingleLineComment("
         s += 'line_num=' + String(self.line_num)
         s += ') '

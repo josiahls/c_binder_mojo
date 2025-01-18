@@ -1,3790 +1,3790 @@
-Root() at /home/fastrl_mojo_user/fastrl_mojo/mujoco_mojo/mujoco/include/mujoco/mjmodel.h
-	SingleLineComment(line_num=1) # Copyright 2021 DeepMind Technologies Limited 
-	SingleLineComment(line_num=2) # 
-	SingleLineComment(line_num=3) # Licensed under the Apache License, Version 2.0 (the "License") ;  
-	SingleLineComment(line_num=4) # you may not use this file except in compliance with the License. 
-	SingleLineComment(line_num=5) # You may obtain a copy of the License at 
-	SingleLineComment(line_num=6) # 
-	SingleLineComment(line_num=7) #     http://www.apache.org/licenses/LICENSE-2.0 
-	SingleLineComment(line_num=8) # 
-	SingleLineComment(line_num=9) # Unless required by applicable law or agreed to in writing, software 
-	SingleLineComment(line_num=10) # distributed under the License is distributed on an "AS IS" BASIS, 
-	SingleLineComment(line_num=11) # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-	SingleLineComment(line_num=12) # See the License for the specific language governing permissions and 
-	SingleLineComment(line_num=13) # limitations under the License. 
-	PlaceHolder() for: BlankSpace(line_num=14)
-	PlaceHolder() for: IfNDef(line_num=15) #ifndef MUJOCO_MJMODEL_H_ 
-		PlaceHolder() for: Define(line_num=16) #define MUJOCO_MJMODEL_H_ 
-		PlaceHolder() for: BlankSpace(line_num=17)
-		PlaceHolder() for: Include(line_num=18) #include <stddef.h> 
-		PlaceHolder() for: Include(line_num=19) #include <stdint.h> 
-		PlaceHolder() for: BlankSpace(line_num=20)
-		PlaceHolder() for: BlankSpace(line_num=21)
-		PlaceHolder() for: Include(line_num=22) #include <mujoco/mjtnum.h> 
-		PlaceHolder() for: BlankSpace(line_num=23)
-		SingleLineComment(line_num=24) # global constants 
-		PlaceHolder() for: Define(line_num=25) #define mjPI            3.14159265358979323846 
-		PlaceHolder() for: Define(line_num=26) #define mjMAXVAL        1E+10     
-		SingleLineComment(line_num=26) # maximum value in qpos, qvel, qacc 
-		PlaceHolder() for: Define(line_num=27) #define mjMINMU         1E-5      
-		SingleLineComment(line_num=27) # minimum friction coefficient 
-		PlaceHolder() for: Define(line_num=28) #define mjMINIMP        0.0001    
-		SingleLineComment(line_num=28) # minimum constraint impedance 
-		PlaceHolder() for: Define(line_num=29) #define mjMAXIMP        0.9999    
-		SingleLineComment(line_num=29) # maximum constraint impedance 
-		PlaceHolder() for: Define(line_num=30) #define mjMAXCONPAIR    50        
-		SingleLineComment(line_num=30) # maximum number of contacts per geom pair 
-		PlaceHolder() for: Define(line_num=31) #define mjMAXTREEDEPTH  50        
-		SingleLineComment(line_num=31) # maximum bounding volume hierarchy depth 
-		PlaceHolder() for: BlankSpace(line_num=32)
-		PlaceHolder() for: BlankSpace(line_num=33)
-		SingleLineComment(line_num=34) //---------------------------------- sizes --------------------------------------------------------- 
-		PlaceHolder() for: BlankSpace(line_num=35)
-		PlaceHolder() for: Define(line_num=36) #define mjNEQDATA       11        
-		SingleLineComment(line_num=36) # number of eq_data fields 
-		PlaceHolder() for: Define(line_num=37) #define mjNDYN          10        
-		SingleLineComment(line_num=37) # number of actuator dynamics parameters 
-		PlaceHolder() for: Define(line_num=38) #define mjNGAIN         10        
-		SingleLineComment(line_num=38) # number of actuator gain parameters 
-		PlaceHolder() for: Define(line_num=39) #define mjNBIAS         10        
-		SingleLineComment(line_num=39) # number of actuator bias parameters 
-		PlaceHolder() for: Define(line_num=40) #define mjNFLUID        12        
-		SingleLineComment(line_num=40) # number of fluid interaction parameters 
-		PlaceHolder() for: Define(line_num=41) #define mjNREF          2         
-		SingleLineComment(line_num=41) # number of solver reference parameters 
-		PlaceHolder() for: Define(line_num=42) #define mjNIMP          5         
-		SingleLineComment(line_num=42) # number of solver impedance parameters 
-		PlaceHolder() for: Define(line_num=43) #define mjNSOLVER       200       
-		SingleLineComment(line_num=43) # size of one mjData.solver array 
-		PlaceHolder() for: Define(line_num=44) #define mjNISLAND       20        
-		SingleLineComment(line_num=44) # number of mjData.solver arrays 
-		PlaceHolder() for: BlankSpace(line_num=45)
-		SingleLineComment(line_num=46) //---------------------------------- enum types (mjt) ---------------------------------------------- 
-		PlaceHolder() for: BlankSpace(line_num=47)
-		PlaceHolder() for: TypeDef(line_num=48) typedef enum mjtDisableBit_ 
-			PlaceHolder() for: Scope(line_num=48,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=48)
-				SingleLineComment(line_num=48) # disable default feature bitflags 
-				PlaceHolder() for: BlankSpace(line_num=49)
-				PlaceHolder() for: EnumField(line_num=49) mjDSBL_CONSTRAINT   = 1<<0, 
-				PlaceHolder() for: BlankSpace(line_num=49)
-				SingleLineComment(line_num=49) # entire constraint solver 
-				PlaceHolder() for: BlankSpace(line_num=50)
-				PlaceHolder() for: EnumField(line_num=50) mjDSBL_EQUALITY     = 1<<1, 
-				PlaceHolder() for: BlankSpace(line_num=50)
-				SingleLineComment(line_num=50) # equality constraints 
-				PlaceHolder() for: BlankSpace(line_num=51)
-				PlaceHolder() for: EnumField(line_num=51) mjDSBL_FRICTIONLOSS = 1<<2, 
-				PlaceHolder() for: BlankSpace(line_num=51)
-				SingleLineComment(line_num=51) # joint and tendon frictionloss constraints 
-				PlaceHolder() for: BlankSpace(line_num=52)
-				PlaceHolder() for: EnumField(line_num=52) mjDSBL_LIMIT        = 1<<3, 
-				PlaceHolder() for: BlankSpace(line_num=52)
-				SingleLineComment(line_num=52) # joint and tendon limit constraints 
-				PlaceHolder() for: BlankSpace(line_num=53)
-				PlaceHolder() for: EnumField(line_num=53) mjDSBL_CONTACT      = 1<<4, 
-				PlaceHolder() for: BlankSpace(line_num=53)
-				SingleLineComment(line_num=53) # contact constraints 
-				PlaceHolder() for: BlankSpace(line_num=54)
-				PlaceHolder() for: EnumField(line_num=54) mjDSBL_PASSIVE      = 1<<5, 
-				PlaceHolder() for: BlankSpace(line_num=54)
-				SingleLineComment(line_num=54) # passive forces 
-				PlaceHolder() for: BlankSpace(line_num=55)
-				PlaceHolder() for: EnumField(line_num=55) mjDSBL_GRAVITY      = 1<<6, 
-				PlaceHolder() for: BlankSpace(line_num=55)
-				SingleLineComment(line_num=55) # gravitational forces 
-				PlaceHolder() for: BlankSpace(line_num=56)
-				PlaceHolder() for: EnumField(line_num=56) mjDSBL_CLAMPCTRL    = 1<<7, 
-				PlaceHolder() for: BlankSpace(line_num=56)
-				SingleLineComment(line_num=56) # clamp control to specified range 
-				PlaceHolder() for: BlankSpace(line_num=57)
-				PlaceHolder() for: EnumField(line_num=57) mjDSBL_WARMSTART    = 1<<8, 
-				PlaceHolder() for: BlankSpace(line_num=57)
-				SingleLineComment(line_num=57) # warmstart constraint solver 
-				PlaceHolder() for: BlankSpace(line_num=58)
-				PlaceHolder() for: EnumField(line_num=58) mjDSBL_FILTERPARENT = 1<<9, 
-				PlaceHolder() for: BlankSpace(line_num=58)
-				SingleLineComment(line_num=58) # remove collisions with parent body 
-				PlaceHolder() for: BlankSpace(line_num=59)
-				PlaceHolder() for: EnumField(line_num=59) mjDSBL_ACTUATION    = 1<<10, 
-				PlaceHolder() for: BlankSpace(line_num=59)
-				SingleLineComment(line_num=59) # apply actuation forces 
-				PlaceHolder() for: BlankSpace(line_num=60)
-				PlaceHolder() for: EnumField(line_num=60) mjDSBL_REFSAFE      = 1<<11, 
-				PlaceHolder() for: BlankSpace(line_num=60)
-				SingleLineComment(line_num=60) # integrator safety: make ref[0]>=2*timestep 
-				PlaceHolder() for: BlankSpace(line_num=61)
-				PlaceHolder() for: EnumField(line_num=61) mjDSBL_SENSOR       = 1<<12, 
-				PlaceHolder() for: BlankSpace(line_num=61)
-				SingleLineComment(line_num=61) # sensors 
-				PlaceHolder() for: BlankSpace(line_num=62)
-				PlaceHolder() for: EnumField(line_num=62) mjDSBL_MIDPHASE     = 1<<13, 
-				PlaceHolder() for: BlankSpace(line_num=62)
-				SingleLineComment(line_num=62) # mid-phase collision filtering 
-				PlaceHolder() for: BlankSpace(line_num=63)
-				PlaceHolder() for: EnumField(line_num=63) mjDSBL_EULERDAMP    = 1<<14, 
-				PlaceHolder() for: BlankSpace(line_num=63)
-				SingleLineComment(line_num=63) # implicit integration of joint damping in Euler integrator 
-				PlaceHolder() for: BlankSpace(line_num=64)
-				PlaceHolder() for: EnumField(line_num=64) mjDSBL_AUTORESET    = 1<<15, 
-				PlaceHolder() for: BlankSpace(line_num=64)
-				SingleLineComment(line_num=64) # automatic reset when numerical issues are detected 
-				PlaceHolder() for: BlankSpace(line_num=65)
-				PlaceHolder() for: BlankSpace(line_num=66)
-				PlaceHolder() for: EnumField(line_num=66) mjNDISABLE          = 16        // number of disable flags 
+
+	# Copyright 2021 DeepMind Technologies Limited 
+	# 
+	# Licensed under the Apache License, Version 2.0 (the "License") ;  
+	# you may not use this file except in compliance with the License. 
+	# You may obtain a copy of the License at 
+	# 
+	#     http://www.apache.org/licenses/LICENSE-2.0 
+	# 
+	# Unless required by applicable law or agreed to in writing, software 
+	# distributed under the License is distributed on an "AS IS" BASIS, 
+	# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+	# See the License for the specific language governing permissions and 
+	# limitations under the License. 
+	#PlaceHolder (not a comment): BlankSpace(line_num=14)
+	#PlaceHolder (not a comment): IfNDef(line_num=15) #ifndef MUJOCO_MJMODEL_H_ 
+		#PlaceHolder (not a comment): Define(line_num=16) #define MUJOCO_MJMODEL_H_ 
+		#PlaceHolder (not a comment): BlankSpace(line_num=17)
+		#PlaceHolder (not a comment): Include(line_num=18) #include <stddef.h> 
+		#PlaceHolder (not a comment): Include(line_num=19) #include <stdint.h> 
+		#PlaceHolder (not a comment): BlankSpace(line_num=20)
+		#PlaceHolder (not a comment): BlankSpace(line_num=21)
+		#PlaceHolder (not a comment): Include(line_num=22) #include <mujoco/mjtnum.h> 
+		#PlaceHolder (not a comment): BlankSpace(line_num=23)
+		# global constants 
+		#PlaceHolder (not a comment): Define(line_num=25) #define mjPI            3.14159265358979323846 
+		#PlaceHolder (not a comment): Define(line_num=26) #define mjMAXVAL        1E+10     
+		# maximum value in qpos, qvel, qacc 
+		#PlaceHolder (not a comment): Define(line_num=27) #define mjMINMU         1E-5      
+		# minimum friction coefficient 
+		#PlaceHolder (not a comment): Define(line_num=28) #define mjMINIMP        0.0001    
+		# minimum constraint impedance 
+		#PlaceHolder (not a comment): Define(line_num=29) #define mjMAXIMP        0.9999    
+		# maximum constraint impedance 
+		#PlaceHolder (not a comment): Define(line_num=30) #define mjMAXCONPAIR    50        
+		# maximum number of contacts per geom pair 
+		#PlaceHolder (not a comment): Define(line_num=31) #define mjMAXTREEDEPTH  50        
+		# maximum bounding volume hierarchy depth 
+		#PlaceHolder (not a comment): BlankSpace(line_num=32)
+		#PlaceHolder (not a comment): BlankSpace(line_num=33)
+		#---------------------------------- sizes --------------------------------------------------------- 
+		#PlaceHolder (not a comment): BlankSpace(line_num=35)
+		#PlaceHolder (not a comment): Define(line_num=36) #define mjNEQDATA       11        
+		# number of eq_data fields 
+		#PlaceHolder (not a comment): Define(line_num=37) #define mjNDYN          10        
+		# number of actuator dynamics parameters 
+		#PlaceHolder (not a comment): Define(line_num=38) #define mjNGAIN         10        
+		# number of actuator gain parameters 
+		#PlaceHolder (not a comment): Define(line_num=39) #define mjNBIAS         10        
+		# number of actuator bias parameters 
+		#PlaceHolder (not a comment): Define(line_num=40) #define mjNFLUID        12        
+		# number of fluid interaction parameters 
+		#PlaceHolder (not a comment): Define(line_num=41) #define mjNREF          2         
+		# number of solver reference parameters 
+		#PlaceHolder (not a comment): Define(line_num=42) #define mjNIMP          5         
+		# number of solver impedance parameters 
+		#PlaceHolder (not a comment): Define(line_num=43) #define mjNSOLVER       200       
+		# size of one mjData.solver array 
+		#PlaceHolder (not a comment): Define(line_num=44) #define mjNISLAND       20        
+		# number of mjData.solver arrays 
+		#PlaceHolder (not a comment): BlankSpace(line_num=45)
+		#---------------------------------- enum types (mjt) ---------------------------------------------- 
+		#PlaceHolder (not a comment): BlankSpace(line_num=47)
+		#PlaceHolder (not a comment): TypeDef(line_num=48) typedef enum mjtDisableBit_ 
+			#PlaceHolder (not a comment): Scope(line_num=48,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=48)
+				# disable default feature bitflags 
+				#PlaceHolder (not a comment): BlankSpace(line_num=49)
+				#PlaceHolder (not a comment): EnumField(line_num=49) mjDSBL_CONSTRAINT   = 1<<0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=49)
+				# entire constraint solver 
+				#PlaceHolder (not a comment): BlankSpace(line_num=50)
+				#PlaceHolder (not a comment): EnumField(line_num=50) mjDSBL_EQUALITY     = 1<<1, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=50)
+				# equality constraints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=51)
+				#PlaceHolder (not a comment): EnumField(line_num=51) mjDSBL_FRICTIONLOSS = 1<<2, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=51)
+				# joint and tendon frictionloss constraints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=52)
+				#PlaceHolder (not a comment): EnumField(line_num=52) mjDSBL_LIMIT        = 1<<3, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=52)
+				# joint and tendon limit constraints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=53)
+				#PlaceHolder (not a comment): EnumField(line_num=53) mjDSBL_CONTACT      = 1<<4, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=53)
+				# contact constraints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=54)
+				#PlaceHolder (not a comment): EnumField(line_num=54) mjDSBL_PASSIVE      = 1<<5, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=54)
+				# passive forces 
+				#PlaceHolder (not a comment): BlankSpace(line_num=55)
+				#PlaceHolder (not a comment): EnumField(line_num=55) mjDSBL_GRAVITY      = 1<<6, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=55)
+				# gravitational forces 
+				#PlaceHolder (not a comment): BlankSpace(line_num=56)
+				#PlaceHolder (not a comment): EnumField(line_num=56) mjDSBL_CLAMPCTRL    = 1<<7, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=56)
+				# clamp control to specified range 
+				#PlaceHolder (not a comment): BlankSpace(line_num=57)
+				#PlaceHolder (not a comment): EnumField(line_num=57) mjDSBL_WARMSTART    = 1<<8, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=57)
+				# warmstart constraint solver 
+				#PlaceHolder (not a comment): BlankSpace(line_num=58)
+				#PlaceHolder (not a comment): EnumField(line_num=58) mjDSBL_FILTERPARENT = 1<<9, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=58)
+				# remove collisions with parent body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=59)
+				#PlaceHolder (not a comment): EnumField(line_num=59) mjDSBL_ACTUATION    = 1<<10, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=59)
+				# apply actuation forces 
+				#PlaceHolder (not a comment): BlankSpace(line_num=60)
+				#PlaceHolder (not a comment): EnumField(line_num=60) mjDSBL_REFSAFE      = 1<<11, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=60)
+				# integrator safety: make ref[0]>=2*timestep 
+				#PlaceHolder (not a comment): BlankSpace(line_num=61)
+				#PlaceHolder (not a comment): EnumField(line_num=61) mjDSBL_SENSOR       = 1<<12, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=61)
+				# sensors 
+				#PlaceHolder (not a comment): BlankSpace(line_num=62)
+				#PlaceHolder (not a comment): EnumField(line_num=62) mjDSBL_MIDPHASE     = 1<<13, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=62)
+				# mid-phase collision filtering 
+				#PlaceHolder (not a comment): BlankSpace(line_num=63)
+				#PlaceHolder (not a comment): EnumField(line_num=63) mjDSBL_EULERDAMP    = 1<<14, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=63)
+				# implicit integration of joint damping in Euler integrator 
+				#PlaceHolder (not a comment): BlankSpace(line_num=64)
+				#PlaceHolder (not a comment): EnumField(line_num=64) mjDSBL_AUTORESET    = 1<<15, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=64)
+				# automatic reset when numerical issues are detected 
+				#PlaceHolder (not a comment): BlankSpace(line_num=65)
+				#PlaceHolder (not a comment): BlankSpace(line_num=66)
+				#PlaceHolder (not a comment): EnumField(line_num=66) mjNDISABLE          = 16        // number of disable flags 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtDisableBit ; 
-		PlaceHolder() for: BlankSpace(line_num=67)
-		PlaceHolder() for: BlankSpace(line_num=68)
-		PlaceHolder() for: BlankSpace(line_num=69)
-		PlaceHolder() for: TypeDef(line_num=70) typedef enum mjtEnableBit_ 
-			PlaceHolder() for: Scope(line_num=70,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=70)
-				SingleLineComment(line_num=70) # enable optional feature bitflags 
-				PlaceHolder() for: BlankSpace(line_num=71)
-				PlaceHolder() for: EnumField(line_num=71) mjENBL_OVERRIDE     = 1<<0, 
-				PlaceHolder() for: BlankSpace(line_num=71)
-				SingleLineComment(line_num=71) # override contact parameters 
-				PlaceHolder() for: BlankSpace(line_num=72)
-				PlaceHolder() for: EnumField(line_num=72) mjENBL_ENERGY       = 1<<1, 
-				PlaceHolder() for: BlankSpace(line_num=72)
-				SingleLineComment(line_num=72) # energy computation 
-				PlaceHolder() for: BlankSpace(line_num=73)
-				PlaceHolder() for: EnumField(line_num=73) mjENBL_FWDINV       = 1<<2, 
-				PlaceHolder() for: BlankSpace(line_num=73)
-				SingleLineComment(line_num=73) # record solver statistics 
-				PlaceHolder() for: BlankSpace(line_num=74)
-				PlaceHolder() for: EnumField(line_num=74) mjENBL_INVDISCRETE  = 1<<3, 
-				PlaceHolder() for: BlankSpace(line_num=74)
-				SingleLineComment(line_num=74) # discrete-time inverse dynamics 
-				PlaceHolder() for: BlankSpace(line_num=75)
-				SingleLineComment(line_num=75) # experimental features: 
-				PlaceHolder() for: BlankSpace(line_num=76)
-				PlaceHolder() for: EnumField(line_num=76) mjENBL_MULTICCD     = 1<<4, 
-				PlaceHolder() for: BlankSpace(line_num=76)
-				SingleLineComment(line_num=76) # multi-point convex collision detection 
-				PlaceHolder() for: BlankSpace(line_num=77)
-				PlaceHolder() for: EnumField(line_num=77) mjENBL_ISLAND       = 1<<5, 
-				PlaceHolder() for: BlankSpace(line_num=77)
-				SingleLineComment(line_num=77) # constraint island discovery 
-				PlaceHolder() for: BlankSpace(line_num=78)
-				PlaceHolder() for: EnumField(line_num=78) mjENBL_NATIVECCD    = 1<<6, 
-				PlaceHolder() for: BlankSpace(line_num=78)
-				SingleLineComment(line_num=78) # native convex collision detection 
-				PlaceHolder() for: BlankSpace(line_num=79)
-				PlaceHolder() for: BlankSpace(line_num=80)
-				PlaceHolder() for: EnumField(line_num=80) mjNENABLE           = 7         // number of enable flags 
+		#PlaceHolder (not a comment): BlankSpace(line_num=67)
+		#PlaceHolder (not a comment): BlankSpace(line_num=68)
+		#PlaceHolder (not a comment): BlankSpace(line_num=69)
+		#PlaceHolder (not a comment): TypeDef(line_num=70) typedef enum mjtEnableBit_ 
+			#PlaceHolder (not a comment): Scope(line_num=70,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=70)
+				# enable optional feature bitflags 
+				#PlaceHolder (not a comment): BlankSpace(line_num=71)
+				#PlaceHolder (not a comment): EnumField(line_num=71) mjENBL_OVERRIDE     = 1<<0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=71)
+				# override contact parameters 
+				#PlaceHolder (not a comment): BlankSpace(line_num=72)
+				#PlaceHolder (not a comment): EnumField(line_num=72) mjENBL_ENERGY       = 1<<1, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=72)
+				# energy computation 
+				#PlaceHolder (not a comment): BlankSpace(line_num=73)
+				#PlaceHolder (not a comment): EnumField(line_num=73) mjENBL_FWDINV       = 1<<2, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=73)
+				# record solver statistics 
+				#PlaceHolder (not a comment): BlankSpace(line_num=74)
+				#PlaceHolder (not a comment): EnumField(line_num=74) mjENBL_INVDISCRETE  = 1<<3, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=74)
+				# discrete-time inverse dynamics 
+				#PlaceHolder (not a comment): BlankSpace(line_num=75)
+				# experimental features: 
+				#PlaceHolder (not a comment): BlankSpace(line_num=76)
+				#PlaceHolder (not a comment): EnumField(line_num=76) mjENBL_MULTICCD     = 1<<4, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=76)
+				# multi-point convex collision detection 
+				#PlaceHolder (not a comment): BlankSpace(line_num=77)
+				#PlaceHolder (not a comment): EnumField(line_num=77) mjENBL_ISLAND       = 1<<5, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=77)
+				# constraint island discovery 
+				#PlaceHolder (not a comment): BlankSpace(line_num=78)
+				#PlaceHolder (not a comment): EnumField(line_num=78) mjENBL_NATIVECCD    = 1<<6, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=78)
+				# native convex collision detection 
+				#PlaceHolder (not a comment): BlankSpace(line_num=79)
+				#PlaceHolder (not a comment): BlankSpace(line_num=80)
+				#PlaceHolder (not a comment): EnumField(line_num=80) mjNENABLE           = 7         // number of enable flags 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtEnableBit ; 
-		PlaceHolder() for: BlankSpace(line_num=81)
-		PlaceHolder() for: BlankSpace(line_num=82)
-		PlaceHolder() for: BlankSpace(line_num=83)
-		PlaceHolder() for: TypeDef(line_num=84) typedef enum mjtJoint_ 
-			PlaceHolder() for: Scope(line_num=84,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=84)
-				SingleLineComment(line_num=84) # type of degree of freedom 
-				PlaceHolder() for: BlankSpace(line_num=85)
-				PlaceHolder() for: EnumField(line_num=85) mjJNT_FREE          = 0, 
-				PlaceHolder() for: BlankSpace(line_num=85)
-				SingleLineComment(line_num=85) # global position and orientation (quat)       (7) 
-				PlaceHolder() for: BlankSpace(line_num=86)
-				PlaceHolder() for: EnumField(line_num=86) mjJNT_BALL, 
-				PlaceHolder() for: BlankSpace(line_num=86)
-				SingleLineComment(line_num=86) # orientation (quat) relative to parent        (4) 
-				PlaceHolder() for: BlankSpace(line_num=87)
-				PlaceHolder() for: EnumField(line_num=87) mjJNT_SLIDE, 
-				PlaceHolder() for: BlankSpace(line_num=87)
-				SingleLineComment(line_num=87) # sliding distance along body-fixed axis       (1) 
-				PlaceHolder() for: BlankSpace(line_num=88)
-				PlaceHolder() for: EnumField(line_num=88) mjJNT_HINGE                     // rotation angle (rad) around body-fixed axis  (1) 
+		#PlaceHolder (not a comment): BlankSpace(line_num=81)
+		#PlaceHolder (not a comment): BlankSpace(line_num=82)
+		#PlaceHolder (not a comment): BlankSpace(line_num=83)
+		#PlaceHolder (not a comment): TypeDef(line_num=84) typedef enum mjtJoint_ 
+			#PlaceHolder (not a comment): Scope(line_num=84,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=84)
+				# type of degree of freedom 
+				#PlaceHolder (not a comment): BlankSpace(line_num=85)
+				#PlaceHolder (not a comment): EnumField(line_num=85) mjJNT_FREE          = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=85)
+				# global position and orientation (quat)       (7) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=86)
+				#PlaceHolder (not a comment): EnumField(line_num=86) mjJNT_BALL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=86)
+				# orientation (quat) relative to parent        (4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=87)
+				#PlaceHolder (not a comment): EnumField(line_num=87) mjJNT_SLIDE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=87)
+				# sliding distance along body-fixed axis       (1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=88)
+				#PlaceHolder (not a comment): EnumField(line_num=88) mjJNT_HINGE                     // rotation angle (rad) around body-fixed axis  (1) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtJoint ; 
-		PlaceHolder() for: BlankSpace(line_num=89)
-		PlaceHolder() for: BlankSpace(line_num=90)
-		PlaceHolder() for: BlankSpace(line_num=91)
-		PlaceHolder() for: TypeDef(line_num=92) typedef enum mjtGeom_ 
-			PlaceHolder() for: Scope(line_num=92,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=92)
-				SingleLineComment(line_num=92) # type of geometric shape 
-				PlaceHolder() for: BlankSpace(line_num=93)
-				SingleLineComment(line_num=93) # regular geom types 
-				PlaceHolder() for: BlankSpace(line_num=94)
-				PlaceHolder() for: EnumField(line_num=94) mjGEOM_PLANE        = 0, 
-				PlaceHolder() for: BlankSpace(line_num=94)
-				SingleLineComment(line_num=94) # plane 
-				PlaceHolder() for: BlankSpace(line_num=95)
-				PlaceHolder() for: EnumField(line_num=95) mjGEOM_HFIELD, 
-				PlaceHolder() for: BlankSpace(line_num=95)
-				SingleLineComment(line_num=95) # height field 
-				PlaceHolder() for: BlankSpace(line_num=96)
-				PlaceHolder() for: EnumField(line_num=96) mjGEOM_SPHERE, 
-				PlaceHolder() for: BlankSpace(line_num=96)
-				SingleLineComment(line_num=96) # sphere 
-				PlaceHolder() for: BlankSpace(line_num=97)
-				PlaceHolder() for: EnumField(line_num=97) mjGEOM_CAPSULE, 
-				PlaceHolder() for: BlankSpace(line_num=97)
-				SingleLineComment(line_num=97) # capsule 
-				PlaceHolder() for: BlankSpace(line_num=98)
-				PlaceHolder() for: EnumField(line_num=98) mjGEOM_ELLIPSOID, 
-				PlaceHolder() for: BlankSpace(line_num=98)
-				SingleLineComment(line_num=98) # ellipsoid 
-				PlaceHolder() for: BlankSpace(line_num=99)
-				PlaceHolder() for: EnumField(line_num=99) mjGEOM_CYLINDER, 
-				PlaceHolder() for: BlankSpace(line_num=99)
-				SingleLineComment(line_num=99) # cylinder 
-				PlaceHolder() for: BlankSpace(line_num=100)
-				PlaceHolder() for: EnumField(line_num=100) mjGEOM_BOX, 
-				PlaceHolder() for: BlankSpace(line_num=100)
-				SingleLineComment(line_num=100) # box 
-				PlaceHolder() for: BlankSpace(line_num=101)
-				PlaceHolder() for: EnumField(line_num=101) mjGEOM_MESH, 
-				PlaceHolder() for: BlankSpace(line_num=101)
-				SingleLineComment(line_num=101) # mesh 
-				PlaceHolder() for: BlankSpace(line_num=102)
-				PlaceHolder() for: EnumField(line_num=102) mjGEOM_SDF, 
-				PlaceHolder() for: BlankSpace(line_num=102)
-				SingleLineComment(line_num=102) # signed distance field 
-				PlaceHolder() for: BlankSpace(line_num=103)
-				PlaceHolder() for: BlankSpace(line_num=104)
-				PlaceHolder() for: EnumField(line_num=104) mjNGEOMTYPES, 
-				PlaceHolder() for: BlankSpace(line_num=104)
-				SingleLineComment(line_num=104) # number of regular geom types 
-				PlaceHolder() for: BlankSpace(line_num=105)
-				PlaceHolder() for: BlankSpace(line_num=106)
-				SingleLineComment(line_num=106) # rendering-only geom types: not used in mjModel, not counted in mjNGEOMTYPES 
-				PlaceHolder() for: BlankSpace(line_num=107)
-				PlaceHolder() for: EnumField(line_num=107) mjGEOM_ARROW        = 100, 
-				PlaceHolder() for: BlankSpace(line_num=107)
-				SingleLineComment(line_num=107) # arrow 
-				PlaceHolder() for: BlankSpace(line_num=108)
-				PlaceHolder() for: EnumField(line_num=108) mjGEOM_ARROW1, 
-				PlaceHolder() for: BlankSpace(line_num=108)
-				SingleLineComment(line_num=108) # arrow without wedges 
-				PlaceHolder() for: BlankSpace(line_num=109)
-				PlaceHolder() for: EnumField(line_num=109) mjGEOM_ARROW2, 
-				PlaceHolder() for: BlankSpace(line_num=109)
-				SingleLineComment(line_num=109) # arrow in both directions 
-				PlaceHolder() for: BlankSpace(line_num=110)
-				PlaceHolder() for: EnumField(line_num=110) mjGEOM_LINE, 
-				PlaceHolder() for: BlankSpace(line_num=110)
-				SingleLineComment(line_num=110) # line 
-				PlaceHolder() for: BlankSpace(line_num=111)
-				PlaceHolder() for: EnumField(line_num=111) mjGEOM_LINEBOX, 
-				PlaceHolder() for: BlankSpace(line_num=111)
-				SingleLineComment(line_num=111) # box with line edges 
-				PlaceHolder() for: BlankSpace(line_num=112)
-				PlaceHolder() for: EnumField(line_num=112) mjGEOM_FLEX, 
-				PlaceHolder() for: BlankSpace(line_num=112)
-				SingleLineComment(line_num=112) # flex 
-				PlaceHolder() for: BlankSpace(line_num=113)
-				PlaceHolder() for: EnumField(line_num=113) mjGEOM_SKIN, 
-				PlaceHolder() for: BlankSpace(line_num=113)
-				SingleLineComment(line_num=113) # skin 
-				PlaceHolder() for: BlankSpace(line_num=114)
-				PlaceHolder() for: EnumField(line_num=114) mjGEOM_LABEL, 
-				PlaceHolder() for: BlankSpace(line_num=114)
-				SingleLineComment(line_num=114) # text label 
-				PlaceHolder() for: BlankSpace(line_num=115)
-				PlaceHolder() for: EnumField(line_num=115) mjGEOM_TRIANGLE, 
-				PlaceHolder() for: BlankSpace(line_num=115)
-				SingleLineComment(line_num=115) # triangle 
-				PlaceHolder() for: BlankSpace(line_num=116)
-				PlaceHolder() for: BlankSpace(line_num=117)
-				PlaceHolder() for: EnumField(line_num=117) mjGEOM_NONE         = 1001      // missing geom type 
+		#PlaceHolder (not a comment): BlankSpace(line_num=89)
+		#PlaceHolder (not a comment): BlankSpace(line_num=90)
+		#PlaceHolder (not a comment): BlankSpace(line_num=91)
+		#PlaceHolder (not a comment): TypeDef(line_num=92) typedef enum mjtGeom_ 
+			#PlaceHolder (not a comment): Scope(line_num=92,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=92)
+				# type of geometric shape 
+				#PlaceHolder (not a comment): BlankSpace(line_num=93)
+				# regular geom types 
+				#PlaceHolder (not a comment): BlankSpace(line_num=94)
+				#PlaceHolder (not a comment): EnumField(line_num=94) mjGEOM_PLANE        = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=94)
+				# plane 
+				#PlaceHolder (not a comment): BlankSpace(line_num=95)
+				#PlaceHolder (not a comment): EnumField(line_num=95) mjGEOM_HFIELD, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=95)
+				# height field 
+				#PlaceHolder (not a comment): BlankSpace(line_num=96)
+				#PlaceHolder (not a comment): EnumField(line_num=96) mjGEOM_SPHERE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=96)
+				# sphere 
+				#PlaceHolder (not a comment): BlankSpace(line_num=97)
+				#PlaceHolder (not a comment): EnumField(line_num=97) mjGEOM_CAPSULE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=97)
+				# capsule 
+				#PlaceHolder (not a comment): BlankSpace(line_num=98)
+				#PlaceHolder (not a comment): EnumField(line_num=98) mjGEOM_ELLIPSOID, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=98)
+				# ellipsoid 
+				#PlaceHolder (not a comment): BlankSpace(line_num=99)
+				#PlaceHolder (not a comment): EnumField(line_num=99) mjGEOM_CYLINDER, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=99)
+				# cylinder 
+				#PlaceHolder (not a comment): BlankSpace(line_num=100)
+				#PlaceHolder (not a comment): EnumField(line_num=100) mjGEOM_BOX, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=100)
+				# box 
+				#PlaceHolder (not a comment): BlankSpace(line_num=101)
+				#PlaceHolder (not a comment): EnumField(line_num=101) mjGEOM_MESH, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=101)
+				# mesh 
+				#PlaceHolder (not a comment): BlankSpace(line_num=102)
+				#PlaceHolder (not a comment): EnumField(line_num=102) mjGEOM_SDF, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=102)
+				# signed distance field 
+				#PlaceHolder (not a comment): BlankSpace(line_num=103)
+				#PlaceHolder (not a comment): BlankSpace(line_num=104)
+				#PlaceHolder (not a comment): EnumField(line_num=104) mjNGEOMTYPES, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=104)
+				# number of regular geom types 
+				#PlaceHolder (not a comment): BlankSpace(line_num=105)
+				#PlaceHolder (not a comment): BlankSpace(line_num=106)
+				# rendering-only geom types: not used in mjModel, not counted in mjNGEOMTYPES 
+				#PlaceHolder (not a comment): BlankSpace(line_num=107)
+				#PlaceHolder (not a comment): EnumField(line_num=107) mjGEOM_ARROW        = 100, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=107)
+				# arrow 
+				#PlaceHolder (not a comment): BlankSpace(line_num=108)
+				#PlaceHolder (not a comment): EnumField(line_num=108) mjGEOM_ARROW1, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=108)
+				# arrow without wedges 
+				#PlaceHolder (not a comment): BlankSpace(line_num=109)
+				#PlaceHolder (not a comment): EnumField(line_num=109) mjGEOM_ARROW2, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=109)
+				# arrow in both directions 
+				#PlaceHolder (not a comment): BlankSpace(line_num=110)
+				#PlaceHolder (not a comment): EnumField(line_num=110) mjGEOM_LINE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=110)
+				# line 
+				#PlaceHolder (not a comment): BlankSpace(line_num=111)
+				#PlaceHolder (not a comment): EnumField(line_num=111) mjGEOM_LINEBOX, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=111)
+				# box with line edges 
+				#PlaceHolder (not a comment): BlankSpace(line_num=112)
+				#PlaceHolder (not a comment): EnumField(line_num=112) mjGEOM_FLEX, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=112)
+				# flex 
+				#PlaceHolder (not a comment): BlankSpace(line_num=113)
+				#PlaceHolder (not a comment): EnumField(line_num=113) mjGEOM_SKIN, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=113)
+				# skin 
+				#PlaceHolder (not a comment): BlankSpace(line_num=114)
+				#PlaceHolder (not a comment): EnumField(line_num=114) mjGEOM_LABEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=114)
+				# text label 
+				#PlaceHolder (not a comment): BlankSpace(line_num=115)
+				#PlaceHolder (not a comment): EnumField(line_num=115) mjGEOM_TRIANGLE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=115)
+				# triangle 
+				#PlaceHolder (not a comment): BlankSpace(line_num=116)
+				#PlaceHolder (not a comment): BlankSpace(line_num=117)
+				#PlaceHolder (not a comment): EnumField(line_num=117) mjGEOM_NONE         = 1001      // missing geom type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtGeom ; 
-		PlaceHolder() for: BlankSpace(line_num=118)
-		PlaceHolder() for: BlankSpace(line_num=119)
-		PlaceHolder() for: BlankSpace(line_num=120)
-		PlaceHolder() for: TypeDef(line_num=121) typedef enum mjtCamLight_ 
-			PlaceHolder() for: Scope(line_num=121,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=121)
-				SingleLineComment(line_num=121) # tracking mode for camera and light 
-				PlaceHolder() for: BlankSpace(line_num=122)
-				PlaceHolder() for: EnumField(line_num=122) mjCAMLIGHT_FIXED    = 0, 
-				PlaceHolder() for: BlankSpace(line_num=122)
-				SingleLineComment(line_num=122) # pos and rot fixed in body 
-				PlaceHolder() for: BlankSpace(line_num=123)
-				PlaceHolder() for: EnumField(line_num=123) mjCAMLIGHT_TRACK, 
-				PlaceHolder() for: BlankSpace(line_num=123)
-				SingleLineComment(line_num=123) # pos tracks body, rot fixed in global 
-				PlaceHolder() for: BlankSpace(line_num=124)
-				PlaceHolder() for: EnumField(line_num=124) mjCAMLIGHT_TRACKCOM, 
-				PlaceHolder() for: BlankSpace(line_num=124)
-				SingleLineComment(line_num=124) # pos tracks subtree com, rot fixed in body 
-				PlaceHolder() for: BlankSpace(line_num=125)
-				PlaceHolder() for: EnumField(line_num=125) mjCAMLIGHT_TARGETBODY, 
-				PlaceHolder() for: BlankSpace(line_num=125)
-				SingleLineComment(line_num=125) # pos fixed in body, rot tracks target body 
-				PlaceHolder() for: BlankSpace(line_num=126)
-				PlaceHolder() for: EnumField(line_num=126) mjCAMLIGHT_TARGETBODYCOM        // pos fixed in body, 
-				PlaceHolder() for: EnumField(line_num=126) rot tracks target subtree com 
+		#PlaceHolder (not a comment): BlankSpace(line_num=118)
+		#PlaceHolder (not a comment): BlankSpace(line_num=119)
+		#PlaceHolder (not a comment): BlankSpace(line_num=120)
+		#PlaceHolder (not a comment): TypeDef(line_num=121) typedef enum mjtCamLight_ 
+			#PlaceHolder (not a comment): Scope(line_num=121,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=121)
+				# tracking mode for camera and light 
+				#PlaceHolder (not a comment): BlankSpace(line_num=122)
+				#PlaceHolder (not a comment): EnumField(line_num=122) mjCAMLIGHT_FIXED    = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=122)
+				# pos and rot fixed in body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=123)
+				#PlaceHolder (not a comment): EnumField(line_num=123) mjCAMLIGHT_TRACK, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=123)
+				# pos tracks body, rot fixed in global 
+				#PlaceHolder (not a comment): BlankSpace(line_num=124)
+				#PlaceHolder (not a comment): EnumField(line_num=124) mjCAMLIGHT_TRACKCOM, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=124)
+				# pos tracks subtree com, rot fixed in body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=125)
+				#PlaceHolder (not a comment): EnumField(line_num=125) mjCAMLIGHT_TARGETBODY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=125)
+				# pos fixed in body, rot tracks target body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=126)
+				#PlaceHolder (not a comment): EnumField(line_num=126) mjCAMLIGHT_TARGETBODYCOM        // pos fixed in body, 
+				#PlaceHolder (not a comment): EnumField(line_num=126) rot tracks target subtree com 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtCamLight ; 
-		PlaceHolder() for: BlankSpace(line_num=127)
-		PlaceHolder() for: BlankSpace(line_num=128)
-		PlaceHolder() for: BlankSpace(line_num=129)
-		PlaceHolder() for: TypeDef(line_num=130) typedef enum mjtTexture_ 
-			PlaceHolder() for: Scope(line_num=130,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=130)
-				SingleLineComment(line_num=130) # type of texture 
-				PlaceHolder() for: BlankSpace(line_num=131)
-				PlaceHolder() for: EnumField(line_num=131) mjTEXTURE_2D        = 0, 
-				PlaceHolder() for: BlankSpace(line_num=131)
-				SingleLineComment(line_num=131) # 2d texture, suitable for planes and hfields 
-				PlaceHolder() for: BlankSpace(line_num=132)
-				PlaceHolder() for: EnumField(line_num=132) mjTEXTURE_CUBE, 
-				PlaceHolder() for: BlankSpace(line_num=132)
-				SingleLineComment(line_num=132) # cube texture, suitable for all other geom types 
-				PlaceHolder() for: BlankSpace(line_num=133)
-				PlaceHolder() for: EnumField(line_num=133) mjTEXTURE_SKYBOX                // cube texture used as skybox 
+		#PlaceHolder (not a comment): BlankSpace(line_num=127)
+		#PlaceHolder (not a comment): BlankSpace(line_num=128)
+		#PlaceHolder (not a comment): BlankSpace(line_num=129)
+		#PlaceHolder (not a comment): TypeDef(line_num=130) typedef enum mjtTexture_ 
+			#PlaceHolder (not a comment): Scope(line_num=130,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=130)
+				# type of texture 
+				#PlaceHolder (not a comment): BlankSpace(line_num=131)
+				#PlaceHolder (not a comment): EnumField(line_num=131) mjTEXTURE_2D        = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=131)
+				# 2d texture, suitable for planes and hfields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=132)
+				#PlaceHolder (not a comment): EnumField(line_num=132) mjTEXTURE_CUBE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=132)
+				# cube texture, suitable for all other geom types 
+				#PlaceHolder (not a comment): BlankSpace(line_num=133)
+				#PlaceHolder (not a comment): EnumField(line_num=133) mjTEXTURE_SKYBOX                // cube texture used as skybox 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtTexture ; 
-		PlaceHolder() for: BlankSpace(line_num=134)
-		PlaceHolder() for: BlankSpace(line_num=135)
-		PlaceHolder() for: BlankSpace(line_num=136)
-		PlaceHolder() for: TypeDef(line_num=137) typedef enum mjtTextureRole_ 
-			PlaceHolder() for: Scope(line_num=137,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=137)
-				SingleLineComment(line_num=137) # role of texture map in rendering 
-				PlaceHolder() for: BlankSpace(line_num=138)
-				PlaceHolder() for: EnumField(line_num=138) mjTEXROLE_USER      = 0, 
-				PlaceHolder() for: BlankSpace(line_num=138)
-				SingleLineComment(line_num=138) # unspecified 
-				PlaceHolder() for: BlankSpace(line_num=139)
-				PlaceHolder() for: EnumField(line_num=139) mjTEXROLE_RGB, 
-				PlaceHolder() for: BlankSpace(line_num=139)
-				SingleLineComment(line_num=139) # base color (albedo) 
-				PlaceHolder() for: BlankSpace(line_num=140)
-				PlaceHolder() for: EnumField(line_num=140) mjTEXROLE_OCCLUSION, 
-				PlaceHolder() for: BlankSpace(line_num=140)
-				SingleLineComment(line_num=140) # ambient occlusion 
-				PlaceHolder() for: BlankSpace(line_num=141)
-				PlaceHolder() for: EnumField(line_num=141) mjTEXROLE_ROUGHNESS, 
-				PlaceHolder() for: BlankSpace(line_num=141)
-				SingleLineComment(line_num=141) # roughness 
-				PlaceHolder() for: BlankSpace(line_num=142)
-				PlaceHolder() for: EnumField(line_num=142) mjTEXROLE_METALLIC, 
-				PlaceHolder() for: BlankSpace(line_num=142)
-				SingleLineComment(line_num=142) # metallic 
-				PlaceHolder() for: BlankSpace(line_num=143)
-				PlaceHolder() for: EnumField(line_num=143) mjTEXROLE_NORMAL, 
-				PlaceHolder() for: BlankSpace(line_num=143)
-				SingleLineComment(line_num=143) # normal (bump) map 
-				PlaceHolder() for: BlankSpace(line_num=144)
-				PlaceHolder() for: EnumField(line_num=144) mjTEXROLE_OPACITY, 
-				PlaceHolder() for: BlankSpace(line_num=144)
-				SingleLineComment(line_num=144) # transperancy 
-				PlaceHolder() for: BlankSpace(line_num=145)
-				PlaceHolder() for: EnumField(line_num=145) mjTEXROLE_EMISSIVE, 
-				PlaceHolder() for: BlankSpace(line_num=145)
-				SingleLineComment(line_num=145) # light emission 
-				PlaceHolder() for: BlankSpace(line_num=146)
-				PlaceHolder() for: EnumField(line_num=146) mjTEXROLE_RGBA, 
-				PlaceHolder() for: BlankSpace(line_num=146)
-				SingleLineComment(line_num=146) # base color, opacity 
-				PlaceHolder() for: BlankSpace(line_num=147)
-				PlaceHolder() for: EnumField(line_num=147) mjTEXROLE_ORM, 
-				PlaceHolder() for: BlankSpace(line_num=147)
-				SingleLineComment(line_num=147) # occlusion, roughness, metallic 
-				PlaceHolder() for: BlankSpace(line_num=148)
-				PlaceHolder() for: EnumField(line_num=148) mjNTEXROLE 
+		#PlaceHolder (not a comment): BlankSpace(line_num=134)
+		#PlaceHolder (not a comment): BlankSpace(line_num=135)
+		#PlaceHolder (not a comment): BlankSpace(line_num=136)
+		#PlaceHolder (not a comment): TypeDef(line_num=137) typedef enum mjtTextureRole_ 
+			#PlaceHolder (not a comment): Scope(line_num=137,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=137)
+				# role of texture map in rendering 
+				#PlaceHolder (not a comment): BlankSpace(line_num=138)
+				#PlaceHolder (not a comment): EnumField(line_num=138) mjTEXROLE_USER      = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=138)
+				# unspecified 
+				#PlaceHolder (not a comment): BlankSpace(line_num=139)
+				#PlaceHolder (not a comment): EnumField(line_num=139) mjTEXROLE_RGB, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=139)
+				# base color (albedo) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=140)
+				#PlaceHolder (not a comment): EnumField(line_num=140) mjTEXROLE_OCCLUSION, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=140)
+				# ambient occlusion 
+				#PlaceHolder (not a comment): BlankSpace(line_num=141)
+				#PlaceHolder (not a comment): EnumField(line_num=141) mjTEXROLE_ROUGHNESS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=141)
+				# roughness 
+				#PlaceHolder (not a comment): BlankSpace(line_num=142)
+				#PlaceHolder (not a comment): EnumField(line_num=142) mjTEXROLE_METALLIC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=142)
+				# metallic 
+				#PlaceHolder (not a comment): BlankSpace(line_num=143)
+				#PlaceHolder (not a comment): EnumField(line_num=143) mjTEXROLE_NORMAL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=143)
+				# normal (bump) map 
+				#PlaceHolder (not a comment): BlankSpace(line_num=144)
+				#PlaceHolder (not a comment): EnumField(line_num=144) mjTEXROLE_OPACITY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=144)
+				# transperancy 
+				#PlaceHolder (not a comment): BlankSpace(line_num=145)
+				#PlaceHolder (not a comment): EnumField(line_num=145) mjTEXROLE_EMISSIVE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=145)
+				# light emission 
+				#PlaceHolder (not a comment): BlankSpace(line_num=146)
+				#PlaceHolder (not a comment): EnumField(line_num=146) mjTEXROLE_RGBA, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=146)
+				# base color, opacity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=147)
+				#PlaceHolder (not a comment): EnumField(line_num=147) mjTEXROLE_ORM, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=147)
+				# occlusion, roughness, metallic 
+				#PlaceHolder (not a comment): BlankSpace(line_num=148)
+				#PlaceHolder (not a comment): EnumField(line_num=148) mjNTEXROLE 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtTextureRole ; 
-		PlaceHolder() for: BlankSpace(line_num=149)
-		PlaceHolder() for: BlankSpace(line_num=150)
-		PlaceHolder() for: BlankSpace(line_num=151)
-		PlaceHolder() for: TypeDef(line_num=152) typedef enum mjtIntegrator_ 
-			PlaceHolder() for: Scope(line_num=152,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=152)
-				SingleLineComment(line_num=152) # integrator mode 
-				PlaceHolder() for: BlankSpace(line_num=153)
-				PlaceHolder() for: EnumField(line_num=153) mjINT_EULER         = 0, 
-				PlaceHolder() for: BlankSpace(line_num=153)
-				SingleLineComment(line_num=153) # semi-implicit Euler 
-				PlaceHolder() for: BlankSpace(line_num=154)
-				PlaceHolder() for: EnumField(line_num=154) mjINT_RK4, 
-				PlaceHolder() for: BlankSpace(line_num=154)
-				SingleLineComment(line_num=154) # 4th-order Runge Kutta 
-				PlaceHolder() for: BlankSpace(line_num=155)
-				PlaceHolder() for: EnumField(line_num=155) mjINT_IMPLICIT, 
-				PlaceHolder() for: BlankSpace(line_num=155)
-				SingleLineComment(line_num=155) # implicit in velocity 
-				PlaceHolder() for: BlankSpace(line_num=156)
-				PlaceHolder() for: EnumField(line_num=156) mjINT_IMPLICITFAST              // implicit in velocity, 
-				PlaceHolder() for: EnumField(line_num=156) no rne derivative 
+		#PlaceHolder (not a comment): BlankSpace(line_num=149)
+		#PlaceHolder (not a comment): BlankSpace(line_num=150)
+		#PlaceHolder (not a comment): BlankSpace(line_num=151)
+		#PlaceHolder (not a comment): TypeDef(line_num=152) typedef enum mjtIntegrator_ 
+			#PlaceHolder (not a comment): Scope(line_num=152,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=152)
+				# integrator mode 
+				#PlaceHolder (not a comment): BlankSpace(line_num=153)
+				#PlaceHolder (not a comment): EnumField(line_num=153) mjINT_EULER         = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=153)
+				# semi-implicit Euler 
+				#PlaceHolder (not a comment): BlankSpace(line_num=154)
+				#PlaceHolder (not a comment): EnumField(line_num=154) mjINT_RK4, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=154)
+				# 4th-order Runge Kutta 
+				#PlaceHolder (not a comment): BlankSpace(line_num=155)
+				#PlaceHolder (not a comment): EnumField(line_num=155) mjINT_IMPLICIT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=155)
+				# implicit in velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=156)
+				#PlaceHolder (not a comment): EnumField(line_num=156) mjINT_IMPLICITFAST              // implicit in velocity, 
+				#PlaceHolder (not a comment): EnumField(line_num=156) no rne derivative 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtIntegrator ; 
-		PlaceHolder() for: BlankSpace(line_num=157)
-		PlaceHolder() for: BlankSpace(line_num=158)
-		PlaceHolder() for: BlankSpace(line_num=159)
-		PlaceHolder() for: TypeDef(line_num=160) typedef enum mjtCone_ 
-			PlaceHolder() for: Scope(line_num=160,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=160)
-				SingleLineComment(line_num=160) # type of friction cone 
-				PlaceHolder() for: BlankSpace(line_num=161)
-				PlaceHolder() for: EnumField(line_num=161) mjCONE_PYRAMIDAL     = 0, 
-				PlaceHolder() for: BlankSpace(line_num=161)
-				SingleLineComment(line_num=161) # pyramidal 
-				PlaceHolder() for: BlankSpace(line_num=162)
-				PlaceHolder() for: EnumField(line_num=162) mjCONE_ELLIPTIC                 // elliptic 
+		#PlaceHolder (not a comment): BlankSpace(line_num=157)
+		#PlaceHolder (not a comment): BlankSpace(line_num=158)
+		#PlaceHolder (not a comment): BlankSpace(line_num=159)
+		#PlaceHolder (not a comment): TypeDef(line_num=160) typedef enum mjtCone_ 
+			#PlaceHolder (not a comment): Scope(line_num=160,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=160)
+				# type of friction cone 
+				#PlaceHolder (not a comment): BlankSpace(line_num=161)
+				#PlaceHolder (not a comment): EnumField(line_num=161) mjCONE_PYRAMIDAL     = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=161)
+				# pyramidal 
+				#PlaceHolder (not a comment): BlankSpace(line_num=162)
+				#PlaceHolder (not a comment): EnumField(line_num=162) mjCONE_ELLIPTIC                 // elliptic 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtCone ; 
-		PlaceHolder() for: BlankSpace(line_num=163)
-		PlaceHolder() for: BlankSpace(line_num=164)
-		PlaceHolder() for: BlankSpace(line_num=165)
-		PlaceHolder() for: TypeDef(line_num=166) typedef enum mjtJacobian_ 
-			PlaceHolder() for: Scope(line_num=166,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=166)
-				SingleLineComment(line_num=166) # type of constraint Jacobian 
-				PlaceHolder() for: BlankSpace(line_num=167)
-				PlaceHolder() for: EnumField(line_num=167) mjJAC_DENSE          = 0, 
-				PlaceHolder() for: BlankSpace(line_num=167)
-				SingleLineComment(line_num=167) # dense 
-				PlaceHolder() for: BlankSpace(line_num=168)
-				PlaceHolder() for: EnumField(line_num=168) mjJAC_SPARSE, 
-				PlaceHolder() for: BlankSpace(line_num=168)
-				SingleLineComment(line_num=168) # sparse 
-				PlaceHolder() for: BlankSpace(line_num=169)
-				PlaceHolder() for: EnumField(line_num=169) mjJAC_AUTO                      // dense if nv<60, 
-				PlaceHolder() for: EnumField(line_num=169) sparse otherwise 
+		#PlaceHolder (not a comment): BlankSpace(line_num=163)
+		#PlaceHolder (not a comment): BlankSpace(line_num=164)
+		#PlaceHolder (not a comment): BlankSpace(line_num=165)
+		#PlaceHolder (not a comment): TypeDef(line_num=166) typedef enum mjtJacobian_ 
+			#PlaceHolder (not a comment): Scope(line_num=166,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=166)
+				# type of constraint Jacobian 
+				#PlaceHolder (not a comment): BlankSpace(line_num=167)
+				#PlaceHolder (not a comment): EnumField(line_num=167) mjJAC_DENSE          = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=167)
+				# dense 
+				#PlaceHolder (not a comment): BlankSpace(line_num=168)
+				#PlaceHolder (not a comment): EnumField(line_num=168) mjJAC_SPARSE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=168)
+				# sparse 
+				#PlaceHolder (not a comment): BlankSpace(line_num=169)
+				#PlaceHolder (not a comment): EnumField(line_num=169) mjJAC_AUTO                      // dense if nv<60, 
+				#PlaceHolder (not a comment): EnumField(line_num=169) sparse otherwise 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtJacobian ; 
-		PlaceHolder() for: BlankSpace(line_num=170)
-		PlaceHolder() for: BlankSpace(line_num=171)
-		PlaceHolder() for: BlankSpace(line_num=172)
-		PlaceHolder() for: TypeDef(line_num=173) typedef enum mjtSolver_ 
-			PlaceHolder() for: Scope(line_num=173,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=173)
-				SingleLineComment(line_num=173) # constraint solver algorithm 
-				PlaceHolder() for: BlankSpace(line_num=174)
-				PlaceHolder() for: EnumField(line_num=174) mjSOL_PGS            = 0, 
-				PlaceHolder() for: BlankSpace(line_num=174)
-				SingleLineComment(line_num=174) # PGS    (dual) 
-				PlaceHolder() for: BlankSpace(line_num=175)
-				PlaceHolder() for: EnumField(line_num=175) mjSOL_CG, 
-				PlaceHolder() for: BlankSpace(line_num=175)
-				SingleLineComment(line_num=175) # CG     (primal) 
-				PlaceHolder() for: BlankSpace(line_num=176)
-				PlaceHolder() for: EnumField(line_num=176) mjSOL_NEWTON                    // Newton (primal) 
+		#PlaceHolder (not a comment): BlankSpace(line_num=170)
+		#PlaceHolder (not a comment): BlankSpace(line_num=171)
+		#PlaceHolder (not a comment): BlankSpace(line_num=172)
+		#PlaceHolder (not a comment): TypeDef(line_num=173) typedef enum mjtSolver_ 
+			#PlaceHolder (not a comment): Scope(line_num=173,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=173)
+				# constraint solver algorithm 
+				#PlaceHolder (not a comment): BlankSpace(line_num=174)
+				#PlaceHolder (not a comment): EnumField(line_num=174) mjSOL_PGS            = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=174)
+				# PGS    (dual) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=175)
+				#PlaceHolder (not a comment): EnumField(line_num=175) mjSOL_CG, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=175)
+				# CG     (primal) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=176)
+				#PlaceHolder (not a comment): EnumField(line_num=176) mjSOL_NEWTON                    // Newton (primal) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtSolver ; 
-		PlaceHolder() for: BlankSpace(line_num=177)
-		PlaceHolder() for: BlankSpace(line_num=178)
-		PlaceHolder() for: BlankSpace(line_num=179)
-		PlaceHolder() for: TypeDef(line_num=180) typedef enum mjtEq_ 
-			PlaceHolder() for: Scope(line_num=180,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=180)
-				SingleLineComment(line_num=180) # type of equality constraint 
-				PlaceHolder() for: BlankSpace(line_num=181)
-				PlaceHolder() for: EnumField(line_num=181) mjEQ_CONNECT        = 0, 
-				PlaceHolder() for: BlankSpace(line_num=181)
-				SingleLineComment(line_num=181) # connect two bodies at a point (ball joint) 
-				PlaceHolder() for: BlankSpace(line_num=182)
-				PlaceHolder() for: EnumField(line_num=182) mjEQ_WELD, 
-				PlaceHolder() for: BlankSpace(line_num=182)
-				SingleLineComment(line_num=182) # fix relative position and orientation of two bodies 
-				PlaceHolder() for: BlankSpace(line_num=183)
-				PlaceHolder() for: EnumField(line_num=183) mjEQ_JOINT, 
-				PlaceHolder() for: BlankSpace(line_num=183)
-				SingleLineComment(line_num=183) # couple the values of two scalar joints with cubic 
-				PlaceHolder() for: BlankSpace(line_num=184)
-				PlaceHolder() for: EnumField(line_num=184) mjEQ_TENDON, 
-				PlaceHolder() for: BlankSpace(line_num=184)
-				SingleLineComment(line_num=184) # couple the lengths of two tendons with cubic 
-				PlaceHolder() for: BlankSpace(line_num=185)
-				PlaceHolder() for: EnumField(line_num=185) mjEQ_FLEX, 
-				PlaceHolder() for: BlankSpace(line_num=185)
-				SingleLineComment(line_num=185) # fix all edge lengths of a flex 
-				PlaceHolder() for: BlankSpace(line_num=186)
-				PlaceHolder() for: EnumField(line_num=186) mjEQ_DISTANCE                   // unsupported, 
-				PlaceHolder() for: EnumField(line_num=186) will cause an error if used 
+		#PlaceHolder (not a comment): BlankSpace(line_num=177)
+		#PlaceHolder (not a comment): BlankSpace(line_num=178)
+		#PlaceHolder (not a comment): BlankSpace(line_num=179)
+		#PlaceHolder (not a comment): TypeDef(line_num=180) typedef enum mjtEq_ 
+			#PlaceHolder (not a comment): Scope(line_num=180,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=180)
+				# type of equality constraint 
+				#PlaceHolder (not a comment): BlankSpace(line_num=181)
+				#PlaceHolder (not a comment): EnumField(line_num=181) mjEQ_CONNECT        = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=181)
+				# connect two bodies at a point (ball joint) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=182)
+				#PlaceHolder (not a comment): EnumField(line_num=182) mjEQ_WELD, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=182)
+				# fix relative position and orientation of two bodies 
+				#PlaceHolder (not a comment): BlankSpace(line_num=183)
+				#PlaceHolder (not a comment): EnumField(line_num=183) mjEQ_JOINT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=183)
+				# couple the values of two scalar joints with cubic 
+				#PlaceHolder (not a comment): BlankSpace(line_num=184)
+				#PlaceHolder (not a comment): EnumField(line_num=184) mjEQ_TENDON, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=184)
+				# couple the lengths of two tendons with cubic 
+				#PlaceHolder (not a comment): BlankSpace(line_num=185)
+				#PlaceHolder (not a comment): EnumField(line_num=185) mjEQ_FLEX, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=185)
+				# fix all edge lengths of a flex 
+				#PlaceHolder (not a comment): BlankSpace(line_num=186)
+				#PlaceHolder (not a comment): EnumField(line_num=186) mjEQ_DISTANCE                   // unsupported, 
+				#PlaceHolder (not a comment): EnumField(line_num=186) will cause an error if used 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtEq ; 
-		PlaceHolder() for: BlankSpace(line_num=187)
-		PlaceHolder() for: BlankSpace(line_num=188)
-		PlaceHolder() for: BlankSpace(line_num=189)
-		PlaceHolder() for: TypeDef(line_num=190) typedef enum mjtWrap_ 
-			PlaceHolder() for: Scope(line_num=190,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=190)
-				SingleLineComment(line_num=190) # type of tendon wrap object 
-				PlaceHolder() for: BlankSpace(line_num=191)
-				PlaceHolder() for: EnumField(line_num=191) mjWRAP_NONE         = 0, 
-				PlaceHolder() for: BlankSpace(line_num=191)
-				SingleLineComment(line_num=191) # null object 
-				PlaceHolder() for: BlankSpace(line_num=192)
-				PlaceHolder() for: EnumField(line_num=192) mjWRAP_JOINT, 
-				PlaceHolder() for: BlankSpace(line_num=192)
-				SingleLineComment(line_num=192) # constant moment arm 
-				PlaceHolder() for: BlankSpace(line_num=193)
-				PlaceHolder() for: EnumField(line_num=193) mjWRAP_PULLEY, 
-				PlaceHolder() for: BlankSpace(line_num=193)
-				SingleLineComment(line_num=193) # pulley used to split tendon 
-				PlaceHolder() for: BlankSpace(line_num=194)
-				PlaceHolder() for: EnumField(line_num=194) mjWRAP_SITE, 
-				PlaceHolder() for: BlankSpace(line_num=194)
-				SingleLineComment(line_num=194) # pass through site 
-				PlaceHolder() for: BlankSpace(line_num=195)
-				PlaceHolder() for: EnumField(line_num=195) mjWRAP_SPHERE, 
-				PlaceHolder() for: BlankSpace(line_num=195)
-				SingleLineComment(line_num=195) # wrap around sphere 
-				PlaceHolder() for: BlankSpace(line_num=196)
-				PlaceHolder() for: EnumField(line_num=196) mjWRAP_CYLINDER                 // wrap around (infinite) cylinder 
+		#PlaceHolder (not a comment): BlankSpace(line_num=187)
+		#PlaceHolder (not a comment): BlankSpace(line_num=188)
+		#PlaceHolder (not a comment): BlankSpace(line_num=189)
+		#PlaceHolder (not a comment): TypeDef(line_num=190) typedef enum mjtWrap_ 
+			#PlaceHolder (not a comment): Scope(line_num=190,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=190)
+				# type of tendon wrap object 
+				#PlaceHolder (not a comment): BlankSpace(line_num=191)
+				#PlaceHolder (not a comment): EnumField(line_num=191) mjWRAP_NONE         = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=191)
+				# null object 
+				#PlaceHolder (not a comment): BlankSpace(line_num=192)
+				#PlaceHolder (not a comment): EnumField(line_num=192) mjWRAP_JOINT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=192)
+				# constant moment arm 
+				#PlaceHolder (not a comment): BlankSpace(line_num=193)
+				#PlaceHolder (not a comment): EnumField(line_num=193) mjWRAP_PULLEY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=193)
+				# pulley used to split tendon 
+				#PlaceHolder (not a comment): BlankSpace(line_num=194)
+				#PlaceHolder (not a comment): EnumField(line_num=194) mjWRAP_SITE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=194)
+				# pass through site 
+				#PlaceHolder (not a comment): BlankSpace(line_num=195)
+				#PlaceHolder (not a comment): EnumField(line_num=195) mjWRAP_SPHERE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=195)
+				# wrap around sphere 
+				#PlaceHolder (not a comment): BlankSpace(line_num=196)
+				#PlaceHolder (not a comment): EnumField(line_num=196) mjWRAP_CYLINDER                 // wrap around (infinite) cylinder 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtWrap ; 
-		PlaceHolder() for: BlankSpace(line_num=197)
-		PlaceHolder() for: BlankSpace(line_num=198)
-		PlaceHolder() for: BlankSpace(line_num=199)
-		PlaceHolder() for: TypeDef(line_num=200) typedef enum mjtTrn_ 
-			PlaceHolder() for: Scope(line_num=200,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=200)
-				SingleLineComment(line_num=200) # type of actuator transmission 
-				PlaceHolder() for: BlankSpace(line_num=201)
-				PlaceHolder() for: EnumField(line_num=201) mjTRN_JOINT         = 0, 
-				PlaceHolder() for: BlankSpace(line_num=201)
-				SingleLineComment(line_num=201) # force on joint 
-				PlaceHolder() for: BlankSpace(line_num=202)
-				PlaceHolder() for: EnumField(line_num=202) mjTRN_JOINTINPARENT, 
-				PlaceHolder() for: BlankSpace(line_num=202)
-				SingleLineComment(line_num=202) # force on joint, expressed in parent frame 
-				PlaceHolder() for: BlankSpace(line_num=203)
-				PlaceHolder() for: EnumField(line_num=203) mjTRN_SLIDERCRANK, 
-				PlaceHolder() for: BlankSpace(line_num=203)
-				SingleLineComment(line_num=203) # force via slider-crank linkage 
-				PlaceHolder() for: BlankSpace(line_num=204)
-				PlaceHolder() for: EnumField(line_num=204) mjTRN_TENDON, 
-				PlaceHolder() for: BlankSpace(line_num=204)
-				SingleLineComment(line_num=204) # force on tendon 
-				PlaceHolder() for: BlankSpace(line_num=205)
-				PlaceHolder() for: EnumField(line_num=205) mjTRN_SITE, 
-				PlaceHolder() for: BlankSpace(line_num=205)
-				SingleLineComment(line_num=205) # force on site 
-				PlaceHolder() for: BlankSpace(line_num=206)
-				PlaceHolder() for: EnumField(line_num=206) mjTRN_BODY, 
-				PlaceHolder() for: BlankSpace(line_num=206)
-				SingleLineComment(line_num=206) # adhesion force on a body's geoms 
-				PlaceHolder() for: BlankSpace(line_num=207)
-				PlaceHolder() for: BlankSpace(line_num=208)
-				PlaceHolder() for: EnumField(line_num=208) mjTRN_UNDEFINED     = 1000      // undefined transmission type 
+		#PlaceHolder (not a comment): BlankSpace(line_num=197)
+		#PlaceHolder (not a comment): BlankSpace(line_num=198)
+		#PlaceHolder (not a comment): BlankSpace(line_num=199)
+		#PlaceHolder (not a comment): TypeDef(line_num=200) typedef enum mjtTrn_ 
+			#PlaceHolder (not a comment): Scope(line_num=200,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=200)
+				# type of actuator transmission 
+				#PlaceHolder (not a comment): BlankSpace(line_num=201)
+				#PlaceHolder (not a comment): EnumField(line_num=201) mjTRN_JOINT         = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=201)
+				# force on joint 
+				#PlaceHolder (not a comment): BlankSpace(line_num=202)
+				#PlaceHolder (not a comment): EnumField(line_num=202) mjTRN_JOINTINPARENT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=202)
+				# force on joint, expressed in parent frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=203)
+				#PlaceHolder (not a comment): EnumField(line_num=203) mjTRN_SLIDERCRANK, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=203)
+				# force via slider-crank linkage 
+				#PlaceHolder (not a comment): BlankSpace(line_num=204)
+				#PlaceHolder (not a comment): EnumField(line_num=204) mjTRN_TENDON, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=204)
+				# force on tendon 
+				#PlaceHolder (not a comment): BlankSpace(line_num=205)
+				#PlaceHolder (not a comment): EnumField(line_num=205) mjTRN_SITE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=205)
+				# force on site 
+				#PlaceHolder (not a comment): BlankSpace(line_num=206)
+				#PlaceHolder (not a comment): EnumField(line_num=206) mjTRN_BODY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=206)
+				# adhesion force on a body's geoms 
+				#PlaceHolder (not a comment): BlankSpace(line_num=207)
+				#PlaceHolder (not a comment): BlankSpace(line_num=208)
+				#PlaceHolder (not a comment): EnumField(line_num=208) mjTRN_UNDEFINED     = 1000      // undefined transmission type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtTrn ; 
-		PlaceHolder() for: BlankSpace(line_num=209)
-		PlaceHolder() for: BlankSpace(line_num=210)
-		PlaceHolder() for: BlankSpace(line_num=211)
-		PlaceHolder() for: TypeDef(line_num=212) typedef enum mjtDyn_ 
-			PlaceHolder() for: Scope(line_num=212,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=212)
-				SingleLineComment(line_num=212) # type of actuator dynamics 
-				PlaceHolder() for: BlankSpace(line_num=213)
-				PlaceHolder() for: EnumField(line_num=213) mjDYN_NONE          = 0, 
-				PlaceHolder() for: BlankSpace(line_num=213)
-				SingleLineComment(line_num=213) # no internal dynamics ;  ctrl specifies force 
-				PlaceHolder() for: BlankSpace(line_num=214)
-				PlaceHolder() for: EnumField(line_num=214) mjDYN_INTEGRATOR, 
-				PlaceHolder() for: BlankSpace(line_num=214)
-				SingleLineComment(line_num=214) # integrator: da/dt = u 
-				PlaceHolder() for: BlankSpace(line_num=215)
-				PlaceHolder() for: EnumField(line_num=215) mjDYN_FILTER, 
-				PlaceHolder() for: BlankSpace(line_num=215)
-				SingleLineComment(line_num=215) # linear filter: da/dt = (u-a) / tau 
-				PlaceHolder() for: BlankSpace(line_num=216)
-				PlaceHolder() for: EnumField(line_num=216) mjDYN_FILTEREXACT, 
-				PlaceHolder() for: BlankSpace(line_num=216)
-				SingleLineComment(line_num=216) # linear filter: da/dt = (u-a) / tau, with exact integration 
-				PlaceHolder() for: BlankSpace(line_num=217)
-				PlaceHolder() for: EnumField(line_num=217) mjDYN_MUSCLE, 
-				PlaceHolder() for: BlankSpace(line_num=217)
-				SingleLineComment(line_num=217) # piece-wise linear filter with two time constants 
-				PlaceHolder() for: BlankSpace(line_num=218)
-				PlaceHolder() for: EnumField(line_num=218) mjDYN_USER                      // user-defined dynamics type 
+		#PlaceHolder (not a comment): BlankSpace(line_num=209)
+		#PlaceHolder (not a comment): BlankSpace(line_num=210)
+		#PlaceHolder (not a comment): BlankSpace(line_num=211)
+		#PlaceHolder (not a comment): TypeDef(line_num=212) typedef enum mjtDyn_ 
+			#PlaceHolder (not a comment): Scope(line_num=212,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=212)
+				# type of actuator dynamics 
+				#PlaceHolder (not a comment): BlankSpace(line_num=213)
+				#PlaceHolder (not a comment): EnumField(line_num=213) mjDYN_NONE          = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=213)
+				# no internal dynamics ;  ctrl specifies force 
+				#PlaceHolder (not a comment): BlankSpace(line_num=214)
+				#PlaceHolder (not a comment): EnumField(line_num=214) mjDYN_INTEGRATOR, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=214)
+				# integrator: da/dt = u 
+				#PlaceHolder (not a comment): BlankSpace(line_num=215)
+				#PlaceHolder (not a comment): EnumField(line_num=215) mjDYN_FILTER, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=215)
+				# linear filter: da/dt = (u-a) / tau 
+				#PlaceHolder (not a comment): BlankSpace(line_num=216)
+				#PlaceHolder (not a comment): EnumField(line_num=216) mjDYN_FILTEREXACT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=216)
+				# linear filter: da/dt = (u-a) / tau, with exact integration 
+				#PlaceHolder (not a comment): BlankSpace(line_num=217)
+				#PlaceHolder (not a comment): EnumField(line_num=217) mjDYN_MUSCLE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=217)
+				# piece-wise linear filter with two time constants 
+				#PlaceHolder (not a comment): BlankSpace(line_num=218)
+				#PlaceHolder (not a comment): EnumField(line_num=218) mjDYN_USER                      // user-defined dynamics type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtDyn ; 
-		PlaceHolder() for: BlankSpace(line_num=219)
-		PlaceHolder() for: BlankSpace(line_num=220)
-		PlaceHolder() for: BlankSpace(line_num=221)
-		PlaceHolder() for: TypeDef(line_num=222) typedef enum mjtGain_ 
-			PlaceHolder() for: Scope(line_num=222,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=222)
-				SingleLineComment(line_num=222) # type of actuator gain 
-				PlaceHolder() for: BlankSpace(line_num=223)
-				PlaceHolder() for: EnumField(line_num=223) mjGAIN_FIXED        = 0, 
-				PlaceHolder() for: BlankSpace(line_num=223)
-				SingleLineComment(line_num=223) # fixed gain 
-				PlaceHolder() for: BlankSpace(line_num=224)
-				PlaceHolder() for: EnumField(line_num=224) mjGAIN_AFFINE, 
-				PlaceHolder() for: BlankSpace(line_num=224)
-				SingleLineComment(line_num=224) # const + kp*length + kv*velocity 
-				PlaceHolder() for: BlankSpace(line_num=225)
-				PlaceHolder() for: EnumField(line_num=225) mjGAIN_MUSCLE, 
-				PlaceHolder() for: BlankSpace(line_num=225)
-				SingleLineComment(line_num=225) # muscle FLV curve computed by mju_muscleGain() 
-				PlaceHolder() for: BlankSpace(line_num=226)
-				PlaceHolder() for: EnumField(line_num=226) mjGAIN_USER                     // user-defined gain type 
+		#PlaceHolder (not a comment): BlankSpace(line_num=219)
+		#PlaceHolder (not a comment): BlankSpace(line_num=220)
+		#PlaceHolder (not a comment): BlankSpace(line_num=221)
+		#PlaceHolder (not a comment): TypeDef(line_num=222) typedef enum mjtGain_ 
+			#PlaceHolder (not a comment): Scope(line_num=222,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=222)
+				# type of actuator gain 
+				#PlaceHolder (not a comment): BlankSpace(line_num=223)
+				#PlaceHolder (not a comment): EnumField(line_num=223) mjGAIN_FIXED        = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=223)
+				# fixed gain 
+				#PlaceHolder (not a comment): BlankSpace(line_num=224)
+				#PlaceHolder (not a comment): EnumField(line_num=224) mjGAIN_AFFINE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=224)
+				# const + kp*length + kv*velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=225)
+				#PlaceHolder (not a comment): EnumField(line_num=225) mjGAIN_MUSCLE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=225)
+				# muscle FLV curve computed by mju_muscleGain() 
+				#PlaceHolder (not a comment): BlankSpace(line_num=226)
+				#PlaceHolder (not a comment): EnumField(line_num=226) mjGAIN_USER                     // user-defined gain type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtGain ; 
-		PlaceHolder() for: BlankSpace(line_num=227)
-		PlaceHolder() for: BlankSpace(line_num=228)
-		PlaceHolder() for: BlankSpace(line_num=229)
-		PlaceHolder() for: TypeDef(line_num=230) typedef enum mjtBias_ 
-			PlaceHolder() for: Scope(line_num=230,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=230)
-				SingleLineComment(line_num=230) # type of actuator bias 
-				PlaceHolder() for: BlankSpace(line_num=231)
-				PlaceHolder() for: EnumField(line_num=231) mjBIAS_NONE         = 0, 
-				PlaceHolder() for: BlankSpace(line_num=231)
-				SingleLineComment(line_num=231) # no bias 
-				PlaceHolder() for: BlankSpace(line_num=232)
-				PlaceHolder() for: EnumField(line_num=232) mjBIAS_AFFINE, 
-				PlaceHolder() for: BlankSpace(line_num=232)
-				SingleLineComment(line_num=232) # const + kp*length + kv*velocity 
-				PlaceHolder() for: BlankSpace(line_num=233)
-				PlaceHolder() for: EnumField(line_num=233) mjBIAS_MUSCLE, 
-				PlaceHolder() for: BlankSpace(line_num=233)
-				SingleLineComment(line_num=233) # muscle passive force computed by mju_muscleBias() 
-				PlaceHolder() for: BlankSpace(line_num=234)
-				PlaceHolder() for: EnumField(line_num=234) mjBIAS_USER                     // user-defined bias type 
+		#PlaceHolder (not a comment): BlankSpace(line_num=227)
+		#PlaceHolder (not a comment): BlankSpace(line_num=228)
+		#PlaceHolder (not a comment): BlankSpace(line_num=229)
+		#PlaceHolder (not a comment): TypeDef(line_num=230) typedef enum mjtBias_ 
+			#PlaceHolder (not a comment): Scope(line_num=230,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=230)
+				# type of actuator bias 
+				#PlaceHolder (not a comment): BlankSpace(line_num=231)
+				#PlaceHolder (not a comment): EnumField(line_num=231) mjBIAS_NONE         = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=231)
+				# no bias 
+				#PlaceHolder (not a comment): BlankSpace(line_num=232)
+				#PlaceHolder (not a comment): EnumField(line_num=232) mjBIAS_AFFINE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=232)
+				# const + kp*length + kv*velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=233)
+				#PlaceHolder (not a comment): EnumField(line_num=233) mjBIAS_MUSCLE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=233)
+				# muscle passive force computed by mju_muscleBias() 
+				#PlaceHolder (not a comment): BlankSpace(line_num=234)
+				#PlaceHolder (not a comment): EnumField(line_num=234) mjBIAS_USER                     // user-defined bias type 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtBias ; 
-		PlaceHolder() for: BlankSpace(line_num=235)
-		PlaceHolder() for: BlankSpace(line_num=236)
-		PlaceHolder() for: BlankSpace(line_num=237)
-		PlaceHolder() for: TypeDef(line_num=238) typedef enum mjtObj_ 
-			PlaceHolder() for: Scope(line_num=238,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=238)
-				SingleLineComment(line_num=238) # type of MujoCo object 
-				PlaceHolder() for: BlankSpace(line_num=239)
-				PlaceHolder() for: EnumField(line_num=239) mjOBJ_UNKNOWN       = 0, 
-				PlaceHolder() for: BlankSpace(line_num=239)
-				SingleLineComment(line_num=239) # unknown object type 
-				PlaceHolder() for: BlankSpace(line_num=240)
-				PlaceHolder() for: EnumField(line_num=240) mjOBJ_BODY, 
-				PlaceHolder() for: BlankSpace(line_num=240)
-				SingleLineComment(line_num=240) # body 
-				PlaceHolder() for: BlankSpace(line_num=241)
-				PlaceHolder() for: EnumField(line_num=241) mjOBJ_XBODY, 
-				PlaceHolder() for: BlankSpace(line_num=241)
-				SingleLineComment(line_num=241) # body, used to access regular frame instead of i-frame 
-				PlaceHolder() for: BlankSpace(line_num=242)
-				PlaceHolder() for: EnumField(line_num=242) mjOBJ_JOINT, 
-				PlaceHolder() for: BlankSpace(line_num=242)
-				SingleLineComment(line_num=242) # joint 
-				PlaceHolder() for: BlankSpace(line_num=243)
-				PlaceHolder() for: EnumField(line_num=243) mjOBJ_DOF, 
-				PlaceHolder() for: BlankSpace(line_num=243)
-				SingleLineComment(line_num=243) # dof 
-				PlaceHolder() for: BlankSpace(line_num=244)
-				PlaceHolder() for: EnumField(line_num=244) mjOBJ_GEOM, 
-				PlaceHolder() for: BlankSpace(line_num=244)
-				SingleLineComment(line_num=244) # geom 
-				PlaceHolder() for: BlankSpace(line_num=245)
-				PlaceHolder() for: EnumField(line_num=245) mjOBJ_SITE, 
-				PlaceHolder() for: BlankSpace(line_num=245)
-				SingleLineComment(line_num=245) # site 
-				PlaceHolder() for: BlankSpace(line_num=246)
-				PlaceHolder() for: EnumField(line_num=246) mjOBJ_CAMERA, 
-				PlaceHolder() for: BlankSpace(line_num=246)
-				SingleLineComment(line_num=246) # camera 
-				PlaceHolder() for: BlankSpace(line_num=247)
-				PlaceHolder() for: EnumField(line_num=247) mjOBJ_LIGHT, 
-				PlaceHolder() for: BlankSpace(line_num=247)
-				SingleLineComment(line_num=247) # light 
-				PlaceHolder() for: BlankSpace(line_num=248)
-				PlaceHolder() for: EnumField(line_num=248) mjOBJ_FLEX, 
-				PlaceHolder() for: BlankSpace(line_num=248)
-				SingleLineComment(line_num=248) # flex 
-				PlaceHolder() for: BlankSpace(line_num=249)
-				PlaceHolder() for: EnumField(line_num=249) mjOBJ_MESH, 
-				PlaceHolder() for: BlankSpace(line_num=249)
-				SingleLineComment(line_num=249) # mesh 
-				PlaceHolder() for: BlankSpace(line_num=250)
-				PlaceHolder() for: EnumField(line_num=250) mjOBJ_SKIN, 
-				PlaceHolder() for: BlankSpace(line_num=250)
-				SingleLineComment(line_num=250) # skin 
-				PlaceHolder() for: BlankSpace(line_num=251)
-				PlaceHolder() for: EnumField(line_num=251) mjOBJ_HFIELD, 
-				PlaceHolder() for: BlankSpace(line_num=251)
-				SingleLineComment(line_num=251) # heightfield 
-				PlaceHolder() for: BlankSpace(line_num=252)
-				PlaceHolder() for: EnumField(line_num=252) mjOBJ_TEXTURE, 
-				PlaceHolder() for: BlankSpace(line_num=252)
-				SingleLineComment(line_num=252) # texture 
-				PlaceHolder() for: BlankSpace(line_num=253)
-				PlaceHolder() for: EnumField(line_num=253) mjOBJ_MATERIAL, 
-				PlaceHolder() for: BlankSpace(line_num=253)
-				SingleLineComment(line_num=253) # material for rendering 
-				PlaceHolder() for: BlankSpace(line_num=254)
-				PlaceHolder() for: EnumField(line_num=254) mjOBJ_PAIR, 
-				PlaceHolder() for: BlankSpace(line_num=254)
-				SingleLineComment(line_num=254) # geom pair to include 
-				PlaceHolder() for: BlankSpace(line_num=255)
-				PlaceHolder() for: EnumField(line_num=255) mjOBJ_EXCLUDE, 
-				PlaceHolder() for: BlankSpace(line_num=255)
-				SingleLineComment(line_num=255) # body pair to exclude 
-				PlaceHolder() for: BlankSpace(line_num=256)
-				PlaceHolder() for: EnumField(line_num=256) mjOBJ_EQUALITY, 
-				PlaceHolder() for: BlankSpace(line_num=256)
-				SingleLineComment(line_num=256) # equality constraint 
-				PlaceHolder() for: BlankSpace(line_num=257)
-				PlaceHolder() for: EnumField(line_num=257) mjOBJ_TENDON, 
-				PlaceHolder() for: BlankSpace(line_num=257)
-				SingleLineComment(line_num=257) # tendon 
-				PlaceHolder() for: BlankSpace(line_num=258)
-				PlaceHolder() for: EnumField(line_num=258) mjOBJ_ACTUATOR, 
-				PlaceHolder() for: BlankSpace(line_num=258)
-				SingleLineComment(line_num=258) # actuator 
-				PlaceHolder() for: BlankSpace(line_num=259)
-				PlaceHolder() for: EnumField(line_num=259) mjOBJ_SENSOR, 
-				PlaceHolder() for: BlankSpace(line_num=259)
-				SingleLineComment(line_num=259) # sensor 
-				PlaceHolder() for: BlankSpace(line_num=260)
-				PlaceHolder() for: EnumField(line_num=260) mjOBJ_NUMERIC, 
-				PlaceHolder() for: BlankSpace(line_num=260)
-				SingleLineComment(line_num=260) # numeric 
-				PlaceHolder() for: BlankSpace(line_num=261)
-				PlaceHolder() for: EnumField(line_num=261) mjOBJ_TEXT, 
-				PlaceHolder() for: BlankSpace(line_num=261)
-				SingleLineComment(line_num=261) # text 
-				PlaceHolder() for: BlankSpace(line_num=262)
-				PlaceHolder() for: EnumField(line_num=262) mjOBJ_TUPLE, 
-				PlaceHolder() for: BlankSpace(line_num=262)
-				SingleLineComment(line_num=262) # tuple 
-				PlaceHolder() for: BlankSpace(line_num=263)
-				PlaceHolder() for: EnumField(line_num=263) mjOBJ_KEY, 
-				PlaceHolder() for: BlankSpace(line_num=263)
-				SingleLineComment(line_num=263) # keyframe 
-				PlaceHolder() for: BlankSpace(line_num=264)
-				PlaceHolder() for: EnumField(line_num=264) mjOBJ_PLUGIN, 
-				PlaceHolder() for: BlankSpace(line_num=264)
-				SingleLineComment(line_num=264) # plugin instance 
-				PlaceHolder() for: BlankSpace(line_num=265)
-				PlaceHolder() for: BlankSpace(line_num=266)
-				PlaceHolder() for: EnumField(line_num=266) mjNOBJECT, 
-				PlaceHolder() for: BlankSpace(line_num=266)
-				SingleLineComment(line_num=266) # number of object types 
-				PlaceHolder() for: BlankSpace(line_num=267)
-				PlaceHolder() for: BlankSpace(line_num=268)
-				SingleLineComment(line_num=268) # meta elements, do not appear in mjModel 
-				PlaceHolder() for: BlankSpace(line_num=269)
-				PlaceHolder() for: EnumField(line_num=269) mjOBJ_FRAME         = 100       // frame 
+		#PlaceHolder (not a comment): BlankSpace(line_num=235)
+		#PlaceHolder (not a comment): BlankSpace(line_num=236)
+		#PlaceHolder (not a comment): BlankSpace(line_num=237)
+		#PlaceHolder (not a comment): TypeDef(line_num=238) typedef enum mjtObj_ 
+			#PlaceHolder (not a comment): Scope(line_num=238,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=238)
+				# type of MujoCo object 
+				#PlaceHolder (not a comment): BlankSpace(line_num=239)
+				#PlaceHolder (not a comment): EnumField(line_num=239) mjOBJ_UNKNOWN       = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=239)
+				# unknown object type 
+				#PlaceHolder (not a comment): BlankSpace(line_num=240)
+				#PlaceHolder (not a comment): EnumField(line_num=240) mjOBJ_BODY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=240)
+				# body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=241)
+				#PlaceHolder (not a comment): EnumField(line_num=241) mjOBJ_XBODY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=241)
+				# body, used to access regular frame instead of i-frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=242)
+				#PlaceHolder (not a comment): EnumField(line_num=242) mjOBJ_JOINT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=242)
+				# joint 
+				#PlaceHolder (not a comment): BlankSpace(line_num=243)
+				#PlaceHolder (not a comment): EnumField(line_num=243) mjOBJ_DOF, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=243)
+				# dof 
+				#PlaceHolder (not a comment): BlankSpace(line_num=244)
+				#PlaceHolder (not a comment): EnumField(line_num=244) mjOBJ_GEOM, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=244)
+				# geom 
+				#PlaceHolder (not a comment): BlankSpace(line_num=245)
+				#PlaceHolder (not a comment): EnumField(line_num=245) mjOBJ_SITE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=245)
+				# site 
+				#PlaceHolder (not a comment): BlankSpace(line_num=246)
+				#PlaceHolder (not a comment): EnumField(line_num=246) mjOBJ_CAMERA, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=246)
+				# camera 
+				#PlaceHolder (not a comment): BlankSpace(line_num=247)
+				#PlaceHolder (not a comment): EnumField(line_num=247) mjOBJ_LIGHT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=247)
+				# light 
+				#PlaceHolder (not a comment): BlankSpace(line_num=248)
+				#PlaceHolder (not a comment): EnumField(line_num=248) mjOBJ_FLEX, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=248)
+				# flex 
+				#PlaceHolder (not a comment): BlankSpace(line_num=249)
+				#PlaceHolder (not a comment): EnumField(line_num=249) mjOBJ_MESH, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=249)
+				# mesh 
+				#PlaceHolder (not a comment): BlankSpace(line_num=250)
+				#PlaceHolder (not a comment): EnumField(line_num=250) mjOBJ_SKIN, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=250)
+				# skin 
+				#PlaceHolder (not a comment): BlankSpace(line_num=251)
+				#PlaceHolder (not a comment): EnumField(line_num=251) mjOBJ_HFIELD, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=251)
+				# heightfield 
+				#PlaceHolder (not a comment): BlankSpace(line_num=252)
+				#PlaceHolder (not a comment): EnumField(line_num=252) mjOBJ_TEXTURE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=252)
+				# texture 
+				#PlaceHolder (not a comment): BlankSpace(line_num=253)
+				#PlaceHolder (not a comment): EnumField(line_num=253) mjOBJ_MATERIAL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=253)
+				# material for rendering 
+				#PlaceHolder (not a comment): BlankSpace(line_num=254)
+				#PlaceHolder (not a comment): EnumField(line_num=254) mjOBJ_PAIR, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=254)
+				# geom pair to include 
+				#PlaceHolder (not a comment): BlankSpace(line_num=255)
+				#PlaceHolder (not a comment): EnumField(line_num=255) mjOBJ_EXCLUDE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=255)
+				# body pair to exclude 
+				#PlaceHolder (not a comment): BlankSpace(line_num=256)
+				#PlaceHolder (not a comment): EnumField(line_num=256) mjOBJ_EQUALITY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=256)
+				# equality constraint 
+				#PlaceHolder (not a comment): BlankSpace(line_num=257)
+				#PlaceHolder (not a comment): EnumField(line_num=257) mjOBJ_TENDON, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=257)
+				# tendon 
+				#PlaceHolder (not a comment): BlankSpace(line_num=258)
+				#PlaceHolder (not a comment): EnumField(line_num=258) mjOBJ_ACTUATOR, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=258)
+				# actuator 
+				#PlaceHolder (not a comment): BlankSpace(line_num=259)
+				#PlaceHolder (not a comment): EnumField(line_num=259) mjOBJ_SENSOR, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=259)
+				# sensor 
+				#PlaceHolder (not a comment): BlankSpace(line_num=260)
+				#PlaceHolder (not a comment): EnumField(line_num=260) mjOBJ_NUMERIC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=260)
+				# numeric 
+				#PlaceHolder (not a comment): BlankSpace(line_num=261)
+				#PlaceHolder (not a comment): EnumField(line_num=261) mjOBJ_TEXT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=261)
+				# text 
+				#PlaceHolder (not a comment): BlankSpace(line_num=262)
+				#PlaceHolder (not a comment): EnumField(line_num=262) mjOBJ_TUPLE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=262)
+				# tuple 
+				#PlaceHolder (not a comment): BlankSpace(line_num=263)
+				#PlaceHolder (not a comment): EnumField(line_num=263) mjOBJ_KEY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=263)
+				# keyframe 
+				#PlaceHolder (not a comment): BlankSpace(line_num=264)
+				#PlaceHolder (not a comment): EnumField(line_num=264) mjOBJ_PLUGIN, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=264)
+				# plugin instance 
+				#PlaceHolder (not a comment): BlankSpace(line_num=265)
+				#PlaceHolder (not a comment): BlankSpace(line_num=266)
+				#PlaceHolder (not a comment): EnumField(line_num=266) mjNOBJECT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=266)
+				# number of object types 
+				#PlaceHolder (not a comment): BlankSpace(line_num=267)
+				#PlaceHolder (not a comment): BlankSpace(line_num=268)
+				# meta elements, do not appear in mjModel 
+				#PlaceHolder (not a comment): BlankSpace(line_num=269)
+				#PlaceHolder (not a comment): EnumField(line_num=269) mjOBJ_FRAME         = 100       // frame 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtObj ; 
-		PlaceHolder() for: BlankSpace(line_num=270)
-		PlaceHolder() for: BlankSpace(line_num=271)
-		PlaceHolder() for: BlankSpace(line_num=272)
-		PlaceHolder() for: TypeDef(line_num=273) typedef enum mjtConstraint_ 
-			PlaceHolder() for: Scope(line_num=273,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=273)
-				SingleLineComment(line_num=273) # type of constraint 
-				PlaceHolder() for: BlankSpace(line_num=274)
-				PlaceHolder() for: EnumField(line_num=274) mjCNSTR_EQUALITY    = 0, 
-				PlaceHolder() for: BlankSpace(line_num=274)
-				SingleLineComment(line_num=274) # equality constraint 
-				PlaceHolder() for: BlankSpace(line_num=275)
-				PlaceHolder() for: EnumField(line_num=275) mjCNSTR_FRICTION_DOF, 
-				PlaceHolder() for: BlankSpace(line_num=275)
-				SingleLineComment(line_num=275) # dof friction 
-				PlaceHolder() for: BlankSpace(line_num=276)
-				PlaceHolder() for: EnumField(line_num=276) mjCNSTR_FRICTION_TENDON, 
-				PlaceHolder() for: BlankSpace(line_num=276)
-				SingleLineComment(line_num=276) # tendon friction 
-				PlaceHolder() for: BlankSpace(line_num=277)
-				PlaceHolder() for: EnumField(line_num=277) mjCNSTR_LIMIT_JOINT, 
-				PlaceHolder() for: BlankSpace(line_num=277)
-				SingleLineComment(line_num=277) # joint limit 
-				PlaceHolder() for: BlankSpace(line_num=278)
-				PlaceHolder() for: EnumField(line_num=278) mjCNSTR_LIMIT_TENDON, 
-				PlaceHolder() for: BlankSpace(line_num=278)
-				SingleLineComment(line_num=278) # tendon limit 
-				PlaceHolder() for: BlankSpace(line_num=279)
-				PlaceHolder() for: EnumField(line_num=279) mjCNSTR_CONTACT_FRICTIONLESS, 
-				PlaceHolder() for: BlankSpace(line_num=279)
-				SingleLineComment(line_num=279) # frictionless contact 
-				PlaceHolder() for: BlankSpace(line_num=280)
-				PlaceHolder() for: EnumField(line_num=280) mjCNSTR_CONTACT_PYRAMIDAL, 
-				PlaceHolder() for: BlankSpace(line_num=280)
-				SingleLineComment(line_num=280) # frictional contact, pyramidal friction cone 
-				PlaceHolder() for: BlankSpace(line_num=281)
-				PlaceHolder() for: EnumField(line_num=281) mjCNSTR_CONTACT_ELLIPTIC        // frictional contact, 
-				PlaceHolder() for: EnumField(line_num=281) elliptic friction cone 
+		#PlaceHolder (not a comment): BlankSpace(line_num=270)
+		#PlaceHolder (not a comment): BlankSpace(line_num=271)
+		#PlaceHolder (not a comment): BlankSpace(line_num=272)
+		#PlaceHolder (not a comment): TypeDef(line_num=273) typedef enum mjtConstraint_ 
+			#PlaceHolder (not a comment): Scope(line_num=273,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=273)
+				# type of constraint 
+				#PlaceHolder (not a comment): BlankSpace(line_num=274)
+				#PlaceHolder (not a comment): EnumField(line_num=274) mjCNSTR_EQUALITY    = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=274)
+				# equality constraint 
+				#PlaceHolder (not a comment): BlankSpace(line_num=275)
+				#PlaceHolder (not a comment): EnumField(line_num=275) mjCNSTR_FRICTION_DOF, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=275)
+				# dof friction 
+				#PlaceHolder (not a comment): BlankSpace(line_num=276)
+				#PlaceHolder (not a comment): EnumField(line_num=276) mjCNSTR_FRICTION_TENDON, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=276)
+				# tendon friction 
+				#PlaceHolder (not a comment): BlankSpace(line_num=277)
+				#PlaceHolder (not a comment): EnumField(line_num=277) mjCNSTR_LIMIT_JOINT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=277)
+				# joint limit 
+				#PlaceHolder (not a comment): BlankSpace(line_num=278)
+				#PlaceHolder (not a comment): EnumField(line_num=278) mjCNSTR_LIMIT_TENDON, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=278)
+				# tendon limit 
+				#PlaceHolder (not a comment): BlankSpace(line_num=279)
+				#PlaceHolder (not a comment): EnumField(line_num=279) mjCNSTR_CONTACT_FRICTIONLESS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=279)
+				# frictionless contact 
+				#PlaceHolder (not a comment): BlankSpace(line_num=280)
+				#PlaceHolder (not a comment): EnumField(line_num=280) mjCNSTR_CONTACT_PYRAMIDAL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=280)
+				# frictional contact, pyramidal friction cone 
+				#PlaceHolder (not a comment): BlankSpace(line_num=281)
+				#PlaceHolder (not a comment): EnumField(line_num=281) mjCNSTR_CONTACT_ELLIPTIC        // frictional contact, 
+				#PlaceHolder (not a comment): EnumField(line_num=281) elliptic friction cone 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtConstraint ; 
-		PlaceHolder() for: BlankSpace(line_num=282)
-		PlaceHolder() for: BlankSpace(line_num=283)
-		PlaceHolder() for: BlankSpace(line_num=284)
-		PlaceHolder() for: TypeDef(line_num=285) typedef enum mjtConstraintState_ 
-			PlaceHolder() for: Scope(line_num=285,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=285)
-				SingleLineComment(line_num=285) # constraint state 
-				PlaceHolder() for: BlankSpace(line_num=286)
-				PlaceHolder() for: EnumField(line_num=286) mjCNSTRSTATE_SATISFIED = 0, 
-				PlaceHolder() for: BlankSpace(line_num=286)
-				SingleLineComment(line_num=286) # constraint satisfied, zero cost (limit, contact) 
-				PlaceHolder() for: BlankSpace(line_num=287)
-				PlaceHolder() for: EnumField(line_num=287) mjCNSTRSTATE_QUADRATIC, 
-				PlaceHolder() for: BlankSpace(line_num=287)
-				SingleLineComment(line_num=287) # quadratic cost (equality, friction, limit, contact) 
-				PlaceHolder() for: BlankSpace(line_num=288)
-				PlaceHolder() for: EnumField(line_num=288) mjCNSTRSTATE_LINEARNEG, 
-				PlaceHolder() for: BlankSpace(line_num=288)
-				SingleLineComment(line_num=288) # linear cost, negative side (friction) 
-				PlaceHolder() for: BlankSpace(line_num=289)
-				PlaceHolder() for: EnumField(line_num=289) mjCNSTRSTATE_LINEARPOS, 
-				PlaceHolder() for: BlankSpace(line_num=289)
-				SingleLineComment(line_num=289) # linear cost, positive side (friction) 
-				PlaceHolder() for: BlankSpace(line_num=290)
-				PlaceHolder() for: EnumField(line_num=290) mjCNSTRSTATE_CONE                 // squared distance to cone cost (elliptic contact) 
+		#PlaceHolder (not a comment): BlankSpace(line_num=282)
+		#PlaceHolder (not a comment): BlankSpace(line_num=283)
+		#PlaceHolder (not a comment): BlankSpace(line_num=284)
+		#PlaceHolder (not a comment): TypeDef(line_num=285) typedef enum mjtConstraintState_ 
+			#PlaceHolder (not a comment): Scope(line_num=285,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=285)
+				# constraint state 
+				#PlaceHolder (not a comment): BlankSpace(line_num=286)
+				#PlaceHolder (not a comment): EnumField(line_num=286) mjCNSTRSTATE_SATISFIED = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=286)
+				# constraint satisfied, zero cost (limit, contact) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=287)
+				#PlaceHolder (not a comment): EnumField(line_num=287) mjCNSTRSTATE_QUADRATIC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=287)
+				# quadratic cost (equality, friction, limit, contact) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=288)
+				#PlaceHolder (not a comment): EnumField(line_num=288) mjCNSTRSTATE_LINEARNEG, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=288)
+				# linear cost, negative side (friction) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=289)
+				#PlaceHolder (not a comment): EnumField(line_num=289) mjCNSTRSTATE_LINEARPOS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=289)
+				# linear cost, positive side (friction) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=290)
+				#PlaceHolder (not a comment): EnumField(line_num=290) mjCNSTRSTATE_CONE                 // squared distance to cone cost (elliptic contact) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtConstraintState ; 
-		PlaceHolder() for: BlankSpace(line_num=291)
-		PlaceHolder() for: BlankSpace(line_num=292)
-		PlaceHolder() for: BlankSpace(line_num=293)
-		PlaceHolder() for: TypeDef(line_num=294) typedef enum mjtSensor_ 
-			PlaceHolder() for: Scope(line_num=294,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=294)
-				SingleLineComment(line_num=294) # type of sensor 
-				PlaceHolder() for: BlankSpace(line_num=295)
-				SingleLineComment(line_num=295) # common robotic sensors, attached to a site 
-				PlaceHolder() for: BlankSpace(line_num=296)
-				PlaceHolder() for: EnumField(line_num=296) mjSENS_TOUCH        = 0, 
-				PlaceHolder() for: BlankSpace(line_num=296)
-				SingleLineComment(line_num=296) # scalar contact normal forces summed over sensor zone 
-				PlaceHolder() for: BlankSpace(line_num=297)
-				PlaceHolder() for: EnumField(line_num=297) mjSENS_ACCELEROMETER, 
-				PlaceHolder() for: BlankSpace(line_num=297)
-				SingleLineComment(line_num=297) # 3D linear acceleration, in local frame 
-				PlaceHolder() for: BlankSpace(line_num=298)
-				PlaceHolder() for: EnumField(line_num=298) mjSENS_VELOCIMETER, 
-				PlaceHolder() for: BlankSpace(line_num=298)
-				SingleLineComment(line_num=298) # 3D linear velocity, in local frame 
-				PlaceHolder() for: BlankSpace(line_num=299)
-				PlaceHolder() for: EnumField(line_num=299) mjSENS_GYRO, 
-				PlaceHolder() for: BlankSpace(line_num=299)
-				SingleLineComment(line_num=299) # 3D angular velocity, in local frame 
-				PlaceHolder() for: BlankSpace(line_num=300)
-				PlaceHolder() for: EnumField(line_num=300) mjSENS_FORCE, 
-				PlaceHolder() for: BlankSpace(line_num=300)
-				SingleLineComment(line_num=300) # 3D force between site's body and its parent body 
-				PlaceHolder() for: BlankSpace(line_num=301)
-				PlaceHolder() for: EnumField(line_num=301) mjSENS_TORQUE, 
-				PlaceHolder() for: BlankSpace(line_num=301)
-				SingleLineComment(line_num=301) # 3D torque between site's body and its parent body 
-				PlaceHolder() for: BlankSpace(line_num=302)
-				PlaceHolder() for: EnumField(line_num=302) mjSENS_MAGNETOMETER, 
-				PlaceHolder() for: BlankSpace(line_num=302)
-				SingleLineComment(line_num=302) # 3D magnetometer 
-				PlaceHolder() for: BlankSpace(line_num=303)
-				PlaceHolder() for: EnumField(line_num=303) mjSENS_RANGEFINDER, 
-				PlaceHolder() for: BlankSpace(line_num=303)
-				SingleLineComment(line_num=303) # scalar distance to nearest geom or site along z-axis 
-				PlaceHolder() for: BlankSpace(line_num=304)
-				PlaceHolder() for: EnumField(line_num=304) mjSENS_CAMPROJECTION, 
-				PlaceHolder() for: BlankSpace(line_num=304)
-				SingleLineComment(line_num=304) # pixel coordinates of a site in the camera image 
-				PlaceHolder() for: BlankSpace(line_num=305)
-				PlaceHolder() for: BlankSpace(line_num=306)
-				SingleLineComment(line_num=306) # sensors related to scalar joints, tendons, actuators 
-				PlaceHolder() for: BlankSpace(line_num=307)
-				PlaceHolder() for: EnumField(line_num=307) mjSENS_JOINTPOS, 
-				PlaceHolder() for: BlankSpace(line_num=307)
-				SingleLineComment(line_num=307) # scalar joint position (hinge and slide only) 
-				PlaceHolder() for: BlankSpace(line_num=308)
-				PlaceHolder() for: EnumField(line_num=308) mjSENS_JOINTVEL, 
-				PlaceHolder() for: BlankSpace(line_num=308)
-				SingleLineComment(line_num=308) # scalar joint velocity (hinge and slide only) 
-				PlaceHolder() for: BlankSpace(line_num=309)
-				PlaceHolder() for: EnumField(line_num=309) mjSENS_TENDONPOS, 
-				PlaceHolder() for: BlankSpace(line_num=309)
-				SingleLineComment(line_num=309) # scalar tendon position 
-				PlaceHolder() for: BlankSpace(line_num=310)
-				PlaceHolder() for: EnumField(line_num=310) mjSENS_TENDONVEL, 
-				PlaceHolder() for: BlankSpace(line_num=310)
-				SingleLineComment(line_num=310) # scalar tendon velocity 
-				PlaceHolder() for: BlankSpace(line_num=311)
-				PlaceHolder() for: EnumField(line_num=311) mjSENS_ACTUATORPOS, 
-				PlaceHolder() for: BlankSpace(line_num=311)
-				SingleLineComment(line_num=311) # scalar actuator position 
-				PlaceHolder() for: BlankSpace(line_num=312)
-				PlaceHolder() for: EnumField(line_num=312) mjSENS_ACTUATORVEL, 
-				PlaceHolder() for: BlankSpace(line_num=312)
-				SingleLineComment(line_num=312) # scalar actuator velocity 
-				PlaceHolder() for: BlankSpace(line_num=313)
-				PlaceHolder() for: EnumField(line_num=313) mjSENS_ACTUATORFRC, 
-				PlaceHolder() for: BlankSpace(line_num=313)
-				SingleLineComment(line_num=313) # scalar actuator force 
-				PlaceHolder() for: BlankSpace(line_num=314)
-				PlaceHolder() for: EnumField(line_num=314) mjSENS_JOINTACTFRC, 
-				PlaceHolder() for: BlankSpace(line_num=314)
-				SingleLineComment(line_num=314) # scalar actuator force, measured at the joint 
-				PlaceHolder() for: BlankSpace(line_num=315)
-				PlaceHolder() for: BlankSpace(line_num=316)
-				SingleLineComment(line_num=316) # sensors related to ball joints 
-				PlaceHolder() for: BlankSpace(line_num=317)
-				PlaceHolder() for: EnumField(line_num=317) mjSENS_BALLQUAT, 
-				PlaceHolder() for: BlankSpace(line_num=317)
-				SingleLineComment(line_num=317) # 4D ball joint quaternion 
-				PlaceHolder() for: BlankSpace(line_num=318)
-				PlaceHolder() for: EnumField(line_num=318) mjSENS_BALLANGVEL, 
-				PlaceHolder() for: BlankSpace(line_num=318)
-				SingleLineComment(line_num=318) # 3D ball joint angular velocity 
-				PlaceHolder() for: BlankSpace(line_num=319)
-				PlaceHolder() for: BlankSpace(line_num=320)
-				SingleLineComment(line_num=320) # joint and tendon limit sensors, in constraint space 
-				PlaceHolder() for: BlankSpace(line_num=321)
-				PlaceHolder() for: EnumField(line_num=321) mjSENS_JOINTLIMITPOS, 
-				PlaceHolder() for: BlankSpace(line_num=321)
-				SingleLineComment(line_num=321) # joint limit distance-margin 
-				PlaceHolder() for: BlankSpace(line_num=322)
-				PlaceHolder() for: EnumField(line_num=322) mjSENS_JOINTLIMITVEL, 
-				PlaceHolder() for: BlankSpace(line_num=322)
-				SingleLineComment(line_num=322) # joint limit velocity 
-				PlaceHolder() for: BlankSpace(line_num=323)
-				PlaceHolder() for: EnumField(line_num=323) mjSENS_JOINTLIMITFRC, 
-				PlaceHolder() for: BlankSpace(line_num=323)
-				SingleLineComment(line_num=323) # joint limit force 
-				PlaceHolder() for: BlankSpace(line_num=324)
-				PlaceHolder() for: EnumField(line_num=324) mjSENS_TENDONLIMITPOS, 
-				PlaceHolder() for: BlankSpace(line_num=324)
-				SingleLineComment(line_num=324) # tendon limit distance-margin 
-				PlaceHolder() for: BlankSpace(line_num=325)
-				PlaceHolder() for: EnumField(line_num=325) mjSENS_TENDONLIMITVEL, 
-				PlaceHolder() for: BlankSpace(line_num=325)
-				SingleLineComment(line_num=325) # tendon limit velocity 
-				PlaceHolder() for: BlankSpace(line_num=326)
-				PlaceHolder() for: EnumField(line_num=326) mjSENS_TENDONLIMITFRC, 
-				PlaceHolder() for: BlankSpace(line_num=326)
-				SingleLineComment(line_num=326) # tendon limit force 
-				PlaceHolder() for: BlankSpace(line_num=327)
-				PlaceHolder() for: BlankSpace(line_num=328)
-				SingleLineComment(line_num=328) # sensors attached to an object with spatial frame: (x)body, geom, site, camera 
-				PlaceHolder() for: BlankSpace(line_num=329)
-				PlaceHolder() for: EnumField(line_num=329) mjSENS_FRAMEPOS, 
-				PlaceHolder() for: BlankSpace(line_num=329)
-				SingleLineComment(line_num=329) # 3D position 
-				PlaceHolder() for: BlankSpace(line_num=330)
-				PlaceHolder() for: EnumField(line_num=330) mjSENS_FRAMEQUAT, 
-				PlaceHolder() for: BlankSpace(line_num=330)
-				SingleLineComment(line_num=330) # 4D unit quaternion orientation 
-				PlaceHolder() for: BlankSpace(line_num=331)
-				PlaceHolder() for: EnumField(line_num=331) mjSENS_FRAMEXAXIS, 
-				PlaceHolder() for: BlankSpace(line_num=331)
-				SingleLineComment(line_num=331) # 3D unit vector: x-axis of object's frame 
-				PlaceHolder() for: BlankSpace(line_num=332)
-				PlaceHolder() for: EnumField(line_num=332) mjSENS_FRAMEYAXIS, 
-				PlaceHolder() for: BlankSpace(line_num=332)
-				SingleLineComment(line_num=332) # 3D unit vector: y-axis of object's frame 
-				PlaceHolder() for: BlankSpace(line_num=333)
-				PlaceHolder() for: EnumField(line_num=333) mjSENS_FRAMEZAXIS, 
-				PlaceHolder() for: BlankSpace(line_num=333)
-				SingleLineComment(line_num=333) # 3D unit vector: z-axis of object's frame 
-				PlaceHolder() for: BlankSpace(line_num=334)
-				PlaceHolder() for: EnumField(line_num=334) mjSENS_FRAMELINVEL, 
-				PlaceHolder() for: BlankSpace(line_num=334)
-				SingleLineComment(line_num=334) # 3D linear velocity 
-				PlaceHolder() for: BlankSpace(line_num=335)
-				PlaceHolder() for: EnumField(line_num=335) mjSENS_FRAMEANGVEL, 
-				PlaceHolder() for: BlankSpace(line_num=335)
-				SingleLineComment(line_num=335) # 3D angular velocity 
-				PlaceHolder() for: BlankSpace(line_num=336)
-				PlaceHolder() for: EnumField(line_num=336) mjSENS_FRAMELINACC, 
-				PlaceHolder() for: BlankSpace(line_num=336)
-				SingleLineComment(line_num=336) # 3D linear acceleration 
-				PlaceHolder() for: BlankSpace(line_num=337)
-				PlaceHolder() for: EnumField(line_num=337) mjSENS_FRAMEANGACC, 
-				PlaceHolder() for: BlankSpace(line_num=337)
-				SingleLineComment(line_num=337) # 3D angular acceleration 
-				PlaceHolder() for: BlankSpace(line_num=338)
-				PlaceHolder() for: BlankSpace(line_num=339)
-				SingleLineComment(line_num=339) # sensors related to kinematic subtrees ;  attached to a body (which is the subtree root) 
-				PlaceHolder() for: BlankSpace(line_num=340)
-				PlaceHolder() for: EnumField(line_num=340) mjSENS_SUBTREECOM, 
-				PlaceHolder() for: BlankSpace(line_num=340)
-				SingleLineComment(line_num=340) # 3D center of mass of subtree 
-				PlaceHolder() for: BlankSpace(line_num=341)
-				PlaceHolder() for: EnumField(line_num=341) mjSENS_SUBTREELINVEL, 
-				PlaceHolder() for: BlankSpace(line_num=341)
-				SingleLineComment(line_num=341) # 3D linear velocity of subtree 
-				PlaceHolder() for: BlankSpace(line_num=342)
-				PlaceHolder() for: EnumField(line_num=342) mjSENS_SUBTREEANGMOM, 
-				PlaceHolder() for: BlankSpace(line_num=342)
-				SingleLineComment(line_num=342) # 3D angular momentum of subtree 
-				PlaceHolder() for: BlankSpace(line_num=343)
-				PlaceHolder() for: BlankSpace(line_num=344)
-				SingleLineComment(line_num=344) # sensors for geometric distance ;  attached to geoms or bodies 
-				PlaceHolder() for: BlankSpace(line_num=345)
-				PlaceHolder() for: EnumField(line_num=345) mjSENS_GEOMDIST, 
-				PlaceHolder() for: BlankSpace(line_num=345)
-				SingleLineComment(line_num=345) # signed distance between two geoms 
-				PlaceHolder() for: BlankSpace(line_num=346)
-				PlaceHolder() for: EnumField(line_num=346) mjSENS_GEOMNORMAL, 
-				PlaceHolder() for: BlankSpace(line_num=346)
-				SingleLineComment(line_num=346) # normal direction between two geoms 
-				PlaceHolder() for: BlankSpace(line_num=347)
-				PlaceHolder() for: EnumField(line_num=347) mjSENS_GEOMFROMTO, 
-				PlaceHolder() for: BlankSpace(line_num=347)
-				SingleLineComment(line_num=347) # segment between two geoms 
-				PlaceHolder() for: BlankSpace(line_num=348)
-				PlaceHolder() for: BlankSpace(line_num=349)
-				SingleLineComment(line_num=349) # global sensors 
-				PlaceHolder() for: BlankSpace(line_num=350)
-				PlaceHolder() for: EnumField(line_num=350) mjSENS_CLOCK, 
-				PlaceHolder() for: BlankSpace(line_num=350)
-				SingleLineComment(line_num=350) # simulation time 
-				PlaceHolder() for: BlankSpace(line_num=351)
-				PlaceHolder() for: BlankSpace(line_num=352)
-				SingleLineComment(line_num=352) # plugin-controlled sensors 
-				PlaceHolder() for: BlankSpace(line_num=353)
-				PlaceHolder() for: EnumField(line_num=353) mjSENS_PLUGIN, 
-				PlaceHolder() for: BlankSpace(line_num=353)
-				SingleLineComment(line_num=353) # plugin-controlled 
-				PlaceHolder() for: BlankSpace(line_num=354)
-				PlaceHolder() for: BlankSpace(line_num=355)
-				SingleLineComment(line_num=355) # user-defined sensor 
-				PlaceHolder() for: BlankSpace(line_num=356)
-				PlaceHolder() for: EnumField(line_num=356) mjSENS_USER                     // sensor data provided by mjcb_sensor callback 
+		#PlaceHolder (not a comment): BlankSpace(line_num=291)
+		#PlaceHolder (not a comment): BlankSpace(line_num=292)
+		#PlaceHolder (not a comment): BlankSpace(line_num=293)
+		#PlaceHolder (not a comment): TypeDef(line_num=294) typedef enum mjtSensor_ 
+			#PlaceHolder (not a comment): Scope(line_num=294,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=294)
+				# type of sensor 
+				#PlaceHolder (not a comment): BlankSpace(line_num=295)
+				# common robotic sensors, attached to a site 
+				#PlaceHolder (not a comment): BlankSpace(line_num=296)
+				#PlaceHolder (not a comment): EnumField(line_num=296) mjSENS_TOUCH        = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=296)
+				# scalar contact normal forces summed over sensor zone 
+				#PlaceHolder (not a comment): BlankSpace(line_num=297)
+				#PlaceHolder (not a comment): EnumField(line_num=297) mjSENS_ACCELEROMETER, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=297)
+				# 3D linear acceleration, in local frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=298)
+				#PlaceHolder (not a comment): EnumField(line_num=298) mjSENS_VELOCIMETER, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=298)
+				# 3D linear velocity, in local frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=299)
+				#PlaceHolder (not a comment): EnumField(line_num=299) mjSENS_GYRO, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=299)
+				# 3D angular velocity, in local frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=300)
+				#PlaceHolder (not a comment): EnumField(line_num=300) mjSENS_FORCE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=300)
+				# 3D force between site's body and its parent body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=301)
+				#PlaceHolder (not a comment): EnumField(line_num=301) mjSENS_TORQUE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=301)
+				# 3D torque between site's body and its parent body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=302)
+				#PlaceHolder (not a comment): EnumField(line_num=302) mjSENS_MAGNETOMETER, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=302)
+				# 3D magnetometer 
+				#PlaceHolder (not a comment): BlankSpace(line_num=303)
+				#PlaceHolder (not a comment): EnumField(line_num=303) mjSENS_RANGEFINDER, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=303)
+				# scalar distance to nearest geom or site along z-axis 
+				#PlaceHolder (not a comment): BlankSpace(line_num=304)
+				#PlaceHolder (not a comment): EnumField(line_num=304) mjSENS_CAMPROJECTION, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=304)
+				# pixel coordinates of a site in the camera image 
+				#PlaceHolder (not a comment): BlankSpace(line_num=305)
+				#PlaceHolder (not a comment): BlankSpace(line_num=306)
+				# sensors related to scalar joints, tendons, actuators 
+				#PlaceHolder (not a comment): BlankSpace(line_num=307)
+				#PlaceHolder (not a comment): EnumField(line_num=307) mjSENS_JOINTPOS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=307)
+				# scalar joint position (hinge and slide only) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=308)
+				#PlaceHolder (not a comment): EnumField(line_num=308) mjSENS_JOINTVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=308)
+				# scalar joint velocity (hinge and slide only) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=309)
+				#PlaceHolder (not a comment): EnumField(line_num=309) mjSENS_TENDONPOS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=309)
+				# scalar tendon position 
+				#PlaceHolder (not a comment): BlankSpace(line_num=310)
+				#PlaceHolder (not a comment): EnumField(line_num=310) mjSENS_TENDONVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=310)
+				# scalar tendon velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=311)
+				#PlaceHolder (not a comment): EnumField(line_num=311) mjSENS_ACTUATORPOS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=311)
+				# scalar actuator position 
+				#PlaceHolder (not a comment): BlankSpace(line_num=312)
+				#PlaceHolder (not a comment): EnumField(line_num=312) mjSENS_ACTUATORVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=312)
+				# scalar actuator velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=313)
+				#PlaceHolder (not a comment): EnumField(line_num=313) mjSENS_ACTUATORFRC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=313)
+				# scalar actuator force 
+				#PlaceHolder (not a comment): BlankSpace(line_num=314)
+				#PlaceHolder (not a comment): EnumField(line_num=314) mjSENS_JOINTACTFRC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=314)
+				# scalar actuator force, measured at the joint 
+				#PlaceHolder (not a comment): BlankSpace(line_num=315)
+				#PlaceHolder (not a comment): BlankSpace(line_num=316)
+				# sensors related to ball joints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=317)
+				#PlaceHolder (not a comment): EnumField(line_num=317) mjSENS_BALLQUAT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=317)
+				# 4D ball joint quaternion 
+				#PlaceHolder (not a comment): BlankSpace(line_num=318)
+				#PlaceHolder (not a comment): EnumField(line_num=318) mjSENS_BALLANGVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=318)
+				# 3D ball joint angular velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=319)
+				#PlaceHolder (not a comment): BlankSpace(line_num=320)
+				# joint and tendon limit sensors, in constraint space 
+				#PlaceHolder (not a comment): BlankSpace(line_num=321)
+				#PlaceHolder (not a comment): EnumField(line_num=321) mjSENS_JOINTLIMITPOS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=321)
+				# joint limit distance-margin 
+				#PlaceHolder (not a comment): BlankSpace(line_num=322)
+				#PlaceHolder (not a comment): EnumField(line_num=322) mjSENS_JOINTLIMITVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=322)
+				# joint limit velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=323)
+				#PlaceHolder (not a comment): EnumField(line_num=323) mjSENS_JOINTLIMITFRC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=323)
+				# joint limit force 
+				#PlaceHolder (not a comment): BlankSpace(line_num=324)
+				#PlaceHolder (not a comment): EnumField(line_num=324) mjSENS_TENDONLIMITPOS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=324)
+				# tendon limit distance-margin 
+				#PlaceHolder (not a comment): BlankSpace(line_num=325)
+				#PlaceHolder (not a comment): EnumField(line_num=325) mjSENS_TENDONLIMITVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=325)
+				# tendon limit velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=326)
+				#PlaceHolder (not a comment): EnumField(line_num=326) mjSENS_TENDONLIMITFRC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=326)
+				# tendon limit force 
+				#PlaceHolder (not a comment): BlankSpace(line_num=327)
+				#PlaceHolder (not a comment): BlankSpace(line_num=328)
+				# sensors attached to an object with spatial frame: (x)body, geom, site, camera 
+				#PlaceHolder (not a comment): BlankSpace(line_num=329)
+				#PlaceHolder (not a comment): EnumField(line_num=329) mjSENS_FRAMEPOS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=329)
+				# 3D position 
+				#PlaceHolder (not a comment): BlankSpace(line_num=330)
+				#PlaceHolder (not a comment): EnumField(line_num=330) mjSENS_FRAMEQUAT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=330)
+				# 4D unit quaternion orientation 
+				#PlaceHolder (not a comment): BlankSpace(line_num=331)
+				#PlaceHolder (not a comment): EnumField(line_num=331) mjSENS_FRAMEXAXIS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=331)
+				# 3D unit vector: x-axis of object's frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=332)
+				#PlaceHolder (not a comment): EnumField(line_num=332) mjSENS_FRAMEYAXIS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=332)
+				# 3D unit vector: y-axis of object's frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=333)
+				#PlaceHolder (not a comment): EnumField(line_num=333) mjSENS_FRAMEZAXIS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=333)
+				# 3D unit vector: z-axis of object's frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=334)
+				#PlaceHolder (not a comment): EnumField(line_num=334) mjSENS_FRAMELINVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=334)
+				# 3D linear velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=335)
+				#PlaceHolder (not a comment): EnumField(line_num=335) mjSENS_FRAMEANGVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=335)
+				# 3D angular velocity 
+				#PlaceHolder (not a comment): BlankSpace(line_num=336)
+				#PlaceHolder (not a comment): EnumField(line_num=336) mjSENS_FRAMELINACC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=336)
+				# 3D linear acceleration 
+				#PlaceHolder (not a comment): BlankSpace(line_num=337)
+				#PlaceHolder (not a comment): EnumField(line_num=337) mjSENS_FRAMEANGACC, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=337)
+				# 3D angular acceleration 
+				#PlaceHolder (not a comment): BlankSpace(line_num=338)
+				#PlaceHolder (not a comment): BlankSpace(line_num=339)
+				# sensors related to kinematic subtrees ;  attached to a body (which is the subtree root) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=340)
+				#PlaceHolder (not a comment): EnumField(line_num=340) mjSENS_SUBTREECOM, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=340)
+				# 3D center of mass of subtree 
+				#PlaceHolder (not a comment): BlankSpace(line_num=341)
+				#PlaceHolder (not a comment): EnumField(line_num=341) mjSENS_SUBTREELINVEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=341)
+				# 3D linear velocity of subtree 
+				#PlaceHolder (not a comment): BlankSpace(line_num=342)
+				#PlaceHolder (not a comment): EnumField(line_num=342) mjSENS_SUBTREEANGMOM, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=342)
+				# 3D angular momentum of subtree 
+				#PlaceHolder (not a comment): BlankSpace(line_num=343)
+				#PlaceHolder (not a comment): BlankSpace(line_num=344)
+				# sensors for geometric distance ;  attached to geoms or bodies 
+				#PlaceHolder (not a comment): BlankSpace(line_num=345)
+				#PlaceHolder (not a comment): EnumField(line_num=345) mjSENS_GEOMDIST, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=345)
+				# signed distance between two geoms 
+				#PlaceHolder (not a comment): BlankSpace(line_num=346)
+				#PlaceHolder (not a comment): EnumField(line_num=346) mjSENS_GEOMNORMAL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=346)
+				# normal direction between two geoms 
+				#PlaceHolder (not a comment): BlankSpace(line_num=347)
+				#PlaceHolder (not a comment): EnumField(line_num=347) mjSENS_GEOMFROMTO, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=347)
+				# segment between two geoms 
+				#PlaceHolder (not a comment): BlankSpace(line_num=348)
+				#PlaceHolder (not a comment): BlankSpace(line_num=349)
+				# global sensors 
+				#PlaceHolder (not a comment): BlankSpace(line_num=350)
+				#PlaceHolder (not a comment): EnumField(line_num=350) mjSENS_CLOCK, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=350)
+				# simulation time 
+				#PlaceHolder (not a comment): BlankSpace(line_num=351)
+				#PlaceHolder (not a comment): BlankSpace(line_num=352)
+				# plugin-controlled sensors 
+				#PlaceHolder (not a comment): BlankSpace(line_num=353)
+				#PlaceHolder (not a comment): EnumField(line_num=353) mjSENS_PLUGIN, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=353)
+				# plugin-controlled 
+				#PlaceHolder (not a comment): BlankSpace(line_num=354)
+				#PlaceHolder (not a comment): BlankSpace(line_num=355)
+				# user-defined sensor 
+				#PlaceHolder (not a comment): BlankSpace(line_num=356)
+				#PlaceHolder (not a comment): EnumField(line_num=356) mjSENS_USER                     // sensor data provided by mjcb_sensor callback 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtSensor ; 
-		PlaceHolder() for: BlankSpace(line_num=357)
-		PlaceHolder() for: BlankSpace(line_num=358)
-		PlaceHolder() for: BlankSpace(line_num=359)
-		PlaceHolder() for: TypeDef(line_num=360) typedef enum mjtStage_ 
-			PlaceHolder() for: Scope(line_num=360,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=360)
-				SingleLineComment(line_num=360) # computation stage 
-				PlaceHolder() for: BlankSpace(line_num=361)
-				PlaceHolder() for: EnumField(line_num=361) mjSTAGE_NONE        = 0, 
-				PlaceHolder() for: BlankSpace(line_num=361)
-				SingleLineComment(line_num=361) # no computations 
-				PlaceHolder() for: BlankSpace(line_num=362)
-				PlaceHolder() for: EnumField(line_num=362) mjSTAGE_POS, 
-				PlaceHolder() for: BlankSpace(line_num=362)
-				SingleLineComment(line_num=362) # position-dependent computations 
-				PlaceHolder() for: BlankSpace(line_num=363)
-				PlaceHolder() for: EnumField(line_num=363) mjSTAGE_VEL, 
-				PlaceHolder() for: BlankSpace(line_num=363)
-				SingleLineComment(line_num=363) # velocity-dependent computations 
-				PlaceHolder() for: BlankSpace(line_num=364)
-				PlaceHolder() for: EnumField(line_num=364) mjSTAGE_ACC                     // acceleration/force-dependent computations 
+		#PlaceHolder (not a comment): BlankSpace(line_num=357)
+		#PlaceHolder (not a comment): BlankSpace(line_num=358)
+		#PlaceHolder (not a comment): BlankSpace(line_num=359)
+		#PlaceHolder (not a comment): TypeDef(line_num=360) typedef enum mjtStage_ 
+			#PlaceHolder (not a comment): Scope(line_num=360,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=360)
+				# computation stage 
+				#PlaceHolder (not a comment): BlankSpace(line_num=361)
+				#PlaceHolder (not a comment): EnumField(line_num=361) mjSTAGE_NONE        = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=361)
+				# no computations 
+				#PlaceHolder (not a comment): BlankSpace(line_num=362)
+				#PlaceHolder (not a comment): EnumField(line_num=362) mjSTAGE_POS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=362)
+				# position-dependent computations 
+				#PlaceHolder (not a comment): BlankSpace(line_num=363)
+				#PlaceHolder (not a comment): EnumField(line_num=363) mjSTAGE_VEL, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=363)
+				# velocity-dependent computations 
+				#PlaceHolder (not a comment): BlankSpace(line_num=364)
+				#PlaceHolder (not a comment): EnumField(line_num=364) mjSTAGE_ACC                     // acceleration/force-dependent computations 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtStage ; 
-		PlaceHolder() for: BlankSpace(line_num=365)
-		PlaceHolder() for: BlankSpace(line_num=366)
-		PlaceHolder() for: BlankSpace(line_num=367)
-		PlaceHolder() for: TypeDef(line_num=368) typedef enum mjtDataType_ 
-			PlaceHolder() for: Scope(line_num=368,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=368)
-				SingleLineComment(line_num=368) # data type for sensors 
-				PlaceHolder() for: BlankSpace(line_num=369)
-				PlaceHolder() for: EnumField(line_num=369) mjDATATYPE_REAL     = 0, 
-				PlaceHolder() for: BlankSpace(line_num=369)
-				SingleLineComment(line_num=369) # real values, no constraints 
-				PlaceHolder() for: BlankSpace(line_num=370)
-				PlaceHolder() for: EnumField(line_num=370) mjDATATYPE_POSITIVE, 
-				PlaceHolder() for: BlankSpace(line_num=370)
-				SingleLineComment(line_num=370) # positive values ;  0 or negative: inactive 
-				PlaceHolder() for: BlankSpace(line_num=371)
-				PlaceHolder() for: EnumField(line_num=371) mjDATATYPE_AXIS, 
-				PlaceHolder() for: BlankSpace(line_num=371)
-				SingleLineComment(line_num=371) # 3D unit vector 
-				PlaceHolder() for: BlankSpace(line_num=372)
-				PlaceHolder() for: EnumField(line_num=372) mjDATATYPE_QUATERNION           // unit quaternion 
+		#PlaceHolder (not a comment): BlankSpace(line_num=365)
+		#PlaceHolder (not a comment): BlankSpace(line_num=366)
+		#PlaceHolder (not a comment): BlankSpace(line_num=367)
+		#PlaceHolder (not a comment): TypeDef(line_num=368) typedef enum mjtDataType_ 
+			#PlaceHolder (not a comment): Scope(line_num=368,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=368)
+				# data type for sensors 
+				#PlaceHolder (not a comment): BlankSpace(line_num=369)
+				#PlaceHolder (not a comment): EnumField(line_num=369) mjDATATYPE_REAL     = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=369)
+				# real values, no constraints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=370)
+				#PlaceHolder (not a comment): EnumField(line_num=370) mjDATATYPE_POSITIVE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=370)
+				# positive values ;  0 or negative: inactive 
+				#PlaceHolder (not a comment): BlankSpace(line_num=371)
+				#PlaceHolder (not a comment): EnumField(line_num=371) mjDATATYPE_AXIS, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=371)
+				# 3D unit vector 
+				#PlaceHolder (not a comment): BlankSpace(line_num=372)
+				#PlaceHolder (not a comment): EnumField(line_num=372) mjDATATYPE_QUATERNION           // unit quaternion 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtDataType ; 
-		PlaceHolder() for: BlankSpace(line_num=373)
-		PlaceHolder() for: BlankSpace(line_num=374)
-		PlaceHolder() for: BlankSpace(line_num=375)
-		PlaceHolder() for: TypeDef(line_num=376) typedef enum mjtSameFrame_ 
-			PlaceHolder() for: Scope(line_num=376,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=376)
-				SingleLineComment(line_num=376) # frame alignment of bodies with their children 
-				PlaceHolder() for: BlankSpace(line_num=377)
-				PlaceHolder() for: EnumField(line_num=377) mjSAMEFRAME_NONE    = 0, 
-				PlaceHolder() for: BlankSpace(line_num=377)
-				SingleLineComment(line_num=377) # no alignment 
-				PlaceHolder() for: BlankSpace(line_num=378)
-				PlaceHolder() for: EnumField(line_num=378) mjSAMEFRAME_BODY, 
-				PlaceHolder() for: BlankSpace(line_num=378)
-				SingleLineComment(line_num=378) # frame is same as body frame 
-				PlaceHolder() for: BlankSpace(line_num=379)
-				PlaceHolder() for: EnumField(line_num=379) mjSAMEFRAME_INERTIA, 
-				PlaceHolder() for: BlankSpace(line_num=379)
-				SingleLineComment(line_num=379) # frame is same as inertial frame 
-				PlaceHolder() for: BlankSpace(line_num=380)
-				PlaceHolder() for: EnumField(line_num=380) mjSAMEFRAME_BODYROT, 
-				PlaceHolder() for: BlankSpace(line_num=380)
-				SingleLineComment(line_num=380) # frame orientation is same as body orientation 
-				PlaceHolder() for: BlankSpace(line_num=381)
-				PlaceHolder() for: EnumField(line_num=381) mjSAMEFRAME_INERTIAROT          // frame orientation is same as inertia orientation 
+		#PlaceHolder (not a comment): BlankSpace(line_num=373)
+		#PlaceHolder (not a comment): BlankSpace(line_num=374)
+		#PlaceHolder (not a comment): BlankSpace(line_num=375)
+		#PlaceHolder (not a comment): TypeDef(line_num=376) typedef enum mjtSameFrame_ 
+			#PlaceHolder (not a comment): Scope(line_num=376,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=376)
+				# frame alignment of bodies with their children 
+				#PlaceHolder (not a comment): BlankSpace(line_num=377)
+				#PlaceHolder (not a comment): EnumField(line_num=377) mjSAMEFRAME_NONE    = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=377)
+				# no alignment 
+				#PlaceHolder (not a comment): BlankSpace(line_num=378)
+				#PlaceHolder (not a comment): EnumField(line_num=378) mjSAMEFRAME_BODY, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=378)
+				# frame is same as body frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=379)
+				#PlaceHolder (not a comment): EnumField(line_num=379) mjSAMEFRAME_INERTIA, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=379)
+				# frame is same as inertial frame 
+				#PlaceHolder (not a comment): BlankSpace(line_num=380)
+				#PlaceHolder (not a comment): EnumField(line_num=380) mjSAMEFRAME_BODYROT, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=380)
+				# frame orientation is same as body orientation 
+				#PlaceHolder (not a comment): BlankSpace(line_num=381)
+				#PlaceHolder (not a comment): EnumField(line_num=381) mjSAMEFRAME_INERTIAROT          // frame orientation is same as inertia orientation 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtSameFrame ; 
-		PlaceHolder() for: BlankSpace(line_num=382)
-		PlaceHolder() for: BlankSpace(line_num=383)
-		PlaceHolder() for: BlankSpace(line_num=384)
-		PlaceHolder() for: TypeDef(line_num=385) typedef enum mjtLRMode_ 
-			PlaceHolder() for: Scope(line_num=385,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=385)
-				SingleLineComment(line_num=385) # mode for actuator length range computation 
-				PlaceHolder() for: BlankSpace(line_num=386)
-				PlaceHolder() for: EnumField(line_num=386) mjLRMODE_NONE   = 0, 
-				PlaceHolder() for: BlankSpace(line_num=386)
-				SingleLineComment(line_num=386) # do not process any actuators 
-				PlaceHolder() for: BlankSpace(line_num=387)
-				PlaceHolder() for: EnumField(line_num=387) mjLRMODE_MUSCLE, 
-				PlaceHolder() for: BlankSpace(line_num=387)
-				SingleLineComment(line_num=387) # process muscle actuators 
-				PlaceHolder() for: BlankSpace(line_num=388)
-				PlaceHolder() for: EnumField(line_num=388) mjLRMODE_MUSCLEUSER, 
-				PlaceHolder() for: BlankSpace(line_num=388)
-				SingleLineComment(line_num=388) # process muscle and user actuators 
-				PlaceHolder() for: BlankSpace(line_num=389)
-				PlaceHolder() for: EnumField(line_num=389) mjLRMODE_ALL                    // process all actuators 
+		#PlaceHolder (not a comment): BlankSpace(line_num=382)
+		#PlaceHolder (not a comment): BlankSpace(line_num=383)
+		#PlaceHolder (not a comment): BlankSpace(line_num=384)
+		#PlaceHolder (not a comment): TypeDef(line_num=385) typedef enum mjtLRMode_ 
+			#PlaceHolder (not a comment): Scope(line_num=385,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=385)
+				# mode for actuator length range computation 
+				#PlaceHolder (not a comment): BlankSpace(line_num=386)
+				#PlaceHolder (not a comment): EnumField(line_num=386) mjLRMODE_NONE   = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=386)
+				# do not process any actuators 
+				#PlaceHolder (not a comment): BlankSpace(line_num=387)
+				#PlaceHolder (not a comment): EnumField(line_num=387) mjLRMODE_MUSCLE, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=387)
+				# process muscle actuators 
+				#PlaceHolder (not a comment): BlankSpace(line_num=388)
+				#PlaceHolder (not a comment): EnumField(line_num=388) mjLRMODE_MUSCLEUSER, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=388)
+				# process muscle and user actuators 
+				#PlaceHolder (not a comment): BlankSpace(line_num=389)
+				#PlaceHolder (not a comment): EnumField(line_num=389) mjLRMODE_ALL                    // process all actuators 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtLRMode ; 
-		PlaceHolder() for: BlankSpace(line_num=390)
-		PlaceHolder() for: BlankSpace(line_num=391)
-		PlaceHolder() for: BlankSpace(line_num=392)
-		PlaceHolder() for: TypeDef(line_num=393) typedef enum mjtFlexSelf_ 
-			PlaceHolder() for: Scope(line_num=393,scope_type=type_def) { 
-				PlaceHolder() for: BlankSpace(line_num=393)
-				SingleLineComment(line_num=393) # mode for flex selfcollide 
-				PlaceHolder() for: BlankSpace(line_num=394)
-				PlaceHolder() for: EnumField(line_num=394) mjFLEXSELF_NONE   = 0, 
-				PlaceHolder() for: BlankSpace(line_num=394)
-				SingleLineComment(line_num=394) # no self-collisions 
-				PlaceHolder() for: BlankSpace(line_num=395)
-				PlaceHolder() for: EnumField(line_num=395) mjFLEXSELF_NARROW, 
-				PlaceHolder() for: BlankSpace(line_num=395)
-				SingleLineComment(line_num=395) # skip midphase, go directly to narrowphase 
-				PlaceHolder() for: BlankSpace(line_num=396)
-				PlaceHolder() for: EnumField(line_num=396) mjFLEXSELF_BVH, 
-				PlaceHolder() for: BlankSpace(line_num=396)
-				SingleLineComment(line_num=396) # use BVH in midphase (if midphase enabled) 
-				PlaceHolder() for: BlankSpace(line_num=397)
-				PlaceHolder() for: EnumField(line_num=397) mjFLEXSELF_SAP, 
-				PlaceHolder() for: BlankSpace(line_num=397)
-				SingleLineComment(line_num=397) # use SAP in midphase 
-				PlaceHolder() for: BlankSpace(line_num=398)
-				PlaceHolder() for: EnumField(line_num=398) mjFLEXSELF_AUTO                 // choose between BVH and SAP automatically 
+		#PlaceHolder (not a comment): BlankSpace(line_num=390)
+		#PlaceHolder (not a comment): BlankSpace(line_num=391)
+		#PlaceHolder (not a comment): BlankSpace(line_num=392)
+		#PlaceHolder (not a comment): TypeDef(line_num=393) typedef enum mjtFlexSelf_ 
+			#PlaceHolder (not a comment): Scope(line_num=393,scope_type=type_def) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=393)
+				# mode for flex selfcollide 
+				#PlaceHolder (not a comment): BlankSpace(line_num=394)
+				#PlaceHolder (not a comment): EnumField(line_num=394) mjFLEXSELF_NONE   = 0, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=394)
+				# no self-collisions 
+				#PlaceHolder (not a comment): BlankSpace(line_num=395)
+				#PlaceHolder (not a comment): EnumField(line_num=395) mjFLEXSELF_NARROW, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=395)
+				# skip midphase, go directly to narrowphase 
+				#PlaceHolder (not a comment): BlankSpace(line_num=396)
+				#PlaceHolder (not a comment): EnumField(line_num=396) mjFLEXSELF_BVH, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=396)
+				# use BVH in midphase (if midphase enabled) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=397)
+				#PlaceHolder (not a comment): EnumField(line_num=397) mjFLEXSELF_SAP, 
+				#PlaceHolder (not a comment): BlankSpace(line_num=397)
+				# use SAP in midphase 
+				#PlaceHolder (not a comment): BlankSpace(line_num=398)
+				#PlaceHolder (not a comment): EnumField(line_num=398) mjFLEXSELF_AUTO                 // choose between BVH and SAP automatically 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  mjtFlexSelf ; 
-		PlaceHolder() for: BlankSpace(line_num=399)
-		PlaceHolder() for: BlankSpace(line_num=400)
-		PlaceHolder() for: BlankSpace(line_num=401)
-		SingleLineComment(line_num=402) //---------------------------------- mjLROpt ------------------------------------------------------- 
-		PlaceHolder() for: BlankSpace(line_num=403)
-		PlaceHolder() for: CStruct(line_num=404) struct mjLROpt_ 
-			PlaceHolder() for: Scope(line_num=404,scope_type=struct) { 
-				PlaceHolder() for: BlankSpace(line_num=404)
-				SingleLineComment(line_num=404) # options for mj_setLengthRange() 
-				PlaceHolder() for: BlankSpace(line_num=405)
-				SingleLineComment(line_num=405) # flags 
-				PlaceHolder() for: BlankSpace(line_num=406)
-				PlaceHolder() for: CStructField(line_num=406) int mode ; 
-				PlaceHolder() for: BlankSpace(line_num=406)
-				SingleLineComment(line_num=406) # which actuators to process (mjtLRMode) 
-				PlaceHolder() for: BlankSpace(line_num=407)
-				PlaceHolder() for: CStructField(line_num=407) int useexisting ; 
-				PlaceHolder() for: BlankSpace(line_num=407)
-				SingleLineComment(line_num=407) # use existing length range if available 
-				PlaceHolder() for: BlankSpace(line_num=408)
-				PlaceHolder() for: CStructField(line_num=408) int uselimit ; 
-				PlaceHolder() for: BlankSpace(line_num=408)
-				SingleLineComment(line_num=408) # use joint and tendon limits if available 
-				PlaceHolder() for: BlankSpace(line_num=409)
-				PlaceHolder() for: BlankSpace(line_num=410)
-				SingleLineComment(line_num=410) # algorithm parameters 
-				PlaceHolder() for: BlankSpace(line_num=411)
-				PlaceHolder() for: CStructField(line_num=411) mjtNum accel ; 
-				PlaceHolder() for: BlankSpace(line_num=411)
-				SingleLineComment(line_num=411) # target acceleration used to compute force 
-				PlaceHolder() for: BlankSpace(line_num=412)
-				PlaceHolder() for: CStructField(line_num=412) mjtNum maxforce ; 
-				PlaceHolder() for: BlankSpace(line_num=412)
-				SingleLineComment(line_num=412) # maximum force ;  0: no limit 
-				PlaceHolder() for: BlankSpace(line_num=413)
-				PlaceHolder() for: CStructField(line_num=413) mjtNum timeconst ; 
-				PlaceHolder() for: BlankSpace(line_num=413)
-				SingleLineComment(line_num=413) # time constant for velocity reduction ;  min 0.01 
-				PlaceHolder() for: BlankSpace(line_num=414)
-				PlaceHolder() for: CStructField(line_num=414) mjtNum timestep ; 
-				PlaceHolder() for: BlankSpace(line_num=414)
-				SingleLineComment(line_num=414) # simulation timestep ;  0: use mjOption.timestep 
-				PlaceHolder() for: BlankSpace(line_num=415)
-				PlaceHolder() for: CStructField(line_num=415) mjtNum inttotal ; 
-				PlaceHolder() for: BlankSpace(line_num=415)
-				SingleLineComment(line_num=415) # total simulation time interval 
-				PlaceHolder() for: BlankSpace(line_num=416)
-				PlaceHolder() for: CStructField(line_num=416) mjtNum interval ; 
-				PlaceHolder() for: BlankSpace(line_num=416)
-				SingleLineComment(line_num=416) # evaluation time interval (at the end) 
-				PlaceHolder() for: BlankSpace(line_num=417)
-				PlaceHolder() for: CStructField(line_num=417) mjtNum tolrange ; 
-				PlaceHolder() for: BlankSpace(line_num=417)
-				SingleLineComment(line_num=417) # convergence tolerance (relative to range) 
+		#PlaceHolder (not a comment): BlankSpace(line_num=399)
+		#PlaceHolder (not a comment): BlankSpace(line_num=400)
+		#PlaceHolder (not a comment): BlankSpace(line_num=401)
+		#---------------------------------- mjLROpt ------------------------------------------------------- 
+		#PlaceHolder (not a comment): BlankSpace(line_num=403)
+		#PlaceHolder (not a comment): CStruct(line_num=404) struct mjLROpt_ 
+			#PlaceHolder (not a comment): Scope(line_num=404,scope_type=struct) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=404)
+				# options for mj_setLengthRange() 
+				#PlaceHolder (not a comment): BlankSpace(line_num=405)
+				# flags 
+				#PlaceHolder (not a comment): BlankSpace(line_num=406)
+				#PlaceHolder (not a comment): CStructField(line_num=406) int mode ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=406)
+				# which actuators to process (mjtLRMode) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=407)
+				#PlaceHolder (not a comment): CStructField(line_num=407) int useexisting ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=407)
+				# use existing length range if available 
+				#PlaceHolder (not a comment): BlankSpace(line_num=408)
+				#PlaceHolder (not a comment): CStructField(line_num=408) int uselimit ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=408)
+				# use joint and tendon limits if available 
+				#PlaceHolder (not a comment): BlankSpace(line_num=409)
+				#PlaceHolder (not a comment): BlankSpace(line_num=410)
+				# algorithm parameters 
+				#PlaceHolder (not a comment): BlankSpace(line_num=411)
+				#PlaceHolder (not a comment): CStructField(line_num=411) mjtNum accel ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=411)
+				# target acceleration used to compute force 
+				#PlaceHolder (not a comment): BlankSpace(line_num=412)
+				#PlaceHolder (not a comment): CStructField(line_num=412) mjtNum maxforce ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=412)
+				# maximum force ;  0: no limit 
+				#PlaceHolder (not a comment): BlankSpace(line_num=413)
+				#PlaceHolder (not a comment): CStructField(line_num=413) mjtNum timeconst ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=413)
+				# time constant for velocity reduction ;  min 0.01 
+				#PlaceHolder (not a comment): BlankSpace(line_num=414)
+				#PlaceHolder (not a comment): CStructField(line_num=414) mjtNum timestep ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=414)
+				# simulation timestep ;  0: use mjOption.timestep 
+				#PlaceHolder (not a comment): BlankSpace(line_num=415)
+				#PlaceHolder (not a comment): CStructField(line_num=415) mjtNum inttotal ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=415)
+				# total simulation time interval 
+				#PlaceHolder (not a comment): BlankSpace(line_num=416)
+				#PlaceHolder (not a comment): CStructField(line_num=416) mjtNum interval ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=416)
+				# evaluation time interval (at the end) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=417)
+				#PlaceHolder (not a comment): CStructField(line_num=417) mjtNum tolrange ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=417)
+				# convergence tolerance (relative to range) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  ; 
-		PlaceHolder() for: BlankSpace(line_num=418)
-		PlaceHolder() for: TypeDef(line_num=419) typedef struct mjLROpt_ mjLROpt ; 
-		PlaceHolder() for: BlankSpace(line_num=419)
-		PlaceHolder() for: BlankSpace(line_num=420)
-		PlaceHolder() for: BlankSpace(line_num=421)
-		SingleLineComment(line_num=422) //---------------------------------- mjVFS --------------------------------------------------------- 
-		PlaceHolder() for: BlankSpace(line_num=423)
-		PlaceHolder() for: CStruct(line_num=424) struct mjVFS_ 
-			PlaceHolder() for: Scope(line_num=424,scope_type=struct) { 
-				PlaceHolder() for: BlankSpace(line_num=424)
-				SingleLineComment(line_num=424) # virtual file system for loading from memory 
-				PlaceHolder() for: BlankSpace(line_num=425)
-				PlaceHolder() for: CStructField(line_num=425) void* impl_ ; 
-				PlaceHolder() for: BlankSpace(line_num=425)
-				SingleLineComment(line_num=425) # internal pointer to VFS memory 
+		#PlaceHolder (not a comment): BlankSpace(line_num=418)
+		#PlaceHolder (not a comment): TypeDef(line_num=419) typedef struct mjLROpt_ mjLROpt ; 
+		#PlaceHolder (not a comment): BlankSpace(line_num=419)
+		#PlaceHolder (not a comment): BlankSpace(line_num=420)
+		#PlaceHolder (not a comment): BlankSpace(line_num=421)
+		#---------------------------------- mjVFS --------------------------------------------------------- 
+		#PlaceHolder (not a comment): BlankSpace(line_num=423)
+		#PlaceHolder (not a comment): CStruct(line_num=424) struct mjVFS_ 
+			#PlaceHolder (not a comment): Scope(line_num=424,scope_type=struct) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=424)
+				# virtual file system for loading from memory 
+				#PlaceHolder (not a comment): BlankSpace(line_num=425)
+				#PlaceHolder (not a comment): CStructField(line_num=425) void* impl_ ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=425)
+				# internal pointer to VFS memory 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  ; 
-		PlaceHolder() for: BlankSpace(line_num=426)
-		PlaceHolder() for: TypeDef(line_num=427) typedef struct mjVFS_ mjVFS ; 
-		PlaceHolder() for: BlankSpace(line_num=427)
-		PlaceHolder() for: BlankSpace(line_num=428)
-		SingleLineComment(line_num=429) //---------------------------------- mjOption ------------------------------------------------------ 
-		PlaceHolder() for: BlankSpace(line_num=430)
-		PlaceHolder() for: CStruct(line_num=431) struct mjOption_ 
-			PlaceHolder() for: Scope(line_num=431,scope_type=struct) { 
-				PlaceHolder() for: BlankSpace(line_num=431)
-				SingleLineComment(line_num=431) # physics options 
-				PlaceHolder() for: BlankSpace(line_num=432)
-				SingleLineComment(line_num=432) # timing parameters 
-				PlaceHolder() for: BlankSpace(line_num=433)
-				PlaceHolder() for: CStructField(line_num=433) mjtNum timestep ; 
-				PlaceHolder() for: BlankSpace(line_num=433)
-				SingleLineComment(line_num=433) # timestep 
-				PlaceHolder() for: BlankSpace(line_num=434)
-				PlaceHolder() for: CStructField(line_num=434) mjtNum apirate ; 
-				PlaceHolder() for: BlankSpace(line_num=434)
-				SingleLineComment(line_num=434) # update rate for remote API (Hz) 
-				PlaceHolder() for: BlankSpace(line_num=435)
-				PlaceHolder() for: BlankSpace(line_num=436)
-				SingleLineComment(line_num=436) # solver parameters 
-				PlaceHolder() for: BlankSpace(line_num=437)
-				PlaceHolder() for: CStructField(line_num=437) mjtNum impratio ; 
-				PlaceHolder() for: BlankSpace(line_num=437)
-				SingleLineComment(line_num=437) # ratio of friction-to-normal contact impedance 
-				PlaceHolder() for: BlankSpace(line_num=438)
-				PlaceHolder() for: CStructField(line_num=438) mjtNum tolerance ; 
-				PlaceHolder() for: BlankSpace(line_num=438)
-				SingleLineComment(line_num=438) # main solver tolerance 
-				PlaceHolder() for: BlankSpace(line_num=439)
-				PlaceHolder() for: CStructField(line_num=439) mjtNum ls_tolerance ; 
-				PlaceHolder() for: BlankSpace(line_num=439)
-				SingleLineComment(line_num=439) # CG/Newton linesearch tolerance 
-				PlaceHolder() for: BlankSpace(line_num=440)
-				PlaceHolder() for: CStructField(line_num=440) mjtNum noslip_tolerance ; 
-				PlaceHolder() for: BlankSpace(line_num=440)
-				SingleLineComment(line_num=440) # noslip solver tolerance 
-				PlaceHolder() for: BlankSpace(line_num=441)
-				PlaceHolder() for: CStructField(line_num=441) mjtNum ccd_tolerance ; 
-				PlaceHolder() for: BlankSpace(line_num=441)
-				SingleLineComment(line_num=441) # convex collision solver tolerance 
-				PlaceHolder() for: BlankSpace(line_num=442)
-				PlaceHolder() for: BlankSpace(line_num=443)
-				SingleLineComment(line_num=443) # physical constants 
-				PlaceHolder() for: BlankSpace(line_num=444)
-				PlaceHolder() for: CStructField(line_num=444) mjtNum gravity[3] ; 
-				PlaceHolder() for: BlankSpace(line_num=444)
-				SingleLineComment(line_num=444) # gravitational acceleration 
-				PlaceHolder() for: BlankSpace(line_num=445)
-				PlaceHolder() for: CStructField(line_num=445) mjtNum wind[3] ; 
-				PlaceHolder() for: BlankSpace(line_num=445)
-				SingleLineComment(line_num=445) # wind (for lift, drag and viscosity) 
-				PlaceHolder() for: BlankSpace(line_num=446)
-				PlaceHolder() for: CStructField(line_num=446) mjtNum magnetic[3] ; 
-				PlaceHolder() for: BlankSpace(line_num=446)
-				SingleLineComment(line_num=446) # global magnetic flux 
-				PlaceHolder() for: BlankSpace(line_num=447)
-				PlaceHolder() for: CStructField(line_num=447) mjtNum density ; 
-				PlaceHolder() for: BlankSpace(line_num=447)
-				SingleLineComment(line_num=447) # density of medium 
-				PlaceHolder() for: BlankSpace(line_num=448)
-				PlaceHolder() for: CStructField(line_num=448) mjtNum viscosity ; 
-				PlaceHolder() for: BlankSpace(line_num=448)
-				SingleLineComment(line_num=448) # viscosity of medium 
-				PlaceHolder() for: BlankSpace(line_num=449)
-				PlaceHolder() for: BlankSpace(line_num=450)
-				SingleLineComment(line_num=450) # override contact solver parameters (if enabled) 
-				PlaceHolder() for: BlankSpace(line_num=451)
-				PlaceHolder() for: CStructField(line_num=451) mjtNum o_margin ; 
-				PlaceHolder() for: BlankSpace(line_num=451)
-				SingleLineComment(line_num=451) # margin 
-				PlaceHolder() for: BlankSpace(line_num=452)
-				PlaceHolder() for: CStructField(line_num=452) mjtNum o_solref[mjNREF] ; 
-				PlaceHolder() for: BlankSpace(line_num=452)
-				SingleLineComment(line_num=452) # solref 
-				PlaceHolder() for: BlankSpace(line_num=453)
-				PlaceHolder() for: CStructField(line_num=453) mjtNum o_solimp[mjNIMP] ; 
-				PlaceHolder() for: BlankSpace(line_num=453)
-				SingleLineComment(line_num=453) # solimp 
-				PlaceHolder() for: BlankSpace(line_num=454)
-				PlaceHolder() for: CStructField(line_num=454) mjtNum o_friction[5] ; 
-				PlaceHolder() for: BlankSpace(line_num=454)
-				SingleLineComment(line_num=454) # friction 
-				PlaceHolder() for: BlankSpace(line_num=455)
-				PlaceHolder() for: BlankSpace(line_num=456)
-				SingleLineComment(line_num=456) # discrete settings 
-				PlaceHolder() for: BlankSpace(line_num=457)
-				PlaceHolder() for: CStructField(line_num=457) int integrator ; 
-				PlaceHolder() for: BlankSpace(line_num=457)
-				SingleLineComment(line_num=457) # integration mode (mjtIntegrator) 
-				PlaceHolder() for: BlankSpace(line_num=458)
-				PlaceHolder() for: CStructField(line_num=458) int cone ; 
-				PlaceHolder() for: BlankSpace(line_num=458)
-				SingleLineComment(line_num=458) # type of friction cone (mjtCone) 
-				PlaceHolder() for: BlankSpace(line_num=459)
-				PlaceHolder() for: CStructField(line_num=459) int jacobian ; 
-				PlaceHolder() for: BlankSpace(line_num=459)
-				SingleLineComment(line_num=459) # type of Jacobian (mjtJacobian) 
-				PlaceHolder() for: BlankSpace(line_num=460)
-				PlaceHolder() for: CStructField(line_num=460) int solver ; 
-				PlaceHolder() for: BlankSpace(line_num=460)
-				SingleLineComment(line_num=460) # solver algorithm (mjtSolver) 
-				PlaceHolder() for: BlankSpace(line_num=461)
-				PlaceHolder() for: CStructField(line_num=461) int iterations ; 
-				PlaceHolder() for: BlankSpace(line_num=461)
-				SingleLineComment(line_num=461) # maximum number of main solver iterations 
-				PlaceHolder() for: BlankSpace(line_num=462)
-				PlaceHolder() for: CStructField(line_num=462) int ls_iterations ; 
-				PlaceHolder() for: BlankSpace(line_num=462)
-				SingleLineComment(line_num=462) # maximum number of CG/Newton linesearch iterations 
-				PlaceHolder() for: BlankSpace(line_num=463)
-				PlaceHolder() for: CStructField(line_num=463) int noslip_iterations ; 
-				PlaceHolder() for: BlankSpace(line_num=463)
-				SingleLineComment(line_num=463) # maximum number of noslip solver iterations 
-				PlaceHolder() for: BlankSpace(line_num=464)
-				PlaceHolder() for: CStructField(line_num=464) int ccd_iterations ; 
-				PlaceHolder() for: BlankSpace(line_num=464)
-				SingleLineComment(line_num=464) # maximum number of convex collision solver iterations 
-				PlaceHolder() for: BlankSpace(line_num=465)
-				PlaceHolder() for: CStructField(line_num=465) int disableflags ; 
-				PlaceHolder() for: BlankSpace(line_num=465)
-				SingleLineComment(line_num=465) # bit flags for disabling standard features 
-				PlaceHolder() for: BlankSpace(line_num=466)
-				PlaceHolder() for: CStructField(line_num=466) int enableflags ; 
-				PlaceHolder() for: BlankSpace(line_num=466)
-				SingleLineComment(line_num=466) # bit flags for enabling optional features 
-				PlaceHolder() for: BlankSpace(line_num=467)
-				PlaceHolder() for: CStructField(line_num=467) int disableactuator ; 
-				PlaceHolder() for: BlankSpace(line_num=467)
-				SingleLineComment(line_num=467) # bit flags for disabling actuators by group id 
-				PlaceHolder() for: BlankSpace(line_num=468)
-				PlaceHolder() for: BlankSpace(line_num=469)
-				SingleLineComment(line_num=469) # sdf collision settings 
-				PlaceHolder() for: BlankSpace(line_num=470)
-				PlaceHolder() for: CStructField(line_num=470) int sdf_initpoints ; 
-				PlaceHolder() for: BlankSpace(line_num=470)
-				SingleLineComment(line_num=470) # number of starting points for gradient descent 
-				PlaceHolder() for: BlankSpace(line_num=471)
-				PlaceHolder() for: CStructField(line_num=471) int sdf_iterations ; 
-				PlaceHolder() for: BlankSpace(line_num=471)
-				SingleLineComment(line_num=471) # max number of iterations for gradient descent 
+		#PlaceHolder (not a comment): BlankSpace(line_num=426)
+		#PlaceHolder (not a comment): TypeDef(line_num=427) typedef struct mjVFS_ mjVFS ; 
+		#PlaceHolder (not a comment): BlankSpace(line_num=427)
+		#PlaceHolder (not a comment): BlankSpace(line_num=428)
+		#---------------------------------- mjOption ------------------------------------------------------ 
+		#PlaceHolder (not a comment): BlankSpace(line_num=430)
+		#PlaceHolder (not a comment): CStruct(line_num=431) struct mjOption_ 
+			#PlaceHolder (not a comment): Scope(line_num=431,scope_type=struct) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=431)
+				# physics options 
+				#PlaceHolder (not a comment): BlankSpace(line_num=432)
+				# timing parameters 
+				#PlaceHolder (not a comment): BlankSpace(line_num=433)
+				#PlaceHolder (not a comment): CStructField(line_num=433) mjtNum timestep ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=433)
+				# timestep 
+				#PlaceHolder (not a comment): BlankSpace(line_num=434)
+				#PlaceHolder (not a comment): CStructField(line_num=434) mjtNum apirate ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=434)
+				# update rate for remote API (Hz) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=435)
+				#PlaceHolder (not a comment): BlankSpace(line_num=436)
+				# solver parameters 
+				#PlaceHolder (not a comment): BlankSpace(line_num=437)
+				#PlaceHolder (not a comment): CStructField(line_num=437) mjtNum impratio ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=437)
+				# ratio of friction-to-normal contact impedance 
+				#PlaceHolder (not a comment): BlankSpace(line_num=438)
+				#PlaceHolder (not a comment): CStructField(line_num=438) mjtNum tolerance ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=438)
+				# main solver tolerance 
+				#PlaceHolder (not a comment): BlankSpace(line_num=439)
+				#PlaceHolder (not a comment): CStructField(line_num=439) mjtNum ls_tolerance ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=439)
+				# CG/Newton linesearch tolerance 
+				#PlaceHolder (not a comment): BlankSpace(line_num=440)
+				#PlaceHolder (not a comment): CStructField(line_num=440) mjtNum noslip_tolerance ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=440)
+				# noslip solver tolerance 
+				#PlaceHolder (not a comment): BlankSpace(line_num=441)
+				#PlaceHolder (not a comment): CStructField(line_num=441) mjtNum ccd_tolerance ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=441)
+				# convex collision solver tolerance 
+				#PlaceHolder (not a comment): BlankSpace(line_num=442)
+				#PlaceHolder (not a comment): BlankSpace(line_num=443)
+				# physical constants 
+				#PlaceHolder (not a comment): BlankSpace(line_num=444)
+				#PlaceHolder (not a comment): CStructField(line_num=444) mjtNum gravity[3] ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=444)
+				# gravitational acceleration 
+				#PlaceHolder (not a comment): BlankSpace(line_num=445)
+				#PlaceHolder (not a comment): CStructField(line_num=445) mjtNum wind[3] ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=445)
+				# wind (for lift, drag and viscosity) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=446)
+				#PlaceHolder (not a comment): CStructField(line_num=446) mjtNum magnetic[3] ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=446)
+				# global magnetic flux 
+				#PlaceHolder (not a comment): BlankSpace(line_num=447)
+				#PlaceHolder (not a comment): CStructField(line_num=447) mjtNum density ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=447)
+				# density of medium 
+				#PlaceHolder (not a comment): BlankSpace(line_num=448)
+				#PlaceHolder (not a comment): CStructField(line_num=448) mjtNum viscosity ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=448)
+				# viscosity of medium 
+				#PlaceHolder (not a comment): BlankSpace(line_num=449)
+				#PlaceHolder (not a comment): BlankSpace(line_num=450)
+				# override contact solver parameters (if enabled) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=451)
+				#PlaceHolder (not a comment): CStructField(line_num=451) mjtNum o_margin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=451)
+				# margin 
+				#PlaceHolder (not a comment): BlankSpace(line_num=452)
+				#PlaceHolder (not a comment): CStructField(line_num=452) mjtNum o_solref[mjNREF] ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=452)
+				# solref 
+				#PlaceHolder (not a comment): BlankSpace(line_num=453)
+				#PlaceHolder (not a comment): CStructField(line_num=453) mjtNum o_solimp[mjNIMP] ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=453)
+				# solimp 
+				#PlaceHolder (not a comment): BlankSpace(line_num=454)
+				#PlaceHolder (not a comment): CStructField(line_num=454) mjtNum o_friction[5] ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=454)
+				# friction 
+				#PlaceHolder (not a comment): BlankSpace(line_num=455)
+				#PlaceHolder (not a comment): BlankSpace(line_num=456)
+				# discrete settings 
+				#PlaceHolder (not a comment): BlankSpace(line_num=457)
+				#PlaceHolder (not a comment): CStructField(line_num=457) int integrator ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=457)
+				# integration mode (mjtIntegrator) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=458)
+				#PlaceHolder (not a comment): CStructField(line_num=458) int cone ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=458)
+				# type of friction cone (mjtCone) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=459)
+				#PlaceHolder (not a comment): CStructField(line_num=459) int jacobian ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=459)
+				# type of Jacobian (mjtJacobian) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=460)
+				#PlaceHolder (not a comment): CStructField(line_num=460) int solver ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=460)
+				# solver algorithm (mjtSolver) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=461)
+				#PlaceHolder (not a comment): CStructField(line_num=461) int iterations ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=461)
+				# maximum number of main solver iterations 
+				#PlaceHolder (not a comment): BlankSpace(line_num=462)
+				#PlaceHolder (not a comment): CStructField(line_num=462) int ls_iterations ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=462)
+				# maximum number of CG/Newton linesearch iterations 
+				#PlaceHolder (not a comment): BlankSpace(line_num=463)
+				#PlaceHolder (not a comment): CStructField(line_num=463) int noslip_iterations ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=463)
+				# maximum number of noslip solver iterations 
+				#PlaceHolder (not a comment): BlankSpace(line_num=464)
+				#PlaceHolder (not a comment): CStructField(line_num=464) int ccd_iterations ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=464)
+				# maximum number of convex collision solver iterations 
+				#PlaceHolder (not a comment): BlankSpace(line_num=465)
+				#PlaceHolder (not a comment): CStructField(line_num=465) int disableflags ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=465)
+				# bit flags for disabling standard features 
+				#PlaceHolder (not a comment): BlankSpace(line_num=466)
+				#PlaceHolder (not a comment): CStructField(line_num=466) int enableflags ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=466)
+				# bit flags for enabling optional features 
+				#PlaceHolder (not a comment): BlankSpace(line_num=467)
+				#PlaceHolder (not a comment): CStructField(line_num=467) int disableactuator ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=467)
+				# bit flags for disabling actuators by group id 
+				#PlaceHolder (not a comment): BlankSpace(line_num=468)
+				#PlaceHolder (not a comment): BlankSpace(line_num=469)
+				# sdf collision settings 
+				#PlaceHolder (not a comment): BlankSpace(line_num=470)
+				#PlaceHolder (not a comment): CStructField(line_num=470) int sdf_initpoints ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=470)
+				# number of starting points for gradient descent 
+				#PlaceHolder (not a comment): BlankSpace(line_num=471)
+				#PlaceHolder (not a comment): CStructField(line_num=471) int sdf_iterations ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=471)
+				# max number of iterations for gradient descent 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  ; 
-		PlaceHolder() for: BlankSpace(line_num=472)
-		PlaceHolder() for: TypeDef(line_num=473) typedef struct mjOption_ mjOption ; 
-		PlaceHolder() for: BlankSpace(line_num=473)
-		PlaceHolder() for: BlankSpace(line_num=474)
-		PlaceHolder() for: BlankSpace(line_num=475)
-		SingleLineComment(line_num=476) //---------------------------------- mjVisual ------------------------------------------------------ 
-		PlaceHolder() for: BlankSpace(line_num=477)
-		PlaceHolder() for: CStruct(line_num=478) struct mjVisual_ 
-			PlaceHolder() for: Scope(line_num=478,scope_type=struct) { 
-				PlaceHolder() for: BlankSpace(line_num=478)
-				SingleLineComment(line_num=478) # visualization options 
-				PlaceHolder() for: BlankSpace(line_num=479)
-				PlaceHolder() for: CStruct(line_num=479) struct global 
-					PlaceHolder() for: Scope(line_num=479,scope_type=struct) { 
-						PlaceHolder() for: BlankSpace(line_num=479)
-						SingleLineComment(line_num=479) # global parameters 
-						PlaceHolder() for: BlankSpace(line_num=480)
-						PlaceHolder() for: CStructField(line_num=480) int orthographic ; 
-						PlaceHolder() for: BlankSpace(line_num=480)
-						SingleLineComment(line_num=480) # is the free camera orthographic (0: no, 1: yes) 
-						PlaceHolder() for: BlankSpace(line_num=481)
-						PlaceHolder() for: CStructField(line_num=481) float fovy ; 
-						PlaceHolder() for: BlankSpace(line_num=481)
-						SingleLineComment(line_num=481) # y field-of-view of free camera (orthographic ? length : degree) 
-						PlaceHolder() for: BlankSpace(line_num=482)
-						PlaceHolder() for: CStructField(line_num=482) float ipd ; 
-						PlaceHolder() for: BlankSpace(line_num=482)
-						SingleLineComment(line_num=482) # inter-pupilary distance for free camera 
-						PlaceHolder() for: BlankSpace(line_num=483)
-						PlaceHolder() for: CStructField(line_num=483) float azimuth ; 
-						PlaceHolder() for: BlankSpace(line_num=483)
-						SingleLineComment(line_num=483) # initial azimuth of free camera (degrees) 
-						PlaceHolder() for: BlankSpace(line_num=484)
-						PlaceHolder() for: CStructField(line_num=484) float elevation ; 
-						PlaceHolder() for: BlankSpace(line_num=484)
-						SingleLineComment(line_num=484) # initial elevation of free camera (degrees) 
-						PlaceHolder() for: BlankSpace(line_num=485)
-						PlaceHolder() for: CStructField(line_num=485) float linewidth ; 
-						PlaceHolder() for: BlankSpace(line_num=485)
-						SingleLineComment(line_num=485) # line width for wireframe and ray rendering 
-						PlaceHolder() for: BlankSpace(line_num=486)
-						PlaceHolder() for: CStructField(line_num=486) float glow ; 
-						PlaceHolder() for: BlankSpace(line_num=486)
-						SingleLineComment(line_num=486) # glow coefficient for selected body 
-						PlaceHolder() for: BlankSpace(line_num=487)
-						PlaceHolder() for: CStructField(line_num=487) float realtime ; 
-						PlaceHolder() for: BlankSpace(line_num=487)
-						SingleLineComment(line_num=487) # initial real-time factor (1: real time) 
-						PlaceHolder() for: BlankSpace(line_num=488)
-						PlaceHolder() for: CStructField(line_num=488) int   offwidth ; 
-						PlaceHolder() for: BlankSpace(line_num=488)
-						SingleLineComment(line_num=488) # width of offscreen buffer 
-						PlaceHolder() for: BlankSpace(line_num=489)
-						PlaceHolder() for: CStructField(line_num=489) int   offheight ; 
-						PlaceHolder() for: BlankSpace(line_num=489)
-						SingleLineComment(line_num=489) # height of offscreen buffer 
-						PlaceHolder() for: BlankSpace(line_num=490)
-						PlaceHolder() for: CStructField(line_num=490) int   ellipsoidinertia ; 
-						PlaceHolder() for: BlankSpace(line_num=490)
-						SingleLineComment(line_num=490) # geom for inertia visualization (0: box, 1: ellipsoid) 
-						PlaceHolder() for: BlankSpace(line_num=491)
-						PlaceHolder() for: CStructField(line_num=491) int   bvactive ; 
-						PlaceHolder() for: BlankSpace(line_num=491)
-						SingleLineComment(line_num=491) # visualize active bounding volumes (0: no, 1: yes) 
-						PlaceHolder() for: BlankSpace(line_num=492)
+		#PlaceHolder (not a comment): BlankSpace(line_num=472)
+		#PlaceHolder (not a comment): TypeDef(line_num=473) typedef struct mjOption_ mjOption ; 
+		#PlaceHolder (not a comment): BlankSpace(line_num=473)
+		#PlaceHolder (not a comment): BlankSpace(line_num=474)
+		#PlaceHolder (not a comment): BlankSpace(line_num=475)
+		#---------------------------------- mjVisual ------------------------------------------------------ 
+		#PlaceHolder (not a comment): BlankSpace(line_num=477)
+		#PlaceHolder (not a comment): CStruct(line_num=478) struct mjVisual_ 
+			#PlaceHolder (not a comment): Scope(line_num=478,scope_type=struct) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=478)
+				# visualization options 
+				#PlaceHolder (not a comment): BlankSpace(line_num=479)
+				#PlaceHolder (not a comment): CStruct(line_num=479) struct global 
+					#PlaceHolder (not a comment): Scope(line_num=479,scope_type=struct) { 
+						#PlaceHolder (not a comment): BlankSpace(line_num=479)
+						# global parameters 
+						#PlaceHolder (not a comment): BlankSpace(line_num=480)
+						#PlaceHolder (not a comment): CStructField(line_num=480) int orthographic ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=480)
+						# is the free camera orthographic (0: no, 1: yes) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=481)
+						#PlaceHolder (not a comment): CStructField(line_num=481) float fovy ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=481)
+						# y field-of-view of free camera (orthographic ? length : degree) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=482)
+						#PlaceHolder (not a comment): CStructField(line_num=482) float ipd ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=482)
+						# inter-pupilary distance for free camera 
+						#PlaceHolder (not a comment): BlankSpace(line_num=483)
+						#PlaceHolder (not a comment): CStructField(line_num=483) float azimuth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=483)
+						# initial azimuth of free camera (degrees) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=484)
+						#PlaceHolder (not a comment): CStructField(line_num=484) float elevation ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=484)
+						# initial elevation of free camera (degrees) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=485)
+						#PlaceHolder (not a comment): CStructField(line_num=485) float linewidth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=485)
+						# line width for wireframe and ray rendering 
+						#PlaceHolder (not a comment): BlankSpace(line_num=486)
+						#PlaceHolder (not a comment): CStructField(line_num=486) float glow ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=486)
+						# glow coefficient for selected body 
+						#PlaceHolder (not a comment): BlankSpace(line_num=487)
+						#PlaceHolder (not a comment): CStructField(line_num=487) float realtime ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=487)
+						# initial real-time factor (1: real time) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=488)
+						#PlaceHolder (not a comment): CStructField(line_num=488) int   offwidth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=488)
+						# width of offscreen buffer 
+						#PlaceHolder (not a comment): BlankSpace(line_num=489)
+						#PlaceHolder (not a comment): CStructField(line_num=489) int   offheight ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=489)
+						# height of offscreen buffer 
+						#PlaceHolder (not a comment): BlankSpace(line_num=490)
+						#PlaceHolder (not a comment): CStructField(line_num=490) int   ellipsoidinertia ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=490)
+						# geom for inertia visualization (0: box, 1: ellipsoid) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=491)
+						#PlaceHolder (not a comment): CStructField(line_num=491) int   bvactive ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=491)
+						# visualize active bounding volumes (0: no, 1: yes) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=492)
 					<AST-SPLIT>  } 
 				<AST-SPLIT>  ; 
-				PlaceHolder() for: BlankSpace(line_num=492)
-				PlaceHolder() for: BlankSpace(line_num=493)
-				PlaceHolder() for: BlankSpace(line_num=494)
-				PlaceHolder() for: CStruct(line_num=494) struct quality 
-					PlaceHolder() for: Scope(line_num=494,scope_type=struct) { 
-						PlaceHolder() for: BlankSpace(line_num=494)
-						SingleLineComment(line_num=494) # rendering quality 
-						PlaceHolder() for: BlankSpace(line_num=495)
-						PlaceHolder() for: CStructField(line_num=495) int   shadowsize ; 
-						PlaceHolder() for: BlankSpace(line_num=495)
-						SingleLineComment(line_num=495) # size of shadowmap texture 
-						PlaceHolder() for: BlankSpace(line_num=496)
-						PlaceHolder() for: CStructField(line_num=496) int   offsamples ; 
-						PlaceHolder() for: BlankSpace(line_num=496)
-						SingleLineComment(line_num=496) # number of multisamples for offscreen rendering 
-						PlaceHolder() for: BlankSpace(line_num=497)
-						PlaceHolder() for: CStructField(line_num=497) int   numslices ; 
-						PlaceHolder() for: BlankSpace(line_num=497)
-						SingleLineComment(line_num=497) # number of slices for builtin geom drawing 
-						PlaceHolder() for: BlankSpace(line_num=498)
-						PlaceHolder() for: CStructField(line_num=498) int   numstacks ; 
-						PlaceHolder() for: BlankSpace(line_num=498)
-						SingleLineComment(line_num=498) # number of stacks for builtin geom drawing 
-						PlaceHolder() for: BlankSpace(line_num=499)
-						PlaceHolder() for: CStructField(line_num=499) int   numquads ; 
-						PlaceHolder() for: BlankSpace(line_num=499)
-						SingleLineComment(line_num=499) # number of quads for box rendering 
-						PlaceHolder() for: BlankSpace(line_num=500)
+				#PlaceHolder (not a comment): BlankSpace(line_num=492)
+				#PlaceHolder (not a comment): BlankSpace(line_num=493)
+				#PlaceHolder (not a comment): BlankSpace(line_num=494)
+				#PlaceHolder (not a comment): CStruct(line_num=494) struct quality 
+					#PlaceHolder (not a comment): Scope(line_num=494,scope_type=struct) { 
+						#PlaceHolder (not a comment): BlankSpace(line_num=494)
+						# rendering quality 
+						#PlaceHolder (not a comment): BlankSpace(line_num=495)
+						#PlaceHolder (not a comment): CStructField(line_num=495) int   shadowsize ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=495)
+						# size of shadowmap texture 
+						#PlaceHolder (not a comment): BlankSpace(line_num=496)
+						#PlaceHolder (not a comment): CStructField(line_num=496) int   offsamples ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=496)
+						# number of multisamples for offscreen rendering 
+						#PlaceHolder (not a comment): BlankSpace(line_num=497)
+						#PlaceHolder (not a comment): CStructField(line_num=497) int   numslices ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=497)
+						# number of slices for builtin geom drawing 
+						#PlaceHolder (not a comment): BlankSpace(line_num=498)
+						#PlaceHolder (not a comment): CStructField(line_num=498) int   numstacks ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=498)
+						# number of stacks for builtin geom drawing 
+						#PlaceHolder (not a comment): BlankSpace(line_num=499)
+						#PlaceHolder (not a comment): CStructField(line_num=499) int   numquads ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=499)
+						# number of quads for box rendering 
+						#PlaceHolder (not a comment): BlankSpace(line_num=500)
 					<AST-SPLIT>  } 
 				<AST-SPLIT>  ; 
-				PlaceHolder() for: BlankSpace(line_num=500)
-				PlaceHolder() for: BlankSpace(line_num=501)
-				PlaceHolder() for: BlankSpace(line_num=502)
-				PlaceHolder() for: CStruct(line_num=502) struct headlight 
-					PlaceHolder() for: Scope(line_num=502,scope_type=struct) { 
-						PlaceHolder() for: BlankSpace(line_num=502)
-						SingleLineComment(line_num=502) # head light 
-						PlaceHolder() for: BlankSpace(line_num=503)
-						PlaceHolder() for: CStructField(line_num=503) float ambient[3] ; 
-						PlaceHolder() for: BlankSpace(line_num=503)
-						SingleLineComment(line_num=503) # ambient rgb (alpha=1) 
-						PlaceHolder() for: BlankSpace(line_num=504)
-						PlaceHolder() for: CStructField(line_num=504) float diffuse[3] ; 
-						PlaceHolder() for: BlankSpace(line_num=504)
-						SingleLineComment(line_num=504) # diffuse rgb (alpha=1) 
-						PlaceHolder() for: BlankSpace(line_num=505)
-						PlaceHolder() for: CStructField(line_num=505) float specular[3] ; 
-						PlaceHolder() for: BlankSpace(line_num=505)
-						SingleLineComment(line_num=505) # specular rgb (alpha=1) 
-						PlaceHolder() for: BlankSpace(line_num=506)
-						PlaceHolder() for: CStructField(line_num=506) int   active ; 
-						PlaceHolder() for: BlankSpace(line_num=506)
-						SingleLineComment(line_num=506) # is headlight active 
-						PlaceHolder() for: BlankSpace(line_num=507)
+				#PlaceHolder (not a comment): BlankSpace(line_num=500)
+				#PlaceHolder (not a comment): BlankSpace(line_num=501)
+				#PlaceHolder (not a comment): BlankSpace(line_num=502)
+				#PlaceHolder (not a comment): CStruct(line_num=502) struct headlight 
+					#PlaceHolder (not a comment): Scope(line_num=502,scope_type=struct) { 
+						#PlaceHolder (not a comment): BlankSpace(line_num=502)
+						# head light 
+						#PlaceHolder (not a comment): BlankSpace(line_num=503)
+						#PlaceHolder (not a comment): CStructField(line_num=503) float ambient[3] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=503)
+						# ambient rgb (alpha=1) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=504)
+						#PlaceHolder (not a comment): CStructField(line_num=504) float diffuse[3] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=504)
+						# diffuse rgb (alpha=1) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=505)
+						#PlaceHolder (not a comment): CStructField(line_num=505) float specular[3] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=505)
+						# specular rgb (alpha=1) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=506)
+						#PlaceHolder (not a comment): CStructField(line_num=506) int   active ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=506)
+						# is headlight active 
+						#PlaceHolder (not a comment): BlankSpace(line_num=507)
 					<AST-SPLIT>  } 
 				<AST-SPLIT>  ; 
-				PlaceHolder() for: BlankSpace(line_num=507)
-				PlaceHolder() for: BlankSpace(line_num=508)
-				PlaceHolder() for: BlankSpace(line_num=509)
-				PlaceHolder() for: CStruct(line_num=509) struct map 
-					PlaceHolder() for: Scope(line_num=509,scope_type=struct) { 
-						PlaceHolder() for: BlankSpace(line_num=509)
-						SingleLineComment(line_num=509) # mapping 
-						PlaceHolder() for: BlankSpace(line_num=510)
-						PlaceHolder() for: CStructField(line_num=510) float stiffness ; 
-						PlaceHolder() for: BlankSpace(line_num=510)
-						SingleLineComment(line_num=510) # mouse perturbation stiffness (space->force) 
-						PlaceHolder() for: BlankSpace(line_num=511)
-						PlaceHolder() for: CStructField(line_num=511) float stiffnessrot ; 
-						PlaceHolder() for: BlankSpace(line_num=511)
-						SingleLineComment(line_num=511) # mouse perturbation stiffness (space->torque) 
-						PlaceHolder() for: BlankSpace(line_num=512)
-						PlaceHolder() for: CStructField(line_num=512) float force ; 
-						PlaceHolder() for: BlankSpace(line_num=512)
-						SingleLineComment(line_num=512) # from force units to space units 
-						PlaceHolder() for: BlankSpace(line_num=513)
-						PlaceHolder() for: CStructField(line_num=513) float torque ; 
-						PlaceHolder() for: BlankSpace(line_num=513)
-						SingleLineComment(line_num=513) # from torque units to space units 
-						PlaceHolder() for: BlankSpace(line_num=514)
-						PlaceHolder() for: CStructField(line_num=514) float alpha ; 
-						PlaceHolder() for: BlankSpace(line_num=514)
-						SingleLineComment(line_num=514) # scale geom alphas when transparency is enabled 
-						PlaceHolder() for: BlankSpace(line_num=515)
-						PlaceHolder() for: CStructField(line_num=515) float fogstart ; 
-						PlaceHolder() for: BlankSpace(line_num=515)
-						SingleLineComment(line_num=515) # OpenGL fog starts at fogstart * mjModel.stat.extent 
-						PlaceHolder() for: BlankSpace(line_num=516)
-						PlaceHolder() for: CStructField(line_num=516) float fogend ; 
-						PlaceHolder() for: BlankSpace(line_num=516)
-						SingleLineComment(line_num=516) # OpenGL fog ends at fogend * mjModel.stat.extent 
-						PlaceHolder() for: BlankSpace(line_num=517)
-						PlaceHolder() for: CStructField(line_num=517) float znear ; 
-						PlaceHolder() for: BlankSpace(line_num=517)
-						SingleLineComment(line_num=517) # near clipping plane = znear * mjModel.stat.extent 
-						PlaceHolder() for: BlankSpace(line_num=518)
-						PlaceHolder() for: CStructField(line_num=518) float zfar ; 
-						PlaceHolder() for: BlankSpace(line_num=518)
-						SingleLineComment(line_num=518) # far clipping plane = zfar * mjModel.stat.extent 
-						PlaceHolder() for: BlankSpace(line_num=519)
-						PlaceHolder() for: CStructField(line_num=519) float haze ; 
-						PlaceHolder() for: BlankSpace(line_num=519)
-						SingleLineComment(line_num=519) # haze ratio 
-						PlaceHolder() for: BlankSpace(line_num=520)
-						PlaceHolder() for: CStructField(line_num=520) float shadowclip ; 
-						PlaceHolder() for: BlankSpace(line_num=520)
-						SingleLineComment(line_num=520) # directional light: shadowclip * mjModel.stat.extent 
-						PlaceHolder() for: BlankSpace(line_num=521)
-						PlaceHolder() for: CStructField(line_num=521) float shadowscale ; 
-						PlaceHolder() for: BlankSpace(line_num=521)
-						SingleLineComment(line_num=521) # spot light: shadowscale * light.cutoff 
-						PlaceHolder() for: BlankSpace(line_num=522)
-						PlaceHolder() for: CStructField(line_num=522) float actuatortendon ; 
-						PlaceHolder() for: BlankSpace(line_num=522)
-						SingleLineComment(line_num=522) # scale tendon width 
-						PlaceHolder() for: BlankSpace(line_num=523)
+				#PlaceHolder (not a comment): BlankSpace(line_num=507)
+				#PlaceHolder (not a comment): BlankSpace(line_num=508)
+				#PlaceHolder (not a comment): BlankSpace(line_num=509)
+				#PlaceHolder (not a comment): CStruct(line_num=509) struct map 
+					#PlaceHolder (not a comment): Scope(line_num=509,scope_type=struct) { 
+						#PlaceHolder (not a comment): BlankSpace(line_num=509)
+						# mapping 
+						#PlaceHolder (not a comment): BlankSpace(line_num=510)
+						#PlaceHolder (not a comment): CStructField(line_num=510) float stiffness ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=510)
+						# mouse perturbation stiffness (space->force) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=511)
+						#PlaceHolder (not a comment): CStructField(line_num=511) float stiffnessrot ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=511)
+						# mouse perturbation stiffness (space->torque) 
+						#PlaceHolder (not a comment): BlankSpace(line_num=512)
+						#PlaceHolder (not a comment): CStructField(line_num=512) float force ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=512)
+						# from force units to space units 
+						#PlaceHolder (not a comment): BlankSpace(line_num=513)
+						#PlaceHolder (not a comment): CStructField(line_num=513) float torque ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=513)
+						# from torque units to space units 
+						#PlaceHolder (not a comment): BlankSpace(line_num=514)
+						#PlaceHolder (not a comment): CStructField(line_num=514) float alpha ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=514)
+						# scale geom alphas when transparency is enabled 
+						#PlaceHolder (not a comment): BlankSpace(line_num=515)
+						#PlaceHolder (not a comment): CStructField(line_num=515) float fogstart ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=515)
+						# OpenGL fog starts at fogstart * mjModel.stat.extent 
+						#PlaceHolder (not a comment): BlankSpace(line_num=516)
+						#PlaceHolder (not a comment): CStructField(line_num=516) float fogend ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=516)
+						# OpenGL fog ends at fogend * mjModel.stat.extent 
+						#PlaceHolder (not a comment): BlankSpace(line_num=517)
+						#PlaceHolder (not a comment): CStructField(line_num=517) float znear ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=517)
+						# near clipping plane = znear * mjModel.stat.extent 
+						#PlaceHolder (not a comment): BlankSpace(line_num=518)
+						#PlaceHolder (not a comment): CStructField(line_num=518) float zfar ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=518)
+						# far clipping plane = zfar * mjModel.stat.extent 
+						#PlaceHolder (not a comment): BlankSpace(line_num=519)
+						#PlaceHolder (not a comment): CStructField(line_num=519) float haze ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=519)
+						# haze ratio 
+						#PlaceHolder (not a comment): BlankSpace(line_num=520)
+						#PlaceHolder (not a comment): CStructField(line_num=520) float shadowclip ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=520)
+						# directional light: shadowclip * mjModel.stat.extent 
+						#PlaceHolder (not a comment): BlankSpace(line_num=521)
+						#PlaceHolder (not a comment): CStructField(line_num=521) float shadowscale ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=521)
+						# spot light: shadowscale * light.cutoff 
+						#PlaceHolder (not a comment): BlankSpace(line_num=522)
+						#PlaceHolder (not a comment): CStructField(line_num=522) float actuatortendon ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=522)
+						# scale tendon width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=523)
 					<AST-SPLIT>  } 
 				<AST-SPLIT>  ; 
-				PlaceHolder() for: BlankSpace(line_num=523)
-				PlaceHolder() for: BlankSpace(line_num=524)
-				PlaceHolder() for: BlankSpace(line_num=525)
-				PlaceHolder() for: CStruct(line_num=525) struct scale 
-					PlaceHolder() for: Scope(line_num=525,scope_type=struct) { 
-						PlaceHolder() for: BlankSpace(line_num=525)
-						SingleLineComment(line_num=525) # scale of decor elements relative to mean body size 
-						PlaceHolder() for: BlankSpace(line_num=526)
-						PlaceHolder() for: CStructField(line_num=526) float forcewidth ; 
-						PlaceHolder() for: BlankSpace(line_num=526)
-						SingleLineComment(line_num=526) # width of force arrow 
-						PlaceHolder() for: BlankSpace(line_num=527)
-						PlaceHolder() for: CStructField(line_num=527) float contactwidth ; 
-						PlaceHolder() for: BlankSpace(line_num=527)
-						SingleLineComment(line_num=527) # contact width 
-						PlaceHolder() for: BlankSpace(line_num=528)
-						PlaceHolder() for: CStructField(line_num=528) float contactheight ; 
-						PlaceHolder() for: BlankSpace(line_num=528)
-						SingleLineComment(line_num=528) # contact height 
-						PlaceHolder() for: BlankSpace(line_num=529)
-						PlaceHolder() for: CStructField(line_num=529) float connect ; 
-						PlaceHolder() for: BlankSpace(line_num=529)
-						SingleLineComment(line_num=529) # autoconnect capsule width 
-						PlaceHolder() for: BlankSpace(line_num=530)
-						PlaceHolder() for: CStructField(line_num=530) float com ; 
-						PlaceHolder() for: BlankSpace(line_num=530)
-						SingleLineComment(line_num=530) # com radius 
-						PlaceHolder() for: BlankSpace(line_num=531)
-						PlaceHolder() for: CStructField(line_num=531) float camera ; 
-						PlaceHolder() for: BlankSpace(line_num=531)
-						SingleLineComment(line_num=531) # camera object 
-						PlaceHolder() for: BlankSpace(line_num=532)
-						PlaceHolder() for: CStructField(line_num=532) float light ; 
-						PlaceHolder() for: BlankSpace(line_num=532)
-						SingleLineComment(line_num=532) # light object 
-						PlaceHolder() for: BlankSpace(line_num=533)
-						PlaceHolder() for: CStructField(line_num=533) float selectpoint ; 
-						PlaceHolder() for: BlankSpace(line_num=533)
-						SingleLineComment(line_num=533) # selection point 
-						PlaceHolder() for: BlankSpace(line_num=534)
-						PlaceHolder() for: CStructField(line_num=534) float jointlength ; 
-						PlaceHolder() for: BlankSpace(line_num=534)
-						SingleLineComment(line_num=534) # joint length 
-						PlaceHolder() for: BlankSpace(line_num=535)
-						PlaceHolder() for: CStructField(line_num=535) float jointwidth ; 
-						PlaceHolder() for: BlankSpace(line_num=535)
-						SingleLineComment(line_num=535) # joint width 
-						PlaceHolder() for: BlankSpace(line_num=536)
-						PlaceHolder() for: CStructField(line_num=536) float actuatorlength ; 
-						PlaceHolder() for: BlankSpace(line_num=536)
-						SingleLineComment(line_num=536) # actuator length 
-						PlaceHolder() for: BlankSpace(line_num=537)
-						PlaceHolder() for: CStructField(line_num=537) float actuatorwidth ; 
-						PlaceHolder() for: BlankSpace(line_num=537)
-						SingleLineComment(line_num=537) # actuator width 
-						PlaceHolder() for: BlankSpace(line_num=538)
-						PlaceHolder() for: CStructField(line_num=538) float framelength ; 
-						PlaceHolder() for: BlankSpace(line_num=538)
-						SingleLineComment(line_num=538) # bodyframe axis length 
-						PlaceHolder() for: BlankSpace(line_num=539)
-						PlaceHolder() for: CStructField(line_num=539) float framewidth ; 
-						PlaceHolder() for: BlankSpace(line_num=539)
-						SingleLineComment(line_num=539) # bodyframe axis width 
-						PlaceHolder() for: BlankSpace(line_num=540)
-						PlaceHolder() for: CStructField(line_num=540) float constraint ; 
-						PlaceHolder() for: BlankSpace(line_num=540)
-						SingleLineComment(line_num=540) # constraint width 
-						PlaceHolder() for: BlankSpace(line_num=541)
-						PlaceHolder() for: CStructField(line_num=541) float slidercrank ; 
-						PlaceHolder() for: BlankSpace(line_num=541)
-						SingleLineComment(line_num=541) # slidercrank width 
-						PlaceHolder() for: BlankSpace(line_num=542)
-						PlaceHolder() for: CStructField(line_num=542) float frustum ; 
-						PlaceHolder() for: BlankSpace(line_num=542)
-						SingleLineComment(line_num=542) # frustum zfar plane 
-						PlaceHolder() for: BlankSpace(line_num=543)
+				#PlaceHolder (not a comment): BlankSpace(line_num=523)
+				#PlaceHolder (not a comment): BlankSpace(line_num=524)
+				#PlaceHolder (not a comment): BlankSpace(line_num=525)
+				#PlaceHolder (not a comment): CStruct(line_num=525) struct scale 
+					#PlaceHolder (not a comment): Scope(line_num=525,scope_type=struct) { 
+						#PlaceHolder (not a comment): BlankSpace(line_num=525)
+						# scale of decor elements relative to mean body size 
+						#PlaceHolder (not a comment): BlankSpace(line_num=526)
+						#PlaceHolder (not a comment): CStructField(line_num=526) float forcewidth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=526)
+						# width of force arrow 
+						#PlaceHolder (not a comment): BlankSpace(line_num=527)
+						#PlaceHolder (not a comment): CStructField(line_num=527) float contactwidth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=527)
+						# contact width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=528)
+						#PlaceHolder (not a comment): CStructField(line_num=528) float contactheight ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=528)
+						# contact height 
+						#PlaceHolder (not a comment): BlankSpace(line_num=529)
+						#PlaceHolder (not a comment): CStructField(line_num=529) float connect ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=529)
+						# autoconnect capsule width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=530)
+						#PlaceHolder (not a comment): CStructField(line_num=530) float com ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=530)
+						# com radius 
+						#PlaceHolder (not a comment): BlankSpace(line_num=531)
+						#PlaceHolder (not a comment): CStructField(line_num=531) float camera ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=531)
+						# camera object 
+						#PlaceHolder (not a comment): BlankSpace(line_num=532)
+						#PlaceHolder (not a comment): CStructField(line_num=532) float light ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=532)
+						# light object 
+						#PlaceHolder (not a comment): BlankSpace(line_num=533)
+						#PlaceHolder (not a comment): CStructField(line_num=533) float selectpoint ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=533)
+						# selection point 
+						#PlaceHolder (not a comment): BlankSpace(line_num=534)
+						#PlaceHolder (not a comment): CStructField(line_num=534) float jointlength ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=534)
+						# joint length 
+						#PlaceHolder (not a comment): BlankSpace(line_num=535)
+						#PlaceHolder (not a comment): CStructField(line_num=535) float jointwidth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=535)
+						# joint width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=536)
+						#PlaceHolder (not a comment): CStructField(line_num=536) float actuatorlength ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=536)
+						# actuator length 
+						#PlaceHolder (not a comment): BlankSpace(line_num=537)
+						#PlaceHolder (not a comment): CStructField(line_num=537) float actuatorwidth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=537)
+						# actuator width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=538)
+						#PlaceHolder (not a comment): CStructField(line_num=538) float framelength ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=538)
+						# bodyframe axis length 
+						#PlaceHolder (not a comment): BlankSpace(line_num=539)
+						#PlaceHolder (not a comment): CStructField(line_num=539) float framewidth ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=539)
+						# bodyframe axis width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=540)
+						#PlaceHolder (not a comment): CStructField(line_num=540) float constraint ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=540)
+						# constraint width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=541)
+						#PlaceHolder (not a comment): CStructField(line_num=541) float slidercrank ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=541)
+						# slidercrank width 
+						#PlaceHolder (not a comment): BlankSpace(line_num=542)
+						#PlaceHolder (not a comment): CStructField(line_num=542) float frustum ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=542)
+						# frustum zfar plane 
+						#PlaceHolder (not a comment): BlankSpace(line_num=543)
 					<AST-SPLIT>  } 
 				<AST-SPLIT>  ; 
-				PlaceHolder() for: BlankSpace(line_num=543)
-				PlaceHolder() for: BlankSpace(line_num=544)
-				PlaceHolder() for: BlankSpace(line_num=545)
-				PlaceHolder() for: CStruct(line_num=545) struct rgba 
-					PlaceHolder() for: Scope(line_num=545,scope_type=struct) { 
-						PlaceHolder() for: BlankSpace(line_num=545)
-						SingleLineComment(line_num=545) # color of decor elements 
-						PlaceHolder() for: BlankSpace(line_num=546)
-						PlaceHolder() for: CStructField(line_num=546) float fog[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=546)
-						SingleLineComment(line_num=546) # fog 
-						PlaceHolder() for: BlankSpace(line_num=547)
-						PlaceHolder() for: CStructField(line_num=547) float haze[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=547)
-						SingleLineComment(line_num=547) # haze 
-						PlaceHolder() for: BlankSpace(line_num=548)
-						PlaceHolder() for: CStructField(line_num=548) float force[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=548)
-						SingleLineComment(line_num=548) # external force 
-						PlaceHolder() for: BlankSpace(line_num=549)
-						PlaceHolder() for: CStructField(line_num=549) float inertia[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=549)
-						SingleLineComment(line_num=549) # inertia box 
-						PlaceHolder() for: BlankSpace(line_num=550)
-						PlaceHolder() for: CStructField(line_num=550) float joint[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=550)
-						SingleLineComment(line_num=550) # joint 
-						PlaceHolder() for: BlankSpace(line_num=551)
-						PlaceHolder() for: CStructField(line_num=551) float actuator[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=551)
-						SingleLineComment(line_num=551) # actuator, neutral 
-						PlaceHolder() for: BlankSpace(line_num=552)
-						PlaceHolder() for: CStructField(line_num=552) float actuatornegative[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=552)
-						SingleLineComment(line_num=552) # actuator, negative limit 
-						PlaceHolder() for: BlankSpace(line_num=553)
-						PlaceHolder() for: CStructField(line_num=553) float actuatorpositive[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=553)
-						SingleLineComment(line_num=553) # actuator, positive limit 
-						PlaceHolder() for: BlankSpace(line_num=554)
-						PlaceHolder() for: CStructField(line_num=554) float com[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=554)
-						SingleLineComment(line_num=554) # center of mass 
-						PlaceHolder() for: BlankSpace(line_num=555)
-						PlaceHolder() for: CStructField(line_num=555) float camera[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=555)
-						SingleLineComment(line_num=555) # camera object 
-						PlaceHolder() for: BlankSpace(line_num=556)
-						PlaceHolder() for: CStructField(line_num=556) float light[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=556)
-						SingleLineComment(line_num=556) # light object 
-						PlaceHolder() for: BlankSpace(line_num=557)
-						PlaceHolder() for: CStructField(line_num=557) float selectpoint[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=557)
-						SingleLineComment(line_num=557) # selection point 
-						PlaceHolder() for: BlankSpace(line_num=558)
-						PlaceHolder() for: CStructField(line_num=558) float connect[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=558)
-						SingleLineComment(line_num=558) # auto connect 
-						PlaceHolder() for: BlankSpace(line_num=559)
-						PlaceHolder() for: CStructField(line_num=559) float contactpoint[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=559)
-						SingleLineComment(line_num=559) # contact point 
-						PlaceHolder() for: BlankSpace(line_num=560)
-						PlaceHolder() for: CStructField(line_num=560) float contactforce[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=560)
-						SingleLineComment(line_num=560) # contact force 
-						PlaceHolder() for: BlankSpace(line_num=561)
-						PlaceHolder() for: CStructField(line_num=561) float contactfriction[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=561)
-						SingleLineComment(line_num=561) # contact friction force 
-						PlaceHolder() for: BlankSpace(line_num=562)
-						PlaceHolder() for: CStructField(line_num=562) float contacttorque[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=562)
-						SingleLineComment(line_num=562) # contact torque 
-						PlaceHolder() for: BlankSpace(line_num=563)
-						PlaceHolder() for: CStructField(line_num=563) float contactgap[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=563)
-						SingleLineComment(line_num=563) # contact point in gap 
-						PlaceHolder() for: BlankSpace(line_num=564)
-						PlaceHolder() for: CStructField(line_num=564) float rangefinder[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=564)
-						SingleLineComment(line_num=564) # rangefinder ray 
-						PlaceHolder() for: BlankSpace(line_num=565)
-						PlaceHolder() for: CStructField(line_num=565) float constraint[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=565)
-						SingleLineComment(line_num=565) # constraint 
-						PlaceHolder() for: BlankSpace(line_num=566)
-						PlaceHolder() for: CStructField(line_num=566) float slidercrank[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=566)
-						SingleLineComment(line_num=566) # slidercrank 
-						PlaceHolder() for: BlankSpace(line_num=567)
-						PlaceHolder() for: CStructField(line_num=567) float crankbroken[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=567)
-						SingleLineComment(line_num=567) # used when crank must be stretched/broken 
-						PlaceHolder() for: BlankSpace(line_num=568)
-						PlaceHolder() for: CStructField(line_num=568) float frustum[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=568)
-						SingleLineComment(line_num=568) # camera frustum 
-						PlaceHolder() for: BlankSpace(line_num=569)
-						PlaceHolder() for: CStructField(line_num=569) float bv[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=569)
-						SingleLineComment(line_num=569) # bounding volume 
-						PlaceHolder() for: BlankSpace(line_num=570)
-						PlaceHolder() for: CStructField(line_num=570) float bvactive[4] ; 
-						PlaceHolder() for: BlankSpace(line_num=570)
-						SingleLineComment(line_num=570) # active bounding volume 
-						PlaceHolder() for: BlankSpace(line_num=571)
+				#PlaceHolder (not a comment): BlankSpace(line_num=543)
+				#PlaceHolder (not a comment): BlankSpace(line_num=544)
+				#PlaceHolder (not a comment): BlankSpace(line_num=545)
+				#PlaceHolder (not a comment): CStruct(line_num=545) struct rgba 
+					#PlaceHolder (not a comment): Scope(line_num=545,scope_type=struct) { 
+						#PlaceHolder (not a comment): BlankSpace(line_num=545)
+						# color of decor elements 
+						#PlaceHolder (not a comment): BlankSpace(line_num=546)
+						#PlaceHolder (not a comment): CStructField(line_num=546) float fog[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=546)
+						# fog 
+						#PlaceHolder (not a comment): BlankSpace(line_num=547)
+						#PlaceHolder (not a comment): CStructField(line_num=547) float haze[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=547)
+						# haze 
+						#PlaceHolder (not a comment): BlankSpace(line_num=548)
+						#PlaceHolder (not a comment): CStructField(line_num=548) float force[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=548)
+						# external force 
+						#PlaceHolder (not a comment): BlankSpace(line_num=549)
+						#PlaceHolder (not a comment): CStructField(line_num=549) float inertia[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=549)
+						# inertia box 
+						#PlaceHolder (not a comment): BlankSpace(line_num=550)
+						#PlaceHolder (not a comment): CStructField(line_num=550) float joint[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=550)
+						# joint 
+						#PlaceHolder (not a comment): BlankSpace(line_num=551)
+						#PlaceHolder (not a comment): CStructField(line_num=551) float actuator[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=551)
+						# actuator, neutral 
+						#PlaceHolder (not a comment): BlankSpace(line_num=552)
+						#PlaceHolder (not a comment): CStructField(line_num=552) float actuatornegative[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=552)
+						# actuator, negative limit 
+						#PlaceHolder (not a comment): BlankSpace(line_num=553)
+						#PlaceHolder (not a comment): CStructField(line_num=553) float actuatorpositive[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=553)
+						# actuator, positive limit 
+						#PlaceHolder (not a comment): BlankSpace(line_num=554)
+						#PlaceHolder (not a comment): CStructField(line_num=554) float com[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=554)
+						# center of mass 
+						#PlaceHolder (not a comment): BlankSpace(line_num=555)
+						#PlaceHolder (not a comment): CStructField(line_num=555) float camera[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=555)
+						# camera object 
+						#PlaceHolder (not a comment): BlankSpace(line_num=556)
+						#PlaceHolder (not a comment): CStructField(line_num=556) float light[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=556)
+						# light object 
+						#PlaceHolder (not a comment): BlankSpace(line_num=557)
+						#PlaceHolder (not a comment): CStructField(line_num=557) float selectpoint[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=557)
+						# selection point 
+						#PlaceHolder (not a comment): BlankSpace(line_num=558)
+						#PlaceHolder (not a comment): CStructField(line_num=558) float connect[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=558)
+						# auto connect 
+						#PlaceHolder (not a comment): BlankSpace(line_num=559)
+						#PlaceHolder (not a comment): CStructField(line_num=559) float contactpoint[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=559)
+						# contact point 
+						#PlaceHolder (not a comment): BlankSpace(line_num=560)
+						#PlaceHolder (not a comment): CStructField(line_num=560) float contactforce[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=560)
+						# contact force 
+						#PlaceHolder (not a comment): BlankSpace(line_num=561)
+						#PlaceHolder (not a comment): CStructField(line_num=561) float contactfriction[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=561)
+						# contact friction force 
+						#PlaceHolder (not a comment): BlankSpace(line_num=562)
+						#PlaceHolder (not a comment): CStructField(line_num=562) float contacttorque[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=562)
+						# contact torque 
+						#PlaceHolder (not a comment): BlankSpace(line_num=563)
+						#PlaceHolder (not a comment): CStructField(line_num=563) float contactgap[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=563)
+						# contact point in gap 
+						#PlaceHolder (not a comment): BlankSpace(line_num=564)
+						#PlaceHolder (not a comment): CStructField(line_num=564) float rangefinder[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=564)
+						# rangefinder ray 
+						#PlaceHolder (not a comment): BlankSpace(line_num=565)
+						#PlaceHolder (not a comment): CStructField(line_num=565) float constraint[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=565)
+						# constraint 
+						#PlaceHolder (not a comment): BlankSpace(line_num=566)
+						#PlaceHolder (not a comment): CStructField(line_num=566) float slidercrank[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=566)
+						# slidercrank 
+						#PlaceHolder (not a comment): BlankSpace(line_num=567)
+						#PlaceHolder (not a comment): CStructField(line_num=567) float crankbroken[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=567)
+						# used when crank must be stretched/broken 
+						#PlaceHolder (not a comment): BlankSpace(line_num=568)
+						#PlaceHolder (not a comment): CStructField(line_num=568) float frustum[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=568)
+						# camera frustum 
+						#PlaceHolder (not a comment): BlankSpace(line_num=569)
+						#PlaceHolder (not a comment): CStructField(line_num=569) float bv[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=569)
+						# bounding volume 
+						#PlaceHolder (not a comment): BlankSpace(line_num=570)
+						#PlaceHolder (not a comment): CStructField(line_num=570) float bvactive[4] ; 
+						#PlaceHolder (not a comment): BlankSpace(line_num=570)
+						# active bounding volume 
+						#PlaceHolder (not a comment): BlankSpace(line_num=571)
 					<AST-SPLIT>  } 
 				<AST-SPLIT>  ; 
-				PlaceHolder() for: BlankSpace(line_num=571)
+				#PlaceHolder (not a comment): BlankSpace(line_num=571)
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  ; 
-		PlaceHolder() for: BlankSpace(line_num=572)
-		PlaceHolder() for: TypeDef(line_num=573) typedef struct mjVisual_ mjVisual ; 
-		PlaceHolder() for: BlankSpace(line_num=573)
-		PlaceHolder() for: BlankSpace(line_num=574)
-		PlaceHolder() for: BlankSpace(line_num=575)
-		SingleLineComment(line_num=576) //---------------------------------- mjStatistic --------------------------------------------------- 
-		PlaceHolder() for: BlankSpace(line_num=577)
-		PlaceHolder() for: CStruct(line_num=578) struct mjStatistic_ 
-			PlaceHolder() for: Scope(line_num=578,scope_type=struct) { 
-				PlaceHolder() for: BlankSpace(line_num=578)
-				SingleLineComment(line_num=578) # model statistics (in qpos0) 
-				PlaceHolder() for: BlankSpace(line_num=579)
-				PlaceHolder() for: CStructField(line_num=579) mjtNum meaninertia ; 
-				PlaceHolder() for: BlankSpace(line_num=579)
-				SingleLineComment(line_num=579) # mean diagonal inertia 
-				PlaceHolder() for: BlankSpace(line_num=580)
-				PlaceHolder() for: CStructField(line_num=580) mjtNum meanmass ; 
-				PlaceHolder() for: BlankSpace(line_num=580)
-				SingleLineComment(line_num=580) # mean body mass 
-				PlaceHolder() for: BlankSpace(line_num=581)
-				PlaceHolder() for: CStructField(line_num=581) mjtNum meansize ; 
-				PlaceHolder() for: BlankSpace(line_num=581)
-				SingleLineComment(line_num=581) # mean body size 
-				PlaceHolder() for: BlankSpace(line_num=582)
-				PlaceHolder() for: CStructField(line_num=582) mjtNum extent ; 
-				PlaceHolder() for: BlankSpace(line_num=582)
-				SingleLineComment(line_num=582) # spatial extent 
-				PlaceHolder() for: BlankSpace(line_num=583)
-				PlaceHolder() for: CStructField(line_num=583) mjtNum center[3] ; 
-				PlaceHolder() for: BlankSpace(line_num=583)
-				SingleLineComment(line_num=583) # center of model 
+		#PlaceHolder (not a comment): BlankSpace(line_num=572)
+		#PlaceHolder (not a comment): TypeDef(line_num=573) typedef struct mjVisual_ mjVisual ; 
+		#PlaceHolder (not a comment): BlankSpace(line_num=573)
+		#PlaceHolder (not a comment): BlankSpace(line_num=574)
+		#PlaceHolder (not a comment): BlankSpace(line_num=575)
+		#---------------------------------- mjStatistic --------------------------------------------------- 
+		#PlaceHolder (not a comment): BlankSpace(line_num=577)
+		#PlaceHolder (not a comment): CStruct(line_num=578) struct mjStatistic_ 
+			#PlaceHolder (not a comment): Scope(line_num=578,scope_type=struct) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=578)
+				# model statistics (in qpos0) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=579)
+				#PlaceHolder (not a comment): CStructField(line_num=579) mjtNum meaninertia ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=579)
+				# mean diagonal inertia 
+				#PlaceHolder (not a comment): BlankSpace(line_num=580)
+				#PlaceHolder (not a comment): CStructField(line_num=580) mjtNum meanmass ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=580)
+				# mean body mass 
+				#PlaceHolder (not a comment): BlankSpace(line_num=581)
+				#PlaceHolder (not a comment): CStructField(line_num=581) mjtNum meansize ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=581)
+				# mean body size 
+				#PlaceHolder (not a comment): BlankSpace(line_num=582)
+				#PlaceHolder (not a comment): CStructField(line_num=582) mjtNum extent ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=582)
+				# spatial extent 
+				#PlaceHolder (not a comment): BlankSpace(line_num=583)
+				#PlaceHolder (not a comment): CStructField(line_num=583) mjtNum center[3] ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=583)
+				# center of model 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  ; 
-		PlaceHolder() for: BlankSpace(line_num=584)
-		PlaceHolder() for: TypeDef(line_num=585) typedef struct mjStatistic_ mjStatistic ; 
-		PlaceHolder() for: BlankSpace(line_num=585)
-		PlaceHolder() for: BlankSpace(line_num=586)
-		PlaceHolder() for: BlankSpace(line_num=587)
-		SingleLineComment(line_num=588) //---------------------------------- mjModel ------------------------------------------------------- 
-		PlaceHolder() for: BlankSpace(line_num=589)
-		PlaceHolder() for: CStruct(line_num=590) struct mjModel_ 
-			PlaceHolder() for: Scope(line_num=590,scope_type=struct) { 
-				PlaceHolder() for: BlankSpace(line_num=591)
-				SingleLineComment(line_num=591) # ------------------------------- sizes 
-				PlaceHolder() for: BlankSpace(line_num=592)
-				PlaceHolder() for: BlankSpace(line_num=593)
-				SingleLineComment(line_num=593) # sizes needed at mjModel construction 
-				PlaceHolder() for: BlankSpace(line_num=594)
-				PlaceHolder() for: CStructField(line_num=594) int nq ; 
-				PlaceHolder() for: BlankSpace(line_num=594)
-				SingleLineComment(line_num=594) # number of generalized coordinates = dim(qpos) 
-				PlaceHolder() for: BlankSpace(line_num=595)
-				PlaceHolder() for: CStructField(line_num=595) int nv ; 
-				PlaceHolder() for: BlankSpace(line_num=595)
-				SingleLineComment(line_num=595) # number of degrees of freedom = dim(qvel) 
-				PlaceHolder() for: BlankSpace(line_num=596)
-				PlaceHolder() for: CStructField(line_num=596) int nu ; 
-				PlaceHolder() for: BlankSpace(line_num=596)
-				SingleLineComment(line_num=596) # number of actuators/controls = dim(ctrl) 
-				PlaceHolder() for: BlankSpace(line_num=597)
-				PlaceHolder() for: CStructField(line_num=597) int na ; 
-				PlaceHolder() for: BlankSpace(line_num=597)
-				SingleLineComment(line_num=597) # number of activation states = dim(act) 
-				PlaceHolder() for: BlankSpace(line_num=598)
-				PlaceHolder() for: CStructField(line_num=598) int nbody ; 
-				PlaceHolder() for: BlankSpace(line_num=598)
-				SingleLineComment(line_num=598) # number of bodies 
-				PlaceHolder() for: BlankSpace(line_num=599)
-				PlaceHolder() for: CStructField(line_num=599) int nbvh ; 
-				PlaceHolder() for: BlankSpace(line_num=599)
-				SingleLineComment(line_num=599) # number of total bounding volumes in all bodies 
-				PlaceHolder() for: BlankSpace(line_num=600)
-				PlaceHolder() for: CStructField(line_num=600) int nbvhstatic ; 
-				PlaceHolder() for: BlankSpace(line_num=600)
-				SingleLineComment(line_num=600) # number of static bounding volumes (aabb stored in mjModel) 
-				PlaceHolder() for: BlankSpace(line_num=601)
-				PlaceHolder() for: CStructField(line_num=601) int nbvhdynamic ; 
-				PlaceHolder() for: BlankSpace(line_num=601)
-				SingleLineComment(line_num=601) # number of dynamic bounding volumes (aabb stored in mjData) 
-				PlaceHolder() for: BlankSpace(line_num=602)
-				PlaceHolder() for: CStructField(line_num=602) int njnt ; 
-				PlaceHolder() for: BlankSpace(line_num=602)
-				SingleLineComment(line_num=602) # number of joints 
-				PlaceHolder() for: BlankSpace(line_num=603)
-				PlaceHolder() for: CStructField(line_num=603) int ngeom ; 
-				PlaceHolder() for: BlankSpace(line_num=603)
-				SingleLineComment(line_num=603) # number of geoms 
-				PlaceHolder() for: BlankSpace(line_num=604)
-				PlaceHolder() for: CStructField(line_num=604) int nsite ; 
-				PlaceHolder() for: BlankSpace(line_num=604)
-				SingleLineComment(line_num=604) # number of sites 
-				PlaceHolder() for: BlankSpace(line_num=605)
-				PlaceHolder() for: CStructField(line_num=605) int ncam ; 
-				PlaceHolder() for: BlankSpace(line_num=605)
-				SingleLineComment(line_num=605) # number of cameras 
-				PlaceHolder() for: BlankSpace(line_num=606)
-				PlaceHolder() for: CStructField(line_num=606) int nlight ; 
-				PlaceHolder() for: BlankSpace(line_num=606)
-				SingleLineComment(line_num=606) # number of lights 
-				PlaceHolder() for: BlankSpace(line_num=607)
-				PlaceHolder() for: CStructField(line_num=607) int nflex ; 
-				PlaceHolder() for: BlankSpace(line_num=607)
-				SingleLineComment(line_num=607) # number of flexes 
-				PlaceHolder() for: BlankSpace(line_num=608)
-				PlaceHolder() for: CStructField(line_num=608) int nflexvert ; 
-				PlaceHolder() for: BlankSpace(line_num=608)
-				SingleLineComment(line_num=608) # number of vertices in all flexes 
-				PlaceHolder() for: BlankSpace(line_num=609)
-				PlaceHolder() for: CStructField(line_num=609) int nflexedge ; 
-				PlaceHolder() for: BlankSpace(line_num=609)
-				SingleLineComment(line_num=609) # number of edges in all flexes 
-				PlaceHolder() for: BlankSpace(line_num=610)
-				PlaceHolder() for: CStructField(line_num=610) int nflexelem ; 
-				PlaceHolder() for: BlankSpace(line_num=610)
-				SingleLineComment(line_num=610) # number of elements in all flexes 
-				PlaceHolder() for: BlankSpace(line_num=611)
-				PlaceHolder() for: CStructField(line_num=611) int nflexelemdata ; 
-				PlaceHolder() for: BlankSpace(line_num=611)
-				SingleLineComment(line_num=611) # number of element vertex ids in all flexes 
-				PlaceHolder() for: BlankSpace(line_num=612)
-				PlaceHolder() for: CStructField(line_num=612) int nflexelemedge ; 
-				PlaceHolder() for: BlankSpace(line_num=612)
-				SingleLineComment(line_num=612) # number of element edge ids in all flexes 
-				PlaceHolder() for: BlankSpace(line_num=613)
-				PlaceHolder() for: CStructField(line_num=613) int nflexshelldata ; 
-				PlaceHolder() for: BlankSpace(line_num=613)
-				SingleLineComment(line_num=613) # number of shell fragment vertex ids in all flexes 
-				PlaceHolder() for: BlankSpace(line_num=614)
-				PlaceHolder() for: CStructField(line_num=614) int nflexevpair ; 
-				PlaceHolder() for: BlankSpace(line_num=614)
-				SingleLineComment(line_num=614) # number of element-vertex pairs in all flexes 
-				PlaceHolder() for: BlankSpace(line_num=615)
-				PlaceHolder() for: CStructField(line_num=615) int nflextexcoord ; 
-				PlaceHolder() for: BlankSpace(line_num=615)
-				SingleLineComment(line_num=615) # number of vertices with texture coordinates 
-				PlaceHolder() for: BlankSpace(line_num=616)
-				PlaceHolder() for: CStructField(line_num=616) int nmesh ; 
-				PlaceHolder() for: BlankSpace(line_num=616)
-				SingleLineComment(line_num=616) # number of meshes 
-				PlaceHolder() for: BlankSpace(line_num=617)
-				PlaceHolder() for: CStructField(line_num=617) int nmeshvert ; 
-				PlaceHolder() for: BlankSpace(line_num=617)
-				SingleLineComment(line_num=617) # number of vertices in all meshes 
-				PlaceHolder() for: BlankSpace(line_num=618)
-				PlaceHolder() for: CStructField(line_num=618) int nmeshnormal ; 
-				PlaceHolder() for: BlankSpace(line_num=618)
-				SingleLineComment(line_num=618) # number of normals in all meshes 
-				PlaceHolder() for: BlankSpace(line_num=619)
-				PlaceHolder() for: CStructField(line_num=619) int nmeshtexcoord ; 
-				PlaceHolder() for: BlankSpace(line_num=619)
-				SingleLineComment(line_num=619) # number of texcoords in all meshes 
-				PlaceHolder() for: BlankSpace(line_num=620)
-				PlaceHolder() for: CStructField(line_num=620) int nmeshface ; 
-				PlaceHolder() for: BlankSpace(line_num=620)
-				SingleLineComment(line_num=620) # number of triangular faces in all meshes 
-				PlaceHolder() for: BlankSpace(line_num=621)
-				PlaceHolder() for: CStructField(line_num=621) int nmeshgraph ; 
-				PlaceHolder() for: BlankSpace(line_num=621)
-				SingleLineComment(line_num=621) # number of ints in mesh auxiliary data 
-				PlaceHolder() for: BlankSpace(line_num=622)
-				PlaceHolder() for: CStructField(line_num=622) int nskin ; 
-				PlaceHolder() for: BlankSpace(line_num=622)
-				SingleLineComment(line_num=622) # number of skins 
-				PlaceHolder() for: BlankSpace(line_num=623)
-				PlaceHolder() for: CStructField(line_num=623) int nskinvert ; 
-				PlaceHolder() for: BlankSpace(line_num=623)
-				SingleLineComment(line_num=623) # number of vertices in all skins 
-				PlaceHolder() for: BlankSpace(line_num=624)
-				PlaceHolder() for: CStructField(line_num=624) int nskintexvert ; 
-				PlaceHolder() for: BlankSpace(line_num=624)
-				SingleLineComment(line_num=624) # number of vertiex with texcoords in all skins 
-				PlaceHolder() for: BlankSpace(line_num=625)
-				PlaceHolder() for: CStructField(line_num=625) int nskinface ; 
-				PlaceHolder() for: BlankSpace(line_num=625)
-				SingleLineComment(line_num=625) # number of triangular faces in all skins 
-				PlaceHolder() for: BlankSpace(line_num=626)
-				PlaceHolder() for: CStructField(line_num=626) int nskinbone ; 
-				PlaceHolder() for: BlankSpace(line_num=626)
-				SingleLineComment(line_num=626) # number of bones in all skins 
-				PlaceHolder() for: BlankSpace(line_num=627)
-				PlaceHolder() for: CStructField(line_num=627) int nskinbonevert ; 
-				PlaceHolder() for: BlankSpace(line_num=627)
-				SingleLineComment(line_num=627) # number of vertices in all skin bones 
-				PlaceHolder() for: BlankSpace(line_num=628)
-				PlaceHolder() for: CStructField(line_num=628) int nhfield ; 
-				PlaceHolder() for: BlankSpace(line_num=628)
-				SingleLineComment(line_num=628) # number of heightfields 
-				PlaceHolder() for: BlankSpace(line_num=629)
-				PlaceHolder() for: CStructField(line_num=629) int nhfielddata ; 
-				PlaceHolder() for: BlankSpace(line_num=629)
-				SingleLineComment(line_num=629) # number of data points in all heightfields 
-				PlaceHolder() for: BlankSpace(line_num=630)
-				PlaceHolder() for: CStructField(line_num=630) int ntex ; 
-				PlaceHolder() for: BlankSpace(line_num=630)
-				SingleLineComment(line_num=630) # number of textures 
-				PlaceHolder() for: BlankSpace(line_num=631)
-				PlaceHolder() for: CStructField(line_num=631) int ntexdata ; 
-				PlaceHolder() for: BlankSpace(line_num=631)
-				SingleLineComment(line_num=631) # number of bytes in texture rgb data 
-				PlaceHolder() for: BlankSpace(line_num=632)
-				PlaceHolder() for: CStructField(line_num=632) int nmat ; 
-				PlaceHolder() for: BlankSpace(line_num=632)
-				SingleLineComment(line_num=632) # number of materials 
-				PlaceHolder() for: BlankSpace(line_num=633)
-				PlaceHolder() for: CStructField(line_num=633) int npair ; 
-				PlaceHolder() for: BlankSpace(line_num=633)
-				SingleLineComment(line_num=633) # number of predefined geom pairs 
-				PlaceHolder() for: BlankSpace(line_num=634)
-				PlaceHolder() for: CStructField(line_num=634) int nexclude ; 
-				PlaceHolder() for: BlankSpace(line_num=634)
-				SingleLineComment(line_num=634) # number of excluded geom pairs 
-				PlaceHolder() for: BlankSpace(line_num=635)
-				PlaceHolder() for: CStructField(line_num=635) int neq ; 
-				PlaceHolder() for: BlankSpace(line_num=635)
-				SingleLineComment(line_num=635) # number of equality constraints 
-				PlaceHolder() for: BlankSpace(line_num=636)
-				PlaceHolder() for: CStructField(line_num=636) int ntendon ; 
-				PlaceHolder() for: BlankSpace(line_num=636)
-				SingleLineComment(line_num=636) # number of tendons 
-				PlaceHolder() for: BlankSpace(line_num=637)
-				PlaceHolder() for: CStructField(line_num=637) int nwrap ; 
-				PlaceHolder() for: BlankSpace(line_num=637)
-				SingleLineComment(line_num=637) # number of wrap objects in all tendon paths 
-				PlaceHolder() for: BlankSpace(line_num=638)
-				PlaceHolder() for: CStructField(line_num=638) int nsensor ; 
-				PlaceHolder() for: BlankSpace(line_num=638)
-				SingleLineComment(line_num=638) # number of sensors 
-				PlaceHolder() for: BlankSpace(line_num=639)
-				PlaceHolder() for: CStructField(line_num=639) int nnumeric ; 
-				PlaceHolder() for: BlankSpace(line_num=639)
-				SingleLineComment(line_num=639) # number of numeric custom fields 
-				PlaceHolder() for: BlankSpace(line_num=640)
-				PlaceHolder() for: CStructField(line_num=640) int nnumericdata ; 
-				PlaceHolder() for: BlankSpace(line_num=640)
-				SingleLineComment(line_num=640) # number of mjtNums in all numeric fields 
-				PlaceHolder() for: BlankSpace(line_num=641)
-				PlaceHolder() for: CStructField(line_num=641) int ntext ; 
-				PlaceHolder() for: BlankSpace(line_num=641)
-				SingleLineComment(line_num=641) # number of text custom fields 
-				PlaceHolder() for: BlankSpace(line_num=642)
-				PlaceHolder() for: CStructField(line_num=642) int ntextdata ; 
-				PlaceHolder() for: BlankSpace(line_num=642)
-				SingleLineComment(line_num=642) # number of mjtBytes in all text fields 
-				PlaceHolder() for: BlankSpace(line_num=643)
-				PlaceHolder() for: CStructField(line_num=643) int ntuple ; 
-				PlaceHolder() for: BlankSpace(line_num=643)
-				SingleLineComment(line_num=643) # number of tuple custom fields 
-				PlaceHolder() for: BlankSpace(line_num=644)
-				PlaceHolder() for: CStructField(line_num=644) int ntupledata ; 
-				PlaceHolder() for: BlankSpace(line_num=644)
-				SingleLineComment(line_num=644) # number of objects in all tuple fields 
-				PlaceHolder() for: BlankSpace(line_num=645)
-				PlaceHolder() for: CStructField(line_num=645) int nkey ; 
-				PlaceHolder() for: BlankSpace(line_num=645)
-				SingleLineComment(line_num=645) # number of keyframes 
-				PlaceHolder() for: BlankSpace(line_num=646)
-				PlaceHolder() for: CStructField(line_num=646) int nmocap ; 
-				PlaceHolder() for: BlankSpace(line_num=646)
-				SingleLineComment(line_num=646) # number of mocap bodies 
-				PlaceHolder() for: BlankSpace(line_num=647)
-				PlaceHolder() for: CStructField(line_num=647) int nplugin ; 
-				PlaceHolder() for: BlankSpace(line_num=647)
-				SingleLineComment(line_num=647) # number of plugin instances 
-				PlaceHolder() for: BlankSpace(line_num=648)
-				PlaceHolder() for: CStructField(line_num=648) int npluginattr ; 
-				PlaceHolder() for: BlankSpace(line_num=648)
-				SingleLineComment(line_num=648) # number of chars in all plugin config attributes 
-				PlaceHolder() for: BlankSpace(line_num=649)
-				PlaceHolder() for: CStructField(line_num=649) int nuser_body ; 
-				PlaceHolder() for: BlankSpace(line_num=649)
-				SingleLineComment(line_num=649) # number of mjtNums in body_user 
-				PlaceHolder() for: BlankSpace(line_num=650)
-				PlaceHolder() for: CStructField(line_num=650) int nuser_jnt ; 
-				PlaceHolder() for: BlankSpace(line_num=650)
-				SingleLineComment(line_num=650) # number of mjtNums in jnt_user 
-				PlaceHolder() for: BlankSpace(line_num=651)
-				PlaceHolder() for: CStructField(line_num=651) int nuser_geom ; 
-				PlaceHolder() for: BlankSpace(line_num=651)
-				SingleLineComment(line_num=651) # number of mjtNums in geom_user 
-				PlaceHolder() for: BlankSpace(line_num=652)
-				PlaceHolder() for: CStructField(line_num=652) int nuser_site ; 
-				PlaceHolder() for: BlankSpace(line_num=652)
-				SingleLineComment(line_num=652) # number of mjtNums in site_user 
-				PlaceHolder() for: BlankSpace(line_num=653)
-				PlaceHolder() for: CStructField(line_num=653) int nuser_cam ; 
-				PlaceHolder() for: BlankSpace(line_num=653)
-				SingleLineComment(line_num=653) # number of mjtNums in cam_user 
-				PlaceHolder() for: BlankSpace(line_num=654)
-				PlaceHolder() for: CStructField(line_num=654) int nuser_tendon ; 
-				PlaceHolder() for: BlankSpace(line_num=654)
-				SingleLineComment(line_num=654) # number of mjtNums in tendon_user 
-				PlaceHolder() for: BlankSpace(line_num=655)
-				PlaceHolder() for: CStructField(line_num=655) int nuser_actuator ; 
-				PlaceHolder() for: BlankSpace(line_num=655)
-				SingleLineComment(line_num=655) # number of mjtNums in actuator_user 
-				PlaceHolder() for: BlankSpace(line_num=656)
-				PlaceHolder() for: CStructField(line_num=656) int nuser_sensor ; 
-				PlaceHolder() for: BlankSpace(line_num=656)
-				SingleLineComment(line_num=656) # number of mjtNums in sensor_user 
-				PlaceHolder() for: BlankSpace(line_num=657)
-				PlaceHolder() for: CStructField(line_num=657) int nnames ; 
-				PlaceHolder() for: BlankSpace(line_num=657)
-				SingleLineComment(line_num=657) # number of chars in all names 
-				PlaceHolder() for: BlankSpace(line_num=658)
-				PlaceHolder() for: CStructField(line_num=658) int nnames_map ; 
-				PlaceHolder() for: BlankSpace(line_num=658)
-				SingleLineComment(line_num=658) # number of slots in the names hash map 
-				PlaceHolder() for: BlankSpace(line_num=659)
-				PlaceHolder() for: CStructField(line_num=659) int npaths ; 
-				PlaceHolder() for: BlankSpace(line_num=659)
-				SingleLineComment(line_num=659) # number of chars in all paths 
-				PlaceHolder() for: BlankSpace(line_num=660)
-				PlaceHolder() for: BlankSpace(line_num=661)
-				SingleLineComment(line_num=661) # sizes set after mjModel construction (only affect mjData) 
-				PlaceHolder() for: BlankSpace(line_num=662)
-				PlaceHolder() for: CStructField(line_num=662) int nM ; 
-				PlaceHolder() for: BlankSpace(line_num=662)
-				SingleLineComment(line_num=662) # number of non-zeros in sparse inertia matrix 
-				PlaceHolder() for: BlankSpace(line_num=663)
-				PlaceHolder() for: CStructField(line_num=663) int nB ; 
-				PlaceHolder() for: BlankSpace(line_num=663)
-				SingleLineComment(line_num=663) # number of non-zeros in sparse body-dof matrix 
-				PlaceHolder() for: BlankSpace(line_num=664)
-				PlaceHolder() for: CStructField(line_num=664) int nC ; 
-				PlaceHolder() for: BlankSpace(line_num=664)
-				SingleLineComment(line_num=664) # number of non-zeros in sparse reduced dof-dof matrix 
-				PlaceHolder() for: BlankSpace(line_num=665)
-				PlaceHolder() for: CStructField(line_num=665) int nD ; 
-				PlaceHolder() for: BlankSpace(line_num=665)
-				SingleLineComment(line_num=665) # number of non-zeros in sparse dof-dof matrix 
-				PlaceHolder() for: BlankSpace(line_num=666)
-				PlaceHolder() for: CStructField(line_num=666) int ntree ; 
-				PlaceHolder() for: BlankSpace(line_num=666)
-				SingleLineComment(line_num=666) # number of kinematic trees under world body 
-				PlaceHolder() for: BlankSpace(line_num=667)
-				PlaceHolder() for: CStructField(line_num=667) int ngravcomp ; 
-				PlaceHolder() for: BlankSpace(line_num=667)
-				SingleLineComment(line_num=667) # number of bodies with nonzero gravcomp 
-				PlaceHolder() for: BlankSpace(line_num=668)
-				PlaceHolder() for: CStructField(line_num=668) int nemax ; 
-				PlaceHolder() for: BlankSpace(line_num=668)
-				SingleLineComment(line_num=668) # number of potential equality-constraint rows 
-				PlaceHolder() for: BlankSpace(line_num=669)
-				PlaceHolder() for: CStructField(line_num=669) int njmax ; 
-				PlaceHolder() for: BlankSpace(line_num=669)
-				SingleLineComment(line_num=669) # number of available rows in constraint Jacobian 
-				PlaceHolder() for: BlankSpace(line_num=670)
-				PlaceHolder() for: CStructField(line_num=670) int nconmax ; 
-				PlaceHolder() for: BlankSpace(line_num=670)
-				SingleLineComment(line_num=670) # number of potential contacts in contact list 
-				PlaceHolder() for: BlankSpace(line_num=671)
-				PlaceHolder() for: CStructField(line_num=671) int nuserdata ; 
-				PlaceHolder() for: BlankSpace(line_num=671)
-				SingleLineComment(line_num=671) # number of mjtNums reserved for the user 
-				PlaceHolder() for: BlankSpace(line_num=672)
-				PlaceHolder() for: CStructField(line_num=672) int nsensordata ; 
-				PlaceHolder() for: BlankSpace(line_num=672)
-				SingleLineComment(line_num=672) # number of mjtNums in sensor data vector 
-				PlaceHolder() for: BlankSpace(line_num=673)
-				PlaceHolder() for: CStructField(line_num=673) int npluginstate ; 
-				PlaceHolder() for: BlankSpace(line_num=673)
-				SingleLineComment(line_num=673) # number of mjtNums in plugin state vector 
-				PlaceHolder() for: BlankSpace(line_num=674)
-				PlaceHolder() for: BlankSpace(line_num=675)
-				PlaceHolder() for: CStructField(line_num=675) size_t narena ; 
-				PlaceHolder() for: BlankSpace(line_num=675)
-				SingleLineComment(line_num=675) # number of bytes in the mjData arena (inclusive of stack) 
-				PlaceHolder() for: BlankSpace(line_num=676)
-				PlaceHolder() for: CStructField(line_num=676) size_t nbuffer ; 
-				PlaceHolder() for: BlankSpace(line_num=676)
-				SingleLineComment(line_num=676) # number of bytes in buffer 
-				PlaceHolder() for: BlankSpace(line_num=677)
-				PlaceHolder() for: BlankSpace(line_num=678)
-				SingleLineComment(line_num=678) # ------------------------------- options and statistics 
-				PlaceHolder() for: BlankSpace(line_num=679)
-				PlaceHolder() for: BlankSpace(line_num=680)
-				PlaceHolder() for: CStructField(line_num=680) mjOption opt ; 
-				PlaceHolder() for: BlankSpace(line_num=680)
-				SingleLineComment(line_num=680) # physics options 
-				PlaceHolder() for: BlankSpace(line_num=681)
-				PlaceHolder() for: CStructField(line_num=681) mjVisual vis ; 
-				PlaceHolder() for: BlankSpace(line_num=681)
-				SingleLineComment(line_num=681) # visualization options 
-				PlaceHolder() for: BlankSpace(line_num=682)
-				PlaceHolder() for: CStructField(line_num=682) mjStatistic stat ; 
-				PlaceHolder() for: BlankSpace(line_num=682)
-				SingleLineComment(line_num=682) # model statistics 
-				PlaceHolder() for: BlankSpace(line_num=683)
-				PlaceHolder() for: BlankSpace(line_num=684)
-				SingleLineComment(line_num=684) # ------------------------------- buffers 
-				PlaceHolder() for: BlankSpace(line_num=685)
-				PlaceHolder() for: BlankSpace(line_num=686)
-				SingleLineComment(line_num=686) # main buffer 
-				PlaceHolder() for: BlankSpace(line_num=687)
-				PlaceHolder() for: CStructField(line_num=687) void*     buffer ; 
-				PlaceHolder() for: BlankSpace(line_num=687)
-				SingleLineComment(line_num=687) # main buffer ;  all pointers point in it    (nbuffer) 
-				PlaceHolder() for: BlankSpace(line_num=688)
-				PlaceHolder() for: BlankSpace(line_num=689)
-				SingleLineComment(line_num=689) # default generalized coordinates 
-				PlaceHolder() for: BlankSpace(line_num=690)
-				PlaceHolder() for: CStructField(line_num=690) mjtNum*   qpos0 ; 
-				PlaceHolder() for: BlankSpace(line_num=690)
-				SingleLineComment(line_num=690) # qpos values at default pose              (nq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=691)
-				PlaceHolder() for: CStructField(line_num=691) mjtNum*   qpos_spring ; 
-				PlaceHolder() for: BlankSpace(line_num=691)
-				SingleLineComment(line_num=691) # reference pose for springs               (nq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=692)
-				PlaceHolder() for: BlankSpace(line_num=693)
-				SingleLineComment(line_num=693) # bodies 
-				PlaceHolder() for: BlankSpace(line_num=694)
-				PlaceHolder() for: CStructField(line_num=694) int*      body_parentid ; 
-				PlaceHolder() for: BlankSpace(line_num=694)
-				SingleLineComment(line_num=694) # id of body's parent                      (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=695)
-				PlaceHolder() for: CStructField(line_num=695) int*      body_rootid ; 
-				PlaceHolder() for: BlankSpace(line_num=695)
-				SingleLineComment(line_num=695) # id of root above body                    (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=696)
-				PlaceHolder() for: CStructField(line_num=696) int*      body_weldid ; 
-				PlaceHolder() for: BlankSpace(line_num=696)
-				SingleLineComment(line_num=696) # id of body that this body is welded to   (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=697)
-				PlaceHolder() for: CStructField(line_num=697) int*      body_mocapid ; 
-				PlaceHolder() for: BlankSpace(line_num=697)
-				SingleLineComment(line_num=697) # id of mocap data ;  -1: none               (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=698)
-				PlaceHolder() for: CStructField(line_num=698) int*      body_jntnum ; 
-				PlaceHolder() for: BlankSpace(line_num=698)
-				SingleLineComment(line_num=698) # number of joints for this body           (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=699)
-				PlaceHolder() for: CStructField(line_num=699) int*      body_jntadr ; 
-				PlaceHolder() for: BlankSpace(line_num=699)
-				SingleLineComment(line_num=699) # start addr of joints ;  -1: no joints      (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=700)
-				PlaceHolder() for: CStructField(line_num=700) int*      body_dofnum ; 
-				PlaceHolder() for: BlankSpace(line_num=700)
-				SingleLineComment(line_num=700) # number of motion degrees of freedom      (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=701)
-				PlaceHolder() for: CStructField(line_num=701) int*      body_dofadr ; 
-				PlaceHolder() for: BlankSpace(line_num=701)
-				SingleLineComment(line_num=701) # start addr of dofs ;  -1: no dofs          (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=702)
-				PlaceHolder() for: CStructField(line_num=702) int*      body_treeid ; 
-				PlaceHolder() for: BlankSpace(line_num=702)
-				SingleLineComment(line_num=702) # id of body's kinematic tree ;  -1: static  (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=703)
-				PlaceHolder() for: CStructField(line_num=703) int*      body_geomnum ; 
-				PlaceHolder() for: BlankSpace(line_num=703)
-				SingleLineComment(line_num=703) # number of geoms                          (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=704)
-				PlaceHolder() for: CStructField(line_num=704) int*      body_geomadr ; 
-				PlaceHolder() for: BlankSpace(line_num=704)
-				SingleLineComment(line_num=704) # start addr of geoms ;  -1: no geoms        (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=705)
-				PlaceHolder() for: CStructField(line_num=705) mjtByte*  body_simple ; 
-				PlaceHolder() for: BlankSpace(line_num=705)
-				SingleLineComment(line_num=705) # 1: diag M ;  2: diag M, sliders only       (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=706)
-				PlaceHolder() for: CStructField(line_num=706) mjtByte*  body_sameframe ; 
-				PlaceHolder() for: BlankSpace(line_num=706)
-				SingleLineComment(line_num=706) # same frame as inertia (mjtSameframe)     (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=707)
-				PlaceHolder() for: CStructField(line_num=707) mjtNum*   body_pos ; 
-				PlaceHolder() for: BlankSpace(line_num=707)
-				SingleLineComment(line_num=707) # position offset rel. to parent body      (nbody x 3) 
-				PlaceHolder() for: BlankSpace(line_num=708)
-				PlaceHolder() for: CStructField(line_num=708) mjtNum*   body_quat ; 
-				PlaceHolder() for: BlankSpace(line_num=708)
-				SingleLineComment(line_num=708) # orientation offset rel. to parent body   (nbody x 4) 
-				PlaceHolder() for: BlankSpace(line_num=709)
-				PlaceHolder() for: CStructField(line_num=709) mjtNum*   body_ipos ; 
-				PlaceHolder() for: BlankSpace(line_num=709)
-				SingleLineComment(line_num=709) # local position of center of mass         (nbody x 3) 
-				PlaceHolder() for: BlankSpace(line_num=710)
-				PlaceHolder() for: CStructField(line_num=710) mjtNum*   body_iquat ; 
-				PlaceHolder() for: BlankSpace(line_num=710)
-				SingleLineComment(line_num=710) # local orientation of inertia ellipsoid   (nbody x 4) 
-				PlaceHolder() for: BlankSpace(line_num=711)
-				PlaceHolder() for: CStructField(line_num=711) mjtNum*   body_mass ; 
-				PlaceHolder() for: BlankSpace(line_num=711)
-				SingleLineComment(line_num=711) # mass                                     (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=712)
-				PlaceHolder() for: CStructField(line_num=712) mjtNum*   body_subtreemass ; 
-				PlaceHolder() for: BlankSpace(line_num=712)
-				SingleLineComment(line_num=712) # mass of subtree starting at this body    (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=713)
-				PlaceHolder() for: CStructField(line_num=713) mjtNum*   body_inertia ; 
-				PlaceHolder() for: BlankSpace(line_num=713)
-				SingleLineComment(line_num=713) # diagonal inertia in ipos/iquat frame     (nbody x 3) 
-				PlaceHolder() for: BlankSpace(line_num=714)
-				PlaceHolder() for: CStructField(line_num=714) mjtNum*   body_invweight0 ; 
-				PlaceHolder() for: BlankSpace(line_num=714)
-				SingleLineComment(line_num=714) # mean inv inert in qpos0 (trn, rot)       (nbody x 2) 
-				PlaceHolder() for: BlankSpace(line_num=715)
-				PlaceHolder() for: CStructField(line_num=715) mjtNum*   body_gravcomp ; 
-				PlaceHolder() for: BlankSpace(line_num=715)
-				SingleLineComment(line_num=715) # antigravity force, units of body weight  (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=716)
-				PlaceHolder() for: CStructField(line_num=716) mjtNum*   body_margin ; 
-				PlaceHolder() for: BlankSpace(line_num=716)
-				SingleLineComment(line_num=716) # MAX over all geom margins                (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=717)
-				PlaceHolder() for: CStructField(line_num=717) mjtNum*   body_user ; 
-				PlaceHolder() for: BlankSpace(line_num=717)
-				SingleLineComment(line_num=717) # user data                                (nbody x nuser_body) 
-				PlaceHolder() for: BlankSpace(line_num=718)
-				PlaceHolder() for: CStructField(line_num=718) int*      body_plugin ; 
-				PlaceHolder() for: BlankSpace(line_num=718)
-				SingleLineComment(line_num=718) # plugin instance id ;  -1: not in use       (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=719)
-				PlaceHolder() for: CStructField(line_num=719) int*      body_contype ; 
-				PlaceHolder() for: BlankSpace(line_num=719)
-				SingleLineComment(line_num=719) # OR over all geom contypes                (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=720)
-				PlaceHolder() for: CStructField(line_num=720) int*      body_conaffinity ; 
-				PlaceHolder() for: BlankSpace(line_num=720)
-				SingleLineComment(line_num=720) # OR over all geom conaffinities           (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=721)
-				PlaceHolder() for: CStructField(line_num=721) int*      body_bvhadr ; 
-				PlaceHolder() for: BlankSpace(line_num=721)
-				SingleLineComment(line_num=721) # address of bvh root                      (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=722)
-				PlaceHolder() for: CStructField(line_num=722) int*      body_bvhnum ; 
-				PlaceHolder() for: BlankSpace(line_num=722)
-				SingleLineComment(line_num=722) # number of bounding volumes               (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=723)
-				PlaceHolder() for: BlankSpace(line_num=724)
-				SingleLineComment(line_num=724) # bounding volume hierarchy 
-				PlaceHolder() for: BlankSpace(line_num=725)
-				PlaceHolder() for: CStructField(line_num=725) int*      bvh_depth ; 
-				PlaceHolder() for: BlankSpace(line_num=725)
-				SingleLineComment(line_num=725) # depth in the bounding volume hierarchy   (nbvh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=726)
-				PlaceHolder() for: CStructField(line_num=726) int*      bvh_child ; 
-				PlaceHolder() for: BlankSpace(line_num=726)
-				SingleLineComment(line_num=726) # left and right children in tree          (nbvh x 2) 
-				PlaceHolder() for: BlankSpace(line_num=727)
-				PlaceHolder() for: CStructField(line_num=727) int*      bvh_nodeid ; 
-				PlaceHolder() for: BlankSpace(line_num=727)
-				SingleLineComment(line_num=727) # geom or elem id of node ;  -1: non-leaf    (nbvh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=728)
-				PlaceHolder() for: CStructField(line_num=728) mjtNum*   bvh_aabb ; 
-				PlaceHolder() for: BlankSpace(line_num=728)
-				SingleLineComment(line_num=728) # local bounding box (center, size)        (nbvhstatic x 6) 
-				PlaceHolder() for: BlankSpace(line_num=729)
-				PlaceHolder() for: BlankSpace(line_num=730)
-				SingleLineComment(line_num=730) # joints 
-				PlaceHolder() for: BlankSpace(line_num=731)
-				PlaceHolder() for: CStructField(line_num=731) int*      jnt_type ; 
-				PlaceHolder() for: BlankSpace(line_num=731)
-				SingleLineComment(line_num=731) # type of joint (mjtJoint)                 (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=732)
-				PlaceHolder() for: CStructField(line_num=732) int*      jnt_qposadr ; 
-				PlaceHolder() for: BlankSpace(line_num=732)
-				SingleLineComment(line_num=732) # start addr in 'qpos' for joint's data    (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=733)
-				PlaceHolder() for: CStructField(line_num=733) int*      jnt_dofadr ; 
-				PlaceHolder() for: BlankSpace(line_num=733)
-				SingleLineComment(line_num=733) # start addr in 'qvel' for joint's data    (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=734)
-				PlaceHolder() for: CStructField(line_num=734) int*      jnt_bodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=734)
-				SingleLineComment(line_num=734) # id of joint's body                       (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=735)
-				PlaceHolder() for: CStructField(line_num=735) int*      jnt_group ; 
-				PlaceHolder() for: BlankSpace(line_num=735)
-				SingleLineComment(line_num=735) # group for visibility                     (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=736)
-				PlaceHolder() for: CStructField(line_num=736) mjtByte*  jnt_limited ; 
-				PlaceHolder() for: BlankSpace(line_num=736)
-				SingleLineComment(line_num=736) # does joint have limits                   (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=737)
-				PlaceHolder() for: CStructField(line_num=737) mjtByte*  jnt_actfrclimited ; 
-				PlaceHolder() for: BlankSpace(line_num=737)
-				SingleLineComment(line_num=737) # does joint have actuator force limits    (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=738)
-				PlaceHolder() for: CStructField(line_num=738) mjtByte*  jnt_actgravcomp ; 
-				PlaceHolder() for: BlankSpace(line_num=738)
-				SingleLineComment(line_num=738) # is gravcomp force applied via actuators  (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=739)
-				PlaceHolder() for: CStructField(line_num=739) mjtNum*   jnt_solref ; 
-				PlaceHolder() for: BlankSpace(line_num=739)
-				SingleLineComment(line_num=739) # constraint solver reference: limit       (njnt x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=740)
-				PlaceHolder() for: CStructField(line_num=740) mjtNum*   jnt_solimp ; 
-				PlaceHolder() for: BlankSpace(line_num=740)
-				SingleLineComment(line_num=740) # constraint solver impedance: limit       (njnt x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=741)
-				PlaceHolder() for: CStructField(line_num=741) mjtNum*   jnt_pos ; 
-				PlaceHolder() for: BlankSpace(line_num=741)
-				SingleLineComment(line_num=741) # local anchor position                    (njnt x 3) 
-				PlaceHolder() for: BlankSpace(line_num=742)
-				PlaceHolder() for: CStructField(line_num=742) mjtNum*   jnt_axis ; 
-				PlaceHolder() for: BlankSpace(line_num=742)
-				SingleLineComment(line_num=742) # local joint axis                         (njnt x 3) 
-				PlaceHolder() for: BlankSpace(line_num=743)
-				PlaceHolder() for: CStructField(line_num=743) mjtNum*   jnt_stiffness ; 
-				PlaceHolder() for: BlankSpace(line_num=743)
-				SingleLineComment(line_num=743) # stiffness coefficient                    (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=744)
-				PlaceHolder() for: CStructField(line_num=744) mjtNum*   jnt_range ; 
-				PlaceHolder() for: BlankSpace(line_num=744)
-				SingleLineComment(line_num=744) # joint limits                             (njnt x 2) 
-				PlaceHolder() for: BlankSpace(line_num=745)
-				PlaceHolder() for: CStructField(line_num=745) mjtNum*   jnt_actfrcrange ; 
-				PlaceHolder() for: BlankSpace(line_num=745)
-				SingleLineComment(line_num=745) # range of total actuator force            (njnt x 2) 
-				PlaceHolder() for: BlankSpace(line_num=746)
-				PlaceHolder() for: CStructField(line_num=746) mjtNum*   jnt_margin ; 
-				PlaceHolder() for: BlankSpace(line_num=746)
-				SingleLineComment(line_num=746) # min distance for limit detection         (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=747)
-				PlaceHolder() for: CStructField(line_num=747) mjtNum*   jnt_user ; 
-				PlaceHolder() for: BlankSpace(line_num=747)
-				SingleLineComment(line_num=747) # user data                                (njnt x nuser_jnt) 
-				PlaceHolder() for: BlankSpace(line_num=748)
-				PlaceHolder() for: BlankSpace(line_num=749)
-				SingleLineComment(line_num=749) # dofs 
-				PlaceHolder() for: BlankSpace(line_num=750)
-				PlaceHolder() for: CStructField(line_num=750) int*      dof_bodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=750)
-				SingleLineComment(line_num=750) # id of dof's body                         (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=751)
-				PlaceHolder() for: CStructField(line_num=751) int*      dof_jntid ; 
-				PlaceHolder() for: BlankSpace(line_num=751)
-				SingleLineComment(line_num=751) # id of dof's joint                        (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=752)
-				PlaceHolder() for: CStructField(line_num=752) int*      dof_parentid ; 
-				PlaceHolder() for: BlankSpace(line_num=752)
-				SingleLineComment(line_num=752) # id of dof's parent ;  -1: none             (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=753)
-				PlaceHolder() for: CStructField(line_num=753) int*      dof_treeid ; 
-				PlaceHolder() for: BlankSpace(line_num=753)
-				SingleLineComment(line_num=753) # id of dof's kinematic tree               (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=754)
-				PlaceHolder() for: CStructField(line_num=754) int*      dof_Madr ; 
-				PlaceHolder() for: BlankSpace(line_num=754)
-				SingleLineComment(line_num=754) # dof address in M-diagonal                (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=755)
-				PlaceHolder() for: CStructField(line_num=755) int*      dof_simplenum ; 
-				PlaceHolder() for: BlankSpace(line_num=755)
-				SingleLineComment(line_num=755) # number of consecutive simple dofs        (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=756)
-				PlaceHolder() for: CStructField(line_num=756) mjtNum*   dof_solref ; 
-				PlaceHolder() for: BlankSpace(line_num=756)
-				SingleLineComment(line_num=756) # constraint solver reference:frictionloss (nv x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=757)
-				PlaceHolder() for: CStructField(line_num=757) mjtNum*   dof_solimp ; 
-				PlaceHolder() for: BlankSpace(line_num=757)
-				SingleLineComment(line_num=757) # constraint solver impedance:frictionloss (nv x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=758)
-				PlaceHolder() for: CStructField(line_num=758) mjtNum*   dof_frictionloss ; 
-				PlaceHolder() for: BlankSpace(line_num=758)
-				SingleLineComment(line_num=758) # dof friction loss                        (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=759)
-				PlaceHolder() for: CStructField(line_num=759) mjtNum*   dof_armature ; 
-				PlaceHolder() for: BlankSpace(line_num=759)
-				SingleLineComment(line_num=759) # dof armature inertia/mass                (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=760)
-				PlaceHolder() for: CStructField(line_num=760) mjtNum*   dof_damping ; 
-				PlaceHolder() for: BlankSpace(line_num=760)
-				SingleLineComment(line_num=760) # damping coefficient                      (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=761)
-				PlaceHolder() for: CStructField(line_num=761) mjtNum*   dof_invweight0 ; 
-				PlaceHolder() for: BlankSpace(line_num=761)
-				SingleLineComment(line_num=761) # diag. inverse inertia in qpos0           (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=762)
-				PlaceHolder() for: CStructField(line_num=762) mjtNum*   dof_M0 ; 
-				PlaceHolder() for: BlankSpace(line_num=762)
-				SingleLineComment(line_num=762) # diag. inertia in qpos0                   (nv x 1) 
-				PlaceHolder() for: BlankSpace(line_num=763)
-				PlaceHolder() for: BlankSpace(line_num=764)
-				SingleLineComment(line_num=764) # geoms 
-				PlaceHolder() for: BlankSpace(line_num=765)
-				PlaceHolder() for: CStructField(line_num=765) int*      geom_type ; 
-				PlaceHolder() for: BlankSpace(line_num=765)
-				SingleLineComment(line_num=765) # geometric type (mjtGeom)                 (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=766)
-				PlaceHolder() for: CStructField(line_num=766) int*      geom_contype ; 
-				PlaceHolder() for: BlankSpace(line_num=766)
-				SingleLineComment(line_num=766) # geom contact type                        (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=767)
-				PlaceHolder() for: CStructField(line_num=767) int*      geom_conaffinity ; 
-				PlaceHolder() for: BlankSpace(line_num=767)
-				SingleLineComment(line_num=767) # geom contact affinity                    (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=768)
-				PlaceHolder() for: CStructField(line_num=768) int*      geom_condim ; 
-				PlaceHolder() for: BlankSpace(line_num=768)
-				SingleLineComment(line_num=768) # contact dimensionality (1, 3, 4, 6)      (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=769)
-				PlaceHolder() for: CStructField(line_num=769) int*      geom_bodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=769)
-				SingleLineComment(line_num=769) # id of geom's body                        (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=770)
-				PlaceHolder() for: CStructField(line_num=770) int*      geom_dataid ; 
-				PlaceHolder() for: BlankSpace(line_num=770)
-				SingleLineComment(line_num=770) # id of geom's mesh/hfield ;  -1: none       (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=771)
-				PlaceHolder() for: CStructField(line_num=771) int*      geom_matid ; 
-				PlaceHolder() for: BlankSpace(line_num=771)
-				SingleLineComment(line_num=771) # material id for rendering ;  -1: none      (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=772)
-				PlaceHolder() for: CStructField(line_num=772) int*      geom_group ; 
-				PlaceHolder() for: BlankSpace(line_num=772)
-				SingleLineComment(line_num=772) # group for visibility                     (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=773)
-				PlaceHolder() for: CStructField(line_num=773) int*      geom_priority ; 
-				PlaceHolder() for: BlankSpace(line_num=773)
-				SingleLineComment(line_num=773) # geom contact priority                    (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=774)
-				PlaceHolder() for: CStructField(line_num=774) int*      geom_plugin ; 
-				PlaceHolder() for: BlankSpace(line_num=774)
-				SingleLineComment(line_num=774) # plugin instance id ;  -1: not in use       (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=775)
-				PlaceHolder() for: CStructField(line_num=775) mjtByte*  geom_sameframe ; 
-				PlaceHolder() for: BlankSpace(line_num=775)
-				SingleLineComment(line_num=775) # same frame as body (mjtSameframe)        (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=776)
-				PlaceHolder() for: CStructField(line_num=776) mjtNum*   geom_solmix ; 
-				PlaceHolder() for: BlankSpace(line_num=776)
-				SingleLineComment(line_num=776) # mixing coef for solref/imp in geom pair  (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=777)
-				PlaceHolder() for: CStructField(line_num=777) mjtNum*   geom_solref ; 
-				PlaceHolder() for: BlankSpace(line_num=777)
-				SingleLineComment(line_num=777) # constraint solver reference: contact     (ngeom x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=778)
-				PlaceHolder() for: CStructField(line_num=778) mjtNum*   geom_solimp ; 
-				PlaceHolder() for: BlankSpace(line_num=778)
-				SingleLineComment(line_num=778) # constraint solver impedance: contact     (ngeom x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=779)
-				PlaceHolder() for: CStructField(line_num=779) mjtNum*   geom_size ; 
-				PlaceHolder() for: BlankSpace(line_num=779)
-				SingleLineComment(line_num=779) # geom-specific size parameters            (ngeom x 3) 
-				PlaceHolder() for: BlankSpace(line_num=780)
-				PlaceHolder() for: CStructField(line_num=780) mjtNum*   geom_aabb ; 
-				PlaceHolder() for: BlankSpace(line_num=780)
-				SingleLineComment(line_num=780) # bounding box, (center, size)             (ngeom x 6) 
-				PlaceHolder() for: BlankSpace(line_num=781)
-				PlaceHolder() for: CStructField(line_num=781) mjtNum*   geom_rbound ; 
-				PlaceHolder() for: BlankSpace(line_num=781)
-				SingleLineComment(line_num=781) # radius of bounding sphere                (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=782)
-				PlaceHolder() for: CStructField(line_num=782) mjtNum*   geom_pos ; 
-				PlaceHolder() for: BlankSpace(line_num=782)
-				SingleLineComment(line_num=782) # local position offset rel. to body       (ngeom x 3) 
-				PlaceHolder() for: BlankSpace(line_num=783)
-				PlaceHolder() for: CStructField(line_num=783) mjtNum*   geom_quat ; 
-				PlaceHolder() for: BlankSpace(line_num=783)
-				SingleLineComment(line_num=783) # local orientation offset rel. to body    (ngeom x 4) 
-				PlaceHolder() for: BlankSpace(line_num=784)
-				PlaceHolder() for: CStructField(line_num=784) mjtNum*   geom_friction ; 
-				PlaceHolder() for: BlankSpace(line_num=784)
-				SingleLineComment(line_num=784) # friction for (slide, spin, roll)         (ngeom x 3) 
-				PlaceHolder() for: BlankSpace(line_num=785)
-				PlaceHolder() for: CStructField(line_num=785) mjtNum*   geom_margin ; 
-				PlaceHolder() for: BlankSpace(line_num=785)
-				SingleLineComment(line_num=785) # detect contact if dist<margin            (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=786)
-				PlaceHolder() for: CStructField(line_num=786) mjtNum*   geom_gap ; 
-				PlaceHolder() for: BlankSpace(line_num=786)
-				SingleLineComment(line_num=786) # include in solver if dist<margin-gap     (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=787)
-				PlaceHolder() for: CStructField(line_num=787) mjtNum*   geom_fluid ; 
-				PlaceHolder() for: BlankSpace(line_num=787)
-				SingleLineComment(line_num=787) # fluid interaction parameters             (ngeom x mjNFLUID) 
-				PlaceHolder() for: BlankSpace(line_num=788)
-				PlaceHolder() for: CStructField(line_num=788) mjtNum*   geom_user ; 
-				PlaceHolder() for: BlankSpace(line_num=788)
-				SingleLineComment(line_num=788) # user data                                (ngeom x nuser_geom) 
-				PlaceHolder() for: BlankSpace(line_num=789)
-				PlaceHolder() for: CStructField(line_num=789) float*    geom_rgba ; 
-				PlaceHolder() for: BlankSpace(line_num=789)
-				SingleLineComment(line_num=789) # rgba when material is omitted            (ngeom x 4) 
-				PlaceHolder() for: BlankSpace(line_num=790)
-				PlaceHolder() for: BlankSpace(line_num=791)
-				SingleLineComment(line_num=791) # sites 
-				PlaceHolder() for: BlankSpace(line_num=792)
-				PlaceHolder() for: CStructField(line_num=792) int*      site_type ; 
-				PlaceHolder() for: BlankSpace(line_num=792)
-				SingleLineComment(line_num=792) # geom type for rendering (mjtGeom)        (nsite x 1) 
-				PlaceHolder() for: BlankSpace(line_num=793)
-				PlaceHolder() for: CStructField(line_num=793) int*      site_bodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=793)
-				SingleLineComment(line_num=793) # id of site's body                        (nsite x 1) 
-				PlaceHolder() for: BlankSpace(line_num=794)
-				PlaceHolder() for: CStructField(line_num=794) int*      site_matid ; 
-				PlaceHolder() for: BlankSpace(line_num=794)
-				SingleLineComment(line_num=794) # material id for rendering ;  -1: none      (nsite x 1) 
-				PlaceHolder() for: BlankSpace(line_num=795)
-				PlaceHolder() for: CStructField(line_num=795) int*      site_group ; 
-				PlaceHolder() for: BlankSpace(line_num=795)
-				SingleLineComment(line_num=795) # group for visibility                     (nsite x 1) 
-				PlaceHolder() for: BlankSpace(line_num=796)
-				PlaceHolder() for: CStructField(line_num=796) mjtByte*  site_sameframe ; 
-				PlaceHolder() for: BlankSpace(line_num=796)
-				SingleLineComment(line_num=796) # same frame as body (mjtSameframe)        (nsite x 1) 
-				PlaceHolder() for: BlankSpace(line_num=797)
-				PlaceHolder() for: CStructField(line_num=797) mjtNum*   site_size ; 
-				PlaceHolder() for: BlankSpace(line_num=797)
-				SingleLineComment(line_num=797) # geom size for rendering                  (nsite x 3) 
-				PlaceHolder() for: BlankSpace(line_num=798)
-				PlaceHolder() for: CStructField(line_num=798) mjtNum*   site_pos ; 
-				PlaceHolder() for: BlankSpace(line_num=798)
-				SingleLineComment(line_num=798) # local position offset rel. to body       (nsite x 3) 
-				PlaceHolder() for: BlankSpace(line_num=799)
-				PlaceHolder() for: CStructField(line_num=799) mjtNum*   site_quat ; 
-				PlaceHolder() for: BlankSpace(line_num=799)
-				SingleLineComment(line_num=799) # local orientation offset rel. to body    (nsite x 4) 
-				PlaceHolder() for: BlankSpace(line_num=800)
-				PlaceHolder() for: CStructField(line_num=800) mjtNum*   site_user ; 
-				PlaceHolder() for: BlankSpace(line_num=800)
-				SingleLineComment(line_num=800) # user data                                (nsite x nuser_site) 
-				PlaceHolder() for: BlankSpace(line_num=801)
-				PlaceHolder() for: CStructField(line_num=801) float*    site_rgba ; 
-				PlaceHolder() for: BlankSpace(line_num=801)
-				SingleLineComment(line_num=801) # rgba when material is omitted            (nsite x 4) 
-				PlaceHolder() for: BlankSpace(line_num=802)
-				PlaceHolder() for: BlankSpace(line_num=803)
-				SingleLineComment(line_num=803) # cameras 
-				PlaceHolder() for: BlankSpace(line_num=804)
-				PlaceHolder() for: CStructField(line_num=804) int*      cam_mode ; 
-				PlaceHolder() for: BlankSpace(line_num=804)
-				SingleLineComment(line_num=804) # camera tracking mode (mjtCamLight)       (ncam x 1) 
-				PlaceHolder() for: BlankSpace(line_num=805)
-				PlaceHolder() for: CStructField(line_num=805) int*      cam_bodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=805)
-				SingleLineComment(line_num=805) # id of camera's body                      (ncam x 1) 
-				PlaceHolder() for: BlankSpace(line_num=806)
-				PlaceHolder() for: CStructField(line_num=806) int*      cam_targetbodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=806)
-				SingleLineComment(line_num=806) # id of targeted body ;  -1: none            (ncam x 1) 
-				PlaceHolder() for: BlankSpace(line_num=807)
-				PlaceHolder() for: CStructField(line_num=807) mjtNum*   cam_pos ; 
-				PlaceHolder() for: BlankSpace(line_num=807)
-				SingleLineComment(line_num=807) # position rel. to body frame              (ncam x 3) 
-				PlaceHolder() for: BlankSpace(line_num=808)
-				PlaceHolder() for: CStructField(line_num=808) mjtNum*   cam_quat ; 
-				PlaceHolder() for: BlankSpace(line_num=808)
-				SingleLineComment(line_num=808) # orientation rel. to body frame           (ncam x 4) 
-				PlaceHolder() for: BlankSpace(line_num=809)
-				PlaceHolder() for: CStructField(line_num=809) mjtNum*   cam_poscom0 ; 
-				PlaceHolder() for: BlankSpace(line_num=809)
-				SingleLineComment(line_num=809) # global position rel. to sub-com in qpos0 (ncam x 3) 
-				PlaceHolder() for: BlankSpace(line_num=810)
-				PlaceHolder() for: CStructField(line_num=810) mjtNum*   cam_pos0 ; 
-				PlaceHolder() for: BlankSpace(line_num=810)
-				SingleLineComment(line_num=810) # global position rel. to body in qpos0    (ncam x 3) 
-				PlaceHolder() for: BlankSpace(line_num=811)
-				PlaceHolder() for: CStructField(line_num=811) mjtNum*   cam_mat0 ; 
-				PlaceHolder() for: BlankSpace(line_num=811)
-				SingleLineComment(line_num=811) # global orientation in qpos0              (ncam x 9) 
-				PlaceHolder() for: BlankSpace(line_num=812)
-				PlaceHolder() for: CStructField(line_num=812) int*      cam_orthographic ; 
-				PlaceHolder() for: BlankSpace(line_num=812)
-				SingleLineComment(line_num=812) # orthographic camera ;  0: no, 1: yes       (ncam x 1) 
-				PlaceHolder() for: BlankSpace(line_num=813)
-				PlaceHolder() for: CStructField(line_num=813) mjtNum*   cam_fovy ; 
-				PlaceHolder() for: BlankSpace(line_num=813)
-				SingleLineComment(line_num=813) # y field-of-view (ortho ? len : deg)      (ncam x 1) 
-				PlaceHolder() for: BlankSpace(line_num=814)
-				PlaceHolder() for: CStructField(line_num=814) mjtNum*   cam_ipd ; 
-				PlaceHolder() for: BlankSpace(line_num=814)
-				SingleLineComment(line_num=814) # inter-pupilary distance                  (ncam x 1) 
-				PlaceHolder() for: BlankSpace(line_num=815)
-				PlaceHolder() for: CStructField(line_num=815) int*      cam_resolution ; 
-				PlaceHolder() for: BlankSpace(line_num=815)
-				SingleLineComment(line_num=815) # resolution: pixels [width, height]       (ncam x 2) 
-				PlaceHolder() for: BlankSpace(line_num=816)
-				PlaceHolder() for: CStructField(line_num=816) float*    cam_sensorsize ; 
-				PlaceHolder() for: BlankSpace(line_num=816)
-				SingleLineComment(line_num=816) # sensor size: length [width, height]      (ncam x 2) 
-				PlaceHolder() for: BlankSpace(line_num=817)
-				PlaceHolder() for: CStructField(line_num=817) float*    cam_intrinsic ; 
-				PlaceHolder() for: BlankSpace(line_num=817)
-				SingleLineComment(line_num=817) # [focal length ;  principal point]          (ncam x 4) 
-				PlaceHolder() for: BlankSpace(line_num=818)
-				PlaceHolder() for: CStructField(line_num=818) mjtNum*   cam_user ; 
-				PlaceHolder() for: BlankSpace(line_num=818)
-				SingleLineComment(line_num=818) # user data                                (ncam x nuser_cam) 
-				PlaceHolder() for: BlankSpace(line_num=819)
-				PlaceHolder() for: BlankSpace(line_num=820)
-				SingleLineComment(line_num=820) # lights 
-				PlaceHolder() for: BlankSpace(line_num=821)
-				PlaceHolder() for: CStructField(line_num=821) int*      light_mode ; 
-				PlaceHolder() for: BlankSpace(line_num=821)
-				SingleLineComment(line_num=821) # light tracking mode (mjtCamLight)        (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=822)
-				PlaceHolder() for: CStructField(line_num=822) int*      light_bodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=822)
-				SingleLineComment(line_num=822) # id of light's body                       (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=823)
-				PlaceHolder() for: CStructField(line_num=823) int*      light_targetbodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=823)
-				SingleLineComment(line_num=823) # id of targeted body ;  -1: none            (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=824)
-				PlaceHolder() for: CStructField(line_num=824) mjtByte*  light_directional ; 
-				PlaceHolder() for: BlankSpace(line_num=824)
-				SingleLineComment(line_num=824) # directional light                        (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=825)
-				PlaceHolder() for: CStructField(line_num=825) mjtByte*  light_castshadow ; 
-				PlaceHolder() for: BlankSpace(line_num=825)
-				SingleLineComment(line_num=825) # does light cast shadows                  (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=826)
-				PlaceHolder() for: CStructField(line_num=826) float*    light_bulbradius ; 
-				PlaceHolder() for: BlankSpace(line_num=826)
-				SingleLineComment(line_num=826) # light radius for soft shadows            (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=827)
-				PlaceHolder() for: CStructField(line_num=827) mjtByte*  light_active ; 
-				PlaceHolder() for: BlankSpace(line_num=827)
-				SingleLineComment(line_num=827) # is light on                              (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=828)
-				PlaceHolder() for: CStructField(line_num=828) mjtNum*   light_pos ; 
-				PlaceHolder() for: BlankSpace(line_num=828)
-				SingleLineComment(line_num=828) # position rel. to body frame              (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=829)
-				PlaceHolder() for: CStructField(line_num=829) mjtNum*   light_dir ; 
-				PlaceHolder() for: BlankSpace(line_num=829)
-				SingleLineComment(line_num=829) # direction rel. to body frame             (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=830)
-				PlaceHolder() for: CStructField(line_num=830) mjtNum*   light_poscom0 ; 
-				PlaceHolder() for: BlankSpace(line_num=830)
-				SingleLineComment(line_num=830) # global position rel. to sub-com in qpos0 (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=831)
-				PlaceHolder() for: CStructField(line_num=831) mjtNum*   light_pos0 ; 
-				PlaceHolder() for: BlankSpace(line_num=831)
-				SingleLineComment(line_num=831) # global position rel. to body in qpos0    (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=832)
-				PlaceHolder() for: CStructField(line_num=832) mjtNum*   light_dir0 ; 
-				PlaceHolder() for: BlankSpace(line_num=832)
-				SingleLineComment(line_num=832) # global direction in qpos0                (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=833)
-				PlaceHolder() for: CStructField(line_num=833) float*    light_attenuation ; 
-				PlaceHolder() for: BlankSpace(line_num=833)
-				SingleLineComment(line_num=833) # OpenGL attenuation (quadratic model)     (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=834)
-				PlaceHolder() for: CStructField(line_num=834) float*    light_cutoff ; 
-				PlaceHolder() for: BlankSpace(line_num=834)
-				SingleLineComment(line_num=834) # OpenGL cutoff                            (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=835)
-				PlaceHolder() for: CStructField(line_num=835) float*    light_exponent ; 
-				PlaceHolder() for: BlankSpace(line_num=835)
-				SingleLineComment(line_num=835) # OpenGL exponent                          (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=836)
-				PlaceHolder() for: CStructField(line_num=836) float*    light_ambient ; 
-				PlaceHolder() for: BlankSpace(line_num=836)
-				SingleLineComment(line_num=836) # ambient rgb (alpha=1)                    (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=837)
-				PlaceHolder() for: CStructField(line_num=837) float*    light_diffuse ; 
-				PlaceHolder() for: BlankSpace(line_num=837)
-				SingleLineComment(line_num=837) # diffuse rgb (alpha=1)                    (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=838)
-				PlaceHolder() for: CStructField(line_num=838) float*    light_specular ; 
-				PlaceHolder() for: BlankSpace(line_num=838)
-				SingleLineComment(line_num=838) # specular rgb (alpha=1)                   (nlight x 3) 
-				PlaceHolder() for: BlankSpace(line_num=839)
-				PlaceHolder() for: BlankSpace(line_num=840)
-				SingleLineComment(line_num=840) # flexes: contact properties 
-				PlaceHolder() for: BlankSpace(line_num=841)
-				PlaceHolder() for: CStructField(line_num=841) int*      flex_contype ; 
-				PlaceHolder() for: BlankSpace(line_num=841)
-				SingleLineComment(line_num=841) # flex contact type                        (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=842)
-				PlaceHolder() for: CStructField(line_num=842) int*      flex_conaffinity ; 
-				PlaceHolder() for: BlankSpace(line_num=842)
-				SingleLineComment(line_num=842) # flex contact affinity                    (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=843)
-				PlaceHolder() for: CStructField(line_num=843) int*      flex_condim ; 
-				PlaceHolder() for: BlankSpace(line_num=843)
-				SingleLineComment(line_num=843) # contact dimensionality (1, 3, 4, 6)      (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=844)
-				PlaceHolder() for: CStructField(line_num=844) int*      flex_priority ; 
-				PlaceHolder() for: BlankSpace(line_num=844)
-				SingleLineComment(line_num=844) # flex contact priority                    (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=845)
-				PlaceHolder() for: CStructField(line_num=845) mjtNum*   flex_solmix ; 
-				PlaceHolder() for: BlankSpace(line_num=845)
-				SingleLineComment(line_num=845) # mix coef for solref/imp in contact pair  (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=846)
-				PlaceHolder() for: CStructField(line_num=846) mjtNum*   flex_solref ; 
-				PlaceHolder() for: BlankSpace(line_num=846)
-				SingleLineComment(line_num=846) # constraint solver reference: contact     (nflex x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=847)
-				PlaceHolder() for: CStructField(line_num=847) mjtNum*   flex_solimp ; 
-				PlaceHolder() for: BlankSpace(line_num=847)
-				SingleLineComment(line_num=847) # constraint solver impedance: contact     (nflex x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=848)
-				PlaceHolder() for: CStructField(line_num=848) mjtNum*   flex_friction ; 
-				PlaceHolder() for: BlankSpace(line_num=848)
-				SingleLineComment(line_num=848) # friction for (slide, spin, roll)         (nflex x 3) 
-				PlaceHolder() for: BlankSpace(line_num=849)
-				PlaceHolder() for: CStructField(line_num=849) mjtNum*   flex_margin ; 
-				PlaceHolder() for: BlankSpace(line_num=849)
-				SingleLineComment(line_num=849) # detect contact if dist<margin            (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=850)
-				PlaceHolder() for: CStructField(line_num=850) mjtNum*   flex_gap ; 
-				PlaceHolder() for: BlankSpace(line_num=850)
-				SingleLineComment(line_num=850) # include in solver if dist<margin-gap     (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=851)
-				PlaceHolder() for: CStructField(line_num=851) mjtByte*  flex_internal ; 
-				PlaceHolder() for: BlankSpace(line_num=851)
-				SingleLineComment(line_num=851) # internal flex collision enabled          (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=852)
-				PlaceHolder() for: CStructField(line_num=852) int*      flex_selfcollide ; 
-				PlaceHolder() for: BlankSpace(line_num=852)
-				SingleLineComment(line_num=852) # self collision mode (mjtFlexSelf)        (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=853)
-				PlaceHolder() for: CStructField(line_num=853) int*      flex_activelayers ; 
-				PlaceHolder() for: BlankSpace(line_num=853)
-				SingleLineComment(line_num=853) # number of active element layers, 3D only (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=854)
-				PlaceHolder() for: BlankSpace(line_num=855)
-				SingleLineComment(line_num=855) # flexes: other properties 
-				PlaceHolder() for: BlankSpace(line_num=856)
-				PlaceHolder() for: CStructField(line_num=856) int*      flex_dim ; 
-				PlaceHolder() for: BlankSpace(line_num=856)
-				SingleLineComment(line_num=856) # 1: lines, 2: triangles, 3: tetrahedra    (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=857)
-				PlaceHolder() for: CStructField(line_num=857) int*      flex_matid ; 
-				PlaceHolder() for: BlankSpace(line_num=857)
-				SingleLineComment(line_num=857) # material id for rendering                (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=858)
-				PlaceHolder() for: CStructField(line_num=858) int*      flex_group ; 
-				PlaceHolder() for: BlankSpace(line_num=858)
-				SingleLineComment(line_num=858) # group for visibility                     (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=859)
-				PlaceHolder() for: CStructField(line_num=859) int*      flex_vertadr ; 
-				PlaceHolder() for: BlankSpace(line_num=859)
-				SingleLineComment(line_num=859) # first vertex address                     (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=860)
-				PlaceHolder() for: CStructField(line_num=860) int*      flex_vertnum ; 
-				PlaceHolder() for: BlankSpace(line_num=860)
-				SingleLineComment(line_num=860) # number of vertices                       (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=861)
-				PlaceHolder() for: CStructField(line_num=861) int*      flex_edgeadr ; 
-				PlaceHolder() for: BlankSpace(line_num=861)
-				SingleLineComment(line_num=861) # first edge address                       (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=862)
-				PlaceHolder() for: CStructField(line_num=862) int*      flex_edgenum ; 
-				PlaceHolder() for: BlankSpace(line_num=862)
-				SingleLineComment(line_num=862) # number of edges                          (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=863)
-				PlaceHolder() for: CStructField(line_num=863) int*      flex_elemadr ; 
-				PlaceHolder() for: BlankSpace(line_num=863)
-				SingleLineComment(line_num=863) # first element address                    (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=864)
-				PlaceHolder() for: CStructField(line_num=864) int*      flex_elemnum ; 
-				PlaceHolder() for: BlankSpace(line_num=864)
-				SingleLineComment(line_num=864) # number of elements                       (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=865)
-				PlaceHolder() for: CStructField(line_num=865) int*      flex_elemdataadr ; 
-				PlaceHolder() for: BlankSpace(line_num=865)
-				SingleLineComment(line_num=865) # first element vertex id address          (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=866)
-				PlaceHolder() for: CStructField(line_num=866) int*      flex_elemedgeadr ; 
-				PlaceHolder() for: BlankSpace(line_num=866)
-				SingleLineComment(line_num=866) # first element edge id address            (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=867)
-				PlaceHolder() for: CStructField(line_num=867) int*      flex_shellnum ; 
-				PlaceHolder() for: BlankSpace(line_num=867)
-				SingleLineComment(line_num=867) # number of shells                         (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=868)
-				PlaceHolder() for: CStructField(line_num=868) int*      flex_shelldataadr ; 
-				PlaceHolder() for: BlankSpace(line_num=868)
-				SingleLineComment(line_num=868) # first shell data address                 (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=869)
-				PlaceHolder() for: CStructField(line_num=869) int*      flex_evpairadr ; 
-				PlaceHolder() for: BlankSpace(line_num=869)
-				SingleLineComment(line_num=869) # first evpair address                     (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=870)
-				PlaceHolder() for: CStructField(line_num=870) int*      flex_evpairnum ; 
-				PlaceHolder() for: BlankSpace(line_num=870)
-				SingleLineComment(line_num=870) # number of evpairs                        (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=871)
-				PlaceHolder() for: CStructField(line_num=871) int*      flex_texcoordadr ; 
-				PlaceHolder() for: BlankSpace(line_num=871)
-				SingleLineComment(line_num=871) # address in flex_texcoord ;  -1: none       (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=872)
-				PlaceHolder() for: CStructField(line_num=872) int*      flex_vertbodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=872)
-				SingleLineComment(line_num=872) # vertex body ids                          (nflexvert x 1) 
-				PlaceHolder() for: BlankSpace(line_num=873)
-				PlaceHolder() for: CStructField(line_num=873) int*      flex_edge ; 
-				PlaceHolder() for: BlankSpace(line_num=873)
-				SingleLineComment(line_num=873) # edge vertex ids (2 per edge)             (nflexedge x 2) 
-				PlaceHolder() for: BlankSpace(line_num=874)
-				PlaceHolder() for: CStructField(line_num=874) int*      flex_elem ; 
-				PlaceHolder() for: BlankSpace(line_num=874)
-				SingleLineComment(line_num=874) # element vertex ids (dim+1 per elem)      (nflexelemdata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=875)
-				PlaceHolder() for: CStructField(line_num=875) int*      flex_elemedge ; 
-				PlaceHolder() for: BlankSpace(line_num=875)
-				SingleLineComment(line_num=875) # element edge ids                         (nflexelemedge x 1) 
-				PlaceHolder() for: BlankSpace(line_num=876)
-				PlaceHolder() for: CStructField(line_num=876) int*      flex_elemlayer ; 
-				PlaceHolder() for: BlankSpace(line_num=876)
-				SingleLineComment(line_num=876) # element distance from surface, 3D only   (nflexelem x 1) 
-				PlaceHolder() for: BlankSpace(line_num=877)
-				PlaceHolder() for: CStructField(line_num=877) int*      flex_shell ; 
-				PlaceHolder() for: BlankSpace(line_num=877)
-				SingleLineComment(line_num=877) # shell fragment vertex ids (dim per frag) (nflexshelldata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=878)
-				PlaceHolder() for: CStructField(line_num=878) int*      flex_evpair ; 
-				PlaceHolder() for: BlankSpace(line_num=878)
-				SingleLineComment(line_num=878) # (element, vertex) collision pairs        (nflexevpair x 2) 
-				PlaceHolder() for: BlankSpace(line_num=879)
-				PlaceHolder() for: CStructField(line_num=879) mjtNum*   flex_vert ; 
-				PlaceHolder() for: BlankSpace(line_num=879)
-				SingleLineComment(line_num=879) # vertex positions in local body frames    (nflexvert x 3) 
-				PlaceHolder() for: BlankSpace(line_num=880)
-				PlaceHolder() for: CStructField(line_num=880) mjtNum*   flex_xvert0 ; 
-				PlaceHolder() for: BlankSpace(line_num=880)
-				SingleLineComment(line_num=880) # Cartesian vertex positions in qpos0      (nflexvert x 3) 
-				PlaceHolder() for: BlankSpace(line_num=881)
-				PlaceHolder() for: CStructField(line_num=881) mjtNum*   flexedge_length0 ; 
-				PlaceHolder() for: BlankSpace(line_num=881)
-				SingleLineComment(line_num=881) # edge lengths in qpos0                    (nflexedge x 1) 
-				PlaceHolder() for: BlankSpace(line_num=882)
-				PlaceHolder() for: CStructField(line_num=882) mjtNum*   flexedge_invweight0 ; 
-				PlaceHolder() for: BlankSpace(line_num=882)
-				SingleLineComment(line_num=882) # edge inv. weight in qpos0                (nflexedge x 1) 
-				PlaceHolder() for: BlankSpace(line_num=883)
-				PlaceHolder() for: CStructField(line_num=883) mjtNum*   flex_radius ; 
-				PlaceHolder() for: BlankSpace(line_num=883)
-				SingleLineComment(line_num=883) # radius around primitive element          (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=884)
-				PlaceHolder() for: CStructField(line_num=884) mjtNum*   flex_stiffness ; 
-				PlaceHolder() for: BlankSpace(line_num=884)
-				SingleLineComment(line_num=884) # finite element stiffness matrix          (nflexelem x 21) 
-				PlaceHolder() for: BlankSpace(line_num=885)
-				PlaceHolder() for: CStructField(line_num=885) mjtNum*   flex_damping ; 
-				PlaceHolder() for: BlankSpace(line_num=885)
-				SingleLineComment(line_num=885) # Rayleigh's damping coefficient           (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=886)
-				PlaceHolder() for: CStructField(line_num=886) mjtNum*   flex_edgestiffness ; 
-				PlaceHolder() for: BlankSpace(line_num=886)
-				SingleLineComment(line_num=886) # edge stiffness                           (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=887)
-				PlaceHolder() for: CStructField(line_num=887) mjtNum*   flex_edgedamping ; 
-				PlaceHolder() for: BlankSpace(line_num=887)
-				SingleLineComment(line_num=887) # edge damping                             (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=888)
-				PlaceHolder() for: CStructField(line_num=888) mjtByte*  flex_edgeequality ; 
-				PlaceHolder() for: BlankSpace(line_num=888)
-				SingleLineComment(line_num=888) # is edge equality constraint defined      (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=889)
-				PlaceHolder() for: CStructField(line_num=889) mjtByte*  flex_rigid ; 
-				PlaceHolder() for: BlankSpace(line_num=889)
-				SingleLineComment(line_num=889) # are all verices in the same body         (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=890)
-				PlaceHolder() for: CStructField(line_num=890) mjtByte*  flexedge_rigid ; 
-				PlaceHolder() for: BlankSpace(line_num=890)
-				SingleLineComment(line_num=890) # are both edge vertices in same body      (nflexedge x 1) 
-				PlaceHolder() for: BlankSpace(line_num=891)
-				PlaceHolder() for: CStructField(line_num=891) mjtByte*  flex_centered ; 
-				PlaceHolder() for: BlankSpace(line_num=891)
-				SingleLineComment(line_num=891) # are all vertex coordinates (0,0,0)       (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=892)
-				PlaceHolder() for: CStructField(line_num=892) mjtByte*  flex_flatskin ; 
-				PlaceHolder() for: BlankSpace(line_num=892)
-				SingleLineComment(line_num=892) # render flex skin with flat shading       (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=893)
-				PlaceHolder() for: CStructField(line_num=893) int*      flex_bvhadr ; 
-				PlaceHolder() for: BlankSpace(line_num=893)
-				SingleLineComment(line_num=893) # address of bvh root ;  -1: no bvh          (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=894)
-				PlaceHolder() for: CStructField(line_num=894) int*      flex_bvhnum ; 
-				PlaceHolder() for: BlankSpace(line_num=894)
-				SingleLineComment(line_num=894) # number of bounding volumes               (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=895)
-				PlaceHolder() for: CStructField(line_num=895) float*    flex_rgba ; 
-				PlaceHolder() for: BlankSpace(line_num=895)
-				SingleLineComment(line_num=895) # rgba when material is omitted            (nflex x 4) 
-				PlaceHolder() for: BlankSpace(line_num=896)
-				PlaceHolder() for: CStructField(line_num=896) float*    flex_texcoord ; 
-				PlaceHolder() for: BlankSpace(line_num=896)
-				SingleLineComment(line_num=896) # vertex texture coordinates               (nflextexcoord x 2) 
-				PlaceHolder() for: BlankSpace(line_num=897)
-				PlaceHolder() for: BlankSpace(line_num=898)
-				SingleLineComment(line_num=898) # meshes 
-				PlaceHolder() for: BlankSpace(line_num=899)
-				PlaceHolder() for: CStructField(line_num=899) int*      mesh_vertadr ; 
-				PlaceHolder() for: BlankSpace(line_num=899)
-				SingleLineComment(line_num=899) # first vertex address                     (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=900)
-				PlaceHolder() for: CStructField(line_num=900) int*      mesh_vertnum ; 
-				PlaceHolder() for: BlankSpace(line_num=900)
-				SingleLineComment(line_num=900) # number of vertices                       (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=901)
-				PlaceHolder() for: CStructField(line_num=901) int*      mesh_faceadr ; 
-				PlaceHolder() for: BlankSpace(line_num=901)
-				SingleLineComment(line_num=901) # first face address                       (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=902)
-				PlaceHolder() for: CStructField(line_num=902) int*      mesh_facenum ; 
-				PlaceHolder() for: BlankSpace(line_num=902)
-				SingleLineComment(line_num=902) # number of faces                          (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=903)
-				PlaceHolder() for: CStructField(line_num=903) int*      mesh_bvhadr ; 
-				PlaceHolder() for: BlankSpace(line_num=903)
-				SingleLineComment(line_num=903) # address of bvh root                      (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=904)
-				PlaceHolder() for: CStructField(line_num=904) int*      mesh_bvhnum ; 
-				PlaceHolder() for: BlankSpace(line_num=904)
-				SingleLineComment(line_num=904) # number of bvh                            (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=905)
-				PlaceHolder() for: CStructField(line_num=905) int*      mesh_normaladr ; 
-				PlaceHolder() for: BlankSpace(line_num=905)
-				SingleLineComment(line_num=905) # first normal address                     (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=906)
-				PlaceHolder() for: CStructField(line_num=906) int*      mesh_normalnum ; 
-				PlaceHolder() for: BlankSpace(line_num=906)
-				SingleLineComment(line_num=906) # number of normals                        (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=907)
-				PlaceHolder() for: CStructField(line_num=907) int*      mesh_texcoordadr ; 
-				PlaceHolder() for: BlankSpace(line_num=907)
-				SingleLineComment(line_num=907) # texcoord data address ;  -1: no texcoord   (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=908)
-				PlaceHolder() for: CStructField(line_num=908) int*      mesh_texcoordnum ; 
-				PlaceHolder() for: BlankSpace(line_num=908)
-				SingleLineComment(line_num=908) # number of texcoord                       (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=909)
-				PlaceHolder() for: CStructField(line_num=909) int*      mesh_graphadr ; 
-				PlaceHolder() for: BlankSpace(line_num=909)
-				SingleLineComment(line_num=909) # graph data address ;  -1: no graph         (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=910)
-				PlaceHolder() for: CStructField(line_num=910) float*    mesh_vert ; 
-				PlaceHolder() for: BlankSpace(line_num=910)
-				SingleLineComment(line_num=910) # vertex positions for all meshes          (nmeshvert x 3) 
-				PlaceHolder() for: BlankSpace(line_num=911)
-				PlaceHolder() for: CStructField(line_num=911) float*    mesh_normal ; 
-				PlaceHolder() for: BlankSpace(line_num=911)
-				SingleLineComment(line_num=911) # normals for all meshes                   (nmeshnormal x 3) 
-				PlaceHolder() for: BlankSpace(line_num=912)
-				PlaceHolder() for: CStructField(line_num=912) float*    mesh_texcoord ; 
-				PlaceHolder() for: BlankSpace(line_num=912)
-				SingleLineComment(line_num=912) # vertex texcoords for all meshes          (nmeshtexcoord x 2) 
-				PlaceHolder() for: BlankSpace(line_num=913)
-				PlaceHolder() for: CStructField(line_num=913) int*      mesh_face ; 
-				PlaceHolder() for: BlankSpace(line_num=913)
-				SingleLineComment(line_num=913) # vertex face data                         (nmeshface x 3) 
-				PlaceHolder() for: BlankSpace(line_num=914)
-				PlaceHolder() for: CStructField(line_num=914) int*      mesh_facenormal ; 
-				PlaceHolder() for: BlankSpace(line_num=914)
-				SingleLineComment(line_num=914) # normal face data                         (nmeshface x 3) 
-				PlaceHolder() for: BlankSpace(line_num=915)
-				PlaceHolder() for: CStructField(line_num=915) int*      mesh_facetexcoord ; 
-				PlaceHolder() for: BlankSpace(line_num=915)
-				SingleLineComment(line_num=915) # texture face data                        (nmeshface x 3) 
-				PlaceHolder() for: BlankSpace(line_num=916)
-				PlaceHolder() for: CStructField(line_num=916) int*      mesh_graph ; 
-				PlaceHolder() for: BlankSpace(line_num=916)
-				SingleLineComment(line_num=916) # convex graph data                        (nmeshgraph x 1) 
-				PlaceHolder() for: BlankSpace(line_num=917)
-				PlaceHolder() for: CStructField(line_num=917) mjtNum*   mesh_scale ; 
-				PlaceHolder() for: BlankSpace(line_num=917)
-				SingleLineComment(line_num=917) # scaling applied to asset vertices        (nmesh x 3) 
-				PlaceHolder() for: BlankSpace(line_num=918)
-				PlaceHolder() for: CStructField(line_num=918) mjtNum*   mesh_pos ; 
-				PlaceHolder() for: BlankSpace(line_num=918)
-				SingleLineComment(line_num=918) # translation applied to asset vertices    (nmesh x 3) 
-				PlaceHolder() for: BlankSpace(line_num=919)
-				PlaceHolder() for: CStructField(line_num=919) mjtNum*   mesh_quat ; 
-				PlaceHolder() for: BlankSpace(line_num=919)
-				SingleLineComment(line_num=919) # rotation applied to asset vertices       (nmesh x 4) 
-				PlaceHolder() for: BlankSpace(line_num=920)
-				PlaceHolder() for: CStructField(line_num=920) int*      mesh_pathadr ; 
-				PlaceHolder() for: BlankSpace(line_num=920)
-				SingleLineComment(line_num=920) # address of asset path for mesh ;  -1: none (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=921)
-				PlaceHolder() for: BlankSpace(line_num=922)
-				SingleLineComment(line_num=922) # skins 
-				PlaceHolder() for: BlankSpace(line_num=923)
-				PlaceHolder() for: CStructField(line_num=923) int*      skin_matid ; 
-				PlaceHolder() for: BlankSpace(line_num=923)
-				SingleLineComment(line_num=923) # skin material id ;  -1: none               (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=924)
-				PlaceHolder() for: CStructField(line_num=924) int*      skin_group ; 
-				PlaceHolder() for: BlankSpace(line_num=924)
-				SingleLineComment(line_num=924) # group for visibility                     (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=925)
-				PlaceHolder() for: CStructField(line_num=925) float*    skin_rgba ; 
-				PlaceHolder() for: BlankSpace(line_num=925)
-				SingleLineComment(line_num=925) # skin rgba                                (nskin x 4) 
-				PlaceHolder() for: BlankSpace(line_num=926)
-				PlaceHolder() for: CStructField(line_num=926) float*    skin_inflate ; 
-				PlaceHolder() for: BlankSpace(line_num=926)
-				SingleLineComment(line_num=926) # inflate skin in normal direction         (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=927)
-				PlaceHolder() for: CStructField(line_num=927) int*      skin_vertadr ; 
-				PlaceHolder() for: BlankSpace(line_num=927)
-				SingleLineComment(line_num=927) # first vertex address                     (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=928)
-				PlaceHolder() for: CStructField(line_num=928) int*      skin_vertnum ; 
-				PlaceHolder() for: BlankSpace(line_num=928)
-				SingleLineComment(line_num=928) # number of vertices                       (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=929)
-				PlaceHolder() for: CStructField(line_num=929) int*      skin_texcoordadr ; 
-				PlaceHolder() for: BlankSpace(line_num=929)
-				SingleLineComment(line_num=929) # texcoord data address ;  -1: no texcoord   (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=930)
-				PlaceHolder() for: CStructField(line_num=930) int*      skin_faceadr ; 
-				PlaceHolder() for: BlankSpace(line_num=930)
-				SingleLineComment(line_num=930) # first face address                       (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=931)
-				PlaceHolder() for: CStructField(line_num=931) int*      skin_facenum ; 
-				PlaceHolder() for: BlankSpace(line_num=931)
-				SingleLineComment(line_num=931) # number of faces                          (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=932)
-				PlaceHolder() for: CStructField(line_num=932) int*      skin_boneadr ; 
-				PlaceHolder() for: BlankSpace(line_num=932)
-				SingleLineComment(line_num=932) # first bone in skin                       (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=933)
-				PlaceHolder() for: CStructField(line_num=933) int*      skin_bonenum ; 
-				PlaceHolder() for: BlankSpace(line_num=933)
-				SingleLineComment(line_num=933) # number of bones in skin                  (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=934)
-				PlaceHolder() for: CStructField(line_num=934) float*    skin_vert ; 
-				PlaceHolder() for: BlankSpace(line_num=934)
-				SingleLineComment(line_num=934) # vertex positions for all skin meshes     (nskinvert x 3) 
-				PlaceHolder() for: BlankSpace(line_num=935)
-				PlaceHolder() for: CStructField(line_num=935) float*    skin_texcoord ; 
-				PlaceHolder() for: BlankSpace(line_num=935)
-				SingleLineComment(line_num=935) # vertex texcoords for all skin meshes     (nskintexvert x 2) 
-				PlaceHolder() for: BlankSpace(line_num=936)
-				PlaceHolder() for: CStructField(line_num=936) int*      skin_face ; 
-				PlaceHolder() for: BlankSpace(line_num=936)
-				SingleLineComment(line_num=936) # triangle faces for all skin meshes       (nskinface x 3) 
-				PlaceHolder() for: BlankSpace(line_num=937)
-				PlaceHolder() for: CStructField(line_num=937) int*      skin_bonevertadr ; 
-				PlaceHolder() for: BlankSpace(line_num=937)
-				SingleLineComment(line_num=937) # first vertex in each bone                (nskinbone x 1) 
-				PlaceHolder() for: BlankSpace(line_num=938)
-				PlaceHolder() for: CStructField(line_num=938) int*      skin_bonevertnum ; 
-				PlaceHolder() for: BlankSpace(line_num=938)
-				SingleLineComment(line_num=938) # number of vertices in each bone          (nskinbone x 1) 
-				PlaceHolder() for: BlankSpace(line_num=939)
-				PlaceHolder() for: CStructField(line_num=939) float*    skin_bonebindpos ; 
-				PlaceHolder() for: BlankSpace(line_num=939)
-				SingleLineComment(line_num=939) # bind pos of each bone                    (nskinbone x 3) 
-				PlaceHolder() for: BlankSpace(line_num=940)
-				PlaceHolder() for: CStructField(line_num=940) float*    skin_bonebindquat ; 
-				PlaceHolder() for: BlankSpace(line_num=940)
-				SingleLineComment(line_num=940) # bind quat of each bone                   (nskinbone x 4) 
-				PlaceHolder() for: BlankSpace(line_num=941)
-				PlaceHolder() for: CStructField(line_num=941) int*      skin_bonebodyid ; 
-				PlaceHolder() for: BlankSpace(line_num=941)
-				SingleLineComment(line_num=941) # body id of each bone                     (nskinbone x 1) 
-				PlaceHolder() for: BlankSpace(line_num=942)
-				PlaceHolder() for: CStructField(line_num=942) int*      skin_bonevertid ; 
-				PlaceHolder() for: BlankSpace(line_num=942)
-				SingleLineComment(line_num=942) # mesh ids of vertices in each bone        (nskinbonevert x 1) 
-				PlaceHolder() for: BlankSpace(line_num=943)
-				PlaceHolder() for: CStructField(line_num=943) float*    skin_bonevertweight ; 
-				PlaceHolder() for: BlankSpace(line_num=943)
-				SingleLineComment(line_num=943) # weights of vertices in each bone         (nskinbonevert x 1) 
-				PlaceHolder() for: BlankSpace(line_num=944)
-				PlaceHolder() for: CStructField(line_num=944) int*      skin_pathadr ; 
-				PlaceHolder() for: BlankSpace(line_num=944)
-				SingleLineComment(line_num=944) # address of asset path for skin ;  -1: none (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=945)
-				PlaceHolder() for: BlankSpace(line_num=946)
-				SingleLineComment(line_num=946) # height fields 
-				PlaceHolder() for: BlankSpace(line_num=947)
-				PlaceHolder() for: CStructField(line_num=947) mjtNum*   hfield_size ; 
-				PlaceHolder() for: BlankSpace(line_num=947)
-				SingleLineComment(line_num=947) # (x, y, z_top, z_bottom)                  (nhfield x 4) 
-				PlaceHolder() for: BlankSpace(line_num=948)
-				PlaceHolder() for: CStructField(line_num=948) int*      hfield_nrow ; 
-				PlaceHolder() for: BlankSpace(line_num=948)
-				SingleLineComment(line_num=948) # number of rows in grid                   (nhfield x 1) 
-				PlaceHolder() for: BlankSpace(line_num=949)
-				PlaceHolder() for: CStructField(line_num=949) int*      hfield_ncol ; 
-				PlaceHolder() for: BlankSpace(line_num=949)
-				SingleLineComment(line_num=949) # number of columns in grid                (nhfield x 1) 
-				PlaceHolder() for: BlankSpace(line_num=950)
-				PlaceHolder() for: CStructField(line_num=950) int*      hfield_adr ; 
-				PlaceHolder() for: BlankSpace(line_num=950)
-				SingleLineComment(line_num=950) # address in hfield_data                   (nhfield x 1) 
-				PlaceHolder() for: BlankSpace(line_num=951)
-				PlaceHolder() for: CStructField(line_num=951) float*    hfield_data ; 
-				PlaceHolder() for: BlankSpace(line_num=951)
-				SingleLineComment(line_num=951) # elevation data                           (nhfielddata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=952)
-				PlaceHolder() for: CStructField(line_num=952) int*      hfield_pathadr ; 
-				PlaceHolder() for: BlankSpace(line_num=952)
-				SingleLineComment(line_num=952) # address of hfield asset path ;  -1: none   (nhfield x 1) 
-				PlaceHolder() for: BlankSpace(line_num=953)
-				PlaceHolder() for: BlankSpace(line_num=954)
-				SingleLineComment(line_num=954) # textures 
-				PlaceHolder() for: BlankSpace(line_num=955)
-				PlaceHolder() for: CStructField(line_num=955) int*      tex_type ; 
-				PlaceHolder() for: BlankSpace(line_num=955)
-				SingleLineComment(line_num=955) # texture type (mjtTexture)                (ntex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=956)
-				PlaceHolder() for: CStructField(line_num=956) int*      tex_height ; 
-				PlaceHolder() for: BlankSpace(line_num=956)
-				SingleLineComment(line_num=956) # number of rows in texture image          (ntex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=957)
-				PlaceHolder() for: CStructField(line_num=957) int*      tex_width ; 
-				PlaceHolder() for: BlankSpace(line_num=957)
-				SingleLineComment(line_num=957) # number of columns in texture image       (ntex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=958)
-				PlaceHolder() for: CStructField(line_num=958) int*      tex_nchannel ; 
-				PlaceHolder() for: BlankSpace(line_num=958)
-				SingleLineComment(line_num=958) # number of channels in texture image      (ntex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=959)
-				PlaceHolder() for: CStructField(line_num=959) int*      tex_adr ; 
-				PlaceHolder() for: BlankSpace(line_num=959)
-				SingleLineComment(line_num=959) # start address in tex_data                (ntex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=960)
-				PlaceHolder() for: CStructField(line_num=960) mjtByte*  tex_data ; 
-				PlaceHolder() for: BlankSpace(line_num=960)
-				SingleLineComment(line_num=960) # pixel values                             (ntexdata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=961)
-				PlaceHolder() for: CStructField(line_num=961) int*      tex_pathadr ; 
-				PlaceHolder() for: BlankSpace(line_num=961)
-				SingleLineComment(line_num=961) # address of texture asset path ;  -1: none  (ntex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=962)
-				PlaceHolder() for: BlankSpace(line_num=963)
-				SingleLineComment(line_num=963) # materials 
-				PlaceHolder() for: BlankSpace(line_num=964)
-				PlaceHolder() for: CStructField(line_num=964) int*      mat_texid ; 
-				PlaceHolder() for: BlankSpace(line_num=964)
-				SingleLineComment(line_num=964) # indices of textures ;  -1: none            (nmat x mjNTEXROLE) 
-				PlaceHolder() for: BlankSpace(line_num=965)
-				PlaceHolder() for: CStructField(line_num=965) mjtByte*  mat_texuniform ; 
-				PlaceHolder() for: BlankSpace(line_num=965)
-				SingleLineComment(line_num=965) # make texture cube uniform                (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=966)
-				PlaceHolder() for: CStructField(line_num=966) float*    mat_texrepeat ; 
-				PlaceHolder() for: BlankSpace(line_num=966)
-				SingleLineComment(line_num=966) # texture repetition for 2d mapping        (nmat x 2) 
-				PlaceHolder() for: BlankSpace(line_num=967)
-				PlaceHolder() for: CStructField(line_num=967) float*    mat_emission ; 
-				PlaceHolder() for: BlankSpace(line_num=967)
-				SingleLineComment(line_num=967) # emission (x rgb)                         (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=968)
-				PlaceHolder() for: CStructField(line_num=968) float*    mat_specular ; 
-				PlaceHolder() for: BlankSpace(line_num=968)
-				SingleLineComment(line_num=968) # specular (x white)                       (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=969)
-				PlaceHolder() for: CStructField(line_num=969) float*    mat_shininess ; 
-				PlaceHolder() for: BlankSpace(line_num=969)
-				SingleLineComment(line_num=969) # shininess coef                           (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=970)
-				PlaceHolder() for: CStructField(line_num=970) float*    mat_reflectance ; 
-				PlaceHolder() for: BlankSpace(line_num=970)
-				SingleLineComment(line_num=970) # reflectance (0: disable)                 (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=971)
-				PlaceHolder() for: CStructField(line_num=971) float*    mat_metallic ; 
-				PlaceHolder() for: BlankSpace(line_num=971)
-				SingleLineComment(line_num=971) # metallic coef                            (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=972)
-				PlaceHolder() for: CStructField(line_num=972) float*    mat_roughness ; 
-				PlaceHolder() for: BlankSpace(line_num=972)
-				SingleLineComment(line_num=972) # roughness coef                           (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=973)
-				PlaceHolder() for: CStructField(line_num=973) float*    mat_rgba ; 
-				PlaceHolder() for: BlankSpace(line_num=973)
-				SingleLineComment(line_num=973) # rgba                                     (nmat x 4) 
-				PlaceHolder() for: BlankSpace(line_num=974)
-				PlaceHolder() for: BlankSpace(line_num=975)
-				SingleLineComment(line_num=975) # predefined geom pairs for collision detection ;  has precedence over exclude 
-				PlaceHolder() for: BlankSpace(line_num=976)
-				PlaceHolder() for: CStructField(line_num=976) int*      pair_dim ; 
-				PlaceHolder() for: BlankSpace(line_num=976)
-				SingleLineComment(line_num=976) # contact dimensionality                   (npair x 1) 
-				PlaceHolder() for: BlankSpace(line_num=977)
-				PlaceHolder() for: CStructField(line_num=977) int*      pair_geom1 ; 
-				PlaceHolder() for: BlankSpace(line_num=977)
-				SingleLineComment(line_num=977) # id of geom1                              (npair x 1) 
-				PlaceHolder() for: BlankSpace(line_num=978)
-				PlaceHolder() for: CStructField(line_num=978) int*      pair_geom2 ; 
-				PlaceHolder() for: BlankSpace(line_num=978)
-				SingleLineComment(line_num=978) # id of geom2                              (npair x 1) 
-				PlaceHolder() for: BlankSpace(line_num=979)
-				PlaceHolder() for: CStructField(line_num=979) int*      pair_signature ; 
-				PlaceHolder() for: BlankSpace(line_num=979)
-				SingleLineComment(line_num=979) # body1 << 16 + body2                      (npair x 1) 
-				PlaceHolder() for: BlankSpace(line_num=980)
-				PlaceHolder() for: CStructField(line_num=980) mjtNum*   pair_solref ; 
-				PlaceHolder() for: BlankSpace(line_num=980)
-				SingleLineComment(line_num=980) # solver reference: contact normal         (npair x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=981)
-				PlaceHolder() for: CStructField(line_num=981) mjtNum*   pair_solreffriction ; 
-				PlaceHolder() for: BlankSpace(line_num=981)
-				SingleLineComment(line_num=981) # solver reference: contact friction       (npair x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=982)
-				PlaceHolder() for: CStructField(line_num=982) mjtNum*   pair_solimp ; 
-				PlaceHolder() for: BlankSpace(line_num=982)
-				SingleLineComment(line_num=982) # solver impedance: contact                (npair x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=983)
-				PlaceHolder() for: CStructField(line_num=983) mjtNum*   pair_margin ; 
-				PlaceHolder() for: BlankSpace(line_num=983)
-				SingleLineComment(line_num=983) # detect contact if dist<margin            (npair x 1) 
-				PlaceHolder() for: BlankSpace(line_num=984)
-				PlaceHolder() for: CStructField(line_num=984) mjtNum*   pair_gap ; 
-				PlaceHolder() for: BlankSpace(line_num=984)
-				SingleLineComment(line_num=984) # include in solver if dist<margin-gap     (npair x 1) 
-				PlaceHolder() for: BlankSpace(line_num=985)
-				PlaceHolder() for: CStructField(line_num=985) mjtNum*   pair_friction ; 
-				PlaceHolder() for: BlankSpace(line_num=985)
-				SingleLineComment(line_num=985) # tangent1, 2, spin, roll1, 2              (npair x 5) 
-				PlaceHolder() for: BlankSpace(line_num=986)
-				PlaceHolder() for: BlankSpace(line_num=987)
-				SingleLineComment(line_num=987) # excluded body pairs for collision detection 
-				PlaceHolder() for: BlankSpace(line_num=988)
-				PlaceHolder() for: CStructField(line_num=988) int*      exclude_signature ; 
-				PlaceHolder() for: BlankSpace(line_num=988)
-				SingleLineComment(line_num=988) # body1 << 16 + body2                      (nexclude x 1) 
-				PlaceHolder() for: BlankSpace(line_num=989)
-				PlaceHolder() for: BlankSpace(line_num=990)
-				SingleLineComment(line_num=990) # equality constraints 
-				PlaceHolder() for: BlankSpace(line_num=991)
-				PlaceHolder() for: CStructField(line_num=991) int*      eq_type ; 
-				PlaceHolder() for: BlankSpace(line_num=991)
-				SingleLineComment(line_num=991) # constraint type (mjtEq)                  (neq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=992)
-				PlaceHolder() for: CStructField(line_num=992) int*      eq_obj1id ; 
-				PlaceHolder() for: BlankSpace(line_num=992)
-				SingleLineComment(line_num=992) # id of object 1                           (neq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=993)
-				PlaceHolder() for: CStructField(line_num=993) int*      eq_obj2id ; 
-				PlaceHolder() for: BlankSpace(line_num=993)
-				SingleLineComment(line_num=993) # id of object 2                           (neq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=994)
-				PlaceHolder() for: CStructField(line_num=994) int*      eq_objtype ; 
-				PlaceHolder() for: BlankSpace(line_num=994)
-				SingleLineComment(line_num=994) # type of both objects (mjtObj)            (neq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=995)
-				PlaceHolder() for: CStructField(line_num=995) mjtByte*  eq_active0 ; 
-				PlaceHolder() for: BlankSpace(line_num=995)
-				SingleLineComment(line_num=995) # initial enable/disable constraint state  (neq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=996)
-				PlaceHolder() for: CStructField(line_num=996) mjtNum*   eq_solref ; 
-				PlaceHolder() for: BlankSpace(line_num=996)
-				SingleLineComment(line_num=996) # constraint solver reference              (neq x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=997)
-				PlaceHolder() for: CStructField(line_num=997) mjtNum*   eq_solimp ; 
-				PlaceHolder() for: BlankSpace(line_num=997)
-				SingleLineComment(line_num=997) # constraint solver impedance              (neq x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=998)
-				PlaceHolder() for: CStructField(line_num=998) mjtNum*   eq_data ; 
-				PlaceHolder() for: BlankSpace(line_num=998)
-				SingleLineComment(line_num=998) # numeric data for constraint              (neq x mjNEQDATA) 
-				PlaceHolder() for: BlankSpace(line_num=999)
-				PlaceHolder() for: BlankSpace(line_num=1000)
-				SingleLineComment(line_num=1000) # tendons 
-				PlaceHolder() for: BlankSpace(line_num=1001)
-				PlaceHolder() for: CStructField(line_num=1001) int*      tendon_adr ; 
-				PlaceHolder() for: BlankSpace(line_num=1001)
-				SingleLineComment(line_num=1001) # address of first object in tendon's path (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1002)
-				PlaceHolder() for: CStructField(line_num=1002) int*      tendon_num ; 
-				PlaceHolder() for: BlankSpace(line_num=1002)
-				SingleLineComment(line_num=1002) # number of objects in tendon's path       (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1003)
-				PlaceHolder() for: CStructField(line_num=1003) int*      tendon_matid ; 
-				PlaceHolder() for: BlankSpace(line_num=1003)
-				SingleLineComment(line_num=1003) # material id for rendering                (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1004)
-				PlaceHolder() for: CStructField(line_num=1004) int*      tendon_group ; 
-				PlaceHolder() for: BlankSpace(line_num=1004)
-				SingleLineComment(line_num=1004) # group for visibility                     (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1005)
-				PlaceHolder() for: CStructField(line_num=1005) mjtByte*  tendon_limited ; 
-				PlaceHolder() for: BlankSpace(line_num=1005)
-				SingleLineComment(line_num=1005) # does tendon have length limits           (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1006)
-				PlaceHolder() for: CStructField(line_num=1006) mjtNum*   tendon_width ; 
-				PlaceHolder() for: BlankSpace(line_num=1006)
-				SingleLineComment(line_num=1006) # width for rendering                      (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1007)
-				PlaceHolder() for: CStructField(line_num=1007) mjtNum*   tendon_solref_lim ; 
-				PlaceHolder() for: BlankSpace(line_num=1007)
-				SingleLineComment(line_num=1007) # constraint solver reference: limit       (ntendon x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=1008)
-				PlaceHolder() for: CStructField(line_num=1008) mjtNum*   tendon_solimp_lim ; 
-				PlaceHolder() for: BlankSpace(line_num=1008)
-				SingleLineComment(line_num=1008) # constraint solver impedance: limit       (ntendon x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=1009)
-				PlaceHolder() for: CStructField(line_num=1009) mjtNum*   tendon_solref_fri ; 
-				PlaceHolder() for: BlankSpace(line_num=1009)
-				SingleLineComment(line_num=1009) # constraint solver reference: friction    (ntendon x mjNREF) 
-				PlaceHolder() for: BlankSpace(line_num=1010)
-				PlaceHolder() for: CStructField(line_num=1010) mjtNum*   tendon_solimp_fri ; 
-				PlaceHolder() for: BlankSpace(line_num=1010)
-				SingleLineComment(line_num=1010) # constraint solver impedance: friction    (ntendon x mjNIMP) 
-				PlaceHolder() for: BlankSpace(line_num=1011)
-				PlaceHolder() for: CStructField(line_num=1011) mjtNum*   tendon_range ; 
-				PlaceHolder() for: BlankSpace(line_num=1011)
-				SingleLineComment(line_num=1011) # tendon length limits                     (ntendon x 2) 
-				PlaceHolder() for: BlankSpace(line_num=1012)
-				PlaceHolder() for: CStructField(line_num=1012) mjtNum*   tendon_margin ; 
-				PlaceHolder() for: BlankSpace(line_num=1012)
-				SingleLineComment(line_num=1012) # min distance for limit detection         (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1013)
-				PlaceHolder() for: CStructField(line_num=1013) mjtNum*   tendon_stiffness ; 
-				PlaceHolder() for: BlankSpace(line_num=1013)
-				SingleLineComment(line_num=1013) # stiffness coefficient                    (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1014)
-				PlaceHolder() for: CStructField(line_num=1014) mjtNum*   tendon_damping ; 
-				PlaceHolder() for: BlankSpace(line_num=1014)
-				SingleLineComment(line_num=1014) # damping coefficient                      (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1015)
-				PlaceHolder() for: CStructField(line_num=1015) mjtNum*   tendon_frictionloss ; 
-				PlaceHolder() for: BlankSpace(line_num=1015)
-				SingleLineComment(line_num=1015) # loss due to friction                     (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1016)
-				PlaceHolder() for: CStructField(line_num=1016) mjtNum*   tendon_lengthspring ; 
-				PlaceHolder() for: BlankSpace(line_num=1016)
-				SingleLineComment(line_num=1016) # spring resting length range              (ntendon x 2) 
-				PlaceHolder() for: BlankSpace(line_num=1017)
-				PlaceHolder() for: CStructField(line_num=1017) mjtNum*   tendon_length0 ; 
-				PlaceHolder() for: BlankSpace(line_num=1017)
-				SingleLineComment(line_num=1017) # tendon length in qpos0                   (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1018)
-				PlaceHolder() for: CStructField(line_num=1018) mjtNum*   tendon_invweight0 ; 
-				PlaceHolder() for: BlankSpace(line_num=1018)
-				SingleLineComment(line_num=1018) # inv. weight in qpos0                     (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1019)
-				PlaceHolder() for: CStructField(line_num=1019) mjtNum*   tendon_user ; 
-				PlaceHolder() for: BlankSpace(line_num=1019)
-				SingleLineComment(line_num=1019) # user data                                (ntendon x nuser_tendon) 
-				PlaceHolder() for: BlankSpace(line_num=1020)
-				PlaceHolder() for: CStructField(line_num=1020) float*    tendon_rgba ; 
-				PlaceHolder() for: BlankSpace(line_num=1020)
-				SingleLineComment(line_num=1020) # rgba when material is omitted            (ntendon x 4) 
-				PlaceHolder() for: BlankSpace(line_num=1021)
-				PlaceHolder() for: BlankSpace(line_num=1022)
-				SingleLineComment(line_num=1022) # list of all wrap objects in tendon paths 
-				PlaceHolder() for: BlankSpace(line_num=1023)
-				PlaceHolder() for: CStructField(line_num=1023) int*      wrap_type ; 
-				PlaceHolder() for: BlankSpace(line_num=1023)
-				SingleLineComment(line_num=1023) # wrap object type (mjtWrap)               (nwrap x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1024)
-				PlaceHolder() for: CStructField(line_num=1024) int*      wrap_objid ; 
-				PlaceHolder() for: BlankSpace(line_num=1024)
-				SingleLineComment(line_num=1024) # object id: geom, site, joint             (nwrap x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1025)
-				PlaceHolder() for: CStructField(line_num=1025) mjtNum*   wrap_prm ; 
-				PlaceHolder() for: BlankSpace(line_num=1025)
-				SingleLineComment(line_num=1025) # divisor, joint coef, or site id          (nwrap x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1026)
-				PlaceHolder() for: BlankSpace(line_num=1027)
-				SingleLineComment(line_num=1027) # actuators 
-				PlaceHolder() for: BlankSpace(line_num=1028)
-				PlaceHolder() for: CStructField(line_num=1028) int*      actuator_trntype ; 
-				PlaceHolder() for: BlankSpace(line_num=1028)
-				SingleLineComment(line_num=1028) # transmission type (mjtTrn)               (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1029)
-				PlaceHolder() for: CStructField(line_num=1029) int*      actuator_dyntype ; 
-				PlaceHolder() for: BlankSpace(line_num=1029)
-				SingleLineComment(line_num=1029) # dynamics type (mjtDyn)                   (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1030)
-				PlaceHolder() for: CStructField(line_num=1030) int*      actuator_gaintype ; 
-				PlaceHolder() for: BlankSpace(line_num=1030)
-				SingleLineComment(line_num=1030) # gain type (mjtGain)                      (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1031)
-				PlaceHolder() for: CStructField(line_num=1031) int*      actuator_biastype ; 
-				PlaceHolder() for: BlankSpace(line_num=1031)
-				SingleLineComment(line_num=1031) # bias type (mjtBias)                      (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1032)
-				PlaceHolder() for: CStructField(line_num=1032) int*      actuator_trnid ; 
-				PlaceHolder() for: BlankSpace(line_num=1032)
-				SingleLineComment(line_num=1032) # transmission id: joint, tendon, site     (nu x 2) 
-				PlaceHolder() for: BlankSpace(line_num=1033)
-				PlaceHolder() for: CStructField(line_num=1033) int*      actuator_actadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1033)
-				SingleLineComment(line_num=1033) # first activation address ;  -1: stateless  (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1034)
-				PlaceHolder() for: CStructField(line_num=1034) int*      actuator_actnum ; 
-				PlaceHolder() for: BlankSpace(line_num=1034)
-				SingleLineComment(line_num=1034) # number of activation variables           (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1035)
-				PlaceHolder() for: CStructField(line_num=1035) int*      actuator_group ; 
-				PlaceHolder() for: BlankSpace(line_num=1035)
-				SingleLineComment(line_num=1035) # group for visibility                     (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1036)
-				PlaceHolder() for: CStructField(line_num=1036) mjtByte*  actuator_ctrllimited ; 
-				PlaceHolder() for: BlankSpace(line_num=1036)
-				SingleLineComment(line_num=1036) # is control limited                       (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1037)
-				PlaceHolder() for: CStructField(line_num=1037) mjtByte*  actuator_forcelimited ; 
-				SingleLineComment(line_num=1037) # is force limited                         (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1038)
-				PlaceHolder() for: CStructField(line_num=1038) mjtByte*  actuator_actlimited ; 
-				PlaceHolder() for: BlankSpace(line_num=1038)
-				SingleLineComment(line_num=1038) # is activation limited                    (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1039)
-				PlaceHolder() for: CStructField(line_num=1039) mjtNum*   actuator_dynprm ; 
-				PlaceHolder() for: BlankSpace(line_num=1039)
-				SingleLineComment(line_num=1039) # dynamics parameters                      (nu x mjNDYN) 
-				PlaceHolder() for: BlankSpace(line_num=1040)
-				PlaceHolder() for: CStructField(line_num=1040) mjtNum*   actuator_gainprm ; 
-				PlaceHolder() for: BlankSpace(line_num=1040)
-				SingleLineComment(line_num=1040) # gain parameters                          (nu x mjNGAIN) 
-				PlaceHolder() for: BlankSpace(line_num=1041)
-				PlaceHolder() for: CStructField(line_num=1041) mjtNum*   actuator_biasprm ; 
-				PlaceHolder() for: BlankSpace(line_num=1041)
-				SingleLineComment(line_num=1041) # bias parameters                          (nu x mjNBIAS) 
-				PlaceHolder() for: BlankSpace(line_num=1042)
-				PlaceHolder() for: CStructField(line_num=1042) mjtByte*  actuator_actearly ; 
-				PlaceHolder() for: BlankSpace(line_num=1042)
-				SingleLineComment(line_num=1042) # step activation before force             (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1043)
-				PlaceHolder() for: CStructField(line_num=1043) mjtNum*   actuator_ctrlrange ; 
-				PlaceHolder() for: BlankSpace(line_num=1043)
-				SingleLineComment(line_num=1043) # range of controls                        (nu x 2) 
-				PlaceHolder() for: BlankSpace(line_num=1044)
-				PlaceHolder() for: CStructField(line_num=1044) mjtNum*   actuator_forcerange ; 
-				PlaceHolder() for: BlankSpace(line_num=1044)
-				SingleLineComment(line_num=1044) # range of forces                          (nu x 2) 
-				PlaceHolder() for: BlankSpace(line_num=1045)
-				PlaceHolder() for: CStructField(line_num=1045) mjtNum*   actuator_actrange ; 
-				PlaceHolder() for: BlankSpace(line_num=1045)
-				SingleLineComment(line_num=1045) # range of activations                     (nu x 2) 
-				PlaceHolder() for: BlankSpace(line_num=1046)
-				PlaceHolder() for: CStructField(line_num=1046) mjtNum*   actuator_gear ; 
-				PlaceHolder() for: BlankSpace(line_num=1046)
-				SingleLineComment(line_num=1046) # scale length and transmitted force       (nu x 6) 
-				PlaceHolder() for: BlankSpace(line_num=1047)
-				PlaceHolder() for: CStructField(line_num=1047) mjtNum*   actuator_cranklength ; 
-				PlaceHolder() for: BlankSpace(line_num=1047)
-				SingleLineComment(line_num=1047) # crank length for slider-crank            (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1048)
-				PlaceHolder() for: CStructField(line_num=1048) mjtNum*   actuator_acc0 ; 
-				PlaceHolder() for: BlankSpace(line_num=1048)
-				SingleLineComment(line_num=1048) # acceleration from unit force in qpos0    (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1049)
-				PlaceHolder() for: CStructField(line_num=1049) mjtNum*   actuator_length0 ; 
-				PlaceHolder() for: BlankSpace(line_num=1049)
-				SingleLineComment(line_num=1049) # actuator length in qpos0                 (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1050)
-				PlaceHolder() for: CStructField(line_num=1050) mjtNum*   actuator_lengthrange ; 
-				PlaceHolder() for: BlankSpace(line_num=1050)
-				SingleLineComment(line_num=1050) # feasible actuator length range           (nu x 2) 
-				PlaceHolder() for: BlankSpace(line_num=1051)
-				PlaceHolder() for: CStructField(line_num=1051) mjtNum*   actuator_user ; 
-				PlaceHolder() for: BlankSpace(line_num=1051)
-				SingleLineComment(line_num=1051) # user data                                (nu x nuser_actuator) 
-				PlaceHolder() for: BlankSpace(line_num=1052)
-				PlaceHolder() for: CStructField(line_num=1052) int*      actuator_plugin ; 
-				PlaceHolder() for: BlankSpace(line_num=1052)
-				SingleLineComment(line_num=1052) # plugin instance id ;  -1: not a plugin     (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1053)
-				PlaceHolder() for: BlankSpace(line_num=1054)
-				SingleLineComment(line_num=1054) # sensors 
-				PlaceHolder() for: BlankSpace(line_num=1055)
-				PlaceHolder() for: CStructField(line_num=1055) int*      sensor_type ; 
-				PlaceHolder() for: BlankSpace(line_num=1055)
-				SingleLineComment(line_num=1055) # sensor type (mjtSensor)                  (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1056)
-				PlaceHolder() for: CStructField(line_num=1056) int*      sensor_datatype ; 
-				PlaceHolder() for: BlankSpace(line_num=1056)
-				SingleLineComment(line_num=1056) # numeric data type (mjtDataType)          (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1057)
-				PlaceHolder() for: CStructField(line_num=1057) int*      sensor_needstage ; 
-				PlaceHolder() for: BlankSpace(line_num=1057)
-				SingleLineComment(line_num=1057) # required compute stage (mjtStage)        (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1058)
-				PlaceHolder() for: CStructField(line_num=1058) int*      sensor_objtype ; 
-				PlaceHolder() for: BlankSpace(line_num=1058)
-				SingleLineComment(line_num=1058) # type of sensorized object (mjtObj)       (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1059)
-				PlaceHolder() for: CStructField(line_num=1059) int*      sensor_objid ; 
-				PlaceHolder() for: BlankSpace(line_num=1059)
-				SingleLineComment(line_num=1059) # id of sensorized object                  (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1060)
-				PlaceHolder() for: CStructField(line_num=1060) int*      sensor_reftype ; 
-				PlaceHolder() for: BlankSpace(line_num=1060)
-				SingleLineComment(line_num=1060) # type of reference frame (mjtObj)         (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1061)
-				PlaceHolder() for: CStructField(line_num=1061) int*      sensor_refid ; 
-				PlaceHolder() for: BlankSpace(line_num=1061)
-				SingleLineComment(line_num=1061) # id of reference frame ;  -1: global frame  (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1062)
-				PlaceHolder() for: CStructField(line_num=1062) int*      sensor_dim ; 
-				PlaceHolder() for: BlankSpace(line_num=1062)
-				SingleLineComment(line_num=1062) # number of scalar outputs                 (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1063)
-				PlaceHolder() for: CStructField(line_num=1063) int*      sensor_adr ; 
-				PlaceHolder() for: BlankSpace(line_num=1063)
-				SingleLineComment(line_num=1063) # address in sensor array                  (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1064)
-				PlaceHolder() for: CStructField(line_num=1064) mjtNum*   sensor_cutoff ; 
-				PlaceHolder() for: BlankSpace(line_num=1064)
-				SingleLineComment(line_num=1064) # cutoff for real and positive ;  0: ignore  (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1065)
-				PlaceHolder() for: CStructField(line_num=1065) mjtNum*   sensor_noise ; 
-				PlaceHolder() for: BlankSpace(line_num=1065)
-				SingleLineComment(line_num=1065) # noise standard deviation                 (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1066)
-				PlaceHolder() for: CStructField(line_num=1066) mjtNum*   sensor_user ; 
-				PlaceHolder() for: BlankSpace(line_num=1066)
-				SingleLineComment(line_num=1066) # user data                                (nsensor x nuser_sensor) 
-				PlaceHolder() for: BlankSpace(line_num=1067)
-				PlaceHolder() for: CStructField(line_num=1067) int*      sensor_plugin ; 
-				PlaceHolder() for: BlankSpace(line_num=1067)
-				SingleLineComment(line_num=1067) # plugin instance id ;  -1: not a plugin     (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1068)
-				PlaceHolder() for: BlankSpace(line_num=1069)
-				SingleLineComment(line_num=1069) # plugin instances 
-				PlaceHolder() for: BlankSpace(line_num=1070)
-				PlaceHolder() for: CStructField(line_num=1070) int*      plugin ; 
-				PlaceHolder() for: BlankSpace(line_num=1070)
-				SingleLineComment(line_num=1070) # globally registered plugin slot number   (nplugin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1071)
-				PlaceHolder() for: CStructField(line_num=1071) int*      plugin_stateadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1071)
-				SingleLineComment(line_num=1071) # address in the plugin state array        (nplugin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1072)
-				PlaceHolder() for: CStructField(line_num=1072) int*      plugin_statenum ; 
-				PlaceHolder() for: BlankSpace(line_num=1072)
-				SingleLineComment(line_num=1072) # number of states in the plugin instance  (nplugin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1073)
-				PlaceHolder() for: CStructField(line_num=1073) char*     plugin_attr ; 
-				PlaceHolder() for: BlankSpace(line_num=1073)
-				SingleLineComment(line_num=1073) # config attributes of plugin instances    (npluginattr x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1074)
-				PlaceHolder() for: CStructField(line_num=1074) int*      plugin_attradr ; 
-				PlaceHolder() for: BlankSpace(line_num=1074)
-				SingleLineComment(line_num=1074) # address to each instance's config attrib (nplugin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1075)
-				PlaceHolder() for: BlankSpace(line_num=1076)
-				SingleLineComment(line_num=1076) # custom numeric fields 
-				PlaceHolder() for: BlankSpace(line_num=1077)
-				PlaceHolder() for: CStructField(line_num=1077) int*      numeric_adr ; 
-				PlaceHolder() for: BlankSpace(line_num=1077)
-				SingleLineComment(line_num=1077) # address of field in numeric_data         (nnumeric x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1078)
-				PlaceHolder() for: CStructField(line_num=1078) int*      numeric_size ; 
-				PlaceHolder() for: BlankSpace(line_num=1078)
-				SingleLineComment(line_num=1078) # size of numeric field                    (nnumeric x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1079)
-				PlaceHolder() for: CStructField(line_num=1079) mjtNum*   numeric_data ; 
-				PlaceHolder() for: BlankSpace(line_num=1079)
-				SingleLineComment(line_num=1079) # array of all numeric fields              (nnumericdata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1080)
-				PlaceHolder() for: BlankSpace(line_num=1081)
-				SingleLineComment(line_num=1081) # custom text fields 
-				PlaceHolder() for: BlankSpace(line_num=1082)
-				PlaceHolder() for: CStructField(line_num=1082) int*      text_adr ; 
-				PlaceHolder() for: BlankSpace(line_num=1082)
-				SingleLineComment(line_num=1082) # address of text in text_data             (ntext x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1083)
-				PlaceHolder() for: CStructField(line_num=1083) int*      text_size ; 
-				PlaceHolder() for: BlankSpace(line_num=1083)
-				SingleLineComment(line_num=1083) # size of text field (strlen+1)            (ntext x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1084)
-				PlaceHolder() for: CStructField(line_num=1084) char*     text_data ; 
-				PlaceHolder() for: BlankSpace(line_num=1084)
-				SingleLineComment(line_num=1084) # array of all text fields (0-terminated)  (ntextdata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1085)
-				PlaceHolder() for: BlankSpace(line_num=1086)
-				SingleLineComment(line_num=1086) # custom tuple fields 
-				PlaceHolder() for: BlankSpace(line_num=1087)
-				PlaceHolder() for: CStructField(line_num=1087) int*      tuple_adr ; 
-				PlaceHolder() for: BlankSpace(line_num=1087)
-				SingleLineComment(line_num=1087) # address of text in text_data             (ntuple x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1088)
-				PlaceHolder() for: CStructField(line_num=1088) int*      tuple_size ; 
-				PlaceHolder() for: BlankSpace(line_num=1088)
-				SingleLineComment(line_num=1088) # number of objects in tuple               (ntuple x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1089)
-				PlaceHolder() for: CStructField(line_num=1089) int*      tuple_objtype ; 
-				PlaceHolder() for: BlankSpace(line_num=1089)
-				SingleLineComment(line_num=1089) # array of object types in all tuples      (ntupledata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1090)
-				PlaceHolder() for: CStructField(line_num=1090) int*      tuple_objid ; 
-				PlaceHolder() for: BlankSpace(line_num=1090)
-				SingleLineComment(line_num=1090) # array of object ids in all tuples        (ntupledata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1091)
-				PlaceHolder() for: CStructField(line_num=1091) mjtNum*   tuple_objprm ; 
-				PlaceHolder() for: BlankSpace(line_num=1091)
-				SingleLineComment(line_num=1091) # array of object params in all tuples     (ntupledata x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1092)
-				PlaceHolder() for: BlankSpace(line_num=1093)
-				SingleLineComment(line_num=1093) # keyframes 
-				PlaceHolder() for: BlankSpace(line_num=1094)
-				PlaceHolder() for: CStructField(line_num=1094) mjtNum*   key_time ; 
-				PlaceHolder() for: BlankSpace(line_num=1094)
-				SingleLineComment(line_num=1094) # key time                                 (nkey x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1095)
-				PlaceHolder() for: CStructField(line_num=1095) mjtNum*   key_qpos ; 
-				PlaceHolder() for: BlankSpace(line_num=1095)
-				SingleLineComment(line_num=1095) # key position                             (nkey x nq) 
-				PlaceHolder() for: BlankSpace(line_num=1096)
-				PlaceHolder() for: CStructField(line_num=1096) mjtNum*   key_qvel ; 
-				PlaceHolder() for: BlankSpace(line_num=1096)
-				SingleLineComment(line_num=1096) # key velocity                             (nkey x nv) 
-				PlaceHolder() for: BlankSpace(line_num=1097)
-				PlaceHolder() for: CStructField(line_num=1097) mjtNum*   key_act ; 
-				PlaceHolder() for: BlankSpace(line_num=1097)
-				SingleLineComment(line_num=1097) # key activation                           (nkey x na) 
-				PlaceHolder() for: BlankSpace(line_num=1098)
-				PlaceHolder() for: CStructField(line_num=1098) mjtNum*   key_mpos ; 
-				PlaceHolder() for: BlankSpace(line_num=1098)
-				SingleLineComment(line_num=1098) # key mocap position                       (nkey x nmocap*3) 
-				PlaceHolder() for: BlankSpace(line_num=1099)
-				PlaceHolder() for: CStructField(line_num=1099) mjtNum*   key_mquat ; 
-				PlaceHolder() for: BlankSpace(line_num=1099)
-				SingleLineComment(line_num=1099) # key mocap quaternion                     (nkey x nmocap*4) 
-				PlaceHolder() for: BlankSpace(line_num=1100)
-				PlaceHolder() for: CStructField(line_num=1100) mjtNum*   key_ctrl ; 
-				PlaceHolder() for: BlankSpace(line_num=1100)
-				SingleLineComment(line_num=1100) # key control                              (nkey x nu) 
-				PlaceHolder() for: BlankSpace(line_num=1101)
-				PlaceHolder() for: BlankSpace(line_num=1102)
-				SingleLineComment(line_num=1102) # names 
-				PlaceHolder() for: BlankSpace(line_num=1103)
-				PlaceHolder() for: CStructField(line_num=1103) int*      name_bodyadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1103)
-				SingleLineComment(line_num=1103) # body name pointers                       (nbody x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1104)
-				PlaceHolder() for: CStructField(line_num=1104) int*      name_jntadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1104)
-				SingleLineComment(line_num=1104) # joint name pointers                      (njnt x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1105)
-				PlaceHolder() for: CStructField(line_num=1105) int*      name_geomadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1105)
-				SingleLineComment(line_num=1105) # geom name pointers                       (ngeom x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1106)
-				PlaceHolder() for: CStructField(line_num=1106) int*      name_siteadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1106)
-				SingleLineComment(line_num=1106) # site name pointers                       (nsite x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1107)
-				PlaceHolder() for: CStructField(line_num=1107) int*      name_camadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1107)
-				SingleLineComment(line_num=1107) # camera name pointers                     (ncam x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1108)
-				PlaceHolder() for: CStructField(line_num=1108) int*      name_lightadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1108)
-				SingleLineComment(line_num=1108) # light name pointers                      (nlight x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1109)
-				PlaceHolder() for: CStructField(line_num=1109) int*      name_flexadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1109)
-				SingleLineComment(line_num=1109) # flex name pointers                       (nflex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1110)
-				PlaceHolder() for: CStructField(line_num=1110) int*      name_meshadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1110)
-				SingleLineComment(line_num=1110) # mesh name pointers                       (nmesh x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1111)
-				PlaceHolder() for: CStructField(line_num=1111) int*      name_skinadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1111)
-				SingleLineComment(line_num=1111) # skin name pointers                       (nskin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1112)
-				PlaceHolder() for: CStructField(line_num=1112) int*      name_hfieldadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1112)
-				SingleLineComment(line_num=1112) # hfield name pointers                     (nhfield x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1113)
-				PlaceHolder() for: CStructField(line_num=1113) int*      name_texadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1113)
-				SingleLineComment(line_num=1113) # texture name pointers                    (ntex x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1114)
-				PlaceHolder() for: CStructField(line_num=1114) int*      name_matadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1114)
-				SingleLineComment(line_num=1114) # material name pointers                   (nmat x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1115)
-				PlaceHolder() for: CStructField(line_num=1115) int*      name_pairadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1115)
-				SingleLineComment(line_num=1115) # geom pair name pointers                  (npair x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1116)
-				PlaceHolder() for: CStructField(line_num=1116) int*      name_excludeadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1116)
-				SingleLineComment(line_num=1116) # exclude name pointers                    (nexclude x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1117)
-				PlaceHolder() for: CStructField(line_num=1117) int*      name_eqadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1117)
-				SingleLineComment(line_num=1117) # equality constraint name pointers        (neq x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1118)
-				PlaceHolder() for: CStructField(line_num=1118) int*      name_tendonadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1118)
-				SingleLineComment(line_num=1118) # tendon name pointers                     (ntendon x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1119)
-				PlaceHolder() for: CStructField(line_num=1119) int*      name_actuatoradr ; 
-				PlaceHolder() for: BlankSpace(line_num=1119)
-				SingleLineComment(line_num=1119) # actuator name pointers                   (nu x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1120)
-				PlaceHolder() for: CStructField(line_num=1120) int*      name_sensoradr ; 
-				PlaceHolder() for: BlankSpace(line_num=1120)
-				SingleLineComment(line_num=1120) # sensor name pointers                     (nsensor x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1121)
-				PlaceHolder() for: CStructField(line_num=1121) int*      name_numericadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1121)
-				SingleLineComment(line_num=1121) # numeric name pointers                    (nnumeric x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1122)
-				PlaceHolder() for: CStructField(line_num=1122) int*      name_textadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1122)
-				SingleLineComment(line_num=1122) # text name pointers                       (ntext x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1123)
-				PlaceHolder() for: CStructField(line_num=1123) int*      name_tupleadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1123)
-				SingleLineComment(line_num=1123) # tuple name pointers                      (ntuple x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1124)
-				PlaceHolder() for: CStructField(line_num=1124) int*      name_keyadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1124)
-				SingleLineComment(line_num=1124) # keyframe name pointers                   (nkey x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1125)
-				PlaceHolder() for: CStructField(line_num=1125) int*      name_pluginadr ; 
-				PlaceHolder() for: BlankSpace(line_num=1125)
-				SingleLineComment(line_num=1125) # plugin instance name pointers            (nplugin x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1126)
-				PlaceHolder() for: CStructField(line_num=1126) char*     names ; 
-				PlaceHolder() for: BlankSpace(line_num=1126)
-				SingleLineComment(line_num=1126) # names of all objects, 0-terminated       (nnames x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1127)
-				PlaceHolder() for: CStructField(line_num=1127) int*      names_map ; 
-				PlaceHolder() for: BlankSpace(line_num=1127)
-				SingleLineComment(line_num=1127) # internal hash map of names               (nnames_map x 1) 
-				PlaceHolder() for: BlankSpace(line_num=1128)
-				PlaceHolder() for: BlankSpace(line_num=1129)
-				SingleLineComment(line_num=1129) # paths 
-				PlaceHolder() for: BlankSpace(line_num=1130)
-				PlaceHolder() for: CStructField(line_num=1130) char*     paths ; 
-				PlaceHolder() for: BlankSpace(line_num=1130)
-				SingleLineComment(line_num=1130) # paths to assets, 0-terminated            (npaths x 1) 
+		#PlaceHolder (not a comment): BlankSpace(line_num=584)
+		#PlaceHolder (not a comment): TypeDef(line_num=585) typedef struct mjStatistic_ mjStatistic ; 
+		#PlaceHolder (not a comment): BlankSpace(line_num=585)
+		#PlaceHolder (not a comment): BlankSpace(line_num=586)
+		#PlaceHolder (not a comment): BlankSpace(line_num=587)
+		#---------------------------------- mjModel ------------------------------------------------------- 
+		#PlaceHolder (not a comment): BlankSpace(line_num=589)
+		#PlaceHolder (not a comment): CStruct(line_num=590) struct mjModel_ 
+			#PlaceHolder (not a comment): Scope(line_num=590,scope_type=struct) { 
+				#PlaceHolder (not a comment): BlankSpace(line_num=591)
+				# ------------------------------- sizes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=592)
+				#PlaceHolder (not a comment): BlankSpace(line_num=593)
+				# sizes needed at mjModel construction 
+				#PlaceHolder (not a comment): BlankSpace(line_num=594)
+				#PlaceHolder (not a comment): CStructField(line_num=594) int nq ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=594)
+				# number of generalized coordinates = dim(qpos) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=595)
+				#PlaceHolder (not a comment): CStructField(line_num=595) int nv ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=595)
+				# number of degrees of freedom = dim(qvel) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=596)
+				#PlaceHolder (not a comment): CStructField(line_num=596) int nu ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=596)
+				# number of actuators/controls = dim(ctrl) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=597)
+				#PlaceHolder (not a comment): CStructField(line_num=597) int na ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=597)
+				# number of activation states = dim(act) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=598)
+				#PlaceHolder (not a comment): CStructField(line_num=598) int nbody ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=598)
+				# number of bodies 
+				#PlaceHolder (not a comment): BlankSpace(line_num=599)
+				#PlaceHolder (not a comment): CStructField(line_num=599) int nbvh ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=599)
+				# number of total bounding volumes in all bodies 
+				#PlaceHolder (not a comment): BlankSpace(line_num=600)
+				#PlaceHolder (not a comment): CStructField(line_num=600) int nbvhstatic ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=600)
+				# number of static bounding volumes (aabb stored in mjModel) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=601)
+				#PlaceHolder (not a comment): CStructField(line_num=601) int nbvhdynamic ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=601)
+				# number of dynamic bounding volumes (aabb stored in mjData) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=602)
+				#PlaceHolder (not a comment): CStructField(line_num=602) int njnt ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=602)
+				# number of joints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=603)
+				#PlaceHolder (not a comment): CStructField(line_num=603) int ngeom ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=603)
+				# number of geoms 
+				#PlaceHolder (not a comment): BlankSpace(line_num=604)
+				#PlaceHolder (not a comment): CStructField(line_num=604) int nsite ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=604)
+				# number of sites 
+				#PlaceHolder (not a comment): BlankSpace(line_num=605)
+				#PlaceHolder (not a comment): CStructField(line_num=605) int ncam ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=605)
+				# number of cameras 
+				#PlaceHolder (not a comment): BlankSpace(line_num=606)
+				#PlaceHolder (not a comment): CStructField(line_num=606) int nlight ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=606)
+				# number of lights 
+				#PlaceHolder (not a comment): BlankSpace(line_num=607)
+				#PlaceHolder (not a comment): CStructField(line_num=607) int nflex ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=607)
+				# number of flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=608)
+				#PlaceHolder (not a comment): CStructField(line_num=608) int nflexvert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=608)
+				# number of vertices in all flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=609)
+				#PlaceHolder (not a comment): CStructField(line_num=609) int nflexedge ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=609)
+				# number of edges in all flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=610)
+				#PlaceHolder (not a comment): CStructField(line_num=610) int nflexelem ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=610)
+				# number of elements in all flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=611)
+				#PlaceHolder (not a comment): CStructField(line_num=611) int nflexelemdata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=611)
+				# number of element vertex ids in all flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=612)
+				#PlaceHolder (not a comment): CStructField(line_num=612) int nflexelemedge ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=612)
+				# number of element edge ids in all flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=613)
+				#PlaceHolder (not a comment): CStructField(line_num=613) int nflexshelldata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=613)
+				# number of shell fragment vertex ids in all flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=614)
+				#PlaceHolder (not a comment): CStructField(line_num=614) int nflexevpair ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=614)
+				# number of element-vertex pairs in all flexes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=615)
+				#PlaceHolder (not a comment): CStructField(line_num=615) int nflextexcoord ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=615)
+				# number of vertices with texture coordinates 
+				#PlaceHolder (not a comment): BlankSpace(line_num=616)
+				#PlaceHolder (not a comment): CStructField(line_num=616) int nmesh ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=616)
+				# number of meshes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=617)
+				#PlaceHolder (not a comment): CStructField(line_num=617) int nmeshvert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=617)
+				# number of vertices in all meshes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=618)
+				#PlaceHolder (not a comment): CStructField(line_num=618) int nmeshnormal ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=618)
+				# number of normals in all meshes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=619)
+				#PlaceHolder (not a comment): CStructField(line_num=619) int nmeshtexcoord ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=619)
+				# number of texcoords in all meshes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=620)
+				#PlaceHolder (not a comment): CStructField(line_num=620) int nmeshface ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=620)
+				# number of triangular faces in all meshes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=621)
+				#PlaceHolder (not a comment): CStructField(line_num=621) int nmeshgraph ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=621)
+				# number of ints in mesh auxiliary data 
+				#PlaceHolder (not a comment): BlankSpace(line_num=622)
+				#PlaceHolder (not a comment): CStructField(line_num=622) int nskin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=622)
+				# number of skins 
+				#PlaceHolder (not a comment): BlankSpace(line_num=623)
+				#PlaceHolder (not a comment): CStructField(line_num=623) int nskinvert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=623)
+				# number of vertices in all skins 
+				#PlaceHolder (not a comment): BlankSpace(line_num=624)
+				#PlaceHolder (not a comment): CStructField(line_num=624) int nskintexvert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=624)
+				# number of vertiex with texcoords in all skins 
+				#PlaceHolder (not a comment): BlankSpace(line_num=625)
+				#PlaceHolder (not a comment): CStructField(line_num=625) int nskinface ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=625)
+				# number of triangular faces in all skins 
+				#PlaceHolder (not a comment): BlankSpace(line_num=626)
+				#PlaceHolder (not a comment): CStructField(line_num=626) int nskinbone ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=626)
+				# number of bones in all skins 
+				#PlaceHolder (not a comment): BlankSpace(line_num=627)
+				#PlaceHolder (not a comment): CStructField(line_num=627) int nskinbonevert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=627)
+				# number of vertices in all skin bones 
+				#PlaceHolder (not a comment): BlankSpace(line_num=628)
+				#PlaceHolder (not a comment): CStructField(line_num=628) int nhfield ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=628)
+				# number of heightfields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=629)
+				#PlaceHolder (not a comment): CStructField(line_num=629) int nhfielddata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=629)
+				# number of data points in all heightfields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=630)
+				#PlaceHolder (not a comment): CStructField(line_num=630) int ntex ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=630)
+				# number of textures 
+				#PlaceHolder (not a comment): BlankSpace(line_num=631)
+				#PlaceHolder (not a comment): CStructField(line_num=631) int ntexdata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=631)
+				# number of bytes in texture rgb data 
+				#PlaceHolder (not a comment): BlankSpace(line_num=632)
+				#PlaceHolder (not a comment): CStructField(line_num=632) int nmat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=632)
+				# number of materials 
+				#PlaceHolder (not a comment): BlankSpace(line_num=633)
+				#PlaceHolder (not a comment): CStructField(line_num=633) int npair ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=633)
+				# number of predefined geom pairs 
+				#PlaceHolder (not a comment): BlankSpace(line_num=634)
+				#PlaceHolder (not a comment): CStructField(line_num=634) int nexclude ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=634)
+				# number of excluded geom pairs 
+				#PlaceHolder (not a comment): BlankSpace(line_num=635)
+				#PlaceHolder (not a comment): CStructField(line_num=635) int neq ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=635)
+				# number of equality constraints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=636)
+				#PlaceHolder (not a comment): CStructField(line_num=636) int ntendon ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=636)
+				# number of tendons 
+				#PlaceHolder (not a comment): BlankSpace(line_num=637)
+				#PlaceHolder (not a comment): CStructField(line_num=637) int nwrap ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=637)
+				# number of wrap objects in all tendon paths 
+				#PlaceHolder (not a comment): BlankSpace(line_num=638)
+				#PlaceHolder (not a comment): CStructField(line_num=638) int nsensor ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=638)
+				# number of sensors 
+				#PlaceHolder (not a comment): BlankSpace(line_num=639)
+				#PlaceHolder (not a comment): CStructField(line_num=639) int nnumeric ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=639)
+				# number of numeric custom fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=640)
+				#PlaceHolder (not a comment): CStructField(line_num=640) int nnumericdata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=640)
+				# number of mjtNums in all numeric fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=641)
+				#PlaceHolder (not a comment): CStructField(line_num=641) int ntext ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=641)
+				# number of text custom fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=642)
+				#PlaceHolder (not a comment): CStructField(line_num=642) int ntextdata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=642)
+				# number of mjtBytes in all text fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=643)
+				#PlaceHolder (not a comment): CStructField(line_num=643) int ntuple ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=643)
+				# number of tuple custom fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=644)
+				#PlaceHolder (not a comment): CStructField(line_num=644) int ntupledata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=644)
+				# number of objects in all tuple fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=645)
+				#PlaceHolder (not a comment): CStructField(line_num=645) int nkey ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=645)
+				# number of keyframes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=646)
+				#PlaceHolder (not a comment): CStructField(line_num=646) int nmocap ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=646)
+				# number of mocap bodies 
+				#PlaceHolder (not a comment): BlankSpace(line_num=647)
+				#PlaceHolder (not a comment): CStructField(line_num=647) int nplugin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=647)
+				# number of plugin instances 
+				#PlaceHolder (not a comment): BlankSpace(line_num=648)
+				#PlaceHolder (not a comment): CStructField(line_num=648) int npluginattr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=648)
+				# number of chars in all plugin config attributes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=649)
+				#PlaceHolder (not a comment): CStructField(line_num=649) int nuser_body ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=649)
+				# number of mjtNums in body_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=650)
+				#PlaceHolder (not a comment): CStructField(line_num=650) int nuser_jnt ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=650)
+				# number of mjtNums in jnt_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=651)
+				#PlaceHolder (not a comment): CStructField(line_num=651) int nuser_geom ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=651)
+				# number of mjtNums in geom_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=652)
+				#PlaceHolder (not a comment): CStructField(line_num=652) int nuser_site ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=652)
+				# number of mjtNums in site_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=653)
+				#PlaceHolder (not a comment): CStructField(line_num=653) int nuser_cam ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=653)
+				# number of mjtNums in cam_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=654)
+				#PlaceHolder (not a comment): CStructField(line_num=654) int nuser_tendon ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=654)
+				# number of mjtNums in tendon_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=655)
+				#PlaceHolder (not a comment): CStructField(line_num=655) int nuser_actuator ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=655)
+				# number of mjtNums in actuator_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=656)
+				#PlaceHolder (not a comment): CStructField(line_num=656) int nuser_sensor ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=656)
+				# number of mjtNums in sensor_user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=657)
+				#PlaceHolder (not a comment): CStructField(line_num=657) int nnames ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=657)
+				# number of chars in all names 
+				#PlaceHolder (not a comment): BlankSpace(line_num=658)
+				#PlaceHolder (not a comment): CStructField(line_num=658) int nnames_map ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=658)
+				# number of slots in the names hash map 
+				#PlaceHolder (not a comment): BlankSpace(line_num=659)
+				#PlaceHolder (not a comment): CStructField(line_num=659) int npaths ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=659)
+				# number of chars in all paths 
+				#PlaceHolder (not a comment): BlankSpace(line_num=660)
+				#PlaceHolder (not a comment): BlankSpace(line_num=661)
+				# sizes set after mjModel construction (only affect mjData) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=662)
+				#PlaceHolder (not a comment): CStructField(line_num=662) int nM ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=662)
+				# number of non-zeros in sparse inertia matrix 
+				#PlaceHolder (not a comment): BlankSpace(line_num=663)
+				#PlaceHolder (not a comment): CStructField(line_num=663) int nB ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=663)
+				# number of non-zeros in sparse body-dof matrix 
+				#PlaceHolder (not a comment): BlankSpace(line_num=664)
+				#PlaceHolder (not a comment): CStructField(line_num=664) int nC ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=664)
+				# number of non-zeros in sparse reduced dof-dof matrix 
+				#PlaceHolder (not a comment): BlankSpace(line_num=665)
+				#PlaceHolder (not a comment): CStructField(line_num=665) int nD ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=665)
+				# number of non-zeros in sparse dof-dof matrix 
+				#PlaceHolder (not a comment): BlankSpace(line_num=666)
+				#PlaceHolder (not a comment): CStructField(line_num=666) int ntree ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=666)
+				# number of kinematic trees under world body 
+				#PlaceHolder (not a comment): BlankSpace(line_num=667)
+				#PlaceHolder (not a comment): CStructField(line_num=667) int ngravcomp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=667)
+				# number of bodies with nonzero gravcomp 
+				#PlaceHolder (not a comment): BlankSpace(line_num=668)
+				#PlaceHolder (not a comment): CStructField(line_num=668) int nemax ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=668)
+				# number of potential equality-constraint rows 
+				#PlaceHolder (not a comment): BlankSpace(line_num=669)
+				#PlaceHolder (not a comment): CStructField(line_num=669) int njmax ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=669)
+				# number of available rows in constraint Jacobian 
+				#PlaceHolder (not a comment): BlankSpace(line_num=670)
+				#PlaceHolder (not a comment): CStructField(line_num=670) int nconmax ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=670)
+				# number of potential contacts in contact list 
+				#PlaceHolder (not a comment): BlankSpace(line_num=671)
+				#PlaceHolder (not a comment): CStructField(line_num=671) int nuserdata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=671)
+				# number of mjtNums reserved for the user 
+				#PlaceHolder (not a comment): BlankSpace(line_num=672)
+				#PlaceHolder (not a comment): CStructField(line_num=672) int nsensordata ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=672)
+				# number of mjtNums in sensor data vector 
+				#PlaceHolder (not a comment): BlankSpace(line_num=673)
+				#PlaceHolder (not a comment): CStructField(line_num=673) int npluginstate ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=673)
+				# number of mjtNums in plugin state vector 
+				#PlaceHolder (not a comment): BlankSpace(line_num=674)
+				#PlaceHolder (not a comment): BlankSpace(line_num=675)
+				#PlaceHolder (not a comment): CStructField(line_num=675) size_t narena ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=675)
+				# number of bytes in the mjData arena (inclusive of stack) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=676)
+				#PlaceHolder (not a comment): CStructField(line_num=676) size_t nbuffer ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=676)
+				# number of bytes in buffer 
+				#PlaceHolder (not a comment): BlankSpace(line_num=677)
+				#PlaceHolder (not a comment): BlankSpace(line_num=678)
+				# ------------------------------- options and statistics 
+				#PlaceHolder (not a comment): BlankSpace(line_num=679)
+				#PlaceHolder (not a comment): BlankSpace(line_num=680)
+				#PlaceHolder (not a comment): CStructField(line_num=680) mjOption opt ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=680)
+				# physics options 
+				#PlaceHolder (not a comment): BlankSpace(line_num=681)
+				#PlaceHolder (not a comment): CStructField(line_num=681) mjVisual vis ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=681)
+				# visualization options 
+				#PlaceHolder (not a comment): BlankSpace(line_num=682)
+				#PlaceHolder (not a comment): CStructField(line_num=682) mjStatistic stat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=682)
+				# model statistics 
+				#PlaceHolder (not a comment): BlankSpace(line_num=683)
+				#PlaceHolder (not a comment): BlankSpace(line_num=684)
+				# ------------------------------- buffers 
+				#PlaceHolder (not a comment): BlankSpace(line_num=685)
+				#PlaceHolder (not a comment): BlankSpace(line_num=686)
+				# main buffer 
+				#PlaceHolder (not a comment): BlankSpace(line_num=687)
+				#PlaceHolder (not a comment): CStructField(line_num=687) void*     buffer ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=687)
+				# main buffer ;  all pointers point in it    (nbuffer) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=688)
+				#PlaceHolder (not a comment): BlankSpace(line_num=689)
+				# default generalized coordinates 
+				#PlaceHolder (not a comment): BlankSpace(line_num=690)
+				#PlaceHolder (not a comment): CStructField(line_num=690) mjtNum*   qpos0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=690)
+				# qpos values at default pose              (nq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=691)
+				#PlaceHolder (not a comment): CStructField(line_num=691) mjtNum*   qpos_spring ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=691)
+				# reference pose for springs               (nq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=692)
+				#PlaceHolder (not a comment): BlankSpace(line_num=693)
+				# bodies 
+				#PlaceHolder (not a comment): BlankSpace(line_num=694)
+				#PlaceHolder (not a comment): CStructField(line_num=694) int*      body_parentid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=694)
+				# id of body's parent                      (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=695)
+				#PlaceHolder (not a comment): CStructField(line_num=695) int*      body_rootid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=695)
+				# id of root above body                    (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=696)
+				#PlaceHolder (not a comment): CStructField(line_num=696) int*      body_weldid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=696)
+				# id of body that this body is welded to   (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=697)
+				#PlaceHolder (not a comment): CStructField(line_num=697) int*      body_mocapid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=697)
+				# id of mocap data ;  -1: none               (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=698)
+				#PlaceHolder (not a comment): CStructField(line_num=698) int*      body_jntnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=698)
+				# number of joints for this body           (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=699)
+				#PlaceHolder (not a comment): CStructField(line_num=699) int*      body_jntadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=699)
+				# start addr of joints ;  -1: no joints      (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=700)
+				#PlaceHolder (not a comment): CStructField(line_num=700) int*      body_dofnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=700)
+				# number of motion degrees of freedom      (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=701)
+				#PlaceHolder (not a comment): CStructField(line_num=701) int*      body_dofadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=701)
+				# start addr of dofs ;  -1: no dofs          (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=702)
+				#PlaceHolder (not a comment): CStructField(line_num=702) int*      body_treeid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=702)
+				# id of body's kinematic tree ;  -1: static  (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=703)
+				#PlaceHolder (not a comment): CStructField(line_num=703) int*      body_geomnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=703)
+				# number of geoms                          (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=704)
+				#PlaceHolder (not a comment): CStructField(line_num=704) int*      body_geomadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=704)
+				# start addr of geoms ;  -1: no geoms        (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=705)
+				#PlaceHolder (not a comment): CStructField(line_num=705) mjtByte*  body_simple ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=705)
+				# 1: diag M ;  2: diag M, sliders only       (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=706)
+				#PlaceHolder (not a comment): CStructField(line_num=706) mjtByte*  body_sameframe ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=706)
+				# same frame as inertia (mjtSameframe)     (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=707)
+				#PlaceHolder (not a comment): CStructField(line_num=707) mjtNum*   body_pos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=707)
+				# position offset rel. to parent body      (nbody x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=708)
+				#PlaceHolder (not a comment): CStructField(line_num=708) mjtNum*   body_quat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=708)
+				# orientation offset rel. to parent body   (nbody x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=709)
+				#PlaceHolder (not a comment): CStructField(line_num=709) mjtNum*   body_ipos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=709)
+				# local position of center of mass         (nbody x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=710)
+				#PlaceHolder (not a comment): CStructField(line_num=710) mjtNum*   body_iquat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=710)
+				# local orientation of inertia ellipsoid   (nbody x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=711)
+				#PlaceHolder (not a comment): CStructField(line_num=711) mjtNum*   body_mass ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=711)
+				# mass                                     (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=712)
+				#PlaceHolder (not a comment): CStructField(line_num=712) mjtNum*   body_subtreemass ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=712)
+				# mass of subtree starting at this body    (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=713)
+				#PlaceHolder (not a comment): CStructField(line_num=713) mjtNum*   body_inertia ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=713)
+				# diagonal inertia in ipos/iquat frame     (nbody x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=714)
+				#PlaceHolder (not a comment): CStructField(line_num=714) mjtNum*   body_invweight0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=714)
+				# mean inv inert in qpos0 (trn, rot)       (nbody x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=715)
+				#PlaceHolder (not a comment): CStructField(line_num=715) mjtNum*   body_gravcomp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=715)
+				# antigravity force, units of body weight  (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=716)
+				#PlaceHolder (not a comment): CStructField(line_num=716) mjtNum*   body_margin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=716)
+				# MAX over all geom margins                (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=717)
+				#PlaceHolder (not a comment): CStructField(line_num=717) mjtNum*   body_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=717)
+				# user data                                (nbody x nuser_body) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=718)
+				#PlaceHolder (not a comment): CStructField(line_num=718) int*      body_plugin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=718)
+				# plugin instance id ;  -1: not in use       (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=719)
+				#PlaceHolder (not a comment): CStructField(line_num=719) int*      body_contype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=719)
+				# OR over all geom contypes                (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=720)
+				#PlaceHolder (not a comment): CStructField(line_num=720) int*      body_conaffinity ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=720)
+				# OR over all geom conaffinities           (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=721)
+				#PlaceHolder (not a comment): CStructField(line_num=721) int*      body_bvhadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=721)
+				# address of bvh root                      (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=722)
+				#PlaceHolder (not a comment): CStructField(line_num=722) int*      body_bvhnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=722)
+				# number of bounding volumes               (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=723)
+				#PlaceHolder (not a comment): BlankSpace(line_num=724)
+				# bounding volume hierarchy 
+				#PlaceHolder (not a comment): BlankSpace(line_num=725)
+				#PlaceHolder (not a comment): CStructField(line_num=725) int*      bvh_depth ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=725)
+				# depth in the bounding volume hierarchy   (nbvh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=726)
+				#PlaceHolder (not a comment): CStructField(line_num=726) int*      bvh_child ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=726)
+				# left and right children in tree          (nbvh x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=727)
+				#PlaceHolder (not a comment): CStructField(line_num=727) int*      bvh_nodeid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=727)
+				# geom or elem id of node ;  -1: non-leaf    (nbvh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=728)
+				#PlaceHolder (not a comment): CStructField(line_num=728) mjtNum*   bvh_aabb ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=728)
+				# local bounding box (center, size)        (nbvhstatic x 6) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=729)
+				#PlaceHolder (not a comment): BlankSpace(line_num=730)
+				# joints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=731)
+				#PlaceHolder (not a comment): CStructField(line_num=731) int*      jnt_type ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=731)
+				# type of joint (mjtJoint)                 (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=732)
+				#PlaceHolder (not a comment): CStructField(line_num=732) int*      jnt_qposadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=732)
+				# start addr in 'qpos' for joint's data    (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=733)
+				#PlaceHolder (not a comment): CStructField(line_num=733) int*      jnt_dofadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=733)
+				# start addr in 'qvel' for joint's data    (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=734)
+				#PlaceHolder (not a comment): CStructField(line_num=734) int*      jnt_bodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=734)
+				# id of joint's body                       (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=735)
+				#PlaceHolder (not a comment): CStructField(line_num=735) int*      jnt_group ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=735)
+				# group for visibility                     (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=736)
+				#PlaceHolder (not a comment): CStructField(line_num=736) mjtByte*  jnt_limited ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=736)
+				# does joint have limits                   (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=737)
+				#PlaceHolder (not a comment): CStructField(line_num=737) mjtByte*  jnt_actfrclimited ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=737)
+				# does joint have actuator force limits    (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=738)
+				#PlaceHolder (not a comment): CStructField(line_num=738) mjtByte*  jnt_actgravcomp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=738)
+				# is gravcomp force applied via actuators  (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=739)
+				#PlaceHolder (not a comment): CStructField(line_num=739) mjtNum*   jnt_solref ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=739)
+				# constraint solver reference: limit       (njnt x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=740)
+				#PlaceHolder (not a comment): CStructField(line_num=740) mjtNum*   jnt_solimp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=740)
+				# constraint solver impedance: limit       (njnt x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=741)
+				#PlaceHolder (not a comment): CStructField(line_num=741) mjtNum*   jnt_pos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=741)
+				# local anchor position                    (njnt x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=742)
+				#PlaceHolder (not a comment): CStructField(line_num=742) mjtNum*   jnt_axis ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=742)
+				# local joint axis                         (njnt x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=743)
+				#PlaceHolder (not a comment): CStructField(line_num=743) mjtNum*   jnt_stiffness ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=743)
+				# stiffness coefficient                    (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=744)
+				#PlaceHolder (not a comment): CStructField(line_num=744) mjtNum*   jnt_range ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=744)
+				# joint limits                             (njnt x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=745)
+				#PlaceHolder (not a comment): CStructField(line_num=745) mjtNum*   jnt_actfrcrange ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=745)
+				# range of total actuator force            (njnt x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=746)
+				#PlaceHolder (not a comment): CStructField(line_num=746) mjtNum*   jnt_margin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=746)
+				# min distance for limit detection         (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=747)
+				#PlaceHolder (not a comment): CStructField(line_num=747) mjtNum*   jnt_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=747)
+				# user data                                (njnt x nuser_jnt) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=748)
+				#PlaceHolder (not a comment): BlankSpace(line_num=749)
+				# dofs 
+				#PlaceHolder (not a comment): BlankSpace(line_num=750)
+				#PlaceHolder (not a comment): CStructField(line_num=750) int*      dof_bodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=750)
+				# id of dof's body                         (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=751)
+				#PlaceHolder (not a comment): CStructField(line_num=751) int*      dof_jntid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=751)
+				# id of dof's joint                        (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=752)
+				#PlaceHolder (not a comment): CStructField(line_num=752) int*      dof_parentid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=752)
+				# id of dof's parent ;  -1: none             (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=753)
+				#PlaceHolder (not a comment): CStructField(line_num=753) int*      dof_treeid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=753)
+				# id of dof's kinematic tree               (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=754)
+				#PlaceHolder (not a comment): CStructField(line_num=754) int*      dof_Madr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=754)
+				# dof address in M-diagonal                (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=755)
+				#PlaceHolder (not a comment): CStructField(line_num=755) int*      dof_simplenum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=755)
+				# number of consecutive simple dofs        (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=756)
+				#PlaceHolder (not a comment): CStructField(line_num=756) mjtNum*   dof_solref ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=756)
+				# constraint solver reference:frictionloss (nv x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=757)
+				#PlaceHolder (not a comment): CStructField(line_num=757) mjtNum*   dof_solimp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=757)
+				# constraint solver impedance:frictionloss (nv x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=758)
+				#PlaceHolder (not a comment): CStructField(line_num=758) mjtNum*   dof_frictionloss ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=758)
+				# dof friction loss                        (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=759)
+				#PlaceHolder (not a comment): CStructField(line_num=759) mjtNum*   dof_armature ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=759)
+				# dof armature inertia/mass                (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=760)
+				#PlaceHolder (not a comment): CStructField(line_num=760) mjtNum*   dof_damping ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=760)
+				# damping coefficient                      (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=761)
+				#PlaceHolder (not a comment): CStructField(line_num=761) mjtNum*   dof_invweight0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=761)
+				# diag. inverse inertia in qpos0           (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=762)
+				#PlaceHolder (not a comment): CStructField(line_num=762) mjtNum*   dof_M0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=762)
+				# diag. inertia in qpos0                   (nv x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=763)
+				#PlaceHolder (not a comment): BlankSpace(line_num=764)
+				# geoms 
+				#PlaceHolder (not a comment): BlankSpace(line_num=765)
+				#PlaceHolder (not a comment): CStructField(line_num=765) int*      geom_type ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=765)
+				# geometric type (mjtGeom)                 (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=766)
+				#PlaceHolder (not a comment): CStructField(line_num=766) int*      geom_contype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=766)
+				# geom contact type                        (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=767)
+				#PlaceHolder (not a comment): CStructField(line_num=767) int*      geom_conaffinity ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=767)
+				# geom contact affinity                    (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=768)
+				#PlaceHolder (not a comment): CStructField(line_num=768) int*      geom_condim ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=768)
+				# contact dimensionality (1, 3, 4, 6)      (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=769)
+				#PlaceHolder (not a comment): CStructField(line_num=769) int*      geom_bodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=769)
+				# id of geom's body                        (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=770)
+				#PlaceHolder (not a comment): CStructField(line_num=770) int*      geom_dataid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=770)
+				# id of geom's mesh/hfield ;  -1: none       (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=771)
+				#PlaceHolder (not a comment): CStructField(line_num=771) int*      geom_matid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=771)
+				# material id for rendering ;  -1: none      (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=772)
+				#PlaceHolder (not a comment): CStructField(line_num=772) int*      geom_group ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=772)
+				# group for visibility                     (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=773)
+				#PlaceHolder (not a comment): CStructField(line_num=773) int*      geom_priority ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=773)
+				# geom contact priority                    (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=774)
+				#PlaceHolder (not a comment): CStructField(line_num=774) int*      geom_plugin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=774)
+				# plugin instance id ;  -1: not in use       (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=775)
+				#PlaceHolder (not a comment): CStructField(line_num=775) mjtByte*  geom_sameframe ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=775)
+				# same frame as body (mjtSameframe)        (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=776)
+				#PlaceHolder (not a comment): CStructField(line_num=776) mjtNum*   geom_solmix ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=776)
+				# mixing coef for solref/imp in geom pair  (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=777)
+				#PlaceHolder (not a comment): CStructField(line_num=777) mjtNum*   geom_solref ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=777)
+				# constraint solver reference: contact     (ngeom x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=778)
+				#PlaceHolder (not a comment): CStructField(line_num=778) mjtNum*   geom_solimp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=778)
+				# constraint solver impedance: contact     (ngeom x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=779)
+				#PlaceHolder (not a comment): CStructField(line_num=779) mjtNum*   geom_size ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=779)
+				# geom-specific size parameters            (ngeom x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=780)
+				#PlaceHolder (not a comment): CStructField(line_num=780) mjtNum*   geom_aabb ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=780)
+				# bounding box, (center, size)             (ngeom x 6) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=781)
+				#PlaceHolder (not a comment): CStructField(line_num=781) mjtNum*   geom_rbound ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=781)
+				# radius of bounding sphere                (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=782)
+				#PlaceHolder (not a comment): CStructField(line_num=782) mjtNum*   geom_pos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=782)
+				# local position offset rel. to body       (ngeom x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=783)
+				#PlaceHolder (not a comment): CStructField(line_num=783) mjtNum*   geom_quat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=783)
+				# local orientation offset rel. to body    (ngeom x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=784)
+				#PlaceHolder (not a comment): CStructField(line_num=784) mjtNum*   geom_friction ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=784)
+				# friction for (slide, spin, roll)         (ngeom x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=785)
+				#PlaceHolder (not a comment): CStructField(line_num=785) mjtNum*   geom_margin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=785)
+				# detect contact if dist<margin            (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=786)
+				#PlaceHolder (not a comment): CStructField(line_num=786) mjtNum*   geom_gap ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=786)
+				# include in solver if dist<margin-gap     (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=787)
+				#PlaceHolder (not a comment): CStructField(line_num=787) mjtNum*   geom_fluid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=787)
+				# fluid interaction parameters             (ngeom x mjNFLUID) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=788)
+				#PlaceHolder (not a comment): CStructField(line_num=788) mjtNum*   geom_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=788)
+				# user data                                (ngeom x nuser_geom) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=789)
+				#PlaceHolder (not a comment): CStructField(line_num=789) float*    geom_rgba ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=789)
+				# rgba when material is omitted            (ngeom x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=790)
+				#PlaceHolder (not a comment): BlankSpace(line_num=791)
+				# sites 
+				#PlaceHolder (not a comment): BlankSpace(line_num=792)
+				#PlaceHolder (not a comment): CStructField(line_num=792) int*      site_type ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=792)
+				# geom type for rendering (mjtGeom)        (nsite x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=793)
+				#PlaceHolder (not a comment): CStructField(line_num=793) int*      site_bodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=793)
+				# id of site's body                        (nsite x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=794)
+				#PlaceHolder (not a comment): CStructField(line_num=794) int*      site_matid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=794)
+				# material id for rendering ;  -1: none      (nsite x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=795)
+				#PlaceHolder (not a comment): CStructField(line_num=795) int*      site_group ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=795)
+				# group for visibility                     (nsite x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=796)
+				#PlaceHolder (not a comment): CStructField(line_num=796) mjtByte*  site_sameframe ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=796)
+				# same frame as body (mjtSameframe)        (nsite x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=797)
+				#PlaceHolder (not a comment): CStructField(line_num=797) mjtNum*   site_size ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=797)
+				# geom size for rendering                  (nsite x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=798)
+				#PlaceHolder (not a comment): CStructField(line_num=798) mjtNum*   site_pos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=798)
+				# local position offset rel. to body       (nsite x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=799)
+				#PlaceHolder (not a comment): CStructField(line_num=799) mjtNum*   site_quat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=799)
+				# local orientation offset rel. to body    (nsite x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=800)
+				#PlaceHolder (not a comment): CStructField(line_num=800) mjtNum*   site_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=800)
+				# user data                                (nsite x nuser_site) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=801)
+				#PlaceHolder (not a comment): CStructField(line_num=801) float*    site_rgba ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=801)
+				# rgba when material is omitted            (nsite x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=802)
+				#PlaceHolder (not a comment): BlankSpace(line_num=803)
+				# cameras 
+				#PlaceHolder (not a comment): BlankSpace(line_num=804)
+				#PlaceHolder (not a comment): CStructField(line_num=804) int*      cam_mode ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=804)
+				# camera tracking mode (mjtCamLight)       (ncam x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=805)
+				#PlaceHolder (not a comment): CStructField(line_num=805) int*      cam_bodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=805)
+				# id of camera's body                      (ncam x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=806)
+				#PlaceHolder (not a comment): CStructField(line_num=806) int*      cam_targetbodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=806)
+				# id of targeted body ;  -1: none            (ncam x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=807)
+				#PlaceHolder (not a comment): CStructField(line_num=807) mjtNum*   cam_pos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=807)
+				# position rel. to body frame              (ncam x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=808)
+				#PlaceHolder (not a comment): CStructField(line_num=808) mjtNum*   cam_quat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=808)
+				# orientation rel. to body frame           (ncam x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=809)
+				#PlaceHolder (not a comment): CStructField(line_num=809) mjtNum*   cam_poscom0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=809)
+				# global position rel. to sub-com in qpos0 (ncam x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=810)
+				#PlaceHolder (not a comment): CStructField(line_num=810) mjtNum*   cam_pos0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=810)
+				# global position rel. to body in qpos0    (ncam x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=811)
+				#PlaceHolder (not a comment): CStructField(line_num=811) mjtNum*   cam_mat0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=811)
+				# global orientation in qpos0              (ncam x 9) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=812)
+				#PlaceHolder (not a comment): CStructField(line_num=812) int*      cam_orthographic ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=812)
+				# orthographic camera ;  0: no, 1: yes       (ncam x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=813)
+				#PlaceHolder (not a comment): CStructField(line_num=813) mjtNum*   cam_fovy ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=813)
+				# y field-of-view (ortho ? len : deg)      (ncam x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=814)
+				#PlaceHolder (not a comment): CStructField(line_num=814) mjtNum*   cam_ipd ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=814)
+				# inter-pupilary distance                  (ncam x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=815)
+				#PlaceHolder (not a comment): CStructField(line_num=815) int*      cam_resolution ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=815)
+				# resolution: pixels [width, height]       (ncam x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=816)
+				#PlaceHolder (not a comment): CStructField(line_num=816) float*    cam_sensorsize ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=816)
+				# sensor size: length [width, height]      (ncam x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=817)
+				#PlaceHolder (not a comment): CStructField(line_num=817) float*    cam_intrinsic ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=817)
+				# [focal length ;  principal point]          (ncam x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=818)
+				#PlaceHolder (not a comment): CStructField(line_num=818) mjtNum*   cam_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=818)
+				# user data                                (ncam x nuser_cam) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=819)
+				#PlaceHolder (not a comment): BlankSpace(line_num=820)
+				# lights 
+				#PlaceHolder (not a comment): BlankSpace(line_num=821)
+				#PlaceHolder (not a comment): CStructField(line_num=821) int*      light_mode ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=821)
+				# light tracking mode (mjtCamLight)        (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=822)
+				#PlaceHolder (not a comment): CStructField(line_num=822) int*      light_bodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=822)
+				# id of light's body                       (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=823)
+				#PlaceHolder (not a comment): CStructField(line_num=823) int*      light_targetbodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=823)
+				# id of targeted body ;  -1: none            (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=824)
+				#PlaceHolder (not a comment): CStructField(line_num=824) mjtByte*  light_directional ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=824)
+				# directional light                        (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=825)
+				#PlaceHolder (not a comment): CStructField(line_num=825) mjtByte*  light_castshadow ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=825)
+				# does light cast shadows                  (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=826)
+				#PlaceHolder (not a comment): CStructField(line_num=826) float*    light_bulbradius ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=826)
+				# light radius for soft shadows            (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=827)
+				#PlaceHolder (not a comment): CStructField(line_num=827) mjtByte*  light_active ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=827)
+				# is light on                              (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=828)
+				#PlaceHolder (not a comment): CStructField(line_num=828) mjtNum*   light_pos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=828)
+				# position rel. to body frame              (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=829)
+				#PlaceHolder (not a comment): CStructField(line_num=829) mjtNum*   light_dir ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=829)
+				# direction rel. to body frame             (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=830)
+				#PlaceHolder (not a comment): CStructField(line_num=830) mjtNum*   light_poscom0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=830)
+				# global position rel. to sub-com in qpos0 (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=831)
+				#PlaceHolder (not a comment): CStructField(line_num=831) mjtNum*   light_pos0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=831)
+				# global position rel. to body in qpos0    (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=832)
+				#PlaceHolder (not a comment): CStructField(line_num=832) mjtNum*   light_dir0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=832)
+				# global direction in qpos0                (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=833)
+				#PlaceHolder (not a comment): CStructField(line_num=833) float*    light_attenuation ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=833)
+				# OpenGL attenuation (quadratic model)     (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=834)
+				#PlaceHolder (not a comment): CStructField(line_num=834) float*    light_cutoff ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=834)
+				# OpenGL cutoff                            (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=835)
+				#PlaceHolder (not a comment): CStructField(line_num=835) float*    light_exponent ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=835)
+				# OpenGL exponent                          (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=836)
+				#PlaceHolder (not a comment): CStructField(line_num=836) float*    light_ambient ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=836)
+				# ambient rgb (alpha=1)                    (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=837)
+				#PlaceHolder (not a comment): CStructField(line_num=837) float*    light_diffuse ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=837)
+				# diffuse rgb (alpha=1)                    (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=838)
+				#PlaceHolder (not a comment): CStructField(line_num=838) float*    light_specular ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=838)
+				# specular rgb (alpha=1)                   (nlight x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=839)
+				#PlaceHolder (not a comment): BlankSpace(line_num=840)
+				# flexes: contact properties 
+				#PlaceHolder (not a comment): BlankSpace(line_num=841)
+				#PlaceHolder (not a comment): CStructField(line_num=841) int*      flex_contype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=841)
+				# flex contact type                        (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=842)
+				#PlaceHolder (not a comment): CStructField(line_num=842) int*      flex_conaffinity ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=842)
+				# flex contact affinity                    (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=843)
+				#PlaceHolder (not a comment): CStructField(line_num=843) int*      flex_condim ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=843)
+				# contact dimensionality (1, 3, 4, 6)      (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=844)
+				#PlaceHolder (not a comment): CStructField(line_num=844) int*      flex_priority ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=844)
+				# flex contact priority                    (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=845)
+				#PlaceHolder (not a comment): CStructField(line_num=845) mjtNum*   flex_solmix ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=845)
+				# mix coef for solref/imp in contact pair  (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=846)
+				#PlaceHolder (not a comment): CStructField(line_num=846) mjtNum*   flex_solref ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=846)
+				# constraint solver reference: contact     (nflex x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=847)
+				#PlaceHolder (not a comment): CStructField(line_num=847) mjtNum*   flex_solimp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=847)
+				# constraint solver impedance: contact     (nflex x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=848)
+				#PlaceHolder (not a comment): CStructField(line_num=848) mjtNum*   flex_friction ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=848)
+				# friction for (slide, spin, roll)         (nflex x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=849)
+				#PlaceHolder (not a comment): CStructField(line_num=849) mjtNum*   flex_margin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=849)
+				# detect contact if dist<margin            (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=850)
+				#PlaceHolder (not a comment): CStructField(line_num=850) mjtNum*   flex_gap ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=850)
+				# include in solver if dist<margin-gap     (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=851)
+				#PlaceHolder (not a comment): CStructField(line_num=851) mjtByte*  flex_internal ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=851)
+				# internal flex collision enabled          (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=852)
+				#PlaceHolder (not a comment): CStructField(line_num=852) int*      flex_selfcollide ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=852)
+				# self collision mode (mjtFlexSelf)        (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=853)
+				#PlaceHolder (not a comment): CStructField(line_num=853) int*      flex_activelayers ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=853)
+				# number of active element layers, 3D only (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=854)
+				#PlaceHolder (not a comment): BlankSpace(line_num=855)
+				# flexes: other properties 
+				#PlaceHolder (not a comment): BlankSpace(line_num=856)
+				#PlaceHolder (not a comment): CStructField(line_num=856) int*      flex_dim ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=856)
+				# 1: lines, 2: triangles, 3: tetrahedra    (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=857)
+				#PlaceHolder (not a comment): CStructField(line_num=857) int*      flex_matid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=857)
+				# material id for rendering                (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=858)
+				#PlaceHolder (not a comment): CStructField(line_num=858) int*      flex_group ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=858)
+				# group for visibility                     (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=859)
+				#PlaceHolder (not a comment): CStructField(line_num=859) int*      flex_vertadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=859)
+				# first vertex address                     (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=860)
+				#PlaceHolder (not a comment): CStructField(line_num=860) int*      flex_vertnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=860)
+				# number of vertices                       (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=861)
+				#PlaceHolder (not a comment): CStructField(line_num=861) int*      flex_edgeadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=861)
+				# first edge address                       (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=862)
+				#PlaceHolder (not a comment): CStructField(line_num=862) int*      flex_edgenum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=862)
+				# number of edges                          (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=863)
+				#PlaceHolder (not a comment): CStructField(line_num=863) int*      flex_elemadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=863)
+				# first element address                    (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=864)
+				#PlaceHolder (not a comment): CStructField(line_num=864) int*      flex_elemnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=864)
+				# number of elements                       (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=865)
+				#PlaceHolder (not a comment): CStructField(line_num=865) int*      flex_elemdataadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=865)
+				# first element vertex id address          (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=866)
+				#PlaceHolder (not a comment): CStructField(line_num=866) int*      flex_elemedgeadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=866)
+				# first element edge id address            (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=867)
+				#PlaceHolder (not a comment): CStructField(line_num=867) int*      flex_shellnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=867)
+				# number of shells                         (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=868)
+				#PlaceHolder (not a comment): CStructField(line_num=868) int*      flex_shelldataadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=868)
+				# first shell data address                 (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=869)
+				#PlaceHolder (not a comment): CStructField(line_num=869) int*      flex_evpairadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=869)
+				# first evpair address                     (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=870)
+				#PlaceHolder (not a comment): CStructField(line_num=870) int*      flex_evpairnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=870)
+				# number of evpairs                        (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=871)
+				#PlaceHolder (not a comment): CStructField(line_num=871) int*      flex_texcoordadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=871)
+				# address in flex_texcoord ;  -1: none       (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=872)
+				#PlaceHolder (not a comment): CStructField(line_num=872) int*      flex_vertbodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=872)
+				# vertex body ids                          (nflexvert x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=873)
+				#PlaceHolder (not a comment): CStructField(line_num=873) int*      flex_edge ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=873)
+				# edge vertex ids (2 per edge)             (nflexedge x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=874)
+				#PlaceHolder (not a comment): CStructField(line_num=874) int*      flex_elem ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=874)
+				# element vertex ids (dim+1 per elem)      (nflexelemdata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=875)
+				#PlaceHolder (not a comment): CStructField(line_num=875) int*      flex_elemedge ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=875)
+				# element edge ids                         (nflexelemedge x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=876)
+				#PlaceHolder (not a comment): CStructField(line_num=876) int*      flex_elemlayer ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=876)
+				# element distance from surface, 3D only   (nflexelem x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=877)
+				#PlaceHolder (not a comment): CStructField(line_num=877) int*      flex_shell ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=877)
+				# shell fragment vertex ids (dim per frag) (nflexshelldata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=878)
+				#PlaceHolder (not a comment): CStructField(line_num=878) int*      flex_evpair ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=878)
+				# (element, vertex) collision pairs        (nflexevpair x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=879)
+				#PlaceHolder (not a comment): CStructField(line_num=879) mjtNum*   flex_vert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=879)
+				# vertex positions in local body frames    (nflexvert x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=880)
+				#PlaceHolder (not a comment): CStructField(line_num=880) mjtNum*   flex_xvert0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=880)
+				# Cartesian vertex positions in qpos0      (nflexvert x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=881)
+				#PlaceHolder (not a comment): CStructField(line_num=881) mjtNum*   flexedge_length0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=881)
+				# edge lengths in qpos0                    (nflexedge x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=882)
+				#PlaceHolder (not a comment): CStructField(line_num=882) mjtNum*   flexedge_invweight0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=882)
+				# edge inv. weight in qpos0                (nflexedge x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=883)
+				#PlaceHolder (not a comment): CStructField(line_num=883) mjtNum*   flex_radius ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=883)
+				# radius around primitive element          (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=884)
+				#PlaceHolder (not a comment): CStructField(line_num=884) mjtNum*   flex_stiffness ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=884)
+				# finite element stiffness matrix          (nflexelem x 21) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=885)
+				#PlaceHolder (not a comment): CStructField(line_num=885) mjtNum*   flex_damping ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=885)
+				# Rayleigh's damping coefficient           (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=886)
+				#PlaceHolder (not a comment): CStructField(line_num=886) mjtNum*   flex_edgestiffness ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=886)
+				# edge stiffness                           (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=887)
+				#PlaceHolder (not a comment): CStructField(line_num=887) mjtNum*   flex_edgedamping ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=887)
+				# edge damping                             (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=888)
+				#PlaceHolder (not a comment): CStructField(line_num=888) mjtByte*  flex_edgeequality ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=888)
+				# is edge equality constraint defined      (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=889)
+				#PlaceHolder (not a comment): CStructField(line_num=889) mjtByte*  flex_rigid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=889)
+				# are all verices in the same body         (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=890)
+				#PlaceHolder (not a comment): CStructField(line_num=890) mjtByte*  flexedge_rigid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=890)
+				# are both edge vertices in same body      (nflexedge x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=891)
+				#PlaceHolder (not a comment): CStructField(line_num=891) mjtByte*  flex_centered ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=891)
+				# are all vertex coordinates (0,0,0)       (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=892)
+				#PlaceHolder (not a comment): CStructField(line_num=892) mjtByte*  flex_flatskin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=892)
+				# render flex skin with flat shading       (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=893)
+				#PlaceHolder (not a comment): CStructField(line_num=893) int*      flex_bvhadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=893)
+				# address of bvh root ;  -1: no bvh          (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=894)
+				#PlaceHolder (not a comment): CStructField(line_num=894) int*      flex_bvhnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=894)
+				# number of bounding volumes               (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=895)
+				#PlaceHolder (not a comment): CStructField(line_num=895) float*    flex_rgba ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=895)
+				# rgba when material is omitted            (nflex x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=896)
+				#PlaceHolder (not a comment): CStructField(line_num=896) float*    flex_texcoord ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=896)
+				# vertex texture coordinates               (nflextexcoord x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=897)
+				#PlaceHolder (not a comment): BlankSpace(line_num=898)
+				# meshes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=899)
+				#PlaceHolder (not a comment): CStructField(line_num=899) int*      mesh_vertadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=899)
+				# first vertex address                     (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=900)
+				#PlaceHolder (not a comment): CStructField(line_num=900) int*      mesh_vertnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=900)
+				# number of vertices                       (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=901)
+				#PlaceHolder (not a comment): CStructField(line_num=901) int*      mesh_faceadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=901)
+				# first face address                       (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=902)
+				#PlaceHolder (not a comment): CStructField(line_num=902) int*      mesh_facenum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=902)
+				# number of faces                          (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=903)
+				#PlaceHolder (not a comment): CStructField(line_num=903) int*      mesh_bvhadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=903)
+				# address of bvh root                      (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=904)
+				#PlaceHolder (not a comment): CStructField(line_num=904) int*      mesh_bvhnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=904)
+				# number of bvh                            (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=905)
+				#PlaceHolder (not a comment): CStructField(line_num=905) int*      mesh_normaladr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=905)
+				# first normal address                     (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=906)
+				#PlaceHolder (not a comment): CStructField(line_num=906) int*      mesh_normalnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=906)
+				# number of normals                        (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=907)
+				#PlaceHolder (not a comment): CStructField(line_num=907) int*      mesh_texcoordadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=907)
+				# texcoord data address ;  -1: no texcoord   (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=908)
+				#PlaceHolder (not a comment): CStructField(line_num=908) int*      mesh_texcoordnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=908)
+				# number of texcoord                       (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=909)
+				#PlaceHolder (not a comment): CStructField(line_num=909) int*      mesh_graphadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=909)
+				# graph data address ;  -1: no graph         (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=910)
+				#PlaceHolder (not a comment): CStructField(line_num=910) float*    mesh_vert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=910)
+				# vertex positions for all meshes          (nmeshvert x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=911)
+				#PlaceHolder (not a comment): CStructField(line_num=911) float*    mesh_normal ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=911)
+				# normals for all meshes                   (nmeshnormal x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=912)
+				#PlaceHolder (not a comment): CStructField(line_num=912) float*    mesh_texcoord ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=912)
+				# vertex texcoords for all meshes          (nmeshtexcoord x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=913)
+				#PlaceHolder (not a comment): CStructField(line_num=913) int*      mesh_face ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=913)
+				# vertex face data                         (nmeshface x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=914)
+				#PlaceHolder (not a comment): CStructField(line_num=914) int*      mesh_facenormal ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=914)
+				# normal face data                         (nmeshface x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=915)
+				#PlaceHolder (not a comment): CStructField(line_num=915) int*      mesh_facetexcoord ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=915)
+				# texture face data                        (nmeshface x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=916)
+				#PlaceHolder (not a comment): CStructField(line_num=916) int*      mesh_graph ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=916)
+				# convex graph data                        (nmeshgraph x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=917)
+				#PlaceHolder (not a comment): CStructField(line_num=917) mjtNum*   mesh_scale ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=917)
+				# scaling applied to asset vertices        (nmesh x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=918)
+				#PlaceHolder (not a comment): CStructField(line_num=918) mjtNum*   mesh_pos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=918)
+				# translation applied to asset vertices    (nmesh x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=919)
+				#PlaceHolder (not a comment): CStructField(line_num=919) mjtNum*   mesh_quat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=919)
+				# rotation applied to asset vertices       (nmesh x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=920)
+				#PlaceHolder (not a comment): CStructField(line_num=920) int*      mesh_pathadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=920)
+				# address of asset path for mesh ;  -1: none (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=921)
+				#PlaceHolder (not a comment): BlankSpace(line_num=922)
+				# skins 
+				#PlaceHolder (not a comment): BlankSpace(line_num=923)
+				#PlaceHolder (not a comment): CStructField(line_num=923) int*      skin_matid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=923)
+				# skin material id ;  -1: none               (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=924)
+				#PlaceHolder (not a comment): CStructField(line_num=924) int*      skin_group ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=924)
+				# group for visibility                     (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=925)
+				#PlaceHolder (not a comment): CStructField(line_num=925) float*    skin_rgba ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=925)
+				# skin rgba                                (nskin x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=926)
+				#PlaceHolder (not a comment): CStructField(line_num=926) float*    skin_inflate ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=926)
+				# inflate skin in normal direction         (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=927)
+				#PlaceHolder (not a comment): CStructField(line_num=927) int*      skin_vertadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=927)
+				# first vertex address                     (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=928)
+				#PlaceHolder (not a comment): CStructField(line_num=928) int*      skin_vertnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=928)
+				# number of vertices                       (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=929)
+				#PlaceHolder (not a comment): CStructField(line_num=929) int*      skin_texcoordadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=929)
+				# texcoord data address ;  -1: no texcoord   (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=930)
+				#PlaceHolder (not a comment): CStructField(line_num=930) int*      skin_faceadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=930)
+				# first face address                       (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=931)
+				#PlaceHolder (not a comment): CStructField(line_num=931) int*      skin_facenum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=931)
+				# number of faces                          (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=932)
+				#PlaceHolder (not a comment): CStructField(line_num=932) int*      skin_boneadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=932)
+				# first bone in skin                       (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=933)
+				#PlaceHolder (not a comment): CStructField(line_num=933) int*      skin_bonenum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=933)
+				# number of bones in skin                  (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=934)
+				#PlaceHolder (not a comment): CStructField(line_num=934) float*    skin_vert ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=934)
+				# vertex positions for all skin meshes     (nskinvert x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=935)
+				#PlaceHolder (not a comment): CStructField(line_num=935) float*    skin_texcoord ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=935)
+				# vertex texcoords for all skin meshes     (nskintexvert x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=936)
+				#PlaceHolder (not a comment): CStructField(line_num=936) int*      skin_face ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=936)
+				# triangle faces for all skin meshes       (nskinface x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=937)
+				#PlaceHolder (not a comment): CStructField(line_num=937) int*      skin_bonevertadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=937)
+				# first vertex in each bone                (nskinbone x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=938)
+				#PlaceHolder (not a comment): CStructField(line_num=938) int*      skin_bonevertnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=938)
+				# number of vertices in each bone          (nskinbone x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=939)
+				#PlaceHolder (not a comment): CStructField(line_num=939) float*    skin_bonebindpos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=939)
+				# bind pos of each bone                    (nskinbone x 3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=940)
+				#PlaceHolder (not a comment): CStructField(line_num=940) float*    skin_bonebindquat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=940)
+				# bind quat of each bone                   (nskinbone x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=941)
+				#PlaceHolder (not a comment): CStructField(line_num=941) int*      skin_bonebodyid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=941)
+				# body id of each bone                     (nskinbone x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=942)
+				#PlaceHolder (not a comment): CStructField(line_num=942) int*      skin_bonevertid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=942)
+				# mesh ids of vertices in each bone        (nskinbonevert x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=943)
+				#PlaceHolder (not a comment): CStructField(line_num=943) float*    skin_bonevertweight ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=943)
+				# weights of vertices in each bone         (nskinbonevert x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=944)
+				#PlaceHolder (not a comment): CStructField(line_num=944) int*      skin_pathadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=944)
+				# address of asset path for skin ;  -1: none (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=945)
+				#PlaceHolder (not a comment): BlankSpace(line_num=946)
+				# height fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=947)
+				#PlaceHolder (not a comment): CStructField(line_num=947) mjtNum*   hfield_size ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=947)
+				# (x, y, z_top, z_bottom)                  (nhfield x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=948)
+				#PlaceHolder (not a comment): CStructField(line_num=948) int*      hfield_nrow ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=948)
+				# number of rows in grid                   (nhfield x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=949)
+				#PlaceHolder (not a comment): CStructField(line_num=949) int*      hfield_ncol ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=949)
+				# number of columns in grid                (nhfield x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=950)
+				#PlaceHolder (not a comment): CStructField(line_num=950) int*      hfield_adr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=950)
+				# address in hfield_data                   (nhfield x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=951)
+				#PlaceHolder (not a comment): CStructField(line_num=951) float*    hfield_data ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=951)
+				# elevation data                           (nhfielddata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=952)
+				#PlaceHolder (not a comment): CStructField(line_num=952) int*      hfield_pathadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=952)
+				# address of hfield asset path ;  -1: none   (nhfield x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=953)
+				#PlaceHolder (not a comment): BlankSpace(line_num=954)
+				# textures 
+				#PlaceHolder (not a comment): BlankSpace(line_num=955)
+				#PlaceHolder (not a comment): CStructField(line_num=955) int*      tex_type ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=955)
+				# texture type (mjtTexture)                (ntex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=956)
+				#PlaceHolder (not a comment): CStructField(line_num=956) int*      tex_height ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=956)
+				# number of rows in texture image          (ntex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=957)
+				#PlaceHolder (not a comment): CStructField(line_num=957) int*      tex_width ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=957)
+				# number of columns in texture image       (ntex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=958)
+				#PlaceHolder (not a comment): CStructField(line_num=958) int*      tex_nchannel ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=958)
+				# number of channels in texture image      (ntex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=959)
+				#PlaceHolder (not a comment): CStructField(line_num=959) int*      tex_adr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=959)
+				# start address in tex_data                (ntex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=960)
+				#PlaceHolder (not a comment): CStructField(line_num=960) mjtByte*  tex_data ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=960)
+				# pixel values                             (ntexdata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=961)
+				#PlaceHolder (not a comment): CStructField(line_num=961) int*      tex_pathadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=961)
+				# address of texture asset path ;  -1: none  (ntex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=962)
+				#PlaceHolder (not a comment): BlankSpace(line_num=963)
+				# materials 
+				#PlaceHolder (not a comment): BlankSpace(line_num=964)
+				#PlaceHolder (not a comment): CStructField(line_num=964) int*      mat_texid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=964)
+				# indices of textures ;  -1: none            (nmat x mjNTEXROLE) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=965)
+				#PlaceHolder (not a comment): CStructField(line_num=965) mjtByte*  mat_texuniform ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=965)
+				# make texture cube uniform                (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=966)
+				#PlaceHolder (not a comment): CStructField(line_num=966) float*    mat_texrepeat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=966)
+				# texture repetition for 2d mapping        (nmat x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=967)
+				#PlaceHolder (not a comment): CStructField(line_num=967) float*    mat_emission ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=967)
+				# emission (x rgb)                         (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=968)
+				#PlaceHolder (not a comment): CStructField(line_num=968) float*    mat_specular ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=968)
+				# specular (x white)                       (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=969)
+				#PlaceHolder (not a comment): CStructField(line_num=969) float*    mat_shininess ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=969)
+				# shininess coef                           (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=970)
+				#PlaceHolder (not a comment): CStructField(line_num=970) float*    mat_reflectance ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=970)
+				# reflectance (0: disable)                 (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=971)
+				#PlaceHolder (not a comment): CStructField(line_num=971) float*    mat_metallic ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=971)
+				# metallic coef                            (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=972)
+				#PlaceHolder (not a comment): CStructField(line_num=972) float*    mat_roughness ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=972)
+				# roughness coef                           (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=973)
+				#PlaceHolder (not a comment): CStructField(line_num=973) float*    mat_rgba ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=973)
+				# rgba                                     (nmat x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=974)
+				#PlaceHolder (not a comment): BlankSpace(line_num=975)
+				# predefined geom pairs for collision detection ;  has precedence over exclude 
+				#PlaceHolder (not a comment): BlankSpace(line_num=976)
+				#PlaceHolder (not a comment): CStructField(line_num=976) int*      pair_dim ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=976)
+				# contact dimensionality                   (npair x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=977)
+				#PlaceHolder (not a comment): CStructField(line_num=977) int*      pair_geom1 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=977)
+				# id of geom1                              (npair x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=978)
+				#PlaceHolder (not a comment): CStructField(line_num=978) int*      pair_geom2 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=978)
+				# id of geom2                              (npair x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=979)
+				#PlaceHolder (not a comment): CStructField(line_num=979) int*      pair_signature ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=979)
+				# body1 << 16 + body2                      (npair x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=980)
+				#PlaceHolder (not a comment): CStructField(line_num=980) mjtNum*   pair_solref ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=980)
+				# solver reference: contact normal         (npair x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=981)
+				#PlaceHolder (not a comment): CStructField(line_num=981) mjtNum*   pair_solreffriction ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=981)
+				# solver reference: contact friction       (npair x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=982)
+				#PlaceHolder (not a comment): CStructField(line_num=982) mjtNum*   pair_solimp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=982)
+				# solver impedance: contact                (npair x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=983)
+				#PlaceHolder (not a comment): CStructField(line_num=983) mjtNum*   pair_margin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=983)
+				# detect contact if dist<margin            (npair x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=984)
+				#PlaceHolder (not a comment): CStructField(line_num=984) mjtNum*   pair_gap ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=984)
+				# include in solver if dist<margin-gap     (npair x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=985)
+				#PlaceHolder (not a comment): CStructField(line_num=985) mjtNum*   pair_friction ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=985)
+				# tangent1, 2, spin, roll1, 2              (npair x 5) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=986)
+				#PlaceHolder (not a comment): BlankSpace(line_num=987)
+				# excluded body pairs for collision detection 
+				#PlaceHolder (not a comment): BlankSpace(line_num=988)
+				#PlaceHolder (not a comment): CStructField(line_num=988) int*      exclude_signature ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=988)
+				# body1 << 16 + body2                      (nexclude x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=989)
+				#PlaceHolder (not a comment): BlankSpace(line_num=990)
+				# equality constraints 
+				#PlaceHolder (not a comment): BlankSpace(line_num=991)
+				#PlaceHolder (not a comment): CStructField(line_num=991) int*      eq_type ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=991)
+				# constraint type (mjtEq)                  (neq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=992)
+				#PlaceHolder (not a comment): CStructField(line_num=992) int*      eq_obj1id ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=992)
+				# id of object 1                           (neq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=993)
+				#PlaceHolder (not a comment): CStructField(line_num=993) int*      eq_obj2id ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=993)
+				# id of object 2                           (neq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=994)
+				#PlaceHolder (not a comment): CStructField(line_num=994) int*      eq_objtype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=994)
+				# type of both objects (mjtObj)            (neq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=995)
+				#PlaceHolder (not a comment): CStructField(line_num=995) mjtByte*  eq_active0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=995)
+				# initial enable/disable constraint state  (neq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=996)
+				#PlaceHolder (not a comment): CStructField(line_num=996) mjtNum*   eq_solref ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=996)
+				# constraint solver reference              (neq x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=997)
+				#PlaceHolder (not a comment): CStructField(line_num=997) mjtNum*   eq_solimp ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=997)
+				# constraint solver impedance              (neq x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=998)
+				#PlaceHolder (not a comment): CStructField(line_num=998) mjtNum*   eq_data ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=998)
+				# numeric data for constraint              (neq x mjNEQDATA) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=999)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1000)
+				# tendons 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1001)
+				#PlaceHolder (not a comment): CStructField(line_num=1001) int*      tendon_adr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1001)
+				# address of first object in tendon's path (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1002)
+				#PlaceHolder (not a comment): CStructField(line_num=1002) int*      tendon_num ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1002)
+				# number of objects in tendon's path       (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1003)
+				#PlaceHolder (not a comment): CStructField(line_num=1003) int*      tendon_matid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1003)
+				# material id for rendering                (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1004)
+				#PlaceHolder (not a comment): CStructField(line_num=1004) int*      tendon_group ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1004)
+				# group for visibility                     (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1005)
+				#PlaceHolder (not a comment): CStructField(line_num=1005) mjtByte*  tendon_limited ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1005)
+				# does tendon have length limits           (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1006)
+				#PlaceHolder (not a comment): CStructField(line_num=1006) mjtNum*   tendon_width ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1006)
+				# width for rendering                      (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1007)
+				#PlaceHolder (not a comment): CStructField(line_num=1007) mjtNum*   tendon_solref_lim ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1007)
+				# constraint solver reference: limit       (ntendon x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1008)
+				#PlaceHolder (not a comment): CStructField(line_num=1008) mjtNum*   tendon_solimp_lim ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1008)
+				# constraint solver impedance: limit       (ntendon x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1009)
+				#PlaceHolder (not a comment): CStructField(line_num=1009) mjtNum*   tendon_solref_fri ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1009)
+				# constraint solver reference: friction    (ntendon x mjNREF) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1010)
+				#PlaceHolder (not a comment): CStructField(line_num=1010) mjtNum*   tendon_solimp_fri ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1010)
+				# constraint solver impedance: friction    (ntendon x mjNIMP) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1011)
+				#PlaceHolder (not a comment): CStructField(line_num=1011) mjtNum*   tendon_range ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1011)
+				# tendon length limits                     (ntendon x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1012)
+				#PlaceHolder (not a comment): CStructField(line_num=1012) mjtNum*   tendon_margin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1012)
+				# min distance for limit detection         (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1013)
+				#PlaceHolder (not a comment): CStructField(line_num=1013) mjtNum*   tendon_stiffness ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1013)
+				# stiffness coefficient                    (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1014)
+				#PlaceHolder (not a comment): CStructField(line_num=1014) mjtNum*   tendon_damping ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1014)
+				# damping coefficient                      (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1015)
+				#PlaceHolder (not a comment): CStructField(line_num=1015) mjtNum*   tendon_frictionloss ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1015)
+				# loss due to friction                     (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1016)
+				#PlaceHolder (not a comment): CStructField(line_num=1016) mjtNum*   tendon_lengthspring ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1016)
+				# spring resting length range              (ntendon x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1017)
+				#PlaceHolder (not a comment): CStructField(line_num=1017) mjtNum*   tendon_length0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1017)
+				# tendon length in qpos0                   (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1018)
+				#PlaceHolder (not a comment): CStructField(line_num=1018) mjtNum*   tendon_invweight0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1018)
+				# inv. weight in qpos0                     (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1019)
+				#PlaceHolder (not a comment): CStructField(line_num=1019) mjtNum*   tendon_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1019)
+				# user data                                (ntendon x nuser_tendon) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1020)
+				#PlaceHolder (not a comment): CStructField(line_num=1020) float*    tendon_rgba ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1020)
+				# rgba when material is omitted            (ntendon x 4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1021)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1022)
+				# list of all wrap objects in tendon paths 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1023)
+				#PlaceHolder (not a comment): CStructField(line_num=1023) int*      wrap_type ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1023)
+				# wrap object type (mjtWrap)               (nwrap x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1024)
+				#PlaceHolder (not a comment): CStructField(line_num=1024) int*      wrap_objid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1024)
+				# object id: geom, site, joint             (nwrap x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1025)
+				#PlaceHolder (not a comment): CStructField(line_num=1025) mjtNum*   wrap_prm ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1025)
+				# divisor, joint coef, or site id          (nwrap x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1026)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1027)
+				# actuators 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1028)
+				#PlaceHolder (not a comment): CStructField(line_num=1028) int*      actuator_trntype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1028)
+				# transmission type (mjtTrn)               (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1029)
+				#PlaceHolder (not a comment): CStructField(line_num=1029) int*      actuator_dyntype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1029)
+				# dynamics type (mjtDyn)                   (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1030)
+				#PlaceHolder (not a comment): CStructField(line_num=1030) int*      actuator_gaintype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1030)
+				# gain type (mjtGain)                      (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1031)
+				#PlaceHolder (not a comment): CStructField(line_num=1031) int*      actuator_biastype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1031)
+				# bias type (mjtBias)                      (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1032)
+				#PlaceHolder (not a comment): CStructField(line_num=1032) int*      actuator_trnid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1032)
+				# transmission id: joint, tendon, site     (nu x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1033)
+				#PlaceHolder (not a comment): CStructField(line_num=1033) int*      actuator_actadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1033)
+				# first activation address ;  -1: stateless  (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1034)
+				#PlaceHolder (not a comment): CStructField(line_num=1034) int*      actuator_actnum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1034)
+				# number of activation variables           (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1035)
+				#PlaceHolder (not a comment): CStructField(line_num=1035) int*      actuator_group ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1035)
+				# group for visibility                     (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1036)
+				#PlaceHolder (not a comment): CStructField(line_num=1036) mjtByte*  actuator_ctrllimited ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1036)
+				# is control limited                       (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1037)
+				#PlaceHolder (not a comment): CStructField(line_num=1037) mjtByte*  actuator_forcelimited ; 
+				# is force limited                         (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1038)
+				#PlaceHolder (not a comment): CStructField(line_num=1038) mjtByte*  actuator_actlimited ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1038)
+				# is activation limited                    (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1039)
+				#PlaceHolder (not a comment): CStructField(line_num=1039) mjtNum*   actuator_dynprm ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1039)
+				# dynamics parameters                      (nu x mjNDYN) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1040)
+				#PlaceHolder (not a comment): CStructField(line_num=1040) mjtNum*   actuator_gainprm ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1040)
+				# gain parameters                          (nu x mjNGAIN) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1041)
+				#PlaceHolder (not a comment): CStructField(line_num=1041) mjtNum*   actuator_biasprm ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1041)
+				# bias parameters                          (nu x mjNBIAS) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1042)
+				#PlaceHolder (not a comment): CStructField(line_num=1042) mjtByte*  actuator_actearly ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1042)
+				# step activation before force             (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1043)
+				#PlaceHolder (not a comment): CStructField(line_num=1043) mjtNum*   actuator_ctrlrange ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1043)
+				# range of controls                        (nu x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1044)
+				#PlaceHolder (not a comment): CStructField(line_num=1044) mjtNum*   actuator_forcerange ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1044)
+				# range of forces                          (nu x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1045)
+				#PlaceHolder (not a comment): CStructField(line_num=1045) mjtNum*   actuator_actrange ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1045)
+				# range of activations                     (nu x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1046)
+				#PlaceHolder (not a comment): CStructField(line_num=1046) mjtNum*   actuator_gear ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1046)
+				# scale length and transmitted force       (nu x 6) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1047)
+				#PlaceHolder (not a comment): CStructField(line_num=1047) mjtNum*   actuator_cranklength ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1047)
+				# crank length for slider-crank            (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1048)
+				#PlaceHolder (not a comment): CStructField(line_num=1048) mjtNum*   actuator_acc0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1048)
+				# acceleration from unit force in qpos0    (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1049)
+				#PlaceHolder (not a comment): CStructField(line_num=1049) mjtNum*   actuator_length0 ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1049)
+				# actuator length in qpos0                 (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1050)
+				#PlaceHolder (not a comment): CStructField(line_num=1050) mjtNum*   actuator_lengthrange ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1050)
+				# feasible actuator length range           (nu x 2) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1051)
+				#PlaceHolder (not a comment): CStructField(line_num=1051) mjtNum*   actuator_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1051)
+				# user data                                (nu x nuser_actuator) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1052)
+				#PlaceHolder (not a comment): CStructField(line_num=1052) int*      actuator_plugin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1052)
+				# plugin instance id ;  -1: not a plugin     (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1053)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1054)
+				# sensors 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1055)
+				#PlaceHolder (not a comment): CStructField(line_num=1055) int*      sensor_type ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1055)
+				# sensor type (mjtSensor)                  (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1056)
+				#PlaceHolder (not a comment): CStructField(line_num=1056) int*      sensor_datatype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1056)
+				# numeric data type (mjtDataType)          (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1057)
+				#PlaceHolder (not a comment): CStructField(line_num=1057) int*      sensor_needstage ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1057)
+				# required compute stage (mjtStage)        (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1058)
+				#PlaceHolder (not a comment): CStructField(line_num=1058) int*      sensor_objtype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1058)
+				# type of sensorized object (mjtObj)       (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1059)
+				#PlaceHolder (not a comment): CStructField(line_num=1059) int*      sensor_objid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1059)
+				# id of sensorized object                  (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1060)
+				#PlaceHolder (not a comment): CStructField(line_num=1060) int*      sensor_reftype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1060)
+				# type of reference frame (mjtObj)         (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1061)
+				#PlaceHolder (not a comment): CStructField(line_num=1061) int*      sensor_refid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1061)
+				# id of reference frame ;  -1: global frame  (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1062)
+				#PlaceHolder (not a comment): CStructField(line_num=1062) int*      sensor_dim ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1062)
+				# number of scalar outputs                 (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1063)
+				#PlaceHolder (not a comment): CStructField(line_num=1063) int*      sensor_adr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1063)
+				# address in sensor array                  (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1064)
+				#PlaceHolder (not a comment): CStructField(line_num=1064) mjtNum*   sensor_cutoff ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1064)
+				# cutoff for real and positive ;  0: ignore  (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1065)
+				#PlaceHolder (not a comment): CStructField(line_num=1065) mjtNum*   sensor_noise ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1065)
+				# noise standard deviation                 (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1066)
+				#PlaceHolder (not a comment): CStructField(line_num=1066) mjtNum*   sensor_user ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1066)
+				# user data                                (nsensor x nuser_sensor) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1067)
+				#PlaceHolder (not a comment): CStructField(line_num=1067) int*      sensor_plugin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1067)
+				# plugin instance id ;  -1: not a plugin     (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1068)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1069)
+				# plugin instances 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1070)
+				#PlaceHolder (not a comment): CStructField(line_num=1070) int*      plugin ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1070)
+				# globally registered plugin slot number   (nplugin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1071)
+				#PlaceHolder (not a comment): CStructField(line_num=1071) int*      plugin_stateadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1071)
+				# address in the plugin state array        (nplugin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1072)
+				#PlaceHolder (not a comment): CStructField(line_num=1072) int*      plugin_statenum ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1072)
+				# number of states in the plugin instance  (nplugin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1073)
+				#PlaceHolder (not a comment): CStructField(line_num=1073) char*     plugin_attr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1073)
+				# config attributes of plugin instances    (npluginattr x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1074)
+				#PlaceHolder (not a comment): CStructField(line_num=1074) int*      plugin_attradr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1074)
+				# address to each instance's config attrib (nplugin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1075)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1076)
+				# custom numeric fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1077)
+				#PlaceHolder (not a comment): CStructField(line_num=1077) int*      numeric_adr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1077)
+				# address of field in numeric_data         (nnumeric x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1078)
+				#PlaceHolder (not a comment): CStructField(line_num=1078) int*      numeric_size ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1078)
+				# size of numeric field                    (nnumeric x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1079)
+				#PlaceHolder (not a comment): CStructField(line_num=1079) mjtNum*   numeric_data ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1079)
+				# array of all numeric fields              (nnumericdata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1080)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1081)
+				# custom text fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1082)
+				#PlaceHolder (not a comment): CStructField(line_num=1082) int*      text_adr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1082)
+				# address of text in text_data             (ntext x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1083)
+				#PlaceHolder (not a comment): CStructField(line_num=1083) int*      text_size ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1083)
+				# size of text field (strlen+1)            (ntext x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1084)
+				#PlaceHolder (not a comment): CStructField(line_num=1084) char*     text_data ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1084)
+				# array of all text fields (0-terminated)  (ntextdata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1085)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1086)
+				# custom tuple fields 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1087)
+				#PlaceHolder (not a comment): CStructField(line_num=1087) int*      tuple_adr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1087)
+				# address of text in text_data             (ntuple x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1088)
+				#PlaceHolder (not a comment): CStructField(line_num=1088) int*      tuple_size ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1088)
+				# number of objects in tuple               (ntuple x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1089)
+				#PlaceHolder (not a comment): CStructField(line_num=1089) int*      tuple_objtype ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1089)
+				# array of object types in all tuples      (ntupledata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1090)
+				#PlaceHolder (not a comment): CStructField(line_num=1090) int*      tuple_objid ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1090)
+				# array of object ids in all tuples        (ntupledata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1091)
+				#PlaceHolder (not a comment): CStructField(line_num=1091) mjtNum*   tuple_objprm ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1091)
+				# array of object params in all tuples     (ntupledata x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1092)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1093)
+				# keyframes 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1094)
+				#PlaceHolder (not a comment): CStructField(line_num=1094) mjtNum*   key_time ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1094)
+				# key time                                 (nkey x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1095)
+				#PlaceHolder (not a comment): CStructField(line_num=1095) mjtNum*   key_qpos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1095)
+				# key position                             (nkey x nq) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1096)
+				#PlaceHolder (not a comment): CStructField(line_num=1096) mjtNum*   key_qvel ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1096)
+				# key velocity                             (nkey x nv) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1097)
+				#PlaceHolder (not a comment): CStructField(line_num=1097) mjtNum*   key_act ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1097)
+				# key activation                           (nkey x na) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1098)
+				#PlaceHolder (not a comment): CStructField(line_num=1098) mjtNum*   key_mpos ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1098)
+				# key mocap position                       (nkey x nmocap*3) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1099)
+				#PlaceHolder (not a comment): CStructField(line_num=1099) mjtNum*   key_mquat ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1099)
+				# key mocap quaternion                     (nkey x nmocap*4) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1100)
+				#PlaceHolder (not a comment): CStructField(line_num=1100) mjtNum*   key_ctrl ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1100)
+				# key control                              (nkey x nu) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1101)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1102)
+				# names 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1103)
+				#PlaceHolder (not a comment): CStructField(line_num=1103) int*      name_bodyadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1103)
+				# body name pointers                       (nbody x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1104)
+				#PlaceHolder (not a comment): CStructField(line_num=1104) int*      name_jntadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1104)
+				# joint name pointers                      (njnt x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1105)
+				#PlaceHolder (not a comment): CStructField(line_num=1105) int*      name_geomadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1105)
+				# geom name pointers                       (ngeom x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1106)
+				#PlaceHolder (not a comment): CStructField(line_num=1106) int*      name_siteadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1106)
+				# site name pointers                       (nsite x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1107)
+				#PlaceHolder (not a comment): CStructField(line_num=1107) int*      name_camadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1107)
+				# camera name pointers                     (ncam x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1108)
+				#PlaceHolder (not a comment): CStructField(line_num=1108) int*      name_lightadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1108)
+				# light name pointers                      (nlight x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1109)
+				#PlaceHolder (not a comment): CStructField(line_num=1109) int*      name_flexadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1109)
+				# flex name pointers                       (nflex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1110)
+				#PlaceHolder (not a comment): CStructField(line_num=1110) int*      name_meshadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1110)
+				# mesh name pointers                       (nmesh x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1111)
+				#PlaceHolder (not a comment): CStructField(line_num=1111) int*      name_skinadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1111)
+				# skin name pointers                       (nskin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1112)
+				#PlaceHolder (not a comment): CStructField(line_num=1112) int*      name_hfieldadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1112)
+				# hfield name pointers                     (nhfield x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1113)
+				#PlaceHolder (not a comment): CStructField(line_num=1113) int*      name_texadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1113)
+				# texture name pointers                    (ntex x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1114)
+				#PlaceHolder (not a comment): CStructField(line_num=1114) int*      name_matadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1114)
+				# material name pointers                   (nmat x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1115)
+				#PlaceHolder (not a comment): CStructField(line_num=1115) int*      name_pairadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1115)
+				# geom pair name pointers                  (npair x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1116)
+				#PlaceHolder (not a comment): CStructField(line_num=1116) int*      name_excludeadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1116)
+				# exclude name pointers                    (nexclude x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1117)
+				#PlaceHolder (not a comment): CStructField(line_num=1117) int*      name_eqadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1117)
+				# equality constraint name pointers        (neq x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1118)
+				#PlaceHolder (not a comment): CStructField(line_num=1118) int*      name_tendonadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1118)
+				# tendon name pointers                     (ntendon x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1119)
+				#PlaceHolder (not a comment): CStructField(line_num=1119) int*      name_actuatoradr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1119)
+				# actuator name pointers                   (nu x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1120)
+				#PlaceHolder (not a comment): CStructField(line_num=1120) int*      name_sensoradr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1120)
+				# sensor name pointers                     (nsensor x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1121)
+				#PlaceHolder (not a comment): CStructField(line_num=1121) int*      name_numericadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1121)
+				# numeric name pointers                    (nnumeric x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1122)
+				#PlaceHolder (not a comment): CStructField(line_num=1122) int*      name_textadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1122)
+				# text name pointers                       (ntext x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1123)
+				#PlaceHolder (not a comment): CStructField(line_num=1123) int*      name_tupleadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1123)
+				# tuple name pointers                      (ntuple x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1124)
+				#PlaceHolder (not a comment): CStructField(line_num=1124) int*      name_keyadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1124)
+				# keyframe name pointers                   (nkey x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1125)
+				#PlaceHolder (not a comment): CStructField(line_num=1125) int*      name_pluginadr ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1125)
+				# plugin instance name pointers            (nplugin x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1126)
+				#PlaceHolder (not a comment): CStructField(line_num=1126) char*     names ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1126)
+				# names of all objects, 0-terminated       (nnames x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1127)
+				#PlaceHolder (not a comment): CStructField(line_num=1127) int*      names_map ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1127)
+				# internal hash map of names               (nnames_map x 1) 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1128)
+				#PlaceHolder (not a comment): BlankSpace(line_num=1129)
+				# paths 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1130)
+				#PlaceHolder (not a comment): CStructField(line_num=1130) char*     paths ; 
+				#PlaceHolder (not a comment): BlankSpace(line_num=1130)
+				# paths to assets, 0-terminated            (npaths x 1) 
 			<AST-SPLIT>  } 
 		<AST-SPLIT>  ; 
-		PlaceHolder() for: BlankSpace(line_num=1131)
-		PlaceHolder() for: TypeDef(line_num=1132) typedef struct mjModel_ mjModel ; 
-		PlaceHolder() for: BlankSpace(line_num=1132)
-		PlaceHolder() for: BlankSpace(line_num=1133)
-	PlaceHolder() for: EndIf(line_num=1134) #endif
-	PlaceHolder() for: BlankSpace(line_num=1134)
-	SingleLineComment(line_num=1134) # MUJOCO_MJMODEL_H_ 
-	PlaceHolder() for: BlankSpace(line_num=1135)
+		#PlaceHolder (not a comment): BlankSpace(line_num=1131)
+		#PlaceHolder (not a comment): TypeDef(line_num=1132) typedef struct mjModel_ mjModel ; 
+		#PlaceHolder (not a comment): BlankSpace(line_num=1132)
+		#PlaceHolder (not a comment): BlankSpace(line_num=1133)
+	#PlaceHolder (not a comment): EndIf(line_num=1134) #endif
+	#PlaceHolder (not a comment): BlankSpace(line_num=1134)
+	# MUJOCO_MJMODEL_H_ 
+	#PlaceHolder (not a comment): BlankSpace(line_num=1135)

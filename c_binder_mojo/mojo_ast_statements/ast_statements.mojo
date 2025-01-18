@@ -21,6 +21,14 @@ fn to_string(read x:AstStatements) raises -> String:
     raise Error('to_string does not exist for input x!')
 
 
+fn to_toggle_string_just_code(mut x:AstStatements,string_just_code:Bool) raises -> None:
+    if x.isa[PlaceHolder]():        x[PlaceHolder].togggle_string_just_code(string_just_code)
+    elif x.isa[Root]():             x[Root].togggle_string_just_code(string_just_code)
+    elif x.isa[SingleLineComment](): x[SingleLineComment].togggle_string_just_code(string_just_code)
+    else:
+        raise Error('to_toggle_string_just_code does not exist for input:' + to_string(x))
+
+
 fn to_accept(read x:c_ast_statements.ast_statements.AstStatements) raises -> AstStatements:
     if Root.accept(x):
         return AstStatements(Root(x))

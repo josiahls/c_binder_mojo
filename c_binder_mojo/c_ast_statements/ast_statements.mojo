@@ -45,21 +45,21 @@ fn to_replace(read x:AstStatements, token_bundle: TokenBundle) -> AstStatements:
     return x
 
 fn to_string(read x:AstStatements) raises -> String:
-    if   x.isa[Root]():             return str(x[Root])
-    elif x.isa[SingleLineComment](): return str(x[SingleLineComment])
-    elif x.isa[MultiLineComment](): return str(x[MultiLineComment])
-    elif x.isa[IfNDef]():      return str(x[IfNDef])
-    elif x.isa[MacroElse]():      return str(x[MacroElse])
-    elif x.isa[EndIf]():      return str(x[EndIf])
-    elif x.isa[TypeDef]():      return str(x[TypeDef])
-    elif x.isa[Define]():      return str(x[Define])
-    elif x.isa[Scope]():      return str(x[Scope])
-    elif x.isa[Include]():      return str(x[Include])
-    elif x.isa[CStruct]():      return str(x[CStruct])
-    elif x.isa[CStructField]():      return str(x[CStructField])
-    elif x.isa[EnumField]():      return str(x[EnumField])
-    elif x.isa[BlankSpace]():      return str(x[BlankSpace])
-    elif x.isa[PlaceHolder]():      return str(x[PlaceHolder])
+    if   x.isa[Root]():             return String(x[Root])
+    elif x.isa[SingleLineComment](): return String(x[SingleLineComment])
+    elif x.isa[MultiLineComment](): return String(x[MultiLineComment])
+    elif x.isa[IfNDef]():      return String(x[IfNDef])
+    elif x.isa[MacroElse]():      return String(x[MacroElse])
+    elif x.isa[EndIf]():      return String(x[EndIf])
+    elif x.isa[TypeDef]():      return String(x[TypeDef])
+    elif x.isa[Define]():      return String(x[Define])
+    elif x.isa[Scope]():      return String(x[Scope])
+    elif x.isa[Include]():      return String(x[Include])
+    elif x.isa[CStruct]():      return String(x[CStruct])
+    elif x.isa[CStructField]():      return String(x[CStructField])
+    elif x.isa[EnumField]():      return String(x[EnumField])
+    elif x.isa[BlankSpace]():      return String(x[BlankSpace])
+    elif x.isa[PlaceHolder]():      return String(x[PlaceHolder])
 
     raise Error('to_string does not exist for input x!')
 
@@ -100,7 +100,7 @@ fn to_accumulate(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     elif x.isa[BlankSpace](): return x[BlankSpace].accumulate(token_bundle)
     elif x.isa[PlaceHolder]():      return x[PlaceHolder].accumulate(token_bundle)
 
-    raise Error('to_accumulate does not exist to handle line: ' + str(token_bundle))
+    raise Error('to_accumulate does not exist to handle line: ' + String(token_bundle))
 
 fn to_do_make_child(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bool:
     if   x.isa[Root]():      return x[Root].do_make_child(token_bundle)
@@ -119,7 +119,7 @@ fn to_do_make_child(mut x:AstStatements, token_bundle: TokenBundle) raises -> Bo
     elif x.isa[BlankSpace](): return x[BlankSpace].do_make_child(token_bundle)
     elif x.isa[PlaceHolder](): return x[PlaceHolder].do_make_child(token_bundle)
 
-    raise Error('to_do_make_child does not exist to handle line: ' + str(token_bundle))
+    raise Error('to_do_make_child does not exist to handle line: ' + String(token_bundle))
 
 fn to_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> AstStatements:
     """Creates a child statement.
@@ -161,4 +161,4 @@ fn to_make_child(x:AstStatements, token_bundle: TokenBundle) raises -> AstStatem
     elif PlaceHolder.accept(token_bundle): 
         return AstStatements(PlaceHolder(token_bundle)) 
     
-    raise Error('to_make_child does not exist to handle line: ' + str(token_bundle))
+    raise Error('to_make_child does not exist to handle line: ' + String(token_bundle))

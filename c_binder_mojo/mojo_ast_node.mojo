@@ -16,15 +16,15 @@ from c_binder_mojo.c_primitives import STRING_SPLIT_AT
 
 
 @value
-struct DisplayAstNode(CollectionElement):
+struct MojoAstNode(CollectionElement):
     """AstNode is a datastructure that represents the structure ofa C codebase.
 
     This node is part of a bidirectional acyclical graph.    
     """
     var parent: Int
     var children: List[Int]
-    var string:  String
-    var root: UnsafePointer[RootDisplayAstNode]
+    var ast_statement: AstStatements
+    var root: UnsafePointer[RootMojoAstNode]
 
     fn indents(self) -> Int:
         var indent = 0
@@ -34,37 +34,19 @@ struct DisplayAstNode(CollectionElement):
             indent += 1
         return indent
 
-    def __str__(self) -> String: 
-        var s = String("")
-        var indents = String("")
-        for _ in range(self.indents()):
-            indents += "\t"
-
-        var begin_end_s = self.string.split(STRING_SPLIT_AT)
-
-        s += indents + begin_end_s[0].replace('\n','\n' + indents)
-        for child in self.children:
-            s += "\n"
-            s += String(self.root[].nodes[child[]])
-
-        if len(begin_end_s) > 1:
-            s += "\n" 
-            s += indents + STRING_SPLIT_AT + " " + begin_end_s[1].replace('\n','\n' + indents)
-        return s
-
 @value
-struct RootDisplayAstNode(AnyType):
-    var nodes:List[DisplayAstNode]
+struct RootMojoAstNode(AnyType):
+    var nodes:List[MojoAstNode]
 
     fn __init__(mut self, read root:RootAstNode) raises:
-        self.nodes = List[DisplayAstNode]()
+        self.nodes = List[MojoAstNode]()
         self.update_nodes(-1, 0, root)
 
     fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootAstNode) raises:
         node = root.nodes[idx]
 
         self.nodes.append(
-            DisplayAstNode(
+            MojoAstNode(
                 parent_idx, 
                 List[Int](),
                 to_string(node.ast_statement),
@@ -86,5 +68,5 @@ struct RootDisplayAstNode(AnyType):
     def __str__(self) -> String: 
         idx = 0
         node = self.nodes[idx]
-        var s = String(node)
+        var s = 'hi' # String(node)
         return s

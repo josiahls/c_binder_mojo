@@ -55,7 +55,7 @@ struct MultiLineComment(AbstractAstStatement):
             if token_bundle[].line_num not in unique_nums:
                 unique_nums.append(token_bundle[].line_num)
         for n in unique_nums:
-            s += str(n[]) + ','
+            s += String(n[]) + ','
         s += ") \\ \n\t"
         var line_num = -1
         for token_bundle in self.token_bundles:

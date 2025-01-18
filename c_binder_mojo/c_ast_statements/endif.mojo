@@ -28,7 +28,7 @@ struct EndIf(AbstractAstStatement):
 
     fn __str__(self) -> String:
         var s:String = "EndIf("
-        s += "line_num=" + str(self.line_num())
+        s += "line_num=" + String(self.line_num())
         s += ") "
         s += self.token_bundle.token
         return s 

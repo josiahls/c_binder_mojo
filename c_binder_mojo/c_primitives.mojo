@@ -11,8 +11,8 @@ struct TokenBundle:
 
     fn __str__(self) -> String:
         return self.token \
-            + ' line_num=' + str(self.line_num) \
-            + ' col_num=' + str(self.col_num)
+            + ' line_num=' + String(self.line_num) \
+            + ' col_num=' + String(self.col_num)
 
 
 # TODO(josiahls): looks ugly. I think its better to just have start_statement_string, 

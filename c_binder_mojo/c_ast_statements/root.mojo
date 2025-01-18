@@ -13,10 +13,10 @@ struct Root(AbstractAstStatement):
     var text:String
 
     fn __init__(mut self, path:Path):
-        self.text = str(path)
+        self.text = String(path)
 
     fn __init__(mut self, token_bundle:TokenBundle):
-        self.text = str(token_bundle.token)
+        self.text = String(token_bundle.token)
 
     @staticmethod
     fn accept(token_bundle: TokenBundle) -> Bool:

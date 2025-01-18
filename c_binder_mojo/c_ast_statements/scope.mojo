@@ -31,7 +31,7 @@ fn is_scopeable(x:AstStatements) -> Bool:
     return False
 
 
-fn scopeable_to_str(x:ScopeableTypes) -> String:
+fn scopeable_to_String(x:ScopeableTypes) -> String:
     # TODO(josiahls): Noto sure I want this. Id rather raise an error since I need to 
     # be able to handle every case.
     if x.isa[TypeDef](): return 'type_def'
@@ -83,8 +83,8 @@ struct Scope(AbstractAstStatement):
 
     fn __str__(self) -> String:
         var s:String = "Scope("
-        s += "line_num=" + str(self.line_num())
-        s += ",scope_type=" + scopeable_to_str(self.scopeable_type)
+        s += "line_num=" + String(self.line_num())
+        s += ",scope_type=" + scopeable_to_String(self.scopeable_type)
         s += ") "
         for token in self.token_bundles:
             s += token[].token

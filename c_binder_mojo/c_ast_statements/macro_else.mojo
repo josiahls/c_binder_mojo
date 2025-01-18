@@ -27,13 +27,13 @@ struct MacroElse(AbstractAstStatement):
         # We need to wait to see if there is a single comment at the end of the 
         # endif
         var _token:String = String(token_bundle.token.strip(' '))
-        if _token in [str(CTokens.MACRO_ENDIF)]:
+        if _token in [String(CTokens.MACRO_ENDIF)]:
             return True
         return False
 
     fn __str__(self) -> String:
         var s:String = "MacroElse("
-        s += "line_num=" + str(self.line_num())
+        s += "line_num=" + String(self.line_num())
         s += ") "
         for token in self.token_bundle:
             s += token[].token

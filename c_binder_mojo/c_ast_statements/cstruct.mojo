@@ -39,7 +39,7 @@ struct CStruct(AbstractAstStatement):
 
     fn __str__(self) -> String:
         var s:String = "CStruct("
-        s += "line_num=" + str(self.line_num())
+        s += "line_num=" + String(self.line_num())
         s += ") "
         for token in self.token_bundles:
             s += token[].token

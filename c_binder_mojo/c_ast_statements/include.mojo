@@ -29,9 +29,9 @@ struct Include(AbstractAstStatement):
         # endif
         var _token:String = String(token_bundle.token.strip(' '))
         if _token in [
-            str(CTokens.COMMENT_SINGLE_LINE_BEGIN),
-            str(CTokens.COMMENT_MULTI_LINE_BEGIN),
-            str(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN)
+            String(CTokens.COMMENT_SINGLE_LINE_BEGIN),
+            String(CTokens.COMMENT_MULTI_LINE_BEGIN),
+            String(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN)
         ]:
             return True
 
@@ -41,7 +41,7 @@ struct Include(AbstractAstStatement):
 
     fn __str__(self) -> String:
         var s:String = "Include("
-        s += "line_num=" + str(self.line_num())
+        s += "line_num=" + String(self.line_num())
         s += ") "
         for token in self.token_bundles:
             s += token[].token

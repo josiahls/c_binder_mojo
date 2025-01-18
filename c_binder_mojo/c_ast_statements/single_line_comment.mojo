@@ -48,12 +48,12 @@ struct SingleLineComment(AbstractAstStatement):
                 s += "SingleLineComment some how has multiple lines worth of tokens. This should never happen."
                 line_num = token[].line_num
                 s += '\n'
-            s += str(token[].token) + " "
+            s += String(token[].token) + " "
         return s
 
     fn __str__(self) -> String:
         var s:String = "SingleLineComment("
-        s += 'line_num=' + str(self.line_num)
+        s += 'line_num=' + String(self.line_num)
         s += ') '
 
         return s + self._string_bundles()

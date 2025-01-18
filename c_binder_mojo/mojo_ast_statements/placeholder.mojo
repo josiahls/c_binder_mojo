@@ -17,12 +17,15 @@ struct PlaceHolder(AbstractAstStatement):
 
     fn __init__(mut self, ast_statement: c_ast_statements.ast_statements.AstStatements):
         self.s = String("")
-        self.s += 'hi' #token_bundle.token
+        try:
+            self.s += c_ast_statements.ast_statements.to_string(ast_statement)
+        except Error:
+            self.s = 'Input c ast statement failed to have to_string called on it.'
 
     @staticmethod
     fn accept(ast_statement: c_ast_statements.ast_statements.AstStatements) -> Bool:
         return True
 
     fn __str__(self) -> String:
-        return "PlaceHolder() " + self.s
+        return "PlaceHolder() for: " + self.s
 

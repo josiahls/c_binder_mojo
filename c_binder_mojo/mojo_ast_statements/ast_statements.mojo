@@ -4,7 +4,7 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.mojo_ast_statements.placeholder import PlaceHolder
+from c_binder_mojo.mojo_ast_statements import PlaceHolder
 from c_binder_mojo import c_ast_statements
 
 alias AstStatements = Variant[

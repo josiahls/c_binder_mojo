@@ -5,7 +5,7 @@ from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.c_ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.c_primitives import TokenBundle
+from c_binder_mojo.base import TokenBundle
 
 @value
 struct BlankSpace(AbstractAstStatement):

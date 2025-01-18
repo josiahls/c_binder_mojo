@@ -10,9 +10,9 @@ from c_binder_mojo.c_ast_statements.ast_statements import (
     AstStatements,
     to_string
 )
-from c_binder_mojo.c_ast_statements.root import Root
-from c_binder_mojo.c_ast_node import AstNode, RootAstNode
-from c_binder_mojo.c_primitives import STRING_SPLIT_AT
+from c_binder_mojo.c_ast_node import RootAstNode
+from c_binder_mojo.mojo_ast_node import RootMojoAstNode
+from c_binder_mojo.base import STRING_SPLIT_AT
 
 
 @value
@@ -59,6 +59,30 @@ struct RootDisplayAstNode(AnyType):
     fn __init__(mut self, read root:RootAstNode) raises:
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root)
+
+    fn __init__(mut self, read root:RootMojoAstNode) raises:
+        self.nodes = List[DisplayAstNode]()
+        self.update_nodes(-1, 0, root) 
+
+    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootMojoAstNode) raises:
+        node = root.nodes[idx]
+
+        self.nodes.append(
+            DisplayAstNode(
+                parent_idx, 
+                List[Int](),
+                to_string(node.ast_statement),
+                UnsafePointer[mut=True].address_of(self)
+            )
+        )
+
+        if len(node.children) == 0:
+            return None
+
+        for child in node.children:
+            self.update_nodes(idx, child[], root)
+            self.nodes[idx].children.append(child[])
+
 
     fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootAstNode) raises:
         node = root.nodes[idx]

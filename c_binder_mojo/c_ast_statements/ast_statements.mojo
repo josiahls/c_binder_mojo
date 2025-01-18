@@ -19,7 +19,7 @@ from c_binder_mojo.c_ast_statements.cstruct import CStruct
 from c_binder_mojo.c_ast_statements.cstruct_field import CStructField, is_valid_scope
 from c_binder_mojo.c_ast_statements.enum_field import EnumField, is_valid_enum_scope
 from c_binder_mojo.c_ast_statements.scope import Scope, is_scopeable,make_scopeable
-from c_binder_mojo.c_primitives import TokenBundle
+from c_binder_mojo.base import TokenBundle
 
 alias AstStatements = Variant[
     Root,

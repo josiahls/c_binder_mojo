@@ -21,7 +21,7 @@ fn test_ast_node_mjtnum() raises:
     # print('DisplayTree:')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(display_node))
     # print(String(display_node))
-    root_mojo_node = RootMojoAstNode()
+    root_mojo_node = RootMojoAstNode(root_node)
 
     mojo_display_node = RootDisplayAstNode(root_mojo_node)
     # print('DisplayTree:')
@@ -39,7 +39,7 @@ fn test_ast_node_model() raises:
     # print('DisplayTree:')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtmodel.ast').write_text(String(display_node))
     # print(String(display_node))
-    root_mojo_node = RootMojoAstNode()
+    root_mojo_node = RootMojoAstNode(root_node)
 
     mojo_display_node = RootDisplayAstNode(root_mojo_node)
     # print('DisplayTree:')

@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and 
 # limitations under the License. 
 # PlaceHolder (not a comment): BlankSpace(line_num=14)
+# PlaceHolder (not a comment): BlankSpace(line_num=17)
 # Skip() unsupported in mojo: #ifndef MUJOCO_INCLUDE_MJTNUM_H_ 
-# PlaceHolder (not a comment): Define(line_num=16) #define MUJOCO_INCLUDE_MJTNUM_H_ 
-	# PlaceHolder (not a comment): BlankSpace(line_num=17)
+# Skip() unsupported in mojo: #define MUJOCO_INCLUDE_MJTNUM_H_ 
 	#---------------------------------- floating-point definition ------------------------------------- 
 	# PlaceHolder (not a comment): BlankSpace(line_num=19)
 	# floating point data type and minval 

@@ -24,6 +24,7 @@ struct DisplayAstNode(CollectionElement):
     var children: List[Int]
     var string:  String
     var root: UnsafePointer[RootDisplayAstNode]
+    var indent_root:Bool
 
     fn indents(self) -> Int:
         var indent = 0
@@ -31,6 +32,9 @@ struct DisplayAstNode(CollectionElement):
         while _parent != -1:
             _parent = self.root[].nodes[_parent].parent
             indent += 1
+
+        if indent > 0 and not self.indent_root:
+            indent -= 1
         return indent
 
     def __str__(self) -> String: 
@@ -55,14 +59,17 @@ struct DisplayAstNode(CollectionElement):
 struct RootDisplayAstNode(AnyType):
     var nodes:List[DisplayAstNode]
     var string_just_code:Bool
+    var indent_root:Bool
 
     fn __init__(mut self, read root:RootAstNode) raises:
         self.string_just_code = False
+        self.indent_root = True
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root)
 
     fn __init__(mut self, read root:RootMojoAstNode) raises:
         self.string_just_code = False
+        self.indent_root = False
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root) 
 
@@ -75,7 +82,8 @@ struct RootDisplayAstNode(AnyType):
                 parent_idx, 
                 List[Int](),
                 mojo_ast_statements.ast_statements.to_string(node.ast_statement),
-                UnsafePointer[mut=True].address_of(self)
+                UnsafePointer[mut=True].address_of(self),
+                indent_root=self.indent_root
             )
         )
 
@@ -95,7 +103,8 @@ struct RootDisplayAstNode(AnyType):
                 parent_idx, 
                 List[Int](),
                 c_ast_statements.ast_statements.to_string(node.ast_statement),
-                UnsafePointer[mut=True].address_of(self)
+                UnsafePointer[mut=True].address_of(self),
+                indent_root=self.indent_root
             )
         )
 

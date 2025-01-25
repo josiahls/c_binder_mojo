@@ -47,8 +47,14 @@ struct DisplayAstNode(CollectionElement):
 
         s += indents + begin_end_s[0].replace('\n','\n' + indents)
         for child in self.children:
+            node_s = String(self.root[].nodes[child[]])
+            if node_s == "" or node_s == " " or node_s == "\n":
+                continue
+            # TODO(josiahls): This is not great. We need a generic way for a 
+            # node to indicate that there should be a new line vs inline. Right now
+            # the ability to know this is obsquired. 
             s += "\n"
-            s += String(self.root[].nodes[child[]])
+            s += node_s
 
         if len(begin_end_s) > 1:
             s += "\n" 

@@ -4,14 +4,15 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.mojo_ast_statements import PlaceHolder, Root,SingleLineComment
+from c_binder_mojo.mojo_ast_statements import PlaceHolder, Root,SingleLineComment, BlankSpace
 from c_binder_mojo import c_ast_statements
 
 alias AstStatements = Variant[
     PlaceHolder,
     SingleLineComment,
     Root,
-    Skip
+    Skip,
+    BlankSpace
 ]
 
 fn to_string(read x:AstStatements) raises -> String:
@@ -19,6 +20,7 @@ fn to_string(read x:AstStatements) raises -> String:
     elif x.isa[Root]():             return String(x[Root])
     elif x.isa[SingleLineComment](): return String(x[SingleLineComment])
     elif x.isa[Skip](): return String(x[Skip])
+    elif x.isa[BlankSpace](): return String(x[BlankSpace])
 
     raise Error('to_string does not exist for input x!')
 
@@ -28,6 +30,7 @@ fn to_toggle_string_just_code(mut x:AstStatements,string_just_code:Bool) raises 
     elif x.isa[Root]():             x[Root].togggle_string_just_code(string_just_code)
     elif x.isa[SingleLineComment](): x[SingleLineComment].togggle_string_just_code(string_just_code)
     elif x.isa[Skip](): x[Skip].togggle_string_just_code(string_just_code)
+    elif x.isa[BlankSpace](): x[BlankSpace].togggle_string_just_code(string_just_code)
     else:
         raise Error('to_toggle_string_just_code does not exist for input:' + to_string(x))
 
@@ -47,6 +50,8 @@ fn to_accept(read x:c_ast_statements.ast_statements.AstStatements) raises -> Ast
         return AstStatements(Skip(x))
     elif SingleLineComment.accept(x):
         return AstStatements(SingleLineComment(x))
+    elif BlankSpace.accept(x):
+        return AstStatements(BlankSpace(x))
     elif PlaceHolder.accept(x):
         return AstStatements(PlaceHolder(x))
 

@@ -42,9 +42,9 @@ struct RootMojoAstNode(AnyType):
 
     fn __init__(mut self, read root:RootAstNode) raises:
         self.nodes = List[MojoAstNode]()
-        self.update_nodes(-1, 0, root)
+        _ = self.update_nodes(-1, 0, root)
 
-    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootAstNode) raises:
+    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootAstNode) raises -> Bool:
         node = root.nodes[idx]
 
         self.nodes.append(
@@ -56,17 +56,23 @@ struct RootMojoAstNode(AnyType):
             )
         )
 
+
         if len(node.children) == 0:
-            return None
+            return False
+
+        do_indent_children = indent_children(self.nodes[-1].ast_statement) 
+        if not do_indent_children:
+            current_idx = parent_idx
+            self.nodes[current_idx].children.append(len(self.nodes) - 1)
+        else:
+            current_idx = idx
 
         for child in node.children:
-            if indent_children(self.nodes[-1].ast_statement):
-            # if True:
-                self.update_nodes(idx, child[], root)
-                self.nodes[idx].children.append(child[])
-            else:
-                self.update_nodes(parent_idx, child[], root)
-                self.nodes[parent_idx].children.append(child[])
+            result = self.update_nodes(current_idx, child[], root)
+            if not result:
+                self.nodes[current_idx].children.append(child[])
+
+        return not do_indent_children
 
         
     fn __del__(owned self):

@@ -51,7 +51,7 @@ fn test_ast_node_model() raises:
 fn main():
     try:
         test_ast_node_mjtnum()
-        # test_ast_node_model()
+        test_ast_node_model()
         print('succeeded')
     except e:
         print('failed' + String(e))

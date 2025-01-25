@@ -16,10 +16,13 @@
 # Skip() unsupported in mojo: #define MUJOCO_INCLUDE_MJTNUM_H_ 
 #---------------------------------- floating-point definition ------------------------------------- 
 # floating point data type and minval 
-# Skip() unsupported in mojo: #ifndef mjUSESINGLE 
-# PlaceHolder (not a comment): TypeDef(line_num=22) typedef double mjtNum ; 
-# PlaceHolder (not a comment): Define(line_num=23) #define mjMINVAL    1E-15       
-# minimum value in any denominator 
+struct Config_mjUSESINGLE : 
+	
+	# PlaceHolder (not a comment): TypeDef(line_num=22) typedef double mjtNum ; 
+	
+	
+	# PlaceHolder (not a comment): Define(line_num=23) #define mjMINVAL    1E-15       
+	# minimum value in any denominator 
 # PlaceHolder (not a comment): MacroElse(line_num=24) #else 
 	
 	# PlaceHolder (not a comment): TypeDef(line_num=25) typedef float mjtNum ; 

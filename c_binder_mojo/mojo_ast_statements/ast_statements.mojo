@@ -4,7 +4,13 @@ from memory import UnsafePointer
 from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.mojo_ast_statements import PlaceHolder, Root,SingleLineComment, BlankSpace
+from c_binder_mojo.mojo_ast_statements import (
+    PlaceHolder, 
+    Root,
+    SingleLineComment, 
+    BlankSpace,
+    IfNDef
+)
 from c_binder_mojo import c_ast_statements
 
 alias AstStatements = Variant[
@@ -12,13 +18,15 @@ alias AstStatements = Variant[
     SingleLineComment,
     Root,
     Skip,
-    BlankSpace
+    BlankSpace,
+    IfNDef
 ]
 
 fn to_string(read x:AstStatements) raises -> String:
     if x.isa[PlaceHolder]():      return String(x[PlaceHolder])
     elif x.isa[Root]():             return String(x[Root])
     elif x.isa[SingleLineComment](): return String(x[SingleLineComment])
+    elif x.isa[IfNDef](): return String(x[IfNDef])
     elif x.isa[Skip](): return String(x[Skip])
     elif x.isa[BlankSpace](): return String(x[BlankSpace])
 
@@ -29,6 +37,7 @@ fn to_toggle_string_just_code(mut x:AstStatements,string_just_code:Bool) raises 
     if x.isa[PlaceHolder]():        x[PlaceHolder].togggle_string_just_code(string_just_code)
     elif x.isa[Root]():             x[Root].togggle_string_just_code(string_just_code)
     elif x.isa[SingleLineComment](): x[SingleLineComment].togggle_string_just_code(string_just_code)
+    elif x.isa[IfNDef](): x[IfNDef].togggle_string_just_code(string_just_code)
     elif x.isa[Skip](): x[Skip].togggle_string_just_code(string_just_code)
     elif x.isa[BlankSpace](): x[BlankSpace].togggle_string_just_code(string_just_code)
     else:
@@ -46,6 +55,8 @@ fn indent_children(read x:AstStatements) -> Bool:
 fn to_accept(read x:c_ast_statements.ast_statements.AstStatements) raises -> AstStatements:
     if Root.accept(x):
         return AstStatements(Root(x))
+    elif IfNDef.accept(x):
+        return AstStatements(IfNDef(x))
     elif Skip.accept(x):
         return AstStatements(Skip(x))
     elif SingleLineComment.accept(x):

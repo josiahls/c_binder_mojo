@@ -35,6 +35,12 @@ struct TokenBundles(Stringable):
     fn __iter__(ref self) -> _ListIter[TokenBundle, False, __origin_of(self._token_bundles)]:
         return self._token_bundles.__iter__()
 
+    fn __getitem__(self, span: Slice) -> List[TokenBundle]:
+        return self._token_bundles[span]
+
+    fn __getitem__[I: Indexer](ref self, idx: I) -> ref [self._token_bundles] TokenBundle:
+        return self._token_bundles[idx]
+
     fn __str__(self) -> String:
         var s:String = ""
         var line_num = -1

@@ -26,7 +26,7 @@ struct Tree:
     fn __str__(self) -> String:
         var s = String('')
         for node in self.nodes:
-            s += node[].string(node[].node)
+            s += String(node[])
             s += '\n'
         return s
 

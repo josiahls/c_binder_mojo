@@ -4,17 +4,18 @@ from utils.variant import Variant
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.base import TokenBundle,TokenBundles
-from c_binder_mojo.c_ast_nodes.other_nodes import AstNodes,AstNodeA,AstNodeB,string,apply_context
+from c_binder_mojo.c_ast_nodes.nodes import AstNode,AstNodeA,AstNodeB
 
 
-struct Graph:
+struct Tree:
+    # Might not need path here. 
     var path: Path
 
-    var nodes: List[AstNodes]
+    var nodes: List[AstNode]
 
     fn __init__(out self, path:Path):
         self.path  = path
-        self.nodes = List[AstNodes]()
+        self.nodes = List[AstNode]()
 
     
     fn __moveinit__(out self, owned existing:Self):
@@ -25,7 +26,7 @@ struct Graph:
     fn __str__(self) -> String:
         var s = String('')
         for node in self.nodes:
-            s += string(node[])
+            s += node[].string(node[].node)
             s += '\n'
         return s
 
@@ -34,18 +35,18 @@ struct Graph:
 
         is_even = len(self.nodes) % 2
         if is_even == 1:
-            self.nodes.append(AstNodeA(token_bundle))
+            self.nodes.append(AstNode(AstNodeA(token_bundle)))
         else:
-            self.nodes.append(AstNodeB(token_bundle))
+            self.nodes.append(AstNode(AstNodeB(token_bundle)))
 
         node = self.nodes[-1]
-        apply_context(node, self)
+        node.apply_context(node.node, self)
 
         return current_idx
 
 
-fn make_graph(path:Path) raises -> Graph:
-    root_node = Graph(path)
+fn make_tree(path:Path) raises -> Tree:
+    root_node = Tree(path)
     line_num = 1 # Line numbers start at 1 for vscode at least
     col_num = 0
     current_idx = 0

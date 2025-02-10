@@ -44,6 +44,7 @@ from sys.intrinsics import _type_is_eq
 
 from memory import UnsafePointer
 
+from c_binder_mojo.c_ast_nodes.common import NodeAstLike
 # ===----------------------------------------------------------------------=== #
 # Utilities
 # ===----------------------------------------------------------------------=== #
@@ -60,10 +61,8 @@ fn _align_up(value: Int, alignment: Int) -> Int:
 # ===----------------------------------------------------------------------=== #
 
 
-trait NodeVariantable(CollectionElement,Stringable): ...
 
-
-struct Variant[*Ts: NodeVariantable](
+struct Variant[*Ts: NodeAstLike](
     CollectionElement,
     ExplicitlyCopyable,
 ):

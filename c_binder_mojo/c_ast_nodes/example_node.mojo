@@ -24,7 +24,7 @@ struct ExampleNode(NodeAstLike):
         self.just_code = False
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
-    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: return False
@@ -36,3 +36,4 @@ struct ExampleNode(NodeAstLike):
     fn parent(self) -> Int: return 0
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return 0
+    fn set_current_idx(mut self, value:Int): ...

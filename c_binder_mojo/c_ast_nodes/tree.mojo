@@ -1,10 +1,11 @@
 # Native Mojo Modules
 from pathlib import Path
 from utils.variant import Variant
+from memory import UnsafePointer
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.base import TokenBundle,TokenBundles
-from c_binder_mojo.c_ast_nodes.nodes import AstNode,AstNodeA,AstNodeB
+from c_binder_mojo.c_ast_nodes.nodes import AstNode
 
 
 struct Tree:
@@ -39,29 +40,39 @@ struct Tree:
             self.nodes.append(new_node)
             return current_idx
         else:
+            # unsafe_get / getitem copies the value.
+            # node = self.nodes.unsafe_ptr() + current_idx
             node = self.nodes[current_idx]
             
             if node.done(token_bundle,self):
+                self.nodes[current_idx] = node # Dumb, cant work with ptr though
                 # Create the first node
                 new_node = AstNode.accept(token_bundle,  current_idx, self)
                 # TODO(josiahls): Maybe check deleted indicies and 
                 # assign those first? In general this is probably
                 # ok, but we want to reuse list space ideally.
+                # print('Before: ' + String(len(self.nodes)))
+                new_node.set_current_idx(len(self.nodes))
+                # print('After: ' + String(len(self.nodes)))
                 self.nodes.append(new_node)
                 return len(self.nodes) - 1
             elif node.append(token_bundle, self):
+                self.nodes[current_idx] = node # Dumb, cant work with ptr though
                 return node.current_idx()
             elif (child_idx := node.make_child(token_bundle, self)) != -1:
+                self.nodes[current_idx] = node # Dumb, cant work with ptr though
                 return child_idx
             else:
-                print('Warning invalid path for token: ' + String(token_bundle))
+                print('Warning invalid path for token: ' + String(token_bundle) + " current node: " + String(node))
                # Create the first node
                 new_node = AstNode.accept(token_bundle,  current_idx, self)
                 # TODO(josiahls): Maybe check deleted indicies and 
                 # assign those first? In general this is probably
                 # ok, but we want to reuse list space ideally.
+                new_node.set_current_idx(len(self.nodes))
                 self.nodes.append(new_node)
                 return len(self.nodes) - 1
+            # return 0
                 
 
 

@@ -18,27 +18,50 @@ struct SingleCommentNode(NodeAstLike):
     
     var token_bundles: TokenBundles
     var just_code:Bool
+    var _parent_idx:Int
+    var _current_idx:Int
+    var current_line_num:Int
 
-    fn __init__(out self,token_bundle:TokenBundle):
+    # fn __copyinit__(out self: Self, existing: Self):
+    #     print('its being copied >:(')
+    #     self.token_bundles = existing.token_bundles
+    #     self.just_code = existing.just_code
+    #     self._parent_idx = existing._parent_idx
+    #     self._current_idx = existing._current_idx
+    #     self.current_line_num = existing.current_line_num
+        
+
+    fn __init__(out self,token_bundle:TokenBundle, parent_idx:Int):
         self.token_bundles = TokenBundles()
         self.token_bundles.append(token_bundle)
+        self._parent_idx = parent_idx
+        self._current_idx = 0
+        self.current_line_num = token_bundle.line_num
         self.just_code = False
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
-    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
+        if token_bundle.line_num == self.current_line_num:
+            # print('lin nums match!' + String(len(self.token_bundles)))
+            self.token_bundles.append(token_bundle)
+            return True
+        return False
 
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: 
         if token_bundle.token == CTokens.COMMENT_SINGLE_LINE_BEGIN:
+            return True
+        elif token_bundle.token.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
             return True        
         return False
 
 
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int, mut tree:Tree) -> Self:
-        return Self(token_bundle)
+        return Self(token_bundle, parent_idx)
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
     fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Int: return -1
-    fn parent(self) -> Int: return 0
+    fn parent(self) -> Int: return self._parent_idx
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
-    fn current_idx(self) -> Int: return 0
+    fn current_idx(self) -> Int: return self._current_idx
+    fn set_current_idx(mut self, value:Int): self._current_idx = value

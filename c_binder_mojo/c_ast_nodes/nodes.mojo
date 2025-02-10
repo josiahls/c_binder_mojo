@@ -21,58 +21,6 @@ fn node2string(name:String,token_bundles:TokenBundles, just_code:Bool) -> String
     return s
 
 @value
-struct AstNodeA(NodeAstLike):
-    alias __name__ = "AstNodeA"
-    
-    var token_bundles: TokenBundles
-    var just_code:Bool
-
-    fn __init__(out self,token_bundle:TokenBundle):
-        self.token_bundles = TokenBundles()
-        self.token_bundles.append(token_bundle)
-        self.just_code = False
-
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
-
-    @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: return False
-    @staticmethod
-    fn create(token_bundle:TokenBundle, parent_idx:Int, mut tree:Tree) -> Self:
-        return Self(token_bundle)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
-    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
-    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Int: return -1
-    fn parent(self) -> Int: return 0
-    fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
-    fn current_idx(self) -> Int: return 0
-
-@value
-struct AstNodeB(NodeAstLike):
-    alias __name__ = "AstNodeB"
-
-    var token_bundles: TokenBundles
-    var just_code:Bool
-
-    fn __init__(out self,token_bundle:TokenBundle):
-        self.token_bundles = TokenBundles()
-        self.token_bundles.append(token_bundle)
-        self.just_code = False
-
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
-
-    @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: return False
-    @staticmethod
-    fn create(token_bundle:TokenBundle, parent_idx:Int, mut tree:Tree) -> Self:
-        return Self(token_bundle)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
-    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
-    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Int: return -1
-    fn parent(self) -> Int: return 0
-    fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
-    fn current_idx(self) -> Int: return 0
-
-@value
 struct DeletedNode(NodeAstLike):
     alias __name__ = "DeletedNode"
 
@@ -83,11 +31,12 @@ struct DeletedNode(NodeAstLike):
     fn create(token_bundle:TokenBundle, parent_idx:Int, mut tree:Tree) -> Self:
         return Self()
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
-    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Int: return -1
     fn parent(self) -> Int: return 0
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return 0
+    fn set_current_idx(mut self, value:Int): ...
 
 @value
 struct PlaceHolderNode(NodeAstLike):
@@ -109,19 +58,18 @@ struct PlaceHolderNode(NodeAstLike):
     fn create(token_bundle:TokenBundle, parent_idx:Int, mut tree:Tree) -> Self:
         return Self(token_bundle)
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
-    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Int: return -1
     fn parent(self) -> Int: return 0
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return 0
+    fn set_current_idx(mut self, value:Int): ...
 
 
 @value
 struct AstNode(CollectionElement):
     alias type = Variant[
         SingleCommentNode,
-        AstNodeA,
-        AstNodeB,
         DeletedNode,
         PlaceHolderNode # Must be last in the list
     ]
@@ -157,9 +105,10 @@ struct AstNode(CollectionElement):
 
             if self.node.isa[T]():
                 # We know node is a T, so get it out:
-                var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                var val_ptr = self.node._get_ptr[T]()
                 # Now call the trait method:
-                return ref_val.done(token_bundle, tree)
+                return val_ptr[].done(token_bundle, tree)
         
         print(String(self) + " does not have a done?")
         return False
@@ -176,15 +125,16 @@ struct AstNode(CollectionElement):
 
             if self.node.isa[T]():
                 # We know node is a T, so get it out:
-                var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                var val_ptr = self.node._get_ptr[T]()
                 # Now call the trait method:
-                return ref_val.current_idx()
+                return val_ptr[].current_idx()
         
         print(String(self) + " does not have a current_idx?")
         return -1
 
 
-    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
+    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls append.
         """
@@ -195,12 +145,34 @@ struct AstNode(CollectionElement):
 
             if self.node.isa[T]():
                 # We know node is a T, so get it out:
-                var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                var val_ptr = self.node._get_ptr[T]()
                 # Now call the trait method:
-                return ref_val.append(token_bundle, tree)
+                return val_ptr[].append(token_bundle, tree)
         
         print(String(self) + " does not have a append?")
         return False
+
+
+    fn set_current_idx(mut self, current_idx:Int):
+        """
+        Iterates over each type in the variant at compile-time and calls append.
+        """
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            # Ts[i] is one of NodeA, NodeB, etc.
+            alias T = Self.type.Ts[i]
+
+            if self.node.isa[T]():
+                # We know node is a T, so get it out:
+                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                var val_ptr = self.node._get_ptr[T]()
+                # Now call the trait method:
+                val_ptr[].set_current_idx(current_idx)
+                return
+        
+        print(String(self) + " does not have a set_current_idx?")
+
 
     fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Int:
         """
@@ -213,9 +185,10 @@ struct AstNode(CollectionElement):
 
             if self.node.isa[T]():
                 # We know node is a T, so get it out:
-                var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                var val_ptr = self.node._get_ptr[T]()
                 # Now call the trait method:
-                return ref_val.make_child(token_bundle, tree)
+                return val_ptr[].make_child(token_bundle, tree)
         
         print(String(self) + " does not have a make_child?")
         return False
@@ -232,9 +205,10 @@ struct AstNode(CollectionElement):
 
             if self.node.isa[T]():
                 # We know node is a T, so get it out:
-                var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                var val_ptr = self.node._get_ptr[T]()
                 # Now call the trait method:
-                return String(ref_val) 
+                return String(val_ptr[]) 
 
         # If we somehow never matched (should never happen if the variant covers all):
         return "<unknown type>"

@@ -8,6 +8,7 @@ from c_binder_mojo.base import TokenBundle,TokenBundles
 from c_binder_mojo.c_ast_nodes.tree import Tree
 from c_binder_mojo.c_ast_nodes.common import NodeAstLike
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
+from c_binder_mojo.c_ast_nodes.single_comment_node import SingleCommentNode
 
 
 
@@ -118,6 +119,7 @@ struct PlaceHolderNode(NodeAstLike):
 @value
 struct AstNode(CollectionElement):
     alias type = Variant[
+        SingleCommentNode,
         AstNodeA,
         AstNodeB,
         DeletedNode,

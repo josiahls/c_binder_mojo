@@ -53,8 +53,16 @@ struct Tree:
                 return node.current_idx()
             elif (child_idx := node.make_child(token_bundle, self)) != -1:
                 return child_idx
+            else:
+                print('Warning invalid path for token: ' + String(token_bundle))
+               # Create the first node
+                new_node = AstNode.accept(token_bundle,  current_idx, self)
+                # TODO(josiahls): Maybe check deleted indicies and 
+                # assign those first? In general this is probably
+                # ok, but we want to reuse list space ideally.
+                self.nodes.append(new_node)
+                return len(self.nodes) - 1
                 
-        return current_idx
 
 
 fn make_tree(path:Path) raises -> Tree:

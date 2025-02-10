@@ -35,20 +35,24 @@ struct Tree:
 
         if len(self.nodes) == 0:
             # Create the first node
-            new_node = AstNode.accept(token_bundle, self)
+            new_node = AstNode.accept(token_bundle, current_idx, self)
             self.nodes.append(new_node)
+            return current_idx
         else:
             node = self.nodes[current_idx]
             
             if node.done(token_bundle,self):
                 # Create the first node
-                new_node = AstNode.accept(token_bundle, self)
+                new_node = AstNode.accept(token_bundle,  current_idx, self)
+                # TODO(josiahls): Maybe check deleted indicies and 
+                # assign those first? In general this is probably
+                # ok, but we want to reuse list space ideally.
                 self.nodes.append(new_node)
                 return len(self.nodes) - 1
             elif node.append(token_bundle, self):
-                return len(self.nodes) - 1
-            elif node.make_child(token_bundle, self):
-                return len(self.nodes) - 1
+                return node.current_idx()
+            elif (child_idx := node.make_child(token_bundle, self)) != -1:
+                return child_idx
                 
         return current_idx
 

@@ -32,14 +32,15 @@ struct ExampleNode(NodeAstLike):
         self.just_code = False
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
+    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
-    fn apply_context(self, mut tree: Tree):
-        print(len(tree.nodes))
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, mut tree:Tree) -> Self:
         return Self(token_bundle)
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
 @value
 struct AstNodeA(NodeAstLike):
@@ -55,13 +56,14 @@ struct AstNodeA(NodeAstLike):
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
 
-    fn apply_context(self, mut tree: Tree):
-        print(len(tree.nodes))
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, mut tree:Tree) -> Self:
         return Self(token_bundle)
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
 @value
 struct AstNodeB(NodeAstLike):
@@ -77,25 +79,28 @@ struct AstNodeB(NodeAstLike):
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
 
-    fn apply_context(self, mut tree: Tree):
-        print(len(tree.nodes))
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, mut tree:Tree) -> Self:
         return Self(token_bundle)
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
 @value
 struct DeletedNode(NodeAstLike):
     alias __name__ = "DeletedNode"
 
-    fn apply_context(self, mut tree: Tree): ...
     fn __str__(self) -> String: return self.__name__
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, mut tree:Tree) -> Self:
         return Self()
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
 @value
 struct PlaceHolderNode(NodeAstLike):
@@ -111,12 +116,14 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
 
-    fn apply_context(self, mut tree: Tree): ...
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: return True
     @staticmethod
     fn create(token_bundle:TokenBundle, mut tree:Tree) -> Self:
         return Self(token_bundle)
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
+    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
 
 @value
@@ -130,7 +137,7 @@ struct AstNode(CollectionElement):
     var node:Self.type
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Self.type:
+    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Self:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
         """
@@ -144,12 +151,11 @@ struct AstNode(CollectionElement):
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
                 # var ref_val = self.node[T]
                 # Now call the trait method:
-                return Self.type(T.create(token_bundle, tree))
+                return Self(T.create(token_bundle, tree))
         
-        return Self.type(PlaceHolderNode.create(token_bundle,tree))
+        return Self(PlaceHolderNode.create(token_bundle,tree))
 
-
-    fn apply_context(self, node:Self.type, mut tree:Tree):
+    fn done(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
         """
@@ -162,10 +168,47 @@ struct AstNode(CollectionElement):
                 # We know node is a T, so get it out:
                 var ref_val = self.node.unsafe_get[T]()  # or node[T]
                 # Now call the trait method:
-                ref_val.apply_context(tree)
-                return
+                return ref_val.done(token_bundle, tree)
         
-        print(String(self) + " does not have a apply_context?")
+        print(String(self) + " does not have a done?")
+        return False
+
+
+    fn append(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
+        """
+        Iterates over each type in the variant at compile-time and calls append.
+        """
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            # Ts[i] is one of NodeA, NodeB, etc.
+            alias T = Self.type.Ts[i]
+
+            if self.node.isa[T]():
+                # We know node is a T, so get it out:
+                var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # Now call the trait method:
+                return ref_val.append(token_bundle, tree)
+        
+        print(String(self) + " does not have a append?")
+        return False
+
+    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
+        """
+        Iterates over each type in the variant at compile-time and calls append.
+        """
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            # Ts[i] is one of NodeA, NodeB, etc.
+            alias T = Self.type.Ts[i]
+
+            if self.node.isa[T]():
+                # We know node is a T, so get it out:
+                var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # Now call the trait method:
+                return ref_val.make_child(token_bundle, tree)
+        
+        print(String(self) + " does not have a make_child?")
+        return False
 
 
     fn __str__(self) -> String:

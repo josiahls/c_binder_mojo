@@ -33,15 +33,23 @@ struct Tree:
 
     fn get_current_node(mut self, current_idx:Int, token_bundle:TokenBundle) -> Int:
 
-        is_even = len(self.nodes) % 2
-        if is_even == 1:
-            self.nodes.append(AstNode(AstNodeA(token_bundle)))
+        if len(self.nodes) == 0:
+            # Create the first node
+            new_node = AstNode.accept(token_bundle, self)
+            self.nodes.append(new_node)
         else:
-            self.nodes.append(AstNode(AstNodeB(token_bundle)))
-
-        node = self.nodes[-1]
-        node.apply_context(node.node, self)
-
+            node = self.nodes[current_idx]
+            
+            if node.done(token_bundle,self):
+                # Create the first node
+                new_node = AstNode.accept(token_bundle, self)
+                self.nodes.append(new_node)
+                return len(self.nodes) - 1
+            elif node.append(token_bundle, self):
+                return len(self.nodes) - 1
+            elif node.make_child(token_bundle, self):
+                return len(self.nodes) - 1
+                
         return current_idx
 
 

@@ -9,16 +9,17 @@ from c_binder_mojo.c_ast_nodes.tree import Tree
 from c_binder_mojo.c_ast_nodes.common import NodeAstLike
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
+from c_binder_mojo.c_primitives import CTokens
 
 
 @value
-struct ExampleNode(NodeAstLike):
-    alias __name__ = "ExampleNode"
+struct DefineNode(NodeAstLike):
+    alias __name__ = "DefineNode"
     
     var token_bundles: TokenBundles
     var just_code:Bool
     var _parent: Int
-    var _current_idx:Int
+    var _current_idx: Int
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
         self.token_bundles = TokenBundles()
@@ -28,14 +29,24 @@ struct ExampleNode(NodeAstLike):
         self._current_idx = 0
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
-    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
+        if len(self.token_bundles) < 2:
+            self.token_bundles.append(token_bundle)
+            return True
+        return False
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: return False
+    fn accept(token_bundle:TokenBundle) -> Bool: 
+        if token_bundle.token == CTokens.MACRO_DEFINE:
+            return True
+        return False
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+        if len(self.token_bundles) < 2:
+            return False
+        return True
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent(self) -> Int: return self._parent
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())

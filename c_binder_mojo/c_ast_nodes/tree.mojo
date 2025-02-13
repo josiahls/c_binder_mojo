@@ -13,26 +13,57 @@ struct Tree:
     var path: Path
 
     var nodes: List[AstNode]
+    var deleted_nodes:List[Int]
 
     fn __init__(out self, path:Path):
         self.path  = path
         self.nodes = List[AstNode]()
+        self.deleted_nodes = List[Int]()
 
     
     fn __moveinit__(out self, owned existing:Self):
         self.path = existing.path^
         self.nodes = existing.nodes^
+        self.deleted_nodes = existing.deleted_nodes^
 
     
     fn __str__(self) -> String:
         var s = String('')
         for node in self.nodes:
+            indent = self.node_indent(node[])
+            for _ in range(indent):
+                s += '\t'
             s += String(node[])
             s += '\n'
         return s
 
+    
+    fn node_indent(self, node:AstNode) -> Int:
+        indent = 0
+        current_node = node
+        while True:
+            _parent_idx = current_node.parent()
+            if _parent_idx == 0:
+                break
+            current_node = self.nodes[_parent_idx]
+            indent += 1
+        return indent
 
-    fn get_current_node(mut self, current_idx:Int, token_bundle:TokenBundle) -> Int:
+
+    fn insert_node(mut self, mut node:AstNode) -> Int:
+        for deleted_idx in self.deleted_nodes:
+            idx = deleted_idx[]
+            node.set_current_idx(idx)
+            self.nodes[idx] = node
+            return idx
+        
+        idx = len(self.nodes)
+        node.set_current_idx(idx)
+        self.nodes.append(node)
+        return idx
+
+
+    fn get_current_node(mut self, current_idx:Int, token_bundle:TokenBundle) raises -> Int:
 
         if len(self.nodes) == 0:
             # Create the first node
@@ -44,35 +75,33 @@ struct Tree:
             # node = self.nodes.unsafe_ptr() + current_idx
             node = self.nodes[current_idx]
             
+            print('Current node: ' + String(node) + ' Parent: ' + String(node.parent()))
             if node.done(token_bundle,self):
                 self.nodes[current_idx] = node # Dumb, cant work with ptr though
                 # Create the first node
-                new_node = AstNode.accept(token_bundle,  current_idx, self)
-                # TODO(josiahls): Maybe check deleted indicies and 
-                # assign those first? In general this is probably
-                # ok, but we want to reuse list space ideally.
-                # print('Before: ' + String(len(self.nodes)))
-                new_node.set_current_idx(len(self.nodes))
-                # print('After: ' + String(len(self.nodes)))
-                self.nodes.append(new_node)
-                return len(self.nodes) - 1
+                new_node = AstNode.accept(token_bundle,  node.parent(), self)
+                return self.insert_node(new_node)
             elif node.append(token_bundle, self):
                 self.nodes[current_idx] = node # Dumb, cant work with ptr though
                 return node.current_idx()
-            elif (child_idx := node.make_child(token_bundle, self)) != -1:
+            elif node.make_child(token_bundle, self):
+                new_node = AstNode.accept(token_bundle,  node.current_idx(), self)
+                child_idx = self.insert_node(new_node)
+                node.children()[].append(child_idx)
                 self.nodes[current_idx] = node # Dumb, cant work with ptr though
                 return child_idx
             else:
-                print('Warning invalid path for token: ' + String(token_bundle) + " current node: " + String(node))
+                raise Error(
+                    'Warning invalid path for token: ' + String(token_bundle) + " current node: " + String(node) + '\n' + String(self)
+                )
                # Create the first node
-                new_node = AstNode.accept(token_bundle,  current_idx, self)
-                # TODO(josiahls): Maybe check deleted indicies and 
-                # assign those first? In general this is probably
-                # ok, but we want to reuse list space ideally.
-                new_node.set_current_idx(len(self.nodes))
-                self.nodes.append(new_node)
-                return len(self.nodes) - 1
-            # return 0
+                # new_node = AstNode.accept(token_bundle,  current_idx, self)
+                # # TODO(josiahls): Maybe check deleted indicies and 
+                # # assign those first? In general this is probably
+                # # ok, but we want to reuse list space ideally.
+                # new_node.set_current_idx(len(self.nodes))
+                # self.nodes.append(new_node)
+                # return len(self.nodes) - 1
                 
 
 

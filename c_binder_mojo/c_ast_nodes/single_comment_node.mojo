@@ -22,15 +22,6 @@ struct SingleCommentNode(NodeAstLike):
     var _current_idx:Int
     var current_line_num:Int
 
-    # fn __copyinit__(out self: Self, existing: Self):
-    #     print('its being copied >:(')
-    #     self.token_bundles = existing.token_bundles
-    #     self.just_code = existing.just_code
-    #     self._parent_idx = existing._parent_idx
-    #     self._current_idx = existing._current_idx
-    #     self.current_line_num = existing.current_line_num
-        
-
     fn __init__(out self,token_bundle:TokenBundle, parent_idx:Int):
         self.token_bundles = TokenBundles()
         self.token_bundles.append(token_bundle)
@@ -57,10 +48,13 @@ struct SingleCommentNode(NodeAstLike):
 
 
     @staticmethod
-    fn create(token_bundle:TokenBundle, parent_idx:Int, mut tree:Tree) -> Self:
+    fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
-    fn make_child(self, token_bundle:TokenBundle, mut tree:Tree) -> Int: return -1
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+        if token_bundle.line_num != self.current_line_num:
+            return True
+        return False
+    fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent(self) -> Int: return self._parent_idx
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return self._current_idx

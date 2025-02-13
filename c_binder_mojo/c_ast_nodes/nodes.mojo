@@ -12,6 +12,7 @@ from c_binder_mojo.c_ast_nodes import (
     SingleCommentNode,
     IfNDefNode,
     DefineNode,
+    RootNode,
     WhitespaceNode
 )
 
@@ -42,6 +43,7 @@ struct DeletedNode(NodeAstLike):
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return 0
     fn set_current_idx(mut self, value:Int): ...
+    fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
 
 @value
 struct PlaceHolderNode(NodeAstLike):
@@ -50,12 +52,14 @@ struct PlaceHolderNode(NodeAstLike):
     var token_bundles: TokenBundles
     var just_code:Bool
     var _parent_idx:Int
+    var _current_idx:Int
 
     fn __init__(out self,token_bundle:TokenBundle, parent_idx:Int):
         self.token_bundles = TokenBundles()
         self.token_bundles.append(token_bundle)
         self.just_code = False
         self._parent_idx = parent_idx
+        self._current_idx = 0
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
 
@@ -69,8 +73,9 @@ struct PlaceHolderNode(NodeAstLike):
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent(self) -> Int: return self._parent_idx
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
-    fn current_idx(self) -> Int: return 0
-    fn set_current_idx(mut self, value:Int): ...
+    fn current_idx(self) -> Int: return self._current_idx
+    fn set_current_idx(mut self, value:Int): self._current_idx = value
+    fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
 
 
 @value
@@ -81,6 +86,7 @@ struct AstNode(CollectionElement):
         IfNDefNode,
         DefineNode,
         WhitespaceNode,
+        RootNode,
         PlaceHolderNode, # Must be last in the list
     ]
     var node:Self.type
@@ -121,6 +127,25 @@ struct AstNode(CollectionElement):
                 return val_ptr[].done(token_bundle, tree)
         
         print(String(self) + " does not have a done?")
+        return False
+
+    fn done_no_cascade(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
+        """
+        Iterates over each type in the variant at compile-time and calls apple_context.
+        """
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            # Ts[i] is one of NodeA, NodeB, etc.
+            alias T = Self.type.Ts[i]
+
+            if self.node.isa[T]():
+                # We know node is a T, so get it out:
+                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                var val_ptr = self.node._get_ptr[T]()
+                # Now call the trait method:
+                return val_ptr[].done_no_cascade(token_bundle, tree)
+        
+        print(String(self) + " does not have a done_no_cascade?")
         return False
 
 

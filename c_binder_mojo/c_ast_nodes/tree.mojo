@@ -67,42 +67,39 @@ struct Tree:
 
         if len(self.nodes) == 0:
             # Create the first node
-            new_node = AstNode.accept(token_bundle, current_idx, self)
+            new_node = AstNode(RootNode.create(token_bundle, current_idx, self))
             self.nodes.append(new_node)
-            return current_idx
+
+        # unsafe_get / getitem copies the value.
+        # node = self.nodes.unsafe_ptr() + current_idx
+        node = self.nodes[current_idx]
+        
+        if "#else" in String(token_bundle):
+            print('')
+
+        print('Current node: ' + String(node) + ' Parent: ' + String(node.parent()) + ' Current Idx: ' + String(node.current_idx()) + ' Current Token: ' + String(token_bundle) )
+        if node.done_no_cascade(token_bundle,self):
+            parent_idx = node.parent()
+            node = self.nodes[parent_idx]
+            new_node = AstNode.accept(token_bundle,  parent_idx, self)
+            child_idx = self.insert_node(new_node)
+            self.nodes[parent_idx] = node # Dumb, cant work with ptr though
+            return child_idx
+        elif node.done(token_bundle,self):
+            return self.get_current_node(node.parent(), token_bundle)
+        elif node.append(token_bundle, self):
+            self.nodes[current_idx] = node # Dumb, cant work with ptr though
+            return node.current_idx()
+        elif node.make_child(token_bundle, self):
+            new_node = AstNode.accept(token_bundle,  node.current_idx(), self)
+            child_idx = self.insert_node(new_node)
+            node.children()[].append(child_idx)
+            self.nodes[current_idx] = node # Dumb, cant work with ptr though
+            return child_idx
         else:
-            # unsafe_get / getitem copies the value.
-            # node = self.nodes.unsafe_ptr() + current_idx
-            node = self.nodes[current_idx]
-            
-            print('Current node: ' + String(node) + ' Parent: ' + String(node.parent()))
-            if node.done(token_bundle,self):
-                self.nodes[current_idx] = node # Dumb, cant work with ptr though
-                # Create the first node
-                new_node = AstNode.accept(token_bundle,  node.parent(), self)
-                return self.insert_node(new_node)
-            elif node.append(token_bundle, self):
-                self.nodes[current_idx] = node # Dumb, cant work with ptr though
-                return node.current_idx()
-            elif node.make_child(token_bundle, self):
-                new_node = AstNode.accept(token_bundle,  node.current_idx(), self)
-                child_idx = self.insert_node(new_node)
-                node.children()[].append(child_idx)
-                self.nodes[current_idx] = node # Dumb, cant work with ptr though
-                return child_idx
-            else:
-                raise Error(
-                    'Warning invalid path for token: ' + String(token_bundle) + " current node: " + String(node) + '\n' + String(self)
-                )
-               # Create the first node
-                # new_node = AstNode.accept(token_bundle,  current_idx, self)
-                # # TODO(josiahls): Maybe check deleted indicies and 
-                # # assign those first? In general this is probably
-                # # ok, but we want to reuse list space ideally.
-                # new_node.set_current_idx(len(self.nodes))
-                # self.nodes.append(new_node)
-                # return len(self.nodes) - 1
-                
+            raise Error(
+                'Warning invalid path for token: ' + String(token_bundle) + " current node: " + String(node) + '\n' + String(self)
+            )
 
 
 fn make_tree(path:Path) raises -> Tree:

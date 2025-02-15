@@ -13,8 +13,8 @@ from c_binder_mojo.c_ast_nodes.common import CTokens
 
 
 @value
-struct MacroTypeDefNode(NodeAstLike):
-    alias __name__ = "MacroTypeDefNode"
+struct MacroTypedefNode(NodeAstLike):
+    alias __name__ = "MacroTypedefNode"
     
     var token_bundles: TokenBundles
     var just_code:Bool

@@ -28,7 +28,11 @@ struct MacroEndIfNode(NodeAstLike):
         self._parent = parent
         self._current_idx = 0
 
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
+    fn __str__(self) -> String: 
+        name = String(self.__name__)
+        name += String('(parent=') + String(self._parent) + String(',')
+        name += String('current_idx=') + String(self._current_idx) + String(')')
+        return node2string(name,self.token_bundles,self.just_code)
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
     @staticmethod

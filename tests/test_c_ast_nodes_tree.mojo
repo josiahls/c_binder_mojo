@@ -13,9 +13,9 @@ fn test_make_tree() raises:
     root_node = make_tree(num_mojo_path)
     print('Root node: ' + String(root_node))
     # print(String(root_node))
-    # display_node = RootDisplayAstNode(root_node)
-    # print('DisplayTree:')
-    # Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(display_node))
+    display_node = RootDisplayAstNode(root_node)
+    print('DisplayTree:')
+    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(display_node))
     # root_node = test_fn(num_mojo_path)
 
 

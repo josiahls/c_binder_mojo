@@ -30,7 +30,12 @@ struct SingleCommentNode(NodeAstLike):
         self.current_line_num = token_bundle.line_num
         self.just_code = False
 
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
+    fn __str__(self) -> String: 
+        name  = String(self.__name__)
+        name += String('(parent=') + String(self._parent_idx) + String(',')
+        name += String('current_idx=') + String(self._current_idx) + String(')')
+        return node2string(name,self.token_bundles,self.just_code)
+        
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         if token_bundle.line_num == self.current_line_num:
             # print('lin nums match!' + String(len(self.token_bundles)))

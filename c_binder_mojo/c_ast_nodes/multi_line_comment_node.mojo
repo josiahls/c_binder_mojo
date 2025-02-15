@@ -30,7 +30,12 @@ struct MultiLineCommentNode(NodeAstLike):
         self._current_idx = 0
         self._is_done = False
 
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
+    fn __str__(self) -> String: 
+        name = String(self.__name__)
+        name += String('(parent=') + String(self._parent) + String(',')
+        name += String('current_idx=') + String(self._current_idx) + String(')')
+        return node2string(name,self.token_bundles,False)
+
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         self.token_bundles.append(token_bundle)
         if token_bundle.token == CTokens.COMMENT_MULTI_LINE_INLINE_END:

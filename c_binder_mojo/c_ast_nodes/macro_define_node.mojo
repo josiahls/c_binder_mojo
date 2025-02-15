@@ -30,7 +30,12 @@ struct MacroDefineNode(NodeAstLike):
         self._current_idx = 0
         self._current_line_number = token_bundle.line_num
 
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
+    fn __str__(self) -> String: 
+        name = String(self.__name__)
+        name += String('parent=') + String(self._parent) + String(',')
+        name += String('current_idx=') + String(self._current_idx) + String(')')
+        return node2string(name, self.token_bundles, self.just_code)
+
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         self.token_bundles.append(token_bundle)
         return True

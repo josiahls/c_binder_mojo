@@ -47,7 +47,9 @@ struct DisplayAstNode(CollectionElement):
 
         s += indents + begin_end_s[0].replace('\n','\n' + indents)
         for child in self.children:
+            print('line 150 ' + String(child[]) + ' ' + String(len(self.root[].nodes)))   
             node_s = String(self.root[].nodes[child[]])
+            print('line 152')
             if node_s == "" or node_s == " " or node_s == "\n":
                 continue
             # TODO(josiahls): This is not great. We need a generic way for a 
@@ -101,8 +103,46 @@ struct RootDisplayAstNode(AnyType):
     #         self.nodes[idx].children.append(child[])
 
 
-    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:CTree) raises:
+    fn validate_node(self, parent_idx: Int, node_idx: Int, root: CTree) raises:
+        # if len(self.nodes) != len(root.nodes):
+        #     print("ERROR: Display tree and original tree have different lengths")
+        #     print("Display tree length: " + String(len(self.nodes)))
+        #     print("Original tree length: " + String(len(root.nodes)))
+        #     raise Error("Tree length mismatch")
+        # Validate current node exists
+        if node_idx >= len(self.nodes):
+            print("ERROR: Invalid node index: " + String(node_idx))
+            print("Node's parent index: " + String(parent_idx))
+            if parent_idx >= 0:  # Only print parent info if there is a parent
+                print("Parent node type: " + String(root.nodes[parent_idx]))
+            else:
+                print("Node has no parent (root node)")
+            print("Total nodes in display tree: " + String(len(self.nodes)))
+            print("Total nodes in original tree: " + String(len(root.nodes)))
+            raise Error("Node index out of bounds")
+        
+        # Validate all children
+        node = self.nodes[node_idx]
+        for child in node.children:
+            if child[] >= len(self.nodes):
+                print("ERROR: Invalid child index: " + String(child[]) + 
+                      " in node: " + String(node_idx))
+                print("Node type: " + String(root.nodes[node_idx]))
+                if parent_idx >= 0:  # Only print parent info if there is a parent
+                    print("Parent node type: " + String(root.nodes[parent_idx]))
+                else:
+                    print("Node has no parent (root node)")
+                print('Child node type: ' + String(root.nodes[child[]]))
+                print("Total nodes in display tree: " + String(len(self.nodes)))
+                raise Error("Child index out of bounds")
+            
+            # Recursively validate children
+            self.validate_node(node_idx, child[], root)
+
+    fn update_nodes(mut self, parent_idx: Int, idx: Int, read root:CTree) raises:
         node = root.nodes[idx]
+
+        # print('Is this node here? index 39' + String(root.nodes[39]) + ' total nodes: ' + String(len(root.nodes)))
 
         self.nodes.append(
             DisplayAstNode(
@@ -114,16 +154,18 @@ struct RootDisplayAstNode(AnyType):
             )
         )
 
-
-        print('Checking children of node: ' + String(node))
-        if len(node.children()[]) == 0:
+        var children = node.children()
+        if len(children[]) == 0:
             return None
 
-        for child in node.children()[]:
+        for child in children[]:
+            print('Updating child: ' + String(child[]) + ' parent: ' + String(idx))
             self.update_nodes(idx, child[], root)
             self.nodes[idx].children.append(child[])
 
-        
+        # Add validation at the end
+        self.validate_node(parent_idx, idx, root)
+
     fn __del__(owned self):
         self.nodes.clear()
 
@@ -131,4 +173,5 @@ struct RootDisplayAstNode(AnyType):
         idx = 0
         node = self.nodes[idx]
         var s = String(node)
+        print('line 135')
         return s

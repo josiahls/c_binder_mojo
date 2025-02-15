@@ -60,6 +60,7 @@ struct Tree:
         idx = len(self.nodes)
         node.set_current_idx(idx)
         self.nodes.append(node)
+        print('Inserted node: ' + String(node) + ' at index: ' + String(idx))
         return idx
 
 
@@ -88,20 +89,20 @@ struct Tree:
             self.nodes[current_idx] = node # Dumb, cant work with ptr though
             return node.current_idx()
         elif node.make_child(token_bundle, self):
-            print('Making child of: ' + String(node))
+            # print('Making child of: ' + String(node))
             new_node = AstNode.accept(token_bundle,  node.current_idx(), self)
-            print('New node: ' + String(new_node))
+            # print('New node: ' + String(new_node))
             child_idx = self.insert_node(new_node)
             # print('Appending child to parent: ' + String(node) + ' Child: ' + String(new_node))
-            print('Node children: ' + String(len(node.children()[])))
+            # print('Node children: ' + String(len(node.children()[])))
             children_ptr = node.children()
-            print('Children got children')
+            # print('Children got children')
             children_ptr[].append(child_idx)
-            print('Node children: ' + String(len(children_ptr[])))
-            print('Node chidlren in the node: ' + String(len(node.children()[])))
-            print('Copy happens here I guess')
+            # print('Node children: ' + String(len(children_ptr[])))
+            # print('Node chidlren in the node: ' + String(len(node.children()[])))
+            # print('Copy happens here I guess')
             self.nodes[current_idx] = node # Dumb, cant work with ptr though
-            print('Done making child of: ' + String(node))
+            # print('Done making child of: ' + String(node))
             return child_idx
         else:
             raise Error(

@@ -77,7 +77,7 @@ struct Tree:
         if "#else" in String(token_bundle):
             print('')
 
-        print('Current node: ' + String(node) + ' Parent: ' + String(node.parent()) + ' Current Idx: ' + String(node.current_idx()) + ' Current Token: ' + String(token_bundle) )
+        # print('Current node: ' + String(node) + ' Parent: ' + String(node.parent()) + ' Current Idx: ' + String(node.current_idx()) + ' Current Token: ' + String(token_bundle) )
         if node.done_no_cascade(token_bundle,self):
             parent_idx = node.parent()
             node = self.nodes[parent_idx]

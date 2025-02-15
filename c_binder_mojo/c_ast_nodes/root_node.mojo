@@ -21,13 +21,13 @@ struct RootNode(NodeAstLike):
     var _current_idx:Int
     var _children:ArcPointer[List[Int]]
 
-    fn __copyinit__(out self, read other:Self):
-        print('Copying RootNode')
-        self.token_bundles = other.token_bundles
-        self.just_code = other.just_code
-        self._parent = other._parent
-        self._current_idx = other._current_idx
-        self._children = other._children
+    # fn __copyinit__(out self, read other:Self):
+    #     print('Copying RootNode')
+    #     self.token_bundles = other.token_bundles
+    #     self.just_code = other.just_code
+    #     self._parent = other._parent
+    #     self._current_idx = other._current_idx
+    #     self._children = other._children
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
         self.token_bundles = TokenBundles()

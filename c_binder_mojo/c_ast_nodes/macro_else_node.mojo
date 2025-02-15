@@ -32,7 +32,7 @@ struct MacroElseNode(NodeAstLike):
         name = String(self.__name__)
         name += String('(parent=') + String(self._parent) + String(',')
         name += String('current_idx=') + String(self._current_idx) + String(')')
-        return node2string(name,self.token_bundles,self.just_code)
+        return node2string(name, self.token_bundles, self.just_code)
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
     @staticmethod

@@ -47,9 +47,8 @@ struct DisplayAstNode(CollectionElement):
 
         s += indents + begin_end_s[0].replace('\n','\n' + indents)
         for child in self.children:
-            print('line 150 ' + String(child[]) + ' ' + String(len(self.root[].nodes)))   
             node_s = String(self.root[].nodes[child[]])
-            print('line 152')
+
             if node_s == "" or node_s == " " or node_s == "\n":
                 continue
             # TODO(josiahls): This is not great. We need a generic way for a 
@@ -104,11 +103,6 @@ struct RootDisplayAstNode(AnyType):
 
 
     fn validate_node(self, parent_idx: Int, node_idx: Int, root: CTree) raises:
-        # if len(self.nodes) != len(root.nodes):
-        #     print("ERROR: Display tree and original tree have different lengths")
-        #     print("Display tree length: " + String(len(self.nodes)))
-        #     print("Original tree length: " + String(len(root.nodes)))
-        #     raise Error("Tree length mismatch")
         # Validate current node exists
         if node_idx >= len(self.nodes):
             print("ERROR: Invalid node index: " + String(node_idx))
@@ -134,6 +128,7 @@ struct RootDisplayAstNode(AnyType):
                     print("Node has no parent (root node)")
                 print('Child node type: ' + String(root.nodes[child[]]))
                 print("Total nodes in display tree: " + String(len(self.nodes)))
+                print("Total nodes in original tree: " + String(len(root.nodes)))
                 raise Error("Child index out of bounds")
             
             # Recursively validate children
@@ -143,7 +138,6 @@ struct RootDisplayAstNode(AnyType):
         node = root.nodes[idx]
 
         # print('Is this node here? index 39' + String(root.nodes[39]) + ' total nodes: ' + String(len(root.nodes)))
-
         self.nodes.append(
             DisplayAstNode(
                 parent_idx, 
@@ -159,7 +153,7 @@ struct RootDisplayAstNode(AnyType):
             return None
 
         for child in children[]:
-            print('Updating child: ' + String(child[]) + ' parent: ' + String(idx))
+            # print('Updating child: ' + String(child[]) + ' parent: ' + String(idx))
             self.update_nodes(idx, child[], root)
             self.nodes[idx].children.append(child[])
 
@@ -173,5 +167,4 @@ struct RootDisplayAstNode(AnyType):
         idx = 0
         node = self.nodes[idx]
         var s = String(node)
-        print('line 135')
         return s

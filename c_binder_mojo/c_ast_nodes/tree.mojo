@@ -60,49 +60,42 @@ struct Tree:
         idx = len(self.nodes)
         node.set_current_idx(idx)
         self.nodes.append(node)
-        print('Inserted node: ' + String(node) + ' at index: ' + String(idx))
         return idx
 
 
     fn get_current_node(mut self, current_idx:Int, token_bundle:TokenBundle) raises -> Int:
-
         if len(self.nodes) == 0:
             # Create the first node
             new_node = AstNode(RootNode.create(token_bundle, current_idx, self))
             self.nodes.append(new_node)
 
-        # unsafe_get / getitem copies the value.
-        # node = self.nodes.unsafe_ptr() + current_idx
+        #NOTE unsafe_get / getitem copies the value.
+        #NOTE node = self.nodes.unsafe_ptr() + current_idx
         node = self.nodes[current_idx]
 
-        # print('Current node: ' + String(node) + ' Parent: ' + String(node.parent()) + ' Current Idx: ' + String(node.current_idx()) + ' Current Token: ' + String(token_bundle) )
         if node.done_no_cascade(token_bundle,self):
             parent_idx = node.parent()
             node = self.nodes[parent_idx]
             new_node = AstNode.accept(token_bundle,  parent_idx, self)
             child_idx = self.insert_node(new_node)
-            self.nodes[parent_idx] = node # Dumb, cant work with ptr though
+            
+            # Add the new node to parent's children list
+            children_ptr = node.children()
+            children_ptr[].append(child_idx)
+            
+            self.nodes[parent_idx] = node #NOTE Dumb, cant work with ptr though
             return child_idx
         elif node.done(token_bundle,self):
             return self.get_current_node(node.parent(), token_bundle)
         elif node.append(token_bundle, self):
-            self.nodes[current_idx] = node # Dumb, cant work with ptr though
+            self.nodes[current_idx] = node #NOTE Dumb, cant work with ptr though
             return node.current_idx()
         elif node.make_child(token_bundle, self):
-            # print('Making child of: ' + String(node))
             new_node = AstNode.accept(token_bundle,  node.current_idx(), self)
-            # print('New node: ' + String(new_node))
             child_idx = self.insert_node(new_node)
-            # print('Appending child to parent: ' + String(node) + ' Child: ' + String(new_node))
-            # print('Node children: ' + String(len(node.children()[])))
             children_ptr = node.children()
-            # print('Children got children')
             children_ptr[].append(child_idx)
-            # print('Node children: ' + String(len(children_ptr[])))
-            # print('Node chidlren in the node: ' + String(len(node.children()[])))
-            # print('Copy happens here I guess')
-            self.nodes[current_idx] = node # Dumb, cant work with ptr though
-            # print('Done making child of: ' + String(node))
+            self.nodes[current_idx] = node #NOTE Dumb, cant work with ptr though
             return child_idx
         else:
             raise Error(

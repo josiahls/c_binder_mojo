@@ -6,45 +6,50 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.base import TokenBundle,TokenBundles
 from c_binder_mojo.c_ast_nodes.tree import Tree
-from c_binder_mojo.c_ast_nodes.common import NodeAstLike
+from c_binder_mojo.c_ast_nodes.common import NodeAstLike, CTokens
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
-from c_binder_mojo.c_ast_nodes.common import CTokens
 
 
 @value
-struct WhitespaceNode(NodeAstLike):
-    alias __name__ = "WhitespaceNode"
+struct MultiLineCommentNode(NodeAstLike):
+    alias __name__ = "MultiLineCommentNode"
     
     var token_bundles: TokenBundles
     var just_code:Bool
     var _parent: Int
     var _current_idx:Int
+    var _is_done:Bool
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
+        """Handles multi-line comments, either inline or block."""
         self.token_bundles = TokenBundles()
         self.token_bundles.append(token_bundle)
         self.just_code = False
         self._parent = parent
         self._current_idx = 0
+        self._is_done = False
 
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,self.just_code)
+    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
-        if self.accept(token_bundle):
-            self.token_bundles.append(token_bundle)
-            return True
-        return False
+        self.token_bundles.append(token_bundle)
+        if token_bundle.token == CTokens.COMMENT_MULTI_LINE_INLINE_END:
+            self._is_done = True
+        if token_bundle.token == CTokens.COMMENT_MULTI_LINE_END:
+            self._is_done = True
+        return True
 
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: 
-        if token_bundle.token == '' or token_bundle.token == '\n':
+        if token_bundle.token == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
+            return True
+        if token_bundle.token == CTokens.COMMENT_MULTI_LINE_BEGIN:
             return True
         return False
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
-        return True
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return self._is_done
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent(self) -> Int: return self._parent
     fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())

@@ -9,7 +9,7 @@ from c_binder_mojo.c_ast_statements.ast_statements import AstStatements
 from c_binder_mojo.c_ast_statements.scope import Scope
 from c_binder_mojo.c_ast_statements.typedef import TypeDef
 from c_binder_mojo.base import TokenBundle, STRING_SPLIT_AT
-from c_binder_mojo.c_primitives import CTokens
+from c_binder_mojo.c_ast_nodes.common import CTokens
 
 
 fn is_valid_enum_scope(x:AstStatements) -> Bool:

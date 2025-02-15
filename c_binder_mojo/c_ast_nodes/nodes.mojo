@@ -10,10 +10,14 @@ from c_binder_mojo.c_ast_nodes.common import NodeAstLike
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes import (
     SingleCommentNode,
-    IfNDefNode,
-    DefineNode,
+    MacroIfNDefNode,
+    MacroDefineNode,
     RootNode,
-    WhitespaceNode
+    MacroTypeDefNode,
+    MacroEndIfNode,
+    MacroElseNode,
+    WhitespaceNode,
+    MultiLineCommentNode,
 )
 
 
@@ -83,10 +87,14 @@ struct AstNode(CollectionElement):
     alias type = Variant[
         SingleCommentNode,
         DeletedNode,
-        IfNDefNode,
-        DefineNode,
+        MacroIfNDefNode,
+        MacroDefineNode,
         WhitespaceNode,
         RootNode,
+        MacroTypeDefNode,
+        MacroEndIfNode,
+        MacroElseNode,
+        MultiLineCommentNode,
         PlaceHolderNode, # Must be last in the list
     ]
     var node:Self.type

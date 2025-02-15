@@ -7,7 +7,7 @@ from utils import Variant
 from c_binder_mojo.mojo_ast_statements.abstract_ast_statement import AbstractAstStatement
 from c_binder_mojo.base import TokenBundle,TokenBundles
 from c_binder_mojo import c_ast_statements
-from c_binder_mojo.c_primitives import CTokens,CommentEnum
+from c_binder_mojo.c_ast_nodes.common import CTokens,CommentEnum
 from c_binder_mojo.mojo_ast_statements import MojoTokens
 
 

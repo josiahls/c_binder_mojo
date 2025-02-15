@@ -9,7 +9,7 @@ from c_binder_mojo.c_ast_nodes.tree import Tree
 from c_binder_mojo.c_ast_nodes.common import NodeAstLike
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
-from c_binder_mojo.c_primitives import CTokens
+from c_binder_mojo.c_ast_nodes.common import CTokens
 
 
 @value

@@ -1,6 +1,6 @@
 # Native Mojo Modules
 from pathlib import Path
-from memory import ArcPointer
+from memory import ArcPointer,UnsafePointer
 # from utils.variant import Variant
 # Third Party Mojo Modules
 # First Party Modules
@@ -42,7 +42,7 @@ struct MacroEndIfNode(NodeAstLike):
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent(self) -> Int: return self._parent
-    fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
+    fn children(mut self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False

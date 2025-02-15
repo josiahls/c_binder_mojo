@@ -1,6 +1,6 @@
 # Native Mojo Modules
 from pathlib import Path
-from memory import ArcPointer
+from memory import ArcPointer,UnsafePointer
 # from utils.variant import Variant
 # Third Party Mojo Modules
 # First Party Modules
@@ -20,6 +20,14 @@ struct RootNode(NodeAstLike):
     var _parent: Int
     var _current_idx:Int
     var _children:List[Int]
+
+    fn __copyinit__(out self, read other:Self):
+        print('Copying RootNode')
+        self.token_bundles = other.token_bundles
+        self.just_code = other.just_code
+        self._parent = other._parent
+        self._current_idx = other._current_idx
+        self._children = other._children
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
         self.token_bundles = TokenBundles()
@@ -41,7 +49,7 @@ struct RootNode(NodeAstLike):
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return True
 
     fn parent(self) -> Int: return self._parent
-    fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(self._children)
+    fn children(mut self) -> ArcPointer[List[Int]]: return ArcPointer(self._children)
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False

@@ -1,6 +1,6 @@
 # Native Mojo Modules
 from pathlib import Path
-from memory import ArcPointer
+from memory import ArcPointer,UnsafePointer
 # from utils.variant import Variant
 # Third Party Mojo Modules
 # First Party Modules
@@ -34,6 +34,11 @@ fn node2string(name:String,token_bundles:TokenBundles, just_code:Bool) -> String
 struct DeletedNode(NodeAstLike):
     alias __name__ = "DeletedNode"
 
+    var _children: ArcPointer[List[Int]]  # Add field to store children
+
+    fn __init__(out self):
+        self._children = ArcPointer(List[Int]())  # Initialize in constructor
+
     fn __str__(self) -> String: return self.__name__
     @staticmethod
     fn accept(token_bundle:TokenBundle) -> Bool: return False
@@ -44,7 +49,7 @@ struct DeletedNode(NodeAstLike):
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent(self) -> Int: return 0
-    fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
+    fn children(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return 0
     fn set_current_idx(mut self, value:Int): ...
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
@@ -57,6 +62,7 @@ struct PlaceHolderNode(NodeAstLike):
     var just_code:Bool
     var _parent_idx:Int
     var _current_idx:Int
+    var _children: ArcPointer[List[Int]]  # Add field to store children
 
     fn __init__(out self,token_bundle:TokenBundle, parent_idx:Int):
         self.token_bundles = TokenBundles()
@@ -64,6 +70,7 @@ struct PlaceHolderNode(NodeAstLike):
         self.just_code = False
         self._parent_idx = parent_idx
         self._current_idx = 0
+        self._children = ArcPointer(List[Int]())  # Initialize in constructor
 
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
 
@@ -76,7 +83,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent(self) -> Int: return self._parent_idx
-    fn children(self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
+    fn children(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False

@@ -6,11 +6,11 @@ from utils import Variant
 from pathlib import Path
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo import c_ast_statements
+from c_binder_mojo import c_ast_nodes
 from c_binder_mojo import mojo_ast_statements
 
-from c_binder_mojo.c_ast_node import RootAstNode
-from c_binder_mojo.mojo_ast_node import RootMojoAstNode
+from c_binder_mojo.c_ast_nodes.tree import Tree as CTree
+# from c_binder_mojo.mojo_ast_node import RootMojoAstNode
 from c_binder_mojo.base import STRING_SPLIT_AT
 
 
@@ -67,57 +67,59 @@ struct RootDisplayAstNode(AnyType):
     var string_just_code:Bool
     var indent_root:Bool
 
-    fn __init__(mut self, read root:RootAstNode) raises:
+    fn __init__(mut self, read root:CTree) raises:
         self.string_just_code = False
         self.indent_root = True
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root)
 
-    fn __init__(mut self, read root:RootMojoAstNode) raises:
-        self.string_just_code = False
-        self.indent_root = False
-        self.nodes = List[DisplayAstNode]()
-        self.update_nodes(-1, 0, root) 
+    # fn __init__(mut self, read root:RootMojoAstNode) raises:
+    #     self.string_just_code = False
+    #     self.indent_root = False
+    #     self.nodes = List[DisplayAstNode]()
+    #     self.update_nodes(-1, 0, root) 
 
-    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootMojoAstNode) raises:
+    # fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootMojoAstNode) raises:
+    #     node = root.nodes[idx]
+    #     mojo_ast_statements.to_toggle_string_just_code(node.ast_statement,True)
+
+    #     self.nodes.append(
+    #         DisplayAstNode(
+    #             parent_idx, 
+    #             List[Int](),
+    #             mojo_ast_statements.ast_statements.to_string(node.ast_statement),
+    #             UnsafePointer[mut=True].address_of(self),
+    #             indent_root=self.indent_root
+    #         )
+    #     )
+
+    #     if len(node.children) == 0:
+    #         return None
+
+    #     for child in node.children:
+    #         self.update_nodes(idx, child[], root)
+    #         self.nodes[idx].children.append(child[])
+
+
+    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:CTree) raises:
         node = root.nodes[idx]
-        mojo_ast_statements.to_toggle_string_just_code(node.ast_statement,True)
 
         self.nodes.append(
             DisplayAstNode(
                 parent_idx, 
                 List[Int](),
-                mojo_ast_statements.ast_statements.to_string(node.ast_statement),
+                String(node),
                 UnsafePointer[mut=True].address_of(self),
                 indent_root=self.indent_root
             )
         )
 
-        if len(node.children) == 0:
+
+        print('Checking children of node: ' + String(node))
+        if len(node.children()[]) == 0:
             return None
 
-        for child in node.children:
-            self.update_nodes(idx, child[], root)
-            self.nodes[idx].children.append(child[])
-
-
-    fn update_nodes(mut self, parent_idx:Int, idx: Int, read root:RootAstNode) raises:
-        node = root.nodes[idx]
-
-        self.nodes.append(
-            DisplayAstNode(
-                parent_idx, 
-                List[Int](),
-                c_ast_statements.ast_statements.to_string(node.ast_statement),
-                UnsafePointer[mut=True].address_of(self),
-                indent_root=self.indent_root
-            )
-        )
-
-        if len(node.children) == 0:
-            return None
-
-        for child in node.children:
+        for child in node.children()[]:
             self.update_nodes(idx, child[], root)
             self.nodes[idx].children.append(child[])
 

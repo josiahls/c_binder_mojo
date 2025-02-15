@@ -73,9 +73,6 @@ struct Tree:
         # unsafe_get / getitem copies the value.
         # node = self.nodes.unsafe_ptr() + current_idx
         node = self.nodes[current_idx]
-        
-        if "#else" in String(token_bundle):
-            print('')
 
         # print('Current node: ' + String(node) + ' Parent: ' + String(node.parent()) + ' Current Idx: ' + String(node.current_idx()) + ' Current Token: ' + String(token_bundle) )
         if node.done_no_cascade(token_bundle,self):
@@ -91,10 +88,20 @@ struct Tree:
             self.nodes[current_idx] = node # Dumb, cant work with ptr though
             return node.current_idx()
         elif node.make_child(token_bundle, self):
+            print('Making child of: ' + String(node))
             new_node = AstNode.accept(token_bundle,  node.current_idx(), self)
+            print('New node: ' + String(new_node))
             child_idx = self.insert_node(new_node)
-            node.children()[].append(child_idx)
+            # print('Appending child to parent: ' + String(node) + ' Child: ' + String(new_node))
+            print('Node children: ' + String(len(node.children()[])))
+            children_ptr = node.children()
+            print('Children got children')
+            children_ptr[].append(child_idx)
+            print('Node children: ' + String(len(children_ptr[])))
+            print('Node chidlren in the node: ' + String(len(node.children()[])))
+            print('Copy happens here I guess')
             self.nodes[current_idx] = node # Dumb, cant work with ptr though
+            print('Done making child of: ' + String(node))
             return child_idx
         else:
             raise Error(

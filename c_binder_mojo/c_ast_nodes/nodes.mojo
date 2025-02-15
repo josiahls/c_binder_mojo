@@ -18,6 +18,7 @@ from c_binder_mojo.c_ast_nodes import (
     MacroElseNode,
     WhitespaceNode,
     MultiLineCommentNode,
+    IncludeNode,
 )
 
 
@@ -101,6 +102,7 @@ struct AstNode(CollectionElement):
         MacroTypeDefNode,
         MacroEndIfNode,
         MacroElseNode,
+        IncludeNode,
         MultiLineCommentNode,
         PlaceHolderNode, # Must be last in the list
     ]

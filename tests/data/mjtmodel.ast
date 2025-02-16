@@ -316,7 +316,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=62,current_idx=304)
 			SingleCommentNode(parent=62,current_idx=305)// number of disable flags
 			PlaceHolderNode(parent=62,current_idx=306)}
-			DeletedNodemjtDisableBit ;
+			DeletedNode
+		mjtDisableBit ;
 		WhitespaceNode(parent=15,current_idx=308)
 		WhitespaceNode(parent=15,current_idx=309)
 		WhitespaceNode(parent=15,current_idx=310)
@@ -491,7 +492,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=311,current_idx=479)
 			SingleCommentNode(parent=311,current_idx=480)// number of enable flags
 			PlaceHolderNode(parent=311,current_idx=481)}
-			DeletedNodemjtEnableBit ;
+			DeletedNode
+		mjtEnableBit ;
 		WhitespaceNode(parent=15,current_idx=483)
 		WhitespaceNode(parent=15,current_idx=484)
 		WhitespaceNode(parent=15,current_idx=485)
@@ -603,7 +605,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=486,current_idx=591)
 			SingleCommentNode(parent=486,current_idx=592)// rotation angle (rad) around body-fixed axis  (1)
 			PlaceHolderNode(parent=486,current_idx=593)}
-			DeletedNodemjtJoint ;
+			DeletedNode
+		mjtJoint ;
 		WhitespaceNode(parent=15,current_idx=595)
 		WhitespaceNode(parent=15,current_idx=596)
 		WhitespaceNode(parent=15,current_idx=597)
@@ -1053,7 +1056,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=598,current_idx=1041)
 			SingleCommentNode(parent=598,current_idx=1042)// missing geom type
 			PlaceHolderNode(parent=598,current_idx=1043)}
-			DeletedNodemjtGeom ;
+			DeletedNode
+		mjtGeom ;
 		WhitespaceNode(parent=15,current_idx=1045)
 		WhitespaceNode(parent=15,current_idx=1046)
 		WhitespaceNode(parent=15,current_idx=1047)
@@ -1142,7 +1146,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1048,current_idx=1130)
 			SingleCommentNode(parent=1048,current_idx=1131)// pos fixed in body, rot tracks target subtree com
 			PlaceHolderNode(parent=1048,current_idx=1132)}
-			DeletedNodemjtCamLight ;
+			DeletedNode
+		mjtCamLight ;
 		WhitespaceNode(parent=15,current_idx=1134)
 		WhitespaceNode(parent=15,current_idx=1135)
 		WhitespaceNode(parent=15,current_idx=1136)
@@ -1218,7 +1223,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1137,current_idx=1206)
 			SingleCommentNode(parent=1137,current_idx=1207)// cube texture used as skybox
 			PlaceHolderNode(parent=1137,current_idx=1208)}
-			DeletedNodemjtTexture ;
+			DeletedNode
+		mjtTexture ;
 		WhitespaceNode(parent=15,current_idx=1210)
 		WhitespaceNode(parent=15,current_idx=1211)
 		WhitespaceNode(parent=15,current_idx=1212)
@@ -1411,7 +1417,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1213,current_idx=1399)
 			PlaceHolderNode(parent=1213,current_idx=1400)mjNTEXROLE
 			PlaceHolderNode(parent=1213,current_idx=1401)}
-			DeletedNodemjtTextureRole ;
+			DeletedNode
+		mjtTextureRole ;
 		WhitespaceNode(parent=15,current_idx=1403)
 		WhitespaceNode(parent=15,current_idx=1404)
 		WhitespaceNode(parent=15,current_idx=1405)
@@ -1508,7 +1515,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1406,current_idx=1496)
 			SingleCommentNode(parent=1406,current_idx=1497)// implicit in velocity, no rne derivative
 			PlaceHolderNode(parent=1406,current_idx=1498)}
-			DeletedNodemjtIntegrator ;
+			DeletedNode
+		mjtIntegrator ;
 		WhitespaceNode(parent=15,current_idx=1500)
 		WhitespaceNode(parent=15,current_idx=1501)
 		WhitespaceNode(parent=15,current_idx=1502)
@@ -1564,7 +1572,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1503,current_idx=1552)
 			SingleCommentNode(parent=1503,current_idx=1553)// elliptic
 			PlaceHolderNode(parent=1503,current_idx=1554)}
-			DeletedNodemjtCone ;
+			DeletedNode
+		mjtCone ;
 		WhitespaceNode(parent=15,current_idx=1556)
 		WhitespaceNode(parent=15,current_idx=1557)
 		WhitespaceNode(parent=15,current_idx=1558)
@@ -1648,7 +1657,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1559,current_idx=1636)
 			SingleCommentNode(parent=1559,current_idx=1637)// dense if nv<60, sparse otherwise
 			PlaceHolderNode(parent=1559,current_idx=1638)}
-			DeletedNodemjtJacobian ;
+			DeletedNode
+		mjtJacobian ;
 		WhitespaceNode(parent=15,current_idx=1640)
 		WhitespaceNode(parent=15,current_idx=1641)
 		WhitespaceNode(parent=15,current_idx=1642)
@@ -1738,7 +1748,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1643,current_idx=1726)
 			SingleCommentNode(parent=1643,current_idx=1727)// Newton (primal)
 			PlaceHolderNode(parent=1643,current_idx=1728)}
-			DeletedNodemjtSolver ;
+			DeletedNode
+		mjtSolver ;
 		WhitespaceNode(parent=15,current_idx=1730)
 		WhitespaceNode(parent=15,current_idx=1731)
 		WhitespaceNode(parent=15,current_idx=1732)
@@ -1899,7 +1910,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1733,current_idx=1887)
 			SingleCommentNode(parent=1733,current_idx=1888)// unsupported, will cause an error if used
 			PlaceHolderNode(parent=1733,current_idx=1889)}
-			DeletedNodemjtEq ;
+			DeletedNode
+		mjtEq ;
 		WhitespaceNode(parent=15,current_idx=1891)
 		WhitespaceNode(parent=15,current_idx=1892)
 		WhitespaceNode(parent=15,current_idx=1893)
@@ -2047,7 +2059,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=1894,current_idx=2035)
 			SingleCommentNode(parent=1894,current_idx=2036)// wrap around (infinite) cylinder
 			PlaceHolderNode(parent=1894,current_idx=2037)}
-			DeletedNodemjtWrap ;
+			DeletedNode
+		mjtWrap ;
 		WhitespaceNode(parent=15,current_idx=2039)
 		WhitespaceNode(parent=15,current_idx=2040)
 		WhitespaceNode(parent=15,current_idx=2041)
@@ -2207,7 +2220,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=2042,current_idx=2195)
 			SingleCommentNode(parent=2042,current_idx=2196)// undefined transmission type
 			PlaceHolderNode(parent=2042,current_idx=2197)}
-			DeletedNodemjtTrn ;
+			DeletedNode
+		mjtTrn ;
 		WhitespaceNode(parent=15,current_idx=2199)
 		WhitespaceNode(parent=15,current_idx=2200)
 		WhitespaceNode(parent=15,current_idx=2201)
@@ -2354,7 +2368,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=2202,current_idx=2342)
 			SingleCommentNode(parent=2202,current_idx=2343)// user-defined dynamics type
 			PlaceHolderNode(parent=2202,current_idx=2344)}
-			DeletedNodemjtDyn ;
+			DeletedNode
+		mjtDyn ;
 		WhitespaceNode(parent=15,current_idx=2346)
 		WhitespaceNode(parent=15,current_idx=2347)
 		WhitespaceNode(parent=15,current_idx=2348)
@@ -2460,7 +2475,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=2349,current_idx=2448)
 			SingleCommentNode(parent=2349,current_idx=2449)// user-defined gain type
 			PlaceHolderNode(parent=2349,current_idx=2450)}
-			DeletedNodemjtGain ;
+			DeletedNode
+		mjtGain ;
 		WhitespaceNode(parent=15,current_idx=2452)
 		WhitespaceNode(parent=15,current_idx=2453)
 		WhitespaceNode(parent=15,current_idx=2454)
@@ -2567,7 +2583,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=2455,current_idx=2555)
 			SingleCommentNode(parent=2455,current_idx=2556)// user-defined bias type
 			PlaceHolderNode(parent=2455,current_idx=2557)}
-			DeletedNodemjtBias ;
+			DeletedNode
+		mjtBias ;
 		WhitespaceNode(parent=15,current_idx=2559)
 		WhitespaceNode(parent=15,current_idx=2560)
 		WhitespaceNode(parent=15,current_idx=2561)
@@ -3224,7 +3241,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=2562,current_idx=3212)
 			SingleCommentNode(parent=2562,current_idx=3213)// frame
 			PlaceHolderNode(parent=2562,current_idx=3214)}
-			DeletedNodemjtObj ;
+			DeletedNode
+		mjtObj ;
 		WhitespaceNode(parent=15,current_idx=3216)
 		WhitespaceNode(parent=15,current_idx=3217)
 		WhitespaceNode(parent=15,current_idx=3218)
@@ -3334,7 +3352,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=3219,current_idx=3322)
 			SingleCommentNode(parent=3219,current_idx=3323)// frictional contact, elliptic friction cone
 			PlaceHolderNode(parent=3219,current_idx=3324)}
-			DeletedNodemjtConstraint ;
+			DeletedNode
+		mjtConstraint ;
 		WhitespaceNode(parent=15,current_idx=3326)
 		WhitespaceNode(parent=15,current_idx=3327)
 		WhitespaceNode(parent=15,current_idx=3328)
@@ -3419,7 +3438,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=3329,current_idx=3407)
 			SingleCommentNode(parent=3329,current_idx=3408)// squared distance to cone cost (elliptic contact)
 			PlaceHolderNode(parent=3329,current_idx=3409)}
-			DeletedNodemjtConstraintState ;
+			DeletedNode
+		mjtConstraintState ;
 		WhitespaceNode(parent=15,current_idx=3411)
 		WhitespaceNode(parent=15,current_idx=3412)
 		WhitespaceNode(parent=15,current_idx=3413)
@@ -4209,7 +4229,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=3414,current_idx=4197)
 			SingleCommentNode(parent=3414,current_idx=4198)// sensor data provided by mjcb_sensor callback
 			PlaceHolderNode(parent=3414,current_idx=4199)}
-			DeletedNodemjtSensor ;
+			DeletedNode
+		mjtSensor ;
 		WhitespaceNode(parent=15,current_idx=4201)
 		WhitespaceNode(parent=15,current_idx=4202)
 		WhitespaceNode(parent=15,current_idx=4203)
@@ -4318,7 +4339,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=4204,current_idx=4306)
 			SingleCommentNode(parent=4204,current_idx=4307)// acceleration/force-dependent computations
 			PlaceHolderNode(parent=4204,current_idx=4308)}
-			DeletedNodemjtStage ;
+			DeletedNode
+		mjtStage ;
 		WhitespaceNode(parent=15,current_idx=4310)
 		WhitespaceNode(parent=15,current_idx=4311)
 		WhitespaceNode(parent=15,current_idx=4312)
@@ -4399,7 +4421,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=4313,current_idx=4387)
 			SingleCommentNode(parent=4313,current_idx=4388)// unit quaternion
 			PlaceHolderNode(parent=4313,current_idx=4389)}
-			DeletedNodemjtDataType ;
+			DeletedNode
+		mjtDataType ;
 		WhitespaceNode(parent=15,current_idx=4391)
 		WhitespaceNode(parent=15,current_idx=4392)
 		WhitespaceNode(parent=15,current_idx=4393)
@@ -4491,7 +4514,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=4394,current_idx=4479)
 			SingleCommentNode(parent=4394,current_idx=4480)// frame orientation is same as inertia orientation
 			PlaceHolderNode(parent=4394,current_idx=4481)}
-			DeletedNodemjtSameFrame ;
+			DeletedNode
+		mjtSameFrame ;
 		WhitespaceNode(parent=15,current_idx=4483)
 		WhitespaceNode(parent=15,current_idx=4484)
 		WhitespaceNode(parent=15,current_idx=4485)
@@ -4585,7 +4609,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=4486,current_idx=4573)
 			SingleCommentNode(parent=4486,current_idx=4574)// process all actuators
 			PlaceHolderNode(parent=4486,current_idx=4575)}
-			DeletedNodemjtLRMode ;
+			DeletedNode
+		mjtLRMode ;
 		WhitespaceNode(parent=15,current_idx=4577)
 		WhitespaceNode(parent=15,current_idx=4578)
 		WhitespaceNode(parent=15,current_idx=4579)
@@ -4695,7 +4720,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 			WhitespaceNode(parent=4580,current_idx=4683)
 			SingleCommentNode(parent=4580,current_idx=4684)// choose between BVH and SAP automatically
 			PlaceHolderNode(parent=4580,current_idx=4685)}
-			DeletedNodemjtFlexSelf ;
+			DeletedNode
+		mjtFlexSelf ;
 		WhitespaceNode(parent=15,current_idx=4687)
 		WhitespaceNode(parent=15,current_idx=4688)
 		WhitespaceNode(parent=15,current_idx=4689)
@@ -4966,7 +4992,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 		TypedefNode(parent=15,current_idx=4954,typename=mjLROpt)typedef
 			PlaceHolderNode(parent=4954,current_idx=4955)struct
 			PlaceHolderNode(parent=4954,current_idx=4956)mjLROpt_
-			DeletedNodemjLROpt ;
+			DeletedNode
+		mjLROpt ;
 		WhitespaceNode(parent=15,current_idx=4958)
 		WhitespaceNode(parent=15,current_idx=4959)
 		WhitespaceNode(parent=15,current_idx=4960)
@@ -5050,7 +5077,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 		TypedefNode(parent=15,current_idx=5038,typename=mjVFS)typedef
 			PlaceHolderNode(parent=5038,current_idx=5039)struct
 			PlaceHolderNode(parent=5038,current_idx=5040)mjVFS_
-			DeletedNodemjVFS ;
+			DeletedNode
+		mjVFS ;
 		WhitespaceNode(parent=15,current_idx=5042)
 		WhitespaceNode(parent=15,current_idx=5043)
 		SingleCommentNode(parent=15,current_idx=5044)//---------------------------------- mjOption ------------------------------------------------------
@@ -5694,7 +5722,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 		TypedefNode(parent=15,current_idx=5682,typename=mjOption)typedef
 			PlaceHolderNode(parent=5682,current_idx=5683)struct
 			PlaceHolderNode(parent=5682,current_idx=5684)mjOption_
-			DeletedNodemjOption ;
+			DeletedNode
+		mjOption ;
 		WhitespaceNode(parent=15,current_idx=5686)
 		WhitespaceNode(parent=15,current_idx=5687)
 		WhitespaceNode(parent=15,current_idx=5688)
@@ -7576,7 +7605,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 		TypedefNode(parent=15,current_idx=7564,typename=mjVisual)typedef
 			PlaceHolderNode(parent=7564,current_idx=7565)struct
 			PlaceHolderNode(parent=7564,current_idx=7566)mjVisual_
-			DeletedNodemjVisual ;
+			DeletedNode
+		mjVisual ;
 		WhitespaceNode(parent=15,current_idx=7568)
 		WhitespaceNode(parent=15,current_idx=7569)
 		WhitespaceNode(parent=15,current_idx=7570)
@@ -7712,7 +7742,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 		TypedefNode(parent=15,current_idx=7700,typename=mjStatistic)typedef
 			PlaceHolderNode(parent=7700,current_idx=7701)struct
 			PlaceHolderNode(parent=7700,current_idx=7702)mjStatistic_
-			DeletedNodemjStatistic ;
+			DeletedNode
+		mjStatistic ;
 		WhitespaceNode(parent=15,current_idx=7704)
 		WhitespaceNode(parent=15,current_idx=7705)
 		WhitespaceNode(parent=15,current_idx=7706)
@@ -17115,7 +17146,8 @@ mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel
 		TypedefNode(parent=15,current_idx=17103,typename=mjModel)typedef
 			PlaceHolderNode(parent=17103,current_idx=17104)struct
 			PlaceHolderNode(parent=17103,current_idx=17105)mjModel_
-			DeletedNodemjModel ;
+			DeletedNode
+		mjModel ;
 		WhitespaceNode(parent=15,current_idx=17107)
 		WhitespaceNode(parent=15,current_idx=17108)
 	MacroEndIfNode(parent=0,current_idx=17109)#endif

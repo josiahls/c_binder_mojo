@@ -76,6 +76,7 @@ struct DisplayAstNode:
                 iterated_children = True
                 token_i = 0
                 s += self.append_children()
+                s += String('\n' + indents)
             elif token_i == 0:
                 s += String(token_bundle[].token).replace('\n','\n' + indents)
                 token_i += 1

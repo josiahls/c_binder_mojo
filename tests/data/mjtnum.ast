@@ -28,7 +28,8 @@ mjtNum, mjMINVAL, mjtByte,
 			WhitespaceNode(parent=20,current_idx=22)
 			TypedefNode(parent=20,current_idx=23,typename=mjtNum)typedef
 				PlaceHolderNode(parent=23,current_idx=24)double
-				DeletedNodemjtNum ;
+				DeletedNode
+			mjtNum ;
 			WhitespaceNode(parent=20,current_idx=26)
 			WhitespaceNode(parent=20,current_idx=27)
 			WhitespaceNode(parent=20,current_idx=28)
@@ -39,7 +40,8 @@ mjtNum, mjMINVAL, mjtByte,
 		WhitespaceNode(parent=15,current_idx=33)
 		TypedefNode(parent=15,current_idx=34,typename=mjtNum)typedef
 			PlaceHolderNode(parent=34,current_idx=35)float
-			DeletedNodemjtNum ;
+			DeletedNode
+		mjtNum ;
 		WhitespaceNode(parent=15,current_idx=37)
 		WhitespaceNode(parent=15,current_idx=38)
 		WhitespaceNode(parent=15,current_idx=39)
@@ -58,7 +60,8 @@ mjtNum, mjMINVAL, mjtByte,
 	TypedefNode(parent=0,current_idx=52,typename=mjtByte)typedef
 		PlaceHolderNode(parent=52,current_idx=53)unsigned
 		PlaceHolderNode(parent=52,current_idx=54)char
-		DeletedNodemjtByte ;
+		DeletedNode
+	mjtByte ;
 	WhitespaceNode(parent=0,current_idx=56)
 	WhitespaceNode(parent=0,current_idx=57)
 	WhitespaceNode(parent=0,current_idx=58)

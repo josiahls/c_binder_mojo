@@ -41,7 +41,7 @@ struct DeletedNode(NodeAstLike):
     fn __init__(out self):
         self._children = ArcPointer(List[Int]())  # Initialize in constructor
 
-    fn __str__(self) -> String: return self.__name__
+    fn __str__(self) -> String: return self.__name__ + String('(deleted) ')
     @staticmethod
     fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     @staticmethod

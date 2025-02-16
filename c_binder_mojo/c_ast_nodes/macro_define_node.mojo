@@ -42,21 +42,34 @@ struct MacroDefineNode(NodeAstLike):
         if token_bundle.token == CTokens.MACRO_DEFINE:
             return True
         return False
+
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
+
+    fn register_type_name(self, mut tree:Tree):
+        # Define usually is: #define <name> <code>
+        # The name is the second to last token bundle before the comment.
+        token_bundle = self._token_bundles[1]
+        if token_bundle.token not in tree.registered_datatypes[]:
+            tree.registered_datatypes[].append(token_bundle.token)
+
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
         if len(self._token_bundles) < 3:
             return False
         if self._current_line_number == token_bundle.line_num:
             if token_bundle.token == CTokens.COMMENT_SINGLE_LINE_BEGIN:
+                self.register_type_name(tree)
                 return True
             if token_bundle.token == CTokens.COMMENT_MULTI_LINE_BEGIN:
+                self.register_type_name(tree)
                 return True
             if token_bundle.token == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
+                self.register_type_name(tree)
                 return True
 
             return False
+        self.register_type_name(tree)
         return True
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent_idx(self) -> Int: return self._parent

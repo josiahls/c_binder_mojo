@@ -5,7 +5,7 @@ from collections.list import _ListIter
 
 
 @value
-struct TokenBundle:
+struct TokenBundle(EqualityComparable):
     var token:String
     var line_num:Int
     var col_num:Int
@@ -16,6 +16,21 @@ struct TokenBundle:
         self.line_num = line_num
         self.col_num = col_num
         self.is_splitter = is_splitter
+
+    fn __ne__(read self:Self, read other:Self) -> Bool: 
+        if self.token != other.token: 
+            return True
+        elif self.line_num != other.line_num:
+            return True
+        elif self.col_num != other.col_num:
+            return True
+        elif self.is_splitter != other.is_splitter:
+            return True
+        return False
+
+    fn __eq__(read self:Self, read other:Self) -> Bool: 
+        return not self.__ne__(other)
+
 
     fn __str__(self) -> String:
         return self.token \
@@ -59,6 +74,9 @@ struct TokenBundles(Stringable):
                 s += '\n'
             s += String(token[].token) + " "
         return s
+
+    fn clear(mut self):
+        self._token_bundles.clear()
 
 
 # TODO(josiahls): looks ugly. I think its better to just have start_statement_string, 

@@ -26,11 +26,7 @@ struct TypedefNode(NodeAstLike):
     var _children: ArcPointer[List[Int]]
 
     fn type_name(self) -> TokenBundle:
-        if len(self._token_bundles) > 2:
-            return self._token_bundles[-2] # Second to last token, being a semi colon
-        else:
-            print('weird token bundles: ' + String(self._token_bundles))
-            return TokenBundle('its a weird token', 0, 0)
+        return self._token_bundles[-2] # Second to last token, being a semi colon
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
         self._token_bundles = TokenBundles()

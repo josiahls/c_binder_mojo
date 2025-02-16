@@ -92,11 +92,6 @@ struct Tree:
         #NOTE unsafe_get / getitem copies the value.
         #NOTE node = self.nodes.unsafe_ptr() + current_idx
         node = self.nodes[current_idx]
-        if current_idx==23:
-            if 'MacroIfNDefNode' in node.display_name():
-                if 'MacroIfNDefNode(parent=15,current_idx=20) #ifndef mjUSESINGLE' in String(node):
-                    print('node display: ' + node.display_name())
-                    print('node: ' + String(node))
 
         if node.done_no_cascade(token_bundle,self):
             parent_idx = node.parent_idx()

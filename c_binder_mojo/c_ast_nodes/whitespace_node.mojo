@@ -34,7 +34,7 @@ struct WhitespaceNode(NodeAstLike):
         name += String('current_idx=') + String(self._current_idx) + String(')')
         return node2string(name,self.token_bundles,self.just_code)
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
-        if self.accept(token_bundle):
+        if self.accept(token_bundle, tree):
             self.token_bundles.append(token_bundle)
             return True
         return False

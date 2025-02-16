@@ -55,26 +55,29 @@ struct DeletedNode(NodeAstLike):
     fn current_idx(self) -> Int: return 0
     fn set_current_idx(mut self, value:Int): ...
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn display_name(self) -> String: return self.__name__
+    fn token_bundles(self) -> TokenBundles: return TokenBundles()
+    fn should_children_inline(self) -> Bool: return False
 
 @value
 struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
 
-    var token_bundles: TokenBundles
+    var _token_bundles: TokenBundles
     var just_code:Bool
     var _parent_idx:Int
     var _current_idx:Int
     var _children: ArcPointer[List[Int]]  # Add field to store children
 
     fn __init__(out self,token_bundle:TokenBundle, parent_idx:Int):
-        self.token_bundles = TokenBundles()
-        self.token_bundles.append(token_bundle)
+        self._token_bundles = TokenBundles()
+        self._token_bundles.append(token_bundle)
         self.just_code = False
         self._parent_idx = parent_idx
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())  # Initialize in constructor
 
-    fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
+    fn __str__(self) -> String: return node2string(self.display_name(),self.token_bundles(),self.just_code)
 
     @staticmethod
     fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return True
@@ -89,6 +92,17 @@ struct PlaceHolderNode(NodeAstLike):
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn display_name(self) -> String:
+        s = String(self.__name__)
+        s += String('(parent=') + String(self._parent_idx) + String(',')
+        s += String('current_idx=') + String(self._current_idx) + String(')')
+        return s
+
+    fn token_bundles(self) -> TokenBundles:
+        return self._token_bundles
+
+    fn should_children_inline(self) -> Bool:
+        return False
 
 
 @value
@@ -146,6 +160,53 @@ struct AstNode(CollectionElement):
                 return val_ptr[].done(token_bundle, tree)
         
         print(String(self) + " does not have a done?")
+        return False
+
+    fn display_name(self) -> String:
+        """
+        Iterates over each type in the variant at compile-time and calls display_name.
+        """
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            # Ts[i] is one of NodeA, NodeB, etc.
+            alias T = Self.type.Ts[i]
+
+            if self.node.isa[T]():
+                # We know node is a T, so get it out:
+                var val_ptr = self.node._get_ptr[T]()
+                return val_ptr[].display_name()
+        
+        print(String(self) + " does not have a display_name?")
+        return "<unknown type>"
+
+    fn token_bundles(self) -> TokenBundles:
+        """
+        Iterates over each type in the variant at compile-time and calls token_bundles.
+        """
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+
+            if self.node.isa[T]():
+                var val_ptr = self.node._get_ptr[T]()
+                return val_ptr[].token_bundles()
+        
+        print(String(self) + " does not have a token_bundles?")
+        return TokenBundles()
+
+    fn should_children_inline(self) -> Bool:
+        """
+        Iterates over each type in the variant at compile-time and calls should_children_inline.
+        """
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+
+            if self.node.isa[T]():
+                var val_ptr = self.node._get_ptr[T]()
+                return val_ptr[].should_children_inline()
+        
+        print(String(self) + " does not have a should_children_inline?")
         return False
 
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:

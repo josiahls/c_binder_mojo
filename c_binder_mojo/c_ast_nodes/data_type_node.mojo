@@ -20,25 +20,22 @@ struct DataTypeNode(NodeAstLike):
     """
     alias __name__ = "DataTypeNode"
     
-    var token_bundles: TokenBundles
+    var _token_bundles: TokenBundles
     var just_code: Bool
     var _parent: Int
     var _current_idx: Int
     var _children: ArcPointer[List[Int]]
 
     fn __init__(out self, token_bundle: TokenBundle, parent: Int):
-        self.token_bundles = TokenBundles()
-        self.token_bundles.append(token_bundle)
+        self._token_bundles = TokenBundles()
+        self._token_bundles.append(token_bundle)
         self.just_code = False
         self._parent = parent
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
 
     fn __str__(self) -> String:
-        name = String(self.__name__)
-        name += String('(parent=') + String(self._parent) + String(',')
-        name += String('current_idx=') + String(self._current_idx) + String(')')
-        return node2string(name, self.token_bundles, self.just_code)
+        return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     @staticmethod
     fn accept(token_bundle: TokenBundle, mut tree:Tree) -> Bool:
@@ -51,7 +48,7 @@ struct DataTypeNode(NodeAstLike):
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Handle compound types like "unsigned char" or "long int"
-        self.token_bundles.append(token_bundle)
+        self._token_bundles.append(token_bundle)
         return True
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
@@ -76,3 +73,15 @@ struct DataTypeNode(NodeAstLike):
 
     fn done_no_cascade(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         return False 
+    
+    fn display_name(self) -> String:
+        s = String(self.__name__)
+        s += String('(parent=') + String(self._parent) + String(',')
+        s += String('current_idx=') + String(self._current_idx) + String(')')
+        return s
+
+    fn token_bundles(self) -> TokenBundles:
+        return self._token_bundles
+
+    fn should_children_inline(self) -> Bool:
+        return False

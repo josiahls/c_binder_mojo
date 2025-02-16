@@ -25,7 +25,7 @@ struct ExampleNode(NodeAstLike):
     """
     alias __name__ = "ExampleNode"
     
-    var token_bundles: TokenBundles
+    var _token_bundles: TokenBundles
     var just_code: Bool
     var _parent: Int
     var _current_idx: Int
@@ -37,8 +37,8 @@ struct ExampleNode(NodeAstLike):
             token_bundle: The first token for this node.
             parent: Index of the parent node in the AST.
         """
-        self.token_bundles = TokenBundles()
-        self.token_bundles.append(token_bundle)
+        self._token_bundles = TokenBundles()
+        self._token_bundles.append(token_bundle)
         self.just_code = False
         self._parent = parent
         self._current_idx = 0
@@ -48,9 +48,7 @@ struct ExampleNode(NodeAstLike):
         
         Returns formatted string with node name, tokens, and optional metadata based on just_code flag.
         """
-        name = String(self.__name__)
-        # Add any additional metadata / fields here
-        return node2string(name, self.token_bundles, self.just_code)
+        return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         """Try to append a token to this node.
@@ -146,5 +144,24 @@ struct ExampleNode(NodeAstLike):
         For example: #else should indicate the parent ifndef node should be done,
         however we dont' want #else to also the parent of the parent ifndef node to
         also be done.
+        """
+        return False
+
+    fn display_name(self) -> String:
+        """Get the display name for the node.
+        
+        NOTE: This is intended to be the header of the node, describing high level field values.
+        """
+        s = String(self.__name__)
+        s += "(parent=" + String(self._parent) + ", current_idx=" + String(self._current_idx) + ")"
+        return s
+
+    fn token_bundles(self) -> TokenBundles:
+        """Get the token bundles for the node.
+        """
+        return self._token_bundles
+
+    fn should_children_inline(self) -> Bool:
+        """Get whether children should be displayed inline.
         """
         return False

@@ -17,32 +17,28 @@ from c_binder_mojo.c_ast_nodes.nodes import AstNode
 struct MacroIfNDefNode(NodeAstLike):
     alias __name__ = "MacroIfNDefNode"
     
-    var token_bundles: TokenBundles
+    var _token_bundles: TokenBundles
     var just_code:Bool
     var _parent:Int
     var _children:ArcPointer[List[Int]]
     var _current_idx:Int
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
-        self.token_bundles = TokenBundles()
-        self.token_bundles.append(token_bundle)
+        self._token_bundles = TokenBundles()
+        self._token_bundles.append(token_bundle)
         self.just_code = False
         self._children = ArcPointer(List[Int]()) 
         self._current_idx = 0
         self._parent = parent
 
     fn __str__(self) -> String: 
-        name = String(self.__name__)
-        name += String('(len children=') + String(len(self._children[])) + String(',')
-        name += String('parent=') + String(self._parent) + String(',')
-        name += String('current_idx=') + String(self._current_idx) + String(')')
-        return node2string(name, self.token_bundles, self.just_code)
+        return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
-        if len(self.token_bundles) < 2:
+        if len(self._token_bundles) < 2:
             if token_bundle.token == ' ' or token_bundle.token == '\n':
                 return True # Ignore whitespace
-            self.token_bundles.append(token_bundle)
+            self._token_bundles.append(token_bundle)
             return True
         return False
 
@@ -73,4 +69,16 @@ struct MacroIfNDefNode(NodeAstLike):
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
         if self.done(token_bundle, tree):
             return True
+        return False
+
+    fn display_name(self) -> String:
+        s = String(self.__name__)
+        s += String('(parent=') + String(self._parent) + String(',')
+        s += String('current_idx=') + String(self._current_idx) + String(')')
+        return s
+        
+    fn token_bundles(self) -> TokenBundles:
+        return self._token_bundles
+
+    fn should_children_inline(self) -> Bool:
         return False

@@ -15,31 +15,28 @@ from c_binder_mojo.c_ast_nodes.common import CTokens
 @value
 struct SingleCommentNode(NodeAstLike):
     alias __name__ = "SingleCommentNode"
-    
-    var token_bundles: TokenBundles
+
+    var _token_bundles: TokenBundles
     var just_code:Bool
     var _parent_idx:Int
     var _current_idx:Int
     var current_line_num:Int
 
     fn __init__(out self,token_bundle:TokenBundle, parent_idx:Int):
-        self.token_bundles = TokenBundles()
-        self.token_bundles.append(token_bundle)
+        self._token_bundles = TokenBundles()
+        self._token_bundles.append(token_bundle)
         self._parent_idx = parent_idx
         self._current_idx = 0
         self.current_line_num = token_bundle.line_num
         self.just_code = False
 
     fn __str__(self) -> String: 
-        name  = String(self.__name__)
-        name += String('(parent=') + String(self._parent_idx) + String(',')
-        name += String('current_idx=') + String(self._current_idx) + String(')')
-        return node2string(name,self.token_bundles,self.just_code)
+        return node2string(self.display_name(), self.token_bundles(), self.just_code)
         
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         if token_bundle.line_num == self.current_line_num:
             # print('lin nums match!' + String(len(self.token_bundles)))
-            self.token_bundles.append(token_bundle)
+            self._token_bundles.append(token_bundle)
             return True
         return False
 
@@ -65,3 +62,15 @@ struct SingleCommentNode(NodeAstLike):
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+
+    fn display_name(self) -> String:
+        s = String(self.__name__)
+        s += String('(parent=') + String(self._parent_idx) + String(',')
+        s += String('current_idx=') + String(self._current_idx) + String(')')
+        return s
+        
+    fn token_bundles(self) -> TokenBundles:
+        return self._token_bundles
+
+    fn should_children_inline(self) -> Bool:
+        return False

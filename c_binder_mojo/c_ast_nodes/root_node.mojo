@@ -15,7 +15,7 @@ from c_binder_mojo.c_ast_nodes.nodes import node2string
 struct RootNode(NodeAstLike):
     alias __name__ = "RootNode"
     
-    var token_bundles: TokenBundles
+    var _token_bundles: TokenBundles
     var just_code:Bool
     var _parent: Int
     var _current_idx:Int
@@ -30,7 +30,7 @@ struct RootNode(NodeAstLike):
     #     self._children = other._children
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
-        self.token_bundles = TokenBundles()
+        self._token_bundles = TokenBundles()
         # self.token_bundles.append(token_bundle)
         self.just_code = False
         self._parent = parent
@@ -38,11 +38,7 @@ struct RootNode(NodeAstLike):
         self._children = ArcPointer(List[Int]())
 
     fn __str__(self) -> String: 
-        name = String(self.__name__)
-        name += String('(len children=') + String(len(self._children[])) + String(',')
-        name += String('parent=') + String(self._parent) + String(',')
-        name += String('current_idx=') + String(self._current_idx) + String(')')
-        return node2string(name, self.token_bundles, self.just_code)
+        return node2string(self.display_name(), self.token_bundles(), self.just_code)
         
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
@@ -59,3 +55,22 @@ struct RootNode(NodeAstLike):
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+
+    fn display_name(self) -> String:
+        """Get the display name for the node.
+        
+        NOTE: This is intended to be the header of the node, describing high level field values.
+        """
+        name = String(self.__name__)
+        name += String('(len children=') + String(len(self._children[])) + String(',')
+        name += String('parent=') + String(self._parent) + String(',')
+        name += String('current_idx=') + String(self._current_idx) + String(')')
+        return name
+
+    fn token_bundles(self) -> TokenBundles:
+        """Get the token bundles for the node."""
+        return self._token_bundles
+
+    fn should_children_inline(self) -> Bool:
+        """Get whether children should be displayed inline."""
+        return False

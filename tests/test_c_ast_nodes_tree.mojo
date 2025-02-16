@@ -34,8 +34,8 @@ fn test_make_tree_mjtmodel() raises:
 
 fn main():
     try:
-        # test_make_tree_mjtnum()
-        test_make_tree_mjtmodel()
+        test_make_tree_mjtnum()
+        # test_make_tree_mjtmodel()
         print('succeeded')
     except e:
         print('failed' + String(e))

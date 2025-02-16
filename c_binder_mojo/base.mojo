@@ -9,6 +9,13 @@ struct TokenBundle:
     var token:String
     var line_num:Int
     var col_num:Int
+    var is_splitter:Bool
+
+    fn __init__(out self, token:String, line_num:Int, col_num:Int, is_splitter:Bool=False):
+        self.token = token
+        self.line_num = line_num
+        self.col_num = col_num
+        self.is_splitter = is_splitter
 
     fn __str__(self) -> String:
         return self.token \

@@ -66,7 +66,7 @@ struct Tree:
         indent = 0
         current_node = node
         while True:
-            _parent_idx = current_node.parent()
+            _parent_idx = current_node.parent_idx()
             if _parent_idx == 0:
                 break
             current_node = self.nodes[_parent_idx]
@@ -98,26 +98,26 @@ struct Tree:
         node = self.nodes[current_idx]
 
         if node.done_no_cascade(token_bundle,self):
-            parent_idx = node.parent()
+            parent_idx = node.parent_idx()
             node = self.nodes[parent_idx]
             new_node = AstNode.accept(token_bundle,  parent_idx, self)
             child_idx = self.insert_node(new_node)
             
             # Add the new node to parent's children list
-            children_ptr = node.children()
+            children_ptr = node.children_idxs()
             children_ptr[].append(child_idx)
             
             self.nodes[parent_idx] = node #NOTE Dumb, cant work with ptr though
             return child_idx
         elif node.done(token_bundle,self):
-            return self.get_current_node(node.parent(), token_bundle)
+            return self.get_current_node(node.parent_idx(), token_bundle)
         elif node.append(token_bundle, self):
             self.nodes[current_idx] = node #NOTE Dumb, cant work with ptr though
             return node.current_idx()
         elif node.make_child(token_bundle, self):
             new_node = AstNode.accept(token_bundle,  node.current_idx(), self)
             child_idx = self.insert_node(new_node)
-            children_ptr = node.children()
+            children_ptr = node.children_idxs()
             children_ptr[].append(child_idx)
             self.nodes[current_idx] = node #NOTE Dumb, cant work with ptr though
             return child_idx

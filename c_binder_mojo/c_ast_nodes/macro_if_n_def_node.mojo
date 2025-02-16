@@ -66,8 +66,8 @@ struct MacroIfNDefNode(NodeAstLike):
         return True
 
         
-    fn parent(self) -> Int: return self._parent
-    fn children(mut self) -> ArcPointer[List[Int]]: return self._children
+    fn parent_idx(self) -> Int: return self._parent
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 

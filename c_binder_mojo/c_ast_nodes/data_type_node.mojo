@@ -62,10 +62,10 @@ struct DataTypeNode(NodeAstLike):
         # Only make children for compound types (enum, struct, union)
         return False
 
-    fn parent(self) -> Int:
+    fn parent_idx(self) -> Int:
         return self._parent
 
-    fn children(mut self) -> ArcPointer[List[Int]]:
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]:
         return self._children
 
     fn current_idx(self) -> Int:

@@ -148,7 +148,7 @@ struct RootDisplayAstNode(AnyType):
             )
         )
 
-        var children = node.children()
+        var children = node.children_idxs()
         if len(children[]) == 0:
             return None
 

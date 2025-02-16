@@ -22,46 +22,53 @@ RootNode(len children=38,parent=0,current_idx=0)
 			WhitespaceNode(parent=20,current_idx=21)  
 			WhitespaceNode(parent=20,current_idx=22)  
 			MacroTypedefNode(parent=20,current_idx=23) typedef ; 
-			WhitespaceNode(parent=20,current_idx=24)  
-			WhitespaceNode(parent=20,current_idx=25)  
+				PlaceHolderNode double 
+				PlaceHolderNode mjtNum 
 			WhitespaceNode(parent=20,current_idx=26)  
-			MacroDefineNode(parent=20, current_idx=27)
-			SingleCommentNode(parent=20,current_idx=28) // minimum value in any denominator 
-		MacroElseNode(parent=15,current_idx=29) #else 
-		WhitespaceNode(parent=15,current_idx=30)  
-		WhitespaceNode(parent=15,current_idx=31)  
-		MacroTypedefNode(parent=15,current_idx=32) typedef ; 
+			WhitespaceNode(parent=20,current_idx=27)  
+			WhitespaceNode(parent=20,current_idx=28)  
+			MacroDefineNode(parent=20, current_idx=29)
+			SingleCommentNode(parent=20,current_idx=30) // minimum value in any denominator 
+		MacroElseNode(parent=15,current_idx=31) #else 
+		WhitespaceNode(parent=15,current_idx=32)  
 		WhitespaceNode(parent=15,current_idx=33)  
-		WhitespaceNode(parent=15,current_idx=34)  
-		WhitespaceNode(parent=15,current_idx=35)  
-		MacroDefineNode(parent=15, current_idx=36)
-		MultiLineCommentNode(parent=15,current_idx=37) /* This does after the float is defined */ 
-	MacroEndIfNode(parent=0,current_idx=38) #endif 
-	WhitespaceNode(parent=0,current_idx=39)  
-	MultiLineCommentNode(parent=0,current_idx=40) /* silly comment */ 
-	MultiLineCommentNode(parent=0,current_idx=41) /** another one??????? **/ 
-	WhitespaceNode(parent=0,current_idx=42)  
-	MultiLineCommentNode(parent=0,current_idx=43) /**  
+		MacroTypedefNode(parent=15,current_idx=34) typedef ; 
+			PlaceHolderNode float 
+			PlaceHolderNode mjtNum 
+		WhitespaceNode(parent=15,current_idx=37)  
+		WhitespaceNode(parent=15,current_idx=38)  
+		WhitespaceNode(parent=15,current_idx=39)  
+		MacroDefineNode(parent=15, current_idx=40)
+		MultiLineCommentNode(parent=15,current_idx=41) /* This does after the float is defined */ 
+	MacroEndIfNode(parent=0,current_idx=42) #endif 
+	WhitespaceNode(parent=0,current_idx=43)  
+	MultiLineCommentNode(parent=0,current_idx=44) /* silly comment */ 
+	MultiLineCommentNode(parent=0,current_idx=45) /** another one??????? **/ 
+	WhitespaceNode(parent=0,current_idx=46)  
+	MultiLineCommentNode(parent=0,current_idx=47) /**  
 	So  
 	many  
 	lines 
 	 
 	 
 	**/ 
-	WhitespaceNode(parent=0,current_idx=44)  
-	WhitespaceNode(parent=0,current_idx=45)  
-	SingleCommentNode(parent=0,current_idx=46) //-------------------------------------- byte definition ------------------------------------------- 
-	WhitespaceNode(parent=0,current_idx=47)  
-	MacroTypedefNode(parent=0,current_idx=48) typedef ; 
+	WhitespaceNode(parent=0,current_idx=48)  
 	WhitespaceNode(parent=0,current_idx=49)  
-	WhitespaceNode(parent=0,current_idx=50)  
+	SingleCommentNode(parent=0,current_idx=50) //-------------------------------------- byte definition ------------------------------------------- 
 	WhitespaceNode(parent=0,current_idx=51)  
-	WhitespaceNode(parent=0,current_idx=52)  
-	SingleCommentNode(parent=0,current_idx=53) // used for true/false 
-	WhitespaceNode(parent=0,current_idx=54)  
-	WhitespaceNode(parent=0,current_idx=55)  
+	MacroTypedefNode(parent=0,current_idx=52) typedef ; 
+		PlaceHolderNode unsigned 
+		PlaceHolderNode char 
+		PlaceHolderNode mjtByte 
 	WhitespaceNode(parent=0,current_idx=56)  
-	MacroEndIfNode(parent=0,current_idx=57) #endif 
+	WhitespaceNode(parent=0,current_idx=57)  
 	WhitespaceNode(parent=0,current_idx=58)  
-	SingleCommentNode(parent=0,current_idx=59) // MUJOCO_INCLUDE_MJTNUM_H_ 
-	WhitespaceNode(parent=0,current_idx=60)  
+	WhitespaceNode(parent=0,current_idx=59)  
+	SingleCommentNode(parent=0,current_idx=60) // used for true/false 
+	WhitespaceNode(parent=0,current_idx=61)  
+	WhitespaceNode(parent=0,current_idx=62)  
+	WhitespaceNode(parent=0,current_idx=63)  
+	MacroEndIfNode(parent=0,current_idx=64) #endif 
+	WhitespaceNode(parent=0,current_idx=65)  
+	SingleCommentNode(parent=0,current_idx=66) // MUJOCO_INCLUDE_MJTNUM_H_ 
+	WhitespaceNode(parent=0,current_idx=67)  

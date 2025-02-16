@@ -50,8 +50,8 @@ struct DeletedNode(NodeAstLike):
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
-    fn parent(self) -> Int: return 0
-    fn children(mut self) -> ArcPointer[List[Int]]: return self._children
+    fn parent_idx(self) -> Int: return 0
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return 0
     fn set_current_idx(mut self, value:Int): ...
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
@@ -84,8 +84,8 @@ struct PlaceHolderNode(NodeAstLike):
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
-    fn parent(self) -> Int: return self._parent_idx
-    fn children(mut self) -> ArcPointer[List[Int]]: return self._children
+    fn parent_idx(self) -> Int: return self._parent_idx
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
@@ -187,7 +187,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a current_idx?")
         return -1
 
-    fn parent(self) -> Int:
+    fn parent_idx(self) -> Int:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
         """
@@ -201,13 +201,13 @@ struct AstNode(CollectionElement):
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
                 var val_ptr = self.node._get_ptr[T]()
                 # Now call the trait method:
-                return val_ptr[].parent()
+                return val_ptr[].parent_idx()
         
         print(String(self) + " does not have a current_idx?")
         return -1
 
 
-    fn children(self) -> ArcPointer[List[Int]]:
+    fn children_idxs(self) -> ArcPointer[List[Int]]:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
         """
@@ -221,9 +221,9 @@ struct AstNode(CollectionElement):
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
                 var val_ptr = self.node._get_ptr[T]()
                 # Now call the trait method:
-                return val_ptr[].children()
+                return val_ptr[].children_idxs()
         
-        print(String(self) + " does not have a current_idx?")
+        print(String(self) + " does not have a children_idxs?")
         return ArcPointer(List[Int]())
 
 

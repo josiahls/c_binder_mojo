@@ -45,8 +45,8 @@ struct MacroElseNode(NodeAstLike):
         return Self(token_bundle, parent_idx)
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
-    fn parent(self) -> Int: return self._parent
-    fn children(mut self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
+    fn parent_idx(self) -> Int: return self._parent
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False

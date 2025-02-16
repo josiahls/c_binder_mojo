@@ -119,11 +119,11 @@ struct ExampleNode(NodeAstLike):
         """
         return False
 
-    fn parent(self) -> Int:
+    fn parent_idx(self) -> Int:
         """Get the parent node's index."""
         return self._parent
 
-    fn children(mut self) -> ArcPointer[List[Int]]:
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]:
         """Get list of child node indices.
         
         Returns empty list since example node doesn't support children.

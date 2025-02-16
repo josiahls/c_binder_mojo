@@ -59,10 +59,10 @@ struct IncludeNode(NodeAstLike):
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         return False
 
-    fn parent(self) -> Int:
+    fn parent_idx(self) -> Int:
         return self._parent
 
-    fn children(mut self) -> ArcPointer[List[Int]]:
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]:
         return ArcPointer(List[Int]())
 
     fn current_idx(self) -> Int:

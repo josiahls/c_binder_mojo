@@ -40,6 +40,8 @@ struct MacroIfNDefNode(NodeAstLike):
 
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         if len(self.token_bundles) < 2:
+            if token_bundle.token == ' ' or token_bundle.token == '\n':
+                return True # Ignore whitespace
             self.token_bundles.append(token_bundle)
             return True
         return False

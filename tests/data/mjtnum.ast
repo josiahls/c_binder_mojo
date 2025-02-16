@@ -21,7 +21,7 @@ RootNode(len children=38,parent=0,current_idx=0)
 		MacroIfNDefNode(len children=8,parent=15,current_idx=20) #ifndef mjUSESINGLE 
 			WhitespaceNode(parent=20,current_idx=21)  
 			WhitespaceNode(parent=20,current_idx=22)  
-			MacroTypeDefNode(parent=20,current_idx=23) typedef double mjtNum ; 
+			MacroTypedefNode(parent=20,current_idx=23) typedef ; 
 			WhitespaceNode(parent=20,current_idx=24)  
 			WhitespaceNode(parent=20,current_idx=25)  
 			WhitespaceNode(parent=20,current_idx=26)  
@@ -30,7 +30,7 @@ RootNode(len children=38,parent=0,current_idx=0)
 		MacroElseNode(parent=15,current_idx=29) #else 
 		WhitespaceNode(parent=15,current_idx=30)  
 		WhitespaceNode(parent=15,current_idx=31)  
-		MacroTypeDefNode(parent=15,current_idx=32) typedef float mjtNum ; 
+		MacroTypedefNode(parent=15,current_idx=32) typedef ; 
 		WhitespaceNode(parent=15,current_idx=33)  
 		WhitespaceNode(parent=15,current_idx=34)  
 		WhitespaceNode(parent=15,current_idx=35)  
@@ -52,7 +52,7 @@ RootNode(len children=38,parent=0,current_idx=0)
 	WhitespaceNode(parent=0,current_idx=45)  
 	SingleCommentNode(parent=0,current_idx=46) //-------------------------------------- byte definition ------------------------------------------- 
 	WhitespaceNode(parent=0,current_idx=47)  
-	MacroTypeDefNode(parent=0,current_idx=48) typedef unsigned char mjtByte ; 
+	MacroTypedefNode(parent=0,current_idx=48) typedef ; 
 	WhitespaceNode(parent=0,current_idx=49)  
 	WhitespaceNode(parent=0,current_idx=50)  
 	WhitespaceNode(parent=0,current_idx=51)  

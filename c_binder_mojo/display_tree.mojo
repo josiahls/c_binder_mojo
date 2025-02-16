@@ -96,8 +96,8 @@ struct RootDisplayAstNode(AnyType):
     var indent_root:Bool
 
     fn __init__(mut self, read root:CTree) raises:
-        self.string_just_code = True
-        self.indent_root = False
+        self.string_just_code = False
+        self.indent_root = True
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root)
 

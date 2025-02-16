@@ -5,6 +5,7 @@ from memory import UnsafePointer,ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.base import TokenBundle,TokenBundles
+from c_binder_mojo.c_ast_nodes.common import CPrimitiveTypes
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
 
 
@@ -23,16 +24,8 @@ struct Tree:
         self.registered_datatypes = ArcPointer(List[String]())
         
         # Pre-register basic C types
-        self.registered_datatypes[].append("char")
-        self.registered_datatypes[].append("int")
-        self.registered_datatypes[].append("float")
-        self.registered_datatypes[].append("double")
-        self.registered_datatypes[].append("void")
-        self.registered_datatypes[].append("unsigned")
-        self.registered_datatypes[].append("signed")
-        self.registered_datatypes[].append("short")
-        self.registered_datatypes[].append("long")
-        self.registered_datatypes[].append("*") # C Pointer
+        for dt in CPrimitiveTypes:
+            self.registered_datatypes[].append(dt[])
 
     
     fn __moveinit__(out self, owned existing:Self):
@@ -99,6 +92,11 @@ struct Tree:
         #NOTE unsafe_get / getitem copies the value.
         #NOTE node = self.nodes.unsafe_ptr() + current_idx
         node = self.nodes[current_idx]
+        if current_idx==23:
+            if 'MacroIfNDefNode' in node.display_name():
+                if 'MacroIfNDefNode(parent=15,current_idx=20) #ifndef mjUSESINGLE' in String(node):
+                    print('node display: ' + node.display_name())
+                    print('node: ' + String(node))
 
         if node.done_no_cascade(token_bundle,self):
             parent_idx = node.parent_idx()

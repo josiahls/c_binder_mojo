@@ -46,6 +46,21 @@ struct CTokens:
     alias UNKNOWN = "UNKNOWN"
     alias MACRO_INCLUDE = "#include"
 
+alias CPrimitiveTypes = List[String](
+    "int",
+    "float",
+    "double",
+    "char",
+    "short",
+    "long",
+    "unsigned",
+    "signed",
+    "void",
+    "bool",
+    "size_t",
+    "ssize_t",
+    "*"
+)
 
 struct CommentEnum:
     alias COMMENT_SINGLE_LINE = "COMMENT_SINGLE_LINE"

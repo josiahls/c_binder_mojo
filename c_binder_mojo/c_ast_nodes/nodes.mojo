@@ -19,7 +19,7 @@ from c_binder_mojo.c_ast_nodes import (
     WhitespaceNode,
     MultiLineCommentNode,
     IncludeNode,
-    DataTypeNode,
+    BasicDataTypeNode,
 )
 
 
@@ -35,29 +35,48 @@ fn node2string(name:String,token_bundles:TokenBundles, just_code:Bool) -> String
 @value
 struct DeletedNode(NodeAstLike):
     alias __name__ = "DeletedNode"
+    
+    var _token_bundles: TokenBundles
+    var just_code: Bool
+    var _parent: Int
+    var _current_idx: Int
 
-    var _children: ArcPointer[List[Int]]  # Add field to store children
+    fn __init__(out self, token_bundles: TokenBundles, parent: Int):
+        self._token_bundles = token_bundles
+        self.just_code = False
+        self._parent = parent
+        self._current_idx = 0
 
-    fn __init__(out self):
-        self._children = ArcPointer(List[Int]())  # Initialize in constructor
+    fn __init__(out self, token_bundle: TokenBundle, parent: Int):
+        self._token_bundles = TokenBundles()
+        self._token_bundles.append(token_bundle)
+        self.just_code = False
+        self._parent = parent
+        self._current_idx = 0
 
-    fn __str__(self) -> String: return self.__name__ + String('(deleted) ')
+    fn __str__(self) -> String: return node2string(self.display_name(),self.token_bundles(),self.just_code)
     @staticmethod
     fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
-        return Self()
+        return Self(token_bundle, parent_idx)
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
-    fn parent_idx(self) -> Int: return 0
-    fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children
-    fn current_idx(self) -> Int: return 0
-    fn set_current_idx(mut self, value:Int): ...
+    fn parent_idx(self) -> Int: return self._parent
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
+    fn current_idx(self) -> Int: return self._current_idx
+    fn set_current_idx(mut self, value:Int): self._current_idx = value
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
-    fn display_name(self) -> String: return self.__name__
-    fn token_bundles(self) -> TokenBundles: return TokenBundles()
-    fn should_children_inline(self) -> Bool: return False
+    fn display_name(self) -> String:
+        s = String(self.__name__)
+        s += String('(parent=') + String(self._parent) + String(',')
+        s += String('current_idx=') + String(self._current_idx) + String(')')
+        return s
+    fn token_bundles(self) -> TokenBundles:
+        return self._token_bundles
+    fn should_children_inline(self) -> Bool:
+        return True
 
 @value
 struct PlaceHolderNode(NodeAstLike):
@@ -119,11 +138,12 @@ struct AstNode(CollectionElement):
         MacroElseNode,
         IncludeNode,
         MultiLineCommentNode,
-        DataTypeNode,
+        BasicDataTypeNode,
         PlaceHolderNode, # Must be last in the list
     ]
     var node: Self.type
 
+    @always_inline("nodebug")
     @staticmethod
     fn accept(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
         """
@@ -143,6 +163,7 @@ struct AstNode(CollectionElement):
         
         return Self(PlaceHolderNode.create(token_bundle, parent_idx, tree))
 
+    @always_inline("nodebug")
     fn done(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
@@ -162,6 +183,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a done?")
         return False
 
+    @always_inline("nodebug")
     fn display_name(self) -> String:
         """
         Iterates over each type in the variant at compile-time and calls display_name.
@@ -179,6 +201,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a display_name?")
         return "<unknown type>"
 
+    @always_inline("nodebug")
     fn token_bundles(self) -> TokenBundles:
         """
         Iterates over each type in the variant at compile-time and calls token_bundles.
@@ -194,6 +217,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a token_bundles?")
         return TokenBundles()
 
+    @always_inline("nodebug")
     fn should_children_inline(self) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls should_children_inline.
@@ -209,6 +233,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a should_children_inline?")
         return False
 
+    @always_inline("nodebug")
     fn done_no_cascade(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
@@ -228,7 +253,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a done_no_cascade?")
         return False
 
-
+    @always_inline("nodebug")
     fn current_idx(self) -> Int:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
@@ -248,6 +273,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a current_idx?")
         return -1
 
+    @always_inline("nodebug")
     fn parent_idx(self) -> Int:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
@@ -267,7 +293,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a current_idx?")
         return -1
 
-
+    @always_inline("nodebug")
     fn children_idxs(self) -> ArcPointer[List[Int]]:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
@@ -287,7 +313,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a children_idxs?")
         return ArcPointer(List[Int]())
 
-
+    @always_inline("nodebug")
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls append.
@@ -307,7 +333,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a append?")
         return False
 
-
+    @always_inline("nodebug")
     fn set_current_idx(mut self, current_idx:Int):
         """
         Iterates over each type in the variant at compile-time and calls append.
@@ -327,7 +353,7 @@ struct AstNode(CollectionElement):
         
         print(String(self) + " does not have a set_current_idx?")
 
-
+    @always_inline("nodebug")
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls append.
@@ -347,7 +373,7 @@ struct AstNode(CollectionElement):
         print(String(self) + " does not have a make_child?")
         return False
 
-
+    @always_inline("nodebug")
     fn __str__(self) -> String:
         """
         Iterates over each type in the variant at compile-time and calls to_string.

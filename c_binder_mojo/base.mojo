@@ -16,6 +16,8 @@ struct TokenBundle(EqualityComparable):
         self.line_num = line_num
         self.col_num = col_num
         self.is_splitter = is_splitter
+        if self.token == '' and self.is_splitter:
+            self.token = '<children>'
 
     fn __ne__(read self:Self, read other:Self) -> Bool: 
         if self.token != other.token: 

@@ -164,11 +164,16 @@ struct RootDisplayAstNode(AnyType):
     fn update_nodes(mut self, parent_idx: Int, idx: Int, read root:CTree) raises:
         node = root.nodes[idx]
 
+        display_name = node.display_name()
+        if idx == 0:
+            # Also add the tree datatypes if this is a root node.
+            display_name += String('\n')
+            display_name += root.registered_datatypes_to_string()
         self.nodes.append(
             DisplayAstNode(
                 parent_idx = parent_idx, 
                 children_idxs = List[Int](),
-                display_name = node.display_name(),
+                display_name = display_name,
                 token_bundles = node.token_bundles(),
                 root = UnsafePointer[mut=True].address_of(self),
                 indent_root = self.indent_root,

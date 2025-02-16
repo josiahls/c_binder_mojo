@@ -40,10 +40,9 @@ struct Tree:
         self.nodes = existing.nodes^
         self.deleted_nodes = existing.deleted_nodes^
         self.registered_datatypes = existing.registered_datatypes^
-    
-    fn __str__(self) -> String:
-        var s = String('')
-        s += String('\nRegistered Datatypes: \n')
+
+    fn  registered_datatypes_to_string(self) -> String:
+        s = String('\nRegistered Datatypes: \n')
         sub_s = String('')
         max_len = 80
         for dt in self.registered_datatypes[]:
@@ -52,6 +51,10 @@ struct Tree:
                 s += sub_s + String('\n')
                 sub_s = String('')
         s += sub_s + String('\n')
+        return s
+    
+    fn __str__(self) -> String:
+        var s = self.registered_datatypes_to_string()
 
         for node in self.nodes:
             indent = self.node_indent(node[])

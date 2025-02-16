@@ -1,4 +1,9 @@
 RootNode(len children=38,parent=0,current_idx=0)
+
+Registered Datatypes: 
+char, int, float, double, void, unsigned, signed, short, long, *, MUJOCO_INCLUDE_MJTNUM_H_, 
+mjtNum, mjMINVAL, mjtByte, 
+
 	SingleCommentNode(parent=0,current_idx=1)// Copyright 2021 DeepMind Technologies Limited
 	SingleCommentNode(parent=0,current_idx=2)//
 	SingleCommentNode(parent=0,current_idx=3)// Licensed under the Apache License, Version 2.0 (the "License") ; 
@@ -21,9 +26,9 @@ RootNode(len children=38,parent=0,current_idx=0)
 		MacroIfNDefNode(parent=15,current_idx=20)#ifndef mjUSESINGLE
 			WhitespaceNode(parent=20,current_idx=21)
 			WhitespaceNode(parent=20,current_idx=22)
-			MacroTypedefNode(parent=20,current_idx=23)typedef
+			TypedefNode(parent=20,current_idx=23,typename=mjtNum)typedef
 				PlaceHolderNode(parent=23,current_idx=24)double
-				PlaceHolderNode(parent=23,current_idx=25)mjtNum;
+				DeletedNodemjtNum ;
 			WhitespaceNode(parent=20,current_idx=26)
 			WhitespaceNode(parent=20,current_idx=27)
 			WhitespaceNode(parent=20,current_idx=28)
@@ -32,9 +37,9 @@ RootNode(len children=38,parent=0,current_idx=0)
 		MacroElseNode(parent=15,current_idx=31)#else
 		WhitespaceNode(parent=15,current_idx=32)
 		WhitespaceNode(parent=15,current_idx=33)
-		MacroTypedefNode(parent=15,current_idx=34)typedef
+		TypedefNode(parent=15,current_idx=34,typename=mjtNum)typedef
 			PlaceHolderNode(parent=34,current_idx=35)float
-			PlaceHolderNode(parent=34,current_idx=36)mjtNum;
+			DeletedNodemjtNum ;
 		WhitespaceNode(parent=15,current_idx=37)
 		WhitespaceNode(parent=15,current_idx=38)
 		WhitespaceNode(parent=15,current_idx=39)
@@ -50,10 +55,10 @@ RootNode(len children=38,parent=0,current_idx=0)
 	WhitespaceNode(parent=0,current_idx=49)
 	SingleCommentNode(parent=0,current_idx=50)//-------------------------------------- byte definition -------------------------------------------
 	WhitespaceNode(parent=0,current_idx=51)
-	MacroTypedefNode(parent=0,current_idx=52)typedef
+	TypedefNode(parent=0,current_idx=52,typename=mjtByte)typedef
 		PlaceHolderNode(parent=52,current_idx=53)unsigned
 		PlaceHolderNode(parent=52,current_idx=54)char
-		PlaceHolderNode(parent=52,current_idx=55)mjtByte;
+		DeletedNodemjtByte ;
 	WhitespaceNode(parent=0,current_idx=56)
 	WhitespaceNode(parent=0,current_idx=57)
 	WhitespaceNode(parent=0,current_idx=58)

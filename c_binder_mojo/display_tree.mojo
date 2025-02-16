@@ -11,56 +11,83 @@ from c_binder_mojo import mojo_ast_statements
 
 from c_binder_mojo.c_ast_nodes.tree import Tree as CTree
 # from c_binder_mojo.mojo_ast_node import RootMojoAstNode
-from c_binder_mojo.base import STRING_SPLIT_AT
+from c_binder_mojo.base import STRING_SPLIT_AT, TokenBundle,TokenBundles
 
 
 @value
-struct DisplayAstNode(CollectionElement):
-    """AstNode is a datastructure that represents the structure ofa C codebase.
-
-    This node is part of a bidirectional acyclical graph.    
-    """
-    var parent: Int
-    var children: List[Int]
-    var string:  String
+struct DisplayAstNode:
+    var parent_idx: Int
+    var children_idxs: ArcPointer[List[Int]]
+    var display_name: String
+    var token_bundles: TokenBundles
     var root: UnsafePointer[RootDisplayAstNode]
     var indent_root:Bool
+    var inline_children:Bool
+    var just_code:Bool
+
+    fn __init__(mut self, parent_idx: Int, children_idxs: ArcPointer[List[Int]], 
+                display_name: String, token_bundles: TokenBundles, 
+                root: UnsafePointer[RootDisplayAstNode], indent_root: Bool, 
+                inline_children: Bool, just_code: Bool):
+        self.parent_idx = parent_idx
+        self.children_idxs = children_idxs
+        self.display_name = display_name
+        self.token_bundles = token_bundles
+        self.root = root
+        self.indent_root = indent_root
+        self.inline_children = inline_children
+        self.just_code = just_code
 
     fn indents(self) -> Int:
         var indent = 0
-        var _parent = self.parent
+        var _parent = self.parent_idx
         while _parent != -1:
-            _parent = self.root[].nodes[_parent].parent
+            _parent = self.root[].nodes[_parent].parent_idx
             indent += 1
 
         if indent > 0 and not self.indent_root:
             indent -= 1
         return indent
 
-    def __str__(self) -> String: 
+    fn append_children(self) -> String:
+        var s = String('')
+        for child in self.children_idxs[]:
+            if not self.inline_children:
+                s += "\n"
+            s += String(self.root[].nodes[child[]])
+        return s
+
+
+    fn __str__(self) -> String:
         var s = String("")
         var indents = String("")
         for _ in range(self.indents()):
             indents += "\t"
 
-        var begin_end_s = self.string.split(STRING_SPLIT_AT)
+        if not self.just_code:
+            s += indents + self.display_name
+        else:
+            s += indents 
 
-        s += indents + begin_end_s[0].replace('\n','\n' + indents)
-        for child in self.children:
-            node_s = String(self.root[].nodes[child[]])
+        iterated_children = False
+        token_i = 0
+        for token_bundle in self.token_bundles:
+            if token_bundle[].is_splitter:
+                iterated_children = True
+                token_i = 0
+                s += self.append_children()
+            elif token_i == 0:
+                s += String(token_bundle[].token).replace('\n','\n' + indents)
+                token_i += 1
+            else:
+                s += ' ' + String(token_bundle[].token).replace('\n','\n' + indents)
+                token_i += 1
 
-            if node_s == "" or node_s == " " or node_s == "\n":
-                continue
-            # TODO(josiahls): This is not great. We need a generic way for a 
-            # node to indicate that there should be a new line vs inline. Right now
-            # the ability to know this is obsquired. 
-            s += "\n"
-            s += node_s
-
-        if len(begin_end_s) > 1:
-            s += "\n" 
-            s += indents + STRING_SPLIT_AT + " " + begin_end_s[1].replace('\n','\n' + indents)
+        if not iterated_children:
+            s += self.append_children()
         return s
+    
+
 
 @value
 struct RootDisplayAstNode(AnyType):
@@ -69,8 +96,8 @@ struct RootDisplayAstNode(AnyType):
     var indent_root:Bool
 
     fn __init__(mut self, read root:CTree) raises:
-        self.string_just_code = False
-        self.indent_root = True
+        self.string_just_code = True
+        self.indent_root = False
         self.nodes = List[DisplayAstNode]()
         self.update_nodes(-1, 0, root)
 
@@ -117,7 +144,7 @@ struct RootDisplayAstNode(AnyType):
         
         # Validate all children
         node = self.nodes[node_idx]
-        for child in node.children:
+        for child in node.children_idxs[]:
             if child[] >= len(self.nodes):
                 print("ERROR: Invalid child index: " + String(child[]) + 
                       " in node: " + String(node_idx))
@@ -137,14 +164,16 @@ struct RootDisplayAstNode(AnyType):
     fn update_nodes(mut self, parent_idx: Int, idx: Int, read root:CTree) raises:
         node = root.nodes[idx]
 
-        # print('Is this node here? index 39' + String(root.nodes[39]) + ' total nodes: ' + String(len(root.nodes)))
         self.nodes.append(
             DisplayAstNode(
-                parent_idx, 
-                List[Int](),
-                String(node),
-                UnsafePointer[mut=True].address_of(self),
-                indent_root=self.indent_root
+                parent_idx = parent_idx, 
+                children_idxs = List[Int](),
+                display_name = node.display_name(),
+                token_bundles = node.token_bundles(),
+                root = UnsafePointer[mut=True].address_of(self),
+                indent_root = self.indent_root,
+                inline_children = node.should_children_inline(),
+                just_code = self.string_just_code
             )
         )
 
@@ -153,9 +182,8 @@ struct RootDisplayAstNode(AnyType):
             return None
 
         for child in children[]:
-            # print('Updating child: ' + String(child[]) + ' parent: ' + String(idx))
             self.update_nodes(idx, child[], root)
-            self.nodes[idx].children.append(child[])
+            self.nodes[idx].children_idxs[].append(child[])
 
         # Add validation at the end
         self.validate_node(parent_idx, idx, root)

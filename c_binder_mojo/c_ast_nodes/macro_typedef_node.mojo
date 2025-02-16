@@ -54,7 +54,17 @@ struct MacroTypedefNode(NodeAstLike):
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
         return self._is_done
 
-    fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return True
+    fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
+        if not self._token_bundles[-1].is_splitter:
+            self._token_bundles.append(
+                TokenBundle(
+                    token='',
+                    is_splitter=True,
+                    line_num=self._token_bundles[-1].line_num,
+                    col_num=self._token_bundles[-1].col_num
+                )
+            )
+        return True
     fn parent_idx(self) -> Int: return self._parent
     fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return self._current_idx

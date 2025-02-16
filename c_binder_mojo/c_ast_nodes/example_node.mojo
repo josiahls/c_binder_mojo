@@ -65,7 +65,7 @@ struct ExampleNode(NodeAstLike):
         return False
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle) -> Bool:
+    fn accept(token_bundle: TokenBundle, mut tree:Tree) -> Bool:
         """Check if this node type can accept the given token and should be created to handle it.
 
         This gets executed in an ordered list and acceptance is done in a greedy manner where

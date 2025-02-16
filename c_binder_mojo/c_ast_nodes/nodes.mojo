@@ -43,7 +43,7 @@ struct DeletedNode(NodeAstLike):
 
     fn __str__(self) -> String: return self.__name__
     @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: return False
+    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self()
@@ -77,7 +77,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn __str__(self) -> String: return node2string(self.__name__,self.token_bundles,False)
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: return True
+    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return True
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
@@ -108,26 +108,26 @@ struct AstNode(CollectionElement):
         DataTypeNode,
         PlaceHolderNode, # Must be last in the list
     ]
-    var node:Self.type
+    var node: Self.type
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle, parent_idx:Int, mut tree:Tree) -> Self:
+    fn accept(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
         """
-        Iterates over each type in the variant at compile-time and calls apple_context.
+        Iterates over each type in the variant at compile-time and calls accept.
         """
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             # Ts[i] is one of NodeA, NodeB, etc.
             alias T = Self.type.Ts[i]
 
-            if T.accept(token_bundle):
+            if T.accept(token_bundle, tree):
                 # We know node is a T, so get it out:
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
                 # var ref_val = self.node[T]
                 # Now call the trait method:
                 return Self(T.create(token_bundle,parent_idx, tree))
         
-        return Self(PlaceHolderNode.create(token_bundle,parent_idx,tree))
+        return Self(PlaceHolderNode.create(token_bundle, parent_idx, tree))
 
     fn done(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """

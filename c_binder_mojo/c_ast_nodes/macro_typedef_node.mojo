@@ -44,11 +44,11 @@ struct MacroTypedefNode(NodeAstLike):
         return True
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: 
+    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         if token_bundle.token == CTokens.TYPE_DEF:
             return True
         return False
-        
+
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)

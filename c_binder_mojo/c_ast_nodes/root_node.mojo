@@ -47,7 +47,7 @@ struct RootNode(NodeAstLike):
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: return False
+    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)

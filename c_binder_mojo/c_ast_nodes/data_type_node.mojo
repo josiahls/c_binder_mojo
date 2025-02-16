@@ -41,7 +41,7 @@ struct DataTypeNode(NodeAstLike):
         return node2string(name, self.token_bundles, self.just_code)
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle) -> Bool:
+    fn accept(token_bundle: TokenBundle, mut tree:Tree) -> Bool:
         # TODO: Need to pass tree here to check registered_datatypes
         return False
 

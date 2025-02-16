@@ -44,7 +44,7 @@ struct SingleCommentNode(NodeAstLike):
         return False
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: 
+    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         if token_bundle.token == CTokens.COMMENT_SINGLE_LINE_BEGIN:
             return True
         elif token_bundle.token.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):

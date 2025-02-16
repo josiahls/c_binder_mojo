@@ -40,7 +40,7 @@ struct WhitespaceNode(NodeAstLike):
         return False
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle) -> Bool: 
+    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         if token_bundle.token == '' or token_bundle.token == '\n':
             return True
         return False

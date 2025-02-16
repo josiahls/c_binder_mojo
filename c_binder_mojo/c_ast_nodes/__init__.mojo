@@ -9,3 +9,4 @@ from .whitespace_node import WhitespaceNode
 from .multi_line_comment_node import MultiLineCommentNode
 from .root_node import RootNode
 from .include_node import IncludeNode
+from .data_type_node import DataTypeNode

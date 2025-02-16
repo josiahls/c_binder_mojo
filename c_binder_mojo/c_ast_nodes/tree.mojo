@@ -1,7 +1,7 @@
 # Native Mojo Modules
 from pathlib import Path
 from utils.variant import Variant
-from memory import UnsafePointer
+from memory import UnsafePointer,ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.base import TokenBundle,TokenBundles
@@ -14,18 +14,31 @@ struct Tree:
 
     var nodes: List[AstNode]
     var deleted_nodes:List[Int]
+    var registered_datatypes: ArcPointer[List[String]]  # Track known datatypes
 
     fn __init__(out self, path:Path):
         self.path  = path
         self.nodes = List[AstNode]()
         self.deleted_nodes = List[Int]()
+        self.registered_datatypes = ArcPointer(List[String]())
+        
+        # Pre-register basic C types
+        self.registered_datatypes[].append("char")
+        self.registered_datatypes[].append("int")
+        self.registered_datatypes[].append("float")
+        self.registered_datatypes[].append("double")
+        self.registered_datatypes[].append("void")
+        self.registered_datatypes[].append("unsigned")
+        self.registered_datatypes[].append("signed")
+        self.registered_datatypes[].append("short")
+        self.registered_datatypes[].append("long")
 
     
     fn __moveinit__(out self, owned existing:Self):
         self.path = existing.path^
         self.nodes = existing.nodes^
         self.deleted_nodes = existing.deleted_nodes^
-
+        self.registered_datatypes = existing.registered_datatypes^
     
     fn __str__(self) -> String:
         var s = String('')

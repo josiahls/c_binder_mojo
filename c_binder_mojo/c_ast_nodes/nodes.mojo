@@ -19,6 +19,7 @@ from c_binder_mojo.c_ast_nodes import (
     WhitespaceNode,
     MultiLineCommentNode,
     IncludeNode,
+    DataTypeNode,
 )
 
 
@@ -104,6 +105,7 @@ struct AstNode(CollectionElement):
         MacroElseNode,
         IncludeNode,
         MultiLineCommentNode,
+        DataTypeNode,
         PlaceHolderNode, # Must be last in the list
     ]
     var node:Self.type

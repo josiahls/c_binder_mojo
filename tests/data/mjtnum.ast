@@ -1,8 +1,8 @@
 RootNode(len children=38,parent=0,current_idx=0)
 
 Registered Datatypes: 
-char, int, float, double, void, unsigned, signed, short, long, *, MUJOCO_INCLUDE_MJTNUM_H_, 
-mjtNum, mjMINVAL, mjtByte, 
+int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssize_t, 
+*, MUJOCO_INCLUDE_MJTNUM_H_, mjtNum, mjMINVAL, mjtByte, 
 
 	SingleCommentNode(parent=0,current_idx=1)// Copyright 2021 DeepMind Technologies Limited
 	SingleCommentNode(parent=0,current_idx=2)//
@@ -27,8 +27,8 @@ mjtNum, mjMINVAL, mjtByte,
 			WhitespaceNode(parent=20,current_idx=21)
 			WhitespaceNode(parent=20,current_idx=22)
 			TypedefNode(parent=20,current_idx=23,typename=mjtNum)typedef
-				PlaceHolderNode(parent=23,current_idx=24)double
-				DeletedNode
+				BasicDataTypeNode(parent=23,current_idx=24,is_compound=False)double
+				DeletedNode(parent=20,current_idx=0)mjtNum
 			mjtNum ;
 			WhitespaceNode(parent=20,current_idx=26)
 			WhitespaceNode(parent=20,current_idx=27)
@@ -39,8 +39,8 @@ mjtNum, mjMINVAL, mjtByte,
 		WhitespaceNode(parent=15,current_idx=32)
 		WhitespaceNode(parent=15,current_idx=33)
 		TypedefNode(parent=15,current_idx=34,typename=mjtNum)typedef
-			PlaceHolderNode(parent=34,current_idx=35)float
-			DeletedNode
+			BasicDataTypeNode(parent=34,current_idx=35,is_compound=False)float
+			DeletedNode(parent=15,current_idx=0)mjtNum
 		mjtNum ;
 		WhitespaceNode(parent=15,current_idx=37)
 		WhitespaceNode(parent=15,current_idx=38)
@@ -58,19 +58,18 @@ mjtNum, mjMINVAL, mjtByte,
 	SingleCommentNode(parent=0,current_idx=50)//-------------------------------------- byte definition -------------------------------------------
 	WhitespaceNode(parent=0,current_idx=51)
 	TypedefNode(parent=0,current_idx=52,typename=mjtByte)typedef
-		PlaceHolderNode(parent=52,current_idx=53)unsigned
-		PlaceHolderNode(parent=52,current_idx=54)char
-		DeletedNode
+		BasicDataTypeNode(parent=52,current_idx=53,is_compound=True)unsigned char
+		DeletedNode(parent=0,current_idx=0)mjtByte
 	mjtByte ;
+	WhitespaceNode(parent=0,current_idx=55)
 	WhitespaceNode(parent=0,current_idx=56)
 	WhitespaceNode(parent=0,current_idx=57)
 	WhitespaceNode(parent=0,current_idx=58)
-	WhitespaceNode(parent=0,current_idx=59)
-	SingleCommentNode(parent=0,current_idx=60)// used for true/false
+	SingleCommentNode(parent=0,current_idx=59)// used for true/false
+	WhitespaceNode(parent=0,current_idx=60)
 	WhitespaceNode(parent=0,current_idx=61)
 	WhitespaceNode(parent=0,current_idx=62)
-	WhitespaceNode(parent=0,current_idx=63)
-	MacroEndIfNode(parent=0,current_idx=64)#endif
-	WhitespaceNode(parent=0,current_idx=65)
-	SingleCommentNode(parent=0,current_idx=66)// MUJOCO_INCLUDE_MJTNUM_H_
-	WhitespaceNode(parent=0,current_idx=67)
+	MacroEndIfNode(parent=0,current_idx=63)#endif
+	WhitespaceNode(parent=0,current_idx=64)
+	SingleCommentNode(parent=0,current_idx=65)// MUJOCO_INCLUDE_MJTNUM_H_
+	WhitespaceNode(parent=0,current_idx=66)

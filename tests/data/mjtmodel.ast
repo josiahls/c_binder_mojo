@@ -1,14 +1,14 @@
 RootNode(len children=19,parent=0,current_idx=0)
 
 Registered Datatypes: 
-char, int, float, double, void, unsigned, signed, short, long, *, MUJOCO_MJMODEL_H_, 
-mjPI, mjMAXVAL, mjMINMU, mjMINIMP, mjMAXIMP, mjMAXCONPAIR, mjMAXTREEDEPTH, mjNEQDATA, 
-mjNDYN, mjNGAIN, mjNBIAS, mjNFLUID, mjNREF, mjNIMP, mjNSOLVER, mjNISLAND, mjtDisableBit, 
-mjtEnableBit, mjtJoint, mjtGeom, mjtCamLight, mjtTexture, mjtTextureRole, mjtIntegrator, 
-mjtCone, mjtJacobian, mjtSolver, mjtEq, mjtWrap, mjtTrn, mjtDyn, mjtGain, mjtBias, 
-mjtObj, mjtConstraint, mjtConstraintState, mjtSensor, mjtStage, mjtDataType, mjtSameFrame, 
-mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, mjStatistic, mjModel, 
-
+int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssize_t, 
+*, MUJOCO_MJMODEL_H_, mjPI, mjMAXVAL, mjMINMU, mjMINIMP, mjMAXIMP, mjMAXCONPAIR, 
+mjMAXTREEDEPTH, mjNEQDATA, mjNDYN, mjNGAIN, mjNBIAS, mjNFLUID, mjNREF, mjNIMP, mjNSOLVER, 
+mjNISLAND, mjtDisableBit, mjtEnableBit, mjtJoint, mjtGeom, mjtCamLight, mjtTexture, 
+mjtTextureRole, mjtIntegrator, mjtCone, mjtJacobian, mjtSolver, mjtEq, mjtWrap, mjtTrn, 
+mjtDyn, mjtGain, mjtBias, mjtObj, mjtConstraint, mjtConstraintState, mjtSensor, mjtStage, 
+mjtDataType, mjtSameFrame, mjtLRMode, mjtFlexSelf, mjLROpt, mjVFS, mjOption, mjVisual, 
+mjStatistic, mjModel, 
 
 	SingleCommentNode(parent=0,current_idx=1)// Copyright 2021 DeepMind Technologies Limited
 	SingleCommentNode(parent=0,current_idx=2)//

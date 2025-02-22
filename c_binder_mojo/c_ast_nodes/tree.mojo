@@ -130,7 +130,7 @@ fn make_tree(path:Path) raises -> Tree:
     current_idx = 0
     for line in path.read_text().split('\n'):
         col_num = 0
-        for token in line[].replace(';',' ; ').split(' '):
+        for token in line[].replace(';',' ; ').replace(',',' , ').split(' '):
             token_bundle = TokenBundle(token[], line_num, col_num)
             current_idx = root_node.get_current_node(current_idx, token_bundle)
             col_num += len(token[])

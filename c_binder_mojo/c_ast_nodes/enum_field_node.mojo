@@ -26,6 +26,7 @@ struct EnumFieldNode(NodeAstLike):
     var _current_idx: Int
     var _children: ArcPointer[List[Int]]
     var field_name: String
+    var _is_done: Bool
 
     fn __init__(out self, token_bundle: TokenBundle, parent: Int):
         self._token_bundles = TokenBundles()
@@ -35,7 +36,7 @@ struct EnumFieldNode(NodeAstLike):
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
         self.field_name = token_bundle.token  # First token is the field name
-
+        self._is_done = False
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
@@ -47,12 +48,14 @@ struct EnumFieldNode(NodeAstLike):
         return False
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # TODO: Handle field value assignment (=) and expressions
-        # For now, just collect tokens until comma
+        # I think for the most part we can just append the continuous chunk of tokens.
+        # enum fields don't have children, so once the `done` function is called, we are done.
+        if token_bundle.token == " ":
+            return True # Lets just ignore whitespace for now.
         if token_bundle.token == ",":
-            self._token_bundles.append(token_bundle)
-            return True
-        return False
+            self._is_done = True
+        self._token_bundles.append(token_bundle)
+        return True
 
     @staticmethod
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
@@ -60,7 +63,15 @@ struct EnumFieldNode(NodeAstLike):
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Done when we hit a comma
-        return len(self._token_bundles) > 0 and self._token_bundles[-1].token == ","
+        if self._is_done:
+            return True
+
+        # If the second to last token is an `=`, we are done also.
+        # Handles the case where the very last enum field doesn't have a comma.
+        if self._token_bundles[-2].token == '=' and token_bundle.token != ',':
+            return True
+
+        return False
 
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Enum fields don't have children

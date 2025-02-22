@@ -59,7 +59,7 @@ struct DeletedNode(NodeAstLike):
 
     fn __str__(self) -> String: return node2string(self.display_name(),self.token_bundles(),self.just_code)
     @staticmethod
-    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool: return False
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
@@ -102,7 +102,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn __str__(self) -> String: return node2string(self.display_name(),self.token_bundles(),self.just_code)
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: return True
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool: return True
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
@@ -160,7 +160,7 @@ struct AstNode(CollectionElement):
             # Ts[i] is one of NodeA, NodeB, etc.
             alias T = Self.type.Ts[i]
 
-            if T.accept(token_bundle, tree):
+            if T.accept(token_bundle, parent_idx, tree):
                 # We know node is a T, so get it out:
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
                 # var ref_val = self.node[T]

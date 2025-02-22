@@ -39,13 +39,13 @@ struct WhitespaceNode(NodeAstLike):
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
         
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
-        if self.accept(token_bundle, tree):
+        if self.accept(token_bundle, self._parent, tree):
             self._token_bundles.append(token_bundle)
             return True
         return False
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool: 
         if token_bundle.token == '' or token_bundle.token == '\n':
             return True
         return False
@@ -54,7 +54,7 @@ struct WhitespaceNode(NodeAstLike):
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
-        return not self.accept(token_bundle, tree)
+        return not self.accept(token_bundle, self._parent, tree)
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent_idx(self) -> Int: return self._parent
     fn children_idxs(mut self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())

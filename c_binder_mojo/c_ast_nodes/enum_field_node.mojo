@@ -40,11 +40,9 @@ struct EnumFieldNode(NodeAstLike):
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # TODO: Check if we're in an enum scope and this is a valid identifier
-        # For now, accept any token in enum scope
-        if tree.nodes[tree.current_parent].node.isa[ScopeNode]():
-            var scope_node = tree.nodes[tree.current_parent].node[ScopeNode]()
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree) -> Bool:
+        if tree.nodes[parent_idx].node.isa[ScopeNode]():
+            var scope_node = tree.nodes[parent_idx].node[ScopeNode]
             return scope_node.scope_type.type == ScopeType.ENUM
         return False
 

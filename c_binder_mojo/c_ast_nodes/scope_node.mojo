@@ -76,7 +76,7 @@ struct ScopeNode(NodeAstLike):
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree) -> Bool:
         return token_bundle.token == CTokens.SCOPE_BEGIN
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:

@@ -32,7 +32,7 @@ struct EnumNode(NodeAstLike):
         self.enum_name = "AnonymousEnum"
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree) -> Bool:
         # I think we need a ScopeNode implimented to make this actually clean.
         return token_bundle.token == "enum"
 

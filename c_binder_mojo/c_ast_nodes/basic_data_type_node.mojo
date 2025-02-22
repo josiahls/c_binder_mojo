@@ -48,7 +48,7 @@ struct BasicDataTypeNode(NodeAstLike):
         return tokens
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, mut tree:Tree) -> Bool:
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool:
         all_accepted = False
         for subtoken in BasicDataTypeNode.split_pointer_from_token(token_bundle.token):
             if subtoken[] in CPrimitiveTypes:

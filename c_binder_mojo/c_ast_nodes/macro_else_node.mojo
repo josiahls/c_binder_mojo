@@ -34,7 +34,7 @@ struct MacroElseNode(NodeAstLike):
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
 
     @staticmethod
-    fn accept(token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
+    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool: 
         if token_bundle.token == CTokens.MACRO_ELSE:
             return True
         return False

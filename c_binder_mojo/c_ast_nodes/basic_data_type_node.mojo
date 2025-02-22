@@ -16,7 +16,7 @@ struct BasicDataTypeNode(NodeAstLike):
     
     Examples:
         - Basic: "unsigned char", "int", "float"
-        - Compound: "enum mjtDisableBit_", "struct Point"
+        - Compound: "unsigned char", "signed int", "float*"
     """
     alias __name__ = "BasicDataTypeNode"
     

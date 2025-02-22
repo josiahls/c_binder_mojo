@@ -20,6 +20,8 @@ from c_binder_mojo.c_ast_nodes import (
     MultiLineCommentNode,
     IncludeNode,
     BasicDataTypeNode,
+    EnumNode,
+    ScopeNode,
 )
 
 
@@ -139,6 +141,8 @@ struct AstNode(CollectionElement):
         IncludeNode,
         MultiLineCommentNode,
         BasicDataTypeNode,
+        EnumNode,
+        ScopeNode,
         PlaceHolderNode, # Must be last in the list
     ]
     var node: Self.type

@@ -10,3 +10,5 @@ from .multi_line_comment_node import MultiLineCommentNode
 from .root_node import RootNode
 from .include_node import IncludeNode
 from .basic_data_type_node import BasicDataTypeNode
+from c_binder_mojo.c_ast_nodes.enum_node import EnumNode
+from .scope_node import ScopeNode

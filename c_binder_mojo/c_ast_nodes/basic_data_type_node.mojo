@@ -87,7 +87,6 @@ struct BasicDataTypeNode(NodeAstLike):
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Done when we hit a non-type token
-        print('checking: ' + String(token_bundle))
         return not token_bundle.token in CPrimitiveTypes
 
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:

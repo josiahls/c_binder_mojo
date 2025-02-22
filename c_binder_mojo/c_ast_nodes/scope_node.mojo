@@ -8,6 +8,39 @@ from c_binder_mojo.c_ast_nodes.tree import Tree
 from c_binder_mojo.c_ast_nodes.common import NodeAstLike, CTokens
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
+from c_binder_mojo.c_ast_nodes.nodes import AstNode
+@value
+struct ScopeType:
+    """Defines the type of scope based on parent node."""
+    alias ENUM = 0
+    alias STRUCT = 1
+    alias FUNCTION = 2
+    alias UNKNOWN = 3  # Default/fallback type
+
+    var type: Int
+
+    fn __init__(out self, type: Int):
+        self.type = type
+
+    fn __str__(self) -> String:
+        if self.type == Self.ENUM:
+            return "ENUM"
+        elif self.type == Self.STRUCT:
+            return "STRUCT"
+        elif self.type == Self.FUNCTION:
+            return "FUNCTION"
+        return "UNKNOWN"
+
+    @staticmethod
+    fn from_parent(parent_node: AstNode) -> Self:
+        if parent_node.node.isa[EnumNode]():
+            return Self(Self.ENUM)
+        # parent.node.isa[StructNode]():
+        #   return Self(Self.STRUCT)
+        # parent.node.isa[FunctionNode]():
+        #   return Self(Self.FUNCTION)
+        # Add other node type checks as we implement them
+        return Self(Self.UNKNOWN)
 
 @value
 struct ScopeNode(NodeAstLike):
@@ -25,6 +58,7 @@ struct ScopeNode(NodeAstLike):
     var _current_idx: Int
     var _children: ArcPointer[List[Int]]
     var _is_closed: Bool  # Just need to know if we've seen our closing brace
+    var scope_type: ScopeType
 
     fn __init__(out self, token_bundle: TokenBundle, parent: Int):
         self._token_bundles = TokenBundles()
@@ -34,6 +68,7 @@ struct ScopeNode(NodeAstLike):
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
         self._is_closed = False
+        self.scope_type = ScopeType(ScopeType.UNKNOWN)
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
@@ -60,7 +95,12 @@ struct ScopeNode(NodeAstLike):
 
     @staticmethod
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
-        return Self(token_bundle, parent_idx)
+        var node = Self(token_bundle, parent_idx)
+        if parent_idx >= 0:
+            node.scope_type = ScopeType.from_parent(tree.nodes[parent_idx])
+        else:
+            node.scope_type = ScopeType(ScopeType.UNKNOWN)
+        return node
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         return self._is_closed
@@ -88,7 +128,8 @@ struct ScopeNode(NodeAstLike):
         s = String(self.__name__)
         s += String('(parent=') + String(self._parent) + String(',')
         s += String('current_idx=') + String(self._current_idx) + String(',')
-        s += String('is_closed=') + String(self._is_closed) + String(')')
+        s += String('is_closed=') + String(self._is_closed) + String(',')
+        s += String('scope_type=') + String(self.scope_type) + String(')')
         return s
 
     fn token_bundles(self) -> TokenBundles:

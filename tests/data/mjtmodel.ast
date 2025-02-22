@@ -71,7 +71,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=1,current_idx=59)
 		TypedefNode(parent=15,current_idx=60,typename=mjtDisableBit)typedef
 			EnumNode(name=mjtDisableBit_,parent=60,current_idx=61)enum mjtDisableBit_
-				ScopeNode(parent=61,current_idx=62,is_closed=True){
+				ScopeNode(parent=61,current_idx=62,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=62,n_lines=1,current_idx=63)   
 					SingleCommentNode(parent=62,current_idx=64)// disable default feature bitflags
 					WhitespaceNode(parent=62,n_lines=1,current_idx=65) 
@@ -197,7 +197,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=183)  
 		TypedefNode(parent=15,current_idx=184,typename=mjtEnableBit)typedef
 			EnumNode(name=mjtEnableBit_,parent=184,current_idx=185)enum mjtEnableBit_
-				ScopeNode(parent=185,current_idx=186,is_closed=True){
+				ScopeNode(parent=185,current_idx=186,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=186,n_lines=1,current_idx=187)    
 					SingleCommentNode(parent=186,current_idx=188)// enable optional feature bitflags
 					WhitespaceNode(parent=186,n_lines=1,current_idx=189) 
@@ -264,7 +264,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=248)  
 		TypedefNode(parent=15,current_idx=249,typename=mjtJoint)typedef
 			EnumNode(name=mjtJoint_,parent=249,current_idx=250)enum mjtJoint_
-				ScopeNode(parent=250,current_idx=251,is_closed=True){
+				ScopeNode(parent=250,current_idx=251,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=251,n_lines=1,current_idx=252)        
 					SingleCommentNode(parent=251,current_idx=253)// type of degree of freedom
 					WhitespaceNode(parent=251,n_lines=1,current_idx=254) 
@@ -292,7 +292,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=274)  
 		TypedefNode(parent=15,current_idx=275,typename=mjtGeom)typedef
 			EnumNode(name=mjtGeom_,parent=275,current_idx=276)enum mjtGeom_
-				ScopeNode(parent=276,current_idx=277,is_closed=True){
+				ScopeNode(parent=276,current_idx=277,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=277,n_lines=1,current_idx=278)         
 					SingleCommentNode(parent=277,current_idx=279)// type of geometric shape
 					WhitespaceNode(parent=277,n_lines=1,current_idx=280) 
@@ -394,7 +394,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=374)  
 		TypedefNode(parent=15,current_idx=375,typename=mjtCamLight)typedef
 			EnumNode(name=mjtCamLight_,parent=375,current_idx=376)enum mjtCamLight_
-				ScopeNode(parent=376,current_idx=377,is_closed=True){
+				ScopeNode(parent=376,current_idx=377,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=377,n_lines=1,current_idx=378)     
 					SingleCommentNode(parent=377,current_idx=379)// tracking mode for camera and light
 					WhitespaceNode(parent=377,n_lines=1,current_idx=380) 
@@ -426,7 +426,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=404)  
 		TypedefNode(parent=15,current_idx=405,typename=mjtTexture)typedef
 			EnumNode(name=mjtTexture_,parent=405,current_idx=406)enum mjtTexture_
-				ScopeNode(parent=406,current_idx=407,is_closed=True){
+				ScopeNode(parent=406,current_idx=407,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=407,n_lines=1,current_idx=408)      
 					SingleCommentNode(parent=407,current_idx=409)// type of texture
 					WhitespaceNode(parent=407,n_lines=1,current_idx=410) 
@@ -450,7 +450,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=426)  
 		TypedefNode(parent=15,current_idx=427,typename=mjtTextureRole)typedef
 			EnumNode(name=mjtTextureRole_,parent=427,current_idx=428)enum mjtTextureRole_
-				ScopeNode(parent=428,current_idx=429,is_closed=True){
+				ScopeNode(parent=428,current_idx=429,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=429,n_lines=1,current_idx=430)  
 					SingleCommentNode(parent=429,current_idx=431)// role of texture map in rendering
 					WhitespaceNode(parent=429,n_lines=1,current_idx=432) 
@@ -504,7 +504,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=478)  
 		TypedefNode(parent=15,current_idx=479,typename=mjtIntegrator)typedef
 			EnumNode(name=mjtIntegrator_,parent=479,current_idx=480)enum mjtIntegrator_
-				ScopeNode(parent=480,current_idx=481,is_closed=True){
+				ScopeNode(parent=480,current_idx=481,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=481,n_lines=1,current_idx=482)   
 					SingleCommentNode(parent=481,current_idx=483)// integrator mode
 					WhitespaceNode(parent=481,n_lines=1,current_idx=484) 
@@ -532,7 +532,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=504)  
 		TypedefNode(parent=15,current_idx=505,typename=mjtCone)typedef
 			EnumNode(name=mjtCone_,parent=505,current_idx=506)enum mjtCone_
-				ScopeNode(parent=506,current_idx=507,is_closed=True){
+				ScopeNode(parent=506,current_idx=507,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=507,n_lines=1,current_idx=508)         
 					SingleCommentNode(parent=507,current_idx=509)// type of friction cone
 					WhitespaceNode(parent=507,n_lines=1,current_idx=510) 
@@ -552,7 +552,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=522)  
 		TypedefNode(parent=15,current_idx=523,typename=mjtJacobian)typedef
 			EnumNode(name=mjtJacobian_,parent=523,current_idx=524)enum mjtJacobian_
-				ScopeNode(parent=524,current_idx=525,is_closed=True){
+				ScopeNode(parent=524,current_idx=525,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=525,n_lines=1,current_idx=526)     
 					SingleCommentNode(parent=525,current_idx=527)// type of constraint Jacobian
 					WhitespaceNode(parent=525,n_lines=1,current_idx=528) 
@@ -576,7 +576,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=544)  
 		TypedefNode(parent=15,current_idx=545,typename=mjtSolver)typedef
 			EnumNode(name=mjtSolver_,parent=545,current_idx=546)enum mjtSolver_
-				ScopeNode(parent=546,current_idx=547,is_closed=True){
+				ScopeNode(parent=546,current_idx=547,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=547,n_lines=1,current_idx=548)       
 					SingleCommentNode(parent=547,current_idx=549)// constraint solver algorithm
 					WhitespaceNode(parent=547,n_lines=1,current_idx=550) 
@@ -600,7 +600,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=566)  
 		TypedefNode(parent=15,current_idx=567,typename=mjtEq)typedef
 			EnumNode(name=mjtEq_,parent=567,current_idx=568)enum mjtEq_
-				ScopeNode(parent=568,current_idx=569,is_closed=True){
+				ScopeNode(parent=568,current_idx=569,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=569,n_lines=1,current_idx=570)           
 					SingleCommentNode(parent=569,current_idx=571)// type of equality constraint
 					WhitespaceNode(parent=569,n_lines=1,current_idx=572) 
@@ -636,7 +636,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=600)  
 		TypedefNode(parent=15,current_idx=601,typename=mjtWrap)typedef
 			EnumNode(name=mjtWrap_,parent=601,current_idx=602)enum mjtWrap_
-				ScopeNode(parent=602,current_idx=603,is_closed=True){
+				ScopeNode(parent=602,current_idx=603,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=603,n_lines=1,current_idx=604)         
 					SingleCommentNode(parent=603,current_idx=605)// type of tendon wrap object
 					WhitespaceNode(parent=603,n_lines=1,current_idx=606) 
@@ -672,7 +672,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=634)  
 		TypedefNode(parent=15,current_idx=635,typename=mjtTrn)typedef
 			EnumNode(name=mjtTrn_,parent=635,current_idx=636)enum mjtTrn_
-				ScopeNode(parent=636,current_idx=637,is_closed=True){
+				ScopeNode(parent=636,current_idx=637,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=637,n_lines=1,current_idx=638)          
 					SingleCommentNode(parent=637,current_idx=639)// type of actuator transmission
 					WhitespaceNode(parent=637,n_lines=1,current_idx=640) 
@@ -715,7 +715,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=675)  
 		TypedefNode(parent=15,current_idx=676,typename=mjtDyn)typedef
 			EnumNode(name=mjtDyn_,parent=676,current_idx=677)enum mjtDyn_
-				ScopeNode(parent=677,current_idx=678,is_closed=True){
+				ScopeNode(parent=677,current_idx=678,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=678,n_lines=1,current_idx=679)          
 					SingleCommentNode(parent=678,current_idx=680)// type of actuator dynamics
 					WhitespaceNode(parent=678,n_lines=1,current_idx=681) 
@@ -751,7 +751,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=709)  
 		TypedefNode(parent=15,current_idx=710,typename=mjtGain)typedef
 			EnumNode(name=mjtGain_,parent=710,current_idx=711)enum mjtGain_
-				ScopeNode(parent=711,current_idx=712,is_closed=True){
+				ScopeNode(parent=711,current_idx=712,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=712,n_lines=1,current_idx=713)         
 					SingleCommentNode(parent=712,current_idx=714)// type of actuator gain
 					WhitespaceNode(parent=712,n_lines=1,current_idx=715) 
@@ -779,7 +779,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=735)  
 		TypedefNode(parent=15,current_idx=736,typename=mjtBias)typedef
 			EnumNode(name=mjtBias_,parent=736,current_idx=737)enum mjtBias_
-				ScopeNode(parent=737,current_idx=738,is_closed=True){
+				ScopeNode(parent=737,current_idx=738,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=738,n_lines=1,current_idx=739)         
 					SingleCommentNode(parent=738,current_idx=740)// type of actuator bias
 					WhitespaceNode(parent=738,n_lines=1,current_idx=741) 
@@ -807,7 +807,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=761)  
 		TypedefNode(parent=15,current_idx=762,typename=mjtObj)typedef
 			EnumNode(name=mjtObj_,parent=762,current_idx=763)enum mjtObj_
-				ScopeNode(parent=763,current_idx=764,is_closed=True){
+				ScopeNode(parent=763,current_idx=764,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=764,n_lines=1,current_idx=765)          
 					SingleCommentNode(parent=764,current_idx=766)// type of MujoCo object
 					WhitespaceNode(parent=764,n_lines=1,current_idx=767) 
@@ -936,7 +936,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=888)  
 		TypedefNode(parent=15,current_idx=889,typename=mjtConstraint)typedef
 			EnumNode(name=mjtConstraint_,parent=889,current_idx=890)enum mjtConstraint_
-				ScopeNode(parent=890,current_idx=891,is_closed=True){
+				ScopeNode(parent=890,current_idx=891,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=891,n_lines=1,current_idx=892)   
 					SingleCommentNode(parent=891,current_idx=893)// type of constraint
 					WhitespaceNode(parent=891,n_lines=1,current_idx=894) 
@@ -980,7 +980,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=930)  
 		TypedefNode(parent=15,current_idx=931,typename=mjtConstraintState)typedef
 			EnumNode(name=mjtConstraintState_,parent=931,current_idx=932)enum mjtConstraintState_
-				ScopeNode(parent=932,current_idx=933,is_closed=True){
+				ScopeNode(parent=932,current_idx=933,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=933,n_lines=1,current_idx=934)
 					SingleCommentNode(parent=933,current_idx=935)// constraint state
 					WhitespaceNode(parent=933,n_lines=1,current_idx=936) 
@@ -1011,7 +1011,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=959)  
 		TypedefNode(parent=15,current_idx=960,typename=mjtSensor)typedef
 			EnumNode(name=mjtSensor_,parent=960,current_idx=961)enum mjtSensor_
-				ScopeNode(parent=961,current_idx=962,is_closed=True){
+				ScopeNode(parent=961,current_idx=962,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=962,n_lines=1,current_idx=963)       
 					SingleCommentNode(parent=962,current_idx=964)// type of sensor
 					WhitespaceNode(parent=962,n_lines=1,current_idx=965) 
@@ -1215,7 +1215,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1161)  
 		TypedefNode(parent=15,current_idx=1162,typename=mjtStage)typedef
 			EnumNode(name=mjtStage_,parent=1162,current_idx=1163)enum mjtStage_
-				ScopeNode(parent=1163,current_idx=1164,is_closed=True){
+				ScopeNode(parent=1163,current_idx=1164,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=1164,n_lines=1,current_idx=1165)        
 					SingleCommentNode(parent=1164,current_idx=1166)// computation stage
 					WhitespaceNode(parent=1164,n_lines=1,current_idx=1167) 
@@ -1243,7 +1243,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1187)  
 		TypedefNode(parent=15,current_idx=1188,typename=mjtDataType)typedef
 			EnumNode(name=mjtDataType_,parent=1188,current_idx=1189)enum mjtDataType_
-				ScopeNode(parent=1189,current_idx=1190,is_closed=True){
+				ScopeNode(parent=1189,current_idx=1190,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=1190,n_lines=1,current_idx=1191)     
 					SingleCommentNode(parent=1190,current_idx=1192)// data type for sensors
 					WhitespaceNode(parent=1190,n_lines=1,current_idx=1193) 
@@ -1271,7 +1271,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1213)  
 		TypedefNode(parent=15,current_idx=1214,typename=mjtSameFrame)typedef
 			EnumNode(name=mjtSameFrame_,parent=1214,current_idx=1215)enum mjtSameFrame_
-				ScopeNode(parent=1215,current_idx=1216,is_closed=True){
+				ScopeNode(parent=1215,current_idx=1216,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=1216,n_lines=1,current_idx=1217)    
 					SingleCommentNode(parent=1216,current_idx=1218)// frame alignment of bodies with their children
 					WhitespaceNode(parent=1216,n_lines=1,current_idx=1219) 
@@ -1303,7 +1303,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1243)  
 		TypedefNode(parent=15,current_idx=1244,typename=mjtLRMode)typedef
 			EnumNode(name=mjtLRMode_,parent=1244,current_idx=1245)enum mjtLRMode_
-				ScopeNode(parent=1245,current_idx=1246,is_closed=True){
+				ScopeNode(parent=1245,current_idx=1246,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=1246,n_lines=1,current_idx=1247)       
 					SingleCommentNode(parent=1246,current_idx=1248)// mode for actuator length range computation
 					WhitespaceNode(parent=1246,n_lines=1,current_idx=1249) 
@@ -1331,7 +1331,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1269)  
 		TypedefNode(parent=15,current_idx=1270,typename=mjtFlexSelf)typedef
 			EnumNode(name=mjtFlexSelf_,parent=1270,current_idx=1271)enum mjtFlexSelf_
-				ScopeNode(parent=1271,current_idx=1272,is_closed=True){
+				ScopeNode(parent=1271,current_idx=1272,is_closed=True,scope_type=ENUM){
 					WhitespaceNode(parent=1272,n_lines=1,current_idx=1273)     
 					SingleCommentNode(parent=1272,current_idx=1274)// mode for flex selfcollide
 					WhitespaceNode(parent=1272,n_lines=1,current_idx=1275) 
@@ -1365,7 +1365,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1301)
 		PlaceHolderNode(parent=15,current_idx=1302)struct
 		PlaceHolderNode(parent=15,current_idx=1303)mjLROpt_
-		ScopeNode(parent=15,current_idx=1304,is_closed=True){
+		ScopeNode(parent=15,current_idx=1304,is_closed=True,scope_type=UNKNOWN){
 			WhitespaceNode(parent=1304,n_lines=1,current_idx=1305)               
 			SingleCommentNode(parent=1304,current_idx=1306)// options for mj_setLengthRange()
 			WhitespaceNode(parent=1304,n_lines=1,current_idx=1307) 
@@ -1445,7 +1445,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1379)
 		PlaceHolderNode(parent=15,current_idx=1380)struct
 		PlaceHolderNode(parent=15,current_idx=1381)mjVFS_
-		ScopeNode(parent=15,current_idx=1382,is_closed=True){
+		ScopeNode(parent=15,current_idx=1382,is_closed=True,scope_type=UNKNOWN){
 			WhitespaceNode(parent=1382,n_lines=1,current_idx=1383)                             
 			SingleCommentNode(parent=1382,current_idx=1384)// virtual file system for loading from memory
 			WhitespaceNode(parent=1382,n_lines=1,current_idx=1385) 
@@ -1467,7 +1467,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1399)
 		PlaceHolderNode(parent=15,current_idx=1400)struct
 		PlaceHolderNode(parent=15,current_idx=1401)mjOption_
-		ScopeNode(parent=15,current_idx=1402,is_closed=True){
+		ScopeNode(parent=15,current_idx=1402,is_closed=True,scope_type=UNKNOWN){
 			WhitespaceNode(parent=1402,n_lines=1,current_idx=1403)              
 			SingleCommentNode(parent=1402,current_idx=1404)// physics options
 			WhitespaceNode(parent=1402,n_lines=1,current_idx=1405) 
@@ -1669,12 +1669,12 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1599)
 		PlaceHolderNode(parent=15,current_idx=1600)struct
 		PlaceHolderNode(parent=15,current_idx=1601)mjVisual_
-		ScopeNode(parent=15,current_idx=1602,is_closed=True){
+		ScopeNode(parent=15,current_idx=1602,is_closed=True,scope_type=UNKNOWN){
 			WhitespaceNode(parent=1602,n_lines=1,current_idx=1603)              
 			SingleCommentNode(parent=1602,current_idx=1604)// visualization options
 			WhitespaceNode(parent=1602,n_lines=1,current_idx=1605) 
 			PlaceHolderNode(parent=1602,current_idx=1606)struct
-			ScopeNode(parent=1602,current_idx=1607,is_closed=True){
+			ScopeNode(parent=1602,current_idx=1607,is_closed=True,scope_type=UNKNOWN){
 				WhitespaceNode(parent=1607,n_lines=1,current_idx=1608)                      
 				SingleCommentNode(parent=1607,current_idx=1609)// global parameters
 				WhitespaceNode(parent=1607,n_lines=1,current_idx=1610)   
@@ -1759,7 +1759,7 @@ mjStatistic, mjModel,
 			PlaceHolderNode(parent=1602,current_idx=1688);
 			WhitespaceNode(parent=1602,n_lines=3,current_idx=1689)   
 			PlaceHolderNode(parent=1602,current_idx=1690)struct
-			ScopeNode(parent=1602,current_idx=1691,is_closed=True){
+			ScopeNode(parent=1602,current_idx=1691,is_closed=True,scope_type=UNKNOWN){
 				WhitespaceNode(parent=1691,n_lines=1,current_idx=1692)                      
 				SingleCommentNode(parent=1691,current_idx=1693)// rendering quality
 				WhitespaceNode(parent=1691,n_lines=1,current_idx=1694)   
@@ -1803,7 +1803,7 @@ mjStatistic, mjModel,
 			PlaceHolderNode(parent=1602,current_idx=1731);
 			WhitespaceNode(parent=1602,n_lines=3,current_idx=1732)   
 			PlaceHolderNode(parent=1602,current_idx=1733)struct
-			ScopeNode(parent=1602,current_idx=1734,is_closed=True){
+			ScopeNode(parent=1602,current_idx=1734,is_closed=True,scope_type=UNKNOWN){
 				WhitespaceNode(parent=1734,n_lines=1,current_idx=1735)                      
 				SingleCommentNode(parent=1734,current_idx=1736)// head light
 				WhitespaceNode(parent=1734,n_lines=1,current_idx=1737)   
@@ -1837,7 +1837,7 @@ mjStatistic, mjModel,
 			PlaceHolderNode(parent=1602,current_idx=1764);
 			WhitespaceNode(parent=1602,n_lines=3,current_idx=1765)   
 			PlaceHolderNode(parent=1602,current_idx=1766)struct
-			ScopeNode(parent=1602,current_idx=1767,is_closed=True){
+			ScopeNode(parent=1602,current_idx=1767,is_closed=True,scope_type=UNKNOWN){
 				WhitespaceNode(parent=1767,n_lines=1,current_idx=1768)                      
 				SingleCommentNode(parent=1767,current_idx=1769)// mapping
 				WhitespaceNode(parent=1767,n_lines=1,current_idx=1770)   
@@ -1924,7 +1924,7 @@ mjStatistic, mjModel,
 			PlaceHolderNode(parent=1602,current_idx=1850);
 			WhitespaceNode(parent=1602,n_lines=3,current_idx=1851)   
 			PlaceHolderNode(parent=1602,current_idx=1852)struct
-			ScopeNode(parent=1602,current_idx=1853,is_closed=True){
+			ScopeNode(parent=1602,current_idx=1853,is_closed=True,scope_type=UNKNOWN){
 				WhitespaceNode(parent=1853,n_lines=1,current_idx=1854)                      
 				SingleCommentNode(parent=1853,current_idx=1855)// scale of decor elements relative to mean body size
 				WhitespaceNode(parent=1853,n_lines=1,current_idx=1856)   
@@ -2035,7 +2035,7 @@ mjStatistic, mjModel,
 			PlaceHolderNode(parent=1602,current_idx=1960);
 			WhitespaceNode(parent=1602,n_lines=3,current_idx=1961)   
 			PlaceHolderNode(parent=1602,current_idx=1962)struct
-			ScopeNode(parent=1602,current_idx=1963,is_closed=True){
+			ScopeNode(parent=1602,current_idx=1963,is_closed=True,scope_type=UNKNOWN){
 				WhitespaceNode(parent=1963,n_lines=1,current_idx=1964)                      
 				SingleCommentNode(parent=1963,current_idx=1965)// color of decor elements
 				WhitespaceNode(parent=1963,n_lines=1,current_idx=1966)   
@@ -2206,7 +2206,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=1,current_idx=2128)
 		PlaceHolderNode(parent=15,current_idx=2129)struct
 		PlaceHolderNode(parent=15,current_idx=2130)mjStatistic_
-		ScopeNode(parent=15,current_idx=2131,is_closed=True){
+		ScopeNode(parent=15,current_idx=2131,is_closed=True,scope_type=UNKNOWN){
 			WhitespaceNode(parent=2131,n_lines=1,current_idx=2132)           
 			SingleCommentNode(parent=2131,current_idx=2133)// model statistics (in qpos0)
 			WhitespaceNode(parent=2131,n_lines=1,current_idx=2134) 
@@ -2252,7 +2252,7 @@ mjStatistic, mjModel,
 		WhitespaceNode(parent=15,n_lines=1,current_idx=2172)
 		PlaceHolderNode(parent=15,current_idx=2173)struct
 		PlaceHolderNode(parent=15,current_idx=2174)mjModel_
-		ScopeNode(parent=15,current_idx=2175,is_closed=True){
+		ScopeNode(parent=15,current_idx=2175,is_closed=True,scope_type=UNKNOWN){
 			WhitespaceNode(parent=2175,n_lines=1,current_idx=2176) 
 			SingleCommentNode(parent=2175,current_idx=2177)// ------------------------------- sizes
 			WhitespaceNode(parent=2175,n_lines=2,current_idx=2178)  

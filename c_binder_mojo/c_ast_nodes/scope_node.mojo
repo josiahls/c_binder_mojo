@@ -9,6 +9,8 @@ from c_binder_mojo.c_ast_nodes.common import NodeAstLike, CTokens
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
+
+
 @value
 struct ScopeType:
     """Defines the type of scope based on parent node."""
@@ -128,7 +130,6 @@ struct ScopeNode(NodeAstLike):
         s = String(self.__name__)
         s += String('(parent=') + String(self._parent) + String(',')
         s += String('current_idx=') + String(self._current_idx) + String(',')
-        s += String('is_closed=') + String(self._is_closed) + String(',')
         s += String('scope_type=') + String(self.scope_type) + String(')')
         return s
 

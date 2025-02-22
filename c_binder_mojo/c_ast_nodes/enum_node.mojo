@@ -29,12 +29,12 @@ struct EnumNode(NodeAstLike):
         self._parent = parent
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
-        self.enum_name = ""
+        self.enum_name = "AnonymousEnum"
 
     @staticmethod
     fn accept(token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # I think we need a ScopeNode implimented to make this actually clean.
-        return False #token_bundle.token == "enum"
+        return token_bundle.token == "enum"
 
     fn display_name(self) -> String:
         s = String(self.__name__)
@@ -49,9 +49,25 @@ struct EnumNode(NodeAstLike):
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Handle the enum name first
         if len(self._token_bundles) == 1:  # Only have 'enum' token so far
-            self.enum_name = token_bundle.token
+            # Handle anonymous enums.
+            if token_bundle.token != CTokens.SCOPE_BEGIN:
+                self.enum_name = token_bundle.token
+                self._token_bundles.append(token_bundle)
+                return True
+
+        if token_bundle.token == CTokens.END_STATEMENT:
+            # Add toke splitter
+            self._token_bundles.append(
+                TokenBundle(
+                    token='',
+                    is_splitter=True,
+                    line_num=token_bundle.line_num,
+                    col_num=token_bundle.col_num
+                )
+            )
             self._token_bundles.append(token_bundle)
             return True
+
         return False
 
     @staticmethod
@@ -59,13 +75,26 @@ struct EnumNode(NodeAstLike):
         return Self(token_bundle, parent_idx)
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        if len(self._token_bundles) == 2:
+        # If the enum has `enum NAME` and its children have completed. Check if the next
+        # token is a semicolon. If so, we are not done, allow us to append the semicolon.
+        # then we will be done.
+        if token_bundle.token == CTokens.END_STATEMENT:
+            return False
+        if self._token_bundles[-1].token == CTokens.END_STATEMENT:
+            return True
+        if len(self._children[]) == 0:
+            return False
+        last_child_idx = self._children[][-1]
+        if tree.nodes[last_child_idx].token_bundles()[-1].token == CTokens.SCOPE_END:
             return True
         return False
 
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Enums don't make child nodes
+        # Note: Once we enable ScopeNodes, we can uncomment this since the 
+        # scope node will accumulate the children.
         return token_bundle.token == CTokens.SCOPE_BEGIN
+        # return True
 
     fn parent_idx(self) -> Int:
         return self._parent

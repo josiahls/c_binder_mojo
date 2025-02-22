@@ -5,7 +5,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.base import TokenBundle,TokenBundles
 from c_binder_mojo.c_ast_nodes.tree import Tree
-from c_binder_mojo.c_ast_nodes.common import NodeAstLike
+from c_binder_mojo.c_ast_nodes.common import NodeAstLike, CTokens
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
 
@@ -13,8 +13,9 @@ from c_binder_mojo.c_ast_nodes.nodes import node2string
 struct ScopeNode(NodeAstLike):
     """Node that handles a scoped block of code between { and }.
     
-    This node is responsible for managing content between curly braces,
-    which appears in enums, structs, functions, etc.
+    This node is responsible for managing content between curly braces.
+    Each scope node handles a single level of braces, with nested scopes
+    creating their own nodes.
     """
     alias __name__ = "ScopeNode"
     
@@ -23,28 +24,38 @@ struct ScopeNode(NodeAstLike):
     var _parent: Int
     var _current_idx: Int
     var _children: ArcPointer[List[Int]]
-    var _brace_count: Int  # Track nested braces
+    var _is_closed: Bool  # Just need to know if we've seen our closing brace
 
     fn __init__(out self, token_bundle: TokenBundle, parent: Int):
         self._token_bundles = TokenBundles()
-        self._token_bundles.append(token_bundle)
+        self._token_bundles.append(token_bundle)  # Should be {
         self.just_code = False
         self._parent = parent
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
-        self._brace_count = 0
+        self._is_closed = False
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     @staticmethod
     fn accept(token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # TODO: Logic for accepting a scope start
-        # Probably want the parent to create this node instead of direct acceptance
-        return False
+        return token_bundle.token == CTokens.SCOPE_BEGIN
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # TODO: Track brace count and handle content
+        if token_bundle.token == CTokens.SCOPE_END:
+            self._is_closed = True
+            # Add split token for children to be added.
+            self._token_bundles.append(
+                TokenBundle(
+                    token='',
+                    is_splitter=True,
+                    line_num=token_bundle.line_num,
+                    col_num=token_bundle.col_num
+                )
+            )
+            self._token_bundles.append(token_bundle)
+            return True
         return False
 
     @staticmethod
@@ -52,12 +63,11 @@ struct ScopeNode(NodeAstLike):
         return Self(token_bundle, parent_idx)
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # TODO: Check if we've closed all braces
-        return False
+        return self._is_closed
 
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # TODO: Logic for when to create child nodes
-        return False
+        # Create new scope node when seeing {
+        return True
 
     fn parent_idx(self) -> Int:
         return self._parent
@@ -78,7 +88,7 @@ struct ScopeNode(NodeAstLike):
         s = String(self.__name__)
         s += String('(parent=') + String(self._parent) + String(',')
         s += String('current_idx=') + String(self._current_idx) + String(',')
-        s += String('brace_count=') + String(self._brace_count) + String(')')
+        s += String('is_closed=') + String(self._is_closed) + String(')')
         return s
 
     fn token_bundles(self) -> TokenBundles:

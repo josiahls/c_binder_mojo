@@ -14,7 +14,7 @@ from c_binder_mojo.mojo_ast_statements import (
 )
 from c_binder_mojo.c_ast_statements.root import Root
 from c_binder_mojo.c_ast_node import AstNode, RootAstNode
-from c_binder_mojo.base import STRING_SPLIT_AT
+from c_binder_mojo.common import STRING_SPLIT_AT
 
 
 @value

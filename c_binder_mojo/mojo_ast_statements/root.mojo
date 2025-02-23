@@ -5,7 +5,7 @@ from utils import Variant
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.mojo_ast_statements.abstract_ast_statement import AbstractAstStatement
-from c_binder_mojo.base import TokenBundle
+from c_binder_mojo.common import TokenBundle
 from c_binder_mojo import c_ast_statements
 
 

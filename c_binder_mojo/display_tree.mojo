@@ -11,7 +11,7 @@ from c_binder_mojo import mojo_ast_statements
 
 from c_binder_mojo.c_ast_nodes.tree import Tree as CTree
 # from c_binder_mojo.mojo_ast_node import RootMojoAstNode
-from c_binder_mojo.base import STRING_SPLIT_AT, TokenBundle,TokenBundles
+from c_binder_mojo.common import STRING_SPLIT_AT, TokenBundle,TokenBundles
 
 
 @value

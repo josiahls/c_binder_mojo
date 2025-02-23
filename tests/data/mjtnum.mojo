@@ -1,1 +1,67 @@
-Tree
+PlaceHolderNode()
+PlaceHolderNode(// Copyright 2021 DeepMind Technologies Limited )
+PlaceHolderNode(// )
+PlaceHolderNode(// Licensed under the Apache License ,  Version 2.0 (the "License") ;  )
+PlaceHolderNode(// you may not use this file except in compliance with the License. )
+PlaceHolderNode(// You may obtain a copy of the License at )
+PlaceHolderNode(// )
+PlaceHolderNode(//     http://www.apache.org/licenses/LICENSE-2.0 )
+PlaceHolderNode(// )
+PlaceHolderNode(// Unless required by applicable law or agreed to in writing ,  software )
+PlaceHolderNode(// distributed under the License is distributed on an "AS IS" BASIS ,  )
+PlaceHolderNode(// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND ,  either express or implied. )
+PlaceHolderNode(// See the License for the specific language governing permissions and )
+PlaceHolderNode(// limitations under the License. )
+PlaceHolderNode( )
+PlaceHolderNode(#ifndef MUJOCO_INCLUDE_MJTNUM_H_ )
+PlaceHolderNode(#define MUJOCO_INCLUDE_MJTNUM_H_ 
+ )
+PlaceHolderNode(//---------------------------------- floating-point definition ------------------------------------- )
+PlaceHolderNode( )
+PlaceHolderNode(// floating point data type and minval )
+PlaceHolderNode(#ifndef mjUSESINGLE )
+PlaceHolderNode(  )
+PlaceHolderNode(typedef <children> mjtNum ; )
+PlaceHolderNode(double )
+PlaceHolderNode(mjtNum )
+PlaceHolderNode( 
+  )
+PlaceHolderNode(#define mjMINVAL    1E-15       )
+PlaceHolderNode(// minimum value in any denominator )
+PlaceHolderNode(#else )
+PlaceHolderNode(  )
+PlaceHolderNode(typedef <children> mjtNum ; )
+PlaceHolderNode(float )
+PlaceHolderNode(mjtNum )
+PlaceHolderNode( 
+  )
+PlaceHolderNode(#define mjMINVAL    1E-15f )
+PlaceHolderNode(/* This does after the float is defined */ )
+PlaceHolderNode(#endif )
+PlaceHolderNode( )
+PlaceHolderNode(/* silly comment */ )
+PlaceHolderNode(/** another one??????? **/ )
+PlaceHolderNode( )
+PlaceHolderNode(/**  
+So  
+many  
+lines 
+ 
+ 
+**/ )
+PlaceHolderNode( 
+ )
+PlaceHolderNode(//-------------------------------------- byte definition ------------------------------------------- )
+PlaceHolderNode( )
+PlaceHolderNode(typedef <children> mjtByte ; )
+PlaceHolderNode(unsigned char )
+PlaceHolderNode(mjtByte )
+PlaceHolderNode(    )
+PlaceHolderNode(// used for true/false )
+PlaceHolderNode( 
+ 
+ )
+PlaceHolderNode(#endif )
+PlaceHolderNode( )
+PlaceHolderNode(// MUJOCO_INCLUDE_MJTNUM_H_ )
+PlaceHolderNode( )

@@ -3,6 +3,7 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.common import TokenBundles
+from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 
 @value
 struct ParsedTokenBundles:
@@ -16,6 +17,12 @@ struct ParsedTokenBundles:
 trait NodeAstLike(CollectionElement,Stringable): 
     alias __name__:String
     
+    @staticmethod
+    fn accept(token_bundles: ParsedTokenBundles, parent_idx:Int, nodes: ArcPointer[List[AstNode]])  -> Bool: ...
+
+    @staticmethod
+    fn create(token_bundles: ParsedTokenBundles, parent_idx:Int, nodes: ArcPointer[List[AstNode]]) -> Self: ...
+
     # fn parent_idx(self) -> Int: ...
     # fn current_idx(self) -> Int: ...
     # fn set_current_idx(mut self, value:Int): ...

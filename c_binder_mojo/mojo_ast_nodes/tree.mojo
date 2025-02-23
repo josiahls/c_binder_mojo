@@ -9,10 +9,10 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 
 
 struct Tree:
-    var nodes: List[ArcPointer[AstNode]]
+    var nodes: ArcPointer[List[AstNode]]
 
     fn __init__(out self): 
-        self.nodes = List[ArcPointer[AstNode]]()
+        self.nodes = ArcPointer(List[AstNode]())
 
 
     fn __moveinit__(out self, owned other: Tree): 
@@ -20,11 +20,25 @@ struct Tree:
 
 
     fn get_current_node(mut self, current_idx:Int, token_bundle:ParsedTokenBundles) raises -> Int:
-        return 0
+        if len(self.nodes[]) == 0:
+            self.nodes[].append(
+                AstNode.accept(token_bundle, current_idx, self.nodes)
+            )
+            return current_idx
+
+        # current_node = self.nodes[current_idx]
+        current_node = AstNode.accept(token_bundle, current_idx, self.nodes)
+        self.nodes[].append(current_node)
+        return len(self.nodes[])
+
 
 
     fn __str__(self) -> String:
-        return String('Tree')
+        var s = String('')
+        for node in self.nodes[]:
+            s += String(node[])
+            s += String('\n')
+        return s
 
 
 

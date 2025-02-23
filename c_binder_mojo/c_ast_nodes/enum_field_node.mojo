@@ -66,6 +66,14 @@ struct EnumFieldNode(NodeAstLike):
         if self._is_done:
             return True
 
+        # If the token is a comment, we are done.
+        if token_bundle.token in [
+            String(CTokens.COMMENT_SINGLE_LINE_BEGIN), 
+            String(CTokens.COMMENT_MULTI_LINE_BEGIN), 
+            String(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN)
+        ]:
+            return True
+
         # If the second to last token is an `=`, we are done also.
         # Handles the case where the very last enum field doesn't have a comma.
         if self._token_bundles[-2].token == '=' and token_bundle.token != ',':

@@ -4,8 +4,8 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, ParsedTokenBundles, node2string
-
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string
+from c_binder_mojo import c_ast_nodes
 @value
 struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
@@ -16,36 +16,36 @@ struct PlaceHolderNode(NodeAstLike):
     var _children_idxs: ArcPointer[List[Int]]
     var _str_just_code: Bool
 
-    fn __init__(out self, bundle: ParsedTokenBundles):
-        self._token_bundles = bundle.token_bundles
-        self._parent_idx = bundle.parent_idx
-        self._current_idx = bundle.current_idx
-        self._children_idxs = bundle.children_idxs
+    fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
+        self._token_bundles = c_ast_node.token_bundles()
+        self._parent_idx = c_ast_node.parent_idx()
+        self._current_idx = c_ast_node.current_idx()
+        self._children_idxs = c_ast_node.children_idxs()
         self._str_just_code = False
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
 
     @staticmethod
-    fn accept(token_bundles: ParsedTokenBundles, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Bool:
         return True  # Accept everything as fallback
 
     @staticmethod
-    fn create(token_bundles: ParsedTokenBundles, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
-        return Self(token_bundles)
+    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
+        return Self(c_ast_node)
 
     # State checks
-    fn is_accepting_tokens(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
         return False 
 
-    fn is_complete(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
         return True  # Placeholder node should be 1:1 with token bundle
 
-    fn wants_child(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
         return False  # Never creates children
 
     # Actions
-    fn append(mut self, token_bundle: ParsedTokenBundles) -> Bool:
+    fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
         return False
 
     fn add_child(mut self, child_idx: Int):

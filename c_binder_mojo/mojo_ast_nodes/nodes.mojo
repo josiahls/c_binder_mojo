@@ -4,19 +4,22 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.common import TokenBundle,TokenBundles
 from c_binder_mojo.mojo_ast_nodes.tree import Tree
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike,ParsedTokenBundles
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike
 from c_binder_mojo.mojo_ast_nodes.node_variant import Variant
 from c_binder_mojo.mojo_ast_nodes import (
     PlaceHolderNode,
     RootNode,
+    SingleLineCommentNode,  # Updated name
 )
+from c_binder_mojo import c_ast_nodes
 
 
 @value
 struct AstNode(CollectionElement):
     alias type = Variant[
-        RootNode,         # Must be first to handle root
-        PlaceHolderNode,  # Must be last as fallback
+        RootNode,                # Must be first to handle root
+        SingleLineCommentNode,   # Handle comments before fallback
+        PlaceHolderNode,        # Must be last as fallback
     ]
     # NOTE: This is experimental.
     var node: ArcPointer[Self.type]
@@ -32,7 +35,7 @@ struct AstNode(CollectionElement):
 
     @always_inline("nodebug")
     @staticmethod
-    fn accept(token_bundle: ParsedTokenBundles, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
+    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
         """
         Iterates over each type in the variant at compile-time and calls accept.
         """
@@ -41,14 +44,14 @@ struct AstNode(CollectionElement):
             # Ts[i] is one of NodeA, NodeB, etc.
             alias T = Self.type.Ts[i]
 
-            if T.accept(token_bundle, parent_idx, nodes):
+            if T.accept(c_ast_node, parent_idx, nodes):
                 # We know node is a T, so get it out:
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
                 # var ref_val = self.node[T]
                 # Now call the trait method:
-                return Self(T.create(token_bundle,parent_idx, nodes))
+                return Self(T.create(c_ast_node,parent_idx, nodes))
         
-        return Self(PlaceHolderNode.create(token_bundle, parent_idx, nodes))
+        return Self(PlaceHolderNode.create(c_ast_node, parent_idx, nodes))
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
@@ -73,41 +76,41 @@ struct AstNode(CollectionElement):
         return "<unknown type>"
 
     # State checks
-    fn is_accepting_tokens(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].is_accepting_tokens(token_bundle, nodes)
+                return val_ptr[].is_accepting_tokens(c_ast_node, nodes)
         return False
 
-    fn is_complete(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].is_complete(token_bundle, nodes)
+                return val_ptr[].is_complete(c_ast_node, nodes)
         return True
 
-    fn wants_child(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].wants_child(token_bundle, nodes)
+                return val_ptr[].wants_child(c_ast_node, nodes)
         return False
 
     # Actions
-    fn append(mut self, token_bundle: ParsedTokenBundles) -> Bool:
+    fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].append(token_bundle)
+                return val_ptr[].append(c_ast_node)
         return False
 
     fn add_child(mut self, child_idx: Int):

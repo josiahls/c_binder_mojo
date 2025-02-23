@@ -25,7 +25,6 @@ struct AstNode(CollectionElement):
         self.node = ArcPointer[Self.type](node)
 
     fn __copyinit__(out self, other: Self):
-        print("Error: AstNode is being copied but this should not happen")
         self.node = other.node
 
     fn __moveinit__(out self, owned other: Self):
@@ -72,3 +71,59 @@ struct AstNode(CollectionElement):
 
         # If we somehow never matched (should never happen if the variant covers all):
         return "<unknown type>"
+
+    # State checks
+    fn is_accepting_tokens(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].is_accepting_tokens(token_bundle, nodes)
+        return False
+
+    fn is_complete(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].is_complete(token_bundle, nodes)
+        return True
+
+    fn wants_child(self, token_bundle: ParsedTokenBundles, nodes: ArcPointer[List[AstNode]]) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].wants_child(token_bundle, nodes)
+        return False
+
+    # Actions
+    fn append(mut self, token_bundle: ParsedTokenBundles) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].append(token_bundle)
+        return False
+
+    fn add_child(mut self, child_idx: Int):
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                val_ptr[].add_child(child_idx)
+                return
+
+    fn parent_idx(self) -> Int:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].parent_idx()
+        return -1

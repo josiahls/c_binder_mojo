@@ -14,21 +14,41 @@ struct Tree:
     fn __init__(out self): 
         self.nodes = ArcPointer(List[AstNode]())
 
-
     fn __moveinit__(out self, owned other: Tree): 
         self.nodes = other.nodes^
 
-
-    fn get_current_node(mut self, current_idx:Int, token_bundle:ParsedTokenBundles) raises -> Int:
+    fn get_current_node(mut self, current_idx: Int, token_bundle: ParsedTokenBundles) raises -> Int:
+        # Initialize if empty
         if len(self.nodes[]) == 0:
-            self.nodes[].append(
-                AstNode(RootNode.create(token_bundle, current_idx, self.nodes))
-            )
+            self.nodes[].append(AstNode(RootNode.create(token_bundle, -1, self.nodes)))
+            return 0
 
+        # Get current node state
         current_node = self.nodes[][current_idx]
-        current_node = AstNode.accept(token_bundle, current_idx, self.nodes)
-        self.nodes[].append(current_node)
-        return len(self.nodes[])
+        
+        # State transitions
+        # NOTE: C API does done_no_cascade -> done -> append -> make_child 
+        # The above might not be needed, but important to be aware of that this order
+        # might be there based on past experience.
+        if current_node.is_accepting_tokens(token_bundle, self.nodes):
+            # Still building current node
+            _ = current_node.append(token_bundle)
+            return current_idx
+        
+        elif current_node.is_complete(token_bundle, self.nodes):
+            # Move back to parent
+            return self.get_current_node(current_node.parent_idx(), token_bundle)
+        
+        elif current_node.wants_child(token_bundle, self.nodes):
+            # Create child node
+            new_node = AstNode.accept(token_bundle, current_idx, self.nodes)
+            # NOTE: Maybe change this to insert_node. We will want to support
+            # appending, but also overwriting deleted nodes.
+            self.nodes[].append(new_node)
+            current_node.add_child(len(self.nodes[]) - 1)
+            return len(self.nodes[]) - 1
+
+        raise Error("Invalid node state")
 
 
 

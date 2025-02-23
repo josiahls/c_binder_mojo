@@ -22,11 +22,10 @@ struct Tree:
     fn get_current_node(mut self, current_idx:Int, token_bundle:ParsedTokenBundles) raises -> Int:
         if len(self.nodes[]) == 0:
             self.nodes[].append(
-                AstNode.accept(token_bundle, current_idx, self.nodes)
+                AstNode(RootNode.create(token_bundle, current_idx, self.nodes))
             )
-            return current_idx
 
-        # current_node = self.nodes[current_idx]
+        current_node = self.nodes[][current_idx]
         current_node = AstNode.accept(token_bundle, current_idx, self.nodes)
         self.nodes[].append(current_node)
         return len(self.nodes[])

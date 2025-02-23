@@ -7,19 +7,21 @@ from c_binder_mojo.mojo_ast_nodes.tree import Tree
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike,ParsedTokenBundles
 from c_binder_mojo.mojo_ast_nodes.node_variant import Variant
 from c_binder_mojo.mojo_ast_nodes import (
-    PlaceHolderNode
+    PlaceHolderNode,
+    RootNode,
 )
 
 
 @value
 struct AstNode(CollectionElement):
     alias type = Variant[
-        PlaceHolderNode,  # Must be first as fallback
+        RootNode,         # Must be first to handle root
+        PlaceHolderNode,  # Must be last as fallback
     ]
-    var node: Self.type
+    var node: ArcPointer[Self.type]
 
     fn __init__(out self, node: Self.type):
-        self.node = node
+        self.node = ArcPointer[Self.type](node)
 
     fn __copyinit__(out self, other: Self):
         print("Error: AstNode is being copied but this should not happen")
@@ -58,10 +60,10 @@ struct AstNode(CollectionElement):
             # Ts[i] is one of NodeA, NodeB, etc.
             alias T = Self.type.Ts[i]
 
-            if self.node.isa[T]():
+            if self.node[].isa[T]():
                 # We know node is a T, so get it out:
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
-                var val_ptr = self.node._get_ptr[T]()
+                var val_ptr = self.node[]._get_ptr[T]()
                 # Now call the trait method:
                 return String(val_ptr[]) 
 

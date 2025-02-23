@@ -18,6 +18,7 @@ struct AstNode(CollectionElement):
         RootNode,         # Must be first to handle root
         PlaceHolderNode,  # Must be last as fallback
     ]
+    # NOTE: This is experimental.
     var node: ArcPointer[Self.type]
 
     fn __init__(out self, node: Self.type):
@@ -60,9 +61,11 @@ struct AstNode(CollectionElement):
             # Ts[i] is one of NodeA, NodeB, etc.
             alias T = Self.type.Ts[i]
 
+            # NOTE: Originally was self.node.isa...
             if self.node[].isa[T]():
                 # We know node is a T, so get it out:
                 # var ref_val = self.node.unsafe_get[T]()  # or node[T]
+                # NOTE: Originally was self.node._get_ptr[T]()
                 var val_ptr = self.node[]._get_ptr[T]()
                 # Now call the trait method:
                 return String(val_ptr[]) 

@@ -3,7 +3,7 @@
 # First Party Modules
 
 
-trait NodeAstLike(CollectionElement,Stringable): 
+trait NodeAstLike(Moveable,Stringable): 
     alias __name__:String
     
     fn parent_idx(self) -> Int: ...

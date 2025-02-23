@@ -17,6 +17,7 @@ struct Tree:
         return String('Tree')
 
 
+# NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.
 fn make_tree(input_tree: CTree) raises -> Tree:
     tree = Tree()
     return tree^

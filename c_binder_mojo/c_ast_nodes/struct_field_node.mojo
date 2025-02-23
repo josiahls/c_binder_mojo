@@ -76,6 +76,8 @@ struct StructFieldNode(NodeAstLike):
 
     @staticmethod
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
+        if token_bundle.token == CTokens.CSTRUCT:
+            tree.reprocess_token_buffer.append(token_bundle)
         return Self(token_bundle, parent_idx, token_bundle.token == CTokens.CSTRUCT)
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:

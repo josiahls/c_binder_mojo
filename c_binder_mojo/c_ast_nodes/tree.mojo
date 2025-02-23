@@ -16,13 +16,14 @@ struct Tree:
     var nodes: List[AstNode]
     var deleted_nodes:List[Int]
     var registered_datatypes: ArcPointer[List[String]]  # Track known datatypes
+    var reprocess_token_buffer: List[TokenBundle]
 
     fn __init__(out self, path:Path):
         self.path  = path
         self.nodes = List[AstNode]()
         self.deleted_nodes = List[Int]()
         self.registered_datatypes = ArcPointer(List[String]())
-        
+        self.reprocess_token_buffer = List[TokenBundle]()
         # Pre-register basic C types
         for dt in CPrimitiveTypes:
             self.registered_datatypes[].append(dt[])
@@ -33,6 +34,7 @@ struct Tree:
         self.nodes = existing.nodes^
         self.deleted_nodes = existing.deleted_nodes^
         self.registered_datatypes = existing.registered_datatypes^
+        self.reprocess_token_buffer = existing.reprocess_token_buffer^
 
     fn  registered_datatypes_to_string(self) -> String:
         s = String('\nRegistered Datatypes: \n')
@@ -132,6 +134,11 @@ fn make_tree(path:Path) raises -> Tree:
         col_num = 0
         for token in line[].replace(';',' ; ').replace(',',' , ').split(' '):
             token_bundle = TokenBundle(token[], line_num, col_num)
+
+            while root_node.reprocess_token_buffer:
+                _reprocess_token = root_node.reprocess_token_buffer.pop(0)
+                current_idx = root_node.get_current_node(current_idx, _reprocess_token)
+
             current_idx = root_node.get_current_node(current_idx, token_bundle)
             col_num += len(token[])
         line_num += 1

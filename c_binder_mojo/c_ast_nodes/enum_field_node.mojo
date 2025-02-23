@@ -62,6 +62,7 @@ struct EnumFieldNode(NodeAstLike):
         return Self(token_bundle, parent_idx)
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+        print(self.display_name())
         # Done when we hit a comma
         if self._is_done:
             return True
@@ -78,8 +79,9 @@ struct EnumFieldNode(NodeAstLike):
 
         # If the second to last token is an `=`, we are done also.
         # Handles the case where the very last enum field doesn't have a comma.
-        if self._token_bundles[-2].token == '=' and token_bundle.token != ',':
-            return True
+        if len(self._token_bundles) > 1:
+            if self._token_bundles[-2].token == '=' and token_bundle.token != ',':
+                return True
 
         return False
 

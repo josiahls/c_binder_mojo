@@ -2,11 +2,11 @@
 from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
-
+from c_binder_mojo.common import TokenBundles
 
 @value
 struct ParsedTokenBundle:
-    var token_bundle: TokenBundle
+    var token_bundles: TokenBundles
     var parent_idx: Int
     var current_idx: Int
     var children_idxs: ArcPointer[List[Int]]

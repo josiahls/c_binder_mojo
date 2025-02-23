@@ -2,6 +2,7 @@
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.c_ast_nodes.tree import Tree as CTree
+from c_binder_mojo.mojo_ast_nodes.common import ParsedTokenBundle
 
 
 
@@ -13,7 +14,7 @@ struct Tree:
     fn __moveinit__(out self, owned other: Tree): pass
 
 
-    fn get_current_node(mut self, current_idx:Int, token_bundle:TokenBundle) raises -> Int:
+    fn get_current_node(mut self, current_idx:Int, token_bundle:ParsedTokenBundle) raises -> Int:
         return 0
 
 
@@ -27,6 +28,13 @@ struct Tree:
 # NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.
 fn make_tree(input_tree: CTree) raises -> Tree:
     tree = Tree()
+    current_idx = 0
     for node in input_tree.nodes:
-        pass
+        parsed_token_bundle = ParsedTokenBundle(
+            token_bundles=node[].token_bundles(),
+            parent_idx=node[].parent_idx(),
+            current_idx=node[].current_idx(),
+            children_idxs=node[].children_idxs()
+        )
+        current_idx = tree.get_current_node(current_idx, parsed_token_bundle)
     return tree^

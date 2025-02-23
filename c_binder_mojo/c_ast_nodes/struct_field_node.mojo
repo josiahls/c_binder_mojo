@@ -72,6 +72,10 @@ struct StructFieldNode(NodeAstLike):
         if not self._is_struct:
             self._token_bundles.append(token_bundle)
             return True
+        if self._is_struct and len(self._children[]) > 0:
+            # We've processed the struct definition, now collect field name
+            self._token_bundles.append(token_bundle)
+            return True
         return False
 
     @staticmethod

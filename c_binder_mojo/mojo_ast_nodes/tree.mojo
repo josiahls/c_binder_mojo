@@ -1,17 +1,22 @@
 # Native Mojo Modules
+from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.c_ast_nodes.tree import Tree as CTree
 from c_binder_mojo.mojo_ast_nodes.common import ParsedTokenBundle
+from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 
 
 
 struct Tree:
+    var nodes: List[ArcPointer[AstNode]]
 
-    fn __init__(out self): pass
+    fn __init__(out self): 
+        self.nodes = List[ArcPointer[AstNode]]()
 
 
-    fn __moveinit__(out self, owned other: Tree): pass
+    fn __moveinit__(out self, owned other: Tree): 
+        self.nodes = other.nodes^
 
 
     fn get_current_node(mut self, current_idx:Int, token_bundle:ParsedTokenBundle) raises -> Int:

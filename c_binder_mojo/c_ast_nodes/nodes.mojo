@@ -23,6 +23,7 @@ from c_binder_mojo.c_ast_nodes import (
     EnumNode,
     ScopeNode,
     EnumFieldNode,
+    StructNode,
 )
 
 
@@ -145,6 +146,7 @@ struct AstNode(CollectionElement):
         EnumNode,
         ScopeNode,
         EnumFieldNode,
+        StructNode,
         PlaceHolderNode, # Must be last in the list
     ]
     var node: Self.type

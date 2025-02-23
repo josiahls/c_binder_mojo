@@ -8,25 +8,17 @@ from c_binder_mojo.c_ast_nodes.tree import Tree
 from c_binder_mojo.c_ast_nodes.common import NodeAstLike, CTokens
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
-from c_binder_mojo.c_ast_nodes.scope_node import ScopeNode, ScopeType
+
 @value
-struct EnumFieldNode(NodeAstLike):
-    """Represents a field in an enum definition.
-    
-    Examples:
-        FIELD_NAME,
-        FIELD_NAME = 1,
-        FIELD_NAME = SOME_CONSTANT,
-    """
-    alias __name__ = "EnumFieldNode"
+struct StructNode(NodeAstLike):
+    alias __name__ = "StructNode"
     
     var _token_bundles: TokenBundles
     var just_code: Bool
     var _parent: Int
     var _current_idx: Int
     var _children: ArcPointer[List[Int]]
-    var field_name: String
-    var _is_done: Bool
+    var struct_name: String
 
     fn __init__(out self, token_bundle: TokenBundle, parent: Int):
         self._token_bundles = TokenBundles()
@@ -35,59 +27,60 @@ struct EnumFieldNode(NodeAstLike):
         self._parent = parent
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
-        self.field_name = token_bundle.token  # First token is the field name
-        self._is_done = False
+        self.struct_name = "AnonymousStruct"
+
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree) -> Bool:
-        if tree.nodes[parent_idx].node.isa[ScopeNode]():
-            var scope_node = tree.nodes[parent_idx].node[ScopeNode]
-            return scope_node.scope_type.type == ScopeType.ENUM
-        return False
+    fn accept(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Bool:
+        return token_bundle.token == "struct"
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # I think for the most part we can just append the continuous chunk of tokens.
-        # enum fields don't have children, so once the `done` function is called, we are done.
-        if token_bundle.token == " ":
-            return True # Lets just ignore whitespace for now.
-        if token_bundle.token == ",":
-            self._is_done = True
-        self._token_bundles.append(token_bundle)
-        return True
+        # Handle the struct name first
+        if len(self._token_bundles) == 1:  # Only have 'struct' token so far
+            # Handle anonymous structs
+            if token_bundle.token != CTokens.SCOPE_BEGIN:
+                self.struct_name = token_bundle.token
+                self._token_bundles.append(token_bundle)
+                return True
+
+        if token_bundle.token == CTokens.END_STATEMENT:
+            # Add token splitter
+            self._token_bundles.append(
+                TokenBundle(
+                    token='',
+                    is_splitter=True,
+                    line_num=token_bundle.line_num,
+                    col_num=token_bundle.col_num
+                )
+            )
+            self._token_bundles.append(token_bundle)
+            return True
+
+        return False
 
     @staticmethod
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
         return Self(token_bundle, parent_idx)
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # Done when we hit a comma
-        if self._is_done:
+        # Same logic as enum - check for semicolon and scope completion
+        if token_bundle.token == CTokens.END_STATEMENT:
+            return False
+        if self._token_bundles[-1].token == CTokens.END_STATEMENT:
             return True
-
-        # If the token is a comment, we are done.
-        # NOTE: Wondering if it is a better policy to check if the comment nodes 
-        # would accept this token, instead of checking directly.
-        if token_bundle.token in [
-            String(CTokens.COMMENT_SINGLE_LINE_BEGIN), 
-            String(CTokens.COMMENT_MULTI_LINE_BEGIN), 
-            String(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN)
-        ]:
+        if len(self._children[]) == 0:
+            return False
+        last_child_idx = self._children[][-1]
+        if tree.nodes[last_child_idx].token_bundles()[-1].token == CTokens.SCOPE_END:
             return True
-
-        # If the second to last token is an `=`, we are done also.
-        # Handles the case where the very last enum field doesn't have a comma.
-        if self._token_bundles[-2].token == '=' and token_bundle.token != ',':
-            return True
-
         return False
 
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        # Enum fields don't have children
-        return False
+        return token_bundle.token == CTokens.SCOPE_BEGIN
 
-    fn parent_idx(self) -> Int:
+    fn parent_idx(self) -> Int):
         return self._parent
 
     fn children_idxs(mut self) -> ArcPointer[List[Int]]:
@@ -104,7 +97,7 @@ struct EnumFieldNode(NodeAstLike):
 
     fn display_name(self) -> String:
         s = String(self.__name__)
-        s += String('(field_name=') + self.field_name + String(',')
+        s += String('(name=') + self.struct_name + String(',')
         s += String('parent=') + String(self._parent) + String(',')
         s += String('current_idx=') + String(self._current_idx) + String(')')
         return s
@@ -113,4 +106,4 @@ struct EnumFieldNode(NodeAstLike):
         return self._token_bundles
 
     fn should_children_inline(self) -> Bool:
-        return True 
+        return False 

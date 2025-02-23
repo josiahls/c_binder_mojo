@@ -9,6 +9,8 @@ from c_binder_mojo.c_ast_nodes.common import NodeAstLike, CTokens
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo.c_ast_nodes.nodes import node2string
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
+from c_binder_mojo.c_ast_nodes.enum_node import EnumNode
+from c_binder_mojo.c_ast_nodes.struct_node import StructNode
 
 
 @value
@@ -37,8 +39,8 @@ struct ScopeType:
     fn from_parent(parent_node: AstNode) -> Self:
         if parent_node.node.isa[EnumNode]():
             return Self(Self.ENUM)
-        # parent.node.isa[StructNode]():
-        #   return Self(Self.STRUCT)
+        if parent_node.node.isa[StructNode]():
+            return Self(Self.STRUCT)
         # parent.node.isa[FunctionNode]():
         #   return Self(Self.FUNCTION)
         # Add other node type checks as we implement them

@@ -1402,7 +1402,8 @@ mjModel,
 				WhitespaceNode(parent=1330,n_lines=1,current_idx=1331)              
 				SingleCommentNode(parent=1330,current_idx=1332)// visualization options
 				WhitespaceNode(parent=1330,n_lines=1,current_idx=1333) 
-				StructFieldNode(field_name=,parent=1330,current_idx=1334)					StructNode(name=AnonymousStruct,parent=1334,current_idx=1335)struct
+				StructFieldNode(field_name=,parent=1330,current_idx=1334)
+					StructNode(name=AnonymousStruct,parent=1334,current_idx=1335)struct
 						ScopeNode(parent=1335,current_idx=1336,scope_type=STRUCT){
 							WhitespaceNode(parent=1336,n_lines=1,current_idx=1337)                      
 							SingleCommentNode(parent=1336,current_idx=1338)// global parameters
@@ -1458,7 +1459,8 @@ mjModel,
 						}					PlaceHolderNode(parent=1334,current_idx=1388)global					PlaceHolderNode(parent=1334,current_idx=1389);
 				
 				WhitespaceNode(parent=1330,n_lines=3,current_idx=1390)   
-				StructFieldNode(field_name=,parent=1330,current_idx=1391)					StructNode(name=AnonymousStruct,parent=1391,current_idx=1392)struct
+				StructFieldNode(field_name=,parent=1330,current_idx=1391)
+					StructNode(name=AnonymousStruct,parent=1391,current_idx=1392)struct
 						ScopeNode(parent=1392,current_idx=1393,scope_type=STRUCT){
 							WhitespaceNode(parent=1393,n_lines=1,current_idx=1394)                      
 							SingleCommentNode(parent=1393,current_idx=1395)// rendering quality
@@ -1486,7 +1488,8 @@ mjModel,
 						}					PlaceHolderNode(parent=1391,current_idx=1417)quality					PlaceHolderNode(parent=1391,current_idx=1418);
 				
 				WhitespaceNode(parent=1330,n_lines=3,current_idx=1419)   
-				StructFieldNode(field_name=,parent=1330,current_idx=1420)					StructNode(name=AnonymousStruct,parent=1420,current_idx=1421)struct
+				StructFieldNode(field_name=,parent=1330,current_idx=1420)
+					StructNode(name=AnonymousStruct,parent=1420,current_idx=1421)struct
 						ScopeNode(parent=1421,current_idx=1422,scope_type=STRUCT){
 							WhitespaceNode(parent=1422,n_lines=1,current_idx=1423)                      
 							SingleCommentNode(parent=1422,current_idx=1424)// head light
@@ -1510,7 +1513,8 @@ mjModel,
 						}					PlaceHolderNode(parent=1420,current_idx=1442)headlight					PlaceHolderNode(parent=1420,current_idx=1443);
 				
 				WhitespaceNode(parent=1330,n_lines=3,current_idx=1444)   
-				StructFieldNode(field_name=,parent=1330,current_idx=1445)					StructNode(name=AnonymousStruct,parent=1445,current_idx=1446)struct
+				StructFieldNode(field_name=,parent=1330,current_idx=1445)
+					StructNode(name=AnonymousStruct,parent=1445,current_idx=1446)struct
 						ScopeNode(parent=1446,current_idx=1447,scope_type=STRUCT){
 							WhitespaceNode(parent=1447,n_lines=1,current_idx=1448)                      
 							SingleCommentNode(parent=1447,current_idx=1449)// mapping
@@ -1570,7 +1574,8 @@ mjModel,
 						}					PlaceHolderNode(parent=1445,current_idx=1503)map					PlaceHolderNode(parent=1445,current_idx=1504);
 				
 				WhitespaceNode(parent=1330,n_lines=3,current_idx=1505)   
-				StructFieldNode(field_name=,parent=1330,current_idx=1506)					StructNode(name=AnonymousStruct,parent=1506,current_idx=1507)struct
+				StructFieldNode(field_name=,parent=1330,current_idx=1506)
+					StructNode(name=AnonymousStruct,parent=1506,current_idx=1507)struct
 						ScopeNode(parent=1507,current_idx=1508,scope_type=STRUCT){
 							WhitespaceNode(parent=1508,n_lines=1,current_idx=1509)                      
 							SingleCommentNode(parent=1508,current_idx=1510)// scale of decor elements relative to mean body size
@@ -1646,7 +1651,8 @@ mjModel,
 						}					PlaceHolderNode(parent=1506,current_idx=1580)scale					PlaceHolderNode(parent=1506,current_idx=1581);
 				
 				WhitespaceNode(parent=1330,n_lines=3,current_idx=1582)   
-				StructFieldNode(field_name=,parent=1330,current_idx=1583)					StructNode(name=AnonymousStruct,parent=1583,current_idx=1584)struct
+				StructFieldNode(field_name=,parent=1330,current_idx=1583)
+					StructNode(name=AnonymousStruct,parent=1583,current_idx=1584)struct
 						ScopeNode(parent=1584,current_idx=1585,scope_type=STRUCT){
 							WhitespaceNode(parent=1585,n_lines=1,current_idx=1586)                      
 							SingleCommentNode(parent=1585,current_idx=1587)// color of decor elements

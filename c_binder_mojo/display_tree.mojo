@@ -73,6 +73,8 @@ struct DisplayAstNode:
         token_i = 0
         for token_bundle in self.token_bundles:
             if token_bundle[].is_splitter:
+                if token_i == 0:
+                    s += String('\n')
                 iterated_children = True
                 token_i = 0
                 s += self.append_children()

@@ -1,6 +1,16 @@
 # Native Mojo Modules
+from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
+
+
+@value
+struct ParsedTokenBundle:
+    var token_bundle: TokenBundle
+    var parent_idx: Int
+    var current_idx: Int
+    var children_idxs: ArcPointer[List[Int]]
+    # NOTE: Maybe have explicit copy?
 
 
 trait NodeAstLike(Moveable,Stringable): 

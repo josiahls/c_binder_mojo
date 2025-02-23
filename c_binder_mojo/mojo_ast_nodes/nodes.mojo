@@ -7,16 +7,13 @@ from c_binder_mojo.mojo_ast_nodes.tree import Tree
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike
 from c_binder_mojo.mojo_ast_nodes.node_variant import Variant
 from c_binder_mojo.mojo_ast_nodes import (
-    ExampleNode
+    PlaceholderNode
 )
 
-
-
-
-
-struct AstNode(Movable):
+@value
+struct AstNode(CollectionElement):
     alias type = Variant[
-        ExampleNode
+        PlaceholderNode,  # Must be first as fallback
     ]
     var node: Self.type
 

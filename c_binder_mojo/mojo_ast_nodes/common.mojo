@@ -5,7 +5,7 @@ from memory import ArcPointer
 from c_binder_mojo.common import TokenBundles
 
 @value
-struct ParsedTokenBundle:
+struct ParsedTokenBundles:
     var token_bundles: TokenBundles
     var parent_idx: Int
     var current_idx: Int

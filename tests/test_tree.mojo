@@ -1,7 +1,7 @@
 import os 
 from pathlib import Path
 from memory import UnsafePointer
-from c_binder_mojo.c_ast_nodes.tree import make_tree
+from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.display_tree import RootDisplayAstNode
 
 fn test_make_tree_mjtnum() raises:
@@ -10,7 +10,7 @@ fn test_make_tree_mjtnum() raises:
     if not num_mojo_path.exists():
         raise Error('This path doesnt exist: ' + String(num_mojo_path))
     print('Processing: ' + String(num_mojo_path))
-    root_node = make_tree(num_mojo_path)
+    root_node = c_ast_nodes.tree.make_tree(num_mojo_path)
     # print('Root node: ' + String(root_node))
     # print(String(root_node))
     display_node = RootDisplayAstNode(root_node)
@@ -25,7 +25,7 @@ fn test_make_tree_mjtmodel() raises:
     if not num_mojo_path.exists():
         raise Error('This path doesnt exist: ' + String(num_mojo_path))
     print('Processing: ' + String(num_mojo_path))
-    root_node = make_tree(num_mojo_path)
+    root_node = c_ast_nodes.tree.make_tree(num_mojo_path)
     # root_node = test_fn(num_mojo_path)
     display_node = RootDisplayAstNode(root_node)
     # print('DisplayTree:')

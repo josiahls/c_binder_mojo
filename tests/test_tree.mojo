@@ -21,7 +21,7 @@ fn test_make_tree_mjtnum() raises:
     root_mojo_node = mojo_ast_nodes.tree.make_tree(root_node)
     print('Root mojo node: ' + String(root_mojo_node))
     # display_node = RootDisplayAstNode(root_mojo_node)
-    # Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.mojo').write_text(String(display_node))
+    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.mojo').write_text(String(root_mojo_node))
 
 
 fn test_make_tree_mjtmodel() raises:
@@ -38,7 +38,7 @@ fn test_make_tree_mjtmodel() raises:
     root_mojo_node = mojo_ast_nodes.tree.make_tree(root_node)
     print('Root mojo node: ' + String(root_mojo_node))
     # display_node = RootDisplayAstNode(root_mojo_node)
-    # Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtmodel.mojo').write_text(String(display_node))
+    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtmodel.mojo').write_text(String(root_mojo_node))
 
 
 fn main():

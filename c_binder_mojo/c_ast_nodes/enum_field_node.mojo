@@ -62,7 +62,6 @@ struct EnumFieldNode(NodeAstLike):
         return Self(token_bundle, parent_idx)
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        print(self.display_name())
         # Done when we hit a comma
         if self._is_done:
             return True

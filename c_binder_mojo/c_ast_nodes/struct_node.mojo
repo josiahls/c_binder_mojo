@@ -19,6 +19,7 @@ struct StructNode(NodeAstLike):
     var _current_idx: Int
     var _children: ArcPointer[List[Int]]
     var struct_name: String
+    var _inside_typedef: Bool
 
     fn __init__(out self, token_bundle: TokenBundle, parent: Int):
         self._token_bundles = TokenBundles()
@@ -28,7 +29,7 @@ struct StructNode(NodeAstLike):
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
         self.struct_name = "AnonymousStruct"
-
+        self._inside_typedef = False
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
@@ -62,10 +63,17 @@ struct StructNode(NodeAstLike):
 
     @staticmethod
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
-        return Self(token_bundle, parent_idx)
+        self = Self(token_bundle, parent_idx)
+        node = tree.nodes[parent_idx]
+        if node.node.isa[TypedefNode]():
+            self._inside_typedef = True
+        return self
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+        print(self.display_name())
         # Same logic as enum - check for semicolon and scope completion
+        if self._inside_typedef and len(self._token_bundles) == 2:
+            return True
         if token_bundle.token == CTokens.END_STATEMENT:
             return False
         if self._token_bundles[-1].token == CTokens.END_STATEMENT:
@@ -80,7 +88,7 @@ struct StructNode(NodeAstLike):
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         return token_bundle.token == CTokens.SCOPE_BEGIN
 
-    fn parent_idx(self) -> Int):
+    fn parent_idx(self) -> Int:
         return self._parent
 
     fn children_idxs(mut self) -> ArcPointer[List[Int]]:

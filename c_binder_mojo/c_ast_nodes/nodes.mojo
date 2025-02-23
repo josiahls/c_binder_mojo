@@ -19,10 +19,11 @@ from c_binder_mojo.c_ast_nodes import (
     WhitespaceNode,
     MultiLineCommentNode,
     IncludeNode,
+    EnumFieldNode,
+    StructFieldNode,
     BasicDataTypeNode,
     EnumNode,
     ScopeNode,
-    EnumFieldNode,
     StructNode,
 )
 
@@ -130,6 +131,7 @@ struct PlaceHolderNode(NodeAstLike):
 
 @value
 struct AstNode(CollectionElement):
+    
     alias type = Variant[
         SingleCommentNode,
         DeletedNode,
@@ -142,11 +144,12 @@ struct AstNode(CollectionElement):
         MacroElseNode,
         IncludeNode,
         MultiLineCommentNode,
+        EnumFieldNode,
+        StructFieldNode,
         BasicDataTypeNode,
         EnumNode,
-        ScopeNode,
-        EnumFieldNode,
         StructNode,
+        ScopeNode,
         PlaceHolderNode, # Must be last in the list
     ]
     var node: Self.type

@@ -35,9 +35,21 @@ struct StructNode(NodeAstLike):
 
     @staticmethod
     fn accept(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Bool:
-        return token_bundle.token == "struct"
+        # Direct struct declaration
+        if token_bundle.token == "struct":
+            return True
+            
+        # Inside a struct field that's marked for struct
+        # if tree.nodes[parent_idx].node.isa[StructFieldNode]():
+        #     var field_node = tree.nodes[parent_idx].node[StructFieldNode]
+        #     if field_node._is_struct:
+        #         # Accept opening brace or identifier for anonymous struct
+        #         return token_bundle.token == CTokens.SCOPE_BEGIN
+        return False
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+        if self._token_bundles[-1].token == 'mjLROpt_' and self._inside_typedef:
+            print('here')
         # Handle the struct name first
         if len(self._token_bundles) == 1:  # Only have 'struct' token so far
             # Handle anonymous structs
@@ -63,14 +75,15 @@ struct StructNode(NodeAstLike):
 
     @staticmethod
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
-        self = Self(token_bundle, parent_idx)
-        node = tree.nodes[parent_idx]
-        if node.node.isa[TypedefNode]():
-            self._inside_typedef = True
-        return self
+        var node = Self(token_bundle, parent_idx)
+        
+        if tree.nodes[parent_idx].node.isa[TypedefNode]():
+            node._inside_typedef = True
+        return node
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        print(self.display_name())
+        if token_bundle.token == 'mjLROpt_' and self._inside_typedef:
+            print('here')
         # Same logic as enum - check for semicolon and scope completion
         if self._inside_typedef and len(self._token_bundles) == 2:
             return True

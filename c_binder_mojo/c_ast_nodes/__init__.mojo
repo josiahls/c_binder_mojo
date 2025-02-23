@@ -14,3 +14,4 @@ from c_binder_mojo.c_ast_nodes.enum_node import EnumNode
 from .scope_node import ScopeNode
 from .enum_field_node import EnumFieldNode
 from .struct_node import StructNode
+from .struct_field_node import StructFieldNode

@@ -11,7 +11,7 @@ fn test_make_tree_mjtnum() raises:
         raise Error('This path doesnt exist: ' + String(num_mojo_path))
     print('Processing: ' + String(num_mojo_path))
     root_node = make_tree(num_mojo_path)
-    print('Root node: ' + String(root_node))
+    # print('Root node: ' + String(root_node))
     # print(String(root_node))
     display_node = RootDisplayAstNode(root_node)
     print('DisplayTree:')
@@ -34,7 +34,7 @@ fn test_make_tree_mjtmodel() raises:
 
 fn main():
     try:
-        # test_make_tree_mjtnum()
+        test_make_tree_mjtnum()
         test_make_tree_mjtmodel()
         print('succeeded')
     except e:

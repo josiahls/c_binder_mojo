@@ -10,6 +10,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     PlaceHolderNode,
     RootNode,
     SingleLineCommentNode,  # Updated name
+    WhitespaceNode,  # Add import
 )
 from c_binder_mojo import c_ast_nodes
 
@@ -19,6 +20,7 @@ struct AstNode(CollectionElement):
     alias type = Variant[
         RootNode,                # Must be first to handle root
         SingleLineCommentNode,   # Handle comments before fallback
+        WhitespaceNode,         # Add to variant
         PlaceHolderNode,        # Must be last as fallback
     ]
     # NOTE: This is experimental.
@@ -130,3 +132,19 @@ struct AstNode(CollectionElement):
                 var val_ptr = self.node[]._get_ptr[T]()
                 return val_ptr[].parent_idx()
         return -1
+
+    fn str_just_code(mut self) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].str_just_code()
+
+    fn set_str_just_code(mut self, str_just_code: Bool):
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                val_ptr[].set_str_just_code(str_just_code)

@@ -9,13 +9,14 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 
 struct Tree:
     var nodes: ArcPointer[List[AstNode]]
+    var str_just_code: Bool
 
     fn __init__(out self): 
         self.nodes = ArcPointer(List[AstNode]())
-
+        self.str_just_code = False
     fn __moveinit__(out self, owned other: Tree): 
         self.nodes = other.nodes^
-
+        self.str_just_code = other.str_just_code
     fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes.nodes.AstNode) raises -> Int:
         # Initialize if empty
         if len(self.nodes[]) == 0:
@@ -54,12 +55,11 @@ struct Tree:
     fn __str__(self) -> String:
         var s = String('')
         for node in self.nodes[]:
+            if self.str_just_code:
+                node[].set_str_just_code(True)
             s += String(node[])
             s += String('\n')
         return s
-
-
-
 
 
 # NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.

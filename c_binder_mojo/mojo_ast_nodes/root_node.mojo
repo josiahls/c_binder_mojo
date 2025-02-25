@@ -75,4 +75,10 @@ struct RootNode(NodeAstLike):
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
-        return Self(c_ast_node) 
+        return Self(c_ast_node)
+
+    fn str_just_code(mut self) -> Bool:
+        return self._str_just_code
+
+    fn set_str_just_code(mut self, str_just_code: Bool):
+        self._str_just_code = str_just_code 

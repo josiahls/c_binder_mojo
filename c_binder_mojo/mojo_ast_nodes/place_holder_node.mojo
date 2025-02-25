@@ -24,7 +24,11 @@ struct PlaceHolderNode(NodeAstLike):
         self._str_just_code = False
 
     fn __str__(self) -> String:
-        return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
+        var s = self.display_name()
+        # For placeholders, lets show full thing, but commented out.
+        if self._str_just_code:
+            s = '# ' + s
+        return node2string(s, self.token_bundles(), False)
 
     @staticmethod
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Bool:
@@ -71,3 +75,9 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn should_children_inline(self) -> Bool:
         return True 
+
+    fn str_just_code(mut self) -> Bool:
+        return self._str_just_code
+
+    fn set_str_just_code(mut self, str_just_code: Bool):
+        self._str_just_code = str_just_code 

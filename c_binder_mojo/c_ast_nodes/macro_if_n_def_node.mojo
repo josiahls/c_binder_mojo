@@ -22,13 +22,14 @@ struct MacroIfNDefNode(NodeAstLike):
     var _parent:Int
     var _children:ArcPointer[List[Int]]
     var _current_idx:Int
-
+    var _is_done:Bool
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
         self._token_bundles = TokenBundles()
         self._token_bundles.append(token_bundle)
         self.just_code = False
         self._children = ArcPointer(List[Int]()) 
         self._current_idx = 0
+        self._is_done = False
         self._parent = parent
 
     fn __str__(self) -> String: 
@@ -39,6 +40,19 @@ struct MacroIfNDefNode(NodeAstLike):
             if token_bundle.token == ' ' or token_bundle.token == '\n':
                 return True # Ignore whitespace
             self._token_bundles.append(token_bundle)
+            if len(self._token_bundles) == 2:
+                self._token_bundles.append(
+                    TokenBundle(
+                        '',
+                        token_bundle.line_num,
+                        token_bundle.col_num,
+                        is_splitter=True
+                    )
+                )
+            return True
+        if token_bundle.token == CTokens.MACRO_ENDIF:
+            self._token_bundles.append(token_bundle)
+            self._is_done = True
             return True
         return False
 
@@ -52,11 +66,7 @@ struct MacroIfNDefNode(NodeAstLike):
         return Self(token_bundle, parent_idx)
 
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
-        if token_bundle.token == CTokens.MACRO_ENDIF:
-            return True
-        if token_bundle.token == CTokens.MACRO_ELSE:
-            return True
-        return False
+        return self._is_done
 
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         return True

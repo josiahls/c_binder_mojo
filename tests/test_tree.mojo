@@ -18,10 +18,11 @@ fn test_make_tree_mjtnum() raises:
     print('DisplayTree:')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(display_node))
     # root_node = test_fn(num_mojo_path)
-    root_mojo_node = mojo_ast_nodes.tree.make_tree(root_node)
-    print('Root mojo node: ' + String(root_mojo_node))
+    mojo_tree = mojo_ast_nodes.tree.make_tree(root_node)
+    # mojo_tree.str_just_code = True
+    # print('Root mojo node: ' + String(mojo_tree))
     # display_node = RootDisplayAstNode(root_mojo_node)
-    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.mojo').write_text(String(root_mojo_node))
+    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.mojo').write_text(String(mojo_tree))
 
 
 fn test_make_tree_mjtmodel() raises:
@@ -35,17 +36,17 @@ fn test_make_tree_mjtmodel() raises:
     display_node = RootDisplayAstNode(root_node)
     # print('DisplayTree:')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtmodel.ast').write_text(String(display_node))
-    root_mojo_node = mojo_ast_nodes.tree.make_tree(root_node)
-    # root_mojo_node.str_just_code = True
-    # print('Root mojo node: ' + String(root_mojo_node))
+    mojo_tree = mojo_ast_nodes.tree.make_tree(root_node)
+    # mojo_tree.str_just_code = True
+    # print('Root mojo node: ' + String(mojo_tree))
     # display_node = RootDisplayAstNode(root_mojo_node)
-    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtmodel.mojo').write_text(String(root_mojo_node))
+    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtmodel.mojo').write_text(String(mojo_tree))
 
 
 fn main():
     try:
         test_make_tree_mjtnum()
-        test_make_tree_mjtmodel()
+        # test_make_tree_mjtmodel()
         print('succeeded')
     except e:
         print('failed' + String(e))

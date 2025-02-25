@@ -1,4 +1,4 @@
-RootNode(len children=32,parent=0,current_idx=0)
+RootNode(len children=18,parent=0,current_idx=0)
 
 Registered Datatypes: 
 int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssize_t, 
@@ -32,32 +32,32 @@ int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssi
 			WhitespaceNode(parent=20,n_lines=2,current_idx=25)  
 			MacroDefineNode(parent=20,current_idx=26)#define mjMINVAL    1E-15      
 			SingleCommentNode(parent=20,current_idx=27)// minimum value in any denominator
-		MacroElseNode(parent=15,current_idx=28)#else
-		WhitespaceNode(parent=15,n_lines=1,current_idx=29) 
-		TypedefNode(parent=15,current_idx=30,typename=mjtNum)typedef
-			BasicDataTypeNode(parent=30,current_idx=31,is_compound=False)float
-			DeletedNode(parent=15,current_idx=0)mjtNum
-		mjtNum ;
-		WhitespaceNode(parent=15,n_lines=2,current_idx=33)  
-		MacroDefineNode(parent=15,current_idx=34)#define mjMINVAL    1E-15f
-		MultiLineCommentNode(parent=15,current_idx=35)/* This does after the float is defined */
-	MacroEndIfNode(parent=0,current_idx=36)#endif
-	WhitespaceNode(parent=0,n_lines=1,current_idx=37)
-	MultiLineCommentNode(parent=0,current_idx=38)/* silly comment */
-	MultiLineCommentNode(parent=0,current_idx=39)/** another one??????? **/
-	WhitespaceNode(parent=0,n_lines=1,current_idx=40)
-	MultiLineCommentNode(parent=0,current_idx=41)/**  So  many  lines   **/
-	WhitespaceNode(parent=0,n_lines=2,current_idx=42) 
-	SingleCommentNode(parent=0,current_idx=43) -------------------------------------- byte definition -------------------------------------------
-	WhitespaceNode(parent=0,n_lines=1,current_idx=44)
-	TypedefNode(parent=0,current_idx=45,typename=mjtByte)typedef
-		BasicDataTypeNode(parent=45,current_idx=46,is_compound=True)unsigned char
-		DeletedNode(parent=0,current_idx=0)mjtByte
-	mjtByte ;
-	WhitespaceNode(parent=0,n_lines=1,current_idx=48)   
-	SingleCommentNode(parent=0,current_idx=49)// used for true/false
-	WhitespaceNode(parent=0,n_lines=3,current_idx=50)  
-	MacroEndIfNode(parent=0,current_idx=51)#endif
+			MacroElseNode(parent=20,current_idx=28)#else
+				WhitespaceNode(parent=28,n_lines=1,current_idx=29) 
+				TypedefNode(parent=28,current_idx=30,typename=mjtNum)typedef
+					BasicDataTypeNode(parent=30,current_idx=31,is_compound=False)float
+					DeletedNode(parent=28,current_idx=0)mjtNum
+				mjtNum ;
+				WhitespaceNode(parent=28,n_lines=2,current_idx=33)  
+				MacroDefineNode(parent=28,current_idx=34)#define mjMINVAL    1E-15f
+				MultiLineCommentNode(parent=28,current_idx=35)/* This does after the float is defined */
+		#endif
+		WhitespaceNode(parent=15,n_lines=1,current_idx=36)
+		MultiLineCommentNode(parent=15,current_idx=37)/* silly comment */
+		MultiLineCommentNode(parent=15,current_idx=38)/** another one??????? **/
+		WhitespaceNode(parent=15,n_lines=1,current_idx=39)
+		MultiLineCommentNode(parent=15,current_idx=40)/**  So  many  lines   **/
+		WhitespaceNode(parent=15,n_lines=2,current_idx=41) 
+		SingleCommentNode(parent=15,current_idx=42) -------------------------------------- byte definition -------------------------------------------
+		WhitespaceNode(parent=15,n_lines=1,current_idx=43)
+		TypedefNode(parent=15,current_idx=44,typename=mjtByte)typedef
+			BasicDataTypeNode(parent=44,current_idx=45,is_compound=True)unsigned char
+			DeletedNode(parent=15,current_idx=0)mjtByte
+		mjtByte ;
+		WhitespaceNode(parent=15,n_lines=1,current_idx=47)   
+		SingleCommentNode(parent=15,current_idx=48)// used for true/false
+		WhitespaceNode(parent=15,n_lines=3,current_idx=49)  
+	#endif
+	WhitespaceNode(parent=0,n_lines=1,current_idx=50)
+	SingleCommentNode(parent=0,current_idx=51)// MUJOCO_INCLUDE_MJTNUM_H_
 	WhitespaceNode(parent=0,n_lines=1,current_idx=52)
-	SingleCommentNode(parent=0,current_idx=53)// MUJOCO_INCLUDE_MJTNUM_H_
-	WhitespaceNode(parent=0,n_lines=1,current_idx=54)

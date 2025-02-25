@@ -72,7 +72,7 @@ struct DeletedNode(NodeAstLike):
     fn children_idxs(mut self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
-    fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+
     fn display_name(self) -> String:
         s = String(self.__name__)
         s += String('(parent=') + String(self._parent) + String(',')
@@ -115,7 +115,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
-    fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+
     fn display_name(self) -> String:
         s = String(self.__name__)
         s += String('(parent=') + String(self._parent_idx) + String(',')
@@ -242,26 +242,6 @@ struct AstNode(CollectionElement):
                 return val_ptr[].should_children_inline()
         
         print(String(self) + " does not have a should_children_inline?")
-        return False
-
-    @always_inline("nodebug")
-    fn done_no_cascade(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
-        """
-        Iterates over each type in the variant at compile-time and calls apple_context.
-        """
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            # Ts[i] is one of NodeA, NodeB, etc.
-            alias T = Self.type.Ts[i]
-
-            if self.node.isa[T]():
-                # We know node is a T, so get it out:
-                # var ref_val = self.node.unsafe_get[T]()  # or node[T]
-                var val_ptr = self.node._get_ptr[T]()
-                # Now call the trait method:
-                return val_ptr[].done_no_cascade(token_bundle, tree)
-        
-        print(String(self) + " does not have a done_no_cascade?")
         return False
 
     @always_inline("nodebug")

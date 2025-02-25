@@ -54,7 +54,7 @@ struct RootNode(NodeAstLike):
     fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children
     fn current_idx(self) -> Int: return self._current_idx
     fn set_current_idx(mut self, value:Int): self._current_idx = value
-    fn done_no_cascade(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+
 
     fn display_name(self) -> String:
         """Get the display name for the node.

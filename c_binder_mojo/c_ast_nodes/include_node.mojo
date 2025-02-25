@@ -68,9 +68,6 @@ struct IncludeNode(NodeAstLike):
     fn set_current_idx(mut self, value: Int):
         self._current_idx = value
 
-    fn done_no_cascade(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-        return False 
-
     fn display_name(self) -> String:
         s = String(self.__name__)
         s += String('(parent=') + String(self._parent) + String(',')

@@ -95,19 +95,7 @@ struct Tree:
         #NOTE node = self.nodes.unsafe_ptr() + current_idx
         node = self.nodes[current_idx]
 
-        if node.done_no_cascade(token_bundle,self):
-            parent_idx = node.parent_idx()
-            node = self.nodes[parent_idx]
-            new_node = AstNode.accept(token_bundle,  parent_idx, self)
-            child_idx = self.insert_node(new_node)
-            
-            # Add the new node to parent's children list
-            children_ptr = node.children_idxs()
-            children_ptr[].append(child_idx)
-            
-            self.nodes[parent_idx] = node #NOTE Dumb, cant work with ptr though
-            return child_idx
-        elif node.done(token_bundle,self):
+        if node.done(token_bundle,self):
             return self.get_current_node(node.parent_idx(), token_bundle)
         elif node.append(token_bundle, self):
             self.nodes[current_idx] = node #NOTE Dumb, cant work with ptr though

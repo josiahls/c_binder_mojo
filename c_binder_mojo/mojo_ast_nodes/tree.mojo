@@ -56,6 +56,8 @@ struct Tree:
         var s = String('')
         for node in self.nodes[]:
             if self.str_just_code:
+                if node[].node[].isa[RootNode]():
+                    continue
                 node[].set_str_just_code(True)
             s += String(node[])
             s += String('\n')

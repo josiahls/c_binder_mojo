@@ -20,7 +20,7 @@ int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssi
 	WhitespaceNode(parent=0,n_lines=1,current_idx=14)
 	MacroIfNDefNode(parent=0,current_idx=15)#ifndef MUJOCO_INCLUDE_MJTNUM_H_
 		MacroDefineNode(parent=15,current_idx=16)#define MUJOCO_INCLUDE_MJTNUM_H_ 
-		SingleCommentNode(parent=15,current_idx=17)//---------------------------------- floating-point definition -------------------------------------
+		SingleCommentNode(parent=15,current_idx=17) ---------------------------------- floating-point definition -------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=18)
 		SingleCommentNode(parent=15,current_idx=19)// floating point data type and minval
 		MacroIfNDefNode(parent=15,current_idx=20)#ifndef mjUSESINGLE
@@ -48,7 +48,7 @@ int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssi
 	WhitespaceNode(parent=0,n_lines=1,current_idx=40)
 	MultiLineCommentNode(parent=0,current_idx=41)/**  So  many  lines   **/
 	WhitespaceNode(parent=0,n_lines=2,current_idx=42) 
-	SingleCommentNode(parent=0,current_idx=43)//-------------------------------------- byte definition -------------------------------------------
+	SingleCommentNode(parent=0,current_idx=43) -------------------------------------- byte definition -------------------------------------------
 	WhitespaceNode(parent=0,n_lines=1,current_idx=44)
 	TypedefNode(parent=0,current_idx=45,typename=mjtByte)typedef
 		BasicDataTypeNode(parent=45,current_idx=46,is_compound=True)unsigned char

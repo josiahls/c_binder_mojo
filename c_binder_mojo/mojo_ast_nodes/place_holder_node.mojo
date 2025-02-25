@@ -68,7 +68,10 @@ struct PlaceHolderNode(NodeAstLike):
         return self._children_idxs
 
     fn display_name(self) -> String:
-        return self.__name__ + "(" + String(self._token_bundles) + ")"
+        var s = String(self.__name__)
+        s += "(parent_idx=" + String(self._parent_idx) + ","
+        s += "current_idx=" + String(self._current_idx) + ")"
+        return s
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles

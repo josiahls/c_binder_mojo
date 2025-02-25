@@ -46,7 +46,7 @@ mjModel,
 		MacroDefineNode(parent=15,current_idx=34)#define mjMAXTREEDEPTH  50       
 		SingleCommentNode(parent=15,current_idx=35)// maximum bounding volume hierarchy depth
 		WhitespaceNode(parent=15,n_lines=2,current_idx=36) 
-		SingleCommentNode(parent=15,current_idx=37)//---------------------------------- sizes ---------------------------------------------------------
+		SingleCommentNode(parent=15,current_idx=37) ---------------------------------- sizes ---------------------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=38)
 		MacroDefineNode(parent=15,current_idx=39)#define mjNEQDATA       11       
 		SingleCommentNode(parent=15,current_idx=40)// number of eq_data fields
@@ -67,7 +67,7 @@ mjModel,
 		MacroDefineNode(parent=15,current_idx=55)#define mjNISLAND       20       
 		SingleCommentNode(parent=15,current_idx=56)// number of mjData.solver arrays
 		WhitespaceNode(parent=15,n_lines=1,current_idx=57)
-		SingleCommentNode(parent=15,current_idx=58)//---------------------------------- enum types (mjt) ----------------------------------------------
+		SingleCommentNode(parent=15,current_idx=58) ---------------------------------- enum types (mjt) ----------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=59)
 		TypedefNode(parent=15,current_idx=60,typename=mjtDisableBit)typedef
 			EnumNode(name=mjtDisableBit_,parent=60,current_idx=61)enum mjtDisableBit_
@@ -1177,7 +1177,7 @@ mjModel,
 			DeletedNode(parent=15,current_idx=0)mjtFlexSelf
 		mjtFlexSelf ;
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1117)  
-		SingleCommentNode(parent=15,current_idx=1118)//---------------------------------- mjLROpt -------------------------------------------------------
+		SingleCommentNode(parent=15,current_idx=1118) ---------------------------------- mjLROpt -------------------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1119)
 		StructNode(name=mjLROpt_,parent=15,current_idx=1120)struct mjLROpt_
 			ScopeNode(parent=1120,current_idx=1121,scope_type=STRUCT){
@@ -1235,7 +1235,7 @@ mjModel,
 			DeletedNode(parent=15,current_idx=0)mjLROpt
 		mjLROpt ;
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1172)  
-		SingleCommentNode(parent=15,current_idx=1173)//---------------------------------- mjVFS ---------------------------------------------------------
+		SingleCommentNode(parent=15,current_idx=1173) ---------------------------------- mjVFS ---------------------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1174)
 		StructNode(name=mjVFS_,parent=15,current_idx=1175)struct mjVFS_
 			ScopeNode(parent=1175,current_idx=1176,scope_type=STRUCT){
@@ -1253,7 +1253,7 @@ mjModel,
 			DeletedNode(parent=15,current_idx=0)mjVFS
 		mjVFS ;
 		WhitespaceNode(parent=15,n_lines=2,current_idx=1187) 
-		SingleCommentNode(parent=15,current_idx=1188)//---------------------------------- mjOption ------------------------------------------------------
+		SingleCommentNode(parent=15,current_idx=1188) ---------------------------------- mjOption ------------------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1189)
 		StructNode(name=mjOption_,parent=15,current_idx=1190)struct mjOption_
 			ScopeNode(parent=1190,current_idx=1191,scope_type=STRUCT){
@@ -1395,7 +1395,7 @@ mjModel,
 			DeletedNode(parent=15,current_idx=0)mjOption
 		mjOption ;
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1326)  
-		SingleCommentNode(parent=15,current_idx=1327)//---------------------------------- mjVisual ------------------------------------------------------
+		SingleCommentNode(parent=15,current_idx=1327) ---------------------------------- mjVisual ------------------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1328)
 		StructNode(name=mjVisual_,parent=15,current_idx=1329)struct mjVisual_
 			ScopeNode(parent=1329,current_idx=1330,scope_type=STRUCT){
@@ -1768,7 +1768,7 @@ mjModel,
 			DeletedNode(parent=15,current_idx=0)mjVisual
 		mjVisual ;
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1684)  
-		SingleCommentNode(parent=15,current_idx=1685)//---------------------------------- mjStatistic ---------------------------------------------------
+		SingleCommentNode(parent=15,current_idx=1685) ---------------------------------- mjStatistic ---------------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1686)
 		StructNode(name=mjStatistic_,parent=15,current_idx=1687)struct mjStatistic_
 			ScopeNode(parent=1687,current_idx=1688,scope_type=STRUCT){
@@ -1802,7 +1802,7 @@ mjModel,
 			DeletedNode(parent=15,current_idx=0)mjStatistic
 		mjStatistic ;
 		WhitespaceNode(parent=15,n_lines=3,current_idx=1715)  
-		SingleCommentNode(parent=15,current_idx=1716)//---------------------------------- mjModel -------------------------------------------------------
+		SingleCommentNode(parent=15,current_idx=1716) ---------------------------------- mjModel -------------------------------------------------------
 		WhitespaceNode(parent=15,n_lines=1,current_idx=1717)
 		StructNode(name=mjModel_,parent=15,current_idx=1718)struct mjModel_
 			ScopeNode(parent=1718,current_idx=1719,scope_type=STRUCT){

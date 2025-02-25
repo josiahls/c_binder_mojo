@@ -24,7 +24,21 @@ struct SingleCommentNode(NodeAstLike):
 
     fn __init__(out self,token_bundle:TokenBundle, parent_idx:Int):
         self._token_bundles = TokenBundles()
-        self._token_bundles.append(token_bundle)
+        if token_bundle.token == CTokens.COMMENT_SINGLE_LINE_BEGIN:
+            self._token_bundles.append(token_bundle)
+        elif token_bundle.token.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
+            # Split it apart into separate tokens
+            try:
+                var tokens = token_bundle.token.split(CTokens.COMMENT_SINGLE_LINE_BEGIN)
+                for token in tokens:
+                    self._token_bundles.append(
+                        TokenBundle(token[], 
+                        token_bundle.line_num, 
+                        token_bundle.col_num, 
+                        token_bundle.is_splitter)
+                    )
+            except:
+                self._token_bundles.append(token_bundle)
         self._parent_idx = parent_idx
         self._current_idx = 0
         self.current_line_num = token_bundle.line_num
@@ -35,7 +49,6 @@ struct SingleCommentNode(NodeAstLike):
         
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
         if token_bundle.line_num == self.current_line_num:
-            # print('lin nums match!' + String(len(self.token_bundles)))
             self._token_bundles.append(token_bundle)
             return True
         return False

@@ -55,7 +55,7 @@ struct MacroIfNDefNode(NodeAstLike):
         # Check if macro is defined
         self._is_defined = False
         if not self._is_header_guard:
-            for macro in tree_interface.macro_defs[]:
+            for macro in tree_interface.c_macro_defs[]:
                 if macro[] == macro_name:
                     self._is_defined = True
                     break

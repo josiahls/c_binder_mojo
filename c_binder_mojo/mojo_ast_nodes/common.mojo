@@ -26,7 +26,7 @@ struct TreeInterface:
     A minimal interface to the Tree struct for AstNode's to use.
     """
     var nodes: ArcPointer[List[AstNode]]
-    var macro_defs: ArcPointer[List[String]]
+    var c_macro_defs: ArcPointer[List[String]]
 
 
 @value

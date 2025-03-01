@@ -13,7 +13,7 @@ struct MacroDefineNode(NodeAstLike):
     
     Has two behaviors:
     1. For header guards (ending in _H_), keeps the define as a comment
-    2. For other macros, registers them in macro_defs and optionally stores their value
+    2. For other macros, registers them in c_macro_defs and optionally stores their value
     """
     alias __name__ = "MacroDefineNode"
     
@@ -46,7 +46,7 @@ struct MacroDefineNode(NodeAstLike):
         
         # If not a header guard, register the macro
         if not self._is_header_guard:
-            tree_interface.macro_defs[].append(String(self._macro_name))
+            tree_interface.c_macro_defs[].append(String(self._macro_name))
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)

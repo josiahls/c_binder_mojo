@@ -10,20 +10,20 @@ from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, NodeIndices
 struct Tree:
     var nodes: ArcPointer[List[AstNode]]
     var str_just_code: Bool
-    var macro_defs: ArcPointer[List[String]]
+    var c_macro_defs: ArcPointer[List[String]]
 
-    fn __init__(out self, macro_defs: List[String]): 
+    fn __init__(out self, c_macro_defs: List[String]): 
         self.nodes = ArcPointer(List[AstNode]())
         self.str_just_code = False
-        self.macro_defs = ArcPointer(macro_defs)
+        self.c_macro_defs = ArcPointer(c_macro_defs)
 
     fn __moveinit__(out self, owned other: Tree): 
         self.nodes = other.nodes^
         self.str_just_code = other.str_just_code
-        self.macro_defs = other.macro_defs^
+        self.c_macro_defs = other.c_macro_defs^
 
     fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes.nodes.AstNode) raises -> Int:
-        tree_interface = TreeInterface(self.nodes, self.macro_defs)
+        tree_interface = TreeInterface(self.nodes, self.c_macro_defs)
         # Initialize if empty
         if len(self.nodes[]) == 0:
             self.nodes[].append(AstNode(RootNode.create(c_ast_node, -1, tree_interface)))
@@ -69,7 +69,7 @@ struct Tree:
                 node[].set_str_just_code(True)
 
             # print("node: ", String(node[]))
-            n_indent = node[].scope_level(TreeInterface(self.nodes, self.macro_defs))
+            n_indent = node[].scope_level(TreeInterface(self.nodes, self.c_macro_defs))
             if n_indent < 0:
                 n_indent = 0
             
@@ -83,8 +83,8 @@ struct Tree:
 
 
 # NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.
-fn make_tree(input_tree: c_ast_nodes.tree.Tree, macro_defs: List[String]) raises -> Tree:
-    tree = Tree(macro_defs)
+fn make_tree(input_tree: c_ast_nodes.tree.Tree, c_macro_defs: List[String]) raises -> Tree:
+    tree = Tree(c_macro_defs)
     current_idx = 0
     for node in input_tree.nodes:
         if node[].node.isa[c_ast_nodes.nodes.DeletedNode]():

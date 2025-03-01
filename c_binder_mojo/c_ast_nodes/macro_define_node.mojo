@@ -21,6 +21,7 @@ struct MacroDefineNode(NodeAstLike):
     var _parent: Int
     var _current_idx: Int
     var _current_line_number: Int
+    var _is_done: Bool
 
     fn __init__(out self,token_bundle:TokenBundle, parent:Int):
         self._token_bundles = TokenBundles()
@@ -29,11 +30,16 @@ struct MacroDefineNode(NodeAstLike):
         self._parent = parent
         self._current_idx = 0
         self._current_line_number = token_bundle.line_num
-
+        self._is_done = False
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 
+        if token_bundle.line_num != self._current_line_number:
+            self._is_done = True
+            return False
+        if token_bundle.token == '':
+            return True # Ignore whitespace
         self._token_bundles.append(token_bundle)
         return True
 
@@ -55,6 +61,9 @@ struct MacroDefineNode(NodeAstLike):
             tree.registered_datatypes[].append(token_bundle.token)
 
     fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+        if token_bundle.line_num != self._current_line_number:
+            self.register_type_name(tree)
+            return True
         if len(self._token_bundles) < 3:
             return False
         if self._current_line_number == token_bundle.line_num:

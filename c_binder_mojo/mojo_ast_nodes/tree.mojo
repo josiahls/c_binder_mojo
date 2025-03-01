@@ -10,9 +10,9 @@ from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, NodeIndices
 struct Tree:
     var nodes: ArcPointer[List[AstNode]]
     var str_just_code: Bool
-    var macro_defs: ArcPointer[List[StringLiteral]]
+    var macro_defs: ArcPointer[List[String]]
 
-    fn __init__(out self, macro_defs: List[StringLiteral]): 
+    fn __init__(out self, macro_defs: List[String]): 
         self.nodes = ArcPointer(List[AstNode]())
         self.str_just_code = False
         self.macro_defs = ArcPointer(macro_defs)
@@ -83,7 +83,7 @@ struct Tree:
 
 
 # NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.
-fn make_tree(input_tree: c_ast_nodes.tree.Tree, macro_defs: List[StringLiteral]) raises -> Tree:
+fn make_tree(input_tree: c_ast_nodes.tree.Tree, macro_defs: List[String]) raises -> Tree:
     tree = Tree(macro_defs)
     current_idx = 0
     for node in input_tree.nodes:

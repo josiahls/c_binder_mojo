@@ -14,7 +14,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	SingleLineCommentNode(c_node_idx=13, c_parent_idx=0, mojo_node_idx=13, mojo_parent_idx=0) # limitations under the License. 
 	WhitespaceNode(c_node_idx=14, c_parent_idx=0, mojo_node_idx=14, mojo_parent_idx=0)  
 	MacroIfNDefNode(c_node_idx=15, c_parent_idx=0, mojo_node_idx=15, mojo_parent_idx=0, c_children_idxs=16, 17, 18, 19, 20, 21, ... len=18, mojo_children_idxs=16, 17, 18, 19, 20, 21, ... len=18) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ <children> 
-		MacroDefineNode(header_guard=MUJOCO_INCLUDE_MJTNUM_H_, c_node_idx=16, c_parent_idx=15, mojo_node_idx=16, mojo_parent_idx=15) #define MUJOCO_INCLUDE_MJTNUM_H_ 
+		MacroDefineNode(header_guard=MUJOCO_INCLUDE_MJTNUM_H_, c_node_idx=16, c_parent_idx=15, mojo_node_idx=16, mojo_parent_idx=15) alias MUJOCO_INCLUDE_MJTNUM_H_ =  
 		WhitespaceNode(c_node_idx=17, c_parent_idx=15, mojo_node_idx=17, mojo_parent_idx=15)  
 		SingleLineCommentNode(c_node_idx=18, c_parent_idx=15, mojo_node_idx=18, mojo_parent_idx=15) # ---------------------------------- floating-point definition ------------------------------------- 
 		WhitespaceNode(c_node_idx=19, c_parent_idx=15, mojo_node_idx=19, mojo_parent_idx=15)  
@@ -25,7 +25,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			PlaceHolderNode(c_node_idx=24, c_parent_idx=23, mojo_node_idx=24, mojo_parent_idx=23) double 
 			WhitespaceNode(c_node_idx=26, c_parent_idx=21, mojo_node_idx=25, mojo_parent_idx=21)  
 			  
-			MacroDefineNode(macro=mjMINVAL, value=1E-15, c_node_idx=27, c_parent_idx=21, mojo_node_idx=26, mojo_parent_idx=21) #define mjMINVAL 1E-15 
+			MacroDefineNode(macro=mjMINVAL, value=1E-15, c_node_idx=27, c_parent_idx=21, mojo_node_idx=26, mojo_parent_idx=21) alias mjMINVAL = 1E-15 
 			SingleLineCommentNode(c_node_idx=28, c_parent_idx=21, mojo_node_idx=27, mojo_parent_idx=21) # minimum value in any denominator 
 			MacroElseNode(c_node_idx=29, c_parent_idx=21, mojo_node_idx=28, mojo_parent_idx=21, c_children_idxs=30, 31, 34, 35, 36, mojo_children_idxs=29, 30, 32, 33, 34) #else 
 				DeletedNode(c_node_idx=30, c_parent_idx=29, mojo_node_idx=29, mojo_parent_idx=28)   
@@ -37,7 +37,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 				DeletedNode(c_node_idx=34, c_parent_idx=29, mojo_node_idx=32, mojo_parent_idx=28)  
 				  
 				# WhitespaceNode(c_node_idx=34, c_parent_idx=29, mojo_node_idx=32, mojo_parent_idx=28) Deleted because parent macro was defined
-				DeletedNode(c_node_idx=35, c_parent_idx=29, mojo_node_idx=33, mojo_parent_idx=28) #define mjMINVAL 1E-15f 
+				DeletedNode(c_node_idx=35, c_parent_idx=29, mojo_node_idx=33, mojo_parent_idx=28) alias mjMINVAL = 1E-15f 
 				# MacroDefineNode(macro=mjMINVAL, value=1E-15f, c_node_idx=35, c_parent_idx=29, mojo_node_idx=33, mojo_parent_idx=28) Deleted because parent macro was defined
 				DeletedNode(c_node_idx=36, c_parent_idx=29, mojo_node_idx=34, mojo_parent_idx=28) /* This does after the float is defined */ 
 				# PlaceHolderNode(c_node_idx=36, c_parent_idx=29, mojo_node_idx=34, mojo_parent_idx=28) Deleted because parent macro was defined

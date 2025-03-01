@@ -13,7 +13,7 @@ struct MacroDefineNode(NodeAstLike):
     
     Has two behaviors:
     1. For header guards (ending in _H_), keeps the define as a comment
-    2. For other macros, registers them in c_macro_defs and optionally stores their value
+    2. For other macros, registers them in macro_defs and optionally stores their value
     """
     alias __name__ = "MacroDefineNode"
     
@@ -22,6 +22,7 @@ struct MacroDefineNode(NodeAstLike):
     var _str_just_code: Bool
     var _is_header_guard: Bool
     var _macro_name: String
+    # TODO(josiahls): Need to also figure out what datatype it is and fix the formatting
     var _macro_value: String
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface):
@@ -109,4 +110,11 @@ struct MacroDefineNode(NodeAstLike):
         return 0
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        pass 
+        mojo_format_token_bundles = TokenBundles()
+        line_num = self._token_bundles[0].line_num
+        col_num = 0
+        for token in List[String]('alias', self._macro_name, '=', self._macro_value):
+            mojo_format_token_bundles.append(TokenBundle(token=token[], line_num=line_num, col_num=col_num))
+            col_num += len(token[]) + 1
+        self._token_bundles = mojo_format_token_bundles
+        tree_interface.mojo_aliases[].append(String(self._macro_name))

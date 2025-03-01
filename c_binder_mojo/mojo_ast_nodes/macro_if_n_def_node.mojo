@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior, default_scope_level, NodeIndices
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
 
 @value
@@ -109,12 +109,6 @@ struct MacroIfNDefNode(NodeAstLike):
     fn scope_offset(self) -> Int:
         # For now, all macro nodes add one level of scope
         return 1
-
-    fn get_scope_behavior(self) -> ScopeBehavior:
-        if self._is_header_guard:
-            return ScopeBehavior(ScopeBehavior.HEADER_GUARD)
-        # return ScopeBehavior(ScopeBehavior.CONDITIONAL) 
-        return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)
 
     fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
         """Evaluate the ifndef condition and mark sections as triggered/untriggered."""

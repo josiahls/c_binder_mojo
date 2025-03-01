@@ -30,19 +30,6 @@ struct TreeInterface:
 
 
 @value
-struct ScopeBehavior:
-    alias KEEP_SCOPE = 0      # Normal scoped node
-    alias LIFT_CHILDREN = 1   # Move children to parent
-    alias HEADER_GUARD = 2    # Special case for header guards
-    alias CONDITIONAL = 3     # Feature conditionals
-    
-    var behavior: Int
-
-    fn __init__(out self, behavior: Int):
-        self.behavior = behavior
-
-
-@value
 struct NodeIndices:
     """Tracks both C AST and Mojo AST indices for a node."""
     var c_node_idx: Int  # Current index in C AST
@@ -114,7 +101,6 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn str_just_code(mut self) -> Bool: ...
     fn set_str_just_code(mut self, str_just_code: Bool): ...
     fn scope_level(self, tree_interface: TreeInterface) -> Int: ...
-    fn get_scope_behavior(self) -> ScopeBehavior: ...
     fn scope_offset(self) -> Int: ...
     fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
         """Called after node is complete to do final evaluation and cleanup.

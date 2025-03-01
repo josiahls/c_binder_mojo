@@ -3,7 +3,7 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior, default_scope_level, NodeIndices
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo import c_ast_nodes
 
@@ -82,8 +82,6 @@ struct RootNode(NodeAstLike):
     fn scope_offset(self) -> Int:
         return 1  # Root adds one level of scope
 
-    fn get_scope_behavior(self) -> ScopeBehavior:
-        return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)  # Root always keeps scope
 
     fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
         # Root node doesn't need any finalization

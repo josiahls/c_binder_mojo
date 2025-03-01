@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, MojoTokens, TreeInterface, ScopeBehavior, default_scope_level, NodeIndices
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, MojoTokens, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
 
 @value
@@ -88,8 +88,6 @@ struct SingleLineCommentNode(NodeAstLike):
     fn scope_offset(self) -> Int:
         return 0  # Comments don't affect scope
 
-    fn get_scope_behavior(self) -> ScopeBehavior:
-        return ScopeBehavior(ScopeBehavior.LIFT_CHILDREN)  # Comments get lifted 
 
     fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
         # Comments don't need finalization

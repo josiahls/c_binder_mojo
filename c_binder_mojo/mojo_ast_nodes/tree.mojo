@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
-from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, ScopeBehavior, NodeIndices
+from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, NodeIndices
 
 
 struct Tree:

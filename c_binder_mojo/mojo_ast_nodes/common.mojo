@@ -27,6 +27,7 @@ struct TreeInterface:
     """
     var nodes: ArcPointer[List[AstNode]]
     var c_macro_defs: ArcPointer[List[String]]
+    var mojo_aliases: ArcPointer[List[String]]
 
 
 @value

@@ -11,19 +11,22 @@ struct Tree:
     var nodes: ArcPointer[List[AstNode]]
     var str_just_code: Bool
     var c_macro_defs: ArcPointer[List[String]]
+    var mojo_aliases: ArcPointer[List[String]]
 
     fn __init__(out self, c_macro_defs: List[String]): 
         self.nodes = ArcPointer(List[AstNode]())
         self.str_just_code = False
         self.c_macro_defs = ArcPointer(c_macro_defs)
+        self.mojo_aliases = ArcPointer(List[String]())
 
     fn __moveinit__(out self, owned other: Tree): 
         self.nodes = other.nodes^
         self.str_just_code = other.str_just_code
         self.c_macro_defs = other.c_macro_defs^
+        self.mojo_aliases = other.mojo_aliases^
 
     fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes.nodes.AstNode) raises -> Int:
-        tree_interface = TreeInterface(self.nodes, self.c_macro_defs)
+        tree_interface = TreeInterface(self.nodes, self.c_macro_defs, self.mojo_aliases)
         # Initialize if empty
         if len(self.nodes[]) == 0:
             self.nodes[].append(AstNode(RootNode.create(c_ast_node, -1, tree_interface)))
@@ -69,7 +72,7 @@ struct Tree:
                 node[].set_str_just_code(True)
 
             # print("node: ", String(node[]))
-            n_indent = node[].scope_level(TreeInterface(self.nodes, self.c_macro_defs))
+            n_indent = node[].scope_level(TreeInterface(self.nodes, self.c_macro_defs, self.mojo_aliases))
             if n_indent < 0:
                 n_indent = 0
             

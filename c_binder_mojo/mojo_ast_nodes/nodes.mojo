@@ -167,3 +167,14 @@ struct AstNode(CollectionElement):
 
         print("No scope level found for node: ", String(self))
         return 0  # Default scope level if no specific behavior is found
+
+    fn scope_offset(self) -> Int:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].scope_offset()
+
+        print("No scope offset found for node: ", String(self))
+        return 0

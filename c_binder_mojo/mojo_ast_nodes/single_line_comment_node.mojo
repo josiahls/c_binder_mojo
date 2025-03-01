@@ -95,8 +95,17 @@ struct SingleLineCommentNode(NodeAstLike):
         self._str_just_code = str_just_code
 
     fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        # Comments don't affect scope and do not have children.
-        return 0  
+        var level = 0
+        var parent_idx = self.parent_idx()
+        while parent_idx > 0:
+            var parent = tree_interface.nodes[][parent_idx]
+            level += parent.scope_offset()
+            parent_idx = parent.parent_idx()
+        
+        return level + self.scope_offset()
+
+    fn scope_offset(self) -> Int:
+        return 0  # Comments don't affect scope
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         return ScopeBehavior(ScopeBehavior.LIFT_CHILDREN)  # Comments get lifted 

@@ -104,10 +104,22 @@ struct MacroIfNDefNode(NodeAstLike):
     fn set_str_just_code(mut self, str_just_code: Bool):
         self._str_just_code = str_just_code
 
+    fn scope_offset(self) -> Int:
+        # Lets first pretend that all nodes are simple and add to the scope level for their children.
+        # if self._is_header_guard:
+        #     return -1  # Reduces scope level
+        return 1  # Doesn't affect scope
+
     fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        if self._is_header_guard:
-            return -1  # Lift up to parent's level
-        return 1  # Normal scope level NOTE: this actually will need to also be -1.
+        # Start with parent's level
+        var level = 0
+        var parent_idx = self.parent_idx()
+        while parent_idx > 0:
+            var parent = tree_interface.nodes[][parent_idx]
+            level += parent.scope_offset()
+            parent_idx = parent.parent_idx()
+        
+        return level
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         if self._is_header_guard:

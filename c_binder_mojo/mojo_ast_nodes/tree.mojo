@@ -63,11 +63,12 @@ struct Tree:
                     continue
                 node[].set_str_just_code(True)
 
+            # print("node: ", String(node[]))
             n_indent = node[].scope_level(TreeInterface(self.nodes, self.macro_defs))
             if n_indent < 0:
                 n_indent = 0
             
-            print(n_indent)
+            # print(n_indent)
             # NOTE: Not sure if this actually will work? How does this work with children?
             if n_indent > 0:
                 s += '\t' * n_indent

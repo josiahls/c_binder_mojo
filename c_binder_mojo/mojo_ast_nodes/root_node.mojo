@@ -86,7 +86,11 @@ struct RootNode(NodeAstLike):
 
     fn scope_level(self, tree_interface: TreeInterface) -> Int:
         # Root node has a transparent scope level.
-        return -1 
+        return 0
+
+    fn scope_offset(self) -> Int:
+        return 1
+        # return 0  # Root doesn't affect scope
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)  # Root always keeps scope 

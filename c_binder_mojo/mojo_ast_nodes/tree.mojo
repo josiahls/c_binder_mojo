@@ -4,16 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
-
-
-@value
-struct TreeInterface:
-    """
-    A minimal interface to the Tree struct for AstNode's to use.
-    """
-    var nodes: ArcPointer[List[AstNode]]
-    var macro_defs: ArcPointer[List[StringLiteral]]
-
+from c_binder_mojo.mojo_ast_nodes.common import TreeInterface
 
 struct Tree:
     var nodes: ArcPointer[List[AstNode]]

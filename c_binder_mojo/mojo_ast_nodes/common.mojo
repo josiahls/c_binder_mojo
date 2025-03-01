@@ -5,7 +5,6 @@ from memory import ArcPointer
 from c_binder_mojo.common import TokenBundles
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo import c_ast_nodes
-from c_binder_mojo.mojo_ast_nodes.tree import TreeInterface
 
 
 struct MojoTokens:
@@ -19,6 +18,15 @@ fn node2string(name:String,token_bundles:TokenBundles, just_code:Bool) -> String
     else:
         s += String(token_bundles)
     return s
+
+
+@value
+struct TreeInterface:
+    """
+    A minimal interface to the Tree struct for AstNode's to use.
+    """
+    var nodes: ArcPointer[List[AstNode]]
+    var macro_defs: ArcPointer[List[StringLiteral]]
 
 
 trait NodeAstLike(CollectionElement, Stringable): 

@@ -4,9 +4,8 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface
 from c_binder_mojo import c_ast_nodes
-from c_binder_mojo.mojo_ast_nodes.tree import TreeInterface
 
 @value
 struct WhitespaceNode(NodeAstLike):

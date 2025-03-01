@@ -82,8 +82,8 @@ struct WhitespaceNode(NodeAstLike):
     fn set_str_just_code(mut self, str_just_code: Bool):
         self._str_just_code = str_just_code
 
-    fn scope_level(self) -> Int:
-        return -1  # Whitespace doesn't affect scope
+    fn scope_level(self, tree_interface: TreeInterface) -> Int:
+        return 0  # Whitespace doesn't affect scope
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         return ScopeBehavior(ScopeBehavior.LIFT_CHILDREN)  # Whitespace gets lifted 

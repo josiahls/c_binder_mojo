@@ -63,26 +63,15 @@ struct Tree:
                     continue
                 node[].set_str_just_code(True)
 
-            n_indent = 0
-            parent_idx = node[].parent_idx()
-            while parent_idx > 0:
-                print("Parent idx: ", parent_idx)
-                parent_node = self.nodes[][parent_idx]
-                parent_idx = parent_node.parent_idx()
-
-            scope_behavior = node[].get_scope_behavior()
-            node_str = String(node[])
-
-            if scope_behavior.behavior == ScopeBehavior.HEADER_GUARD:
+            n_indent = node[].scope_level(TreeInterface(self.nodes, self.macro_defs))
+            if n_indent < 0:
                 n_indent = 0
-            elif scope_behavior.behavior == ScopeBehavior.CONDITIONAL:
-                n_indent -= 1 # Conditional ifndef/#else/#endif blocks should not be indented
-            elif scope_behavior.behavior == ScopeBehavior.LIFT_CHILDREN:
-                n_indent -= 1 # Lift children up one level
-            elif scope_behavior.behavior == ScopeBehavior.KEEP_SCOPE:
-                pass # Keep scope level
-
-            s += node_str.replace('\n', '\n' + '\t' * n_indent)
+            
+            print(n_indent)
+            # NOTE: Not sure if this actually will work? How does this work with children?
+            if n_indent > 0:
+                s += '\t' * n_indent
+            s += String(node[]).replace('\n', '\n' + '\t' * n_indent)
             s += String('\n')
         return s
 

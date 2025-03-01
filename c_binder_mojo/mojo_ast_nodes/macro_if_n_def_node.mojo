@@ -9,6 +9,19 @@ from c_binder_mojo import c_ast_nodes
 
 @value
 struct MacroIfNDefNode(NodeAstLike):
+    """
+    Handles converting C Ifndef/#define/#endif blocks into Mojo code.
+
+    Has a couple behaviors:
+    - If this is a header guard, noted by ending in "_H_", then we lift the children up one level,
+    and no function changes are made otherwise.
+    - If this is a confitional block, we determine based on the condition which children to
+    keep, and which to discard (will be commented out).
+
+    Args:
+        _is_triggered: Whether the macro has been triggered and its children should be
+        kept. If False, the children will be commented out, and the #elseif or #else will be evaluated instead.
+    """
     alias __name__ = "MacroIfNDefNode"
     
     var _token_bundles: TokenBundles
@@ -16,6 +29,8 @@ struct MacroIfNDefNode(NodeAstLike):
     var _current_idx: Int
     var _children_idxs: ArcPointer[List[Int]]
     var _str_just_code: Bool
+    var _is_header_guard: Bool
+    var _is_triggered: Bool
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
@@ -23,13 +38,20 @@ struct MacroIfNDefNode(NodeAstLike):
         self._current_idx = c_ast_node.current_idx()
         self._children_idxs = c_ast_node.children_idxs()
         self._str_just_code = False
+        self._is_header_guard = False
+        self._is_triggered = False
+        # Check if this is a header guard
+        if self._token_bundles[1].token.endswith("_H_"):
+            self._is_header_guard = True
+            self._is_triggered = False
+        # Check if this is triggered
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
 
     @staticmethod
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
-        return False #c_ast_node.node.isa[c_ast_nodes.nodes.MacroIfNDefNode]()
+        return c_ast_node.node.isa[c_ast_nodes.nodes.MacroIfNDefNode]()
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
@@ -82,11 +104,13 @@ struct MacroIfNDefNode(NodeAstLike):
     fn set_str_just_code(mut self, str_just_code: Bool):
         self._str_just_code = str_just_code
 
-    fn scope_level(self) -> Int:
-        return 1  # Creates one level of scope by default
+    fn scope_level(self, tree_interface: TreeInterface) -> Int:
+        if self._is_header_guard:
+            return -1  # Lift up to parent's level
+        return 1  # Normal scope level NOTE: this actually will need to also be -1.
 
     fn get_scope_behavior(self) -> ScopeBehavior:
-        # Check if this is a header guard
-        if self._token_bundles[1].token.endswith("_H_"):
+        if self._is_header_guard:
             return ScopeBehavior(ScopeBehavior.HEADER_GUARD)
-        return ScopeBehavior(ScopeBehavior.CONDITIONAL) 
+        # return ScopeBehavior(ScopeBehavior.CONDITIONAL) 
+        return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)

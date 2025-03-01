@@ -155,3 +155,15 @@ struct AstNode(CollectionElement):
 
         print("No scope behavior found for node: ", String(self))
         return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)
+
+
+    fn scope_level(self, tree_interface: TreeInterface) -> Int:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].scope_level(tree_interface)
+
+        print("No scope level found for node: ", String(self))
+        return 0  # Default scope level if no specific behavior is found

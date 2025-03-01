@@ -13,15 +13,15 @@ SingleLineCommentNode(current_idx=11,parent_idx=0) # WITHOUT WARRANTIES OR CONDI
 SingleLineCommentNode(current_idx=12,parent_idx=0) # See the License for the specific language governing permissions and 
 SingleLineCommentNode(current_idx=13,parent_idx=0) # limitations under the License. 
 WhitespaceNode(current_idx=14,parent_idx=0)  
-PlaceHolderNode(parent_idx=0,current_idx=15) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ <children> 
+MacroIfNDefNode(current_idx=15,parent_idx=0) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ <children> 
 #endif 
 PlaceHolderNode(parent_idx=15,current_idx=16) #define MUJOCO_INCLUDE_MJTNUM_H_ 
  
 SingleLineCommentNode(current_idx=17,parent_idx=15) # ---------------------------------- floating-point definition ------------------------------------- 
 WhitespaceNode(current_idx=18,parent_idx=15)  
 SingleLineCommentNode(current_idx=19,parent_idx=15) # floating point data type and minval 
-PlaceHolderNode(parent_idx=15,current_idx=20) #ifndef mjUSESINGLE <children> 
-#endif 
+	MacroIfNDefNode(current_idx=20,parent_idx=15) #ifndef mjUSESINGLE <children> 
+	#endif 
 WhitespaceNode(current_idx=21,parent_idx=20)   
 PlaceHolderNode(parent_idx=20,current_idx=22) typedef <children> mjtNum ; 
 PlaceHolderNode(parent_idx=22,current_idx=23) double 

@@ -84,8 +84,9 @@ struct RootNode(NodeAstLike):
     fn set_str_just_code(mut self, str_just_code: Bool):
         self._str_just_code = str_just_code
 
-    fn scope_level(self) -> Int:
-        return 0  # Root is base level
+    fn scope_level(self, tree_interface: TreeInterface) -> Int:
+        # Root node has a transparent scope level.
+        return -1 
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)  # Root always keeps scope 

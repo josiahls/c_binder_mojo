@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.common import TokenBundle,TokenBundles
 from c_binder_mojo.mojo_ast_nodes.tree import Tree
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, TreeInterface, ScopeBehavior
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, TreeInterface, ScopeBehavior, NodeIndices
 from c_binder_mojo.mojo_ast_nodes.node_variant import Variant
 from c_binder_mojo.mojo_ast_nodes import (
     PlaceHolderNode,
@@ -36,6 +36,16 @@ struct AstNode(CollectionElement):
 
     fn __moveinit__(out self, owned other: Self):
         self.node = other.node^
+
+    fn indices(self) -> ArcPointer[NodeIndices]:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].indices()
+        print("No indices found for node: ", String(self))
+        return ArcPointer[NodeIndices](NodeIndices(0, 0, 0, 0))
 
     @always_inline("nodebug")
     @staticmethod
@@ -120,15 +130,6 @@ struct AstNode(CollectionElement):
                 val_ptr[].add_child(child_idx)
                 return
 
-    fn parent_idx(self) -> Int:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].parent_idx()
-        return -1
-
     fn str_just_code(mut self) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -136,6 +137,8 @@ struct AstNode(CollectionElement):
             if self.node[].isa[T]():
                 var val_ptr = self.node[]._get_ptr[T]()
                 return val_ptr[].str_just_code()
+        print("No str_just_code found for node: ", String(self))
+        return False
 
     fn set_str_just_code(mut self, str_just_code: Bool):
         @parameter
@@ -144,6 +147,9 @@ struct AstNode(CollectionElement):
             if self.node[].isa[T]():
                 var val_ptr = self.node[]._get_ptr[T]()
                 val_ptr[].set_str_just_code(str_just_code)
+                return
+        print("No set_str_just_code found for node: ", String(self))
+        return
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         @parameter

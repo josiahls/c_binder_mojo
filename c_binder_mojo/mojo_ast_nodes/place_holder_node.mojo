@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior, default_scope_level
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
 
 
@@ -13,16 +13,17 @@ struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
     
     var _token_bundles: TokenBundles
-    var _parent_idx: Int
-    var _current_idx: Int
-    var _children_idxs: ArcPointer[List[Int]]
+    var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
-        self._parent_idx = c_ast_node.parent_idx()
-        self._current_idx = c_ast_node.current_idx()
-        self._children_idxs = c_ast_node.children_idxs()
+        self._indices = ArcPointer(NodeIndices(
+            c_node_idx=c_ast_node.current_idx(),
+            c_parent_idx=c_ast_node.parent_idx(),
+            mojo_node_idx=0,
+            mojo_parent_idx=0
+        ))
         self._str_just_code = False
 
     fn __str__(self) -> String:
@@ -54,26 +55,14 @@ struct PlaceHolderNode(NodeAstLike):
     fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
         return False
 
+    fn indices(self) -> ArcPointer[NodeIndices]:
+        return self._indices
+
     fn add_child(mut self, child_idx: Int):
-        self._children_idxs[].append(child_idx)
-
-    fn parent_idx(self) -> Int:
-        return self._parent_idx
-
-    fn current_idx(self) -> Int:
-        return self._current_idx
-
-    fn set_current_idx(mut self, value: Int):
-        self._current_idx = value
-
-    fn children_idxs(mut self) -> ArcPointer[List[Int]]:
-        return self._children_idxs
+        self._indices[].mojo_children_idxs[].append(child_idx)
 
     fn display_name(self) -> String:
-        var s = String(self.__name__)
-        s += "(parent_idx=" + String(self._parent_idx) + ","
-        s += "current_idx=" + String(self._current_idx) + ")"
-        return s
+        return self.__name__ + "(" + String(self._indices[]) + ")"
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles
@@ -88,7 +77,7 @@ struct PlaceHolderNode(NodeAstLike):
         self._str_just_code = str_just_code 
 
     fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        return default_scope_level(self._parent_idx, tree_interface)
+        return default_scope_level(self._indices[].mojo_parent_idx, tree_interface)
 
     fn scope_offset(self) -> Int:
         return 0  # Placeholder doesn't affect scope

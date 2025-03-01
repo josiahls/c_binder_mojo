@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior, default_scope_level
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
 
 @value
@@ -25,18 +25,20 @@ struct MacroIfNDefNode(NodeAstLike):
     alias __name__ = "MacroIfNDefNode"
     
     var _token_bundles: TokenBundles
-    var _parent_idx: Int
-    var _current_idx: Int
-    var _children_idxs: ArcPointer[List[Int]]
+    var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
     var _is_header_guard: Bool
     var _is_defined: Bool
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
-        self._parent_idx = c_ast_node.parent_idx()
-        self._current_idx = c_ast_node.current_idx()
-        self._children_idxs = c_ast_node.children_idxs()
+        self._indices = ArcPointer(NodeIndices(
+            c_node_idx=c_ast_node.current_idx(),
+            c_parent_idx=c_ast_node.parent_idx(),
+            mojo_node_idx=0,
+            mojo_parent_idx=-1,
+            c_children_idxs=c_ast_node.children_idxs()
+        ))
         self._str_just_code = False
         self._is_header_guard = False
         self._is_defined = False
@@ -62,7 +64,10 @@ struct MacroIfNDefNode(NodeAstLike):
         return False  # Takes tokens in C AST
 
     fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
-        return True  # Complete after creation
+        # We check that `c_ast_node` is still a child of the original Ifndef c node.
+        if c_ast_node.current_idx() not in self._indices[].c_children_idxs[]:
+            return True  # Complete after creation
+        return False
 
     fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return True  # Can have children (both if and else blocks)
@@ -72,26 +77,13 @@ struct MacroIfNDefNode(NodeAstLike):
         return False
 
     fn add_child(mut self, child_idx: Int):
-        self._children_idxs[].append(child_idx)
+        self._indices[].mojo_children_idxs[].append(child_idx)
 
-    fn parent_idx(self) -> Int:
-        return self._parent_idx
-
-    fn current_idx(self) -> Int:
-        return self._current_idx
-
-    fn set_current_idx(mut self, value: Int):
-        self._current_idx = value
-
-    fn children_idxs(mut self) -> ArcPointer[List[Int]]:
-        return self._children_idxs
+    fn indices(self) -> ArcPointer[NodeIndices]:
+        return self._indices
 
     fn display_name(self) -> String:
-        var s:String = String(self.__name__)
-        s += "(current_idx=" + String(self._current_idx) + ","
-        s += "is_defined=" + String(self._is_defined) + ","
-        s += "parent_idx=" + String(self._parent_idx) + ")"
-        return s
+        return self.__name__ + "(" + String(self._indices[]) + ")"
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles
@@ -106,7 +98,7 @@ struct MacroIfNDefNode(NodeAstLike):
         self._str_just_code = str_just_code
 
     fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        return default_scope_level(self._parent_idx, tree_interface)
+        return default_scope_level(self._indices[].mojo_parent_idx, tree_interface)
 
     fn scope_offset(self) -> Int:
         # For now, all macro nodes add one level of scope
@@ -123,6 +115,7 @@ struct MacroIfNDefNode(NodeAstLike):
         # Check if macro is defined
         var macro_name = self._token_bundles[1].token
         for macro in tree_interface.macro_defs[]:
+            # NOTE: macro is a string pointer
             if macro[] == macro_name:
                 self._is_defined = True
                 return

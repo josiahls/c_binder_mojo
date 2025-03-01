@@ -4,7 +4,8 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
-from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, ScopeBehavior
+from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, ScopeBehavior, NodeIndices
+
 
 struct Tree:
     var nodes: ArcPointer[List[AstNode]]
@@ -22,9 +23,10 @@ struct Tree:
         self.macro_defs = other.macro_defs^
 
     fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes.nodes.AstNode) raises -> Int:
+        tree_interface = TreeInterface(self.nodes, self.macro_defs)
         # Initialize if empty
         if len(self.nodes[]) == 0:
-            self.nodes[].append(AstNode(RootNode.create(c_ast_node, -1, TreeInterface(self.nodes, self.macro_defs))))
+            self.nodes[].append(AstNode(RootNode.create(c_ast_node, -1, tree_interface)))
             return 0
 
         # Get current node state
@@ -34,19 +36,21 @@ struct Tree:
         # NOTE: C API does done_no_cascade -> done -> append -> make_child 
         # The above might not be needed, but important to be aware of that this order
         # might be there based on past experience.
-        if current_node.is_accepting_tokens(c_ast_node, TreeInterface(self.nodes, self.macro_defs)):
+        if current_node.is_accepting_tokens(c_ast_node, tree_interface):
             # Still building current node
             _ = current_node.append(c_ast_node)
             return current_idx
         
-        elif current_node.is_complete(c_ast_node, TreeInterface(self.nodes, self.macro_defs)):
-            current_node.finalize(current_node.parent_idx(), TreeInterface(self.nodes, self.macro_defs))
+        elif current_node.is_complete(c_ast_node, tree_interface):
+            current_node.finalize(current_node.indices()[].mojo_parent_idx, tree_interface)
             # Move back to parent
-            return self.get_current_node(current_node.parent_idx(), c_ast_node)
+            return self.get_current_node(current_node.indices()[].mojo_parent_idx, c_ast_node)
         
-        elif current_node.wants_child(c_ast_node, TreeInterface(self.nodes, self.macro_defs)):
+        elif current_node.wants_child(c_ast_node, tree_interface):
             # Create child node
-            new_node = AstNode.accept(c_ast_node, current_idx, TreeInterface(self.nodes, self.macro_defs)   )
+            new_node = AstNode.accept(c_ast_node, current_idx, tree_interface)
+            new_node.indices()[].mojo_parent_idx = current_node.indices()[].mojo_node_idx
+            new_node.indices()[].mojo_node_idx = len(self.nodes[])
             # NOTE: Maybe change this to insert_node. We will want to support
             # appending, but also overwriting deleted nodes.
             self.nodes[].append(new_node)

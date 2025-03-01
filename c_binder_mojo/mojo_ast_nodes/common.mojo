@@ -72,3 +72,17 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool: ...
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self: ...
+
+
+fn default_scope_level(parent_idx: Int, tree_interface: TreeInterface) -> Int:
+    """Default scope level implementation that most nodes can use.
+    
+    Calculates scope level by walking up parent chain and summing scope_offsets.
+    """
+    var level = 0
+    var current_parent_idx = parent_idx
+    while current_parent_idx > 0:
+        var parent = tree_interface.nodes[][current_parent_idx]
+        level += parent.scope_offset()
+        current_parent_idx = parent.parent_idx()
+    return level

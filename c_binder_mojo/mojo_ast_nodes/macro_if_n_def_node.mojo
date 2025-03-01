@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior, default_scope_level
 from c_binder_mojo import c_ast_nodes
 
 @value
@@ -104,22 +104,12 @@ struct MacroIfNDefNode(NodeAstLike):
     fn set_str_just_code(mut self, str_just_code: Bool):
         self._str_just_code = str_just_code
 
-    fn scope_offset(self) -> Int:
-        # Lets first pretend that all nodes are simple and add to the scope level for their children.
-        # if self._is_header_guard:
-        #     return -1  # Reduces scope level
-        return 1  # Doesn't affect scope
-
     fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        # Start with parent's level
-        var level = 0
-        var parent_idx = self.parent_idx()
-        while parent_idx > 0:
-            var parent = tree_interface.nodes[][parent_idx]
-            level += parent.scope_offset()
-            parent_idx = parent.parent_idx()
-        
-        return level
+        return default_scope_level(self._parent_idx, tree_interface)
+
+    fn scope_offset(self) -> Int:
+        # For now, all macro nodes add one level of scope
+        return 1
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         if self._is_header_guard:

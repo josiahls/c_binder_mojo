@@ -32,6 +32,12 @@ struct MacroIfNDefNode(NodeAstLike):
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
+        for idx in reversed(range(len(self._token_bundles))):
+            if self._token_bundles[idx].token == c_ast_nodes.common.CTokens.MACRO_ENDIF:
+                _ = self._token_bundles._token_bundles.pop(idx)
+            elif self._token_bundles[idx].token == '\n':
+                _ = self._token_bundles._token_bundles.pop(idx)
+
         self._indices = ArcPointer(NodeIndices(
             c_node_idx=c_ast_node.current_idx(),
             c_parent_idx=c_ast_node.parent_idx(),

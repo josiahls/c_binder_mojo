@@ -14,14 +14,12 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	SingleLineCommentNode(c_node_idx=13, c_parent_idx=0, mojo_node_idx=13, mojo_parent_idx=0) # limitations under the License. 
 	WhitespaceNode(c_node_idx=14, c_parent_idx=0, mojo_node_idx=14, mojo_parent_idx=0)  
 	MacroIfNDefNode(c_node_idx=15, c_parent_idx=0, mojo_node_idx=15, mojo_parent_idx=0, c_children_idxs=16, 17, 18, 19, 20, 36, ... len=17, mojo_children_idxs=16, 17, 18, 19, 20, ) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ <children> 
-	#endif 
 		PlaceHolderNode(c_node_idx=16, c_parent_idx=15, mojo_node_idx=16, mojo_parent_idx=15) #define MUJOCO_INCLUDE_MJTNUM_H_ 
 		 
 		SingleLineCommentNode(c_node_idx=17, c_parent_idx=15, mojo_node_idx=17, mojo_parent_idx=15) # ---------------------------------- floating-point definition ------------------------------------- 
 		WhitespaceNode(c_node_idx=18, c_parent_idx=15, mojo_node_idx=18, mojo_parent_idx=15)  
 		SingleLineCommentNode(c_node_idx=19, c_parent_idx=15, mojo_node_idx=19, mojo_parent_idx=15) # floating point data type and minval 
 		MacroIfNDefNode(c_node_idx=20, c_parent_idx=15, mojo_node_idx=20, mojo_parent_idx=15, c_children_idxs=21, 22, 25, 26, 27, 28, ... len=6, mojo_children_idxs=21, 22, ) #ifndef mjUSESINGLE <children> 
-		#endif 
 			WhitespaceNode(c_node_idx=21, c_parent_idx=20, mojo_node_idx=21, mojo_parent_idx=20)   
 			PlaceHolderNode(c_node_idx=22, c_parent_idx=20, mojo_node_idx=22, mojo_parent_idx=20) typedef <children> mjtNum ; 
 	PlaceHolderNode(c_node_idx=23, c_parent_idx=22, mojo_node_idx=23, mojo_parent_idx=0) double 

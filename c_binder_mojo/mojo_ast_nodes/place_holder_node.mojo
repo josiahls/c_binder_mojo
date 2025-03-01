@@ -22,7 +22,8 @@ struct PlaceHolderNode(NodeAstLike):
             c_node_idx=c_ast_node.current_idx(),
             c_parent_idx=c_ast_node.parent_idx(),
             mojo_node_idx=0,
-            mojo_parent_idx=0
+            mojo_parent_idx=0,
+            c_children_idxs=c_ast_node.children_idxs()
         ))
         self._str_just_code = False
 
@@ -45,11 +46,15 @@ struct PlaceHolderNode(NodeAstLike):
     fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False 
 
-    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
-        return True  # Placeholder node should be 1:1 with token bundle
-
+    # In PlaceHolderNode
     fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
-        return False  # Never creates children
+        return True  # Accept children to maintain tree structure
+
+    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+        # Check if c_ast_node is still a child of original C node
+        if c_ast_node.current_idx() not in self._indices[].c_children_idxs[]:
+            return True
+        return False
 
     # Actions
     fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:

@@ -87,5 +87,7 @@ fn make_tree(input_tree: c_ast_nodes.tree.Tree, macro_defs: List[StringLiteral])
     tree = Tree(macro_defs)
     current_idx = 0
     for node in input_tree.nodes:
+        if node[].node.isa[c_ast_nodes.nodes.DeletedNode]():
+            continue
         current_idx = tree.get_current_node(current_idx, node[])
     return tree^

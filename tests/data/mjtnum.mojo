@@ -1,4 +1,4 @@
-RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo_children_idxs=1, 2, 3, 4, 5, 6, ... len=45) 
+RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo_children_idxs=1, 2, 3, 4, 5, 6, ... len=18) 
 	SingleLineCommentNode(c_node_idx=1, c_parent_idx=0, mojo_node_idx=1, mojo_parent_idx=0) # Copyright 2021 DeepMind Technologies Limited 
 	SingleLineCommentNode(c_node_idx=2, c_parent_idx=0, mojo_node_idx=2, mojo_parent_idx=0) # 
 	SingleLineCommentNode(c_node_idx=3, c_parent_idx=0, mojo_node_idx=3, mojo_parent_idx=0) # Licensed under the Apache License ,  Version 2.0 (the "License") ;  
@@ -13,53 +13,50 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	SingleLineCommentNode(c_node_idx=12, c_parent_idx=0, mojo_node_idx=12, mojo_parent_idx=0) # See the License for the specific language governing permissions and 
 	SingleLineCommentNode(c_node_idx=13, c_parent_idx=0, mojo_node_idx=13, mojo_parent_idx=0) # limitations under the License. 
 	WhitespaceNode(c_node_idx=14, c_parent_idx=0, mojo_node_idx=14, mojo_parent_idx=0)  
-	MacroIfNDefNode(c_node_idx=15, c_parent_idx=0, mojo_node_idx=15, mojo_parent_idx=0, c_children_idxs=16, 17, 18, 19, 20, 36, ... len=17, mojo_children_idxs=16, 17, 18, 19, 20, ) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ <children> 
+	MacroIfNDefNode(c_node_idx=15, c_parent_idx=0, mojo_node_idx=15, mojo_parent_idx=0, c_children_idxs=16, 17, 18, 19, 20, 36, ... len=17, mojo_children_idxs=16, 17, 18, 19, 20, 34, ... len=17) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ <children> 
 		PlaceHolderNode(c_node_idx=16, c_parent_idx=15, mojo_node_idx=16, mojo_parent_idx=15) #define MUJOCO_INCLUDE_MJTNUM_H_ 
 		 
 		SingleLineCommentNode(c_node_idx=17, c_parent_idx=15, mojo_node_idx=17, mojo_parent_idx=15) # ---------------------------------- floating-point definition ------------------------------------- 
 		WhitespaceNode(c_node_idx=18, c_parent_idx=15, mojo_node_idx=18, mojo_parent_idx=15)  
 		SingleLineCommentNode(c_node_idx=19, c_parent_idx=15, mojo_node_idx=19, mojo_parent_idx=15) # floating point data type and minval 
-		MacroIfNDefNode(c_node_idx=20, c_parent_idx=15, mojo_node_idx=20, mojo_parent_idx=15, c_children_idxs=21, 22, 25, 26, 27, 28, ... len=6, mojo_children_idxs=21, 22, ) #ifndef mjUSESINGLE <children> 
+		MacroIfNDefNode(c_node_idx=20, c_parent_idx=15, mojo_node_idx=20, mojo_parent_idx=15, c_children_idxs=21, 22, 25, 26, 27, 28, ... len=6, mojo_children_idxs=21, 22, 24, 25, 26, 27, ... len=6) #ifndef mjUSESINGLE <children> 
 			WhitespaceNode(c_node_idx=21, c_parent_idx=20, mojo_node_idx=21, mojo_parent_idx=20)   
-			PlaceHolderNode(c_node_idx=22, c_parent_idx=20, mojo_node_idx=22, mojo_parent_idx=20) typedef <children> mjtNum ; 
-	PlaceHolderNode(c_node_idx=23, c_parent_idx=22, mojo_node_idx=23, mojo_parent_idx=0) double 
-	PlaceHolderNode(c_node_idx=0, c_parent_idx=20, mojo_node_idx=24, mojo_parent_idx=0) mjtNum 
-	WhitespaceNode(c_node_idx=25, c_parent_idx=20, mojo_node_idx=25, mojo_parent_idx=0)  
-	  
-	PlaceHolderNode(c_node_idx=26, c_parent_idx=20, mojo_node_idx=26, mojo_parent_idx=0) #define mjMINVAL    1E-15       
-	SingleLineCommentNode(c_node_idx=27, c_parent_idx=20, mojo_node_idx=27, mojo_parent_idx=0) # minimum value in any denominator 
-	PlaceHolderNode(c_node_idx=28, c_parent_idx=20, mojo_node_idx=28, mojo_parent_idx=0) #else 
-	WhitespaceNode(c_node_idx=29, c_parent_idx=28, mojo_node_idx=29, mojo_parent_idx=0)   
-	PlaceHolderNode(c_node_idx=30, c_parent_idx=28, mojo_node_idx=30, mojo_parent_idx=0) typedef <children> mjtNum ; 
-	PlaceHolderNode(c_node_idx=31, c_parent_idx=30, mojo_node_idx=31, mojo_parent_idx=0) float 
-	PlaceHolderNode(c_node_idx=0, c_parent_idx=28, mojo_node_idx=32, mojo_parent_idx=0) mjtNum 
-	WhitespaceNode(c_node_idx=33, c_parent_idx=28, mojo_node_idx=33, mojo_parent_idx=0)  
-	  
-	PlaceHolderNode(c_node_idx=34, c_parent_idx=28, mojo_node_idx=34, mojo_parent_idx=0) #define mjMINVAL    1E-15f 
-	PlaceHolderNode(c_node_idx=35, c_parent_idx=28, mojo_node_idx=35, mojo_parent_idx=0) /* This does after the float is defined */ 
-	WhitespaceNode(c_node_idx=36, c_parent_idx=15, mojo_node_idx=36, mojo_parent_idx=0)  
-	PlaceHolderNode(c_node_idx=37, c_parent_idx=15, mojo_node_idx=37, mojo_parent_idx=0) /* silly comment */ 
-	PlaceHolderNode(c_node_idx=38, c_parent_idx=15, mojo_node_idx=38, mojo_parent_idx=0) /** another one??????? **/ 
-	WhitespaceNode(c_node_idx=39, c_parent_idx=15, mojo_node_idx=39, mojo_parent_idx=0)  
-	PlaceHolderNode(c_node_idx=40, c_parent_idx=15, mojo_node_idx=40, mojo_parent_idx=0) /**  
-	So  
-	many  
-	lines 
-	 
-	 
-	**/ 
-	WhitespaceNode(c_node_idx=41, c_parent_idx=15, mojo_node_idx=41, mojo_parent_idx=0)  
-	 
-	SingleLineCommentNode(c_node_idx=42, c_parent_idx=15, mojo_node_idx=42, mojo_parent_idx=0) # -------------------------------------- byte definition ------------------------------------------- 
-	WhitespaceNode(c_node_idx=43, c_parent_idx=15, mojo_node_idx=43, mojo_parent_idx=0)  
-	PlaceHolderNode(c_node_idx=44, c_parent_idx=15, mojo_node_idx=44, mojo_parent_idx=0) typedef <children> mjtByte ; 
-	PlaceHolderNode(c_node_idx=45, c_parent_idx=44, mojo_node_idx=45, mojo_parent_idx=0) unsigned char 
-	PlaceHolderNode(c_node_idx=0, c_parent_idx=15, mojo_node_idx=46, mojo_parent_idx=0) mjtByte 
-	WhitespaceNode(c_node_idx=47, c_parent_idx=15, mojo_node_idx=47, mojo_parent_idx=0)     
-	SingleLineCommentNode(c_node_idx=48, c_parent_idx=15, mojo_node_idx=48, mojo_parent_idx=0) # used for true/false 
-	WhitespaceNode(c_node_idx=49, c_parent_idx=15, mojo_node_idx=49, mojo_parent_idx=0)  
-	 
-	 
-	WhitespaceNode(c_node_idx=50, c_parent_idx=0, mojo_node_idx=50, mojo_parent_idx=0)  
-	SingleLineCommentNode(c_node_idx=51, c_parent_idx=0, mojo_node_idx=51, mojo_parent_idx=0) # MUJOCO_INCLUDE_MJTNUM_H_ 
-	WhitespaceNode(c_node_idx=52, c_parent_idx=0, mojo_node_idx=52, mojo_parent_idx=0)  
+			PlaceHolderNode(c_node_idx=22, c_parent_idx=20, mojo_node_idx=22, mojo_parent_idx=20, c_children_idxs=23, 24, , mojo_children_idxs=23, ) typedef <children> mjtNum ; 
+			PlaceHolderNode(c_node_idx=23, c_parent_idx=22, mojo_node_idx=23, mojo_parent_idx=22) double 
+			WhitespaceNode(c_node_idx=25, c_parent_idx=20, mojo_node_idx=24, mojo_parent_idx=20)  
+			  
+			PlaceHolderNode(c_node_idx=26, c_parent_idx=20, mojo_node_idx=25, mojo_parent_idx=20) #define mjMINVAL    1E-15       
+			SingleLineCommentNode(c_node_idx=27, c_parent_idx=20, mojo_node_idx=26, mojo_parent_idx=20) # minimum value in any denominator 
+			PlaceHolderNode(c_node_idx=28, c_parent_idx=20, mojo_node_idx=27, mojo_parent_idx=20, c_children_idxs=29, 30, 33, 34, 35, , mojo_children_idxs=28, 29, 31, 32, 33, ) #else 
+			WhitespaceNode(c_node_idx=29, c_parent_idx=28, mojo_node_idx=28, mojo_parent_idx=27)   
+			PlaceHolderNode(c_node_idx=30, c_parent_idx=28, mojo_node_idx=29, mojo_parent_idx=27, c_children_idxs=31, 32, , mojo_children_idxs=30, ) typedef <children> mjtNum ; 
+			PlaceHolderNode(c_node_idx=31, c_parent_idx=30, mojo_node_idx=30, mojo_parent_idx=29) float 
+			WhitespaceNode(c_node_idx=33, c_parent_idx=28, mojo_node_idx=31, mojo_parent_idx=27)  
+			  
+			PlaceHolderNode(c_node_idx=34, c_parent_idx=28, mojo_node_idx=32, mojo_parent_idx=27) #define mjMINVAL    1E-15f 
+			PlaceHolderNode(c_node_idx=35, c_parent_idx=28, mojo_node_idx=33, mojo_parent_idx=27) /* This does after the float is defined */ 
+		WhitespaceNode(c_node_idx=36, c_parent_idx=15, mojo_node_idx=34, mojo_parent_idx=15)  
+		PlaceHolderNode(c_node_idx=37, c_parent_idx=15, mojo_node_idx=35, mojo_parent_idx=15) /* silly comment */ 
+		PlaceHolderNode(c_node_idx=38, c_parent_idx=15, mojo_node_idx=36, mojo_parent_idx=15) /** another one??????? **/ 
+		WhitespaceNode(c_node_idx=39, c_parent_idx=15, mojo_node_idx=37, mojo_parent_idx=15)  
+		PlaceHolderNode(c_node_idx=40, c_parent_idx=15, mojo_node_idx=38, mojo_parent_idx=15) /**  
+		So  
+		many  
+		lines 
+		 
+		 
+		**/ 
+		WhitespaceNode(c_node_idx=41, c_parent_idx=15, mojo_node_idx=39, mojo_parent_idx=15)  
+		 
+		SingleLineCommentNode(c_node_idx=42, c_parent_idx=15, mojo_node_idx=40, mojo_parent_idx=15) # -------------------------------------- byte definition ------------------------------------------- 
+		WhitespaceNode(c_node_idx=43, c_parent_idx=15, mojo_node_idx=41, mojo_parent_idx=15)  
+		PlaceHolderNode(c_node_idx=44, c_parent_idx=15, mojo_node_idx=42, mojo_parent_idx=15, c_children_idxs=45, 46, , mojo_children_idxs=43, ) typedef <children> mjtByte ; 
+		PlaceHolderNode(c_node_idx=45, c_parent_idx=44, mojo_node_idx=43, mojo_parent_idx=42) unsigned char 
+		WhitespaceNode(c_node_idx=47, c_parent_idx=15, mojo_node_idx=44, mojo_parent_idx=15)     
+		SingleLineCommentNode(c_node_idx=48, c_parent_idx=15, mojo_node_idx=45, mojo_parent_idx=15) # used for true/false 
+		WhitespaceNode(c_node_idx=49, c_parent_idx=15, mojo_node_idx=46, mojo_parent_idx=15)  
+		 
+		 
+	WhitespaceNode(c_node_idx=50, c_parent_idx=0, mojo_node_idx=47, mojo_parent_idx=0)  
+	SingleLineCommentNode(c_node_idx=51, c_parent_idx=0, mojo_node_idx=48, mojo_parent_idx=0) # MUJOCO_INCLUDE_MJTNUM_H_ 
+	WhitespaceNode(c_node_idx=52, c_parent_idx=0, mojo_node_idx=49, mojo_parent_idx=0)  

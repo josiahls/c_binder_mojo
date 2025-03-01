@@ -27,14 +27,14 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			  
 			PlaceHolderNode(c_node_idx=26, c_parent_idx=20, mojo_node_idx=25, mojo_parent_idx=20) #define mjMINVAL    1E-15       
 			SingleLineCommentNode(c_node_idx=27, c_parent_idx=20, mojo_node_idx=26, mojo_parent_idx=20) # minimum value in any denominator 
-			PlaceHolderNode(c_node_idx=28, c_parent_idx=20, mojo_node_idx=27, mojo_parent_idx=20, c_children_idxs=29, 30, 33, 34, 35, mojo_children_idxs=28, 29, 31, 32, 33) #else 
-			WhitespaceNode(c_node_idx=29, c_parent_idx=28, mojo_node_idx=28, mojo_parent_idx=27)   
-			PlaceHolderNode(c_node_idx=30, c_parent_idx=28, mojo_node_idx=29, mojo_parent_idx=27, c_children_idxs=31, 32, mojo_children_idxs=30) typedef <children> mjtNum ; 
-			PlaceHolderNode(c_node_idx=31, c_parent_idx=30, mojo_node_idx=30, mojo_parent_idx=29) float 
-			WhitespaceNode(c_node_idx=33, c_parent_idx=28, mojo_node_idx=31, mojo_parent_idx=27)  
-			  
-			PlaceHolderNode(c_node_idx=34, c_parent_idx=28, mojo_node_idx=32, mojo_parent_idx=27) #define mjMINVAL    1E-15f 
-			PlaceHolderNode(c_node_idx=35, c_parent_idx=28, mojo_node_idx=33, mojo_parent_idx=27) /* This does after the float is defined */ 
+			MacroElseNode(c_node_idx=28, c_parent_idx=20, mojo_node_idx=27, mojo_parent_idx=20, c_children_idxs=29, 30, 33, 34, 35, mojo_children_idxs=28, 29, 31, 32, 33) #else 
+				WhitespaceNode(c_node_idx=29, c_parent_idx=28, mojo_node_idx=28, mojo_parent_idx=27)   
+				PlaceHolderNode(c_node_idx=30, c_parent_idx=28, mojo_node_idx=29, mojo_parent_idx=27, c_children_idxs=31, 32, mojo_children_idxs=30) typedef <children> mjtNum ; 
+				PlaceHolderNode(c_node_idx=31, c_parent_idx=30, mojo_node_idx=30, mojo_parent_idx=29) float 
+				WhitespaceNode(c_node_idx=33, c_parent_idx=28, mojo_node_idx=31, mojo_parent_idx=27)  
+				  
+				PlaceHolderNode(c_node_idx=34, c_parent_idx=28, mojo_node_idx=32, mojo_parent_idx=27) #define mjMINVAL    1E-15f 
+				PlaceHolderNode(c_node_idx=35, c_parent_idx=28, mojo_node_idx=33, mojo_parent_idx=27) /* This does after the float is defined */ 
 		WhitespaceNode(c_node_idx=36, c_parent_idx=15, mojo_node_idx=34, mojo_parent_idx=15)  
 		PlaceHolderNode(c_node_idx=37, c_parent_idx=15, mojo_node_idx=35, mojo_parent_idx=15) /* silly comment */ 
 		PlaceHolderNode(c_node_idx=38, c_parent_idx=15, mojo_node_idx=36, mojo_parent_idx=15) /** another one??????? **/ 

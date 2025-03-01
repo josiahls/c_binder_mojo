@@ -12,6 +12,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     SingleLineCommentNode,  # Updated name
     WhitespaceNode,  # Add import
     MacroIfNDefNode,  # Add import
+    MacroElseNode,  # Add import
 )
 from c_binder_mojo import c_ast_nodes
 
@@ -21,6 +22,7 @@ struct AstNode(CollectionElement):
     alias type = Variant[
         RootNode,                # Must be first to handle root
         MacroIfNDefNode,         # Handle macros before comments
+        MacroElseNode,          # Handle else blocks
         SingleLineCommentNode,   # Handle comments before fallback
         WhitespaceNode,         # Handle whitespace
         PlaceHolderNode,        # Must be last as fallback

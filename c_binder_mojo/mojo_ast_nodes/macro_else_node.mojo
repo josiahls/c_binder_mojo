@@ -89,5 +89,5 @@ struct MacroElseNode(NodeAstLike):
         return 1  # Add one level of scope
 
 
-    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         pass  # No finalization needed 

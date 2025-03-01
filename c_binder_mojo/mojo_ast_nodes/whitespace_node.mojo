@@ -78,6 +78,6 @@ struct WhitespaceNode(NodeAstLike):
         return 0  # Whitespace doesn't affect scope
 
 
-    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         # Whitespace doesn't need finalization
         pass 

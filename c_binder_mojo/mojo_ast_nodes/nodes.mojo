@@ -13,6 +13,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     WhitespaceNode,  # Add import
     MacroIfNDefNode,  # Add import
     MacroElseNode,  # Add import
+    DeletedNode,  # Add import
 )
 from c_binder_mojo import c_ast_nodes
 
@@ -25,6 +26,7 @@ struct AstNode(CollectionElement):
         MacroElseNode,          # Handle else blocks
         SingleLineCommentNode,   # Handle comments before fallback
         WhitespaceNode,         # Handle whitespace
+        DeletedNode,            # Handle deleted nodes
         PlaceHolderNode,        # Must be last as fallback
     ]
     # NOTE: This is experimental.
@@ -175,7 +177,7 @@ struct AstNode(CollectionElement):
         print("No scope offset found for node: ", String(self))
         return 0
 
-    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -185,3 +187,24 @@ struct AstNode(CollectionElement):
                 return
         print("No finalize found for node: ", String(self))
         return
+
+
+    fn display_name(self) -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].display_name()
+        print("No display name found for node: ", String(self))
+        return ""
+
+    fn token_bundles(self) -> TokenBundles:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].token_bundles()
+        print("No token bundles found for node: ", String(self))
+        return TokenBundles()

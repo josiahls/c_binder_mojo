@@ -89,6 +89,6 @@ struct SingleLineCommentNode(NodeAstLike):
         return 0  # Comments don't affect scope
 
 
-    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         # Comments don't need finalization
         pass 

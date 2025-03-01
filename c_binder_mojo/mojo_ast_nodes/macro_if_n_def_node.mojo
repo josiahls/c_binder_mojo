@@ -6,6 +6,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
+from c_binder_mojo.mojo_ast_nodes.deleted_node import recursive_delete
 
 @value
 struct MacroIfNDefNode(NodeAstLike):
@@ -110,9 +111,14 @@ struct MacroIfNDefNode(NodeAstLike):
         # For now, all macro nodes add one level of scope
         return 1
 
-    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         """Evaluate the ifndef condition and mark sections as triggered/untriggered."""
         # Check if macro is defined
+        if self._is_header_guard:
+            # NOTE: probably just delete self (?)
+            self._is_defined = False
+            return
+
         var macro_name = self._token_bundles[1].token
         for macro in tree_interface.macro_defs[]:
             # NOTE: macro is a string pointer
@@ -120,3 +126,12 @@ struct MacroIfNDefNode(NodeAstLike):
                 self._is_defined = True
                 return
         self._is_defined = False
+        # Delete children that are no longer needed
+        for child_idx in self._indices[].mojo_children_idxs[]:
+            child_node = tree_interface.nodes[][child_idx[]]
+            # print("Child node: ", String(child_node))
+            if child_node.node[].isa[MacroElseNode]():
+                # print("Skipping MacroElseNode: ", String(child_node))
+                continue
+            # NOTE: mojo lsp is complaining about recursive calls. 
+            recursive_delete(tree_interface, child_idx[], "Deleted because " + macro_name + " was not defined", True)

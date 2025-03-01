@@ -31,7 +31,7 @@ struct MacroIfNDefNode(NodeAstLike):
     var _is_header_guard: Bool
     var _is_defined: Bool
 
-    fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
+    fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface):
         self._token_bundles = c_ast_node.token_bundles()
         for idx in reversed(range(len(self._token_bundles))):
             if self._token_bundles[idx].token == c_ast_nodes.common.CTokens.MACRO_ENDIF:
@@ -47,13 +47,18 @@ struct MacroIfNDefNode(NodeAstLike):
             c_children_idxs=c_ast_node.children_idxs()
         ))
         self._str_just_code = False
-        self._is_header_guard = False
-        self._is_defined = False
+        
         # Check if this is a header guard
-        if self._token_bundles[1].token.endswith("_H_"):
-            self._is_header_guard = True
-            self._is_defined = False
-        # Check if this is triggered
+        var macro_name = self._token_bundles[1].token
+        self._is_header_guard = macro_name.endswith("_H_")
+        
+        # Check if macro is defined
+        self._is_defined = False
+        if not self._is_header_guard:
+            for macro in tree_interface.macro_defs[]:
+                if macro[] == macro_name:
+                    self._is_defined = True
+                    break
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
@@ -64,7 +69,7 @@ struct MacroIfNDefNode(NodeAstLike):
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
-        return Self(c_ast_node)
+        return Self(c_ast_node, tree_interface)
 
     # State checks
     fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
@@ -112,26 +117,14 @@ struct MacroIfNDefNode(NodeAstLike):
         return 1
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        """Evaluate the ifndef condition and mark sections as triggered/untriggered."""
-        # Check if macro is defined
+        """Delete children if needed based on macro definition."""
         if self._is_header_guard:
-            # NOTE: probably just delete self (?)
-            self._is_defined = False
             return
 
-        var macro_name = self._token_bundles[1].token
-        for macro in tree_interface.macro_defs[]:
-            # NOTE: macro is a string pointer
-            if macro[] == macro_name:
-                self._is_defined = True
-                return
-        self._is_defined = False
-        # Delete children that are no longer needed
-        for child_idx in self._indices[].mojo_children_idxs[]:
-            child_node = tree_interface.nodes[][child_idx[]]
-            # print("Child node: ", String(child_node))
-            if child_node.node[].isa[MacroElseNode]():
-                # print("Skipping MacroElseNode: ", String(child_node))
-                continue
-            # NOTE: mojo lsp is complaining about recursive calls. 
-            recursive_delete(tree_interface, child_idx[], "Deleted because " + macro_name + " was not defined", True)
+        if not self._is_defined:
+            # Delete children that are no longer needed
+            for child_idx in self._indices[].mojo_children_idxs[]:
+                child_node = tree_interface.nodes[][child_idx[]]
+                if child_node.node[].isa[MacroElseNode]():
+                    continue
+                recursive_delete(tree_interface, child_idx[], "Deleted because " + self._token_bundles[1].token + " was not defined", True)

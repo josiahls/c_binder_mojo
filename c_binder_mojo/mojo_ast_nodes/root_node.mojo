@@ -6,6 +6,7 @@ from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo import c_ast_nodes
+from c_binder_mojo.mojo_ast_nodes.tree import TreeInterface
 @value
 struct RootNode(NodeAstLike):
     """Root node of the Mojo AST.
@@ -31,13 +32,13 @@ struct RootNode(NodeAstLike):
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
 
     # State checks
-    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False  # Root doesn't accept tokens directly
 
-    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False  # Root is never complete until file ends
 
-    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return True  # Root always accepts children
 
     # Actions
@@ -70,11 +71,11 @@ struct RootNode(NodeAstLike):
 
     # Node creation
     @staticmethod
-    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Bool:
-        return len(nodes[]) == 0
+    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
+        return len(tree_interface.nodes[]) == 0
 
     @staticmethod
-    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
+    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
         return Self(c_ast_node)
 
     fn str_just_code(mut self) -> Bool:

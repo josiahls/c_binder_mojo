@@ -6,6 +6,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string
 from c_binder_mojo import c_ast_nodes
+from c_binder_mojo.mojo_ast_nodes.tree import TreeInterface
 
 @value
 struct WhitespaceNode(NodeAstLike):
@@ -28,21 +29,21 @@ struct WhitespaceNode(NodeAstLike):
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
 
     @staticmethod
-    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
         return c_ast_node.node.isa[c_ast_nodes.nodes.WhitespaceNode]()
 
     @staticmethod
-    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
+    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
         return Self(c_ast_node)
 
     # State checks
-    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False  # Whitespace takes just one token
 
-    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return True  # Complete after first token
 
-    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False  # Whitespace doesn't have children
 
     # Actions

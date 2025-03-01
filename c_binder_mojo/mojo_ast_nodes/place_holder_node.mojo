@@ -6,6 +6,9 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string
 from c_binder_mojo import c_ast_nodes
+from c_binder_mojo.mojo_ast_nodes.tree import TreeInterface
+
+
 @value
 struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
@@ -31,21 +34,21 @@ struct PlaceHolderNode(NodeAstLike):
         return node2string(s, self.token_bundles(), False)
 
     @staticmethod
-    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
         return True  # Accept everything as fallback
 
     @staticmethod
-    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, nodes: ArcPointer[List[AstNode]]) -> Self:
+    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
         return Self(c_ast_node)
 
     # State checks
-    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False 
 
-    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return True  # Placeholder node should be 1:1 with token bundle
 
-    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, nodes: ArcPointer[List[AstNode]]) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False  # Never creates children
 
     # Actions

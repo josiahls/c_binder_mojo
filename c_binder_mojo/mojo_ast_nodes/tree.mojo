@@ -6,21 +6,34 @@ from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 
 
+@value
+struct TreeInterface:
+    """
+    A minimal interface to the Tree struct for AstNode's to use.
+    """
+    var nodes: ArcPointer[List[AstNode]]
+    var macro_defs: ArcPointer[List[StringLiteral]]
+
 
 struct Tree:
     var nodes: ArcPointer[List[AstNode]]
     var str_just_code: Bool
+    var macro_defs: ArcPointer[List[StringLiteral]]
 
-    fn __init__(out self): 
+    fn __init__(out self, macro_defs: List[StringLiteral]): 
         self.nodes = ArcPointer(List[AstNode]())
         self.str_just_code = False
+        self.macro_defs = ArcPointer(macro_defs)
+
     fn __moveinit__(out self, owned other: Tree): 
         self.nodes = other.nodes^
         self.str_just_code = other.str_just_code
+        self.macro_defs = other.macro_defs^
+
     fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes.nodes.AstNode) raises -> Int:
         # Initialize if empty
         if len(self.nodes[]) == 0:
-            self.nodes[].append(AstNode(RootNode.create(c_ast_node, -1, self.nodes)))
+            self.nodes[].append(AstNode(RootNode.create(c_ast_node, -1, TreeInterface(self.nodes, self.macro_defs))))
             return 0
 
         # Get current node state
@@ -30,18 +43,18 @@ struct Tree:
         # NOTE: C API does done_no_cascade -> done -> append -> make_child 
         # The above might not be needed, but important to be aware of that this order
         # might be there based on past experience.
-        if current_node.is_accepting_tokens(c_ast_node, self.nodes):
+        if current_node.is_accepting_tokens(c_ast_node, TreeInterface(self.nodes, self.macro_defs)):
             # Still building current node
             _ = current_node.append(c_ast_node)
             return current_idx
         
-        elif current_node.is_complete(c_ast_node, self.nodes):
+        elif current_node.is_complete(c_ast_node, TreeInterface(self.nodes, self.macro_defs)):
             # Move back to parent
             return self.get_current_node(current_node.parent_idx(), c_ast_node)
         
-        elif current_node.wants_child(c_ast_node, self.nodes):
+        elif current_node.wants_child(c_ast_node, TreeInterface(self.nodes, self.macro_defs)):
             # Create child node
-            new_node = AstNode.accept(c_ast_node, current_idx, self.nodes)
+            new_node = AstNode.accept(c_ast_node, current_idx, TreeInterface(self.nodes, self.macro_defs)   )
             # NOTE: Maybe change this to insert_node. We will want to support
             # appending, but also overwriting deleted nodes.
             self.nodes[].append(new_node)
@@ -65,8 +78,8 @@ struct Tree:
 
 
 # NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.
-fn make_tree(input_tree: c_ast_nodes.tree.Tree) raises -> Tree:
-    tree = Tree()
+fn make_tree(input_tree: c_ast_nodes.tree.Tree, macro_defs: List[StringLiteral]) raises -> Tree:
+    tree = Tree(macro_defs)
     current_idx = 0
     for node in input_tree.nodes:
         current_idx = tree.get_current_node(current_idx, node[])

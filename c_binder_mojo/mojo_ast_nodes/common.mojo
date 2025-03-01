@@ -58,7 +58,9 @@ struct NodeIndices:
         n_children = len(children_idxs[])
         i = 0
         for child_idx in children_idxs[]:
-            s += String(child_idx[]) + ", "
+            s += String(child_idx[])
+            if i < n_children - 1:
+                s += ", "
             i += 1
             if i > 5:
                 s += "... len=" + String(n_children)

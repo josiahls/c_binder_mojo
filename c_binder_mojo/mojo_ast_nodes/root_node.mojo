@@ -91,4 +91,8 @@ struct RootNode(NodeAstLike):
         return 1  # Root adds one level of scope
 
     fn get_scope_behavior(self) -> ScopeBehavior:
-        return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)  # Root always keeps scope 
+        return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)  # Root always keeps scope
+
+    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+        # Root node doesn't need any finalization
+        pass 

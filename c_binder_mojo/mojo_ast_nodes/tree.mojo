@@ -40,6 +40,7 @@ struct Tree:
             return current_idx
         
         elif current_node.is_complete(c_ast_node, TreeInterface(self.nodes, self.macro_defs)):
+            current_node.finalize(current_node.parent_idx(), TreeInterface(self.nodes, self.macro_defs))
             # Move back to parent
             return self.get_current_node(current_node.parent_idx(), c_ast_node)
         

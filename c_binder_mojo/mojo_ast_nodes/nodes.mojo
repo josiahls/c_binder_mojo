@@ -178,3 +178,14 @@ struct AstNode(CollectionElement):
 
         print("No scope offset found for node: ", String(self))
         return 0
+
+    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                val_ptr[].finalize(parent_idx, tree_interface)
+                return
+        print("No finalize found for node: ", String(self))
+        return

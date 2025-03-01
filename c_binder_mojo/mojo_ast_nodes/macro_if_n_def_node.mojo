@@ -19,7 +19,7 @@ struct MacroIfNDefNode(NodeAstLike):
     keep, and which to discard (will be commented out).
 
     Args:
-        _is_triggered: Whether the macro has been triggered and its children should be
+        _is_defined: Whether the macro has been triggered and its children should be
         kept. If False, the children will be commented out, and the #elseif or #else will be evaluated instead.
     """
     alias __name__ = "MacroIfNDefNode"
@@ -30,7 +30,7 @@ struct MacroIfNDefNode(NodeAstLike):
     var _children_idxs: ArcPointer[List[Int]]
     var _str_just_code: Bool
     var _is_header_guard: Bool
-    var _is_triggered: Bool
+    var _is_defined: Bool
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
@@ -39,11 +39,11 @@ struct MacroIfNDefNode(NodeAstLike):
         self._children_idxs = c_ast_node.children_idxs()
         self._str_just_code = False
         self._is_header_guard = False
-        self._is_triggered = False
+        self._is_defined = False
         # Check if this is a header guard
         if self._token_bundles[1].token.endswith("_H_"):
             self._is_header_guard = True
-            self._is_triggered = False
+            self._is_defined = False
         # Check if this is triggered
 
     fn __str__(self) -> String:
@@ -89,6 +89,7 @@ struct MacroIfNDefNode(NodeAstLike):
     fn display_name(self) -> String:
         var s:String = String(self.__name__)
         s += "(current_idx=" + String(self._current_idx) + ","
+        s += "is_defined=" + String(self._is_defined) + ","
         s += "parent_idx=" + String(self._parent_idx) + ")"
         return s
 
@@ -116,3 +117,13 @@ struct MacroIfNDefNode(NodeAstLike):
             return ScopeBehavior(ScopeBehavior.HEADER_GUARD)
         # return ScopeBehavior(ScopeBehavior.CONDITIONAL) 
         return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)
+
+    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+        """Evaluate the ifndef condition and mark sections as triggered/untriggered."""
+        # Check if macro is defined
+        var macro_name = self._token_bundles[1].token
+        for macro in tree_interface.macro_defs[]:
+            if macro[] == macro_name:
+                self._is_defined = True
+                return
+        self._is_defined = False

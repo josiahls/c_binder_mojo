@@ -65,13 +65,23 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn scope_level(self, tree_interface: TreeInterface) -> Int: ...
     fn get_scope_behavior(self) -> ScopeBehavior: ...
     fn scope_offset(self) -> Int: ...
-
+    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+        """Called after node is complete to do final evaluation and cleanup.
+        
+        This is where nodes can:
+        1. Evaluate conditions
+        2. Clean up internal state
+        3. Make final scope decisions
+        """
+        pass  # Default no-op implementation
     
     # Node creation
     @staticmethod
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool: ...
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self: ...
+
+
 
 
 fn default_scope_level(parent_idx: Int, tree_interface: TreeInterface) -> Int:

@@ -90,3 +90,7 @@ struct WhitespaceNode(NodeAstLike):
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         return ScopeBehavior(ScopeBehavior.LIFT_CHILDREN)  # Whitespace gets lifted 
+
+    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+        # Whitespace doesn't need finalization
+        pass 

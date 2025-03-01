@@ -102,3 +102,7 @@ struct SingleLineCommentNode(NodeAstLike):
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         return ScopeBehavior(ScopeBehavior.LIFT_CHILDREN)  # Comments get lifted 
+
+    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+        # Comments don't need finalization
+        pass 

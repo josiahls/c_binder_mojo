@@ -95,3 +95,7 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn get_scope_behavior(self) -> ScopeBehavior:
         return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)  
+
+    fn finalize(mut self, parent_idx: Int, tree_interface: TreeInterface):
+        # Placeholder nodes don't need finalization
+        pass  

@@ -3,6 +3,8 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
+from c_binder_mojo.mojo_ast_nodes.deleted_node import recursive_delete
+from c_binder_mojo.mojo_ast_nodes.macro_if_n_def_node import MacroIfNDefNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
@@ -90,4 +92,13 @@ struct MacroElseNode(NodeAstLike):
 
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        pass  # No finalization needed 
+        """Delete children if parent ifndef was defined."""
+        # Get parent node
+        var parent_node = tree_interface.nodes[][parent_idx]
+        
+        # If parent is an ifndef and it was defined, delete our children
+        if parent_node.node[].isa[MacroIfNDefNode]():
+            var macro_if_n_def_node = parent_node.node[][MacroIfNDefNode]
+            if macro_if_n_def_node._is_defined:
+                for child_idx in self._indices[].mojo_children_idxs[]:
+                    recursive_delete(tree_interface, child_idx[], "Deleted because parent macro was defined", True) 

@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, MojoTokens, TreeInterface
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, MojoTokens, TreeInterface, ScopeBehavior
 from c_binder_mojo import c_ast_nodes
 
 @value
@@ -92,4 +92,10 @@ struct SingleLineCommentNode(NodeAstLike):
         return self._str_just_code
 
     fn set_str_just_code(mut self, str_just_code: Bool):
-        self._str_just_code = str_just_code 
+        self._str_just_code = str_just_code
+
+    fn scope_level(self) -> Int:
+        return -1  # Comments don't affect scope
+
+    fn get_scope_behavior(self) -> ScopeBehavior:
+        return ScopeBehavior(ScopeBehavior.LIFT_CHILDREN)  # Comments get lifted 

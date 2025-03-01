@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, ScopeBehavior
 from c_binder_mojo import c_ast_nodes
 
 @value
@@ -80,4 +80,13 @@ struct MacroIfNDefNode(NodeAstLike):
         return self._str_just_code
 
     fn set_str_just_code(mut self, str_just_code: Bool):
-        self._str_just_code = str_just_code 
+        self._str_just_code = str_just_code
+
+    fn scope_level(self) -> Int:
+        return 1  # Creates one level of scope by default
+
+    fn get_scope_behavior(self) -> ScopeBehavior:
+        # Check if this is a header guard
+        if self._token_bundles[1].token.endswith("_H_"):
+            return ScopeBehavior(ScopeBehavior.HEADER_GUARD)
+        return ScopeBehavior(ScopeBehavior.CONDITIONAL) 

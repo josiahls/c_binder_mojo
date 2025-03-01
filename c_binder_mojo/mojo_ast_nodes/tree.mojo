@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
-from c_binder_mojo.mojo_ast_nodes.common import TreeInterface
+from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, ScopeBehavior
 
 struct Tree:
     var nodes: ArcPointer[List[AstNode]]
@@ -55,7 +55,6 @@ struct Tree:
         raise Error("Invalid node state")
 
 
-
     fn __str__(self) -> String:
         var s = String('')
         for node in self.nodes[]:
@@ -63,7 +62,27 @@ struct Tree:
                 if node[].node[].isa[RootNode]():
                     continue
                 node[].set_str_just_code(True)
-            s += String(node[])
+
+            n_indent = 0
+            parent_idx = node[].parent_idx()
+            while parent_idx > 0:
+                print("Parent idx: ", parent_idx)
+                parent_node = self.nodes[][parent_idx]
+                parent_idx = parent_node.parent_idx()
+
+            scope_behavior = node[].get_scope_behavior()
+            node_str = String(node[])
+
+            if scope_behavior.behavior == ScopeBehavior.HEADER_GUARD:
+                n_indent = 0
+            elif scope_behavior.behavior == ScopeBehavior.CONDITIONAL:
+                n_indent -= 1 # Conditional ifndef/#else/#endif blocks should not be indented
+            elif scope_behavior.behavior == ScopeBehavior.LIFT_CHILDREN:
+                n_indent -= 1 # Lift children up one level
+            elif scope_behavior.behavior == ScopeBehavior.KEEP_SCOPE:
+                pass # Keep scope level
+
+            s += node_str.replace('\n', '\n' + '\t' * n_indent)
             s += String('\n')
         return s
 

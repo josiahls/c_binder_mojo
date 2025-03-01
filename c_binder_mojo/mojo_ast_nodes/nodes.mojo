@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.common import TokenBundle,TokenBundles
 from c_binder_mojo.mojo_ast_nodes.tree import Tree
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, TreeInterface
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, TreeInterface, ScopeBehavior
 from c_binder_mojo.mojo_ast_nodes.node_variant import Variant
 from c_binder_mojo.mojo_ast_nodes import (
     PlaceHolderNode,
@@ -144,3 +144,14 @@ struct AstNode(CollectionElement):
             if self.node[].isa[T]():
                 var val_ptr = self.node[]._get_ptr[T]()
                 val_ptr[].set_str_just_code(str_just_code)
+
+    fn get_scope_behavior(self) -> ScopeBehavior:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].get_scope_behavior()
+
+        print("No scope behavior found for node: ", String(self))
+        return ScopeBehavior(ScopeBehavior.KEEP_SCOPE)

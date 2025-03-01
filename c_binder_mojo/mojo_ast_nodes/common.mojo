@@ -29,6 +29,19 @@ struct TreeInterface:
     var macro_defs: ArcPointer[List[StringLiteral]]
 
 
+@value
+struct ScopeBehavior:
+    alias KEEP_SCOPE = 0      # Normal scoped node
+    alias LIFT_CHILDREN = 1   # Move children to parent
+    alias HEADER_GUARD = 2    # Special case for header guards
+    alias CONDITIONAL = 3     # Feature conditionals
+    
+    var behavior: Int
+
+    fn __init__(out self, behavior: Int):
+        self.behavior = behavior
+
+
 trait NodeAstLike(CollectionElement, Stringable): 
     alias __name__: String
     
@@ -49,6 +62,8 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn should_children_inline(self) -> Bool: ...
     fn str_just_code(mut self) -> Bool: ...
     fn set_str_just_code(mut self, str_just_code: Bool): ...
+    fn scope_level(self) -> Int: ...
+    fn get_scope_behavior(self) -> ScopeBehavior: ...
 
     
     # Node creation

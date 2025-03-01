@@ -20,9 +20,10 @@ fn test_make_tree_mjtnum() raises:
     # root_node = test_fn(num_mojo_path)
     mojo_tree = mojo_ast_nodes.tree.make_tree(root_node, List[StringLiteral]())
     # mojo_tree.str_just_code = True
-    # print('Root mojo node: ' + String(mojo_tree))
-    # display_node = RootDisplayAstNode(root_mojo_node)
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.mojo').write_text(String(mojo_tree))
+    mojo_tree = mojo_ast_nodes.tree.make_tree(root_node, List[StringLiteral]('mjUSESINGLE'))
+    # mojo_tree.str_just_code = True
+    Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum_mjUSESINGLE.mojo').write_text(String(mojo_tree))
 
 
 fn test_make_tree_mjtmodel() raises:

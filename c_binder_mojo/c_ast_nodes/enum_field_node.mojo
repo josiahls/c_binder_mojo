@@ -50,7 +50,7 @@ struct EnumFieldNode(NodeAstLike):
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # I think for the most part we can just append the continuous chunk of tokens.
         # enum fields don't have children, so once the `done` function is called, we are done.
-        if token_bundle.token == " ":
+        if token_bundle.token == " " or token_bundle.token == "":
             return True # Lets just ignore whitespace for now.
         if token_bundle.token == ",":
             self._is_done = True

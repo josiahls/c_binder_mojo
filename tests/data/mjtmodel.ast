@@ -76,11 +76,11 @@ mjModel,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=64)   
 					SingleCommentNode(parent=63,current_idx=65)// disable default feature bitflags
 					WhitespaceNode(parent=63,n_lines=1,current_idx=66) 
-					EnumFieldNode(field_name=mjDSBL_CONSTRAINT,parent=63,current_idx=67)mjDSBL_CONSTRAINT   = 1<<0 ,
+					EnumFieldNode(field_name=mjDSBL_CONSTRAINT,parent=63,current_idx=67)mjDSBL_CONSTRAINT = 1<<0 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=68)    
 					SingleCommentNode(parent=63,current_idx=69)// entire constraint solver
 					WhitespaceNode(parent=63,n_lines=1,current_idx=70) 
-					EnumFieldNode(field_name=mjDSBL_EQUALITY,parent=63,current_idx=71)mjDSBL_EQUALITY     = 1<<1 ,
+					EnumFieldNode(field_name=mjDSBL_EQUALITY,parent=63,current_idx=71)mjDSBL_EQUALITY = 1<<1 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=72)    
 					SingleCommentNode(parent=63,current_idx=73)// equality constraints
 					WhitespaceNode(parent=63,n_lines=1,current_idx=74) 
@@ -88,27 +88,27 @@ mjModel,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=76)    
 					SingleCommentNode(parent=63,current_idx=77)// joint and tendon frictionloss constraints
 					WhitespaceNode(parent=63,n_lines=1,current_idx=78) 
-					EnumFieldNode(field_name=mjDSBL_LIMIT,parent=63,current_idx=79)mjDSBL_LIMIT        = 1<<3 ,
+					EnumFieldNode(field_name=mjDSBL_LIMIT,parent=63,current_idx=79)mjDSBL_LIMIT = 1<<3 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=80)    
 					SingleCommentNode(parent=63,current_idx=81)// joint and tendon limit constraints
 					WhitespaceNode(parent=63,n_lines=1,current_idx=82) 
-					EnumFieldNode(field_name=mjDSBL_CONTACT,parent=63,current_idx=83)mjDSBL_CONTACT      = 1<<4 ,
+					EnumFieldNode(field_name=mjDSBL_CONTACT,parent=63,current_idx=83)mjDSBL_CONTACT = 1<<4 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=84)    
 					SingleCommentNode(parent=63,current_idx=85)// contact constraints
 					WhitespaceNode(parent=63,n_lines=1,current_idx=86) 
-					EnumFieldNode(field_name=mjDSBL_PASSIVE,parent=63,current_idx=87)mjDSBL_PASSIVE      = 1<<5 ,
+					EnumFieldNode(field_name=mjDSBL_PASSIVE,parent=63,current_idx=87)mjDSBL_PASSIVE = 1<<5 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=88)    
 					SingleCommentNode(parent=63,current_idx=89)// passive forces
 					WhitespaceNode(parent=63,n_lines=1,current_idx=90) 
-					EnumFieldNode(field_name=mjDSBL_GRAVITY,parent=63,current_idx=91)mjDSBL_GRAVITY      = 1<<6 ,
+					EnumFieldNode(field_name=mjDSBL_GRAVITY,parent=63,current_idx=91)mjDSBL_GRAVITY = 1<<6 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=92)    
 					SingleCommentNode(parent=63,current_idx=93)// gravitational forces
 					WhitespaceNode(parent=63,n_lines=1,current_idx=94) 
-					EnumFieldNode(field_name=mjDSBL_CLAMPCTRL,parent=63,current_idx=95)mjDSBL_CLAMPCTRL    = 1<<7 ,
+					EnumFieldNode(field_name=mjDSBL_CLAMPCTRL,parent=63,current_idx=95)mjDSBL_CLAMPCTRL = 1<<7 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=96)    
 					SingleCommentNode(parent=63,current_idx=97)// clamp control to specified range
 					WhitespaceNode(parent=63,n_lines=1,current_idx=98) 
-					EnumFieldNode(field_name=mjDSBL_WARMSTART,parent=63,current_idx=99)mjDSBL_WARMSTART    = 1<<8 ,
+					EnumFieldNode(field_name=mjDSBL_WARMSTART,parent=63,current_idx=99)mjDSBL_WARMSTART = 1<<8 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=100)    
 					SingleCommentNode(parent=63,current_idx=101)// warmstart constraint solver
 					WhitespaceNode(parent=63,n_lines=1,current_idx=102) 
@@ -116,31 +116,31 @@ mjModel,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=104)    
 					SingleCommentNode(parent=63,current_idx=105)// remove collisions with parent body
 					WhitespaceNode(parent=63,n_lines=1,current_idx=106) 
-					EnumFieldNode(field_name=mjDSBL_ACTUATION,parent=63,current_idx=107)mjDSBL_ACTUATION    = 1<<10 ,
+					EnumFieldNode(field_name=mjDSBL_ACTUATION,parent=63,current_idx=107)mjDSBL_ACTUATION = 1<<10 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=108)   
 					SingleCommentNode(parent=63,current_idx=109)// apply actuation forces
 					WhitespaceNode(parent=63,n_lines=1,current_idx=110) 
-					EnumFieldNode(field_name=mjDSBL_REFSAFE,parent=63,current_idx=111)mjDSBL_REFSAFE      = 1<<11 ,
+					EnumFieldNode(field_name=mjDSBL_REFSAFE,parent=63,current_idx=111)mjDSBL_REFSAFE = 1<<11 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=112)   
 					SingleCommentNode(parent=63,current_idx=113)// integrator safety: make ref[0]>=2*timestep
 					WhitespaceNode(parent=63,n_lines=1,current_idx=114) 
-					EnumFieldNode(field_name=mjDSBL_SENSOR,parent=63,current_idx=115)mjDSBL_SENSOR       = 1<<12 ,
+					EnumFieldNode(field_name=mjDSBL_SENSOR,parent=63,current_idx=115)mjDSBL_SENSOR = 1<<12 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=116)   
 					SingleCommentNode(parent=63,current_idx=117)// sensors
 					WhitespaceNode(parent=63,n_lines=1,current_idx=118) 
-					EnumFieldNode(field_name=mjDSBL_MIDPHASE,parent=63,current_idx=119)mjDSBL_MIDPHASE     = 1<<13 ,
+					EnumFieldNode(field_name=mjDSBL_MIDPHASE,parent=63,current_idx=119)mjDSBL_MIDPHASE = 1<<13 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=120)   
 					SingleCommentNode(parent=63,current_idx=121)// mid-phase collision filtering
 					WhitespaceNode(parent=63,n_lines=1,current_idx=122) 
-					EnumFieldNode(field_name=mjDSBL_EULERDAMP,parent=63,current_idx=123)mjDSBL_EULERDAMP    = 1<<14 ,
+					EnumFieldNode(field_name=mjDSBL_EULERDAMP,parent=63,current_idx=123)mjDSBL_EULERDAMP = 1<<14 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=124)   
 					SingleCommentNode(parent=63,current_idx=125)// implicit integration of joint damping in Euler integrator
 					WhitespaceNode(parent=63,n_lines=1,current_idx=126) 
-					EnumFieldNode(field_name=mjDSBL_AUTORESET,parent=63,current_idx=127)mjDSBL_AUTORESET    = 1<<15 ,
+					EnumFieldNode(field_name=mjDSBL_AUTORESET,parent=63,current_idx=127)mjDSBL_AUTORESET = 1<<15 ,
 					WhitespaceNode(parent=63,n_lines=1,current_idx=128)   
 					SingleCommentNode(parent=63,current_idx=129)// automatic reset when numerical issues are detected
 					WhitespaceNode(parent=63,n_lines=2,current_idx=130)  
-					EnumFieldNode(field_name=mjNDISABLE,parent=63,current_idx=131)mjNDISABLE          = 16
+					EnumFieldNode(field_name=mjNDISABLE,parent=63,current_idx=131)mjNDISABLE = 16
 					WhitespaceNode(parent=63,n_lines=1,current_idx=132)      
 					SingleCommentNode(parent=63,current_idx=133)// number of disable flags
 				}
@@ -153,37 +153,37 @@ mjModel,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=139)    
 					SingleCommentNode(parent=138,current_idx=140)// enable optional feature bitflags
 					WhitespaceNode(parent=138,n_lines=1,current_idx=141) 
-					EnumFieldNode(field_name=mjENBL_OVERRIDE,parent=138,current_idx=142)mjENBL_OVERRIDE     = 1<<0 ,
+					EnumFieldNode(field_name=mjENBL_OVERRIDE,parent=138,current_idx=142)mjENBL_OVERRIDE = 1<<0 ,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=143)    
 					SingleCommentNode(parent=138,current_idx=144)// override contact parameters
 					WhitespaceNode(parent=138,n_lines=1,current_idx=145) 
-					EnumFieldNode(field_name=mjENBL_ENERGY,parent=138,current_idx=146)mjENBL_ENERGY       = 1<<1 ,
+					EnumFieldNode(field_name=mjENBL_ENERGY,parent=138,current_idx=146)mjENBL_ENERGY = 1<<1 ,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=147)    
 					SingleCommentNode(parent=138,current_idx=148)// energy computation
 					WhitespaceNode(parent=138,n_lines=1,current_idx=149) 
-					EnumFieldNode(field_name=mjENBL_FWDINV,parent=138,current_idx=150)mjENBL_FWDINV       = 1<<2 ,
+					EnumFieldNode(field_name=mjENBL_FWDINV,parent=138,current_idx=150)mjENBL_FWDINV = 1<<2 ,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=151)    
 					SingleCommentNode(parent=138,current_idx=152)// record solver statistics
 					WhitespaceNode(parent=138,n_lines=1,current_idx=153) 
-					EnumFieldNode(field_name=mjENBL_INVDISCRETE,parent=138,current_idx=154)mjENBL_INVDISCRETE  = 1<<3 ,
+					EnumFieldNode(field_name=mjENBL_INVDISCRETE,parent=138,current_idx=154)mjENBL_INVDISCRETE = 1<<3 ,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=155)    
 					SingleCommentNode(parent=138,current_idx=156)// discrete-time inverse dynamics
 					WhitespaceNode(parent=138,n_lines=1,current_idx=157)                                 
 					SingleCommentNode(parent=138,current_idx=158)// experimental features:
 					WhitespaceNode(parent=138,n_lines=1,current_idx=159) 
-					EnumFieldNode(field_name=mjENBL_MULTICCD,parent=138,current_idx=160)mjENBL_MULTICCD     = 1<<4 ,
+					EnumFieldNode(field_name=mjENBL_MULTICCD,parent=138,current_idx=160)mjENBL_MULTICCD = 1<<4 ,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=161)    
 					SingleCommentNode(parent=138,current_idx=162)// multi-point convex collision detection
 					WhitespaceNode(parent=138,n_lines=1,current_idx=163) 
-					EnumFieldNode(field_name=mjENBL_ISLAND,parent=138,current_idx=164)mjENBL_ISLAND       = 1<<5 ,
+					EnumFieldNode(field_name=mjENBL_ISLAND,parent=138,current_idx=164)mjENBL_ISLAND = 1<<5 ,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=165)    
 					SingleCommentNode(parent=138,current_idx=166)// constraint island discovery
 					WhitespaceNode(parent=138,n_lines=1,current_idx=167) 
-					EnumFieldNode(field_name=mjENBL_NATIVECCD,parent=138,current_idx=168)mjENBL_NATIVECCD    = 1<<6 ,
+					EnumFieldNode(field_name=mjENBL_NATIVECCD,parent=138,current_idx=168)mjENBL_NATIVECCD = 1<<6 ,
 					WhitespaceNode(parent=138,n_lines=1,current_idx=169)    
 					SingleCommentNode(parent=138,current_idx=170)// native convex collision detection
 					WhitespaceNode(parent=138,n_lines=2,current_idx=171)  
-					EnumFieldNode(field_name=mjNENABLE,parent=138,current_idx=172)mjNENABLE           = 7
+					EnumFieldNode(field_name=mjNENABLE,parent=138,current_idx=172)mjNENABLE = 7
 					WhitespaceNode(parent=138,n_lines=1,current_idx=173)       
 					SingleCommentNode(parent=138,current_idx=174)// number of enable flags
 				}
@@ -196,7 +196,7 @@ mjModel,
 					WhitespaceNode(parent=179,n_lines=1,current_idx=180)        
 					SingleCommentNode(parent=179,current_idx=181)// type of degree of freedom
 					WhitespaceNode(parent=179,n_lines=1,current_idx=182) 
-					EnumFieldNode(field_name=mjJNT_FREE,parent=179,current_idx=183)mjJNT_FREE          = 0 ,
+					EnumFieldNode(field_name=mjJNT_FREE,parent=179,current_idx=183)mjJNT_FREE = 0 ,
 					WhitespaceNode(parent=179,n_lines=1,current_idx=184)       
 					SingleCommentNode(parent=179,current_idx=185)// global position and orientation (quat)       (7)
 					WhitespaceNode(parent=179,n_lines=1,current_idx=186) 
@@ -208,7 +208,7 @@ mjModel,
 					WhitespaceNode(parent=179,n_lines=1,current_idx=192)                   
 					SingleCommentNode(parent=179,current_idx=193)// sliding distance along body-fixed axis       (1)
 					WhitespaceNode(parent=179,n_lines=1,current_idx=194) 
-					EnumFieldNode(field_name=mjJNT_HINGE,parent=179,current_idx=195)mjJNT_HINGE                    
+					EnumFieldNode(field_name=mjJNT_HINGE,parent=179,current_idx=195)mjJNT_HINGE
 					SingleCommentNode(parent=179,current_idx=196)// rotation angle (rad) around body-fixed axis  (1)
 				}
 			DeletedNode(parent=15,current_idx=0)mjtJoint
@@ -222,7 +222,7 @@ mjModel,
 					WhitespaceNode(parent=201,n_lines=1,current_idx=204) 
 					SingleCommentNode(parent=201,current_idx=205)// regular geom types
 					WhitespaceNode(parent=201,n_lines=1,current_idx=206) 
-					EnumFieldNode(field_name=mjGEOM_PLANE,parent=201,current_idx=207)mjGEOM_PLANE        = 0 ,
+					EnumFieldNode(field_name=mjGEOM_PLANE,parent=201,current_idx=207)mjGEOM_PLANE = 0 ,
 					WhitespaceNode(parent=201,n_lines=1,current_idx=208)       
 					SingleCommentNode(parent=201,current_idx=209)// plane
 					WhitespaceNode(parent=201,n_lines=1,current_idx=210) 
@@ -264,7 +264,7 @@ mjModel,
 					WhitespaceNode(parent=201,n_lines=2,current_idx=246)  
 					SingleCommentNode(parent=201,current_idx=247)// rendering-only geom types: not used in mjModel ,  not counted in mjNGEOMTYPES
 					WhitespaceNode(parent=201,n_lines=1,current_idx=248) 
-					EnumFieldNode(field_name=mjGEOM_ARROW,parent=201,current_idx=249)mjGEOM_ARROW        = 100 ,
+					EnumFieldNode(field_name=mjGEOM_ARROW,parent=201,current_idx=249)mjGEOM_ARROW = 100 ,
 					WhitespaceNode(parent=201,n_lines=1,current_idx=250)     
 					SingleCommentNode(parent=201,current_idx=251)// arrow
 					WhitespaceNode(parent=201,n_lines=1,current_idx=252) 
@@ -300,7 +300,7 @@ mjModel,
 					WhitespaceNode(parent=201,n_lines=1,current_idx=282)               
 					SingleCommentNode(parent=201,current_idx=283)// triangle
 					WhitespaceNode(parent=201,n_lines=2,current_idx=284)  
-					EnumFieldNode(field_name=mjGEOM_NONE,parent=201,current_idx=285)mjGEOM_NONE         = 1001
+					EnumFieldNode(field_name=mjGEOM_NONE,parent=201,current_idx=285)mjGEOM_NONE = 1001
 					WhitespaceNode(parent=201,n_lines=1,current_idx=286)    
 					SingleCommentNode(parent=201,current_idx=287)// missing geom type
 				}
@@ -313,7 +313,7 @@ mjModel,
 					WhitespaceNode(parent=292,n_lines=1,current_idx=293)     
 					SingleCommentNode(parent=292,current_idx=294)// tracking mode for camera and light
 					WhitespaceNode(parent=292,n_lines=1,current_idx=295) 
-					EnumFieldNode(field_name=mjCAMLIGHT_FIXED,parent=292,current_idx=296)mjCAMLIGHT_FIXED    = 0 ,
+					EnumFieldNode(field_name=mjCAMLIGHT_FIXED,parent=292,current_idx=296)mjCAMLIGHT_FIXED = 0 ,
 					WhitespaceNode(parent=292,n_lines=1,current_idx=297)       
 					SingleCommentNode(parent=292,current_idx=298)// pos and rot fixed in body
 					WhitespaceNode(parent=292,n_lines=1,current_idx=299) 
@@ -329,7 +329,7 @@ mjModel,
 					WhitespaceNode(parent=292,n_lines=1,current_idx=309)         
 					SingleCommentNode(parent=292,current_idx=310)// pos fixed in body ,  rot tracks target body
 					WhitespaceNode(parent=292,n_lines=1,current_idx=311) 
-					EnumFieldNode(field_name=mjCAMLIGHT_TARGETBODYCOM,parent=292,current_idx=312)mjCAMLIGHT_TARGETBODYCOM       
+					EnumFieldNode(field_name=mjCAMLIGHT_TARGETBODYCOM,parent=292,current_idx=312)mjCAMLIGHT_TARGETBODYCOM
 					SingleCommentNode(parent=292,current_idx=313)// pos fixed in body ,  rot tracks target subtree com
 				}
 			DeletedNode(parent=15,current_idx=0)mjtCamLight
@@ -341,7 +341,7 @@ mjModel,
 					WhitespaceNode(parent=318,n_lines=1,current_idx=319)      
 					SingleCommentNode(parent=318,current_idx=320)// type of texture
 					WhitespaceNode(parent=318,n_lines=1,current_idx=321) 
-					EnumFieldNode(field_name=mjTEXTURE_2D,parent=318,current_idx=322)mjTEXTURE_2D        = 0 ,
+					EnumFieldNode(field_name=mjTEXTURE_2D,parent=318,current_idx=322)mjTEXTURE_2D = 0 ,
 					WhitespaceNode(parent=318,n_lines=1,current_idx=323)       
 					SingleCommentNode(parent=318,current_idx=324)// 2d texture ,  suitable for planes and hfields
 					WhitespaceNode(parent=318,n_lines=1,current_idx=325) 
@@ -349,7 +349,7 @@ mjModel,
 					WhitespaceNode(parent=318,n_lines=1,current_idx=327)                
 					SingleCommentNode(parent=318,current_idx=328)// cube texture ,  suitable for all other geom types
 					WhitespaceNode(parent=318,n_lines=1,current_idx=329) 
-					EnumFieldNode(field_name=mjTEXTURE_SKYBOX,parent=318,current_idx=330)mjTEXTURE_SKYBOX               
+					EnumFieldNode(field_name=mjTEXTURE_SKYBOX,parent=318,current_idx=330)mjTEXTURE_SKYBOX
 					SingleCommentNode(parent=318,current_idx=331)// cube texture used as skybox
 				}
 			DeletedNode(parent=15,current_idx=0)mjtTexture
@@ -361,7 +361,7 @@ mjModel,
 					WhitespaceNode(parent=336,n_lines=1,current_idx=337)  
 					SingleCommentNode(parent=336,current_idx=338)// role of texture map in rendering
 					WhitespaceNode(parent=336,n_lines=1,current_idx=339) 
-					EnumFieldNode(field_name=mjTEXROLE_USER,parent=336,current_idx=340)mjTEXROLE_USER      = 0 ,
+					EnumFieldNode(field_name=mjTEXROLE_USER,parent=336,current_idx=340)mjTEXROLE_USER = 0 ,
 					WhitespaceNode(parent=336,n_lines=1,current_idx=341)       
 					SingleCommentNode(parent=336,current_idx=342)// unspecified
 					WhitespaceNode(parent=336,n_lines=1,current_idx=343) 
@@ -401,10 +401,10 @@ mjModel,
 					WhitespaceNode(parent=336,n_lines=1,current_idx=377)                 
 					SingleCommentNode(parent=336,current_idx=378)// occlusion ,  roughness ,  metallic
 					WhitespaceNode(parent=336,n_lines=1,current_idx=379) 
-					EnumFieldNode(field_name=mjNTEXROLE,parent=336,current_idx=380)mjNTEXROLE } mjtTextureRole ;    typedef enum mjtIntegrator_ {    
+					EnumFieldNode(field_name=mjNTEXROLE,parent=336,current_idx=380)mjNTEXROLE } mjtTextureRole ; typedef enum mjtIntegrator_ {
 					SingleCommentNode(parent=336,current_idx=381)// integrator mode
 					WhitespaceNode(parent=336,n_lines=1,current_idx=382) 
-					EnumFieldNode(field_name=mjINT_EULER,parent=336,current_idx=383)mjINT_EULER         = 0 ,
+					EnumFieldNode(field_name=mjINT_EULER,parent=336,current_idx=383)mjINT_EULER = 0 ,
 					WhitespaceNode(parent=336,n_lines=1,current_idx=384)       
 					SingleCommentNode(parent=336,current_idx=385)// semi-implicit Euler
 					WhitespaceNode(parent=336,n_lines=1,current_idx=386) 
@@ -416,7 +416,7 @@ mjModel,
 					WhitespaceNode(parent=336,n_lines=1,current_idx=392)                
 					SingleCommentNode(parent=336,current_idx=393)// implicit in velocity
 					WhitespaceNode(parent=336,n_lines=1,current_idx=394) 
-					EnumFieldNode(field_name=mjINT_IMPLICITFAST,parent=336,current_idx=395)mjINT_IMPLICITFAST             
+					EnumFieldNode(field_name=mjINT_IMPLICITFAST,parent=336,current_idx=395)mjINT_IMPLICITFAST
 					SingleCommentNode(parent=336,current_idx=396)// implicit in velocity ,  no rne derivative
 				}
 			DeletedNode(parent=15,current_idx=0)mjtIntegrator
@@ -428,11 +428,11 @@ mjModel,
 					WhitespaceNode(parent=401,n_lines=1,current_idx=402)         
 					SingleCommentNode(parent=401,current_idx=403)// type of friction cone
 					WhitespaceNode(parent=401,n_lines=1,current_idx=404) 
-					EnumFieldNode(field_name=mjCONE_PYRAMIDAL,parent=401,current_idx=405)mjCONE_PYRAMIDAL     = 0 ,
+					EnumFieldNode(field_name=mjCONE_PYRAMIDAL,parent=401,current_idx=405)mjCONE_PYRAMIDAL = 0 ,
 					WhitespaceNode(parent=401,n_lines=1,current_idx=406)      
 					SingleCommentNode(parent=401,current_idx=407)// pyramidal
 					WhitespaceNode(parent=401,n_lines=1,current_idx=408) 
-					EnumFieldNode(field_name=mjCONE_ELLIPTIC,parent=401,current_idx=409)mjCONE_ELLIPTIC                
+					EnumFieldNode(field_name=mjCONE_ELLIPTIC,parent=401,current_idx=409)mjCONE_ELLIPTIC
 					SingleCommentNode(parent=401,current_idx=410)// elliptic
 				}
 			DeletedNode(parent=15,current_idx=0)mjtCone
@@ -444,7 +444,7 @@ mjModel,
 					WhitespaceNode(parent=415,n_lines=1,current_idx=416)     
 					SingleCommentNode(parent=415,current_idx=417)// type of constraint Jacobian
 					WhitespaceNode(parent=415,n_lines=1,current_idx=418) 
-					EnumFieldNode(field_name=mjJAC_DENSE,parent=415,current_idx=419)mjJAC_DENSE          = 0 ,
+					EnumFieldNode(field_name=mjJAC_DENSE,parent=415,current_idx=419)mjJAC_DENSE = 0 ,
 					WhitespaceNode(parent=415,n_lines=1,current_idx=420)      
 					SingleCommentNode(parent=415,current_idx=421)// dense
 					WhitespaceNode(parent=415,n_lines=1,current_idx=422) 
@@ -452,7 +452,7 @@ mjModel,
 					WhitespaceNode(parent=415,n_lines=1,current_idx=424)                  
 					SingleCommentNode(parent=415,current_idx=425)// sparse
 					WhitespaceNode(parent=415,n_lines=1,current_idx=426) 
-					EnumFieldNode(field_name=mjJAC_AUTO,parent=415,current_idx=427)mjJAC_AUTO                     
+					EnumFieldNode(field_name=mjJAC_AUTO,parent=415,current_idx=427)mjJAC_AUTO
 					SingleCommentNode(parent=415,current_idx=428)// dense if nv<60 ,  sparse otherwise
 				}
 			DeletedNode(parent=15,current_idx=0)mjtJacobian
@@ -464,7 +464,7 @@ mjModel,
 					WhitespaceNode(parent=433,n_lines=1,current_idx=434)       
 					SingleCommentNode(parent=433,current_idx=435)// constraint solver algorithm
 					WhitespaceNode(parent=433,n_lines=1,current_idx=436) 
-					EnumFieldNode(field_name=mjSOL_PGS,parent=433,current_idx=437)mjSOL_PGS            = 0 ,
+					EnumFieldNode(field_name=mjSOL_PGS,parent=433,current_idx=437)mjSOL_PGS = 0 ,
 					WhitespaceNode(parent=433,n_lines=1,current_idx=438)      
 					SingleCommentNode(parent=433,current_idx=439)// PGS    (dual)
 					WhitespaceNode(parent=433,n_lines=1,current_idx=440) 
@@ -472,7 +472,7 @@ mjModel,
 					WhitespaceNode(parent=433,n_lines=1,current_idx=442)                      
 					SingleCommentNode(parent=433,current_idx=443)// CG     (primal)
 					WhitespaceNode(parent=433,n_lines=1,current_idx=444) 
-					EnumFieldNode(field_name=mjSOL_NEWTON,parent=433,current_idx=445)mjSOL_NEWTON                   
+					EnumFieldNode(field_name=mjSOL_NEWTON,parent=433,current_idx=445)mjSOL_NEWTON
 					SingleCommentNode(parent=433,current_idx=446)// Newton (primal)
 				}
 			DeletedNode(parent=15,current_idx=0)mjtSolver
@@ -484,7 +484,7 @@ mjModel,
 					WhitespaceNode(parent=451,n_lines=1,current_idx=452)           
 					SingleCommentNode(parent=451,current_idx=453)// type of equality constraint
 					WhitespaceNode(parent=451,n_lines=1,current_idx=454) 
-					EnumFieldNode(field_name=mjEQ_CONNECT,parent=451,current_idx=455)mjEQ_CONNECT        = 0 ,
+					EnumFieldNode(field_name=mjEQ_CONNECT,parent=451,current_idx=455)mjEQ_CONNECT = 0 ,
 					WhitespaceNode(parent=451,n_lines=1,current_idx=456)       
 					SingleCommentNode(parent=451,current_idx=457)// connect two bodies at a point (ball joint)
 					WhitespaceNode(parent=451,n_lines=1,current_idx=458) 
@@ -504,7 +504,7 @@ mjModel,
 					WhitespaceNode(parent=451,n_lines=1,current_idx=472)                     
 					SingleCommentNode(parent=451,current_idx=473)// fix all edge lengths of a flex
 					WhitespaceNode(parent=451,n_lines=1,current_idx=474) 
-					EnumFieldNode(field_name=mjEQ_DISTANCE,parent=451,current_idx=475)mjEQ_DISTANCE                  
+					EnumFieldNode(field_name=mjEQ_DISTANCE,parent=451,current_idx=475)mjEQ_DISTANCE
 					SingleCommentNode(parent=451,current_idx=476)// unsupported ,  will cause an error if used
 				}
 			DeletedNode(parent=15,current_idx=0)mjtEq
@@ -516,7 +516,7 @@ mjModel,
 					WhitespaceNode(parent=481,n_lines=1,current_idx=482)         
 					SingleCommentNode(parent=481,current_idx=483)// type of tendon wrap object
 					WhitespaceNode(parent=481,n_lines=1,current_idx=484) 
-					EnumFieldNode(field_name=mjWRAP_NONE,parent=481,current_idx=485)mjWRAP_NONE         = 0 ,
+					EnumFieldNode(field_name=mjWRAP_NONE,parent=481,current_idx=485)mjWRAP_NONE = 0 ,
 					WhitespaceNode(parent=481,n_lines=1,current_idx=486)       
 					SingleCommentNode(parent=481,current_idx=487)// null object
 					WhitespaceNode(parent=481,n_lines=1,current_idx=488) 
@@ -536,7 +536,7 @@ mjModel,
 					WhitespaceNode(parent=481,n_lines=1,current_idx=502)                 
 					SingleCommentNode(parent=481,current_idx=503)// wrap around sphere
 					WhitespaceNode(parent=481,n_lines=1,current_idx=504) 
-					EnumFieldNode(field_name=mjWRAP_CYLINDER,parent=481,current_idx=505)mjWRAP_CYLINDER                
+					EnumFieldNode(field_name=mjWRAP_CYLINDER,parent=481,current_idx=505)mjWRAP_CYLINDER
 					SingleCommentNode(parent=481,current_idx=506)// wrap around (infinite) cylinder
 				}
 			DeletedNode(parent=15,current_idx=0)mjtWrap
@@ -548,7 +548,7 @@ mjModel,
 					WhitespaceNode(parent=511,n_lines=1,current_idx=512)          
 					SingleCommentNode(parent=511,current_idx=513)// type of actuator transmission
 					WhitespaceNode(parent=511,n_lines=1,current_idx=514) 
-					EnumFieldNode(field_name=mjTRN_JOINT,parent=511,current_idx=515)mjTRN_JOINT         = 0 ,
+					EnumFieldNode(field_name=mjTRN_JOINT,parent=511,current_idx=515)mjTRN_JOINT = 0 ,
 					WhitespaceNode(parent=511,n_lines=1,current_idx=516)       
 					SingleCommentNode(parent=511,current_idx=517)// force on joint
 					WhitespaceNode(parent=511,n_lines=1,current_idx=518) 
@@ -572,7 +572,7 @@ mjModel,
 					WhitespaceNode(parent=511,n_lines=1,current_idx=536)                    
 					SingleCommentNode(parent=511,current_idx=537)// adhesion force on a body's geoms
 					WhitespaceNode(parent=511,n_lines=2,current_idx=538)  
-					EnumFieldNode(field_name=mjTRN_UNDEFINED,parent=511,current_idx=539)mjTRN_UNDEFINED     = 1000
+					EnumFieldNode(field_name=mjTRN_UNDEFINED,parent=511,current_idx=539)mjTRN_UNDEFINED = 1000
 					WhitespaceNode(parent=511,n_lines=1,current_idx=540)    
 					SingleCommentNode(parent=511,current_idx=541)// undefined transmission type
 				}
@@ -585,7 +585,7 @@ mjModel,
 					WhitespaceNode(parent=546,n_lines=1,current_idx=547)          
 					SingleCommentNode(parent=546,current_idx=548)// type of actuator dynamics
 					WhitespaceNode(parent=546,n_lines=1,current_idx=549) 
-					EnumFieldNode(field_name=mjDYN_NONE,parent=546,current_idx=550)mjDYN_NONE          = 0 ,
+					EnumFieldNode(field_name=mjDYN_NONE,parent=546,current_idx=550)mjDYN_NONE = 0 ,
 					WhitespaceNode(parent=546,n_lines=1,current_idx=551)       
 					SingleCommentNode(parent=546,current_idx=552)// no internal dynamics ;  ctrl specifies force
 					WhitespaceNode(parent=546,n_lines=1,current_idx=553) 
@@ -605,7 +605,7 @@ mjModel,
 					WhitespaceNode(parent=546,n_lines=1,current_idx=567)                  
 					SingleCommentNode(parent=546,current_idx=568)// piece-wise linear filter with two time constants
 					WhitespaceNode(parent=546,n_lines=1,current_idx=569) 
-					EnumFieldNode(field_name=mjDYN_USER,parent=546,current_idx=570)mjDYN_USER                     
+					EnumFieldNode(field_name=mjDYN_USER,parent=546,current_idx=570)mjDYN_USER
 					SingleCommentNode(parent=546,current_idx=571)// user-defined dynamics type
 				}
 			DeletedNode(parent=15,current_idx=0)mjtDyn
@@ -617,7 +617,7 @@ mjModel,
 					WhitespaceNode(parent=576,n_lines=1,current_idx=577)         
 					SingleCommentNode(parent=576,current_idx=578)// type of actuator gain
 					WhitespaceNode(parent=576,n_lines=1,current_idx=579) 
-					EnumFieldNode(field_name=mjGAIN_FIXED,parent=576,current_idx=580)mjGAIN_FIXED        = 0 ,
+					EnumFieldNode(field_name=mjGAIN_FIXED,parent=576,current_idx=580)mjGAIN_FIXED = 0 ,
 					WhitespaceNode(parent=576,n_lines=1,current_idx=581)       
 					SingleCommentNode(parent=576,current_idx=582)// fixed gain
 					WhitespaceNode(parent=576,n_lines=1,current_idx=583) 
@@ -629,7 +629,7 @@ mjModel,
 					WhitespaceNode(parent=576,n_lines=1,current_idx=589)                 
 					SingleCommentNode(parent=576,current_idx=590)// muscle FLV curve computed by mju_muscleGain()
 					WhitespaceNode(parent=576,n_lines=1,current_idx=591) 
-					EnumFieldNode(field_name=mjGAIN_USER,parent=576,current_idx=592)mjGAIN_USER                    
+					EnumFieldNode(field_name=mjGAIN_USER,parent=576,current_idx=592)mjGAIN_USER
 					SingleCommentNode(parent=576,current_idx=593)// user-defined gain type
 				}
 			DeletedNode(parent=15,current_idx=0)mjtGain
@@ -641,7 +641,7 @@ mjModel,
 					WhitespaceNode(parent=598,n_lines=1,current_idx=599)         
 					SingleCommentNode(parent=598,current_idx=600)// type of actuator bias
 					WhitespaceNode(parent=598,n_lines=1,current_idx=601) 
-					EnumFieldNode(field_name=mjBIAS_NONE,parent=598,current_idx=602)mjBIAS_NONE         = 0 ,
+					EnumFieldNode(field_name=mjBIAS_NONE,parent=598,current_idx=602)mjBIAS_NONE = 0 ,
 					WhitespaceNode(parent=598,n_lines=1,current_idx=603)       
 					SingleCommentNode(parent=598,current_idx=604)// no bias
 					WhitespaceNode(parent=598,n_lines=1,current_idx=605) 
@@ -653,7 +653,7 @@ mjModel,
 					WhitespaceNode(parent=598,n_lines=1,current_idx=611)                 
 					SingleCommentNode(parent=598,current_idx=612)// muscle passive force computed by mju_muscleBias()
 					WhitespaceNode(parent=598,n_lines=1,current_idx=613) 
-					EnumFieldNode(field_name=mjBIAS_USER,parent=598,current_idx=614)mjBIAS_USER                    
+					EnumFieldNode(field_name=mjBIAS_USER,parent=598,current_idx=614)mjBIAS_USER
 					SingleCommentNode(parent=598,current_idx=615)// user-defined bias type
 				}
 			DeletedNode(parent=15,current_idx=0)mjtBias
@@ -665,7 +665,7 @@ mjModel,
 					WhitespaceNode(parent=620,n_lines=1,current_idx=621)          
 					SingleCommentNode(parent=620,current_idx=622)// type of MujoCo object
 					WhitespaceNode(parent=620,n_lines=1,current_idx=623) 
-					EnumFieldNode(field_name=mjOBJ_UNKNOWN,parent=620,current_idx=624)mjOBJ_UNKNOWN       = 0 ,
+					EnumFieldNode(field_name=mjOBJ_UNKNOWN,parent=620,current_idx=624)mjOBJ_UNKNOWN = 0 ,
 					WhitespaceNode(parent=620,n_lines=1,current_idx=625)       
 					SingleCommentNode(parent=620,current_idx=626)// unknown object type
 					WhitespaceNode(parent=620,n_lines=1,current_idx=627) 
@@ -775,7 +775,7 @@ mjModel,
 					WhitespaceNode(parent=620,n_lines=2,current_idx=731)  
 					SingleCommentNode(parent=620,current_idx=732)// meta elements ,  do not appear in mjModel
 					WhitespaceNode(parent=620,n_lines=1,current_idx=733) 
-					EnumFieldNode(field_name=mjOBJ_FRAME,parent=620,current_idx=734)mjOBJ_FRAME         = 100
+					EnumFieldNode(field_name=mjOBJ_FRAME,parent=620,current_idx=734)mjOBJ_FRAME = 100
 					WhitespaceNode(parent=620,n_lines=1,current_idx=735)     
 					SingleCommentNode(parent=620,current_idx=736)// frame
 				}
@@ -788,7 +788,7 @@ mjModel,
 					WhitespaceNode(parent=741,n_lines=1,current_idx=742)   
 					SingleCommentNode(parent=741,current_idx=743)// type of constraint
 					WhitespaceNode(parent=741,n_lines=1,current_idx=744) 
-					EnumFieldNode(field_name=mjCNSTR_EQUALITY,parent=741,current_idx=745)mjCNSTR_EQUALITY    = 0 ,
+					EnumFieldNode(field_name=mjCNSTR_EQUALITY,parent=741,current_idx=745)mjCNSTR_EQUALITY = 0 ,
 					WhitespaceNode(parent=741,n_lines=1,current_idx=746)       
 					SingleCommentNode(parent=741,current_idx=747)// equality constraint
 					WhitespaceNode(parent=741,n_lines=1,current_idx=748) 
@@ -816,7 +816,7 @@ mjModel,
 					WhitespaceNode(parent=741,n_lines=1,current_idx=770)     
 					SingleCommentNode(parent=741,current_idx=771)// frictional contact ,  pyramidal friction cone
 					WhitespaceNode(parent=741,n_lines=1,current_idx=772) 
-					EnumFieldNode(field_name=mjCNSTR_CONTACT_ELLIPTIC,parent=741,current_idx=773)mjCNSTR_CONTACT_ELLIPTIC       
+					EnumFieldNode(field_name=mjCNSTR_CONTACT_ELLIPTIC,parent=741,current_idx=773)mjCNSTR_CONTACT_ELLIPTIC
 					SingleCommentNode(parent=741,current_idx=774)// frictional contact ,  elliptic friction cone
 				}
 			DeletedNode(parent=15,current_idx=0)mjtConstraint
@@ -844,7 +844,7 @@ mjModel,
 					WhitespaceNode(parent=779,n_lines=1,current_idx=796)          
 					SingleCommentNode(parent=779,current_idx=797)// linear cost ,  positive side (friction)
 					WhitespaceNode(parent=779,n_lines=1,current_idx=798) 
-					EnumFieldNode(field_name=mjCNSTRSTATE_CONE,parent=779,current_idx=799)mjCNSTRSTATE_CONE                
+					EnumFieldNode(field_name=mjCNSTRSTATE_CONE,parent=779,current_idx=799)mjCNSTRSTATE_CONE
 					SingleCommentNode(parent=779,current_idx=800)// squared distance to cone cost (elliptic contact)
 				}
 			DeletedNode(parent=15,current_idx=0)mjtConstraintState
@@ -858,7 +858,7 @@ mjModel,
 					WhitespaceNode(parent=805,n_lines=1,current_idx=808) 
 					SingleCommentNode(parent=805,current_idx=809)// common robotic sensors ,  attached to a site
 					WhitespaceNode(parent=805,n_lines=1,current_idx=810) 
-					EnumFieldNode(field_name=mjSENS_TOUCH,parent=805,current_idx=811)mjSENS_TOUCH        = 0 ,
+					EnumFieldNode(field_name=mjSENS_TOUCH,parent=805,current_idx=811)mjSENS_TOUCH = 0 ,
 					WhitespaceNode(parent=805,n_lines=1,current_idx=812)       
 					SingleCommentNode(parent=805,current_idx=813)// scalar contact normal forces summed over sensor zone
 					WhitespaceNode(parent=805,n_lines=1,current_idx=814) 
@@ -1044,7 +1044,7 @@ mjModel,
 					WhitespaceNode(parent=805,n_lines=2,current_idx=994)  
 					SingleCommentNode(parent=805,current_idx=995)// user-defined sensor
 					WhitespaceNode(parent=805,n_lines=1,current_idx=996) 
-					EnumFieldNode(field_name=mjSENS_USER,parent=805,current_idx=997)mjSENS_USER                    
+					EnumFieldNode(field_name=mjSENS_USER,parent=805,current_idx=997)mjSENS_USER
 					SingleCommentNode(parent=805,current_idx=998)// sensor data provided by mjcb_sensor callback
 				}
 			DeletedNode(parent=15,current_idx=0)mjtSensor
@@ -1056,7 +1056,7 @@ mjModel,
 					WhitespaceNode(parent=1003,n_lines=1,current_idx=1004)        
 					SingleCommentNode(parent=1003,current_idx=1005)// computation stage
 					WhitespaceNode(parent=1003,n_lines=1,current_idx=1006) 
-					EnumFieldNode(field_name=mjSTAGE_NONE,parent=1003,current_idx=1007)mjSTAGE_NONE        = 0 ,
+					EnumFieldNode(field_name=mjSTAGE_NONE,parent=1003,current_idx=1007)mjSTAGE_NONE = 0 ,
 					WhitespaceNode(parent=1003,n_lines=1,current_idx=1008)       
 					SingleCommentNode(parent=1003,current_idx=1009)// no computations
 					WhitespaceNode(parent=1003,n_lines=1,current_idx=1010) 
@@ -1068,7 +1068,7 @@ mjModel,
 					WhitespaceNode(parent=1003,n_lines=1,current_idx=1016)                   
 					SingleCommentNode(parent=1003,current_idx=1017)// velocity-dependent computations
 					WhitespaceNode(parent=1003,n_lines=1,current_idx=1018) 
-					EnumFieldNode(field_name=mjSTAGE_ACC,parent=1003,current_idx=1019)mjSTAGE_ACC                    
+					EnumFieldNode(field_name=mjSTAGE_ACC,parent=1003,current_idx=1019)mjSTAGE_ACC
 					SingleCommentNode(parent=1003,current_idx=1020)// acceleration/force-dependent computations
 				}
 			DeletedNode(parent=15,current_idx=0)mjtStage
@@ -1080,7 +1080,7 @@ mjModel,
 					WhitespaceNode(parent=1025,n_lines=1,current_idx=1026)     
 					SingleCommentNode(parent=1025,current_idx=1027)// data type for sensors
 					WhitespaceNode(parent=1025,n_lines=1,current_idx=1028) 
-					EnumFieldNode(field_name=mjDATATYPE_REAL,parent=1025,current_idx=1029)mjDATATYPE_REAL     = 0 ,
+					EnumFieldNode(field_name=mjDATATYPE_REAL,parent=1025,current_idx=1029)mjDATATYPE_REAL = 0 ,
 					WhitespaceNode(parent=1025,n_lines=1,current_idx=1030)       
 					SingleCommentNode(parent=1025,current_idx=1031)// real values ,  no constraints
 					WhitespaceNode(parent=1025,n_lines=1,current_idx=1032) 
@@ -1092,7 +1092,7 @@ mjModel,
 					WhitespaceNode(parent=1025,n_lines=1,current_idx=1038)               
 					SingleCommentNode(parent=1025,current_idx=1039)// 3D unit vector
 					WhitespaceNode(parent=1025,n_lines=1,current_idx=1040) 
-					EnumFieldNode(field_name=mjDATATYPE_QUATERNION,parent=1025,current_idx=1041)mjDATATYPE_QUATERNION          
+					EnumFieldNode(field_name=mjDATATYPE_QUATERNION,parent=1025,current_idx=1041)mjDATATYPE_QUATERNION
 					SingleCommentNode(parent=1025,current_idx=1042)// unit quaternion
 				}
 			DeletedNode(parent=15,current_idx=0)mjtDataType
@@ -1104,7 +1104,7 @@ mjModel,
 					WhitespaceNode(parent=1047,n_lines=1,current_idx=1048)    
 					SingleCommentNode(parent=1047,current_idx=1049)// frame alignment of bodies with their children
 					WhitespaceNode(parent=1047,n_lines=1,current_idx=1050) 
-					EnumFieldNode(field_name=mjSAMEFRAME_NONE,parent=1047,current_idx=1051)mjSAMEFRAME_NONE    = 0 ,
+					EnumFieldNode(field_name=mjSAMEFRAME_NONE,parent=1047,current_idx=1051)mjSAMEFRAME_NONE = 0 ,
 					WhitespaceNode(parent=1047,n_lines=1,current_idx=1052)       
 					SingleCommentNode(parent=1047,current_idx=1053)// no alignment
 					WhitespaceNode(parent=1047,n_lines=1,current_idx=1054) 
@@ -1120,7 +1120,7 @@ mjModel,
 					WhitespaceNode(parent=1047,n_lines=1,current_idx=1064)           
 					SingleCommentNode(parent=1047,current_idx=1065)// frame orientation is same as body orientation
 					WhitespaceNode(parent=1047,n_lines=1,current_idx=1066) 
-					EnumFieldNode(field_name=mjSAMEFRAME_INERTIAROT,parent=1047,current_idx=1067)mjSAMEFRAME_INERTIAROT         
+					EnumFieldNode(field_name=mjSAMEFRAME_INERTIAROT,parent=1047,current_idx=1067)mjSAMEFRAME_INERTIAROT
 					SingleCommentNode(parent=1047,current_idx=1068)// frame orientation is same as inertia orientation
 				}
 			DeletedNode(parent=15,current_idx=0)mjtSameFrame
@@ -1132,7 +1132,7 @@ mjModel,
 					WhitespaceNode(parent=1073,n_lines=1,current_idx=1074)       
 					SingleCommentNode(parent=1073,current_idx=1075)// mode for actuator length range computation
 					WhitespaceNode(parent=1073,n_lines=1,current_idx=1076) 
-					EnumFieldNode(field_name=mjLRMODE_NONE,parent=1073,current_idx=1077)mjLRMODE_NONE   = 0 ,
+					EnumFieldNode(field_name=mjLRMODE_NONE,parent=1073,current_idx=1077)mjLRMODE_NONE = 0 ,
 					WhitespaceNode(parent=1073,n_lines=1,current_idx=1078)           
 					SingleCommentNode(parent=1073,current_idx=1079)// do not process any actuators
 					WhitespaceNode(parent=1073,n_lines=1,current_idx=1080) 
@@ -1144,7 +1144,7 @@ mjModel,
 					WhitespaceNode(parent=1073,n_lines=1,current_idx=1086)           
 					SingleCommentNode(parent=1073,current_idx=1087)// process muscle and user actuators
 					WhitespaceNode(parent=1073,n_lines=1,current_idx=1088) 
-					EnumFieldNode(field_name=mjLRMODE_ALL,parent=1073,current_idx=1089)mjLRMODE_ALL                   
+					EnumFieldNode(field_name=mjLRMODE_ALL,parent=1073,current_idx=1089)mjLRMODE_ALL
 					SingleCommentNode(parent=1073,current_idx=1090)// process all actuators
 				}
 			DeletedNode(parent=15,current_idx=0)mjtLRMode
@@ -1156,7 +1156,7 @@ mjModel,
 					WhitespaceNode(parent=1095,n_lines=1,current_idx=1096)     
 					SingleCommentNode(parent=1095,current_idx=1097)// mode for flex selfcollide
 					WhitespaceNode(parent=1095,n_lines=1,current_idx=1098) 
-					EnumFieldNode(field_name=mjFLEXSELF_NONE,parent=1095,current_idx=1099)mjFLEXSELF_NONE   = 0 ,
+					EnumFieldNode(field_name=mjFLEXSELF_NONE,parent=1095,current_idx=1099)mjFLEXSELF_NONE = 0 ,
 					WhitespaceNode(parent=1095,n_lines=1,current_idx=1100)         
 					SingleCommentNode(parent=1095,current_idx=1101)// no self-collisions
 					WhitespaceNode(parent=1095,n_lines=1,current_idx=1102) 
@@ -1172,7 +1172,7 @@ mjModel,
 					WhitespaceNode(parent=1095,n_lines=1,current_idx=1112)                
 					SingleCommentNode(parent=1095,current_idx=1113)// use SAP in midphase
 					WhitespaceNode(parent=1095,n_lines=1,current_idx=1114) 
-					EnumFieldNode(field_name=mjFLEXSELF_AUTO,parent=1095,current_idx=1115)mjFLEXSELF_AUTO                
+					EnumFieldNode(field_name=mjFLEXSELF_AUTO,parent=1095,current_idx=1115)mjFLEXSELF_AUTO
 					SingleCommentNode(parent=1095,current_idx=1116)// choose between BVH and SAP automatically
 				}
 			DeletedNode(parent=15,current_idx=0)mjtFlexSelf

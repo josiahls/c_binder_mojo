@@ -8,19 +8,19 @@ from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeIn
 from c_binder_mojo import c_ast_nodes
 
 @value
-struct EnumNode(NodeAstLike):
-    """Handles C enum declarations.
+struct EnumFieldNode(NodeAstLike):
+    """Handles C enum field declarations.
     
-    For now, keeps them as comments since Mojo doesn't support enums yet.
-    Example:
-    enum mjtDisableBit_ { ... } -> # enum mjtDisableBit_ { ... }
+    Converts C enum fields to Mojo aliases:
+    mjGEOM_PLANE = 0  ->  alias mjGEOM_PLANE = 0
     """
-    alias __name__ = "EnumNode"
+    alias __name__ = "EnumFieldNode"
     
     var _token_bundles: TokenBundles
     var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
-    var _enum_name: String
+    var _field_name: String
+    var _field_value: String
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
@@ -28,18 +28,24 @@ struct EnumNode(NodeAstLike):
             c_node_idx=c_ast_node.current_idx(),
             c_parent_idx=c_ast_node.parent_idx(),
             mojo_node_idx=0,
-            mojo_parent_idx=-1,
-            c_children_idxs=c_ast_node.children_idxs()
+            mojo_parent_idx=-1
         ))
         self._str_just_code = False
-        self._enum_name = c_ast_node.node[c_ast_nodes.nodes.EnumNode].enum_name
+        
+        # Extract field name and value
+        # TODO(josiahls): This is stupid. Lets update the c ast node to specify the field name and value.
+        self._field_name = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[0].token
+        if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) > 3:
+            self._field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[-2].token
+        else:
+            self._field_value = "Missing"
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
 
     @staticmethod
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
-        return c_ast_node.node.isa[c_ast_nodes.nodes.EnumNode]()
+        return c_ast_node.node.isa[c_ast_nodes.nodes.EnumFieldNode]()
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
@@ -50,31 +56,28 @@ struct EnumNode(NodeAstLike):
         return False
 
     fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
-        # Check if c_ast_node is still a child of original C node
-        if c_ast_node.current_idx() not in self._indices[].c_children_idxs[]:
-            return True
-        return False
+        return True
 
     fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
-        return True  # Accept children to preserve enum values
+        return False  # Enum fields don't have children
 
     fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
         return False
 
-    fn indices(self) -> ArcPointer[NodeIndices]:
-        return self._indices
-
     fn add_child(mut self, child_idx: Int):
         self._indices[].mojo_children_idxs[].append(child_idx)
 
+    fn indices(self) -> ArcPointer[NodeIndices]:
+        return self._indices
+
     fn display_name(self) -> String:
-        return self.__name__ + "(name=" + self._enum_name + ", " + String(self._indices[]) + ")"
+        return self.__name__ + "(name=" + self._field_name + ", value=" + self._field_value + ", " + String(self._indices[]) + ")"
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles
 
     fn should_children_inline(self) -> Bool:
-        return False  # Each enum value on new line
+        return True
 
     fn str_just_code(mut self) -> Bool:
         return self._str_just_code
@@ -86,32 +89,25 @@ struct EnumNode(NodeAstLike):
         return default_scope_level(self._indices[].mojo_parent_idx, tree_interface)
 
     fn scope_offset(self) -> Int:
-        return 1  # Indent enum values
+        return 0  # No additional indentation needed
+
+    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
+        """Convert enum field to Mojo alias."""
+        var mojo_format = TokenBundles()
+        var line_num = self._token_bundles[0].line_num
+        
+        # Format as: alias NAME = VALUE
+        mojo_format.append(TokenBundle(
+            token="alias " + self._field_name + " = " + self._field_value,
+            line_num=line_num,
+            col_num=4  # Indent one level
+        ))
+        
+        self._token_bundles = mojo_format
 
     fn name(self) -> String:
         """Returns the raw node name without any metadata."""
         return Self.__name__
-
-    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        """Convert C enum to Mojo struct with aliases."""
-        var mojo_format = TokenBundles()
-        var line_num = self._token_bundles[0].line_num
-        var col_num = 0
-
-        # Add struct header
-        mojo_format.append(TokenBundle(token="# Mojo Enum", line_num=line_num, col_num=col_num))
-        line_num += 1
-        mojo_format.append(TokenBundle(token="struct " + self._enum_name + ":", line_num=line_num, col_num=col_num))
-        
-        # Add splitter to insert enum values
-        mojo_format.append(TokenBundle(token="", line_num=line_num, col_num=col_num, is_splitter=True))
-
-        # NOTE: The children (enum values) will be inserted here due to the splitter
-        # Each child should be formatted as: alias VALUE_NAME = value
-
-        # Replace token bundles
-        _ = self._token_bundles._token_bundles
-        self._token_bundles = mojo_format
 
     fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
         return default_to_string(AstNode(self), just_code, tree_interface) 

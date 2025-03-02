@@ -10,3 +10,5 @@ from .typedef_node import TypedefNode
 from .multi_line_comment_node import MultiLineCommentNode
 from .basic_data_type_node import BasicDataTypeNode
 from .enum_node import EnumNode
+from .scope_node import ScopeNode
+from .enum_field_node import EnumFieldNode

@@ -69,7 +69,7 @@ struct TypedefNode(NodeAstLike):
             # Delete the child from the tree
             tree_interface.nodes[][child_idx[]] = AstNode(DeletedNode(
                 ast_node=child_node,
-                reason="Deleted because typedef node is being converted to a mojo alias",
+                reason="Deleted because it has been consolidated into a mojo alias",
                 as_comment=True
             ))
 

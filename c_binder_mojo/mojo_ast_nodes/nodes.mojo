@@ -17,6 +17,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     TypedefNode,  # Add import
     MultiLineCommentNode,  # Add import
     BasicDataTypeNode,  # Add import
+    EnumNode,  # Add import
     DeletedNode,  # Add import
 )
 from c_binder_mojo import c_ast_nodes
@@ -31,6 +32,7 @@ struct AstNode(CollectionElement):
         MacroDefineNode,        # Handle define directives
         TypedefNode,            # Handle typedef declarations
         BasicDataTypeNode,      # Handle basic data types
+        EnumNode,              # Handle enum declarations
         MultiLineCommentNode,   # Handle multi-line comments
         SingleLineCommentNode,   # Handle comments before fallback
         WhitespaceNode,         # Handle whitespace

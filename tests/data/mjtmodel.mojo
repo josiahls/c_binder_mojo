@@ -63,8 +63,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=60, c_parent_idx=15, mojo_node_idx=60, mojo_parent_idx=15)  
 		TypedefNode(alias=mjtDisableBit, c_node_idx=61, c_parent_idx=15, mojo_node_idx=61, mojo_parent_idx=15, c_children_idxs=62, 134, mojo_children_idxs=62) # Complex typedef not supported yet: typedef <children> 
 		mjtDisableBit ;  
-		DeletedNode(c_node_idx=62, c_parent_idx=61, mojo_node_idx=62, mojo_parent_idx=61, c_children_idxs=63, mojo_children_idxs=63) enum mjtDisableBit_ 
-		# PlaceHolderNode(c_node_idx=62, c_parent_idx=61, mojo_node_idx=62, mojo_parent_idx=61, c_children_idxs=63, mojo_children_idxs=63) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=62, c_parent_idx=61, mojo_node_idx=62, mojo_parent_idx=61, c_children_idxs=63, mojo_children_idxs=63) #  enum mjtDisableBit_ 
+		# EnumNode(name=mjtDisableBit_, c_node_idx=62, c_parent_idx=61, mojo_node_idx=62, mojo_parent_idx=61, c_children_idxs=63, mojo_children_idxs=63) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=63, c_parent_idx=62, mojo_node_idx=63, mojo_parent_idx=62, c_children_idxs=64, 65, 66, 67, 68, 69, ... len=70, mojo_children_idxs=64, 65, 66, 67, 68, 69, ... len=70) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=64, c_parent_idx=63, mojo_node_idx=64, mojo_parent_idx=63)     
@@ -143,8 +143,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtEnableBit, c_node_idx=136, c_parent_idx=15, mojo_node_idx=135, mojo_parent_idx=15, c_children_idxs=137, 175, mojo_children_idxs=136) # Complex typedef not supported yet: typedef <children> 
 		mjtEnableBit ;  
-		DeletedNode(c_node_idx=137, c_parent_idx=136, mojo_node_idx=136, mojo_parent_idx=135, c_children_idxs=138, mojo_children_idxs=137) enum mjtEnableBit_ 
-		# PlaceHolderNode(c_node_idx=137, c_parent_idx=136, mojo_node_idx=136, mojo_parent_idx=135, c_children_idxs=138, mojo_children_idxs=137) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=137, c_parent_idx=136, mojo_node_idx=136, mojo_parent_idx=135, c_children_idxs=138, mojo_children_idxs=137) #  enum mjtEnableBit_ 
+		# EnumNode(name=mjtEnableBit_, c_node_idx=137, c_parent_idx=136, mojo_node_idx=136, mojo_parent_idx=135, c_children_idxs=138, mojo_children_idxs=137) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=138, c_parent_idx=137, mojo_node_idx=137, mojo_parent_idx=136, c_children_idxs=139, 140, 141, 142, 143, 144, ... len=36, mojo_children_idxs=138, 139, 140, 141, 142, 143, ... len=36) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=139, c_parent_idx=138, mojo_node_idx=138, mojo_parent_idx=137)      
@@ -189,8 +189,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtJoint, c_node_idx=177, c_parent_idx=15, mojo_node_idx=175, mojo_parent_idx=15, c_children_idxs=178, 197, mojo_children_idxs=176) # Complex typedef not supported yet: typedef <children> 
 		mjtJoint ;  
-		DeletedNode(c_node_idx=178, c_parent_idx=177, mojo_node_idx=176, mojo_parent_idx=175, c_children_idxs=179, mojo_children_idxs=177) enum mjtJoint_ 
-		# PlaceHolderNode(c_node_idx=178, c_parent_idx=177, mojo_node_idx=176, mojo_parent_idx=175, c_children_idxs=179, mojo_children_idxs=177) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=178, c_parent_idx=177, mojo_node_idx=176, mojo_parent_idx=175, c_children_idxs=179, mojo_children_idxs=177) #  enum mjtJoint_ 
+		# EnumNode(name=mjtJoint_, c_node_idx=178, c_parent_idx=177, mojo_node_idx=176, mojo_parent_idx=175, c_children_idxs=179, mojo_children_idxs=177) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=179, c_parent_idx=178, mojo_node_idx=177, mojo_parent_idx=176, c_children_idxs=180, 181, 182, 183, 184, 185, ... len=17, mojo_children_idxs=178, 179, 180, 181, 182, 183, ... len=17) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=180, c_parent_idx=179, mojo_node_idx=178, mojo_parent_idx=177)          
@@ -215,8 +215,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtGeom, c_node_idx=199, c_parent_idx=15, mojo_node_idx=196, mojo_parent_idx=15, c_children_idxs=200, 288, mojo_children_idxs=197) # Complex typedef not supported yet: typedef <children> 
 		mjtGeom ;  
-		DeletedNode(c_node_idx=200, c_parent_idx=199, mojo_node_idx=197, mojo_parent_idx=196, c_children_idxs=201, mojo_children_idxs=198) enum mjtGeom_ 
-		# PlaceHolderNode(c_node_idx=200, c_parent_idx=199, mojo_node_idx=197, mojo_parent_idx=196, c_children_idxs=201, mojo_children_idxs=198) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=200, c_parent_idx=199, mojo_node_idx=197, mojo_parent_idx=196, c_children_idxs=201, mojo_children_idxs=198) #  enum mjtGeom_ 
+		# EnumNode(name=mjtGeom_, c_node_idx=200, c_parent_idx=199, mojo_node_idx=197, mojo_parent_idx=196, c_children_idxs=201, mojo_children_idxs=198) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=201, c_parent_idx=200, mojo_node_idx=198, mojo_parent_idx=197, c_children_idxs=202, 203, 204, 205, 206, 207, ... len=86, mojo_children_idxs=199, 200, 201, 202, 203, 204, ... len=86) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=202, c_parent_idx=201, mojo_node_idx=199, mojo_parent_idx=198)           
@@ -313,8 +313,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtCamLight, c_node_idx=290, c_parent_idx=15, mojo_node_idx=286, mojo_parent_idx=15, c_children_idxs=291, 314, mojo_children_idxs=287) # Complex typedef not supported yet: typedef <children> 
 		mjtCamLight ;  
-		DeletedNode(c_node_idx=291, c_parent_idx=290, mojo_node_idx=287, mojo_parent_idx=286, c_children_idxs=292, mojo_children_idxs=288) enum mjtCamLight_ 
-		# PlaceHolderNode(c_node_idx=291, c_parent_idx=290, mojo_node_idx=287, mojo_parent_idx=286, c_children_idxs=292, mojo_children_idxs=288) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=291, c_parent_idx=290, mojo_node_idx=287, mojo_parent_idx=286, c_children_idxs=292, mojo_children_idxs=288) #  enum mjtCamLight_ 
+		# EnumNode(name=mjtCamLight_, c_node_idx=291, c_parent_idx=290, mojo_node_idx=287, mojo_parent_idx=286, c_children_idxs=292, mojo_children_idxs=288) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=292, c_parent_idx=291, mojo_node_idx=288, mojo_parent_idx=287, c_children_idxs=293, 294, 295, 296, 297, 298, ... len=21, mojo_children_idxs=289, 290, 291, 292, 293, 294, ... len=21) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=293, c_parent_idx=292, mojo_node_idx=289, mojo_parent_idx=288)       
@@ -343,8 +343,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtTexture, c_node_idx=316, c_parent_idx=15, mojo_node_idx=311, mojo_parent_idx=15, c_children_idxs=317, 332, mojo_children_idxs=312) # Complex typedef not supported yet: typedef <children> 
 		mjtTexture ;  
-		DeletedNode(c_node_idx=317, c_parent_idx=316, mojo_node_idx=312, mojo_parent_idx=311, c_children_idxs=318, mojo_children_idxs=313) enum mjtTexture_ 
-		# PlaceHolderNode(c_node_idx=317, c_parent_idx=316, mojo_node_idx=312, mojo_parent_idx=311, c_children_idxs=318, mojo_children_idxs=313) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=317, c_parent_idx=316, mojo_node_idx=312, mojo_parent_idx=311, c_children_idxs=318, mojo_children_idxs=313) #  enum mjtTexture_ 
+		# EnumNode(name=mjtTexture_, c_node_idx=317, c_parent_idx=316, mojo_node_idx=312, mojo_parent_idx=311, c_children_idxs=318, mojo_children_idxs=313) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=318, c_parent_idx=317, mojo_node_idx=313, mojo_parent_idx=312, c_children_idxs=319, 320, 321, 322, 323, 324, ... len=13, mojo_children_idxs=314, 315, 316, 317, 318, 319, ... len=13) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=319, c_parent_idx=318, mojo_node_idx=314, mojo_parent_idx=313)        
@@ -365,8 +365,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtIntegrator, c_node_idx=334, c_parent_idx=15, mojo_node_idx=328, mojo_parent_idx=15, c_children_idxs=335, 397, mojo_children_idxs=329) # Complex typedef not supported yet: typedef <children> 
 		mjtIntegrator ;  
-		DeletedNode(c_node_idx=335, c_parent_idx=334, mojo_node_idx=329, mojo_parent_idx=328, c_children_idxs=336, mojo_children_idxs=330) enum mjtTextureRole_ 
-		# PlaceHolderNode(c_node_idx=335, c_parent_idx=334, mojo_node_idx=329, mojo_parent_idx=328, c_children_idxs=336, mojo_children_idxs=330) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=335, c_parent_idx=334, mojo_node_idx=329, mojo_parent_idx=328, c_children_idxs=336, mojo_children_idxs=330) #  enum mjtTextureRole_ 
+		# EnumNode(name=mjtTextureRole_, c_node_idx=335, c_parent_idx=334, mojo_node_idx=329, mojo_parent_idx=328, c_children_idxs=336, mojo_children_idxs=330) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=336, c_parent_idx=335, mojo_node_idx=330, mojo_parent_idx=329, c_children_idxs=337, 338, 339, 340, 341, 342, ... len=60, mojo_children_idxs=331, 332, 333, 334, 335, 336, ... len=60) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=337, c_parent_idx=336, mojo_node_idx=331, mojo_parent_idx=330)    
@@ -438,8 +438,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtCone, c_node_idx=399, c_parent_idx=15, mojo_node_idx=392, mojo_parent_idx=15, c_children_idxs=400, 411, mojo_children_idxs=393) # Complex typedef not supported yet: typedef <children> 
 		mjtCone ;  
-		DeletedNode(c_node_idx=400, c_parent_idx=399, mojo_node_idx=393, mojo_parent_idx=392, c_children_idxs=401, mojo_children_idxs=394) enum mjtCone_ 
-		# PlaceHolderNode(c_node_idx=400, c_parent_idx=399, mojo_node_idx=393, mojo_parent_idx=392, c_children_idxs=401, mojo_children_idxs=394) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=400, c_parent_idx=399, mojo_node_idx=393, mojo_parent_idx=392, c_children_idxs=401, mojo_children_idxs=394) #  enum mjtCone_ 
+		# EnumNode(name=mjtCone_, c_node_idx=400, c_parent_idx=399, mojo_node_idx=393, mojo_parent_idx=392, c_children_idxs=401, mojo_children_idxs=394) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=401, c_parent_idx=400, mojo_node_idx=394, mojo_parent_idx=393, c_children_idxs=402, 403, 404, 405, 406, 407, ... len=9, mojo_children_idxs=395, 396, 397, 398, 399, 400, ... len=9) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=402, c_parent_idx=401, mojo_node_idx=395, mojo_parent_idx=394)           
@@ -456,8 +456,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtJacobian, c_node_idx=413, c_parent_idx=15, mojo_node_idx=405, mojo_parent_idx=15, c_children_idxs=414, 429, mojo_children_idxs=406) # Complex typedef not supported yet: typedef <children> 
 		mjtJacobian ;  
-		DeletedNode(c_node_idx=414, c_parent_idx=413, mojo_node_idx=406, mojo_parent_idx=405, c_children_idxs=415, mojo_children_idxs=407) enum mjtJacobian_ 
-		# PlaceHolderNode(c_node_idx=414, c_parent_idx=413, mojo_node_idx=406, mojo_parent_idx=405, c_children_idxs=415, mojo_children_idxs=407) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=414, c_parent_idx=413, mojo_node_idx=406, mojo_parent_idx=405, c_children_idxs=415, mojo_children_idxs=407) #  enum mjtJacobian_ 
+		# EnumNode(name=mjtJacobian_, c_node_idx=414, c_parent_idx=413, mojo_node_idx=406, mojo_parent_idx=405, c_children_idxs=415, mojo_children_idxs=407) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=415, c_parent_idx=414, mojo_node_idx=407, mojo_parent_idx=406, c_children_idxs=416, 417, 418, 419, 420, 421, ... len=13, mojo_children_idxs=408, 409, 410, 411, 412, 413, ... len=13) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=416, c_parent_idx=415, mojo_node_idx=408, mojo_parent_idx=407)       
@@ -478,8 +478,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtSolver, c_node_idx=431, c_parent_idx=15, mojo_node_idx=422, mojo_parent_idx=15, c_children_idxs=432, 447, mojo_children_idxs=423) # Complex typedef not supported yet: typedef <children> 
 		mjtSolver ;  
-		DeletedNode(c_node_idx=432, c_parent_idx=431, mojo_node_idx=423, mojo_parent_idx=422, c_children_idxs=433, mojo_children_idxs=424) enum mjtSolver_ 
-		# PlaceHolderNode(c_node_idx=432, c_parent_idx=431, mojo_node_idx=423, mojo_parent_idx=422, c_children_idxs=433, mojo_children_idxs=424) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=432, c_parent_idx=431, mojo_node_idx=423, mojo_parent_idx=422, c_children_idxs=433, mojo_children_idxs=424) #  enum mjtSolver_ 
+		# EnumNode(name=mjtSolver_, c_node_idx=432, c_parent_idx=431, mojo_node_idx=423, mojo_parent_idx=422, c_children_idxs=433, mojo_children_idxs=424) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=433, c_parent_idx=432, mojo_node_idx=424, mojo_parent_idx=423, c_children_idxs=434, 435, 436, 437, 438, 439, ... len=13, mojo_children_idxs=425, 426, 427, 428, 429, 430, ... len=13) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=434, c_parent_idx=433, mojo_node_idx=425, mojo_parent_idx=424)         
@@ -500,8 +500,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtEq, c_node_idx=449, c_parent_idx=15, mojo_node_idx=439, mojo_parent_idx=15, c_children_idxs=450, 477, mojo_children_idxs=440) # Complex typedef not supported yet: typedef <children> 
 		mjtEq ;  
-		DeletedNode(c_node_idx=450, c_parent_idx=449, mojo_node_idx=440, mojo_parent_idx=439, c_children_idxs=451, mojo_children_idxs=441) enum mjtEq_ 
-		# PlaceHolderNode(c_node_idx=450, c_parent_idx=449, mojo_node_idx=440, mojo_parent_idx=439, c_children_idxs=451, mojo_children_idxs=441) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=450, c_parent_idx=449, mojo_node_idx=440, mojo_parent_idx=439, c_children_idxs=451, mojo_children_idxs=441) #  enum mjtEq_ 
+		# EnumNode(name=mjtEq_, c_node_idx=450, c_parent_idx=449, mojo_node_idx=440, mojo_parent_idx=439, c_children_idxs=451, mojo_children_idxs=441) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=451, c_parent_idx=450, mojo_node_idx=441, mojo_parent_idx=440, c_children_idxs=452, 453, 454, 455, 456, 457, ... len=25, mojo_children_idxs=442, 443, 444, 445, 446, 447, ... len=25) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=452, c_parent_idx=451, mojo_node_idx=442, mojo_parent_idx=441)             
@@ -534,8 +534,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtWrap, c_node_idx=479, c_parent_idx=15, mojo_node_idx=468, mojo_parent_idx=15, c_children_idxs=480, 507, mojo_children_idxs=469) # Complex typedef not supported yet: typedef <children> 
 		mjtWrap ;  
-		DeletedNode(c_node_idx=480, c_parent_idx=479, mojo_node_idx=469, mojo_parent_idx=468, c_children_idxs=481, mojo_children_idxs=470) enum mjtWrap_ 
-		# PlaceHolderNode(c_node_idx=480, c_parent_idx=479, mojo_node_idx=469, mojo_parent_idx=468, c_children_idxs=481, mojo_children_idxs=470) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=480, c_parent_idx=479, mojo_node_idx=469, mojo_parent_idx=468, c_children_idxs=481, mojo_children_idxs=470) #  enum mjtWrap_ 
+		# EnumNode(name=mjtWrap_, c_node_idx=480, c_parent_idx=479, mojo_node_idx=469, mojo_parent_idx=468, c_children_idxs=481, mojo_children_idxs=470) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=481, c_parent_idx=480, mojo_node_idx=470, mojo_parent_idx=469, c_children_idxs=482, 483, 484, 485, 486, 487, ... len=25, mojo_children_idxs=471, 472, 473, 474, 475, 476, ... len=25) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=482, c_parent_idx=481, mojo_node_idx=471, mojo_parent_idx=470)           
@@ -568,8 +568,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtTrn, c_node_idx=509, c_parent_idx=15, mojo_node_idx=497, mojo_parent_idx=15, c_children_idxs=510, 542, mojo_children_idxs=498) # Complex typedef not supported yet: typedef <children> 
 		mjtTrn ;  
-		DeletedNode(c_node_idx=510, c_parent_idx=509, mojo_node_idx=498, mojo_parent_idx=497, c_children_idxs=511, mojo_children_idxs=499) enum mjtTrn_ 
-		# PlaceHolderNode(c_node_idx=510, c_parent_idx=509, mojo_node_idx=498, mojo_parent_idx=497, c_children_idxs=511, mojo_children_idxs=499) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=510, c_parent_idx=509, mojo_node_idx=498, mojo_parent_idx=497, c_children_idxs=511, mojo_children_idxs=499) #  enum mjtTrn_ 
+		# EnumNode(name=mjtTrn_, c_node_idx=510, c_parent_idx=509, mojo_node_idx=498, mojo_parent_idx=497, c_children_idxs=511, mojo_children_idxs=499) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=511, c_parent_idx=510, mojo_node_idx=499, mojo_parent_idx=498, c_children_idxs=512, 513, 514, 515, 516, 517, ... len=30, mojo_children_idxs=500, 501, 502, 503, 504, 505, ... len=30) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=512, c_parent_idx=511, mojo_node_idx=500, mojo_parent_idx=499)            
@@ -608,8 +608,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtDyn, c_node_idx=544, c_parent_idx=15, mojo_node_idx=531, mojo_parent_idx=15, c_children_idxs=545, 572, mojo_children_idxs=532) # Complex typedef not supported yet: typedef <children> 
 		mjtDyn ;  
-		DeletedNode(c_node_idx=545, c_parent_idx=544, mojo_node_idx=532, mojo_parent_idx=531, c_children_idxs=546, mojo_children_idxs=533) enum mjtDyn_ 
-		# PlaceHolderNode(c_node_idx=545, c_parent_idx=544, mojo_node_idx=532, mojo_parent_idx=531, c_children_idxs=546, mojo_children_idxs=533) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=545, c_parent_idx=544, mojo_node_idx=532, mojo_parent_idx=531, c_children_idxs=546, mojo_children_idxs=533) #  enum mjtDyn_ 
+		# EnumNode(name=mjtDyn_, c_node_idx=545, c_parent_idx=544, mojo_node_idx=532, mojo_parent_idx=531, c_children_idxs=546, mojo_children_idxs=533) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=546, c_parent_idx=545, mojo_node_idx=533, mojo_parent_idx=532, c_children_idxs=547, 548, 549, 550, 551, 552, ... len=25, mojo_children_idxs=534, 535, 536, 537, 538, 539, ... len=25) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=547, c_parent_idx=546, mojo_node_idx=534, mojo_parent_idx=533)            
@@ -642,8 +642,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtGain, c_node_idx=574, c_parent_idx=15, mojo_node_idx=560, mojo_parent_idx=15, c_children_idxs=575, 594, mojo_children_idxs=561) # Complex typedef not supported yet: typedef <children> 
 		mjtGain ;  
-		DeletedNode(c_node_idx=575, c_parent_idx=574, mojo_node_idx=561, mojo_parent_idx=560, c_children_idxs=576, mojo_children_idxs=562) enum mjtGain_ 
-		# PlaceHolderNode(c_node_idx=575, c_parent_idx=574, mojo_node_idx=561, mojo_parent_idx=560, c_children_idxs=576, mojo_children_idxs=562) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=575, c_parent_idx=574, mojo_node_idx=561, mojo_parent_idx=560, c_children_idxs=576, mojo_children_idxs=562) #  enum mjtGain_ 
+		# EnumNode(name=mjtGain_, c_node_idx=575, c_parent_idx=574, mojo_node_idx=561, mojo_parent_idx=560, c_children_idxs=576, mojo_children_idxs=562) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=576, c_parent_idx=575, mojo_node_idx=562, mojo_parent_idx=561, c_children_idxs=577, 578, 579, 580, 581, 582, ... len=17, mojo_children_idxs=563, 564, 565, 566, 567, 568, ... len=17) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=577, c_parent_idx=576, mojo_node_idx=563, mojo_parent_idx=562)           
@@ -668,8 +668,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtBias, c_node_idx=596, c_parent_idx=15, mojo_node_idx=581, mojo_parent_idx=15, c_children_idxs=597, 616, mojo_children_idxs=582) # Complex typedef not supported yet: typedef <children> 
 		mjtBias ;  
-		DeletedNode(c_node_idx=597, c_parent_idx=596, mojo_node_idx=582, mojo_parent_idx=581, c_children_idxs=598, mojo_children_idxs=583) enum mjtBias_ 
-		# PlaceHolderNode(c_node_idx=597, c_parent_idx=596, mojo_node_idx=582, mojo_parent_idx=581, c_children_idxs=598, mojo_children_idxs=583) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=597, c_parent_idx=596, mojo_node_idx=582, mojo_parent_idx=581, c_children_idxs=598, mojo_children_idxs=583) #  enum mjtBias_ 
+		# EnumNode(name=mjtBias_, c_node_idx=597, c_parent_idx=596, mojo_node_idx=582, mojo_parent_idx=581, c_children_idxs=598, mojo_children_idxs=583) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=598, c_parent_idx=597, mojo_node_idx=583, mojo_parent_idx=582, c_children_idxs=599, 600, 601, 602, 603, 604, ... len=17, mojo_children_idxs=584, 585, 586, 587, 588, 589, ... len=17) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=599, c_parent_idx=598, mojo_node_idx=584, mojo_parent_idx=583)           
@@ -694,8 +694,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtObj, c_node_idx=618, c_parent_idx=15, mojo_node_idx=602, mojo_parent_idx=15, c_children_idxs=619, 737, mojo_children_idxs=603) # Complex typedef not supported yet: typedef <children> 
 		mjtObj ;  
-		DeletedNode(c_node_idx=619, c_parent_idx=618, mojo_node_idx=603, mojo_parent_idx=602, c_children_idxs=620, mojo_children_idxs=604) enum mjtObj_ 
-		# PlaceHolderNode(c_node_idx=619, c_parent_idx=618, mojo_node_idx=603, mojo_parent_idx=602, c_children_idxs=620, mojo_children_idxs=604) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=619, c_parent_idx=618, mojo_node_idx=603, mojo_parent_idx=602, c_children_idxs=620, mojo_children_idxs=604) #  enum mjtObj_ 
+		# EnumNode(name=mjtObj_, c_node_idx=619, c_parent_idx=618, mojo_node_idx=603, mojo_parent_idx=602, c_children_idxs=620, mojo_children_idxs=604) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=620, c_parent_idx=619, mojo_node_idx=604, mojo_parent_idx=603, c_children_idxs=621, 622, 623, 624, 625, 626, ... len=116, mojo_children_idxs=605, 606, 607, 608, 609, 610, ... len=116) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=621, c_parent_idx=620, mojo_node_idx=605, mojo_parent_idx=604)            
@@ -821,8 +821,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtConstraint, c_node_idx=739, c_parent_idx=15, mojo_node_idx=722, mojo_parent_idx=15, c_children_idxs=740, 775, mojo_children_idxs=723) # Complex typedef not supported yet: typedef <children> 
 		mjtConstraint ;  
-		DeletedNode(c_node_idx=740, c_parent_idx=739, mojo_node_idx=723, mojo_parent_idx=722, c_children_idxs=741, mojo_children_idxs=724) enum mjtConstraint_ 
-		# PlaceHolderNode(c_node_idx=740, c_parent_idx=739, mojo_node_idx=723, mojo_parent_idx=722, c_children_idxs=741, mojo_children_idxs=724) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=740, c_parent_idx=739, mojo_node_idx=723, mojo_parent_idx=722, c_children_idxs=741, mojo_children_idxs=724) #  enum mjtConstraint_ 
+		# EnumNode(name=mjtConstraint_, c_node_idx=740, c_parent_idx=739, mojo_node_idx=723, mojo_parent_idx=722, c_children_idxs=741, mojo_children_idxs=724) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=741, c_parent_idx=740, mojo_node_idx=724, mojo_parent_idx=723, c_children_idxs=742, 743, 744, 745, 746, 747, ... len=33, mojo_children_idxs=725, 726, 727, 728, 729, 730, ... len=33) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=742, c_parent_idx=741, mojo_node_idx=725, mojo_parent_idx=724)     
@@ -863,8 +863,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtConstraintState, c_node_idx=777, c_parent_idx=15, mojo_node_idx=759, mojo_parent_idx=15, c_children_idxs=778, 801, mojo_children_idxs=760) # Complex typedef not supported yet: typedef <children> 
 		mjtConstraintState ;  
-		DeletedNode(c_node_idx=778, c_parent_idx=777, mojo_node_idx=760, mojo_parent_idx=759, c_children_idxs=779, mojo_children_idxs=761) enum mjtConstraintState_ 
-		# PlaceHolderNode(c_node_idx=778, c_parent_idx=777, mojo_node_idx=760, mojo_parent_idx=759, c_children_idxs=779, mojo_children_idxs=761) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=778, c_parent_idx=777, mojo_node_idx=760, mojo_parent_idx=759, c_children_idxs=779, mojo_children_idxs=761) #  enum mjtConstraintState_ 
+		# EnumNode(name=mjtConstraintState_, c_node_idx=778, c_parent_idx=777, mojo_node_idx=760, mojo_parent_idx=759, c_children_idxs=779, mojo_children_idxs=761) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=779, c_parent_idx=778, mojo_node_idx=761, mojo_parent_idx=760, c_children_idxs=780, 781, 782, 783, 784, 785, ... len=21, mojo_children_idxs=762, 763, 764, 765, 766, 767, ... len=21) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=780, c_parent_idx=779, mojo_node_idx=762, mojo_parent_idx=761)  
@@ -893,8 +893,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtSensor, c_node_idx=803, c_parent_idx=15, mojo_node_idx=784, mojo_parent_idx=15, c_children_idxs=804, 999, mojo_children_idxs=785) # Complex typedef not supported yet: typedef <children> 
 		mjtSensor ;  
-		DeletedNode(c_node_idx=804, c_parent_idx=803, mojo_node_idx=785, mojo_parent_idx=784, c_children_idxs=805, mojo_children_idxs=786) enum mjtSensor_ 
-		# PlaceHolderNode(c_node_idx=804, c_parent_idx=803, mojo_node_idx=785, mojo_parent_idx=784, c_children_idxs=805, mojo_children_idxs=786) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=804, c_parent_idx=803, mojo_node_idx=785, mojo_parent_idx=784, c_children_idxs=805, mojo_children_idxs=786) #  enum mjtSensor_ 
+		# EnumNode(name=mjtSensor_, c_node_idx=804, c_parent_idx=803, mojo_node_idx=785, mojo_parent_idx=784, c_children_idxs=805, mojo_children_idxs=786) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=805, c_parent_idx=804, mojo_node_idx=786, mojo_parent_idx=785, c_children_idxs=806, 807, 808, 809, 810, 811, ... len=193, mojo_children_idxs=787, 788, 789, 790, 791, 792, ... len=193) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=806, c_parent_idx=805, mojo_node_idx=787, mojo_parent_idx=786)         
@@ -1104,8 +1104,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtStage, c_node_idx=1001, c_parent_idx=15, mojo_node_idx=981, mojo_parent_idx=15, c_children_idxs=1002, 1021, mojo_children_idxs=982) # Complex typedef not supported yet: typedef <children> 
 		mjtStage ;  
-		DeletedNode(c_node_idx=1002, c_parent_idx=1001, mojo_node_idx=982, mojo_parent_idx=981, c_children_idxs=1003, mojo_children_idxs=983) enum mjtStage_ 
-		# PlaceHolderNode(c_node_idx=1002, c_parent_idx=1001, mojo_node_idx=982, mojo_parent_idx=981, c_children_idxs=1003, mojo_children_idxs=983) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=1002, c_parent_idx=1001, mojo_node_idx=982, mojo_parent_idx=981, c_children_idxs=1003, mojo_children_idxs=983) #  enum mjtStage_ 
+		# EnumNode(name=mjtStage_, c_node_idx=1002, c_parent_idx=1001, mojo_node_idx=982, mojo_parent_idx=981, c_children_idxs=1003, mojo_children_idxs=983) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=1003, c_parent_idx=1002, mojo_node_idx=983, mojo_parent_idx=982, c_children_idxs=1004, 1005, 1006, 1007, 1008, 1009, ... len=17, mojo_children_idxs=984, 985, 986, 987, 988, 989, ... len=17) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=1004, c_parent_idx=1003, mojo_node_idx=984, mojo_parent_idx=983)          
@@ -1130,8 +1130,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtDataType, c_node_idx=1023, c_parent_idx=15, mojo_node_idx=1002, mojo_parent_idx=15, c_children_idxs=1024, 1043, mojo_children_idxs=1003) # Complex typedef not supported yet: typedef <children> 
 		mjtDataType ;  
-		DeletedNode(c_node_idx=1024, c_parent_idx=1023, mojo_node_idx=1003, mojo_parent_idx=1002, c_children_idxs=1025, mojo_children_idxs=1004) enum mjtDataType_ 
-		# PlaceHolderNode(c_node_idx=1024, c_parent_idx=1023, mojo_node_idx=1003, mojo_parent_idx=1002, c_children_idxs=1025, mojo_children_idxs=1004) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=1024, c_parent_idx=1023, mojo_node_idx=1003, mojo_parent_idx=1002, c_children_idxs=1025, mojo_children_idxs=1004) #  enum mjtDataType_ 
+		# EnumNode(name=mjtDataType_, c_node_idx=1024, c_parent_idx=1023, mojo_node_idx=1003, mojo_parent_idx=1002, c_children_idxs=1025, mojo_children_idxs=1004) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=1025, c_parent_idx=1024, mojo_node_idx=1004, mojo_parent_idx=1003, c_children_idxs=1026, 1027, 1028, 1029, 1030, 1031, ... len=17, mojo_children_idxs=1005, 1006, 1007, 1008, 1009, 1010, ... len=17) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=1026, c_parent_idx=1025, mojo_node_idx=1005, mojo_parent_idx=1004)       
@@ -1156,8 +1156,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtSameFrame, c_node_idx=1045, c_parent_idx=15, mojo_node_idx=1023, mojo_parent_idx=15, c_children_idxs=1046, 1069, mojo_children_idxs=1024) # Complex typedef not supported yet: typedef <children> 
 		mjtSameFrame ;  
-		DeletedNode(c_node_idx=1046, c_parent_idx=1045, mojo_node_idx=1024, mojo_parent_idx=1023, c_children_idxs=1047, mojo_children_idxs=1025) enum mjtSameFrame_ 
-		# PlaceHolderNode(c_node_idx=1046, c_parent_idx=1045, mojo_node_idx=1024, mojo_parent_idx=1023, c_children_idxs=1047, mojo_children_idxs=1025) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=1046, c_parent_idx=1045, mojo_node_idx=1024, mojo_parent_idx=1023, c_children_idxs=1047, mojo_children_idxs=1025) #  enum mjtSameFrame_ 
+		# EnumNode(name=mjtSameFrame_, c_node_idx=1046, c_parent_idx=1045, mojo_node_idx=1024, mojo_parent_idx=1023, c_children_idxs=1047, mojo_children_idxs=1025) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=1047, c_parent_idx=1046, mojo_node_idx=1025, mojo_parent_idx=1024, c_children_idxs=1048, 1049, 1050, 1051, 1052, 1053, ... len=21, mojo_children_idxs=1026, 1027, 1028, 1029, 1030, 1031, ... len=21) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=1048, c_parent_idx=1047, mojo_node_idx=1026, mojo_parent_idx=1025)      
@@ -1186,8 +1186,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtLRMode, c_node_idx=1071, c_parent_idx=15, mojo_node_idx=1048, mojo_parent_idx=15, c_children_idxs=1072, 1091, mojo_children_idxs=1049) # Complex typedef not supported yet: typedef <children> 
 		mjtLRMode ;  
-		DeletedNode(c_node_idx=1072, c_parent_idx=1071, mojo_node_idx=1049, mojo_parent_idx=1048, c_children_idxs=1073, mojo_children_idxs=1050) enum mjtLRMode_ 
-		# PlaceHolderNode(c_node_idx=1072, c_parent_idx=1071, mojo_node_idx=1049, mojo_parent_idx=1048, c_children_idxs=1073, mojo_children_idxs=1050) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=1072, c_parent_idx=1071, mojo_node_idx=1049, mojo_parent_idx=1048, c_children_idxs=1073, mojo_children_idxs=1050) #  enum mjtLRMode_ 
+		# EnumNode(name=mjtLRMode_, c_node_idx=1072, c_parent_idx=1071, mojo_node_idx=1049, mojo_parent_idx=1048, c_children_idxs=1073, mojo_children_idxs=1050) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=1073, c_parent_idx=1072, mojo_node_idx=1050, mojo_parent_idx=1049, c_children_idxs=1074, 1075, 1076, 1077, 1078, 1079, ... len=17, mojo_children_idxs=1051, 1052, 1053, 1054, 1055, 1056, ... len=17) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=1074, c_parent_idx=1073, mojo_node_idx=1051, mojo_parent_idx=1050)         
@@ -1212,8 +1212,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		TypedefNode(alias=mjtFlexSelf, c_node_idx=1093, c_parent_idx=15, mojo_node_idx=1069, mojo_parent_idx=15, c_children_idxs=1094, 1117, mojo_children_idxs=1070) # Complex typedef not supported yet: typedef <children> 
 		mjtFlexSelf ;  
-		DeletedNode(c_node_idx=1094, c_parent_idx=1093, mojo_node_idx=1070, mojo_parent_idx=1069, c_children_idxs=1095, mojo_children_idxs=1071) enum mjtFlexSelf_ 
-		# PlaceHolderNode(c_node_idx=1094, c_parent_idx=1093, mojo_node_idx=1070, mojo_parent_idx=1069, c_children_idxs=1095, mojo_children_idxs=1071) Deleted because typedef node is being converted to a mojo alias
+		DeletedNode(c_node_idx=1094, c_parent_idx=1093, mojo_node_idx=1070, mojo_parent_idx=1069, c_children_idxs=1095, mojo_children_idxs=1071) #  enum mjtFlexSelf_ 
+		# EnumNode(name=mjtFlexSelf_, c_node_idx=1094, c_parent_idx=1093, mojo_node_idx=1070, mojo_parent_idx=1069, c_children_idxs=1095, mojo_children_idxs=1071) Deleted because it has been consolidated into a mojo alias
 		PlaceHolderNode(c_node_idx=1095, c_parent_idx=1094, mojo_node_idx=1071, mojo_parent_idx=1070, c_children_idxs=1096, 1097, 1098, 1099, 1100, 1101, ... len=21, mojo_children_idxs=1072, 1073, 1074, 1075, 1076, 1077, ... len=21) { 
 		<children> } 
 		WhitespaceNode(c_node_idx=1096, c_parent_idx=1095, mojo_node_idx=1072, mojo_parent_idx=1071)       
@@ -1296,7 +1296,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=1169, c_parent_idx=15, mojo_node_idx=1144, mojo_parent_idx=15)  
 		TypedefNode(alias=mjLROpt, c_node_idx=1170, c_parent_idx=15, mojo_node_idx=1145, mojo_parent_idx=15, c_children_idxs=1171, 1172, mojo_children_idxs=1146) # Complex typedef not supported yet: typedef <children> mjLROpt ;  
 		DeletedNode(c_node_idx=1171, c_parent_idx=1170, mojo_node_idx=1146, mojo_parent_idx=1145) struct mjLROpt_ 
-		# PlaceHolderNode(c_node_idx=1171, c_parent_idx=1170, mojo_node_idx=1146, mojo_parent_idx=1145) Deleted because typedef node is being converted to a mojo alias
+		# PlaceHolderNode(c_node_idx=1171, c_parent_idx=1170, mojo_node_idx=1146, mojo_parent_idx=1145) Deleted because it has been consolidated into a mojo alias
 		WhitespaceNode(c_node_idx=1173, c_parent_idx=15, mojo_node_idx=1147, mojo_parent_idx=15)  
 		 
 		 
@@ -1315,7 +1315,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=1184, c_parent_idx=15, mojo_node_idx=1158, mojo_parent_idx=15)  
 		TypedefNode(alias=mjVFS, c_node_idx=1185, c_parent_idx=15, mojo_node_idx=1159, mojo_parent_idx=15, c_children_idxs=1186, 1187, mojo_children_idxs=1160) # Complex typedef not supported yet: typedef <children> mjVFS ;  
 		DeletedNode(c_node_idx=1186, c_parent_idx=1185, mojo_node_idx=1160, mojo_parent_idx=1159) struct mjVFS_ 
-		# PlaceHolderNode(c_node_idx=1186, c_parent_idx=1185, mojo_node_idx=1160, mojo_parent_idx=1159) Deleted because typedef node is being converted to a mojo alias
+		# PlaceHolderNode(c_node_idx=1186, c_parent_idx=1185, mojo_node_idx=1160, mojo_parent_idx=1159) Deleted because it has been consolidated into a mojo alias
 		WhitespaceNode(c_node_idx=1188, c_parent_idx=15, mojo_node_idx=1161, mojo_parent_idx=15)  
 		 
 		SingleLineCommentNode(c_node_idx=1189, c_parent_idx=15, mojo_node_idx=1162, mojo_parent_idx=15) # ---------------------------------- mjOption ------------------------------------------------------ 
@@ -1462,7 +1462,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=1323, c_parent_idx=15, mojo_node_idx=1296, mojo_parent_idx=15)  
 		TypedefNode(alias=mjOption, c_node_idx=1324, c_parent_idx=15, mojo_node_idx=1297, mojo_parent_idx=15, c_children_idxs=1325, 1326, mojo_children_idxs=1298) # Complex typedef not supported yet: typedef <children> mjOption ;  
 		DeletedNode(c_node_idx=1325, c_parent_idx=1324, mojo_node_idx=1298, mojo_parent_idx=1297) struct mjOption_ 
-		# PlaceHolderNode(c_node_idx=1325, c_parent_idx=1324, mojo_node_idx=1298, mojo_parent_idx=1297) Deleted because typedef node is being converted to a mojo alias
+		# PlaceHolderNode(c_node_idx=1325, c_parent_idx=1324, mojo_node_idx=1298, mojo_parent_idx=1297) Deleted because it has been consolidated into a mojo alias
 		WhitespaceNode(c_node_idx=1327, c_parent_idx=15, mojo_node_idx=1299, mojo_parent_idx=15)  
 		 
 		 
@@ -1846,7 +1846,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=1681, c_parent_idx=15, mojo_node_idx=1653, mojo_parent_idx=15)  
 		TypedefNode(alias=mjVisual, c_node_idx=1682, c_parent_idx=15, mojo_node_idx=1654, mojo_parent_idx=15, c_children_idxs=1683, 1684, mojo_children_idxs=1655) # Complex typedef not supported yet: typedef <children> mjVisual ;  
 		DeletedNode(c_node_idx=1683, c_parent_idx=1682, mojo_node_idx=1655, mojo_parent_idx=1654) struct mjVisual_ 
-		# PlaceHolderNode(c_node_idx=1683, c_parent_idx=1682, mojo_node_idx=1655, mojo_parent_idx=1654) Deleted because typedef node is being converted to a mojo alias
+		# PlaceHolderNode(c_node_idx=1683, c_parent_idx=1682, mojo_node_idx=1655, mojo_parent_idx=1654) Deleted because it has been consolidated into a mojo alias
 		WhitespaceNode(c_node_idx=1685, c_parent_idx=15, mojo_node_idx=1656, mojo_parent_idx=15)  
 		 
 		 
@@ -1881,7 +1881,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=1712, c_parent_idx=15, mojo_node_idx=1683, mojo_parent_idx=15)  
 		TypedefNode(alias=mjStatistic, c_node_idx=1713, c_parent_idx=15, mojo_node_idx=1684, mojo_parent_idx=15, c_children_idxs=1714, 1715, mojo_children_idxs=1685) # Complex typedef not supported yet: typedef <children> mjStatistic ;  
 		DeletedNode(c_node_idx=1714, c_parent_idx=1713, mojo_node_idx=1685, mojo_parent_idx=1684) struct mjStatistic_ 
-		# PlaceHolderNode(c_node_idx=1714, c_parent_idx=1713, mojo_node_idx=1685, mojo_parent_idx=1684) Deleted because typedef node is being converted to a mojo alias
+		# PlaceHolderNode(c_node_idx=1714, c_parent_idx=1713, mojo_node_idx=1685, mojo_parent_idx=1684) Deleted because it has been consolidated into a mojo alias
 		WhitespaceNode(c_node_idx=1716, c_parent_idx=15, mojo_node_idx=1686, mojo_parent_idx=15)  
 		 
 		 
@@ -3870,7 +3870,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=3660, c_parent_idx=15, mojo_node_idx=3630, mojo_parent_idx=15)  
 		TypedefNode(alias=mjModel, c_node_idx=3661, c_parent_idx=15, mojo_node_idx=3631, mojo_parent_idx=15, c_children_idxs=3662, 3663, mojo_children_idxs=3632) # Complex typedef not supported yet: typedef <children> mjModel ;  
 		DeletedNode(c_node_idx=3662, c_parent_idx=3661, mojo_node_idx=3632, mojo_parent_idx=3631) struct mjModel_ 
-		# PlaceHolderNode(c_node_idx=3662, c_parent_idx=3661, mojo_node_idx=3632, mojo_parent_idx=3631) Deleted because typedef node is being converted to a mojo alias
+		# PlaceHolderNode(c_node_idx=3662, c_parent_idx=3661, mojo_node_idx=3632, mojo_parent_idx=3631) Deleted because it has been consolidated into a mojo alias
 		WhitespaceNode(c_node_idx=3664, c_parent_idx=15, mojo_node_idx=3633, mojo_parent_idx=15)  
 		 
 	WhitespaceNode(c_node_idx=3665, c_parent_idx=0, mojo_node_idx=3634, mojo_parent_idx=0)  

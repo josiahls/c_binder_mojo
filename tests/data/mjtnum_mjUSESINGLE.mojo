@@ -23,7 +23,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			WhitespaceNode(c_node_idx=22, c_parent_idx=21, mojo_node_idx=22, mojo_parent_idx=21)   
 			TypedefNode(alias=mjtNum, c_node_idx=23, c_parent_idx=21, mojo_node_idx=23, mojo_parent_idx=21, c_children_idxs=24, 25, mojo_children_idxs=24) alias mjtNum = Float64 
 			DeletedNode(c_node_idx=24, c_parent_idx=23, mojo_node_idx=24, mojo_parent_idx=23) Float64 
-			# BasicDataTypeNode(type=Float64, is_compound=False, c_node_idx=24, c_parent_idx=23, mojo_node_idx=24, mojo_parent_idx=23) Deleted because typedef node is being converted to a mojo alias
+			# BasicDataTypeNode(type=Float64, is_compound=False, c_node_idx=24, c_parent_idx=23, mojo_node_idx=24, mojo_parent_idx=23) Deleted because it has been consolidated into a mojo alias
 			WhitespaceNode(c_node_idx=26, c_parent_idx=21, mojo_node_idx=25, mojo_parent_idx=21)  
 			  
 			MacroDefineNode(macro=mjMINVAL, value=1E-15, c_node_idx=27, c_parent_idx=21, mojo_node_idx=26, mojo_parent_idx=21) alias mjMINVAL = 1E-15 
@@ -53,7 +53,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode(c_node_idx=44, c_parent_idx=15, mojo_node_idx=42, mojo_parent_idx=15)  
 		TypedefNode(alias=mjtByte, c_node_idx=45, c_parent_idx=15, mojo_node_idx=43, mojo_parent_idx=15, c_children_idxs=46, 47, mojo_children_idxs=44) alias mjtByte = unsigned 
 		DeletedNode(c_node_idx=46, c_parent_idx=45, mojo_node_idx=44, mojo_parent_idx=43) unsigned char 
-		# BasicDataTypeNode(type=unsigned, is_compound=True, c_node_idx=46, c_parent_idx=45, mojo_node_idx=44, mojo_parent_idx=43) Deleted because typedef node is being converted to a mojo alias
+		# BasicDataTypeNode(type=unsigned, is_compound=True, c_node_idx=46, c_parent_idx=45, mojo_node_idx=44, mojo_parent_idx=43) Deleted because it has been consolidated into a mojo alias
 		WhitespaceNode(c_node_idx=48, c_parent_idx=15, mojo_node_idx=45, mojo_parent_idx=15)     
 		SingleLineCommentNode(c_node_idx=49, c_parent_idx=15, mojo_node_idx=46, mojo_parent_idx=15) # used for true/false 
 		WhitespaceNode(c_node_idx=50, c_parent_idx=15, mojo_node_idx=47, mojo_parent_idx=15)  

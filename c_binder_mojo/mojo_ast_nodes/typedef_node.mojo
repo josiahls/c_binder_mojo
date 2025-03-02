@@ -7,6 +7,9 @@ from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.mojo_ast_nodes.deleted_node import DeletedNode
+
+from c_binder_mojo.mojo_ast_nodes.basic_data_type_node import BasicDataTypeNode
+
 @value
 struct TypedefNode(NodeAstLike):
     """Handles C typedef declarations.
@@ -50,19 +53,9 @@ struct TypedefNode(NodeAstLike):
             var child_node = tree_interface.nodes[][child_idx[]]
             
             # Check child node type
-            if child_node.node[].isa[c_ast_nodes.nodes.BasicDataTypeNode]():
+            if child_node.node[].isa[BasicDataTypeNode]():
                 # Handle basic types
                 alias_value = child_node.token_bundles()[0].token
-                if alias_value == "int":
-                    alias_value = "Int"
-                elif alias_value == "float":
-                    alias_value = "Float32"
-                elif alias_value == "double":
-                    alias_value = "Float64"
-                elif alias_value == "char":
-                    alias_value = "Int8"
-                elif alias_value == "unsigned char":
-                    alias_value = "UInt8"
             elif child_node.node[].isa[c_ast_nodes.nodes.EnumNode]():
                 # For enums, keep original typedef as comment
                 alias_value = "# Complex typedef (enum) not supported yet: " + String(self._token_bundles)

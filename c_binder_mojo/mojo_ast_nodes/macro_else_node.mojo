@@ -105,3 +105,7 @@ struct MacroElseNode(NodeAstLike):
 
     fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
         return default_to_string(AstNode(self), just_code, tree_interface) 
+
+    fn name(self) -> String:
+        """Returns the raw node name without any metadata."""
+        return Self.__name__ 

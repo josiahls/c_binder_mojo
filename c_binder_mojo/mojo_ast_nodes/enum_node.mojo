@@ -88,6 +88,10 @@ struct EnumNode(NodeAstLike):
     fn scope_offset(self) -> Int:
         return 1  # Indent enum values
 
+    fn name(self) -> String:
+        """Returns the raw node name without any metadata."""
+        return Self.__name__
+
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         # Convert to comment for now
         var comment = TokenBundles()

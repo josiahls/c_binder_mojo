@@ -88,6 +88,9 @@ struct SingleLineCommentNode(NodeAstLike):
     fn scope_offset(self) -> Int:
         return 0  # Comments don't affect scope
 
+    fn name(self) -> String:
+        """Returns the raw node name without any metadata."""
+        return Self.__name__
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         # Comments don't need finalization

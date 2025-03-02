@@ -46,13 +46,17 @@ struct NodeIndices:
         n_children = len(children_idxs[])
         i = 0
         for child_idx in children_idxs[]:
+            if i == 0:
+                s += "("
             s += String(child_idx[])
             if i < n_children - 1:
                 s += ", "
             i += 1
             if i > 5:
-                s += "... len=" + String(n_children)
+                s += "...) len=" + String(n_children)
                 break
+        if i > 0 and i < 5:
+            s += ")"
         return s
 
     fn __str__(self) -> String:
@@ -120,6 +124,10 @@ trait NodeAstLike(CollectionElement, Stringable):
             just_code: If True, only output code (no comments or node display names).
             tree_interface: Interface to access tree data.
         """
+        pass
+
+    fn name(self) -> String:
+        """Returns the raw node name without any metadata."""
         pass
 
     # Node creation

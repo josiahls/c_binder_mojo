@@ -229,10 +229,25 @@ struct AstNode(CollectionElement):
         print("No to_string found for node: ", String(self))
         return ""
 
+    fn name(self) -> String:
+        """Returns the raw node name without any metadata."""
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return T.__name__
+
+        print("No name found for node: ", String(self))
+        return "UnknownNode"
 
 
 fn _string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
-    """Converts children to string with proper indentation and line breaks."""
+    """Converts children to string with proper indentation and line breaks.
+    
+    Args:
+        just_code: If True, outputs only code and comments. If False, includes node metadata
+            with '>>>' separator to show node ownership.
+    """
     var s = String()
     var first = True
     for child_idx in node.indices()[].mojo_children_idxs[]:
@@ -247,10 +262,14 @@ fn _string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterfac
 fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
     """Default string conversion for nodes.
     
-    Handles:
-    - Node name display (when not just_code)
-    - Token formatting with proper indentation
-    - Child nodes with proper indentation and line breaks
+    Args:
+        just_code: If True, outputs only code and comments. If False, includes node metadata
+            with '>>>' separator to show node ownership.
+    
+    Format when just_code=False:
+        NodeName >>> actual content
+        NodeName >>> continued content
+        NodeName >>> more content...
     """
     var s = String()
     var indent = "\t" * node.scope_level(tree_interface)
@@ -275,7 +294,10 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
             if len(s) > 0:
                 s += "\n"
             s += indent
+            if not just_code:
+                s += node.name() + " >>> "
             line_num = token[].line_num
+            
         s += token[].token
         if not token[].token.endswith("\n"):
             s += " "

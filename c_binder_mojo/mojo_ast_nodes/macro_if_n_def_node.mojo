@@ -131,3 +131,7 @@ struct MacroIfNDefNode(NodeAstLike):
                 if child_node.node[].isa[MacroElseNode]():
                     continue
                 recursive_delete(tree_interface, child_idx[], "Deleted because " + self._token_bundles[1].token + " was not defined", True)
+
+    fn name(self) -> String:
+        """Returns the raw node name without any metadata."""
+        return Self.__name__

@@ -6,3 +6,4 @@ from .macro_if_n_def_node import MacroIfNDefNode
 from .macro_else_node import MacroElseNode
 from .deleted_node import DeletedNode, recursive_delete
 from .macro_define_node import MacroDefineNode
+from .typedef_node import TypedefNode

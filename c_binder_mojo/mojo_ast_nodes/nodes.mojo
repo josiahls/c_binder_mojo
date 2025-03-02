@@ -14,6 +14,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     MacroIfNDefNode,  # Add import
     MacroElseNode,  # Add import
     MacroDefineNode,  # Add import
+    TypedefNode,  # Add import
     DeletedNode,  # Add import
 )
 from c_binder_mojo import c_ast_nodes
@@ -26,6 +27,7 @@ struct AstNode(CollectionElement):
         MacroIfNDefNode,         # Handle macros before comments
         MacroElseNode,          # Handle else blocks
         MacroDefineNode,        # Handle define directives
+        TypedefNode,            # Handle typedef declarations
         SingleLineCommentNode,   # Handle comments before fallback
         WhitespaceNode,         # Handle whitespace
         DeletedNode,            # Handle deleted nodes

@@ -37,33 +37,48 @@ struct TypedefNode(NodeAstLike):
         # Register the alias
         tree_interface.mojo_aliases[].append(String(self._alias_name))
 
+
     fn alias_value(self, tree_interface: TreeInterface) -> String:
         """Returns the value of the alias.
         
         The values are determined by the children of the typedef node.
+        For basic types (int, char etc), converts to Mojo equivalent.
+        For complex types (enum, struct etc), keeps as comment.
         """
         var alias_value = String()
         for child_idx in self._indices[].mojo_children_idxs[]:
-            alias_value += tree_interface.nodes[][child_idx[]].token_bundles()[0].token
+            var child_node = tree_interface.nodes[][child_idx[]]
+            
+            # Check child node type
+            if child_node.node[].isa[c_ast_nodes.nodes.BasicDataTypeNode]():
+                # Handle basic types
+                alias_value = child_node.token_bundles()[0].token
+                if alias_value == "int":
+                    alias_value = "Int"
+                elif alias_value == "float":
+                    alias_value = "Float32"
+                elif alias_value == "double":
+                    alias_value = "Float64"
+                elif alias_value == "char":
+                    alias_value = "Int8"
+                elif alias_value == "unsigned char":
+                    alias_value = "UInt8"
+            elif child_node.node[].isa[c_ast_nodes.nodes.EnumNode]():
+                # For enums, keep original typedef as comment
+                alias_value = "# Complex typedef (enum) not supported yet: " + String(self._token_bundles)
+            elif child_node.node[].isa[c_ast_nodes.nodes.StructNode]():
+                # For structs, keep original typedef as comment
+                alias_value = "# Complex typedef (struct) not supported yet: " + String(self._token_bundles)
+            else:
+                # For other complex types, keep as comment
+                alias_value = "# Complex typedef not supported yet: " + String(self._token_bundles)
+            
             # Delete the child from the tree
-            # NOTE: Not sure if this will break complex type defs. Revisit
             tree_interface.nodes[][child_idx[]] = AstNode(DeletedNode(
-                ast_node=tree_interface.nodes[][child_idx[]],
+                ast_node=child_node,
                 reason="Deleted because typedef node is being converted to a mojo alias",
                 as_comment=True
             ))
-
-
-        if alias_value == "int":
-            mojo_type = "Int"
-        elif alias_value == "float":
-            mojo_type = "Float32"
-        elif alias_value == "double":
-            mojo_type = "Float64"
-        elif alias_value == "char":
-            mojo_type = "Int8"
-        elif alias_value == "unsigned char":
-            mojo_type = "UInt8"
 
         return alias_value
 
@@ -125,9 +140,15 @@ struct TypedefNode(NodeAstLike):
         return 0
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        # Convert C type to Mojo type
         var mojo_type = self.alias_value(tree_interface)
         
+        # If it starts with #, it's a comment
+        if mojo_type.startswith("#"):
+            var comment = TokenBundles()
+            comment.append(TokenBundle(token=mojo_type, line_num=self._token_bundles[0].line_num, col_num=0))
+            self._token_bundles = comment
+            return
+            
         # Create Mojo alias declaration
         var mojo_format_token_bundles = TokenBundles()
         var line_num = self._token_bundles[0].line_num

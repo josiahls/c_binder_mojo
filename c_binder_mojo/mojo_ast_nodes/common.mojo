@@ -113,13 +113,20 @@ trait NodeAstLike(CollectionElement, Stringable):
         """
         pass  # Default no-op implementation
     
+    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
+        """Returns string representation of this node and its children.
+        
+        Args:
+            just_code: If True, only output code (no comments or node display names).
+            tree_interface: Interface to access tree data.
+        """
+        pass
+
     # Node creation
     @staticmethod
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool: ...
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self: ...
-
-
 
 
 fn default_scope_level(parent_idx: Int, tree_interface: TreeInterface) -> Int:

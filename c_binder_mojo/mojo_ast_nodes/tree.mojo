@@ -64,25 +64,12 @@ struct Tree:
 
 
     fn __str__(self) -> String:
-        var s = String('')
-        for node in self.nodes[]:
-            if self.str_just_code:
-                if node[].node[].isa[RootNode]():
-                    continue
-                node[].set_str_just_code(True)
-
-            # print("node: ", String(node[]))
-            n_indent = node[].scope_level(TreeInterface(self.nodes, self.c_macro_defs, self.mojo_aliases))
-            if n_indent < 0:
-                n_indent = 0
-            
-            # print(n_indent)
-            # NOTE: Not sure if this actually will work? How does this work with children?
-            if n_indent > 0:
-                s += '\t' * n_indent
-            s += String(node[]).replace('\n', '\n' + '\t' * n_indent)
-            s += String('\n')
-        return s
+        if len(self.nodes[]) == 0:
+            return ""
+        return self.nodes[][0].to_string(
+            just_code=self.str_just_code,
+            tree_interface=TreeInterface(self.nodes, self.c_macro_defs, self.mojo_aliases)
+        )
 
 
 # NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.

@@ -218,3 +218,74 @@ struct AstNode(CollectionElement):
                 return val_ptr[].token_bundles()
         print("No token bundles found for node: ", String(self))
         return TokenBundles()
+
+    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                var val_ptr = self.node[]._get_ptr[T]()
+                return val_ptr[].to_string(just_code, tree_interface)
+        print("No to_string found for node: ", String(self))
+        return ""
+
+
+
+fn _string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+    """Converts children to string with proper indentation and line breaks."""
+    var s = String()
+    var first = True
+    for child_idx in node.indices()[].mojo_children_idxs[]:
+        var child = tree_interface.nodes[][child_idx[]]
+        if not first:
+            s += "\n"
+        s += child.to_string(just_code, tree_interface)
+        first = False
+    return s
+
+
+fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+    """Default string conversion for nodes.
+    
+    Handles:
+    - Node name display (when not just_code)
+    - Token formatting with proper indentation
+    - Child nodes with proper indentation and line breaks
+    """
+    var s = String()
+    var indent = "\t" * node.scope_level(tree_interface)
+    var children_added = False
+    var line_num = 0
+    
+    # Add node name if not just code
+    if not just_code:
+        s += indent + node.display_name() + " "
+
+    # Add tokens
+    for token in node.token_bundles():
+        # Handle line splitters (for enum definitions etc)
+        if token[].is_splitter:
+            s += "\n"
+            s += _string_children(node, just_code, tree_interface)
+            children_added = True
+            continue
+            
+        # Add indentation on new lines
+        if token[].line_num != line_num:
+            if len(s) > 0:
+                s += "\n"
+            s += indent
+            line_num = token[].line_num
+        s += token[].token
+        if not token[].token.endswith("\n"):
+            s += " "
+    
+    # Add children if not already added
+    if not children_added:
+        var children = _string_children(node, just_code, tree_interface)
+        if len(children) > 0:
+            if len(s) > 0:
+                s += "\n"
+            s += children
+    
+    return s

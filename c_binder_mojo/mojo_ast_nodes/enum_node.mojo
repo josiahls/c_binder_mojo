@@ -2,7 +2,7 @@
 from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
+from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
@@ -98,3 +98,6 @@ struct EnumNode(NodeAstLike):
         # destroyed out of the middle of a value, preventing the overall value from being destroyed
         _ = self._token_bundles._token_bundles
         self._token_bundles = comment 
+
+    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
+        return default_to_string(AstNode(self), just_code, tree_interface) 

@@ -2,7 +2,7 @@
 from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
+from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
 from c_binder_mojo.mojo_ast_nodes.deleted_node import recursive_delete
 from c_binder_mojo.mojo_ast_nodes.macro_if_n_def_node import MacroIfNDefNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
@@ -102,3 +102,6 @@ struct MacroElseNode(NodeAstLike):
             if macro_if_n_def_node._is_defined:
                 for child_idx in self._indices[].mojo_children_idxs[]:
                     recursive_delete(tree_interface, child_idx[], "Deleted because parent macro was defined", True) 
+
+    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
+        return default_to_string(AstNode(self), just_code, tree_interface) 

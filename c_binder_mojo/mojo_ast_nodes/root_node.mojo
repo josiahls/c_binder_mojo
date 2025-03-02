@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
-from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
+from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
 from c_binder_mojo import c_ast_nodes
 
 @value
@@ -86,3 +86,6 @@ struct RootNode(NodeAstLike):
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         # Root node doesn't need any finalization
         pass 
+
+    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
+        return default_to_string(AstNode(self), just_code, tree_interface) 

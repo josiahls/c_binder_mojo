@@ -6,7 +6,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
-
+from c_binder_mojo.mojo_ast_nodes.deleted_node import DeletedNode
 @value
 struct TypedefNode(NodeAstLike):
     """Handles C typedef declarations.
@@ -19,7 +19,6 @@ struct TypedefNode(NodeAstLike):
     var _token_bundles: TokenBundles
     var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
-    var _type_name: String  # The original type being aliased
     var _alias_name: String  # The new name being defined
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface):
@@ -33,13 +32,40 @@ struct TypedefNode(NodeAstLike):
         ))
         self._str_just_code = False
         
-        # Extract type and alias names
-        # typedef comes first, then type, then alias name
-        self._type_name = self._token_bundles[1].token
-        self._alias_name = self._token_bundles[2].token
+        self._alias_name = c_ast_node.node[c_ast_nodes.nodes.TypedefNode].type_name().token
         
         # Register the alias
         tree_interface.mojo_aliases[].append(String(self._alias_name))
+
+    fn alias_value(self, tree_interface: TreeInterface) -> String:
+        """Returns the value of the alias.
+        
+        The values are determined by the children of the typedef node.
+        """
+        var alias_value = String()
+        for child_idx in self._indices[].mojo_children_idxs[]:
+            alias_value += tree_interface.nodes[][child_idx[]].token_bundles()[0].token
+            # Delete the child from the tree
+            # NOTE: Not sure if this will break complex type defs. Revisit
+            tree_interface.nodes[][child_idx[]] = AstNode(DeletedNode(
+                ast_node=tree_interface.nodes[][child_idx[]],
+                reason="Deleted because typedef node is being converted to a mojo alias",
+                as_comment=True
+            ))
+
+
+        if alias_value == "int":
+            mojo_type = "Int"
+        elif alias_value == "float":
+            mojo_type = "Float32"
+        elif alias_value == "double":
+            mojo_type = "Float64"
+        elif alias_value == "char":
+            mojo_type = "Int8"
+        elif alias_value == "unsigned char":
+            mojo_type = "UInt8"
+
+        return alias_value
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
@@ -58,9 +84,7 @@ struct TypedefNode(NodeAstLike):
 
     fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         # Check if c_ast_node is still a child of original C node
-        print("c_ast_node.current_idx()", String(c_ast_node.current_idx()))
         if c_ast_node.current_idx() not in self._indices[].c_children_idxs[]:
-            print("c_ast_node is not a child of original C node index:", String(c_ast_node.current_idx()))
             return True
         return False
 
@@ -80,7 +104,7 @@ struct TypedefNode(NodeAstLike):
         self._indices[].mojo_children_idxs[].append(child_idx)
 
     fn display_name(self) -> String:
-        return self.__name__ + "(type=" + self._type_name + ", alias=" + self._alias_name + ", " + String(self._indices[]) + ")"
+        return self.__name__ + "(alias=" + self._alias_name + ", " + String(self._indices[]) + ")"
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles
@@ -102,17 +126,7 @@ struct TypedefNode(NodeAstLike):
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         # Convert C type to Mojo type
-        var mojo_type = self._type_name
-        if self._type_name == "int":
-            mojo_type = "Int"
-        elif self._type_name == "float":
-            mojo_type = "Float32"
-        elif self._type_name == "double":
-            mojo_type = "Float64"
-        elif self._type_name == "char":
-            mojo_type = "Int8"
-        elif self._type_name == "unsigned char":
-            mojo_type = "UInt8"
+        var mojo_type = self.alias_value(tree_interface)
         
         # Create Mojo alias declaration
         var mojo_format_token_bundles = TokenBundles()

@@ -21,7 +21,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		SingleLineCommentNode(c_node_idx=20, c_parent_idx=15, mojo_node_idx=20, mojo_parent_idx=15) # floating point data type and minval 
 		MacroIfNDefNode(c_node_idx=21, c_parent_idx=15, mojo_node_idx=21, mojo_parent_idx=15, c_children_idxs=22, 23, 26, 27, 28, 29... len=6, mojo_children_idxs=22, 23, 25, 26, 27, 28... len=6) #ifndef mjUSESINGLE <children> 
 			WhitespaceNode(c_node_idx=22, c_parent_idx=21, mojo_node_idx=22, mojo_parent_idx=21)   
-			TypedefNode(alias=mjtNum, c_node_idx=23, c_parent_idx=21, mojo_node_idx=23, mojo_parent_idx=21, c_children_idxs=24, 25, mojo_children_idxs=24) alias mjtNum = double 
+			TypedefNode(alias=mjtNum, c_node_idx=23, c_parent_idx=21, mojo_node_idx=23, mojo_parent_idx=21, c_children_idxs=24, 25, mojo_children_idxs=24) # Complex typedef not supported yet: typedef <children> mjtNum ;  
 			DeletedNode(c_node_idx=24, c_parent_idx=23, mojo_node_idx=24, mojo_parent_idx=23) double 
 			# PlaceHolderNode(c_node_idx=24, c_parent_idx=23, mojo_node_idx=24, mojo_parent_idx=23) Deleted because typedef node is being converted to a mojo alias
 			WhitespaceNode(c_node_idx=26, c_parent_idx=21, mojo_node_idx=25, mojo_parent_idx=21)  
@@ -31,7 +31,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			MacroElseNode(c_node_idx=29, c_parent_idx=21, mojo_node_idx=28, mojo_parent_idx=21, c_children_idxs=30, 31, 34, 35, 36, mojo_children_idxs=29, 30, 32, 33, 34) #else 
 				DeletedNode(c_node_idx=30, c_parent_idx=29, mojo_node_idx=29, mojo_parent_idx=28)   
 				# WhitespaceNode(c_node_idx=30, c_parent_idx=29, mojo_node_idx=29, mojo_parent_idx=28) Deleted because parent macro was defined
-				DeletedNode(c_node_idx=31, c_parent_idx=29, mojo_node_idx=30, mojo_parent_idx=28, c_children_idxs=32, 33, mojo_children_idxs=31) alias mjtNum = float 
+				DeletedNode(c_node_idx=31, c_parent_idx=29, mojo_node_idx=30, mojo_parent_idx=28, c_children_idxs=32, 33, mojo_children_idxs=31) # Complex typedef not supported yet: typedef <children> mjtNum ;  
 				# TypedefNode(alias=mjtNum, c_node_idx=31, c_parent_idx=29, mojo_node_idx=30, mojo_parent_idx=28, c_children_idxs=32, 33, mojo_children_idxs=31) Deleted because parent macro was defined
 				DeletedNode(c_node_idx=32, c_parent_idx=31, mojo_node_idx=31, mojo_parent_idx=30) float 
 				# DeletedNode(c_node_idx=32, c_parent_idx=31, mojo_node_idx=31, mojo_parent_idx=30) Deleted because parent macro was defined
@@ -51,7 +51,7 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		 
 		SingleLineCommentNode(c_node_idx=43, c_parent_idx=15, mojo_node_idx=41, mojo_parent_idx=15) # -------------------------------------- byte definition ------------------------------------------- 
 		WhitespaceNode(c_node_idx=44, c_parent_idx=15, mojo_node_idx=42, mojo_parent_idx=15)  
-		TypedefNode(alias=mjtByte, c_node_idx=45, c_parent_idx=15, mojo_node_idx=43, mojo_parent_idx=15, c_children_idxs=46, 47, mojo_children_idxs=44) alias mjtByte = unsigned 
+		TypedefNode(alias=mjtByte, c_node_idx=45, c_parent_idx=15, mojo_node_idx=43, mojo_parent_idx=15, c_children_idxs=46, 47, mojo_children_idxs=44) # Complex typedef not supported yet: typedef <children> mjtByte ;  
 		DeletedNode(c_node_idx=46, c_parent_idx=45, mojo_node_idx=44, mojo_parent_idx=43) unsigned char 
 		# PlaceHolderNode(c_node_idx=46, c_parent_idx=45, mojo_node_idx=44, mojo_parent_idx=43) Deleted because typedef node is being converted to a mojo alias
 		WhitespaceNode(c_node_idx=48, c_parent_idx=15, mojo_node_idx=45, mojo_parent_idx=15)     

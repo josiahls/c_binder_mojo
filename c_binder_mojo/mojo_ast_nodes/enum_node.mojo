@@ -21,6 +21,7 @@ struct EnumNode(NodeAstLike):
     var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
     var _enum_name: String
+    var _enum_values: ArcPointer[List[UInt]]
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
@@ -33,6 +34,7 @@ struct EnumNode(NodeAstLike):
         ))
         self._str_just_code = False
         self._enum_name = c_ast_node.node[c_ast_nodes.nodes.EnumNode].enum_name
+        self._enum_values = ArcPointer(List[UInt]())
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)

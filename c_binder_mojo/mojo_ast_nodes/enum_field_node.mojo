@@ -20,9 +20,10 @@ struct EnumFieldNode(NodeAstLike):
     var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
     var _field_name: String
-    var _field_value: String
+    var _field_value: UInt
+    var _parent_enum_values: ArcPointer[List[UInt]]
 
-    fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
+    fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode, parent_enum_values: ArcPointer[List[UInt]]):
         self._token_bundles = c_ast_node.token_bundles()
         self._indices = ArcPointer(NodeIndices(
             c_node_idx=c_ast_node.current_idx(),
@@ -31,14 +32,24 @@ struct EnumFieldNode(NodeAstLike):
             mojo_parent_idx=-1
         ))
         self._str_just_code = False
+        self._parent_enum_values = parent_enum_values
+        self._field_value = 0
         
         # Extract field name and value
         # TODO(josiahls): This is stupid. Lets update the c ast node to specify the field name and value.
         self._field_name = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[0].token
+
+        # TODO(josiahls): Need to handle bit shifts e.g. 1<<0. 
         if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) > 3:
-            self._field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[-2].token
-        else:
-            self._field_value = "Missing"
+            var field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[-2].token
+            try:
+                self._field_value = UInt(field_value.__int__())
+            except:
+                for value in self._parent_enum_values[]:
+                    if value[] > self._field_value:
+                        self._field_value = value[]
+                self._field_value += 1
+                self._parent_enum_values[].append(self._field_value)
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
@@ -49,7 +60,13 @@ struct EnumFieldNode(NodeAstLike):
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
-        return Self(c_ast_node)
+        var node = tree_interface.nodes[][parent_idx].node
+        if node[].isa[ScopeNode]():
+            node = tree_interface.nodes[][node[][ScopeNode]._indices[].mojo_parent_idx].node
+        if node[].isa[EnumNode]():
+            var enum_node = node[][EnumNode]
+            return Self(c_ast_node, enum_node._enum_values)
+        return Self(c_ast_node, ArcPointer(List[UInt]()))
 
     # State checks
     fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
@@ -71,7 +88,7 @@ struct EnumFieldNode(NodeAstLike):
         return self._indices
 
     fn display_name(self) -> String:
-        return self.__name__ + "(name=" + self._field_name + ", value=" + self._field_value + ", " + String(self._indices[]) + ")"
+        return self.__name__ + "(name=" + self._field_name + ", value=" + String(self._field_value) + ", " + String(self._indices[]) + ")"
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles
@@ -98,7 +115,7 @@ struct EnumFieldNode(NodeAstLike):
         
         # Format as: alias NAME = VALUE
         mojo_format.append(TokenBundle(
-            token="alias " + self._field_name + " = " + self._field_value,
+            token="alias " + self._field_name + " = " + String(self._field_value),
             line_num=line_num,
             col_num=4  # Indent one level
         ))

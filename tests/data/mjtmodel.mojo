@@ -374,24 +374,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # global position and orientation (quat)       (7) 
 			WhitespaceNode(c_node_idx=186, c_parent_idx=179, mojo_node_idx=184, mojo_parent_idx=177) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjJNT_BALL, value=0, c_node_idx=187, c_parent_idx=179, mojo_node_idx=185, mojo_parent_idx=177) 
-			EnumFieldNode >>> alias mjJNT_BALL = 0 
+			EnumFieldNode(name=mjJNT_BALL, value=1, c_node_idx=187, c_parent_idx=179, mojo_node_idx=185, mojo_parent_idx=177) 
+			EnumFieldNode >>> alias mjJNT_BALL = 1 
 			WhitespaceNode(c_node_idx=188, c_parent_idx=179, mojo_node_idx=186, mojo_parent_idx=177) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=189, c_parent_idx=179, mojo_node_idx=187, mojo_parent_idx=177) 
 			SingleLineCommentNode >>> # orientation (quat) relative to parent        (4) 
 			WhitespaceNode(c_node_idx=190, c_parent_idx=179, mojo_node_idx=188, mojo_parent_idx=177) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjJNT_SLIDE, value=0, c_node_idx=191, c_parent_idx=179, mojo_node_idx=189, mojo_parent_idx=177) 
-			EnumFieldNode >>> alias mjJNT_SLIDE = 0 
+			EnumFieldNode(name=mjJNT_SLIDE, value=2, c_node_idx=191, c_parent_idx=179, mojo_node_idx=189, mojo_parent_idx=177) 
+			EnumFieldNode >>> alias mjJNT_SLIDE = 2 
 			WhitespaceNode(c_node_idx=192, c_parent_idx=179, mojo_node_idx=190, mojo_parent_idx=177) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=193, c_parent_idx=179, mojo_node_idx=191, mojo_parent_idx=177) 
 			SingleLineCommentNode >>> # sliding distance along body-fixed axis       (1) 
 			WhitespaceNode(c_node_idx=194, c_parent_idx=179, mojo_node_idx=192, mojo_parent_idx=177) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjJNT_HINGE, value=0, c_node_idx=195, c_parent_idx=179, mojo_node_idx=193, mojo_parent_idx=177) 
-			EnumFieldNode >>> alias mjJNT_HINGE = 0 
+			EnumFieldNode(name=mjJNT_HINGE, value=3, c_node_idx=195, c_parent_idx=179, mojo_node_idx=193, mojo_parent_idx=177) 
+			EnumFieldNode >>> alias mjJNT_HINGE = 3 
 			SingleLineCommentNode(c_node_idx=196, c_parent_idx=179, mojo_node_idx=194, mojo_parent_idx=177) 
 			SingleLineCommentNode >>> # rotation angle (rad) around body-fixed axis  (1) 
 		TypedefNode >>> alias mjtJoint = mjtJoint_ 
@@ -422,64 +422,64 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # plane 
 			WhitespaceNode(c_node_idx=210, c_parent_idx=201, mojo_node_idx=207, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_HFIELD, value=0, c_node_idx=211, c_parent_idx=201, mojo_node_idx=208, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_HFIELD = 0 
+			EnumFieldNode(name=mjGEOM_HFIELD, value=1, c_node_idx=211, c_parent_idx=201, mojo_node_idx=208, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_HFIELD = 1 
 			WhitespaceNode(c_node_idx=212, c_parent_idx=201, mojo_node_idx=209, mojo_parent_idx=198) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=213, c_parent_idx=201, mojo_node_idx=210, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # height field 
 			WhitespaceNode(c_node_idx=214, c_parent_idx=201, mojo_node_idx=211, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_SPHERE, value=0, c_node_idx=215, c_parent_idx=201, mojo_node_idx=212, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_SPHERE = 0 
+			EnumFieldNode(name=mjGEOM_SPHERE, value=2, c_node_idx=215, c_parent_idx=201, mojo_node_idx=212, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_SPHERE = 2 
 			WhitespaceNode(c_node_idx=216, c_parent_idx=201, mojo_node_idx=213, mojo_parent_idx=198) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=217, c_parent_idx=201, mojo_node_idx=214, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # sphere 
 			WhitespaceNode(c_node_idx=218, c_parent_idx=201, mojo_node_idx=215, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_CAPSULE, value=0, c_node_idx=219, c_parent_idx=201, mojo_node_idx=216, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_CAPSULE = 0 
+			EnumFieldNode(name=mjGEOM_CAPSULE, value=3, c_node_idx=219, c_parent_idx=201, mojo_node_idx=216, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_CAPSULE = 3 
 			WhitespaceNode(c_node_idx=220, c_parent_idx=201, mojo_node_idx=217, mojo_parent_idx=198) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=221, c_parent_idx=201, mojo_node_idx=218, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # capsule 
 			WhitespaceNode(c_node_idx=222, c_parent_idx=201, mojo_node_idx=219, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_ELLIPSOID, value=0, c_node_idx=223, c_parent_idx=201, mojo_node_idx=220, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_ELLIPSOID = 0 
+			EnumFieldNode(name=mjGEOM_ELLIPSOID, value=4, c_node_idx=223, c_parent_idx=201, mojo_node_idx=220, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_ELLIPSOID = 4 
 			WhitespaceNode(c_node_idx=224, c_parent_idx=201, mojo_node_idx=221, mojo_parent_idx=198) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=225, c_parent_idx=201, mojo_node_idx=222, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # ellipsoid 
 			WhitespaceNode(c_node_idx=226, c_parent_idx=201, mojo_node_idx=223, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_CYLINDER, value=0, c_node_idx=227, c_parent_idx=201, mojo_node_idx=224, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_CYLINDER = 0 
+			EnumFieldNode(name=mjGEOM_CYLINDER, value=5, c_node_idx=227, c_parent_idx=201, mojo_node_idx=224, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_CYLINDER = 5 
 			WhitespaceNode(c_node_idx=228, c_parent_idx=201, mojo_node_idx=225, mojo_parent_idx=198) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=229, c_parent_idx=201, mojo_node_idx=226, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # cylinder 
 			WhitespaceNode(c_node_idx=230, c_parent_idx=201, mojo_node_idx=227, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_BOX, value=0, c_node_idx=231, c_parent_idx=201, mojo_node_idx=228, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_BOX = 0 
+			EnumFieldNode(name=mjGEOM_BOX, value=6, c_node_idx=231, c_parent_idx=201, mojo_node_idx=228, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_BOX = 6 
 			WhitespaceNode(c_node_idx=232, c_parent_idx=201, mojo_node_idx=229, mojo_parent_idx=198) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=233, c_parent_idx=201, mojo_node_idx=230, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # box 
 			WhitespaceNode(c_node_idx=234, c_parent_idx=201, mojo_node_idx=231, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_MESH, value=0, c_node_idx=235, c_parent_idx=201, mojo_node_idx=232, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_MESH = 0 
+			EnumFieldNode(name=mjGEOM_MESH, value=7, c_node_idx=235, c_parent_idx=201, mojo_node_idx=232, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_MESH = 7 
 			WhitespaceNode(c_node_idx=236, c_parent_idx=201, mojo_node_idx=233, mojo_parent_idx=198) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=237, c_parent_idx=201, mojo_node_idx=234, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # mesh 
 			WhitespaceNode(c_node_idx=238, c_parent_idx=201, mojo_node_idx=235, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_SDF, value=0, c_node_idx=239, c_parent_idx=201, mojo_node_idx=236, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_SDF = 0 
+			EnumFieldNode(name=mjGEOM_SDF, value=8, c_node_idx=239, c_parent_idx=201, mojo_node_idx=236, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_SDF = 8 
 			WhitespaceNode(c_node_idx=240, c_parent_idx=201, mojo_node_idx=237, mojo_parent_idx=198) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=241, c_parent_idx=201, mojo_node_idx=238, mojo_parent_idx=198) 
@@ -487,8 +487,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			WhitespaceNode(c_node_idx=242, c_parent_idx=201, mojo_node_idx=239, mojo_parent_idx=198) 
 			WhitespaceNode >>>  
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjNGEOMTYPES, value=0, c_node_idx=243, c_parent_idx=201, mojo_node_idx=240, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjNGEOMTYPES = 0 
+			EnumFieldNode(name=mjNGEOMTYPES, value=9, c_node_idx=243, c_parent_idx=201, mojo_node_idx=240, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjNGEOMTYPES = 9 
 			WhitespaceNode(c_node_idx=244, c_parent_idx=201, mojo_node_idx=241, mojo_parent_idx=198) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=245, c_parent_idx=201, mojo_node_idx=242, mojo_parent_idx=198) 
@@ -508,64 +508,64 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # arrow 
 			WhitespaceNode(c_node_idx=252, c_parent_idx=201, mojo_node_idx=249, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_ARROW1, value=0, c_node_idx=253, c_parent_idx=201, mojo_node_idx=250, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_ARROW1 = 0 
+			EnumFieldNode(name=mjGEOM_ARROW1, value=101, c_node_idx=253, c_parent_idx=201, mojo_node_idx=250, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_ARROW1 = 101 
 			WhitespaceNode(c_node_idx=254, c_parent_idx=201, mojo_node_idx=251, mojo_parent_idx=198) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=255, c_parent_idx=201, mojo_node_idx=252, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # arrow without wedges 
 			WhitespaceNode(c_node_idx=256, c_parent_idx=201, mojo_node_idx=253, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_ARROW2, value=0, c_node_idx=257, c_parent_idx=201, mojo_node_idx=254, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_ARROW2 = 0 
+			EnumFieldNode(name=mjGEOM_ARROW2, value=102, c_node_idx=257, c_parent_idx=201, mojo_node_idx=254, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_ARROW2 = 102 
 			WhitespaceNode(c_node_idx=258, c_parent_idx=201, mojo_node_idx=255, mojo_parent_idx=198) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=259, c_parent_idx=201, mojo_node_idx=256, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # arrow in both directions 
 			WhitespaceNode(c_node_idx=260, c_parent_idx=201, mojo_node_idx=257, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_LINE, value=0, c_node_idx=261, c_parent_idx=201, mojo_node_idx=258, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_LINE = 0 
+			EnumFieldNode(name=mjGEOM_LINE, value=103, c_node_idx=261, c_parent_idx=201, mojo_node_idx=258, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_LINE = 103 
 			WhitespaceNode(c_node_idx=262, c_parent_idx=201, mojo_node_idx=259, mojo_parent_idx=198) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=263, c_parent_idx=201, mojo_node_idx=260, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # line 
 			WhitespaceNode(c_node_idx=264, c_parent_idx=201, mojo_node_idx=261, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_LINEBOX, value=0, c_node_idx=265, c_parent_idx=201, mojo_node_idx=262, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_LINEBOX = 0 
+			EnumFieldNode(name=mjGEOM_LINEBOX, value=104, c_node_idx=265, c_parent_idx=201, mojo_node_idx=262, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_LINEBOX = 104 
 			WhitespaceNode(c_node_idx=266, c_parent_idx=201, mojo_node_idx=263, mojo_parent_idx=198) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=267, c_parent_idx=201, mojo_node_idx=264, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # box with line edges 
 			WhitespaceNode(c_node_idx=268, c_parent_idx=201, mojo_node_idx=265, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_FLEX, value=0, c_node_idx=269, c_parent_idx=201, mojo_node_idx=266, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_FLEX = 0 
+			EnumFieldNode(name=mjGEOM_FLEX, value=105, c_node_idx=269, c_parent_idx=201, mojo_node_idx=266, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_FLEX = 105 
 			WhitespaceNode(c_node_idx=270, c_parent_idx=201, mojo_node_idx=267, mojo_parent_idx=198) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=271, c_parent_idx=201, mojo_node_idx=268, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # flex 
 			WhitespaceNode(c_node_idx=272, c_parent_idx=201, mojo_node_idx=269, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_SKIN, value=0, c_node_idx=273, c_parent_idx=201, mojo_node_idx=270, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_SKIN = 0 
+			EnumFieldNode(name=mjGEOM_SKIN, value=106, c_node_idx=273, c_parent_idx=201, mojo_node_idx=270, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_SKIN = 106 
 			WhitespaceNode(c_node_idx=274, c_parent_idx=201, mojo_node_idx=271, mojo_parent_idx=198) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=275, c_parent_idx=201, mojo_node_idx=272, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # skin 
 			WhitespaceNode(c_node_idx=276, c_parent_idx=201, mojo_node_idx=273, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_LABEL, value=0, c_node_idx=277, c_parent_idx=201, mojo_node_idx=274, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_LABEL = 0 
+			EnumFieldNode(name=mjGEOM_LABEL, value=107, c_node_idx=277, c_parent_idx=201, mojo_node_idx=274, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_LABEL = 107 
 			WhitespaceNode(c_node_idx=278, c_parent_idx=201, mojo_node_idx=275, mojo_parent_idx=198) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=279, c_parent_idx=201, mojo_node_idx=276, mojo_parent_idx=198) 
 			SingleLineCommentNode >>> # text label 
 			WhitespaceNode(c_node_idx=280, c_parent_idx=201, mojo_node_idx=277, mojo_parent_idx=198) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGEOM_TRIANGLE, value=0, c_node_idx=281, c_parent_idx=201, mojo_node_idx=278, mojo_parent_idx=198) 
-			EnumFieldNode >>> alias mjGEOM_TRIANGLE = 0 
+			EnumFieldNode(name=mjGEOM_TRIANGLE, value=108, c_node_idx=281, c_parent_idx=201, mojo_node_idx=278, mojo_parent_idx=198) 
+			EnumFieldNode >>> alias mjGEOM_TRIANGLE = 108 
 			WhitespaceNode(c_node_idx=282, c_parent_idx=201, mojo_node_idx=279, mojo_parent_idx=198) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=283, c_parent_idx=201, mojo_node_idx=280, mojo_parent_idx=198) 
@@ -603,32 +603,32 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # pos and rot fixed in body 
 			WhitespaceNode(c_node_idx=299, c_parent_idx=292, mojo_node_idx=295, mojo_parent_idx=288) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCAMLIGHT_TRACK, value=0, c_node_idx=300, c_parent_idx=292, mojo_node_idx=296, mojo_parent_idx=288) 
-			EnumFieldNode >>> alias mjCAMLIGHT_TRACK = 0 
+			EnumFieldNode(name=mjCAMLIGHT_TRACK, value=1, c_node_idx=300, c_parent_idx=292, mojo_node_idx=296, mojo_parent_idx=288) 
+			EnumFieldNode >>> alias mjCAMLIGHT_TRACK = 1 
 			WhitespaceNode(c_node_idx=301, c_parent_idx=292, mojo_node_idx=297, mojo_parent_idx=288) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=302, c_parent_idx=292, mojo_node_idx=298, mojo_parent_idx=288) 
 			SingleLineCommentNode >>> # pos tracks body ,  rot fixed in global 
 			WhitespaceNode(c_node_idx=303, c_parent_idx=292, mojo_node_idx=299, mojo_parent_idx=288) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCAMLIGHT_TRACKCOM, value=0, c_node_idx=304, c_parent_idx=292, mojo_node_idx=300, mojo_parent_idx=288) 
-			EnumFieldNode >>> alias mjCAMLIGHT_TRACKCOM = 0 
+			EnumFieldNode(name=mjCAMLIGHT_TRACKCOM, value=2, c_node_idx=304, c_parent_idx=292, mojo_node_idx=300, mojo_parent_idx=288) 
+			EnumFieldNode >>> alias mjCAMLIGHT_TRACKCOM = 2 
 			WhitespaceNode(c_node_idx=305, c_parent_idx=292, mojo_node_idx=301, mojo_parent_idx=288) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=306, c_parent_idx=292, mojo_node_idx=302, mojo_parent_idx=288) 
 			SingleLineCommentNode >>> # pos tracks subtree com ,  rot fixed in body 
 			WhitespaceNode(c_node_idx=307, c_parent_idx=292, mojo_node_idx=303, mojo_parent_idx=288) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCAMLIGHT_TARGETBODY, value=0, c_node_idx=308, c_parent_idx=292, mojo_node_idx=304, mojo_parent_idx=288) 
-			EnumFieldNode >>> alias mjCAMLIGHT_TARGETBODY = 0 
+			EnumFieldNode(name=mjCAMLIGHT_TARGETBODY, value=3, c_node_idx=308, c_parent_idx=292, mojo_node_idx=304, mojo_parent_idx=288) 
+			EnumFieldNode >>> alias mjCAMLIGHT_TARGETBODY = 3 
 			WhitespaceNode(c_node_idx=309, c_parent_idx=292, mojo_node_idx=305, mojo_parent_idx=288) 
 			WhitespaceNode >>>           
 			SingleLineCommentNode(c_node_idx=310, c_parent_idx=292, mojo_node_idx=306, mojo_parent_idx=288) 
 			SingleLineCommentNode >>> # pos fixed in body ,  rot tracks target body 
 			WhitespaceNode(c_node_idx=311, c_parent_idx=292, mojo_node_idx=307, mojo_parent_idx=288) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCAMLIGHT_TARGETBODYCOM, value=0, c_node_idx=312, c_parent_idx=292, mojo_node_idx=308, mojo_parent_idx=288) 
-			EnumFieldNode >>> alias mjCAMLIGHT_TARGETBODYCOM = 0 
+			EnumFieldNode(name=mjCAMLIGHT_TARGETBODYCOM, value=4, c_node_idx=312, c_parent_idx=292, mojo_node_idx=308, mojo_parent_idx=288) 
+			EnumFieldNode >>> alias mjCAMLIGHT_TARGETBODYCOM = 4 
 			SingleLineCommentNode(c_node_idx=313, c_parent_idx=292, mojo_node_idx=309, mojo_parent_idx=288) 
 			SingleLineCommentNode >>> # pos fixed in body ,  rot tracks target subtree com 
 		TypedefNode >>> alias mjtCamLight = mjtCamLight_ 
@@ -655,16 +655,16 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # 2d texture ,  suitable for planes and hfields 
 			WhitespaceNode(c_node_idx=325, c_parent_idx=318, mojo_node_idx=320, mojo_parent_idx=313) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXTURE_CUBE, value=0, c_node_idx=326, c_parent_idx=318, mojo_node_idx=321, mojo_parent_idx=313) 
-			EnumFieldNode >>> alias mjTEXTURE_CUBE = 0 
+			EnumFieldNode(name=mjTEXTURE_CUBE, value=1, c_node_idx=326, c_parent_idx=318, mojo_node_idx=321, mojo_parent_idx=313) 
+			EnumFieldNode >>> alias mjTEXTURE_CUBE = 1 
 			WhitespaceNode(c_node_idx=327, c_parent_idx=318, mojo_node_idx=322, mojo_parent_idx=313) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=328, c_parent_idx=318, mojo_node_idx=323, mojo_parent_idx=313) 
 			SingleLineCommentNode >>> # cube texture ,  suitable for all other geom types 
 			WhitespaceNode(c_node_idx=329, c_parent_idx=318, mojo_node_idx=324, mojo_parent_idx=313) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXTURE_SKYBOX, value=0, c_node_idx=330, c_parent_idx=318, mojo_node_idx=325, mojo_parent_idx=313) 
-			EnumFieldNode >>> alias mjTEXTURE_SKYBOX = 0 
+			EnumFieldNode(name=mjTEXTURE_SKYBOX, value=2, c_node_idx=330, c_parent_idx=318, mojo_node_idx=325, mojo_parent_idx=313) 
+			EnumFieldNode >>> alias mjTEXTURE_SKYBOX = 2 
 			SingleLineCommentNode(c_node_idx=331, c_parent_idx=318, mojo_node_idx=326, mojo_parent_idx=313) 
 			SingleLineCommentNode >>> # cube texture used as skybox 
 		TypedefNode >>> alias mjtTexture = mjtTexture_ 
@@ -691,80 +691,80 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # unspecified 
 			WhitespaceNode(c_node_idx=343, c_parent_idx=336, mojo_node_idx=337, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_RGB, value=0, c_node_idx=344, c_parent_idx=336, mojo_node_idx=338, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_RGB = 0 
+			EnumFieldNode(name=mjTEXROLE_RGB, value=1, c_node_idx=344, c_parent_idx=336, mojo_node_idx=338, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_RGB = 1 
 			WhitespaceNode(c_node_idx=345, c_parent_idx=336, mojo_node_idx=339, mojo_parent_idx=330) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=346, c_parent_idx=336, mojo_node_idx=340, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # base color (albedo) 
 			WhitespaceNode(c_node_idx=347, c_parent_idx=336, mojo_node_idx=341, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_OCCLUSION, value=0, c_node_idx=348, c_parent_idx=336, mojo_node_idx=342, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_OCCLUSION = 0 
+			EnumFieldNode(name=mjTEXROLE_OCCLUSION, value=2, c_node_idx=348, c_parent_idx=336, mojo_node_idx=342, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_OCCLUSION = 2 
 			WhitespaceNode(c_node_idx=349, c_parent_idx=336, mojo_node_idx=343, mojo_parent_idx=330) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=350, c_parent_idx=336, mojo_node_idx=344, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # ambient occlusion 
 			WhitespaceNode(c_node_idx=351, c_parent_idx=336, mojo_node_idx=345, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_ROUGHNESS, value=0, c_node_idx=352, c_parent_idx=336, mojo_node_idx=346, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_ROUGHNESS = 0 
+			EnumFieldNode(name=mjTEXROLE_ROUGHNESS, value=3, c_node_idx=352, c_parent_idx=336, mojo_node_idx=346, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_ROUGHNESS = 3 
 			WhitespaceNode(c_node_idx=353, c_parent_idx=336, mojo_node_idx=347, mojo_parent_idx=330) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=354, c_parent_idx=336, mojo_node_idx=348, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # roughness 
 			WhitespaceNode(c_node_idx=355, c_parent_idx=336, mojo_node_idx=349, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_METALLIC, value=0, c_node_idx=356, c_parent_idx=336, mojo_node_idx=350, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_METALLIC = 0 
+			EnumFieldNode(name=mjTEXROLE_METALLIC, value=4, c_node_idx=356, c_parent_idx=336, mojo_node_idx=350, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_METALLIC = 4 
 			WhitespaceNode(c_node_idx=357, c_parent_idx=336, mojo_node_idx=351, mojo_parent_idx=330) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=358, c_parent_idx=336, mojo_node_idx=352, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # metallic 
 			WhitespaceNode(c_node_idx=359, c_parent_idx=336, mojo_node_idx=353, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_NORMAL, value=0, c_node_idx=360, c_parent_idx=336, mojo_node_idx=354, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_NORMAL = 0 
+			EnumFieldNode(name=mjTEXROLE_NORMAL, value=5, c_node_idx=360, c_parent_idx=336, mojo_node_idx=354, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_NORMAL = 5 
 			WhitespaceNode(c_node_idx=361, c_parent_idx=336, mojo_node_idx=355, mojo_parent_idx=330) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=362, c_parent_idx=336, mojo_node_idx=356, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # normal (bump) map 
 			WhitespaceNode(c_node_idx=363, c_parent_idx=336, mojo_node_idx=357, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_OPACITY, value=0, c_node_idx=364, c_parent_idx=336, mojo_node_idx=358, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_OPACITY = 0 
+			EnumFieldNode(name=mjTEXROLE_OPACITY, value=6, c_node_idx=364, c_parent_idx=336, mojo_node_idx=358, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_OPACITY = 6 
 			WhitespaceNode(c_node_idx=365, c_parent_idx=336, mojo_node_idx=359, mojo_parent_idx=330) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=366, c_parent_idx=336, mojo_node_idx=360, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # transperancy 
 			WhitespaceNode(c_node_idx=367, c_parent_idx=336, mojo_node_idx=361, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_EMISSIVE, value=0, c_node_idx=368, c_parent_idx=336, mojo_node_idx=362, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_EMISSIVE = 0 
+			EnumFieldNode(name=mjTEXROLE_EMISSIVE, value=7, c_node_idx=368, c_parent_idx=336, mojo_node_idx=362, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_EMISSIVE = 7 
 			WhitespaceNode(c_node_idx=369, c_parent_idx=336, mojo_node_idx=363, mojo_parent_idx=330) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=370, c_parent_idx=336, mojo_node_idx=364, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # light emission 
 			WhitespaceNode(c_node_idx=371, c_parent_idx=336, mojo_node_idx=365, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_RGBA, value=0, c_node_idx=372, c_parent_idx=336, mojo_node_idx=366, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_RGBA = 0 
+			EnumFieldNode(name=mjTEXROLE_RGBA, value=8, c_node_idx=372, c_parent_idx=336, mojo_node_idx=366, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_RGBA = 8 
 			WhitespaceNode(c_node_idx=373, c_parent_idx=336, mojo_node_idx=367, mojo_parent_idx=330) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=374, c_parent_idx=336, mojo_node_idx=368, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # base color ,  opacity 
 			WhitespaceNode(c_node_idx=375, c_parent_idx=336, mojo_node_idx=369, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTEXROLE_ORM, value=0, c_node_idx=376, c_parent_idx=336, mojo_node_idx=370, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjTEXROLE_ORM = 0 
+			EnumFieldNode(name=mjTEXROLE_ORM, value=9, c_node_idx=376, c_parent_idx=336, mojo_node_idx=370, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjTEXROLE_ORM = 9 
 			WhitespaceNode(c_node_idx=377, c_parent_idx=336, mojo_node_idx=371, mojo_parent_idx=330) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=378, c_parent_idx=336, mojo_node_idx=372, mojo_parent_idx=330) 
 			SingleLineCommentNode >>> # occlusion ,  roughness ,  metallic 
 			WhitespaceNode(c_node_idx=379, c_parent_idx=336, mojo_node_idx=373, mojo_parent_idx=330) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjNTEXROLE, value=0, c_node_idx=380, c_parent_idx=336, mojo_node_idx=374, mojo_parent_idx=330) 
-			EnumFieldNode >>> alias mjNTEXROLE = 0 
+			EnumFieldNode(name=mjNTEXROLE, value=10, c_node_idx=380, c_parent_idx=336, mojo_node_idx=374, mojo_parent_idx=330) 
+			EnumFieldNode >>> alias mjNTEXROLE = 10 
 		TypedefNode >>> alias mjtTextureRole = mjtTextureRole_ 
 		WhitespaceNode(c_node_idx=382, c_parent_idx=15, mojo_node_idx=375, mojo_parent_idx=15) 
 		WhitespaceNode >>>  
@@ -789,24 +789,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # semi-implicit Euler 
 			WhitespaceNode(c_node_idx=392, c_parent_idx=385, mojo_node_idx=385, mojo_parent_idx=378) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjINT_RK4, value=0, c_node_idx=393, c_parent_idx=385, mojo_node_idx=386, mojo_parent_idx=378) 
-			EnumFieldNode >>> alias mjINT_RK4 = 0 
+			EnumFieldNode(name=mjINT_RK4, value=1, c_node_idx=393, c_parent_idx=385, mojo_node_idx=386, mojo_parent_idx=378) 
+			EnumFieldNode >>> alias mjINT_RK4 = 1 
 			WhitespaceNode(c_node_idx=394, c_parent_idx=385, mojo_node_idx=387, mojo_parent_idx=378) 
 			WhitespaceNode >>>                       
 			SingleLineCommentNode(c_node_idx=395, c_parent_idx=385, mojo_node_idx=388, mojo_parent_idx=378) 
 			SingleLineCommentNode >>> # 4th-order Runge Kutta 
 			WhitespaceNode(c_node_idx=396, c_parent_idx=385, mojo_node_idx=389, mojo_parent_idx=378) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjINT_IMPLICIT, value=0, c_node_idx=397, c_parent_idx=385, mojo_node_idx=390, mojo_parent_idx=378) 
-			EnumFieldNode >>> alias mjINT_IMPLICIT = 0 
+			EnumFieldNode(name=mjINT_IMPLICIT, value=2, c_node_idx=397, c_parent_idx=385, mojo_node_idx=390, mojo_parent_idx=378) 
+			EnumFieldNode >>> alias mjINT_IMPLICIT = 2 
 			WhitespaceNode(c_node_idx=398, c_parent_idx=385, mojo_node_idx=391, mojo_parent_idx=378) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=399, c_parent_idx=385, mojo_node_idx=392, mojo_parent_idx=378) 
 			SingleLineCommentNode >>> # implicit in velocity 
 			WhitespaceNode(c_node_idx=400, c_parent_idx=385, mojo_node_idx=393, mojo_parent_idx=378) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjINT_IMPLICITFAST, value=0, c_node_idx=401, c_parent_idx=385, mojo_node_idx=394, mojo_parent_idx=378) 
-			EnumFieldNode >>> alias mjINT_IMPLICITFAST = 0 
+			EnumFieldNode(name=mjINT_IMPLICITFAST, value=3, c_node_idx=401, c_parent_idx=385, mojo_node_idx=394, mojo_parent_idx=378) 
+			EnumFieldNode >>> alias mjINT_IMPLICITFAST = 3 
 			SingleLineCommentNode(c_node_idx=402, c_parent_idx=385, mojo_node_idx=395, mojo_parent_idx=378) 
 			SingleLineCommentNode >>> # implicit in velocity ,  no rne derivative 
 		TypedefNode >>> alias mjtIntegrator = mjtIntegrator_ 
@@ -833,8 +833,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # pyramidal 
 			WhitespaceNode(c_node_idx=414, c_parent_idx=407, mojo_node_idx=406, mojo_parent_idx=399) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCONE_ELLIPTIC, value=0, c_node_idx=415, c_parent_idx=407, mojo_node_idx=407, mojo_parent_idx=399) 
-			EnumFieldNode >>> alias mjCONE_ELLIPTIC = 0 
+			EnumFieldNode(name=mjCONE_ELLIPTIC, value=1, c_node_idx=415, c_parent_idx=407, mojo_node_idx=407, mojo_parent_idx=399) 
+			EnumFieldNode >>> alias mjCONE_ELLIPTIC = 1 
 			SingleLineCommentNode(c_node_idx=416, c_parent_idx=407, mojo_node_idx=408, mojo_parent_idx=399) 
 			SingleLineCommentNode >>> # elliptic 
 		TypedefNode >>> alias mjtCone = mjtCone_ 
@@ -861,16 +861,16 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # dense 
 			WhitespaceNode(c_node_idx=428, c_parent_idx=421, mojo_node_idx=419, mojo_parent_idx=412) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjJAC_SPARSE, value=0, c_node_idx=429, c_parent_idx=421, mojo_node_idx=420, mojo_parent_idx=412) 
-			EnumFieldNode >>> alias mjJAC_SPARSE = 0 
+			EnumFieldNode(name=mjJAC_SPARSE, value=1, c_node_idx=429, c_parent_idx=421, mojo_node_idx=420, mojo_parent_idx=412) 
+			EnumFieldNode >>> alias mjJAC_SPARSE = 1 
 			WhitespaceNode(c_node_idx=430, c_parent_idx=421, mojo_node_idx=421, mojo_parent_idx=412) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=431, c_parent_idx=421, mojo_node_idx=422, mojo_parent_idx=412) 
 			SingleLineCommentNode >>> # sparse 
 			WhitespaceNode(c_node_idx=432, c_parent_idx=421, mojo_node_idx=423, mojo_parent_idx=412) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjJAC_AUTO, value=0, c_node_idx=433, c_parent_idx=421, mojo_node_idx=424, mojo_parent_idx=412) 
-			EnumFieldNode >>> alias mjJAC_AUTO = 0 
+			EnumFieldNode(name=mjJAC_AUTO, value=2, c_node_idx=433, c_parent_idx=421, mojo_node_idx=424, mojo_parent_idx=412) 
+			EnumFieldNode >>> alias mjJAC_AUTO = 2 
 			SingleLineCommentNode(c_node_idx=434, c_parent_idx=421, mojo_node_idx=425, mojo_parent_idx=412) 
 			SingleLineCommentNode >>> # dense if nv<60 ,  sparse otherwise 
 		TypedefNode >>> alias mjtJacobian = mjtJacobian_ 
@@ -897,16 +897,16 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # PGS    (dual) 
 			WhitespaceNode(c_node_idx=446, c_parent_idx=439, mojo_node_idx=436, mojo_parent_idx=429) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSOL_CG, value=0, c_node_idx=447, c_parent_idx=439, mojo_node_idx=437, mojo_parent_idx=429) 
-			EnumFieldNode >>> alias mjSOL_CG = 0 
+			EnumFieldNode(name=mjSOL_CG, value=1, c_node_idx=447, c_parent_idx=439, mojo_node_idx=437, mojo_parent_idx=429) 
+			EnumFieldNode >>> alias mjSOL_CG = 1 
 			WhitespaceNode(c_node_idx=448, c_parent_idx=439, mojo_node_idx=438, mojo_parent_idx=429) 
 			WhitespaceNode >>>                        
 			SingleLineCommentNode(c_node_idx=449, c_parent_idx=439, mojo_node_idx=439, mojo_parent_idx=429) 
 			SingleLineCommentNode >>> # CG     (primal) 
 			WhitespaceNode(c_node_idx=450, c_parent_idx=439, mojo_node_idx=440, mojo_parent_idx=429) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSOL_NEWTON, value=0, c_node_idx=451, c_parent_idx=439, mojo_node_idx=441, mojo_parent_idx=429) 
-			EnumFieldNode >>> alias mjSOL_NEWTON = 0 
+			EnumFieldNode(name=mjSOL_NEWTON, value=2, c_node_idx=451, c_parent_idx=439, mojo_node_idx=441, mojo_parent_idx=429) 
+			EnumFieldNode >>> alias mjSOL_NEWTON = 2 
 			SingleLineCommentNode(c_node_idx=452, c_parent_idx=439, mojo_node_idx=442, mojo_parent_idx=429) 
 			SingleLineCommentNode >>> # Newton (primal) 
 		TypedefNode >>> alias mjtSolver = mjtSolver_ 
@@ -933,40 +933,40 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # connect two bodies at a point (ball joint) 
 			WhitespaceNode(c_node_idx=464, c_parent_idx=457, mojo_node_idx=453, mojo_parent_idx=446) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjEQ_WELD, value=0, c_node_idx=465, c_parent_idx=457, mojo_node_idx=454, mojo_parent_idx=446) 
-			EnumFieldNode >>> alias mjEQ_WELD = 0 
+			EnumFieldNode(name=mjEQ_WELD, value=1, c_node_idx=465, c_parent_idx=457, mojo_node_idx=454, mojo_parent_idx=446) 
+			EnumFieldNode >>> alias mjEQ_WELD = 1 
 			WhitespaceNode(c_node_idx=466, c_parent_idx=457, mojo_node_idx=455, mojo_parent_idx=446) 
 			WhitespaceNode >>>                       
 			SingleLineCommentNode(c_node_idx=467, c_parent_idx=457, mojo_node_idx=456, mojo_parent_idx=446) 
 			SingleLineCommentNode >>> # fix relative position and orientation of two bodies 
 			WhitespaceNode(c_node_idx=468, c_parent_idx=457, mojo_node_idx=457, mojo_parent_idx=446) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjEQ_JOINT, value=0, c_node_idx=469, c_parent_idx=457, mojo_node_idx=458, mojo_parent_idx=446) 
-			EnumFieldNode >>> alias mjEQ_JOINT = 0 
+			EnumFieldNode(name=mjEQ_JOINT, value=2, c_node_idx=469, c_parent_idx=457, mojo_node_idx=458, mojo_parent_idx=446) 
+			EnumFieldNode >>> alias mjEQ_JOINT = 2 
 			WhitespaceNode(c_node_idx=470, c_parent_idx=457, mojo_node_idx=459, mojo_parent_idx=446) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=471, c_parent_idx=457, mojo_node_idx=460, mojo_parent_idx=446) 
 			SingleLineCommentNode >>> # couple the values of two scalar joints with cubic 
 			WhitespaceNode(c_node_idx=472, c_parent_idx=457, mojo_node_idx=461, mojo_parent_idx=446) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjEQ_TENDON, value=0, c_node_idx=473, c_parent_idx=457, mojo_node_idx=462, mojo_parent_idx=446) 
-			EnumFieldNode >>> alias mjEQ_TENDON = 0 
+			EnumFieldNode(name=mjEQ_TENDON, value=3, c_node_idx=473, c_parent_idx=457, mojo_node_idx=462, mojo_parent_idx=446) 
+			EnumFieldNode >>> alias mjEQ_TENDON = 3 
 			WhitespaceNode(c_node_idx=474, c_parent_idx=457, mojo_node_idx=463, mojo_parent_idx=446) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=475, c_parent_idx=457, mojo_node_idx=464, mojo_parent_idx=446) 
 			SingleLineCommentNode >>> # couple the lengths of two tendons with cubic 
 			WhitespaceNode(c_node_idx=476, c_parent_idx=457, mojo_node_idx=465, mojo_parent_idx=446) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjEQ_FLEX, value=0, c_node_idx=477, c_parent_idx=457, mojo_node_idx=466, mojo_parent_idx=446) 
-			EnumFieldNode >>> alias mjEQ_FLEX = 0 
+			EnumFieldNode(name=mjEQ_FLEX, value=4, c_node_idx=477, c_parent_idx=457, mojo_node_idx=466, mojo_parent_idx=446) 
+			EnumFieldNode >>> alias mjEQ_FLEX = 4 
 			WhitespaceNode(c_node_idx=478, c_parent_idx=457, mojo_node_idx=467, mojo_parent_idx=446) 
 			WhitespaceNode >>>                       
 			SingleLineCommentNode(c_node_idx=479, c_parent_idx=457, mojo_node_idx=468, mojo_parent_idx=446) 
 			SingleLineCommentNode >>> # fix all edge lengths of a flex 
 			WhitespaceNode(c_node_idx=480, c_parent_idx=457, mojo_node_idx=469, mojo_parent_idx=446) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjEQ_DISTANCE, value=0, c_node_idx=481, c_parent_idx=457, mojo_node_idx=470, mojo_parent_idx=446) 
-			EnumFieldNode >>> alias mjEQ_DISTANCE = 0 
+			EnumFieldNode(name=mjEQ_DISTANCE, value=5, c_node_idx=481, c_parent_idx=457, mojo_node_idx=470, mojo_parent_idx=446) 
+			EnumFieldNode >>> alias mjEQ_DISTANCE = 5 
 			SingleLineCommentNode(c_node_idx=482, c_parent_idx=457, mojo_node_idx=471, mojo_parent_idx=446) 
 			SingleLineCommentNode >>> # unsupported ,  will cause an error if used 
 		TypedefNode >>> alias mjtEq = mjtEq_ 
@@ -993,40 +993,40 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # null object 
 			WhitespaceNode(c_node_idx=494, c_parent_idx=487, mojo_node_idx=482, mojo_parent_idx=475) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjWRAP_JOINT, value=0, c_node_idx=495, c_parent_idx=487, mojo_node_idx=483, mojo_parent_idx=475) 
-			EnumFieldNode >>> alias mjWRAP_JOINT = 0 
+			EnumFieldNode(name=mjWRAP_JOINT, value=1, c_node_idx=495, c_parent_idx=487, mojo_node_idx=483, mojo_parent_idx=475) 
+			EnumFieldNode >>> alias mjWRAP_JOINT = 1 
 			WhitespaceNode(c_node_idx=496, c_parent_idx=487, mojo_node_idx=484, mojo_parent_idx=475) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=497, c_parent_idx=487, mojo_node_idx=485, mojo_parent_idx=475) 
 			SingleLineCommentNode >>> # constant moment arm 
 			WhitespaceNode(c_node_idx=498, c_parent_idx=487, mojo_node_idx=486, mojo_parent_idx=475) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjWRAP_PULLEY, value=0, c_node_idx=499, c_parent_idx=487, mojo_node_idx=487, mojo_parent_idx=475) 
-			EnumFieldNode >>> alias mjWRAP_PULLEY = 0 
+			EnumFieldNode(name=mjWRAP_PULLEY, value=2, c_node_idx=499, c_parent_idx=487, mojo_node_idx=487, mojo_parent_idx=475) 
+			EnumFieldNode >>> alias mjWRAP_PULLEY = 2 
 			WhitespaceNode(c_node_idx=500, c_parent_idx=487, mojo_node_idx=488, mojo_parent_idx=475) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=501, c_parent_idx=487, mojo_node_idx=489, mojo_parent_idx=475) 
 			SingleLineCommentNode >>> # pulley used to split tendon 
 			WhitespaceNode(c_node_idx=502, c_parent_idx=487, mojo_node_idx=490, mojo_parent_idx=475) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjWRAP_SITE, value=0, c_node_idx=503, c_parent_idx=487, mojo_node_idx=491, mojo_parent_idx=475) 
-			EnumFieldNode >>> alias mjWRAP_SITE = 0 
+			EnumFieldNode(name=mjWRAP_SITE, value=3, c_node_idx=503, c_parent_idx=487, mojo_node_idx=491, mojo_parent_idx=475) 
+			EnumFieldNode >>> alias mjWRAP_SITE = 3 
 			WhitespaceNode(c_node_idx=504, c_parent_idx=487, mojo_node_idx=492, mojo_parent_idx=475) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=505, c_parent_idx=487, mojo_node_idx=493, mojo_parent_idx=475) 
 			SingleLineCommentNode >>> # pass through site 
 			WhitespaceNode(c_node_idx=506, c_parent_idx=487, mojo_node_idx=494, mojo_parent_idx=475) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjWRAP_SPHERE, value=0, c_node_idx=507, c_parent_idx=487, mojo_node_idx=495, mojo_parent_idx=475) 
-			EnumFieldNode >>> alias mjWRAP_SPHERE = 0 
+			EnumFieldNode(name=mjWRAP_SPHERE, value=4, c_node_idx=507, c_parent_idx=487, mojo_node_idx=495, mojo_parent_idx=475) 
+			EnumFieldNode >>> alias mjWRAP_SPHERE = 4 
 			WhitespaceNode(c_node_idx=508, c_parent_idx=487, mojo_node_idx=496, mojo_parent_idx=475) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=509, c_parent_idx=487, mojo_node_idx=497, mojo_parent_idx=475) 
 			SingleLineCommentNode >>> # wrap around sphere 
 			WhitespaceNode(c_node_idx=510, c_parent_idx=487, mojo_node_idx=498, mojo_parent_idx=475) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjWRAP_CYLINDER, value=0, c_node_idx=511, c_parent_idx=487, mojo_node_idx=499, mojo_parent_idx=475) 
-			EnumFieldNode >>> alias mjWRAP_CYLINDER = 0 
+			EnumFieldNode(name=mjWRAP_CYLINDER, value=5, c_node_idx=511, c_parent_idx=487, mojo_node_idx=499, mojo_parent_idx=475) 
+			EnumFieldNode >>> alias mjWRAP_CYLINDER = 5 
 			SingleLineCommentNode(c_node_idx=512, c_parent_idx=487, mojo_node_idx=500, mojo_parent_idx=475) 
 			SingleLineCommentNode >>> # wrap around (infinite) cylinder 
 		TypedefNode >>> alias mjtWrap = mjtWrap_ 
@@ -1053,40 +1053,40 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # force on joint 
 			WhitespaceNode(c_node_idx=524, c_parent_idx=517, mojo_node_idx=511, mojo_parent_idx=504) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTRN_JOINTINPARENT, value=0, c_node_idx=525, c_parent_idx=517, mojo_node_idx=512, mojo_parent_idx=504) 
-			EnumFieldNode >>> alias mjTRN_JOINTINPARENT = 0 
+			EnumFieldNode(name=mjTRN_JOINTINPARENT, value=1, c_node_idx=525, c_parent_idx=517, mojo_node_idx=512, mojo_parent_idx=504) 
+			EnumFieldNode >>> alias mjTRN_JOINTINPARENT = 1 
 			WhitespaceNode(c_node_idx=526, c_parent_idx=517, mojo_node_idx=513, mojo_parent_idx=504) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=527, c_parent_idx=517, mojo_node_idx=514, mojo_parent_idx=504) 
 			SingleLineCommentNode >>> # force on joint ,  expressed in parent frame 
 			WhitespaceNode(c_node_idx=528, c_parent_idx=517, mojo_node_idx=515, mojo_parent_idx=504) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTRN_SLIDERCRANK, value=0, c_node_idx=529, c_parent_idx=517, mojo_node_idx=516, mojo_parent_idx=504) 
-			EnumFieldNode >>> alias mjTRN_SLIDERCRANK = 0 
+			EnumFieldNode(name=mjTRN_SLIDERCRANK, value=2, c_node_idx=529, c_parent_idx=517, mojo_node_idx=516, mojo_parent_idx=504) 
+			EnumFieldNode >>> alias mjTRN_SLIDERCRANK = 2 
 			WhitespaceNode(c_node_idx=530, c_parent_idx=517, mojo_node_idx=517, mojo_parent_idx=504) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=531, c_parent_idx=517, mojo_node_idx=518, mojo_parent_idx=504) 
 			SingleLineCommentNode >>> # force via slider-crank linkage 
 			WhitespaceNode(c_node_idx=532, c_parent_idx=517, mojo_node_idx=519, mojo_parent_idx=504) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTRN_TENDON, value=0, c_node_idx=533, c_parent_idx=517, mojo_node_idx=520, mojo_parent_idx=504) 
-			EnumFieldNode >>> alias mjTRN_TENDON = 0 
+			EnumFieldNode(name=mjTRN_TENDON, value=3, c_node_idx=533, c_parent_idx=517, mojo_node_idx=520, mojo_parent_idx=504) 
+			EnumFieldNode >>> alias mjTRN_TENDON = 3 
 			WhitespaceNode(c_node_idx=534, c_parent_idx=517, mojo_node_idx=521, mojo_parent_idx=504) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=535, c_parent_idx=517, mojo_node_idx=522, mojo_parent_idx=504) 
 			SingleLineCommentNode >>> # force on tendon 
 			WhitespaceNode(c_node_idx=536, c_parent_idx=517, mojo_node_idx=523, mojo_parent_idx=504) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTRN_SITE, value=0, c_node_idx=537, c_parent_idx=517, mojo_node_idx=524, mojo_parent_idx=504) 
-			EnumFieldNode >>> alias mjTRN_SITE = 0 
+			EnumFieldNode(name=mjTRN_SITE, value=4, c_node_idx=537, c_parent_idx=517, mojo_node_idx=524, mojo_parent_idx=504) 
+			EnumFieldNode >>> alias mjTRN_SITE = 4 
 			WhitespaceNode(c_node_idx=538, c_parent_idx=517, mojo_node_idx=525, mojo_parent_idx=504) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=539, c_parent_idx=517, mojo_node_idx=526, mojo_parent_idx=504) 
 			SingleLineCommentNode >>> # force on site 
 			WhitespaceNode(c_node_idx=540, c_parent_idx=517, mojo_node_idx=527, mojo_parent_idx=504) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjTRN_BODY, value=0, c_node_idx=541, c_parent_idx=517, mojo_node_idx=528, mojo_parent_idx=504) 
-			EnumFieldNode >>> alias mjTRN_BODY = 0 
+			EnumFieldNode(name=mjTRN_BODY, value=5, c_node_idx=541, c_parent_idx=517, mojo_node_idx=528, mojo_parent_idx=504) 
+			EnumFieldNode >>> alias mjTRN_BODY = 5 
 			WhitespaceNode(c_node_idx=542, c_parent_idx=517, mojo_node_idx=529, mojo_parent_idx=504) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=543, c_parent_idx=517, mojo_node_idx=530, mojo_parent_idx=504) 
@@ -1124,40 +1124,40 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # no internal dynamics ;  ctrl specifies force 
 			WhitespaceNode(c_node_idx=559, c_parent_idx=552, mojo_node_idx=545, mojo_parent_idx=538) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDYN_INTEGRATOR, value=0, c_node_idx=560, c_parent_idx=552, mojo_node_idx=546, mojo_parent_idx=538) 
-			EnumFieldNode >>> alias mjDYN_INTEGRATOR = 0 
+			EnumFieldNode(name=mjDYN_INTEGRATOR, value=1, c_node_idx=560, c_parent_idx=552, mojo_node_idx=546, mojo_parent_idx=538) 
+			EnumFieldNode >>> alias mjDYN_INTEGRATOR = 1 
 			WhitespaceNode(c_node_idx=561, c_parent_idx=552, mojo_node_idx=547, mojo_parent_idx=538) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=562, c_parent_idx=552, mojo_node_idx=548, mojo_parent_idx=538) 
 			SingleLineCommentNode >>> # integrator: da/dt = u 
 			WhitespaceNode(c_node_idx=563, c_parent_idx=552, mojo_node_idx=549, mojo_parent_idx=538) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDYN_FILTER, value=0, c_node_idx=564, c_parent_idx=552, mojo_node_idx=550, mojo_parent_idx=538) 
-			EnumFieldNode >>> alias mjDYN_FILTER = 0 
+			EnumFieldNode(name=mjDYN_FILTER, value=2, c_node_idx=564, c_parent_idx=552, mojo_node_idx=550, mojo_parent_idx=538) 
+			EnumFieldNode >>> alias mjDYN_FILTER = 2 
 			WhitespaceNode(c_node_idx=565, c_parent_idx=552, mojo_node_idx=551, mojo_parent_idx=538) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=566, c_parent_idx=552, mojo_node_idx=552, mojo_parent_idx=538) 
 			SingleLineCommentNode >>> # linear filter: da/dt = (u-a) / tau 
 			WhitespaceNode(c_node_idx=567, c_parent_idx=552, mojo_node_idx=553, mojo_parent_idx=538) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDYN_FILTEREXACT, value=0, c_node_idx=568, c_parent_idx=552, mojo_node_idx=554, mojo_parent_idx=538) 
-			EnumFieldNode >>> alias mjDYN_FILTEREXACT = 0 
+			EnumFieldNode(name=mjDYN_FILTEREXACT, value=3, c_node_idx=568, c_parent_idx=552, mojo_node_idx=554, mojo_parent_idx=538) 
+			EnumFieldNode >>> alias mjDYN_FILTEREXACT = 3 
 			WhitespaceNode(c_node_idx=569, c_parent_idx=552, mojo_node_idx=555, mojo_parent_idx=538) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=570, c_parent_idx=552, mojo_node_idx=556, mojo_parent_idx=538) 
 			SingleLineCommentNode >>> # linear filter: da/dt = (u-a) / tau ,  with exact integration 
 			WhitespaceNode(c_node_idx=571, c_parent_idx=552, mojo_node_idx=557, mojo_parent_idx=538) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDYN_MUSCLE, value=0, c_node_idx=572, c_parent_idx=552, mojo_node_idx=558, mojo_parent_idx=538) 
-			EnumFieldNode >>> alias mjDYN_MUSCLE = 0 
+			EnumFieldNode(name=mjDYN_MUSCLE, value=4, c_node_idx=572, c_parent_idx=552, mojo_node_idx=558, mojo_parent_idx=538) 
+			EnumFieldNode >>> alias mjDYN_MUSCLE = 4 
 			WhitespaceNode(c_node_idx=573, c_parent_idx=552, mojo_node_idx=559, mojo_parent_idx=538) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=574, c_parent_idx=552, mojo_node_idx=560, mojo_parent_idx=538) 
 			SingleLineCommentNode >>> # piece-wise linear filter with two time constants 
 			WhitespaceNode(c_node_idx=575, c_parent_idx=552, mojo_node_idx=561, mojo_parent_idx=538) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDYN_USER, value=0, c_node_idx=576, c_parent_idx=552, mojo_node_idx=562, mojo_parent_idx=538) 
-			EnumFieldNode >>> alias mjDYN_USER = 0 
+			EnumFieldNode(name=mjDYN_USER, value=5, c_node_idx=576, c_parent_idx=552, mojo_node_idx=562, mojo_parent_idx=538) 
+			EnumFieldNode >>> alias mjDYN_USER = 5 
 			SingleLineCommentNode(c_node_idx=577, c_parent_idx=552, mojo_node_idx=563, mojo_parent_idx=538) 
 			SingleLineCommentNode >>> # user-defined dynamics type 
 		TypedefNode >>> alias mjtDyn = mjtDyn_ 
@@ -1184,24 +1184,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # fixed gain 
 			WhitespaceNode(c_node_idx=589, c_parent_idx=582, mojo_node_idx=574, mojo_parent_idx=567) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGAIN_AFFINE, value=0, c_node_idx=590, c_parent_idx=582, mojo_node_idx=575, mojo_parent_idx=567) 
-			EnumFieldNode >>> alias mjGAIN_AFFINE = 0 
+			EnumFieldNode(name=mjGAIN_AFFINE, value=1, c_node_idx=590, c_parent_idx=582, mojo_node_idx=575, mojo_parent_idx=567) 
+			EnumFieldNode >>> alias mjGAIN_AFFINE = 1 
 			WhitespaceNode(c_node_idx=591, c_parent_idx=582, mojo_node_idx=576, mojo_parent_idx=567) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=592, c_parent_idx=582, mojo_node_idx=577, mojo_parent_idx=567) 
 			SingleLineCommentNode >>> # const + kp*length + kv*velocity 
 			WhitespaceNode(c_node_idx=593, c_parent_idx=582, mojo_node_idx=578, mojo_parent_idx=567) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGAIN_MUSCLE, value=0, c_node_idx=594, c_parent_idx=582, mojo_node_idx=579, mojo_parent_idx=567) 
-			EnumFieldNode >>> alias mjGAIN_MUSCLE = 0 
+			EnumFieldNode(name=mjGAIN_MUSCLE, value=2, c_node_idx=594, c_parent_idx=582, mojo_node_idx=579, mojo_parent_idx=567) 
+			EnumFieldNode >>> alias mjGAIN_MUSCLE = 2 
 			WhitespaceNode(c_node_idx=595, c_parent_idx=582, mojo_node_idx=580, mojo_parent_idx=567) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=596, c_parent_idx=582, mojo_node_idx=581, mojo_parent_idx=567) 
 			SingleLineCommentNode >>> # muscle FLV curve computed by mju_muscleGain() 
 			WhitespaceNode(c_node_idx=597, c_parent_idx=582, mojo_node_idx=582, mojo_parent_idx=567) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjGAIN_USER, value=0, c_node_idx=598, c_parent_idx=582, mojo_node_idx=583, mojo_parent_idx=567) 
-			EnumFieldNode >>> alias mjGAIN_USER = 0 
+			EnumFieldNode(name=mjGAIN_USER, value=3, c_node_idx=598, c_parent_idx=582, mojo_node_idx=583, mojo_parent_idx=567) 
+			EnumFieldNode >>> alias mjGAIN_USER = 3 
 			SingleLineCommentNode(c_node_idx=599, c_parent_idx=582, mojo_node_idx=584, mojo_parent_idx=567) 
 			SingleLineCommentNode >>> # user-defined gain type 
 		TypedefNode >>> alias mjtGain = mjtGain_ 
@@ -1228,24 +1228,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # no bias 
 			WhitespaceNode(c_node_idx=611, c_parent_idx=604, mojo_node_idx=595, mojo_parent_idx=588) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjBIAS_AFFINE, value=0, c_node_idx=612, c_parent_idx=604, mojo_node_idx=596, mojo_parent_idx=588) 
-			EnumFieldNode >>> alias mjBIAS_AFFINE = 0 
+			EnumFieldNode(name=mjBIAS_AFFINE, value=1, c_node_idx=612, c_parent_idx=604, mojo_node_idx=596, mojo_parent_idx=588) 
+			EnumFieldNode >>> alias mjBIAS_AFFINE = 1 
 			WhitespaceNode(c_node_idx=613, c_parent_idx=604, mojo_node_idx=597, mojo_parent_idx=588) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=614, c_parent_idx=604, mojo_node_idx=598, mojo_parent_idx=588) 
 			SingleLineCommentNode >>> # const + kp*length + kv*velocity 
 			WhitespaceNode(c_node_idx=615, c_parent_idx=604, mojo_node_idx=599, mojo_parent_idx=588) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjBIAS_MUSCLE, value=0, c_node_idx=616, c_parent_idx=604, mojo_node_idx=600, mojo_parent_idx=588) 
-			EnumFieldNode >>> alias mjBIAS_MUSCLE = 0 
+			EnumFieldNode(name=mjBIAS_MUSCLE, value=2, c_node_idx=616, c_parent_idx=604, mojo_node_idx=600, mojo_parent_idx=588) 
+			EnumFieldNode >>> alias mjBIAS_MUSCLE = 2 
 			WhitespaceNode(c_node_idx=617, c_parent_idx=604, mojo_node_idx=601, mojo_parent_idx=588) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=618, c_parent_idx=604, mojo_node_idx=602, mojo_parent_idx=588) 
 			SingleLineCommentNode >>> # muscle passive force computed by mju_muscleBias() 
 			WhitespaceNode(c_node_idx=619, c_parent_idx=604, mojo_node_idx=603, mojo_parent_idx=588) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjBIAS_USER, value=0, c_node_idx=620, c_parent_idx=604, mojo_node_idx=604, mojo_parent_idx=588) 
-			EnumFieldNode >>> alias mjBIAS_USER = 0 
+			EnumFieldNode(name=mjBIAS_USER, value=3, c_node_idx=620, c_parent_idx=604, mojo_node_idx=604, mojo_parent_idx=588) 
+			EnumFieldNode >>> alias mjBIAS_USER = 3 
 			SingleLineCommentNode(c_node_idx=621, c_parent_idx=604, mojo_node_idx=605, mojo_parent_idx=588) 
 			SingleLineCommentNode >>> # user-defined bias type 
 		TypedefNode >>> alias mjtBias = mjtBias_ 
@@ -1272,200 +1272,200 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # unknown object type 
 			WhitespaceNode(c_node_idx=633, c_parent_idx=626, mojo_node_idx=616, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_BODY, value=0, c_node_idx=634, c_parent_idx=626, mojo_node_idx=617, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_BODY = 0 
+			EnumFieldNode(name=mjOBJ_BODY, value=1, c_node_idx=634, c_parent_idx=626, mojo_node_idx=617, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_BODY = 1 
 			WhitespaceNode(c_node_idx=635, c_parent_idx=626, mojo_node_idx=618, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=636, c_parent_idx=626, mojo_node_idx=619, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # body 
 			WhitespaceNode(c_node_idx=637, c_parent_idx=626, mojo_node_idx=620, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_XBODY, value=0, c_node_idx=638, c_parent_idx=626, mojo_node_idx=621, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_XBODY = 0 
+			EnumFieldNode(name=mjOBJ_XBODY, value=2, c_node_idx=638, c_parent_idx=626, mojo_node_idx=621, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_XBODY = 2 
 			WhitespaceNode(c_node_idx=639, c_parent_idx=626, mojo_node_idx=622, mojo_parent_idx=609) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=640, c_parent_idx=626, mojo_node_idx=623, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # body ,  used to access regular frame instead of i-frame 
 			WhitespaceNode(c_node_idx=641, c_parent_idx=626, mojo_node_idx=624, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_JOINT, value=0, c_node_idx=642, c_parent_idx=626, mojo_node_idx=625, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_JOINT = 0 
+			EnumFieldNode(name=mjOBJ_JOINT, value=3, c_node_idx=642, c_parent_idx=626, mojo_node_idx=625, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_JOINT = 3 
 			WhitespaceNode(c_node_idx=643, c_parent_idx=626, mojo_node_idx=626, mojo_parent_idx=609) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=644, c_parent_idx=626, mojo_node_idx=627, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # joint 
 			WhitespaceNode(c_node_idx=645, c_parent_idx=626, mojo_node_idx=628, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_DOF, value=0, c_node_idx=646, c_parent_idx=626, mojo_node_idx=629, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_DOF = 0 
+			EnumFieldNode(name=mjOBJ_DOF, value=4, c_node_idx=646, c_parent_idx=626, mojo_node_idx=629, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_DOF = 4 
 			WhitespaceNode(c_node_idx=647, c_parent_idx=626, mojo_node_idx=630, mojo_parent_idx=609) 
 			WhitespaceNode >>>                       
 			SingleLineCommentNode(c_node_idx=648, c_parent_idx=626, mojo_node_idx=631, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # dof 
 			WhitespaceNode(c_node_idx=649, c_parent_idx=626, mojo_node_idx=632, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_GEOM, value=0, c_node_idx=650, c_parent_idx=626, mojo_node_idx=633, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_GEOM = 0 
+			EnumFieldNode(name=mjOBJ_GEOM, value=5, c_node_idx=650, c_parent_idx=626, mojo_node_idx=633, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_GEOM = 5 
 			WhitespaceNode(c_node_idx=651, c_parent_idx=626, mojo_node_idx=634, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=652, c_parent_idx=626, mojo_node_idx=635, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # geom 
 			WhitespaceNode(c_node_idx=653, c_parent_idx=626, mojo_node_idx=636, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_SITE, value=0, c_node_idx=654, c_parent_idx=626, mojo_node_idx=637, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_SITE = 0 
+			EnumFieldNode(name=mjOBJ_SITE, value=6, c_node_idx=654, c_parent_idx=626, mojo_node_idx=637, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_SITE = 6 
 			WhitespaceNode(c_node_idx=655, c_parent_idx=626, mojo_node_idx=638, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=656, c_parent_idx=626, mojo_node_idx=639, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # site 
 			WhitespaceNode(c_node_idx=657, c_parent_idx=626, mojo_node_idx=640, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_CAMERA, value=0, c_node_idx=658, c_parent_idx=626, mojo_node_idx=641, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_CAMERA = 0 
+			EnumFieldNode(name=mjOBJ_CAMERA, value=7, c_node_idx=658, c_parent_idx=626, mojo_node_idx=641, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_CAMERA = 7 
 			WhitespaceNode(c_node_idx=659, c_parent_idx=626, mojo_node_idx=642, mojo_parent_idx=609) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=660, c_parent_idx=626, mojo_node_idx=643, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # camera 
 			WhitespaceNode(c_node_idx=661, c_parent_idx=626, mojo_node_idx=644, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_LIGHT, value=0, c_node_idx=662, c_parent_idx=626, mojo_node_idx=645, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_LIGHT = 0 
+			EnumFieldNode(name=mjOBJ_LIGHT, value=8, c_node_idx=662, c_parent_idx=626, mojo_node_idx=645, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_LIGHT = 8 
 			WhitespaceNode(c_node_idx=663, c_parent_idx=626, mojo_node_idx=646, mojo_parent_idx=609) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=664, c_parent_idx=626, mojo_node_idx=647, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # light 
 			WhitespaceNode(c_node_idx=665, c_parent_idx=626, mojo_node_idx=648, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_FLEX, value=0, c_node_idx=666, c_parent_idx=626, mojo_node_idx=649, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_FLEX = 0 
+			EnumFieldNode(name=mjOBJ_FLEX, value=9, c_node_idx=666, c_parent_idx=626, mojo_node_idx=649, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_FLEX = 9 
 			WhitespaceNode(c_node_idx=667, c_parent_idx=626, mojo_node_idx=650, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=668, c_parent_idx=626, mojo_node_idx=651, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # flex 
 			WhitespaceNode(c_node_idx=669, c_parent_idx=626, mojo_node_idx=652, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_MESH, value=0, c_node_idx=670, c_parent_idx=626, mojo_node_idx=653, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_MESH = 0 
+			EnumFieldNode(name=mjOBJ_MESH, value=10, c_node_idx=670, c_parent_idx=626, mojo_node_idx=653, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_MESH = 10 
 			WhitespaceNode(c_node_idx=671, c_parent_idx=626, mojo_node_idx=654, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=672, c_parent_idx=626, mojo_node_idx=655, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # mesh 
 			WhitespaceNode(c_node_idx=673, c_parent_idx=626, mojo_node_idx=656, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_SKIN, value=0, c_node_idx=674, c_parent_idx=626, mojo_node_idx=657, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_SKIN = 0 
+			EnumFieldNode(name=mjOBJ_SKIN, value=11, c_node_idx=674, c_parent_idx=626, mojo_node_idx=657, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_SKIN = 11 
 			WhitespaceNode(c_node_idx=675, c_parent_idx=626, mojo_node_idx=658, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=676, c_parent_idx=626, mojo_node_idx=659, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # skin 
 			WhitespaceNode(c_node_idx=677, c_parent_idx=626, mojo_node_idx=660, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_HFIELD, value=0, c_node_idx=678, c_parent_idx=626, mojo_node_idx=661, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_HFIELD = 0 
+			EnumFieldNode(name=mjOBJ_HFIELD, value=12, c_node_idx=678, c_parent_idx=626, mojo_node_idx=661, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_HFIELD = 12 
 			WhitespaceNode(c_node_idx=679, c_parent_idx=626, mojo_node_idx=662, mojo_parent_idx=609) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=680, c_parent_idx=626, mojo_node_idx=663, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # heightfield 
 			WhitespaceNode(c_node_idx=681, c_parent_idx=626, mojo_node_idx=664, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_TEXTURE, value=0, c_node_idx=682, c_parent_idx=626, mojo_node_idx=665, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_TEXTURE = 0 
+			EnumFieldNode(name=mjOBJ_TEXTURE, value=13, c_node_idx=682, c_parent_idx=626, mojo_node_idx=665, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_TEXTURE = 13 
 			WhitespaceNode(c_node_idx=683, c_parent_idx=626, mojo_node_idx=666, mojo_parent_idx=609) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=684, c_parent_idx=626, mojo_node_idx=667, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # texture 
 			WhitespaceNode(c_node_idx=685, c_parent_idx=626, mojo_node_idx=668, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_MATERIAL, value=0, c_node_idx=686, c_parent_idx=626, mojo_node_idx=669, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_MATERIAL = 0 
+			EnumFieldNode(name=mjOBJ_MATERIAL, value=14, c_node_idx=686, c_parent_idx=626, mojo_node_idx=669, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_MATERIAL = 14 
 			WhitespaceNode(c_node_idx=687, c_parent_idx=626, mojo_node_idx=670, mojo_parent_idx=609) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=688, c_parent_idx=626, mojo_node_idx=671, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # material for rendering 
 			WhitespaceNode(c_node_idx=689, c_parent_idx=626, mojo_node_idx=672, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_PAIR, value=0, c_node_idx=690, c_parent_idx=626, mojo_node_idx=673, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_PAIR = 0 
+			EnumFieldNode(name=mjOBJ_PAIR, value=15, c_node_idx=690, c_parent_idx=626, mojo_node_idx=673, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_PAIR = 15 
 			WhitespaceNode(c_node_idx=691, c_parent_idx=626, mojo_node_idx=674, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=692, c_parent_idx=626, mojo_node_idx=675, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # geom pair to include 
 			WhitespaceNode(c_node_idx=693, c_parent_idx=626, mojo_node_idx=676, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_EXCLUDE, value=0, c_node_idx=694, c_parent_idx=626, mojo_node_idx=677, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_EXCLUDE = 0 
+			EnumFieldNode(name=mjOBJ_EXCLUDE, value=16, c_node_idx=694, c_parent_idx=626, mojo_node_idx=677, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_EXCLUDE = 16 
 			WhitespaceNode(c_node_idx=695, c_parent_idx=626, mojo_node_idx=678, mojo_parent_idx=609) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=696, c_parent_idx=626, mojo_node_idx=679, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # body pair to exclude 
 			WhitespaceNode(c_node_idx=697, c_parent_idx=626, mojo_node_idx=680, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_EQUALITY, value=0, c_node_idx=698, c_parent_idx=626, mojo_node_idx=681, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_EQUALITY = 0 
+			EnumFieldNode(name=mjOBJ_EQUALITY, value=17, c_node_idx=698, c_parent_idx=626, mojo_node_idx=681, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_EQUALITY = 17 
 			WhitespaceNode(c_node_idx=699, c_parent_idx=626, mojo_node_idx=682, mojo_parent_idx=609) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=700, c_parent_idx=626, mojo_node_idx=683, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # equality constraint 
 			WhitespaceNode(c_node_idx=701, c_parent_idx=626, mojo_node_idx=684, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_TENDON, value=0, c_node_idx=702, c_parent_idx=626, mojo_node_idx=685, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_TENDON = 0 
+			EnumFieldNode(name=mjOBJ_TENDON, value=18, c_node_idx=702, c_parent_idx=626, mojo_node_idx=685, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_TENDON = 18 
 			WhitespaceNode(c_node_idx=703, c_parent_idx=626, mojo_node_idx=686, mojo_parent_idx=609) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=704, c_parent_idx=626, mojo_node_idx=687, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # tendon 
 			WhitespaceNode(c_node_idx=705, c_parent_idx=626, mojo_node_idx=688, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_ACTUATOR, value=0, c_node_idx=706, c_parent_idx=626, mojo_node_idx=689, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_ACTUATOR = 0 
+			EnumFieldNode(name=mjOBJ_ACTUATOR, value=19, c_node_idx=706, c_parent_idx=626, mojo_node_idx=689, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_ACTUATOR = 19 
 			WhitespaceNode(c_node_idx=707, c_parent_idx=626, mojo_node_idx=690, mojo_parent_idx=609) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=708, c_parent_idx=626, mojo_node_idx=691, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # actuator 
 			WhitespaceNode(c_node_idx=709, c_parent_idx=626, mojo_node_idx=692, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_SENSOR, value=0, c_node_idx=710, c_parent_idx=626, mojo_node_idx=693, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_SENSOR = 0 
+			EnumFieldNode(name=mjOBJ_SENSOR, value=20, c_node_idx=710, c_parent_idx=626, mojo_node_idx=693, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_SENSOR = 20 
 			WhitespaceNode(c_node_idx=711, c_parent_idx=626, mojo_node_idx=694, mojo_parent_idx=609) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=712, c_parent_idx=626, mojo_node_idx=695, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # sensor 
 			WhitespaceNode(c_node_idx=713, c_parent_idx=626, mojo_node_idx=696, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_NUMERIC, value=0, c_node_idx=714, c_parent_idx=626, mojo_node_idx=697, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_NUMERIC = 0 
+			EnumFieldNode(name=mjOBJ_NUMERIC, value=21, c_node_idx=714, c_parent_idx=626, mojo_node_idx=697, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_NUMERIC = 21 
 			WhitespaceNode(c_node_idx=715, c_parent_idx=626, mojo_node_idx=698, mojo_parent_idx=609) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=716, c_parent_idx=626, mojo_node_idx=699, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # numeric 
 			WhitespaceNode(c_node_idx=717, c_parent_idx=626, mojo_node_idx=700, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_TEXT, value=0, c_node_idx=718, c_parent_idx=626, mojo_node_idx=701, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_TEXT = 0 
+			EnumFieldNode(name=mjOBJ_TEXT, value=22, c_node_idx=718, c_parent_idx=626, mojo_node_idx=701, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_TEXT = 22 
 			WhitespaceNode(c_node_idx=719, c_parent_idx=626, mojo_node_idx=702, mojo_parent_idx=609) 
 			WhitespaceNode >>>                      
 			SingleLineCommentNode(c_node_idx=720, c_parent_idx=626, mojo_node_idx=703, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # text 
 			WhitespaceNode(c_node_idx=721, c_parent_idx=626, mojo_node_idx=704, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_TUPLE, value=0, c_node_idx=722, c_parent_idx=626, mojo_node_idx=705, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_TUPLE = 0 
+			EnumFieldNode(name=mjOBJ_TUPLE, value=23, c_node_idx=722, c_parent_idx=626, mojo_node_idx=705, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_TUPLE = 23 
 			WhitespaceNode(c_node_idx=723, c_parent_idx=626, mojo_node_idx=706, mojo_parent_idx=609) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=724, c_parent_idx=626, mojo_node_idx=707, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # tuple 
 			WhitespaceNode(c_node_idx=725, c_parent_idx=626, mojo_node_idx=708, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_KEY, value=0, c_node_idx=726, c_parent_idx=626, mojo_node_idx=709, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_KEY = 0 
+			EnumFieldNode(name=mjOBJ_KEY, value=24, c_node_idx=726, c_parent_idx=626, mojo_node_idx=709, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_KEY = 24 
 			WhitespaceNode(c_node_idx=727, c_parent_idx=626, mojo_node_idx=710, mojo_parent_idx=609) 
 			WhitespaceNode >>>                       
 			SingleLineCommentNode(c_node_idx=728, c_parent_idx=626, mojo_node_idx=711, mojo_parent_idx=609) 
 			SingleLineCommentNode >>> # keyframe 
 			WhitespaceNode(c_node_idx=729, c_parent_idx=626, mojo_node_idx=712, mojo_parent_idx=609) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjOBJ_PLUGIN, value=0, c_node_idx=730, c_parent_idx=626, mojo_node_idx=713, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjOBJ_PLUGIN = 0 
+			EnumFieldNode(name=mjOBJ_PLUGIN, value=25, c_node_idx=730, c_parent_idx=626, mojo_node_idx=713, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjOBJ_PLUGIN = 25 
 			WhitespaceNode(c_node_idx=731, c_parent_idx=626, mojo_node_idx=714, mojo_parent_idx=609) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=732, c_parent_idx=626, mojo_node_idx=715, mojo_parent_idx=609) 
@@ -1473,8 +1473,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			WhitespaceNode(c_node_idx=733, c_parent_idx=626, mojo_node_idx=716, mojo_parent_idx=609) 
 			WhitespaceNode >>>  
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjNOBJECT, value=0, c_node_idx=734, c_parent_idx=626, mojo_node_idx=717, mojo_parent_idx=609) 
-			EnumFieldNode >>> alias mjNOBJECT = 0 
+			EnumFieldNode(name=mjNOBJECT, value=26, c_node_idx=734, c_parent_idx=626, mojo_node_idx=717, mojo_parent_idx=609) 
+			EnumFieldNode >>> alias mjNOBJECT = 26 
 			WhitespaceNode(c_node_idx=735, c_parent_idx=626, mojo_node_idx=718, mojo_parent_idx=609) 
 			WhitespaceNode >>>                       
 			SingleLineCommentNode(c_node_idx=736, c_parent_idx=626, mojo_node_idx=719, mojo_parent_idx=609) 
@@ -1516,56 +1516,56 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # equality constraint 
 			WhitespaceNode(c_node_idx=754, c_parent_idx=747, mojo_node_idx=736, mojo_parent_idx=729) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTR_FRICTION_DOF, value=0, c_node_idx=755, c_parent_idx=747, mojo_node_idx=737, mojo_parent_idx=729) 
-			EnumFieldNode >>> alias mjCNSTR_FRICTION_DOF = 0 
+			EnumFieldNode(name=mjCNSTR_FRICTION_DOF, value=1, c_node_idx=755, c_parent_idx=747, mojo_node_idx=737, mojo_parent_idx=729) 
+			EnumFieldNode >>> alias mjCNSTR_FRICTION_DOF = 1 
 			WhitespaceNode(c_node_idx=756, c_parent_idx=747, mojo_node_idx=738, mojo_parent_idx=729) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=757, c_parent_idx=747, mojo_node_idx=739, mojo_parent_idx=729) 
 			SingleLineCommentNode >>> # dof friction 
 			WhitespaceNode(c_node_idx=758, c_parent_idx=747, mojo_node_idx=740, mojo_parent_idx=729) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTR_FRICTION_TENDON, value=0, c_node_idx=759, c_parent_idx=747, mojo_node_idx=741, mojo_parent_idx=729) 
-			EnumFieldNode >>> alias mjCNSTR_FRICTION_TENDON = 0 
+			EnumFieldNode(name=mjCNSTR_FRICTION_TENDON, value=2, c_node_idx=759, c_parent_idx=747, mojo_node_idx=741, mojo_parent_idx=729) 
+			EnumFieldNode >>> alias mjCNSTR_FRICTION_TENDON = 2 
 			WhitespaceNode(c_node_idx=760, c_parent_idx=747, mojo_node_idx=742, mojo_parent_idx=729) 
 			WhitespaceNode >>>         
 			SingleLineCommentNode(c_node_idx=761, c_parent_idx=747, mojo_node_idx=743, mojo_parent_idx=729) 
 			SingleLineCommentNode >>> # tendon friction 
 			WhitespaceNode(c_node_idx=762, c_parent_idx=747, mojo_node_idx=744, mojo_parent_idx=729) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTR_LIMIT_JOINT, value=0, c_node_idx=763, c_parent_idx=747, mojo_node_idx=745, mojo_parent_idx=729) 
-			EnumFieldNode >>> alias mjCNSTR_LIMIT_JOINT = 0 
+			EnumFieldNode(name=mjCNSTR_LIMIT_JOINT, value=3, c_node_idx=763, c_parent_idx=747, mojo_node_idx=745, mojo_parent_idx=729) 
+			EnumFieldNode >>> alias mjCNSTR_LIMIT_JOINT = 3 
 			WhitespaceNode(c_node_idx=764, c_parent_idx=747, mojo_node_idx=746, mojo_parent_idx=729) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=765, c_parent_idx=747, mojo_node_idx=747, mojo_parent_idx=729) 
 			SingleLineCommentNode >>> # joint limit 
 			WhitespaceNode(c_node_idx=766, c_parent_idx=747, mojo_node_idx=748, mojo_parent_idx=729) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTR_LIMIT_TENDON, value=0, c_node_idx=767, c_parent_idx=747, mojo_node_idx=749, mojo_parent_idx=729) 
-			EnumFieldNode >>> alias mjCNSTR_LIMIT_TENDON = 0 
+			EnumFieldNode(name=mjCNSTR_LIMIT_TENDON, value=4, c_node_idx=767, c_parent_idx=747, mojo_node_idx=749, mojo_parent_idx=729) 
+			EnumFieldNode >>> alias mjCNSTR_LIMIT_TENDON = 4 
 			WhitespaceNode(c_node_idx=768, c_parent_idx=747, mojo_node_idx=750, mojo_parent_idx=729) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=769, c_parent_idx=747, mojo_node_idx=751, mojo_parent_idx=729) 
 			SingleLineCommentNode >>> # tendon limit 
 			WhitespaceNode(c_node_idx=770, c_parent_idx=747, mojo_node_idx=752, mojo_parent_idx=729) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTR_CONTACT_FRICTIONLESS, value=0, c_node_idx=771, c_parent_idx=747, mojo_node_idx=753, mojo_parent_idx=729) 
-			EnumFieldNode >>> alias mjCNSTR_CONTACT_FRICTIONLESS = 0 
+			EnumFieldNode(name=mjCNSTR_CONTACT_FRICTIONLESS, value=5, c_node_idx=771, c_parent_idx=747, mojo_node_idx=753, mojo_parent_idx=729) 
+			EnumFieldNode >>> alias mjCNSTR_CONTACT_FRICTIONLESS = 5 
 			WhitespaceNode(c_node_idx=772, c_parent_idx=747, mojo_node_idx=754, mojo_parent_idx=729) 
 			WhitespaceNode >>>    
 			SingleLineCommentNode(c_node_idx=773, c_parent_idx=747, mojo_node_idx=755, mojo_parent_idx=729) 
 			SingleLineCommentNode >>> # frictionless contact 
 			WhitespaceNode(c_node_idx=774, c_parent_idx=747, mojo_node_idx=756, mojo_parent_idx=729) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTR_CONTACT_PYRAMIDAL, value=0, c_node_idx=775, c_parent_idx=747, mojo_node_idx=757, mojo_parent_idx=729) 
-			EnumFieldNode >>> alias mjCNSTR_CONTACT_PYRAMIDAL = 0 
+			EnumFieldNode(name=mjCNSTR_CONTACT_PYRAMIDAL, value=6, c_node_idx=775, c_parent_idx=747, mojo_node_idx=757, mojo_parent_idx=729) 
+			EnumFieldNode >>> alias mjCNSTR_CONTACT_PYRAMIDAL = 6 
 			WhitespaceNode(c_node_idx=776, c_parent_idx=747, mojo_node_idx=758, mojo_parent_idx=729) 
 			WhitespaceNode >>>       
 			SingleLineCommentNode(c_node_idx=777, c_parent_idx=747, mojo_node_idx=759, mojo_parent_idx=729) 
 			SingleLineCommentNode >>> # frictional contact ,  pyramidal friction cone 
 			WhitespaceNode(c_node_idx=778, c_parent_idx=747, mojo_node_idx=760, mojo_parent_idx=729) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTR_CONTACT_ELLIPTIC, value=0, c_node_idx=779, c_parent_idx=747, mojo_node_idx=761, mojo_parent_idx=729) 
-			EnumFieldNode >>> alias mjCNSTR_CONTACT_ELLIPTIC = 0 
+			EnumFieldNode(name=mjCNSTR_CONTACT_ELLIPTIC, value=7, c_node_idx=779, c_parent_idx=747, mojo_node_idx=761, mojo_parent_idx=729) 
+			EnumFieldNode >>> alias mjCNSTR_CONTACT_ELLIPTIC = 7 
 			SingleLineCommentNode(c_node_idx=780, c_parent_idx=747, mojo_node_idx=762, mojo_parent_idx=729) 
 			SingleLineCommentNode >>> # frictional contact ,  elliptic friction cone 
 		TypedefNode >>> alias mjtConstraint = mjtConstraint_ 
@@ -1592,32 +1592,32 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # constraint satisfied ,  zero cost (limit ,  contact) 
 			WhitespaceNode(c_node_idx=792, c_parent_idx=785, mojo_node_idx=773, mojo_parent_idx=766) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTRSTATE_QUADRATIC, value=0, c_node_idx=793, c_parent_idx=785, mojo_node_idx=774, mojo_parent_idx=766) 
-			EnumFieldNode >>> alias mjCNSTRSTATE_QUADRATIC = 0 
+			EnumFieldNode(name=mjCNSTRSTATE_QUADRATIC, value=1, c_node_idx=793, c_parent_idx=785, mojo_node_idx=774, mojo_parent_idx=766) 
+			EnumFieldNode >>> alias mjCNSTRSTATE_QUADRATIC = 1 
 			WhitespaceNode(c_node_idx=794, c_parent_idx=785, mojo_node_idx=775, mojo_parent_idx=766) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=795, c_parent_idx=785, mojo_node_idx=776, mojo_parent_idx=766) 
 			SingleLineCommentNode >>> # quadratic cost (equality ,  friction ,  limit ,  contact) 
 			WhitespaceNode(c_node_idx=796, c_parent_idx=785, mojo_node_idx=777, mojo_parent_idx=766) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTRSTATE_LINEARNEG, value=0, c_node_idx=797, c_parent_idx=785, mojo_node_idx=778, mojo_parent_idx=766) 
-			EnumFieldNode >>> alias mjCNSTRSTATE_LINEARNEG = 0 
+			EnumFieldNode(name=mjCNSTRSTATE_LINEARNEG, value=2, c_node_idx=797, c_parent_idx=785, mojo_node_idx=778, mojo_parent_idx=766) 
+			EnumFieldNode >>> alias mjCNSTRSTATE_LINEARNEG = 2 
 			WhitespaceNode(c_node_idx=798, c_parent_idx=785, mojo_node_idx=779, mojo_parent_idx=766) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=799, c_parent_idx=785, mojo_node_idx=780, mojo_parent_idx=766) 
 			SingleLineCommentNode >>> # linear cost ,  negative side (friction) 
 			WhitespaceNode(c_node_idx=800, c_parent_idx=785, mojo_node_idx=781, mojo_parent_idx=766) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTRSTATE_LINEARPOS, value=0, c_node_idx=801, c_parent_idx=785, mojo_node_idx=782, mojo_parent_idx=766) 
-			EnumFieldNode >>> alias mjCNSTRSTATE_LINEARPOS = 0 
+			EnumFieldNode(name=mjCNSTRSTATE_LINEARPOS, value=3, c_node_idx=801, c_parent_idx=785, mojo_node_idx=782, mojo_parent_idx=766) 
+			EnumFieldNode >>> alias mjCNSTRSTATE_LINEARPOS = 3 
 			WhitespaceNode(c_node_idx=802, c_parent_idx=785, mojo_node_idx=783, mojo_parent_idx=766) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=803, c_parent_idx=785, mojo_node_idx=784, mojo_parent_idx=766) 
 			SingleLineCommentNode >>> # linear cost ,  positive side (friction) 
 			WhitespaceNode(c_node_idx=804, c_parent_idx=785, mojo_node_idx=785, mojo_parent_idx=766) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjCNSTRSTATE_CONE, value=0, c_node_idx=805, c_parent_idx=785, mojo_node_idx=786, mojo_parent_idx=766) 
-			EnumFieldNode >>> alias mjCNSTRSTATE_CONE = 0 
+			EnumFieldNode(name=mjCNSTRSTATE_CONE, value=4, c_node_idx=805, c_parent_idx=785, mojo_node_idx=786, mojo_parent_idx=766) 
+			EnumFieldNode >>> alias mjCNSTRSTATE_CONE = 4 
 			SingleLineCommentNode(c_node_idx=806, c_parent_idx=785, mojo_node_idx=787, mojo_parent_idx=766) 
 			SingleLineCommentNode >>> # squared distance to cone cost (elliptic contact) 
 		TypedefNode >>> alias mjtConstraintState = mjtConstraintState_ 
@@ -1648,64 +1648,64 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # scalar contact normal forces summed over sensor zone 
 			WhitespaceNode(c_node_idx=820, c_parent_idx=811, mojo_node_idx=800, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_ACCELEROMETER, value=0, c_node_idx=821, c_parent_idx=811, mojo_node_idx=801, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_ACCELEROMETER = 0 
+			EnumFieldNode(name=mjSENS_ACCELEROMETER, value=1, c_node_idx=821, c_parent_idx=811, mojo_node_idx=801, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_ACCELEROMETER = 1 
 			WhitespaceNode(c_node_idx=822, c_parent_idx=811, mojo_node_idx=802, mojo_parent_idx=791) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=823, c_parent_idx=811, mojo_node_idx=803, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D linear acceleration ,  in local frame 
 			WhitespaceNode(c_node_idx=824, c_parent_idx=811, mojo_node_idx=804, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_VELOCIMETER, value=0, c_node_idx=825, c_parent_idx=811, mojo_node_idx=805, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_VELOCIMETER = 0 
+			EnumFieldNode(name=mjSENS_VELOCIMETER, value=2, c_node_idx=825, c_parent_idx=811, mojo_node_idx=805, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_VELOCIMETER = 2 
 			WhitespaceNode(c_node_idx=826, c_parent_idx=811, mojo_node_idx=806, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=827, c_parent_idx=811, mojo_node_idx=807, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D linear velocity ,  in local frame 
 			WhitespaceNode(c_node_idx=828, c_parent_idx=811, mojo_node_idx=808, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_GYRO, value=0, c_node_idx=829, c_parent_idx=811, mojo_node_idx=809, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_GYRO = 0 
+			EnumFieldNode(name=mjSENS_GYRO, value=3, c_node_idx=829, c_parent_idx=811, mojo_node_idx=809, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_GYRO = 3 
 			WhitespaceNode(c_node_idx=830, c_parent_idx=811, mojo_node_idx=810, mojo_parent_idx=791) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=831, c_parent_idx=811, mojo_node_idx=811, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D angular velocity ,  in local frame 
 			WhitespaceNode(c_node_idx=832, c_parent_idx=811, mojo_node_idx=812, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FORCE, value=0, c_node_idx=833, c_parent_idx=811, mojo_node_idx=813, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FORCE = 0 
+			EnumFieldNode(name=mjSENS_FORCE, value=4, c_node_idx=833, c_parent_idx=811, mojo_node_idx=813, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FORCE = 4 
 			WhitespaceNode(c_node_idx=834, c_parent_idx=811, mojo_node_idx=814, mojo_parent_idx=791) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=835, c_parent_idx=811, mojo_node_idx=815, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D force between site's body and its parent body 
 			WhitespaceNode(c_node_idx=836, c_parent_idx=811, mojo_node_idx=816, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_TORQUE, value=0, c_node_idx=837, c_parent_idx=811, mojo_node_idx=817, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_TORQUE = 0 
+			EnumFieldNode(name=mjSENS_TORQUE, value=5, c_node_idx=837, c_parent_idx=811, mojo_node_idx=817, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_TORQUE = 5 
 			WhitespaceNode(c_node_idx=838, c_parent_idx=811, mojo_node_idx=818, mojo_parent_idx=791) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=839, c_parent_idx=811, mojo_node_idx=819, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D torque between site's body and its parent body 
 			WhitespaceNode(c_node_idx=840, c_parent_idx=811, mojo_node_idx=820, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_MAGNETOMETER, value=0, c_node_idx=841, c_parent_idx=811, mojo_node_idx=821, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_MAGNETOMETER = 0 
+			EnumFieldNode(name=mjSENS_MAGNETOMETER, value=6, c_node_idx=841, c_parent_idx=811, mojo_node_idx=821, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_MAGNETOMETER = 6 
 			WhitespaceNode(c_node_idx=842, c_parent_idx=811, mojo_node_idx=822, mojo_parent_idx=791) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=843, c_parent_idx=811, mojo_node_idx=823, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D magnetometer 
 			WhitespaceNode(c_node_idx=844, c_parent_idx=811, mojo_node_idx=824, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_RANGEFINDER, value=0, c_node_idx=845, c_parent_idx=811, mojo_node_idx=825, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_RANGEFINDER = 0 
+			EnumFieldNode(name=mjSENS_RANGEFINDER, value=7, c_node_idx=845, c_parent_idx=811, mojo_node_idx=825, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_RANGEFINDER = 7 
 			WhitespaceNode(c_node_idx=846, c_parent_idx=811, mojo_node_idx=826, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=847, c_parent_idx=811, mojo_node_idx=827, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar distance to nearest geom or site along z-axis 
 			WhitespaceNode(c_node_idx=848, c_parent_idx=811, mojo_node_idx=828, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_CAMPROJECTION, value=0, c_node_idx=849, c_parent_idx=811, mojo_node_idx=829, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_CAMPROJECTION = 0 
+			EnumFieldNode(name=mjSENS_CAMPROJECTION, value=8, c_node_idx=849, c_parent_idx=811, mojo_node_idx=829, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_CAMPROJECTION = 8 
 			WhitespaceNode(c_node_idx=850, c_parent_idx=811, mojo_node_idx=830, mojo_parent_idx=791) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=851, c_parent_idx=811, mojo_node_idx=831, mojo_parent_idx=791) 
@@ -1717,64 +1717,64 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # sensors related to scalar joints ,  tendons ,  actuators 
 			WhitespaceNode(c_node_idx=854, c_parent_idx=811, mojo_node_idx=834, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_JOINTPOS, value=0, c_node_idx=855, c_parent_idx=811, mojo_node_idx=835, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_JOINTPOS = 0 
+			EnumFieldNode(name=mjSENS_JOINTPOS, value=9, c_node_idx=855, c_parent_idx=811, mojo_node_idx=835, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_JOINTPOS = 9 
 			WhitespaceNode(c_node_idx=856, c_parent_idx=811, mojo_node_idx=836, mojo_parent_idx=791) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=857, c_parent_idx=811, mojo_node_idx=837, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar joint position (hinge and slide only) 
 			WhitespaceNode(c_node_idx=858, c_parent_idx=811, mojo_node_idx=838, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_JOINTVEL, value=0, c_node_idx=859, c_parent_idx=811, mojo_node_idx=839, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_JOINTVEL = 0 
+			EnumFieldNode(name=mjSENS_JOINTVEL, value=10, c_node_idx=859, c_parent_idx=811, mojo_node_idx=839, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_JOINTVEL = 10 
 			WhitespaceNode(c_node_idx=860, c_parent_idx=811, mojo_node_idx=840, mojo_parent_idx=791) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=861, c_parent_idx=811, mojo_node_idx=841, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar joint velocity (hinge and slide only) 
 			WhitespaceNode(c_node_idx=862, c_parent_idx=811, mojo_node_idx=842, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_TENDONPOS, value=0, c_node_idx=863, c_parent_idx=811, mojo_node_idx=843, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_TENDONPOS = 0 
+			EnumFieldNode(name=mjSENS_TENDONPOS, value=11, c_node_idx=863, c_parent_idx=811, mojo_node_idx=843, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_TENDONPOS = 11 
 			WhitespaceNode(c_node_idx=864, c_parent_idx=811, mojo_node_idx=844, mojo_parent_idx=791) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=865, c_parent_idx=811, mojo_node_idx=845, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar tendon position 
 			WhitespaceNode(c_node_idx=866, c_parent_idx=811, mojo_node_idx=846, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_TENDONVEL, value=0, c_node_idx=867, c_parent_idx=811, mojo_node_idx=847, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_TENDONVEL = 0 
+			EnumFieldNode(name=mjSENS_TENDONVEL, value=12, c_node_idx=867, c_parent_idx=811, mojo_node_idx=847, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_TENDONVEL = 12 
 			WhitespaceNode(c_node_idx=868, c_parent_idx=811, mojo_node_idx=848, mojo_parent_idx=791) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=869, c_parent_idx=811, mojo_node_idx=849, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar tendon velocity 
 			WhitespaceNode(c_node_idx=870, c_parent_idx=811, mojo_node_idx=850, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_ACTUATORPOS, value=0, c_node_idx=871, c_parent_idx=811, mojo_node_idx=851, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_ACTUATORPOS = 0 
+			EnumFieldNode(name=mjSENS_ACTUATORPOS, value=13, c_node_idx=871, c_parent_idx=811, mojo_node_idx=851, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_ACTUATORPOS = 13 
 			WhitespaceNode(c_node_idx=872, c_parent_idx=811, mojo_node_idx=852, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=873, c_parent_idx=811, mojo_node_idx=853, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar actuator position 
 			WhitespaceNode(c_node_idx=874, c_parent_idx=811, mojo_node_idx=854, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_ACTUATORVEL, value=0, c_node_idx=875, c_parent_idx=811, mojo_node_idx=855, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_ACTUATORVEL = 0 
+			EnumFieldNode(name=mjSENS_ACTUATORVEL, value=14, c_node_idx=875, c_parent_idx=811, mojo_node_idx=855, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_ACTUATORVEL = 14 
 			WhitespaceNode(c_node_idx=876, c_parent_idx=811, mojo_node_idx=856, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=877, c_parent_idx=811, mojo_node_idx=857, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar actuator velocity 
 			WhitespaceNode(c_node_idx=878, c_parent_idx=811, mojo_node_idx=858, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_ACTUATORFRC, value=0, c_node_idx=879, c_parent_idx=811, mojo_node_idx=859, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_ACTUATORFRC = 0 
+			EnumFieldNode(name=mjSENS_ACTUATORFRC, value=15, c_node_idx=879, c_parent_idx=811, mojo_node_idx=859, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_ACTUATORFRC = 15 
 			WhitespaceNode(c_node_idx=880, c_parent_idx=811, mojo_node_idx=860, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=881, c_parent_idx=811, mojo_node_idx=861, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # scalar actuator force 
 			WhitespaceNode(c_node_idx=882, c_parent_idx=811, mojo_node_idx=862, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_JOINTACTFRC, value=0, c_node_idx=883, c_parent_idx=811, mojo_node_idx=863, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_JOINTACTFRC = 0 
+			EnumFieldNode(name=mjSENS_JOINTACTFRC, value=16, c_node_idx=883, c_parent_idx=811, mojo_node_idx=863, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_JOINTACTFRC = 16 
 			WhitespaceNode(c_node_idx=884, c_parent_idx=811, mojo_node_idx=864, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=885, c_parent_idx=811, mojo_node_idx=865, mojo_parent_idx=791) 
@@ -1786,16 +1786,16 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # sensors related to ball joints 
 			WhitespaceNode(c_node_idx=888, c_parent_idx=811, mojo_node_idx=868, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_BALLQUAT, value=0, c_node_idx=889, c_parent_idx=811, mojo_node_idx=869, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_BALLQUAT = 0 
+			EnumFieldNode(name=mjSENS_BALLQUAT, value=17, c_node_idx=889, c_parent_idx=811, mojo_node_idx=869, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_BALLQUAT = 17 
 			WhitespaceNode(c_node_idx=890, c_parent_idx=811, mojo_node_idx=870, mojo_parent_idx=791) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=891, c_parent_idx=811, mojo_node_idx=871, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 4D ball joint quaternion 
 			WhitespaceNode(c_node_idx=892, c_parent_idx=811, mojo_node_idx=872, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_BALLANGVEL, value=0, c_node_idx=893, c_parent_idx=811, mojo_node_idx=873, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_BALLANGVEL = 0 
+			EnumFieldNode(name=mjSENS_BALLANGVEL, value=18, c_node_idx=893, c_parent_idx=811, mojo_node_idx=873, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_BALLANGVEL = 18 
 			WhitespaceNode(c_node_idx=894, c_parent_idx=811, mojo_node_idx=874, mojo_parent_idx=791) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=895, c_parent_idx=811, mojo_node_idx=875, mojo_parent_idx=791) 
@@ -1807,48 +1807,48 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # joint and tendon limit sensors ,  in constraint space 
 			WhitespaceNode(c_node_idx=898, c_parent_idx=811, mojo_node_idx=878, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_JOINTLIMITPOS, value=0, c_node_idx=899, c_parent_idx=811, mojo_node_idx=879, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_JOINTLIMITPOS = 0 
+			EnumFieldNode(name=mjSENS_JOINTLIMITPOS, value=19, c_node_idx=899, c_parent_idx=811, mojo_node_idx=879, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_JOINTLIMITPOS = 19 
 			WhitespaceNode(c_node_idx=900, c_parent_idx=811, mojo_node_idx=880, mojo_parent_idx=791) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=901, c_parent_idx=811, mojo_node_idx=881, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # joint limit distance-margin 
 			WhitespaceNode(c_node_idx=902, c_parent_idx=811, mojo_node_idx=882, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_JOINTLIMITVEL, value=0, c_node_idx=903, c_parent_idx=811, mojo_node_idx=883, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_JOINTLIMITVEL = 0 
+			EnumFieldNode(name=mjSENS_JOINTLIMITVEL, value=20, c_node_idx=903, c_parent_idx=811, mojo_node_idx=883, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_JOINTLIMITVEL = 20 
 			WhitespaceNode(c_node_idx=904, c_parent_idx=811, mojo_node_idx=884, mojo_parent_idx=791) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=905, c_parent_idx=811, mojo_node_idx=885, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # joint limit velocity 
 			WhitespaceNode(c_node_idx=906, c_parent_idx=811, mojo_node_idx=886, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_JOINTLIMITFRC, value=0, c_node_idx=907, c_parent_idx=811, mojo_node_idx=887, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_JOINTLIMITFRC = 0 
+			EnumFieldNode(name=mjSENS_JOINTLIMITFRC, value=21, c_node_idx=907, c_parent_idx=811, mojo_node_idx=887, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_JOINTLIMITFRC = 21 
 			WhitespaceNode(c_node_idx=908, c_parent_idx=811, mojo_node_idx=888, mojo_parent_idx=791) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=909, c_parent_idx=811, mojo_node_idx=889, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # joint limit force 
 			WhitespaceNode(c_node_idx=910, c_parent_idx=811, mojo_node_idx=890, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_TENDONLIMITPOS, value=0, c_node_idx=911, c_parent_idx=811, mojo_node_idx=891, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_TENDONLIMITPOS = 0 
+			EnumFieldNode(name=mjSENS_TENDONLIMITPOS, value=22, c_node_idx=911, c_parent_idx=811, mojo_node_idx=891, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_TENDONLIMITPOS = 22 
 			WhitespaceNode(c_node_idx=912, c_parent_idx=811, mojo_node_idx=892, mojo_parent_idx=791) 
 			WhitespaceNode >>>           
 			SingleLineCommentNode(c_node_idx=913, c_parent_idx=811, mojo_node_idx=893, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # tendon limit distance-margin 
 			WhitespaceNode(c_node_idx=914, c_parent_idx=811, mojo_node_idx=894, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_TENDONLIMITVEL, value=0, c_node_idx=915, c_parent_idx=811, mojo_node_idx=895, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_TENDONLIMITVEL = 0 
+			EnumFieldNode(name=mjSENS_TENDONLIMITVEL, value=23, c_node_idx=915, c_parent_idx=811, mojo_node_idx=895, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_TENDONLIMITVEL = 23 
 			WhitespaceNode(c_node_idx=916, c_parent_idx=811, mojo_node_idx=896, mojo_parent_idx=791) 
 			WhitespaceNode >>>           
 			SingleLineCommentNode(c_node_idx=917, c_parent_idx=811, mojo_node_idx=897, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # tendon limit velocity 
 			WhitespaceNode(c_node_idx=918, c_parent_idx=811, mojo_node_idx=898, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_TENDONLIMITFRC, value=0, c_node_idx=919, c_parent_idx=811, mojo_node_idx=899, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_TENDONLIMITFRC = 0 
+			EnumFieldNode(name=mjSENS_TENDONLIMITFRC, value=24, c_node_idx=919, c_parent_idx=811, mojo_node_idx=899, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_TENDONLIMITFRC = 24 
 			WhitespaceNode(c_node_idx=920, c_parent_idx=811, mojo_node_idx=900, mojo_parent_idx=791) 
 			WhitespaceNode >>>           
 			SingleLineCommentNode(c_node_idx=921, c_parent_idx=811, mojo_node_idx=901, mojo_parent_idx=791) 
@@ -1860,72 +1860,72 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # sensors attached to an object with spatial frame: (x)body ,  geom ,  site ,  camera 
 			WhitespaceNode(c_node_idx=924, c_parent_idx=811, mojo_node_idx=904, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMEPOS, value=0, c_node_idx=925, c_parent_idx=811, mojo_node_idx=905, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMEPOS = 0 
+			EnumFieldNode(name=mjSENS_FRAMEPOS, value=25, c_node_idx=925, c_parent_idx=811, mojo_node_idx=905, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMEPOS = 25 
 			WhitespaceNode(c_node_idx=926, c_parent_idx=811, mojo_node_idx=906, mojo_parent_idx=791) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=927, c_parent_idx=811, mojo_node_idx=907, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D position 
 			WhitespaceNode(c_node_idx=928, c_parent_idx=811, mojo_node_idx=908, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMEQUAT, value=0, c_node_idx=929, c_parent_idx=811, mojo_node_idx=909, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMEQUAT = 0 
+			EnumFieldNode(name=mjSENS_FRAMEQUAT, value=26, c_node_idx=929, c_parent_idx=811, mojo_node_idx=909, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMEQUAT = 26 
 			WhitespaceNode(c_node_idx=930, c_parent_idx=811, mojo_node_idx=910, mojo_parent_idx=791) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=931, c_parent_idx=811, mojo_node_idx=911, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 4D unit quaternion orientation 
 			WhitespaceNode(c_node_idx=932, c_parent_idx=811, mojo_node_idx=912, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMEXAXIS, value=0, c_node_idx=933, c_parent_idx=811, mojo_node_idx=913, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMEXAXIS = 0 
+			EnumFieldNode(name=mjSENS_FRAMEXAXIS, value=27, c_node_idx=933, c_parent_idx=811, mojo_node_idx=913, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMEXAXIS = 27 
 			WhitespaceNode(c_node_idx=934, c_parent_idx=811, mojo_node_idx=914, mojo_parent_idx=791) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=935, c_parent_idx=811, mojo_node_idx=915, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D unit vector: x-axis of object's frame 
 			WhitespaceNode(c_node_idx=936, c_parent_idx=811, mojo_node_idx=916, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMEYAXIS, value=0, c_node_idx=937, c_parent_idx=811, mojo_node_idx=917, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMEYAXIS = 0 
+			EnumFieldNode(name=mjSENS_FRAMEYAXIS, value=28, c_node_idx=937, c_parent_idx=811, mojo_node_idx=917, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMEYAXIS = 28 
 			WhitespaceNode(c_node_idx=938, c_parent_idx=811, mojo_node_idx=918, mojo_parent_idx=791) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=939, c_parent_idx=811, mojo_node_idx=919, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D unit vector: y-axis of object's frame 
 			WhitespaceNode(c_node_idx=940, c_parent_idx=811, mojo_node_idx=920, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMEZAXIS, value=0, c_node_idx=941, c_parent_idx=811, mojo_node_idx=921, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMEZAXIS = 0 
+			EnumFieldNode(name=mjSENS_FRAMEZAXIS, value=29, c_node_idx=941, c_parent_idx=811, mojo_node_idx=921, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMEZAXIS = 29 
 			WhitespaceNode(c_node_idx=942, c_parent_idx=811, mojo_node_idx=922, mojo_parent_idx=791) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=943, c_parent_idx=811, mojo_node_idx=923, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D unit vector: z-axis of object's frame 
 			WhitespaceNode(c_node_idx=944, c_parent_idx=811, mojo_node_idx=924, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMELINVEL, value=0, c_node_idx=945, c_parent_idx=811, mojo_node_idx=925, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMELINVEL = 0 
+			EnumFieldNode(name=mjSENS_FRAMELINVEL, value=30, c_node_idx=945, c_parent_idx=811, mojo_node_idx=925, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMELINVEL = 30 
 			WhitespaceNode(c_node_idx=946, c_parent_idx=811, mojo_node_idx=926, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=947, c_parent_idx=811, mojo_node_idx=927, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D linear velocity 
 			WhitespaceNode(c_node_idx=948, c_parent_idx=811, mojo_node_idx=928, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMEANGVEL, value=0, c_node_idx=949, c_parent_idx=811, mojo_node_idx=929, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMEANGVEL = 0 
+			EnumFieldNode(name=mjSENS_FRAMEANGVEL, value=31, c_node_idx=949, c_parent_idx=811, mojo_node_idx=929, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMEANGVEL = 31 
 			WhitespaceNode(c_node_idx=950, c_parent_idx=811, mojo_node_idx=930, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=951, c_parent_idx=811, mojo_node_idx=931, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D angular velocity 
 			WhitespaceNode(c_node_idx=952, c_parent_idx=811, mojo_node_idx=932, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMELINACC, value=0, c_node_idx=953, c_parent_idx=811, mojo_node_idx=933, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMELINACC = 0 
+			EnumFieldNode(name=mjSENS_FRAMELINACC, value=32, c_node_idx=953, c_parent_idx=811, mojo_node_idx=933, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMELINACC = 32 
 			WhitespaceNode(c_node_idx=954, c_parent_idx=811, mojo_node_idx=934, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=955, c_parent_idx=811, mojo_node_idx=935, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D linear acceleration 
 			WhitespaceNode(c_node_idx=956, c_parent_idx=811, mojo_node_idx=936, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_FRAMEANGACC, value=0, c_node_idx=957, c_parent_idx=811, mojo_node_idx=937, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_FRAMEANGACC = 0 
+			EnumFieldNode(name=mjSENS_FRAMEANGACC, value=33, c_node_idx=957, c_parent_idx=811, mojo_node_idx=937, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_FRAMEANGACC = 33 
 			WhitespaceNode(c_node_idx=958, c_parent_idx=811, mojo_node_idx=938, mojo_parent_idx=791) 
 			WhitespaceNode >>>              
 			SingleLineCommentNode(c_node_idx=959, c_parent_idx=811, mojo_node_idx=939, mojo_parent_idx=791) 
@@ -1937,24 +1937,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # sensors related to kinematic subtrees ;  attached to a body (which is the subtree root) 
 			WhitespaceNode(c_node_idx=962, c_parent_idx=811, mojo_node_idx=942, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_SUBTREECOM, value=0, c_node_idx=963, c_parent_idx=811, mojo_node_idx=943, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_SUBTREECOM = 0 
+			EnumFieldNode(name=mjSENS_SUBTREECOM, value=34, c_node_idx=963, c_parent_idx=811, mojo_node_idx=943, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_SUBTREECOM = 34 
 			WhitespaceNode(c_node_idx=964, c_parent_idx=811, mojo_node_idx=944, mojo_parent_idx=791) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=965, c_parent_idx=811, mojo_node_idx=945, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D center of mass of subtree 
 			WhitespaceNode(c_node_idx=966, c_parent_idx=811, mojo_node_idx=946, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_SUBTREELINVEL, value=0, c_node_idx=967, c_parent_idx=811, mojo_node_idx=947, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_SUBTREELINVEL = 0 
+			EnumFieldNode(name=mjSENS_SUBTREELINVEL, value=35, c_node_idx=967, c_parent_idx=811, mojo_node_idx=947, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_SUBTREELINVEL = 35 
 			WhitespaceNode(c_node_idx=968, c_parent_idx=811, mojo_node_idx=948, mojo_parent_idx=791) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=969, c_parent_idx=811, mojo_node_idx=949, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # 3D linear velocity of subtree 
 			WhitespaceNode(c_node_idx=970, c_parent_idx=811, mojo_node_idx=950, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_SUBTREEANGMOM, value=0, c_node_idx=971, c_parent_idx=811, mojo_node_idx=951, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_SUBTREEANGMOM = 0 
+			EnumFieldNode(name=mjSENS_SUBTREEANGMOM, value=36, c_node_idx=971, c_parent_idx=811, mojo_node_idx=951, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_SUBTREEANGMOM = 36 
 			WhitespaceNode(c_node_idx=972, c_parent_idx=811, mojo_node_idx=952, mojo_parent_idx=791) 
 			WhitespaceNode >>>            
 			SingleLineCommentNode(c_node_idx=973, c_parent_idx=811, mojo_node_idx=953, mojo_parent_idx=791) 
@@ -1966,24 +1966,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # sensors for geometric distance ;  attached to geoms or bodies 
 			WhitespaceNode(c_node_idx=976, c_parent_idx=811, mojo_node_idx=956, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_GEOMDIST, value=0, c_node_idx=977, c_parent_idx=811, mojo_node_idx=957, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_GEOMDIST = 0 
+			EnumFieldNode(name=mjSENS_GEOMDIST, value=37, c_node_idx=977, c_parent_idx=811, mojo_node_idx=957, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_GEOMDIST = 37 
 			WhitespaceNode(c_node_idx=978, c_parent_idx=811, mojo_node_idx=958, mojo_parent_idx=791) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=979, c_parent_idx=811, mojo_node_idx=959, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # signed distance between two geoms 
 			WhitespaceNode(c_node_idx=980, c_parent_idx=811, mojo_node_idx=960, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_GEOMNORMAL, value=0, c_node_idx=981, c_parent_idx=811, mojo_node_idx=961, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_GEOMNORMAL = 0 
+			EnumFieldNode(name=mjSENS_GEOMNORMAL, value=38, c_node_idx=981, c_parent_idx=811, mojo_node_idx=961, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_GEOMNORMAL = 38 
 			WhitespaceNode(c_node_idx=982, c_parent_idx=811, mojo_node_idx=962, mojo_parent_idx=791) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=983, c_parent_idx=811, mojo_node_idx=963, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # normal direction between two geoms 
 			WhitespaceNode(c_node_idx=984, c_parent_idx=811, mojo_node_idx=964, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_GEOMFROMTO, value=0, c_node_idx=985, c_parent_idx=811, mojo_node_idx=965, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_GEOMFROMTO = 0 
+			EnumFieldNode(name=mjSENS_GEOMFROMTO, value=39, c_node_idx=985, c_parent_idx=811, mojo_node_idx=965, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_GEOMFROMTO = 39 
 			WhitespaceNode(c_node_idx=986, c_parent_idx=811, mojo_node_idx=966, mojo_parent_idx=791) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=987, c_parent_idx=811, mojo_node_idx=967, mojo_parent_idx=791) 
@@ -1995,8 +1995,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # global sensors 
 			WhitespaceNode(c_node_idx=990, c_parent_idx=811, mojo_node_idx=970, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_CLOCK, value=0, c_node_idx=991, c_parent_idx=811, mojo_node_idx=971, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_CLOCK = 0 
+			EnumFieldNode(name=mjSENS_CLOCK, value=40, c_node_idx=991, c_parent_idx=811, mojo_node_idx=971, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_CLOCK = 40 
 			WhitespaceNode(c_node_idx=992, c_parent_idx=811, mojo_node_idx=972, mojo_parent_idx=791) 
 			WhitespaceNode >>>                    
 			SingleLineCommentNode(c_node_idx=993, c_parent_idx=811, mojo_node_idx=973, mojo_parent_idx=791) 
@@ -2008,8 +2008,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # plugin-controlled sensors 
 			WhitespaceNode(c_node_idx=996, c_parent_idx=811, mojo_node_idx=976, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_PLUGIN, value=0, c_node_idx=997, c_parent_idx=811, mojo_node_idx=977, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_PLUGIN = 0 
+			EnumFieldNode(name=mjSENS_PLUGIN, value=41, c_node_idx=997, c_parent_idx=811, mojo_node_idx=977, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_PLUGIN = 41 
 			WhitespaceNode(c_node_idx=998, c_parent_idx=811, mojo_node_idx=978, mojo_parent_idx=791) 
 			WhitespaceNode >>>                   
 			SingleLineCommentNode(c_node_idx=999, c_parent_idx=811, mojo_node_idx=979, mojo_parent_idx=791) 
@@ -2021,8 +2021,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # user-defined sensor 
 			WhitespaceNode(c_node_idx=1002, c_parent_idx=811, mojo_node_idx=982, mojo_parent_idx=791) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSENS_USER, value=0, c_node_idx=1003, c_parent_idx=811, mojo_node_idx=983, mojo_parent_idx=791) 
-			EnumFieldNode >>> alias mjSENS_USER = 0 
+			EnumFieldNode(name=mjSENS_USER, value=42, c_node_idx=1003, c_parent_idx=811, mojo_node_idx=983, mojo_parent_idx=791) 
+			EnumFieldNode >>> alias mjSENS_USER = 42 
 			SingleLineCommentNode(c_node_idx=1004, c_parent_idx=811, mojo_node_idx=984, mojo_parent_idx=791) 
 			SingleLineCommentNode >>> # sensor data provided by mjcb_sensor callback 
 		TypedefNode >>> alias mjtSensor = mjtSensor_ 
@@ -2049,24 +2049,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # no computations 
 			WhitespaceNode(c_node_idx=1016, c_parent_idx=1009, mojo_node_idx=995, mojo_parent_idx=988) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSTAGE_POS, value=0, c_node_idx=1017, c_parent_idx=1009, mojo_node_idx=996, mojo_parent_idx=988) 
-			EnumFieldNode >>> alias mjSTAGE_POS = 0 
+			EnumFieldNode(name=mjSTAGE_POS, value=1, c_node_idx=1017, c_parent_idx=1009, mojo_node_idx=996, mojo_parent_idx=988) 
+			EnumFieldNode >>> alias mjSTAGE_POS = 1 
 			WhitespaceNode(c_node_idx=1018, c_parent_idx=1009, mojo_node_idx=997, mojo_parent_idx=988) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=1019, c_parent_idx=1009, mojo_node_idx=998, mojo_parent_idx=988) 
 			SingleLineCommentNode >>> # position-dependent computations 
 			WhitespaceNode(c_node_idx=1020, c_parent_idx=1009, mojo_node_idx=999, mojo_parent_idx=988) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSTAGE_VEL, value=0, c_node_idx=1021, c_parent_idx=1009, mojo_node_idx=1000, mojo_parent_idx=988) 
-			EnumFieldNode >>> alias mjSTAGE_VEL = 0 
+			EnumFieldNode(name=mjSTAGE_VEL, value=2, c_node_idx=1021, c_parent_idx=1009, mojo_node_idx=1000, mojo_parent_idx=988) 
+			EnumFieldNode >>> alias mjSTAGE_VEL = 2 
 			WhitespaceNode(c_node_idx=1022, c_parent_idx=1009, mojo_node_idx=1001, mojo_parent_idx=988) 
 			WhitespaceNode >>>                     
 			SingleLineCommentNode(c_node_idx=1023, c_parent_idx=1009, mojo_node_idx=1002, mojo_parent_idx=988) 
 			SingleLineCommentNode >>> # velocity-dependent computations 
 			WhitespaceNode(c_node_idx=1024, c_parent_idx=1009, mojo_node_idx=1003, mojo_parent_idx=988) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSTAGE_ACC, value=0, c_node_idx=1025, c_parent_idx=1009, mojo_node_idx=1004, mojo_parent_idx=988) 
-			EnumFieldNode >>> alias mjSTAGE_ACC = 0 
+			EnumFieldNode(name=mjSTAGE_ACC, value=3, c_node_idx=1025, c_parent_idx=1009, mojo_node_idx=1004, mojo_parent_idx=988) 
+			EnumFieldNode >>> alias mjSTAGE_ACC = 3 
 			SingleLineCommentNode(c_node_idx=1026, c_parent_idx=1009, mojo_node_idx=1005, mojo_parent_idx=988) 
 			SingleLineCommentNode >>> # acceleration/force-dependent computations 
 		TypedefNode >>> alias mjtStage = mjtStage_ 
@@ -2093,24 +2093,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # real values ,  no constraints 
 			WhitespaceNode(c_node_idx=1038, c_parent_idx=1031, mojo_node_idx=1016, mojo_parent_idx=1009) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDATATYPE_POSITIVE, value=0, c_node_idx=1039, c_parent_idx=1031, mojo_node_idx=1017, mojo_parent_idx=1009) 
-			EnumFieldNode >>> alias mjDATATYPE_POSITIVE = 0 
+			EnumFieldNode(name=mjDATATYPE_POSITIVE, value=1, c_node_idx=1039, c_parent_idx=1031, mojo_node_idx=1017, mojo_parent_idx=1009) 
+			EnumFieldNode >>> alias mjDATATYPE_POSITIVE = 1 
 			WhitespaceNode(c_node_idx=1040, c_parent_idx=1031, mojo_node_idx=1018, mojo_parent_idx=1009) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=1041, c_parent_idx=1031, mojo_node_idx=1019, mojo_parent_idx=1009) 
 			SingleLineCommentNode >>> # positive values ;  0 or negative: inactive 
 			WhitespaceNode(c_node_idx=1042, c_parent_idx=1031, mojo_node_idx=1020, mojo_parent_idx=1009) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDATATYPE_AXIS, value=0, c_node_idx=1043, c_parent_idx=1031, mojo_node_idx=1021, mojo_parent_idx=1009) 
-			EnumFieldNode >>> alias mjDATATYPE_AXIS = 0 
+			EnumFieldNode(name=mjDATATYPE_AXIS, value=2, c_node_idx=1043, c_parent_idx=1031, mojo_node_idx=1021, mojo_parent_idx=1009) 
+			EnumFieldNode >>> alias mjDATATYPE_AXIS = 2 
 			WhitespaceNode(c_node_idx=1044, c_parent_idx=1031, mojo_node_idx=1022, mojo_parent_idx=1009) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=1045, c_parent_idx=1031, mojo_node_idx=1023, mojo_parent_idx=1009) 
 			SingleLineCommentNode >>> # 3D unit vector 
 			WhitespaceNode(c_node_idx=1046, c_parent_idx=1031, mojo_node_idx=1024, mojo_parent_idx=1009) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDATATYPE_QUATERNION, value=0, c_node_idx=1047, c_parent_idx=1031, mojo_node_idx=1025, mojo_parent_idx=1009) 
-			EnumFieldNode >>> alias mjDATATYPE_QUATERNION = 0 
+			EnumFieldNode(name=mjDATATYPE_QUATERNION, value=3, c_node_idx=1047, c_parent_idx=1031, mojo_node_idx=1025, mojo_parent_idx=1009) 
+			EnumFieldNode >>> alias mjDATATYPE_QUATERNION = 3 
 			SingleLineCommentNode(c_node_idx=1048, c_parent_idx=1031, mojo_node_idx=1026, mojo_parent_idx=1009) 
 			SingleLineCommentNode >>> # unit quaternion 
 		TypedefNode >>> alias mjtDataType = mjtDataType_ 
@@ -2137,32 +2137,32 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # no alignment 
 			WhitespaceNode(c_node_idx=1060, c_parent_idx=1053, mojo_node_idx=1037, mojo_parent_idx=1030) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSAMEFRAME_BODY, value=0, c_node_idx=1061, c_parent_idx=1053, mojo_node_idx=1038, mojo_parent_idx=1030) 
-			EnumFieldNode >>> alias mjSAMEFRAME_BODY = 0 
+			EnumFieldNode(name=mjSAMEFRAME_BODY, value=1, c_node_idx=1061, c_parent_idx=1053, mojo_node_idx=1038, mojo_parent_idx=1030) 
+			EnumFieldNode >>> alias mjSAMEFRAME_BODY = 1 
 			WhitespaceNode(c_node_idx=1062, c_parent_idx=1053, mojo_node_idx=1039, mojo_parent_idx=1030) 
 			WhitespaceNode >>>                
 			SingleLineCommentNode(c_node_idx=1063, c_parent_idx=1053, mojo_node_idx=1040, mojo_parent_idx=1030) 
 			SingleLineCommentNode >>> # frame is same as body frame 
 			WhitespaceNode(c_node_idx=1064, c_parent_idx=1053, mojo_node_idx=1041, mojo_parent_idx=1030) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSAMEFRAME_INERTIA, value=0, c_node_idx=1065, c_parent_idx=1053, mojo_node_idx=1042, mojo_parent_idx=1030) 
-			EnumFieldNode >>> alias mjSAMEFRAME_INERTIA = 0 
+			EnumFieldNode(name=mjSAMEFRAME_INERTIA, value=2, c_node_idx=1065, c_parent_idx=1053, mojo_node_idx=1042, mojo_parent_idx=1030) 
+			EnumFieldNode >>> alias mjSAMEFRAME_INERTIA = 2 
 			WhitespaceNode(c_node_idx=1066, c_parent_idx=1053, mojo_node_idx=1043, mojo_parent_idx=1030) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=1067, c_parent_idx=1053, mojo_node_idx=1044, mojo_parent_idx=1030) 
 			SingleLineCommentNode >>> # frame is same as inertial frame 
 			WhitespaceNode(c_node_idx=1068, c_parent_idx=1053, mojo_node_idx=1045, mojo_parent_idx=1030) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSAMEFRAME_BODYROT, value=0, c_node_idx=1069, c_parent_idx=1053, mojo_node_idx=1046, mojo_parent_idx=1030) 
-			EnumFieldNode >>> alias mjSAMEFRAME_BODYROT = 0 
+			EnumFieldNode(name=mjSAMEFRAME_BODYROT, value=3, c_node_idx=1069, c_parent_idx=1053, mojo_node_idx=1046, mojo_parent_idx=1030) 
+			EnumFieldNode >>> alias mjSAMEFRAME_BODYROT = 3 
 			WhitespaceNode(c_node_idx=1070, c_parent_idx=1053, mojo_node_idx=1047, mojo_parent_idx=1030) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=1071, c_parent_idx=1053, mojo_node_idx=1048, mojo_parent_idx=1030) 
 			SingleLineCommentNode >>> # frame orientation is same as body orientation 
 			WhitespaceNode(c_node_idx=1072, c_parent_idx=1053, mojo_node_idx=1049, mojo_parent_idx=1030) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjSAMEFRAME_INERTIAROT, value=0, c_node_idx=1073, c_parent_idx=1053, mojo_node_idx=1050, mojo_parent_idx=1030) 
-			EnumFieldNode >>> alias mjSAMEFRAME_INERTIAROT = 0 
+			EnumFieldNode(name=mjSAMEFRAME_INERTIAROT, value=4, c_node_idx=1073, c_parent_idx=1053, mojo_node_idx=1050, mojo_parent_idx=1030) 
+			EnumFieldNode >>> alias mjSAMEFRAME_INERTIAROT = 4 
 			SingleLineCommentNode(c_node_idx=1074, c_parent_idx=1053, mojo_node_idx=1051, mojo_parent_idx=1030) 
 			SingleLineCommentNode >>> # frame orientation is same as inertia orientation 
 		TypedefNode >>> alias mjtSameFrame = mjtSameFrame_ 
@@ -2189,24 +2189,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # do not process any actuators 
 			WhitespaceNode(c_node_idx=1086, c_parent_idx=1079, mojo_node_idx=1062, mojo_parent_idx=1055) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjLRMODE_MUSCLE, value=0, c_node_idx=1087, c_parent_idx=1079, mojo_node_idx=1063, mojo_parent_idx=1055) 
-			EnumFieldNode >>> alias mjLRMODE_MUSCLE = 0 
+			EnumFieldNode(name=mjLRMODE_MUSCLE, value=1, c_node_idx=1087, c_parent_idx=1079, mojo_node_idx=1063, mojo_parent_idx=1055) 
+			EnumFieldNode >>> alias mjLRMODE_MUSCLE = 1 
 			WhitespaceNode(c_node_idx=1088, c_parent_idx=1079, mojo_node_idx=1064, mojo_parent_idx=1055) 
 			WhitespaceNode >>>                 
 			SingleLineCommentNode(c_node_idx=1089, c_parent_idx=1079, mojo_node_idx=1065, mojo_parent_idx=1055) 
 			SingleLineCommentNode >>> # process muscle actuators 
 			WhitespaceNode(c_node_idx=1090, c_parent_idx=1079, mojo_node_idx=1066, mojo_parent_idx=1055) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjLRMODE_MUSCLEUSER, value=0, c_node_idx=1091, c_parent_idx=1079, mojo_node_idx=1067, mojo_parent_idx=1055) 
-			EnumFieldNode >>> alias mjLRMODE_MUSCLEUSER = 0 
+			EnumFieldNode(name=mjLRMODE_MUSCLEUSER, value=2, c_node_idx=1091, c_parent_idx=1079, mojo_node_idx=1067, mojo_parent_idx=1055) 
+			EnumFieldNode >>> alias mjLRMODE_MUSCLEUSER = 2 
 			WhitespaceNode(c_node_idx=1092, c_parent_idx=1079, mojo_node_idx=1068, mojo_parent_idx=1055) 
 			WhitespaceNode >>>             
 			SingleLineCommentNode(c_node_idx=1093, c_parent_idx=1079, mojo_node_idx=1069, mojo_parent_idx=1055) 
 			SingleLineCommentNode >>> # process muscle and user actuators 
 			WhitespaceNode(c_node_idx=1094, c_parent_idx=1079, mojo_node_idx=1070, mojo_parent_idx=1055) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjLRMODE_ALL, value=0, c_node_idx=1095, c_parent_idx=1079, mojo_node_idx=1071, mojo_parent_idx=1055) 
-			EnumFieldNode >>> alias mjLRMODE_ALL = 0 
+			EnumFieldNode(name=mjLRMODE_ALL, value=3, c_node_idx=1095, c_parent_idx=1079, mojo_node_idx=1071, mojo_parent_idx=1055) 
+			EnumFieldNode >>> alias mjLRMODE_ALL = 3 
 			SingleLineCommentNode(c_node_idx=1096, c_parent_idx=1079, mojo_node_idx=1072, mojo_parent_idx=1055) 
 			SingleLineCommentNode >>> # process all actuators 
 		TypedefNode >>> alias mjtLRMode = mjtLRMode_ 
@@ -2233,32 +2233,32 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # no self-collisions 
 			WhitespaceNode(c_node_idx=1108, c_parent_idx=1101, mojo_node_idx=1083, mojo_parent_idx=1076) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjFLEXSELF_NARROW, value=0, c_node_idx=1109, c_parent_idx=1101, mojo_node_idx=1084, mojo_parent_idx=1076) 
-			EnumFieldNode >>> alias mjFLEXSELF_NARROW = 0 
+			EnumFieldNode(name=mjFLEXSELF_NARROW, value=1, c_node_idx=1109, c_parent_idx=1101, mojo_node_idx=1084, mojo_parent_idx=1076) 
+			EnumFieldNode >>> alias mjFLEXSELF_NARROW = 1 
 			WhitespaceNode(c_node_idx=1110, c_parent_idx=1101, mojo_node_idx=1085, mojo_parent_idx=1076) 
 			WhitespaceNode >>>               
 			SingleLineCommentNode(c_node_idx=1111, c_parent_idx=1101, mojo_node_idx=1086, mojo_parent_idx=1076) 
 			SingleLineCommentNode >>> # skip midphase ,  go directly to narrowphase 
 			WhitespaceNode(c_node_idx=1112, c_parent_idx=1101, mojo_node_idx=1087, mojo_parent_idx=1076) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjFLEXSELF_BVH, value=0, c_node_idx=1113, c_parent_idx=1101, mojo_node_idx=1088, mojo_parent_idx=1076) 
-			EnumFieldNode >>> alias mjFLEXSELF_BVH = 0 
+			EnumFieldNode(name=mjFLEXSELF_BVH, value=2, c_node_idx=1113, c_parent_idx=1101, mojo_node_idx=1088, mojo_parent_idx=1076) 
+			EnumFieldNode >>> alias mjFLEXSELF_BVH = 2 
 			WhitespaceNode(c_node_idx=1114, c_parent_idx=1101, mojo_node_idx=1089, mojo_parent_idx=1076) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=1115, c_parent_idx=1101, mojo_node_idx=1090, mojo_parent_idx=1076) 
 			SingleLineCommentNode >>> # use BVH in midphase (if midphase enabled) 
 			WhitespaceNode(c_node_idx=1116, c_parent_idx=1101, mojo_node_idx=1091, mojo_parent_idx=1076) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjFLEXSELF_SAP, value=0, c_node_idx=1117, c_parent_idx=1101, mojo_node_idx=1092, mojo_parent_idx=1076) 
-			EnumFieldNode >>> alias mjFLEXSELF_SAP = 0 
+			EnumFieldNode(name=mjFLEXSELF_SAP, value=3, c_node_idx=1117, c_parent_idx=1101, mojo_node_idx=1092, mojo_parent_idx=1076) 
+			EnumFieldNode >>> alias mjFLEXSELF_SAP = 3 
 			WhitespaceNode(c_node_idx=1118, c_parent_idx=1101, mojo_node_idx=1093, mojo_parent_idx=1076) 
 			WhitespaceNode >>>                  
 			SingleLineCommentNode(c_node_idx=1119, c_parent_idx=1101, mojo_node_idx=1094, mojo_parent_idx=1076) 
 			SingleLineCommentNode >>> # use SAP in midphase 
 			WhitespaceNode(c_node_idx=1120, c_parent_idx=1101, mojo_node_idx=1095, mojo_parent_idx=1076) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjFLEXSELF_AUTO, value=0, c_node_idx=1121, c_parent_idx=1101, mojo_node_idx=1096, mojo_parent_idx=1076) 
-			EnumFieldNode >>> alias mjFLEXSELF_AUTO = 0 
+			EnumFieldNode(name=mjFLEXSELF_AUTO, value=4, c_node_idx=1121, c_parent_idx=1101, mojo_node_idx=1096, mojo_parent_idx=1076) 
+			EnumFieldNode >>> alias mjFLEXSELF_AUTO = 4 
 			SingleLineCommentNode(c_node_idx=1122, c_parent_idx=1101, mojo_node_idx=1097, mojo_parent_idx=1076) 
 			SingleLineCommentNode >>> # choose between BVH and SAP automatically 
 		TypedefNode >>> alias mjtFlexSelf = mjtFlexSelf_ 

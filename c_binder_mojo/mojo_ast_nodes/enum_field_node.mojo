@@ -39,8 +39,19 @@ struct EnumFieldNode(NodeAstLike):
         # TODO(josiahls): This is stupid. Lets update the c ast node to specify the field name and value.
         self._field_name = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[0].token
 
-        # TODO(josiahls): Need to handle bit shifts e.g. 1<<0. 
-        if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) >= 3:
+        if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) == 1:
+            for value in self._parent_enum_values[]:
+                if value[] > self._field_value:
+                    self._field_value = value[]
+            self._field_value += 1
+            self._parent_enum_values[].append(self._field_value)
+        elif len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) == 2:
+            for value in self._parent_enum_values[]:
+                if value[] > self._field_value:
+                    self._field_value = value[]
+            self._field_value += 1
+            self._parent_enum_values[].append(self._field_value)
+        elif len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) >= 3:
             var field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].field_value
             
             try:
@@ -53,11 +64,10 @@ struct EnumFieldNode(NodeAstLike):
                     self._field_value = UInt(field_value.__int__())
             except:
                 print("Failed to convert field value to UInt: " + field_value)
-                for value in self._parent_enum_values[]:
-                    if value[] > self._field_value:
-                        self._field_value = value[]
-                self._field_value += 1
+
             self._parent_enum_values[].append(self._field_value)
+        else:
+            print("EnumFieldNode: Unexpected number of token bundles: " + String(len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles())))
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)

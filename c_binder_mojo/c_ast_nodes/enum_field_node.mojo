@@ -53,6 +53,9 @@ struct EnumFieldNode(NodeAstLike):
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # I think for the most part we can just append the continuous chunk of tokens.
         # enum fields don't have children, so once the `done` function is called, we are done.
+        # if self.field_name == "mjNTEXROLE":
+        #     print("C AST: Setting field_value to:", self.field_name, self.field_value)  # Debug
+
         if token_bundle.token == " " or token_bundle.token == "":
             return True # Lets just ignore whitespace for now.
         if token_bundle.token == ",":
@@ -78,7 +81,9 @@ struct EnumFieldNode(NodeAstLike):
         if token_bundle.token in [
             String(CTokens.COMMENT_SINGLE_LINE_BEGIN), 
             String(CTokens.COMMENT_MULTI_LINE_BEGIN), 
-            String(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN)
+            String(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN),
+            String(CTokens.SCOPE_BEGIN),
+            String(CTokens.SCOPE_END),
         ]:
             return True
 

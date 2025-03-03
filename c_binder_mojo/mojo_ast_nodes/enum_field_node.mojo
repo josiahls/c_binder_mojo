@@ -40,7 +40,7 @@ struct EnumFieldNode(NodeAstLike):
         self._field_name = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[0].token
 
         # TODO(josiahls): Need to handle bit shifts e.g. 1<<0. 
-        if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) > 3:
+        if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) >= 3:
             var field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].field_value
             
             try:

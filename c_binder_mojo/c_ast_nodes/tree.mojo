@@ -120,7 +120,9 @@ fn make_tree(path:Path) raises -> Tree:
     current_idx = 0
     for line in path.read_text().split('\n'):
         col_num = 0
-        for token in line[].replace(';',' ; ').replace(',',' , ').split(' '):
+        for token in line[].replace(';',' ; ').replace(',',' , ').replace('\n', ' \n ').split(' '):
+            # if 'mjNTEXROLE' in token[]:
+            #     print("C AST: Token:", token[])
             token_bundle = TokenBundle(token[], line_num, col_num)
 
             while root_node.reprocess_token_buffer:

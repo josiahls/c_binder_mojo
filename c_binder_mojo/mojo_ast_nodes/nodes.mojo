@@ -22,6 +22,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     ScopeNode,  # Add import
     EnumFieldNode,  # Add import
     StructNode,  # Add import
+    StructFieldNode,
 )
 from c_binder_mojo import c_ast_nodes
 
@@ -39,6 +40,7 @@ struct AstNode(CollectionElement):
         ScopeNode,             # Handle scope blocks
         EnumFieldNode,         # Handle enum field declarations
         StructNode,            # Handle struct declarations
+        StructFieldNode,        # Handle struct field declarations
         MultiLineCommentNode,   # Handle multi-line comments
         SingleLineCommentNode,   # Handle comments before fallback
         WhitespaceNode,         # Handle whitespace

@@ -46,7 +46,7 @@ struct IncludeNode(NodeAstLike):
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
         return Self(token_bundle, parent_idx)
 
-    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Done after we've collected the include path
         # Example: #include <stddef.h> is 2 tokens
         if len(self._token_bundles) < 2:

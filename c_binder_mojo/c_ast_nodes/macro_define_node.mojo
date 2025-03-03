@@ -60,7 +60,7 @@ struct MacroDefineNode(NodeAstLike):
         if token_bundle.token not in tree.registered_datatypes[]:
             tree.registered_datatypes[].append(token_bundle.token)
 
-    fn done(mut self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
         if token_bundle.line_num != self._current_line_number:
             self.register_type_name(tree)
             return True

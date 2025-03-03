@@ -58,13 +58,16 @@ struct EnumFieldNode(NodeAstLike):
         if token_bundle.token == ",":
             self._is_done = True
         self._token_bundles.append(token_bundle)
+        if len(self._token_bundles) == 3: # Has the field name, =, and the field value.
+            self.field_value = self._token_bundles[-1].token
+
         return True
 
     @staticmethod
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
         return Self(token_bundle, parent_idx)
 
-    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Done when we hit a comma
         if self._is_done:
             return True
@@ -83,7 +86,6 @@ struct EnumFieldNode(NodeAstLike):
         # Handles the case where the very last enum field doesn't have a comma.
         if len(self._token_bundles) > 1:
             if self._token_bundles[-2].token == '=' and token_bundle.token != ',':
-                self.field_value = self._token_bundles[-1].token
                 return True
 
         return False
@@ -108,6 +110,7 @@ struct EnumFieldNode(NodeAstLike):
         s = String(self.__name__)
         s += String('(field_name=') + self.field_name + String(',')
         s += String('parent=') + String(self._parent) + String(',')
+        s += String('field_value=') + self.field_value + String(',')
         s += String('current_idx=') + String(self._current_idx) + String(')')
         return s
 

@@ -107,7 +107,7 @@ struct StructFieldNode(NodeAstLike):
             token_bundle, parent_idx, token_bundle.token == CTokens.CSTRUCT
         )
 
-    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         return self._is_done
 
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:

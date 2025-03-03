@@ -43,7 +43,7 @@ struct MacroElseNode(NodeAstLike):
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(mut self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
         if token_bundle.token == CTokens.MACRO_ENDIF:
             return True
         return False

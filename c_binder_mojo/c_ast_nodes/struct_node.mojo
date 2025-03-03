@@ -81,7 +81,7 @@ struct StructNode(NodeAstLike):
             node._inside_typedef = True
         return node
 
-    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         if token_bundle.token == 'mjLROpt_' and self._inside_typedef:
             print('here')
         # Same logic as enum - check for semicolon and scope completion

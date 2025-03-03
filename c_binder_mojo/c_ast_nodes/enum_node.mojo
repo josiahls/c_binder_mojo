@@ -74,7 +74,7 @@ struct EnumNode(NodeAstLike):
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
         return Self(token_bundle, parent_idx)
 
-    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # If the enum has `enum NAME` and its children have completed. Check if the next
         # token is a semicolon. If so, we are not done, allow us to append the semicolon.
         # then we will be done.

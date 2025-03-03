@@ -41,7 +41,7 @@ struct EnumFieldNode(NodeAstLike):
 
         # TODO(josiahls): Need to handle bit shifts e.g. 1<<0. 
         if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) > 3:
-            var field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[-2].token
+            var field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].field_value
             
             try:
                 if "<<" in field_value:

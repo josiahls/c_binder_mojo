@@ -39,6 +39,7 @@ struct EnumFieldNode(NodeAstLike):
         # TODO(josiahls): This is stupid. Lets update the c ast node to specify the field name and value.
         self._field_name = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[0].token
 
+        # TODO(josiahls): So ugly lol
         if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) == 1:
             for value in self._parent_enum_values[]:
                 if value[] > self._field_value:

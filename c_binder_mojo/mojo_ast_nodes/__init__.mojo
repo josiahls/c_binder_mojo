@@ -12,3 +12,4 @@ from .basic_data_type_node import BasicDataTypeNode
 from .enum_node import EnumNode
 from .scope_node import ScopeNode
 from .enum_field_node import EnumFieldNode
+from .struct_node import StructNode

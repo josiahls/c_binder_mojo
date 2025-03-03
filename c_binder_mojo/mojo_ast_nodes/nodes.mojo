@@ -21,6 +21,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     DeletedNode,  # Add import
     ScopeNode,  # Add import
     EnumFieldNode,  # Add import
+    StructNode,  # Add import
 )
 from c_binder_mojo import c_ast_nodes
 
@@ -37,6 +38,7 @@ struct AstNode(CollectionElement):
         EnumNode,              # Handle enum declarations
         ScopeNode,             # Handle scope blocks
         EnumFieldNode,         # Handle enum field declarations
+        StructNode,            # Handle struct declarations
         MultiLineCommentNode,   # Handle multi-line comments
         SingleLineCommentNode,   # Handle comments before fallback
         WhitespaceNode,         # Handle whitespace

@@ -1,37 +1,32 @@
-"""
-#ifndef mjUSESINGLE
-  typedef double mjtNum;
-  #define mjMINVAL    1E-15       // minimum value in any denominator
-#else
-  typedef float mjtNum;
-  #define mjMINVAL    1E-15f /* This does after the float is defined */
-#endif
+from testing import assert_equal
 
-
-"""
-
-from utils import Variant
-
-
-alias mjUSESINGLE:Bool = False
-
-alias mjtNum = SIMD[DType.float32 if not mjUSESINGLE else DType.float64, 1]
-
-
-# alias mjtNum = Float64 if not mjUSESINGLE else Float32
-
-fn some_func(some_alias:mjtNum) -> mjtNum:
-    return some_alias
+fn test_bit_shifts() raises:
+    # C style bit shifts for creating flags
+    var base: UInt32 = 1
+    
+    # In C: 1<<0, 1<<1, 1<<2, etc
+    var flag0 = base << 0  # 0000 0001 = 1
+    var flag1 = base << 1  # 0000 0010 = 2
+    var flag2 = base << 2  # 0000 0100 = 4
+    var flag3 = base << 3  # 0000 1000 = 8
+    var flag4 = base << 15  # 0001 0000 = 16
+    
+    assert_equal(flag0, 1)
+    assert_equal(flag1, 2)
+    assert_equal(flag2, 4)
+    assert_equal(flag3, 8)
+    assert_equal(flag4, 32768)
+    # Combining flags with OR (|)
+    var combined = flag0 | flag1  # 0000 0011 = 3
+    assert_equal(combined, 3)
+    
+    # Testing flags with AND (&)
+    assert_equal(combined & flag0, flag0)  # Has flag0
+    assert_equal(combined & flag2, 0)      # Doesn't have flag2
 
 fn main():
-    v = some_func(1)
-    print(String(v))
-
-# fn example[use_float32: Bool]():
-#     alias NumType = SIMD[DType.float32 if use_float32 else DType.float64, 1]
-#     var x: NumType = 3.14
-#     print(x)
-
-# fn main():
-#     example[True]()  # Uses Float32
-#     example[False]() # Uses Float64
+    try:
+        test_bit_shifts()
+        print("All tests passed!")
+    except e:
+        print("Failed: " + String(e))

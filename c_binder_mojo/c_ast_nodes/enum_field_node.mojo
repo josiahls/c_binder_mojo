@@ -26,6 +26,7 @@ struct EnumFieldNode(NodeAstLike):
     var _current_idx: Int
     var _children: ArcPointer[List[Int]]
     var field_name: String
+    var field_value: String # Keep this as a string for mojo to handle conversion.
     var _is_done: Bool
 
     fn __init__(out self, token_bundle: TokenBundle, parent: Int):
@@ -37,6 +38,8 @@ struct EnumFieldNode(NodeAstLike):
         self._children = ArcPointer(List[Int]())
         self.field_name = token_bundle.token  # First token is the field name
         self._is_done = False
+        self.field_value = ""
+
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self.just_code)
 
@@ -61,7 +64,7 @@ struct EnumFieldNode(NodeAstLike):
     fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
         return Self(token_bundle, parent_idx)
 
-    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Done when we hit a comma
         if self._is_done:
             return True
@@ -80,6 +83,7 @@ struct EnumFieldNode(NodeAstLike):
         # Handles the case where the very last enum field doesn't have a comma.
         if len(self._token_bundles) > 1:
             if self._token_bundles[-2].token == '=' and token_bundle.token != ',':
+                self.field_value = self._token_bundles[-1].token
                 return True
 
         return False

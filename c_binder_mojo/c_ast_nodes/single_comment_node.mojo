@@ -65,7 +65,7 @@ struct SingleCommentNode(NodeAstLike):
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+    fn done(mut self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
         if token_bundle.line_num != self.current_line_num:
             return True
         return False

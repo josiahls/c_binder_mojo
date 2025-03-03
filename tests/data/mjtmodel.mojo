@@ -148,112 +148,112 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # equality constraints 
 			WhitespaceNode(c_node_idx=74, c_parent_idx=63, mojo_node_idx=74, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_FRICTIONLOSS, value=3, c_node_idx=75, c_parent_idx=63, mojo_node_idx=75, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_FRICTIONLOSS = 3 
+			EnumFieldNode(name=mjDSBL_FRICTIONLOSS, value=4, c_node_idx=75, c_parent_idx=63, mojo_node_idx=75, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_FRICTIONLOSS = 4 
 			WhitespaceNode(c_node_idx=76, c_parent_idx=63, mojo_node_idx=76, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=77, c_parent_idx=63, mojo_node_idx=77, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # joint and tendon frictionloss constraints 
 			WhitespaceNode(c_node_idx=78, c_parent_idx=63, mojo_node_idx=78, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_LIMIT, value=4, c_node_idx=79, c_parent_idx=63, mojo_node_idx=79, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_LIMIT = 4 
+			EnumFieldNode(name=mjDSBL_LIMIT, value=8, c_node_idx=79, c_parent_idx=63, mojo_node_idx=79, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_LIMIT = 8 
 			WhitespaceNode(c_node_idx=80, c_parent_idx=63, mojo_node_idx=80, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=81, c_parent_idx=63, mojo_node_idx=81, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # joint and tendon limit constraints 
 			WhitespaceNode(c_node_idx=82, c_parent_idx=63, mojo_node_idx=82, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_CONTACT, value=5, c_node_idx=83, c_parent_idx=63, mojo_node_idx=83, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_CONTACT = 5 
+			EnumFieldNode(name=mjDSBL_CONTACT, value=16, c_node_idx=83, c_parent_idx=63, mojo_node_idx=83, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_CONTACT = 16 
 			WhitespaceNode(c_node_idx=84, c_parent_idx=63, mojo_node_idx=84, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=85, c_parent_idx=63, mojo_node_idx=85, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # contact constraints 
 			WhitespaceNode(c_node_idx=86, c_parent_idx=63, mojo_node_idx=86, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_PASSIVE, value=6, c_node_idx=87, c_parent_idx=63, mojo_node_idx=87, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_PASSIVE = 6 
+			EnumFieldNode(name=mjDSBL_PASSIVE, value=32, c_node_idx=87, c_parent_idx=63, mojo_node_idx=87, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_PASSIVE = 32 
 			WhitespaceNode(c_node_idx=88, c_parent_idx=63, mojo_node_idx=88, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=89, c_parent_idx=63, mojo_node_idx=89, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # passive forces 
 			WhitespaceNode(c_node_idx=90, c_parent_idx=63, mojo_node_idx=90, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_GRAVITY, value=7, c_node_idx=91, c_parent_idx=63, mojo_node_idx=91, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_GRAVITY = 7 
+			EnumFieldNode(name=mjDSBL_GRAVITY, value=64, c_node_idx=91, c_parent_idx=63, mojo_node_idx=91, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_GRAVITY = 64 
 			WhitespaceNode(c_node_idx=92, c_parent_idx=63, mojo_node_idx=92, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=93, c_parent_idx=63, mojo_node_idx=93, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # gravitational forces 
 			WhitespaceNode(c_node_idx=94, c_parent_idx=63, mojo_node_idx=94, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_CLAMPCTRL, value=8, c_node_idx=95, c_parent_idx=63, mojo_node_idx=95, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_CLAMPCTRL = 8 
+			EnumFieldNode(name=mjDSBL_CLAMPCTRL, value=128, c_node_idx=95, c_parent_idx=63, mojo_node_idx=95, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_CLAMPCTRL = 128 
 			WhitespaceNode(c_node_idx=96, c_parent_idx=63, mojo_node_idx=96, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=97, c_parent_idx=63, mojo_node_idx=97, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # clamp control to specified range 
 			WhitespaceNode(c_node_idx=98, c_parent_idx=63, mojo_node_idx=98, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_WARMSTART, value=9, c_node_idx=99, c_parent_idx=63, mojo_node_idx=99, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_WARMSTART = 9 
+			EnumFieldNode(name=mjDSBL_WARMSTART, value=256, c_node_idx=99, c_parent_idx=63, mojo_node_idx=99, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_WARMSTART = 256 
 			WhitespaceNode(c_node_idx=100, c_parent_idx=63, mojo_node_idx=100, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=101, c_parent_idx=63, mojo_node_idx=101, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # warmstart constraint solver 
 			WhitespaceNode(c_node_idx=102, c_parent_idx=63, mojo_node_idx=102, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_FILTERPARENT, value=10, c_node_idx=103, c_parent_idx=63, mojo_node_idx=103, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_FILTERPARENT = 10 
+			EnumFieldNode(name=mjDSBL_FILTERPARENT, value=512, c_node_idx=103, c_parent_idx=63, mojo_node_idx=103, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_FILTERPARENT = 512 
 			WhitespaceNode(c_node_idx=104, c_parent_idx=63, mojo_node_idx=104, mojo_parent_idx=63) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=105, c_parent_idx=63, mojo_node_idx=105, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # remove collisions with parent body 
 			WhitespaceNode(c_node_idx=106, c_parent_idx=63, mojo_node_idx=106, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_ACTUATION, value=11, c_node_idx=107, c_parent_idx=63, mojo_node_idx=107, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_ACTUATION = 11 
+			EnumFieldNode(name=mjDSBL_ACTUATION, value=1024, c_node_idx=107, c_parent_idx=63, mojo_node_idx=107, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_ACTUATION = 1024 
 			WhitespaceNode(c_node_idx=108, c_parent_idx=63, mojo_node_idx=108, mojo_parent_idx=63) 
 			WhitespaceNode >>>     
 			SingleLineCommentNode(c_node_idx=109, c_parent_idx=63, mojo_node_idx=109, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # apply actuation forces 
 			WhitespaceNode(c_node_idx=110, c_parent_idx=63, mojo_node_idx=110, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_REFSAFE, value=12, c_node_idx=111, c_parent_idx=63, mojo_node_idx=111, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_REFSAFE = 12 
+			EnumFieldNode(name=mjDSBL_REFSAFE, value=2048, c_node_idx=111, c_parent_idx=63, mojo_node_idx=111, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_REFSAFE = 2048 
 			WhitespaceNode(c_node_idx=112, c_parent_idx=63, mojo_node_idx=112, mojo_parent_idx=63) 
 			WhitespaceNode >>>     
 			SingleLineCommentNode(c_node_idx=113, c_parent_idx=63, mojo_node_idx=113, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # integrator safety: make ref[0]>=2*timestep 
 			WhitespaceNode(c_node_idx=114, c_parent_idx=63, mojo_node_idx=114, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_SENSOR, value=13, c_node_idx=115, c_parent_idx=63, mojo_node_idx=115, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_SENSOR = 13 
+			EnumFieldNode(name=mjDSBL_SENSOR, value=4096, c_node_idx=115, c_parent_idx=63, mojo_node_idx=115, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_SENSOR = 4096 
 			WhitespaceNode(c_node_idx=116, c_parent_idx=63, mojo_node_idx=116, mojo_parent_idx=63) 
 			WhitespaceNode >>>     
 			SingleLineCommentNode(c_node_idx=117, c_parent_idx=63, mojo_node_idx=117, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # sensors 
 			WhitespaceNode(c_node_idx=118, c_parent_idx=63, mojo_node_idx=118, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_MIDPHASE, value=14, c_node_idx=119, c_parent_idx=63, mojo_node_idx=119, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_MIDPHASE = 14 
+			EnumFieldNode(name=mjDSBL_MIDPHASE, value=8192, c_node_idx=119, c_parent_idx=63, mojo_node_idx=119, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_MIDPHASE = 8192 
 			WhitespaceNode(c_node_idx=120, c_parent_idx=63, mojo_node_idx=120, mojo_parent_idx=63) 
 			WhitespaceNode >>>     
 			SingleLineCommentNode(c_node_idx=121, c_parent_idx=63, mojo_node_idx=121, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # mid-phase collision filtering 
 			WhitespaceNode(c_node_idx=122, c_parent_idx=63, mojo_node_idx=122, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_EULERDAMP, value=15, c_node_idx=123, c_parent_idx=63, mojo_node_idx=123, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_EULERDAMP = 15 
+			EnumFieldNode(name=mjDSBL_EULERDAMP, value=16384, c_node_idx=123, c_parent_idx=63, mojo_node_idx=123, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_EULERDAMP = 16384 
 			WhitespaceNode(c_node_idx=124, c_parent_idx=63, mojo_node_idx=124, mojo_parent_idx=63) 
 			WhitespaceNode >>>     
 			SingleLineCommentNode(c_node_idx=125, c_parent_idx=63, mojo_node_idx=125, mojo_parent_idx=63) 
 			SingleLineCommentNode >>> # implicit integration of joint damping in Euler integrator 
 			WhitespaceNode(c_node_idx=126, c_parent_idx=63, mojo_node_idx=126, mojo_parent_idx=63) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjDSBL_AUTORESET, value=16, c_node_idx=127, c_parent_idx=63, mojo_node_idx=127, mojo_parent_idx=63) 
-			EnumFieldNode >>> alias mjDSBL_AUTORESET = 16 
+			EnumFieldNode(name=mjDSBL_AUTORESET, value=32768, c_node_idx=127, c_parent_idx=63, mojo_node_idx=127, mojo_parent_idx=63) 
+			EnumFieldNode >>> alias mjDSBL_AUTORESET = 32768 
 			WhitespaceNode(c_node_idx=128, c_parent_idx=63, mojo_node_idx=128, mojo_parent_idx=63) 
 			WhitespaceNode >>>     
 			SingleLineCommentNode(c_node_idx=129, c_parent_idx=63, mojo_node_idx=129, mojo_parent_idx=63) 
@@ -299,16 +299,16 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # energy computation 
 			WhitespaceNode(c_node_idx=149, c_parent_idx=138, mojo_node_idx=148, mojo_parent_idx=137) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjENBL_FWDINV, value=3, c_node_idx=150, c_parent_idx=138, mojo_node_idx=149, mojo_parent_idx=137) 
-			EnumFieldNode >>> alias mjENBL_FWDINV = 3 
+			EnumFieldNode(name=mjENBL_FWDINV, value=4, c_node_idx=150, c_parent_idx=138, mojo_node_idx=149, mojo_parent_idx=137) 
+			EnumFieldNode >>> alias mjENBL_FWDINV = 4 
 			WhitespaceNode(c_node_idx=151, c_parent_idx=138, mojo_node_idx=150, mojo_parent_idx=137) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=152, c_parent_idx=138, mojo_node_idx=151, mojo_parent_idx=137) 
 			SingleLineCommentNode >>> # record solver statistics 
 			WhitespaceNode(c_node_idx=153, c_parent_idx=138, mojo_node_idx=152, mojo_parent_idx=137) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjENBL_INVDISCRETE, value=4, c_node_idx=154, c_parent_idx=138, mojo_node_idx=153, mojo_parent_idx=137) 
-			EnumFieldNode >>> alias mjENBL_INVDISCRETE = 4 
+			EnumFieldNode(name=mjENBL_INVDISCRETE, value=8, c_node_idx=154, c_parent_idx=138, mojo_node_idx=153, mojo_parent_idx=137) 
+			EnumFieldNode >>> alias mjENBL_INVDISCRETE = 8 
 			WhitespaceNode(c_node_idx=155, c_parent_idx=138, mojo_node_idx=154, mojo_parent_idx=137) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=156, c_parent_idx=138, mojo_node_idx=155, mojo_parent_idx=137) 
@@ -319,24 +319,24 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # experimental features: 
 			WhitespaceNode(c_node_idx=159, c_parent_idx=138, mojo_node_idx=158, mojo_parent_idx=137) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjENBL_MULTICCD, value=5, c_node_idx=160, c_parent_idx=138, mojo_node_idx=159, mojo_parent_idx=137) 
-			EnumFieldNode >>> alias mjENBL_MULTICCD = 5 
+			EnumFieldNode(name=mjENBL_MULTICCD, value=16, c_node_idx=160, c_parent_idx=138, mojo_node_idx=159, mojo_parent_idx=137) 
+			EnumFieldNode >>> alias mjENBL_MULTICCD = 16 
 			WhitespaceNode(c_node_idx=161, c_parent_idx=138, mojo_node_idx=160, mojo_parent_idx=137) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=162, c_parent_idx=138, mojo_node_idx=161, mojo_parent_idx=137) 
 			SingleLineCommentNode >>> # multi-point convex collision detection 
 			WhitespaceNode(c_node_idx=163, c_parent_idx=138, mojo_node_idx=162, mojo_parent_idx=137) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjENBL_ISLAND, value=6, c_node_idx=164, c_parent_idx=138, mojo_node_idx=163, mojo_parent_idx=137) 
-			EnumFieldNode >>> alias mjENBL_ISLAND = 6 
+			EnumFieldNode(name=mjENBL_ISLAND, value=32, c_node_idx=164, c_parent_idx=138, mojo_node_idx=163, mojo_parent_idx=137) 
+			EnumFieldNode >>> alias mjENBL_ISLAND = 32 
 			WhitespaceNode(c_node_idx=165, c_parent_idx=138, mojo_node_idx=164, mojo_parent_idx=137) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=166, c_parent_idx=138, mojo_node_idx=165, mojo_parent_idx=137) 
 			SingleLineCommentNode >>> # constraint island discovery 
 			WhitespaceNode(c_node_idx=167, c_parent_idx=138, mojo_node_idx=166, mojo_parent_idx=137) 
 			WhitespaceNode >>>   
-			EnumFieldNode(name=mjENBL_NATIVECCD, value=7, c_node_idx=168, c_parent_idx=138, mojo_node_idx=167, mojo_parent_idx=137) 
-			EnumFieldNode >>> alias mjENBL_NATIVECCD = 7 
+			EnumFieldNode(name=mjENBL_NATIVECCD, value=64, c_node_idx=168, c_parent_idx=138, mojo_node_idx=167, mojo_parent_idx=137) 
+			EnumFieldNode >>> alias mjENBL_NATIVECCD = 64 
 			WhitespaceNode(c_node_idx=169, c_parent_idx=138, mojo_node_idx=168, mojo_parent_idx=137) 
 			WhitespaceNode >>>      
 			SingleLineCommentNode(c_node_idx=170, c_parent_idx=138, mojo_node_idx=169, mojo_parent_idx=137) 

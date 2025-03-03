@@ -106,7 +106,7 @@ struct ScopeNode(NodeAstLike):
             node.scope_type = ScopeType(ScopeType.UNKNOWN)
         return node
 
-    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         return self._is_closed
 
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:

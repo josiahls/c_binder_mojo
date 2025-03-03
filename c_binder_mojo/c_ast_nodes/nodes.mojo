@@ -65,7 +65,7 @@ struct DeletedNode(NodeAstLike):
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
+    fn done(mut self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return False
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent_idx(self) -> Int: return self._parent
@@ -108,7 +108,7 @@ struct PlaceHolderNode(NodeAstLike):
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
+    fn done(mut self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
     fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent_idx(self) -> Int: return self._parent_idx
@@ -175,7 +175,7 @@ struct AstNode(CollectionElement):
         return Self(PlaceHolderNode.create(token_bundle, parent_idx, tree))
 
     @always_inline("nodebug")
-    fn done(self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
+    fn done(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool:
         """
         Iterates over each type in the variant at compile-time and calls apple_context.
         """

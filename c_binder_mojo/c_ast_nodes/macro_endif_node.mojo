@@ -41,7 +41,7 @@ struct MacroEndIfNode(NodeAstLike):
     @staticmethod
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
+    fn done(mut self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: return True
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
     fn parent_idx(self) -> Int: return self._parent
     fn children_idxs(mut self) -> ArcPointer[List[Int]]: return ArcPointer(List[Int]())

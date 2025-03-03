@@ -85,7 +85,7 @@ struct BasicDataTypeNode(NodeAstLike):
             self._token_bundles.append(split_token_bundle[])
         return True
 
-    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+    fn done(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         # Done when we hit a non-type token
         return not token_bundle.token in CPrimitiveTypes
 

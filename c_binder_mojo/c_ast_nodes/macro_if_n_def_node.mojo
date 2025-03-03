@@ -65,7 +65,7 @@ struct MacroIfNDefNode(NodeAstLike):
     fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
         return Self(token_bundle, parent_idx)
 
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+    fn done(mut self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
         return self._is_done
 
     fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: 

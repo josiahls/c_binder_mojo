@@ -42,14 +42,22 @@ struct EnumFieldNode(NodeAstLike):
         # TODO(josiahls): Need to handle bit shifts e.g. 1<<0. 
         if len(c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()) > 3:
             var field_value = c_ast_node.node[c_ast_nodes.nodes.EnumFieldNode].token_bundles()[-2].token
+            
             try:
-                self._field_value = UInt(field_value.__int__())
+                if "<<" in field_value:
+                    var parts = field_value.split("<<")
+                    var base = UInt(parts[0].__int__())
+                    var shift = UInt(parts[1].__int__())
+                    self._field_value = base << shift
+                else:
+                    self._field_value = UInt(field_value.__int__())
             except:
+                print("Failed to convert field value to UInt: " + field_value)
                 for value in self._parent_enum_values[]:
                     if value[] > self._field_value:
                         self._field_value = value[]
                 self._field_value += 1
-                self._parent_enum_values[].append(self._field_value)
+            self._parent_enum_values[].append(self._field_value)
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)

@@ -35,7 +35,7 @@ struct StructFieldNode(NodeAstLike):
         # TODO(josiahls): need to handle structs that are fields.
         self._str_just_code = False
         self._field_name = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode].field_name
-        self._field_type = ""
+        self._field_type = self._token_bundles[0].token
         # self._field_type = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode].field_type
 
     fn __str__(self) -> String:

@@ -116,4 +116,4 @@ struct EnumNode(NodeAstLike):
         self._token_bundles = mojo_format
 
     fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
-        return default_to_string(AstNode(self), just_code, tree_interface) 
+        return default_to_string(AstNode(self), self._str_just_code, tree_interface) 

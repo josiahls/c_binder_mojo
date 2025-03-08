@@ -25,6 +25,10 @@ struct Tree:
         self.c_macro_defs = other.c_macro_defs^
         self.mojo_aliases = other.mojo_aliases^
 
+    fn set_str_just_code(mut self, str_just_code: Bool):
+        for node in self.nodes[]:
+            node[].set_str_just_code(str_just_code)
+
     fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes.nodes.AstNode) raises -> Int:
         # print('Processing node: ' + String(c_ast_node.display_name()) + ' current_idx: ' + String(current_idx))
         tree_interface = TreeInterface(self.nodes, self.c_macro_defs, self.mojo_aliases)

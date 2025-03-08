@@ -144,6 +144,11 @@ fn default_scope_level(parent_idx: Int, tree_interface: TreeInterface) -> Int:
     """
     var level = 0
     var current_parent_idx = parent_idx
+    if parent_idx == -1:
+        var parent = tree_interface.nodes[][0]
+        var scope_offset = parent.scope_offset()
+        return scope_offset
+    
     while current_parent_idx != -1:
         var parent = tree_interface.nodes[][current_parent_idx]
         level += parent.scope_offset()

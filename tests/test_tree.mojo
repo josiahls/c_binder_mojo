@@ -39,7 +39,7 @@ fn test_make_tree_mjtmodel() raises:
     # print('DisplayTree:')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel_just_mjVisual.ast').write_text(String(display_node))
     mojo_tree = mojo_ast_nodes.tree.make_tree(root_node, List[String]())
-    # mojo_tree.str_just_code = True
+    mojo_tree.set_str_just_code(True)
     # print('Root mojo node: ' + String(mojo_tree))
     # display_node = RootDisplayAstNode(root_mojo_node)
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel_just_mjVisual.mojo').write_text(String(mojo_tree))

@@ -280,7 +280,11 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
         NodeName >>> more content...
     """
     var s = String()
-    var indent = "\t" * node.scope_level(tree_interface)
+    print(String(node))
+    var level = node.scope_level(tree_interface)
+    var indent = String("")
+    if level > 0:
+        indent = "\t" * level
     var children_added = False
     var line_num = 0
     

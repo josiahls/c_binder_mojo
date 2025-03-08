@@ -61,7 +61,7 @@ struct MacroIfNDefNode(NodeAstLike):
                     break
 
     fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
-        return default_to_string(AstNode(self), just_code, tree_interface) 
+        return default_to_string(AstNode(self), self._str_just_code, tree_interface) 
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)

@@ -2702,8 +2702,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 			SingleLineCommentNode >>> # visualization options 
 			WhitespaceNode(c_node_idx=1340, c_parent_idx=1337, mojo_node_idx=1311, mojo_parent_idx=1308) 
 			WhitespaceNode >>>   
-			StructFieldNode(name=global, type=<children>, c_node_idx=1341, c_parent_idx=1337, mojo_node_idx=1312, mojo_parent_idx=1308) 
-			StructFieldNode >>> var global: <children> 
+			StructFieldNode(name=global, type=mjVisual__global, c_node_idx=1341, c_parent_idx=1337, mojo_node_idx=1312, mojo_parent_idx=1308) 
+			StructFieldNode >>> var global: mjVisual__global 
 	StructNode(name=AnonymousStruct, c_node_idx=1342, c_parent_idx=1341, mojo_node_idx=1313, mojo_parent_idx=0, c_children_idxs=(1343), mojo_children_idxs=(1314)) 
 	StructNode >>> struct AnonymousStruct: 
 		ScopeNode(c_node_idx=1343, c_parent_idx=1342, mojo_node_idx=1314, mojo_parent_idx=1313, c_children_idxs=(1344, 1345, 1346, 1347, 1348, 1349, ...) len=51, mojo_children_idxs=(1315, 1316, 1317, 1318, 1319, 1320, ...) len=51) 
@@ -2813,8 +2813,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	WhitespaceNode >>>  
 	WhitespaceNode >>>  
 	WhitespaceNode >>>   
-	StructFieldNode(name=quality, type=<children>, c_node_idx=1396, c_parent_idx=1337, mojo_node_idx=1367, mojo_parent_idx=0) 
-	StructFieldNode >>> var quality: <children> 
+	StructFieldNode(name=quality, type=AnonymousStruct_quality, c_node_idx=1396, c_parent_idx=1337, mojo_node_idx=1367, mojo_parent_idx=0) 
+	StructFieldNode >>> var quality: AnonymousStruct_quality 
 	StructNode(name=AnonymousStruct, c_node_idx=1397, c_parent_idx=1396, mojo_node_idx=1368, mojo_parent_idx=0, c_children_idxs=(1398), mojo_children_idxs=(1369)) 
 	StructNode >>> struct AnonymousStruct: 
 		ScopeNode(c_node_idx=1398, c_parent_idx=1397, mojo_node_idx=1369, mojo_parent_idx=1368, c_children_idxs=(1399, 1400, 1401, 1402, 1403, 1404, ...) len=23, mojo_children_idxs=(1370, 1371, 1372, 1373, 1374, 1375, ...) len=23) 
@@ -2868,8 +2868,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	WhitespaceNode >>>  
 	WhitespaceNode >>>  
 	WhitespaceNode >>>   
-	StructFieldNode(name=headlight, type=<children>, c_node_idx=1423, c_parent_idx=1337, mojo_node_idx=1394, mojo_parent_idx=0) 
-	StructFieldNode >>> var headlight: <children> 
+	StructFieldNode(name=headlight, type=AnonymousStruct_headlight, c_node_idx=1423, c_parent_idx=1337, mojo_node_idx=1394, mojo_parent_idx=0) 
+	StructFieldNode >>> var headlight: AnonymousStruct_headlight 
 	StructNode(name=AnonymousStruct, c_node_idx=1424, c_parent_idx=1423, mojo_node_idx=1395, mojo_parent_idx=0, c_children_idxs=(1425), mojo_children_idxs=(1396)) 
 	StructNode >>> struct AnonymousStruct: 
 		ScopeNode(c_node_idx=1425, c_parent_idx=1424, mojo_node_idx=1396, mojo_parent_idx=1395, c_children_idxs=(1426, 1427, 1428, 1429, 1430, 1431, ...) len=19, mojo_children_idxs=(1397, 1398, 1399, 1400, 1401, 1402, ...) len=19) 
@@ -2915,8 +2915,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	WhitespaceNode >>>  
 	WhitespaceNode >>>  
 	WhitespaceNode >>>   
-	StructFieldNode(name=map, type=<children>, c_node_idx=1446, c_parent_idx=1337, mojo_node_idx=1417, mojo_parent_idx=0) 
-	StructFieldNode >>> var map: <children> 
+	StructFieldNode(name=map, type=AnonymousStruct_map, c_node_idx=1446, c_parent_idx=1337, mojo_node_idx=1417, mojo_parent_idx=0) 
+	StructFieldNode >>> var map: AnonymousStruct_map 
 	StructNode(name=AnonymousStruct, c_node_idx=1447, c_parent_idx=1446, mojo_node_idx=1418, mojo_parent_idx=0, c_children_idxs=(1448), mojo_children_idxs=(1419)) 
 	StructNode >>> struct AnonymousStruct: 
 		ScopeNode(c_node_idx=1448, c_parent_idx=1447, mojo_node_idx=1419, mojo_parent_idx=1418, c_children_idxs=(1449, 1450, 1451, 1452, 1453, 1454, ...) len=55, mojo_children_idxs=(1420, 1421, 1422, 1423, 1424, 1425, ...) len=55) 
@@ -3034,8 +3034,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	WhitespaceNode >>>  
 	WhitespaceNode >>>  
 	WhitespaceNode >>>   
-	StructFieldNode(name=scale, type=<children>, c_node_idx=1505, c_parent_idx=1337, mojo_node_idx=1476, mojo_parent_idx=0) 
-	StructFieldNode >>> var scale: <children> 
+	StructFieldNode(name=scale, type=AnonymousStruct_scale, c_node_idx=1505, c_parent_idx=1337, mojo_node_idx=1476, mojo_parent_idx=0) 
+	StructFieldNode >>> var scale: AnonymousStruct_scale 
 	StructNode(name=AnonymousStruct, c_node_idx=1506, c_parent_idx=1505, mojo_node_idx=1477, mojo_parent_idx=0, c_children_idxs=(1507), mojo_children_idxs=(1478)) 
 	StructNode >>> struct AnonymousStruct: 
 		ScopeNode(c_node_idx=1507, c_parent_idx=1506, mojo_node_idx=1478, mojo_parent_idx=1477, c_children_idxs=(1508, 1509, 1510, 1511, 1512, 1513, ...) len=71, mojo_children_idxs=(1479, 1480, 1481, 1482, 1483, 1484, ...) len=71) 
@@ -3185,8 +3185,8 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 	WhitespaceNode >>>  
 	WhitespaceNode >>>  
 	WhitespaceNode >>>   
-	StructFieldNode(name=rgba, type=<children>, c_node_idx=1580, c_parent_idx=1337, mojo_node_idx=1551, mojo_parent_idx=0) 
-	StructFieldNode >>> var rgba: <children> 
+	StructFieldNode(name=rgba, type=AnonymousStruct_rgba, c_node_idx=1580, c_parent_idx=1337, mojo_node_idx=1551, mojo_parent_idx=0) 
+	StructFieldNode >>> var rgba: AnonymousStruct_rgba 
 	StructNode(name=AnonymousStruct, c_node_idx=1581, c_parent_idx=1580, mojo_node_idx=1552, mojo_parent_idx=0, c_children_idxs=(1582), mojo_children_idxs=(1553)) 
 	StructNode >>> struct AnonymousStruct: 
 		ScopeNode(c_node_idx=1582, c_parent_idx=1581, mojo_node_idx=1553, mojo_parent_idx=1552, c_children_idxs=(1583, 1584, 1585, 1586, 1587, 1588, ...) len=103, mojo_children_idxs=(1554, 1555, 1556, 1557, 1558, 1559, ...) len=103) 

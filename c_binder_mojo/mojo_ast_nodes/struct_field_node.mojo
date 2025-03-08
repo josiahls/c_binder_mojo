@@ -6,15 +6,22 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
 from c_binder_mojo import c_ast_nodes
+from c_binder_mojo.mojo_ast_nodes.struct_node import StructNode
 
 @value
 struct StructFieldNode(NodeAstLike):
     """Handles C struct field declarations.
     
-    Converts C struct fields to Mojo fields:
-    int flag;      -> var flag: Int32
-    double* ptr;   -> var ptr: Pointer[Float64]
-    char name[100] -> var name: StaticTuple[100, Int8]
+    For basic fields:
+        int flag;      -> var flag: Int32
+        double* ptr;   -> var ptr: Pointer[Float64]
+    
+    For nested structs:
+        struct { int x; } field;  -> 
+            struct ParentStruct_field:
+                var x: Int32
+            ...
+            var field: ParentStruct_field
     """
     alias __name__ = "StructFieldNode"
     
@@ -23,6 +30,8 @@ struct StructFieldNode(NodeAstLike):
     var _str_just_code: Bool
     var _field_name: String
     var _field_type: String
+    var _is_struct: Bool
+    var _parent_struct_name: String
     
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
@@ -32,11 +41,12 @@ struct StructFieldNode(NodeAstLike):
             mojo_node_idx=0,
             mojo_parent_idx=-1
         ))
-        # TODO(josiahls): need to handle structs that are fields.
         self._str_just_code = False
         self._field_name = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode].field_name
-        self._field_type = self._token_bundles[0].token
-        # self._field_type = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode].field_type
+        self._field_type = ""  # Will be set in finalize
+        self._parent_struct_name = ""
+        self._is_struct = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode]._is_struct
+
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
@@ -47,9 +57,9 @@ struct StructFieldNode(NodeAstLike):
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
-        return Self(c_ast_node)
+        var node = Self(c_ast_node)
+        return node
 
-    # State checks
     fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False
 
@@ -57,7 +67,7 @@ struct StructFieldNode(NodeAstLike):
         return True
 
     fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
-        return False  # Fields don't have children
+        return self._is_struct  # Accept children only if we're a struct field
 
     fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
         return False
@@ -87,12 +97,39 @@ struct StructFieldNode(NodeAstLike):
         return default_scope_level(self._indices[].mojo_parent_idx, tree_interface)
 
     fn scope_offset(self) -> Int:
-        return 0  # No additional indentation needed
+        return 0
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        """Convert C struct field to Mojo field."""
+        """Convert struct field to Mojo field, handling nested structs."""
         var mojo_format = TokenBundles()
         var line_num = self._token_bundles[0].line_num
+        
+        if self._is_struct:
+        
+            # Get parent struct name to create unique nested struct names
+            var _parent_idx = parent_idx
+            while _parent_idx >= 0:
+                var parent_node = tree_interface.nodes[][_parent_idx]
+                if parent_node.node[].isa[StructNode]():
+                    self._parent_struct_name = parent_node.node[][StructNode]._struct_name
+                    break
+                _parent_idx = parent_node.indices()[].mojo_parent_idx
+            
+            if not self._parent_struct_name:
+                self._parent_struct_name = "AnonymousStruct"
+            
+            # For struct fields, create a unique name by combining parent and field names
+            self._field_type = self._parent_struct_name + "_" + self._field_name
+            
+            # Update the struct node's name (it should be our only child)
+            if len(self._indices[].mojo_children_idxs[]) > 0:
+                for struct_child_idx in self._indices[].mojo_children_idxs[]:
+                    if tree_interface.nodes[][struct_child_idx[]].node[].isa[StructNode]():
+                        var struct_node = tree_interface.nodes[][struct_child_idx[]].node[][StructNode]
+                        struct_node._struct_name = self._field_type
+        else:
+            # Basic field - use first token as type
+            self._field_type = self._token_bundles[0].token
         
         # Format as: var NAME: TYPE
         mojo_format.append(TokenBundle(

@@ -50,8 +50,6 @@ struct StructFieldNode(NodeAstLike):
         self._field_type = ""  # Will be set in finalize
         self._parent_struct_name = ""
         self._is_struct = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode]._is_struct
-        if self._is_struct:
-            print("DEBUG: Struct field node is struct: " + self.display_name())
 
 
     fn __str__(self) -> String:
@@ -59,14 +57,10 @@ struct StructFieldNode(NodeAstLike):
 
     @staticmethod
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
-        print("DEBUG: StructFieldNode.accept called for node: " + c_ast_node.display_name())
-        print("DEBUG: With parent_idx: " + String(parent_idx))
         return c_ast_node.node.isa[c_ast_nodes.nodes.StructFieldNode]()
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
-        print("DEBUG: StructFieldNode.create called for node: " + c_ast_node.display_name())
-        print("DEBUG: With parent_idx: " + String(parent_idx))
         var node = Self(c_ast_node)
         return node
 
@@ -110,6 +104,9 @@ struct StructFieldNode(NodeAstLike):
         return default_scope_level(self._indices[].mojo_parent_idx, tree_interface)
 
     fn scope_offset(self) -> Int:
+        # If we're a struct field, indent our children one level
+        if self._is_struct:
+            return 1
         return 0
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
@@ -118,7 +115,6 @@ struct StructFieldNode(NodeAstLike):
         var line_num = self._token_bundles[0].line_num
         
         if self._is_struct:
-            print("DEBUG: Struct field node is struct: " + self.display_name())
             # Get parent struct name to create unique nested struct names
             var _parent_idx = parent_idx
             while _parent_idx >= 0:
@@ -141,8 +137,9 @@ struct StructFieldNode(NodeAstLike):
             if len(self._indices[].mojo_children_idxs[]) > 0:
                 for struct_child_idx in self._indices[].mojo_children_idxs[]:
                     if tree_interface.nodes[][struct_child_idx[]].node[].isa[StructNode]():
-                        var struct_node = tree_interface.nodes[][struct_child_idx[]].node[][StructNode]
-                        struct_node._struct_name = self._field_type
+                        print("DEBUG: Updating struct node name: " + tree_interface.nodes[][struct_child_idx[]].node[][StructNode]._struct_name + " to " + self._field_type)
+                        tree_interface.nodes[][struct_child_idx[]].node[][StructNode]._struct_name = self._field_type
+                        tree_interface.nodes[][struct_child_idx[]].node[][StructNode].refresh_mojo_format()
         else:
             # Basic field - use first token as type
             self._field_type = self._token_bundles[0].token

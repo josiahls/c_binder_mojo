@@ -53,14 +53,9 @@ struct Tree:
             return self.get_current_node(current_node.indices()[].mojo_parent_idx, c_ast_node)
         
         elif current_node.wants_child(c_ast_node, tree_interface):
-            print("DEBUG: Creating child under parent:", current_node.display_name())
-            print("DEBUG: Parent indices:", String(current_node.indices()[]))
             new_node = AstNode.accept(c_ast_node, current_idx, tree_interface)
-            print("DEBUG: New node before parent assignment:", new_node.display_name())
-            print("DEBUG: New node indices before:", String(new_node.indices()[]))
             new_node.indices()[].mojo_parent_idx = current_node.indices()[].mojo_node_idx
             new_node.indices()[].mojo_node_idx = len(self.nodes[])
-            print("DEBUG: New node indices after:", String(new_node.indices()[]))
             # print("Creating child node")
             # print("New node created:", new_node.display_name())
             # NOTE: Maybe change this to insert_node. We will want to support

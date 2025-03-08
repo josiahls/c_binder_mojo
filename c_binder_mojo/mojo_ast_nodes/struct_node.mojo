@@ -20,6 +20,7 @@ struct StructNode(NodeAstLike):
     var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
     var _struct_name: String
+    var _is_anonymous: Bool
     
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
@@ -32,6 +33,7 @@ struct StructNode(NodeAstLike):
         ))
         self._str_just_code = False
         self._struct_name = c_ast_node.node[c_ast_nodes.nodes.StructNode].struct_name
+        self._is_anonymous = self._struct_name == "AnonymousStruct"
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
@@ -88,6 +90,10 @@ struct StructNode(NodeAstLike):
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         """Convert C struct to Mojo struct."""
+        self.refresh_mojo_format()
+
+    fn refresh_mojo_format(mut self):
+        """Refinalize the struct node."""
         var mojo_format = TokenBundles()
         var line_num = self._token_bundles[0].line_num
         
@@ -106,7 +112,7 @@ struct StructNode(NodeAstLike):
             is_splitter=True
         ))
         
-        self._token_bundles = mojo_format
+        self._token_bundles = mojo_format 
 
     fn name(self) -> String:
         """Returns the raw node name without any metadata."""

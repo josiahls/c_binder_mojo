@@ -100,7 +100,7 @@ struct TypedefNode(NodeAstLike):
         
         For basic types: Creates a Mojo alias (e.g., alias foo_t = Int)
         For enums: Keeps the enum definition and creates an alias to it
-        For structs: Comments out for now (TODO)
+        For structs: Creates an alias to the struct
         """
         # Get the first child which should be the type
         if len(self._indices[].mojo_children_idxs[]) == 0:
@@ -140,13 +140,20 @@ struct TypedefNode(NodeAstLike):
                 mojo_format_token_bundles.append(TokenBundle(token=token[], line_num=line_num, col_num=col_num))
                 col_num += len(token[]) + 1
 
-        elif child_node.node[].isa[c_ast_nodes.nodes.StructNode]():
-            # For now, just comment out struct typedefs
-            mojo_format_token_bundles.append(TokenBundle(
-                token="# Complex typedef (struct) not supported yet: " + String(self._token_bundles),
-                line_num=line_num,
-                col_num=0
-            ))
+        elif child_node.node[].isa[StructNode]():
+            # Handle struct typedefs by creating an alias to the struct
+            var struct_name = child_node.node[][StructNode]._struct_name
+            # Add a blank line before the alias
+            mojo_format_token_bundles.append(TokenBundle(token="", line_num=line_num, col_num=col_num, is_splitter=True))
+            for token in List[String]('alias', self._alias_name, '=', struct_name):
+                mojo_format_token_bundles.append(TokenBundle(token=token[], line_num=line_num, col_num=col_num))
+                col_num += len(token[]) + 1
+
+            # Delete the child from the tree since it's been handled
+            for idx in range(len(self._indices[].mojo_children_idxs[])):
+                if self._indices[].mojo_children_idxs[][idx] == child_idx:
+                    _ = self._indices[].mojo_children_idxs[].pop(idx)
+                    break
 
         else:
             # For unknown types, comment out

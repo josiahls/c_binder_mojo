@@ -37,9 +37,9 @@ struct mjVisual__quality:
 	# number of multisamples for offscreen rendering 
 	  
  
-# Complex typedef not supported yet: typedef <children> mjVisual ;  
-struct mjVisual_: 
 
+
+alias mjVisual = mjVisual_ 
  
  
  

@@ -23,356 +23,66 @@ int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssi
 						StructFieldNode(field_name=fovy,parent=9,current_idx=17)float fovy ;
 						WhitespaceNode(parent=9,n_lines=1,current_idx=18)                  
 						SingleCommentNode(parent=9,current_idx=19)// y field-of-view of free camera (orthographic ? length : degree)
-						WhitespaceNode(parent=9,n_lines=1,current_idx=20)   
-						StructFieldNode(field_name=ipd,parent=9,current_idx=21)float ipd ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=22)                   
-						SingleCommentNode(parent=9,current_idx=23)// inter-pupilary distance for free camera
-						WhitespaceNode(parent=9,n_lines=1,current_idx=24)   
-						StructFieldNode(field_name=azimuth,parent=9,current_idx=25)float azimuth ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=26)               
-						SingleCommentNode(parent=9,current_idx=27)// initial azimuth of free camera (degrees)
-						WhitespaceNode(parent=9,n_lines=1,current_idx=28)   
-						StructFieldNode(field_name=elevation,parent=9,current_idx=29)float elevation ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=30)             
-						SingleCommentNode(parent=9,current_idx=31)// initial elevation of free camera (degrees)
-						WhitespaceNode(parent=9,n_lines=1,current_idx=32)   
-						StructFieldNode(field_name=linewidth,parent=9,current_idx=33)float linewidth ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=34)             
-						SingleCommentNode(parent=9,current_idx=35)// line width for wireframe and ray rendering
-						WhitespaceNode(parent=9,n_lines=1,current_idx=36)   
-						StructFieldNode(field_name=glow,parent=9,current_idx=37)float glow ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=38)                  
-						SingleCommentNode(parent=9,current_idx=39)// glow coefficient for selected body
-						WhitespaceNode(parent=9,n_lines=1,current_idx=40)   
-						StructFieldNode(field_name=realtime,parent=9,current_idx=41)float realtime ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=42)              
-						SingleCommentNode(parent=9,current_idx=43)// initial real-time factor (1: real time)
-						WhitespaceNode(parent=9,n_lines=1,current_idx=44)   
-						StructFieldNode(field_name=offwidth,parent=9,current_idx=45)int   offwidth ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=46)              
-						SingleCommentNode(parent=9,current_idx=47)// width of offscreen buffer
-						WhitespaceNode(parent=9,n_lines=1,current_idx=48)   
-						StructFieldNode(field_name=offheight,parent=9,current_idx=49)int   offheight ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=50)             
-						SingleCommentNode(parent=9,current_idx=51)// height of offscreen buffer
-						WhitespaceNode(parent=9,n_lines=1,current_idx=52)   
-						StructFieldNode(field_name=ellipsoidinertia,parent=9,current_idx=53)int   ellipsoidinertia ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=54)      
-						SingleCommentNode(parent=9,current_idx=55)// geom for inertia visualization (0: box ,  1: ellipsoid)
-						WhitespaceNode(parent=9,n_lines=1,current_idx=56)   
-						StructFieldNode(field_name=bvactive,parent=9,current_idx=57)int   bvactive ;
-						WhitespaceNode(parent=9,n_lines=1,current_idx=58)              
-						SingleCommentNode(parent=9,current_idx=59)// visualize active bounding volumes (0: no ,  1: yes)
-						WhitespaceNode(parent=9,n_lines=1,current_idx=60) 
+						WhitespaceNode(parent=9,n_lines=1,current_idx=20) 
 					}
 			global ;
-			WhitespaceNode(parent=3,n_lines=3,current_idx=61)   
-			StructFieldNode(field_name=quality,parent=3,current_idx=62)
-				StructNode(name=AnonymousStruct,parent=62,current_idx=63)struct
-					ScopeNode(parent=63,current_idx=64,scope_type=STRUCT){
-						WhitespaceNode(parent=64,n_lines=1,current_idx=65)                      
-						SingleCommentNode(parent=64,current_idx=66)// rendering quality
-						WhitespaceNode(parent=64,n_lines=1,current_idx=67)   
-						StructFieldNode(field_name=shadowsize,parent=64,current_idx=68)int   shadowsize ;
-						WhitespaceNode(parent=64,n_lines=1,current_idx=69)            
-						SingleCommentNode(parent=64,current_idx=70)// size of shadowmap texture
-						WhitespaceNode(parent=64,n_lines=1,current_idx=71)   
-						StructFieldNode(field_name=offsamples,parent=64,current_idx=72)int   offsamples ;
-						WhitespaceNode(parent=64,n_lines=1,current_idx=73)            
-						SingleCommentNode(parent=64,current_idx=74)// number of multisamples for offscreen rendering
-						WhitespaceNode(parent=64,n_lines=1,current_idx=75)   
-						StructFieldNode(field_name=numslices,parent=64,current_idx=76)int   numslices ;
-						WhitespaceNode(parent=64,n_lines=1,current_idx=77)             
-						SingleCommentNode(parent=64,current_idx=78)// number of slices for builtin geom drawing
-						WhitespaceNode(parent=64,n_lines=1,current_idx=79)   
-						StructFieldNode(field_name=numstacks,parent=64,current_idx=80)int   numstacks ;
-						WhitespaceNode(parent=64,n_lines=1,current_idx=81)             
-						SingleCommentNode(parent=64,current_idx=82)// number of stacks for builtin geom drawing
-						WhitespaceNode(parent=64,n_lines=1,current_idx=83)   
-						StructFieldNode(field_name=numquads,parent=64,current_idx=84)int   numquads ;
-						WhitespaceNode(parent=64,n_lines=1,current_idx=85)              
-						SingleCommentNode(parent=64,current_idx=86)// number of quads for box rendering
-						WhitespaceNode(parent=64,n_lines=1,current_idx=87) 
+			WhitespaceNode(parent=3,n_lines=3,current_idx=21)   
+			StructFieldNode(field_name=quality,parent=3,current_idx=22)
+				StructNode(name=AnonymousStruct,parent=22,current_idx=23)struct
+					ScopeNode(parent=23,current_idx=24,scope_type=STRUCT){
+						WhitespaceNode(parent=24,n_lines=1,current_idx=25)                      
+						SingleCommentNode(parent=24,current_idx=26)// rendering quality
+						WhitespaceNode(parent=24,n_lines=1,current_idx=27)   
+						StructFieldNode(field_name=shadowsize,parent=24,current_idx=28)int   shadowsize ;
+						WhitespaceNode(parent=24,n_lines=1,current_idx=29)            
+						SingleCommentNode(parent=24,current_idx=30)// size of shadowmap texture
+						WhitespaceNode(parent=24,n_lines=1,current_idx=31)   
+						StructFieldNode(field_name=offsamples,parent=24,current_idx=32)int   offsamples ;
+						WhitespaceNode(parent=24,n_lines=1,current_idx=33)            
+						SingleCommentNode(parent=24,current_idx=34)// number of multisamples for offscreen rendering
+						WhitespaceNode(parent=24,n_lines=1,current_idx=35) 
 					}
 			quality ;
-			WhitespaceNode(parent=3,n_lines=3,current_idx=88)   
-			StructFieldNode(field_name=headlight,parent=3,current_idx=89)
-				StructNode(name=AnonymousStruct,parent=89,current_idx=90)struct
-					ScopeNode(parent=90,current_idx=91,scope_type=STRUCT){
-						WhitespaceNode(parent=91,n_lines=1,current_idx=92)                      
-						SingleCommentNode(parent=91,current_idx=93)// head light
-						WhitespaceNode(parent=91,n_lines=1,current_idx=94)   
-						StructFieldNode(field_name=ambient[3],parent=91,current_idx=95)float ambient[3] ;
-						WhitespaceNode(parent=91,n_lines=1,current_idx=96)            
-						SingleCommentNode(parent=91,current_idx=97)// ambient rgb (alpha=1)
-						WhitespaceNode(parent=91,n_lines=1,current_idx=98)   
-						StructFieldNode(field_name=diffuse[3],parent=91,current_idx=99)float diffuse[3] ;
-						WhitespaceNode(parent=91,n_lines=1,current_idx=100)            
-						SingleCommentNode(parent=91,current_idx=101)// diffuse rgb (alpha=1)
-						WhitespaceNode(parent=91,n_lines=1,current_idx=102)   
-						StructFieldNode(field_name=specular[3],parent=91,current_idx=103)float specular[3] ;
-						WhitespaceNode(parent=91,n_lines=1,current_idx=104)           
-						SingleCommentNode(parent=91,current_idx=105)// specular rgb (alpha=1)
-						WhitespaceNode(parent=91,n_lines=1,current_idx=106)   
-						StructFieldNode(field_name=active,parent=91,current_idx=107)int   active ;
-						WhitespaceNode(parent=91,n_lines=1,current_idx=108)                
-						SingleCommentNode(parent=91,current_idx=109)// is headlight active
-						WhitespaceNode(parent=91,n_lines=1,current_idx=110) 
+			WhitespaceNode(parent=3,n_lines=3,current_idx=36)   
+			StructFieldNode(field_name=headlight,parent=3,current_idx=37)
+				StructNode(name=AnonymousStruct,parent=37,current_idx=38)struct
+					ScopeNode(parent=38,current_idx=39,scope_type=STRUCT){
+						WhitespaceNode(parent=39,n_lines=1,current_idx=40)                      
+						SingleCommentNode(parent=39,current_idx=41)// head light
+						WhitespaceNode(parent=39,n_lines=1,current_idx=42)   
+						StructFieldNode(field_name=ambient[3],parent=39,current_idx=43)float ambient[3] ;
+						WhitespaceNode(parent=39,n_lines=1,current_idx=44)            
+						SingleCommentNode(parent=39,current_idx=45)// ambient rgb (alpha=1)
+						WhitespaceNode(parent=39,n_lines=1,current_idx=46)   
+						StructFieldNode(field_name=diffuse[3],parent=39,current_idx=47)float diffuse[3] ;
+						WhitespaceNode(parent=39,n_lines=1,current_idx=48)            
+						SingleCommentNode(parent=39,current_idx=49)// diffuse rgb (alpha=1)
+						WhitespaceNode(parent=39,n_lines=1,current_idx=50) 
 					}
 			headlight ;
-			WhitespaceNode(parent=3,n_lines=3,current_idx=111)   
-			StructFieldNode(field_name=map,parent=3,current_idx=112)
-				StructNode(name=AnonymousStruct,parent=112,current_idx=113)struct
-					ScopeNode(parent=113,current_idx=114,scope_type=STRUCT){
-						WhitespaceNode(parent=114,n_lines=1,current_idx=115)                      
-						SingleCommentNode(parent=114,current_idx=116)// mapping
-						WhitespaceNode(parent=114,n_lines=1,current_idx=117)   
-						StructFieldNode(field_name=stiffness,parent=114,current_idx=118)float stiffness ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=119)             
-						SingleCommentNode(parent=114,current_idx=120)// mouse perturbation stiffness (space->force)
-						WhitespaceNode(parent=114,n_lines=1,current_idx=121)   
-						StructFieldNode(field_name=stiffnessrot,parent=114,current_idx=122)float stiffnessrot ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=123)          
-						SingleCommentNode(parent=114,current_idx=124)// mouse perturbation stiffness (space->torque)
-						WhitespaceNode(parent=114,n_lines=1,current_idx=125)   
-						StructFieldNode(field_name=force,parent=114,current_idx=126)float force ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=127)                 
-						SingleCommentNode(parent=114,current_idx=128)// from force units to space units
-						WhitespaceNode(parent=114,n_lines=1,current_idx=129)   
-						StructFieldNode(field_name=torque,parent=114,current_idx=130)float torque ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=131)                
-						SingleCommentNode(parent=114,current_idx=132)// from torque units to space units
-						WhitespaceNode(parent=114,n_lines=1,current_idx=133)   
-						StructFieldNode(field_name=alpha,parent=114,current_idx=134)float alpha ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=135)                 
-						SingleCommentNode(parent=114,current_idx=136)// scale geom alphas when transparency is enabled
-						WhitespaceNode(parent=114,n_lines=1,current_idx=137)   
-						StructFieldNode(field_name=fogstart,parent=114,current_idx=138)float fogstart ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=139)              
-						SingleCommentNode(parent=114,current_idx=140)// OpenGL fog starts at fogstart * mjModel.stat.extent
-						WhitespaceNode(parent=114,n_lines=1,current_idx=141)   
-						StructFieldNode(field_name=fogend,parent=114,current_idx=142)float fogend ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=143)                
-						SingleCommentNode(parent=114,current_idx=144)// OpenGL fog ends at fogend * mjModel.stat.extent
-						WhitespaceNode(parent=114,n_lines=1,current_idx=145)   
-						StructFieldNode(field_name=znear,parent=114,current_idx=146)float znear ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=147)                 
-						SingleCommentNode(parent=114,current_idx=148)// near clipping plane = znear * mjModel.stat.extent
-						WhitespaceNode(parent=114,n_lines=1,current_idx=149)   
-						StructFieldNode(field_name=zfar,parent=114,current_idx=150)float zfar ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=151)                  
-						SingleCommentNode(parent=114,current_idx=152)// far clipping plane = zfar * mjModel.stat.extent
-						WhitespaceNode(parent=114,n_lines=1,current_idx=153)   
-						StructFieldNode(field_name=haze,parent=114,current_idx=154)float haze ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=155)                  
-						SingleCommentNode(parent=114,current_idx=156)// haze ratio
-						WhitespaceNode(parent=114,n_lines=1,current_idx=157)   
-						StructFieldNode(field_name=shadowclip,parent=114,current_idx=158)float shadowclip ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=159)            
-						SingleCommentNode(parent=114,current_idx=160)// directional light: shadowclip * mjModel.stat.extent
-						WhitespaceNode(parent=114,n_lines=1,current_idx=161)   
-						StructFieldNode(field_name=shadowscale,parent=114,current_idx=162)float shadowscale ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=163)           
-						SingleCommentNode(parent=114,current_idx=164)// spot light: shadowscale * light.cutoff
-						WhitespaceNode(parent=114,n_lines=1,current_idx=165)   
-						StructFieldNode(field_name=actuatortendon,parent=114,current_idx=166)float actuatortendon ;
-						WhitespaceNode(parent=114,n_lines=1,current_idx=167)        
-						SingleCommentNode(parent=114,current_idx=168)// scale tendon width
-						WhitespaceNode(parent=114,n_lines=1,current_idx=169) 
+			WhitespaceNode(parent=3,n_lines=3,current_idx=51)   
+			StructFieldNode(field_name=map,parent=3,current_idx=52)
+				StructNode(name=AnonymousStruct,parent=52,current_idx=53)struct
+					ScopeNode(parent=53,current_idx=54,scope_type=STRUCT){
+						WhitespaceNode(parent=54,n_lines=1,current_idx=55)                      
+						SingleCommentNode(parent=54,current_idx=56)// mapping
+						WhitespaceNode(parent=54,n_lines=1,current_idx=57)   
+						StructFieldNode(field_name=stiffness,parent=54,current_idx=58)float stiffness ;
+						WhitespaceNode(parent=54,n_lines=1,current_idx=59)             
+						SingleCommentNode(parent=54,current_idx=60)// mouse perturbation stiffness (space->force)
+						WhitespaceNode(parent=54,n_lines=1,current_idx=61)   
+						StructFieldNode(field_name=stiffnessrot,parent=54,current_idx=62)float stiffnessrot ;
+						WhitespaceNode(parent=54,n_lines=1,current_idx=63)          
+						SingleCommentNode(parent=54,current_idx=64)// mouse perturbation stiffness (space->torque)
+						WhitespaceNode(parent=54,n_lines=1,current_idx=65) 
 					}
 			map ;
-			WhitespaceNode(parent=3,n_lines=3,current_idx=170)   
-			StructFieldNode(field_name=scale,parent=3,current_idx=171)
-				StructNode(name=AnonymousStruct,parent=171,current_idx=172)struct
-					ScopeNode(parent=172,current_idx=173,scope_type=STRUCT){
-						WhitespaceNode(parent=173,n_lines=1,current_idx=174)                      
-						SingleCommentNode(parent=173,current_idx=175)// scale of decor elements relative to mean body size
-						WhitespaceNode(parent=173,n_lines=1,current_idx=176)   
-						StructFieldNode(field_name=forcewidth,parent=173,current_idx=177)float forcewidth ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=178)            
-						SingleCommentNode(parent=173,current_idx=179)// width of force arrow
-						WhitespaceNode(parent=173,n_lines=1,current_idx=180)   
-						StructFieldNode(field_name=contactwidth,parent=173,current_idx=181)float contactwidth ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=182)          
-						SingleCommentNode(parent=173,current_idx=183)// contact width
-						WhitespaceNode(parent=173,n_lines=1,current_idx=184)   
-						StructFieldNode(field_name=contactheight,parent=173,current_idx=185)float contactheight ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=186)         
-						SingleCommentNode(parent=173,current_idx=187)// contact height
-						WhitespaceNode(parent=173,n_lines=1,current_idx=188)   
-						StructFieldNode(field_name=connect,parent=173,current_idx=189)float connect ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=190)               
-						SingleCommentNode(parent=173,current_idx=191)// autoconnect capsule width
-						WhitespaceNode(parent=173,n_lines=1,current_idx=192)   
-						StructFieldNode(field_name=com,parent=173,current_idx=193)float com ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=194)                   
-						SingleCommentNode(parent=173,current_idx=195)// com radius
-						WhitespaceNode(parent=173,n_lines=1,current_idx=196)   
-						StructFieldNode(field_name=camera,parent=173,current_idx=197)float camera ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=198)                
-						SingleCommentNode(parent=173,current_idx=199)// camera object
-						WhitespaceNode(parent=173,n_lines=1,current_idx=200)   
-						StructFieldNode(field_name=light,parent=173,current_idx=201)float light ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=202)                 
-						SingleCommentNode(parent=173,current_idx=203)// light object
-						WhitespaceNode(parent=173,n_lines=1,current_idx=204)   
-						StructFieldNode(field_name=selectpoint,parent=173,current_idx=205)float selectpoint ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=206)           
-						SingleCommentNode(parent=173,current_idx=207)// selection point
-						WhitespaceNode(parent=173,n_lines=1,current_idx=208)   
-						StructFieldNode(field_name=jointlength,parent=173,current_idx=209)float jointlength ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=210)           
-						SingleCommentNode(parent=173,current_idx=211)// joint length
-						WhitespaceNode(parent=173,n_lines=1,current_idx=212)   
-						StructFieldNode(field_name=jointwidth,parent=173,current_idx=213)float jointwidth ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=214)            
-						SingleCommentNode(parent=173,current_idx=215)// joint width
-						WhitespaceNode(parent=173,n_lines=1,current_idx=216)   
-						StructFieldNode(field_name=actuatorlength,parent=173,current_idx=217)float actuatorlength ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=218)        
-						SingleCommentNode(parent=173,current_idx=219)// actuator length
-						WhitespaceNode(parent=173,n_lines=1,current_idx=220)   
-						StructFieldNode(field_name=actuatorwidth,parent=173,current_idx=221)float actuatorwidth ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=222)         
-						SingleCommentNode(parent=173,current_idx=223)// actuator width
-						WhitespaceNode(parent=173,n_lines=1,current_idx=224)   
-						StructFieldNode(field_name=framelength,parent=173,current_idx=225)float framelength ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=226)           
-						SingleCommentNode(parent=173,current_idx=227)// bodyframe axis length
-						WhitespaceNode(parent=173,n_lines=1,current_idx=228)   
-						StructFieldNode(field_name=framewidth,parent=173,current_idx=229)float framewidth ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=230)            
-						SingleCommentNode(parent=173,current_idx=231)// bodyframe axis width
-						WhitespaceNode(parent=173,n_lines=1,current_idx=232)   
-						StructFieldNode(field_name=constraint,parent=173,current_idx=233)float constraint ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=234)            
-						SingleCommentNode(parent=173,current_idx=235)// constraint width
-						WhitespaceNode(parent=173,n_lines=1,current_idx=236)   
-						StructFieldNode(field_name=slidercrank,parent=173,current_idx=237)float slidercrank ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=238)           
-						SingleCommentNode(parent=173,current_idx=239)// slidercrank width
-						WhitespaceNode(parent=173,n_lines=1,current_idx=240)   
-						StructFieldNode(field_name=frustum,parent=173,current_idx=241)float frustum ;
-						WhitespaceNode(parent=173,n_lines=1,current_idx=242)               
-						SingleCommentNode(parent=173,current_idx=243)// frustum zfar plane
-						WhitespaceNode(parent=173,n_lines=1,current_idx=244) 
-					}
-			scale ;
-			WhitespaceNode(parent=3,n_lines=3,current_idx=245)   
-			StructFieldNode(field_name=rgba,parent=3,current_idx=246)
-				StructNode(name=AnonymousStruct,parent=246,current_idx=247)struct
-					ScopeNode(parent=247,current_idx=248,scope_type=STRUCT){
-						WhitespaceNode(parent=248,n_lines=1,current_idx=249)                      
-						SingleCommentNode(parent=248,current_idx=250)// color of decor elements
-						WhitespaceNode(parent=248,n_lines=1,current_idx=251)   
-						StructFieldNode(field_name=fog[4],parent=248,current_idx=252)float fog[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=253)                
-						SingleCommentNode(parent=248,current_idx=254)// fog
-						WhitespaceNode(parent=248,n_lines=1,current_idx=255)   
-						StructFieldNode(field_name=haze[4],parent=248,current_idx=256)float haze[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=257)               
-						SingleCommentNode(parent=248,current_idx=258)// haze
-						WhitespaceNode(parent=248,n_lines=1,current_idx=259)   
-						StructFieldNode(field_name=force[4],parent=248,current_idx=260)float force[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=261)              
-						SingleCommentNode(parent=248,current_idx=262)// external force
-						WhitespaceNode(parent=248,n_lines=1,current_idx=263)   
-						StructFieldNode(field_name=inertia[4],parent=248,current_idx=264)float inertia[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=265)            
-						SingleCommentNode(parent=248,current_idx=266)// inertia box
-						WhitespaceNode(parent=248,n_lines=1,current_idx=267)   
-						StructFieldNode(field_name=joint[4],parent=248,current_idx=268)float joint[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=269)              
-						SingleCommentNode(parent=248,current_idx=270)// joint
-						WhitespaceNode(parent=248,n_lines=1,current_idx=271)   
-						StructFieldNode(field_name=actuator[4],parent=248,current_idx=272)float actuator[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=273)           
-						SingleCommentNode(parent=248,current_idx=274)// actuator ,  neutral
-						WhitespaceNode(parent=248,n_lines=1,current_idx=275)   
-						StructFieldNode(field_name=actuatornegative[4],parent=248,current_idx=276)float actuatornegative[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=277)   
-						SingleCommentNode(parent=248,current_idx=278)// actuator ,  negative limit
-						WhitespaceNode(parent=248,n_lines=1,current_idx=279)   
-						StructFieldNode(field_name=actuatorpositive[4],parent=248,current_idx=280)float actuatorpositive[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=281)   
-						SingleCommentNode(parent=248,current_idx=282)// actuator ,  positive limit
-						WhitespaceNode(parent=248,n_lines=1,current_idx=283)   
-						StructFieldNode(field_name=com[4],parent=248,current_idx=284)float com[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=285)                
-						SingleCommentNode(parent=248,current_idx=286)// center of mass
-						WhitespaceNode(parent=248,n_lines=1,current_idx=287)   
-						StructFieldNode(field_name=camera[4],parent=248,current_idx=288)float camera[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=289)             
-						SingleCommentNode(parent=248,current_idx=290)// camera object
-						WhitespaceNode(parent=248,n_lines=1,current_idx=291)   
-						StructFieldNode(field_name=light[4],parent=248,current_idx=292)float light[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=293)              
-						SingleCommentNode(parent=248,current_idx=294)// light object
-						WhitespaceNode(parent=248,n_lines=1,current_idx=295)   
-						StructFieldNode(field_name=selectpoint[4],parent=248,current_idx=296)float selectpoint[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=297)        
-						SingleCommentNode(parent=248,current_idx=298)// selection point
-						WhitespaceNode(parent=248,n_lines=1,current_idx=299)   
-						StructFieldNode(field_name=connect[4],parent=248,current_idx=300)float connect[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=301)            
-						SingleCommentNode(parent=248,current_idx=302)// auto connect
-						WhitespaceNode(parent=248,n_lines=1,current_idx=303)   
-						StructFieldNode(field_name=contactpoint[4],parent=248,current_idx=304)float contactpoint[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=305)       
-						SingleCommentNode(parent=248,current_idx=306)// contact point
-						WhitespaceNode(parent=248,n_lines=1,current_idx=307)   
-						StructFieldNode(field_name=contactforce[4],parent=248,current_idx=308)float contactforce[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=309)       
-						SingleCommentNode(parent=248,current_idx=310)// contact force
-						WhitespaceNode(parent=248,n_lines=1,current_idx=311)   
-						StructFieldNode(field_name=contactfriction[4],parent=248,current_idx=312)float contactfriction[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=313)    
-						SingleCommentNode(parent=248,current_idx=314)// contact friction force
-						WhitespaceNode(parent=248,n_lines=1,current_idx=315)   
-						StructFieldNode(field_name=contacttorque[4],parent=248,current_idx=316)float contacttorque[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=317)      
-						SingleCommentNode(parent=248,current_idx=318)// contact torque
-						WhitespaceNode(parent=248,n_lines=1,current_idx=319)   
-						StructFieldNode(field_name=contactgap[4],parent=248,current_idx=320)float contactgap[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=321)         
-						SingleCommentNode(parent=248,current_idx=322)// contact point in gap
-						WhitespaceNode(parent=248,n_lines=1,current_idx=323)   
-						StructFieldNode(field_name=rangefinder[4],parent=248,current_idx=324)float rangefinder[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=325)        
-						SingleCommentNode(parent=248,current_idx=326)// rangefinder ray
-						WhitespaceNode(parent=248,n_lines=1,current_idx=327)   
-						StructFieldNode(field_name=constraint[4],parent=248,current_idx=328)float constraint[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=329)         
-						SingleCommentNode(parent=248,current_idx=330)// constraint
-						WhitespaceNode(parent=248,n_lines=1,current_idx=331)   
-						StructFieldNode(field_name=slidercrank[4],parent=248,current_idx=332)float slidercrank[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=333)        
-						SingleCommentNode(parent=248,current_idx=334)// slidercrank
-						WhitespaceNode(parent=248,n_lines=1,current_idx=335)   
-						StructFieldNode(field_name=crankbroken[4],parent=248,current_idx=336)float crankbroken[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=337)        
-						SingleCommentNode(parent=248,current_idx=338)// used when crank must be stretched/broken
-						WhitespaceNode(parent=248,n_lines=1,current_idx=339)   
-						StructFieldNode(field_name=frustum[4],parent=248,current_idx=340)float frustum[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=341)            
-						SingleCommentNode(parent=248,current_idx=342)// camera frustum
-						WhitespaceNode(parent=248,n_lines=1,current_idx=343)   
-						StructFieldNode(field_name=bv[4],parent=248,current_idx=344)float bv[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=345)                 
-						SingleCommentNode(parent=248,current_idx=346)// bounding volume
-						WhitespaceNode(parent=248,n_lines=1,current_idx=347)   
-						StructFieldNode(field_name=bvactive[4],parent=248,current_idx=348)float bvactive[4] ;
-						WhitespaceNode(parent=248,n_lines=1,current_idx=349)           
-						SingleCommentNode(parent=248,current_idx=350)// active bounding volume
-						WhitespaceNode(parent=248,n_lines=1,current_idx=351) 
-					}
-			rgba ;
-			WhitespaceNode(parent=3,n_lines=1,current_idx=352)
+			WhitespaceNode(parent=3,n_lines=1,current_idx=66)
 		}
 	;
-	WhitespaceNode(parent=0,n_lines=1,current_idx=353)
-	TypedefNode(parent=0,current_idx=354,typename=mjVisual)typedef
-		StructNode(name=mjVisual_,parent=354,current_idx=355)struct mjVisual_
+	WhitespaceNode(parent=0,n_lines=1,current_idx=67)
+	TypedefNode(parent=0,current_idx=68,typename=mjVisual)typedef
+		StructNode(name=mjVisual_,parent=68,current_idx=69)struct mjVisual_
 		DeletedNode(parent=0,current_idx=0)mjVisual
 	mjVisual ;
-	WhitespaceNode(parent=0,n_lines=3,current_idx=357)  
+	WhitespaceNode(parent=0,n_lines=3,current_idx=71)  

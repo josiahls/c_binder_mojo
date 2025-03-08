@@ -52,6 +52,7 @@ struct Tree:
         elif current_node.wants_child(c_ast_node, tree_interface):
             # Create child node
             new_node = AstNode.accept(c_ast_node, current_idx, tree_interface)
+
             new_node.indices()[].mojo_parent_idx = current_node.indices()[].mojo_node_idx
             new_node.indices()[].mojo_node_idx = len(self.nodes[])
             # NOTE: Maybe change this to insert_node. We will want to support

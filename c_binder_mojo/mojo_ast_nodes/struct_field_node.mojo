@@ -23,6 +23,9 @@ struct StructFieldNode(NodeAstLike):
             ...
             var field: ParentStruct_field
     """
+    # TODO(josiahls): This still doesn't handle nested structs that are
+    # nested within other structs.
+    # TODO(josiahls): Indenting is a little weird in the results
     alias __name__ = "StructFieldNode"
     
     var _token_bundles: TokenBundles
@@ -110,12 +113,15 @@ struct StructFieldNode(NodeAstLike):
             var _parent_idx = parent_idx
             while _parent_idx >= 0:
                 var parent_node = tree_interface.nodes[][_parent_idx]
+                # print('Checking parent node: ' + parent_node.display_name())
                 if parent_node.node[].isa[StructNode]():
+                    # TODO(josiahls): We actually should turn this into an append op.
                     self._parent_struct_name = parent_node.node[][StructNode]._struct_name
                     break
                 _parent_idx = parent_node.indices()[].mojo_parent_idx
             
             if not self._parent_struct_name:
+                # print("No parent struct name found for " + self._field_name)
                 self._parent_struct_name = "AnonymousStruct"
             
             # For struct fields, create a unique name by combining parent and field names

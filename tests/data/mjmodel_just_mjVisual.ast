@@ -43,46 +43,12 @@ int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssi
 						WhitespaceNode(parent=24,n_lines=1,current_idx=35) 
 					}
 			quality ;
-			WhitespaceNode(parent=3,n_lines=3,current_idx=36)   
-			StructFieldNode(field_name=headlight,parent=3,current_idx=37)
-				StructNode(name=AnonymousStruct,parent=37,current_idx=38)struct
-					ScopeNode(parent=38,current_idx=39,scope_type=STRUCT){
-						WhitespaceNode(parent=39,n_lines=1,current_idx=40)                      
-						SingleCommentNode(parent=39,current_idx=41)// head light
-						WhitespaceNode(parent=39,n_lines=1,current_idx=42)   
-						StructFieldNode(field_name=ambient[3],parent=39,current_idx=43)float ambient[3] ;
-						WhitespaceNode(parent=39,n_lines=1,current_idx=44)            
-						SingleCommentNode(parent=39,current_idx=45)// ambient rgb (alpha=1)
-						WhitespaceNode(parent=39,n_lines=1,current_idx=46)   
-						StructFieldNode(field_name=diffuse[3],parent=39,current_idx=47)float diffuse[3] ;
-						WhitespaceNode(parent=39,n_lines=1,current_idx=48)            
-						SingleCommentNode(parent=39,current_idx=49)// diffuse rgb (alpha=1)
-						WhitespaceNode(parent=39,n_lines=1,current_idx=50) 
-					}
-			headlight ;
-			WhitespaceNode(parent=3,n_lines=3,current_idx=51)   
-			StructFieldNode(field_name=map,parent=3,current_idx=52)
-				StructNode(name=AnonymousStruct,parent=52,current_idx=53)struct
-					ScopeNode(parent=53,current_idx=54,scope_type=STRUCT){
-						WhitespaceNode(parent=54,n_lines=1,current_idx=55)                      
-						SingleCommentNode(parent=54,current_idx=56)// mapping
-						WhitespaceNode(parent=54,n_lines=1,current_idx=57)   
-						StructFieldNode(field_name=stiffness,parent=54,current_idx=58)float stiffness ;
-						WhitespaceNode(parent=54,n_lines=1,current_idx=59)             
-						SingleCommentNode(parent=54,current_idx=60)// mouse perturbation stiffness (space->force)
-						WhitespaceNode(parent=54,n_lines=1,current_idx=61)   
-						StructFieldNode(field_name=stiffnessrot,parent=54,current_idx=62)float stiffnessrot ;
-						WhitespaceNode(parent=54,n_lines=1,current_idx=63)          
-						SingleCommentNode(parent=54,current_idx=64)// mouse perturbation stiffness (space->torque)
-						WhitespaceNode(parent=54,n_lines=1,current_idx=65) 
-					}
-			map ;
-			WhitespaceNode(parent=3,n_lines=1,current_idx=66)
+			WhitespaceNode(parent=3,n_lines=1,current_idx=36)
 		}
 	;
-	WhitespaceNode(parent=0,n_lines=1,current_idx=67)
-	TypedefNode(parent=0,current_idx=68,typename=mjVisual)typedef
-		StructNode(name=mjVisual_,parent=68,current_idx=69)struct mjVisual_
+	WhitespaceNode(parent=0,n_lines=1,current_idx=37)
+	TypedefNode(parent=0,current_idx=38,typename=mjVisual)typedef
+		StructNode(name=mjVisual_,parent=38,current_idx=39)struct mjVisual_
 		DeletedNode(parent=0,current_idx=0)mjVisual
 	mjVisual ;
-	WhitespaceNode(parent=0,n_lines=3,current_idx=71)  
+	WhitespaceNode(parent=0,n_lines=3,current_idx=41)  

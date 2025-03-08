@@ -42,13 +42,16 @@ struct StructFieldNode(NodeAstLike):
             c_node_idx=c_ast_node.current_idx(),
             c_parent_idx=c_ast_node.parent_idx(),
             mojo_node_idx=0,
-            mojo_parent_idx=-1
+            mojo_parent_idx=-1,
+            c_children_idxs=c_ast_node.children_idxs()
         ))
         self._str_just_code = False
         self._field_name = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode].field_name
         self._field_type = ""  # Will be set in finalize
         self._parent_struct_name = ""
         self._is_struct = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode]._is_struct
+        if self._is_struct:
+            print("DEBUG: Struct field node is struct: " + self.display_name())
 
 
     fn __str__(self) -> String:
@@ -56,10 +59,14 @@ struct StructFieldNode(NodeAstLike):
 
     @staticmethod
     fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
+        print("DEBUG: StructFieldNode.accept called for node: " + c_ast_node.display_name())
+        print("DEBUG: With parent_idx: " + String(parent_idx))
         return c_ast_node.node.isa[c_ast_nodes.nodes.StructFieldNode]()
 
     @staticmethod
     fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
+        print("DEBUG: StructFieldNode.create called for node: " + c_ast_node.display_name())
+        print("DEBUG: With parent_idx: " + String(parent_idx))
         var node = Self(c_ast_node)
         return node
 
@@ -67,6 +74,9 @@ struct StructFieldNode(NodeAstLike):
         return False
 
     fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+        # If we're a struct field and haven't processed all our children yet, we're not complete
+        if self._is_struct:
+            return c_ast_node.current_idx() not in self._indices[].c_children_idxs[]
         return True
 
     fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
@@ -108,7 +118,7 @@ struct StructFieldNode(NodeAstLike):
         var line_num = self._token_bundles[0].line_num
         
         if self._is_struct:
-        
+            print("DEBUG: Struct field node is struct: " + self.display_name())
             # Get parent struct name to create unique nested struct names
             var _parent_idx = parent_idx
             while _parent_idx >= 0:
@@ -121,7 +131,7 @@ struct StructFieldNode(NodeAstLike):
                 _parent_idx = parent_node.indices()[].mojo_parent_idx
             
             if not self._parent_struct_name:
-                # print("No parent struct name found for " + self._field_name)
+                print("No parent struct name found for " + self._field_name)
                 self._parent_struct_name = "AnonymousStruct"
             
             # For struct fields, create a unique name by combining parent and field names

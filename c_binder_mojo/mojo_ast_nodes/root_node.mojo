@@ -80,7 +80,7 @@ struct RootNode(NodeAstLike):
         return default_scope_level(self._indices[].mojo_parent_idx, tree_interface)
 
     fn scope_offset(self) -> Int:
-        return 0 if self._str_just_code else 1  # Root adds one level of scope
+        return 0 if self._str_just_code else 0  # Root adds one level of scope
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         # Root node doesn't need any finalization

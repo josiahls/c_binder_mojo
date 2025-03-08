@@ -90,20 +90,6 @@ struct ScopeNode(NodeAstLike):
         return 0  # No additional indentation - parent node handles that
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        # if self._is_struct:
-        #     print("DEBUG: ---- Struct Field State ----")
-        #     print("DEBUG: Field name: " + self._field_name)
-        #     print("DEBUG: Our indices: " + String(self._indices[]))
-        #     print("DEBUG: Our children: " + String(self.display_name()))
-            
-        #     # Check each child's state
-        #     if len(self._indices[].mojo_children_idxs[]) > 0:
-        #         print("DEBUG: ---- Children State ----")
-        #         for child_idx in self._indices[].mojo_children_idxs[]:
-        #             var child = tree_interface.nodes[][child_idx[]]
-        #             print("DEBUG: Child idx " + String(child_idx[]) + ": " + child.display_name())
-        #             print("DEBUG: Child indices: " + String(child.indices()[]))
-
         # Just add a splitter token to ensure children are inserted properly
         self._token_bundles.append(TokenBundle(
             token="",

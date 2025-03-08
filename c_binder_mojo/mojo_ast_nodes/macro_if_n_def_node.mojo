@@ -117,7 +117,7 @@ struct MacroIfNDefNode(NodeAstLike):
 
     fn scope_offset(self) -> Int:
         # For now, all macro nodes add one level of scope
-        return 1
+        return -1 if self._is_header_guard else 1
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
         """Delete children if needed based on macro definition."""

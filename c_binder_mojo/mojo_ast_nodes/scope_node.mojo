@@ -19,6 +19,8 @@ struct ScopeNode(NodeAstLike):
     var _token_bundles: TokenBundles
     var _indices: ArcPointer[NodeIndices]
     var _str_just_code: Bool
+    var _is_struct: Bool
+    var _field_name: String
 
     fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
         self._token_bundles = TokenBundles()  # No tokens needed, just a splitter
@@ -30,6 +32,8 @@ struct ScopeNode(NodeAstLike):
             c_children_idxs=c_ast_node.children_idxs()
         ))
         self._str_just_code = False
+        self._is_struct = c_ast_node.node[c_ast_nodes.nodes.ScopeNode].scope_type.type == c_ast_nodes.nodes.scope_node.ScopeType.STRUCT
+        self._field_name = ""
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
@@ -86,6 +90,20 @@ struct ScopeNode(NodeAstLike):
         return 0  # No additional indentation - parent node handles that
 
     fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
+        # if self._is_struct:
+        #     print("DEBUG: ---- Struct Field State ----")
+        #     print("DEBUG: Field name: " + self._field_name)
+        #     print("DEBUG: Our indices: " + String(self._indices[]))
+        #     print("DEBUG: Our children: " + String(self.display_name()))
+            
+        #     # Check each child's state
+        #     if len(self._indices[].mojo_children_idxs[]) > 0:
+        #         print("DEBUG: ---- Children State ----")
+        #         for child_idx in self._indices[].mojo_children_idxs[]:
+        #             var child = tree_interface.nodes[][child_idx[]]
+        #             print("DEBUG: Child idx " + String(child_idx[]) + ": " + child.display_name())
+        #             print("DEBUG: Child indices: " + String(child.indices()[]))
+
         # Just add a splitter token to ensure children are inserted properly
         self._token_bundles.append(TokenBundle(
             token="",

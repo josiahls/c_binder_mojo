@@ -1,9 +1,9 @@
-RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo_children_idxs=(1, 2, 8, 21, 22, 23, ...) len=16) 
+RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo_children_idxs=(1, 2, 8, 21, 22, 23, ...) len=10) 
 	WhitespaceNode(c_node_idx=1, c_parent_idx=0, mojo_node_idx=1, mojo_parent_idx=0) 
 	WhitespaceNode >>>  
 	StructNode(name=mjVisual_, c_node_idx=2, c_parent_idx=0, mojo_node_idx=2, mojo_parent_idx=0, c_children_idxs=(3), mojo_children_idxs=(3)) 
 	StructNode >>> struct mjVisual_: 
-		ScopeNode(c_node_idx=3, c_parent_idx=2, mojo_node_idx=3, mojo_parent_idx=2, c_children_idxs=(4, 5, 6, 7, 21, 22, ...) len=11, mojo_children_idxs=(4, 5, 6, 7)) 
+		ScopeNode(c_node_idx=3, c_parent_idx=2, mojo_node_idx=3, mojo_parent_idx=2, c_children_idxs=(4, 5, 6, 7, 21, 22, ...) len=7, mojo_children_idxs=(4, 5, 6, 7)) 
 		WhitespaceNode(c_node_idx=4, c_parent_idx=3, mojo_node_idx=4, mojo_parent_idx=3) 
 		WhitespaceNode >>>                
 		SingleLineCommentNode(c_node_idx=5, c_parent_idx=3, mojo_node_idx=5, mojo_parent_idx=3) 
@@ -70,76 +70,14 @@ RootNode(c_node_idx=0, c_parent_idx=0, mojo_node_idx=0, mojo_parent_idx=-1, mojo
 		WhitespaceNode >>>   
 	WhitespaceNode(c_node_idx=36, c_parent_idx=3, mojo_node_idx=36, mojo_parent_idx=0) 
 	WhitespaceNode >>>  
+	WhitespaceNode(c_node_idx=37, c_parent_idx=0, mojo_node_idx=37, mojo_parent_idx=0) 
 	WhitespaceNode >>>  
-	WhitespaceNode >>>   
-	StructFieldNode(name=headlight, type=AnonymousStruct_headlight, c_node_idx=37, c_parent_idx=3, mojo_node_idx=37, mojo_parent_idx=0) 
-	StructFieldNode >>> var headlight: AnonymousStruct_headlight 
-	StructNode(name=AnonymousStruct, c_node_idx=38, c_parent_idx=37, mojo_node_idx=38, mojo_parent_idx=0, c_children_idxs=(39), mojo_children_idxs=(39)) 
-	StructNode >>> struct AnonymousStruct: 
-		ScopeNode(c_node_idx=39, c_parent_idx=38, mojo_node_idx=39, mojo_parent_idx=38, c_children_idxs=(40, 41, 42, 43, 44, 45, ...) len=11, mojo_children_idxs=(40, 41, 42, 43, 44, 45, ...) len=11) 
-		WhitespaceNode(c_node_idx=40, c_parent_idx=39, mojo_node_idx=40, mojo_parent_idx=39) 
-		WhitespaceNode >>>                        
-		SingleLineCommentNode(c_node_idx=41, c_parent_idx=39, mojo_node_idx=41, mojo_parent_idx=39) 
-		SingleLineCommentNode >>> # head light 
-		WhitespaceNode(c_node_idx=42, c_parent_idx=39, mojo_node_idx=42, mojo_parent_idx=39) 
-		WhitespaceNode >>>     
-		StructFieldNode(name=ambient[3], type=float, c_node_idx=43, c_parent_idx=39, mojo_node_idx=43, mojo_parent_idx=39) 
-		StructFieldNode >>> var ambient[3]: float 
-		WhitespaceNode(c_node_idx=44, c_parent_idx=39, mojo_node_idx=44, mojo_parent_idx=39) 
-		WhitespaceNode >>>              
-		SingleLineCommentNode(c_node_idx=45, c_parent_idx=39, mojo_node_idx=45, mojo_parent_idx=39) 
-		SingleLineCommentNode >>> # ambient rgb (alpha=1) 
-		WhitespaceNode(c_node_idx=46, c_parent_idx=39, mojo_node_idx=46, mojo_parent_idx=39) 
-		WhitespaceNode >>>     
-		StructFieldNode(name=diffuse[3], type=float, c_node_idx=47, c_parent_idx=39, mojo_node_idx=47, mojo_parent_idx=39) 
-		StructFieldNode >>> var diffuse[3]: float 
-		WhitespaceNode(c_node_idx=48, c_parent_idx=39, mojo_node_idx=48, mojo_parent_idx=39) 
-		WhitespaceNode >>>              
-		SingleLineCommentNode(c_node_idx=49, c_parent_idx=39, mojo_node_idx=49, mojo_parent_idx=39) 
-		SingleLineCommentNode >>> # diffuse rgb (alpha=1) 
-		WhitespaceNode(c_node_idx=50, c_parent_idx=39, mojo_node_idx=50, mojo_parent_idx=39) 
-		WhitespaceNode >>>   
-	WhitespaceNode(c_node_idx=51, c_parent_idx=3, mojo_node_idx=51, mojo_parent_idx=0) 
-	WhitespaceNode >>>  
-	WhitespaceNode >>>  
-	WhitespaceNode >>>   
-	StructFieldNode(name=map, type=AnonymousStruct_map, c_node_idx=52, c_parent_idx=3, mojo_node_idx=52, mojo_parent_idx=0) 
-	StructFieldNode >>> var map: AnonymousStruct_map 
-	StructNode(name=AnonymousStruct, c_node_idx=53, c_parent_idx=52, mojo_node_idx=53, mojo_parent_idx=0, c_children_idxs=(54), mojo_children_idxs=(54)) 
-	StructNode >>> struct AnonymousStruct: 
-		ScopeNode(c_node_idx=54, c_parent_idx=53, mojo_node_idx=54, mojo_parent_idx=53, c_children_idxs=(55, 56, 57, 58, 59, 60, ...) len=11, mojo_children_idxs=(55, 56, 57, 58, 59, 60, ...) len=11) 
-		WhitespaceNode(c_node_idx=55, c_parent_idx=54, mojo_node_idx=55, mojo_parent_idx=54) 
-		WhitespaceNode >>>                        
-		SingleLineCommentNode(c_node_idx=56, c_parent_idx=54, mojo_node_idx=56, mojo_parent_idx=54) 
-		SingleLineCommentNode >>> # mapping 
-		WhitespaceNode(c_node_idx=57, c_parent_idx=54, mojo_node_idx=57, mojo_parent_idx=54) 
-		WhitespaceNode >>>     
-		StructFieldNode(name=stiffness, type=float, c_node_idx=58, c_parent_idx=54, mojo_node_idx=58, mojo_parent_idx=54) 
-		StructFieldNode >>> var stiffness: float 
-		WhitespaceNode(c_node_idx=59, c_parent_idx=54, mojo_node_idx=59, mojo_parent_idx=54) 
-		WhitespaceNode >>>               
-		SingleLineCommentNode(c_node_idx=60, c_parent_idx=54, mojo_node_idx=60, mojo_parent_idx=54) 
-		SingleLineCommentNode >>> # mouse perturbation stiffness (space->force) 
-		WhitespaceNode(c_node_idx=61, c_parent_idx=54, mojo_node_idx=61, mojo_parent_idx=54) 
-		WhitespaceNode >>>     
-		StructFieldNode(name=stiffnessrot, type=float, c_node_idx=62, c_parent_idx=54, mojo_node_idx=62, mojo_parent_idx=54) 
-		StructFieldNode >>> var stiffnessrot: float 
-		WhitespaceNode(c_node_idx=63, c_parent_idx=54, mojo_node_idx=63, mojo_parent_idx=54) 
-		WhitespaceNode >>>            
-		SingleLineCommentNode(c_node_idx=64, c_parent_idx=54, mojo_node_idx=64, mojo_parent_idx=54) 
-		SingleLineCommentNode >>> # mouse perturbation stiffness (space->torque) 
-		WhitespaceNode(c_node_idx=65, c_parent_idx=54, mojo_node_idx=65, mojo_parent_idx=54) 
-		WhitespaceNode >>>   
-	WhitespaceNode(c_node_idx=66, c_parent_idx=3, mojo_node_idx=66, mojo_parent_idx=0) 
-	WhitespaceNode >>>  
-	WhitespaceNode(c_node_idx=67, c_parent_idx=0, mojo_node_idx=67, mojo_parent_idx=0) 
-	WhitespaceNode >>>  
-	TypedefNode(alias=mjVisual, c_node_idx=68, c_parent_idx=0, mojo_node_idx=68, mojo_parent_idx=0, c_children_idxs=(69, 70), mojo_children_idxs=(69)) 
+	TypedefNode(alias=mjVisual, c_node_idx=38, c_parent_idx=0, mojo_node_idx=38, mojo_parent_idx=0, c_children_idxs=(39, 40), mojo_children_idxs=(39)) 
 	TypedefNode >>> # Complex typedef not supported yet: typedef <children> mjVisual ;  
-	StructNode(name=mjVisual_, c_node_idx=69, c_parent_idx=68, mojo_node_idx=69, mojo_parent_idx=68) 
+	StructNode(name=mjVisual_, c_node_idx=39, c_parent_idx=38, mojo_node_idx=39, mojo_parent_idx=38) 
 	StructNode >>> struct mjVisual_: 
 
-	WhitespaceNode(c_node_idx=71, c_parent_idx=0, mojo_node_idx=70, mojo_parent_idx=0) 
+	WhitespaceNode(c_node_idx=41, c_parent_idx=0, mojo_node_idx=40, mojo_parent_idx=0) 
 	WhitespaceNode >>>  
 	WhitespaceNode >>>  
 	WhitespaceNode >>>  

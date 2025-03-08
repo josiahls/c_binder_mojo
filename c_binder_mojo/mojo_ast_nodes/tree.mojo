@@ -53,12 +53,11 @@ struct Tree:
             return self.get_current_node(current_node.indices()[].mojo_parent_idx, c_ast_node)
         
         elif current_node.wants_child(c_ast_node, tree_interface):
-            print("Creating child node")
             new_node = AstNode.accept(c_ast_node, current_idx, tree_interface)
-            print("New node created:", new_node.display_name())
-
             new_node.indices()[].mojo_parent_idx = current_node.indices()[].mojo_node_idx
             new_node.indices()[].mojo_node_idx = len(self.nodes[])
+            print("Creating child node")
+            print("New node created:", new_node.display_name())
             # NOTE: Maybe change this to insert_node. We will want to support
             # appending, but also overwriting deleted nodes.
             self.nodes[].append(new_node)

@@ -119,9 +119,7 @@ struct StructFieldNode(NodeAstLike):
             var _parent_idx = parent_idx
             while _parent_idx >= 0:
                 var parent_node = tree_interface.nodes[][_parent_idx]
-                # print('Checking parent node: ' + parent_node.display_name())
                 if parent_node.node[].isa[StructNode]():
-                    # TODO(josiahls): We actually should turn this into an append op.
                     self._parent_struct_name = parent_node.node[][StructNode]._struct_name
                     break
                 _parent_idx = parent_node.indices()[].mojo_parent_idx
@@ -133,13 +131,31 @@ struct StructFieldNode(NodeAstLike):
             # For struct fields, create a unique name by combining parent and field names
             self._field_type = self._parent_struct_name + "_" + self._field_name
             
-            # Update the struct node's name (it should be our only child)
+            # Update the struct node's name and move it to root
             if len(self._indices[].mojo_children_idxs[]) > 0:
                 for struct_child_idx in self._indices[].mojo_children_idxs[]:
                     if tree_interface.nodes[][struct_child_idx[]].node[].isa[StructNode]():
-                        print("DEBUG: Updating struct node name: " + tree_interface.nodes[][struct_child_idx[]].node[][StructNode]._struct_name + " to " + self._field_type)
-                        tree_interface.nodes[][struct_child_idx[]].node[][StructNode]._struct_name = self._field_type
-                        tree_interface.nodes[][struct_child_idx[]].node[][StructNode].refresh_mojo_format()
+                        var struct_node = tree_interface.nodes[][struct_child_idx[]]
+                        # Refresh the struct node's formatting before moving parents
+                        struct_node.node[][StructNode]._struct_name = self._field_type
+                        struct_node.node[][StructNode].refresh_mojo_format()
+
+                        
+                        # Move struct to root
+                        var old_parent_idx = struct_node.indices()[].mojo_parent_idx
+                        
+                        # Update parent references
+                        struct_node.indices()[].mojo_parent_idx = 0
+                        
+                        # Add to root node's children
+                        tree_interface.nodes[][0].add_child(struct_child_idx[])
+                        
+                        # Remove from current parent's children (which is us)
+                        for i in range(len(self._indices[].mojo_children_idxs[])):
+                            if self._indices[].mojo_children_idxs[][i] == struct_child_idx[]:
+                                _ = self._indices[].mojo_children_idxs[].pop(i)
+                                break
+                        
         else:
             # Basic field - use first token as type
             self._field_type = self._token_bundles[0].token

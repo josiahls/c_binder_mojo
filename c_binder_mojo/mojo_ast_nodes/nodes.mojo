@@ -24,7 +24,7 @@ from c_binder_mojo.mojo_ast_nodes import (
     StructNode,  # Add import
     StructFieldNode,
 )
-from c_binder_mojo import c_ast_nodes
+from c_binder_mojo import c_ast_nodes_old
 
 
 @value
@@ -71,7 +71,7 @@ struct AstNode(CollectionElement):
 
     @always_inline("nodebug")
     @staticmethod
-    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
+    fn accept(c_ast_node: c_ast_nodes_old.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
         """
         Iterates over each type in the variant at compile-time and calls accept.
         """
@@ -106,7 +106,7 @@ struct AstNode(CollectionElement):
         return "<unknown type>"
 
     # State checks
-    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -115,7 +115,7 @@ struct AstNode(CollectionElement):
                 return val_ptr[].is_accepting_tokens(c_ast_node, tree_interface)
         return False
 
-    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -124,7 +124,7 @@ struct AstNode(CollectionElement):
                 return val_ptr[].is_complete(c_ast_node, tree_interface)
         return True
 
-    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -134,7 +134,7 @@ struct AstNode(CollectionElement):
         return False
 
     # Actions
-    fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
+    fn append(mut self, c_ast_node: c_ast_nodes_old.nodes.AstNode) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]

@@ -5,7 +5,7 @@ from memory import ArcPointer
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
-from c_binder_mojo import c_ast_nodes
+from c_binder_mojo import c_ast_nodes_old
 
 @value
 struct DeletedNode(NodeAstLike):
@@ -25,7 +25,7 @@ struct DeletedNode(NodeAstLike):
         self._reason = ast_node.display_name() + " " + reason
         self._as_comment = as_comment
 
-    fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
+    fn __init__(out self, c_ast_node: c_ast_nodes_old.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
         self._indices = ArcPointer(NodeIndices(
             c_node_idx=c_ast_node.current_idx(),
@@ -49,24 +49,24 @@ struct DeletedNode(NodeAstLike):
         return s
 
     @staticmethod
-    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
+    fn accept(c_ast_node: c_ast_nodes_old.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
         return False # I think this node is going to be manually created.
 
     @staticmethod
-    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
+    fn create(c_ast_node: c_ast_nodes_old.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
         return Self(c_ast_node)
 
     # State checks
-    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False
 
-    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return True
 
-    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False
 
-    fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
+    fn append(mut self, c_ast_node: c_ast_nodes_old.nodes.AstNode) -> Bool:
         return False
 
     fn indices(self) -> ArcPointer[NodeIndices]:

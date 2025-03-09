@@ -2,7 +2,7 @@
 from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo import c_ast_nodes
+from c_binder_mojo import c_ast_nodes_old
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode
 from c_binder_mojo.mojo_ast_nodes.common import TreeInterface, NodeIndices
 
@@ -29,7 +29,7 @@ struct Tree:
         for node in self.nodes[]:
             node[].set_str_just_code(str_just_code)
 
-    fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes.nodes.AstNode) raises -> Int:
+    fn get_current_node(mut self, current_idx: Int, c_ast_node: c_ast_nodes_old.nodes.AstNode) raises -> Int:
         # print('Processing node: ' + String(c_ast_node.display_name()) + ' current_idx: ' + String(current_idx))
         tree_interface = TreeInterface(self.nodes, self.c_macro_defs, self.mojo_aliases)
         # Initialize if empty
@@ -81,11 +81,11 @@ struct Tree:
 
 
 # NOTE: for later: CTree might need to be explicitely a pointer. Not important for now.
-fn make_tree(input_tree: c_ast_nodes.tree.Tree, c_macro_defs: List[String]) raises -> Tree:
+fn make_tree(input_tree: c_ast_nodes_old.tree.Tree, c_macro_defs: List[String]) raises -> Tree:
     tree = Tree(c_macro_defs)
     current_idx = 0
     for node in input_tree.nodes:
-        if node[].node.isa[c_ast_nodes.nodes.DeletedNode]():
+        if node[].node.isa[c_ast_nodes_old.nodes.DeletedNode]():
             continue
         current_idx = tree.get_current_node(current_idx, node[])
     return tree^

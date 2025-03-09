@@ -5,7 +5,7 @@ from memory import ArcPointer
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
 from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, node2string, TreeInterface, default_scope_level, NodeIndices
-from c_binder_mojo import c_ast_nodes
+from c_binder_mojo import c_ast_nodes_old
 from c_binder_mojo.mojo_ast_nodes.struct_node import StructNode
 
 @value
@@ -36,7 +36,7 @@ struct StructFieldNode(NodeAstLike):
     var _is_struct: Bool
     var _parent_struct_name: String
     
-    fn __init__(out self, c_ast_node: c_ast_nodes.nodes.AstNode):
+    fn __init__(out self, c_ast_node: c_ast_nodes_old.nodes.AstNode):
         self._token_bundles = c_ast_node.token_bundles()
         self._indices = ArcPointer(NodeIndices(
             c_node_idx=c_ast_node.current_idx(),
@@ -46,37 +46,37 @@ struct StructFieldNode(NodeAstLike):
             c_children_idxs=c_ast_node.children_idxs()
         ))
         self._str_just_code = False
-        self._field_name = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode].field_name
+        self._field_name = c_ast_node.node[c_ast_nodes_old.nodes.StructFieldNode].field_name
         self._field_type = ""  # Will be set in finalize
         self._parent_struct_name = ""
-        self._is_struct = c_ast_node.node[c_ast_nodes.nodes.StructFieldNode]._is_struct
+        self._is_struct = c_ast_node.node[c_ast_nodes_old.nodes.StructFieldNode]._is_struct
 
 
     fn __str__(self) -> String:
         return node2string(self.display_name(), self.token_bundles(), self._str_just_code)
 
     @staticmethod
-    fn accept(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
-        return c_ast_node.node.isa[c_ast_nodes.nodes.StructFieldNode]()
+    fn accept(c_ast_node: c_ast_nodes_old.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Bool:
+        return c_ast_node.node.isa[c_ast_nodes_old.nodes.StructFieldNode]()
 
     @staticmethod
-    fn create(c_ast_node: c_ast_nodes.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
+    fn create(c_ast_node: c_ast_nodes_old.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
         var node = Self(c_ast_node)
         return node
 
-    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return False
 
-    fn is_complete(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_complete(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         # If we're a struct field and haven't processed all our children yet, we're not complete
         if self._is_struct:
             return c_ast_node.current_idx() not in self._indices[].c_children_idxs[]
         return True
 
-    fn wants_child(self, c_ast_node: c_ast_nodes.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn wants_child(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
         return self._is_struct  # Accept children only if we're a struct field
 
-    fn append(mut self, c_ast_node: c_ast_nodes.nodes.AstNode) -> Bool:
+    fn append(mut self, c_ast_node: c_ast_nodes_old.nodes.AstNode) -> Bool:
         return False
 
     fn add_child(mut self, child_idx: Int):

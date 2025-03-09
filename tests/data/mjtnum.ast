@@ -1,64 +1,71 @@
-RootNode(len children=18,parent=0,current_idx=0)
 
 Registered Datatypes: 
 int, float, double, char, short, long, unsigned, signed, void, bool, size_t, ssize_t, 
 *, MUJOCO_INCLUDE_MJTNUM_H_, mjtNum, mjMINVAL, mjtByte, 
-
-	SingleCommentNode(parent=0,current_idx=1)// Copyright 2021 DeepMind Technologies Limited
-	SingleCommentNode(parent=0,current_idx=2)//
-	SingleCommentNode(parent=0,current_idx=3)// Licensed under the Apache License ,  Version 2.0 (the "License") ; 
-	SingleCommentNode(parent=0,current_idx=4)// you may not use this file except in compliance with the License.
-	SingleCommentNode(parent=0,current_idx=5)// You may obtain a copy of the License at
-	SingleCommentNode(parent=0,current_idx=6)//
-	SingleCommentNode(parent=0,current_idx=7)//     http://www.apache.org/licenses/LICENSE-2.0
-	SingleCommentNode(parent=0,current_idx=8)//
-	SingleCommentNode(parent=0,current_idx=9)// Unless required by applicable law or agreed to in writing ,  software
-	SingleCommentNode(parent=0,current_idx=10)// distributed under the License is distributed on an "AS IS" BASIS , 
-	SingleCommentNode(parent=0,current_idx=11)// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND ,  either express or implied.
-	SingleCommentNode(parent=0,current_idx=12)// See the License for the specific language governing permissions and
-	SingleCommentNode(parent=0,current_idx=13)// limitations under the License.
-	WhitespaceNode(parent=0,n_lines=1,current_idx=14)
-	MacroIfNDefNode(parent=0,current_idx=15)#ifndef MUJOCO_INCLUDE_MJTNUM_H_
-		MacroDefineNode(parent=15,current_idx=16)#define MUJOCO_INCLUDE_MJTNUM_H_
-		WhitespaceNode(parent=15,n_lines=1,current_idx=17)
-		SingleCommentNode(parent=15,current_idx=18) ---------------------------------- floating-point definition -------------------------------------
-		WhitespaceNode(parent=15,n_lines=1,current_idx=19)
-		SingleCommentNode(parent=15,current_idx=20)// floating point data type and minval
-		MacroIfNDefNode(parent=15,current_idx=21)#ifndef mjUSESINGLE
-			WhitespaceNode(parent=21,n_lines=1,current_idx=22) 
-			TypedefNode(parent=21,current_idx=23,typename=mjtNum)typedef
-				BasicDataTypeNode(parent=23,current_idx=24,is_compound=False)double
-				DeletedNode(parent=21,current_idx=0)mjtNum
-			mjtNum ;
-			WhitespaceNode(parent=21,n_lines=2,current_idx=26)  
-			MacroDefineNode(parent=21,current_idx=27)#define mjMINVAL 1E-15
-			SingleCommentNode(parent=21,current_idx=28)// minimum value in any denominator
-			MacroElseNode(parent=21,current_idx=29)#else
-				WhitespaceNode(parent=29,n_lines=1,current_idx=30) 
-				TypedefNode(parent=29,current_idx=31,typename=mjtNum)typedef
-					BasicDataTypeNode(parent=31,current_idx=32,is_compound=False)float
-					DeletedNode(parent=29,current_idx=0)mjtNum
-				mjtNum ;
-				WhitespaceNode(parent=29,n_lines=2,current_idx=34)  
-				MacroDefineNode(parent=29,current_idx=35)#define mjMINVAL 1E-15f
-				MultiLineCommentNode(parent=29,current_idx=36)/* This does after the float is defined */
-		#endif
-		WhitespaceNode(parent=15,n_lines=1,current_idx=37)
-		MultiLineCommentNode(parent=15,current_idx=38)/* silly comment */
-		MultiLineCommentNode(parent=15,current_idx=39)/** another one??????? **/
-		WhitespaceNode(parent=15,n_lines=1,current_idx=40)
-		MultiLineCommentNode(parent=15,current_idx=41)/**  So  many  lines   **/
-		WhitespaceNode(parent=15,n_lines=2,current_idx=42) 
-		SingleCommentNode(parent=15,current_idx=43) -------------------------------------- byte definition -------------------------------------------
-		WhitespaceNode(parent=15,n_lines=1,current_idx=44)
-		TypedefNode(parent=15,current_idx=45,typename=mjtByte)typedef
-			BasicDataTypeNode(parent=45,current_idx=46,is_compound=True)unsigned char
-			DeletedNode(parent=15,current_idx=0)mjtByte
-		mjtByte ;
-		WhitespaceNode(parent=15,n_lines=1,current_idx=48)   
-		SingleCommentNode(parent=15,current_idx=49)// used for true/false
-		WhitespaceNode(parent=15,n_lines=3,current_idx=50)  
-	#endif
-	WhitespaceNode(parent=0,n_lines=1,current_idx=51)
-	SingleCommentNode(parent=0,current_idx=52)// MUJOCO_INCLUDE_MJTNUM_H_
-	WhitespaceNode(parent=0,n_lines=1,current_idx=53)
+RootNode(len children=18,parent=0,current_idx=0) 
+SingleCommentNode(parent=0,current_idx=1) // Copyright 2021 DeepMind Technologies Limited 
+SingleCommentNode(parent=0,current_idx=2) // 
+SingleCommentNode(parent=0,current_idx=3) // Licensed under the Apache License ,  Version 2.0 (the "License") ;  
+SingleCommentNode(parent=0,current_idx=4) // you may not use this file except in compliance with the License. 
+SingleCommentNode(parent=0,current_idx=5) // You may obtain a copy of the License at 
+SingleCommentNode(parent=0,current_idx=6) // 
+SingleCommentNode(parent=0,current_idx=7) //     http://www.apache.org/licenses/LICENSE-2.0 
+SingleCommentNode(parent=0,current_idx=8) // 
+SingleCommentNode(parent=0,current_idx=9) // Unless required by applicable law or agreed to in writing ,  software 
+SingleCommentNode(parent=0,current_idx=10) // distributed under the License is distributed on an "AS IS" BASIS ,  
+SingleCommentNode(parent=0,current_idx=11) // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND ,  either express or implied. 
+SingleCommentNode(parent=0,current_idx=12) // See the License for the specific language governing permissions and 
+SingleCommentNode(parent=0,current_idx=13) // limitations under the License. 
+WhitespaceNode(parent=0,n_lines=1,current_idx=14)  
+MacroIfNDefNode(parent=0,current_idx=15) #ifndef MUJOCO_INCLUDE_MJTNUM_H_ <children> 
+#endif 
+	MacroDefineNode(parent=15,current_idx=16) #define MUJOCO_INCLUDE_MJTNUM_H_ 
+	WhitespaceNode(parent=15,n_lines=1,current_idx=17)  
+	SingleCommentNode(parent=15,current_idx=18)  ---------------------------------- floating-point definition ------------------------------------- 
+	WhitespaceNode(parent=15,n_lines=1,current_idx=19)  
+	SingleCommentNode(parent=15,current_idx=20) // floating point data type and minval 
+	MacroIfNDefNode(parent=15,current_idx=21) #ifndef mjUSESINGLE <children> 
+#endif 
+		WhitespaceNode(parent=21,n_lines=1,current_idx=22)   
+		TypedefNode(parent=21,current_idx=23,typename=mjtNum) typedef <children> mjtNum ; 
+			BasicDataTypeNode(parent=23,current_idx=24,is_compound=False) double 
+		DeletedNode(parent=21,current_idx=0) mjtNum 
+		WhitespaceNode(parent=21,n_lines=2,current_idx=26)  
+  
+		MacroDefineNode(parent=21,current_idx=27) #define mjMINVAL 1E-15 
+		SingleCommentNode(parent=21,current_idx=28) // minimum value in any denominator 
+		MacroElseNode(parent=21,current_idx=29) #else 
+			WhitespaceNode(parent=29,n_lines=1,current_idx=30)   
+			TypedefNode(parent=29,current_idx=31,typename=mjtNum) typedef <children> mjtNum ; 
+				BasicDataTypeNode(parent=31,current_idx=32,is_compound=False) float 
+			DeletedNode(parent=29,current_idx=0) mjtNum 
+			WhitespaceNode(parent=29,n_lines=2,current_idx=34)  
+  
+			MacroDefineNode(parent=29,current_idx=35) #define mjMINVAL 1E-15f 
+			MultiLineCommentNode(parent=29,current_idx=36) /* This does after the float is defined */ 
+	WhitespaceNode(parent=15,n_lines=1,current_idx=37)  
+	MultiLineCommentNode(parent=15,current_idx=38) /* silly comment */ 
+	MultiLineCommentNode(parent=15,current_idx=39) /** another one??????? **/ 
+	WhitespaceNode(parent=15,n_lines=1,current_idx=40)  
+	MultiLineCommentNode(parent=15,current_idx=41) /**  
+So  
+many  
+lines 
+ 
+ 
+**/ 
+	WhitespaceNode(parent=15,n_lines=2,current_idx=42)  
+ 
+	SingleCommentNode(parent=15,current_idx=43)  -------------------------------------- byte definition ------------------------------------------- 
+	WhitespaceNode(parent=15,n_lines=1,current_idx=44)  
+	TypedefNode(parent=15,current_idx=45,typename=mjtByte) typedef <children> mjtByte ; 
+		BasicDataTypeNode(parent=45,current_idx=46,is_compound=True) unsigned char 
+	DeletedNode(parent=15,current_idx=0) mjtByte 
+	WhitespaceNode(parent=15,n_lines=1,current_idx=48)     
+	SingleCommentNode(parent=15,current_idx=49) // used for true/false 
+	WhitespaceNode(parent=15,n_lines=3,current_idx=50)  
+ 
+ 
+WhitespaceNode(parent=0,n_lines=1,current_idx=51)  
+SingleCommentNode(parent=0,current_idx=52) // MUJOCO_INCLUDE_MJTNUM_H_ 
+WhitespaceNode(parent=0,n_lines=1,current_idx=53)  

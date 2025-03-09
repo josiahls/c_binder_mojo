@@ -44,7 +44,7 @@ from sys.intrinsics import _type_is_eq
 
 from memory import UnsafePointer
 
-from c_binder_mojo.c_ast_nodes.common import NodeAstLike
+from c_binder_mojo.c_ast_nodes_old.common import NodeAstLike
 # ===----------------------------------------------------------------------=== #
 # Utilities
 # ===----------------------------------------------------------------------=== #

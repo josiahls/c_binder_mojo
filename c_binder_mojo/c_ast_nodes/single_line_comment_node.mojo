@@ -4,31 +4,45 @@ from memory import ArcPointer
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
-from c_binder_mojo.common import TokenBundle, NodeIndices,NodeState, TokenBundles
+from c_binder_mojo.common import TokenBundle, NodeIndices, TokenBundles, NodeState, CTokens
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike
 
 
 @value
-struct RootNode(NodeAstLike):
-    alias __name__ = "RootNode"
+struct SingleLineCommentNode(NodeAstLike):
+    alias __name__ = "SingleLineCommentNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
+    var _node_state: StringLiteral
+    var _row_num: Int
 
-    fn __init__(out self, indicies:NodeIndices, token_bundles:TokenBundles):
+    fn __init__(out self, indicies:NodeIndices, token_bundle:TokenBundle):
         self._indicies = indicies
-        self._token_bundles = token_bundles
+        self._token_bundles = TokenBundles()
+        self._token_bundles[].append(token_bundle)
+        self._node_state = NodeState.APPENDING
+        self._row_num = token_bundle.row_num
 
     @staticmethod
     fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:
-        return len(tree_interface.nodes()[]) == 0
+        if token.token == CTokens.COMMENT_SINGLE_LINE_BEGIN:
+            return True
+        elif token.token.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
+            return True
+        return False
 
     @staticmethod
     fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:
-        return Self(NodeIndices(-1, -1), TokenBundles())
+        return Self(tree_interface._indices, token)
 
     fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
-        return NodeState.WANTING_CHILD    
+        if token.row_num != self._row_num:
+            print('SingleLineCommentNode: ' + String(token.token) + ' ' + String(token.row_num) + ' ' + String(self._row_num))
+            self._node_state = NodeState.COMPLETE
+        else:
+            self._node_state = NodeState.APPENDING
+        return self._node_state    
 
     fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
         pass
@@ -47,7 +61,7 @@ struct RootNode(NodeAstLike):
         
     @always_inline("nodebug")
     fn __str__(self) -> String:
-        return "RootNode"
+        return "SingleLineCommentNode"
 
     fn name(self) -> String:
         return self.__name__

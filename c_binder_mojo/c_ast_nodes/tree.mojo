@@ -15,9 +15,6 @@ from c_binder_mojo.common import TokenBundle, NodeIndices, NodeState
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike
 
 
-
-
-
 @value
 struct TreeInterface:
     """Interface for interacting with the AST.
@@ -231,8 +228,9 @@ fn get_current_node(
         tree_interface = TreeInterface(nodes, tokens, indices, node_state)
         node = AstNode.accept(token, tree_interface)
         new_idx = tree_interface.insert_node(node)
-        log_state_transition(logger, token, _current_idx, tree_interface, node_state)
-        return new_idx
+        new_node_state = node.determine_state(token, tree_interface)
+        log_state_transition(logger, token, _current_idx, tree_interface, new_node_state, prev_state=node_state)
+        return get_current_node(token, new_idx, new_node_state, nodes, tokens, logger)
         
     elif node_state == NodeState.WANTING_CHILD:
         tree_interface = TreeInterface(

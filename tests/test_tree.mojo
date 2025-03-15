@@ -126,7 +126,6 @@ fn test_make_tree_mjtnum() raises:
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(nodes[][0]))
 
 
-
 fn test_tokenize_mjmodel() raises:
     var logger = Logger.get_default_logger("test_tokenize_mjmodel")
     mujoco_path = os.getenv('C_BINDING_MOJO_TEST_MUJOCO')
@@ -140,7 +139,6 @@ fn test_tokenize_mjmodel() raises:
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tokenized_flat').write_text(tokenizer.to_string(True))
     nodes = make_tree(tokenizer.tokens, '/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tree')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.ast').write_text(String(nodes[][0]))
-
 
 
 fn main():

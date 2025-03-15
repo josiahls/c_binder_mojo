@@ -17,6 +17,26 @@ struct NodeState:
     
 
 
+struct CTokens:
+    alias COMMENT_SINGLE_LINE_BEGIN = "//"
+    alias COMMENT_MULTI_LINE_INLINE_BEGIN = "/*"
+    alias COMMENT_MULTI_LINE_INLINE_END = "*/"
+    alias COMMENT_MULTI_LINE_BEGIN = "/**"
+    alias COMMENT_MULTI_LINE_END = "**/"
+    alias MACRO_IFNDEF = "#ifndef"
+    alias MACRO_DEFINE = "#define"
+    alias MACRO_ELSE = "#else"
+    alias MACRO_ENDIF = "#endif"
+    alias TYPE_DEF = "typedef"
+    alias CSTRUCT = "struct"
+    alias ENUM = "enum"
+    alias SCOPE_BEGIN = "{"
+    alias SCOPE_END = "}"
+    alias END_STATEMENT = ";"
+    alias UNKNOWN = "UNKNOWN"
+    alias MACRO_INCLUDE = "#include"
+
+
 @value
 struct NodeIndices:
     """Stores indices for tracking node relationships in the AST.

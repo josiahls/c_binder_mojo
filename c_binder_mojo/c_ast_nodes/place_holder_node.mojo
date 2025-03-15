@@ -4,9 +4,9 @@ from memory import ArcPointer
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
-from c_binder_mojo.common import TokenBundle, NodeIndices, TokenBundles
+from c_binder_mojo.common import TokenBundle, NodeIndices, TokenBundles, NodeState
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
-from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeState, NodeAstLike
+from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike
 
 
 @value
@@ -21,7 +21,7 @@ struct PlaceHolderNode(NodeAstLike):
 
     @staticmethod
     fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:
-        return False    
+        return True    
 
 
     @staticmethod

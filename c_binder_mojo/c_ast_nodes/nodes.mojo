@@ -2,8 +2,8 @@
 from memory import ArcPointer
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.common import TokenBundle,TokenBundles
-from c_binder_mojo.c_ast_nodes.tree import TreeInterface, NodeIndices
+from c_binder_mojo.common import TokenBundle,TokenBundles, NodeIndices, NodeState
+from c_binder_mojo.c_ast_nodes.tree import TreeInterface
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo import c_ast_nodes
 
@@ -32,6 +32,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 struct AstNode(CollectionElement):
     alias type = Variant[
         c_ast_nodes.RootNode,                # Must be first to handle root
+        c_ast_nodes.SingleLineCommentNode,
         c_ast_nodes.PlaceHolderNode
     ]
     # NOTE: This is experimental.
@@ -57,7 +58,7 @@ struct AstNode(CollectionElement):
             alias T = Self.type.Ts[i]
             if T.accept(token, tree_interface):
                 return Self(T.create(token, tree_interface))
-        print('WARNING: accept called on AstNode with no accept method')
+        print('WARNING: none of the nodes accepted the token: ' + String(token.token))
         return Self(PlaceHolderNode.create(token, tree_interface))
 
     @always_inline("nodebug")

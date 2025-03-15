@@ -5,14 +5,8 @@ from memory import ArcPointer
 from c_binder_mojo.common import TokenBundle,TokenBundles
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface, NodeIndices
 from c_binder_mojo.c_ast_nodes.node_variant import Variant
+from c_binder_mojo import c_ast_nodes
 
-
-struct NodeState:
-    alias STARTED = 'STARTED'
-    alias COMPLETE = 'COMPLETE'
-    alias APPENDING = 'APPENDING'
-    alias WANTING_CHILD = 'WANTING_CHILD'
-    
 
 
 
@@ -34,102 +28,11 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn name(self) -> String:...
     
 
-
-@value
-struct RootNode(NodeAstLike):
-    alias __name__ = "RootNode"
-    var _indicies: ArcPointer[NodeIndices]
-    var _token_bundles: ArcPointer[TokenBundles]
-
-    fn __init__(out self, indicies:NodeIndices, token_bundles:TokenBundles):
-        self._indicies = indicies
-        self._token_bundles = token_bundles
-
-    @staticmethod
-    fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:
-        return True
-
-    @staticmethod
-    fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:
-        return Self(NodeIndices(-1, -1), TokenBundles())
-
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
-        return NodeState.STARTED    
-
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
-        pass
-
-    fn indicies(self) -> NodeIndices:
-        return self._indicies[]
-
-    fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
-        return self._indicies
-        
-    fn token_bundles(self) -> TokenBundles:
-        return self._token_bundles[]
-
-    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
-        return self._token_bundles
-        
-    @always_inline("nodebug")
-    fn __str__(self) -> String:
-        return "RootNode"
-
-    fn name(self) -> String:
-        return self.__name__
-
-
-@value
-struct PlaceHolderNode(NodeAstLike):
-    alias __name__ = "PlaceHolderNode"
-    var _indicies: ArcPointer[NodeIndices]
-    var _token_bundles: ArcPointer[TokenBundles]
-
-    fn __init__(out self, indicies:NodeIndices, token_bundles:TokenBundles):
-        self._indicies = indicies
-        self._token_bundles = token_bundles
-
-    @staticmethod
-    fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:
-        return False    
-
-
-    @staticmethod
-    fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:
-        return Self(NodeIndices(-1, -1), TokenBundles())
-
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
-        return NodeState.COMPLETE
-
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
-        pass    
-
-    fn indicies(self) -> NodeIndices:
-        return self._indicies[]
-
-    fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
-        return self._indicies
-
-    fn token_bundles(self) -> TokenBundles:
-        return self._token_bundles[]
-
-    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
-            return self._token_bundles
-
-    @always_inline("nodebug")
-    fn __str__(self) -> String:
-        return "PlaceHolderNode"
-
-    fn name(self) -> String:
-        return self.__name__
-        
-
-
 @value
 struct AstNode(CollectionElement):
     alias type = Variant[
-        RootNode,                # Must be first to handle root
-        PlaceHolderNode
+        c_ast_nodes.RootNode,                # Must be first to handle root
+        c_ast_nodes.PlaceHolderNode
     ]
     # NOTE: This is experimental.
     var node: ArcPointer[Self.type]

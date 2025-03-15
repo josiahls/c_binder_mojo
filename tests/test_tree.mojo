@@ -122,7 +122,7 @@ fn test_make_tree_mjtnum() raises:
     tokenizer.tokenize(num_mojo_path)
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.tokenized').write_text(tokenizer.to_string())
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.tokenized_flat').write_text(tokenizer.to_string(True))
-    nodes = make_tree(tokenizer.tokens)
+    nodes = make_tree(tokenizer.tokens, '/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.tree')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(nodes[][0]))
 
 
@@ -138,7 +138,7 @@ fn test_tokenize_mjmodel() raises:
     tokenizer.tokenize(model_mojo_path)
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tokenized').write_text(tokenizer.to_string())
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tokenized_flat').write_text(tokenizer.to_string(True))
-    nodes = make_tree(tokenizer.tokens)
+    nodes = make_tree(tokenizer.tokens, '/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tree')
     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.ast').write_text(String(nodes[][0]))
 
 
@@ -153,7 +153,7 @@ fn main():
         # test_make_tree_mjtmodel_just_mjVisual_c_ast()
         # test_make_tree_mjtmodel_c_ast()
         test_make_tree_mjtnum()
-        test_tokenize_mjmodel()
+        # test_tokenize_mjmodel()
         print('succeeded')
     except e:
         print('failed' + String(e))

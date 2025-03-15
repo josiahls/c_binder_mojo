@@ -8,6 +8,48 @@ from firehose.logging import Logger
 # First Party Modules
 
 
+
+struct NodeState:
+    alias STARTED = 'STARTED'
+    alias COMPLETE = 'COMPLETE'
+    alias APPENDING = 'APPENDING'
+    alias WANTING_CHILD = 'WANTING_CHILD'
+    
+
+
+@value
+struct NodeIndices:
+    """Stores indices for tracking node relationships in the AST.
+    
+    This struct maintains references between original and new positions of nodes
+    in the tree, allowing for tree transformations while preserving relationships.
+    
+    Attributes:
+        original_parent_idx: Index of the parent node in the original tree
+        original_current_idx: Index of the current node in the original tree
+        new_parent_idx: Index of the parent node in the new tree (if transformed)
+        new_current_idx: Index of the current node in the new tree (if transformed)
+    """
+    var original_parent_idx: Int
+    var original_current_idx: Int
+    var new_parent_idx: Int
+    var new_current_idx: Int
+
+    fn __init__(out self, original_parent_idx:Int, original_current_idx:Int, new_parent_idx:Int = -1, new_current_idx:Int = -1):
+        """Initialize a new NodeIndices instance.
+        
+        Args:
+            original_parent_idx: Index of the parent node in the original tree
+            original_current_idx: Index of the current node in the original tree
+            new_parent_idx: Index of the parent node in the new tree (default: -1)
+            new_current_idx: Index of the current node in the new tree (default: -1)
+        """
+        self.original_parent_idx = original_parent_idx
+        self.original_current_idx = original_current_idx
+        self.new_parent_idx = new_parent_idx
+        self.new_current_idx = new_current_idx
+
+
 @value
 struct TokenBundle(EqualityComparable):
     """A bundle containing a token and its position information in source code.

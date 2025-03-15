@@ -1,86 +1,259 @@
+"""Common utilities and data structures for C binder implementation."""
+
 # Native Mojo Modules
 from collections.list import _ListIter
+from pathlib import Path
 # Third Party Mojo Modules
+from firehose.logging import Logger
 # First Party Modules
 
 
 @value
 struct TokenBundle(EqualityComparable):
+    """A bundle containing a token and its position information in source code.
+    
+    This struct represents a single token along with its originallocation (row and column numbers)
+    in the source code. It implements equality comparison for token matching.
+    
+    Attributes:
+        token: The actual token string.
+        row_num: The line number where this token appears (0-based).
+        col_num: The column number where this token starts (0-based).
+    """
     var token:String
-    var line_num:Int
+    var row_num:Int
     var col_num:Int
-    var is_splitter:Bool
+    var deleted:Bool
 
-    fn __init__(out self, token:String, line_num:Int, col_num:Int, is_splitter:Bool=False):
+    fn __init__(out self, token:String, row_num:Int, col_num:Int, deleted:Bool = False):
+        """Initialize a new TokenBundle.
+        
+        Args:
+            token: The token string to store.
+            row_num: The line number where this token appears.
+            col_num: The column number where this token starts.
+            deleted: Whether this token is deleted, be still present in the source code.
+        """
         self.token = token
-        self.line_num = line_num
+        self.row_num = row_num
         self.col_num = col_num
-        self.is_splitter = is_splitter
-        if self.token == '' and self.is_splitter:
-            self.token = '<children>'
+        self.deleted = deleted
+    fn __ne__(read self:Self, read other:Self) -> Bool:
+        """Check if two TokenBundles are not equal.
+        
+        Args:
+            other: Another TokenBundle to compare with.
 
-    fn __ne__(read self:Self, read other:Self) -> Bool: 
+        Returns:
+            True if any field differs between the two bundles, False otherwise.
+        """
         if self.token != other.token: 
             return True
-        elif self.line_num != other.line_num:
+        elif self.row_num != other.row_num:
             return True
         elif self.col_num != other.col_num:
             return True
-        elif self.is_splitter != other.is_splitter:
-            return True
         return False
 
-    fn __eq__(read self:Self, read other:Self) -> Bool: 
+    fn __eq__(read self:Self, read other:Self) -> Bool:
+        """Check if two TokenBundles are equal.
+        
+        Args:
+            other: Another TokenBundle to compare with.
+
+        Returns:
+            True if all fields match between the two bundles, False otherwise.
+        """
         return not self.__ne__(other)
 
-
     fn __str__(self) -> String:
-        return self.token \
-            + ' line_num=' + String(self.line_num) \
-            + ' col_num=' + String(self.col_num)
+        """Convert the TokenBundle to a string representation.
+        
+        Returns:
+            A string showing the position and token content.
+        """
+        if self.deleted:
+            return 'TokenBundle(deleted)'
+        else:
+            return 'TokenBundle(' \
+                + 'row_num=' + String(self.row_num) \
+                + ', col_num=' + String(self.col_num) + ')' \
+                +  ' ' + self.token
 
 
 @value
 struct TokenBundles(Stringable):
+    """A collection of TokenBundle objects with list-like operations.
+    
+    This struct provides a container for multiple TokenBundles with standard
+    collection operations like append, length checking, iteration, and indexing.
+
+    This primarly acs as a passthrough to the underlying list, but
+    allows extending the list with additional functionality.
+    """
     var _token_bundles: List[TokenBundle]
 
     fn __init__(mut self):
+        """Initialize an empty TokenBundles collection."""
         self._token_bundles = List[TokenBundle]()
 
     fn append(mut self, owned value: TokenBundle):
+        """Add a new TokenBundle to the collection.
+        
+        Args:
+            value: The TokenBundle to append.
+        """
         self._token_bundles.append(value)
 
     fn __len__(self) -> Int:
+        """Get the number of TokenBundles in the collection.
+        
+        Returns:
+            The count of TokenBundles.
+        """
         return len(self._token_bundles)
 
     fn __bool__(self) -> Bool:
+        """Check if the collection is non-empty.
+        
+        Returns:
+            True if the collection contains any TokenBundles, False otherwise.
+        """
         return Bool(self._token_bundles)
 
     fn __iter__(ref self) -> _ListIter[TokenBundle, False, __origin_of(self._token_bundles)]:
+        """Get an iterator over the TokenBundles.
+        
+        Returns:
+            An iterator that yields TokenBundles.
+        """
         return self._token_bundles.__iter__()
 
     fn __getitem__(self, span: Slice) -> List[TokenBundle]:
+        """Get a slice of TokenBundles.
+        
+        Args:
+            span: The slice range to extract.
+
+        Returns:
+            A list of TokenBundles within the specified range.
+        """
         return self._token_bundles[span]
 
     fn __getitem__[I: Indexer](ref self, idx: I) -> ref [self._token_bundles] TokenBundle:
+        """Get a TokenBundle at a specific index.
+        
+        Args:
+            idx: The index to access.
+
+        Returns:
+            A reference to the TokenBundle at the specified index.
+        """
         return self._token_bundles[idx]
 
     fn __str__(self) -> String:
+        """Convert the TokenBundles to a string representation.
+        
+        Returns:
+            A string showing all tokens with appropriate line breaks.
+        """
         var s:String = ""
-        var line_num = -1
+        var row_num = -1
         for token in self._token_bundles:
-            if line_num == -1:
-                line_num = token[].line_num
-            elif line_num != token[].line_num:
-                line_num = token[].line_num
+            if row_num == -1:
+                row_num = token[].row_num
+            elif row_num != token[].row_num:
+                row_num = token[].row_num
                 s += '\n'
             s += String(token[].token) + " "
         return s
 
     fn clear(mut self):
+        """Remove all TokenBundles from the collection."""
         self._token_bundles.clear()
 
 
-# TODO(josiahls): looks ugly. I think its better to just have start_statement_string, 
-# end_statement_string methods instead.
-alias STRING_SPLIT_AT = "<AST-SPLIT>"
+@value
+struct Tokenizer:
+    """A utility for breaking source code into tokens.
+    
+    This struct provides functionality to read source code and break it into
+    individual tokens while preserving their position information.
+    """
+    var tokens: List[TokenBundle]
+
+    alias ISOLATED_TOKEN_CHARS:List[String] = List[String](';', ',', '{', '}')
+
+    fn __init__(mut self):
+        """Initialize an empty Tokenizer."""
+        self.tokens = List[TokenBundle]()
+
+    fn tokenize_line(mut self, line:String) -> List[String]:
+        """Split a single line into tokens.
+        
+        Args:
+            line: The line of source code to tokenize.
+
+        Returns:
+            A list of token strings.
+        """
+        _line = line
+        for char in self.ISOLATED_TOKEN_CHARS:
+            _line = _line.replace(char[], ' ' + char[] + ' ')
+        try:
+            return _line.split(' ')
+        except e:
+            return List[String](_line)
+
+    fn tokenize(mut self, path:Path) raises -> None:
+        """Tokenize an entire source file.
+        
+        Args:
+            path: Path to the source file to tokenize.
+
+        Raises:
+            May raise file reading or parsing related exceptions.
+        """
+        var logger = Logger.get_default_logger("c_binder_mojo.common.tokenizer")
+        logger.info('Tokenizing: ' + String(path))
+        current_row_num = 0
+        lines = path.read_text().split('\n')
+        self.tokens.reserve(len(lines))
+        for line_ptr in lines:
+            line = line_ptr[]
+            col_num = 0
+            for token_string in self.tokenize_line(line):
+                token = TokenBundle(token_string[], current_row_num, col_num)
+                self.tokens.append(token)
+                col_num += len(token_string[])
+            current_row_num += 1
+
+    fn to_string(self, make_flat:Bool = False) -> String:
+        """Convert all tokens to a string representation.
+        
+        Args:
+            make_flat: If True, puts each token on a new line.
+
+        Returns:
+            A string containing all tokens with appropriate formatting.
+        """
+        s = String('')
+        current_row_num = -1
+        for token in self.tokens:
+            if make_flat:
+                s += '\n' # Add new line for each token
+            elif current_row_num == -1:
+                current_row_num = token[].row_num
+            elif current_row_num != token[].row_num:
+                current_row_num = token[].row_num
+                s += '\n'
+            s += String(token[]) + ' '
+        return s
+
+    fn __str__(self) -> String:
+        """Convert the Tokenizer's contents to a string.
+        
+        Returns:
+            A string representation of all tokens.
+        """
+        return self.to_string()

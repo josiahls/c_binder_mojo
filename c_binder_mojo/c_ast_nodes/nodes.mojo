@@ -8,10 +8,10 @@ from c_binder_mojo.c_ast_nodes.node_variant import Variant
 
 
 struct NodeState:
-    alias STARTED = 0
-    alias COMPLETE = 1
-    alias APPENDING = 2
-    alias WANTING_CHILD = 3
+    alias STARTED = 'STARTED'
+    alias COMPLETE = 'COMPLETE'
+    alias APPENDING = 'APPENDING'
+    alias WANTING_CHILD = 'WANTING_CHILD'
     
 
 
@@ -23,7 +23,7 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:...
     @staticmethod
     fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:...
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> Int:...
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:...
     fn process(mut self,token:TokenBundle, tree_interface:TreeInterface):...
     # NOTE(josiahls): I think this will return a immutable reference.
     fn indicies(self) -> NodeIndices:...
@@ -31,6 +31,7 @@ trait NodeAstLike(CollectionElement, Stringable):
     # NOTE(josiahls): I think this will return a immutable reference.
     fn token_bundles(self) -> TokenBundles:...
     fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:...
+    fn name(self) -> String:...
     
 
 
@@ -52,7 +53,7 @@ struct RootNode(NodeAstLike):
     fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:
         return Self(NodeIndices(-1, -1), TokenBundles())
 
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> Int:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         return NodeState.STARTED    
 
     fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
@@ -74,6 +75,9 @@ struct RootNode(NodeAstLike):
     fn __str__(self) -> String:
         return "RootNode"
 
+    fn name(self) -> String:
+        return self.__name__
+
 
 @value
 struct PlaceHolderNode(NodeAstLike):
@@ -94,7 +98,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:
         return Self(NodeIndices(-1, -1), TokenBundles())
 
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> Int:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         return NodeState.COMPLETE
 
     fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
@@ -115,6 +119,9 @@ struct PlaceHolderNode(NodeAstLike):
     @always_inline("nodebug")
     fn __str__(self) -> String:
         return "PlaceHolderNode"
+
+    fn name(self) -> String:
+        return self.__name__
         
 
 
@@ -203,7 +210,7 @@ struct AstNode(CollectionElement):
         print('WARNING: indicies_ptr called on AstNode with no indicies')
         return ArcPointer[NodeIndices](NodeIndices(-1, -1))
         
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> Int:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -219,3 +226,12 @@ struct AstNode(CollectionElement):
             if self.node[].isa[T]():    
                 self.node[]._get_ptr[T]()[].process(token, tree_interface)
         print('WARNING: process called on AstNode with no process method')
+
+    fn name(self) -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].name()
+        print('WARNING: name called on AstNode with no name method')
+        return "<unknown type>"

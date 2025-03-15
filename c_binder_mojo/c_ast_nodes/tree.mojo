@@ -1,7 +1,15 @@
+"""Tree-based AST representation and traversal utilities for C code.
+
+This module provides the core functionality for building and traversing abstract syntax trees
+from tokenized C code. It implements a state-machine based approach to tree construction
+and provides interfaces for node manipulation.
+"""
+
 # Native Mojo Modules
 from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
+from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import TokenBundle
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeState, NodeAstLike
@@ -9,12 +17,31 @@ from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeState, NodeAstLike
 
 @value
 struct NodeIndices:
+    """Stores indices for tracking node relationships in the AST.
+    
+    This struct maintains references between original and new positions of nodes
+    in the tree, allowing for tree transformations while preserving relationships.
+    
+    Attributes:
+        original_parent_idx: Index of the parent node in the original tree
+        original_current_idx: Index of the current node in the original tree
+        new_parent_idx: Index of the parent node in the new tree (if transformed)
+        new_current_idx: Index of the current node in the new tree (if transformed)
+    """
     var original_parent_idx: Int
     var original_current_idx: Int
     var new_parent_idx: Int
     var new_current_idx: Int
 
     fn __init__(out self, original_parent_idx:Int, original_current_idx:Int, new_parent_idx:Int = -1, new_current_idx:Int = -1):
+        """Initialize a new NodeIndices instance.
+        
+        Args:
+            original_parent_idx: Index of the parent node in the original tree
+            original_current_idx: Index of the current node in the original tree
+            new_parent_idx: Index of the parent node in the new tree (default: -1)
+            new_current_idx: Index of the current node in the new tree (default: -1)
+        """
         self.original_parent_idx = original_parent_idx
         self.original_current_idx = original_current_idx
         self.new_parent_idx = new_parent_idx
@@ -23,47 +50,220 @@ struct NodeIndices:
 
 @value
 struct TreeInterface:
+    """Interface for interacting with the AST.
+    
+    This struct provides methods for accessing and modifying the AST nodes and tokens.
+    It serves as a facade for tree operations, abstracting the underlying storage.
+    
+    Attributes:
+        _nodes: Reference-counted pointer to the list of AST nodes
+        _tokens: Reference-counted pointer to the list of tokens
+        _indices: Indices for tracking node relationships
+        node_state: Current state of node processing
+    """
     var _nodes: ArcPointer[List[AstNode]]
     var _tokens: ArcPointer[List[TokenBundle]]
     var _indices: NodeIndices
-    var node_state: Int
+    var node_state: StringLiteral
 
     fn nodes(self) -> ArcPointer[List[AstNode]]:
+        """Get the list of AST nodes.
+        
+        Returns:
+            Reference-counted pointer to the list of AST nodes
+        """
         return self._nodes
 
     fn tokens(self) -> ArcPointer[List[TokenBundle]]:
+        """Get the list of tokens.
+        
+        Returns:
+            Reference-counted pointer to the list of tokens
+        """
         return self._tokens
 
     fn insert_node(mut self, owned node:AstNode) -> Int:
+        """Insert a new node into the AST.
+        
+        Args:
+            node: The node to insert
+            
+        Returns:
+            The index of the newly inserted node
+        """
         self._nodes[].append(node)
         return len(self._nodes[]) - 1
+
+    fn n_parents(self, current_idx: Int) -> Int:
+        """Get the number of parents of the current node.
+        
+        Returns:
+            The number of parents of the current node
+        """
+        parent_idx = -1
+        started = False
+        count = 0
+        while parent_idx != -1 or not started:
+            parent_idx = self._nodes[][current_idx].indicies().original_parent_idx
+            if parent_idx != -1:
+                count += 1
+            started = True
+        return count
+
+
+@value
+struct NodeLogger:
+    """Context manager for logging state transitions in the AST construction.
+    
+    This struct provides a clean way to log entry and exit of functions with
+    appropriate indentation and context information.
+    """
+    var logger: Logger
+    var context: String
+    var token: TokenBundle
+    var node_idx: Int
+    var state: StringLiteral
+    var indent_level: Int
+    var _exit_message: String
+    
+    fn __init__(out self, logger: Logger, context: String, token: TokenBundle, node_idx: Int, state: StringLiteral):
+        """Initialize a new NodeLogger.
+        
+        Args:
+            logger: The logger to use
+            context: Description of the current context
+            token: The token being processed
+            node_idx: Index of the current node
+            state: Current state of node processing
+        """
+        self.logger = logger
+        self.context = context
+        self.token = token
+        self.node_idx = node_idx
+        self.state = state
+        self.indent_level = 0
+        self._exit_message = ""
+    
+    fn __enter__(mut self) -> Self:
+        """Log entry into a context.
+        
+        Returns:
+            Self reference for use in the with statement
+        """
+        # Log entry with token and state information
+        self.logger.debug("ENTER " + self.context + ": token='" + self.token.token + 
+                        "' at [" + String(self.token.row_num) + ":" + String(self.token.col_num) + 
+                        "], node_idx=" + String(self.node_idx) + 
+                        ", state=" + String(self.state))
+        return self
+    
+    fn __exit__(mut self):
+        """Log exit from a context with result information."""
+        if self._exit_message:
+            self.logger.debug("EXIT " + self.context + ": " + self._exit_message)
+    
+    fn set_exit_message(mut self, message: String):
+        """Set the message to be logged on exit.
+        
+        Args:
+            message: The exit message to log
+        """
+        self._exit_message = message
+    
+    fn log(mut self, message: String):
+        """Log a message within the current context.
+        
+        Args:
+            message: The message to log
+        """
+        self.logger.debug(message)
+    
+    fn log_state_transition(mut self, prev_state: StringLiteral, new_state: StringLiteral, node_type: String):
+        """Log a state transition.
+        
+        Args:
+            prev_state: Previous state
+            new_state: New state
+            node_type: Type of the node
+        """
+        self.logger.debug("STATE TRANSITION: " + String(prev_state) + " -> " + String(new_state) + 
+                        " for node type " + node_type + " with token '" + self.token.token + "'")
+
+
+fn log_state_transition(
+    mut logger:Logger,
+    token:TokenBundle,
+    current_idx:Int,
+    tree_interface:TreeInterface,
+    node_state:StringLiteral,
+    prev_state:StringLiteral = ''
+):
+    """Log a state transition.
+    """
+    node_name = tree_interface._nodes[][current_idx].name()
+    n_parents = tree_interface.n_parents(current_idx)
+    indent_str = String('\t' * n_parents)
+
+    transition_str = String()
+    if prev_state == '' or prev_state == node_state:
+        transition_str = String(node_state) 
+    else:
+        if prev_state == NodeState.COMPLETE:
+            # if the state completed, then that means we should be 
+            # transitioning back up the tree to the parent node
+            transition_str = String(node_state) + " <- " + String(prev_state)
+        else:
+            transition_str = String(prev_state) + " -> " + String(node_state)
+
+    logger.info(indent_str + transition_str + ' ' + node_name + ' ' + token.token)
 
 
 fn get_current_node(
     mut token:TokenBundle, 
     current_idx:Int, 
-    node_state_:Int, 
+    node_state_:StringLiteral, 
     nodes:ArcPointer[List[AstNode]], 
     tokens:ArcPointer[List[TokenBundle]],
-    logger:Logger
+    mut logger:Logger
 ) -> Int:
-
+    """Process a token and determine the current node in the AST.
+    
+    This function implements the state machine for building the AST. It processes
+    a token and updates the current node based on the current state and token content.
+    
+    Args:
+        token: The token to process
+        current_idx: Index of the current node
+        node_state_: Current state of node processing
+        nodes: Reference-counted pointer to the list of AST nodes
+        tokens: Reference-counted pointer to the list of tokens
+        logger: Logger for recording processing information
+        
+    Returns:
+        The index of the new current node after processing
+    """
     _current_idx = current_idx
 
+    # Handle error cases
     if _current_idx < 0: 
-        print('current_idx is less than 0')
+        logger.error("ERROR: current_idx is less than 0: " + String(_current_idx))
         return _current_idx
 
     if token.deleted:
+        logger.error("ERROR: Token is deleted: " + String(token))
         return _current_idx
     
     node_state = node_state_
-
+    
+    # State machine branching based on current state
     if node_state == NodeState.STARTED:
         indices = NodeIndices(-1, _current_idx)
         tree_interface = TreeInterface(nodes, tokens, indices, node_state)
         node = AstNode.accept(token, tree_interface)
-        return tree_interface.insert_node(node)
+        new_idx = tree_interface.insert_node(node)
+        log_state_transition(logger, token, _current_idx, tree_interface, node_state)
+        return new_idx
+        
     elif node_state == NodeState.WANTING_CHILD:
         tree_interface = TreeInterface(
             nodes, 
@@ -72,34 +272,91 @@ fn get_current_node(
             node_state
         )
         node = AstNode.accept(token, tree_interface)
-        return tree_interface.insert_node(node)
+        new_idx = tree_interface.insert_node(node)
+        log_state_transition(logger, token, _current_idx, tree_interface, node_state)
+        return new_idx
+        
     else:
         node = nodes[][_current_idx]
 
-    tree_interface = TreeInterface(nodes, tokens, node.indicies(), node_state)
-    node_state = node.determine_state(token, tree_interface)
 
+    # Determine next state based on current node and token
+    tree_interface = TreeInterface(nodes, tokens, node.indicies(), node_state)
+    prev_state = node_state
+    node_state = node.determine_state(token, tree_interface)
+    log_state_transition(logger, token, _current_idx, tree_interface, node_state, prev_state)
+    # Process token based on new state
     if node_state == NodeState.COMPLETE:
         node.process(token, tree_interface)
-        return get_current_node(token, node.indicies().original_parent_idx, node_state, nodes, tokens, logger)
+        parent_idx = node.indicies().original_parent_idx
+        result = get_current_node(token, parent_idx, node_state, nodes, tokens, logger)
+        return result
+        
     elif node_state == NodeState.APPENDING:
         node.process(token, tree_interface)
         return _current_idx
+        
     elif node_state == NodeState.WANTING_CHILD:
-        return get_current_node(token, _current_idx, NodeState.WANTING_CHILD, nodes, tokens, logger)
+        result = get_current_node(token, _current_idx, NodeState.WANTING_CHILD, nodes, tokens, logger)
+        return result
+        
     else:
-        print('WARNING: get_current_node called on AstNode with no determine_state method')
+        logger.warning("WARNING: get_current_node called on AstNode with no determine_state method")
         return _current_idx
 
 
-fn make_tree(owned token_bundles:List[TokenBundle]) -> ArcPointer[List[AstNode]]:
+fn make_tree(owned token_bundles:List[TokenBundle], tree_transition_file:String = '') -> ArcPointer[List[AstNode]]:
+    """Build an AST from a list of tokens.
+    
+    This function processes a list of tokens and constructs an abstract syntax tree
+    representing the structure of the code.
+    
+    Args:
+        token_bundles: List of tokens to process
+        
+    Returns:
+        Reference-counted pointer to the list of AST nodes forming the tree
+    """
     logger = Logger.get_default_logger("make_tree")
+    inner_logger = Logger.get_default_logger("inner_logger")
+    if tree_transition_file:
+        inner_logger.outputters.clear()
+        inner_logger.add_outputter(FileLoggerOutputer(tree_transition_file, "w"))
+    logger.info("Starting tree construction with " + String(len(token_bundles)) + " tokens")
+    
+    # Create reference-counted pointers for tokens and nodes
     _token_bundles = ArcPointer(token_bundles)
     nodes = ArcPointer(List[AstNode]())
+    
+    # Reserve space for nodes (estimate based on token count)
+    nodes[].reserve(len(token_bundles) // 3)  # Rough estimate: ~1 node per 3 tokens
+    
     var current_idx = 0
-    logger.info('Making tree')
     node_state = NodeState.STARTED
+    
+    # Process each token to build the tree
+    logger.info("Processing tokens to build AST...")
+    var token_count = 0
+    var log_interval = max(1, len(token_bundles) // 10)  # Log progress at 10% intervals
+    
     for token in token_bundles:
-        current_idx = get_current_node(token[], current_idx, node_state, nodes, _token_bundles, logger)
-    logger.info('Tree made')
+        # Log progress periodically
+        if token_count % log_interval == 0 or token_count == len(token_bundles) - 1:
+            logger.info("Processing token " + String(token_count + 1) + "/" + 
+                       String(len(token_bundles)) + " (" + 
+                       String((token_count + 1) * 100 / len(token_bundles)) + "%)")
+        
+        # Process the token
+        prev_idx = current_idx
+        current_idx = get_current_node(token[], current_idx, node_state, nodes, _token_bundles, inner_logger)
+
+        token_count += 1
+    
+    # Log tree construction statistics
+    logger.info("Tree construction complete")
+    logger.info("Statistics:")
+    logger.info("  - Tokens processed: " + String(len(token_bundles)))
+    logger.info("  - Nodes created: " + String(len(nodes[])))
+    logger.info("  - Tokens per node ratio: " + String(Float64(len(token_bundles)) / Float64(len(nodes[]))))
+    
     return nodes

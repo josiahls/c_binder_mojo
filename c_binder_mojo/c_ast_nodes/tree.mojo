@@ -1,6 +1,7 @@
 # Native Mojo Modules
 from memory import ArcPointer
 # Third Party Mojo Modules
+from firehose.logging import Logger
 # First Party Modules
 from c_binder_mojo.common import TokenBundle
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeState, NodeAstLike
@@ -43,7 +44,8 @@ fn get_current_node(
     current_idx:Int, 
     node_state_:Int, 
     nodes:ArcPointer[List[AstNode]], 
-    tokens:ArcPointer[List[TokenBundle]]
+    tokens:ArcPointer[List[TokenBundle]],
+    logger:Logger
 ) -> Int:
 
     _current_idx = current_idx
@@ -79,22 +81,25 @@ fn get_current_node(
 
     if node_state == NodeState.COMPLETE:
         node.process(token, tree_interface)
-        return get_current_node(token, node.indicies().original_parent_idx, node_state, nodes, tokens)
+        return get_current_node(token, node.indicies().original_parent_idx, node_state, nodes, tokens, logger)
     elif node_state == NodeState.APPENDING:
         node.process(token, tree_interface)
         return _current_idx
     elif node_state == NodeState.WANTING_CHILD:
-        return get_current_node(token, _current_idx, NodeState.WANTING_CHILD, nodes, tokens)
+        return get_current_node(token, _current_idx, NodeState.WANTING_CHILD, nodes, tokens, logger)
     else:
         print('WARNING: get_current_node called on AstNode with no determine_state method')
         return _current_idx
 
 
 fn make_tree(owned token_bundles:List[TokenBundle]) -> ArcPointer[List[AstNode]]:
+    logger = Logger.get_default_logger("make_tree")
     _token_bundles = ArcPointer(token_bundles)
     nodes = ArcPointer(List[AstNode]())
     var current_idx = 0
+    logger.info('Making tree')
     node_state = NodeState.STARTED
     for token in token_bundles:
-        current_idx = get_current_node(token[], current_idx, node_state, nodes, _token_bundles)
+        current_idx = get_current_node(token[], current_idx, node_state, nodes, _token_bundles, logger)
+    logger.info('Tree made')
     return nodes

@@ -20,17 +20,17 @@ struct RootNode(NodeAstLike):
         self._token_bundles = token_bundles
 
     @staticmethod
-    fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:
+    fn accept(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Bool:
         return len(tree_interface.nodes()[]) == 0
 
     @staticmethod
-    fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:
-        return Self(NodeIndices(-1, -1), TokenBundles())
+    fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:
+        return Self(indices, TokenBundles())
 
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> StringLiteral:
         return NodeState.WANTING_CHILD    
 
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
+    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices):
         pass
 
     fn indicies(self) -> NodeIndices:
@@ -49,5 +49,9 @@ struct RootNode(NodeAstLike):
     fn __str__(self) -> String:
         return "RootNode"
 
-    fn name(self) -> String:
-        return self.__name__
+    fn name(self, include_sig: Bool=False) -> String:
+        if include_sig:
+            return self.__name__ + "()"
+        else:
+            return self.__name__
+

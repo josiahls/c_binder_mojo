@@ -25,7 +25,7 @@ struct SingleLineCommentNode(NodeAstLike):
         self._row_num = token_bundle.row_num
 
     @staticmethod
-    fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:
+    fn accept(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Bool:
         if token.token == CTokens.COMMENT_SINGLE_LINE_BEGIN:
             return True
         elif token.token.startswith(CTokens.COMMENT_SINGLE_LINE_BEGIN):
@@ -33,10 +33,10 @@ struct SingleLineCommentNode(NodeAstLike):
         return False
 
     @staticmethod
-    fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:
-        return Self(tree_interface._indices, token)
+    fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:
+        return Self(indices, token)
 
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> StringLiteral:
         if token.row_num != self._row_num:
             print('SingleLineCommentNode: ' + String(token.token) + ' ' + String(token.row_num) + ' ' + String(self._row_num))
             self._node_state = NodeState.COMPLETE
@@ -44,7 +44,7 @@ struct SingleLineCommentNode(NodeAstLike):
             self._node_state = NodeState.APPENDING
         return self._node_state    
 
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
+    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices):
         pass
 
     fn indicies(self) -> NodeIndices:
@@ -63,5 +63,8 @@ struct SingleLineCommentNode(NodeAstLike):
     fn __str__(self) -> String:
         return "SingleLineCommentNode"
 
-    fn name(self) -> String:
-        return self.__name__
+    fn name(self, include_sig: Bool=False) -> String:
+        if include_sig:
+            return self.__name__ + "()"
+        else:
+            return self.__name__

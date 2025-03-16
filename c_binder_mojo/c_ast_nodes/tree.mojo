@@ -30,7 +30,6 @@ struct TreeInterface:
     """
     var _nodes: ArcPointer[List[AstNode]]
     var _tokens: ArcPointer[List[TokenBundle]]
-    var _indices: NodeIndices
     var node_state: StringLiteral
 
     fn nodes(self) -> ArcPointer[List[AstNode]]:
@@ -225,10 +224,10 @@ fn get_current_node(
     # State machine branching based on current state
     if node_state == NodeState.STARTED:
         indices = NodeIndices(-1, _current_idx)
-        tree_interface = TreeInterface(nodes, tokens, indices, node_state)
-        node = AstNode.accept(token, tree_interface)
+        tree_interface = TreeInterface(nodes, tokens, node_state)
+        node = AstNode.accept(token, tree_interface, indices)
         new_idx = tree_interface.insert_node(node)
-        new_node_state = node.determine_state(token, tree_interface)
+        new_node_state = node.determine_state(token, tree_interface, indices)
         log_state_transition(logger, token, _current_idx, tree_interface, new_node_state, prev_state=node_state)
         return get_current_node(token, new_idx, new_node_state, nodes, tokens, logger)
         
@@ -236,10 +235,9 @@ fn get_current_node(
         tree_interface = TreeInterface(
             nodes, 
             tokens, 
-            nodes[][_current_idx].indicies(), 
             node_state
         )
-        node = AstNode.accept(token, tree_interface)
+        node = AstNode.accept(token, tree_interface, nodes[][_current_idx].indicies())
         new_idx = tree_interface.insert_node(node)
         log_state_transition(logger, token, _current_idx, tree_interface, node_state)
         return new_idx
@@ -249,19 +247,19 @@ fn get_current_node(
 
 
     # Determine next state based on current node and token
-    tree_interface = TreeInterface(nodes, tokens, node.indicies(), node_state)
+    tree_interface = TreeInterface(nodes, tokens, node_state)
     prev_state = node_state
-    node_state = node.determine_state(token, tree_interface)
+    node_state = node.determine_state(token, tree_interface, nodes[][_current_idx].indicies())
     log_state_transition(logger, token, _current_idx, tree_interface, node_state, prev_state)
     # Process token based on new state
     if node_state == NodeState.COMPLETE:
-        node.process(token, tree_interface)
+        node.process(token, tree_interface, nodes[][_current_idx].indicies())
         parent_idx = node.indicies().original_parent_idx
         result = get_current_node(token, parent_idx, node_state, nodes, tokens, logger)
         return result
         
     elif node_state == NodeState.APPENDING:
-        node.process(token, tree_interface)
+        node.process(token, tree_interface, nodes[][_current_idx].indicies())
         return _current_idx
         
     elif node_state == NodeState.WANTING_CHILD:

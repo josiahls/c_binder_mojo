@@ -14,18 +14,18 @@ trait NodeAstLike(CollectionElement, Stringable):
     alias __name__: String
 
     @staticmethod
-    fn accept(token:TokenBundle, tree_interface:TreeInterface) -> Bool:...
+    fn accept(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Bool:...
     @staticmethod
-    fn create(token:TokenBundle, tree_interface:TreeInterface) -> Self:...
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:...
-    fn process(mut self,token:TokenBundle, tree_interface:TreeInterface):...
+    fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:...
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> StringLiteral:...
+    fn process(mut self,token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices):...
     # NOTE(josiahls): I think this will return a immutable reference.
     fn indicies(self) -> NodeIndices:...
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:...
     # NOTE(josiahls): I think this will return a immutable reference.
     fn token_bundles(self) -> TokenBundles:...
     fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:...
-    fn name(self) -> String:...
+    fn name(self, include_sig: Bool=False) -> String:...
     
 
 @value
@@ -49,17 +49,17 @@ struct AstNode(CollectionElement):
 
     @always_inline("nodebug")
     @staticmethod
-    fn accept(token:TokenBundle, tree_interface: TreeInterface) -> Self:
+    fn accept(token:TokenBundle, tree_interface: TreeInterface, indices:NodeIndices) -> Self:
         """
         Iterates over each type in the variant at compile-time and calls accept.
         """
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept(token, tree_interface):
-                return Self(T.create(token, tree_interface))
+            if T.accept(token, tree_interface, indices):
+                return Self(T.create(token, tree_interface, indices))
         print('WARNING: none of the nodes accepted the token: ' + String(token.token))
-        return Self(PlaceHolderNode.create(token, tree_interface))
+        return Self(PlaceHolderNode.create(token, tree_interface, indices))
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
@@ -114,28 +114,28 @@ struct AstNode(CollectionElement):
         print('WARNING: indicies_ptr called on AstNode with no indicies')
         return ArcPointer[NodeIndices](NodeIndices(-1, -1))
         
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> StringLiteral:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].determine_state(token, tree_interface)
+                return self.node[]._get_ptr[T]()[].determine_state(token, tree_interface, indices)
         print('WARNING: determine_state called on AstNode with no determine_state method')
         return NodeState.COMPLETE
 
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
+    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():    
-                self.node[]._get_ptr[T]()[].process(token, tree_interface)
+                self.node[]._get_ptr[T]()[].process(token, tree_interface, indices)
         print('WARNING: process called on AstNode with no process method')
 
-    fn name(self) -> String:
+    fn name(self, include_sig: Bool=False) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].name()
+                return self.node[]._get_ptr[T]()[].name(include_sig)
         print('WARNING: name called on AstNode with no name method')
         return "<unknown type>"

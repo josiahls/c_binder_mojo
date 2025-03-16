@@ -45,10 +45,10 @@ struct NodeIndices:
     in the tree, allowing for tree transformations while preserving relationships.
     
     Attributes:
-        original_parent_idx: Index of the parent node in the original tree
-        original_current_idx: Index of the current node in the original tree
-        new_parent_idx: Index of the parent node in the new tree (if transformed)
-        new_current_idx: Index of the current node in the new tree (if transformed)
+        original_parent_idx: Index of the parent node in the original tree.
+        original_current_idx: Index of the current node in the original tree.
+        new_parent_idx: Index of the parent node in the new tree (if transformed).
+        new_current_idx: Index of the current node in the new tree (if transformed).
     """
     var original_parent_idx: Int
     var original_current_idx: Int
@@ -59,10 +59,10 @@ struct NodeIndices:
         """Initialize a new NodeIndices instance.
         
         Args:
-            original_parent_idx: Index of the parent node in the original tree
-            original_current_idx: Index of the current node in the original tree
-            new_parent_idx: Index of the parent node in the new tree (default: -1)
-            new_current_idx: Index of the current node in the new tree (default: -1)
+            original_parent_idx: Index of the parent node in the original tree.
+            original_current_idx: Index of the current node in the original tree.
+            new_parent_idx: Index of the parent node in the new tree (default: -1).
+            new_current_idx: Index of the current node in the new tree (default: -1).
         """
         self.original_parent_idx = original_parent_idx
         self.original_current_idx = original_current_idx

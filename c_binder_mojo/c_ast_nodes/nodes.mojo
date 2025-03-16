@@ -17,8 +17,8 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn accept(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Bool:...
     @staticmethod
     fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:...
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> StringLiteral:...
-    fn process(mut self,token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices):...
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:...
+    fn process(mut self,token:TokenBundle, tree_interface:TreeInterface):...
     # NOTE(josiahls): I think this will return a immutable reference.
     fn indicies(self) -> NodeIndices:...
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:...
@@ -114,21 +114,21 @@ struct AstNode(CollectionElement):
         print('WARNING: indicies_ptr called on AstNode with no indicies')
         return ArcPointer[NodeIndices](NodeIndices(-1, -1))
         
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> StringLiteral:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].determine_state(token, tree_interface, indices)
+                return self.node[]._get_ptr[T]()[].determine_state(token, tree_interface)
         print('WARNING: determine_state called on AstNode with no determine_state method')
         return NodeState.COMPLETE
 
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices):
+    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():    
-                self.node[]._get_ptr[T]()[].process(token, tree_interface, indices)
+                self.node[]._get_ptr[T]()[].process(token, tree_interface)
         print('WARNING: process called on AstNode with no process method')
 
     fn name(self, include_sig: Bool=False) -> String:

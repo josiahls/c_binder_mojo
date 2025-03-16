@@ -27,10 +27,10 @@ struct RootNode(NodeAstLike):
     fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:
         return Self(indices, TokenBundles())
 
-    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> StringLiteral:
+    fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         return NodeState.WANTING_CHILD    
 
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices):
+    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
         pass
 
     fn indicies(self) -> NodeIndices:

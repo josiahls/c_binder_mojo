@@ -56,23 +56,29 @@ struct TreeInterface:
         Returns:
             The index of the newly inserted node.
         """
+        new_idx = len(self._nodes[])
+        node.indicies_ptr()[].original_current_idx = new_idx
         self._nodes[].append(node)
-        return len(self._nodes[]) - 1
+        return new_idx
 
-    fn n_parents(self, current_idx: Int) -> Int:
+    fn n_parents(self, current_idx: Int, count_limit:Int=100) raises -> Int:
         """Get the number of parents of the current node.
         
         Returns:
             The number of parents of the current node.
         """
         parent_idx = -1
+        _current_idx = current_idx
         started = False
         count = 0
         while parent_idx != -1 or not started:
-            parent_idx = self._nodes[][current_idx].indicies().original_parent_idx
+            parent_idx = self._nodes[][_current_idx].indicies().original_parent_idx
             if parent_idx != -1:
                 count += 1
             started = True
+            _current_idx = parent_idx
+            if count > count_limit:
+                raise Error("n_parents count limit reached: " + String(count_limit) + " for node: " + String(self._nodes[][_current_idx]) + " with parent_idx: " + String(parent_idx))
         return count
 
 
@@ -83,9 +89,11 @@ fn log_state_transition(
     tree_interface:TreeInterface,
     node_state:StringLiteral,
     prev_state:StringLiteral = ''
-):
+) raises:
     """Log a state transition.
     """
+
+    max_width = 25
     node_name = node.name(include_sig=True)
     n_parents = tree_interface.n_parents(node.indicies().original_current_idx)
     indent_str = String('\t' * n_parents)
@@ -101,7 +109,11 @@ fn log_state_transition(
         else:
             transition_str = String(prev_state) + " -> " + String(node_state)
 
-    logger.info(indent_str + transition_str + ' ' + node_name + ' ' + token.token)
+    padding_length = max_width - len(transition_str)
+    if padding_length > 0:
+        transition_str += String(' ' * padding_length)
+
+    logger.info(transition_str + ' ' + indent_str + node_name + ' current token: ' + token.token)
 
 
 fn get_current_node(
@@ -151,7 +163,7 @@ fn get_current_node(
         log_state_transition(logger, token, node, tree_interface, new_node_state, prev_state=node_state)
         return get_current_node(token, new_idx, new_node_state, nodes, tokens, logger)
     elif node_state == NodeState.WANTING_CHILD:
-        indices = NodeIndices(-1, _current_idx)
+        indices = NodeIndices(_current_idx, -1)
         node = AstNode.accept(token, tree_interface, indices)
         new_idx = tree_interface.insert_node(node)
         log_state_transition(logger, token, node, tree_interface, node_state)

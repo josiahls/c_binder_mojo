@@ -41,23 +41,21 @@ struct NodeIndices:
     
     This struct maintains references between original and new positions of nodes
     in the tree, allowing for tree transformations while preserving relationships.
-    
-    Args:
-        original_parent_idx: Index of the parent node in the original tree.
-        original_current_idx: Index of the current node in the original tree.
-        original_child_idxs: Indices of the child nodes in the original tree.
-        new_parent_idx: Index of the parent node in the new tree (if transformed).
-        new_current_idx: Index of the current node in the new tree (if transformed).
-        new_child_idxs: Indices of the child nodes in the new tree (if transformed).
     """
     alias UNSET = -1
 
     var original_parent_idx: Int
+    """Index of the parent node in the original tree."""
     var original_current_idx: Int
+    """Index of the current node in the original tree."""
     var original_child_idxs: List[Int]
+    """Indices of the child nodes in the original tree."""
     var new_parent_idx: Int
+    """Index of the parent node in the new tree."""
     var new_current_idx: Int
+    """Index of the current node in the new tree."""
     var new_child_idxs: List[Int]
+    """Indices of the child nodes in the new tree."""
 
     fn __init__(out self, original_parent_idx:Int, original_current_idx:Int, new_parent_idx:Int = Self.UNSET, new_current_idx:Int = Self.UNSET):
         """Initialize a new NodeIndices instance.
@@ -96,13 +94,19 @@ struct NodeIndices:
     fn __str__(self) -> String:
         var s = String('')
         if self.original_parent_idx != Self.UNSET:
-            s += "original_parent_idx=" + String(self.original_parent_idx) + ", "
+            s += "original_parent_idx=" + String(self.original_parent_idx)
         if self.original_current_idx != Self.UNSET:
-            s += "original_current_idx=" + String(self.original_current_idx) + ", "
+            if len(s) > 0:
+                s += ", "
+            s += "original_current_idx=" + String(self.original_current_idx)
         if self.new_parent_idx != Self.UNSET:
-            s += "new_parent_idx=" + String(self.new_parent_idx) + ", "
+            if len(s) > 0:
+                s += ", "
+            s += "new_parent_idx=" + String(self.new_parent_idx)
         if self.new_current_idx != Self.UNSET:
-            s += "new_current_idx=" + String(self.new_current_idx) + ", "
+            if len(s) > 0:
+                s += ", "
+            s += "new_current_idx=" + String(self.new_current_idx)
 
         if len(self.original_child_idxs) > 0:
             s += ", original_child_idxs=" + self._child_str(self.original_child_idxs)

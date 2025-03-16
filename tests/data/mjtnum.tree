@@ -1,1824 +1,1824 @@
 tree.mojo:189 - INFO: [Depth:0] STARTED -> WANTING_CHILD| RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [0:0]
+    └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [0:0]
+    └─ Current Token: '//' at [0:0]
     └─ Nodes: 2 active, 0 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'Copyright' at [0:2]
+    └─ Current Token: 'Copyright' at [0:2]
     └─ Nodes: 2 active, 0 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '2021' at [0:11]
+    └─ Current Token: '2021' at [0:11]
     └─ Nodes: 2 active, 0 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'DeepMind' at [0:15]
+    └─ Current Token: 'DeepMind' at [0:15]
     └─ Nodes: 2 active, 0 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'Technologies' at [0:23]
+    └─ Current Token: 'Technologies' at [0:23]
     └─ Nodes: 2 active, 0 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'Limited' at [0:35]
+    └─ Current Token: 'Limited' at [0:35]
     └─ Nodes: 2 active, 0 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [1:0]
+    └─ Current Token: '//' at [1:0]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [1:0]
+    └─ Current Token: '//' at [1:0]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [1:0]
+    └─ Current Token: '//' at [1:0]
     └─ Nodes: 2 active, 1 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [2:0]
+    └─ Current Token: '//' at [2:0]
     └─ Nodes: 1 active, 2 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [2:0]
+    └─ Current Token: '//' at [2:0]
     └─ Nodes: 1 active, 2 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [2:0]
+    └─ Current Token: '//' at [2:0]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'Licensed' at [2:2]
+    └─ Current Token: 'Licensed' at [2:2]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'under' at [2:10]
+    └─ Current Token: 'under' at [2:10]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'the' at [2:15]
+    └─ Current Token: 'the' at [2:15]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'Apache' at [2:18]
+    └─ Current Token: 'Apache' at [2:18]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'License' at [2:24]
+    └─ Current Token: 'License' at [2:24]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: ',' at [2:31]
+    └─ Current Token: ',' at [2:31]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [2:32]
+    └─ Current Token: '' at [2:32]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'Version' at [2:32]
+    └─ Current Token: 'Version' at [2:32]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '2.0' at [2:39]
+    └─ Current Token: '2.0' at [2:39]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '(the' at [2:42]
+    └─ Current Token: '(the' at [2:42]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '"License")' at [2:46]
+    └─ Current Token: '"License")' at [2:46]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: ';' at [2:56]
+    └─ Current Token: ';' at [2:56]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [2:57]
+    └─ Current Token: '' at [2:57]
     └─ Nodes: 2 active, 2 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [3:0]
+    └─ Current Token: '//' at [3:0]
     └─ Nodes: 1 active, 3 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [3:0]
+    └─ Current Token: '//' at [3:0]
     └─ Nodes: 1 active, 3 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [3:0]
+    └─ Current Token: '//' at [3:0]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'you' at [3:2]
+    └─ Current Token: 'you' at [3:2]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'may' at [3:5]
+    └─ Current Token: 'may' at [3:5]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'not' at [3:8]
+    └─ Current Token: 'not' at [3:8]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'use' at [3:11]
+    └─ Current Token: 'use' at [3:11]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'this' at [3:14]
+    └─ Current Token: 'this' at [3:14]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'file' at [3:18]
+    └─ Current Token: 'file' at [3:18]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'except' at [3:22]
+    └─ Current Token: 'except' at [3:22]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'in' at [3:28]
+    └─ Current Token: 'in' at [3:28]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'compliance' at [3:30]
+    └─ Current Token: 'compliance' at [3:30]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'with' at [3:40]
+    └─ Current Token: 'with' at [3:40]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'the' at [3:44]
+    └─ Current Token: 'the' at [3:44]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'License.' at [3:47]
+    └─ Current Token: 'License.' at [3:47]
     └─ Nodes: 2 active, 3 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [4:0]
+    └─ Current Token: '//' at [4:0]
     └─ Nodes: 1 active, 4 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [4:0]
+    └─ Current Token: '//' at [4:0]
     └─ Nodes: 1 active, 4 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [4:0]
+    └─ Current Token: '//' at [4:0]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'You' at [4:2]
+    └─ Current Token: 'You' at [4:2]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'may' at [4:5]
+    └─ Current Token: 'may' at [4:5]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'obtain' at [4:8]
+    └─ Current Token: 'obtain' at [4:8]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'a' at [4:14]
+    └─ Current Token: 'a' at [4:14]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'copy' at [4:15]
+    └─ Current Token: 'copy' at [4:15]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'of' at [4:19]
+    └─ Current Token: 'of' at [4:19]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'the' at [4:21]
+    └─ Current Token: 'the' at [4:21]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'License' at [4:24]
+    └─ Current Token: 'License' at [4:24]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'at' at [4:31]
+    └─ Current Token: 'at' at [4:31]
     └─ Nodes: 2 active, 4 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [5:0]
+    └─ Current Token: '//' at [5:0]
     └─ Nodes: 1 active, 5 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [5:0]
+    └─ Current Token: '//' at [5:0]
     └─ Nodes: 1 active, 5 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=6)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [5:0]
+    └─ Current Token: '//' at [5:0]
     └─ Nodes: 2 active, 5 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=6)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [6:0]
+    └─ Current Token: '//' at [6:0]
     └─ Nodes: 1 active, 6 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [6:0]
+    └─ Current Token: '//' at [6:0]
     └─ Nodes: 1 active, 6 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [6:0]
+    └─ Current Token: '//' at [6:0]
     └─ Nodes: 2 active, 6 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [6:2]
+    └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [6:2]
+    └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [6:2]
+    └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [6:2]
+    └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'http://www.apache.org/licenses/LICENSE-2.0' at [6:2]
+    └─ Current Token: 'http://www.apache.org/licenses/LICENSE-2.0' at [6:2]
     └─ Nodes: 2 active, 6 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [7:0]
+    └─ Current Token: '//' at [7:0]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [7:0]
+    └─ Current Token: '//' at [7:0]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=8)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [7:0]
+    └─ Current Token: '//' at [7:0]
     └─ Nodes: 2 active, 7 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=8)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [8:0]
+    └─ Current Token: '//' at [8:0]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [8:0]
+    └─ Current Token: '//' at [8:0]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [8:0]
+    └─ Current Token: '//' at [8:0]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'Unless' at [8:2]
+    └─ Current Token: 'Unless' at [8:2]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'required' at [8:8]
+    └─ Current Token: 'required' at [8:8]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'by' at [8:16]
+    └─ Current Token: 'by' at [8:16]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'applicable' at [8:18]
+    └─ Current Token: 'applicable' at [8:18]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'law' at [8:28]
+    └─ Current Token: 'law' at [8:28]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'or' at [8:31]
+    └─ Current Token: 'or' at [8:31]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'agreed' at [8:33]
+    └─ Current Token: 'agreed' at [8:33]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'to' at [8:39]
+    └─ Current Token: 'to' at [8:39]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'in' at [8:41]
+    └─ Current Token: 'in' at [8:41]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'writing' at [8:43]
+    └─ Current Token: 'writing' at [8:43]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: ',' at [8:50]
+    └─ Current Token: ',' at [8:50]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [8:51]
+    └─ Current Token: '' at [8:51]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'software' at [8:51]
+    └─ Current Token: 'software' at [8:51]
     └─ Nodes: 2 active, 8 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [9:0]
+    └─ Current Token: '//' at [9:0]
     └─ Nodes: 1 active, 9 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [9:0]
+    └─ Current Token: '//' at [9:0]
     └─ Nodes: 1 active, 9 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [9:0]
+    └─ Current Token: '//' at [9:0]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'distributed' at [9:2]
+    └─ Current Token: 'distributed' at [9:2]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'under' at [9:13]
+    └─ Current Token: 'under' at [9:13]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'the' at [9:18]
+    └─ Current Token: 'the' at [9:18]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'License' at [9:21]
+    └─ Current Token: 'License' at [9:21]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'is' at [9:28]
+    └─ Current Token: 'is' at [9:28]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'distributed' at [9:30]
+    └─ Current Token: 'distributed' at [9:30]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'on' at [9:41]
+    └─ Current Token: 'on' at [9:41]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'an' at [9:43]
+    └─ Current Token: 'an' at [9:43]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '"AS' at [9:45]
+    └─ Current Token: '"AS' at [9:45]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'IS"' at [9:48]
+    └─ Current Token: 'IS"' at [9:48]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'BASIS' at [9:51]
+    └─ Current Token: 'BASIS' at [9:51]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: ',' at [9:56]
+    └─ Current Token: ',' at [9:56]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [9:57]
+    └─ Current Token: '' at [9:57]
     └─ Nodes: 2 active, 9 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [10:0]
+    └─ Current Token: '//' at [10:0]
     └─ Nodes: 1 active, 10 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [10:0]
+    └─ Current Token: '//' at [10:0]
     └─ Nodes: 1 active, 10 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [10:0]
+    └─ Current Token: '//' at [10:0]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'WITHOUT' at [10:2]
+    └─ Current Token: 'WITHOUT' at [10:2]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'WARRANTIES' at [10:9]
+    └─ Current Token: 'WARRANTIES' at [10:9]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'OR' at [10:19]
+    └─ Current Token: 'OR' at [10:19]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'CONDITIONS' at [10:21]
+    └─ Current Token: 'CONDITIONS' at [10:21]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'OF' at [10:31]
+    └─ Current Token: 'OF' at [10:31]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'ANY' at [10:33]
+    └─ Current Token: 'ANY' at [10:33]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'KIND' at [10:36]
+    └─ Current Token: 'KIND' at [10:36]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: ',' at [10:40]
+    └─ Current Token: ',' at [10:40]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [10:41]
+    └─ Current Token: '' at [10:41]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'either' at [10:41]
+    └─ Current Token: 'either' at [10:41]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'express' at [10:47]
+    └─ Current Token: 'express' at [10:47]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'or' at [10:54]
+    └─ Current Token: 'or' at [10:54]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'implied.' at [10:56]
+    └─ Current Token: 'implied.' at [10:56]
     └─ Nodes: 2 active, 10 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [11:0]
+    └─ Current Token: '//' at [11:0]
     └─ Nodes: 1 active, 11 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [11:0]
+    └─ Current Token: '//' at [11:0]
     └─ Nodes: 1 active, 11 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [11:0]
+    └─ Current Token: '//' at [11:0]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'See' at [11:2]
+    └─ Current Token: 'See' at [11:2]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'the' at [11:5]
+    └─ Current Token: 'the' at [11:5]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'License' at [11:8]
+    └─ Current Token: 'License' at [11:8]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'for' at [11:15]
+    └─ Current Token: 'for' at [11:15]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'the' at [11:18]
+    └─ Current Token: 'the' at [11:18]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'specific' at [11:21]
+    └─ Current Token: 'specific' at [11:21]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'language' at [11:29]
+    └─ Current Token: 'language' at [11:29]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'governing' at [11:37]
+    └─ Current Token: 'governing' at [11:37]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'permissions' at [11:46]
+    └─ Current Token: 'permissions' at [11:46]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'and' at [11:57]
+    └─ Current Token: 'and' at [11:57]
     └─ Nodes: 2 active, 11 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [12:0]
+    └─ Current Token: '//' at [12:0]
     └─ Nodes: 1 active, 12 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [12:0]
+    └─ Current Token: '//' at [12:0]
     └─ Nodes: 1 active, 12 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [12:0]
+    └─ Current Token: '//' at [12:0]
     └─ Nodes: 2 active, 12 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'limitations' at [12:2]
+    └─ Current Token: 'limitations' at [12:2]
     └─ Nodes: 2 active, 12 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'under' at [12:13]
+    └─ Current Token: 'under' at [12:13]
     └─ Nodes: 2 active, 12 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'the' at [12:18]
+    └─ Current Token: 'the' at [12:18]
     └─ Nodes: 2 active, 12 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'License.' at [12:21]
+    └─ Current Token: 'License.' at [12:21]
     └─ Nodes: 2 active, 12 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [13:0]
+    └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 13 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [13:0]
+    └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 13 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [13:0]
+    └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 14 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#ifndef' at [14:0]
+    └─ Current Token: '#ifndef' at [14:0]
     └─ Nodes: 1 active, 14 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#ifndef' at [14:0]
+    └─ Current Token: '#ifndef' at [14:0]
     └─ Nodes: 1 active, 14 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#ifndef' at [14:0]
+    └─ Current Token: '#ifndef' at [14:0]
     └─ Nodes: 1 active, 15 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [14:7]
+    └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [14:7]
     └─ Nodes: 1 active, 15 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [14:7]
+    └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [14:7]
     └─ Nodes: 1 active, 15 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [14:7]
+    └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [14:7]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#define' at [15:0]
+    └─ Current Token: '#define' at [15:0]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#define' at [15:0]
+    └─ Current Token: '#define' at [15:0]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#define' at [15:0]
+    └─ Current Token: '#define' at [15:0]
     └─ Nodes: 1 active, 17 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [15:7]
+    └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [15:7]
     └─ Nodes: 1 active, 17 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [15:7]
+    └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [15:7]
     └─ Nodes: 1 active, 17 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [15:7]
+    └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [15:7]
     └─ Nodes: 1 active, 18 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [16:0]
+    └─ Current Token: '' at [16:0]
     └─ Nodes: 1 active, 18 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [16:0]
+    └─ Current Token: '' at [16:0]
     └─ Nodes: 1 active, 18 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=19)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [16:0]
+    └─ Current Token: '' at [16:0]
     └─ Nodes: 1 active, 19 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=19)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '//----------------------------------' at [17:0]
+    └─ Current Token: '//----------------------------------' at [17:0]
     └─ Nodes: 1 active, 19 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//----------------------------------' at [17:0]
+    └─ Current Token: '//----------------------------------' at [17:0]
     └─ Nodes: 1 active, 19 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=20)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//----------------------------------' at [17:0]
+    └─ Current Token: '//----------------------------------' at [17:0]
     └─ Nodes: 2 active, 19 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=20)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'floating-point' at [17:36]
+    └─ Current Token: 'floating-point' at [17:36]
     └─ Nodes: 2 active, 19 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=20)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'definition' at [17:50]
+    └─ Current Token: 'definition' at [17:50]
     └─ Nodes: 2 active, 19 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=20)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '-------------------------------------' at [17:60]
+    └─ Current Token: '-------------------------------------' at [17:60]
     └─ Nodes: 2 active, 19 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=20)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [18:0]
+    └─ Current Token: '' at [18:0]
     └─ Nodes: 1 active, 20 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [18:0]
+    └─ Current Token: '' at [18:0]
     └─ Nodes: 1 active, 20 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [18:0]
+    └─ Current Token: '' at [18:0]
     └─ Nodes: 1 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '//' at [19:0]
+    └─ Current Token: '//' at [19:0]
     └─ Nodes: 1 active, 21 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [19:0]
+    └─ Current Token: '//' at [19:0]
     └─ Nodes: 1 active, 21 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [19:0]
+    └─ Current Token: '//' at [19:0]
     └─ Nodes: 2 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'floating' at [19:2]
+    └─ Current Token: 'floating' at [19:2]
     └─ Nodes: 2 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'point' at [19:10]
+    └─ Current Token: 'point' at [19:10]
     └─ Nodes: 2 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'data' at [19:15]
+    └─ Current Token: 'data' at [19:15]
     └─ Nodes: 2 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'type' at [19:19]
+    └─ Current Token: 'type' at [19:19]
     └─ Nodes: 2 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'and' at [19:23]
+    └─ Current Token: 'and' at [19:23]
     └─ Nodes: 2 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'minval' at [19:26]
+    └─ Current Token: 'minval' at [19:26]
     └─ Nodes: 2 active, 21 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '#ifndef' at [20:0]
+    └─ Current Token: '#ifndef' at [20:0]
     └─ Nodes: 1 active, 22 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#ifndef' at [20:0]
+    └─ Current Token: '#ifndef' at [20:0]
     └─ Nodes: 1 active, 22 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#ifndef' at [20:0]
+    └─ Current Token: '#ifndef' at [20:0]
     └─ Nodes: 1 active, 23 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjUSESINGLE' at [20:7]
+    └─ Current Token: 'mjUSESINGLE' at [20:7]
     └─ Nodes: 1 active, 23 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'mjUSESINGLE' at [20:7]
+    └─ Current Token: 'mjUSESINGLE' at [20:7]
     └─ Nodes: 1 active, 23 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjUSESINGLE' at [20:7]
+    └─ Current Token: 'mjUSESINGLE' at [20:7]
     └─ Nodes: 1 active, 24 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [21:0]
+    └─ Current Token: '' at [21:0]
     └─ Nodes: 1 active, 24 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [21:0]
+    └─ Current Token: '' at [21:0]
     └─ Nodes: 1 active, 24 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [21:0]
+    └─ Current Token: '' at [21:0]
     └─ Nodes: 1 active, 25 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [21:0]
+    └─ Current Token: '' at [21:0]
     └─ Nodes: 1 active, 25 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [21:0]
+    └─ Current Token: '' at [21:0]
     └─ Nodes: 1 active, 25 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [21:0]
+    └─ Current Token: '' at [21:0]
     └─ Nodes: 1 active, 26 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'typedef' at [21:0]
+    └─ Current Token: 'typedef' at [21:0]
     └─ Nodes: 1 active, 26 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'typedef' at [21:0]
+    └─ Current Token: 'typedef' at [21:0]
     └─ Nodes: 1 active, 26 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'typedef' at [21:0]
+    └─ Current Token: 'typedef' at [21:0]
     └─ Nodes: 1 active, 27 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'double' at [21:7]
+    └─ Current Token: 'double' at [21:7]
     └─ Nodes: 1 active, 27 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'double' at [21:7]
+    └─ Current Token: 'double' at [21:7]
     └─ Nodes: 1 active, 27 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=28)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'double' at [21:7]
+    └─ Current Token: 'double' at [21:7]
     └─ Nodes: 1 active, 28 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=28)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjtNum' at [21:13]
+    └─ Current Token: 'mjtNum' at [21:13]
     └─ Nodes: 1 active, 28 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'mjtNum' at [21:13]
+    └─ Current Token: 'mjtNum' at [21:13]
     └─ Nodes: 1 active, 28 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjtNum' at [21:13]
+    └─ Current Token: 'mjtNum' at [21:13]
     └─ Nodes: 1 active, 29 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: ';' at [21:19]
+    └─ Current Token: ';' at [21:19]
     └─ Nodes: 1 active, 29 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: ';' at [21:19]
+    └─ Current Token: ';' at [21:19]
     └─ Nodes: 1 active, 29 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=30)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: ';' at [21:19]
+    └─ Current Token: ';' at [21:19]
     └─ Nodes: 1 active, 30 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=30)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [21:20]
+    └─ Current Token: '' at [21:20]
     └─ Nodes: 1 active, 30 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [21:20]
+    └─ Current Token: '' at [21:20]
     └─ Nodes: 1 active, 30 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [21:20]
+    └─ Current Token: '' at [21:20]
     └─ Nodes: 1 active, 31 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:0]
+    └─ Current Token: '' at [22:0]
     └─ Nodes: 1 active, 31 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:0]
+    └─ Current Token: '' at [22:0]
     └─ Nodes: 1 active, 31 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:0]
+    └─ Current Token: '' at [22:0]
     └─ Nodes: 1 active, 32 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:0]
+    └─ Current Token: '' at [22:0]
     └─ Nodes: 1 active, 32 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:0]
+    └─ Current Token: '' at [22:0]
     └─ Nodes: 1 active, 32 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=33)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:0]
+    └─ Current Token: '' at [22:0]
     └─ Nodes: 1 active, 33 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=33)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#define' at [22:0]
+    └─ Current Token: '#define' at [22:0]
     └─ Nodes: 1 active, 33 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#define' at [22:0]
+    └─ Current Token: '#define' at [22:0]
     └─ Nodes: 1 active, 33 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=34)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#define' at [22:0]
+    └─ Current Token: '#define' at [22:0]
     └─ Nodes: 1 active, 34 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=34)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjMINVAL' at [22:7]
+    └─ Current Token: 'mjMINVAL' at [22:7]
     └─ Nodes: 1 active, 34 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'mjMINVAL' at [22:7]
+    └─ Current Token: 'mjMINVAL' at [22:7]
     └─ Nodes: 1 active, 34 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjMINVAL' at [22:7]
+    └─ Current Token: 'mjMINVAL' at [22:7]
     └─ Nodes: 1 active, 35 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 35 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 35 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=36)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 36 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=36)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 36 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 36 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 37 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 37 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 37 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=38)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:15]
+    └─ Current Token: '' at [22:15]
     └─ Nodes: 1 active, 38 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=38)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '1E-15' at [22:15]
+    └─ Current Token: '1E-15' at [22:15]
     └─ Nodes: 1 active, 38 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '1E-15' at [22:15]
+    └─ Current Token: '1E-15' at [22:15]
     └─ Nodes: 1 active, 38 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=39)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '1E-15' at [22:15]
+    └─ Current Token: '1E-15' at [22:15]
     └─ Nodes: 1 active, 39 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=39)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 39 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 39 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=40)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 40 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=40)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 40 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 40 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=41)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 41 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=41)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 41 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 41 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=42)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 42 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=42)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 42 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 42 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=43)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 43 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=43)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 43 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 43 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=44)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 44 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=44)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 44 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 44 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=45)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [22:20]
+    └─ Current Token: '' at [22:20]
     └─ Nodes: 1 active, 45 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=45)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '//' at [22:20]
+    └─ Current Token: '//' at [22:20]
     └─ Nodes: 1 active, 45 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [22:20]
+    └─ Current Token: '//' at [22:20]
     └─ Nodes: 1 active, 45 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [22:20]
+    └─ Current Token: '//' at [22:20]
     └─ Nodes: 2 active, 45 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'minimum' at [22:22]
+    └─ Current Token: 'minimum' at [22:22]
     └─ Nodes: 2 active, 45 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'value' at [22:29]
+    └─ Current Token: 'value' at [22:29]
     └─ Nodes: 2 active, 45 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'in' at [22:34]
+    └─ Current Token: 'in' at [22:34]
     └─ Nodes: 2 active, 45 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'any' at [22:36]
+    └─ Current Token: 'any' at [22:36]
     └─ Nodes: 2 active, 45 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'denominator' at [22:39]
+    └─ Current Token: 'denominator' at [22:39]
     └─ Nodes: 2 active, 45 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '#else' at [23:0]
+    └─ Current Token: '#else' at [23:0]
     └─ Nodes: 1 active, 46 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#else' at [23:0]
+    └─ Current Token: '#else' at [23:0]
     └─ Nodes: 1 active, 46 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=47)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#else' at [23:0]
+    └─ Current Token: '#else' at [23:0]
     └─ Nodes: 1 active, 47 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=47)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [24:0]
+    └─ Current Token: '' at [24:0]
     └─ Nodes: 1 active, 47 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [24:0]
+    └─ Current Token: '' at [24:0]
     └─ Nodes: 1 active, 47 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=48)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [24:0]
+    └─ Current Token: '' at [24:0]
     └─ Nodes: 1 active, 48 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=48)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [24:0]
+    └─ Current Token: '' at [24:0]
     └─ Nodes: 1 active, 48 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [24:0]
+    └─ Current Token: '' at [24:0]
     └─ Nodes: 1 active, 48 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=49)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [24:0]
+    └─ Current Token: '' at [24:0]
     └─ Nodes: 1 active, 49 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=49)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'typedef' at [24:0]
+    └─ Current Token: 'typedef' at [24:0]
     └─ Nodes: 1 active, 49 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'typedef' at [24:0]
+    └─ Current Token: 'typedef' at [24:0]
     └─ Nodes: 1 active, 49 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=50)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'typedef' at [24:0]
+    └─ Current Token: 'typedef' at [24:0]
     └─ Nodes: 1 active, 50 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=50)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'float' at [24:7]
+    └─ Current Token: 'float' at [24:7]
     └─ Nodes: 1 active, 50 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'float' at [24:7]
+    └─ Current Token: 'float' at [24:7]
     └─ Nodes: 1 active, 50 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=51)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'float' at [24:7]
+    └─ Current Token: 'float' at [24:7]
     └─ Nodes: 1 active, 51 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=51)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjtNum' at [24:12]
+    └─ Current Token: 'mjtNum' at [24:12]
     └─ Nodes: 1 active, 51 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'mjtNum' at [24:12]
+    └─ Current Token: 'mjtNum' at [24:12]
     └─ Nodes: 1 active, 51 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=52)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjtNum' at [24:12]
+    └─ Current Token: 'mjtNum' at [24:12]
     └─ Nodes: 1 active, 52 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=52)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: ';' at [24:18]
+    └─ Current Token: ';' at [24:18]
     └─ Nodes: 1 active, 52 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: ';' at [24:18]
+    └─ Current Token: ';' at [24:18]
     └─ Nodes: 1 active, 52 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=53)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: ';' at [24:18]
+    └─ Current Token: ';' at [24:18]
     └─ Nodes: 1 active, 53 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=53)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [24:19]
+    └─ Current Token: '' at [24:19]
     └─ Nodes: 1 active, 53 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [24:19]
+    └─ Current Token: '' at [24:19]
     └─ Nodes: 1 active, 53 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=54)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [24:19]
+    └─ Current Token: '' at [24:19]
     └─ Nodes: 1 active, 54 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=54)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:0]
+    └─ Current Token: '' at [25:0]
     └─ Nodes: 1 active, 54 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [25:0]
+    └─ Current Token: '' at [25:0]
     └─ Nodes: 1 active, 54 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=55)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:0]
+    └─ Current Token: '' at [25:0]
     └─ Nodes: 1 active, 55 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=55)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:0]
+    └─ Current Token: '' at [25:0]
     └─ Nodes: 1 active, 55 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [25:0]
+    └─ Current Token: '' at [25:0]
     └─ Nodes: 1 active, 55 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=56)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:0]
+    └─ Current Token: '' at [25:0]
     └─ Nodes: 1 active, 56 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=56)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#define' at [25:0]
+    └─ Current Token: '#define' at [25:0]
     └─ Nodes: 1 active, 56 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#define' at [25:0]
+    └─ Current Token: '#define' at [25:0]
     └─ Nodes: 1 active, 56 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=57)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#define' at [25:0]
+    └─ Current Token: '#define' at [25:0]
     └─ Nodes: 1 active, 57 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=57)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjMINVAL' at [25:7]
+    └─ Current Token: 'mjMINVAL' at [25:7]
     └─ Nodes: 1 active, 57 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'mjMINVAL' at [25:7]
+    └─ Current Token: 'mjMINVAL' at [25:7]
     └─ Nodes: 1 active, 57 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=58)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjMINVAL' at [25:7]
+    └─ Current Token: 'mjMINVAL' at [25:7]
     └─ Nodes: 1 active, 58 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=58)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 58 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 58 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=59)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 59 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=59)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 59 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 59 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=60)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 60 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=60)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 60 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 60 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=61)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [25:15]
+    └─ Current Token: '' at [25:15]
     └─ Nodes: 1 active, 61 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=61)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '1E-15f' at [25:15]
+    └─ Current Token: '1E-15f' at [25:15]
     └─ Nodes: 1 active, 61 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '1E-15f' at [25:15]
+    └─ Current Token: '1E-15f' at [25:15]
     └─ Nodes: 1 active, 61 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=62)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '1E-15f' at [25:15]
+    └─ Current Token: '1E-15f' at [25:15]
     └─ Nodes: 1 active, 62 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=62)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/*' at [25:21]
+    └─ Current Token: '/*' at [25:21]
     └─ Nodes: 1 active, 62 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '/*' at [25:21]
+    └─ Current Token: '/*' at [25:21]
     └─ Nodes: 1 active, 62 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=63)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/*' at [25:21]
+    └─ Current Token: '/*' at [25:21]
     └─ Nodes: 1 active, 63 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=63)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'This' at [25:23]
+    └─ Current Token: 'This' at [25:23]
     └─ Nodes: 1 active, 63 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'This' at [25:23]
+    └─ Current Token: 'This' at [25:23]
     └─ Nodes: 1 active, 63 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=64)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'This' at [25:23]
+    └─ Current Token: 'This' at [25:23]
     └─ Nodes: 1 active, 64 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=64)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'does' at [25:27]
+    └─ Current Token: 'does' at [25:27]
     └─ Nodes: 1 active, 64 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'does' at [25:27]
+    └─ Current Token: 'does' at [25:27]
     └─ Nodes: 1 active, 64 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=65)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'does' at [25:27]
+    └─ Current Token: 'does' at [25:27]
     └─ Nodes: 1 active, 65 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=65)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'after' at [25:31]
+    └─ Current Token: 'after' at [25:31]
     └─ Nodes: 1 active, 65 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'after' at [25:31]
+    └─ Current Token: 'after' at [25:31]
     └─ Nodes: 1 active, 65 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=66)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'after' at [25:31]
+    └─ Current Token: 'after' at [25:31]
     └─ Nodes: 1 active, 66 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=66)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'the' at [25:36]
+    └─ Current Token: 'the' at [25:36]
     └─ Nodes: 1 active, 66 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'the' at [25:36]
+    └─ Current Token: 'the' at [25:36]
     └─ Nodes: 1 active, 66 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=67)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'the' at [25:36]
+    └─ Current Token: 'the' at [25:36]
     └─ Nodes: 1 active, 67 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=67)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'float' at [25:39]
+    └─ Current Token: 'float' at [25:39]
     └─ Nodes: 1 active, 67 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'float' at [25:39]
+    └─ Current Token: 'float' at [25:39]
     └─ Nodes: 1 active, 67 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=68)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'float' at [25:39]
+    └─ Current Token: 'float' at [25:39]
     └─ Nodes: 1 active, 68 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=68)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'is' at [25:44]
+    └─ Current Token: 'is' at [25:44]
     └─ Nodes: 1 active, 68 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'is' at [25:44]
+    └─ Current Token: 'is' at [25:44]
     └─ Nodes: 1 active, 68 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=69)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'is' at [25:44]
+    └─ Current Token: 'is' at [25:44]
     └─ Nodes: 1 active, 69 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=69)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'defined' at [25:46]
+    └─ Current Token: 'defined' at [25:46]
     └─ Nodes: 1 active, 69 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'defined' at [25:46]
+    └─ Current Token: 'defined' at [25:46]
     └─ Nodes: 1 active, 69 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=70)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'defined' at [25:46]
+    └─ Current Token: 'defined' at [25:46]
     └─ Nodes: 1 active, 70 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=70)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '*/' at [25:53]
+    └─ Current Token: '*/' at [25:53]
     └─ Nodes: 1 active, 70 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '*/' at [25:53]
+    └─ Current Token: '*/' at [25:53]
     └─ Nodes: 1 active, 70 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=71)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '*/' at [25:53]
+    └─ Current Token: '*/' at [25:53]
     └─ Nodes: 1 active, 71 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=71)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#endif' at [26:0]
+    └─ Current Token: '#endif' at [26:0]
     └─ Nodes: 1 active, 71 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#endif' at [26:0]
+    └─ Current Token: '#endif' at [26:0]
     └─ Nodes: 1 active, 71 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=72)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#endif' at [26:0]
+    └─ Current Token: '#endif' at [26:0]
     └─ Nodes: 1 active, 72 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=72)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [27:0]
+    └─ Current Token: '' at [27:0]
     └─ Nodes: 1 active, 72 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [27:0]
+    └─ Current Token: '' at [27:0]
     └─ Nodes: 1 active, 72 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=73)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [27:0]
+    └─ Current Token: '' at [27:0]
     └─ Nodes: 1 active, 73 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=73)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/*' at [28:0]
+    └─ Current Token: '/*' at [28:0]
     └─ Nodes: 1 active, 73 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '/*' at [28:0]
+    └─ Current Token: '/*' at [28:0]
     └─ Nodes: 1 active, 73 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=74)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/*' at [28:0]
+    └─ Current Token: '/*' at [28:0]
     └─ Nodes: 1 active, 74 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=74)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'silly' at [28:2]
+    └─ Current Token: 'silly' at [28:2]
     └─ Nodes: 1 active, 74 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'silly' at [28:2]
+    └─ Current Token: 'silly' at [28:2]
     └─ Nodes: 1 active, 74 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=75)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'silly' at [28:2]
+    └─ Current Token: 'silly' at [28:2]
     └─ Nodes: 1 active, 75 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=75)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'comment' at [28:7]
+    └─ Current Token: 'comment' at [28:7]
     └─ Nodes: 1 active, 75 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'comment' at [28:7]
+    └─ Current Token: 'comment' at [28:7]
     └─ Nodes: 1 active, 75 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=76)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'comment' at [28:7]
+    └─ Current Token: 'comment' at [28:7]
     └─ Nodes: 1 active, 76 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=76)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '*/' at [28:14]
+    └─ Current Token: '*/' at [28:14]
     └─ Nodes: 1 active, 76 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '*/' at [28:14]
+    └─ Current Token: '*/' at [28:14]
     └─ Nodes: 1 active, 76 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=77)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '*/' at [28:14]
+    └─ Current Token: '*/' at [28:14]
     └─ Nodes: 1 active, 77 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=77)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/**' at [28:16]
+    └─ Current Token: '/**' at [28:16]
     └─ Nodes: 1 active, 77 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '/**' at [28:16]
+    └─ Current Token: '/**' at [28:16]
     └─ Nodes: 1 active, 77 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=78)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/**' at [28:16]
+    └─ Current Token: '/**' at [28:16]
     └─ Nodes: 1 active, 78 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=78)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'another' at [28:19]
+    └─ Current Token: 'another' at [28:19]
     └─ Nodes: 1 active, 78 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'another' at [28:19]
+    └─ Current Token: 'another' at [28:19]
     └─ Nodes: 1 active, 78 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=79)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'another' at [28:19]
+    └─ Current Token: 'another' at [28:19]
     └─ Nodes: 1 active, 79 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=79)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'one???????' at [28:26]
+    └─ Current Token: 'one???????' at [28:26]
     └─ Nodes: 1 active, 79 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'one???????' at [28:26]
+    └─ Current Token: 'one???????' at [28:26]
     └─ Nodes: 1 active, 79 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=80)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'one???????' at [28:26]
+    └─ Current Token: 'one???????' at [28:26]
     └─ Nodes: 1 active, 80 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=80)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '**/' at [28:36]
+    └─ Current Token: '**/' at [28:36]
     └─ Nodes: 1 active, 80 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '**/' at [28:36]
+    └─ Current Token: '**/' at [28:36]
     └─ Nodes: 1 active, 80 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=81)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '**/' at [28:36]
+    └─ Current Token: '**/' at [28:36]
     └─ Nodes: 1 active, 81 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=81)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [29:0]
+    └─ Current Token: '' at [29:0]
     └─ Nodes: 1 active, 81 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [29:0]
+    └─ Current Token: '' at [29:0]
     └─ Nodes: 1 active, 81 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=82)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [29:0]
+    └─ Current Token: '' at [29:0]
     └─ Nodes: 1 active, 82 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=82)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/**' at [30:0]
+    └─ Current Token: '/**' at [30:0]
     └─ Nodes: 1 active, 82 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '/**' at [30:0]
+    └─ Current Token: '/**' at [30:0]
     └─ Nodes: 1 active, 82 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=83)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '/**' at [30:0]
+    └─ Current Token: '/**' at [30:0]
     └─ Nodes: 1 active, 83 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=83)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [30:3]
+    └─ Current Token: '' at [30:3]
     └─ Nodes: 1 active, 83 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [30:3]
+    └─ Current Token: '' at [30:3]
     └─ Nodes: 1 active, 83 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=84)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [30:3]
+    └─ Current Token: '' at [30:3]
     └─ Nodes: 1 active, 84 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=84)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'So' at [31:0]
+    └─ Current Token: 'So' at [31:0]
     └─ Nodes: 1 active, 84 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'So' at [31:0]
+    └─ Current Token: 'So' at [31:0]
     └─ Nodes: 1 active, 84 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=85)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'So' at [31:0]
+    └─ Current Token: 'So' at [31:0]
     └─ Nodes: 1 active, 85 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=85)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [31:2]
+    └─ Current Token: '' at [31:2]
     └─ Nodes: 1 active, 85 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [31:2]
+    └─ Current Token: '' at [31:2]
     └─ Nodes: 1 active, 85 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=86)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [31:2]
+    └─ Current Token: '' at [31:2]
     └─ Nodes: 1 active, 86 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=86)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'many' at [32:0]
+    └─ Current Token: 'many' at [32:0]
     └─ Nodes: 1 active, 86 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'many' at [32:0]
+    └─ Current Token: 'many' at [32:0]
     └─ Nodes: 1 active, 86 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=87)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'many' at [32:0]
+    └─ Current Token: 'many' at [32:0]
     └─ Nodes: 1 active, 87 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=87)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [32:4]
+    └─ Current Token: '' at [32:4]
     └─ Nodes: 1 active, 87 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [32:4]
+    └─ Current Token: '' at [32:4]
     └─ Nodes: 1 active, 87 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=88)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [32:4]
+    └─ Current Token: '' at [32:4]
     └─ Nodes: 1 active, 88 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=88)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'lines' at [33:0]
+    └─ Current Token: 'lines' at [33:0]
     └─ Nodes: 1 active, 88 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'lines' at [33:0]
+    └─ Current Token: 'lines' at [33:0]
     └─ Nodes: 1 active, 88 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=89)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'lines' at [33:0]
+    └─ Current Token: 'lines' at [33:0]
     └─ Nodes: 1 active, 89 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=89)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [34:0]
+    └─ Current Token: '' at [34:0]
     └─ Nodes: 1 active, 89 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [34:0]
+    └─ Current Token: '' at [34:0]
     └─ Nodes: 1 active, 89 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=90)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [34:0]
+    └─ Current Token: '' at [34:0]
     └─ Nodes: 1 active, 90 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=90)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [35:0]
+    └─ Current Token: '' at [35:0]
     └─ Nodes: 1 active, 90 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [35:0]
+    └─ Current Token: '' at [35:0]
     └─ Nodes: 1 active, 90 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=91)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [35:0]
+    └─ Current Token: '' at [35:0]
     └─ Nodes: 1 active, 91 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=91)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '**/' at [36:0]
+    └─ Current Token: '**/' at [36:0]
     └─ Nodes: 1 active, 91 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '**/' at [36:0]
+    └─ Current Token: '**/' at [36:0]
     └─ Nodes: 1 active, 91 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=92)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '**/' at [36:0]
+    └─ Current Token: '**/' at [36:0]
     └─ Nodes: 1 active, 92 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=92)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [37:0]
+    └─ Current Token: '' at [37:0]
     └─ Nodes: 1 active, 92 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [37:0]
+    └─ Current Token: '' at [37:0]
     └─ Nodes: 1 active, 92 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=93)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [37:0]
+    └─ Current Token: '' at [37:0]
     └─ Nodes: 1 active, 93 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=93)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [38:0]
+    └─ Current Token: '' at [38:0]
     └─ Nodes: 1 active, 93 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [38:0]
+    └─ Current Token: '' at [38:0]
     └─ Nodes: 1 active, 93 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=94)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [38:0]
+    └─ Current Token: '' at [38:0]
     └─ Nodes: 1 active, 94 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=94)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '//--------------------------------------' at [39:0]
+    └─ Current Token: '//--------------------------------------' at [39:0]
     └─ Nodes: 1 active, 94 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//--------------------------------------' at [39:0]
+    └─ Current Token: '//--------------------------------------' at [39:0]
     └─ Nodes: 1 active, 94 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=95)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//--------------------------------------' at [39:0]
+    └─ Current Token: '//--------------------------------------' at [39:0]
     └─ Nodes: 2 active, 94 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=95)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'byte' at [39:40]
+    └─ Current Token: 'byte' at [39:40]
     └─ Nodes: 2 active, 94 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=95)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'definition' at [39:44]
+    └─ Current Token: 'definition' at [39:44]
     └─ Nodes: 2 active, 94 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=95)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '-------------------------------------------' at [39:54]
+    └─ Current Token: '-------------------------------------------' at [39:54]
     └─ Nodes: 2 active, 94 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=95)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [40:0]
+    └─ Current Token: '' at [40:0]
     └─ Nodes: 1 active, 95 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [40:0]
+    └─ Current Token: '' at [40:0]
     └─ Nodes: 1 active, 95 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=96)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [40:0]
+    └─ Current Token: '' at [40:0]
     └─ Nodes: 1 active, 96 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=96)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'typedef' at [41:0]
+    └─ Current Token: 'typedef' at [41:0]
     └─ Nodes: 1 active, 96 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'typedef' at [41:0]
+    └─ Current Token: 'typedef' at [41:0]
     └─ Nodes: 1 active, 96 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=97)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'typedef' at [41:0]
+    └─ Current Token: 'typedef' at [41:0]
     └─ Nodes: 1 active, 97 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=97)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'unsigned' at [41:7]
+    └─ Current Token: 'unsigned' at [41:7]
     └─ Nodes: 1 active, 97 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'unsigned' at [41:7]
+    └─ Current Token: 'unsigned' at [41:7]
     └─ Nodes: 1 active, 97 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=98)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'unsigned' at [41:7]
+    └─ Current Token: 'unsigned' at [41:7]
     └─ Nodes: 1 active, 98 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=98)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'char' at [41:15]
+    └─ Current Token: 'char' at [41:15]
     └─ Nodes: 1 active, 98 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'char' at [41:15]
+    └─ Current Token: 'char' at [41:15]
     └─ Nodes: 1 active, 98 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=99)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'char' at [41:15]
+    └─ Current Token: 'char' at [41:15]
     └─ Nodes: 1 active, 99 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=99)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjtByte' at [41:19]
+    └─ Current Token: 'mjtByte' at [41:19]
     └─ Nodes: 1 active, 99 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: 'mjtByte' at [41:19]
+    └─ Current Token: 'mjtByte' at [41:19]
     └─ Nodes: 1 active, 99 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=100)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: 'mjtByte' at [41:19]
+    └─ Current Token: 'mjtByte' at [41:19]
     └─ Nodes: 1 active, 100 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=100)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: ';' at [41:26]
+    └─ Current Token: ';' at [41:26]
     └─ Nodes: 1 active, 100 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: ';' at [41:26]
+    └─ Current Token: ';' at [41:26]
     └─ Nodes: 1 active, 100 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=101)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: ';' at [41:26]
+    └─ Current Token: ';' at [41:26]
     └─ Nodes: 1 active, 101 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=101)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 101 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 101 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=102)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 102 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=102)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 102 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 102 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=103)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 103 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=103)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 103 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 103 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=104)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 104 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=104)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 104 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 104 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=105)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [41:27]
+    └─ Current Token: '' at [41:27]
     └─ Nodes: 1 active, 105 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=105)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '//' at [41:27]
+    └─ Current Token: '//' at [41:27]
     └─ Nodes: 1 active, 105 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [41:27]
+    └─ Current Token: '//' at [41:27]
     └─ Nodes: 1 active, 105 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=106)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [41:27]
+    └─ Current Token: '//' at [41:27]
     └─ Nodes: 2 active, 105 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=106)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'used' at [41:29]
+    └─ Current Token: 'used' at [41:29]
     └─ Nodes: 2 active, 105 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=106)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'for' at [41:33]
+    └─ Current Token: 'for' at [41:33]
     └─ Nodes: 2 active, 105 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=106)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'true/false' at [41:36]
+    └─ Current Token: 'true/false' at [41:36]
     └─ Nodes: 2 active, 105 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=106)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [42:0]
+    └─ Current Token: '' at [42:0]
     └─ Nodes: 1 active, 106 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [42:0]
+    └─ Current Token: '' at [42:0]
     └─ Nodes: 1 active, 106 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=107)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [42:0]
+    └─ Current Token: '' at [42:0]
     └─ Nodes: 1 active, 107 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=107)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [43:0]
+    └─ Current Token: '' at [43:0]
     └─ Nodes: 1 active, 107 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [43:0]
+    └─ Current Token: '' at [43:0]
     └─ Nodes: 1 active, 107 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=108)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [43:0]
+    └─ Current Token: '' at [43:0]
     └─ Nodes: 1 active, 108 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=108)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [44:0]
+    └─ Current Token: '' at [44:0]
     └─ Nodes: 1 active, 108 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [44:0]
+    └─ Current Token: '' at [44:0]
     └─ Nodes: 1 active, 108 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=109)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [44:0]
+    └─ Current Token: '' at [44:0]
     └─ Nodes: 1 active, 109 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=109)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#endif' at [45:0]
+    └─ Current Token: '#endif' at [45:0]
     └─ Nodes: 1 active, 109 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '#endif' at [45:0]
+    └─ Current Token: '#endif' at [45:0]
     └─ Nodes: 1 active, 109 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=110)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '#endif' at [45:0]
+    └─ Current Token: '#endif' at [45:0]
     └─ Nodes: 1 active, 110 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=110)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [45:6]
+    └─ Current Token: '' at [45:6]
     └─ Nodes: 1 active, 110 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [45:6]
+    └─ Current Token: '' at [45:6]
     └─ Nodes: 1 active, 110 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=111)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [45:6]
+    └─ Current Token: '' at [45:6]
     └─ Nodes: 1 active, 111 complete
 tree.mojo:189 - INFO: [Depth:0] COMPLETE|---------------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=111)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '//' at [45:6]
+    └─ Current Token: '//' at [45:6]
     └─ Nodes: 1 active, 111 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '//' at [45:6]
+    └─ Current Token: '//' at [45:6]
     └─ Nodes: 1 active, 111 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=112)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '//' at [45:6]
+    └─ Current Token: '//' at [45:6]
     └─ Nodes: 2 active, 111 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING|--------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=112)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [45:8]
+    └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [45:8]
     └─ Nodes: 2 active, 111 complete
 tree.mojo:189 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=112)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Token: '' at [46:0]
+    └─ Current Token: '' at [46:0]
     └─ Nodes: 1 active, 112 complete
 tree.mojo:189 - INFO: [Depth:1] WANTING_CHILD <- COMPLETE RootNode(original_current_idx=0)
     └─ Path: RootNode
-    └─ Token: '' at [46:0]
+    └─ Current Token: '' at [46:0]
     └─ Nodes: 1 active, 112 complete
 tree.mojo:189 - INFO: [Depth:2] WANTING_CHILD|----------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=113)
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Token: '' at [46:0]
+    └─ Current Token: '' at [46:0]
     └─ Nodes: 1 active, 113 complete

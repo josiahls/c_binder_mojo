@@ -82,6 +82,7 @@ struct AstNode(CollectionElement):
         print('WARNING: __str__ called on AstNode with no __str__ method')
         return "<unknown type>"
 
+    @always_inline("nodebug")
     fn indicies(self) -> NodeIndices:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -91,6 +92,7 @@ struct AstNode(CollectionElement):
         print('WARNING: indicies called on AstNode with no indicies')
         return NodeIndices(-1, -1)
 
+    @always_inline("nodebug")
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -99,7 +101,8 @@ struct AstNode(CollectionElement):
                 return self.node[]._get_ptr[T]()[].indicies_ptr()
         print('WARNING: indicies_ptr called on AstNode with no indicies')
         return ArcPointer[NodeIndices](NodeIndices(-1, -1))
-        
+
+    @always_inline("nodebug")
     fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -109,19 +112,22 @@ struct AstNode(CollectionElement):
         print('WARNING: determine_state called on AstNode with no determine_state method')
         return NodeState.COMPLETE
 
+    @always_inline("nodebug")
     fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():    
                 self.node[]._get_ptr[T]()[].process(token, tree_interface)
-        print('WARNING: process called on AstNode with no process method')
+                return
+        print('WARNING: process called on AstNode with no process method for node: ' + self.__str__())
 
+    @always_inline("nodebug")
     fn name(self, include_sig: Bool=False) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 return self.node[]._get_ptr[T]()[].name(include_sig)
-        print('WARNING: name called on AstNode with no name method')
+        print('WARNING: name called on AstNode with no name method for node: ' + self.__str__())
         return "<unknown type>"

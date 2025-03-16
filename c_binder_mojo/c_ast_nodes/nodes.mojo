@@ -82,18 +82,6 @@ struct AstNode(CollectionElement):
         print('WARNING: __str__ called on AstNode with no __str__ method')
         return "<unknown type>"
 
-    # State checks
-    fn is_accepting_tokens(self, tree_interface: TreeInterface) -> Bool:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].is_accepting_tokens(tree_interface)
-
-        print('WARNING: is_accepting_tokens called on AstNode with no accepting tokens')
-        return False
-
     fn indicies(self) -> NodeIndices:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):

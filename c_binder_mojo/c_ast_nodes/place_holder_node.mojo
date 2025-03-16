@@ -23,7 +23,6 @@ struct PlaceHolderNode(NodeAstLike):
     fn accept(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Bool:
         return True    
 
-
     @staticmethod
     fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:
         return Self(indices, TokenBundles())

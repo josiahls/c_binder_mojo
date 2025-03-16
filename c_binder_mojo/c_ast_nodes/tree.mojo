@@ -123,13 +123,13 @@ fn log_state_transition(
     """Log a state transition with enhanced context.
     
     Args:
-        logger: Logger instance
-        token: Current token
-        current_node: Current node
-        tree_interface: Tree interface
-        node_state: New state
-        prev_state: Previous state
-        recursion_depth: Current depth of get_current_node recursion
+        logger: Logger instance.
+        token: Current token.
+        current_node: Current node.
+        tree_interface: Tree interface.
+        node_state: New state.
+        prev_state: Previous state.
+        recursion_depth: Current depth of get_current_node recursion.
     """
     # Format the transition string with fixed width
     var transition_str = String()
@@ -141,14 +141,19 @@ fn log_state_transition(
         else:
             transition_str = String(prev_state) + " -> " + String(node_state)
     
-    # Use a constant for padding to avoid dynamic value in call parameter
+    # Use dashes for padding to distinguish from indentation
     var max_width = 25
     var padding = String()
     var padding_length = max_width - len(transition_str)
     for i in range(padding_length):
         if padding_length > 0:
-            padding += " "
-    transition_str += padding
+            if i == 0:
+                padding += "|"
+            elif i == padding_length - 1:
+                padding += "|"
+            else:
+                padding += "-"
+    transition_str += padding + " "
     
     # Get node path using a constant path length
     var path = get_node_path(tree_interface.nodes(), current_node.indicies().original_current_idx)
@@ -192,7 +197,7 @@ fn get_current_node(
     tokens:ArcPointer[List[TokenBundle]],
     mut logger:Logger,
     recursion_depth: Int = 0
-) raises -> Int:
+) raises -> Tuple[Int, StringLiteral]:
     """Process a token and determine the current node in the AST.
     
     Args:
@@ -212,11 +217,11 @@ fn get_current_node(
     # Handle error cases
     if _current_idx < 0: 
         logger.error("ERROR: current_idx is less than 0: " + String(_current_idx))
-        return _current_idx
+        return (_current_idx, node_state_)
 
     if token.deleted:
         logger.error("ERROR: Token is deleted: " + String(token))
-        return _current_idx
+        return (_current_idx, node_state_)
     
     var node_state = node_state_
     var tree_interface = TreeInterface(nodes, tokens, node_state)
@@ -237,7 +242,8 @@ fn get_current_node(
         var new_idx = tree_interface.insert_node(node)
         log_state_transition(logger, token, node, tree_interface, node_state, 
                            recursion_depth=recursion_depth)
-        return new_idx
+        var new_node_state = node.determine_state(token, tree_interface)
+        return (new_idx, new_node_state)
     else:
         node = nodes[][_current_idx]
 
@@ -250,16 +256,14 @@ fn get_current_node(
     if node_state == NodeState.COMPLETE:
         node.process(token, tree_interface)
         var parent_idx = node.indicies().original_parent_idx
-        var result = get_current_node(token, parent_idx, node_state, nodes, tokens, logger, 
+        return get_current_node(token, parent_idx, node_state, nodes, tokens, logger, 
                                 recursion_depth + 1)
-        return result
     elif node_state == NodeState.APPENDING:
         node.process(token, tree_interface)
-        return _current_idx
+        return (_current_idx, node_state)
     elif node_state == NodeState.WANTING_CHILD:
-        var result = get_current_node(token, _current_idx, NodeState.WANTING_CHILD, nodes, tokens, 
+        return get_current_node(token, _current_idx, NodeState.WANTING_CHILD, nodes, tokens, 
                                 logger, recursion_depth + 1)
-        return result
     else:
         raise Error("get_current_node called on AstNode with no determine_state method")
 
@@ -306,7 +310,9 @@ fn make_tree(owned token_bundles:List[TokenBundle], tree_transition_file:String 
                        String(len(token_bundles)) + " (" + 
                        String((token_count + 1) * 100 / len(token_bundles)) + "%)")
 
-        current_idx = get_current_node(token[], current_idx, node_state, nodes, _token_bundles, inner_logger)
+        result = get_current_node(token[], current_idx, node_state, nodes, _token_bundles, inner_logger)
+        current_idx = result[0]
+        node_state = result[1]
 
         token_count += 1
     

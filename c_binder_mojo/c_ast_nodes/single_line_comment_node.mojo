@@ -38,7 +38,6 @@ struct SingleLineCommentNode(NodeAstLike):
 
     fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         if token.row_num != self._row_num:
-            print('SingleLineCommentNode: ' + String(token.token) + ' ' + String(token.row_num) + ' ' + String(self._row_num))
             self._node_state = NodeState.COMPLETE
         else:
             self._node_state = NodeState.APPENDING

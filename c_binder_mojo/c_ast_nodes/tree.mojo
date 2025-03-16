@@ -174,7 +174,7 @@ fn log_state_transition(
     msg += indent
     msg += node_info
     msg += "\n    └─ Path: " + path
-    msg += "\n    └─ Token: '" + token.token + "' at [" + String(token.row_num) + ":" + String(token.col_num) + "]"
+    msg += "\n    └─ Current Token: '" + token.token + "' at [" + String(token.row_num) + ":" + String(token.col_num) + "]"
     
     # Add active nodes count
     var active_count = 0

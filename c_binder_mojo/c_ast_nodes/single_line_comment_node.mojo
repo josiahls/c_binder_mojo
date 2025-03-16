@@ -65,6 +65,6 @@ struct SingleLineCommentNode(NodeAstLike):
 
     fn name(self, include_sig: Bool=False) -> String:
         if include_sig:
-            return self.__name__ + "()"
+            return self.__name__ + "(" + String(self._indicies[]) + ")"
         else:
             return self.__name__

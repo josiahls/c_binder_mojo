@@ -8,13 +8,11 @@ from firehose.logging import Logger
 # First Party Modules
 
 
-
 struct NodeState:
     alias STARTED = 'STARTED'
     alias COMPLETE = 'COMPLETE'
     alias APPENDING = 'APPENDING'
     alias WANTING_CHILD = 'WANTING_CHILD'
-    
 
 
 struct CTokens:
@@ -44,18 +42,24 @@ struct NodeIndices:
     This struct maintains references between original and new positions of nodes
     in the tree, allowing for tree transformations while preserving relationships.
     
-    Attributes:
+    Args:
         original_parent_idx: Index of the parent node in the original tree.
         original_current_idx: Index of the current node in the original tree.
+        original_child_idxs: Indices of the child nodes in the original tree.
         new_parent_idx: Index of the parent node in the new tree (if transformed).
         new_current_idx: Index of the current node in the new tree (if transformed).
+        new_child_idxs: Indices of the child nodes in the new tree (if transformed).
     """
+    alias UNSET = -1
+
     var original_parent_idx: Int
     var original_current_idx: Int
+    var original_child_idxs: List[Int]
     var new_parent_idx: Int
     var new_current_idx: Int
+    var new_child_idxs: List[Int]
 
-    fn __init__(out self, original_parent_idx:Int, original_current_idx:Int, new_parent_idx:Int = -1, new_current_idx:Int = -1):
+    fn __init__(out self, original_parent_idx:Int, original_current_idx:Int, new_parent_idx:Int = Self.UNSET, new_current_idx:Int = Self.UNSET):
         """Initialize a new NodeIndices instance.
         
         Args:
@@ -66,8 +70,45 @@ struct NodeIndices:
         """
         self.original_parent_idx = original_parent_idx
         self.original_current_idx = original_current_idx
+        self.original_child_idxs = List[Int]()
         self.new_parent_idx = new_parent_idx
         self.new_current_idx = new_current_idx
+        self.new_child_idxs = List[Int]()
+
+    fn _child_str(self, children_idxs: List[Int]) -> String:
+        var s = String('')
+        n_children = len(children_idxs)
+        i = 0
+        for child_idx in children_idxs:
+            if i == 0:
+                s += "("
+            s += String(child_idx[])
+            if i < n_children - 1:
+                s += ", "
+            i += 1
+            if i > 5:
+                s += "...) len=" + String(n_children)
+                break
+        if i > 0 and i < 5:
+            s += ")"
+        return s
+
+    fn __str__(self) -> String:
+        var s = String('')
+        if self.original_parent_idx != Self.UNSET:
+            s += "original_parent_idx=" + String(self.original_parent_idx) + ", "
+        if self.original_current_idx != Self.UNSET:
+            s += "original_current_idx=" + String(self.original_current_idx) + ", "
+        if self.new_parent_idx != Self.UNSET:
+            s += "new_parent_idx=" + String(self.new_parent_idx) + ", "
+        if self.new_current_idx != Self.UNSET:
+            s += "new_current_idx=" + String(self.new_current_idx) + ", "
+
+        if len(self.original_child_idxs) > 0:
+            s += ", original_child_idxs=" + self._child_str(self.original_child_idxs)
+        if len(self.new_child_idxs) > 0:
+            s += ", new_child_idxs=" + self._child_str(self.new_child_idxs)
+        return s
 
 
 @value
@@ -100,6 +141,7 @@ struct TokenBundle(EqualityComparable):
         self.row_num = row_num
         self.col_num = col_num
         self.deleted = deleted
+
     fn __ne__(read self:Self, read other:Self) -> Bool:
         """Check if two TokenBundles are not equal.
         

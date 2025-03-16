@@ -8,8 +8,6 @@ from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo import c_ast_nodes
 
 
-
-
 trait NodeAstLike(CollectionElement, Stringable): 
     alias __name__: String
 
@@ -31,7 +29,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 @value
 struct AstNode(CollectionElement):
     alias type = Variant[
-        c_ast_nodes.RootNode,                # Must be first to handle root
+        c_ast_nodes.RootNode,
         c_ast_nodes.SingleLineCommentNode,
         c_ast_nodes.PlaceHolderNode
     ]

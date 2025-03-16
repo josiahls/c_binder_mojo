@@ -76,85 +76,6 @@ struct TreeInterface:
         return count
 
 
-@value
-struct NodeLogger:
-    """Context manager for logging state transitions in the AST construction.
-    
-    This struct provides a clean way to log entry and exit of functions with
-    appropriate indentation and context information.
-    """
-    var logger: Logger
-    var context: String
-    var token: TokenBundle
-    var node_idx: Int
-    var state: StringLiteral
-    var indent_level: Int
-    var _exit_message: String
-    
-    fn __init__(out self, logger: Logger, context: String, token: TokenBundle, node_idx: Int, state: StringLiteral):
-        """Initialize a new NodeLogger.
-        
-        Args:
-            logger: The logger to use.
-            context: Description of the current context.
-            token: The token being processed.
-            node_idx: Index of the current node.
-            state: Current state of node processing.
-        """
-        self.logger = logger
-        self.context = context
-        self.token = token
-        self.node_idx = node_idx
-        self.state = state
-        self.indent_level = 0
-        self._exit_message = ""
-    
-    fn __enter__(mut self) -> Self:
-        """Log entry into a context.
-        
-        Returns:
-            Self reference for use in the with statement.
-        """
-        # Log entry with token and state information
-        self.logger.debug("ENTER " + self.context + ": token='" + self.token.token + 
-                        "' at [" + String(self.token.row_num) + ":" + String(self.token.col_num) + 
-                        "], node_idx=" + String(self.node_idx) + 
-                        ", state=" + String(self.state))
-        return self
-    
-    fn __exit__(mut self):
-        """Log exit from a context with result information."""
-        if self._exit_message:
-            self.logger.debug("EXIT " + self.context + ": " + self._exit_message)
-    
-    fn set_exit_message(mut self, message: String):
-        """Set the message to be logged on exit.
-        
-        Args:
-            message: The exit message to log
-        """
-        self._exit_message = message
-    
-    fn log(mut self, message: String):
-        """Log a message within the current context.
-        
-        Args:
-            message: The message to log
-        """
-        self.logger.debug(message)
-    
-    fn log_state_transition(mut self, prev_state: StringLiteral, new_state: StringLiteral, node_type: String):
-        """Log a state transition.
-        
-        Args:
-            prev_state: Previous state.
-            new_state: New state.
-            node_type: Type of the node.
-        """
-        self.logger.debug("STATE TRANSITION: " + String(prev_state) + " -> " + String(new_state) + 
-                        " for node type " + node_type + " with token '" + self.token.token + "'")
-
-
 fn log_state_transition(
     mut logger:Logger,
     token:TokenBundle,
@@ -165,7 +86,7 @@ fn log_state_transition(
 ):
     """Log a state transition.
     """
-    node_name = node.name()
+    node_name = node.name(include_sig=True)
     n_parents = tree_interface.n_parents(node.indicies().original_current_idx)
     indent_str = String('\t' * n_parents)
 

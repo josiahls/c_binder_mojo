@@ -8,6 +8,90 @@ from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo import c_ast_nodes
 
 
+fn _string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+    """Converts children to string with proper indentation and line breaks.
+    
+    Args:
+        just_code: If True, outputs only code and comments. If False, includes node metadata
+            with '>>>' separator to show node ownership.
+    """
+    var s = String()
+    var first = True
+    for child_idx in node.indicies().original_child_idxs:
+        var child = tree_interface.nodes()[][child_idx[]]
+        if not first:
+            s += "\n"
+        s += child.to_string(just_code, tree_interface)
+        first = False
+    return s
+
+
+fn default_scope_level(parent_idx: Int, just_code: Bool, tree_interface: TreeInterface) -> Int:
+    """Default scope level implementation that most nodes can use.
+    
+    Calculates scope level by walking up parent chain and summing scope_offsets.
+    """
+    var level = 0
+    var current_parent_idx = parent_idx
+    if parent_idx == -1:
+        var parent = tree_interface.nodes()[][0]
+        var scope_offset = parent.scope_offset(just_code)
+        return scope_offset
+    
+    while current_parent_idx != -1:
+        var parent = tree_interface.nodes()[][current_parent_idx]
+        level += parent.scope_offset(just_code)
+        current_parent_idx = parent.indicies().original_parent_idx
+    return level
+
+
+fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+    """Default string conversion for nodes.
+    
+    Args:
+        just_code: If True, outputs only code and comments. If False, includes node metadata
+            with '>>>' separator to show node ownership.
+    
+    Format when just_code=False:
+        NodeName >>> actual content
+        NodeName >>> continued content
+        NodeName >>> more content...
+    """
+    var s = String()
+    var level = node.scope_level(just_code, tree_interface)
+    var indent = String("")
+    if level > 0:
+        indent = "\t" * level
+    var children_added = False
+    var line_num = 0
+    
+    # Add node name if not just code
+    if not just_code:
+        s += indent + node.name(include_sig=True) + " "
+
+    # Add tokens
+    for token in node.token_bundles():
+        if token[].row_num != line_num:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+
+    # Add children
+    s += "\n"
+    s += indent
+    s += _string_children(node, just_code, tree_interface)
+
+    for token in node.token_bundles_tail():
+        if token[].row_num != line_num:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+        
+    return s
+
+
 trait NodeAstLike(CollectionElement, Stringable): 
     alias __name__: String
 
@@ -16,15 +100,19 @@ trait NodeAstLike(CollectionElement, Stringable):
     @staticmethod
     fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:...
     fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:...
-    fn process(mut self,token:TokenBundle, tree_interface:TreeInterface):...
+    fn process(mut self,token:TokenBundle, node_state:StringLiteral, tree_interface:TreeInterface):...
     # NOTE(josiahls): I think this will return a immutable reference.
     fn indicies(self) -> NodeIndices:...
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:...
     # NOTE(josiahls): I think this will return a immutable reference.
     fn token_bundles(self) -> TokenBundles:...
     fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:...
+    fn token_bundles_tail(self) -> TokenBundles:...
     fn name(self, include_sig: Bool=False) -> String:...
-    
+    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String: ...
+    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int: ...
+    fn scope_offset(self, just_code: Bool) -> Int: ...
+
 
 @value
 struct AstNode(CollectionElement):
@@ -103,6 +191,36 @@ struct AstNode(CollectionElement):
         return ArcPointer[NodeIndices](NodeIndices(-1, -1))
 
     @always_inline("nodebug")
+    fn token_bundles(self) -> TokenBundles:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].token_bundles()
+        print('WARNING: token_bundles called on AstNode with no token_bundles')
+        return TokenBundles()
+
+    @always_inline("nodebug")
+    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].token_bundles_ptr()
+        print('WARNING: token_bundles_ptr called on AstNode with no token_bundles_ptr')
+        return ArcPointer[TokenBundles](TokenBundles())
+
+    @always_inline("nodebug")
+    fn token_bundles_tail(self) -> TokenBundles:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].token_bundles_tail()
+        print('WARNING: token_bundles_tail called on AstNode with no token_bundles_tail')
+        return TokenBundles()
+
+    @always_inline("nodebug")
     fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -113,12 +231,12 @@ struct AstNode(CollectionElement):
         return NodeState.COMPLETE
 
     @always_inline("nodebug")
-    fn process(mut self, token:TokenBundle, tree_interface:TreeInterface):
+    fn process(mut self, token:TokenBundle, node_state:StringLiteral, tree_interface:TreeInterface):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():    
-                self.node[]._get_ptr[T]()[].process(token, tree_interface)
+                self.node[]._get_ptr[T]()[].process(token, node_state, tree_interface)
                 return
         print('WARNING: process called on AstNode with no process method for node: ' + self.__str__())
 
@@ -131,3 +249,31 @@ struct AstNode(CollectionElement):
                 return self.node[]._get_ptr[T]()[].name(include_sig)
         print('WARNING: name called on AstNode with no name method for node: ' + self.__str__())
         return "<unknown type>"
+
+    @always_inline("nodebug")
+    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].to_string(just_code, tree_interface) 
+        print('WARNING: to_string called on AstNode with no to_string method for node: ' + self.__str__())
+        return "<unknown type>"
+
+    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].scope_level(just_code, tree_interface)
+        print('WARNING: scope_level called on AstNode with no scope_level method for node: ' + self.__str__())
+        return 0
+
+    fn scope_offset(self, just_code: Bool) -> Int:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].scope_offset(just_code)
+        print('WARNING: scope_offset called on AstNode with no scope_offset method for node: ' + self.__str__())
+        return 0

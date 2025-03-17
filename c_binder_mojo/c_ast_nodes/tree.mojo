@@ -238,11 +238,22 @@ fn get_current_node(
                               recursion_depth + 1)
     elif node_state == NodeState.WANTING_CHILD:
         var indices = NodeIndices(_current_idx, -1)
-        node = AstNode.accept(token, tree_interface, indices)
-        var new_idx = tree_interface.insert_node(node)
-        log_state_transition(logger, token, node, tree_interface, node_state, 
+        node = nodes[][_current_idx]
+        new_node = AstNode.accept(token, tree_interface, indices)
+        var new_idx = tree_interface.insert_node(new_node)
+
+        # for child in node.indicies().original_child_idxs:
+        #     print('before child: ' + String(child[]))
+
+        node.indicies_ptr()[].original_child_idxs.append(new_idx)
+
+        # for child in node.indicies().original_child_idxs:
+        #     print('after child: ' + String(child[]))
+
+
+        log_state_transition(logger, token, new_node, tree_interface, node_state, 
                            recursion_depth=recursion_depth)
-        var new_node_state = node.determine_state(token, tree_interface)
+        var new_node_state = new_node.determine_state(token, tree_interface)
         return (new_idx, new_node_state)
     else:
         node = nodes[][_current_idx]
@@ -254,12 +265,12 @@ fn get_current_node(
     
     # Process token based on new state
     if node_state == NodeState.COMPLETE:
-        node.process(token, tree_interface)
+        node.process(token, node_state, tree_interface)
         var parent_idx = node.indicies().original_parent_idx
         return get_current_node(token, parent_idx, node_state, nodes, tokens, logger, 
                                 recursion_depth + 1)
     elif node_state == NodeState.APPENDING:
-        node.process(token, tree_interface)
+        node.process(token, node_state, tree_interface)
         return (_current_idx, node_state)
     elif node_state == NodeState.WANTING_CHILD:
         return get_current_node(token, _current_idx, NodeState.WANTING_CHILD, nodes, tokens, 
@@ -268,7 +279,7 @@ fn get_current_node(
         raise Error("get_current_node called on AstNode with no determine_state method")
 
 
-fn make_tree(owned token_bundles:List[TokenBundle], tree_transition_file:String = '') raises -> ArcPointer[List[AstNode]]:
+fn make_tree(owned token_bundles:List[TokenBundle], tree_transition_file:String = '') raises -> TreeInterface:
     """Build an AST from a list of tokens.
     
     This function processes a list of tokens and constructs an abstract syntax tree
@@ -323,4 +334,4 @@ fn make_tree(owned token_bundles:List[TokenBundle], tree_transition_file:String 
     logger.info("  - Nodes created: " + String(len(nodes[])))
     logger.info("  - Tokens per node ratio: " + String(Float64(len(token_bundles)) / Float64(len(nodes[]))))
     
-    return nodes
+    return TreeInterface(nodes, _token_bundles, node_state)

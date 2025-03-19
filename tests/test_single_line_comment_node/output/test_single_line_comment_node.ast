@@ -1,5 +1,6 @@
 RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3))
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
-// Basic single line comment SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
-
-// Another single line comment PlaceHolderNode(original_parent_idx=0, original_current_idx=3)
+// Basic single line comment 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
+// Another single line comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=3)

@@ -63,11 +63,11 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
     if level > 0:
         indent = "\t" * level
     var children_added = False
-    var line_num = 0
+    var line_num = -1
     
     # Add node name if not just code
     if not just_code:
-        s += indent + node.name(include_sig=True) + "\n"
+        s += indent + node.name(include_sig=True)
 
     # Add tokens
     for token in node.token_bundles():
@@ -78,9 +78,11 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
         s += token[].token + " "
 
     # Add children
-    # s += "\n" # NOTE(josiahls): Not sure if this is needed.
-    s += indent
-    s += string_children(node, just_code, tree_interface)
+    if len(node.indicies().original_child_idxs) > 0:
+        if line_num != -1:
+            s += "\n"
+        s += indent
+        s += string_children(node, just_code, tree_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num:
@@ -88,7 +90,9 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
             s += indent
             line_num = token[].row_num
         s += token[].token + " "
-        
+    
+    if not just_code:
+        s += "\n"
     return s
 
 

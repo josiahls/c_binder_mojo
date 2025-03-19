@@ -6,7 +6,13 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import TokenBundle, NodeIndices,NodeState, TokenBundles
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
-from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike, default_scope_level, default_to_string
+from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike, default_scope_level, default_to_string, string_children
+
+
+def root_node_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+    if just_code:
+        return ""
+    return default_to_string(node, just_code, tree_interface) + "\n"
 
 
 @value
@@ -59,7 +65,12 @@ struct RootNode(NodeAstLike):
             return self.__name__
 
     fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
-        return default_to_string(AstNode(self), just_code, tree_interface)
+        if just_code:
+            return string_children(AstNode(self), just_code, tree_interface)
+        
+        s = self.name(include_sig=True) + "\n"
+        s += string_children(AstNode(self), just_code, tree_interface)
+        return s
 
     fn scope_level(self,just_code:Bool, tree_interface: TreeInterface) -> Int:
         return default_scope_level(self._indicies[].original_parent_idx, just_code, tree_interface)

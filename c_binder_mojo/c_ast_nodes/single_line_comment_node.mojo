@@ -45,7 +45,8 @@ struct SingleLineCommentNode(NodeAstLike):
 
     fn process(mut self, token:TokenBundle, node_state:StringLiteral, tree_interface:TreeInterface):
         if node_state == NodeState.COMPLETE:
-            self._token_bundles[].append(token)
+            pass
+            # self._token_bundles[].append(token)
         elif node_state == NodeState.APPENDING:
             self._token_bundles[].append(token)
 

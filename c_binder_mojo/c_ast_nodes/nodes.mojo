@@ -8,21 +8,19 @@ from c_binder_mojo.c_ast_nodes.node_variant import Variant
 from c_binder_mojo import c_ast_nodes
 
 
-fn _string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+fn string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
     """Converts children to string with proper indentation and line breaks.
     
     Args:
+        node: The node to convert to a string.
         just_code: If True, outputs only code and comments. If False, includes node metadata
             with '>>>' separator to show node ownership.
+        tree_interface: The tree interface to use for the node.
     """
     var s = String()
-    var first = True
     for child_idx in node.indicies().original_child_idxs:
         var child = tree_interface.nodes()[][child_idx[]]
-        if not first:
-            s += "\n"
         s += child.to_string(just_code, tree_interface)
-        first = False
     return s
 
 
@@ -49,8 +47,10 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
     """Default string conversion for nodes.
     
     Args:
+        node: The node to convert to a string.
         just_code: If True, outputs only code and comments. If False, includes node metadata
             with '>>>' separator to show node ownership.
+        tree_interface: The tree interface to use for the node.
     
     Format when just_code=False:
         NodeName >>> actual content
@@ -67,7 +67,7 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
     
     # Add node name if not just code
     if not just_code:
-        s += indent + node.name(include_sig=True) + " "
+        s += indent + node.name(include_sig=True) + "\n"
 
     # Add tokens
     for token in node.token_bundles():
@@ -78,9 +78,9 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
         s += token[].token + " "
 
     # Add children
-    s += "\n"
+    # s += "\n" # NOTE(josiahls): Not sure if this is needed.
     s += indent
-    s += _string_children(node, just_code, tree_interface)
+    s += string_children(node, just_code, tree_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num:

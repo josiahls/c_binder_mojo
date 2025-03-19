@@ -37,8 +37,10 @@ fn test_single_line_comment_node() raises:
     var tree_interface = make_tree(tokenizer.tokens, String(tree_log_file))
     
     # Save AST for debugging
+    var ast_file_just_code = output_dir / "output/test_single_line_comment_node.ast_just_code"
+    ast_file_just_code.write_text(tree_interface.nodes()[][0].to_string(just_code=True, tree_interface=tree_interface))
     var ast_file = output_dir / "output/test_single_line_comment_node.ast"
-    ast_file.write_text(tree_interface.nodes()[][0].to_string(just_code=True, tree_interface=tree_interface))
+    ast_file.write_text(tree_interface.nodes()[][0].to_string(just_code=False, tree_interface=tree_interface))
     
     # Verify the AST structure
     var root_node = tree_interface.nodes()[][0]

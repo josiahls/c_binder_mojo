@@ -31,7 +31,7 @@ struct PlaceHolderNode(NodeAstLike):
         return NodeState.COMPLETE
 
     fn process(mut self, token:TokenBundle, node_state:StringLiteral, tree_interface:TreeInterface):
-        pass    
+        self._token_bundles[].append(token)    
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

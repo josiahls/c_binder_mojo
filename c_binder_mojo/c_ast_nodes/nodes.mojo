@@ -110,7 +110,11 @@ fn default_to_string_just_code(node: AstNode, tree_interface: TreeInterface) -> 
     var indent = String("")
     if level > 0:
         indent = "\t" * level
-    var line_num = -1
+    # NOTE(josiahls): This is different from the default_to_string function.
+    # We start at line_num = 0 because we want to include the first line of code.
+    # For default_to_string, we start at line_num = -1 because otherwise,
+    # the first line of code is going to be on the same line as the signature.
+    var line_num = 0
     
     # Add tokens
     for token in node.token_bundles():

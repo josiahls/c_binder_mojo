@@ -242,18 +242,11 @@ fn get_current_node(
         new_node = AstNode.accept(token, tree_interface, indices)
         var new_idx = tree_interface.insert_node(new_node)
 
-        # for child in node.indicies().original_child_idxs:
-        #     print('before child: ' + String(child[]))
-
         node.indicies_ptr()[].original_child_idxs.append(new_idx)
 
-        # for child in node.indicies().original_child_idxs:
-        #     print('after child: ' + String(child[]))
-
-
+        var new_node_state = new_node.determine_state(token, tree_interface)
         log_state_transition(logger, token, new_node, tree_interface, node_state, 
                            recursion_depth=recursion_depth)
-        var new_node_state = new_node.determine_state(token, tree_interface)
         return (new_idx, new_node_state)
     else:
         node = nodes[][_current_idx]

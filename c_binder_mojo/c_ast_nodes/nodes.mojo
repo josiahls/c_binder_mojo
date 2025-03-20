@@ -43,13 +43,13 @@ fn default_scope_level(parent_idx: Int, just_code: Bool, tree_interface: TreeInt
     return level
 
 
-fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
-    """Default string conversion for nodes.
+fn default_to_string(node: AstNode, tree_interface: TreeInterface) -> String:
+    """Default string conversion for nodes. Includes the node signature and the node's content.
+
+    If we want just code, use default_to_string_just_code instead.
     
     Args:
         node: The node to convert to a string.
-        just_code: If True, outputs only code and comments. If False, includes node metadata
-            with '>>>' separator to show node ownership.
         tree_interface: The tree interface to use for the node.
     
     Format when just_code=False:
@@ -58,16 +58,14 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
         NodeName >>> more content...
     """
     var s = String()
-    var level = node.scope_level(just_code, tree_interface)
+    var level = node.scope_level(False, tree_interface)
     var indent = String("")
     if level > 0:
         indent = "\t" * level
-    var children_added = False
     var line_num = -1
     
     # Add node name if not just code
-    if not just_code:
-        s += indent + node.name(include_sig=True)
+    s += indent + node.name(include_sig=True)
 
     # Add tokens
     for token in node.token_bundles():
@@ -82,7 +80,7 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
         if line_num != -1:
             s += "\n"
         s += indent
-        s += string_children(node, just_code, tree_interface)
+        s += string_children(node, False, tree_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num:
@@ -91,9 +89,53 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
             line_num = token[].row_num
         s += token[].token + " "
     
-    if not just_code:
-        s += "\n"
+    s += "\n"
     return s
+
+
+fn default_to_string_just_code(node: AstNode, tree_interface: TreeInterface) -> String:
+    """Default string conversion for nodes.
+    
+    Args:
+        node: The node to convert to a string.
+        tree_interface: The tree interface to use for the node.
+    
+    Format when just_code=False:
+        NodeName >>> actual content
+        NodeName >>> continued content
+        NodeName >>> more content...
+    """
+    var s = String()
+    var level = node.scope_level(True, tree_interface)
+    var indent = String("")
+    if level > 0:
+        indent = "\t" * level
+    var line_num = -1
+    
+    # Add tokens
+    for token in node.token_bundles():
+        if token[].row_num != line_num:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+
+    # Add children
+    if len(node.indicies().original_child_idxs) > 0:
+        if line_num != -1:
+            s += "\n"
+        s += indent
+        s += string_children(node, True, tree_interface)
+
+    for token in node.token_bundles_tail():
+        if token[].row_num != line_num:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+    
+    return s
+
 
 
 trait NodeAstLike(CollectionElement, Stringable): 

@@ -6,7 +6,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import TokenBundle, NodeIndices, TokenBundles, NodeState
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
-from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike, default_scope_level, default_to_string
+from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike, default_scope_level, default_to_string, default_to_string_just_code
 
 
 @value
@@ -15,9 +15,10 @@ struct PlaceHolderNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
 
-    fn __init__(out self, indicies:NodeIndices, token_bundles:TokenBundles):
+    fn __init__(out self, indicies:NodeIndices, token:TokenBundle):
         self._indicies = indicies
-        self._token_bundles = token_bundles
+        self._token_bundles = TokenBundles()
+        self._token_bundles[].append(token)
 
     @staticmethod
     fn accept(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Bool:
@@ -25,14 +26,13 @@ struct PlaceHolderNode(NodeAstLike):
 
     @staticmethod
     fn create(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Self:
-        return Self(indices, TokenBundles())
+        return Self(indices, token)
 
     fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
         return NodeState.COMPLETE
 
     fn process(mut self, token:TokenBundle, node_state:StringLiteral, tree_interface:TreeInterface):
-        self._token_bundles[].append(token)    
-
+        pass
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
 
@@ -59,7 +59,10 @@ struct PlaceHolderNode(NodeAstLike):
             return self.__name__
 
     fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
-        return default_to_string(AstNode(self), just_code, tree_interface)
+        if just_code:
+            return default_to_string_just_code(AstNode(self), tree_interface)
+        else:
+            return default_to_string(AstNode(self), tree_interface)
 
     fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
         return default_scope_level(self._indicies[].original_parent_idx, just_code, tree_interface)

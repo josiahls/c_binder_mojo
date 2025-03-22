@@ -1,4 +1,3 @@
-cat > /home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/test_multiline_comment_node/test_multiline_comment_node.h << 'EOL'
 /* Basic multiline comment */
 
 /* Multiline comment
@@ -39,4 +38,3 @@ int some_function(); /* Comment after code */
  */
 
 /* Comment with trailing spaces    */
-EOL

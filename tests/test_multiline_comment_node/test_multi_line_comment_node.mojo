@@ -9,14 +9,14 @@ from c_binder_mojo.common import Tokenizer
 from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
 
-fn test_multiline_comment_node() raises:
+fn test_multi_line_comment_node() raises:
     """Test the parsing and AST construction for multiline comments."""
-    var logger = Logger.get_default_logger("test_multiline_comment_node")
-    logger.info("Starting multiline comment node test")
+    var logger = Logger.get_default_logger("test_multi_line_comment_node")
+    logger.info("Starting multi-line comment node test")
     
     # Path to the test header file
     var test_dir = Path("/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/test_multiline_comment_node")
-    var test_file_path = test_dir / "test_multiline_comment_node.h"
+    var test_file_path = test_dir / "test_multi_line_comment_node.h"
     if not test_file_path.exists():
         raise Error("Test file doesn't exist: " + String(test_file_path))
     
@@ -29,17 +29,17 @@ fn test_multiline_comment_node() raises:
     tokenizer.tokenize(test_file_path)
     
     # Save tokenized output for debugging
-    var tokens_file = output_dir / "test_multiline_comment_node.tokenized"
+    var tokens_file = output_dir / "test_multi_line_comment_node.tokenized"
     tokens_file.write_text(tokenizer.to_string())
     
     # Generate AST
-    var tree_log_file = output_dir / "test_multiline_comment_node.tree"
+    var tree_log_file = output_dir / "test_multi_line_comment_node.tree"
     var tree_interface = make_tree(tokenizer.tokens, String(tree_log_file))
     
     # Save AST for debugging
-    var ast_file_just_code = output_dir / "test_multiline_comment_node.ast_just_code"
+    var ast_file_just_code = output_dir / "test_multi_line_comment_node.ast_just_code"
     ast_file_just_code.write_text(tree_interface.nodes()[][0].to_string(just_code=True, tree_interface=tree_interface))
-    var ast_file = output_dir / "test_multiline_comment_node.ast"
+    var ast_file = output_dir / "test_multi_line_comment_node.ast"
     ast_file.write_text(tree_interface.nodes()[][0].to_string(just_code=False, tree_interface=tree_interface))
     
     # Debug token information
@@ -78,14 +78,14 @@ fn test_multiline_comment_node() raises:
     if doc_comment_count < 2:
         raise Error("Expected at least 2 documentation comments, but found " + String(doc_comment_count))
     
-    logger.info("Multiline comment test passed with " + String(comment_count) + 
+    logger.info("Multi-line comment test passed with " + String(comment_count) + 
                " total comments, including " + String(doc_comment_count) + " documentation comments")
     return
 
 fn main() raises:
     set_global_logger_settings(level=10)  # Set to DEBUG level
     try:
-        test_multiline_comment_node()
+        test_multi_line_comment_node()
         print("Test succeeded")
     except e:
         print("Test failed: " + String(e))

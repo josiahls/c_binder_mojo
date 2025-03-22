@@ -1,0 +1,78 @@
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, 6, ...) len=31)
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=1)
+/* Basic multiline comment */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=2)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
+/* Multiline comment 
+ * with multiple 
+ * lines 
+ */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=4)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=5)
+/** Documentation comment */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=6)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+/** Documentation comment 
+ * with multiple 
+ * lines 
+ */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=8)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=9)
+/* Comment with special characters: !@#$%^&*()_+ */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=10)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
+/* Comment with code-like content:  
+ * int x = 5 ;  
+ * void foo() ;  
+ */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=12)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=13)
+int 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
+some_function() 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
+; 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=17)
+/* Comment after code */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=19)
+// This is not a multiline comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=21)
+/* Comment with Unicode: 你好世界 */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=23)
+/* Empty multiline comment */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=25)
+/**/ 
+ 
+/* Nested-looking comment /* (not actually nested) */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+/* 
+ * Comment 
+ *    with 
+ *       indentation 
+ */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+/* Comment with trailing spaces    */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
+ 

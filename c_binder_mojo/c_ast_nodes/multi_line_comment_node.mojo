@@ -15,18 +15,22 @@ struct MultiLineCommentNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: StringLiteral
-    var _row_num: Int
+    var _is_complete: Bool
 
     fn __init__(out self, indicies:NodeIndices, token_bundle:TokenBundle):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles[].append(token_bundle)
         self._node_state = NodeState.APPENDING
-        self._row_num = token_bundle.row_num
+        self._is_complete = False
 
     @staticmethod
     fn accept(token:TokenBundle, tree_interface:TreeInterface, indices:NodeIndices) -> Bool:
         if token.token == CTokens.COMMENT_MULTI_LINE_BEGIN:
+            return True
+        elif token.token == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
+            return True
+        elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN):
             return True
         elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_BEGIN):
             return True
@@ -37,10 +41,22 @@ struct MultiLineCommentNode(NodeAstLike):
         return Self(indices, token)
 
     fn determine_state(mut self, token:TokenBundle, tree_interface:TreeInterface) -> StringLiteral:
-        if token.row_num != self._row_num:
+        if self._is_complete:
             self._node_state = NodeState.COMPLETE
-        else:
-            self._node_state = NodeState.APPENDING
+            return self._node_state
+
+        # Check if the token is the end of the multi-line comment.
+        # Delay the completion since we need to append this token to this node.
+        if token.token == CTokens.COMMENT_MULTI_LINE_END:
+            self._is_complete = True
+        elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_END):
+            self._is_complete = True
+        elif token.token == CTokens.COMMENT_MULTI_LINE_INLINE_END:
+            self._is_complete = True
+        elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_END):
+            self._is_complete = True
+
+        self._node_state = NodeState.APPENDING
         return self._node_state    
 
     fn process(mut self, token:TokenBundle, node_state:StringLiteral, tree_interface:TreeInterface):

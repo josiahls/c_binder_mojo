@@ -98,19 +98,27 @@ struct NodeIndices:
     fn _child_str(self, children_idxs: List[Int]) -> String:
         var s = String("")
         n_children = len(children_idxs)
-        i = 0
-        for child_idx in children_idxs:
-            if i == 0:
-                s += "("
-            s += String(child_idx[])
-            if i < n_children - 1:
+
+        if n_children == 0:
+            return "()"
+
+        s += "("
+
+        # If we have more than 6 elements, show first 5 then ellipsis
+        var display_count = n_children
+        if n_children > 6:
+            display_count = 5
+
+        for i in range(display_count):
+            s += String(children_idxs[i])
+            if i < display_count - 1:
                 s += ", "
-            i += 1
-            if i > 5:
-                s += "...) len=" + String(n_children)
-                break
-        if i > 0 and i < 5:
+
+        if n_children > 6:
+            s += ", ...) len=" + String(n_children)
+        else:
             s += ")"
+
         return s
 
     fn __str__(self) -> String:

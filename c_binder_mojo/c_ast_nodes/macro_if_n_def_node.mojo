@@ -158,6 +158,8 @@ struct MacroIfNDefNode(NodeAstLike):
             if self._is_complete:
                 self._token_bundles_tail[].append(token)
             else:
+                if len(self._token_bundles[]) == 1:
+                    self._macro_name = token.token
                 self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:

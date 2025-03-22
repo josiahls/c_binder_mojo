@@ -1,10 +1,11 @@
 # Native Mojo Modules
 from pathlib import Path
-from memory import ArcPointer,UnsafePointer
+from memory import ArcPointer, UnsafePointer
+
 # from utils.variant import Variant
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.common import TokenBundle,TokenBundles
+from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.c_ast_nodes_old.tree import Tree
 from c_binder_mojo.c_ast_nodes_old.common import NodeAstLike
 from c_binder_mojo.c_ast_nodes_old.node_variant import Variant
@@ -15,14 +16,14 @@ from c_binder_mojo.c_ast_nodes_old.common import CTokens
 @value
 struct MacroElseNode(NodeAstLike):
     alias __name__ = "MacroElseNode"
-    
-    var _token_bundles: TokenBundles
-    var just_code:Bool
-    var _parent: Int
-    var _current_idx:Int
-    var _children_idxs:ArcPointer[List[Int]]
 
-    fn __init__(out self,token_bundle:TokenBundle, parent:Int):
+    var _token_bundles: TokenBundles
+    var just_code: Bool
+    var _parent: Int
+    var _current_idx: Int
+    var _children_idxs: ArcPointer[List[Int]]
+
+    fn __init__(out self, token_bundle: TokenBundle, parent: Int):
         self._token_bundles = TokenBundles()
         self._token_bundles.append(token_bundle)
         self.just_code = False
@@ -30,37 +31,53 @@ struct MacroElseNode(NodeAstLike):
         self._current_idx = 0
         self._children_idxs = ArcPointer(List[Int]())
 
-    fn __str__(self) -> String: 
-        return node2string(self.display_name(), self.token_bundles(), self.just_code)
+    fn __str__(self) -> String:
+        return node2string(
+            self.display_name(), self.token_bundles(), self.just_code
+        )
 
-    fn append(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return False
+    fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+        return False
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool: 
+    fn accept(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Bool:
         if token_bundle.token == CTokens.MACRO_ELSE:
             return True
         return False
+
     @staticmethod
-    fn create(token_bundle:TokenBundle, parent_idx:Int,  mut tree:Tree) -> Self:
+    fn create(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Self:
         return Self(token_bundle, parent_idx)
-    fn done(self, token_bundle:TokenBundle, mut tree: Tree) -> Bool: 
+
+    fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         if token_bundle.token == CTokens.MACRO_ENDIF:
             return True
         return False
 
-    fn make_child(mut self, token_bundle:TokenBundle, mut tree:Tree) -> Bool: return True
-    fn parent_idx(self) -> Int: return self._parent
-    fn children_idxs(mut self) -> ArcPointer[List[Int]]: return self._children_idxs
-    fn current_idx(self) -> Int: return self._current_idx
-    fn set_current_idx(mut self, value:Int): self._current_idx = value
+    fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
+        return True
 
+    fn parent_idx(self) -> Int:
+        return self._parent
+
+    fn children_idxs(mut self) -> ArcPointer[List[Int]]:
+        return self._children_idxs
+
+    fn current_idx(self) -> Int:
+        return self._current_idx
+
+    fn set_current_idx(mut self, value: Int):
+        self._current_idx = value
 
     fn display_name(self) -> String:
         s = String(self.__name__)
-        s += String('(parent=') + String(self._parent) + String (',')
-        s += String('current_idx=') + String(self._current_idx) + String(')')
+        s += String("(parent=") + String(self._parent) + String(",")
+        s += String("current_idx=") + String(self._current_idx) + String(")")
         return s
-        
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles

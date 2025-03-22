@@ -1,4 +1,4 @@
-tree.mojo:189 - INFO: [Depth:0] STARTED -> WANTING_CHILD| RootNode(original_current_idx=0)
+tree.mojo:189 - INFO: [Depth:0] MODULE_INIT -> WANTING_CHILD RootNode(original_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete

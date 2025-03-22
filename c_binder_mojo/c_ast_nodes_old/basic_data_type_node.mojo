@@ -1,25 +1,28 @@
 # Native Mojo Modules
 from pathlib import Path
 from memory import ArcPointer
+
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.common import TokenBundle,TokenBundles
+from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.c_ast_nodes_old.tree import Tree
 from c_binder_mojo.c_ast_nodes_old.common import NodeAstLike
 from c_binder_mojo.c_ast_nodes_old.node_variant import Variant
 from c_binder_mojo.c_ast_nodes_old.nodes import node2string
 from c_binder_mojo.c_ast_nodes_old.common import CPrimitiveTypes
 
+
 @value
 struct BasicDataTypeNode(NodeAstLike):
     """Represents a C data type, either basic or compound.
-    
+
     Examples:
         - Basic: "unsigned char", "int", "float"
         - Compound: "unsigned char", "signed int", "float*"
     """
+
     alias __name__ = "BasicDataTypeNode"
-    
+
     var _token_bundles: TokenBundles
     var just_code: Bool
     var _parent: Int
@@ -35,9 +38,11 @@ struct BasicDataTypeNode(NodeAstLike):
         self._current_idx = 0
         self._children = ArcPointer(List[Int]())
         self.is_compound = False
-        
+
     fn __str__(self) -> String:
-        return node2string(self.display_name(), self.token_bundles(), self.just_code)
+        return node2string(
+            self.display_name(), self.token_bundles(), self.just_code
+        )
 
     @staticmethod
     fn split_pointer_from_token(token: String) -> List[String]:
@@ -48,9 +53,13 @@ struct BasicDataTypeNode(NodeAstLike):
         return tokens
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool:
+    fn accept(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Bool:
         all_accepted = False
-        for subtoken in BasicDataTypeNode.split_pointer_from_token(token_bundle.token):
+        for subtoken in BasicDataTypeNode.split_pointer_from_token(
+            token_bundle.token
+        ):
             if subtoken[] in CPrimitiveTypes:
                 all_accepted = True
                 break
@@ -58,20 +67,23 @@ struct BasicDataTypeNode(NodeAstLike):
         return all_accepted
 
     @staticmethod
-    fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
+    fn create(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Self:
         return Self(token_bundle, parent_idx)
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
-
         # Handle compound types like "unsigned char" or "long int"
         split_token_bundles = List[TokenBundle]()
         failed_to_accept = False
-        for subtoken in BasicDataTypeNode.split_pointer_from_token(token_bundle.token):
+        for subtoken in BasicDataTypeNode.split_pointer_from_token(
+            token_bundle.token
+        ):
             split_token = TokenBundle(
-                subtoken[], 
-                token_bundle.line_num, 
-                token_bundle.col_num, 
-                token_bundle.is_splitter
+                subtoken[],
+                token_bundle.line_num,
+                token_bundle.col_num,
+                token_bundle.is_splitter,
             )
             if split_token.token in CPrimitiveTypes:
                 self.is_compound = True
@@ -104,12 +116,12 @@ struct BasicDataTypeNode(NodeAstLike):
 
     fn set_current_idx(mut self, value: Int):
         self._current_idx = value
-    
+
     fn display_name(self) -> String:
         s = String(self.__name__)
-        s += String('(parent=') + String(self._parent) + String(',')
-        s += String('current_idx=') + String(self._current_idx) + String(',')
-        s += String('is_compound=') + String(self.is_compound) + String(')')
+        s += String("(parent=") + String(self._parent) + String(",")
+        s += String("current_idx=") + String(self._current_idx) + String(",")
+        s += String("is_compound=") + String(self.is_compound) + String(")")
         return s
 
     fn token_bundles(self) -> TokenBundles:

@@ -83,14 +83,20 @@ struct StructFieldNode(NodeAstLike):
 
         if not self._is_struct:
             # For regular fields, the last non-punctuation token before semicolon is the name
-            if not token_bundle.is_splitter and token_bundle.token != CTokens.END_STATEMENT:
+            if (
+                not token_bundle.is_splitter
+                and token_bundle.token != CTokens.END_STATEMENT
+            ):
                 self.field_name = token_bundle.token
             self._token_bundles.append(token_bundle)
             return True
 
         if self._is_struct and len(self._children[]) > 0:
             # For struct fields, token after closing brace is the name
-            if not token_bundle.is_splitter and token_bundle.token != CTokens.END_STATEMENT:
+            if (
+                not token_bundle.is_splitter
+                and token_bundle.token != CTokens.END_STATEMENT
+            ):
                 self.field_name = token_bundle.token
             self._token_bundles.append(token_bundle)
             return True

@@ -1,9 +1,10 @@
 # Native Mojo Modules
 from pathlib import Path
 from memory import ArcPointer
+
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.common import TokenBundle,TokenBundles
+from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.c_ast_nodes_old.tree import Tree
 from c_binder_mojo.c_ast_nodes_old.common import NodeAstLike, CTokens
 from c_binder_mojo.c_ast_nodes_old.node_variant import Variant
@@ -16,6 +17,7 @@ from c_binder_mojo.c_ast_nodes_old.struct_node import StructNode
 @value
 struct ScopeType:
     """Defines the type of scope based on parent node."""
+
     alias ENUM = 0
     alias STRUCT = 1
     alias FUNCTION = 2
@@ -46,16 +48,18 @@ struct ScopeType:
         # Add other node type checks as we implement them
         return Self(Self.UNKNOWN)
 
+
 @value
 struct ScopeNode(NodeAstLike):
     """Node that handles a scoped block of code between { and }.
-    
+
     This node is responsible for managing content between curly braces.
     Each scope node handles a single level of braces, with nested scopes
     creating their own nodes.
     """
+
     alias __name__ = "ScopeNode"
-    
+
     var _token_bundles: TokenBundles
     var just_code: Bool
     var _parent: Int
@@ -75,10 +79,14 @@ struct ScopeNode(NodeAstLike):
         self.scope_type = ScopeType(ScopeType.UNKNOWN)
 
     fn __str__(self) -> String:
-        return node2string(self.display_name(), self.token_bundles(), self.just_code)
+        return node2string(
+            self.display_name(), self.token_bundles(), self.just_code
+        )
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree) -> Bool:
+    fn accept(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Bool:
         return token_bundle.token == CTokens.SCOPE_BEGIN
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
@@ -87,10 +95,10 @@ struct ScopeNode(NodeAstLike):
             # Add split token for children to be added.
             self._token_bundles.append(
                 TokenBundle(
-                    token='',
+                    token="",
                     is_splitter=True,
                     line_num=token_bundle.line_num,
-                    col_num=token_bundle.col_num
+                    col_num=token_bundle.col_num,
                 )
             )
             self._token_bundles.append(token_bundle)
@@ -98,7 +106,9 @@ struct ScopeNode(NodeAstLike):
         return False
 
     @staticmethod
-    fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
+    fn create(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Self:
         var node = Self(token_bundle, parent_idx)
         if parent_idx >= 0:
             node.scope_type = ScopeType.from_parent(tree.nodes[parent_idx])
@@ -125,17 +135,15 @@ struct ScopeNode(NodeAstLike):
     fn set_current_idx(mut self, value: Int):
         self._current_idx = value
 
-
-
     fn display_name(self) -> String:
         s = String(self.__name__)
-        s += String('(parent=') + String(self._parent) + String(',')
-        s += String('current_idx=') + String(self._current_idx) + String(',')
-        s += String('scope_type=') + String(self.scope_type) + String(')')
+        s += String("(parent=") + String(self._parent) + String(",")
+        s += String("current_idx=") + String(self._current_idx) + String(",")
+        s += String("scope_type=") + String(self.scope_type) + String(")")
         return s
 
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles
 
     fn should_children_inline(self) -> Bool:
-        return False 
+        return False

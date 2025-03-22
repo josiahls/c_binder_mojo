@@ -1,10 +1,15 @@
 # Native Mojo Modules
 from memory import ArcPointer
+
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.common import TokenBundle,TokenBundles
+from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.mojo_ast_nodes.tree import Tree
-from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike, TreeInterface, NodeIndices
+from c_binder_mojo.mojo_ast_nodes.common import (
+    NodeAstLike,
+    TreeInterface,
+    NodeIndices,
+)
 from c_binder_mojo.mojo_ast_nodes.node_variant import Variant
 from c_binder_mojo.mojo_ast_nodes import (
     PlaceHolderNode,
@@ -30,22 +35,22 @@ from c_binder_mojo import c_ast_nodes_old
 @value
 struct AstNode(CollectionElement):
     alias type = Variant[
-        RootNode,                # Must be first to handle root
-        MacroIfNDefNode,         # Handle macros before comments
-        MacroElseNode,          # Handle else blocks
-        MacroDefineNode,        # Handle define directives
-        TypedefNode,            # Handle typedef declarations
-        BasicDataTypeNode,      # Handle basic data types
-        EnumNode,              # Handle enum declarations
-        ScopeNode,             # Handle scope blocks
-        EnumFieldNode,         # Handle enum field declarations
-        StructNode,            # Handle struct declarations
-        StructFieldNode,        # Handle struct field declarations
-        MultiLineCommentNode,   # Handle multi-line comments
-        SingleLineCommentNode,   # Handle comments before fallback
-        WhitespaceNode,         # Handle whitespace
-        DeletedNode,            # Handle deleted nodes
-        PlaceHolderNode,        # Must be last as fallback
+        RootNode,  # Must be first to handle root
+        MacroIfNDefNode,  # Handle macros before comments
+        MacroElseNode,  # Handle else blocks
+        MacroDefineNode,  # Handle define directives
+        TypedefNode,  # Handle typedef declarations
+        BasicDataTypeNode,  # Handle basic data types
+        EnumNode,  # Handle enum declarations
+        ScopeNode,  # Handle scope blocks
+        EnumFieldNode,  # Handle enum field declarations
+        StructNode,  # Handle struct declarations
+        StructFieldNode,  # Handle struct field declarations
+        MultiLineCommentNode,  # Handle multi-line comments
+        SingleLineCommentNode,  # Handle comments before fallback
+        WhitespaceNode,  # Handle whitespace
+        DeletedNode,  # Handle deleted nodes
+        PlaceHolderNode,  # Must be last as fallback
     ]
     # NOTE: This is experimental.
     var node: ArcPointer[Self.type]
@@ -71,23 +76,31 @@ struct AstNode(CollectionElement):
 
     @always_inline("nodebug")
     @staticmethod
-    fn accept(c_ast_node: c_ast_nodes_old.nodes.AstNode, parent_idx: Int, tree_interface: TreeInterface) -> Self:
+    fn accept(
+        c_ast_node: c_ast_nodes_old.nodes.AstNode,
+        parent_idx: Int,
+        tree_interface: TreeInterface,
+    ) -> Self:
         """
         Iterates over each type in the variant at compile-time and calls accept.
         """
+
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept(c_ast_node, parent_idx, tree_interface):
                 return Self(T.create(c_ast_node, parent_idx, tree_interface))
-        
-        return Self(PlaceHolderNode.create(c_ast_node, parent_idx, tree_interface))
+
+        return Self(
+            PlaceHolderNode.create(c_ast_node, parent_idx, tree_interface)
+        )
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
         """
         Iterates over each type in the variant at compile-time and calls to_string.
         """
+
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             # Ts[i] is one of NodeA, NodeB, etc.
@@ -100,13 +113,17 @@ struct AstNode(CollectionElement):
                 # NOTE: Originally was self.node._get_ptr[T]()
                 var val_ptr = self.node[]._get_ptr[T]()
                 # Now call the trait method:
-                return String(val_ptr[]) 
+                return String(val_ptr[])
 
         # If we somehow never matched (should never happen if the variant covers all):
         return "<unknown type>"
 
     # State checks
-    fn is_accepting_tokens(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_accepting_tokens(
+        self,
+        c_ast_node: c_ast_nodes_old.nodes.AstNode,
+        tree_interface: TreeInterface,
+    ) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -115,7 +132,11 @@ struct AstNode(CollectionElement):
                 return val_ptr[].is_accepting_tokens(c_ast_node, tree_interface)
         return False
 
-    fn is_complete(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn is_complete(
+        self,
+        c_ast_node: c_ast_nodes_old.nodes.AstNode,
+        tree_interface: TreeInterface,
+    ) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -124,7 +145,11 @@ struct AstNode(CollectionElement):
                 return val_ptr[].is_complete(c_ast_node, tree_interface)
         return True
 
-    fn wants_child(self, c_ast_node: c_ast_nodes_old.nodes.AstNode, tree_interface: TreeInterface) -> Bool:
+    fn wants_child(
+        self,
+        c_ast_node: c_ast_nodes_old.nodes.AstNode,
+        tree_interface: TreeInterface,
+    ) -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -206,7 +231,6 @@ struct AstNode(CollectionElement):
         print("No finalize found for node: ", String(self))
         return
 
-
     fn display_name(self) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -227,7 +251,9 @@ struct AstNode(CollectionElement):
         print("No token bundles found for node: ", String(self))
         return TokenBundles()
 
-    fn to_string(self, just_code: Bool, tree_interface: TreeInterface) -> String:
+    fn to_string(
+        self, just_code: Bool, tree_interface: TreeInterface
+    ) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -239,6 +265,7 @@ struct AstNode(CollectionElement):
 
     fn name(self) -> String:
         """Returns the raw node name without any metadata."""
+
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -249,9 +276,11 @@ struct AstNode(CollectionElement):
         return "UnknownNode"
 
 
-fn _string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+fn _string_children(
+    node: AstNode, just_code: Bool, tree_interface: TreeInterface
+) -> String:
     """Converts children to string with proper indentation and line breaks.
-    
+
     Args:
         just_code: If True, outputs only code and comments. If False, includes node metadata
             with '>>>' separator to show node ownership.
@@ -267,13 +296,15 @@ fn _string_children(node: AstNode, just_code: Bool, tree_interface: TreeInterfac
     return s
 
 
-fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterface) -> String:
+fn default_to_string(
+    node: AstNode, just_code: Bool, tree_interface: TreeInterface
+) -> String:
     """Default string conversion for nodes.
-    
+
     Args:
         just_code: If True, outputs only code and comments. If False, includes node metadata
             with '>>>' separator to show node ownership.
-    
+
     Format when just_code=False:
         NodeName >>> actual content
         NodeName >>> continued content
@@ -286,7 +317,7 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
         indent = "\t" * level
     var children_added = False
     var line_num = 0
-    
+
     # Add node name if not just code
     if not just_code:
         s += indent + node.display_name() + " "
@@ -299,7 +330,7 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
             s += _string_children(node, just_code, tree_interface)
             children_added = True
             continue
-            
+
         # Add indentation on new lines
         if token[].line_num != line_num:
             if len(s) > 0:
@@ -308,11 +339,11 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
             if not just_code:
                 s += node.name() + " >>> "
             line_num = token[].line_num
-            
+
         s += token[].token
         if not token[].token.endswith("\n"):
             s += " "
-    
+
     # Add children if not already added
     if not children_added:
         var children = _string_children(node, just_code, tree_interface)
@@ -320,5 +351,5 @@ fn default_to_string(node: AstNode, just_code: Bool, tree_interface: TreeInterfa
             if len(s) > 0:
                 s += "\n"
             s += children
-    
+
     return s

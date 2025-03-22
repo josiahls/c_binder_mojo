@@ -1,9 +1,10 @@
 # Native Mojo Modules
 from pathlib import Path
-from memory import ArcPointer,UnsafePointer
+from memory import ArcPointer, UnsafePointer
+
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.common import TokenBundle,TokenBundles
+from c_binder_mojo.common import TokenBundle, TokenBundles
 from c_binder_mojo.c_ast_nodes_old.tree import Tree
 from c_binder_mojo.c_ast_nodes_old.common import NodeAstLike
 from c_binder_mojo.c_ast_nodes_old.node_variant import Variant
@@ -14,7 +15,7 @@ from c_binder_mojo.c_ast_nodes_old.common import CTokens
 @value
 struct IncludeNode(NodeAstLike):
     alias __name__ = "IncludeNode"
-    
+
     var _token_bundles: TokenBundles
     var just_code: Bool
     var _parent: Int
@@ -30,20 +31,26 @@ struct IncludeNode(NodeAstLike):
         self._current_line_number = token_bundle.line_num
 
     fn __str__(self) -> String:
-        return node2string(self.display_name(), self.token_bundles(), self.just_code)
+        return node2string(
+            self.display_name(), self.token_bundles(), self.just_code
+        )
 
     fn append(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         self._token_bundles.append(token_bundle)
         return True
 
     @staticmethod
-    fn accept(token_bundle: TokenBundle, parent_idx:Int, mut tree: Tree)  -> Bool:
+    fn accept(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Bool:
         if token_bundle.token == CTokens.MACRO_INCLUDE:
             return True
         return False
 
     @staticmethod
-    fn create(token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree) -> Self:
+    fn create(
+        token_bundle: TokenBundle, parent_idx: Int, mut tree: Tree
+    ) -> Self:
         return Self(token_bundle, parent_idx)
 
     fn done(self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
@@ -52,7 +59,7 @@ struct IncludeNode(NodeAstLike):
         if len(self._token_bundles) < 2:
             return False
         return True
-        
+
     fn make_child(mut self, token_bundle: TokenBundle, mut tree: Tree) -> Bool:
         return False
 
@@ -70,8 +77,8 @@ struct IncludeNode(NodeAstLike):
 
     fn display_name(self) -> String:
         s = String(self.__name__)
-        s += String('(parent=') + String(self._parent) + String(',')
-        s += String('current_idx=') + String(self._current_idx) + String(')')
+        s += String("(parent=") + String(self._parent) + String(",")
+        s += String("current_idx=") + String(self._current_idx) + String(")")
         return s
 
     fn token_bundles(self) -> TokenBundles:

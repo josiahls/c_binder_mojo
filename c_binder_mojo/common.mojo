@@ -3,8 +3,10 @@
 # Native Mojo Modules
 from collections.list import _ListIter
 from pathlib import Path
+
 # Third Party Mojo Modules
 from firehose.logging import Logger
+
 # First Party Modules
 
 
@@ -14,10 +16,18 @@ struct NodeState:
     Reference usage in the c_ast_nodes.tree.mojo:get_current_node function
     for what these mean.
     """
-    alias STARTED = 'STARTED'
-    alias COMPLETE = 'COMPLETE'
-    alias APPENDING = 'APPENDING'
-    alias WANTING_CHILD = 'WANTING_CHILD'
+
+    # AST Tree States
+    alias MODULE_INIT = "MODULE_INIT"  # Tree has just started, no nodes exist yet
+
+    # Node States
+    alias NODE_INIT = "NODE_INIT"  # Node has just been created, processing initial data
+    alias COMPLETE = "COMPLETE"  # Node is complete, no more tokens will be accepted
+    alias APPENDING = "APPENDING"  # Node is collecting tokens for itself
+    alias WANTING_CHILD = "WANTING_CHILD"  # Node expects a child node for the next token
+
+    # Legacy aliases for backward compatibility
+    alias STARTED = "MODULE_INIT"  # Deprecated: use MODULE_INIT for tree or NODE_INIT for nodes
 
 
 struct CTokens:
@@ -43,10 +53,11 @@ struct CTokens:
 @value
 struct NodeIndices:
     """Stores indices for tracking node relationships in the AST.
-    
+
     This struct maintains references between original and new positions of nodes
     in the tree, allowing for tree transformations while preserving relationships.
     """
+
     alias UNSET = -1
 
     var original_parent_idx: Int
@@ -62,9 +73,15 @@ struct NodeIndices:
     var new_child_idxs: List[Int]
     """Indices of the child nodes in the new tree."""
 
-    fn __init__(out self, original_parent_idx:Int, original_current_idx:Int, new_parent_idx:Int = Self.UNSET, new_current_idx:Int = Self.UNSET):
+    fn __init__(
+        out self,
+        original_parent_idx: Int,
+        original_current_idx: Int,
+        new_parent_idx: Int = Self.UNSET,
+        new_current_idx: Int = Self.UNSET,
+    ):
         """Initialize a new NodeIndices instance.
-        
+
         Args:
             original_parent_idx: Index of the parent node in the original tree.
             original_current_idx: Index of the current node in the original tree.
@@ -79,7 +96,7 @@ struct NodeIndices:
         self.new_child_idxs = List[Int]()
 
     fn _child_str(self, children_idxs: List[Int]) -> String:
-        var s = String('')
+        var s = String("")
         n_children = len(children_idxs)
         i = 0
         for child_idx in children_idxs:
@@ -97,7 +114,7 @@ struct NodeIndices:
         return s
 
     fn __str__(self) -> String:
-        var s = String('')
+        var s = String("")
         if self.original_parent_idx != Self.UNSET:
             s += "original_parent_idx=" + String(self.original_parent_idx)
         if self.original_current_idx != Self.UNSET:
@@ -114,7 +131,9 @@ struct NodeIndices:
             s += "new_current_idx=" + String(self.new_current_idx)
 
         if len(self.original_child_idxs) > 0:
-            s += ", original_child_idxs=" + self._child_str(self.original_child_idxs)
+            s += ", original_child_idxs=" + self._child_str(
+                self.original_child_idxs
+            )
         if len(self.new_child_idxs) > 0:
             s += ", new_child_idxs=" + self._child_str(self.new_child_idxs)
         return s
@@ -123,23 +142,30 @@ struct NodeIndices:
 @value
 struct TokenBundle(EqualityComparable):
     """A bundle containing a token and its position information in source code.
-    
+
     This struct represents a single token along with its originallocation (row and column numbers)
     in the source code. It implements equality comparison for token matching.
-    
+
     Attributes:
         token: The actual token string.
         row_num: The line number where this token appears (0-based).
         col_num: The column number where this token starts (0-based).
     """
-    var token:String
-    var row_num:Int
-    var col_num:Int
-    var deleted:Bool
 
-    fn __init__(out self, token:String, row_num:Int, col_num:Int, deleted:Bool = False):
+    var token: String
+    var row_num: Int
+    var col_num: Int
+    var deleted: Bool
+
+    fn __init__(
+        out self,
+        token: String,
+        row_num: Int,
+        col_num: Int,
+        deleted: Bool = False,
+    ):
         """Initialize a new TokenBundle.
-        
+
         Args:
             token: The token string to store.
             row_num: The line number where this token appears.
@@ -151,16 +177,16 @@ struct TokenBundle(EqualityComparable):
         self.col_num = col_num
         self.deleted = deleted
 
-    fn __ne__(read self:Self, read other:Self) -> Bool:
+    fn __ne__(read self: Self, read other: Self) -> Bool:
         """Check if two TokenBundles are not equal.
-        
+
         Args:
             other: Another TokenBundle to compare with.
 
         Returns:
             True if any field differs between the two bundles, False otherwise.
         """
-        if self.token != other.token: 
+        if self.token != other.token:
             return True
         elif self.row_num != other.row_num:
             return True
@@ -168,9 +194,9 @@ struct TokenBundle(EqualityComparable):
             return True
         return False
 
-    fn __eq__(read self:Self, read other:Self) -> Bool:
+    fn __eq__(read self: Self, read other: Self) -> Bool:
         """Check if two TokenBundles are equal.
-        
+
         Args:
             other: Another TokenBundle to compare with.
 
@@ -181,29 +207,36 @@ struct TokenBundle(EqualityComparable):
 
     fn __str__(self) -> String:
         """Convert the TokenBundle to a string representation.
-        
+
         Returns:
             A string showing the position and token content.
         """
         if self.deleted:
-            return 'TokenBundle(deleted)'
+            return "TokenBundle(deleted)"
         else:
-            return 'TokenBundle(' \
-                + 'row_num=' + String(self.row_num) \
-                + ', col_num=' + String(self.col_num) + ')' \
-                +  ' ' + self.token
+            return (
+                "TokenBundle("
+                + "row_num="
+                + String(self.row_num)
+                + ", col_num="
+                + String(self.col_num)
+                + ")"
+                + " "
+                + self.token
+            )
 
 
 @value
 struct TokenBundles(Stringable):
     """A collection of TokenBundle objects with list-like operations.
-    
+
     This struct provides a container for multiple TokenBundles with standard
     collection operations like append, length checking, iteration, and indexing.
 
     This primarly acs as a passthrough to the underlying list, but
     allows extending the list with additional functionality.
     """
+
     var _token_bundles: List[TokenBundle]
 
     fn __init__(mut self):
@@ -212,7 +245,7 @@ struct TokenBundles(Stringable):
 
     fn append(mut self, owned value: TokenBundle):
         """Add a new TokenBundle to the collection.
-        
+
         Args:
             value: The TokenBundle to append.
         """
@@ -220,7 +253,7 @@ struct TokenBundles(Stringable):
 
     fn __len__(self) -> Int:
         """Get the number of TokenBundles in the collection.
-        
+
         Returns:
             The count of TokenBundles.
         """
@@ -228,15 +261,17 @@ struct TokenBundles(Stringable):
 
     fn __bool__(self) -> Bool:
         """Check if the collection is non-empty.
-        
+
         Returns:
             True if the collection contains any TokenBundles, False otherwise.
         """
         return Bool(self._token_bundles)
 
-    fn __iter__(ref self) -> _ListIter[TokenBundle, False, __origin_of(self._token_bundles)]:
+    fn __iter__(
+        ref self,
+    ) -> _ListIter[TokenBundle, False, __origin_of(self._token_bundles)]:
         """Get an iterator over the TokenBundles.
-        
+
         Returns:
             An iterator that yields TokenBundles.
         """
@@ -244,7 +279,7 @@ struct TokenBundles(Stringable):
 
     fn __getitem__(self, span: Slice) -> List[TokenBundle]:
         """Get a slice of TokenBundles.
-        
+
         Args:
             span: The slice range to extract.
 
@@ -253,9 +288,11 @@ struct TokenBundles(Stringable):
         """
         return self._token_bundles[span]
 
-    fn __getitem__[I: Indexer](ref self, idx: I) -> ref [self._token_bundles] TokenBundle:
+    fn __getitem__[
+        I: Indexer
+    ](ref self, idx: I) -> ref [self._token_bundles] TokenBundle:
         """Get a TokenBundle at a specific index.
-        
+
         Args:
             idx: The index to access.
 
@@ -266,18 +303,18 @@ struct TokenBundles(Stringable):
 
     fn __str__(self) -> String:
         """Convert the TokenBundles to a string representation.
-        
+
         Returns:
             A string showing all tokens with appropriate line breaks.
         """
-        var s:String = ""
+        var s: String = ""
         var row_num = -1
         for token in self._token_bundles:
             if row_num == -1:
                 row_num = token[].row_num
             elif row_num != token[].row_num:
                 row_num = token[].row_num
-                s += '\n'
+                s += "\n"
             s += String(token[].token) + " "
         return s
 
@@ -289,21 +326,22 @@ struct TokenBundles(Stringable):
 @value
 struct Tokenizer:
     """A utility for breaking source code into tokens.
-    
+
     This struct provides functionality to read source code and break it into
     individual tokens while preserving their position information.
     """
+
     var tokens: List[TokenBundle]
 
-    alias ISOLATED_TOKEN_CHARS:List[String] = List[String](';', ',', '{', '}')
+    alias ISOLATED_TOKEN_CHARS: List[String] = List[String](";", ",", "{", "}")
 
     fn __init__(mut self):
         """Initialize an empty Tokenizer."""
         self.tokens = List[TokenBundle]()
 
-    fn tokenize_line(mut self, line:String) -> List[String]:
+    fn tokenize_line(mut self, line: String) -> List[String]:
         """Split a single line into tokens.
-        
+
         Args:
             line: The line of source code to tokenize.
 
@@ -312,15 +350,15 @@ struct Tokenizer:
         """
         _line = line
         for char in self.ISOLATED_TOKEN_CHARS:
-            _line = _line.replace(char[], ' ' + char[] + ' ')
+            _line = _line.replace(char[], " " + char[] + " ")
         try:
-            return _line.split(' ')
+            return _line.split(" ")
         except e:
             return List[String](_line)
 
-    fn tokenize(mut self, path:Path) raises -> None:
+    fn tokenize(mut self, path: Path) raises -> None:
         """Tokenize an entire source file.
-        
+
         Args:
             path: Path to the source file to tokenize.
 
@@ -328,9 +366,9 @@ struct Tokenizer:
             May raise file reading or parsing related exceptions.
         """
         var logger = Logger.get_default_logger("c_binder_mojo.common.tokenizer")
-        logger.info('Tokenizing: ' + String(path))
+        logger.info("Tokenizing: " + String(path))
         current_row_num = 0
-        lines = path.read_text().split('\n')
+        lines = path.read_text().split("\n")
         self.tokens.reserve(len(lines))
         for line_ptr in lines:
             line = line_ptr[]
@@ -341,31 +379,31 @@ struct Tokenizer:
                 col_num += len(token_string[])
             current_row_num += 1
 
-    fn to_string(self, make_flat:Bool = False) -> String:
+    fn to_string(self, make_flat: Bool = False) -> String:
         """Convert all tokens to a string representation.
-        
+
         Args:
             make_flat: If True, puts each token on a new line.
 
         Returns:
             A string containing all tokens with appropriate formatting.
         """
-        s = String('')
+        s = String("")
         current_row_num = -1
         for token in self.tokens:
             if make_flat:
-                s += '\n' # Add new line for each token
+                s += "\n"  # Add new line for each token
             elif current_row_num == -1:
                 current_row_num = token[].row_num
             elif current_row_num != token[].row_num:
                 current_row_num = token[].row_num
-                s += '\n'
-            s += String(token[]) + ' '
+                s += "\n"
+            s += String(token[]) + " "
         return s
 
     fn __str__(self) -> String:
         """Convert the Tokenizer's contents to a string.
-        
+
         Returns:
             A string representation of all tokens.
         """

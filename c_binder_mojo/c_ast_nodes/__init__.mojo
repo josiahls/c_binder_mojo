@@ -8,16 +8,16 @@ from .macro_if_n_def_node import MacroIfNDefNode
 
 # Setup Variant
 from .node_variant import Variant
+
 alias AstNodeVariant = Variant[
     RootNode,
     SingleLineCommentNode,
     MultiLineCommentNode,
     WhitespaceNode,
     MacroIfNDefNode,
-    PlaceHolderNode
+    PlaceHolderNode,
 ]
 
 # Tree
 from .nodes import AstNode, NodeAstLike
 from .tree import TreeInterface, make_tree
-

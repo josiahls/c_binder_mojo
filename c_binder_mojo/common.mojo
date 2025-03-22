@@ -9,6 +9,11 @@ from firehose.logging import Logger
 
 
 struct NodeState:
+    """State of a node in the AST.
+
+    Reference usage in the c_ast_nodes.tree.mojo:get_current_node function
+    for what these mean.
+    """
     alias STARTED = 'STARTED'
     alias COMPLETE = 'COMPLETE'
     alias APPENDING = 'APPENDING'

@@ -199,6 +199,20 @@ fn get_current_node(
     recursion_depth: Int = 0
 ) raises -> Tuple[Int, StringLiteral]:
     """Process a token and determine the current node in the AST.
+
+    In this function the `NodeState` do as follows:
+    - STARTED: 
+        The tree has started. 
+        There is no current node and no parent node.
+    - COMPLETE: 
+        The node is complete.
+        The current token will not be appended to this node, but instead
+        passed to the next node.
+    - APPENDING: 
+        The node is appending tokens to itself.
+    - WANTING_CHILD: 
+        The node is wanting a child.
+        A new node will be created and the current token will be passed to it
     
     Args:
         token: The token to process.

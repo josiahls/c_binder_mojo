@@ -1,64 +1,54 @@
 // Basic header guards 
-#ifndef 
-// 
+#ifndef TEST_IFNDEF_NODE_H 
 
-	TEST_IFNDEF_NODE_H 
 	#define 
 	TEST_IFNDEF_NODE_H 
 	 
 	// Simple define inside an ifndef 
-	#ifndef 
-	#endif 
+	#ifndef SIMPLE_DEFINE 
 	
-		SIMPLE_DEFINE 
 		#define 
 		SIMPLE_DEFINE 
 		1 
-	#endif 
+#endif 
+ 
+// Nested ifndefs 
+#ifndef OUTER_GUARD 
+
+	#define 
+	OUTER_GUARD 
 	 
-	// Nested ifndefs 
-	#ifndef 
-	#endif 
+	    
+	#ifndef INNER_GUARD 
 	
-		OUTER_GUARD 
+		    
 		#define 
-		OUTER_GUARD 
-		 
-		    
-		#ifndef 
-		#endif 
-		
-			INNER_GUARD 
-			    
-			#define 
-			INNER_GUARD 
-			        
-			int 
-			inner_guard_variable 
-			= 
-			42 
-			; 
-			 
-			    
-		#endif 
-		// INNER_GUARD 
-		 
-		    
+		INNER_GUARD 
+		        
 		int 
-		outer_guard_variable 
+		inner_guard_variable 
 		= 
-		100 
+		42 
 		; 
 		 
-		 
-	#endif 
+		    
+#endif 
+// INNER_GUARD 
+ 
+    
+int 
+outer_guard_variable 
+= 
+100 
+; 
+ 
+ 
+#endif 
 // OUTER_GUARD 
  
 // Ifdef with code blocks 
-#ifndef 
-#endif 
+#ifndef CODE_BLOCK_TEST 
 
-	CODE_BLOCK_TEST 
 	#define 
 	CODE_BLOCK_TEST 
 	    
@@ -98,10 +88,8 @@
 // CODE_BLOCK_TEST 
  
 // Complex guards with comments 
-#ifndef 
-#endif 
+#ifndef COMPLEX_GUARD 
 
-	COMPLEX_GUARD 
 	// This is a comment after ifndef 
 	#define 
 	COMPLEX_GUARD 
@@ -124,10 +112,8 @@
 /* End of complex guard */ 
  
 // Conditional compilation 
-#ifndef 
-#endif 
+#ifndef PLATFORM_SPECIFIC 
 
-	PLATFORM_SPECIFIC 
 	    
 	#ifdef 
 	_WIN32 
@@ -149,14 +135,12 @@
 	PLATFORM_SPECIFIC 
 	"Linux" 
 	    
-	#endif 
+#endif 
 #endif 
  
 // Include with ifndef guard 
-#ifndef 
-#endif 
+#ifndef INCLUDED_STDIO 
 
-	INCLUDED_STDIO 
 	#define 
 	INCLUDED_STDIO 
 	#include 
@@ -164,19 +148,15 @@
 #endif 
  
 // Empty ifndef (edge case) 
-#ifndef 
-#endif 
+#ifndef EMPTY_GUARD 
 
-	EMPTY_GUARD 
 	#define 
 	EMPTY_GUARD 
 #endif 
  
 // Typedef inside ifndef 
-#ifndef 
-#endif 
+#ifndef MY_TYPE_GUARD 
 
-	MY_TYPE_GUARD 
 	#define 
 	MY_TYPE_GUARD 
 	typedef 

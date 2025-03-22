@@ -30,14 +30,20 @@ struct MacroIfNDefNode(NodeAstLike):
     This node handles the parsing and representation of the #ifndef directive,
     which is commonly used for header guards and conditional compilation.
     The node tracks the macro name being tested and all content until the matching #endif.
+
+    This node is expected to be 2 tokens in length.
+    The first token is the #ifndef directive.
+    The second token is the macro name.
     """
 
     alias __name__ = "MacroIfNDefNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
+    var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: StringLiteral
     var _macro_name: String
-    var _nesting_level: Int  # Track nested #if/#ifdef/#ifndef directives
+    var _row_num: Int
+    var _is_complete: Bool
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a MacroIfNDefNode.
@@ -48,12 +54,12 @@ struct MacroIfNDefNode(NodeAstLike):
         """
         self._indicies = indicies
         self._token_bundles = TokenBundles()
+        self._token_bundles_tail = TokenBundles()
+        self._row_num = token_bundle.row_num
         self._token_bundles[].append(token_bundle)
-        self._node_state = (
-            NodeState.NODE_INIT
-        )  # We're expecting the macro name next
+        self._node_state = NodeState.NODE_INIT
         self._macro_name = ""
-        self._nesting_level = 1  # Start at level 1 for this #ifndef
+        self._is_complete = False
 
     @staticmethod
     fn accept(
@@ -93,8 +99,10 @@ struct MacroIfNDefNode(NodeAstLike):
         """Determine the state of this node based on the current token.
 
         This method handles the state transitions for parsing the #ifndef directive:
-        1. NODE_INIT -> WANTING_CHILD: After seeing the macro name
-        2. WANTING_CHILD -> WANTING_CHILD/COMPLETE: Process content until matching #endif
+        1. NODE_INIT: Will already have the macro name token per the accept and create methods.
+        2. NODE_INIT -> APPENDING: Imeediate transition. Only lasts for 1 token which will be the macro name.
+        3. APPENDING -> WANTING_CHILD: After the macro name token.
+        4. WANTING_CHILD -> WANTING_CHILD/COMPLETE: Process content until matching #endif
 
         Args:
             token: The current token.
@@ -104,31 +112,25 @@ struct MacroIfNDefNode(NodeAstLike):
             The state of this node.
         """
         if self._node_state == NodeState.NODE_INIT:
-            # We're expecting the macro name next (skip whitespace)
-            if token.token.strip() == "":
-                # Skip whitespace tokens
-                self._node_state = NodeState.NODE_INIT
+            if len(self._token_bundles[]) == 1:
+                self._node_state = NodeState.APPENDING
             else:
-                # Found the macro name
-                self._macro_name = token.token
+                print("Should never happen.")
+                return NodeState.NODE_INIT
+        elif self._node_state == NodeState.APPENDING:
+            if len(self._token_bundles[]) == 2:
                 self._node_state = NodeState.WANTING_CHILD
-
+            else:
+                print("Should never happen.")
+                return NodeState.APPENDING
         elif self._node_state == NodeState.WANTING_CHILD:
-            # Handle nested directives and look for the matching #endif
-            if (
-                token.token == CTokens.MACRO_IFNDEF
-                or token.token == "#ifdef"
-                or token.token == "#if"
-            ):
-                # Nested directive - increase level
-                self._nesting_level += 1
-            elif token.token == CTokens.MACRO_ENDIF:
-                # Found an #endif - decrease level
-                self._nesting_level -= 1
+            if token.token == CTokens.MACRO_ENDIF:
+                # Delay the COMPLETE since we want to append this endif token
+                self._node_state = NodeState.APPENDING
+                self._is_complete = True
 
-                if self._nesting_level == 0:
-                    # This is the matching #endif for our #ifndef
-                    self._node_state = NodeState.COMPLETE
+        if self._is_complete:
+            self._node_state = NodeState.COMPLETE
 
         # Stay in WANTING_CHILD state for all content until matching #endif
         return self._node_state
@@ -150,10 +152,13 @@ struct MacroIfNDefNode(NodeAstLike):
         """
         if node_state == NodeState.COMPLETE:
             # Add the final #endif token
-            self._token_bundles[].append(token)
-        else:
+            pass
+        elif node_state == NodeState.APPENDING:
             # Add all tokens until we reach COMPLETE state
-            self._token_bundles[].append(token)
+            if self._is_complete:
+                self._token_bundles_tail[].append(token)
+            else:
+                self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node.
@@ -193,7 +198,7 @@ struct MacroIfNDefNode(NodeAstLike):
         Returns:
             An empty list as this node doesn't have a separate tail.
         """
-        return TokenBundles()
+        return self._token_bundles_tail[]
 
     @always_inline("nodebug")
     fn __str__(self) -> String:

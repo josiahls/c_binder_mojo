@@ -4,7 +4,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.common import TokenBundle,TokenBundles, NodeIndices, NodeState
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
-from c_binder_mojo.c_ast_nodes.node_variant import Variant
+from c_binder_mojo.c_ast_nodes import AstNodeVariant
 from c_binder_mojo import c_ast_nodes
 
 
@@ -166,11 +166,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 
 @value
 struct AstNode(CollectionElement):
-    alias type = Variant[
-        c_ast_nodes.RootNode,
-        c_ast_nodes.SingleLineCommentNode,
-        c_ast_nodes.PlaceHolderNode
-    ]
+    alias type = AstNodeVariant
     # NOTE: This is experimental.
     var node: ArcPointer[Self.type]
 

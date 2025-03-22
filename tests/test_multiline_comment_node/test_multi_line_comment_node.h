@@ -1,0 +1,42 @@
+cat > /home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/test_multiline_comment_node/test_multiline_comment_node.h << 'EOL'
+/* Basic multiline comment */
+
+/* Multiline comment
+ * with multiple
+ * lines
+ */
+
+/** Documentation comment */
+
+/** Documentation comment
+ * with multiple
+ * lines
+ */
+
+/* Comment with special characters: !@#$%^&*()_+ */
+
+/* Comment with code-like content: 
+ * int x = 5;
+ * void foo();
+ */
+
+int some_function(); /* Comment after code */
+
+// This is not a multiline comment
+
+/* Comment with Unicode: 你好世界 */
+
+/* Empty multiline comment */
+
+/**/
+
+/* Nested-looking comment /* (not actually nested) */ 
+
+/*
+ * Comment
+ *    with
+ *       indentation
+ */
+
+/* Comment with trailing spaces    */
+EOL

@@ -349,7 +349,7 @@ fn get_current_node(
             logger,
             recursion_depth + 1,
         )
-    elif node_state == NodeState.APPENDING:
+    elif node_state == NodeState.APPENDING or node_state == NodeState.APPENDING_TAIL:
         node.process(token, node_state, tree_interface)
         return (_current_idx, node_state)
     elif node_state == NodeState.WANTING_CHILD:

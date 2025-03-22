@@ -149,7 +149,7 @@ tree.mojo:222 - INFO: [Depth:2] WANTING_CHILD|----------| 			PlaceHolderNode(ori
 tree.mojo:222 - INFO: [Depth:0] COMPLETE|---------------| 			PlaceHolderNode(original_parent_idx=7, original_current_idx=10)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> PlaceHolderNode
     └─ Current Token: '#endif' at [7:0]
-    └─ Nodes: 1 active, 10 complete
+    └─ Nodes: 3 active, 8 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 		MacroIfNDefNode(original_parent_idx=2, original_current_idx=7, original_child_idxs=(8, 9, 10), macro='SIMPLE_DEFINE')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [7:0]
@@ -453,7 +453,7 @@ tree.mojo:222 - INFO: [Depth:0] APPENDING|--------------| 			WhitespaceNode(orig
 tree.mojo:222 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 			WhitespaceNode(original_parent_idx=18, original_current_idx=28,n_tokens=5)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#endif' at [16:0]
-    └─ Nodes: 1 active, 28 complete
+    └─ Nodes: 3 active, 26 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 		MacroIfNDefNode(original_parent_idx=14, original_current_idx=18, original_child_idxs=(19, 20, 21, 22, 23, ...) len=10, macro='INNER_GUARD')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [16:0]
@@ -1213,7 +1213,7 @@ tree.mojo:222 - INFO: [Depth:2] WANTING_CHILD|----------| 		WhitespaceNode(origi
 tree.mojo:222 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 		WhitespaceNode(original_parent_idx=42, original_current_idx=72,n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#endif' at [31:0]
-    └─ Nodes: 1 active, 72 complete
+    └─ Nodes: 2 active, 71 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=42, original_child_idxs=(43, 44, 45, 46, 47, ...) len=30, macro='CODE_BLOCK_TEST')
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [31:0]
@@ -1661,7 +1661,7 @@ tree.mojo:222 - INFO: [Depth:0] APPENDING|--------------| 		WhitespaceNode(origi
 tree.mojo:222 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 		WhitespaceNode(original_parent_idx=77, original_current_idx=92,n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#endif' at [42:0]
-    └─ Nodes: 1 active, 92 complete
+    └─ Nodes: 2 active, 91 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=77, original_child_idxs=(78, 79, 80, 81, 82, ...) len=15, macro='COMPLEX_GUARD')
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [42:0]
@@ -2137,7 +2137,7 @@ tree.mojo:222 - INFO: [Depth:0] APPENDING|--------------| 		WhitespaceNode(origi
 tree.mojo:222 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 		WhitespaceNode(original_parent_idx=97, original_current_idx=118,n_tokens=4)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#endif' at [52:0]
-    └─ Nodes: 1 active, 118 complete
+    └─ Nodes: 2 active, 117 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=97, original_child_idxs=(98, 99, 100, 101, 102, ...) len=21, macro='PLATFORM_SPECIFIC')
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [52:0]
@@ -2265,7 +2265,7 @@ tree.mojo:222 - INFO: [Depth:2] WANTING_CHILD|----------| 		PlaceHolderNode(orig
 tree.mojo:222 - INFO: [Depth:0] COMPLETE|---------------| 		PlaceHolderNode(original_parent_idx=123, original_current_idx=127)
     └─ Path: RootNode -> MacroIfNDefNode -> PlaceHolderNode
     └─ Current Token: '#endif' at [59:0]
-    └─ Nodes: 1 active, 127 complete
+    └─ Nodes: 2 active, 126 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=123, original_child_idxs=(124, 125, 126, 127), macro='INCLUDED_STDIO')
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [59:0]
@@ -2357,7 +2357,7 @@ tree.mojo:222 - INFO: [Depth:2] WANTING_CHILD|----------| 		PlaceHolderNode(orig
 tree.mojo:222 - INFO: [Depth:0] COMPLETE|---------------| 		PlaceHolderNode(original_parent_idx=131, original_current_idx=133)
     └─ Path: RootNode -> MacroIfNDefNode -> PlaceHolderNode
     └─ Current Token: '#endif' at [64:0]
-    └─ Nodes: 1 active, 133 complete
+    └─ Nodes: 2 active, 132 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=131, original_child_idxs=(132, 133), macro='EMPTY_GUARD')
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [64:0]
@@ -2517,7 +2517,7 @@ tree.mojo:222 - INFO: [Depth:2] WANTING_CHILD|----------| 		WhitespaceNode(origi
 tree.mojo:222 - INFO: [Depth:0] APPENDING -> COMPLETE|--| 		WhitespaceNode(original_parent_idx=137, original_current_idx=145,n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#endif' at [70:0]
-    └─ Nodes: 1 active, 145 complete
+    └─ Nodes: 2 active, 144 complete
 tree.mojo:222 - INFO: [Depth:1] COMPLETE|---------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=137, original_child_idxs=(138, 139, 140, 141, 142, ...) len=8, macro='MY_TYPE_GUARD')
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [70:0]

@@ -24,7 +24,9 @@ struct NodeState:
     alias NODE_INIT = "NODE_INIT"  # Node has just been created, processing initial data
     alias COMPLETE = "COMPLETE"  # Node is complete, no more tokens will be accepted
     alias APPENDING = "APPENDING"  # Node is collecting tokens for itself
+    alias APPENDING_TAIL = "APPENDING_TAIL"  # Node is collecting tokens for itself, but is at the end of the file
     alias WANTING_CHILD = "WANTING_CHILD"  # Node expects a child node for the next token
+    alias INVALID_STATE = "INVALID_STATE"  # Node is in an invalid state, should not happen
 
     # Legacy aliases for backward compatibility
     alias STARTED = "MODULE_INIT"  # Deprecated: use MODULE_INIT for tree or NODE_INIT for nodes

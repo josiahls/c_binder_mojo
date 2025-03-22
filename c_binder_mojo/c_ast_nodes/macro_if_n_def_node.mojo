@@ -111,28 +111,37 @@ struct MacroIfNDefNode(NodeAstLike):
         Returns:
             The state of this node.
         """
+        # Don't check is_complete first - we need to handle the token first
+        # if self._is_complete:
+        #     self._node_state = NodeState.COMPLETE
+
         if self._node_state == NodeState.NODE_INIT:
             if len(self._token_bundles[]) == 1:
                 self._node_state = NodeState.APPENDING
             else:
-                print("Should never happen.")
-                return NodeState.NODE_INIT
+                return NodeState.INVALID_STATE
         elif self._node_state == NodeState.APPENDING:
             if len(self._token_bundles[]) == 2:
                 self._node_state = NodeState.WANTING_CHILD
+            elif len(self._token_bundles[]) == 1:
+                self._node_state = NodeState.APPENDING
             else:
-                print("Should never happen.")
-                return NodeState.APPENDING
+                return NodeState.INVALID_STATE
+        elif self._node_state == NodeState.APPENDING_TAIL:
+            # Do not immediately transition to COMPLETE
+            # Stay in APPENDING_TAIL until we've processed the token
+            pass
         elif self._node_state == NodeState.WANTING_CHILD:
             if token.token == CTokens.MACRO_ENDIF:
-                # Delay the COMPLETE since we want to append this endif token
-                self._node_state = NodeState.APPENDING
-                self._is_complete = True
-
+                # This is the #endif token for THIS ifndef node
+                # Transition to APPENDING_TAIL to collect the token
+                self._node_state = NodeState.APPENDING_TAIL
+        
+        # Check is_complete at the end to ensure we process the token first
+        # This ensures we handle the #endif token correctly before completing
         if self._is_complete:
             self._node_state = NodeState.COMPLETE
 
-        # Stay in WANTING_CHILD state for all content until matching #endif
         return self._node_state
 
     fn process(
@@ -151,16 +160,17 @@ struct MacroIfNDefNode(NodeAstLike):
             tree_interface: Interface to the AST.
         """
         if node_state == NodeState.COMPLETE:
-            # Add the final #endif token
             pass
+        elif node_state == NodeState.APPENDING_TAIL:
+            # Add the token to the tail and mark as complete AFTER processing
+            self._token_bundles_tail[].append(token)
+            # Only mark as complete if this is actually our #endif
+            if token.token == CTokens.MACRO_ENDIF:
+                self._is_complete = True
         elif node_state == NodeState.APPENDING:
-            # Add all tokens until we reach COMPLETE state
-            if self._is_complete:
-                self._token_bundles_tail[].append(token)
-            else:
-                if len(self._token_bundles[]) == 1:
-                    self._macro_name = token.token
-                self._token_bundles[].append(token)
+            if len(self._token_bundles[]) == 1:
+                self._macro_name = token.token
+            self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node.

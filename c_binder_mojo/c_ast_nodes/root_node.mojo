@@ -74,7 +74,7 @@ struct RootNode(NodeAstLike):
     fn token_bundles(self) -> TokenBundles:
         return self._token_bundles[]
 
-    fn token_bundles_ptr(self) -> ArcPointer[TokenBundles]:
+    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
         return self._token_bundles
 
     fn token_bundles_tail(self) -> TokenBundles:

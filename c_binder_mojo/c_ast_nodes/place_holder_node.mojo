@@ -10,7 +10,7 @@ from c_binder_mojo.common import (
     TokenBundle,
     NodeIndices,
     TokenBundles,
-    NodeState,
+    TokenFlow,
 )
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -48,7 +48,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn determine_state(
         mut self, token: TokenBundle, tree_interface: TreeInterface
     ) -> StringLiteral:
-        return NodeState.COMPLETE
+        return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,

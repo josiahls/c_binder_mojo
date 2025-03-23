@@ -11,25 +11,42 @@ from firehose.logging import Logger
 
 
 struct NodeState:
-    """State of a node in the AST.
+    """The internal construction state of a node."""
+    alias INITIALIZING = "INITIALIZING"       # Node is being initialized
+    alias COLLECTING_TOKENS = "COLLECTING_TOKENS"    # Node is collecting its own tokens
+    alias BUILDING_CHILDREN = "BUILDING_CHILDREN"      # Node is creating/managing children
+    alias COMPLETED = "COMPLETED"             # Node is completely built
+    alias INVALID = "INVALID"                 # Node is in an invalid state (error)
 
-    Reference usage in the c_ast_nodes.tree.mojo:get_current_node function
-    for what these mean.
-    """
+struct TokenFlow:
+    """Directive for how tokens should flow through the tree."""
+    alias INITIALIZE_MODULE = "INITIALIZE_MODULE"       # Tree has just started, no nodes exist yet
+    alias CONSUME_TOKEN = "CONSUME_TOKEN"     # Node should consume the token
+    alias PASS_TO_PARENT = "PASS_TO_PARENT"   # Pass token to parent node
+    alias CREATE_CHILD = "CREATE_CHILD"       # Create a child for this token
+    alias CAPTURE_AND_COMPLETE = "CAPTURE_AND_COMPLETE"    # Capture this token, then complete
+    alias INVALID = "INVALID"                 # Invalid directive (error)
 
-    # AST Tree States
-    alias MODULE_INIT = "MODULE_INIT"  # Tree has just started, no nodes exist yet
+# struct NodeState:
+#     """State of a node in the AST.
 
-    # Node States
-    alias NODE_INIT = "NODE_INIT"  # Node has just been created, processing initial data
-    alias COMPLETE = "COMPLETE"  # Node is complete, no more tokens will be accepted
-    alias APPENDING = "APPENDING"  # Node is collecting tokens for itself
-    alias APPENDING_TAIL = "APPENDING_TAIL"  # Node is collecting tokens for itself, but is at the end of the file
-    alias WANTING_CHILD = "WANTING_CHILD"  # Node expects a child node for the next token
-    alias INVALID_STATE = "INVALID_STATE"  # Node is in an invalid state, should not happen
+#     Reference usage in the c_ast_nodes.tree.mojo:get_current_node function
+#     for what these mean.
+#     """
 
-    # Legacy aliases for backward compatibility
-    alias STARTED = "MODULE_INIT"  # Deprecated: use MODULE_INIT for tree or NODE_INIT for nodes
+#     # AST Tree States
+#     alias MODULE_INIT = "MODULE_INIT"  # Tree has just started, no nodes exist yet
+
+#     # Node States
+#     alias NODE_INIT = "NODE_INIT"  # Node has just been created, processing initial data
+#     alias COMPLETE = "COMPLETE"  # Node is complete, no more tokens will be accepted
+#     alias APPENDING = "APPENDING"  # Node is collecting tokens for itself
+#     alias APPENDING_TAIL = "APPENDING_TAIL"  # Node is collecting tokens for itself, but is at the end of the file
+#     alias WANTING_CHILD = "WANTING_CHILD"  # Node expects a child node for the next token
+#     alias INVALID_STATE = "INVALID_STATE"  # Node is in an invalid state, should not happen
+
+#     # Legacy aliases for backward compatibility
+#     alias STARTED = "MODULE_INIT"  # Deprecated: use MODULE_INIT for tree or NODE_INIT for nodes
 
 
 struct CTokens:

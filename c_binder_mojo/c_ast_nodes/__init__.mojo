@@ -11,10 +11,10 @@ from .node_variant import Variant
 
 alias AstNodeVariant = Variant[
     RootNode,
-    SingleLineCommentNode,
-    MultiLineCommentNode,
-    WhitespaceNode,
-    MacroIfNDefNode,
+    # SingleLineCommentNode,
+    # MultiLineCommentNode,
+    # WhitespaceNode,
+    # MacroIfNDefNode,
     PlaceHolderNode,
 ]
 

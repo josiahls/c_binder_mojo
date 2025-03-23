@@ -1,55 +1,177 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, 6, ...) len=27)
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
-// Basic single line comment 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
-// Another single line comment 
-WhitespaceNode(original_parent_idx=0, original_current_idx=3,n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
-// Comment with special characters: !@#$%^&*()_+ 
-WhitespaceNode(original_parent_idx=0, original_current_idx=5,n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=6)
-// Comment with code-like content: int x = 5 ;  
-WhitespaceNode(original_parent_idx=0, original_current_idx=7,n_tokens=1)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=8)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=9)
-some_function() 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=10)
-; 
-WhitespaceNode(original_parent_idx=0, original_current_idx=11,n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
-// Comment after code 
-WhitespaceNode(original_parent_idx=0, original_current_idx=13,n_tokens=1)
- 
-MultiLineCommentNode(original_parent_idx=0, original_current_idx=14)
-/* This is not a single line comment */ 
-WhitespaceNode(original_parent_idx=0, original_current_idx=15,n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=16)
-// Comment with Unicode: 你好世界 
-WhitespaceNode(original_parent_idx=0, original_current_idx=17,n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=18)
-// Empty comment followed by another comment 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=19)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=88)
+PlaceHolderNode(original_parent_idx=0, original_current_idx=1)
 // 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=20)
-// Comment after empty comment 
-WhitespaceNode(original_parent_idx=0, original_current_idx=21,n_tokens=1)
+PlaceHolderNode(original_parent_idx=0, original_current_idx=2)
+Basic 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=3)
+single 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=4)
+line 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=5)
+comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=6)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=7)
+Another 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=8)
+single 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=9)
+line 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=10)
+comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=11)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
-// Multiple comments 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=23)
-// in a 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=24)
-// row 
-WhitespaceNode(original_parent_idx=0, original_current_idx=25,n_tokens=1)
+PlaceHolderNode(original_parent_idx=0, original_current_idx=12)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=13)
+Comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
+with 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
+special 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
+characters: 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
+!@#$%^&*()_+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
-// Comment with trailing spaces     
-WhitespaceNode(original_parent_idx=0, original_current_idx=27,n_tokens=1)
+PlaceHolderNode(original_parent_idx=0, original_current_idx=19)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
+Comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=21)
+with 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
+code-like 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
+content: 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
+int 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
+x 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
+= 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
+5 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=28)
+; 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=30)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
+int 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
+some_function() 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=33)
+; 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=34)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=35)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=36)
+Comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=37)
+after 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=38)
+code 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=39)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=40)
+/* 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=41)
+This 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=42)
+is 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=43)
+not 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=44)
+a 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=45)
+single 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=46)
+line 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=47)
+comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=48)
+*/ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=49)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=50)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=51)
+Comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=52)
+with 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=53)
+Unicode: 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=54)
+你好世界 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=55)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=56)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=57)
+Empty 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=58)
+comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=59)
+followed 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=60)
+by 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=61)
+another 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=62)
+comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=63)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=64)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=65)
+Comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=66)
+after 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=67)
+empty 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=68)
+comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=69)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=70)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=71)
+Multiple 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=72)
+comments 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=73)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=74)
+in 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=75)
+a 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=76)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=77)
+row 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=78)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=79)
+// 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=80)
+Comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=81)
+with 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=82)
+trailing 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=83)
+spaces 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=84)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=85)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=86)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=87)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=88)
  

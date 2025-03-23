@@ -13,7 +13,7 @@ from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
 
 # First Party Modules
-from c_binder_mojo.common import TokenBundle, NodeIndices, NodeState
+from c_binder_mojo.common import TokenBundle, NodeIndices, NodeState, TokenFlow
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike
 
 
@@ -32,7 +32,6 @@ struct TreeInterface:
 
     var _nodes: ArcPointer[List[AstNode]]
     var _tokens: ArcPointer[List[TokenBundle]]
-    var node_state: StringLiteral
 
     fn nodes(self) -> ArcPointer[List[AstNode]]:
         """Get the list of AST nodes.
@@ -148,7 +147,7 @@ fn log_state_transition(
     if prev_state == "" or prev_state == node_state:
         transition_str = String(node_state)
     else:
-        if prev_state == NodeState.COMPLETE:
+        if prev_state == TokenFlow.PASS_TO_PARENT:
             transition_str = String(node_state) + " <- " + String(prev_state)
         else:
             transition_str = String(prev_state) + " -> " + String(node_state)
@@ -206,7 +205,7 @@ fn log_state_transition(
     for i in range(len(tree_interface.nodes()[])):
         if (
             tree_interface.nodes()[][i].determine_state(token, tree_interface)
-            == NodeState.COMPLETE
+            == TokenFlow.PASS_TO_PARENT
         ):
             complete_count += 1
         else:
@@ -222,15 +221,223 @@ fn log_state_transition(
     logger.info(msg)
 
 
-fn get_current_node(
+# fn get_current_node(
+#     mut token: TokenBundle,
+#     current_idx: Int,
+#     nodes: ArcPointer[List[AstNode]],
+#     tokens: ArcPointer[List[TokenBundle]],
+#     mut logger: Logger,
+#     recursion_depth: Int = 0,
+# ) raises -> Tuple[Int, StringLiteral]:
+#     """Process a token and determine the current node in the AST.
+
+#     In this function the `NodeState` do as follows:
+#     - MODULE_INIT:
+#         The tree has started.
+#         There is no current node and no parent node.
+
+#     Node-level states:
+#     - NODE_INIT:
+#         The node has just been created and is processing its initial data.
+#     - COMPLETE:
+#         The node is complete.
+#         The current token will not be appended to this node, but instead
+#         passed to the next node.
+#     - APPENDING:
+#         The node is appending tokens to itself.
+#     - WANTING_CHILD:
+#         The node is wanting a child.
+#         A new node will be created and the current token will be passed to it
+
+#     Args:
+#         token: The token to process.
+#         current_idx: Index of the current node.
+#         node_state_: Current state of node processing.
+#         nodes: Reference-counted pointer to the list of AST nodes.
+#         tokens: Reference-counted pointer to the list of tokens.
+#         logger: Logger for recording processing information.
+#         recursion_depth: Current depth of recursion (for logging).
+
+#     Returns:
+#         The index of the new current node after processing
+#     """
+#     var _current_idx = current_idx
+
+#     # Handle error cases
+#     if _current_idx < 0:
+#         logger.error(
+#             "ERROR: current_idx is less than 0: " + String(_current_idx)
+#         )
+#         return (_current_idx, node_state_)
+
+#     if token.deleted:
+#         logger.error("ERROR: Token is deleted: " + String(token))
+#         return (_current_idx, node_state_)
+
+#     var node_state = node_state_
+#     var tree_interface = TreeInterface(nodes, tokens, node_state)
+
+#     # State machine branching based on current state
+#     if node_state == NodeState.MODULE_INIT:
+#         var indices = NodeIndices(-1, _current_idx)
+#         node = AstNode.accept(token, tree_interface, indices)
+#         var new_idx = tree_interface.insert_node(node)
+#         var new_node_state = node.determine_state(token, tree_interface)
+#         log_state_transition(
+#             logger,
+#             token,
+#             node,
+#             tree_interface,
+#             new_node_state,
+#             prev_state=node_state,
+#             recursion_depth=recursion_depth,
+#         )
+#         return get_current_node(
+#             token,
+#             new_idx,
+#             new_node_state,
+#             nodes,
+#             tokens,
+#             logger,
+#             recursion_depth + 1,
+#         )
+#     elif node_state == NodeState.WANTING_CHILD:
+#         var indices = NodeIndices(_current_idx, -1)
+#         node = nodes[][_current_idx]
+#         new_node = AstNode.accept(token, tree_interface, indices)
+#         var new_idx = tree_interface.insert_node(new_node)
+
+#         node.indicies_ptr()[].original_child_idxs.append(new_idx)
+
+#         var new_node_state = new_node.determine_state(token, tree_interface)
+#         log_state_transition(
+#             logger,
+#             token,
+#             new_node,
+#             tree_interface,
+#             node_state,
+#             recursion_depth=recursion_depth,
+#         )
+#         return (new_idx, new_node_state)
+#     else:
+#         node = nodes[][_current_idx]
+
+#     var prev_state = node_state
+#     node_state = node.determine_state(token, tree_interface)
+#     log_state_transition(
+#         logger,
+#         token,
+#         node,
+#         tree_interface,
+#         node_state,
+#         prev_state,
+#         recursion_depth=recursion_depth,
+#     )
+
+#     # Process token based on new state
+#     if node_state == NodeState.COMPLETE:
+#         node.process(token, node_state, tree_interface)
+#         var parent_idx = node.indicies().original_parent_idx
+#         return get_current_node(
+#             token,
+#             parent_idx,
+#             node_state,
+#             nodes,
+#             tokens,
+#             logger,
+#             recursion_depth + 1,
+#         )
+#     elif node_state == NodeState.APPENDING or node_state == NodeState.APPENDING_TAIL:
+#         node.process(token, node_state, tree_interface)
+#         return (_current_idx, node_state)
+#     elif node_state == NodeState.WANTING_CHILD:
+#         return get_current_node(
+#             token,
+#             _current_idx,
+#             NodeState.WANTING_CHILD,
+#             nodes,
+#             tokens,
+#             logger,
+#             recursion_depth + 1,
+#         )
+#     else:
+#         raise Error(
+#             "get_current_node called on AstNode with no determine_state method"
+#         )
+
+
+
+fn _initialize_module(
     mut token: TokenBundle,
     current_idx: Int,
-    node_state_: StringLiteral,
+    nodes: ArcPointer[List[AstNode]],
+    tokens: ArcPointer[List[TokenBundle]],
+    mut logger: Logger,
+) raises -> Int:
+    var tree_interface = TreeInterface(nodes, tokens)
+    var indices = NodeIndices(-1, current_idx)
+    node = AstNode.accept(token, tree_interface, indices)
+    var new_idx = tree_interface.insert_node(node)
+    var new_node_state = node.determine_state(token, tree_interface)
+    log_state_transition(logger, token, node, tree_interface, new_node_state, recursion_depth=0)
+    return get_current_node(token, new_idx, nodes, tokens, logger, recursion_depth=0)
+
+
+fn _create_child(
+    mut token: TokenBundle,
+    current_idx: Int,
     nodes: ArcPointer[List[AstNode]],
     tokens: ArcPointer[List[TokenBundle]],
     mut logger: Logger,
     recursion_depth: Int = 0,
-) raises -> Tuple[Int, StringLiteral]:
+) raises -> Int:
+    var indices = NodeIndices(current_idx, -1)
+    var node = nodes[][current_idx]
+    var tree_interface = TreeInterface(nodes, tokens)
+    new_node = AstNode.accept(token, tree_interface, indices)
+    var new_idx = tree_interface.insert_node(new_node)
+    node.indicies_ptr()[].original_child_idxs.append(new_idx)
+    var new_node_state = new_node.determine_state(token, tree_interface)
+    log_state_transition(logger, token, new_node, tree_interface, new_node_state, recursion_depth=0)
+    return new_idx
+
+
+fn _consume_token(
+    mut token: TokenBundle,
+    current_idx: Int,
+    nodes: ArcPointer[List[AstNode]],
+    tokens: ArcPointer[List[TokenBundle]],
+    mut logger: Logger,
+) raises -> Int:
+    var tree_interface = TreeInterface(nodes, tokens)
+    var node = nodes[][current_idx]
+    node.process(token, TokenFlow.CONSUME_TOKEN, tree_interface)
+    return current_idx
+
+
+fn _capture_and_complete(
+    mut token: TokenBundle,
+    current_idx: Int,
+    nodes: ArcPointer[List[AstNode]],
+    tokens: ArcPointer[List[TokenBundle]],
+    mut logger: Logger,
+    recursion_depth: Int = 0,
+) raises -> Int:
+    var tree_interface = TreeInterface(nodes, tokens)
+    var node = nodes[][current_idx]
+    node.process(token, TokenFlow.CAPTURE_AND_COMPLETE, tree_interface)
+    # node.transition_to_state(NodeState.COMPLETED)
+    return node.indicies().original_parent_idx
+
+    
+fn get_current_node(
+    mut token: TokenBundle,
+    current_idx: Int,
+    nodes: ArcPointer[List[AstNode]],
+    tokens: ArcPointer[List[TokenBundle]],
+    mut logger: Logger,
+    recursion_depth: Int = 0,
+) raises -> Int:
     """Process a token and determine the current node in the AST.
 
     In this function the `NodeState` do as follows:
@@ -265,103 +472,37 @@ fn get_current_node(
     """
     var _current_idx = current_idx
 
-    # Handle error cases
-    if _current_idx < 0:
-        logger.error(
-            "ERROR: current_idx is less than 0: " + String(_current_idx)
-        )
-        return (_current_idx, node_state_)
-
     if token.deleted:
-        logger.error("ERROR: Token is deleted: " + String(token))
-        return (_current_idx, node_state_)
-
-    var node_state = node_state_
-    var tree_interface = TreeInterface(nodes, tokens, node_state)
+        raise Error("Token is deleted: " + String(token))
 
     # State machine branching based on current state
-    if node_state == NodeState.MODULE_INIT:
-        var indices = NodeIndices(-1, _current_idx)
-        node = AstNode.accept(token, tree_interface, indices)
-        var new_idx = tree_interface.insert_node(node)
-        var new_node_state = node.determine_state(token, tree_interface)
-        log_state_transition(
-            logger,
-            token,
-            node,
-            tree_interface,
-            new_node_state,
-            prev_state=node_state,
-            recursion_depth=recursion_depth,
-        )
-        return get_current_node(
-            token,
-            new_idx,
-            new_node_state,
-            nodes,
-            tokens,
-            logger,
-            recursion_depth + 1,
-        )
-    elif node_state == NodeState.WANTING_CHILD:
-        var indices = NodeIndices(_current_idx, -1)
-        node = nodes[][_current_idx]
-        new_node = AstNode.accept(token, tree_interface, indices)
-        var new_idx = tree_interface.insert_node(new_node)
+    if current_idx == -1:
+        if len(nodes[]) > 0:
+            raise Error("Tree already has a module")
+        return _initialize_module(token, current_idx, nodes, tokens, logger)
 
-        node.indicies_ptr()[].original_child_idxs.append(new_idx)
-
-        var new_node_state = new_node.determine_state(token, tree_interface)
-        log_state_transition(
-            logger,
-            token,
-            new_node,
-            tree_interface,
-            node_state,
-            recursion_depth=recursion_depth,
-        )
-        return (new_idx, new_node_state)
-    else:
-        node = nodes[][_current_idx]
-
-    var prev_state = node_state
-    node_state = node.determine_state(token, tree_interface)
+    # var prev_state = node_state
+    var node = nodes[][_current_idx]
+    var tree_interface = TreeInterface(nodes, tokens)
+    var node_state = node.determine_state(token, tree_interface)
     log_state_transition(
         logger,
         token,
         node,
         tree_interface,
         node_state,
-        prev_state,
+        # prev_state,
         recursion_depth=recursion_depth,
     )
 
-    # Process token based on new state
-    if node_state == NodeState.COMPLETE:
-        node.process(token, node_state, tree_interface)
-        var parent_idx = node.indicies().original_parent_idx
-        return get_current_node(
-            token,
-            parent_idx,
-            node_state,
-            nodes,
-            tokens,
-            logger,
-            recursion_depth + 1,
-        )
-    elif node_state == NodeState.APPENDING or node_state == NodeState.APPENDING_TAIL:
-        node.process(token, node_state, tree_interface)
-        return (_current_idx, node_state)
-    elif node_state == NodeState.WANTING_CHILD:
-        return get_current_node(
-            token,
-            _current_idx,
-            NodeState.WANTING_CHILD,
-            nodes,
-            tokens,
-            logger,
-            recursion_depth + 1,
-        )
+    if node_state == TokenFlow.CREATE_CHILD:
+        return _create_child(token, current_idx, nodes, tokens, logger, recursion_depth + 1)
+
+    elif node_state == TokenFlow.CAPTURE_AND_COMPLETE:
+        return _capture_and_complete(token, current_idx, nodes, tokens, logger, recursion_depth + 1)
+
+    elif node_state == TokenFlow.CONSUME_TOKEN:
+        return _consume_token(token, current_idx, nodes, tokens, logger)
     else:
         raise Error(
             "get_current_node called on AstNode with no determine_state method"
@@ -405,8 +546,7 @@ fn make_tree(
         len(token_bundles) // 3
     )  # Rough estimate: ~1 node per 3 tokens
 
-    var current_idx = 0
-    var node_state = NodeState.MODULE_INIT
+    var current_idx = -1
 
     # Process each token to build the tree
     logger.info("Processing tokens to build AST...")
@@ -431,16 +571,13 @@ fn make_tree(
                 + "%)"
             )
 
-        result = get_current_node(
+        current_idx = get_current_node(
             token[],
             current_idx,
-            node_state,
             nodes,
             _token_bundles,
             inner_logger,
         )
-        current_idx = result[0]
-        node_state = result[1]
 
         token_count += 1
 
@@ -454,4 +591,4 @@ fn make_tree(
         + String(Float64(len(token_bundles)) / Float64(len(nodes[])))
     )
 
-    return TreeInterface(nodes, _token_bundles, node_state)
+    return TreeInterface(nodes, _token_bundles)

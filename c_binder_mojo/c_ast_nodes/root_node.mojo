@@ -9,7 +9,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 from c_binder_mojo.common import (
     TokenBundle,
     NodeIndices,
-    NodeState,
+    TokenFlow,
     TokenBundles,
 )
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
@@ -55,7 +55,7 @@ struct RootNode(NodeAstLike):
     fn determine_state(
         mut self, token: TokenBundle, tree_interface: TreeInterface
     ) -> StringLiteral:
-        return NodeState.WANTING_CHILD
+        return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,

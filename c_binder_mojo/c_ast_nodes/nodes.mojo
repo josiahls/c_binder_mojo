@@ -7,7 +7,7 @@ from c_binder_mojo.common import (
     TokenBundle,
     TokenBundles,
     NodeIndices,
-    NodeState,
+    TokenFlow,
 )
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
 from c_binder_mojo.c_ast_nodes import AstNodeVariant
@@ -345,7 +345,7 @@ struct AstNode(CollectionElement):
             "WARNING: determine_state called on AstNode with no determine_state"
             " method"
         )
-        return NodeState.COMPLETE
+        return TokenFlow.PASS_TO_PARENT
 
     @always_inline("nodebug")
     fn process(

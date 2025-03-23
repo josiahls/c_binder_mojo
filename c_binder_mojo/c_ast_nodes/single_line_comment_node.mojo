@@ -10,7 +10,7 @@ from c_binder_mojo.common import (
     TokenBundle,
     NodeIndices,
     TokenBundles,
-    NodeState,
+    TokenFlow,
     CTokens,
 )
 from c_binder_mojo.c_ast_nodes.tree import TreeInterface
@@ -35,7 +35,7 @@ struct SingleLineCommentNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles[].append(token_bundle)
-        self._node_state = NodeState.APPENDING
+        self._node_state = TokenFlow.CONSUME_TOKEN
         self._row_num = token_bundle.row_num
 
     @staticmethod
@@ -58,9 +58,9 @@ struct SingleLineCommentNode(NodeAstLike):
         mut self, token: TokenBundle, tree_interface: TreeInterface
     ) -> StringLiteral:
         if token.row_num != self._row_num:
-            self._node_state = NodeState.COMPLETE
+            self._node_state = TokenFlow.CAPTURE_AND_COMPLETE
         else:
-            self._node_state = NodeState.APPENDING
+            self._node_state = TokenFlow.CONSUME_TOKEN
         return self._node_state
 
     fn process(
@@ -69,10 +69,12 @@ struct SingleLineCommentNode(NodeAstLike):
         node_state: StringLiteral,
         tree_interface: TreeInterface,
     ):
-        if node_state == NodeState.COMPLETE:
+        if node_state == TokenFlow.CONSUME_TOKEN:
+            self._token_bundles[].append(token)
+        elif node_state == TokenFlow.CAPTURE_AND_COMPLETE:
             pass
             # self._token_bundles[].append(token)
-        elif node_state == NodeState.APPENDING:
+        elif node_state == TokenFlow.CONSUME_TOKEN:
             self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:

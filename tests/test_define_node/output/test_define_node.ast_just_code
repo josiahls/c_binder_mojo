@@ -4,18 +4,14 @@
  
 // Simple value defines 
 #define SIMPLE_INT 
-
 	42 
 #define SIMPLE_FLOAT 
-
 	3.14 
 #define SIMPLE_STRING 
-
 	"hello" 
  
 // Function-like macros 
 #define ADD(x 
-
 	, 
 	 
 	y) 
@@ -23,7 +19,6 @@
 	+ 
 	(y)) 
 #define MAX(a 
-
 	, 
 	 
 	b) 
@@ -35,7 +30,6 @@
 	: 
 	(b)) 
 #define PRINT_DEBUG(msg 
-
 	, 
 	 
 	...) 
@@ -49,14 +43,12 @@
  
 // Complex defines with expressions 
 #define BUFFER_SIZE 
-
 	(1024 
 	* 
 	2) 
  
 // Define with line continuation 
 #define MULTILINE_STRING 
-
 	"This 
 	is 
 	a 

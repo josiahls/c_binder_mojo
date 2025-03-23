@@ -106,7 +106,7 @@ fn default_to_string(
 
 
 fn default_to_string_just_code(
-    node: AstNode, module_interface: ModuleInterface
+    node: AstNode, module_interface: ModuleInterface, inline_children: Bool = False
 ) -> String:
     """Default string conversion for nodes.
 
@@ -141,9 +141,10 @@ fn default_to_string_just_code(
 
     # Add children
     if len(node.indicies().original_child_idxs) > 0:
-        if line_num != -1:
+        if line_num != -1 and not inline_children:
             s += "\n"
-        s += indent
+        if not inline_children:
+            s += indent
         s += string_children(node, True, module_interface)
 
     for token in node.token_bundles_tail():

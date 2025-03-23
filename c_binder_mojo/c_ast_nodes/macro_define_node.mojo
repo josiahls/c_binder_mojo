@@ -182,7 +182,7 @@ struct MacroDefineNode(NodeAstLike):
     ) -> String:
         """Convert this node to a string."""
         if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface)
+            return default_to_string_just_code(AstNode(self), module_interface, inline_children=True)
         else:
             return default_to_string(AstNode(self), module_interface)
 

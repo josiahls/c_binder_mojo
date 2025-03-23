@@ -11,8 +11,9 @@ from c_binder_mojo.common import (
     NodeIndices,
     TokenBundles,
     TokenFlow,
+    NodeState,
 )
-from c_binder_mojo.c_ast_nodes.tree import TreeInterface
+from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
     AstNode,
     NodeAstLike,
@@ -27,26 +28,32 @@ struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
+    var _node_state: String
 
     fn __init__(out self, indicies: NodeIndices, token: TokenBundle):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles[].append(token)
+        self._node_state = NodeState.INITIALIZING
 
     @staticmethod
     fn accept(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Bool:
         return True
 
     @staticmethod
     fn create(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
         return Self(indices, token)
 
-    fn determine_state(
-        mut self, token: TokenBundle, tree_interface: TreeInterface
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
         return TokenFlow.PASS_TO_PARENT
 
@@ -54,9 +61,9 @@ struct PlaceHolderNode(NodeAstLike):
         mut self,
         token: TokenBundle,
         node_state: StringLiteral,
-        tree_interface: TreeInterface,
+        module_interface: ModuleInterface,
     ):
-        pass
+        self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -73,6 +80,9 @@ struct PlaceHolderNode(NodeAstLike):
     fn token_bundles_tail(self) -> TokenBundles:
         return TokenBundles()
 
+    fn node_state(self) -> String:
+        return self._node_state
+
     @always_inline("nodebug")
     fn __str__(self) -> String:
         return "PlaceHolderNode"
@@ -84,16 +94,18 @@ struct PlaceHolderNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         if just_code:
-            return default_to_string_just_code(AstNode(self), tree_interface)
+            return default_to_string_just_code(AstNode(self), module_interface)
         else:
-            return default_to_string(AstNode(self), tree_interface)
+            return default_to_string(AstNode(self), module_interface)
 
-    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, tree_interface
+            self._indicies[].original_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

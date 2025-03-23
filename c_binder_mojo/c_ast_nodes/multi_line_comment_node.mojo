@@ -13,7 +13,7 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
 )
-from c_binder_mojo.c_ast_nodes.tree import TreeInterface
+from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
     AstNode,
     NodeAstLike,
@@ -40,7 +40,9 @@ struct MultiLineCommentNode(NodeAstLike):
 
     @staticmethod
     fn accept(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Bool:
         if token.token == CTokens.COMMENT_MULTI_LINE_BEGIN:
             return True
@@ -54,12 +56,14 @@ struct MultiLineCommentNode(NodeAstLike):
 
     @staticmethod
     fn create(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
         return Self(indices, token)
 
-    fn determine_state(
-        mut self, token: TokenBundle, tree_interface: TreeInterface
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
         if self._is_complete:
             self._node_state = NodeState.COMPLETE
@@ -83,7 +87,7 @@ struct MultiLineCommentNode(NodeAstLike):
         mut self,
         token: TokenBundle,
         node_state: StringLiteral,
-        tree_interface: TreeInterface,
+        module_interface: ModuleInterface,
     ):
         if node_state == NodeState.COMPLETE:
             pass
@@ -117,16 +121,18 @@ struct MultiLineCommentNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         if just_code:
-            return default_to_string_just_code(AstNode(self), tree_interface)
+            return default_to_string_just_code(AstNode(self), module_interface)
         else:
-            return default_to_string(AstNode(self), tree_interface)
+            return default_to_string(AstNode(self), module_interface)
 
-    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, tree_interface
+            self._indicies[].original_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

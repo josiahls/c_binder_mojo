@@ -13,7 +13,7 @@ from c_binder_mojo.common import (
     List,
     CTokens,
 )
-from c_binder_mojo.c_ast_nodes.tree import TreeInterface
+from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
     AstNode,
     NodeAstLike,
@@ -104,13 +104,15 @@ struct WhitespaceNode(NodeAstLike):
 
     @staticmethod
     fn accept(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Bool:
         """Accept a token and create a WhitespaceNode if appropriate.
 
         Args:
             token: The token to consider.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
             indices: The indices for this node in the AST.
 
         Returns:
@@ -121,13 +123,15 @@ struct WhitespaceNode(NodeAstLike):
 
     @staticmethod
     fn create(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
         """Create a new WhitespaceNode.
 
         Args:
             token: The token to use for creation.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
             indices: The indices for this node in the AST.
 
         Returns:
@@ -135,14 +139,14 @@ struct WhitespaceNode(NodeAstLike):
         """
         return Self(indices, token)
 
-    fn determine_state(
-        mut self, token: TokenBundle, tree_interface: TreeInterface
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
         """Determine the state of this node based on the current token.
 
         Args:
             token: The current token.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
 
         Returns:
             The state of this node.
@@ -158,14 +162,14 @@ struct WhitespaceNode(NodeAstLike):
         mut self,
         token: TokenBundle,
         node_state: StringLiteral,
-        tree_interface: TreeInterface,
+        module_interface: ModuleInterface,
     ):
         """Process the token to update this node.
 
         Args:
             token: The token to process.
             node_state: The current state of the node.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
         """
         # We already added the token in init, so no further processing needed
         if self._node_state == NodeState.APPENDING:
@@ -245,34 +249,36 @@ struct WhitespaceNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         """Convert this node to a string.
 
         Args:
             just_code: If True, only output code content (no metadata).
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
 
         Returns:
             String representation of this node.
         """
         if just_code:
-            return default_to_string_just_code(AstNode(self), tree_interface)
+            return default_to_string_just_code(AstNode(self), module_interface)
         else:
-            return default_to_string(AstNode(self), tree_interface)
+            return default_to_string(AstNode(self), module_interface)
 
-    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
         """Get the scope level of this node.
 
         Args:
             just_code: If True, only considers code elements.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
 
         Returns:
             The scope level (0 for whitespace).
         """
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, tree_interface
+            self._indicies[].original_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

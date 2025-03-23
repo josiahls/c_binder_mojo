@@ -11,7 +11,7 @@ from .node_variant import Variant
 
 alias AstNodeVariant = Variant[
     RootNode,
-    # SingleLineCommentNode,
+    SingleLineCommentNode,
     # MultiLineCommentNode,
     # WhitespaceNode,
     # MacroIfNDefNode,
@@ -20,4 +20,4 @@ alias AstNodeVariant = Variant[
 
 # Tree
 from .nodes import AstNode, NodeAstLike
-from .tree import TreeInterface, make_tree
+from .tree import ModuleInterface, make_tree

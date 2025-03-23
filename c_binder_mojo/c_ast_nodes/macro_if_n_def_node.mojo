@@ -13,7 +13,7 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
 )
-from c_binder_mojo.c_ast_nodes.tree import TreeInterface
+from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
     AstNode,
     NodeAstLike,
@@ -63,13 +63,15 @@ struct MacroIfNDefNode(NodeAstLike):
 
     @staticmethod
     fn accept(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Bool:
         """Check if the token is a #ifndef directive.
 
         Args:
             token: The token to check.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
             indices: The indices for this node.
 
         Returns:
@@ -79,13 +81,15 @@ struct MacroIfNDefNode(NodeAstLike):
 
     @staticmethod
     fn create(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
         """Create a new MacroIfNDefNode.
 
         Args:
             token: The #ifndef token.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
             indices: The indices for this node.
 
         Returns:
@@ -93,8 +97,8 @@ struct MacroIfNDefNode(NodeAstLike):
         """
         return Self(indices, token)
 
-    fn determine_state(
-        mut self, token: TokenBundle, tree_interface: TreeInterface
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
         """Determine the state of this node based on the current token.
 
@@ -106,7 +110,7 @@ struct MacroIfNDefNode(NodeAstLike):
 
         Args:
             token: The current token.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
 
         Returns:
             The state of this node.
@@ -136,7 +140,7 @@ struct MacroIfNDefNode(NodeAstLike):
                 # This is the #endif token for THIS ifndef node
                 # Transition to APPENDING_TAIL to collect the token
                 self._node_state = NodeState.APPENDING_TAIL
-        
+
         # Check is_complete at the end to ensure we process the token first
         # This ensures we handle the #endif token correctly before completing
         if self._is_complete:
@@ -148,7 +152,7 @@ struct MacroIfNDefNode(NodeAstLike):
         mut self,
         token: TokenBundle,
         node_state: StringLiteral,
-        tree_interface: TreeInterface,
+        module_interface: ModuleInterface,
     ):
         """Process a token in this node.
 
@@ -157,7 +161,7 @@ struct MacroIfNDefNode(NodeAstLike):
         Args:
             token: The token to process.
             node_state: The current state of the node.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
         """
         if node_state == NodeState.COMPLETE:
             pass
@@ -240,34 +244,36 @@ struct MacroIfNDefNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         """Convert this node to a string.
 
         Args:
             just_code: If True, only output code content (no metadata).
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
 
         Returns:
             String representation of this node.
         """
         if just_code:
-            return default_to_string_just_code(AstNode(self), tree_interface)
+            return default_to_string_just_code(AstNode(self), module_interface)
         else:
-            return default_to_string(AstNode(self), tree_interface)
+            return default_to_string(AstNode(self), module_interface)
 
-    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
         """Get the scope level of this node.
 
         Args:
             just_code: If True, only considers code elements.
-            tree_interface: Interface to the AST.
+            module_interface: Interface to the AST.
 
         Returns:
             The scope level.
         """
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, tree_interface
+            self._indicies[].original_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

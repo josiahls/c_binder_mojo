@@ -9,13 +9,13 @@ from c_binder_mojo.common import (
     NodeIndices,
     TokenFlow,
 )
-from c_binder_mojo.c_ast_nodes.tree import TreeInterface
+from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes import AstNodeVariant
 from c_binder_mojo import c_ast_nodes
 
 
 fn string_children(
-    node: AstNode, just_code: Bool, tree_interface: TreeInterface
+    node: AstNode, just_code: Bool, module_interface: ModuleInterface
 ) -> String:
     """Converts children to string with proper indentation and line breaks.
 
@@ -23,17 +23,17 @@ fn string_children(
         node: The node to convert to a string.
         just_code: If True, outputs only code and comments. If False, includes node metadata
             with '>>>' separator to show node ownership.
-        tree_interface: The tree interface to use for the node.
+        module_interface: The tree interface to use for the node.
     """
     var s = String()
     for child_idx in node.indicies().original_child_idxs:
-        var child = tree_interface.nodes()[][child_idx[]]
-        s += child.to_string(just_code, tree_interface)
+        var child = module_interface.nodes()[][child_idx[]]
+        s += child.to_string(just_code, module_interface)
     return s
 
 
 fn default_scope_level(
-    parent_idx: Int, just_code: Bool, tree_interface: TreeInterface
+    parent_idx: Int, just_code: Bool, module_interface: ModuleInterface
 ) -> Int:
     """Default scope level implementation that most nodes can use.
 
@@ -42,25 +42,27 @@ fn default_scope_level(
     var level = 0
     var current_parent_idx = parent_idx
     if parent_idx == -1:
-        var parent = tree_interface.nodes()[][0]
+        var parent = module_interface.nodes()[][0]
         var scope_offset = parent.scope_offset(just_code)
         return scope_offset
 
     while current_parent_idx != -1:
-        var parent = tree_interface.nodes()[][current_parent_idx]
+        var parent = module_interface.nodes()[][current_parent_idx]
         level += parent.scope_offset(just_code)
         current_parent_idx = parent.indicies().original_parent_idx
     return level
 
 
-fn default_to_string(node: AstNode, tree_interface: TreeInterface) -> String:
+fn default_to_string(
+    node: AstNode, module_interface: ModuleInterface
+) -> String:
     """Default string conversion for nodes. Includes the node signature and the node's content.
 
     If we want just code, use default_to_string_just_code instead.
 
     Args:
         node: The node to convert to a string.
-        tree_interface: The tree interface to use for the node.
+        module_interface: The tree interface to use for the node.
 
     Format when just_code=False:
         NodeName >>> actual content
@@ -68,7 +70,7 @@ fn default_to_string(node: AstNode, tree_interface: TreeInterface) -> String:
         NodeName >>> more content...
     """
     var s = String()
-    var level = node.scope_level(False, tree_interface)
+    var level = node.scope_level(False, module_interface)
     var indent = String("")
     if level > 0:
         indent = "\t" * level
@@ -90,7 +92,7 @@ fn default_to_string(node: AstNode, tree_interface: TreeInterface) -> String:
         if line_num != -1:
             s += "\n"
         s += indent
-        s += string_children(node, False, tree_interface)
+        s += string_children(node, False, module_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num:
@@ -104,13 +106,13 @@ fn default_to_string(node: AstNode, tree_interface: TreeInterface) -> String:
 
 
 fn default_to_string_just_code(
-    node: AstNode, tree_interface: TreeInterface
+    node: AstNode, module_interface: ModuleInterface
 ) -> String:
     """Default string conversion for nodes.
 
     Args:
         node: The node to convert to a string.
-        tree_interface: The tree interface to use for the node.
+        module_interface: The tree interface to use for the node.
 
     Format when just_code=False:
         NodeName >>> actual content
@@ -118,7 +120,7 @@ fn default_to_string_just_code(
         NodeName >>> more content...
     """
     var s = String()
-    var level = node.scope_level(True, tree_interface)
+    var level = node.scope_level(True, module_interface)
     var indent = String("")
     if level > 0:
         indent = "\t" * level
@@ -141,7 +143,7 @@ fn default_to_string_just_code(
         if line_num != -1:
             s += "\n"
         s += indent
-        s += string_children(node, True, tree_interface)
+        s += string_children(node, True, module_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num:
@@ -158,26 +160,33 @@ trait NodeAstLike(CollectionElement, Stringable):
 
     @staticmethod
     fn accept(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Bool:
         ...
 
     @staticmethod
     fn create(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
         ...
 
-    fn determine_state(
-        mut self, token: TokenBundle, tree_interface: TreeInterface
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
+        ...
+
+    fn node_state(self) -> String:
         ...
 
     fn process(
         mut self,
         token: TokenBundle,
         node_state: StringLiteral,
-        tree_interface: TreeInterface,
+        module_interface: ModuleInterface,
     ):
         ...
 
@@ -202,11 +211,13 @@ trait NodeAstLike(CollectionElement, Stringable):
         ...
 
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         ...
 
-    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
         ...
 
     fn scope_offset(self, just_code: Bool) -> Int:
@@ -216,7 +227,6 @@ trait NodeAstLike(CollectionElement, Stringable):
 @value
 struct AstNode(CollectionElement):
     alias type = AstNodeVariant
-    # NOTE: This is experimental.
     var node: ArcPointer[Self.type]
 
     fn __init__(out self, node: Self.type):
@@ -231,7 +241,9 @@ struct AstNode(CollectionElement):
     @always_inline("nodebug")
     @staticmethod
     fn accept(
-        token: TokenBundle, tree_interface: TreeInterface, indices: NodeIndices
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
         """
         Iterates over each type in the variant at compile-time and calls accept.
@@ -240,13 +252,13 @@ struct AstNode(CollectionElement):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept(token, tree_interface, indices):
-                return Self(T.create(token, tree_interface, indices))
+            if T.accept(token, module_interface, indices):
+                return Self(T.create(token, module_interface, indices))
         print(
             "WARNING: none of the nodes accepted the token: "
             + String(token.token)
         )
-        return Self(PlaceHolderNode.create(token, tree_interface, indices))
+        return Self(PlaceHolderNode.create(token, module_interface, indices))
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
@@ -329,8 +341,8 @@ struct AstNode(CollectionElement):
         return TokenBundles()
 
     @always_inline("nodebug")
-    fn determine_state(
-        mut self, token: TokenBundle, tree_interface: TreeInterface
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -339,11 +351,11 @@ struct AstNode(CollectionElement):
                 return (
                     self.node[]
                     ._get_ptr[T]()[]
-                    .determine_state(token, tree_interface)
+                    .determine_token_flow(token, module_interface)
                 )
         print(
-            "WARNING: determine_state called on AstNode with no determine_state"
-            " method"
+            "WARNING: determine_token_flow called on AstNode with no"
+            " determine_token_flow method"
         )
         return TokenFlow.PASS_TO_PARENT
 
@@ -352,14 +364,14 @@ struct AstNode(CollectionElement):
         mut self,
         token: TokenBundle,
         node_state: StringLiteral,
-        tree_interface: TreeInterface,
+        module_interface: ModuleInterface,
     ):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 self.node[]._get_ptr[T]()[].process(
-                    token, node_state, tree_interface
+                    token, node_state, module_interface
                 )
                 return
         print(
@@ -382,8 +394,22 @@ struct AstNode(CollectionElement):
         return "<unknown type>"
 
     @always_inline("nodebug")
+    fn node_state(self) -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].node_state()
+        print(
+            "WARNING: node_state called on AstNode with no node_state method"
+            " for node: "
+            + self.__str__()
+        )
+        return "<unknown type>"
+
+    @always_inline("nodebug")
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -392,7 +418,7 @@ struct AstNode(CollectionElement):
                 return (
                     self.node[]
                     ._get_ptr[T]()[]
-                    .to_string(just_code, tree_interface)
+                    .to_string(just_code, module_interface)
                 )
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
@@ -401,7 +427,10 @@ struct AstNode(CollectionElement):
         )
         return "<unknown type>"
 
-    fn scope_level(self, just_code: Bool, tree_interface: TreeInterface) -> Int:
+    @always_inline("nodebug")
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -409,7 +438,7 @@ struct AstNode(CollectionElement):
                 return (
                     self.node[]
                     ._get_ptr[T]()[]
-                    .scope_level(just_code, tree_interface)
+                    .scope_level(just_code, module_interface)
                 )
         print(
             "WARNING: scope_level called on AstNode with no scope_level method"
@@ -418,6 +447,7 @@ struct AstNode(CollectionElement):
         )
         return 0
 
+    @always_inline("nodebug")
     fn scope_offset(self, just_code: Bool) -> Int:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):

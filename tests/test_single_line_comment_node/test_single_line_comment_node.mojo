@@ -41,36 +41,36 @@ fn test_single_line_comment_node() raises:
 
     # Generate AST
     var tree_log_file = output_dir / "output/test_single_line_comment_node.tree"
-    var tree_interface = make_tree(tokenizer.tokens, String(tree_log_file))
+    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
 
     # Save AST for debugging
     var ast_file_just_code = output_dir / "output/test_single_line_comment_node.ast_just_code"
     ast_file_just_code.write_text(
-        tree_interface.nodes()[][0].to_string(
-            just_code=True, tree_interface=tree_interface
+        module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=module_interface
         )
     )
     var ast_file = output_dir / "output/test_single_line_comment_node.ast"
     ast_file.write_text(
-        tree_interface.nodes()[][0].to_string(
-            just_code=False, tree_interface=tree_interface
+        module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=module_interface
         )
     )
 
     # Verify the AST structure
-    var root_node = tree_interface.nodes()[][0]
+    var root_node = module_interface.nodes()[][0]
     logger.info("Root node: " + root_node.name())
 
     # Count the number of SingleLineCommentNode instances
     var comment_count = 0
-    for i in range(len(tree_interface.nodes()[])):
+    for i in range(len(module_interface.nodes()[])):
         # Check if the node is a SingleLineCommentNode by name
-        if tree_interface.nodes()[][i].name() == "SingleLineCommentNode":
+        if module_interface.nodes()[][i].name() == "SingleLineCommentNode":
             comment_count += 1
             # We can't use cast directly, so we'll just log the node info
             logger.info(
                 "Found comment node: "
-                + tree_interface.nodes()[][i].name(include_sig=True)
+                + module_interface.nodes()[][i].name(include_sig=True)
             )
 
     # We expect at least 11 single line comments in our test file

@@ -12,20 +12,24 @@ from firehose.logging import Logger
 
 struct NodeState:
     """The internal construction state of a node."""
-    alias INITIALIZING = "INITIALIZING"       # Node is being initialized
-    alias COLLECTING_TOKENS = "COLLECTING_TOKENS"    # Node is collecting its own tokens
-    alias BUILDING_CHILDREN = "BUILDING_CHILDREN"      # Node is creating/managing children
-    alias COMPLETED = "COMPLETED"             # Node is completely built
-    alias INVALID = "INVALID"                 # Node is in an invalid state (error)
+
+    alias INITIALIZING = "INITIALIZING"  # Node is being initialized
+    alias COLLECTING_TOKENS = "COLLECTING_TOKENS"  # Node is collecting its own tokens
+    alias BUILDING_CHILDREN = "BUILDING_CHILDREN"  # Node is creating/managing children
+    alias COMPLETED = "COMPLETED"  # Node is completely built
+    alias INVALID = "INVALID"  # Node is in an invalid state (error)
+
 
 struct TokenFlow:
     """Directive for how tokens should flow through the tree."""
-    alias INITIALIZE_MODULE = "INITIALIZE_MODULE"       # Tree has just started, no nodes exist yet
-    alias CONSUME_TOKEN = "CONSUME_TOKEN"     # Node should consume the token
-    alias PASS_TO_PARENT = "PASS_TO_PARENT"   # Pass token to parent node
-    alias CREATE_CHILD = "CREATE_CHILD"       # Create a child for this token
-    alias CAPTURE_AND_COMPLETE = "CAPTURE_AND_COMPLETE"    # Capture this token, then complete
-    alias INVALID = "INVALID"                 # Invalid directive (error)
+
+    alias INITIALIZE_MODULE = "INITIALIZE_MODULE"  # Tree has just started, no nodes exist yet
+    alias CONSUME_TOKEN = "CONSUME_TOKEN"  # Node should consume the token
+    alias PASS_TO_PARENT = "PASS_TO_PARENT"  # Pass token to parent node
+    alias CREATE_CHILD = "CREATE_CHILD"  # Create a child for this token
+    alias CAPTURE_AND_COMPLETE = "CAPTURE_AND_COMPLETE"  # Capture this token, then complete
+    alias INVALID = "INVALID"  # Invalid directive (error)
+
 
 # struct NodeState:
 #     """State of a node in the AST.

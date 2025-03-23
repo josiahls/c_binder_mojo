@@ -1,287 +1,78 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=143)
-PlaceHolderNode(original_parent_idx=0, original_current_idx=1)
-/* 
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=31)
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=1)
+/* Basic multiline comment */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=2)
-Basic 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=3)
-multiline 
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
+/* Multiline comment 
+ * with multiple 
+ * lines 
+ */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=4)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=5)
-*/ 
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=5)
+/** Documentation comment */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=6)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=7)
-/* 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+/** Documentation comment 
+ * with multiple 
+ * lines 
+ */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=8)
-Multiline 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=9)
-comment 
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=9)
+/* Comment with special characters: !@#$%^&*()_+ */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=10)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=11)
-* 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
+/* Comment with code-like content:  
+ * int x = 5 ;  
+ * void foo() ;  
+ */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=12)
-with 
+ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=13)
-multiple 
+int 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
- 
+some_function() 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
-* 
+; 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
-lines 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
  
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=17)
+/* Comment after code */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=19)
  
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=19)
+// This is not a multiline comment 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
-/** 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=21)
-Documentation 
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=21)
+/* Comment with Unicode: 你好世界 */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
-*/ 
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=23)
+/* Empty multiline comment */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
-/** 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
-Documentation 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=28)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
-* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=30)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
-multiple 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=33)
-* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=34)
-lines 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=35)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=36)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=37)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=38)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=39)
-Comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=40)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=41)
-special 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=42)
-characters: 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=43)
-!@#$%^&*()_+ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=44)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=45)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=46)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=47)
-Comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=48)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=49)
-code-like 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=50)
-content: 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=51)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=52)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=53)
-* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=54)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=55)
-x 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=56)
-= 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=57)
-5 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=58)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=59)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=60)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=61)
-* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=62)
-void 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=63)
-foo() 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=64)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=65)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=66)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=67)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=68)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=69)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=70)
-some_function() 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=71)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=72)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=73)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=74)
-Comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=75)
-after 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=76)
-code 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=77)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=78)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=79)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=80)
-This 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=81)
-is 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=82)
-not 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=83)
-a 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=84)
-multiline 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=85)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=86)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=87)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=88)
-Comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=89)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=90)
-Unicode: 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=91)
-你好世界 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=92)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=93)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=94)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=95)
-Empty 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=96)
-multiline 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=97)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=98)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=99)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=100)
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=25)
 /**/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=101)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=102)
+/* Nested-looking comment /* (not actually nested) */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
 /* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=103)
-Nested-looking 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=104)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=105)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=106)
-(not 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=107)
-actually 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=108)
-nested) 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=109)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=110)
+ * Comment 
+ *    with 
+ *       indentation 
+ */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=111)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=112)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=113)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=114)
-* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=115)
-Comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=116)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=117)
-* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=118)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=119)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=120)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=121)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=122)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=123)
-* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=124)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=125)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=126)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=127)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=128)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=129)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=130)
-indentation 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=131)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=132)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=133)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=134)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=135)
-Comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=136)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=137)
-trailing 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=138)
-spaces 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=139)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=140)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=141)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=142)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=143)
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+/* Comment with trailing spaces    */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
  

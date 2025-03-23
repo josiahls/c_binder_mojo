@@ -11,15 +11,7 @@ some_function()
  
 // Comment after code 
  
-/* 
-This 
-is 
-not 
-a 
-single 
-line 
-comment 
-*/ 
+/* This is not a single line comment */ 
  
 // Comment with Unicode: 你好世界 
  

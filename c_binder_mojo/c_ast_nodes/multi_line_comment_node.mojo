@@ -11,6 +11,7 @@ from c_binder_mojo.common import (
     NodeIndices,
     TokenBundles,
     NodeState,
+    TokenFlow,
     CTokens,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
@@ -28,14 +29,14 @@ struct MultiLineCommentNode(NodeAstLike):
     alias __name__ = "MultiLineCommentNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: String
     var _is_complete: Bool
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles[].append(token_bundle)
-        self._node_state = NodeState.APPENDING
+        self._node_state = NodeState.INITIALIZING
         self._is_complete = False
 
     @staticmethod
@@ -65,23 +66,27 @@ struct MultiLineCommentNode(NodeAstLike):
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
-        if self._is_complete:
-            self._node_state = NodeState.COMPLETE
-            return self._node_state
+        if self._node_state == NodeState.COMPLETED:
+            token_flow = TokenFlow.PASS_TO_PARENT
+            return token_flow
 
         # Check if the token is the end of the multi-line comment.
         # Delay the completion since we need to append this token to this node.
         if token.token == CTokens.COMMENT_MULTI_LINE_END:
-            self._is_complete = True
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.CONSUME_TOKEN
         elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_END):
-            self._is_complete = True
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.CONSUME_TOKEN
         elif token.token == CTokens.COMMENT_MULTI_LINE_INLINE_END:
-            self._is_complete = True
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.CONSUME_TOKEN
         elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_END):
-            self._is_complete = True
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.CONSUME_TOKEN
 
-        self._node_state = NodeState.APPENDING
-        return self._node_state
+        self._node_state = NodeState.COLLECTING_TOKENS
+        return TokenFlow.CONSUME_TOKEN
 
     fn process(
         mut self,
@@ -89,11 +94,7 @@ struct MultiLineCommentNode(NodeAstLike):
         node_state: StringLiteral,
         module_interface: ModuleInterface,
     ):
-        if node_state == NodeState.COMPLETE:
-            pass
-            # self._token_bundles[].append(token)
-        elif node_state == NodeState.APPENDING:
-            self._token_bundles[].append(token)
+        self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -109,6 +110,9 @@ struct MultiLineCommentNode(NodeAstLike):
 
     fn token_bundles_tail(self) -> TokenBundles:
         return TokenBundles()
+
+    fn node_state(self) -> String:
+        return self._node_state
 
     @always_inline("nodebug")
     fn __str__(self) -> String:

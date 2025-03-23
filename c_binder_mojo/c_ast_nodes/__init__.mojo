@@ -12,7 +12,7 @@ from .node_variant import Variant
 alias AstNodeVariant = Variant[
     RootNode,
     SingleLineCommentNode,
-    # MultiLineCommentNode,
+    MultiLineCommentNode,
     # WhitespaceNode,
     # MacroIfNDefNode,
     PlaceHolderNode,

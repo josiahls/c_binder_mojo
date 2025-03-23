@@ -1,4 +1,4 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=35)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=27)
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic single line comment 
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
@@ -25,47 +25,31 @@ SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
 // Comment after code 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=13)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
-/* 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=14)
+/* This is not a single line comment */ 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
-This 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
-is 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
-not 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
-a 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=19)
-single 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
-line 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=21)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=24)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=16)
 // Comment with Unicode: 你好世界 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=18)
+// Empty comment followed by another comment 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=19)
+// 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=20)
+// Comment after empty comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=21)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
+// Multiple comments 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=23)
+// in a 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=24)
+// row 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
-// Empty comment followed by another comment 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=27)
-// 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=28)
-// Comment after empty comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=30)
-// Multiple comments 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=31)
-// in a 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=32)
-// row 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=33)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=34)
 // Comment with trailing spaces     
-PlaceHolderNode(original_parent_idx=0, original_current_idx=35)
+PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
  

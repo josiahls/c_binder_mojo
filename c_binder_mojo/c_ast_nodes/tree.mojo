@@ -27,7 +27,7 @@ struct ModuleInterface:
     Attributes:
         _nodes: Reference-counted pointer to the list of AST nodes.
         _tokens: Reference-counted pointer to the list of tokens.
-        node_state: Current state of node processing.
+        token_flow: Current state of node processing.
     """
 
     var _nodes: ArcPointer[List[AstNode]]
@@ -127,7 +127,7 @@ fn log_state_transition(
     token: TokenBundle,
     current_node: AstNode,  # Renamed parameter to avoid shadowing
     module_interface: ModuleInterface,
-    node_state: StringLiteral,
+    token_flow: StringLiteral,
     prev_state: StringLiteral = "",
     recursion_depth: Int = 0,
 ) raises:
@@ -138,19 +138,19 @@ fn log_state_transition(
         token: Current token.
         current_node: Current node.
         module_interface: Tree interface.
-        node_state: New state.
+        token_flow: New state.
         prev_state: Previous state.
         recursion_depth: Current depth of get_current_node recursion.
     """
     # Format the transition string with fixed width
     var transition_str = String()
-    if prev_state == "" or prev_state == node_state:
-        transition_str = String(node_state)
+    if prev_state == "" or prev_state == token_flow:
+        transition_str = String(token_flow)
     else:
         if prev_state == TokenFlow.PASS_TO_PARENT:
-            transition_str = String(node_state) + " <- " + String(prev_state)
+            transition_str = String(token_flow) + " <- " + String(prev_state)
         else:
-            transition_str = String(prev_state) + " -> " + String(node_state)
+            transition_str = String(prev_state) + " -> " + String(token_flow)
 
     # Use dashes for padding to distinguish from indentation
     var max_width = 25
@@ -232,9 +232,9 @@ fn _initialize_module(
     var indices = NodeIndices(-1, current_idx)
     var node = AstNode.accept(token, module_interface, indices)
     var new_idx = module_interface.insert_node(node)
-    var new_node_state = node.determine_token_flow(token, module_interface)
+    var new_token_flow = node.determine_token_flow(token, module_interface)
     log_state_transition(
-        logger, token, node, module_interface, new_node_state, recursion_depth=0
+        logger, token, node, module_interface, new_token_flow, recursion_depth=0
     )
     return get_current_node(
         token, new_idx, module_interface, logger, recursion_depth=0
@@ -265,19 +265,6 @@ fn _consume_token(
     var node = module_interface.nodes()[][current_idx]
     node.process(token, TokenFlow.CONSUME_TOKEN, module_interface)
     return current_idx
-
-
-fn _capture_and_complete(
-    mut token: TokenBundle,
-    current_idx: Int,
-    mut module_interface: ModuleInterface,
-    mut logger: Logger,
-    recursion_depth: Int = 0,
-) raises -> Int:
-    var node = module_interface.nodes()[][current_idx]
-    node.process(token, TokenFlow.CAPTURE_AND_COMPLETE, module_interface)
-    # node.transition_to_state(NodeState.COMPLETED)
-    return node.indicies().original_parent_idx
 
 
 fn get_current_node(
@@ -327,25 +314,25 @@ fn get_current_node(
             raise Error("Tree already has a module")
         return _initialize_module(token, current_idx, module_interface, logger)
 
-    # var prev_state = node_state
+    # var prev_state = token_flow
     var node = module_interface.nodes()[][current_idx]
-    var node_state = node.determine_token_flow(token, module_interface)
+    var token_flow = node.determine_token_flow(token, module_interface)
     log_state_transition(
         logger,
         token,
         node,
         module_interface,
-        node_state,
+        token_flow,
         # prev_state,
         recursion_depth=recursion_depth,
     )
 
-    if node_state == TokenFlow.CREATE_CHILD:
+    if token_flow == TokenFlow.CREATE_CHILD:
         return _create_child(
             token, current_idx, module_interface, logger, recursion_depth + 1
         )
 
-    elif node_state == TokenFlow.PASS_TO_PARENT:
+    elif token_flow == TokenFlow.PASS_TO_PARENT:
         return get_current_node(
             token,
             node.indicies().original_parent_idx,
@@ -354,12 +341,7 @@ fn get_current_node(
             recursion_depth - 1,
         )
 
-    elif node_state == TokenFlow.CAPTURE_AND_COMPLETE:
-        return _capture_and_complete(
-            token, current_idx, module_interface, logger, recursion_depth - 1
-        )
-
-    elif node_state == TokenFlow.CONSUME_TOKEN:
+    elif token_flow == TokenFlow.CONSUME_TOKEN:
         return _consume_token(token, current_idx, module_interface, logger)
     else:
         raise Error(

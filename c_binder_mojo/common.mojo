@@ -27,7 +27,6 @@ struct TokenFlow:
     alias CONSUME_TOKEN = "CONSUME_TOKEN"  # Node should consume the token
     alias PASS_TO_PARENT = "PASS_TO_PARENT"  # Pass token to parent node
     alias CREATE_CHILD = "CREATE_CHILD"  # Create a child for this token
-    alias CAPTURE_AND_COMPLETE = "CAPTURE_AND_COMPLETE"  # Capture this token, then complete
     alias INVALID = "INVALID"  # Invalid directive (error)
 
 

@@ -44,7 +44,6 @@ struct MacroIfDefNode(NodeAstLike):
     var _node_state: StringLiteral
     var _macro_name: String
     var _row_num: Int
-    var _is_complete: Bool
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a MacroIfNDefNode.
@@ -60,7 +59,6 @@ struct MacroIfDefNode(NodeAstLike):
         self._token_bundles[].append(token_bundle)
         self._node_state = NodeState.INITIALIZING
         self._macro_name = ""
-        self._is_complete = False
 
     @staticmethod
     fn accept(

@@ -109,4 +109,4 @@ struct PlaceHolderNode(NodeAstLike):
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:
-        return 0 if just_code else 0  # Root adds one level of scope
+        return 0  # Root adds one level of scope

@@ -122,6 +122,7 @@ fn default_to_string_just_code(
     var s = String()
     var level = node.scope_level(True, module_interface)
     var indent = String("")
+
     if level > 0:
         indent = "\t" * level
     # NOTE(josiahls): This is different from the default_to_string function.

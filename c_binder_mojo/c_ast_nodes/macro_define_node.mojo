@@ -25,41 +25,41 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 
 
 @value
-struct MacroIfNDefNode(NodeAstLike):
-    """Represents a #ifndef preprocessor directive in C/C++ code.
-
-    This node handles the parsing and representation of the #ifndef directive,
-    which is commonly used for header guards and conditional compilation.
-    The node tracks the macro name being tested and all content until the matching #endif.
-
-    This node is expected to be 2 tokens in length.
-    The first token is the #ifndef directive.
-    The second token is the macro name.
+struct MacroDefineNode(NodeAstLike):
+    """Represents a #define preprocessor directive in C/C++ code.
+    
+    This node handles both simple defines and function-like macros:
+        Simple defines:
+            #define FOO 42
+            #define BAR
+        Function-like macros:
+            #define ADD(x, y) ((x) + (y))
+            #define MAX(a, b) ((a) > (b) ? (a) : (b))
     """
 
-    alias __name__ = "MacroIfNDefNode"
+    alias __name__ = "MacroDefineNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: StringLiteral
     var _macro_name: String
-    var _row_num: Int
+    var _row_nums: List[Int]
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
-        """Initialize a MacroIfNDefNode.
+        """Initialize a MacroDefineNode.
 
         Args:
             indicies: The indices for this node in the AST.
-            token_bundle: The initial #ifndef token.
+            token_bundle: The initial #define token.
         """
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_num = token_bundle.row_num
+        self._row_nums = List[Int]()
         self._token_bundles[].append(token_bundle)
+        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._macro_name = ""
-
 
     @staticmethod
     fn accept(
@@ -67,7 +67,7 @@ struct MacroIfNDefNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        """Check if the token is a #ifndef directive.
+        """Check if the token is a #define directive.
 
         Args:
             token: The token to check.
@@ -75,9 +75,9 @@ struct MacroIfNDefNode(NodeAstLike):
             indices: The indices for this node.
 
         Returns:
-            True if this token starts a #ifndef directive, False otherwise.
+            True if this token starts a #define directive, False otherwise.
         """
-        return token.token == CTokens.MACRO_IFNDEF
+        return token.token == CTokens.MACRO_DEFINE
 
     @staticmethod
     fn create(
@@ -85,15 +85,15 @@ struct MacroIfNDefNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        """Create a new MacroIfNDefNode.
+        """Create a new MacroDefineNode.
 
         Args:
-            token: The #ifndef token.
+            token: The #define token.
             module_interface: Interface to the AST.
             indices: The indices for this node.
 
         Returns:
-            A new MacroIfNDefNode instance.
+            A new MacroDefineNode instance.
         """
         return Self(indices, token)
 
@@ -103,32 +103,20 @@ struct MacroIfNDefNode(NodeAstLike):
         if len(self._token_bundles[]) == 0:
             return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
 
-        if len(self._token_bundles_tail[]) > 0:
-            if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
-                self._node_state = NodeState.COMPLETED
-                return TokenFlow.PASS_TO_PARENT
-            return TokenFlow.INVALID + " len(self._token_bundles_tail[]) > 0 but not in COLLECTING_TAIL_TOKENS state"
+        if token.row_num not in self._row_nums:
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.PASS_TO_PARENT
 
         if len(self._token_bundles[]) == 1:
             self._node_state = NodeState.COLLECTING_TOKENS
             return TokenFlow.CONSUME_TOKEN
 
-        if len(self._token_bundles[]) == 2:
-            if token.token == CTokens.MACRO_ENDIF:
-                self._node_state = NodeState.COLLECTING_TAIL_TOKENS
-                return TokenFlow.CONSUME_TOKEN
+        # After collecting #define and name, handle the value
+        if len(self._token_bundles[]) >= 2:
+            self._node_state = NodeState.BUILDING_CHILDREN
+            return TokenFlow.CREATE_CHILD
 
-            if self._node_state == NodeState.COLLECTING_TOKENS:
-                self._node_state = NodeState.BUILDING_CHILDREN
-                return TokenFlow.CREATE_CHILD
-
-            if self._node_state == NodeState.BUILDING_CHILDREN:
-                return TokenFlow.CREATE_CHILD
-
-            return TokenFlow.INVALID + " len(self._token_bundles[]) == 2 but not in COLLECTING_TOKENS state, nor a MACRO_ENDIF token"
-
-        return TokenFlow.INVALID + " len(self._token_bundles[]) != 0 or 1 or 2"
-
+        return TokenFlow.INVALID + " Unexpected token in MacroDefineNode"
 
     fn process(
         mut self,
@@ -136,71 +124,41 @@ struct MacroIfNDefNode(NodeAstLike):
         token_flow: StringLiteral,
         module_interface: ModuleInterface,
     ):
-        """Process a token in this node.
-        """
+        """Process a token in this node."""
         if self._node_state == NodeState.COLLECTING_TOKENS:
+            if token.token == CTokens.LINE_CONTINUATION:
+                self._row_nums.append(token.row_num)
             self._token_bundles[].append(token)
         elif self._node_state == NodeState.BUILDING_CHILDREN:
             pass
-        elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
-            self._token_bundles_tail[].append(token)
-            
 
     fn indicies(self) -> NodeIndices:
-        """Get the indices for this node.
-
-        Returns:
-            The indices.
-        """
+        """Get the indices for this node."""
         return self._indicies[]
 
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
-        """Get a pointer to the indices for this node.
-
-        Returns:
-            Pointer to the indices.
-        """
+        """Get a pointer to the indices for this node."""
         return self._indicies
 
     fn token_bundles(self) -> TokenBundles:
-        """Get the token bundles for this node.
-
-        Returns:
-            The token bundles.
-        """
+        """Get the token bundles for this node."""
         return self._token_bundles[]
 
     fn node_state(self) -> String:
-        """Get the state of this node.
-
-        Returns:
-            The state of this node.
-        """
+        """Get the state of this node."""
         return self._node_state
 
     fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
-        """Get a pointer to the token bundles for this node.
-
-        Returns:
-            Pointer to the token bundles.
-        """
+        """Get a pointer to the token bundles for this node."""
         return self._token_bundles
 
     fn token_bundles_tail(self) -> TokenBundles:
-        """Get the token bundles for the tail part of this node.
-
-        Returns:
-            An empty list as this node doesn't have a separate tail.
-        """
+        """Get the token bundles for the tail part of this node."""
         return self._token_bundles_tail[]
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
-        """Convert this node to a string.
-
-        Returns:
-            The name of this node.
-        """
+        """Convert this node to a string."""
         return self.__name__
 
     fn name(self, include_sig: Bool = False) -> String:
@@ -208,9 +166,6 @@ struct MacroIfNDefNode(NodeAstLike):
 
         Args:
             include_sig: If True, includes signature information.
-
-        Returns:
-            The name of this node.
         """
         if include_sig:
             var result = self.__name__ + "(" + String(self._indicies[])
@@ -225,15 +180,7 @@ struct MacroIfNDefNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
-        """Convert this node to a string.
-
-        Args:
-            just_code: If True, only output code content (no metadata).
-            module_interface: Interface to the AST.
-
-        Returns:
-            String representation of this node.
-        """
+        """Convert this node to a string."""
         if just_code:
             return default_to_string_just_code(AstNode(self), module_interface)
         else:
@@ -242,34 +189,15 @@ struct MacroIfNDefNode(NodeAstLike):
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> Int:
-        """Get the scope level of this node.
-
-        Args:
-            just_code: If True, only considers code elements.
-            module_interface: Interface to the AST.
-
-        Returns:
-            The scope level.
-        """
+        """Get the scope level of this node."""
         return default_scope_level(
             self._indicies[].original_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:
-        """Get the scope offset of this node.
-
-        Args:
-            just_code: If True, only considers code elements.
-
-        Returns:
-            The scope offset (1 for ifndef nodes, which create their own scopes).
-        """
-        return 1 if just_code else 1  # #ifndef adds a level of scope
+        """Get the scope offset of this node."""
+        return 1  # #define doesn't create a new scope
 
     fn get_macro_name(self) -> String:
-        """Get the name of the macro being tested by this #ifndef.
-
-        Returns:
-            The macro name.
-        """
-        return self._macro_name
+        """Get the name of the macro being defined."""
+        return self._macro_name 

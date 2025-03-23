@@ -60,22 +60,43 @@ fn test_ifndef_node() raises:
 
     # Count and verify ifndef nodes
     var ifndef_count = 0
+    var empty_ifndef_count = 0
 
     for i in range(len(module_interface.nodes()[])):
         var node = module_interface.nodes()[][i]
         if node.name() == "MacroIfNDefNode":
             ifndef_count += 1
             logger.info("Found ifndef node: " + node.name(include_sig=True))
+            
+            # Check if this is an empty ifndef (should have no children)
+            var indices = node.indicies()
+            if len(indices.original_child_idxs) == 0:
+                empty_ifndef_count += 1
+                logger.info("Found empty ifndef node")
+            elif len(indices.original_child_idxs) == 1:
+                # If it has exactly one child, verify it's not a PlaceHolderNode
+                var child_node = module_interface.nodes()[][indices.original_child_idxs[0]]
+                if child_node.name() == "PlaceHolderNode":
+                    raise Error(
+                        "Empty ifndef should not create PlaceHolderNode children"
+                    )
 
-    # We expect 10 ifndef nodes in our test file
-    if ifndef_count != 10:
+    # We expect 11 ifndef nodes in our test file
+    if ifndef_count != 11:
         raise Error(
-            "Expected 10 ifndef nodes, but found " + String(ifndef_count)
+            "Expected 11 ifndef nodes, but found " + String(ifndef_count)
+        )
+
+    # We should have exactly 1 empty ifndef
+    if empty_ifndef_count != 1:
+        raise Error(
+            "Expected 1 empty ifndef, but found " + String(empty_ifndef_count)
         )
 
     logger.info("Ifndef node test passed with:")
     logger.info("  - " + String(ifndef_count) + " ifndef nodes")
-
+    logger.info("  - " + String(empty_ifndef_count) + " empty ifndef nodes")
+    return
 
 
 fn main() raises:

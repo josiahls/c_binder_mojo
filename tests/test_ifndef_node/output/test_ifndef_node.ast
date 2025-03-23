@@ -1,7 +1,7 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2))
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 140))
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic header guards 
-MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5, 6, 7, ...) len=27, node_state=BUILDING_CHILDREN)
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5, 6, 7, ...) len=33, node_state=COMPLETED)
 #ifndef TEST_IFNDEF_NODE_H 
 	PlaceHolderNode(original_parent_idx=2, original_current_idx=3)
 	#define 
@@ -270,50 +270,48 @@ MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_id
 	 
 	SingleLineCommentNode(original_parent_idx=2, original_current_idx=121)
 	// Totally Empty ifndef (edge case) 
-	MacroIfNDefNode(original_parent_idx=2, original_current_idx=122, original_child_idxs=(123, 124, 125, 126, 129, ...) len=8, node_state=COMPLETED)
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=122, node_state=COMPLETED)
 	#ifndef EMPTY_GUARD 
-			PlaceHolderNode(original_parent_idx=122, original_current_idx=123)
-		#endif 
-		WhitespaceNode(original_parent_idx=122, original_current_idx=124, n_tokens=1)
-		 
-		SingleLineCommentNode(original_parent_idx=122, original_current_idx=125)
-		// Empty ifndef (edge case) 
-		MacroIfNDefNode(original_parent_idx=122, original_current_idx=126, original_child_idxs=(127, 128), node_state=COMPLETED)
-		#ifndef EMPTY_GUARD 
-					PlaceHolderNode(original_parent_idx=126, original_current_idx=127)
-			#define 
-			PlaceHolderNode(original_parent_idx=126, original_current_idx=128)
-			EMPTY_GUARD 
+	#endif 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=123, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=124)
+	// Empty ifndef (edge case) 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=125, original_child_idxs=(126, 127), node_state=COMPLETED)
+	#ifndef EMPTY_GUARD 
+			PlaceHolderNode(original_parent_idx=125, original_current_idx=126)
+		#define 
+		PlaceHolderNode(original_parent_idx=125, original_current_idx=127)
+		EMPTY_GUARD 
 
-		#endif 
-		WhitespaceNode(original_parent_idx=122, original_current_idx=129, n_tokens=1)
-		 
-		SingleLineCommentNode(original_parent_idx=122, original_current_idx=130)
-		// Typedef inside ifndef 
-		MacroIfNDefNode(original_parent_idx=122, original_current_idx=131, original_child_idxs=(132, 133, 134, 135, 136, ...) len=8, node_state=COMPLETED)
-		#ifndef MY_TYPE_GUARD 
-					PlaceHolderNode(original_parent_idx=131, original_current_idx=132)
-			#define 
-			PlaceHolderNode(original_parent_idx=131, original_current_idx=133)
-			MY_TYPE_GUARD 
-			PlaceHolderNode(original_parent_idx=131, original_current_idx=134)
-			typedef 
-			PlaceHolderNode(original_parent_idx=131, original_current_idx=135)
-			unsigned 
-			PlaceHolderNode(original_parent_idx=131, original_current_idx=136)
-			int 
-			PlaceHolderNode(original_parent_idx=131, original_current_idx=137)
-			uint_t 
-			PlaceHolderNode(original_parent_idx=131, original_current_idx=138)
-			; 
-			WhitespaceNode(original_parent_idx=131, original_current_idx=139, n_tokens=1)
-			 
-
-		#endif 
-		WhitespaceNode(original_parent_idx=122, original_current_idx=140, n_tokens=1)
+	#endif 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=128, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=129)
+	// Typedef inside ifndef 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=130, original_child_idxs=(131, 132, 133, 134, 135, ...) len=8, node_state=COMPLETED)
+	#ifndef MY_TYPE_GUARD 
+			PlaceHolderNode(original_parent_idx=130, original_current_idx=131)
+		#define 
+		PlaceHolderNode(original_parent_idx=130, original_current_idx=132)
+		MY_TYPE_GUARD 
+		PlaceHolderNode(original_parent_idx=130, original_current_idx=133)
+		typedef 
+		PlaceHolderNode(original_parent_idx=130, original_current_idx=134)
+		unsigned 
+		PlaceHolderNode(original_parent_idx=130, original_current_idx=135)
+		int 
+		PlaceHolderNode(original_parent_idx=130, original_current_idx=136)
+		uint_t 
+		PlaceHolderNode(original_parent_idx=130, original_current_idx=137)
+		; 
+		WhitespaceNode(original_parent_idx=130, original_current_idx=138, n_tokens=1)
 		 
 
 	#endif 
-	SingleLineCommentNode(original_parent_idx=2, original_current_idx=141)
-	// TEST_IFNDEF_NODE_H  
+	WhitespaceNode(original_parent_idx=2, original_current_idx=139, n_tokens=1)
+	 
 
+#endif 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=140)
+// TEST_IFNDEF_NODE_H  

@@ -80,51 +80,50 @@
  
 // Empty ifdef (edge case) 
 #ifdef EMPTY 
+#endif 
+ 
+// Mixed ifdef/ifndef 
+#ifdef MIXED 
 
-	#endif 
-	 
-	// Mixed ifdef/ifndef 
-	#ifdef MIXED 
+	    
+	#ifndef INNER_NOT 
 	
-		    
-		#ifndef INNER_NOT 
-		
-			        
-			int 
-			mixed_var 
-			= 
-			1 
-			; 
-			 
-			    
-		#endif 
-	#endif 
-	 
-	// ifdef with complex expressions 
-	#ifdef __cplusplus 
-	
-		    
-		extern 
-		"C" 
-		 
-		{ 
-		 
-	#endif 
-	 
-	// ifdef with multiple defines 
-	#ifdef MULTIPLE_DEFINES 
-	
-		    
-		#define 
-		A 
+		        
+		int 
+		mixed_var 
+		= 
 		1 
+		; 
+		 
 		    
-		#define 
-		B 
-		2 
-		    
-		#define 
-		C 
-		3 
 	#endif 
+#endif 
+ 
+// ifdef with complex expressions 
+#ifdef __cplusplus 
+
+	    
+	extern 
+	"C" 
 	 
+	{ 
+	 
+#endif 
+ 
+// ifdef with multiple defines 
+#ifdef MULTIPLE_DEFINES 
+
+	    
+	#define 
+	A 
+	1 
+	    
+	#define 
+	B 
+	2 
+	    
+	#define 
+	C 
+	3 
+#endif 
+ 

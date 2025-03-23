@@ -115,14 +115,13 @@ struct MacroIfNDefNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         if len(self._token_bundles[]) == 2:
+            if token.token == CTokens.MACRO_ENDIF:
+                self._node_state = NodeState.COLLECTING_TAIL_TOKENS
+                return TokenFlow.CONSUME_TOKEN
 
             if self._node_state == NodeState.COLLECTING_TOKENS:
                 self._node_state = NodeState.BUILDING_CHILDREN
                 return TokenFlow.CREATE_CHILD
-
-            if token.token == CTokens.MACRO_ENDIF:
-                self._node_state = NodeState.COLLECTING_TAIL_TOKENS
-                return TokenFlow.CONSUME_TOKEN
 
             if self._node_state == NodeState.BUILDING_CHILDREN:
                 return TokenFlow.CREATE_CHILD

@@ -59,6 +59,11 @@
 #include <stdio.h>
 #endif
 
+
+// Totally Empty ifndef (edge case)
+#ifndef EMPTY_GUARD
+#endif
+
 // Empty ifndef (edge case)
 #ifndef EMPTY_GUARD
 #define EMPTY_GUARD

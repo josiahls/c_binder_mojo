@@ -81,9 +81,9 @@ fn test_ifdef_node() raises:
                     )
 
     # We expect 9 ifdef nodes in our test file
-    if ifdef_count != 9:
+    if ifdef_count != 10:
         raise Error(
-            "Expected 9 ifdef nodes, but found " + String(ifdef_count)
+            "Expected 10 ifdef nodes, but found " + String(ifdef_count)
         )
 
     # We should have exactly 1 nested ifdef

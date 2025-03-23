@@ -151,7 +151,7 @@ struct MacroIfNDefNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        node_state: StringLiteral,
+        token_flow: StringLiteral,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.

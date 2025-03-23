@@ -72,12 +72,12 @@ struct SingleLineCommentNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        node_state: StringLiteral,
+        token_flow: StringLiteral,
         module_interface: ModuleInterface,
     ):
-        if node_state == TokenFlow.CONSUME_TOKEN:
+        if token_flow == TokenFlow.CONSUME_TOKEN:
             self._token_bundles[].append(token)
-        elif node_state == TokenFlow.PASS_TO_PARENT:
+        elif token_flow == TokenFlow.PASS_TO_PARENT:
             pass
 
     fn indicies(self) -> NodeIndices:

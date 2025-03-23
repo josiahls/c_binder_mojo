@@ -10,6 +10,7 @@ from c_binder_mojo.common import (
     NodeIndices,
     TokenBundles,
     NodeState,
+    TokenFlow,
     List,
     CTokens,
 )
@@ -69,7 +70,7 @@ struct WhitespaceNode(NodeAstLike):
     alias __name__ = "WhitespaceNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: String
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a WhitespaceNode.
@@ -81,9 +82,7 @@ struct WhitespaceNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles[].append(token_bundle)
-        self._node_state = (
-            NodeState.COMPLETE
-        )  # Whitespace is always immediately complete
+        self._node_state = NodeState.COMPLETED
 
     @staticmethod
     fn is_whitespace_token(token: TokenBundle) -> Bool:
@@ -152,16 +151,14 @@ struct WhitespaceNode(NodeAstLike):
             The state of this node.
         """
         if Self.is_whitespace_token(token):
-            self._node_state = NodeState.APPENDING
+            return TokenFlow.CONSUME_TOKEN
         else:
-            self._node_state = NodeState.COMPLETE
-
-        return self._node_state
+            return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
         token: TokenBundle,
-        node_state: StringLiteral,
+        token_flow: StringLiteral,
         module_interface: ModuleInterface,
     ):
         """Process the token to update this node.
@@ -172,7 +169,7 @@ struct WhitespaceNode(NodeAstLike):
             module_interface: Interface to the AST.
         """
         # We already added the token in init, so no further processing needed
-        if self._node_state == NodeState.APPENDING:
+        if token_flow == TokenFlow.CONSUME_TOKEN:
             self._token_bundles[].append(token)
         else:
             pass
@@ -217,6 +214,14 @@ struct WhitespaceNode(NodeAstLike):
         """
         return TokenBundles()
 
+    fn node_state(self) -> String:
+        """Get the state of this node.
+
+        Returns:
+            The state of this node.
+        """
+        return self._node_state
+
     @always_inline("nodebug")
     fn __str__(self) -> String:
         """Convert this node to a string.
@@ -241,7 +246,7 @@ struct WhitespaceNode(NodeAstLike):
                 + "("
                 + String(self._indicies[])
                 + ","
-                + "n_tokens="
+                + " n_tokens="
                 + String(len(self._token_bundles[]))
                 + ")"
             )

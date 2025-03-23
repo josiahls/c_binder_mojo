@@ -30,8 +30,8 @@ tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_cur
     └─ Path: RootNode
     └─ Current Token: '' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=2)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=2,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/*' at [2:0]
     └─ Nodes: 1 active, 2 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2))
@@ -49,7 +49,7 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [3:0]
-    └─ Nodes: 2 active, 2 complete
+    └─ Nodes: 3 active, 1 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [3:0]
@@ -65,7 +65,7 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [4:0]
-    └─ Nodes: 2 active, 2 complete
+    └─ Nodes: 3 active, 1 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [4:0]
@@ -77,7 +77,7 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [5:0]
-    └─ Nodes: 2 active, 2 complete
+    └─ Nodes: 3 active, 1 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [5:0]
@@ -85,13 +85,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=3)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [6:0]
-    └─ Nodes: 1 active, 3 complete
+    └─ Nodes: 2 active, 2 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3))
     └─ Path: RootNode
     └─ Current Token: '' at [6:0]
-    └─ Nodes: 1 active, 3 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=4)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 2 active, 2 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=4,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/**' at [7:0]
     └─ Nodes: 1 active, 4 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4))
@@ -113,13 +113,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [8:0]
-    └─ Nodes: 1 active, 5 complete
+    └─ Nodes: 3 active, 3 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5))
     └─ Path: RootNode
     └─ Current Token: '' at [8:0]
-    └─ Nodes: 1 active, 5 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=6)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 3 active, 3 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=6,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/**' at [9:0]
     └─ Nodes: 1 active, 6 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, 6))
@@ -137,7 +137,7 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [10:0]
-    └─ Nodes: 2 active, 6 complete
+    └─ Nodes: 5 active, 3 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [10:0]
@@ -153,7 +153,7 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [11:0]
-    └─ Nodes: 2 active, 6 complete
+    └─ Nodes: 5 active, 3 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [11:0]
@@ -165,7 +165,7 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [12:0]
-    └─ Nodes: 2 active, 6 complete
+    └─ Nodes: 5 active, 3 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [12:0]
@@ -173,13 +173,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [13:0]
-    └─ Nodes: 1 active, 7 complete
+    └─ Nodes: 4 active, 4 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
     └─ Path: RootNode
     └─ Current Token: '' at [13:0]
-    └─ Nodes: 1 active, 7 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=8)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 4 active, 4 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=8,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/*' at [14:0]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=8)
@@ -213,13 +213,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=9)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [15:0]
-    └─ Nodes: 1 active, 9 complete
+    └─ Nodes: 5 active, 5 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
     └─ Path: RootNode
     └─ Current Token: '' at [15:0]
-    └─ Nodes: 1 active, 9 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=10)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 5 active, 5 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=10,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/*' at [16:0]
     └─ Nodes: 1 active, 10 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=10)
@@ -245,11 +245,11 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [16:30]
-    └─ Nodes: 2 active, 10 complete
+    └─ Nodes: 7 active, 5 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [17:0]
-    └─ Nodes: 2 active, 10 complete
+    └─ Nodes: 7 active, 5 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [17:0]
@@ -277,11 +277,11 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [17:8]
-    └─ Nodes: 2 active, 10 complete
+    └─ Nodes: 7 active, 5 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [18:0]
-    └─ Nodes: 2 active, 10 complete
+    └─ Nodes: 7 active, 5 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [18:0]
@@ -301,11 +301,11 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [18:11]
-    └─ Nodes: 2 active, 10 complete
+    └─ Nodes: 7 active, 5 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [19:0]
-    └─ Nodes: 2 active, 10 complete
+    └─ Nodes: 7 active, 5 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [19:0]
@@ -313,13 +313,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [20:0]
-    └─ Nodes: 1 active, 11 complete
+    └─ Nodes: 6 active, 6 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
     └─ Path: RootNode
     └─ Current Token: '' at [20:0]
-    └─ Nodes: 1 active, 11 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=12)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 6 active, 6 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=12,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: 'int' at [21:0]
     └─ Nodes: 1 active, 12 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=12)
@@ -345,13 +345,13 @@ tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_cur
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
     └─ Path: RootNode -> PlaceHolderNode
     └─ Current Token: '' at [21:19]
-    └─ Nodes: 1 active, 15 complete
+    └─ Nodes: 7 active, 9 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=15)
     └─ Path: RootNode
     └─ Current Token: '' at [21:19]
-    └─ Nodes: 1 active, 15 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 7 active, 9 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=16,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/*' at [21:19]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=16)
@@ -377,13 +377,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=17)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [22:0]
-    └─ Nodes: 1 active, 17 complete
+    └─ Nodes: 8 active, 10 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=17)
     └─ Path: RootNode
     └─ Current Token: '' at [22:0]
-    └─ Nodes: 1 active, 17 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 8 active, 10 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=18,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [23:0]
     └─ Nodes: 1 active, 18 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=18)
@@ -417,13 +417,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=19)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [24:0]
-    └─ Nodes: 1 active, 19 complete
+    └─ Nodes: 9 active, 11 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=19)
     └─ Path: RootNode
     └─ Current Token: '' at [24:0]
-    └─ Nodes: 1 active, 19 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 9 active, 11 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=20,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/*' at [25:0]
     └─ Nodes: 1 active, 20 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=20)
@@ -453,13 +453,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [26:0]
-    └─ Nodes: 1 active, 21 complete
+    └─ Nodes: 10 active, 12 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=21)
     └─ Path: RootNode
     └─ Current Token: '' at [26:0]
-    └─ Nodes: 1 active, 21 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 10 active, 12 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=22,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/*' at [27:0]
     └─ Nodes: 1 active, 22 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=22)
@@ -485,13 +485,13 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=23)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [28:0]
-    └─ Nodes: 1 active, 23 complete
+    └─ Nodes: 11 active, 13 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=23)
     └─ Path: RootNode
     └─ Current Token: '' at [28:0]
-    └─ Nodes: 1 active, 23 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 11 active, 13 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=24,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/**/' at [29:0]
     └─ Nodes: 1 active, 24 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=24)
@@ -501,7 +501,7 @@ tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_cur
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=25)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [30:0]
-    └─ Nodes: 2 active, 24 complete
+    └─ Nodes: 13 active, 13 complete
 tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=25)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '/*' at [31:0]
@@ -537,160 +537,156 @@ tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(
 tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=25)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [31:46]
-    └─ Nodes: 1 active, 25 complete
+    └─ Nodes: 12 active, 14 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=25)
     └─ Path: RootNode
     └─ Current Token: '' at [31:46]
-    └─ Nodes: 1 active, 25 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 12 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=26,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [32:0]
+    └─ Nodes: 13 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=26,n_tokens=2)
+    └─ Path: RootNode -> WhitespaceNode
+    └─ Current Token: '/*' at [33:0]
     └─ Nodes: 1 active, 26 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=26)
     └─ Path: RootNode
-    └─ Current Token: '' at [32:0]
+    └─ Current Token: '/*' at [33:0]
     └─ Nodes: 1 active, 26 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current Token: '/*' at [33:0]
-    └─ Nodes: 1 active, 27 complete
-tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=27)
-    └─ Path: RootNode
-    └─ Current Token: '/*' at [33:0]
-    └─ Nodes: 1 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [34:0]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [34:0]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 2 active, 26 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'Comment' at [34:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 2 active, 26 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [35:0]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [35:0]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 2 active, 26 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [35:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [35:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [35:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'with' at [35:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 2 active, 26 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [36:0]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*' at [36:0]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 2 active, 26 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [36:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [36:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [36:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [36:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [36:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [36:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'indentation' at [36:1]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 2 active, 26 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [37:0]
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 14 active, 14 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [37:0]
-    └─ Nodes: 1 active, 28 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=28)
+    └─ Nodes: 1 active, 27 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [38:0]
+    └─ Nodes: 13 active, 15 complete
+tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=27)
+    └─ Path: RootNode
+    └─ Current Token: '' at [38:0]
+    └─ Nodes: 13 active, 15 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=28,n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
+    └─ Current Token: '/*' at [39:0]
     └─ Nodes: 1 active, 28 complete
 tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=28)
     └─ Path: RootNode
-    └─ Current Token: '' at [38:0]
+    └─ Current Token: '/*' at [39:0]
     └─ Nodes: 1 active, 28 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current Token: '/*' at [39:0]
-    └─ Nodes: 1 active, 29 complete
-tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=29)
-    └─ Path: RootNode
-    └─ Current Token: '/*' at [39:0]
-    └─ Nodes: 1 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'Comment' at [39:2]
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 2 active, 28 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'with' at [39:9]
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 2 active, 28 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'trailing' at [39:13]
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 2 active, 28 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'spaces' at [39:21]
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 2 active, 28 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [39:27]
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 15 active, 15 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [39:27]
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 15 active, 15 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [39:27]
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 15 active, 15 complete
+tree.mojo:223 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [39:27]
-    └─ Nodes: 1 active, 30 complete
-tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=30)
+    └─ Nodes: 1 active, 29 complete
+tree.mojo:223 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [40:0]
-    └─ Nodes: 1 active, 30 complete
-tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=30)
+    └─ Nodes: 14 active, 16 complete
+tree.mojo:223 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=29)
     └─ Path: RootNode
     └─ Current Token: '' at [40:0]
-    └─ Nodes: 1 active, 30 complete
+    └─ Nodes: 14 active, 16 complete

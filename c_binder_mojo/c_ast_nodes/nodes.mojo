@@ -185,7 +185,7 @@ trait NodeAstLike(CollectionElement, Stringable):
     fn process(
         mut self,
         token: TokenBundle,
-        node_state: StringLiteral,
+        token_flow: StringLiteral,
         module_interface: ModuleInterface,
     ):
         ...
@@ -363,7 +363,7 @@ struct AstNode(CollectionElement):
     fn process(
         mut self,
         token: TokenBundle,
-        node_state: StringLiteral,
+        token_flow: StringLiteral,
         module_interface: ModuleInterface,
     ):
         @parameter
@@ -371,7 +371,7 @@ struct AstNode(CollectionElement):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 self.node[]._get_ptr[T]()[].process(
-                    token, node_state, module_interface
+                    token, token_flow, module_interface
                 )
                 return
         print(

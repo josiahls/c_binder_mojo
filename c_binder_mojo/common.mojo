@@ -15,6 +15,7 @@ struct NodeState:
 
     alias INITIALIZING = "INITIALIZING"  # Node is being initialized
     alias COLLECTING_TOKENS = "COLLECTING_TOKENS"  # Node is collecting its own tokens
+    alias COLLECTING_TAIL_TOKENS = "COLLECTING_TAIL_TOKENS"  # Node is collecting its own tokens adding them to the tail
     alias BUILDING_CHILDREN = "BUILDING_CHILDREN"  # Node is creating/managing children
     alias COMPLETED = "COMPLETED"  # Node is completely built
     alias INVALID = "INVALID"  # Node is in an invalid state (error)

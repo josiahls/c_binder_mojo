@@ -14,7 +14,7 @@ alias AstNodeVariant = Variant[
     SingleLineCommentNode,
     MultiLineCommentNode,
     WhitespaceNode,
-    # MacroIfNDefNode,
+    MacroIfNDefNode,
     PlaceHolderNode,
 ]
 

@@ -12,6 +12,7 @@ from c_binder_mojo.common import (
     TokenBundles,
     NodeState,
     CTokens,
+    TokenFlow,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -57,7 +58,7 @@ struct MacroIfNDefNode(NodeAstLike):
         self._token_bundles_tail = TokenBundles()
         self._row_num = token_bundle.row_num
         self._token_bundles[].append(token_bundle)
-        self._node_state = NodeState.NODE_INIT
+        self._node_state = NodeState.INITIALIZING
         self._macro_name = ""
         self._is_complete = False
 
@@ -100,53 +101,36 @@ struct MacroIfNDefNode(NodeAstLike):
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
-        """Determine the state of this node based on the current token.
+        if len(self._token_bundles[]) == 0:
+            return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
 
-        This method handles the state transitions for parsing the #ifndef directive:
-        1. NODE_INIT: Will already have the macro name token per the accept and create methods.
-        2. NODE_INIT -> APPENDING: Imeediate transition. Only lasts for 1 token which will be the macro name.
-        3. APPENDING -> WANTING_CHILD: After the macro name token.
-        4. WANTING_CHILD -> WANTING_CHILD/COMPLETE: Process content until matching #endif
+        if len(self._token_bundles_tail[]) > 0:
+            if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
+                self._node_state = NodeState.COMPLETED
+                return TokenFlow.PASS_TO_PARENT
+            return TokenFlow.INVALID + " len(self._token_bundles_tail[]) > 0 but not in COLLECTING_TAIL_TOKENS state"
 
-        Args:
-            token: The current token.
-            module_interface: Interface to the AST.
+        if len(self._token_bundles[]) == 1:
+            self._node_state = NodeState.COLLECTING_TOKENS
+            return TokenFlow.CONSUME_TOKEN
 
-        Returns:
-            The state of this node.
-        """
-        # Don't check is_complete first - we need to handle the token first
-        # if self._is_complete:
-        #     self._node_state = NodeState.COMPLETE
+        if len(self._token_bundles[]) == 2:
 
-        if self._node_state == NodeState.NODE_INIT:
-            if len(self._token_bundles[]) == 1:
-                self._node_state = NodeState.APPENDING
-            else:
-                return NodeState.INVALID_STATE
-        elif self._node_state == NodeState.APPENDING:
-            if len(self._token_bundles[]) == 2:
-                self._node_state = NodeState.WANTING_CHILD
-            elif len(self._token_bundles[]) == 1:
-                self._node_state = NodeState.APPENDING
-            else:
-                return NodeState.INVALID_STATE
-        elif self._node_state == NodeState.APPENDING_TAIL:
-            # Do not immediately transition to COMPLETE
-            # Stay in APPENDING_TAIL until we've processed the token
-            pass
-        elif self._node_state == NodeState.WANTING_CHILD:
+            if self._node_state == NodeState.COLLECTING_TOKENS:
+                self._node_state = NodeState.BUILDING_CHILDREN
+                return TokenFlow.CREATE_CHILD
+
             if token.token == CTokens.MACRO_ENDIF:
-                # This is the #endif token for THIS ifndef node
-                # Transition to APPENDING_TAIL to collect the token
-                self._node_state = NodeState.APPENDING_TAIL
+                self._node_state = NodeState.COLLECTING_TAIL_TOKENS
+                return TokenFlow.CONSUME_TOKEN
 
-        # Check is_complete at the end to ensure we process the token first
-        # This ensures we handle the #endif token correctly before completing
-        if self._is_complete:
-            self._node_state = NodeState.COMPLETE
+            if self._node_state == NodeState.BUILDING_CHILDREN:
+                return TokenFlow.CREATE_CHILD
 
-        return self._node_state
+            return TokenFlow.INVALID + " len(self._token_bundles[]) == 2 but not in COLLECTING_TOKENS state, nor a MACRO_ENDIF token"
+
+        return TokenFlow.INVALID + " len(self._token_bundles[]) != 0 or 1 or 2"
+
 
     fn process(
         mut self,
@@ -155,26 +139,14 @@ struct MacroIfNDefNode(NodeAstLike):
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
-
-        Collects tokens that are part of this #ifndef directive.
-
-        Args:
-            token: The token to process.
-            node_state: The current state of the node.
-            module_interface: Interface to the AST.
         """
-        if node_state == NodeState.COMPLETE:
-            pass
-        elif node_state == NodeState.APPENDING_TAIL:
-            # Add the token to the tail and mark as complete AFTER processing
-            self._token_bundles_tail[].append(token)
-            # Only mark as complete if this is actually our #endif
-            if token.token == CTokens.MACRO_ENDIF:
-                self._is_complete = True
-        elif node_state == NodeState.APPENDING:
-            if len(self._token_bundles[]) == 1:
-                self._macro_name = token.token
+        if self._node_state == NodeState.COLLECTING_TOKENS:
             self._token_bundles[].append(token)
+        elif self._node_state == NodeState.BUILDING_CHILDREN:
+            pass
+        elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
+            self._token_bundles_tail[].append(token)
+            
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node.
@@ -199,6 +171,14 @@ struct MacroIfNDefNode(NodeAstLike):
             The token bundles.
         """
         return self._token_bundles[]
+
+    fn node_state(self) -> String:
+        """Get the state of this node.
+
+        Returns:
+            The state of this node.
+        """
+        return self._node_state
 
     fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
         """Get a pointer to the token bundles for this node.
@@ -236,6 +216,7 @@ struct MacroIfNDefNode(NodeAstLike):
         """
         if include_sig:
             var result = self.__name__ + "(" + String(self._indicies[])
+            result += ", node_state=" + String(self._node_state)
             if self._macro_name != "":
                 result += ", macro='" + self._macro_name + "'"
             result += ")"

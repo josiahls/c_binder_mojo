@@ -1,695 +1,311 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=347)
-PlaceHolderNode(original_parent_idx=0, original_current_idx=1)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=2)
-Basic 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=3)
-header 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=4)
-guards 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=5)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=6)
-TEST_IFNDEF_NODE_H 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=7)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=8)
-TEST_IFNDEF_NODE_H 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=9)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=10)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=11)
-Simple 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=12)
-define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=13)
-inside 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
-an 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
-ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
-SIMPLE_DEFINE 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=19)
-SIMPLE_DEFINE 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
-1 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=21)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 114, 115, 116, ...) len=14)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+// Basic header guards 
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5, 6, 7, ...) len=20, node_state=COMPLETED)
+#ifndef TEST_IFNDEF_NODE_H 
+	PlaceHolderNode(original_parent_idx=2, original_current_idx=3)
+	#define 
+	PlaceHolderNode(original_parent_idx=2, original_current_idx=4)
+	TEST_IFNDEF_NODE_H 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=5, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=6)
+	// Simple define inside an ifndef 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=7, original_child_idxs=(8, 9, 10), node_state=COMPLETED)
+	#ifndef SIMPLE_DEFINE 
+			PlaceHolderNode(original_parent_idx=7, original_current_idx=8)
+		#define 
+		PlaceHolderNode(original_parent_idx=7, original_current_idx=9)
+		SIMPLE_DEFINE 
+		PlaceHolderNode(original_parent_idx=7, original_current_idx=10)
+		1 
+
+	#endif 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=11, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=12)
+	// Nested ifndefs 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=13, original_child_idxs=(14, 15, 16, 17, 28, ...) len=12, node_state=COMPLETED)
+	#ifndef OUTER_GUARD 
+			PlaceHolderNode(original_parent_idx=13, original_current_idx=14)
+		#define 
+		PlaceHolderNode(original_parent_idx=13, original_current_idx=15)
+		OUTER_GUARD 
+		WhitespaceNode(original_parent_idx=13, original_current_idx=16, n_tokens=5)
+		 
+		    
+		MacroIfNDefNode(original_parent_idx=13, original_current_idx=17, original_child_idxs=(18, 19, 20, 21, 22, ...) len=10, node_state=COMPLETED)
+		#ifndef INNER_GUARD 
+					WhitespaceNode(original_parent_idx=17, original_current_idx=18, n_tokens=4)
+			    
+			PlaceHolderNode(original_parent_idx=17, original_current_idx=19)
+			#define 
+			PlaceHolderNode(original_parent_idx=17, original_current_idx=20)
+			INNER_GUARD 
+			WhitespaceNode(original_parent_idx=17, original_current_idx=21, n_tokens=8)
+			        
+			PlaceHolderNode(original_parent_idx=17, original_current_idx=22)
+			int 
+			PlaceHolderNode(original_parent_idx=17, original_current_idx=23)
+			inner_guard_variable 
+			PlaceHolderNode(original_parent_idx=17, original_current_idx=24)
+			= 
+			PlaceHolderNode(original_parent_idx=17, original_current_idx=25)
+			42 
+			PlaceHolderNode(original_parent_idx=17, original_current_idx=26)
+			; 
+			WhitespaceNode(original_parent_idx=17, original_current_idx=27, n_tokens=5)
+			 
+			    
+
+		#endif 
+		SingleLineCommentNode(original_parent_idx=13, original_current_idx=28)
+		// INNER_GUARD 
+		WhitespaceNode(original_parent_idx=13, original_current_idx=29, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=13, original_current_idx=30)
+		int 
+		PlaceHolderNode(original_parent_idx=13, original_current_idx=31)
+		outer_guard_variable 
+		PlaceHolderNode(original_parent_idx=13, original_current_idx=32)
+		= 
+		PlaceHolderNode(original_parent_idx=13, original_current_idx=33)
+		100 
+		PlaceHolderNode(original_parent_idx=13, original_current_idx=34)
+		; 
+		WhitespaceNode(original_parent_idx=13, original_current_idx=35, n_tokens=2)
+		 
+		 
+
+	#endif 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=36)
+	// OUTER_GUARD 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=37, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=38)
+	// Ifdef with code blocks 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=39, original_child_idxs=(40, 41, 42, 43, 44, ...) len=30, node_state=COMPLETED)
+	#ifndef CODE_BLOCK_TEST 
+			PlaceHolderNode(original_parent_idx=39, original_current_idx=40)
+		#define 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=41)
+		CODE_BLOCK_TEST 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=42, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=43)
+		void 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=44)
+		test_function() 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=45, n_tokens=1)
+		 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=46)
+		{ 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=47, n_tokens=9)
+		 
+		        
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=48)
+		int 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=49)
+		x 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=50)
+		= 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=51)
+		10 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=52)
+		; 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=53, n_tokens=9)
+		 
+		        
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=54)
+		if 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=55)
+		(x 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=56)
+		> 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=57)
+		5) 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=58, n_tokens=1)
+		 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=59)
+		{ 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=60, n_tokens=13)
+		 
+		            
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=61)
+		x 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=62)
+		= 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=63)
+		5 
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=64)
+		; 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=65, n_tokens=10)
+		 
+		         
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=66)
+		} 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=67, n_tokens=6)
+		 
+		     
+		PlaceHolderNode(original_parent_idx=39, original_current_idx=68)
+		} 
+		WhitespaceNode(original_parent_idx=39, original_current_idx=69, n_tokens=1)
+		 
+
+	#endif 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=70)
+	// CODE_BLOCK_TEST 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=71, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=72)
+	// Complex guards with comments 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=73, original_child_idxs=(74, 75, 76, 77, 78, ...) len=15, node_state=COMPLETED)
+	#ifndef COMPLEX_GUARD 
+			SingleLineCommentNode(original_parent_idx=73, original_current_idx=74)
+		// This is a comment after ifndef 
+		PlaceHolderNode(original_parent_idx=73, original_current_idx=75)
+		#define 
+		PlaceHolderNode(original_parent_idx=73, original_current_idx=76)
+		COMPLEX_GUARD 
+		MultiLineCommentNode(original_parent_idx=73, original_current_idx=77)
+		/* This is a comment after define */ 
+		WhitespaceNode(original_parent_idx=73, original_current_idx=78, n_tokens=5)
+		 
+		    
+		SingleLineCommentNode(original_parent_idx=73, original_current_idx=79)
+		// A single line comment inside the guard 
+		WhitespaceNode(original_parent_idx=73, original_current_idx=80, n_tokens=4)
+		    
+		MultiLineCommentNode(original_parent_idx=73, original_current_idx=81)
+		/* A multi-line comment  
+		       inside the guard */ 
+		WhitespaceNode(original_parent_idx=73, original_current_idx=82, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=73, original_current_idx=83)
+		int 
+		PlaceHolderNode(original_parent_idx=73, original_current_idx=84)
+		complex_variable 
+		PlaceHolderNode(original_parent_idx=73, original_current_idx=85)
+		= 
+		PlaceHolderNode(original_parent_idx=73, original_current_idx=86)
+		200 
+		PlaceHolderNode(original_parent_idx=73, original_current_idx=87)
+		; 
+		WhitespaceNode(original_parent_idx=73, original_current_idx=88, n_tokens=2)
+		 
+		 
+
+	#endif 
+	MultiLineCommentNode(original_parent_idx=2, original_current_idx=89)
+	/* End of complex guard */ 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=90, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=91)
+	// Conditional compilation 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=92, original_child_idxs=(93, 94, 95, 96, 97, ...) len=21, node_state=COMPLETED)
+	#ifndef PLATFORM_SPECIFIC 
+			WhitespaceNode(original_parent_idx=92, original_current_idx=93, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=94)
+		#ifdef 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=95)
+		_WIN32 
+		WhitespaceNode(original_parent_idx=92, original_current_idx=96, n_tokens=8)
+		        
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=97)
+		#define 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=98)
+		PLATFORM_SPECIFIC 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=99)
+		"Windows" 
+		WhitespaceNode(original_parent_idx=92, original_current_idx=100, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=101)
+		#elif 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=102)
+		defined(__APPLE__) 
+		WhitespaceNode(original_parent_idx=92, original_current_idx=103, n_tokens=8)
+		        
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=104)
+		#define 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=105)
+		PLATFORM_SPECIFIC 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=106)
+		"MacOS" 
+		WhitespaceNode(original_parent_idx=92, original_current_idx=107, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=108)
+		#else 
+		WhitespaceNode(original_parent_idx=92, original_current_idx=109, n_tokens=8)
+		        
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=110)
+		#define 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=111)
+		PLATFORM_SPECIFIC 
+		PlaceHolderNode(original_parent_idx=92, original_current_idx=112)
+		"Linux" 
+		WhitespaceNode(original_parent_idx=92, original_current_idx=113, n_tokens=4)
+		    
+
+	#endif 
+
 #endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
+WhitespaceNode(original_parent_idx=0, original_current_idx=114, n_tokens=1)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
-Nested 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
-ifndefs 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
-OUTER_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=28)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
-OUTER_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=30)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=33)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=34)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=35)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=36)
-INNER_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=37)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=38)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=39)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=40)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=41)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=42)
-INNER_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=43)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=44)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=45)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=46)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=47)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=48)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=49)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=50)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=51)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=52)
-inner_guard_variable 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=53)
-= 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=54)
-42 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=55)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=56)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=57)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=58)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=59)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=60)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=61)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=115)
+// Include with ifndef guard 
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=116, original_child_idxs=(117, 118, 119, 120), node_state=COMPLETED)
+#ifndef INCLUDED_STDIO 
+	PlaceHolderNode(original_parent_idx=116, original_current_idx=117)
+	#define 
+	PlaceHolderNode(original_parent_idx=116, original_current_idx=118)
+	INCLUDED_STDIO 
+	PlaceHolderNode(original_parent_idx=116, original_current_idx=119)
+	#include 
+	PlaceHolderNode(original_parent_idx=116, original_current_idx=120)
+	<stdio.h> 
+
 #endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=62)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=63)
-INNER_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=64)
+WhitespaceNode(original_parent_idx=0, original_current_idx=121, n_tokens=1)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=65)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=66)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=67)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=68)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=69)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=70)
-outer_guard_variable 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=71)
-= 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=72)
-100 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=73)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=74)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=75)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=76)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=122)
+// Empty ifndef (edge case) 
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=123, original_child_idxs=(124, 125), node_state=COMPLETED)
+#ifndef EMPTY_GUARD 
+	PlaceHolderNode(original_parent_idx=123, original_current_idx=124)
+	#define 
+	PlaceHolderNode(original_parent_idx=123, original_current_idx=125)
+	EMPTY_GUARD 
+
 #endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=77)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=78)
-OUTER_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=79)
+WhitespaceNode(original_parent_idx=0, original_current_idx=126, n_tokens=1)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=80)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=81)
-Ifdef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=82)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=83)
-code 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=84)
-blocks 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=85)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=86)
-CODE_BLOCK_TEST 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=87)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=88)
-CODE_BLOCK_TEST 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=89)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=90)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=91)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=92)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=93)
-void 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=94)
-test_function() 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=95)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=96)
-{ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=97)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=98)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=99)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=100)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=101)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=102)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=103)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=104)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=105)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=106)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=107)
-x 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=108)
-= 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=109)
-10 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=110)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=111)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=112)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=113)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=114)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=115)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=116)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=117)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=118)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=119)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=120)
-if 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=121)
-(x 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=122)
-> 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=123)
-5) 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=124)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=125)
-{ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=126)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=127)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=128)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=129)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=130)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=131)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=132)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=133)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=134)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=135)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=136)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=137)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=127)
+// Typedef inside ifndef 
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=128, original_child_idxs=(129, 130, 131, 132, 133, ...) len=8, node_state=COMPLETED)
+#ifndef MY_TYPE_GUARD 
+	PlaceHolderNode(original_parent_idx=128, original_current_idx=129)
+	#define 
+	PlaceHolderNode(original_parent_idx=128, original_current_idx=130)
+	MY_TYPE_GUARD 
+	PlaceHolderNode(original_parent_idx=128, original_current_idx=131)
+	typedef 
+	PlaceHolderNode(original_parent_idx=128, original_current_idx=132)
+	unsigned 
+	PlaceHolderNode(original_parent_idx=128, original_current_idx=133)
+	int 
+	PlaceHolderNode(original_parent_idx=128, original_current_idx=134)
+	uint_t 
+	PlaceHolderNode(original_parent_idx=128, original_current_idx=135)
+	; 
+	WhitespaceNode(original_parent_idx=128, original_current_idx=136, n_tokens=1)
+	 
+
+#endif 
+WhitespaceNode(original_parent_idx=0, original_current_idx=137, n_tokens=1)
  
 PlaceHolderNode(original_parent_idx=0, original_current_idx=138)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=139)
-x 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=140)
-= 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=141)
-5 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=142)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=143)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=144)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=145)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=146)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=147)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=148)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=149)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=150)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=151)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=152)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=153)
-} 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=154)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=155)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=156)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=157)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=158)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=159)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=160)
-} 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=161)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=162)
 #endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=163)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=164)
-CODE_BLOCK_TEST 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=165)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=166)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=167)
-Complex 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=168)
-guards 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=169)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=170)
-comments 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=171)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=172)
-COMPLEX_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=173)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=174)
-This 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=175)
-is 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=176)
-a 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=177)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=178)
-after 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=179)
-ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=180)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=181)
-COMPLEX_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=182)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=183)
-This 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=184)
-is 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=185)
-a 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=186)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=187)
-after 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=188)
-define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=189)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=190)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=191)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=192)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=193)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=194)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=195)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=196)
-A 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=197)
-single 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=198)
-line 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=199)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=200)
-inside 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=201)
-the 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=202)
-guard 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=203)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=204)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=205)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=206)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=207)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=208)
-A 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=209)
-multi-line 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=210)
-comment 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=211)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=212)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=213)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=214)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=215)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=216)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=217)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=218)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=219)
-inside 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=220)
-the 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=221)
-guard 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=222)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=223)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=224)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=225)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=226)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=227)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=228)
-complex_variable 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=229)
-= 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=230)
-200 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=231)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=232)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=233)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=234)
-#endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=235)
-/* 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=236)
-End 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=237)
-of 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=238)
-complex 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=239)
-guard 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=240)
-*/ 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=241)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=242)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=243)
-Conditional 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=244)
-compilation 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=245)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=246)
-PLATFORM_SPECIFIC 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=247)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=248)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=249)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=250)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=251)
-#ifdef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=252)
-_WIN32 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=253)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=254)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=255)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=256)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=257)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=258)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=259)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=260)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=261)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=262)
-PLATFORM_SPECIFIC 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=263)
-"Windows" 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=264)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=265)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=266)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=267)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=268)
-#elif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=269)
-defined(__APPLE__) 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=270)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=271)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=272)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=273)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=274)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=275)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=276)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=277)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=278)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=279)
-PLATFORM_SPECIFIC 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=280)
-"MacOS" 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=281)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=282)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=283)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=284)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=285)
-#else 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=286)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=287)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=288)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=289)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=290)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=291)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=292)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=293)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=294)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=295)
-PLATFORM_SPECIFIC 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=296)
-"Linux" 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=297)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=298)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=299)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=300)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=301)
-#endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=302)
-#endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=303)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=304)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=305)
-Include 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=306)
-with 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=307)
-ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=308)
-guard 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=309)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=310)
-INCLUDED_STDIO 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=311)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=312)
-INCLUDED_STDIO 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=313)
-#include 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=314)
-<stdio.h> 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=315)
-#endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=316)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=317)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=318)
-Empty 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=319)
-ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=320)
-(edge 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=321)
-case) 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=322)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=323)
-EMPTY_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=324)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=325)
-EMPTY_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=326)
-#endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=327)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=328)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=329)
-Typedef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=330)
-inside 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=331)
-ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=332)
-#ifndef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=333)
-MY_TYPE_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=334)
-#define 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=335)
-MY_TYPE_GUARD 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=336)
-typedef 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=337)
-unsigned 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=338)
-int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=339)
-uint_t 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=340)
-; 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=341)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=342)
-#endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=343)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=344)
-#endif 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=345)
-// 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=346)
-TEST_IFNDEF_NODE_H 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=347)
- 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=139)
+// TEST_IFNDEF_NODE_H  

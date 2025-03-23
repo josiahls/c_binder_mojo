@@ -128,7 +128,7 @@ fn log_state_transition(
     current_node: AstNode,  # Renamed parameter to avoid shadowing
     module_interface: ModuleInterface,
     token_flow: StringLiteral,
-    prev_state: StringLiteral = "",
+    prev_state: String = "",
     recursion_depth: Int = 0,
 ) raises:
     """Log a state transition with enhanced context.
@@ -204,10 +204,7 @@ fn log_state_transition(
     var complete_count = 0
     for i in range(len(module_interface.nodes()[])):
         if (
-            module_interface.nodes()[][i].determine_token_flow(
-                token, module_interface
-            )
-            == TokenFlow.PASS_TO_PARENT
+            module_interface.nodes()[][i].node_state() == NodeState.COMPLETED
         ):
             complete_count += 1
         else:
@@ -253,6 +250,11 @@ fn _create_child(
     new_node = AstNode.accept(token, module_interface, indices)
     var new_idx = module_interface.insert_node(new_node)
     node.indicies_ptr()[].original_child_idxs.append(new_idx)
+    log_state_transition(
+        logger, token, new_node, module_interface, TokenFlow.CREATE_CHILD,
+        prev_state=node.name(),
+        recursion_depth=recursion_depth,
+    )
     return new_idx
 
 
@@ -345,8 +347,8 @@ fn get_current_node(
         return _consume_token(token, current_idx, module_interface, logger)
     else:
         raise Error(
-            "get_current_node called on AstNode with no determine_token_flow"
-            " method"
+            "get_current_node called on AstNode that could not determine token flow: "
+            + String(token_flow)
         )
 
 

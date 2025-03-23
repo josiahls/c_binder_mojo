@@ -38,24 +38,24 @@ fn test_ifndef_node() raises:
 
     # Generate AST
     var tree_log_file = output_dir / "test_ifndef_node.tree"
-    var tree_interface = make_tree(tokenizer.tokens, String(tree_log_file))
+    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
 
     # Save AST for debugging
     var ast_file_just_code = output_dir / "test_ifndef_node.ast_just_code"
     ast_file_just_code.write_text(
-        tree_interface.nodes()[][0].to_string(
-            just_code=True, tree_interface=tree_interface
+        module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=module_interface
         )
     )
     var ast_file = output_dir / "test_ifndef_node.ast"
     ast_file.write_text(
-        tree_interface.nodes()[][0].to_string(
-            just_code=False, tree_interface=tree_interface
+        module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=module_interface
         )
     )
 
     # Verify the AST structure
-    var root_node = tree_interface.nodes()[][0]
+    var root_node = module_interface.nodes()[][0]
     logger.info("Root node: " + root_node.name())
 
     # Count the number of #ifndef nodes and their children
@@ -63,8 +63,8 @@ fn test_ifndef_node() raises:
     var define_count = 0
     var nested_ifndef_count = 0
 
-    for i in range(len(tree_interface.nodes()[])):
-        var node = tree_interface.nodes()[][i]
+    for i in range(len(module_interface.nodes()[])):
+        var node = module_interface.nodes()[][i]
         var node_name = node.name()
 
         if node_name == "MacroIfNDefNode":
@@ -75,7 +75,7 @@ fn test_ifndef_node() raises:
             var indices = node.indicies()
             for j in range(len(indices.original_child_idxs)):
                 var child_idx = indices.original_child_idxs[j]
-                var child_node = tree_interface.nodes()[][child_idx]
+                var child_node = module_interface.nodes()[][child_idx]
                 if child_node.name() == "MacroIfNDefNode":
                     nested_ifndef_count += 1
                     logger.info(

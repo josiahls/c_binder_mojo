@@ -25,8 +25,8 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 
 
 @value
-struct MacroIfNDefNode(NodeAstLike):
-    """Represents a #ifndef preprocessor directive in C/C++ code.
+struct MacroIfDefNode(NodeAstLike):
+    """Represents a #ifdef preprocessor directive in C/C++ code.
 
     This node handles the parsing and representation of the #ifndef directive,
     which is commonly used for header guards and conditional compilation.
@@ -37,7 +37,7 @@ struct MacroIfNDefNode(NodeAstLike):
     The second token is the macro name.
     """
 
-    alias __name__ = "MacroIfNDefNode"
+    alias __name__ = "MacroIfDefNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
@@ -78,7 +78,7 @@ struct MacroIfNDefNode(NodeAstLike):
         Returns:
             True if this token starts a #ifndef directive, False otherwise.
         """
-        return token.token == CTokens.MACRO_IFNDEF
+        return token.token == CTokens.MACRO_IFDEF
 
     @staticmethod
     fn create(

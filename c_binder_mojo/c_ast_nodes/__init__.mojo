@@ -5,6 +5,7 @@ from .single_line_comment_node import SingleLineCommentNode
 from .multi_line_comment_node import MultiLineCommentNode
 from .whitespace_node import WhitespaceNode
 from .macro_if_n_def_node import MacroIfNDefNode
+from .macro_if_def_node import MacroIfDefNode
 
 # Setup Variant
 from .node_variant import Variant
@@ -14,6 +15,7 @@ alias AstNodeVariant = Variant[
     SingleLineCommentNode,
     MultiLineCommentNode,
     WhitespaceNode,
+    MacroIfDefNode,
     MacroIfNDefNode,
     PlaceHolderNode,
 ]

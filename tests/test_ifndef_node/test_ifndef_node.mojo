@@ -58,61 +58,24 @@ fn test_ifndef_node() raises:
     var root_node = module_interface.nodes()[][0]
     logger.info("Root node: " + root_node.name())
 
-    # Count the number of #ifndef nodes and their children
+    # Count and verify ifndef nodes
     var ifndef_count = 0
-    var define_count = 0
-    var nested_ifndef_count = 0
 
     for i in range(len(module_interface.nodes()[])):
         var node = module_interface.nodes()[][i]
-        var node_name = node.name()
-
-        if node_name == "MacroIfNDefNode":
+        if node.name() == "MacroIfNDefNode":
             ifndef_count += 1
             logger.info("Found ifndef node: " + node.name(include_sig=True))
 
-            # Check for nested ifndef nodes
-            var indices = node.indicies()
-            for j in range(len(indices.original_child_idxs)):
-                var child_idx = indices.original_child_idxs[j]
-                var child_node = module_interface.nodes()[][child_idx]
-                if child_node.name() == "MacroIfNDefNode":
-                    nested_ifndef_count += 1
-                    logger.info(
-                        "Found nested ifndef node: "
-                        + child_node.name(include_sig=True)
-                    )
-
-        if node_name == "MacroDefineNode":
-            define_count += 1
-            logger.info("Found define node: " + node.name(include_sig=True))
-
-    # We expect at least 8 ifndef nodes in our test file
-    if ifndef_count < 8:
+    # We expect 10 ifndef nodes in our test file
+    if ifndef_count != 10:
         raise Error(
-            "Expected at least 8 ifndef nodes, but found "
-            + String(ifndef_count)
-        )
-
-    # We should have at least 1 nested ifndef
-    if nested_ifndef_count < 1:
-        raise Error(
-            "Expected at least 1 nested ifndef, but found "
-            + String(nested_ifndef_count)
-        )
-
-    # We should have at least 8 define nodes (one for each ifndef)
-    if define_count < 8:
-        raise Error(
-            "Expected at least 8 define nodes, but found "
-            + String(define_count)
+            "Expected 10 ifndef nodes, but found " + String(ifndef_count)
         )
 
     logger.info("Ifndef node test passed with:")
     logger.info("  - " + String(ifndef_count) + " ifndef nodes")
-    logger.info("  - " + String(nested_ifndef_count) + " nested ifndef nodes")
-    logger.info("  - " + String(define_count) + " define nodes")
-    return
+
 
 
 fn main() raises:

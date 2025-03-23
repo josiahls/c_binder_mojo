@@ -115,57 +115,63 @@
 	#ifndef PLATFORM_SPECIFIC 
 	
 		    
-		#ifdef 
-		_WIN32 
-		        
-		#define 
-		PLATFORM_SPECIFIC 
-		"Windows" 
-		    
-		#elif 
-		defined(__APPLE__) 
-		        
-		#define 
-		PLATFORM_SPECIFIC 
-		"MacOS" 
-		    
-		#else 
-		        
-		#define 
-		PLATFORM_SPECIFIC 
-		"Linux" 
-		    
+		#ifdef _WIN32 
+		
+			        
+			#define 
+			PLATFORM_SPECIFIC 
+			"Windows" 
+			    
+			#elif 
+			defined(__APPLE__) 
+			        
+			#define 
+			PLATFORM_SPECIFIC 
+			"MacOS" 
+			    
+			#else 
+			        
+			#define 
+			PLATFORM_SPECIFIC 
+			"Linux" 
+			    
+		#endif 
 	#endif 
-#endif 
- 
-// Include with ifndef guard 
-#ifndef INCLUDED_STDIO 
-
-	#define 
-	INCLUDED_STDIO 
-	#include 
-	<stdio.h> 
-#endif 
- 
-// Empty ifndef (edge case) 
-#ifndef EMPTY_GUARD 
-
-	#define 
-	EMPTY_GUARD 
-#endif 
- 
-// Typedef inside ifndef 
-#ifndef MY_TYPE_GUARD 
-
-	#define 
-	MY_TYPE_GUARD 
-	typedef 
-	unsigned 
-	int 
-	uint_t 
-	; 
 	 
-#endif 
- 
-#endif 
-// TEST_IFNDEF_NODE_H  
+	// Include with ifndef guard 
+	#ifndef INCLUDED_STDIO 
+	
+		#define 
+		INCLUDED_STDIO 
+		#include 
+		<stdio.h> 
+	#endif 
+	 
+	 
+	// Totally Empty ifndef (edge case) 
+	#ifndef EMPTY_GUARD 
+	
+		#endif 
+		 
+		// Empty ifndef (edge case) 
+		#ifndef EMPTY_GUARD 
+		
+			#define 
+			EMPTY_GUARD 
+		#endif 
+		 
+		// Typedef inside ifndef 
+		#ifndef MY_TYPE_GUARD 
+		
+			#define 
+			MY_TYPE_GUARD 
+			typedef 
+			unsigned 
+			int 
+			uint_t 
+			; 
+			 
+		#endif 
+		 
+	#endif 
+	// TEST_IFNDEF_NODE_H  

@@ -1,0 +1,237 @@
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 6, 7, 8, ...) len=17)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+// Basic ifdef test 
+MacroIfDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5), node_state=COMPLETED)
+#ifdef BASIC_DEFINE 
+	PlaceHolderNode(original_parent_idx=2, original_current_idx=3)
+	#define 
+	PlaceHolderNode(original_parent_idx=2, original_current_idx=4)
+	INSIDE_BASIC 
+	PlaceHolderNode(original_parent_idx=2, original_current_idx=5)
+	1 
+
+#endif 
+WhitespaceNode(original_parent_idx=0, original_current_idx=6, n_tokens=1)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+// ifdef with else 
+MacroIfDefNode(original_parent_idx=0, original_current_idx=8, original_child_idxs=(9, 10, 11, 12, 13, ...) len=15, node_state=COMPLETED)
+#ifdef WITH_ELSE 
+	WhitespaceNode(original_parent_idx=8, original_current_idx=9, n_tokens=4)
+	    
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=10)
+	int 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=11)
+	a 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=12)
+	= 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=13)
+	1 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=14)
+	; 
+	WhitespaceNode(original_parent_idx=8, original_current_idx=15, n_tokens=1)
+	 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=16)
+	#else 
+	WhitespaceNode(original_parent_idx=8, original_current_idx=17, n_tokens=4)
+	    
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=18)
+	int 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=19)
+	a 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=20)
+	= 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=21)
+	2 
+	PlaceHolderNode(original_parent_idx=8, original_current_idx=22)
+	; 
+	WhitespaceNode(original_parent_idx=8, original_current_idx=23, n_tokens=1)
+	 
+
+#endif 
+WhitespaceNode(original_parent_idx=0, original_current_idx=24, n_tokens=1)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=25)
+// Nested ifdefs 
+MacroIfDefNode(original_parent_idx=0, original_current_idx=26, original_child_idxs=(27, 28), node_state=COMPLETED)
+#ifdef OUTER 
+	WhitespaceNode(original_parent_idx=26, original_current_idx=27, n_tokens=4)
+	    
+	MacroIfDefNode(original_parent_idx=26, original_current_idx=28, original_child_idxs=(29, 30, 31, 32, 33, ...) len=7, node_state=COMPLETED)
+	#ifdef INNER 
+			WhitespaceNode(original_parent_idx=28, original_current_idx=29, n_tokens=8)
+		        
+		PlaceHolderNode(original_parent_idx=28, original_current_idx=30)
+		int 
+		PlaceHolderNode(original_parent_idx=28, original_current_idx=31)
+		nested_var 
+		PlaceHolderNode(original_parent_idx=28, original_current_idx=32)
+		= 
+		PlaceHolderNode(original_parent_idx=28, original_current_idx=33)
+		42 
+		PlaceHolderNode(original_parent_idx=28, original_current_idx=34)
+		; 
+		WhitespaceNode(original_parent_idx=28, original_current_idx=35, n_tokens=5)
+		 
+		    
+
+	#endif 
+
+#endif 
+WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=1)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
+// ifdef with elif chain 
+MacroIfDefNode(original_parent_idx=0, original_current_idx=38, original_child_idxs=(39, 40, 41, 42, 43, ...) len=15, node_state=COMPLETED)
+#ifdef _WIN32 
+	WhitespaceNode(original_parent_idx=38, original_current_idx=39, n_tokens=4)
+	    
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=40)
+	#define 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=41)
+	OS 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=42)
+	"Windows" 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=43)
+	#elif 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=44)
+	defined(__APPLE__) 
+	WhitespaceNode(original_parent_idx=38, original_current_idx=45, n_tokens=4)
+	    
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=46)
+	#define 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=47)
+	OS 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=48)
+	"MacOS" 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=49)
+	#else 
+	WhitespaceNode(original_parent_idx=38, original_current_idx=50, n_tokens=4)
+	    
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=51)
+	#define 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=52)
+	OS 
+	PlaceHolderNode(original_parent_idx=38, original_current_idx=53)
+	"Linux" 
+
+#endif 
+WhitespaceNode(original_parent_idx=0, original_current_idx=54, n_tokens=1)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=55)
+// ifdef with comments 
+MacroIfDefNode(original_parent_idx=0, original_current_idx=56, original_child_idxs=(57, 58, 59, 60, 61, ...) len=9, node_state=COMPLETED)
+#ifdef COMMENTED 
+	MultiLineCommentNode(original_parent_idx=56, original_current_idx=57)
+	/* Multi-line comment after ifdef */ 
+	WhitespaceNode(original_parent_idx=56, original_current_idx=58, n_tokens=4)
+	    
+	SingleLineCommentNode(original_parent_idx=56, original_current_idx=59)
+	// Single line comment inside 
+	WhitespaceNode(original_parent_idx=56, original_current_idx=60, n_tokens=4)
+	    
+	PlaceHolderNode(original_parent_idx=56, original_current_idx=61)
+	#define 
+	PlaceHolderNode(original_parent_idx=56, original_current_idx=62)
+	INSIDE_COMMENT 
+	PlaceHolderNode(original_parent_idx=56, original_current_idx=63)
+	1 
+	WhitespaceNode(original_parent_idx=56, original_current_idx=64, n_tokens=4)
+	    
+	MultiLineCommentNode(original_parent_idx=56, original_current_idx=65)
+	/* Another multi-line 
+	       comment inside */ 
+
+#endif 
+WhitespaceNode(original_parent_idx=0, original_current_idx=66, n_tokens=1)
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=67)
+// Empty ifdef (edge case) 
+MacroIfDefNode(original_parent_idx=0, original_current_idx=68, original_child_idxs=(69, 70, 71, 72, 82, ...) len=11, node_state=BUILDING_CHILDREN)
+#ifdef EMPTY 
+	PlaceHolderNode(original_parent_idx=68, original_current_idx=69)
+	#endif 
+	WhitespaceNode(original_parent_idx=68, original_current_idx=70, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=68, original_current_idx=71)
+	// Mixed ifdef/ifndef 
+	MacroIfDefNode(original_parent_idx=68, original_current_idx=72, original_child_idxs=(73, 74), node_state=COMPLETED)
+	#ifdef MIXED 
+			WhitespaceNode(original_parent_idx=72, original_current_idx=73, n_tokens=4)
+		    
+		MacroIfNDefNode(original_parent_idx=72, original_current_idx=74, original_child_idxs=(75, 76, 77, 78, 79, ...) len=7, node_state=COMPLETED)
+		#ifndef INNER_NOT 
+					WhitespaceNode(original_parent_idx=74, original_current_idx=75, n_tokens=8)
+			        
+			PlaceHolderNode(original_parent_idx=74, original_current_idx=76)
+			int 
+			PlaceHolderNode(original_parent_idx=74, original_current_idx=77)
+			mixed_var 
+			PlaceHolderNode(original_parent_idx=74, original_current_idx=78)
+			= 
+			PlaceHolderNode(original_parent_idx=74, original_current_idx=79)
+			1 
+			PlaceHolderNode(original_parent_idx=74, original_current_idx=80)
+			; 
+			WhitespaceNode(original_parent_idx=74, original_current_idx=81, n_tokens=5)
+			 
+			    
+
+		#endif 
+
+	#endif 
+	WhitespaceNode(original_parent_idx=68, original_current_idx=82, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=68, original_current_idx=83)
+	// ifdef with complex expressions 
+	MacroIfDefNode(original_parent_idx=68, original_current_idx=84, original_child_idxs=(85, 86, 87, 88, 89, 90), node_state=COMPLETED)
+	#ifdef __cplusplus 
+			WhitespaceNode(original_parent_idx=84, original_current_idx=85, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=84, original_current_idx=86)
+		extern 
+		PlaceHolderNode(original_parent_idx=84, original_current_idx=87)
+		"C" 
+		WhitespaceNode(original_parent_idx=84, original_current_idx=88, n_tokens=1)
+		 
+		PlaceHolderNode(original_parent_idx=84, original_current_idx=89)
+		{ 
+		WhitespaceNode(original_parent_idx=84, original_current_idx=90, n_tokens=1)
+		 
+
+	#endif 
+	WhitespaceNode(original_parent_idx=68, original_current_idx=91, n_tokens=1)
+	 
+	SingleLineCommentNode(original_parent_idx=68, original_current_idx=92)
+	// ifdef with multiple defines 
+	MacroIfDefNode(original_parent_idx=68, original_current_idx=93, original_child_idxs=(94, 95, 96, 97, 98, ...) len=12, node_state=COMPLETED)
+	#ifdef MULTIPLE_DEFINES 
+			WhitespaceNode(original_parent_idx=93, original_current_idx=94, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=95)
+		#define 
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=96)
+		A 
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=97)
+		1 
+		WhitespaceNode(original_parent_idx=93, original_current_idx=98, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=99)
+		#define 
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=100)
+		B 
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=101)
+		2 
+		WhitespaceNode(original_parent_idx=93, original_current_idx=102, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=103)
+		#define 
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=104)
+		C 
+		PlaceHolderNode(original_parent_idx=93, original_current_idx=105)
+		3 
+
+	#endif 
+	WhitespaceNode(original_parent_idx=68, original_current_idx=106, n_tokens=1)
+	 
+

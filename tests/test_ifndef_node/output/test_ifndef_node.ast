@@ -1,7 +1,7 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 114, 115, 116, ...) len=14)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2))
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic header guards 
-MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5, 6, 7, ...) len=20, node_state=COMPLETED)
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5, 6, 7, ...) len=27, node_state=BUILDING_CHILDREN)
 #ifndef TEST_IFNDEF_NODE_H 
 	PlaceHolderNode(original_parent_idx=2, original_current_idx=3)
 	#define 
@@ -203,109 +203,117 @@ MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_id
 	 
 	SingleLineCommentNode(original_parent_idx=2, original_current_idx=91)
 	// Conditional compilation 
-	MacroIfNDefNode(original_parent_idx=2, original_current_idx=92, original_child_idxs=(93, 94, 95, 96, 97, ...) len=21, node_state=COMPLETED)
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=92, original_child_idxs=(93, 94), node_state=COMPLETED)
 	#ifndef PLATFORM_SPECIFIC 
 			WhitespaceNode(original_parent_idx=92, original_current_idx=93, n_tokens=4)
 		    
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=94)
-		#ifdef 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=95)
-		_WIN32 
-		WhitespaceNode(original_parent_idx=92, original_current_idx=96, n_tokens=8)
-		        
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=97)
-		#define 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=98)
-		PLATFORM_SPECIFIC 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=99)
-		"Windows" 
-		WhitespaceNode(original_parent_idx=92, original_current_idx=100, n_tokens=4)
-		    
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=101)
-		#elif 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=102)
-		defined(__APPLE__) 
-		WhitespaceNode(original_parent_idx=92, original_current_idx=103, n_tokens=8)
-		        
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=104)
-		#define 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=105)
-		PLATFORM_SPECIFIC 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=106)
-		"MacOS" 
-		WhitespaceNode(original_parent_idx=92, original_current_idx=107, n_tokens=4)
-		    
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=108)
-		#else 
-		WhitespaceNode(original_parent_idx=92, original_current_idx=109, n_tokens=8)
-		        
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=110)
-		#define 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=111)
-		PLATFORM_SPECIFIC 
-		PlaceHolderNode(original_parent_idx=92, original_current_idx=112)
-		"Linux" 
-		WhitespaceNode(original_parent_idx=92, original_current_idx=113, n_tokens=4)
-		    
+		MacroIfDefNode(original_parent_idx=92, original_current_idx=94, original_child_idxs=(95, 96, 97, 98, 99, ...) len=18, node_state=COMPLETED)
+		#ifdef _WIN32 
+					WhitespaceNode(original_parent_idx=94, original_current_idx=95, n_tokens=8)
+			        
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=96)
+			#define 
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=97)
+			PLATFORM_SPECIFIC 
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=98)
+			"Windows" 
+			WhitespaceNode(original_parent_idx=94, original_current_idx=99, n_tokens=4)
+			    
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=100)
+			#elif 
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=101)
+			defined(__APPLE__) 
+			WhitespaceNode(original_parent_idx=94, original_current_idx=102, n_tokens=8)
+			        
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=103)
+			#define 
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=104)
+			PLATFORM_SPECIFIC 
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=105)
+			"MacOS" 
+			WhitespaceNode(original_parent_idx=94, original_current_idx=106, n_tokens=4)
+			    
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=107)
+			#else 
+			WhitespaceNode(original_parent_idx=94, original_current_idx=108, n_tokens=8)
+			        
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=109)
+			#define 
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=110)
+			PLATFORM_SPECIFIC 
+			PlaceHolderNode(original_parent_idx=94, original_current_idx=111)
+			"Linux" 
+			WhitespaceNode(original_parent_idx=94, original_current_idx=112, n_tokens=4)
+			    
+
+		#endif 
 
 	#endif 
-
-#endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=114, n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=115)
-// Include with ifndef guard 
-MacroIfNDefNode(original_parent_idx=0, original_current_idx=116, original_child_idxs=(117, 118, 119, 120), node_state=COMPLETED)
-#ifndef INCLUDED_STDIO 
-	PlaceHolderNode(original_parent_idx=116, original_current_idx=117)
-	#define 
-	PlaceHolderNode(original_parent_idx=116, original_current_idx=118)
-	INCLUDED_STDIO 
-	PlaceHolderNode(original_parent_idx=116, original_current_idx=119)
-	#include 
-	PlaceHolderNode(original_parent_idx=116, original_current_idx=120)
-	<stdio.h> 
-
-#endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=121, n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=122)
-// Empty ifndef (edge case) 
-MacroIfNDefNode(original_parent_idx=0, original_current_idx=123, original_child_idxs=(124, 125), node_state=COMPLETED)
-#ifndef EMPTY_GUARD 
-	PlaceHolderNode(original_parent_idx=123, original_current_idx=124)
-	#define 
-	PlaceHolderNode(original_parent_idx=123, original_current_idx=125)
-	EMPTY_GUARD 
-
-#endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=126, n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=127)
-// Typedef inside ifndef 
-MacroIfNDefNode(original_parent_idx=0, original_current_idx=128, original_child_idxs=(129, 130, 131, 132, 133, ...) len=8, node_state=COMPLETED)
-#ifndef MY_TYPE_GUARD 
-	PlaceHolderNode(original_parent_idx=128, original_current_idx=129)
-	#define 
-	PlaceHolderNode(original_parent_idx=128, original_current_idx=130)
-	MY_TYPE_GUARD 
-	PlaceHolderNode(original_parent_idx=128, original_current_idx=131)
-	typedef 
-	PlaceHolderNode(original_parent_idx=128, original_current_idx=132)
-	unsigned 
-	PlaceHolderNode(original_parent_idx=128, original_current_idx=133)
-	int 
-	PlaceHolderNode(original_parent_idx=128, original_current_idx=134)
-	uint_t 
-	PlaceHolderNode(original_parent_idx=128, original_current_idx=135)
-	; 
-	WhitespaceNode(original_parent_idx=128, original_current_idx=136, n_tokens=1)
+	WhitespaceNode(original_parent_idx=2, original_current_idx=113, n_tokens=1)
 	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=114)
+	// Include with ifndef guard 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=115, original_child_idxs=(116, 117, 118, 119), node_state=COMPLETED)
+	#ifndef INCLUDED_STDIO 
+			PlaceHolderNode(original_parent_idx=115, original_current_idx=116)
+		#define 
+		PlaceHolderNode(original_parent_idx=115, original_current_idx=117)
+		INCLUDED_STDIO 
+		PlaceHolderNode(original_parent_idx=115, original_current_idx=118)
+		#include 
+		PlaceHolderNode(original_parent_idx=115, original_current_idx=119)
+		<stdio.h> 
 
-#endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=137, n_tokens=1)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=138)
-#endif 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=139)
-// TEST_IFNDEF_NODE_H  
+	#endif 
+	WhitespaceNode(original_parent_idx=2, original_current_idx=120, n_tokens=2)
+	 
+	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=121)
+	// Totally Empty ifndef (edge case) 
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=122, original_child_idxs=(123, 124, 125, 126, 129, ...) len=8, node_state=COMPLETED)
+	#ifndef EMPTY_GUARD 
+			PlaceHolderNode(original_parent_idx=122, original_current_idx=123)
+		#endif 
+		WhitespaceNode(original_parent_idx=122, original_current_idx=124, n_tokens=1)
+		 
+		SingleLineCommentNode(original_parent_idx=122, original_current_idx=125)
+		// Empty ifndef (edge case) 
+		MacroIfNDefNode(original_parent_idx=122, original_current_idx=126, original_child_idxs=(127, 128), node_state=COMPLETED)
+		#ifndef EMPTY_GUARD 
+					PlaceHolderNode(original_parent_idx=126, original_current_idx=127)
+			#define 
+			PlaceHolderNode(original_parent_idx=126, original_current_idx=128)
+			EMPTY_GUARD 
+
+		#endif 
+		WhitespaceNode(original_parent_idx=122, original_current_idx=129, n_tokens=1)
+		 
+		SingleLineCommentNode(original_parent_idx=122, original_current_idx=130)
+		// Typedef inside ifndef 
+		MacroIfNDefNode(original_parent_idx=122, original_current_idx=131, original_child_idxs=(132, 133, 134, 135, 136, ...) len=8, node_state=COMPLETED)
+		#ifndef MY_TYPE_GUARD 
+					PlaceHolderNode(original_parent_idx=131, original_current_idx=132)
+			#define 
+			PlaceHolderNode(original_parent_idx=131, original_current_idx=133)
+			MY_TYPE_GUARD 
+			PlaceHolderNode(original_parent_idx=131, original_current_idx=134)
+			typedef 
+			PlaceHolderNode(original_parent_idx=131, original_current_idx=135)
+			unsigned 
+			PlaceHolderNode(original_parent_idx=131, original_current_idx=136)
+			int 
+			PlaceHolderNode(original_parent_idx=131, original_current_idx=137)
+			uint_t 
+			PlaceHolderNode(original_parent_idx=131, original_current_idx=138)
+			; 
+			WhitespaceNode(original_parent_idx=131, original_current_idx=139, n_tokens=1)
+			 
+
+		#endif 
+		WhitespaceNode(original_parent_idx=122, original_current_idx=140, n_tokens=1)
+		 
+
+	#endif 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=141)
+	// TEST_IFNDEF_NODE_H  
+

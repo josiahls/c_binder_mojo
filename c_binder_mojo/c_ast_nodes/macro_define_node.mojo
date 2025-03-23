@@ -43,6 +43,7 @@ struct MacroDefineNode(NodeAstLike):
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: StringLiteral
     var _macro_name: String
+    var _is_function_like: Bool
     var _row_nums: List[Int]
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
@@ -56,10 +57,48 @@ struct MacroDefineNode(NodeAstLike):
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
         self._row_nums = List[Int]()
-        self._token_bundles[].append(token_bundle)
         self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._macro_name = ""
+        self._token_bundles[].append(token_bundle)
+        self._is_function_like = False
+    fn is_function_like(self, token_bundle: TokenBundle) -> Bool:
+        """Check if the macro is a function-like macro.
+
+        Returns:
+            True if the macro is a function-like macro, False otherwise.
+        """
+        return "(" in token_bundle.token
+
+    fn split_function_like_macro(mut self, token_bundle: TokenBundle):
+        """Split a function-like macro into a list of tokens.
+
+        Returns:
+            A list of tokens.
+        """
+        var current_token = String("")
+        for ch in token_bundle.token.codepoint_slices():
+            if ch == "(":
+                if current_token != "":
+                    self._token_bundles[].append(TokenBundle(current_token, token_bundle.row_num, token_bundle.col_num))
+                    current_token = String("")
+                self._token_bundles[].append(TokenBundle(String(ch), token_bundle.row_num, token_bundle.col_num))
+            elif ch == ")":
+                if current_token != "":
+                    self._token_bundles[].append(TokenBundle(current_token, token_bundle.row_num, token_bundle.col_num))
+                    current_token = String("")
+                self._token_bundles[].append(TokenBundle(String(ch), token_bundle.row_num, token_bundle.col_num))
+            elif ch == ",":
+                if current_token != "":
+                    self._token_bundles[].append(TokenBundle(current_token, token_bundle.row_num, token_bundle.col_num))
+                    current_token = String("")
+                self._token_bundles[].append(TokenBundle(String(ch), token_bundle.row_num, token_bundle.col_num))
+            else:
+                current_token += ch
+        if current_token != "":
+            self._token_bundles[].append(TokenBundle(current_token, token_bundle.row_num, token_bundle.col_num))
+
+
 
     @staticmethod
     fn accept(
@@ -128,7 +167,12 @@ struct MacroDefineNode(NodeAstLike):
         if self._node_state == NodeState.COLLECTING_TOKENS:
             if token.token == CTokens.LINE_CONTINUATION:
                 self._row_nums.append(token.row_num)
-            self._token_bundles[].append(token)
+
+            if self.is_function_like(token):
+                self.split_function_like_macro(token)
+                self._is_function_like = True
+            else:
+                self._token_bundles[].append(token)
         elif self._node_state == NodeState.BUILDING_CHILDREN:
             pass
 
@@ -170,6 +214,7 @@ struct MacroDefineNode(NodeAstLike):
         if include_sig:
             var result = self.__name__ + "(" + String(self._indicies[])
             result += ", node_state=" + String(self._node_state)
+            result += ", is_function_like=" + String(self._is_function_like)
             if self._macro_name != "":
                 result += ", macro='" + self._macro_name + "'"
             result += ")"

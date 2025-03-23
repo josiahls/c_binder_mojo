@@ -1,25 +1,25 @@
 RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=26)
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Empty defines (no value) 
-MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED)
+MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED, is_function_like=False)
 #define EMPTY_DEFINE_1 
-MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=COMPLETED)
+MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=COMPLETED, is_function_like=False)
 #define EMPTY_DEFINE_2 
 WhitespaceNode(original_parent_idx=0, original_current_idx=4, n_tokens=1)
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
 // Simple value defines 
-MacroDefineNode(original_parent_idx=0, original_current_idx=6, original_child_idxs=(7), node_state=COMPLETED)
+MacroDefineNode(original_parent_idx=0, original_current_idx=6, original_child_idxs=(7), node_state=COMPLETED, is_function_like=False)
 #define SIMPLE_INT 
 	PlaceHolderNode(original_parent_idx=6, original_current_idx=7)
 	42 
 
-MacroDefineNode(original_parent_idx=0, original_current_idx=8, original_child_idxs=(9), node_state=COMPLETED)
+MacroDefineNode(original_parent_idx=0, original_current_idx=8, original_child_idxs=(9), node_state=COMPLETED, is_function_like=False)
 #define SIMPLE_FLOAT 
 	PlaceHolderNode(original_parent_idx=8, original_current_idx=9)
 	3.14 
 
-MacroDefineNode(original_parent_idx=0, original_current_idx=10, original_child_idxs=(11), node_state=COMPLETED)
+MacroDefineNode(original_parent_idx=0, original_current_idx=10, original_child_idxs=(11), node_state=COMPLETED, is_function_like=False)
 #define SIMPLE_STRING 
 	PlaceHolderNode(original_parent_idx=10, original_current_idx=11)
 	"hello" 
@@ -28,8 +28,8 @@ WhitespaceNode(original_parent_idx=0, original_current_idx=12, n_tokens=1)
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
 // Function-like macros 
-MacroDefineNode(original_parent_idx=0, original_current_idx=14, original_child_idxs=(15, 16, 17, 18, 19, 20), node_state=COMPLETED)
-#define ADD(x 
+MacroDefineNode(original_parent_idx=0, original_current_idx=14, original_child_idxs=(15, 16, 17, 18, 19, 20), node_state=COMPLETED, is_function_like=True)
+#define ADD ( x 
 	PlaceHolderNode(original_parent_idx=14, original_current_idx=15)
 	, 
 	WhitespaceNode(original_parent_idx=14, original_current_idx=16, n_tokens=1)
@@ -43,8 +43,8 @@ MacroDefineNode(original_parent_idx=0, original_current_idx=14, original_child_i
 	PlaceHolderNode(original_parent_idx=14, original_current_idx=20)
 	(y)) 
 
-MacroDefineNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 26, ...) len=10, node_state=COMPLETED)
-#define MAX(a 
+MacroDefineNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 26, ...) len=10, node_state=COMPLETED, is_function_like=True)
+#define MAX ( a 
 	PlaceHolderNode(original_parent_idx=21, original_current_idx=22)
 	, 
 	WhitespaceNode(original_parent_idx=21, original_current_idx=23, n_tokens=1)
@@ -66,8 +66,8 @@ MacroDefineNode(original_parent_idx=0, original_current_idx=21, original_child_i
 	PlaceHolderNode(original_parent_idx=21, original_current_idx=31)
 	(b)) 
 
-MacroDefineNode(original_parent_idx=0, original_current_idx=32, original_child_idxs=(33, 34, 35, 36, 37, ...) len=10, node_state=COMPLETED)
-#define PRINT_DEBUG(msg 
+MacroDefineNode(original_parent_idx=0, original_current_idx=32, original_child_idxs=(33, 34, 35, 36, 37, ...) len=10, node_state=COMPLETED, is_function_like=True)
+#define PRINT_DEBUG ( msg 
 	PlaceHolderNode(original_parent_idx=32, original_current_idx=33)
 	, 
 	WhitespaceNode(original_parent_idx=32, original_current_idx=34, n_tokens=1)
@@ -93,7 +93,7 @@ WhitespaceNode(original_parent_idx=0, original_current_idx=43, n_tokens=1)
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=44)
 // Complex defines with expressions 
-MacroDefineNode(original_parent_idx=0, original_current_idx=45, original_child_idxs=(46, 47, 48), node_state=COMPLETED)
+MacroDefineNode(original_parent_idx=0, original_current_idx=45, original_child_idxs=(46, 47, 48), node_state=COMPLETED, is_function_like=False)
 #define BUFFER_SIZE 
 	PlaceHolderNode(original_parent_idx=45, original_current_idx=46)
 	(1024 
@@ -106,7 +106,7 @@ WhitespaceNode(original_parent_idx=0, original_current_idx=49, n_tokens=1)
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
 // Define with line continuation 
-MacroDefineNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52, 53, 54, 55, 56, ...) len=7, node_state=COMPLETED)
+MacroDefineNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52, 53, 54, 55, 56, ...) len=7, node_state=COMPLETED, is_function_like=False)
 #define MULTILINE_STRING 
 	PlaceHolderNode(original_parent_idx=51, original_current_idx=52)
 	"This 

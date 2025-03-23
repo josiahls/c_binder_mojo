@@ -11,14 +11,14 @@
 	"hello" 
  
 // Function-like macros 
-#define ADD(x 
+#define ADD ( x 
 	, 
 	 
 	y) 
 	((x) 
 	+ 
 	(y)) 
-#define MAX(a 
+#define MAX ( a 
 	, 
 	 
 	b) 
@@ -29,7 +29,7 @@
 	(a) 
 	: 
 	(b)) 
-#define PRINT_DEBUG(msg 
+#define PRINT_DEBUG ( msg 
 	, 
 	 
 	...) 

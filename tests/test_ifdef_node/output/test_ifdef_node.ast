@@ -1,235 +1,234 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 6, 7, 8, ...) len=27)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 5, 6, 7, ...) len=27)
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic ifdef test 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5), node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COMPLETED)
 #ifdef BASIC_DEFINE 
-	PlaceHolderNode(original_parent_idx=2, original_current_idx=3)
-	#define 
-	PlaceHolderNode(original_parent_idx=2, original_current_idx=4)
-	INSIDE_BASIC 
-	PlaceHolderNode(original_parent_idx=2, original_current_idx=5)
-	1 
+	MacroDefineNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4), node_state=COMPLETED, macro='INSIDE_BASIC')
+	#define INSIDE_BASIC 
+			MacroDefineValueNode(original_parent_idx=3, original_current_idx=4, node_state=COMPLETED, is_function_like=False)
+		1 
+
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=6, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=5, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=6)
 // ifdef with else 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=8, original_child_idxs=(9, 10, 11, 12, 13, ...) len=15, node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=7, original_child_idxs=(8, 9, 10, 11, 12, ...) len=15, node_state=COMPLETED)
 #ifdef WITH_ELSE 
-	WhitespaceNode(original_parent_idx=8, original_current_idx=9, n_tokens=4)
+	WhitespaceNode(original_parent_idx=7, original_current_idx=8, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=10)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=9)
 	int 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=11)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=10)
 	a 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=12)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=11)
 	= 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=13)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=12)
 	1 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=14)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=13)
 	; 
-	WhitespaceNode(original_parent_idx=8, original_current_idx=15, n_tokens=1)
+	WhitespaceNode(original_parent_idx=7, original_current_idx=14, n_tokens=1)
 	 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=16)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=15)
 	#else 
-	WhitespaceNode(original_parent_idx=8, original_current_idx=17, n_tokens=4)
+	WhitespaceNode(original_parent_idx=7, original_current_idx=16, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=18)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=17)
 	int 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=19)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=18)
 	a 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=20)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=19)
 	= 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=21)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=20)
 	2 
-	PlaceHolderNode(original_parent_idx=8, original_current_idx=22)
+	PlaceHolderNode(original_parent_idx=7, original_current_idx=21)
 	; 
-	WhitespaceNode(original_parent_idx=8, original_current_idx=23, n_tokens=1)
+	WhitespaceNode(original_parent_idx=7, original_current_idx=22, n_tokens=1)
 	 
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=24, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=23, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=25)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=24)
 // Nested ifdefs 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=26, original_child_idxs=(27, 28), node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=25, original_child_idxs=(26, 27), node_state=COMPLETED)
 #ifdef OUTER 
-	WhitespaceNode(original_parent_idx=26, original_current_idx=27, n_tokens=4)
+	WhitespaceNode(original_parent_idx=25, original_current_idx=26, n_tokens=4)
 	    
-	MacroIfDefNode(original_parent_idx=26, original_current_idx=28, original_child_idxs=(29, 30, 31, 32, 33, ...) len=7, node_state=COMPLETED)
+	MacroIfDefNode(original_parent_idx=25, original_current_idx=27, original_child_idxs=(28, 29, 30, 31, 32, ...) len=7, node_state=COMPLETED)
 	#ifdef INNER 
-			WhitespaceNode(original_parent_idx=28, original_current_idx=29, n_tokens=8)
+			WhitespaceNode(original_parent_idx=27, original_current_idx=28, n_tokens=8)
 		        
-		PlaceHolderNode(original_parent_idx=28, original_current_idx=30)
+		PlaceHolderNode(original_parent_idx=27, original_current_idx=29)
 		int 
-		PlaceHolderNode(original_parent_idx=28, original_current_idx=31)
+		PlaceHolderNode(original_parent_idx=27, original_current_idx=30)
 		nested_var 
-		PlaceHolderNode(original_parent_idx=28, original_current_idx=32)
+		PlaceHolderNode(original_parent_idx=27, original_current_idx=31)
 		= 
-		PlaceHolderNode(original_parent_idx=28, original_current_idx=33)
+		PlaceHolderNode(original_parent_idx=27, original_current_idx=32)
 		42 
-		PlaceHolderNode(original_parent_idx=28, original_current_idx=34)
+		PlaceHolderNode(original_parent_idx=27, original_current_idx=33)
 		; 
-		WhitespaceNode(original_parent_idx=28, original_current_idx=35, n_tokens=5)
+		WhitespaceNode(original_parent_idx=27, original_current_idx=34, n_tokens=5)
 		 
 		    
 
 	#endif 
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=35, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=36)
 // ifdef with elif chain 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=38, original_child_idxs=(39, 40, 41, 42, 43, ...) len=15, node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=37, original_child_idxs=(38, 39, 41, 42, 43, ...) len=12, node_state=COMPLETED)
 #ifdef _WIN32 
-	WhitespaceNode(original_parent_idx=38, original_current_idx=39, n_tokens=4)
+	WhitespaceNode(original_parent_idx=37, original_current_idx=38, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=40)
-	#define 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=41)
-	OS 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=42)
-	"Windows" 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=43)
+	MacroDefineNode(original_parent_idx=37, original_current_idx=39, original_child_idxs=(40), node_state=COMPLETED, macro='OS')
+	#define OS 
+			MacroDefineValueNode(original_parent_idx=39, original_current_idx=40, node_state=COMPLETED, is_function_like=False)
+		"Windows" 
+
+	PlaceHolderNode(original_parent_idx=37, original_current_idx=41)
 	#elif 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=44)
-	defined(__APPLE__) 
-	WhitespaceNode(original_parent_idx=38, original_current_idx=45, n_tokens=4)
+	PlaceHolderNode(original_parent_idx=37, original_current_idx=42)
+	defined 
+	PlaceHolderNode(original_parent_idx=37, original_current_idx=43)
+	( 
+	PlaceHolderNode(original_parent_idx=37, original_current_idx=44)
+	__APPLE__ 
+	PlaceHolderNode(original_parent_idx=37, original_current_idx=45)
+	) 
+	WhitespaceNode(original_parent_idx=37, original_current_idx=46, n_tokens=5)
+	 
 	    
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=46)
-	#define 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=47)
-	OS 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=48)
-	"MacOS" 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=49)
+	MacroDefineNode(original_parent_idx=37, original_current_idx=47, original_child_idxs=(48), node_state=COMPLETED, macro='OS')
+	#define OS 
+			MacroDefineValueNode(original_parent_idx=47, original_current_idx=48, node_state=COMPLETED, is_function_like=False)
+		"MacOS" 
+
+	PlaceHolderNode(original_parent_idx=37, original_current_idx=49)
 	#else 
-	WhitespaceNode(original_parent_idx=38, original_current_idx=50, n_tokens=4)
+	WhitespaceNode(original_parent_idx=37, original_current_idx=50, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=51)
-	#define 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=52)
-	OS 
-	PlaceHolderNode(original_parent_idx=38, original_current_idx=53)
-	"Linux" 
+	MacroDefineNode(original_parent_idx=37, original_current_idx=51, original_child_idxs=(52), node_state=COMPLETED, macro='OS')
+	#define OS 
+			MacroDefineValueNode(original_parent_idx=51, original_current_idx=52, node_state=COMPLETED, is_function_like=False)
+		"Linux" 
+
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=54, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=53, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=55)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=54)
 // ifdef with comments 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=56, original_child_idxs=(57, 58, 59, 60, 61, ...) len=9, node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=55, original_child_idxs=(56, 57, 58, 59, 60, ...) len=7, node_state=COMPLETED)
 #ifdef COMMENTED 
-	MultiLineCommentNode(original_parent_idx=56, original_current_idx=57)
+	MultiLineCommentNode(original_parent_idx=55, original_current_idx=56)
 	/* Multi-line comment after ifdef */ 
-	WhitespaceNode(original_parent_idx=56, original_current_idx=58, n_tokens=4)
+	WhitespaceNode(original_parent_idx=55, original_current_idx=57, n_tokens=4)
 	    
-	SingleLineCommentNode(original_parent_idx=56, original_current_idx=59)
+	SingleLineCommentNode(original_parent_idx=55, original_current_idx=58)
 	// Single line comment inside 
-	WhitespaceNode(original_parent_idx=56, original_current_idx=60, n_tokens=4)
+	WhitespaceNode(original_parent_idx=55, original_current_idx=59, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=56, original_current_idx=61)
-	#define 
-	PlaceHolderNode(original_parent_idx=56, original_current_idx=62)
-	INSIDE_COMMENT 
-	PlaceHolderNode(original_parent_idx=56, original_current_idx=63)
-	1 
-	WhitespaceNode(original_parent_idx=56, original_current_idx=64, n_tokens=4)
+	MacroDefineNode(original_parent_idx=55, original_current_idx=60, original_child_idxs=(61), node_state=COMPLETED, macro='INSIDE_COMMENT')
+	#define INSIDE_COMMENT 
+			MacroDefineValueNode(original_parent_idx=60, original_current_idx=61, node_state=COMPLETED, is_function_like=False)
+		1 
+
+	WhitespaceNode(original_parent_idx=55, original_current_idx=62, n_tokens=4)
 	    
-	MultiLineCommentNode(original_parent_idx=56, original_current_idx=65)
+	MultiLineCommentNode(original_parent_idx=55, original_current_idx=63)
 	/* Another multi-line 
 	       comment inside */ 
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=66, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=64, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=67)
-// Empty ifdef (edge case) 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=68, node_state=COMPLETED)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=65)
+// Empty ifdef  ( edge case )  
+MacroIfDefNode(original_parent_idx=0, original_current_idx=66, node_state=COMPLETED)
 #ifdef EMPTY 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=69, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=67, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=70)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=68)
 // Mixed ifdef/ifndef 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=71, original_child_idxs=(72, 73), node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=69, original_child_idxs=(70, 71), node_state=COMPLETED)
 #ifdef MIXED 
-	WhitespaceNode(original_parent_idx=71, original_current_idx=72, n_tokens=4)
+	WhitespaceNode(original_parent_idx=69, original_current_idx=70, n_tokens=4)
 	    
-	MacroIfNDefNode(original_parent_idx=71, original_current_idx=73, original_child_idxs=(74, 75, 76, 77, 78, ...) len=7, node_state=COMPLETED)
+	MacroIfNDefNode(original_parent_idx=69, original_current_idx=71, original_child_idxs=(72, 73, 74, 75, 76, ...) len=7, node_state=COMPLETED)
 	#ifndef INNER_NOT 
-			WhitespaceNode(original_parent_idx=73, original_current_idx=74, n_tokens=8)
+			WhitespaceNode(original_parent_idx=71, original_current_idx=72, n_tokens=8)
 		        
-		PlaceHolderNode(original_parent_idx=73, original_current_idx=75)
+		PlaceHolderNode(original_parent_idx=71, original_current_idx=73)
 		int 
-		PlaceHolderNode(original_parent_idx=73, original_current_idx=76)
+		PlaceHolderNode(original_parent_idx=71, original_current_idx=74)
 		mixed_var 
-		PlaceHolderNode(original_parent_idx=73, original_current_idx=77)
+		PlaceHolderNode(original_parent_idx=71, original_current_idx=75)
 		= 
-		PlaceHolderNode(original_parent_idx=73, original_current_idx=78)
+		PlaceHolderNode(original_parent_idx=71, original_current_idx=76)
 		1 
-		PlaceHolderNode(original_parent_idx=73, original_current_idx=79)
+		PlaceHolderNode(original_parent_idx=71, original_current_idx=77)
 		; 
-		WhitespaceNode(original_parent_idx=73, original_current_idx=80, n_tokens=5)
+		WhitespaceNode(original_parent_idx=71, original_current_idx=78, n_tokens=5)
 		 
 		    
 
 	#endif 
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=81, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=79, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=82)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=80)
 // ifdef with complex expressions 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=83, original_child_idxs=(84, 85, 86, 87, 88, 89), node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=81, original_child_idxs=(82, 83, 84, 85, 86, 87), node_state=COMPLETED)
 #ifdef __cplusplus 
-	WhitespaceNode(original_parent_idx=83, original_current_idx=84, n_tokens=4)
+	WhitespaceNode(original_parent_idx=81, original_current_idx=82, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=83, original_current_idx=85)
+	PlaceHolderNode(original_parent_idx=81, original_current_idx=83)
 	extern 
-	PlaceHolderNode(original_parent_idx=83, original_current_idx=86)
+	PlaceHolderNode(original_parent_idx=81, original_current_idx=84)
 	"C" 
-	WhitespaceNode(original_parent_idx=83, original_current_idx=87, n_tokens=1)
+	WhitespaceNode(original_parent_idx=81, original_current_idx=85, n_tokens=1)
 	 
-	PlaceHolderNode(original_parent_idx=83, original_current_idx=88)
+	PlaceHolderNode(original_parent_idx=81, original_current_idx=86)
 	{ 
-	WhitespaceNode(original_parent_idx=83, original_current_idx=89, n_tokens=1)
+	WhitespaceNode(original_parent_idx=81, original_current_idx=87, n_tokens=1)
 	 
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=90, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=88, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=91)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=89)
 // ifdef with multiple defines 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=92, original_child_idxs=(93, 94, 95, 96, 97, ...) len=12, node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=90, original_child_idxs=(91, 92, 94, 95, 97, 98), node_state=COMPLETED)
 #ifdef MULTIPLE_DEFINES 
-	WhitespaceNode(original_parent_idx=92, original_current_idx=93, n_tokens=4)
+	WhitespaceNode(original_parent_idx=90, original_current_idx=91, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=94)
-	#define 
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=95)
-	A 
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=96)
-	1 
-	WhitespaceNode(original_parent_idx=92, original_current_idx=97, n_tokens=4)
+	MacroDefineNode(original_parent_idx=90, original_current_idx=92, original_child_idxs=(93), node_state=COMPLETED, macro='A')
+	#define A 
+			MacroDefineValueNode(original_parent_idx=92, original_current_idx=93, node_state=COMPLETED, is_function_like=False)
+		1 
+
+	WhitespaceNode(original_parent_idx=90, original_current_idx=94, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=98)
-	#define 
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=99)
-	B 
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=100)
-	2 
-	WhitespaceNode(original_parent_idx=92, original_current_idx=101, n_tokens=4)
+	MacroDefineNode(original_parent_idx=90, original_current_idx=95, original_child_idxs=(96), node_state=COMPLETED, macro='B')
+	#define B 
+			MacroDefineValueNode(original_parent_idx=95, original_current_idx=96, node_state=COMPLETED, is_function_like=False)
+		2 
+
+	WhitespaceNode(original_parent_idx=90, original_current_idx=97, n_tokens=4)
 	    
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=102)
-	#define 
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=103)
-	C 
-	PlaceHolderNode(original_parent_idx=92, original_current_idx=104)
-	3 
+	MacroDefineNode(original_parent_idx=90, original_current_idx=98, original_child_idxs=(99), node_state=COMPLETED, macro='C')
+	#define C 
+			MacroDefineValueNode(original_parent_idx=98, original_current_idx=99, node_state=COMPLETED, is_function_like=False)
+		3 
+
 
 #endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=105, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=100, n_tokens=1)
  

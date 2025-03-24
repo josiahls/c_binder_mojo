@@ -141,8 +141,6 @@ fn default_to_string_just_code(
 
     # Add children
     if len(node.indicies().original_child_idxs) > 0:
-        if line_num != -1 and not inline_children:
-            s += "\n"
         if not inline_children:
             s += indent
         s += string_children(node, True, module_interface)

@@ -1,12 +1,16 @@
 // Basic single line comment 
 // Another single line comment 
  
-// Comment with special characters: !@#$%^&*()_+ 
+// Comment with special characters: !@#$%^&* (  ) _+ 
  
 // Comment with code-like content: int x = 5 ;  
  
 int 
-some_function() 
+some_function 
+( 
+ 
+) 
+ 
 ; 
  
 // Comment after code 

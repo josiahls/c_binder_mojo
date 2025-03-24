@@ -39,19 +39,19 @@ fn test_whitespace_node() raises:
 
     # Generate AST
     var tree_log_file = output_dir / "test_whitespace_node.tree"
-    var tree_interface = make_tree(tokenizer.tokens, String(tree_log_file))
+    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
 
     # Save AST for debugging
     var ast_file_just_code = output_dir / "test_whitespace_node.ast_just_code"
     ast_file_just_code.write_text(
-        tree_interface.nodes()[][0].to_string(
-            just_code=True, tree_interface=tree_interface
+        module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=module_interface
         )
     )
     var ast_file = output_dir / "test_whitespace_node.ast"
     ast_file.write_text(
-        tree_interface.nodes()[][0].to_string(
-            just_code=False, tree_interface=tree_interface
+        module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=module_interface
         )
     )
 
@@ -82,7 +82,7 @@ fn test_whitespace_node() raises:
     token_debug_file.write_text(token_debug_content)
 
     # Verify the AST structure
-    var root_node = tree_interface.nodes()[][0]
+    var root_node = module_interface.nodes()[][0]
     logger.info("Root node: " + root_node.name())
 
     # Count the number of WhitespaceNode instances and categorize them
@@ -92,12 +92,12 @@ fn test_whitespace_node() raises:
     var newline_count = 0
     var mixed_count = 0
 
-    for i in range(len(tree_interface.nodes()[])):
+    for i in range(len(module_interface.nodes()[])):
         # Check if the node is a WhitespaceNode by name
-        if tree_interface.nodes()[][i].name() == "WhitespaceNode":
+        if module_interface.nodes()[][i].name() == "WhitespaceNode":
             whitespace_count += 1
-            var node_str = tree_interface.nodes()[][i].to_string(
-                just_code=True, tree_interface=tree_interface
+            var node_str = module_interface.nodes()[][i].to_string(
+                just_code=True, module_interface=module_interface
             )
 
             # Categorize the whitespace

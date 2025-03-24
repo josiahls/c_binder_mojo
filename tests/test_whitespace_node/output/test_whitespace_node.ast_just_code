@@ -1,67 +1,39 @@
 // Different types of whitespace: 
  
-// 
-Single 
-space 
+// Single space 
+  
  
+// Multiple spaces 
+     
  
- 
-// 
-Multiple 
-spaces 
- 
- 
- 
- 
- 
- 
-// 
-Tabs 
+// Tabs 
 	 
  
-// 
-Mixed 
-whitespace 
-	 
+// Mixed whitespace 
+	  	  
  
-	 
- 
- 
-// 
-New 
-lines 
+// New lines 
  
  
  
-// 
-Whitespace 
-in 
-code 
-contexts 
+// Whitespace in code contexts 
 int 
-function() 
+function 
+( 
  
+) 
+  
 { 
  
- 
- 
- 
- 
+    
 int 
 x 
 = 
 5 
 ; 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+     
+    
 return 
 x 
 ; 
@@ -70,33 +42,10 @@ x
 } 
  
  
-// 
-Whitespace 
-after 
-comment 
+// Whitespace after comment 
  
-/* 
-Whitespace 
- 
- 
- 
-in 
-multiline 
- 
- 
- 
-comment 
-*/ 
- 
- 
- 
- 
-// 
-Whitespace 
-at 
-beginning 
-and 
-end 
-of 
-file 
- 
+/* Whitespace 
+   in multiline 
+   comment */ 
+    
+// Whitespace at beginning and end of file  

@@ -1,4 +1,4 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=30)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=34)
 MultiLineCommentNode(original_parent_idx=0, original_current_idx=1)
 /* Basic multiline comment */ 
 WhitespaceNode(original_parent_idx=0, original_current_idx=2, n_tokens=1)
@@ -22,56 +22,64 @@ MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
 WhitespaceNode(original_parent_idx=0, original_current_idx=8, n_tokens=1)
  
 MultiLineCommentNode(original_parent_idx=0, original_current_idx=9)
-/* Comment with special characters: !@#$%^&*()_+ */ 
+/* Comment with special characters: !@#$%^&* (  ) _+ */ 
 WhitespaceNode(original_parent_idx=0, original_current_idx=10, n_tokens=1)
  
 MultiLineCommentNode(original_parent_idx=0, original_current_idx=11)
 /* Comment with code-like content:  
  * int x = 5 ;  
- * void foo() ;  
+ * void foo (  )  ;  
  */ 
 WhitespaceNode(original_parent_idx=0, original_current_idx=12, n_tokens=1)
  
 PlaceHolderNode(original_parent_idx=0, original_current_idx=13)
 int 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
-some_function() 
+some_function 
 PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
-; 
+( 
 WhitespaceNode(original_parent_idx=0, original_current_idx=16, n_tokens=1)
  
-MultiLineCommentNode(original_parent_idx=0, original_current_idx=17)
-/* Comment after code */ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
+) 
 WhitespaceNode(original_parent_idx=0, original_current_idx=18, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=19)
-// This is not a multiline comment 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=19)
+; 
 WhitespaceNode(original_parent_idx=0, original_current_idx=20, n_tokens=1)
  
 MultiLineCommentNode(original_parent_idx=0, original_current_idx=21)
-/* Comment with Unicode: 你好世界 */ 
+/* Comment after code */ 
 WhitespaceNode(original_parent_idx=0, original_current_idx=22, n_tokens=1)
  
-MultiLineCommentNode(original_parent_idx=0, original_current_idx=23)
-/* Empty multiline comment */ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=23)
+// This is not a multiline comment 
 WhitespaceNode(original_parent_idx=0, original_current_idx=24, n_tokens=1)
  
 MultiLineCommentNode(original_parent_idx=0, original_current_idx=25)
-/**/ 
- 
-/* Nested-looking comment /* (not actually nested) */ 
-WhitespaceNode(original_parent_idx=0, original_current_idx=26, n_tokens=2)
- 
+/* Comment with Unicode: 你好世界 */ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=26, n_tokens=1)
  
 MultiLineCommentNode(original_parent_idx=0, original_current_idx=27)
+/* Empty multiline comment */ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=28, n_tokens=1)
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
+/**/ 
+ 
+/* Nested-looking comment /*  ( not actually nested )  */ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=30, n_tokens=2)
+ 
+ 
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=31)
 /* 
  * Comment 
  *    with 
  *       indentation 
  */ 
-WhitespaceNode(original_parent_idx=0, original_current_idx=28, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=32, n_tokens=1)
  
-MultiLineCommentNode(original_parent_idx=0, original_current_idx=29)
+MultiLineCommentNode(original_parent_idx=0, original_current_idx=33)
 /* Comment with trailing spaces    */ 
-WhitespaceNode(original_parent_idx=0, original_current_idx=30, n_tokens=1)
+WhitespaceNode(original_parent_idx=0, original_current_idx=34, n_tokens=1)
  

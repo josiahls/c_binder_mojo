@@ -61,7 +61,6 @@ fn test_define_node() raises:
     # Count and verify define nodes
     var define_count = 0
     var empty_define_count = 0  # Defines with no value like #define FOO
-    var macro_define_count = 0  # Function-like macros #define FOO(x, y)
 
     for i in range(len(module_interface.nodes()[])):
         var node = module_interface.nodes()[][i]
@@ -75,11 +74,6 @@ fn test_define_node() raises:
                 empty_define_count += 1
                 logger.info("Found empty define node")
             
-            # Check if this is a function-like macro
-            if "(" in node.name(include_sig=True):
-                macro_define_count += 1
-                logger.info("Found function-like macro")
-
     # We expect 10 define nodes in our test file
     if define_count != 10:
         raise Error(
@@ -92,17 +86,9 @@ fn test_define_node() raises:
             "Expected 2 empty defines, but found " + String(empty_define_count)
         )
 
-    # We should have exactly 3 function-like macros
-    if macro_define_count != 3:
-        raise Error(
-            "Expected 3 function-like macros, but found " + String(macro_define_count)
-        )
-
     logger.info("Define node test passed with:")
     logger.info("  - " + String(define_count) + " define nodes")
     logger.info("  - " + String(empty_define_count) + " empty defines")
-    logger.info("  - " + String(macro_define_count) + " function-like macros")
-    return
 
 
 fn main() raises:

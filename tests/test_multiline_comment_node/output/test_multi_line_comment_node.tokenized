@@ -12,14 +12,14 @@ TokenBundle(row_num=10, col_num=0)  TokenBundle(row_num=10, col_num=0) * TokenBu
 TokenBundle(row_num=11, col_num=0)  TokenBundle(row_num=11, col_num=0) * TokenBundle(row_num=11, col_num=1) lines 
 TokenBundle(row_num=12, col_num=0)  TokenBundle(row_num=12, col_num=0) */ 
 TokenBundle(row_num=13, col_num=0)  
-TokenBundle(row_num=14, col_num=0) /* TokenBundle(row_num=14, col_num=2) Comment TokenBundle(row_num=14, col_num=9) with TokenBundle(row_num=14, col_num=13) special TokenBundle(row_num=14, col_num=20) characters: TokenBundle(row_num=14, col_num=31) !@#$%^&*()_+ TokenBundle(row_num=14, col_num=43) */ 
+TokenBundle(row_num=14, col_num=0) /* TokenBundle(row_num=14, col_num=2) Comment TokenBundle(row_num=14, col_num=9) with TokenBundle(row_num=14, col_num=13) special TokenBundle(row_num=14, col_num=20) characters: TokenBundle(row_num=14, col_num=31) !@#$%^&* TokenBundle(row_num=14, col_num=39) ( TokenBundle(row_num=14, col_num=40)  TokenBundle(row_num=14, col_num=40) ) TokenBundle(row_num=14, col_num=41) _+ TokenBundle(row_num=14, col_num=43) */ 
 TokenBundle(row_num=15, col_num=0)  
 TokenBundle(row_num=16, col_num=0) /* TokenBundle(row_num=16, col_num=2) Comment TokenBundle(row_num=16, col_num=9) with TokenBundle(row_num=16, col_num=13) code-like TokenBundle(row_num=16, col_num=22) content: TokenBundle(row_num=16, col_num=30)  
 TokenBundle(row_num=17, col_num=0)  TokenBundle(row_num=17, col_num=0) * TokenBundle(row_num=17, col_num=1) int TokenBundle(row_num=17, col_num=4) x TokenBundle(row_num=17, col_num=5) = TokenBundle(row_num=17, col_num=6) 5 TokenBundle(row_num=17, col_num=7) ; TokenBundle(row_num=17, col_num=8)  
-TokenBundle(row_num=18, col_num=0)  TokenBundle(row_num=18, col_num=0) * TokenBundle(row_num=18, col_num=1) void TokenBundle(row_num=18, col_num=5) foo() TokenBundle(row_num=18, col_num=10) ; TokenBundle(row_num=18, col_num=11)  
+TokenBundle(row_num=18, col_num=0)  TokenBundle(row_num=18, col_num=0) * TokenBundle(row_num=18, col_num=1) void TokenBundle(row_num=18, col_num=5) foo TokenBundle(row_num=18, col_num=8) ( TokenBundle(row_num=18, col_num=9)  TokenBundle(row_num=18, col_num=9) ) TokenBundle(row_num=18, col_num=10)  TokenBundle(row_num=18, col_num=10) ; TokenBundle(row_num=18, col_num=11)  
 TokenBundle(row_num=19, col_num=0)  TokenBundle(row_num=19, col_num=0) */ 
 TokenBundle(row_num=20, col_num=0)  
-TokenBundle(row_num=21, col_num=0) int TokenBundle(row_num=21, col_num=3) some_function() TokenBundle(row_num=21, col_num=18) ; TokenBundle(row_num=21, col_num=19)  TokenBundle(row_num=21, col_num=19) /* TokenBundle(row_num=21, col_num=21) Comment TokenBundle(row_num=21, col_num=28) after TokenBundle(row_num=21, col_num=33) code TokenBundle(row_num=21, col_num=37) */ 
+TokenBundle(row_num=21, col_num=0) int TokenBundle(row_num=21, col_num=3) some_function TokenBundle(row_num=21, col_num=16) ( TokenBundle(row_num=21, col_num=17)  TokenBundle(row_num=21, col_num=17) ) TokenBundle(row_num=21, col_num=18)  TokenBundle(row_num=21, col_num=18) ; TokenBundle(row_num=21, col_num=19)  TokenBundle(row_num=21, col_num=19) /* TokenBundle(row_num=21, col_num=21) Comment TokenBundle(row_num=21, col_num=28) after TokenBundle(row_num=21, col_num=33) code TokenBundle(row_num=21, col_num=37) */ 
 TokenBundle(row_num=22, col_num=0)  
 TokenBundle(row_num=23, col_num=0) // TokenBundle(row_num=23, col_num=2) This TokenBundle(row_num=23, col_num=6) is TokenBundle(row_num=23, col_num=8) not TokenBundle(row_num=23, col_num=11) a TokenBundle(row_num=23, col_num=12) multiline TokenBundle(row_num=23, col_num=21) comment 
 TokenBundle(row_num=24, col_num=0)  
@@ -29,7 +29,7 @@ TokenBundle(row_num=27, col_num=0) /* TokenBundle(row_num=27, col_num=2) Empty T
 TokenBundle(row_num=28, col_num=0)  
 TokenBundle(row_num=29, col_num=0) /**/ 
 TokenBundle(row_num=30, col_num=0)  
-TokenBundle(row_num=31, col_num=0) /* TokenBundle(row_num=31, col_num=2) Nested-looking TokenBundle(row_num=31, col_num=16) comment TokenBundle(row_num=31, col_num=23) /* TokenBundle(row_num=31, col_num=25) (not TokenBundle(row_num=31, col_num=29) actually TokenBundle(row_num=31, col_num=37) nested) TokenBundle(row_num=31, col_num=44) */ TokenBundle(row_num=31, col_num=46)  
+TokenBundle(row_num=31, col_num=0) /* TokenBundle(row_num=31, col_num=2) Nested-looking TokenBundle(row_num=31, col_num=16) comment TokenBundle(row_num=31, col_num=23) /* TokenBundle(row_num=31, col_num=25)  TokenBundle(row_num=31, col_num=25) ( TokenBundle(row_num=31, col_num=26) not TokenBundle(row_num=31, col_num=29) actually TokenBundle(row_num=31, col_num=37) nested TokenBundle(row_num=31, col_num=43) ) TokenBundle(row_num=31, col_num=44)  TokenBundle(row_num=31, col_num=44) */ TokenBundle(row_num=31, col_num=46)  
 TokenBundle(row_num=32, col_num=0)  
 TokenBundle(row_num=33, col_num=0) /* 
 TokenBundle(row_num=34, col_num=0)  TokenBundle(row_num=34, col_num=0) * TokenBundle(row_num=34, col_num=1) Comment 

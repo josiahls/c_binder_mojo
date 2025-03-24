@@ -12,15 +12,19 @@
  * lines 
  */ 
  
-/* Comment with special characters: !@#$%^&*()_+ */ 
+/* Comment with special characters: !@#$%^&* (  ) _+ */ 
  
 /* Comment with code-like content:  
  * int x = 5 ;  
- * void foo() ;  
+ * void foo (  )  ;  
  */ 
  
 int 
-some_function() 
+some_function 
+( 
+ 
+) 
+ 
 ; 
  
 /* Comment after code */ 
@@ -33,7 +37,7 @@ some_function()
  
 /**/ 
  
-/* Nested-looking comment /* (not actually nested) */ 
+/* Nested-looking comment /*  ( not actually nested )  */ 
  
  
 /* 

@@ -8,6 +8,7 @@ from .macro_if_n_def_node import MacroIfNDefNode
 from .macro_if_def_node import MacroIfDefNode
 from .macro_define_node import MacroDefineNode
 from .macro_define_value_node import MacroDefineValueNode
+from .typedef_node import TypedefNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -19,6 +20,7 @@ alias AstNodeVariant = Variant[
     MacroIfNDefNode,
     MacroDefineNode,
     MacroDefineValueNode,
+    TypedefNode,
     WhitespaceNode,
     PlaceHolderNode,
 ]

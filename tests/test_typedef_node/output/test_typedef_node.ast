@@ -1,0 +1,128 @@
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=50)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+// Basic type typedefs 
+TypedefNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED)
+typedef unsigned int uint_t 
+WhitespaceNode(original_parent_idx=0, original_current_idx=3, n_tokens=1)
+ 
+TypedefNode(original_parent_idx=0, original_current_idx=4, node_state=COMPLETED)
+typedef long long int64_t 
+WhitespaceNode(original_parent_idx=0, original_current_idx=5, n_tokens=1)
+ 
+TypedefNode(original_parent_idx=0, original_current_idx=6, node_state=COMPLETED)
+typedef unsigned char byte_t 
+WhitespaceNode(original_parent_idx=0, original_current_idx=7, n_tokens=2)
+ 
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=8)
+// Enum typedef 
+TypedefNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COMPLETED, type='NodeState_')
+typedef  {  
+    STATE_NONE = 0 ,       // Initial state 
+    STATE_COLLECTING ,     // Collecting tokens 
+    STATE_BUILDING ,       // Building children 
+    STATE_COMPLETE       // Node is complete 
+ }  NodeState 
+PlaceHolderNode(original_parent_idx=9, original_current_idx=10)
+enum 
+
+NodeState_ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=11, n_tokens=2)
+ 
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+// Struct typedefs 
+TypedefNode(original_parent_idx=0, original_current_idx=13, original_child_idxs=(14), node_state=COMPLETED)
+typedef {  
+    int x 
+PlaceHolderNode(original_parent_idx=13, original_current_idx=14)
+struct 
+
+ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=15, n_tokens=5)
+ 
+    
+PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
+int 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=17)
+y 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
+; 
+WhitespaceNode(original_parent_idx=0, original_current_idx=19, n_tokens=2)
+ 
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
+} 
+WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=1)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
+Point2D 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
+; 
+WhitespaceNode(original_parent_idx=0, original_current_idx=24, n_tokens=2)
+ 
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=25)
+// Separate struct definition and typedef 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
+struct 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=27)
+Rectangle_ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=28, n_tokens=1)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
+{ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=30, n_tokens=5)
+ 
+    
+PlaceHolderNode(original_parent_idx=0, original_current_idx=31)
+Point2D 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
+top_left 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=33)
+; 
+WhitespaceNode(original_parent_idx=0, original_current_idx=34, n_tokens=5)
+ 
+    
+PlaceHolderNode(original_parent_idx=0, original_current_idx=35)
+Point2D 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=36)
+bottom_right 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=37)
+; 
+WhitespaceNode(original_parent_idx=0, original_current_idx=38, n_tokens=5)
+ 
+    
+PlaceHolderNode(original_parent_idx=0, original_current_idx=39)
+int 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=40)
+width 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=41)
+; 
+WhitespaceNode(original_parent_idx=0, original_current_idx=42, n_tokens=5)
+ 
+    
+PlaceHolderNode(original_parent_idx=0, original_current_idx=43)
+int 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=44)
+height 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=45)
+; 
+WhitespaceNode(original_parent_idx=0, original_current_idx=46, n_tokens=2)
+ 
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=47)
+} 
+WhitespaceNode(original_parent_idx=0, original_current_idx=48, n_tokens=1)
+ 
+PlaceHolderNode(original_parent_idx=0, original_current_idx=49)
+; 
+WhitespaceNode(original_parent_idx=0, original_current_idx=50, n_tokens=1)
+ 
+TypedefNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=COMPLETED, type='Rectangle_')
+typedef Rectangle 
+PlaceHolderNode(original_parent_idx=51, original_current_idx=52)
+struct 
+Rectangle_ 
+WhitespaceNode(original_parent_idx=0, original_current_idx=53, n_tokens=2)
+  

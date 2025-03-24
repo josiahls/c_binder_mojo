@@ -345,7 +345,7 @@ struct Tokenizer:
 
     var tokens: List[TokenBundle]
 
-    alias ISOLATED_TOKEN_CHARS: List[String] = List[String](";", ",", "{", "}")
+    alias ISOLATED_TOKEN_CHARS: List[String] = List[String](";", ",", "{", "}", "(", ")")
 
     fn __init__(mut self):
         """Initialize an empty Tokenizer."""

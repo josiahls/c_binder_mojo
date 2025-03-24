@@ -7,7 +7,7 @@ from .whitespace_node import WhitespaceNode
 from .macro_if_n_def_node import MacroIfNDefNode
 from .macro_if_def_node import MacroIfDefNode
 from .macro_define_node import MacroDefineNode
-
+from .macro_define_value_node import MacroDefineValueNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -15,10 +15,11 @@ alias AstNodeVariant = Variant[
     RootNode,
     SingleLineCommentNode,
     MultiLineCommentNode,
-    WhitespaceNode,
     MacroIfDefNode,
     MacroIfNDefNode,
     MacroDefineNode,
+    MacroDefineValueNode,
+    WhitespaceNode,
     PlaceHolderNode,
 ]
 

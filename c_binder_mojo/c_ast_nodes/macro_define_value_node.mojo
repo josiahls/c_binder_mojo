@@ -22,10 +22,11 @@ from c_binder_mojo.c_ast_nodes.nodes import (
     default_to_string,
     default_to_string_just_code,
 )
+from c_binder_mojo.c_ast_nodes import MacroDefineNode
 
 
 @value
-struct MacroDefineNode(NodeAstLike):
+struct MacroDefineValueNode(NodeAstLike):
     """Represents a #define preprocessor directive in C/C++ code.
     
     This node handles both simple defines and function-like macros:
@@ -37,16 +38,17 @@ struct MacroDefineNode(NodeAstLike):
             #define MAX(a, b) ((a) > (b) ? (a) : (b))
     """
 
-    alias __name__ = "MacroDefineNode"
+    alias __name__ = "MacroDefineValueNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: StringLiteral
-    var _macro_name: String
+    var _is_function_like: Bool
     var _row_nums: List[Int]
+    var _is_line_continuation: Bool
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
-        """Initialize a MacroDefineNode.
+        """Initialize a MacroDefineValueNode.
 
         Args:
             indicies: The indices for this node in the AST.
@@ -58,8 +60,9 @@ struct MacroDefineNode(NodeAstLike):
         self._row_nums = List[Int]()
         self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
-        self._macro_name = ""
         self._token_bundles[].append(token_bundle)
+        self._is_function_like = False
+        self._is_line_continuation = False
 
     @staticmethod
     fn accept(
@@ -77,7 +80,7 @@ struct MacroDefineNode(NodeAstLike):
         Returns:
             True if this token starts a #define directive, False otherwise.
         """
-        return token.token == CTokens.MACRO_DEFINE
+        return module_interface.nodes()[][indices.original_parent_idx].node[].isa[MacroDefineNode]()
 
     @staticmethod
     fn create(
@@ -85,7 +88,7 @@ struct MacroDefineNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        """Create a new MacroDefineNode.
+        """Create a new MacroDefineValueNode.
 
         Args:
             token: The #define token.
@@ -93,30 +96,26 @@ struct MacroDefineNode(NodeAstLike):
             indices: The indices for this node.
 
         Returns:
-            A new MacroDefineNode instance.
+            A new MacroDefineValueNode instance.
         """
         return Self(indices, token)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
-        if len(self._token_bundles[]) == 0:
-            return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
+        if token.token == CTokens.LINE_CONTINUATION:
+            self._is_line_continuation = True
+        elif self._is_line_continuation and token.row_num not in self._row_nums:
+            self._row_nums.append(token.row_num)
+            self._is_line_continuation = False
 
         if token.row_num not in self._row_nums:
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 
-        if len(self._token_bundles[]) == 1:
-            self._node_state = NodeState.COLLECTING_TOKENS
-            return TokenFlow.CONSUME_TOKEN
-
-        # After collecting #define and name, handle the value
-        if len(self._token_bundles[]) >= 2:
-            self._node_state = NodeState.BUILDING_CHILDREN
-            return TokenFlow.CREATE_CHILD
-
-        return TokenFlow.INVALID + " Unexpected token in MacroDefineNode"
+        self._node_state = NodeState.COLLECTING_TOKENS
+        return TokenFlow.CONSUME_TOKEN
+            
 
     fn process(
         mut self,
@@ -126,13 +125,7 @@ struct MacroDefineNode(NodeAstLike):
     ):
         """Process a token in this node."""
         if self._node_state == NodeState.COLLECTING_TOKENS:
-            if token.token == CTokens.LINE_CONTINUATION:
-                self._row_nums.append(token.row_num)
-
-            if len(self._token_bundles[]) == 1:
-                self._macro_name = token.token
             self._token_bundles[].append(token)
-
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""
@@ -172,8 +165,7 @@ struct MacroDefineNode(NodeAstLike):
         if include_sig:
             var result = self.__name__ + "(" + String(self._indicies[])
             result += ", node_state=" + String(self._node_state)
-            if self._macro_name != "":
-                result += ", macro='" + self._macro_name + "'"
+            result += ", is_function_like=" + String(self._is_function_like)
             result += ")"
             return result
         else:
@@ -184,7 +176,7 @@ struct MacroDefineNode(NodeAstLike):
     ) -> String:
         """Convert this node to a string."""
         if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface, inline_children=True)
+            return default_to_string_just_code(AstNode(self), module_interface, inline_children=True, inline_nodes=True, inline_tail=True)
         else:
             return default_to_string(AstNode(self), module_interface)
 

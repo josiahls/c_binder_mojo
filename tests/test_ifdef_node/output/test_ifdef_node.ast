@@ -1,4 +1,4 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 5, 6, 7, ...) len=27)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 5, 6, 7, ...) len=23)
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic ifdef test 
 MacroIfDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COMPLETED)
@@ -185,7 +185,7 @@ WhitespaceNode(original_parent_idx=0, original_current_idx=79, n_tokens=1)
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=80)
 // ifdef with complex expressions 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=81, original_child_idxs=(82, 83, 84, 85, 86, 87), node_state=COMPLETED)
+MacroIfDefNode(original_parent_idx=0, original_current_idx=81, original_child_idxs=(82, 83, 84, 85, 86), node_state=BUILDING_CHILDREN)
 #ifdef __cplusplus 
 	WhitespaceNode(original_parent_idx=81, original_current_idx=82, n_tokens=4)
 	    
@@ -195,40 +195,42 @@ MacroIfDefNode(original_parent_idx=0, original_current_idx=81, original_child_id
 	"C" 
 	WhitespaceNode(original_parent_idx=81, original_current_idx=85, n_tokens=1)
 	 
-	PlaceHolderNode(original_parent_idx=81, original_current_idx=86)
+	ScopeNode(original_parent_idx=81, original_current_idx=86, original_child_idxs=(87, 88, 89, 90, 91, 101), node_state=BUILDING_CHILDREN, parent_type='MacroIfDefNode')
 	{ 
-	WhitespaceNode(original_parent_idx=81, original_current_idx=87, n_tokens=1)
-	 
+			WhitespaceNode(original_parent_idx=86, original_current_idx=87, n_tokens=1)
+		 
+		PlaceHolderNode(original_parent_idx=86, original_current_idx=88)
+		#endif 
+		WhitespaceNode(original_parent_idx=86, original_current_idx=89, n_tokens=1)
+		 
+		SingleLineCommentNode(original_parent_idx=86, original_current_idx=90)
+		// ifdef with multiple defines 
+		MacroIfDefNode(original_parent_idx=86, original_current_idx=91, original_child_idxs=(92, 93, 95, 96, 98, 99), node_state=COMPLETED)
+		#ifdef MULTIPLE_DEFINES 
+					WhitespaceNode(original_parent_idx=91, original_current_idx=92, n_tokens=4)
+			    
+			MacroDefineNode(original_parent_idx=91, original_current_idx=93, original_child_idxs=(94), node_state=COMPLETED, macro='A')
+			#define A 
+							MacroDefineValueNode(original_parent_idx=93, original_current_idx=94, node_state=COMPLETED, is_function_like=False)
+				1 
 
-#endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=88, n_tokens=1)
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=89)
-// ifdef with multiple defines 
-MacroIfDefNode(original_parent_idx=0, original_current_idx=90, original_child_idxs=(91, 92, 94, 95, 97, 98), node_state=COMPLETED)
-#ifdef MULTIPLE_DEFINES 
-	WhitespaceNode(original_parent_idx=90, original_current_idx=91, n_tokens=4)
-	    
-	MacroDefineNode(original_parent_idx=90, original_current_idx=92, original_child_idxs=(93), node_state=COMPLETED, macro='A')
-	#define A 
-			MacroDefineValueNode(original_parent_idx=92, original_current_idx=93, node_state=COMPLETED, is_function_like=False)
-		1 
+			WhitespaceNode(original_parent_idx=91, original_current_idx=95, n_tokens=4)
+			    
+			MacroDefineNode(original_parent_idx=91, original_current_idx=96, original_child_idxs=(97), node_state=COMPLETED, macro='B')
+			#define B 
+							MacroDefineValueNode(original_parent_idx=96, original_current_idx=97, node_state=COMPLETED, is_function_like=False)
+				2 
 
-	WhitespaceNode(original_parent_idx=90, original_current_idx=94, n_tokens=4)
-	    
-	MacroDefineNode(original_parent_idx=90, original_current_idx=95, original_child_idxs=(96), node_state=COMPLETED, macro='B')
-	#define B 
-			MacroDefineValueNode(original_parent_idx=95, original_current_idx=96, node_state=COMPLETED, is_function_like=False)
-		2 
-
-	WhitespaceNode(original_parent_idx=90, original_current_idx=97, n_tokens=4)
-	    
-	MacroDefineNode(original_parent_idx=90, original_current_idx=98, original_child_idxs=(99), node_state=COMPLETED, macro='C')
-	#define C 
-			MacroDefineValueNode(original_parent_idx=98, original_current_idx=99, node_state=COMPLETED, is_function_like=False)
-		3 
+			WhitespaceNode(original_parent_idx=91, original_current_idx=98, n_tokens=4)
+			    
+			MacroDefineNode(original_parent_idx=91, original_current_idx=99, original_child_idxs=(100), node_state=COMPLETED, macro='C')
+			#define C 
+							MacroDefineValueNode(original_parent_idx=99, original_current_idx=100, node_state=COMPLETED, is_function_like=False)
+				3 
 
 
-#endif 
-WhitespaceNode(original_parent_idx=0, original_current_idx=100, n_tokens=1)
- 
+		#endif 
+		WhitespaceNode(original_parent_idx=86, original_current_idx=101, n_tokens=1)
+		 
+
+

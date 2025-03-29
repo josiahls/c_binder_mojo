@@ -362,383 +362,375 @@ tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_cur
     └─ Path: RootNode
     └─ Current Token: '{' at [19:13]
     └─ Nodes: 5 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	ScopeNode(original_parent_idx=0, original_current_idx=20, node_state=INITIALIZING, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '{' at [19:13]
     └─ Nodes: 6 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '' at [19:14]
     └─ Nodes: 6 active, 15 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=20)
-    └─ Path: RootNode
-    └─ Current Token: '' at [19:14]
-    └─ Nodes: 6 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:1] ScopeNode -> CREATE_CHILD 		WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=1)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [19:14]
     └─ Nodes: 6 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=1)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 6 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=2)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=2)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 6 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=3)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=3)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 6 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=4)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=4)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 6 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=5)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=5)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'int' at [20:0]
     └─ Nodes: 6 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=21)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21), node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: 'int' at [20:0]
     └─ Nodes: 6 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=22)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: 'int' at [20:0]
     └─ Nodes: 7 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=22)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=22)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: 'x' at [20:3]
     └─ Nodes: 7 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=22)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22), node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: 'x' at [20:3]
     └─ Nodes: 7 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=23)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: 'x' at [20:3]
     └─ Nodes: 8 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=23)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=23)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: '=' at [20:4]
     └─ Nodes: 8 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=23)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23), node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '=' at [20:4]
     └─ Nodes: 8 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=24)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: '=' at [20:4]
     └─ Nodes: 9 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=24)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=24)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: '5' at [20:5]
     └─ Nodes: 9 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=24)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24), node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '5' at [20:5]
     └─ Nodes: 9 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=25)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: '5' at [20:5]
     └─ Nodes: 10 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=25)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=25)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: ';' at [20:6]
     └─ Nodes: 10 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=25)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25), node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: ';' at [20:6]
     └─ Nodes: 10 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=26)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: ';' at [20:6]
     └─ Nodes: 11 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=26)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=26)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: '' at [20:7]
     └─ Nodes: 11 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=26)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, 26), node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '' at [20:7]
     └─ Nodes: 11 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=1)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:7]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=1)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=2)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=2)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=3)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=3)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=4)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=4)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=5)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=5)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=6)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=6)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=7)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=7)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=8)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=8)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=9)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=9)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=27, n_tokens=10)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=10)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'return' at [22:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=27)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=7, node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: 'return' at [22:0]
     └─ Nodes: 11 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=28)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=28)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: 'return' at [22:0]
     └─ Nodes: 12 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=28)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=28)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: 'x' at [22:6]
     └─ Nodes: 12 active, 17 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=28)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=8, node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: 'x' at [22:6]
     └─ Nodes: 12 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=29)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: 'x' at [22:6]
     └─ Nodes: 13 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=29)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=29)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: ';' at [22:7]
     └─ Nodes: 13 active, 17 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=29)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=9, node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: ';' at [22:7]
     └─ Nodes: 13 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=30)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		PlaceHolderNode(original_parent_idx=20, original_current_idx=30)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: ';' at [22:7]
     └─ Nodes: 14 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=30)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		PlaceHolderNode(original_parent_idx=20, original_current_idx=30)
+    └─ Path: RootNode -> ScopeNode -> PlaceHolderNode
     └─ Current Token: '' at [22:8]
     └─ Nodes: 14 active, 17 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=30)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=10, node_state=BUILDING_CHILDREN, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '' at [22:8]
     └─ Nodes: 14 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=31, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] ScopeNode -> CREATE_CHILD 		WhitespaceNode(original_parent_idx=20, original_current_idx=31, n_tokens=1)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [22:8]
     └─ Nodes: 14 active, 18 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=31, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=31, n_tokens=1)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [23:0]
     └─ Nodes: 14 active, 18 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=31, n_tokens=2)
-    └─ Path: RootNode -> WhitespaceNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		WhitespaceNode(original_parent_idx=20, original_current_idx=31, n_tokens=2)
+    └─ Path: RootNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '}' at [23:0]
     └─ Nodes: 14 active, 18 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=31)
-    └─ Path: RootNode
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=11, node_state=COLLECTING_TAIL_TOKENS, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '}' at [23:0]
     └─ Nodes: 14 active, 18 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current Token: '}' at [23:0]
-    └─ Nodes: 15 active, 18 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	PlaceHolderNode(original_parent_idx=0, original_current_idx=32)
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=11, node_state=COMPLETED, parent_type='RootNode')
+    └─ Path: RootNode -> ScopeNode
     └─ Current Token: '' at [23:1]
-    └─ Nodes: 15 active, 18 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=32)
+    └─ Nodes: 13 active, 19 complete
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=20)
     └─ Path: RootNode
     └─ Current Token: '' at [23:1]
-    └─ Nodes: 15 active, 18 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=33, n_tokens=1)
+    └─ Nodes: 13 active, 19 complete
+tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [23:1]
-    └─ Nodes: 15 active, 19 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=33, n_tokens=1)
+    └─ Nodes: 13 active, 20 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [24:0]
-    └─ Nodes: 15 active, 19 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=33, n_tokens=2)
+    └─ Nodes: 13 active, 20 complete
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=32, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [25:0]
-    └─ Nodes: 15 active, 19 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=33)
+    └─ Nodes: 13 active, 20 complete
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=21)
     └─ Path: RootNode
     └─ Current Token: '//' at [25:0]
-    └─ Nodes: 15 active, 19 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=34)
+    └─ Nodes: 13 active, 20 complete
+tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=33)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [25:0]
-    └─ Nodes: 16 active, 19 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=34)
+    └─ Nodes: 14 active, 20 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=33)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Whitespace' at [25:2]
-    └─ Nodes: 16 active, 19 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=34)
+    └─ Nodes: 14 active, 20 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=33)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'after' at [25:12]
-    └─ Nodes: 16 active, 19 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=34)
+    └─ Nodes: 14 active, 20 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=33)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'comment' at [25:17]
-    └─ Nodes: 16 active, 19 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=34)
+    └─ Nodes: 14 active, 20 complete
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=33)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [26:0]
-    └─ Nodes: 15 active, 20 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=34)
+    └─ Nodes: 13 active, 21 complete
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=22)
     └─ Path: RootNode
     └─ Current Token: '' at [26:0]
-    └─ Nodes: 15 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=35, n_tokens=1)
+    └─ Nodes: 13 active, 21 complete
+tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=34, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [26:0]
-    └─ Nodes: 15 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=35, n_tokens=1)
+    └─ Nodes: 13 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=34, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '/*' at [27:0]
-    └─ Nodes: 15 active, 21 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=35)
+    └─ Nodes: 13 active, 22 complete
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=23)
     └─ Path: RootNode
     └─ Current Token: '/*' at [27:0]
-    └─ Nodes: 15 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 13 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '/*' at [27:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'Whitespace' at [27:2]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [28:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [28:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [28:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'in' at [28:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'multiline' at [28:2]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [29:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [29:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [29:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'comment' at [29:0]
-    └─ Nodes: 16 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 14 active, 22 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [29:7]
-    └─ Nodes: 15 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=36)
+    └─ Nodes: 13 active, 23 complete
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [30:0]
-    └─ Nodes: 15 active, 22 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=36)
+    └─ Nodes: 13 active, 23 complete
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=24)
     └─ Path: RootNode
     └─ Current Token: '' at [30:0]
-    └─ Nodes: 15 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=37, n_tokens=1)
+    └─ Nodes: 13 active, 23 complete
+tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
-    └─ Nodes: 15 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=37, n_tokens=1)
+    └─ Nodes: 13 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
-    └─ Nodes: 15 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=37, n_tokens=2)
+    └─ Nodes: 13 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
-    └─ Nodes: 15 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=37, n_tokens=3)
+    └─ Nodes: 13 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
-    └─ Nodes: 15 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=37, n_tokens=4)
+    └─ Nodes: 13 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [31:0]
-    └─ Nodes: 15 active, 23 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=37)
+    └─ Nodes: 13 active, 24 complete
+tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=25)
     └─ Path: RootNode
     └─ Current Token: '//' at [31:0]
-    └─ Nodes: 15 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 13 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [31:0]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Whitespace' at [31:2]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'at' at [31:12]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'beginning' at [31:14]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'and' at [31:23]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'end' at [31:26]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'of' at [31:29]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'file' at [31:31]
-    └─ Nodes: 16 active, 23 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=38)
+    └─ Nodes: 14 active, 24 complete
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [31:35]
-    └─ Nodes: 16 active, 23 complete
+    └─ Nodes: 14 active, 24 complete

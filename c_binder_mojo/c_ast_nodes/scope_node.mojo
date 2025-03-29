@@ -127,12 +127,6 @@ struct ScopeNode(NodeAstLike):
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
 
-        if token.token == CTokens.SCOPE_END:
-            print("scope end token" + String(token.token))
-            print("node state: " + String(self._node_state))
-            print("token bundles: " + String(self._token_bundles[]))
-            print("token bundles tail: " + String(self._token_bundles_tail[]))
-
         if self._node_state == NodeState.BUILDING_CHILDREN and token.token == CTokens.SCOPE_END:
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS
             return TokenFlow.CONSUME_TOKEN # Consume the scope end token.
@@ -143,8 +137,6 @@ struct ScopeNode(NodeAstLike):
 
         if self._node_state == NodeState.BUILDING_CHILDREN:
             return TokenFlow.CREATE_CHILD
-
-        print("Unknown node state: " + String(self._node_state))
 
         return TokenFlow.INVALID + " Unknown node state: "
 
@@ -165,7 +157,6 @@ struct ScopeNode(NodeAstLike):
             self._row_nums.append(token.row_num)
 
         if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
-            print("collecting tail tokens")
             self._token_bundles_tail[].append(token)
             self._node_state = NodeState.COMPLETED
 

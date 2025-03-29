@@ -12,11 +12,13 @@ from .typedef_node import TypedefNode
 from .scope_node import ScopeNode
 from .enum_node import EnumNode
 from .struct_node import StructNode
+from .enum_field_node import EnumFieldNode
 # Setup Variant
 from .node_variant import Variant
 
 alias AstNodeVariant = Variant[
     RootNode,
+    WhitespaceNode,
     SingleLineCommentNode,
     MultiLineCommentNode,
     MacroIfDefNode,
@@ -27,7 +29,7 @@ alias AstNodeVariant = Variant[
     ScopeNode,
     EnumNode,
     StructNode,
-    WhitespaceNode,
+    EnumFieldNode,
     PlaceHolderNode,
 ]
 

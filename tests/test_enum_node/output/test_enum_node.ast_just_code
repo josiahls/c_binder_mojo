@@ -3,21 +3,13 @@ enum Color
 { 
 	 
 	    
-	RED 
-	= 
-	0 
-	, 
+	RED = 0 , 
 	 
 	    
-	GREEN 
-	= 
-	1 
-	, 
+	GREEN = 1 , 
 	 
 	    
-	BLUE 
-	= 
-	2 
+	BLUE = 2 
 	 
 } 
  ;  
@@ -27,23 +19,19 @@ enum Direction
 { 
 	 
 	    
-	NORTH 
-	, 
+	NORTH , 
 	  
 	// 0 
 	    
-	SOUTH 
-	, 
+	SOUTH , 
 	  
 	// 1 
 	    
-	EAST 
-	, 
+	EAST , 
 	   
 	// 2 
 	    
-	WEST 
-	   
+	WEST    
 	// 3 
 	 
 } 
@@ -54,31 +42,20 @@ enum Status
 { 
 	 
 	    
-	OK 
-	= 
-	200 
-	, 
+	OK = 200 , 
 	 
 	    
-	NOT_FOUND 
-	= 
-	404 
-	, 
+	NOT_FOUND = 404 , 
 	 
 	    
-	SERVER_ERROR 
-	= 
-	500 
-	, 
+	SERVER_ERROR = 500 , 
 	 
 	    
-	UNAVAILABLE 
-	, 
+	UNAVAILABLE , 
 	  
 	// 501 
 	    
-	TIMEOUT 
-	     
+	TIMEOUT      
 	// 502 
 	 
 } 
@@ -97,27 +74,15 @@ enum Flags
 { 
 	 
 	    
-	READ 
-	   
-	= 
-	0x01 
-	, 
+	READ    = 0x01 , 
 	  
 	// Read permission 
 	    
-	WRITE 
-	  
-	= 
-	0x02 
-	, 
+	WRITE   = 0x02 , 
 	  
 	// Write permission 
 	    
-	EXECUTE 
-	= 
-	0x04 
-	  
-	// Execute permission 
+	EXECUTE = 0x04   // Execute permission 
 	 
 } 
  ;   
@@ -127,35 +92,16 @@ enum ByteValues
 { 
 	 
 	    
-	BYTE_0 
-	= 
-	0 
-	<< 
-	0 
-	, 
+	BYTE_0 = 0 << 0 , 
 	 
 	    
-	BYTE_1 
-	= 
-	0 
-	<< 
-	1 
-	, 
+	BYTE_1 = 0 << 1 , 
 	 
 	    
-	BYTE_2 
-	= 
-	0 
-	<< 
-	2 
-	, 
+	BYTE_2 = 0 << 2 , 
 	 
 	    
-	BYTE_3 
-	= 
-	0 
-	<< 
-	3 
+	BYTE_3 = 0 << 3 
 	 
 } 
  ;  

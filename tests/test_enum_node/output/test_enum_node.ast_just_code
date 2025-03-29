@@ -20,9 +20,7 @@ enum Color
 	2 
 	 
 } 
- 
-; 
- 
+ ;  
  
 // Enum with auto-incrementing values 
 enum Direction  
@@ -49,9 +47,7 @@ enum Direction
 	// 3 
 	 
 } 
- 
-; 
- 
+ ;  
  
 // Enum with mixed explicit and implicit values 
 enum Status  
@@ -86,9 +82,7 @@ enum Status
 	// 502 
 	 
 } 
- 
-; 
- 
+ ;  
  
 // Enum with name but no values  ( empty enum )  
 enum Empty  
@@ -96,9 +90,7 @@ enum Empty
 	 
 	 
 } 
- 
-; 
- 
+ ;  
  
 // Enum with hex values and comments 
 enum Flags  
@@ -128,9 +120,7 @@ enum Flags
 	// Execute permission 
 	 
 } 
- 
-; 
-  
+ ;   
  
 // Enum with byte values 
 enum ByteValues  
@@ -168,6 +158,4 @@ enum ByteValues
 	3 
 	 
 } 
- 
-; 
- 
+ ;  

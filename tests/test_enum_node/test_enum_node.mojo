@@ -60,7 +60,7 @@ fn test_enum_node() raises:
 
     # Count and verify enum nodes
     var enum_count = 0
-    var expected_enum_names = List[String]("Color", "Direction", "Status", "Empty", "Flags")
+    var expected_enum_names = List[String]("Color", "Direction", "Status", "Empty", "Flags", "ByteValues")
     var expected_enum_names_str = String('')
     for name in expected_enum_names:
         expected_enum_names_str += name[] + ", "
@@ -81,9 +81,9 @@ fn test_enum_node() raises:
             logger.info("  - Name: " + enum_name)
 
     # We expect 5 enum nodes in our test file
-    if enum_count != 5:
+    if enum_count != len(expected_enum_names):
         raise Error(
-            "Expected 5 enum nodes, but found " + String(enum_count)
+            "Expected " + String(len(expected_enum_names)) + " enum nodes, but found " + String(enum_count)
         )
 
     logger.info("Enum node test passed with " + String(enum_count) + " enum nodes")

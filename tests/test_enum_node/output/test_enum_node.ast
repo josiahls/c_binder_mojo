@@ -1,7 +1,7 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 19, 20, 21, ...) len=30)
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 19, 20, 42, ...) len=12)
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic enum with values 
-EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=BUILDING_CHILDREN, name='Color')
+EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TAIL_TOKENS, name='Color')
 enum Color  
 	ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6, 7, 8, ...) len=15, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
@@ -41,294 +41,264 @@ enum Color
 
 	} 
 
-WhitespaceNode(original_parent_idx=0, original_current_idx=19, n_tokens=1)
+ ;  
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=20)
-; 
-WhitespaceNode(original_parent_idx=0, original_current_idx=21, n_tokens=2)
- 
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=22)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=19)
 // Enum with auto-incrementing values 
-EnumNode(original_parent_idx=0, original_current_idx=23, original_child_idxs=(24), node_state=BUILDING_CHILDREN, name='Direction')
+EnumNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21), node_state=COLLECTING_TAIL_TOKENS, name='Direction')
 enum Direction  
-	ScopeNode(original_parent_idx=23, original_current_idx=24, original_child_idxs=(25, 26, 27, 28, 29, ...) len=20, node_state=COMPLETED, parent_type='EnumNode')
+	ScopeNode(original_parent_idx=20, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 26, ...) len=20, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
-			WhitespaceNode(original_parent_idx=24, original_current_idx=25, n_tokens=5)
+			WhitespaceNode(original_parent_idx=21, original_current_idx=22, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=24, original_current_idx=26)
+		PlaceHolderNode(original_parent_idx=21, original_current_idx=23)
 		NORTH 
-		PlaceHolderNode(original_parent_idx=24, original_current_idx=27)
+		PlaceHolderNode(original_parent_idx=21, original_current_idx=24)
 		, 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=28, n_tokens=2)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=25, n_tokens=2)
 		  
-		SingleLineCommentNode(original_parent_idx=24, original_current_idx=29)
+		SingleLineCommentNode(original_parent_idx=21, original_current_idx=26)
 		// 0 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=30, n_tokens=4)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=27, n_tokens=4)
 		    
-		PlaceHolderNode(original_parent_idx=24, original_current_idx=31)
+		PlaceHolderNode(original_parent_idx=21, original_current_idx=28)
 		SOUTH 
-		PlaceHolderNode(original_parent_idx=24, original_current_idx=32)
+		PlaceHolderNode(original_parent_idx=21, original_current_idx=29)
 		, 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=33, n_tokens=2)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=30, n_tokens=2)
 		  
-		SingleLineCommentNode(original_parent_idx=24, original_current_idx=34)
+		SingleLineCommentNode(original_parent_idx=21, original_current_idx=31)
 		// 1 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=35, n_tokens=4)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=32, n_tokens=4)
 		    
-		PlaceHolderNode(original_parent_idx=24, original_current_idx=36)
+		PlaceHolderNode(original_parent_idx=21, original_current_idx=33)
 		EAST 
-		PlaceHolderNode(original_parent_idx=24, original_current_idx=37)
+		PlaceHolderNode(original_parent_idx=21, original_current_idx=34)
 		, 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=38, n_tokens=3)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=35, n_tokens=3)
 		   
-		SingleLineCommentNode(original_parent_idx=24, original_current_idx=39)
+		SingleLineCommentNode(original_parent_idx=21, original_current_idx=36)
 		// 2 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=40, n_tokens=4)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=37, n_tokens=4)
 		    
-		PlaceHolderNode(original_parent_idx=24, original_current_idx=41)
+		PlaceHolderNode(original_parent_idx=21, original_current_idx=38)
 		WEST 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=42, n_tokens=3)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=39, n_tokens=3)
 		   
-		SingleLineCommentNode(original_parent_idx=24, original_current_idx=43)
+		SingleLineCommentNode(original_parent_idx=21, original_current_idx=40)
 		// 3 
-		WhitespaceNode(original_parent_idx=24, original_current_idx=44, n_tokens=1)
+		WhitespaceNode(original_parent_idx=21, original_current_idx=41, n_tokens=1)
 		 
 
 	} 
 
-WhitespaceNode(original_parent_idx=0, original_current_idx=45, n_tokens=1)
+ ;  
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=46)
-; 
-WhitespaceNode(original_parent_idx=0, original_current_idx=47, n_tokens=2)
- 
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=48)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=42)
 // Enum with mixed explicit and implicit values 
-EnumNode(original_parent_idx=0, original_current_idx=49, original_child_idxs=(50), node_state=BUILDING_CHILDREN, name='Status')
+EnumNode(original_parent_idx=0, original_current_idx=43, original_child_idxs=(44), node_state=COLLECTING_TAIL_TOKENS, name='Status')
 enum Status  
-	ScopeNode(original_parent_idx=49, original_current_idx=50, original_child_idxs=(51, 52, 53, 54, 55, ...) len=25, node_state=COMPLETED, parent_type='EnumNode')
+	ScopeNode(original_parent_idx=43, original_current_idx=44, original_child_idxs=(45, 46, 47, 48, 49, ...) len=25, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
-			WhitespaceNode(original_parent_idx=50, original_current_idx=51, n_tokens=5)
+			WhitespaceNode(original_parent_idx=44, original_current_idx=45, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=52)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=46)
 		OK 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=53)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=47)
 		= 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=54)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=48)
 		200 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=55)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=49)
 		, 
-		WhitespaceNode(original_parent_idx=50, original_current_idx=56, n_tokens=5)
+		WhitespaceNode(original_parent_idx=44, original_current_idx=50, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=57)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=51)
 		NOT_FOUND 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=58)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=52)
 		= 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=59)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=53)
 		404 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=60)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=54)
 		, 
-		WhitespaceNode(original_parent_idx=50, original_current_idx=61, n_tokens=5)
+		WhitespaceNode(original_parent_idx=44, original_current_idx=55, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=62)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=56)
 		SERVER_ERROR 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=63)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=57)
 		= 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=64)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=58)
 		500 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=65)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=59)
 		, 
-		WhitespaceNode(original_parent_idx=50, original_current_idx=66, n_tokens=5)
+		WhitespaceNode(original_parent_idx=44, original_current_idx=60, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=67)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=61)
 		UNAVAILABLE 
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=68)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=62)
 		, 
-		WhitespaceNode(original_parent_idx=50, original_current_idx=69, n_tokens=2)
+		WhitespaceNode(original_parent_idx=44, original_current_idx=63, n_tokens=2)
 		  
-		SingleLineCommentNode(original_parent_idx=50, original_current_idx=70)
+		SingleLineCommentNode(original_parent_idx=44, original_current_idx=64)
 		// 501 
-		WhitespaceNode(original_parent_idx=50, original_current_idx=71, n_tokens=4)
+		WhitespaceNode(original_parent_idx=44, original_current_idx=65, n_tokens=4)
 		    
-		PlaceHolderNode(original_parent_idx=50, original_current_idx=72)
+		PlaceHolderNode(original_parent_idx=44, original_current_idx=66)
 		TIMEOUT 
-		WhitespaceNode(original_parent_idx=50, original_current_idx=73, n_tokens=5)
+		WhitespaceNode(original_parent_idx=44, original_current_idx=67, n_tokens=5)
 		     
-		SingleLineCommentNode(original_parent_idx=50, original_current_idx=74)
+		SingleLineCommentNode(original_parent_idx=44, original_current_idx=68)
 		// 502 
-		WhitespaceNode(original_parent_idx=50, original_current_idx=75, n_tokens=1)
+		WhitespaceNode(original_parent_idx=44, original_current_idx=69, n_tokens=1)
 		 
 
 	} 
 
-WhitespaceNode(original_parent_idx=0, original_current_idx=76, n_tokens=1)
+ ;  
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=77)
-; 
-WhitespaceNode(original_parent_idx=0, original_current_idx=78, n_tokens=2)
- 
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=79)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=70)
 // Enum with name but no values  ( empty enum )  
-EnumNode(original_parent_idx=0, original_current_idx=80, original_child_idxs=(81), node_state=BUILDING_CHILDREN, name='Empty')
+EnumNode(original_parent_idx=0, original_current_idx=71, original_child_idxs=(72), node_state=COLLECTING_TAIL_TOKENS, name='Empty')
 enum Empty  
-	ScopeNode(original_parent_idx=80, original_current_idx=81, original_child_idxs=(82), node_state=COMPLETED, parent_type='EnumNode')
+	ScopeNode(original_parent_idx=71, original_current_idx=72, original_child_idxs=(73), node_state=COMPLETED, parent_type='EnumNode')
 	{ 
-			WhitespaceNode(original_parent_idx=81, original_current_idx=82, n_tokens=2)
+			WhitespaceNode(original_parent_idx=72, original_current_idx=73, n_tokens=2)
 		 
 		 
 
 	} 
 
-WhitespaceNode(original_parent_idx=0, original_current_idx=83, n_tokens=1)
+ ;  
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=84)
-; 
-WhitespaceNode(original_parent_idx=0, original_current_idx=85, n_tokens=2)
- 
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=86)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=74)
 // Enum with hex values and comments 
-EnumNode(original_parent_idx=0, original_current_idx=87, original_child_idxs=(88), node_state=BUILDING_CHILDREN, name='Flags')
+EnumNode(original_parent_idx=0, original_current_idx=75, original_child_idxs=(76), node_state=COLLECTING_TAIL_TOKENS, name='Flags')
 enum Flags  
-	ScopeNode(original_parent_idx=87, original_current_idx=88, original_child_idxs=(89, 90, 91, 92, 93, ...) len=23, node_state=COMPLETED, parent_type='EnumNode')
+	ScopeNode(original_parent_idx=75, original_current_idx=76, original_child_idxs=(77, 78, 79, 80, 81, ...) len=23, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
-			WhitespaceNode(original_parent_idx=88, original_current_idx=89, n_tokens=5)
+			WhitespaceNode(original_parent_idx=76, original_current_idx=77, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=90)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=78)
 		READ 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=91, n_tokens=3)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=79, n_tokens=3)
 		   
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=92)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=80)
 		= 
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=93)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=81)
 		0x01 
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=94)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=82)
 		, 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=95, n_tokens=2)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=83, n_tokens=2)
 		  
-		SingleLineCommentNode(original_parent_idx=88, original_current_idx=96)
+		SingleLineCommentNode(original_parent_idx=76, original_current_idx=84)
 		// Read permission 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=97, n_tokens=4)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=85, n_tokens=4)
 		    
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=98)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=86)
 		WRITE 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=99, n_tokens=2)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=87, n_tokens=2)
 		  
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=100)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=88)
 		= 
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=101)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=89)
 		0x02 
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=102)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=90)
 		, 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=103, n_tokens=2)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=91, n_tokens=2)
 		  
-		SingleLineCommentNode(original_parent_idx=88, original_current_idx=104)
+		SingleLineCommentNode(original_parent_idx=76, original_current_idx=92)
 		// Write permission 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=105, n_tokens=4)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=93, n_tokens=4)
 		    
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=106)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=94)
 		EXECUTE 
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=107)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=95)
 		= 
-		PlaceHolderNode(original_parent_idx=88, original_current_idx=108)
+		PlaceHolderNode(original_parent_idx=76, original_current_idx=96)
 		0x04 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=109, n_tokens=2)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=97, n_tokens=2)
 		  
-		SingleLineCommentNode(original_parent_idx=88, original_current_idx=110)
+		SingleLineCommentNode(original_parent_idx=76, original_current_idx=98)
 		// Execute permission 
-		WhitespaceNode(original_parent_idx=88, original_current_idx=111, n_tokens=1)
+		WhitespaceNode(original_parent_idx=76, original_current_idx=99, n_tokens=1)
 		 
 
 	} 
 
-WhitespaceNode(original_parent_idx=0, original_current_idx=112, n_tokens=1)
+ ;   
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=113)
-; 
-WhitespaceNode(original_parent_idx=0, original_current_idx=114, n_tokens=3)
-  
- 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=115)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=100)
 // Enum with byte values 
-EnumNode(original_parent_idx=0, original_current_idx=116, original_child_idxs=(117), node_state=BUILDING_CHILDREN, name='ByteValues')
+EnumNode(original_parent_idx=0, original_current_idx=101, original_child_idxs=(102), node_state=COLLECTING_TAIL_TOKENS, name='ByteValues')
 enum ByteValues  
-	ScopeNode(original_parent_idx=116, original_current_idx=117, original_child_idxs=(118, 119, 120, 121, 122, ...) len=28, node_state=COMPLETED, parent_type='EnumNode')
+	ScopeNode(original_parent_idx=101, original_current_idx=102, original_child_idxs=(103, 104, 105, 106, 107, ...) len=28, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
-			WhitespaceNode(original_parent_idx=117, original_current_idx=118, n_tokens=5)
+			WhitespaceNode(original_parent_idx=102, original_current_idx=103, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=119)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=104)
 		BYTE_0 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=120)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=105)
 		= 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=121)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=106)
 		0 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=122)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=107)
 		<< 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=123)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=108)
 		0 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=124)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=109)
 		, 
-		WhitespaceNode(original_parent_idx=117, original_current_idx=125, n_tokens=5)
+		WhitespaceNode(original_parent_idx=102, original_current_idx=110, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=126)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=111)
 		BYTE_1 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=127)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=112)
 		= 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=128)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=113)
 		0 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=129)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=114)
 		<< 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=130)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=115)
 		1 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=131)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=116)
 		, 
-		WhitespaceNode(original_parent_idx=117, original_current_idx=132, n_tokens=5)
+		WhitespaceNode(original_parent_idx=102, original_current_idx=117, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=133)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=118)
 		BYTE_2 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=134)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=119)
 		= 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=135)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=120)
 		0 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=136)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=121)
 		<< 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=137)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=122)
 		2 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=138)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=123)
 		, 
-		WhitespaceNode(original_parent_idx=117, original_current_idx=139, n_tokens=5)
+		WhitespaceNode(original_parent_idx=102, original_current_idx=124, n_tokens=5)
 		 
 		    
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=140)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=125)
 		BYTE_3 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=141)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=126)
 		= 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=142)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=127)
 		0 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=143)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=128)
 		<< 
-		PlaceHolderNode(original_parent_idx=117, original_current_idx=144)
+		PlaceHolderNode(original_parent_idx=102, original_current_idx=129)
 		3 
-		WhitespaceNode(original_parent_idx=117, original_current_idx=145, n_tokens=1)
+		WhitespaceNode(original_parent_idx=102, original_current_idx=130, n_tokens=1)
 		 
 
 	} 
 
-WhitespaceNode(original_parent_idx=0, original_current_idx=146, n_tokens=1)
- 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=147)
-; 
-WhitespaceNode(original_parent_idx=0, original_current_idx=148, n_tokens=1)
- 
+ ;  

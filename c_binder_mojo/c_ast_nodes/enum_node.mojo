@@ -124,8 +124,27 @@ struct EnumNode(NodeAstLike):
         if self._node_state == NodeState.COLLECTING_TOKENS:
             return TokenFlow.CONSUME_TOKEN
 
+        # TODO(josiahls): We probably need a generic whitespace check function.
+        # This is intendded as a last chance tail accumulation. The enum might not end in
+        # a semicolon if its part of a typedef.
+        if token.token == CTokens.END_STATEMENT or self.is_whitespace(token):
+            self._node_state = NodeState.COLLECTING_TAIL_TOKENS
+            return TokenFlow.CONSUME_TOKEN
+
         # Otherwise keep collecting tokens
         return TokenFlow.PASS_TO_PARENT
+
+    fn is_whitespace(self, token: TokenBundle) -> Bool:
+        """Check if a token is whitespace.
+
+        Args:
+            token: The token to check.
+
+        Returns:
+            True if the token is whitespace, False otherwise.   
+        """
+        # TODO(josiahls): This hacky and should be a generic function. 
+        return token.token == ' ' or token.token == '\t' or token.token == '\n' or token.token == ''
 
     fn process(
         mut self,
@@ -144,6 +163,11 @@ struct EnumNode(NodeAstLike):
             if len(self._token_bundles[]) == 1:
                 self._enum_name = token.token
             self._token_bundles[].append(token)
+        elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
+            self._token_bundles_tail[].append(token)
+
+        if token.token == CTokens.END_STATEMENT:
+            self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""

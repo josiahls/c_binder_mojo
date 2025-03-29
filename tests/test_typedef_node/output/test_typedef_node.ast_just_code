@@ -40,32 +40,32 @@ struct
 Rectangle_ 
  
 { 
- 
-    
-Point2D 
-top_left 
-; 
- 
-    
-Point2D 
-bottom_right 
-; 
- 
-    
-int 
-width 
-; 
- 
-    
-int 
-height 
-; 
- 
- 
-} 
- 
-; 
- 
-typedef Rectangle 
-struct Rectangle_ 
-  
+	 
+	    
+	Point2D 
+	top_left 
+	; 
+	 
+	    
+	Point2D 
+	bottom_right 
+	; 
+	 
+	    
+	int 
+	width 
+	; 
+	 
+	    
+	int 
+	height 
+	; 
+	 
+	 
+	} 
+	 
+	; 
+	 
+	typedef Rectangle 	
+	struct Rectangle_ 
+	  

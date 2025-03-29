@@ -10,6 +10,7 @@ from .macro_define_node import MacroDefineNode
 from .macro_define_value_node import MacroDefineValueNode
 from .typedef_node import TypedefNode
 from .scope_node import ScopeNode
+from .enum_node import EnumNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -23,6 +24,7 @@ alias AstNodeVariant = Variant[
     MacroDefineValueNode,
     TypedefNode,
     ScopeNode,
+    EnumNode,
     WhitespaceNode,
     PlaceHolderNode,
 ]

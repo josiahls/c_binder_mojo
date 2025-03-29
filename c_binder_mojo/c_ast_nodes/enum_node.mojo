@@ -25,32 +25,33 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 
 
 @value
-struct ScopeNode(NodeAstLike):
-    """A generic scope node that can handle scopes for different node types.
+struct EnumNode(NodeAstLike):
+    """Represents an enum declaration in C/C++ code.
     
-    This node is responsible for managing content that needs its own scope level.
-    Each scope node is associated with a parent node type (e.g., typedef, struct, enum)
-    and provides proper indentation and scope management for its children.
-    
-    The scope type is determined by the parent node and affects how the scope
-    is handled (e.g., typedef scopes vs struct scopes may have different rules).
+    This node handles parsing and representation of enum declarations:
+        enum Color { RED = 0, GREEN = 1, BLUE = 2 };
+        enum Direction { NORTH, SOUTH, EAST, WEST };
+        
+    The node tracks:
+    - The enum name
+    - The scope of the enum (handled by ScopeNode child)
+    - Comments and formatting
     """
 
-    alias __name__ = "ScopeNode"
+    alias __name__ = "EnumNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: StringLiteral
-    var _parent_type: String  # Type of node this scope belongs to (e.g., "typedef", "struct")
-    var _row_nums: List[Int]  # Track rows for multi-line scopes
+    var _enum_name: String
+    var _row_nums: List[Int]  # Track rows for multi-line enums
 
-    fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle, parent_type: String):
-        """Initialize a ScopeNode.
+    fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
+        """Initialize an EnumNode.
 
         Args:
             indicies: The indices for this node in the AST.
-            token_bundle: The initial token.
-            parent_type: The type of node this scope belongs to.
+            token_bundle: The initial 'enum' token.
         """
         self._indicies = indicies
         self._token_bundles = TokenBundles()
@@ -58,7 +59,7 @@ struct ScopeNode(NodeAstLike):
         self._row_nums = List[Int]()
         self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
-        self._parent_type = parent_type
+        self._enum_name = ""
         self._token_bundles[].append(token_bundle)
 
     @staticmethod
@@ -67,7 +68,7 @@ struct ScopeNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        """Check if this token starts a scope.
+        """Check if this token starts an enum declaration.
 
         Args:
             token: The token to check.
@@ -75,16 +76,9 @@ struct ScopeNode(NodeAstLike):
             indices: The indices for this node.
 
         Returns:
-            True if this token starts a scope, False otherwise.
+            True if this token starts an enum declaration, False otherwise.
         """
-        # A scope can start with { or be implicit based on parent type
-        if token.token == CTokens.SCOPE_BEGIN:
-            return True
-        return False
-        # TODO(josiahls): Do we even need this?
-        # Check parent type to see if we need an implicit scope
-        # var parent_node = module_interface.nodes()[][indices.original_parent_idx]
-        # return parent_node.name() in ["TypedefNode", "StructNode", "EnumNode"]
+        return token.token == CTokens.ENUM
 
     @staticmethod
     fn create(
@@ -92,24 +86,17 @@ struct ScopeNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        """Create a new ScopeNode.
+        """Create a new EnumNode.
 
         Args:
-            token: The initial token.
+            token: The enum token.
             module_interface: Interface to the AST.
             indices: The indices for this node.
 
         Returns:
-            A new ScopeNode instance.
+            A new EnumNode instance.
         """
-        # Get parent type
-        # TODO(josiahls): Do we want to get the literal parent type instead of string? 
-        # I do like that we aren't importing extra nodes, but on the other hand, we 
-        # don't get compilation checking.
-        var parent_type = String("")
-        if indices.original_parent_idx >= 0:
-            parent_type = module_interface.nodes()[][indices.original_parent_idx].name()
-        return Self(indices, token, parent_type)
+        return Self(indices, token)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
@@ -123,30 +110,22 @@ struct ScopeNode(NodeAstLike):
         Returns:
             The token flow decision.
         """
-        # Check if we're done with this scope
-        if self._node_state == NodeState.COMPLETED:
-            return TokenFlow.PASS_TO_PARENT
-
-        if token.token == CTokens.SCOPE_END:
-            print("scope end token" + String(token.token))
-            print("node state: " + String(self._node_state))
-            print("token bundles: " + String(self._token_bundles[]))
-            print("token bundles tail: " + String(self._token_bundles_tail[]))
-
-        if self._node_state == NodeState.BUILDING_CHILDREN and token.token == CTokens.SCOPE_END:
-            self._node_state = NodeState.COLLECTING_TAIL_TOKENS
-            return TokenFlow.CONSUME_TOKEN # Consume the scope end token.
+        # Track line numbers for multi-line enums
+        if token.row_num not in self._row_nums:
+            self._row_nums.append(token.row_num)
 
         if self._node_state == NodeState.INITIALIZING:
+            self._node_state = NodeState.COLLECTING_TOKENS
+
+        if token.token == CTokens.SCOPE_BEGIN:
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
 
-        if self._node_state == NodeState.BUILDING_CHILDREN:
-            return TokenFlow.CREATE_CHILD
+        if self._node_state == NodeState.COLLECTING_TOKENS:
+            return TokenFlow.CONSUME_TOKEN
 
-        print("Unknown node state: " + String(self._node_state))
-
-        return TokenFlow.INVALID + " Unknown node state: "
+        # Otherwise keep collecting tokens
+        return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
@@ -161,13 +140,10 @@ struct ScopeNode(NodeAstLike):
             token_flow: The determined token flow.
             module_interface: Interface to the AST.
         """
-        if token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
-
-        if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
-            print("collecting tail tokens")
-            self._token_bundles_tail[].append(token)
-            self._node_state = NodeState.COMPLETED
+        if self._node_state == NodeState.COLLECTING_TOKENS:
+            if len(self._token_bundles[]) == 1:
+                self._enum_name = token.token
+            self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""
@@ -209,8 +185,8 @@ struct ScopeNode(NodeAstLike):
         if include_sig:
             var result = self.__name__ + "(" + String(self._indicies[])
             result += ", node_state=" + String(self._node_state)
-            if self._parent_type != "":
-                result += ", parent_type='" + self._parent_type + "'"
+            if self._enum_name != "":
+                result += ", name='" + self._enum_name + "'"
             result += ")"
             return result
         else:
@@ -256,6 +232,14 @@ struct ScopeNode(NodeAstLike):
             just_code: If True, only considers code elements.
 
         Returns:
-            The scope offset (1 for scope nodes, which create their own scope).
+            The scope offset (0 for enum nodes, scope handled by ScopeNode child).
         """
-        return 1  # Scope nodes always add one level of scope 
+        return 0 if just_code else 1  # Enum nodes don't create scope, their ScopeNode child does
+
+    fn get_enum_name(self) -> String:
+        """Get the name of this enum.
+
+        Returns:
+            The enum name, or empty string if anonymous.
+        """
+        return self._enum_name 

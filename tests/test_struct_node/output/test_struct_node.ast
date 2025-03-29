@@ -1,0 +1,234 @@
+RootNode(original_current_idx=0, original_child_idxs=(1, 2, 13, 24, 25, ...) len=12)
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+// Basic struct declarations 
+StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TAIL_TOKENS, name='Point')
+struct Point  
+	ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6, 7, 8, ...) len=9, node_state=COMPLETED, parent_type='StructNode')
+	{ 
+			WhitespaceNode(original_parent_idx=3, original_current_idx=4, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=3, original_current_idx=5)
+		int 
+		PlaceHolderNode(original_parent_idx=3, original_current_idx=6)
+		x 
+		PlaceHolderNode(original_parent_idx=3, original_current_idx=7)
+		; 
+		WhitespaceNode(original_parent_idx=3, original_current_idx=8, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=3, original_current_idx=9)
+		int 
+		PlaceHolderNode(original_parent_idx=3, original_current_idx=10)
+		y 
+		PlaceHolderNode(original_parent_idx=3, original_current_idx=11)
+		; 
+		WhitespaceNode(original_parent_idx=3, original_current_idx=12, n_tokens=2)
+		 
+		 
+
+	} 
+
+ ;  
+ 
+StructNode(original_parent_idx=0, original_current_idx=13, original_child_idxs=(14), node_state=COLLECTING_TAIL_TOKENS, name='Person')
+struct Person  
+	ScopeNode(original_parent_idx=13, original_current_idx=14, original_child_idxs=(15, 16, 17, 18, 19, ...) len=9, node_state=COMPLETED, parent_type='StructNode')
+	{ 
+			WhitespaceNode(original_parent_idx=14, original_current_idx=15, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=14, original_current_idx=16)
+		char* 
+		PlaceHolderNode(original_parent_idx=14, original_current_idx=17)
+		name 
+		PlaceHolderNode(original_parent_idx=14, original_current_idx=18)
+		; 
+		WhitespaceNode(original_parent_idx=14, original_current_idx=19, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=14, original_current_idx=20)
+		int 
+		PlaceHolderNode(original_parent_idx=14, original_current_idx=21)
+		age 
+		PlaceHolderNode(original_parent_idx=14, original_current_idx=22)
+		; 
+		WhitespaceNode(original_parent_idx=14, original_current_idx=23, n_tokens=2)
+		 
+		 
+
+	} 
+
+ ;  
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=24)
+// Empty struct 
+StructNode(original_parent_idx=0, original_current_idx=25, original_child_idxs=(26), node_state=COLLECTING_TAIL_TOKENS, name='Empty')
+struct Empty  
+	ScopeNode(original_parent_idx=25, original_current_idx=26, original_child_idxs=(27), node_state=COMPLETED, parent_type='StructNode')
+	{ 
+			WhitespaceNode(original_parent_idx=26, original_current_idx=27, n_tokens=2)
+		 
+		 
+
+	} 
+
+ ;  
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=28)
+// Multi-line struct with comments 
+StructNode(original_parent_idx=0, original_current_idx=29, original_child_idxs=(30), node_state=COLLECTING_TAIL_TOKENS, name='Complex')
+struct Complex  
+	ScopeNode(original_parent_idx=29, original_current_idx=30, original_child_idxs=(31, 32, 33, 34, 35, ...) len=17, node_state=COMPLETED, parent_type='StructNode')
+	{ 
+			WhitespaceNode(original_parent_idx=30, original_current_idx=31, n_tokens=5)
+		 
+		    
+		SingleLineCommentNode(original_parent_idx=30, original_current_idx=32)
+		// Basic types 
+		WhitespaceNode(original_parent_idx=30, original_current_idx=33, n_tokens=4)
+		    
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=34)
+		int 
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=35)
+		id 
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=36)
+		; 
+		WhitespaceNode(original_parent_idx=30, original_current_idx=37, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=38)
+		float 
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=39)
+		value 
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=40)
+		; 
+		WhitespaceNode(original_parent_idx=30, original_current_idx=41, n_tokens=10)
+		 
+		     
+		    
+		MultiLineCommentNode(original_parent_idx=30, original_current_idx=42)
+		/* Nested struct */ 
+		WhitespaceNode(original_parent_idx=30, original_current_idx=43, n_tokens=4)
+		    
+		StructNode(original_parent_idx=30, original_current_idx=44, original_child_idxs=(45), node_state=COLLECTING_TAIL_TOKENS, name='Inner')
+		struct Inner  
+					ScopeNode(original_parent_idx=44, original_current_idx=45, original_child_idxs=(46, 47, 48, 49, 50), node_state=COMPLETED, parent_type='StructNode')
+			{ 
+							WhitespaceNode(original_parent_idx=45, original_current_idx=46, n_tokens=9)
+				 
+				        
+				PlaceHolderNode(original_parent_idx=45, original_current_idx=47)
+				double 
+				PlaceHolderNode(original_parent_idx=45, original_current_idx=48)
+				data 
+				PlaceHolderNode(original_parent_idx=45, original_current_idx=49)
+				; 
+				WhitespaceNode(original_parent_idx=45, original_current_idx=50, n_tokens=6)
+				 
+				     
+
+			} 
+
+		 
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=51)
+		nested 
+		PlaceHolderNode(original_parent_idx=30, original_current_idx=52)
+		; 
+		WhitespaceNode(original_parent_idx=30, original_current_idx=53, n_tokens=2)
+		 
+		 
+
+	} 
+
+ ;  
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=54)
+// Anonymous struct in typedef 
+TypedefNode(original_parent_idx=0, original_current_idx=55, original_child_idxs=(56), node_state=COMPLETED, type='Flags')
+typedef 
+StructNode(original_parent_idx=55, original_current_idx=56, original_child_idxs=(57), node_state=COLLECTING_TAIL_TOKENS)
+struct  
+	ScopeNode(original_parent_idx=56, original_current_idx=57, original_child_idxs=(58, 59, 60, 61, 62, 63), node_state=COMPLETED, parent_type='StructNode')
+	{ 
+			WhitespaceNode(original_parent_idx=57, original_current_idx=58, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=57, original_current_idx=59)
+		unsigned 
+		PlaceHolderNode(original_parent_idx=57, original_current_idx=60)
+		char 
+		PlaceHolderNode(original_parent_idx=57, original_current_idx=61)
+		flags 
+		PlaceHolderNode(original_parent_idx=57, original_current_idx=62)
+		; 
+		WhitespaceNode(original_parent_idx=57, original_current_idx=63, n_tokens=2)
+		 
+		 
+
+	} 
+
+ 
+
+Flags 
+WhitespaceNode(original_parent_idx=0, original_current_idx=64, n_tokens=2)
+ 
+ 
+SingleLineCommentNode(original_parent_idx=0, original_current_idx=65)
+// Struct with bit fields 
+StructNode(original_parent_idx=0, original_current_idx=66, original_child_idxs=(67), node_state=COLLECTING_TAIL_TOKENS, name='BitFields')
+struct BitFields  
+	ScopeNode(original_parent_idx=66, original_current_idx=67, original_child_idxs=(68, 69, 70, 71, 72, ...) len=22, node_state=COMPLETED, parent_type='StructNode')
+	{ 
+			WhitespaceNode(original_parent_idx=67, original_current_idx=68, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=69)
+		unsigned 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=70)
+		int 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=71)
+		a 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=72)
+		: 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=73)
+		1 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=74)
+		; 
+		WhitespaceNode(original_parent_idx=67, original_current_idx=75, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=76)
+		unsigned 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=77)
+		int 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=78)
+		b 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=79)
+		: 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=80)
+		2 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=81)
+		; 
+		WhitespaceNode(original_parent_idx=67, original_current_idx=82, n_tokens=5)
+		 
+		    
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=83)
+		unsigned 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=84)
+		int 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=85)
+		c 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=86)
+		: 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=87)
+		3 
+		PlaceHolderNode(original_parent_idx=67, original_current_idx=88)
+		; 
+		WhitespaceNode(original_parent_idx=67, original_current_idx=89, n_tokens=2)
+		 
+		 
+
+	} 
+
+ ;   

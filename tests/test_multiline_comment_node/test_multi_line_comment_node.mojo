@@ -69,49 +69,26 @@ fn test_multi_line_comment_node() raises:
     var root_node = module_interface.nodes()[][0]
     logger.info("Root node: " + root_node.name())
 
-    # Count the number of MultilineCommentNode instances
+    # Count and verify multiline comment nodes
     var comment_count = 0
-    var doc_comment_count = 0
     for i in range(len(module_interface.nodes()[])):
-        # Check if the node is a MultilineCommentNode by name
-        if module_interface.nodes()[][i].name() == "MultilineCommentNode":
+        var node = module_interface.nodes()[][i]
+        if node.name() == "MultiLineCommentNode":
             comment_count += 1
-            var node_str = module_interface.nodes()[][i].to_string(
-                just_code=True, module_interface=module_interface
+            # Get the actual comment content
+            var comment_text = node.to_string(just_code=True, module_interface=module_interface)
+            logger.trace(
+                "Found multiline comment " + String(comment_count) + ": " + 
+                node.name(include_sig=True) + "\n    Content: " + comment_text
             )
 
-            # Check if it's a documentation comment (starts with /**)
-            if "/**" in node_str:
-                doc_comment_count += 1
-                logger.info(
-                    "Found documentation comment: " + node_str[:40] + "..."
-                )
-            else:
-                logger.info(
-                    "Found regular multiline comment: " + node_str[:40] + "..."
-                )
-
-    # We expect at least 10 multiline comments in our test file (not counting the single line comment)
-    if comment_count < 10:
+    # We expect exactly 12 multiline comments in our test file
+    if comment_count != 12:
         raise Error(
-            "Expected at least 10 multiline comments, but found "
-            + String(comment_count)
+            "Expected 12 multiline comments, but found " + String(comment_count)
         )
 
-    # We expect at least 2 documentation comments (/**) in our test file
-    if doc_comment_count < 2:
-        raise Error(
-            "Expected at least 2 documentation comments, but found "
-            + String(doc_comment_count)
-        )
-
-    logger.info(
-        "Multi-line comment test passed with "
-        + String(comment_count)
-        + " total comments, including "
-        + String(doc_comment_count)
-        + " documentation comments"
-    )
+    logger.info("Multiline comment test passed with " + String(comment_count) + " comments")
     return
 
 

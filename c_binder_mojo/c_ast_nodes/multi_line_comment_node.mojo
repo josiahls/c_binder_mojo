@@ -45,14 +45,28 @@ struct MultiLineCommentNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
+        """Check if this token starts a multiline comment.
+
+        Args:
+            token: The token to check.
+            module_interface: Interface to the AST.
+            indices: The indices for this node.
+
+        Returns:
+            True if this token starts a multiline comment, False otherwise.
+        """
+        # Check for exact matches first
         if token.token == CTokens.COMMENT_MULTI_LINE_BEGIN:
             return True
-        elif token.token == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
+        if token.token == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
             return True
-        elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN):
+        
+        # Check if token starts with comment markers
+        if token.token.startswith(CTokens.COMMENT_MULTI_LINE_BEGIN):
             return True
-        elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_BEGIN):
+        if token.token.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN):
             return True
+            
         return False
 
     @staticmethod
@@ -66,22 +80,31 @@ struct MultiLineCommentNode(NodeAstLike):
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> StringLiteral:
-        if self._node_state == NodeState.COMPLETED:
-            token_flow = TokenFlow.PASS_TO_PARENT
-            return token_flow
+        """Determine how to handle the next token.
 
-        # Check if the token is the end of the multi-line comment.
-        # Delay the completion since we need to append this token to this node.
+        Args:
+            token: The token to process.
+            module_interface: Interface to the AST.
+
+        Returns:
+            The token flow decision.
+        """
+        if self._node_state == NodeState.COMPLETED:
+            return TokenFlow.PASS_TO_PARENT
+
+        # Check for exact matches first
         if token.token == CTokens.COMMENT_MULTI_LINE_END:
             self._node_state = NodeState.COMPLETED
             return TokenFlow.CONSUME_TOKEN
-        elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_END):
+        if token.token == CTokens.COMMENT_MULTI_LINE_INLINE_END:
             self._node_state = NodeState.COMPLETED
             return TokenFlow.CONSUME_TOKEN
-        elif token.token == CTokens.COMMENT_MULTI_LINE_INLINE_END:
+
+        # Check if token contains or ends with comment end markers
+        if "*/" in token.token:
             self._node_state = NodeState.COMPLETED
             return TokenFlow.CONSUME_TOKEN
-        elif token.token.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_END):
+        if token.token.endswith("*/"):
             self._node_state = NodeState.COMPLETED
             return TokenFlow.CONSUME_TOKEN
 

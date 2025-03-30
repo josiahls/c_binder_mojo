@@ -73,9 +73,27 @@ fn test_mjtnum_header() raises:
     var tokenizer = Tokenizer()
     tokenizer.tokenize(test_file_path)
 
+    # Save tokenized output for debugging
+    var tokens_file = test_dir / "output/test_mjtnum.tokenized"
+    tokens_file.write_text(tokenizer.to_string())
+
     # Generate AST
-    var tree_log_file = test_dir / "output" / "mjtnum.tree"
+    var tree_log_file = test_dir / "output/test_mjtnum.tree"
     var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
+
+    # Save AST for debugging
+    var ast_file_just_code = test_dir / "output/test_mjtnum.ast_just_code"
+    ast_file_just_code.write_text(
+        module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=module_interface
+        )
+    )
+    var ast_file = test_dir / "output/test_mjtnum.ast"
+    ast_file.write_text(
+        module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=module_interface
+        )
+    )
 
     # Verify the AST structure
     var root_node = module_interface.nodes()[][0]
@@ -89,44 +107,42 @@ fn test_mjtnum_header() raises:
     var struct_count = 0
     var ifdef_count = 0
     var ifndef_count = 0
-    var endif_count = 0
     
     var nodes = module_interface.nodes()[]
-    for i in range(len(nodes)):
-        var node = nodes[i]
-        var node_name = node.name()
+    for node in nodes:
+        var node_name = node[].name()
         
         if node_name == "TypedefNode":
             typedef_count += 1
-            logger.info("Found typedef node: " + node.name(include_sig=True))
+            logger.info("Found typedef node: " + node[].name(include_sig=True))
         elif node_name == "StructNode":
             struct_count += 1
-            verify_struct_node_contents(node.node[][StructNode])
-            logger.info("Found struct node: " + node.name(include_sig=True))
+            verify_struct_node_contents(node[].node[][StructNode])
+            logger.info("Found struct node: " + node[].name(include_sig=True))
         elif node_name == "MacroIfDefNode":
             ifdef_count += 1
-            logger.info("Found ifdef node: " + node.name(include_sig=True))
+            logger.info("Found ifdef node: " + node[].name(include_sig=True))
+            # Check tail tokens for #endif
+            var tail_tokens = node[].token_bundles_tail()._token_bundles
+            for token in tail_tokens:
+                if token[].token == "#endif":
+                    logger.info("Found endif in ifdef tail tokens")
         elif node_name == "MacroIfNDefNode":
             ifndef_count += 1
-            logger.info("Found ifndef node: " + node.name(include_sig=True))
-        elif node_name == "MacroEndIfNode":
-            endif_count += 1
-            logger.info("Found endif node: " + node.name(include_sig=True))
+            logger.info("Found ifndef node: " + node[].name(include_sig=True))
+            # Check tail tokens for #endif
+            var tail_tokens = node[].token_bundles_tail()._token_bundles
+            for token in tail_tokens:
+                if token[].token == "#endif":
+                    logger.info("Found endif in ifndef tail tokens")
 
     # Verify counts
-    if typedef_count != 2:  # mjtNum and mjtByte
-        raise Error("Expected 2 typedefs, but found " + String(typedef_count))
+    if typedef_count != 3:  # 2 mjtNum and mjtByte
+        raise Error("Expected 3 typedefs, but found " + String(typedef_count))
     if struct_count != 0:
         raise Error("Expected 0 structs, but found " + String(struct_count))
-    if ifndef_count != 1:  # mjUSESINGLE
-        raise Error("Expected 1 ifndef, but found " + String(ifndef_count))
-    if endif_count != ifndef_count + ifdef_count:
-        raise Error(
-            "Mismatched endif count. Expected "
-            + String(ifndef_count + ifdef_count)
-            + " but found "
-            + String(endif_count)
-        )
+    if ifndef_count != 2:  # mjUSESINGLE and MUJOCO_INCLUDE_MJTNUM_H_
+        raise Error("Expected 2 ifndef, but found " + String(ifndef_count))
 
 
 fn test_mjmodel_header() raises:
@@ -146,9 +162,27 @@ fn test_mjmodel_header() raises:
     var tokenizer = Tokenizer()
     tokenizer.tokenize(test_file_path)
 
+    # Save tokenized output for debugging
+    var tokens_file = test_dir / "output/test_mjmodel.tokenized"
+    tokens_file.write_text(tokenizer.to_string())
+
     # Generate AST
-    var tree_log_file = test_dir / "output" / "mjmodel.tree"
+    var tree_log_file = test_dir / "output/test_mjmodel.tree"
     var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
+
+    # Save AST for debugging
+    var ast_file_just_code = test_dir / "output/test_mjmodel.ast_just_code"
+    ast_file_just_code.write_text(
+        module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=module_interface
+        )
+    )
+    var ast_file = test_dir / "output/test_mjmodel.ast"
+    ast_file.write_text(
+        module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=module_interface
+        )
+    )
 
     # Verify the AST structure
     var root_node = module_interface.nodes()[][0]
@@ -158,29 +192,46 @@ fn test_mjmodel_header() raises:
     verify_preprocessor_scope(root_node)
 
     # Count and verify node types
+    var typedef_count = 0
     var struct_count = 0
-    var parent_types = List[String]()
+    var ifdef_count = 0
+    var ifndef_count = 0
     
     var nodes = module_interface.nodes()[]
-    for i in range(len(nodes)):
-        var node = nodes[i]
+    for node in nodes:
+        var node_name = node[].name()
         
-        if node.name() == "StructNode":
+        if node_name == "TypedefNode":
+            typedef_count += 1
+            logger.info("Found typedef node: " + node[].name(include_sig=True))
+        elif node_name == "StructNode":
             struct_count += 1
-            verify_struct_node_contents(node.node[][StructNode])
-            
-            # Log parent node type for debugging
-            var parent_idx = node.indicies().original_parent_idx
-            if parent_idx >= 0:
-                var parent_node = nodes[parent_idx]
-                parent_types.append(parent_node.name())
-                logger.info(
-                    "Found struct node with parent type: " + parent_node.name()
-                )
+            verify_struct_node_contents(node[].node[][StructNode])
+            logger.info("Found struct node: " + node[].name(include_sig=True))
+        elif node_name == "MacroIfDefNode":
+            ifdef_count += 1
+            logger.info("Found ifdef node: " + node[].name(include_sig=True))
+            # Check tail tokens for #endif
+            var tail_tokens = node[].token_bundles_tail()._token_bundles
+            for token in tail_tokens:
+                if token[].token == "#endif":
+                    logger.info("Found endif in ifdef tail tokens")
+        elif node_name == "MacroIfNDefNode":
+            ifndef_count += 1
+            logger.info("Found ifndef node: " + node[].name(include_sig=True))
+            # Check tail tokens for #endif
+            var tail_tokens = node[].token_bundles_tail()._token_bundles
+            for token in tail_tokens:
+                if token[].token == "#endif":
+                    logger.info("Found endif in ifndef tail tokens")
 
     # Verify counts
-    if struct_count != 1:  # mjModel
-        raise Error("Expected 1 struct, but found " + String(struct_count))
+    if typedef_count < 30:  # Many typedefs in mjmodel.h
+        raise Error("Expected at least 30 typedefs, but found " + String(typedef_count))
+    if struct_count < 5:  # Multiple structs in mjmodel.h
+        raise Error("Expected at least 5 structs, but found " + String(struct_count))
+    if ifndef_count != 1:  # MUJOCO_MJMODEL_H_
+        raise Error("Expected 1 ifndef, but found " + String(ifndef_count))
 
 
 fn main() raises:

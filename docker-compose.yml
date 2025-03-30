@@ -1,0 +1,68 @@
+# version: "3.8"
+
+x-c_binder_mojo_base: &c_binder_mojo_base
+  working_dir: /home/c_binder_mojo_user/c_binder_mojo
+  logging:
+    driver: json-file
+    options:
+      max-size: 50m
+  stdin_open: true
+  tty: true
+  shm_size: 16000000000
+  volumes:
+    - .:/home/c_binder_mojo_user/c_binder_mojo/
+    - ~/.ssh:/home/c_binder_mojo_user/.ssh:rw
+    - c_binder_mojo_vscode_data_cache:/home/c_binder_mojo_user/.vscode-server/data/User/globalStorage:rw
+  environment:
+    C_BINDING_MOJO_TEST_MUJOCO: /home/c_binder_mojo_user/c_binder_mojo/mujoco_mojo/mujoco
+
+volumes:
+  c_binder_mojo_vscode_data_cache:
+      external: false
+
+
+services:
+  c_binder_mojo_cpu_build:
+    build:
+      dockerfile: c_binder_mojo.Dockerfile
+      context: .
+      args:
+      - BASE_IMAGE=ubuntu:22.04
+      target: build_cpu
+      cache_from:
+      - josiahls/c_binder_mojo-cpu:${VERSION:-latest}
+    image: josiahls/c_binder_mojo-cpu:${VERSION:-latest}
+    profiles: ["build_cpu"]
+
+  c_binder_mojo_gpu_build:
+    build:
+      dockerfile: c_binder_mojo.Dockerfile
+      context: .
+      args:
+      - BASE_IMAGE=nvidia/cuda:12.0.0-runtime-ubuntu22.04
+      target: build_gpu
+      cache_from:
+      - josiahls/c_binder_mojo-gpu:${VERSION:-latest}
+    image: josiahls/c_binder_mojo-gpu:${VERSION:-latest}
+    profiles: ["build_gpu"]
+
+  c_binder_mojo_gpu: &c_binder_mojo_gpu
+    <<: *c_binder_mojo_base
+    restart: unless-stopped
+    image: josiahls/c_binder_mojo-gpu:${VERSION:-latest}
+    profiles: ["gpu"]
+    # depends_on:
+    #   - ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+  
+  c_binder_mojo_cpu: &c_binder_mojo_cpu
+    <<: *c_binder_mojo_base
+    profiles: ["cpu"]
+    restart: unless-stopped
+    image: josiahls/c_binder_mojo-cpu:${VERSION:-latest}

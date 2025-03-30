@@ -1,0 +1,2 @@
+# Convert to .env
+COMPOSE_PROFILES=cpu # or build_cpu, gpu, build_gpu

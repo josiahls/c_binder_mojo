@@ -6,6 +6,38 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+# Shell commands
+shell = "cd $HOME/fastrl_mojo && magic shell"
+s = "magic run shell"
+p = "magic run package"
+bt = "magic run build_test"
+
+
+# c_binder_mojo Development tools
+format = "mojo format $HOME/fastrl_mojo/c_binder_mojo"
+f = "magic run format"
+
+## Common testing tasks
+test_all = "mojo test -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests"
+
+test_integration = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/integration/*/test_*"
+test_include = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_include_node/test_include_node.mojo"
+test_struct = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.mojo"
+test_enum = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_enum_node/test_enum_node.mojo"
+test_typedef = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_typedef_node/test_typedef_node.mojo"
+test_ifndef = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_ifndef_node/test_ifndef_node.mojo"
+test_ifdef = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_ifdef_node/test_ifdef_node.mojo"
+test_define = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_define_node/test_define_node.mojo"
+test_whitespace = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_whitespace_node/test_whitespace_node.mojo"
+test_single_line_comment = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_single_line_comment_node/test_single_line_comment_node.mojo"
+test_multi_line_comment = "mojo run -I $HOME/fastrl_mojo/c_binder_mojo -I $HOME/fastrl_mojo/firehose $HOME/fastrl_mojo/c_binder_mojo/tests/unit/test_multiline_comment_node/test_multi_line_comment_node.mojo"
+
+## Package management
+package = "mojo package $HOME/fastrl_mojo/c_binder_mojo"
+
+## Combined workflows
+build_test = "magic run format && magic run test_all"
 
 [dependencies]
 max = ">=25.2.0.dev2025021805"
+

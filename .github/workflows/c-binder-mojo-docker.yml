@@ -1,0 +1,45 @@
+name: Build c_binder_mojo images
+on:
+  schedule:
+    - cron: '1 6 * * 5'
+  workflow_dispatch: #allows you to trigger manually
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        build_type: [gpu, cpu]
+    steps:
+    - name: Copy This Repository Contents
+      uses: actions/checkout@v2
+      # with:
+      #   submodules: recursive
+      
+    - name: build, tag, and push image
+      run: |
+        export DOCKER_BUILDKIT=1
+        export COMPOSE_PROFILES=build_${BUILD_TYPE}
+        echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
+
+        if docker compose pull; then
+            echo "Docker Compose pull succeeded."
+        else
+            echo "Docker Compose pull failed."
+        fi
+        
+        export VERSION=latest
+        docker compose build
+        docker compose push
+        export VERSION=$(date +%F)
+        docker compose build
+        docker compose push
+      env:
+        USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        BUILD_TYPE: ${{ matrix.build_type }}

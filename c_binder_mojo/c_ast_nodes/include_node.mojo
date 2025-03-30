@@ -1,8 +1,11 @@
+# Native Mojo Modules
 from memory import ArcPointer
 
+# Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
 
+# First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
     NodeIndices,
@@ -19,40 +22,32 @@ from c_binder_mojo.c_ast_nodes.nodes import (
     default_to_string,
     default_to_string_just_code,
 )
-from c_binder_mojo.c_ast_nodes.scope_node import ScopeNode
 
 
 @value
-struct StructFieldNode(NodeAstLike):
-    """Represents a field in a struct definition.
+struct IncludeNode(NodeAstLike):
+    """Represents a C include directive.
     
     Examples:
-        int x;                    # Basic field
-        char* name;              # Pointer field
-        struct Inner {           # Inner struct
-            double data;
-        } nested;
-        unsigned int a : 1;      # Bit field
+        #include <stdio.h>      # System include
+        #include "myheader.h"   # Local include
     """
 
-    alias __name__ = "StructFieldNode"
+    alias __name__ = "IncludeNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: StringLiteral
-    var _field_name: String
-    var _field_type: String
-    var _is_inner_struct: Bool
-    var _is_bit_field: Bool
-    var _bit_width: String
+    var _include_path: String
+    var _is_system_include: Bool
     var _row_nums: List[Int]
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
-        """Initialize a StructFieldNode.
+        """Initialize an IncludeNode.
 
         Args:
             indicies: The indices for this node in the AST.
-            token_bundle: The initial token (type name).
+            token_bundle: The initial token (#include).
         """
         self._indicies = indicies
         self._token_bundles = TokenBundles()
@@ -60,11 +55,8 @@ struct StructFieldNode(NodeAstLike):
         self._row_nums = List[Int]()
         self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
-        self._field_type = token_bundle.token
-        self._field_name = ""
-        self._is_inner_struct = token_bundle.token == "struct"
-        self._is_bit_field = False
-        self._bit_width = ""
+        self._include_path = ""
+        self._is_system_include = False
         self._token_bundles[].append(token_bundle)
 
     @staticmethod
@@ -73,7 +65,7 @@ struct StructFieldNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        """Check if this token starts a struct field.
+        """Check if this token starts an include directive.
 
         Args:
             token: The token to check.
@@ -81,22 +73,9 @@ struct StructFieldNode(NodeAstLike):
             indices: The indices for this node.
 
         Returns:
-            True if this token starts a struct field, False otherwise.
+            True if this token starts an include, False otherwise.
         """
-        # Check if we're in a struct scope
-        if indices.original_parent_idx < 0:
-            return False
-            
-        var parent = module_interface.nodes()[][indices.original_parent_idx]
-        if parent.name() != "ScopeNode":
-            return False
-            
-        # Check if the parent's parent is a StructNode
-        if parent.node[][ScopeNode]._parent_type != "StructNode":
-            return False
-            
-        # Accept if it's a type name or struct keyword
-        return True
+        return token.token == "#include"
 
     @staticmethod
     fn create(
@@ -104,15 +83,15 @@ struct StructFieldNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        """Create a new StructFieldNode.
+        """Create a new IncludeNode.
 
         Args:
-            token: The type name token.
+            token: The initial token (#include).
             module_interface: Interface to the AST.
             indices: The indices for this node.
 
         Returns:
-            A new StructFieldNode instance.
+            A new IncludeNode instance.
         """
         return Self(indices, token)
 
@@ -131,46 +110,48 @@ struct StructFieldNode(NodeAstLike):
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
 
-        # Track line numbers for multi-line fields
+        # Track line numbers for multi-line includes (shouldn't happen but just in case)
         if token.row_num not in self._row_nums:
             self._row_nums.append(token.row_num)
-
-        if token.token == CTokens.SCOPE_END:
-            self._node_state = NodeState.COMPLETED
-            return TokenFlow.PASS_TO_PARENT
 
         if self._node_state == NodeState.INITIALIZING:
             self._node_state = NodeState.COLLECTING_TOKENS
 
-        # Handle bit field width
-        if token.token == ":":
-            self._is_bit_field = True
+        # Skip whitespace
+        if token.token == " " or token.token == "\t":
             return TokenFlow.CONSUME_TOKEN
 
-        # Handle field termination
-        if token.token == ";":
+        # Handle system include start
+        if token.token == "<":
+            self._is_system_include = True
+            return TokenFlow.CONSUME_TOKEN
+
+        # Handle local include start
+        if token.token == '"':
+            self._is_system_include = False
+            return TokenFlow.CONSUME_TOKEN
+
+        # Handle include end
+        if token.token == ">" or token.token == '"':
             self._node_state = NodeState.COMPLETED
             return TokenFlow.CONSUME_TOKEN
 
-        # For inner structs, we need to create a new scope
-        if self._is_inner_struct and token.token == "{":
-            return TokenFlow.CREATE_CHILD
+        # Handle newline - ends the include
+        if token.token == "\n" or token.token == "#include":
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.PASS_TO_PARENT
 
-        # Collect tokens for bit field width
-        if self._is_bit_field and self._bit_width == "":
-            if token.token != " " and token.token != "\t":
-                self._bit_width = token.token
+        # Handle comments - pass to parent
+        if token.token.startswith("//") or token.token.startswith("/*"):
+            return TokenFlow.PASS_TO_PARENT
+
+        # Collect path
+        if self._node_state == NodeState.COLLECTING_TOKENS:
+            if token.token != "#include":  # Skip the #include token
+                self._include_path += token.token
             return TokenFlow.CONSUME_TOKEN
 
-        # Skip whitespace and comments
-        if token.token == " " or token.token == "\t" or token.token == "\n" or token.token == "":
-            return TokenFlow.CONSUME_TOKEN
-
-        # Collect the field name (last identifier before semicolon or bit field)
-        if not self._is_bit_field and token.token != "*" and token.token != "&":
-            self._field_name = token.token
-
-        return TokenFlow.CONSUME_TOKEN
+        return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
@@ -185,7 +166,8 @@ struct StructFieldNode(NodeAstLike):
             token_flow: The determined token flow.
             module_interface: Interface to the AST.
         """
-        self._token_bundles[].append(token)
+        if token_flow == TokenFlow.CONSUME_TOKEN:
+            self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""
@@ -227,10 +209,8 @@ struct StructFieldNode(NodeAstLike):
         if include_sig:
             var result = self.__name__ + "(" + String(self._indicies[])
             result += ", node_state=" + String(self._node_state)
-            result += ", field_type='" + self._field_type + "'"
-            result += ", field_name='" + self._field_name + "'"
-            if self._is_bit_field:
-                result += ", bit_width='" + self._bit_width + "'"
+            result += ", path='" + self._include_path + "'"
+            result += ", system=" + String(self._is_system_include)
             result += ")"
             return result
         else:
@@ -276,22 +256,22 @@ struct StructFieldNode(NodeAstLike):
             just_code: If True, only considers code elements.
 
         Returns:
-            The scope offset (0 for struct fields, which don't create scope).
+            The scope offset (0 for includes, which don't create scope).
         """
-        return 0  # Struct fields don't create their own scope level
+        return 0  # Includes don't create scope
 
-    fn get_field_name(self) -> String:
-        """Get the name of this struct field.
+    fn is_system_include(self) -> Bool:
+        """Check if this is a system include (<...>).
 
         Returns:
-            The field name.
+            True if this is a system include, False if it's a local include.
         """
-        return self._field_name
+        return self._is_system_include
 
-    fn get_field_type(self) -> String:
-        """Get the type of this struct field.
+    fn get_include_path(self) -> String:
+        """Get the path being included.
 
         Returns:
-            The field type.
+            The include path without <> or "" delimiters.
         """
-        return self._field_type 
+        return self._include_path 

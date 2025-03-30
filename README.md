@@ -7,7 +7,16 @@ they very likely will break between versions. This project I am using for mujoco
 
 # Installation
 
+```bash
+cd $HOME
+git clone https://github.com/josiahls/c_binder_mojo.git
 
+cd c_binder_mojo
+
+git clone https://github.com/josiahls/firehose.git
+
+magic shell
+```
 
 
 ## With Tests

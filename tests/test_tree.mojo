@@ -26,20 +26,20 @@
 # #     # print(String(root_node))
 # #     display_node = RootDisplayAstNode(root_node)
 # #     print('DisplayTree:')
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(display_node))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(display_node))
 # #     # root_node = test_fn(num_mojo_path)
 # #     mojo_tree = mojo_ast_nodes.tree.make_tree(root_node, List[String]())
 # #     # mojo_tree.str_just_code = True
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.mojo').write_text(String(mojo_tree))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum.mojo').write_text(String(mojo_tree))
 # #     mojo_tree = mojo_ast_nodes.tree.make_tree(root_node, List[String]('mjUSESINGLE'))
 # #     # mojo_tree.str_just_code = True
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum_mjUSESINGLE.mojo').write_text(String(mojo_tree))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum_mjUSESINGLE.mojo').write_text(String(mojo_tree))
 
 
 # # fn test_make_tree_mjtmodel_just_mjVisual() raises:
 # #     mujoco_path = os.getenv('C_BINDING_MOJO_TEST_MUJOCO')
 # #     # num_mojo_path = Path(mujoco_path) / 'include/mujoco/mjmodel.h'
-# #     num_mojo_path = Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel_just_mjVisual.h')
+# #     num_mojo_path = Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel_just_mjVisual.h')
 # #     if not num_mojo_path.exists():
 # #         raise Error('This path doesnt exist: ' + String(num_mojo_path))
 # #     print('Processing: ' + String(num_mojo_path))
@@ -47,11 +47,11 @@
 # #     # root_node = test_fn(num_mojo_path)
 # #     display_node = RootDisplayAstNode(root_node)
 # #     # print('DisplayTree:')
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel_just_mjVisual.ast').write_text(String(display_node))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel_just_mjVisual.ast').write_text(String(display_node))
 # #     mojo_tree = mojo_ast_nodes.tree.make_tree(root_node, List[String]())
 # #     mojo_tree.set_str_just_code(True)
 # #     # print('Root mojo node: ' + String(mojo_tree))
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel_just_mjVisual.mojo').write_text(String(mojo_tree))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel_just_mjVisual.mojo').write_text(String(mojo_tree))
 
 
 # # fn test_make_tree_mjtmodel() raises:
@@ -64,11 +64,11 @@
 # #     # root_node = test_fn(num_mojo_path)
 # #     display_node = RootDisplayAstNode(root_node)
 # #     # print('DisplayTree:')
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.ast').write_text(String(display_node))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel.ast').write_text(String(display_node))
 # #     mojo_tree = mojo_ast_nodes.tree.make_tree(root_node, List[String]())
 # #     mojo_tree.set_str_just_code(True)
 # #     # print('Root mojo node: ' + String(mojo_tree))
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.mojo').write_text(String(mojo_tree))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel.mojo').write_text(String(mojo_tree))
 
 
 # # fn test_make_tree_mjtnum_c_ast() raises:
@@ -82,13 +82,13 @@
 # #     # print(String(root_node))
 # #     # display_node = RootDisplayAstNode(root_node)
 # #     print('DisplayTree:')
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(root_node))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum.ast').write_text(String(root_node))
 
 
 # # fn test_make_tree_mjtmodel_just_mjVisual_c_ast() raises:
 # #     mujoco_path = os.getenv('C_BINDING_MOJO_TEST_MUJOCO')
 # #     # num_mojo_path = Path(mujoco_path) / 'include/mujoco/mjmodel.h'
-# #     num_mojo_path = Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel_just_mjVisual.h')
+# #     num_mojo_path = Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel_just_mjVisual.h')
 # #     if not num_mojo_path.exists():
 # #         raise Error('This path doesnt exist: ' + String(num_mojo_path))
 # #     print('Processing: ' + String(num_mojo_path))
@@ -96,7 +96,7 @@
 # #     # root_node = test_fn(num_mojo_path)
 # #     # display_node = RootDisplayAstNode(root_node)
 # #     # print('DisplayTree:')
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel_just_mjVisual.ast').write_text(String(root_node))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel_just_mjVisual.ast').write_text(String(root_node))
 
 
 # # fn test_make_tree_mjtmodel_c_ast() raises:
@@ -109,7 +109,7 @@
 # #     # root_node = test_fn(num_mojo_path)
 # #     # display_node = RootDisplayAstNode(root_node)
 # #     # print('DisplayTree:')
-# #     Path('/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.ast').write_text(String(root_node))
+# #     Path('/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel.ast').write_text(String(root_node))
 
 
 # fn test_make_tree_mjtnum() raises:
@@ -123,17 +123,17 @@
 #     tokenizer = Tokenizer()
 #     tokenizer.tokenize(num_mojo_path)
 #     Path(
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.tokenized"
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum.tokenized"
 #     ).write_text(tokenizer.to_string())
 #     Path(
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.tokenized_flat"
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum.tokenized_flat"
 #     ).write_text(tokenizer.to_string(True))
 #     nodes = make_tree(
 #         tokenizer.tokens,
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.tree",
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum.tree",
 #     )
 #     Path(
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjtnum.ast"
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjtnum.ast"
 #     ).write_text(String(nodes[][0]))
 
 
@@ -147,17 +147,17 @@
 #     tokenizer = Tokenizer()
 #     tokenizer.tokenize(model_mojo_path)
 #     Path(
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tokenized"
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel.tokenized"
 #     ).write_text(tokenizer.to_string())
 #     Path(
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tokenized_flat"
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel.tokenized_flat"
 #     ).write_text(tokenizer.to_string(True))
 #     nodes = make_tree(
 #         tokenizer.tokens,
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.tree",
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel.tree",
 #     )
 #     Path(
-#         "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/data/mjmodel.ast"
+#         "/home/c_binder_mojo_user/c_binder_mojo/tests/data/mjmodel.ast"
 #     ).write_text(String(nodes[][0]))
 
 

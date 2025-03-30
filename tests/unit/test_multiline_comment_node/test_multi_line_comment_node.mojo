@@ -19,7 +19,7 @@ fn test_multi_line_comment_node() raises:
 
     # Path to the test header file
     var test_dir = Path(
-        "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/test_multiline_comment_node"
+        "/home/c_binder_mojo_user/c_binder_mojo/tests/test_multiline_comment_node"
     )
     var test_file_path = test_dir / "test_multi_line_comment_node.h"
     if not test_file_path.exists():

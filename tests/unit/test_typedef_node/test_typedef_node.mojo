@@ -21,7 +21,7 @@ fn test_typedef_node() raises:
 
     # Path to the test header file
     var test_dir = Path(
-        "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/unit/test_typedef_node"
+        "/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_typedef_node"
     )
     var test_file_path = test_dir / "test_typedef_node.h"
     if not test_file_path.exists():

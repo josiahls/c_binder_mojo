@@ -63,7 +63,7 @@ fn test_mjtnum_header() raises:
 
     # Path to the test header file
     var test_dir = Path(
-        "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/integration/test_mujoco"
+        "/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"
     )
     var test_file_path = test_dir / "mjtnum.h"
     if not test_file_path.exists():
@@ -152,7 +152,7 @@ fn test_mjmodel_header() raises:
 
     # Path to the test header file
     var test_dir = Path(
-        "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/integration/test_mujoco"
+        "/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"
     )
     var test_file_path = test_dir / "mjmodel.h"
     if not test_file_path.exists():

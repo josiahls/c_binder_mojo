@@ -8,7 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
-    StateOrFlowValue,
+    MessageableEnum,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -48,7 +48,7 @@ struct TypedefNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StateOrFlowValue
+    var _node_state: MessageableEnum
     var _type_name: String  # The new type name being defined
     var _row_num: Int  # Track rows in case of multi-line typedef
 
@@ -105,7 +105,7 @@ struct TypedefNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StateOrFlowValue:
+    ) -> MessageableEnum:
         """Determine how to handle the next token.
 
         Args:
@@ -133,7 +133,7 @@ struct TypedefNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StateOrFlowValue,
+        token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -165,7 +165,7 @@ struct TypedefNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> StateOrFlowValue:
+    fn node_state(self) -> MessageableEnum:
         """Get the state of this node."""
         return self._node_state
 

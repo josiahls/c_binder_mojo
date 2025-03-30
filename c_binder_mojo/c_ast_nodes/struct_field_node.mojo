@@ -5,7 +5,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 
 from c_binder_mojo.common import (
     TokenBundle,
-    StateOrFlowValue,
+    MessageableEnum,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -40,7 +40,7 @@ struct StructFieldNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StateOrFlowValue
+    var _node_state: MessageableEnum
     var _field_name: String
     var _field_type: String
     var _is_inner_struct: Bool
@@ -119,7 +119,7 @@ struct StructFieldNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StateOrFlowValue:
+    ) -> MessageableEnum:
         """Determine how to handle the next token.
 
         Args:
@@ -181,7 +181,7 @@ struct StructFieldNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StateOrFlowValue,
+        token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -205,7 +205,7 @@ struct StructFieldNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> StateOrFlowValue:
+    fn node_state(self) -> MessageableEnum:
         """Get the state of this node."""
         return self._node_state
 

@@ -5,7 +5,7 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
-    StateOrFlowValue,
+    MessageableEnum,
     TokenBundles,
     NodeIndices,
     TokenFlow,
@@ -182,16 +182,16 @@ trait NodeAstLike(CollectionElement, Stringable):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StateOrFlowValue:
+    ) -> MessageableEnum:
         ...
 
-    fn node_state(self) -> StateOrFlowValue:
+    fn node_state(self) -> MessageableEnum:
         ...
 
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StateOrFlowValue,
+        token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
         ...
@@ -349,7 +349,7 @@ struct AstNode(CollectionElement):
     @always_inline("nodebug")
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StateOrFlowValue:
+    ) -> MessageableEnum:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -369,7 +369,7 @@ struct AstNode(CollectionElement):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StateOrFlowValue,
+        token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
         @parameter
@@ -400,7 +400,7 @@ struct AstNode(CollectionElement):
         return "<unknown type>"
 
     @always_inline("nodebug")
-    fn node_state(self) -> StateOrFlowValue:
+    fn node_state(self) -> MessageableEnum:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]

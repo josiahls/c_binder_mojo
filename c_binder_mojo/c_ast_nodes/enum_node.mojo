@@ -8,7 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
-    StateOrFlowValue,
+    MessageableEnum,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -43,7 +43,7 @@ struct EnumNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StateOrFlowValue
+    var _node_state: MessageableEnum
     var _enum_name: String
     var _row_nums: List[Int]  # Track rows for multi-line enums
 
@@ -101,7 +101,7 @@ struct EnumNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StateOrFlowValue:
+    ) -> MessageableEnum:
         """Determine how to handle the next token.
 
         Args:
@@ -165,7 +165,7 @@ struct EnumNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StateOrFlowValue,
+        token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -197,7 +197,7 @@ struct EnumNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> StateOrFlowValue:
+    fn node_state(self) -> MessageableEnum:
         """Get the state of this node."""
         return self._node_state
 

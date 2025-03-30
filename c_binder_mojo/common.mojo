@@ -11,7 +11,7 @@ from firehose.logging import Logger
 
 
 @value
-struct StateOrFlowValue(Stringable):
+struct MessageableEnum(Stringable):
     # NOTE(josiahls): tried doing int literal, but it made typing more complicated.
     var value: Int
     var _message: String
@@ -43,30 +43,30 @@ struct StateOrFlowValue(Stringable):
 struct NodeState:
     """The internal construction state of a node."""
 
-    alias INITIALIZING = StateOrFlowValue(0)  # Node is being initialized
-    alias COLLECTING_TOKENS = StateOrFlowValue(
+    alias INITIALIZING = MessageableEnum(0)  # Node is being initialized
+    alias COLLECTING_TOKENS = MessageableEnum(
         1
     )  # Node is collecting its own tokens
-    alias COLLECTING_TAIL_TOKENS = StateOrFlowValue(
+    alias COLLECTING_TAIL_TOKENS = MessageableEnum(
         2
     )  # Node is collecting its own tokens adding them to the tail
-    alias BUILDING_CHILDREN = StateOrFlowValue(
+    alias BUILDING_CHILDREN = MessageableEnum(
         3
     )  # Node is creating/managing children
-    alias COMPLETED = StateOrFlowValue(4)  # Node is completely built
-    alias INVALID = StateOrFlowValue(5)  # Node is in an invalid state (error)
+    alias COMPLETED = MessageableEnum(4)  # Node is completely built
+    alias INVALID = MessageableEnum(5)  # Node is in an invalid state (error)
 
 
 struct TokenFlow:
     """Directive for how tokens should flow through the tree."""
 
-    alias INITIALIZE_MODULE = StateOrFlowValue(
+    alias INITIALIZE_MODULE = MessageableEnum(
         0
     )  # Tree has just started, no nodes exist yet
-    alias CONSUME_TOKEN = StateOrFlowValue(1)  # Node should consume the token
-    alias PASS_TO_PARENT = StateOrFlowValue(2)  # Pass token to parent node
-    alias CREATE_CHILD = StateOrFlowValue(3)  # Create a child for this token
-    alias INVALID = StateOrFlowValue(4)  # Invalid directive (error)
+    alias CONSUME_TOKEN = MessageableEnum(1)  # Node should consume the token
+    alias PASS_TO_PARENT = MessageableEnum(2)  # Pass token to parent node
+    alias CREATE_CHILD = MessageableEnum(3)  # Create a child for this token
+    alias INVALID = MessageableEnum(4)  # Invalid directive (error)
 
 
 # struct NodeState:

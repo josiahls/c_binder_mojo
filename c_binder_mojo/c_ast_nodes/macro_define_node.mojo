@@ -8,7 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
-    StateOrFlowValue,
+    MessageableEnum,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -42,7 +42,7 @@ struct MacroDefineNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StateOrFlowValue
+    var _node_state: MessageableEnum
     var _macro_name: String
     var _row_nums: List[Int]
 
@@ -100,7 +100,7 @@ struct MacroDefineNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StateOrFlowValue:
+    ) -> MessageableEnum:
         if len(self._token_bundles[]) == 0:
             return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
 
@@ -122,7 +122,7 @@ struct MacroDefineNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StateOrFlowValue,
+        token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node."""
@@ -146,7 +146,7 @@ struct MacroDefineNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> StateOrFlowValue:
+    fn node_state(self) -> MessageableEnum:
         """Get the state of this node."""
         return self._node_state
 

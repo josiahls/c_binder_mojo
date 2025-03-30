@@ -18,7 +18,7 @@ from c_binder_mojo.common import (
     NodeIndices,
     NodeState,
     TokenFlow,
-    StateOrFlowValue,
+    MessageableEnum,
 )
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike
 
@@ -133,8 +133,8 @@ fn log_state_transition(
     token: TokenBundle,
     current_node: AstNode,  # Renamed parameter to avoid shadowing
     module_interface: ModuleInterface,
-    token_flow: StateOrFlowValue,
-    prev_state: StateOrFlowValue = StateOrFlowValue(-1),
+    token_flow: MessageableEnum,
+    prev_state: MessageableEnum = MessageableEnum(-1),
     recursion_depth: Int = 0,
 ) raises:
     """Log a state transition with enhanced context.
@@ -150,7 +150,7 @@ fn log_state_transition(
     """
     # Format the transition string with fixed width
     var transition_str = String()
-    if prev_state == StateOrFlowValue(-1) or prev_state == token_flow:
+    if prev_state == MessageableEnum(-1) or prev_state == token_flow:
         transition_str = String(token_flow)
     else:
         if prev_state == TokenFlow.PASS_TO_PARENT:

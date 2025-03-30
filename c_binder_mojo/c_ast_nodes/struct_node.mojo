@@ -121,6 +121,10 @@ struct StructNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
 
+        if len(self._token_bundles[]) == 2 and token.token != CTokens.SCOPE_BEGIN:
+            # TODO(josiahls): Also need to check for white space.
+            return TokenFlow.PASS_TO_PARENT
+
         if self._node_state == NodeState.COLLECTING_TOKENS:
             return TokenFlow.CONSUME_TOKEN
 

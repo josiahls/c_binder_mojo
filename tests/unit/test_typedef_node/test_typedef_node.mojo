@@ -21,7 +21,7 @@ fn test_typedef_node() raises:
 
     # Path to the test header file
     var test_dir = Path(
-        "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/test_typedef_node"
+        "/home/fastrl_mojo_user/fastrl_mojo/c_binder_mojo/tests/unit/test_typedef_node"
     )
     var test_file_path = test_dir / "test_typedef_node.h"
     if not test_file_path.exists():
@@ -103,7 +103,7 @@ fn test_typedef_node() raises:
                     is_basic = False
                     logger.info("Found enum typedef")
                 elif child_node.name() == "StructNode":
-                    if len(child_node.node[][StructNode].name) == 0:
+                    if len(child_node.node[][StructNode].name()) == 0:
                         inline_struct_count += 1
                         logger.info("Found inline struct typedef")
                     else:
@@ -117,12 +117,12 @@ fn test_typedef_node() raises:
 
         # Check struct nodes for incorrect typedef children
         elif node.name() == "StructNode":
-            var struct_name = String(node.node[][StructNode].name)
+            var struct_name = String(node.node[][StructNode].name())
             logger.info("Found struct node: " + struct_name)
             
             # Check children for typedefs
             for child_idx in node.indicies().original_child_idxs:
-                var child_node = module_interface.nodes()[][child_idx]
+                var child_node = module_interface.nodes()[][child_idx[]]
                 if child_node.name() == "TypedefNode":
                     typedefs_in_struct += 1
                     logger.error(

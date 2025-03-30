@@ -36,21 +36,17 @@ NodeState
 	#define MY_TYPEDEF_TEST 
 	 
 	// This struct should not collect the typedefs that follow 
-	struct TestStruct 
-	 
+	struct TestStruct  
+	  
+	 	
 	{ 	
 		 
 		    
-		int 
-		value 
-		; 
+		int value ; 
 		 
 		 
 	} 
-	 
 	; 
-	 
-	 
 	typedef int integer_t 
 	  
 	// Should be independent node 
@@ -64,8 +60,8 @@ NodeState
  
 // Struct typedefs - testing nested typedef handling 
 typedef 
-Point2D 
 struct  
+ 
 { 
 	 
 	    
@@ -75,40 +71,31 @@ struct
 	int y ; 
 	 
 	 
-}  
+} 
+Point2D 
  
  
 // Test typedef and struct interaction 
-struct Rectangle_ 
+struct Rectangle_  
+  
  
 { 
 	 
 	    
-	Point2D 
-	top_left 
-	; 
+	Point2D top_left ; 
 	 
 	    
-	Point2D 
-	bottom_right 
-	; 
+	Point2D bottom_right ; 
 	 
 	    
-	int 
-	width 
-	; 
+	int width ; 
 	 
 	    
-	int 
-	height 
-	; 
+	int height ; 
 	 
 	 
 } 
- 
 ; 
- 
- 
 // This typedef should be independent of the struct above 
 typedef 
 struct Rectangle_ Rectangle 
@@ -118,16 +105,17 @@ struct Rectangle_ Rectangle
 #ifndef NESTED_TEST 
 	#define NESTED_TEST 
 	 
-	typedef 
-	NestedStruct 	
-	struct  	
+	typedef 	
+	struct  
+	 	
 	{ 	
 		 
 		    
 		int data ; 
 		 
 		 
-	}  
+	} 
+	NestedStruct 
 	  
 	// This typedef should not be affected by the ifdef 
 	 

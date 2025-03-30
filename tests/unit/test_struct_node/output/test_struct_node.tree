@@ -170,7 +170,7 @@ tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		ScopeNode(original_p
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current Token: '' at [4:1]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TAIL_TOKENS, name='Point')
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TOKENS, name='Point')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [4:1]
     └─ Nodes: 2 active, 7 complete
@@ -178,15 +178,15 @@ tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_p
     └─ Path: RootNode -> StructNode
     └─ Current Token: ';' at [4:1]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TAIL_TOKENS, name='Point')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TOKENS, name='Point')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [4:2]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TAIL_TOKENS, name='Point')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TOKENS, name='Point')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [5:0]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TAIL_TOKENS, name='Point')
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TOKENS, name='Point')
     └─ Path: RootNode -> StructNode
     └─ Current Token: 'struct' at [6:0]
     └─ Nodes: 2 active, 7 complete
@@ -334,7 +334,7 @@ tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		ScopeNode(original_p
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current Token: '' at [9:1]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TAIL_TOKENS, name='Person')
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TOKENS, name='Person')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [9:1]
     └─ Nodes: 3 active, 13 complete
@@ -342,15 +342,15 @@ tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_p
     └─ Path: RootNode -> StructNode
     └─ Current Token: ';' at [9:1]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TAIL_TOKENS, name='Person')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TOKENS, name='Person')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [9:2]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TAIL_TOKENS, name='Person')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TOKENS, name='Person')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [10:0]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TAIL_TOKENS, name='Person')
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=9, original_child_idxs=(10), node_state=COLLECTING_TOKENS, name='Person')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '//' at [11:0]
     └─ Nodes: 3 active, 13 complete
@@ -422,7 +422,7 @@ tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		ScopeNode(original_p
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current Token: '' at [13:1]
     └─ Nodes: 4 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TAIL_TOKENS, name='Empty')
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TOKENS, name='Empty')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [13:1]
     └─ Nodes: 4 active, 16 complete
@@ -430,15 +430,15 @@ tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_p
     └─ Path: RootNode -> StructNode
     └─ Current Token: ';' at [13:1]
     └─ Nodes: 4 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TAIL_TOKENS, name='Empty')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TOKENS, name='Empty')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [13:2]
     └─ Nodes: 4 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TAIL_TOKENS, name='Empty')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TOKENS, name='Empty')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [14:0]
     └─ Nodes: 4 active, 16 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TAIL_TOKENS, name='Empty')
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TOKENS, name='Empty')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 4 active, 16 complete
@@ -858,11 +858,11 @@ tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 				ScopeNode(original
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructNode -> ScopeNode
     └─ Current Token: '' at [24:1]
     └─ Nodes: 7 active, 30 complete
-tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 			StructNode(original_parent_idx=22, original_current_idx=32, original_child_idxs=(33), node_state=COLLECTING_TAIL_TOKENS, name='Inner')
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 			StructNode(original_parent_idx=22, original_current_idx=32, original_child_idxs=(33), node_state=COLLECTING_TOKENS, name='Inner')
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructNode
     └─ Current Token: '' at [24:1]
     └─ Nodes: 7 active, 30 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 			StructNode(original_parent_idx=22, original_current_idx=32, original_child_idxs=(33), node_state=COLLECTING_TAIL_TOKENS, name='Inner')
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 			StructNode(original_parent_idx=22, original_current_idx=32, original_child_idxs=(33), node_state=COLLECTING_TOKENS, name='Inner')
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructNode
     └─ Current Token: 'nested' at [24:1]
     └─ Nodes: 7 active, 30 complete
@@ -906,7 +906,7 @@ tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		ScopeNode(original_p
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current Token: '' at [25:1]
     └─ Nodes: 6 active, 33 complete
-tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TAIL_TOKENS, name='Complex')
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TOKENS, name='Complex')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [25:1]
     └─ Nodes: 6 active, 33 complete
@@ -914,15 +914,15 @@ tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_p
     └─ Path: RootNode -> StructNode
     └─ Current Token: ';' at [25:1]
     └─ Nodes: 6 active, 33 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TAIL_TOKENS, name='Complex')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TOKENS, name='Complex')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [25:2]
     └─ Nodes: 6 active, 33 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TAIL_TOKENS, name='Complex')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TOKENS, name='Complex')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [26:0]
     └─ Nodes: 6 active, 33 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TAIL_TOKENS, name='Complex')
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	StructNode(original_parent_idx=0, original_current_idx=21, original_child_idxs=(22), node_state=COLLECTING_TOKENS, name='Complex')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '//' at [27:0]
     └─ Nodes: 6 active, 33 complete
@@ -1058,11 +1058,11 @@ tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 			ScopeNode(original_
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current Token: '' at [30:1]
     └─ Nodes: 8 active, 38 complete
-tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 		StructNode(original_parent_idx=40, original_current_idx=41, original_child_idxs=(42), node_state=COLLECTING_TAIL_TOKENS)
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 		StructNode(original_parent_idx=40, original_current_idx=41, original_child_idxs=(42), node_state=COLLECTING_TOKENS)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current Token: '' at [30:1]
     └─ Nodes: 8 active, 38 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		StructNode(original_parent_idx=40, original_current_idx=41, original_child_idxs=(42), node_state=COLLECTING_TAIL_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		StructNode(original_parent_idx=40, original_current_idx=41, original_child_idxs=(42), node_state=COLLECTING_TOKENS)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current Token: 'Flags' at [30:1]
     └─ Nodes: 8 active, 38 complete
@@ -1350,7 +1350,7 @@ tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		ScopeNode(original_p
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current Token: '' at [37:1]
     └─ Nodes: 8 active, 49 complete
-tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=48, original_child_idxs=(49), node_state=COLLECTING_TAIL_TOKENS, name='BitFields')
+tree.mojo:220 - INFO: [Depth:-1] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=48, original_child_idxs=(49), node_state=COLLECTING_TOKENS, name='BitFields')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [37:1]
     └─ Nodes: 8 active, 49 complete
@@ -1358,11 +1358,11 @@ tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_p
     └─ Path: RootNode -> StructNode
     └─ Current Token: ';' at [37:1]
     └─ Nodes: 8 active, 49 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=48, original_child_idxs=(49), node_state=COLLECTING_TAIL_TOKENS, name='BitFields')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=48, original_child_idxs=(49), node_state=COLLECTING_TOKENS, name='BitFields')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [37:2]
     └─ Nodes: 8 active, 49 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=48, original_child_idxs=(49), node_state=COLLECTING_TAIL_TOKENS, name='BitFields')
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	StructNode(original_parent_idx=0, original_current_idx=48, original_child_idxs=(49), node_state=COLLECTING_TOKENS, name='BitFields')
     └─ Path: RootNode -> StructNode
     └─ Current Token: '' at [37:2]
     └─ Nodes: 8 active, 49 complete

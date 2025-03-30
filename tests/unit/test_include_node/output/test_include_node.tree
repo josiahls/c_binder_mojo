@@ -10,11 +10,11 @@ tree.mojo:220 - INFO: [Depth:1] RootNode -> CREATE_CHILD| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [0:0]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=COLLECTING_TOKENS, path='<stdio.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=COLLECTING_TOKENS, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<stdio.h>' at [0:8]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=COMPLETED, path='<stdio.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=COMPLETED, path='stdio.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [1:0]
     └─ Nodes: 1 active, 1 complete
@@ -26,11 +26,11 @@ tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [1:0]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=COLLECTING_TOKENS, path='<stdlib.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=COLLECTING_TOKENS, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<stdlib.h>' at [1:8]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED, path='<stdlib.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED, path='stdlib.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [2:0]
     └─ Nodes: 1 active, 2 complete
@@ -42,11 +42,11 @@ tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [2:0]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=COLLECTING_TOKENS, path='"my_header.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=COLLECTING_TOKENS, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '"my_header.h"' at [2:8]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=COMPLETED, path='"my_header.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=COMPLETED, path='my_header.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [3:0]
     └─ Nodes: 1 active, 3 complete
@@ -58,15 +58,15 @@ tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [3:0]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='"../relative/path.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '"../relative/path.h"' at [3:8]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='"../relative/path.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='../relative/path.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [4:0]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='"../relative/path.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='../relative/path.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [5:0]
     └─ Nodes: 2 active, 3 complete
@@ -102,15 +102,15 @@ tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [6:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='<string.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<string.h>' at [6:8]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='<string.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='string.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [7:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='<string.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='string.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '/*' at [8:0]
     └─ Nodes: 3 active, 4 complete
@@ -166,15 +166,15 @@ tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [10:0]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='"local/header.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '"local/header.h"' at [10:8]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='"local/header.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='local/header.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='"local/header.h"', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='local/header.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [12:0]
     └─ Nodes: 4 active, 5 complete
@@ -226,15 +226,15 @@ tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [13:8]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='<math.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<math.h>' at [13:8]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='<math.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='math.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [14:0]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='<math.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='math.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 5 active, 6 complete
@@ -274,11 +274,11 @@ tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	IncludeNode(original_
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [16:0]
     └─ Nodes: 6 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=COLLECTING_TOKENS, path='<time.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=COLLECTING_TOKENS, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<time.h>' at [16:8]
     └─ Nodes: 6 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=COLLECTING_TOKENS, path='<time.h>', system=False)
+tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=COLLECTING_TOKENS, path='time.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [16:16]
     └─ Nodes: 6 active, 7 complete

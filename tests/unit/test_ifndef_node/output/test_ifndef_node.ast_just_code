@@ -130,26 +130,25 @@
 	// Include with ifndef guard 
 	#ifndef INCLUDED_STDIO 	
 		#define INCLUDED_STDIO 
-		#include 
-		<stdio.h> 
-	#endif 
-	 
-	 
-	// Totally Empty ifndef  ( edge case )  
-	#ifndef EMPTY_GUARD 
-	#endif 
-	 
-	// Empty ifndef  ( edge case )  
-	#ifndef EMPTY_GUARD 	
-		#define EMPTY_GUARD 
-	#endif 
-	 
-	// Typedef inside ifndef 
-	#ifndef MY_TYPE_GUARD 	
-		#define MY_TYPE_GUARD 
-		typedef unsigned int uint_t 
+		#include <stdio.h> 
+		#endif 
+		 
+		 
+		// Totally Empty ifndef  ( edge case )  
+		#ifndef EMPTY_GUARD 
+		#endif 
+		 
+		// Empty ifndef  ( edge case )  
+		#ifndef EMPTY_GUARD 		
+			#define EMPTY_GUARD 
+		#endif 
+		 
+		// Typedef inside ifndef 
+		#ifndef MY_TYPE_GUARD 		
+			#define MY_TYPE_GUARD 
+			typedef unsigned int uint_t 
+			 
+		#endif 
 		 
 	#endif 
-	 
-#endif 
-// TEST_IFNDEF_NODE_H  
+	// TEST_IFNDEF_NODE_H  

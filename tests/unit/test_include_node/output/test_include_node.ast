@@ -1,32 +1,32 @@
 RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
-IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=COMPLETED, path='<stdio.h>', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=COMPLETED, path='stdio.h', system=True)
 #include <stdio.h> 
-IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED, path='<stdlib.h>', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED, path='stdlib.h', system=True)
 #include <stdlib.h> 
-IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=COMPLETED, path='"my_header.h"', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=COMPLETED, path='my_header.h', system=False)
 #include "my_header.h" 
-IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='"../relative/path.h"', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=COLLECTING_TOKENS, path='../relative/path.h', system=False)
 #include "../relative/path.h" 
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
 // Comment between includes 
-IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='<string.h>', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS, path='string.h', system=True)
 #include <string.h> 
  
 MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
 /* Multi-line comment 
    between includes */ 
-IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='"local/header.h"', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS, path='local/header.h', system=False)
 #include "local/header.h" 
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
 // Include with extra whitespace 
-IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='<math.h>', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS, path='math.h', system=True)
 #include    <math.h> 
  
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
 // Include with trailing comment 
-IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=COLLECTING_TOKENS, path='<time.h>', system=False)
+IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=COLLECTING_TOKENS, path='time.h', system=True)
 #include <time.h> 
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
 // Time functions  

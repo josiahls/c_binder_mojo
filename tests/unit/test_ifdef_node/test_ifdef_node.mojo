@@ -20,7 +20,7 @@ fn test_ifdef_node() raises:
 
     # Path to the test header file
     var test_dir = Path(
-        "/home/c_binder_mojo_user/c_binder_mojo/tests/test_ifdef_node"
+        "/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node"
     )
     var test_file_path = test_dir / "test_ifdef_node.h"
     if not test_file_path.exists():

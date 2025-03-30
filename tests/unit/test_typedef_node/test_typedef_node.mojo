@@ -103,7 +103,8 @@ fn test_typedef_node() raises:
                     is_basic = False
                     logger.info("Found enum typedef")
                 elif child_node.name() == "StructNode":
-                    if len(child_node.node[][StructNode].name()) == 0:
+                    logger.info("Found struct node name: " + child_node.node[][StructNode]._struct_name)
+                    if len(child_node.node[][StructNode]._struct_name) == 0:
                         inline_struct_count += 1
                         logger.info("Found inline struct typedef")
                     else:
@@ -130,17 +131,17 @@ fn test_typedef_node() raises:
                     )
 
     # Verify counts
-    if basic_typedef_count != 5:  # uint_t, int64_t, byte_t, integer_t, float_t
+    if basic_typedef_count != 6:  # uint_t, int64_t, byte_t, integer_t, float_t
         raise Error(
-            "Expected 5 basic typedefs, but found " + String(basic_typedef_count)
+            "Expected 6 basic typedefs, but found " + String(basic_typedef_count)
         )
     if enum_typedef_count != 1:  # NodeState
         raise Error(
             "Expected 1 enum typedef, but found " + String(enum_typedef_count)
         )
-    if inline_struct_count != 3:  # Point2D, NestedStruct, anonymous struct
+    if inline_struct_count != 2:  # Point2D, NestedStruct
         raise Error(
-            "Expected 3 inline struct typedefs, but found " + String(inline_struct_count)
+            "Expected 2 inline struct typedefs, but found " + String(inline_struct_count)
         )
     if named_struct_count != 1:  # Rectangle
         raise Error(

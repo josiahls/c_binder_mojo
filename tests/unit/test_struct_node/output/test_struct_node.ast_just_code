@@ -1,5 +1,7 @@
 // Basic struct declarations 
 struct Point  
+  
+ 
 { 
 	 
 	    
@@ -10,9 +12,10 @@ struct Point
 	 
 	 
 } 
- ;  
- 
+; 
 struct Person  
+  
+ 
 { 
 	 
 	    
@@ -23,18 +26,20 @@ struct Person
 	 
 	 
 } 
- ;  
- 
+; 
 // Empty struct 
 struct Empty  
+  
+ 
 { 
 	 
 	 
 } 
- ;  
- 
+; 
 // Multi-line struct with comments 
 struct Complex  
+  
+ 
 { 
 	 
 	    
@@ -49,7 +54,8 @@ struct Complex
 	    
 	/* Nested struct */ 
 	    
-	struct Inner  	
+	struct Inner  
+	 	
 	{ 	
 		 
 		        
@@ -57,16 +63,15 @@ struct Complex
 		 
 		     
 	} 
-	 
 	nested ; 
 	 
 	 
 } 
- ;  
- 
+; 
 // Anonymous struct in typedef 
 typedef 
 struct  
+ 
 { 
 	 
 	    
@@ -74,12 +79,12 @@ struct
 	 
 	 
 } 
- 
 Flags 
  
  
 // Struct with bit fields 
 struct BitFields  
+   
 { 
 	 
 	    
@@ -92,5 +97,4 @@ struct BitFields
 	unsigned int c : 3 ; 
 	 
 	 
-} 
- ;   
+} ; 

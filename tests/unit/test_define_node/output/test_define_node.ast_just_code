@@ -13,7 +13,8 @@
 #define PRINT_DEBUG ( msg ,  ... )  printf ( "[DEBUG] " msg "\n" ,  ##__VA_ARGS__ )  
  
 // Complex defines with expressions 
-#define BUFFER_SIZE  ( 1024 * 2 )  
+#define BUFFER_SIZE 
+	 ( 1024 * 2 )  
  
 // Define with line continuation 
 #define MULTILINE_STRING "This is a long string that \     continues on the next line"  

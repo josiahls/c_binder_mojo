@@ -1,7 +1,7 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 131))
+RootNode(original_current_idx=0, original_child_idxs=(1, 2))
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic header guards 
-MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5, 6, 9, ...) len=32, node_state=COMPLETED)
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3, 4, 5, 6, 9, ...) len=23, node_state=BUILDING_CHILDREN)
 #ifndef TEST_IFNDEF_NODE_H 
 	MacroDefineNode(original_parent_idx=2, original_current_idx=3, node_state=COMPLETED, macro='TEST_IFNDEF_NODE_H')
 	#define TEST_IFNDEF_NODE_H 
@@ -259,51 +259,48 @@ MacroIfNDefNode(original_parent_idx=0, original_current_idx=2, original_child_id
 	 
 	SingleLineCommentNode(original_parent_idx=2, original_current_idx=112)
 	// Include with ifndef guard 
-	MacroIfNDefNode(original_parent_idx=2, original_current_idx=113, original_child_idxs=(114, 115, 116), node_state=COMPLETED)
+	MacroIfNDefNode(original_parent_idx=2, original_current_idx=113, original_child_idxs=(114, 115, 116, 117, 118, ...) len=11, node_state=COMPLETED)
 	#ifndef INCLUDED_STDIO 
 			MacroDefineNode(original_parent_idx=113, original_current_idx=114, node_state=COMPLETED, macro='INCLUDED_STDIO')
 		#define INCLUDED_STDIO 
-		PlaceHolderNode(original_parent_idx=113, original_current_idx=115)
-		#include 
-		PlaceHolderNode(original_parent_idx=113, original_current_idx=116)
-		<stdio.h> 
+		IncludeNode(original_parent_idx=113, original_current_idx=115, node_state=COLLECTING_TOKENS, path='stdio.h#endif', system=True)
+		#include <stdio.h> 
+		#endif 
+		 
+		 
+		SingleLineCommentNode(original_parent_idx=113, original_current_idx=116)
+		// Totally Empty ifndef  ( edge case )  
+		MacroIfNDefNode(original_parent_idx=113, original_current_idx=117, node_state=COMPLETED)
+		#ifndef EMPTY_GUARD 
+		#endif 
+		WhitespaceNode(original_parent_idx=113, original_current_idx=118, n_tokens=1)
+		 
+		SingleLineCommentNode(original_parent_idx=113, original_current_idx=119)
+		// Empty ifndef  ( edge case )  
+		MacroIfNDefNode(original_parent_idx=113, original_current_idx=120, original_child_idxs=(121), node_state=COMPLETED)
+		#ifndef EMPTY_GUARD 
+					MacroDefineNode(original_parent_idx=120, original_current_idx=121, node_state=COMPLETED, macro='EMPTY_GUARD')
+			#define EMPTY_GUARD 
 
-	#endif 
-	WhitespaceNode(original_parent_idx=2, original_current_idx=117, n_tokens=2)
-	 
-	 
-	SingleLineCommentNode(original_parent_idx=2, original_current_idx=118)
-	// Totally Empty ifndef  ( edge case )  
-	MacroIfNDefNode(original_parent_idx=2, original_current_idx=119, node_state=COMPLETED)
-	#ifndef EMPTY_GUARD 
-	#endif 
-	WhitespaceNode(original_parent_idx=2, original_current_idx=120, n_tokens=1)
-	 
-	SingleLineCommentNode(original_parent_idx=2, original_current_idx=121)
-	// Empty ifndef  ( edge case )  
-	MacroIfNDefNode(original_parent_idx=2, original_current_idx=122, original_child_idxs=(123), node_state=COMPLETED)
-	#ifndef EMPTY_GUARD 
-			MacroDefineNode(original_parent_idx=122, original_current_idx=123, node_state=COMPLETED, macro='EMPTY_GUARD')
-		#define EMPTY_GUARD 
+		#endif 
+		WhitespaceNode(original_parent_idx=113, original_current_idx=122, n_tokens=1)
+		 
+		SingleLineCommentNode(original_parent_idx=113, original_current_idx=123)
+		// Typedef inside ifndef 
+		MacroIfNDefNode(original_parent_idx=113, original_current_idx=124, original_child_idxs=(125, 126, 127), node_state=COMPLETED)
+		#ifndef MY_TYPE_GUARD 
+					MacroDefineNode(original_parent_idx=124, original_current_idx=125, node_state=COMPLETED, macro='MY_TYPE_GUARD')
+			#define MY_TYPE_GUARD 
+			TypedefNode(original_parent_idx=124, original_current_idx=126, node_state=COMPLETED)
+			typedef unsigned int uint_t 
+			WhitespaceNode(original_parent_idx=124, original_current_idx=127, n_tokens=1)
+			 
 
-	#endif 
-	WhitespaceNode(original_parent_idx=2, original_current_idx=124, n_tokens=1)
-	 
-	SingleLineCommentNode(original_parent_idx=2, original_current_idx=125)
-	// Typedef inside ifndef 
-	MacroIfNDefNode(original_parent_idx=2, original_current_idx=126, original_child_idxs=(127, 128, 129), node_state=COMPLETED)
-	#ifndef MY_TYPE_GUARD 
-			MacroDefineNode(original_parent_idx=126, original_current_idx=127, node_state=COMPLETED, macro='MY_TYPE_GUARD')
-		#define MY_TYPE_GUARD 
-		TypedefNode(original_parent_idx=126, original_current_idx=128, node_state=COMPLETED)
-		typedef unsigned int uint_t 
-		WhitespaceNode(original_parent_idx=126, original_current_idx=129, n_tokens=1)
+		#endif 
+		WhitespaceNode(original_parent_idx=113, original_current_idx=128, n_tokens=1)
 		 
 
 	#endif 
-	WhitespaceNode(original_parent_idx=2, original_current_idx=130, n_tokens=1)
-	 
+	SingleLineCommentNode(original_parent_idx=2, original_current_idx=129)
+	// TEST_IFNDEF_NODE_H  
 
-#endif 
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=131)
-// TEST_IFNDEF_NODE_H  

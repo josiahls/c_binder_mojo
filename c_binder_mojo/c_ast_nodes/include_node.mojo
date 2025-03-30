@@ -122,12 +122,12 @@ struct IncludeNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         # Handle system include start
-        if token.token == "<":
+        if token.token == "<" or token.token.startswith("<"):
             self._is_system_include = True
             return TokenFlow.CONSUME_TOKEN
 
         # Handle local include start
-        if token.token == '"':
+        if (token.token == '"' or token.token.startswith('"')) and not self._is_system_include:
             self._is_system_include = False
             return TokenFlow.CONSUME_TOKEN
 
@@ -147,8 +147,6 @@ struct IncludeNode(NodeAstLike):
 
         # Collect path
         if self._node_state == NodeState.COLLECTING_TOKENS:
-            if token.token != "#include":  # Skip the #include token
-                self._include_path += token.token
             return TokenFlow.CONSUME_TOKEN
 
         return TokenFlow.PASS_TO_PARENT
@@ -167,6 +165,8 @@ struct IncludeNode(NodeAstLike):
             module_interface: Interface to the AST.
         """
         if token_flow == TokenFlow.CONSUME_TOKEN:
+            if token.token != "#include" and token.token != "":  # Skip the #include token
+                self._include_path += token.token.replace("\"", "").replace("<", "").replace(">", "")
             self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:

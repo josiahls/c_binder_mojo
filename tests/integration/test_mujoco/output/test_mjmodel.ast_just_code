@@ -1238,81 +1238,58 @@
 	 
 	//---------------------------------- mjLROpt ------------------------------------------------------- 
 	 
-	struct mjLROpt_ 
-	 
+	struct mjLROpt_  
+	  	
 	{ 	
 		                 
 		// options for mj_setLengthRange (  )  
 		  
 		// flags 
 		  
-		int 
-		mode 
-		; 
+		int mode ; 
 		                       
 		// which actuators to process  ( mjtLRMode )  
 		  
-		int 
-		useexisting 
-		; 
+		int useexisting ; 
 		                
 		// use existing length range if available 
 		  
-		int 
-		uselimit 
-		; 
+		int uselimit ; 
 		                   
 		// use joint and tendon limits if available 
 		 
 		  
 		// algorithm parameters 
 		  
-		mjtNum 
-		accel 
-		; 
+		mjtNum accel ; 
 		                   
 		// target acceleration used to compute force 
 		  
-		mjtNum 
-		maxforce 
-		; 
+		mjtNum maxforce ; 
 		                
 		// maximum force ;  0: no limit 
 		  
-		mjtNum 
-		timeconst 
-		; 
+		mjtNum timeconst ; 
 		               
 		// time constant for velocity reduction ;  min 0.01 
 		  
-		mjtNum 
-		timestep 
-		; 
+		mjtNum timestep ; 
 		                
 		// simulation timestep ;  0: use mjOption.timestep 
 		  
-		mjtNum 
-		inttotal 
-		; 
+		mjtNum inttotal ; 
 		                
 		// total simulation time interval 
 		  
-		mjtNum 
-		interval 
-		; 
+		mjtNum interval ; 
 		                
 		// evaluation time interval  ( at the end )  
 		  
-		mjtNum 
-		tolrange 
-		; 
+		mjtNum tolrange ; 
 		                
 		// convergence tolerance  ( relative to range )  
 		 
-	} 
-	 
-	; 
-	 
+	} ; 
 	typedef 	
 	struct mjLROpt_ mjLROpt 
 	 
@@ -1320,229 +1297,163 @@
 	 
 	//---------------------------------- mjVFS --------------------------------------------------------- 
 	 
-	struct mjVFS_ 
-	 
+	struct mjVFS_  
+	  	
 	{ 	
 		                               
 		// virtual file system for loading from memory 
 		  
-		void* 
-		impl_ 
-		; 
+		void* impl_ ; 
 		                                
 		// internal pointer to VFS memory 
 		 
-	} 
-	 
-	; 
-	 
+	} ; 
 	typedef 	
 	struct mjVFS_ mjVFS 
 	 
 	 
 	//---------------------------------- mjOption ------------------------------------------------------ 
 	 
-	struct mjOption_ 
-	 
+	struct mjOption_  
+	  	
 	{ 	
 		                
 		// physics options 
 		  
 		// timing parameters 
 		  
-		mjtNum 
-		timestep 
-		; 
+		mjtNum timestep ; 
 		                
 		// timestep 
 		  
-		mjtNum 
-		apirate 
-		; 
+		mjtNum apirate ; 
 		                 
 		// update rate for remote API  ( Hz )  
 		 
 		  
 		// solver parameters 
 		  
-		mjtNum 
-		impratio 
-		; 
+		mjtNum impratio ; 
 		                
 		// ratio of friction-to-normal contact impedance 
 		  
-		mjtNum 
-		tolerance 
-		; 
+		mjtNum tolerance ; 
 		               
 		// main solver tolerance 
 		  
-		mjtNum 
-		ls_tolerance 
-		; 
+		mjtNum ls_tolerance ; 
 		            
 		// CG/Newton linesearch tolerance 
 		  
-		mjtNum 
-		noslip_tolerance 
-		; 
+		mjtNum noslip_tolerance ; 
 		        
 		// noslip solver tolerance 
 		  
-		mjtNum 
-		ccd_tolerance 
-		; 
+		mjtNum ccd_tolerance ; 
 		           
 		// convex collision solver tolerance 
 		 
 		  
 		// physical constants 
 		  
-		mjtNum 
-		gravity[3] 
-		; 
+		mjtNum gravity[3] ; 
 		              
 		// gravitational acceleration 
 		  
-		mjtNum 
-		wind[3] 
-		; 
+		mjtNum wind[3] ; 
 		                 
 		// wind  ( for lift ,  drag and viscosity )  
 		  
-		mjtNum 
-		magnetic[3] 
-		; 
+		mjtNum magnetic[3] ; 
 		             
 		// global magnetic flux 
 		  
-		mjtNum 
-		density 
-		; 
+		mjtNum density ; 
 		                 
 		// density of medium 
 		  
-		mjtNum 
-		viscosity 
-		; 
+		mjtNum viscosity ; 
 		               
 		// viscosity of medium 
 		 
 		  
 		// override contact solver parameters  ( if enabled )  
 		  
-		mjtNum 
-		o_margin 
-		; 
+		mjtNum o_margin ; 
 		                
 		// margin 
 		  
-		mjtNum 
-		o_solref[mjNREF] 
-		; 
+		mjtNum o_solref[mjNREF] ; 
 		        
 		// solref 
 		  
-		mjtNum 
-		o_solimp[mjNIMP] 
-		; 
+		mjtNum o_solimp[mjNIMP] ; 
 		        
 		// solimp 
 		  
-		mjtNum 
-		o_friction[5] 
-		; 
+		mjtNum o_friction[5] ; 
 		           
 		// friction 
 		 
 		  
 		// discrete settings 
 		  
-		int 
-		integrator 
-		; 
+		int integrator ; 
 		                 
 		// integration mode  ( mjtIntegrator )  
 		  
-		int 
-		cone 
-		; 
+		int cone ; 
 		                       
 		// type of friction cone  ( mjtCone )  
 		  
-		int 
-		jacobian 
-		; 
+		int jacobian ; 
 		                   
 		// type of Jacobian  ( mjtJacobian )  
 		  
-		int 
-		solver 
-		; 
+		int solver ; 
 		                     
 		// solver algorithm  ( mjtSolver )  
 		  
-		int 
-		iterations 
-		; 
+		int iterations ; 
 		                 
 		// maximum number of main solver iterations 
 		  
-		int 
-		ls_iterations 
-		; 
+		int ls_iterations ; 
 		              
 		// maximum number of CG/Newton linesearch iterations 
 		  
-		int 
-		noslip_iterations 
-		; 
+		int noslip_iterations ; 
 		          
 		// maximum number of noslip solver iterations 
 		  
-		int 
-		ccd_iterations 
-		; 
+		int ccd_iterations ; 
 		             
 		// maximum number of convex collision solver iterations 
 		  
-		int 
-		disableflags 
-		; 
+		int disableflags ; 
 		               
 		// bit flags for disabling standard features 
 		  
-		int 
-		enableflags 
-		; 
+		int enableflags ; 
 		                
 		// bit flags for enabling optional features 
 		  
-		int 
-		disableactuator 
-		; 
+		int disableactuator ; 
 		            
 		// bit flags for disabling actuators by group id 
 		 
 		  
 		// sdf collision settings 
 		  
-		int 
-		sdf_initpoints 
-		; 
+		int sdf_initpoints ; 
 		             
 		// number of starting points for gradient descent 
 		  
-		int 
-		sdf_iterations 
-		; 
+		int sdf_iterations ; 
 		             
 		// max number of iterations for gradient descent 
 		 
-	} 
-	 
-	; 
-	 
+	} ; 
 	typedef 	
 	struct mjOption_ mjOption 
 	 
@@ -1550,13 +1461,14 @@
 	 
 	//---------------------------------- mjVisual ------------------------------------------------------ 
 	 
-	struct mjVisual_ 
-	 
+	struct mjVisual_  
+	  	
 	{ 	
 		                
 		// visualization options 
 		  
-		struct  		
+		struct  
+		 		
 		{ 		
 			                        
 			// global parameters 
@@ -1610,13 +1522,12 @@
 			// visualize active bounding volumes  ( 0: no ,  1: yes )  
 			   
 		} 
-		 
-		global 
-		; 
+		global ; 
 		 
 		 
 		  
-		struct  		
+		struct  
+		 		
 		{ 		
 			                        
 			// rendering quality 
@@ -1642,13 +1553,12 @@
 			// number of quads for box rendering 
 			   
 		} 
-		 
-		quality 
-		; 
+		quality ; 
 		 
 		 
 		  
-		struct  		
+		struct  
+		 		
 		{ 		
 			                        
 			// head light 
@@ -1670,13 +1580,12 @@
 			// is headlight active 
 			   
 		} 
-		 
-		headlight 
-		; 
+		headlight ; 
 		 
 		 
 		  
-		struct  		
+		struct  
+		 		
 		{ 		
 			                        
 			// mapping 
@@ -1734,13 +1643,12 @@
 			// scale tendon width 
 			   
 		} 
-		 
-		map 
-		; 
+		map ; 
 		 
 		 
 		  
-		struct  		
+		struct  
+		 		
 		{ 		
 			                        
 			// scale of decor elements relative to mean body size 
@@ -1814,13 +1722,12 @@
 			// frustum zfar plane 
 			   
 		} 
-		 
-		scale 
-		; 
+		scale ; 
 		 
 		 
 		  
-		struct  		
+		struct  
+		 		
 		{ 		
 			                        
 			// color of decor elements 
@@ -1926,15 +1833,10 @@
 			// active bounding volume 
 			   
 		} 
-		 
-		rgba 
-		; 
+		rgba ; 
 		 
 		 
-	} 
-	 
-	; 
-	 
+	} ; 
 	typedef 	
 	struct mjVisual_ mjVisual 
 	 
@@ -1942,46 +1844,33 @@
 	 
 	//---------------------------------- mjStatistic --------------------------------------------------- 
 	 
-	struct mjStatistic_ 
-	 
+	struct mjStatistic_  
+	  	
 	{ 	
 		             
 		// model statistics  ( in qpos0 )  
 		  
-		mjtNum 
-		meaninertia 
-		; 
+		mjtNum meaninertia ; 
 		             
 		// mean diagonal inertia 
 		  
-		mjtNum 
-		meanmass 
-		; 
+		mjtNum meanmass ; 
 		                
 		// mean body mass 
 		  
-		mjtNum 
-		meansize 
-		; 
+		mjtNum meansize ; 
 		                
 		// mean body size 
 		  
-		mjtNum 
-		extent 
-		; 
+		mjtNum extent ; 
 		                  
 		// spatial extent 
 		  
-		mjtNum 
-		center[3] 
-		; 
+		mjtNum center[3] ; 
 		               
 		// center of model 
 		 
-	} 
-	 
-	; 
-	 
+	} ; 
 	typedef 	
 	struct mjStatistic_ mjStatistic 
 	 
@@ -1989,8 +1878,8 @@
 	 
 	//---------------------------------- mjModel ------------------------------------------------------- 
 	 
-	struct mjModel_ 
-	 
+	struct mjModel_  
+	  	
 	{ 	
 		 
 		  
@@ -1999,487 +1888,327 @@
 		  
 		// sizes needed at mjModel construction 
 		  
-		int 
-		nq 
-		; 
+		int nq ; 
 		                         
 		// number of generalized coordinates = dim ( qpos )  
 		  
-		int 
-		nv 
-		; 
+		int nv ; 
 		                         
 		// number of degrees of freedom = dim ( qvel )  
 		  
-		int 
-		nu 
-		; 
+		int nu ; 
 		                         
 		// number of actuators/controls = dim ( ctrl )  
 		  
-		int 
-		na 
-		; 
+		int na ; 
 		                         
 		// number of activation states = dim ( act )  
 		  
-		int 
-		nbody 
-		; 
+		int nbody ; 
 		                      
 		// number of bodies 
 		  
-		int 
-		nbvh 
-		; 
+		int nbvh ; 
 		                       
 		// number of total bounding volumes in all bodies 
 		  
-		int 
-		nbvhstatic 
-		; 
+		int nbvhstatic ; 
 		                 
 		// number of static bounding volumes  ( aabb stored in mjModel )  
 		  
-		int 
-		nbvhdynamic 
-		; 
+		int nbvhdynamic ; 
 		                
 		// number of dynamic bounding volumes  ( aabb stored in mjData )  
 		  
-		int 
-		njnt 
-		; 
+		int njnt ; 
 		                       
 		// number of joints 
 		  
-		int 
-		ngeom 
-		; 
+		int ngeom ; 
 		                      
 		// number of geoms 
 		  
-		int 
-		nsite 
-		; 
+		int nsite ; 
 		                      
 		// number of sites 
 		  
-		int 
-		ncam 
-		; 
+		int ncam ; 
 		                       
 		// number of cameras 
 		  
-		int 
-		nlight 
-		; 
+		int nlight ; 
 		                     
 		// number of lights 
 		  
-		int 
-		nflex 
-		; 
+		int nflex ; 
 		                      
 		// number of flexes 
 		  
-		int 
-		nflexvert 
-		; 
+		int nflexvert ; 
 		                  
 		// number of vertices in all flexes 
 		  
-		int 
-		nflexedge 
-		; 
+		int nflexedge ; 
 		                  
 		// number of edges in all flexes 
 		  
-		int 
-		nflexelem 
-		; 
+		int nflexelem ; 
 		                  
 		// number of elements in all flexes 
 		  
-		int 
-		nflexelemdata 
-		; 
+		int nflexelemdata ; 
 		              
 		// number of element vertex ids in all flexes 
 		  
-		int 
-		nflexelemedge 
-		; 
+		int nflexelemedge ; 
 		              
 		// number of element edge ids in all flexes 
 		  
-		int 
-		nflexshelldata 
-		; 
+		int nflexshelldata ; 
 		             
 		// number of shell fragment vertex ids in all flexes 
 		  
-		int 
-		nflexevpair 
-		; 
+		int nflexevpair ; 
 		                
 		// number of element-vertex pairs in all flexes 
 		  
-		int 
-		nflextexcoord 
-		; 
+		int nflextexcoord ; 
 		              
 		// number of vertices with texture coordinates 
 		  
-		int 
-		nmesh 
-		; 
+		int nmesh ; 
 		                      
 		// number of meshes 
 		  
-		int 
-		nmeshvert 
-		; 
+		int nmeshvert ; 
 		                  
 		// number of vertices in all meshes 
 		  
-		int 
-		nmeshnormal 
-		; 
+		int nmeshnormal ; 
 		                
 		// number of normals in all meshes 
 		  
-		int 
-		nmeshtexcoord 
-		; 
+		int nmeshtexcoord ; 
 		              
 		// number of texcoords in all meshes 
 		  
-		int 
-		nmeshface 
-		; 
+		int nmeshface ; 
 		                  
 		// number of triangular faces in all meshes 
 		  
-		int 
-		nmeshgraph 
-		; 
+		int nmeshgraph ; 
 		                 
 		// number of ints in mesh auxiliary data 
 		  
-		int 
-		nskin 
-		; 
+		int nskin ; 
 		                      
 		// number of skins 
 		  
-		int 
-		nskinvert 
-		; 
+		int nskinvert ; 
 		                  
 		// number of vertices in all skins 
 		  
-		int 
-		nskintexvert 
-		; 
+		int nskintexvert ; 
 		               
 		// number of vertiex with texcoords in all skins 
 		  
-		int 
-		nskinface 
-		; 
+		int nskinface ; 
 		                  
 		// number of triangular faces in all skins 
 		  
-		int 
-		nskinbone 
-		; 
+		int nskinbone ; 
 		                  
 		// number of bones in all skins 
 		  
-		int 
-		nskinbonevert 
-		; 
+		int nskinbonevert ; 
 		              
 		// number of vertices in all skin bones 
 		  
-		int 
-		nhfield 
-		; 
+		int nhfield ; 
 		                    
 		// number of heightfields 
 		  
-		int 
-		nhfielddata 
-		; 
+		int nhfielddata ; 
 		                
 		// number of data points in all heightfields 
 		  
-		int 
-		ntex 
-		; 
+		int ntex ; 
 		                       
 		// number of textures 
 		  
-		int 
-		ntexdata 
-		; 
+		int ntexdata ; 
 		                   
 		// number of bytes in texture rgb data 
 		  
-		int 
-		nmat 
-		; 
+		int nmat ; 
 		                       
 		// number of materials 
 		  
-		int 
-		npair 
-		; 
+		int npair ; 
 		                      
 		// number of predefined geom pairs 
 		  
-		int 
-		nexclude 
-		; 
+		int nexclude ; 
 		                   
 		// number of excluded geom pairs 
 		  
-		int 
-		neq 
-		; 
+		int neq ; 
 		                        
 		// number of equality constraints 
 		  
-		int 
-		ntendon 
-		; 
+		int ntendon ; 
 		                    
 		// number of tendons 
 		  
-		int 
-		nwrap 
-		; 
+		int nwrap ; 
 		                      
 		// number of wrap objects in all tendon paths 
 		  
-		int 
-		nsensor 
-		; 
+		int nsensor ; 
 		                    
 		// number of sensors 
 		  
-		int 
-		nnumeric 
-		; 
+		int nnumeric ; 
 		                   
 		// number of numeric custom fields 
 		  
-		int 
-		nnumericdata 
-		; 
+		int nnumericdata ; 
 		               
 		// number of mjtNums in all numeric fields 
 		  
-		int 
-		ntext 
-		; 
+		int ntext ; 
 		                      
 		// number of text custom fields 
 		  
-		int 
-		ntextdata 
-		; 
+		int ntextdata ; 
 		                  
 		// number of mjtBytes in all text fields 
 		  
-		int 
-		ntuple 
-		; 
+		int ntuple ; 
 		                     
 		// number of tuple custom fields 
 		  
-		int 
-		ntupledata 
-		; 
+		int ntupledata ; 
 		                 
 		// number of objects in all tuple fields 
 		  
-		int 
-		nkey 
-		; 
+		int nkey ; 
 		                       
 		// number of keyframes 
 		  
-		int 
-		nmocap 
-		; 
+		int nmocap ; 
 		                     
 		// number of mocap bodies 
 		  
-		int 
-		nplugin 
-		; 
+		int nplugin ; 
 		                    
 		// number of plugin instances 
 		  
-		int 
-		npluginattr 
-		; 
+		int npluginattr ; 
 		                
 		// number of chars in all plugin config attributes 
 		  
-		int 
-		nuser_body 
-		; 
+		int nuser_body ; 
 		                 
 		// number of mjtNums in body_user 
 		  
-		int 
-		nuser_jnt 
-		; 
+		int nuser_jnt ; 
 		                  
 		// number of mjtNums in jnt_user 
 		  
-		int 
-		nuser_geom 
-		; 
+		int nuser_geom ; 
 		                 
 		// number of mjtNums in geom_user 
 		  
-		int 
-		nuser_site 
-		; 
+		int nuser_site ; 
 		                 
 		// number of mjtNums in site_user 
 		  
-		int 
-		nuser_cam 
-		; 
+		int nuser_cam ; 
 		                  
 		// number of mjtNums in cam_user 
 		  
-		int 
-		nuser_tendon 
-		; 
+		int nuser_tendon ; 
 		               
 		// number of mjtNums in tendon_user 
 		  
-		int 
-		nuser_actuator 
-		; 
+		int nuser_actuator ; 
 		             
 		// number of mjtNums in actuator_user 
 		  
-		int 
-		nuser_sensor 
-		; 
+		int nuser_sensor ; 
 		               
 		// number of mjtNums in sensor_user 
 		  
-		int 
-		nnames 
-		; 
+		int nnames ; 
 		                     
 		// number of chars in all names 
 		  
-		int 
-		nnames_map 
-		; 
+		int nnames_map ; 
 		                 
 		// number of slots in the names hash map 
 		  
-		int 
-		npaths 
-		; 
+		int npaths ; 
 		                     
 		// number of chars in all paths 
 		 
 		  
 		// sizes set after mjModel construction  ( only affect mjData )  
 		  
-		int 
-		nM 
-		; 
+		int nM ; 
 		                         
 		// number of non-zeros in sparse inertia matrix 
 		  
-		int 
-		nB 
-		; 
+		int nB ; 
 		                         
 		// number of non-zeros in sparse body-dof matrix 
 		  
-		int 
-		nC 
-		; 
+		int nC ; 
 		                         
 		// number of non-zeros in sparse reduced dof-dof matrix 
 		  
-		int 
-		nD 
-		; 
+		int nD ; 
 		                         
 		// number of non-zeros in sparse dof-dof matrix 
 		  
-		int 
-		ntree 
-		; 
+		int ntree ; 
 		                      
 		// number of kinematic trees under world body 
 		  
-		int 
-		ngravcomp 
-		; 
+		int ngravcomp ; 
 		                  
 		// number of bodies with nonzero gravcomp 
 		  
-		int 
-		nemax 
-		; 
+		int nemax ; 
 		                      
 		// number of potential equality-constraint rows 
 		  
-		int 
-		njmax 
-		; 
+		int njmax ; 
 		                      
 		// number of available rows in constraint Jacobian 
 		  
-		int 
-		nconmax 
-		; 
+		int nconmax ; 
 		                    
 		// number of potential contacts in contact list 
 		  
-		int 
-		nuserdata 
-		; 
+		int nuserdata ; 
 		                  
 		// number of mjtNums reserved for the user 
 		  
-		int 
-		nsensordata 
-		; 
+		int nsensordata ; 
 		                
 		// number of mjtNums in sensor data vector 
 		  
-		int 
-		npluginstate 
-		; 
+		int npluginstate ; 
 		               
 		// number of mjtNums in plugin state vector 
 		 
 		  
-		size_t 
-		narena 
-		; 
+		size_t narena ; 
 		                  
 		// number of bytes in the mjData arena  ( inclusive of stack )  
 		  
-		size_t 
-		nbuffer 
-		; 
+		size_t nbuffer ; 
 		                 
 		// number of bytes in buffer 
 		 
@@ -2487,21 +2216,15 @@
 		// ------------------------------- options and statistics 
 		 
 		  
-		mjOption 
-		opt 
-		; 
+		mjOption opt ; 
 		                   
 		// physics options 
 		  
-		mjVisual 
-		vis 
-		; 
+		mjVisual vis ; 
 		                   
 		// visualization options 
 		  
-		mjStatistic 
-		stat 
-		; 
+		mjStatistic stat ; 
 		               
 		// model statistics 
 		 
@@ -2511,2787 +2234,1632 @@
 		  
 		// main buffer 
 		  
-		void* 
-		    
-		buffer 
-		; 
+		void*     buffer ; 
 		               
 		// main buffer ;  all pointers point in it     ( nbuffer )  
 		 
 		  
 		// default generalized coordinates 
 		  
-		mjtNum* 
-		  
-		qpos0 
-		; 
+		mjtNum*   qpos0 ; 
 		                
 		// qpos values at default pose               ( nq x 1 )  
 		  
-		mjtNum* 
-		  
-		qpos_spring 
-		; 
+		mjtNum*   qpos_spring ; 
 		          
 		// reference pose for springs                ( nq x 1 )  
 		 
 		  
 		// bodies 
 		  
-		int* 
-		     
-		body_parentid 
-		; 
+		int*      body_parentid ; 
 		        
 		// id of body's parent                       ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_rootid 
-		; 
+		int*      body_rootid ; 
 		          
 		// id of root above body                     ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_weldid 
-		; 
+		int*      body_weldid ; 
 		          
 		// id of body that this body is welded to    ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_mocapid 
-		; 
+		int*      body_mocapid ; 
 		         
 		// id of mocap data ;  -1: none                ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_jntnum 
-		; 
+		int*      body_jntnum ; 
 		          
 		// number of joints for this body            ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_jntadr 
-		; 
+		int*      body_jntadr ; 
 		          
 		// start addr of joints ;  -1: no joints       ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_dofnum 
-		; 
+		int*      body_dofnum ; 
 		          
 		// number of motion degrees of freedom       ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_dofadr 
-		; 
+		int*      body_dofadr ; 
 		          
 		// start addr of dofs ;  -1: no dofs           ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_treeid 
-		; 
+		int*      body_treeid ; 
 		          
 		// id of body's kinematic tree ;  -1: static   ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_geomnum 
-		; 
+		int*      body_geomnum ; 
 		         
 		// number of geoms                           ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_geomadr 
-		; 
+		int*      body_geomadr ; 
 		         
 		// start addr of geoms ;  -1: no geoms         ( nbody x 1 )  
 		  
-		mjtByte* 
-		 
-		body_simple 
-		; 
+		mjtByte*  body_simple ; 
 		          
 		// 1: diag M ;  2: diag M ,  sliders only        ( nbody x 1 )  
 		  
-		mjtByte* 
-		 
-		body_sameframe 
-		; 
+		mjtByte*  body_sameframe ; 
 		       
 		// same frame as inertia  ( mjtSameframe )       ( nbody x 1 )  
 		  
-		mjtNum* 
-		  
-		body_pos 
-		; 
+		mjtNum*   body_pos ; 
 		             
 		// position offset rel. to parent body       ( nbody x 3 )  
 		  
-		mjtNum* 
-		  
-		body_quat 
-		; 
+		mjtNum*   body_quat ; 
 		            
 		// orientation offset rel. to parent body    ( nbody x 4 )  
 		  
-		mjtNum* 
-		  
-		body_ipos 
-		; 
+		mjtNum*   body_ipos ; 
 		            
 		// local position of center of mass          ( nbody x 3 )  
 		  
-		mjtNum* 
-		  
-		body_iquat 
-		; 
+		mjtNum*   body_iquat ; 
 		           
 		// local orientation of inertia ellipsoid    ( nbody x 4 )  
 		  
-		mjtNum* 
-		  
-		body_mass 
-		; 
+		mjtNum*   body_mass ; 
 		            
 		// mass                                      ( nbody x 1 )  
 		  
-		mjtNum* 
-		  
-		body_subtreemass 
-		; 
+		mjtNum*   body_subtreemass ; 
 		     
 		// mass of subtree starting at this body     ( nbody x 1 )  
 		  
-		mjtNum* 
-		  
-		body_inertia 
-		; 
+		mjtNum*   body_inertia ; 
 		         
 		// diagonal inertia in ipos/iquat frame      ( nbody x 3 )  
 		  
-		mjtNum* 
-		  
-		body_invweight0 
-		; 
+		mjtNum*   body_invweight0 ; 
 		      
 		// mean inv inert in qpos0  ( trn ,  rot )         ( nbody x 2 )  
 		  
-		mjtNum* 
-		  
-		body_gravcomp 
-		; 
+		mjtNum*   body_gravcomp ; 
 		        
 		// antigravity force ,  units of body weight   ( nbody x 1 )  
 		  
-		mjtNum* 
-		  
-		body_margin 
-		; 
+		mjtNum*   body_margin ; 
 		          
 		// MAX over all geom margins                 ( nbody x 1 )  
 		  
-		mjtNum* 
-		  
-		body_user 
-		; 
+		mjtNum*   body_user ; 
 		            
 		// user data                                 ( nbody x nuser_body )  
 		  
-		int* 
-		     
-		body_plugin 
-		; 
+		int*      body_plugin ; 
 		          
 		// plugin instance id ;  -1: not in use        ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_contype 
-		; 
+		int*      body_contype ; 
 		         
 		// OR over all geom contypes                 ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_conaffinity 
-		; 
+		int*      body_conaffinity ; 
 		     
 		// OR over all geom conaffinities            ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_bvhadr 
-		; 
+		int*      body_bvhadr ; 
 		          
 		// address of bvh root                       ( nbody x 1 )  
 		  
-		int* 
-		     
-		body_bvhnum 
-		; 
+		int*      body_bvhnum ; 
 		          
 		// number of bounding volumes                ( nbody x 1 )  
 		 
 		  
 		// bounding volume hierarchy 
 		  
-		int* 
-		     
-		bvh_depth 
-		; 
+		int*      bvh_depth ; 
 		            
 		// depth in the bounding volume hierarchy    ( nbvh x 1 )  
 		  
-		int* 
-		     
-		bvh_child 
-		; 
+		int*      bvh_child ; 
 		            
 		// left and right children in tree           ( nbvh x 2 )  
 		  
-		int* 
-		     
-		bvh_nodeid 
-		; 
+		int*      bvh_nodeid ; 
 		           
 		// geom or elem id of node ;  -1: non-leaf     ( nbvh x 1 )  
 		  
-		mjtNum* 
-		  
-		bvh_aabb 
-		; 
+		mjtNum*   bvh_aabb ; 
 		             
 		// local bounding box  ( center ,  size )          ( nbvhstatic x 6 )  
 		 
 		  
 		// joints 
 		  
-		int* 
-		     
-		jnt_type 
-		; 
+		int*      jnt_type ; 
 		             
 		// type of joint  ( mjtJoint )                   ( njnt x 1 )  
 		  
-		int* 
-		     
-		jnt_qposadr 
-		; 
+		int*      jnt_qposadr ; 
 		          
 		// start addr in 'qpos' for joint's data     ( njnt x 1 )  
 		  
-		int* 
-		     
-		jnt_dofadr 
-		; 
+		int*      jnt_dofadr ; 
 		           
 		// start addr in 'qvel' for joint's data     ( njnt x 1 )  
 		  
-		int* 
-		     
-		jnt_bodyid 
-		; 
+		int*      jnt_bodyid ; 
 		           
 		// id of joint's body                        ( njnt x 1 )  
 		  
-		int* 
-		     
-		jnt_group 
-		; 
+		int*      jnt_group ; 
 		            
 		// group for visibility                      ( njnt x 1 )  
 		  
-		mjtByte* 
-		 
-		jnt_limited 
-		; 
+		mjtByte*  jnt_limited ; 
 		          
 		// does joint have limits                    ( njnt x 1 )  
 		  
-		mjtByte* 
-		 
-		jnt_actfrclimited 
-		; 
+		mjtByte*  jnt_actfrclimited ; 
 		    
 		// does joint have actuator force limits     ( njnt x 1 )  
 		  
-		mjtByte* 
-		 
-		jnt_actgravcomp 
-		; 
+		mjtByte*  jnt_actgravcomp ; 
 		      
 		// is gravcomp force applied via actuators   ( njnt x 1 )  
 		  
-		mjtNum* 
-		  
-		jnt_solref 
-		; 
+		mjtNum*   jnt_solref ; 
 		           
 		// constraint solver reference: limit        ( njnt x mjNREF )  
 		  
-		mjtNum* 
-		  
-		jnt_solimp 
-		; 
+		mjtNum*   jnt_solimp ; 
 		           
 		// constraint solver impedance: limit        ( njnt x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		jnt_pos 
-		; 
+		mjtNum*   jnt_pos ; 
 		              
 		// local anchor position                     ( njnt x 3 )  
 		  
-		mjtNum* 
-		  
-		jnt_axis 
-		; 
+		mjtNum*   jnt_axis ; 
 		             
 		// local joint axis                          ( njnt x 3 )  
 		  
-		mjtNum* 
-		  
-		jnt_stiffness 
-		; 
+		mjtNum*   jnt_stiffness ; 
 		        
 		// stiffness coefficient                     ( njnt x 1 )  
 		  
-		mjtNum* 
-		  
-		jnt_range 
-		; 
+		mjtNum*   jnt_range ; 
 		            
 		// joint limits                              ( njnt x 2 )  
 		  
-		mjtNum* 
-		  
-		jnt_actfrcrange 
-		; 
+		mjtNum*   jnt_actfrcrange ; 
 		      
 		// range of total actuator force             ( njnt x 2 )  
 		  
-		mjtNum* 
-		  
-		jnt_margin 
-		; 
+		mjtNum*   jnt_margin ; 
 		           
 		// min distance for limit detection          ( njnt x 1 )  
 		  
-		mjtNum* 
-		  
-		jnt_user 
-		; 
+		mjtNum*   jnt_user ; 
 		             
 		// user data                                 ( njnt x nuser_jnt )  
 		 
 		  
 		// dofs 
 		  
-		int* 
-		     
-		dof_bodyid 
-		; 
+		int*      dof_bodyid ; 
 		           
 		// id of dof's body                          ( nv x 1 )  
 		  
-		int* 
-		     
-		dof_jntid 
-		; 
+		int*      dof_jntid ; 
 		            
 		// id of dof's joint                         ( nv x 1 )  
 		  
-		int* 
-		     
-		dof_parentid 
-		; 
+		int*      dof_parentid ; 
 		         
 		// id of dof's parent ;  -1: none              ( nv x 1 )  
 		  
-		int* 
-		     
-		dof_treeid 
-		; 
+		int*      dof_treeid ; 
 		           
 		// id of dof's kinematic tree                ( nv x 1 )  
 		  
-		int* 
-		     
-		dof_Madr 
-		; 
+		int*      dof_Madr ; 
 		             
 		// dof address in M-diagonal                 ( nv x 1 )  
 		  
-		int* 
-		     
-		dof_simplenum 
-		; 
+		int*      dof_simplenum ; 
 		        
 		// number of consecutive simple dofs         ( nv x 1 )  
 		  
-		mjtNum* 
-		  
-		dof_solref 
-		; 
+		mjtNum*   dof_solref ; 
 		           
 		// constraint solver reference:frictionloss  ( nv x mjNREF )  
 		  
-		mjtNum* 
-		  
-		dof_solimp 
-		; 
+		mjtNum*   dof_solimp ; 
 		           
 		// constraint solver impedance:frictionloss  ( nv x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		dof_frictionloss 
-		; 
+		mjtNum*   dof_frictionloss ; 
 		     
 		// dof friction loss                         ( nv x 1 )  
 		  
-		mjtNum* 
-		  
-		dof_armature 
-		; 
+		mjtNum*   dof_armature ; 
 		         
 		// dof armature inertia/mass                 ( nv x 1 )  
 		  
-		mjtNum* 
-		  
-		dof_damping 
-		; 
+		mjtNum*   dof_damping ; 
 		          
 		// damping coefficient                       ( nv x 1 )  
 		  
-		mjtNum* 
-		  
-		dof_invweight0 
-		; 
+		mjtNum*   dof_invweight0 ; 
 		       
 		// diag. inverse inertia in qpos0            ( nv x 1 )  
 		  
-		mjtNum* 
-		  
-		dof_M0 
-		; 
+		mjtNum*   dof_M0 ; 
 		               
 		// diag. inertia in qpos0                    ( nv x 1 )  
 		 
 		  
 		// geoms 
 		  
-		int* 
-		     
-		geom_type 
-		; 
+		int*      geom_type ; 
 		            
 		// geometric type  ( mjtGeom )                   ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_contype 
-		; 
+		int*      geom_contype ; 
 		         
 		// geom contact type                         ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_conaffinity 
-		; 
+		int*      geom_conaffinity ; 
 		     
 		// geom contact affinity                     ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_condim 
-		; 
+		int*      geom_condim ; 
 		          
 		// contact dimensionality  ( 1 ,  3 ,  4 ,  6 )        ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_bodyid 
-		; 
+		int*      geom_bodyid ; 
 		          
 		// id of geom's body                         ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_dataid 
-		; 
+		int*      geom_dataid ; 
 		          
 		// id of geom's mesh/hfield ;  -1: none        ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_matid 
-		; 
+		int*      geom_matid ; 
 		           
 		// material id for rendering ;  -1: none       ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_group 
-		; 
+		int*      geom_group ; 
 		           
 		// group for visibility                      ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_priority 
-		; 
+		int*      geom_priority ; 
 		        
 		// geom contact priority                     ( ngeom x 1 )  
 		  
-		int* 
-		     
-		geom_plugin 
-		; 
+		int*      geom_plugin ; 
 		          
 		// plugin instance id ;  -1: not in use        ( ngeom x 1 )  
 		  
-		mjtByte* 
-		 
-		geom_sameframe 
-		; 
+		mjtByte*  geom_sameframe ; 
 		       
 		// same frame as body  ( mjtSameframe )          ( ngeom x 1 )  
 		  
-		mjtNum* 
-		  
-		geom_solmix 
-		; 
+		mjtNum*   geom_solmix ; 
 		          
 		// mixing coef for solref/imp in geom pair   ( ngeom x 1 )  
 		  
-		mjtNum* 
-		  
-		geom_solref 
-		; 
+		mjtNum*   geom_solref ; 
 		          
 		// constraint solver reference: contact      ( ngeom x mjNREF )  
 		  
-		mjtNum* 
-		  
-		geom_solimp 
-		; 
+		mjtNum*   geom_solimp ; 
 		          
 		// constraint solver impedance: contact      ( ngeom x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		geom_size 
-		; 
+		mjtNum*   geom_size ; 
 		            
 		// geom-specific size parameters             ( ngeom x 3 )  
 		  
-		mjtNum* 
-		  
-		geom_aabb 
-		; 
+		mjtNum*   geom_aabb ; 
 		            
 		// bounding box ,   ( center ,  size )               ( ngeom x 6 )  
 		  
-		mjtNum* 
-		  
-		geom_rbound 
-		; 
+		mjtNum*   geom_rbound ; 
 		          
 		// radius of bounding sphere                 ( ngeom x 1 )  
 		  
-		mjtNum* 
-		  
-		geom_pos 
-		; 
+		mjtNum*   geom_pos ; 
 		             
 		// local position offset rel. to body        ( ngeom x 3 )  
 		  
-		mjtNum* 
-		  
-		geom_quat 
-		; 
+		mjtNum*   geom_quat ; 
 		            
 		// local orientation offset rel. to body     ( ngeom x 4 )  
 		  
-		mjtNum* 
-		  
-		geom_friction 
-		; 
+		mjtNum*   geom_friction ; 
 		        
 		// friction for  ( slide ,  spin ,  roll )           ( ngeom x 3 )  
 		  
-		mjtNum* 
-		  
-		geom_margin 
-		; 
+		mjtNum*   geom_margin ; 
 		          
 		// detect contact if dist<margin             ( ngeom x 1 )  
 		  
-		mjtNum* 
-		  
-		geom_gap 
-		; 
+		mjtNum*   geom_gap ; 
 		             
 		// include in solver if dist<margin-gap      ( ngeom x 1 )  
 		  
-		mjtNum* 
-		  
-		geom_fluid 
-		; 
+		mjtNum*   geom_fluid ; 
 		           
 		// fluid interaction parameters              ( ngeom x mjNFLUID )  
 		  
-		mjtNum* 
-		  
-		geom_user 
-		; 
+		mjtNum*   geom_user ; 
 		            
 		// user data                                 ( ngeom x nuser_geom )  
 		  
-		float* 
-		   
-		geom_rgba 
-		; 
+		float*    geom_rgba ; 
 		            
 		// rgba when material is omitted             ( ngeom x 4 )  
 		 
 		  
 		// sites 
 		  
-		int* 
-		     
-		site_type 
-		; 
+		int*      site_type ; 
 		            
 		// geom type for rendering  ( mjtGeom )          ( nsite x 1 )  
 		  
-		int* 
-		     
-		site_bodyid 
-		; 
+		int*      site_bodyid ; 
 		          
 		// id of site's body                         ( nsite x 1 )  
 		  
-		int* 
-		     
-		site_matid 
-		; 
+		int*      site_matid ; 
 		           
 		// material id for rendering ;  -1: none       ( nsite x 1 )  
 		  
-		int* 
-		     
-		site_group 
-		; 
+		int*      site_group ; 
 		           
 		// group for visibility                      ( nsite x 1 )  
 		  
-		mjtByte* 
-		 
-		site_sameframe 
-		; 
+		mjtByte*  site_sameframe ; 
 		       
 		// same frame as body  ( mjtSameframe )          ( nsite x 1 )  
 		  
-		mjtNum* 
-		  
-		site_size 
-		; 
+		mjtNum*   site_size ; 
 		            
 		// geom size for rendering                   ( nsite x 3 )  
 		  
-		mjtNum* 
-		  
-		site_pos 
-		; 
+		mjtNum*   site_pos ; 
 		             
 		// local position offset rel. to body        ( nsite x 3 )  
 		  
-		mjtNum* 
-		  
-		site_quat 
-		; 
+		mjtNum*   site_quat ; 
 		            
 		// local orientation offset rel. to body     ( nsite x 4 )  
 		  
-		mjtNum* 
-		  
-		site_user 
-		; 
+		mjtNum*   site_user ; 
 		            
 		// user data                                 ( nsite x nuser_site )  
 		  
-		float* 
-		   
-		site_rgba 
-		; 
+		float*    site_rgba ; 
 		            
 		// rgba when material is omitted             ( nsite x 4 )  
 		 
 		  
 		// cameras 
 		  
-		int* 
-		     
-		cam_mode 
-		; 
+		int*      cam_mode ; 
 		             
 		// camera tracking mode  ( mjtCamLight )         ( ncam x 1 )  
 		  
-		int* 
-		     
-		cam_bodyid 
-		; 
+		int*      cam_bodyid ; 
 		           
 		// id of camera's body                       ( ncam x 1 )  
 		  
-		int* 
-		     
-		cam_targetbodyid 
-		; 
+		int*      cam_targetbodyid ; 
 		     
 		// id of targeted body ;  -1: none             ( ncam x 1 )  
 		  
-		mjtNum* 
-		  
-		cam_pos 
-		; 
+		mjtNum*   cam_pos ; 
 		              
 		// position rel. to body frame               ( ncam x 3 )  
 		  
-		mjtNum* 
-		  
-		cam_quat 
-		; 
+		mjtNum*   cam_quat ; 
 		             
 		// orientation rel. to body frame            ( ncam x 4 )  
 		  
-		mjtNum* 
-		  
-		cam_poscom0 
-		; 
+		mjtNum*   cam_poscom0 ; 
 		          
 		// global position rel. to sub-com in qpos0  ( ncam x 3 )  
 		  
-		mjtNum* 
-		  
-		cam_pos0 
-		; 
+		mjtNum*   cam_pos0 ; 
 		             
 		// global position rel. to body in qpos0     ( ncam x 3 )  
 		  
-		mjtNum* 
-		  
-		cam_mat0 
-		; 
+		mjtNum*   cam_mat0 ; 
 		             
 		// global orientation in qpos0               ( ncam x 9 )  
 		  
-		int* 
-		     
-		cam_orthographic 
-		; 
+		int*      cam_orthographic ; 
 		     
 		// orthographic camera ;  0: no ,  1: yes        ( ncam x 1 )  
 		  
-		mjtNum* 
-		  
-		cam_fovy 
-		; 
+		mjtNum*   cam_fovy ; 
 		             
 		// y field-of-view  ( ortho ? len : deg )        ( ncam x 1 )  
 		  
-		mjtNum* 
-		  
-		cam_ipd 
-		; 
+		mjtNum*   cam_ipd ; 
 		              
 		// inter-pupilary distance                   ( ncam x 1 )  
 		  
-		int* 
-		     
-		cam_resolution 
-		; 
+		int*      cam_resolution ; 
 		       
 		// resolution: pixels [width ,  height]        ( ncam x 2 )  
 		  
-		float* 
-		   
-		cam_sensorsize 
-		; 
+		float*    cam_sensorsize ; 
 		       
 		// sensor size: length [width ,  height]       ( ncam x 2 )  
 		  
-		float* 
-		   
-		cam_intrinsic 
-		; 
+		float*    cam_intrinsic ; 
 		        
 		// [focal length ;  principal point]           ( ncam x 4 )  
 		  
-		mjtNum* 
-		  
-		cam_user 
-		; 
+		mjtNum*   cam_user ; 
 		             
 		// user data                                 ( ncam x nuser_cam )  
 		 
 		  
 		// lights 
 		  
-		int* 
-		     
-		light_mode 
-		; 
+		int*      light_mode ; 
 		           
 		// light tracking mode  ( mjtCamLight )          ( nlight x 1 )  
 		  
-		int* 
-		     
-		light_bodyid 
-		; 
+		int*      light_bodyid ; 
 		         
 		// id of light's body                        ( nlight x 1 )  
 		  
-		int* 
-		     
-		light_targetbodyid 
-		; 
+		int*      light_targetbodyid ; 
 		   
 		// id of targeted body ;  -1: none             ( nlight x 1 )  
 		  
-		mjtByte* 
-		 
-		light_directional 
-		; 
+		mjtByte*  light_directional ; 
 		    
 		// directional light                         ( nlight x 1 )  
 		  
-		mjtByte* 
-		 
-		light_castshadow 
-		; 
+		mjtByte*  light_castshadow ; 
 		     
 		// does light cast shadows                   ( nlight x 1 )  
 		  
-		float* 
-		   
-		light_bulbradius 
-		; 
+		float*    light_bulbradius ; 
 		     
 		// light radius for soft shadows             ( nlight x 1 )  
 		  
-		mjtByte* 
-		 
-		light_active 
-		; 
+		mjtByte*  light_active ; 
 		         
 		// is light on                               ( nlight x 1 )  
 		  
-		mjtNum* 
-		  
-		light_pos 
-		; 
+		mjtNum*   light_pos ; 
 		            
 		// position rel. to body frame               ( nlight x 3 )  
 		  
-		mjtNum* 
-		  
-		light_dir 
-		; 
+		mjtNum*   light_dir ; 
 		            
 		// direction rel. to body frame              ( nlight x 3 )  
 		  
-		mjtNum* 
-		  
-		light_poscom0 
-		; 
+		mjtNum*   light_poscom0 ; 
 		        
 		// global position rel. to sub-com in qpos0  ( nlight x 3 )  
 		  
-		mjtNum* 
-		  
-		light_pos0 
-		; 
+		mjtNum*   light_pos0 ; 
 		           
 		// global position rel. to body in qpos0     ( nlight x 3 )  
 		  
-		mjtNum* 
-		  
-		light_dir0 
-		; 
+		mjtNum*   light_dir0 ; 
 		           
 		// global direction in qpos0                 ( nlight x 3 )  
 		  
-		float* 
-		   
-		light_attenuation 
-		; 
+		float*    light_attenuation ; 
 		    
 		// OpenGL attenuation  ( quadratic model )       ( nlight x 3 )  
 		  
-		float* 
-		   
-		light_cutoff 
-		; 
+		float*    light_cutoff ; 
 		         
 		// OpenGL cutoff                             ( nlight x 1 )  
 		  
-		float* 
-		   
-		light_exponent 
-		; 
+		float*    light_exponent ; 
 		       
 		// OpenGL exponent                           ( nlight x 1 )  
 		  
-		float* 
-		   
-		light_ambient 
-		; 
+		float*    light_ambient ; 
 		        
 		// ambient rgb  ( alpha=1 )                      ( nlight x 3 )  
 		  
-		float* 
-		   
-		light_diffuse 
-		; 
+		float*    light_diffuse ; 
 		        
 		// diffuse rgb  ( alpha=1 )                      ( nlight x 3 )  
 		  
-		float* 
-		   
-		light_specular 
-		; 
+		float*    light_specular ; 
 		       
 		// specular rgb  ( alpha=1 )                     ( nlight x 3 )  
 		 
 		  
 		// flexes: contact properties 
 		  
-		int* 
-		     
-		flex_contype 
-		; 
+		int*      flex_contype ; 
 		         
 		// flex contact type                         ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_conaffinity 
-		; 
+		int*      flex_conaffinity ; 
 		     
 		// flex contact affinity                     ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_condim 
-		; 
+		int*      flex_condim ; 
 		          
 		// contact dimensionality  ( 1 ,  3 ,  4 ,  6 )        ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_priority 
-		; 
+		int*      flex_priority ; 
 		        
 		// flex contact priority                     ( nflex x 1 )  
 		  
-		mjtNum* 
-		  
-		flex_solmix 
-		; 
+		mjtNum*   flex_solmix ; 
 		          
 		// mix coef for solref/imp in contact pair   ( nflex x 1 )  
 		  
-		mjtNum* 
-		  
-		flex_solref 
-		; 
+		mjtNum*   flex_solref ; 
 		          
 		// constraint solver reference: contact      ( nflex x mjNREF )  
 		  
-		mjtNum* 
-		  
-		flex_solimp 
-		; 
+		mjtNum*   flex_solimp ; 
 		          
 		// constraint solver impedance: contact      ( nflex x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		flex_friction 
-		; 
+		mjtNum*   flex_friction ; 
 		        
 		// friction for  ( slide ,  spin ,  roll )           ( nflex x 3 )  
 		  
-		mjtNum* 
-		  
-		flex_margin 
-		; 
+		mjtNum*   flex_margin ; 
 		          
 		// detect contact if dist<margin             ( nflex x 1 )  
 		  
-		mjtNum* 
-		  
-		flex_gap 
-		; 
+		mjtNum*   flex_gap ; 
 		             
 		// include in solver if dist<margin-gap      ( nflex x 1 )  
 		  
-		mjtByte* 
-		 
-		flex_internal 
-		; 
+		mjtByte*  flex_internal ; 
 		        
 		// internal flex collision enabled           ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_selfcollide 
-		; 
+		int*      flex_selfcollide ; 
 		     
 		// self collision mode  ( mjtFlexSelf )          ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_activelayers 
-		; 
+		int*      flex_activelayers ; 
 		    
 		// number of active element layers ,  3D only  ( nflex x 1 )  
 		 
 		  
 		// flexes: other properties 
 		  
-		int* 
-		     
-		flex_dim 
-		; 
+		int*      flex_dim ; 
 		             
 		// 1: lines ,  2: triangles ,  3: tetrahedra     ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_matid 
-		; 
+		int*      flex_matid ; 
 		           
 		// material id for rendering                 ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_group 
-		; 
+		int*      flex_group ; 
 		           
 		// group for visibility                      ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_vertadr 
-		; 
+		int*      flex_vertadr ; 
 		         
 		// first vertex address                      ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_vertnum 
-		; 
+		int*      flex_vertnum ; 
 		         
 		// number of vertices                        ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_edgeadr 
-		; 
+		int*      flex_edgeadr ; 
 		         
 		// first edge address                        ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_edgenum 
-		; 
+		int*      flex_edgenum ; 
 		         
 		// number of edges                           ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_elemadr 
-		; 
+		int*      flex_elemadr ; 
 		         
 		// first element address                     ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_elemnum 
-		; 
+		int*      flex_elemnum ; 
 		         
 		// number of elements                        ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_elemdataadr 
-		; 
+		int*      flex_elemdataadr ; 
 		     
 		// first element vertex id address           ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_elemedgeadr 
-		; 
+		int*      flex_elemedgeadr ; 
 		     
 		// first element edge id address             ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_shellnum 
-		; 
+		int*      flex_shellnum ; 
 		        
 		// number of shells                          ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_shelldataadr 
-		; 
+		int*      flex_shelldataadr ; 
 		    
 		// first shell data address                  ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_evpairadr 
-		; 
+		int*      flex_evpairadr ; 
 		       
 		// first evpair address                      ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_evpairnum 
-		; 
+		int*      flex_evpairnum ; 
 		       
 		// number of evpairs                         ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_texcoordadr 
-		; 
+		int*      flex_texcoordadr ; 
 		     
 		// address in flex_texcoord ;  -1: none        ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_vertbodyid 
-		; 
+		int*      flex_vertbodyid ; 
 		      
 		// vertex body ids                           ( nflexvert x 1 )  
 		  
-		int* 
-		     
-		flex_edge 
-		; 
+		int*      flex_edge ; 
 		            
 		// edge vertex ids  ( 2 per edge )               ( nflexedge x 2 )  
 		  
-		int* 
-		     
-		flex_elem 
-		; 
+		int*      flex_elem ; 
 		            
 		// element vertex ids  ( dim+1 per elem )        ( nflexelemdata x 1 )  
 		  
-		int* 
-		     
-		flex_elemedge 
-		; 
+		int*      flex_elemedge ; 
 		        
 		// element edge ids                          ( nflexelemedge x 1 )  
 		  
-		int* 
-		     
-		flex_elemlayer 
-		; 
+		int*      flex_elemlayer ; 
 		       
 		// element distance from surface ,  3D only    ( nflexelem x 1 )  
 		  
-		int* 
-		     
-		flex_shell 
-		; 
+		int*      flex_shell ; 
 		           
 		// shell fragment vertex ids  ( dim per frag )   ( nflexshelldata x 1 )  
 		  
-		int* 
-		     
-		flex_evpair 
-		; 
+		int*      flex_evpair ; 
 		          
 		//  ( element ,  vertex )  collision pairs         ( nflexevpair x 2 )  
 		  
-		mjtNum* 
-		  
-		flex_vert 
-		; 
+		mjtNum*   flex_vert ; 
 		            
 		// vertex positions in local body frames     ( nflexvert x 3 )  
 		  
-		mjtNum* 
-		  
-		flex_xvert0 
-		; 
+		mjtNum*   flex_xvert0 ; 
 		          
 		// Cartesian vertex positions in qpos0       ( nflexvert x 3 )  
 		  
-		mjtNum* 
-		  
-		flexedge_length0 
-		; 
+		mjtNum*   flexedge_length0 ; 
 		     
 		// edge lengths in qpos0                     ( nflexedge x 1 )  
 		  
-		mjtNum* 
-		  
-		flexedge_invweight0 
-		; 
+		mjtNum*   flexedge_invweight0 ; 
 		  
 		// edge inv. weight in qpos0                 ( nflexedge x 1 )  
 		  
-		mjtNum* 
-		  
-		flex_radius 
-		; 
+		mjtNum*   flex_radius ; 
 		          
 		// radius around primitive element           ( nflex x 1 )  
 		  
-		mjtNum* 
-		  
-		flex_stiffness 
-		; 
+		mjtNum*   flex_stiffness ; 
 		       
 		// finite element stiffness matrix           ( nflexelem x 21 )  
 		  
-		mjtNum* 
-		  
-		flex_damping 
-		; 
+		mjtNum*   flex_damping ; 
 		         
 		// Rayleigh's damping coefficient            ( nflex x 1 )  
 		  
-		mjtNum* 
-		  
-		flex_edgestiffness 
-		; 
+		mjtNum*   flex_edgestiffness ; 
 		   
 		// edge stiffness                            ( nflex x 1 )  
 		  
-		mjtNum* 
-		  
-		flex_edgedamping 
-		; 
+		mjtNum*   flex_edgedamping ; 
 		     
 		// edge damping                              ( nflex x 1 )  
 		  
-		mjtByte* 
-		 
-		flex_edgeequality 
-		; 
+		mjtByte*  flex_edgeequality ; 
 		    
 		// is edge equality constraint defined       ( nflex x 1 )  
 		  
-		mjtByte* 
-		 
-		flex_rigid 
-		; 
+		mjtByte*  flex_rigid ; 
 		           
 		// are all verices in the same body          ( nflex x 1 )  
 		  
-		mjtByte* 
-		 
-		flexedge_rigid 
-		; 
+		mjtByte*  flexedge_rigid ; 
 		       
 		// are both edge vertices in same body       ( nflexedge x 1 )  
 		  
-		mjtByte* 
-		 
-		flex_centered 
-		; 
+		mjtByte*  flex_centered ; 
 		        
 		// are all vertex coordinates  ( 0 , 0 , 0 )         ( nflex x 1 )  
 		  
-		mjtByte* 
-		 
-		flex_flatskin 
-		; 
+		mjtByte*  flex_flatskin ; 
 		        
 		// render flex skin with flat shading        ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_bvhadr 
-		; 
+		int*      flex_bvhadr ; 
 		          
 		// address of bvh root ;  -1: no bvh           ( nflex x 1 )  
 		  
-		int* 
-		     
-		flex_bvhnum 
-		; 
+		int*      flex_bvhnum ; 
 		          
 		// number of bounding volumes                ( nflex x 1 )  
 		  
-		float* 
-		   
-		flex_rgba 
-		; 
+		float*    flex_rgba ; 
 		            
 		// rgba when material is omitted             ( nflex x 4 )  
 		  
-		float* 
-		   
-		flex_texcoord 
-		; 
+		float*    flex_texcoord ; 
 		        
 		// vertex texture coordinates                ( nflextexcoord x 2 )  
 		 
 		  
 		// meshes 
 		  
-		int* 
-		     
-		mesh_vertadr 
-		; 
+		int*      mesh_vertadr ; 
 		         
 		// first vertex address                      ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_vertnum 
-		; 
+		int*      mesh_vertnum ; 
 		         
 		// number of vertices                        ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_faceadr 
-		; 
+		int*      mesh_faceadr ; 
 		         
 		// first face address                        ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_facenum 
-		; 
+		int*      mesh_facenum ; 
 		         
 		// number of faces                           ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_bvhadr 
-		; 
+		int*      mesh_bvhadr ; 
 		          
 		// address of bvh root                       ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_bvhnum 
-		; 
+		int*      mesh_bvhnum ; 
 		          
 		// number of bvh                             ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_normaladr 
-		; 
+		int*      mesh_normaladr ; 
 		       
 		// first normal address                      ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_normalnum 
-		; 
+		int*      mesh_normalnum ; 
 		       
 		// number of normals                         ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_texcoordadr 
-		; 
+		int*      mesh_texcoordadr ; 
 		     
 		// texcoord data address ;  -1: no texcoord    ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_texcoordnum 
-		; 
+		int*      mesh_texcoordnum ; 
 		     
 		// number of texcoord                        ( nmesh x 1 )  
 		  
-		int* 
-		     
-		mesh_graphadr 
-		; 
+		int*      mesh_graphadr ; 
 		        
 		// graph data address ;  -1: no graph          ( nmesh x 1 )  
 		  
-		float* 
-		   
-		mesh_vert 
-		; 
+		float*    mesh_vert ; 
 		            
 		// vertex positions for all meshes           ( nmeshvert x 3 )  
 		  
-		float* 
-		   
-		mesh_normal 
-		; 
+		float*    mesh_normal ; 
 		          
 		// normals for all meshes                    ( nmeshnormal x 3 )  
 		  
-		float* 
-		   
-		mesh_texcoord 
-		; 
+		float*    mesh_texcoord ; 
 		        
 		// vertex texcoords for all meshes           ( nmeshtexcoord x 2 )  
 		  
-		int* 
-		     
-		mesh_face 
-		; 
+		int*      mesh_face ; 
 		            
 		// vertex face data                          ( nmeshface x 3 )  
 		  
-		int* 
-		     
-		mesh_facenormal 
-		; 
+		int*      mesh_facenormal ; 
 		      
 		// normal face data                          ( nmeshface x 3 )  
 		  
-		int* 
-		     
-		mesh_facetexcoord 
-		; 
+		int*      mesh_facetexcoord ; 
 		    
 		// texture face data                         ( nmeshface x 3 )  
 		  
-		int* 
-		     
-		mesh_graph 
-		; 
+		int*      mesh_graph ; 
 		           
 		// convex graph data                         ( nmeshgraph x 1 )  
 		  
-		mjtNum* 
-		  
-		mesh_scale 
-		; 
+		mjtNum*   mesh_scale ; 
 		           
 		// scaling applied to asset vertices         ( nmesh x 3 )  
 		  
-		mjtNum* 
-		  
-		mesh_pos 
-		; 
+		mjtNum*   mesh_pos ; 
 		             
 		// translation applied to asset vertices     ( nmesh x 3 )  
 		  
-		mjtNum* 
-		  
-		mesh_quat 
-		; 
+		mjtNum*   mesh_quat ; 
 		            
 		// rotation applied to asset vertices        ( nmesh x 4 )  
 		  
-		int* 
-		     
-		mesh_pathadr 
-		; 
+		int*      mesh_pathadr ; 
 		         
 		// address of asset path for mesh ;  -1: none  ( nmesh x 1 )  
 		 
 		  
 		// skins 
 		  
-		int* 
-		     
-		skin_matid 
-		; 
+		int*      skin_matid ; 
 		           
 		// skin material id ;  -1: none                ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_group 
-		; 
+		int*      skin_group ; 
 		           
 		// group for visibility                      ( nskin x 1 )  
 		  
-		float* 
-		   
-		skin_rgba 
-		; 
+		float*    skin_rgba ; 
 		            
 		// skin rgba                                 ( nskin x 4 )  
 		  
-		float* 
-		   
-		skin_inflate 
-		; 
+		float*    skin_inflate ; 
 		         
 		// inflate skin in normal direction          ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_vertadr 
-		; 
+		int*      skin_vertadr ; 
 		         
 		// first vertex address                      ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_vertnum 
-		; 
+		int*      skin_vertnum ; 
 		         
 		// number of vertices                        ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_texcoordadr 
-		; 
+		int*      skin_texcoordadr ; 
 		     
 		// texcoord data address ;  -1: no texcoord    ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_faceadr 
-		; 
+		int*      skin_faceadr ; 
 		         
 		// first face address                        ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_facenum 
-		; 
+		int*      skin_facenum ; 
 		         
 		// number of faces                           ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_boneadr 
-		; 
+		int*      skin_boneadr ; 
 		         
 		// first bone in skin                        ( nskin x 1 )  
 		  
-		int* 
-		     
-		skin_bonenum 
-		; 
+		int*      skin_bonenum ; 
 		         
 		// number of bones in skin                   ( nskin x 1 )  
 		  
-		float* 
-		   
-		skin_vert 
-		; 
+		float*    skin_vert ; 
 		            
 		// vertex positions for all skin meshes      ( nskinvert x 3 )  
 		  
-		float* 
-		   
-		skin_texcoord 
-		; 
+		float*    skin_texcoord ; 
 		        
 		// vertex texcoords for all skin meshes      ( nskintexvert x 2 )  
 		  
-		int* 
-		     
-		skin_face 
-		; 
+		int*      skin_face ; 
 		            
 		// triangle faces for all skin meshes        ( nskinface x 3 )  
 		  
-		int* 
-		     
-		skin_bonevertadr 
-		; 
+		int*      skin_bonevertadr ; 
 		     
 		// first vertex in each bone                 ( nskinbone x 1 )  
 		  
-		int* 
-		     
-		skin_bonevertnum 
-		; 
+		int*      skin_bonevertnum ; 
 		     
 		// number of vertices in each bone           ( nskinbone x 1 )  
 		  
-		float* 
-		   
-		skin_bonebindpos 
-		; 
+		float*    skin_bonebindpos ; 
 		     
 		// bind pos of each bone                     ( nskinbone x 3 )  
 		  
-		float* 
-		   
-		skin_bonebindquat 
-		; 
+		float*    skin_bonebindquat ; 
 		    
 		// bind quat of each bone                    ( nskinbone x 4 )  
 		  
-		int* 
-		     
-		skin_bonebodyid 
-		; 
+		int*      skin_bonebodyid ; 
 		      
 		// body id of each bone                      ( nskinbone x 1 )  
 		  
-		int* 
-		     
-		skin_bonevertid 
-		; 
+		int*      skin_bonevertid ; 
 		      
 		// mesh ids of vertices in each bone         ( nskinbonevert x 1 )  
 		  
-		float* 
-		   
-		skin_bonevertweight 
-		; 
+		float*    skin_bonevertweight ; 
 		  
 		// weights of vertices in each bone          ( nskinbonevert x 1 )  
 		  
-		int* 
-		     
-		skin_pathadr 
-		; 
+		int*      skin_pathadr ; 
 		         
 		// address of asset path for skin ;  -1: none  ( nskin x 1 )  
 		 
 		  
 		// height fields 
 		  
-		mjtNum* 
-		  
-		hfield_size 
-		; 
+		mjtNum*   hfield_size ; 
 		          
 		//  ( x ,  y ,  z_top ,  z_bottom )                    ( nhfield x 4 )  
 		  
-		int* 
-		     
-		hfield_nrow 
-		; 
+		int*      hfield_nrow ; 
 		          
 		// number of rows in grid                    ( nhfield x 1 )  
 		  
-		int* 
-		     
-		hfield_ncol 
-		; 
+		int*      hfield_ncol ; 
 		          
 		// number of columns in grid                 ( nhfield x 1 )  
 		  
-		int* 
-		     
-		hfield_adr 
-		; 
+		int*      hfield_adr ; 
 		           
 		// address in hfield_data                    ( nhfield x 1 )  
 		  
-		float* 
-		   
-		hfield_data 
-		; 
+		float*    hfield_data ; 
 		          
 		// elevation data                            ( nhfielddata x 1 )  
 		  
-		int* 
-		     
-		hfield_pathadr 
-		; 
+		int*      hfield_pathadr ; 
 		       
 		// address of hfield asset path ;  -1: none    ( nhfield x 1 )  
 		 
 		  
 		// textures 
 		  
-		int* 
-		     
-		tex_type 
-		; 
+		int*      tex_type ; 
 		             
 		// texture type  ( mjtTexture )                  ( ntex x 1 )  
 		  
-		int* 
-		     
-		tex_height 
-		; 
+		int*      tex_height ; 
 		           
 		// number of rows in texture image           ( ntex x 1 )  
 		  
-		int* 
-		     
-		tex_width 
-		; 
+		int*      tex_width ; 
 		            
 		// number of columns in texture image        ( ntex x 1 )  
 		  
-		int* 
-		     
-		tex_nchannel 
-		; 
+		int*      tex_nchannel ; 
 		         
 		// number of channels in texture image       ( ntex x 1 )  
 		  
-		int* 
-		     
-		tex_adr 
-		; 
+		int*      tex_adr ; 
 		              
 		// start address in tex_data                 ( ntex x 1 )  
 		  
-		mjtByte* 
-		 
-		tex_data 
-		; 
+		mjtByte*  tex_data ; 
 		             
 		// pixel values                              ( ntexdata x 1 )  
 		  
-		int* 
-		     
-		tex_pathadr 
-		; 
+		int*      tex_pathadr ; 
 		          
 		// address of texture asset path ;  -1: none   ( ntex x 1 )  
 		 
 		  
 		// materials 
 		  
-		int* 
-		     
-		mat_texid 
-		; 
+		int*      mat_texid ; 
 		            
 		// indices of textures ;  -1: none             ( nmat x mjNTEXROLE )  
 		  
-		mjtByte* 
-		 
-		mat_texuniform 
-		; 
+		mjtByte*  mat_texuniform ; 
 		       
 		// make texture cube uniform                 ( nmat x 1 )  
 		  
-		float* 
-		   
-		mat_texrepeat 
-		; 
+		float*    mat_texrepeat ; 
 		        
 		// texture repetition for 2d mapping         ( nmat x 2 )  
 		  
-		float* 
-		   
-		mat_emission 
-		; 
+		float*    mat_emission ; 
 		         
 		// emission  ( x rgb )                           ( nmat x 1 )  
 		  
-		float* 
-		   
-		mat_specular 
-		; 
+		float*    mat_specular ; 
 		         
 		// specular  ( x white )                         ( nmat x 1 )  
 		  
-		float* 
-		   
-		mat_shininess 
-		; 
+		float*    mat_shininess ; 
 		        
 		// shininess coef                            ( nmat x 1 )  
 		  
-		float* 
-		   
-		mat_reflectance 
-		; 
+		float*    mat_reflectance ; 
 		      
 		// reflectance  ( 0: disable )                   ( nmat x 1 )  
 		  
-		float* 
-		   
-		mat_metallic 
-		; 
+		float*    mat_metallic ; 
 		         
 		// metallic coef                             ( nmat x 1 )  
 		  
-		float* 
-		   
-		mat_roughness 
-		; 
+		float*    mat_roughness ; 
 		        
 		// roughness coef                            ( nmat x 1 )  
 		  
-		float* 
-		   
-		mat_rgba 
-		; 
+		float*    mat_rgba ; 
 		             
 		// rgba                                      ( nmat x 4 )  
 		 
 		  
 		// predefined geom pairs for collision detection ;  has precedence over exclude 
 		  
-		int* 
-		     
-		pair_dim 
-		; 
+		int*      pair_dim ; 
 		             
 		// contact dimensionality                    ( npair x 1 )  
 		  
-		int* 
-		     
-		pair_geom1 
-		; 
+		int*      pair_geom1 ; 
 		           
 		// id of geom1                               ( npair x 1 )  
 		  
-		int* 
-		     
-		pair_geom2 
-		; 
+		int*      pair_geom2 ; 
 		           
 		// id of geom2                               ( npair x 1 )  
 		  
-		int* 
-		     
-		pair_signature 
-		; 
+		int*      pair_signature ; 
 		       
 		// body1 << 16 + body2                       ( npair x 1 )  
 		  
-		mjtNum* 
-		  
-		pair_solref 
-		; 
+		mjtNum*   pair_solref ; 
 		          
 		// solver reference: contact normal          ( npair x mjNREF )  
 		  
-		mjtNum* 
-		  
-		pair_solreffriction 
-		; 
+		mjtNum*   pair_solreffriction ; 
 		  
 		// solver reference: contact friction        ( npair x mjNREF )  
 		  
-		mjtNum* 
-		  
-		pair_solimp 
-		; 
+		mjtNum*   pair_solimp ; 
 		          
 		// solver impedance: contact                 ( npair x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		pair_margin 
-		; 
+		mjtNum*   pair_margin ; 
 		          
 		// detect contact if dist<margin             ( npair x 1 )  
 		  
-		mjtNum* 
-		  
-		pair_gap 
-		; 
+		mjtNum*   pair_gap ; 
 		             
 		// include in solver if dist<margin-gap      ( npair x 1 )  
 		  
-		mjtNum* 
-		  
-		pair_friction 
-		; 
+		mjtNum*   pair_friction ; 
 		        
 		// tangent1 ,  2 ,  spin ,  roll1 ,  2               ( npair x 5 )  
 		 
 		  
 		// excluded body pairs for collision detection 
 		  
-		int* 
-		     
-		exclude_signature 
-		; 
+		int*      exclude_signature ; 
 		    
 		// body1 << 16 + body2                       ( nexclude x 1 )  
 		 
 		  
 		// equality constraints 
 		  
-		int* 
-		     
-		eq_type 
-		; 
+		int*      eq_type ; 
 		              
 		// constraint type  ( mjtEq )                    ( neq x 1 )  
 		  
-		int* 
-		     
-		eq_obj1id 
-		; 
+		int*      eq_obj1id ; 
 		            
 		// id of object 1                            ( neq x 1 )  
 		  
-		int* 
-		     
-		eq_obj2id 
-		; 
+		int*      eq_obj2id ; 
 		            
 		// id of object 2                            ( neq x 1 )  
 		  
-		int* 
-		     
-		eq_objtype 
-		; 
+		int*      eq_objtype ; 
 		           
 		// type of both objects  ( mjtObj )              ( neq x 1 )  
 		  
-		mjtByte* 
-		 
-		eq_active0 
-		; 
+		mjtByte*  eq_active0 ; 
 		           
 		// initial enable/disable constraint state   ( neq x 1 )  
 		  
-		mjtNum* 
-		  
-		eq_solref 
-		; 
+		mjtNum*   eq_solref ; 
 		            
 		// constraint solver reference               ( neq x mjNREF )  
 		  
-		mjtNum* 
-		  
-		eq_solimp 
-		; 
+		mjtNum*   eq_solimp ; 
 		            
 		// constraint solver impedance               ( neq x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		eq_data 
-		; 
+		mjtNum*   eq_data ; 
 		              
 		// numeric data for constraint               ( neq x mjNEQDATA )  
 		 
 		  
 		// tendons 
 		  
-		int* 
-		     
-		tendon_adr 
-		; 
+		int*      tendon_adr ; 
 		           
 		// address of first object in tendon's path  ( ntendon x 1 )  
 		  
-		int* 
-		     
-		tendon_num 
-		; 
+		int*      tendon_num ; 
 		           
 		// number of objects in tendon's path        ( ntendon x 1 )  
 		  
-		int* 
-		     
-		tendon_matid 
-		; 
+		int*      tendon_matid ; 
 		         
 		// material id for rendering                 ( ntendon x 1 )  
 		  
-		int* 
-		     
-		tendon_group 
-		; 
+		int*      tendon_group ; 
 		         
 		// group for visibility                      ( ntendon x 1 )  
 		  
-		mjtByte* 
-		 
-		tendon_limited 
-		; 
+		mjtByte*  tendon_limited ; 
 		       
 		// does tendon have length limits            ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_width 
-		; 
+		mjtNum*   tendon_width ; 
 		         
 		// width for rendering                       ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_solref_lim 
-		; 
+		mjtNum*   tendon_solref_lim ; 
 		    
 		// constraint solver reference: limit        ( ntendon x mjNREF )  
 		  
-		mjtNum* 
-		  
-		tendon_solimp_lim 
-		; 
+		mjtNum*   tendon_solimp_lim ; 
 		    
 		// constraint solver impedance: limit        ( ntendon x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		tendon_solref_fri 
-		; 
+		mjtNum*   tendon_solref_fri ; 
 		    
 		// constraint solver reference: friction     ( ntendon x mjNREF )  
 		  
-		mjtNum* 
-		  
-		tendon_solimp_fri 
-		; 
+		mjtNum*   tendon_solimp_fri ; 
 		    
 		// constraint solver impedance: friction     ( ntendon x mjNIMP )  
 		  
-		mjtNum* 
-		  
-		tendon_range 
-		; 
+		mjtNum*   tendon_range ; 
 		         
 		// tendon length limits                      ( ntendon x 2 )  
 		  
-		mjtNum* 
-		  
-		tendon_margin 
-		; 
+		mjtNum*   tendon_margin ; 
 		        
 		// min distance for limit detection          ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_stiffness 
-		; 
+		mjtNum*   tendon_stiffness ; 
 		     
 		// stiffness coefficient                     ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_damping 
-		; 
+		mjtNum*   tendon_damping ; 
 		       
 		// damping coefficient                       ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_frictionloss 
-		; 
+		mjtNum*   tendon_frictionloss ; 
 		  
 		// loss due to friction                      ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_lengthspring 
-		; 
+		mjtNum*   tendon_lengthspring ; 
 		  
 		// spring resting length range               ( ntendon x 2 )  
 		  
-		mjtNum* 
-		  
-		tendon_length0 
-		; 
+		mjtNum*   tendon_length0 ; 
 		       
 		// tendon length in qpos0                    ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_invweight0 
-		; 
+		mjtNum*   tendon_invweight0 ; 
 		    
 		// inv. weight in qpos0                      ( ntendon x 1 )  
 		  
-		mjtNum* 
-		  
-		tendon_user 
-		; 
+		mjtNum*   tendon_user ; 
 		          
 		// user data                                 ( ntendon x nuser_tendon )  
 		  
-		float* 
-		   
-		tendon_rgba 
-		; 
+		float*    tendon_rgba ; 
 		          
 		// rgba when material is omitted             ( ntendon x 4 )  
 		 
 		  
 		// list of all wrap objects in tendon paths 
 		  
-		int* 
-		     
-		wrap_type 
-		; 
+		int*      wrap_type ; 
 		            
 		// wrap object type  ( mjtWrap )                 ( nwrap x 1 )  
 		  
-		int* 
-		     
-		wrap_objid 
-		; 
+		int*      wrap_objid ; 
 		           
 		// object id: geom ,  site ,  joint              ( nwrap x 1 )  
 		  
-		mjtNum* 
-		  
-		wrap_prm 
-		; 
+		mjtNum*   wrap_prm ; 
 		             
 		// divisor ,  joint coef ,  or site id           ( nwrap x 1 )  
 		 
 		  
 		// actuators 
 		  
-		int* 
-		     
-		actuator_trntype 
-		; 
+		int*      actuator_trntype ; 
 		     
 		// transmission type  ( mjtTrn )                 ( nu x 1 )  
 		  
-		int* 
-		     
-		actuator_dyntype 
-		; 
+		int*      actuator_dyntype ; 
 		     
 		// dynamics type  ( mjtDyn )                     ( nu x 1 )  
 		  
-		int* 
-		     
-		actuator_gaintype 
-		; 
+		int*      actuator_gaintype ; 
 		    
 		// gain type  ( mjtGain )                        ( nu x 1 )  
 		  
-		int* 
-		     
-		actuator_biastype 
-		; 
+		int*      actuator_biastype ; 
 		    
 		// bias type  ( mjtBias )                        ( nu x 1 )  
 		  
-		int* 
-		     
-		actuator_trnid 
-		; 
+		int*      actuator_trnid ; 
 		       
 		// transmission id: joint ,  tendon ,  site      ( nu x 2 )  
 		  
-		int* 
-		     
-		actuator_actadr 
-		; 
+		int*      actuator_actadr ; 
 		      
 		// first activation address ;  -1: stateless   ( nu x 1 )  
 		  
-		int* 
-		     
-		actuator_actnum 
-		; 
+		int*      actuator_actnum ; 
 		      
 		// number of activation variables            ( nu x 1 )  
 		  
-		int* 
-		     
-		actuator_group 
-		; 
+		int*      actuator_group ; 
 		       
 		// group for visibility                      ( nu x 1 )  
 		  
-		mjtByte* 
-		 
-		actuator_ctrllimited 
-		; 
+		mjtByte*  actuator_ctrllimited ; 
 		 
 		// is control limited                        ( nu x 1 )  
 		  
-		mjtByte* 
-		 
-		actuator_forcelimited 
-		; 
+		mjtByte*  actuator_forcelimited ; 
 		// is force limited                          ( nu x 1 )  
 		  
-		mjtByte* 
-		 
-		actuator_actlimited 
-		; 
+		mjtByte*  actuator_actlimited ; 
 		  
 		// is activation limited                     ( nu x 1 )  
 		  
-		mjtNum* 
-		  
-		actuator_dynprm 
-		; 
+		mjtNum*   actuator_dynprm ; 
 		      
 		// dynamics parameters                       ( nu x mjNDYN )  
 		  
-		mjtNum* 
-		  
-		actuator_gainprm 
-		; 
+		mjtNum*   actuator_gainprm ; 
 		     
 		// gain parameters                           ( nu x mjNGAIN )  
 		  
-		mjtNum* 
-		  
-		actuator_biasprm 
-		; 
+		mjtNum*   actuator_biasprm ; 
 		     
 		// bias parameters                           ( nu x mjNBIAS )  
 		  
-		mjtByte* 
-		 
-		actuator_actearly 
-		; 
+		mjtByte*  actuator_actearly ; 
 		    
 		// step activation before force              ( nu x 1 )  
 		  
-		mjtNum* 
-		  
-		actuator_ctrlrange 
-		; 
+		mjtNum*   actuator_ctrlrange ; 
 		   
 		// range of controls                         ( nu x 2 )  
 		  
-		mjtNum* 
-		  
-		actuator_forcerange 
-		; 
+		mjtNum*   actuator_forcerange ; 
 		  
 		// range of forces                           ( nu x 2 )  
 		  
-		mjtNum* 
-		  
-		actuator_actrange 
-		; 
+		mjtNum*   actuator_actrange ; 
 		    
 		// range of activations                      ( nu x 2 )  
 		  
-		mjtNum* 
-		  
-		actuator_gear 
-		; 
+		mjtNum*   actuator_gear ; 
 		        
 		// scale length and transmitted force        ( nu x 6 )  
 		  
-		mjtNum* 
-		  
-		actuator_cranklength 
-		; 
+		mjtNum*   actuator_cranklength ; 
 		 
 		// crank length for slider-crank             ( nu x 1 )  
 		  
-		mjtNum* 
-		  
-		actuator_acc0 
-		; 
+		mjtNum*   actuator_acc0 ; 
 		        
 		// acceleration from unit force in qpos0     ( nu x 1 )  
 		  
-		mjtNum* 
-		  
-		actuator_length0 
-		; 
+		mjtNum*   actuator_length0 ; 
 		     
 		// actuator length in qpos0                  ( nu x 1 )  
 		  
-		mjtNum* 
-		  
-		actuator_lengthrange 
-		; 
+		mjtNum*   actuator_lengthrange ; 
 		 
 		// feasible actuator length range            ( nu x 2 )  
 		  
-		mjtNum* 
-		  
-		actuator_user 
-		; 
+		mjtNum*   actuator_user ; 
 		        
 		// user data                                 ( nu x nuser_actuator )  
 		  
-		int* 
-		     
-		actuator_plugin 
-		; 
+		int*      actuator_plugin ; 
 		      
 		// plugin instance id ;  -1: not a plugin      ( nu x 1 )  
 		 
 		  
 		// sensors 
 		  
-		int* 
-		     
-		sensor_type 
-		; 
+		int*      sensor_type ; 
 		          
 		// sensor type  ( mjtSensor )                    ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_datatype 
-		; 
+		int*      sensor_datatype ; 
 		      
 		// numeric data type  ( mjtDataType )            ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_needstage 
-		; 
+		int*      sensor_needstage ; 
 		     
 		// required compute stage  ( mjtStage )          ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_objtype 
-		; 
+		int*      sensor_objtype ; 
 		       
 		// type of sensorized object  ( mjtObj )         ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_objid 
-		; 
+		int*      sensor_objid ; 
 		         
 		// id of sensorized object                   ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_reftype 
-		; 
+		int*      sensor_reftype ; 
 		       
 		// type of reference frame  ( mjtObj )           ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_refid 
-		; 
+		int*      sensor_refid ; 
 		         
 		// id of reference frame ;  -1: global frame   ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_dim 
-		; 
+		int*      sensor_dim ; 
 		           
 		// number of scalar outputs                  ( nsensor x 1 )  
 		  
-		int* 
-		     
-		sensor_adr 
-		; 
+		int*      sensor_adr ; 
 		           
 		// address in sensor array                   ( nsensor x 1 )  
 		  
-		mjtNum* 
-		  
-		sensor_cutoff 
-		; 
+		mjtNum*   sensor_cutoff ; 
 		        
 		// cutoff for real and positive ;  0: ignore   ( nsensor x 1 )  
 		  
-		mjtNum* 
-		  
-		sensor_noise 
-		; 
+		mjtNum*   sensor_noise ; 
 		         
 		// noise standard deviation                  ( nsensor x 1 )  
 		  
-		mjtNum* 
-		  
-		sensor_user 
-		; 
+		mjtNum*   sensor_user ; 
 		          
 		// user data                                 ( nsensor x nuser_sensor )  
 		  
-		int* 
-		     
-		sensor_plugin 
-		; 
+		int*      sensor_plugin ; 
 		        
 		// plugin instance id ;  -1: not a plugin      ( nsensor x 1 )  
 		 
 		  
 		// plugin instances 
 		  
-		int* 
-		     
-		plugin 
-		; 
+		int*      plugin ; 
 		               
 		// globally registered plugin slot number    ( nplugin x 1 )  
 		  
-		int* 
-		     
-		plugin_stateadr 
-		; 
+		int*      plugin_stateadr ; 
 		      
 		// address in the plugin state array         ( nplugin x 1 )  
 		  
-		int* 
-		     
-		plugin_statenum 
-		; 
+		int*      plugin_statenum ; 
 		      
 		// number of states in the plugin instance   ( nplugin x 1 )  
 		  
-		char* 
-		    
-		plugin_attr 
-		; 
+		char*     plugin_attr ; 
 		          
 		// config attributes of plugin instances     ( npluginattr x 1 )  
 		  
-		int* 
-		     
-		plugin_attradr 
-		; 
+		int*      plugin_attradr ; 
 		       
 		// address to each instance's config attrib  ( nplugin x 1 )  
 		 
 		  
 		// custom numeric fields 
 		  
-		int* 
-		     
-		numeric_adr 
-		; 
+		int*      numeric_adr ; 
 		          
 		// address of field in numeric_data          ( nnumeric x 1 )  
 		  
-		int* 
-		     
-		numeric_size 
-		; 
+		int*      numeric_size ; 
 		         
 		// size of numeric field                     ( nnumeric x 1 )  
 		  
-		mjtNum* 
-		  
-		numeric_data 
-		; 
+		mjtNum*   numeric_data ; 
 		         
 		// array of all numeric fields               ( nnumericdata x 1 )  
 		 
 		  
 		// custom text fields 
 		  
-		int* 
-		     
-		text_adr 
-		; 
+		int*      text_adr ; 
 		             
 		// address of text in text_data              ( ntext x 1 )  
 		  
-		int* 
-		     
-		text_size 
-		; 
+		int*      text_size ; 
 		            
 		// size of text field  ( strlen+1 )              ( ntext x 1 )  
 		  
-		char* 
-		    
-		text_data 
-		; 
+		char*     text_data ; 
 		            
 		// array of all text fields  ( 0-terminated )    ( ntextdata x 1 )  
 		 
 		  
 		// custom tuple fields 
 		  
-		int* 
-		     
-		tuple_adr 
-		; 
+		int*      tuple_adr ; 
 		            
 		// address of text in text_data              ( ntuple x 1 )  
 		  
-		int* 
-		     
-		tuple_size 
-		; 
+		int*      tuple_size ; 
 		           
 		// number of objects in tuple                ( ntuple x 1 )  
 		  
-		int* 
-		     
-		tuple_objtype 
-		; 
+		int*      tuple_objtype ; 
 		        
 		// array of object types in all tuples       ( ntupledata x 1 )  
 		  
-		int* 
-		     
-		tuple_objid 
-		; 
+		int*      tuple_objid ; 
 		          
 		// array of object ids in all tuples         ( ntupledata x 1 )  
 		  
-		mjtNum* 
-		  
-		tuple_objprm 
-		; 
+		mjtNum*   tuple_objprm ; 
 		         
 		// array of object params in all tuples      ( ntupledata x 1 )  
 		 
 		  
 		// keyframes 
 		  
-		mjtNum* 
-		  
-		key_time 
-		; 
+		mjtNum*   key_time ; 
 		             
 		// key time                                  ( nkey x 1 )  
 		  
-		mjtNum* 
-		  
-		key_qpos 
-		; 
+		mjtNum*   key_qpos ; 
 		             
 		// key position                              ( nkey x nq )  
 		  
-		mjtNum* 
-		  
-		key_qvel 
-		; 
+		mjtNum*   key_qvel ; 
 		             
 		// key velocity                              ( nkey x nv )  
 		  
-		mjtNum* 
-		  
-		key_act 
-		; 
+		mjtNum*   key_act ; 
 		              
 		// key activation                            ( nkey x na )  
 		  
-		mjtNum* 
-		  
-		key_mpos 
-		; 
+		mjtNum*   key_mpos ; 
 		             
 		// key mocap position                        ( nkey x nmocap*3 )  
 		  
-		mjtNum* 
-		  
-		key_mquat 
-		; 
+		mjtNum*   key_mquat ; 
 		            
 		// key mocap quaternion                      ( nkey x nmocap*4 )  
 		  
-		mjtNum* 
-		  
-		key_ctrl 
-		; 
+		mjtNum*   key_ctrl ; 
 		             
 		// key control                               ( nkey x nu )  
 		 
 		  
 		// names 
 		  
-		int* 
-		     
-		name_bodyadr 
-		; 
+		int*      name_bodyadr ; 
 		         
 		// body name pointers                        ( nbody x 1 )  
 		  
-		int* 
-		     
-		name_jntadr 
-		; 
+		int*      name_jntadr ; 
 		          
 		// joint name pointers                       ( njnt x 1 )  
 		  
-		int* 
-		     
-		name_geomadr 
-		; 
+		int*      name_geomadr ; 
 		         
 		// geom name pointers                        ( ngeom x 1 )  
 		  
-		int* 
-		     
-		name_siteadr 
-		; 
+		int*      name_siteadr ; 
 		         
 		// site name pointers                        ( nsite x 1 )  
 		  
-		int* 
-		     
-		name_camadr 
-		; 
+		int*      name_camadr ; 
 		          
 		// camera name pointers                      ( ncam x 1 )  
 		  
-		int* 
-		     
-		name_lightadr 
-		; 
+		int*      name_lightadr ; 
 		        
 		// light name pointers                       ( nlight x 1 )  
 		  
-		int* 
-		     
-		name_flexadr 
-		; 
+		int*      name_flexadr ; 
 		         
 		// flex name pointers                        ( nflex x 1 )  
 		  
-		int* 
-		     
-		name_meshadr 
-		; 
+		int*      name_meshadr ; 
 		         
 		// mesh name pointers                        ( nmesh x 1 )  
 		  
-		int* 
-		     
-		name_skinadr 
-		; 
+		int*      name_skinadr ; 
 		         
 		// skin name pointers                        ( nskin x 1 )  
 		  
-		int* 
-		     
-		name_hfieldadr 
-		; 
+		int*      name_hfieldadr ; 
 		       
 		// hfield name pointers                      ( nhfield x 1 )  
 		  
-		int* 
-		     
-		name_texadr 
-		; 
+		int*      name_texadr ; 
 		          
 		// texture name pointers                     ( ntex x 1 )  
 		  
-		int* 
-		     
-		name_matadr 
-		; 
+		int*      name_matadr ; 
 		          
 		// material name pointers                    ( nmat x 1 )  
 		  
-		int* 
-		     
-		name_pairadr 
-		; 
+		int*      name_pairadr ; 
 		         
 		// geom pair name pointers                   ( npair x 1 )  
 		  
-		int* 
-		     
-		name_excludeadr 
-		; 
+		int*      name_excludeadr ; 
 		      
 		// exclude name pointers                     ( nexclude x 1 )  
 		  
-		int* 
-		     
-		name_eqadr 
-		; 
+		int*      name_eqadr ; 
 		           
 		// equality constraint name pointers         ( neq x 1 )  
 		  
-		int* 
-		     
-		name_tendonadr 
-		; 
+		int*      name_tendonadr ; 
 		       
 		// tendon name pointers                      ( ntendon x 1 )  
 		  
-		int* 
-		     
-		name_actuatoradr 
-		; 
+		int*      name_actuatoradr ; 
 		     
 		// actuator name pointers                    ( nu x 1 )  
 		  
-		int* 
-		     
-		name_sensoradr 
-		; 
+		int*      name_sensoradr ; 
 		       
 		// sensor name pointers                      ( nsensor x 1 )  
 		  
-		int* 
-		     
-		name_numericadr 
-		; 
+		int*      name_numericadr ; 
 		      
 		// numeric name pointers                     ( nnumeric x 1 )  
 		  
-		int* 
-		     
-		name_textadr 
-		; 
+		int*      name_textadr ; 
 		         
 		// text name pointers                        ( ntext x 1 )  
 		  
-		int* 
-		     
-		name_tupleadr 
-		; 
+		int*      name_tupleadr ; 
 		        
 		// tuple name pointers                       ( ntuple x 1 )  
 		  
-		int* 
-		     
-		name_keyadr 
-		; 
+		int*      name_keyadr ; 
 		          
 		// keyframe name pointers                    ( nkey x 1 )  
 		  
-		int* 
-		     
-		name_pluginadr 
-		; 
+		int*      name_pluginadr ; 
 		       
 		// plugin instance name pointers             ( nplugin x 1 )  
 		  
-		char* 
-		    
-		names 
-		; 
+		char*     names ; 
 		                
 		// names of all objects ,  0-terminated        ( nnames x 1 )  
 		  
-		int* 
-		     
-		names_map 
-		; 
+		int*      names_map ; 
 		            
 		// internal hash map of names                ( nnames_map x 1 )  
 		 
 		  
 		// paths 
 		  
-		char* 
-		    
-		paths 
-		; 
+		char*     paths ; 
 		                
 		// paths to assets ,  0-terminated             ( npaths x 1 )  
 		 
-	} 
-	 
-	; 
-	 
+	} ; 
 	typedef 	
 	struct mjModel_ mjModel 
 	 

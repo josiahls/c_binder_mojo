@@ -45,8 +45,9 @@ struct StructNode(NodeAstLike):
     var _node_state: StringLiteral
     var _struct_name: String
     var _row_nums: List[Int]  # Track rows for multi-line structs
+    var _is_in_typedef: Bool
 
-    fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
+    fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle, is_in_typedef: Bool = False):
         """Initialize a StructNode.
 
         Args:
@@ -61,6 +62,7 @@ struct StructNode(NodeAstLike):
         self._node_state = NodeState.INITIALIZING
         self._struct_name = ""
         self._token_bundles[].append(token_bundle)
+        self._is_in_typedef = is_in_typedef
 
     @staticmethod
     fn accept(
@@ -96,7 +98,12 @@ struct StructNode(NodeAstLike):
         Returns:
             A new StructNode instance.
         """
-        return Self(indices, token)
+        var is_in_typedef = False
+
+        if module_interface.nodes()[][indices.original_parent_idx].name() == "TypedefNode":
+            is_in_typedef = True
+
+        return Self(indices, token, is_in_typedef)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
@@ -121,9 +128,15 @@ struct StructNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
 
-        if len(self._token_bundles[]) == 2 and token.token != CTokens.SCOPE_BEGIN:
-            # TODO(josiahls): Also need to check for white space.
-            return TokenFlow.PASS_TO_PARENT
+        if len(self._token_bundles[]) >= 2 and token.token != CTokens.SCOPE_BEGIN:
+            if self.is_whitespace(token):
+                self._node_state = NodeState.COLLECTING_TOKENS
+                return TokenFlow.CONSUME_TOKEN
+            elif token.token == CTokens.END_STATEMENT:
+                self._node_state = NodeState.COLLECTING_TAIL_TOKENS
+                return TokenFlow.CONSUME_TOKEN
+            else:
+                return TokenFlow.PASS_TO_PARENT
 
         if self._node_state == NodeState.COLLECTING_TOKENS:
             return TokenFlow.CONSUME_TOKEN
@@ -133,7 +146,6 @@ struct StructNode(NodeAstLike):
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS
             return TokenFlow.CONSUME_TOKEN
 
-        # Otherwise keep collecting tokens
         return TokenFlow.PASS_TO_PARENT
 
     fn is_whitespace(self, token: TokenBundle) -> Bool:

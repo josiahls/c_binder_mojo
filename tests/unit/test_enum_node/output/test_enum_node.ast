@@ -1,7 +1,7 @@
 RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29, ...) len=12)
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
 // Basic enum with values 
-EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COLLECTING_TAIL_TOKENS, name='Color')
+EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=COMPLETED, name='Color')
 enum Color  
 	ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6, 7, 8, 9), node_state=COMPLETED, parent_type='EnumNode')
 	{ 
@@ -24,11 +24,10 @@ enum Color
 
 	} 
 
- ;  
- 
+; 
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
 // Enum with auto-incrementing values 
-EnumNode(original_parent_idx=0, original_current_idx=11, original_child_idxs=(12), node_state=COLLECTING_TAIL_TOKENS, name='Direction')
+EnumNode(original_parent_idx=0, original_current_idx=11, original_child_idxs=(12), node_state=COMPLETED, name='Direction')
 enum Direction  
 	ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=16, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
@@ -68,11 +67,10 @@ enum Direction
 
 	} 
 
- ;  
- 
+; 
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
 // Enum with mixed explicit and implicit values 
-EnumNode(original_parent_idx=0, original_current_idx=30, original_child_idxs=(31), node_state=COLLECTING_TAIL_TOKENS, name='Status')
+EnumNode(original_parent_idx=0, original_current_idx=30, original_child_idxs=(31), node_state=COMPLETED, name='Status')
 enum Status  
 	ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=14, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
@@ -111,11 +109,10 @@ enum Status
 
 	} 
 
- ;  
- 
+; 
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
 // Enum with name but no values  ( empty enum )  
-EnumNode(original_parent_idx=0, original_current_idx=47, original_child_idxs=(48), node_state=COLLECTING_TAIL_TOKENS, name='Empty')
+EnumNode(original_parent_idx=0, original_current_idx=47, original_child_idxs=(48), node_state=COMPLETED, name='Empty')
 enum Empty  
 	ScopeNode(original_parent_idx=47, original_current_idx=48, original_child_idxs=(49), node_state=COMPLETED, parent_type='EnumNode')
 	{ 
@@ -125,11 +122,10 @@ enum Empty
 
 	} 
 
- ;  
- 
+; 
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
 // Enum with hex values and comments 
-EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=COLLECTING_TAIL_TOKENS, name='Flags')
+EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=COMPLETED, name='Flags')
 enum Flags  
 	ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57, ...) len=10, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
@@ -158,11 +154,10 @@ enum Flags
 
 	} 
 
- ;   
- 
+; 
 SingleLineCommentNode(original_parent_idx=0, original_current_idx=63)
 // Enum with byte values 
-EnumNode(original_parent_idx=0, original_current_idx=64, original_child_idxs=(65), node_state=COLLECTING_TAIL_TOKENS, name='ByteValues')
+EnumNode(original_parent_idx=0, original_current_idx=64, original_child_idxs=(65), node_state=COMPLETED, name='ByteValues')
 enum ByteValues  
 	ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69, 70, ...) len=8, node_state=COMPLETED, parent_type='EnumNode')
 	{ 
@@ -190,4 +185,4 @@ enum ByteValues
 
 	} 
 
- ;  
+; 

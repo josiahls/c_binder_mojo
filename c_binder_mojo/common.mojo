@@ -69,27 +69,6 @@ struct TokenFlow:
     alias INVALID = MessageableEnum(4)  # Invalid directive (error)
 
 
-# struct NodeState:
-#     """The internal construction state of a node."""
-
-#     alias INITIALIZING = "INITIALIZING"  # Node is being initialized
-#     alias COLLECTING_TOKENS = "COLLECTING_TOKENS"  # Node is collecting its own tokens
-#     alias COLLECTING_TAIL_TOKENS = "COLLECTING_TAIL_TOKENS"  # Node is collecting its own tokens adding them to the tail
-#     alias BUILDING_CHILDREN = "BUILDING_CHILDREN"  # Node is creating/managing children
-#     alias COMPLETED = "COMPLETED"  # Node is completely built
-#     alias INVALID = "INVALID"  # Node is in an invalid state (error)
-
-
-# struct TokenFlow:
-#     """Directive for how tokens should flow through the tree."""
-
-#     alias INITIALIZE_MODULE = "INITIALIZE_MODULE"  # Tree has just started, no nodes exist yet
-#     alias CONSUME_TOKEN = "CONSUME_TOKEN"  # Node should consume the token
-#     alias PASS_TO_PARENT = "PASS_TO_PARENT"  # Pass token to parent node
-#     alias CREATE_CHILD = "CREATE_CHILD"  # Create a child for this token
-#     alias INVALID = "INVALID"  # Invalid directive (error)
-
-
 struct CTokens:
     alias COMMENT_SINGLE_LINE_BEGIN = "//"
     alias COMMENT_MULTI_LINE_INLINE_BEGIN = "/*"

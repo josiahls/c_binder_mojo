@@ -1,0 +1,10 @@
+---
+description: When creating a new mojo_ast_node type node, here are a few things you need to do
+globs: *.mojo
+---
+
+# Please follow these mojo standards (these change frequently):
+- Impliment everything in c_binder.mojo_ast_nodes.common.mojo: NodeAstLike
+- Add the new node to c_binder.mojo_ast_nodes.__init__.mojo: As an import
+- Add the new node to c_binder.mojo_ast_nodes.nodes.mojo: AstNode. Make sure to import it
+Reference [how-to-code-in-mojo.mdc](mdc:.cursor/rules/how-to-code-in-mojo.mdc) for extra details.

@@ -1,359 +1,148 @@
 RootNode(original_current_idx=0, original_child_idxs=(1))
-MacroIfNDefNode(original_parent_idx=0, original_current_idx=1, original_child_idxs=(2, 3, 4, 15), node_state=BUILDING_CHILDREN)
+MacroIfNDefNode(original_parent_idx=0, original_current_idx=1, original_child_idxs=(2, 3, 4, 9), node_state=BUILDING_CHILDREN)
 #ifndef MUJOCO_MJMODEL_H_ 
 	MacroDefineNode(original_parent_idx=1, original_current_idx=2, node_state=COMPLETED, macro='MUJOCO_MJMODEL_H_')
 	#define MUJOCO_MJMODEL_H_ 
-	WhitespaceNode(original_parent_idx=1, original_current_idx=3, n_tokens=2)
-	 
+	WhitespaceNode(original_parent_idx=1, original_current_idx=3, n_tokens=1)
 	 
 	StructNode(original_parent_idx=1, original_current_idx=4, original_child_idxs=(5), node_state=COLLECTING_TAIL_TOKENS, name='mjLROpt_')
 	struct mjLROpt_  
-			ScopeNode(original_parent_idx=4, original_current_idx=5, original_child_idxs=(6, 7, 8, 9, 10, ...) len=9, node_state=COMPLETED, parent_type='StructNode')
+			ScopeNode(original_parent_idx=4, original_current_idx=5, original_child_idxs=(6, 7, 8), node_state=COMPLETED, parent_type='StructNode')
 		{ 
-					WhitespaceNode(original_parent_idx=5, original_current_idx=6, n_tokens=17)
-			                 
-			SingleLineCommentNode(original_parent_idx=5, original_current_idx=7)
-			// options for mj_setLengthRange (  )  
-			WhitespaceNode(original_parent_idx=5, original_current_idx=8, n_tokens=2)
+					WhitespaceNode(original_parent_idx=5, original_current_idx=6, n_tokens=3)
+			 
 			  
-			SingleLineCommentNode(original_parent_idx=5, original_current_idx=9)
-			// flags 
-			WhitespaceNode(original_parent_idx=5, original_current_idx=10, n_tokens=2)
-			  
-			StructFieldNode(original_parent_idx=5, original_current_idx=11, node_state=COMPLETED, field_type='int', field_name='mode')
+			StructFieldNode(original_parent_idx=5, original_current_idx=7, node_state=COMPLETED, field_type='int', field_name='mode')
 			int mode ; 
-			WhitespaceNode(original_parent_idx=5, original_current_idx=12, n_tokens=23)
-			                       
-			SingleLineCommentNode(original_parent_idx=5, original_current_idx=13)
-			// which actuators to process  ( mjtLRMode )  
-			WhitespaceNode(original_parent_idx=5, original_current_idx=14, n_tokens=1)
+			WhitespaceNode(original_parent_idx=5, original_current_idx=8, n_tokens=2)
+			 
 			 
 
 		} 
 
 	 ;  
-	TypedefNode(original_parent_idx=1, original_current_idx=15, original_child_idxs=(16, 17, 26, 27, 36, ...) len=11, node_state=COLLECTING_TOKENS)
+	TypedefNode(original_parent_idx=1, original_current_idx=9, original_child_idxs=(10, 11, 16, 17, 22, ...) len=11, node_state=COLLECTING_TOKENS)
 	typedef 
-	mjVFS --------------------------------------------------------- 
 	 
-	mjOption ------------------------------------------------------ 
-	 
-	mjVisual ------------------------------------------------------ 
-	 
-	mjStatistic --------------------------------------------------- 
-	 
-	mjModel ------------------------------------------------------- 
-	 
-	 // MUJOCO_MJMODEL_H_ 
-	 
-		StructNode(original_parent_idx=15, original_current_idx=16, node_state=COLLECTING_TAIL_TOKENS, name='mjLROpt_')
+		StructNode(original_parent_idx=9, original_current_idx=10, node_state=COLLECTING_TAIL_TOKENS, name='mjLROpt_')
 	struct mjLROpt_ mjLROpt ;  
 	 
-	 
-	StructNode(original_parent_idx=15, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TAIL_TOKENS, name='mjVFS_')
+	StructNode(original_parent_idx=9, original_current_idx=11, original_child_idxs=(12), node_state=COLLECTING_TAIL_TOKENS, name='mjVFS_')
 	struct mjVFS_  
-			ScopeNode(original_parent_idx=17, original_current_idx=18, original_child_idxs=(19, 20, 21, 22, 23, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
+			ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15), node_state=COMPLETED, parent_type='StructNode')
 		{ 
-					WhitespaceNode(original_parent_idx=18, original_current_idx=19, n_tokens=31)
-			                               
-			SingleLineCommentNode(original_parent_idx=18, original_current_idx=20)
-			// virtual file system for loading from memory 
-			WhitespaceNode(original_parent_idx=18, original_current_idx=21, n_tokens=2)
+					WhitespaceNode(original_parent_idx=12, original_current_idx=13, n_tokens=3)
+			 
 			  
-			StructFieldNode(original_parent_idx=18, original_current_idx=22, node_state=COMPLETED, field_type='void*', field_name='impl_')
+			StructFieldNode(original_parent_idx=12, original_current_idx=14, node_state=COMPLETED, field_type='void*', field_name='impl_')
 			void* impl_ ; 
-			WhitespaceNode(original_parent_idx=18, original_current_idx=23, n_tokens=32)
-			                                
-			SingleLineCommentNode(original_parent_idx=18, original_current_idx=24)
-			// internal pointer to VFS memory 
-			WhitespaceNode(original_parent_idx=18, original_current_idx=25, n_tokens=1)
+			WhitespaceNode(original_parent_idx=12, original_current_idx=15, n_tokens=2)
+			 
 			 
 
 		} 
 
 	 ;  
-	StructNode(original_parent_idx=15, original_current_idx=26, node_state=COLLECTING_TAIL_TOKENS, name='mjVFS_')
+	StructNode(original_parent_idx=9, original_current_idx=16, node_state=COLLECTING_TAIL_TOKENS, name='mjVFS_')
 	struct mjVFS_ mjVFS ;  
 	 
-	StructNode(original_parent_idx=15, original_current_idx=27, original_child_idxs=(28), node_state=COLLECTING_TAIL_TOKENS, name='mjOption_')
+	StructNode(original_parent_idx=9, original_current_idx=17, original_child_idxs=(18), node_state=COLLECTING_TAIL_TOKENS, name='mjOption_')
 	struct mjOption_  
-			ScopeNode(original_parent_idx=27, original_current_idx=28, original_child_idxs=(29, 30, 31, 32, 33, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
+			ScopeNode(original_parent_idx=17, original_current_idx=18, original_child_idxs=(19, 20, 21), node_state=COMPLETED, parent_type='StructNode')
 		{ 
-					WhitespaceNode(original_parent_idx=28, original_current_idx=29, n_tokens=16)
-			                
-			SingleLineCommentNode(original_parent_idx=28, original_current_idx=30)
-			// physics options 
-			WhitespaceNode(original_parent_idx=28, original_current_idx=31, n_tokens=3)
+					WhitespaceNode(original_parent_idx=18, original_current_idx=19, n_tokens=3)
 			 
 			  
-			StructFieldNode(original_parent_idx=28, original_current_idx=32, node_state=COMPLETED, field_type='int', field_name='sdf_iterations')
+			StructFieldNode(original_parent_idx=18, original_current_idx=20, node_state=COMPLETED, field_type='int', field_name='sdf_iterations')
 			int sdf_iterations ; 
-			WhitespaceNode(original_parent_idx=28, original_current_idx=33, n_tokens=13)
-			             
-			SingleLineCommentNode(original_parent_idx=28, original_current_idx=34)
-			// max number of iterations for gradient descent 
-			WhitespaceNode(original_parent_idx=28, original_current_idx=35, n_tokens=1)
+			WhitespaceNode(original_parent_idx=18, original_current_idx=21, n_tokens=2)
+			 
 			 
 
 		} 
 
 	 ;  
-	StructNode(original_parent_idx=15, original_current_idx=36, node_state=COLLECTING_TAIL_TOKENS, name='mjOption_')
+	StructNode(original_parent_idx=9, original_current_idx=22, node_state=COLLECTING_TAIL_TOKENS, name='mjOption_')
 	struct mjOption_ mjOption ;  
 	 
-	 
-	StructNode(original_parent_idx=15, original_current_idx=37, original_child_idxs=(38), node_state=COLLECTING_TAIL_TOKENS, name='mjVisual_')
+	StructNode(original_parent_idx=9, original_current_idx=23, original_child_idxs=(24), node_state=COLLECTING_TAIL_TOKENS, name='mjVisual_')
 	struct mjVisual_  
-			ScopeNode(original_parent_idx=37, original_current_idx=38, original_child_idxs=(39, 40, 41, 42, 51, ...) len=21, node_state=COMPLETED, parent_type='StructNode')
+			ScopeNode(original_parent_idx=23, original_current_idx=24, original_child_idxs=(25, 26, 31, 32), node_state=COMPLETED, parent_type='StructNode')
 		{ 
-					WhitespaceNode(original_parent_idx=38, original_current_idx=39, n_tokens=16)
-			                
-			SingleLineCommentNode(original_parent_idx=38, original_current_idx=40)
-			// visualization options 
-			WhitespaceNode(original_parent_idx=38, original_current_idx=41, n_tokens=2)
+					WhitespaceNode(original_parent_idx=24, original_current_idx=25, n_tokens=3)
+			 
 			  
-			StructNode(original_parent_idx=38, original_current_idx=42, original_child_idxs=(43), node_state=COLLECTING_TAIL_TOKENS)
+			StructNode(original_parent_idx=24, original_current_idx=26, original_child_idxs=(27), node_state=COLLECTING_TAIL_TOKENS)
 			struct  
-							ScopeNode(original_parent_idx=42, original_current_idx=43, original_child_idxs=(44, 45, 46, 47, 48, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
+							ScopeNode(original_parent_idx=26, original_current_idx=27, original_child_idxs=(28, 29, 30), node_state=COMPLETED, parent_type='StructNode')
 				{ 
-									WhitespaceNode(original_parent_idx=43, original_current_idx=44, n_tokens=24)
-					                        
-					SingleLineCommentNode(original_parent_idx=43, original_current_idx=45)
-					// global parameters 
-					WhitespaceNode(original_parent_idx=43, original_current_idx=46, n_tokens=4)
+									WhitespaceNode(original_parent_idx=27, original_current_idx=28, n_tokens=5)
+					 
 					    
-					StructFieldNode(original_parent_idx=43, original_current_idx=47, node_state=COMPLETED, field_type='int', field_name='orthographic')
+					StructFieldNode(original_parent_idx=27, original_current_idx=29, node_state=COMPLETED, field_type='int', field_name='orthographic')
 					int orthographic ; 
-					WhitespaceNode(original_parent_idx=43, original_current_idx=48, n_tokens=13)
-					             
-					SingleLineCommentNode(original_parent_idx=43, original_current_idx=49)
-					// is the free camera orthographic  ( 0: no ,  1: yes )  
-					WhitespaceNode(original_parent_idx=43, original_current_idx=50, n_tokens=3)
+					WhitespaceNode(original_parent_idx=27, original_current_idx=30, n_tokens=4)
+					 
 					   
 
 				} 
 
 			 
-			StructFieldNode(original_parent_idx=38, original_current_idx=51, node_state=COMPLETED, field_type='global', field_name='')
+			StructFieldNode(original_parent_idx=24, original_current_idx=31, node_state=COMPLETED, field_type='global', field_name='')
 			global ; 
-			WhitespaceNode(original_parent_idx=38, original_current_idx=52, n_tokens=4)
-			 
-			 
-			  
-			StructNode(original_parent_idx=38, original_current_idx=53, original_child_idxs=(54), node_state=COLLECTING_TAIL_TOKENS)
-			struct  
-							ScopeNode(original_parent_idx=53, original_current_idx=54, original_child_idxs=(55, 56, 57, 58, 59, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
-				{ 
-									WhitespaceNode(original_parent_idx=54, original_current_idx=55, n_tokens=24)
-					                        
-					SingleLineCommentNode(original_parent_idx=54, original_current_idx=56)
-					// rendering quality 
-					WhitespaceNode(original_parent_idx=54, original_current_idx=57, n_tokens=4)
-					    
-					StructFieldNode(original_parent_idx=54, original_current_idx=58, node_state=COMPLETED, field_type='int', field_name='shadowsize')
-					int   shadowsize ; 
-					WhitespaceNode(original_parent_idx=54, original_current_idx=59, n_tokens=13)
-					             
-					SingleLineCommentNode(original_parent_idx=54, original_current_idx=60)
-					// size of shadowmap texture 
-					WhitespaceNode(original_parent_idx=54, original_current_idx=61, n_tokens=3)
-					   
-
-				} 
-
-			 
-			StructFieldNode(original_parent_idx=38, original_current_idx=62, node_state=COMPLETED, field_type='quality', field_name='')
-			quality ; 
-			WhitespaceNode(original_parent_idx=38, original_current_idx=63, n_tokens=4)
-			 
-			 
-			  
-			StructNode(original_parent_idx=38, original_current_idx=64, original_child_idxs=(65), node_state=COLLECTING_TAIL_TOKENS)
-			struct  
-							ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69, 70, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
-				{ 
-									WhitespaceNode(original_parent_idx=65, original_current_idx=66, n_tokens=24)
-					                        
-					SingleLineCommentNode(original_parent_idx=65, original_current_idx=67)
-					// head light 
-					WhitespaceNode(original_parent_idx=65, original_current_idx=68, n_tokens=4)
-					    
-					StructFieldNode(original_parent_idx=65, original_current_idx=69, node_state=COMPLETED, field_type='float', field_name='ambient[3]')
-					float ambient[3] ; 
-					WhitespaceNode(original_parent_idx=65, original_current_idx=70, n_tokens=13)
-					             
-					SingleLineCommentNode(original_parent_idx=65, original_current_idx=71)
-					// ambient rgb  ( alpha=1 )  
-					WhitespaceNode(original_parent_idx=65, original_current_idx=72, n_tokens=3)
-					   
-
-				} 
-
-			 
-			StructFieldNode(original_parent_idx=38, original_current_idx=73, node_state=COMPLETED, field_type='headlight', field_name='')
-			headlight ; 
-			WhitespaceNode(original_parent_idx=38, original_current_idx=74, n_tokens=4)
-			 
-			 
-			  
-			StructNode(original_parent_idx=38, original_current_idx=75, original_child_idxs=(76), node_state=COLLECTING_TAIL_TOKENS)
-			struct  
-							ScopeNode(original_parent_idx=75, original_current_idx=76, original_child_idxs=(77, 78, 79, 80, 81, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
-				{ 
-									WhitespaceNode(original_parent_idx=76, original_current_idx=77, n_tokens=24)
-					                        
-					SingleLineCommentNode(original_parent_idx=76, original_current_idx=78)
-					// mapping 
-					WhitespaceNode(original_parent_idx=76, original_current_idx=79, n_tokens=4)
-					    
-					StructFieldNode(original_parent_idx=76, original_current_idx=80, node_state=COMPLETED, field_type='float', field_name='stiffness')
-					float stiffness ; 
-					WhitespaceNode(original_parent_idx=76, original_current_idx=81, n_tokens=14)
-					              
-					SingleLineCommentNode(original_parent_idx=76, original_current_idx=82)
-					// mouse perturbation stiffness  ( space->force )  
-					WhitespaceNode(original_parent_idx=76, original_current_idx=83, n_tokens=3)
-					   
-
-				} 
-
-			 
-			StructFieldNode(original_parent_idx=38, original_current_idx=84, node_state=COMPLETED, field_type='map', field_name='')
-			map ; 
-			WhitespaceNode(original_parent_idx=38, original_current_idx=85, n_tokens=4)
-			 
-			 
-			  
-			StructNode(original_parent_idx=38, original_current_idx=86, original_child_idxs=(87), node_state=COLLECTING_TAIL_TOKENS)
-			struct  
-							ScopeNode(original_parent_idx=86, original_current_idx=87, original_child_idxs=(88, 89, 90, 91, 92, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
-				{ 
-									WhitespaceNode(original_parent_idx=87, original_current_idx=88, n_tokens=24)
-					                        
-					SingleLineCommentNode(original_parent_idx=87, original_current_idx=89)
-					// scale of decor elements relative to mean body size 
-					WhitespaceNode(original_parent_idx=87, original_current_idx=90, n_tokens=4)
-					    
-					StructFieldNode(original_parent_idx=87, original_current_idx=91, node_state=COMPLETED, field_type='float', field_name='forcewidth')
-					float forcewidth ; 
-					WhitespaceNode(original_parent_idx=87, original_current_idx=92, n_tokens=13)
-					             
-					SingleLineCommentNode(original_parent_idx=87, original_current_idx=93)
-					// width of force arrow 
-					WhitespaceNode(original_parent_idx=87, original_current_idx=94, n_tokens=3)
-					   
-
-				} 
-
-			 
-			StructFieldNode(original_parent_idx=38, original_current_idx=95, node_state=COMPLETED, field_type='scale', field_name='')
-			scale ; 
-			WhitespaceNode(original_parent_idx=38, original_current_idx=96, n_tokens=4)
-			 
-			 
-			  
-			StructNode(original_parent_idx=38, original_current_idx=97, original_child_idxs=(98), node_state=COLLECTING_TAIL_TOKENS)
-			struct  
-							ScopeNode(original_parent_idx=97, original_current_idx=98, original_child_idxs=(99, 100, 101, 102, 103, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
-				{ 
-									WhitespaceNode(original_parent_idx=98, original_current_idx=99, n_tokens=24)
-					                        
-					SingleLineCommentNode(original_parent_idx=98, original_current_idx=100)
-					// color of decor elements 
-					WhitespaceNode(original_parent_idx=98, original_current_idx=101, n_tokens=4)
-					    
-					StructFieldNode(original_parent_idx=98, original_current_idx=102, node_state=COMPLETED, field_type='float', field_name='bvactive[4]')
-					float bvactive[4] ; 
-					WhitespaceNode(original_parent_idx=98, original_current_idx=103, n_tokens=12)
-					            
-					SingleLineCommentNode(original_parent_idx=98, original_current_idx=104)
-					// active bounding volume 
-					WhitespaceNode(original_parent_idx=98, original_current_idx=105, n_tokens=3)
-					   
-
-				} 
-
-			 
-			StructFieldNode(original_parent_idx=38, original_current_idx=106, node_state=COMPLETED, field_type='rgba', field_name='')
-			rgba ; 
-			WhitespaceNode(original_parent_idx=38, original_current_idx=107, n_tokens=2)
+			WhitespaceNode(original_parent_idx=24, original_current_idx=32, n_tokens=2)
 			 
 			 
 
 		} 
 
 	 ;  
-	StructNode(original_parent_idx=15, original_current_idx=108, node_state=COLLECTING_TAIL_TOKENS, name='mjVisual_')
+	StructNode(original_parent_idx=9, original_current_idx=33, node_state=COLLECTING_TAIL_TOKENS, name='mjVisual_')
 	struct mjVisual_ mjVisual ;  
 	 
-	 
-	StructNode(original_parent_idx=15, original_current_idx=109, original_child_idxs=(110), node_state=COLLECTING_TAIL_TOKENS, name='mjStatistic_')
+	StructNode(original_parent_idx=9, original_current_idx=34, original_child_idxs=(35), node_state=COLLECTING_TAIL_TOKENS, name='mjStatistic_')
 	struct mjStatistic_  
-			ScopeNode(original_parent_idx=109, original_current_idx=110, original_child_idxs=(111, 112, 113, 114, 115, ...) len=7, node_state=COMPLETED, parent_type='StructNode')
+			ScopeNode(original_parent_idx=34, original_current_idx=35, original_child_idxs=(36, 37, 38), node_state=COMPLETED, parent_type='StructNode')
 		{ 
-					WhitespaceNode(original_parent_idx=110, original_current_idx=111, n_tokens=13)
-			             
-			SingleLineCommentNode(original_parent_idx=110, original_current_idx=112)
-			// model statistics  ( in qpos0 )  
-			WhitespaceNode(original_parent_idx=110, original_current_idx=113, n_tokens=2)
+					WhitespaceNode(original_parent_idx=35, original_current_idx=36, n_tokens=3)
+			 
 			  
-			StructFieldNode(original_parent_idx=110, original_current_idx=114, node_state=COMPLETED, field_type='mjtNum', field_name='meaninertia')
+			StructFieldNode(original_parent_idx=35, original_current_idx=37, node_state=COMPLETED, field_type='mjtNum', field_name='meaninertia')
 			mjtNum meaninertia ; 
-			WhitespaceNode(original_parent_idx=110, original_current_idx=115, n_tokens=13)
-			             
-			SingleLineCommentNode(original_parent_idx=110, original_current_idx=116)
-			// mean diagonal inertia 
-			WhitespaceNode(original_parent_idx=110, original_current_idx=117, n_tokens=2)
+			WhitespaceNode(original_parent_idx=35, original_current_idx=38, n_tokens=2)
 			 
 			 
 
 		} 
 
 	 ;  
-	StructNode(original_parent_idx=15, original_current_idx=118, node_state=COLLECTING_TAIL_TOKENS, name='mjStatistic_')
+	StructNode(original_parent_idx=9, original_current_idx=39, node_state=COLLECTING_TAIL_TOKENS, name='mjStatistic_')
 	struct mjStatistic_ mjStatistic ;  
 	 
-	 
-	StructNode(original_parent_idx=15, original_current_idx=119, original_child_idxs=(120), node_state=COLLECTING_TAIL_TOKENS, name='mjModel_')
+	StructNode(original_parent_idx=9, original_current_idx=40, original_child_idxs=(41), node_state=COLLECTING_TAIL_TOKENS, name='mjModel_')
 	struct mjModel_  
-			ScopeNode(original_parent_idx=119, original_current_idx=120, original_child_idxs=(121, 122, 123, 124, 125, ...) len=9, node_state=COMPLETED, parent_type='StructNode')
+			ScopeNode(original_parent_idx=40, original_current_idx=41, original_child_idxs=(42, 43, 44), node_state=COMPLETED, parent_type='StructNode')
 		{ 
-					WhitespaceNode(original_parent_idx=120, original_current_idx=121, n_tokens=3)
+					WhitespaceNode(original_parent_idx=41, original_current_idx=42, n_tokens=3)
 			 
 			  
-			SingleLineCommentNode(original_parent_idx=120, original_current_idx=122)
-			// ------------------------------- sizes 
-			WhitespaceNode(original_parent_idx=120, original_current_idx=123, n_tokens=2)
-			  
-			SingleLineCommentNode(original_parent_idx=120, original_current_idx=124)
-			// sizes needed at mjModel construction 
-			WhitespaceNode(original_parent_idx=120, original_current_idx=125, n_tokens=2)
-			  
-			StructFieldNode(original_parent_idx=120, original_current_idx=126, node_state=COMPLETED, field_type='int', field_name='nq')
+			StructFieldNode(original_parent_idx=41, original_current_idx=43, node_state=COMPLETED, field_type='int', field_name='nq')
 			int nq ; 
-			WhitespaceNode(original_parent_idx=120, original_current_idx=127, n_tokens=25)
-			                         
-			SingleLineCommentNode(original_parent_idx=120, original_current_idx=128)
-			// number of generalized coordinates = dim ( qpos )  
-			WhitespaceNode(original_parent_idx=120, original_current_idx=129, n_tokens=1)
+			WhitespaceNode(original_parent_idx=41, original_current_idx=44, n_tokens=2)
+			 
 			 
 
 		} 
 
 	 ;  
-	StructNode(original_parent_idx=15, original_current_idx=130, node_state=COLLECTING_TAIL_TOKENS, name='mjModel_')
+	StructNode(original_parent_idx=9, original_current_idx=45, node_state=COLLECTING_TAIL_TOKENS, name='mjModel_')
 	struct mjModel_ mjModel ;  
 	 
 
-	//---------------------------------- 
 	typedef 
-	//---------------------------------- 
 	typedef 
-	//---------------------------------- 
 	typedef 
-	//---------------------------------- 
 	typedef 
-	//---------------------------------- 
 	typedef 
 	#endif 
 

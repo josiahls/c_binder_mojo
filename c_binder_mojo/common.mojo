@@ -251,7 +251,7 @@ struct TokenBundles(Stringable):
 
     var _token_bundles: List[TokenBundle]
 
-    fn __init__(mut self):
+    fn __init__(out self):
         """Initialize an empty TokenBundles collection."""
         self._token_bundles = List[TokenBundle]()
 
@@ -347,7 +347,7 @@ struct Tokenizer:
 
     alias ISOLATED_TOKEN_CHARS: List[String] = List[String](";", ",", "{", "}", "(", ")")
 
-    fn __init__(mut self):
+    fn __init__(out self):
         """Initialize an empty Tokenizer."""
         self.tokens = List[TokenBundle]()
 

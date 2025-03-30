@@ -13,6 +13,7 @@ from .scope_node import ScopeNode
 from .enum_node import EnumNode
 from .struct_node import StructNode
 from .enum_field_node import EnumFieldNode
+from .struct_field_node import StructFieldNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -30,6 +31,7 @@ alias AstNodeVariant = Variant[
     EnumNode,
     StructNode,
     EnumFieldNode,
+    StructFieldNode,
     PlaceHolderNode,
 ]
 

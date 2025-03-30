@@ -3,14 +3,10 @@ struct Point
 { 
 	 
 	    
-	int 
-	x 
-	; 
+	int x ; 
 	 
 	    
-	int 
-	y 
-	; 
+	int y ; 
 	 
 	 
 } 
@@ -20,14 +16,10 @@ struct Person
 { 
 	 
 	    
-	char* 
-	name 
-	; 
+	char* name ; 
 	 
 	    
-	int 
-	age 
-	; 
+	int age ; 
 	 
 	 
 } 
@@ -48,14 +40,10 @@ struct Complex
 	    
 	// Basic types 
 	    
-	int 
-	id 
-	; 
+	int id ; 
 	 
 	    
-	float 
-	value 
-	; 
+	float value ; 
 	 
 	     
 	    
@@ -65,15 +53,12 @@ struct Complex
 	{ 	
 		 
 		        
-		double 
-		data 
-		; 
+		double data ; 
 		 
 		     
 	} 
 	 
-	nested 
-	; 
+	nested ; 
 	 
 	 
 } 
@@ -85,10 +70,7 @@ struct
 { 
 	 
 	    
-	unsigned 
-	char 
-	flags 
-	; 
+	unsigned char flags ; 
 	 
 	 
 } 
@@ -101,28 +83,13 @@ struct BitFields
 { 
 	 
 	    
-	unsigned 
-	int 
-	a 
-	: 
-	1 
-	; 
+	unsigned int a : 1 ; 
 	 
 	    
-	unsigned 
-	int 
-	b 
-	: 
-	2 
-	; 
+	unsigned int b : 2 ; 
 	 
 	    
-	unsigned 
-	int 
-	c 
-	: 
-	3 
-	; 
+	unsigned int c : 3 ; 
 	 
 	 
 } 

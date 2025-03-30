@@ -13,6 +13,7 @@ from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
 from c_binder_mojo.c_ast_nodes.struct_node import StructNode
 
+
 fn test_struct_node() raises:
     """Test the parsing and AST construction for struct nodes."""
     var logger = Logger.get_default_logger("test_struct_node")
@@ -62,8 +63,10 @@ fn test_struct_node() raises:
 
     # Count and verify struct nodes
     var struct_count = 0
-    var expected_struct_names = List[String]("Point", "Person", "Empty", "Complex", "Inner", "BitFields")
-    var expected_struct_names_str = String('')
+    var expected_struct_names = List[String](
+        "Point", "Person", "Empty", "Complex", "Inner", "BitFields"
+    )
+    var expected_struct_names_str = String("")
     for name in expected_struct_names:
         expected_struct_names_str += name[] + ", "
 
@@ -72,26 +75,35 @@ fn test_struct_node() raises:
         if node.name() == "StructNode":
             struct_count += 1
             logger.info("Found struct node: " + node.name(include_sig=True))
-            
+
             # Verify struct name
             var struct_name = node.node[][StructNode].get_struct_name()
             if struct_name not in expected_struct_names:
                 # Skip anonymous structs (they have empty names)
                 if struct_name != "":
                     raise Error(
-                        "Unexpected struct name: " + struct_name + 
-                        ". Expected one of: " + expected_struct_names_str
+                        "Unexpected struct name: "
+                        + struct_name
+                        + ". Expected one of: "
+                        + expected_struct_names_str
                     )
             logger.info("  - Name: " + struct_name)
 
     # We expect 7 struct nodes in our test file (6 named + 1 anonymous)
-    var expected_count = len(expected_struct_names) + 1  # +1 for anonymous struct
+    var expected_count = len(
+        expected_struct_names
+    ) + 1  # +1 for anonymous struct
     if struct_count != expected_count:
         raise Error(
-            "Expected " + String(expected_count) + " struct nodes, but found " + String(struct_count)
+            "Expected "
+            + String(expected_count)
+            + " struct nodes, but found "
+            + String(struct_count)
         )
 
-    logger.info("Struct node test passed with " + String(struct_count) + " struct nodes")
+    logger.info(
+        "Struct node test passed with " + String(struct_count) + " struct nodes"
+    )
     return
 
 
@@ -101,4 +113,4 @@ fn main() raises:
         test_struct_node()
         print("Test succeeded")
     except e:
-        print("Test failed: " + String(e)) 
+        print("Test failed: " + String(e))

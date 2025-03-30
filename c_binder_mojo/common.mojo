@@ -10,25 +10,84 @@ from firehose.logging import Logger
 # First Party Modules
 
 
+@value
+struct StateOrFlowValue(Stringable):
+    # NOTE(josiahls): tried doing int literal, but it made typing more complicated.
+    var value: Int
+    var _message: String
+
+    fn __eq__(self: Self, other: Self) -> Bool:
+        return self.value == other.value
+
+    fn __str__(self) -> String:
+        if self._message != "":
+            return String(self.value) + " (" + self._message + ")"
+        else:
+            return String(self.value)
+
+    fn __init__(out self, value: Int):
+        self.value = value
+        self._message = ""
+
+    fn __init__(out self, value: Int, message: String):
+        self.value = value
+        self._message = message
+
+    fn __add__(self: Self, other: Self) -> Self:
+        return Self(self.value + other.value, self._message + other._message)
+
+    fn __add__(self: Self, other: String) -> Self:
+        return Self(self.value, self._message + other)
+
+
 struct NodeState:
     """The internal construction state of a node."""
 
-    alias INITIALIZING = "INITIALIZING"  # Node is being initialized
-    alias COLLECTING_TOKENS = "COLLECTING_TOKENS"  # Node is collecting its own tokens
-    alias COLLECTING_TAIL_TOKENS = "COLLECTING_TAIL_TOKENS"  # Node is collecting its own tokens adding them to the tail
-    alias BUILDING_CHILDREN = "BUILDING_CHILDREN"  # Node is creating/managing children
-    alias COMPLETED = "COMPLETED"  # Node is completely built
-    alias INVALID = "INVALID"  # Node is in an invalid state (error)
+    alias INITIALIZING = StateOrFlowValue(0)  # Node is being initialized
+    alias COLLECTING_TOKENS = StateOrFlowValue(
+        1
+    )  # Node is collecting its own tokens
+    alias COLLECTING_TAIL_TOKENS = StateOrFlowValue(
+        2
+    )  # Node is collecting its own tokens adding them to the tail
+    alias BUILDING_CHILDREN = StateOrFlowValue(
+        3
+    )  # Node is creating/managing children
+    alias COMPLETED = StateOrFlowValue(4)  # Node is completely built
+    alias INVALID = StateOrFlowValue(5)  # Node is in an invalid state (error)
 
 
 struct TokenFlow:
     """Directive for how tokens should flow through the tree."""
 
-    alias INITIALIZE_MODULE = "INITIALIZE_MODULE"  # Tree has just started, no nodes exist yet
-    alias CONSUME_TOKEN = "CONSUME_TOKEN"  # Node should consume the token
-    alias PASS_TO_PARENT = "PASS_TO_PARENT"  # Pass token to parent node
-    alias CREATE_CHILD = "CREATE_CHILD"  # Create a child for this token
-    alias INVALID = "INVALID"  # Invalid directive (error)
+    alias INITIALIZE_MODULE = StateOrFlowValue(
+        0
+    )  # Tree has just started, no nodes exist yet
+    alias CONSUME_TOKEN = StateOrFlowValue(1)  # Node should consume the token
+    alias PASS_TO_PARENT = StateOrFlowValue(2)  # Pass token to parent node
+    alias CREATE_CHILD = StateOrFlowValue(3)  # Create a child for this token
+    alias INVALID = StateOrFlowValue(4)  # Invalid directive (error)
+
+
+# struct NodeState:
+#     """The internal construction state of a node."""
+
+#     alias INITIALIZING = "INITIALIZING"  # Node is being initialized
+#     alias COLLECTING_TOKENS = "COLLECTING_TOKENS"  # Node is collecting its own tokens
+#     alias COLLECTING_TAIL_TOKENS = "COLLECTING_TAIL_TOKENS"  # Node is collecting its own tokens adding them to the tail
+#     alias BUILDING_CHILDREN = "BUILDING_CHILDREN"  # Node is creating/managing children
+#     alias COMPLETED = "COMPLETED"  # Node is completely built
+#     alias INVALID = "INVALID"  # Node is in an invalid state (error)
+
+
+# struct TokenFlow:
+#     """Directive for how tokens should flow through the tree."""
+
+#     alias INITIALIZE_MODULE = "INITIALIZE_MODULE"  # Tree has just started, no nodes exist yet
+#     alias CONSUME_TOKEN = "CONSUME_TOKEN"  # Node should consume the token
+#     alias PASS_TO_PARENT = "PASS_TO_PARENT"  # Pass token to parent node
+#     alias CREATE_CHILD = "CREATE_CHILD"  # Create a child for this token
+#     alias INVALID = "INVALID"  # Invalid directive (error)
 
 
 struct CTokens:
@@ -345,7 +404,9 @@ struct Tokenizer:
 
     var tokens: List[TokenBundle]
 
-    alias ISOLATED_TOKEN_CHARS: List[String] = List[String](";", ",", "{", "}", "(", ")")
+    alias ISOLATED_TOKEN_CHARS: List[String] = List[String](
+        ";", ",", "{", "}", "(", ")"
+    )
 
     fn __init__(out self):
         """Initialize an empty Tokenizer."""

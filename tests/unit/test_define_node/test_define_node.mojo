@@ -67,13 +67,13 @@ fn test_define_node() raises:
         if node.name() == "MacroDefineNode":
             define_count += 1
             logger.info("Found define node: " + node.name(include_sig=True))
-            
+
             # Check if this is an empty define (no value)
             var indices = node.indicies()
             if len(indices.original_child_idxs) == 0:
                 empty_define_count += 1
                 logger.info("Found empty define node")
-            
+
     # We expect 10 define nodes in our test file
     if define_count != 10:
         raise Error(
@@ -97,4 +97,4 @@ fn main() raises:
         test_define_node()
         print("Test succeeded")
     except e:
-        print("Test failed: " + String(e)) 
+        print("Test failed: " + String(e))

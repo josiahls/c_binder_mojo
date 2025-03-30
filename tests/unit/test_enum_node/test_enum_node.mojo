@@ -13,6 +13,7 @@ from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
 from c_binder_mojo.c_ast_nodes.enum_node import EnumNode
 
+
 fn test_enum_node() raises:
     """Test the parsing and AST construction for enum nodes."""
     var logger = Logger.get_default_logger("test_enum_node")
@@ -60,8 +61,10 @@ fn test_enum_node() raises:
 
     # Count and verify enum nodes
     var enum_count = 0
-    var expected_enum_names = List[String]("Color", "Direction", "Status", "Empty", "Flags", "ByteValues")
-    var expected_enum_names_str = String('')
+    var expected_enum_names = List[String](
+        "Color", "Direction", "Status", "Empty", "Flags", "ByteValues"
+    )
+    var expected_enum_names_str = String("")
     for name in expected_enum_names:
         expected_enum_names_str += name[] + ", "
 
@@ -70,23 +73,30 @@ fn test_enum_node() raises:
         if node.name() == "EnumNode":
             enum_count += 1
             logger.info("Found enum node: " + node.name(include_sig=True))
-            
+
             # Verify enum name
             var enum_name = node.node[][EnumNode].get_enum_name()
             if enum_name not in expected_enum_names:
                 raise Error(
-                    "Unexpected enum name: " + enum_name + 
-                    ". Expected one of: " + expected_enum_names_str
+                    "Unexpected enum name: "
+                    + enum_name
+                    + ". Expected one of: "
+                    + expected_enum_names_str
                 )
             logger.info("  - Name: " + enum_name)
 
     # We expect 5 enum nodes in our test file
     if enum_count != len(expected_enum_names):
         raise Error(
-            "Expected " + String(len(expected_enum_names)) + " enum nodes, but found " + String(enum_count)
+            "Expected "
+            + String(len(expected_enum_names))
+            + " enum nodes, but found "
+            + String(enum_count)
         )
 
-    logger.info("Enum node test passed with " + String(enum_count) + " enum nodes")
+    logger.info(
+        "Enum node test passed with " + String(enum_count) + " enum nodes"
+    )
     return
 
 
@@ -96,4 +106,4 @@ fn main() raises:
         test_enum_node()
         print("Test succeeded")
     except e:
-        print("Test failed: " + String(e)) 
+        print("Test failed: " + String(e))

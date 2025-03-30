@@ -19,41 +19,55 @@ from c_binder_mojo.c_ast_nodes.macro_if_n_def_node import MacroIfNDefNode
 fn verify_struct_node_contents(node: StructNode) raises:
     """Verify that a struct node does not contain unrelated tokens."""
     var logger = Logger.get_default_logger("test_mujoco_headers")
-    
+
     # Log all tokens for debugging
     var tokens = node.token_bundles()._token_bundles
     for token in tokens:
         logger.info("Token: " + String(token[].token))
-        
+
         # Check for typedef tokens
         if token[].token == "typedef":
             raise Error("Found typedef token inside struct node")
-        
+
         # Check for preprocessor directives
         if token[].token.startswith("#"):
-            raise Error("Found preprocessor directive inside struct node: " + String(token[].token))
+            raise Error(
+                "Found preprocessor directive inside struct node: "
+                + String(token[].token)
+            )
 
 
 fn verify_preprocessor_scope(node: AstNode) raises:
     """Verify that preprocessor directives are properly scoped."""
     var logger = Logger.get_default_logger("test_mujoco_headers")
     var ifdef_stack = List[String]()  # Stack to track #ifdef/#ifndef
-    
+
     var tokens = node.token_bundles()._token_bundles
     for token in tokens:
         var token_str = String(token[].token)
-        
+
         if token_str == "#ifdef" or token_str == "#ifndef":
             ifdef_stack.append(token_str)
-            logger.info("Found " + token_str + ", stack depth: " + String(len(ifdef_stack)))
+            logger.info(
+                "Found "
+                + token_str
+                + ", stack depth: "
+                + String(len(ifdef_stack))
+            )
         elif token_str == "#endif":
             if len(ifdef_stack) == 0:
                 raise Error("Found #endif without matching #ifdef/#ifndef")
             _ = ifdef_stack.pop()
-            logger.info("Found #endif, stack depth: " + String(len(ifdef_stack)))
-    
+            logger.info(
+                "Found #endif, stack depth: " + String(len(ifdef_stack))
+            )
+
     if len(ifdef_stack) > 0:
-        raise Error("Found unclosed preprocessor blocks: " + String(len(ifdef_stack)) + " remaining")
+        raise Error(
+            "Found unclosed preprocessor blocks: "
+            + String(len(ifdef_stack))
+            + " remaining"
+        )
 
 
 fn test_mjtnum_header() raises:
@@ -107,11 +121,11 @@ fn test_mjtnum_header() raises:
     var struct_count = 0
     var ifdef_count = 0
     var ifndef_count = 0
-    
+
     var nodes = module_interface.nodes()[]
     for node in nodes:
         var node_name = node[].name()
-        
+
         if node_name == "TypedefNode":
             typedef_count += 1
             logger.info("Found typedef node: " + node[].name(include_sig=True))
@@ -196,11 +210,11 @@ fn test_mjmodel_header() raises:
     var struct_count = 0
     var ifdef_count = 0
     var ifndef_count = 0
-    
+
     var nodes = module_interface.nodes()[]
     for node in nodes:
         var node_name = node[].name()
-        
+
         if node_name == "TypedefNode":
             typedef_count += 1
             logger.info("Found typedef node: " + node[].name(include_sig=True))
@@ -227,9 +241,13 @@ fn test_mjmodel_header() raises:
 
     # Verify counts
     if typedef_count < 30:  # Many typedefs in mjmodel.h
-        raise Error("Expected at least 30 typedefs, but found " + String(typedef_count))
+        raise Error(
+            "Expected at least 30 typedefs, but found " + String(typedef_count)
+        )
     if struct_count < 5:  # Multiple structs in mjmodel.h
-        raise Error("Expected at least 5 structs, but found " + String(struct_count))
+        raise Error(
+            "Expected at least 5 structs, but found " + String(struct_count)
+        )
     if ifndef_count != 1:  # MUJOCO_MJMODEL_H_
         raise Error("Expected 1 ifndef, but found " + String(ifndef_count))
 

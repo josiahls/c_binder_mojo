@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -27,11 +28,11 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 @value
 struct ScopeNode(NodeAstLike):
     """A generic scope node that can handle scopes for different node types.
-    
+
     This node is responsible for managing content that needs its own scope level.
     Each scope node is associated with a parent node type (e.g., typedef, struct, enum)
     and provides proper indentation and scope management for its children.
-    
+
     The scope type is determined by the parent node and affects how the scope
     is handled (e.g., typedef scopes vs struct scopes may have different rules).
     """
@@ -40,11 +41,16 @@ struct ScopeNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _parent_type: String  # Type of node this scope belongs to (e.g., "typedef", "struct")
     var _row_nums: List[Int]  # Track rows for multi-line scopes
 
-    fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle, parent_type: String):
+    fn __init__(
+        out self,
+        indicies: NodeIndices,
+        token_bundle: TokenBundle,
+        parent_type: String,
+    ):
         """Initialize a ScopeNode.
 
         Args:
@@ -103,17 +109,19 @@ struct ScopeNode(NodeAstLike):
             A new ScopeNode instance.
         """
         # Get parent type
-        # TODO(josiahls): Do we want to get the literal parent type instead of string? 
-        # I do like that we aren't importing extra nodes, but on the other hand, we 
+        # TODO(josiahls): Do we want to get the literal parent type instead of string?
+        # I do like that we aren't importing extra nodes, but on the other hand, we
         # don't get compilation checking.
         var parent_type = String("")
         if indices.original_parent_idx >= 0:
-            parent_type = module_interface.nodes()[][indices.original_parent_idx].name()
+            parent_type = module_interface.nodes()[][
+                indices.original_parent_idx
+            ].name()
         return Self(indices, token, parent_type)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine how to handle the next token.
 
         Args:
@@ -127,9 +135,12 @@ struct ScopeNode(NodeAstLike):
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
 
-        if self._node_state == NodeState.BUILDING_CHILDREN and token.token == CTokens.SCOPE_END:
+        if (
+            self._node_state == NodeState.BUILDING_CHILDREN
+            and token.token == CTokens.SCOPE_END
+        ):
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS
-            return TokenFlow.CONSUME_TOKEN # Consume the scope end token.
+            return TokenFlow.CONSUME_TOKEN  # Consume the scope end token.
 
         if self._node_state == NodeState.INITIALIZING:
             self._node_state = NodeState.BUILDING_CHILDREN
@@ -143,7 +154,7 @@ struct ScopeNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -172,7 +183,7 @@ struct ScopeNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -249,4 +260,4 @@ struct ScopeNode(NodeAstLike):
         Returns:
             The scope offset (1 for scope nodes, which create their own scope).
         """
-        return 1  # Scope nodes always add one level of scope 
+        return 1  # Scope nodes always add one level of scope

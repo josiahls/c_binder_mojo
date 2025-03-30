@@ -1,824 +1,824 @@
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| RootNode(original_current_idx=0)
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| RootNode(original_current_idx=0)
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:220 - INFO: [Depth:1] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:1] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Empty' at [0:2]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'defines' at [0:7]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [0:14]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '(' at [0:14]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'no' at [0:15]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'value' at [0:17]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ')' at [0:22]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [0:23]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#define' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1))
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1))
     └─ Path: RootNode
     └─ Current Token: '#define' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [1:0]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'EMPTY_DEFINE_1' at [1:7]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=COMPLETED, macro='EMPTY_DEFINE_1')
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=2, node_state=4, macro='EMPTY_DEFINE_1')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [2:0]
     └─ Nodes: 1 active, 2 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2))
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2))
     └─ Path: RootNode
     └─ Current Token: '#define' at [2:0]
     └─ Nodes: 1 active, 2 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [2:0]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'EMPTY_DEFINE_2' at [2:7]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=COMPLETED, macro='EMPTY_DEFINE_2')
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=3, node_state=4, macro='EMPTY_DEFINE_2')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '' at [3:0]
     └─ Nodes: 1 active, 3 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3))
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3))
     └─ Path: RootNode
     └─ Current Token: '' at [3:0]
     └─ Nodes: 1 active, 3 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=4, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [3:0]
     └─ Nodes: 1 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=4, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [4:0]
     └─ Nodes: 1 active, 4 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4))
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4))
     └─ Path: RootNode
     └─ Current Token: '//' at [4:0]
     └─ Nodes: 1 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [4:0]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Simple' at [4:2]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'value' at [4:8]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'defines' at [4:13]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#define' at [5:0]
     └─ Nodes: 1 active, 5 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5))
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5))
     └─ Path: RootNode
     └─ Current Token: '#define' at [5:0]
     └─ Nodes: 1 active, 5 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [5:0]
     └─ Nodes: 2 active, 5 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'SIMPLE_INT' at [5:7]
     └─ Nodes: 2 active, 5 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, node_state=BUILDING_CHILDREN, macro='SIMPLE_INT')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, node_state=3, macro='SIMPLE_INT')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '42' at [5:17]
     └─ Nodes: 2 active, 5 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=6, original_current_idx=7, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=6, original_current_idx=7, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '42' at [5:17]
     └─ Nodes: 3 active, 5 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		MacroDefineValueNode(original_parent_idx=6, original_current_idx=7, node_state=COMPLETED, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		MacroDefineValueNode(original_parent_idx=6, original_current_idx=7, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '#define' at [6:0]
     └─ Nodes: 2 active, 6 complete
-tree.mojo:220 - INFO: [Depth:-1] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, original_child_idxs=(7), node_state=COMPLETED, macro='SIMPLE_INT')
+tree.mojo:220 - INFO: [Depth:-1] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=6, original_child_idxs=(7), node_state=4, macro='SIMPLE_INT')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [6:0]
     └─ Nodes: 1 active, 7 complete
-tree.mojo:220 - INFO: [Depth:-2] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, 6))
+tree.mojo:220 - INFO: [Depth:-2] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, 6))
     └─ Path: RootNode
     └─ Current Token: '#define' at [6:0]
     └─ Nodes: 1 active, 7 complete
-tree.mojo:220 - INFO: [Depth:-1] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:-1] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [6:0]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'SIMPLE_FLOAT' at [6:7]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, node_state=BUILDING_CHILDREN, macro='SIMPLE_FLOAT')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, node_state=3, macro='SIMPLE_FLOAT')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '3.14' at [6:19]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=8, original_current_idx=9, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=8, original_current_idx=9, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '3.14' at [6:19]
     └─ Nodes: 3 active, 7 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		MacroDefineValueNode(original_parent_idx=8, original_current_idx=9, node_state=COMPLETED, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		MacroDefineValueNode(original_parent_idx=8, original_current_idx=9, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '#define' at [7:0]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:220 - INFO: [Depth:-1] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, original_child_idxs=(9), node_state=COMPLETED, macro='SIMPLE_FLOAT')
+tree.mojo:220 - INFO: [Depth:-1] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=8, original_child_idxs=(9), node_state=4, macro='SIMPLE_FLOAT')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [7:0]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:220 - INFO: [Depth:-2] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
+tree.mojo:220 - INFO: [Depth:-2] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
     └─ Path: RootNode
     └─ Current Token: '#define' at [7:0]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:220 - INFO: [Depth:-1] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:-1] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [7:0]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'SIMPLE_STRING' at [7:7]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, node_state=BUILDING_CHILDREN, macro='SIMPLE_STRING')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, node_state=3, macro='SIMPLE_STRING')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '"hello"' at [7:20]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=10, original_current_idx=11, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=10, original_current_idx=11, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '"hello"' at [7:20]
     └─ Nodes: 3 active, 9 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		MacroDefineValueNode(original_parent_idx=10, original_current_idx=11, node_state=COMPLETED, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		MacroDefineValueNode(original_parent_idx=10, original_current_idx=11, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [8:0]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:220 - INFO: [Depth:-1] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, original_child_idxs=(11), node_state=COMPLETED, macro='SIMPLE_STRING')
+tree.mojo:220 - INFO: [Depth:-1] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=10, original_child_idxs=(11), node_state=4, macro='SIMPLE_STRING')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '' at [8:0]
     └─ Nodes: 1 active, 11 complete
-tree.mojo:220 - INFO: [Depth:-2] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=8)
+tree.mojo:220 - INFO: [Depth:-2] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=8)
     └─ Path: RootNode
     └─ Current Token: '' at [8:0]
     └─ Nodes: 1 active, 11 complete
-tree.mojo:220 - INFO: [Depth:-1] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=12, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:-1] 0 -> 3|-----------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=12, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [8:0]
     └─ Nodes: 1 active, 12 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=12, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=12, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [9:0]
     └─ Nodes: 1 active, 12 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
     └─ Path: RootNode
     └─ Current Token: '//' at [9:0]
     └─ Nodes: 1 active, 12 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [9:0]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Function-like' at [9:2]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'macros' at [9:15]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#define' at [10:0]
     └─ Nodes: 1 active, 13 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=10)
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=10)
     └─ Path: RootNode
     └─ Current Token: '#define' at [10:0]
     └─ Nodes: 1 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [10:0]
     └─ Nodes: 2 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'ADD' at [10:7]
     └─ Nodes: 2 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, node_state=BUILDING_CHILDREN, macro='ADD')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, node_state=3, macro='ADD')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '(' at [10:10]
     └─ Nodes: 2 active, 13 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [10:10]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'x' at [10:11]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ',' at [10:12]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:13]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'y' at [10:13]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [10:14]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:15]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:15]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [10:15]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:16]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [10:16]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'x' at [10:17]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [10:18]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:19]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '+' at [10:19]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:20]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [10:20]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'y' at [10:21]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [10:22]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:23]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [10:23]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [10:24]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=COMPLETED, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		MacroDefineValueNode(original_parent_idx=14, original_current_idx=15, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '#define' at [11:0]
     └─ Nodes: 2 active, 14 complete
-tree.mojo:220 - INFO: [Depth:-1] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, original_child_idxs=(15), node_state=COMPLETED, macro='ADD')
+tree.mojo:220 - INFO: [Depth:-1] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=14, original_child_idxs=(15), node_state=4, macro='ADD')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [11:0]
     └─ Nodes: 1 active, 15 complete
-tree.mojo:220 - INFO: [Depth:-2] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
+tree.mojo:220 - INFO: [Depth:-2] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
     └─ Path: RootNode
     └─ Current Token: '#define' at [11:0]
     └─ Nodes: 1 active, 15 complete
-tree.mojo:220 - INFO: [Depth:-1] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:-1] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [11:0]
     └─ Nodes: 2 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'MAX' at [11:7]
     └─ Nodes: 2 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, node_state=BUILDING_CHILDREN, macro='MAX')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, node_state=3, macro='MAX')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '(' at [11:10]
     └─ Nodes: 2 active, 15 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [11:10]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'a' at [11:11]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ',' at [11:12]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:13]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'b' at [11:13]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [11:14]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:15]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:15]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [11:15]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:16]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [11:16]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'a' at [11:17]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [11:18]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:19]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '>' at [11:19]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:20]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [11:20]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'b' at [11:21]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [11:22]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:23]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '?' at [11:23]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:24]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [11:24]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'a' at [11:25]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [11:26]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:27]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ':' at [11:27]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:28]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [11:28]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'b' at [11:29]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [11:30]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:31]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [11:31]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [11:32]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=COMPLETED, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		MacroDefineValueNode(original_parent_idx=16, original_current_idx=17, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '#define' at [12:0]
     └─ Nodes: 2 active, 16 complete
-tree.mojo:220 - INFO: [Depth:-1] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, original_child_idxs=(17), node_state=COMPLETED, macro='MAX')
+tree.mojo:220 - INFO: [Depth:-1] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=16, original_child_idxs=(17), node_state=4, macro='MAX')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [12:0]
     └─ Nodes: 1 active, 17 complete
-tree.mojo:220 - INFO: [Depth:-2] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=12)
+tree.mojo:220 - INFO: [Depth:-2] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=12)
     └─ Path: RootNode
     └─ Current Token: '#define' at [12:0]
     └─ Nodes: 1 active, 17 complete
-tree.mojo:220 - INFO: [Depth:-1] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:-1] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [12:0]
     └─ Nodes: 2 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'PRINT_DEBUG' at [12:7]
     └─ Nodes: 2 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, node_state=BUILDING_CHILDREN, macro='PRINT_DEBUG')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, node_state=3, macro='PRINT_DEBUG')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '(' at [12:18]
     └─ Nodes: 2 active, 17 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [12:18]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'msg' at [12:19]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ',' at [12:22]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [12:23]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '...' at [12:23]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [12:26]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [12:27]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'printf' at [12:27]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [12:33]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '"[DEBUG]' at [12:34]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '"' at [12:42]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'msg' at [12:43]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '"\n"' at [12:46]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ',' at [12:50]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [12:51]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '##__VA_ARGS__' at [12:51]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [12:64]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [12:65]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=COMPLETED, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		MacroDefineValueNode(original_parent_idx=18, original_current_idx=19, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 2 active, 18 complete
-tree.mojo:220 - INFO: [Depth:-1] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, original_child_idxs=(19), node_state=COMPLETED, macro='PRINT_DEBUG')
+tree.mojo:220 - INFO: [Depth:-1] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=18, original_child_idxs=(19), node_state=4, macro='PRINT_DEBUG')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 19 complete
-tree.mojo:220 - INFO: [Depth:-2] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
+tree.mojo:220 - INFO: [Depth:-2] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
     └─ Path: RootNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 19 complete
-tree.mojo:220 - INFO: [Depth:-1] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=20, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:-1] 0 -> 3|-----------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=20, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=20, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=20, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [14:0]
     └─ Nodes: 1 active, 20 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=14)
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=14)
     └─ Path: RootNode
     └─ Current Token: '//' at [14:0]
     └─ Nodes: 1 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [14:0]
     └─ Nodes: 2 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Complex' at [14:2]
     └─ Nodes: 2 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'defines' at [14:9]
     └─ Nodes: 2 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [14:16]
     └─ Nodes: 2 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'expressions' at [14:20]
     └─ Nodes: 2 active, 20 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=21)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#define' at [15:0]
     └─ Nodes: 1 active, 21 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=15)
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=15)
     └─ Path: RootNode
     └─ Current Token: '#define' at [15:0]
     └─ Nodes: 1 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [15:0]
     └─ Nodes: 2 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'BUFFER_SIZE' at [15:7]
     └─ Nodes: 2 active, 21 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, node_state=BUILDING_CHILDREN, macro='BUFFER_SIZE')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, node_state=3, macro='BUFFER_SIZE')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '' at [15:18]
     └─ Nodes: 2 active, 21 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		WhitespaceNode(original_parent_idx=22, original_current_idx=23, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		WhitespaceNode(original_parent_idx=22, original_current_idx=23, n_tokens=1)
     └─ Path: RootNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '' at [15:18]
     └─ Nodes: 2 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		WhitespaceNode(original_parent_idx=22, original_current_idx=23, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=22, original_current_idx=23, n_tokens=1)
     └─ Path: RootNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '(' at [15:18]
     └─ Nodes: 2 active, 22 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, original_child_idxs=(23), node_state=BUILDING_CHILDREN, macro='BUFFER_SIZE')
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, original_child_idxs=(23), node_state=3, macro='BUFFER_SIZE')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '(' at [15:18]
     └─ Nodes: 2 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '(' at [15:18]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '1024' at [15:19]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '*' at [15:23]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '2' at [15:24]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: ')' at [15:25]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [15:26]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=COMPLETED, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 		MacroDefineValueNode(original_parent_idx=22, original_current_idx=24, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [16:0]
     └─ Nodes: 2 active, 23 complete
-tree.mojo:220 - INFO: [Depth:-1] PASS_TO_PARENT|---------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, original_child_idxs=(23, 24), node_state=COMPLETED, macro='BUFFER_SIZE')
+tree.mojo:220 - INFO: [Depth:-1] 2|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=22, original_child_idxs=(23, 24), node_state=4, macro='BUFFER_SIZE')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '' at [16:0]
     └─ Nodes: 1 active, 24 complete
-tree.mojo:220 - INFO: [Depth:-2] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=16)
+tree.mojo:220 - INFO: [Depth:-2] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=16)
     └─ Path: RootNode
     └─ Current Token: '' at [16:0]
     └─ Nodes: 1 active, 24 complete
-tree.mojo:220 - INFO: [Depth:-1] RootNode -> CREATE_CHILD| 	WhitespaceNode(original_parent_idx=0, original_current_idx=25, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:-1] 0 -> 3|-----------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=25, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [16:0]
     └─ Nodes: 1 active, 25 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=25, n_tokens=1)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=25, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [17:0]
     └─ Nodes: 1 active, 25 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=17)
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=17)
     └─ Path: RootNode
     └─ Current Token: '//' at [17:0]
     └─ Nodes: 1 active, 25 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [17:0]
     └─ Nodes: 2 active, 25 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Define' at [17:2]
     └─ Nodes: 2 active, 25 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [17:8]
     └─ Nodes: 2 active, 25 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'line' at [17:12]
     └─ Nodes: 2 active, 25 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'continuation' at [17:16]
     └─ Nodes: 2 active, 25 complete
-tree.mojo:220 - INFO: [Depth:0] PASS_TO_PARENT|---------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
+tree.mojo:220 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=26)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#define' at [18:0]
     └─ Nodes: 1 active, 26 complete
-tree.mojo:220 - INFO: [Depth:-1] CREATE_CHILD|-----------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=18)
+tree.mojo:220 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=18)
     └─ Path: RootNode
     └─ Current Token: '#define' at [18:0]
     └─ Nodes: 1 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] RootNode -> CREATE_CHILD| 	MacroDefineNode(original_parent_idx=0, original_current_idx=27, node_state=INITIALIZING)
+tree.mojo:220 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=27, node_state=0)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '#define' at [18:0]
     └─ Nodes: 2 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=27, node_state=COLLECTING_TOKENS)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=27, node_state=1)
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: 'MULTILINE_STRING' at [18:7]
     └─ Nodes: 2 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CREATE_CHILD|-----------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=27, node_state=BUILDING_CHILDREN, macro='MULTILINE_STRING')
+tree.mojo:220 - INFO: [Depth:0] 3|----------------------| 	MacroDefineNode(original_parent_idx=0, original_current_idx=27, node_state=3, macro='MULTILINE_STRING')
     └─ Path: RootNode -> MacroDefineNode
     └─ Current Token: '"This' at [18:23]
     └─ Nodes: 2 active, 26 complete
-tree.mojo:220 - INFO: [Depth:1] MacroDefineNode -> CREATE_CHILD 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=INITIALIZING, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:1] 3|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '"This' at [18:23]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'is' at [18:28]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'a' at [18:30]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'long' at [18:31]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'string' at [18:35]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'that' at [18:41]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '\' at [18:45]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'continues' at [19:0]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'on' at [19:9]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'the' at [19:11]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'next' at [19:14]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'line"' at [19:18]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:220 - INFO: [Depth:0] CONSUME_TOKEN|----------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=COLLECTING_TOKENS, is_function_like=False)
+tree.mojo:220 - INFO: [Depth:0] 1|----------------------| 		MacroDefineValueNode(original_parent_idx=27, original_current_idx=28, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [19:23]
     └─ Nodes: 3 active, 26 complete

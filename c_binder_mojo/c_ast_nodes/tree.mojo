@@ -13,7 +13,13 @@ from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
 
 # First Party Modules
-from c_binder_mojo.common import TokenBundle, NodeIndices, NodeState, TokenFlow
+from c_binder_mojo.common import (
+    TokenBundle,
+    NodeIndices,
+    NodeState,
+    TokenFlow,
+    StateOrFlowValue,
+)
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike
 
 
@@ -127,8 +133,8 @@ fn log_state_transition(
     token: TokenBundle,
     current_node: AstNode,  # Renamed parameter to avoid shadowing
     module_interface: ModuleInterface,
-    token_flow: StringLiteral,
-    prev_state: String = "",
+    token_flow: StateOrFlowValue,
+    prev_state: StateOrFlowValue = StateOrFlowValue(-1),
     recursion_depth: Int = 0,
 ) raises:
     """Log a state transition with enhanced context.
@@ -144,7 +150,7 @@ fn log_state_transition(
     """
     # Format the transition string with fixed width
     var transition_str = String()
-    if prev_state == "" or prev_state == token_flow:
+    if prev_state == StateOrFlowValue(-1) or prev_state == token_flow:
         transition_str = String(token_flow)
     else:
         if prev_state == TokenFlow.PASS_TO_PARENT:
@@ -203,9 +209,7 @@ fn log_state_transition(
     var active_count = 0
     var complete_count = 0
     for i in range(len(module_interface.nodes()[])):
-        if (
-            module_interface.nodes()[][i].node_state() == NodeState.COMPLETED
-        ):
+        if module_interface.nodes()[][i].node_state() == NodeState.COMPLETED:
             complete_count += 1
         else:
             active_count += 1
@@ -251,8 +255,12 @@ fn _create_child(
     var new_idx = module_interface.insert_node(new_node)
     node.indicies_ptr()[].original_child_idxs.append(new_idx)
     log_state_transition(
-        logger, token, new_node, module_interface, TokenFlow.CREATE_CHILD,
-        prev_state=node.name(),
+        logger,
+        token,
+        new_node,
+        module_interface,
+        TokenFlow.CREATE_CHILD,
+        prev_state=node.node_state(),
         recursion_depth=recursion_depth,
     )
     return new_idx
@@ -347,7 +355,8 @@ fn get_current_node(
         return _consume_token(token, current_idx, module_interface, logger)
     else:
         raise Error(
-            "get_current_node called on AstNode that could not determine token flow: "
+            "get_current_node called on AstNode that could not determine token"
+            " flow: "
             + String(token_flow)
         )
 

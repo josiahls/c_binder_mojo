@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -28,12 +29,12 @@ from c_binder_mojo.c_ast_nodes.scope_node import ScopeNode
 @value
 struct EnumFieldNode(NodeAstLike):
     """Represents a field in an enum definition.
-    
+
     Examples:
         FIELD_NAME,
         FIELD_NAME = 1,
         FIELD_NAME = SOME_CONSTANT,
-        
+
     The node tracks:
     - The field name
     - Optional field value
@@ -44,7 +45,7 @@ struct EnumFieldNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _field_name: String
     var _field_value: String
     var _has_value: Bool
@@ -87,15 +88,15 @@ struct EnumFieldNode(NodeAstLike):
         # Check if we're in an enum scope
         if indices.original_parent_idx < 0:
             return False
-            
+
         var parent = module_interface.nodes()[][indices.original_parent_idx]
         if parent.name() != "ScopeNode":
             return False
-            
+
         # Check if the parent's parent is an EnumNode
         if parent.node[][ScopeNode]._parent_type != "EnumNode":
             return False
-            
+
         # Accept if it's an identifier (not a special token)
         return True
 
@@ -119,7 +120,7 @@ struct EnumFieldNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine how to handle the next token.
 
         Args:
@@ -153,13 +154,17 @@ struct EnumFieldNode(NodeAstLike):
             self._node_state = NodeState.COMPLETED
             return TokenFlow.CONSUME_TOKEN
 
-
         # Collect value tokens if we're after the =
         if self._has_value:
             return TokenFlow.CONSUME_TOKEN
 
         # Skip whitespace and comments
-        if token.token == " " or token.token == "\t" or token.token == "\n" or token.token == '':
+        if (
+            token.token == " "
+            or token.token == "\t"
+            or token.token == "\n"
+            or token.token == ""
+        ):
             return TokenFlow.CONSUME_TOKEN
 
         return TokenFlow.PASS_TO_PARENT
@@ -167,7 +172,7 @@ struct EnumFieldNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -197,7 +202,7 @@ struct EnumFieldNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -291,4 +296,4 @@ struct EnumFieldNode(NodeAstLike):
         Returns:
             The field value, or empty string if no value was assigned.
         """
-        return self._field_value 
+        return self._field_value

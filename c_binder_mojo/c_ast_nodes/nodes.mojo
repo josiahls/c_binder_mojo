@@ -5,9 +5,11 @@ from memory import ArcPointer
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     TokenBundles,
     NodeIndices,
     TokenFlow,
+    NodeState,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes import AstNodeVariant
@@ -106,7 +108,11 @@ fn default_to_string(
 
 
 fn default_to_string_just_code(
-    node: AstNode, module_interface: ModuleInterface, inline_children: Bool = False, inline_nodes: Bool = False, inline_tail: Bool = False
+    node: AstNode,
+    module_interface: ModuleInterface,
+    inline_children: Bool = False,
+    inline_nodes: Bool = False,
+    inline_tail: Bool = False,
 ) -> String:
     """Default string conversion for nodes.
 
@@ -176,16 +182,16 @@ trait NodeAstLike(CollectionElement, Stringable):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         ...
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         ...
 
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         ...
@@ -343,7 +349,7 @@ struct AstNode(CollectionElement):
     @always_inline("nodebug")
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -363,7 +369,7 @@ struct AstNode(CollectionElement):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         @parameter
@@ -394,7 +400,7 @@ struct AstNode(CollectionElement):
         return "<unknown type>"
 
     @always_inline("nodebug")
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -405,7 +411,7 @@ struct AstNode(CollectionElement):
             " for node: "
             + self.__str__()
         )
-        return "<unknown type>"
+        return NodeState.INVALID
 
     @always_inline("nodebug")
     fn to_string(

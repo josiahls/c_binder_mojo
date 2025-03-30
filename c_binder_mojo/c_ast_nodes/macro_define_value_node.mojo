@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -28,7 +29,7 @@ from c_binder_mojo.c_ast_nodes import MacroDefineNode
 @value
 struct MacroDefineValueNode(NodeAstLike):
     """Represents a #define preprocessor directive in C/C++ code.
-    
+
     This node handles both simple defines and function-like macros:
         Simple defines:
             #define FOO 42
@@ -42,7 +43,7 @@ struct MacroDefineValueNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _is_function_like: Bool
     var _row_nums: List[Int]
     var _is_line_continuation: Bool
@@ -80,7 +81,11 @@ struct MacroDefineValueNode(NodeAstLike):
         Returns:
             True if this token starts a #define directive, False otherwise.
         """
-        return module_interface.nodes()[][indices.original_parent_idx].node[].isa[MacroDefineNode]()
+        return (
+            module_interface.nodes()[][indices.original_parent_idx]
+            .node[]
+            .isa[MacroDefineNode]()
+        )
 
     @staticmethod
     fn create(
@@ -102,7 +107,7 @@ struct MacroDefineValueNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         if token.token == CTokens.LINE_CONTINUATION:
             self._is_line_continuation = True
         elif self._is_line_continuation and token.row_num not in self._row_nums:
@@ -115,12 +120,11 @@ struct MacroDefineValueNode(NodeAstLike):
 
         self._node_state = NodeState.COLLECTING_TOKENS
         return TokenFlow.CONSUME_TOKEN
-            
 
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node."""
@@ -139,7 +143,7 @@ struct MacroDefineValueNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -176,7 +180,13 @@ struct MacroDefineValueNode(NodeAstLike):
     ) -> String:
         """Convert this node to a string."""
         if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface, inline_children=True, inline_nodes=True, inline_tail=True)
+            return default_to_string_just_code(
+                AstNode(self),
+                module_interface,
+                inline_children=True,
+                inline_nodes=True,
+                inline_tail=True,
+            )
         else:
             return default_to_string(AstNode(self), module_interface)
 
@@ -194,4 +204,4 @@ struct MacroDefineValueNode(NodeAstLike):
 
     fn get_macro_name(self) -> String:
         """Get the name of the macro being defined."""
-        return self._macro_name 
+        return self._macro_name

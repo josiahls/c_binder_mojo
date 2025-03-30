@@ -76,10 +76,16 @@ fn test_multi_line_comment_node() raises:
         if node.name() == "MultiLineCommentNode":
             comment_count += 1
             # Get the actual comment content
-            var comment_text = node.to_string(just_code=True, module_interface=module_interface)
+            var comment_text = node.to_string(
+                just_code=True, module_interface=module_interface
+            )
             logger.trace(
-                "Found multiline comment " + String(comment_count) + ": " + 
-                node.name(include_sig=True) + "\n    Content: " + comment_text
+                "Found multiline comment "
+                + String(comment_count)
+                + ": "
+                + node.name(include_sig=True)
+                + "\n    Content: "
+                + comment_text
             )
 
     # We expect exactly 12 multiline comments in our test file
@@ -88,7 +94,11 @@ fn test_multi_line_comment_node() raises:
             "Expected 12 multiline comments, but found " + String(comment_count)
         )
 
-    logger.info("Multiline comment test passed with " + String(comment_count) + " comments")
+    logger.info(
+        "Multiline comment test passed with "
+        + String(comment_count)
+        + " comments"
+    )
     return
 
 

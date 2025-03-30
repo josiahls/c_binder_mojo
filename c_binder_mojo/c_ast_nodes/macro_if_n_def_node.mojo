@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -41,7 +42,7 @@ struct MacroIfNDefNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _macro_name: String
     var _row_num: Int
 
@@ -59,7 +60,6 @@ struct MacroIfNDefNode(NodeAstLike):
         self._token_bundles[].append(token_bundle)
         self._node_state = NodeState.INITIALIZING
         self._macro_name = ""
-
 
     @staticmethod
     fn accept(
@@ -99,7 +99,7 @@ struct MacroIfNDefNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         if len(self._token_bundles[]) == 0:
             return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
 
@@ -107,7 +107,11 @@ struct MacroIfNDefNode(NodeAstLike):
             if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
                 self._node_state = NodeState.COMPLETED
                 return TokenFlow.PASS_TO_PARENT
-            return TokenFlow.INVALID + " len(self._token_bundles_tail[]) > 0 but not in COLLECTING_TAIL_TOKENS state"
+            return (
+                TokenFlow.INVALID
+                + " len(self._token_bundles_tail[]) > 0 but not in"
+                " COLLECTING_TAIL_TOKENS state"
+            )
 
         if len(self._token_bundles[]) == 1:
             self._node_state = NodeState.COLLECTING_TOKENS
@@ -125,26 +129,27 @@ struct MacroIfNDefNode(NodeAstLike):
             if self._node_state == NodeState.BUILDING_CHILDREN:
                 return TokenFlow.CREATE_CHILD
 
-            return TokenFlow.INVALID + " len(self._token_bundles[]) == 2 but not in COLLECTING_TOKENS state, nor a MACRO_ENDIF token"
+            return (
+                TokenFlow.INVALID
+                + " len(self._token_bundles[]) == 2 but not in"
+                " COLLECTING_TOKENS state, nor a MACRO_ENDIF token"
+            )
 
         return TokenFlow.INVALID + " len(self._token_bundles[]) != 0 or 1 or 2"
-
 
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
-        """Process a token in this node.
-        """
+        """Process a token in this node."""
         if self._node_state == NodeState.COLLECTING_TOKENS:
             self._token_bundles[].append(token)
         elif self._node_state == NodeState.BUILDING_CHILDREN:
             pass
         elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
             self._token_bundles_tail[].append(token)
-            
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node.
@@ -170,7 +175,7 @@ struct MacroIfNDefNode(NodeAstLike):
         """
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node.
 
         Returns:

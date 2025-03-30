@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -27,7 +28,7 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 @value
 struct MacroDefineNode(NodeAstLike):
     """Represents a #define preprocessor directive in C/C++ code.
-    
+
     This node handles both simple defines and function-like macros:
         Simple defines:
             #define FOO 42
@@ -41,7 +42,7 @@ struct MacroDefineNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _macro_name: String
     var _row_nums: List[Int]
 
@@ -99,7 +100,7 @@ struct MacroDefineNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         if len(self._token_bundles[]) == 0:
             return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
 
@@ -121,7 +122,7 @@ struct MacroDefineNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node."""
@@ -132,7 +133,6 @@ struct MacroDefineNode(NodeAstLike):
             if len(self._token_bundles[]) == 1:
                 self._macro_name = token.token
             self._token_bundles[].append(token)
-
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""
@@ -146,7 +146,7 @@ struct MacroDefineNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -184,7 +184,9 @@ struct MacroDefineNode(NodeAstLike):
     ) -> String:
         """Convert this node to a string."""
         if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface, inline_children=True)
+            return default_to_string_just_code(
+                AstNode(self), module_interface, inline_children=True
+            )
         else:
             return default_to_string(AstNode(self), module_interface)
 
@@ -202,4 +204,4 @@ struct MacroDefineNode(NodeAstLike):
 
     fn get_macro_name(self) -> String:
         """Get the name of the macro being defined."""
-        return self._macro_name 
+        return self._macro_name

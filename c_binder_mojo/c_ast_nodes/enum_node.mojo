@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -27,11 +28,11 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 @value
 struct EnumNode(NodeAstLike):
     """Represents an enum declaration in C/C++ code.
-    
+
     This node handles parsing and representation of enum declarations:
         enum Color { RED = 0, GREEN = 1, BLUE = 2 };
         enum Direction { NORTH, SOUTH, EAST, WEST };
-        
+
     The node tracks:
     - The enum name
     - The scope of the enum (handled by ScopeNode child)
@@ -42,7 +43,7 @@ struct EnumNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _enum_name: String
     var _row_nums: List[Int]  # Track rows for multi-line enums
 
@@ -95,12 +96,12 @@ struct EnumNode(NodeAstLike):
 
         Returns:
             A new EnumNode instance.
-        """        
+        """
         return Self(indices, token)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine how to handle the next token.
 
         Args:
@@ -121,10 +122,13 @@ struct EnumNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
 
-        if token.token == '':
+        if token.token == "":
             return TokenFlow.CONSUME_TOKEN
 
-        if len(self._token_bundles[]) == 2 and token.token != CTokens.SCOPE_BEGIN:
+        if (
+            len(self._token_bundles[]) == 2
+            and token.token != CTokens.SCOPE_BEGIN
+        ):
             # TODO(josiahls): Also need to check for white space.
             return TokenFlow.PASS_TO_PARENT
 
@@ -148,15 +152,20 @@ struct EnumNode(NodeAstLike):
             token: The token to check.
 
         Returns:
-            True if the token is whitespace, False otherwise.   
+            True if the token is whitespace, False otherwise.
         """
-        # TODO(josiahls): This hacky and should be a generic function. 
-        return token.token == ' ' or token.token == '\t' or token.token == '\n' or token.token == ''
+        # TODO(josiahls): This hacky and should be a generic function.
+        return (
+            token.token == " "
+            or token.token == "\t"
+            or token.token == "\n"
+            or token.token == ""
+        )
 
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -188,7 +197,7 @@ struct EnumNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -265,7 +274,9 @@ struct EnumNode(NodeAstLike):
         Returns:
             The scope offset (0 for enum nodes, scope handled by ScopeNode child).
         """
-        return 0 if just_code else 1  # Enum nodes don't create scope, their ScopeNode child does
+        return (
+            0 if just_code else 1
+        )  # Enum nodes don't create scope, their ScopeNode child does
 
     fn get_enum_name(self) -> String:
         """Get the name of this enum.
@@ -273,4 +284,4 @@ struct EnumNode(NodeAstLike):
         Returns:
             The enum name, or empty string if anonymous.
         """
-        return self._enum_name 
+        return self._enum_name

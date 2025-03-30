@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -27,7 +28,7 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 @value
 struct TypedefNode(NodeAstLike):
     """Represents a typedef declaration in C/C++ code.
-    
+
     This node handles various forms of typedefs:
     1. Basic type typedefs:
         typedef unsigned int uint_t;
@@ -38,7 +39,7 @@ struct TypedefNode(NodeAstLike):
         typedef enum { ... } NodeState;
     4. Function pointer typedefs:
         typedef void (*callback_t)(int arg);
-        
+
     The node tracks both the original type and the new type name.
     For struct/enum typedefs, the definition becomes a child node.
     """
@@ -47,9 +48,9 @@ struct TypedefNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _type_name: String  # The new type name being defined
-    var _row_num: Int # Track rows in case of multi-line typedef
+    var _row_num: Int  # Track rows in case of multi-line typedef
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a TypedefNode.
@@ -104,7 +105,7 @@ struct TypedefNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine how to handle the next token.
 
         Args:
@@ -121,7 +122,7 @@ struct TypedefNode(NodeAstLike):
         if token.token == CTokens.CSTRUCT or token.token == CTokens.ENUM:
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
-            
+
         if self._node_state == NodeState.BUILDING_CHILDREN:
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS
         else:
@@ -132,7 +133,7 @@ struct TypedefNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -164,7 +165,7 @@ struct TypedefNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -249,8 +250,8 @@ struct TypedefNode(NodeAstLike):
 
     fn __str__(self) -> String:
         """Convert this node to a string representation.
-        
+
         Returns:
             A string representation of this node.
         """
-        return self.name(include_sig=True) 
+        return self.name(include_sig=True)

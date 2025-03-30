@@ -43,7 +43,7 @@ PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
 ) 
 WhitespaceNode(original_parent_idx=0, original_current_idx=19, n_tokens=2)
   
-ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=11, node_state=COMPLETED, parent_type='RootNode')
+ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=11, node_state=4, parent_type='RootNode')
 { 
 	WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=5)
 	 

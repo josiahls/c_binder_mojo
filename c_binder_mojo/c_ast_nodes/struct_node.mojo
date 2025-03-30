@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -27,11 +28,11 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 @value
 struct StructNode(NodeAstLike):
     """Represents a struct declaration in C/C++ code.
-    
+
     This node handles parsing and representation of struct declarations:
         struct Point { int x; int y; };
         struct Person { char* name; int age; };
-        
+
     The node tracks:
     - The struct name
     - The scope of the struct (handled by ScopeNode child)
@@ -42,12 +43,17 @@ struct StructNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _struct_name: String
     var _row_nums: List[Int]  # Track rows for multi-line structs
     var _is_in_typedef: Bool
 
-    fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle, is_in_typedef: Bool = False):
+    fn __init__(
+        out self,
+        indicies: NodeIndices,
+        token_bundle: TokenBundle,
+        is_in_typedef: Bool = False,
+    ):
         """Initialize a StructNode.
 
         Args:
@@ -100,14 +106,17 @@ struct StructNode(NodeAstLike):
         """
         var is_in_typedef = False
 
-        if module_interface.nodes()[][indices.original_parent_idx].name() == "TypedefNode":
+        if (
+            module_interface.nodes()[][indices.original_parent_idx].name()
+            == "TypedefNode"
+        ):
             is_in_typedef = True
 
         return Self(indices, token, is_in_typedef)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine how to handle the next token.
 
         Args:
@@ -128,7 +137,10 @@ struct StructNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
 
-        if len(self._token_bundles[]) >= 2 and token.token != CTokens.SCOPE_BEGIN:
+        if (
+            len(self._token_bundles[]) >= 2
+            and token.token != CTokens.SCOPE_BEGIN
+        ):
             if self.is_whitespace(token):
                 self._node_state = NodeState.COLLECTING_TOKENS
                 return TokenFlow.CONSUME_TOKEN
@@ -155,14 +167,19 @@ struct StructNode(NodeAstLike):
             token: The token to check.
 
         Returns:
-            True if the token is whitespace, False otherwise.   
+            True if the token is whitespace, False otherwise.
         """
-        return token.token == ' ' or token.token == '\t' or token.token == '\n' or token.token == ''
+        return (
+            token.token == " "
+            or token.token == "\t"
+            or token.token == "\n"
+            or token.token == ""
+        )
 
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -194,7 +211,7 @@ struct StructNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -271,7 +288,9 @@ struct StructNode(NodeAstLike):
         Returns:
             The scope offset (0 for struct nodes, scope handled by ScopeNode child).
         """
-        return 0 if just_code else 1  # Struct nodes don't create scope, their ScopeNode child does
+        return (
+            0 if just_code else 1
+        )  # Struct nodes don't create scope, their ScopeNode child does
 
     fn get_struct_name(self) -> String:
         """Get the name of this struct.
@@ -279,4 +298,4 @@ struct StructNode(NodeAstLike):
         Returns:
             The struct name, or empty string if anonymous.
         """
-        return self._struct_name 
+        return self._struct_name

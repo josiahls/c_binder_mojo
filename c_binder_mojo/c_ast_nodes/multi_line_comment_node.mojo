@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -29,7 +30,7 @@ struct MultiLineCommentNode(NodeAstLike):
     alias __name__ = "MultiLineCommentNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
-    var _node_state: String
+    var _node_state: StateOrFlowValue
     var _is_complete: Bool
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
@@ -60,13 +61,13 @@ struct MultiLineCommentNode(NodeAstLike):
             return True
         if token.token == CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN:
             return True
-        
+
         # Check if token starts with comment markers
         if token.token.startswith(CTokens.COMMENT_MULTI_LINE_BEGIN):
             return True
         if token.token.startswith(CTokens.COMMENT_MULTI_LINE_INLINE_BEGIN):
             return True
-            
+
         return False
 
     @staticmethod
@@ -79,7 +80,7 @@ struct MultiLineCommentNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine how to handle the next token.
 
         Args:
@@ -114,7 +115,7 @@ struct MultiLineCommentNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         self._token_bundles[].append(token)
@@ -134,7 +135,7 @@ struct MultiLineCommentNode(NodeAstLike):
     fn token_bundles_tail(self) -> TokenBundles:
         return TokenBundles()
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         return self._node_state
 
     @always_inline("nodebug")

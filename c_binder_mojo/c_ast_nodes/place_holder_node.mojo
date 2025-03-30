@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     TokenFlow,
@@ -28,7 +29,7 @@ struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
-    var _node_state: String
+    var _node_state: StateOrFlowValue
 
     fn __init__(out self, indicies: NodeIndices, token: TokenBundle):
         self._indicies = indicies
@@ -54,13 +55,13 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         self._node_state = NodeState.COMPLETED
@@ -80,7 +81,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn token_bundles_tail(self) -> TokenBundles:
         return TokenBundles()
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         return self._node_state
 
     @always_inline("nodebug")

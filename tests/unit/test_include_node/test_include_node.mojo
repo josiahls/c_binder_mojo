@@ -15,7 +15,7 @@ from c_binder_mojo.c_ast_nodes.include_node import IncludeNode
 
 fn test_include_node() raises:
     """Test the parsing and AST construction for include nodes.
-    
+
     Tests:
     1. System includes (<stdio.h>)
     2. Local includes ("my_header.h")
@@ -72,19 +72,23 @@ fn test_include_node() raises:
     var include_count = 0
     var system_includes = 0
     var local_includes = 0
-    var expected_system_includes = List[String]("stdio.h", "stdlib.h", "string.h", "math.h", "time.h")
-    var expected_local_includes = List[String]("my_header.h", "../relative/path.h", "local/header.h")
+    var expected_system_includes = List[String](
+        "stdio.h", "stdlib.h", "string.h", "math.h", "time.h"
+    )
+    var expected_local_includes = List[String](
+        "my_header.h", "../relative/path.h", "local/header.h"
+    )
 
     for i in range(len(module_interface.nodes()[])):
         var node = module_interface.nodes()[][i]
         if node.name() == "IncludeNode":
             include_count += 1
             logger.info("Found include node: " + node.name(include_sig=True))
-            
+
             var include_node = node.node[][IncludeNode]
             var path = include_node.get_include_path()
             logger.info("  - Path: " + path)
-            
+
             if include_node.is_system_include():
                 system_includes += 1
                 if path not in expected_system_includes:
@@ -98,11 +102,19 @@ fn test_include_node() raises:
     if include_count != 8:
         raise Error("Expected 8 includes, found " + String(include_count))
     if system_includes != 5:
-        raise Error("Expected 5 system includes, found " + String(system_includes))
+        raise Error(
+            "Expected 5 system includes, found " + String(system_includes)
+        )
     if local_includes != 3:
-        raise Error("Expected 3 local includes, found " + String(local_includes))
+        raise Error(
+            "Expected 3 local includes, found " + String(local_includes)
+        )
 
-    logger.info("Include node test passed with " + String(include_count) + " include nodes")
+    logger.info(
+        "Include node test passed with "
+        + String(include_count)
+        + " include nodes"
+    )
     return
 
 
@@ -112,4 +124,4 @@ fn main() raises:
         test_include_node()
         print("Test succeeded")
     except e:
-        print("Test failed: " + String(e)) 
+        print("Test failed: " + String(e))

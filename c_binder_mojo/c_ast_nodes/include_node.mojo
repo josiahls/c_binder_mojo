@@ -8,6 +8,7 @@ from firehose import FileLoggerOutputer, OutputerVariant
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -27,7 +28,7 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 @value
 struct IncludeNode(NodeAstLike):
     """Represents a C include directive.
-    
+
     Examples:
         #include <stdio.h>      # System include
         #include "myheader.h"   # Local include
@@ -37,7 +38,7 @@ struct IncludeNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
-    var _node_state: StringLiteral
+    var _node_state: StateOrFlowValue
     var _include_path: String
     var _is_system_include: Bool
     var _row_nums: List[Int]
@@ -97,7 +98,7 @@ struct IncludeNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine how to handle the next token.
 
         Args:
@@ -127,7 +128,9 @@ struct IncludeNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         # Handle local include start
-        if (token.token == '"' or token.token.startswith('"')) and not self._is_system_include:
+        if (
+            token.token == '"' or token.token.startswith('"')
+        ) and not self._is_system_include:
             self._is_system_include = False
             return TokenFlow.CONSUME_TOKEN
 
@@ -154,7 +157,7 @@ struct IncludeNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process a token in this node.
@@ -165,8 +168,14 @@ struct IncludeNode(NodeAstLike):
             module_interface: Interface to the AST.
         """
         if token_flow == TokenFlow.CONSUME_TOKEN:
-            if token.token != "#include" and token.token != "":  # Skip the #include token
-                self._include_path += token.token.replace("\"", "").replace("<", "").replace(">", "")
+            if (
+                token.token != "#include" and token.token != ""
+            ):  # Skip the #include token
+                self._include_path += (
+                    token.token.replace('"', "")
+                    .replace("<", "")
+                    .replace(">", "")
+                )
             self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:
@@ -181,7 +190,7 @@ struct IncludeNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node."""
         return self._node_state
 
@@ -274,4 +283,4 @@ struct IncludeNode(NodeAstLike):
         Returns:
             The include path without <> or "" delimiters.
         """
-        return self._include_path 
+        return self._include_path

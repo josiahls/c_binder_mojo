@@ -7,6 +7,7 @@ from firehose.logging import Logger
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
+    StateOrFlowValue,
     NodeIndices,
     TokenBundles,
     NodeState,
@@ -70,7 +71,7 @@ struct WhitespaceNode(NodeAstLike):
     alias __name__ = "WhitespaceNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
-    var _node_state: String
+    var _node_state: StateOrFlowValue
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a WhitespaceNode.
@@ -140,7 +141,7 @@ struct WhitespaceNode(NodeAstLike):
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
-    ) -> StringLiteral:
+    ) -> StateOrFlowValue:
         """Determine the state of this node based on the current token.
 
         Args:
@@ -158,7 +159,7 @@ struct WhitespaceNode(NodeAstLike):
     fn process(
         mut self,
         token: TokenBundle,
-        token_flow: StringLiteral,
+        token_flow: StateOrFlowValue,
         module_interface: ModuleInterface,
     ):
         """Process the token to update this node.
@@ -214,7 +215,7 @@ struct WhitespaceNode(NodeAstLike):
         """
         return TokenBundles()
 
-    fn node_state(self) -> String:
+    fn node_state(self) -> StateOrFlowValue:
         """Get the state of this node.
 
         Returns:

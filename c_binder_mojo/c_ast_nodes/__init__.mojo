@@ -15,6 +15,7 @@ from .struct_node import StructNode
 from .enum_field_node import EnumFieldNode
 from .struct_field_node import StructFieldNode
 from .include_node import IncludeNode
+
 # Setup Variant
 from .node_variant import Variant
 

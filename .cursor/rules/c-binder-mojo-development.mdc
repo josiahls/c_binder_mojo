@@ -1,0 +1,15 @@
+---
+description: This rule is helpful at start up when no other context has been provided or is limited. 
+globs: 
+alwaysApply: false
+---
+Please refer to [CURSOR_NOTES.md](md:CURSOR_NOTES.md) for the current development status, issues being worked on, and recent improvements.
+
+You can at least bring this up to remind me to update the global context and goal that we are trying to accomplish
+
+This file is actively maintained during development and should be consulted when making changes to:
+- Node states and token flows
+- Whitespace handling
+- AST structure modifications
+- New node implementations 
+- cold start of a cursor chat

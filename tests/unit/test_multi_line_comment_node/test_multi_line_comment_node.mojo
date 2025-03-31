@@ -59,17 +59,17 @@ fn test_multi_line_comment_node() raises:
 
 
     # Generate Mojo AST
-    var mojo_tree_log_file = output_dir / "output/test_multi_line_comment_node_mojo.tree"
+    var mojo_tree_log_file = output_dir / "test_multi_line_comment_node_mojo.tree"
     var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
 
     # Save Mojo AST for debugging
-    var mojo_ast_file_just_code = output_dir / "output/test_multi_line_comment_node.mojo"
+    var mojo_ast_file_just_code = output_dir / "test_multi_line_comment_node.mojo"
     mojo_ast_file_just_code.write_text(
         mojo_module_interface.nodes()[][0].to_string(
             just_code=True, module_interface=mojo_module_interface
         )
     )
-    var mojo_ast_file = output_dir / "output/test_single_line_comment_node.mojo_ast"
+    var mojo_ast_file = output_dir / "test_multi_line_comment_node.mojo_ast"
     mojo_ast_file.write_text(
         mojo_module_interface.nodes()[][0].to_string(
             just_code=False, module_interface=mojo_module_interface

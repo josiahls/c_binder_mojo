@@ -65,7 +65,7 @@ struct ModuleInterface:
             The index of the newly inserted node.
         """
         new_idx = len(self._nodes[])
-        node.indicies_ptr()[].original_current_idx = new_idx
+        node.indicies_ptr()[].c_current_idx = new_idx
         self._nodes[].append(node)
         return new_idx
 
@@ -81,7 +81,7 @@ struct ModuleInterface:
         count = 0
         while parent_idx != -1 or not started:
             parent_idx = (
-                self._nodes[][_current_idx].indicies().original_parent_idx
+                self._nodes[][_current_idx].indicies().c_parent_idx
             )
             if parent_idx != -1:
                 count += 1
@@ -115,7 +115,7 @@ fn get_node_path(nodes: ArcPointer[List[AstNode]], current_idx: Int) -> String:
 
     while idx >= 0 and count < 100:
         path.append(nodes[][idx].name())
-        idx = nodes[][idx].indicies().original_parent_idx
+        idx = nodes[][idx].indicies().c_parent_idx
         count += 1
 
     # Build path string from root to current (reverse order)
@@ -174,12 +174,12 @@ fn log_state_transition(
 
     # Get node path using a constant path length
     var path = get_node_path(
-        module_interface.nodes(), current_node.indicies().original_current_idx
+        module_interface.nodes(), current_node.indicies().c_current_idx
     )
 
     # Build indentation based on parent count
     var n_parents = module_interface.n_parents(
-        current_node.indicies().original_current_idx
+        current_node.indicies().c_current_idx
     )
     var indent = String()
     for i in range(n_parents):
@@ -253,7 +253,7 @@ fn _create_child(
     var node = module_interface.nodes()[][current_idx]
     new_node = AstNode.accept(token, module_interface, indices)
     var new_idx = module_interface.insert_node(new_node)
-    node.indicies_ptr()[].original_child_idxs.append(new_idx)
+    node.indicies_ptr()[].c_child_idxs.append(new_idx)
     log_state_transition(
         logger,
         token,
@@ -345,7 +345,7 @@ fn get_current_node(
     elif token_flow == TokenFlow.PASS_TO_PARENT:
         return get_current_node(
             token,
-            node.indicies().original_parent_idx,
+            node.indicies().c_parent_idx,
             module_interface,
             logger,
             recursion_depth - 1,

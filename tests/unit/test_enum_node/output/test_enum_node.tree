@@ -1,1820 +1,1820 @@
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(c_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(c_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:224 - INFO: [Depth:1] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:1] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Basic' at [0:2]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [0:7]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [0:11]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'values' at [0:15]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1))
     └─ Path: RootNode
     └─ Current Token: 'enum' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, node_state=0)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'enum' at [1:0]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, node_state=1)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'Color' at [1:4]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, node_state=1, name='Color')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, node_state=1, name='Color')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [1:9]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, node_state=3, name='Color')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, node_state=3, name='Color')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '{' at [1:9]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, node_state=0, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, node_state=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '{' at [1:9]
     └─ Nodes: 3 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [1:10]
     └─ Nodes: 3 active, 1 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=4, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [1:10]
     └─ Nodes: 3 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=4, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [2:0]
     └─ Nodes: 3 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=4, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [2:0]
     └─ Nodes: 3 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=4, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [2:0]
     └─ Nodes: 3 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=4, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [2:0]
     └─ Nodes: 3 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=4, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'RED' at [2:0]
     └─ Nodes: 3 active, 2 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'RED' at [2:0]
     └─ Nodes: 3 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=5, node_state=0, field_name='RED')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, node_state=0, field_name='RED')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'RED' at [2:0]
     └─ Nodes: 4 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=5, node_state=1, field_name='RED', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, node_state=1, field_name='RED', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [2:3]
     └─ Nodes: 4 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=5, node_state=1, field_name='RED', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, node_state=1, field_name='RED', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0' at [2:4]
     └─ Nodes: 4 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=5, node_state=4, field_name='RED', value='0')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, node_state=4, field_name='RED', value='0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [2:5]
     └─ Nodes: 3 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=5, node_state=4, field_name='RED', value='0')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, node_state=4, field_name='RED', value='0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [2:6]
     └─ Nodes: 3 active, 3 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [2:6]
     └─ Nodes: 3 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=6, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [2:6]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=6, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [3:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=6, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [3:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=6, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [3:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=6, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [3:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=6, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'GREEN' at [3:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5, 6), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'GREEN' at [3:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=7, node_state=0, field_name='GREEN')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, node_state=0, field_name='GREEN')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'GREEN' at [3:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=7, node_state=1, field_name='GREEN', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, node_state=1, field_name='GREEN', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [3:5]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=7, node_state=1, field_name='GREEN', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, node_state=1, field_name='GREEN', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '1' at [3:6]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=7, node_state=4, field_name='GREEN', value='1')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, node_state=4, field_name='GREEN', value='1')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [3:7]
     └─ Nodes: 3 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=7, node_state=4, field_name='GREEN', value='1')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, node_state=4, field_name='GREEN', value='1')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [3:8]
     └─ Nodes: 3 active, 5 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6, 7), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5, 6, 7), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [3:8]
     └─ Nodes: 3 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=8, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [3:8]
     └─ Nodes: 3 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=8, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [4:0]
     └─ Nodes: 3 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=8, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [4:0]
     └─ Nodes: 3 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=8, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [4:0]
     └─ Nodes: 3 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=8, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [4:0]
     └─ Nodes: 3 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=3, original_current_idx=8, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'BLUE' at [4:0]
     └─ Nodes: 3 active, 6 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6, 7, 8), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5, 6, 7, 8), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'BLUE' at [4:0]
     └─ Nodes: 3 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=9, node_state=0, field_name='BLUE')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, node_state=0, field_name='BLUE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'BLUE' at [4:0]
     └─ Nodes: 4 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=9, node_state=1, field_name='BLUE', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, node_state=1, field_name='BLUE', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [4:4]
     └─ Nodes: 4 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=9, node_state=1, field_name='BLUE', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, node_state=1, field_name='BLUE', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '2' at [4:5]
     └─ Nodes: 4 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=9, node_state=1, field_name='BLUE', value='2')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, node_state=1, field_name='BLUE', value='2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [5:0]
     └─ Nodes: 4 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=3, original_current_idx=9, node_state=4, field_name='BLUE', value='2')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, node_state=4, field_name='BLUE', value='2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '}' at [5:0]
     └─ Nodes: 3 active, 7 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6, 7, 8, 9), node_state=2, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5, 6, 7, 8, 9), node_state=2, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '}' at [5:0]
     └─ Nodes: 3 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(original_parent_idx=2, original_current_idx=3, original_child_idxs=(4, 5, 6, 7, 8, 9), node_state=4, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5, 6, 7, 8, 9), node_state=4, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [5:1]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=3, name='Color')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=3, name='Color')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [5:1]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=2, name='Color')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=2, name='Color')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: ';' at [5:1]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=4, name='Color')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=4, name='Color')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [5:2]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=4, name='Color')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=4, name='Color')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [6:0]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=2, original_child_idxs=(3), node_state=4, name='Color')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=4, name='Color')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '//' at [7:0]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2))
     └─ Path: RootNode
     └─ Current Token: '//' at [7:0]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [7:0]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Enum' at [7:2]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [7:6]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'auto-incrementing' at [7:10]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'values' at [7:27]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [8:0]
     └─ Nodes: 1 active, 10 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10))
     └─ Path: RootNode
     └─ Current Token: 'enum' at [8:0]
     └─ Nodes: 1 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, node_state=0)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'enum' at [8:0]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, node_state=1)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'Direction' at [8:4]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, node_state=1, name='Direction')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, node_state=1, name='Direction')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [8:13]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, node_state=3, name='Direction')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, node_state=3, name='Direction')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '{' at [8:13]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, node_state=0, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, node_state=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '{' at [8:13]
     └─ Nodes: 3 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [8:14]
     └─ Nodes: 3 active, 10 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=13, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [8:14]
     └─ Nodes: 3 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=13, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [9:0]
     └─ Nodes: 3 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=13, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [9:0]
     └─ Nodes: 3 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=13, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [9:0]
     └─ Nodes: 3 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=13, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [9:0]
     └─ Nodes: 3 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=13, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'NORTH' at [9:0]
     └─ Nodes: 3 active, 11 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'NORTH' at [9:0]
     └─ Nodes: 3 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=14, node_state=0, field_name='NORTH')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=14, node_state=0, field_name='NORTH')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'NORTH' at [9:0]
     └─ Nodes: 4 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=14, node_state=4, field_name='NORTH')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=14, node_state=4, field_name='NORTH')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [9:5]
     └─ Nodes: 3 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=14, node_state=4, field_name='NORTH')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=14, node_state=4, field_name='NORTH')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [9:6]
     └─ Nodes: 3 active, 12 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [9:6]
     └─ Nodes: 3 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=15, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=15, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [9:6]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=15, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=15, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [9:6]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=15, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=15, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '//' at [9:6]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [9:6]
     └─ Nodes: 3 active, 13 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=16)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=16)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [9:6]
     └─ Nodes: 4 active, 13 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=16)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=16)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '0' at [9:8]
     └─ Nodes: 4 active, 13 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=16)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=16)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [10:0]
     └─ Nodes: 3 active, 14 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [10:0]
     └─ Nodes: 3 active, 14 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=17, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=17, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [10:0]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=17, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=17, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [10:0]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=17, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=17, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [10:0]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=17, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=17, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [10:0]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=17, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=17, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'SOUTH' at [10:0]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'SOUTH' at [10:0]
     └─ Nodes: 3 active, 15 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=18, node_state=0, field_name='SOUTH')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=18, node_state=0, field_name='SOUTH')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'SOUTH' at [10:0]
     └─ Nodes: 4 active, 15 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=18, node_state=4, field_name='SOUTH')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=18, node_state=4, field_name='SOUTH')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [10:5]
     └─ Nodes: 3 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=18, node_state=4, field_name='SOUTH')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=18, node_state=4, field_name='SOUTH')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [10:6]
     └─ Nodes: 3 active, 16 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, 18), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, 18), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [10:6]
     └─ Nodes: 3 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=19, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=19, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [10:6]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=19, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=19, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [10:6]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=19, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=19, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '//' at [10:6]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=7, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=7, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [10:6]
     └─ Nodes: 3 active, 17 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=20)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [10:6]
     └─ Nodes: 4 active, 17 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=20)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '1' at [10:8]
     └─ Nodes: 4 active, 17 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=20)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=8, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=8, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=21, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=21, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=21, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=21, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=21, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=21, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=21, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=21, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=21, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=21, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'EAST' at [11:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=9, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=9, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'EAST' at [11:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=22, node_state=0, field_name='EAST')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=22, node_state=0, field_name='EAST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'EAST' at [11:0]
     └─ Nodes: 4 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=22, node_state=4, field_name='EAST')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=22, node_state=4, field_name='EAST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [11:4]
     └─ Nodes: 3 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=22, node_state=4, field_name='EAST')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=22, node_state=4, field_name='EAST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [11:5]
     └─ Nodes: 3 active, 20 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=10, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=10, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [11:5]
     └─ Nodes: 3 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=23, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=23, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [11:5]
     └─ Nodes: 3 active, 21 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=23, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=23, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [11:5]
     └─ Nodes: 3 active, 21 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=23, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=23, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [11:5]
     └─ Nodes: 3 active, 21 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=23, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=23, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '//' at [11:5]
     └─ Nodes: 3 active, 21 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=11, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=11, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [11:5]
     └─ Nodes: 3 active, 21 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=24)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=24)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [11:5]
     └─ Nodes: 4 active, 21 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=24)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=24)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '2' at [11:7]
     └─ Nodes: 4 active, 21 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=24)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=24)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [12:0]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=12, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=12, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [12:0]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=25, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=25, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [12:0]
     └─ Nodes: 3 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=25, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=25, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [12:0]
     └─ Nodes: 3 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=25, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=25, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [12:0]
     └─ Nodes: 3 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=25, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=25, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [12:0]
     └─ Nodes: 3 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=25, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=25, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'WEST' at [12:0]
     └─ Nodes: 3 active, 23 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=13, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=13, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'WEST' at [12:0]
     └─ Nodes: 3 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=26, node_state=0, field_name='WEST')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, node_state=0, field_name='WEST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'WEST' at [12:0]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=26, node_state=1, field_name='WEST')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, node_state=1, field_name='WEST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [12:4]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=26, node_state=1, field_name='WEST')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, node_state=1, field_name='WEST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [12:4]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=26, node_state=1, field_name='WEST')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, node_state=1, field_name='WEST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [12:4]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=12, original_current_idx=26, node_state=1, field_name='WEST')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, node_state=1, field_name='WEST')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '//' at [12:4]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=14, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=14, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [12:4]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=27)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=27)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [12:4]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=27)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=27)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '3' at [12:6]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=12, original_current_idx=27)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=12, c_current_idx=27)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 4 active, 24 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=15, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=15, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 4 active, 24 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=28, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=28, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 4 active, 25 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=12, original_current_idx=28, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=28, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '}' at [13:0]
     └─ Nodes: 4 active, 25 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=16, node_state=2, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=16, node_state=2, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '}' at [13:0]
     └─ Nodes: 4 active, 25 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(original_parent_idx=11, original_current_idx=12, original_child_idxs=(13, 14, 15, 16, 17, ...) len=16, node_state=4, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(c_parent_idx=11, c_current_idx=12, c_child_idxs=(13, 14, 15, 16, 17, ...) len=16, node_state=4, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [13:1]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, original_child_idxs=(12), node_state=3, name='Direction')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, c_child_idxs=(12), node_state=3, name='Direction')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [13:1]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, original_child_idxs=(12), node_state=2, name='Direction')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, c_child_idxs=(12), node_state=2, name='Direction')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: ';' at [13:1]
     └─ Nodes: 3 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, original_child_idxs=(12), node_state=4, name='Direction')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, c_child_idxs=(12), node_state=4, name='Direction')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [13:2]
     └─ Nodes: 2 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, original_child_idxs=(12), node_state=4, name='Direction')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, c_child_idxs=(12), node_state=4, name='Direction')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [14:0]
     └─ Nodes: 2 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=11, original_child_idxs=(12), node_state=4, name='Direction')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=11, c_child_idxs=(12), node_state=4, name='Direction')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 2 active, 27 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11))
     └─ Path: RootNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 2 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Enum' at [15:2]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [15:6]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'mixed' at [15:10]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'explicit' at [15:15]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'and' at [15:23]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'implicit' at [15:26]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'values' at [15:34]
     └─ Nodes: 3 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=29)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [16:0]
     └─ Nodes: 2 active, 28 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11, 29))
     └─ Path: RootNode
     └─ Current Token: 'enum' at [16:0]
     └─ Nodes: 2 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, node_state=0)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'enum' at [16:0]
     └─ Nodes: 3 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, node_state=1)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'Status' at [16:4]
     └─ Nodes: 3 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, node_state=1, name='Status')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, node_state=1, name='Status')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [16:10]
     └─ Nodes: 3 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, node_state=3, name='Status')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, node_state=3, name='Status')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '{' at [16:10]
     └─ Nodes: 3 active, 28 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, node_state=0, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, node_state=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '{' at [16:10]
     └─ Nodes: 4 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [16:11]
     └─ Nodes: 4 active, 28 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=32, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [16:11]
     └─ Nodes: 4 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=32, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [17:0]
     └─ Nodes: 4 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=32, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [17:0]
     └─ Nodes: 4 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=32, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [17:0]
     └─ Nodes: 4 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=32, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [17:0]
     └─ Nodes: 4 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=32, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'OK' at [17:0]
     └─ Nodes: 4 active, 29 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'OK' at [17:0]
     └─ Nodes: 4 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=33, node_state=0, field_name='OK')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, node_state=0, field_name='OK')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'OK' at [17:0]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=33, node_state=1, field_name='OK', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, node_state=1, field_name='OK', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [17:2]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=33, node_state=1, field_name='OK', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, node_state=1, field_name='OK', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '200' at [17:3]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=33, node_state=4, field_name='OK', value='200')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, node_state=4, field_name='OK', value='200')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [17:6]
     └─ Nodes: 4 active, 30 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=33, node_state=4, field_name='OK', value='200')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, node_state=4, field_name='OK', value='200')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [17:7]
     └─ Nodes: 4 active, 30 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [17:7]
     └─ Nodes: 4 active, 30 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=34, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [17:7]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=34, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [18:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=34, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [18:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=34, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [18:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=34, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [18:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=34, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'NOT_FOUND' at [18:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'NOT_FOUND' at [18:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=35, node_state=0, field_name='NOT_FOUND')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, node_state=0, field_name='NOT_FOUND')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'NOT_FOUND' at [18:0]
     └─ Nodes: 5 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=35, node_state=1, field_name='NOT_FOUND', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, node_state=1, field_name='NOT_FOUND', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [18:9]
     └─ Nodes: 5 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=35, node_state=1, field_name='NOT_FOUND', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, node_state=1, field_name='NOT_FOUND', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '404' at [18:10]
     └─ Nodes: 5 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=35, node_state=4, field_name='NOT_FOUND', value='404')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, node_state=4, field_name='NOT_FOUND', value='404')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [18:13]
     └─ Nodes: 4 active, 32 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=35, node_state=4, field_name='NOT_FOUND', value='404')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, node_state=4, field_name='NOT_FOUND', value='404')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [18:14]
     └─ Nodes: 4 active, 32 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [18:14]
     └─ Nodes: 4 active, 32 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=36, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [18:14]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=36, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=36, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=36, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=36, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [19:0]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=36, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'SERVER_ERROR' at [19:0]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'SERVER_ERROR' at [19:0]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=37, node_state=0, field_name='SERVER_ERROR')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, node_state=0, field_name='SERVER_ERROR')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'SERVER_ERROR' at [19:0]
     └─ Nodes: 5 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=37, node_state=1, field_name='SERVER_ERROR', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, node_state=1, field_name='SERVER_ERROR', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [19:12]
     └─ Nodes: 5 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=37, node_state=1, field_name='SERVER_ERROR', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, node_state=1, field_name='SERVER_ERROR', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '500' at [19:13]
     └─ Nodes: 5 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=37, node_state=4, field_name='SERVER_ERROR', value='500')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, node_state=4, field_name='SERVER_ERROR', value='500')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [19:16]
     └─ Nodes: 4 active, 34 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=37, node_state=4, field_name='SERVER_ERROR', value='500')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, node_state=4, field_name='SERVER_ERROR', value='500')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [19:17]
     └─ Nodes: 4 active, 34 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, 37), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, 37), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [19:17]
     └─ Nodes: 4 active, 34 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=38, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [19:17]
     └─ Nodes: 4 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=38, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 4 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=38, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 4 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=38, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 4 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=38, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:0]
     └─ Nodes: 4 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=38, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'UNAVAILABLE' at [20:0]
     └─ Nodes: 4 active, 35 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=7, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=7, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'UNAVAILABLE' at [20:0]
     └─ Nodes: 4 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=39, node_state=0, field_name='UNAVAILABLE')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=39, node_state=0, field_name='UNAVAILABLE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'UNAVAILABLE' at [20:0]
     └─ Nodes: 5 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=39, node_state=4, field_name='UNAVAILABLE')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=39, node_state=4, field_name='UNAVAILABLE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [20:11]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=39, node_state=4, field_name='UNAVAILABLE')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=39, node_state=4, field_name='UNAVAILABLE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [20:12]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=8, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=8, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [20:12]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=40, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=40, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:12]
     └─ Nodes: 4 active, 37 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=40, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=40, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [20:12]
     └─ Nodes: 4 active, 37 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=40, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=40, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '//' at [20:12]
     └─ Nodes: 4 active, 37 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=9, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=9, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [20:12]
     └─ Nodes: 4 active, 37 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=31, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=31, c_current_idx=41)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [20:12]
     └─ Nodes: 5 active, 37 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=31, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=31, c_current_idx=41)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '501' at [20:14]
     └─ Nodes: 5 active, 37 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=31, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=31, c_current_idx=41)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 4 active, 38 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=10, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=10, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 4 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=42, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=42, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 4 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=42, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=42, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 4 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=42, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=42, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 4 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=42, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=42, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 4 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=42, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=42, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'TIMEOUT' at [21:0]
     └─ Nodes: 4 active, 39 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=11, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=11, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'TIMEOUT' at [21:0]
     └─ Nodes: 4 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=43, node_state=0, field_name='TIMEOUT')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=0, field_name='TIMEOUT')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'TIMEOUT' at [21:0]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=43, node_state=1, field_name='TIMEOUT')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=1, field_name='TIMEOUT')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [21:7]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=43, node_state=1, field_name='TIMEOUT')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=1, field_name='TIMEOUT')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [21:7]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=43, node_state=1, field_name='TIMEOUT')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=1, field_name='TIMEOUT')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [21:7]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=43, node_state=1, field_name='TIMEOUT')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=1, field_name='TIMEOUT')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [21:7]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=43, node_state=1, field_name='TIMEOUT')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=1, field_name='TIMEOUT')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [21:7]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=31, original_current_idx=43, node_state=1, field_name='TIMEOUT')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=1, field_name='TIMEOUT')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '//' at [21:7]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=12, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=12, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [21:7]
     └─ Nodes: 5 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=31, original_current_idx=44)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=31, c_current_idx=44)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [21:7]
     └─ Nodes: 6 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=31, original_current_idx=44)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=31, c_current_idx=44)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '502' at [21:9]
     └─ Nodes: 6 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=31, original_current_idx=44)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=31, c_current_idx=44)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 5 active, 40 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=13, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=13, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 5 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=45, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=45, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 5 active, 41 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=31, original_current_idx=45, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=45, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '}' at [22:0]
     └─ Nodes: 5 active, 41 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=14, node_state=2, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=14, node_state=2, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '}' at [22:0]
     └─ Nodes: 5 active, 41 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(original_parent_idx=30, original_current_idx=31, original_child_idxs=(32, 33, 34, 35, 36, ...) len=14, node_state=4, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32, 33, 34, 35, 36, ...) len=14, node_state=4, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [22:1]
     └─ Nodes: 4 active, 42 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, original_child_idxs=(31), node_state=3, name='Status')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31), node_state=3, name='Status')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [22:1]
     └─ Nodes: 4 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, original_child_idxs=(31), node_state=2, name='Status')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31), node_state=2, name='Status')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: ';' at [22:1]
     └─ Nodes: 4 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, original_child_idxs=(31), node_state=4, name='Status')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31), node_state=4, name='Status')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [22:2]
     └─ Nodes: 3 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, original_child_idxs=(31), node_state=4, name='Status')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31), node_state=4, name='Status')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [23:0]
     └─ Nodes: 3 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=30, original_child_idxs=(31), node_state=4, name='Status')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31), node_state=4, name='Status')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '//' at [24:0]
     └─ Nodes: 3 active, 43 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29, 30))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11, 29, 30))
     └─ Path: RootNode
     └─ Current Token: '//' at [24:0]
     └─ Nodes: 3 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [24:0]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Enum' at [24:2]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [24:6]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'name' at [24:10]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'but' at [24:14]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'no' at [24:17]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'values' at [24:19]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [24:25]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '(' at [24:25]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'empty' at [24:26]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [24:31]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ')' at [24:35]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [24:36]
     └─ Nodes: 4 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=46)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [25:0]
     └─ Nodes: 3 active, 44 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29, ...) len=7)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11, 29, ...) len=7)
     └─ Path: RootNode
     └─ Current Token: 'enum' at [25:0]
     └─ Nodes: 3 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, node_state=0)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'enum' at [25:0]
     └─ Nodes: 4 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, node_state=1)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'Empty' at [25:4]
     └─ Nodes: 4 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, node_state=1, name='Empty')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, node_state=1, name='Empty')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [25:9]
     └─ Nodes: 4 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, node_state=3, name='Empty')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, node_state=3, name='Empty')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '{' at [25:9]
     └─ Nodes: 4 active, 44 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(original_parent_idx=47, original_current_idx=48, node_state=0, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, node_state=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '{' at [25:9]
     └─ Nodes: 5 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(original_parent_idx=47, original_current_idx=48, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [25:10]
     └─ Nodes: 5 active, 44 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(original_parent_idx=48, original_current_idx=49, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(c_parent_idx=48, c_current_idx=49, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [25:10]
     └─ Nodes: 5 active, 45 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=48, original_current_idx=49, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=48, c_current_idx=49, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [26:0]
     └─ Nodes: 5 active, 45 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=48, original_current_idx=49, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=48, c_current_idx=49, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '}' at [26:0]
     └─ Nodes: 5 active, 45 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(original_parent_idx=47, original_current_idx=48, original_child_idxs=(49), node_state=2, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49), node_state=2, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '}' at [26:0]
     └─ Nodes: 5 active, 45 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(original_parent_idx=47, original_current_idx=48, original_child_idxs=(49), node_state=4, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49), node_state=4, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [26:1]
     └─ Nodes: 4 active, 46 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, original_child_idxs=(48), node_state=3, name='Empty')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=3, name='Empty')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [26:1]
     └─ Nodes: 4 active, 46 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, original_child_idxs=(48), node_state=2, name='Empty')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=2, name='Empty')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: ';' at [26:1]
     └─ Nodes: 4 active, 46 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, original_child_idxs=(48), node_state=4, name='Empty')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=4, name='Empty')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [26:2]
     └─ Nodes: 3 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, original_child_idxs=(48), node_state=4, name='Empty')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=4, name='Empty')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [27:0]
     └─ Nodes: 3 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=47, original_child_idxs=(48), node_state=4, name='Empty')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=4, name='Empty')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '//' at [28:0]
     └─ Nodes: 3 active, 47 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29, ...) len=8)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11, 29, ...) len=8)
     └─ Path: RootNode
     └─ Current Token: '//' at [28:0]
     └─ Nodes: 3 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [28:0]
     └─ Nodes: 4 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Enum' at [28:2]
     └─ Nodes: 4 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [28:6]
     └─ Nodes: 4 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'hex' at [28:10]
     └─ Nodes: 4 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'values' at [28:13]
     └─ Nodes: 4 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'and' at [28:19]
     └─ Nodes: 4 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'comments' at [28:22]
     └─ Nodes: 4 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=50)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [29:0]
     └─ Nodes: 3 active, 48 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29, ...) len=9)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11, 29, ...) len=9)
     └─ Path: RootNode
     └─ Current Token: 'enum' at [29:0]
     └─ Nodes: 3 active, 48 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, node_state=0)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'enum' at [29:0]
     └─ Nodes: 4 active, 48 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, node_state=1)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'Flags' at [29:4]
     └─ Nodes: 4 active, 48 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, node_state=1, name='Flags')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, node_state=1, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [29:9]
     └─ Nodes: 4 active, 48 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, node_state=3, name='Flags')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, node_state=3, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '{' at [29:9]
     └─ Nodes: 4 active, 48 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, node_state=0, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, node_state=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '{' at [29:9]
     └─ Nodes: 5 active, 48 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [29:10]
     └─ Nodes: 5 active, 48 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=53, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [29:10]
     └─ Nodes: 5 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=53, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
     └─ Nodes: 5 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=53, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
     └─ Nodes: 5 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=53, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
     └─ Nodes: 5 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=53, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [30:0]
     └─ Nodes: 5 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=53, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'READ' at [30:0]
     └─ Nodes: 5 active, 49 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'READ' at [30:0]
     └─ Nodes: 5 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=0, field_name='READ')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=0, field_name='READ')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'READ' at [30:0]
     └─ Nodes: 6 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=1, field_name='READ')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=1, field_name='READ')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [30:4]
     └─ Nodes: 6 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=1, field_name='READ')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=1, field_name='READ')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [30:4]
     └─ Nodes: 6 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=1, field_name='READ')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=1, field_name='READ')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [30:4]
     └─ Nodes: 6 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=1, field_name='READ', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=1, field_name='READ', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [30:4]
     └─ Nodes: 6 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=1, field_name='READ', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=1, field_name='READ', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0x01' at [30:5]
     └─ Nodes: 6 active, 49 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=4, field_name='READ', value='0x01')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=4, field_name='READ', value='0x01')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [30:9]
     └─ Nodes: 5 active, 50 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=54, node_state=4, field_name='READ', value='0x01')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, node_state=4, field_name='READ', value='0x01')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [30:10]
     └─ Nodes: 5 active, 50 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [30:10]
     └─ Nodes: 5 active, 50 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=55, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=55, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [30:10]
     └─ Nodes: 5 active, 51 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=55, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=55, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [30:10]
     └─ Nodes: 5 active, 51 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=55, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=55, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '//' at [30:10]
     └─ Nodes: 5 active, 51 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [30:10]
     └─ Nodes: 5 active, 51 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=56)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=56)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [30:10]
     └─ Nodes: 6 active, 51 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=56)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=56)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: 'Read' at [30:12]
     └─ Nodes: 6 active, 51 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=56)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=56)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: 'permission' at [30:16]
     └─ Nodes: 6 active, 51 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=56)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=56)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [31:0]
     └─ Nodes: 5 active, 52 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [31:0]
     └─ Nodes: 5 active, 52 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=57, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=57, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [31:0]
     └─ Nodes: 5 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=57, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=57, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [31:0]
     └─ Nodes: 5 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=57, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=57, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [31:0]
     └─ Nodes: 5 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=57, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=57, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [31:0]
     └─ Nodes: 5 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=57, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=57, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'WRITE' at [31:0]
     └─ Nodes: 5 active, 53 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'WRITE' at [31:0]
     └─ Nodes: 5 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=58, node_state=0, field_name='WRITE')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, node_state=0, field_name='WRITE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'WRITE' at [31:0]
     └─ Nodes: 6 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=58, node_state=1, field_name='WRITE')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, node_state=1, field_name='WRITE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [31:5]
     └─ Nodes: 6 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=58, node_state=1, field_name='WRITE')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, node_state=1, field_name='WRITE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [31:5]
     └─ Nodes: 6 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=58, node_state=1, field_name='WRITE', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, node_state=1, field_name='WRITE', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [31:5]
     └─ Nodes: 6 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=58, node_state=1, field_name='WRITE', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, node_state=1, field_name='WRITE', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0x02' at [31:6]
     └─ Nodes: 6 active, 53 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=58, node_state=4, field_name='WRITE', value='0x02')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, node_state=4, field_name='WRITE', value='0x02')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [31:10]
     └─ Nodes: 5 active, 54 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=58, node_state=4, field_name='WRITE', value='0x02')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, node_state=4, field_name='WRITE', value='0x02')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [31:11]
     └─ Nodes: 5 active, 54 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57, 58), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, 58), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [31:11]
     └─ Nodes: 5 active, 54 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=59, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=59, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [31:11]
     └─ Nodes: 5 active, 55 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=59, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=59, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [31:11]
     └─ Nodes: 5 active, 55 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=59, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=59, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '//' at [31:11]
     └─ Nodes: 5 active, 55 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57, ...) len=7, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, ...) len=7, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '//' at [31:11]
     └─ Nodes: 5 active, 55 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=60)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=60)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '//' at [31:11]
     └─ Nodes: 6 active, 55 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=60)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=60)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: 'Write' at [31:13]
     └─ Nodes: 6 active, 55 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=60)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=60)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: 'permission' at [31:18]
     └─ Nodes: 6 active, 55 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(original_parent_idx=52, original_current_idx=60)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			SingleLineCommentNode(c_parent_idx=52, c_current_idx=60)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
     └─ Current Token: '' at [32:0]
     └─ Nodes: 5 active, 56 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57, ...) len=8, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, ...) len=8, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [32:0]
     └─ Nodes: 5 active, 56 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=61, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=61, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [32:0]
     └─ Nodes: 5 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=61, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=61, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [32:0]
     └─ Nodes: 5 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=61, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=61, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [32:0]
     └─ Nodes: 5 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=61, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=61, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [32:0]
     └─ Nodes: 5 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=52, original_current_idx=61, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=61, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'EXECUTE' at [32:0]
     └─ Nodes: 5 active, 57 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57, ...) len=9, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, ...) len=9, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'EXECUTE' at [32:0]
     └─ Nodes: 5 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=0, field_name='EXECUTE')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=0, field_name='EXECUTE')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'EXECUTE' at [32:0]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [32:7]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0x04' at [32:8]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [32:12]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [32:12]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '//' at [32:12]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04//')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04//')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'Execute' at [32:14]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04//Execute')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04//Execute')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'permission' at [32:21]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04//Executepermission')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=1, field_name='EXECUTE', value='0x04//Executepermission')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [33:0]
     └─ Nodes: 6 active, 57 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=52, original_current_idx=62, node_state=4, field_name='EXECUTE', value='0x04//Executepermission')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=4, field_name='EXECUTE', value='0x04//Executepermission')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '}' at [33:0]
     └─ Nodes: 5 active, 58 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57, ...) len=10, node_state=2, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, ...) len=10, node_state=2, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '}' at [33:0]
     └─ Nodes: 5 active, 58 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(original_parent_idx=51, original_current_idx=52, original_child_idxs=(53, 54, 55, 56, 57, ...) len=10, node_state=4, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, ...) len=10, node_state=4, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [33:1]
     └─ Nodes: 4 active, 59 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=3, name='Flags')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=3, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [33:1]
     └─ Nodes: 4 active, 59 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=2, name='Flags')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=2, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: ';' at [33:1]
     └─ Nodes: 4 active, 59 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=4, name='Flags')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=4, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [33:2]
     └─ Nodes: 3 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=4, name='Flags')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=4, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [33:2]
     └─ Nodes: 3 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=4, name='Flags')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=4, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [34:0]
     └─ Nodes: 3 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=51, original_child_idxs=(52), node_state=4, name='Flags')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=4, name='Flags')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '//' at [35:0]
     └─ Nodes: 3 active, 60 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29, ...) len=10)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11, 29, ...) len=10)
     └─ Path: RootNode
     └─ Current Token: '//' at [35:0]
     └─ Nodes: 3 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=63)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=63)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [35:0]
     └─ Nodes: 4 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=63)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=63)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Enum' at [35:2]
     └─ Nodes: 4 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=63)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=63)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [35:6]
     └─ Nodes: 4 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=63)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=63)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'byte' at [35:10]
     └─ Nodes: 4 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=63)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=63)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'values' at [35:14]
     └─ Nodes: 4 active, 60 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=63)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=63)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'enum' at [36:0]
     └─ Nodes: 3 active, 61 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 10, 11, 29, ...) len=11)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 10, 11, 29, ...) len=11)
     └─ Path: RootNode
     └─ Current Token: 'enum' at [36:0]
     └─ Nodes: 3 active, 61 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(original_parent_idx=0, original_current_idx=64, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	EnumNode(c_parent_idx=0, c_current_idx=64, node_state=0)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'enum' at [36:0]
     └─ Nodes: 4 active, 61 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=64, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=64, node_state=1)
     └─ Path: RootNode -> EnumNode
     └─ Current Token: 'ByteValues' at [36:4]
     └─ Nodes: 4 active, 61 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=64, node_state=1, name='ByteValues')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=64, node_state=1, name='ByteValues')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [36:14]
     └─ Nodes: 4 active, 61 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=64, node_state=3, name='ByteValues')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=64, node_state=3, name='ByteValues')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '{' at [36:14]
     └─ Nodes: 4 active, 61 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, node_state=0, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, node_state=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '{' at [36:14]
     └─ Nodes: 5 active, 61 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [36:15]
     └─ Nodes: 5 active, 61 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=66, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=66, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [36:15]
     └─ Nodes: 5 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=66, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=66, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [37:0]
     └─ Nodes: 5 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=66, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=66, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [37:0]
     └─ Nodes: 5 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=66, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=66, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [37:0]
     └─ Nodes: 5 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=66, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=66, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [37:0]
     └─ Nodes: 5 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=66, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=66, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'BYTE_0' at [37:0]
     └─ Nodes: 5 active, 62 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'BYTE_0' at [37:0]
     └─ Nodes: 5 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=67, node_state=0, field_name='BYTE_0')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=0, field_name='BYTE_0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'BYTE_0' at [37:0]
     └─ Nodes: 6 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=67, node_state=1, field_name='BYTE_0', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=1, field_name='BYTE_0', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [37:6]
     └─ Nodes: 6 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=67, node_state=1, field_name='BYTE_0', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=1, field_name='BYTE_0', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0' at [37:7]
     └─ Nodes: 6 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=67, node_state=1, field_name='BYTE_0', value='0')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=1, field_name='BYTE_0', value='0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '<<' at [37:8]
     └─ Nodes: 6 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=67, node_state=1, field_name='BYTE_0', value='0<<')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=1, field_name='BYTE_0', value='0<<')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0' at [37:10]
     └─ Nodes: 6 active, 62 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=67, node_state=4, field_name='BYTE_0', value='0<<0')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=4, field_name='BYTE_0', value='0<<0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [37:11]
     └─ Nodes: 5 active, 63 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=67, node_state=4, field_name='BYTE_0', value='0<<0')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=4, field_name='BYTE_0', value='0<<0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [37:12]
     └─ Nodes: 5 active, 63 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [37:12]
     └─ Nodes: 5 active, 63 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=68, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=68, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [37:12]
     └─ Nodes: 5 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=68, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=68, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [38:0]
     └─ Nodes: 5 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=68, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=68, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [38:0]
     └─ Nodes: 5 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=68, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=68, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [38:0]
     └─ Nodes: 5 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=68, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=68, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [38:0]
     └─ Nodes: 5 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=68, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=68, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'BYTE_1' at [38:0]
     └─ Nodes: 5 active, 64 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'BYTE_1' at [38:0]
     └─ Nodes: 5 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=69, node_state=0, field_name='BYTE_1')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=0, field_name='BYTE_1')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'BYTE_1' at [38:0]
     └─ Nodes: 6 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=69, node_state=1, field_name='BYTE_1', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=1, field_name='BYTE_1', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [38:6]
     └─ Nodes: 6 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=69, node_state=1, field_name='BYTE_1', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=1, field_name='BYTE_1', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0' at [38:7]
     └─ Nodes: 6 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=69, node_state=1, field_name='BYTE_1', value='0')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=1, field_name='BYTE_1', value='0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '<<' at [38:8]
     └─ Nodes: 6 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=69, node_state=1, field_name='BYTE_1', value='0<<')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=1, field_name='BYTE_1', value='0<<')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '1' at [38:10]
     └─ Nodes: 6 active, 64 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=69, node_state=4, field_name='BYTE_1', value='0<<1')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=4, field_name='BYTE_1', value='0<<1')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [38:11]
     └─ Nodes: 5 active, 65 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=69, node_state=4, field_name='BYTE_1', value='0<<1')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=4, field_name='BYTE_1', value='0<<1')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [38:12]
     └─ Nodes: 5 active, 65 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68, 69), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [38:12]
     └─ Nodes: 5 active, 65 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=70, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=70, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [38:12]
     └─ Nodes: 5 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=70, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=70, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [39:0]
     └─ Nodes: 5 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=70, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=70, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [39:0]
     └─ Nodes: 5 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=70, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=70, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [39:0]
     └─ Nodes: 5 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=70, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=70, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [39:0]
     └─ Nodes: 5 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=70, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=70, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'BYTE_2' at [39:0]
     └─ Nodes: 5 active, 66 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69, 70), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68, 69, 70), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'BYTE_2' at [39:0]
     └─ Nodes: 5 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=71, node_state=0, field_name='BYTE_2')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=0, field_name='BYTE_2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'BYTE_2' at [39:0]
     └─ Nodes: 6 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=71, node_state=1, field_name='BYTE_2', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=1, field_name='BYTE_2', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [39:6]
     └─ Nodes: 6 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=71, node_state=1, field_name='BYTE_2', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=1, field_name='BYTE_2', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0' at [39:7]
     └─ Nodes: 6 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=71, node_state=1, field_name='BYTE_2', value='0')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=1, field_name='BYTE_2', value='0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '<<' at [39:8]
     └─ Nodes: 6 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=71, node_state=1, field_name='BYTE_2', value='0<<')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=1, field_name='BYTE_2', value='0<<')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '2' at [39:10]
     └─ Nodes: 6 active, 66 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=71, node_state=4, field_name='BYTE_2', value='0<<2')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=4, field_name='BYTE_2', value='0<<2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: ',' at [39:11]
     └─ Nodes: 5 active, 67 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=71, node_state=4, field_name='BYTE_2', value='0<<2')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=4, field_name='BYTE_2', value='0<<2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [39:12]
     └─ Nodes: 5 active, 67 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69, 70, 71), node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68, 69, 70, 71), node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [39:12]
     └─ Nodes: 5 active, 67 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=72, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=72, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [39:12]
     └─ Nodes: 5 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=72, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=72, n_tokens=1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [40:0]
     └─ Nodes: 5 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=72, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=72, n_tokens=2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [40:0]
     └─ Nodes: 5 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=72, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=72, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [40:0]
     └─ Nodes: 5 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=72, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=72, n_tokens=4)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: '' at [40:0]
     └─ Nodes: 5 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=65, original_current_idx=72, n_tokens=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=65, c_current_idx=72, n_tokens=5)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current Token: 'BYTE_3' at [40:0]
     └─ Nodes: 5 active, 68 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69, 70, ...) len=7, node_state=3, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68, 69, 70, ...) len=7, node_state=3, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: 'BYTE_3' at [40:0]
     └─ Nodes: 5 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=73, node_state=0, field_name='BYTE_3')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=0, field_name='BYTE_3')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: 'BYTE_3' at [40:0]
     └─ Nodes: 6 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=73, node_state=1, field_name='BYTE_3', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=1, field_name='BYTE_3', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '=' at [40:6]
     └─ Nodes: 6 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=73, node_state=1, field_name='BYTE_3', value='')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=1, field_name='BYTE_3', value='')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '0' at [40:7]
     └─ Nodes: 6 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=73, node_state=1, field_name='BYTE_3', value='0')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=1, field_name='BYTE_3', value='0')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '<<' at [40:8]
     └─ Nodes: 6 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=73, node_state=1, field_name='BYTE_3', value='0<<')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=1, field_name='BYTE_3', value='0<<')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '3' at [40:10]
     └─ Nodes: 6 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=73, node_state=1, field_name='BYTE_3', value='0<<3')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=1, field_name='BYTE_3', value='0<<3')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [41:0]
     └─ Nodes: 6 active, 68 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(original_parent_idx=65, original_current_idx=73, node_state=4, field_name='BYTE_3', value='0<<3')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=4, field_name='BYTE_3', value='0<<3')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '}' at [41:0]
     └─ Nodes: 5 active, 69 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69, 70, ...) len=8, node_state=2, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68, 69, 70, ...) len=8, node_state=2, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '}' at [41:0]
     └─ Nodes: 5 active, 69 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(original_parent_idx=64, original_current_idx=65, original_child_idxs=(66, 67, 68, 69, 70, ...) len=8, node_state=4, parent_type='EnumNode')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68, 69, 70, ...) len=8, node_state=4, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current Token: '' at [41:1]
     └─ Nodes: 4 active, 70 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=64, original_child_idxs=(65), node_state=3, name='ByteValues')
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=64, c_child_idxs=(65), node_state=3, name='ByteValues')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [41:1]
     └─ Nodes: 4 active, 70 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=64, original_child_idxs=(65), node_state=2, name='ByteValues')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=64, c_child_idxs=(65), node_state=2, name='ByteValues')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: ';' at [41:1]
     └─ Nodes: 4 active, 70 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(original_parent_idx=0, original_current_idx=64, original_child_idxs=(65), node_state=4, name='ByteValues')
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	EnumNode(c_parent_idx=0, c_current_idx=64, c_child_idxs=(65), node_state=4, name='ByteValues')
     └─ Path: RootNode -> EnumNode
     └─ Current Token: '' at [41:2]
     └─ Nodes: 3 active, 71 complete

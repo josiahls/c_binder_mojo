@@ -1,304 +1,304 @@
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(c_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '#include' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(c_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '#include' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:224 - INFO: [Depth:1] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:1] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=1, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [0:0]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=1, path='', system=True)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=1, node_state=1, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<stdio.h>' at [0:8]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=1, node_state=4, path='stdio.h', system=True)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=1, node_state=4, path='stdio.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1))
     └─ Path: RootNode
     └─ Current Token: '#include' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=2, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [1:0]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=1, path='', system=True)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=2, node_state=1, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<stdlib.h>' at [1:8]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=2, node_state=4, path='stdlib.h', system=True)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=2, node_state=4, path='stdlib.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [2:0]
     └─ Nodes: 1 active, 2 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2))
     └─ Path: RootNode
     └─ Current Token: '#include' at [2:0]
     └─ Nodes: 1 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=3, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [2:0]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=1, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=3, node_state=1, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '"my_header.h"' at [2:8]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=3, node_state=4, path='my_header.h', system=False)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=3, node_state=4, path='my_header.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [3:0]
     └─ Nodes: 1 active, 3 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3))
     └─ Path: RootNode
     └─ Current Token: '#include' at [3:0]
     └─ Nodes: 1 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=4, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [3:0]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=1, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=4, node_state=1, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '"../relative/path.h"' at [3:8]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=1, path='../relative/path.h', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=4, node_state=1, path='../relative/path.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [4:0]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=4, node_state=1, path='../relative/path.h', system=False)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=4, node_state=1, path='../relative/path.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [5:0]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4))
     └─ Path: RootNode
     └─ Current Token: '//' at [5:0]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [5:0]
     └─ Nodes: 3 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Comment' at [5:2]
     └─ Nodes: 3 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'between' at [5:9]
     └─ Nodes: 3 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'includes' at [5:16]
     └─ Nodes: 3 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#include' at [6:0]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5))
     └─ Path: RootNode
     └─ Current Token: '#include' at [6:0]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=6, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [6:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=1, path='', system=True)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=6, node_state=1, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<string.h>' at [6:8]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=1, path='string.h', system=True)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=6, node_state=1, path='string.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [7:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=6, node_state=1, path='string.h', system=True)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=6, node_state=1, path='string.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '/*' at [8:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, 6))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, 6))
     └─ Path: RootNode
     └─ Current Token: '/*' at [8:0]
     └─ Nodes: 3 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '/*' at [8:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'Multi-line' at [8:2]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'comment' at [8:12]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [9:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [9:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '' at [9:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'between' at [9:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: 'includes' at [9:7]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [9:15]
     └─ Nodes: 3 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	MultiLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> MultiLineCommentNode
     └─ Current Token: '#include' at [10:0]
     └─ Nodes: 3 active, 5 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
     └─ Path: RootNode
     └─ Current Token: '#include' at [10:0]
     └─ Nodes: 3 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=8, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [10:0]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=1, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=8, node_state=1, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '"local/header.h"' at [10:8]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=1, path='local/header.h', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=8, node_state=1, path='local/header.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [11:0]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=8, node_state=1, path='local/header.h', system=False)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=8, node_state=1, path='local/header.h', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [12:0]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=8)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=8)
     └─ Path: RootNode
     └─ Current Token: '//' at [12:0]
     └─ Nodes: 4 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [12:0]
     └─ Nodes: 5 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Include' at [12:2]
     └─ Nodes: 5 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [12:9]
     └─ Nodes: 5 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'extra' at [12:13]
     └─ Nodes: 5 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'whitespace' at [12:18]
     └─ Nodes: 5 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#include' at [13:0]
     └─ Nodes: 4 active, 6 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
     └─ Path: RootNode
     └─ Current Token: '#include' at [13:0]
     └─ Nodes: 4 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=10, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [13:0]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=1, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=10, node_state=1, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [13:8]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=1, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=10, node_state=1, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [13:8]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=1, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=10, node_state=1, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [13:8]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=1, path='', system=True)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=10, node_state=1, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<math.h>' at [13:8]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=1, path='math.h', system=True)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=10, node_state=1, path='math.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '' at [14:0]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=10, node_state=1, path='math.h', system=True)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=10, node_state=1, path='math.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=10)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=10)
     └─ Path: RootNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 5 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [15:0]
     └─ Nodes: 6 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Include' at [15:2]
     └─ Nodes: 6 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [15:9]
     └─ Nodes: 6 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'trailing' at [15:13]
     └─ Nodes: 6 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'comment' at [15:21]
     └─ Nodes: 6 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '#include' at [16:0]
     └─ Nodes: 5 active, 7 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
     └─ Path: RootNode
     └─ Current Token: '#include' at [16:0]
     └─ Nodes: 5 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=0, path='', system=False)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	IncludeNode(c_parent_idx=0, c_current_idx=12, node_state=0, path='', system=False)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '#include' at [16:0]
     └─ Nodes: 6 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=1, path='', system=True)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=12, node_state=1, path='', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '<time.h>' at [16:8]
     └─ Nodes: 6 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(original_parent_idx=0, original_current_idx=12, node_state=1, path='time.h', system=True)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	IncludeNode(c_parent_idx=0, c_current_idx=12, node_state=1, path='time.h', system=True)
     └─ Path: RootNode -> IncludeNode
     └─ Current Token: '//' at [16:16]
     └─ Nodes: 6 active, 7 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=12)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=12)
     └─ Path: RootNode
     └─ Current Token: '//' at [16:16]
     └─ Nodes: 6 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [16:16]
     └─ Nodes: 7 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Time' at [16:18]
     └─ Nodes: 7 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'functions' at [16:22]
     └─ Nodes: 7 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [16:31]
     └─ Nodes: 7 active, 7 complete

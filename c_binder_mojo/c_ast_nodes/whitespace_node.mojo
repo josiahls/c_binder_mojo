@@ -284,7 +284,7 @@ struct WhitespaceNode(NodeAstLike):
             The scope level (0 for whitespace).
         """
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, module_interface
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

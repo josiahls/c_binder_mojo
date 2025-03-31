@@ -1,1332 +1,1332 @@
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(c_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(original_current_idx=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| RootNode(c_current_idx=0)
     └─ Path: RootNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 1 active, 0 complete
-tree.mojo:224 - INFO: [Depth:1] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:1] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [0:0]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Copyright' at [0:2]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '2021' at [0:11]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'DeepMind' at [0:15]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Technologies' at [0:23]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Limited' at [0:35]
     └─ Nodes: 2 active, 0 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1))
     └─ Path: RootNode
     └─ Current Token: '//' at [1:0]
     └─ Nodes: 1 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=2)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [1:0]
     └─ Nodes: 2 active, 1 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=2)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [2:0]
     └─ Nodes: 1 active, 2 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2))
     └─ Path: RootNode
     └─ Current Token: '//' at [2:0]
     └─ Nodes: 1 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [2:0]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Licensed' at [2:2]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'under' at [2:10]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [2:15]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Apache' at [2:18]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'License' at [2:24]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ',' at [2:31]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [2:32]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Version' at [2:32]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '2.0' at [2:39]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [2:42]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '(' at [2:42]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [2:43]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '"License"' at [2:46]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ')' at [2:55]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [2:56]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ';' at [2:56]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [2:57]
     └─ Nodes: 2 active, 2 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [3:0]
     └─ Nodes: 1 active, 3 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3))
     └─ Path: RootNode
     └─ Current Token: '//' at [3:0]
     └─ Nodes: 1 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [3:0]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'you' at [3:2]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'may' at [3:5]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'not' at [3:8]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'use' at [3:11]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'this' at [3:14]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'file' at [3:18]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'except' at [3:22]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'in' at [3:28]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'compliance' at [3:30]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'with' at [3:40]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [3:44]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'License.' at [3:47]
     └─ Nodes: 2 active, 3 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=4)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [4:0]
     └─ Nodes: 1 active, 4 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4))
     └─ Path: RootNode
     └─ Current Token: '//' at [4:0]
     └─ Nodes: 1 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [4:0]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'You' at [4:2]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'may' at [4:5]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'obtain' at [4:8]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'a' at [4:14]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'copy' at [4:15]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'of' at [4:19]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [4:21]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'License' at [4:24]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'at' at [4:31]
     └─ Nodes: 2 active, 4 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [5:0]
     └─ Nodes: 1 active, 5 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5))
     └─ Path: RootNode
     └─ Current Token: '//' at [5:0]
     └─ Nodes: 1 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=6)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=6)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [5:0]
     └─ Nodes: 2 active, 5 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=6)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=6)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [6:0]
     └─ Nodes: 1 active, 6 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, 6))
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, 6))
     └─ Path: RootNode
     └─ Current Token: '//' at [6:0]
     └─ Nodes: 1 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [6:0]
     └─ Nodes: 2 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [6:2]
     └─ Nodes: 2 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'http://www.apache.org/licenses/LICENSE-2.0' at [6:2]
     └─ Nodes: 2 active, 6 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [7:0]
     └─ Nodes: 1 active, 7 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
     └─ Path: RootNode
     └─ Current Token: '//' at [7:0]
     └─ Nodes: 1 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=8)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=8)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [7:0]
     └─ Nodes: 2 active, 7 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=8)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=8)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [8:0]
     └─ Nodes: 1 active, 8 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=8)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=8)
     └─ Path: RootNode
     └─ Current Token: '//' at [8:0]
     └─ Nodes: 1 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [8:0]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'Unless' at [8:2]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'required' at [8:8]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'by' at [8:16]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'applicable' at [8:18]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'law' at [8:28]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'or' at [8:31]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'agreed' at [8:33]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'to' at [8:39]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'in' at [8:41]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'writing' at [8:43]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ',' at [8:50]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [8:51]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'software' at [8:51]
     └─ Nodes: 2 active, 8 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [9:0]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
     └─ Path: RootNode
     └─ Current Token: '//' at [9:0]
     └─ Nodes: 1 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [9:0]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'distributed' at [9:2]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'under' at [9:13]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [9:18]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'License' at [9:21]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'is' at [9:28]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'distributed' at [9:30]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'on' at [9:41]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'an' at [9:43]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '"AS' at [9:45]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'IS"' at [9:48]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'BASIS' at [9:51]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ',' at [9:56]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [9:57]
     └─ Nodes: 2 active, 9 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=10)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [10:0]
     └─ Nodes: 1 active, 10 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=10)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=10)
     └─ Path: RootNode
     └─ Current Token: '//' at [10:0]
     └─ Nodes: 1 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [10:0]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'WITHOUT' at [10:2]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'WARRANTIES' at [10:9]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'OR' at [10:19]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'CONDITIONS' at [10:21]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'OF' at [10:31]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'ANY' at [10:33]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'KIND' at [10:36]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: ',' at [10:40]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [10:41]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'either' at [10:41]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'express' at [10:47]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'or' at [10:54]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'implied.' at [10:56]
     └─ Nodes: 2 active, 10 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [11:0]
     └─ Nodes: 1 active, 11 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
     └─ Path: RootNode
     └─ Current Token: '//' at [11:0]
     └─ Nodes: 1 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [11:0]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'See' at [11:2]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [11:5]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'License' at [11:8]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'for' at [11:15]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [11:18]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'specific' at [11:21]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'language' at [11:29]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'governing' at [11:37]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'permissions' at [11:46]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'and' at [11:57]
     └─ Nodes: 2 active, 11 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=12)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=12)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [12:0]
     └─ Nodes: 1 active, 12 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=12)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=12)
     └─ Path: RootNode
     └─ Current Token: '//' at [12:0]
     └─ Nodes: 1 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [12:0]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'limitations' at [12:2]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'under' at [12:13]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'the' at [12:18]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'License.' at [12:21]
     └─ Nodes: 2 active, 12 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 13 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
     └─ Path: RootNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 13 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=14, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [13:0]
     └─ Nodes: 1 active, 14 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=14, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '#ifndef' at [14:0]
     └─ Nodes: 1 active, 14 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=14)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=14)
     └─ Path: RootNode
     └─ Current Token: '#ifndef' at [14:0]
     └─ Nodes: 1 active, 14 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#ifndef' at [14:0]
     └─ Nodes: 2 active, 14 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [14:7]
     └─ Nodes: 2 active, 14 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, node_state=3)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#define' at [15:0]
     └─ Nodes: 2 active, 14 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		MacroDefineNode(original_parent_idx=15, original_current_idx=16, node_state=0)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 		MacroDefineNode(c_parent_idx=15, c_current_idx=16, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '#define' at [15:0]
     └─ Nodes: 3 active, 14 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MacroDefineNode(original_parent_idx=15, original_current_idx=16, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MacroDefineNode(c_parent_idx=15, c_current_idx=16, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [15:7]
     └─ Nodes: 3 active, 14 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MacroDefineNode(original_parent_idx=15, original_current_idx=16, node_state=4, macro='MUJOCO_INCLUDE_MJTNUM_H_')
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MacroDefineNode(c_parent_idx=15, c_current_idx=16, node_state=4, macro='MUJOCO_INCLUDE_MJTNUM_H_')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '' at [16:0]
     └─ Nodes: 2 active, 15 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [16:0]
     └─ Nodes: 2 active, 15 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=17, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=17, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [16:0]
     └─ Nodes: 2 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=17, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=17, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '//----------------------------------' at [17:0]
     └─ Nodes: 2 active, 16 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '//----------------------------------' at [17:0]
     └─ Nodes: 2 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=18)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=18)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '//----------------------------------' at [17:0]
     └─ Nodes: 3 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=18)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=18)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'floating-point' at [17:36]
     └─ Nodes: 3 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=18)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=18)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'definition' at [17:50]
     └─ Nodes: 3 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=18)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=18)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '-------------------------------------' at [17:60]
     └─ Nodes: 3 active, 16 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=18)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=18)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '' at [18:0]
     └─ Nodes: 2 active, 17 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [18:0]
     └─ Nodes: 2 active, 17 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=19, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=19, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [18:0]
     └─ Nodes: 2 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=19, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=19, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '//' at [19:0]
     └─ Nodes: 2 active, 18 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '//' at [19:0]
     └─ Nodes: 2 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '//' at [19:0]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'floating' at [19:2]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'point' at [19:10]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'data' at [19:15]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'type' at [19:19]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'and' at [19:23]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'minval' at [19:26]
     └─ Nodes: 3 active, 18 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=20)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '#ifndef' at [20:0]
     └─ Nodes: 2 active, 19 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#ifndef' at [20:0]
     └─ Nodes: 2 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '#ifndef' at [20:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: 'mjUSESINGLE' at [20:7]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, node_state=3)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 3 active, 19 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=22, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=22, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 3 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=22, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=22, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [21:0]
     └─ Nodes: 3 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=22, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=22, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: 'typedef' at [21:0]
     └─ Nodes: 3 active, 20 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: 'typedef' at [21:0]
     └─ Nodes: 3 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=23, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=23, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'typedef' at [21:0]
     └─ Nodes: 4 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=23, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=23, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'double' at [21:7]
     └─ Nodes: 4 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=23, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=23, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'mjtNum' at [21:13]
     └─ Nodes: 4 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=23, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=23, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: ';' at [21:19]
     └─ Nodes: 4 active, 20 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=23, node_state=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=23, node_state=4)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: '' at [21:20]
     └─ Nodes: 3 active, 21 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '' at [21:20]
     └─ Nodes: 3 active, 21 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=24, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=24, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [21:20]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=24, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=24, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=24, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=24, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [22:0]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=24, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=24, n_tokens=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#define' at [22:0]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '#define' at [22:0]
     └─ Nodes: 3 active, 22 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=25, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=25, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '#define' at [22:0]
     └─ Nodes: 4 active, 22 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=25, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=25, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: 'mjMINVAL' at [22:7]
     └─ Nodes: 4 active, 22 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=25, node_state=3, macro='mjMINVAL')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=25, node_state=3, macro='mjMINVAL')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '' at [22:15]
     └─ Nodes: 4 active, 22 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 				WhitespaceNode(original_parent_idx=25, original_current_idx=26, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 				WhitespaceNode(c_parent_idx=25, c_current_idx=26, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '' at [22:15]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(original_parent_idx=25, original_current_idx=26, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(c_parent_idx=25, c_current_idx=26, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '' at [22:15]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(original_parent_idx=25, original_current_idx=26, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(c_parent_idx=25, c_current_idx=26, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '' at [22:15]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				WhitespaceNode(original_parent_idx=25, original_current_idx=26, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				WhitespaceNode(c_parent_idx=25, c_current_idx=26, n_tokens=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '1E-15' at [22:15]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=25, original_child_idxs=(26), node_state=3, macro='mjMINVAL')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=25, c_child_idxs=(26), node_state=3, macro='mjMINVAL')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '1E-15' at [22:15]
     └─ Nodes: 4 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=0, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '1E-15' at [22:15]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [22:20]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [22:20]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [22:20]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [22:20]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [22:20]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '' at [22:20]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '//' at [22:20]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'minimum' at [22:22]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'value' at [22:29]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'in' at [22:34]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'any' at [22:36]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'denominator' at [22:39]
     └─ Nodes: 5 active, 23 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				MacroDefineValueNode(original_parent_idx=25, original_current_idx=27, node_state=4, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '#else' at [23:0]
     └─ Nodes: 4 active, 24 complete
-tree.mojo:224 - INFO: [Depth:-1] 2|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=25, original_child_idxs=(26, 27), node_state=4, macro='mjMINVAL')
+tree.mojo:224 - INFO: [Depth:-1] 2|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=25, c_child_idxs=(26, 27), node_state=4, macro='mjMINVAL')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '#else' at [23:0]
     └─ Nodes: 3 active, 25 complete
-tree.mojo:224 - INFO: [Depth:-2] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24, 25), node_state=3)
+tree.mojo:224 - INFO: [Depth:-2] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '#else' at [23:0]
     └─ Nodes: 3 active, 25 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 			PlaceHolderNode(original_parent_idx=21, original_current_idx=28)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 			PlaceHolderNode(c_parent_idx=21, c_current_idx=28)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> PlaceHolderNode
     └─ Current Token: '#else' at [23:0]
     └─ Nodes: 4 active, 25 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			PlaceHolderNode(original_parent_idx=21, original_current_idx=28)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			PlaceHolderNode(c_parent_idx=21, c_current_idx=28)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> PlaceHolderNode
     └─ Current Token: '' at [24:0]
     └─ Nodes: 4 active, 25 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 28), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '' at [24:0]
     └─ Nodes: 4 active, 25 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=29, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=29, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [24:0]
     └─ Nodes: 4 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=29, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=29, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [24:0]
     └─ Nodes: 4 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=29, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=29, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: 'typedef' at [24:0]
     └─ Nodes: 4 active, 26 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 28, 29), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28, 29), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: 'typedef' at [24:0]
     └─ Nodes: 4 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=30, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=30, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'typedef' at [24:0]
     └─ Nodes: 5 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=30, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=30, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'float' at [24:7]
     └─ Nodes: 5 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=30, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=30, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'mjtNum' at [24:12]
     └─ Nodes: 5 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=30, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=30, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: ';' at [24:18]
     └─ Nodes: 5 active, 26 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			TypedefNode(original_parent_idx=21, original_current_idx=30, node_state=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			TypedefNode(c_parent_idx=21, c_current_idx=30, node_state=4)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: '' at [24:19]
     └─ Nodes: 4 active, 27 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 28, ...) len=7, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28, ...) len=7, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '' at [24:19]
     └─ Nodes: 4 active, 27 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=31, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=31, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [24:19]
     └─ Nodes: 4 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=31, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=31, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [25:0]
     └─ Nodes: 4 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=31, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=31, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [25:0]
     └─ Nodes: 4 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(original_parent_idx=21, original_current_idx=31, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 			WhitespaceNode(c_parent_idx=21, c_current_idx=31, n_tokens=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#define' at [25:0]
     └─ Nodes: 4 active, 28 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 28, ...) len=8, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28, ...) len=8, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '#define' at [25:0]
     └─ Nodes: 4 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=32, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=32, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '#define' at [25:0]
     └─ Nodes: 5 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=32, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=32, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: 'mjMINVAL' at [25:7]
     └─ Nodes: 5 active, 28 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=32, node_state=3, macro='mjMINVAL')
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=32, node_state=3, macro='mjMINVAL')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '' at [25:15]
     └─ Nodes: 5 active, 28 complete
-tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 				WhitespaceNode(original_parent_idx=32, original_current_idx=33, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:1] 3|----------------------| 				WhitespaceNode(c_parent_idx=32, c_current_idx=33, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '' at [25:15]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(original_parent_idx=32, original_current_idx=33, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(c_parent_idx=32, c_current_idx=33, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '' at [25:15]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(original_parent_idx=32, original_current_idx=33, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				WhitespaceNode(c_parent_idx=32, c_current_idx=33, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '' at [25:15]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				WhitespaceNode(original_parent_idx=32, original_current_idx=33, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				WhitespaceNode(c_parent_idx=32, c_current_idx=33, n_tokens=3)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> WhitespaceNode
     └─ Current Token: '1E-15f' at [25:15]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=32, original_child_idxs=(33), node_state=3, macro='mjMINVAL')
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=32, c_child_idxs=(33), node_state=3, macro='mjMINVAL')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '1E-15f' at [25:15]
     └─ Nodes: 5 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=0, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=0, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '1E-15f' at [25:15]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '/*' at [25:21]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'This' at [25:23]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'does' at [25:27]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'after' at [25:31]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'the' at [25:36]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'float' at [25:39]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'is' at [25:44]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: 'defined' at [25:46]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=1, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=1, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '*/' at [25:53]
     └─ Nodes: 6 active, 29 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				MacroDefineValueNode(original_parent_idx=32, original_current_idx=34, node_state=4, is_function_like=False)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 				MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=4, is_function_like=False)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode -> MacroDefineValueNode
     └─ Current Token: '#endif' at [26:0]
     └─ Nodes: 5 active, 30 complete
-tree.mojo:224 - INFO: [Depth:-1] 2|----------------------| 			MacroDefineNode(original_parent_idx=21, original_current_idx=32, original_child_idxs=(33, 34), node_state=4, macro='mjMINVAL')
+tree.mojo:224 - INFO: [Depth:-1] 2|----------------------| 			MacroDefineNode(c_parent_idx=21, c_current_idx=32, c_child_idxs=(33, 34), node_state=4, macro='mjMINVAL')
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode -> MacroDefineNode
     └─ Current Token: '#endif' at [26:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:-2] 1|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 28, ...) len=9, node_state=2)
+tree.mojo:224 - INFO: [Depth:-2] 1|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28, ...) len=9, node_state=2)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [26:0]
     └─ Nodes: 4 active, 31 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MacroIfNDefNode(original_parent_idx=15, original_current_idx=21, original_child_idxs=(22, 23, 24, 25, 28, ...) len=9, node_state=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28, ...) len=9, node_state=4)
     └─ Path: RootNode -> MacroIfNDefNode -> MacroIfNDefNode
     └─ Current Token: '' at [27:0]
     └─ Nodes: 3 active, 32 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, 21), node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, 21), node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [27:0]
     └─ Nodes: 3 active, 32 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=35, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=35, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [27:0]
     └─ Nodes: 3 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=35, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=35, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '/*' at [28:0]
     └─ Nodes: 3 active, 33 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=7, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=7, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '/*' at [28:0]
     └─ Nodes: 3 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=36)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=36)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '/*' at [28:0]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=36)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=36)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: 'silly' at [28:2]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=36)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=36)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: 'comment' at [28:7]
     └─ Nodes: 4 active, 33 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=36)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=36)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '*/' at [28:14]
     └─ Nodes: 3 active, 34 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=36)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=36)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '/**' at [28:16]
     └─ Nodes: 3 active, 34 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=8, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=8, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '/**' at [28:16]
     └─ Nodes: 3 active, 34 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=37)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=37)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '/**' at [28:16]
     └─ Nodes: 4 active, 34 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=37)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=37)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: 'another' at [28:19]
     └─ Nodes: 4 active, 34 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=37)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=37)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: 'one???????' at [28:26]
     └─ Nodes: 4 active, 34 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=37)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=37)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '**/' at [28:36]
     └─ Nodes: 3 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=37)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=37)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '' at [29:0]
     └─ Nodes: 3 active, 35 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=9, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=9, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [29:0]
     └─ Nodes: 3 active, 35 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=38, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=38, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [29:0]
     └─ Nodes: 3 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=38, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=38, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '/**' at [30:0]
     └─ Nodes: 3 active, 36 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=10, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=10, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '/**' at [30:0]
     └─ Nodes: 3 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '/**' at [30:0]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '' at [30:3]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: 'So' at [31:0]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '' at [31:2]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: 'many' at [32:0]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '' at [32:4]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: 'lines' at [33:0]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '' at [34:0]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '' at [35:0]
     └─ Nodes: 4 active, 36 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '**/' at [36:0]
     └─ Nodes: 3 active, 37 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MultiLineCommentNode(original_parent_idx=15, original_current_idx=39)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		MultiLineCommentNode(c_parent_idx=15, c_current_idx=39)
     └─ Path: RootNode -> MacroIfNDefNode -> MultiLineCommentNode
     └─ Current Token: '' at [37:0]
     └─ Nodes: 3 active, 37 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=11, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=11, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [37:0]
     └─ Nodes: 3 active, 37 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=40, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=40, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [37:0]
     └─ Nodes: 3 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=40, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=40, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [38:0]
     └─ Nodes: 3 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=40, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=40, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '//--------------------------------------' at [39:0]
     └─ Nodes: 3 active, 38 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=12, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=12, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '//--------------------------------------' at [39:0]
     └─ Nodes: 3 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=41)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '//--------------------------------------' at [39:0]
     └─ Nodes: 4 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=41)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'byte' at [39:40]
     └─ Nodes: 4 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=41)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'definition' at [39:44]
     └─ Nodes: 4 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=41)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '-------------------------------------------' at [39:54]
     └─ Nodes: 4 active, 38 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=41)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=41)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '' at [40:0]
     └─ Nodes: 3 active, 39 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=13, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=13, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [40:0]
     └─ Nodes: 3 active, 39 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=42, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=42, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [40:0]
     └─ Nodes: 3 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=42, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=42, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: 'typedef' at [41:0]
     └─ Nodes: 3 active, 40 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=14, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=14, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: 'typedef' at [41:0]
     └─ Nodes: 3 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		TypedefNode(original_parent_idx=15, original_current_idx=43, node_state=0)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=0)
     └─ Path: RootNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'typedef' at [41:0]
     └─ Nodes: 4 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(original_parent_idx=15, original_current_idx=43, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'unsigned' at [41:7]
     └─ Nodes: 4 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(original_parent_idx=15, original_current_idx=43, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'char' at [41:15]
     └─ Nodes: 4 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(original_parent_idx=15, original_current_idx=43, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: 'mjtByte' at [41:19]
     └─ Nodes: 4 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(original_parent_idx=15, original_current_idx=43, node_state=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=1)
     └─ Path: RootNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: ';' at [41:26]
     └─ Nodes: 4 active, 40 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		TypedefNode(original_parent_idx=15, original_current_idx=43, node_state=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=4)
     └─ Path: RootNode -> MacroIfNDefNode -> TypedefNode
     └─ Current Token: '' at [41:27]
     └─ Nodes: 3 active, 41 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=15, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=15, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [41:27]
     └─ Nodes: 3 active, 41 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=44, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=44, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [41:27]
     └─ Nodes: 3 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=44, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=44, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [41:27]
     └─ Nodes: 3 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=44, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=44, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [41:27]
     └─ Nodes: 3 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=44, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=44, n_tokens=3)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [41:27]
     └─ Nodes: 3 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=44, n_tokens=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=44, n_tokens=4)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '//' at [41:27]
     └─ Nodes: 3 active, 42 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=16, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=16, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '//' at [41:27]
     └─ Nodes: 3 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=45)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=45)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '//' at [41:27]
     └─ Nodes: 4 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=45)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=45)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'used' at [41:29]
     └─ Nodes: 4 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=45)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=45)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'for' at [41:33]
     └─ Nodes: 4 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=45)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=45)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: 'true/false' at [41:36]
     └─ Nodes: 4 active, 42 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(original_parent_idx=15, original_current_idx=45)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		SingleLineCommentNode(c_parent_idx=15, c_current_idx=45)
     └─ Path: RootNode -> MacroIfNDefNode -> SingleLineCommentNode
     └─ Current Token: '' at [42:0]
     └─ Nodes: 3 active, 43 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=17, node_state=3)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=17, node_state=3)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [42:0]
     └─ Nodes: 3 active, 43 complete
-tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=46, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 3|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=46, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [42:0]
     └─ Nodes: 3 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=46, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=46, n_tokens=1)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [43:0]
     └─ Nodes: 3 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=46, n_tokens=2)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=46, n_tokens=2)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '' at [44:0]
     └─ Nodes: 3 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(original_parent_idx=15, original_current_idx=46, n_tokens=3)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 		WhitespaceNode(c_parent_idx=15, c_current_idx=46, n_tokens=3)
     └─ Path: RootNode -> MacroIfNDefNode -> WhitespaceNode
     └─ Current Token: '#endif' at [45:0]
     └─ Nodes: 3 active, 44 complete
-tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=18, node_state=2)
+tree.mojo:224 - INFO: [Depth:-1] 1|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=18, node_state=2)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '#endif' at [45:0]
     └─ Nodes: 3 active, 44 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	MacroIfNDefNode(original_parent_idx=0, original_current_idx=15, original_child_idxs=(16, 17, 18, 19, 20, ...) len=18, node_state=4)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=18, node_state=4)
     └─ Path: RootNode -> MacroIfNDefNode
     └─ Current Token: '' at [45:6]
     └─ Nodes: 2 active, 45 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=15)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=15)
     └─ Path: RootNode
     └─ Current Token: '' at [45:6]
     └─ Nodes: 2 active, 45 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=47, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=47, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [45:6]
     └─ Nodes: 2 active, 46 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=47, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=47, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '//' at [45:6]
     └─ Nodes: 2 active, 46 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=16)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=16)
     └─ Path: RootNode
     └─ Current Token: '//' at [45:6]
     └─ Nodes: 2 active, 46 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=48)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=48)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '//' at [45:6]
     └─ Nodes: 3 active, 46 complete
-tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=48)
+tree.mojo:224 - INFO: [Depth:0] 1|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=48)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: 'MUJOCO_INCLUDE_MJTNUM_H_' at [45:8]
     └─ Nodes: 3 active, 46 complete
-tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(original_parent_idx=0, original_current_idx=48)
+tree.mojo:224 - INFO: [Depth:0] 2|----------------------| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=48)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current Token: '' at [46:0]
     └─ Nodes: 2 active, 47 complete
-tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=17)
+tree.mojo:224 - INFO: [Depth:-1] 3|----------------------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=17)
     └─ Path: RootNode
     └─ Current Token: '' at [46:0]
     └─ Nodes: 2 active, 47 complete
-tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	WhitespaceNode(original_parent_idx=0, original_current_idx=49, n_tokens=1)
+tree.mojo:224 - INFO: [Depth:0] 0 -> 3|-----------------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=49, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current Token: '' at [46:0]
     └─ Nodes: 2 active, 48 complete

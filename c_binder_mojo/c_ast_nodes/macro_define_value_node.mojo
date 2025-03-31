@@ -82,7 +82,7 @@ struct MacroDefineValueNode(NodeAstLike):
             True if this token starts a #define directive, False otherwise.
         """
         return (
-            module_interface.nodes()[][indices.original_parent_idx]
+            module_interface.nodes()[][indices.c_parent_idx]
             .node[]
             .isa[MacroDefineNode]()
         )
@@ -195,7 +195,7 @@ struct MacroDefineValueNode(NodeAstLike):
     ) -> Int:
         """Get the scope level of this node."""
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, module_interface
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

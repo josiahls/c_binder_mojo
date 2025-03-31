@@ -70,8 +70,8 @@ fn test_ifdef_node() raises:
 
             # Check for nested ifdef nodes
             var indices = node.indicies()
-            for j in range(len(indices.original_child_idxs)):
-                var child_idx = indices.original_child_idxs[j]
+            for j in range(len(indices.c_child_idxs)):
+                var child_idx = indices.c_child_idxs[j]
                 var child_node = module_interface.nodes()[][child_idx]
                 if child_node.name() == "MacroIfDefNode":
                     nested_ifdef_count += 1

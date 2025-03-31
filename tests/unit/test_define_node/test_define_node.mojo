@@ -70,7 +70,7 @@ fn test_define_node() raises:
 
             # Check if this is an empty define (no value)
             var indices = node.indicies()
-            if len(indices.original_child_idxs) == 0:
+            if len(indices.c_child_idxs) == 0:
                 empty_define_count += 1
                 logger.info("Found empty define node")
 

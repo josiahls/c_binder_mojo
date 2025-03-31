@@ -28,7 +28,7 @@ fn string_children(
         module_interface: The tree interface to use for the node.
     """
     var s = String()
-    for child_idx in node.indicies().original_child_idxs:
+    for child_idx in node.indicies().c_child_idxs:
         var child = module_interface.nodes()[][child_idx[]]
         s += child.to_string(just_code, module_interface)
     return s
@@ -51,7 +51,7 @@ fn default_scope_level(
     while current_parent_idx != -1:
         var parent = module_interface.nodes()[][current_parent_idx]
         level += parent.scope_offset(just_code)
-        current_parent_idx = parent.indicies().original_parent_idx
+        current_parent_idx = parent.indicies().c_parent_idx
     return level
 
 
@@ -90,7 +90,7 @@ fn default_to_string(
         s += token[].token + " "
 
     # Add children
-    if len(node.indicies().original_child_idxs) > 0:
+    if len(node.indicies().c_child_idxs) > 0:
         if line_num != -1:
             s += "\n"
         s += indent
@@ -146,7 +146,7 @@ fn default_to_string_just_code(
         s += token[].token + " "
 
     # Add children
-    if len(node.indicies().original_child_idxs) > 0:
+    if len(node.indicies().c_child_idxs) > 0:
         if not inline_children:
             s += indent
         s += string_children(node, True, module_interface)

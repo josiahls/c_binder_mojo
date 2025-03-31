@@ -1,90 +1,90 @@
-RootNode(original_current_idx=0, original_child_idxs=(1, 2, 3, 4, 5, ...) len=26)
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=1)
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=26)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
 // Different types of whitespace: 
-WhitespaceNode(original_parent_idx=0, original_current_idx=2, n_tokens=1)
+WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=3)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
 // Single space 
-WhitespaceNode(original_parent_idx=0, original_current_idx=4, n_tokens=3)
+WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=3)
   
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=5)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
 // Multiple spaces 
-WhitespaceNode(original_parent_idx=0, original_current_idx=6, n_tokens=6)
+WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=6)
      
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=7)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
 // Tabs 
-WhitespaceNode(original_parent_idx=0, original_current_idx=8, n_tokens=2)
+WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=2)
 	 
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=9)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
 // Mixed whitespace 
-WhitespaceNode(original_parent_idx=0, original_current_idx=10, n_tokens=5)
+WhitespaceNode(c_parent_idx=0, c_current_idx=10, n_tokens=5)
 	  	  
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=11)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
 // New lines 
-WhitespaceNode(original_parent_idx=0, original_current_idx=12, n_tokens=3)
+WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=3)
  
  
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=13)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
 // Whitespace in code contexts 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=14)
+PlaceHolderNode(c_parent_idx=0, c_current_idx=14)
 int 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=15)
+PlaceHolderNode(c_parent_idx=0, c_current_idx=15)
 function 
-PlaceHolderNode(original_parent_idx=0, original_current_idx=16)
+PlaceHolderNode(c_parent_idx=0, c_current_idx=16)
 ( 
-WhitespaceNode(original_parent_idx=0, original_current_idx=17, n_tokens=1)
+WhitespaceNode(c_parent_idx=0, c_current_idx=17, n_tokens=1)
  
-PlaceHolderNode(original_parent_idx=0, original_current_idx=18)
+PlaceHolderNode(c_parent_idx=0, c_current_idx=18)
 ) 
-WhitespaceNode(original_parent_idx=0, original_current_idx=19, n_tokens=2)
+WhitespaceNode(c_parent_idx=0, c_current_idx=19, n_tokens=2)
   
-ScopeNode(original_parent_idx=0, original_current_idx=20, original_child_idxs=(21, 22, 23, 24, 25, ...) len=11, node_state=4, parent_type='RootNode')
+ScopeNode(c_parent_idx=0, c_current_idx=20, c_child_idxs=(21, 22, 23, 24, 25, ...) len=11, node_state=4, parent_type='RootNode')
 { 
-	WhitespaceNode(original_parent_idx=20, original_current_idx=21, n_tokens=5)
+	WhitespaceNode(c_parent_idx=20, c_current_idx=21, n_tokens=5)
 	 
 	    
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=22)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=22)
 	int 
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=23)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=23)
 	x 
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=24)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=24)
 	= 
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=25)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=25)
 	5 
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=26)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=26)
 	; 
-	WhitespaceNode(original_parent_idx=20, original_current_idx=27, n_tokens=10)
+	WhitespaceNode(c_parent_idx=20, c_current_idx=27, n_tokens=10)
 	 
 	     
 	    
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=28)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=28)
 	return 
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=29)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=29)
 	x 
-	PlaceHolderNode(original_parent_idx=20, original_current_idx=30)
+	PlaceHolderNode(c_parent_idx=20, c_current_idx=30)
 	; 
-	WhitespaceNode(original_parent_idx=20, original_current_idx=31, n_tokens=2)
+	WhitespaceNode(c_parent_idx=20, c_current_idx=31, n_tokens=2)
 	 
 	 
 
 } 
-WhitespaceNode(original_parent_idx=0, original_current_idx=32, n_tokens=2)
+WhitespaceNode(c_parent_idx=0, c_current_idx=32, n_tokens=2)
  
  
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=33)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=33)
 // Whitespace after comment 
-WhitespaceNode(original_parent_idx=0, original_current_idx=34, n_tokens=1)
+WhitespaceNode(c_parent_idx=0, c_current_idx=34, n_tokens=1)
  
-MultiLineCommentNode(original_parent_idx=0, original_current_idx=35)
+MultiLineCommentNode(c_parent_idx=0, c_current_idx=35)
 /* Whitespace 
    in multiline 
    comment */ 
-WhitespaceNode(original_parent_idx=0, original_current_idx=36, n_tokens=4)
+WhitespaceNode(c_parent_idx=0, c_current_idx=36, n_tokens=4)
     
-SingleLineCommentNode(original_parent_idx=0, original_current_idx=37)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=37)
 // Whitespace at beginning and end of file  

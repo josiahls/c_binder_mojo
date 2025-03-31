@@ -86,10 +86,10 @@ struct EnumFieldNode(NodeAstLike):
             True if this token starts an enum field, False otherwise.
         """
         # Check if we're in an enum scope
-        if indices.original_parent_idx < 0:
+        if indices.c_parent_idx < 0:
             return False
 
-        var parent = module_interface.nodes()[][indices.original_parent_idx]
+        var parent = module_interface.nodes()[][indices.c_parent_idx]
         if parent.name() != "ScopeNode":
             return False
 
@@ -268,7 +268,7 @@ struct EnumFieldNode(NodeAstLike):
             The scope level.
         """
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, module_interface
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

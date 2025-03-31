@@ -89,7 +89,7 @@ struct ScopeNode(NodeAstLike):
         return False
         # TODO(josiahls): Do we even need this?
         # Check parent type to see if we need an implicit scope
-        # var parent_node = module_interface.nodes()[][indices.original_parent_idx]
+        # var parent_node = module_interface.nodes()[][indices.c_parent_idx]
         # return parent_node.name() in ["TypedefNode", "StructNode", "EnumNode"]
 
     @staticmethod
@@ -113,9 +113,9 @@ struct ScopeNode(NodeAstLike):
         # I do like that we aren't importing extra nodes, but on the other hand, we
         # don't get compilation checking.
         var parent_type = String("")
-        if indices.original_parent_idx >= 0:
+        if indices.c_parent_idx >= 0:
             parent_type = module_interface.nodes()[][
-                indices.original_parent_idx
+                indices.c_parent_idx
             ].name()
         return Self(indices, token, parent_type)
 
@@ -248,7 +248,7 @@ struct ScopeNode(NodeAstLike):
             The scope level.
         """
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, module_interface
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

@@ -106,7 +106,7 @@ struct PlaceHolderNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> Int:
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, module_interface
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

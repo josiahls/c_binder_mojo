@@ -70,13 +70,13 @@ fn test_ifndef_node() raises:
 
             # Check if this is an empty ifndef (should have no children)
             var indices = node.indicies()
-            if len(indices.original_child_idxs) == 0:
+            if len(indices.c_child_idxs) == 0:
                 empty_ifndef_count += 1
                 logger.info("Found empty ifndef node")
-            elif len(indices.original_child_idxs) == 1:
+            elif len(indices.c_child_idxs) == 1:
                 # If it has exactly one child, verify it's not a PlaceHolderNode
                 var child_node = module_interface.nodes()[][
-                    indices.original_child_idxs[0]
+                    indices.c_child_idxs[0]
                 ]
                 if child_node.name() == "PlaceHolderNode":
                     raise Error(

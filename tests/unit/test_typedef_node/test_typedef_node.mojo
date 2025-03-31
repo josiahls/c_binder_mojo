@@ -80,7 +80,7 @@ fn test_typedef_node() raises:
             logger.info("Found typedef node: " + node.name(include_sig=True))
 
             # Check parent type
-            var parent_idx = node.indicies().original_parent_idx
+            var parent_idx = node.indicies().c_parent_idx
             if parent_idx >= 0:
                 var parent_node = module_interface.nodes()[][parent_idx]
                 if parent_node.name() == "StructNode":
@@ -94,8 +94,8 @@ fn test_typedef_node() raises:
             var is_basic = True  # Default to basic unless we find enum or struct
 
             # Check if this typedef has children (enum or struct)
-            if len(node.indicies().original_child_idxs) > 0:
-                var child_idx = node.indicies().original_child_idxs[0]
+            if len(node.indicies().c_child_idxs) > 0:
+                var child_idx = node.indicies().c_child_idxs[0]
                 var child_node = module_interface.nodes()[][child_idx]
 
                 if child_node.name() == "EnumNode":
@@ -125,7 +125,7 @@ fn test_typedef_node() raises:
             logger.info("Found struct node: " + struct_name)
 
             # Check children for typedefs
-            for child_idx in node.indicies().original_child_idxs:
+            for child_idx in node.indicies().c_child_idxs:
                 var child_node = module_interface.nodes()[][child_idx[]]
                 if child_node.name() == "TypedefNode":
                     typedefs_in_struct += 1

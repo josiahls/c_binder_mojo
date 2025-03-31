@@ -92,6 +92,40 @@ struct CTokens:
     alias LINE_CONTINUATION = "\\"
 
 
+struct WhitespaceEnum:
+    alias BLANK = ""  # Tokenizer converts spaces to blanks
+    alias SPACE = " "
+    alias TAB = "\t"
+    alias NEWLINE = "\n"
+    alias CARRIAGE_RETURN = "\r"
+    alias FORM_FEED = "\f"
+    alias BACKSPACE = "\b"
+    alias HORIZONTAL_TAB = "\x09"
+    alias VERTICAL_TAB = "\x0B"
+
+    @staticmethod
+    fn is_whitespace(token: TokenBundle) -> Bool:
+        if token.token == WhitespaceEnum.BLANK:
+            return True
+        if token.token == WhitespaceEnum.SPACE:
+            return True
+        if token.token == WhitespaceEnum.TAB:
+            return True
+        if token.token == WhitespaceEnum.NEWLINE:
+            return True
+        if token.token == WhitespaceEnum.CARRIAGE_RETURN:
+            return True
+        if token.token == WhitespaceEnum.FORM_FEED:
+            return True
+        if token.token == WhitespaceEnum.BACKSPACE:
+            return True
+        if token.token == WhitespaceEnum.HORIZONTAL_TAB:
+            return True
+        if token.token == WhitespaceEnum.VERTICAL_TAB:
+            return True
+        return False
+
+
 @value
 struct NodeIndices:
     """Stores indices for tracking node relationships in the AST.
@@ -102,40 +136,40 @@ struct NodeIndices:
 
     alias UNSET = -1
 
-    var original_parent_idx: Int
+    var c_parent_idx: Int
     """Index of the parent node in the original tree."""
-    var original_current_idx: Int
+    var c_current_idx: Int
     """Index of the current node in the original tree."""
-    var original_child_idxs: List[Int]
+    var c_child_idxs: List[Int]
     """Indices of the child nodes in the original tree."""
-    var new_parent_idx: Int
+    var mojo_parent_idx: Int
     """Index of the parent node in the new tree."""
-    var new_current_idx: Int
+    var mojo_current_idx: Int
     """Index of the current node in the new tree."""
-    var new_child_idxs: List[Int]
+    var mojo_child_idxs: List[Int]
     """Indices of the child nodes in the new tree."""
 
     fn __init__(
         out self,
-        original_parent_idx: Int,
-        original_current_idx: Int,
-        new_parent_idx: Int = Self.UNSET,
-        new_current_idx: Int = Self.UNSET,
+        c_parent_idx: Int,
+        c_current_idx: Int,
+        mojo_parent_idx: Int = Self.UNSET,
+        mojo_current_idx: Int = Self.UNSET,
     ):
         """Initialize a new NodeIndices instance.
 
         Args:
-            original_parent_idx: Index of the parent node in the original tree.
-            original_current_idx: Index of the current node in the original tree.
-            new_parent_idx: Index of the parent node in the new tree (default: -1).
-            new_current_idx: Index of the current node in the new tree (default: -1).
+            c_parent_idx: Index of the parent node in the original tree.
+            c_current_idx: Index of the current node in the original tree.
+            mojo_parent_idx: Index of the parent node in the new tree (default: -1).
+            mojo_current_idx: Index of the current node in the new tree (default: -1).
         """
-        self.original_parent_idx = original_parent_idx
-        self.original_current_idx = original_current_idx
-        self.original_child_idxs = List[Int]()
-        self.new_parent_idx = new_parent_idx
-        self.new_current_idx = new_current_idx
-        self.new_child_idxs = List[Int]()
+        self.c_parent_idx = c_parent_idx
+        self.c_current_idx = c_current_idx
+        self.c_child_idxs = List[Int]()
+        self.mojo_parent_idx = mojo_parent_idx
+        self.mojo_current_idx = mojo_current_idx
+        self.mojo_child_idxs = List[Int]()
 
     fn _child_str(self, children_idxs: List[Int]) -> String:
         var s = String("")
@@ -165,27 +199,27 @@ struct NodeIndices:
 
     fn __str__(self) -> String:
         var s = String("")
-        if self.original_parent_idx != Self.UNSET:
-            s += "original_parent_idx=" + String(self.original_parent_idx)
-        if self.original_current_idx != Self.UNSET:
+        if self.c_parent_idx != Self.UNSET:
+            s += "c_parent_idx=" + String(self.c_parent_idx)
+        if self.c_current_idx != Self.UNSET:
             if len(s) > 0:
                 s += ", "
-            s += "original_current_idx=" + String(self.original_current_idx)
-        if self.new_parent_idx != Self.UNSET:
+            s += "c_current_idx=" + String(self.c_current_idx)
+        if self.mojo_parent_idx != Self.UNSET:
             if len(s) > 0:
                 s += ", "
-            s += "new_parent_idx=" + String(self.new_parent_idx)
-        if self.new_current_idx != Self.UNSET:
+            s += "mojo_parent_idx=" + String(self.mojo_parent_idx)
+        if self.mojo_current_idx != Self.UNSET:
             if len(s) > 0:
                 s += ", "
-            s += "new_current_idx=" + String(self.new_current_idx)
+            s += "mojo_current_idx=" + String(self.mojo_current_idx)
 
-        if len(self.original_child_idxs) > 0:
-            s += ", original_child_idxs=" + self._child_str(
-                self.original_child_idxs
+        if len(self.c_child_idxs) > 0:
+            s += ", c_child_idxs=" + self._child_str(
+                self.c_child_idxs
             )
-        if len(self.new_child_idxs) > 0:
-            s += ", new_child_idxs=" + self._child_str(self.new_child_idxs)
+        if len(self.mojo_child_idxs) > 0:
+            s += ", mojo_child_idxs=" + self._child_str(self.mojo_child_idxs)
         return s
 
 

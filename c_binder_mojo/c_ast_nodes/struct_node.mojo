@@ -107,7 +107,7 @@ struct StructNode(NodeAstLike):
         var is_in_typedef = False
 
         if (
-            module_interface.nodes()[][indices.original_parent_idx].name()
+            module_interface.nodes()[][indices.c_parent_idx].name()
             == "TypedefNode"
         ):
             is_in_typedef = True
@@ -276,7 +276,7 @@ struct StructNode(NodeAstLike):
             The scope level.
         """
         return default_scope_level(
-            self._indicies[].original_parent_idx, just_code, module_interface
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

@@ -14,7 +14,8 @@ bt = "magic run build_test"
 
 
 # c_binder_mojo Development tools
-format = "mojo format $HOME/c_binder_mojo"
+## Just format the c_binder_mojo src directory, not the tests.
+format = "mojo format $HOME/c_binder_mojo/c_binder_mojo"
 f = "magic run format"
 
 ## Common testing tasks

@@ -25,40 +25,6 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 )
 
 
-struct WhitespaceEnum:
-    alias BLANK = ""  # Tokenizer converts spaces to blanks
-    alias SPACE = " "
-    alias TAB = "\t"
-    alias NEWLINE = "\n"
-    alias CARRIAGE_RETURN = "\r"
-    alias FORM_FEED = "\f"
-    alias BACKSPACE = "\b"
-    alias HORIZONTAL_TAB = "\x09"
-    alias VERTICAL_TAB = "\x0B"
-
-    @staticmethod
-    fn is_whitespace(token: TokenBundle) -> Bool:
-        if token.token == WhitespaceEnum.BLANK:
-            return True
-        if token.token == WhitespaceEnum.SPACE:
-            return True
-        if token.token == WhitespaceEnum.TAB:
-            return True
-        if token.token == WhitespaceEnum.NEWLINE:
-            return True
-        if token.token == WhitespaceEnum.CARRIAGE_RETURN:
-            return True
-        if token.token == WhitespaceEnum.FORM_FEED:
-            return True
-        if token.token == WhitespaceEnum.BACKSPACE:
-            return True
-        if token.token == WhitespaceEnum.HORIZONTAL_TAB:
-            return True
-        if token.token == WhitespaceEnum.VERTICAL_TAB:
-            return True
-        return False
-
-
 @value
 struct WhitespaceNode(NodeAstLike):
     """Represents whitespace in the AST.
@@ -84,7 +50,6 @@ struct WhitespaceNode(NodeAstLike):
         self._token_bundles = TokenBundles()
         self._token_bundles[].append(token_bundle)
         self._node_state = NodeState.COMPLETED
-
 
     @staticmethod
     fn accept(
@@ -156,7 +121,6 @@ struct WhitespaceNode(NodeAstLike):
         # We already added the token in init, so no further processing needed
         if token_flow == TokenFlow.CONSUME_TOKEN:
             self._token_bundles[].append(token)
-
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node.

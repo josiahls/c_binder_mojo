@@ -215,9 +215,7 @@ struct NodeIndices:
             s += "mojo_current_idx=" + String(self.mojo_current_idx)
 
         if len(self.c_child_idxs) > 0:
-            s += ", c_child_idxs=" + self._child_str(
-                self.c_child_idxs
-            )
+            s += ", c_child_idxs=" + self._child_str(self.c_child_idxs)
         if len(self.mojo_child_idxs) > 0:
             s += ", mojo_child_idxs=" + self._child_str(self.mojo_child_idxs)
         return s

@@ -80,9 +80,7 @@ struct ModuleInterface:
         started = False
         count = 0
         while parent_idx != -1 or not started:
-            parent_idx = (
-                self._nodes[][_current_idx].indicies().c_parent_idx
-            )
+            parent_idx = self._nodes[][_current_idx].indicies().c_parent_idx
             if parent_idx != -1:
                 count += 1
             started = True

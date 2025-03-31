@@ -22,7 +22,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
     default_to_string_just_code,
 )
-
+from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
 @value
 struct PlaceHolderNode(NodeAstLike):
@@ -31,15 +31,14 @@ struct PlaceHolderNode(NodeAstLike):
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
 
-    fn __init__(out self, indicies: NodeIndices, token: TokenBundle):
+    fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
-        self._token_bundles = TokenBundles()
-        self._token_bundles[].append(token)
+        self._token_bundles = c_node.token_bundles()
         self._node_state = NodeState.INITIALIZING
 
     @staticmethod
     fn accept(
-        token: TokenBundle,
+        c_node: C_AstNode,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
@@ -47,20 +46,20 @@ struct PlaceHolderNode(NodeAstLike):
 
     @staticmethod
     fn create(
-        token: TokenBundle,
+        c_node: C_AstNode,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        return Self(indices, token)
+        return Self(indices, c_node)
 
     fn determine_token_flow(
-        mut self, token: TokenBundle, module_interface: ModuleInterface
+        mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
         return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
-        token: TokenBundle,
+        c_node: C_AstNode,
         token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
@@ -96,17 +95,17 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
-    ) -> String:
+    ) raises -> String:
         if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface)
+            return default_to_string_just_code(AstNode(self), module_interface, "mojo")
         else:
-            return default_to_string(AstNode(self), module_interface)
+            return default_to_string(AstNode(self), module_interface, "mojo")
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> Int:
         return default_scope_level(
-            self._indicies[].c_parent_idx, just_code, module_interface
+            self._indicies[].mojo_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

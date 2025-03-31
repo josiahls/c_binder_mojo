@@ -43,30 +43,36 @@ struct MessageableEnum(Stringable):
 struct NodeState:
     """The internal construction state of a node."""
 
-    alias INITIALIZING = MessageableEnum(0)  # Node is being initialized
+    alias INITIALIZING = MessageableEnum(0, 'INITIALIZING')  # Node is being initialized
     alias COLLECTING_TOKENS = MessageableEnum(
-        1
+        1, 'COLLECTING_TOKENS'
     )  # Node is collecting its own tokens
     alias COLLECTING_TAIL_TOKENS = MessageableEnum(
-        2
+        2, 'COLLECTING_TAIL_TOKENS'
     )  # Node is collecting its own tokens adding them to the tail
     alias BUILDING_CHILDREN = MessageableEnum(
-        3
+        3, 'BUILDING_CHILDREN'
     )  # Node is creating/managing children
-    alias COMPLETED = MessageableEnum(4)  # Node is completely built
-    alias INVALID = MessageableEnum(5)  # Node is in an invalid state (error)
+    alias COMPLETED = MessageableEnum(4, 'COMPLETED')  # Node is completely built
+    alias INVALID = MessageableEnum(5, 'INVALID')  # Node is in an invalid state (error)
 
 
 struct TokenFlow:
     """Directive for how tokens should flow through the tree."""
 
     alias INITIALIZE_MODULE = MessageableEnum(
-        0
+        0, 'INITIALIZE_MODULE'
     )  # Tree has just started, no nodes exist yet
-    alias CONSUME_TOKEN = MessageableEnum(1)  # Node should consume the token
-    alias PASS_TO_PARENT = MessageableEnum(2)  # Pass token to parent node
-    alias CREATE_CHILD = MessageableEnum(3)  # Create a child for this token
-    alias INVALID = MessageableEnum(4)  # Invalid directive (error)
+    alias CONSUME_TOKEN = MessageableEnum(
+        1, 'CONSUME_TOKEN'
+    )  # Node should consume the token
+    alias PASS_TO_PARENT = MessageableEnum(
+        2, 'PASS_TO_PARENT'
+    )  # Pass token to parent node
+    alias CREATE_CHILD = MessageableEnum(
+        3, 'CREATE_CHILD'
+    )  # Create a child for this token
+    alias INVALID = MessageableEnum(4, 'INVALID')  # Invalid directive (error)
 
 
 struct CTokens:
@@ -170,6 +176,16 @@ struct NodeIndices:
         self.mojo_parent_idx = mojo_parent_idx
         self.mojo_current_idx = mojo_current_idx
         self.mojo_child_idxs = List[Int]()
+
+    @staticmethod
+    fn from_c_node_indices(c_node_indices: Self, mojo_parent_idx: Int, mojo_current_idx: Int) -> Self:
+        return Self(
+            c_node_indices.c_parent_idx,
+            c_node_indices.c_current_idx,
+            mojo_parent_idx,
+            mojo_current_idx,
+        )
+
 
     fn _child_str(self, children_idxs: List[Int]) -> String:
         var s = String("")

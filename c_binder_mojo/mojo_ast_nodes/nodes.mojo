@@ -14,11 +14,15 @@ from c_binder_mojo.common import (
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes import AstNodeVariant
 from c_binder_mojo.mojo_ast_nodes.place_holder_node import PlaceHolderNode
+from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
 
 fn string_children(
-    node: AstNode, just_code: Bool, module_interface: ModuleInterface
-) -> String:
+    node: AstNode,
+    just_code: Bool,
+    module_interface: ModuleInterface,
+    c_or_mojo: StringLiteral,
+) raises -> String:
     """Converts children to string with proper indentation and line breaks.
 
     Args:
@@ -28,7 +32,18 @@ fn string_children(
         module_interface: The tree interface to use for the node.
     """
     var s = String()
-    for child_idx in node.indicies().c_child_idxs:
+
+    indicies = List[Int]()
+
+    if c_or_mojo not in ["c", "mojo"]:
+        raise Error("Invalid value for c_or_mojo: " + String(c_or_mojo))
+
+    if c_or_mojo == "c":
+        indicies = node.indicies().c_child_idxs
+    else:
+        indicies = node.indicies().mojo_child_idxs
+
+    for child_idx in indicies:
         var child = module_interface.nodes()[][child_idx[]]
         s += child.to_string(just_code, module_interface)
     return s
@@ -56,8 +71,10 @@ fn default_scope_level(
 
 
 fn default_to_string(
-    node: AstNode, module_interface: ModuleInterface
-) -> String:
+    node: AstNode,
+    module_interface: ModuleInterface,
+    c_or_mojo: StringLiteral,
+) raises -> String:
     """Default string conversion for nodes. Includes the node signature and the node's content.
 
     If we want just code, use default_to_string_just_code instead.
@@ -94,7 +111,7 @@ fn default_to_string(
         if line_num != -1:
             s += "\n"
         s += indent
-        s += string_children(node, False, module_interface)
+        s += string_children(node, False, module_interface, c_or_mojo)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num:
@@ -110,10 +127,11 @@ fn default_to_string(
 fn default_to_string_just_code(
     node: AstNode,
     module_interface: ModuleInterface,
+    c_or_mojo: StringLiteral,
     inline_children: Bool = False,
     inline_nodes: Bool = False,
     inline_tail: Bool = False,
-) -> String:
+) raises -> String:
     """Default string conversion for nodes.
 
     Args:
@@ -146,10 +164,17 @@ fn default_to_string_just_code(
         s += token[].token + " "
 
     # Add children
-    if len(node.indicies().c_child_idxs) > 0:
+    indicies = List[Int]()
+    if c_or_mojo == "c":
+        indicies = node.indicies().c_child_idxs
+    else:
+        indicies = node.indicies().mojo_child_idxs
+
+    for child_idx in indicies:
+        var child = module_interface.nodes()[][child_idx[]]
         if not inline_children:
             s += indent
-        s += string_children(node, True, module_interface)
+        s += string_children(child, True, module_interface, c_or_mojo)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num and not inline_tail:
@@ -166,7 +191,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 
     @staticmethod
     fn accept(
-        token: TokenBundle,
+        c_node: C_AstNode,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
@@ -174,14 +199,14 @@ trait NodeAstLike(CollectionElement, Stringable):
 
     @staticmethod
     fn create(
-        token: TokenBundle,
+        c_node: C_AstNode,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
         ...
 
     fn determine_token_flow(
-        mut self, token: TokenBundle, module_interface: ModuleInterface
+        mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
         ...
 
@@ -190,7 +215,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 
     fn process(
         mut self,
-        token: TokenBundle,
+        c_node: C_AstNode,
         token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
@@ -218,7 +243,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
-    ) -> String:
+    ) raises -> String:
         ...
 
     fn scope_level(
@@ -247,7 +272,7 @@ struct AstNode(CollectionElement):
     @always_inline("nodebug")
     @staticmethod
     fn accept(
-        token: TokenBundle,
+        c_node: C_AstNode,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
@@ -258,13 +283,13 @@ struct AstNode(CollectionElement):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept(token, module_interface, indices):
-                return Self(T.create(token, module_interface, indices))
+            if T.accept(c_node, module_interface, indices):
+                return Self(T.create(c_node, module_interface, indices))
         print(
-            "WARNING: none of the nodes accepted the token: "
-            + String(token.token)
+            "WARNING: none of the nodes accepted the c_node: "
+            + String(c_node.name())
         )
-        return Self(PlaceHolderNode.create(token, module_interface, indices))
+        return Self(PlaceHolderNode.create(c_node, module_interface, indices))
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
@@ -348,7 +373,7 @@ struct AstNode(CollectionElement):
 
     @always_inline("nodebug")
     fn determine_token_flow(
-        mut self, token: TokenBundle, module_interface: ModuleInterface
+        mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -357,7 +382,7 @@ struct AstNode(CollectionElement):
                 return (
                     self.node[]
                     ._get_ptr[T]()[]
-                    .determine_token_flow(token, module_interface)
+                    .determine_token_flow(c_node, module_interface)
                 )
         print(
             "WARNING: determine_token_flow called on AstNode with no"
@@ -368,7 +393,7 @@ struct AstNode(CollectionElement):
     @always_inline("nodebug")
     fn process(
         mut self,
-        token: TokenBundle,
+        c_node: C_AstNode,
         token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
@@ -377,7 +402,7 @@ struct AstNode(CollectionElement):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 self.node[]._get_ptr[T]()[].process(
-                    token, token_flow, module_interface
+                    c_node, token_flow, module_interface
                 )
                 return
         print(
@@ -416,7 +441,7 @@ struct AstNode(CollectionElement):
     @always_inline("nodebug")
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
-    ) -> String:
+    ) raises -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]

@@ -22,6 +22,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
     string_children,
 )
+from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
 
 @value
@@ -38,7 +39,7 @@ struct RootNode(NodeAstLike):
 
     @staticmethod
     fn accept(
-        token: TokenBundle,
+        c_node: C_AstNode,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
@@ -46,20 +47,20 @@ struct RootNode(NodeAstLike):
 
     @staticmethod
     fn create(
-        token: TokenBundle,
+        c_node: C_AstNode,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
         return Self(indices, TokenBundles())
 
     fn determine_token_flow(
-        mut self, token: TokenBundle, module_interface: ModuleInterface
+        mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
         return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
-        token: TokenBundle,
+        c_node: C_AstNode,
         token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
@@ -95,19 +96,19 @@ struct RootNode(NodeAstLike):
 
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
-    ) -> String:
+    ) raises -> String:
         if just_code:
-            return string_children(AstNode(self), just_code, module_interface)
+            return string_children(AstNode(self), just_code, module_interface, "mojo")
 
         s = self.name(include_sig=True) + "\n"
-        s += string_children(AstNode(self), just_code, module_interface)
+        s += string_children(AstNode(self), just_code, module_interface, "mojo")
         return s
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> Int:
         return default_scope_level(
-            self._indicies[].c_parent_idx, just_code, module_interface
+            self._indicies[].mojo_parent_idx, just_code, module_interface
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:

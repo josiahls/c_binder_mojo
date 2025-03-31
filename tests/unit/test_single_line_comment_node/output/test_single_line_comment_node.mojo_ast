@@ -1,0 +1,64 @@
+RootNode(c_current_idx=0, mojo_current_idx=0, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=32)
+PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1)
+PlaceHolderNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
+// Basic single line comment 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3)
+// Another single line comment 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5)
+// Comment with special characters: !@#$%^&* (  ) _+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7)
+// Comment with code-like content: int x = 5 ;  
+PlaceHolderNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9)
+int 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10)
+some_function 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11)
+( 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13)
+) 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15)
+; 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17)
+// Comment after code 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19)
+/* This is not a single line comment */ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21)
+// Comment with Unicode: 你好世界 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23)
+// Empty comment followed by another comment 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24)
+// 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25)
+// Comment after empty comment 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27)
+// Multiple comments 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28)
+// in a 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29)
+// row 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31)
+// Comment with trailing spaces     
+PlaceHolderNode(c_parent_idx=0, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32)
+ 

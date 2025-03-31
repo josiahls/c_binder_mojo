@@ -104,7 +104,7 @@ struct WhitespaceEnum:
     alias VERTICAL_TAB = "\x0B"
 
     @staticmethod
-    fn is_whitespace(token: TokenBundle) -> Bool:
+    fn is_whitespace(read token: TokenBundle) -> Bool:
         if token.token == WhitespaceEnum.BLANK:
             return True
         if token.token == WhitespaceEnum.SPACE:
@@ -260,6 +260,10 @@ struct TokenBundle(EqualityComparable):
         self.row_num = row_num
         self.col_num = col_num
         self.deleted = deleted
+
+    @staticmethod
+    fn is_whitespace(read token: TokenBundle) -> Bool:
+        return WhitespaceEnum.is_whitespace(token)
 
     fn __ne__(read self: Self, read other: Self) -> Bool:
         """Check if two TokenBundles are not equal.

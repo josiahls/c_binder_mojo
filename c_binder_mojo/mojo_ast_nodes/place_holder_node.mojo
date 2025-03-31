@@ -2,133 +2,112 @@
 from memory import ArcPointer
 
 # Third Party Mojo Modules
+from firehose.logging import Logger
+from firehose import FileLoggerOutputer, OutputerVariant
+
 # First Party Modules
-from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
-from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import (
-    NodeAstLike,
-    node2string,
-    TreeInterface,
-    default_scope_level,
+from c_binder_mojo.common import (
+    TokenBundle,
+    MessageableEnum,
     NodeIndices,
+    TokenBundles,
+    TokenFlow,
+    NodeState,
 )
-from c_binder_mojo import c_ast_nodes_old
+from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
+from c_binder_mojo.mojo_ast_nodes.nodes import (
+    AstNode,
+    NodeAstLike,
+    default_scope_level,
+    default_to_string,
+    default_to_string_just_code,
+)
 
 
 @value
 struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
+    var _indicies: ArcPointer[NodeIndices]
+    var _token_bundles: ArcPointer[TokenBundles]
+    var _node_state: MessageableEnum
 
-    var _token_bundles: TokenBundles
-    var _indices: ArcPointer[NodeIndices]
-    var _str_just_code: Bool
-
-    fn __init__(out self, c_ast_node: c_ast_nodes_old.nodes.AstNode):
-        self._token_bundles = c_ast_node.token_bundles()
-        self._indices = ArcPointer(
-            NodeIndices(
-                c_node_idx=c_ast_node.current_idx(),
-                c_parent_idx=c_ast_node.parent_idx(),
-                mojo_node_idx=0,
-                mojo_parent_idx=0,
-                c_children_idxs=c_ast_node.children_idxs(),
-            )
-        )
-        self._str_just_code = False
-
-    fn __str__(self) -> String:
-        var s = self.display_name()
-        # For placeholders, lets show full thing, but commented out.
-        if self._str_just_code:
-            s = "# " + s
-        return node2string(s, self.token_bundles(), False)
+    fn __init__(out self, indicies: NodeIndices, token: TokenBundle):
+        self._indicies = indicies
+        self._token_bundles = TokenBundles()
+        self._token_bundles[].append(token)
+        self._node_state = NodeState.INITIALIZING
 
     @staticmethod
     fn accept(
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        parent_idx: Int,
-        tree_interface: TreeInterface,
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Bool:
-        return True  # Accept everything as fallback
+        return True
 
     @staticmethod
     fn create(
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        parent_idx: Int,
-        tree_interface: TreeInterface,
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
-        return Self(c_ast_node)
+        return Self(indices, token)
 
-    # State checks
-    fn is_accepting_tokens(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
-        return False
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
+    ) -> MessageableEnum:
+        return TokenFlow.PASS_TO_PARENT
 
-    # In PlaceHolderNode
-    fn wants_child(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
-        return True  # Accept children to maintain tree structure
+    fn process(
+        mut self,
+        token: TokenBundle,
+        token_flow: MessageableEnum,
+        module_interface: ModuleInterface,
+    ):
+        self._node_state = NodeState.COMPLETED
 
-    fn is_complete(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
-        # Check if c_ast_node is still a child of original C node
-        if c_ast_node.current_idx() not in self._indices[].c_children_idxs[]:
-            return True
-        return False
+    fn indicies(self) -> NodeIndices:
+        return self._indicies[]
 
-    # Actions
-    fn append(mut self, c_ast_node: c_ast_nodes_old.nodes.AstNode) -> Bool:
-        return False
-
-    fn indices(self) -> ArcPointer[NodeIndices]:
-        return self._indices
-
-    fn add_child(mut self, child_idx: Int):
-        self._indices[].mojo_children_idxs[].append(child_idx)
-
-    fn display_name(self) -> String:
-        return self.__name__ + "(" + String(self._indices[]) + ")"
+    fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
+        return self._indicies
 
     fn token_bundles(self) -> TokenBundles:
+        return self._token_bundles[]
+
+    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
         return self._token_bundles
 
-    fn should_children_inline(self) -> Bool:
-        return True
+    fn token_bundles_tail(self) -> TokenBundles:
+        return TokenBundles()
 
-    fn str_just_code(mut self) -> Bool:
-        return self._str_just_code
+    fn node_state(self) -> MessageableEnum:
+        return self._node_state
 
-    fn set_str_just_code(mut self, str_just_code: Bool):
-        self._str_just_code = str_just_code
+    @always_inline("nodebug")
+    fn __str__(self) -> String:
+        return "PlaceHolderNode"
 
-    fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        return default_scope_level(
-            self._indices[].mojo_parent_idx, tree_interface
-        )
-
-    fn scope_offset(self) -> Int:
-        return 0  # Placeholder doesn't affect scope
-
-    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        # Placeholder nodes don't need finalization
-        pass
+    fn name(self, include_sig: Bool = False) -> String:
+        if include_sig:
+            return self.__name__ + "(" + String(self._indicies[]) + ")"
+        else:
+            return self.__name__
 
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
-        return default_to_string(
-            AstNode(self), self._str_just_code, tree_interface
+        if just_code:
+            return default_to_string_just_code(AstNode(self), module_interface)
+        else:
+            return default_to_string(AstNode(self), module_interface)
+
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
+        return default_scope_level(
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
-    fn name(self) -> String:
-        """Returns the raw node name without any metadata."""
-        return Self.__name__
+    fn scope_offset(self, just_code: Bool) -> Int:
+        return 0  # Root adds one level of scope

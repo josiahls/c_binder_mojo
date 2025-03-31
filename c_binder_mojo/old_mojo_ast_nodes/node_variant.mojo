@@ -44,7 +44,7 @@ from sys.intrinsics import _type_is_eq
 
 from memory import UnsafePointer
 
-from c_binder_mojo.mojo_ast_nodes.nodes import NodeAstLike
+from c_binder_mojo.mojo_ast_nodes.common import NodeAstLike
 
 # ===----------------------------------------------------------------------=== #
 # Utilities
@@ -126,7 +126,7 @@ struct Variant[*Ts: NodeAstLike](
         __mlir_op.`lit.ownership.mark_initialized`(__get_mvalue_as_litref(self))
 
     @implicit
-    fn __init__[T: CollectionElement](out self, owned value: T):
+    fn __init__[T: CollectionElement](mut self, owned value: T):
         """Create a variant with one of the types.
 
         Parameters:

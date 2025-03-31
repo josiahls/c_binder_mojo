@@ -3,56 +3,236 @@ from memory import ArcPointer
 
 # Third Party Mojo Modules
 # First Party Modules
-from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.tree import Tree
-from c_binder_mojo.mojo_ast_nodes.common import (
-    NodeAstLike,
-    TreeInterface,
+from c_binder_mojo.common import (
+    TokenBundle,
+    MessageableEnum,
+    TokenBundles,
     NodeIndices,
+    TokenFlow,
+    NodeState,
 )
-from c_binder_mojo.mojo_ast_nodes.node_variant import Variant
-from c_binder_mojo.mojo_ast_nodes import (
-    PlaceHolderNode,
-    RootNode,
-    SingleLineCommentNode,  # Updated name
-    WhitespaceNode,  # Add import
-    MacroIfNDefNode,  # Add import
-    MacroElseNode,  # Add import
-    MacroDefineNode,  # Add import
-    TypedefNode,  # Add import
-    MultiLineCommentNode,  # Add import
-    BasicDataTypeNode,  # Add import
-    EnumNode,  # Add import
-    DeletedNode,  # Add import
-    ScopeNode,  # Add import
-    EnumFieldNode,  # Add import
-    StructNode,  # Add import
-    StructFieldNode,
-)
-from c_binder_mojo import c_ast_nodes_old
+from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
+from c_binder_mojo.mojo_ast_nodes import AstNodeVariant
+from c_binder_mojo.mojo_ast_nodes.place_holder_node import PlaceHolderNode
+
+
+fn string_children(
+    node: AstNode, just_code: Bool, module_interface: ModuleInterface
+) -> String:
+    """Converts children to string with proper indentation and line breaks.
+
+    Args:
+        node: The node to convert to a string.
+        just_code: If True, outputs only code and comments. If False, includes node metadata
+            with '>>>' separator to show node ownership.
+        module_interface: The tree interface to use for the node.
+    """
+    var s = String()
+    for child_idx in node.indicies().c_child_idxs:
+        var child = module_interface.nodes()[][child_idx[]]
+        s += child.to_string(just_code, module_interface)
+    return s
+
+
+fn default_scope_level(
+    parent_idx: Int, just_code: Bool, module_interface: ModuleInterface
+) -> Int:
+    """Default scope level implementation that most nodes can use.
+
+    Calculates scope level by walking up parent chain and summing scope_offsets.
+    """
+    var level = 0
+    var current_parent_idx = parent_idx
+    if parent_idx == -1:
+        var parent = module_interface.nodes()[][0]
+        var scope_offset = parent.scope_offset(just_code)
+        return scope_offset
+
+    while current_parent_idx != -1:
+        var parent = module_interface.nodes()[][current_parent_idx]
+        level += parent.scope_offset(just_code)
+        current_parent_idx = parent.indicies().c_parent_idx
+    return level
+
+
+fn default_to_string(
+    node: AstNode, module_interface: ModuleInterface
+) -> String:
+    """Default string conversion for nodes. Includes the node signature and the node's content.
+
+    If we want just code, use default_to_string_just_code instead.
+
+    Args:
+        node: The node to convert to a string.
+        module_interface: The tree interface to use for the node.
+
+    Format when just_code=False:
+        NodeName >>> actual content
+        NodeName >>> continued content
+        NodeName >>> more content...
+    """
+    var s = String()
+    var level = node.scope_level(False, module_interface)
+    var indent = String("")
+    if level > 0:
+        indent = "\t" * level
+    var line_num = -1
+
+    # Add node name if not just code
+    s += indent + node.name(include_sig=True)
+
+    # Add tokens
+    for token in node.token_bundles():
+        if token[].row_num != line_num:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+
+    # Add children
+    if len(node.indicies().c_child_idxs) > 0:
+        if line_num != -1:
+            s += "\n"
+        s += indent
+        s += string_children(node, False, module_interface)
+
+    for token in node.token_bundles_tail():
+        if token[].row_num != line_num:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+
+    s += "\n"
+    return s
+
+
+fn default_to_string_just_code(
+    node: AstNode,
+    module_interface: ModuleInterface,
+    inline_children: Bool = False,
+    inline_nodes: Bool = False,
+    inline_tail: Bool = False,
+) -> String:
+    """Default string conversion for nodes.
+
+    Args:
+        node: The node to convert to a string.
+        module_interface: The tree interface to use for the node.
+
+    Format when just_code=False:
+        NodeName >>> actual content
+        NodeName >>> continued content
+        NodeName >>> more content...
+    """
+    var s = String()
+    var level = node.scope_level(True, module_interface)
+    var indent = String("")
+
+    if level > 0:
+        indent = "\t" * level
+    # NOTE(josiahls): This is different from the default_to_string function.
+    # We start at line_num = 0 because we want to include the first line of code.
+    # For default_to_string, we start at line_num = -1 because otherwise,
+    # the first line of code is going to be on the same line as the signature.
+    var line_num = 0
+
+    # Add tokens
+    for token in node.token_bundles():
+        if token[].row_num != line_num and not inline_nodes:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+
+    # Add children
+    if len(node.indicies().c_child_idxs) > 0:
+        if not inline_children:
+            s += indent
+        s += string_children(node, True, module_interface)
+
+    for token in node.token_bundles_tail():
+        if token[].row_num != line_num and not inline_tail:
+            s += "\n"
+            s += indent
+            line_num = token[].row_num
+        s += token[].token + " "
+
+    return s
+
+
+trait NodeAstLike(CollectionElement, Stringable):
+    alias __name__: String
+
+    @staticmethod
+    fn accept(
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
+    ) -> Bool:
+        ...
+
+    @staticmethod
+    fn create(
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
+    ) -> Self:
+        ...
+
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
+    ) -> MessageableEnum:
+        ...
+
+    fn node_state(self) -> MessageableEnum:
+        ...
+
+    fn process(
+        mut self,
+        token: TokenBundle,
+        token_flow: MessageableEnum,
+        module_interface: ModuleInterface,
+    ):
+        ...
+
+    # NOTE(josiahls): I think this will return a immutable reference.
+    fn indicies(self) -> NodeIndices:
+        ...
+
+    fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
+        ...
+
+    # NOTE(josiahls): I think this will return a immutable reference.
+    fn token_bundles(self) -> TokenBundles:
+        ...
+
+    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
+        ...
+
+    fn token_bundles_tail(self) -> TokenBundles:
+        ...
+
+    fn name(self, include_sig: Bool = False) -> String:
+        ...
+
+    fn to_string(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> String:
+        ...
+
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
+        ...
+
+    fn scope_offset(self, just_code: Bool) -> Int:
+        ...
 
 
 @value
 struct AstNode(CollectionElement):
-    alias type = Variant[
-        RootNode,  # Must be first to handle root
-        MacroIfNDefNode,  # Handle macros before comments
-        MacroElseNode,  # Handle else blocks
-        MacroDefineNode,  # Handle define directives
-        TypedefNode,  # Handle typedef declarations
-        BasicDataTypeNode,  # Handle basic data types
-        EnumNode,  # Handle enum declarations
-        ScopeNode,  # Handle scope blocks
-        EnumFieldNode,  # Handle enum field declarations
-        StructNode,  # Handle struct declarations
-        StructFieldNode,  # Handle struct field declarations
-        MultiLineCommentNode,  # Handle multi-line comments
-        SingleLineCommentNode,  # Handle comments before fallback
-        WhitespaceNode,  # Handle whitespace
-        DeletedNode,  # Handle deleted nodes
-        PlaceHolderNode,  # Must be last as fallback
-    ]
-    # NOTE: This is experimental.
+    alias type = AstNodeVariant
     var node: ArcPointer[Self.type]
 
     fn __init__(out self, node: Self.type):
@@ -64,22 +244,12 @@ struct AstNode(CollectionElement):
     fn __moveinit__(out self, owned other: Self):
         self.node = other.node^
 
-    fn indices(self) -> ArcPointer[NodeIndices]:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].indices()
-        print("No indices found for node: ", String(self))
-        return ArcPointer[NodeIndices](NodeIndices(0, 0, 0, 0))
-
     @always_inline("nodebug")
     @staticmethod
     fn accept(
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        parent_idx: Int,
-        tree_interface: TreeInterface,
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
         """
         Iterates over each type in the variant at compile-time and calls accept.
@@ -88,12 +258,13 @@ struct AstNode(CollectionElement):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept(c_ast_node, parent_idx, tree_interface):
-                return Self(T.create(c_ast_node, parent_idx, tree_interface))
-
-        return Self(
-            PlaceHolderNode.create(c_ast_node, parent_idx, tree_interface)
+            if T.accept(token, module_interface, indices):
+                return Self(T.create(token, module_interface, indices))
+        print(
+            "WARNING: none of the nodes accepted the token: "
+            + String(token.token)
         )
+        return Self(PlaceHolderNode.create(token, module_interface, indices))
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
@@ -116,240 +287,182 @@ struct AstNode(CollectionElement):
                 return String(val_ptr[])
 
         # If we somehow never matched (should never happen if the variant covers all):
+        print("WARNING: __str__ called on AstNode with no __str__ method")
         return "<unknown type>"
 
-    # State checks
-    fn is_accepting_tokens(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
+    @always_inline("nodebug")
+    fn indicies(self) -> NodeIndices:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].is_accepting_tokens(c_ast_node, tree_interface)
-        return False
+                return self.node[]._get_ptr[T]()[].indicies()
+        print("WARNING: indicies called on AstNode with no indicies")
+        return NodeIndices(-1, -1)
 
-    fn is_complete(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
+    @always_inline("nodebug")
+    fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].is_complete(c_ast_node, tree_interface)
-        return True
+                return self.node[]._get_ptr[T]()[].indicies_ptr()
+        print("WARNING: indicies_ptr called on AstNode with no indicies")
+        return ArcPointer[NodeIndices](NodeIndices(-1, -1))
 
-    fn wants_child(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].wants_child(c_ast_node, tree_interface)
-        return False
-
-    # Actions
-    fn append(mut self, c_ast_node: c_ast_nodes_old.nodes.AstNode) -> Bool:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].append(c_ast_node)
-        return False
-
-    fn add_child(mut self, child_idx: Int):
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                val_ptr[].add_child(child_idx)
-                return
-
-    fn str_just_code(mut self) -> Bool:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].str_just_code()
-        print("No str_just_code found for node: ", String(self))
-        return False
-
-    fn set_str_just_code(mut self, str_just_code: Bool):
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                val_ptr[].set_str_just_code(str_just_code)
-                return
-        print("No set_str_just_code found for node: ", String(self))
-        return
-
-    fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].scope_level(tree_interface)
-
-        print("No scope level found for node: ", String(self))
-        return 0  # Default scope level if no specific behavior is found
-
-    fn scope_offset(self) -> Int:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].scope_offset()
-
-        print("No scope offset found for node: ", String(self))
-        return 0
-
-    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                val_ptr[].finalize(parent_idx, tree_interface)
-                return
-        print("No finalize found for node: ", String(self))
-        return
-
-    fn display_name(self) -> String:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].display_name()
-        print("No display name found for node: ", String(self))
-        return ""
-
+    @always_inline("nodebug")
     fn token_bundles(self) -> TokenBundles:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].token_bundles()
-        print("No token bundles found for node: ", String(self))
+                return self.node[]._get_ptr[T]()[].token_bundles()
+        print("WARNING: token_bundles called on AstNode with no token_bundles")
         return TokenBundles()
 
+    @always_inline("nodebug")
+    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].token_bundles_ptr()
+        print(
+            "WARNING: token_bundles_ptr called on AstNode with no"
+            " token_bundles_ptr"
+        )
+        return ArcPointer[TokenBundles](TokenBundles())
+
+    @always_inline("nodebug")
+    fn token_bundles_tail(self) -> TokenBundles:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].token_bundles_tail()
+        print(
+            "WARNING: token_bundles_tail called on AstNode with no"
+            " token_bundles_tail"
+        )
+        return TokenBundles()
+
+    @always_inline("nodebug")
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
+    ) -> MessageableEnum:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return (
+                    self.node[]
+                    ._get_ptr[T]()[]
+                    .determine_token_flow(token, module_interface)
+                )
+        print(
+            "WARNING: determine_token_flow called on AstNode with no"
+            " determine_token_flow method"
+        )
+        return TokenFlow.PASS_TO_PARENT
+
+    @always_inline("nodebug")
+    fn process(
+        mut self,
+        token: TokenBundle,
+        token_flow: MessageableEnum,
+        module_interface: ModuleInterface,
+    ):
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                self.node[]._get_ptr[T]()[].process(
+                    token, token_flow, module_interface
+                )
+                return
+        print(
+            "WARNING: process called on AstNode with no process method for"
+            " node: "
+            + self.__str__()
+        )
+
+    @always_inline("nodebug")
+    fn name(self, include_sig: Bool = False) -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].name(include_sig)
+        print(
+            "WARNING: name called on AstNode with no name method for node: "
+            + self.__str__()
+        )
+        return "<unknown type>"
+
+    @always_inline("nodebug")
+    fn node_state(self) -> MessageableEnum:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].node_state()
+        print(
+            "WARNING: node_state called on AstNode with no node_state method"
+            " for node: "
+            + self.__str__()
+        )
+        return NodeState.INVALID
+
+    @always_inline("nodebug")
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                var val_ptr = self.node[]._get_ptr[T]()
-                return val_ptr[].to_string(just_code, tree_interface)
-        print("No to_string found for node: ", String(self))
-        return ""
+                return (
+                    self.node[]
+                    ._get_ptr[T]()[]
+                    .to_string(just_code, module_interface)
+                )
+        print(
+            "WARNING: to_string called on AstNode with no to_string method for"
+            " node: "
+            + self.__str__()
+        )
+        return "<unknown type>"
 
-    fn name(self) -> String:
-        """Returns the raw node name without any metadata."""
-
+    @always_inline("nodebug")
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return T.__name__
+                return (
+                    self.node[]
+                    ._get_ptr[T]()[]
+                    .scope_level(just_code, module_interface)
+                )
+        print(
+            "WARNING: scope_level called on AstNode with no scope_level method"
+            " for node: "
+            + self.__str__()
+        )
+        return 0
 
-        print("No name found for node: ", String(self))
-        return "UnknownNode"
-
-
-fn _string_children(
-    node: AstNode, just_code: Bool, tree_interface: TreeInterface
-) -> String:
-    """Converts children to string with proper indentation and line breaks.
-
-    Args:
-        just_code: If True, outputs only code and comments. If False, includes node metadata
-            with '>>>' separator to show node ownership.
-    """
-    var s = String()
-    var first = True
-    for child_idx in node.indices()[].mojo_children_idxs[]:
-        var child = tree_interface.nodes[][child_idx[]]
-        if not first:
-            s += "\n"
-        s += child.to_string(just_code, tree_interface)
-        first = False
-    return s
-
-
-fn default_to_string(
-    node: AstNode, just_code: Bool, tree_interface: TreeInterface
-) -> String:
-    """Default string conversion for nodes.
-
-    Args:
-        just_code: If True, outputs only code and comments. If False, includes node metadata
-            with '>>>' separator to show node ownership.
-
-    Format when just_code=False:
-        NodeName >>> actual content
-        NodeName >>> continued content
-        NodeName >>> more content...
-    """
-    var s = String()
-    var level = node.scope_level(tree_interface)
-    var indent = String("")
-    if level > 0:
-        indent = "\t" * level
-    var children_added = False
-    var line_num = 0
-
-    # Add node name if not just code
-    if not just_code:
-        s += indent + node.display_name() + " "
-
-    # Add tokens
-    for token in node.token_bundles():
-        # Handle line splitters (for enum definitions etc)
-        if token[].is_splitter:
-            s += "\n"
-            s += _string_children(node, just_code, tree_interface)
-            children_added = True
-            continue
-
-        # Add indentation on new lines
-        if token[].line_num != line_num:
-            if len(s) > 0:
-                s += "\n"
-            s += indent
-            if not just_code:
-                s += node.name() + " >>> "
-            line_num = token[].line_num
-
-        s += token[].token
-        if not token[].token.endswith("\n"):
-            s += " "
-
-    # Add children if not already added
-    if not children_added:
-        var children = _string_children(node, just_code, tree_interface)
-        if len(children) > 0:
-            if len(s) > 0:
-                s += "\n"
-            s += children
-
-    return s
+    @always_inline("nodebug")
+    fn scope_offset(self, just_code: Bool) -> Int:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].scope_offset(just_code)
+        print(
+            "WARNING: scope_offset called on AstNode with no scope_offset"
+            " method for node: "
+            + self.__str__()
+        )
+        return 0

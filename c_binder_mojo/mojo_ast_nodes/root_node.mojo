@@ -2,136 +2,113 @@
 from memory import ArcPointer
 
 # Third Party Mojo Modules
+from firehose.logging import Logger
+from firehose import FileLoggerOutputer, OutputerVariant
+
 # First Party Modules
-from c_binder_mojo.common import TokenBundle, TokenBundles
-from c_binder_mojo.mojo_ast_nodes.common import (
-    NodeAstLike,
-    node2string,
-    TreeInterface,
-    default_scope_level,
+from c_binder_mojo.common import (
+    TokenBundle,
+    MessageableEnum,
     NodeIndices,
+    TokenFlow,
+    TokenBundles,
+    NodeState,
 )
-from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, default_to_string
-from c_binder_mojo import c_ast_nodes_old
+from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
+from c_binder_mojo.mojo_ast_nodes.nodes import (
+    AstNode,
+    NodeAstLike,
+    default_scope_level,
+    default_to_string,
+    string_children,
+)
 
 
 @value
 struct RootNode(NodeAstLike):
-    """Root node of the Mojo AST.
-
-    Represents the top-level module/file scope.
-    """
-
     alias __name__ = "RootNode"
+    var _indicies: ArcPointer[NodeIndices]
+    var _token_bundles: ArcPointer[TokenBundles]
+    var _node_state: MessageableEnum
 
-    var _token_bundles: TokenBundles
-    var _indices: ArcPointer[NodeIndices]  # Make shareable
-    var _str_just_code: Bool
+    fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles):
+        self._indicies = indicies
+        self._token_bundles = token_bundles
+        self._node_state = NodeState.INITIALIZING
 
-    fn __init__(
-        out self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ):
-        self._token_bundles = c_ast_node.token_bundles()
-        self._indices = ArcPointer(
-            NodeIndices(
-                c_node_idx=c_ast_node.current_idx(),
-                c_parent_idx=c_ast_node.parent_idx(),
-                mojo_node_idx=0,
-                mojo_parent_idx=-1,
-            )
-        )
-        self._str_just_code = False
-
-    fn __str__(self) -> String:
-        return node2string(
-            self.display_name(), self.token_bundles(), self._str_just_code
-        )
-
-    # State checks
-    fn is_accepting_tokens(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
-        return False  # Root doesn't accept tokens directly
-
-    fn is_complete(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
-        return False  # Root is never complete until file ends
-
-    fn wants_child(
-        self,
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        tree_interface: TreeInterface,
-    ) -> Bool:
-        return True  # Root always accepts children
-
-    # Actions
-    fn append(mut self, c_ast_node: c_ast_nodes_old.nodes.AstNode) -> Bool:
-        return False
-
-    fn add_child(mut self, child_idx: Int):
-        self._indices[].mojo_children_idxs[].append(child_idx)
-
-    fn indices(self) -> ArcPointer[NodeIndices]:
-        return self._indices
-
-    fn display_name(self) -> String:
-        return self.__name__ + "(" + String(self._indices[]) + ")"
-
-    fn token_bundles(self) -> TokenBundles:
-        return self._token_bundles
-
-    fn should_children_inline(self) -> Bool:
-        return False
-
-    # Node creation
     @staticmethod
     fn accept(
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        parent_idx: Int,
-        tree_interface: TreeInterface,
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Bool:
-        return len(tree_interface.nodes[]) == 0
+        return len(module_interface.nodes()[]) == 0
 
     @staticmethod
     fn create(
-        c_ast_node: c_ast_nodes_old.nodes.AstNode,
-        parent_idx: Int,
-        tree_interface: TreeInterface,
+        token: TokenBundle,
+        module_interface: ModuleInterface,
+        indices: NodeIndices,
     ) -> Self:
-        return Self(c_ast_node, tree_interface)
+        return Self(indices, TokenBundles())
 
-    fn str_just_code(mut self) -> Bool:
-        return self._str_just_code
+    fn determine_token_flow(
+        mut self, token: TokenBundle, module_interface: ModuleInterface
+    ) -> MessageableEnum:
+        return TokenFlow.CREATE_CHILD
 
-    fn set_str_just_code(mut self, str_just_code: Bool):
-        self._str_just_code = str_just_code
-
-    fn scope_level(self, tree_interface: TreeInterface) -> Int:
-        return default_scope_level(
-            self._indices[].mojo_parent_idx, tree_interface
-        )
-
-    fn scope_offset(self) -> Int:
-        return 0 if self._str_just_code else 0  # Root adds one level of scope
-
-    fn finalize(mut self, parent_idx: Int, mut tree_interface: TreeInterface):
-        # Root node doesn't need any finalization
+    fn process(
+        mut self,
+        token: TokenBundle,
+        token_flow: MessageableEnum,
+        module_interface: ModuleInterface,
+    ):
         pass
 
+    fn indicies(self) -> NodeIndices:
+        return self._indicies[]
+
+    fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
+        return self._indicies
+
+    fn token_bundles(self) -> TokenBundles:
+        return self._token_bundles[]
+
+    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
+        return self._token_bundles
+
+    fn token_bundles_tail(self) -> TokenBundles:
+        return TokenBundles()
+
+    fn node_state(self) -> MessageableEnum:
+        return self._node_state
+
+    @always_inline("nodebug")
+    fn __str__(self) -> String:
+        return "RootNode"
+
+    fn name(self, include_sig: Bool = False) -> String:
+        if include_sig:
+            return self.__name__ + "(" + String(self._indicies[]) + ")"
+        else:
+            return self.__name__
+
     fn to_string(
-        self, just_code: Bool, tree_interface: TreeInterface
+        self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
-        return default_to_string(
-            AstNode(self), self._str_just_code, tree_interface
+        if just_code:
+            return string_children(AstNode(self), just_code, module_interface)
+
+        s = self.name(include_sig=True) + "\n"
+        s += string_children(AstNode(self), just_code, module_interface)
+        return s
+
+    fn scope_level(
+        self, just_code: Bool, module_interface: ModuleInterface
+    ) -> Int:
+        return default_scope_level(
+            self._indicies[].c_parent_idx, just_code, module_interface
         )
 
-    fn name(self) -> String:
-        """Returns the raw node name without any metadata."""
-        return Self.__name__
+    fn scope_offset(self, just_code: Bool) -> Int:
+        return 0 if just_code else 0  # Root adds one level of scope

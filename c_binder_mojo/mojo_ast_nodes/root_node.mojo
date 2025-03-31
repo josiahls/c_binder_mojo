@@ -98,10 +98,10 @@ struct RootNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) raises -> String:
         if just_code:
-            return string_children(AstNode(self), just_code, module_interface, "mojo")
+            return string_children(AstNode(self), just_code, module_interface)
 
         s = self.name(include_sig=True) + "\n"
-        s += string_children(AstNode(self), just_code, module_interface, "mojo")
+        s += string_children(AstNode(self), just_code, module_interface)
         return s
 
     fn scope_level(

@@ -20,8 +20,7 @@ from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 fn string_children(
     node: AstNode,
     just_code: Bool,
-    module_interface: ModuleInterface,
-    c_or_mojo: StringLiteral,
+    module_interface: ModuleInterface
 ) raises -> String:
     """Converts children to string with proper indentation and line breaks.
 
@@ -33,17 +32,7 @@ fn string_children(
     """
     var s = String()
 
-    indicies = List[Int]()
-
-    if c_or_mojo not in ["c", "mojo"]:
-        raise Error("Invalid value for c_or_mojo: " + String(c_or_mojo))
-
-    if c_or_mojo == "c":
-        indicies = node.indicies().c_child_idxs
-    else:
-        indicies = node.indicies().mojo_child_idxs
-
-    for child_idx in indicies:
+    for child_idx in node.indicies().mojo_child_idxs:
         var child = module_interface.nodes()[][child_idx[]]
         s += child.to_string(just_code, module_interface)
     return s
@@ -73,7 +62,6 @@ fn default_scope_level(
 fn default_to_string(
     node: AstNode,
     module_interface: ModuleInterface,
-    c_or_mojo: StringLiteral,
 ) raises -> String:
     """Default string conversion for nodes. Includes the node signature and the node's content.
 
@@ -111,7 +99,7 @@ fn default_to_string(
         if line_num != -1:
             s += "\n"
         s += indent
-        s += string_children(node, False, module_interface, c_or_mojo)
+        s += string_children(node, False, module_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num:
@@ -127,7 +115,6 @@ fn default_to_string(
 fn default_to_string_just_code(
     node: AstNode,
     module_interface: ModuleInterface,
-    c_or_mojo: StringLiteral,
     inline_children: Bool = False,
     inline_nodes: Bool = False,
     inline_tail: Bool = False,
@@ -164,17 +151,12 @@ fn default_to_string_just_code(
         s += token[].token + " "
 
     # Add children
-    indicies = List[Int]()
-    if c_or_mojo == "c":
-        indicies = node.indicies().c_child_idxs
-    else:
-        indicies = node.indicies().mojo_child_idxs
 
-    for child_idx in indicies:
+    for child_idx in node.indicies().mojo_child_idxs:
         var child = module_interface.nodes()[][child_idx[]]
         if not inline_children:
             s += indent
-        s += string_children(child, True, module_interface, c_or_mojo)
+        s += string_children(child, True, module_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num and not inline_tail:

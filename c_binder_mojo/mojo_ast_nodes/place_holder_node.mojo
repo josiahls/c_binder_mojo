@@ -97,9 +97,9 @@ struct PlaceHolderNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) raises -> String:
         if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface, "mojo")
+            return default_to_string_just_code(AstNode(self), module_interface)
         else:
-            return default_to_string(AstNode(self), module_interface, "mojo")
+            return default_to_string(AstNode(self), module_interface)
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

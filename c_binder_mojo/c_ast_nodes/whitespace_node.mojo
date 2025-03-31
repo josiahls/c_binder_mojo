@@ -85,22 +85,6 @@ struct WhitespaceNode(NodeAstLike):
         self._token_bundles[].append(token_bundle)
         self._node_state = NodeState.COMPLETED
 
-    @staticmethod
-    fn is_whitespace_token(token: TokenBundle) -> Bool:
-        """Check if a character is a whitespace character.
-
-        Args:
-            ch: The character to check.
-
-        Returns:
-            True if the character is whitespace, False otherwise.
-        """
-        if token.token == "":
-            return True
-
-        if WhitespaceEnum.is_whitespace(token):
-            return True
-        return False
 
     @staticmethod
     fn accept(
@@ -119,7 +103,7 @@ struct WhitespaceNode(NodeAstLike):
             True if this node can handle the token, False otherwise.
         """
         # Check if the token is whitespace (only spaces, tabs, newlines)
-        return Self.is_whitespace_token(token)
+        return token.is_whitespace()
 
     @staticmethod
     fn create(
@@ -151,7 +135,7 @@ struct WhitespaceNode(NodeAstLike):
         Returns:
             The state of this node.
         """
-        if Self.is_whitespace_token(token):
+        if token.is_whitespace():
             return TokenFlow.CONSUME_TOKEN
         else:
             return TokenFlow.PASS_TO_PARENT
@@ -172,8 +156,7 @@ struct WhitespaceNode(NodeAstLike):
         # We already added the token in init, so no further processing needed
         if token_flow == TokenFlow.CONSUME_TOKEN:
             self._token_bundles[].append(token)
-        else:
-            pass
+
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node.

@@ -261,9 +261,8 @@ struct TokenBundle(EqualityComparable):
         self.col_num = col_num
         self.deleted = deleted
 
-    @staticmethod
-    fn is_whitespace(read token: TokenBundle) -> Bool:
-        return WhitespaceEnum.is_whitespace(token)
+    fn is_whitespace(read self: Self) -> Bool:
+        return WhitespaceEnum.is_whitespace(self)
 
     fn __ne__(read self: Self, read other: Self) -> Bool:
         """Check if two TokenBundles are not equal.

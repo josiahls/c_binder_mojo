@@ -10,6 +10,7 @@ from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.common import Tokenizer
 from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
+from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
 
 
 fn test_whitespace_node() raises:
@@ -54,6 +55,25 @@ fn test_whitespace_node() raises:
             just_code=False, module_interface=module_interface
         )
     )
+
+    # Generate Mojo AST
+    var mojo_tree_log_file = output_dir / "test_whitespace_node_mojo.tree"
+    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
+
+    # Save Mojo AST for debugging
+    var mojo_ast_file_just_code = output_dir / "test_whitespace_node.mojo"
+    mojo_ast_file_just_code.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=mojo_module_interface
+        )
+    )
+    var mojo_ast_file = output_dir / "test_whitespace_node.mojo_ast"
+    mojo_ast_file.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=mojo_module_interface
+        )
+    )
+
 
     # Debug token information with visualization
     var token_debug_file = output_dir / "token_debug.txt"

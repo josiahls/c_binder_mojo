@@ -1,0 +1,89 @@
+RootNode(c_current_idx=0, mojo_current_idx=0, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=38)
+PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
+# Different types of whitespace: 
+WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=1)
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4)
+# Single space 
+WhitespaceNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5, n_tokens=3)
+  
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6)
+# Multiple spaces 
+WhitespaceNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, n_tokens=6)
+     
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8)
+# Tabs 
+WhitespaceNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, n_tokens=2)
+	 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10)
+# Mixed whitespace 
+WhitespaceNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, n_tokens=5)
+	  	  
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
+# New lines 
+WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=3)
+ 
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14)
+# Whitespace in code contexts 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15)
+int 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16)
+function 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17)
+( 
+WhitespaceNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, n_tokens=1)
+ 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19)
+) 
+WhitespaceNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20, n_tokens=2)
+  
+PlaceHolderNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21)
+{ 
+WhitespaceNode(c_parent_idx=20, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, n_tokens=5)
+ 
+    
+PlaceHolderNode(c_parent_idx=20, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23)
+int 
+PlaceHolderNode(c_parent_idx=20, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24)
+x 
+PlaceHolderNode(c_parent_idx=20, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25)
+= 
+PlaceHolderNode(c_parent_idx=20, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26)
+5 
+PlaceHolderNode(c_parent_idx=20, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27)
+; 
+WhitespaceNode(c_parent_idx=20, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28, n_tokens=10)
+ 
+     
+    
+PlaceHolderNode(c_parent_idx=20, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29)
+return 
+PlaceHolderNode(c_parent_idx=20, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30)
+x 
+PlaceHolderNode(c_parent_idx=20, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31)
+; 
+WhitespaceNode(c_parent_idx=20, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32, n_tokens=2)
+ 
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=32, mojo_parent_idx=0, mojo_current_idx=33, n_tokens=2)
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=33, mojo_parent_idx=0, mojo_current_idx=34)
+# Whitespace after comment 
+WhitespaceNode(c_parent_idx=0, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=35, n_tokens=1)
+ 
+MultiLineCommentNode(c_parent_idx=0, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36)
+""" Whitespace 
+   in multiline 
+   comment """ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37, n_tokens=4)
+    
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=37, mojo_parent_idx=0, mojo_current_idx=38)
+# Whitespace at beginning and end of file  

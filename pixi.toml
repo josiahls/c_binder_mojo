@@ -31,7 +31,7 @@ test_ifdef = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $H
 test_define = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_define_node/test_define_node.mojo"
 test_whitespace = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_whitespace_node/test_whitespace_node.mojo"
 test_single_line_comment = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_single_line_comment_node/test_single_line_comment_node.mojo"
-test_multi_line_comment = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_multiline_comment_node/test_multiline_comment_node.mojo"
+test_multi_line_comment = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_multi_line_comment_node/test_multi_line_comment_node.mojo"
 
 ## Package management
 package = "mojo package $HOME/c_binder_mojo"

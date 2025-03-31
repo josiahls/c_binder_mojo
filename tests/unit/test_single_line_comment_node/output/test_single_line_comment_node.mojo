@@ -1,9 +1,9 @@
-// Basic single line comment 
-// Another single line comment 
+# Basic single line comment 
+# Another single line comment 
  
-// Comment with special characters: !@#$%^&* (  ) _+ 
+# Comment with special characters: !@#$%^&* (  ) _+ 
  
-// Comment with code-like content: int x = 5 ;  
+# Comment with code-like content: int x = 5 ;  
  
 int 
 some_function 
@@ -13,19 +13,19 @@ some_function
  
 ; 
  
-// Comment after code 
+# Comment after code 
  
 /* This is not a single line comment */ 
  
-// Comment with Unicode: 你好世界 
+# Comment with Unicode: 你好世界 
  
-// Empty comment followed by another comment 
-// 
-// Comment after empty comment 
+# Empty comment followed by another comment 
+# 
+# Comment after empty comment 
  
-// Multiple comments 
-// in a 
-// row 
+# Multiple comments 
+# in a 
+# row 
  
-// Comment with trailing spaces     
+# Comment with trailing spaces     
  

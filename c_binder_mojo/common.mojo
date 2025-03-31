@@ -278,6 +278,12 @@ struct TokenBundle(EqualityComparable):
     fn is_whitespace(read self: Self) -> Bool:
         return WhitespaceEnum.is_whitespace(self)
 
+
+    @staticmethod
+    fn from_other(new_token: String, other: Self) -> Self:
+        return Self(new_token, other.row_num, other.col_num, other.deleted)
+
+
     fn __ne__(read self: Self, read other: Self) -> Bool:
         """Check if two TokenBundles are not equal.
 

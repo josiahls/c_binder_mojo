@@ -225,7 +225,7 @@ fn _initialize_module(
     mut module_interface: ModuleInterface,
     mut logger: Logger,
 ) raises -> Int:
-    var indices = NodeIndices.from_c_node_indices(
+    var indices = NodeIndices(
         c_node.indicies(),
         -1,
         current_idx,
@@ -253,7 +253,7 @@ fn _create_child(
     mut logger: Logger,
     recursion_depth: Int = 0,
 ) raises -> Int:
-    var indices = NodeIndices.from_c_node_indices(
+    var indices = NodeIndices(
         c_node.indicies(),
         current_idx,
         -1,

@@ -151,12 +151,10 @@ fn default_to_string_just_code(
         s += token[].token + " "
 
     # Add children
-
-    for child_idx in node.indicies().mojo_child_idxs:
-        var child = module_interface.nodes()[][child_idx[]]
+    if len(node.indicies().mojo_child_idxs) > 0:
         if not inline_children:
             s += indent
-        s += string_children(child, True, module_interface)
+        s += string_children(node, True, module_interface)
 
     for token in node.token_bundles_tail():
         if token[].row_num != line_num and not inline_tail:

@@ -11,6 +11,7 @@ from c_binder_mojo import c_ast_nodes
 from c_binder_mojo.common import Tokenizer
 from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
+from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
 
 
 fn test_define_node() raises:
@@ -58,6 +59,24 @@ fn test_define_node() raises:
     var root_node = module_interface.nodes()[][0]
     logger.info("Root node: " + root_node.name())
 
+    # Generate Mojo AST
+    var mojo_tree_log_file = output_dir / "test_define_node_mojo.tree"
+    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
+
+    # Save Mojo AST for debugging
+    var mojo_ast_file_just_code = output_dir / "test_define_node.mojo"
+    mojo_ast_file_just_code.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=mojo_module_interface
+        )
+    )
+    var mojo_ast_file = output_dir / "test_define_node.mojo_ast"
+    mojo_ast_file.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=mojo_module_interface
+        )
+    )
+
     # Count and verify define nodes
     var define_count = 0
     var empty_define_count = 0  # Defines with no value like #define FOO
@@ -66,13 +85,13 @@ fn test_define_node() raises:
         var node = module_interface.nodes()[][i]
         if node.name() == "MacroDefineNode":
             define_count += 1
-            logger.info("Found define node: " + node.name(include_sig=True))
+            logger.trace("Found define node: " + node.name(include_sig=True))
 
             # Check if this is an empty define (no value)
             var indices = node.indicies()
             if len(indices.c_child_idxs) == 0:
                 empty_define_count += 1
-                logger.info("Found empty define node")
+                logger.trace("Found empty define node")
 
     # We expect 10 define nodes in our test file
     if define_count != 10:

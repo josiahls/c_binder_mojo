@@ -55,6 +55,9 @@ struct NodeState:
     )  # Node is creating/managing children
     alias COMPLETED = MessageableEnum(4, 'COMPLETED')  # Node is completely built
     alias INVALID = MessageableEnum(5, 'INVALID')  # Node is in an invalid state (error)
+    alias DESTROYING_TOKENS = MessageableEnum(
+        6, 'DESTROYING_TOKENS'
+    )  # Node is destroying the tokens it receives.
 
 
 struct TokenFlow:
@@ -177,14 +180,13 @@ struct NodeIndices:
         self.mojo_current_idx = mojo_current_idx
         self.mojo_child_idxs = List[Int]()
 
-    @staticmethod
-    fn from_c_node_indices(c_node_indices: Self, mojo_parent_idx: Int, mojo_current_idx: Int) -> Self:
-        return Self(
-            c_node_indices.c_parent_idx,
-            c_node_indices.c_current_idx,
-            mojo_parent_idx,
-            mojo_current_idx,
-        )
+    fn __init__(out self, c_node_indices: Self, mojo_parent_idx: Int, mojo_current_idx: Int):
+        self.c_parent_idx = c_node_indices.c_parent_idx
+        self.c_current_idx = c_node_indices.c_current_idx
+        self.c_child_idxs = c_node_indices.c_child_idxs
+        self.mojo_parent_idx = mojo_parent_idx
+        self.mojo_current_idx = mojo_current_idx
+        self.mojo_child_idxs = List[Int]()
 
 
     fn _child_str(self, children_idxs: List[Int]) -> String:

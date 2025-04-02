@@ -13,6 +13,7 @@ from c_binder_mojo.common import (
     TokenBundles,
     TokenFlow,
     NodeState,
+    CTokens,
 )
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.nodes import (
@@ -30,12 +31,25 @@ struct MacroDefineValueNode(NodeAstLike):
     alias __name__ = "MacroDefineValueNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
+    var _c_token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
-        self._token_bundles = c_node.token_bundles()
+        self._c_token_bundles = c_node.token_bundles()
+        self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
+        self.format_token_bundles()
+
+    fn format_token_bundles(self):
+        var is_first = True
+        for token_bundle in self._c_token_bundles[]:
+            token = token_bundle[].token
+            if is_first:
+                is_first = False
+                self._token_bundles[].append(TokenBundle.from_other('=', token_bundle[]))
+
+            self._token_bundles[].append(TokenBundle.from_other(token, token_bundle[]))
 
     @staticmethod
     fn accept(

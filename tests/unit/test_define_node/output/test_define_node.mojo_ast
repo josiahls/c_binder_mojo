@@ -3,63 +3,63 @@ PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
 # Empty defines  ( no value )  
 MacroDefineNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3)
-#define EMPTY_DEFINE_1 
+alias EMPTY_DEFINE_1 
 MacroDefineNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4)
-#define EMPTY_DEFINE_2 
+alias EMPTY_DEFINE_2 
 WhitespaceNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6)
 # Simple value defines 
 MacroDefineNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, c_child_idxs=(7), mojo_child_idxs=(8))
-#define SIMPLE_INT 
+alias SIMPLE_INT 
 MacroDefineValueNode(c_parent_idx=6, c_current_idx=7, mojo_parent_idx=7, mojo_current_idx=8)
-42 
+= 42 
 
 MacroDefineNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, c_child_idxs=(9), mojo_child_idxs=(10))
-#define SIMPLE_FLOAT 
+alias SIMPLE_FLOAT 
 MacroDefineValueNode(c_parent_idx=8, c_current_idx=9, mojo_parent_idx=9, mojo_current_idx=10)
-3.14 
+= 3.14 
 
 MacroDefineNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, c_child_idxs=(11), mojo_child_idxs=(12))
-#define SIMPLE_STRING 
+alias SIMPLE_STRING 
 MacroDefineValueNode(c_parent_idx=10, c_current_idx=11, mojo_parent_idx=11, mojo_current_idx=12)
-"hello" 
+= "hello" 
 
 WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14)
 # Function-like macros 
 MacroDefineNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15, c_child_idxs=(15), mojo_child_idxs=(16))
-#define ADD 
+alias ADD 
 MacroDefineValueNode(c_parent_idx=14, c_current_idx=15, mojo_parent_idx=15, mojo_current_idx=16)
-( x ,  y )   (  ( x )  +  ( y )  )  
+= ( x ,  y )   (  ( x )  +  ( y )  )  
 
 MacroDefineNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, c_child_idxs=(17), mojo_child_idxs=(18))
-#define MAX 
+alias MAX 
 MacroDefineValueNode(c_parent_idx=16, c_current_idx=17, mojo_parent_idx=17, mojo_current_idx=18)
-( a ,  b )   (  ( a )  >  ( b )  ?  ( a )  :  ( b )  )  
+= ( a ,  b )   (  ( a )  >  ( b )  ?  ( a )  :  ( b )  )  
 
 MacroDefineNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, c_child_idxs=(19), mojo_child_idxs=(20))
-#define PRINT_DEBUG 
+alias PRINT_DEBUG 
 MacroDefineValueNode(c_parent_idx=18, c_current_idx=19, mojo_parent_idx=19, mojo_current_idx=20)
-( msg ,  ... )  printf ( "[DEBUG] " msg "\n" ,  ##__VA_ARGS__ )  
+= ( msg ,  ... )  printf ( "[DEBUG] " msg "\n" ,  ##__VA_ARGS__ )  
 
 WhitespaceNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22)
 # Complex defines with expressions 
 MacroDefineNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, c_child_idxs=(23, 24), mojo_child_idxs=(24))
-#define BUFFER_SIZE 
+alias BUFFER_SIZE 
 MacroDefineValueNode(c_parent_idx=22, c_current_idx=24, mojo_parent_idx=23, mojo_current_idx=24)
-( 1024 * 2 )  
+= ( 1024 * 2 )  
 
 WhitespaceNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=25, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=26)
 # Define with line continuation 
 MacroDefineNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=27, c_child_idxs=(28), mojo_child_idxs=(28))
-#define MULTILINE_STRING 
+alias MULTILINE_STRING 
 MacroDefineValueNode(c_parent_idx=27, c_current_idx=28, mojo_parent_idx=27, mojo_current_idx=28)
-"This is a long string that \ 
+= "This is a long string that \ 
     continues on the next line"  
 

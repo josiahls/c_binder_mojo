@@ -13,6 +13,7 @@ from c_binder_mojo.common import (
     TokenBundles,
     TokenFlow,
     NodeState,
+    CTokens,
 )
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.nodes import (
@@ -43,10 +44,8 @@ struct MacroDefineNode(NodeAstLike):
     fn format_token_bundles(self):
         for token_bundle in self._c_token_bundles[]:
             token = token_bundle[].token 
-            if token == '//':
-                token = '#'
-            if token.startswith("//"):
-                token = '#' + token[2:]
+            if token == CTokens.MACRO_DEFINE:
+                token = "alias"
             self._token_bundles[].append(TokenBundle.from_other(token, token_bundle[]))
 
     @staticmethod

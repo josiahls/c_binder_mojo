@@ -18,9 +18,7 @@ from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
 
 fn string_children(
-    node: AstNode,
-    just_code: Bool,
-    module_interface: ModuleInterface
+    node: AstNode, just_code: Bool, module_interface: ModuleInterface
 ) raises -> String:
     """Converts children to string with proper indentation and line breaks.
 

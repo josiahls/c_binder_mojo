@@ -70,16 +70,19 @@ struct MacroDefineValueNode(NodeAstLike):
         self.format_token_bundles()
         self._node_state = NodeState.COMPLETED
 
-
     fn format_token_bundles(self):
         var is_first = True
         for token_bundle in self._c_token_bundles[]:
             token = token_bundle[].token
             if is_first:
                 is_first = False
-                self._token_bundles[].append(TokenBundle.from_other('=', token_bundle[]))
+                self._token_bundles[].append(
+                    TokenBundle.from_other("=", token_bundle[])
+                )
 
-            self._token_bundles[].append(TokenBundle.from_other(token, token_bundle[]))
+            self._token_bundles[].append(
+                TokenBundle.from_other(token, token_bundle[])
+            )
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -114,7 +117,7 @@ struct MacroDefineValueNode(NodeAstLike):
     ) raises -> String:
         if just_code:
             return default_to_string_just_code(
-                AstNode(self), 
+                AstNode(self),
                 module_interface,
                 inline_children=True,
                 inline_nodes=True,

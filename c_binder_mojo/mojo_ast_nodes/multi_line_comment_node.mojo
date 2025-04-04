@@ -24,6 +24,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
+
 @value
 struct MultiLineCommentNode(NodeAstLike):
     alias __name__ = "MultiLineCommentNode"
@@ -42,14 +43,18 @@ struct MultiLineCommentNode(NodeAstLike):
     fn format_token_bundles(self):
         inside_multi_line_comment = False
         for token_bundle in self._c_token_bundles[]:
-            token = token_bundle[].token # TODO(josiahls): is this a copy or a move?
+            token = (
+                token_bundle[].token
+            )  # TODO(josiahls): is this a copy or a move?
             if not inside_multi_line_comment and "/*" in token:
                 inside_multi_line_comment = True
-                token = token.replace("/*", "\"\"\"")
+                token = token.replace("/*", '"""')
             if inside_multi_line_comment and "*/" in token:
                 inside_multi_line_comment = False
-                token = token.replace("*/", "\"\"\"")
-            self._token_bundles[].append(TokenBundle.from_other(token, token_bundle[]))
+                token = token.replace("*/", '"""')
+            self._token_bundles[].append(
+                TokenBundle.from_other(token, token_bundle[])
+            )
 
     @staticmethod
     fn accept(

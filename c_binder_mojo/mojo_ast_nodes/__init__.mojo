@@ -6,6 +6,7 @@ from .multi_line_comment_node import MultiLineCommentNode
 from .whitespace_node import WhitespaceNode
 from .macro_define_node import MacroDefineNode
 from .macro_define_value_node import MacroDefineValueNode
+
 # Setup Variant
 from .node_variant import Variant
 
@@ -16,7 +17,7 @@ alias AstNodeVariant = Variant[
     WhitespaceNode,
     MacroDefineNode,
     MacroDefineValueNode,
-    PlaceHolderNode # Placeholder must be the last node
+    PlaceHolderNode,  # Placeholder must be the last node
 ]
 
 # Tree

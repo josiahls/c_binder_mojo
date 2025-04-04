@@ -43,10 +43,12 @@ struct MacroDefineNode(NodeAstLike):
 
     fn format_token_bundles(self):
         for token_bundle in self._c_token_bundles[]:
-            token = token_bundle[].token 
+            token = token_bundle[].token
             if token == CTokens.MACRO_DEFINE:
                 token = "alias"
-            self._token_bundles[].append(TokenBundle.from_other(token, token_bundle[]))
+            self._token_bundles[].append(
+                TokenBundle.from_other(token, token_bundle[])
+            )
 
     @staticmethod
     fn accept(
@@ -117,7 +119,9 @@ struct MacroDefineNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) raises -> String:
         if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface, inline_children=True)
+            return default_to_string_just_code(
+                AstNode(self), module_interface, inline_children=True
+            )
         else:
             return default_to_string(AstNode(self), module_interface)
 

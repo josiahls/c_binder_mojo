@@ -194,11 +194,7 @@ fn log_state_transition(
     msg += indent
     msg += node_info
     msg += "\n    └─ Path: " + path
-    msg += (
-        "\n    └─ Current C_Node: '"
-        + c_node.name()
-        + "'"
-    )
+    msg += "\n    └─ Current C_Node: '" + c_node.name() + "'"
 
     # Add active nodes count
     var active_count = 0

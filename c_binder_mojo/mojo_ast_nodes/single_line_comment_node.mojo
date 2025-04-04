@@ -24,6 +24,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
+
 @value
 struct SingleLineCommentNode(NodeAstLike):
     alias __name__ = "SingleLineCommentNode"
@@ -41,12 +42,16 @@ struct SingleLineCommentNode(NodeAstLike):
 
     fn format_token_bundles(self):
         for token_bundle in self._c_token_bundles[]:
-            token = token_bundle[].token # TODO(josiahls): is this a copy or a move?
-            if token == '//':
-                token = '#'
+            token = (
+                token_bundle[].token
+            )  # TODO(josiahls): is this a copy or a move?
+            if token == "//":
+                token = "#"
             if token.startswith("//"):
-                token = '#' + token[2:]
-            self._token_bundles[].append(TokenBundle.from_other(token, token_bundle[]))
+                token = "#" + token[2:]
+            self._token_bundles[].append(
+                TokenBundle.from_other(token, token_bundle[])
+            )
 
     @staticmethod
     fn accept(

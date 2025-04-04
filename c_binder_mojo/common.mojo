@@ -43,20 +43,26 @@ struct MessageableEnum(Stringable):
 struct NodeState:
     """The internal construction state of a node."""
 
-    alias INITIALIZING = MessageableEnum(0, 'INITIALIZING')  # Node is being initialized
+    alias INITIALIZING = MessageableEnum(
+        0, "INITIALIZING"
+    )  # Node is being initialized
     alias COLLECTING_TOKENS = MessageableEnum(
-        1, 'COLLECTING_TOKENS'
+        1, "COLLECTING_TOKENS"
     )  # Node is collecting its own tokens
     alias COLLECTING_TAIL_TOKENS = MessageableEnum(
-        2, 'COLLECTING_TAIL_TOKENS'
+        2, "COLLECTING_TAIL_TOKENS"
     )  # Node is collecting its own tokens adding them to the tail
     alias BUILDING_CHILDREN = MessageableEnum(
-        3, 'BUILDING_CHILDREN'
+        3, "BUILDING_CHILDREN"
     )  # Node is creating/managing children
-    alias COMPLETED = MessageableEnum(4, 'COMPLETED')  # Node is completely built
-    alias INVALID = MessageableEnum(5, 'INVALID')  # Node is in an invalid state (error)
+    alias COMPLETED = MessageableEnum(
+        4, "COMPLETED"
+    )  # Node is completely built
+    alias INVALID = MessageableEnum(
+        5, "INVALID"
+    )  # Node is in an invalid state (error)
     alias DESTROYING_TOKENS = MessageableEnum(
-        6, 'DESTROYING_TOKENS'
+        6, "DESTROYING_TOKENS"
     )  # Node is destroying the tokens it receives.
 
 
@@ -64,18 +70,18 @@ struct TokenFlow:
     """Directive for how tokens should flow through the tree."""
 
     alias INITIALIZE_MODULE = MessageableEnum(
-        0, 'INITIALIZE_MODULE'
+        0, "INITIALIZE_MODULE"
     )  # Tree has just started, no nodes exist yet
     alias CONSUME_TOKEN = MessageableEnum(
-        1, 'CONSUME_TOKEN'
+        1, "CONSUME_TOKEN"
     )  # Node should consume the token
     alias PASS_TO_PARENT = MessageableEnum(
-        2, 'PASS_TO_PARENT'
+        2, "PASS_TO_PARENT"
     )  # Pass token to parent node
     alias CREATE_CHILD = MessageableEnum(
-        3, 'CREATE_CHILD'
+        3, "CREATE_CHILD"
     )  # Create a child for this token
-    alias INVALID = MessageableEnum(4, 'INVALID')  # Invalid directive (error)
+    alias INVALID = MessageableEnum(4, "INVALID")  # Invalid directive (error)
 
 
 struct CTokens:
@@ -180,14 +186,18 @@ struct NodeIndices:
         self.mojo_current_idx = mojo_current_idx
         self.mojo_child_idxs = List[Int]()
 
-    fn __init__(out self, c_node_indices: Self, mojo_parent_idx: Int, mojo_current_idx: Int):
+    fn __init__(
+        out self,
+        c_node_indices: Self,
+        mojo_parent_idx: Int,
+        mojo_current_idx: Int,
+    ):
         self.c_parent_idx = c_node_indices.c_parent_idx
         self.c_current_idx = c_node_indices.c_current_idx
         self.c_child_idxs = c_node_indices.c_child_idxs
         self.mojo_parent_idx = mojo_parent_idx
         self.mojo_current_idx = mojo_current_idx
         self.mojo_child_idxs = List[Int]()
-
 
     fn _child_str(self, children_idxs: List[Int]) -> String:
         var s = String("")
@@ -280,11 +290,9 @@ struct TokenBundle(EqualityComparable):
     fn is_whitespace(read self: Self) -> Bool:
         return WhitespaceEnum.is_whitespace(self)
 
-
     @staticmethod
     fn from_other(new_token: String, other: Self) -> Self:
         return Self(new_token, other.row_num, other.col_num, other.deleted)
-
 
     fn __ne__(read self: Self, read other: Self) -> Bool:
         """Check if two TokenBundles are not equal.

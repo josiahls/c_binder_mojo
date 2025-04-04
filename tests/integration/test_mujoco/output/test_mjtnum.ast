@@ -27,9 +27,9 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
 // limitations under the License. 
 WhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=1)
  
-MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=18, node_state=4)
+MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=18, node_state=4 (COMPLETED))
 #ifndef MUJOCO_INCLUDE_MJTNUM_H_ 
-	MacroDefineNode(c_parent_idx=15, c_current_idx=16, node_state=4, macro='MUJOCO_INCLUDE_MJTNUM_H_')
+	MacroDefineNode(c_parent_idx=15, c_current_idx=16, node_state=4 (COMPLETED), macro='MUJOCO_INCLUDE_MJTNUM_H_')
 	#define MUJOCO_INCLUDE_MJTNUM_H_ 
 	WhitespaceNode(c_parent_idx=15, c_current_idx=17, n_tokens=1)
 	 
@@ -39,36 +39,36 @@ MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 
 	 
 	SingleLineCommentNode(c_parent_idx=15, c_current_idx=20)
 	// floating point data type and minval 
-	MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28, ...) len=9, node_state=4)
+	MacroIfNDefNode(c_parent_idx=15, c_current_idx=21, c_child_idxs=(22, 23, 24, 25, 28, ...) len=9, node_state=4 (COMPLETED))
 	#ifndef mjUSESINGLE 
 			WhitespaceNode(c_parent_idx=21, c_current_idx=22, n_tokens=2)
 		  
-		TypedefNode(c_parent_idx=21, c_current_idx=23, node_state=4)
+		TypedefNode(c_parent_idx=21, c_current_idx=23, node_state=4 (COMPLETED))
 		typedef double mjtNum 
 		WhitespaceNode(c_parent_idx=21, c_current_idx=24, n_tokens=3)
 		 
 		  
-		MacroDefineNode(c_parent_idx=21, c_current_idx=25, c_child_idxs=(26, 27), node_state=4, macro='mjMINVAL')
+		MacroDefineNode(c_parent_idx=21, c_current_idx=25, c_child_idxs=(26, 27), node_state=4 (COMPLETED), macro='mjMINVAL')
 		#define mjMINVAL 
 					WhitespaceNode(c_parent_idx=25, c_current_idx=26, n_tokens=3)
 			   
-			MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=4, is_function_like=False)
+			MacroDefineValueNode(c_parent_idx=25, c_current_idx=27, node_state=4 (COMPLETED), is_function_like=False)
 			1E-15       // minimum value in any denominator 
 
 		PlaceHolderNode(c_parent_idx=21, c_current_idx=28)
 		#else 
 		WhitespaceNode(c_parent_idx=21, c_current_idx=29, n_tokens=2)
 		  
-		TypedefNode(c_parent_idx=21, c_current_idx=30, node_state=4)
+		TypedefNode(c_parent_idx=21, c_current_idx=30, node_state=4 (COMPLETED))
 		typedef float mjtNum 
 		WhitespaceNode(c_parent_idx=21, c_current_idx=31, n_tokens=3)
 		 
 		  
-		MacroDefineNode(c_parent_idx=21, c_current_idx=32, c_child_idxs=(33, 34), node_state=4, macro='mjMINVAL')
+		MacroDefineNode(c_parent_idx=21, c_current_idx=32, c_child_idxs=(33, 34), node_state=4 (COMPLETED), macro='mjMINVAL')
 		#define mjMINVAL 
 					WhitespaceNode(c_parent_idx=32, c_current_idx=33, n_tokens=3)
 			   
-			MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=4, is_function_like=False)
+			MacroDefineValueNode(c_parent_idx=32, c_current_idx=34, node_state=4 (COMPLETED), is_function_like=False)
 			1E-15f /* This does after the float is defined */ 
 
 
@@ -96,7 +96,7 @@ MacroIfNDefNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 
 	//-------------------------------------- byte definition ------------------------------------------- 
 	WhitespaceNode(c_parent_idx=15, c_current_idx=42, n_tokens=1)
 	 
-	TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=4)
+	TypedefNode(c_parent_idx=15, c_current_idx=43, node_state=4 (COMPLETED))
 	typedef unsigned char mjtByte 
 	WhitespaceNode(c_parent_idx=15, c_current_idx=44, n_tokens=4)
 	    

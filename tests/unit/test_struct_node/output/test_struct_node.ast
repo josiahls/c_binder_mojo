@@ -1,21 +1,21 @@
 RootNode(c_current_idx=0, c_child_idxs=(1, 2, 9, 16, 17, ...) len=12)
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
 // Basic struct declarations 
-StructNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=1, name='Point')
+StructNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=1 (COLLECTING_TOKENS), name='Point')
 struct Point  
   
  
-	ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5, 6, 7, 8), node_state=4, parent_type='StructNode')
+	ScopeNode(c_parent_idx=2, c_current_idx=3, c_child_idxs=(4, 5, 6, 7, 8), node_state=4 (COMPLETED), parent_type='StructNode')
 	{ 
 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=3, c_current_idx=5, node_state=4, field_type='int', field_name='x')
+		StructFieldNode(c_parent_idx=3, c_current_idx=5, node_state=4 (COMPLETED), field_type='int', field_name='x')
 		int x ; 
 		WhitespaceNode(c_parent_idx=3, c_current_idx=6, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=3, c_current_idx=7, node_state=4, field_type='int', field_name='y')
+		StructFieldNode(c_parent_idx=3, c_current_idx=7, node_state=4 (COMPLETED), field_type='int', field_name='y')
 		int y ; 
 		WhitespaceNode(c_parent_idx=3, c_current_idx=8, n_tokens=2)
 		 
@@ -24,21 +24,21 @@ struct Point
 	} 
 
 ; 
-StructNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10), node_state=1, name='Person')
+StructNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10), node_state=1 (COLLECTING_TOKENS), name='Person')
 struct Person  
   
  
-	ScopeNode(c_parent_idx=9, c_current_idx=10, c_child_idxs=(11, 12, 13, 14, 15), node_state=4, parent_type='StructNode')
+	ScopeNode(c_parent_idx=9, c_current_idx=10, c_child_idxs=(11, 12, 13, 14, 15), node_state=4 (COMPLETED), parent_type='StructNode')
 	{ 
 			WhitespaceNode(c_parent_idx=10, c_current_idx=11, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=10, c_current_idx=12, node_state=4, field_type='char*', field_name='name')
+		StructFieldNode(c_parent_idx=10, c_current_idx=12, node_state=4 (COMPLETED), field_type='char*', field_name='name')
 		char* name ; 
 		WhitespaceNode(c_parent_idx=10, c_current_idx=13, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=10, c_current_idx=14, node_state=4, field_type='int', field_name='age')
+		StructFieldNode(c_parent_idx=10, c_current_idx=14, node_state=4 (COMPLETED), field_type='int', field_name='age')
 		int age ; 
 		WhitespaceNode(c_parent_idx=10, c_current_idx=15, n_tokens=2)
 		 
@@ -49,11 +49,11 @@ struct Person
 ; 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=16)
 // Empty struct 
-StructNode(c_parent_idx=0, c_current_idx=17, c_child_idxs=(18), node_state=1, name='Empty')
+StructNode(c_parent_idx=0, c_current_idx=17, c_child_idxs=(18), node_state=1 (COLLECTING_TOKENS), name='Empty')
 struct Empty  
   
  
-	ScopeNode(c_parent_idx=17, c_current_idx=18, c_child_idxs=(19), node_state=4, parent_type='StructNode')
+	ScopeNode(c_parent_idx=17, c_current_idx=18, c_child_idxs=(19), node_state=4 (COMPLETED), parent_type='StructNode')
 	{ 
 			WhitespaceNode(c_parent_idx=18, c_current_idx=19, n_tokens=2)
 		 
@@ -64,11 +64,11 @@ struct Empty
 ; 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=20)
 // Multi-line struct with comments 
-StructNode(c_parent_idx=0, c_current_idx=21, c_child_idxs=(22), node_state=1, name='Complex')
+StructNode(c_parent_idx=0, c_current_idx=21, c_child_idxs=(22), node_state=1 (COLLECTING_TOKENS), name='Complex')
 struct Complex  
   
  
-	ScopeNode(c_parent_idx=21, c_current_idx=22, c_child_idxs=(23, 24, 25, 26, 27, ...) len=12, node_state=4, parent_type='StructNode')
+	ScopeNode(c_parent_idx=21, c_current_idx=22, c_child_idxs=(23, 24, 25, 26, 27, ...) len=12, node_state=4 (COMPLETED), parent_type='StructNode')
 	{ 
 			WhitespaceNode(c_parent_idx=22, c_current_idx=23, n_tokens=5)
 		 
@@ -77,12 +77,12 @@ struct Complex
 		// Basic types 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=25, n_tokens=4)
 		    
-		StructFieldNode(c_parent_idx=22, c_current_idx=26, node_state=4, field_type='int', field_name='id')
+		StructFieldNode(c_parent_idx=22, c_current_idx=26, node_state=4 (COMPLETED), field_type='int', field_name='id')
 		int id ; 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=27, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=22, c_current_idx=28, node_state=4, field_type='float', field_name='value')
+		StructFieldNode(c_parent_idx=22, c_current_idx=28, node_state=4 (COMPLETED), field_type='float', field_name='value')
 		float value ; 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=29, n_tokens=10)
 		 
@@ -92,15 +92,15 @@ struct Complex
 		/* Nested struct */ 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=31, n_tokens=4)
 		    
-		StructNode(c_parent_idx=22, c_current_idx=32, c_child_idxs=(33), node_state=1, name='Inner')
+		StructNode(c_parent_idx=22, c_current_idx=32, c_child_idxs=(33), node_state=1 (COLLECTING_TOKENS), name='Inner')
 		struct Inner  
 		 
-					ScopeNode(c_parent_idx=32, c_current_idx=33, c_child_idxs=(34, 35, 36), node_state=4, parent_type='StructNode')
+					ScopeNode(c_parent_idx=32, c_current_idx=33, c_child_idxs=(34, 35, 36), node_state=4 (COMPLETED), parent_type='StructNode')
 			{ 
 							WhitespaceNode(c_parent_idx=33, c_current_idx=34, n_tokens=9)
 				 
 				        
-				StructFieldNode(c_parent_idx=33, c_current_idx=35, node_state=4, field_type='double', field_name='data')
+				StructFieldNode(c_parent_idx=33, c_current_idx=35, node_state=4 (COMPLETED), field_type='double', field_name='data')
 				double data ; 
 				WhitespaceNode(c_parent_idx=33, c_current_idx=36, n_tokens=6)
 				 
@@ -108,7 +108,7 @@ struct Complex
 
 			} 
 
-		StructFieldNode(c_parent_idx=22, c_current_idx=37, node_state=4, field_type='nested', field_name='')
+		StructFieldNode(c_parent_idx=22, c_current_idx=37, node_state=4 (COMPLETED), field_type='nested', field_name='')
 		nested ; 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=38, n_tokens=2)
 		 
@@ -119,17 +119,17 @@ struct Complex
 ; 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=39)
 // Anonymous struct in typedef 
-TypedefNode(c_parent_idx=0, c_current_idx=40, c_child_idxs=(41), node_state=4, type='Flags')
+TypedefNode(c_parent_idx=0, c_current_idx=40, c_child_idxs=(41), node_state=4 (COMPLETED), type='Flags')
 typedef 
-StructNode(c_parent_idx=40, c_current_idx=41, c_child_idxs=(42), node_state=1)
+StructNode(c_parent_idx=40, c_current_idx=41, c_child_idxs=(42), node_state=1 (COLLECTING_TOKENS))
 struct  
  
-	ScopeNode(c_parent_idx=41, c_current_idx=42, c_child_idxs=(43, 44, 45), node_state=4, parent_type='StructNode')
+	ScopeNode(c_parent_idx=41, c_current_idx=42, c_child_idxs=(43, 44, 45), node_state=4 (COMPLETED), parent_type='StructNode')
 	{ 
 			WhitespaceNode(c_parent_idx=42, c_current_idx=43, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=42, c_current_idx=44, node_state=4, field_type='unsigned', field_name='flags')
+		StructFieldNode(c_parent_idx=42, c_current_idx=44, node_state=4 (COMPLETED), field_type='unsigned', field_name='flags')
 		unsigned char flags ; 
 		WhitespaceNode(c_parent_idx=42, c_current_idx=45, n_tokens=2)
 		 
@@ -144,25 +144,25 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=46, n_tokens=2)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=47)
 // Struct with bit fields 
-StructNode(c_parent_idx=0, c_current_idx=48, c_child_idxs=(49), node_state=1, name='BitFields')
+StructNode(c_parent_idx=0, c_current_idx=48, c_child_idxs=(49), node_state=1 (COLLECTING_TOKENS), name='BitFields')
 struct BitFields  
    
-	ScopeNode(c_parent_idx=48, c_current_idx=49, c_child_idxs=(50, 51, 52, 53, 54, ...) len=7, node_state=4, parent_type='StructNode')
+	ScopeNode(c_parent_idx=48, c_current_idx=49, c_child_idxs=(50, 51, 52, 53, 54, ...) len=7, node_state=4 (COMPLETED), parent_type='StructNode')
 	{ 
 			WhitespaceNode(c_parent_idx=49, c_current_idx=50, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=49, c_current_idx=51, node_state=4, field_type='unsigned', field_name='a', bit_width='1')
+		StructFieldNode(c_parent_idx=49, c_current_idx=51, node_state=4 (COMPLETED), field_type='unsigned', field_name='a', bit_width='1')
 		unsigned int a : 1 ; 
 		WhitespaceNode(c_parent_idx=49, c_current_idx=52, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=49, c_current_idx=53, node_state=4, field_type='unsigned', field_name='b', bit_width='2')
+		StructFieldNode(c_parent_idx=49, c_current_idx=53, node_state=4 (COMPLETED), field_type='unsigned', field_name='b', bit_width='2')
 		unsigned int b : 2 ; 
 		WhitespaceNode(c_parent_idx=49, c_current_idx=54, n_tokens=5)
 		 
 		    
-		StructFieldNode(c_parent_idx=49, c_current_idx=55, node_state=4, field_type='unsigned', field_name='c', bit_width='3')
+		StructFieldNode(c_parent_idx=49, c_current_idx=55, node_state=4 (COMPLETED), field_type='unsigned', field_name='c', bit_width='3')
 		unsigned int c : 3 ; 
 		WhitespaceNode(c_parent_idx=49, c_current_idx=56, n_tokens=2)
 		 

@@ -347,11 +347,13 @@ fn get_current_node(
     )
 
     if token_flow == TokenFlow.CREATE_CHILD:
+        node.process(c_node, TokenFlow.CREATE_CHILD, module_interface)
         return _create_child(
             c_node, current_idx, module_interface, logger, recursion_depth + 1
         )
 
     elif token_flow == TokenFlow.PASS_TO_PARENT:
+        node.process(c_node, TokenFlow.PASS_TO_PARENT, module_interface)
         return get_current_node(
             c_node,
             node.indicies().mojo_parent_idx,
@@ -361,7 +363,8 @@ fn get_current_node(
         )
 
     elif token_flow == TokenFlow.CONSUME_TOKEN:
-        return _consume_token(c_node, current_idx, module_interface, logger)
+        node.process(c_node, TokenFlow.CONSUME_TOKEN, module_interface)
+        return current_idx
     else:
         raise Error(
             "get_current_node called on AstNode that could not determine token"

@@ -24,6 +24,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string_just_code,
 )
 from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
+from c_binder_mojo.mojo_ast_nodes import MacroDefineValueNode, AstNodeVariant
 
 
 @value
@@ -85,14 +86,39 @@ struct MacroDefineNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        pass
-        # if token_flow == TokenFlow.PASS_TO_PARENT:
-        #     # There was ever a child node. If not, a true boolean flag.
-        #     if len(self._indicies[].mojo_child_idxs) == 0:
-        #         node = AstNode(self)
-        #         module_interface.insert_node(
-        #             AstNode(self)
-        #         )
+        if token_flow == TokenFlow.PASS_TO_PARENT:
+            # There was ever a child node. If not, a true boolean flag.
+            if len(self._indicies[].mojo_child_idxs) == 0:
+                print('{assong node }')
+                bundles = TokenBundles()
+                bundles.append(
+                    TokenBundle.from_other(":", self._token_bundles[][-1])
+                )
+                bundles.append(
+                    TokenBundle.from_other("Bool", self._token_bundles[][-1])
+                )
+                bundles.append(
+                    TokenBundle.from_other("=", self._token_bundles[][-1])
+                )
+                bundles.append(
+                    TokenBundle.from_other("True", self._token_bundles[][-1])
+                )
+                node_var = AstNodeVariant(
+                    MacroDefineValueNode(
+                        NodeIndices(
+                            c_parent_idx=self._indicies[].c_parent_idx,
+                            c_current_idx=self._indicies[].c_current_idx,
+                            c_child_idxs=self._indicies[].c_child_idxs,
+                            mojo_parent_idx=self._indicies[].mojo_parent_idx,
+                            mojo_current_idx=self._indicies[].mojo_current_idx,
+                            mojo_child_idxs=self._indicies[].mojo_child_idxs,
+                        ),
+                        bundles
+                    )
+                )
+                node = AstNode(node_var)
+                idx = module_interface.insert_node(node)
+                self._indicies[].mojo_child_idxs.append(idx)
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

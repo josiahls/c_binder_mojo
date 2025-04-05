@@ -1,6 +1,6 @@
 # Empty defines  ( no value )  
-alias EMPTY_DEFINE_1 
-alias EMPTY_DEFINE_2 
+alias EMPTY_DEFINE_1 : Bool = True 
+alias EMPTY_DEFINE_2 : Bool = True 
  
 # Simple value defines 
 alias SIMPLE_INT = 42 

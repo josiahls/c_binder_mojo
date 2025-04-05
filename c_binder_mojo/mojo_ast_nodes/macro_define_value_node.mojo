@@ -40,6 +40,12 @@ struct MacroDefineValueNode(NodeAstLike):
         self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
 
+    fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles):
+        self._indicies = indicies
+        self._token_bundles = token_bundles
+        self._c_token_bundles = TokenBundles()
+        self._node_state = NodeState.INITIALIZING
+
     @staticmethod
     fn accept(
         c_node: C_AstNode,

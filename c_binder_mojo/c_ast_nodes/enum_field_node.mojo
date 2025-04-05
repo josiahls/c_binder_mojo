@@ -141,6 +141,10 @@ struct EnumFieldNode(NodeAstLike):
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 
+        if token.token.startswith("//"):
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.PASS_TO_PARENT
+
         if self._node_state == NodeState.INITIALIZING:
             self._node_state = NodeState.COLLECTING_TOKENS
 

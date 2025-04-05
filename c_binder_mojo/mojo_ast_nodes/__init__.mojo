@@ -6,7 +6,9 @@ from .multi_line_comment_node import MultiLineCommentNode
 from .whitespace_node import WhitespaceNode
 from .macro_define_node import MacroDefineNode
 from .macro_define_value_node import MacroDefineValueNode
-
+from .enum_node import EnumNode
+from .scope_node import ScopeNode
+from .enum_field_node import EnumFieldNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -14,9 +16,12 @@ alias AstNodeVariant = Variant[
     RootNode,
     SingleLineCommentNode,
     MultiLineCommentNode,
+    ScopeNode,
     WhitespaceNode,
     MacroDefineNode,
     MacroDefineValueNode,
+    EnumNode,
+    EnumFieldNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]
 

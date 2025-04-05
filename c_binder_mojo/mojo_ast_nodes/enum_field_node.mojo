@@ -26,15 +26,17 @@ from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
 
 @value
-struct PlaceHolderNode(NodeAstLike):
-    alias __name__ = "PlaceHolderNode"
+struct EnumFieldNode(NodeAstLike):
+    alias __name__ = "EnumFieldNode"
     var _indicies: ArcPointer[NodeIndices]
+    var _c_token_bundles: ArcPointer[TokenBundles]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
-        self._token_bundles = c_node.token_bundles()
+        self._c_token_bundles = c_node.token_bundles()
+        self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
 
     @staticmethod
@@ -43,7 +45,7 @@ struct PlaceHolderNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return True
+        return c_node.name() == "EnumFieldNode"
 
     @staticmethod
     fn create(
@@ -56,7 +58,10 @@ struct PlaceHolderNode(NodeAstLike):
     fn determine_token_flow(
         mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        return TokenFlow.PASS_TO_PARENT
+        if c_node.indicies().c_current_idx in self._indicies[].c_child_idxs:
+            return TokenFlow.CREATE_CHILD
+        else:
+            return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
@@ -64,7 +69,33 @@ struct PlaceHolderNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._node_state = NodeState.COMPLETED
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
+            return
+
+        if token_flow == TokenFlow.PASS_TO_PARENT:
+            self._node_state = NodeState.COMPLETED
+            self._format_enum_field_tokens()
+
+    fn _format_enum_field_tokens(mut self):
+        line_num = self._c_token_bundles[][-1].row_num
+        self._token_bundles[].append(
+            TokenBundle.from_other(
+                'alias',
+                self._c_token_bundles[][-1],
+            )
+        )
+        for token in self._c_token_bundles[]:
+            if token[].token == "":
+                pass
+            elif token[].token == ",":
+                pass
+            elif token[].token == "\n":
+                pass
+            else:
+                self._token_bundles[].append(token[])
+        for token in self._token_bundles[]:
+            token[].row_num = line_num
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

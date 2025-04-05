@@ -78,7 +78,8 @@ enum Flags
 	  
 	// Write permission 
 	    
-	EXECUTE = 0x04   // Execute permission 
+	EXECUTE = 0x04   
+	// Execute permission 
 	 
 } 
 ; 

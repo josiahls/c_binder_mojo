@@ -23,19 +23,25 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string_just_code,
 )
 from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
+from c_binder_mojo.c_ast_nodes.enum_node import EnumNode as C_EnumNode
 
 
 @value
-struct PlaceHolderNode(NodeAstLike):
-    alias __name__ = "PlaceHolderNode"
+struct EnumNode(NodeAstLike):
+    alias __name__ = "EnumNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
+    var _c_token_bundles: ArcPointer[TokenBundles]
+
     var _node_state: MessageableEnum
+    var _enum_name: String
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
-        self._token_bundles = c_node.token_bundles()
+        self._c_token_bundles = c_node.token_bundles()
+        self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
+        self._enum_name = c_node.node[][C_EnumNode]._enum_name
 
     @staticmethod
     fn accept(
@@ -43,7 +49,7 @@ struct PlaceHolderNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return True
+        return c_node.name() == "EnumNode"
 
     @staticmethod
     fn create(
@@ -56,7 +62,21 @@ struct PlaceHolderNode(NodeAstLike):
     fn determine_token_flow(
         mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        return TokenFlow.PASS_TO_PARENT
+
+        if c_node.indicies().c_current_idx in self._indicies[].c_child_idxs:
+            return TokenFlow.CREATE_CHILD
+        else:
+            return TokenFlow.PASS_TO_PARENT
+
+    fn _format_enum_tokens(mut self):
+        for token in self._c_token_bundles[]:
+            if token[].token == "enum":
+                self._token_bundles[].append(TokenBundle.from_other('struct', token[]))
+            # elif token[].token == "":
+            #     pass
+            else:
+                self._token_bundles[].append(token[])
+        self._token_bundles[].append(TokenBundle.from_other(':', self._c_token_bundles[][-1]))
 
     fn process(
         mut self,
@@ -64,7 +84,15 @@ struct PlaceHolderNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._node_state = NodeState.COMPLETED
+
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
+            return
+
+        if token_flow == TokenFlow.PASS_TO_PARENT:
+            self._node_state = NodeState.COMPLETED
+            self._format_enum_tokens()
+            return
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -90,7 +118,7 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ")"
+            return self.__name__ + "(" + String(self._indicies[]) + ", enum_name=" + self._enum_name + ")"
         else:
             return self.__name__
 

@@ -58,7 +58,7 @@ enum Direction
 		// 2 
 		WhitespaceNode(c_parent_idx=12, c_current_idx=25, n_tokens=4)
 		    
-		EnumFieldNode(c_parent_idx=12, c_current_idx=26, node_state=1 (COLLECTING_TOKENS), field_name='WEST')
+		EnumFieldNode(c_parent_idx=12, c_current_idx=26, node_state=4 (COMPLETED), field_name='WEST')
 		WEST    
 		SingleLineCommentNode(c_parent_idx=12, c_current_idx=27)
 		// 3 
@@ -100,7 +100,7 @@ enum Status
 		// 501 
 		WhitespaceNode(c_parent_idx=31, c_current_idx=42, n_tokens=4)
 		    
-		EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=1 (COLLECTING_TOKENS), field_name='TIMEOUT')
+		EnumFieldNode(c_parent_idx=31, c_current_idx=43, node_state=4 (COMPLETED), field_name='TIMEOUT')
 		TIMEOUT      
 		SingleLineCommentNode(c_parent_idx=31, c_current_idx=44)
 		// 502 
@@ -127,7 +127,7 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
 // Enum with hex values and comments 
 EnumNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=4 (COMPLETED), name='Flags')
 enum Flags  
-	ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, ...) len=10, node_state=4 (COMPLETED), parent_type='EnumNode')
+	ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57, ...) len=12, node_state=4 (COMPLETED), parent_type='EnumNode')
 	{ 
 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=5)
 		 
@@ -148,38 +148,41 @@ enum Flags
 		// Write permission 
 		WhitespaceNode(c_parent_idx=52, c_current_idx=61, n_tokens=4)
 		    
-		EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=4 (COMPLETED), field_name='EXECUTE', value='0x04//Executepermission')
-		EXECUTE = 0x04   // Execute permission 
+		EnumFieldNode(c_parent_idx=52, c_current_idx=62, node_state=4 (COMPLETED), field_name='EXECUTE', value='0x04')
+		EXECUTE = 0x04   
+		SingleLineCommentNode(c_parent_idx=52, c_current_idx=63)
+		// Execute permission 
+		WhitespaceNode(c_parent_idx=52, c_current_idx=64, n_tokens=1)
 		 
 
 	} 
 
 ; 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=63)
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=65)
 // Enum with byte values 
-EnumNode(c_parent_idx=0, c_current_idx=64, c_child_idxs=(65), node_state=4 (COMPLETED), name='ByteValues')
+EnumNode(c_parent_idx=0, c_current_idx=66, c_child_idxs=(67), node_state=4 (COMPLETED), name='ByteValues')
 enum ByteValues  
-	ScopeNode(c_parent_idx=64, c_current_idx=65, c_child_idxs=(66, 67, 68, 69, 70, ...) len=8, node_state=4 (COMPLETED), parent_type='EnumNode')
+	ScopeNode(c_parent_idx=66, c_current_idx=67, c_child_idxs=(68, 69, 70, 71, 72, ...) len=8, node_state=4 (COMPLETED), parent_type='EnumNode')
 	{ 
-			WhitespaceNode(c_parent_idx=65, c_current_idx=66, n_tokens=5)
+			WhitespaceNode(c_parent_idx=67, c_current_idx=68, n_tokens=5)
 		 
 		    
-		EnumFieldNode(c_parent_idx=65, c_current_idx=67, node_state=4 (COMPLETED), field_name='BYTE_0', value='0<<0')
+		EnumFieldNode(c_parent_idx=67, c_current_idx=69, node_state=4 (COMPLETED), field_name='BYTE_0', value='0<<0')
 		BYTE_0 = 0 << 0 , 
-		WhitespaceNode(c_parent_idx=65, c_current_idx=68, n_tokens=5)
+		WhitespaceNode(c_parent_idx=67, c_current_idx=70, n_tokens=5)
 		 
 		    
-		EnumFieldNode(c_parent_idx=65, c_current_idx=69, node_state=4 (COMPLETED), field_name='BYTE_1', value='0<<1')
+		EnumFieldNode(c_parent_idx=67, c_current_idx=71, node_state=4 (COMPLETED), field_name='BYTE_1', value='0<<1')
 		BYTE_1 = 0 << 1 , 
-		WhitespaceNode(c_parent_idx=65, c_current_idx=70, n_tokens=5)
+		WhitespaceNode(c_parent_idx=67, c_current_idx=72, n_tokens=5)
 		 
 		    
-		EnumFieldNode(c_parent_idx=65, c_current_idx=71, node_state=4 (COMPLETED), field_name='BYTE_2', value='0<<2')
+		EnumFieldNode(c_parent_idx=67, c_current_idx=73, node_state=4 (COMPLETED), field_name='BYTE_2', value='0<<2')
 		BYTE_2 = 0 << 2 , 
-		WhitespaceNode(c_parent_idx=65, c_current_idx=72, n_tokens=5)
+		WhitespaceNode(c_parent_idx=67, c_current_idx=74, n_tokens=5)
 		 
 		    
-		EnumFieldNode(c_parent_idx=65, c_current_idx=73, node_state=4 (COMPLETED), field_name='BYTE_3', value='0<<3')
+		EnumFieldNode(c_parent_idx=67, c_current_idx=75, node_state=4 (COMPLETED), field_name='BYTE_3', value='0<<3')
 		BYTE_3 = 0 << 3 
 		 
 

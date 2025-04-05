@@ -35,6 +35,7 @@ struct EnumNode(NodeAstLike):
 
     var _node_state: MessageableEnum
     var _enum_name: String
+    var _current_enum_value: Int
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
@@ -42,6 +43,13 @@ struct EnumNode(NodeAstLike):
         self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
         self._enum_name = c_node.node[][C_EnumNode]._enum_name
+        self._current_enum_value = -100
+
+    fn set_current_enum_value(mut self, value: Int):
+        self._current_enum_value = value
+
+    fn current_enum_value(self) -> Int:
+        return self._current_enum_value
 
     @staticmethod
     fn accept(
@@ -69,14 +77,18 @@ struct EnumNode(NodeAstLike):
             return TokenFlow.PASS_TO_PARENT
 
     fn _format_enum_tokens(mut self):
+        row_num = self._c_token_bundles[][-1].row_num
         for token in self._c_token_bundles[]:
             if token[].token == "enum":
-                self._token_bundles[].append(TokenBundle.from_other('struct', token[]))
+                self._token_bundles[].append(TokenBundle('struct', row_num, 0))
             # elif token[].token == "":
             #     pass
             else:
                 self._token_bundles[].append(token[])
-        self._token_bundles[].append(TokenBundle.from_other(':', self._c_token_bundles[][-1]))
+        self._token_bundles[].append(TokenBundle(':', row_num, 0))
+        if self._current_enum_value == -100:
+            # Tells me that no actual fields were added to this enum
+            self._token_bundles[].append(TokenBundle('pass', row_num, 0))
 
     fn process(
         mut self,

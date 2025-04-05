@@ -341,7 +341,6 @@ fn get_current_node(
         # prev_state,
         recursion_depth=recursion_depth,
     )
-
     if token_flow == TokenFlow.CREATE_CHILD:
         node.process(c_node, TokenFlow.CREATE_CHILD, module_interface)
         return _create_child(
@@ -349,12 +348,7 @@ fn get_current_node(
         )
 
     elif token_flow == TokenFlow.PASS_TO_PARENT:
-        # print('{pass to parent}')
-        # print('len total nodes pre: ' + String(len(module_interface.nodes()[])))
         node.process(c_node, TokenFlow.PASS_TO_PARENT, module_interface)
-        # print('len total nodes post: ' + String(len(module_interface.nodes()[])))
-        # print('len of child idxs: ' + String(len(node.indicies().mojo_child_idxs)))
-        # print('{pass to parent 2}')
         return get_current_node(
             c_node,
             node.indicies().mojo_parent_idx,

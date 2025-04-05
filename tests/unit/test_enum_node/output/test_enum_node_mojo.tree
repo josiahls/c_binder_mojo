@@ -58,11 +58,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, mojo_parent_idx=4, mojo_current_idx=6)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, mojo_parent_idx=4, mojo_current_idx=6, RED)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, mojo_parent_idx=4, mojo_current_idx=6)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=3, c_current_idx=5, mojo_parent_idx=4, mojo_current_idx=6, RED)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 3 complete
@@ -82,11 +82,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 5 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, mojo_parent_idx=4, mojo_current_idx=8)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, mojo_parent_idx=4, mojo_current_idx=8, GREEN)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 5 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, mojo_parent_idx=4, mojo_current_idx=8)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=3, c_current_idx=7, mojo_parent_idx=4, mojo_current_idx=8, GREEN)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 5 complete
@@ -106,11 +106,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 7 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, mojo_parent_idx=4, mojo_current_idx=10)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, mojo_parent_idx=4, mojo_current_idx=10, BLUE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 7 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, mojo_parent_idx=4, mojo_current_idx=10)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=3, c_current_idx=9, mojo_parent_idx=4, mojo_current_idx=10, BLUE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 4 active, 7 complete
@@ -166,11 +166,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 12 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=14, mojo_parent_idx=13, mojo_current_idx=15)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=14, mojo_parent_idx=13, mojo_current_idx=15, NORTH)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 12 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=14, mojo_parent_idx=13, mojo_current_idx=15)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=14, mojo_parent_idx=13, mojo_current_idx=15, NORTH)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 12 complete
@@ -214,11 +214,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 16 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=18, mojo_parent_idx=13, mojo_current_idx=19)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=18, mojo_parent_idx=13, mojo_current_idx=19, SOUTH)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 16 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=18, mojo_parent_idx=13, mojo_current_idx=19)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=18, mojo_parent_idx=13, mojo_current_idx=19, SOUTH)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 16 complete
@@ -262,11 +262,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 20 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=22, mojo_parent_idx=13, mojo_current_idx=23)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=22, mojo_parent_idx=13, mojo_current_idx=23, EAST)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 20 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=22, mojo_parent_idx=13, mojo_current_idx=23)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=22, mojo_parent_idx=13, mojo_current_idx=23, EAST)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 20 complete
@@ -310,11 +310,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 24 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, mojo_parent_idx=13, mojo_current_idx=27)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, mojo_parent_idx=13, mojo_current_idx=27, WEST)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 24 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, mojo_parent_idx=13, mojo_current_idx=27)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=12, c_current_idx=26, mojo_parent_idx=13, mojo_current_idx=27, WEST)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 4 active, 24 complete
@@ -394,11 +394,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, mojo_parent_idx=32, mojo_current_idx=34)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, mojo_parent_idx=32, mojo_current_idx=34, OK)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, mojo_parent_idx=32, mojo_current_idx=34)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=33, mojo_parent_idx=32, mojo_current_idx=34, OK)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 31 complete
@@ -418,11 +418,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 33 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, mojo_parent_idx=32, mojo_current_idx=36)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, mojo_parent_idx=32, mojo_current_idx=36, NOT_FOUND)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 33 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, mojo_parent_idx=32, mojo_current_idx=36)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=35, mojo_parent_idx=32, mojo_current_idx=36, NOT_FOUND)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 33 complete
@@ -442,11 +442,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, mojo_parent_idx=32, mojo_current_idx=38)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, mojo_parent_idx=32, mojo_current_idx=38, SERVER_ERROR)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, mojo_parent_idx=32, mojo_current_idx=38)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=37, mojo_parent_idx=32, mojo_current_idx=38, SERVER_ERROR)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 35 complete
@@ -466,11 +466,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 37 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=39, mojo_parent_idx=32, mojo_current_idx=40)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=39, mojo_parent_idx=32, mojo_current_idx=40, UNAVAILABLE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 37 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=39, mojo_parent_idx=32, mojo_current_idx=40)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=39, mojo_parent_idx=32, mojo_current_idx=40, UNAVAILABLE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 37 complete
@@ -514,11 +514,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 41 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, mojo_parent_idx=32, mojo_current_idx=44)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, mojo_parent_idx=32, mojo_current_idx=44, TIMEOUT)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 41 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, mojo_parent_idx=32, mojo_current_idx=44)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=31, c_current_idx=43, mojo_parent_idx=32, mojo_current_idx=44, TIMEOUT)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 4 active, 41 complete
@@ -646,11 +646,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 52 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, mojo_parent_idx=53, mojo_current_idx=55)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, mojo_parent_idx=53, mojo_current_idx=55, READ)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 52 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, mojo_parent_idx=53, mojo_current_idx=55)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=52, c_current_idx=54, mojo_parent_idx=53, mojo_current_idx=55, READ)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 52 complete
@@ -694,11 +694,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, mojo_parent_idx=53, mojo_current_idx=59)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, mojo_parent_idx=53, mojo_current_idx=59, WRITE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, mojo_parent_idx=53, mojo_current_idx=59)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=52, c_current_idx=58, mojo_parent_idx=53, mojo_current_idx=59, WRITE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 56 complete
@@ -742,11 +742,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 60 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, mojo_parent_idx=53, mojo_current_idx=63)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, mojo_parent_idx=53, mojo_current_idx=63, EXECUTE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 60 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, mojo_parent_idx=53, mojo_current_idx=63)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=52, c_current_idx=62, mojo_parent_idx=53, mojo_current_idx=63, EXECUTE)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 4 active, 60 complete
@@ -826,11 +826,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 67 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=69, mojo_parent_idx=68, mojo_current_idx=70)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=69, mojo_parent_idx=68, mojo_current_idx=70, BYTE_0)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 67 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=67, c_current_idx=69, mojo_parent_idx=68, mojo_current_idx=70)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=67, c_current_idx=69, mojo_parent_idx=68, mojo_current_idx=70, BYTE_0)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 67 complete
@@ -850,11 +850,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 69 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=71, mojo_parent_idx=68, mojo_current_idx=72)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=71, mojo_parent_idx=68, mojo_current_idx=72, BYTE_1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 69 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=67, c_current_idx=71, mojo_parent_idx=68, mojo_current_idx=72)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=67, c_current_idx=71, mojo_parent_idx=68, mojo_current_idx=72, BYTE_1)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 69 complete
@@ -874,11 +874,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 71 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=73, mojo_parent_idx=68, mojo_current_idx=74)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=73, mojo_parent_idx=68, mojo_current_idx=74, BYTE_2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 71 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=67, c_current_idx=73, mojo_parent_idx=68, mojo_current_idx=74)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=67, c_current_idx=73, mojo_parent_idx=68, mojo_current_idx=74, BYTE_2)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 71 complete
@@ -898,7 +898,7 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 73 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=75, mojo_parent_idx=68, mojo_current_idx=76)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			EnumFieldNode(c_parent_idx=67, c_current_idx=75, mojo_parent_idx=68, mojo_current_idx=76, BYTE_3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 73 complete

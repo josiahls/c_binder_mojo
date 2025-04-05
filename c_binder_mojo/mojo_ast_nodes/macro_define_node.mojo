@@ -34,13 +34,14 @@ struct MacroDefineNode(NodeAstLike):
     var _c_token_bundles: ArcPointer[TokenBundles]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
+    var _is_function_like: Bool
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
         self._c_token_bundles = c_node.token_bundles()
         self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
-        self.format_token_bundles()
+        self._is_function_like = False
 
     fn format_token_bundles(self):
         for token_bundle in self._c_token_bundles[]:
@@ -88,20 +89,30 @@ struct MacroDefineNode(NodeAstLike):
     ):
         if token_flow == TokenFlow.PASS_TO_PARENT:
             # There was ever a child node. If not, a true boolean flag.
-            if len(self._indicies[].mojo_child_idxs) == 0:
+            if len(self._indicies[].mojo_child_idxs) != 0:
+                for child_idx in self._indicies[].mojo_child_idxs:
+                    child_node = module_interface.nodes()[][child_idx[]]
+                    print('checking child node {child_node}')
+                    if child_node.node[].isa[MacroDefineValueNode]():
+                        self._is_function_like = child_node.node[][MacroDefineValueNode]._is_function_like
+                        if self._is_function_like:
+                            self._token_bundles[].append(
+                                TokenBundle.from_other("# Function macros are not supported\n#", self._c_token_bundles[][-1])
+                            )
+            elif len(self._indicies[].mojo_child_idxs) == 0:
                 print('{assong node }')
                 bundles = TokenBundles()
                 bundles.append(
-                    TokenBundle.from_other(":", self._token_bundles[][-1])
+                    TokenBundle.from_other(":", self._c_token_bundles[][-1])
                 )
                 bundles.append(
-                    TokenBundle.from_other("Bool", self._token_bundles[][-1])
+                    TokenBundle.from_other("Bool", self._c_token_bundles[][-1])
                 )
                 bundles.append(
-                    TokenBundle.from_other("=", self._token_bundles[][-1])
+                    TokenBundle.from_other("=", self._c_token_bundles[][-1])
                 )
                 bundles.append(
-                    TokenBundle.from_other("True", self._token_bundles[][-1])
+                    TokenBundle.from_other("True", self._c_token_bundles[][-1])
                 )
                 node_var = AstNodeVariant(
                     MacroDefineValueNode(
@@ -119,6 +130,9 @@ struct MacroDefineNode(NodeAstLike):
                 node = AstNode(node_var)
                 idx = module_interface.insert_node(node)
                 self._indicies[].mojo_child_idxs.append(idx)
+            
+            print('formatting token bundles')
+            self.format_token_bundles()
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

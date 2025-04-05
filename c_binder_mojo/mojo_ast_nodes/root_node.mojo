@@ -31,11 +31,13 @@ struct RootNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
+    var _add_main_function: Bool
 
-    fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles):
+    fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles, add_main_function: Bool = False):
         self._indicies = indicies
         self._token_bundles = token_bundles
         self._node_state = NodeState.INITIALIZING
+        self._add_main_function = add_main_function
 
     @staticmethod
     fn accept(
@@ -98,7 +100,10 @@ struct RootNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) raises -> String:
         if just_code:
-            return string_children(AstNode(self), just_code, module_interface)
+            s = string_children(AstNode(self), just_code, module_interface)
+            if self._add_main_function:
+                s += "\nfn main():\n    pass"
+            return s
 
         s = self.name(include_sig=True) + "\n"
         s += string_children(AstNode(self), just_code, module_interface)

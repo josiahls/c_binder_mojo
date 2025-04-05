@@ -8,12 +8,16 @@ alias SIMPLE_FLOAT = 3.14
 alias SIMPLE_STRING = "hello" 
  
 # Function-like macros 
-alias ADD = ( x ,  y )   (  ( x )  +  ( y )  )  
-alias MAX = ( a ,  b )   (  ( a )  >  ( b )  ?  ( a )  :  ( b )  )  
-alias PRINT_DEBUG = ( msg ,  ... )  printf ( "[DEBUG] " msg "\n" ,  ##__VA_ARGS__ )  
+# Function macros are not supported
+# alias ADD = ( x ,  y )   (  ( x )  +  ( y )  )  
+# Function macros are not supported
+# alias MAX = ( a ,  b )   (  ( a )  >  ( b )  ?  ( a )  :  ( b )  )  
+# Function macros are not supported
+# alias PRINT_DEBUG = ( msg ,  ... )  printf ( "[DEBUG] " msg "\n" ,  ##__VA_ARGS__ )  
  
 # Complex defines with expressions 
 alias BUFFER_SIZE = ( 1024 * 2 )  
  
 # Define with line continuation 
-alias MULTILINE_STRING 
+fn main():
+    pass

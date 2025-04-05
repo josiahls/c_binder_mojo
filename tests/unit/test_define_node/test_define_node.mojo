@@ -12,7 +12,7 @@ from c_binder_mojo.common import Tokenizer
 from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
 from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
-
+from c_binder_mojo.mojo_ast_nodes.root_node import RootNode
 
 fn test_define_node() raises:
     """Test the parsing and AST construction for #define nodes."""
@@ -62,6 +62,7 @@ fn test_define_node() raises:
     # Generate Mojo AST
     var mojo_tree_log_file = output_dir / "test_define_node_mojo.tree"
     var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
+    mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
 
     # Save Mojo AST for debugging
     var mojo_ast_file_just_code = output_dir / "test_define_node.mojo"

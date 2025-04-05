@@ -33,19 +33,20 @@ struct MacroDefineValueNode(NodeAstLike):
     var _token_bundles: ArcPointer[TokenBundles]
     var _c_token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
+    var _is_function_like: Bool
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
         self._c_token_bundles = c_node.token_bundles()
         self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
-
+        self._is_function_like = False
     fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles):
         self._indicies = indicies
         self._token_bundles = token_bundles
         self._c_token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
-
+        self._is_function_like = False
     @staticmethod
     fn accept(
         c_node: C_AstNode,
@@ -76,8 +77,19 @@ struct MacroDefineValueNode(NodeAstLike):
         self.format_token_bundles()
         self._node_state = NodeState.COMPLETED
 
-    fn format_token_bundles(self):
+    fn format_token_bundles(mut self):
         var is_first = True
+        n_open_parens = 0
+        for token_bundle in self._c_token_bundles[]:
+            token = token_bundle[].token
+            if token == '(':
+                n_open_parens += 1
+            # We need to differientiate between tuples and functions. 
+            # function will have open parens twice, once for the args, and once for the body
+            if n_open_parens > 1:
+                self._is_function_like = True
+                break
+
         for token_bundle in self._c_token_bundles[]:
             token = token_bundle[].token
             if is_first:
@@ -88,7 +100,7 @@ struct MacroDefineValueNode(NodeAstLike):
 
             self._token_bundles[].append(
                 TokenBundle.from_other(token, token_bundle[])
-            )
+                )
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

@@ -48,3 +48,5 @@ x
    comment """ 
     
 # Whitespace at beginning and end of file  
+fn main():
+    pass

@@ -48,3 +48,5 @@ some_function
  
 """ Comment with trailing spaces    """ 
  
+fn main():
+    pass

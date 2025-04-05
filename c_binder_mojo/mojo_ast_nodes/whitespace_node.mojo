@@ -108,7 +108,7 @@ struct WhitespaceNode(NodeAstLike):
         mut self,
         c_node: C_AstNode,
         token_flow: MessageableEnum,
-        module_interface: ModuleInterface,
+        mut module_interface: ModuleInterface,
     ):
         """Process the token to update this node.
 

@@ -83,9 +83,16 @@ struct MacroDefineNode(NodeAstLike):
         mut self,
         c_node: C_AstNode,
         token_flow: MessageableEnum,
-        module_interface: ModuleInterface,
+        mut module_interface: ModuleInterface,
     ):
         pass
+        # if token_flow == TokenFlow.PASS_TO_PARENT:
+        #     # There was ever a child node. If not, a true boolean flag.
+        #     if len(self._indicies[].mojo_child_idxs) == 0:
+        #         node = AstNode(self)
+        #         module_interface.insert_node(
+        #             AstNode(self)
+        #         )
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

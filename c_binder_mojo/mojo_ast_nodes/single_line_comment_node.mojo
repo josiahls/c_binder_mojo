@@ -78,7 +78,7 @@ struct SingleLineCommentNode(NodeAstLike):
         mut self,
         c_node: C_AstNode,
         token_flow: MessageableEnum,
-        module_interface: ModuleInterface,
+        mut module_interface: ModuleInterface,
     ):
         self._node_state = NodeState.COMPLETED
 

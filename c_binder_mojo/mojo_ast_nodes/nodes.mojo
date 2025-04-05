@@ -195,7 +195,7 @@ trait NodeAstLike(CollectionElement, Stringable):
         mut self,
         c_node: C_AstNode,
         token_flow: MessageableEnum,
-        module_interface: ModuleInterface,
+        mut module_interface: ModuleInterface,
     ):
         ...
 
@@ -373,7 +373,7 @@ struct AstNode(CollectionElement):
         mut self,
         c_node: C_AstNode,
         token_flow: MessageableEnum,
-        module_interface: ModuleInterface,
+        mut module_interface: ModuleInterface,
     ):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):

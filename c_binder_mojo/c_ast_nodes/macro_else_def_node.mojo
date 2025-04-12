@@ -26,7 +26,7 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 
 
 @value
-struct MacroElIfDefNode(NodeAstLike):
+struct MacroElseDefNode(NodeAstLike):
     """Represents a #ifdef preprocessor directive in C/C++ code.
 
     This node handles the parsing and representation of the #ifndef directive,
@@ -38,7 +38,7 @@ struct MacroElIfDefNode(NodeAstLike):
     The second token is the macro name.
     """
 
-    alias __name__ = "MacroElIfDefNode"
+    alias __name__ = "MacroElseDefNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _token_bundles_tail: ArcPointer[TokenBundles]
@@ -47,11 +47,11 @@ struct MacroElIfDefNode(NodeAstLike):
     var _row_num: Int
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
-        """Initialize a MacroElIfDefNode.
+        """Initialize a MacroElseDefNode.
 
         Args:
             indicies: The indices for this node in the AST.
-            token_bundle: The initial #elif token.
+            token_bundle: The initial #else token.
         """
         self._indicies = indicies
         self._token_bundles = TokenBundles()
@@ -67,7 +67,7 @@ struct MacroElIfDefNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        """Check if the token is a #elif directive.
+        """Check if the token is a #else directive.
 
         Args:
             token: The token to check.
@@ -75,9 +75,9 @@ struct MacroElIfDefNode(NodeAstLike):
             indices: The indices for this node.
 
         Returns:
-            True if this token starts a #elif directive, False otherwise.
+            True if this token starts a #else directive, False otherwise.
         """
-        return token.token == CTokens.MACRO_ELIF
+        return token.token == CTokens.MACRO_ELSE
 
     @staticmethod
     fn create(
@@ -85,15 +85,15 @@ struct MacroElIfDefNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        """Create a new MacroElIfDefNode.
+        """Create a new MacroElseDefNode.
 
         Args:
-            token: The #elif token.
+            token: The #else token.
             module_interface: Interface to the AST.
             indices: The indices for this node.
 
         Returns:
-            A new MacroElIfDefNode instance.
+            A new MacroElseDefNode instance.
         """
         return Self(indices, token)
 
@@ -105,9 +105,6 @@ struct MacroElIfDefNode(NodeAstLike):
 
         if len(self._token_bundles[]) >= 1:
             if token.token == CTokens.MACRO_ELIF:
-                self._node_state = NodeState.COMPLETED
-                return TokenFlow.PASS_TO_PARENT
-            if token.token == CTokens.MACRO_ELSE:
                 self._node_state = NodeState.COMPLETED
                 return TokenFlow.PASS_TO_PARENT
             if token.token == CTokens.MACRO_ENDIF:

@@ -14,7 +14,7 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=5, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=6)
 // ifdef with else 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=7, c_child_idxs=(8, 9, 10, 11, 12, ...) len=15, node_state=4 (COMPLETED))
+MacroIfDefNode(c_parent_idx=0, c_current_idx=7, c_child_idxs=(8, 9, 10, 11, 12, ...) len=8, node_state=4 (COMPLETED))
 #ifdef WITH_ELSE 
 	WhitespaceNode(c_parent_idx=7, c_current_idx=8, n_tokens=4)
 	    
@@ -30,22 +30,23 @@ MacroIfDefNode(c_parent_idx=0, c_current_idx=7, c_child_idxs=(8, 9, 10, 11, 12, 
 	; 
 	WhitespaceNode(c_parent_idx=7, c_current_idx=14, n_tokens=1)
 	 
-	PlaceHolderNode(c_parent_idx=7, c_current_idx=15)
+	MacroElseDefNode(c_parent_idx=7, c_current_idx=15, c_child_idxs=(16, 17, 18, 19, 20, ...) len=7, node_state=4 (COMPLETED))
 	#else 
-	WhitespaceNode(c_parent_idx=7, c_current_idx=16, n_tokens=4)
-	    
-	PlaceHolderNode(c_parent_idx=7, c_current_idx=17)
-	int 
-	PlaceHolderNode(c_parent_idx=7, c_current_idx=18)
-	a 
-	PlaceHolderNode(c_parent_idx=7, c_current_idx=19)
-	= 
-	PlaceHolderNode(c_parent_idx=7, c_current_idx=20)
-	2 
-	PlaceHolderNode(c_parent_idx=7, c_current_idx=21)
-	; 
-	WhitespaceNode(c_parent_idx=7, c_current_idx=22, n_tokens=1)
-	 
+			WhitespaceNode(c_parent_idx=15, c_current_idx=16, n_tokens=4)
+		    
+		PlaceHolderNode(c_parent_idx=15, c_current_idx=17)
+		int 
+		PlaceHolderNode(c_parent_idx=15, c_current_idx=18)
+		a 
+		PlaceHolderNode(c_parent_idx=15, c_current_idx=19)
+		= 
+		PlaceHolderNode(c_parent_idx=15, c_current_idx=20)
+		2 
+		PlaceHolderNode(c_parent_idx=15, c_current_idx=21)
+		; 
+		WhitespaceNode(c_parent_idx=15, c_current_idx=22, n_tokens=1)
+		 
+
 
 #endif 
 WhitespaceNode(c_parent_idx=0, c_current_idx=23, n_tokens=1)
@@ -81,7 +82,7 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=35, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=36)
 // ifdef with elif chain 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38, 39, 41, 46, 47, 48), node_state=4 (COMPLETED))
+MacroIfDefNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38, 39, 41, 46), node_state=4 (COMPLETED))
 #ifdef _WIN32 
 	WhitespaceNode(c_parent_idx=37, c_current_idx=38, n_tokens=4)
 	    
@@ -90,7 +91,7 @@ MacroIfDefNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38, 39, 41, 46, 4
 			MacroDefineValueNode(c_parent_idx=39, c_current_idx=40, node_state=4 (COMPLETED), is_function_like=False)
 		"Windows" 
 
-	MacroElIfDefNode(c_parent_idx=37, c_current_idx=41, c_child_idxs=(42, 43, 44), node_state=3 (BUILDING_CHILDREN))
+	MacroElIfDefNode(c_parent_idx=37, c_current_idx=41, c_child_idxs=(42, 43, 44), node_state=4 (COMPLETED))
 	#elif 
 			FunctionCallNode(c_parent_idx=41, c_current_idx=42, function='defined' (builtin), args=['__APPLE__'])
 		defined ( __APPLE__ ) 
@@ -103,14 +104,15 @@ MacroIfDefNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38, 39, 41, 46, 4
 			"MacOS" 
 
 
-	PlaceHolderNode(c_parent_idx=37, c_current_idx=46)
+	MacroElseDefNode(c_parent_idx=37, c_current_idx=46, c_child_idxs=(47, 48), node_state=4 (COMPLETED))
 	#else 
-	WhitespaceNode(c_parent_idx=37, c_current_idx=47, n_tokens=4)
-	    
-	MacroDefineNode(c_parent_idx=37, c_current_idx=48, c_child_idxs=(49), node_state=4 (COMPLETED), macro='OS')
-	#define OS 
-			MacroDefineValueNode(c_parent_idx=48, c_current_idx=49, node_state=4 (COMPLETED), is_function_like=False)
-		"Linux" 
+			WhitespaceNode(c_parent_idx=46, c_current_idx=47, n_tokens=4)
+		    
+		MacroDefineNode(c_parent_idx=46, c_current_idx=48, c_child_idxs=(49), node_state=4 (COMPLETED), macro='OS')
+		#define OS 
+					MacroDefineValueNode(c_parent_idx=48, c_current_idx=49, node_state=4 (COMPLETED), is_function_like=False)
+			"Linux" 
+
 
 
 #endif 

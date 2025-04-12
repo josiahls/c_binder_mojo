@@ -172,4 +172,4 @@ struct MacroIfDefNode(NodeAstLike):
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:
-        return 1  # ifdef adds a level of scope 
+        return 0 if just_code else 1  # ifdef adds a level of scope 

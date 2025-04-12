@@ -12,14 +12,14 @@
 	1 
 	; 
 	 
-	#else 
-	    
-	int 
-	a 
-	= 
-	2 
-	; 
-	 
+	#else 	
+		    
+		int 
+		a 
+		= 
+		2 
+		; 
+		 
 #endif 
  
 // Nested ifdefs 
@@ -46,9 +46,9 @@
 		 
 		    
 		#define OS "MacOS" 
-	#else 
-	    
-	#define OS "Linux" 
+	#else 	
+		    
+		#define OS "Linux" 
 #endif 
  
 // ifdef with comments 

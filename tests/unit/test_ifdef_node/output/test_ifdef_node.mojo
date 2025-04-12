@@ -1,6 +1,6 @@
 # Basic ifdef test 
 #ifdef BASIC_DEFINE 
-	alias INSIDE_BASIC = 1 
+alias INSIDE_BASIC = 1 
  
 # ifdef with else 
 #ifdef WITH_ELSE 
@@ -48,7 +48,7 @@ alias OS = "Linux"
  
 # ifdef with comments 
 #ifdef COMMENTED 
-	""" Multi-line comment after ifdef """ 
+""" Multi-line comment after ifdef """ 
     
 # Single line comment inside 
     

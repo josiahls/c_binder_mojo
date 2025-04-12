@@ -4,9 +4,9 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_c
 # Basic ifdef test 
 MacroIfDefNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, c_child_idxs=(3), mojo_child_idxs=(4), node_state=4 (COMPLETED), macro='BASIC_DEFINE')
 #ifdef BASIC_DEFINE 
-	MacroDefineNode(c_parent_idx=2, c_current_idx=3, mojo_parent_idx=3, mojo_current_idx=4, c_child_idxs=(4), mojo_child_idxs=(5))
-	alias INSIDE_BASIC 
-	MacroDefineValueNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5)
+MacroDefineNode(c_parent_idx=2, c_current_idx=3, mojo_parent_idx=3, mojo_current_idx=4, c_child_idxs=(4), mojo_child_idxs=(5))
+alias INSIDE_BASIC 
+MacroDefineValueNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5)
 = 1 
 
 
@@ -14,7 +14,7 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7)
 # ifdef with else 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, c_child_idxs=(8, 9, 10, 11, 12, ...) len=15, mojo_child_idxs=(9), node_state=4 (COMPLETED), macro='WITH_ELSE')
+MacroIfDefNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, c_child_idxs=(8, 9, 10, 11, 12, ...) len=8, mojo_child_idxs=(9), node_state=4 (COMPLETED), macro='WITH_ELSE')
 #ifdef WITH_ELSE 
 WhitespaceNode(c_parent_idx=7, c_current_idx=8, mojo_parent_idx=8, mojo_current_idx=9, n_tokens=4)
     
@@ -31,21 +31,22 @@ PlaceHolderNode(c_parent_idx=7, c_current_idx=13, mojo_parent_idx=0, mojo_curren
 ; 
 WhitespaceNode(c_parent_idx=7, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15, n_tokens=1)
  
-PlaceHolderNode(c_parent_idx=7, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=7, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16, c_child_idxs=(16, 17, 18, 19, 20, ...) len=7, node_state=4 (COMPLETED))
 #else 
-WhitespaceNode(c_parent_idx=7, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=4)
+
+WhitespaceNode(c_parent_idx=15, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=4)
     
-PlaceHolderNode(c_parent_idx=7, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=15, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, node_state=4 (COMPLETED))
 int 
-PlaceHolderNode(c_parent_idx=7, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=15, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, node_state=4 (COMPLETED))
 a 
-PlaceHolderNode(c_parent_idx=7, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=15, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20, node_state=4 (COMPLETED))
 = 
-PlaceHolderNode(c_parent_idx=7, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=15, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21, node_state=4 (COMPLETED))
 2 
-PlaceHolderNode(c_parent_idx=7, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=15, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, node_state=4 (COMPLETED))
 ; 
-WhitespaceNode(c_parent_idx=7, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, n_tokens=1)
+WhitespaceNode(c_parent_idx=15, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, n_tokens=1)
  
 WhitespaceNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24, n_tokens=1)
  
@@ -78,7 +79,7 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=35, mojo_parent_idx=0, mojo_current
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37)
 # ifdef with elif chain 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=37, mojo_parent_idx=0, mojo_current_idx=38, c_child_idxs=(38, 39, 41, 46, 47, 48), mojo_child_idxs=(39), node_state=4 (COMPLETED), macro='_WIN32')
+MacroIfDefNode(c_parent_idx=0, c_current_idx=37, mojo_parent_idx=0, mojo_current_idx=38, c_child_idxs=(38, 39, 41, 46), mojo_child_idxs=(39), node_state=4 (COMPLETED), macro='_WIN32')
 #ifdef _WIN32 
 WhitespaceNode(c_parent_idx=37, c_current_idx=38, mojo_parent_idx=38, mojo_current_idx=39, n_tokens=4)
     
@@ -101,11 +102,12 @@ alias OS
 MacroDefineValueNode(c_parent_idx=44, c_current_idx=45, mojo_parent_idx=45, mojo_current_idx=46)
 = "MacOS" 
 
-PlaceHolderNode(c_parent_idx=37, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=47, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=37, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=47, c_child_idxs=(47, 48), node_state=4 (COMPLETED))
 #else 
-WhitespaceNode(c_parent_idx=37, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=48, n_tokens=4)
+
+WhitespaceNode(c_parent_idx=46, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=48, n_tokens=4)
     
-MacroDefineNode(c_parent_idx=37, c_current_idx=48, mojo_parent_idx=0, mojo_current_idx=49, c_child_idxs=(49), mojo_child_idxs=(50))
+MacroDefineNode(c_parent_idx=46, c_current_idx=48, mojo_parent_idx=0, mojo_current_idx=49, c_child_idxs=(49), mojo_child_idxs=(50))
 alias OS 
 MacroDefineValueNode(c_parent_idx=48, c_current_idx=49, mojo_parent_idx=49, mojo_current_idx=50)
 = "Linux" 
@@ -116,8 +118,8 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=51, mojo_parent_idx=0, mojo_
 # ifdef with comments 
 MacroIfDefNode(c_parent_idx=0, c_current_idx=52, mojo_parent_idx=0, mojo_current_idx=53, c_child_idxs=(53, 54, 55, 56, 57, ...) len=7, mojo_child_idxs=(54), node_state=4 (COMPLETED), macro='COMMENTED')
 #ifdef COMMENTED 
-	MultiLineCommentNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54)
-	""" Multi-line comment after ifdef """ 
+MultiLineCommentNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54)
+""" Multi-line comment after ifdef """ 
 
 WhitespaceNode(c_parent_idx=52, c_current_idx=54, mojo_parent_idx=0, mojo_current_idx=55, n_tokens=4)
     

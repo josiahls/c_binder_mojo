@@ -56,6 +56,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> MessageableEnum:
+        self._node_state = NodeState.COMPLETED
         return TokenFlow.PASS_TO_PARENT
 
     fn process(

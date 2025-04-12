@@ -16,6 +16,8 @@ from .enum_field_node import EnumFieldNode
 from .struct_field_node import StructFieldNode
 from .include_node import IncludeNode
 from .end_file_node import EndFileNode
+from .macro_elif_def_node import MacroElIfDefNode
+from .function_call_node import FunctionCallNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -25,8 +27,10 @@ alias AstNodeVariant = Variant[
     WhitespaceNode,
     SingleLineCommentNode,
     MultiLineCommentNode,
+    FunctionCallNode,
     MacroIfDefNode,
     MacroIfNDefNode,
+    MacroElIfDefNode,
     MacroDefineNode,
     MacroDefineValueNode,
     TypedefNode,

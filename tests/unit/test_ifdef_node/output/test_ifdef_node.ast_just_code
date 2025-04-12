@@ -41,14 +41,11 @@
 #ifdef _WIN32 
 	    
 	#define OS "Windows" 
-	#elif 
-	defined 
-	( 
-	__APPLE__ 
-	) 
-	 
-	    
-	#define OS "MacOS" 
+	#elif 	
+		defined ( __APPLE__ ) 
+		 
+		    
+		#define OS "MacOS" 
 	#else 
 	    
 	#define OS "Linux" 
@@ -85,23 +82,13 @@
 	#endif 
 #endif 
  
-// ifdef with complex expressions 
-#ifdef __cplusplus 
+// ifdef with multiple defines 
+#ifdef MULTIPLE_DEFINES 
 	    
-	extern 
-	"C" 
-	 
-	{ 	
-		 
-		#endif 
-		 
-		// ifdef with multiple defines 
-		#ifdef MULTIPLE_DEFINES 		
-			    
-			#define A 1 
-			    
-			#define B 2 
-			    
-			#define C 3 
-		#endif 
-		 
+	#define A 1 
+	    
+	#define B 2 
+	    
+	#define C 3 
+#endif 
+ 

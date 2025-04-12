@@ -101,6 +101,7 @@ struct CTokens:
     alias MACRO_IFNDEF = "#ifndef"
     alias MACRO_IFDEF = "#ifdef"
     alias MACRO_DEFINE = "#define"
+    alias MACRO_ELIF = "#elif"
     alias MACRO_ELSE = "#else"
     alias MACRO_ENDIF = "#endif"
     alias TYPE_DEF = "typedef"

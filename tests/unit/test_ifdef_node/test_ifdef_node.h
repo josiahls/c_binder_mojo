@@ -45,11 +45,6 @@
     #endif
 #endif
 
-// ifdef with complex expressions
-#ifdef __cplusplus
-    extern "C" {
-#endif
-
 // ifdef with multiple defines
 #ifdef MULTIPLE_DEFINES
     #define A 1

@@ -58,6 +58,9 @@ struct RootNode(NodeAstLike):
     fn determine_token_flow(
         mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
+        if c_node.name() == "EndFileNode":
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.END_FILE
         return TokenFlow.CREATE_CHILD
 
     fn process(

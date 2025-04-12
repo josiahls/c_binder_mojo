@@ -81,8 +81,6 @@ struct EnumNode(NodeAstLike):
         for token in self._c_token_bundles[]:
             if token[].token == "enum":
                 self._token_bundles[].append(TokenBundle('struct', row_num, 0))
-            # elif token[].token == "":
-            #     pass
             else:
                 self._token_bundles[].append(token[])
         self._token_bundles[].append(TokenBundle(':', row_num, 0))
@@ -137,7 +135,7 @@ struct EnumNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
     ) raises -> String:
-        if just_code:
+        if just_code: 
             return default_to_string_just_code(AstNode(self), module_interface)
         else:
             return default_to_string(AstNode(self), module_interface)

@@ -10,8 +10,8 @@ from c_binder_mojo.common import (
     TokenBundle,
     MessageableEnum,
     NodeIndices,
-    TokenFlow,
     TokenBundles,
+    TokenFlow,
     NodeState,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
@@ -20,21 +20,22 @@ from c_binder_mojo.c_ast_nodes.nodes import (
     NodeAstLike,
     default_scope_level,
     default_to_string,
-    string_children,
+    default_to_string_just_code,
 )
 
 
 @value
-struct RootNode(NodeAstLike):
-    alias __name__ = "RootNode"
+struct EndFileNode(NodeAstLike):
+    alias __name__ = "EndFileNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
 
-    fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles):
+    fn __init__(out self, indicies: NodeIndices, token: TokenBundle):
         self._indicies = indicies
-        self._token_bundles = token_bundles
-        self._node_state = NodeState.INITIALIZING
+        self._token_bundles = TokenBundles()
+        self._token_bundles[].append(token)
+        self._node_state = NodeState.COMPLETED
 
     @staticmethod
     fn accept(
@@ -42,7 +43,7 @@ struct RootNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return len(module_interface.nodes()[]) == 0
+        return token.end_file
 
     @staticmethod
     fn create(
@@ -50,14 +51,12 @@ struct RootNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        return Self(indices, TokenBundles())
+        return Self(indices, token)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        if token.end_file:
-            self._node_state = NodeState.COMPLETED
-        return TokenFlow.CREATE_CHILD
+        return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
@@ -65,7 +64,7 @@ struct RootNode(NodeAstLike):
         token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
-        pass
+        self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -87,7 +86,7 @@ struct RootNode(NodeAstLike):
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
-        return "RootNode"
+        return self.__name__
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
@@ -99,11 +98,9 @@ struct RootNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         if just_code:
-            return string_children(AstNode(self), just_code, module_interface)
-
-        s = self.name(include_sig=True) + "\n"
-        s += string_children(AstNode(self), just_code, module_interface)
-        return s
+            return String("")
+        else:
+            return default_to_string(AstNode(self), module_interface)
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface
@@ -113,4 +110,4 @@ struct RootNode(NodeAstLike):
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:
-        return 0 if just_code else 0  # Root adds one level of scope
+        return 0  # Root adds one level of scope

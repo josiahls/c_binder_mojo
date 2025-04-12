@@ -39,6 +39,9 @@ struct MessageableEnum(Stringable):
     fn __add__(self: Self, other: String) -> Self:
         return Self(self.value, self._message + other)
 
+    fn __ne__(self: Self, other: Self) -> Bool:
+        return self.value != other.value
+
 
 struct NodeState:
     """The internal construction state of a node."""
@@ -66,6 +69,9 @@ struct NodeState:
     )  # Node is destroying the tokens it receives.
 
 
+alias C_BINDER_MOJO_END_FILE = "C_BINDER_MOJO_END_FILE"
+
+
 struct TokenFlow:
     """Directive for how tokens should flow through the tree."""
 
@@ -82,6 +88,8 @@ struct TokenFlow:
         3, "CREATE_CHILD"
     )  # Create a child for this token
     alias INVALID = MessageableEnum(4, "INVALID")  # Invalid directive (error)
+
+    alias END_FILE = MessageableEnum(5, "END_FILE")  # End of file
 
 
 struct CTokens:
@@ -266,6 +274,7 @@ struct TokenBundle(EqualityComparable):
     var row_num: Int
     var col_num: Int
     var deleted: Bool
+    var end_file: Bool
 
     fn __init__(
         out self,
@@ -273,6 +282,7 @@ struct TokenBundle(EqualityComparable):
         row_num: Int,
         col_num: Int,
         deleted: Bool = False,
+        end_file: Bool = False,
     ):
         """Initialize a new TokenBundle.
 
@@ -281,12 +291,13 @@ struct TokenBundle(EqualityComparable):
             row_num: The line number where this token appears.
             col_num: The column number where this token starts.
             deleted: Whether this token is deleted, be still present in the source code.
+            end_file: Whether this token is the end of the file.
         """
         self.token = token
         self.row_num = row_num
         self.col_num = col_num
         self.deleted = deleted
-
+        self.end_file = end_file
     fn is_whitespace(read self: Self) -> Bool:
         return WhitespaceEnum.is_whitespace(self)
 

@@ -35,7 +35,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
         self._token_bundles = c_node.token_bundles()
-        self._node_state = NodeState.INITIALIZING
+        self._node_state = NodeState.COMPLETED
 
     @staticmethod
     fn accept(
@@ -43,7 +43,7 @@ struct PlaceHolderNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return True
+        return c_node.name() != "EndFileNode"
 
     @staticmethod
     fn create(
@@ -90,7 +90,7 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ")"
+            return self.__name__ + "(" + String(self._indicies[]) + ", node_state=" + String(self._node_state) + ")"
         else:
             return self.__name__
 

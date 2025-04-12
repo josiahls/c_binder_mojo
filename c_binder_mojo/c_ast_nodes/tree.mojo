@@ -19,9 +19,9 @@ from c_binder_mojo.common import (
     NodeState,
     TokenFlow,
     MessageableEnum,
+    C_BINDER_MOJO_END_FILE
 )
 from c_binder_mojo.c_ast_nodes.nodes import AstNode, NodeAstLike
-
 
 @value
 struct ModuleInterface:
@@ -245,7 +245,7 @@ fn _create_child(
     current_idx: Int,
     mut module_interface: ModuleInterface,
     mut logger: Logger,
-    recursion_depth: Int = 0,
+    recursion_depth: Int = 0
 ) raises -> Int:
     var indices = NodeIndices(current_idx, -1)
     var node = module_interface.nodes()[][current_idx]
@@ -430,6 +430,24 @@ fn make_tree(
         )
 
         token_count += 1
+
+    # Add the end file node to the AST
+    var end_file_token = TokenBundle(C_BINDER_MOJO_END_FILE, -1, -1, end_file=True)
+    current_idx = get_current_node(
+        end_file_token,
+        current_idx,
+        module_interface,
+        inner_logger,
+    )
+    incomplete_nodes = List[AstNode]()
+    for node in nodes[]:
+        if node[].node_state() != NodeState.COMPLETED:
+            incomplete_nodes.append(node[])
+    if len(incomplete_nodes) > 0:
+        var s = String('\t')
+        for node in incomplete_nodes:
+            s += node[].name(include_sig=True) + "\n\t"
+        raise Error("Incomplete nodes: " + s)
 
     # Log tree construction statistics
     logger.info("Tree construction complete")

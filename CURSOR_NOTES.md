@@ -1,12 +1,6 @@
-Alright I think we are at the point where we can start trying to generate the mojo code side of things again.
-The current issues that will need to be tackled:
-- Whitespacing still sucks when viewing the outputs. things like tabs + spaces + newlines
-really should be completely removed in the c ast since we are tracking the row numbers, and parents.
-- Whitespace checking also just sucks. I think a token needs to describe whether it is white space, and
-which type it is. That would also link together different areas that are using whitespace checks.
+Ok still debugging enum node. I think the primary issue is why the nodes are stacking
+tests/unit/test_enum_node/output/test_enum_node.mojo_ast
 
-Some wins here:
-- The control flow logic is way easier to reason about.
-- MessageableEnum I think will make this even easier to reason about since every
-node state and token flow can have a message associated with it.
-- cursor appears to have an easier to plugging in new nodes.
+We don't see this an any of the other enums noted in 
+
+tests/unit/test_enum_node/test_enum_node copy.h

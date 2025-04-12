@@ -326,7 +326,7 @@ fn get_current_node(
     # State machine branching based on current state
     if current_idx == -1:
         if len(module_interface.nodes()[]) > 0:
-            raise Error("Tree already has a module")
+            raise Error("Tree already has a module given node: " + String(c_node))
         return _initialize_module(c_node, current_idx, module_interface, logger)
 
     # var prev_state = token_flow
@@ -356,9 +356,11 @@ fn get_current_node(
             logger,
             recursion_depth - 1,
         )
-
     elif token_flow == TokenFlow.CONSUME_TOKEN:
         node.process(c_node, TokenFlow.CONSUME_TOKEN, module_interface)
+        return current_idx
+    elif token_flow == TokenFlow.END_FILE:
+        node.process(c_node, TokenFlow.END_FILE, module_interface)
         return current_idx
     else:
         raise Error(
@@ -432,6 +434,17 @@ fn make_tree(
         )
 
         token_count += 1
+
+    # Verify that all nodes are completed
+    incomplete_nodes = List[AstNode]()
+    for node in nodes[]:
+        if node[].node_state() != NodeState.COMPLETED:
+            incomplete_nodes.append(node[])
+    if len(incomplete_nodes) > 0:
+        var s = String('\t')
+        for node in incomplete_nodes:
+            s += node[].name(include_sig=True) + "\n\t"
+        raise Error("Incomplete nodes: " + s)
 
     # Log tree construction statistics
     logger.info("Tree construction complete")

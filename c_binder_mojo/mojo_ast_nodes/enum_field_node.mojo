@@ -101,6 +101,7 @@ struct EnumFieldNode(NodeAstLike):
         if c_node.indicies().c_current_idx in self._indicies[].c_child_idxs:
             return TokenFlow.CREATE_CHILD
         else:
+            print('passing to parent')
             return TokenFlow.PASS_TO_PARENT
 
     fn process(

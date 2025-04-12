@@ -19,6 +19,7 @@ from .end_file_node import EndFileNode
 from .macro_elif_def_node import MacroElIfDefNode
 from .function_call_node import FunctionCallNode
 from .macro_else_def_node import MacroElseDefNode
+from .variable_node import VariableNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -42,7 +43,8 @@ alias AstNodeVariant = Variant[
     IncludeNode,
     EnumFieldNode,
     StructFieldNode,
-    PlaceHolderNode
+    VariableNode, # Must go after StructFieldNode since both have similar acceptance criteria
+    PlaceHolderNode,
 ]
 
 # Tree

@@ -6,19 +6,11 @@
 // ifdef with else 
 #ifdef WITH_ELSE 
 	    
-	int 
-	a 
-	= 
-	1 
-	; 
+	int a = 1 ; 
 	 
 	#else 	
 		    
-		int 
-		a 
-		= 
-		2 
-		; 
+		int a = 2 ; 
 		 
 #endif 
  
@@ -27,11 +19,7 @@
 	    
 	#ifdef INNER 	
 		        
-		int 
-		nested_var 
-		= 
-		42 
-		; 
+		int nested_var = 42 ; 
 		 
 		    
 	#endif 
@@ -72,11 +60,7 @@
 	    
 	#ifndef INNER_NOT 	
 		        
-		int 
-		mixed_var 
-		= 
-		1 
-		; 
+		int mixed_var = 1 ; 
 		 
 		    
 	#endif 

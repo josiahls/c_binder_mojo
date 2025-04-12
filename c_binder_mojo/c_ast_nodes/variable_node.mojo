@@ -13,6 +13,7 @@ from c_binder_mojo.common import (
     TokenBundles,
     TokenFlow,
     NodeState,
+    CTokens,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -25,11 +26,17 @@ from c_binder_mojo.c_ast_nodes.nodes import (
 
 
 @value
-struct PlaceHolderNode(NodeAstLike):
-    alias __name__ = "PlaceHolderNode"
+struct VariableNode(NodeAstLike):
+    alias __name__ = "VariableNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
+
+
+    alias _builtin_datatypes = VariadicList[StringLiteral](
+        "int", "float", "double", "char", "short", "long", "unsigned", "signed",
+        "void", "bool", "struct", "union", "enum", "typedef", "static", "extern",
+        "const", "volatile", "restrict", "inline")
 
     fn __init__(out self, indicies: NodeIndices, token: TokenBundle):
         self._indicies = indicies
@@ -43,7 +50,12 @@ struct PlaceHolderNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return True
+        is_builtin_datatype = False
+        for datatype in Self._builtin_datatypes:
+            if token.token == datatype:
+                is_builtin_datatype = True
+                break
+        return is_builtin_datatype
 
     @staticmethod
     fn create(
@@ -56,8 +68,9 @@ struct PlaceHolderNode(NodeAstLike):
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        self._node_state = NodeState.COMPLETED
-        return TokenFlow.PASS_TO_PARENT
+        if self._node_state == NodeState.COMPLETED:
+            return TokenFlow.PASS_TO_PARENT
+        return TokenFlow.CONSUME_TOKEN
 
     fn process(
         mut self,
@@ -65,7 +78,14 @@ struct PlaceHolderNode(NodeAstLike):
         token_flow: MessageableEnum,
         module_interface: ModuleInterface,
     ):
-        self._node_state = NodeState.COMPLETED
+        if token_flow == TokenFlow.CONSUME_TOKEN:
+            if token.token == CTokens.END_STATEMENT:
+                self._node_state = NodeState.COMPLETED
+            else:
+                self._node_state = NodeState.COLLECTING_TOKENS
+            self._token_bundles[].append(token)
+        elif token_flow == TokenFlow.PASS_TO_PARENT:
+            pass
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -91,7 +111,7 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ")"
+            return self.__name__ + "(" + String(self._indicies[]) + ", node_state=" + String(self._node_state) + ")"
         else:
             return self.__name__
 

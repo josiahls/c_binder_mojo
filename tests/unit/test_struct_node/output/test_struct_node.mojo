@@ -4,10 +4,10 @@ struct Point :
  
  
     
-	int x ; 
+	var x : Int 
  
     
-	int y ; 
+	var y : Int 
  
  
 @value 
@@ -15,10 +15,10 @@ struct Person :
  
  
     
-	char* name ; 
+	var name : String 
  
     
-	int age ; 
+	var age : Int 
  
  
 # Empty struct 
@@ -35,24 +35,24 @@ struct Complex :
     
 	# Basic types 
     
-	int id ; 
+	var id : Int 
  
     
-	float value ; 
+	var value : Float32 
  
      
     
 	""" Nested struct """ 
     
-	@value 
-	struct Inner : 	
+	var nested : Inner 	
+@value 
+struct Inner : 
  
  
         
-	double data ; 
+	var data : Float64 
  
      
-	nested ; 
  
  
 # Anonymous struct in typedef 
@@ -62,7 +62,7 @@ struct   :
  
  
     
-	unsigned char flags ; 
+	var flags : UInt 
  
  
  
@@ -73,13 +73,13 @@ struct BitFields :
  
  
     
-	unsigned int a : 1 ; 
+	var a : UInt 
  
     
-	unsigned int b : 2 ; 
+	var b : UInt 
  
     
-	unsigned int c : 3 ; 
+	var c : UInt 
  
  
 fn main():

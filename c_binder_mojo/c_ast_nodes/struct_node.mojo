@@ -47,18 +47,22 @@ struct StructNode(NodeAstLike):
     var _struct_name: String
     var _row_nums: List[Int]  # Track rows for multi-line structs
     var _is_in_typedef: Bool
+    var _is_nested_struct: Bool  # Whether this is a nested struct inside a field declaration
 
     fn __init__(
         out self,
         indicies: NodeIndices,
         token_bundle: TokenBundle,
         is_in_typedef: Bool = False,
+        is_nested_struct: Bool = False,
     ):
         """Initialize a StructNode.
 
         Args:
             indicies: The indices for this node in the AST.
             token_bundle: The initial 'struct' token.
+            is_in_typedef: Whether this struct is part of a typedef.
+            is_nested_struct: Whether this is a nested struct inside a field declaration.
         """
         self._indicies = indicies
         self._token_bundles = TokenBundles()
@@ -67,8 +71,13 @@ struct StructNode(NodeAstLike):
         self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._struct_name = ""
+        if is_nested_struct:
+            # The token `struct` is going to be consumed by the struct field node,
+            # so we need to re-add it here.
+            self._token_bundles[].append(TokenBundle("struct", token_bundle.row_num, 0))
         self._token_bundles[].append(token_bundle)
         self._is_in_typedef = is_in_typedef
+        self._is_nested_struct = is_nested_struct
 
     @staticmethod
     fn accept(
@@ -86,7 +95,18 @@ struct StructNode(NodeAstLike):
         Returns:
             True if this token starts a struct declaration, False otherwise.
         """
-        return token.token == CTokens.CSTRUCT
+        # If we're inside a struct field node, we should not accept this as a new struct
+        # It will be handled by the containing struct field node
+        if indices.c_parent_idx >= 0:
+            var parent = module_interface.nodes()[][indices.c_parent_idx]
+            # Handle the case where this struct is nested inside a struct field
+            if parent.name() == "StructFieldNode":
+                return True
+
+        if token.token != CTokens.CSTRUCT:
+            return False
+            
+        return True
 
     @staticmethod
     fn create(
@@ -105,14 +125,22 @@ struct StructNode(NodeAstLike):
             A new StructNode instance.
         """
         var is_in_typedef = False
+        var is_nested_struct = False
 
         if (
             module_interface.nodes()[][indices.c_parent_idx].name()
             == "TypedefNode"
         ):
             is_in_typedef = True
+            
+        # Check if this is a nested struct (inside a struct field)
+        if (
+            module_interface.nodes()[][indices.c_parent_idx].name()
+            == "StructFieldNode"
+        ):
+            is_nested_struct = True
 
-        return Self(indices, token, is_in_typedef)
+        return Self(indices, token, is_in_typedef, is_nested_struct)
 
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
@@ -162,6 +190,16 @@ struct StructNode(NodeAstLike):
         self._node_state = NodeState.COMPLETED
         return TokenFlow.PASS_TO_PARENT
 
+    fn _update_struct_field_node_type(mut self, module_interface: ModuleInterface):
+        """Update the type of the struct field node.
+        
+        Args:
+            module_interface: Interface to the AST.
+        """
+        var parent = module_interface.nodes()[][self._indicies[].c_parent_idx]
+        if parent.name() == "StructFieldNode":
+            parent.node[][StructFieldNode]._field_type = self._struct_name
+
     fn is_whitespace(self, token: TokenBundle) -> Bool:
         """Check if a token is whitespace.
 
@@ -194,6 +232,9 @@ struct StructNode(NodeAstLike):
         if self._node_state == NodeState.COLLECTING_TOKENS:
             if len(self._token_bundles[]) == 1:
                 self._struct_name = token.token
+            elif self._is_nested_struct and len(self._token_bundles[]) == 2:
+                self._struct_name = self._token_bundles[][-1].token
+                self._update_struct_field_node_type(module_interface)
             self._token_bundles[].append(token)
         elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
             self._token_bundles_tail[].append(token)
@@ -243,6 +284,8 @@ struct StructNode(NodeAstLike):
             result += ", node_state=" + String(self._node_state)
             if self._struct_name != "":
                 result += ", name='" + self._struct_name + "'"
+            if self._is_nested_struct:
+                result += ", nested=true"
             result += ")"
             return result
         else:
@@ -301,3 +344,11 @@ struct StructNode(NodeAstLike):
             The struct name, or empty string if anonymous.
         """
         return self._struct_name
+    
+    fn is_nested(self) -> Bool:
+        """Check if this is a nested struct.
+        
+        Returns:
+            True if this struct is nested inside a field declaration.
+        """
+        return self._is_nested_struct

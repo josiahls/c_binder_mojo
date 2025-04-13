@@ -39,10 +39,10 @@ alias AstNodeVariant = Variant[
     TypedefNode,
     ScopeNode,
     EnumNode,
+    StructFieldNode, # Must go before StructNode since we need to catch nested structs
     StructNode,
     IncludeNode,
     EnumFieldNode,
-    StructFieldNode,
     VariableNode, # Must go after StructFieldNode since both have similar acceptance criteria
     PlaceHolderNode,
 ]

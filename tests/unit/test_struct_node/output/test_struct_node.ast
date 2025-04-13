@@ -68,7 +68,7 @@ StructNode(c_parent_idx=0, c_current_idx=21, c_child_idxs=(22), node_state=4 (CO
 struct Complex  
   
  
-	ScopeNode(c_parent_idx=21, c_current_idx=22, c_child_idxs=(23, 24, 25, 26, 27, ...) len=12, node_state=4 (COMPLETED), parent_type='StructNode')
+	ScopeNode(c_parent_idx=21, c_current_idx=22, c_child_idxs=(23, 24, 25, 26, 27, ...) len=11, node_state=4 (COMPLETED), parent_type='StructNode')
 	{ 
 			WhitespaceNode(c_parent_idx=22, c_current_idx=23, n_tokens=5)
 		 
@@ -92,23 +92,23 @@ struct Complex
 		/* Nested struct */ 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=31, n_tokens=4)
 		    
-		StructNode(c_parent_idx=22, c_current_idx=32, c_child_idxs=(33), node_state=4 (COMPLETED), name='Inner')
+		StructFieldNode(c_parent_idx=22, c_current_idx=32, c_child_idxs=(33), node_state=4 (COMPLETED), field_type='Inner', field_name='nested')				StructNode(c_parent_idx=32, c_current_idx=33, c_child_idxs=(34), node_state=4 (COMPLETED), name='Inner', nested=true)
 		struct Inner  
 		 
-					ScopeNode(c_parent_idx=32, c_current_idx=33, c_child_idxs=(34, 35, 36), node_state=4 (COMPLETED), parent_type='StructNode')
+					ScopeNode(c_parent_idx=33, c_current_idx=34, c_child_idxs=(35, 36, 37), node_state=4 (COMPLETED), parent_type='StructNode')
 			{ 
-							WhitespaceNode(c_parent_idx=33, c_current_idx=34, n_tokens=9)
+							WhitespaceNode(c_parent_idx=34, c_current_idx=35, n_tokens=9)
 				 
 				        
-				StructFieldNode(c_parent_idx=33, c_current_idx=35, node_state=4 (COMPLETED), field_type='double', field_name='data')
+				StructFieldNode(c_parent_idx=34, c_current_idx=36, node_state=4 (COMPLETED), field_type='double', field_name='data')
 				double data ; 
-				WhitespaceNode(c_parent_idx=33, c_current_idx=36, n_tokens=6)
+				WhitespaceNode(c_parent_idx=34, c_current_idx=37, n_tokens=6)
 				 
 				     
 
 			} 
 
-		StructFieldNode(c_parent_idx=22, c_current_idx=37, node_state=4 (COMPLETED), field_type='nested', field_name='')
+
 		nested ; 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=38, n_tokens=2)
 		 

@@ -66,7 +66,8 @@ struct StructFieldNode(NodeAstLike):
         self._is_inner_struct = token_bundle.token == "struct"
         self._is_bit_field = False
         self._bit_width = ""
-        self._token_bundles[].append(token_bundle)
+        if not self._is_inner_struct:
+            self._token_bundles[].append(token_bundle)
 
     @staticmethod
     fn accept(
@@ -129,6 +130,10 @@ struct StructFieldNode(NodeAstLike):
         Returns:
             The token flow decision.
         """
+        if self._is_inner_struct and self._node_state == NodeState.INITIALIZING:
+            self._node_state = NodeState.BUILDING_CHILDREN
+            return TokenFlow.CREATE_CHILD
+
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
 
@@ -191,7 +196,12 @@ struct StructFieldNode(NodeAstLike):
             token_flow: The determined token flow.
             module_interface: Interface to the AST.
         """
-        self._token_bundles[].append(token)
+        if token.token == "struct":
+            return
+        if self._is_inner_struct:
+            self._token_bundles_tail[].append(token)
+        else:
+            self._token_bundles[].append(token)
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""

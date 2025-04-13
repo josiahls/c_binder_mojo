@@ -5,11 +5,11 @@ alias INSIDE_BASIC = 1
 # ifdef with else 
 #ifdef WITH_ELSE 
     
-int a = 1 ; 
+alias a : Int = 1 
  
 #else 
     
-int a = 2 ; 
+alias a : Int = 2 
  
  
 # Nested ifdefs 
@@ -17,7 +17,7 @@ int a = 2 ;
     
 #ifdef INNER 
         
-int nested_var = 42 ; 
+alias nested_var : Int = 42 
  
     
  
@@ -53,7 +53,7 @@ alias INSIDE_COMMENT = 1
     
 #ifndef INNER_NOT 
         
-int mixed_var = 1 ; 
+alias mixed_var : Int = 1 
  
     
  

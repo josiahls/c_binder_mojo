@@ -114,14 +114,14 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'VariableNode'
     └─ Nodes: 1 active, 9 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=7, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	VariableNode(c_parent_idx=7, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'VariableNode'
-    └─ Nodes: 1 active, 10 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=7, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 2 active, 9 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	VariableNode(c_parent_idx=7, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 10 complete
+    └─ Nodes: 2 active, 9 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 5, 6, 7, ...) len=25, mojo_child_idxs=(1, 2, 3, 6, 7, ...) len=7)
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
@@ -162,14 +162,14 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'VariableNode'
     └─ Nodes: 1 active, 13 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=11, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	VariableNode(c_parent_idx=11, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'VariableNode'
-    └─ Nodes: 1 active, 14 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=11, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 2 active, 13 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	VariableNode(c_parent_idx=11, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 14 complete
+    └─ Nodes: 2 active, 13 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 5, 6, 7, ...) len=25, mojo_child_idxs=(1, 2, 3, 6, 7, ...) len=11)
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
@@ -258,14 +258,14 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'VariableNode'
     └─ Nodes: 1 active, 21 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=19, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	VariableNode(c_parent_idx=19, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'VariableNode'
-    └─ Nodes: 1 active, 22 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=19, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 2 active, 21 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	VariableNode(c_parent_idx=19, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 22 complete
+    └─ Nodes: 2 active, 21 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 5, 6, 7, ...) len=25, mojo_child_idxs=(1, 2, 3, 6, 7, ...) len=17)
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
@@ -702,14 +702,14 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'VariableNode'
     └─ Nodes: 1 active, 58 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=56, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=59, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	VariableNode(c_parent_idx=56, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=59, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'VariableNode'
-    └─ Nodes: 1 active, 59 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=56, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=59, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 2 active, 58 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	VariableNode(c_parent_idx=56, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=59, is_module_level=True)
+    └─ Path: RootNode -> VariableNode
     └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 59 complete
+    └─ Nodes: 2 active, 58 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 5, 6, 7, ...) len=25, mojo_child_idxs=(1, 2, 3, 6, 7, ...) len=46)
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'

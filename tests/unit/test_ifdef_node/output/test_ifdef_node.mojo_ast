@@ -19,8 +19,8 @@ MacroIfDefNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_
 WhitespaceNode(c_parent_idx=7, c_current_idx=8, mojo_parent_idx=8, mojo_current_idx=9, n_tokens=4)
     
 
-PlaceHolderNode(c_parent_idx=7, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, node_state=4 (COMPLETED))
-int a = 1 ; 
+VariableNode(c_parent_idx=7, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, is_module_level=True)
+alias a : Int = 1 
 WhitespaceNode(c_parent_idx=7, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, n_tokens=1)
  
 PlaceHolderNode(c_parent_idx=7, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12, c_child_idxs=(12, 13, 14), node_state=4 (COMPLETED))
@@ -28,8 +28,8 @@ PlaceHolderNode(c_parent_idx=7, c_current_idx=11, mojo_parent_idx=0, mojo_curren
 
 WhitespaceNode(c_parent_idx=11, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=4)
     
-PlaceHolderNode(c_parent_idx=11, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, node_state=4 (COMPLETED))
-int a = 2 ; 
+VariableNode(c_parent_idx=11, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, is_module_level=True)
+alias a : Int = 2 
 WhitespaceNode(c_parent_idx=11, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15, n_tokens=1)
  
 WhitespaceNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16, n_tokens=1)
@@ -46,8 +46,8 @@ MacroIfDefNode(c_parent_idx=17, c_current_idx=19, mojo_parent_idx=0, mojo_curren
 WhitespaceNode(c_parent_idx=19, c_current_idx=20, mojo_parent_idx=20, mojo_current_idx=21, n_tokens=8)
         
 
-PlaceHolderNode(c_parent_idx=19, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, node_state=4 (COMPLETED))
-int nested_var = 42 ; 
+VariableNode(c_parent_idx=19, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, is_module_level=True)
+alias nested_var : Int = 42 
 WhitespaceNode(c_parent_idx=19, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, n_tokens=5)
  
     
@@ -131,8 +131,8 @@ PlaceHolderNode(c_parent_idx=54, c_current_idx=56, mojo_parent_idx=0, mojo_curre
 
 WhitespaceNode(c_parent_idx=56, c_current_idx=57, mojo_parent_idx=0, mojo_current_idx=58, n_tokens=8)
         
-PlaceHolderNode(c_parent_idx=56, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=59, node_state=4 (COMPLETED))
-int mixed_var = 1 ; 
+VariableNode(c_parent_idx=56, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=59, is_module_level=True)
+alias mixed_var : Int = 1 
 WhitespaceNode(c_parent_idx=56, c_current_idx=59, mojo_parent_idx=0, mojo_current_idx=60, n_tokens=5)
  
     

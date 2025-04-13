@@ -148,6 +148,7 @@ struct StructNode(NodeAstLike):
                 self._node_state = NodeState.COLLECTING_TAIL_TOKENS
                 return TokenFlow.CONSUME_TOKEN
             else:
+                self._node_state = NodeState.COMPLETED
                 return TokenFlow.PASS_TO_PARENT
 
         if self._node_state == NodeState.COLLECTING_TOKENS:
@@ -158,6 +159,7 @@ struct StructNode(NodeAstLike):
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS
             return TokenFlow.CONSUME_TOKEN
 
+        self._node_state = NodeState.COMPLETED
         return TokenFlow.PASS_TO_PARENT
 
     fn is_whitespace(self, token: TokenBundle) -> Bool:

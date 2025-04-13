@@ -1,7 +1,7 @@
-RootNode(c_current_idx=0, c_child_idxs=(1, 2, 9, 16, 17, ...) len=12)
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 9, 16, 17, ...) len=13)
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
 // Basic struct declarations 
-StructNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=1 (COLLECTING_TOKENS), name='Point')
+StructNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=4 (COMPLETED), name='Point')
 struct Point  
   
  
@@ -24,7 +24,7 @@ struct Point
 	} 
 
 ; 
-StructNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10), node_state=1 (COLLECTING_TOKENS), name='Person')
+StructNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10), node_state=4 (COMPLETED), name='Person')
 struct Person  
   
  
@@ -49,7 +49,7 @@ struct Person
 ; 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=16)
 // Empty struct 
-StructNode(c_parent_idx=0, c_current_idx=17, c_child_idxs=(18), node_state=1 (COLLECTING_TOKENS), name='Empty')
+StructNode(c_parent_idx=0, c_current_idx=17, c_child_idxs=(18), node_state=4 (COMPLETED), name='Empty')
 struct Empty  
   
  
@@ -64,7 +64,7 @@ struct Empty
 ; 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=20)
 // Multi-line struct with comments 
-StructNode(c_parent_idx=0, c_current_idx=21, c_child_idxs=(22), node_state=1 (COLLECTING_TOKENS), name='Complex')
+StructNode(c_parent_idx=0, c_current_idx=21, c_child_idxs=(22), node_state=4 (COMPLETED), name='Complex')
 struct Complex  
   
  
@@ -92,7 +92,7 @@ struct Complex
 		/* Nested struct */ 
 		WhitespaceNode(c_parent_idx=22, c_current_idx=31, n_tokens=4)
 		    
-		StructNode(c_parent_idx=22, c_current_idx=32, c_child_idxs=(33), node_state=1 (COLLECTING_TOKENS), name='Inner')
+		StructNode(c_parent_idx=22, c_current_idx=32, c_child_idxs=(33), node_state=4 (COMPLETED), name='Inner')
 		struct Inner  
 		 
 					ScopeNode(c_parent_idx=32, c_current_idx=33, c_child_idxs=(34, 35, 36), node_state=4 (COMPLETED), parent_type='StructNode')
@@ -121,7 +121,7 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=39)
 // Anonymous struct in typedef 
 TypedefNode(c_parent_idx=0, c_current_idx=40, c_child_idxs=(41), node_state=4 (COMPLETED), type='Flags')
 typedef 
-StructNode(c_parent_idx=40, c_current_idx=41, c_child_idxs=(42), node_state=1 (COLLECTING_TOKENS))
+StructNode(c_parent_idx=40, c_current_idx=41, c_child_idxs=(42), node_state=4 (COMPLETED))
 struct  
  
 	ScopeNode(c_parent_idx=41, c_current_idx=42, c_child_idxs=(43, 44, 45), node_state=4 (COMPLETED), parent_type='StructNode')
@@ -144,7 +144,7 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=46, n_tokens=2)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=47)
 // Struct with bit fields 
-StructNode(c_parent_idx=0, c_current_idx=48, c_child_idxs=(49), node_state=1 (COLLECTING_TOKENS), name='BitFields')
+StructNode(c_parent_idx=0, c_current_idx=48, c_child_idxs=(49), node_state=4 (COMPLETED), name='BitFields')
 struct BitFields  
    
 	ScopeNode(c_parent_idx=48, c_current_idx=49, c_child_idxs=(50, 51, 52, 53, 54, ...) len=7, node_state=4 (COMPLETED), parent_type='StructNode')
@@ -170,3 +170,4 @@ struct BitFields
 
 	} 
 ; 
+EndFileNode(c_parent_idx=0, c_current_idx=57)C_BINDER_MOJO_END_FILE 

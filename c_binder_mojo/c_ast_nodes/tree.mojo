@@ -450,7 +450,7 @@ fn make_tree(
         var s = String('\t')
         for node in incomplete_nodes:
             s += node[].name(include_sig=True) + "\n\t"
-        raise Error("Incomplete c ast nodes: " + s)
+        raise Error("Incomplete c ast nodes: \n" + s)
 
     # Log tree construction statistics
     logger.info("Tree construction complete")

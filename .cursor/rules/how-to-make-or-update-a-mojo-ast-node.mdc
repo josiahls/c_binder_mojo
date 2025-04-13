@@ -7,4 +7,5 @@ alwaysApply: false
 # Please follow these mojo standards (these change frequently):
 - Impliment everything in c_binder.mojo_ast_nodes.common.mojo: NodeAstLike
 - Add the new node to c_binder.mojo_ast_nodes.__init__.mojo: As an import and add to the variant.
+   - In the past you tend to remove nodes from the init for now reason. Don't remove any nodes unless you have good reason to.
 Reference [how-to-code-in-mojo.mdc](mdc:.cursor/rules/how-to-code-in-mojo.mdc) for extra details.

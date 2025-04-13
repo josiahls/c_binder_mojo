@@ -14,6 +14,7 @@ from .function_call_node import FunctionCallNode
 from .variable_node import VariableNode
 from .macro_elif_def_node import MacroElIfDefNode
 from .macro_else_node import MacroElseNode
+from .struct_node import StructNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -32,6 +33,7 @@ alias AstNodeVariant = Variant[
     MacroElseNode,
     FunctionCallNode,
     VariableNode,
+    StructNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]
 

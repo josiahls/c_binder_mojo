@@ -1,0 +1,157 @@
+RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 9, 16, 17, ...) len=13, mojo_child_idxs=(1, 2, 3, 10, 17, ...) len=14)
+PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 9, 16, 17, ...) len=13, node_state=4 (COMPLETED))
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
+# Basic struct declarations 
+StructNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, c_child_idxs=(3), mojo_child_idxs=(4), struct_name=Point)
+@value 
+struct Point : 
+ScopeNode(c_parent_idx=2, c_current_idx=3, mojo_parent_idx=3, mojo_current_idx=4, c_child_idxs=(4, 5, 6, 7, 8), mojo_child_idxs=(5, 6, 7, 8, 9))
+ 
+WhitespaceNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=3, c_current_idx=5, mojo_parent_idx=4, mojo_current_idx=6, node_state=4 (COMPLETED))
+	int x ; 
+WhitespaceNode(c_parent_idx=3, c_current_idx=6, mojo_parent_idx=4, mojo_current_idx=7, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=3, c_current_idx=7, mojo_parent_idx=4, mojo_current_idx=8, node_state=4 (COMPLETED))
+	int y ; 
+WhitespaceNode(c_parent_idx=3, c_current_idx=8, mojo_parent_idx=4, mojo_current_idx=9, n_tokens=2)
+ 
+ 
+
+
+StructNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, c_child_idxs=(10), mojo_child_idxs=(11), struct_name=Person)
+@value 
+struct Person : 
+ScopeNode(c_parent_idx=9, c_current_idx=10, mojo_parent_idx=10, mojo_current_idx=11, c_child_idxs=(11, 12, 13, 14, 15), mojo_child_idxs=(12, 13, 14, 15, 16))
+ 
+WhitespaceNode(c_parent_idx=10, c_current_idx=11, mojo_parent_idx=11, mojo_current_idx=12, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=10, c_current_idx=12, mojo_parent_idx=11, mojo_current_idx=13, node_state=4 (COMPLETED))
+	char* name ; 
+WhitespaceNode(c_parent_idx=10, c_current_idx=13, mojo_parent_idx=11, mojo_current_idx=14, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=10, c_current_idx=14, mojo_parent_idx=11, mojo_current_idx=15, node_state=4 (COMPLETED))
+	int age ; 
+WhitespaceNode(c_parent_idx=10, c_current_idx=15, mojo_parent_idx=11, mojo_current_idx=16, n_tokens=2)
+ 
+ 
+
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17)
+# Empty struct 
+StructNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, c_child_idxs=(18), mojo_child_idxs=(19), struct_name=Empty)
+@value 
+struct Empty : 
+ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19), mojo_child_idxs=(20))
+ 
+WhitespaceNode(c_parent_idx=18, c_current_idx=19, mojo_parent_idx=19, mojo_current_idx=20, n_tokens=2)
+ 
+ 
+
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21)
+# Multi-line struct with comments 
+StructNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, c_child_idxs=(22), mojo_child_idxs=(23), struct_name=Complex)
+@value 
+struct Complex : 
+ScopeNode(c_parent_idx=21, c_current_idx=22, mojo_parent_idx=22, mojo_current_idx=23, c_child_idxs=(23, 24, 25, 26, 27, ...) len=12, mojo_child_idxs=(24, 25, 26, 27, 28, ...) len=12)
+ 
+WhitespaceNode(c_parent_idx=22, c_current_idx=23, mojo_parent_idx=23, mojo_current_idx=24, n_tokens=5)
+ 
+    
+	SingleLineCommentNode(c_parent_idx=22, c_current_idx=24, mojo_parent_idx=23, mojo_current_idx=25)
+	# Basic types 
+WhitespaceNode(c_parent_idx=22, c_current_idx=25, mojo_parent_idx=23, mojo_current_idx=26, n_tokens=4)
+    
+	PlaceHolderNode(c_parent_idx=22, c_current_idx=26, mojo_parent_idx=23, mojo_current_idx=27, node_state=4 (COMPLETED))
+	int id ; 
+WhitespaceNode(c_parent_idx=22, c_current_idx=27, mojo_parent_idx=23, mojo_current_idx=28, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=22, c_current_idx=28, mojo_parent_idx=23, mojo_current_idx=29, node_state=4 (COMPLETED))
+	float value ; 
+WhitespaceNode(c_parent_idx=22, c_current_idx=29, mojo_parent_idx=23, mojo_current_idx=30, n_tokens=10)
+ 
+     
+    
+	MultiLineCommentNode(c_parent_idx=22, c_current_idx=30, mojo_parent_idx=23, mojo_current_idx=31)
+	""" Nested struct """ 
+WhitespaceNode(c_parent_idx=22, c_current_idx=31, mojo_parent_idx=23, mojo_current_idx=32, n_tokens=4)
+    
+	StructNode(c_parent_idx=22, c_current_idx=32, mojo_parent_idx=23, mojo_current_idx=33, c_child_idxs=(33), mojo_child_idxs=(34), struct_name=Inner)
+	@value 
+	struct Inner : 
+	ScopeNode(c_parent_idx=32, c_current_idx=33, mojo_parent_idx=33, mojo_current_idx=34, c_child_idxs=(34, 35, 36), mojo_child_idxs=(35, 36, 37))
+ 
+WhitespaceNode(c_parent_idx=33, c_current_idx=34, mojo_parent_idx=34, mojo_current_idx=35, n_tokens=9)
+ 
+        
+	PlaceHolderNode(c_parent_idx=33, c_current_idx=35, mojo_parent_idx=34, mojo_current_idx=36, node_state=4 (COMPLETED))
+	double data ; 
+WhitespaceNode(c_parent_idx=33, c_current_idx=36, mojo_parent_idx=34, mojo_current_idx=37, n_tokens=6)
+ 
+     
+
+
+	PlaceHolderNode(c_parent_idx=22, c_current_idx=37, mojo_parent_idx=23, mojo_current_idx=38, node_state=4 (COMPLETED))
+	nested ; 
+WhitespaceNode(c_parent_idx=22, c_current_idx=38, mojo_parent_idx=23, mojo_current_idx=39, n_tokens=2)
+ 
+ 
+
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=39, mojo_parent_idx=0, mojo_current_idx=40)
+# Anonymous struct in typedef 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=41, c_child_idxs=(41), node_state=4 (COMPLETED))
+typedef 
+
+StructNode(c_parent_idx=40, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=42, c_child_idxs=(42), mojo_child_idxs=(43), struct_name=)
+@value 
+struct   : 
+ScopeNode(c_parent_idx=41, c_current_idx=42, mojo_parent_idx=42, mojo_current_idx=43, c_child_idxs=(43, 44, 45), mojo_child_idxs=(44, 45, 46))
+ 
+WhitespaceNode(c_parent_idx=42, c_current_idx=43, mojo_parent_idx=43, mojo_current_idx=44, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=42, c_current_idx=44, mojo_parent_idx=43, mojo_current_idx=45, node_state=4 (COMPLETED))
+	unsigned char flags ; 
+WhitespaceNode(c_parent_idx=42, c_current_idx=45, mojo_parent_idx=43, mojo_current_idx=46, n_tokens=2)
+ 
+ 
+
+
+WhitespaceNode(c_parent_idx=0, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=47, n_tokens=2)
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=48)
+# Struct with bit fields 
+StructNode(c_parent_idx=0, c_current_idx=48, mojo_parent_idx=0, mojo_current_idx=49, c_child_idxs=(49), mojo_child_idxs=(50), struct_name=BitFields)
+@value 
+struct BitFields : 
+ScopeNode(c_parent_idx=48, c_current_idx=49, mojo_parent_idx=49, mojo_current_idx=50, c_child_idxs=(50, 51, 52, 53, 54, ...) len=7, mojo_child_idxs=(51, 52, 53, 54, 55, ...) len=7)
+ 
+WhitespaceNode(c_parent_idx=49, c_current_idx=50, mojo_parent_idx=50, mojo_current_idx=51, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=49, c_current_idx=51, mojo_parent_idx=50, mojo_current_idx=52, node_state=4 (COMPLETED))
+	unsigned int a : 1 ; 
+WhitespaceNode(c_parent_idx=49, c_current_idx=52, mojo_parent_idx=50, mojo_current_idx=53, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=49, c_current_idx=53, mojo_parent_idx=50, mojo_current_idx=54, node_state=4 (COMPLETED))
+	unsigned int b : 2 ; 
+WhitespaceNode(c_parent_idx=49, c_current_idx=54, mojo_parent_idx=50, mojo_current_idx=55, n_tokens=5)
+ 
+    
+	PlaceHolderNode(c_parent_idx=49, c_current_idx=55, mojo_parent_idx=50, mojo_current_idx=56, node_state=4 (COMPLETED))
+	unsigned int c : 3 ; 
+WhitespaceNode(c_parent_idx=49, c_current_idx=56, mojo_parent_idx=50, mojo_current_idx=57, n_tokens=2)
+ 
+ 
+
+

@@ -13,7 +13,6 @@ from c_binder_mojo.common import (
     TokenBundles,
     TokenFlow,
     NodeState,
-    CTokens,
 )
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.nodes import (
@@ -27,27 +26,41 @@ from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
 
 
 @value
-struct MacroDefineValueNode(NodeAstLike):
-    alias __name__ = "MacroDefineValueNode"
+struct MacroElIfDefNode(NodeAstLike):
+    """Represents a #elif preprocessor directive in Mojo code.
+
+    This node handles the parsing and representation of the #ifdef directive,
+    which is used for conditional compilation.
+    The node tracks the macro name being tested and all content until the matching #endif.
+    """
+
+    alias __name__ = "MacroElIfDefNode"
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _c_token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
-    var _is_function_like: Bool
+    var _macro_name: String
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
-        self._c_token_bundles = c_node.token_bundles()
         self._token_bundles = TokenBundles()
+        self._c_token_bundles = c_node.token_bundles()
         self._node_state = NodeState.INITIALIZING
-        self._is_function_like = False
-    
-    fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles):
-        self._indicies = indicies
-        self._token_bundles = token_bundles
-        self._c_token_bundles = TokenBundles()
-        self._node_state = NodeState.INITIALIZING
-        self._is_function_like = False
+        self._macro_name = ""
+
+    fn format_token_bundles(mut self):
+        """Convert C-style elif tokens to Mojo-style tokens."""
+        for token_bundle in self._c_token_bundles[]:
+            var token = token_bundle[].token
+            if token == "#elif":
+                self._token_bundles[].append(
+                    TokenBundle.from_other(token, token_bundle[])
+                )
+            elif len(self._token_bundles[]) == 1:  # This is the macro name
+                self._macro_name = token
+                self._token_bundles[].append(
+                    TokenBundle.from_other(token, token_bundle[])
+                )
 
     @staticmethod
     fn accept(
@@ -55,7 +68,17 @@ struct MacroDefineValueNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return c_node.name() == "MacroDefineValueNode"
+        """Check if the C node is a #ifdef directive.
+
+        Args:
+            c_node: The C AST node to check.
+            module_interface: Interface to the AST.
+            indices: The indices for this node.
+
+        Returns:
+            True if this C node represents an #ifdef directive.
+        """
+        return c_node.name() == "MacroElIfDefNode"
 
     @staticmethod
     fn create(
@@ -63,12 +86,29 @@ struct MacroDefineValueNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
+        """Create a new MacroElIfDefNode.
+
+        Args:
+            c_node: The C AST node to convert.
+            module_interface: Interface to the AST.
+            indices: The indices for this node.
+
+        Returns:
+            A new MacroElIfDefNode instance.
+        """
         return Self(indices, c_node)
 
     fn determine_token_flow(
         mut self, c_node: C_AstNode, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        return TokenFlow.PASS_TO_PARENT
+        """Determine how to handle the next token.
+
+        For MacroElIfDefNode, we collect tokens until we find the matching #endif.
+        """
+        if c_node.indicies().c_current_idx in self._indicies[].c_child_idxs:
+            return TokenFlow.CREATE_CHILD
+        else:
+            return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
@@ -76,34 +116,12 @@ struct MacroDefineValueNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        print("MacroDefineValueNode process")
-        self.format_token_bundles()
-        self._node_state = NodeState.COMPLETED
-
-    fn format_token_bundles(mut self):
-        var is_first = True
-        n_open_parens = 0
-        for token_bundle in self._c_token_bundles[]:
-            token = token_bundle[].token
-            if token == '(':
-                n_open_parens += 1
-            # We need to differientiate between tuples and functions. 
-            # function will have open parens twice, once for the args, and once for the body
-            if n_open_parens > 1:
-                self._is_function_like = True
-                break
-
-        for token_bundle in self._c_token_bundles[]:
-            token = token_bundle[].token
-            if is_first:
-                is_first = False
-                self._token_bundles[].append(
-                    TokenBundle.from_other("=", token_bundle[])
-                )
-
-            self._token_bundles[].append(
-                TokenBundle.from_other(token, token_bundle[])
-                )
+        """Process the current node state."""
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
+        if token_flow == TokenFlow.PASS_TO_PARENT:
+            self.format_token_bundles()
+            self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -129,7 +147,12 @@ struct MacroDefineValueNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ", node_state=" + String(self._node_state) + ")"
+            var result = self.__name__ + "(" + String(self._indicies[])
+            result += ", node_state=" + String(self._node_state)
+            if self._macro_name != "":
+                result += ", macro='" + self._macro_name + "'"
+            result += ")"
+            return result
         else:
             return self.__name__
 
@@ -137,13 +160,7 @@ struct MacroDefineValueNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) raises -> String:
         if just_code:
-            return default_to_string_just_code(
-                AstNode(self),
-                module_interface,
-                inline_children=True,
-                inline_nodes=True,
-                inline_tail=True,
-            )
+            return default_to_string_just_code(AstNode(self), module_interface)
         else:
             return default_to_string(AstNode(self), module_interface)
 
@@ -155,4 +172,4 @@ struct MacroDefineValueNode(NodeAstLike):
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:
-        return 0  # Root adds one level of scope
+        return 0 if just_code else 1  # ifdef adds a level of scope 

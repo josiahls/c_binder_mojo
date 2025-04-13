@@ -113,7 +113,9 @@ struct IncludeNode(NodeAstLike):
 
         # Track line numbers for multi-line includes (shouldn't happen but just in case)
         if token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
+            # self._row_nums.append(token.row_num)
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.PASS_TO_PARENT
 
         if self._node_state == NodeState.INITIALIZING:
             self._node_state = NodeState.COLLECTING_TOKENS
@@ -177,6 +179,9 @@ struct IncludeNode(NodeAstLike):
                     .replace(">", "")
                 )
             self._token_bundles[].append(token)
+
+        if token_flow == TokenFlow.PASS_TO_PARENT:
+            self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""

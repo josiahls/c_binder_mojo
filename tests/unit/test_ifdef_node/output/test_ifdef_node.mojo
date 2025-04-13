@@ -5,11 +5,10 @@ alias INSIDE_BASIC = 1
 # ifdef with else 
 #ifdef WITH_ELSE 
     
-alias a : Int = 1 
+var a : Int = 1 
  
-#else 
     
-alias a : Int = 2 
+var a : Int = 2 
  
  
 # Nested ifdefs 
@@ -17,7 +16,7 @@ alias a : Int = 2
     
 #ifdef INNER 
         
-alias nested_var : Int = 42 
+var nested_var : Int = 42 
  
     
  
@@ -30,7 +29,6 @@ defined ( __APPLE__ )
  
     
 alias OS = "MacOS" 
-#else 
     
 alias OS = "Linux" 
  

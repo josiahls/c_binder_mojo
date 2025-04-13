@@ -92,7 +92,6 @@ struct MacroDefineNode(NodeAstLike):
             if len(self._indicies[].mojo_child_idxs) != 0:
                 for child_idx in self._indicies[].mojo_child_idxs:
                     child_node = module_interface.nodes()[][child_idx[]]
-                    print('checking child node {child_node}')
                     if child_node.node[].isa[MacroDefineValueNode]():
                         self._is_function_like = child_node.node[][MacroDefineValueNode]._is_function_like
                         if self._is_function_like:
@@ -100,7 +99,6 @@ struct MacroDefineNode(NodeAstLike):
                                 TokenBundle.from_other("# Function macros are not supported\n#", self._c_token_bundles[][-1])
                             )
             elif len(self._indicies[].mojo_child_idxs) == 0:
-                print('{assong node }')
                 bundles = TokenBundles()
                 bundles.append(
                     TokenBundle.from_other(":", self._c_token_bundles[][-1])
@@ -127,11 +125,11 @@ struct MacroDefineNode(NodeAstLike):
                         bundles
                     )
                 )
+                node_var[MacroDefineValueNode]._node_state = NodeState.COMPLETED
                 node = AstNode(node_var)
                 idx = module_interface.insert_node(node)
                 self._indicies[].mojo_child_idxs.append(idx)
             
-            print('formatting token bundles')
             self.format_token_bundles()
 
     fn indicies(self) -> NodeIndices:

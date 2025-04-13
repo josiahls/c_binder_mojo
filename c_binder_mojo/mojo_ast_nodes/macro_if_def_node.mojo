@@ -105,7 +105,7 @@ struct MacroIfDefNode(NodeAstLike):
 
         For MacroIfDefNode, we collect tokens until we find the matching #endif.
         """
-        if self._node_state == NodeState.INITIALIZING:
+        if c_node.indicies().c_current_idx in self._indicies[].c_child_idxs:
             return TokenFlow.CREATE_CHILD
         else:
             return TokenFlow.PASS_TO_PARENT

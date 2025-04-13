@@ -16,22 +16,14 @@
 			    
 			#define INNER_GUARD 
 			        
-			int 
-			inner_guard_variable 
-			= 
-			42 
-			; 
+			int inner_guard_variable = 42 ; 
 			 
 			    
 		#endif 
 		// INNER_GUARD 
 		 
 		    
-		int 
-		outer_guard_variable 
-		= 
-		100 
-		; 
+		int outer_guard_variable = 100 ; 
 		 
 		 
 	#endif 
@@ -41,42 +33,30 @@
 	#ifndef CODE_BLOCK_TEST 	
 		#define CODE_BLOCK_TEST 
 		    
-		void 
-		test_function 
-		( 
+		void test_function (  )   {  
+		        int x = 10 ; 
 		 
+		        
+		if 
+		 
+		( 
+		x 
+		> 
+		5 
 		) 
 		  
 		{ 		
 			 
-			        
-			int 
+			            
 			x 
 			= 
-			10 
+			5 
 			; 
 			 
-			        
-			if 
-			 
-			( 
-			x 
-			> 
-			5 
-			) 
-			  
-			{ 			
-				 
-				            
-				x 
-				= 
-				5 
-				; 
-				 
-				         
-			} 
-			 
-			     
+			         
+		} 
+		 
+		     
 		} 
 		 
 	#endif 
@@ -94,11 +74,7 @@
 		/* A multi-line comment  
 		       inside the guard */ 
 		    
-		int 
-		complex_variable 
-		= 
-		200 
-		; 
+		int complex_variable = 200 ; 
 		 
 		 
 	#endif 
@@ -111,19 +87,16 @@
 			        
 			#define PLATFORM_SPECIFIC "Windows" 
 			    
-			#elif 
-			defined 
-			( 
-			__APPLE__ 
-			) 
-			 
-			        
-			#define PLATFORM_SPECIFIC "MacOS" 
-			    
-			#else 
-			        
-			#define PLATFORM_SPECIFIC "Linux" 
-			    
+			#elif 			
+				defined ( __APPLE__ ) 
+				 
+				        
+				#define PLATFORM_SPECIFIC "MacOS" 
+				    
+			#else 			
+				        
+				#define PLATFORM_SPECIFIC "Linux" 
+				    
 		#endif 
 	#endif 
 	 
@@ -131,24 +104,24 @@
 	#ifndef INCLUDED_STDIO 	
 		#define INCLUDED_STDIO 
 		#include <stdio.h> 
-		#endif 
-		 
-		 
-		// Totally Empty ifndef  ( edge case )  
-		#ifndef EMPTY_GUARD 
-		#endif 
-		 
-		// Empty ifndef  ( edge case )  
-		#ifndef EMPTY_GUARD 		
-			#define EMPTY_GUARD 
-		#endif 
-		 
-		// Typedef inside ifndef 
-		#ifndef MY_TYPE_GUARD 		
-			#define MY_TYPE_GUARD 
-			typedef unsigned int uint_t 
-			 
-		#endif 
+	#endif 
+	 
+	 
+	// Totally Empty ifndef  ( edge case )  
+	#ifndef EMPTY_GUARD 
+	#endif 
+	 
+	// Empty ifndef  ( edge case )  
+	#ifndef EMPTY_GUARD 	
+		#define EMPTY_GUARD 
+	#endif 
+	 
+	// Typedef inside ifndef 
+	#ifndef MY_TYPE_GUARD 	
+		#define MY_TYPE_GUARD 
+		typedef unsigned int uint_t 
 		 
 	#endif 
-	// TEST_IFNDEF_NODE_H  
+	 
+#endif 
+// TEST_IFNDEF_NODE_H  

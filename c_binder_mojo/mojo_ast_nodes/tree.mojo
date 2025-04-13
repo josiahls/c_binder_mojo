@@ -371,7 +371,7 @@ fn get_current_node(
 
 
 fn make_tree(
-    owned c_nodes: List[c_ast_nodes.AstNode], tree_transition_file: String = ""
+    owned c_nodes: List[c_ast_nodes.AstNode], tree_transition_file: String = "", validate_tree: Bool = True
 ) raises -> ModuleInterface:
     """Build an AST from a list of tokens.
 
@@ -436,15 +436,16 @@ fn make_tree(
         token_count += 1
 
     # Verify that all nodes are completed
-    incomplete_nodes = List[AstNode]()
-    for node in nodes[]:
-        if node[].node_state() != NodeState.COMPLETED:
-            incomplete_nodes.append(node[])
-    if len(incomplete_nodes) > 0:
-        var s = String('\t')
-        for node in incomplete_nodes:
-            s += node[].name(include_sig=True) + "\n\t"
-        raise Error("Incomplete nodes: " + s)
+    if validate_tree:
+        incomplete_nodes = List[AstNode]()
+        for node in nodes[]:
+            if node[].node_state() != NodeState.COMPLETED:
+                incomplete_nodes.append(node[])
+        if len(incomplete_nodes) > 0:
+            var s = String('\t')
+            for node in incomplete_nodes:
+                s += node[].name(include_sig=True) + "\n\t"
+            raise Error("Incomplete mojo ast nodes: \n" + s)
 
     # Log tree construction statistics
     logger.info("Tree construction complete")

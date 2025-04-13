@@ -336,11 +336,13 @@ fn get_current_node(
     )
 
     if token_flow == TokenFlow.CREATE_CHILD:
+        # TODO(josiahls): call process before this. 
         return _create_child(
             token, current_idx, module_interface, logger, recursion_depth + 1
         )
 
     elif token_flow == TokenFlow.PASS_TO_PARENT:
+        # TODO(josiahls): call process before this. 
         return get_current_node(
             token,
             node.indicies().c_parent_idx,
@@ -350,6 +352,7 @@ fn get_current_node(
         )
 
     elif token_flow == TokenFlow.CONSUME_TOKEN:
+        # TODO(josiahls): call process before this. 
         return _consume_token(token, current_idx, module_interface, logger)
     else:
         raise Error(

@@ -191,4 +191,4 @@ struct StructNode(NodeAstLike):
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:
-        return 0  # Struct declarations don't create a new scope 
+        return 1  # Struct declarations don't create a new scope 

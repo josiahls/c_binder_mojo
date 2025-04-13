@@ -32,13 +32,14 @@ struct ScopeNode(NodeAstLike):
     var _token_bundles: ArcPointer[TokenBundles]
     var _c_token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
+    var _is_empty_scope: Bool
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         self._indicies = indicies
         self._c_token_bundles = c_node.token_bundles()
         self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
-
+        self._is_empty_scope = False
     @staticmethod
     fn accept(
         c_node: C_AstNode,
@@ -69,8 +70,18 @@ struct ScopeNode(NodeAstLike):
         else:
             return TokenFlow.PASS_TO_PARENT
 
-    fn _format_scope_tokens(mut self):
+    fn _format_scope_tokens(mut self, module_interface: ModuleInterface):
         var last_line_num = 0
+        var has_non_whitespace_children = False
+
+        for child_idx in self._indicies[].mojo_child_idxs:
+            var child = module_interface.nodes()[][child_idx[]]
+            if child.name() != "WhitespaceNode":
+                print('child.name()', child.name())
+                has_non_whitespace_children = True
+                break
+
+
         for token in self._c_token_bundles[]:
             # Mojo scopes are just indentations, which is automatically
             # handled by the to string utils based on the parent child
@@ -78,6 +89,10 @@ struct ScopeNode(NodeAstLike):
             if token[].row_num != last_line_num:
                 self._token_bundles[].append(TokenBundle('', token[].row_num, token[].col_num))
                 last_line_num = token[].row_num
+
+        if not has_non_whitespace_children:
+            self._is_empty_scope = True
+            self._token_bundles[].append(TokenBundle('pass', last_line_num +1, 0))
 
     fn process(
         mut self,
@@ -87,7 +102,7 @@ struct ScopeNode(NodeAstLike):
     ):
         if token_flow == TokenFlow.PASS_TO_PARENT:
             self._node_state = NodeState.COMPLETED
-            self._format_scope_tokens()
+            self._format_scope_tokens(module_interface)
         elif token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         # elif token_flow == TokenFlow.CONSUME_TOKEN:
@@ -139,4 +154,4 @@ struct ScopeNode(NodeAstLike):
         )
 
     fn scope_offset(self, just_code: Bool) -> Int:
-        return 1  # Root adds one level of scope
+        return 0  # Root adds one level of scope

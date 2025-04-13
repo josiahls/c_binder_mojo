@@ -1,86 +1,87 @@
 # Basic struct declarations 
 @value 
 struct Point : 
- 
- 
-    
-	var x : Int 
- 
-    
-	var y : Int 
- 
- 
+	 	
+	 
+	    
+var x : Int 
+	 
+	    
+var y : Int 
+	 
+	 
 @value 
 struct Person : 
- 
- 
-    
+	 	
+	 
+	    
 	var name : String 
- 
-    
+	 
+	    
 	var age : Int 
- 
- 
+	 
+	 
 # Empty struct 
 @value 
 struct Empty : 
- 
- 
- 
+	 
+	pass 	
+	 
+	 
 # Multi-line struct with comments 
 @value 
 struct Complex : 
- 
- 
-    
-	# Basic types 
-    
-	var id : Int 
- 
-    
-	var value : Float32 
- 
-     
-    
-	""" Nested struct """ 
-    
-	var nested : Inner 	
-@value 
-struct Inner : 
- 
- 
-        
+	 	
+	 
+	    
+# Basic types 
+	    
+var id : Int 
+	 
+	    
+var value : Float32 
+	 
+	     
+	    
+""" Nested struct """ 
+	    
+var nested : Inner 
+	@value 
+	struct Inner : 	
+		 		
+		 
+		        
 	var data : Float64 
- 
-     
- 
- 
+		 
+		     
+	 
+	 
 # Anonymous struct in typedef 
 typedef 
 @value 
 struct   : 
- 
- 
-    
-	var flags : UInt 
- 
- 
+	 	
+	 
+	    
+var flags : UInt 
+	 
+	 
  
  
 # Struct with bit fields 
 @value 
 struct BitFields : 
- 
- 
-    
-	var a : UInt 
- 
-    
-	var b : UInt 
- 
-    
-	var c : UInt 
- 
- 
+	 	
+	 
+	    
+var a : UInt 
+	 
+	    
+var b : UInt 
+	 
+	    
+var c : UInt 
+	 
+	 
 fn main():
     pass

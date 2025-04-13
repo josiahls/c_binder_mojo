@@ -68,7 +68,7 @@ MacroDefineValueNode(c_parent_idx=27, c_current_idx=28, mojo_parent_idx=28, mojo
 PlaceHolderNode(c_parent_idx=25, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30, c_child_idxs=(30, 31, 32), node_state=4 (COMPLETED))
 #elif 
 
-PlaceHolderNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, node_state=4 (COMPLETED))
+FunctionCallNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31)
 defined ( __APPLE__ ) 
 WhitespaceNode(c_parent_idx=29, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32, n_tokens=5)
  

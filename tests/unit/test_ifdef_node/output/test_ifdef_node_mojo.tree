@@ -366,14 +366,14 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'FunctionCallNode'
     └─ Nodes: 1 active, 30 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FunctionCallNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31)
+    └─ Path: RootNode -> FunctionCallNode
     └─ Current C_Node: 'FunctionCallNode'
-    └─ Nodes: 1 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+    └─ Nodes: 2 active, 30 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FunctionCallNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31)
+    └─ Path: RootNode -> FunctionCallNode
     └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 31 complete
+    └─ Nodes: 2 active, 30 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 5, 6, 7, ...) len=25, mojo_child_idxs=(1, 2, 3, 6, 7, ...) len=24)
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'

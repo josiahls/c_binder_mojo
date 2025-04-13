@@ -10,6 +10,7 @@ from .enum_node import EnumNode
 from .scope_node import ScopeNode
 from .enum_field_node import EnumFieldNode
 from .macro_if_def_node import MacroIfDefNode
+from .function_call_node import FunctionCallNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -24,6 +25,7 @@ alias AstNodeVariant = Variant[
     EnumNode,
     EnumFieldNode,
     MacroIfDefNode,
+    FunctionCallNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]
 

@@ -73,12 +73,7 @@ struct FunctionCallNode(NodeAstLike):
         self._args = List[String]()
         self._return_type = ""  # Will be populated if available
         
-        # Initialize built-in functions
-        # self._builtin_functions = List[String](capacity=3)
-        # self._builtin_functions.append("defined")
-        # self._builtin_functions.append("sizeof")
-        # self._builtin_functions.append("__alignof__")
-        
+
         # Check if this is a built-in function
         self._is_builtin = False
         for i in range(len(self._builtin_functions)):

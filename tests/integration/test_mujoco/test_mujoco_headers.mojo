@@ -15,6 +15,9 @@ from c_binder_mojo.c_ast_nodes.struct_node import StructNode
 from c_binder_mojo.c_ast_nodes.typedef_node import TypedefNode
 from c_binder_mojo.c_ast_nodes.macro_if_n_def_node import MacroIfNDefNode
 
+from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
+from c_binder_mojo.mojo_ast_nodes.root_node import RootNode
+
 
 fn verify_struct_node_contents(node: StructNode) raises:
     """Verify that a struct node does not contain unrelated tokens."""
@@ -109,6 +112,25 @@ fn test_mjtnum_header() raises:
         )
     )
 
+    # Generate Mojo AST
+    var mojo_tree_log_file = test_dir / "output/test_mjtnum_mojo.tree"
+    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
+    mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
+
+    # Save Mojo AST for debugging
+    var mojo_ast_file_just_code = test_dir / "output/test_mjtnum.mojo"
+    mojo_ast_file_just_code.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=mojo_module_interface
+        )
+    )
+    var mojo_ast_file = test_dir / "output/test_mjtnum.mojo_ast"
+    mojo_ast_file.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=mojo_module_interface
+        )
+    )
+
     # Verify the AST structure
     var root_node = module_interface.nodes()[][0]
     logger.info("Root node: " + root_node.name())
@@ -195,6 +217,25 @@ fn test_mjmodel_header() raises:
     ast_file.write_text(
         module_interface.nodes()[][0].to_string(
             just_code=False, module_interface=module_interface
+        )
+    )
+
+    # Generate Mojo AST
+    var mojo_tree_log_file = test_dir / "output/test_mjmodel_mojo.tree"
+    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
+    mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
+
+    # Save Mojo AST for debugging
+    var mojo_ast_file_just_code = test_dir / "output/test_mjmodel.mojo"
+    mojo_ast_file_just_code.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=True, module_interface=mojo_module_interface
+        )
+    )
+    var mojo_ast_file = test_dir / "output/test_mjmodel.mojo_ast"
+    mojo_ast_file.write_text(
+        mojo_module_interface.nodes()[][0].to_string(
+            just_code=False, module_interface=mojo_module_interface
         )
     )
 

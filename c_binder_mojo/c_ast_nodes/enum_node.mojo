@@ -143,6 +143,7 @@ struct EnumNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         # Otherwise keep collecting tokens
+        self._node_state = NodeState.COMPLETED
         return TokenFlow.PASS_TO_PARENT
 
     fn is_whitespace(self, token: TokenBundle) -> Bool:

@@ -1,4 +1,4 @@
-RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=27)
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28)
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
 // Basic type typedefs 
 TypedefNode(c_parent_idx=0, c_current_idx=2, node_state=4 (COMPLETED))
@@ -18,7 +18,7 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=8)
 // Enum typedef 
 TypedefNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10), node_state=4 (COMPLETED), type='NodeState')
 typedef 
-EnumNode(c_parent_idx=9, c_current_idx=10, c_child_idxs=(11), node_state=3 (BUILDING_CHILDREN), name='NodeState_')
+EnumNode(c_parent_idx=9, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='NodeState_')
 enum NodeState_  
 	ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, ...) len=16, node_state=4 (COMPLETED), parent_type='EnumNode')
 	{ 
@@ -49,7 +49,7 @@ enum NodeState_
 		// Building children 
 		WhitespaceNode(c_parent_idx=11, c_current_idx=24, n_tokens=4)
 		    
-		EnumFieldNode(c_parent_idx=11, c_current_idx=25, node_state=1 (COLLECTING_TOKENS), field_name='STATE_COMPLETE')
+		EnumFieldNode(c_parent_idx=11, c_current_idx=25, node_state=4 (COMPLETED), field_name='STATE_COMPLETE')
 		STATE_COMPLETE       
 		SingleLineCommentNode(c_parent_idx=11, c_current_idx=26)
 		// Node is complete 
@@ -73,7 +73,7 @@ MacroIfNDefNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31, 32, 33, 34, 
 	 
 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=33)
 	// This struct should not collect the typedefs that follow 
-	StructNode(c_parent_idx=30, c_current_idx=34, c_child_idxs=(35), node_state=1 (COLLECTING_TOKENS), name='TestStruct')
+	StructNode(c_parent_idx=30, c_current_idx=34, c_child_idxs=(35), node_state=4 (COMPLETED), name='TestStruct')
 	struct TestStruct  
 	  
 	 
@@ -117,7 +117,7 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=49)
 // Struct typedefs - testing nested typedef handling 
 TypedefNode(c_parent_idx=0, c_current_idx=50, c_child_idxs=(51), node_state=4 (COMPLETED), type='Point2D')
 typedef 
-StructNode(c_parent_idx=50, c_current_idx=51, c_child_idxs=(52), node_state=1 (COLLECTING_TOKENS))
+StructNode(c_parent_idx=50, c_current_idx=51, c_child_idxs=(52), node_state=4 (COMPLETED))
 struct  
  
 	ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57), node_state=4 (COMPLETED), parent_type='StructNode')
@@ -145,7 +145,7 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=58, n_tokens=2)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=59)
 // Test typedef and struct interaction 
-StructNode(c_parent_idx=0, c_current_idx=60, c_child_idxs=(61), node_state=1 (COLLECTING_TOKENS), name='Rectangle_')
+StructNode(c_parent_idx=0, c_current_idx=60, c_child_idxs=(61), node_state=4 (COMPLETED), name='Rectangle_')
 struct Rectangle_  
   
  
@@ -182,7 +182,7 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=71)
 // This typedef should be independent of the struct above 
 TypedefNode(c_parent_idx=0, c_current_idx=72, c_child_idxs=(73), node_state=4 (COMPLETED), type='Rectangle')
 typedef 
-StructNode(c_parent_idx=72, c_current_idx=73, node_state=1 (COLLECTING_TOKENS), name='Rectangle_')
+StructNode(c_parent_idx=72, c_current_idx=73, node_state=4 (COMPLETED), name='Rectangle_')
 struct Rectangle_ 
 Rectangle 
 WhitespaceNode(c_parent_idx=0, c_current_idx=74, n_tokens=2)
@@ -198,7 +198,7 @@ MacroIfNDefNode(c_parent_idx=0, c_current_idx=76, c_child_idxs=(77, 78, 79, 85, 
 	 
 	TypedefNode(c_parent_idx=76, c_current_idx=79, c_child_idxs=(80), node_state=4 (COMPLETED), type='NestedStruct')
 	typedef 
-		StructNode(c_parent_idx=79, c_current_idx=80, c_child_idxs=(81), node_state=1 (COLLECTING_TOKENS))
+		StructNode(c_parent_idx=79, c_current_idx=80, c_child_idxs=(81), node_state=4 (COMPLETED))
 	struct  
 	 
 			ScopeNode(c_parent_idx=80, c_current_idx=81, c_child_idxs=(82, 83, 84), node_state=4 (COMPLETED), parent_type='StructNode')
@@ -236,3 +236,4 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=92, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=93)
 // NESTED_TEST  
+EndFileNode(c_parent_idx=0, c_current_idx=94)C_BINDER_MOJO_END_FILE 

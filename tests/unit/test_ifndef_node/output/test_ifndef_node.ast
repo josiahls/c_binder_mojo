@@ -1,256 +1,319 @@
-RootNode(c_current_idx=0, c_child_idxs=(1, 2, 104, 105))
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 119, 120))
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
-// Basic header guards 
-MacroIfNDefNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3, 4, 5, 6, 9, ...) len=32, node_state=4 (COMPLETED))
-#ifndef TEST_IFNDEF_NODE_H 
-	MacroDefineNode(c_parent_idx=2, c_current_idx=3, node_state=4 (COMPLETED), macro='TEST_IFNDEF_NODE_H')
-	#define TEST_IFNDEF_NODE_H 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=4, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=5)
-	// Simple define inside an ifndef 
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=6, c_child_idxs=(7), node_state=4 (COMPLETED))
-	#ifndef SIMPLE_DEFINE 
-			MacroDefineNode(c_parent_idx=6, c_current_idx=7, c_child_idxs=(8), node_state=4 (COMPLETED), macro='SIMPLE_DEFINE')
-		#define SIMPLE_DEFINE 
-					MacroDefineValueNode(c_parent_idx=7, c_current_idx=8, node_state=4 (COMPLETED), is_function_like=False)
-			1 
+ // Basic header guards 
 
+MacroIfNDefNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3, 4, 6, 7, 11, ...) len=32, node_state=4 (COMPLETED))
+ #ifndef TEST_IFNDEF_NODE_H	WhitespaceNode(c_parent_idx=2, c_current_idx=3, n_tokens=1)
+ 
 
-	#endif 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=9, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=10)
-	// Nested ifndefs 
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=11, c_child_idxs=(12, 13, 14, 20, 21, ...) len=7, node_state=4 (COMPLETED))
-	#ifndef OUTER_GUARD 
-			MacroDefineNode(c_parent_idx=11, c_current_idx=12, node_state=4 (COMPLETED), macro='OUTER_GUARD')
-		#define OUTER_GUARD 
-		WhitespaceNode(c_parent_idx=11, c_current_idx=13, n_tokens=5)
-		 
-		    
-		MacroIfNDefNode(c_parent_idx=11, c_current_idx=14, c_child_idxs=(15, 16, 17, 18, 19), node_state=4 (COMPLETED))
-		#ifndef INNER_GUARD 
-					WhitespaceNode(c_parent_idx=14, c_current_idx=15, n_tokens=4)
-			    
-			MacroDefineNode(c_parent_idx=14, c_current_idx=16, node_state=4 (COMPLETED), macro='INNER_GUARD')
-			#define INNER_GUARD 
-			WhitespaceNode(c_parent_idx=14, c_current_idx=17, n_tokens=8)
-			        
-			VariableNode(c_parent_idx=14, c_current_idx=18, node_state=4 (COMPLETED))
-			int inner_guard_variable = 42 ; 
-			WhitespaceNode(c_parent_idx=14, c_current_idx=19, n_tokens=5)
-			 
-			    
-
-		#endif 
-		SingleLineCommentNode(c_parent_idx=11, c_current_idx=20)
-		// INNER_GUARD 
-		WhitespaceNode(c_parent_idx=11, c_current_idx=21, n_tokens=5)
-		 
-		    
-		VariableNode(c_parent_idx=11, c_current_idx=22, node_state=4 (COMPLETED))
-		int outer_guard_variable = 100 ; 
-		WhitespaceNode(c_parent_idx=11, c_current_idx=23, n_tokens=2)
-		 
-		 
-
-	#endif 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=24)
-	// OUTER_GUARD 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=25, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=26)
-	// Ifdef with code blocks 
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=27, c_child_idxs=(28, 29, 30, 31, 32, ...) len=16, node_state=4 (COMPLETED))
-	#ifndef CODE_BLOCK_TEST 
-			MacroDefineNode(c_parent_idx=27, c_current_idx=28, node_state=4 (COMPLETED), macro='CODE_BLOCK_TEST')
-		#define CODE_BLOCK_TEST 
-		WhitespaceNode(c_parent_idx=27, c_current_idx=29, n_tokens=4)
-		    
-		VariableNode(c_parent_idx=27, c_current_idx=30, node_state=4 (COMPLETED))
-		void test_function (  )   {  
-		        int x = 10 ; 
-		WhitespaceNode(c_parent_idx=27, c_current_idx=31, n_tokens=9)
-		 
-		        
-		PlaceHolderNode(c_parent_idx=27, c_current_idx=32)
-		if 
-		WhitespaceNode(c_parent_idx=27, c_current_idx=33, n_tokens=1)
-		 
-		PlaceHolderNode(c_parent_idx=27, c_current_idx=34)
-		( 
-		PlaceHolderNode(c_parent_idx=27, c_current_idx=35)
-		x 
-		PlaceHolderNode(c_parent_idx=27, c_current_idx=36)
-		> 
-		PlaceHolderNode(c_parent_idx=27, c_current_idx=37)
-		5 
-		PlaceHolderNode(c_parent_idx=27, c_current_idx=38)
-		) 
-		WhitespaceNode(c_parent_idx=27, c_current_idx=39, n_tokens=2)
+	MacroDefineNode(c_parent_idx=2, c_current_idx=4, c_child_idxs=(5), node_state=4 (COMPLETED), macro='TEST_IFNDEF_NODE_H')
+ #define TEST_IFNDEF_NODE_H			WhitespaceNode(c_parent_idx=4, c_current_idx=5, n_tokens=3)
+ 
 		  
-		ScopeNode(c_parent_idx=27, c_current_idx=40, c_child_idxs=(41, 42, 43, 44, 45, 46), node_state=4 (COMPLETED), parent_type='MacroIfNDefNode')
-		{ 
-					WhitespaceNode(c_parent_idx=40, c_current_idx=41, n_tokens=13)
-			 
-			            
-			PlaceHolderNode(c_parent_idx=40, c_current_idx=42)
-			x 
-			PlaceHolderNode(c_parent_idx=40, c_current_idx=43)
-			= 
-			PlaceHolderNode(c_parent_idx=40, c_current_idx=44)
-			5 
-			PlaceHolderNode(c_parent_idx=40, c_current_idx=45)
-			; 
-			WhitespaceNode(c_parent_idx=40, c_current_idx=46, n_tokens=10)
-			 
-			         
 
-		} 
-		WhitespaceNode(c_parent_idx=27, c_current_idx=47, n_tokens=6)
-		 
-		     
-		PlaceHolderNode(c_parent_idx=27, c_current_idx=48)
-		} 
-		WhitespaceNode(c_parent_idx=27, c_current_idx=49, n_tokens=1)
-		 
 
-	#endif 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=50)
-	// CODE_BLOCK_TEST 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=51, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=52)
-	// Complex guards with comments 
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=53, c_child_idxs=(54, 55, 57, 58, 59, ...) len=9, node_state=4 (COMPLETED))
-	#ifndef COMPLEX_GUARD 
-			SingleLineCommentNode(c_parent_idx=53, c_current_idx=54)
-		// This is a comment after ifndef 
-		MacroDefineNode(c_parent_idx=53, c_current_idx=55, c_child_idxs=(56), node_state=4 (COMPLETED), macro='COMPLEX_GUARD')
-		#define COMPLEX_GUARD 
-					MultiLineCommentNode(c_parent_idx=55, c_current_idx=56)
-			/* This is a comment after define */ 
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=6)
+ // Simple define inside an ifndef 
 
-		WhitespaceNode(c_parent_idx=53, c_current_idx=57, n_tokens=5)
-		 
-		    
-		SingleLineCommentNode(c_parent_idx=53, c_current_idx=58)
-		// A single line comment inside the guard 
-		WhitespaceNode(c_parent_idx=53, c_current_idx=59, n_tokens=4)
-		    
-		MultiLineCommentNode(c_parent_idx=53, c_current_idx=60)
-		/* A multi-line comment  
-		       inside the guard */ 
-		WhitespaceNode(c_parent_idx=53, c_current_idx=61, n_tokens=4)
-		    
-		VariableNode(c_parent_idx=53, c_current_idx=62, node_state=4 (COMPLETED))
-		int complex_variable = 200 ; 
-		WhitespaceNode(c_parent_idx=53, c_current_idx=63, n_tokens=2)
-		 
-		 
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=7, c_child_idxs=(8, 9), node_state=4 (COMPLETED))
+ #ifndef SIMPLE_DEFINE			WhitespaceNode(c_parent_idx=7, c_current_idx=8, n_tokens=1)
+ 
 
-	#endif 
-	MultiLineCommentNode(c_parent_idx=2, c_current_idx=64)
-	/* End of complex guard */ 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=65, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=66)
-	// Conditional compilation 
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=67, c_child_idxs=(68, 69), node_state=4 (COMPLETED))
-	#ifndef PLATFORM_SPECIFIC 
-			WhitespaceNode(c_parent_idx=67, c_current_idx=68, n_tokens=4)
-		    
-		MacroIfDefNode(c_parent_idx=67, c_current_idx=69, c_child_idxs=(70, 71, 73, 74, 80), node_state=4 (COMPLETED))
-		#ifdef _WIN32 
-					WhitespaceNode(c_parent_idx=69, c_current_idx=70, n_tokens=8)
-			        
-			MacroDefineNode(c_parent_idx=69, c_current_idx=71, c_child_idxs=(72), node_state=4 (COMPLETED), macro='PLATFORM_SPECIFIC')
-			#define PLATFORM_SPECIFIC 
-							MacroDefineValueNode(c_parent_idx=71, c_current_idx=72, node_state=4 (COMPLETED), is_function_like=False)
-				"Windows" 
+		MacroDefineNode(c_parent_idx=7, c_current_idx=9, c_child_idxs=(10), node_state=4 (COMPLETED), macro='SIMPLE_DEFINE')
+ #define SIMPLE_DEFINE					MacroDefineValueNode(c_parent_idx=9, c_current_idx=10, node_state=4 (COMPLETED), is_function_like=False)
+ 1 
 
-			WhitespaceNode(c_parent_idx=69, c_current_idx=73, n_tokens=4)
+
+ #endif
+	WhitespaceNode(c_parent_idx=2, c_current_idx=11, n_tokens=3)
+ 
+	  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=12)
+ // Nested ifndefs 
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=13, c_child_idxs=(14, 15, 17, 23, 24, ...) len=7, node_state=4 (COMPLETED))
+ #ifndef OUTER_GUARD			WhitespaceNode(c_parent_idx=13, c_current_idx=14, n_tokens=1)
+ 
+
+		MacroDefineNode(c_parent_idx=13, c_current_idx=15, c_child_idxs=(16), node_state=4 (COMPLETED), macro='OUTER_GUARD')
+ #define OUTER_GUARD					WhitespaceNode(c_parent_idx=15, c_current_idx=16, n_tokens=7)
+ 
+			  
 			    
-			MacroElIfDefNode(c_parent_idx=69, c_current_idx=74, c_child_idxs=(75, 76, 77, 79), node_state=4 (COMPLETED))
-			#elif 
-							FunctionCallNode(c_parent_idx=74, c_current_idx=75, function='defined' (builtin), args=['__APPLE__'])
-				defined ( __APPLE__ ) 
-				WhitespaceNode(c_parent_idx=74, c_current_idx=76, n_tokens=9)
-				 
+
+		MacroIfNDefNode(c_parent_idx=13, c_current_idx=17, c_child_idxs=(18, 19, 21, 22), node_state=4 (COMPLETED))
+ #ifndef INNER_GUARD					WhitespaceNode(c_parent_idx=17, c_current_idx=18, n_tokens=5)
+ 
+			    
+			MacroDefineNode(c_parent_idx=17, c_current_idx=19, c_child_idxs=(20), node_state=4 (COMPLETED), macro='INNER_GUARD')
+ #define INNER_GUARD							WhitespaceNode(c_parent_idx=19, c_current_idx=20, n_tokens=9)
+ 
 				        
-				MacroDefineNode(c_parent_idx=74, c_current_idx=77, c_child_idxs=(78), node_state=4 (COMPLETED), macro='PLATFORM_SPECIFIC')
-				#define PLATFORM_SPECIFIC 
-									MacroDefineValueNode(c_parent_idx=77, c_current_idx=78, node_state=4 (COMPLETED), is_function_like=False)
-					"MacOS" 
 
-				WhitespaceNode(c_parent_idx=74, c_current_idx=79, n_tokens=4)
-				    
+			VariableNode(c_parent_idx=17, c_current_idx=21, node_state=4 (COMPLETED))
+ int inner_guard_variable  =  42 ;
+			WhitespaceNode(c_parent_idx=17, c_current_idx=22, n_tokens=6)
+  
+			    
+ #endif
+		SingleLineCommentNode(c_parent_idx=13, c_current_idx=23)
+ // INNER_GUARD 
 
-			MacroElseDefNode(c_parent_idx=69, c_current_idx=80, c_child_idxs=(81, 82, 84), node_state=4 (COMPLETED))
-			#else 
-							WhitespaceNode(c_parent_idx=80, c_current_idx=81, n_tokens=8)
+		WhitespaceNode(c_parent_idx=13, c_current_idx=24, n_tokens=6)
+  
+		    
+		VariableNode(c_parent_idx=13, c_current_idx=25, node_state=4 (COMPLETED))
+ int outer_guard_variable  =  100 ;
+		WhitespaceNode(c_parent_idx=13, c_current_idx=26, n_tokens=4)
+  
+		  
+
+ #endif
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=27)
+ // OUTER_GUARD 
+
+	WhitespaceNode(c_parent_idx=2, c_current_idx=28, n_tokens=2)
+  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=29)
+ // Ifdef with code blocks 
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=30, c_child_idxs=(31, 32, 34, 35, 36, ...) len=16, node_state=4 (COMPLETED))
+ #ifndef CODE_BLOCK_TEST			WhitespaceNode(c_parent_idx=30, c_current_idx=31, n_tokens=1)
+ 
+
+		MacroDefineNode(c_parent_idx=30, c_current_idx=32, c_child_idxs=(33), node_state=4 (COMPLETED), macro='CODE_BLOCK_TEST')
+ #define CODE_BLOCK_TEST					WhitespaceNode(c_parent_idx=32, c_current_idx=33, n_tokens=5)
+ 
+			    
+
+		VariableNode(c_parent_idx=30, c_current_idx=34, node_state=4 (COMPLETED))
+ void test_function (  )   {  
+		         int x  =  10 ;
+		WhitespaceNode(c_parent_idx=30, c_current_idx=35, n_tokens=10)
+  
+		        
+		PlaceHolderNode(c_parent_idx=30, c_current_idx=36)
+ if
+		WhitespaceNode(c_parent_idx=30, c_current_idx=37, n_tokens=1)
+ 
+		PlaceHolderNode(c_parent_idx=30, c_current_idx=38)
+ (
+		PlaceHolderNode(c_parent_idx=30, c_current_idx=39)
+ x
+		PlaceHolderNode(c_parent_idx=30, c_current_idx=40)
+ >
+		PlaceHolderNode(c_parent_idx=30, c_current_idx=41)
+ 5
+		PlaceHolderNode(c_parent_idx=30, c_current_idx=42)
+ )
+		WhitespaceNode(c_parent_idx=30, c_current_idx=43, n_tokens=2)
+  
+		ScopeNode(c_parent_idx=30, c_current_idx=44, c_child_idxs=(45, 46, 47, 48, 49, ...) len=8, node_state=4 (COMPLETED), parent_type='MacroIfNDefNode')
+ {					WhitespaceNode(c_parent_idx=44, c_current_idx=45, n_tokens=14)
+  
+			            
+			PlaceHolderNode(c_parent_idx=44, c_current_idx=46)
+ x
+			WhitespaceNode(c_parent_idx=44, c_current_idx=47, n_tokens=1)
+ 
+			PlaceHolderNode(c_parent_idx=44, c_current_idx=48)
+ =
+			WhitespaceNode(c_parent_idx=44, c_current_idx=49, n_tokens=1)
+ 
+			PlaceHolderNode(c_parent_idx=44, c_current_idx=50)
+ 5
+			PlaceHolderNode(c_parent_idx=44, c_current_idx=51)
+ ;
+			WhitespaceNode(c_parent_idx=44, c_current_idx=52, n_tokens=11)
+  
+			         
+ }
+		WhitespaceNode(c_parent_idx=30, c_current_idx=53, n_tokens=7)
+  
+		     
+		PlaceHolderNode(c_parent_idx=30, c_current_idx=54)
+ }
+		WhitespaceNode(c_parent_idx=30, c_current_idx=55, n_tokens=2)
+  
+
+ #endif
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=56)
+ // CODE_BLOCK_TEST 
+
+	WhitespaceNode(c_parent_idx=2, c_current_idx=57, n_tokens=2)
+  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=58)
+ // Complex guards with comments 
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=59, c_child_idxs=(60, 61, 64, 65, 66, ...) len=8, node_state=4 (COMPLETED))
+ #ifndef COMPLEX_GUARD			SingleLineCommentNode(c_parent_idx=59, c_current_idx=60)
+ // This is a comment after ifndef 
+
+		MacroDefineNode(c_parent_idx=59, c_current_idx=61, c_child_idxs=(62, 63), node_state=4 (COMPLETED), macro='COMPLEX_GUARD')
+ #define COMPLEX_GUARD					MultiLineCommentNode(c_parent_idx=61, c_current_idx=62)
+ /* This is a comment after define */
+			WhitespaceNode(c_parent_idx=61, c_current_idx=63, n_tokens=7)
+ 
+			  
+			    
+
+		SingleLineCommentNode(c_parent_idx=59, c_current_idx=64)
+ // A single line comment inside the guard 
+
+		WhitespaceNode(c_parent_idx=59, c_current_idx=65, n_tokens=4)
+    
+		MultiLineCommentNode(c_parent_idx=59, c_current_idx=66)
+ /* A multi-line comment  
+		        inside the guard */
+		WhitespaceNode(c_parent_idx=59, c_current_idx=67, n_tokens=5)
+ 
+		    
+		VariableNode(c_parent_idx=59, c_current_idx=68, node_state=4 (COMPLETED))
+ int complex_variable  =  200 ;
+		WhitespaceNode(c_parent_idx=59, c_current_idx=69, n_tokens=4)
+  
+		  
+
+ #endif
+	MultiLineCommentNode(c_parent_idx=2, c_current_idx=70)
+ /* End of complex guard */
+	WhitespaceNode(c_parent_idx=2, c_current_idx=71, n_tokens=3)
+ 
+	  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=72)
+ // Conditional compilation 
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=73, c_child_idxs=(74, 75, 91), node_state=4 (COMPLETED))
+ #ifndef PLATFORM_SPECIFIC			WhitespaceNode(c_parent_idx=73, c_current_idx=74, n_tokens=5)
+ 
+		    
+		MacroIfDefNode(c_parent_idx=73, c_current_idx=75, c_child_idxs=(76, 77, 79, 80, 86), node_state=4 (COMPLETED))
+ #ifdef _WIN32					WhitespaceNode(c_parent_idx=75, c_current_idx=76, n_tokens=9)
+ 
+			        
+			MacroDefineNode(c_parent_idx=75, c_current_idx=77, c_child_idxs=(78), node_state=4 (COMPLETED), macro='PLATFORM_SPECIFIC')
+ #define PLATFORM_SPECIFIC							MacroDefineValueNode(c_parent_idx=77, c_current_idx=78, node_state=4 (COMPLETED), is_function_like=False)
+ "Windows" 
+
+
+			WhitespaceNode(c_parent_idx=75, c_current_idx=79, n_tokens=4)
+    
+			MacroElIfDefNode(c_parent_idx=75, c_current_idx=80, c_child_idxs=(81, 82, 83, 85), node_state=4 (COMPLETED))
+ #elif							FunctionCallNode(c_parent_idx=80, c_current_idx=81, function='defined' (builtin), args=['__APPLE__'])
+ defined ( __APPLE__ )
+				WhitespaceNode(c_parent_idx=80, c_current_idx=82, n_tokens=10)
+  
 				        
-				MacroDefineNode(c_parent_idx=80, c_current_idx=82, c_child_idxs=(83), node_state=4 (COMPLETED), macro='PLATFORM_SPECIFIC')
-				#define PLATFORM_SPECIFIC 
-									MacroDefineValueNode(c_parent_idx=82, c_current_idx=83, node_state=4 (COMPLETED), is_function_like=False)
-					"Linux" 
-
-				WhitespaceNode(c_parent_idx=80, c_current_idx=84, n_tokens=4)
-				    
+				MacroDefineNode(c_parent_idx=80, c_current_idx=83, c_child_idxs=(84), node_state=4 (COMPLETED), macro='PLATFORM_SPECIFIC')
+ #define PLATFORM_SPECIFIC									MacroDefineValueNode(c_parent_idx=83, c_current_idx=84, node_state=4 (COMPLETED), is_function_like=False)
+ "MacOS" 
 
 
-		#endif 
+				WhitespaceNode(c_parent_idx=80, c_current_idx=85, n_tokens=4)
+    
 
-	#endif 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=85, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=86)
-	// Include with ifndef guard 
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=87, c_child_idxs=(88, 89), node_state=4 (COMPLETED))
-	#ifndef INCLUDED_STDIO 
-			MacroDefineNode(c_parent_idx=87, c_current_idx=88, node_state=4 (COMPLETED), macro='INCLUDED_STDIO')
-		#define INCLUDED_STDIO 
-		IncludeNode(c_parent_idx=87, c_current_idx=89, node_state=4 (COMPLETED), path='stdio.h', system=True)
-		#include <stdio.h> 
+			MacroElseDefNode(c_parent_idx=75, c_current_idx=86, c_child_idxs=(87, 88, 90), node_state=4 (COMPLETED))
+ #else							WhitespaceNode(c_parent_idx=86, c_current_idx=87, n_tokens=9)
+ 
+				        
+				MacroDefineNode(c_parent_idx=86, c_current_idx=88, c_child_idxs=(89), node_state=4 (COMPLETED), macro='PLATFORM_SPECIFIC')
+ #define PLATFORM_SPECIFIC									MacroDefineValueNode(c_parent_idx=88, c_current_idx=89, node_state=4 (COMPLETED), is_function_like=False)
+ "Linux" 
 
-	#endif 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=90, n_tokens=2)
-	 
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=91)
-	// Totally Empty ifndef  ( edge case )  
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=92, node_state=4 (COMPLETED))
-	#ifndef EMPTY_GUARD 
-	#endif 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=93, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=94)
-	// Empty ifndef  ( edge case )  
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=95, c_child_idxs=(96), node_state=4 (COMPLETED))
-	#ifndef EMPTY_GUARD 
-			MacroDefineNode(c_parent_idx=95, c_current_idx=96, node_state=4 (COMPLETED), macro='EMPTY_GUARD')
-		#define EMPTY_GUARD 
 
-	#endif 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=97, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=2, c_current_idx=98)
-	// Typedef inside ifndef 
-	MacroIfNDefNode(c_parent_idx=2, c_current_idx=99, c_child_idxs=(100, 101, 102), node_state=4 (COMPLETED))
-	#ifndef MY_TYPE_GUARD 
-			MacroDefineNode(c_parent_idx=99, c_current_idx=100, node_state=4 (COMPLETED), macro='MY_TYPE_GUARD')
-		#define MY_TYPE_GUARD 
-		TypedefNode(c_parent_idx=99, c_current_idx=101, node_state=4 (COMPLETED))
-		typedef unsigned int uint_t 
-		WhitespaceNode(c_parent_idx=99, c_current_idx=102, n_tokens=1)
-		 
+				WhitespaceNode(c_parent_idx=86, c_current_idx=90, n_tokens=4)
+    
 
-	#endif 
-	WhitespaceNode(c_parent_idx=2, c_current_idx=103, n_tokens=1)
-	 
+ #endif
+		WhitespaceNode(c_parent_idx=73, c_current_idx=91, n_tokens=1)
+ 
 
-#endif 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=104)
-// TEST_IFNDEF_NODE_H  
-EndFileNode(c_parent_idx=0, c_current_idx=105)C_BINDER_MOJO_END_FILE 
+ #endif
+	WhitespaceNode(c_parent_idx=2, c_current_idx=92, n_tokens=3)
+ 
+	  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=93)
+ // Include with ifndef guard 
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=94, c_child_idxs=(95, 96, 98, 99), node_state=4 (COMPLETED))
+ #ifndef INCLUDED_STDIO			WhitespaceNode(c_parent_idx=94, c_current_idx=95, n_tokens=1)
+ 
+
+		MacroDefineNode(c_parent_idx=94, c_current_idx=96, c_child_idxs=(97), node_state=4 (COMPLETED), macro='INCLUDED_STDIO')
+ #define INCLUDED_STDIO					WhitespaceNode(c_parent_idx=96, c_current_idx=97, n_tokens=1)
+ 
+
+
+		IncludeNode(c_parent_idx=94, c_current_idx=98, node_state=4 (COMPLETED), path='stdio.h', system=True)
+ #include <stdio.h>
+		WhitespaceNode(c_parent_idx=94, c_current_idx=99, n_tokens=1)
+ 
+
+ #endif
+	WhitespaceNode(c_parent_idx=2, c_current_idx=100, n_tokens=5)
+ 
+	  
+	  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=101)
+ // Totally Empty ifndef  ( edge case )  
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=102, c_child_idxs=(103), node_state=4 (COMPLETED))
+ #ifndef EMPTY_GUARD			WhitespaceNode(c_parent_idx=102, c_current_idx=103, n_tokens=1)
+ 
+
+ #endif
+	WhitespaceNode(c_parent_idx=2, c_current_idx=104, n_tokens=3)
+ 
+	  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=105)
+ // Empty ifndef  ( edge case )  
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=106, c_child_idxs=(107, 108), node_state=4 (COMPLETED))
+ #ifndef EMPTY_GUARD			WhitespaceNode(c_parent_idx=106, c_current_idx=107, n_tokens=1)
+ 
+
+		MacroDefineNode(c_parent_idx=106, c_current_idx=108, c_child_idxs=(109), node_state=4 (COMPLETED), macro='EMPTY_GUARD')
+ #define EMPTY_GUARD					WhitespaceNode(c_parent_idx=108, c_current_idx=109, n_tokens=1)
+ 
+
+
+ #endif
+	WhitespaceNode(c_parent_idx=2, c_current_idx=110, n_tokens=3)
+ 
+	  
+
+	SingleLineCommentNode(c_parent_idx=2, c_current_idx=111)
+ // Typedef inside ifndef 
+
+	MacroIfNDefNode(c_parent_idx=2, c_current_idx=112, c_child_idxs=(113, 114, 116, 117), node_state=4 (COMPLETED))
+ #ifndef MY_TYPE_GUARD			WhitespaceNode(c_parent_idx=112, c_current_idx=113, n_tokens=1)
+ 
+
+		MacroDefineNode(c_parent_idx=112, c_current_idx=114, c_child_idxs=(115), node_state=4 (COMPLETED), macro='MY_TYPE_GUARD')
+ #define MY_TYPE_GUARD					WhitespaceNode(c_parent_idx=114, c_current_idx=115, n_tokens=1)
+ 
+
+
+		TypedefNode(c_parent_idx=112, c_current_idx=116, node_state=4 (COMPLETED))
+ typedef unsigned int uint_t
+		WhitespaceNode(c_parent_idx=112, c_current_idx=117, n_tokens=2)
+  
+
+ #endif
+	WhitespaceNode(c_parent_idx=2, c_current_idx=118, n_tokens=3)
+ 
+	  
+
+ #endif
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=119)
+ // TEST_IFNDEF_NODE_H  
+
+EndFileNode(c_parent_idx=0, c_current_idx=120)
+ C_BINDER_MOJO_END_FILE

@@ -46,11 +46,11 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_i
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 2 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 3 complete
@@ -70,11 +70,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 4 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, mojo_parent_idx=4, mojo_current_idx=7, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, mojo_parent_idx=4, mojo_current_idx=7, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 5 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, mojo_parent_idx=4, mojo_current_idx=7, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=3, c_current_idx=6, mojo_parent_idx=4, mojo_current_idx=7, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 5 complete
@@ -94,11 +94,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 6 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, mojo_parent_idx=4, mojo_current_idx=9, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, mojo_parent_idx=4, mojo_current_idx=9, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 7 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, mojo_parent_idx=4, mojo_current_idx=9, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=3, c_current_idx=8, mojo_parent_idx=4, mojo_current_idx=9, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 7 complete
@@ -154,11 +154,11 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_i
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 11 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, mojo_parent_idx=13, mojo_current_idx=14, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, mojo_parent_idx=13, mojo_current_idx=14, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 12 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, mojo_parent_idx=13, mojo_current_idx=14, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=12, c_current_idx=13, mojo_parent_idx=13, mojo_current_idx=14, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 12 complete
@@ -382,11 +382,11 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_i
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 30 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=32, mojo_current_idx=33, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=32, mojo_current_idx=33, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=32, mojo_current_idx=33, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=32, mojo_current_idx=33, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 31 complete
@@ -406,11 +406,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 32 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, mojo_parent_idx=32, mojo_current_idx=35, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, mojo_parent_idx=32, mojo_current_idx=35, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 33 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, mojo_parent_idx=32, mojo_current_idx=35, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=34, mojo_parent_idx=32, mojo_current_idx=35, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 33 complete
@@ -430,11 +430,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, mojo_parent_idx=32, mojo_current_idx=37, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, mojo_parent_idx=32, mojo_current_idx=37, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, mojo_parent_idx=32, mojo_current_idx=37, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=36, mojo_parent_idx=32, mojo_current_idx=37, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 35 complete
@@ -454,11 +454,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, mojo_parent_idx=32, mojo_current_idx=39, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, mojo_parent_idx=32, mojo_current_idx=39, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 37 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, mojo_parent_idx=32, mojo_current_idx=39, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=31, c_current_idx=38, mojo_parent_idx=32, mojo_current_idx=39, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 37 complete
@@ -586,11 +586,11 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_i
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 47 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=48, c_current_idx=49, mojo_parent_idx=49, mojo_current_idx=50, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=48, c_current_idx=49, mojo_parent_idx=49, mojo_current_idx=50, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 48 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=48, c_current_idx=49, mojo_parent_idx=49, mojo_current_idx=50, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=48, c_current_idx=49, mojo_parent_idx=49, mojo_current_idx=50, n_tokens=3)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 3 active, 48 complete
@@ -634,11 +634,11 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_i
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 51 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 52 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 52 complete
@@ -814,11 +814,11 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_i
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 66 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=68, mojo_parent_idx=68, mojo_current_idx=69, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=68, mojo_parent_idx=68, mojo_current_idx=69, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 67 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=68, mojo_parent_idx=68, mojo_current_idx=69, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=68, mojo_parent_idx=68, mojo_current_idx=69, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 67 complete
@@ -838,11 +838,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 68 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=70, mojo_parent_idx=68, mojo_current_idx=71, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=70, mojo_parent_idx=68, mojo_current_idx=71, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 69 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=70, mojo_parent_idx=68, mojo_current_idx=71, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=70, mojo_parent_idx=68, mojo_current_idx=71, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 69 complete
@@ -862,11 +862,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 70 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=72, mojo_parent_idx=68, mojo_current_idx=73, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=72, mojo_parent_idx=68, mojo_current_idx=73, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 71 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=72, mojo_parent_idx=68, mojo_current_idx=73, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=72, mojo_parent_idx=68, mojo_current_idx=73, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 71 complete
@@ -886,11 +886,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_
     └─ Path: RootNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 72 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=74, mojo_parent_idx=68, mojo_current_idx=75, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=67, c_current_idx=74, mojo_parent_idx=68, mojo_current_idx=75, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 73 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=74, mojo_parent_idx=68, mojo_current_idx=75, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=67, c_current_idx=74, mojo_parent_idx=68, mojo_current_idx=75, n_tokens=6)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 3 active, 73 complete

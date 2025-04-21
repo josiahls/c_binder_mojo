@@ -14,6 +14,7 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
     TokenFlow,
+    WhitespaceEnum,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -45,7 +46,6 @@ struct EnumNode(NodeAstLike):
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
     var _enum_name: String
-    var _row_nums: List[Int]  # Track rows for multi-line enums
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize an EnumNode.
@@ -57,8 +57,6 @@ struct EnumNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._enum_name = ""
         self._token_bundles[].append(token_bundle)
@@ -111,10 +109,6 @@ struct EnumNode(NodeAstLike):
         Returns:
             The token flow decision.
         """
-        # Track line numbers for multi-line enums
-        if token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
-
         if self._node_state == NodeState.INITIALIZING:
             self._node_state = NodeState.COLLECTING_TOKENS
 
@@ -122,7 +116,7 @@ struct EnumNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
 
-        if token.token == "":
+        if WhitespaceEnum.is_whitespace(token):
             return TokenFlow.CONSUME_TOKEN
 
         if (
@@ -179,7 +173,8 @@ struct EnumNode(NodeAstLike):
         if self._node_state == NodeState.COLLECTING_TOKENS:
             if len(self._token_bundles[]) == 1:
                 self._enum_name = token.token
-            self._token_bundles[].append(token)
+            if not WhitespaceEnum.is_whitespace(token):
+                self._token_bundles[].append(token)
         elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
             self._token_bundles_tail[].append(token)
 

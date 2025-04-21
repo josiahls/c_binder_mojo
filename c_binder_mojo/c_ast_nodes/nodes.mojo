@@ -76,32 +76,36 @@ fn default_to_string(
     var indent = String("")
     if level > 0:
         indent = "\t" * level
-    var line_num = -1
+    var new_line_added = False
 
     # Add node name if not just code
-    s += indent + node.name(include_sig=True)
+    s += indent + node.name(include_sig=True) + "\n"
 
     # Add tokens
     for token in node.token_bundles():
-        if token[].row_num != line_num:
-            s += "\n"
+        if new_line_added:
             s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
+            new_line_added = False
+        else:
+            s += " "
+        s += token[].token
+        if token[].token == "\n":
+            new_line_added = True
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
-        if line_num != -1:
-            s += "\n"
         s += indent
         s += string_children(node, False, module_interface)
 
     for token in node.token_bundles_tail():
-        if token[].row_num != line_num:
-            s += "\n"
+        if new_line_added:
             s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
+            new_line_added = False
+        else:
+            s += " "
+        s += token[].token
+        if token[].token == "\n":
+            new_line_added = True
 
     s += "\n"
     return s
@@ -131,19 +135,18 @@ fn default_to_string_just_code(
 
     if level > 0:
         indent = "\t" * level
-    # NOTE(josiahls): This is different from the default_to_string function.
-    # We start at line_num = 0 because we want to include the first line of code.
-    # For default_to_string, we start at line_num = -1 because otherwise,
-    # the first line of code is going to be on the same line as the signature.
-    var line_num = 0
+    var new_line_added = False
 
     # Add tokens
     for token in node.token_bundles():
-        if token[].row_num != line_num and not inline_nodes:
-            s += "\n"
+        if new_line_added:
             s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
+            new_line_added = False
+        else:
+            s += " "
+        s += token[].token
+        if token[].token == "\n":
+            new_line_added = True
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
@@ -152,11 +155,14 @@ fn default_to_string_just_code(
         s += string_children(node, True, module_interface)
 
     for token in node.token_bundles_tail():
-        if token[].row_num != line_num and not inline_tail:
-            s += "\n"
+        if new_line_added:
             s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
+            new_line_added = False
+        else:
+            s += " "
+        s += token[].token
+        if token[].token == "\n":
+            new_line_added = True
 
     return s
 

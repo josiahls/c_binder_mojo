@@ -463,7 +463,7 @@ struct Tokenizer:
     var tokens: List[TokenBundle]
 
     alias ISOLATED_TOKEN_CHARS: List[String] = List[String](
-        ";", ",", "{", "}", "(", ")"
+        ";", ",", "{", "}", "(", ")", "=", "\t", "\n", "\r", "\f", "\b"
     )
 
     fn __init__(out self):
@@ -508,6 +508,8 @@ struct Tokenizer:
                 token = TokenBundle(token_string[], current_row_num, col_num)
                 self.tokens.append(token)
                 col_num += len(token_string[])
+            # Re add the newline token
+            self.tokens.append(TokenBundle("\n", current_row_num, col_num))
             current_row_num += 1
 
     fn to_string(self, make_flat: Bool = False) -> String:

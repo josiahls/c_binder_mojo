@@ -1,66 +1,81 @@
-RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=19)
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 4, 6, 7, ...) len=19)
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
-// Empty defines  ( no value )  
-MacroDefineNode(c_parent_idx=0, c_current_idx=2, node_state=4 (COMPLETED), macro='EMPTY_DEFINE_1')
-#define EMPTY_DEFINE_1 
-MacroDefineNode(c_parent_idx=0, c_current_idx=3, node_state=4 (COMPLETED), macro='EMPTY_DEFINE_2')
-#define EMPTY_DEFINE_2 
-WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=1)
+ // Empty defines  ( no value )  
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=2, c_child_idxs=(3), node_state=4 (COMPLETED), macro='EMPTY_DEFINE_1')
+ #define EMPTY_DEFINE_1	WhitespaceNode(c_parent_idx=2, c_current_idx=3, n_tokens=1)
  
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
-// Simple value defines 
-MacroDefineNode(c_parent_idx=0, c_current_idx=6, c_child_idxs=(7), node_state=4 (COMPLETED), macro='SIMPLE_INT')
-#define SIMPLE_INT 
-	MacroDefineValueNode(c_parent_idx=6, c_current_idx=7, node_state=4 (COMPLETED), is_function_like=False)
-	42 
 
-MacroDefineNode(c_parent_idx=0, c_current_idx=8, c_child_idxs=(9), node_state=4 (COMPLETED), macro='SIMPLE_FLOAT')
-#define SIMPLE_FLOAT 
-	MacroDefineValueNode(c_parent_idx=8, c_current_idx=9, node_state=4 (COMPLETED), is_function_like=False)
-	3.14 
 
-MacroDefineNode(c_parent_idx=0, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), macro='SIMPLE_STRING')
-#define SIMPLE_STRING 
-	MacroDefineValueNode(c_parent_idx=10, c_current_idx=11, node_state=4 (COMPLETED), is_function_like=False)
-	"hello" 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=1)
+MacroDefineNode(c_parent_idx=0, c_current_idx=4, c_child_idxs=(5), node_state=4 (COMPLETED), macro='EMPTY_DEFINE_2')
+ #define EMPTY_DEFINE_2	WhitespaceNode(c_parent_idx=4, c_current_idx=5, n_tokens=3)
  
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
-// Function-like macros 
-MacroDefineNode(c_parent_idx=0, c_current_idx=14, c_child_idxs=(15), node_state=4 (COMPLETED), macro='ADD')
-#define ADD 
-	MacroDefineValueNode(c_parent_idx=14, c_current_idx=15, node_state=4 (COMPLETED), is_function_like=False)
-	( x ,  y )   (  ( x )  +  ( y )  )  
+	  
 
-MacroDefineNode(c_parent_idx=0, c_current_idx=16, c_child_idxs=(17), node_state=4 (COMPLETED), macro='MAX')
-#define MAX 
-	MacroDefineValueNode(c_parent_idx=16, c_current_idx=17, node_state=4 (COMPLETED), is_function_like=False)
-	( a ,  b )   (  ( a )  >  ( b )  ?  ( a )  :  ( b )  )  
 
-MacroDefineNode(c_parent_idx=0, c_current_idx=18, c_child_idxs=(19), node_state=4 (COMPLETED), macro='PRINT_DEBUG')
-#define PRINT_DEBUG 
-	MacroDefineValueNode(c_parent_idx=18, c_current_idx=19, node_state=4 (COMPLETED), is_function_like=False)
-	( msg ,  ... )  printf ( "[DEBUG] " msg "\n" ,  ##__VA_ARGS__ )  
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=6)
+ // Simple value defines 
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=20, n_tokens=1)
+MacroDefineNode(c_parent_idx=0, c_current_idx=7, c_child_idxs=(8), node_state=4 (COMPLETED), macro='SIMPLE_INT')
+ #define SIMPLE_INT	MacroDefineValueNode(c_parent_idx=7, c_current_idx=8, node_state=4 (COMPLETED), is_function_like=False)
+ 42 
+
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10), node_state=4 (COMPLETED), macro='SIMPLE_FLOAT')
+ #define SIMPLE_FLOAT	MacroDefineValueNode(c_parent_idx=9, c_current_idx=10, node_state=4 (COMPLETED), is_function_like=False)
+ 3.14 
+
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=11, c_child_idxs=(12), node_state=4 (COMPLETED), macro='SIMPLE_STRING')
+ #define SIMPLE_STRING	MacroDefineValueNode(c_parent_idx=11, c_current_idx=12, node_state=4 (COMPLETED), is_function_like=False)
+ "hello" 
+
+
+WhitespaceNode(c_parent_idx=0, c_current_idx=13, n_tokens=2)
+  
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=14)
+ // Function-like macros 
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=15, c_child_idxs=(16), node_state=4 (COMPLETED), macro='ADD')
+ #define ADD	MacroDefineValueNode(c_parent_idx=15, c_current_idx=16, node_state=4 (COMPLETED), is_function_like=False)
+ ( x ,  y )   (  ( x )  +  ( y )  )  
+
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=17, c_child_idxs=(18), node_state=4 (COMPLETED), macro='MAX')
+ #define MAX	MacroDefineValueNode(c_parent_idx=17, c_current_idx=18, node_state=4 (COMPLETED), is_function_like=False)
+ ( a ,  b )   (  ( a )  >  ( b )  ?  ( a )  :  ( b )  )  
+
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=19, c_child_idxs=(20), node_state=4 (COMPLETED), macro='PRINT_DEBUG')
+ #define PRINT_DEBUG	MacroDefineValueNode(c_parent_idx=19, c_current_idx=20, node_state=4 (COMPLETED), is_function_like=False)
+ ( msg ,  ... )  printf ( "[DEBUG] " msg "\n" ,  ##__VA_ARGS__ )  
+
+
+WhitespaceNode(c_parent_idx=0, c_current_idx=21, n_tokens=2)
+  
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=22)
+ // Complex defines with expressions 
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=23, c_child_idxs=(24, 25), node_state=4 (COMPLETED), macro='BUFFER_SIZE')
+ #define BUFFER_SIZE	WhitespaceNode(c_parent_idx=23, c_current_idx=24, n_tokens=1)
  
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=21)
-// Complex defines with expressions 
-MacroDefineNode(c_parent_idx=0, c_current_idx=22, c_child_idxs=(23, 24), node_state=4 (COMPLETED), macro='BUFFER_SIZE')
-#define BUFFER_SIZE 
-	WhitespaceNode(c_parent_idx=22, c_current_idx=23, n_tokens=1)
-	 
-	MacroDefineValueNode(c_parent_idx=22, c_current_idx=24, node_state=4 (COMPLETED), is_function_like=False)
-	( 1024 * 2 )  
+	MacroDefineValueNode(c_parent_idx=23, c_current_idx=25, node_state=4 (COMPLETED), is_function_like=False)
+ ( 1024 * 2 )  
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=25, n_tokens=1)
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=26)
-// Define with line continuation 
-MacroDefineNode(c_parent_idx=0, c_current_idx=27, c_child_idxs=(28), node_state=3 (BUILDING_CHILDREN), macro='MULTILINE_STRING')
-#define MULTILINE_STRING 
-	MacroDefineValueNode(c_parent_idx=27, c_current_idx=28, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
-	"This is a long string that \ 
-	    continues on the next line"  
 
+WhitespaceNode(c_parent_idx=0, c_current_idx=26, n_tokens=2)
+  
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)
+ // Define with line continuation 
+
+MacroDefineNode(c_parent_idx=0, c_current_idx=28, c_child_idxs=(29), node_state=4 (COMPLETED), macro='MULTILINE_STRING')
+ #define MULTILINE_STRING	MacroDefineValueNode(c_parent_idx=28, c_current_idx=29, node_state=4 (COMPLETED), is_function_like=False)
+ "This is a long string that \ 
+	     continues on the next line"  
+
+
+EndFileNode(c_parent_idx=0, c_current_idx=30)
+ C_BINDER_MOJO_END_FILE

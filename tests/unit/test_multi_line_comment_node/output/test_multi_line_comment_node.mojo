@@ -1,52 +1,97 @@
 """ Basic multiline comment """ 
  
+ 
+ 
 """ Multiline comment 
+ 
  * with multiple 
+ 
  * lines 
+ 
  """ 
+
+ 
+ 
  
 """* Documentation comment """ 
+
+ 
+ 
  
 """* Documentation comment 
+ 
  * with multiple 
+ 
  * lines 
+ 
  """ 
+
+ 
+ 
  
 """ Comment with special characters: !@#$%^&* (  ) _+ """ 
+
+ 
+ 
  
 """ Comment with code-like content:  
- * int x = 5 ;  
+ 
+ * int x  =  5 ;  
+ 
  * void foo (  )  ;  
+ 
  """ 
+
  
-int 
-some_function 
-( 
  
-) 
  
-; 
+alias some_function : Int = () 
  
 """ Comment after code """ 
+
+ 
+ 
  
 # This is not a multiline comment 
  
+ 
+ 
 """ Comment with Unicode: 你好世界 """ 
+
+ 
+ 
  
 """ Empty multiline comment """ 
+
+ 
+ 
  
 """""" 
+ 
+ 
  
 """ Nested-looking comment /*  ( not actually nested )  """ 
  
  
+ 
+ 
 """ 
+ 
  * Comment 
+ 
  *    with 
+ 
  *       indentation 
+ 
  """ 
+
+ 
+ 
  
 """ Comment with trailing spaces    """ 
+
+ 
+ 
  
 fn main():
     pass

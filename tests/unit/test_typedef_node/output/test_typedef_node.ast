@@ -1,239 +1,248 @@
 RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28)
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
-// Basic type typedefs 
+ // Basic type typedefs 
+
 TypedefNode(c_parent_idx=0, c_current_idx=2, node_state=4 (COMPLETED))
-typedef unsigned int uint_t 
-WhitespaceNode(c_parent_idx=0, c_current_idx=3, n_tokens=1)
- 
+ typedef unsigned int uint_t
+WhitespaceNode(c_parent_idx=0, c_current_idx=3, n_tokens=2)
+  
+
 TypedefNode(c_parent_idx=0, c_current_idx=4, node_state=4 (COMPLETED))
-typedef long long int64_t 
-WhitespaceNode(c_parent_idx=0, c_current_idx=5, n_tokens=1)
- 
+ typedef long long int64_t
+WhitespaceNode(c_parent_idx=0, c_current_idx=5, n_tokens=2)
+  
+
 TypedefNode(c_parent_idx=0, c_current_idx=6, node_state=4 (COMPLETED))
-typedef unsigned char byte_t 
-WhitespaceNode(c_parent_idx=0, c_current_idx=7, n_tokens=2)
- 
- 
+ typedef unsigned char byte_t
+WhitespaceNode(c_parent_idx=0, c_current_idx=7, n_tokens=4)
+  
+  
+
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=8)
-// Enum typedef 
+ // Enum typedef 
+
 TypedefNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10), node_state=4 (COMPLETED), type='NodeState')
-typedef 
-EnumNode(c_parent_idx=9, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='NodeState_')
-enum NodeState_  
-	ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, ...) len=16, node_state=4 (COMPLETED), parent_type='EnumNode')
-	{ 
-			WhitespaceNode(c_parent_idx=11, c_current_idx=12, n_tokens=5)
-		 
+ typedefEnumNode(c_parent_idx=9, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='NodeState_')
+ enum NodeState_ 	ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, ...) len=16, node_state=4 (COMPLETED), parent_type='EnumNode')
+ {			WhitespaceNode(c_parent_idx=11, c_current_idx=12, n_tokens=6)
+  
 		    
 		EnumFieldNode(c_parent_idx=11, c_current_idx=13, node_state=4 (COMPLETED), field_name='STATE_NONE', value='0')
-		STATE_NONE = 0 , 
+ STATE_NONE  =  0 ,
 		WhitespaceNode(c_parent_idx=11, c_current_idx=14, n_tokens=6)
-		      
+      
 		SingleLineCommentNode(c_parent_idx=11, c_current_idx=15)
-		// Initial state 
+ // Initial state 
+
 		WhitespaceNode(c_parent_idx=11, c_current_idx=16, n_tokens=4)
-		    
+    
 		EnumFieldNode(c_parent_idx=11, c_current_idx=17, node_state=4 (COMPLETED), field_name='STATE_COLLECTING')
-		STATE_COLLECTING , 
+ STATE_COLLECTING ,
 		WhitespaceNode(c_parent_idx=11, c_current_idx=18, n_tokens=4)
-		    
+    
 		SingleLineCommentNode(c_parent_idx=11, c_current_idx=19)
-		// Collecting tokens 
+ // Collecting tokens 
+
 		WhitespaceNode(c_parent_idx=11, c_current_idx=20, n_tokens=4)
-		    
+    
 		EnumFieldNode(c_parent_idx=11, c_current_idx=21, node_state=4 (COMPLETED), field_name='STATE_BUILDING')
-		STATE_BUILDING , 
+ STATE_BUILDING ,
 		WhitespaceNode(c_parent_idx=11, c_current_idx=22, n_tokens=6)
-		      
+      
 		SingleLineCommentNode(c_parent_idx=11, c_current_idx=23)
-		// Building children 
+ // Building children 
+
 		WhitespaceNode(c_parent_idx=11, c_current_idx=24, n_tokens=4)
-		    
+    
 		EnumFieldNode(c_parent_idx=11, c_current_idx=25, node_state=4 (COMPLETED), field_name='STATE_COMPLETE')
-		STATE_COMPLETE       
+ STATE_COMPLETE      
 		SingleLineCommentNode(c_parent_idx=11, c_current_idx=26)
-		// Node is complete 
+ // Node is complete 
+
 		WhitespaceNode(c_parent_idx=11, c_current_idx=27, n_tokens=1)
-		 
-
-	} 
-
-
-NodeState 
-WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=2)
  
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
-// Test preprocessor scoping with typedef 
-MacroIfNDefNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31, 32, 33, 34, 39, ...) len=11, node_state=4 (COMPLETED))
-#ifndef MY_TYPEDEF_TEST 
-	MacroDefineNode(c_parent_idx=30, c_current_idx=31, node_state=4 (COMPLETED), macro='MY_TYPEDEF_TEST')
-	#define MY_TYPEDEF_TEST 
-	WhitespaceNode(c_parent_idx=30, c_current_idx=32, n_tokens=1)
-	 
-	SingleLineCommentNode(c_parent_idx=30, c_current_idx=33)
-	// This struct should not collect the typedefs that follow 
-	StructNode(c_parent_idx=30, c_current_idx=34, c_child_idxs=(35), node_state=4 (COMPLETED), name='TestStruct')
-	struct TestStruct  
-	  
-	 
-			ScopeNode(c_parent_idx=34, c_current_idx=35, c_child_idxs=(36, 37, 38), node_state=4 (COMPLETED), parent_type='StructNode')
-		{ 
-					WhitespaceNode(c_parent_idx=35, c_current_idx=36, n_tokens=5)
-			 
-			    
-			StructFieldNode(c_parent_idx=35, c_current_idx=37, node_state=4 (COMPLETED), field_type='int', field_name='value')
-			int value ; 
-			WhitespaceNode(c_parent_idx=35, c_current_idx=38, n_tokens=2)
-			 
-			 
+ }
 
-		} 
-
-	; 
-	TypedefNode(c_parent_idx=30, c_current_idx=39, node_state=4 (COMPLETED))
-	typedef int integer_t 
-	WhitespaceNode(c_parent_idx=30, c_current_idx=40, n_tokens=2)
-	  
-	SingleLineCommentNode(c_parent_idx=30, c_current_idx=41)
-	// Should be independent node 
-	TypedefNode(c_parent_idx=30, c_current_idx=42, node_state=4 (COMPLETED))
-	typedef float float_t 
-	WhitespaceNode(c_parent_idx=30, c_current_idx=43, n_tokens=2)
-	  
-	SingleLineCommentNode(c_parent_idx=30, c_current_idx=44)
-	// Should be independent node 
-	WhitespaceNode(c_parent_idx=30, c_current_idx=45, n_tokens=1)
-	 
-
-#endif 
-WhitespaceNode(c_parent_idx=0, c_current_idx=46, n_tokens=1)
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=47)
-// MY_TYPEDEF_TEST 
-WhitespaceNode(c_parent_idx=0, c_current_idx=48, n_tokens=1)
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=49)
-// Struct typedefs - testing nested typedef handling 
-TypedefNode(c_parent_idx=0, c_current_idx=50, c_child_idxs=(51), node_state=4 (COMPLETED), type='Point2D')
-typedef 
-StructNode(c_parent_idx=50, c_current_idx=51, c_child_idxs=(52), node_state=4 (COMPLETED))
-struct  
- 
-	ScopeNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53, 54, 55, 56, 57), node_state=4 (COMPLETED), parent_type='StructNode')
-	{ 
-			WhitespaceNode(c_parent_idx=52, c_current_idx=53, n_tokens=5)
-		 
-		    
-		StructFieldNode(c_parent_idx=52, c_current_idx=54, node_state=4 (COMPLETED), field_type='int', field_name='x')
-		int x ; 
-		WhitespaceNode(c_parent_idx=52, c_current_idx=55, n_tokens=5)
-		 
-		    
-		StructFieldNode(c_parent_idx=52, c_current_idx=56, node_state=4 (COMPLETED), field_type='int', field_name='y')
-		int y ; 
-		WhitespaceNode(c_parent_idx=52, c_current_idx=57, n_tokens=2)
-		 
-		 
-
-	} 
-
-
-Point2D 
-WhitespaceNode(c_parent_idx=0, c_current_idx=58, n_tokens=2)
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=59)
-// Test typedef and struct interaction 
-StructNode(c_parent_idx=0, c_current_idx=60, c_child_idxs=(61), node_state=4 (COMPLETED), name='Rectangle_')
-struct Rectangle_  
+ NodeState
+WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=4)
   
- 
-	ScopeNode(c_parent_idx=60, c_current_idx=61, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, node_state=4 (COMPLETED), parent_type='StructNode')
-	{ 
-			WhitespaceNode(c_parent_idx=61, c_current_idx=62, n_tokens=5)
-		 
-		    
-		StructFieldNode(c_parent_idx=61, c_current_idx=63, node_state=4 (COMPLETED), field_type='Point2D', field_name='top_left')
-		Point2D top_left ; 
-		WhitespaceNode(c_parent_idx=61, c_current_idx=64, n_tokens=5)
-		 
-		    
-		StructFieldNode(c_parent_idx=61, c_current_idx=65, node_state=4 (COMPLETED), field_type='Point2D', field_name='bottom_right')
-		Point2D bottom_right ; 
-		WhitespaceNode(c_parent_idx=61, c_current_idx=66, n_tokens=5)
-		 
-		    
-		StructFieldNode(c_parent_idx=61, c_current_idx=67, node_state=4 (COMPLETED), field_type='int', field_name='width')
-		int width ; 
-		WhitespaceNode(c_parent_idx=61, c_current_idx=68, n_tokens=5)
-		 
-		    
-		StructFieldNode(c_parent_idx=61, c_current_idx=69, node_state=4 (COMPLETED), field_type='int', field_name='height')
-		int height ; 
-		WhitespaceNode(c_parent_idx=61, c_current_idx=70, n_tokens=2)
-		 
-		 
+  
 
-	} 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
+ // Test preprocessor scoping with typedef 
 
-; 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=71)
-// This typedef should be independent of the struct above 
-TypedefNode(c_parent_idx=0, c_current_idx=72, c_child_idxs=(73), node_state=4 (COMPLETED), type='Rectangle')
-typedef 
-StructNode(c_parent_idx=72, c_current_idx=73, node_state=4 (COMPLETED), name='Rectangle_')
-struct Rectangle_ 
-Rectangle 
-WhitespaceNode(c_parent_idx=0, c_current_idx=74, n_tokens=2)
+MacroIfNDefNode(c_parent_idx=0, c_current_idx=30, c_child_idxs=(31, 32, 34, 35, 40, ...) len=11, node_state=4 (COMPLETED))
+ #ifndef MY_TYPEDEF_TEST	WhitespaceNode(c_parent_idx=30, c_current_idx=31, n_tokens=1)
  
+
+	MacroDefineNode(c_parent_idx=30, c_current_idx=32, c_child_idxs=(33), node_state=4 (COMPLETED), macro='MY_TYPEDEF_TEST')
+ #define MY_TYPEDEF_TEST			WhitespaceNode(c_parent_idx=32, c_current_idx=33, n_tokens=3)
  
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=75)
-// Test preprocessor and typedef interaction 
-MacroIfNDefNode(c_parent_idx=0, c_current_idx=76, c_child_idxs=(77, 78, 79, 85, 86, ...) len=10, node_state=4 (COMPLETED))
-#ifndef NESTED_TEST 
-	MacroDefineNode(c_parent_idx=76, c_current_idx=77, node_state=4 (COMPLETED), macro='NESTED_TEST')
-	#define NESTED_TEST 
-	WhitespaceNode(c_parent_idx=76, c_current_idx=78, n_tokens=1)
-	 
-	TypedefNode(c_parent_idx=76, c_current_idx=79, c_child_idxs=(80), node_state=4 (COMPLETED), type='NestedStruct')
-	typedef 
-		StructNode(c_parent_idx=79, c_current_idx=80, c_child_idxs=(81), node_state=4 (COMPLETED))
-	struct  
-	 
-			ScopeNode(c_parent_idx=80, c_current_idx=81, c_child_idxs=(82, 83, 84), node_state=4 (COMPLETED), parent_type='StructNode')
-		{ 
-					WhitespaceNode(c_parent_idx=81, c_current_idx=82, n_tokens=5)
-			 
+		  
+
+
+	SingleLineCommentNode(c_parent_idx=30, c_current_idx=34)
+ // This struct should not collect the typedefs that follow 
+
+	StructNode(c_parent_idx=30, c_current_idx=35, c_child_idxs=(36), node_state=4 (COMPLETED), name='TestStruct')
+ struct TestStruct    
+	  
+			ScopeNode(c_parent_idx=35, c_current_idx=36, c_child_idxs=(37, 38, 39), node_state=4 (COMPLETED), parent_type='StructNode')
+ {					WhitespaceNode(c_parent_idx=36, c_current_idx=37, n_tokens=6)
+  
 			    
-			StructFieldNode(c_parent_idx=81, c_current_idx=83, node_state=4 (COMPLETED), field_type='int', field_name='data')
-			int data ; 
-			WhitespaceNode(c_parent_idx=81, c_current_idx=84, n_tokens=2)
+			StructFieldNode(c_parent_idx=36, c_current_idx=38, node_state=4 (COMPLETED), field_type='int', field_name='value')
+ int value ;
+			WhitespaceNode(c_parent_idx=36, c_current_idx=39, n_tokens=3)
+  
 			 
-			 
+ }
+	 ;
+	TypedefNode(c_parent_idx=30, c_current_idx=40, node_state=4 (COMPLETED))
+ typedef int integer_t
+	WhitespaceNode(c_parent_idx=30, c_current_idx=41, n_tokens=2)
+  
+	SingleLineCommentNode(c_parent_idx=30, c_current_idx=42)
+ // Should be independent node 
 
-		} 
+	TypedefNode(c_parent_idx=30, c_current_idx=43, node_state=4 (COMPLETED))
+ typedef float float_t
+	WhitespaceNode(c_parent_idx=30, c_current_idx=44, n_tokens=2)
+  
+	SingleLineCommentNode(c_parent_idx=30, c_current_idx=45)
+ // Should be independent node 
 
+	WhitespaceNode(c_parent_idx=30, c_current_idx=46, n_tokens=2)
+  
 
-	NestedStruct 
-	WhitespaceNode(c_parent_idx=76, c_current_idx=85, n_tokens=2)
-	  
-	SingleLineCommentNode(c_parent_idx=76, c_current_idx=86)
-	// This typedef should not be affected by the ifdef 
-	WhitespaceNode(c_parent_idx=76, c_current_idx=87, n_tokens=1)
-	 
-	TypedefNode(c_parent_idx=76, c_current_idx=88, node_state=4 (COMPLETED))
-	typedef NestedStruct* NestedPtr 
-	WhitespaceNode(c_parent_idx=76, c_current_idx=89, n_tokens=2)
-	  
-	SingleLineCommentNode(c_parent_idx=76, c_current_idx=90)
-	// This should be an independent typedef 
-	WhitespaceNode(c_parent_idx=76, c_current_idx=91, n_tokens=1)
-	 
-
-#endif 
-WhitespaceNode(c_parent_idx=0, c_current_idx=92, n_tokens=1)
+ #endif
+WhitespaceNode(c_parent_idx=0, c_current_idx=47, n_tokens=1)
  
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=93)
-// NESTED_TEST  
-EndFileNode(c_parent_idx=0, c_current_idx=94)C_BINDER_MOJO_END_FILE 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=48)
+ // MY_TYPEDEF_TEST 
+
+WhitespaceNode(c_parent_idx=0, c_current_idx=49, n_tokens=2)
+  
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=50)
+ // Struct typedefs - testing nested typedef handling 
+
+TypedefNode(c_parent_idx=0, c_current_idx=51, c_child_idxs=(52), node_state=4 (COMPLETED), type='Point2D')
+ typedefStructNode(c_parent_idx=51, c_current_idx=52, c_child_idxs=(53), node_state=4 (COMPLETED))
+ struct  	ScopeNode(c_parent_idx=52, c_current_idx=53, c_child_idxs=(54, 55, 56, 57, 58), node_state=4 (COMPLETED), parent_type='StructNode')
+ {			WhitespaceNode(c_parent_idx=53, c_current_idx=54, n_tokens=6)
+  
+		    
+		StructFieldNode(c_parent_idx=53, c_current_idx=55, node_state=4 (COMPLETED), field_type='int', field_name='x')
+ int x ;
+		WhitespaceNode(c_parent_idx=53, c_current_idx=56, n_tokens=6)
+  
+		    
+		StructFieldNode(c_parent_idx=53, c_current_idx=57, node_state=4 (COMPLETED), field_type='int', field_name='y')
+ int y ;
+		WhitespaceNode(c_parent_idx=53, c_current_idx=58, n_tokens=3)
+  
+		 
+ }
+
+ Point2D
+WhitespaceNode(c_parent_idx=0, c_current_idx=59, n_tokens=4)
+  
+  
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=60)
+ // Test typedef and struct interaction 
+
+StructNode(c_parent_idx=0, c_current_idx=61, c_child_idxs=(62), node_state=4 (COMPLETED), name='Rectangle_')
+ struct Rectangle_    
+  
+	ScopeNode(c_parent_idx=61, c_current_idx=62, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, node_state=4 (COMPLETED), parent_type='StructNode')
+ {			WhitespaceNode(c_parent_idx=62, c_current_idx=63, n_tokens=6)
+  
+		    
+		StructFieldNode(c_parent_idx=62, c_current_idx=64, node_state=4 (COMPLETED), field_type='Point2D', field_name='top_left')
+ Point2D top_left ;
+		WhitespaceNode(c_parent_idx=62, c_current_idx=65, n_tokens=6)
+  
+		    
+		StructFieldNode(c_parent_idx=62, c_current_idx=66, node_state=4 (COMPLETED), field_type='Point2D', field_name='bottom_right')
+ Point2D bottom_right ;
+		WhitespaceNode(c_parent_idx=62, c_current_idx=67, n_tokens=6)
+  
+		    
+		StructFieldNode(c_parent_idx=62, c_current_idx=68, node_state=4 (COMPLETED), field_type='int', field_name='width')
+ int width ;
+		WhitespaceNode(c_parent_idx=62, c_current_idx=69, n_tokens=6)
+  
+		    
+		StructFieldNode(c_parent_idx=62, c_current_idx=70, node_state=4 (COMPLETED), field_type='int', field_name='height')
+ int height ;
+		WhitespaceNode(c_parent_idx=62, c_current_idx=71, n_tokens=3)
+  
+		 
+ }
+ ;
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=72)
+ // This typedef should be independent of the struct above 
+
+TypedefNode(c_parent_idx=0, c_current_idx=73, c_child_idxs=(74), node_state=4 (COMPLETED), type='Rectangle')
+ typedefStructNode(c_parent_idx=73, c_current_idx=74, node_state=4 (COMPLETED), name='Rectangle_')
+ struct Rectangle_
+ Rectangle
+WhitespaceNode(c_parent_idx=0, c_current_idx=75, n_tokens=4)
+  
+  
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=76)
+ // Test preprocessor and typedef interaction 
+
+MacroIfNDefNode(c_parent_idx=0, c_current_idx=77, c_child_idxs=(78, 79, 81, 87, 88, ...) len=10, node_state=4 (COMPLETED))
+ #ifndef NESTED_TEST	WhitespaceNode(c_parent_idx=77, c_current_idx=78, n_tokens=1)
+ 
+
+	MacroDefineNode(c_parent_idx=77, c_current_idx=79, c_child_idxs=(80), node_state=4 (COMPLETED), macro='NESTED_TEST')
+ #define NESTED_TEST			WhitespaceNode(c_parent_idx=79, c_current_idx=80, n_tokens=3)
+ 
+		  
+
+
+	TypedefNode(c_parent_idx=77, c_current_idx=81, c_child_idxs=(82), node_state=4 (COMPLETED), type='NestedStruct')
+ typedef		StructNode(c_parent_idx=81, c_current_idx=82, c_child_idxs=(83), node_state=4 (COMPLETED))
+ struct  			ScopeNode(c_parent_idx=82, c_current_idx=83, c_child_idxs=(84, 85, 86), node_state=4 (COMPLETED), parent_type='StructNode')
+ {					WhitespaceNode(c_parent_idx=83, c_current_idx=84, n_tokens=6)
+  
+			    
+			StructFieldNode(c_parent_idx=83, c_current_idx=85, node_state=4 (COMPLETED), field_type='int', field_name='data')
+ int data ;
+			WhitespaceNode(c_parent_idx=83, c_current_idx=86, n_tokens=3)
+  
+			 
+ }
+
+ NestedStruct
+	WhitespaceNode(c_parent_idx=77, c_current_idx=87, n_tokens=2)
+  
+	SingleLineCommentNode(c_parent_idx=77, c_current_idx=88)
+ // This typedef should not be affected by the ifdef 
+
+	WhitespaceNode(c_parent_idx=77, c_current_idx=89, n_tokens=2)
+  
+
+	TypedefNode(c_parent_idx=77, c_current_idx=90, node_state=4 (COMPLETED))
+ typedef NestedStruct* NestedPtr
+	WhitespaceNode(c_parent_idx=77, c_current_idx=91, n_tokens=2)
+  
+	SingleLineCommentNode(c_parent_idx=77, c_current_idx=92)
+ // This should be an independent typedef 
+
+	WhitespaceNode(c_parent_idx=77, c_current_idx=93, n_tokens=2)
+  
+
+ #endif
+WhitespaceNode(c_parent_idx=0, c_current_idx=94, n_tokens=1)
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=95)
+ // NESTED_TEST  
+
+EndFileNode(c_parent_idx=0, c_current_idx=96)
+ C_BINDER_MOJO_END_FILE

@@ -11,50 +11,37 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND ,  either express or implied. 
 // See the License for the specific language governing permissions and 
 // limitations under the License. 
- 
-#ifndef MUJOCO_INCLUDE_MJTNUM_H_ 
-	#define MUJOCO_INCLUDE_MJTNUM_H_ 
-	 
-	//---------------------------------- floating-point definition ------------------------------------- 
-	 
-	// floating point data type and minval 
-	#ifndef mjUSESINGLE 	
+
+#ifndef MUJOCO_INCLUDE_MJTNUM_H_
+#define MUJOCO_INCLUDE_MJTNUM_H_
 		  
-		typedef double mjtNum 
-		 
-		  
-		#define mjMINVAL 
-			   1E-15       // minimum value in any denominator 
-		#else 		
-			  
-			typedef float mjtNum 
-			 
-			  
-			#define mjMINVAL 
-				   1E-15f /* This does after the float is defined */ 
-	#endif 
-	 
-	/* silly comment */ 
-	/** another one??????? **/ 
-	 
-	/**  
-	So  
-	many  
-	lines 
-	 
-	 
-	**/ 
-	 
-	 
-	//-------------------------------------- byte definition ------------------------------------------- 
-	 
-	typedef unsigned char mjtByte 
-	    
-	// used for true/false 
-	 
-	 
-	 
-#endif 
- 
-// MUJOCO_INCLUDE_MJTNUM_H_ 
- 
+//---------------------------------- floating-point definition ------------------------------------- 
+
+// floating point data type and minval 
+#ifndef mjUSESINGLE	
+		  typedef double mjtNum
+		  #define mjMINVAL1E-15       // minimum value in any denominator 
+#else		
+			  typedef float mjtNum
+			  #define mjMINVAL1E-15f /* This does after the float is defined */ 
+ #endif
+	  
+/* silly comment *//** another one??????? **/
+	  
+/**  
+	 So  
+	 many  
+	 lines 
+	  
+	  
+	 **/
+	  
+	  
+//-------------------------------------- byte definition ------------------------------------------- 
+
+typedef unsigned char mjtByte// used for true/false 
+
+	  
+	  
+ #endif// MUJOCO_INCLUDE_MJTNUM_H_ 
+

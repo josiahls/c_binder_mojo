@@ -42,11 +42,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 4 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 4 complete
@@ -66,11 +66,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 5 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 6 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 6 complete
@@ -90,11 +90,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 7 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 8 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 8 complete
@@ -138,11 +138,11 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_
     └─ Path: RootNode -> TypedefNode -> EnumNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 9 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=11, c_current_idx=12, mojo_parent_idx=12, mojo_current_idx=13, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=11, c_current_idx=12, mojo_parent_idx=12, mojo_current_idx=13, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 10 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=11, c_current_idx=12, mojo_parent_idx=12, mojo_current_idx=13, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=11, c_current_idx=12, mojo_parent_idx=12, mojo_current_idx=13, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> EnumNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'EnumFieldNode'
     └─ Nodes: 4 active, 10 complete
@@ -342,11 +342,11 @@ tree.mojo:215 - INFO: [Depth:-4] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 28 complete
-tree.mojo:215 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 29 complete
@@ -366,47 +366,51 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'MacroIfNDefNode'
     └─ Nodes: 1 active, 30 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=0, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, c_child_idxs=(31, 32, 33, 34, 39, ...) len=11, node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=0, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, c_child_idxs=(31, 32, 34, 35, 40, ...) len=11, node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
     └─ Current C_Node: 'MacroIfNDefNode'
     └─ Nodes: 1 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=0, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, c_child_idxs=(31, 32, 33, 34, 39, ...) len=11, node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=0, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, c_child_idxs=(31, 32, 34, 35, 40, ...) len=11, node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current C_Node: 'MacroDefineNode'
+    └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 31 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
     └─ Path: RootNode
-    └─ Current C_Node: 'MacroDefineNode'
-    └─ Nodes: 1 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	MacroDefineNode(c_parent_idx=30, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32)
-    └─ Path: RootNode -> MacroDefineNode
-    └─ Current C_Node: 'MacroDefineNode'
-    └─ Nodes: 2 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=30, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32)
-    └─ Path: RootNode -> MacroDefineNode
     └─ Current C_Node: 'WhitespaceNode'
+    └─ Nodes: 1 active, 31 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32, n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
+    └─ Current C_Node: 'WhitespaceNode'
+    └─ Nodes: 1 active, 32 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32, n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
+    └─ Current C_Node: 'MacroDefineNode'
     └─ Nodes: 1 active, 32 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=14)
     └─ Path: RootNode
+    └─ Current C_Node: 'MacroDefineNode'
+    └─ Nodes: 1 active, 32 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	MacroDefineNode(c_parent_idx=30, c_current_idx=32, mojo_parent_idx=0, mojo_current_idx=33, c_child_idxs=(33))
+    └─ Path: RootNode -> MacroDefineNode
+    └─ Current C_Node: 'MacroDefineNode'
+    └─ Nodes: 2 active, 32 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	MacroDefineNode(c_parent_idx=30, c_current_idx=32, mojo_parent_idx=0, mojo_current_idx=33, c_child_idxs=(33))
+    └─ Path: RootNode -> MacroDefineNode
     └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 33 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=32, mojo_parent_idx=0, mojo_current_idx=34, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=32, mojo_parent_idx=0, mojo_current_idx=34, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+    └─ Nodes: 2 active, 32 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=30, c_current_idx=32, mojo_parent_idx=0, mojo_current_idx=33, c_child_idxs=(33))
+    └─ Path: RootNode -> MacroDefineNode
     └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 1 active, 34 complete
+    └─ Nodes: 1 active, 33 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=15)
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=33, mojo_parent_idx=0, mojo_current_idx=35)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=35)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=33, mojo_parent_idx=0, mojo_current_idx=35)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=35)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 34 complete
@@ -414,59 +418,59 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 1 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=30, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=36, c_child_idxs=(35), struct_name=TestStruct)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=30, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36, c_child_idxs=(36), struct_name=TestStruct)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=30, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=36, c_child_idxs=(35), struct_name=TestStruct)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=30, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36, c_child_idxs=(36), struct_name=TestStruct)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 2 active, 35 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=34, c_current_idx=35, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(36, 37, 38))
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=35, c_current_idx=36, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(37, 38, 39))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 3 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=34, c_current_idx=35, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(36, 37, 38))
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=35, c_current_idx=36, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(37, 38, 39))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 35 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=35, c_current_idx=36, mojo_parent_idx=37, mojo_current_idx=38, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=35, c_current_idx=36, mojo_parent_idx=37, mojo_current_idx=38, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 36 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=34, c_current_idx=35, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(36, 37, 38), mojo_child_idxs=(38))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=35, c_current_idx=36, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(37, 38, 39), mojo_child_idxs=(38))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=35, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=39, field_name=value, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=36, c_current_idx=38, mojo_parent_idx=37, mojo_current_idx=39, field_name=value, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=35, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=39, field_name=value, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=36, c_current_idx=38, mojo_parent_idx=37, mojo_current_idx=39, field_name=value, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 36 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=34, c_current_idx=35, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(36, 37, 38), mojo_child_idxs=(38, 39))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=35, c_current_idx=36, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(37, 38, 39), mojo_child_idxs=(38, 39))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 37 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=35, c_current_idx=38, mojo_parent_idx=37, mojo_current_idx=40, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=36, c_current_idx=39, mojo_parent_idx=37, mojo_current_idx=40, n_tokens=3)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 38 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=35, c_current_idx=38, mojo_parent_idx=37, mojo_current_idx=40, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=36, c_current_idx=39, mojo_parent_idx=37, mojo_current_idx=40, n_tokens=3)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 3 active, 38 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=34, c_current_idx=35, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(36, 37, 38), mojo_child_idxs=(38, 39, 40))
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=35, c_current_idx=36, mojo_parent_idx=36, mojo_current_idx=37, c_child_idxs=(37, 38, 39), mojo_child_idxs=(38, 39, 40))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 3 active, 38 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=30, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=36, c_child_idxs=(35), mojo_child_idxs=(37), struct_name=TestStruct)
+tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=30, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36, c_child_idxs=(36), mojo_child_idxs=(37), struct_name=TestStruct)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 39 complete
@@ -474,11 +478,11 @@ tree.mojo:215 - INFO: [Depth:-3] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 40 complete
-tree.mojo:215 - INFO: [Depth:-2] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=30, c_current_idx=39, mojo_parent_idx=0, mojo_current_idx=41, type_name=)
+tree.mojo:215 - INFO: [Depth:-2] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=30, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=41, type_name=)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 40 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=30, c_current_idx=39, mojo_parent_idx=0, mojo_current_idx=41, type_name=)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=30, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=41, type_name=)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 40 complete
@@ -486,11 +490,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 41 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=42, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=42, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 42 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=42, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=42, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 42 complete
@@ -498,11 +502,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 42 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=43)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=43)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 42 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=43)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=43)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 42 complete
@@ -510,11 +514,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 43 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=30, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=44, type_name=)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=30, c_current_idx=43, mojo_parent_idx=0, mojo_current_idx=44, type_name=)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 43 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=30, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=44, type_name=)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=30, c_current_idx=43, mojo_parent_idx=0, mojo_current_idx=44, type_name=)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 43 complete
@@ -522,11 +526,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 44 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=43, mojo_parent_idx=0, mojo_current_idx=45, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=44, mojo_parent_idx=0, mojo_current_idx=45, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 45 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=43, mojo_parent_idx=0, mojo_current_idx=45, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=44, mojo_parent_idx=0, mojo_current_idx=45, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 45 complete
@@ -534,11 +538,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 45 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=44, mojo_parent_idx=0, mojo_current_idx=46)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 45 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=44, mojo_parent_idx=0, mojo_current_idx=46)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=30, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=46)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 45 complete
@@ -546,11 +550,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 46 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=47, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=30, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=47, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 47 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=47, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=30, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=47, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 47 complete
@@ -558,11 +562,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 47 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=48, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=48, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 48 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=48, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=48, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 48 complete
@@ -570,11 +574,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 48 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=49)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=48, mojo_parent_idx=0, mojo_current_idx=49)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 48 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=49)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=48, mojo_parent_idx=0, mojo_current_idx=49)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 48 complete
@@ -582,11 +586,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 49 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=48, mojo_parent_idx=0, mojo_current_idx=50, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=49, mojo_parent_idx=0, mojo_current_idx=50, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 50 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=48, mojo_parent_idx=0, mojo_current_idx=50, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=49, mojo_parent_idx=0, mojo_current_idx=50, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 50 complete
@@ -594,11 +598,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 50 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=49, mojo_parent_idx=0, mojo_current_idx=51)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50, mojo_parent_idx=0, mojo_current_idx=51)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 50 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=49, mojo_parent_idx=0, mojo_current_idx=51)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=50, mojo_parent_idx=0, mojo_current_idx=51)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 50 complete
@@ -606,95 +610,95 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 51 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=0, c_current_idx=50, mojo_parent_idx=0, mojo_current_idx=52, c_child_idxs=(51), type_name=Point2D)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=0, c_current_idx=51, mojo_parent_idx=0, mojo_current_idx=52, c_child_idxs=(52), type_name=Point2D)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 51 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	TypedefNode(c_parent_idx=0, c_current_idx=50, mojo_parent_idx=0, mojo_current_idx=52, c_child_idxs=(51), type_name=Point2D)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	TypedefNode(c_parent_idx=0, c_current_idx=51, mojo_parent_idx=0, mojo_current_idx=52, c_child_idxs=(52), type_name=Point2D)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 51 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=50, c_current_idx=51, mojo_parent_idx=52, mojo_current_idx=53, c_child_idxs=(52), struct_name=)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=52, mojo_current_idx=53, c_child_idxs=(53), struct_name=)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 3 active, 51 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=50, c_current_idx=51, mojo_parent_idx=52, mojo_current_idx=53, c_child_idxs=(52), struct_name=)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=52, mojo_current_idx=53, c_child_idxs=(53), struct_name=)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 3 active, 51 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(53, 54, 55, 56, 57))
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(54, 55, 56, 57, 58))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 4 active, 51 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(53, 54, 55, 56, 57))
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(54, 55, 56, 57, 58))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 51 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=54, mojo_current_idx=55, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=53, c_current_idx=54, mojo_parent_idx=54, mojo_current_idx=55, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 52 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=54, mojo_current_idx=55, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=53, c_current_idx=54, mojo_parent_idx=54, mojo_current_idx=55, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 52 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(53, 54, 55, 56, 57), mojo_child_idxs=(55))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(54, 55, 56, 57, 58), mojo_child_idxs=(55))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 52 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructFieldNode(c_parent_idx=52, c_current_idx=54, mojo_parent_idx=54, mojo_current_idx=56, field_name=x, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructFieldNode(c_parent_idx=53, c_current_idx=55, mojo_parent_idx=54, mojo_current_idx=56, field_name=x, field_type=int)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 5 active, 52 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				StructFieldNode(c_parent_idx=52, c_current_idx=54, mojo_parent_idx=54, mojo_current_idx=56, field_name=x, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				StructFieldNode(c_parent_idx=53, c_current_idx=55, mojo_parent_idx=54, mojo_current_idx=56, field_name=x, field_type=int)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 5 active, 52 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(53, 54, 55, 56, 57), mojo_child_idxs=(55, 56))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(54, 55, 56, 57, 58), mojo_child_idxs=(55, 56))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 53 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=52, c_current_idx=55, mojo_parent_idx=54, mojo_current_idx=57, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=53, c_current_idx=56, mojo_parent_idx=54, mojo_current_idx=57, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 54 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=52, c_current_idx=55, mojo_parent_idx=54, mojo_current_idx=57, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=53, c_current_idx=56, mojo_parent_idx=54, mojo_current_idx=57, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 54 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(53, 54, 55, 56, 57), mojo_child_idxs=(55, 56, 57))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(54, 55, 56, 57, 58), mojo_child_idxs=(55, 56, 57))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 54 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructFieldNode(c_parent_idx=52, c_current_idx=56, mojo_parent_idx=54, mojo_current_idx=58, field_name=y, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructFieldNode(c_parent_idx=53, c_current_idx=57, mojo_parent_idx=54, mojo_current_idx=58, field_name=y, field_type=int)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 5 active, 54 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				StructFieldNode(c_parent_idx=52, c_current_idx=56, mojo_parent_idx=54, mojo_current_idx=58, field_name=y, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				StructFieldNode(c_parent_idx=53, c_current_idx=57, mojo_parent_idx=54, mojo_current_idx=58, field_name=y, field_type=int)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 5 active, 54 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(53, 54, 55, 56, 57), mojo_child_idxs=(55, 56, 57, 58))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(54, 55, 56, 57, 58), mojo_child_idxs=(55, 56, 57, 58))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 55 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=52, c_current_idx=57, mojo_parent_idx=54, mojo_current_idx=59, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=53, c_current_idx=58, mojo_parent_idx=54, mojo_current_idx=59, n_tokens=3)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=52, c_current_idx=57, mojo_parent_idx=54, mojo_current_idx=59, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=53, c_current_idx=58, mojo_parent_idx=54, mojo_current_idx=59, n_tokens=3)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 56 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 			ScopeNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(53, 54, 55, 56, 57), mojo_child_idxs=(55, 56, 57, 58, 59))
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 			ScopeNode(c_parent_idx=52, c_current_idx=53, mojo_parent_idx=53, mojo_current_idx=54, c_child_idxs=(54, 55, 56, 57, 58), mojo_child_idxs=(55, 56, 57, 58, 59))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 56 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 		StructNode(c_parent_idx=50, c_current_idx=51, mojo_parent_idx=52, mojo_current_idx=53, c_child_idxs=(52), mojo_child_idxs=(54), struct_name=)
+tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 		StructNode(c_parent_idx=51, c_current_idx=52, mojo_parent_idx=52, mojo_current_idx=53, c_child_idxs=(53), mojo_child_idxs=(54), struct_name=)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 57 complete
-tree.mojo:215 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=0, c_current_idx=50, mojo_parent_idx=0, mojo_current_idx=52, c_child_idxs=(51), mojo_child_idxs=(53), type_name=Point2D)
+tree.mojo:215 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=0, c_current_idx=51, mojo_parent_idx=0, mojo_current_idx=52, c_child_idxs=(52), mojo_child_idxs=(53), type_name=Point2D)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 58 complete
@@ -702,11 +706,11 @@ tree.mojo:215 - INFO: [Depth:-4] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 59 complete
-tree.mojo:215 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=60, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=59, mojo_parent_idx=0, mojo_current_idx=60, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 60 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=60, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=59, mojo_parent_idx=0, mojo_current_idx=60, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 60 complete
@@ -714,11 +718,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 60 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=59, mojo_parent_idx=0, mojo_current_idx=61)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=60, mojo_parent_idx=0, mojo_current_idx=61)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 60 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=59, mojo_parent_idx=0, mojo_current_idx=61)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=60, mojo_parent_idx=0, mojo_current_idx=61)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 60 complete
@@ -726,131 +730,131 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 1 active, 61 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=60, mojo_parent_idx=0, mojo_current_idx=62, c_child_idxs=(61), struct_name=Rectangle_)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=61, mojo_parent_idx=0, mojo_current_idx=62, c_child_idxs=(62), struct_name=Rectangle_)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 61 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=60, mojo_parent_idx=0, mojo_current_idx=62, c_child_idxs=(61), struct_name=Rectangle_)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=61, mojo_parent_idx=0, mojo_current_idx=62, c_child_idxs=(62), struct_name=Rectangle_)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 2 active, 61 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9)
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 3 active, 61 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9)
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 61 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=63, mojo_current_idx=64, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=62, c_current_idx=63, mojo_parent_idx=63, mojo_current_idx=64, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 62 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=63, mojo_current_idx=64, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=62, c_current_idx=63, mojo_parent_idx=63, mojo_current_idx=64, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 62 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 62 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=61, c_current_idx=63, mojo_parent_idx=63, mojo_current_idx=65, field_name=top_left, field_type=Point2D)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=62, c_current_idx=64, mojo_parent_idx=63, mojo_current_idx=65, field_name=top_left, field_type=Point2D)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 62 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=61, c_current_idx=63, mojo_parent_idx=63, mojo_current_idx=65, field_name=top_left, field_type=Point2D)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=62, c_current_idx=64, mojo_parent_idx=63, mojo_current_idx=65, field_name=top_left, field_type=Point2D)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 62 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 63 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=61, c_current_idx=64, mojo_parent_idx=63, mojo_current_idx=66, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=62, c_current_idx=65, mojo_parent_idx=63, mojo_current_idx=66, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 64 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=61, c_current_idx=64, mojo_parent_idx=63, mojo_current_idx=66, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=62, c_current_idx=65, mojo_parent_idx=63, mojo_current_idx=66, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 64 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65, 66))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65, 66))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 64 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=61, c_current_idx=65, mojo_parent_idx=63, mojo_current_idx=67, field_name=bottom_right, field_type=Point2D)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=62, c_current_idx=66, mojo_parent_idx=63, mojo_current_idx=67, field_name=bottom_right, field_type=Point2D)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 64 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=61, c_current_idx=65, mojo_parent_idx=63, mojo_current_idx=67, field_name=bottom_right, field_type=Point2D)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=62, c_current_idx=66, mojo_parent_idx=63, mojo_current_idx=67, field_name=bottom_right, field_type=Point2D)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 64 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65, 66, 67))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65, 66, 67))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 65 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=61, c_current_idx=66, mojo_parent_idx=63, mojo_current_idx=68, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=62, c_current_idx=67, mojo_parent_idx=63, mojo_current_idx=68, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 66 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=61, c_current_idx=66, mojo_parent_idx=63, mojo_current_idx=68, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=62, c_current_idx=67, mojo_parent_idx=63, mojo_current_idx=68, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 66 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 66 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=61, c_current_idx=67, mojo_parent_idx=63, mojo_current_idx=69, field_name=width, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=62, c_current_idx=68, mojo_parent_idx=63, mojo_current_idx=69, field_name=width, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 66 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=61, c_current_idx=67, mojo_parent_idx=63, mojo_current_idx=69, field_name=width, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=62, c_current_idx=68, mojo_parent_idx=63, mojo_current_idx=69, field_name=width, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 66 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, 69))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, 69))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 67 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=61, c_current_idx=68, mojo_parent_idx=63, mojo_current_idx=70, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=62, c_current_idx=69, mojo_parent_idx=63, mojo_current_idx=70, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 68 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=61, c_current_idx=68, mojo_parent_idx=63, mojo_current_idx=70, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=62, c_current_idx=69, mojo_parent_idx=63, mojo_current_idx=70, n_tokens=6)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 68 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, ...) len=7)
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, ...) len=7)
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 68 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=61, c_current_idx=69, mojo_parent_idx=63, mojo_current_idx=71, field_name=height, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=62, c_current_idx=70, mojo_parent_idx=63, mojo_current_idx=71, field_name=height, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 68 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=61, c_current_idx=69, mojo_parent_idx=63, mojo_current_idx=71, field_name=height, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=62, c_current_idx=70, mojo_parent_idx=63, mojo_current_idx=71, field_name=height, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 68 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, ...) len=8)
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, ...) len=8)
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 69 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=61, c_current_idx=70, mojo_parent_idx=63, mojo_current_idx=72, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			WhitespaceNode(c_parent_idx=62, c_current_idx=71, mojo_parent_idx=63, mojo_current_idx=72, n_tokens=3)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 70 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=61, c_current_idx=70, mojo_parent_idx=63, mojo_current_idx=72, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			WhitespaceNode(c_parent_idx=62, c_current_idx=71, mojo_parent_idx=63, mojo_current_idx=72, n_tokens=3)
     └─ Path: RootNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 3 active, 70 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(62, 63, 64, 65, 66, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, ...) len=9)
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=61, c_current_idx=62, mojo_parent_idx=62, mojo_current_idx=63, c_child_idxs=(63, 64, 65, 66, 67, ...) len=9, mojo_child_idxs=(64, 65, 66, 67, 68, ...) len=9)
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 3 active, 70 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=60, mojo_parent_idx=0, mojo_current_idx=62, c_child_idxs=(61), mojo_child_idxs=(63), struct_name=Rectangle_)
+tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=61, mojo_parent_idx=0, mojo_current_idx=62, c_child_idxs=(62), mojo_child_idxs=(63), struct_name=Rectangle_)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 71 complete
@@ -858,11 +862,11 @@ tree.mojo:215 - INFO: [Depth:-3] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 72 complete
-tree.mojo:215 - INFO: [Depth:-2] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=71, mojo_parent_idx=0, mojo_current_idx=73)
+tree.mojo:215 - INFO: [Depth:-2] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=72, mojo_parent_idx=0, mojo_current_idx=73)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 72 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=71, mojo_parent_idx=0, mojo_current_idx=73)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=72, mojo_parent_idx=0, mojo_current_idx=73)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 72 complete
@@ -870,23 +874,23 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 73 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=0, c_current_idx=72, mojo_parent_idx=0, mojo_current_idx=74, c_child_idxs=(73), type_name=Rectangle)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=0, c_current_idx=73, mojo_parent_idx=0, mojo_current_idx=74, c_child_idxs=(74), type_name=Rectangle)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 73 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	TypedefNode(c_parent_idx=0, c_current_idx=72, mojo_parent_idx=0, mojo_current_idx=74, c_child_idxs=(73), type_name=Rectangle)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	TypedefNode(c_parent_idx=0, c_current_idx=73, mojo_parent_idx=0, mojo_current_idx=74, c_child_idxs=(74), type_name=Rectangle)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 73 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=72, c_current_idx=73, mojo_parent_idx=74, mojo_current_idx=75, struct_name=Rectangle_)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=73, c_current_idx=74, mojo_parent_idx=74, mojo_current_idx=75, struct_name=Rectangle_)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 3 active, 73 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		StructNode(c_parent_idx=72, c_current_idx=73, mojo_parent_idx=74, mojo_current_idx=75, struct_name=Rectangle_)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		StructNode(c_parent_idx=73, c_current_idx=74, mojo_parent_idx=74, mojo_current_idx=75, struct_name=Rectangle_)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 73 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=0, c_current_idx=72, mojo_parent_idx=0, mojo_current_idx=74, c_child_idxs=(73), mojo_child_idxs=(75), type_name=Rectangle)
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=0, c_current_idx=73, mojo_parent_idx=0, mojo_current_idx=74, c_child_idxs=(74), mojo_child_idxs=(75), type_name=Rectangle)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 74 complete
@@ -894,11 +898,11 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 75 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=74, mojo_parent_idx=0, mojo_current_idx=76, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=75, mojo_parent_idx=0, mojo_current_idx=76, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 76 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=74, mojo_parent_idx=0, mojo_current_idx=76, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=75, mojo_parent_idx=0, mojo_current_idx=76, n_tokens=4)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 76 complete
@@ -906,11 +910,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 76 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=75, mojo_parent_idx=0, mojo_current_idx=77)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=76, mojo_parent_idx=0, mojo_current_idx=77)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 76 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=75, mojo_parent_idx=0, mojo_current_idx=77)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=76, mojo_parent_idx=0, mojo_current_idx=77)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'MacroIfNDefNode'
     └─ Nodes: 2 active, 76 complete
@@ -918,107 +922,111 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'MacroIfNDefNode'
     └─ Nodes: 1 active, 77 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=0, c_current_idx=76, mojo_parent_idx=0, mojo_current_idx=78, c_child_idxs=(77, 78, 79, 85, 86, ...) len=10, node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_parent_idx=0, c_current_idx=77, mojo_parent_idx=0, mojo_current_idx=78, c_child_idxs=(78, 79, 81, 87, 88, ...) len=10, node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
     └─ Current C_Node: 'MacroIfNDefNode'
     └─ Nodes: 1 active, 78 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=0, c_current_idx=76, mojo_parent_idx=0, mojo_current_idx=78, c_child_idxs=(77, 78, 79, 85, 86, ...) len=10, node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_parent_idx=0, c_current_idx=77, mojo_parent_idx=0, mojo_current_idx=78, c_child_idxs=(78, 79, 81, 87, 88, ...) len=10, node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current C_Node: 'MacroDefineNode'
+    └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 78 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=37)
     └─ Path: RootNode
-    └─ Current C_Node: 'MacroDefineNode'
-    └─ Nodes: 1 active, 78 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	MacroDefineNode(c_parent_idx=76, c_current_idx=77, mojo_parent_idx=0, mojo_current_idx=79)
-    └─ Path: RootNode -> MacroDefineNode
-    └─ Current C_Node: 'MacroDefineNode'
-    └─ Nodes: 2 active, 78 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=76, c_current_idx=77, mojo_parent_idx=0, mojo_current_idx=79)
-    └─ Path: RootNode -> MacroDefineNode
     └─ Current C_Node: 'WhitespaceNode'
+    └─ Nodes: 1 active, 78 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=77, c_current_idx=78, mojo_parent_idx=0, mojo_current_idx=79, n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
+    └─ Current C_Node: 'WhitespaceNode'
+    └─ Nodes: 1 active, 79 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=77, c_current_idx=78, mojo_parent_idx=0, mojo_current_idx=79, n_tokens=1)
+    └─ Path: RootNode -> WhitespaceNode
+    └─ Current C_Node: 'MacroDefineNode'
     └─ Nodes: 1 active, 79 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=38)
     └─ Path: RootNode
+    └─ Current C_Node: 'MacroDefineNode'
+    └─ Nodes: 1 active, 79 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	MacroDefineNode(c_parent_idx=77, c_current_idx=79, mojo_parent_idx=0, mojo_current_idx=80, c_child_idxs=(80))
+    └─ Path: RootNode -> MacroDefineNode
+    └─ Current C_Node: 'MacroDefineNode'
+    └─ Nodes: 2 active, 79 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	MacroDefineNode(c_parent_idx=77, c_current_idx=79, mojo_parent_idx=0, mojo_current_idx=80, c_child_idxs=(80))
+    └─ Path: RootNode -> MacroDefineNode
     └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 80 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=76, c_current_idx=78, mojo_parent_idx=0, mojo_current_idx=81, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 81 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=76, c_current_idx=78, mojo_parent_idx=0, mojo_current_idx=81, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
+    └─ Nodes: 2 active, 79 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=77, c_current_idx=79, mojo_parent_idx=0, mojo_current_idx=80, c_child_idxs=(80))
+    └─ Path: RootNode -> MacroDefineNode
     └─ Current C_Node: 'TypedefNode'
-    └─ Nodes: 1 active, 81 complete
+    └─ Nodes: 1 active, 80 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=28, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=39)
     └─ Path: RootNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 81 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=76, c_current_idx=79, mojo_parent_idx=0, mojo_current_idx=82, c_child_idxs=(80), type_name=NestedStruct)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=77, c_current_idx=81, mojo_parent_idx=0, mojo_current_idx=82, c_child_idxs=(82), type_name=NestedStruct)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 81 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	TypedefNode(c_parent_idx=76, c_current_idx=79, mojo_parent_idx=0, mojo_current_idx=82, c_child_idxs=(80), type_name=NestedStruct)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	TypedefNode(c_parent_idx=77, c_current_idx=81, mojo_parent_idx=0, mojo_current_idx=82, c_child_idxs=(82), type_name=NestedStruct)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 81 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=79, c_current_idx=80, mojo_parent_idx=82, mojo_current_idx=83, c_child_idxs=(81), struct_name=)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=81, c_current_idx=82, mojo_parent_idx=82, mojo_current_idx=83, c_child_idxs=(83), struct_name=)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 3 active, 81 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=79, c_current_idx=80, mojo_parent_idx=82, mojo_current_idx=83, c_child_idxs=(81), struct_name=)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=81, c_current_idx=82, mojo_parent_idx=82, mojo_current_idx=83, c_child_idxs=(83), struct_name=)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 3 active, 81 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=80, c_current_idx=81, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(82, 83, 84))
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=82, c_current_idx=83, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(84, 85, 86))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 4 active, 81 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=80, c_current_idx=81, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(82, 83, 84))
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=82, c_current_idx=83, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(84, 85, 86))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 81 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=81, c_current_idx=82, mojo_parent_idx=84, mojo_current_idx=85, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=83, c_current_idx=84, mojo_parent_idx=84, mojo_current_idx=85, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 82 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=81, c_current_idx=82, mojo_parent_idx=84, mojo_current_idx=85, n_tokens=5)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=83, c_current_idx=84, mojo_parent_idx=84, mojo_current_idx=85, n_tokens=6)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 82 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=80, c_current_idx=81, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(82, 83, 84), mojo_child_idxs=(85))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=82, c_current_idx=83, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(84, 85, 86), mojo_child_idxs=(85))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 82 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructFieldNode(c_parent_idx=81, c_current_idx=83, mojo_parent_idx=84, mojo_current_idx=86, field_name=data, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructFieldNode(c_parent_idx=83, c_current_idx=85, mojo_parent_idx=84, mojo_current_idx=86, field_name=data, field_type=int)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 5 active, 82 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				StructFieldNode(c_parent_idx=81, c_current_idx=83, mojo_parent_idx=84, mojo_current_idx=86, field_name=data, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				StructFieldNode(c_parent_idx=83, c_current_idx=85, mojo_parent_idx=84, mojo_current_idx=86, field_name=data, field_type=int)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 5 active, 82 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=80, c_current_idx=81, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(82, 83, 84), mojo_child_idxs=(85, 86))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=82, c_current_idx=83, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(84, 85, 86), mojo_child_idxs=(85, 86))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 83 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=81, c_current_idx=84, mojo_parent_idx=84, mojo_current_idx=87, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_parent_idx=83, c_current_idx=86, mojo_parent_idx=84, mojo_current_idx=87, n_tokens=3)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 84 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=81, c_current_idx=84, mojo_parent_idx=84, mojo_current_idx=87, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=83, c_current_idx=86, mojo_parent_idx=84, mojo_current_idx=87, n_tokens=3)
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 84 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 			ScopeNode(c_parent_idx=80, c_current_idx=81, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(82, 83, 84), mojo_child_idxs=(85, 86, 87))
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 			ScopeNode(c_parent_idx=82, c_current_idx=83, mojo_parent_idx=83, mojo_current_idx=84, c_child_idxs=(84, 85, 86), mojo_child_idxs=(85, 86, 87))
     └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 4 active, 84 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 		StructNode(c_parent_idx=79, c_current_idx=80, mojo_parent_idx=82, mojo_current_idx=83, c_child_idxs=(81), mojo_child_idxs=(84), struct_name=)
+tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 		StructNode(c_parent_idx=81, c_current_idx=82, mojo_parent_idx=82, mojo_current_idx=83, c_child_idxs=(83), mojo_child_idxs=(84), struct_name=)
     └─ Path: RootNode -> TypedefNode -> StructNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 3 active, 85 complete
-tree.mojo:215 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=76, c_current_idx=79, mojo_parent_idx=0, mojo_current_idx=82, c_child_idxs=(80), mojo_child_idxs=(83), type_name=NestedStruct)
+tree.mojo:215 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=77, c_current_idx=81, mojo_parent_idx=0, mojo_current_idx=82, c_child_idxs=(82), mojo_child_idxs=(83), type_name=NestedStruct)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 86 complete
@@ -1026,11 +1034,11 @@ tree.mojo:215 - INFO: [Depth:-4] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 87 complete
-tree.mojo:215 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=76, c_current_idx=85, mojo_parent_idx=0, mojo_current_idx=88, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=77, c_current_idx=87, mojo_parent_idx=0, mojo_current_idx=88, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 88 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=76, c_current_idx=85, mojo_parent_idx=0, mojo_current_idx=88, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=77, c_current_idx=87, mojo_parent_idx=0, mojo_current_idx=88, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 88 complete
@@ -1038,11 +1046,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 88 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=76, c_current_idx=86, mojo_parent_idx=0, mojo_current_idx=89)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=77, c_current_idx=88, mojo_parent_idx=0, mojo_current_idx=89)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 88 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=76, c_current_idx=86, mojo_parent_idx=0, mojo_current_idx=89)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=77, c_current_idx=88, mojo_parent_idx=0, mojo_current_idx=89)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 88 complete
@@ -1050,11 +1058,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 89 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=76, c_current_idx=87, mojo_parent_idx=0, mojo_current_idx=90, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=77, c_current_idx=89, mojo_parent_idx=0, mojo_current_idx=90, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 90 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=76, c_current_idx=87, mojo_parent_idx=0, mojo_current_idx=90, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=77, c_current_idx=89, mojo_parent_idx=0, mojo_current_idx=90, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 90 complete
@@ -1062,11 +1070,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 1 active, 90 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=76, c_current_idx=88, mojo_parent_idx=0, mojo_current_idx=91, type_name=)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=77, c_current_idx=90, mojo_parent_idx=0, mojo_current_idx=91, type_name=)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'TypedefNode'
     └─ Nodes: 2 active, 90 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=76, c_current_idx=88, mojo_parent_idx=0, mojo_current_idx=91, type_name=)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=77, c_current_idx=90, mojo_parent_idx=0, mojo_current_idx=91, type_name=)
     └─ Path: RootNode -> TypedefNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 90 complete
@@ -1074,11 +1082,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 91 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=76, c_current_idx=89, mojo_parent_idx=0, mojo_current_idx=92, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=77, c_current_idx=91, mojo_parent_idx=0, mojo_current_idx=92, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 92 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=76, c_current_idx=89, mojo_parent_idx=0, mojo_current_idx=92, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=77, c_current_idx=91, mojo_parent_idx=0, mojo_current_idx=92, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 92 complete
@@ -1086,11 +1094,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 92 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=76, c_current_idx=90, mojo_parent_idx=0, mojo_current_idx=93)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=77, c_current_idx=92, mojo_parent_idx=0, mojo_current_idx=93)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 92 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=76, c_current_idx=90, mojo_parent_idx=0, mojo_current_idx=93)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=77, c_current_idx=92, mojo_parent_idx=0, mojo_current_idx=93)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 92 complete
@@ -1098,11 +1106,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 93 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=76, c_current_idx=91, mojo_parent_idx=0, mojo_current_idx=94, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=77, c_current_idx=93, mojo_parent_idx=0, mojo_current_idx=94, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 94 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=76, c_current_idx=91, mojo_parent_idx=0, mojo_current_idx=94, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=77, c_current_idx=93, mojo_parent_idx=0, mojo_current_idx=94, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 94 complete
@@ -1110,11 +1118,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 94 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=92, mojo_parent_idx=0, mojo_current_idx=95, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=94, mojo_parent_idx=0, mojo_current_idx=95, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 95 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=92, mojo_parent_idx=0, mojo_current_idx=95, n_tokens=1)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=94, mojo_parent_idx=0, mojo_current_idx=95, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 95 complete
@@ -1122,11 +1130,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 95 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=93, mojo_parent_idx=0, mojo_current_idx=96)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=95, mojo_parent_idx=0, mojo_current_idx=96)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 2 active, 95 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=93, mojo_parent_idx=0, mojo_current_idx=96)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=95, mojo_parent_idx=0, mojo_current_idx=96)
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'EndFileNode'
     └─ Nodes: 2 active, 95 complete

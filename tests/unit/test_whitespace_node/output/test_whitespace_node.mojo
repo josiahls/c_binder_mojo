@@ -1,38 +1,47 @@
 # Different types of whitespace: 
  
+ 
+ 
 # Single space 
+ 
   
  
+ 
+ 
 # Multiple spaces 
+ 
      
  
+ 
+ 
 # Tabs 
-	 
+ 
+ 	  
+ 
+ 
  
 # Mixed whitespace 
-	  	  
+ 
+ 	    	   
+ 
+ 
  
 # New lines 
  
  
  
+ 
+ 
+ 
+ 
 # Whitespace in code contexts 
-int 
-function 
-( 
  
-) 
-  
-{ 
+alias function : Int = (){
+intx5 
  
-    
-int 
-x 
-= 
-5 
-; 
  
      
+ 
     
 return 
 x 
@@ -40,13 +49,25 @@ x
  
  
  
+} 
+ 
+ 
+ 
  
 # Whitespace after comment 
  
+ 
+ 
 """ Whitespace 
+ 
    in multiline 
+ 
    comment """ 
+
+ 
     
+ 
 # Whitespace at beginning and end of file  
+ 
 fn main():
     pass

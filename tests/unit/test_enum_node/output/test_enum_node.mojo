@@ -1,91 +1,121 @@
 # Basic enum with values 
+ 
 struct Color  : 
  
  
-    
-	alias RED = 0 
  
     
-	alias GREEN = 1 
+alias RED = 0 
+ 
  
     
-	alias BLUE = 2 
+alias GREEN = 1 
+ 
+ 
+    
+alias BLUE = 2 
 # Enum with auto-incrementing values 
+ 
 struct Direction  : 
  
  
+ 
     
-	alias NORTH = 0 
+alias NORTH = 0 
   
-	# 0 
+# 0 
+ 
     
-	alias SOUTH = 1 
+alias SOUTH = 1 
   
-	# 1 
+# 1 
+ 
     
-	alias EAST = 2 
+alias EAST = 2 
    
-	# 2 
+# 2 
+ 
     
-	alias WEST = 3 
-	# 3 
+alias WEST = 3 
+# 3 
+ 
  
 # Enum with mixed explicit and implicit values 
+ 
 struct Status  : 
  
  
-    
-	alias OK = 200 
  
     
-	alias NOT_FOUND = 404 
+alias OK = 200 
+ 
  
     
-	alias SERVER_ERROR = 500 
+alias NOT_FOUND = 404 
+ 
  
     
-	alias UNAVAILABLE = 501 
+alias SERVER_ERROR = 500 
+ 
+ 
+    
+alias UNAVAILABLE = 501 
   
-	# 501 
+# 501 
+ 
     
-	alias TIMEOUT = 502 
-	# 502 
+alias TIMEOUT = 502 
+# 502 
+ 
  
 # Enum with name but no values  ( empty enum )  
+ 
 struct Empty  : pass 
+ 
+pass 
  
  
  
 # Enum with hex values and comments 
+ 
 struct Flags  : 
  
  
+ 
     
-	alias READ = 1 
+alias READ = 1 
   
-	# Read permission 
+# Read permission 
+ 
     
-	alias WRITE = 2 
+alias WRITE = 2 
   
-	# Write permission 
+# Write permission 
+ 
     
-	alias EXECUTE = 4 
-	# Execute permission 
+alias EXECUTE = 4 
+# Execute permission 
+ 
  
 # Enum with byte values 
+ 
 struct ByteValues  : 
  
  
-    
-	alias BYTE_0 = 1 
  
     
-	alias BYTE_1 = 2 
+alias BYTE_0 = 1 
+ 
  
     
-	alias BYTE_2 = 4 
+alias BYTE_1 = 2 
+ 
  
     
-	alias BYTE_3 = 8 
+alias BYTE_2 = 4 
+ 
+ 
+    
+alias BYTE_3 = 8 
 fn main():
     pass

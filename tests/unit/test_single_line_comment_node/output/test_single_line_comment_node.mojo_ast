@@ -2,17 +2,24 @@ RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) 
 PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 4, 5, ...) len=26, node_state=4 (COMPLETED))
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
 # Basic single line comment 
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3)
 # Another single line comment 
-WhitespaceNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, n_tokens=1)
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, n_tokens=2)
+ 
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5)
 # Comment with special characters: !@#$%^&* (  ) _+ 
-WhitespaceNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6, n_tokens=1)
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6, n_tokens=2)
+ 
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7)
-# Comment with code-like content: int x = 5 ;  
-WhitespaceNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, n_tokens=1)
+# Comment with code-like content: int x  =  5 ;  
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, n_tokens=2)
+ 
  
 VariableNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, is_module_level=True)
 alias some_function : Int = () 
@@ -20,33 +27,50 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11)
 # Comment after code 
-WhitespaceNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12, n_tokens=1)
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12, n_tokens=2)
+ 
  
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13)
 """ This is not a single line comment """ 
-WhitespaceNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, n_tokens=1)
+WhitespaceNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, n_tokens=3)
+
+ 
+ 
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15)
 # Comment with Unicode: 你好世界 
-WhitespaceNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16, n_tokens=1)
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16, n_tokens=2)
+ 
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17)
 # Empty comment followed by another comment 
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18)
 # 
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19)
 # Comment after empty comment 
-WhitespaceNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20, n_tokens=1)
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20, n_tokens=2)
+ 
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21)
 # Multiple comments 
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22)
 # in a 
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23)
 # row 
-WhitespaceNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24, n_tokens=1)
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24, n_tokens=2)
+ 
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25)
 # Comment with trailing spaces     
-WhitespaceNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26, n_tokens=1)
+ 
+WhitespaceNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26, n_tokens=2)
+ 
  

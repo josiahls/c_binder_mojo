@@ -1,4 +1,4 @@
-RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=31)
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=26)
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
 // Basic single line comment 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=2)
@@ -13,51 +13,40 @@ SingleLineCommentNode(c_parent_idx=0, c_current_idx=6)
 // Comment with code-like content: int x = 5 ;  
 WhitespaceNode(c_parent_idx=0, c_current_idx=7, n_tokens=1)
  
-PlaceHolderNode(c_parent_idx=0, c_current_idx=8)
-int 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=9)
-some_function 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=10)
-( 
+VariableNode(c_parent_idx=0, c_current_idx=8, node_state=4 (COMPLETED))
+int some_function (  )  ; 
+WhitespaceNode(c_parent_idx=0, c_current_idx=9, n_tokens=1)
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=10)
+// Comment after code 
 WhitespaceNode(c_parent_idx=0, c_current_idx=11, n_tokens=1)
  
-PlaceHolderNode(c_parent_idx=0, c_current_idx=12)
-) 
+MultiLineCommentNode(c_parent_idx=0, c_current_idx=12)
+/* This is not a single line comment */ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=13, n_tokens=1)
  
-PlaceHolderNode(c_parent_idx=0, c_current_idx=14)
-; 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=14)
+// Comment with Unicode: 你好世界 
 WhitespaceNode(c_parent_idx=0, c_current_idx=15, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=16)
-// Comment after code 
-WhitespaceNode(c_parent_idx=0, c_current_idx=17, n_tokens=1)
- 
-MultiLineCommentNode(c_parent_idx=0, c_current_idx=18)
-/* This is not a single line comment */ 
+// Empty comment followed by another comment 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=17)
+// 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=18)
+// Comment after empty comment 
 WhitespaceNode(c_parent_idx=0, c_current_idx=19, n_tokens=1)
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=20)
-// Comment with Unicode: 你好世界 
-WhitespaceNode(c_parent_idx=0, c_current_idx=21, n_tokens=1)
- 
+// Multiple comments 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=21)
+// in a 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=22)
-// Empty comment followed by another comment 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=23)
-// 
+// row 
+WhitespaceNode(c_parent_idx=0, c_current_idx=23, n_tokens=1)
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=24)
-// Comment after empty comment 
+// Comment with trailing spaces     
 WhitespaceNode(c_parent_idx=0, c_current_idx=25, n_tokens=1)
  
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=26)
-// Multiple comments 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)
-// in a 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=28)
-// row 
-WhitespaceNode(c_parent_idx=0, c_current_idx=29, n_tokens=1)
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=30)
-// Comment with trailing spaces     
-WhitespaceNode(c_parent_idx=0, c_current_idx=31, n_tokens=1)
- 
+EndFileNode(c_parent_idx=0, c_current_idx=26)C_BINDER_MOJO_END_FILE 

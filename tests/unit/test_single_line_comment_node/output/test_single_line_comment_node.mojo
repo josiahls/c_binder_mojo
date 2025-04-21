@@ -5,13 +5,7 @@
  
 # Comment with code-like content: int x = 5 ;  
  
-int 
-some_function 
-( 
- 
-) 
- 
-; 
+alias some_function : Int = () 
  
 # Comment after code 
  

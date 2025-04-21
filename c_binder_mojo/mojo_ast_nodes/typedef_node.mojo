@@ -36,16 +36,16 @@ struct TypedefNode(NodeAstLike):
     1. Basic type typedefs:
         typedef unsigned int uint_t;
     2. Struct typedefs:
-        typedef struct { ... } Point2D;
-        typedef struct Rectangle_ Rectangle;
+        typedef struct Rectangle_ { ... } Rectangle;
     
     Mojo:
     1. Basic type aliases:
         alias uint_t = UInt
-    2. Struct aliases:
-        @value
-        struct Point2D: ...
+    2. Struct aliases (separated from struct definition):
         alias Rectangle = Rectangle_
+        
+        @value
+        struct Rectangle_: ...
     """
     
     alias __name__ = "TypedefNode"
@@ -54,6 +54,8 @@ struct TypedefNode(NodeAstLike):
     var _c_token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
     var _type_name: String
+    var _has_children: Bool
+    var _struct_name: String
 
     fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
         """Initialize a TypedefNode.
@@ -66,10 +68,35 @@ struct TypedefNode(NodeAstLike):
         self._c_token_bundles = c_node.token_bundles()
         self._token_bundles = TokenBundles()
         self._node_state = NodeState.INITIALIZING
+        self._has_children = False
+        self._struct_name = ""
         
         # Get type name from C node
         var c_typedef = c_node.node[][C_TypedefNode]
         self._type_name = c_typedef.get_type_name()
+        
+        # Check if this typedef has child nodes (struct or enum)
+        if len(self._indicies[].c_child_idxs) > 0:
+            self._has_children = True
+            # Try to determine the struct/enum name
+            self._extract_struct_name()
+
+    fn _extract_struct_name(mut self):
+        """Extract the struct or enum name from the typedef tokens."""
+        var found_struct_or_enum = False
+        
+        for token_bundle in self._c_token_bundles[]:
+            token = token_bundle[].token
+            
+            # Look for "struct" or "enum" keywords
+            if token == "struct" or token == "enum":
+                found_struct_or_enum = True
+                continue
+                
+            # The next non-whitespace token after "struct/enum" should be the name
+            if found_struct_or_enum and token != " " and token != "\t" and token != "\n" and token != "{":
+                self._struct_name = token
+                break
 
     fn _format_token_bundles(self):
         """Convert C-style typedef tokens to Mojo-style alias tokens.
@@ -78,8 +105,11 @@ struct TypedefNode(NodeAstLike):
         - Replace 'typedef' with 'alias'
         - Move the type name to the beginning
         - Add '=' between the name and the type
+        
+        For typedefs with struct/enum definitions:
+        - Creates a separate alias declaration
+        - The struct/enum definition becomes a separate entity
         """
-        # Convert typedef syntax to Mojo alias syntax
         var row_num = self._c_token_bundles[][-1].row_num
         
         # Add alias keyword
@@ -92,30 +122,35 @@ struct TypedefNode(NodeAstLike):
             # Add equals sign
             self._token_bundles[].append(TokenBundle("=", row_num, 0))
             
-            # Now we need to add the base type - this will depend on what's in the C token bundles
-            # Simple approach: just grab tokens after typedef and before the type name/semicolon
-            var in_base_type = False
-            for token_bundle in self._c_token_bundles[]:
-                if token_bundle[].token == "typedef":
-                    in_base_type = True
-                    continue
-                elif token_bundle[].token == self._type_name or token_bundle[].token == ";":
-                    break
-                elif in_base_type and token_bundle[].token != " " and token_bundle[].token != "\t" and token_bundle[].token != "\n":
-                    # Convert C types to Mojo types
-                    var mojo_type = token_bundle[].token
-                    if mojo_type == "int":
-                        mojo_type = "Int"
-                    elif mojo_type == "float":
-                        mojo_type = "Float32"
-                    elif mojo_type == "double":
-                        mojo_type = "Float64"
-                    elif mojo_type == "unsigned":
-                        mojo_type = "UInt"
-                    elif mojo_type == "char":
-                        mojo_type = "Int8"
-                    
-                    self._token_bundles[].append(TokenBundle(mojo_type, row_num, 0))
+            if self._has_children and self._struct_name != "":
+                # For struct/enum typedefs, just reference the struct/enum name
+                self._token_bundles[].append(TokenBundle(self._struct_name, row_num, 0))
+            else:
+                # For simple typedefs, convert the type
+                # Now we need to add the base type - this will depend on what's in the C token bundles
+                # Simple approach: just grab tokens after typedef and before the type name/semicolon
+                var in_base_type = False
+                for token_bundle in self._c_token_bundles[]:
+                    if token_bundle[].token == "typedef":
+                        in_base_type = True
+                        continue
+                    elif token_bundle[].token == self._type_name or token_bundle[].token == ";":
+                        break
+                    elif in_base_type and token_bundle[].token != " " and token_bundle[].token != "\t" and token_bundle[].token != "\n":
+                        # Convert C types to Mojo types
+                        var mojo_type = token_bundle[].token
+                        if mojo_type == "int":
+                            mojo_type = "Int"
+                        elif mojo_type == "float":
+                            mojo_type = "Float32"
+                        elif mojo_type == "double":
+                            mojo_type = "Float64"
+                        elif mojo_type == "unsigned":
+                            mojo_type = "UInt"
+                        elif mojo_type == "char":
+                            mojo_type = "Int8"
+                        
+                        self._token_bundles[].append(TokenBundle(mojo_type, row_num, 0))
         
     @staticmethod
     fn accept(
@@ -176,6 +211,7 @@ struct TypedefNode(NodeAstLike):
         """Process the current node state."""
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
+            self._has_children = True
             return
 
         if token_flow == TokenFlow.PASS_TO_PARENT:
@@ -207,7 +243,12 @@ struct TypedefNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ", type_name=" + self._type_name + ")"
+            var result = self.__name__ + "(" + String(self._indicies[])
+            result += ", type_name=" + self._type_name
+            if self._has_children and self._struct_name != "":
+                result += ", struct_name=" + self._struct_name
+            result += ")"
+            return result
         else:
             return self.__name__
 

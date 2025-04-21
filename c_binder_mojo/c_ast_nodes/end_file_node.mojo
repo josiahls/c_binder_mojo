@@ -98,7 +98,7 @@ struct EndFileNode(NodeAstLike):
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
         if just_code:
-            return String("")
+            return String()
         else:
             return default_to_string(AstNode(self), module_interface)
 

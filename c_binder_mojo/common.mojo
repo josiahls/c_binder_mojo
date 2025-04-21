@@ -209,7 +209,7 @@ struct NodeIndices:
         self.mojo_child_idxs = List[Int]()
 
     fn _child_str(self, children_idxs: List[Int]) -> String:
-        var s = String("")
+        var s = String()
         n_children = len(children_idxs)
 
         if n_children == 0:
@@ -235,7 +235,7 @@ struct NodeIndices:
         return s
 
     fn __str__(self) -> String:
-        var s = String("")
+        var s = String()
         if self.c_parent_idx != Self.UNSET:
             s += "c_parent_idx=" + String(self.c_parent_idx)
         if self.c_current_idx != Self.UNSET:
@@ -521,7 +521,7 @@ struct Tokenizer:
         Returns:
             A string containing all tokens with appropriate formatting.
         """
-        s = String("")
+        s = String()
         current_row_num = -1
         for token in self.tokens:
             if make_flat:

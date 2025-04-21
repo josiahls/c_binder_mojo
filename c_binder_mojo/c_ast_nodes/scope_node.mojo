@@ -112,7 +112,7 @@ struct ScopeNode(NodeAstLike):
         # TODO(josiahls): Do we want to get the literal parent type instead of string?
         # I do like that we aren't importing extra nodes, but on the other hand, we
         # don't get compilation checking.
-        var parent_type = String("")
+        var parent_type = String()
         if indices.c_parent_idx >= 0:
             parent_type = module_interface.nodes()[][
                 indices.c_parent_idx

@@ -11,6 +11,7 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
     TokenFlow,
+    WhitespaceEnum,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -195,6 +196,8 @@ struct StructFieldNode(NodeAstLike):
             self._token_bundles_tail[].append(token)
         else:
             self._token_bundles[].append(token)
+        if self._node_state == NodeState.COMPLETED:
+            self._token_bundles_tail[].append(TokenBundle(WhitespaceEnum.NEWLINE, token.row_num, 0))
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""

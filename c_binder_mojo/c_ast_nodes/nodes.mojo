@@ -99,17 +99,7 @@ fn default_to_string(
         " ",
         indent
     )
-    # for token in node.token_bundles_tail():
-    #     if new_line_added:
-    #         s += indent
-    #         new_line_added = False
-    #     else:
-    #         s += " "
-    #     s += token[].token
-    #     if token[].token == "\n":
-    #         new_line_added = True
 
-    # s += "\n"
     return s
 
 
@@ -135,14 +125,14 @@ fn default_to_string_just_code(
     var level = node.scope_level(True, module_interface)
     var indent = String()
 
+    print('level: ' + String(level) + ' for node: ' + node.name(True))
+
     if level > 0:
         indent = "\t" * level
-    var new_line_added = False
-
-    s += node.token_bundles().join(
-        " ",
-        indent
-    )
+    
+    if not node.token_bundles()[0].is_newline():
+        s += indent
+    s += node.token_bundles().join(" ", indent)
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
@@ -150,24 +140,7 @@ fn default_to_string_just_code(
             s += indent
         s += string_children(node, True, module_interface)
 
-    tail_s = node.token_bundles_tail().join(
-        " ",
-        indent
-    )
-    print('tail_s: "' + tail_s + '" for token bundles length: ' + String(len(node.token_bundles_tail())))
-    print('s: "' + s + '"')
-    s += tail_s
-
-    # for token in node.token_bundles_tail():
-    #     if new_line_added:
-    #         s += indent
-    #         new_line_added = False
-    #     else:
-    #         s += " "
-    #     s += token[].token
-    #     if token[].token == "\n":
-    #         new_line_added = True
-
+    s += node.token_bundles_tail().join(" ",indent)
     return s
 
 

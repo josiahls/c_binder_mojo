@@ -299,8 +299,12 @@ struct TokenBundle(EqualityComparable):
         self.col_num = col_num
         self.deleted = deleted
         self.end_file = end_file
+
     fn is_whitespace(read self: Self) -> Bool:
         return WhitespaceEnum.is_whitespace(self)
+
+    fn is_newline(read self: Self) -> Bool:
+        return self.token == WhitespaceEnum.NEWLINE
 
     @staticmethod
     fn from_other(new_token: String, other: Self) -> Self:
@@ -371,6 +375,26 @@ struct TokenBundles(Stringable):
     fn __init__(out self):
         """Initialize an empty TokenBundles collection."""
         self._token_bundles = List[TokenBundle]()
+
+    fn join(
+        self,
+        sep: String,
+        indent: String = "",
+    ) -> String:
+        """Join the TokenBundles into a single string.
+
+        Args:
+            sep: The separator to use between tokens.
+            indent: The indent to use for newlines.
+        """
+        var s = String()
+        for token in self._token_bundles:
+            if len(s) > 0:
+                s += sep
+            if token[].token == "\n":
+                s += indent
+            s += token[].token
+        return s
 
     fn append(mut self, owned value: TokenBundle):
         """Add a new TokenBundle to the collection.

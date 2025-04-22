@@ -55,6 +55,9 @@ fn default_scope_level(
     return level
 
 
+
+
+
 fn default_to_string(
     node: AstNode, module_interface: ModuleInterface
 ) -> String:
@@ -82,15 +85,10 @@ fn default_to_string(
     s += indent + node.name(include_sig=True) + "\n"
 
     # Add tokens
-    for token in node.token_bundles():
-        if new_line_added:
-            s += indent
-            new_line_added = False
-        else:
-            s += " "
-        s += token[].token
-        if token[].token == "\n":
-            new_line_added = True
+    s += node.token_bundles().join(
+        " ",
+        indent
+    )
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:

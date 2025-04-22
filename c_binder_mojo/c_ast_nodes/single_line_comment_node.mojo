@@ -31,14 +31,12 @@ struct SingleLineCommentNode(NodeAstLike):
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
-    var _row_num: Int
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles[].append(token_bundle)
         self._node_state = NodeState.INITIALIZING
-        self._row_num = token_bundle.row_num
 
     @staticmethod
     fn accept(
@@ -63,7 +61,7 @@ struct SingleLineCommentNode(NodeAstLike):
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        if token.row_num != self._row_num:
+        if token.is_newline():
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
         else:
@@ -101,7 +99,7 @@ struct SingleLineCommentNode(NodeAstLike):
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
-        return "SingleLineCommentNode"
+        return self.__name__
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:

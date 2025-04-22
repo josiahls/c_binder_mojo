@@ -95,17 +95,21 @@ fn default_to_string(
         s += indent
         s += string_children(node, False, module_interface)
 
-    for token in node.token_bundles_tail():
-        if new_line_added:
-            s += indent
-            new_line_added = False
-        else:
-            s += " "
-        s += token[].token
-        if token[].token == "\n":
-            new_line_added = True
+    s += node.token_bundles_tail().join(
+        " ",
+        indent
+    )
+    # for token in node.token_bundles_tail():
+    #     if new_line_added:
+    #         s += indent
+    #         new_line_added = False
+    #     else:
+    #         s += " "
+    #     s += token[].token
+    #     if token[].token == "\n":
+    #         new_line_added = True
 
-    s += "\n"
+    # s += "\n"
     return s
 
 
@@ -135,16 +139,10 @@ fn default_to_string_just_code(
         indent = "\t" * level
     var new_line_added = False
 
-    # Add tokens
-    for token in node.token_bundles():
-        if new_line_added:
-            s += indent
-            new_line_added = False
-        else:
-            s += " "
-        s += token[].token
-        if token[].token == "\n":
-            new_line_added = True
+    s += node.token_bundles().join(
+        " ",
+        indent
+    )
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
@@ -152,15 +150,23 @@ fn default_to_string_just_code(
             s += indent
         s += string_children(node, True, module_interface)
 
-    for token in node.token_bundles_tail():
-        if new_line_added:
-            s += indent
-            new_line_added = False
-        else:
-            s += " "
-        s += token[].token
-        if token[].token == "\n":
-            new_line_added = True
+    tail_s = node.token_bundles_tail().join(
+        " ",
+        indent
+    )
+    print('tail_s: "' + tail_s + '" for token bundles length: ' + String(len(node.token_bundles_tail())))
+    print('s: "' + s + '"')
+    s += tail_s
+
+    # for token in node.token_bundles_tail():
+    #     if new_line_added:
+    #         s += indent
+    #         new_line_added = False
+    #     else:
+    #         s += " "
+    #     s += token[].token
+    #     if token[].token == "\n":
+    #         new_line_added = True
 
     return s
 

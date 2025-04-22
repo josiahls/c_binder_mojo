@@ -14,6 +14,7 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
     TokenFlow,
+    WhitespaceEnum
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -43,7 +44,6 @@ struct ScopeNode(NodeAstLike):
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
     var _parent_type: String  # Type of node this scope belongs to (e.g., "typedef", "struct")
-    var _row_nums: List[Int]  # Track rows for multi-line scopes
 
     fn __init__(
         out self,
@@ -61,11 +61,10 @@ struct ScopeNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._parent_type = parent_type
         self._token_bundles[].append(token_bundle)
+        self._token_bundles[].append(TokenBundle(WhitespaceEnum.NEWLINE, token_bundle.row_num, 0))
 
     @staticmethod
     fn accept(
@@ -135,14 +134,19 @@ struct ScopeNode(NodeAstLike):
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
 
-        if (
-            self._node_state == NodeState.BUILDING_CHILDREN
-            and token.token == CTokens.SCOPE_END
-        ):
+
+        print("token: " + token.token + " state: " + String(self._node_state))
+        if token.token == CTokens.SCOPE_END:
+            print("Building children and scope end")
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS
             return TokenFlow.CONSUME_TOKEN  # Consume the scope end token.
 
-        if self._node_state == NodeState.INITIALIZING:
+        if token.is_whitespace():
+            # Remove all white space tokens
+            self._node_state = NodeState.DESTROYING_TOKENS
+            return TokenFlow.CONSUME_TOKEN
+
+        if self._node_state == NodeState.INITIALIZING or self._node_state == NodeState.DESTROYING_TOKENS:
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
 
@@ -164,10 +168,11 @@ struct ScopeNode(NodeAstLike):
             token_flow: The determined token flow.
             module_interface: Interface to the AST.
         """
-        if token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
-
+        if self._node_state == NodeState.DESTROYING_TOKENS:
+            if not token.is_whitespace():
+                print("ERROR: Destroying tokens but token is not whitespace")
         if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
+            self._token_bundles_tail[].append(TokenBundle(WhitespaceEnum.NEWLINE, token.row_num, 0))
             self._token_bundles_tail[].append(token)
             self._node_state = NodeState.COMPLETED
 
@@ -195,15 +200,16 @@ struct ScopeNode(NodeAstLike):
         """Get the token bundles for the tail part of this node."""
         return self._token_bundles_tail[]
 
+    @always_inline("nodebug")
     fn __str__(self) -> String:
-        """Convert this node to a string representation."""
-        return self.name(include_sig=True)
+        """Convert this node to a string."""
+        return self.__name__
 
     fn name(self, include_sig: Bool = False) -> String:
         """Get the name of this node.
 
         Args:
-            include_sig: If True, includes signature information.
+            include_sig: Whether to include the node indices in the name.
 
         Returns:
             The name of this node.
@@ -211,6 +217,8 @@ struct ScopeNode(NodeAstLike):
         if include_sig:
             var result = self.__name__ + "(" + String(self._indicies[])
             result += ", node_state=" + String(self._node_state)
+            result += ", n_tokens=" + String(len(self._token_bundles[]))
+            result += ", n_tokens_tail=" + String(len(self._token_bundles_tail[]))
             if self._parent_type != "":
                 result += ", parent_type='" + self._parent_type + "'"
             result += ")"
@@ -221,14 +229,14 @@ struct ScopeNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
-        """Convert this node to a string.
+        """Convert this node to a string representation.
 
         Args:
-            just_code: If True, only output code content (no metadata).
+            just_code: Whether to include only the code or also formatting information.
             module_interface: Interface to the AST.
 
         Returns:
-            String representation of this node.
+            A string representation of this node.
         """
         if just_code:
             return default_to_string_just_code(AstNode(self), module_interface)
@@ -241,11 +249,11 @@ struct ScopeNode(NodeAstLike):
         """Get the scope level of this node.
 
         Args:
-            just_code: If True, only considers code elements.
+            just_code: Whether to include only the code scopes or also formatting.
             module_interface: Interface to the AST.
 
         Returns:
-            The scope level.
+            The scope level of this node.
         """
         return default_scope_level(
             self._indicies[].c_parent_idx, just_code, module_interface
@@ -255,9 +263,9 @@ struct ScopeNode(NodeAstLike):
         """Get the scope offset of this node.
 
         Args:
-            just_code: If True, only considers code elements.
+            just_code: Whether to include only the code scopes or also formatting.
 
         Returns:
-            The scope offset (1 for scope nodes, which create their own scope).
+            The scope offset of this node (always 1 for ScopeNode).
         """
-        return 1  # Scope nodes always add one level of scope
+        return 1  # Scope adds one level of scope

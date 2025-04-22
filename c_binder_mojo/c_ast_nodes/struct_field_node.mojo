@@ -46,7 +46,6 @@ struct StructFieldNode(NodeAstLike):
     var _is_inner_struct: Bool
     var _is_bit_field: Bool
     var _bit_width: String
-    var _row_nums: List[Int]
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a StructFieldNode.
@@ -58,8 +57,6 @@ struct StructFieldNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._field_type = token_bundle.token
         self._field_name = ""
@@ -136,10 +133,6 @@ struct StructFieldNode(NodeAstLike):
 
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
-
-        # Track line numbers for multi-line fields
-        if token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
 
         if token.token == CTokens.SCOPE_END:
             self._node_state = NodeState.COMPLETED
@@ -294,7 +287,7 @@ struct StructFieldNode(NodeAstLike):
         Returns:
             The scope offset (0 for struct fields, which don't create scope).
         """
-        return 0  # Struct fields don't create their own scope level
+        return 1  # Struct fields don't create their own scope level
 
     fn get_field_name(self) -> String:
         """Get the name of this struct field.

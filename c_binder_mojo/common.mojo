@@ -388,12 +388,16 @@ struct TokenBundles(Stringable):
             indent: The indent to use for newlines.
         """
         var s = String()
+        was_newline = False
         for token in self._token_bundles:
-            if len(s) > 0:
+            if len(s) > 0 and not was_newline:
                 s += sep
-            if token[].token == "\n":
-                s += indent
             s += token[].token
+            if token[].is_newline():
+                s += indent
+                was_newline = True
+            else:
+                was_newline = False
         return s
 
     fn append(mut self, owned value: TokenBundle):

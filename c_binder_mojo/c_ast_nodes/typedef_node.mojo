@@ -50,7 +50,6 @@ struct TypedefNode(NodeAstLike):
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
     var _type_name: String  # The new type name being defined
-    var _row_num: Int  # Track rows in case of multi-line typedef
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a TypedefNode.
@@ -62,7 +61,6 @@ struct TypedefNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_num = token_bundle.row_num
         self._node_state = NodeState.INITIALIZING
         self._type_name = ""
         self._token_bundles[].append(token_bundle)

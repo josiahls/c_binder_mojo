@@ -44,7 +44,6 @@ struct MacroDefineNode(NodeAstLike):
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
     var _macro_name: String
-    var _row_nums: List[Int]
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize a MacroDefineNode.
@@ -56,8 +55,6 @@ struct MacroDefineNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._macro_name = ""
         self._token_bundles[].append(token_bundle)
@@ -104,7 +101,7 @@ struct MacroDefineNode(NodeAstLike):
         if len(self._token_bundles[]) == 0:
             return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
 
-        if token.row_num not in self._row_nums:
+        if token.is_newline():
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 
@@ -127,8 +124,6 @@ struct MacroDefineNode(NodeAstLike):
     ):
         """Process a token in this node."""
         if self._node_state == NodeState.COLLECTING_TOKENS:
-            if token.token == CTokens.LINE_CONTINUATION:
-                self._row_nums.append(token.row_num)
 
             if len(self._token_bundles[]) == 1:
                 self._macro_name = token.token

@@ -41,7 +41,6 @@ struct IncludeNode(NodeAstLike):
     var _node_state: MessageableEnum
     var _include_path: String
     var _is_system_include: Bool
-    var _row_nums: List[Int]
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize an IncludeNode.
@@ -53,8 +52,6 @@ struct IncludeNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._include_path = ""
         self._is_system_include = False
@@ -112,8 +109,7 @@ struct IncludeNode(NodeAstLike):
             return TokenFlow.PASS_TO_PARENT
 
         # Track line numbers for multi-line includes (shouldn't happen but just in case)
-        if token.row_num not in self._row_nums:
-            # self._row_nums.append(token.row_num)
+        if token.is_newline():
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 
@@ -142,7 +138,7 @@ struct IncludeNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         # Handle newline - ends the include
-        if token.token == "\n" or token.token == "#include":
+        if token.token == "#include":
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 

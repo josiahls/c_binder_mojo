@@ -142,7 +142,6 @@ struct FunctionCallNode(NodeAstLike):
         Returns:
             The token flow decision.
         """
-        print("Determine token flow for function call node: " + self._function_name + " with token: " + token.token)
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
 

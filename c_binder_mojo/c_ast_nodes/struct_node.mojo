@@ -14,6 +14,7 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
     TokenFlow,
+    WhitespaceEnum
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -45,7 +46,6 @@ struct StructNode(NodeAstLike):
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
     var _struct_name: String
-    var _row_nums: List[Int]  # Track rows for multi-line structs
     var _is_in_typedef: Bool
     var _is_nested_struct: Bool  # Whether this is a nested struct inside a field declaration
 
@@ -67,8 +67,6 @@ struct StructNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._struct_name = ""
         if is_nested_struct:
@@ -154,10 +152,6 @@ struct StructNode(NodeAstLike):
         Returns:
             The token flow decision.
         """
-        # Track line numbers for multi-line structs
-        if token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
-
         if self._node_state == NodeState.INITIALIZING:
             self._node_state = NodeState.COLLECTING_TOKENS
 
@@ -169,7 +163,7 @@ struct StructNode(NodeAstLike):
             len(self._token_bundles[]) >= 2
             and token.token != CTokens.SCOPE_BEGIN
         ):
-            if self.is_whitespace(token):
+            if token.is_whitespace():
                 self._node_state = NodeState.COLLECTING_TOKENS
                 return TokenFlow.CONSUME_TOKEN
             elif token.token == CTokens.END_STATEMENT:
@@ -183,7 +177,7 @@ struct StructNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         # Handle end of struct declaration
-        if token.token == CTokens.END_STATEMENT or self.is_whitespace(token):
+        if token.token == CTokens.END_STATEMENT or token.is_whitespace():
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS
             return TokenFlow.CONSUME_TOKEN
 
@@ -199,22 +193,6 @@ struct StructNode(NodeAstLike):
         var parent = module_interface.nodes()[][self._indicies[].c_parent_idx]
         if parent.name() == "StructFieldNode":
             parent.node[][StructFieldNode]._field_type = self._struct_name
-
-    fn is_whitespace(self, token: TokenBundle) -> Bool:
-        """Check if a token is whitespace.
-
-        Args:
-            token: The token to check.
-
-        Returns:
-            True if the token is whitespace, False otherwise.
-        """
-        return (
-            token.token == " "
-            or token.token == "\t"
-            or token.token == "\n"
-            or token.token == ""
-        )
 
     fn process(
         mut self,
@@ -235,13 +213,16 @@ struct StructNode(NodeAstLike):
             elif self._is_nested_struct and len(self._token_bundles[]) == 2:
                 self._struct_name = self._token_bundles[][-1].token
                 self._update_struct_field_node_type(module_interface)
-            self._token_bundles[].append(token)
+            if not token.is_whitespace():
+                self._token_bundles[].append(token)
         elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
-            self._token_bundles_tail[].append(token)
+            if not token.is_whitespace():
+                self._token_bundles_tail[].append(token)
 
         if token.token == CTokens.END_STATEMENT:
             self._node_state = NodeState.COMPLETED
-
+            self._token_bundles_tail[].append(TokenBundle(WhitespaceEnum.NEWLINE, token.row_num, 0))
+            
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""
         return self._indicies[]
@@ -254,27 +235,32 @@ struct StructNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> MessageableEnum:
-        """Get the state of this node."""
-        return self._node_state
-
     fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
         """Get a pointer to the token bundles for this node."""
         return self._token_bundles
 
     fn token_bundles_tail(self) -> TokenBundles:
-        """Get the token bundles for the tail part of this node."""
+        """Get the tail token bundles for this node."""
         return self._token_bundles_tail[]
 
+    fn node_state(self) -> MessageableEnum:
+        """Get the current state of this node."""
+        return self._node_state
+
+    @always_inline("nodebug")
     fn __str__(self) -> String:
-        """Convert this node to a string representation."""
-        return self.name(include_sig=True)
+        """Convert this node to a string.
+
+        Returns:
+            A string representation of this node.
+        """
+        return self.__name__
 
     fn name(self, include_sig: Bool = False) -> String:
         """Get the name of this node.
 
         Args:
-            include_sig: If True, includes signature information.
+            include_sig: Whether to include the node indices in the name.
 
         Returns:
             The name of this node.
@@ -294,14 +280,14 @@ struct StructNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
-        """Convert this node to a string.
+        """Convert this node to a string representation.
 
         Args:
-            just_code: If True, only output code content (no metadata).
+            just_code: Whether to include only the code or also formatting information.
             module_interface: Interface to the AST.
 
         Returns:
-            String representation of this node.
+            A string representation of this node.
         """
         if just_code:
             return default_to_string_just_code(AstNode(self), module_interface)
@@ -314,11 +300,11 @@ struct StructNode(NodeAstLike):
         """Get the scope level of this node.
 
         Args:
-            just_code: If True, only considers code elements.
+            just_code: Whether to include only the code scopes or also formatting.
             module_interface: Interface to the AST.
 
         Returns:
-            The scope level.
+            The scope level of this node.
         """
         return default_scope_level(
             self._indicies[].c_parent_idx, just_code, module_interface
@@ -328,14 +314,12 @@ struct StructNode(NodeAstLike):
         """Get the scope offset of this node.
 
         Args:
-            just_code: If True, only considers code elements.
+            just_code: Whether to include only the code scopes or also formatting.
 
         Returns:
-            The scope offset (0 for struct nodes, scope handled by ScopeNode child).
+            The scope offset of this node (always 0 for StructNode).
         """
-        return (
-            0 if just_code else 1
-        )  # Struct nodes don't create scope, their ScopeNode child does
+        return 0  # Struct adds no levels of scope
 
     fn get_struct_name(self) -> String:
         """Get the name of this struct.

@@ -193,27 +193,28 @@ struct EnumNode(NodeAstLike):
         """Get the token bundles for this node."""
         return self._token_bundles[]
 
-    fn node_state(self) -> MessageableEnum:
-        """Get the state of this node."""
-        return self._node_state
-
     fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
         """Get a pointer to the token bundles for this node."""
         return self._token_bundles
 
     fn token_bundles_tail(self) -> TokenBundles:
-        """Get the token bundles for the tail part of this node."""
+        """Get the tail token bundles for this node."""
         return self._token_bundles_tail[]
 
+    fn node_state(self) -> MessageableEnum:
+        """Get the current state of this node."""
+        return self._node_state
+
+    @always_inline("nodebug")
     fn __str__(self) -> String:
-        """Convert this node to a string representation."""
-        return self.name(include_sig=True)
+        """Convert this node to a string."""
+        return self.__name__
 
     fn name(self, include_sig: Bool = False) -> String:
         """Get the name of this node.
 
         Args:
-            include_sig: If True, includes signature information.
+            include_sig: Whether to include the node indices in the name.
 
         Returns:
             The name of this node.
@@ -231,14 +232,14 @@ struct EnumNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface
     ) -> String:
-        """Convert this node to a string.
+        """Convert this node to a string representation.
 
         Args:
-            just_code: If True, only output code content (no metadata).
+            just_code: Whether to include only the code or also formatting information.
             module_interface: Interface to the AST.
 
         Returns:
-            String representation of this node.
+            A string representation of this node.
         """
         if just_code:
             return default_to_string_just_code(AstNode(self), module_interface)
@@ -251,11 +252,11 @@ struct EnumNode(NodeAstLike):
         """Get the scope level of this node.
 
         Args:
-            just_code: If True, only considers code elements.
+            just_code: Whether to include only the code scopes or also formatting.
             module_interface: Interface to the AST.
 
         Returns:
-            The scope level.
+            The scope level of this node.
         """
         return default_scope_level(
             self._indicies[].c_parent_idx, just_code, module_interface
@@ -265,14 +266,12 @@ struct EnumNode(NodeAstLike):
         """Get the scope offset of this node.
 
         Args:
-            just_code: If True, only considers code elements.
+            just_code: Whether to include only the code scopes or also formatting.
 
         Returns:
-            The scope offset (0 for enum nodes, scope handled by ScopeNode child).
+            The scope offset of this node (always 0 for EnumNode).
         """
-        return (
-            0 if just_code else 1
-        )  # Enum nodes don't create scope, their ScopeNode child does
+        return 0  # Enum adds no levels of scope
 
     fn get_enum_name(self) -> String:
         """Get the name of this enum.

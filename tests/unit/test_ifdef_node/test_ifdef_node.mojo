@@ -13,66 +13,18 @@ from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
 from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
 from c_binder_mojo.mojo_ast_nodes.root_node import RootNode
+from c_binder_mojo.testing import generic_test_outputs
 
 
 fn test_ifdef_node() raises:
     """Test the parsing and AST construction for #ifdef nodes."""
     var logger = Logger.get_default_logger("test_ifdef_node")
-    logger.info("Starting ifdef node test")
-
-    # Path to the test header file
-    var test_dir = Path(
-        "/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node"
-    )
-    var test_file_path = test_dir / "test_ifdef_node.h"
-    if not test_file_path.exists():
-        raise Error("Test file doesn't exist: " + String(test_file_path))
-
-    # Tokenize the file
-    var tokenizer = Tokenizer()
-    tokenizer.tokenize(test_file_path)
-
-    # Save tokenized output for debugging
-    var output_dir = test_dir / "output"
-    # No need to create directory as it should already exist
-    var tokens_file = output_dir / "test_ifdef_node.tokenized"
-    tokens_file.write_text(tokenizer.to_string())
-
-    # Generate AST
-    var tree_log_file = output_dir / "test_ifdef_node.tree"
-    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
-
-    # Save AST for debugging
-    var ast_file_just_code = output_dir / "test_ifdef_node.ast_just_code"
-    ast_file_just_code.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=module_interface
-        )
-    )
-    var ast_file = output_dir / "test_ifdef_node.ast"
-    ast_file.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=module_interface
-        )
-    )
-
-    # Generate Mojo AST
-    var mojo_tree_log_file = output_dir / "test_ifdef_node_mojo.tree"
-    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
-    mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
-
-    # Save Mojo AST for debugging
-    var mojo_ast_file_just_code = output_dir / "test_ifdef_node.mojo"
-    mojo_ast_file_just_code.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=mojo_module_interface
-        )
-    )
-    var mojo_ast_file = output_dir / "test_ifdef_node.mojo_ast"
-    mojo_ast_file.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=mojo_module_interface
-        )
+    
+    (module_interface, mojo_module_interface) = generic_test_outputs(
+        "test_ifdef_node",
+        logger,
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node"),
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node/output"),
     )
 
     # Verify the AST structure

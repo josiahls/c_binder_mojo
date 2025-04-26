@@ -17,6 +17,7 @@ from c_binder_mojo.c_ast_nodes.macro_if_n_def_node import MacroIfNDefNode
 
 from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
 from c_binder_mojo.mojo_ast_nodes.root_node import RootNode
+from c_binder_mojo.testing import generic_test_outputs
 
 
 fn verify_struct_node_contents(node: StructNode) raises:
@@ -78,57 +79,11 @@ fn test_mjtnum_header() raises:
     var logger = Logger.get_default_logger("test_mujoco_headers")
     logger.info("Starting mjtnum header test")
 
-    # Path to the test header file
-    var test_dir = Path(
-        "/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"
-    )
-    var test_file_path = test_dir / "mjtnum.h"
-    if not test_file_path.exists():
-        raise Error("Test file doesn't exist: " + String(test_file_path))
-
-    # Tokenize the file
-    var tokenizer = Tokenizer()
-    tokenizer.tokenize(test_file_path)
-
-    # Save tokenized output for debugging
-    var tokens_file = test_dir / "output/test_mjtnum.tokenized"
-    tokens_file.write_text(tokenizer.to_string())
-
-    # Generate AST
-    var tree_log_file = test_dir / "output/test_mjtnum.tree"
-    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
-
-    # Save AST for debugging
-    var ast_file_just_code = test_dir / "output/test_mjtnum.ast_just_code"
-    ast_file_just_code.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=module_interface
-        )
-    )
-    var ast_file = test_dir / "output/test_mjtnum.ast"
-    ast_file.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=module_interface
-        )
-    )
-
-    # Generate Mojo AST
-    var mojo_tree_log_file = test_dir / "output/test_mjtnum_mojo.tree"
-    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
-    mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
-
-    # Save Mojo AST for debugging
-    var mojo_ast_file_just_code = test_dir / "output/test_mjtnum.mojo"
-    mojo_ast_file_just_code.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=mojo_module_interface
-        )
-    )
-    var mojo_ast_file = test_dir / "output/test_mjtnum.mojo_ast"
-    mojo_ast_file.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=mojo_module_interface
-        )
+    (module_interface, mojo_module_interface) = generic_test_outputs(
+        "test_mjtnum",
+        logger,
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"),
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco/output"),
     )
 
     # Verify the AST structure
@@ -186,57 +141,11 @@ fn test_mjmodel_header() raises:
     var logger = Logger.get_default_logger("test_mujoco_headers")
     logger.info("Starting mjmodel header test")
 
-    # Path to the test header file
-    var test_dir = Path(
-        "/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"
-    )
-    var test_file_path = test_dir / "mjmodel.h"
-    if not test_file_path.exists():
-        raise Error("Test file doesn't exist: " + String(test_file_path))
-
-    # Tokenize the file
-    var tokenizer = Tokenizer()
-    tokenizer.tokenize(test_file_path)
-
-    # Save tokenized output for debugging
-    var tokens_file = test_dir / "output/test_mjmodel.tokenized"
-    tokens_file.write_text(tokenizer.to_string())
-
-    # Generate AST
-    var tree_log_file = test_dir / "output/test_mjmodel.tree"
-    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
-
-    # Save AST for debugging
-    var ast_file_just_code = test_dir / "output/test_mjmodel.ast_just_code"
-    ast_file_just_code.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=module_interface
-        )
-    )
-    var ast_file = test_dir / "output/test_mjmodel.ast"
-    ast_file.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=module_interface
-        )
-    )
-
-    # Generate Mojo AST
-    var mojo_tree_log_file = test_dir / "output/test_mjmodel_mojo.tree"
-    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
-    mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
-
-    # Save Mojo AST for debugging
-    var mojo_ast_file_just_code = test_dir / "output/test_mjmodel.mojo"
-    mojo_ast_file_just_code.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=mojo_module_interface
-        )
-    )
-    var mojo_ast_file = test_dir / "output/test_mjmodel.mojo_ast"
-    mojo_ast_file.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=mojo_module_interface
-        )
+    (module_interface, mojo_module_interface) = generic_test_outputs(
+        "test_mjmodel",
+        logger,
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"),
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco/output"),
     )
 
     # Verify the AST structure

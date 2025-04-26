@@ -5,11 +5,6 @@ struct Color :
 alias RED = 0 
 alias GREEN = 1 
 alias BLUE = 2 
-; 
- 
- 
- 
- 
 # Enum with auto-incrementing values 
 
  
@@ -23,11 +18,6 @@ alias EAST = 2
 # 2 
 alias WEST = 3 
 # 3 
-; 
- 
- 
- 
- 
 # Enum with mixed explicit and implicit values 
 
  
@@ -40,22 +30,12 @@ alias UNAVAILABLE = 501
 # 501 
 alias TIMEOUT = 502 
 # 502 
-; 
- 
- 
- 
- 
 # Enum with name but no values  ( empty enum )  
 
  
 struct Empty : pass 
  
 pass 
-; 
- 
- 
- 
- 
 # Enum with hex values and comments 
 
  
@@ -67,11 +47,6 @@ alias WRITE = 2
 # Write permission 
 alias EXECUTE = 4 
 # Execute permission 
-; 
-  
- 
- 
- 
 # Enum with byte values 
 
  
@@ -81,8 +56,5 @@ alias BYTE_0 = 1
 alias BYTE_1 = 2 
 alias BYTE_2 = 4 
 alias BYTE_3 = 8 
-; 
- 
- 
 fn main():
     pass

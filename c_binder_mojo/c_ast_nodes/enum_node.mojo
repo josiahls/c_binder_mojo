@@ -119,6 +119,13 @@ struct EnumNode(NodeAstLike):
         if WhitespaceEnum.is_whitespace(token):
             return TokenFlow.CONSUME_TOKEN
 
+        # TODO(josiahls): We probably need a generic whitespace check function.
+        # This is intendded as a last chance tail accumulation. The enum might not end in
+        # a semicolon if its part of a typedef.
+        if token.token == CTokens.END_STATEMENT or self.is_whitespace(token):
+            self._node_state = NodeState.COLLECTING_TAIL_TOKENS
+            return TokenFlow.CONSUME_TOKEN
+
         if (
             len(self._token_bundles[]) == 2
             and token.token != CTokens.SCOPE_BEGIN
@@ -130,12 +137,7 @@ struct EnumNode(NodeAstLike):
         if self._node_state == NodeState.COLLECTING_TOKENS:
             return TokenFlow.CONSUME_TOKEN
 
-        # TODO(josiahls): We probably need a generic whitespace check function.
-        # This is intendded as a last chance tail accumulation. The enum might not end in
-        # a semicolon if its part of a typedef.
-        if token.token == CTokens.END_STATEMENT or self.is_whitespace(token):
-            self._node_state = NodeState.COLLECTING_TAIL_TOKENS
-            return TokenFlow.CONSUME_TOKEN
+
 
         # Otherwise keep collecting tokens
         self._node_state = NodeState.COMPLETED

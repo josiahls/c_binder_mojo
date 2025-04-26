@@ -1,32 +1,32 @@
-// Different types of whitespace: 
-
-// Single space 
-
+// Different types of whitespace:
+ 
+// Single space
   
-// Multiple spaces 
-
-  
-// Tabs 
-	  
-  
-// Mixed whitespace 
-	    	   
-  
-// New lines 
-
-  
-  
-// Whitespace in code contexts 
-int function (  )   {  
-     int x  =  5 ;
-      
-    returnx;
- }
-  
-// Whitespace after comment 
-
-/* Whitespace 
-    in multiline 
-    comment */
+ 
+// Multiple spaces
      
-// Whitespace at beginning and end of file  
+ 
+// Tabs
+ 	  
+ 
+// Mixed whitespace
+ 	    	   
+ 
+// New lines
+ 
+ 
+ 
+// Whitespace in code contexts
+int function (  )   {  
+    int x  =  5 ;
+     
+   returnx;
+}
+ 
+// Whitespace after comment
+ 
+/* Whitespace 
+   in multiline 
+   comment */
+    
+// Whitespace at beginning and end of file 

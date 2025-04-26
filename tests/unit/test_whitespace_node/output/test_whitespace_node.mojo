@@ -3,30 +3,35 @@
  
  
 # Single space 
+
  
   
  
  
  
 # Multiple spaces 
+
  
      
  
  
  
 # Tabs 
+
  
  	  
  
  
  
 # Mixed whitespace 
+
  
  	    	   
  
  
  
 # New lines 
+
  
  
  
@@ -35,6 +40,7 @@
  
  
 # Whitespace in code contexts 
+
  
 alias function : Int = (){
 intx5 
@@ -55,6 +61,7 @@ x
  
  
 # Whitespace after comment 
+
  
  
  
@@ -68,6 +75,7 @@ x
     
  
 # Whitespace at beginning and end of file  
+
  
 fn main():
     pass

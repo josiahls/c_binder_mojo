@@ -1,87 +1,63 @@
-RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=27)
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=29)
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
- // Different types of whitespace: 
+// Different types of whitespace:WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=3)
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=2)
-  
-
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
- // Single space 
+// Single spaceWhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=6)
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=5)
-   
   
-
+ 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
- // Multiple spaces 
+// Multiple spacesWhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=9)
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=8)
-      
-  
-
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
- // Tabs 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=6)
-  	  
-  
-
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
- // Mixed whitespace 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=10, n_tokens=11)
-  	    	   
-  
-
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
- // New lines 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=6)
-  
-  
-  
-
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
- // Whitespace in code contexts 
-
-VariableNode(c_parent_idx=0, c_current_idx=14, node_state=4 (COMPLETED))
- int function (  )   {  
-     int x  =  5 ;
-WhitespaceNode(c_parent_idx=0, c_current_idx=15, n_tokens=12)
-  
-      
-    
-PlaceHolderNode(c_parent_idx=0, c_current_idx=16)
- return
-PlaceHolderNode(c_parent_idx=0, c_current_idx=17)
- x
-PlaceHolderNode(c_parent_idx=0, c_current_idx=18)
- ;
-WhitespaceNode(c_parent_idx=0, c_current_idx=19, n_tokens=3)
-  
- 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=20)
- }
-WhitespaceNode(c_parent_idx=0, c_current_idx=21, n_tokens=4)
-  
-  
-
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=22)
- // Whitespace after comment 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=23, n_tokens=2)
-  
-
-MultiLineCommentNode(c_parent_idx=0, c_current_idx=24)
- /* Whitespace 
-    in multiline 
-    comment */
-WhitespaceNode(c_parent_idx=0, c_current_idx=25, n_tokens=6)
- 
      
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
+// TabsWhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=7)
 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=26)
- // Whitespace at beginning and end of file  
+ 	  
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
+// Mixed whitespaceWhitespaceNode(c_parent_idx=0, c_current_idx=10, n_tokens=12)
 
-EndFileNode(c_parent_idx=0, c_current_idx=27)
- C_BINDER_MOJO_END_FILE
+ 	    	   
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
+// New linesWhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=7)
+
+ 
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
+// Whitespace in code contextsWhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=1)
+
+VariableNode(c_parent_idx=0, c_current_idx=15, node_state=4 (COMPLETED))
+int function (  )   {  
+    int x  =  5 ;WhitespaceNode(c_parent_idx=0, c_current_idx=16, n_tokens=12)
+
+     
+   PlaceHolderNode(c_parent_idx=0, c_current_idx=17)
+returnPlaceHolderNode(c_parent_idx=0, c_current_idx=18)
+xPlaceHolderNode(c_parent_idx=0, c_current_idx=19)
+;WhitespaceNode(c_parent_idx=0, c_current_idx=20, n_tokens=3)
+
+PlaceHolderNode(c_parent_idx=0, c_current_idx=21)
+}WhitespaceNode(c_parent_idx=0, c_current_idx=22, n_tokens=4)
+
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=23)
+// Whitespace after commentWhitespaceNode(c_parent_idx=0, c_current_idx=24, n_tokens=3)
+
+ 
+MultiLineCommentNode(c_parent_idx=0, c_current_idx=25)
+/* Whitespace 
+   in multiline 
+   comment */WhitespaceNode(c_parent_idx=0, c_current_idx=26, n_tokens=6)
+
+    
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)
+// Whitespace at beginning and end of file WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=1)
+
+EndFileNode(c_parent_idx=0, c_current_idx=29)
+C_BINDER_MOJO_END_FILE

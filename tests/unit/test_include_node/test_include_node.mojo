@@ -11,6 +11,7 @@ from c_binder_mojo.common import Tokenizer
 from c_binder_mojo.c_ast_nodes.tree import make_tree
 from c_binder_mojo.c_ast_nodes.nodes import AstNode
 from c_binder_mojo.c_ast_nodes.include_node import IncludeNode
+from c_binder_mojo.testing import generic_test_outputs
 
 
 fn test_include_node() raises:
@@ -24,44 +25,12 @@ fn test_include_node() raises:
     5. Includes with extra whitespace
     """
     var logger = Logger.get_default_logger("test_include_node")
-    logger.info("Starting include node test")
-
-    # Path to the test header file
-    var test_dir = Path(
-        "/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_include_node"
-    )
-    var test_file_path = test_dir / "test_include_node.h"
-    if not test_file_path.exists():
-        raise Error("Test file doesn't exist: " + String(test_file_path))
-
-    # Tokenize the file
-    var tokenizer = Tokenizer()
-    tokenizer.tokenize(test_file_path)
-
-    # Save tokenized output for debugging
-    var output_dir = test_dir / "output"
-    # Create output directory if it doesn't exist
-    if not output_dir.exists():
-        os.makedirs(String(output_dir))
-    var tokens_file = output_dir / "test_include_node.tokenized"
-    tokens_file.write_text(tokenizer.to_string())
-
-    # Generate AST
-    var tree_log_file = output_dir / "test_include_node.tree"
-    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
-
-    # Save AST for debugging
-    var ast_file_just_code = output_dir / "test_include_node.ast_just_code"
-    ast_file_just_code.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=module_interface
-        )
-    )
-    var ast_file = output_dir / "test_include_node.ast"
-    ast_file.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=module_interface
-        )
+    
+    (module_interface, mojo_module_interface) = generic_test_outputs(
+        "test_include_node",
+        logger,
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_include_node"),
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_include_node/output"),
     )
 
     # Verify the AST structure

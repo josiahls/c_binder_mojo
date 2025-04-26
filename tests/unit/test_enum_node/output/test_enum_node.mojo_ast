@@ -1,19 +1,164 @@
-RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 6, 7, 8), mojo_child_idxs=(1, 2, 7, 8))
-PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 6, 7, 8), node_state=4 (COMPLETED))
-EnumNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2, c_child_idxs=(2), mojo_child_idxs=(3), enum_name=Color)
+RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=31, mojo_child_idxs=(1, 2, 3, 4, 9, ...) len=31)
+PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 8, 9, ...) len=31, node_state=4 (COMPLETED))
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
+# Basic enum with values 
+WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=1)
+
+ 
+EnumNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), mojo_child_idxs=(5), enum_name=Color)
 struct Color : 
-ScopeNode(c_parent_idx=1, c_current_idx=2, mojo_parent_idx=2, mojo_current_idx=3, c_child_idxs=(3, 4, 5), mojo_child_idxs=(4, 5, 6))EnumFieldNode(c_parent_idx=2, c_current_idx=3, mojo_parent_idx=3, mojo_current_idx=4, RED)
+ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7), mojo_child_idxs=(6, 7, 8))
+ 
+EnumFieldNode(c_parent_idx=4, c_current_idx=5, mojo_parent_idx=5, mojo_current_idx=6, RED)
 alias RED = 0 
-EnumFieldNode(c_parent_idx=2, c_current_idx=4, mojo_parent_idx=3, mojo_current_idx=5, GREEN)
+EnumFieldNode(c_parent_idx=4, c_current_idx=6, mojo_parent_idx=5, mojo_current_idx=7, GREEN)
 alias GREEN = 1 
-EnumFieldNode(c_parent_idx=2, c_current_idx=5, mojo_parent_idx=3, mojo_current_idx=6, BLUE)
+EnumFieldNode(c_parent_idx=4, c_current_idx=7, mojo_parent_idx=5, mojo_current_idx=8, BLUE)
 alias BLUE = 2 
 
 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, node_state=4 (COMPLETED))
+PlaceHolderNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, node_state=4 (COMPLETED))
 ; 
-WhitespaceNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, n_tokens=4)
+WhitespaceNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, n_tokens=4)
  
  
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11)
+# Enum with auto-incrementing values 
+WhitespaceNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12, n_tokens=1)
+
+ 
+EnumNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, c_child_idxs=(13), mojo_child_idxs=(14), enum_name=Direction)
+struct Direction : 
+ScopeNode(c_parent_idx=12, c_current_idx=13, mojo_parent_idx=13, mojo_current_idx=14, c_child_idxs=(14, 15, 16, 17, 18, ...) len=8, mojo_child_idxs=(15, 16, 17, 18, 19, ...) len=8)
+ 
+EnumFieldNode(c_parent_idx=13, c_current_idx=14, mojo_parent_idx=14, mojo_current_idx=15, NORTH)
+alias NORTH = 0 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=15, mojo_parent_idx=14, mojo_current_idx=16)
+# 0 
+EnumFieldNode(c_parent_idx=13, c_current_idx=16, mojo_parent_idx=14, mojo_current_idx=17, SOUTH)
+alias SOUTH = 1 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=17, mojo_parent_idx=14, mojo_current_idx=18)
+# 1 
+EnumFieldNode(c_parent_idx=13, c_current_idx=18, mojo_parent_idx=14, mojo_current_idx=19, EAST)
+alias EAST = 2 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=19, mojo_parent_idx=14, mojo_current_idx=20)
+# 2 
+EnumFieldNode(c_parent_idx=13, c_current_idx=20, mojo_parent_idx=14, mojo_current_idx=21, WEST)
+alias WEST = 3 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=21, mojo_parent_idx=14, mojo_current_idx=22)
+# 3 
+
+
+PlaceHolderNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, node_state=4 (COMPLETED))
+; 
+WhitespaceNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24, n_tokens=4)
+ 
+ 
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25)
+# Enum with mixed explicit and implicit values 
+WhitespaceNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26, n_tokens=1)
+
+ 
+EnumNode(c_parent_idx=0, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27, c_child_idxs=(27), mojo_child_idxs=(28), enum_name=Status)
+struct Status : 
+ScopeNode(c_parent_idx=26, c_current_idx=27, mojo_parent_idx=27, mojo_current_idx=28, c_child_idxs=(28, 29, 30, 31, 32, ...) len=7, mojo_child_idxs=(29, 30, 31, 32, 33, ...) len=7)
+ 
+EnumFieldNode(c_parent_idx=27, c_current_idx=28, mojo_parent_idx=28, mojo_current_idx=29, OK)
+alias OK = 200 
+EnumFieldNode(c_parent_idx=27, c_current_idx=29, mojo_parent_idx=28, mojo_current_idx=30, NOT_FOUND)
+alias NOT_FOUND = 404 
+EnumFieldNode(c_parent_idx=27, c_current_idx=30, mojo_parent_idx=28, mojo_current_idx=31, SERVER_ERROR)
+alias SERVER_ERROR = 500 
+EnumFieldNode(c_parent_idx=27, c_current_idx=31, mojo_parent_idx=28, mojo_current_idx=32, UNAVAILABLE)
+alias UNAVAILABLE = 501 
+SingleLineCommentNode(c_parent_idx=27, c_current_idx=32, mojo_parent_idx=28, mojo_current_idx=33)
+# 501 
+EnumFieldNode(c_parent_idx=27, c_current_idx=33, mojo_parent_idx=28, mojo_current_idx=34, TIMEOUT)
+alias TIMEOUT = 502 
+SingleLineCommentNode(c_parent_idx=27, c_current_idx=34, mojo_parent_idx=28, mojo_current_idx=35)
+# 502 
+
+
+PlaceHolderNode(c_parent_idx=0, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36, node_state=4 (COMPLETED))
+; 
+WhitespaceNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37, n_tokens=4)
+ 
+ 
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=37, mojo_parent_idx=0, mojo_current_idx=38)
+# Enum with name but no values  ( empty enum )  
+WhitespaceNode(c_parent_idx=0, c_current_idx=38, mojo_parent_idx=0, mojo_current_idx=39, n_tokens=1)
+
+ 
+EnumNode(c_parent_idx=0, c_current_idx=39, mojo_parent_idx=0, mojo_current_idx=40, c_child_idxs=(40), mojo_child_idxs=(41), enum_name=Empty)
+struct Empty : pass 
+ScopeNode(c_parent_idx=39, c_current_idx=40, mojo_parent_idx=40, mojo_current_idx=41)
+ 
+pass 
+
+PlaceHolderNode(c_parent_idx=0, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=42, node_state=4 (COMPLETED))
+; 
+WhitespaceNode(c_parent_idx=0, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=43, n_tokens=4)
+ 
+ 
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=43, mojo_parent_idx=0, mojo_current_idx=44)
+# Enum with hex values and comments 
+WhitespaceNode(c_parent_idx=0, c_current_idx=44, mojo_parent_idx=0, mojo_current_idx=45, n_tokens=1)
+
+ 
+EnumNode(c_parent_idx=0, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=46, c_child_idxs=(46), mojo_child_idxs=(47), enum_name=Flags)
+struct Flags : 
+ScopeNode(c_parent_idx=45, c_current_idx=46, mojo_parent_idx=46, mojo_current_idx=47, c_child_idxs=(47, 48, 49, 50, 51, 52), mojo_child_idxs=(48, 49, 50, 51, 52, 53))
+ 
+EnumFieldNode(c_parent_idx=46, c_current_idx=47, mojo_parent_idx=47, mojo_current_idx=48, READ)
+alias READ = 1 
+SingleLineCommentNode(c_parent_idx=46, c_current_idx=48, mojo_parent_idx=47, mojo_current_idx=49)
+# Read permission 
+EnumFieldNode(c_parent_idx=46, c_current_idx=49, mojo_parent_idx=47, mojo_current_idx=50, WRITE)
+alias WRITE = 2 
+SingleLineCommentNode(c_parent_idx=46, c_current_idx=50, mojo_parent_idx=47, mojo_current_idx=51)
+# Write permission 
+EnumFieldNode(c_parent_idx=46, c_current_idx=51, mojo_parent_idx=47, mojo_current_idx=52, EXECUTE)
+alias EXECUTE = 4 
+SingleLineCommentNode(c_parent_idx=46, c_current_idx=52, mojo_parent_idx=47, mojo_current_idx=53)
+# Execute permission 
+
+
+PlaceHolderNode(c_parent_idx=0, c_current_idx=53, mojo_parent_idx=0, mojo_current_idx=54, node_state=4 (COMPLETED))
+; 
+WhitespaceNode(c_parent_idx=0, c_current_idx=54, mojo_parent_idx=0, mojo_current_idx=55, n_tokens=5)
+  
+ 
+ 
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=55, mojo_parent_idx=0, mojo_current_idx=56)
+# Enum with byte values 
+WhitespaceNode(c_parent_idx=0, c_current_idx=56, mojo_parent_idx=0, mojo_current_idx=57, n_tokens=1)
+
+ 
+EnumNode(c_parent_idx=0, c_current_idx=57, mojo_parent_idx=0, mojo_current_idx=58, c_child_idxs=(58), mojo_child_idxs=(59), enum_name=ByteValues)
+struct ByteValues : 
+ScopeNode(c_parent_idx=57, c_current_idx=58, mojo_parent_idx=58, mojo_current_idx=59, c_child_idxs=(59, 60, 61, 62), mojo_child_idxs=(60, 61, 62, 63))
+ 
+EnumFieldNode(c_parent_idx=58, c_current_idx=59, mojo_parent_idx=59, mojo_current_idx=60, BYTE_0)
+alias BYTE_0 = 1 
+EnumFieldNode(c_parent_idx=58, c_current_idx=60, mojo_parent_idx=59, mojo_current_idx=61, BYTE_1)
+alias BYTE_1 = 2 
+EnumFieldNode(c_parent_idx=58, c_current_idx=61, mojo_parent_idx=59, mojo_current_idx=62, BYTE_2)
+alias BYTE_2 = 4 
+EnumFieldNode(c_parent_idx=58, c_current_idx=62, mojo_parent_idx=59, mojo_current_idx=63, BYTE_3)
+alias BYTE_3 = 8 
+
+
+PlaceHolderNode(c_parent_idx=0, c_current_idx=63, mojo_parent_idx=0, mojo_current_idx=64, node_state=4 (COMPLETED))
+; 
+WhitespaceNode(c_parent_idx=0, c_current_idx=64, mojo_parent_idx=0, mojo_current_idx=65, n_tokens=2)
  
  

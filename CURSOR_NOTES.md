@@ -1,9 +1,6 @@
-Ok including a end file node is critical for finalizing nodes near the end of the file.
-Note for new future: Need to add precompilation macro resolution. macro tests
-will fail in mojo due to redefinitions of variables since the macros are acting as pass throughs.
+Ok today:
+- asked chatgpt about how  the c compiler uses new lines. Looks like
+this is specific for macros and single line comments only.
 
-I am hating the white spacing, scoping, etc in the api. We need to remove the col and row nums are 
-actual fields for the nodes to use and switching to something else, either:
-- use the presence of newline and tab presense, or simply use the parent / node types and relationships.
-
-I'm leaning toward just throwing out this scoping stuff, and use the node types and relationships.
+I'm wondering if there needs to be a precompilation step for handle new lines, but this might
+not be desirable. e.g. multi line comments for the most part should keep their white spacing.

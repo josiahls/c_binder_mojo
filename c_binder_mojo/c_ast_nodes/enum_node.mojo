@@ -124,6 +124,7 @@ struct EnumNode(NodeAstLike):
             and token.token != CTokens.SCOPE_BEGIN
         ):
             # TODO(josiahls): Also need to check for white space.
+            self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 
         if self._node_state == NodeState.COLLECTING_TOKENS:
@@ -173,7 +174,7 @@ struct EnumNode(NodeAstLike):
         if self._node_state == NodeState.COLLECTING_TOKENS:
             if len(self._token_bundles[]) == 1:
                 self._enum_name = token.token
-            if not WhitespaceEnum.is_whitespace(token):
+            if not token.is_whitespace():
                 self._token_bundles[].append(token)
         elif self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
             self._token_bundles_tail[].append(token)

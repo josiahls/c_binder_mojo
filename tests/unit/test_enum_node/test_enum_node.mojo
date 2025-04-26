@@ -41,7 +41,7 @@ fn test_enum_node() raises:
 
     # Generate AST
     var tree_log_file = output_dir / "test_enum_node.tree"
-    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file))
+    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file), validate=True)
 
     # Save AST for debugging
     var ast_file_just_code = output_dir / "test_enum_node.ast_just_code"

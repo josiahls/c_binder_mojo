@@ -73,8 +73,9 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current
  
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18)
 # This is not a multiline comment 
+WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=3)
+
  
-WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=2)
  
  
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20)

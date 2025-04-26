@@ -222,11 +222,11 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_id
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 18 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 19 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=2)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'MultiLineCommentNode'
     └─ Nodes: 1 active, 19 complete

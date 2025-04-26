@@ -49,7 +49,6 @@ struct EnumFieldNode(NodeAstLike):
     var _field_name: String
     var _field_value: String
     var _has_value: Bool
-    var _row_nums: List[Int]
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
         """Initialize an EnumFieldNode.
@@ -61,8 +60,6 @@ struct EnumFieldNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._field_name = token_bundle.token
         self._field_value = ""
@@ -132,10 +129,6 @@ struct EnumFieldNode(NodeAstLike):
         """
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
-
-        # Track line numbers for multi-line fields
-        if token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
 
         if token.token == CTokens.SCOPE_END:
             self._node_state = NodeState.COMPLETED

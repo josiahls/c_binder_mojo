@@ -18,7 +18,7 @@ from c_binder_mojo import c_ast_nodes
 
 
 fn string_children(
-    node: AstNode, just_code: Bool, module_interface: ModuleInterface
+    node: AstNode, just_code: Bool, module_interface: ModuleInterface, indent_level: Int
 ) -> String:
     """Converts children to string with proper indentation and line breaks.
 
@@ -31,7 +31,7 @@ fn string_children(
     var s = String()
     for child_idx in node.indicies().c_child_idxs:
         var child = module_interface.nodes()[][child_idx[]]
-        s += child.to_string(just_code, module_interface)
+        s += child.to_string(just_code, module_interface, indent_level)
     return s
 
 
@@ -56,60 +56,11 @@ fn default_scope_level(
     return level
 
 
-
-
-
 fn default_to_string(
-    node: AstNode, module_interface: ModuleInterface
-) -> String:
-    """Default string conversion for nodes. Includes the node signature and the node's content.
-
-    If we want just code, use default_to_string_just_code instead.
-
-    Args:
-        node: The node to convert to a string.
-        module_interface: The tree interface to use for the node.
-
-    Format when just_code=False:
-        NodeName >>> actual content
-        NodeName >>> continued content
-        NodeName >>> more content...
-    """
-    var s = String()
-    var level = node.scope_level(False, module_interface)
-    var indent = String()
-    if level > 0:
-        indent = "\t" * level
-    var new_line_added = False
-
-    # Add node name if not just code
-    s += indent + node.name(include_sig=True) + "\n"
-
-    # Add tokens
-    s += node.token_bundles().join(
-        " ",
-        indent
-    )
-
-    # Add children
-    if len(node.indicies().c_child_idxs) > 0:
-        s += indent
-        s += string_children(node, False, module_interface)
-
-    s += node.token_bundles_tail().join(
-        " ",
-        indent
-    )
-
-    return s
-
-
-fn default_to_string_just_code(
-    node: AstNode,
+    node: AstNode, 
     module_interface: ModuleInterface,
-    inline_children: Bool = False,
-    inline_nodes: Bool = False,
-    inline_tail: Bool = False,
+    just_code: Bool = False,
+    indent_level: Int = 0,
 ) -> String:
     """Default string conversion for nodes.
 
@@ -123,13 +74,13 @@ fn default_to_string_just_code(
         NodeName >>> more content...
     """
     var s = String()
-    var level = node.scope_level(True, module_interface)
     var indent = String()
 
-    print('level: ' + String(level) + ' for node: ' + node.name(True))
+    if indent_level > 0:
+        indent = "\t" * indent_level
 
-    if level > 0:
-        indent = "\t" * level
+    if not just_code:
+        s += indent + node.name(include_sig=True) + "\n"
     
     if not node.token_bundles()[0].is_newline():
         s += indent
@@ -137,9 +88,7 @@ fn default_to_string_just_code(
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
-        if not inline_children:
-            s += indent
-        s += string_children(node, True, module_interface)
+        s += string_children(node, just_code, module_interface, indent_level)
 
     s += node.token_bundles_tail().join(" ",indent)
     return s
@@ -201,7 +150,7 @@ trait NodeAstLike(CollectionElement, Stringable):
         ...
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
         ...
 
@@ -399,7 +348,7 @@ struct AstNode(CollectionElement):
 
     @always_inline("nodebug")
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -408,7 +357,7 @@ struct AstNode(CollectionElement):
                 return (
                     self.node[]
                     ._get_ptr[T]()[]
-                    .to_string(just_code, module_interface)
+                    .to_string(just_code, module_interface, parent_indent_level)
                 )
         print(
             "WARNING: to_string called on AstNode with no to_string method for"

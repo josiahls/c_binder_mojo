@@ -11,8 +11,9 @@ from c_binder_mojo.common import (
     MessageableEnum,
     NodeIndices,
     TokenBundles,
-    TokenFlow,
     NodeState,
+    CTokens,
+    TokenFlow,
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -20,7 +21,6 @@ from c_binder_mojo.c_ast_nodes.nodes import (
     NodeAstLike,
     default_scope_level,
     default_to_string,
-    default_to_string_just_code,
 )
 
 
@@ -95,12 +95,12 @@ struct EndFileNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
         if just_code:
             return String()
         else:
-            return default_to_string(AstNode(self), module_interface)
+            return default_to_string(AstNode(self), module_interface, indent_level=parent_indent_level)
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

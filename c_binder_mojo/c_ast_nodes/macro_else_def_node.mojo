@@ -21,7 +21,6 @@ from c_binder_mojo.c_ast_nodes.nodes import (
     NodeAstLike,
     default_scope_level,
     default_to_string,
-    default_to_string_just_code,
 )
 
 
@@ -227,21 +226,19 @@ struct MacroElseDefNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
         """Convert this node to a string.
 
         Args:
             just_code: If True, only output code content (no metadata).
             module_interface: Interface to the AST.
+            parent_indent_level: The indentation level for the parent node.
 
         Returns:
             String representation of this node.
         """
-        if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface)
-        else:
-            return default_to_string(AstNode(self), module_interface)
+        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

@@ -96,13 +96,13 @@ struct RootNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
         if just_code:
-            return string_children(AstNode(self), just_code, module_interface)
+            return string_children(AstNode(self), just_code, module_interface, parent_indent_level)
 
         s = self.name(include_sig=True) + "\n"
-        s += string_children(AstNode(self), just_code, module_interface)
+        s += string_children(AstNode(self), just_code, module_interface, parent_indent_level)
         return s
 
     fn scope_level(

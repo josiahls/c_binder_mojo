@@ -3,8 +3,7 @@ PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
 # Basic struct declarations 
 WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=1)
-
- 
+C_BINDER_MOJO_NEWLINE 
 StructNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), mojo_child_idxs=(5), struct_name=Point)
 @value 
 struct Point : 
@@ -30,8 +29,7 @@ struct Person :
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
 # Empty struct 
 WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=1)
-
- 
+C_BINDER_MOJO_NEWLINE 
 StructNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, c_child_idxs=(14), mojo_child_idxs=(15), struct_name=Empty)
 @value 
 struct Empty : 
@@ -42,8 +40,7 @@ struct Empty :
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16)
 # Multi-line struct with comments 
 WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=1)
-
- 
+C_BINDER_MOJO_NEWLINE 
 StructNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, c_child_idxs=(18), mojo_child_idxs=(19), struct_name=Complex)
 @value 
 struct Complex : 
@@ -74,8 +71,7 @@ var nested : Inner
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28)
 # Anonymous struct in typedef 
 WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=1)
-
- 
+C_BINDER_MOJO_NEWLINE 
 TypedefNode(c_parent_idx=0, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30, c_child_idxs=(30), mojo_child_idxs=(31), type_name=Flags)
 alias Flags = 
 StructNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=30, mojo_current_idx=31, c_child_idxs=(31), mojo_child_idxs=(32), struct_name=)
@@ -89,15 +85,12 @@ var flags : UInt
 
 
 WhitespaceNode(c_parent_idx=0, c_current_idx=33, mojo_parent_idx=0, mojo_current_idx=34, n_tokens=4)
- 
- 
- 
- 
+ C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=35)
 # Struct with bit fields 
 WhitespaceNode(c_parent_idx=0, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36, n_tokens=1)
-
- 
+C_BINDER_MOJO_NEWLINE 
 StructNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37, c_child_idxs=(37), mojo_child_idxs=(38), struct_name=BitFields)
 @value 
 struct BitFields : 

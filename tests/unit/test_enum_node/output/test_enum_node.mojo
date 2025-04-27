@@ -1,13 +1,11 @@
-# Basic enum with values 
- 
+# Basic enum with values C_BINDER_MOJO_NEWLINE 
 struct Color : 
  
 alias RED = 0 
 alias GREEN = 1 
-alias BLUE = 2 
+alias BLUE = -1 
 # Enum with auto-incrementing values 
-
- 
+C_BINDER_MOJO_NEWLINE 
 struct Direction : 
  
 alias NORTH = 0 
@@ -19,8 +17,7 @@ alias EAST = 2
 alias WEST = 3 
 # 3 
 # Enum with mixed explicit and implicit values 
-
- 
+C_BINDER_MOJO_NEWLINE 
 struct Status : 
  
 alias OK = 200 
@@ -31,14 +28,12 @@ alias UNAVAILABLE = 501
 alias TIMEOUT = 502 
 # 502 
 # Enum with name but no values  ( empty enum )  
-
- 
+C_BINDER_MOJO_NEWLINE 
 struct Empty : pass 
  
 pass 
 # Enum with hex values and comments 
-
- 
+C_BINDER_MOJO_NEWLINE 
 struct Flags : 
  
 alias READ = 1 
@@ -48,13 +43,12 @@ alias WRITE = 2
 alias EXECUTE = 4 
 # Execute permission 
 # Enum with byte values 
-
- 
+C_BINDER_MOJO_NEWLINE 
 struct ByteValues : 
  
 alias BYTE_0 = 1 
 alias BYTE_1 = 2 
 alias BYTE_2 = 4 
-alias BYTE_3 = 8 
+alias BYTE_3 = -1 
 fn main():
     pass

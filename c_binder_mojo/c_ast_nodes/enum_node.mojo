@@ -15,6 +15,7 @@ from c_binder_mojo.common import (
     CTokens,
     TokenFlow,
     WhitespaceEnum,
+    C_BINDER_MOJO_NEWLINE
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -156,7 +157,7 @@ struct EnumNode(NodeAstLike):
         return (
             token.token == " "
             or token.token == "\t"
-            or token.token == "\n"
+            or token.token == C_BINDER_MOJO_NEWLINE
             or token.token == ""
         )
 

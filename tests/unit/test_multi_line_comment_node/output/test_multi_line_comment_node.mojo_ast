@@ -3,63 +3,42 @@ PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
 """ Basic multiline comment """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4)
-""" Multiline comment 
- 
- * with multiple 
- 
- * lines 
- 
+""" Multiline comment C_BINDER_MOJO_NEWLINE 
+ * with multiple C_BINDER_MOJO_NEWLINE 
+ * lines C_BINDER_MOJO_NEWLINE 
  """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6)
 """* Documentation comment """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8)
-"""* Documentation comment 
- 
- * with multiple 
- 
- * lines 
- 
+"""* Documentation comment C_BINDER_MOJO_NEWLINE 
+ * with multiple C_BINDER_MOJO_NEWLINE 
+ * lines C_BINDER_MOJO_NEWLINE 
  """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10)
 """ Comment with special characters: !@#$%^&* (  ) _+ """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
-""" Comment with code-like content:  
- 
- * int x  =  5 ;  
- 
- * void foo (  )  ;  
- 
+""" Comment with code-like content:  C_BINDER_MOJO_NEWLINE 
+ * int x  =  5 ;  C_BINDER_MOJO_NEWLINE 
+ * void foo (  )  ;  C_BINDER_MOJO_NEWLINE 
  """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 VariableNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, is_module_level=True)
 alias some_function : Int = () 
 WhitespaceNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15, n_tokens=1)
@@ -67,61 +46,41 @@ WhitespaceNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16)
 """ Comment after code """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18)
 # This is not a multiline comment 
 WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20)
 """ Comment with Unicode: 你好世界 """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22)
 """ Empty multiline comment """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24)
-"""""" 
- 
- 
- 
+"""""" C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 """ Nested-looking comment /*  ( not actually nested )  """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25, n_tokens=4)
- 
- 
- 
- 
+ C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26)
-""" 
- 
- * Comment 
- 
- *    with 
- 
- *       indentation 
- 
+""" C_BINDER_MOJO_NEWLINE 
+ * Comment C_BINDER_MOJO_NEWLINE 
+ *    with C_BINDER_MOJO_NEWLINE 
+ *       indentation C_BINDER_MOJO_NEWLINE 
  """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28)
 """ Comment with trailing spaces    """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=3)
-
- 
- 
- 
+C_BINDER_MOJO_NEWLINE 
+ C_BINDER_MOJO_NEWLINE 

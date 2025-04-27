@@ -14,6 +14,7 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
     TokenFlow,
+    C_BINDER_MOJO_NEWLINE
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -156,12 +157,7 @@ struct EnumFieldNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         # Skip whitespace and comments
-        if (
-            token.token == " "
-            or token.token == "\t"
-            or token.token == "\n"
-            or token.token == ""
-        ):
+        if token.is_whitespace():
             return TokenFlow.CONSUME_TOKEN
 
         return TokenFlow.PASS_TO_PARENT

@@ -12,6 +12,7 @@ from c_binder_mojo.common import (
     CTokens,
     TokenFlow,
     WhitespaceEnum,
+    C_BINDER_MOJO_NEWLINE
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -163,12 +164,7 @@ struct StructFieldNode(NodeAstLike):
             return TokenFlow.CONSUME_TOKEN
 
         # Skip whitespace and comments
-        if (
-            token.token == " "
-            or token.token == "\t"
-            or token.token == "\n"
-            or token.token == ""
-        ):
+        if token.is_whitespace():
             return TokenFlow.CONSUME_TOKEN
 
         # Collect the field name (last identifier before semicolon or bit field)
@@ -197,7 +193,7 @@ struct StructFieldNode(NodeAstLike):
         else:
             self._token_bundles[].append(token)
         if self._node_state == NodeState.COMPLETED:
-            self._token_bundles_tail[].append(TokenBundle(WhitespaceEnum.NEWLINE, token.row_num, 0))
+            self._token_bundles_tail[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token.row_num, 0))
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""

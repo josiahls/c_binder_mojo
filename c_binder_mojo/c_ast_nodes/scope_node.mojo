@@ -14,7 +14,8 @@ from c_binder_mojo.common import (
     NodeState,
     CTokens,
     TokenFlow,
-    WhitespaceEnum
+    WhitespaceEnum,
+    C_BINDER_MOJO_NEWLINE
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (
@@ -64,7 +65,7 @@ struct ScopeNode(NodeAstLike):
         self._node_state = NodeState.INITIALIZING
         self._parent_type = parent_type
         self._token_bundles[].append(token_bundle)
-        self._token_bundles[].append(TokenBundle(WhitespaceEnum.NEWLINE, token_bundle.row_num, 0))
+        self._token_bundles[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token_bundle.row_num, 0))
 
     @staticmethod
     fn accept(
@@ -172,7 +173,7 @@ struct ScopeNode(NodeAstLike):
             if not token.is_whitespace():
                 print("ERROR: Destroying tokens but token is not whitespace")
         if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
-            self._token_bundles_tail[].append(TokenBundle(WhitespaceEnum.NEWLINE, token.row_num, 0))
+            self._token_bundles_tail[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token.row_num, 0))
             self._token_bundles_tail[].append(token)
             self._node_state = NodeState.COMPLETED
 

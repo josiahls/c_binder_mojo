@@ -14,6 +14,7 @@ from c_binder_mojo.common import (
     TokenFlow,
     CTokens,
     NodeState,
+    C_BINDER_MOJO_NEWLINE
 )
 from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.c_ast_nodes.nodes import (

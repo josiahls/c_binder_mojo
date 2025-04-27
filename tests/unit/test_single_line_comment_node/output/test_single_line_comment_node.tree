@@ -28,18 +28,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 0 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [0:24]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:24]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1))
     └─ Path: RootNode
-    └─ Current Token: '
-' at [0:24]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:24]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [0:24]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:24]
     └─ Nodes: 1 active, 2 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -71,18 +68,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 2 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [1:26]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [1:26]
     └─ Nodes: 1 active, 3 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3))
     └─ Path: RootNode
-    └─ Current Token: '
-' at [1:26]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [1:26]
     └─ Nodes: 1 active, 3 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [1:26]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [1:26]
     └─ Nodes: 1 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -90,8 +84,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [2:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [2:0]
     └─ Nodes: 1 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -143,18 +136,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [3:43]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [3:43]
     └─ Nodes: 1 active, 5 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5))
     └─ Path: RootNode
-    └─ Current Token: '
-' at [3:43]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [3:43]
     └─ Nodes: 1 active, 5 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [3:43]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [3:43]
     └─ Nodes: 1 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -162,8 +152,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [4:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [4:0]
     └─ Nodes: 1 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -227,18 +216,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [5:37]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [5:37]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [5:37]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [5:37]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [5:37]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [5:37]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -246,8 +232,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 8 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [6:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [6:0]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -323,18 +308,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 10 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [7:37]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [7:37]
     └─ Nodes: 1 active, 11 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [7:37]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [7:37]
     └─ Nodes: 1 active, 11 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [7:37]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [7:37]
     └─ Nodes: 1 active, 12 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -342,8 +324,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 12 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [8:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [8:0]
     └─ Nodes: 1 active, 12 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -391,18 +372,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	MultiLineCommentNode(
     └─ Nodes: 1 active, 13 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	MultiLineCommentNode(c_parent_idx=0, c_current_idx=13)
     └─ Path: RootNode -> MultiLineCommentNode
-    └─ Current Token: '
-' at [9:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:31]
     └─ Nodes: 1 active, 13 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [9:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:31]
     └─ Nodes: 1 active, 13 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [9:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:31]
     └─ Nodes: 1 active, 14 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -410,8 +388,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 14 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [10:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [10:0]
     └─ Nodes: 1 active, 14 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=14, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -443,18 +420,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 14 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=15)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [11:33]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [11:33]
     └─ Nodes: 1 active, 15 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=15)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [11:33]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [11:33]
     └─ Nodes: 1 active, 15 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=16, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [11:33]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [11:33]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=16, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -462,8 +436,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 16 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=16, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [12:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [12:0]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=16, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -503,18 +476,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 16 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=17)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [13:38]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [13:38]
     └─ Nodes: 1 active, 17 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=17)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [13:38]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [13:38]
     └─ Nodes: 1 active, 17 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=18, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [13:38]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [13:38]
     └─ Nodes: 1 active, 18 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=18, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -530,18 +500,15 @@ tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLine
     └─ Nodes: 2 active, 18 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=19)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [14:2]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:2]
     └─ Nodes: 1 active, 19 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=19)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [14:2]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:2]
     └─ Nodes: 1 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=20, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [14:2]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:2]
     └─ Nodes: 1 active, 20 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=20, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -573,18 +540,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 20 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=21)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [15:26]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [15:26]
     └─ Nodes: 1 active, 21 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=21)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [15:26]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [15:26]
     └─ Nodes: 1 active, 21 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=22, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [15:26]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [15:26]
     └─ Nodes: 1 active, 22 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=22, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -592,8 +556,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 22 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=22, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [16:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [16:0]
     └─ Nodes: 1 active, 22 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=22, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -617,18 +580,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 22 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=23)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [17:18]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:18]
     └─ Nodes: 1 active, 23 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=23)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [17:18]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:18]
     └─ Nodes: 1 active, 23 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=24, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [17:18]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:18]
     └─ Nodes: 1 active, 24 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=24, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -652,18 +612,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 24 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=25)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [18:5]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [18:5]
     └─ Nodes: 1 active, 25 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=25)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [18:5]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [18:5]
     └─ Nodes: 1 active, 25 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=26, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [18:5]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [18:5]
     └─ Nodes: 1 active, 26 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=26, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -683,18 +640,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 26 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [19:5]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [19:5]
     └─ Nodes: 1 active, 27 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=27)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [19:5]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [19:5]
     └─ Nodes: 1 active, 27 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [19:5]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [19:5]
     └─ Nodes: 1 active, 28 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -702,8 +656,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 28 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [20:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [20:0]
     └─ Nodes: 1 active, 28 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -751,18 +704,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 28 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [21:27]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [21:27]
     └─ Nodes: 1 active, 29 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=29)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [21:27]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [21:27]
     └─ Nodes: 1 active, 29 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=30, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [21:27]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [21:27]
     └─ Nodes: 1 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=30, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -770,8 +720,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=30, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [22:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [22:0]
     └─ Nodes: 1 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=30, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode

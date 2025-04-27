@@ -44,18 +44,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 0 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [0:23]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:23]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1))
     └─ Path: RootNode
-    └─ Current Token: '
-' at [0:23]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:23]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [0:23]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:23]
     └─ Nodes: 1 active, 2 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -75,18 +72,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	MacroDefineNode(c_par
     └─ Nodes: 2 active, 2 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=0, c_current_idx=3, node_state=4 (COMPLETED), macro='EMPTY_DEFINE_1')
     └─ Path: RootNode -> MacroDefineNode
-    └─ Current Token: '
-' at [1:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [1:21]
     └─ Nodes: 1 active, 3 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3))
     └─ Path: RootNode
-    └─ Current Token: '
-' at [1:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [1:21]
     └─ Nodes: 1 active, 3 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [1:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [1:21]
     └─ Nodes: 1 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=4, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -106,18 +100,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	MacroDefineNode(c_par
     └─ Nodes: 2 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=0, c_current_idx=5, node_state=4 (COMPLETED), macro='EMPTY_DEFINE_2')
     └─ Path: RootNode -> MacroDefineNode
-    └─ Current Token: '
-' at [2:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [2:21]
     └─ Nodes: 1 active, 5 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5))
     └─ Path: RootNode
-    └─ Current Token: '
-' at [2:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [2:21]
     └─ Nodes: 1 active, 5 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [2:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [2:21]
     └─ Nodes: 1 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -125,8 +116,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_pare
     └─ Nodes: 1 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=2)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [3:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [3:0]
     └─ Nodes: 1 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=6, n_tokens=3)
     └─ Path: RootNode -> WhitespaceNode
@@ -154,18 +144,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 6 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [4:20]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [4:20]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=7)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [4:20]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [4:20]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [4:20]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [4:20]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=8, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -193,8 +180,7 @@ tree.mojo:222 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		MacroDefineValueNode
     └─ Nodes: 3 active, 8 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode(c_parent_idx=9, c_current_idx=10, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [5:19]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [5:19]
     └─ Nodes: 3 active, 8 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		MacroDefineValueNode(c_parent_idx=9, c_current_idx=10, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
@@ -222,8 +208,7 @@ tree.mojo:222 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			MacroDefineValueNod
     └─ Nodes: 4 active, 9 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			MacroDefineValueNode(c_parent_idx=11, c_current_idx=12, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [6:23]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [6:23]
     └─ Nodes: 4 active, 9 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			MacroDefineValueNode(c_parent_idx=11, c_current_idx=12, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
@@ -251,8 +236,7 @@ tree.mojo:222 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				MacroDefineValueNo
     └─ Nodes: 5 active, 10 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 				MacroDefineValueNode(c_parent_idx=13, c_current_idx=14, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [7:27]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [7:27]
     └─ Nodes: 5 active, 10 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				MacroDefineValueNode(c_parent_idx=13, c_current_idx=14, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
@@ -268,8 +252,7 @@ tree.mojo:222 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_p
     └─ Nodes: 4 active, 12 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 				WhitespaceNode(c_parent_idx=13, c_current_idx=15, n_tokens=1)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> WhitespaceNode
-    └─ Current Token: '
-' at [8:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [8:0]
     └─ Nodes: 4 active, 12 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=13, c_current_idx=15, n_tokens=2)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> WhitespaceNode
@@ -293,33 +276,27 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 				SingleLineCommentN
     └─ Nodes: 5 active, 12 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				SingleLineCommentNode(c_parent_idx=13, c_current_idx=16)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [9:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:21]
     └─ Nodes: 4 active, 13 complete
 tree.mojo:222 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 			MacroDefineNode(c_parent_idx=11, c_current_idx=13, c_child_idxs=(14, 15, 16), node_state=4 (COMPLETED), macro='SIMPLE_STRING')
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode
-    └─ Current Token: '
-' at [9:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:21]
     └─ Nodes: 3 active, 14 complete
 tree.mojo:222 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 		MacroDefineNode(c_parent_idx=9, c_current_idx=11, c_child_idxs=(12, 13), node_state=4 (COMPLETED), macro='SIMPLE_FLOAT')
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode
-    └─ Current Token: '
-' at [9:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:21]
     └─ Nodes: 2 active, 15 complete
 tree.mojo:222 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=0, c_current_idx=9, c_child_idxs=(10, 11), node_state=4 (COMPLETED), macro='SIMPLE_INT')
     └─ Path: RootNode -> MacroDefineNode
-    └─ Current Token: '
-' at [9:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:21]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:222 - INFO: [Depth:-4] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=9)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [9:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:21]
     └─ Nodes: 1 active, 16 complete
 tree.mojo:222 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=17, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [9:21]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:21]
     └─ Nodes: 1 active, 17 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=17, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -431,8 +408,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode
     └─ Nodes: 3 active, 17 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode(c_parent_idx=18, c_current_idx=19, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [10:24]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [10:24]
     └─ Nodes: 3 active, 17 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		MacroDefineValueNode(c_parent_idx=18, c_current_idx=19, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
@@ -592,8 +568,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			MacroDefineValueNod
     └─ Nodes: 4 active, 18 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			MacroDefineValueNode(c_parent_idx=20, c_current_idx=21, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [11:32]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [11:32]
     └─ Nodes: 4 active, 18 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			MacroDefineValueNode(c_parent_idx=20, c_current_idx=21, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
@@ -689,8 +664,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 				MacroDefineValueNo
     └─ Nodes: 5 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 				MacroDefineValueNode(c_parent_idx=22, c_current_idx=23, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [12:65]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [12:65]
     └─ Nodes: 5 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				MacroDefineValueNode(c_parent_idx=22, c_current_idx=23, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineValueNode
@@ -706,8 +680,7 @@ tree.mojo:222 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				WhitespaceNode(c_p
     └─ Nodes: 4 active, 21 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 				WhitespaceNode(c_parent_idx=22, c_current_idx=24, n_tokens=1)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> WhitespaceNode
-    └─ Current Token: '
-' at [13:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [13:0]
     └─ Nodes: 4 active, 21 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				WhitespaceNode(c_parent_idx=22, c_current_idx=24, n_tokens=2)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> WhitespaceNode
@@ -739,33 +712,27 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 				SingleLineCommentN
     └─ Nodes: 5 active, 21 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				SingleLineCommentNode(c_parent_idx=22, c_current_idx=25)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [14:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:31]
     └─ Nodes: 4 active, 22 complete
 tree.mojo:222 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 			MacroDefineNode(c_parent_idx=20, c_current_idx=22, c_child_idxs=(23, 24, 25), node_state=4 (COMPLETED), macro='PRINT_DEBUG')
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode -> MacroDefineNode
-    └─ Current Token: '
-' at [14:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:31]
     └─ Nodes: 3 active, 23 complete
 tree.mojo:222 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 		MacroDefineNode(c_parent_idx=18, c_current_idx=20, c_child_idxs=(21, 22), node_state=4 (COMPLETED), macro='MAX')
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineNode
-    └─ Current Token: '
-' at [14:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:31]
     └─ Nodes: 2 active, 24 complete
 tree.mojo:222 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=0, c_current_idx=18, c_child_idxs=(19, 20), node_state=4 (COMPLETED), macro='ADD')
     └─ Path: RootNode -> MacroDefineNode
-    └─ Current Token: '
-' at [14:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:31]
     └─ Nodes: 1 active, 25 complete
 tree.mojo:222 - INFO: [Depth:-4] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=11)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [14:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:31]
     └─ Nodes: 1 active, 25 complete
 tree.mojo:222 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=26, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [14:31]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:31]
     └─ Nodes: 1 active, 26 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=26, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -825,8 +792,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode
     └─ Nodes: 3 active, 27 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode(c_parent_idx=27, c_current_idx=29, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [15:26]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [15:26]
     └─ Nodes: 3 active, 27 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		MacroDefineValueNode(c_parent_idx=27, c_current_idx=29, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
@@ -842,8 +808,7 @@ tree.mojo:222 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		WhitespaceNode(c_par
     └─ Nodes: 2 active, 29 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		WhitespaceNode(c_parent_idx=27, c_current_idx=30, n_tokens=1)
     └─ Path: RootNode -> MacroDefineNode -> WhitespaceNode
-    └─ Current Token: '
-' at [16:0]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [16:0]
     └─ Nodes: 2 active, 29 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		WhitespaceNode(c_parent_idx=27, c_current_idx=30, n_tokens=2)
     └─ Path: RootNode -> MacroDefineNode -> WhitespaceNode
@@ -875,23 +840,19 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		SingleLineCommentNod
     └─ Nodes: 3 active, 29 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		SingleLineCommentNode(c_parent_idx=27, c_current_idx=31)
     └─ Path: RootNode -> MacroDefineNode -> SingleLineCommentNode
-    └─ Current Token: '
-' at [17:28]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:28]
     └─ Nodes: 2 active, 30 complete
 tree.mojo:222 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	MacroDefineNode(c_parent_idx=0, c_current_idx=27, c_child_idxs=(28, 29, 30, 31), node_state=4 (COMPLETED), macro='BUFFER_SIZE')
     └─ Path: RootNode -> MacroDefineNode
-    └─ Current Token: '
-' at [17:28]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:28]
     └─ Nodes: 1 active, 31 complete
 tree.mojo:222 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=13)
     └─ Path: RootNode
-    └─ Current Token: '
-' at [17:28]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:28]
     └─ Nodes: 1 active, 31 complete
 tree.mojo:222 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: '
-' at [17:28]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:28]
     └─ Nodes: 1 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -943,8 +904,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode
     └─ Nodes: 3 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode(c_parent_idx=33, c_current_idx=34, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [18:46]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [18:46]
     └─ Nodes: 3 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode(c_parent_idx=33, c_current_idx=34, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
@@ -988,8 +948,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode
     └─ Nodes: 3 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		MacroDefineValueNode(c_parent_idx=33, c_current_idx=34, node_state=1 (COLLECTING_TOKENS), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode
-    └─ Current Token: '
-' at [19:23]
+    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [19:23]
     └─ Nodes: 3 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		MacroDefineValueNode(c_parent_idx=33, c_current_idx=34, node_state=4 (COMPLETED), is_function_like=False)
     └─ Path: RootNode -> MacroDefineNode -> MacroDefineValueNode

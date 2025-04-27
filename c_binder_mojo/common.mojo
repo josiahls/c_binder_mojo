@@ -70,6 +70,7 @@ struct NodeState:
 
 
 alias C_BINDER_MOJO_END_FILE = "C_BINDER_MOJO_END_FILE"
+alias C_BINDER_MOJO_NEWLINE = "C_BINDER_MOJO_NEWLINE"
 
 
 struct TokenFlow:
@@ -120,7 +121,8 @@ struct WhitespaceEnum:
     alias BLANK = ""  # Tokenizer converts spaces to blanks
     alias SPACE = " "
     alias TAB = "\t"
-    alias NEWLINE = "\n"
+    alias NEWLINE = C_BINDER_MOJO_NEWLINE
+    alias NEWLINE_STRING = "\n"
     alias CARRIAGE_RETURN = "\r"
     alias FORM_FEED = "\f"
     alias BACKSPACE = "\b"
@@ -135,7 +137,9 @@ struct WhitespaceEnum:
             return True
         if token.token == WhitespaceEnum.TAB:
             return True
-        if token.token == WhitespaceEnum.NEWLINE:
+        if token.token == C_BINDER_MOJO_NEWLINE:
+            return True
+        if token.token == WhitespaceEnum.NEWLINE_STRING:
             return True
         if token.token == WhitespaceEnum.CARRIAGE_RETURN:
             return True
@@ -304,7 +308,7 @@ struct TokenBundle(EqualityComparable):
         return WhitespaceEnum.is_whitespace(self)
 
     fn is_newline(read self: Self) -> Bool:
-        return self.token == WhitespaceEnum.NEWLINE
+        return self.token == C_BINDER_MOJO_NEWLINE or self.token == WhitespaceEnum.NEWLINE_STRING
 
     @staticmethod
     fn from_other(new_token: String, other: Self) -> Self:
@@ -537,7 +541,7 @@ struct Tokenizer:
                 self.tokens.append(token)
                 col_num += len(token_string[])
             # Re add the newline token
-            self.tokens.append(TokenBundle("\n", current_row_num, col_num))
+            self.tokens.append(TokenBundle(C_BINDER_MOJO_NEWLINE, current_row_num, col_num))
             current_row_num += 1
 
     fn to_string(self, make_flat: Bool = False) -> String:

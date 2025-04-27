@@ -3,48 +3,48 @@ PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
 # Different types of whitespace: 
 WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=3)
-C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4)
 # Single space 
 WhitespaceNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5, n_tokens=6)
-C_BINDER_MOJO_NEWLINE 
-  C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+  <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6)
 # Multiple spaces 
 WhitespaceNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, n_tokens=9)
-C_BINDER_MOJO_NEWLINE 
-     C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+     <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8)
 # Tabs 
 WhitespaceNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, n_tokens=7)
-C_BINDER_MOJO_NEWLINE 
- 	  C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+ 	  <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10)
 # Mixed whitespace 
 WhitespaceNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, n_tokens=12)
-C_BINDER_MOJO_NEWLINE 
- 	    	   C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+ 	    	   <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
 # New lines 
 WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=7)
-C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14)
 # Whitespace in code contexts 
 WhitespaceNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
 VariableNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16, is_module_level=True)
-alias function : Int = (){C_BINDER_MOJO_NEWLINEintx5 
+alias function : Int = (){<C_BINDER_MOJO_NEWLINE>intx5 
 WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=12)
- C_BINDER_MOJO_NEWLINE 
-     C_BINDER_MOJO_NEWLINE 
+ <C_BINDER_MOJO_NEWLINE> 
+     <C_BINDER_MOJO_NEWLINE> 
     
 PlaceHolderNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, node_state=4 (COMPLETED))
 return 
@@ -53,26 +53,26 @@ x
 PlaceHolderNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20, node_state=4 (COMPLETED))
 ; 
 WhitespaceNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21, n_tokens=3)
- C_BINDER_MOJO_NEWLINE 
+ <C_BINDER_MOJO_NEWLINE> 
  
 PlaceHolderNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, node_state=4 (COMPLETED))
 } 
 WhitespaceNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, n_tokens=4)
- C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+ <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24)
 # Whitespace after comment 
 WhitespaceNode(c_parent_idx=0, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25, n_tokens=3)
-C_BINDER_MOJO_NEWLINE 
- C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
 MultiLineCommentNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26)
-""" Whitespace C_BINDER_MOJO_NEWLINE 
-   in multiline C_BINDER_MOJO_NEWLINE 
+""" Whitespace <C_BINDER_MOJO_NEWLINE> 
+   in multiline <C_BINDER_MOJO_NEWLINE> 
    comment """ 
 WhitespaceNode(c_parent_idx=0, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27, n_tokens=6)
-C_BINDER_MOJO_NEWLINE 
-    C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
+    <C_BINDER_MOJO_NEWLINE> 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28)
 # Whitespace at beginning and end of file  
 WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 

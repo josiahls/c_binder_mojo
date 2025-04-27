@@ -1,32 +1,32 @@
-TokenBundle(row_num=0, col_num=0) // TokenBundle(row_num=0, col_num=2) Different TokenBundle(row_num=0, col_num=11) types TokenBundle(row_num=0, col_num=16) of TokenBundle(row_num=0, col_num=18) whitespace: TokenBundle(row_num=0, col_num=29) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=1, col_num=0)  TokenBundle(row_num=1, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=2, col_num=0) // TokenBundle(row_num=2, col_num=2) Single TokenBundle(row_num=2, col_num=8) space TokenBundle(row_num=2, col_num=13) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=3, col_num=0)  TokenBundle(row_num=3, col_num=0)  TokenBundle(row_num=3, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=4, col_num=0)  TokenBundle(row_num=4, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=5, col_num=0) // TokenBundle(row_num=5, col_num=2) Multiple TokenBundle(row_num=5, col_num=10) spaces TokenBundle(row_num=5, col_num=16) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=7, col_num=0)  TokenBundle(row_num=7, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=8, col_num=0) // TokenBundle(row_num=8, col_num=2) Tabs TokenBundle(row_num=8, col_num=6) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=9, col_num=0)  TokenBundle(row_num=9, col_num=0) 	 TokenBundle(row_num=9, col_num=1)  TokenBundle(row_num=9, col_num=1) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=10, col_num=0)  TokenBundle(row_num=10, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=11, col_num=0) // TokenBundle(row_num=11, col_num=2) Mixed TokenBundle(row_num=11, col_num=7) whitespace TokenBundle(row_num=11, col_num=17) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=12, col_num=0)  TokenBundle(row_num=12, col_num=0) 	 TokenBundle(row_num=12, col_num=1)  TokenBundle(row_num=12, col_num=1)  TokenBundle(row_num=12, col_num=1)  TokenBundle(row_num=12, col_num=1) 	 TokenBundle(row_num=12, col_num=2)  TokenBundle(row_num=12, col_num=2)  TokenBundle(row_num=12, col_num=2) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=13, col_num=0)  TokenBundle(row_num=13, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=14, col_num=0) // TokenBundle(row_num=14, col_num=2) New TokenBundle(row_num=14, col_num=5) lines TokenBundle(row_num=14, col_num=10) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=15, col_num=0)  TokenBundle(row_num=15, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=16, col_num=0)  TokenBundle(row_num=16, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=17, col_num=0)  TokenBundle(row_num=17, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=18, col_num=0) // TokenBundle(row_num=18, col_num=2) Whitespace TokenBundle(row_num=18, col_num=12) in TokenBundle(row_num=18, col_num=14) code TokenBundle(row_num=18, col_num=18) contexts TokenBundle(row_num=18, col_num=26) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=19, col_num=0) int TokenBundle(row_num=19, col_num=3) function TokenBundle(row_num=19, col_num=11) ( TokenBundle(row_num=19, col_num=12)  TokenBundle(row_num=19, col_num=12) ) TokenBundle(row_num=19, col_num=13)  TokenBundle(row_num=19, col_num=13)  TokenBundle(row_num=19, col_num=13) { TokenBundle(row_num=19, col_num=14)  TokenBundle(row_num=19, col_num=14) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0) int TokenBundle(row_num=20, col_num=3) x TokenBundle(row_num=20, col_num=4)  TokenBundle(row_num=20, col_num=4) = TokenBundle(row_num=20, col_num=5)  TokenBundle(row_num=20, col_num=5) 5 TokenBundle(row_num=20, col_num=6) ; TokenBundle(row_num=20, col_num=7)  TokenBundle(row_num=20, col_num=7) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0) return TokenBundle(row_num=22, col_num=6) x TokenBundle(row_num=22, col_num=7) ; TokenBundle(row_num=22, col_num=8)  TokenBundle(row_num=22, col_num=8) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=23, col_num=0)  TokenBundle(row_num=23, col_num=0) } TokenBundle(row_num=23, col_num=1)  TokenBundle(row_num=23, col_num=1) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=24, col_num=0)  TokenBundle(row_num=24, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=25, col_num=0) // TokenBundle(row_num=25, col_num=2) Whitespace TokenBundle(row_num=25, col_num=12) after TokenBundle(row_num=25, col_num=17) comment TokenBundle(row_num=25, col_num=24) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=26, col_num=0)  TokenBundle(row_num=26, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=27, col_num=0) /* TokenBundle(row_num=27, col_num=2) Whitespace TokenBundle(row_num=27, col_num=12) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=28, col_num=0)  TokenBundle(row_num=28, col_num=0)  TokenBundle(row_num=28, col_num=0)  TokenBundle(row_num=28, col_num=0) in TokenBundle(row_num=28, col_num=2) multiline TokenBundle(row_num=28, col_num=11) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=29, col_num=0)  TokenBundle(row_num=29, col_num=0)  TokenBundle(row_num=29, col_num=0)  TokenBundle(row_num=29, col_num=0) comment TokenBundle(row_num=29, col_num=7) */ TokenBundle(row_num=29, col_num=9) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0) C_BINDER_MOJO_NEWLINE 
-TokenBundle(row_num=31, col_num=0) // TokenBundle(row_num=31, col_num=2) Whitespace TokenBundle(row_num=31, col_num=12) at TokenBundle(row_num=31, col_num=14) beginning TokenBundle(row_num=31, col_num=23) and TokenBundle(row_num=31, col_num=26) end TokenBundle(row_num=31, col_num=29) of TokenBundle(row_num=31, col_num=31) file TokenBundle(row_num=31, col_num=35)  TokenBundle(row_num=31, col_num=35) C_BINDER_MOJO_NEWLINE 
+TokenBundle(row_num=0, col_num=0) // TokenBundle(row_num=0, col_num=2) Different TokenBundle(row_num=0, col_num=11) types TokenBundle(row_num=0, col_num=16) of TokenBundle(row_num=0, col_num=18) whitespace: TokenBundle(row_num=0, col_num=29) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=1, col_num=0)  TokenBundle(row_num=1, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=2, col_num=0) // TokenBundle(row_num=2, col_num=2) Single TokenBundle(row_num=2, col_num=8) space TokenBundle(row_num=2, col_num=13) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=3, col_num=0)  TokenBundle(row_num=3, col_num=0)  TokenBundle(row_num=3, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=4, col_num=0)  TokenBundle(row_num=4, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=5, col_num=0) // TokenBundle(row_num=5, col_num=2) Multiple TokenBundle(row_num=5, col_num=10) spaces TokenBundle(row_num=5, col_num=16) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0)  TokenBundle(row_num=6, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=7, col_num=0)  TokenBundle(row_num=7, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=8, col_num=0) // TokenBundle(row_num=8, col_num=2) Tabs TokenBundle(row_num=8, col_num=6) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=9, col_num=0)  TokenBundle(row_num=9, col_num=0) 	 TokenBundle(row_num=9, col_num=1)  TokenBundle(row_num=9, col_num=1) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=10, col_num=0)  TokenBundle(row_num=10, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=11, col_num=0) // TokenBundle(row_num=11, col_num=2) Mixed TokenBundle(row_num=11, col_num=7) whitespace TokenBundle(row_num=11, col_num=17) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=12, col_num=0)  TokenBundle(row_num=12, col_num=0) 	 TokenBundle(row_num=12, col_num=1)  TokenBundle(row_num=12, col_num=1)  TokenBundle(row_num=12, col_num=1)  TokenBundle(row_num=12, col_num=1) 	 TokenBundle(row_num=12, col_num=2)  TokenBundle(row_num=12, col_num=2)  TokenBundle(row_num=12, col_num=2) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=13, col_num=0)  TokenBundle(row_num=13, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=14, col_num=0) // TokenBundle(row_num=14, col_num=2) New TokenBundle(row_num=14, col_num=5) lines TokenBundle(row_num=14, col_num=10) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=15, col_num=0)  TokenBundle(row_num=15, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=16, col_num=0)  TokenBundle(row_num=16, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=17, col_num=0)  TokenBundle(row_num=17, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=18, col_num=0) // TokenBundle(row_num=18, col_num=2) Whitespace TokenBundle(row_num=18, col_num=12) in TokenBundle(row_num=18, col_num=14) code TokenBundle(row_num=18, col_num=18) contexts TokenBundle(row_num=18, col_num=26) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=19, col_num=0) int TokenBundle(row_num=19, col_num=3) function TokenBundle(row_num=19, col_num=11) ( TokenBundle(row_num=19, col_num=12)  TokenBundle(row_num=19, col_num=12) ) TokenBundle(row_num=19, col_num=13)  TokenBundle(row_num=19, col_num=13)  TokenBundle(row_num=19, col_num=13) { TokenBundle(row_num=19, col_num=14)  TokenBundle(row_num=19, col_num=14) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0)  TokenBundle(row_num=20, col_num=0) int TokenBundle(row_num=20, col_num=3) x TokenBundle(row_num=20, col_num=4)  TokenBundle(row_num=20, col_num=4) = TokenBundle(row_num=20, col_num=5)  TokenBundle(row_num=20, col_num=5) 5 TokenBundle(row_num=20, col_num=6) ; TokenBundle(row_num=20, col_num=7)  TokenBundle(row_num=20, col_num=7) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0)  TokenBundle(row_num=21, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0)  TokenBundle(row_num=22, col_num=0) return TokenBundle(row_num=22, col_num=6) x TokenBundle(row_num=22, col_num=7) ; TokenBundle(row_num=22, col_num=8)  TokenBundle(row_num=22, col_num=8) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=23, col_num=0)  TokenBundle(row_num=23, col_num=0) } TokenBundle(row_num=23, col_num=1)  TokenBundle(row_num=23, col_num=1) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=24, col_num=0)  TokenBundle(row_num=24, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=25, col_num=0) // TokenBundle(row_num=25, col_num=2) Whitespace TokenBundle(row_num=25, col_num=12) after TokenBundle(row_num=25, col_num=17) comment TokenBundle(row_num=25, col_num=24) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=26, col_num=0)  TokenBundle(row_num=26, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=27, col_num=0) /* TokenBundle(row_num=27, col_num=2) Whitespace TokenBundle(row_num=27, col_num=12) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=28, col_num=0)  TokenBundle(row_num=28, col_num=0)  TokenBundle(row_num=28, col_num=0)  TokenBundle(row_num=28, col_num=0) in TokenBundle(row_num=28, col_num=2) multiline TokenBundle(row_num=28, col_num=11) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=29, col_num=0)  TokenBundle(row_num=29, col_num=0)  TokenBundle(row_num=29, col_num=0)  TokenBundle(row_num=29, col_num=0) comment TokenBundle(row_num=29, col_num=7) */ TokenBundle(row_num=29, col_num=9) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0)  TokenBundle(row_num=30, col_num=0) <C_BINDER_MOJO_NEWLINE> 
+TokenBundle(row_num=31, col_num=0) // TokenBundle(row_num=31, col_num=2) Whitespace TokenBundle(row_num=31, col_num=12) at TokenBundle(row_num=31, col_num=14) beginning TokenBundle(row_num=31, col_num=23) and TokenBundle(row_num=31, col_num=26) end TokenBundle(row_num=31, col_num=29) of TokenBundle(row_num=31, col_num=31) file TokenBundle(row_num=31, col_num=35)  TokenBundle(row_num=31, col_num=35) <C_BINDER_MOJO_NEWLINE> 

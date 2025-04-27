@@ -28,15 +28,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 0 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:21]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [0:21]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1))
     └─ Path: RootNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:21]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [0:21]
     └─ Nodes: 1 active, 1 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [0:21]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [0:21]
     └─ Nodes: 1 active, 2 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -72,7 +72,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_i
     └─ Nodes: 3 active, 2 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [1:10]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [1:10]
     └─ Nodes: 3 active, 2 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -128,7 +128,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 3 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [2:6]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [2:6]
     └─ Nodes: 3 active, 3 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -184,7 +184,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5, 6), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [3:8]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [3:8]
     └─ Nodes: 3 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5, 6), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -228,13 +228,13 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_par
     └─ Nodes: 4 active, 4 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=1 (COLLECTING_TOKENS), field_name='BLUE', value='2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [4:6]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [4:6]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=1 (COLLECTING_TOKENS), field_name='BLUE', value='2C_BINDER_MOJO_NEWLINE')
+tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=1 (COLLECTING_TOKENS), field_name='BLUE', value='2<C_BINDER_MOJO_NEWLINE>')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [5:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=4 (COMPLETED), field_name='BLUE', value='2C_BINDER_MOJO_NEWLINE')
+tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=4 (COMPLETED), field_name='BLUE', value='2<C_BINDER_MOJO_NEWLINE>')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '}' at [5:0]
     └─ Nodes: 3 active, 5 complete
@@ -260,7 +260,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=3, c_child_idxs=(4), node_state=4 (COMPLETED), name='Color')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [5:2]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [5:2]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=3, c_child_idxs=(4), node_state=4 (COMPLETED), name='Color')
     └─ Path: RootNode -> EnumNode
@@ -268,7 +268,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=3, c_child_idxs=(4), node_state=4 (COMPLETED), name='Color')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [6:0]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [6:0]
     └─ Nodes: 1 active, 7 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	EnumNode(c_parent_idx=0, c_current_idx=3, c_child_idxs=(4), node_state=4 (COMPLETED), name='Color')
     └─ Path: RootNode -> EnumNode
@@ -300,15 +300,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 7 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=8)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [7:33]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [7:33]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8))
     └─ Path: RootNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [7:33]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [7:33]
     └─ Nodes: 1 active, 8 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=9, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [7:33]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [7:33]
     └─ Nodes: 1 active, 9 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=9, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -344,7 +344,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_i
     └─ Nodes: 3 active, 9 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [8:14]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [8:14]
     └─ Nodes: 3 active, 9 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -400,11 +400,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 10 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=11, c_current_idx=13)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:9]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [9:9]
     └─ Nodes: 3 active, 11 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [9:9]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [9:9]
     └─ Nodes: 3 active, 11 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -460,11 +460,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 12 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=11, c_current_idx=15)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [10:9]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [10:9]
     └─ Nodes: 3 active, 13 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [10:9]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [10:9]
     └─ Nodes: 3 active, 13 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -524,11 +524,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 14 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=11, c_current_idx=17)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [11:8]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [11:8]
     └─ Nodes: 3 active, 15 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, 17), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [11:8]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [11:8]
     └─ Nodes: 3 active, 15 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, 17), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -584,11 +584,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 16 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=11, c_current_idx=19)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [12:7]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [12:7]
     └─ Nodes: 3 active, 17 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, ...) len=8, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [12:7]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [12:7]
     └─ Nodes: 3 active, 17 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, ...) len=8, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -616,7 +616,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='Direction')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [13:2]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [13:2]
     └─ Nodes: 1 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='Direction')
     └─ Path: RootNode -> EnumNode
@@ -624,7 +624,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='Direction')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [14:0]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [14:0]
     └─ Nodes: 1 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	EnumNode(c_parent_idx=0, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='Direction')
     └─ Path: RootNode -> EnumNode
@@ -668,15 +668,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 19 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=20)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [15:40]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [15:40]
     └─ Nodes: 1 active, 20 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=7)
     └─ Path: RootNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [15:40]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [15:40]
     └─ Nodes: 1 active, 20 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=21, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [15:40]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [15:40]
     └─ Nodes: 1 active, 21 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=21, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -712,7 +712,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_i
     └─ Nodes: 3 active, 21 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [16:11]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [16:11]
     └─ Nodes: 3 active, 21 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -768,7 +768,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 22 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [17:7]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [17:7]
     └─ Nodes: 3 active, 22 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -824,7 +824,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 23 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [18:14]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [18:14]
     └─ Nodes: 3 active, 23 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -880,7 +880,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 24 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25, 26), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [19:17]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [19:17]
     └─ Nodes: 3 active, 24 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25, 26), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -936,11 +936,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 25 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=23, c_current_idx=28)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [20:17]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [20:17]
     └─ Nodes: 3 active, 26 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25, 26, 27, 28), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [20:17]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [20:17]
     └─ Nodes: 3 active, 26 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25, 26, 27, 28), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1004,11 +1004,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 27 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=23, c_current_idx=30)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [21:12]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [21:12]
     └─ Nodes: 3 active, 28 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25, 26, 27, 28, ...) len=7, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [21:12]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [21:12]
     └─ Nodes: 3 active, 28 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25, 26, 27, 28, ...) len=7, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1036,7 +1036,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=22, c_child_idxs=(23), node_state=4 (COMPLETED), name='Status')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [22:2]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [22:2]
     └─ Nodes: 1 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=22, c_child_idxs=(23), node_state=4 (COMPLETED), name='Status')
     └─ Path: RootNode -> EnumNode
@@ -1044,7 +1044,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=22, c_child_idxs=(23), node_state=4 (COMPLETED), name='Status')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [23:0]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [23:0]
     └─ Nodes: 1 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	EnumNode(c_parent_idx=0, c_current_idx=22, c_child_idxs=(23), node_state=4 (COMPLETED), name='Status')
     └─ Path: RootNode -> EnumNode
@@ -1108,15 +1108,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 30 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=31)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [24:36]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [24:36]
     └─ Nodes: 1 active, 31 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=10)
     └─ Path: RootNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [24:36]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [24:36]
     └─ Nodes: 1 active, 31 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [24:36]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [24:36]
     └─ Nodes: 1 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=32, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -1152,7 +1152,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_i
     └─ Nodes: 3 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=33, c_current_idx=34, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [25:10]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [25:10]
     └─ Nodes: 3 active, 32 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=33, c_current_idx=34, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1180,7 +1180,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 34 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=33, c_child_idxs=(34), node_state=4 (COMPLETED), name='Empty')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [26:2]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [26:2]
     └─ Nodes: 1 active, 34 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=33, c_child_idxs=(34), node_state=4 (COMPLETED), name='Empty')
     └─ Path: RootNode -> EnumNode
@@ -1188,7 +1188,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 34 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=33, c_child_idxs=(34), node_state=4 (COMPLETED), name='Empty')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [27:0]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [27:0]
     └─ Nodes: 1 active, 34 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	EnumNode(c_parent_idx=0, c_current_idx=33, c_child_idxs=(34), node_state=4 (COMPLETED), name='Empty')
     └─ Path: RootNode -> EnumNode
@@ -1228,15 +1228,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 34 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=35)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [28:30]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [28:30]
     └─ Nodes: 1 active, 35 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=13)
     └─ Path: RootNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [28:30]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [28:30]
     └─ Nodes: 1 active, 35 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=36, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [28:30]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [28:30]
     └─ Nodes: 1 active, 36 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=36, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -1272,7 +1272,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_i
     └─ Nodes: 3 active, 36 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [29:10]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [29:10]
     └─ Nodes: 3 active, 36 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1360,11 +1360,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 37 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=38, c_current_idx=40)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [30:26]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [30:26]
     └─ Nodes: 3 active, 38 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, c_child_idxs=(39, 40), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [30:26]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [30:26]
     └─ Nodes: 3 active, 38 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, c_child_idxs=(39, 40), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1448,11 +1448,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 39 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=38, c_current_idx=42)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [31:28]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [31:28]
     └─ Nodes: 3 active, 40 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, c_child_idxs=(39, 40, 41, 42), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [31:28]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [31:28]
     └─ Nodes: 3 active, 40 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, c_child_idxs=(39, 40, 41, 42), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1524,11 +1524,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			SingleLineCommentNo
     └─ Nodes: 4 active, 41 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=38, c_current_idx=44)
     └─ Path: RootNode -> EnumNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [32:31]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [32:31]
     └─ Nodes: 3 active, 42 complete
 tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, c_child_idxs=(39, 40, 41, 42, 43, 44), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [32:31]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [32:31]
     └─ Nodes: 3 active, 42 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=37, c_current_idx=38, c_child_idxs=(39, 40, 41, 42, 43, 44), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1560,7 +1560,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 44 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38), node_state=4 (COMPLETED), name='Flags')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [33:2]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [33:2]
     └─ Nodes: 1 active, 44 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38), node_state=4 (COMPLETED), name='Flags')
     └─ Path: RootNode -> EnumNode
@@ -1568,7 +1568,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 44 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38), node_state=4 (COMPLETED), name='Flags')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [34:0]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [34:0]
     └─ Nodes: 1 active, 44 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	EnumNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38), node_state=4 (COMPLETED), name='Flags')
     └─ Path: RootNode -> EnumNode
@@ -1600,15 +1600,15 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	SingleLineCommentNode
     └─ Nodes: 2 active, 44 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=45)
     └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [35:20]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [35:20]
     └─ Nodes: 1 active, 45 complete
 tree.mojo:222 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=16)
     └─ Path: RootNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [35:20]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [35:20]
     └─ Nodes: 1 active, 45 complete
 tree.mojo:222 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=46, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [35:20]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [35:20]
     └─ Nodes: 1 active, 46 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=46, n_tokens=1)
     └─ Path: RootNode -> WhitespaceNode
@@ -1644,7 +1644,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_i
     └─ Nodes: 3 active, 46 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [36:15]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [36:15]
     └─ Nodes: 3 active, 46 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1708,7 +1708,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 47 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [37:12]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [37:12]
     └─ Nodes: 3 active, 47 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1772,7 +1772,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 48 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49, 50), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [38:12]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [38:12]
     └─ Nodes: 3 active, 48 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49, 50), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1836,7 +1836,7 @@ tree.mojo:222 - INFO: [Depth:-1] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_
     └─ Nodes: 3 active, 49 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49, 50, 51), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [39:12]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [39:12]
     └─ Nodes: 3 active, 49 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49, 50, 51), node_state=6 (DESTROYING_TOKENS), n_tokens=2, n_tokens_tail=0, parent_type='EnumNode')
     └─ Path: RootNode -> EnumNode -> ScopeNode
@@ -1888,13 +1888,13 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_par
     └─ Nodes: 4 active, 49 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=1 (COLLECTING_TOKENS), field_name='BYTE_3', value='1<<3')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [40:11]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [40:11]
     └─ Nodes: 4 active, 49 complete
-tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=1 (COLLECTING_TOKENS), field_name='BYTE_3', value='1<<3C_BINDER_MOJO_NEWLINE')
+tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=1 (COLLECTING_TOKENS), field_name='BYTE_3', value='1<<3<C_BINDER_MOJO_NEWLINE>')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [41:0]
     └─ Nodes: 4 active, 49 complete
-tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=4 (COMPLETED), field_name='BYTE_3', value='1<<3C_BINDER_MOJO_NEWLINE')
+tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=4 (COMPLETED), field_name='BYTE_3', value='1<<3<C_BINDER_MOJO_NEWLINE>')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '}' at [41:0]
     └─ Nodes: 3 active, 50 complete
@@ -1920,7 +1920,7 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx
     └─ Nodes: 1 active, 52 complete
 tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=4 (COMPLETED), name='ByteValues')
     └─ Path: RootNode -> EnumNode
-    └─ Current Token: 'C_BINDER_MOJO_NEWLINE' at [41:2]
+    └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [41:2]
     └─ Nodes: 1 active, 52 complete
 tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=4 (COMPLETED), name='ByteValues')
     └─ Path: RootNode -> EnumNode

@@ -88,9 +88,13 @@ fn default_to_string(
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
+        if not just_code:
+            s += "\n"
         s += string_children(node, just_code, module_interface, indent_level)
 
     s += node.token_bundles_tail().join(" ",indent)
+    if not just_code:
+        s += "\n"
     return s
 
 

@@ -3,7 +3,7 @@ PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
 # Basic enum with values 
 WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
 EnumNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), mojo_child_idxs=(5), enum_name=Color)
 struct Color : 
 ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7), mojo_child_idxs=(6, 7, 8))
@@ -19,7 +19,7 @@ alias BLUE = -1
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9)
 # Enum with auto-incrementing values 
 WhitespaceNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
 EnumNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, c_child_idxs=(11), mojo_child_idxs=(12), enum_name=Direction)
 struct Direction : 
 ScopeNode(c_parent_idx=10, c_current_idx=11, mojo_parent_idx=11, mojo_current_idx=12, c_child_idxs=(12, 13, 14, 15, 16, ...) len=8, mojo_child_idxs=(13, 14, 15, 16, 17, ...) len=8)
@@ -45,7 +45,7 @@ SingleLineCommentNode(c_parent_idx=11, c_current_idx=19, mojo_parent_idx=12, moj
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21)
 # Enum with mixed explicit and implicit values 
 WhitespaceNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
 EnumNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, c_child_idxs=(23), mojo_child_idxs=(24), enum_name=Status)
 struct Status : 
 ScopeNode(c_parent_idx=22, c_current_idx=23, mojo_parent_idx=23, mojo_current_idx=24, c_child_idxs=(24, 25, 26, 27, 28, ...) len=7, mojo_child_idxs=(25, 26, 27, 28, 29, ...) len=7)
@@ -69,7 +69,7 @@ SingleLineCommentNode(c_parent_idx=23, c_current_idx=30, mojo_parent_idx=24, moj
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=32)
 # Enum with name but no values  ( empty enum )  
 WhitespaceNode(c_parent_idx=0, c_current_idx=32, mojo_parent_idx=0, mojo_current_idx=33, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
 EnumNode(c_parent_idx=0, c_current_idx=33, mojo_parent_idx=0, mojo_current_idx=34, c_child_idxs=(34), mojo_child_idxs=(35), enum_name=Empty)
 struct Empty : pass 
 ScopeNode(c_parent_idx=33, c_current_idx=34, mojo_parent_idx=34, mojo_current_idx=35)
@@ -79,7 +79,7 @@ pass
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36)
 # Enum with hex values and comments 
 WhitespaceNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
 EnumNode(c_parent_idx=0, c_current_idx=37, mojo_parent_idx=0, mojo_current_idx=38, c_child_idxs=(38), mojo_child_idxs=(39), enum_name=Flags)
 struct Flags : 
 ScopeNode(c_parent_idx=37, c_current_idx=38, mojo_parent_idx=38, mojo_current_idx=39, c_child_idxs=(39, 40, 41, 42, 43, 44), mojo_child_idxs=(40, 41, 42, 43, 44, 45))
@@ -101,7 +101,7 @@ SingleLineCommentNode(c_parent_idx=38, c_current_idx=44, mojo_parent_idx=39, moj
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=46)
 # Enum with byte values 
 WhitespaceNode(c_parent_idx=0, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=47, n_tokens=1)
-C_BINDER_MOJO_NEWLINE 
+<C_BINDER_MOJO_NEWLINE> 
 EnumNode(c_parent_idx=0, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=48, c_child_idxs=(48), mojo_child_idxs=(49), enum_name=ByteValues)
 struct ByteValues : 
 ScopeNode(c_parent_idx=47, c_current_idx=48, mojo_parent_idx=48, mojo_current_idx=49, c_child_idxs=(49, 50, 51, 52), mojo_child_idxs=(50, 51, 52, 53))

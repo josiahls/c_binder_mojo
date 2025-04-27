@@ -80,21 +80,19 @@ fn default_to_string(
         indent = "\t" * indent_level
 
     if not just_code:
+        if indent_level != 0:
+            s += '\n'
         s += indent + node.name(include_sig=True) + "\n"
     
-    if not node.token_bundles()[0].is_newline():
+    # if not node.token_bundles()[0].is_newline():
+    if len(node.token_bundles()) > 0:
         s += indent
     s += node.token_bundles().join(" ", indent)
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
-        if not just_code:
-            s += "\n"
         s += string_children(node, just_code, module_interface, indent_level)
-
     s += node.token_bundles_tail().join(" ",indent)
-    if not just_code:
-        s += "\n"
     return s
 
 

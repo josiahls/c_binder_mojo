@@ -1,8 +1,6 @@
 RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=19)
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
 	// Basic enum with values
-	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
 	EnumNode(c_parent_idx=0, c_current_idx=3, c_child_idxs=(4), node_state=4 (COMPLETED), name='Color')
 	enum Color
 	ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5, 6, 7), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='EnumNode')
@@ -15,8 +13,6 @@ RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=19)
 	BLUE  =  2 <C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	};
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=8)
 	// Enum with auto-incrementing values
-	WhitespaceNode(c_parent_idx=0, c_current_idx=9, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
 	EnumNode(c_parent_idx=0, c_current_idx=10, c_child_idxs=(11), node_state=4 (COMPLETED), name='Direction')
 	enum Direction
 	ScopeNode(c_parent_idx=10, c_current_idx=11, c_child_idxs=(12, 13, 14, 15, 16, ...) len=8, node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='EnumNode')
@@ -39,8 +35,6 @@ RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=19)
 	// 3<C_BINDER_MOJO_NEWLINE>	};
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=20)
 	// Enum with mixed explicit and implicit values
-	WhitespaceNode(c_parent_idx=0, c_current_idx=21, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
 	EnumNode(c_parent_idx=0, c_current_idx=22, c_child_idxs=(23), node_state=4 (COMPLETED), name='Status')
 	enum Status
 	ScopeNode(c_parent_idx=22, c_current_idx=23, c_child_idxs=(24, 25, 26, 27, 28, ...) len=7, node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='EnumNode')
@@ -61,16 +55,12 @@ RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=19)
 	// 502<C_BINDER_MOJO_NEWLINE>	};
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=31)
 	// Enum with name but no values  ( empty enum ) 
-	WhitespaceNode(c_parent_idx=0, c_current_idx=32, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
 	EnumNode(c_parent_idx=0, c_current_idx=33, c_child_idxs=(34), node_state=4 (COMPLETED), name='Empty')
 	enum Empty
 	ScopeNode(c_parent_idx=33, c_current_idx=34, node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='EnumNode')
 	{ <C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	};
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=35)
 	// Enum with hex values and comments
-	WhitespaceNode(c_parent_idx=0, c_current_idx=36, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
 	EnumNode(c_parent_idx=0, c_current_idx=37, c_child_idxs=(38), node_state=4 (COMPLETED), name='Flags')
 	enum Flags
 	ScopeNode(c_parent_idx=37, c_current_idx=38, c_child_idxs=(39, 40, 41, 42, 43, 44), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='EnumNode')
@@ -89,8 +79,6 @@ RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 8, 9, ...) len=19)
 	// Execute permission<C_BINDER_MOJO_NEWLINE>	};
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=45)
 	// Enum with byte values
-	WhitespaceNode(c_parent_idx=0, c_current_idx=46, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
 	EnumNode(c_parent_idx=0, c_current_idx=47, c_child_idxs=(48), node_state=4 (COMPLETED), name='ByteValues')
 	enum ByteValues
 	ScopeNode(c_parent_idx=47, c_current_idx=48, c_child_idxs=(49, 50, 51, 52), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='EnumNode')

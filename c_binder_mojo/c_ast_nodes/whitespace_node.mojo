@@ -37,6 +37,8 @@ struct WhitespaceNode(NodeAstLike):
     """
 
     alias __name__ = "WhitespaceNode"
+    alias RENDER_SELF = False
+    # The indices for this node in the AST
     var _indicies: ArcPointer[NodeIndices]
     var _token_bundles: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
@@ -216,7 +218,10 @@ struct WhitespaceNode(NodeAstLike):
         Returns:
             String representation of this node.
         """
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        if self.RENDER_SELF:
+            return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        else:
+            return ""
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

@@ -61,12 +61,18 @@ fn default_to_string(
     module_interface: ModuleInterface,
     just_code: Bool = False,
     indent_level: Int = 0,
+    children_indent_level: Int = 0,
+    newline_before_children: Bool = False,
+    newline_after_children: Bool = False,
 ) -> String:
     """Default string conversion for nodes.
 
     Args:
         node: The node to convert to a string.
         module_interface: The tree interface to use for the node.
+        just_code: If True, only output code content (no metadata).
+        indent_level: The indentation level for the parent node.
+        children_indent_level: The indentation level for the children nodes. If 0, will use indent_level.
 
     Format when just_code=False:
         NodeName >>> actual content
@@ -76,8 +82,12 @@ fn default_to_string(
     var s = String()
     var indent = String()
 
+    _children_indent_level = children_indent_level
     if indent_level > 0:
         indent = "\t" * indent_level
+        # If children_indent_level is not set, use the indent_level
+        if children_indent_level == 0:
+            _children_indent_level = indent_level
 
     if not just_code:
         if indent_level != 0:
@@ -91,7 +101,11 @@ fn default_to_string(
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
-        s += string_children(node, just_code, module_interface, indent_level)
+        if newline_before_children:
+            s += "\n" + indent
+        s += string_children(node, just_code, module_interface, _children_indent_level)
+        if newline_after_children:
+            s += "\n" + indent
     s += node.token_bundles_tail().join(" ",indent)
     return s
 

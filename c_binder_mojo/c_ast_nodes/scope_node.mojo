@@ -64,7 +64,7 @@ struct ScopeNode(NodeAstLike):
         self._node_state = NodeState.INITIALIZING
         self._parent_type = parent_type
         self._token_bundles[].append(token_bundle)
-        self._token_bundles[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token_bundle.row_num, 0))
+        # self._token_bundles[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token_bundle.row_num, 0))
 
     @staticmethod
     fn accept(
@@ -172,7 +172,7 @@ struct ScopeNode(NodeAstLike):
             if not token.is_whitespace():
                 print("ERROR: Destroying tokens but token is not whitespace")
         if self._node_state == NodeState.COLLECTING_TAIL_TOKENS:
-            self._token_bundles_tail[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token.row_num, 0))
+            # self._token_bundles_tail[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token.row_num, 0))
             self._token_bundles_tail[].append(token)
             self._node_state = NodeState.COMPLETED
 
@@ -239,7 +239,15 @@ struct ScopeNode(NodeAstLike):
         Returns:
             A string representation of this node.
         """
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        return default_to_string(
+            AstNode(self), 
+            module_interface, 
+            just_code=just_code, 
+            indent_level=parent_indent_level, 
+            children_indent_level=parent_indent_level + 1,
+            newline_before_children=True,
+            newline_after_children=True
+        )
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

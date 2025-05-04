@@ -62,6 +62,7 @@ fn default_to_string(
     just_code: Bool = False,
     indent_level: Int = 0,
     children_indent_level: Int = 0,
+    space_before_code: Bool = False,
     newline_before_children: Bool = False,
     newline_after_children: Bool = False,
     newline_after_tail: Bool = False,
@@ -94,7 +95,8 @@ fn default_to_string(
         if indent_level != 0:
             s += '\n'
         s += indent + node.name(include_sig=True) + "\n"
-    
+    if space_before_code:
+        s += " "
     # if not node.token_bundles()[0].is_newline():
     if len(node.token_bundles()) > 0:
         s += indent

@@ -104,11 +104,6 @@ struct MacroDefineValueNode(NodeAstLike):
     fn determine_token_flow(
         mut self, token: TokenBundle, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        if token.token == CTokens.LINE_CONTINUATION:
-            self._is_line_continuation = True
-        elif self._is_line_continuation and token.row_num not in self._row_nums:
-            self._row_nums.append(token.row_num)
-            self._is_line_continuation = False
 
         if token.is_newline():
             self._node_state = NodeState.COMPLETED
@@ -174,7 +169,7 @@ struct MacroDefineValueNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level, space_before_code=True)
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

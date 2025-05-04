@@ -1,5 +1,5 @@
-RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=37, mojo_child_idxs=(1, 2, 3, 4, 6, ...) len=37)
-PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 4, 5, ...) len=37, node_state=4 (COMPLETED))
+RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=31, mojo_child_idxs=(1, 2, 3, 4, 6, ...) len=31)
+PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 4, 5, ...) len=31, node_state=4 (COMPLETED))
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
 # Empty defines  ( no value )  
 WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=1)
@@ -88,19 +88,7 @@ MacroDefineNode(c_parent_idx=0, c_current_idx=37, mojo_parent_idx=0, mojo_curren
 alias MULTILINE_STRING 
 MacroDefineValueNode(c_parent_idx=37, c_current_idx=38, mojo_parent_idx=39, mojo_current_idx=40, node_state=4 (COMPLETED))
 = "This is a long string that \ 
+    continues on the next line"  
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=39, mojo_parent_idx=0, mojo_current_idx=41, n_tokens=5)
+WhitespaceNode(c_parent_idx=0, c_current_idx=39, mojo_parent_idx=0, mojo_current_idx=41, n_tokens=1)
 <C_BINDER_MOJO_NEWLINE> 
-    
-PlaceHolderNode(c_parent_idx=0, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=42, node_state=4 (COMPLETED))
-continues 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=43, node_state=4 (COMPLETED))
-on 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=44, node_state=4 (COMPLETED))
-the 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=43, mojo_parent_idx=0, mojo_current_idx=45, node_state=4 (COMPLETED))
-next 
-PlaceHolderNode(c_parent_idx=0, c_current_idx=44, mojo_parent_idx=0, mojo_current_idx=46, node_state=4 (COMPLETED))
-line" 
-WhitespaceNode(c_parent_idx=0, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=47, n_tokens=2)
- <C_BINDER_MOJO_NEWLINE> 

@@ -32,14 +32,7 @@ alias BUFFER_SIZE = ( 1024 * 2 )
  <C_BINDER_MOJO_NEWLINE> 
 # Define with line continuation 
 <C_BINDER_MOJO_NEWLINE> 
-alias MULTILINE_STRING = "This is a long string that \ 
+alias MULTILINE_STRING = "This is a long string that \     continues on the next line"  
 <C_BINDER_MOJO_NEWLINE> 
-    
-continues 
-on 
-the 
-next 
-line" 
- <C_BINDER_MOJO_NEWLINE> 
 fn main():
     pass

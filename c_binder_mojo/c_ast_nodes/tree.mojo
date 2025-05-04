@@ -180,7 +180,7 @@ fn log_state_transition(
         current_node.indicies().c_current_idx
     )
     var indent = String()
-    for i in range(n_parents):
+    for _ in range(n_parents):
         indent += "\t"
 
     # Format node info

@@ -239,6 +239,7 @@ struct ScopeNode(NodeAstLike):
         Returns:
             A string representation of this node.
         """
+        print("scope node parent_indent_level: " + String(parent_indent_level))
         return default_to_string(
             AstNode(self), 
             module_interface, 
@@ -246,7 +247,9 @@ struct ScopeNode(NodeAstLike):
             indent_level=parent_indent_level, 
             children_indent_level=parent_indent_level + 1,
             newline_before_children=True,
-            newline_after_children=False
+            newline_after_children=True,
+            indent_before_token_bundles=True,
+            print_parent_level=True
         )
 
     fn scope_level(

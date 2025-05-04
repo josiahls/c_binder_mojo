@@ -1,20 +1,20 @@
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 12))
     └─ Path: RootNode
     └─ Current C_Node: 'RootNode'
     └─ Nodes: 1 active, 0 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 12))
     └─ Path: RootNode
     └─ Current C_Node: 'RootNode'
     └─ Nodes: 1 active, 0 complete
-tree.mojo:215 - INFO: [Depth:1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 12), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
     └─ Current C_Node: 'RootNode'
     └─ Nodes: 1 active, 1 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 12), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 1 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 12), mojo_child_idxs=(1))
     └─ Path: RootNode
     └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 1 active, 1 complete
@@ -26,7 +26,7 @@ tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode
     └─ Path: RootNode -> SingleLineCommentNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 2 active, 1 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 12), mojo_child_idxs=(1, 2))
     └─ Path: RootNode
     └─ Current C_Node: 'WhitespaceNode'
     └─ Nodes: 1 active, 2 complete
@@ -38,463 +38,115 @@ tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_pare
     └─ Path: RootNode -> WhitespaceNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 1 active, 3 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 12), mojo_child_idxs=(1, 2, 3))
     └─ Path: RootNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 1 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), struct_name=Point)
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), struct_name=Complex)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'StructNode'
     └─ Nodes: 2 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), struct_name=Point)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), struct_name=Complex)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 2 active, 3 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6))
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7, 8))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'ScopeNode'
     └─ Nodes: 3 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6))
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7, 8))
     └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
+    └─ Current C_Node: 'SingleLineCommentNode'
     └─ Nodes: 3 active, 3 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=4, c_current_idx=5, mojo_parent_idx=5, mojo_current_idx=6, field_name=x, field_type=int)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			SingleLineCommentNode(c_parent_idx=4, c_current_idx=5, mojo_parent_idx=5, mojo_current_idx=6)
+    └─ Path: RootNode -> StructNode -> ScopeNode -> SingleLineCommentNode
+    └─ Current C_Node: 'SingleLineCommentNode'
+    └─ Nodes: 4 active, 3 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=4, c_current_idx=5, mojo_parent_idx=5, mojo_current_idx=6)
+    └─ Path: RootNode -> StructNode -> ScopeNode -> SingleLineCommentNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=4, c_current_idx=5, mojo_parent_idx=5, mojo_current_idx=6, field_name=x, field_type=int)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 3 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6), mojo_child_idxs=(6))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7, 8), mojo_child_idxs=(6))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 3 active, 4 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=4, c_current_idx=6, mojo_parent_idx=5, mojo_current_idx=7, field_name=y, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=4, c_current_idx=6, mojo_parent_idx=5, mojo_current_idx=7, field_name=id, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
     └─ Nodes: 4 active, 4 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=4, c_current_idx=6, mojo_parent_idx=5, mojo_current_idx=7, field_name=y, field_type=int)
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=4, c_current_idx=6, mojo_parent_idx=5, mojo_current_idx=7, field_name=id, field_type=int)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructNode'
+    └─ Current C_Node: 'MultiLineCommentNode'
     └─ Nodes: 4 active, 4 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6), mojo_child_idxs=(6, 7))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7, 8), mojo_child_idxs=(6, 7))
     └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructNode'
+    └─ Current C_Node: 'MultiLineCommentNode'
     └─ Nodes: 3 active, 5 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), mojo_child_idxs=(5), struct_name=Point)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 2 active, 6 complete
-tree.mojo:215 - INFO: [Depth:-3] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4))
-    └─ Path: RootNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 1 active, 7 complete
-tree.mojo:215 - INFO: [Depth:-2] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, c_child_idxs=(8), struct_name=Person)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 2 active, 7 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, c_child_idxs=(8), struct_name=Person)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 2 active, 7 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=7, c_current_idx=8, mojo_parent_idx=8, mojo_current_idx=9, c_child_idxs=(9, 10))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 3 active, 7 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=7, c_current_idx=8, mojo_parent_idx=8, mojo_current_idx=9, c_child_idxs=(9, 10))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 7 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=8, c_current_idx=9, mojo_parent_idx=9, mojo_current_idx=10, field_name=name, field_type=char*)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 7 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=8, c_current_idx=9, mojo_parent_idx=9, mojo_current_idx=10, field_name=name, field_type=char*)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 7 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=7, c_current_idx=8, mojo_parent_idx=8, mojo_current_idx=9, c_child_idxs=(9, 10), mojo_child_idxs=(10))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 8 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=8, c_current_idx=10, mojo_parent_idx=9, mojo_current_idx=11, field_name=age, field_type=int)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 8 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=8, c_current_idx=10, mojo_parent_idx=9, mojo_current_idx=11, field_name=age, field_type=int)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 4 active, 8 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=7, c_current_idx=8, mojo_parent_idx=8, mojo_current_idx=9, c_child_idxs=(9, 10), mojo_child_idxs=(10, 11))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 3 active, 9 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, c_child_idxs=(8), mojo_child_idxs=(9), struct_name=Person)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 2 active, 10 complete
-tree.mojo:215 - INFO: [Depth:-3] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8))
-    └─ Path: RootNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 1 active, 11 complete
-tree.mojo:215 - INFO: [Depth:-2] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 2 active, 11 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 2 active, 11 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, 12))
-    └─ Path: RootNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 12 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 13 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 1 active, 13 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=7)
-    └─ Path: RootNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 1 active, 13 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, c_child_idxs=(14), struct_name=Empty)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 2 active, 13 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, c_child_idxs=(14), struct_name=Empty)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 2 active, 13 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=13, c_current_idx=14, mojo_parent_idx=14, mojo_current_idx=15)
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 3 active, 13 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=13, c_current_idx=14, mojo_parent_idx=14, mojo_current_idx=15)
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 3 active, 13 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14, c_child_idxs=(14), mojo_child_idxs=(15), struct_name=Empty)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 2 active, 14 complete
-tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=8)
-    └─ Path: RootNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 1 active, 15 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 2 active, 15 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 2 active, 15 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=9)
-    └─ Path: RootNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 16 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 1 active, 17 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=10)
-    └─ Path: RootNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 1 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, c_child_idxs=(18), struct_name=Complex)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 2 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, c_child_idxs=(18), struct_name=Complex)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 2 active, 17 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19, 20, 21, 22, 23))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 3 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19, 20, 21, 22, 23))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 3 active, 17 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			SingleLineCommentNode(c_parent_idx=18, c_current_idx=19, mojo_parent_idx=19, mojo_current_idx=20)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 4 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			SingleLineCommentNode(c_parent_idx=18, c_current_idx=19, mojo_parent_idx=19, mojo_current_idx=20)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> SingleLineCommentNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 17 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19, 20, 21, 22, 23), mojo_child_idxs=(20))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 18 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=18, c_current_idx=20, mojo_parent_idx=19, mojo_current_idx=21, field_name=id, field_type=int)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 18 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=18, c_current_idx=20, mojo_parent_idx=19, mojo_current_idx=21, field_name=id, field_type=int)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 18 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19, 20, 21, 22, 23), mojo_child_idxs=(20, 21))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 19 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=18, c_current_idx=21, mojo_parent_idx=19, mojo_current_idx=22, field_name=value, field_type=float)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 19 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=18, c_current_idx=21, mojo_parent_idx=19, mojo_current_idx=22, field_name=value, field_type=float)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'MultiLineCommentNode'
-    └─ Nodes: 4 active, 19 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19, 20, 21, 22, 23), mojo_child_idxs=(20, 21, 22))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'MultiLineCommentNode'
-    └─ Nodes: 3 active, 20 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			MultiLineCommentNode(c_parent_idx=18, c_current_idx=22, mojo_parent_idx=19, mojo_current_idx=23)
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			MultiLineCommentNode(c_parent_idx=4, c_current_idx=7, mojo_parent_idx=5, mojo_current_idx=8)
     └─ Path: RootNode -> StructNode -> ScopeNode -> MultiLineCommentNode
     └─ Current C_Node: 'MultiLineCommentNode'
-    └─ Nodes: 4 active, 20 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			MultiLineCommentNode(c_parent_idx=18, c_current_idx=22, mojo_parent_idx=19, mojo_current_idx=23)
+    └─ Nodes: 4 active, 5 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			MultiLineCommentNode(c_parent_idx=4, c_current_idx=7, mojo_parent_idx=5, mojo_current_idx=8)
     └─ Path: RootNode -> StructNode -> ScopeNode -> MultiLineCommentNode
     └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 20 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19, 20, 21, 22, 23), mojo_child_idxs=(20, 21, 22, 23))
+    └─ Nodes: 4 active, 5 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7, 8), mojo_child_idxs=(6, 7, 8))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 21 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=18, c_current_idx=23, mojo_parent_idx=19, mojo_current_idx=24, c_child_idxs=(24), field_name=nested, field_type=Inner)
+    └─ Nodes: 3 active, 6 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=4, c_current_idx=8, mojo_parent_idx=5, mojo_current_idx=9, c_child_idxs=(9), field_name=nested, field_type=Inner)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 21 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=18, c_current_idx=23, mojo_parent_idx=19, mojo_current_idx=24, c_child_idxs=(24), field_name=nested, field_type=Inner)
+    └─ Nodes: 4 active, 6 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=4, c_current_idx=8, mojo_parent_idx=5, mojo_current_idx=9, c_child_idxs=(9), field_name=nested, field_type=Inner)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructNode'
-    └─ Nodes: 4 active, 21 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				StructNode(c_parent_idx=23, c_current_idx=24, mojo_parent_idx=24, mojo_current_idx=25, c_child_idxs=(25), struct_name=Inner)
+    └─ Nodes: 4 active, 6 complete
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				StructNode(c_parent_idx=8, c_current_idx=9, mojo_parent_idx=9, mojo_current_idx=10, c_child_idxs=(10), struct_name=Inner)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode
     └─ Current C_Node: 'StructNode'
-    └─ Nodes: 5 active, 21 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructNode(c_parent_idx=23, c_current_idx=24, mojo_parent_idx=24, mojo_current_idx=25, c_child_idxs=(25), struct_name=Inner)
+    └─ Nodes: 5 active, 6 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 				StructNode(c_parent_idx=8, c_current_idx=9, mojo_parent_idx=9, mojo_current_idx=10, c_child_idxs=(10), struct_name=Inner)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode
     └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 5 active, 21 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 					ScopeNode(c_parent_idx=24, c_current_idx=25, mojo_parent_idx=25, mojo_current_idx=26, c_child_idxs=(26))
+    └─ Nodes: 5 active, 6 complete
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 					ScopeNode(c_parent_idx=9, c_current_idx=10, mojo_parent_idx=10, mojo_current_idx=11, c_child_idxs=(11))
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 6 active, 21 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 					ScopeNode(c_parent_idx=24, c_current_idx=25, mojo_parent_idx=25, mojo_current_idx=26, c_child_idxs=(26))
+    └─ Nodes: 6 active, 6 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 					ScopeNode(c_parent_idx=9, c_current_idx=10, mojo_parent_idx=10, mojo_current_idx=11, c_child_idxs=(11))
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 6 active, 21 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 						StructFieldNode(c_parent_idx=25, c_current_idx=26, mojo_parent_idx=26, mojo_current_idx=27, field_name=data, field_type=double)
+    └─ Nodes: 6 active, 6 complete
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 						StructFieldNode(c_parent_idx=10, c_current_idx=11, mojo_parent_idx=11, mojo_current_idx=12, field_name=data, field_type=double)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 7 active, 21 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 						StructFieldNode(c_parent_idx=25, c_current_idx=26, mojo_parent_idx=26, mojo_current_idx=27, field_name=data, field_type=double)
+    └─ Nodes: 7 active, 6 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 						StructFieldNode(c_parent_idx=10, c_current_idx=11, mojo_parent_idx=11, mojo_current_idx=12, field_name=data, field_type=double)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 7 active, 21 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 					ScopeNode(c_parent_idx=24, c_current_idx=25, mojo_parent_idx=25, mojo_current_idx=26, c_child_idxs=(26), mojo_child_idxs=(27))
+    └─ Current C_Node: 'EndFileNode'
+    └─ Nodes: 7 active, 6 complete
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 					ScopeNode(c_parent_idx=9, c_current_idx=10, mojo_parent_idx=10, mojo_current_idx=11, c_child_idxs=(11), mojo_child_idxs=(12))
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 6 active, 22 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 				StructNode(c_parent_idx=23, c_current_idx=24, mojo_parent_idx=24, mojo_current_idx=25, c_child_idxs=(25), mojo_child_idxs=(26), struct_name=Inner)
+    └─ Current C_Node: 'EndFileNode'
+    └─ Nodes: 6 active, 7 complete
+tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 				StructNode(c_parent_idx=8, c_current_idx=9, mojo_parent_idx=9, mojo_current_idx=10, c_child_idxs=(10), mojo_child_idxs=(11), struct_name=Inner)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode -> StructNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 5 active, 23 complete
-tree.mojo:215 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=18, c_current_idx=23, mojo_parent_idx=19, mojo_current_idx=24, c_child_idxs=(24), mojo_child_idxs=(25), field_name=nested, field_type=Inner)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 4 active, 24 complete
-tree.mojo:215 - INFO: [Depth:-4] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=17, c_current_idx=18, mojo_parent_idx=18, mojo_current_idx=19, c_child_idxs=(19, 20, 21, 22, 23), mojo_child_idxs=(20, 21, 22, 23, 24))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 3 active, 25 complete
-tree.mojo:215 - INFO: [Depth:-5] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18, c_child_idxs=(18), mojo_child_idxs=(19), struct_name=Complex)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 2 active, 26 complete
-tree.mojo:215 - INFO: [Depth:-6] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=11)
-    └─ Path: RootNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 1 active, 27 complete
-tree.mojo:215 - INFO: [Depth:-5] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=12)
-    └─ Path: RootNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 28 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'TypedefNode'
-    └─ Nodes: 1 active, 29 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=13)
-    └─ Path: RootNode
-    └─ Current C_Node: 'TypedefNode'
-    └─ Nodes: 1 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefNode(c_parent_idx=0, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30, c_child_idxs=(30), type_name=Flags)
-    └─ Path: RootNode -> TypedefNode
-    └─ Current C_Node: 'TypedefNode'
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	TypedefNode(c_parent_idx=0, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30, c_child_idxs=(30), type_name=Flags)
-    └─ Path: RootNode -> TypedefNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 2 active, 29 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=30, mojo_current_idx=31, c_child_idxs=(31), struct_name=)
-    └─ Path: RootNode -> TypedefNode -> StructNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 3 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		StructNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=30, mojo_current_idx=31, c_child_idxs=(31), struct_name=)
-    └─ Path: RootNode -> TypedefNode -> StructNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 3 active, 29 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=30, c_current_idx=31, mojo_parent_idx=31, mojo_current_idx=32, c_child_idxs=(32))
-    └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 4 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			ScopeNode(c_parent_idx=30, c_current_idx=31, mojo_parent_idx=31, mojo_current_idx=32, c_child_idxs=(32))
-    └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 29 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 				StructFieldNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=32, mojo_current_idx=33, field_name=flags, field_type=unsigned)
-    └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 5 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 				StructFieldNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=32, mojo_current_idx=33, field_name=flags, field_type=unsigned)
-    └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 5 active, 29 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 			ScopeNode(c_parent_idx=30, c_current_idx=31, mojo_parent_idx=31, mojo_current_idx=32, c_child_idxs=(32), mojo_child_idxs=(33))
-    └─ Path: RootNode -> TypedefNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 4 active, 30 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 		StructNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=30, mojo_current_idx=31, c_child_idxs=(31), mojo_child_idxs=(32), struct_name=)
-    └─ Path: RootNode -> TypedefNode -> StructNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 3 active, 31 complete
-tree.mojo:215 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 	TypedefNode(c_parent_idx=0, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30, c_child_idxs=(30), mojo_child_idxs=(31), type_name=Flags)
-    └─ Path: RootNode -> TypedefNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 2 active, 32 complete
-tree.mojo:215 - INFO: [Depth:-4] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=14)
-    └─ Path: RootNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 33 complete
-tree.mojo:215 - INFO: [Depth:-3] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=33, mojo_parent_idx=0, mojo_current_idx=34, n_tokens=4)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=33, mojo_parent_idx=0, mojo_current_idx=34, n_tokens=4)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 1 active, 34 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=15)
-    └─ Path: RootNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 1 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=35)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'SingleLineCommentNode'
-    └─ Nodes: 2 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=35)
-    └─ Path: RootNode -> SingleLineCommentNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 2 active, 34 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=16)
-    └─ Path: RootNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	WhitespaceNode(c_parent_idx=0, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'WhitespaceNode'
-    └─ Nodes: 1 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	WhitespaceNode(c_parent_idx=0, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=36, n_tokens=1)
-    └─ Path: RootNode -> WhitespaceNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 1 active, 36 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=17)
-    └─ Path: RootNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 1 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	StructNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37, c_child_idxs=(37), struct_name=BitFields)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'StructNode'
-    └─ Nodes: 2 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	StructNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37, c_child_idxs=(37), struct_name=BitFields)
-    └─ Path: RootNode -> StructNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 2 active, 36 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, c_child_idxs=(38, 39, 40))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'ScopeNode'
-    └─ Nodes: 3 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, c_child_idxs=(38, 39, 40))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 36 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=37, c_current_idx=38, mojo_parent_idx=38, mojo_current_idx=39, field_name=a, field_type=unsigned)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=37, c_current_idx=38, mojo_parent_idx=38, mojo_current_idx=39, field_name=a, field_type=unsigned)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 36 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, c_child_idxs=(38, 39, 40), mojo_child_idxs=(39))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 37 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=37, c_current_idx=39, mojo_parent_idx=38, mojo_current_idx=40, field_name=b, field_type=unsigned)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 37 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=37, c_current_idx=39, mojo_parent_idx=38, mojo_current_idx=40, field_name=b, field_type=unsigned)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 37 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		ScopeNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, c_child_idxs=(38, 39, 40), mojo_child_idxs=(39, 40))
-    └─ Path: RootNode -> StructNode -> ScopeNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 3 active, 38 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			StructFieldNode(c_parent_idx=37, c_current_idx=40, mojo_parent_idx=38, mojo_current_idx=41, field_name=c, field_type=unsigned)
-    └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
-    └─ Current C_Node: 'StructFieldNode'
-    └─ Nodes: 4 active, 38 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=37, c_current_idx=40, mojo_parent_idx=38, mojo_current_idx=41, field_name=c, field_type=unsigned)
+    └─ Current C_Node: 'EndFileNode'
+    └─ Nodes: 5 active, 8 complete
+tree.mojo:215 - INFO: [Depth:-3] 2 (PASS_TO_PARENT)|-----| 			StructFieldNode(c_parent_idx=4, c_current_idx=8, mojo_parent_idx=5, mojo_current_idx=9, c_child_idxs=(9), mojo_child_idxs=(10), field_name=nested, field_type=Inner)
     └─ Path: RootNode -> StructNode -> ScopeNode -> StructFieldNode
     └─ Current C_Node: 'EndFileNode'
-    └─ Nodes: 4 active, 38 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, c_child_idxs=(38, 39, 40), mojo_child_idxs=(39, 40, 41))
+    └─ Nodes: 4 active, 9 complete
+tree.mojo:215 - INFO: [Depth:-4] 2 (PASS_TO_PARENT)|-----| 		ScopeNode(c_parent_idx=3, c_current_idx=4, mojo_parent_idx=4, mojo_current_idx=5, c_child_idxs=(5, 6, 7, 8), mojo_child_idxs=(6, 7, 8, 9))
     └─ Path: RootNode -> StructNode -> ScopeNode
     └─ Current C_Node: 'EndFileNode'
-    └─ Nodes: 3 active, 39 complete
-tree.mojo:215 - INFO: [Depth:-2] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=37, c_child_idxs=(37), mojo_child_idxs=(38), struct_name=BitFields)
+    └─ Nodes: 3 active, 10 complete
+tree.mojo:215 - INFO: [Depth:-5] 2 (PASS_TO_PARENT)|-----| 	StructNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, c_child_idxs=(4), mojo_child_idxs=(5), struct_name=Complex)
     └─ Path: RootNode -> StructNode
     └─ Current C_Node: 'EndFileNode'
-    └─ Nodes: 2 active, 40 complete
-tree.mojo:215 - INFO: [Depth:-3] 5 (END_FILE)|-----------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18, mojo_child_idxs=(1, 2, 3, 4, 8, ...) len=18)
+    └─ Nodes: 2 active, 11 complete
+tree.mojo:215 - INFO: [Depth:-6] 5 (END_FILE)|-----------| RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 12), mojo_child_idxs=(1, 2, 3, 4))
     └─ Path: RootNode
     └─ Current C_Node: 'EndFileNode'
-    └─ Nodes: 0 active, 42 complete
+    └─ Nodes: 0 active, 13 complete

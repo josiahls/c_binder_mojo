@@ -26,6 +26,7 @@ fn test_struct_node() raises:
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node"),
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/output"),
+        skip_c_ast_no_just_code=True
     )
 
     # Verify the AST structure

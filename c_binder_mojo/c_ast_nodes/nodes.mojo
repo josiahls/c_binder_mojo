@@ -66,6 +66,10 @@ fn default_to_string(
     newline_before_children: Bool = False,
     newline_after_children: Bool = False,
     newline_after_tail: Bool = False,
+    indent_before_token_bundles: Bool = False,
+    indent_before_children: Bool = False,
+    indent_after_children: Bool = False,
+    print_parent_level: Bool = False,
 ) -> String:
     """Default string conversion for nodes.
 
@@ -83,39 +87,43 @@ fn default_to_string(
     """
     var s = String()
     var indent = String()
-
-    _children_indent_level = children_indent_level
+    var children_indent = String()
     if indent_level > 0:
         indent = "\t" * indent_level
-        # If children_indent_level is not set, use the indent_level
-        if children_indent_level == 0:
-            _children_indent_level = indent_level
+    if children_indent_level > 0:
+        children_indent = "\t" * children_indent_level
 
+    parent_level = String("(parent_indent_level: " + String(indent_level) + ", children_indent_level: " + String(children_indent_level) + ")")
     if not just_code:
         if indent_level != 0:
             s += '\n'
-        s += indent + node.name(include_sig=True) + "\n"
+        s += indent + node.name(include_sig=True) + parent_level + "\n"
+    if print_parent_level:
+        s += indent + (parent_level) + '\n'
     if space_before_code:
         s += " "
-    # if not node.token_bundles()[0].is_newline():
-    if len(node.token_bundles()) > 0:
+    if indent_before_token_bundles:
         s += indent
     s += node.token_bundles().join(" ", indent)
 
     # Add children
     if len(node.indicies().c_child_idxs) > 0:
         if newline_before_children:
-            s += "\n" + indent
-        s += string_children(node, just_code, module_interface, _children_indent_level)
+            s += "\n"
+        if indent_before_children:
+            s += children_indent
+        s += string_children(node, just_code, module_interface, children_indent_level)
         if newline_after_children:
-            s += "\n" + indent
+            s += "\n"
+        if indent_after_children:
+            s += indent
     s += node.token_bundles_tail().join(" ",indent)
     if newline_after_tail:
         s += "\n"
     return s
 
 
-trait NodeAstLike(CollectionElement, Stringable):
+trait NodeAstLike(Copyable & Movable & Stringable):
     alias __name__: String
 
     @staticmethod
@@ -185,7 +193,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 
 
 @value
-struct AstNode(CollectionElement):
+struct AstNode(Copyable & Movable):
     alias type = AstNodeVariant
     var node: ArcPointer[Self.type]
 

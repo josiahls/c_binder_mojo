@@ -1,19 +1,16 @@
-// Basic struct declarations
-struct Point{
-	int x ;<C_BINDER_MOJO_NEWLINE>		int y ;<C_BINDER_MOJO_NEWLINE>	
-}; <C_BINDER_MOJO_NEWLINE>struct Person{
-	char* name ;<C_BINDER_MOJO_NEWLINE>		int age ;<C_BINDER_MOJO_NEWLINE>	
-}; <C_BINDER_MOJO_NEWLINE>// Empty struct
-struct Empty{}; <C_BINDER_MOJO_NEWLINE>// Multi-line struct with comments
-struct Complex{
-	// Basic types
-	int id ;<C_BINDER_MOJO_NEWLINE>		float value ;<C_BINDER_MOJO_NEWLINE>		/* Nested struct */	struct Inner	{
-			double data ;<C_BINDER_MOJO_NEWLINE>		
-	}nested ; <C_BINDER_MOJO_NEWLINE>	
-}; <C_BINDER_MOJO_NEWLINE>// Anonymous struct in typedef
-typedefstruct{
-	unsigned char flags ;<C_BINDER_MOJO_NEWLINE>	
-}Flags// Struct with bit fields
-struct BitFields{
-	unsigned int a : 1 ;<C_BINDER_MOJO_NEWLINE>		unsigned int b : 2 ;<C_BINDER_MOJO_NEWLINE>		unsigned int c : 3 ;<C_BINDER_MOJO_NEWLINE>	
-}; <C_BINDER_MOJO_NEWLINE>
+// Multi-line struct with comments
+struct Complex
+(parent_indent_level: 0, children_indent_level: 1)
+{
+// Basic types
+int id ;
+/* Nested struct */
+struct Inner
+(parent_indent_level: 0, children_indent_level: 1)
+{
+double data ;
+
+}
+nested ;
+
+};

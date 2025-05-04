@@ -187,12 +187,12 @@ struct StructFieldNode(NodeAstLike):
         """
         if token.token == "struct":
             return
+        if token.is_newline():
+            return
         if self._is_inner_struct:
             self._token_bundles_tail[].append(token)
         else:
             self._token_bundles[].append(token)
-        if self._node_state == NodeState.COMPLETED:
-            self._token_bundles_tail[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token.row_num, 0))
 
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""
@@ -256,7 +256,13 @@ struct StructFieldNode(NodeAstLike):
         Returns:
             String representation of this node.
         """
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        return default_to_string(
+            AstNode(self), 
+            module_interface, 
+            just_code=just_code, 
+            indent_level=parent_indent_level,
+            newline_after_tail=True
+        )
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

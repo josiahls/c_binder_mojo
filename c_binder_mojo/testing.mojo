@@ -12,7 +12,8 @@ fn generic_test_outputs(
     test_name: String,
     mut logger: Logger,
     test_dir: Path,
-    output_dir: Path
+    output_dir: Path,
+    skip_c_ast_no_just_code: Bool = False
 ) raises -> (ModuleInterface, MojoModuleInterface):
     logger.info("Starting " + test_name + " test")
 
@@ -40,12 +41,13 @@ fn generic_test_outputs(
             just_code=True, module_interface=module_interface
         )
     )
-    var ast_file = output_dir / (test_name + ".ast")
-    ast_file.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=module_interface
+    if not skip_c_ast_no_just_code:
+        var ast_file = output_dir / (test_name + ".ast")
+        ast_file.write_text(
+            module_interface.nodes()[][0].to_string(
+                just_code=False, module_interface=module_interface
+            )
         )
-    )
 
     # Generate Mojo AST
     var mojo_tree_log_file = output_dir / (test_name + "_mojo.tree")

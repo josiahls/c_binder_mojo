@@ -1,42 +1,42 @@
 RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=26)
-	IncludeNode(c_parent_idx=0, c_current_idx=1, node_state=4 (COMPLETED), path='stdio.h', system=True)
-	#include <stdio.h>
+	IncludeNode(c_parent_idx=0, c_current_idx=1, node_state=4 (COMPLETED), path='stdio.h', system=True)(parent_indent_level: 1, children_indent_level: 0)
+#include <stdio.h>
 
-	IncludeNode(c_parent_idx=0, c_current_idx=3, node_state=4 (COMPLETED), path='stdlib.h', system=True)
-	#include <stdlib.h>
+	IncludeNode(c_parent_idx=0, c_current_idx=3, node_state=4 (COMPLETED), path='stdlib.h', system=True)(parent_indent_level: 1, children_indent_level: 0)
+#include <stdlib.h>
 
-	IncludeNode(c_parent_idx=0, c_current_idx=5, node_state=4 (COMPLETED), path='my_header.h', system=False)
-	#include "my_header.h"
+	IncludeNode(c_parent_idx=0, c_current_idx=5, node_state=4 (COMPLETED), path='my_header.h', system=False)(parent_indent_level: 1, children_indent_level: 0)
+#include "my_header.h"
 
-	IncludeNode(c_parent_idx=0, c_current_idx=7, node_state=4 (COMPLETED), path='../relative/path.h', system=False)
-	#include "../relative/path.h"
+	IncludeNode(c_parent_idx=0, c_current_idx=7, node_state=4 (COMPLETED), path='../relative/path.h', system=False)(parent_indent_level: 1, children_indent_level: 0)
+#include "../relative/path.h"
 
-	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
-	// Comment between includes
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)(parent_indent_level: 1, children_indent_level: 0)
+// Comment between includes
 
-	IncludeNode(c_parent_idx=0, c_current_idx=11, node_state=4 (COMPLETED), path='string.h', system=True)
-	#include <string.h>
+	IncludeNode(c_parent_idx=0, c_current_idx=11, node_state=4 (COMPLETED), path='string.h', system=True)(parent_indent_level: 1, children_indent_level: 0)
+#include <string.h>
 
-	MultiLineCommentNode(c_parent_idx=0, c_current_idx=13)
-	/* Multi-line comment <C_BINDER_MOJO_NEWLINE>	   between includes */
+	MultiLineCommentNode(c_parent_idx=0, c_current_idx=13)(parent_indent_level: 1, children_indent_level: 0)
+/* Multi-line comment <C_BINDER_MOJO_NEWLINE>	   between includes */
 
-	IncludeNode(c_parent_idx=0, c_current_idx=15, node_state=4 (COMPLETED), path='local/header.h', system=False)
-	#include "local/header.h"
+	IncludeNode(c_parent_idx=0, c_current_idx=15, node_state=4 (COMPLETED), path='local/header.h', system=False)(parent_indent_level: 1, children_indent_level: 0)
+#include "local/header.h"
 
-	SingleLineCommentNode(c_parent_idx=0, c_current_idx=17)
-	// Include with extra whitespace
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=17)(parent_indent_level: 1, children_indent_level: 0)
+// Include with extra whitespace
 
-	IncludeNode(c_parent_idx=0, c_current_idx=19, node_state=4 (COMPLETED), path='math.h', system=True)
-	#include    <math.h>
+	IncludeNode(c_parent_idx=0, c_current_idx=19, node_state=4 (COMPLETED), path='math.h', system=True)(parent_indent_level: 1, children_indent_level: 0)
+#include    <math.h>
 
-	SingleLineCommentNode(c_parent_idx=0, c_current_idx=21)
-	// Include with trailing comment
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=21)(parent_indent_level: 1, children_indent_level: 0)
+// Include with trailing comment
 
-	IncludeNode(c_parent_idx=0, c_current_idx=23, node_state=4 (COMPLETED), path='time.h', system=True)
-	#include <time.h>
+	IncludeNode(c_parent_idx=0, c_current_idx=23, node_state=4 (COMPLETED), path='time.h', system=True)(parent_indent_level: 1, children_indent_level: 0)
+#include <time.h>
 
-	SingleLineCommentNode(c_parent_idx=0, c_current_idx=24)
-	// Time functions 
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=24)(parent_indent_level: 1, children_indent_level: 0)
+// Time functions 
 
-	EndFileNode(c_parent_idx=0, c_current_idx=26)
-	C_BINDER_MOJO_END_FILE
+	EndFileNode(c_parent_idx=0, c_current_idx=26)(parent_indent_level: 1, children_indent_level: 0)
+C_BINDER_MOJO_END_FILE

@@ -53,7 +53,7 @@ struct FunctionCallNode(NodeAstLike):
     var _args: List[String]  # Store argument tokens
     var _return_type: String
 
-    alias _builtin_functions = VariadicList[StringLiteral]("defined", "sizeof", "__alignof__")
+    alias _builtin_functions = VariadicList[StaticString]("defined", "sizeof", "__alignof__")
     
     # Built-in function registry
     # var _builtin_functions: List[String]

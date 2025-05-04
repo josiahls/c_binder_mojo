@@ -32,7 +32,7 @@ struct VariableNode(NodeAstLike):
     var _node_state: MessageableEnum
 
 
-    alias _builtin_datatypes = VariadicList[StringLiteral](
+    alias _builtin_datatypes = VariadicList[StaticString](
         "int", "float", "double", "char", "short", "long", "unsigned", "signed",
         "void", "bool", "struct", "union", "enum", "typedef", "static", "extern",
         "const", "volatile", "restrict", "inline")

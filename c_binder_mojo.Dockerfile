@@ -76,7 +76,7 @@ ENV C_BINDING_MOJO_TEST_MUJOCO="$HOME/mujoco"
 
 # Install magic and set up PATH in the same layer
 ENV PATH="/home/c_binder_mojo_user/.modular/bin:$PATH"
-RUN curl -ssL https://magic.modular.com/a2c69706-de8f-4d61-9e13-a10682899104 | bash 
+RUN curl -ssL https://magic.modular.com/d20f3cdf-1cd4-4e1f-9173-e84f90b8c257 | bash 
 
 # Add magic completion to bashrc - escape the $() so it's evaluated at runtime
 RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"

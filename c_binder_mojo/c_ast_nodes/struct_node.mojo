@@ -207,6 +207,8 @@ struct StructNode(NodeAstLike):
             token_flow: The determined token flow.
             module_interface: Interface to the AST.
         """
+        if token.is_newline():
+            return 
         if self._node_state == NodeState.COLLECTING_TOKENS:
             if len(self._token_bundles[]) == 1:
                 self._struct_name = token.token
@@ -221,7 +223,6 @@ struct StructNode(NodeAstLike):
 
         if token.token == CTokens.END_STATEMENT:
             self._node_state = NodeState.COMPLETED
-            self._token_bundles_tail[].append(TokenBundle(C_BINDER_MOJO_NEWLINE, token.row_num, 0))
             
     fn indicies(self) -> NodeIndices:
         """Get the indices for this node."""
@@ -290,7 +291,15 @@ struct StructNode(NodeAstLike):
         Returns:
             A string representation of this node.
         """
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        return default_to_string(
+            AstNode(self), 
+            module_interface, 
+            just_code=just_code, 
+            indent_level=parent_indent_level,
+            children_indent_level=parent_indent_level,
+            newline_before_children=True,
+            newline_after_tail=True
+        )
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

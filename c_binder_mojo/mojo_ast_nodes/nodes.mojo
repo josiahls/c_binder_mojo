@@ -164,7 +164,7 @@ fn default_to_string_just_code(
     return s
 
 
-trait NodeAstLike(CollectionElement, Stringable):
+trait NodeAstLike(Copyable & Movable, Stringable):
     alias __name__: String
 
     @staticmethod
@@ -234,7 +234,7 @@ trait NodeAstLike(CollectionElement, Stringable):
 
 
 @value
-struct AstNode(CollectionElement):
+struct AstNode(Copyable & Movable):
     alias type = AstNodeVariant
     var node: ArcPointer[Self.type]
 

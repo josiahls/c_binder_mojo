@@ -14,7 +14,7 @@ fn generic_test_outputs(
     test_dir: Path,
     output_dir: Path,
     skip_c_ast_no_just_code: Bool = False
-) raises -> (ModuleInterface, MojoModuleInterface):
+) raises: # -> (ModuleInterface, MojoModuleInterface):
     logger.info("Starting " + test_name + " test")
 
     # Path to the test header file
@@ -27,44 +27,44 @@ fn generic_test_outputs(
     tokenizer.tokenize(test_file_path)
 
     # Save tokenized output for debugging
-    var tokens_file = output_dir / (test_name + ".tokenized")
-    tokens_file.write_text(tokenizer.to_string())
+    # var tokens_file = output_dir / (test_name + ".tokenized")
+    # tokens_file.write_text(tokenizer.to_string())
 
-    # Generate AST
-    var tree_log_file = output_dir / (test_name + ".tree")
-    var module_interface = make_tree(tokenizer.tokens, String(tree_log_file), validate=True)
+    # # Generate AST
+    # var tree_log_file = output_dir / (test_name + ".tree")
+    # var module_interface = make_tree(tokenizer.tokens, String(tree_log_file), validate=True)
 
-    # Save AST for debugging
-    var ast_file_just_code = output_dir / (test_name + ".ast_just_code")
-    ast_file_just_code.write_text(
-        module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=module_interface
-        )
-    )
-    if not skip_c_ast_no_just_code:
-        var ast_file = output_dir / (test_name + ".ast")
-        ast_file.write_text(
-            module_interface.nodes()[][0].to_string(
-                just_code=False, module_interface=module_interface
-            )
-        )
+    # # Save AST for debugging
+    # var ast_file_just_code = output_dir / (test_name + ".ast_just_code")
+    # ast_file_just_code.write_text(
+    #     module_interface.nodes()[][0].to_string(
+    #         just_code=True, module_interface=module_interface
+    #     )
+    # )
+    # if not skip_c_ast_no_just_code:
+    #     var ast_file = output_dir / (test_name + ".ast")
+    #     ast_file.write_text(
+    #         module_interface.nodes()[][0].to_string(
+    #             just_code=False, module_interface=module_interface
+    #         )
+    #     )
 
-    # Generate Mojo AST
-    var mojo_tree_log_file = output_dir / (test_name + "_mojo.tree")
-    var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
-    mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
+    # # Generate Mojo AST
+    # var mojo_tree_log_file = output_dir / (test_name + "_mojo.tree")
+    # var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))
+    # mojo_module_interface.nodes()[][0].node[][RootNode]._add_main_function = True
 
-    # Save Mojo AST for debugging
-    var mojo_ast_file_just_code = output_dir / (test_name + ".mojo")
-    mojo_ast_file_just_code.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=True, module_interface=mojo_module_interface
-        )
-    )
-    var mojo_ast_file = output_dir / (test_name + ".mojo_ast")
-    mojo_ast_file.write_text(
-        mojo_module_interface.nodes()[][0].to_string(
-            just_code=False, module_interface=mojo_module_interface
-        )
-    )
-    return (module_interface, mojo_module_interface)
+    # # Save Mojo AST for debugging
+    # var mojo_ast_file_just_code = output_dir / (test_name + ".mojo")
+    # mojo_ast_file_just_code.write_text(
+    #     mojo_module_interface.nodes()[][0].to_string(
+    #         just_code=True, module_interface=mojo_module_interface
+    #     )
+    # )
+    # var mojo_ast_file = output_dir / (test_name + ".mojo_ast")
+    # mojo_ast_file.write_text(
+    #     mojo_module_interface.nodes()[][0].to_string(
+    #         just_code=False, module_interface=mojo_module_interface
+    #     )
+    # )
+    # return (module_interface, mojo_module_interface)

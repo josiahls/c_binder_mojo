@@ -531,24 +531,24 @@ struct Tokenizer:
         """
         var logger = Logger.get_default_logger("c_binder_mojo.common.tokenizer")
         logger.info("Tokenizing: " + String(path))
-        current_row_num = 0
-        lines = path.read_text().split("\n")
-        self.tokens.reserve(len(lines))
-        skip_newline = False
-        for line_ptr in lines:
-            line = line_ptr[]
-            col_num = 0
-            for token_string in self.tokenize_line(line):
-                token = TokenBundle(token_string[], current_row_num, col_num)
-                self.tokens.append(token)
-                if token.token == WhitespaceEnum.LINE_CONTINUATION:
-                    skip_newline = True
-                col_num += len(token_string[])
-            # Re add the newline token
-            if not skip_newline:
-                self.tokens.append(TokenBundle(C_BINDER_MOJO_NEWLINE, current_row_num, col_num))
-            current_row_num += 1
-            skip_newline = False
+        # current_row_num = 0
+        # lines = path.read_text().split("\n")
+        # self.tokens.reserve(len(lines))
+        # skip_newline = False
+        # for line_ptr in lines:
+        #     line = line_ptr[]
+        #     col_num = 0
+        #     for token_string in self.tokenize_line(line):
+        #         token = TokenBundle(token_string[], current_row_num, col_num)
+        #         self.tokens.append(token)
+        #         if token.token == WhitespaceEnum.LINE_CONTINUATION:
+        #             skip_newline = True
+        #         col_num += len(token_string[])
+        #     # Re add the newline token
+        #     if not skip_newline:
+        #         self.tokens.append(TokenBundle(C_BINDER_MOJO_NEWLINE, current_row_num, col_num))
+        #     current_row_num += 1
+        #     skip_newline = False
 
     fn to_string(self, make_flat: Bool = False) -> String:
         """Convert all tokens to a string representation.

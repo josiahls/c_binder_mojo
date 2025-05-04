@@ -64,6 +64,7 @@ fn default_to_string(
     children_indent_level: Int = 0,
     newline_before_children: Bool = False,
     newline_after_children: Bool = False,
+    newline_after_tail: Bool = False,
 ) -> String:
     """Default string conversion for nodes.
 
@@ -107,6 +108,8 @@ fn default_to_string(
         if newline_after_children:
             s += "\n" + indent
     s += node.token_bundles_tail().join(" ",indent)
+    if newline_after_tail:
+        s += "\n"
     return s
 
 

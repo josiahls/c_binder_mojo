@@ -245,7 +245,13 @@ struct EnumNode(NodeAstLike):
         Returns:
             A string representation of this node.
         """
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        return default_to_string(
+            AstNode(self), 
+            module_interface, 
+            just_code=just_code, 
+            indent_level=parent_indent_level,
+            newline_after_tail=True
+        )
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

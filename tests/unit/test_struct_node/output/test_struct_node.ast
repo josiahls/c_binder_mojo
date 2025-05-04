@@ -1,83 +1,89 @@
 RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18)
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
 	// Basic struct declarations
-	WhitespaceNode(c_parent_idx=0, c_current_idx=2, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
+
 	StructNode(c_parent_idx=0, c_current_idx=3, c_child_idxs=(4), node_state=4 (COMPLETED), name='Point')
 	struct Point
-	ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5, 6), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='StructNode')
-	{ <C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=4, c_current_idx=5, node_state=4 (COMPLETED), field_type='int', field_name='x')
-	int x ;<C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=4, c_current_idx=6, node_state=4 (COMPLETED), field_type='int', field_name='y')
-	int y ;<C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	}; <C_BINDER_MOJO_NEWLINE>	
+	ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5, 6), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')
+	{
+	
+		StructFieldNode(c_parent_idx=4, c_current_idx=5, node_state=4 (COMPLETED), field_type='int', field_name='x')
+		int x ;<C_BINDER_MOJO_NEWLINE>		
+		StructFieldNode(c_parent_idx=4, c_current_idx=6, node_state=4 (COMPLETED), field_type='int', field_name='y')
+		int y ;<C_BINDER_MOJO_NEWLINE>		
+	}; <C_BINDER_MOJO_NEWLINE>	
 	StructNode(c_parent_idx=0, c_current_idx=7, c_child_idxs=(8), node_state=4 (COMPLETED), name='Person')
 	struct Person
-	ScopeNode(c_parent_idx=7, c_current_idx=8, c_child_idxs=(9, 10), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='StructNode')
-	{ <C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=8, c_current_idx=9, node_state=4 (COMPLETED), field_type='char*', field_name='name')
-	char* name ;<C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=8, c_current_idx=10, node_state=4 (COMPLETED), field_type='int', field_name='age')
-	int age ;<C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	}; <C_BINDER_MOJO_NEWLINE>	
+	ScopeNode(c_parent_idx=7, c_current_idx=8, c_child_idxs=(9, 10), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')
+	{
+	
+		StructFieldNode(c_parent_idx=8, c_current_idx=9, node_state=4 (COMPLETED), field_type='char*', field_name='name')
+		char* name ;<C_BINDER_MOJO_NEWLINE>		
+		StructFieldNode(c_parent_idx=8, c_current_idx=10, node_state=4 (COMPLETED), field_type='int', field_name='age')
+		int age ;<C_BINDER_MOJO_NEWLINE>		
+	}; <C_BINDER_MOJO_NEWLINE>	
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
 	// Empty struct
-	WhitespaceNode(c_parent_idx=0, c_current_idx=12, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
+
 	StructNode(c_parent_idx=0, c_current_idx=13, c_child_idxs=(14), node_state=4 (COMPLETED), name='Empty')
 	struct Empty
-	ScopeNode(c_parent_idx=13, c_current_idx=14, node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='StructNode')
-	{ <C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	}; <C_BINDER_MOJO_NEWLINE>	
+	ScopeNode(c_parent_idx=13, c_current_idx=14, node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')
+	{}; <C_BINDER_MOJO_NEWLINE>	
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=15)
 	// Multi-line struct with comments
-	WhitespaceNode(c_parent_idx=0, c_current_idx=16, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
+
 	StructNode(c_parent_idx=0, c_current_idx=17, c_child_idxs=(18), node_state=4 (COMPLETED), name='Complex')
 	struct Complex
-	ScopeNode(c_parent_idx=17, c_current_idx=18, c_child_idxs=(19, 20, 21, 22, 23), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='StructNode')
-	{ <C_BINDER_MOJO_NEWLINE>	
-	SingleLineCommentNode(c_parent_idx=18, c_current_idx=19)
-	// Basic types
-	StructFieldNode(c_parent_idx=18, c_current_idx=20, node_state=4 (COMPLETED), field_type='int', field_name='id')
-	int id ;<C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=18, c_current_idx=21, node_state=4 (COMPLETED), field_type='float', field_name='value')
-	float value ;<C_BINDER_MOJO_NEWLINE>	
-	MultiLineCommentNode(c_parent_idx=18, c_current_idx=22)
-	/* Nested struct */
-	StructFieldNode(c_parent_idx=18, c_current_idx=23, c_child_idxs=(24), node_state=4 (COMPLETED), field_type='Inner', field_name='nested')
+	ScopeNode(c_parent_idx=17, c_current_idx=18, c_child_idxs=(19, 20, 21, 22, 23), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')
+	{
+	
+		SingleLineCommentNode(c_parent_idx=18, c_current_idx=19)
+		// Basic types
 
-	StructNode(c_parent_idx=23, c_current_idx=24, c_child_idxs=(25), node_state=4 (COMPLETED), name='Inner', nested=true)
-	struct Inner
-	ScopeNode(c_parent_idx=24, c_current_idx=25, c_child_idxs=(26), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='StructNode')
-	{ <C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=25, c_current_idx=26, node_state=4 (COMPLETED), field_type='double', field_name='data')
-	double data ;<C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	}nested ; <C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	}; <C_BINDER_MOJO_NEWLINE>	
+		StructFieldNode(c_parent_idx=18, c_current_idx=20, node_state=4 (COMPLETED), field_type='int', field_name='id')
+		int id ;<C_BINDER_MOJO_NEWLINE>		
+		StructFieldNode(c_parent_idx=18, c_current_idx=21, node_state=4 (COMPLETED), field_type='float', field_name='value')
+		float value ;<C_BINDER_MOJO_NEWLINE>		
+		MultiLineCommentNode(c_parent_idx=18, c_current_idx=22)
+		/* Nested struct */
+		StructFieldNode(c_parent_idx=18, c_current_idx=23, c_child_idxs=(24), node_state=4 (COMPLETED), field_type='Inner', field_name='nested')
+
+		StructNode(c_parent_idx=23, c_current_idx=24, c_child_idxs=(25), node_state=4 (COMPLETED), name='Inner', nested=true)
+		struct Inner
+		ScopeNode(c_parent_idx=24, c_current_idx=25, c_child_idxs=(26), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')
+		{
+		
+			StructFieldNode(c_parent_idx=25, c_current_idx=26, node_state=4 (COMPLETED), field_type='double', field_name='data')
+			double data ;<C_BINDER_MOJO_NEWLINE>			
+		}nested ; <C_BINDER_MOJO_NEWLINE>		
+	}; <C_BINDER_MOJO_NEWLINE>	
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)
 	// Anonymous struct in typedef
-	WhitespaceNode(c_parent_idx=0, c_current_idx=28, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
+
 	TypedefNode(c_parent_idx=0, c_current_idx=29, c_child_idxs=(30), node_state=4 (COMPLETED), type='Flags')
 	typedef
 	StructNode(c_parent_idx=29, c_current_idx=30, c_child_idxs=(31), node_state=4 (COMPLETED))
 	struct
-	ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='StructNode')
-	{ <C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=31, c_current_idx=32, node_state=4 (COMPLETED), field_type='unsigned', field_name='flags')
-	unsigned char flags ;<C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	}Flags
-	WhitespaceNode(c_parent_idx=0, c_current_idx=33, n_tokens=4)
-	<C_BINDER_MOJO_NEWLINE>	 <C_BINDER_MOJO_NEWLINE>	
+	ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')
+	{
+	
+		StructFieldNode(c_parent_idx=31, c_current_idx=32, node_state=4 (COMPLETED), field_type='unsigned', field_name='flags')
+		unsigned char flags ;<C_BINDER_MOJO_NEWLINE>		
+	}Flags
 	SingleLineCommentNode(c_parent_idx=0, c_current_idx=34)
 	// Struct with bit fields
-	WhitespaceNode(c_parent_idx=0, c_current_idx=35, n_tokens=1)
-	<C_BINDER_MOJO_NEWLINE>	
+
 	StructNode(c_parent_idx=0, c_current_idx=36, c_child_idxs=(37), node_state=4 (COMPLETED), name='BitFields')
 	struct BitFields
-	ScopeNode(c_parent_idx=36, c_current_idx=37, c_child_idxs=(38, 39, 40), node_state=4 (COMPLETED), n_tokens=2, n_tokens_tail=2, parent_type='StructNode')
-	{ <C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=37, c_current_idx=38, node_state=4 (COMPLETED), field_type='unsigned', field_name='a', bit_width='1')
-	unsigned int a : 1 ;<C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=37, c_current_idx=39, node_state=4 (COMPLETED), field_type='unsigned', field_name='b', bit_width='2')
-	unsigned int b : 2 ;<C_BINDER_MOJO_NEWLINE>	
-	StructFieldNode(c_parent_idx=37, c_current_idx=40, node_state=4 (COMPLETED), field_type='unsigned', field_name='c', bit_width='3')
-	unsigned int c : 3 ;<C_BINDER_MOJO_NEWLINE>	<C_BINDER_MOJO_NEWLINE>	}; <C_BINDER_MOJO_NEWLINE>	
+	ScopeNode(c_parent_idx=36, c_current_idx=37, c_child_idxs=(38, 39, 40), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')
+	{
+	
+		StructFieldNode(c_parent_idx=37, c_current_idx=38, node_state=4 (COMPLETED), field_type='unsigned', field_name='a', bit_width='1')
+		unsigned int a : 1 ;<C_BINDER_MOJO_NEWLINE>		
+		StructFieldNode(c_parent_idx=37, c_current_idx=39, node_state=4 (COMPLETED), field_type='unsigned', field_name='b', bit_width='2')
+		unsigned int b : 2 ;<C_BINDER_MOJO_NEWLINE>		
+		StructFieldNode(c_parent_idx=37, c_current_idx=40, node_state=4 (COMPLETED), field_type='unsigned', field_name='c', bit_width='3')
+		unsigned int c : 3 ;<C_BINDER_MOJO_NEWLINE>		
+	}; <C_BINDER_MOJO_NEWLINE>	
 	EndFileNode(c_parent_idx=0, c_current_idx=41)
 	C_BINDER_MOJO_END_FILE

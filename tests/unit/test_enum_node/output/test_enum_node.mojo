@@ -3,7 +3,7 @@ struct Color :
  
 alias RED = 0 
 alias GREEN = 1 
-alias BLUE = -1 
+alias BLUE = 2 
 # Enum with auto-incrementing values 
 <C_BINDER_MOJO_NEWLINE> 
 struct Direction : 
@@ -49,6 +49,6 @@ struct ByteValues :
 alias BYTE_0 = 1 
 alias BYTE_1 = 2 
 alias BYTE_2 = 4 
-alias BYTE_3 = -1 
+alias BYTE_3 = 8 
 fn main():
     pass

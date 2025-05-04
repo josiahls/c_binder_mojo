@@ -177,7 +177,7 @@ mjtTexturetypedefenum mjtTextureRole_{
 	// base color ,  opacity
 	mjTEXROLE_ORM ,
 	// occlusion ,  roughness ,  metallic
-	mjNTEXROLE <C_BINDER_MOJO_NEWLINE>	
+	mjNTEXROLE 
 
 }
 mjtTextureRoletypedefenum mjtIntegrator_{

@@ -230,11 +230,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_par
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [4:6]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=1 (COLLECTING_TOKENS), field_name='BLUE', value='2<C_BINDER_MOJO_NEWLINE>')
+tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=1 (COLLECTING_TOKENS), field_name='BLUE', value='2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [5:0]
     └─ Nodes: 4 active, 4 complete
-tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=4 (COMPLETED), field_name='BLUE', value='2<C_BINDER_MOJO_NEWLINE>')
+tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=4, c_current_idx=7, node_state=4 (COMPLETED), field_name='BLUE', value='2')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '}' at [5:0]
     └─ Nodes: 3 active, 5 complete
@@ -1890,11 +1890,11 @@ tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_par
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '<C_BINDER_MOJO_NEWLINE>' at [40:11]
     └─ Nodes: 4 active, 49 complete
-tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=1 (COLLECTING_TOKENS), field_name='BYTE_3', value='1<<3<C_BINDER_MOJO_NEWLINE>')
+tree.mojo:222 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=1 (COLLECTING_TOKENS), field_name='BYTE_3', value='1<<3')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '' at [41:0]
     └─ Nodes: 4 active, 49 complete
-tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=4 (COMPLETED), field_name='BYTE_3', value='1<<3<C_BINDER_MOJO_NEWLINE>')
+tree.mojo:222 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			EnumFieldNode(c_parent_idx=48, c_current_idx=52, node_state=4 (COMPLETED), field_name='BYTE_3', value='1<<3')
     └─ Path: RootNode -> EnumNode -> ScopeNode -> EnumFieldNode
     └─ Current Token: '}' at [41:0]
     └─ Nodes: 3 active, 50 complete

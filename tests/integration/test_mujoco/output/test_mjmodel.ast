@@ -615,7 +615,7 @@ mjtTexture
 		// occlusion ,  roughness ,  metallic
 
 		EnumFieldNode(c_parent_idx=242, c_current_idx=264, node_state=4 (COMPLETED), field_name='mjNTEXROLE')
-		mjNTEXROLE <C_BINDER_MOJO_NEWLINE>		
+		mjNTEXROLE 
 
 	}
 mjtTextureRole

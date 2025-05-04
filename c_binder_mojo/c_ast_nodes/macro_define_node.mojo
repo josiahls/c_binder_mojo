@@ -101,6 +101,10 @@ struct MacroDefineNode(NodeAstLike):
         if len(self._token_bundles[]) == 0:
             return TokenFlow.INVALID + " len(self._token_bundles[]) == 0"
 
+        if token.end_file:
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.PASS_TO_PARENT
+            
         if token.is_newline():
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
@@ -113,6 +117,8 @@ struct MacroDefineNode(NodeAstLike):
         if len(self._token_bundles[]) >= 2:
             self._node_state = NodeState.BUILDING_CHILDREN
             return TokenFlow.CREATE_CHILD
+
+
 
         return TokenFlow.INVALID + " Unexpected token in MacroDefineNode"
 
@@ -177,7 +183,13 @@ struct MacroDefineNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        return default_to_string(
+            AstNode(self), 
+            module_interface, 
+            just_code=just_code, 
+            indent_level=parent_indent_level,
+            newline_after_tail=True
+        )
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

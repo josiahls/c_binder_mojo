@@ -174,6 +174,9 @@ struct EnumFieldNode(NodeAstLike):
             token_flow: The determined token flow.
             module_interface: Interface to the AST.
         """
+        if token.is_newline():
+            return
+
         if self._has_value and token.token != "=" and token.token != ",":
             if self._field_value == "":
                 self._field_value = token.token

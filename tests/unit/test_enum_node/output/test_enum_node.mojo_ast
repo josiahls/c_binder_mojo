@@ -13,7 +13,7 @@ alias RED = 0
 EnumFieldNode(c_parent_idx=4, c_current_idx=6, mojo_parent_idx=5, mojo_current_idx=7, GREEN)
 alias GREEN = 1 
 EnumFieldNode(c_parent_idx=4, c_current_idx=7, mojo_parent_idx=5, mojo_current_idx=8, BLUE)
-alias BLUE = -1 
+alias BLUE = 2 
 
 
 SingleLineCommentNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9)
@@ -113,6 +113,6 @@ alias BYTE_1 = 2
 EnumFieldNode(c_parent_idx=48, c_current_idx=51, mojo_parent_idx=49, mojo_current_idx=52, BYTE_2)
 alias BYTE_2 = 4 
 EnumFieldNode(c_parent_idx=48, c_current_idx=52, mojo_parent_idx=49, mojo_current_idx=53, BYTE_3)
-alias BYTE_3 = -1 
+alias BYTE_3 = 8 
 
 

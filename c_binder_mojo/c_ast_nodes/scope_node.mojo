@@ -246,7 +246,7 @@ struct ScopeNode(NodeAstLike):
             indent_level=parent_indent_level, 
             children_indent_level=parent_indent_level + 1,
             newline_before_children=True,
-            newline_after_children=True
+            newline_after_children=False
         )
 
     fn scope_level(

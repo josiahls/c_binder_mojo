@@ -44,7 +44,6 @@ struct MacroDefineValueNode(NodeAstLike):
     var _token_bundles_tail: ArcPointer[TokenBundles]
     var _node_state: MessageableEnum
     var _is_function_like: Bool
-    var _row_nums: List[Int]
     var _is_line_continuation: Bool
 
     fn __init__(out self, indicies: NodeIndices, token_bundle: TokenBundle):
@@ -57,8 +56,6 @@ struct MacroDefineValueNode(NodeAstLike):
         self._indicies = indicies
         self._token_bundles = TokenBundles()
         self._token_bundles_tail = TokenBundles()
-        self._row_nums = List[Int]()
-        self._row_nums.append(token_bundle.row_num)
         self._node_state = NodeState.INITIALIZING
         self._token_bundles[].append(token_bundle)
         self._is_function_like = False
@@ -113,7 +110,7 @@ struct MacroDefineValueNode(NodeAstLike):
             self._row_nums.append(token.row_num)
             self._is_line_continuation = False
 
-        if token.row_num not in self._row_nums:
+        if token.is_newline():
             self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 

@@ -107,6 +107,10 @@ struct IncludeNode(NodeAstLike):
         """
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
+        
+        if token.end_file:
+            self._node_state = NodeState.COMPLETED
+            return TokenFlow.PASS_TO_PARENT
 
         # Track line numbers for multi-line includes (shouldn't happen but just in case)
         if token.is_newline():
@@ -144,12 +148,14 @@ struct IncludeNode(NodeAstLike):
 
         # Handle comments - pass to parent
         if token.token.startswith("//") or token.token.startswith("/*"):
+            self._node_state = NodeState.COMPLETED
             return TokenFlow.PASS_TO_PARENT
 
         # Collect path
         if self._node_state == NodeState.COLLECTING_TOKENS:
             return TokenFlow.CONSUME_TOKEN
 
+        self._node_state = NodeState.COMPLETED
         return TokenFlow.PASS_TO_PARENT
 
     fn process(
@@ -239,7 +245,13 @@ struct IncludeNode(NodeAstLike):
         Returns:
             String representation of this node.
         """
-        return default_to_string(AstNode(self), module_interface, just_code=just_code, indent_level=parent_indent_level)
+        return default_to_string(
+            AstNode(self), 
+            module_interface, 
+            just_code=just_code, 
+            indent_level=parent_indent_level,
+            newline_after_tail=True
+        )
 
     fn scope_level(
         self, just_code: Bool, module_interface: ModuleInterface

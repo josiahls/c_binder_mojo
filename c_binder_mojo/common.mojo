@@ -156,7 +156,7 @@ struct WhitespaceEnum:
 
 
 @value
-struct NodeIndices:
+struct NodeIndices(Stringable):
     """Stores indices for tracking node relationships in the AST.
 
     This struct maintains references between original and new positions of nodes
@@ -264,7 +264,7 @@ struct NodeIndices:
 
 
 @value
-struct TokenBundle(EqualityComparable):
+struct TokenBundle(EqualityComparable, Stringable):
     """A bundle containing a token and its position information in source code.
 
     This struct represents a single token along with its originallocation (row and column numbers)
@@ -365,7 +365,7 @@ struct TokenBundle(EqualityComparable):
 
 
 @value
-struct TokenBundles(Stringable):
+struct TokenBundles(Stringable, Sized):
     """A collection of TokenBundle objects with list-like operations.
 
     This struct provides a container for multiple TokenBundles with standard

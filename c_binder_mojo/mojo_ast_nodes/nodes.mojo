@@ -234,7 +234,7 @@ trait NodeAstLike(Copyable & Movable, Stringable):
 
 
 @value
-struct AstNode(Copyable & Movable):
+struct AstNode(Copyable & Movable & Stringable):
     alias type = AstNodeVariant
     var node: ArcPointer[Self.type]
 

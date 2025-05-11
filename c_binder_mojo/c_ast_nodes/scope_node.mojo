@@ -134,8 +134,6 @@ struct ScopeNode(NodeAstLike):
         if self._node_state == NodeState.COMPLETED:
             return TokenFlow.PASS_TO_PARENT
 
-
-        print("token: " + token.token + " state: " + String(self._node_state))
         if token.token == CTokens.SCOPE_END:
             print("Building children and scope end")
             self._node_state = NodeState.COLLECTING_TAIL_TOKENS

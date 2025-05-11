@@ -148,7 +148,7 @@ fn log_state_transition(
         recursion_depth: Current depth of get_current_node recursion.
     """
     # Format the transition string with fixed width
-    var transition_str = String()
+    var transition_str:String
     if prev_state == MessageableEnum(-1) or prev_state == token_flow:
         transition_str = String(token_flow)
     else:

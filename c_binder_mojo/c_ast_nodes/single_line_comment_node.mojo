@@ -110,6 +110,7 @@ struct SingleLineCommentNode(NodeAstLike):
     fn to_string(
         self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) -> String:
+        print('single line comment node to string')
         return default_to_string(
             AstNode(self), 
             module_interface, 

@@ -42,14 +42,13 @@ fn generic_test_outputs(
         )
     )
     if not skip_c_ast_no_just_code:
+        var ast_file = output_dir / (test_name + ".ast")
         ast_file.write_text(
-            first_node.to_string(
+            module_interface.nodes()[][0].to_string(
                 just_code=False, module_interface=module_interface
             )
         )
 
-
-    print('entering mojo make tree')
     # Generate Mojo AST
     var mojo_tree_log_file = output_dir / (test_name + "_mojo.tree")
     var mojo_module_interface = make_mojo_tree(module_interface.nodes()[], String(mojo_tree_log_file))

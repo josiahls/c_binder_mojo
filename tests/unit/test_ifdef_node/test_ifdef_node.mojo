@@ -13,7 +13,7 @@ fn test_ifdef_node():
     """Test the parsing and AST construction for ifdef directives."""
     var logger = Logger.get_default_logger("test_ifdef_node")
     
-    (module_interface, mojo_module_interface) = generic_test_outputs(
+    generic_test_outputs(
         "test_ifdef_node",
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node"),

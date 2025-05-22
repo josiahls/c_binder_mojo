@@ -13,7 +13,7 @@ fn test_multi_line_comment_node():
     """Test the parsing and AST construction for multi-line comments."""
     var logger = Logger.get_default_logger("test_multi_line_comment_node")
     
-    (module_interface, mojo_module_interface) = generic_test_outputs(
+    generic_test_outputs(
         "test_multi_line_comment_node",
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_multi_line_comment_node"),

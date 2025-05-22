@@ -11,7 +11,7 @@ from c_binder_mojo.testing import generic_test_outputs
 
 fn test_mjtnum_header():
     var logger = Logger.get_default_logger("test_mjtnum_header")
-    (module_interface, mojo_module_interface) = generic_test_outputs(
+    generic_test_outputs(
         "test_mjtnum",
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"),
@@ -20,7 +20,7 @@ fn test_mjtnum_header():
 
 fn test_mjmodel_header():
     var logger = Logger.get_default_logger("test_mjmodel_header")
-    (module_interface, mojo_module_interface) = generic_test_outputs(
+    generic_test_outputs(
         "test_mjmodel",
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"),

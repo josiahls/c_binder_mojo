@@ -13,7 +13,7 @@ fn test_typedef_node():
     """Test the parsing and AST construction for typedefs."""
     var logger = Logger.get_default_logger("test_typedef_node")
     
-    (module_interface, mojo_module_interface) = generic_test_outputs(
+    generic_test_outputs(
         "test_typedef_node",
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_typedef_node"),

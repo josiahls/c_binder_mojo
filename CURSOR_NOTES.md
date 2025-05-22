@@ -1,4 +1,8 @@
-Ok:
-- thinking about just using clang directly.
-- having nodes opt in on how they are to handle newlines is a good idea.
-- line continuations need to be handled differently, probably in the tokenizer itself. Probably just removing the newline continuation, then ignore the resulting new line.
+Alright, refactoring a ton of stuff. Hopefully to be less buggy.
+We will have 2 modules this time:
+- clang_ast_nodes
+- mojo_ast_nodes
+
+First tasks:
+- strip down the tests_old module and make a new tests module. Goal is to start from a fresh start with the existing unit test headers and output
+file formaters

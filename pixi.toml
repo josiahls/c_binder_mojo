@@ -40,5 +40,5 @@ package = "mojo package $HOME/c_binder_mojo"
 build_test = "magic run format && magic run test_all"
 
 [dependencies]
-max = ">=25.4.0.dev2025051105"
+max = ">=25.4.0.dev2025052116,<26"
 

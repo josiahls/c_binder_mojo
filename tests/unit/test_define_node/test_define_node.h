@@ -1,0 +1,20 @@
+// Empty defines (no value)
+#define EMPTY_DEFINE_1
+#define EMPTY_DEFINE_2
+
+// Simple value defines
+#define SIMPLE_INT 42
+#define SIMPLE_FLOAT 3.14
+#define SIMPLE_STRING "hello"
+
+// Function-like macros
+#define ADD(x, y) ((x) + (y))
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define PRINT_DEBUG(msg, ...) printf("[DEBUG] " msg "\n", ##__VA_ARGS__)
+
+// Complex defines with expressions
+#define BUFFER_SIZE (1024 * 2)
+
+// Define with line continuation
+#define MULTILINE_STRING "This is a long string that \
+    continues on the next line" 

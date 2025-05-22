@@ -11,7 +11,7 @@ from c_binder_mojo.testing import generic_test_outputs
 
 
 
-fn test_struct_node():
+fn test_struct_node() raises:
     """Test the parsing and AST construction for structs."""
     var logger = Logger.get_default_logger("test_struct_node")
     

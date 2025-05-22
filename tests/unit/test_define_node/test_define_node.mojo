@@ -9,7 +9,7 @@ from firehose.logging import Logger, set_global_logger_settings
 # First Party Modules
 from c_binder_mojo.testing import generic_test_outputs
 
-fn test_define_node():
+fn test_define_node() raises:
     """Test the parsing and AST construction for defines."""
     var logger = Logger.get_default_logger("test_define_node")
     

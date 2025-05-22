@@ -9,7 +9,7 @@ from firehose.logging import Logger, set_global_logger_settings
 # First Party Modules
 from c_binder_mojo.testing import generic_test_outputs
 
-fn test_mjtnum_header():
+fn test_mjtnum_header() raises:
     var logger = Logger.get_default_logger("test_mjtnum_header")
     generic_test_outputs(
         "test_mjtnum",
@@ -18,7 +18,7 @@ fn test_mjtnum_header():
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco/output"),
     )
 
-fn test_mjmodel_header():
+fn test_mjmodel_header() raises:
     var logger = Logger.get_default_logger("test_mjmodel_header")
     generic_test_outputs(
         "test_mjmodel",

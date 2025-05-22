@@ -9,7 +9,7 @@ from firehose.logging import Logger, set_global_logger_settings
 # First Party Modules
 from c_binder_mojo.testing import generic_test_outputs
 
-fn test_include_node():
+fn test_include_node() raises:
     """Test the parsing and AST construction for include directives."""
     var logger = Logger.get_default_logger("test_include_node")
     

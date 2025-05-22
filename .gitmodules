@@ -4,9 +4,9 @@
     branch = main
     ignore = all
 
-[submodule "mojo"]
-    path = mojo
-    url = https://github.com/modularml/mojo.git
+[submodule "modular"]
+    path = modular
+    url = https://github.com/modular/modular.git
     branch = main
     ignore = all
 

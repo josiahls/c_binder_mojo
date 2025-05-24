@@ -263,8 +263,8 @@ struct NodeIndices(Stringable):
         return s
 
 
-@value
-struct TokenBundle(EqualityComparable, Stringable):
+
+struct TokenBundle(EqualityComparable & Stringable & Copyable & Movable):
     """A bundle containing a token and its position information in source code.
 
     This struct represents a single token along with its originallocation (row and column numbers)

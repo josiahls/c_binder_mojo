@@ -1,7 +1,7 @@
 from pathlib import Path
 from firehose.logging import Logger
 
-from c_binder_mojo.clang_ast_nodes.tokenizer import Tokenizer
+from c_binder_mojo.clang_ast_nodes.ast_parser import AstParser
 # from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
 # from c_binder_mojo.c_ast_nodes.tree import make_tree
 # from c_binder_mojo.mojo_ast_nodes.root_node import RootNode
@@ -26,8 +26,8 @@ fn generic_test_outputs(
         raise Error("Test file doesn't exist: " + String(test_file_path))
 
     # Tokenize the file
-    var tokenizer = Tokenizer()
-    tokenizer.tokenize(test_file_path)
+    var ast_parser = AstParser()
+    ast_parser.parse(test_file_path)
 
     # # Save tokenized output for debugging
     # var tokens_file = output_dir / (test_name + ".tokenized")

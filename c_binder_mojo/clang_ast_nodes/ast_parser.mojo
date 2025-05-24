@@ -57,6 +57,7 @@ struct AstParser:
     fn parse(self, file_path: Path) raises:
         result = self.clang_call(file_path)
         for line in result:
+            level = 0
             var ast_entry = AstEntry()
             for token in line[].split(" "):
                 if token[].startswith("0x") and ast_entry.mem_address == "":
@@ -65,6 +66,7 @@ struct AstParser:
                     ast_entry.ast_name = token[][2:]
                 elif token[].startswith("`-") and ast_entry.ast_name == "":
                     ast_entry.ast_name = token[][2:]
+                    level += 1
                 elif token[].startswith("TranslationUnitDecl") and ast_entry.ast_name == "":
                     ast_entry.ast_name = token[]
                 elif token[].startswith("<") and ast_entry.full_location == "":
@@ -79,6 +81,12 @@ struct AstParser:
                     ast_entry.precise_location = token[]
                 elif token[].startswith("line:") and ast_entry.precise_location == "":
                     ast_entry.precise_location = token[]
+                elif token[] == "" and ast_entry.ast_name == "":
+                    level += 1
+                elif token[] == "|" and ast_entry.ast_name == "":
+                    level += 1
+                else:
+                    ast_entry.tokens.append(token[])
                 
             if ast_entry.ast_name == "":
                 raise Error('Could not find name for line: ' + line[])

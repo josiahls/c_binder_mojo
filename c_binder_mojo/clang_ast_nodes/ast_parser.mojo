@@ -35,11 +35,13 @@ struct AstEntry(Copyable & Movable & Stringable):
         self.level = 0
 
     fn __str__(read self: Self) -> String:
-        var s:String = "AstEntry("
+        var s:String = ""
+        s += " " * self.level
+        s += "AstEntry("
         s += "ast_name: " + self.ast_name + ", "
         s += "mem_address: " + self.mem_address + ", "
-        s += "full_location: " + self.full_location + ", "
-        s += "precise_location: " + self.precise_location + ", "
+        # s += "full_location: " + self.full_location + ", "
+        # s += "precise_location: " + self.precise_location + ", "
         s += "tokens: " + String(", ").join(self.tokens) + ", "
         s += "level: " + String(self.level)
         s += ")"
@@ -58,12 +60,14 @@ struct AstParser:
         result = self.clang_call(file_path)
         for line in result:
             level = 0
+            consequetive_space = False
             var ast_entry = AstEntry()
             for token in line[].split(" "):
                 if token[].startswith("0x") and ast_entry.mem_address == "":
                     ast_entry.mem_address = token[]
                 elif token[].startswith("|-") and ast_entry.ast_name == "":
                     ast_entry.ast_name = token[][2:]
+                    level += 1
                 elif token[].startswith("`-") and ast_entry.ast_name == "":
                     ast_entry.ast_name = token[][2:]
                     level += 1
@@ -81,13 +85,22 @@ struct AstParser:
                     ast_entry.precise_location = token[]
                 elif token[].startswith("line:") and ast_entry.precise_location == "":
                     ast_entry.precise_location = token[]
-                elif token[] == "" and ast_entry.ast_name == "":
+                elif token[] == "" and ast_entry.ast_name == "" and consequetive_space:
                     level += 1
+                    consequetive_space = False
+                elif token[] == "" and ast_entry.ast_name == "" and not consequetive_space:
+                    consequetive_space = True
                 elif token[] == "|" and ast_entry.ast_name == "":
                     level += 1
                 else:
                     ast_entry.tokens.append(token[])
+
+                # Cancel checking for consequtive spaces if the next token
+                # isn't an empty space.
+                if consequetive_space and token[] != "":
+                    consequetive_space = False
                 
+            ast_entry.level = level
             if ast_entry.ast_name == "":
                 raise Error('Could not find name for line: ' + line[])
             print(String(ast_entry))

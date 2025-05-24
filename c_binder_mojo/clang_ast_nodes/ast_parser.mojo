@@ -13,7 +13,7 @@ from firehose.logging import Logger, set_global_logger_settings
 from subprocess import run
 
 
-struct AstEntry(Copyable & Movable & Stringable):
+struct AstEntry(Copyable & Movable & Stringable & Writable):
     """A single line entry from the clang ast dump."""
 
     # Data fields
@@ -40,12 +40,15 @@ struct AstEntry(Copyable & Movable & Stringable):
         s += "AstEntry("
         s += "ast_name: " + self.ast_name + ", "
         s += "mem_address: " + self.mem_address + ", "
-        # s += "full_location: " + self.full_location + ", "
-        # s += "precise_location: " + self.precise_location + ", "
+        s += "full_location: " + self.full_location + ", "
+        s += "precise_location: " + self.precise_location + ", "
         s += "tokens: " + String(", ").join(self.tokens) + ", "
         s += "level: " + String(self.level)
         s += ")"
         return s
+
+    fn write_to[W: Writer](self, mut writer: W):
+        writer.write(String(self))
 
 @fieldwise_init
 struct AstParser:
@@ -56,8 +59,9 @@ struct AstParser:
         result = run(cmd)
         return result.split("\n")
 
-    fn parse(self, file_path: Path) raises:
+    fn parse(self, file_path: Path) raises -> List[AstEntry]:
         result = self.clang_call(file_path)
+        var entries: List[AstEntry] = []
         for line in result:
             level = 0
             consequetive_space = False
@@ -103,4 +107,6 @@ struct AstParser:
             ast_entry.level = level
             if ast_entry.ast_name == "":
                 raise Error('Could not find name for line: ' + line[])
-            print(String(ast_entry))
+
+            entries.append(ast_entry^)
+        return entries

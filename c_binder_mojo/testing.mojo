@@ -27,11 +27,11 @@ fn generic_test_outputs(
 
     # Tokenize the file
     var ast_parser = AstParser()
-    ast_parser.parse(test_file_path)
+    entries = ast_parser.parse(test_file_path)
 
-    # # Save tokenized output for debugging
-    # var tokens_file = output_dir / (test_name + ".tokenized")
-    # tokens_file.write_text(tokenizer.to_string())
+    # Save tokenized output for debugging
+    var ast_entries = output_dir / (test_name + ".ast_entries")
+    ast_entries.write_text(String("\n").join(entries))
 
     # # Generate AST
     # var tree_log_file = output_dir / (test_name + ".tree")

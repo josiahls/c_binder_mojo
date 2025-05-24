@@ -14,9 +14,6 @@ from subprocess import run
 
 @fieldwise_init
 struct Tokenizer:
-    """
-clang  -Xclang -ast-dump -fsyntax-only -fparse-all-comments  /home/c_binder_mojo_user/c_binder_mojo/tests_old/unit/test_single_line_comment_node/test_single_line_comment_node.h
-    """
 
     @staticmethod
     fn clang_call(file_path: Path) raises -> List[String]:

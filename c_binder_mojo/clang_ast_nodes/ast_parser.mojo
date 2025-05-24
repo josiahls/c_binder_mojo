@@ -50,7 +50,7 @@ struct AstParser:
 
     @staticmethod
     fn clang_call(file_path: Path) raises -> List[String]:
-        cmd = "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments " + file_path.path
+        cmd = "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments -fno-color-diagnostics " + file_path.path
         result = run(cmd)
         return result.split("\n")
 
@@ -62,8 +62,24 @@ struct AstParser:
                 if token[].startswith("0x") and ast_entry.mem_address == "":
                     ast_entry.mem_address = token[]
                 elif token[].startswith("|-") and ast_entry.ast_name == "":
-                    ast_entry.ast_name = token[]
+                    ast_entry.ast_name = token[][2:]
                 elif token[].startswith("`-") and ast_entry.ast_name == "":
+                    ast_entry.ast_name = token[][2:]
+                elif token[].startswith("TranslationUnitDecl") and ast_entry.ast_name == "":
                     ast_entry.ast_name = token[]
+                elif token[].startswith("<") and ast_entry.full_location == "":
+                    ast_entry.full_location = token[]
+                elif token[].endswith(">") and not ast_entry.full_location.endswith(">"):
+                    ast_entry.full_location += " " + token[]
+                elif "<<invalid sloc>>" in token[] and ast_entry.full_location == "":
+                    ast_entry.full_location = "invalid"
+                elif "<invalid sloc>" in token[] and ast_entry.precise_location == "":
+                    ast_entry.precise_location = "invalid"
+                elif token[].startswith("col:") and ast_entry.precise_location == "":
+                    ast_entry.precise_location = token[]
+                elif token[].startswith("line:") and ast_entry.precise_location == "":
+                    ast_entry.precise_location = token[]
                 
+            if ast_entry.ast_name == "":
+                raise Error('Could not find name for line: ' + line[])
             print(String(ast_entry))

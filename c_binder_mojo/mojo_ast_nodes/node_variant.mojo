@@ -44,7 +44,7 @@ from sys.intrinsics import _type_is_eq
 
 from memory import UnsafePointer
 
-from c_binder_mojo.clang_ast_nodes.nodes import NodeAstLike
+from c_binder_mojo.mojo_ast_nodes.nodes import NodeAstLike
 
 # ===----------------------------------------------------------------------=== #
 # Utilities
@@ -63,7 +63,8 @@ fn _align_up(value: Int, alignment: Int) -> Int:
 
 
 struct Variant[*Ts: NodeAstLike](
-    Copyable & Movable & ExplicitlyCopyable,
+    Copyable & Movable,
+    ExplicitlyCopyable,
 ):
     """A runtime-variant type.
 

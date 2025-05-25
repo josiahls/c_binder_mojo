@@ -76,6 +76,8 @@ struct AstParser:
                     ast_entry.ast_name = token[][2:]
                     level += 1
                 elif token[].startswith("TranslationUnitDecl") and ast_entry.ast_name == "":
+                    # TranslationUnitDecl is a special case which is located at the root
+                    # of the ast output.
                     ast_entry.ast_name = token[]
                 elif token[].startswith("<") and ast_entry.full_location == "":
                     ast_entry.full_location = token[]

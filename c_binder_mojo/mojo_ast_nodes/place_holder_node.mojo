@@ -32,6 +32,7 @@ struct PlaceHolderNode(NodeAstLike):
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
+        self._ast_entries[].append(ast_entries)
         self._node_state = NodeState.COMPLETED
 
     @staticmethod

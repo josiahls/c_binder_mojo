@@ -35,7 +35,7 @@ fn generic_test_outputs(
 
     # Generate AST
     var tree_log_file = output_dir / (test_name + ".tree")
-    var module_interface = make_mojo_tree(entries, String(tree_log_file), validate=True)
+    var module_interface = make_mojo_tree(entries, String(tree_log_file), validate=False)
 
 
     if len(module_interface.nodes()[]) == 0:

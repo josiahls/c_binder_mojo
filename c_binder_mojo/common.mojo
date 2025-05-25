@@ -165,53 +165,27 @@ struct NodeIndices(Stringable):
 
     alias UNSET = -1
 
-    var c_parent_idx: Int
-    """Index of the parent node in the original tree."""
-    var c_current_idx: Int
-    """Index of the current node in the original tree."""
-    var c_child_idxs: List[Int]
-    """Indices of the child nodes in the original tree."""
-    var mojo_parent_idx: Int
+    var parent_idx: Int
     """Index of the parent node in the new tree."""
-    var mojo_current_idx: Int
+    var current_idx: Int
     """Index of the current node in the new tree."""
-    var mojo_child_idxs: List[Int]
+    var child_idxs: List[Int]
     """Indices of the child nodes in the new tree."""
 
     fn __init__(
         out self,
-        c_parent_idx: Int,
-        c_current_idx: Int,
-        mojo_parent_idx: Int = Self.UNSET,
-        mojo_current_idx: Int = Self.UNSET,
+        parent_idx: Int,
+        current_idx: Int,
     ):
         """Initialize a new NodeIndices instance.
 
         Args:
-            c_parent_idx: Index of the parent node in the original tree.
-            c_current_idx: Index of the current node in the original tree.
-            mojo_parent_idx: Index of the parent node in the new tree (default: -1).
-            mojo_current_idx: Index of the current node in the new tree (default: -1).
+            parent_idx: Index of the parent node in the new tree (default: -1).
+            current_idx: Index of the current node in the new tree (default: -1).
         """
-        self.c_parent_idx = c_parent_idx
-        self.c_current_idx = c_current_idx
-        self.c_child_idxs = List[Int]()
-        self.mojo_parent_idx = mojo_parent_idx
-        self.mojo_current_idx = mojo_current_idx
-        self.mojo_child_idxs = List[Int]()
-
-    fn __init__(
-        out self,
-        c_node_indices: Self,
-        mojo_parent_idx: Int,
-        mojo_current_idx: Int,
-    ):
-        self.c_parent_idx = c_node_indices.c_parent_idx
-        self.c_current_idx = c_node_indices.c_current_idx
-        self.c_child_idxs = c_node_indices.c_child_idxs
-        self.mojo_parent_idx = mojo_parent_idx
-        self.mojo_current_idx = mojo_current_idx
-        self.mojo_child_idxs = List[Int]()
+        self.parent_idx = parent_idx
+        self.current_idx = current_idx
+        self.child_idxs = List[Int]()
 
     fn _child_str(self, children_idxs: List[Int]) -> String:
         var s = String()
@@ -241,25 +215,16 @@ struct NodeIndices(Stringable):
 
     fn __str__(self) -> String:
         var s = String()
-        if self.c_parent_idx != Self.UNSET:
-            s += "c_parent_idx=" + String(self.c_parent_idx)
-        if self.c_current_idx != Self.UNSET:
+        if self.parent_idx != Self.UNSET:
+            s += "parent_idx=" + String(self.parent_idx)
+        if self.current_idx != Self.UNSET:
             if len(s) > 0:
                 s += ", "
-            s += "c_current_idx=" + String(self.c_current_idx)
-        if self.mojo_parent_idx != Self.UNSET:
+            s += "current_idx=" + String(self.current_idx)
             if len(s) > 0:
                 s += ", "
-            s += "mojo_parent_idx=" + String(self.mojo_parent_idx)
-        if self.mojo_current_idx != Self.UNSET:
-            if len(s) > 0:
-                s += ", "
-            s += "mojo_current_idx=" + String(self.mojo_current_idx)
+            s += "child_idxs=" + self._child_str(self.child_idxs)
 
-        if len(self.c_child_idxs) > 0:
-            s += ", c_child_idxs=" + self._child_str(self.c_child_idxs)
-        if len(self.mojo_child_idxs) > 0:
-            s += ", mojo_child_idxs=" + self._child_str(self.mojo_child_idxs)
         return s
 
 

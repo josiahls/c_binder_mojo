@@ -17,23 +17,21 @@ from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.nodes import (
     AstNode,
     NodeAstLike,
-    default_scope_level,
     default_to_string,
-    default_to_string_just_code,
 )
-from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry
+from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
 @value
 struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
     var _indicies: ArcPointer[NodeIndices]
-    var _ast_entries: ArcPointer[List[AstEntry]]
+    var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
-        self._ast_entries = List(ast_entries)
+        self._ast_entries = AstEntries()
         self._node_state = NodeState.COMPLETED
 
     @staticmethod
@@ -71,14 +69,14 @@ struct PlaceHolderNode(NodeAstLike):
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
         return self._indicies
 
-    fn ast_entries(self) -> List[AstEntry]:
+    fn ast_entries(self) -> AstEntries:
         return self._ast_entries[]
 
-    fn ast_entries_ptr(mut self) -> ArcPointer[List[AstEntry]]:
+    fn ast_entries_ptr(mut self) -> ArcPointer[AstEntries]:
         return self._ast_entries
 
-    fn ast_entries_tail(self) -> List[AstEntry]:
-        return List[AstEntry]()
+    fn ast_entries_tail(self) -> AstEntries:
+        return AstEntries()
 
     fn node_state(self) -> MessageableEnum:
         return self._node_state
@@ -94,19 +92,7 @@ struct PlaceHolderNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
     ) raises -> String:
-        if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface)
-        else:
-            return default_to_string(AstNode(self), module_interface)
-
-    fn scope_level(
-        self, just_code: Bool, module_interface: ModuleInterface
-    ) -> Int:
-        return default_scope_level(
-            self._indicies[].parent_idx, just_code, module_interface
-        )
-
-    fn scope_offset(self, just_code: Bool) -> Int:
-        return 0  # Root adds one level of scope
+        return default_to_string(
+            node=AstNode(self), module_interface=module_interface, just_code=just_code, indent_level=parent_indent_level)

@@ -5,12 +5,13 @@ from memory import UnsafePointer
 from sys.ffi import (
     external_call
 )
+from collections.list import _ListIter
+from subprocess import run
 
 # Third Party Mojo Modules
 from firehose.logging import Logger, set_global_logger_settings
 
 # First Party Modules
-from subprocess import run
 
 
 struct AstEntry(Copyable & Movable & Stringable & Writable):
@@ -49,6 +50,127 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
 
     fn write_to[W: Writer](self, mut writer: W):
         writer.write(String(self))
+
+
+@fieldwise_init
+struct AstEntries(Stringable, Movable, Copyable, Sized):
+    """A collection of AstEntry objects with list-like operations.
+
+    This struct provides a container for multiple AstEntry with standard
+    collection operations like append, length checking, iteration, and indexing.
+
+    This primarly acs as a passthrough to the underlying list, but
+    allows extending the list with additional functionality.
+    """
+
+    var _ast_entries: List[AstEntry]
+
+    fn __init__(out self):
+        """Initialize an empty AstEntries collection."""
+        self._ast_entries = List[AstEntry]()
+
+    fn join(
+        self,
+        sep: String,
+        indent: String = "",
+    ) -> String:
+        """Join the AstEntries into a single string.
+
+        Args:
+            sep: The separator to use between tokens.
+            indent: The indent to use for newlines.
+        """
+        var s = String()
+        var precise_location = String()
+        for entry in self._ast_entries:
+            if len(s) > 0 and entry[].precise_location != "" and entry[].precise_location != precise_location:
+                s += sep
+            s += entry[].ast_name
+            if entry[].precise_location != "" and entry[].precise_location != precise_location:
+                s += indent
+                precise_location = entry[].precise_location
+        return s
+
+    fn append(mut self, owned value: AstEntry):
+        """Add a new TokenBundle to the collection.
+
+        Args:
+            value: The TokenBundle to append.
+        """
+        self._ast_entries.append(value)
+
+    fn __len__(self) -> Int:
+        """Get the number of TokenBundles in the collection.
+
+        Returns:
+            The count of TokenBundles.
+        """
+        return len(self._ast_entries)
+
+    fn __bool__(self) -> Bool:
+        """Check if the collection is non-empty.
+
+        Returns:
+            True if the collection contains any TokenBundles, False otherwise.
+        """
+        return Bool(self._ast_entries)
+
+    fn __iter__(
+        ref self,
+    ) -> _ListIter[AstEntry, False, __origin_of(self._ast_entries)]:
+        """Get an iterator over the TokenBundles.
+
+        Returns:
+            An iterator that yields TokenBundles.
+        """
+        return self._ast_entries.__iter__()
+
+    fn __getitem__(self, span: Slice) -> List[AstEntry]:
+        """Get a slice of TokenBundles.
+
+        Args:
+            span: The slice range to extract.
+
+        Returns:
+            A list of TokenBundles within the specified range.
+        """
+        return self._ast_entries[span]
+
+    fn __getitem__[
+        I: Indexer
+    ](ref self, idx: I) -> ref [self._ast_entries] AstEntry:
+        """Get a TokenBundle at a specific index.
+
+        Args:
+            idx: The index to access.
+
+        Returns:
+            A reference to the TokenBundle at the specified index.
+        """
+        return self._ast_entries[idx]
+
+    fn __str__(self) -> String:
+        """Convert the AstEntries to a string representation.
+
+        Returns:
+            A string showing all tokens with appropriate line breaks.
+        """
+        var s: String = ""
+        var precise_location = String()
+        for entry in self._ast_entries:
+            if precise_location == "":
+                precise_location = entry[].precise_location
+            elif precise_location != entry[].precise_location:
+                precise_location = entry[].precise_location
+                s += "\n"
+            s += String(entry[].ast_name) + " " # TODO(josiahls): add tokens
+        return s
+
+    fn clear(mut self):
+        """Remove all TokenBundles from the collection."""
+        self._ast_entries.clear()
+
+
 
 @fieldwise_init
 struct AstParser:

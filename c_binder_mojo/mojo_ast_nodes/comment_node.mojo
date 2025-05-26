@@ -22,9 +22,73 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
+struct TextComment(Copyable, Movable, Stringable, Writable):
+    var _text: String
+    var _entry: AstEntry
+
+    @implicit
+    fn __init__(out self, ast_entry: AstEntry):
+        # Change to mojo
+        self._text = String(" ").join(ast_entry.tokens)
+        self._entry = ast_entry
+
+    fn __str__(self) -> String:
+        if len(self._text) > 6:
+            text = "#" + self._text[6:-1]
+        else:
+            text = "# TextComment INVALID: `" + self._text + "` original_line: " + self._entry.original_line
+        return text
+
+    fn write_to[W: Writer](self, mut writer: W):
+        writer.write(String(self))
+
+
+struct ParagraphComment(Copyable, Movable, Stringable, Writable):
+    var _text_comments: List[TextComment]
+
+    @implicit
+    fn __init__(out self, ast_entry: AstEntry):
+        self._text_comments = List[TextComment]()
+
+    fn add_ast_entry(mut self, ast_entry: AstEntry):
+        self._text_comments.append(TextComment(ast_entry))
+
+    fn __str__(self) -> String:
+        return String("\n").join(self._text_comments)
+
+    fn write_to[W: Writer](self, mut writer: W):
+        writer.write(String(self))
+
+
+struct Grammar(Copyable, Movable, Stringable, Writable):
+    var _paragraph_comments: List[ParagraphComment]
+
+    @implicit
+    fn __init__(out self, ast_entries: AstEntries):
+        self._paragraph_comments = List[ParagraphComment]()
+        for ast_entry in ast_entries:
+            if ast_entry[].ast_name == "ParagraphComment":
+                self._paragraph_comments.append(ast_entry[])
+            elif ast_entry[].ast_name == "TextComment":
+                self._paragraph_comments[-1].add_ast_entry(ast_entry[])
+            elif ast_entry[].ast_name == "FullComment":
+                # Skip this since this a single FullComment node should only ever have 1 FullComment ast 
+                # entry.
+                pass
+            else:
+                print("Unknown ast entry: " + ast_entry[].original_line)
+                
+    fn __str__(self) -> String:
+        return String("\n").join(self._paragraph_comments)
+
+    fn write_to[W: Writer](self, mut writer: W):
+        writer.write(String(self))
+
+
+
 @value
-struct CommentNode(NodeAstLike):
-    alias __name__ = "CommentNode"
+struct FullCommentNode(NodeAstLike):
+    alias __name__ = "FullCommentNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
@@ -111,4 +175,5 @@ struct CommentNode(NodeAstLike):
             indent_level=parent_indent_level,
             newline_before_ast_entries=True,
             newline_after_tail=True,
+            alternate_string=String(Grammar(self._ast_entries[])),
         )

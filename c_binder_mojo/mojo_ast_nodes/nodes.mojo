@@ -52,6 +52,8 @@ fn default_to_string(
     indent_before_children: Bool = False,
     indent_after_children: Bool = False,
     print_parent_level: Bool = False,
+    alternate_string: String = "",
+    alternate_string_tail: String = "",
 ) -> String:
     """Default string conversion for nodes.
 
@@ -88,7 +90,11 @@ fn default_to_string(
         s += indent
     if newline_before_ast_entries:
         s += "\n"
-    s += node.ast_entries().join(" ", indent, just_tokens=just_code)
+
+    if alternate_string:
+        s += alternate_string
+    else:
+        s += node.ast_entries().join(" ", indent, just_tokens=just_code)
 
     # Add children
     if len(node.indicies().child_idxs) > 0:
@@ -101,7 +107,11 @@ fn default_to_string(
             s += "\n"
         if indent_after_children:
             s += indent
-    s += node.ast_entries_tail().join(" ",indent, just_tokens=just_code)
+
+    if alternate_string_tail:
+        s += alternate_string_tail
+    else:
+        s += node.ast_entries_tail().join(" ",indent, just_tokens=just_code)
     if newline_after_tail:
         s += "\n"
     return s

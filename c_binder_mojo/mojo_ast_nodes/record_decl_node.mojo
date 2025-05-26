@@ -26,6 +26,9 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 struct Grammar(Copyable, Movable, Stringable, Writable):
     var _name: String
 
+    fn __init__(out self):
+        self._name = String()
+
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
@@ -59,6 +62,7 @@ struct RecordDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _record_decl_level: Int
+    var _grammar: Grammar
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
@@ -66,6 +70,7 @@ struct RecordDeclNode(NodeAstLike):
         self._ast_entries[].append(ast_entries)
         self._record_decl_level = ast_entries.level
         self._node_state = NodeState.COMPLETED
+        self._grammar = Grammar()
 
     @staticmethod
     fn accept(
@@ -100,6 +105,7 @@ struct RecordDeclNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
+            self._grammar = Grammar(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
@@ -152,16 +158,22 @@ struct RecordDeclNode(NodeAstLike):
         if not just_code:
             s += indent + self.name(include_sig=True) + "\n"
   
-        s += indent + String(Grammar(self._ast_entries[]))
+        s += indent + String(self._grammar)
 
         has_fields = False
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
-            s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+
+            if child.node[].isa[Self]():
+                child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + child.node[][Self]._grammar._name
+                s = child.to_string(just_code, module_interface, 0) + '\n' + s
+            else:
+                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+            
             if child.name() == "FieldDeclNode":
                 has_fields = True
 
         if not has_fields:
             s += indent + "\t" + "pass" + "\n"
 
-        return s
+        return s + "\n"

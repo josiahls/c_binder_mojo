@@ -34,29 +34,36 @@ struct Point:
 	var x: Int
 
 	var y: Int
+
 struct Person:
 	var name: String
 
 	var age: Int
+
 struct Empty:
 	# Empty struct
 	pass
+
+struct _Complex_Inner:
+	# Nested struct 
+
+	var data: Float64
+
+
 struct Complex:
 	# Multi-line struct with comments
 
 	var id: Int
 
 	var value: Float32
-	struct Inner:
-		# Nested struct 
-
-		var data: Float64
 
 	var nested: struct Inner:struct Inner
+
 struct _Anonymous:
 	# Anonymous struct in typedef
 
 	var flags: UInt8
+
 
 # (placeholder) |-TypedefDecl 0x53bb08 <line:29:1, line:31:3> col:3 Flags 'struct Flags':'Flags'
 
@@ -67,7 +74,7 @@ struct _Anonymous:
 # (placeholder) | |   `-Record 0x53b998 ''
 
 # Anonymous struct in typedef
-struct BitFields:
+struct :
 	# Struct with bit fields
 
 	alias a: UInt = 1
@@ -75,3 +82,4 @@ struct BitFields:
 	alias b: UInt = 2
 
 	alias c: UInt = 3
+

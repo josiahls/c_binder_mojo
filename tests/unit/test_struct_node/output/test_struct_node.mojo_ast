@@ -40,6 +40,7 @@ struct Point:
 
 	FieldDeclNode(parent_idx=16, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b310 <line:4:5, col:9> col:9 y 'int'	
+
 RecordDeclNode(parent_idx=0, current_idx=20, child_idxs=(21, 22), node_state=4 (COMPLETED))
 struct Person:
 	FieldDeclNode(parent_idx=20, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -47,12 +48,24 @@ struct Person:
 
 	FieldDeclNode(parent_idx=20, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b480 <line:9:5, col:9> col:9 age 'int'	
+
 RecordDeclNode(parent_idx=0, current_idx=23, child_idxs=(24), node_state=4 (COMPLETED))
 struct Empty:
 	FullCommentNode(parent_idx=23, current_idx=24, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Empty struct
 	pass
+
+RecordDeclNode(parent_idx=25, current_idx=29, child_idxs=(30, 31), node_state=4 (COMPLETED))
+struct _Complex__Complex_Inner:
+	FullCommentNode(parent_idx=29, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+
+	# Nested struct 
+
+	FieldDeclNode(parent_idx=29, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	| | `-FieldDecl 0x53b868 <line:24:9, col:16> col:16 data 'double'	
+
+
 RecordDeclNode(parent_idx=0, current_idx=25, child_idxs=(26, 27, 28, 29, 32), node_state=4 (COMPLETED))
 struct Complex:
 	FullCommentNode(parent_idx=25, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -67,17 +80,10 @@ struct Complex:
 
 	FieldDeclNode(parent_idx=25, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b718 <line:20:5, col:11> col:11 value 'float'	
-	RecordDeclNode(parent_idx=25, current_idx=29, child_idxs=(30, 31), node_state=4 (COMPLETED))
-	struct Inner:
-		FullCommentNode(parent_idx=29, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 2, children_indent_level: 0)
-
-		# Nested struct 
-
-		FieldDeclNode(parent_idx=29, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 2, children_indent_level: 0)
-		| | `-FieldDecl 0x53b868 <line:24:9, col:16> col:16 data 'double'		
 
 	FieldDeclNode(parent_idx=25, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b918 <line:23:5, line:25:7> col:7 nested 'struct Inner':'struct Inner'	
+
 RecordDeclNode(parent_idx=0, current_idx=33, child_idxs=(34, 35), node_state=4 (COMPLETED))
 struct _Anonymous:
 	FullCommentNode(parent_idx=33, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -86,6 +92,7 @@ struct _Anonymous:
 
 	FieldDeclNode(parent_idx=33, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53ba58 <line:30:5, col:19> col:19 flags 'unsigned char'	
+
 PlaceHolderNode(parent_idx=0, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x53bb08 <line:29:1, line:31:3> col:3 Flags 'struct Flags':'Flags'
 PlaceHolderNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -98,7 +105,7 @@ FullCommentNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPL
 
 # Anonymous struct in typedef
 RecordDeclNode(parent_idx=0, current_idx=41, child_idxs=(42, 43, 44, 45), node_state=3 (BUILDING_CHILDREN))
-struct BitFields:
+struct :
 	FullCommentNode(parent_idx=41, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Struct with bit fields
@@ -120,3 +127,4 @@ struct BitFields:
      `-ConstantExpr 0x53bdc8 <col:22> 'int'	
        |-value: Int 3	
        `-IntegerLiteral 0x53bd90 <col:22> 'int' 3	
+

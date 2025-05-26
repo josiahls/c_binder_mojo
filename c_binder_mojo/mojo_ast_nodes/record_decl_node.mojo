@@ -30,11 +30,11 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
         if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print("Invalid grammar: " + String(ast_entries))
+            print("Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
         else:
             entry = ast_entries._ast_entries[0]
             if len(entry.tokens) != 3:
-                print("Invalid grammar: " + String(ast_entries))
+                print("Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
             else:
                 # Idx 0 should be struct
                 # Idx 2 should be definition
@@ -146,5 +146,6 @@ struct RecordDeclNode(NodeAstLike):
             children_indent_level=parent_indent_level + 1,
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
+            indent_before_ast_entries=True,
             alternate_string=String(Grammar(self._ast_entries[])),
         )

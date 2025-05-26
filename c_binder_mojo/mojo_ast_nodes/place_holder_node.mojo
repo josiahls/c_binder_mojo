@@ -112,4 +112,5 @@ struct PlaceHolderNode(NodeAstLike):
             indent_level=parent_indent_level,
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
+            indent_before_ast_entries=True,
         )

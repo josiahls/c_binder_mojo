@@ -35,7 +35,7 @@ AstEntry(ast_name: TranslationUnitDecl, mem_address: 0x4e3518, full_location: <<
     AstEntry(ast_name: ParagraphComment, mem_address: 0x53c120, full_location: <col:7, col:18>, precise_location: , tokens: , level: 4)
      AstEntry(ast_name: TextComment, mem_address: 0x53c0f0, full_location: <col:7, col:18>, precise_location: , tokens: Text=", Basic, types", level: 5)
   AstEntry(ast_name: FieldDecl, mem_address: 0x53b718, full_location: <line:20:5, col:11>, precise_location: col:11, tokens: value, 'float', level: 2)
-  AstEntry(ast_name: RecordDecl, mem_address: 0x53b798, full_location: <line:23:5, line:25:5>, precise_location: line:23:12, tokens: parent, 0x4e3518, struct, Inner, definition, level: 2)
+  AstEntry(ast_name: RecordDecl, mem_address: 0x4e3518 -> 0x53b798, full_location: <line:23:5, line:25:5>, precise_location: line:23:12, tokens: struct, Inner, definition, level: 2)
    AstEntry(ast_name: FullComment, mem_address: 0x551540, full_location: <line:22:7, col:21>, precise_location: , tokens: , level: 3)
     AstEntry(ast_name: ParagraphComment, mem_address: 0x551510, full_location: <col:7, col:21>, precise_location: , tokens: , level: 4)
      AstEntry(ast_name: TextComment, mem_address: 0x53c1c0, full_location: <col:7, col:21>, precise_location: , tokens: Text=", Nested, struct, ", level: 5)

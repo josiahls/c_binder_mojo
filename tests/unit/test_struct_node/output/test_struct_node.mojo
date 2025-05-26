@@ -32,15 +32,15 @@
 struct Point:
 	# Basic struct declarations
 
-x 'int'	
+	x 'int'	
 
-y 'int'	
+	y 'int'	
 
 
 struct Person:
-name 'char *'	
+	name 'char *'	
 
-age 'int'	
+	age 'int'	
 
 
 struct Empty:
@@ -50,25 +50,25 @@ struct Empty:
 struct Complex:
 	# Multi-line struct with comments
 
-id 'int'	
+	id 'int'	
 
 	# Basic types
 
-value 'float'	
+	value 'float'	
 
-struct :
+struct Inner:
 		# Nested struct 
 
-data 'double'		
+		data 'double'		
 
 
-nested 'struct Inner':'struct Inner'	
+	nested 'struct Inner':'struct Inner'	
 
 
 struct :
 	# Anonymous struct in typedef
 
-flags 'unsigned char'	
+	flags 'unsigned char'	
 
 
 Flags 'struct Flags':'Flags'
@@ -84,27 +84,27 @@ Flags 'struct Flags':'Flags'
 struct BitFields:
 	# Struct with bit fields
 
-a 'unsigned int'	
+	a 'unsigned int'	
 
-'int'	
+	'int'	
 
-Int 1	
+	Int 1	
 
-'int' 1	
+	'int' 1	
 
-b 'unsigned int'	
+	b 'unsigned int'	
 
-'int'	
+	'int'	
 
-Int 2	
+	Int 2	
 
-'int' 2	
+	'int' 2	
 
-c 'unsigned int'	
+	c 'unsigned int'	
 
-'int'	
+	'int'	
 
-Int 3	
+	Int 3	
 
-'int' 3	
+	'int' 3	
 

@@ -202,10 +202,18 @@ struct AstParser:
         for line in result:
             level = 0
             consequetive_space = False
+            expect_parent_address = False
             var ast_entry = AstEntry()
             for token in line[].split(" "):
                 if token[].startswith("0x") and ast_entry.mem_address == "":
                     ast_entry.mem_address = token[]
+                elif token[] == "parent" and ast_entry.full_location == "":
+                    # Check if the next token is a valid address. This happens immendiately
+                    # before the location section of the ast output.
+                    expect_parent_address = True
+                elif expect_parent_address and token[].startswith("0x"):
+                    ast_entry.mem_address = token[] + " -> " + ast_entry.mem_address
+                    expect_parent_address = False
                 elif token[].startswith("|-") and ast_entry.ast_name == "":
                     ast_entry.ast_name = token[][2:]
                     level += 1

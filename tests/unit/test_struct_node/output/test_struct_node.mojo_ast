@@ -35,37 +35,37 @@ struct Point:
 
 	# Basic struct declarations
 
-	PlaceHolderNode(parent_idx=16, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=16, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b2a8 <line:3:5, col:9> col:9 x 'int'	
 
-	PlaceHolderNode(parent_idx=16, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=16, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b310 <line:4:5, col:9> col:9 y 'int'	
 RecordDeclNode(parent_idx=0, current_idx=20, child_idxs=(21, 22), node_state=4 (COMPLETED))
 struct Person:
-	PlaceHolderNode(parent_idx=20, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=20, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b418 <line:8:5, col:11> col:11 name 'char *'	
 
-	PlaceHolderNode(parent_idx=20, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=20, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b480 <line:9:5, col:9> col:9 age 'int'	
 RecordDeclNode(parent_idx=0, current_idx=23, child_idxs=(24), node_state=4 (COMPLETED))
 struct Empty:
 	FullCommentNode(parent_idx=23, current_idx=24, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Empty struct
-RecordDeclNode(parent_idx=0, current_idx=25, child_idxs=(26, 27, 28, 29, 30, 33), node_state=4 (COMPLETED))
+RecordDeclNode(parent_idx=0, current_idx=25, child_idxs=(26, 27, 29, 30, 33), node_state=4 (COMPLETED))
 struct Complex:
 	FullCommentNode(parent_idx=25, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Multi-line struct with comments
 
-	PlaceHolderNode(parent_idx=25, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=25, current_idx=27, child_idxs=(28), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b6b0 <line:19:5, col:9> col:9 id 'int'	
-
-	FullCommentNode(parent_idx=25, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FullCommentNode(parent_idx=27, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Basic types
 
-	PlaceHolderNode(parent_idx=25, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+
+	FieldDeclNode(parent_idx=25, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b718 <line:20:5, col:11> col:11 value 'float'	
 	RecordDeclNode(parent_idx=25, current_idx=30, child_idxs=(31, 32), node_state=4 (COMPLETED))
 	struct Inner:
@@ -73,10 +73,10 @@ struct Complex:
 
 		# Nested struct 
 
-		PlaceHolderNode(parent_idx=30, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 2, children_indent_level: 0)
+		FieldDeclNode(parent_idx=30, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 2, children_indent_level: 0)
 		| | `-FieldDecl 0x53b868 <line:24:9, col:16> col:16 data 'double'		
 
-	PlaceHolderNode(parent_idx=25, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=25, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b918 <line:23:5, line:25:7> col:7 nested 'struct Inner':'struct Inner'	
 RecordDeclNode(parent_idx=0, current_idx=34, child_idxs=(35, 36), node_state=4 (COMPLETED))
 struct _Anonymous:
@@ -84,7 +84,7 @@ struct _Anonymous:
 
 	# Anonymous struct in typedef
 
-	PlaceHolderNode(parent_idx=34, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=34, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53ba58 <line:30:5, col:19> col:19 flags 'unsigned char'	
 PlaceHolderNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x53bb08 <line:29:1, line:31:3> col:3 Flags 'struct Flags':'Flags'
@@ -97,44 +97,44 @@ PlaceHolderNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPL
 FullCommentNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # Anonymous struct in typedef
-RecordDeclNode(parent_idx=0, current_idx=42, child_idxs=(43, 44, 45, 46, 47, ...) len=13, node_state=3 (BUILDING_CHILDREN))
+RecordDeclNode(parent_idx=0, current_idx=42, child_idxs=(43, 44, 48, 52), node_state=3 (BUILDING_CHILDREN))
 struct BitFields:
 	FullCommentNode(parent_idx=42, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Struct with bit fields
 
-	PlaceHolderNode(parent_idx=42, current_idx=44, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=42, current_idx=44, child_idxs=(45, 46, 47), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	  |-FieldDecl 0x53bc98 <line:35:5, col:22> col:18 a 'unsigned int'	
-
-	PlaceHolderNode(parent_idx=42, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	PlaceHolderNode(parent_idx=44, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	  | `-ConstantExpr 0x53bc78 <col:22> 'int'	
 
-	PlaceHolderNode(parent_idx=42, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	PlaceHolderNode(parent_idx=44, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	  |   |-value: Int 1	
 
-	PlaceHolderNode(parent_idx=42, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	PlaceHolderNode(parent_idx=44, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	  |   `-IntegerLiteral 0x53bc40 <col:22> 'int' 1	
 
-	PlaceHolderNode(parent_idx=42, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	  |-FieldDecl 0x53bd40 <line:36:5, col:22> col:18 b 'unsigned int'	
 
-	PlaceHolderNode(parent_idx=42, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=42, current_idx=48, child_idxs=(49, 50, 51), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x53bd40 <line:36:5, col:22> col:18 b 'unsigned int'	
+	PlaceHolderNode(parent_idx=48, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	  | `-ConstantExpr 0x53bd20 <col:22> 'int'	
 
-	PlaceHolderNode(parent_idx=42, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	PlaceHolderNode(parent_idx=48, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	  |   |-value: Int 2	
 
-	PlaceHolderNode(parent_idx=42, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	PlaceHolderNode(parent_idx=48, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	  |   `-IntegerLiteral 0x53bce8 <col:22> 'int' 2	
 
-	PlaceHolderNode(parent_idx=42, current_idx=52, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	  `-FieldDecl 0x53bde8 <line:37:5, col:22> col:18 c 'unsigned int'	
 
-	PlaceHolderNode(parent_idx=42, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	FieldDeclNode(parent_idx=42, current_idx=52, child_idxs=(53, 54, 55), node_state=3 (BUILDING_CHILDREN))(parent_indent_level: 1, children_indent_level: 0)
+	  `-FieldDecl 0x53bde8 <line:37:5, col:22> col:18 c 'unsigned int'	
+	PlaceHolderNode(parent_idx=52, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	    `-ConstantExpr 0x53bdc8 <col:22> 'int'	
 
-	PlaceHolderNode(parent_idx=42, current_idx=54, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	PlaceHolderNode(parent_idx=52, current_idx=54, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	      |-value: Int 3	
 
-	PlaceHolderNode(parent_idx=42, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	PlaceHolderNode(parent_idx=52, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	      `-IntegerLiteral 0x53bd90 <col:22> 'int' 3	
+

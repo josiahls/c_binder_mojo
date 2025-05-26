@@ -22,49 +22,49 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
+    var _field_name: String
+    var _field_type: String
 
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print("Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
+        # TODO(josiahls): Toggle depending on whether this is a const
+        self._field_name = String()
+        self._field_type = String()
+        # A field should only have 1 entry
+        if len(ast_entries) == 1:
+            for entry in ast_entries:
+                for token in entry[].tokens:
+                    if self._field_name == "":
+                        self._field_name = token[]
+                    elif self._field_type == "":
+                        self._field_type = token[]
+                    else:
+                        self._field_type += " " + token[]
         else:
-            entry = ast_entries._ast_entries[0]
-            if len(entry.tokens) != 3 and len(entry.tokens) != 2:
-                print("Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
-            elif len(entry.tokens) == 2:
-                # TODO(josiahls): Add a global counter for anonymous structs to avoid
-                # name collisions.
-                self._name = "_Anonymous"
-            else:
-                # Idx 0 should be struct
-                # Idx 2 should be definition
-                self._name = entry.tokens[1]
+            print("Invalid grammar: " + String(ast_entries))
 
 
     fn __str__(self) -> String:
-        return "struct " + self._name + ":"
+        return "var " + self._field_name + ": " + self._field_type
 
     fn write_to[W: Writer](self, mut writer: W):
         writer.write(String(self))
 
 
 @fieldwise_init
-struct RecordDeclNode(NodeAstLike): 
-    alias __name__ = "RecordDeclNode"
+struct FieldDeclNode(NodeAstLike):
+    alias __name__ = "FieldDeclNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
-    var _record_decl_level: Int
+    var _ast_entry_level: Int
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
         self._ast_entries[].append(ast_entries)
-        self._record_decl_level = ast_entries.level
+        self._ast_entry_level = ast_entries.level
         self._node_state = NodeState.COMPLETED
 
     @staticmethod
@@ -73,7 +73,7 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return ast_entries.ast_name == "RecordDecl"
+        return ast_entries.ast_name == "FieldDecl"
 
     @staticmethod
     fn create(
@@ -86,7 +86,7 @@ struct RecordDeclNode(NodeAstLike):
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        if ast_entry.level <= self._record_decl_level:
+        if ast_entry.level <= self._ast_entry_level:
             return TokenFlow.PASS_TO_PARENT
         else:
             return TokenFlow.CREATE_CHILD
@@ -143,18 +143,13 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var s:String = ""
-        var indent:String = ""
-    
-        if parent_indent_level > 0:
-            indent = "\t" * parent_indent_level
-
-        if not just_code:
-            s += indent + self.name(include_sig=True) + "\n"
-  
-        s += indent + String(Grammar(self._ast_entries[]))
-        for child_idx in self._indicies[].child_idxs:
-            child = module_interface.nodes()[][child_idx[]]
-            s += child.to_string(just_code, module_interface, parent_indent_level + 1)
-
-        return s
+        return default_to_string(
+            node=AstNode(self),
+            module_interface=module_interface,
+            just_code=just_code,
+            indent_level=parent_indent_level,
+            newline_before_ast_entries=just_code,
+            newline_after_tail=True,
+            indent_before_ast_entries=True,
+            alternate_string=String(Grammar(self._ast_entries[])) if just_code else String(),
+        )

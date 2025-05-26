@@ -2,6 +2,7 @@
 from .root_node import RootNode
 from .place_holder_node import PlaceHolderNode
 from .full_comment_node import FullCommentNode
+from .field_decl_node import FieldDeclNode
 from .record_decl_node import RecordDeclNode
 
 # Setup Variant
@@ -11,5 +12,6 @@ alias AstNodeVariant = Variant[
     RootNode,
     FullCommentNode,
     RecordDeclNode,
+    FieldDeclNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]

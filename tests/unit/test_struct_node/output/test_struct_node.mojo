@@ -31,33 +31,33 @@
 struct Point:
 	# Basic struct declarations
 
-	# (placeholder) | |-FieldDecl 0x53b2a8 <line:3:5, col:9> col:9 x 'int'
+	var x: 'int'
 
-	# (placeholder) | `-FieldDecl 0x53b310 <line:4:5, col:9> col:9 y 'int'
+	var y: 'int'
 struct Person:
-	# (placeholder) | |-FieldDecl 0x53b418 <line:8:5, col:11> col:11 name 'char *'
+	var name: 'char *'
 
-	# (placeholder) | `-FieldDecl 0x53b480 <line:9:5, col:9> col:9 age 'int'
+	var age: 'int'
 struct Empty:
 	# Empty struct
 struct Complex:
 	# Multi-line struct with comments
 
-	# (placeholder) | |-FieldDecl 0x53b6b0 <line:19:5, col:9> col:9 id 'int'
-
+	var id: 'int'
 	# Basic types
 
-	# (placeholder) | |-FieldDecl 0x53b718 <line:20:5, col:11> col:11 value 'float'
+
+	var value: 'float'
 	struct Inner:
 		# Nested struct 
 
-		# (placeholder) | | `-FieldDecl 0x53b868 <line:24:9, col:16> col:16 data 'double'
+		var data: 'double'
 
-	# (placeholder) | `-FieldDecl 0x53b918 <line:23:5, line:25:7> col:7 nested 'struct Inner':'struct Inner'
+	var nested: 'struct Inner':'struct Inner'
 struct _Anonymous:
 	# Anonymous struct in typedef
 
-	# (placeholder) | `-FieldDecl 0x53ba58 <line:30:5, col:19> col:19 flags 'unsigned char'
+	var flags: 'unsigned char'
 
 # (placeholder) |-TypedefDecl 0x53bb08 <line:29:1, line:31:3> col:3 Flags 'struct Flags':'Flags'
 
@@ -71,26 +71,26 @@ struct _Anonymous:
 struct BitFields:
 	# Struct with bit fields
 
-	# (placeholder)   |-FieldDecl 0x53bc98 <line:35:5, col:22> col:18 a 'unsigned int'
-
+	var a: 'unsigned int'
 	# (placeholder)   | `-ConstantExpr 0x53bc78 <col:22> 'int'
 
 	# (placeholder)   |   |-value: Int 1
 
 	# (placeholder)   |   `-IntegerLiteral 0x53bc40 <col:22> 'int' 1
 
-	# (placeholder)   |-FieldDecl 0x53bd40 <line:36:5, col:22> col:18 b 'unsigned int'
 
+	var b: 'unsigned int'
 	# (placeholder)   | `-ConstantExpr 0x53bd20 <col:22> 'int'
 
 	# (placeholder)   |   |-value: Int 2
 
 	# (placeholder)   |   `-IntegerLiteral 0x53bce8 <col:22> 'int' 2
 
-	# (placeholder)   `-FieldDecl 0x53bde8 <line:37:5, col:22> col:18 c 'unsigned int'
 
+	var c: 'unsigned int'
 	# (placeholder)     `-ConstantExpr 0x53bdc8 <col:22> 'int'
 
 	# (placeholder)       |-value: Int 3
 
 	# (placeholder)       `-IntegerLiteral 0x53bd90 <col:22> 'int' 3
+

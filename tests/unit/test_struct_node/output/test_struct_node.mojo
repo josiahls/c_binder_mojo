@@ -65,7 +65,7 @@ struct Inner:
 	nested 'struct Inner':'struct Inner'	
 
 
-struct :
+struct _Anonymous:
 	# Anonymous struct in typedef
 
 	flags 'unsigned char'	

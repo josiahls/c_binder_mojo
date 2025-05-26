@@ -33,8 +33,12 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             print("Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
         else:
             entry = ast_entries._ast_entries[0]
-            if len(entry.tokens) != 3:
+            if len(entry.tokens) != 3 and len(entry.tokens) != 2:
                 print("Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
+            elif len(entry.tokens) == 2:
+                # TODO(josiahls): Add a global counter for anonymous structs to avoid
+                # name collisions.
+                self._name = "_Anonymous"
             else:
                 # Idx 0 should be struct
                 # Idx 2 should be definition

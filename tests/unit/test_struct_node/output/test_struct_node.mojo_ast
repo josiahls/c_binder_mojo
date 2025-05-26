@@ -84,7 +84,7 @@ struct Inner:
 	| `-FieldDecl 0x53b918 <line:23:5, line:25:7> col:7 nested 'struct Inner':'struct Inner'	
 
 RecordDeclNode(parent_idx=0, current_idx=34, child_idxs=(35, 36), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 1)
-struct :
+struct _Anonymous:
 	FullCommentNode(parent_idx=34, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Anonymous struct in typedef

@@ -33,6 +33,11 @@ fn generic_test_outputs(
     var ast_entries = output_dir / (test_name + ".ast_entries")
     ast_entries.write_text(String("\n").join(entries))
 
+    var raw_ast = output_dir / (test_name + ".raw_ast")
+    for entry in entries:
+        entry[].str_just_original_line = True
+    raw_ast.write_text(String("\n").join(entries))
+
     # Generate AST
     var tree_log_file = output_dir / (test_name + ".tree")
     var module_interface = make_mojo_tree(entries, String(tree_log_file), validate=False)

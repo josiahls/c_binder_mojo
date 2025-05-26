@@ -44,6 +44,7 @@ fn default_to_string(
     indent_level: Int = 0,
     children_indent_level: Int = 0,
     space_before_code: Bool = False,
+    newline_before_ast_entries: Bool = False,
     newline_before_children: Bool = False,
     newline_after_children: Bool = False,
     newline_after_tail: Bool = False,
@@ -85,7 +86,9 @@ fn default_to_string(
         s += " "
     if indent_before_ast_entries:
         s += indent
-    s += node.ast_entries().join(" ", indent)
+    if newline_before_ast_entries:
+        s += "\n"
+    s += node.ast_entries().join(" ", indent, just_tokens=just_code)
 
     # Add children
     if len(node.indicies().child_idxs) > 0:
@@ -98,7 +101,7 @@ fn default_to_string(
             s += "\n"
         if indent_after_children:
             s += indent
-    s += node.ast_entries_tail().join(" ",indent)
+    s += node.ast_entries_tail().join(" ",indent, just_tokens=just_code)
     if newline_after_tail:
         s += "\n"
     return s

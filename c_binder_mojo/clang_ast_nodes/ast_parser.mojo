@@ -23,9 +23,11 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
     var full_location: String
     var precise_location: String
     var tokens: List[String]
+    var original_line: String
 
     # Meta fields
     var level: Int
+    var str_just_original_line: Bool
 
     fn __init__(out self):
         self.ast_name = ""
@@ -33,7 +35,9 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         self.full_location = ""
         self.precise_location = ""
         self.tokens = List[String]()
+        self.original_line = ""
         self.level = 0
+        self.str_just_original_line = False
 
     fn __str__(read self: Self) -> String:
         var s:String = ""
@@ -49,7 +53,10 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         return s
 
     fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
+        if self.str_just_original_line:
+            writer.write(self.original_line)
+        else:
+            writer.write(String(self))
 
 
 @fieldwise_init
@@ -73,6 +80,7 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
         self,
         sep: String,
         indent: String = "",
+        just_tokens: Bool = False,
     ) -> String:
         """Join the AstEntries into a single string.
 
@@ -85,7 +93,11 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
         for entry in self._ast_entries:
             if len(s) > 0 and entry[].precise_location != "" and entry[].precise_location != precise_location:
                 s += sep
-            s += entry[].ast_name
+
+            if just_tokens:
+                s += sep.join(entry[].tokens)
+            else:
+                s += entry[].original_line
             if entry[].precise_location != "" and entry[].precise_location != precise_location:
                 s += indent
                 precise_location = entry[].precise_location
@@ -228,6 +240,7 @@ struct AstParser:
                 if consequetive_space and token[] != "":
                     consequetive_space = False
                 
+            ast_entry.original_line = line[]
             ast_entry.level = level
             if ast_entry.ast_name == "":
                 raise Error('Could not find name for line: ' + line[])

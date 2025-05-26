@@ -1,0 +1,71 @@
+TranslationUnitDecl 0x4e3518 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x4e3d40 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x4e3ae0 '__int128'
+|-TypedefDecl 0x4e3db0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x4e3b00 'unsigned __int128'
+|-TypedefDecl 0x4e40b8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+| `-RecordType 0x4e3e90 'struct __NSConstantString_tag'
+|   `-Record 0x4e3e08 '__NSConstantString_tag'
+|-TypedefDecl 0x4e4150 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x4e4110 'char *'
+|   `-BuiltinType 0x4e35c0 'char'
+|-TypedefDecl 0x4e4448 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+| `-ConstantArrayType 0x4e43f0 'struct __va_list_tag[1]' 1 
+|   `-RecordType 0x4e4230 'struct __va_list_tag'
+|     `-Record 0x4e41a8 '__va_list_tag'
+|-RecordDecl 0x53b1f0 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:2:1, line:5:1> line:2:8 struct Point definition
+| |-FullComment 0x53bee0 <line:1:3, col:28>
+| | `-ParagraphComment 0x53beb0 <col:3, col:28>
+| |   `-TextComment 0x53be80 <col:3, col:28> Text=" Basic struct declarations"
+| |-FieldDecl 0x53b2a8 <line:3:5, col:9> col:9 x 'int'
+| `-FieldDecl 0x53b310 <line:4:5, col:9> col:9 y 'int'
+|-RecordDecl 0x53b360 <line:7:1, line:10:1> line:7:8 struct Person definition
+| |-FieldDecl 0x53b418 <line:8:5, col:11> col:11 name 'char *'
+| `-FieldDecl 0x53b480 <line:9:5, col:9> col:9 age 'int'
+|-RecordDecl 0x53b4f8 <line:13:1, line:14:1> line:13:8 struct Empty definition
+| `-FullComment 0x53bfb0 <line:12:3, col:15>
+|   `-ParagraphComment 0x53bf80 <col:3, col:15>
+|     `-TextComment 0x53bf50 <col:3, col:15> Text=" Empty struct"
+|-RecordDecl 0x53b5c8 <line:17:1, line:26:1> line:17:8 struct Complex definition
+| |-FullComment 0x53c080 <line:16:3, col:34>
+| | `-ParagraphComment 0x53c050 <col:3, col:34>
+| |   `-TextComment 0x53c020 <col:3, col:34> Text=" Multi-line struct with comments"
+| |-FieldDecl 0x53b6b0 <line:19:5, col:9> col:9 id 'int'
+| | `-FullComment 0x53c150 <line:18:7, col:18>
+| |   `-ParagraphComment 0x53c120 <col:7, col:18>
+| |     `-TextComment 0x53c0f0 <col:7, col:18> Text=" Basic types"
+| |-FieldDecl 0x53b718 <line:20:5, col:11> col:11 value 'float'
+| |-RecordDecl 0x53b798 parent 0x4e3518 <line:23:5, line:25:5> line:23:12 struct Inner definition
+| | |-FullComment 0x551540 <line:22:7, col:21>
+| | | `-ParagraphComment 0x551510 <col:7, col:21>
+| | |   `-TextComment 0x53c1c0 <col:7, col:21> Text=" Nested struct "
+| | `-FieldDecl 0x53b868 <line:24:9, col:16> col:16 data 'double'
+| `-FieldDecl 0x53b918 <line:23:5, line:25:7> col:7 nested 'struct Inner':'struct Inner'
+|-RecordDecl 0x53b998 <line:29:9, line:31:1> line:29:9 struct definition
+| |-FullComment 0x551610 <line:28:3, col:30>
+| | `-ParagraphComment 0x5515e0 <col:3, col:30>
+| |   `-TextComment 0x5515b0 <col:3, col:30> Text=" Anonymous struct in typedef"
+| `-FieldDecl 0x53ba58 <line:30:5, col:19> col:19 flags 'unsigned char'
+|-TypedefDecl 0x53bb08 <line:29:1, line:31:3> col:3 Flags 'struct Flags':'Flags'
+| |-ElaboratedType 0x53bab0 'struct Flags' sugar
+| | `-RecordType 0x53ba20 'Flags'
+| |   `-Record 0x53b998 ''
+| `-FullComment 0x5516e0 <line:28:3, col:30>
+|   `-ParagraphComment 0x5516b0 <col:3, col:30>
+|     `-TextComment 0x551680 <col:3, col:30> Text=" Anonymous struct in typedef"
+`-RecordDecl 0x53bba0 <line:34:1, line:38:1> line:34:8 struct BitFields definition
+  |-FullComment 0x5517b0 <line:33:3, col:25>
+  | `-ParagraphComment 0x551780 <col:3, col:25>
+  |   `-TextComment 0x551750 <col:3, col:25> Text=" Struct with bit fields"
+  |-FieldDecl 0x53bc98 <line:35:5, col:22> col:18 a 'unsigned int'
+  | `-ConstantExpr 0x53bc78 <col:22> 'int'
+  |   |-value: Int 1
+  |   `-IntegerLiteral 0x53bc40 <col:22> 'int' 1
+  |-FieldDecl 0x53bd40 <line:36:5, col:22> col:18 b 'unsigned int'
+  | `-ConstantExpr 0x53bd20 <col:22> 'int'
+  |   |-value: Int 2
+  |   `-IntegerLiteral 0x53bce8 <col:22> 'int' 2
+  `-FieldDecl 0x53bde8 <line:37:5, col:22> col:18 c 'unsigned int'
+    `-ConstantExpr 0x53bdc8 <col:22> 'int'
+      |-value: Int 3
+      `-IntegerLiteral 0x53bd90 <col:22> 'int' 3

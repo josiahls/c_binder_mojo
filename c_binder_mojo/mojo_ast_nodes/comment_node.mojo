@@ -23,16 +23,18 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
 @value
-struct PlaceHolderNode(NodeAstLike):
-    alias __name__ = "PlaceHolderNode"
+struct CommentNode(NodeAstLike):
+    alias __name__ = "CommentNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
+    var _comment_level: Int
 
-    fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
+    fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
+        self._comment_level = ast_entry.level
+        self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
 
     @staticmethod
@@ -41,7 +43,7 @@ struct PlaceHolderNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return ast_entries.ast_name != "EndFileNode"
+        return ast_entries.ast_name == "FullComment"
 
     @staticmethod
     fn create(
@@ -54,7 +56,10 @@ struct PlaceHolderNode(NodeAstLike):
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        return TokenFlow.PASS_TO_PARENT
+        if ast_entry.level <= self._comment_level:
+            return TokenFlow.PASS_TO_PARENT
+        else:
+            return TokenFlow.CONSUME_TOKEN
 
     fn process(
         mut self,
@@ -62,7 +67,11 @@ struct PlaceHolderNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._node_state = NodeState.COMPLETED
+        if token_flow == TokenFlow.CONSUME_TOKEN:
+            self._ast_entries[].append(ast_entry)
+            self._node_state = NodeState.BUILDING_CHILDREN
+        elif token_flow == TokenFlow.PASS_TO_PARENT:
+            self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -100,6 +109,6 @@ struct PlaceHolderNode(NodeAstLike):
             module_interface=module_interface, 
             just_code=just_code, 
             indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
+            newline_before_ast_entries=True,
             newline_after_tail=True,
         )

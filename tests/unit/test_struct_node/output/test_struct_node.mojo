@@ -28,25 +28,18 @@
 'struct __va_list_tag'
 
 '__va_list_tag'
-
 struct Point:
 	# Basic struct declarations
 
 	x 'int'	
 
 	y 'int'	
-
-
 struct Person:
 	name 'char *'	
 
 	age 'int'	
-
-
 struct Empty:
 	# Empty struct
-
-
 struct Complex:
 	# Multi-line struct with comments
 
@@ -55,21 +48,16 @@ struct Complex:
 	# Basic types
 
 	value 'float'	
-
-struct Inner:
+	struct Inner:
 		# Nested struct 
 
 		data 'double'		
 
-
 	nested 'struct Inner':'struct Inner'	
-
-
 struct _Anonymous:
 	# Anonymous struct in typedef
 
 	flags 'unsigned char'	
-
 
 Flags 'struct Flags':'Flags'
 
@@ -80,7 +68,6 @@ Flags 'struct Flags':'Flags'
 ''
 
 # Anonymous struct in typedef
-
 struct BitFields:
 	# Struct with bit fields
 
@@ -107,4 +94,3 @@ struct BitFields:
 	Int 3	
 
 	'int' 3	
-

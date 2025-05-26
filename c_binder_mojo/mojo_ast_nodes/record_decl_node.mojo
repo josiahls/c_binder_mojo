@@ -86,6 +86,9 @@ struct RecordDeclNode(NodeAstLike):
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
+        print("determine_token_flow: " + String(ast_entry))
+        print("record_decl_level: " + String(self._record_decl_level))
+        print("ast_entry.level: " + String(ast_entry.level))
         if ast_entry.level <= self._record_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
@@ -143,13 +146,32 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return default_to_string(
-            node=AstNode(self),
-            module_interface=module_interface,
-            just_code=just_code,
-            children_indent_level=parent_indent_level + 1,
-            newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
-            alternate_string=String(Grammar(self._ast_entries[])),
-        )
+        var s:String = ""
+        var indent:String = ""
+    
+        if parent_indent_level > 0:
+            indent = "\t" * parent_indent_level
+
+        if not just_code:
+            s += indent + self.name(include_sig=True) + "\n"
+  
+        s += indent + String(Grammar(self._ast_entries[]))
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.nodes()[][child_idx[]]
+            s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+
+        return s
+
+
+
+        # return default_to_string(
+        #     node=AstNode(self),
+        #     module_interface=module_interface,
+        #     just_code=just_code,
+        #     indent_level=parent_indent_level + 1,
+        #     # children_indent_level=parent_indent_level + 1,
+        #     newline_before_ast_entries=just_code,
+        #     newline_after_tail=True,
+        #     # indent_before_ast_entries=True,
+        #     alternate_string=String(Grammar(self._ast_entries[])),
+        # )

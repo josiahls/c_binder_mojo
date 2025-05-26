@@ -115,7 +115,7 @@ fn default_to_string(
         if indent_before_children:
             s += children_indent
         s += string_children(
-            node, just_code, module_interface, children_indent_level
+            node, just_code, module_interface, indent_level
         )
         if newline_after_children:
             s += "\n"

@@ -49,6 +49,10 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
 
 
     fn __str__(self) -> String:
+
+        if self._name == "":
+            print("Invalid grammar: , NAME IS BLANK!")
+
         return "struct " + self._name + ":"
 
     fn write_to[W: Writer](self, mut writer: W):
@@ -102,10 +106,10 @@ struct RecordDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
+        self._grammar = Grammar(self._ast_entries[])
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
-            self._grammar = Grammar(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
@@ -151,6 +155,7 @@ struct RecordDeclNode(NodeAstLike):
     ) raises -> String:
         var s:String = ""
         var indent:String = ""
+        var inner_struct_name_map: Dict[String, String] = {}
     
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level
@@ -160,13 +165,33 @@ struct RecordDeclNode(NodeAstLike):
   
         s += indent + String(self._grammar)
 
+        print('all indicies: ')
+        for idx in self._indicies[].child_idxs:
+            print("\t" + String(idx[]))
+
+
         has_fields = False
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
 
             if child.node[].isa[Self]():
-                child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + child.node[][Self]._grammar._name
+                original_name = child.node[][Self]._grammar._name.copy()
+                print("original_name: " + original_name)
+                inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
+                child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
                 s = child.to_string(just_code, module_interface, 0) + '\n' + s
+            elif child.node[].isa[FieldDeclNode]():
+                if child.node[][FieldDeclNode]._grammar._field_type in inner_struct_name_map:
+                    print("inner_struct_name_map: " + child.node[][FieldDeclNode]._grammar._field_type)
+                    print("inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]: " + inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type])
+                    child.node[][FieldDeclNode]._grammar._field_type = inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]
+
+                print("child.node[][FieldDeclNode]._grammar._field_type: " + child.node[][FieldDeclNode]._grammar._field_type)
+                for known_key in inner_struct_name_map.keys():
+                    print("\tknown_key: " + known_key[])
+
+
+                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
             else:
                 s += child.to_string(just_code, module_interface, parent_indent_level + 1)
             

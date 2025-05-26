@@ -29,6 +29,12 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
     var _is_const: Bool
     var _value: String
 
+    fn __init__(out self):
+        self._field_name = String()
+        self._field_type = String()
+        self._is_const = False
+        self._value = String()
+
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         # TODO(josiahls): Toggle depending on whether this is a const
@@ -58,6 +64,14 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                         self._value += token[]
                     idx += 1
 
+        if 'struct ' in self._field_type:
+            # TODO(josiahls): This field generally looks something like struct Inner':'struct Inner'
+            # I'm not sure what the repeated name implies or how it will change. This will break if it does.
+            self._field_type = self._field_type.replace('struct ', '')
+            colon_idx = self._field_type.find(':')
+            if colon_idx != -1:
+                self._field_type = self._field_type[:colon_idx]
+
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)
         if self._is_const:
@@ -76,14 +90,14 @@ struct FieldDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _ast_entry_level: Int
-
+    var _grammar: Grammar
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
         self._ast_entries[].append(ast_entries)
         self._ast_entry_level = ast_entries.level
         self._node_state = NodeState.COMPLETED
-
+        self._grammar = Grammar()
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -114,6 +128,7 @@ struct FieldDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
+        self._grammar = Grammar(self._ast_entries[])
         if token_flow == TokenFlow.CONSUME_TOKEN:
             self._node_state = NodeState.COLLECTING_TOKENS
             self._ast_entries[].append(ast_entry)
@@ -169,5 +184,5 @@ struct FieldDeclNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(Grammar(self._ast_entries[])) if just_code else String(),
+            alternate_string=String(self._grammar) if just_code else String(),
         )

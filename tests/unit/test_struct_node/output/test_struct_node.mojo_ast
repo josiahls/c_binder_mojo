@@ -105,7 +105,7 @@ FullCommentNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPL
 
 # Anonymous struct in typedef
 RecordDeclNode(parent_idx=0, current_idx=41, child_idxs=(42, 43, 44, 45), node_state=3 (BUILDING_CHILDREN))
-struct :
+struct BitFields:
 	FullCommentNode(parent_idx=41, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Struct with bit fields

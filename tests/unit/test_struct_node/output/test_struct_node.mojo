@@ -57,7 +57,7 @@ struct Complex:
 
 	var value: Float32
 
-	var nested: struct Inner:struct Inner
+	var nested: Inner
 
 struct _Anonymous:
 	# Anonymous struct in typedef
@@ -74,7 +74,7 @@ struct _Anonymous:
 # (placeholder) | |   `-Record 0x53b998 ''
 
 # Anonymous struct in typedef
-struct :
+struct BitFields:
 	# Struct with bit fields
 
 	alias a: UInt = 1

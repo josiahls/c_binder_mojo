@@ -22,6 +22,23 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
+struct Grammar(Copyable, Movable, Stringable, Writable):
+    var _name: String
+
+    @implicit
+    fn __init__(out self, ast_entries: AstEntries):
+        self._name = String()
+        # Just add # comment to the ast entry name + tokens
+        self._name = "# (placeholder) " + ast_entries.join(" ")
+
+
+    fn __str__(self) -> String:
+        return self._name
+
+    fn write_to[W: Writer](self, mut writer: W):
+        writer.write(String(self))
+
+
 @fieldwise_init
 struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
@@ -113,4 +130,5 @@ struct PlaceHolderNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
+            alternate_string=String(Grammar(self._ast_entries[])) if just_code else String(),
         )

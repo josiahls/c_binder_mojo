@@ -98,13 +98,13 @@ fn default_to_string(
         s += indent + (parent_level) + "\n"
     if space_before_code:
         s += " "
-    if indent_before_ast_entries:
-        s += indent
     if newline_before_ast_entries:
         s += "\n"
+    if indent_before_ast_entries:
+        s += indent
 
     if alternate_string:
-        s += alternate_string
+        s += alternate_string.replace("\n", "\n" + indent)
     else:
         s += node.ast_entries().join(" ", indent, just_tokens=just_code)
 
@@ -123,7 +123,7 @@ fn default_to_string(
             s += indent
 
     if alternate_string_tail:
-        s += alternate_string_tail
+        s += alternate_string_tail.replace("\n", "\n" + indent)
     else:
         s += node.ast_entries_tail().join(" ", indent, just_tokens=just_code)
     if newline_after_tail:

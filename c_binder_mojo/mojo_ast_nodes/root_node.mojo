@@ -22,7 +22,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-@value
+@fieldwise_init
 struct RootNode(NodeAstLike):
     alias __name__ = "RootNode"
     var _indicies: ArcPointer[NodeIndices]

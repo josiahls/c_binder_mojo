@@ -87,25 +87,21 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
             indent: The indent to use for newlines.
         """
         var s = String()
-        var precise_location = String()
+        var n_entries = len(self._ast_entries)
+        var idx = 0
         for entry in self._ast_entries:
-            if (
-                len(s) > 0
-                and entry[].precise_location != ""
-                and entry[].precise_location != precise_location
-            ):
+            if len(s) > 0:
                 s += sep
 
             if just_tokens:
                 s += sep.join(entry[].tokens)
             else:
                 s += entry[].original_line
-            if (
-                entry[].precise_location != ""
-                and entry[].precise_location != precise_location
-            ):
-                s += indent
-                precise_location = entry[].precise_location
+
+            s += indent
+            idx += 1
+            if idx < n_entries:
+                s += "\n"
         return s
 
     fn append(mut self, owned value: AstEntry):

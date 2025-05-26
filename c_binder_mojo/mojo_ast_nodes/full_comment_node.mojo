@@ -90,7 +90,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         writer.write(String(self))
 
 
-@value
+@fieldwise_init
 struct FullCommentNode(NodeAstLike):
     alias __name__ = "FullCommentNode"
     var _indicies: ArcPointer[NodeIndices]
@@ -189,5 +189,6 @@ struct FullCommentNode(NodeAstLike):
             indent_level=parent_indent_level,
             newline_before_ast_entries=True,
             newline_after_tail=True,
+            indent_before_ast_entries=True,
             alternate_string=String(Grammar(self._ast_entries[])),
         )

@@ -22,17 +22,45 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
+
+struct Grammar(Copyable, Movable, Stringable, Writable):
+    var _name: String
+
+    @implicit
+    fn __init__(out self, ast_entries: AstEntries):
+        self._name = String()
+        if len(ast_entries) > 1 or len(ast_entries) == 0:
+            print("Invalid grammar: " + String(ast_entries))
+        else:
+            entry = ast_entries._ast_entries[0]
+            if len(entry.tokens) != 3:
+                print("Invalid grammar: " + String(ast_entries))
+            else:
+                # Idx 0 should be struct
+                # Idx 2 should be definition
+                self._name = entry.tokens[1]
+
+
+    fn __str__(self) -> String:
+        return "struct " + self._name + ":"
+
+    fn write_to[W: Writer](self, mut writer: W):
+        writer.write(String(self))
+
+
 @fieldwise_init
-struct PlaceHolderNode(NodeAstLike):
-    alias __name__ = "PlaceHolderNode"
+struct RecordDeclNode(NodeAstLike): 
+    alias __name__ = "RecordDeclNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
+    var _record_decl_level: Int
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
         self._ast_entries[].append(ast_entries)
+        self._record_decl_level = ast_entries.level
         self._node_state = NodeState.COMPLETED
 
     @staticmethod
@@ -41,7 +69,7 @@ struct PlaceHolderNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return ast_entries.ast_name != "EndFileNode"
+        return ast_entries.ast_name == "RecordDecl"
 
     @staticmethod
     fn create(
@@ -54,7 +82,10 @@ struct PlaceHolderNode(NodeAstLike):
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        return TokenFlow.PASS_TO_PARENT
+        if ast_entry.level <= self._record_decl_level:
+            return TokenFlow.PASS_TO_PARENT
+        else:
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -62,7 +93,10 @@ struct PlaceHolderNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._node_state = NodeState.COMPLETED
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
+        else:
+            self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -109,7 +143,8 @@ struct PlaceHolderNode(NodeAstLike):
             node=AstNode(self),
             module_interface=module_interface,
             just_code=just_code,
-            indent_level=parent_indent_level,
+            children_indent_level=parent_indent_level + 1,
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
+            alternate_string=String(Grammar(self._ast_entries[])),
         )

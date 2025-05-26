@@ -29,47 +29,47 @@
 
 '__va_list_tag'
 
-struct Point definition
+struct Point:
+	# Basic struct declarations
 
-# Basic struct declarations
+x 'int'	
 
-x 'int'
+y 'int'	
 
-y 'int'
 
-struct Person definition
+struct Person:
+name 'char *'	
 
-name 'char *'
+age 'int'	
 
-age 'int'
 
-struct Empty definition
+struct Empty:
+	# Empty struct
 
-# Empty struct
 
-struct Complex definition
+struct Complex:
+	# Multi-line struct with comments
 
-# Multi-line struct with comments
+id 'int'	
 
-id 'int'
+	# Basic types
 
-# Basic types
+value 'float'	
 
-value 'float'
+struct :
+		# Nested struct 
 
-parent 0x4e3518 struct Inner definition
+data 'double'		
 
-# Nested struct 
 
-data 'double'
+nested 'struct Inner':'struct Inner'	
 
-nested 'struct Inner':'struct Inner'
 
-struct definition
+struct :
+	# Anonymous struct in typedef
 
-# Anonymous struct in typedef
+flags 'unsigned char'	
 
-flags 'unsigned char'
 
 Flags 'struct Flags':'Flags'
 
@@ -81,30 +81,30 @@ Flags 'struct Flags':'Flags'
 
 # Anonymous struct in typedef
 
-struct BitFields definition
+struct BitFields:
+	# Struct with bit fields
 
-# Struct with bit fields
+a 'unsigned int'	
 
-a 'unsigned int'
+'int'	
 
-'int'
+Int 1	
 
-Int 1
+'int' 1	
 
-'int' 1
+b 'unsigned int'	
 
-b 'unsigned int'
+'int'	
 
-'int'
+Int 2	
 
-Int 2
+'int' 2	
 
-'int' 2
+c 'unsigned int'	
 
-c 'unsigned int'
+'int'	
 
-'int'
+Int 3	
 
-Int 3
+'int' 3	
 
-'int' 3

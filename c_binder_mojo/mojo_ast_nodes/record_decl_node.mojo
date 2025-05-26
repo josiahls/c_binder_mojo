@@ -153,8 +153,15 @@ struct RecordDeclNode(NodeAstLike):
             s += indent + self.name(include_sig=True) + "\n"
   
         s += indent + String(Grammar(self._ast_entries[]))
+
+        has_fields = False
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
             s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+            if child.name() == "FieldDeclNode":
+                has_fields = True
+
+        if not has_fields:
+            s += indent + "\t" + "pass" + "\n"
 
         return s

@@ -31,33 +31,32 @@
 struct Point:
 	# Basic struct declarations
 
-	var x: 'int'
+	var x: Int
 
-	var y: 'int'
+	var y: Int
 struct Person:
-	var name: 'char *'
+	var name: String
 
-	var age: 'int'
+	var age: Int
 struct Empty:
 	# Empty struct
+	pass
 struct Complex:
 	# Multi-line struct with comments
 
-	var id: 'int'
-	# Basic types
+	var id: Int
 
-
-	var value: 'float'
+	var value: Float32
 	struct Inner:
 		# Nested struct 
 
-		var data: 'double'
+		var data: Float64
 
-	var nested: 'struct Inner':'struct Inner'
+	var nested: struct Inner:struct Inner
 struct _Anonymous:
 	# Anonymous struct in typedef
 
-	var flags: 'unsigned char'
+	var flags: UInt8
 
 # (placeholder) |-TypedefDecl 0x53bb08 <line:29:1, line:31:3> col:3 Flags 'struct Flags':'Flags'
 
@@ -71,26 +70,8 @@ struct _Anonymous:
 struct BitFields:
 	# Struct with bit fields
 
-	var a: 'unsigned int'
-	# (placeholder)   | `-ConstantExpr 0x53bc78 <col:22> 'int'
+	alias a: UInt = 1
 
-	# (placeholder)   |   |-value: Int 1
+	alias b: UInt = 2
 
-	# (placeholder)   |   `-IntegerLiteral 0x53bc40 <col:22> 'int' 1
-
-
-	var b: 'unsigned int'
-	# (placeholder)   | `-ConstantExpr 0x53bd20 <col:22> 'int'
-
-	# (placeholder)   |   |-value: Int 2
-
-	# (placeholder)   |   `-IntegerLiteral 0x53bce8 <col:22> 'int' 2
-
-
-	var c: 'unsigned int'
-	# (placeholder)     `-ConstantExpr 0x53bdc8 <col:22> 'int'
-
-	# (placeholder)       |-value: Int 3
-
-	# (placeholder)       `-IntegerLiteral 0x53bd90 <col:22> 'int' 3
-
+	alias c: UInt = 3

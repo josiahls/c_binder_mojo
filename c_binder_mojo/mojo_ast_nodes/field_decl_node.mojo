@@ -20,20 +20,26 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
+from c_binder_mojo.type_mapper import TypeMapper
 
 
 struct Grammar(Copyable, Movable, Stringable, Writable):
     var _field_name: String
     var _field_type: String
+    var _is_const: Bool
+    var _value: String
 
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         # TODO(josiahls): Toggle depending on whether this is a const
         self._field_name = String()
         self._field_type = String()
+        self._is_const = False
+        self._value = String()
         # A field should only have 1 entry
-        if len(ast_entries) == 1:
-            for entry in ast_entries:
+
+        for entry in ast_entries:
+            if entry[].ast_name == "FieldDecl":
                 for token in entry[].tokens:
                     if self._field_name == "":
                         self._field_name = token[]
@@ -41,12 +47,23 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                         self._field_type = token[]
                     else:
                         self._field_type += " " + token[]
-        else:
-            print("Invalid grammar: " + String(ast_entries))
-
+            elif entry[].ast_name == "ConstantExpr":
+                self._is_const = True
+            elif entry[].ast_name == "value:" and self._is_const:
+                idx = 0
+                for token in entry[].tokens:
+                    if idx > 1:
+                        self._value += " " + token[]
+                    elif idx == 1:
+                        self._value += token[]
+                    idx += 1
 
     fn __str__(self) -> String:
-        return "var " + self._field_name + ": " + self._field_type
+        var mojo_type = TypeMapper.get_mojo_type(self._field_type)
+        if self._is_const:
+            return "alias " + self._field_name + ": " + mojo_type + " = " + self._value
+        else:
+            return "var " + self._field_name + ": " + mojo_type
 
     fn write_to[W: Writer](self, mut writer: W):
         writer.write(String(self))
@@ -89,7 +106,7 @@ struct FieldDeclNode(NodeAstLike):
         if ast_entry.level <= self._ast_entry_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CREATE_CHILD
+            return TokenFlow.CONSUME_TOKEN
 
     fn process(
         mut self,
@@ -97,8 +114,9 @@ struct FieldDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        if token_flow == TokenFlow.CREATE_CHILD:
-            self._node_state = NodeState.BUILDING_CHILDREN
+        if token_flow == TokenFlow.CONSUME_TOKEN:
+            self._node_state = NodeState.COLLECTING_TOKENS
+            self._ast_entries[].append(ast_entry)
         else:
             self._node_state = NodeState.COMPLETED
 

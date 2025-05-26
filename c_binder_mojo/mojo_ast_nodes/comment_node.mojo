@@ -36,7 +36,12 @@ struct TextComment(Copyable, Movable, Stringable, Writable):
         if len(self._text) > 6:
             text = "#" + self._text[6:-1]
         else:
-            text = "# TextComment INVALID: `" + self._text + "` original_line: " + self._entry.original_line
+            text = (
+                "# TextComment INVALID: `"
+                + self._text
+                + "` original_line: "
+                + self._entry.original_line
+            )
         return text
 
     fn write_to[W: Writer](self, mut writer: W):
@@ -72,18 +77,17 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             elif ast_entry[].ast_name == "TextComment":
                 self._paragraph_comments[-1].add_ast_entry(ast_entry[])
             elif ast_entry[].ast_name == "FullComment":
-                # Skip this since this a single FullComment node should only ever have 1 FullComment ast 
+                # Skip this since this a single FullComment node should only ever have 1 FullComment ast
                 # entry.
                 pass
             else:
                 print("Unknown ast entry: " + ast_entry[].original_line)
-                
+
     fn __str__(self) -> String:
         return String("\n").join(self._paragraph_comments)
 
     fn write_to[W: Writer](self, mut writer: W):
         writer.write(String(self))
-
 
 
 @value
@@ -161,17 +165,27 @@ struct FullCommentNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ", node_state=" + String(self._node_state) + ")"
+            return (
+                self.__name__
+                + "("
+                + String(self._indicies[])
+                + ", node_state="
+                + String(self._node_state)
+                + ")"
+            )
         else:
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
         return default_to_string(
-            node=AstNode(self), 
-            module_interface=module_interface, 
-            just_code=just_code, 
+            node=AstNode(self),
+            module_interface=module_interface,
+            just_code=just_code,
             indent_level=parent_indent_level,
             newline_before_ast_entries=True,
             newline_after_tail=True,

@@ -180,107 +180,107 @@ tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolde
     └─ Nodes: 1 active, 15 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 15 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=15)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 15 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=16, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 16 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=16, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FullComment'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 16 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=16)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FullComment'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 16 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'BuiltinType'
+    └─ Nodes: 1 active, 17 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
     └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 1 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 16 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 16 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=17)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 18 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
     └─ Nodes: 1 active, 18 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 17 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 2 active, 17 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=18)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 18 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 19 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 19 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=19)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 19 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=20, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 20 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=20, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 20 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=20)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 20 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 21 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 21 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=21)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 21 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 22 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumDecl'
     └─ Nodes: 1 active, 22 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=22)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumDecl'
     └─ Nodes: 1 active, 22 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumDecl'
     └─ Nodes: 1 active, 23 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
@@ -304,91 +304,83 @@ tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(paren
     └─ Nodes: 2 active, 23 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=24, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
     └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 2 active, 23 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=24)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 24 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 25 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FullComment'
+    └─ Current ast_entry: 'ConstantExpr'
     └─ Nodes: 1 active, 25 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=25)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FullComment'
+    └─ Current ast_entry: 'ConstantExpr'
     └─ Nodes: 1 active, 25 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'ConstantExpr'
     └─ Nodes: 1 active, 26 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'value:'
     └─ Nodes: 1 active, 26 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 25 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 25 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=26)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'value:'
     └─ Nodes: 1 active, 26 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'value:'
     └─ Nodes: 1 active, 27 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FullComment'
+    └─ Current ast_entry: 'IntegerLiteral'
     └─ Nodes: 1 active, 27 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=27)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FullComment'
+    └─ Current ast_entry: 'IntegerLiteral'
     └─ Nodes: 1 active, 27 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Nodes: 1 active, 28 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
     └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 28 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 1 active, 28 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 27 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 27 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=28)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 28 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
     └─ Nodes: 1 active, 29 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 28 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'EnumConstantDecl'
+    └─ Nodes: 2 active, 28 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=29)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 29 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 30 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
@@ -412,39 +404,47 @@ tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(paren
     └─ Nodes: 2 active, 30 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
     └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 2 active, 30 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=31)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 31 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 32 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 32 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=32)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 32 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 33 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
     └─ Nodes: 1 active, 33 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 32 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'EnumConstantDecl'
+    └─ Nodes: 2 active, 32 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=33)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 33 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'EnumConstantDecl'
     └─ Nodes: 1 active, 34 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
@@ -468,257 +468,589 @@ tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(paren
     └─ Nodes: 2 active, 34 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
     └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 2 active, 34 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=35)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 35 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 36 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'TypedefDecl'
+    └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 36 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=36)
     └─ Path: RootNode
-    └─ Current ast_entry: 'TypedefDecl'
+    └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 36 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'TypedefDecl'
+    └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 37 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ElaboratedType'
+    └─ Current ast_entry: 'EnumType'
     └─ Nodes: 1 active, 37 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=37)
     └─ Path: RootNode
-    └─ Current ast_entry: 'ElaboratedType'
+    └─ Current ast_entry: 'EnumType'
     └─ Nodes: 1 active, 37 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=38, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ElaboratedType'
+    └─ Current ast_entry: 'EnumType'
     └─ Nodes: 1 active, 38 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=38, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordType'
+    └─ Current ast_entry: 'Enum'
     └─ Nodes: 1 active, 38 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=38)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordType'
+    └─ Current ast_entry: 'Enum'
     └─ Nodes: 1 active, 38 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordType'
+    └─ Current ast_entry: 'Enum'
     └─ Nodes: 1 active, 39 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'Record'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 39 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=39)
     └─ Path: RootNode
-    └─ Current ast_entry: 'Record'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 39 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'Record'
-    └─ Nodes: 1 active, 40 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
     └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 40 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 1 active, 40 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 39 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 2 active, 39 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=40)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 40 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 41 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 1 active, 41 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 40 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
     └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 40 complete
+    └─ Nodes: 1 active, 40 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 1 active, 41 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 41 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=41)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 41 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 42 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 42 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=42)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 42 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> FullCommentNode
     └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 43 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Nodes: 1 active, 42 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> FullCommentNode
     └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 1 active, 43 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Nodes: 1 active, 42 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
     └─ Path: RootNode -> FullCommentNode
     └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 42 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Nodes: 2 active, 41 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
     └─ Path: RootNode -> FullCommentNode
     └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 42 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=43)
+    └─ Nodes: 2 active, 41 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=42)
     └─ Path: RootNode
     └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 42 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 43 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 43 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=43)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 43 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=44, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 44 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=44, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 44 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=44)
     └─ Path: RootNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 44 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 45 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 45 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=45)
     └─ Path: RootNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 45 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 46 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 46 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=46)
     └─ Path: RootNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 46 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 47 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'RecordDecl'
     └─ Nodes: 1 active, 47 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=47)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'RecordDecl'
     └─ Nodes: 1 active, 47 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'RecordDecl'
     └─ Nodes: 1 active, 48 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 48 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=48)
     └─ Path: RootNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 48 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ConstantExpr'
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 49 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'value:'
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
     └─ Nodes: 1 active, 49 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 48 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 2 active, 48 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=49)
     └─ Path: RootNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'FieldDecl'
     └─ Nodes: 1 active, 49 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'FieldDecl'
     └─ Nodes: 1 active, 50 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'FieldDecl'
     └─ Nodes: 1 active, 50 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=50)
     └─ Path: RootNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'FieldDecl'
     └─ Nodes: 1 active, 50 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'FieldDecl'
     └─ Nodes: 1 active, 51 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 51 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=51)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 51 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=52, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FieldDecl'
+    └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 52 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=52, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 52 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=52)
     └─ Path: RootNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 52 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ConstantExpr'
+    └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 53 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'RecordType'
     └─ Nodes: 1 active, 53 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=53)
     └─ Path: RootNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'RecordType'
     └─ Nodes: 1 active, 53 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=54, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'value:'
+    └─ Current ast_entry: 'RecordType'
     └─ Nodes: 1 active, 54 complete
 tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=54, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'Record'
     └─ Nodes: 1 active, 54 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=54)
     └─ Path: RootNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'Record'
     └─ Nodes: 1 active, 54 complete
 tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'IntegerLiteral'
+    └─ Current ast_entry: 'Record'
     └─ Nodes: 1 active, 55 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 55 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=55)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 55 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 56 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 1 active, 56 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 55 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 2 active, 55 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=56)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 1 active, 56 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 1 active, 57 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 57 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=57)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 57 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=58, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 58 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=58, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 1 active, 58 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=58, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 57 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=58, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 2 active, 57 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=58)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 58 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 59 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 59 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=59)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 59 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=60, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 60 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=60, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 60 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=60)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 60 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=61, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 61 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=61, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 61 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=61)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 61 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=62, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 62 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=62, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 62 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=62)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 62 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 63 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 63 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=63)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 63 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=64, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 64 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=64, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 64 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=64)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 64 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 65 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 65 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=65)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 65 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=66, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 66 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=66, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 66 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=66)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 66 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 1 active, 67 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 1 active, 67 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 66 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> FullCommentNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 2 active, 66 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=67)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 1 active, 67 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=68, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 1 active, 68 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=68, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 68 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=68)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 68 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 1 active, 69 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 69 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=69)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 69 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=70, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 70 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=70, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 70 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=70)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 70 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 71 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 71 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=71)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 71 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=72, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 72 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=72, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 72 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=72)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 72 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 73 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 73 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=73)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 73 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=74, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefDecl'
+    └─ Nodes: 1 active, 74 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=74, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'PointerType'
+    └─ Nodes: 1 active, 74 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=74)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'PointerType'
+    └─ Nodes: 1 active, 74 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=75, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'PointerType'
+    └─ Nodes: 1 active, 75 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=75, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefType'
+    └─ Nodes: 1 active, 75 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=75)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'TypedefType'
+    └─ Nodes: 1 active, 75 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=76, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'TypedefType'
+    └─ Nodes: 1 active, 76 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=76, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Typedef'
+    └─ Nodes: 1 active, 76 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=76)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'Typedef'
+    └─ Nodes: 1 active, 76 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=77, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Typedef'
+    └─ Nodes: 1 active, 77 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=77, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 77 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=77)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 77 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=78, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'ElaboratedType'
+    └─ Nodes: 1 active, 78 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=78, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 78 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=78)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 78 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'RecordType'
+    └─ Nodes: 1 active, 79 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 79 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=79)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 79 complete
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=80, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'Record'
+    └─ Nodes: 1 active, 80 complete

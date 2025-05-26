@@ -17,7 +17,10 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
 fn string_children(
-    node: AstNode, just_code: Bool, module_interface: ModuleInterface, indent_level: Int
+    node: AstNode,
+    just_code: Bool,
+    module_interface: ModuleInterface,
+    indent_level: Int,
 ) -> String:
     """Converts children to string with proper indentation and line breaks.
 
@@ -33,12 +36,15 @@ fn string_children(
         try:
             s += child.to_string(just_code, module_interface, indent_level)
         except Exception:
-            print("WARNING: error converting child to string:" + child.name(include_sig=True))
+            print(
+                "WARNING: error converting child to string:"
+                + child.name(include_sig=True)
+            )
     return s
 
 
 fn default_to_string(
-    node: AstNode, 
+    node: AstNode,
     module_interface: ModuleInterface,
     just_code: Bool = False,
     indent_level: Int = 0,
@@ -77,13 +83,19 @@ fn default_to_string(
     if children_indent_level > 0:
         children_indent = "\t" * children_indent_level
 
-    parent_level = String("(parent_indent_level: " + String(indent_level) + ", children_indent_level: " + String(children_indent_level) + ")")
+    parent_level = String(
+        "(parent_indent_level: "
+        + String(indent_level)
+        + ", children_indent_level: "
+        + String(children_indent_level)
+        + ")"
+    )
     if not just_code:
         if indent_level != 0:
-            s += '\n'
+            s += "\n"
         s += indent + node.name(include_sig=True) + parent_level + "\n"
     if print_parent_level:
-        s += indent + (parent_level) + '\n'
+        s += indent + (parent_level) + "\n"
     if space_before_code:
         s += " "
     if indent_before_ast_entries:
@@ -102,7 +114,9 @@ fn default_to_string(
             s += "\n"
         if indent_before_children:
             s += children_indent
-        s += string_children(node, just_code, module_interface, children_indent_level)
+        s += string_children(
+            node, just_code, module_interface, children_indent_level
+        )
         if newline_after_children:
             s += "\n"
         if indent_after_children:
@@ -111,11 +125,10 @@ fn default_to_string(
     if alternate_string_tail:
         s += alternate_string_tail
     else:
-        s += node.ast_entries_tail().join(" ",indent, just_tokens=just_code)
+        s += node.ast_entries_tail().join(" ", indent, just_tokens=just_code)
     if newline_after_tail:
         s += "\n"
     return s
-
 
 
 trait NodeAstLike(Copyable & Movable, Stringable):
@@ -174,9 +187,13 @@ trait NodeAstLike(Copyable & Movable, Stringable):
         ...
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
         ...
+
 
 @value
 struct AstNode(Copyable & Movable & Stringable):
@@ -212,7 +229,9 @@ struct AstNode(Copyable & Movable & Stringable):
             "WARNING: none of the nodes accepted the ast_entry: "
             + String(ast_entry.ast_name)
         )
-        return Self(PlaceHolderNode.create(ast_entry, module_interface, indices))
+        return Self(
+            PlaceHolderNode.create(ast_entry, module_interface, indices)
+        )
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
@@ -276,8 +295,7 @@ struct AstNode(Copyable & Movable & Stringable):
             if self.node[].isa[T]():
                 return self.node[]._get_ptr[T]()[].ast_entries_ptr()
         print(
-            "WARNING: ast_entries_ptr called on AstNode with no"
-            " ast_entries_ptr"
+            "WARNING: ast_entries_ptr called on AstNode with no ast_entries_ptr"
         )
         return ArcPointer[AstEntries](AstEntries())
 
@@ -363,7 +381,10 @@ struct AstNode(Copyable & Movable & Stringable):
 
     @always_inline("nodebug")
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):

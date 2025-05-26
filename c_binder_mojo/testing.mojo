@@ -3,6 +3,7 @@ from firehose.logging import Logger
 
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstParser
 from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
+
 # from c_binder_mojo.c_ast_nodes.tree import make_tree
 # from c_binder_mojo.mojo_ast_nodes.root_node import RootNode
 # from c_binder_mojo.common import Tokenizer
@@ -10,14 +11,15 @@ from c_binder_mojo.mojo_ast_nodes.tree import make_tree as make_mojo_tree
 # from c_binder_mojo.c_ast_nodes.tree import ModuleInterface
 # from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface as MojoModuleInterface
 
+
 fn generic_test_outputs(
     test_name: String,
     mut logger: Logger,
     test_dir: Path,
     output_dir: Path,
-    skip_c_ast_no_just_code: Bool = False
+    skip_c_ast_no_just_code: Bool = False,
 ) raises:
-# ) raises -> (ModuleInterface, MojoModuleInterface):
+    # ) raises -> (ModuleInterface, MojoModuleInterface):
     logger.info("Starting " + test_name + " test")
 
     # Path to the test header file
@@ -40,8 +42,9 @@ fn generic_test_outputs(
 
     # Generate AST
     var tree_log_file = output_dir / (test_name + ".tree")
-    var module_interface = make_mojo_tree(entries, String(tree_log_file), validate=False)
-
+    var module_interface = make_mojo_tree(
+        entries, String(tree_log_file), validate=False
+    )
 
     if len(module_interface.nodes()[]) == 0:
         raise Error("No nodes found for file: " + test_name)

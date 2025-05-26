@@ -19,9 +19,10 @@ from c_binder_mojo.common import (
     NodeState,
     TokenFlow,
     MessageableEnum,
-    C_BINDER_MOJO_END_FILE
+    C_BINDER_MOJO_END_FILE,
 )
 from c_binder_mojo.clang_ast_nodes.nodes import AstNode, NodeAstLike
+
 
 @value
 struct ModuleInterface:

@@ -88,17 +88,27 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ", node_state=" + String(self._node_state) + ")"
+            return (
+                self.__name__
+                + "("
+                + String(self._indicies[])
+                + ", node_state="
+                + String(self._node_state)
+                + ")"
+            )
         else:
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
         return default_to_string(
-            node=AstNode(self), 
-            module_interface=module_interface, 
-            just_code=just_code, 
+            node=AstNode(self),
+            module_interface=module_interface,
+            just_code=just_code,
             indent_level=parent_indent_level,
             newline_before_ast_entries=just_code,
             newline_after_tail=True,

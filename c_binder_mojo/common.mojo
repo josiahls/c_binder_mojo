@@ -228,7 +228,6 @@ struct NodeIndices(Stringable):
         return s
 
 
-
 struct TokenBundle(EqualityComparable & Stringable & Copyable & Movable):
     """A bundle containing a token and its position information in source code.
 
@@ -274,7 +273,10 @@ struct TokenBundle(EqualityComparable & Stringable & Copyable & Movable):
         return WhitespaceEnum.is_whitespace(self)
 
     fn is_newline(read self: Self) -> Bool:
-        return self.token == C_BINDER_MOJO_NEWLINE or self.token == WhitespaceEnum.NEWLINE_STRING
+        return (
+            self.token == C_BINDER_MOJO_NEWLINE
+            or self.token == WhitespaceEnum.NEWLINE_STRING
+        )
 
     @staticmethod
     fn from_other(new_token: String, other: Self) -> Self:
@@ -511,7 +513,9 @@ struct Tokenizer:
                 col_num += len(token_string[])
             # Re add the newline token
             if not skip_newline:
-                self.tokens.append(TokenBundle(C_BINDER_MOJO_NEWLINE, current_row_num, col_num))
+                self.tokens.append(
+                    TokenBundle(C_BINDER_MOJO_NEWLINE, current_row_num, col_num)
+                )
             current_row_num += 1
             skip_newline = False
 

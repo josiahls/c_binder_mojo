@@ -31,7 +31,7 @@
 
 struct Point definition
 
-Text=" Basic struct declarations"
+# Basic struct declarations
 
 x 'int'
 
@@ -45,21 +45,21 @@ age 'int'
 
 struct Empty definition
 
-Text=" Empty struct"
+# Empty struct
 
 struct Complex definition
 
-Text=" Multi-line struct with comments"
+# Multi-line struct with comments
 
 id 'int'
 
-Text=" Basic types"
+# Basic types
 
 value 'float'
 
 parent 0x4e3518 struct Inner definition
 
-Text=" Nested struct "
+# Nested struct 
 
 data 'double'
 
@@ -67,7 +67,7 @@ nested 'struct Inner':'struct Inner'
 
 struct definition
 
-Text=" Anonymous struct in typedef"
+# Anonymous struct in typedef
 
 flags 'unsigned char'
 
@@ -79,11 +79,11 @@ Flags 'struct Flags':'Flags'
 
 ''
 
-Text=" Anonymous struct in typedef"
+# Anonymous struct in typedef
 
 struct BitFields definition
 
-Text=" Struct with bit fields"
+# Struct with bit fields
 
 a 'unsigned int'
 

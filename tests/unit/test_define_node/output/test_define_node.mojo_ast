@@ -1,0 +1,31 @@
+RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=15)
+PlaceHolderNode(parent_idx=0, current_idx=1, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TranslationUnitDecl 0x4e3518 <<invalid sloc>> <invalid sloc>
+PlaceHolderNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e3d40 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+PlaceHolderNode(parent_idx=0, current_idx=3, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| `-BuiltinType 0x4e3ae0 '__int128'
+PlaceHolderNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e3db0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+PlaceHolderNode(parent_idx=0, current_idx=5, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| `-BuiltinType 0x4e3b00 'unsigned __int128'
+PlaceHolderNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e40b8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+PlaceHolderNode(parent_idx=0, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| `-RecordType 0x4e3e90 'struct __NSConstantString_tag'
+PlaceHolderNode(parent_idx=0, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|   `-Record 0x4e3e08 '__NSConstantString_tag'
+PlaceHolderNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e4150 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+PlaceHolderNode(parent_idx=0, current_idx=10, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| `-PointerType 0x4e4110 'char *'
+PlaceHolderNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|   `-BuiltinType 0x4e35c0 'char'
+PlaceHolderNode(parent_idx=0, current_idx=12, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+`-TypedefDecl 0x4e4448 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+PlaceHolderNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+  `-ConstantArrayType 0x4e43f0 'struct __va_list_tag[1]' 1 
+PlaceHolderNode(parent_idx=0, current_idx=14, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+    `-RecordType 0x4e4230 'struct __va_list_tag'
+PlaceHolderNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+      `-Record 0x4e41a8 '__va_list_tag'

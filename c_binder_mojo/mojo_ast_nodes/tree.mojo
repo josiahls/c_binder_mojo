@@ -148,7 +148,7 @@ fn log_state_transition(
         recursion_depth: Current depth of get_current_node recursion.
     """
     # Format the transition string with fixed width
-    var transition_str:String
+    var transition_str: String
     if prev_state == MessageableEnum(-1) or prev_state == token_flow:
         transition_str = String(token_flow)
     else:
@@ -324,8 +324,12 @@ fn get_current_node(
     # State machine branching based on current state
     if current_idx == -1:
         if len(module_interface.nodes()[]) > 0:
-            raise Error("Tree already has a module given node: " + String(ast_entry))
-        return _initialize_module(ast_entry, current_idx, module_interface, logger)
+            raise Error(
+                "Tree already has a module given node: " + String(ast_entry)
+            )
+        return _initialize_module(
+            ast_entry, current_idx, module_interface, logger
+        )
 
     # var prev_state = token_flow
     var node = module_interface.nodes()[][current_idx]
@@ -342,7 +346,11 @@ fn get_current_node(
     if token_flow == TokenFlow.CREATE_CHILD:
         node.process(ast_entry, TokenFlow.CREATE_CHILD, module_interface)
         return _create_child(
-            ast_entry, current_idx, module_interface, logger, recursion_depth + 1
+            ast_entry,
+            current_idx,
+            module_interface,
+            logger,
+            recursion_depth + 1,
         )
 
     elif token_flow == TokenFlow.PASS_TO_PARENT:
@@ -369,7 +377,9 @@ fn get_current_node(
 
 
 fn make_tree(
-    owned entries: List[AstEntry], tree_transition_file: String = "", validate: Bool = True
+    owned entries: List[AstEntry],
+    tree_transition_file: String = "",
+    validate: Bool = True,
 ) raises -> ModuleInterface:
     """Build an AST from a list of tokens.
 
@@ -440,7 +450,7 @@ fn make_tree(
             if node[].node_state() != NodeState.COMPLETED:
                 incomplete_nodes.append(node[])
         if len(incomplete_nodes) > 0:
-            var s = String('\t')
+            var s = String("\t")
             for node in incomplete_nodes:
                 s += node[].name(include_sig=True) + "\n\t"
             raise Error("Incomplete mojo ast nodes: \n" + s)

@@ -2,9 +2,7 @@
 import os
 from pathlib import Path
 from memory import UnsafePointer
-from sys.ffi import (
-    external_call
-)
+from sys.ffi import external_call
 from collections.list import _ListIter
 from subprocess import run
 
@@ -40,7 +38,7 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         self.str_just_original_line = False
 
     fn __str__(read self: Self) -> String:
-        var s:String = ""
+        var s: String = ""
         s += " " * self.level
         s += "AstEntry("
         s += "ast_name: " + self.ast_name + ", "
@@ -91,14 +89,21 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
         var s = String()
         var precise_location = String()
         for entry in self._ast_entries:
-            if len(s) > 0 and entry[].precise_location != "" and entry[].precise_location != precise_location:
+            if (
+                len(s) > 0
+                and entry[].precise_location != ""
+                and entry[].precise_location != precise_location
+            ):
                 s += sep
 
             if just_tokens:
                 s += sep.join(entry[].tokens)
             else:
                 s += entry[].original_line
-            if entry[].precise_location != "" and entry[].precise_location != precise_location:
+            if (
+                entry[].precise_location != ""
+                and entry[].precise_location != precise_location
+            ):
                 s += indent
                 precise_location = entry[].precise_location
         return s
@@ -175,7 +180,7 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
             elif precise_location != entry[].precise_location:
                 precise_location = entry[].precise_location
                 s += "\n"
-            s += String(entry[].ast_name) + " " # TODO(josiahls): add tokens
+            s += String(entry[].ast_name) + " "  # TODO(josiahls): add tokens
         return s
 
     fn clear(mut self):
@@ -183,13 +188,15 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
         self._ast_entries.clear()
 
 
-
 @fieldwise_init
 struct AstParser:
-
     @staticmethod
     fn clang_call(file_path: Path) raises -> List[String]:
-        cmd = "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments -fno-color-diagnostics " + file_path.path
+        cmd = (
+            "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments"
+            " -fno-color-diagnostics "
+            + file_path.path
+        )
         result = run(cmd)
         return result.split("\n")
 
@@ -209,26 +216,51 @@ struct AstParser:
                 elif token[].startswith("`-") and ast_entry.ast_name == "":
                     ast_entry.ast_name = token[][2:]
                     level += 1
-                elif token[].startswith("TranslationUnitDecl") and ast_entry.ast_name == "":
+                elif (
+                    token[].startswith("TranslationUnitDecl")
+                    and ast_entry.ast_name == ""
+                ):
                     # TranslationUnitDecl is a special case which is located at the root
                     # of the ast output.
                     ast_entry.ast_name = token[]
                 elif token[].startswith("<") and ast_entry.full_location == "":
                     ast_entry.full_location = token[]
-                elif token[].endswith(">") and not ast_entry.full_location.endswith(">"):
+                elif token[].endswith(
+                    ">"
+                ) and not ast_entry.full_location.endswith(">"):
                     ast_entry.full_location += " " + token[]
-                elif "<<invalid sloc>>" in token[] and ast_entry.full_location == "":
+                elif (
+                    "<<invalid sloc>>" in token[]
+                    and ast_entry.full_location == ""
+                ):
                     ast_entry.full_location = "invalid"
-                elif "<invalid sloc>" in token[] and ast_entry.precise_location == "":
+                elif (
+                    "<invalid sloc>" in token[]
+                    and ast_entry.precise_location == ""
+                ):
                     ast_entry.precise_location = "invalid"
-                elif token[].startswith("col:") and ast_entry.precise_location == "":
+                elif (
+                    token[].startswith("col:")
+                    and ast_entry.precise_location == ""
+                ):
                     ast_entry.precise_location = token[]
-                elif token[].startswith("line:") and ast_entry.precise_location == "":
+                elif (
+                    token[].startswith("line:")
+                    and ast_entry.precise_location == ""
+                ):
                     ast_entry.precise_location = token[]
-                elif token[] == "" and ast_entry.ast_name == "" and consequetive_space:
+                elif (
+                    token[] == ""
+                    and ast_entry.ast_name == ""
+                    and consequetive_space
+                ):
                     level += 1
                     consequetive_space = False
-                elif token[] == "" and ast_entry.ast_name == "" and not consequetive_space:
+                elif (
+                    token[] == ""
+                    and ast_entry.ast_name == ""
+                    and not consequetive_space
+                ):
                     consequetive_space = True
                 elif token[] == "|" and ast_entry.ast_name == "":
                     level += 1
@@ -239,11 +271,11 @@ struct AstParser:
                 # isn't an empty space.
                 if consequetive_space and token[] != "":
                     consequetive_space = False
-                
+
             ast_entry.original_line = line[]
             ast_entry.level = level
             if ast_entry.ast_name == "":
-                raise Error('Could not find name for line: ' + line[])
+                raise Error("Could not find name for line: " + line[])
 
             entries.append(ast_entry^)
         return entries

@@ -30,7 +30,12 @@ struct RootNode(NodeAstLike):
     var _node_state: MessageableEnum
     var _add_main_function: Bool
 
-    fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry, add_main_function: Bool = False):
+    fn __init__(
+        out self,
+        indicies: NodeIndices,
+        ast_entry: AstEntry,
+        add_main_function: Bool = False,
+    ):
         self._indicies = indicies
         self._ast_entries = AstEntries()
         self._node_state = NodeState.INITIALIZING
@@ -97,14 +102,21 @@ struct RootNode(NodeAstLike):
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
-        var s:String
+        var s: String
         if just_code:
-            s = string_children(AstNode(self), just_code, module_interface, parent_indent_level)
+            s = string_children(
+                AstNode(self), just_code, module_interface, parent_indent_level
+            )
             if self._add_main_function:
                 s += "\nfn main():\n    pass"
             return s
         s = self.name(include_sig=True) + "\n"
-        s += string_children(AstNode(self), just_code, module_interface, parent_indent_level)
+        s += string_children(
+            AstNode(self), just_code, module_interface, parent_indent_level
+        )
         return s

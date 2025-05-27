@@ -67,6 +67,7 @@ struct RecordDeclNode(NodeAstLike):
     var _node_state: MessageableEnum
     var _record_decl_level: Int
     var _grammar: Grammar
+    var _inner_struct_name_map: Dict[String, String]
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
@@ -75,6 +76,7 @@ struct RecordDeclNode(NodeAstLike):
         self._record_decl_level = ast_entries.level
         self._node_state = NodeState.COMPLETED
         self._grammar = Grammar()
+        self._inner_struct_name_map = Dict[String, String]()
 
     @staticmethod
     fn accept(
@@ -110,7 +112,33 @@ struct RecordDeclNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
+            self.update_child_struct_names(module_interface)
             self._node_state = NodeState.COMPLETED
+
+    fn update_child_struct_names(mut self, module_interface: ModuleInterface):
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.nodes()[][child_idx[]]
+
+            if child.node[].isa[Self]():
+                original_name = child.node[][Self]._grammar._name.copy()
+                # print("original_name: " + original_name)
+                self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
+                child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
+            elif child.node[].isa[FieldDeclNode]():
+                if child.node[][FieldDeclNode]._grammar._field_type in self._inner_struct_name_map:
+                    # print("inner_struct_name_map: " + child.node[][FieldDeclNode]._grammar._field_type)
+                    # print("inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]: " + self._inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type])
+                    try:
+                        child.node[][FieldDeclNode]._grammar._field_type = self._inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]
+                    except:
+                        print("Error: " + child.node[][FieldDeclNode]._grammar._field_type + " not found in inner_struct_name_map")
+                # else:
+                #     print("Error: " + child.node[][FieldDeclNode]._grammar._field_type + " not found in inner_struct_name_map")
+
+                print("child.node[][FieldDeclNode]._grammar._field_type: " + child.node[][FieldDeclNode]._grammar._field_type)
+                for known_key in self._inner_struct_name_map.items():
+                    print("\tknown_key: " + known_key[].key + " value: " + known_key[].value)
+
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -155,7 +183,7 @@ struct RecordDeclNode(NodeAstLike):
     ) raises -> String:
         var s:String = ""
         var indent:String = ""
-        var inner_struct_name_map: Dict[String, String] = {}
+        # var inner_struct_name_map: Dict[String, String] = {}
     
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level
@@ -165,33 +193,28 @@ struct RecordDeclNode(NodeAstLike):
   
         s += indent + String(self._grammar)
 
-        print('all indicies: ')
-        for idx in self._indicies[].child_idxs:
-            print("\t" + String(idx[]))
-
-
         has_fields = False
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
 
             if child.node[].isa[Self]():
-                original_name = child.node[][Self]._grammar._name.copy()
-                print("original_name: " + original_name)
-                inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
-                child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
+                # original_name = child.node[][Self]._grammar._name.copy()
+                # print("original_name: " + original_name)
+                # inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
+                # child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
                 s = child.to_string(just_code, module_interface, 0) + '\n' + s
-            elif child.node[].isa[FieldDeclNode]():
-                if child.node[][FieldDeclNode]._grammar._field_type in inner_struct_name_map:
-                    print("inner_struct_name_map: " + child.node[][FieldDeclNode]._grammar._field_type)
-                    print("inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]: " + inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type])
-                    child.node[][FieldDeclNode]._grammar._field_type = inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]
+            # elif child.node[].isa[FieldDeclNode]():
+                # if child.node[][FieldDeclNode]._grammar._field_type in inner_struct_name_map:
+                #     print("inner_struct_name_map: " + child.node[][FieldDeclNode]._grammar._field_type)
+                #     print("inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]: " + inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type])
+                #     child.node[][FieldDeclNode]._grammar._field_type = inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]
 
-                print("child.node[][FieldDeclNode]._grammar._field_type: " + child.node[][FieldDeclNode]._grammar._field_type)
-                for known_key in inner_struct_name_map.keys():
-                    print("\tknown_key: " + known_key[])
+                # print("child.node[][FieldDeclNode]._grammar._field_type: " + child.node[][FieldDeclNode]._grammar._field_type)
+                # for known_key in inner_struct_name_map.keys():
+                #     print("\tknown_key: " + known_key[])
 
 
-                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+                # s += child.to_string(just_code, module_interface, parent_indent_level + 1)
             else:
                 s += child.to_string(just_code, module_interface, parent_indent_level + 1)
             

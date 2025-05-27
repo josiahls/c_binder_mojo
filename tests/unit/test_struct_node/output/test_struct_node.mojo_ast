@@ -57,7 +57,7 @@ struct Empty:
 	pass
 
 RecordDeclNode(parent_idx=25, current_idx=29, child_idxs=(30, 31), node_state=4 (COMPLETED))
-struct _Complex__Complex_Inner:
+struct _Complex_Inner:
 	FullCommentNode(parent_idx=29, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
 	# Nested struct 

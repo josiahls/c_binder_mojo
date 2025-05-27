@@ -70,7 +70,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             self._field_type = self._field_type.replace('struct ', '')
             colon_idx = self._field_type.find(':')
             if colon_idx != -1:
-                self._field_type = self._field_type[:colon_idx]
+                self._field_type = self._field_type[:colon_idx][1:-1]
 
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)

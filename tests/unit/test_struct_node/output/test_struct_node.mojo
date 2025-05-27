@@ -57,7 +57,7 @@ struct Complex:
 
 	var value: Float32
 
-	var nested: Inner
+	var nested: _Complex_Inner
 
 struct _Anonymous:
 	# Anonymous struct in typedef

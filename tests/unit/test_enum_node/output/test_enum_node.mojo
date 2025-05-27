@@ -40,13 +40,13 @@ struct Color:
 struct Direction:
 	# Enum with auto-incrementing values
 
-	alias NORTH: Int = 
+	alias NORTH: Int = 0
 
-	alias SOUTH: Int = 
+	alias SOUTH: Int = 1
 
-	alias EAST: Int = 
+	alias EAST: Int = 2
 
-	alias WEST: Int = 
+	alias WEST: Int = 3
 
 struct Status:
 	# Enum with mixed explicit and implicit values
@@ -57,9 +57,9 @@ struct Status:
 
 	alias SERVER_ERROR: Int = 500
 
-	alias UNAVAILABLE: Int = 
+	alias UNAVAILABLE: Int = 501
 
-	alias TIMEOUT: Int = 
+	alias TIMEOUT: Int = 502
 
 struct Empty:
 	# Enum with name but no values (empty enum)

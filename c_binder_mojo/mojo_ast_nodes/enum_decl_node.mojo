@@ -112,7 +112,25 @@ struct EnumDeclNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
+            self.update_enum_constant_values(module_interface)
             self._node_state = NodeState.COMPLETED
+
+    fn update_enum_constant_values(mut self, module_interface: ModuleInterface):
+        max_value = -1
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.nodes()[][child_idx[]]
+            if child.node[].isa[EnumConstantDeclNode]():
+                value = child.node[][EnumConstantDeclNode]._grammar._value
+                if value == "":
+                    max_value += 1
+                    value = String(max_value)
+                else:
+                    try:
+                        max_value = Int(value)
+                    except:
+                        print("Error: Enum constant decl has invalid value: " + value)
+
+                child.node[][EnumConstantDeclNode]._grammar._value = value
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

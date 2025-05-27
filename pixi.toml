@@ -21,7 +21,7 @@ f = "magic run format"
 ## Common testing tasks
 test_all = "mojo test -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests"
 
-test_integration = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/*/test_*"
+test_integration = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/*/test_*.mojo"
 test_include = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_include_node/test_include_node.mojo"
 test_struct = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.mojo"
 test_enum = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_enum_node/test_enum_node.mojo"

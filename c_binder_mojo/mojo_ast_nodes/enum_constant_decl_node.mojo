@@ -55,16 +55,10 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             elif entry[].ast_name == "value:":
                 if len(entry[].tokens) > 2:
                     print("Error: Enum constant decl has more than one token: " + String(entry[]))
-                idx = 0
+
                 if len(entry[].tokens) == 2:
                     self._value = entry[].tokens[1]
-                # else:
-                # for token in entry[].tokens:
-                #     if idx > 1:
-                #         self._value += " " + token[]
-                #     elif idx == 1:
-                #         self._value += token[]
-                #     idx += 1
+
 
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)

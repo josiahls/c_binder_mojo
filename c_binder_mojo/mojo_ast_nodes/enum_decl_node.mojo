@@ -36,16 +36,16 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             print("Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
         else:
             entry = ast_entries._ast_entries[0]
-            if len(entry.tokens) != 3 and len(entry.tokens) != 2:
+            if len(entry.tokens) != 1:
                 print("Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
-            elif len(entry.tokens) == 2:
+            elif len(entry.tokens) == 0:
                 # TODO(josiahls): Add a global counter for anonymous structs to avoid
                 # name collisions.
                 self._name = "_Anonymous"
             else:
                 # Idx 0 should be struct
                 # Idx 2 should be definition
-                self._name = entry.tokens[1]
+                self._name = entry.tokens[0]
 
 
     fn __str__(self) -> String:
@@ -60,8 +60,8 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
 
 
 @fieldwise_init
-struct RecordDeclNode(NodeAstLike): 
-    alias __name__ = "RecordDeclNode"
+struct EnumDeclNode(NodeAstLike): 
+    alias __name__ = "EnumDeclNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
@@ -84,7 +84,7 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return ast_entries.ast_name == "RecordDecl"
+        return ast_entries.ast_name == "EnumDecl"
 
     @staticmethod
     fn create(
@@ -112,25 +112,7 @@ struct RecordDeclNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
-            self.update_child_struct_names(module_interface)
             self._node_state = NodeState.COMPLETED
-
-    fn update_child_struct_names(mut self, module_interface: ModuleInterface):
-        for child_idx in self._indicies[].child_idxs:
-            child = module_interface.nodes()[][child_idx[]]
-
-            if child.node[].isa[Self]():
-                original_name = child.node[][Self]._grammar._name.copy()
-
-                self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
-                child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
-            elif child.node[].isa[FieldDeclNode]():
-                if child.node[][FieldDeclNode]._grammar._field_type in self._inner_struct_name_map:
-                    try:
-                        child.node[][FieldDeclNode]._grammar._field_type = self._inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]
-                    except:
-                        print("Error: " + child.node[][FieldDeclNode]._grammar._field_type + " not found in inner_struct_name_map")
-
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -189,12 +171,9 @@ struct RecordDeclNode(NodeAstLike):
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
 
-            if child.node[].isa[Self]():
-                s = child.to_string(just_code, module_interface, 0) + '\n' + s
-            else:
-                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+            s += child.to_string(just_code, module_interface, parent_indent_level + 1)
             
-            if child.name() == "FieldDeclNode":
+            if child.name() == "EnumConstantDeclNode":
                 has_fields = True
 
         if not has_fields:

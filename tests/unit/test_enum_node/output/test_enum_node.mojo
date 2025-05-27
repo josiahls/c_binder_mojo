@@ -1,204 +1,87 @@
 
-<invalid sloc>
+# (placeholder) TranslationUnitDecl 0x4e3508 <<invalid sloc>> <invalid sloc>
 
-<invalid sloc> implicit __int128_t '__int128'
+# (placeholder) |-TypedefDecl 0x4e3d30 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
 
-'__int128'
+# (placeholder) | `-BuiltinType 0x4e3ad0 '__int128'
 
-<invalid sloc> implicit __uint128_t 'unsigned __int128'
+# (placeholder) |-TypedefDecl 0x4e3da0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
 
-'unsigned __int128'
+# (placeholder) | `-BuiltinType 0x4e3af0 'unsigned __int128'
 
-<invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+# (placeholder) |-TypedefDecl 0x4e40a8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
 
-'struct __NSConstantString_tag'
+# (placeholder) | `-RecordType 0x4e3e80 'struct __NSConstantString_tag'
 
-'__NSConstantString_tag'
+# (placeholder) |   `-Record 0x4e3df8 '__NSConstantString_tag'
 
-<invalid sloc> implicit __builtin_ms_va_list 'char *'
+# (placeholder) |-TypedefDecl 0x4e4140 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
 
-'char *'
+# (placeholder) | `-PointerType 0x4e4100 'char *'
 
-'char'
+# (placeholder) |   `-BuiltinType 0x4e35b0 'char'
 
-<invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+# (placeholder) |-TypedefDecl 0x4e4438 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
 
-'struct __va_list_tag[1]' 1 
+# (placeholder) | `-ConstantArrayType 0x4e43e0 'struct __va_list_tag[1]' 1 
 
-'struct __va_list_tag'
+# (placeholder) |   `-RecordType 0x4e4220 'struct __va_list_tag'
 
-'__va_list_tag'
+# (placeholder) |     `-Record 0x4e4198 '__va_list_tag'
+struct Color:
+	# Basic enum with values
 
-Color
+	alias RED: Int = 0
 
-# Basic enum with values
+	alias GREEN: Int = 1
 
-RED 'int'
+	alias BLUE: Int = 2
 
-'int'
+struct Direction:
+	# Enum with auto-incrementing values
 
-Int 0
+	alias NORTH: Int = 
 
-'int' 0
+	alias SOUTH: Int = 
 
-GREEN 'int'
+	alias EAST: Int = 
 
-'int'
+	alias WEST: Int = 
 
-Int 1
+struct Status:
+	# Enum with mixed explicit and implicit values
 
-'int' 1
+	alias OK: Int = 200
 
-BLUE 'int'
+	alias NOT_FOUND: Int = 404
 
-'int'
+	alias SERVER_ERROR: Int = 500
 
-Int 2
+	alias UNAVAILABLE: Int = 
 
-'int' 2
+	alias TIMEOUT: Int = 
 
-Direction
+struct Empty:
+	# Enum with name but no values (empty enum)
+	pass
 
-# Enum with auto-incrementing values
+struct Flags:
+	# Enum with hex values and comments
 
-NORTH 'int'
+	alias READ: Int = 1
 
-# 0
+	alias WRITE: Int = 2
 
-SOUTH 'int'
+	alias EXECUTE: Int = 4
 
-# 1
+struct ByteValues:
+	# Enum with byte values
 
-EAST 'int'
+	alias BYTE_0: Int = 1
 
-# 2
+	alias BYTE_1: Int = 2
 
-WEST 'int'
+	alias BYTE_2: Int = 4
 
-# 3
+	alias BYTE_3: Int = 8
 
-Status
-
-# Enum with mixed explicit and implicit values
-
-OK 'int'
-
-'int'
-
-Int 200
-
-'int' 200
-
-NOT_FOUND 'int'
-
-'int'
-
-Int 404
-
-'int' 404
-
-SERVER_ERROR 'int'
-
-'int'
-
-Int 500
-
-'int' 500
-
-UNAVAILABLE 'int'
-
-# 501
-
-TIMEOUT 'int'
-
-# 502
-
-Empty
-
-# Enum with name but no values (empty enum)
-
-Flags
-
-# Enum with hex values and comments
-
-READ 'int'
-
-'int'
-
-Int 1
-
-'int' 1
-
-# Read permission
-
-WRITE 'int'
-
-'int'
-
-Int 2
-
-'int' 2
-
-# Write permission
-
-EXECUTE 'int'
-
-'int'
-
-Int 4
-
-'int' 4
-
-# Execute permission
-
-ByteValues
-
-# Enum with byte values
-
-BYTE_0 'int'
-
-'int'
-
-Int 1
-
-'int' '<<'
-
-'int' 1
-
-'int' 0
-
-BYTE_1 'int'
-
-'int'
-
-Int 2
-
-'int' '<<'
-
-'int' 1
-
-'int' 1
-
-BYTE_2 'int'
-
-'int'
-
-Int 4
-
-'int' '<<'
-
-'int' 1
-
-'int' 2
-
-BYTE_3 'int'
-
-'int'
-
-Int 8
-
-'int' '<<'
-
-'int' 1
-
-'int' 3

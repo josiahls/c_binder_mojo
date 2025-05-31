@@ -2,21 +2,21 @@
 authors = ["josiahls <jklaivins@gmail.com>"]
 channels = ["https://conda.modular.com/max-nightly", "https://conda.modular.com/max", "https://repo.prefix.dev/modular-community", "conda-forge"]
 name = "c_binder_mojo"
-platforms = ["linux-64"]
+platforms = ["linux-64", "linux-aarch64"]
 version = "0.1.0"
 
 [tasks]
 # Shell commands
 shell = "cd $HOME/fastrl_mojo && magic shell"
-s = "magic run shell"
-p = "magic run package"
-bt = "magic run build_test"
+s = "pixi run shell"
+p = "pixi run package"
+bt = "pixi run build_test"
 
 
 # c_binder_mojo Development tools
 ## Just format the c_binder_mojo src directory, not the tests.
 format = "mojo format $HOME/c_binder_mojo/c_binder_mojo"
-f = "magic run format"
+f = "pixi run format"
 
 ## Common testing tasks
 test_all = "mojo test -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests"
@@ -37,7 +37,7 @@ test_multi_line_comment = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_moj
 package = "mojo package $HOME/c_binder_mojo"
 
 ## Combined workflows
-build_test = "magic run format && magic run test_all"
+build_test = "pixi run format && pixi run test_all"
 
 [dependencies]
 max = ">=25.4.0.dev2025052116,<26"

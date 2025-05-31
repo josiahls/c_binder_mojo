@@ -72,16 +72,16 @@ ENV SHELL=/bin/bash
 
 ENV C_BINDING_MOJO_TEST_MUJOCO="$HOME/mujoco"
 
-# Install magic and set up PATH in the same layer
+# Install pixi and set up PATH in the same layer
 ENV PATH="/home/c_binder_mojo_user/.modular/bin:$PATH"
 RUN curl -fsSL https://pixi.sh/install.sh | sh
 
-# Add magic completion to bashrc - escape the $() so it's evaluated at runtime
-RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
-RUN echo 'eval "$(magic completion --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
+# Add pixi completion to bashrc - escape the $() so it's evaluated at runtime
+# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
+RUN echo 'eval "$(pixi completion --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
 # Add bash shell init to the bashrc
-RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
-RUN echo 'eval "$(magic shell-hook --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
+# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
+RUN echo 'eval "$(pixi shell-hook --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
 
 WORKDIR /home/$CONTAINER_USER
 COPY pixi.toml .

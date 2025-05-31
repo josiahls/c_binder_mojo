@@ -87,7 +87,7 @@ struct TypeMapper:
         var _type_name = Self.clean_type_name(type_name)
         # For now, we'll just check if it contains a space followed by *
         # This is a simple check that works for basic pointer types
-        return _type_name == "char *" or _type_name == "int *" or _type_name == "void *"
+        return _type_name.endswith("*")
 
     @staticmethod
     fn get_base_type(type_name: String) -> String:
@@ -102,12 +102,7 @@ struct TypeMapper:
         var _type_name = Self.clean_type_name(type_name)
         if Self.is_pointer_type(_type_name):
             # For now, we'll just handle the basic pointer types
-            if _type_name == "char *":
-                return "char"
-            elif _type_name == "int *":
-                return "int"
-            elif _type_name == "void *":
-                return "void"
+            return _type_name[:-1]
         return _type_name
 
     @staticmethod

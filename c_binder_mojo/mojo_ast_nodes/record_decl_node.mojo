@@ -33,25 +33,31 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
         if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print("Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
+            print("RecordDeclNode: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
         else:
             entry = ast_entries._ast_entries[0]
-            if len(entry.tokens) != 3 and len(entry.tokens) != 2:
-                print("Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
-            elif len(entry.tokens) == 2:
+            if len(entry.tokens) == 2:
                 # TODO(josiahls): Add a global counter for anonymous structs to avoid
                 # name collisions.
                 self._name = "_Anonymous"
-            else:
+            elif len(entry.tokens) == 3:
                 # Idx 0 should be struct
                 # Idx 2 should be definition
                 self._name = entry.tokens[1]
+            elif len(entry.tokens) == 4:
+                # Idx 0 should be invalid which indicates an issue.
+                # Idx 1 should be struct
+                # Idx 2 should be definition
+                # Idx 3 should be semicolon
+                self._name = entry.tokens[2]
+            else:
+                print("RecordDeclNode: Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
 
 
     fn __str__(self) -> String:
 
         if self._name == "":
-            print("Invalid grammar: , NAME IS BLANK!")
+            print("RecordDeclNode: Invalid grammar: , NAME IS BLANK!")
 
         return "struct " + self._name + ":"
 

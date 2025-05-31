@@ -25,6 +25,7 @@ fn test_mjmodel_header() raises:
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco"),
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco/output"),
+        extra_args="-I /home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco/test_mjtnum.h"
     )
 
 fn main() raises:

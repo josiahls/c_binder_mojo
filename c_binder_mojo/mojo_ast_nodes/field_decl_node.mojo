@@ -45,7 +45,6 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         # A field should only have 1 entry
 
         for entry in ast_entries:
-            print('field decl: ' + entry[].original_line)
             if entry[].ast_name == "FieldDecl":
                 for token in entry[].tokens:
                     if self._field_name == "":

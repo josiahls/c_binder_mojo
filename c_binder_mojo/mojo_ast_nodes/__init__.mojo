@@ -7,6 +7,7 @@ from .record_decl_node import RecordDeclNode
 from .enum_decl_node import EnumDeclNode
 from .enum_constant_decl_node import EnumConstantDeclNode
 from .end_file_node import EndFileNode
+from .var_decl_node import VarDeclNode
 
 # Setup Variant
 from .node_variant import Variant
@@ -19,5 +20,6 @@ alias AstNodeVariant = Variant[
     EnumDeclNode,
     EnumConstantDeclNode,
     EndFileNode,
+    VarDeclNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]

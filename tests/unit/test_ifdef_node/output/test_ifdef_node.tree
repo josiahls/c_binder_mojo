@@ -1530,3 +1530,19 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent
     └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
     └─ Current ast_entry: 'FieldDecl'
     └─ Nodes: 2 active, 127 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=119, current_idx=128, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
+    └─ Nodes: 2 active, 127 complete
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=119, child_idxs=(120, 121, 122, 123, 124, ...) len=9, node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
+    └─ Nodes: 2 active, 127 complete
+tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=119)
+    └─ Path: RootNode
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
+    └─ Nodes: 1 active, 128 complete
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=129, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> PlaceHolderNode
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
+    └─ Nodes: 1 active, 129 complete

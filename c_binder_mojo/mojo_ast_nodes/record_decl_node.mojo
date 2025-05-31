@@ -121,7 +121,6 @@ struct RecordDeclNode(NodeAstLike):
 
             if child.node[].isa[Self]():
                 original_name = child.node[][Self]._grammar._name.copy()
-
                 self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
                 child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
             elif child.node[].isa[FieldDeclNode]():

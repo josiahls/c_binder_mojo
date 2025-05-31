@@ -45,6 +45,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         # A field should only have 1 entry
 
         for entry in ast_entries:
+            print('field decl: ' + entry[].original_line)
             if entry[].ast_name == "FieldDecl":
                 for token in entry[].tokens:
                     if self._field_name == "":
@@ -71,6 +72,8 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             colon_idx = self._field_type.find(':')
             if colon_idx != -1:
                 self._field_type = self._field_type[:colon_idx][1:-1]
+            else:
+                self._field_type = self._field_type[1:-1]
 
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)

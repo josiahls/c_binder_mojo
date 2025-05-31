@@ -18,6 +18,7 @@ fn test_ifdef_node() raises:
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node"),
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node/output"),
+        extra_args="-D BASIC_DEFINE -D WITH_ELSE -D OUTER -D INNER -D _WIN32 -D __APPLE__ -D COMMENTED -D EMPTY -D MIXED -D MULTIPLE_DEFINES",
     )
 
 fn main() raises:

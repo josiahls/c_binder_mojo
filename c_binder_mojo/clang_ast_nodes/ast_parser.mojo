@@ -187,18 +187,49 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
 @fieldwise_init
 struct AstParser:
     @staticmethod
-    fn clang_call(file_path: Path) raises -> List[String]:
+    fn get_macro_definitions(file_path: Path, extra_args: String = "") raises -> List[String]:
+        """Get the preprocessor output to see macro definitions."""
         cmd = (
-            "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments"
-            " -fno-color-diagnostics "
+            "clang -dM -E -fno-color-diagnostics "
             + file_path.path
+            + " "
+            + extra_args
         )
         result = run(cmd)
         return result.split("\n")
 
-    fn parse(self, file_path: Path) raises -> List[AstEntry]:
-        result = self.clang_call(file_path)
+    @staticmethod
+    fn clang_call(file_path: Path, extra_args: String = "") raises -> List[String]:
+        """Get the AST dump of the processed code."""
+        cmd = (
+            "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments"
+            " -fno-color-diagnostics "
+            + file_path.path
+            + " "
+            + extra_args
+        )
+        result = run(cmd)
+        return result.split("\n")
+
+    fn parse(self, file_path: Path, extra_args: String = "") raises -> List[AstEntry]:
+        # First get macro definitions
+        # macro_defs = self.get_macro_definitions(file_path, extra_args)
+
+        # Then get the AST
+        result = self.clang_call(file_path, extra_args)
+
         var entries: List[AstEntry] = []
+
+        # for macro_def in macro_defs:
+        #     base_name_value = macro_def[].split(" ")
+        #     ast_entry = AstEntry()
+        #     ast_entry.ast_name = "MacroDefine"
+        #     ast_entry.level = 0
+        #     ast_entry.original_line = macro_def[]
+        #     for token in base_name_value[1:]:
+        #         ast_entry.tokens.append(token[])
+        #     entries.append(ast_entry^)
+
         for line in result:
             level = 0
             consequetive_space = False

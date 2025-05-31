@@ -18,6 +18,7 @@ fn generic_test_outputs(
     test_dir: Path,
     output_dir: Path,
     skip_c_ast_no_just_code: Bool = False,
+    extra_args: String = "",
 ) raises:
     # ) raises -> (ModuleInterface, MojoModuleInterface):
     logger.info("Starting " + test_name + " test")
@@ -29,7 +30,7 @@ fn generic_test_outputs(
 
     # Tokenize the file
     var ast_parser = AstParser()
-    entries = ast_parser.parse(test_file_path)
+    entries = ast_parser.parse(test_file_path, extra_args)
 
     # Save tokenized output for debugging
     var ast_entries = output_dir / (test_name + ".ast_entries")

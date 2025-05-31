@@ -6,6 +6,7 @@ from .field_decl_node import FieldDeclNode
 from .record_decl_node import RecordDeclNode
 from .enum_decl_node import EnumDeclNode
 from .enum_constant_decl_node import EnumConstantDeclNode
+from .macro_define_node import MacroDefineNode
 
 # Setup Variant
 from .node_variant import Variant
@@ -17,5 +18,6 @@ alias AstNodeVariant = Variant[
     FieldDeclNode,
     EnumDeclNode,
     EnumConstantDeclNode,
+    MacroDefineNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]

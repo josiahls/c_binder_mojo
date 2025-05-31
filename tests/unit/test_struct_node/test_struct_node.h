@@ -23,6 +23,12 @@ struct Complex {
     struct Inner {
         double data;
     } nested;
+
+    /* Nested anonymous struct */
+    struct {
+        int x;
+        int y;
+    } nested_anonymous;
 };
 
 // Anonymous struct in typedef

@@ -68,6 +68,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             # TODO(josiahls): This field generally looks something like struct Inner':'struct Inner'
             # I'm not sure what the repeated name implies or how it will change. This will break if it does.
             self._field_type = self._field_type.replace('struct ', '')
+            print("FieldDeclNode: field_type: " + self._field_type)
             colon_idx = self._field_type.find(':')
             if colon_idx != -1:
                 self._field_type = self._field_type[:colon_idx][1:-1]

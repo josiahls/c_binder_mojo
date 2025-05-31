@@ -1382,10 +1382,22 @@ tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent
     └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
     └─ Current ast_entry: 'FieldDecl'
     └─ Nodes: 2 active, 114 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=113, current_idx=115, child_idxs=(), node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=113, current_idx=115, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 2 active, 114 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=113, current_idx=115, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 3 active, 113 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=113, current_idx=115, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 3 active, 113 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=113, current_idx=115, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
     └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
     └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 114 complete
+    └─ Nodes: 3 active, 113 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=113, child_idxs=(114, 115), node_state=3 (BUILDING_CHILDREN))
     └─ Path: RootNode -> RecordDeclNode
     └─ Current ast_entry: 'FieldDecl'
@@ -1398,423 +1410,139 @@ tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent
     └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
     └─ Current ast_entry: 'RecordDecl'
     └─ Nodes: 2 active, 115 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=113, child_idxs=(114, 115, 116), node_state=3 (BUILDING_CHILDREN))
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=113, child_idxs=(114, 115, 116), node_state=3 (BUILDING_CHILDREN))
     └─ Path: RootNode -> RecordDeclNode
     └─ Current ast_entry: 'RecordDecl'
     └─ Nodes: 2 active, 115 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=113, current_idx=117, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 2 active, 116 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=113, current_idx=117, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 2 active, 116 complete
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			FullCommentNode(parent_idx=117, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 3 active, 116 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			FullCommentNode(parent_idx=117, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 3 active, 116 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			FullCommentNode(parent_idx=117, current_idx=118, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 4 active, 115 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			FullCommentNode(parent_idx=117, current_idx=118, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 4 active, 115 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=113, current_idx=117, child_idxs=(118), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 116 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			FieldDeclNode(parent_idx=117, current_idx=119, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 117 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			FieldDeclNode(parent_idx=117, current_idx=119, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 117 complete
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		RecordDeclNode(parent_idx=113, current_idx=117, child_idxs=(118, 119), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 117 complete
+tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=113, child_idxs=(114, 115, 116, 117), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 2 active, 118 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=113, current_idx=120, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 2 active, 119 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=113, current_idx=120, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 2 active, 119 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=113, child_idxs=(114, 115, 116, 117, 120), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 2 active, 119 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=113, current_idx=121, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'RecordDecl'
+    └─ Nodes: 2 active, 120 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=113, current_idx=121, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 2 active, 120 complete
+tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			FullCommentNode(parent_idx=121, current_idx=122, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'FullComment'
+    └─ Nodes: 3 active, 120 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			FullCommentNode(parent_idx=121, current_idx=122, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 3 active, 120 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			FullCommentNode(parent_idx=121, current_idx=122, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 4 active, 119 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			FullCommentNode(parent_idx=121, current_idx=122, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 4 active, 119 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=113, current_idx=121, child_idxs=(122), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 120 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			FieldDeclNode(parent_idx=121, current_idx=123, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 121 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			FieldDeclNode(parent_idx=121, current_idx=123, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 121 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=113, current_idx=121, child_idxs=(122, 123), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 121 complete
+tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			FieldDeclNode(parent_idx=121, current_idx=124, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 122 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			FieldDeclNode(parent_idx=121, current_idx=124, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 122 complete
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		RecordDeclNode(parent_idx=113, current_idx=121, child_idxs=(122, 123, 124), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 3 active, 122 complete
+tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=113, child_idxs=(114, 115, 116, 117, 120, 121), node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 2 active, 123 complete
+tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=113, current_idx=125, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'FieldDecl'
+    └─ Nodes: 2 active, 124 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=113, current_idx=125, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
+    └─ Nodes: 2 active, 124 complete
+tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=113, child_idxs=(114, 115, 116, 117, 120, ...) len=7, node_state=3 (BUILDING_CHILDREN))
+    └─ Path: RootNode -> RecordDeclNode
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
+    └─ Nodes: 2 active, 124 complete
 tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=113)
     └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 116 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	RecordDeclNode(parent_idx=0, current_idx=117, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 117 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=117, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 1 active, 117 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=117, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 117 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=117, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 117 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=117, child_idxs=(118), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 117 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=117, current_idx=119, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 118 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=117, current_idx=119, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 118 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=117, child_idxs=(118, 119), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 118 complete
-tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=114)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 119 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	RecordDeclNode(parent_idx=0, current_idx=120, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 120 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=120, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 120 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		FullCommentNode(parent_idx=120, current_idx=121, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 2 active, 120 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=120, current_idx=121, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 2 active, 120 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=120, current_idx=121, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 3 active, 119 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FullCommentNode(parent_idx=120, current_idx=121, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 3 active, 119 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=120, child_idxs=(121), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 120 complete
-tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=115)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 121 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	RecordDeclNode(parent_idx=0, current_idx=122, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 122 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=122, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 122 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		FullCommentNode(parent_idx=122, current_idx=123, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 2 active, 122 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=122, current_idx=123, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 2 active, 122 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=122, current_idx=123, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 3 active, 121 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FullCommentNode(parent_idx=122, current_idx=123, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 121 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=122, child_idxs=(123), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 122 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=122, current_idx=124, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 123 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=122, current_idx=124, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 2 active, 123 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=122, current_idx=124, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 3 active, 122 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=122, current_idx=124, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 3 active, 122 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=122, current_idx=124, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 122 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=122, child_idxs=(123, 124), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 123 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=122, current_idx=125, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 124 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=122, current_idx=125, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 124 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=122, child_idxs=(123, 124, 125), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 124 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=122, current_idx=126, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 125 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=122, current_idx=126, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 2 active, 125 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 			FullCommentNode(parent_idx=126, current_idx=127, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 3 active, 125 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			FullCommentNode(parent_idx=126, current_idx=127, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 3 active, 125 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 			FullCommentNode(parent_idx=126, current_idx=127, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 4 active, 124 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			FullCommentNode(parent_idx=126, current_idx=127, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 4 active, 124 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		RecordDeclNode(parent_idx=122, current_idx=126, child_idxs=(127), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 125 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 			FieldDeclNode(parent_idx=126, current_idx=128, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 126 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 			FieldDeclNode(parent_idx=126, current_idx=128, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 126 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 		RecordDeclNode(parent_idx=122, current_idx=126, child_idxs=(127, 128), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 126 complete
-tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=122, child_idxs=(123, 124, 125, 126), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 127 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=122, current_idx=129, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 128 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=122, current_idx=129, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 128 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=122, child_idxs=(123, 124, 125, 126, 129), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 128 complete
-tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=116)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 129 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	RecordDeclNode(parent_idx=0, current_idx=130, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 130 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=130, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 130 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		FullCommentNode(parent_idx=130, current_idx=131, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 2 active, 130 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=130, current_idx=131, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 2 active, 130 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=130, current_idx=131, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 3 active, 129 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FullCommentNode(parent_idx=130, current_idx=131, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 129 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=130, child_idxs=(131), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 130 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=130, current_idx=132, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 131 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=130, current_idx=132, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'TypedefDecl'
-    └─ Nodes: 2 active, 131 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=130, child_idxs=(131, 132), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'TypedefDecl'
-    └─ Nodes: 2 active, 131 complete
-tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=117)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'TypedefDecl'
-    └─ Nodes: 1 active, 132 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=133, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'TypedefDecl'
-    └─ Nodes: 1 active, 133 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=133, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ElaboratedType'
-    └─ Nodes: 1 active, 133 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=118)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'ElaboratedType'
-    └─ Nodes: 1 active, 133 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=134, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'ElaboratedType'
-    └─ Nodes: 1 active, 134 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=134, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordType'
-    └─ Nodes: 1 active, 134 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=119)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'RecordType'
-    └─ Nodes: 1 active, 134 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=135, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'RecordType'
-    └─ Nodes: 1 active, 135 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=135, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'Record'
-    └─ Nodes: 1 active, 135 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=120)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'Record'
-    └─ Nodes: 1 active, 135 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=136, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'Record'
-    └─ Nodes: 1 active, 136 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=136, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 136 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=121)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 136 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=137, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 137 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=137, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 1 active, 137 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=137, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 136 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=137, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 2 active, 136 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=122)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 137 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	RecordDeclNode(parent_idx=0, current_idx=138, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'RecordDecl'
-    └─ Nodes: 1 active, 138 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=138, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 138 complete
-tree.mojo:215 - INFO: [Depth:1] 3 (CREATE_CHILD)|-------| 		FullCommentNode(parent_idx=138, current_idx=139, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 2 active, 138 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=138, current_idx=139, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 2 active, 138 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FullCommentNode(parent_idx=138, current_idx=139, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 3 active, 137 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FullCommentNode(parent_idx=138, current_idx=139, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode -> FullCommentNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 137 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=138, child_idxs=(139), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 138 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=138, current_idx=140, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 139 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=140, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'ConstantExpr'
-    └─ Nodes: 2 active, 139 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=140, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'value:'
-    └─ Nodes: 3 active, 138 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=140, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'IntegerLiteral'
-    └─ Nodes: 3 active, 138 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=138, current_idx=140, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 138 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=138, child_idxs=(139, 140), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 139 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=138, current_idx=141, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 140 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=141, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'ConstantExpr'
-    └─ Nodes: 2 active, 140 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=141, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'value:'
-    └─ Nodes: 3 active, 139 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=141, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'IntegerLiteral'
-    └─ Nodes: 3 active, 139 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=138, current_idx=141, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 3 active, 139 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| 	RecordDeclNode(parent_idx=0, current_idx=138, child_idxs=(139, 140, 141), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 140 complete
-tree.mojo:215 - INFO: [Depth:0] 3 (CREATE_CHILD)|-------| 		FieldDeclNode(parent_idx=138, current_idx=142, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'FieldDecl'
-    └─ Nodes: 2 active, 141 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=142, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'ConstantExpr'
-    └─ Nodes: 2 active, 141 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=142, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'value:'
-    └─ Nodes: 3 active, 140 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 		FieldDeclNode(parent_idx=138, current_idx=142, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
-    └─ Current ast_entry: 'IntegerLiteral'
-    └─ Nodes: 3 active, 140 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 		FieldDeclNode(parent_idx=138, current_idx=142, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
-    └─ Path: RootNode -> RecordDeclNode -> FieldDeclNode
     └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
-    └─ Nodes: 3 active, 140 complete
-tree.mojo:215 - INFO: [Depth:-1] 2 (PASS_TO_PARENT)|-----| 	RecordDeclNode(parent_idx=0, current_idx=138, child_idxs=(139, 140, 141, 142), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> RecordDeclNode
-    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
-    └─ Nodes: 2 active, 141 complete
-tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=123)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
-    └─ Nodes: 1 active, 142 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	EndFileNode(parent_idx=0, current_idx=143, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Nodes: 1 active, 125 complete
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	EndFileNode(parent_idx=0, current_idx=126, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> EndFileNode
     └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
-    └─ Nodes: 1 active, 143 complete
+    └─ Nodes: 1 active, 126 complete

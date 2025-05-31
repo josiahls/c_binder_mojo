@@ -122,14 +122,29 @@ struct RecordDeclNode(NodeAstLike):
             self._node_state = NodeState.COMPLETED
 
     fn update_child_struct_names(mut self, module_interface: ModuleInterface):
+        anonymous_struct_caught = False
+        anonymous_struct_idx = 0
+
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
 
             if child.node[].isa[Self]():
                 original_name = child.node[][Self]._grammar._name.copy()
+                if original_name == "_Anonymous":
+                    anonymous_struct_caught = True
+                    anonymous_struct_idx = child_idx[]
+                    original_name += "_" + String(anonymous_struct_idx)
+
+                print("original_name: " + original_name)
+                print("parent._name: " + self._grammar._name)
                 self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
                 child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
             elif child.node[].isa[FieldDeclNode]():
+                if anonymous_struct_caught:
+                    child.node[][FieldDeclNode]._grammar._field_type = "_" + self._grammar._name + "__Anonymous_" + String(anonymous_struct_idx)
+                    anonymous_struct_caught = False
+                    anonymous_struct_idx = 0
+                print("field_type: " + child.node[][FieldDeclNode]._grammar._field_type)
                 if child.node[][FieldDeclNode]._grammar._field_type in self._inner_struct_name_map:
                     try:
                         child.node[][FieldDeclNode]._grammar._field_type = self._inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]

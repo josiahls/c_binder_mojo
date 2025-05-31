@@ -1542,7 +1542,7 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
     └─ Nodes: 1 active, 128 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=129, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	EndFileNode(parent_idx=0, current_idx=129, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> EndFileNode
     └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
     └─ Nodes: 1 active, 129 complete

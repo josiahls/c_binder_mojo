@@ -106,11 +106,9 @@ struct EndFileNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        s = String()
         if just_code:
             return ""
-        else:
-            s = C_BINDER_MOJO_END_FILE
+        var s:String = "# " + C_BINDER_MOJO_END_FILE
 
         return default_to_string(
             node=AstNode(self),

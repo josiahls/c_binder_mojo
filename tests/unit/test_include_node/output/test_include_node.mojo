@@ -1,10134 +1,10259 @@
 
-<invalid sloc>
+# (placeholder) TranslationUnitDecl 0xd7ad248 <<invalid sloc>> <invalid sloc>
 
-<invalid sloc> implicit __int128_t '__int128'
+# (placeholder) |-TypedefDecl 0xd7ae090 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
 
-'__int128'
+# (placeholder) | `-BuiltinType 0xd7ad810 '__int128'
 
-<invalid sloc> implicit __uint128_t 'unsigned __int128'
+# (placeholder) |-TypedefDecl 0xd7ae100 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
 
-'unsigned __int128'
+# (placeholder) | `-BuiltinType 0xd7ad830 'unsigned __int128'
 
-<invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+# (placeholder) |-TypedefDecl 0xd84fa78 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
 
-'struct __NSConstantString_tag'
+# (placeholder) | `-RecordType 0xd7ae1e0 'struct __NSConstantString_tag'
 
-'__NSConstantString_tag'
+# (placeholder) |   `-Record 0xd7ae158 '__NSConstantString_tag'
 
-<invalid sloc> implicit __builtin_ms_va_list 'char *'
+# (placeholder) |-TypedefDecl 0xd84fae0 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
 
-'char *'
+# (placeholder) | `-BuiltinType 0xd7ad9d0 '__SVInt8_t'
 
-'char'
+# (placeholder) |-TypedefDecl 0xd84fb48 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
 
-<invalid sloc> implicit referenced __builtin_va_list 'struct __va_list_tag[1]'
+# (placeholder) | `-BuiltinType 0xd7ad9f0 '__SVInt16_t'
 
-'struct __va_list_tag[1]' 1 
+# (placeholder) |-TypedefDecl 0xd84fbb0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
 
-'struct __va_list_tag'
+# (placeholder) | `-BuiltinType 0xd7ada10 '__SVInt32_t'
 
-'__va_list_tag'
+# (placeholder) |-TypedefDecl 0xd84fc18 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
 
-referenced size_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7ada30 '__SVInt64_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd84fc80 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
 
-va_list '__builtin_va_list':'struct __va_list_tag[1]'
+# (placeholder) | `-BuiltinType 0xd7ada50 '__SVUint8_t'
 
-'__builtin_va_list' sugar
+# (placeholder) |-TypedefDecl 0xd84fce8 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
 
-'__builtin_va_list'
+# (placeholder) | `-BuiltinType 0xd7ada70 '__SVUint16_t'
 
-'struct __va_list_tag[1]' 1 
+# (placeholder) |-TypedefDecl 0xd84fd50 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
 
-'struct __va_list_tag'
+# (placeholder) | `-BuiltinType 0xd7ada90 '__SVUint32_t'
 
-'__va_list_tag'
+# (placeholder) |-TypedefDecl 0xd84fdb8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
 
-referenced __gnuc_va_list '__builtin_va_list':'struct __va_list_tag[1]'
+# (placeholder) | `-BuiltinType 0xd7adab0 '__SVUint64_t'
 
-'__builtin_va_list' sugar
+# (placeholder) |-TypedefDecl 0xd84fe20 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
 
-'__builtin_va_list'
+# (placeholder) | `-BuiltinType 0xd7adad0 '__SVFloat16_t'
 
-'struct __va_list_tag[1]' 1 
+# (placeholder) |-TypedefDecl 0xd84fe88 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
 
-'struct __va_list_tag'
+# (placeholder) | `-BuiltinType 0xd7adaf0 '__SVFloat32_t'
 
-'__va_list_tag'
+# (placeholder) |-TypedefDecl 0xd84fef0 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
 
-referenced __u_char 'unsigned char'
+# (placeholder) | `-BuiltinType 0xd7adb10 '__SVFloat64_t'
 
-'unsigned char'
+# (placeholder) |-TypedefDecl 0xd84ff58 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
 
-referenced __u_short 'unsigned short'
+# (placeholder) | `-BuiltinType 0xd7adb30 '__SVBFloat16_t'
 
-'unsigned short'
+# (placeholder) |-TypedefDecl 0xd84ffc0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
 
-referenced __u_int 'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7adb50 '__clang_svint8x2_t'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd850028 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
 
-referenced __u_long 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adb70 '__clang_svint16x2_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd850090 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
 
-referenced __int8_t 'signed char'
+# (placeholder) | `-BuiltinType 0xd7adb90 '__clang_svint32x2_t'
 
-'signed char'
+# (placeholder) |-TypedefDecl 0xd8500f8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
 
-referenced __uint8_t 'unsigned char'
+# (placeholder) | `-BuiltinType 0xd7adbb0 '__clang_svint64x2_t'
 
-'unsigned char'
+# (placeholder) |-TypedefDecl 0xd850160 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
 
-referenced __int16_t 'short'
+# (placeholder) | `-BuiltinType 0xd7adbd0 '__clang_svuint8x2_t'
 
-'short'
+# (placeholder) |-TypedefDecl 0xd8501c8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
 
-referenced __uint16_t 'unsigned short'
+# (placeholder) | `-BuiltinType 0xd7adbf0 '__clang_svuint16x2_t'
 
-'unsigned short'
+# (placeholder) |-TypedefDecl 0xd850230 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
 
-referenced __int32_t 'int'
+# (placeholder) | `-BuiltinType 0xd7adc10 '__clang_svuint32x2_t'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd850298 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
 
-referenced __uint32_t 'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7adc30 '__clang_svuint64x2_t'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd850300 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
 
-referenced __int64_t 'long'
+# (placeholder) | `-BuiltinType 0xd7adc50 '__clang_svfloat16x2_t'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd850368 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
 
-referenced __uint64_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adc70 '__clang_svfloat32x2_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd8503d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
 
-__int_least8_t '__int8_t':'signed char'
+# (placeholder) | `-BuiltinType 0xd7adc90 '__clang_svfloat64x2_t'
 
-'__int8_t' sugar
+# (placeholder) |-TypedefDecl 0xd850438 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
 
-'__int8_t'
+# (placeholder) | `-BuiltinType 0xd7adcb0 '__clang_svbfloat16x2_t'
 
-'signed char'
+# (placeholder) |-TypedefDecl 0xd8504a0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
 
-__uint_least8_t '__uint8_t':'unsigned char'
+# (placeholder) | `-BuiltinType 0xd7adcd0 '__clang_svint8x3_t'
 
-'__uint8_t' sugar
+# (placeholder) |-TypedefDecl 0xd850508 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
 
-'__uint8_t'
+# (placeholder) | `-BuiltinType 0xd7adcf0 '__clang_svint16x3_t'
 
-'unsigned char'
+# (placeholder) |-TypedefDecl 0xd850570 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
 
-__int_least16_t '__int16_t':'short'
+# (placeholder) | `-BuiltinType 0xd7add10 '__clang_svint32x3_t'
 
-'__int16_t' sugar
+# (placeholder) |-TypedefDecl 0xd8505d8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
 
-'__int16_t'
+# (placeholder) | `-BuiltinType 0xd7add30 '__clang_svint64x3_t'
 
-'short'
+# (placeholder) |-TypedefDecl 0xd850640 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
 
-__uint_least16_t '__uint16_t':'unsigned short'
+# (placeholder) | `-BuiltinType 0xd7add50 '__clang_svuint8x3_t'
 
-'__uint16_t' sugar
+# (placeholder) |-TypedefDecl 0xd8506a8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
 
-'__uint16_t'
+# (placeholder) | `-BuiltinType 0xd7add70 '__clang_svuint16x3_t'
 
-'unsigned short'
+# (placeholder) |-TypedefDecl 0xd850710 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
 
-__int_least32_t '__int32_t':'int'
+# (placeholder) | `-BuiltinType 0xd7add90 '__clang_svuint32x3_t'
 
-'__int32_t' sugar
+# (placeholder) |-TypedefDecl 0xd850778 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
 
-'__int32_t'
+# (placeholder) | `-BuiltinType 0xd7addb0 '__clang_svuint64x3_t'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd8507e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
 
-__uint_least32_t '__uint32_t':'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7addd0 '__clang_svfloat16x3_t'
 
-'__uint32_t' sugar
+# (placeholder) |-TypedefDecl 0xd850848 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
 
-'__uint32_t'
+# (placeholder) | `-BuiltinType 0xd7addf0 '__clang_svfloat32x3_t'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd850cd0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
 
-__int_least64_t '__int64_t':'long'
+# (placeholder) | `-BuiltinType 0xd7ade10 '__clang_svfloat64x3_t'
 
-'__int64_t' sugar
+# (placeholder) |-TypedefDecl 0xd850d38 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
 
-'__int64_t'
+# (placeholder) | `-BuiltinType 0xd7ade30 '__clang_svbfloat16x3_t'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd850da0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
 
-__uint_least64_t '__uint64_t':'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7ade50 '__clang_svint8x4_t'
 
-'__uint64_t' sugar
+# (placeholder) |-TypedefDecl 0xd850e08 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
 
-'__uint64_t'
+# (placeholder) | `-BuiltinType 0xd7ade70 '__clang_svint16x4_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd850e70 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
 
-referenced __quad_t 'long'
+# (placeholder) | `-BuiltinType 0xd7ade90 '__clang_svint32x4_t'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd850ed8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
 
-referenced __u_quad_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adeb0 '__clang_svint64x4_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd850f40 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
 
-__intmax_t 'long'
+# (placeholder) | `-BuiltinType 0xd7aded0 '__clang_svuint8x4_t'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd850fa8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
 
-__uintmax_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adef0 '__clang_svuint16x4_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd851010 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
 
-referenced __dev_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adf10 '__clang_svuint32x4_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd851078 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
 
-referenced __uid_t 'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7adf30 '__clang_svuint64x4_t'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd8510e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
 
-referenced __gid_t 'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7adf50 '__clang_svfloat16x4_t'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd851148 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
 
-referenced __ino_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adf70 '__clang_svfloat32x4_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd8511b0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
 
-__ino64_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adf90 '__clang_svfloat64x4_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd851218 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
 
-referenced __mode_t 'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7adfb0 '__clang_svbfloat16x4_t'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd851280 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
 
-referenced __nlink_t 'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7adfd0 '__SVBool_t'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd851320 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
 
-referenced __off_t 'long'
+# (placeholder) | `-PointerType 0xd8512e0 'char *'
 
-'long'
+# (placeholder) |   `-BuiltinType 0xd7ad2f0 'char'
 
-referenced __off64_t 'long'
+# (placeholder) |-TypedefDecl 0xd851688 <<invalid sloc>> <invalid sloc> implicit referenced __builtin_va_list 'struct std::__va_list'
 
-'long'
+# (placeholder) | `-RecordType 0xd851400 'struct std::__va_list'
 
-referenced __pid_t 'int'
+# (placeholder) |   `-Record 0xd851378 '__va_list'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd8516f8 </usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:1, col:23> col:23 referenced size_t 'unsigned long'
 
-struct definition
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-__val 'int[2]'
+# (placeholder) |-TypedefDecl 0xd851780 </usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h:14:1, col:27> col:27 va_list '__builtin_va_list':'struct std::__va_list'
 
-referenced __fsid_t 'struct __fsid_t':'__fsid_t'
+# (placeholder) | `-TypedefType 0xd851750 '__builtin_va_list' sugar
 
-'struct __fsid_t' sugar
+# (placeholder) |   |-Typedef 0xd851688 '__builtin_va_list'
 
-'__fsid_t'
+# (placeholder) |   `-RecordType 0xd851400 'struct std::__va_list'
 
-''
+# (placeholder) |     `-Record 0xd851378 '__va_list'
 
-referenced __clock_t 'long'
+# (placeholder) |-TypedefDecl 0xd8517e8 <line:32:1, col:27> col:27 referenced __gnuc_va_list '__builtin_va_list':'struct std::__va_list'
 
-'long'
+# (placeholder) | `-TypedefType 0xd851750 '__builtin_va_list' sugar
 
-__rlim_t 'unsigned long'
+# (placeholder) |   |-Typedef 0xd851688 '__builtin_va_list'
 
-'unsigned long'
+# (placeholder) |   `-RecordType 0xd851400 'struct std::__va_list'
 
-__rlim64_t 'unsigned long'
+# (placeholder) |     `-Record 0xd851378 '__va_list'
 
-'unsigned long'
+# (placeholder) |-TypedefDecl 0xd851858 </usr/include/aarch64-linux-gnu/bits/types.h:31:1, col:23> col:23 referenced __u_char 'unsigned char'
 
-referenced __id_t 'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7ad3b0 'unsigned char'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd8518c8 <line:32:1, col:28> col:28 referenced __u_short 'unsigned short'
 
-referenced __time_t 'long'
+# (placeholder) | `-BuiltinType 0xd7ad3d0 'unsigned short'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd851938 <line:33:1, col:22> col:22 referenced __u_int 'unsigned int'
 
-__useconds_t 'unsigned int'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd8519a8 <line:34:1, col:27> col:27 referenced __u_long 'unsigned long'
 
-referenced __suseconds_t 'long'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd851a18 <line:37:1, col:21> col:21 referenced __int8_t 'signed char'
 
-__suseconds64_t 'long'
+# (placeholder) | `-BuiltinType 0xd7ad310 'signed char'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd851a88 <line:38:1, col:23> col:23 referenced __uint8_t 'unsigned char'
 
-referenced __daddr_t 'int'
+# (placeholder) | `-BuiltinType 0xd7ad3b0 'unsigned char'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd851af8 <line:39:1, col:26> col:26 referenced __int16_t 'short'
 
-referenced __key_t 'int'
+# (placeholder) | `-BuiltinType 0xd7ad330 'short'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd851b68 <line:40:1, col:28> col:28 referenced __uint16_t 'unsigned short'
 
-referenced __clockid_t 'int'
+# (placeholder) | `-BuiltinType 0xd7ad3d0 'unsigned short'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd851bd8 <line:41:1, col:20> col:20 referenced __int32_t 'int'
 
-referenced __timer_t 'void *'
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
 
-'void *'
+# (placeholder) |-TypedefDecl 0xd851c48 <line:42:1, col:22> col:22 referenced __uint32_t 'unsigned int'
 
-'void'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-referenced __blksize_t 'long'
+# (placeholder) |-TypedefDecl 0xd89b240 <line:44:1, col:25> col:25 referenced __int64_t 'long'
 
-'long'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-referenced __blkcnt_t 'long'
+# (placeholder) |-TypedefDecl 0xd89b2b0 <line:45:1, col:27> col:27 referenced __uint64_t 'unsigned long'
 
-'long'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-__blkcnt64_t 'long'
+# (placeholder) |-TypedefDecl 0xd89b340 <line:52:1, col:18> col:18 __int_least8_t '__int8_t':'signed char'
 
-'long'
+# (placeholder) | `-TypedefType 0xd89b310 '__int8_t' sugar
 
-referenced __fsblkcnt_t 'unsigned long'
+# (placeholder) |   |-Typedef 0xd851a18 '__int8_t'
 
-'unsigned long'
+# (placeholder) |   `-BuiltinType 0xd7ad310 'signed char'
 
-__fsblkcnt64_t 'unsigned long'
+# (placeholder) |-TypedefDecl 0xd89b3d0 <line:53:1, col:19> col:19 __uint_least8_t '__uint8_t':'unsigned char'
 
-'unsigned long'
+# (placeholder) | `-TypedefType 0xd89b3a0 '__uint8_t' sugar
 
-referenced __fsfilcnt_t 'unsigned long'
+# (placeholder) |   |-Typedef 0xd851a88 '__uint8_t'
 
-'unsigned long'
+# (placeholder) |   `-BuiltinType 0xd7ad3b0 'unsigned char'
 
-__fsfilcnt64_t 'unsigned long'
+# (placeholder) |-TypedefDecl 0xd89b460 <line:54:1, col:19> col:19 __int_least16_t '__int16_t':'short'
 
-'unsigned long'
+# (placeholder) | `-TypedefType 0xd89b430 '__int16_t' sugar
 
-__fsword_t 'long'
+# (placeholder) |   |-Typedef 0xd851af8 '__int16_t'
 
-'long'
+# (placeholder) |   `-BuiltinType 0xd7ad330 'short'
 
-referenced __ssize_t 'long'
+# (placeholder) |-TypedefDecl 0xd89b4f0 <line:55:1, col:20> col:20 __uint_least16_t '__uint16_t':'unsigned short'
 
-'long'
+# (placeholder) | `-TypedefType 0xd89b4c0 '__uint16_t' sugar
 
-referenced __syscall_slong_t 'long'
+# (placeholder) |   |-Typedef 0xd851b68 '__uint16_t'
 
-'long'
+# (placeholder) |   `-BuiltinType 0xd7ad3d0 'unsigned short'
 
-__syscall_ulong_t 'unsigned long'
+# (placeholder) |-TypedefDecl 0xd89b580 <line:56:1, col:19> col:19 __int_least32_t '__int32_t':'int'
 
-'unsigned long'
+# (placeholder) | `-TypedefType 0xd89b550 '__int32_t' sugar
 
-referenced __loff_t '__off64_t':'long'
+# (placeholder) |   |-Typedef 0xd851bd8 '__int32_t'
 
-'__off64_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
 
-'__off64_t'
+# (placeholder) |-TypedefDecl 0xd89b610 <line:57:1, col:20> col:20 __uint_least32_t '__uint32_t':'unsigned int'
 
-'long'
+# (placeholder) | `-TypedefType 0xd89b5e0 '__uint32_t' sugar
 
-referenced __caddr_t 'char *'
+# (placeholder) |   |-Typedef 0xd851c48 '__uint32_t'
 
-'char *'
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'char'
+# (placeholder) |-TypedefDecl 0xd89b6a0 <line:58:1, col:19> col:19 __int_least64_t '__int64_t':'long'
 
-__intptr_t 'long'
+# (placeholder) | `-TypedefType 0xd89b670 '__int64_t' sugar
 
-'long'
+# (placeholder) |   |-Typedef 0xd89b240 '__int64_t'
 
-__socklen_t 'unsigned int'
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-'unsigned int'
+# (placeholder) |-TypedefDecl 0xd89b730 <line:59:1, col:20> col:20 __uint_least64_t '__uint64_t':'unsigned long'
 
-__sig_atomic_t 'int'
+# (placeholder) | `-TypedefType 0xd89b700 '__uint64_t' sugar
 
-'int'
+# (placeholder) |   |-Typedef 0xd89b2b0 '__uint64_t'
 
-struct definition
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
 
-__count 'int'
+# (placeholder) |-TypedefDecl 0xd89b7a0 <line:63:1, col:18> col:18 referenced __quad_t 'long'
 
-union definition
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-__wch 'unsigned int'
+# (placeholder) |-TypedefDecl 0xd89b810 <line:64:1, col:27> col:27 referenced __u_quad_t 'unsigned long'
 
-__wchb 'char[4]'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-__value 'union (unnamed union at /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:16:3)':'union __mbstate_t::(unnamed at /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:16:3)'
+# (placeholder) |-TypedefDecl 0xd89b880 <line:72:1, col:18> col:18 __intmax_t 'long'
 
-referenced __mbstate_t 'struct __mbstate_t':'__mbstate_t'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-'struct __mbstate_t' sugar
+# (placeholder) |-TypedefDecl 0xd89b8f0 <line:73:1, col:27> col:27 __uintmax_t 'unsigned long'
 
-'__mbstate_t'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-''
+# (placeholder) |-TypedefDecl 0xd89b960 <line:137:22, line:145:25> col:25 referenced __dev_t 'unsigned long'
 
-struct _G_fpos_t definition
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-__pos '__off_t':'long'
+# (placeholder) |-TypedefDecl 0xd89b9d0 <line:137:22, line:146:25> col:25 referenced __uid_t 'unsigned int'
 
-__state '__mbstate_t':'__mbstate_t'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-referenced __fpos_t 'struct _G_fpos_t':'struct _G_fpos_t'
+# (placeholder) |-TypedefDecl 0xd89ba40 <line:137:22, line:147:25> col:25 referenced __gid_t 'unsigned int'
 
-'struct _G_fpos_t' sugar
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'struct _G_fpos_t'
+# (placeholder) |-TypedefDecl 0xd89bab0 <line:137:22, line:148:25> col:25 referenced __ino_t 'unsigned long'
 
-'_G_fpos_t'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-struct _G_fpos64_t definition
+# (placeholder) |-TypedefDecl 0xd89bb20 <line:137:22, line:149:27> col:27 __ino64_t 'unsigned long'
 
-__pos '__off64_t':'long'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-__state '__mbstate_t':'__mbstate_t'
+# (placeholder) |-TypedefDecl 0xd89bb90 <line:137:22, line:150:26> col:26 referenced __mode_t 'unsigned int'
 
-__fpos64_t 'struct _G_fpos64_t':'struct _G_fpos64_t'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'struct _G_fpos64_t' sugar
+# (placeholder) |-TypedefDecl 0xd89bc00 <line:137:22, line:151:27> col:27 referenced __nlink_t 'unsigned int'
 
-'struct _G_fpos64_t'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'_G_fpos64_t'
+# (placeholder) |-TypedefDecl 0xd89bc70 <line:137:22, line:152:25> col:25 referenced __off_t 'long'
 
-struct _IO_FILE
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-__FILE 'struct _IO_FILE':'struct _IO_FILE'
+# (placeholder) |-TypedefDecl 0xd89bce0 <line:137:22, line:153:27> col:27 referenced __off64_t 'long'
 
-'struct _IO_FILE' sugar
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-'struct _IO_FILE'
+# (placeholder) |-TypedefDecl 0xd89bd50 <line:137:22, line:154:25> col:25 referenced __pid_t 'int'
 
-'_IO_FILE'
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
+struct _Anonymous:
+	var __val: int[2]
 
-prev 0x57d148 struct _IO_FILE
 
-referenced FILE 'struct _IO_FILE':'struct _IO_FILE'
+# (placeholder) |-TypedefDecl 0xd89bf98 </usr/include/aarch64-linux-gnu/bits/types.h:137:22, line:155:26> col:26 referenced __fsid_t 'struct __fsid_t':'__fsid_t'
 
-'struct _IO_FILE' sugar
+# (placeholder) | `-ElaboratedType 0xd89bf40 'struct __fsid_t' sugar
 
-'struct _IO_FILE'
+# (placeholder) |   `-RecordType 0xd89be30 '__fsid_t'
 
-'_IO_FILE'
+# (placeholder) |     `-Record 0xd89bda8 ''
 
-prev 0x57d298 struct _IO_FILE
+# (placeholder) |-TypedefDecl 0xd89c020 <line:137:22, line:156:27> col:27 referenced __clock_t 'long'
 
-struct _IO_marker
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-struct _IO_codecvt
+# (placeholder) |-TypedefDecl 0xd89c090 <line:137:22, line:157:26> col:26 __rlim_t 'unsigned long'
 
-struct _IO_wide_data
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-referenced _IO_lock_t 'void'
+# (placeholder) |-TypedefDecl 0xd89c100 <line:137:22, line:158:28> col:28 __rlim64_t 'unsigned long'
 
-'void'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-prev 0x57d390 struct _IO_FILE definition
+# (placeholder) |-TypedefDecl 0xd89c170 <line:137:22, line:159:24> col:24 referenced __id_t 'unsigned int'
 
-_flags 'int'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-_IO_read_ptr 'char *'
+# (placeholder) |-TypedefDecl 0xd89c1e0 <line:137:22, line:160:26> col:26 referenced __time_t 'long'
 
-_IO_read_end 'char *'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-_IO_read_base 'char *'
+# (placeholder) |-TypedefDecl 0xd8a7488 <line:137:22, line:161:30> col:30 __useconds_t 'unsigned int'
 
-_IO_write_base 'char *'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-_IO_write_ptr 'char *'
+# (placeholder) |-TypedefDecl 0xd8a74f8 <line:137:22, line:162:31> col:31 referenced __suseconds_t 'long'
 
-_IO_write_end 'char *'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-_IO_buf_base 'char *'
+# (placeholder) |-TypedefDecl 0xd8a7568 <line:137:22, line:163:33> col:33 __suseconds64_t 'long'
 
-_IO_buf_end 'char *'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-_IO_save_base 'char *'
+# (placeholder) |-TypedefDecl 0xd8a75d8 <line:137:22, line:165:27> col:27 referenced __daddr_t 'int'
 
-_IO_backup_base 'char *'
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
 
-_IO_save_end 'char *'
+# (placeholder) |-TypedefDecl 0xd8a7648 <line:137:22, line:166:25> col:25 referenced __key_t 'int'
 
-_markers 'struct _IO_marker *'
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
 
-_chain 'struct _IO_FILE *'
+# (placeholder) |-TypedefDecl 0xd8a76b8 <line:137:22, line:169:29> col:29 referenced __clockid_t 'int'
 
-_fileno 'int'
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
 
-_flags2 'int'
+# (placeholder) |-TypedefDecl 0xd8a7728 <line:137:22, line:172:27> col:27 referenced __timer_t 'void *'
 
-_old_offset '__off_t':'long'
+# (placeholder) | `-PointerType 0xd7adff0 'void *'
 
-_cur_column 'unsigned short'
+# (placeholder) |   `-BuiltinType 0xd7ad2b0 'void'
 
-_vtable_offset 'signed char'
+# (placeholder) |-TypedefDecl 0xd8a7798 <line:137:22, line:175:29> col:29 referenced __blksize_t 'int'
 
-_shortbuf 'char[1]'
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
 
-_lock '_IO_lock_t *'
+# (placeholder) |-TypedefDecl 0xd8a7808 <line:137:22, line:180:28> col:28 referenced __blkcnt_t 'long'
 
-_offset '__off64_t':'long'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-_codecvt 'struct _IO_codecvt *'
+# (placeholder) |-TypedefDecl 0xd8a7878 <line:137:22, line:181:30> col:30 __blkcnt64_t 'long'
 
-_wide_data 'struct _IO_wide_data *'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-_freeres_list 'struct _IO_FILE *'
+# (placeholder) |-TypedefDecl 0xd8a78e8 <line:137:22, line:184:30> col:30 referenced __fsblkcnt_t 'unsigned long'
 
-_freeres_buf 'void *'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-__pad5 'size_t':'unsigned long'
+# (placeholder) |-TypedefDecl 0xd8a7958 <line:137:22, line:185:32> col:32 __fsblkcnt64_t 'unsigned long'
 
-_mode 'int'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-_unused2 'char[20]'
+# (placeholder) |-TypedefDecl 0xd8a79c8 <line:137:22, line:188:30> col:30 referenced __fsfilcnt_t 'unsigned long'
 
-prev 0x56cac0 va_list '__gnuc_va_list':'struct __va_list_tag[1]'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-'__gnuc_va_list' sugar
+# (placeholder) |-TypedefDecl 0xd8a7a38 <line:137:22, line:189:32> col:32 __fsfilcnt64_t 'unsigned long'
 
-'__gnuc_va_list'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-'__builtin_va_list' sugar
+# (placeholder) |-TypedefDecl 0xd8a7aa8 <line:137:22, line:192:28> col:28 __fsword_t 'long'
 
-'__builtin_va_list'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-'struct __va_list_tag[1]' 1 
+# (placeholder) |-TypedefDecl 0xd8a7b18 <line:137:22, line:194:27> col:27 referenced __ssize_t 'long'
 
-'struct __va_list_tag'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-'__va_list_tag'
+# (placeholder) |-TypedefDecl 0xd8a7b88 <line:137:22, line:197:33> col:33 referenced __syscall_slong_t 'long'
 
-off_t '__off_t':'long'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-'__off_t' sugar
+# (placeholder) |-TypedefDecl 0xd8a7bf8 <line:137:22, line:199:33> col:33 __syscall_ulong_t 'unsigned long'
 
-'__off_t'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd8a7c80 <line:203:1, col:19> col:19 referenced __loff_t '__off64_t':'long'
 
-ssize_t '__ssize_t':'long'
+# (placeholder) | `-TypedefType 0xd8a7c50 '__off64_t' sugar
 
-'__ssize_t' sugar
+# (placeholder) |   |-Typedef 0xd89bce0 '__off64_t'
 
-'__ssize_t'
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd8a7cf0 <line:204:1, col:15> col:15 referenced __caddr_t 'char *'
 
-referenced fpos_t '__fpos_t':'struct _G_fpos_t'
+# (placeholder) | `-PointerType 0xd8512e0 'char *'
 
-'__fpos_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad2f0 'char'
 
-'__fpos_t'
+# (placeholder) |-TypedefDecl 0xd8a7d60 <line:137:22, line:207:25> col:25 __intptr_t 'long'
 
-'struct _G_fpos_t' sugar
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
 
-'struct _G_fpos_t'
+# (placeholder) |-TypedefDecl 0xd8a7dd0 <line:137:22, line:210:23> col:23 __socklen_t 'unsigned int'
 
-'_G_fpos_t'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-stdin 'FILE *' extern
+# (placeholder) |-TypedefDecl 0xd8a7e40 <line:215:1, col:13> col:13 __sig_atomic_t 'int'
 
-stdout 'FILE *' extern
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
+struct __Anonymous__Anonymous_277:
+	var __wch: UInt
 
-stderr 'FILE *' extern
+	var __wchb: char[4]
 
-/usr/include/stdio.h:152:12 remove 'int (const char *)' extern
 
-__filename 'const char *'
+struct _Anonymous:
+	var __count: Int
 
+	var __value: __Anonymous__Anonymous_277
 
 
-/usr/include/stdio.h:154:12 rename 'int (const char *, const char *)' extern
+# (placeholder) |-TypedefDecl 0xd8a82b8 <line:13:1, line:21:3> col:3 referenced __mbstate_t 'struct __mbstate_t':'__mbstate_t'
 
-__old 'const char *'
+# (placeholder) | `-ElaboratedType 0xd8a8260 'struct __mbstate_t' sugar
 
-__new 'const char *'
+# (placeholder) |   `-RecordType 0xd8a7f20 '__mbstate_t'
 
+# (placeholder) |     `-Record 0xd8a7e98 ''
+struct _G_fpos_t:
+	var __pos: __off_t:long
 
+	var __state: __mbstate_t:__mbstate_t
 
-/usr/include/stdio.h:158:12 renameat 'int (int, const char *, int, const char *)' extern
 
-__oldfd 'int'
+# (placeholder) |-TypedefDecl 0xd8a9d48 <line:10:1, line:14:3> col:3 referenced __fpos_t 'struct _G_fpos_t':'struct _G_fpos_t'
 
-__old 'const char *'
+# (placeholder) | `-ElaboratedType 0xd8a9cf0 'struct _G_fpos_t' sugar
 
-__newfd 'int'
+# (placeholder) |   `-RecordType 0xd8a83b0 'struct _G_fpos_t'
 
-__new 'const char *'
+# (placeholder) |     `-Record 0xd8a8328 '_G_fpos_t'
+struct _G_fpos64_t:
+	var __pos: __off64_t:long
 
+	var __state: __mbstate_t:__mbstate_t
 
 
-fclose 'int (FILE *)' extern
+# (placeholder) |-TypedefDecl 0xd8a9f78 <line:10:1, line:14:3> col:3 __fpos64_t 'struct _G_fpos64_t':'struct _G_fpos64_t'
 
-__stream 'FILE *'
+# (placeholder) | `-ElaboratedType 0xd8a9f20 'struct _G_fpos64_t' sugar
 
-/usr/include/stdio.h:188:14 tmpfile 'FILE *(void)' extern
+# (placeholder) |   `-RecordType 0xd8a9e40 'struct _G_fpos64_t'
 
-malloc
+# (placeholder) |     `-Record 0xd8a9db8 '_G_fpos64_t'
+struct _Anonymous:	pass
 
-/usr/include/stdio.h:205:14 tmpnam 'char *(char *)' extern
 
-'char *':'char *'
+# (placeholder) |-TypedefDecl 0xd8aa0e0 <line:5:1, col:25> col:25 __FILE 'struct _IO_FILE':'struct _IO_FILE'
 
+# (placeholder) | `-ElaboratedType 0xd8aa090 'struct _IO_FILE' sugar
 
+# (placeholder) |   `-RecordType 0xd8aa070 'struct _IO_FILE'
 
-/usr/include/stdio.h:210:14 tmpnam_r 'char *(char *)' extern
+# (placeholder) |     `-Record 0xd8aa4f8 '_IO_FILE'
+struct struct:	pass
 
-__s 'char *':'char *'
 
+# (placeholder) |-TypedefDecl 0xd8aa1d8 <line:7:1, col:25> col:25 referenced FILE 'struct _IO_FILE':'struct _IO_FILE'
 
+# (placeholder) | `-ElaboratedType 0xd8aa090 'struct _IO_FILE' sugar
 
-/usr/include/stdio.h:222:14 tempnam 'char *(const char *, const char *)' extern
+# (placeholder) |   `-RecordType 0xd8aa070 'struct _IO_FILE'
 
-__dir 'const char *'
+# (placeholder) |     `-Record 0xd8aa4f8 '_IO_FILE'
+struct struct:	pass
 
-__pfx 'const char *'
+struct _Anonymous:	pass
 
+struct _Anonymous:	pass
 
+struct _Anonymous:	pass
 
-malloc
 
-fflush 'int (FILE *)' extern
+# (placeholder) |-TypedefDecl 0xd8aa4a0 <line:43:1, col:14> col:14 referenced _IO_lock_t 'void'
 
-__stream 'FILE *'
+# (placeholder) | `-BuiltinType 0xd7ad2b0 'void'
+struct :
+	var _flags: Int
 
-fflush_unlocked 'int (FILE *)' extern
+	var _IO_read_ptr: char 
 
-__stream 'FILE *'
+	var _IO_read_end: char 
 
-implicit fopen 'FILE *(const char *, const char *)' extern
+	var _IO_read_base: char 
 
-<invalid sloc> 'const char *'
+	var _IO_write_base: char 
 
-<invalid sloc> 'const char *'
+	var _IO_write_ptr: char 
 
-Implicit 838
+	var _IO_write_end: char 
 
-prev 0x589588 /usr/include/stdio.h:258:14 fopen 'FILE *(const char *, const char *)' extern
+	var _IO_buf_base: char 
 
-__filename 'const char *restrict'
+	var _IO_buf_end: char 
 
-__modes 'const char *restrict'
+	var _IO_save_base: char 
 
-Inherited Implicit 838
+	var _IO_backup_base: char 
 
-malloc
+	var _IO_save_end: char 
 
-freopen 'FILE *(const char *restrict, const char *restrict, FILE *restrict)' extern
+	var _markers: _IO_marker 
 
-__filename 'const char *restrict'
+	var _chain: _IO_FILE 
 
-__modes 'const char *restrict'
+	var _fileno: Int
 
-__stream 'FILE *restrict'
+	var _flags2: Int
 
-/usr/include/stdio.h:293:14 fdopen 'FILE *(int, const char *)' extern
+	var _old_offset: __off_t:long
 
-__fd 'int'
+	var _cur_column: UInt16
 
-__modes 'const char *'
+	var _vtable_offset: signed char
 
+	var _shortbuf: char[1]
 
+	var _lock: _IO_lock_t 
 
-malloc
+	var _offset: __off64_t:long
 
-/usr/include/stdio.h:308:14 fmemopen 'FILE *(void *, size_t, const char *)' extern
+	var _codecvt: _IO_codecvt 
 
-__s 'void *'
+	var _wide_data: _IO_wide_data 
 
-__len 'size_t':'unsigned long'
+	var _freeres_list: _IO_FILE 
 
-__modes 'const char *'
+	var _freeres_buf: void 
 
+	var __pad5: size_t:unsigned long
 
+	var _mode: Int
 
-malloc
+	var _unused2: char[20]
 
-/usr/include/stdio.h:314:14 open_memstream 'FILE *(char **, size_t *)' extern
 
-__bufloc 'char **'
+# (placeholder) |-TypedefDecl 0xd8acd20 prev 0xd851780 </usr/include/stdio.h:52:1, col:24> col:24 va_list '__gnuc_va_list':'struct std::__va_list'
 
-__sizeloc 'size_t *'
+# (placeholder) | `-TypedefType 0xd8accf0 '__gnuc_va_list' sugar
 
+# (placeholder) |   |-Typedef 0xd8517e8 '__gnuc_va_list'
 
+# (placeholder) |   `-TypedefType 0xd851750 '__builtin_va_list' sugar
 
-malloc
+# (placeholder) |     |-Typedef 0xd851688 '__builtin_va_list'
 
-/usr/include/stdio.h:328:13 setbuf 'void (FILE *restrict, char *restrict)' extern
+# (placeholder) |     `-RecordType 0xd851400 'struct std::__va_list'
 
-__stream 'FILE *restrict'
+# (placeholder) |       `-Record 0xd851378 '__va_list'
 
-__buf 'char *restrict'
+# (placeholder) |-TypedefDecl 0xd8acd88 <line:63:1, col:17> col:17 off_t '__off_t':'long'
 
+# (placeholder) | `-TypedefType 0xd8a83d0 '__off_t' sugar
 
+# (placeholder) |   |-Typedef 0xd89bc70 '__off_t'
 
-/usr/include/stdio.h:332:12 setvbuf 'int (FILE *restrict, char *restrict, int, size_t)' extern
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-__stream 'FILE *restrict'
+# (placeholder) |-TypedefDecl 0xd8ace10 <line:77:1, col:19> col:19 ssize_t '__ssize_t':'long'
 
-__buf 'char *restrict'
+# (placeholder) | `-TypedefType 0xd8acde0 '__ssize_t' sugar
 
-__modes 'int'
+# (placeholder) |   |-Typedef 0xd8a7b18 '__ssize_t'
 
-__n 'size_t':'unsigned long'
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
+# (placeholder) |-TypedefDecl 0xd8acea0 <line:84:1, col:18> col:18 referenced fpos_t '__fpos_t':'struct _G_fpos_t'
 
+# (placeholder) | `-TypedefType 0xd8ace70 '__fpos_t' sugar
 
-/usr/include/stdio.h:338:13 setbuffer 'void (FILE *restrict, char *restrict, size_t)' extern
+# (placeholder) |   |-Typedef 0xd8a9d48 '__fpos_t'
 
-__stream 'FILE *restrict'
+# (placeholder) |   `-ElaboratedType 0xd8a9cf0 'struct _G_fpos_t' sugar
 
-__buf 'char *restrict'
+# (placeholder) |     `-RecordType 0xd8a83b0 'struct _G_fpos_t'
 
-__size 'size_t':'unsigned long'
+# (placeholder) |       `-Record 0xd8a8328 '_G_fpos_t'
 
+alias stdin:  =  # `stdin` was not originally const in the original code
 
+alias stdout:  =  # `stdout` was not originally const in the original code
 
-/usr/include/stdio.h:342:13 setlinebuf 'void (FILE *)' extern
+alias stderr:  =  # `stderr` was not originally const in the original code
 
-__stream 'FILE *'
+# (placeholder) |-FunctionDecl 0xd8ad1e0 <line:152:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:152:12 remove 'int (const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8ad110 <col:20, col:32> col:32 __filename 'const char *'
 
+# (placeholder) | `-NoThrowAttr 0xd8ad288 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit fprintf 'int (FILE *, const char *, ...)' extern
+# (placeholder) |-FunctionDecl 0xd8b2760 </usr/include/stdio.h:154:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:154:12 rename 'int (const char *, const char *)' extern
 
-<invalid sloc> 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8b2608 <col:20, col:32> col:32 __old 'const char *'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8b2688 <col:39, col:51> col:51 __new 'const char *'
 
-Implicit 825
+# (placeholder) | `-NoThrowAttr 0xd8b2810 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit printf 2 3
+# (placeholder) |-FunctionDecl 0xd8b2b00 </usr/include/stdio.h:158:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:158:12 renameat 'int (int, const char *, int, const char *)' extern
 
-prev 0x58d3a0 fprintf 'int (FILE *, const char *, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b2880 <col:22, col:26> col:26 __oldfd 'int'
 
-__stream 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b2900 <col:35, col:47> col:47 __old 'const char *'
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b2980 <col:54, col:58> col:58 __newfd 'int'
 
-Inherited Implicit 825
+# (placeholder) | |-ParmVarDecl 0xd8b2a00 <line:159:8, col:20> col:20 __new 'const char *'
 
-Inherited printf 2 3
+# (placeholder) | `-NoThrowAttr 0xd8b2bc0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit printf 'int (const char *, ...)' extern
+# (placeholder) |-FunctionDecl 0xd8b2d20 </usr/include/stdio.h:178:1, col:34> col:12 fclose 'int (FILE *)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-ParmVarDecl 0xd8b2c28 <col:20, col:26> col:26 __stream 'FILE *'
 
-Implicit 824
+# (placeholder) |-FunctionDecl 0xd8b2eb8 <line:188:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:188:14 tmpfile 'FILE *(void)' extern
 
-Implicit printf 1 2
+# (placeholder) | `-RestrictAttr 0xd8b2f58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
 
-prev 0x58d818 printf 'int (const char *, ...)' extern
+# (placeholder) |-FunctionDecl 0xd8b3140 </usr/include/stdio.h:205:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:205:14 tmpnam 'char *(char *)' extern
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b3040 <col:22, col:35> col:26 'char *':'char *'
 
-Inherited Implicit 824
+# (placeholder) | `-NoThrowAttr 0xd8b31e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited printf 1 2
+# (placeholder) |-FunctionDecl 0xd8b3338 </usr/include/stdio.h:210:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:210:14 tmpnam_r 'char *(char *)' extern
 
-implicit sprintf 'int (char *, const char *, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b32a0 <col:24, col:41> col:29 __s 'char *':'char *'
 
-<invalid sloc> 'char *'
+# (placeholder) | `-NoThrowAttr 0xd8b33e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd8b6640 </usr/include/stdio.h:222:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:222:14 tempnam 'char *(const char *, const char *)' extern
 
-Implicit 827
+# (placeholder) | |-ParmVarDecl 0xd8b3450 <col:23, col:35> col:35 __dir 'const char *'
 
-Implicit printf 2 3
+# (placeholder) | |-ParmVarDecl 0xd8b34d0 <col:42, col:54> col:54 __pfx 'const char *'
 
-prev 0x58dcc8 /usr/include/stdio.h:358:12 sprintf 'int (char *, const char *, ...)' extern
+# (placeholder) | |-NoThrowAttr 0xd8b66f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__s 'char *restrict'
+# (placeholder) | `-RestrictAttr 0xd8b6748 <line:281:47> malloc
 
-__format 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd8b6818 </usr/include/stdio.h:230:1, col:34> col:12 fflush 'int (FILE *)' extern
 
-Inherited Implicit 827
+# (placeholder) | `-ParmVarDecl 0xd8b6780 <col:20, col:26> col:26 __stream 'FILE *'
 
-Inherited printf 2 3
+# (placeholder) |-FunctionDecl 0xd8b6968 <line:239:1, col:43> col:12 fflush_unlocked 'int (FILE *)' extern
 
+# (placeholder) | `-ParmVarDecl 0xd8b68d0 <col:29, col:35> col:35 __stream 'FILE *'
 
+# (placeholder) |-FunctionDecl 0xd8b6bf8 <line:258:14> col:14 implicit fopen 'FILE *(const char *, const char *)' extern
 
-implicit vfprintf 'int (FILE *, const char *, struct __va_list_tag *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b6cf0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8b6d58 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-BuiltinAttr 0xd8b6c98 <<invalid sloc>> Implicit 838
 
-<invalid sloc> 'struct __va_list_tag *'
+# (placeholder) |-FunctionDecl 0xd8b6dd0 prev 0xd8b6bf8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:258:14 fopen 'FILE *(const char *, const char *)' extern
 
-Implicit 829
+# (placeholder) | |-ParmVarDecl 0xd8b6a28 <col:21, col:44> col:44 __filename 'const char *restrict'
 
-Implicit printf 2 0
+# (placeholder) | |-ParmVarDecl 0xd8b6aa8 <line:259:7, col:30> col:30 __modes 'const char *restrict'
 
-prev 0x58e320 vfprintf 'int (FILE *, const char *, struct __va_list_tag *)' extern
+# (placeholder) | |-BuiltinAttr 0xd8b6ed8 <<invalid sloc>> Inherited Implicit 838
 
-__s 'FILE *restrict'
+# (placeholder) | `-RestrictAttr 0xd8b6e80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
 
-__format 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd8b7138 </usr/include/stdio.h:265:1, line:267:34> line:265:14 freopen 'FILE *(const char *restrict, const char *restrict, FILE *restrict)' extern
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | |-ParmVarDecl 0xd8b6f18 <col:23, col:46> col:46 __filename 'const char *restrict'
 
-Inherited Implicit 829
+# (placeholder) | |-ParmVarDecl 0xd8b6f98 <line:266:9, col:32> col:32 __modes 'const char *restrict'
 
-Inherited printf 2 0
+# (placeholder) | `-ParmVarDecl 0xd8b7010 <line:267:9, col:26> col:26 __stream 'FILE *restrict'
 
-implicit vprintf 'int (const char *, struct __va_list_tag *)' extern
+# (placeholder) |-FunctionDecl 0xd8b7398 <line:293:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:293:14 fdopen 'FILE *(int, const char *)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8b7208 <col:22, col:26> col:26 __fd 'int'
 
-<invalid sloc> 'struct __va_list_tag *'
+# (placeholder) | |-ParmVarDecl 0xd8b7288 <col:32, col:44> col:44 __modes 'const char *'
 
-Implicit 828
+# (placeholder) | |-NoThrowAttr 0xd8b7448 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit printf 1 0
+# (placeholder) | `-RestrictAttr 0xd8b74a0 <line:281:47> malloc
 
-prev 0x58e890 vprintf 'int (const char *, struct __va_list_tag *)' extern
+# (placeholder) |-FunctionDecl 0xd8b7708 </usr/include/stdio.h:308:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:308:14 fmemopen 'FILE *(void *, size_t, const char *)' extern
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b74e0 <col:24, col:30> col:30 __s 'void *'
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | |-ParmVarDecl 0xd8b7558 <col:35, col:42> col:42 __len 'size_t':'unsigned long'
 
-Inherited Implicit 828
+# (placeholder) | |-ParmVarDecl 0xd8b75d8 <col:49, col:61> col:61 __modes 'const char *'
 
-Inherited printf 1 0
+# (placeholder) | |-NoThrowAttr 0xd8b77c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit vsprintf 'int (char *, const char *, struct __va_list_tag *)' extern
+# (placeholder) | `-RestrictAttr 0xd8b7818 <line:281:47> malloc
 
-<invalid sloc> 'char *'
+# (placeholder) |-FunctionDecl 0xd8b7a68 </usr/include/stdio.h:314:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:314:14 open_memstream 'FILE *(char **, size_t *)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8b7880 <col:30, col:37> col:37 __bufloc 'char **'
 
-<invalid sloc> 'struct __va_list_tag *'
+# (placeholder) | |-ParmVarDecl 0xd8b7958 <col:47, col:55> col:55 __sizeloc 'size_t *'
 
-Implicit 831
+# (placeholder) | |-NoThrowAttr 0xd8b7b18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit printf 2 0
+# (placeholder) | `-RestrictAttr 0xd8b7b70 <line:281:47> malloc
 
-prev 0x58ef00 /usr/include/stdio.h:373:12 vsprintf 'int (char *, const char *, struct __va_list_tag *)' extern
+# (placeholder) |-FunctionDecl 0xd8b7d38 </usr/include/stdio.h:328:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:328:13 setbuf 'void (FILE *restrict, char *restrict)' extern
 
-__s 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b7ba8 <col:21, col:38> col:38 __stream 'FILE *restrict'
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b7c28 <col:48, col:65> col:65 __buf 'char *restrict'
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | `-NoThrowAttr 0xd8b7de8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 831
+# (placeholder) |-FunctionDecl 0xd8b8110 </usr/include/stdio.h:332:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:332:12 setvbuf 'int (FILE *restrict, char *restrict, int, size_t)' extern
 
-Inherited printf 2 0
+# (placeholder) | |-ParmVarDecl 0xd8b7e50 <col:21, col:38> col:38 __stream 'FILE *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8b7ed0 <col:48, col:65> col:65 __buf 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8b7f50 <line:333:7, col:11> col:11 __modes 'int'
 
-implicit snprintf 'int (char *, unsigned long, const char *, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b7fc8 <col:20, col:27> col:27 __n 'size_t':'unsigned long'
 
-<invalid sloc> 'char *'
+# (placeholder) | `-NoThrowAttr 0xd8b81d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8b8458 </usr/include/stdio.h:338:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:338:13 setbuffer 'void (FILE *restrict, char *restrict, size_t)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8b8238 <col:24, col:41> col:41 __stream 'FILE *restrict'
 
-Implicit 826
+# (placeholder) | |-ParmVarDecl 0xd8b82b8 <col:51, col:68> col:68 __buf 'char *restrict'
 
-Implicit printf 3 4
+# (placeholder) | |-ParmVarDecl 0xd8b8330 <line:339:10, col:17> col:17 __size 'size_t':'unsigned long'
 
-prev 0x58f598 snprintf 'int (char *, unsigned long, const char *, ...)' extern
+# (placeholder) | `-NoThrowAttr 0xd8b8510 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__s 'char *restrict'
+# (placeholder) |-FunctionDecl 0xd8b8728 </usr/include/stdio.h:342:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:342:13 setlinebuf 'void (FILE *)' extern
 
-__maxlen 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8b8578 <col:25, col:31> col:31 __stream 'FILE *'
 
-__format 'const char *restrict'
+# (placeholder) | `-NoThrowAttr 0xd8b87d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 826
+# (placeholder) |-FunctionDecl 0xd8b8a20 </usr/include/stdio.h:350:12> col:12 implicit fprintf 'int (FILE *, const char *, ...)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8b8b18 <<invalid sloc>> <invalid sloc> 'FILE *'
 
+# (placeholder) | |-ParmVarDecl 0xd8b8b80 <<invalid sloc>> <invalid sloc> 'const char *'
 
-printf 3 4
+# (placeholder) | |-BuiltinAttr 0xd8b8ac0 <<invalid sloc>> Implicit 825
 
-implicit vsnprintf 'int (char *, unsigned long, const char *, struct __va_list_tag *)' extern
+# (placeholder) | `-FormatAttr 0xd8b8bf8 <col:12> Implicit printf 2 3
 
-<invalid sloc> 'char *'
+# (placeholder) |-FunctionDecl 0xd8b8c30 prev 0xd8b8a20 <col:1, line:351:43> line:350:12 fprintf 'int (FILE *, const char *, ...)' extern
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8b8838 <col:21, col:38> col:38 __stream 'FILE *restrict'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8b88b8 <line:351:7, col:30> col:30 __format 'const char *restrict'
 
-<invalid sloc> 'struct __va_list_tag *'
+# (placeholder) | |-BuiltinAttr 0xd8b8d10 <<invalid sloc>> Inherited Implicit 825
 
-Implicit 830
+# (placeholder) | `-FormatAttr 0xd8b8d38 <line:350:12> Inherited printf 2 3
 
-Implicit printf 3 0
+# (placeholder) |-FunctionDecl 0xd8b8e98 <line:356:12> col:12 implicit printf 'int (const char *, ...)' extern
 
-prev 0x58fcc0 vsnprintf 'int (char *, unsigned long, const char *, struct __va_list_tag *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b8f90 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__s 'char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8b8f38 <<invalid sloc>> Implicit 824
 
-__maxlen 'size_t':'unsigned long'
+# (placeholder) | `-FormatAttr 0xd8b9000 <col:12> Implicit printf 1 2
 
-__format 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd8b9038 prev 0xd8b8e98 <col:1, col:56> col:12 printf 'int (const char *, ...)' extern
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | |-ParmVarDecl 0xd8b8d88 <col:20, col:43> col:43 __format 'const char *restrict'
 
-Inherited Implicit 830
+# (placeholder) | |-BuiltinAttr 0xd8b9110 <<invalid sloc>> Inherited Implicit 824
 
+# (placeholder) | `-FormatAttr 0xd8b9138 <col:12> Inherited printf 1 2
 
+# (placeholder) |-FunctionDecl 0xd8b9328 <line:358:12> col:12 implicit sprintf 'int (char *, const char *, ...)' extern
 
-printf 3 0
+# (placeholder) | |-ParmVarDecl 0xd8b9420 <<invalid sloc>> <invalid sloc> 'char *'
 
-vdprintf 'int (int, const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b9488 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__fd 'int'
+# (placeholder) | |-BuiltinAttr 0xd8b93c8 <<invalid sloc>> Implicit 827
 
-__fmt 'const char *restrict'
+# (placeholder) | `-FormatAttr 0xd8b9500 <col:12> Implicit printf 2 3
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) |-FunctionDecl 0xd8b9538 prev 0xd8b9328 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:80:49> /usr/include/stdio.h:358:12 sprintf 'int (char *, const char *, ...)' extern
 
-printf 2 0
+# (placeholder) | |-ParmVarDecl 0xd8b9188 <col:21, col:38> col:38 __s 'char *restrict'
 
-dprintf 'int (int, const char *restrict, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b9208 <line:359:7, col:30> col:30 __format 'const char *restrict'
 
-__fd 'int'
+# (placeholder) | |-BuiltinAttr 0xd8b9640 <<invalid sloc>> Inherited Implicit 827
 
-__fmt 'const char *restrict'
+# (placeholder) | |-FormatAttr 0xd8b9668 <line:358:12> Inherited printf 2 3
 
-printf 2 3
+# (placeholder) | `-NoThrowAttr 0xd8b95e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
 
-implicit fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
+# (placeholder) |-FunctionDecl 0xd8b9970 </usr/include/stdio.h:365:12> col:12 implicit vfprintf 'int (FILE *, const char *, __builtin_va_list)' extern
 
-<invalid sloc> 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b9a68 <<invalid sloc>> <invalid sloc> 'FILE *'
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b9ad0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-Implicit 833
+# (placeholder) | |-ParmVarDecl 0xd8b9b38 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
 
-Implicit scanf 2 3
+# (placeholder) | |-BuiltinAttr 0xd8b9a10 <<invalid sloc>> Implicit 829
 
-prev 0x590920 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
+# (placeholder) | `-FormatAttr 0xd8b9bb8 <col:12> Implicit printf 2 0
 
-__stream 'FILE *restrict'
+# (placeholder) |-FunctionDecl 0xd8b9bf0 prev 0xd8b9970 <col:1, line:366:28> line:365:12 vfprintf 'int (FILE *, const char *, __builtin_va_list)' extern
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b9710 <col:22, col:39> col:39 __s 'FILE *restrict'
 
-Inherited Implicit 833
+# (placeholder) | |-ParmVarDecl 0xd8b9790 <col:44, col:67> col:67 __format 'const char *restrict'
 
-Inherited scanf 2 3
+# (placeholder) | |-ParmVarDecl 0xd8b9808 <line:366:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
 
-implicit scanf 'int (const char *restrict, ...)' extern
+# (placeholder) | |-BuiltinAttr 0xd8b9cd8 <<invalid sloc>> Inherited Implicit 829
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | `-FormatAttr 0xd8b9d00 <line:365:12> Inherited printf 2 0
 
-Implicit 832
+# (placeholder) |-FunctionDecl 0xd8b9f18 <line:371:12> col:12 implicit vprintf 'int (const char *, __builtin_va_list)' extern
 
-Implicit scanf 1 2
+# (placeholder) | |-ParmVarDecl 0xd8ba010 <<invalid sloc>> <invalid sloc> 'const char *'
 
-prev 0x591db0 scanf 'int (const char *restrict, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ba078 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
 
-__format 'const char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8b9fb8 <<invalid sloc>> Implicit 828
 
-Inherited Implicit 832
+# (placeholder) | `-FormatAttr 0xd8ba0f0 <col:12> Implicit printf 1 0
 
-Inherited scanf 1 2
+# (placeholder) |-FunctionDecl 0xd8ba128 prev 0xd8b9f18 <col:1, col:74> col:12 vprintf 'int (const char *, __builtin_va_list)' extern
 
-implicit sscanf 'int (const char *restrict, const char *restrict, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8b9d50 <col:21, col:44> col:44 __format 'const char *restrict'
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8b9dc8 <col:54, col:69> col:69 __arg '__gnuc_va_list':'struct std::__va_list'
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8ba208 <<invalid sloc>> Inherited Implicit 828
 
-Implicit 834
+# (placeholder) | `-FormatAttr 0xd8ba230 <col:12> Inherited printf 1 0
 
-Implicit scanf 2 3
+# (placeholder) |-FunctionDecl 0xd8ba4e0 <line:373:12> col:12 implicit vsprintf 'int (char *, const char *, __builtin_va_list)' extern
 
-prev 0x592248 /usr/include/stdio.h:423:12 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ba5d8 <<invalid sloc>> <invalid sloc> 'char *'
 
-__s 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8ba640 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8ba6a8 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
 
-Inherited Implicit 834
+# (placeholder) | |-BuiltinAttr 0xd8ba580 <<invalid sloc>> Implicit 831
 
-Inherited scanf 2 3
+# (placeholder) | `-FormatAttr 0xd8ba738 <col:12> Implicit printf 2 0
 
+# (placeholder) |-FunctionDecl 0xd8ba770 prev 0xd8ba4e0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:80:49> /usr/include/stdio.h:373:12 vsprintf 'int (char *, const char *, __builtin_va_list)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8ba280 <col:22, col:39> col:39 __s 'char *restrict'
 
-_Float32 'float'
+# (placeholder) | |-ParmVarDecl 0xd8ba300 <col:44, col:67> col:67 __format 'const char *restrict'
 
-'float'
+# (placeholder) | |-ParmVarDecl 0xd8ba378 <line:374:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
 
-_Float64 'double'
+# (placeholder) | |-BuiltinAttr 0xd8ba880 <<invalid sloc>> Inherited Implicit 831
 
-'double'
+# (placeholder) | |-FormatAttr 0xd8ba8a8 <line:373:12> Inherited printf 2 0
 
-_Float32x 'double'
+# (placeholder) | `-NoThrowAttr 0xd8ba828 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
 
-'double'
+# (placeholder) |-FunctionDecl 0xd8bab88 </usr/include/stdio.h:378:12> col:12 implicit snprintf 'int (char *, unsigned long, const char *, ...)' extern
 
-_Float64x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd8bac80 <<invalid sloc>> <invalid sloc> 'char *'
 
-'long double'
+# (placeholder) | |-ParmVarDecl 0xd8bace8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-prev 0x591bc0 /usr/include/stdio.h:434:24 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8bad50 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__stream 'FILE *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8bac28 <<invalid sloc>> Implicit 826
 
-__format 'const char *restrict'
+# (placeholder) | `-FormatAttr 0xd8badd0 <col:12> Implicit printf 3 4
 
-Inherited Implicit 833
+# (placeholder) |-FunctionDecl 0xd8bae08 prev 0xd8bab88 <col:1, line:380:62> line:378:12 snprintf 'int (char *, unsigned long, const char *, ...)' extern
 
-Inherited scanf 2 3
+# (placeholder) | |-ParmVarDecl 0xd8ba8f8 <col:22, col:39> col:39 __s 'char *restrict'
 
-"__isoc99_fscanf" IsLiteralLabel
+# (placeholder) | |-ParmVarDecl 0xd8ba970 <col:44, col:51> col:51 __maxlen 'size_t':'unsigned long'
 
-prev 0x591f50 /usr/include/stdio.h:437:24 scanf 'int (const char *restrict, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ba9f0 <line:379:8, col:31> col:31 __format 'const char *restrict'
 
-__format 'const char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8baf50 <<invalid sloc>> Inherited Implicit 826
 
-Inherited Implicit 832
+# (placeholder) | |-NoThrowAttr 0xd8baec0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
 
-Inherited scanf 1 2
+# (placeholder) | `-FormatAttr 0xd8baf18 </usr/include/stdio.h:380:32, col:60> printf 3 4
 
-"__isoc99_scanf" IsLiteralLabel
+# (placeholder) |-FunctionDecl 0xd8bb2e8 <line:382:12> col:12 implicit vsnprintf 'int (char *, unsigned long, const char *, __builtin_va_list)' extern
 
-prev 0x592458 /usr/include/stdio.h:439:28 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
+# (placeholder) | |-ParmVarDecl 0xd8bb3e0 <<invalid sloc>> <invalid sloc> 'char *'
 
-__s 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bb448 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bb4b0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-Inherited Implicit 834
+# (placeholder) | |-ParmVarDecl 0xd8bb518 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
 
-Inherited scanf 2 3
+# (placeholder) | |-BuiltinAttr 0xd8bb388 <<invalid sloc>> Implicit 830
 
-"__isoc99_sscanf" IsLiteralLabel
+# (placeholder) | `-FormatAttr 0xd8bb5a0 <col:12> Implicit printf 3 0
 
+# (placeholder) |-FunctionDecl 0xd8bb5d8 prev 0xd8bb2e8 <col:1, line:384:62> line:382:12 vsnprintf 'int (char *, unsigned long, const char *, __builtin_va_list)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8baf90 <col:23, col:40> col:40 __s 'char *restrict'
 
-implicit vfscanf 'int (FILE *restrict, const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8bb008 <col:45, col:52> col:52 __maxlen 'size_t':'unsigned long'
 
-<invalid sloc> 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bb088 <line:383:9, col:32> col:32 __format 'const char *restrict'
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bb100 <col:42, col:57> col:57 __arg '__gnuc_va_list':'struct std::__va_list'
 
-<invalid sloc> 'struct __va_list_tag *'
+# (placeholder) | |-BuiltinAttr 0xd8bb768 <<invalid sloc>> Inherited Implicit 830
 
-Implicit 836
+# (placeholder) | |-NoThrowAttr 0xd8bb698 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
 
-Implicit scanf 2 0
+# (placeholder) | `-FormatAttr 0xd8bb730 </usr/include/stdio.h:384:32, col:60> printf 3 0
 
-prev 0x59e6e0 vfscanf 'int (FILE *restrict, const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) |-FunctionDecl 0xd8bba20 <line:403:1, line:405:52> line:403:12 vdprintf 'int (int, const char *restrict, __gnuc_va_list)' extern
 
-__s 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bb7a8 <col:22, col:26> col:26 __fd 'int'
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bb828 <col:32, col:55> col:55 __fmt 'const char *restrict'
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | |-ParmVarDecl 0xd8bb8a0 <line:404:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
 
-Inherited Implicit 836
+# (placeholder) | `-FormatAttr 0xd8bbad8 <line:405:22, col:50> printf 2 0
 
-scanf 2 0
+# (placeholder) |-FunctionDecl 0xd8bbd48 <line:406:1, line:407:52> line:406:12 dprintf 'int (int, const char *restrict, ...)' extern
 
-implicit vscanf 'int (const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8bbb58 <col:21, col:25> col:25 __fd 'int'
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bbbd8 <col:31, col:54> col:54 __fmt 'const char *restrict'
 
-<invalid sloc> 'struct __va_list_tag *'
+# (placeholder) | `-FormatAttr 0xd8bbdf8 <line:407:22, col:50> printf 2 3
 
-Implicit 835
+# (placeholder) |-FunctionDecl 0xd8bbf90 <line:415:12> col:12 implicit fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
 
-Implicit scanf 1 0
+# (placeholder) | |-ParmVarDecl 0xd8bc088 <<invalid sloc>> <invalid sloc> 'FILE *restrict'
 
-prev 0x59ec68 vscanf 'int (const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8bc0f0 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-__format 'const char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8bc030 <<invalid sloc>> Implicit 833
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | `-FormatAttr 0xd8bc168 <col:12> Implicit scanf 2 3
 
-Inherited Implicit 835
+# (placeholder) |-FunctionDecl 0xd8bc1a0 prev 0xd8bbf90 <col:1, line:416:42> line:415:12 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
 
-scanf 1 0
+# (placeholder) | |-ParmVarDecl 0xd8bbe70 <col:20, col:37> col:37 __stream 'FILE *restrict'
 
-implicit vsscanf 'int (const char *restrict, const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8bbef0 <line:416:6, col:29> col:29 __format 'const char *restrict'
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8bc280 <<invalid sloc>> Inherited Implicit 833
 
-<invalid sloc> 'const char *restrict'
+# (placeholder) | `-FormatAttr 0xd8bc2a8 <line:415:12> Inherited scanf 2 3
 
-<invalid sloc> 'struct __va_list_tag *'
+# (placeholder) |-FunctionDecl 0xd8bc390 <line:421:12> col:12 implicit scanf 'int (const char *restrict, ...)' extern
 
-Implicit 837
+# (placeholder) | |-ParmVarDecl 0xd8bc488 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-Implicit scanf 2 0
+# (placeholder) | |-BuiltinAttr 0xd8bc430 <<invalid sloc>> Implicit 832
 
-prev 0x5a00f0 vsscanf 'int (const char *restrict, const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | `-FormatAttr 0xd8bc4f8 <col:12> Implicit scanf 1 2
 
-__s 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd8bc530 prev 0xd8bc390 <col:1, col:55> col:12 scanf 'int (const char *restrict, ...)' extern
 
-__format 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8bc2f8 <col:19, col:42> col:42 __format 'const char *restrict'
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | |-BuiltinAttr 0xd8bc608 <<invalid sloc>> Inherited Implicit 832
 
-Inherited Implicit 837
+# (placeholder) | `-FormatAttr 0xd8bc630 <col:12> Inherited scanf 1 2
 
+# (placeholder) |-FunctionDecl 0xd8bd888 <line:423:12> col:12 implicit sscanf 'int (const char *restrict, const char *restrict, ...)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8bd980 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-scanf 2 0
+# (placeholder) | |-ParmVarDecl 0xd8bd9e8 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-prev 0x59e960 vfscanf 'int (FILE *restrict, const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | |-BuiltinAttr 0xd8bd928 <<invalid sloc>> Implicit 834
 
-__s 'FILE *restrict'
+# (placeholder) | `-FormatAttr 0xd8bda60 <col:12> Implicit scanf 2 3
 
-__format 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd8bda98 prev 0xd8bd888 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:423:12 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | |-ParmVarDecl 0xd8bc680 <col:20, col:43> col:43 __s 'const char *restrict'
 
-Inherited Implicit 836
+# (placeholder) | |-ParmVarDecl 0xd8bd760 <line:424:6, col:29> col:29 __format 'const char *restrict'
 
-"__isoc99_vfscanf" IsLiteralLabel
+# (placeholder) | |-BuiltinAttr 0xd8bdba0 <<invalid sloc>> Inherited Implicit 834
 
-scanf 2 0
+# (placeholder) | |-FormatAttr 0xd8bdbc8 <line:423:12> Inherited scanf 2 3
 
-prev 0x59ee78 vscanf 'int (const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | `-NoThrowAttr 0xd8bdb48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__format 'const char *restrict'
+# (placeholder) |-TypedefDecl 0xd8bdc18 </usr/include/aarch64-linux-gnu/bits/floatn.h:80:1, col:21> col:21 _Float128 'long double'
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) | `-BuiltinType 0xd7ad490 'long double'
 
-Inherited Implicit 835
+# (placeholder) |-TypedefDecl 0xd8bdc88 </usr/include/aarch64-linux-gnu/bits/floatn-common.h:214:1, col:15> col:15 _Float32 'float'
 
-"__isoc99_vscanf" IsLiteralLabel
+# (placeholder) | `-BuiltinType 0xd7ad450 'float'
 
-scanf 1 0
+# (placeholder) |-TypedefDecl 0xd8bdcf8 <line:251:1, col:16> col:16 _Float64 'double'
 
-prev 0x5a0370 vsscanf 'int (const char *restrict, const char *restrict, struct __va_list_tag *)' extern
+# (placeholder) | `-BuiltinType 0xd7ad470 'double'
 
-__s 'const char *restrict'
+# (placeholder) |-TypedefDecl 0xd8bdd68 <line:268:1, col:16> col:16 _Float32x 'double'
 
-__format 'const char *restrict'
+# (placeholder) | `-BuiltinType 0xd7ad470 'double'
 
-__arg 'struct __va_list_tag *':'struct __va_list_tag *'
+# (placeholder) |-TypedefDecl 0xd8bddd8 <line:285:1, col:21> col:21 _Float64x 'long double'
 
-Inherited Implicit 837
+# (placeholder) | `-BuiltinType 0xd7ad490 'long double'
 
-"__isoc99_vsscanf" IsLiteralLabel
+# (placeholder) |-FunctionDecl 0xd8bdfd0 prev 0xd8bc1a0 </usr/include/stdio.h:434:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:247:79> /usr/include/stdio.h:434:24 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8bde40 <col:33, col:50> col:50 __stream 'FILE *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8bdec0 <line:435:5, col:28> col:28 __format 'const char *restrict'
 
-scanf 2 0
+# (placeholder) | |-BuiltinAttr 0xd8be0f8 <<invalid sloc>> Inherited Implicit 833
 
-fgetc 'int (FILE *)' extern
+# (placeholder) | |-FormatAttr 0xd8be120 <line:415:12> Inherited scanf 2 3
 
-__stream 'FILE *'
+# (placeholder) | `-AsmLabelAttr 0xd8be070 <<scratch space>:32:1> "__isoc99_fscanf" IsLiteralLabel
 
-getc 'int (FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8be278 prev 0xd8bc530 </usr/include/stdio.h:437:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:247:79> /usr/include/stdio.h:437:24 scanf 'int (const char *restrict, ...)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8be170 <col:32, col:55> col:55 __format 'const char *restrict'
 
-getchar 'int (void)' extern
+# (placeholder) | |-BuiltinAttr 0xd8be398 <<invalid sloc>> Inherited Implicit 832
 
-getc_unlocked 'int (FILE *)' extern
+# (placeholder) | |-FormatAttr 0xd8be3c0 <line:421:12> Inherited scanf 1 2
 
-__stream 'FILE *'
+# (placeholder) | `-AsmLabelAttr 0xd8be318 <<scratch space>:34:1> "__isoc99_scanf" IsLiteralLabel
 
-getchar_unlocked 'int (void)' extern
+# (placeholder) |-FunctionDecl 0xd8be560 prev 0xd8bda98 </usr/include/stdio.h:439:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:439:28 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
 
-fgetc_unlocked 'int (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8be410 <col:37, col:60> col:60 __s 'const char *restrict'
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8be490 <line:440:9, col:32> col:32 __format 'const char *restrict'
 
-fputc 'int (int, FILE *)' extern
+# (placeholder) | |-BuiltinAttr 0xd8be6b0 <<invalid sloc>> Inherited Implicit 834
 
-__c 'int'
+# (placeholder) | |-FormatAttr 0xd8be6d8 <line:423:12> Inherited scanf 2 3
 
-__stream 'FILE *'
+# (placeholder) | |-AsmLabelAttr 0xd8be600 <<scratch space>:36:1> "__isoc99_sscanf" IsLiteralLabel
 
-putc 'int (int, FILE *)' extern
+# (placeholder) | `-NoThrowAttr 0xd8be688 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__c 'int'
+# (placeholder) |-FunctionDecl 0xd8ca5a0 </usr/include/stdio.h:459:12> col:12 implicit vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8ca698 <<invalid sloc>> <invalid sloc> 'FILE *restrict'
 
-putchar 'int (int)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ca700 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-__c 'int'
+# (placeholder) | |-ParmVarDecl 0xd8ca768 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
 
-fputc_unlocked 'int (int, FILE *)' extern
+# (placeholder) | |-BuiltinAttr 0xd8ca640 <<invalid sloc>> Implicit 836
 
-__c 'int'
+# (placeholder) | `-FormatAttr 0xd8ca7e8 <col:12> Implicit scanf 2 0
 
-__stream 'FILE *'
+# (placeholder) |-FunctionDecl 0xd8ca820 prev 0xd8ca5a0 <col:1, line:461:51> line:459:12 vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
 
-putc_unlocked 'int (int, FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ca370 <col:21, col:38> col:38 __s 'FILE *restrict'
 
-__c 'int'
+# (placeholder) | |-ParmVarDecl 0xd8ca3f0 <col:43, col:66> col:66 __format 'const char *restrict'
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8ca468 <line:460:7, col:22> col:22 __arg '__gnuc_va_list':'struct std::__va_list'
 
-putchar_unlocked 'int (int)' extern
+# (placeholder) | |-BuiltinAttr 0xd8ca940 <<invalid sloc>> Inherited Implicit 836
 
-__c 'int'
+# (placeholder) | `-FormatAttr 0xd8ca8d8 <line:461:22, col:49> scanf 2 0
 
-getw 'int (FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8cab28 <line:467:12> col:12 implicit vscanf 'int (const char *restrict, __builtin_va_list)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8cac20 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-putw 'int (int, FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cac88 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
 
-__w 'int'
+# (placeholder) | |-BuiltinAttr 0xd8cabc8 <<invalid sloc>> Implicit 835
 
-__stream 'FILE *'
+# (placeholder) | `-FormatAttr 0xd8cad00 <col:12> Implicit scanf 1 0
 
-fgets 'char *(char *restrict, int, FILE *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd8cad38 prev 0xd8cab28 <col:1, line:468:51> line:467:12 vscanf 'int (const char *restrict, __builtin_va_list)' extern
 
-__s 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8ca980 <col:20, col:43> col:43 __format 'const char *restrict'
 
-__n 'int'
+# (placeholder) | |-ParmVarDecl 0xd8ca9f8 <col:53, col:68> col:68 __arg '__gnuc_va_list':'struct std::__va_list'
 
-__stream 'FILE *restrict'
+# (placeholder) | |-BuiltinAttr 0xd8cae50 <<invalid sloc>> Inherited Implicit 835
 
-__getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
+# (placeholder) | `-FormatAttr 0xd8cade8 <line:468:22, col:49> scanf 1 0
 
-__lineptr 'char **restrict'
+# (placeholder) |-FunctionDecl 0xd8cb140 <line:471:12> col:12 implicit vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
 
-__n 'size_t *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8cb238 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-__delimiter 'int'
+# (placeholder) | |-ParmVarDecl 0xd8cb2a0 <<invalid sloc>> <invalid sloc> 'const char *restrict'
 
-__stream 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8cb308 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
 
-getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
+# (placeholder) | |-BuiltinAttr 0xd8cb1e0 <<invalid sloc>> Implicit 837
 
-__lineptr 'char **restrict'
+# (placeholder) | `-FormatAttr 0xd8cbba8 <col:12> Implicit scanf 2 0
 
-__n 'size_t *restrict'
+# (placeholder) |-FunctionDecl 0xd8cbbe0 prev 0xd8cb140 <col:1, line:473:59> line:471:12 vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
 
-__delimiter 'int'
+# (placeholder) | |-ParmVarDecl 0xd8cae90 <col:21, col:44> col:44 __s 'const char *restrict'
 
-__stream 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8caf10 <line:472:7, col:30> col:30 __format 'const char *restrict'
 
-getline '__ssize_t (char **restrict, size_t *restrict, FILE *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd8caf88 <col:40, col:55> col:55 __arg '__gnuc_va_list':'struct std::__va_list'
 
-__lineptr 'char **restrict'
+# (placeholder) | |-BuiltinAttr 0xd8cbd28 <<invalid sloc>> Inherited Implicit 837
 
-__n 'size_t *restrict'
+# (placeholder) | |-NoThrowAttr 0xd8cbc98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__stream 'FILE *restrict'
+# (placeholder) | `-FormatAttr 0xd8cbcf0 </usr/include/stdio.h:473:30, col:57> scanf 2 0
 
-fputs 'int (const char *restrict, FILE *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd8cbfb8 prev 0xd8ca820 <line:479:1, line:483:51> line:479:24 vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
 
-__s 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8cbd60 <line:480:11, col:28> col:28 __s 'FILE *restrict'
 
-__stream 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8cbde0 <line:481:4, col:27> col:27 __format 'const char *restrict'
 
-puts 'int (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cbe58 <col:37, col:52> col:52 __arg '__gnuc_va_list':'struct std::__va_list'
 
-__s 'const char *'
+# (placeholder) | |-BuiltinAttr 0xd8cc120 <<invalid sloc>> Inherited Implicit 836
 
-ungetc 'int (int, FILE *)' extern
+# (placeholder) | |-AsmLabelAttr 0xd8cc058 <<scratch space>:39:1> "__isoc99_vfscanf" IsLiteralLabel
 
-__c 'int'
+# (placeholder) | `-FormatAttr 0xd8cc0e8 </usr/include/stdio.h:483:22, col:49> scanf 2 0
 
-__stream 'FILE *'
+# (placeholder) |-FunctionDecl 0xd8cc2f8 prev 0xd8cad38 <line:484:1, line:486:51> line:484:24 vscanf 'int (const char *restrict, __builtin_va_list)' extern
 
-implicit fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cc160 <col:33, col:56> col:56 __format 'const char *restrict'
 
-<invalid sloc> 'void *'
+# (placeholder) | |-ParmVarDecl 0xd8cc1d8 <line:485:5, col:20> col:20 __arg '__gnuc_va_list':'struct std::__va_list'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd8cc458 <<invalid sloc>> Inherited Implicit 835
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-AsmLabelAttr 0xd8cc398 <<scratch space>:41:1> "__isoc99_vscanf" IsLiteralLabel
 
-<invalid sloc> 'FILE *'
+# (placeholder) | `-FormatAttr 0xd8cc420 </usr/include/stdio.h:486:22, col:49> scanf 1 0
 
-Implicit 839
+# (placeholder) |-FunctionDecl 0xd8cc6b8 prev 0xd8cbbe0 <line:487:1, line:491:51> line:487:28 vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
 
-prev 0x5a3bd8 fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cc498 <line:488:8, col:31> col:31 __s 'const char *restrict'
 
-__ptr 'void *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8cc518 <line:489:8, col:31> col:31 __format 'const char *restrict'
 
-__size 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8cc590 <line:490:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd8cc848 <<invalid sloc>> Inherited Implicit 837
 
-__stream 'FILE *restrict'
+# (placeholder) | |-AsmLabelAttr 0xd8cc758 <<scratch space>:43:1> "__isoc99_vsscanf" IsLiteralLabel
 
-Inherited Implicit 839
+# (placeholder) | |-NoThrowAttr 0xd8cc7e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
+# (placeholder) | `-FormatAttr 0xd8cc810 </usr/include/stdio.h:491:22, col:49> scanf 2 0
 
-<invalid sloc> 'const void *'
+# (placeholder) |-FunctionDecl 0xd8cc918 <line:513:1, col:33> col:12 fgetc 'int (FILE *)' extern
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | `-ParmVarDecl 0xd8cc880 <col:19, col:25> col:25 __stream 'FILE *'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8cca68 <line:514:1, col:32> col:12 getc 'int (FILE *)' extern
 
-<invalid sloc> 'FILE *'
+# (placeholder) | `-ParmVarDecl 0xd8cc9d0 <col:18, col:24> col:24 __stream 'FILE *'
 
-Implicit 840
+# (placeholder) |-FunctionDecl 0xd8ccbf0 <line:520:1, col:25> col:12 getchar 'int (void)' extern
 
-prev 0x5a42f8 fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8ccd38 <line:527:1, col:41> col:12 getc_unlocked 'int (FILE *)' extern
 
-__ptr 'const void *restrict'
+# (placeholder) | `-ParmVarDecl 0xd8ccca0 <col:27, col:33> col:33 __stream 'FILE *'
 
-__size 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8cce80 <line:528:1, col:34> col:12 getchar_unlocked 'int (void)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8ccfc8 <line:538:1, col:42> col:12 fgetc_unlocked 'int (FILE *)' extern
 
-__s 'FILE *restrict'
+# (placeholder) | `-ParmVarDecl 0xd8ccf30 <col:28, col:34> col:34 __stream 'FILE *'
 
-Inherited Implicit 840
+# (placeholder) |-FunctionDecl 0xd8cd220 <line:549:1, col:42> col:12 fputc 'int (int, FILE *)' extern
 
-fread_unlocked 'size_t (void *restrict, size_t, size_t, FILE *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cd088 <col:19, col:23> col:23 __c 'int'
 
-__ptr 'void *restrict'
+# (placeholder) | `-ParmVarDecl 0xd8cd100 <col:28, col:34> col:34 __stream 'FILE *'
 
-__size 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8cd400 <line:550:1, col:41> col:12 putc 'int (int, FILE *)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8cd2e8 <col:18, col:22> col:22 __c 'int'
 
-__stream 'FILE *restrict'
+# (placeholder) | `-ParmVarDecl 0xd8cd360 <col:27, col:33> col:33 __stream 'FILE *'
 
-fwrite_unlocked 'size_t (const void *restrict, size_t, size_t, FILE *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd8cd590 <line:556:1, col:28> col:12 putchar 'int (int)' extern
 
-__ptr 'const void *restrict'
+# (placeholder) | `-ParmVarDecl 0xd8cd4c8 <col:21, col:25> col:25 __c 'int'
 
-__size 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8cd768 <line:565:1, col:51> col:12 fputc_unlocked 'int (int, FILE *)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8cd650 <col:28, col:32> col:32 __c 'int'
 
-__stream 'FILE *restrict'
+# (placeholder) | `-ParmVarDecl 0xd8cd6c8 <col:37, col:43> col:43 __stream 'FILE *'
 
-fseek 'int (FILE *, long, int)' extern
+# (placeholder) |-FunctionDecl 0xd8cd948 <line:573:1, col:50> col:12 putc_unlocked 'int (int, FILE *)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8cd830 <col:27, col:31> col:31 __c 'int'
 
-__off 'long'
+# (placeholder) | `-ParmVarDecl 0xd8cd8a8 <col:36, col:42> col:42 __stream 'FILE *'
 
-__whence 'int'
+# (placeholder) |-FunctionDecl 0xd8cdaa8 <line:574:1, col:37> col:12 putchar_unlocked 'int (int)' extern
 
-ftell 'long (FILE *)' extern
+# (placeholder) | `-ParmVarDecl 0xd8cda10 <col:30, col:34> col:34 __c 'int'
 
-__stream 'FILE *'
+# (placeholder) |-FunctionDecl 0xd8cdc48 <line:581:1, col:32> col:12 getw 'int (FILE *)' extern
 
-rewind 'void (FILE *)' extern
+# (placeholder) | `-ParmVarDecl 0xd8cdbb0 <col:18, col:24> col:24 __stream 'FILE *'
 
-__stream 'FILE *'
+# (placeholder) |-FunctionDecl 0xd8cde20 <line:584:1, col:41> col:12 putw 'int (int, FILE *)' extern
 
-fseeko 'int (FILE *, __off_t, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cdd08 <col:18, col:22> col:22 __w 'int'
 
-__stream 'FILE *'
+# (placeholder) | `-ParmVarDecl 0xd8cdd80 <col:27, col:33> col:33 __stream 'FILE *'
 
-__off '__off_t':'long'
+# (placeholder) |-FunctionDecl 0xd8ce110 <line:592:1, col:77> col:14 fgets 'char *(char *restrict, int, FILE *restrict)' extern
 
-__whence 'int'
+# (placeholder) | |-ParmVarDecl 0xd8cdee8 <col:21, col:38> col:38 __s 'char *restrict'
 
-ftello '__off_t (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cdf68 <col:43, col:47> col:47 __n 'int'
 
-__stream 'FILE *'
+# (placeholder) | `-ParmVarDecl 0xd8cdfe0 <col:52, col:69> col:69 __stream 'FILE *restrict'
 
-fgetpos 'int (FILE *restrict, fpos_t *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd8ce498 <line:632:1, line:634:55> line:632:18 __getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
 
-__stream 'FILE *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8ce1e0 <col:30, col:48> col:48 __lineptr 'char **restrict'
 
-__pos 'fpos_t *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8ce258 <line:633:30, col:49> col:49 __n 'size_t *restrict'
 
-fsetpos 'int (FILE *, const fpos_t *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ce2d8 <col:54, col:58> col:58 __delimiter 'int'
 
-__stream 'FILE *'
+# (placeholder) | `-ParmVarDecl 0xd8ce350 <line:634:30, col:47> col:47 __stream 'FILE *restrict'
 
-__pos 'const fpos_t *'
+# (placeholder) |-FunctionDecl 0xd8ce788 <line:635:1, line:637:53> line:635:18 getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
 
-/usr/include/stdio.h:786:13 clearerr 'void (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ce570 <col:28, col:46> col:46 __lineptr 'char **restrict'
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8ce5e8 <line:636:28, col:47> col:47 __n 'size_t *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8ce668 <col:52, col:56> col:56 __delimiter 'int'
 
+# (placeholder) | `-ParmVarDecl 0xd8ce6e0 <line:637:28, col:45> col:45 __stream 'FILE *restrict'
 
-/usr/include/stdio.h:788:12 feof 'int (FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8cea78 <line:645:1, line:647:52> line:645:18 getline '__ssize_t (char **restrict, size_t *restrict, FILE *restrict)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8ce860 <col:27, col:45> col:45 __lineptr 'char **restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8ce8d8 <line:646:27, col:46> col:46 __n 'size_t *restrict'
 
+# (placeholder) | `-ParmVarDecl 0xd8ce950 <line:647:27, col:44> col:44 __stream 'FILE *restrict'
 
-/usr/include/stdio.h:790:12 ferror 'int (FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8cfd00 <line:655:1, col:72> col:12 fputs 'int (const char *restrict, FILE *restrict)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8ceb48 <col:19, col:42> col:42 __s 'const char *restrict'
 
+# (placeholder) | `-ParmVarDecl 0xd8cfbe0 <col:47, col:64> col:64 __stream 'FILE *restrict'
 
+# (placeholder) |-FunctionDecl 0xd8cfe60 <line:661:1, col:33> col:12 puts 'int (const char *)' extern
 
-/usr/include/stdio.h:794:13 clearerr_unlocked 'void (FILE *)' extern
+# (placeholder) | `-ParmVarDecl 0xd8cfdc8 <col:18, col:30> col:30 __s 'const char *'
 
-__stream 'FILE *'
+# (placeholder) |-FunctionDecl 0xd8d0038 <line:668:1, col:43> col:12 ungetc 'int (int, FILE *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8cff20 <col:20, col:24> col:24 __c 'int'
 
+# (placeholder) | `-ParmVarDecl 0xd8cff98 <col:29, col:35> col:35 __stream 'FILE *'
 
-/usr/include/stdio.h:795:12 feof_unlocked 'int (FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8d03f8 <line:675:15> col:15 implicit fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8d04f0 <<invalid sloc>> <invalid sloc> 'void *'
 
+# (placeholder) | |-ParmVarDecl 0xd8d0558 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8d05c0 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-/usr/include/stdio.h:796:12 ferror_unlocked 'int (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d0628 <<invalid sloc>> <invalid sloc> 'FILE *'
 
-__stream 'FILE *'
+# (placeholder) | `-BuiltinAttr 0xd8d0498 <<invalid sloc>> Implicit 839
 
+# (placeholder) |-FunctionDecl 0xd8d06b0 prev 0xd8d03f8 <col:1, line:676:45> line:675:15 fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d0100 <col:22, col:39> col:39 __ptr 'void *restrict'
 
-perror 'void (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d0178 <col:46, col:53> col:53 __size 'size_t':'unsigned long'
 
-__s 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8d01f0 <line:676:8, col:15> col:15 __n 'size_t':'unsigned long'
 
-/usr/include/stdio.h:809:12 fileno 'int (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d0268 <col:20, col:37> col:37 __stream 'FILE *restrict'
 
-__stream 'FILE *'
+# (placeholder) | `-BuiltinAttr 0xd8d07a0 <<invalid sloc>> Inherited Implicit 839
 
+# (placeholder) |-FunctionDecl 0xd8d0b08 <line:681:15> col:15 implicit fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d0c10 <<invalid sloc>> <invalid sloc> 'const void *'
 
-/usr/include/stdio.h:814:12 fileno_unlocked 'int (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d0c78 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8d0ce0 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8d0d48 <<invalid sloc>> <invalid sloc> 'FILE *'
 
+# (placeholder) | `-BuiltinAttr 0xd8d0ba8 <<invalid sloc>> Implicit 840
 
-pclose 'int (FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8d0dd0 prev 0xd8d0b08 <col:1, line:682:41> line:681:15 fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
 
-__stream 'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8d0810 <col:23, col:46> col:46 __ptr 'const void *restrict'
 
-/usr/include/stdio.h:829:14 popen 'FILE *(const char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d0888 <col:53, col:60> col:60 __size 'size_t':'unsigned long'
 
-__command 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8d0900 <line:682:9, col:16> col:16 __n 'size_t':'unsigned long'
 
-__modes 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8d0978 <col:21, col:38> col:38 __s 'FILE *restrict'
 
-malloc
+# (placeholder) | `-BuiltinAttr 0xd8d0ec0 <<invalid sloc>> Inherited Implicit 840
 
-/usr/include/stdio.h:837:14 ctermid 'char *(char *)' extern
+# (placeholder) |-FunctionDecl 0xd8d1110 <line:702:1, line:703:47> line:702:15 fread_unlocked 'size_t (void *restrict, size_t, size_t, FILE *restrict)' extern
 
-__s 'char *'
+# (placeholder) | |-ParmVarDecl 0xd8d0f00 <col:31, col:48> col:48 __ptr 'void *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8d0f78 <col:55, col:62> col:62 __size 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8d0ff0 <line:703:10, col:17> col:17 __n 'size_t':'unsigned long'
 
-/usr/include/stdio.h:867:13 flockfile 'void (FILE *)' extern
+# (placeholder) | `-ParmVarDecl 0xd8d1068 <col:22, col:39> col:39 __stream 'FILE *restrict'
 
-__stream 'FILE *'
+# (placeholder) |-FunctionDecl 0xd8d13f8 <line:704:1, line:705:48> line:704:15 fwrite_unlocked 'size_t (const void *restrict, size_t, size_t, FILE *restrict)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d11e8 <col:32, col:55> col:55 __ptr 'const void *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8d1260 <col:62, col:69> col:69 __size 'size_t':'unsigned long'
 
-/usr/include/stdio.h:871:12 ftrylockfile 'int (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d12d8 <line:705:11, col:18> col:18 __n 'size_t':'unsigned long'
 
-__stream 'FILE *'
+# (placeholder) | `-ParmVarDecl 0xd8d1350 <col:23, col:40> col:40 __stream 'FILE *restrict'
 
+# (placeholder) |-FunctionDecl 0xd8d16f0 <line:713:1, col:63> col:12 fseek 'int (FILE *, long, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d14c8 <col:19, col:25> col:25 __stream 'FILE *'
 
-/usr/include/stdio.h:874:13 funlockfile 'void (FILE *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d1548 <col:35, col:44> col:44 __off 'long'
 
-__stream 'FILE *'
+# (placeholder) | `-ParmVarDecl 0xd8d15c8 <col:51, col:55> col:55 __whence 'int'
 
+# (placeholder) |-FunctionDecl 0xd8d18b0 <line:718:1, col:38> col:17 ftell 'long (FILE *)' extern
 
+# (placeholder) | `-ParmVarDecl 0xd8d17b8 <col:24, col:30> col:30 __stream 'FILE *'
 
-__uflow 'int (FILE *)' extern
+# (placeholder) |-FunctionDecl 0xd8d19f8 <line:723:1, col:35> col:13 rewind 'void (FILE *)' extern
 
-'FILE *'
+# (placeholder) | `-ParmVarDecl 0xd8d1968 <col:21, col:27> col:27 __stream 'FILE *'
 
-__overflow 'int (FILE *, int)' extern
+# (placeholder) |-FunctionDecl 0xd8d2ce0 <line:736:1, col:63> col:12 fseeko 'int (FILE *, __off_t, int)' extern
 
-'FILE *'
+# (placeholder) | |-ParmVarDecl 0xd8d1ab0 <col:20, col:26> col:26 __stream 'FILE *'
 
-'int'
+# (placeholder) | |-ParmVarDecl 0xd8d1b28 <col:36, col:44> col:44 __off '__off_t':'long'
 
-referenced wchar_t 'int'
+# (placeholder) | `-ParmVarDecl 0xd8d2bf0 <col:51, col:55> col:55 __whence 'int'
 
-'int'
+# (placeholder) |-FunctionDecl 0xd8d2e68 <line:741:1, col:38> col:16 ftello '__off_t (FILE *)' extern
 
-struct definition
+# (placeholder) | `-ParmVarDecl 0xd8d2da8 <col:24, col:30> col:30 __stream 'FILE *'
 
-quot 'int'
+# (placeholder) |-FunctionDecl 0xd8d3130 <line:760:1, col:72> col:12 fgetpos 'int (FILE *restrict, fpos_t *restrict)' extern
 
-rem 'int'
+# (placeholder) | |-ParmVarDecl 0xd8d2f20 <col:21, col:38> col:38 __stream 'FILE *restrict'
 
-referenced div_t 'struct div_t':'div_t'
+# (placeholder) | `-ParmVarDecl 0xd8d3018 <col:48, col:67> col:67 __pos 'fpos_t *restrict'
 
-'struct div_t' sugar
+# (placeholder) |-FunctionDecl 0xd8d33e0 <line:765:1, col:56> col:12 fsetpos 'int (FILE *, const fpos_t *)' extern
 
-'div_t'
+# (placeholder) | |-ParmVarDecl 0xd8d31f0 <col:21, col:27> col:27 __stream 'FILE *'
 
-''
+# (placeholder) | `-ParmVarDecl 0xd8d32c8 <col:37, col:51> col:51 __pos 'const fpos_t *'
 
-struct definition
+# (placeholder) |-FunctionDecl 0xd8d3530 <line:786:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:786:13 clearerr 'void (FILE *)' extern
 
-quot 'long'
+# (placeholder) | |-ParmVarDecl 0xd8d34a0 <col:23, col:29> col:29 __stream 'FILE *'
 
-rem 'long'
+# (placeholder) | `-NoThrowAttr 0xd8d35d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-referenced ldiv_t 'struct ldiv_t':'ldiv_t'
+# (placeholder) |-FunctionDecl 0xd8d36d8 </usr/include/stdio.h:788:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:788:12 feof 'int (FILE *)' extern
 
-'struct ldiv_t' sugar
+# (placeholder) | |-ParmVarDecl 0xd8d3640 <col:18, col:24> col:24 __stream 'FILE *'
 
-'ldiv_t'
+# (placeholder) | `-NoThrowAttr 0xd8d3780 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-''
+# (placeholder) |-FunctionDecl 0xd8d3880 </usr/include/stdio.h:790:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:790:12 ferror 'int (FILE *)' extern
 
-struct definition
+# (placeholder) | |-ParmVarDecl 0xd8d37e8 <col:20, col:26> col:26 __stream 'FILE *'
 
-quot 'long long'
+# (placeholder) | `-NoThrowAttr 0xd8d3928 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-rem 'long long'
+# (placeholder) |-FunctionDecl 0xd8d3a20 </usr/include/stdio.h:794:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:794:13 clearerr_unlocked 'void (FILE *)' extern
 
-referenced lldiv_t 'struct lldiv_t':'lldiv_t'
+# (placeholder) | |-ParmVarDecl 0xd8d3990 <col:32, col:38> col:38 __stream 'FILE *'
 
-'struct lldiv_t' sugar
+# (placeholder) | `-NoThrowAttr 0xd8d3ac8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'lldiv_t'
+# (placeholder) |-FunctionDecl 0xd8d3c00 </usr/include/stdio.h:795:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:795:12 feof_unlocked 'int (FILE *)' extern
 
-''
+# (placeholder) | |-ParmVarDecl 0xd8d3b30 <col:27, col:33> col:33 __stream 'FILE *'
 
-/usr/include/stdlib.h:98:15 __ctype_get_mb_cur_max 'size_t (void)' extern
+# (placeholder) | `-NoThrowAttr 0xd8d3ca8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8d3da8 </usr/include/stdio.h:796:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:796:12 ferror_unlocked 'int (FILE *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d3d10 <col:29, col:35> col:35 __stream 'FILE *'
 
-/usr/include/stdlib.h:102:15 atof 'double (const char *)' extern
+# (placeholder) | `-NoThrowAttr 0xd8d3e50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__nptr 'const char *'
+# (placeholder) |-FunctionDecl 0xd8d3f88 </usr/include/stdio.h:804:1, col:36> col:13 perror 'void (const char *)' extern
 
+# (placeholder) | `-ParmVarDecl 0xd8d3ec0 <col:21, col:33> col:33 __s 'const char *'
 
+# (placeholder) |-FunctionDecl 0xd8d40d8 <line:809:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:809:12 fileno 'int (FILE *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d4040 <col:20, col:26> col:26 __stream 'FILE *'
 
+# (placeholder) | `-NoThrowAttr 0xd8d4180 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1
+# (placeholder) |-FunctionDecl 0xd8d4280 </usr/include/stdio.h:814:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:814:12 fileno_unlocked 'int (FILE *)' extern
 
-/usr/include/stdlib.h:105:12 atoi 'int (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8d41e8 <col:29, col:35> col:35 __stream 'FILE *'
 
-__nptr 'const char *'
+# (placeholder) | `-NoThrowAttr 0xd8d4328 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8d4428 </usr/include/stdio.h:823:1, col:34> col:12 pclose 'int (FILE *)' extern
 
+# (placeholder) | `-ParmVarDecl 0xd8d4390 <col:20, col:26> col:26 __stream 'FILE *'
 
+# (placeholder) |-FunctionDecl 0xd8d4600 <line:829:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:829:14 popen 'FILE *(const char *, const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d44e8 <col:21, col:33> col:33 __command 'const char *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8d4568 <col:44, col:56> col:56 __modes 'const char *'
 
-/usr/include/stdlib.h:108:17 atol 'long (const char *)' extern
+# (placeholder) | `-RestrictAttr 0xd8d46b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
 
-__nptr 'const char *'
+# (placeholder) |-FunctionDecl 0xd8d47b8 </usr/include/stdio.h:837:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:837:14 ctermid 'char *(char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d4720 <col:23, col:29> col:29 __s 'char *'
 
+# (placeholder) | `-NoThrowAttr 0xd8d4860 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8d4958 </usr/include/stdio.h:867:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:867:13 flockfile 'void (FILE *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d48c8 <col:24, col:30> col:30 __stream 'FILE *'
 
-1
+# (placeholder) | `-NoThrowAttr 0xd8d4a00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:113:36 atoll 'long long (const char *)' extern
+# (placeholder) |-FunctionDecl 0xd8d4b00 </usr/include/stdio.h:871:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:871:12 ftrylockfile 'int (FILE *)' extern
 
-__nptr 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8d4a68 <col:26, col:32> col:32 __stream 'FILE *'
 
+# (placeholder) | `-NoThrowAttr 0xd8d4ba8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8d4cb0 </usr/include/stdio.h:874:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:874:13 funlockfile 'void (FILE *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8d4c20 <col:26, col:32> col:32 __stream 'FILE *'
 
+# (placeholder) | `-NoThrowAttr 0xd8d4d58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1
+# (placeholder) |-FunctionDecl 0xd8d4e58 </usr/include/stdio.h:885:1, col:27> col:12 __uflow 'int (FILE *)' extern
 
-implicit strtod 'double (const char *, char **)' extern
+# (placeholder) | `-ParmVarDecl 0xd8d4dc0 <col:21, col:26> col:27 'FILE *'
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd8d50b0 <line:886:1, col:35> col:12 __overflow 'int (FILE *, int)' extern
 
-<invalid sloc> 'char **'
+# (placeholder) | |-ParmVarDecl 0xd8d4f10 <col:24, col:29> col:30 'FILE *'
 
-Implicit 795
+# (placeholder) | `-ParmVarDecl 0xd8d4f90 <col:32> col:35 'int'
 
-prev 0x5ae980 /usr/include/stdlib.h:118:15 strtod 'double (const char *, char **)' extern
+# (placeholder) |-TypedefDecl 0xd8d5178 </usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:74:1, col:24> col:24 referenced wchar_t 'unsigned int'
 
-__nptr 'const char *restrict'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
+struct _Anonymous:
+	var quot: Int
 
-__endptr 'char **restrict'
+	var rem: Int
 
-Inherited Implicit 795
 
+# (placeholder) |-TypedefDecl 0xd8d5398 <line:59:1, line:63:5> col:5 referenced div_t 'struct div_t':'div_t'
 
+# (placeholder) | `-ElaboratedType 0xd8d5340 'struct div_t' sugar
 
-1
+# (placeholder) |   `-RecordType 0xd8d5250 'div_t'
 
-implicit strtof 'float (const char *, char **)' extern
+# (placeholder) |     `-Record 0xd8d51d0 ''
+struct _Anonymous:
+	var quot: Int
 
-<invalid sloc> 'const char *'
+	var rem: Int
 
-<invalid sloc> 'char **'
 
-Implicit 796
+# (placeholder) |-TypedefDecl 0xd8d55d8 <line:67:1, line:71:5> col:5 referenced ldiv_t 'struct ldiv_t':'ldiv_t'
 
-prev 0x5aeee0 /usr/include/stdlib.h:124:14 strtof 'float (const char *, char **)' extern
+# (placeholder) | `-ElaboratedType 0xd8d5580 'struct ldiv_t' sugar
 
-__nptr 'const char *restrict'
+# (placeholder) |   `-RecordType 0xd8d5490 'ldiv_t'
 
-__endptr 'char **restrict'
+# (placeholder) |     `-Record 0xd8d5408 ''
+struct _Anonymous:
+	var quot: Int64
 
-Inherited Implicit 796
+	var rem: Int64
 
 
+# (placeholder) |-TypedefDecl 0xd8d5818 <line:77:15, line:81:5> col:5 referenced lldiv_t 'struct lldiv_t':'lldiv_t'
 
-1
+# (placeholder) | `-ElaboratedType 0xd8d57c0 'struct lldiv_t' sugar
 
-implicit strtold 'long double (const char *, char **)' extern
+# (placeholder) |   `-RecordType 0xd8d56d0 'lldiv_t'
 
-<invalid sloc> 'const char *'
+# (placeholder) |     `-Record 0xd8d5648 ''
 
-<invalid sloc> 'char **'
+# (placeholder) |-FunctionDecl 0xd8d5978 <line:98:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:98:15 __ctype_get_mb_cur_max 'size_t (void)' extern
 
-Implicit 797
+# (placeholder) | `-NoThrowAttr 0xd8d5a18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5af3f0 /usr/include/stdlib.h:127:20 strtold 'long double (const char *, char **)' extern
+# (placeholder) |-FunctionDecl 0xd8d5b70 </usr/include/stdlib.h:102:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:102:15 atof 'double (const char *)' extern
 
-__nptr 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8d5a88 <col:21, col:33> col:33 __nptr 'const char *'
 
-__endptr 'char **restrict'
+# (placeholder) | |-NoThrowAttr 0xd8db5b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 797
+# (placeholder) | |-PureAttr 0xd8db610 <line:308:45>
 
+# (placeholder) | `-NonNullAttr 0xd8db638 <line:384:57, /usr/include/stdlib.h:103:46> 1
 
+# (placeholder) |-FunctionDecl 0xd8db748 <line:105:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:105:12 atoi 'int (const char *)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8db690 <col:18, col:30> col:30 __nptr 'const char *'
 
-implicit strtol 'long (const char *, char **, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd8db7f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-PureAttr 0xd8db848 <line:308:45>
 
-<invalid sloc> 'char **'
+# (placeholder) | `-NonNullAttr 0xd8db870 <line:384:57, /usr/include/stdlib.h:106:46> 1
 
-<invalid sloc> 'int'
+# (placeholder) |-FunctionDecl 0xd8db9b0 <line:108:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:108:17 atol 'long (const char *)' extern
 
-Implicit 798
+# (placeholder) | |-ParmVarDecl 0xd8db8c0 <col:23, col:35> col:35 __nptr 'const char *'
 
-prev 0x5af990 /usr/include/stdlib.h:177:17 strtol 'long (const char *, char **, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd8dba58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__nptr 'const char *restrict'
+# (placeholder) | |-PureAttr 0xd8dbab0 <line:308:45>
 
-__endptr 'char **restrict'
+# (placeholder) | `-NonNullAttr 0xd8dbad8 <line:384:57, /usr/include/stdlib.h:109:46> 1
 
-__base 'int'
+# (placeholder) |-FunctionDecl 0xd8dbc20 <line:113:15, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:113:36 atoll 'long long (const char *)' extern
 
-Inherited Implicit 798
+# (placeholder) | |-ParmVarDecl 0xd8dbb30 <col:43, col:55> col:55 __nptr 'const char *'
 
+# (placeholder) | |-NoThrowAttr 0xd8dbcc8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-PureAttr 0xd8dbd20 <line:308:45>
 
-1
+# (placeholder) | `-NonNullAttr 0xd8dbd48 <line:384:57, /usr/include/stdlib.h:114:46> 1
 
-implicit strtoul 'unsigned long (const char *, char **, int)' extern
+# (placeholder) |-FunctionDecl 0xd8dbf60 <line:118:15> col:15 implicit strtod 'double (const char *, char **)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8dc058 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'char **'
+# (placeholder) | |-ParmVarDecl 0xd8dc0c0 <<invalid sloc>> <invalid sloc> 'char **'
 
-<invalid sloc> 'int'
+# (placeholder) | `-BuiltinAttr 0xd8dc000 <<invalid sloc>> Implicit 795
 
-Implicit 800
+# (placeholder) |-FunctionDecl 0xd8dc138 prev 0xd8dbf60 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:118:15 strtod 'double (const char *, char **)' extern
 
-prev 0x5afff0 /usr/include/stdlib.h:181:26 strtoul 'unsigned long (const char *, char **, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd8dbda0 <col:23, col:46> col:46 __nptr 'const char *restrict'
 
-__nptr 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8dbe20 <line:119:9, col:27> col:27 __endptr 'char **restrict'
 
-__endptr 'char **restrict'
+# (placeholder) | |-BuiltinAttr 0xd8dc278 <<invalid sloc>> Inherited Implicit 795
 
-__base 'int'
+# (placeholder) | |-NoThrowAttr 0xd8dc1e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 800
+# (placeholder) | `-NonNullAttr 0xd8dc240 <line:384:57, /usr/include/stdlib.h:120:27> 1
 
+# (placeholder) |-FunctionDecl 0xd8dc470 <line:124:14> col:14 implicit strtof 'float (const char *, char **)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8dc5c0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8dc628 <<invalid sloc>> <invalid sloc> 'char **'
 
-/usr/include/stdlib.h:188:22 strtoq 'long long (const char *restrict, char **restrict, int)' extern
+# (placeholder) | `-BuiltinAttr 0xd8dc510 <<invalid sloc>> Implicit 796
 
-__nptr 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd8dc6a0 prev 0xd8dc470 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:124:14 strtof 'float (const char *, char **)' extern
 
-__endptr 'char **restrict'
+# (placeholder) | |-ParmVarDecl 0xd8dc2b8 <col:22, col:45> col:45 __nptr 'const char *restrict'
 
-__base 'int'
+# (placeholder) | |-ParmVarDecl 0xd8dc338 <line:125:8, col:26> col:26 __endptr 'char **restrict'
 
+# (placeholder) | |-BuiltinAttr 0xd8dc7e8 <<invalid sloc>> Inherited Implicit 796
 
+# (placeholder) | |-NoThrowAttr 0xd8dc750 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1
+# (placeholder) | `-NonNullAttr 0xd8dc7a8 <line:384:57, /usr/include/stdlib.h:125:57> 1
 
-/usr/include/stdlib.h:193:31 strtouq 'unsigned long long (const char *restrict, char **restrict, int)' extern
+# (placeholder) |-FunctionDecl 0xd8dc9e0 <line:127:20> col:20 implicit strtold 'long double (const char *, char **)' extern
 
-__nptr 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8dcad8 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__endptr 'char **restrict'
+# (placeholder) | |-ParmVarDecl 0xd8dcb40 <<invalid sloc>> <invalid sloc> 'char **'
 
-__base 'int'
+# (placeholder) | `-BuiltinAttr 0xd8dca80 <<invalid sloc>> Implicit 797
 
+# (placeholder) |-FunctionDecl 0xd8dcbb8 prev 0xd8dc9e0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:127:20 strtold 'long double (const char *, char **)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8dc828 <col:29, col:52> col:52 __nptr 'const char *restrict'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8dc8a8 <line:128:8, col:26> col:26 __endptr 'char **restrict'
 
-implicit strtoll 'long long (const char *, char **, int)' extern
+# (placeholder) | |-BuiltinAttr 0xd8dccf8 <<invalid sloc>> Inherited Implicit 797
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd8dcc68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'char **'
+# (placeholder) | `-NonNullAttr 0xd8dccc0 <line:384:57, /usr/include/stdlib.h:129:27> 1
 
-<invalid sloc> 'int'
+# (placeholder) |-FunctionDecl 0xd8dcf80 <line:177:17> col:17 implicit strtol 'long (const char *, char **, int)' extern
 
-Implicit 799
+# (placeholder) | |-ParmVarDecl 0xd8dd078 <<invalid sloc>> <invalid sloc> 'const char *'
 
-prev 0x5b0cf8 /usr/include/stdlib.h:201:22 strtoll 'long long (const char *, char **, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd8dd0e0 <<invalid sloc>> <invalid sloc> 'char **'
 
-__nptr 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8dd148 <<invalid sloc>> <invalid sloc> 'int'
 
-__endptr 'char **restrict'
+# (placeholder) | `-BuiltinAttr 0xd8dd020 <<invalid sloc>> Implicit 798
 
-__base 'int'
+# (placeholder) |-FunctionDecl 0xd8dd1c8 prev 0xd8dcf80 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:177:17 strtol 'long (const char *, char **, int)' extern
 
-Inherited Implicit 799
+# (placeholder) | |-ParmVarDecl 0xd8dcd38 <col:25, col:48> col:48 __nptr 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8dcdb8 <line:178:4, col:22> col:22 __endptr 'char **restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8dce38 <col:32, col:36> col:36 __base 'int'
 
-1
+# (placeholder) | |-BuiltinAttr 0xd8dd318 <<invalid sloc>> Inherited Implicit 798
 
-implicit strtoull 'unsigned long long (const char *, char **, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd8dd280 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-NonNullAttr 0xd8dd2d8 <line:384:57, /usr/include/stdlib.h:179:27> 1
 
-<invalid sloc> 'char **'
+# (placeholder) |-FunctionDecl 0xd8dd5d0 <line:181:26> col:26 implicit strtoul 'unsigned long (const char *, char **, int)' extern
 
-<invalid sloc> 'int'
+# (placeholder) | |-ParmVarDecl 0xd8dd6c8 <<invalid sloc>> <invalid sloc> 'const char *'
 
-Implicit 801
+# (placeholder) | |-ParmVarDecl 0xd8dd730 <<invalid sloc>> <invalid sloc> 'char **'
 
-prev 0x5b1290 /usr/include/stdlib.h:206:31 strtoull 'unsigned long long (const char *, char **, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd8dd798 <<invalid sloc>> <invalid sloc> 'int'
 
-__nptr 'const char *restrict'
+# (placeholder) | `-BuiltinAttr 0xd8dd670 <<invalid sloc>> Implicit 800
 
-__endptr 'char **restrict'
+# (placeholder) |-FunctionDecl 0xd8dd818 prev 0xd8dd5d0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:181:26 strtoul 'unsigned long (const char *, char **, int)' extern
 
-__base 'int'
+# (placeholder) | |-ParmVarDecl 0xd8dd358 <col:35, col:58> col:58 __nptr 'const char *restrict'
 
-Inherited Implicit 801
+# (placeholder) | |-ParmVarDecl 0xd8dd3d8 <line:182:7, col:25> col:25 __endptr 'char **restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8dd458 <col:35, col:39> col:39 __base 'int'
 
+# (placeholder) | |-BuiltinAttr 0xd8dd968 <<invalid sloc>> Inherited Implicit 800
 
-1
+# (placeholder) | |-NoThrowAttr 0xd8dd8d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:386:14 l64a 'char *(long)' extern
+# (placeholder) | `-NonNullAttr 0xd8dd928 <line:384:57, /usr/include/stdlib.h:183:27> 1
 
-__n 'long'
+# (placeholder) |-FunctionDecl 0xd8ddbf0 <line:188:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:188:22 strtoq 'long long (const char *restrict, char **restrict, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8dd9a8 <col:30, col:53> col:53 __nptr 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8dda28 <line:189:9, col:27> col:27 __endptr 'char **restrict'
 
-/usr/include/stdlib.h:389:17 a64l 'long (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8ddaa8 <col:37, col:41> col:41 __base 'int'
 
-__s 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd8ddca8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd8ddd00 <line:384:57, /usr/include/stdlib.h:190:27> 1
 
+# (placeholder) |-FunctionDecl 0xd8ddfa0 <line:193:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:193:31 strtouq 'unsigned long long (const char *restrict, char **restrict, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8ddd50 <col:40, col:63> col:63 __nptr 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8dddd0 <line:194:12, col:30> col:30 __endptr 'char **restrict'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8dde50 <col:40, col:44> col:44 __base 'int'
 
-u_char '__u_char':'unsigned char'
+# (placeholder) | |-NoThrowAttr 0xd8de058 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'__u_char' sugar
+# (placeholder) | `-NonNullAttr 0xd8de0b0 <line:384:57, /usr/include/stdlib.h:195:27> 1
 
-'__u_char'
+# (placeholder) |-FunctionDecl 0xd8de2c8 <line:201:22> col:22 implicit strtoll 'long long (const char *, char **, int)' extern
 
-'unsigned char'
+# (placeholder) | |-ParmVarDecl 0xd8de3c0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-u_short '__u_short':'unsigned short'
+# (placeholder) | |-ParmVarDecl 0xd8de428 <<invalid sloc>> <invalid sloc> 'char **'
 
-'__u_short' sugar
+# (placeholder) | |-ParmVarDecl 0xd8de490 <<invalid sloc>> <invalid sloc> 'int'
 
-'__u_short'
+# (placeholder) | `-BuiltinAttr 0xd8de368 <<invalid sloc>> Implicit 799
 
-'unsigned short'
+# (placeholder) |-FunctionDecl 0xd8de510 prev 0xd8de2c8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:201:22 strtoll 'long long (const char *, char **, int)' extern
 
-u_int '__u_int':'unsigned int'
+# (placeholder) | |-ParmVarDecl 0xd8de100 <col:31, col:54> col:54 __nptr 'const char *restrict'
 
-'__u_int' sugar
+# (placeholder) | |-ParmVarDecl 0xd8de180 <line:202:10, col:28> col:28 __endptr 'char **restrict'
 
-'__u_int'
+# (placeholder) | |-ParmVarDecl 0xd8de200 <col:38, col:42> col:42 __base 'int'
 
-'unsigned int'
+# (placeholder) | |-BuiltinAttr 0xd8de678 <<invalid sloc>> Inherited Implicit 799
 
-u_long '__u_long':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd8de5e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'__u_long' sugar
+# (placeholder) | `-NonNullAttr 0xd8de638 <line:384:57, /usr/include/stdlib.h:203:27> 1
 
-'__u_long'
+# (placeholder) |-FunctionDecl 0xd8de880 <line:206:31> col:31 implicit strtoull 'unsigned long long (const char *, char **, int)' extern
 
-'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8de978 <<invalid sloc>> <invalid sloc> 'const char *'
 
-quad_t '__quad_t':'long'
+# (placeholder) | |-ParmVarDecl 0xd8de9e0 <<invalid sloc>> <invalid sloc> 'char **'
 
-'__quad_t' sugar
+# (placeholder) | |-ParmVarDecl 0xd8dea48 <<invalid sloc>> <invalid sloc> 'int'
 
-'__quad_t'
+# (placeholder) | `-BuiltinAttr 0xd8de920 <<invalid sloc>> Implicit 801
 
-'long'
+# (placeholder) |-FunctionDecl 0xd8deac8 prev 0xd8de880 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:206:31 strtoull 'unsigned long long (const char *, char **, int)' extern
 
-u_quad_t '__u_quad_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8de6b8 <col:41, col:64> col:64 __nptr 'const char *restrict'
 
-'__u_quad_t' sugar
+# (placeholder) | |-ParmVarDecl 0xd8de738 <line:207:6, col:24> col:24 __endptr 'char **restrict'
 
-'__u_quad_t'
+# (placeholder) | |-ParmVarDecl 0xd8de7b8 <col:34, col:38> col:38 __base 'int'
 
-'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd8dec18 <<invalid sloc>> Inherited Implicit 801
 
-fsid_t '__fsid_t':'__fsid_t'
+# (placeholder) | |-NoThrowAttr 0xd8deb80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'__fsid_t' sugar
+# (placeholder) | `-NonNullAttr 0xd8debd8 <line:384:57, /usr/include/stdlib.h:208:27> 1
 
-'__fsid_t'
+# (placeholder) |-FunctionDecl 0xd8ded20 <line:386:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:386:14 l64a 'char *(long)' extern
 
-'struct __fsid_t' sugar
+# (placeholder) | |-ParmVarDecl 0xd8dec58 <col:20, col:29> col:29 __n 'long'
 
-'__fsid_t'
+# (placeholder) | `-NoThrowAttr 0xd8dedc8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-''
+# (placeholder) |-FunctionDecl 0xd8deef0 </usr/include/stdlib.h:389:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:389:17 a64l 'long (const char *)' extern
 
-loff_t '__loff_t':'long'
+# (placeholder) | |-ParmVarDecl 0xd8dee38 <col:23, col:35> col:35 __s 'const char *'
 
-'__loff_t' sugar
+# (placeholder) | |-NoThrowAttr 0xd8def98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'__loff_t'
+# (placeholder) | |-PureAttr 0xd8deff0 <line:308:45>
 
-'__off64_t' sugar
+# (placeholder) | `-NonNullAttr 0xd8df018 <line:384:57, /usr/include/stdlib.h:390:46> 1
 
-'__off64_t'
+# (placeholder) |-TypedefDecl 0xd8df090 </usr/include/aarch64-linux-gnu/sys/types.h:33:1, col:18> col:18 u_char '__u_char':'unsigned char'
 
-'long'
+# (placeholder) | `-TypedefType 0xd8df060 '__u_char' sugar
 
-ino_t '__ino_t':'unsigned long'
+# (placeholder) |   |-Typedef 0xd851858 '__u_char'
 
-'__ino_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad3b0 'unsigned char'
 
-'__ino_t'
+# (placeholder) |-TypedefDecl 0xd8df120 <line:34:1, col:19> col:19 u_short '__u_short':'unsigned short'
 
-'unsigned long'
+# (placeholder) | `-TypedefType 0xd8df0f0 '__u_short' sugar
 
-dev_t '__dev_t':'unsigned long'
+# (placeholder) |   |-Typedef 0xd8518c8 '__u_short'
 
-'__dev_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad3d0 'unsigned short'
 
-'__dev_t'
+# (placeholder) |-TypedefDecl 0xd8df1b0 <line:35:1, col:17> col:17 u_int '__u_int':'unsigned int'
 
-'unsigned long'
+# (placeholder) | `-TypedefType 0xd8df180 '__u_int' sugar
 
-gid_t '__gid_t':'unsigned int'
+# (placeholder) |   |-Typedef 0xd851938 '__u_int'
 
-'__gid_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'__gid_t'
+# (placeholder) |-TypedefDecl 0xd8df240 <line:36:1, col:18> col:18 u_long '__u_long':'unsigned long'
 
-'unsigned int'
+# (placeholder) | `-TypedefType 0xd8df210 '__u_long' sugar
 
-mode_t '__mode_t':'unsigned int'
+# (placeholder) |   |-Typedef 0xd8519a8 '__u_long'
 
-'__mode_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
 
-'__mode_t'
+# (placeholder) |-TypedefDecl 0xd8df2d0 <line:37:1, col:18> col:18 quad_t '__quad_t':'long'
 
-'unsigned int'
+# (placeholder) | `-TypedefType 0xd8df2a0 '__quad_t' sugar
 
-nlink_t '__nlink_t':'unsigned long'
+# (placeholder) |   |-Typedef 0xd89b7a0 '__quad_t'
 
-'__nlink_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-'__nlink_t'
+# (placeholder) |-TypedefDecl 0xd8df360 <line:38:1, col:20> col:20 u_quad_t '__u_quad_t':'unsigned long'
 
-'unsigned long'
+# (placeholder) | `-TypedefType 0xd8df330 '__u_quad_t' sugar
 
-uid_t '__uid_t':'unsigned int'
+# (placeholder) |   |-Typedef 0xd89b810 '__u_quad_t'
 
-'__uid_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
 
-'__uid_t'
+# (placeholder) |-TypedefDecl 0xd8df3f0 <line:39:1, col:18> col:18 fsid_t '__fsid_t':'__fsid_t'
 
-'unsigned int'
+# (placeholder) | `-TypedefType 0xd8df3c0 '__fsid_t' sugar
 
-referenced pid_t '__pid_t':'int'
+# (placeholder) |   |-Typedef 0xd89bf98 '__fsid_t'
 
-'__pid_t' sugar
+# (placeholder) |   `-ElaboratedType 0xd89bf40 'struct __fsid_t' sugar
 
-'__pid_t'
+# (placeholder) |     `-RecordType 0xd89be30 '__fsid_t'
 
-'int'
+# (placeholder) |       `-Record 0xd89bda8 ''
 
-id_t '__id_t':'unsigned int'
+# (placeholder) |-TypedefDecl 0xd8df480 <line:42:1, col:18> col:18 loff_t '__loff_t':'long'
 
-'__id_t' sugar
+# (placeholder) | `-TypedefType 0xd8df450 '__loff_t' sugar
 
-'__id_t'
+# (placeholder) |   |-Typedef 0xd8a7c80 '__loff_t'
 
-'unsigned int'
+# (placeholder) |   `-TypedefType 0xd8a7c50 '__off64_t' sugar
 
-daddr_t '__daddr_t':'int'
+# (placeholder) |     |-Typedef 0xd89bce0 '__off64_t'
 
-'__daddr_t' sugar
+# (placeholder) |     `-BuiltinType 0xd7ad370 'long'
 
-'__daddr_t'
+# (placeholder) |-TypedefDecl 0xd8df510 <line:47:1, col:17> col:17 ino_t '__ino_t':'unsigned long'
 
-'int'
+# (placeholder) | `-TypedefType 0xd8df4e0 '__ino_t' sugar
 
-caddr_t '__caddr_t':'char *'
+# (placeholder) |   |-Typedef 0xd89bab0 '__ino_t'
 
-'__caddr_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
 
-'__caddr_t'
+# (placeholder) |-TypedefDecl 0xd8e0d80 <line:59:1, col:17> col:17 dev_t '__dev_t':'unsigned long'
 
-'char *'
+# (placeholder) | `-TypedefType 0xd8df570 '__dev_t' sugar
 
-'char'
+# (placeholder) |   |-Typedef 0xd89b960 '__dev_t'
 
-key_t '__key_t':'int'
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
 
-'__key_t' sugar
+# (placeholder) |-TypedefDecl 0xd8e0e10 <line:64:1, col:17> col:17 gid_t '__gid_t':'unsigned int'
 
-'__key_t'
+# (placeholder) | `-TypedefType 0xd8e0de0 '__gid_t' sugar
 
-'int'
+# (placeholder) |   |-Typedef 0xd89ba40 '__gid_t'
 
-referenced clock_t '__clock_t':'long'
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'__clock_t' sugar
+# (placeholder) |-TypedefDecl 0xd8e0ea0 <line:69:1, col:18> col:18 mode_t '__mode_t':'unsigned int'
 
-'__clock_t'
+# (placeholder) | `-TypedefType 0xd8e0e70 '__mode_t' sugar
 
-'long'
+# (placeholder) |   |-Typedef 0xd89bb90 '__mode_t'
 
-referenced clockid_t '__clockid_t':'int'
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'__clockid_t' sugar
+# (placeholder) |-TypedefDecl 0xd8e0f30 <line:74:1, col:19> col:19 nlink_t '__nlink_t':'unsigned int'
 
-'__clockid_t'
+# (placeholder) | `-TypedefType 0xd8e0f00 '__nlink_t' sugar
 
-'int'
+# (placeholder) |   |-Typedef 0xd89bc00 '__nlink_t'
 
-referenced time_t '__time_t':'long'
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'__time_t' sugar
+# (placeholder) |-TypedefDecl 0xd8e0fc0 <line:79:1, col:17> col:17 uid_t '__uid_t':'unsigned int'
 
-'__time_t'
+# (placeholder) | `-TypedefType 0xd8e0f90 '__uid_t' sugar
 
-'long'
+# (placeholder) |   |-Typedef 0xd89b9d0 '__uid_t'
 
-referenced timer_t '__timer_t':'void *'
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'__timer_t' sugar
+# (placeholder) |-TypedefDecl 0xd8e1050 <line:97:1, col:17> col:17 referenced pid_t '__pid_t':'int'
 
-'__timer_t'
+# (placeholder) | `-TypedefType 0xd8e1020 '__pid_t' sugar
 
-'void *'
+# (placeholder) |   |-Typedef 0xd89bd50 '__pid_t'
 
-'void'
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
 
-ulong 'unsigned long'
+# (placeholder) |-TypedefDecl 0xd8e10e0 <line:103:1, col:16> col:16 id_t '__id_t':'unsigned int'
 
-'unsigned long'
+# (placeholder) | `-TypedefType 0xd8e10b0 '__id_t' sugar
 
-ushort 'unsigned short'
+# (placeholder) |   |-Typedef 0xd89c170 '__id_t'
 
-'unsigned short'
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-uint 'unsigned int'
+# (placeholder) |-TypedefDecl 0xd8e1170 <line:114:1, col:19> col:19 daddr_t '__daddr_t':'int'
 
-'unsigned int'
+# (placeholder) | `-TypedefType 0xd8e1140 '__daddr_t' sugar
 
-int8_t '__int8_t':'signed char'
+# (placeholder) |   |-Typedef 0xd8a75d8 '__daddr_t'
 
-'__int8_t' sugar
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
 
-'__int8_t'
+# (placeholder) |-TypedefDecl 0xd8e1200 <line:115:1, col:19> col:19 caddr_t '__caddr_t':'char *'
 
-'signed char'
+# (placeholder) | `-TypedefType 0xd8e11d0 '__caddr_t' sugar
 
-int16_t '__int16_t':'short'
+# (placeholder) |   |-Typedef 0xd8a7cf0 '__caddr_t'
 
-'__int16_t' sugar
+# (placeholder) |   `-PointerType 0xd8512e0 'char *'
 
-'__int16_t'
+# (placeholder) |     `-BuiltinType 0xd7ad2f0 'char'
 
-'short'
+# (placeholder) |-TypedefDecl 0xd8e1290 <line:121:1, col:17> col:17 key_t '__key_t':'int'
 
-referenced int32_t '__int32_t':'int'
+# (placeholder) | `-TypedefType 0xd8e1260 '__key_t' sugar
 
-'__int32_t' sugar
+# (placeholder) |   |-Typedef 0xd8a7648 '__key_t'
 
-'__int32_t'
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd8e1320 </usr/include/aarch64-linux-gnu/bits/types/clock_t.h:7:1, col:19> col:19 referenced clock_t '__clock_t':'long'
 
-int64_t '__int64_t':'long'
+# (placeholder) | `-TypedefType 0xd8e12f0 '__clock_t' sugar
 
-'__int64_t' sugar
+# (placeholder) |   |-Typedef 0xd89c020 '__clock_t'
 
-'__int64_t'
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd8e13b0 </usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:7:1, col:21> col:21 referenced clockid_t '__clockid_t':'int'
 
-u_int8_t '__uint8_t':'unsigned char'
+# (placeholder) | `-TypedefType 0xd8e1380 '__clockid_t' sugar
 
-'__uint8_t' sugar
+# (placeholder) |   |-Typedef 0xd8a76b8 '__clockid_t'
 
-'__uint8_t'
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
 
-'unsigned char'
+# (placeholder) |-TypedefDecl 0xd8e1440 </usr/include/aarch64-linux-gnu/bits/types/time_t.h:10:1, col:18> col:18 referenced time_t '__time_t':'long'
 
-u_int16_t '__uint16_t':'unsigned short'
+# (placeholder) | `-TypedefType 0xd8e1410 '__time_t' sugar
 
-'__uint16_t' sugar
+# (placeholder) |   |-Typedef 0xd89c1e0 '__time_t'
 
-'__uint16_t'
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-'unsigned short'
+# (placeholder) |-TypedefDecl 0xd8e14d0 </usr/include/aarch64-linux-gnu/bits/types/timer_t.h:7:1, col:19> col:19 referenced timer_t '__timer_t':'void *'
 
-u_int32_t '__uint32_t':'unsigned int'
+# (placeholder) | `-TypedefType 0xd8e14a0 '__timer_t' sugar
 
-'__uint32_t' sugar
+# (placeholder) |   |-Typedef 0xd8a7728 '__timer_t'
 
-'__uint32_t'
+# (placeholder) |   `-PointerType 0xd7adff0 'void *'
 
-'unsigned int'
+# (placeholder) |     `-BuiltinType 0xd7ad2b0 'void'
 
-u_int64_t '__uint64_t':'unsigned long'
+# (placeholder) |-TypedefDecl 0xd8e1540 </usr/include/aarch64-linux-gnu/sys/types.h:148:1, col:27> col:27 ulong 'unsigned long'
 
-'__uint64_t' sugar
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
 
-'__uint64_t'
+# (placeholder) |-TypedefDecl 0xd8e15b0 <line:149:1, col:28> col:28 ushort 'unsigned short'
 
-'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7ad3d0 'unsigned short'
 
-register_t 'long'
+# (placeholder) |-TypedefDecl 0xd8e1620 <line:150:1, col:22> col:22 uint 'unsigned int'
 
-'long'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-__word__
+# (placeholder) |-TypedefDecl 0xd8e1688 </usr/include/aarch64-linux-gnu/bits/stdint-intn.h:24:1, col:18> col:18 int8_t '__int8_t':'signed char'
 
-__bswap_16 '__uint16_t (__uint16_t)' static inline
+# (placeholder) | `-TypedefType 0xd89b310 '__int8_t' sugar
 
-used __bsx '__uint16_t':'unsigned short'
+# (placeholder) |   |-Typedef 0xd851a18 '__int8_t'
 
+# (placeholder) |   `-BuiltinType 0xd7ad310 'signed char'
 
+# (placeholder) |-TypedefDecl 0xd8e16f0 <line:25:1, col:19> col:19 int16_t '__int16_t':'short'
 
+# (placeholder) | `-TypedefType 0xd89b430 '__int16_t' sugar
 
+# (placeholder) |   |-Typedef 0xd851af8 '__int16_t'
 
-'__uint16_t':'unsigned short'
+# (placeholder) |   `-BuiltinType 0xd7ad330 'short'
 
-'__uint16_t':'unsigned short' <IntegralCast>
+# (placeholder) |-TypedefDecl 0xd8e1758 <line:26:1, col:19> col:19 referenced int32_t '__int32_t':'int'
 
-'int'
+# (placeholder) | `-TypedefType 0xd89b550 '__int32_t' sugar
 
-'int' '|'
+# (placeholder) |   |-Typedef 0xd851bd8 '__int32_t'
 
-'int'
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
 
-'int' '&'
+# (placeholder) |-TypedefDecl 0xd8e17c0 <line:27:1, col:19> col:19 int64_t '__int64_t':'long'
 
-'int'
+# (placeholder) | `-TypedefType 0xd89b670 '__int64_t' sugar
 
-'int' '>>'
+# (placeholder) |   |-Typedef 0xd89b240 '__int64_t'
 
-'int' <IntegralCast>
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-'__uint16_t':'unsigned short' <LValueToRValue>
+# (placeholder) |-TypedefDecl 0xd8e1828 </usr/include/aarch64-linux-gnu/sys/types.h:158:1, col:19> col:19 u_int8_t '__uint8_t':'unsigned char'
 
-'__uint16_t':'unsigned short' lvalue
+# (placeholder) | `-TypedefType 0xd89b3a0 '__uint8_t' sugar
 
-'__uint16_t':'unsigned short' lvalue ParmVar 0x5bf4b0 '__bsx' '__uint16_t':'unsigned short'
+# (placeholder) |   |-Typedef 0xd851a88 '__uint8_t'
 
-'int' 8
+# (placeholder) |   `-BuiltinType 0xd7ad3b0 'unsigned char'
 
-'int' 255
+# (placeholder) |-TypedefDecl 0xd8e1890 <line:159:1, col:20> col:20 u_int16_t '__uint16_t':'unsigned short'
 
-'int'
+# (placeholder) | `-TypedefType 0xd89b4c0 '__uint16_t' sugar
 
-'int' '<<'
+# (placeholder) |   |-Typedef 0xd851b68 '__uint16_t'
 
-'int'
+# (placeholder) |   `-BuiltinType 0xd7ad3d0 'unsigned short'
 
-'int' '&'
+# (placeholder) |-TypedefDecl 0xd8e18f8 <line:160:1, col:20> col:20 u_int32_t '__uint32_t':'unsigned int'
 
-'int' <IntegralCast>
+# (placeholder) | `-TypedefType 0xd89b5e0 '__uint32_t' sugar
 
-'__uint16_t':'unsigned short' <LValueToRValue>
+# (placeholder) |   |-Typedef 0xd851c48 '__uint32_t'
 
-'__uint16_t':'unsigned short' lvalue
+# (placeholder) |   `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'__uint16_t':'unsigned short' lvalue ParmVar 0x5bf4b0 '__bsx' '__uint16_t':'unsigned short'
+# (placeholder) |-TypedefDecl 0xd8e1960 <line:161:1, col:20> col:20 u_int64_t '__uint64_t':'unsigned long'
 
-'int' 255
+# (placeholder) | `-TypedefType 0xd89b700 '__uint64_t' sugar
 
-'int' 8
+# (placeholder) |   |-Typedef 0xd89b2b0 '__uint64_t'
 
-__bswap_32 '__uint32_t (__uint32_t)' static inline
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
 
-used __bsx '__uint32_t':'unsigned int'
+# (placeholder) |-TypedefDecl 0xd8e19e0 <line:164:1, col:13> col:13 register_t 'long'
 
+# (placeholder) | |-BuiltinType 0xd7ad370 'long'
 
+# (placeholder) | `-ModeAttr 0xd8e1a48 <col:40, col:58> __word__
 
+# (placeholder) |-FunctionDecl 0xd8e1ba8 </usr/include/aarch64-linux-gnu/bits/byteswap.h:33:1, line:41:1> line:34:1 __bswap_16 '__uint16_t (__uint16_t)' static inline
 
+# (placeholder) | |-ParmVarDecl 0xd8e1ab8 <col:13, col:24> col:24 used __bsx '__uint16_t':'unsigned short'
 
-'unsigned int'
+# (placeholder) | `-CompoundStmt 0xd876de8 <line:35:1, line:41:1>
 
-'unsigned int' '|'
+# (placeholder) |   `-ReturnStmt 0xd876dd8 <line:39:3, line:31:60>
 
-'unsigned int' '|'
+# (placeholder) |     `-ParenExpr 0xd876db8 <col:3, col:60> '__uint16_t':'unsigned short'
 
-'unsigned int' '|'
+# (placeholder) |       `-CStyleCastExpr 0xd876d90 <col:4, col:59> '__uint16_t':'unsigned short' <IntegralCast>
 
-'unsigned int'
+# (placeholder) |         `-ParenExpr 0xd876d70 <col:17, col:59> 'int'
 
-'unsigned int' '>>'
+# (placeholder) |           `-BinaryOperator 0xd876d20 <col:18, col:58> 'int' '|'
 
-'unsigned int'
+# (placeholder) |             |-ParenExpr 0xd8e1d60 <col:18, col:36> 'int'
 
-'unsigned int' '&'
+# (placeholder) |             | `-BinaryOperator 0xd8e1d40 <col:19, col:32> 'int' '&'
 
-'__uint32_t':'unsigned int' <LValueToRValue>
+# (placeholder) |             |   |-ParenExpr 0xd8e1d00 <col:19, col:28> 'int'
 
-'__uint32_t':'unsigned int' lvalue
+# (placeholder) |             |   | `-BinaryOperator 0xd8e1ce0 <col:20, col:27> 'int' '>>'
 
-'__uint32_t':'unsigned int' lvalue ParmVar 0x5bf9a0 '__bsx' '__uint32_t':'unsigned int'
+# (placeholder) |             |   |   |-ImplicitCastExpr 0xd8e1cc8 <col:20, col:22> 'int' <IntegralCast>
 
-'unsigned int' 4278190080
+# (placeholder) |             |   |   | `-ImplicitCastExpr 0xd8e1cb0 <col:20, col:22> '__uint16_t':'unsigned short' <LValueToRValue>
 
-'int' 24
+# (placeholder) |             |   |   |   `-ParenExpr 0xd8e1c70 <col:20, col:22> '__uint16_t':'unsigned short' lvalue
 
-'unsigned int'
+# (placeholder) |             |   |   |     `-DeclRefExpr 0xd8e1c50 <line:39:31> '__uint16_t':'unsigned short' lvalue ParmVar 0xd8e1ab8 '__bsx' '__uint16_t':'unsigned short'
 
-'unsigned int' '>>'
+# (placeholder) |             |   |   `-IntegerLiteral 0xd8e1c90 <line:31:27> 'int' 8
 
-'unsigned int'
+# (placeholder) |             |   `-IntegerLiteral 0xd8e1d20 <col:32> 'int' 255
 
-'unsigned int' '&'
+# (placeholder) |             `-ParenExpr 0xd876d00 <col:40, col:58> 'int'
 
-'__uint32_t':'unsigned int' <LValueToRValue>
+# (placeholder) |               `-BinaryOperator 0xd876ce0 <col:41, col:57> 'int' '<<'
 
-'__uint32_t':'unsigned int' lvalue
+# (placeholder) |                 |-ParenExpr 0xd876ca0 <col:41, col:52> 'int'
 
-'__uint32_t':'unsigned int' lvalue ParmVar 0x5bf9a0 '__bsx' '__uint32_t':'unsigned int'
+# (placeholder) |                 | `-BinaryOperator 0xd876c80 <col:42, col:48> 'int' '&'
 
-'unsigned int' 16711680
+# (placeholder) |                 |   |-ImplicitCastExpr 0xd876c68 <col:42, col:44> 'int' <IntegralCast>
 
-'int' 8
+# (placeholder) |                 |   | `-ImplicitCastExpr 0xd876c50 <col:42, col:44> '__uint16_t':'unsigned short' <LValueToRValue>
 
-'unsigned int'
+# (placeholder) |                 |   |   `-ParenExpr 0xd876c10 <col:42, col:44> '__uint16_t':'unsigned short' lvalue
 
-'unsigned int' '<<'
+# (placeholder) |                 |   |     `-DeclRefExpr 0xd876bf0 <line:39:31> '__uint16_t':'unsigned short' lvalue ParmVar 0xd8e1ab8 '__bsx' '__uint16_t':'unsigned short'
 
-'unsigned int'
+# (placeholder) |                 |   `-IntegerLiteral 0xd876c30 <line:31:48> 'int' 255
 
-'unsigned int' '&'
+# (placeholder) |                 `-IntegerLiteral 0xd876cc0 <col:57> 'int' 8
 
-'__uint32_t':'unsigned int' <LValueToRValue>
+# (placeholder) |-FunctionDecl 0xd876f08 <line:48:1, line:56:1> line:49:1 __bswap_32 '__uint32_t (__uint32_t)' static inline
 
-'__uint32_t':'unsigned int' lvalue
+# (placeholder) | |-ParmVarDecl 0xd876e10 <col:13, col:24> col:24 used __bsx '__uint32_t':'unsigned int'
 
-'__uint32_t':'unsigned int' lvalue ParmVar 0x5bf9a0 '__bsx' '__uint32_t':'unsigned int'
+# (placeholder) | `-CompoundStmt 0xd8774a0 <line:50:1, line:56:1>
 
-'unsigned int' 65280
+# (placeholder) |   `-ReturnStmt 0xd877490 <line:54:3, line:46:62>
 
-'int' 8
+# (placeholder) |     `-ParenExpr 0xd877470 <line:45:3, line:46:62> 'unsigned int'
 
-'unsigned int'
+# (placeholder) |       `-BinaryOperator 0xd877450 <line:45:4, line:46:61> 'unsigned int' '|'
 
-'unsigned int' '<<'
+# (placeholder) |         |-BinaryOperator 0xd877318 <line:45:4, line:46:31> 'unsigned int' '|'
 
-'unsigned int'
+# (placeholder) |         | |-BinaryOperator 0xd8771e0 <line:45:4, col:59> 'unsigned int' '|'
 
-'unsigned int' '&'
+# (placeholder) |         | | |-ParenExpr 0xd8770a8 <col:4, col:30> 'unsigned int'
 
-'__uint32_t':'unsigned int' <LValueToRValue>
+# (placeholder) |         | | | `-BinaryOperator 0xd877088 <col:5, col:28> 'unsigned int' '>>'
 
-'__uint32_t':'unsigned int' lvalue
+# (placeholder) |         | | |   |-ParenExpr 0xd877048 <col:5, col:23> 'unsigned int'
 
-'__uint32_t':'unsigned int' lvalue ParmVar 0x5bf9a0 '__bsx' '__uint32_t':'unsigned int'
+# (placeholder) |         | | |   | `-BinaryOperator 0xd877028 <col:6, col:12> 'unsigned int' '&'
 
-'unsigned int' 255
+# (placeholder) |         | | |   |   |-ImplicitCastExpr 0xd877010 <col:6, col:8> '__uint32_t':'unsigned int' <LValueToRValue>
 
-'int' 24
+# (placeholder) |         | | |   |   | `-ParenExpr 0xd876fd0 <col:6, col:8> '__uint32_t':'unsigned int' lvalue
 
-__bswap_64 '__uint64_t (__uint64_t)' static inline
+# (placeholder) |         | | |   |   |   `-DeclRefExpr 0xd876fb0 <line:54:31> '__uint32_t':'unsigned int' lvalue ParmVar 0xd876e10 '__bsx' '__uint32_t':'unsigned int'
 
-used __bsx '__uint64_t':'unsigned long'
+# (placeholder) |         | | |   |   `-IntegerLiteral 0xd876ff0 <line:45:12> 'unsigned int' 4278190080
 
+# (placeholder) |         | | |   `-IntegerLiteral 0xd877068 <col:28> 'int' 24
 
+# (placeholder) |         | | `-ParenExpr 0xd8771c0 <col:34, col:59> 'unsigned int'
 
+# (placeholder) |         | |   `-BinaryOperator 0xd8771a0 <col:35, col:58> 'unsigned int' '>>'
 
+# (placeholder) |         | |     |-ParenExpr 0xd877160 <col:35, col:53> 'unsigned int'
 
-'__uint64_t':'unsigned long' <IntegralCast>
+# (placeholder) |         | |     | `-BinaryOperator 0xd877140 <col:36, col:42> 'unsigned int' '&'
 
-'unsigned long long'
+# (placeholder) |         | |     |   |-ImplicitCastExpr 0xd877128 <col:36, col:38> '__uint32_t':'unsigned int' <LValueToRValue>
 
-'unsigned long long' '|'
+# (placeholder) |         | |     |   | `-ParenExpr 0xd8770e8 <col:36, col:38> '__uint32_t':'unsigned int' lvalue
 
-'unsigned long long' '|'
+# (placeholder) |         | |     |   |   `-DeclRefExpr 0xd8770c8 <line:54:31> '__uint32_t':'unsigned int' lvalue ParmVar 0xd876e10 '__bsx' '__uint32_t':'unsigned int'
 
-'unsigned long long' '|'
+# (placeholder) |         | |     |   `-IntegerLiteral 0xd877108 <line:45:42> 'unsigned int' 16711680
 
-'unsigned long long' '|'
+# (placeholder) |         | |     `-IntegerLiteral 0xd877180 <col:58> 'int' 8
 
-'unsigned long long' '|'
+# (placeholder) |         | `-ParenExpr 0xd8772f8 <line:46:6, col:31> 'unsigned int'
 
-'unsigned long long' '|'
+# (placeholder) |         |   `-BinaryOperator 0xd8772d8 <col:7, col:30> 'unsigned int' '<<'
 
-'unsigned long long' '|'
+# (placeholder) |         |     |-ParenExpr 0xd877298 <col:7, col:25> 'unsigned int'
 
-'unsigned long long'
+# (placeholder) |         |     | `-BinaryOperator 0xd877278 <col:8, col:14> 'unsigned int' '&'
 
-'unsigned long long' '>>'
+# (placeholder) |         |     |   |-ImplicitCastExpr 0xd877260 <col:8, col:10> '__uint32_t':'unsigned int' <LValueToRValue>
 
-'unsigned long long'
+# (placeholder) |         |     |   | `-ParenExpr 0xd877220 <col:8, col:10> '__uint32_t':'unsigned int' lvalue
 
-'unsigned long long' '&'
+# (placeholder) |         |     |   |   `-DeclRefExpr 0xd877200 <line:54:31> '__uint32_t':'unsigned int' lvalue ParmVar 0xd876e10 '__bsx' '__uint32_t':'unsigned int'
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |         |     |   `-IntegerLiteral 0xd877240 <line:46:14> 'unsigned int' 65280
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |         |     `-IntegerLiteral 0xd8772b8 <col:30> 'int' 8
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) |         `-ParenExpr 0xd877430 <col:35, col:61> 'unsigned int'
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) |           `-BinaryOperator 0xd877410 <col:36, col:59> 'unsigned int' '<<'
 
-'unsigned long long' 18374686479671623680
+# (placeholder) |             |-ParenExpr 0xd8773d0 <col:36, col:54> 'unsigned int'
 
-'int' 56
+# (placeholder) |             | `-BinaryOperator 0xd8773b0 <col:37, col:43> 'unsigned int' '&'
 
-'unsigned long long'
+# (placeholder) |             |   |-ImplicitCastExpr 0xd877398 <col:37, col:39> '__uint32_t':'unsigned int' <LValueToRValue>
 
-'unsigned long long' '>>'
+# (placeholder) |             |   | `-ParenExpr 0xd877358 <col:37, col:39> '__uint32_t':'unsigned int' lvalue
 
-'unsigned long long'
+# (placeholder) |             |   |   `-DeclRefExpr 0xd877338 <line:54:31> '__uint32_t':'unsigned int' lvalue ParmVar 0xd876e10 '__bsx' '__uint32_t':'unsigned int'
 
-'unsigned long long' '&'
+# (placeholder) |             |   `-IntegerLiteral 0xd877378 <line:46:43> 'unsigned int' 255
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |             `-IntegerLiteral 0xd8773f0 <col:59> 'int' 24
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |-FunctionDecl 0xd8775b8 <line:69:15, line:77:1> line:70:1 __bswap_64 '__uint64_t (__uint64_t)' static inline
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) | |-ParmVarDecl 0xd8774c8 <col:13, col:24> col:24 used __bsx '__uint64_t':'unsigned long'
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) | `-CompoundStmt 0xd8f4d48 <line:71:1, line:77:1>
 
-'unsigned long long' 71776119061217280
+# (placeholder) |   `-ReturnStmt 0xd8f4d38 <line:75:3, line:67:43>
 
-'int' 40
+# (placeholder) |     `-ImplicitCastExpr 0xd8f4d20 <line:60:3, line:67:43> '__uint64_t':'unsigned long' <IntegralCast>
 
-'unsigned long long'
+# (placeholder) |       `-ParenExpr 0xd8f4d00 <line:60:3, line:67:43> 'unsigned long long'
 
-'unsigned long long' '>>'
+# (placeholder) |         `-BinaryOperator 0xd8f4ce0 <line:60:4, line:67:42> 'unsigned long long' '|'
 
-'unsigned long long'
+# (placeholder) |           |-BinaryOperator 0xd8f4b90 <line:60:4, line:66:42> 'unsigned long long' '|'
 
-'unsigned long long' '&'
+# (placeholder) |           | |-BinaryOperator 0xd8f4a40 <line:60:4, line:65:42> 'unsigned long long' '|'
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |           | | |-BinaryOperator 0xd8f48f0 <line:60:4, line:64:41> 'unsigned long long' '|'
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |           | | | |-BinaryOperator 0xd877b60 <line:60:4, line:63:41> 'unsigned long long' '|'
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) |           | | | | |-BinaryOperator 0xd877a10 <line:60:4, line:62:42> 'unsigned long long' '|'
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) |           | | | | | |-BinaryOperator 0xd8778c0 <line:60:4, line:61:42> 'unsigned long long' '|'
 
-'unsigned long long' 280375465082880
+# (placeholder) |           | | | | | | |-ParenExpr 0xd877770 <line:60:4, col:40> 'unsigned long long'
 
-'int' 24
+# (placeholder) |           | | | | | | | `-BinaryOperator 0xd877750 <col:5, col:38> 'unsigned long long' '>>'
 
-'unsigned long long'
+# (placeholder) |           | | | | | | |   |-ParenExpr 0xd877710 <col:5, col:33> 'unsigned long long'
 
-'unsigned long long' '>>'
+# (placeholder) |           | | | | | | |   | `-BinaryOperator 0xd8776f0 <col:6, col:12> 'unsigned long long' '&'
 
-'unsigned long long'
+# (placeholder) |           | | | | | | |   |   |-ImplicitCastExpr 0xd8776d8 <col:6, col:8> 'unsigned long long' <IntegralCast>
 
-'unsigned long long' '&'
+# (placeholder) |           | | | | | | |   |   | `-ImplicitCastExpr 0xd8776c0 <col:6, col:8> '__uint64_t':'unsigned long' <LValueToRValue>
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |           | | | | | | |   |   |   `-ParenExpr 0xd877680 <col:6, col:8> '__uint64_t':'unsigned long' lvalue
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |           | | | | | | |   |   |     `-DeclRefExpr 0xd877660 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) |           | | | | | | |   |   `-IntegerLiteral 0xd8776a0 <line:60:12> 'unsigned long long' 18374686479671623680
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) |           | | | | | | |   `-IntegerLiteral 0xd877730 <col:38> 'int' 56
 
-'unsigned long long' 1095216660480
+# (placeholder) |           | | | | | | `-ParenExpr 0xd8778a0 <line:61:6, col:42> 'unsigned long long'
 
-'int' 8
+# (placeholder) |           | | | | | |   `-BinaryOperator 0xd877880 <col:7, col:40> 'unsigned long long' '>>'
 
-'unsigned long long'
+# (placeholder) |           | | | | | |     |-ParenExpr 0xd877840 <col:7, col:35> 'unsigned long long'
 
-'unsigned long long' '<<'
+# (placeholder) |           | | | | | |     | `-BinaryOperator 0xd877820 <col:8, col:14> 'unsigned long long' '&'
 
-'unsigned long long'
+# (placeholder) |           | | | | | |     |   |-ImplicitCastExpr 0xd877808 <col:8, col:10> 'unsigned long long' <IntegralCast>
 
-'unsigned long long' '&'
+# (placeholder) |           | | | | | |     |   | `-ImplicitCastExpr 0xd8777f0 <col:8, col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |           | | | | | |     |   |   `-ParenExpr 0xd8777b0 <col:8, col:10> '__uint64_t':'unsigned long' lvalue
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |           | | | | | |     |   |     `-DeclRefExpr 0xd877790 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) |           | | | | | |     |   `-IntegerLiteral 0xd8777d0 <line:61:14> 'unsigned long long' 71776119061217280
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) |           | | | | | |     `-IntegerLiteral 0xd877860 <col:40> 'int' 40
 
-'unsigned long long' 4278190080
+# (placeholder) |           | | | | | `-ParenExpr 0xd8779f0 <line:62:6, col:42> 'unsigned long long'
 
-'int' 8
+# (placeholder) |           | | | | |   `-BinaryOperator 0xd8779d0 <col:7, col:40> 'unsigned long long' '>>'
 
-'unsigned long long'
+# (placeholder) |           | | | | |     |-ParenExpr 0xd877990 <col:7, col:35> 'unsigned long long'
 
-'unsigned long long' '<<'
+# (placeholder) |           | | | | |     | `-BinaryOperator 0xd877970 <col:8, col:14> 'unsigned long long' '&'
 
-'unsigned long long'
+# (placeholder) |           | | | | |     |   |-ImplicitCastExpr 0xd877958 <col:8, col:10> 'unsigned long long' <IntegralCast>
 
-'unsigned long long' '&'
+# (placeholder) |           | | | | |     |   | `-ImplicitCastExpr 0xd877940 <col:8, col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |           | | | | |     |   |   `-ParenExpr 0xd877900 <col:8, col:10> '__uint64_t':'unsigned long' lvalue
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |           | | | | |     |   |     `-DeclRefExpr 0xd8778e0 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) |           | | | | |     |   `-IntegerLiteral 0xd877920 <line:62:14> 'unsigned long long' 280375465082880
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) |           | | | | |     `-IntegerLiteral 0xd8779b0 <col:40> 'int' 24
 
-'unsigned long long' 16711680
+# (placeholder) |           | | | | `-ParenExpr 0xd877b40 <line:63:6, col:41> 'unsigned long long'
 
-'int' 24
+# (placeholder) |           | | | |   `-BinaryOperator 0xd877b20 <col:7, col:40> 'unsigned long long' '>>'
 
-'unsigned long long'
+# (placeholder) |           | | | |     |-ParenExpr 0xd877ae0 <col:7, col:35> 'unsigned long long'
 
-'unsigned long long' '<<'
+# (placeholder) |           | | | |     | `-BinaryOperator 0xd877ac0 <col:8, col:14> 'unsigned long long' '&'
 
-'unsigned long long'
+# (placeholder) |           | | | |     |   |-ImplicitCastExpr 0xd877aa8 <col:8, col:10> 'unsigned long long' <IntegralCast>
 
-'unsigned long long' '&'
+# (placeholder) |           | | | |     |   | `-ImplicitCastExpr 0xd877a90 <col:8, col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |           | | | |     |   |   `-ParenExpr 0xd877a50 <col:8, col:10> '__uint64_t':'unsigned long' lvalue
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |           | | | |     |   |     `-DeclRefExpr 0xd877a30 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) |           | | | |     |   `-IntegerLiteral 0xd877a70 <line:63:14> 'unsigned long long' 1095216660480
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) |           | | | |     `-IntegerLiteral 0xd877b00 <col:40> 'int' 8
 
-'unsigned long long' 65280
+# (placeholder) |           | | | `-ParenExpr 0xd8f48d0 <line:64:6, col:41> 'unsigned long long'
 
-'int' 40
+# (placeholder) |           | | |   `-BinaryOperator 0xd8f48b0 <col:7, col:40> 'unsigned long long' '<<'
 
-'unsigned long long'
+# (placeholder) |           | | |     |-ParenExpr 0xd8f4870 <col:7, col:35> 'unsigned long long'
 
-'unsigned long long' '<<'
+# (placeholder) |           | | |     | `-BinaryOperator 0xd8f4850 <col:8, col:14> 'unsigned long long' '&'
 
-'unsigned long long'
+# (placeholder) |           | | |     |   |-ImplicitCastExpr 0xd8f4838 <col:8, col:10> 'unsigned long long' <IntegralCast>
 
-'unsigned long long' '&'
+# (placeholder) |           | | |     |   | `-ImplicitCastExpr 0xd8f4820 <col:8, col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
-'unsigned long long' <IntegralCast>
+# (placeholder) |           | | |     |   |   `-ParenExpr 0xd877ba0 <col:8, col:10> '__uint64_t':'unsigned long' lvalue
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |           | | |     |   |     `-DeclRefExpr 0xd877b80 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-'__uint64_t':'unsigned long' lvalue
+# (placeholder) |           | | |     |   `-IntegerLiteral 0xd877bc0 <line:64:14> 'unsigned long long' 4278190080
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c0058 '__bsx' '__uint64_t':'unsigned long'
+# (placeholder) |           | | |     `-IntegerLiteral 0xd8f4890 <col:40> 'int' 8
 
-'unsigned long long' 255
+# (placeholder) |           | | `-ParenExpr 0xd8f4a20 <line:65:6, col:42> 'unsigned long long'
 
-'int' 56
+# (placeholder) |           | |   `-BinaryOperator 0xd8f4a00 <col:7, col:40> 'unsigned long long' '<<'
 
-__uint16_identity '__uint16_t (__uint16_t)' static inline
+# (placeholder) |           | |     |-ParenExpr 0xd8f49c0 <col:7, col:35> 'unsigned long long'
 
-used __x '__uint16_t':'unsigned short'
+# (placeholder) |           | |     | `-BinaryOperator 0xd8f49a0 <col:8, col:14> 'unsigned long long' '&'
 
+# (placeholder) |           | |     |   |-ImplicitCastExpr 0xd8f4988 <col:8, col:10> 'unsigned long long' <IntegralCast>
 
+# (placeholder) |           | |     |   | `-ImplicitCastExpr 0xd8f4970 <col:8, col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
+# (placeholder) |           | |     |   |   `-ParenExpr 0xd8f4930 <col:8, col:10> '__uint64_t':'unsigned long' lvalue
 
+# (placeholder) |           | |     |   |     `-DeclRefExpr 0xd8f4910 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-'__uint16_t':'unsigned short' <LValueToRValue>
+# (placeholder) |           | |     |   `-IntegerLiteral 0xd8f4950 <line:65:14> 'unsigned long long' 16711680
 
-'__uint16_t':'unsigned short' lvalue ParmVar 0x5c67b0 '__x' '__uint16_t':'unsigned short'
+# (placeholder) |           | |     `-IntegerLiteral 0xd8f49e0 <col:40> 'int' 24
 
-__uint32_identity '__uint32_t (__uint32_t)' static inline
+# (placeholder) |           | `-ParenExpr 0xd8f4b70 <line:66:6, col:42> 'unsigned long long'
 
-used __x '__uint32_t':'unsigned int'
+# (placeholder) |           |   `-BinaryOperator 0xd8f4b50 <col:7, col:40> 'unsigned long long' '<<'
 
+# (placeholder) |           |     |-ParenExpr 0xd8f4b10 <col:7, col:35> 'unsigned long long'
 
+# (placeholder) |           |     | `-BinaryOperator 0xd8f4af0 <col:8, col:14> 'unsigned long long' '&'
 
+# (placeholder) |           |     |   |-ImplicitCastExpr 0xd8f4ad8 <col:8, col:10> 'unsigned long long' <IntegralCast>
 
+# (placeholder) |           |     |   | `-ImplicitCastExpr 0xd8f4ac0 <col:8, col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
-'__uint32_t':'unsigned int' <LValueToRValue>
+# (placeholder) |           |     |   |   `-ParenExpr 0xd8f4a80 <col:8, col:10> '__uint64_t':'unsigned long' lvalue
 
-'__uint32_t':'unsigned int' lvalue ParmVar 0x5c6958 '__x' '__uint32_t':'unsigned int'
+# (placeholder) |           |     |   |     `-DeclRefExpr 0xd8f4a60 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-__uint64_identity '__uint64_t (__uint64_t)' static inline
+# (placeholder) |           |     |   `-IntegerLiteral 0xd8f4aa0 <line:66:14> 'unsigned long long' 65280
 
-used __x '__uint64_t':'unsigned long'
+# (placeholder) |           |     `-IntegerLiteral 0xd8f4b30 <col:40> 'int' 40
 
+# (placeholder) |           `-ParenExpr 0xd8f4cc0 <line:67:6, col:42> 'unsigned long long'
 
+# (placeholder) |             `-BinaryOperator 0xd8f4ca0 <col:7, col:40> 'unsigned long long' '<<'
 
+# (placeholder) |               |-ParenExpr 0xd8f4c60 <col:7, col:35> 'unsigned long long'
 
+# (placeholder) |               | `-BinaryOperator 0xd8f4c40 <col:8, col:14> 'unsigned long long' '&'
 
-'__uint64_t':'unsigned long' <LValueToRValue>
+# (placeholder) |               |   |-ImplicitCastExpr 0xd8f4c28 <col:8, col:10> 'unsigned long long' <IntegralCast>
 
-'__uint64_t':'unsigned long' lvalue ParmVar 0x5c6b00 '__x' '__uint64_t':'unsigned long'
+# (placeholder) |               |   | `-ImplicitCastExpr 0xd8f4c10 <col:8, col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
-struct definition
+# (placeholder) |               |   |   `-ParenExpr 0xd8f4bd0 <col:8, col:10> '__uint64_t':'unsigned long' lvalue
 
-__val 'unsigned long[16]'
+# (placeholder) |               |   |     `-DeclRefExpr 0xd8f4bb0 <line:75:31> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8774c8 '__bsx' '__uint64_t':'unsigned long'
 
-referenced __sigset_t 'struct __sigset_t':'__sigset_t'
+# (placeholder) |               |   `-IntegerLiteral 0xd8f4bf0 <line:67:14> 'unsigned long long' 255
 
-'struct __sigset_t' sugar
+# (placeholder) |               `-IntegerLiteral 0xd8f4c80 <col:40> 'int' 56
 
-'__sigset_t'
+# (placeholder) |-FunctionDecl 0xd8f4e00 </usr/include/aarch64-linux-gnu/bits/uintn-identity.h:32:1, line:36:1> line:33:1 __uint16_identity '__uint16_t (__uint16_t)' static inline
 
-''
+# (placeholder) | |-ParmVarDecl 0xd8f4d70 <col:20, col:31> col:31 used __x '__uint16_t':'unsigned short'
 
-sigset_t '__sigset_t':'__sigset_t'
+# (placeholder) | `-CompoundStmt 0xd8f4ef0 <line:34:1, line:36:1>
 
-'__sigset_t' sugar
+# (placeholder) |   `-ReturnStmt 0xd8f4ee0 <line:35:3, col:10>
 
-'__sigset_t'
+# (placeholder) |     `-ImplicitCastExpr 0xd8f4ec8 <col:10> '__uint16_t':'unsigned short' <LValueToRValue>
 
-'struct __sigset_t' sugar
+# (placeholder) |       `-DeclRefExpr 0xd8f4ea8 <col:10> '__uint16_t':'unsigned short' lvalue ParmVar 0xd8f4d70 '__x' '__uint16_t':'unsigned short'
 
-'__sigset_t'
+# (placeholder) |-FunctionDecl 0xd8f4fa8 <line:38:1, line:42:1> line:39:1 __uint32_identity '__uint32_t (__uint32_t)' static inline
 
-''
+# (placeholder) | |-ParmVarDecl 0xd8f4f18 <col:20, col:31> col:31 used __x '__uint32_t':'unsigned int'
 
-struct timeval definition
+# (placeholder) | `-CompoundStmt 0xd8f5098 <line:40:1, line:42:1>
 
-tv_sec '__time_t':'long'
+# (placeholder) |   `-ReturnStmt 0xd8f5088 <line:41:3, col:10>
 
-tv_usec '__suseconds_t':'long'
+# (placeholder) |     `-ImplicitCastExpr 0xd8f5070 <col:10> '__uint32_t':'unsigned int' <LValueToRValue>
 
-struct timespec definition
+# (placeholder) |       `-DeclRefExpr 0xd8f5050 <col:10> '__uint32_t':'unsigned int' lvalue ParmVar 0xd8f4f18 '__x' '__uint32_t':'unsigned int'
 
-tv_sec '__time_t':'long'
+# (placeholder) |-FunctionDecl 0xd8f5150 <line:44:1, line:48:1> line:45:1 __uint64_identity '__uint64_t (__uint64_t)' static inline
 
-tv_nsec '__syscall_slong_t':'long'
+# (placeholder) | |-ParmVarDecl 0xd8f50c0 <col:20, col:31> col:31 used __x '__uint64_t':'unsigned long'
 
-suseconds_t '__suseconds_t':'long'
+# (placeholder) | `-CompoundStmt 0xd8f5240 <line:46:1, line:48:1>
 
-'__suseconds_t' sugar
+# (placeholder) |   `-ReturnStmt 0xd8f5230 <line:47:3, col:10>
 
-'__suseconds_t'
+# (placeholder) |     `-ImplicitCastExpr 0xd8f5218 <col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
-'long'
+# (placeholder) |       `-DeclRefExpr 0xd8f51f8 <col:10> '__uint64_t':'unsigned long' lvalue ParmVar 0xd8f50c0 '__x' '__uint64_t':'unsigned long'
+struct _Anonymous:
+	var __val: unsigned long[16]
 
-referenced __fd_mask 'long'
 
-'long'
+# (placeholder) |-TypedefDecl 0xd8f5558 <line:5:1, line:8:3> col:3 referenced __sigset_t 'struct __sigset_t':'__sigset_t'
 
-struct definition
+# (placeholder) | `-ElaboratedType 0xd8f5500 'struct __sigset_t' sugar
 
-__fds_bits '__fd_mask[16]'
+# (placeholder) |   `-RecordType 0xd8f52e0 '__sigset_t'
 
-referenced fd_set 'struct fd_set':'fd_set'
+# (placeholder) |     `-Record 0xd8f5258 ''
 
-'struct fd_set' sugar
+# (placeholder) |-TypedefDecl 0xd8f5600 </usr/include/aarch64-linux-gnu/bits/types/sigset_t.h:7:1, col:20> col:20 sigset_t '__sigset_t':'__sigset_t'
 
-'fd_set'
+# (placeholder) | `-TypedefType 0xd8f55d0 '__sigset_t' sugar
 
-''
+# (placeholder) |   |-Typedef 0xd8f5558 '__sigset_t'
 
-fd_mask '__fd_mask':'long'
+# (placeholder) |   `-ElaboratedType 0xd8f5500 'struct __sigset_t' sugar
 
-'__fd_mask' sugar
+# (placeholder) |     `-RecordType 0xd8f52e0 '__sigset_t'
 
-'__fd_mask'
+# (placeholder) |       `-Record 0xd8f5258 ''
+struct timeval:
+	var tv_sec: __time_t:long
 
-'long'
+	var tv_usec: __suseconds_t:long
 
-select 'int (int, fd_set *restrict, fd_set *restrict, fd_set *restrict, struct timeval *restrict)' extern
+struct timespec:
+	var tv_sec: __time_t:long
 
-__nfds 'int'
+	var tv_nsec: __syscall_slong_t:long
 
-__readfds 'fd_set *restrict'
 
-__writefds 'fd_set *restrict'
+# (placeholder) |-TypedefDecl 0xd8fc730 </usr/include/aarch64-linux-gnu/sys/select.h:43:1, col:23> col:23 suseconds_t '__suseconds_t':'long'
 
-__exceptfds 'fd_set *restrict'
+# (placeholder) | `-TypedefType 0xd8f5760 '__suseconds_t' sugar
 
-__timeout 'struct timeval *restrict'
+# (placeholder) |   |-Typedef 0xd8a74f8 '__suseconds_t'
 
-pselect 'int (int, fd_set *restrict, fd_set *restrict, fd_set *restrict, const struct timespec *restrict, const __sigset_t *restrict)' extern
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-__nfds 'int'
+# (placeholder) |-TypedefDecl 0xd8fc7a0 <line:49:1, col:18> col:18 referenced __fd_mask 'long'
 
-__readfds 'fd_set *restrict'
+# (placeholder) | `-BuiltinType 0xd7ad370 'long'
+struct _Anonymous:
+	var __fds_bits: __fd_mask[16]
 
-__writefds 'fd_set *restrict'
 
-__exceptfds 'fd_set *restrict'
+# (placeholder) |-TypedefDecl 0xd8fcb38 <line:59:1, line:70:5> col:5 referenced fd_set 'struct fd_set':'fd_set'
 
-__timeout 'const struct timespec *restrict'
+# (placeholder) | `-ElaboratedType 0xd8fcae0 'struct fd_set' sugar
 
-__sigmask 'const __sigset_t *restrict'
+# (placeholder) |   `-RecordType 0xd8fc880 'fd_set'
 
-blksize_t '__blksize_t':'long'
+# (placeholder) |     `-Record 0xd8fc7f8 ''
 
-'__blksize_t' sugar
+# (placeholder) |-TypedefDecl 0xd8fcbb8 <line:77:1, col:19> col:19 fd_mask '__fd_mask':'long'
 
-'__blksize_t'
+# (placeholder) | `-TypedefType 0xd8fc8a0 '__fd_mask' sugar
 
-'long'
+# (placeholder) |   |-Typedef 0xd8fc7a0 '__fd_mask'
 
-blkcnt_t '__blkcnt_t':'long'
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-'__blkcnt_t' sugar
+# (placeholder) |-FunctionDecl 0xd8fd080 <line:102:1, line:105:42> line:102:12 select 'int (int, fd_set *restrict, fd_set *restrict, fd_set *restrict, struct timeval *restrict)' extern
 
-'__blkcnt_t'
+# (placeholder) | |-ParmVarDecl 0xd8fcc28 <col:20, col:24> col:24 __nfds 'int'
 
-'long'
+# (placeholder) | |-ParmVarDecl 0xd8fcd18 <col:32, col:51> col:51 __readfds 'fd_set *restrict'
 
-fsblkcnt_t '__fsblkcnt_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8fcd90 <line:103:6, col:25> col:25 __writefds 'fd_set *restrict'
 
-'__fsblkcnt_t' sugar
+# (placeholder) | |-ParmVarDecl 0xd8fce08 <line:104:6, col:25> col:25 __exceptfds 'fd_set *restrict'
 
-'__fsblkcnt_t'
+# (placeholder) | `-ParmVarDecl 0xd8fcf20 <line:105:6, col:33> col:33 __timeout 'struct timeval *restrict'
 
-'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8fe9b0 <line:127:1, line:131:45> line:127:12 pselect 'int (int, fd_set *restrict, fd_set *restrict, fd_set *restrict, const struct timespec *restrict, const __sigset_t *restrict)' extern
 
-fsfilcnt_t '__fsfilcnt_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8fd160 <col:21, col:25> col:25 __nfds 'int'
 
-'__fsfilcnt_t' sugar
+# (placeholder) | |-ParmVarDecl 0xd8fd1d8 <col:33, col:52> col:52 __readfds 'fd_set *restrict'
 
-'__fsfilcnt_t'
+# (placeholder) | |-ParmVarDecl 0xd8fd250 <line:128:7, col:26> col:26 __writefds 'fd_set *restrict'
 
-'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8fd2c8 <line:129:7, col:26> col:26 __exceptfds 'fd_set *restrict'
 
-union definition
+# (placeholder) | |-ParmVarDecl 0xd8fd3e0 <line:130:7, col:41> col:41 __timeout 'const struct timespec *restrict'
 
-__value64 'unsigned long long'
+# (placeholder) | `-ParmVarDecl 0xd8fd4b8 <line:131:7, col:36> col:36 __sigmask 'const __sigset_t *restrict'
 
-struct definition
+# (placeholder) |-TypedefDecl 0xd8feab0 </usr/include/aarch64-linux-gnu/sys/types.h:185:1, col:21> col:21 blksize_t '__blksize_t':'int'
 
-__low 'unsigned int'
+# (placeholder) | `-TypedefType 0xd8fea80 '__blksize_t' sugar
 
-__high 'unsigned int'
+# (placeholder) |   |-Typedef 0xd8a7798 '__blksize_t'
 
-__value32 'struct (unnamed struct at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3)':'struct __atomic_wide_counter::(unnamed at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3)'
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
 
-referenced __atomic_wide_counter 'union __atomic_wide_counter':'__atomic_wide_counter'
+# (placeholder) |-TypedefDecl 0xd8feb40 <line:192:1, col:20> col:20 blkcnt_t '__blkcnt_t':'long'
 
-'union __atomic_wide_counter' sugar
+# (placeholder) | `-TypedefType 0xd8feb10 '__blkcnt_t' sugar
 
-'__atomic_wide_counter'
+# (placeholder) |   |-Typedef 0xd8a7808 '__blkcnt_t'
 
-''
+# (placeholder) |   `-BuiltinType 0xd7ad370 'long'
 
-struct __pthread_internal_list definition
+# (placeholder) |-TypedefDecl 0xd8febd0 <line:196:1, col:22> col:22 fsblkcnt_t '__fsblkcnt_t':'unsigned long'
 
-__prev 'struct __pthread_internal_list *'
+# (placeholder) | `-TypedefType 0xd8feba0 '__fsblkcnt_t' sugar
 
-__next 'struct __pthread_internal_list *'
+# (placeholder) |   |-Typedef 0xd8a78e8 '__fsblkcnt_t'
 
-referenced __pthread_list_t 'struct __pthread_internal_list':'struct __pthread_internal_list'
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
 
-'struct __pthread_internal_list' sugar
+# (placeholder) |-TypedefDecl 0xd8fec60 <line:200:1, col:22> col:22 fsfilcnt_t '__fsfilcnt_t':'unsigned long'
 
-'struct __pthread_internal_list'
+# (placeholder) | `-TypedefType 0xd8fec30 '__fsfilcnt_t' sugar
 
-'__pthread_internal_list'
+# (placeholder) |   |-Typedef 0xd8a79c8 '__fsfilcnt_t'
 
-struct __pthread_internal_slist definition
+# (placeholder) |   `-BuiltinType 0xd7ad410 'unsigned long'
+struct __Anonymous__Anonymous_1352:
+	var __low: UInt
 
-__next 'struct __pthread_internal_slist *'
+	var __high: UInt
 
-__pthread_slist_t 'struct __pthread_internal_slist':'struct __pthread_internal_slist'
 
-'struct __pthread_internal_slist' sugar
+struct _Anonymous:
+	var __value64: UInt64
 
-'struct __pthread_internal_slist'
+	var __value32: __Anonymous__Anonymous_1352
 
-'__pthread_internal_slist'
 
-struct __pthread_mutex_s definition
+# (placeholder) |-TypedefDecl 0xd8ff048 <line:25:1, line:33:3> col:3 referenced __atomic_wide_counter 'union __atomic_wide_counter':'__atomic_wide_counter'
 
-__lock 'int'
+# (placeholder) | `-ElaboratedType 0xd8feff0 'union __atomic_wide_counter' sugar
 
-__count 'unsigned int'
+# (placeholder) |   `-RecordType 0xd8fed40 '__atomic_wide_counter'
 
-__owner 'int'
+# (placeholder) |     `-Record 0xd8fecb8 ''
+struct __pthread_internal_list:
+	var __prev: __pthread_internal_list 
 
-__nusers 'unsigned int'
+	var __next: __pthread_internal_list 
 
-__kind 'int'
 
-__spins 'short'
+# (placeholder) |-TypedefDecl 0xd8ff338 <line:51:1, line:55:3> col:3 referenced __pthread_list_t 'struct __pthread_internal_list':'struct __pthread_internal_list'
 
-__elision 'short'
+# (placeholder) | `-ElaboratedType 0xd8ff2e0 'struct __pthread_internal_list' sugar
 
-__list '__pthread_list_t':'struct __pthread_internal_list'
+# (placeholder) |   `-RecordType 0xd8ff140 'struct __pthread_internal_list'
 
-struct __pthread_rwlock_arch_t definition
+# (placeholder) |     `-Record 0xd8ff0b8 '__pthread_internal_list'
+struct __pthread_internal_slist:
+	var __next: __pthread_internal_slist 
 
-__readers 'unsigned int'
 
-__writers 'unsigned int'
+# (placeholder) |-TypedefDecl 0xd8ff5a8 <line:57:1, line:60:3> col:3 __pthread_slist_t 'struct __pthread_internal_slist':'struct __pthread_internal_slist'
 
-__wrphase_futex 'unsigned int'
+# (placeholder) | `-ElaboratedType 0xd8ff550 'struct __pthread_internal_slist' sugar
 
-__writers_futex 'unsigned int'
+# (placeholder) |   `-RecordType 0xd8ff430 'struct __pthread_internal_slist'
 
-__pad3 'unsigned int'
+# (placeholder) |     `-Record 0xd8ff3a8 '__pthread_internal_slist'
+struct __pthread_mutex_s:
+	var __lock: Int
 
-__pad4 'unsigned int'
+	var __count: UInt
 
-__cur_writer 'int'
+	var __owner: Int
 
-__shared 'int'
+	var __nusers: UInt
 
-__rwelision 'signed char'
+	var __kind: Int
 
-__pad1 'unsigned char[7]'
+	var __spins: Int
 
-__pad2 'unsigned long'
+	var __list: __pthread_list_t
 
-__flags 'unsigned int'
+struct __pthread_rwlock_arch_t:
+	var __readers: UInt
 
-struct __pthread_cond_s definition
+	var __writers: UInt
 
-__wseq '__atomic_wide_counter':'__atomic_wide_counter'
+	var __wrphase_futex: UInt
 
-__g1_start '__atomic_wide_counter':'__atomic_wide_counter'
+	var __writers_futex: UInt
 
-__g_refs 'unsigned int[2]'
+	var __pad3: UInt
 
-__g_size 'unsigned int[2]'
+	var __pad4: UInt
 
-__g1_orig_size 'unsigned int'
+	var __cur_writer: Int
 
-__wrefs 'unsigned int'
+	var __shared: Int
 
-__g_signals 'unsigned int[2]'
+	var __pad1: UInt
 
-__tss_t 'unsigned int'
+	var __pad2: UInt
 
-'unsigned int'
+	var __flags: UInt
 
-__thrd_t 'unsigned long'
+struct __pthread_cond_s:
+	var __wseq: __atomic_wide_counter:__atomic_wide_counter
 
-'unsigned long'
+	var __g1_start: __atomic_wide_counter:__atomic_wide_counter
 
-struct definition
+	var __g_refs: unsigned int[2]
 
-__data 'int'
+	var __g_size: unsigned int[2]
 
-__once_flag 'struct __once_flag':'__once_flag'
+	var __g1_orig_size: UInt
 
-'struct __once_flag' sugar
+	var __wrefs: UInt
 
-'__once_flag'
+	var __g_signals: unsigned int[2]
 
-''
 
-pthread_t 'unsigned long'
+# (placeholder) |-TypedefDecl 0xd906ce8 <line:105:1, col:22> col:22 __tss_t 'unsigned int'
 
-'unsigned long'
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-union definition
+# (placeholder) |-TypedefDecl 0xd906d58 <line:106:1, col:27> col:27 __thrd_t 'unsigned long'
 
-__size 'char[4]'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
+struct _Anonymous:
+	var __data: Int
 
-__align 'int'
 
-pthread_mutexattr_t 'union pthread_mutexattr_t':'pthread_mutexattr_t'
+# (placeholder) |-TypedefDecl 0xd906f18 <line:108:1, line:111:3> col:3 __once_flag 'struct __once_flag':'__once_flag'
 
-'union pthread_mutexattr_t' sugar
+# (placeholder) | `-ElaboratedType 0xd906ec0 'struct __once_flag' sugar
 
-'pthread_mutexattr_t'
+# (placeholder) |   `-RecordType 0xd906e30 '__once_flag'
 
-''
+# (placeholder) |     `-Record 0xd906db0 ''
 
-union definition
+# (placeholder) |-TypedefDecl 0xd906fa0 </usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:27:1, col:27> col:27 pthread_t 'unsigned long'
 
-__size 'char[4]'
+# (placeholder) | `-BuiltinType 0xd7ad410 'unsigned long'
+struct _Anonymous:
+	var __size: char[8]
 
-__align 'int'
+	var __align: Int
 
-pthread_condattr_t 'union pthread_condattr_t':'pthread_condattr_t'
 
-'union pthread_condattr_t' sugar
+# (placeholder) |-TypedefDecl 0xd908e28 <line:32:1, line:36:3> col:3 pthread_mutexattr_t 'union pthread_mutexattr_t':'pthread_mutexattr_t'
 
-'pthread_condattr_t'
+# (placeholder) | `-ElaboratedType 0xd908dd0 'union pthread_mutexattr_t' sugar
 
-''
+# (placeholder) |   `-RecordType 0xd907080 'pthread_mutexattr_t'
 
-pthread_key_t 'unsigned int'
+# (placeholder) |     `-Record 0xd906ff8 ''
+struct _Anonymous:
+	var __size: char[8]
 
-'unsigned int'
+	var __align: Int
 
-pthread_once_t 'int'
 
-'int'
+# (placeholder) |-TypedefDecl 0xd9090b8 <line:41:1, line:45:3> col:3 pthread_condattr_t 'union pthread_condattr_t':'pthread_condattr_t'
 
-union pthread_attr_t definition
+# (placeholder) | `-ElaboratedType 0xd909060 'union pthread_condattr_t' sugar
 
-__size 'char[56]'
+# (placeholder) |   `-RecordType 0xd908f20 'pthread_condattr_t'
 
-__align 'long'
+# (placeholder) |     `-Record 0xd908e98 ''
 
-pthread_attr_t 'union pthread_attr_t':'union pthread_attr_t'
+# (placeholder) |-TypedefDecl 0xd909140 <line:49:1, col:22> col:22 pthread_key_t 'unsigned int'
 
-'union pthread_attr_t' sugar
+# (placeholder) | `-BuiltinType 0xd7ad3f0 'unsigned int'
 
-'union pthread_attr_t'
+# (placeholder) |-TypedefDecl 0xd9091b0 <line:53:1, col:30> col:30 pthread_once_t 'int'
 
-'pthread_attr_t'
+# (placeholder) | `-BuiltinType 0xd7ad350 'int'
+struct pthread_attr_t:
+	var __size: char[64]
 
-union definition
+	var __align: Int
 
-__data 'struct __pthread_mutex_s':'struct __pthread_mutex_s'
 
-__size 'char[40]'
+# (placeholder) |-TypedefDecl 0xd909450 <line:62:1, col:30> col:30 pthread_attr_t 'union pthread_attr_t':'union pthread_attr_t'
 
-__align 'long'
+# (placeholder) | `-ElaboratedType 0xd909400 'union pthread_attr_t' sugar
 
-pthread_mutex_t 'union pthread_mutex_t':'pthread_mutex_t'
+# (placeholder) |   `-RecordType 0xd909290 'union pthread_attr_t'
 
-'union pthread_mutex_t' sugar
+# (placeholder) |     `-Record 0xd909208 'pthread_attr_t'
+struct _Anonymous:
+	var __data: __pthread_mutex_s
 
-'pthread_mutex_t'
+	var __size: char[48]
 
-''
+	var __align: Int
 
-union definition
 
-__data 'struct __pthread_cond_s':'struct __pthread_cond_s'
+# (placeholder) |-TypedefDecl 0xd909888 <line:67:1, line:72:3> col:3 pthread_mutex_t 'union pthread_mutex_t':'pthread_mutex_t'
 
-__size 'char[48]'
+# (placeholder) | `-ElaboratedType 0xd909830 'union pthread_mutex_t' sugar
 
-__align 'long long'
+# (placeholder) |   `-RecordType 0xd909530 'pthread_mutex_t'
 
-pthread_cond_t 'union pthread_cond_t':'pthread_cond_t'
+# (placeholder) |     `-Record 0xd9094a8 ''
+struct _Anonymous:
+	var __data: __pthread_cond_s
 
-'union pthread_cond_t' sugar
+	var __size: char[48]
 
-'pthread_cond_t'
+	var __align: Int64
 
-''
 
-union definition
+# (placeholder) |-TypedefDecl 0xd909c38 <line:75:1, line:80:3> col:3 pthread_cond_t 'union pthread_cond_t':'pthread_cond_t'
 
-__data 'struct __pthread_rwlock_arch_t':'struct __pthread_rwlock_arch_t'
+# (placeholder) | `-ElaboratedType 0xd909be0 'union pthread_cond_t' sugar
 
-__size 'char[56]'
+# (placeholder) |   `-RecordType 0xd909980 'pthread_cond_t'
 
-__align 'long'
+# (placeholder) |     `-Record 0xd9098f8 ''
+struct _Anonymous:
+	var __data: __pthread_rwlock_arch_t
 
-pthread_rwlock_t 'union pthread_rwlock_t':'pthread_rwlock_t'
+	var __size: char[56]
 
-'union pthread_rwlock_t' sugar
+	var __align: Int
 
-'pthread_rwlock_t'
 
-''
+# (placeholder) |-TypedefDecl 0xd90e0c8 <line:86:1, line:91:3> col:3 pthread_rwlock_t 'union pthread_rwlock_t':'pthread_rwlock_t'
 
-union definition
+# (placeholder) | `-ElaboratedType 0xd90e070 'union pthread_rwlock_t' sugar
 
-__size 'char[8]'
+# (placeholder) |   `-RecordType 0xd90ddb0 'pthread_rwlock_t'
 
-__align 'long'
+# (placeholder) |     `-Record 0xd90dd30 ''
+struct _Anonymous:
+	var __size: char[8]
 
-pthread_rwlockattr_t 'union pthread_rwlockattr_t':'pthread_rwlockattr_t'
+	var __align: Int
 
-'union pthread_rwlockattr_t' sugar
 
-'pthread_rwlockattr_t'
+# (placeholder) |-TypedefDecl 0xd90e358 <line:93:1, line:97:3> col:3 pthread_rwlockattr_t 'union pthread_rwlockattr_t':'pthread_rwlockattr_t'
 
-''
+# (placeholder) | `-ElaboratedType 0xd90e300 'union pthread_rwlockattr_t' sugar
 
-pthread_spinlock_t 'volatile int'
+# (placeholder) |   `-RecordType 0xd90e1c0 'pthread_rwlockattr_t'
 
-'volatile int' volatile
+# (placeholder) |     `-Record 0xd90e138 ''
 
-'int'
+# (placeholder) |-TypedefDecl 0xd90e3e0 <line:103:1, col:22> col:22 pthread_spinlock_t 'volatile int'
 
-union definition
+# (placeholder) | `-QualType 0xd7ad354 'volatile int' volatile
 
-__size 'char[32]'
+# (placeholder) |   `-BuiltinType 0xd7ad350 'int'
+struct _Anonymous:
+	var __size: char[32]
 
-__align 'long'
+	var __align: Int
 
-pthread_barrier_t 'union pthread_barrier_t':'pthread_barrier_t'
 
-'union pthread_barrier_t' sugar
+# (placeholder) |-TypedefDecl 0xd90e688 <line:108:1, line:112:3> col:3 pthread_barrier_t 'union pthread_barrier_t':'pthread_barrier_t'
 
-'pthread_barrier_t'
+# (placeholder) | `-ElaboratedType 0xd90e630 'union pthread_barrier_t' sugar
 
-''
+# (placeholder) |   `-RecordType 0xd90e4c0 'pthread_barrier_t'
 
-union definition
+# (placeholder) |     `-Record 0xd90e438 ''
+struct _Anonymous:
+	var __size: char[8]
 
-__size 'char[4]'
+	var __align: Int
 
-__align 'int'
 
-pthread_barrierattr_t 'union pthread_barrierattr_t':'pthread_barrierattr_t'
+# (placeholder) |-TypedefDecl 0xd90e918 <line:114:1, line:118:3> col:3 pthread_barrierattr_t 'union pthread_barrierattr_t':'pthread_barrierattr_t'
 
-'union pthread_barrierattr_t' sugar
+# (placeholder) | `-ElaboratedType 0xd90e8c0 'union pthread_barrierattr_t' sugar
 
-'pthread_barrierattr_t'
+# (placeholder) |   `-RecordType 0xd90e780 'pthread_barrierattr_t'
 
-''
+# (placeholder) |     `-Record 0xd90e6f8 ''
 
-/usr/include/stdlib.h:402:17 random 'long (void)' extern
+# (placeholder) |-FunctionDecl 0xd90ea50 </usr/include/stdlib.h:402:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:402:17 random 'long (void)' extern
 
+# (placeholder) | `-NoThrowAttr 0xd90eaf0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd90ec28 </usr/include/stdlib.h:405:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:405:13 srandom 'void (unsigned int)' extern
 
-/usr/include/stdlib.h:405:13 srandom 'void (unsigned int)' extern
+# (placeholder) | |-ParmVarDecl 0xd90eb60 <col:22, col:35> col:35 __seed 'unsigned int'
 
-__seed 'unsigned int'
+# (placeholder) | `-NoThrowAttr 0xd90ecd0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd911fc0 </usr/include/stdlib.h:411:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:411:14 initstate 'char *(unsigned int, char *, size_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd911d78 <col:25, col:38> col:38 __seed 'unsigned int'
 
-/usr/include/stdlib.h:411:14 initstate 'char *(unsigned int, char *, size_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd911df8 <col:46, col:52> col:52 __statebuf 'char *'
 
-__seed 'unsigned int'
+# (placeholder) | |-ParmVarDecl 0xd911e70 <line:412:4, col:11> col:11 __statelen 'size_t':'unsigned long'
 
-__statebuf 'char *'
+# (placeholder) | |-NoThrowAttr 0xd912078 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__statelen 'size_t':'unsigned long'
+# (placeholder) | `-NonNullAttr 0xd9120d0 <line:384:57, /usr/include/stdlib.h:412:44> 2
 
+# (placeholder) |-FunctionDecl 0xd9121d8 <line:416:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:416:14 setstate 'char *(char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd912120 <col:24, col:30> col:30 __statebuf 'char *'
 
-2
+# (placeholder) | |-NoThrowAttr 0xd912280 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:416:14 setstate 'char *(char *)' extern
+# (placeholder) | `-NonNullAttr 0xd9122d8 <line:384:57, /usr/include/stdlib.h:416:63> 1
+struct random_data:
+	var fptr: int32_t 
 
-__statebuf 'char *'
+	var rptr: int32_t 
 
+	var state: int32_t 
 
+	var rand_type: Int
 
-1
+	var rand_deg: Int
 
-struct random_data definition
+	var rand_sep: Int
 
-fptr 'int32_t *'
+	var end_ptr: int32_t 
 
-rptr 'int32_t *'
 
-state 'int32_t *'
+# (placeholder) |-FunctionDecl 0xd912970 <line:435:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:435:12 random_r 'int (struct random_data *restrict, int32_t *restrict)' extern
 
-rand_type 'int'
+# (placeholder) | |-ParmVarDecl 0xd9127a0 <col:22, col:53> col:53 __buf 'struct random_data *restrict'
 
-rand_deg 'int'
+# (placeholder) | |-ParmVarDecl 0xd912818 <line:436:8, col:28> col:28 __result 'int32_t *restrict'
 
-rand_sep 'int'
+# (placeholder) | |-NoThrowAttr 0xd912a20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-end_ptr 'int32_t *'
+# (placeholder) | `-NonNullAttr 0xd912a78 <line:384:57, /usr/include/stdlib.h:436:62> 1 2
 
-/usr/include/stdlib.h:435:12 random_r 'int (struct random_data *restrict, int32_t *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd912ca0 <line:438:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:438:12 srandom_r 'int (unsigned int, struct random_data *)' extern
 
-__buf 'struct random_data *restrict'
+# (placeholder) | |-ParmVarDecl 0xd912ad0 <col:23, col:36> col:36 __seed 'unsigned int'
 
-__result 'int32_t *restrict'
+# (placeholder) | |-ParmVarDecl 0xd912b60 <col:44, col:64> col:64 __buf 'struct random_data *'
 
+# (placeholder) | |-NoThrowAttr 0xd912d70 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd912dc8 <line:384:57, /usr/include/stdlib.h:439:27> 2
 
-1 2
+# (placeholder) |-FunctionDecl 0xd913130 <line:441:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:441:12 initstate_r 'int (unsigned int, char *restrict, size_t, struct random_data *restrict)' extern
 
-/usr/include/stdlib.h:438:12 srandom_r 'int (unsigned int, struct random_data *)' extern
+# (placeholder) | |-ParmVarDecl 0xd912e20 <col:25, col:38> col:38 __seed 'unsigned int'
 
-__seed 'unsigned int'
+# (placeholder) | |-ParmVarDecl 0xd912ea0 <col:46, col:63> col:63 __statebuf 'char *restrict'
 
-__buf 'struct random_data *'
+# (placeholder) | |-ParmVarDecl 0xd912f18 <line:442:4, col:11> col:11 __statelen 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd912fa8 <line:443:4, col:35> col:35 __buf 'struct random_data *restrict'
 
+# (placeholder) | |-NoThrowAttr 0xd9131f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-2
+# (placeholder) | `-NonNullAttr 0xd913248 <line:384:57, /usr/include/stdlib.h:444:30> 2 4
 
-/usr/include/stdlib.h:441:12 initstate_r 'int (unsigned int, char *restrict, size_t, struct random_data *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd913490 <line:446:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:446:12 setstate_r 'int (char *restrict, struct random_data *restrict)' extern
 
-__seed 'unsigned int'
+# (placeholder) | |-ParmVarDecl 0xd9132a0 <col:24, col:41> col:41 __statebuf 'char *restrict'
 
-__statebuf 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd913330 <line:447:10, col:41> col:41 __buf 'struct random_data *restrict'
 
-__statelen 'size_t':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd913540 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__buf 'struct random_data *restrict'
+# (placeholder) | `-NonNullAttr 0xd913598 <line:384:57, /usr/include/stdlib.h:448:30> 1 2
 
+# (placeholder) |-FunctionDecl 0xd913678 <line:454:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:454:12 rand 'int (void)' extern
 
+# (placeholder) | `-NoThrowAttr 0xd913718 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-2 4
+# (placeholder) |-FunctionDecl 0xd913818 </usr/include/stdlib.h:456:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:456:13 srand 'void (unsigned int)' extern
 
-/usr/include/stdlib.h:446:12 setstate_r 'int (char *restrict, struct random_data *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd913788 <col:20, col:33> col:33 __seed 'unsigned int'
 
-__statebuf 'char *restrict'
+# (placeholder) | `-NoThrowAttr 0xd9138c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__buf 'struct random_data *restrict'
+# (placeholder) |-FunctionDecl 0xd913a30 </usr/include/stdlib.h:460:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:460:12 rand_r 'int (unsigned int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd913960 <col:20, col:34> col:34 __seed 'unsigned int *'
 
+# (placeholder) | `-NoThrowAttr 0xd913ad8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1 2
+# (placeholder) |-FunctionDecl 0xd913c00 </usr/include/stdlib.h:468:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:468:15 drand48 'double (void)' extern
 
-/usr/include/stdlib.h:454:12 rand 'int (void)' extern
+# (placeholder) | `-NoThrowAttr 0xd913ca0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8c4560 </usr/include/stdlib.h:469:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:469:15 erand48 'double (unsigned short *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8c4440 <col:24, col:52> col:43 __xsubi 'unsigned short *':'unsigned short *'
 
-/usr/include/stdlib.h:456:13 srand 'void (unsigned int)' extern
+# (placeholder) | |-NoThrowAttr 0xd8c4608 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__seed 'unsigned int'
+# (placeholder) | `-NonNullAttr 0xd8c4660 <line:384:57, /usr/include/stdlib.h:469:76> 1
 
+# (placeholder) |-FunctionDecl 0xd8c4738 <line:472:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:472:17 lrand48 'long (void)' extern
 
+# (placeholder) | `-NoThrowAttr 0xd8c47d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:460:12 rand_r 'int (unsigned int *)' extern
+# (placeholder) |-FunctionDecl 0xd8c49b0 </usr/include/stdlib.h:473:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:473:17 nrand48 'long (unsigned short *)' extern
 
-__seed 'unsigned int *'
+# (placeholder) | |-ParmVarDecl 0xd8c4898 <col:26, col:54> col:45 __xsubi 'unsigned short *':'unsigned short *'
 
+# (placeholder) | |-NoThrowAttr 0xd8c4a58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd8c4ab0 <line:384:57, /usr/include/stdlib.h:474:27> 1
 
-/usr/include/stdlib.h:468:15 drand48 'double (void)' extern
+# (placeholder) |-FunctionDecl 0xd8c4b88 <line:477:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:477:17 mrand48 'long (void)' extern
 
+# (placeholder) | `-NoThrowAttr 0xd8c4c28 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8c4da0 </usr/include/stdlib.h:478:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:478:17 jrand48 'long (unsigned short *)' extern
 
-/usr/include/stdlib.h:469:15 erand48 'double (unsigned short *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c4ce8 <col:26, col:54> col:45 __xsubi 'unsigned short *':'unsigned short *'
 
-__xsubi 'unsigned short *':'unsigned short *'
+# (placeholder) | |-NoThrowAttr 0xd8c4e48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd8c4ea0 <line:384:57, /usr/include/stdlib.h:479:27> 1
 
+# (placeholder) |-FunctionDecl 0xd8c4fb8 <line:482:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:482:13 srand48 'void (long)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8c4ef0 <col:22, col:31> col:31 __seedval 'long'
 
-/usr/include/stdlib.h:472:17 lrand48 'long (void)' extern
+# (placeholder) | `-NoThrowAttr 0xd8c5060 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8c5240 </usr/include/stdlib.h:483:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:483:28 seed48 'unsigned short *(unsigned short *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8c5120 <col:36, col:66> col:55 __seed16v 'unsigned short *':'unsigned short *'
 
-/usr/include/stdlib.h:473:17 nrand48 'long (unsigned short *)' extern
+# (placeholder) | |-NoThrowAttr 0xd8c52e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__xsubi 'unsigned short *':'unsigned short *'
+# (placeholder) | `-NonNullAttr 0xd8c5340 <line:384:57, /usr/include/stdlib.h:484:27> 1
 
+# (placeholder) |-FunctionDecl 0xd8c5578 <line:485:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:485:13 lcong48 'void (unsigned short *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8c5460 <col:22, col:50> col:41 __param 'unsigned short *':'unsigned short *'
 
-1
+# (placeholder) | |-NoThrowAttr 0xd8c5620 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:477:17 mrand48 'long (void)' extern
+# (placeholder) | `-NonNullAttr 0xd8c5678 <line:384:57, /usr/include/stdlib.h:485:74> 1
+struct drand48_data:
+	var __x: unsigned short[3]
 
+	var __old_x: unsigned short[3]
 
+	var __c: UInt16
 
-/usr/include/stdlib.h:478:17 jrand48 'long (unsigned short *)' extern
+	var __init: UInt16
 
-__xsubi 'unsigned short *':'unsigned short *'
+	var __a: UInt64
 
 
+# (placeholder) |-FunctionDecl 0xd8c5cd0 <line:502:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:502:12 drand48_r 'int (struct drand48_data *restrict, double *restrict)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8c5ac0 <col:23, col:55> col:55 __buffer 'struct drand48_data *restrict'
 
-/usr/include/stdlib.h:482:13 srand48 'void (long)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c5b70 <line:503:9, col:28> col:28 __result 'double *restrict'
 
-__seedval 'long'
+# (placeholder) | |-NoThrowAttr 0xd8c5d80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd8c5dd8 <line:384:57, /usr/include/stdlib.h:503:62> 1 2
 
+# (placeholder) |-FunctionDecl 0xd8c6100 <line:504:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:504:12 erand48_r 'int (unsigned short *, struct drand48_data *restrict, double *restrict)' extern
 
-/usr/include/stdlib.h:483:28 seed48 'unsigned short *(unsigned short *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c5e80 <col:23, col:51> col:42 __xsubi 'unsigned short *':'unsigned short *'
 
-__seed16v 'unsigned short *':'unsigned short *'
+# (placeholder) | |-ParmVarDecl 0xd8c5f10 <line:505:9, col:41> col:41 __buffer 'struct drand48_data *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8c5f90 <line:506:9, col:28> col:28 __result 'double *restrict'
 
+# (placeholder) | |-NoThrowAttr 0xd8c61b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1
+# (placeholder) | `-NonNullAttr 0xd8c6210 <line:384:57, /usr/include/stdlib.h:506:62> 1 2
 
-/usr/include/stdlib.h:485:13 lcong48 'void (unsigned short *)' extern
+# (placeholder) |-FunctionDecl 0xd8c6490 <line:509:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:509:12 lrand48_r 'int (struct drand48_data *restrict, long *restrict)' extern
 
-__param 'unsigned short *':'unsigned short *'
+# (placeholder) | |-ParmVarDecl 0xd8c6270 <col:23, col:55> col:55 __buffer 'struct drand48_data *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd8c6320 <line:510:9, col:30> col:30 __result 'long *restrict'
 
+# (placeholder) | |-NoThrowAttr 0xd8c6540 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1
+# (placeholder) | `-NonNullAttr 0xd8c6598 <line:384:57, /usr/include/stdlib.h:511:30> 1 2
 
-struct drand48_data definition
+# (placeholder) |-FunctionDecl 0xd8c68c0 <line:512:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:512:12 nrand48_r 'int (unsigned short *, struct drand48_data *restrict, long *restrict)' extern
 
-__x 'unsigned short[3]'
+# (placeholder) | |-ParmVarDecl 0xd8c6640 <col:23, col:51> col:42 __xsubi 'unsigned short *':'unsigned short *'
 
-__old_x 'unsigned short[3]'
+# (placeholder) | |-ParmVarDecl 0xd8c66d0 <line:513:9, col:41> col:41 __buffer 'struct drand48_data *restrict'
 
-__c 'unsigned short'
+# (placeholder) | |-ParmVarDecl 0xd8c6750 <line:514:9, col:30> col:30 __result 'long *restrict'
 
-__init 'unsigned short'
+# (placeholder) | |-NoThrowAttr 0xd8c6978 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__a 'unsigned long long'
+# (placeholder) | `-NonNullAttr 0xd8c69d0 <line:384:57, /usr/include/stdlib.h:515:30> 1 2
 
-/usr/include/stdlib.h:502:12 drand48_r 'int (struct drand48_data *restrict, double *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd8c6b90 <line:518:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:518:12 mrand48_r 'int (struct drand48_data *restrict, long *restrict)' extern
 
-__buffer 'struct drand48_data *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8c6a30 <col:23, col:55> col:55 __buffer 'struct drand48_data *restrict'
 
-__result 'double *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8c6ab0 <line:519:9, col:30> col:30 __result 'long *restrict'
 
+# (placeholder) | |-NoThrowAttr 0xd8c6c40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd8c6c98 <line:384:57, /usr/include/stdlib.h:520:30> 1 2
 
-1 2
+# (placeholder) |-FunctionDecl 0xd8c6f38 <line:521:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:521:12 jrand48_r 'int (unsigned short *, struct drand48_data *restrict, long *restrict)' extern
 
-/usr/include/stdlib.h:504:12 erand48_r 'int (unsigned short *, struct drand48_data *restrict, double *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c6d40 <col:23, col:51> col:42 __xsubi 'unsigned short *':'unsigned short *'
 
-__xsubi 'unsigned short *':'unsigned short *'
+# (placeholder) | |-ParmVarDecl 0xd8c6dd0 <line:522:9, col:41> col:41 __buffer 'struct drand48_data *restrict'
 
-__buffer 'struct drand48_data *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8c6e50 <line:523:9, col:30> col:30 __result 'long *restrict'
 
-__result 'double *restrict'
+# (placeholder) | |-NoThrowAttr 0xd8c6ff0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd8c7048 <line:384:57, /usr/include/stdlib.h:524:30> 1 2
 
+# (placeholder) |-FunctionDecl 0xd8c7270 <line:527:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:527:12 srand48_r 'int (long, struct drand48_data *)' extern
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd8c70a0 <col:23, col:32> col:32 __seedval 'long'
 
-/usr/include/stdlib.h:509:12 lrand48_r 'int (struct drand48_data *restrict, long *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c7130 <col:43, col:64> col:64 __buffer 'struct drand48_data *'
 
-__buffer 'struct drand48_data *restrict'
+# (placeholder) | |-NoThrowAttr 0xd8c7320 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__result 'long *restrict'
+# (placeholder) | `-NonNullAttr 0xd8c73b0 <line:384:57, /usr/include/stdlib.h:528:27> 2
 
+# (placeholder) |-FunctionDecl 0xd8c7640 <line:530:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:530:12 seed48_r 'int (unsigned short *, struct drand48_data *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8c7450 <col:22, col:52> col:41 __seed16v 'unsigned short *':'unsigned short *'
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd8c74e0 <line:531:8, col:29> col:29 __buffer 'struct drand48_data *'
 
-/usr/include/stdlib.h:512:12 nrand48_r 'int (unsigned short *, struct drand48_data *restrict, long *restrict)' extern
+# (placeholder) | |-NoThrowAttr 0xd8c76f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__xsubi 'unsigned short *':'unsigned short *'
+# (placeholder) | `-NonNullAttr 0xd8c7748 <line:384:57, /usr/include/stdlib.h:531:63> 1 2
 
-__buffer 'struct drand48_data *restrict'
+# (placeholder) |-FunctionDecl 0xd8c79a0 <line:533:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:533:12 lcong48_r 'int (unsigned short *, struct drand48_data *)' extern
 
-__result 'long *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8c77f0 <col:23, col:51> col:42 __param 'unsigned short *':'unsigned short *'
 
+# (placeholder) | |-ParmVarDecl 0xd8c7880 <line:534:9, col:30> col:30 __buffer 'struct drand48_data *'
 
+# (placeholder) | |-NoThrowAttr 0xd8c7a50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1 2
+# (placeholder) | `-NonNullAttr 0xd8c7aa8 <line:384:57, /usr/include/stdlib.h:535:30> 1 2
 
-/usr/include/stdlib.h:518:12 mrand48_r 'int (struct drand48_data *restrict, long *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd8c7bf0 <line:540:14> col:14 implicit malloc 'void *(unsigned long)' extern
 
-__buffer 'struct drand48_data *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8c7ce8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__result 'long *restrict'
+# (placeholder) | `-BuiltinAttr 0xd8c7c90 <<invalid sloc>> Implicit 792
 
+# (placeholder) |-FunctionDecl 0xd8c7d58 prev 0xd8c7bf0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdlib.h:540:14 malloc 'void *(unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8c7af8 <col:22, col:29> col:29 __size 'size_t':'unsigned long'
 
-1 2
+# (placeholder) | |-BuiltinAttr 0xd8c7e80 <<invalid sloc>> Inherited Implicit 792
 
-/usr/include/stdlib.h:521:12 jrand48_r 'int (unsigned short *, struct drand48_data *restrict, long *restrict)' extern
+# (placeholder) | |-NoThrowAttr 0xd8c7e00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__xsubi 'unsigned short *':'unsigned short *'
+# (placeholder) | `-RestrictAttr 0xd8c7e58 <line:281:47> malloc
 
-__buffer 'struct drand48_data *restrict'
+# (placeholder) |-FunctionDecl 0xd8c8050 </usr/include/stdlib.h:543:14> col:14 implicit calloc 'void *(unsigned long, unsigned long)' extern
 
-__result 'long *restrict'
+# (placeholder) | |-ParmVarDecl 0xd8c8148 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8c81b0 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | `-BuiltinAttr 0xd8c80f0 <<invalid sloc>> Implicit 789
 
-1 2
+# (placeholder) |-FunctionDecl 0xd8c8228 prev 0xd8c8050 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdlib.h:543:14 calloc 'void *(unsigned long, unsigned long)' extern
 
-/usr/include/stdlib.h:527:12 srand48_r 'int (long, struct drand48_data *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c7eb8 <col:22, col:29> col:29 __nmemb 'size_t':'unsigned long'
 
-__seedval 'long'
+# (placeholder) | |-ParmVarDecl 0xd8c7f30 <col:38, col:45> col:45 __size 'size_t':'unsigned long'
 
-__buffer 'struct drand48_data *'
+# (placeholder) | |-BuiltinAttr 0xd8c8358 <<invalid sloc>> Inherited Implicit 789
 
+# (placeholder) | |-NoThrowAttr 0xd8c82d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-RestrictAttr 0xd8c8330 <line:281:47> malloc
 
-2
+# (placeholder) |-FunctionDecl 0xd8c8550 </usr/include/stdlib.h:551:14> col:14 implicit realloc 'void *(void *, unsigned long)' extern
 
-/usr/include/stdlib.h:530:12 seed48_r 'int (unsigned short *, struct drand48_data *)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c8648 <<invalid sloc>> <invalid sloc> 'void *'
 
-__seed16v 'unsigned short *':'unsigned short *'
+# (placeholder) | |-ParmVarDecl 0xd8c86b0 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__buffer 'struct drand48_data *'
+# (placeholder) | `-BuiltinAttr 0xd8c85f0 <<invalid sloc>> Implicit 793
 
+# (placeholder) |-FunctionDecl 0xd8c8728 prev 0xd8c8550 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:407:43> /usr/include/stdlib.h:551:14 realloc 'void *(void *, unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8c83c0 <col:23, col:29> col:29 __ptr 'void *'
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd8c8438 <col:36, col:43> col:43 __size 'size_t':'unsigned long'
 
-/usr/include/stdlib.h:533:12 lcong48_r 'int (unsigned short *, struct drand48_data *)' extern
+# (placeholder) | |-BuiltinAttr 0xd8c8860 <<invalid sloc>> Inherited Implicit 793
 
-__param 'unsigned short *':'unsigned short *'
+# (placeholder) | |-NoThrowAttr 0xd8c87d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__buffer 'struct drand48_data *'
+# (placeholder) | `-WarnUnusedResultAttr 0xd8c8830 <line:407:20> warn_unused_result ""
 
+# (placeholder) |-FunctionDecl 0xd8c8968 </usr/include/stdlib.h:555:13> col:13 implicit free 'void (void *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8c8a60 <<invalid sloc>> <invalid sloc> 'void *'
 
-1 2
+# (placeholder) | `-BuiltinAttr 0xd8c8a08 <<invalid sloc>> Implicit 794
 
-implicit malloc 'void *(unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd8c8ad0 prev 0xd8c8968 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:555:13 free 'void (void *)' extern
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8c88a0 <col:19, col:25> col:25 __ptr 'void *'
 
-Implicit 792
+# (placeholder) | |-BuiltinAttr 0xd8c8bd0 <<invalid sloc>> Inherited Implicit 794
 
-prev 0x596ea0 /usr/include/stdlib.h:540:14 malloc 'void *(unsigned long)' extern
+# (placeholder) | `-NoThrowAttr 0xd8c8b78 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__size 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8c8e30 </usr/include/stdlib.h:563:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:407:43> /usr/include/stdlib.h:563:14 reallocarray 'void *(void *, size_t, size_t)' extern
 
-Inherited Implicit 792
+# (placeholder) | |-ParmVarDecl 0xd8c8c10 <col:28, col:34> col:34 __ptr 'void *'
 
+# (placeholder) | |-ParmVarDecl 0xd8c8c88 <col:41, col:48> col:48 __nmemb 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8c8d00 <col:57, col:64> col:64 __size 'size_t':'unsigned long'
 
-malloc
+# (placeholder) | |-NoThrowAttr 0xd8c8ee8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit calloc 'void *(unsigned long, unsigned long)' extern
+# (placeholder) | `-WarnUnusedResultAttr 0xd8c8f40 <line:407:20> warn_unused_result ""
 
-<invalid sloc> 'unsigned long'
+# (placeholder) |-FunctionDecl 0xd8c9120 prev 0xd8c8e30 </usr/include/stdlib.h:569:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:569:14 reallocarray 'void *(void *, size_t, size_t)' extern
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8c8f88 <col:28, col:34> col:34 __ptr 'void *'
 
-Implicit 789
+# (placeholder) | |-ParmVarDecl 0xd8c9000 <col:41, col:48> col:48 __nmemb 'size_t':'unsigned long'
 
-prev 0x597330 /usr/include/stdlib.h:543:14 calloc 'void *(unsigned long, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c9078 <col:57, col:64> col:64 __size 'size_t':'unsigned long'
 
-__nmemb 'size_t':'unsigned long'
+# (placeholder) | |-WarnUnusedResultAttr 0xd8c9230 </usr/include/aarch64-linux-gnu/sys/cdefs.h:407:20> Inherited warn_unused_result ""
 
-__size 'size_t':'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd8c91d8 <line:79:35>
 
-Inherited Implicit 789
+# (placeholder) |-FunctionDecl 0xd8c9308 </usr/include/alloca.h:32:14> col:14 implicit alloca 'void *(unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd91fdc8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | `-BuiltinAttr 0xd91fd70 <<invalid sloc>> Implicit 865
 
-malloc
+# (placeholder) |-FunctionDecl 0xd91fe38 prev 0xd8c9308 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/alloca.h:32:14 alloca 'void *(unsigned long)' extern
 
-implicit realloc 'void *(void *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd8c9270 <col:22, col:29> col:29 __size 'size_t':'unsigned long'
 
-<invalid sloc> 'void *'
+# (placeholder) | |-BuiltinAttr 0xd91ff38 <<invalid sloc>> Inherited Implicit 865
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd91fee0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 793
+# (placeholder) |-FunctionDecl 0xd920008 </usr/include/stdlib.h:580:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdlib.h:580:14 valloc 'void *(size_t)' extern
 
-prev 0x597810 /usr/include/stdlib.h:551:14 realloc 'void *(void *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd91ff70 <col:22, col:29> col:29 __size 'size_t':'unsigned long'
 
-__ptr 'void *'
+# (placeholder) | |-NoThrowAttr 0xd9200b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__size 'size_t':'unsigned long'
+# (placeholder) | `-RestrictAttr 0xd920108 <line:281:47> malloc
 
-Inherited Implicit 793
+# (placeholder) |-FunctionDecl 0xd9203b0 </usr/include/stdlib.h:586:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:586:12 posix_memalign 'int (void **, size_t, size_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd920170 <col:28, col:35> col:35 __memptr 'void **'
 
+# (placeholder) | |-ParmVarDecl 0xd9201e8 <col:45, col:52> col:52 __alignment 'size_t':'unsigned long'
 
-warn_unused_result ""
+# (placeholder) | |-ParmVarDecl 0xd920260 <col:65, col:72> col:72 __size 'size_t':'unsigned long'
 
-implicit free 'void (void *)' extern
+# (placeholder) | |-NoThrowAttr 0xd920468 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'void *'
+# (placeholder) | `-NonNullAttr 0xd9204c0 <line:384:57, /usr/include/stdlib.h:587:27> 1
 
-Implicit 794
+# (placeholder) |-FunctionDecl 0xd920640 <line:592:14> col:14 implicit aligned_alloc 'void *(unsigned long, unsigned long)' extern
 
-prev 0x597c28 /usr/include/stdlib.h:555:13 free 'void (void *)' extern
+# (placeholder) | |-ParmVarDecl 0xd920738 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__ptr 'void *'
+# (placeholder) | |-ParmVarDecl 0xd9207a0 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-Inherited Implicit 794
+# (placeholder) | |-BuiltinAttr 0xd9206e0 <<invalid sloc>> Implicit 802
 
+# (placeholder) | `-AllocAlignAttr 0xd920818 <col:14> Implicit 1
 
+# (placeholder) |-FunctionDecl 0xd920840 prev 0xd920640 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:299:41> /usr/include/stdlib.h:592:14 aligned_alloc 'void *(unsigned long, unsigned long)' extern
 
-/usr/include/stdlib.h:563:14 reallocarray 'void *(void *, size_t, size_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd920508 <col:29, col:36> col:36 __alignment 'size_t':'unsigned long'
 
-__ptr 'void *'
+# (placeholder) | |-ParmVarDecl 0xd920580 <col:49, col:56> col:56 __size 'size_t':'unsigned long'
 
-__nmemb 'size_t':'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd920998 <<invalid sloc>> Inherited Implicit 802
 
-__size 'size_t':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd9208f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-RestrictAttr 0xd920948 <line:281:47> malloc
 
+# (placeholder) | `-AllocAlignAttr 0xd920970 <line:299:19, /usr/include/stdlib.h:593:64> 1
 
-warn_unused_result ""
+# (placeholder) |-FunctionDecl 0xd920ab8 <line:598:13> col:13 implicit abort 'void (void) __attribute__((noreturn))' extern
 
-prev 0x598110 /usr/include/stdlib.h:569:14 reallocarray 'void *(void *, size_t, size_t)' extern
+# (placeholder) | `-BuiltinAttr 0xd920b58 <<invalid sloc>> Implicit 788
 
-__ptr 'void *'
+# (placeholder) |-FunctionDecl 0xd920bb0 prev 0xd920ab8 <col:1, col:63> col:13 abort 'void (void) __attribute__((noreturn))' extern
 
-__nmemb 'size_t':'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd920ca8 <<invalid sloc>> Inherited Implicit 788
 
-__size 'size_t':'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd920c50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited warn_unused_result ""
+# (placeholder) |-FunctionDecl 0xd920f50 </usr/include/stdlib.h:602:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:602:12 atexit 'int (void (*)(void))' extern
 
+# (placeholder) | |-ParmVarDecl 0xd920e38 <col:20, col:40> col:27 __func 'void (*)(void)'
 
+# (placeholder) | |-NoThrowAttr 0xd920ff8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit alloca 'void *(unsigned long)' extern
+# (placeholder) | `-NonNullAttr 0xd921050 <line:384:57, /usr/include/stdlib.h:602:64> 1
 
-<invalid sloc> 'unsigned long'
+# (placeholder) |-FunctionDecl 0xd9211e8 <line:610:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:610:12 at_quick_exit 'int (void (*)(void))' extern
 
-Implicit 865
+# (placeholder) | |-ParmVarDecl 0xd921130 <col:27, col:47> col:34 __func 'void (*)(void)'
 
-prev 0x5985e8 /usr/include/alloca.h:32:14 alloca 'void *(unsigned long)' extern
+# (placeholder) | |-NoThrowAttr 0xd921290 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__size 'size_t':'unsigned long'
+# (placeholder) | `-NonNullAttr 0xd9212e8 <line:384:57, /usr/include/stdlib.h:610:71> 1
 
-Inherited Implicit 865
+# (placeholder) |-FunctionDecl 0xd9216f0 <line:617:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:617:12 on_exit 'int (void (*)(int, void *), void *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd921538 <col:21, col:62> col:28 __func 'void (*)(int, void *)'
 
+# (placeholder) | |-ParmVarDecl 0xd9215b8 <col:65, col:71> col:71 __arg 'void *'
 
-/usr/include/stdlib.h:580:14 valloc 'void *(size_t)' extern
+# (placeholder) | |-NoThrowAttr 0xd9217a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__size 'size_t':'unsigned long'
+# (placeholder) | `-NonNullAttr 0xd9217f8 <line:384:57, /usr/include/stdlib.h:618:27> 1
 
+# (placeholder) |-FunctionDecl 0xd921948 <line:624:13> col:13 implicit exit 'void (int) __attribute__((noreturn))' extern
 
+# (placeholder) | |-ParmVarDecl 0xd921a40 <<invalid sloc>> <invalid sloc> 'int'
 
-malloc
+# (placeholder) | `-BuiltinAttr 0xd9219e8 <<invalid sloc>> Implicit 790
 
-/usr/include/stdlib.h:586:12 posix_memalign 'int (void **, size_t, size_t)' extern
+# (placeholder) |-FunctionDecl 0xd921ab0 prev 0xd921948 <col:1, col:70> col:13 exit 'void (int) __attribute__((noreturn))' extern
 
-__memptr 'void **'
+# (placeholder) | |-ParmVarDecl 0xd921850 <col:19, col:23> col:23 __status 'int'
 
-__alignment 'size_t':'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd921bb0 <<invalid sloc>> Inherited Implicit 790
 
-__size 'size_t':'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd921b58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd921c80 </usr/include/stdlib.h:630:1, col:76> col:13 quick_exit 'void (int) __attribute__((noreturn))' extern
 
+# (placeholder) | |-ParmVarDecl 0xd921bf0 <col:25, col:29> col:29 __status 'int'
 
-1
+# (placeholder) | `-NoThrowAttr 0xd921d28 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit aligned_alloc 'void *(unsigned long, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd921e38 </usr/include/stdlib.h:636:13> col:13 implicit _Exit 'void (int) __attribute__((noreturn))' extern
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd921f30 <<invalid sloc>> <invalid sloc> 'int'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | `-BuiltinAttr 0xd921ed8 <<invalid sloc>> Implicit 791
 
-Implicit 802
+# (placeholder) |-FunctionDecl 0xd921fa0 prev 0xd921e38 <col:1, col:71> col:13 _Exit 'void (int) __attribute__((noreturn))' extern
 
-Implicit 1
+# (placeholder) | |-ParmVarDecl 0xd921da8 <col:20, col:24> col:24 __status 'int'
 
-prev 0x5f5410 /usr/include/stdlib.h:592:14 aligned_alloc 'void *(unsigned long, unsigned long)' extern
+# (placeholder) | |-BuiltinAttr 0xd9220a0 <<invalid sloc>> Inherited Implicit 791
 
-__alignment 'size_t':'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd922048 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__size 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd9221d0 </usr/include/stdlib.h:641:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:641:14 getenv 'char *(const char *)' extern
 
-Inherited Implicit 802
+# (placeholder) | |-ParmVarDecl 0xd9220e0 <col:22, col:34> col:34 __name 'const char *'
 
+# (placeholder) | |-NoThrowAttr 0xd922278 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd9222d0 <line:384:57, /usr/include/stdlib.h:641:63> 1
 
-malloc
+# (placeholder) |-FunctionDecl 0xd922410 <line:654:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:654:12 putenv 'int (char *)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd922320 <col:20, col:26> col:26 __string 'char *'
 
-implicit abort 'void (void) __attribute__((noreturn))' extern
+# (placeholder) | |-NoThrowAttr 0xd9224b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 788
+# (placeholder) | `-NonNullAttr 0xd922510 <line:384:57, /usr/include/stdlib.h:654:57> 1
 
-prev 0x5f5888 abort 'void (void) __attribute__((noreturn))' extern
+# (placeholder) |-FunctionDecl 0xd922770 <line:660:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:660:12 setenv 'int (const char *, const char *, int)' extern
 
-Inherited Implicit 788
+# (placeholder) | |-ParmVarDecl 0xd922560 <col:20, col:32> col:32 __name 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd9225e0 <col:40, col:52> col:52 __value 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd922660 <col:61, col:65> col:65 __replace 'int'
 
-/usr/include/stdlib.h:602:12 atexit 'int (void (*)(void))' extern
+# (placeholder) | |-NoThrowAttr 0xd922828 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__func 'void (*)(void)'
+# (placeholder) | `-NonNullAttr 0xd922880 <line:384:57, /usr/include/stdlib.h:661:27> 2
 
+# (placeholder) |-FunctionDecl 0xd922988 <line:664:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:664:12 unsetenv 'int (const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9228d0 <col:22, col:34> col:34 __name 'const char *'
 
-1
+# (placeholder) | |-NoThrowAttr 0xd922a30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:610:12 at_quick_exit 'int (void (*)(void))' extern
+# (placeholder) | `-NonNullAttr 0xd922a88 <line:384:57, /usr/include/stdlib.h:664:63> 1
 
-__func 'void (*)(void)'
+# (placeholder) |-FunctionDecl 0xd922b68 <line:671:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:671:12 clearenv 'int (void)' extern
 
+# (placeholder) | `-NoThrowAttr 0xd922c08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd923e00 </usr/include/stdlib.h:682:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:682:14 mktemp 'char *(char *)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd922c78 <col:22, col:28> col:28 __template 'char *'
 
-/usr/include/stdlib.h:617:12 on_exit 'int (void (*)(int, void *), void *)' extern
+# (placeholder) | |-NoThrowAttr 0xd923ea8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__func 'void (*)(int, void *)'
+# (placeholder) | `-NonNullAttr 0xd923f00 <line:384:57, /usr/include/stdlib.h:682:61> 1
 
-__arg 'void *'
+# (placeholder) |-FunctionDecl 0xd924008 <line:695:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:695:12 mkstemp 'int (char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd923f50 <col:21, col:27> col:27 __template 'char *'
 
+# (placeholder) | `-NonNullAttr 0xd9240b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:384:57, /usr/include/stdlib.h:695:52> 1
 
-1
+# (placeholder) |-FunctionDecl 0xd9242b0 <line:717:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:717:12 mkstemps 'int (char *, int)' extern
 
-implicit exit 'void (int) __attribute__((noreturn))' extern
+# (placeholder) | |-ParmVarDecl 0xd924130 <col:22, col:28> col:28 __template 'char *'
 
-<invalid sloc> 'int'
+# (placeholder) | |-ParmVarDecl 0xd9241b0 <col:40, col:44> col:44 __suffixlen 'int'
 
-Implicit 790
+# (placeholder) | `-NonNullAttr 0xd924360 </usr/include/aarch64-linux-gnu/sys/cdefs.h:384:57, /usr/include/stdlib.h:717:70> 1
 
-prev 0x5f7738 exit 'void (int) __attribute__((noreturn))' extern
+# (placeholder) |-FunctionDecl 0xd924498 <line:738:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:738:14 mkdtemp 'char *(char *)' extern
 
-__status 'int'
+# (placeholder) | |-ParmVarDecl 0xd9243e0 <col:23, col:29> col:29 __template 'char *'
 
-Inherited Implicit 790
+# (placeholder) | |-NoThrowAttr 0xd924540 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd924598 <line:384:57, /usr/include/stdlib.h:738:62> 1
 
+# (placeholder) |-FunctionDecl 0xd924688 <line:791:1, col:41> col:12 system 'int (const char *)' extern
 
-quick_exit 'void (int) __attribute__((noreturn))' extern
+# (placeholder) | `-ParmVarDecl 0xd9245f0 <col:20, col:32> col:32 __command 'const char *'
 
-__status 'int'
+# (placeholder) |-FunctionDecl 0xd9248e0 <line:808:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:808:14 realpath 'char *(const char *restrict, char *restrict)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd924748 <col:24, col:47> col:47 __name 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd9247c8 <line:809:10, col:27> col:27 __resolved 'char *restrict'
 
-implicit _Exit 'void (int) __attribute__((noreturn))' extern
+# (placeholder) | `-NoThrowAttr 0xd924990 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'int'
+# (placeholder) |-TypedefDecl 0xd924c00 </usr/include/stdlib.h:816:1, col:57> col:15 referenced __compar_fn_t 'int (*)(const void *, const void *)'
 
-Implicit 791
+# (placeholder) | `-PointerType 0xd924b90 'int (*)(const void *, const void *)'
 
-prev 0x5f7c18 _Exit 'void (int) __attribute__((noreturn))' extern
+# (placeholder) |   `-ParenType 0xd924b30 'int (const void *, const void *)' sugar
 
-__status 'int'
+# (placeholder) |     `-FunctionProtoType 0xd924af0 'int (const void *, const void *)' cdecl
 
-Inherited Implicit 791
+# (placeholder) |       |-BuiltinType 0xd7ad350 'int'
 
+# (placeholder) |       |-PointerType 0xd8d07d0 'const void *'
 
+# (placeholder) |       | `-QualType 0xd7ad2b1 'const void' const
 
-/usr/include/stdlib.h:641:14 getenv 'char *(const char *)' extern
+# (placeholder) |       |   `-BuiltinType 0xd7ad2b0 'void'
 
-__name 'const char *'
+# (placeholder) |       `-PointerType 0xd8d07d0 'const void *'
 
+# (placeholder) |         `-QualType 0xd7ad2b1 'const void' const
 
+# (placeholder) |           `-BuiltinType 0xd7ad2b0 'void'
 
-1
+# (placeholder) |-FunctionDecl 0xd8cee20 <line:828:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:828:14 bsearch 'void *(const void *, const void *, size_t, size_t, __compar_fn_t)' extern
 
-/usr/include/stdlib.h:654:12 putenv 'int (char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd924c70 <col:23, col:35> col:35 __key 'const void *'
 
-__string 'char *'
+# (placeholder) | |-ParmVarDecl 0xd924cf0 <col:42, col:54> col:54 __base 'const void *'
 
+# (placeholder) | |-ParmVarDecl 0xd924d68 <line:829:9, col:16> col:16 __nmemb 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8cebc0 <col:25, col:32> col:32 __size 'size_t':'unsigned long'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8cec60 <col:40, col:54> col:54 __compar '__compar_fn_t':'int (*)(const void *, const void *)'
 
-/usr/include/stdlib.h:660:12 setenv 'int (const char *, const char *, int)' extern
+# (placeholder) | `-NonNullAttr 0xd8ceee8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:384:57, /usr/include/stdlib.h:830:25> 1 2 5
 
-__name 'const char *'
+# (placeholder) |-FunctionDecl 0xd8cf268 <line:838:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:838:13 qsort 'void (void *, size_t, size_t, __compar_fn_t)' extern
 
-__value 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8cef78 <col:20, col:26> col:26 __base 'void *'
 
-__replace 'int'
+# (placeholder) | |-ParmVarDecl 0xd8ceff0 <col:34, col:41> col:41 __nmemb 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8cf068 <col:50, col:57> col:57 __size 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd8cf0e0 <line:839:6, col:20> col:20 __compar '__compar_fn_t':'int (*)(const void *, const void *)'
 
-2
+# (placeholder) | `-NonNullAttr 0xd8cf328 </usr/include/aarch64-linux-gnu/sys/cdefs.h:384:57, /usr/include/stdlib.h:839:46> 1 4
 
-/usr/include/stdlib.h:664:12 unsetenv 'int (const char *)' extern
+# (placeholder) |-FunctionDecl 0xd8cf448 <line:848:12> col:12 implicit abs 'int (int)' extern
 
-__name 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8cf540 <<invalid sloc>> <invalid sloc> 'int'
 
+# (placeholder) | |-BuiltinAttr 0xd8cf4e8 <<invalid sloc>> Implicit 916
 
+# (placeholder) | |-NoThrowAttr 0xd8cf5b0 <col:12> Implicit
 
-1
+# (placeholder) | `-ConstAttr 0xd8cf5d8 <col:12> Implicit
 
-/usr/include/stdlib.h:671:12 clearenv 'int (void)' extern
+# (placeholder) |-FunctionDecl 0xd8cf600 prev 0xd8cf448 <col:1, col:60> col:12 abs 'int (int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8cf3b0 <col:17, col:21> col:21 __x 'int'
 
+# (placeholder) | |-BuiltinAttr 0xd8cf728 <<invalid sloc>> Inherited Implicit 916
 
-/usr/include/stdlib.h:682:14 mktemp 'char *(char *)' extern
+# (placeholder) | |-NoThrowAttr 0xd8cf6a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__template 'char *'
+# (placeholder) | `-ConstAttr 0xd8cf700 </usr/include/stdlib.h:848:50>
 
+# (placeholder) |-FunctionDecl 0xd8cf830 <line:849:17> col:17 implicit labs 'long (long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8cf928 <<invalid sloc>> <invalid sloc> 'long'
 
-1
+# (placeholder) | |-BuiltinAttr 0xd8cf8d0 <<invalid sloc>> Implicit 917
 
-/usr/include/stdlib.h:695:12 mkstemp 'int (char *)' extern
+# (placeholder) | |-NoThrowAttr 0xd8cf998 <col:17> Implicit
 
-__template 'char *'
+# (placeholder) | `-ConstAttr 0xd8cf9c0 <col:17> Implicit
 
-1
+# (placeholder) |-FunctionDecl 0xd8cf9e8 prev 0xd8cf830 <col:1, col:71> col:17 labs 'long (long)' extern
 
-/usr/include/stdlib.h:717:12 mkstemps 'int (char *, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd8cf768 <col:23, col:32> col:32 __x 'long'
 
-__template 'char *'
+# (placeholder) | |-BuiltinAttr 0xd8cfb10 <<invalid sloc>> Inherited Implicit 917
 
-__suffixlen 'int'
+# (placeholder) | |-NoThrowAttr 0xd8cfa90 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1
+# (placeholder) | `-ConstAttr 0xd8cfae8 </usr/include/stdlib.h:849:61>
 
-/usr/include/stdlib.h:738:14 mkdtemp 'char *(char *)' extern
+# (placeholder) |-FunctionDecl 0xd926e80 <line:852:36> col:36 implicit llabs 'long long (long long)' extern
 
-__template 'char *'
+# (placeholder) | |-ParmVarDecl 0xd926f78 <<invalid sloc>> <invalid sloc> 'long long'
 
+# (placeholder) | |-BuiltinAttr 0xd926f20 <<invalid sloc>> Implicit 918
 
+# (placeholder) | |-NoThrowAttr 0xd926fe8 <col:36> Implicit
 
-1
+# (placeholder) | `-ConstAttr 0xd927010 <col:36> Implicit
 
-system 'int (const char *)' extern
+# (placeholder) |-FunctionDecl 0xd927038 prev 0xd926e80 <col:15, line:853:40> line:852:36 llabs 'long long (long long)' extern
 
-__command 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8cfb50 <col:43, col:57> col:57 __x 'long long'
 
-/usr/include/stdlib.h:808:14 realpath 'char *(const char *restrict, char *restrict)' extern
+# (placeholder) | |-BuiltinAttr 0xd927160 <<invalid sloc>> Inherited Implicit 918
 
-__name 'const char *restrict'
+# (placeholder) | |-NoThrowAttr 0xd9270e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__resolved 'char *restrict'
+# (placeholder) | `-ConstAttr 0xd927138 </usr/include/stdlib.h:853:30>
 
+# (placeholder) |-FunctionDecl 0xd927358 <line:860:1, line:861:40> line:860:14 div 'div_t (int, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9271c8 <col:19, col:23> col:23 __numer 'int'
 
-referenced __compar_fn_t 'int (*)(const void *, const void *)'
+# (placeholder) | |-ParmVarDecl 0xd927248 <col:32, col:36> col:36 __denom 'int'
 
-'int (*)(const void *, const void *)'
+# (placeholder) | |-NoThrowAttr 0xd927408 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'int (const void *, const void *)' sugar
+# (placeholder) | `-ConstAttr 0xd927460 </usr/include/stdlib.h:861:30>
 
-'int (const void *, const void *)' cdecl
+# (placeholder) |-FunctionDecl 0xd927658 <line:862:1, line:863:40> line:862:15 ldiv 'ldiv_t (long, long)' extern
 
-'int'
+# (placeholder) | |-ParmVarDecl 0xd9274c8 <col:21, col:30> col:30 __numer 'long'
 
-'const void *'
+# (placeholder) | |-ParmVarDecl 0xd927548 <col:39, col:48> col:48 __denom 'long'
 
-'const void' const
+# (placeholder) | |-NoThrowAttr 0xd927708 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'void'
+# (placeholder) | `-ConstAttr 0xd927760 </usr/include/stdlib.h:863:30>
 
-'const void *'
+# (placeholder) |-FunctionDecl 0xd927958 <line:866:15, line:868:40> line:866:30 lldiv 'lldiv_t (long long, long long)' extern
 
-'const void' const
+# (placeholder) | |-ParmVarDecl 0xd9277c8 <col:37, col:51> col:51 __numer 'long long'
 
-'void'
+# (placeholder) | |-ParmVarDecl 0xd927848 <line:867:9, col:23> col:23 __denom 'long long'
 
-/usr/include/stdlib.h:828:14 bsearch 'void *(const void *, const void *, size_t, size_t, __compar_fn_t)' extern
+# (placeholder) | |-NoThrowAttr 0xd927a08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__key 'const void *'
+# (placeholder) | `-ConstAttr 0xd927a60 </usr/include/stdlib.h:868:30>
 
-__base 'const void *'
+# (placeholder) |-FunctionDecl 0xd929e30 <line:880:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:880:14 ecvt 'char *(double, int, int *restrict, int *restrict)' extern
 
-__nmemb 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd927aa0 <col:20, col:27> col:27 __value 'double'
 
-__size 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd927b20 <col:36, col:40> col:40 __ndigit 'int'
 
-__compar '__compar_fn_t':'int (*)(const void *, const void *)'
+# (placeholder) | |-ParmVarDecl 0xd927ba0 <col:50, col:66> col:66 __decpt 'int *restrict'
 
-1 2 5
+# (placeholder) | |-ParmVarDecl 0xd927c20 <line:881:6, col:22> col:22 __sign 'int *restrict'
 
-/usr/include/stdlib.h:838:13 qsort 'void (void *, size_t, size_t, __compar_fn_t)' extern
+# (placeholder) | |-NoThrowAttr 0xd929ef0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__base 'void *'
+# (placeholder) | `-NonNullAttr 0xd929f48 <line:384:57, /usr/include/stdlib.h:881:54> 3 4
 
-__nmemb 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd92a210 <line:886:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:886:14 fcvt 'char *(double, int, int *restrict, int *restrict)' extern
 
-__size 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd929fa0 <col:20, col:27> col:27 __value 'double'
 
-__compar '__compar_fn_t':'int (*)(const void *, const void *)'
+# (placeholder) | |-ParmVarDecl 0xd92a020 <col:36, col:40> col:40 __ndigit 'int'
 
-1 4
+# (placeholder) | |-ParmVarDecl 0xd92a0a0 <col:50, col:66> col:66 __decpt 'int *restrict'
 
-implicit abs 'int (int)' extern
+# (placeholder) | |-ParmVarDecl 0xd92a120 <line:887:6, col:22> col:22 __sign 'int *restrict'
 
-<invalid sloc> 'int'
+# (placeholder) | |-NoThrowAttr 0xd92a2d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 916
+# (placeholder) | `-NonNullAttr 0xd92a328 <line:384:57, /usr/include/stdlib.h:887:54> 3 4
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd92a590 <line:892:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:892:14 gcvt 'char *(double, int, char *)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd92a380 <col:20, col:27> col:27 __value 'double'
 
-prev 0x5fb4c0 abs 'int (int)' extern
+# (placeholder) | |-ParmVarDecl 0xd92a400 <col:36, col:40> col:40 __ndigit 'int'
 
-__x 'int'
+# (placeholder) | |-ParmVarDecl 0xd92a480 <col:50, col:56> col:56 __buf 'char *'
 
-Inherited Implicit 916
+# (placeholder) | |-NoThrowAttr 0xd92a648 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd92a6a0 <line:384:57, /usr/include/stdlib.h:893:27> 3
 
+# (placeholder) |-FunctionDecl 0xd92aa00 <line:898:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:898:14 qecvt 'char *(long double, int, int *restrict, int *restrict)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd92a6f0 <col:21, col:33> col:33 __value 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd92a770 <col:42, col:46> col:46 __ndigit 'int'
 
-implicit labs 'long (long)' extern
+# (placeholder) | |-ParmVarDecl 0xd92a7f0 <line:899:7, col:23> col:23 __decpt 'int *restrict'
 
-<invalid sloc> 'long'
+# (placeholder) | |-ParmVarDecl 0xd92a870 <col:32, col:48> col:48 __sign 'int *restrict'
 
-Implicit 917
+# (placeholder) | |-NoThrowAttr 0xd92aac0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) | `-NonNullAttr 0xd92ab18 <line:384:57, /usr/include/stdlib.h:900:30> 3 4
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd92ae40 <line:901:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:901:14 qfcvt 'char *(long double, int, int *restrict, int *restrict)' extern
 
-prev 0x5fb8b0 labs 'long (long)' extern
+# (placeholder) | |-ParmVarDecl 0xd92ab70 <col:21, col:33> col:33 __value 'long double'
 
-__x 'long'
+# (placeholder) | |-ParmVarDecl 0xd92abf0 <col:42, col:46> col:46 __ndigit 'int'
 
-Inherited Implicit 917
+# (placeholder) | |-ParmVarDecl 0xd92ac70 <line:902:7, col:23> col:23 __decpt 'int *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92acf0 <col:32, col:48> col:48 __sign 'int *restrict'
 
+# (placeholder) | |-NoThrowAttr 0xd92af00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd92af58 <line:384:57, /usr/include/stdlib.h:903:30> 3 4
 
+# (placeholder) |-FunctionDecl 0xd92b1c0 <line:904:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:904:14 qgcvt 'char *(long double, int, char *)' extern
 
-implicit llabs 'long long (long long)' extern
+# (placeholder) | |-ParmVarDecl 0xd92afb0 <col:21, col:33> col:33 __value 'long double'
 
-<invalid sloc> 'long long'
+# (placeholder) | |-ParmVarDecl 0xd92b030 <col:42, col:46> col:46 __ndigit 'int'
 
-Implicit 918
+# (placeholder) | |-ParmVarDecl 0xd92b0b0 <col:56, col:62> col:62 __buf 'char *'
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd92b278 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) | `-NonNullAttr 0xd92b2d0 <line:384:57, /usr/include/stdlib.h:905:27> 3
 
-prev 0x5fbca0 llabs 'long long (long long)' extern
+# (placeholder) |-FunctionDecl 0xd92b770 <line:910:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:910:12 ecvt_r 'int (double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
 
-__x 'long long'
+# (placeholder) | |-ParmVarDecl 0xd92b320 <col:20, col:27> col:27 __value 'double'
 
-Inherited Implicit 918
+# (placeholder) | |-ParmVarDecl 0xd92b3a0 <col:36, col:40> col:40 __ndigit 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd92b420 <col:50, col:66> col:66 __decpt 'int *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92b4a0 <line:911:6, col:22> col:22 __sign 'int *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92b520 <col:30, col:47> col:47 __buf 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92b598 <line:912:6, col:13> col:13 __len 'size_t':'unsigned long'
 
-div 'div_t (int, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd92b840 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__numer 'int'
+# (placeholder) | `-NonNullAttr 0xd92b898 <line:384:57, /usr/include/stdlib.h:912:47> 3 4 5
 
-__denom 'int'
+# (placeholder) |-FunctionDecl 0xd92bc90 <line:913:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:913:12 fcvt_r 'int (double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd92b8f8 <col:20, col:27> col:27 __value 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd92b978 <col:36, col:40> col:40 __ndigit 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd92b9f8 <col:50, col:66> col:66 __decpt 'int *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92ba78 <line:914:6, col:22> col:22 __sign 'int *restrict'
 
-ldiv 'ldiv_t (long, long)' extern
+# (placeholder) | |-ParmVarDecl 0xd92baf8 <col:30, col:47> col:47 __buf 'char *restrict'
 
-__numer 'long'
+# (placeholder) | |-ParmVarDecl 0xd92bb70 <line:915:6, col:13> col:13 __len 'size_t':'unsigned long'
 
-__denom 'long'
+# (placeholder) | |-NoThrowAttr 0xd92bd60 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd92bdb8 <line:384:57, /usr/include/stdlib.h:915:47> 3 4 5
 
+# (placeholder) |-FunctionDecl 0xd92c2a0 <line:917:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:917:12 qecvt_r 'int (long double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd92be50 <col:21, col:33> col:33 __value 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd92bed0 <col:42, col:46> col:46 __ndigit 'int'
 
-lldiv 'lldiv_t (long long, long long)' extern
+# (placeholder) | |-ParmVarDecl 0xd92bf50 <line:918:7, col:23> col:23 __decpt 'int *restrict'
 
-__numer 'long long'
+# (placeholder) | |-ParmVarDecl 0xd92bfd0 <col:32, col:48> col:48 __sign 'int *restrict'
 
-__denom 'long long'
+# (placeholder) | |-ParmVarDecl 0xd92c050 <line:919:7, col:24> col:24 __buf 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92c0c8 <col:31, col:38> col:38 __len 'size_t':'unsigned long'
 
+# (placeholder) | |-NoThrowAttr 0xd92c370 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd92c3c8 <line:384:57, /usr/include/stdlib.h:920:33> 3 4 5
 
+# (placeholder) |-FunctionDecl 0xd92c7c0 <line:921:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:921:12 qfcvt_r 'int (long double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
 
-/usr/include/stdlib.h:880:14 ecvt 'char *(double, int, int *restrict, int *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd92c428 <col:21, col:33> col:33 __value 'long double'
 
-__value 'double'
+# (placeholder) | |-ParmVarDecl 0xd92c4a8 <col:42, col:46> col:46 __ndigit 'int'
 
-__ndigit 'int'
+# (placeholder) | |-ParmVarDecl 0xd92c528 <line:922:7, col:23> col:23 __decpt 'int *restrict'
 
-__decpt 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd92c5a8 <col:32, col:48> col:48 __sign 'int *restrict'
 
-__sign 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd92c628 <line:923:7, col:24> col:24 __buf 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92c6a0 <col:31, col:38> col:38 __len 'size_t':'unsigned long'
 
+# (placeholder) | |-NoThrowAttr 0xd92c890 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-3 4
+# (placeholder) | `-NonNullAttr 0xd92c8e8 <line:384:57, /usr/include/stdlib.h:924:33> 3 4 5
 
-/usr/include/stdlib.h:886:14 fcvt 'char *(double, int, int *restrict, int *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd92cae0 <line:930:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:930:12 mblen 'int (const char *, size_t)' extern
 
-__value 'double'
+# (placeholder) | |-ParmVarDecl 0xd92c948 <col:19, col:31> col:31 __s 'const char *'
 
-__ndigit 'int'
+# (placeholder) | |-ParmVarDecl 0xd92c9c0 <col:36, col:43> col:43 __n 'size_t':'unsigned long'
 
-__decpt 'int *restrict'
+# (placeholder) | `-NoThrowAttr 0xd92cb90 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__sign 'int *restrict'
+# (placeholder) |-FunctionDecl 0xd92cea0 </usr/include/stdlib.h:933:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:933:12 mbtowc 'int (wchar_t *restrict, const char *restrict, size_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd92cc48 <col:20, col:40> col:40 __pwc 'wchar_t *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92ccc8 <line:934:6, col:29> col:29 __s 'const char *restrict'
 
-3 4
+# (placeholder) | |-ParmVarDecl 0xd92cd40 <col:34, col:41> col:41 __n 'size_t':'unsigned long'
 
-/usr/include/stdlib.h:892:14 gcvt 'char *(double, int, char *)' extern
+# (placeholder) | `-NoThrowAttr 0xd92cf58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__value 'double'
+# (placeholder) |-FunctionDecl 0xd92d160 </usr/include/stdlib.h:937:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:937:12 wctomb 'int (char *, wchar_t)' extern
 
-__ndigit 'int'
+# (placeholder) | |-ParmVarDecl 0xd92cfc8 <col:20, col:26> col:26 __s 'char *'
 
-__buf 'char *'
+# (placeholder) | |-ParmVarDecl 0xd92d040 <col:31, col:39> col:39 __wchar 'wchar_t':'unsigned int'
 
+# (placeholder) | `-NoThrowAttr 0xd92d210 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd92d498 </usr/include/stdlib.h:941:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:941:15 mbstowcs 'size_t (wchar_t *restrict, const char *restrict, size_t)' extern
 
-3
+# (placeholder) | |-ParmVarDecl 0xd92d278 <col:25, col:46> col:46 __pwcs 'wchar_t *restrict'
 
-/usr/include/stdlib.h:898:14 qecvt 'char *(long double, int, int *restrict, int *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd92d2f8 <line:942:4, col:27> col:27 __s 'const char *restrict'
 
-__value 'long double'
+# (placeholder) | |-ParmVarDecl 0xd92d370 <col:32, col:39> col:39 __n 'size_t':'unsigned long'
 
-__ndigit 'int'
+# (placeholder) | `-NoThrowAttr 0xd92d550 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__decpt 'int *restrict'
+# (placeholder) |-FunctionDecl 0xd92d838 </usr/include/stdlib.h:945:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:945:15 wcstombs 'size_t (char *restrict, const wchar_t *restrict, size_t)' extern
 
-__sign 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd92d5c0 <col:25, col:42> col:42 __s 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92d698 <line:946:4, col:30> col:30 __pwcs 'const wchar_t *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92d710 <col:38, col:45> col:45 __n 'size_t':'unsigned long'
 
-3 4
+# (placeholder) | `-NoThrowAttr 0xd92d8f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:901:14 qfcvt 'char *(long double, int, int *restrict, int *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd92da18 </usr/include/stdlib.h:956:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:956:12 rpmatch 'int (const char *)' extern
 
-__value 'long double'
+# (placeholder) | |-ParmVarDecl 0xd92d960 <col:21, col:33> col:33 __response 'const char *'
 
-__ndigit 'int'
+# (placeholder) | |-NoThrowAttr 0xd92dac0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__decpt 'int *restrict'
+# (placeholder) | `-NonNullAttr 0xd92db18 <line:384:57, /usr/include/stdlib.h:956:66> 1
 
-__sign 'int *restrict'
+# (placeholder) |-FunctionDecl 0xd92de70 <line:967:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:967:12 getsubopt 'int (char **restrict, char *const *restrict, char **restrict)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd92db70 <col:23, col:41> col:41 __optionp 'char **restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92dc20 <line:968:9, col:33> col:33 __tokens 'char *const *restrict'
 
-3 4
+# (placeholder) | |-ParmVarDecl 0xd92dca0 <line:969:9, col:27> col:27 __valuep 'char **restrict'
 
-/usr/include/stdlib.h:904:14 qgcvt 'char *(long double, int, char *)' extern
+# (placeholder) | |-NoThrowAttr 0xd92df28 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__value 'long double'
+# (placeholder) | `-NonNullAttr 0xd92df80 <line:384:57, /usr/include/stdlib.h:970:33> 1 2 3
 
-__ndigit 'int'
+# (placeholder) |-FunctionDecl 0xd92e200 <line:1013:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:1013:12 getloadavg 'int (double *, int)' extern
 
-__buf 'char *'
+# (placeholder) | |-ParmVarDecl 0xd92e040 <col:24, col:41> col:31 __loadavg 'double *':'double *'
 
+# (placeholder) | |-ParmVarDecl 0xd92e0c0 <col:44, col:48> col:48 __nelem 'int'
 
+# (placeholder) | |-NoThrowAttr 0xd92e2b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-3
+# (placeholder) | `-NonNullAttr 0xd92e308 <line:384:57, /usr/include/stdlib.h:1014:27> 1
 
-/usr/include/stdlib.h:910:12 ecvt_r 'int (double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
+# (placeholder) |-FunctionDecl 0xd92e5f0 </usr/include/string.h:43:14> col:14 implicit memcpy 'void *(void *, const void *, unsigned long)' extern
 
-__value 'double'
+# (placeholder) | |-ParmVarDecl 0xd92e6e8 <<invalid sloc>> <invalid sloc> 'void *'
 
-__ndigit 'int'
+# (placeholder) | |-ParmVarDecl 0xd92e750 <<invalid sloc>> <invalid sloc> 'const void *'
 
-__decpt 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd92e7b8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__sign 'int *restrict'
+# (placeholder) | `-BuiltinAttr 0xd92e690 <<invalid sloc>> Implicit 803
 
-__buf 'char *restrict'
+# (placeholder) |-FunctionDecl 0xd92e838 prev 0xd92e5f0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:43:14 memcpy 'void *(void *, const void *, unsigned long)' extern
 
-__len 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd92e390 <col:22, col:39> col:39 __dest 'void *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92e410 <col:47, col:70> col:70 __src 'const void *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd92e488 <line:44:8, col:15> col:15 __n 'size_t':'unsigned long'
 
-3 4 5
+# (placeholder) | |-BuiltinAttr 0xd92e988 <<invalid sloc>> Inherited Implicit 803
 
-/usr/include/stdlib.h:913:12 fcvt_r 'int (double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
+# (placeholder) | |-NoThrowAttr 0xd92e8f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__value 'double'
+# (placeholder) | `-NonNullAttr 0xd92e948 <line:384:57, /usr/include/string.h:44:44> 1 2
 
-__ndigit 'int'
+# (placeholder) |-FunctionDecl 0xd92ebf0 <line:47:14> col:14 implicit memmove 'void *(void *, const void *, unsigned long)' extern
 
-__decpt 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd92ece8 <<invalid sloc>> <invalid sloc> 'void *'
 
-__sign 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd92ed50 <<invalid sloc>> <invalid sloc> 'const void *'
 
-__buf 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd92edb8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__len 'size_t':'unsigned long'
+# (placeholder) | `-BuiltinAttr 0xd92ec90 <<invalid sloc>> Implicit 805
 
+# (placeholder) |-FunctionDecl 0xd90ed40 prev 0xd92ebf0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:47:14 memmove 'void *(void *, const void *, unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd92e9c8 <col:23, col:29> col:29 __dest 'void *'
 
-3 4 5
+# (placeholder) | |-ParmVarDecl 0xd92ea48 <col:37, col:49> col:49 __src 'const void *'
 
-/usr/include/stdlib.h:917:12 qecvt_r 'int (long double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd92eac0 <col:56, col:63> col:63 __n 'size_t':'unsigned long'
 
-__value 'long double'
+# (placeholder) | |-BuiltinAttr 0xd90ee88 <<invalid sloc>> Inherited Implicit 805
 
-__ndigit 'int'
+# (placeholder) | |-NoThrowAttr 0xd90edf8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__decpt 'int *restrict'
+# (placeholder) | `-NonNullAttr 0xd90ee50 <line:384:57, /usr/include/string.h:48:30> 1 2
 
-__sign 'int *restrict'
+# (placeholder) |-FunctionDecl 0xd90f1d0 <line:54:14> col:14 implicit memccpy 'void *(void *, const void *, int, unsigned long)' extern
 
-__buf 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd90f2c8 <<invalid sloc>> <invalid sloc> 'void *'
 
-__len 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd90f330 <<invalid sloc>> <invalid sloc> 'const void *'
 
+# (placeholder) | |-ParmVarDecl 0xd90f398 <<invalid sloc>> <invalid sloc> 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd90f400 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-3 4 5
+# (placeholder) | `-BuiltinAttr 0xd90f270 <<invalid sloc>> Implicit 867
 
-/usr/include/stdlib.h:921:12 qfcvt_r 'int (long double, int, int *restrict, int *restrict, char *restrict, size_t)' extern
+# (placeholder) |-FunctionDecl 0xd90f488 prev 0xd90f1d0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:54:14 memccpy 'void *(void *, const void *, int, unsigned long)' extern
 
-__value 'long double'
+# (placeholder) | |-ParmVarDecl 0xd90eec8 <col:23, col:40> col:40 __dest 'void *restrict'
 
-__ndigit 'int'
+# (placeholder) | |-ParmVarDecl 0xd90ef48 <col:48, col:71> col:71 __src 'const void *restrict'
 
-__decpt 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd90efc8 <line:55:9, col:13> col:13 __c 'int'
 
-__sign 'int *restrict'
+# (placeholder) | |-ParmVarDecl 0xd90f040 <col:18, col:25> col:25 __n 'size_t':'unsigned long'
 
-__buf 'char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd90f5d8 <<invalid sloc>> Inherited Implicit 867
 
-__len 'size_t':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd90f548 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd90f5a0 <line:384:57, /usr/include/string.h:56:29> 1 2
 
+# (placeholder) |-FunctionDecl 0xd90f860 <line:61:14> col:14 implicit memset 'void *(void *, int, unsigned long)' extern
 
-3 4 5
+# (placeholder) | |-ParmVarDecl 0xd90f958 <<invalid sloc>> <invalid sloc> 'void *'
 
-/usr/include/stdlib.h:930:12 mblen 'int (const char *, size_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd90f9c0 <<invalid sloc>> <invalid sloc> 'int'
 
-__s 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd90fa28 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | `-BuiltinAttr 0xd90f900 <<invalid sloc>> Implicit 821
 
+# (placeholder) |-FunctionDecl 0xd90faa8 prev 0xd90f860 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:61:14 memset 'void *(void *, int, unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd90f618 <col:22, col:28> col:28 __s 'void *'
 
-/usr/include/stdlib.h:933:12 mbtowc 'int (wchar_t *restrict, const char *restrict, size_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd90f698 <col:33, col:37> col:37 __c 'int'
 
-__pwc 'wchar_t *restrict'
+# (placeholder) | |-ParmVarDecl 0xd90f710 <col:42, col:49> col:49 __n 'size_t':'unsigned long'
 
-__s 'const char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd90fbf8 <<invalid sloc>> Inherited Implicit 821
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd90fb60 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd90fbb8 <line:384:57, /usr/include/string.h:61:75> 1
 
+# (placeholder) |-FunctionDecl 0xd932010 <line:64:12> col:12 implicit memcmp 'int (const void *, const void *, unsigned long)' extern
 
-/usr/include/stdlib.h:937:12 wctomb 'int (char *, wchar_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd932108 <<invalid sloc>> <invalid sloc> 'const void *'
 
-__s 'char *'
+# (placeholder) | |-ParmVarDecl 0xd932170 <<invalid sloc>> <invalid sloc> 'const void *'
 
-__wchar 'wchar_t':'int'
+# (placeholder) | |-ParmVarDecl 0xd9321d8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | `-BuiltinAttr 0xd9320b0 <<invalid sloc>> Implicit 804
 
+# (placeholder) |-FunctionDecl 0xd932258 prev 0xd932010 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:64:12 memcmp 'int (const void *, const void *, unsigned long)' extern
 
-/usr/include/stdlib.h:941:15 mbstowcs 'size_t (wchar_t *restrict, const char *restrict, size_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd90fc38 <col:20, col:32> col:32 __s1 'const void *'
 
-__pwcs 'wchar_t *restrict'
+# (placeholder) | |-ParmVarDecl 0xd90fcb8 <col:38, col:50> col:50 __s2 'const void *'
 
-__s 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd931ea0 <col:56, col:63> col:63 __n 'size_t':'unsigned long'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd9323c8 <<invalid sloc>> Inherited Implicit 804
 
+# (placeholder) | |-NoThrowAttr 0xd932310 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-PureAttr 0xd932368 <line:308:45>
 
-/usr/include/stdlib.h:945:15 wcstombs 'size_t (char *restrict, const wchar_t *restrict, size_t)' extern
+# (placeholder) | `-NonNullAttr 0xd932390 <line:384:57, /usr/include/string.h:65:49> 1 2
 
-__s 'char *restrict'
+# (placeholder) |-FunctionDecl 0xd9325e8 <line:80:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:80:12 __memcmpeq 'int (const void *, const void *, size_t)' extern
 
-__pwcs 'const wchar_t *restrict'
+# (placeholder) | |-ParmVarDecl 0xd932408 <col:24, col:36> col:36 __s1 'const void *'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd932488 <col:42, col:54> col:54 __s2 'const void *'
 
+# (placeholder) | |-ParmVarDecl 0xd932500 <col:60, col:67> col:67 __n 'size_t':'unsigned long'
 
+# (placeholder) | |-NoThrowAttr 0xd9326a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/stdlib.h:956:12 rpmatch 'int (const char *)' extern
+# (placeholder) | |-PureAttr 0xd9326f8 <line:308:45>
 
-__response 'const char *'
+# (placeholder) | `-NonNullAttr 0xd932720 <line:384:57, /usr/include/string.h:81:49> 1 2
 
+# (placeholder) |-FunctionDecl 0xd9329b0 <line:107:14> col:14 implicit memchr 'void *(const void *, int, unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd932aa8 <<invalid sloc>> <invalid sloc> 'const void *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd932b10 <<invalid sloc>> <invalid sloc> 'int'
 
-/usr/include/stdlib.h:967:12 getsubopt 'int (char **restrict, char *const *restrict, char **restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd932b78 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__optionp 'char **restrict'
+# (placeholder) | `-BuiltinAttr 0xd932a50 <<invalid sloc>> Implicit 813
 
-__tokens 'char *const *restrict'
+# (placeholder) |-FunctionDecl 0xd932bf8 prev 0xd9329b0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:107:14 memchr 'void *(const void *, int, unsigned long)' extern
 
-__valuep 'char **restrict'
+# (placeholder) | |-ParmVarDecl 0xd932770 <col:22, col:34> col:34 __s 'const void *'
 
+# (placeholder) | |-ParmVarDecl 0xd9327f0 <col:39, col:43> col:43 __c 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd932868 <col:48, col:55> col:55 __n 'size_t':'unsigned long'
 
-1 2 3
+# (placeholder) | |-BuiltinAttr 0xd932d68 <<invalid sloc>> Inherited Implicit 813
 
-/usr/include/stdlib.h:1013:12 getloadavg 'int (double *, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd932cb0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__loadavg 'double *':'double *'
+# (placeholder) | |-PureAttr 0xd932d08 <line:308:45>
 
-__nelem 'int'
+# (placeholder) | `-NonNullAttr 0xd932d30 <line:384:57, /usr/include/string.h:108:47> 1
 
+# (placeholder) |-FunctionDecl 0xd932fa0 <line:141:14> col:14 implicit strcpy 'char *(char *, const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd933098 <<invalid sloc>> <invalid sloc> 'char *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd933100 <<invalid sloc>> <invalid sloc> 'const char *'
 
-implicit memcpy 'void *(void *, const void *, unsigned long)' extern
+# (placeholder) | `-BuiltinAttr 0xd933040 <<invalid sloc>> Implicit 806
 
-<invalid sloc> 'void *'
+# (placeholder) |-FunctionDecl 0xd933178 prev 0xd932fa0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:141:14 strcpy 'char *(char *, const char *)' extern
 
-<invalid sloc> 'const void *'
+# (placeholder) | |-ParmVarDecl 0xd932da8 <col:22, col:39> col:39 __dest 'char *restrict'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd932e28 <col:47, col:70> col:70 __src 'const char *restrict'
 
-Implicit 803
+# (placeholder) | |-BuiltinAttr 0xd9332b8 <<invalid sloc>> Inherited Implicit 806
 
-prev 0x601300 /usr/include/string.h:43:14 memcpy 'void *(void *, const void *, unsigned long)' extern
+# (placeholder) | |-NoThrowAttr 0xd933228 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__dest 'void *restrict'
+# (placeholder) | `-NonNullAttr 0xd933280 <line:384:57, /usr/include/string.h:142:30> 1 2
 
-__src 'const void *restrict'
+# (placeholder) |-FunctionDecl 0xd933560 <line:144:14> col:14 implicit strncpy 'char *(char *, const char *, unsigned long)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd933658 <<invalid sloc>> <invalid sloc> 'char *'
 
-Inherited Implicit 803
+# (placeholder) | |-ParmVarDecl 0xd9336c0 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd933728 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | `-BuiltinAttr 0xd933600 <<invalid sloc>> Implicit 807
 
-1 2
+# (placeholder) |-FunctionDecl 0xd9337a8 prev 0xd933560 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:144:14 strncpy 'char *(char *, const char *, unsigned long)' extern
 
-implicit memmove 'void *(void *, const void *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd9332f8 <col:23, col:40> col:40 __dest 'char *restrict'
 
-<invalid sloc> 'void *'
+# (placeholder) | |-ParmVarDecl 0xd933378 <line:145:9, col:32> col:32 __src 'const char *restrict'
 
-<invalid sloc> 'const void *'
+# (placeholder) | |-ParmVarDecl 0xd9333f0 <col:39, col:46> col:46 __n 'size_t':'unsigned long'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd9338f8 <<invalid sloc>> Inherited Implicit 807
 
-Implicit 805
+# (placeholder) | |-NoThrowAttr 0xd933860 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x603770 /usr/include/string.h:47:14 memmove 'void *(void *, const void *, unsigned long)' extern
+# (placeholder) | `-NonNullAttr 0xd9338b8 <line:384:57, /usr/include/string.h:146:30> 1 2
 
-__dest 'void *'
+# (placeholder) |-FunctionDecl 0xd933a98 <line:149:14> col:14 implicit strcat 'char *(char *, const char *)' extern
 
-__src 'const void *'
+# (placeholder) | |-ParmVarDecl 0xd933b90 <<invalid sloc>> <invalid sloc> 'char *'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd933bf8 <<invalid sloc>> <invalid sloc> 'const char *'
 
-Inherited Implicit 805
+# (placeholder) | `-BuiltinAttr 0xd933b38 <<invalid sloc>> Implicit 810
 
+# (placeholder) |-FunctionDecl 0xd933c70 prev 0xd933a98 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:149:14 strcat 'char *(char *, const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd933938 <col:22, col:39> col:39 __dest 'char *restrict'
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd9339b8 <col:47, col:70> col:70 __src 'const char *restrict'
 
-implicit memccpy 'void *(void *, const void *, int, unsigned long)' extern
+# (placeholder) | |-BuiltinAttr 0xd933db8 <<invalid sloc>> Inherited Implicit 810
 
-<invalid sloc> 'void *'
+# (placeholder) | |-NoThrowAttr 0xd933d20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const void *'
+# (placeholder) | `-NonNullAttr 0xd933d78 <line:384:57, /usr/include/string.h:150:30> 1 2
 
-<invalid sloc> 'int'
+# (placeholder) |-FunctionDecl 0xd934020 <line:152:14> col:14 implicit strncat 'char *(char *, const char *, unsigned long)' extern
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd934118 <<invalid sloc>> <invalid sloc> 'char *'
 
-Implicit 867
+# (placeholder) | |-ParmVarDecl 0xd934180 <<invalid sloc>> <invalid sloc> 'const char *'
 
-prev 0x603e50 /usr/include/string.h:54:14 memccpy 'void *(void *, const void *, int, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd9341e8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__dest 'void *restrict'
+# (placeholder) | `-BuiltinAttr 0xd9340c0 <<invalid sloc>> Implicit 811
 
-__src 'const void *restrict'
+# (placeholder) |-FunctionDecl 0xd934268 prev 0xd934020 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:152:14 strncat 'char *(char *, const char *, unsigned long)' extern
 
-__c 'int'
+# (placeholder) | |-ParmVarDecl 0xd933df8 <col:23, col:40> col:40 __dest 'char *restrict'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd933ec0 <col:48, col:71> col:71 __src 'const char *restrict'
 
-Inherited Implicit 867
+# (placeholder) | |-ParmVarDecl 0xd933f38 <line:153:9, col:16> col:16 __n 'size_t':'unsigned long'
 
+# (placeholder) | |-BuiltinAttr 0xd9343b8 <<invalid sloc>> Inherited Implicit 811
 
+# (placeholder) | |-NoThrowAttr 0xd934320 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1 2
+# (placeholder) | `-NonNullAttr 0xd934378 <line:384:57, /usr/include/string.h:153:45> 1 2
 
-implicit memset 'void *(void *, int, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd934558 <line:156:12> col:12 implicit strcmp 'int (const char *, const char *)' extern
 
-<invalid sloc> 'void *'
+# (placeholder) | |-ParmVarDecl 0xd934650 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'int'
+# (placeholder) | |-ParmVarDecl 0xd9346b8 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | `-BuiltinAttr 0xd9345f8 <<invalid sloc>> Implicit 808
 
-Implicit 821
+# (placeholder) |-FunctionDecl 0xd934730 prev 0xd934558 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:156:12 strcmp 'int (const char *, const char *)' extern
 
-prev 0x5e55a0 /usr/include/string.h:61:14 memset 'void *(void *, int, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd9343f8 <col:20, col:32> col:32 __s1 'const char *'
 
-__s 'void *'
+# (placeholder) | |-ParmVarDecl 0xd934478 <col:38, col:50> col:50 __s2 'const char *'
 
-__c 'int'
+# (placeholder) | |-BuiltinAttr 0xd934898 <<invalid sloc>> Inherited Implicit 808
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd9347e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 821
+# (placeholder) | |-PureAttr 0xd934838 <line:308:45>
 
+# (placeholder) | `-NonNullAttr 0xd934860 <line:384:57, /usr/include/string.h:157:49> 1 2
 
+# (placeholder) |-FunctionDecl 0xd934b40 <line:159:12> col:12 implicit strncmp 'int (const char *, const char *, unsigned long)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd934c38 <<invalid sloc>> <invalid sloc> 'const char *'
 
-implicit memcmp 'int (const void *, const void *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd934ca0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'const void *'
+# (placeholder) | |-ParmVarDecl 0xd934d08 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-<invalid sloc> 'const void *'
+# (placeholder) | `-BuiltinAttr 0xd934be0 <<invalid sloc>> Implicit 809
 
-<invalid sloc> 'unsigned long'
+# (placeholder) |-FunctionDecl 0xd934d88 prev 0xd934b40 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:159:12 strncmp 'int (const char *, const char *, unsigned long)' extern
 
-Implicit 804
+# (placeholder) | |-ParmVarDecl 0xd9348d8 <col:21, col:33> col:33 __s1 'const char *'
 
-prev 0x5e5be0 /usr/include/string.h:64:12 memcmp 'int (const void *, const void *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd934958 <col:39, col:51> col:51 __s2 'const char *'
 
-__s1 'const void *'
+# (placeholder) | |-ParmVarDecl 0xd9349d0 <col:57, col:64> col:64 __n 'size_t':'unsigned long'
 
-__s2 'const void *'
+# (placeholder) | |-BuiltinAttr 0xd934f08 <<invalid sloc>> Inherited Implicit 809
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd934e40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 804
+# (placeholder) | |-PureAttr 0xd934e98 <line:308:45>
 
+# (placeholder) | `-NonNullAttr 0xd934ed0 <line:384:57, /usr/include/string.h:160:49> 1 2
 
+# (placeholder) |-FunctionDecl 0xd9350a8 <line:163:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:163:12 strcoll 'int (const char *, const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd934f48 <col:21, col:33> col:33 __s1 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd934fc8 <col:39, col:51> col:51 __s2 'const char *'
 
-1 2
+# (placeholder) | |-NoThrowAttr 0xd935158 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/string.h:80:12 __memcmpeq 'int (const void *, const void *, size_t)' extern
+# (placeholder) | |-PureAttr 0xd9351b0 <line:308:45>
 
-__s1 'const void *'
+# (placeholder) | `-NonNullAttr 0xd9351d8 <line:384:57, /usr/include/string.h:164:49> 1 2
 
-__s2 'const void *'
+# (placeholder) |-FunctionDecl 0xd935468 <line:166:15> col:15 implicit strxfrm 'unsigned long (char *, const char *, unsigned long)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd935560 <<invalid sloc>> <invalid sloc> 'char *'
 
+# (placeholder) | |-ParmVarDecl 0xd9355c8 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd935630 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | `-BuiltinAttr 0xd935508 <<invalid sloc>> Implicit 812
 
+# (placeholder) |-FunctionDecl 0xd9356b0 prev 0xd935468 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:166:15 strxfrm 'unsigned long (char *, const char *, unsigned long)' extern
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd935230 <col:24, col:41> col:41 __dest 'char *restrict'
 
-implicit memchr 'void *(const void *, int, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd9352b0 <line:167:10, col:33> col:33 __src 'const char *restrict'
 
-<invalid sloc> 'const void *'
+# (placeholder) | |-ParmVarDecl 0xd935328 <col:40, col:47> col:47 __n 'size_t':'unsigned long'
 
-<invalid sloc> 'int'
+# (placeholder) | |-BuiltinAttr 0xd9357f8 <<invalid sloc>> Inherited Implicit 812
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd935768 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 813
+# (placeholder) | `-NonNullAttr 0xd9357c0 <line:384:57, /usr/include/string.h:168:26> 2
+struct ___locale_struct__Anonymous_2127:	pass
 
-prev 0x606520 /usr/include/string.h:107:14 memchr 'void *(const void *, int, unsigned long)' extern
 
-__s 'const void *'
+struct __locale_struct:
+	var __locales: ___locale_struct__Anonymous_2127
 
-__c 'int'
+	var __ctype_b: const unsigned short 
 
-__n 'size_t':'unsigned long'
+	var __ctype_tolower: const int 
 
-Inherited Implicit 813
+	var __ctype_toupper: const int 
 
+	var __names: const char *[13]
 
 
+# (placeholder) |-TypedefDecl 0xd935e50 <line:41:1, col:33> col:33 referenced __locale_t 'struct __locale_struct *'
 
+# (placeholder) | `-PointerType 0xd935e00 'struct __locale_struct *'
 
-1
+# (placeholder) |   `-ElaboratedType 0xd935da0 'struct __locale_struct' sugar
 
-implicit strcpy 'char *(char *, const char *)' extern
+# (placeholder) |     `-RecordType 0xd9358a0 'struct __locale_struct'
 
-<invalid sloc> 'char *'
+# (placeholder) |       `-Record 0xd935820 '__locale_struct'
 
-<invalid sloc> 'const char *'
+# (placeholder) |-TypedefDecl 0xd9365d0 </usr/include/aarch64-linux-gnu/bits/types/locale_t.h:24:1, col:20> col:20 referenced locale_t '__locale_t':'struct __locale_struct *'
 
-Implicit 806
+# (placeholder) | `-TypedefType 0xd935eb0 '__locale_t' sugar
 
-prev 0x606af0 /usr/include/string.h:141:14 strcpy 'char *(char *, const char *)' extern
+# (placeholder) |   |-Typedef 0xd935e50 '__locale_t'
 
-__dest 'char *restrict'
+# (placeholder) |   `-PointerType 0xd935e00 'struct __locale_struct *'
 
-__src 'const char *restrict'
+# (placeholder) |     `-ElaboratedType 0xd935da0 'struct __locale_struct' sugar
 
-Inherited Implicit 806
+# (placeholder) |       `-RecordType 0xd9358a0 'struct __locale_struct'
 
+# (placeholder) |         `-Record 0xd935820 '__locale_struct'
 
+# (placeholder) |-FunctionDecl 0xd9368f0 </usr/include/string.h:175:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:175:12 strcoll_l 'int (const char *, const char *, locale_t)' extern
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd936640 <col:23, col:35> col:35 __s1 'const char *'
 
-implicit strncpy 'char *(char *, const char *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd9366c0 <col:41, col:53> col:53 __s2 'const char *'
 
-<invalid sloc> 'char *'
+# (placeholder) | |-ParmVarDecl 0xd936760 <col:59, col:68> col:68 __l 'locale_t':'struct __locale_struct *'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd9369a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-PureAttr 0xd936a00 <line:308:45>
 
-Implicit 807
+# (placeholder) | `-NonNullAttr 0xd936a28 <line:384:57, /usr/include/string.h:176:52> 1 2 3
 
-prev 0x6070b0 /usr/include/string.h:144:14 strncpy 'char *(char *, const char *, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd936d78 <line:179:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:179:15 strxfrm_l 'size_t (char *, const char *, size_t, locale_t)' extern
 
-__dest 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd936a88 <col:26, col:32> col:32 __dest 'char *'
 
-__src 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd936b08 <col:40, col:52> col:52 __src 'const char *'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd936b80 <col:59, col:66> col:66 __n 'size_t':'unsigned long'
 
-Inherited Implicit 807
+# (placeholder) | |-ParmVarDecl 0xd936bf8 <line:180:5, col:14> col:14 __l 'locale_t':'struct __locale_struct *'
 
+# (placeholder) | |-NoThrowAttr 0xd936e38 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd936e90 <line:384:57, /usr/include/string.h:180:43> 2 4
 
-1 2
+# (placeholder) |-FunctionDecl 0xd936f98 <line:187:14> col:14 implicit strdup 'char *(const char *)' extern
 
-implicit strcat 'char *(char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd937090 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'char *'
+# (placeholder) | `-BuiltinAttr 0xd937038 <<invalid sloc>> Implicit 871
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd937100 prev 0xd936f98 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:187:14 strdup 'char *(const char *)' extern
 
-Implicit 810
+# (placeholder) | |-ParmVarDecl 0xd936ee0 <col:22, col:34> col:34 __s 'const char *'
 
-prev 0x607658 /usr/include/string.h:149:14 strcat 'char *(char *, const char *)' extern
+# (placeholder) | |-BuiltinAttr 0xd937268 <<invalid sloc>> Inherited Implicit 871
 
-__dest 'char *restrict'
+# (placeholder) | |-NoThrowAttr 0xd9371a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__src 'const char *restrict'
+# (placeholder) | |-RestrictAttr 0xd937200 <line:281:47> malloc
 
-Inherited Implicit 810
+# (placeholder) | `-NonNullAttr 0xd937228 <line:384:57, /usr/include/string.h:188:48> 1
 
+# (placeholder) |-FunctionDecl 0xd937460 <line:195:14> col:14 implicit strndup 'char *(const char *, unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd937558 <<invalid sloc>> <invalid sloc> 'const char *'
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd9375d0 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-implicit strncat 'char *(char *, const char *, unsigned long)' extern
+# (placeholder) | `-BuiltinAttr 0xd937500 <<invalid sloc>> Implicit 872
 
-<invalid sloc> 'char *'
+# (placeholder) |-FunctionDecl 0xd937648 prev 0xd937460 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:195:14 strndup 'char *(const char *, unsigned long)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd9372a8 <col:23, col:35> col:35 __string 'const char *'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd937320 <col:45, col:52> col:52 __n 'size_t':'unsigned long'
 
-Implicit 811
+# (placeholder) | |-BuiltinAttr 0xd9377b8 <<invalid sloc>> Inherited Implicit 872
 
-prev 0x607b98 /usr/include/string.h:152:14 strncat 'char *(char *, const char *, unsigned long)' extern
+# (placeholder) | |-NoThrowAttr 0xd9376f8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__dest 'char *restrict'
+# (placeholder) | |-RestrictAttr 0xd937750 <line:281:47> malloc
 
-__src 'const char *restrict'
+# (placeholder) | `-NonNullAttr 0xd937778 <line:384:57, /usr/include/string.h:196:48> 1
 
-__n 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd937970 <line:246:14> col:14 implicit strchr 'char *(const char *, int)' extern
 
-Inherited Implicit 811
+# (placeholder) | |-ParmVarDecl 0xd937a68 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd937ad0 <<invalid sloc>> <invalid sloc> 'int'
 
+# (placeholder) | `-BuiltinAttr 0xd937a10 <<invalid sloc>> Implicit 814
 
-1 2
+# (placeholder) |-FunctionDecl 0xd937b48 prev 0xd937970 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:246:14 strchr 'char *(const char *, int)' extern
 
-implicit strcmp 'int (const char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9377f8 <col:22, col:34> col:34 __s 'const char *'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd937878 <col:39, col:43> col:43 __c 'int'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-BuiltinAttr 0xd937cb8 <<invalid sloc>> Inherited Implicit 814
 
-Implicit 808
+# (placeholder) | |-NoThrowAttr 0xd937bf8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x6080c8 /usr/include/string.h:156:12 strcmp 'int (const char *, const char *)' extern
+# (placeholder) | |-PureAttr 0xd937c50 <line:308:45>
 
-__s1 'const char *'
+# (placeholder) | `-NonNullAttr 0xd937c78 <line:384:57, /usr/include/string.h:247:46> 1
 
-__s2 'const char *'
+# (placeholder) |-FunctionDecl 0xd937e38 <line:273:14> col:14 implicit strrchr 'char *(const char *, int)' extern
 
-Inherited Implicit 808
+# (placeholder) | |-ParmVarDecl 0xd937f30 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd937f98 <<invalid sloc>> <invalid sloc> 'int'
 
+# (placeholder) | `-BuiltinAttr 0xd937ed8 <<invalid sloc>> Implicit 817
 
+# (placeholder) |-FunctionDecl 0xd938010 prev 0xd937e38 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:273:14 strrchr 'char *(const char *, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd937cf8 <col:23, col:35> col:35 __s 'const char *'
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd937d78 <col:40, col:44> col:44 __c 'int'
 
-implicit strncmp 'int (const char *, const char *, unsigned long)' extern
+# (placeholder) | |-BuiltinAttr 0xd938178 <<invalid sloc>> Inherited Implicit 817
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd9380c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-PureAttr 0xd938118 <line:308:45>
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | `-NonNullAttr 0xd938140 <line:384:57, /usr/include/string.h:274:46> 1
 
-Implicit 809
+# (placeholder) |-FunctionDecl 0xd938388 <line:293:15> col:15 implicit strcspn 'unsigned long (const char *, const char *)' extern
 
-prev 0x6086e0 /usr/include/string.h:159:12 strncmp 'int (const char *, const char *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd938480 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__s1 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd9384e8 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__s2 'const char *'
+# (placeholder) | `-BuiltinAttr 0xd938428 <<invalid sloc>> Implicit 815
 
-__n 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd9385e0 prev 0xd938388 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:293:15 strcspn 'unsigned long (const char *, const char *)' extern
 
-Inherited Implicit 809
+# (placeholder) | |-ParmVarDecl 0xd9381b8 <col:24, col:36> col:36 __s 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd938238 <col:41, col:53> col:53 __reject 'const char *'
 
+# (placeholder) | |-BuiltinAttr 0xd938748 <<invalid sloc>> Inherited Implicit 815
 
+# (placeholder) | |-NoThrowAttr 0xd938690 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-PureAttr 0xd9386e8 <line:308:45>
 
-1 2
+# (placeholder) | `-NonNullAttr 0xd938710 <line:384:57, /usr/include/string.h:294:49> 1 2
 
-/usr/include/string.h:163:12 strcoll 'int (const char *, const char *)' extern
+# (placeholder) |-FunctionDecl 0xd9388e0 <line:297:15> col:15 implicit strspn 'unsigned long (const char *, const char *)' extern
 
-__s1 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd9389d8 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__s2 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd938a40 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | `-BuiltinAttr 0xd938980 <<invalid sloc>> Implicit 818
 
+# (placeholder) |-FunctionDecl 0xd938ab8 prev 0xd9388e0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:297:15 strspn 'unsigned long (const char *, const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd938788 <col:23, col:35> col:35 __s 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd938808 <col:40, col:52> col:52 __accept 'const char *'
 
-1 2
+# (placeholder) | |-BuiltinAttr 0xd938c28 <<invalid sloc>> Inherited Implicit 818
 
-implicit strxfrm 'unsigned long (char *, const char *, unsigned long)' extern
+# (placeholder) | |-NoThrowAttr 0xd938b68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'char *'
+# (placeholder) | |-PureAttr 0xd938bc0 <line:308:45>
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-NonNullAttr 0xd938be8 <line:384:57, /usr/include/string.h:298:49> 1 2
 
-<invalid sloc> 'unsigned long'
+# (placeholder) |-FunctionDecl 0xd938dc8 <line:323:14> col:14 implicit strpbrk 'char *(const char *, const char *)' extern
 
-Implicit 812
+# (placeholder) | |-ParmVarDecl 0xd938ec0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-prev 0x608ff8 /usr/include/string.h:166:15 strxfrm 'unsigned long (char *, const char *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd938f28 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__dest 'char *restrict'
+# (placeholder) | `-BuiltinAttr 0xd938e68 <<invalid sloc>> Implicit 816
 
-__src 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd938fa0 prev 0xd938dc8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:323:14 strpbrk 'char *(const char *, const char *)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd938c68 <col:23, col:35> col:35 __s 'const char *'
 
-Inherited Implicit 812
+# (placeholder) | |-ParmVarDecl 0xd938ce8 <col:40, col:52> col:52 __accept 'const char *'
 
+# (placeholder) | |-BuiltinAttr 0xd939108 <<invalid sloc>> Inherited Implicit 816
 
+# (placeholder) | |-NoThrowAttr 0xd939050 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-2
+# (placeholder) | |-PureAttr 0xd9390a8 <line:308:45>
 
-struct __locale_struct definition
+# (placeholder) | `-NonNullAttr 0xd9390d0 <line:384:57, /usr/include/string.h:324:49> 1 2
 
-parent 0x4e3518 struct __locale_data
+# (placeholder) |-FunctionDecl 0xd9392a8 <line:350:14> col:14 implicit strstr 'char *(const char *, const char *)' extern
 
-__locales 'struct __locale_data *[13]'
+# (placeholder) | |-ParmVarDecl 0xd9393a0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__ctype_b 'const unsigned short *'
+# (placeholder) | |-ParmVarDecl 0xd939408 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__ctype_tolower 'const int *'
+# (placeholder) | `-BuiltinAttr 0xd939348 <<invalid sloc>> Implicit 819
 
-__ctype_toupper 'const int *'
+# (placeholder) |-FunctionDecl 0xd939480 prev 0xd9392a8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:350:14 strstr 'char *(const char *, const char *)' extern
 
-__names 'const char *[13]'
+# (placeholder) | |-ParmVarDecl 0xd939148 <col:22, col:34> col:34 __haystack 'const char *'
 
-referenced __locale_t 'struct __locale_struct *'
+# (placeholder) | |-ParmVarDecl 0xd9391c8 <col:46, col:58> col:58 __needle 'const char *'
 
-'struct __locale_struct *'
+# (placeholder) | |-BuiltinAttr 0xd93b608 <<invalid sloc>> Inherited Implicit 819
 
-'struct __locale_struct' sugar
+# (placeholder) | |-NoThrowAttr 0xd939530 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'struct __locale_struct'
+# (placeholder) | |-PureAttr 0xd939588 <line:308:45>
 
-'__locale_struct'
+# (placeholder) | `-NonNullAttr 0xd9395b0 <line:384:57, /usr/include/string.h:351:49> 1 2
 
-referenced locale_t '__locale_t':'struct __locale_struct *'
+# (placeholder) |-FunctionDecl 0xd93b788 <line:356:14> col:14 implicit strtok 'char *(char *, const char *)' extern
 
-'__locale_t' sugar
+# (placeholder) | |-ParmVarDecl 0xd93b880 <<invalid sloc>> <invalid sloc> 'char *'
 
-'__locale_t'
+# (placeholder) | |-ParmVarDecl 0xd93b8e8 <<invalid sloc>> <invalid sloc> 'const char *'
 
-'struct __locale_struct *'
+# (placeholder) | `-BuiltinAttr 0xd93b828 <<invalid sloc>> Implicit 820
 
-'struct __locale_struct' sugar
+# (placeholder) |-FunctionDecl 0xd93b960 prev 0xd93b788 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:356:14 strtok 'char *(char *, const char *)' extern
 
-'struct __locale_struct'
+# (placeholder) | |-ParmVarDecl 0xd93b648 <col:22, col:39> col:39 __s 'char *restrict'
 
-'__locale_struct'
+# (placeholder) | |-ParmVarDecl 0xd93b6c8 <col:44, col:67> col:67 __delim 'const char *restrict'
 
-/usr/include/string.h:175:12 strcoll_l 'int (const char *, const char *, locale_t)' extern
+# (placeholder) | |-BuiltinAttr 0xd93baa8 <<invalid sloc>> Inherited Implicit 820
 
-__s1 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd93ba10 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__s2 'const char *'
+# (placeholder) | `-NonNullAttr 0xd93ba68 <line:384:57, /usr/include/string.h:357:27> 2
 
-__l 'locale_t':'struct __locale_struct *'
+# (placeholder) |-FunctionDecl 0xd93bd50 <line:361:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:361:14 __strtok_r 'char *(char *restrict, const char *restrict, char **restrict)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd93bae8 <col:26, col:43> col:43 __s 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd93bb68 <line:362:5, col:28> col:28 __delim 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd93bbe8 <line:363:5, col:23> col:23 __save_ptr 'char **restrict'
 
+# (placeholder) | |-NoThrowAttr 0xd93be08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1 2 3
+# (placeholder) | `-NonNullAttr 0xd93be60 <line:384:57, /usr/include/string.h:364:30> 2 3
 
-/usr/include/string.h:179:15 strxfrm_l 'size_t (char *, const char *, size_t, locale_t)' extern
+# (placeholder) |-FunctionDecl 0xd93c098 <line:366:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:366:14 strtok_r 'char *(char *restrict, const char *restrict, char **restrict)' extern
 
-__dest 'char *'
+# (placeholder) | |-ParmVarDecl 0xd93beb0 <col:24, col:41> col:41 __s 'char *restrict'
 
-__src 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd93bf30 <col:46, col:69> col:69 __delim 'const char *restrict'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd93bfb0 <line:367:10, col:28> col:28 __save_ptr 'char **restrict'
 
-__l 'locale_t':'struct __locale_struct *'
+# (placeholder) | |-NoThrowAttr 0xd93c150 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd93c1a8 <line:384:57, /usr/include/string.h:368:30> 2 3
 
+# (placeholder) |-FunctionDecl 0xd93c318 <line:407:15> col:15 implicit strlen 'unsigned long (const char *)' extern
 
-2 4
+# (placeholder) | |-ParmVarDecl 0xd93c410 <<invalid sloc>> <invalid sloc> 'const char *'
 
-implicit strdup 'char *(const char *)' extern
+# (placeholder) | `-BuiltinAttr 0xd93c3b8 <<invalid sloc>> Implicit 823
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd93c480 prev 0xd93c318 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:407:15 strlen 'unsigned long (const char *)' extern
 
-Implicit 871
+# (placeholder) | |-ParmVarDecl 0xd93c200 <col:23, col:35> col:35 __s 'const char *'
 
-prev 0x60d468 /usr/include/string.h:187:14 strdup 'char *(const char *)' extern
+# (placeholder) | |-BuiltinAttr 0xd93c610 <<invalid sloc>> Inherited Implicit 823
 
-__s 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd93c528 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 871
+# (placeholder) | |-PureAttr 0xd93c580 <line:308:45>
 
+# (placeholder) | `-NonNullAttr 0xd93c5a8 <line:384:57, /usr/include/string.h:408:46> 1
 
+# (placeholder) |-FunctionDecl 0xd93c7f8 <line:413:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:413:15 strnlen 'size_t (const char *, size_t)' extern
 
-malloc
+# (placeholder) | |-ParmVarDecl 0xd93c650 <col:24, col:36> col:36 __string 'const char *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd93c6c8 <col:46, col:53> col:53 __maxlen 'size_t':'unsigned long'
 
-implicit strndup 'char *(const char *, unsigned long)' extern
+# (placeholder) | |-NoThrowAttr 0xd93c8a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-PureAttr 0xd93c900 <line:308:45>
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | `-NonNullAttr 0xd93c928 <line:384:57, /usr/include/string.h:414:46> 1
 
-Implicit 872
+# (placeholder) |-FunctionDecl 0xd93ca50 <line:419:14> col:14 implicit strerror 'char *(int)' extern
 
-prev 0x60d930 /usr/include/string.h:195:14 strndup 'char *(const char *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd93cb48 <<invalid sloc>> <invalid sloc> 'int'
 
-__string 'const char *'
+# (placeholder) | `-BuiltinAttr 0xd93caf0 <<invalid sloc>> Implicit 822
 
-__n 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd93cbb8 prev 0xd93ca50 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/string.h:419:14 strerror 'char *(int)' extern
 
-Inherited Implicit 872
+# (placeholder) | |-ParmVarDecl 0xd93c980 <col:24, col:28> col:28 __errnum 'int'
 
+# (placeholder) | |-BuiltinAttr 0xd93ccb8 <<invalid sloc>> Inherited Implicit 822
 
+# (placeholder) | `-NoThrowAttr 0xd93cc60 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-malloc
+# (placeholder) |-FunctionDecl 0xd93cf70 </usr/include/string.h:432:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:432:28 strerror_r 'int (int, char *, size_t)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd93ccf8 <line:433:8, col:12> col:12 __errnum 'int'
 
-implicit strchr 'char *(const char *, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd93cd78 <col:22, col:28> col:28 __buf 'char *'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd93cdf0 <col:35, col:42> col:42 __buflen 'size_t':'unsigned long'
 
-<invalid sloc> 'int'
+# (placeholder) | |-AsmLabelAttr 0xd93d010 <<scratch space>:83:1> "__xpg_strerror_r" IsLiteralLabel
 
-Implicit 814
+# (placeholder) | |-NoThrowAttr 0xd93d0a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x60de30 /usr/include/string.h:246:14 strchr 'char *(const char *, int)' extern
+# (placeholder) | `-NonNullAttr 0xd93d0c8 <line:384:57, /usr/include/string.h:434:38> 2
 
-__s 'const char *'
+# (placeholder) |-FunctionDecl 0xd93d2b0 <line:458:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/string.h:458:14 strerror_l 'char *(int, locale_t)' extern
 
-__c 'int'
+# (placeholder) | |-ParmVarDecl 0xd93d120 <col:26, col:30> col:30 __errnum 'int'
 
-Inherited Implicit 814
+# (placeholder) | |-ParmVarDecl 0xd93d198 <col:40, col:49> col:49 __l 'locale_t':'struct __locale_struct *'
 
+# (placeholder) | `-NoThrowAttr 0xd93d360 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd940ae0 </usr/include/strings.h:34:12> col:12 implicit bcmp 'int (const void *, const void *, unsigned long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd940bd8 <<invalid sloc>> <invalid sloc> 'const void *'
 
+# (placeholder) | |-ParmVarDecl 0xd940c40 <<invalid sloc>> <invalid sloc> 'const void *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd940ca8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-implicit strrchr 'char *(const char *, int)' extern
+# (placeholder) | `-BuiltinAttr 0xd940b80 <<invalid sloc>> Implicit 876
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd940d28 prev 0xd940ae0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:34:12 bcmp 'int (const void *, const void *, unsigned long)' extern
 
-<invalid sloc> 'int'
+# (placeholder) | |-ParmVarDecl 0xd93d3d0 <col:18, col:30> col:30 __s1 'const void *'
 
-Implicit 817
+# (placeholder) | |-ParmVarDecl 0xd93d450 <col:36, col:48> col:48 __s2 'const void *'
 
-prev 0x60e2f8 /usr/include/string.h:273:14 strrchr 'char *(const char *, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd93d4c8 <col:54, col:61> col:61 __n 'size_t':'unsigned long'
 
-__s 'const char *'
+# (placeholder) | |-BuiltinAttr 0xd940e98 <<invalid sloc>> Inherited Implicit 876
 
-__c 'int'
+# (placeholder) | |-NoThrowAttr 0xd940de0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 817
+# (placeholder) | |-PureAttr 0xd940e38 <line:308:45>
 
+# (placeholder) | `-NonNullAttr 0xd940e60 <line:384:57, /usr/include/strings.h:35:49> 1 2
 
+# (placeholder) |-FunctionDecl 0xd941138 <line:38:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:38:13 bcopy 'void (const void *, void *, size_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd940ed8 <col:20, col:32> col:32 __src 'const void *'
 
+# (placeholder) | |-ParmVarDecl 0xd940f58 <col:39, col:45> col:45 __dest 'void *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd940fd0 <col:53, col:60> col:60 __n 'size_t':'unsigned long'
 
-implicit strcspn 'unsigned long (const char *, const char *)' extern
+# (placeholder) | |-NoThrowAttr 0xd9411f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-NonNullAttr 0xd941248 <line:384:57, /usr/include/strings.h:39:27> 1 2
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd941448 <line:42:13> col:13 implicit bzero 'void (void *, unsigned long)' extern
 
-Implicit 815
+# (placeholder) | |-ParmVarDecl 0xd941540 <<invalid sloc>> <invalid sloc> 'void *'
 
-prev 0x5b1fa8 /usr/include/string.h:293:15 strcspn 'unsigned long (const char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9415a8 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__s 'const char *'
+# (placeholder) | `-BuiltinAttr 0xd9414e8 <<invalid sloc>> Implicit 875
 
-__reject 'const char *'
+# (placeholder) |-FunctionDecl 0xd941620 prev 0xd941448 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:42:13 bzero 'void (void *, unsigned long)' extern
 
-Inherited Implicit 815
+# (placeholder) | |-ParmVarDecl 0xd9412a0 <col:20, col:26> col:26 __s 'void *'
 
+# (placeholder) | |-ParmVarDecl 0xd941318 <col:31, col:38> col:38 __n 'size_t':'unsigned long'
 
+# (placeholder) | |-BuiltinAttr 0xd941768 <<invalid sloc>> Inherited Implicit 875
 
+# (placeholder) | |-NoThrowAttr 0xd9416d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd941728 <line:384:57, /usr/include/strings.h:42:64> 1
 
-1 2
+# (placeholder) |-FunctionDecl 0xd9418e8 <line:68:14> col:14 implicit index 'char *(const char *, int)' extern
 
-implicit strspn 'unsigned long (const char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9419e0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd941a48 <<invalid sloc>> <invalid sloc> 'int'
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-BuiltinAttr 0xd941988 <<invalid sloc>> Implicit 873
 
-Implicit 818
+# (placeholder) |-FunctionDecl 0xd941af0 prev 0xd9418e8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:68:14 index 'char *(const char *, int)' extern
 
-prev 0x5b2480 /usr/include/string.h:297:15 strspn 'unsigned long (const char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9417a8 <col:21, col:33> col:33 __s 'const char *'
 
-__s 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd941828 <col:38, col:42> col:42 __c 'int'
 
-__accept 'const char *'
+# (placeholder) | |-BuiltinAttr 0xd941c58 <<invalid sloc>> Inherited Implicit 873
 
-Inherited Implicit 818
+# (placeholder) | |-NoThrowAttr 0xd941ba0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-PureAttr 0xd941bf8 <line:308:45>
 
+# (placeholder) | `-NonNullAttr 0xd941c20 <line:384:57, /usr/include/strings.h:69:46> 1
 
+# (placeholder) |-FunctionDecl 0xd941dd8 <line:96:14> col:14 implicit rindex 'char *(const char *, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd941ed0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd941f38 <<invalid sloc>> <invalid sloc> 'int'
 
-implicit strpbrk 'char *(const char *, const char *)' extern
+# (placeholder) | `-BuiltinAttr 0xd941e78 <<invalid sloc>> Implicit 874
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd941fb0 prev 0xd941dd8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:96:14 rindex 'char *(const char *, int)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd941c98 <col:22, col:34> col:34 __s 'const char *'
 
-Implicit 816
+# (placeholder) | |-ParmVarDecl 0xd941d18 <col:39, col:43> col:43 __c 'int'
 
-prev 0x5b2968 /usr/include/string.h:323:14 strpbrk 'char *(const char *, const char *)' extern
+# (placeholder) | |-BuiltinAttr 0xd942118 <<invalid sloc>> Inherited Implicit 874
 
-__s 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd942060 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__accept 'const char *'
+# (placeholder) | |-PureAttr 0xd9420b8 <line:308:45>
 
-Inherited Implicit 816
+# (placeholder) | `-NonNullAttr 0xd9420e0 <line:384:57, /usr/include/strings.h:97:46> 1
 
+# (placeholder) |-FunctionDecl 0xd9421f0 <line:104:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:315:56> /usr/include/strings.h:104:12 ffs 'int (int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd942158 <col:17, col:21> col:21 __i 'int'
 
+# (placeholder) | |-NoThrowAttr 0xd942298 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9422f0 <line:315:46>
 
-1 2
+# (placeholder) |-FunctionDecl 0xd942400 </usr/include/strings.h:110:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:315:56> /usr/include/strings.h:110:12 ffsl 'int (long)' extern
 
-implicit strstr 'char *(const char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd942330 <col:18, col:27> col:27 __l 'long'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd9424a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-ConstAttr 0xd942500 <line:315:46>
 
-Implicit 819
+# (placeholder) |-FunctionDecl 0xd942610 </usr/include/strings.h:111:15, /usr/include/aarch64-linux-gnu/sys/cdefs.h:315:56> /usr/include/strings.h:111:26 ffsll 'int (long long)' extern
 
-prev 0x610758 /usr/include/string.h:350:14 strstr 'char *(const char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd942540 <col:33, col:47> col:47 __ll 'long long'
 
-__haystack 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd9426b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__needle 'const char *'
+# (placeholder) | `-ConstAttr 0xd942710 <line:315:46>
 
-Inherited Implicit 819
+# (placeholder) |-FunctionDecl 0xd9428b0 </usr/include/strings.h:116:12> col:12 implicit strcasecmp 'int (const char *, const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9429a8 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd942a10 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | `-BuiltinAttr 0xd942950 <<invalid sloc>> Implicit 877
 
+# (placeholder) |-FunctionDecl 0xd942b00 prev 0xd9428b0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:116:12 strcasecmp 'int (const char *, const char *)' extern
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd942750 <col:24, col:36> col:36 __s1 'const char *'
 
-implicit strtok 'char *(char *, const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9427d0 <col:42, col:54> col:54 __s2 'const char *'
 
-<invalid sloc> 'char *'
+# (placeholder) | |-BuiltinAttr 0xd942c68 <<invalid sloc>> Inherited Implicit 877
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd942bb0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 820
+# (placeholder) | |-PureAttr 0xd942c08 <line:308:45>
 
-prev 0x610c18 /usr/include/string.h:356:14 strtok 'char *(char *, const char *)' extern
+# (placeholder) | `-NonNullAttr 0xd942c30 <line:384:57, /usr/include/strings.h:117:49> 1 2
 
-__s 'char *restrict'
+# (placeholder) |-FunctionDecl 0xd942e88 <line:120:12> col:12 implicit strncasecmp 'int (const char *, const char *, unsigned long)' extern
 
-__delim 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd942f80 <<invalid sloc>> <invalid sloc> 'const char *'
 
-Inherited Implicit 820
+# (placeholder) | |-ParmVarDecl 0xd942fe8 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | |-ParmVarDecl 0xd943050 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
+# (placeholder) | `-BuiltinAttr 0xd942f28 <<invalid sloc>> Implicit 878
 
-2
+# (placeholder) |-FunctionDecl 0xd9430d0 prev 0xd942e88 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:120:12 strncasecmp 'int (const char *, const char *, unsigned long)' extern
 
-/usr/include/string.h:361:14 __strtok_r 'char *(char *restrict, const char *restrict, char **restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd942ca8 <col:25, col:37> col:37 __s1 'const char *'
 
-__s 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd942d28 <col:43, col:55> col:55 __s2 'const char *'
 
-__delim 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd942da0 <col:61, col:68> col:68 __n 'size_t':'unsigned long'
 
-__save_ptr 'char **restrict'
+# (placeholder) | |-BuiltinAttr 0xd943248 <<invalid sloc>> Inherited Implicit 878
 
+# (placeholder) | |-NoThrowAttr 0xd943188 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-PureAttr 0xd9431e0 <line:308:45>
 
-2 3
+# (placeholder) | `-NonNullAttr 0xd943208 <line:384:57, /usr/include/strings.h:121:49> 1 2
 
-/usr/include/string.h:366:14 strtok_r 'char *(char *restrict, const char *restrict, char **restrict)' extern
+# (placeholder) |-FunctionDecl 0xd943488 <line:128:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:128:12 strcasecmp_l 'int (const char *, const char *, locale_t)' extern
 
-__s 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd943288 <col:26, col:38> col:38 __s1 'const char *'
 
-__delim 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd943308 <col:44, col:56> col:56 __s2 'const char *'
 
-__save_ptr 'char **restrict'
+# (placeholder) | |-ParmVarDecl 0xd943380 <col:62, col:71> col:71 __loc 'locale_t':'struct __locale_struct *'
 
+# (placeholder) | |-NoThrowAttr 0xd943540 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-PureAttr 0xd943598 <line:308:45>
 
-2 3
+# (placeholder) | `-NonNullAttr 0xd9435c0 <line:384:57, /usr/include/strings.h:129:52> 1 2 3
 
-implicit strlen 'unsigned long (const char *)' extern
+# (placeholder) |-FunctionDecl 0xd943930 <line:133:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/strings.h:133:12 strncasecmp_l 'int (const char *, const char *, size_t, locale_t)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd943618 <col:27, col:39> col:39 __s1 'const char *'
 
-Implicit 823
+# (placeholder) | |-ParmVarDecl 0xd943698 <col:45, col:57> col:57 __s2 'const char *'
 
-prev 0x6117c8 /usr/include/string.h:407:15 strlen 'unsigned long (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd943710 <line:134:6, col:13> col:13 __n 'size_t':'unsigned long'
 
-__s 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd943788 <col:18, col:27> col:27 __loc 'locale_t':'struct __locale_struct *'
 
-Inherited Implicit 823
+# (placeholder) | |-NoThrowAttr 0xd9439f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | |-PureAttr 0xd943a48 <line:308:45>
 
+# (placeholder) | `-NonNullAttr 0xd943a70 <line:384:57, /usr/include/strings.h:135:52> 1 2 4
 
+# (placeholder) |-FunctionDecl 0xd943c40 </usr/include/string.h:466:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:466:13 explicit_bzero 'void (void *, size_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd943b10 <col:29, col:35> col:35 __s 'void *'
 
-1
+# (placeholder) | |-ParmVarDecl 0xd943b88 <col:40, col:47> col:47 __n 'size_t':'unsigned long'
 
-/usr/include/string.h:413:15 strnlen 'size_t (const char *, size_t)' extern
+# (placeholder) | |-NoThrowAttr 0xd943cf0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__string 'const char *'
+# (placeholder) | `-NonNullAttr 0xd943d48 <line:384:57, /usr/include/string.h:466:73> 1
 
-__maxlen 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd943f80 <line:471:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:471:14 strsep 'char *(char **restrict, const char *restrict)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd943da0 <col:22, col:40> col:40 __stringp 'char **restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd943e20 <line:472:8, col:31> col:31 __delim 'const char *restrict'
 
+# (placeholder) | |-NoThrowAttr 0xd944030 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd944088 <line:384:57, /usr/include/string.h:473:30> 1 2
 
-1
+# (placeholder) |-FunctionDecl 0xd944178 <line:478:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/string.h:478:14 strsignal 'char *(int)' extern
 
-implicit strerror 'char *(int)' extern
+# (placeholder) | |-ParmVarDecl 0xd9440e0 <col:25, col:29> col:29 __sig 'int'
 
-<invalid sloc> 'int'
+# (placeholder) | `-NoThrowAttr 0xd944220 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 822
+# (placeholder) |-FunctionDecl 0xd9443f0 </usr/include/string.h:489:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:489:14 __stpcpy 'char *(char *restrict, const char *restrict)' extern
 
-prev 0x611ee0 /usr/include/string.h:419:14 strerror 'char *(int)' extern
+# (placeholder) | |-ParmVarDecl 0xd944290 <col:24, col:41> col:41 __dest 'char *restrict'
 
-__errnum 'int'
+# (placeholder) | |-ParmVarDecl 0xd944310 <col:49, col:72> col:72 __src 'const char *restrict'
 
-Inherited Implicit 822
+# (placeholder) | |-NoThrowAttr 0xd9444a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd9444f8 <line:384:57, /usr/include/string.h:490:30> 1 2
 
+# (placeholder) |-FunctionDecl 0xd9446b0 <line:491:14> col:14 implicit stpcpy 'char *(char *, const char *)' extern
 
-/usr/include/string.h:432:28 strerror_r 'int (int, char *, size_t)' extern
+# (placeholder) | |-ParmVarDecl 0xd9447a8 <<invalid sloc>> <invalid sloc> 'char *'
 
-__errnum 'int'
+# (placeholder) | |-ParmVarDecl 0xd944810 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__buf 'char *'
+# (placeholder) | `-BuiltinAttr 0xd944750 <<invalid sloc>> Implicit 869
 
-__buflen 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd944888 prev 0xd9446b0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:491:14 stpcpy 'char *(char *, const char *)' extern
 
-"__xpg_strerror_r" IsLiteralLabel
+# (placeholder) | |-ParmVarDecl 0xd944550 <col:22, col:39> col:39 __dest 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd9445d0 <col:47, col:70> col:70 __src 'const char *restrict'
 
+# (placeholder) | |-BuiltinAttr 0xd9449c8 <<invalid sloc>> Inherited Implicit 869
 
-2
+# (placeholder) | |-NoThrowAttr 0xd944938 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/string.h:458:14 strerror_l 'char *(int, locale_t)' extern
+# (placeholder) | `-NonNullAttr 0xd944990 <line:384:57, /usr/include/string.h:492:30> 1 2
 
-__errnum 'int'
+# (placeholder) |-FunctionDecl 0xd944c08 <line:496:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:496:14 __stpncpy 'char *(char *restrict, const char *restrict, size_t)' extern
 
-__l 'locale_t':'struct __locale_struct *'
+# (placeholder) | |-ParmVarDecl 0xd944a08 <col:25, col:42> col:42 __dest 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd944a88 <line:497:4, col:27> col:27 __src 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd944b20 <col:34, col:41> col:41 __n 'size_t':'unsigned long'
 
-implicit bcmp 'int (const void *, const void *, unsigned long)' extern
+# (placeholder) | |-NoThrowAttr 0xd944cc0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'const void *'
+# (placeholder) | `-NonNullAttr 0xd944d18 <line:384:57, /usr/include/string.h:498:30> 1 2
 
-<invalid sloc> 'const void *'
+# (placeholder) |-FunctionDecl 0xd944f50 <line:499:14> col:14 implicit stpncpy 'char *(char *, const char *, unsigned long)' extern
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd945048 <<invalid sloc>> <invalid sloc> 'char *'
 
-Implicit 876
+# (placeholder) | |-ParmVarDecl 0xd9450b0 <<invalid sloc>> <invalid sloc> 'const char *'
 
-prev 0x612a70 /usr/include/strings.h:34:12 bcmp 'int (const void *, const void *, unsigned long)' extern
+# (placeholder) | |-ParmVarDecl 0xd945118 <<invalid sloc>> <invalid sloc> 'unsigned long'
 
-__s1 'const void *'
+# (placeholder) | `-BuiltinAttr 0xd944ff0 <<invalid sloc>> Implicit 870
 
-__s2 'const void *'
+# (placeholder) |-FunctionDecl 0xd945198 prev 0xd944f50 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/string.h:499:14 stpncpy 'char *(char *, const char *, unsigned long)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd944d70 <col:23, col:40> col:40 __dest 'char *restrict'
 
-Inherited Implicit 876
+# (placeholder) | |-ParmVarDecl 0xd944df0 <line:500:9, col:32> col:32 __src 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd944e68 <col:39, col:46> col:46 __n 'size_t':'unsigned long'
 
+# (placeholder) | |-BuiltinAttr 0xd9452e8 <<invalid sloc>> Inherited Implicit 870
 
+# (placeholder) | |-NoThrowAttr 0xd945250 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd9452a8 <line:384:57, /usr/include/string.h:501:30> 1 2
 
-1 2
+# (placeholder) |-TypedefDecl 0xd945380 </usr/include/math.h:163:1, col:15> col:15 float_t 'float'
 
-/usr/include/strings.h:38:13 bcopy 'void (const void *, void *, size_t)' extern
+# (placeholder) | `-BuiltinType 0xd7ad450 'float'
 
-__src 'const void *'
+# (placeholder) |-TypedefDecl 0xd9453f0 <line:164:1, col:16> col:16 double_t 'double'
 
-__dest 'void *'
+# (placeholder) | `-BuiltinType 0xd7ad470 'double'
 
-__n 'size_t':'unsigned long'
+# (placeholder) |-FunctionDecl 0xd945530 <line:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:21:32> line:20:24 __fpclassify 'int (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd945460 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:20:50> col:50 __value 'double'
 
+# (placeholder) | |-NoThrowAttr 0xd9455d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1 2
+# (placeholder) | `-ConstAttr 0xd945630 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:21:22>
 
-implicit bzero 'void (void *, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd945708 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:25:32> line:24:24 __signbit 'int (double)' extern
 
-<invalid sloc> 'void *'
+# (placeholder) | |-ParmVarDecl 0xd945670 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:24:47> col:47 __value 'double'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd9457b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 875
+# (placeholder) | `-ConstAttr 0xd945808 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:25:22>
 
-prev 0x615ef0 /usr/include/strings.h:42:13 bzero 'void (void *, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd9458e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:30:29> line:29:24 __isinf 'int (double)' extern
 
-__s 'void *'
+# (placeholder) | |-ParmVarDecl 0xd945848 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:29:45> col:45 __value 'double'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-NoThrowAttr 0xd945988 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 875
+# (placeholder) | `-ConstAttr 0xd9459e0 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:30:19>
 
+# (placeholder) |-FunctionDecl 0xd8e59e0 <line:33:24> col:24 implicit __finite 'int (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e5ad8 <<invalid sloc>> <invalid sloc> 'double'
 
-1
+# (placeholder) | |-BuiltinAttr 0xd8e5a80 <<invalid sloc>> Implicit 928
 
-implicit index 'char *(const char *, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd8e5b48 <col:24> Implicit
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-ConstAttr 0xd8e5b70 <col:24> Implicit
 
-<invalid sloc> 'int'
+# (placeholder) |-FunctionDecl 0xd8e5b98 prev 0xd8e59e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:34:29> line:33:24 __finite 'int (double)' extern
 
-Implicit 873
+# (placeholder) | |-ParmVarDecl 0xd945a20 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:33:46> col:46 __value 'double'
 
-prev 0x616388 /usr/include/strings.h:68:14 index 'char *(const char *, int)' extern
+# (placeholder) | |-BuiltinAttr 0xd8e5cc0 <<invalid sloc>> Inherited Implicit 928
 
-__s 'const char *'
+# (placeholder) | |-NoThrowAttr 0xd8e5c40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__c 'int'
+# (placeholder) | `-ConstAttr 0xd8e5c98 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:34:19>
 
-Inherited Implicit 873
+# (placeholder) |-FunctionDecl 0xd8e5d98 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:38:29> line:37:24 __isnan 'int (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e5d00 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:37:45> col:45 __value 'double'
 
+# (placeholder) | |-NoThrowAttr 0xd8e5e40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd8e5e98 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:38:19>
 
+# (placeholder) |-FunctionDecl 0xd8e6030 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:41:24 __iseqsig 'int (double, double)' extern
 
-1
+# (placeholder) | |-ParmVarDecl 0xd8e5ed8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:41:47> col:47 __x 'double'
 
-implicit rindex 'char *(const char *, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd8e5f58 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:41:62> col:62 __y 'double'
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-NoThrowAttr 0xd8e60e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'int'
+# (placeholder) |-FunctionDecl 0xd8e61e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:45:32> line:44:24 __issignaling 'int (double)' extern
 
-Implicit 874
+# (placeholder) | |-ParmVarDecl 0xd8e6150 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:44:51> col:51 __value 'double'
 
-prev 0x616848 /usr/include/strings.h:96:14 rindex 'char *(const char *, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd8e6290 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__s 'const char *'
+# (placeholder) | `-ConstAttr 0xd8e62e8 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:45:22>
 
-__c 'int'
+# (placeholder) |-FunctionDecl 0xd8e63f0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:17> col:17 implicit acos 'double (double)' extern
 
-Inherited Implicit 874
+# (placeholder) | |-ParmVarDecl 0xd8e64e8 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd8e6490 <<invalid sloc>> Implicit 949
 
+# (placeholder) | `-NoThrowAttr 0xd8e6558 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd8e6580 prev 0xd8e63f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:17 acos 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e6328 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:35> col:35 __x 'double'
 
-1
+# (placeholder) | |-BuiltinAttr 0xd8e6680 <<invalid sloc>> Inherited Implicit 949
 
-/usr/include/strings.h:104:12 ffs 'int (int)' extern
+# (placeholder) | `-NoThrowAttr 0xd8e6628 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__i 'int'
+# (placeholder) |-FunctionDecl 0xd8e6758 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:115:1 __acos 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e66c0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:35> col:35 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd8e6800 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8e6908 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:17> col:17 implicit asin 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e70d0 <<invalid sloc>> <invalid sloc> 'double'
 
-/usr/include/strings.h:110:12 ffsl 'int (long)' extern
+# (placeholder) | |-BuiltinAttr 0xd8e69a8 <<invalid sloc>> Implicit 955
 
-__l 'long'
+# (placeholder) | `-NoThrowAttr 0xd8e7140 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd8e7168 prev 0xd8e6908 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:17 asin 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e6870 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:35> col:35 __x 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd8e7268 <<invalid sloc>> Inherited Implicit 955
 
+# (placeholder) | `-NoThrowAttr 0xd8e7210 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/strings.h:111:26 ffsll 'int (long long)' extern
+# (placeholder) |-FunctionDecl 0xd8e7340 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:117:1 __asin 'double (double)' extern
 
-__ll 'long long'
+# (placeholder) | |-ParmVarDecl 0xd8e72a8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:35> col:35 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd8e73e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8e74f0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:17> col:17 implicit atan 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e75e8 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd8e7590 <<invalid sloc>> Implicit 961
 
-implicit strcasecmp 'int (const char *, const char *)' extern
+# (placeholder) | `-NoThrowAttr 0xd8e7658 <col:17> Implicit
 
-<invalid sloc> 'const char *'
+# (placeholder) |-FunctionDecl 0xd8e7680 prev 0xd8e74f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:17 atan 'double (double)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8e7458 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:35> col:35 __x 'double'
 
-Implicit 877
+# (placeholder) | |-BuiltinAttr 0xd8e7780 <<invalid sloc>> Inherited Implicit 961
 
-prev 0x6173b0 /usr/include/strings.h:116:12 strcasecmp 'int (const char *, const char *)' extern
+# (placeholder) | `-NoThrowAttr 0xd8e7728 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__s1 'const char *'
+# (placeholder) |-FunctionDecl 0xd8e7858 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:119:1 __atan 'double (double)' extern
 
-__s2 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8e77c0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:35> col:35 __x 'double'
 
-Inherited Implicit 877
+# (placeholder) | `-NoThrowAttr 0xd8e7900 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8e7ad0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:17> col:17 implicit atan2 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e7bc8 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd8e7c30 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd8e7b70 <<invalid sloc>> Implicit 913
 
-1 2
+# (placeholder) | `-NoThrowAttr 0xd8e7ca8 <col:17> Implicit
 
-implicit strncasecmp 'int (const char *, const char *, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd8e7cd0 prev 0xd8e7ad0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:17 atan2 'double (double, double)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8e7970 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:36> col:36 __y 'double'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8e79f0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:51> col:51 __x 'double'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd8e7dd8 <<invalid sloc>> Inherited Implicit 913
 
-Implicit 878
+# (placeholder) | `-NoThrowAttr 0xd8e7d80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x617918 /usr/include/strings.h:120:12 strncasecmp 'int (const char *, const char *, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd8e7f38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:121:1 __atan2 'double (double, double)' extern
 
-__s1 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8e7e18 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:36> col:36 __y 'double'
 
-__s2 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8e7e98 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:51> col:51 __x 'double'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd8e7fe8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 878
+# (placeholder) |-FunctionDecl 0xd8e8548 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:17> col:17 implicit cos 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e8640 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd8e85e8 <<invalid sloc>> Implicit 973
 
+# (placeholder) | `-NoThrowAttr 0xd8e86b0 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd8e86d8 prev 0xd8e8548 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:17 cos 'double (double)' extern
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd8e84b0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:34> col:34 __x 'double'
 
-/usr/include/strings.h:128:12 strcasecmp_l 'int (const char *, const char *, locale_t)' extern
+# (placeholder) | |-BuiltinAttr 0xd8e87d8 <<invalid sloc>> Inherited Implicit 973
 
-__s1 'const char *'
+# (placeholder) | `-NoThrowAttr 0xd8e8780 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__s2 'const char *'
+# (placeholder) |-FunctionDecl 0xd8e88b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:123:1 __cos 'double (double)' extern
 
-__loc 'locale_t':'struct __locale_struct *'
+# (placeholder) | |-ParmVarDecl 0xd8e8818 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:34> col:34 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd8e8958 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8e8a60 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:17> col:17 implicit sin 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e8b58 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd8e8b00 <<invalid sloc>> Implicit 1072
 
-1 2 3
+# (placeholder) | `-NoThrowAttr 0xd8e8bc8 <col:17> Implicit
 
-/usr/include/strings.h:133:12 strncasecmp_l 'int (const char *, const char *, size_t, locale_t)' extern
+# (placeholder) |-FunctionDecl 0xd8e8bf0 prev 0xd8e8a60 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:17 sin 'double (double)' extern
 
-__s1 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd8e89c8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:34> col:34 __x 'double'
 
-__s2 'const char *'
+# (placeholder) | |-BuiltinAttr 0xd8e8cf0 <<invalid sloc>> Inherited Implicit 1072
 
-__n 'size_t':'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd8e8c98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__loc 'locale_t':'struct __locale_struct *'
+# (placeholder) |-FunctionDecl 0xd8e8dc8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:125:1 __sin 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e8d30 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:34> col:34 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd8e8e70 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd8e8f78 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:17> col:17 implicit tan 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd8e9070 <<invalid sloc>> <invalid sloc> 'double'
 
-1 2 4
+# (placeholder) | |-BuiltinAttr 0xd8e9018 <<invalid sloc>> Implicit 1081
 
-/usr/include/string.h:466:13 explicit_bzero 'void (void *, size_t)' extern
+# (placeholder) | `-NoThrowAttr 0xd8e90e0 <col:17> Implicit
 
-__s 'void *'
+# (placeholder) |-FunctionDecl 0xd8e9108 prev 0xd8e8f78 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:17 tan 'double (double)' extern
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-ParmVarDecl 0xd8e8ee0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:34> col:34 __x 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd8e9208 <<invalid sloc>> Inherited Implicit 1081
 
+# (placeholder) | `-NoThrowAttr 0xd8e91b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1
+# (placeholder) |-FunctionDecl 0xd8e92e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:127:1 __tan 'double (double)' extern
 
-/usr/include/string.h:471:14 strsep 'char *(char **restrict, const char *restrict)' extern
+# (placeholder) | |-ParmVarDecl 0xd8e9248 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:34> col:34 __x 'double'
 
-__stringp 'char **restrict'
+# (placeholder) | `-NoThrowAttr 0xd8e9388 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__delim 'const char *restrict'
+# (placeholder) |-FunctionDecl 0xd913d80 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:17> col:17 implicit cosh 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd913e78 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd913e20 <<invalid sloc>> Implicit 976
 
-1 2
+# (placeholder) | `-NoThrowAttr 0xd913ee8 <col:17> Implicit
 
-/usr/include/string.h:478:14 strsignal 'char *(int)' extern
+# (placeholder) |-FunctionDecl 0xd913f10 prev 0xd913d80 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:17 cosh 'double (double)' extern
 
-__sig 'int'
+# (placeholder) | |-ParmVarDecl 0xd8e93f8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:35> col:35 __x 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd914010 <<invalid sloc>> Inherited Implicit 976
 
+# (placeholder) | `-NoThrowAttr 0xd913fb8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/string.h:489:14 __stpcpy 'char *(char *restrict, const char *restrict)' extern
+# (placeholder) |-FunctionDecl 0xd9140e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:129:1 __cosh 'double (double)' extern
 
-__dest 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd914050 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:35> col:35 __x 'double'
 
-__src 'const char *restrict'
+# (placeholder) | `-NoThrowAttr 0xd914190 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd914298 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:17> col:17 implicit sinh 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd914390 <<invalid sloc>> <invalid sloc> 'double'
 
-1 2
+# (placeholder) | |-BuiltinAttr 0xd914338 <<invalid sloc>> Implicit 1075
 
-implicit stpcpy 'char *(char *, const char *)' extern
+# (placeholder) | `-NoThrowAttr 0xd914400 <col:17> Implicit
 
-<invalid sloc> 'char *'
+# (placeholder) |-FunctionDecl 0xd914428 prev 0xd914298 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:17 sinh 'double (double)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd914200 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:35> col:35 __x 'double'
 
-Implicit 869
+# (placeholder) | |-BuiltinAttr 0xd914528 <<invalid sloc>> Inherited Implicit 1075
 
-prev 0x619140 /usr/include/string.h:491:14 stpcpy 'char *(char *, const char *)' extern
+# (placeholder) | `-NoThrowAttr 0xd9144d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__dest 'char *restrict'
+# (placeholder) |-FunctionDecl 0xd914600 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:131:1 __sinh 'double (double)' extern
 
-__src 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd914568 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:35> col:35 __x 'double'
 
-Inherited Implicit 869
+# (placeholder) | `-NoThrowAttr 0xd9146a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9147b0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:17> col:17 implicit tanh 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9148a8 <<invalid sloc>> <invalid sloc> 'double'
 
-1 2
+# (placeholder) | |-BuiltinAttr 0xd914850 <<invalid sloc>> Implicit 1084
 
-/usr/include/string.h:496:14 __stpncpy 'char *(char *restrict, const char *restrict, size_t)' extern
+# (placeholder) | `-NoThrowAttr 0xd914918 <col:17> Implicit
 
-__dest 'char *restrict'
+# (placeholder) |-FunctionDecl 0xd914940 prev 0xd9147b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:17 tanh 'double (double)' extern
 
-__src 'const char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd914718 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:35> col:35 __x 'double'
 
-__n 'size_t':'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd914a40 <<invalid sloc>> Inherited Implicit 1084
 
+# (placeholder) | `-NoThrowAttr 0xd9149e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd914b18 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:133:1 __tanh 'double (double)' extern
 
-1 2
+# (placeholder) | |-ParmVarDecl 0xd914a80 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:35> col:35 __x 'double'
 
-implicit stpncpy 'char *(char *, const char *, unsigned long)' extern
+# (placeholder) | `-NoThrowAttr 0xd914bc0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'char *'
+# (placeholder) |-FunctionDecl 0xd914cc8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:17> col:17 implicit acosh 'double (double)' extern
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd914de8 <<invalid sloc>> <invalid sloc> 'double'
 
-<invalid sloc> 'unsigned long'
+# (placeholder) | |-BuiltinAttr 0xd914d90 <<invalid sloc>> Implicit 952
 
-Implicit 870
+# (placeholder) | `-NoThrowAttr 0xd914e58 <col:17> Implicit
 
-prev 0x6199c0 /usr/include/string.h:499:14 stpncpy 'char *(char *, const char *, unsigned long)' extern
+# (placeholder) |-FunctionDecl 0xd914e80 prev 0xd914cc8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:17 acosh 'double (double)' extern
 
-__dest 'char *restrict'
+# (placeholder) | |-ParmVarDecl 0xd914c30 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:36> col:36 __x 'double'
 
-__src 'const char *restrict'
+# (placeholder) | |-BuiltinAttr 0xd914f80 <<invalid sloc>> Inherited Implicit 952
 
-__n 'size_t':'unsigned long'
+# (placeholder) | `-NoThrowAttr 0xd914f28 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 870
+# (placeholder) |-FunctionDecl 0xd915058 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:135:1 __acosh 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd914fc0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:36> col:36 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd915100 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-1 2
+# (placeholder) |-FunctionDecl 0xd915208 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:17> col:17 implicit asinh 'double (double)' extern
 
-float_t 'float'
+# (placeholder) | |-ParmVarDecl 0xd915300 <<invalid sloc>> <invalid sloc> 'double'
 
-'float'
+# (placeholder) | |-BuiltinAttr 0xd9152a8 <<invalid sloc>> Implicit 958
 
-double_t 'double'
+# (placeholder) | `-NoThrowAttr 0xd915370 <col:17> Implicit
 
-'double'
+# (placeholder) |-FunctionDecl 0xd915398 prev 0xd915208 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:17 asinh 'double (double)' extern
 
-__fpclassify 'int (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd915170 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:36> col:36 __x 'double'
 
-__value 'double'
+# (placeholder) | |-BuiltinAttr 0xd915498 <<invalid sloc>> Inherited Implicit 958
 
+# (placeholder) | `-NoThrowAttr 0xd915440 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd915570 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:137:1 __asinh 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9154d8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:36> col:36 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd915618 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__signbit 'int (double)' extern
+# (placeholder) |-FunctionDecl 0xd915720 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:17> col:17 implicit atanh 'double (double)' extern
 
-__value 'double'
+# (placeholder) | |-ParmVarDecl 0xd915818 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd9157c0 <<invalid sloc>> Implicit 964
 
+# (placeholder) | `-NoThrowAttr 0xd915888 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9158b0 prev 0xd915720 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:17 atanh 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd915688 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:36> col:36 __x 'double'
 
-__isinf 'int (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9159b0 <<invalid sloc>> Inherited Implicit 964
 
-__value 'double'
+# (placeholder) | `-NoThrowAttr 0xd915958 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd915a88 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:139:1 __atanh 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9159f0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:36> col:36 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd915b30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd915c38 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:17> col:17 implicit exp 'double (double)' extern
 
-implicit __finite 'int (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd915da0 <<invalid sloc>> <invalid sloc> 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd915cd8 <<invalid sloc>> Implicit 985
 
-Implicit 928
+# (placeholder) | `-NoThrowAttr 0xd915e10 <col:17> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd915e38 prev 0xd915c38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:17 exp 'double (double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd915ba0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:34> col:34 __x 'double'
 
-prev 0x5bb038 __finite 'int (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd915f38 <<invalid sloc>> Inherited Implicit 985
 
-__value 'double'
+# (placeholder) | `-NoThrowAttr 0xd915ee0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 928
+# (placeholder) |-FunctionDecl 0xd916010 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:141:1 __exp 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd915f78 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:34> col:34 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd9160b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd916280 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:13> col:13 implicit frexp 'double (double, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd916378 <<invalid sloc>> <invalid sloc> 'double'
 
-__isnan 'int (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9163e0 <<invalid sloc>> <invalid sloc> 'int *'
 
-__value 'double'
+# (placeholder) | |-BuiltinAttr 0xd916320 <<invalid sloc>> Implicit 934
 
+# (placeholder) | `-NoThrowAttr 0xd916458 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd916480 prev 0xd916280 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:13 frexp 'double (double, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd916128 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:32> col:32 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd9161a8 <col:37, col:42> col:42 __exponent 'int *'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:41:24 __iseqsig 'int (double, double)' extern
+# (placeholder) | |-BuiltinAttr 0xd916588 <<invalid sloc>> Inherited Implicit 934
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd916530 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'double'
+# (placeholder) |-FunctionDecl 0xd9166e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:142:1 __frexp 'double (double, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9165c8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:32> col:32 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd916648 <col:37, col:42> col:42 __exponent 'int *'
 
-__issignaling 'int (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd916798 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__value 'double'
+# (placeholder) |-FunctionDecl 0xd916960 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:13> col:13 implicit ldexp 'double (double, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd916a58 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd916ac0 <<invalid sloc>> <invalid sloc> 'int'
 
+# (placeholder) | |-BuiltinAttr 0xd916a00 <<invalid sloc>> Implicit 937
 
+# (placeholder) | `-NoThrowAttr 0xd916b38 <col:13> Implicit
 
-implicit acos 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd916b60 prev 0xd916960 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:13 ldexp 'double (double, int)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd916808 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:32> col:32 __x 'double'
 
-Implicit 949
+# (placeholder) | |-ParmVarDecl 0xd916888 <col:37, col:41> col:41 __exponent 'int'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd916c68 <<invalid sloc>> Inherited Implicit 937
 
-prev 0x5bc590 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:53:17 acos 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd916c10 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd916de8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:143:1 __ldexp 'double (double, int)' extern
 
-Inherited Implicit 949
+# (placeholder) | |-ParmVarDecl 0xd916ca8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:32> col:32 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd916d28 <col:37, col:41> col:41 __exponent 'int'
 
+# (placeholder) | `-NoThrowAttr 0xd916e98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:115:1 __acos 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd916fa0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:17> col:17 implicit log 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd917098 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd917040 <<invalid sloc>> Implicit 1024
 
+# (placeholder) | `-NoThrowAttr 0xd917108 <col:17> Implicit
 
-implicit asin 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd917130 prev 0xd916fa0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:17 log 'double (double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd916f08 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:34> col:34 __x 'double'
 
-Implicit 955
+# (placeholder) | |-BuiltinAttr 0xd917230 <<invalid sloc>> Inherited Implicit 1024
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9171d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5bcaa8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:55:17 asin 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd917308 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:145:1 __log 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd917270 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:34> col:34 __x 'double'
 
-Inherited Implicit 955
+# (placeholder) | `-NoThrowAttr 0xd9173b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9174b8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:17> col:17 implicit log10 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9175b0 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:117:1 __asin 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd917558 <<invalid sloc>> Implicit 1027
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd917620 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd917648 prev 0xd9174b8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:17 log10 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd917420 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:36> col:36 __x 'double'
 
-implicit atan 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd917748 <<invalid sloc>> Inherited Implicit 1027
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd9176f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 961
+# (placeholder) |-FunctionDecl 0xd917820 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:147:1 __log10 'double (double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd917788 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:36> col:36 __x 'double'
 
-prev 0x5bcfc0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:57:17 atan 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9178c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd917a90 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:13> col:13 implicit modf 'double (double, double *)' extern
 
-Inherited Implicit 961
+# (placeholder) | |-ParmVarDecl 0xd917b88 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd917bf0 <<invalid sloc>> <invalid sloc> 'double *'
 
+# (placeholder) | |-BuiltinAttr 0xd917b30 <<invalid sloc>> Implicit 940
 
-<scratch space>:119:1 __atan 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd917c68 <col:13> Implicit
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd917c90 prev 0xd917a90 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:13 modf 'double (double, double *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd917938 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:31> col:31 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd9179b8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:47> col:47 __iptr 'double *'
 
-implicit atan2 'double (double, double)' extern
+# (placeholder) | |-BuiltinAttr 0xd917dc0 <<invalid sloc>> Inherited Implicit 940
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd917d40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd917f40 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> <scratch space>:148:1 __modf 'double (double, double *)' extern
 
-Implicit 913
+# (placeholder) | |-ParmVarDecl 0xd917e00 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:31> col:31 __x 'double'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd917e80 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:47> col:47 __iptr 'double *'
 
-prev 0x5bd8c0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:59:17 atan2 'double (double, double)' extern
+# (placeholder) | |-NoThrowAttr 0xd917ff0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'double'
+# (placeholder) | `-NonNullAttr 0xd918048 <line:384:57, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:69> 2
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd918138 <line:119:17> col:17 implicit expm1 'double (double)' extern
 
-Inherited Implicit 913
+# (placeholder) | |-ParmVarDecl 0xd918230 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd9181d8 <<invalid sloc>> Implicit 991
 
+# (placeholder) | `-NoThrowAttr 0xd9182a0 <col:17> Implicit
 
-<scratch space>:121:1 __atan2 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd9182c8 prev 0xd918138 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:119:17 expm1 'double (double)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd9180a0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:119:36> col:36 __x 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd9183c8 <<invalid sloc>> Inherited Implicit 991
 
+# (placeholder) | `-NoThrowAttr 0xd918370 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9184a0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:151:1 __expm1 'double (double)' extern
 
-implicit cos 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd918408 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:119:36> col:36 __x 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd918548 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 973
+# (placeholder) |-FunctionDecl 0xd918650 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:17> col:17 implicit log1p 'double (double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd918748 <<invalid sloc>> <invalid sloc> 'double'
 
-prev 0x5bdee0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:62:17 cos 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9186f0 <<invalid sloc>> Implicit 1030
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd9187b8 <col:17> Implicit
 
-Inherited Implicit 973
+# (placeholder) |-FunctionDecl 0xd9187e0 prev 0xd918650 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:17 log1p 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9185b8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:36> col:36 __x 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd9188e0 <<invalid sloc>> Inherited Implicit 1030
 
-<scratch space>:123:1 __cos 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd918888 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd9189b8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:153:1 __log1p 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd918920 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:36> col:36 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd918a60 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit sin 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd918b68 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:13> col:13 implicit logb 'double (double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd918c60 <<invalid sloc>> <invalid sloc> 'double'
 
-Implicit 1072
+# (placeholder) | |-BuiltinAttr 0xd918c08 <<invalid sloc>> Implicit 1036
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd918cd0 <col:13> Implicit
 
-prev 0x5be3f8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:64:17 sin 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd918cf8 prev 0xd918b68 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:13 logb 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd918ad0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:31> col:31 __x 'double'
 
-Inherited Implicit 1072
+# (placeholder) | |-BuiltinAttr 0xd9191d8 <<invalid sloc>> Inherited Implicit 1036
 
+# (placeholder) | `-NoThrowAttr 0xd919180 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9192b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:154:1 __logb 'double (double)' extern
 
-<scratch space>:125:1 __sin 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd919218 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:31> col:31 __x 'double'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd919358 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd919460 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:17> col:17 implicit exp2 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd919558 <<invalid sloc>> <invalid sloc> 'double'
 
-implicit tan 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd919500 <<invalid sloc>> Implicit 988
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd9195c8 <col:17> Implicit
 
-Implicit 1081
+# (placeholder) |-FunctionDecl 0xd9195f0 prev 0xd919460 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:17 exp2 'double (double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9193c8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:35> col:35 __x 'double'
 
-prev 0x5e85c0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:66:17 tan 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9196f0 <<invalid sloc>> Inherited Implicit 988
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd919698 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1081
+# (placeholder) |-FunctionDecl 0xd9197c8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:156:1 __exp2 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd919730 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:35> col:35 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd919870 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:127:1 __tan 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd919978 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:17> col:17 implicit log2 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd919a70 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd919a18 <<invalid sloc>> Implicit 1033
 
+# (placeholder) | `-NoThrowAttr 0xd919ae0 <col:17> Implicit
 
-implicit cosh 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd919b08 prev 0xd919978 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:17 log2 'double (double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd9198e0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:35> col:35 __x 'double'
 
-Implicit 976
+# (placeholder) | |-BuiltinAttr 0xd919c08 <<invalid sloc>> Inherited Implicit 1033
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd919bb0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5e8ad8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:71:17 cosh 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd919ce0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:158:1 __log2 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd919c48 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:35> col:35 __x 'double'
 
-Inherited Implicit 976
+# (placeholder) | `-NoThrowAttr 0xd919d88 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd919f18 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:17> col:17 implicit pow 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd91a010 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:129:1 __cosh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91a078 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd919fb8 <<invalid sloc>> Implicit 946
 
+# (placeholder) | `-NoThrowAttr 0xd91a0f0 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd91a190 prev 0xd919f18 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:17 pow 'double (double, double)' extern
 
-implicit sinh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd919df8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:34> col:34 __x 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd919e78 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:49> col:49 __y 'double'
 
-Implicit 1075
+# (placeholder) | |-BuiltinAttr 0xd91a298 <<invalid sloc>> Inherited Implicit 946
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd91a240 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5e8ff0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:73:17 sinh 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd91a3f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:160:1 __pow 'double (double, double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd91a2d8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:34> col:34 __x 'double'
 
-Inherited Implicit 1075
+# (placeholder) | |-ParmVarDecl 0xd91a358 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:49> col:49 __y 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd91a4a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd91a5b0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:13> col:13 implicit sqrt 'double (double)' extern
 
-<scratch space>:131:1 __sinh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91a6a8 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd91a650 <<invalid sloc>> Implicit 1078
 
+# (placeholder) | `-NoThrowAttr 0xd91a718 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd91a740 prev 0xd91a5b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:13 sqrt 'double (double)' extern
 
-implicit tanh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91a518 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:31> col:31 __x 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd91a840 <<invalid sloc>> Inherited Implicit 1078
 
-Implicit 1084
+# (placeholder) | `-NoThrowAttr 0xd91a7e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd91a918 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:161:1 __sqrt 'double (double)' extern
 
-prev 0x5e9528 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:75:17 tanh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91a880 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:31> col:31 __x 'double'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd91a9c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1084
+# (placeholder) |-FunctionDecl 0xd91ab50 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:17> col:17 implicit hypot 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd91ac48 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd91acb0 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:133:1 __tanh 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd91abf0 <<invalid sloc>> Implicit 1009
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd91ad28 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd91ad50 prev 0xd91ab50 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:17 hypot 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd91aa30 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:36> col:36 __x 'double'
 
-implicit acosh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91aab0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:51> col:51 __y 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd91ae58 <<invalid sloc>> Inherited Implicit 1009
 
-Implicit 952
+# (placeholder) | `-NoThrowAttr 0xd91ae00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd91afb8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:163:1 __hypot 'double (double, double)' extern
 
-prev 0x5e9a40 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:85:17 acosh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91ae98 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:36> col:36 __x 'double'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd91af18 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:51> col:51 __y 'double'
 
-Inherited Implicit 952
+# (placeholder) | `-NoThrowAttr 0xd91b068 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd91b210 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:17> col:17 implicit cbrt 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd91b308 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:135:1 __acosh 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd91b2b0 <<invalid sloc>> Implicit 967
 
-__x 'double'
+# (placeholder) | |-NoThrowAttr 0xd91b378 <col:17> Implicit
 
+# (placeholder) | `-ConstAttr 0xd91b3a0 <col:17> Implicit
 
+# (placeholder) |-FunctionDecl 0xd91b3c8 prev 0xd91b210 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:17 cbrt 'double (double)' extern
 
-implicit asinh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91b0d8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:35> col:35 __x 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd91b4c8 <<invalid sloc>> Inherited Implicit 967
 
-Implicit 958
+# (placeholder) | |-ConstAttr 0xd91b4f0 <col:17> Inherited Implicit
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd91b470 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5e9f58 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:87:17 asinh 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd91b5c8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:165:1 __cbrt 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd91b530 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:35> col:35 __x 'double'
 
-Inherited Implicit 958
+# (placeholder) | `-NoThrowAttr 0xd91b670 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd91b778 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:14> col:14 implicit ceil 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd91b870 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:137:1 __asinh 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd91b818 <<invalid sloc>> Implicit 970
 
-__x 'double'
+# (placeholder) | |-NoThrowAttr 0xd91b8e0 <col:14> Implicit
 
+# (placeholder) | `-ConstAttr 0xd91b908 <col:14> Implicit
 
+# (placeholder) |-FunctionDecl 0xd91b930 prev 0xd91b778 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:14 ceil 'double (double)' extern
 
-implicit atanh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91b6e0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:32> col:32 __x 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd91ba58 <<invalid sloc>> Inherited Implicit 970
 
-Implicit 964
+# (placeholder) | |-NoThrowAttr 0xd91b9d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd91ba30 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:39>
 
-prev 0x5ea4c8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:89:17 atanh 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd91bb30 </usr/include/math.h:297:3, line:295:79> <scratch space>:166:1 __ceil 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd91ba98 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:32> col:32 __x 'double'
 
-Inherited Implicit 964
+# (placeholder) | |-NoThrowAttr 0xd91bbd8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd91bc30 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:39>
 
+# (placeholder) |-FunctionDecl 0xd91bd08 <line:162:14> col:14 implicit fabs 'double (double)' extern
 
-<scratch space>:139:1 __atanh 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd91be00 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd91bda8 <<invalid sloc>> Implicit 922
 
+# (placeholder) | |-NoThrowAttr 0xd91be70 <col:14> Implicit
 
+# (placeholder) | `-ConstAttr 0xd91be98 <col:14> Implicit
 
-implicit exp 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd91bec0 prev 0xd91bd08 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:14 fabs 'double (double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd91bc70 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:32> col:32 __x 'double'
 
-Implicit 985
+# (placeholder) | |-BuiltinAttr 0xd91bfe8 <<invalid sloc>> Inherited Implicit 922
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd91bf68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5ea9e0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:95:17 exp 'double (double)' extern
+# (placeholder) | `-ConstAttr 0xd91bfc0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:39>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd91c0c0 </usr/include/math.h:297:3, line:295:79> <scratch space>:167:1 __fabs 'double (double)' extern
 
-Inherited Implicit 985
+# (placeholder) | |-ParmVarDecl 0xd91c028 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:32> col:32 __x 'double'
 
+# (placeholder) | |-NoThrowAttr 0xd91c168 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd91c1c0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:39>
 
-<scratch space>:141:1 __exp 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd91ec08 <line:165:14> col:14 implicit floor 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd91ed00 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd91eca8 <<invalid sloc>> Implicit 997
 
+# (placeholder) | |-NoThrowAttr 0xd91ed70 <col:14> Implicit
 
-implicit frexp 'double (double, int *)' extern
+# (placeholder) | `-ConstAttr 0xd91ed98 <col:14> Implicit
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd91edc0 prev 0xd91ec08 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:14 floor 'double (double)' extern
 
-<invalid sloc> 'int *'
+# (placeholder) | |-ParmVarDecl 0xd91eb70 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:33> col:33 __x 'double'
 
-Implicit 934
+# (placeholder) | |-BuiltinAttr 0xd91eee8 <<invalid sloc>> Inherited Implicit 997
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd91ee68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5eafc0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:98:13 frexp 'double (double, int *)' extern
+# (placeholder) | `-ConstAttr 0xd91eec0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:40>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd91efc0 </usr/include/math.h:297:3, line:295:79> <scratch space>:168:1 __floor 'double (double)' extern
 
-__exponent 'int *'
+# (placeholder) | |-ParmVarDecl 0xd91ef28 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:33> col:33 __x 'double'
 
-Inherited Implicit 934
+# (placeholder) | |-NoThrowAttr 0xd91f068 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd91f0c0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:40>
 
+# (placeholder) |-FunctionDecl 0xd91f220 <line:168:13> col:13 implicit fmod 'double (double, double)' extern
 
-<scratch space>:142:1 __frexp 'double (double, int *)' extern
+# (placeholder) | |-ParmVarDecl 0xd91f318 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd91f380 <<invalid sloc>> <invalid sloc> 'double'
 
-__exponent 'int *'
+# (placeholder) | |-BuiltinAttr 0xd91f2c0 <<invalid sloc>> Implicit 931
 
+# (placeholder) | `-NoThrowAttr 0xd91f3f8 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd91f420 prev 0xd91f220 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:13 fmod 'double (double, double)' extern
 
-implicit ldexp 'double (double, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd91f100 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:31> col:31 __x 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd91f180 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:46> col:46 __y 'double'
 
-<invalid sloc> 'int'
+# (placeholder) | |-BuiltinAttr 0xd91f528 <<invalid sloc>> Inherited Implicit 931
 
-Implicit 937
+# (placeholder) | `-NoThrowAttr 0xd91f4d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd91f688 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:169:1 __fmod 'double (double, double)' extern
 
-prev 0x5eb930 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:101:13 ldexp 'double (double, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd91f568 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:31> col:31 __x 'double'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd91f5e8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:46> col:46 __y 'double'
 
-__exponent 'int'
+# (placeholder) | `-NoThrowAttr 0xd91f738 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 937
+# (placeholder) |-FunctionDecl 0xd91f840 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:178:29> line:177:23 isinf 'int (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd91f7a8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:177:42> col:42 __value 'double'
 
+# (placeholder) | |-NoThrowAttr 0xd91f8e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:143:1 __ldexp 'double (double, int)' extern
+# (placeholder) | `-ConstAttr 0xd91f940 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:178:19>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd91fa18 <line:183:23> col:23 implicit finite 'int (double)' extern
 
-__exponent 'int'
+# (placeholder) | |-ParmVarDecl 0xd973ad0 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd91fab8 <<invalid sloc>> Implicit 925
 
+# (placeholder) | |-NoThrowAttr 0xd973b40 <col:23> Implicit
 
-implicit log 'double (double)' extern
+# (placeholder) | `-ConstAttr 0xd973b68 <col:23> Implicit
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd973b90 prev 0xd91fa18 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:184:29> line:183:23 finite 'int (double)' extern
 
-Implicit 1024
+# (placeholder) | |-ParmVarDecl 0xd91f980 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:183:43> col:43 __value 'double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd973cb8 <<invalid sloc>> Inherited Implicit 925
 
-prev 0x5ebf50 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:104:17 log 'double (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd973c38 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) | `-ConstAttr 0xd973c90 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:184:19>
 
-Inherited Implicit 1024
+# (placeholder) |-FunctionDecl 0xd973e18 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:13 drem 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd973cf8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:31> col:31 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd973d78 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:46> col:46 __y 'double'
 
-<scratch space>:145:1 __log 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd973ec8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd974058 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:170:1 __drem 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd973f38 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:31> col:31 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd973fb8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:46> col:46 __y 'double'
 
-implicit log10 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd974108 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd974210 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:191:13 significand 'double (double)' extern
 
-Implicit 1027
+# (placeholder) | |-ParmVarDecl 0xd974178 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:191:38> col:38 __x 'double'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9742b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5ec468 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:107:17 log10 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd9743c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:171:1 __significand 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd974328 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:191:38> col:38 __x 'double'
 
-Inherited Implicit 1027
+# (placeholder) | `-NoThrowAttr 0xd974468 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9745f8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:14> col:14 implicit copysign 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9746f0 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:147:1 __log10 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd974758 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd974698 <<invalid sloc>> Implicit 919
 
+# (placeholder) | |-NoThrowAttr 0xd9747d0 <col:14> Implicit
 
+# (placeholder) | `-ConstAttr 0xd9747f8 <col:14> Implicit
 
-implicit modf 'double (double, double *)' extern
+# (placeholder) |-FunctionDecl 0xd974820 prev 0xd9745f8 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:14 copysign 'double (double, double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd9744d8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:36> col:36 __x 'double'
 
-<invalid sloc> 'double *'
+# (placeholder) | |-ParmVarDecl 0xd974558 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:51> col:51 __y 'double'
 
-Implicit 940
+# (placeholder) | |-BuiltinAttr 0xd974950 <<invalid sloc>> Inherited Implicit 919
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd9748d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5ecb10 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:110:13 modf 'double (double, double *)' extern
+# (placeholder) | `-ConstAttr 0xd974928 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:58>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd92fe90 </usr/include/math.h:297:3, line:295:79> <scratch space>:172:1 __copysign 'double (double, double)' extern
 
-__iptr 'double *'
+# (placeholder) | |-ParmVarDecl 0xd974990 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:36> col:36 __x 'double'
 
-Inherited Implicit 940
+# (placeholder) | |-ParmVarDecl 0xd974a10 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:51> col:51 __y 'double'
 
+# (placeholder) | |-NoThrowAttr 0xd92ff40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd92ff98 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:58>
 
-<scratch space>:148:1 __modf 'double (double, double *)' extern
+# (placeholder) |-FunctionDecl 0xd930070 <line:203:13> col:13 implicit nan 'double (const char *)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd930168 <<invalid sloc>> <invalid sloc> 'const char *'
 
-__iptr 'double *'
+# (placeholder) | |-BuiltinAttr 0xd930110 <<invalid sloc>> Implicit 943
 
+# (placeholder) | |-NoThrowAttr 0xd9301d8 <col:13> Implicit
 
+# (placeholder) | `-PureAttr 0xd930200 <col:13> Implicit
 
-2
+# (placeholder) |-FunctionDecl 0xd930228 prev 0xd930070 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:203:13 nan 'double (const char *)' extern
 
-implicit expm1 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd92ffd8 <col:20, col:32> col:32 __tagb 'const char *'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd930328 <<invalid sloc>> Inherited Implicit 943
 
-Implicit 991
+# (placeholder) | |-PureAttr 0xd930350 <col:13> Inherited Implicit
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9302d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5ed188 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:119:17 expm1 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd930428 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:173:1 __nan 'double (const char *)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd930390 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:203:20, col:32> col:32 __tagb 'const char *'
 
-Inherited Implicit 991
+# (placeholder) | `-NoThrowAttr 0xd9304d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9305d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:214:29> line:213:23 isnan 'int (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd930540 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:213:42> col:42 __value 'double'
 
-<scratch space>:151:1 __expm1 'double (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd930680 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) | `-ConstAttr 0xd9306d8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:214:19>
 
+# (placeholder) |-FunctionDecl 0xd9307b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:220:13 j0 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd930718 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:220:28 'double'
 
-implicit log1p 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd930858 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd930960 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:174:1 __j0 'double (double)' extern
 
-Implicit 1030
+# (placeholder) | |-ParmVarDecl 0xd9308c8 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:220:28 'double'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd930a08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5ed6a0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:122:17 log1p 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd930b10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:221:13 j1 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd930a78 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:221:28 'double'
 
-Inherited Implicit 1030
+# (placeholder) | `-NoThrowAttr 0xd930bb8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd930cc0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:175:1 __j1 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd930c28 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:221:28 'double'
 
-<scratch space>:153:1 __log1p 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd930d68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd978bd0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:13 jn 'double (int, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd930dd8 <col:19> col:22 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd978af0 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:33 'double'
 
-implicit logb 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd978c80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd978e10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:176:1 __jn 'double (int, double)' extern
 
-Implicit 1036
+# (placeholder) | |-ParmVarDecl 0xd978cf0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:19> col:22 'int'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd978d70 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:33 'double'
 
-prev 0x5edfc0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:125:13 logb 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd978ec0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd978fc8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:223:13 y0 'double (double)' extern
 
-Inherited Implicit 1036
+# (placeholder) | |-ParmVarDecl 0xd978f30 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:223:28 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd979070 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd979178 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:177:1 __y0 'double (double)' extern
 
-<scratch space>:154:1 __logb 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9790e0 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:223:28 'double'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd979220 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd979328 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:224:13 y1 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd979290 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:224:28 'double'
 
-implicit exp2 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9793d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd9794d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:178:1 __y1 'double (double)' extern
 
-Implicit 988
+# (placeholder) | |-ParmVarDecl 0xd979440 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:224:28 'double'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd979580 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5ee4d8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:130:17 exp2 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd979710 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:13 yn 'double (int, double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd9795f0 <col:19> col:22 'int'
 
-Inherited Implicit 988
+# (placeholder) | |-ParmVarDecl 0xd979670 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:33 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd9797c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd979950 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:179:1 __yn 'double (int, double)' extern
 
-<scratch space>:156:1 __exp2 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd979830 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:19> col:22 'int'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd9798b0 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:33 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd979a00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd979b30 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:17> col:17 implicit erf 'double (double)' extern
 
-implicit log2 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd979c28 <<invalid sloc>> <invalid sloc> 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd979bd0 <<invalid sloc>> Implicit 979
 
-Implicit 1033
+# (placeholder) | `-NoThrowAttr 0xd979c98 <col:17> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd979cc0 prev 0xd979b30 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:17 erf 'double (double)' extern
 
-prev 0x5ee9f0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:133:17 log2 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd979a70 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:33 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd979dc0 <<invalid sloc>> Inherited Implicit 979
 
-Inherited Implicit 1033
+# (placeholder) | `-NoThrowAttr 0xd979d68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd979e98 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:181:1 __erf 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd979e00 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:33 'double'
 
-<scratch space>:158:1 __log2 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd979f40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd97a048 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:17> col:17 implicit erfc 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97a140 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd97a0e8 <<invalid sloc>> Implicit 982
 
-implicit pow 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd97a1b0 <col:17> Implicit
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd97a1d8 prev 0xd97a048 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:17 erfc 'double (double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd979fb0 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:34 'double'
 
-Implicit 946
+# (placeholder) | |-BuiltinAttr 0xd97a2d8 <<invalid sloc>> Inherited Implicit 982
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd97a280 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x5eefb8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:140:17 pow 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd97a3b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:183:1 __erfc 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd97a318 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:34 'double'
 
-__y 'double'
+# (placeholder) | `-NoThrowAttr 0xd97a458 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 946
+# (placeholder) |-FunctionDecl 0xd97a560 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:13> col:13 implicit lgamma 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97a658 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd97a600 <<invalid sloc>> Implicit 1015
 
-<scratch space>:160:1 __pow 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd97a6c8 <col:13> Implicit
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd97a6f0 prev 0xd97a560 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:13 lgamma 'double (double)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd97a4c8 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:32 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd97a7f0 <<invalid sloc>> Inherited Implicit 1015
 
+# (placeholder) | `-NoThrowAttr 0xd97a798 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit sqrt 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd97a8c8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:184:1 __lgamma 'double (double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd97a830 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:32 'double'
 
-Implicit 1078
+# (placeholder) | `-NoThrowAttr 0xd97a970 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd97ab10 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:13> col:13 implicit tgamma 'double (double)' extern
 
-prev 0x5ef5d8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:143:13 sqrt 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97ac08 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd97abb0 <<invalid sloc>> Implicit 1087
 
-Inherited Implicit 1078
+# (placeholder) | `-NoThrowAttr 0xd97ac78 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd97aca0 prev 0xd97ab10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:13 tgamma 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97a9e0 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:32 'double'
 
-<scratch space>:161:1 __sqrt 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd97ada0 <<invalid sloc>> Inherited Implicit 1087
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd97ad48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd97ae78 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:185:1 __tgamma 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97ade0 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:32 'double'
 
-implicit hypot 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd97af20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd97b028 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:244:13 gamma 'double (double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd97af90 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:244:31 'double'
 
-Implicit 1009
+# (placeholder) | `-NoThrowAttr 0xd97b0d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd97b1d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:186:1 __gamma 'double (double)' extern
 
-prev 0x5efc00 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:147:17 hypot 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97b140 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:244:31 'double'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd97b280 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'double'
+# (placeholder) |-FunctionDecl 0xd97b410 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:187:1 lgamma_r 'double (double, int *)' extern
 
-Inherited Implicit 1009
+# (placeholder) | |-ParmVarDecl 0xd97b2f0 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:252:34 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd97b370 <col:36, col:41> col:41 __signgamp 'int *'
 
+# (placeholder) | `-NoThrowAttr 0xd97b4c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:163:1 __hypot 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd97b650 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:189:1 __lgamma_r 'double (double, int *)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd97b530 </usr/include/math.h:308:20> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:252:34 'double'
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd97b5b0 <col:36, col:41> col:41 __signgamp 'int *'
 
+# (placeholder) | `-NoThrowAttr 0xd97b700 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd97b808 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:13> col:13 implicit rint 'double (double)' extern
 
-implicit cbrt 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97b900 <<invalid sloc>> <invalid sloc> 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd97b8a8 <<invalid sloc>> Implicit 1060
 
-Implicit 967
+# (placeholder) | |-NoThrowAttr 0xd97b970 <col:13> Implicit
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd97b998 <col:13> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd97b9c0 prev 0xd97b808 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:13 rint 'double (double)' extern
 
-prev 0x5f0220 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:152:17 cbrt 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97b770 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:31> col:31 __x 'double'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd97bac0 <<invalid sloc>> Inherited Implicit 1060
 
-Inherited Implicit 967
+# (placeholder) | |-ConstAttr 0xd97bae8 <col:13> Inherited Implicit
 
-Inherited Implicit
+# (placeholder) | `-NoThrowAttr 0xd97ba68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd97dbe0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:190:1 __rint 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97db48 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:31> col:31 __x 'double'
 
-<scratch space>:165:1 __cbrt 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd97dc88 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd97de18 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:13> col:13 implicit nextafter 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97df10 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd97df78 <<invalid sloc>> <invalid sloc> 'double'
 
-implicit ceil 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd97deb8 <<invalid sloc>> Implicit 1048
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd97dff0 <col:13> Implicit
 
-Implicit 970
+# (placeholder) |-FunctionDecl 0xd97e018 prev 0xd97de18 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:13 nextafter 'double (double, double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd97dcf8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:36> col:36 __x 'double'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd97dd78 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:51> col:51 __y 'double'
 
-prev 0x5f0788 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:159:14 ceil 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd97e120 <<invalid sloc>> Inherited Implicit 1048
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd97e0c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 970
+# (placeholder) |-FunctionDecl 0xd97e280 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:191:1 __nextafter 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97e160 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:36> col:36 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd97e1e0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:51> col:51 __y 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd97e330 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd97e500 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:13> col:13 implicit nexttoward 'double (double, long double)' extern
 
-<scratch space>:166:1 __ceil 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97e5f8 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd97e660 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd97e5a0 <<invalid sloc>> Implicit 1051
 
+# (placeholder) | `-NoThrowAttr 0xd97e6d8 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd97e700 prev 0xd97e500 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:13 nexttoward 'double (double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97e3a0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:37> col:37 __x 'double'
 
-implicit fabs 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97e420 <col:42, col:54> col:54 __y 'long double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd97e808 <<invalid sloc>> Inherited Implicit 1051
 
-Implicit 922
+# (placeholder) | `-NoThrowAttr 0xd97e7b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd97e968 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:192:1 __nexttoward 'double (double, long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd97e848 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:37> col:37 __x 'double'
 
-prev 0x5f30c0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:162:14 fabs 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97e8c8 <col:42, col:54> col:54 __y 'long double'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd97ea18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 922
+# (placeholder) |-FunctionDecl 0xd97ebe0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:13> col:13 implicit remainder 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97ecd8 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd97ed40 <<invalid sloc>> <invalid sloc> 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd97ec80 <<invalid sloc>> Implicit 1054
 
+# (placeholder) | `-NoThrowAttr 0xd97edb8 <col:13> Implicit
 
-<scratch space>:167:1 __fabs 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd97ede0 prev 0xd97ebe0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:13 remainder 'double (double, double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd97ea88 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:36> col:36 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd97eb40 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:51> col:51 __y 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd97eee8 <<invalid sloc>> Inherited Implicit 1054
 
+# (placeholder) | `-NoThrowAttr 0xd97ee90 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd97f048 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:194:1 __remainder 'double (double, double)' extern
 
-implicit floor 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97ef28 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:36> col:36 __x 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd97efa8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:51> col:51 __y 'double'
 
-Implicit 997
+# (placeholder) | `-NoThrowAttr 0xd97f0f8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd97f288 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:13> col:13 implicit scalbn 'double (double, int)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd97f380 <<invalid sloc>> <invalid sloc> 'double'
 
-prev 0x5f3650 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:165:14 floor 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97f3e8 <<invalid sloc>> <invalid sloc> 'int'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd97f328 <<invalid sloc>> Implicit 1069
 
-Inherited Implicit 997
+# (placeholder) | `-NoThrowAttr 0xd97f460 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd97f488 prev 0xd97f288 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:13 scalbn 'double (double, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97f168 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:33> col:33 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd97f1e8 <col:38, col:42> col:42 __n 'int'
 
+# (placeholder) | |-BuiltinAttr 0xd97f590 <<invalid sloc>> Inherited Implicit 1069
 
-<scratch space>:168:1 __floor 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd97f538 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd97f6f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:195:1 __scalbn 'double (double, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd97f5d0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:33> col:33 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd97f650 <col:38, col:42> col:42 __n 'int'
 
+# (placeholder) | `-NoThrowAttr 0xd97f7a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd97f8a8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:17> col:17 implicit ilogb 'int (double)' extern
 
-implicit fmod 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97f9a0 <<invalid sloc>> <invalid sloc> 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd97f948 <<invalid sloc>> Implicit 1012
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd97fa10 <col:17> Implicit
 
-Implicit 931
+# (placeholder) |-FunctionDecl 0xd97fa38 prev 0xd97f8a8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:17 ilogb 'int (double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd97f810 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:36> col:36 __x 'double'
 
-prev 0x5f3c68 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:168:13 fmod 'double (double, double)' extern
+# (placeholder) | |-BuiltinAttr 0xd97fb50 <<invalid sloc>> Inherited Implicit 1012
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd97fae0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'double'
+# (placeholder) |-FunctionDecl 0xd97fc28 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:196:1 __ilogb 'int (double)' extern
 
-Inherited Implicit 931
+# (placeholder) | |-ParmVarDecl 0xd97fb90 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:36> col:36 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd97fcd0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd97fea0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:13> col:13 implicit scalbln 'double (double, long)' extern
 
-<scratch space>:169:1 __fmod 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97ff98 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd980000 <<invalid sloc>> <invalid sloc> 'long'
 
-__y 'double'
+# (placeholder) | |-BuiltinAttr 0xd97ff40 <<invalid sloc>> Implicit 1066
 
+# (placeholder) | `-NoThrowAttr 0xd980078 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9800a0 prev 0xd97fea0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:13 scalbln 'double (double, long)' extern
 
-isinf 'int (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd97fd40 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:34> col:34 __x 'double'
 
-__value 'double'
+# (placeholder) | |-ParmVarDecl 0xd97fdc0 <col:39, col:48> col:48 __n 'long'
 
+# (placeholder) | |-BuiltinAttr 0xd9801a8 <<invalid sloc>> Inherited Implicit 1066
 
+# (placeholder) | `-NoThrowAttr 0xd980150 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd980308 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:198:1 __scalbln 'double (double, long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9801e8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:34> col:34 __x 'double'
 
-implicit finite 'int (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd980268 <col:39, col:48> col:48 __n 'long'
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd9803b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 925
+# (placeholder) |-FunctionDecl 0xd9804c0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:13> col:13 implicit nearbyint 'double (double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9805b8 <<invalid sloc>> <invalid sloc> 'double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd980560 <<invalid sloc>> Implicit 1045
 
-prev 0x5f1390 finite 'int (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd980628 <col:13> Implicit
 
-__value 'double'
+# (placeholder) | `-ConstAttr 0xd980650 <col:13> Implicit
 
-Inherited Implicit 925
+# (placeholder) |-FunctionDecl 0xd980678 prev 0xd9804c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:13 nearbyint 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd980428 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:36> col:36 __x 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd980778 <<invalid sloc>> Inherited Implicit 1045
 
+# (placeholder) | |-ConstAttr 0xd9807a0 <col:13> Inherited Implicit
 
+# (placeholder) | `-NoThrowAttr 0xd980720 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:187:13 drem 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd980878 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:199:1 __nearbyint 'double (double)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd9807e0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:36> col:36 __x 'double'
 
-__y 'double'
+# (placeholder) | `-NoThrowAttr 0xd980920 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd980a28 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:14> col:14 implicit round 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd980b60 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:170:1 __drem 'double (double, double)' extern
+# (placeholder) | |-BuiltinAttr 0xd980ac8 <<invalid sloc>> Implicit 1063
 
-__x 'double'
+# (placeholder) | |-NoThrowAttr 0xd980bd0 <col:14> Implicit
 
-__y 'double'
+# (placeholder) | `-ConstAttr 0xd980bf8 <col:14> Implicit
 
+# (placeholder) |-FunctionDecl 0xd980c20 prev 0xd980a28 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:14 round 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd980990 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:33> col:33 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:191:13 significand 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd980d48 <<invalid sloc>> Inherited Implicit 1063
 
-__x 'double'
+# (placeholder) | |-NoThrowAttr 0xd980cc8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd980d20 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:40>
 
+# (placeholder) |-FunctionDecl 0xd980e20 </usr/include/math.h:297:3, line:295:79> <scratch space>:200:1 __round 'double (double)' extern
 
-<scratch space>:171:1 __significand 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd980d88 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:33> col:33 __x 'double'
 
-__x 'double'
+# (placeholder) | |-NoThrowAttr 0xd980ec8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd980f20 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:40>
 
+# (placeholder) |-FunctionDecl 0xd980ff8 <line:305:14> col:14 implicit trunc 'double (double)' extern
 
-implicit copysign 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9810f0 <<invalid sloc>> <invalid sloc> 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd981098 <<invalid sloc>> Implicit 1090
 
-<invalid sloc> 'double'
+# (placeholder) | |-NoThrowAttr 0xd981160 <col:14> Implicit
 
-Implicit 919
+# (placeholder) | `-ConstAttr 0xd981188 <col:14> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9811b0 prev 0xd980ff8 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:14 trunc 'double (double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd980f60 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:33> col:33 __x 'double'
 
-prev 0x604470 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:198:14 copysign 'double (double, double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9812d8 <<invalid sloc>> Inherited Implicit 1090
 
-__x 'double'
+# (placeholder) | |-NoThrowAttr 0xd981258 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'double'
+# (placeholder) | `-ConstAttr 0xd9812b0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:40>
 
-Inherited Implicit 919
+# (placeholder) |-FunctionDecl 0xd9813b0 </usr/include/math.h:297:3, line:295:79> <scratch space>:201:1 __trunc 'double (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd981318 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:33> col:33 __x 'double'
 
+# (placeholder) | |-NoThrowAttr 0xd981458 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9814b0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:40>
 
+# (placeholder) |-FunctionDecl 0xd9816e0 <line:310:13> col:13 implicit remquo 'double (double, double, int *)' extern
 
-<scratch space>:172:1 __copysign 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9817d8 <<invalid sloc>> <invalid sloc> 'double'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd981840 <<invalid sloc>> <invalid sloc> 'double'
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd9818a8 <<invalid sloc>> <invalid sloc> 'int *'
 
+# (placeholder) | |-BuiltinAttr 0xd981780 <<invalid sloc>> Implicit 1057
 
+# (placeholder) | `-NoThrowAttr 0xd981928 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd981950 prev 0xd9816e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:13 remquo 'double (double, double, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9814f0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:33> col:33 __x 'double'
 
-implicit nan 'double (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd981570 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:48> col:48 __y 'double'
 
-<invalid sloc> 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd9815f0 <col:53, col:58> col:58 __quo 'int *'
 
-Implicit 943
+# (placeholder) | |-BuiltinAttr 0xd981a60 <<invalid sloc>> Inherited Implicit 1057
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd981a08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd981c98 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:202:1 __remquo 'double (double, double, int *)' extern
 
-prev 0x604b08 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:203:13 nan 'double (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd981aa0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:33> col:33 __x 'double'
 
-__tagb 'const char *'
+# (placeholder) | |-ParmVarDecl 0xd981b70 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:48> col:48 __y 'double'
 
-Inherited Implicit 943
+# (placeholder) | |-ParmVarDecl 0xd981bf0 <col:53, col:58> col:58 __quo 'int *'
 
-Inherited Implicit
+# (placeholder) | `-NoThrowAttr 0xd981d50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd981e90 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:22> col:22 implicit lrint 'long (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd981f88 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:173:1 __nan 'double (const char *)' extern
+# (placeholder) | |-BuiltinAttr 0xd981f30 <<invalid sloc>> Implicit 1039
 
-__tagb 'const char *'
+# (placeholder) | `-NoThrowAttr 0xd981ff8 <col:22> Implicit
 
+# (placeholder) |-FunctionDecl 0xd982020 prev 0xd981e90 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:22 lrint 'long (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd981dc0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:41> col:41 __x 'double'
 
-isnan 'int (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd982120 <<invalid sloc>> Inherited Implicit 1039
 
-__value 'double'
+# (placeholder) | `-NoThrowAttr 0xd9820c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9821f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:203:1 __lrint 'long (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd982160 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:41> col:41 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd9822a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9823e0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:27> col:27 implicit llrint 'long long (double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:220:13 j0 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9824d8 <<invalid sloc>> <invalid sloc> 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:220:28 'double'
+# (placeholder) | |-BuiltinAttr 0xd982480 <<invalid sloc>> Implicit 1018
 
+# (placeholder) | `-NoThrowAttr 0xd982548 <col:27> Implicit
 
+# (placeholder) |-FunctionDecl 0xd982570 prev 0xd9823e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:27 llrint 'long long (double)' extern
 
-<scratch space>:174:1 __j0 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd982310 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:47> col:47 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:220:28 'double'
+# (placeholder) | |-BuiltinAttr 0xd982670 <<invalid sloc>> Inherited Implicit 1018
 
+# (placeholder) | `-NoThrowAttr 0xd982618 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd982748 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:204:1 __llrint 'long long (double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:221:13 j1 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9826b0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:47> col:47 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:221:28 'double'
+# (placeholder) | `-NoThrowAttr 0xd9827f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9828f8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:22> col:22 implicit lround 'long (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9829f0 <<invalid sloc>> <invalid sloc> 'double'
 
-<scratch space>:175:1 __j1 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd982998 <<invalid sloc>> Implicit 1042
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:221:28 'double'
+# (placeholder) | `-NoThrowAttr 0xd982a60 <col:22> Implicit
 
+# (placeholder) |-FunctionDecl 0xd982a88 prev 0xd9828f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:22 lround 'long (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd982860 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:42> col:42 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:222:13 jn 'double (int, double)' extern
+# (placeholder) | |-BuiltinAttr 0xd982bb0 <<invalid sloc>> Inherited Implicit 1042
 
-'int'
+# (placeholder) | `-NoThrowAttr 0xd982b30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:222:33 'double'
+# (placeholder) |-FunctionDecl 0xd982c88 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:205:1 __lround 'long (double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd982bf0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:42> col:42 __x 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd982d30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:176:1 __jn 'double (int, double)' extern
+# (placeholder) |-FunctionDecl 0xd982e38 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:27> col:27 implicit llround 'long long (double)' extern
 
-'int'
+# (placeholder) | |-ParmVarDecl 0xd982f30 <<invalid sloc>> <invalid sloc> 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:222:33 'double'
+# (placeholder) | |-BuiltinAttr 0xd982ed8 <<invalid sloc>> Implicit 1021
 
+# (placeholder) | `-NoThrowAttr 0xd982fa0 <col:27> Implicit
 
+# (placeholder) |-FunctionDecl 0xd982fc8 prev 0xd982e38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:27 llround 'long long (double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:223:13 y0 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd982da0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:48> col:48 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:223:28 'double'
+# (placeholder) | |-BuiltinAttr 0xd9830c8 <<invalid sloc>> Inherited Implicit 1021
 
+# (placeholder) | `-NoThrowAttr 0xd983070 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9831a0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:206:1 __llround 'long long (double)' extern
 
-<scratch space>:177:1 __y0 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd983108 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:48> col:48 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:223:28 'double'
+# (placeholder) | `-NoThrowAttr 0xd983248 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9833d8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:13> col:13 implicit fdim 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9834d0 <<invalid sloc>> <invalid sloc> 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:224:13 y1 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd983538 <<invalid sloc>> <invalid sloc> 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:224:28 'double'
+# (placeholder) | |-BuiltinAttr 0xd983478 <<invalid sloc>> Implicit 994
 
+# (placeholder) | `-NoThrowAttr 0xd9835b0 <col:13> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9835d8 prev 0xd9833d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:13 fdim 'double (double, double)' extern
 
-<scratch space>:178:1 __y1 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9832b8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:31> col:31 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:224:28 'double'
+# (placeholder) | |-ParmVarDecl 0xd983338 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:46> col:46 __y 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd9836e0 <<invalid sloc>> Inherited Implicit 994
 
+# (placeholder) | `-NoThrowAttr 0xd983688 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:225:13 yn 'double (int, double)' extern
+# (placeholder) |-FunctionDecl 0xd983840 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:207:1 __fdim 'double (double, double)' extern
 
-'int'
+# (placeholder) | |-ParmVarDecl 0xd983720 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:31> col:31 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:225:33 'double'
+# (placeholder) | |-ParmVarDecl 0xd9837a0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:46> col:46 __y 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd9838f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd983a80 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:14> col:14 implicit fmax 'double (double, double)' extern
 
-<scratch space>:179:1 __yn 'double (int, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd983bd0 <<invalid sloc>> <invalid sloc> 'double'
 
-'int'
+# (placeholder) | |-ParmVarDecl 0xd983c38 <<invalid sloc>> <invalid sloc> 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:225:33 'double'
+# (placeholder) | |-BuiltinAttr 0xd983b20 <<invalid sloc>> Implicit 1003
 
+# (placeholder) | |-NoThrowAttr 0xd983cb0 <col:14> Implicit
 
+# (placeholder) | `-ConstAttr 0xd983cd8 <col:14> Implicit
 
-implicit erf 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd983d00 prev 0xd983a80 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:14 fmax 'double (double, double)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd983960 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:32> col:32 __x 'double'
 
-Implicit 979
+# (placeholder) | |-ParmVarDecl 0xd9839e0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:47> col:47 __y 'double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd983e30 <<invalid sloc>> Inherited Implicit 1003
 
-prev 0x651500 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:231:17 erf 'double (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd983db0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:231:33 'double'
+# (placeholder) | `-ConstAttr 0xd983e08 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:54>
 
-Inherited Implicit 979
+# (placeholder) |-FunctionDecl 0xd983f90 </usr/include/math.h:297:3, line:295:79> <scratch space>:209:1 __fmax 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd983e70 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:32> col:32 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd983ef0 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:47> col:47 __y 'double'
 
-<scratch space>:181:1 __erf 'double (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd984040 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:231:33 'double'
+# (placeholder) | `-ConstAttr 0xd984098 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:54>
 
+# (placeholder) |-FunctionDecl 0xd9841f8 <line:336:14> col:14 implicit fmin 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9842f0 <<invalid sloc>> <invalid sloc> 'double'
 
-implicit erfc 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd984358 <<invalid sloc>> <invalid sloc> 'double'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd984298 <<invalid sloc>> Implicit 1006
 
-Implicit 982
+# (placeholder) | |-NoThrowAttr 0xd9843d0 <col:14> Implicit
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd9843f8 <col:14> Implicit
 
-prev 0x651a18 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:232:17 erfc 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd984420 prev 0xd9841f8 </usr/include/math.h:297:3, line:294:66> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:14 fmin 'double (double, double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:232:34 'double'
+# (placeholder) | |-ParmVarDecl 0xd9840d8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:32> col:32 __x 'double'
 
-Inherited Implicit 982
+# (placeholder) | |-ParmVarDecl 0xd984158 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:47> col:47 __y 'double'
 
+# (placeholder) | |-BuiltinAttr 0xd984550 <<invalid sloc>> Inherited Implicit 1006
 
+# (placeholder) | |-NoThrowAttr 0xd9844d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:183:1 __erfc 'double (double)' extern
+# (placeholder) | `-ConstAttr 0xd984528 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:54>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:232:34 'double'
+# (placeholder) |-FunctionDecl 0xd9846b0 </usr/include/math.h:297:3, line:295:79> <scratch space>:210:1 __fmin 'double (double, double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd984590 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:32> col:32 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd984610 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:47> col:47 __y 'double'
 
-implicit lgamma 'double (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd984760 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) | `-ConstAttr 0xd9847b8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:54>
 
-Implicit 1015
+# (placeholder) |-FunctionDecl 0xd9849e0 <line:340:13> col:13 implicit fma 'double (double, double, double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd984ad8 <<invalid sloc>> <invalid sloc> 'double'
 
-prev 0x651f78 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:233:13 lgamma 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd984b40 <<invalid sloc>> <invalid sloc> 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:233:32 'double'
+# (placeholder) | |-ParmVarDecl 0xd984cb0 <<invalid sloc>> <invalid sloc> 'double'
 
-Inherited Implicit 1015
+# (placeholder) | |-BuiltinAttr 0xd984a80 <<invalid sloc>> Implicit 1000
 
+# (placeholder) | |-ConstAttr 0xd984d30 <col:13> Implicit
 
+# (placeholder) | `-NoThrowAttr 0xd984d58 <col:13> Implicit
 
-<scratch space>:184:1 __lgamma 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd984d80 prev 0xd9849e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:13 fma 'double (double, double, double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:233:32 'double'
+# (placeholder) | |-ParmVarDecl 0xd9847f8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:30> col:30 __x 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd984878 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:45> col:45 __y 'double'
 
+# (placeholder) | |-ParmVarDecl 0xd9848f8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:60> col:60 __z 'double'
 
-implicit tgamma 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd984e90 <<invalid sloc>> Inherited Implicit 1000
 
-<invalid sloc> 'double'
+# (placeholder) | |-ConstAttr 0xd984eb8 <col:13> Inherited Implicit
 
-Implicit 1087
+# (placeholder) | `-NoThrowAttr 0xd984e38 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9850a0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:211:1 __fma 'double (double, double, double)' extern
 
-prev 0x652490 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:238:13 tgamma 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd984ef8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:30> col:30 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:238:32 'double'
+# (placeholder) | |-ParmVarDecl 0xd984f78 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:45> col:45 __y 'double'
 
-Inherited Implicit 1087
+# (placeholder) | |-ParmVarDecl 0xd984ff8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:60> col:60 __z 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd985158 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9852e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:13 scalb 'double (double, double)' extern
 
-<scratch space>:185:1 __tgamma 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9851c8 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:32> col:32 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:238:32 'double'
+# (placeholder) | |-ParmVarDecl 0xd985248 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:47> col:47 __n 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd985398 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd985528 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:217:1 __scalb 'double (double, double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:244:13 gamma 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd985408 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:32> col:32 __x 'double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:244:31 'double'
+# (placeholder) | |-ParmVarDecl 0xd985488 </usr/include/math.h:308:20, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:47> col:47 __n 'double'
 
+# (placeholder) | `-NoThrowAttr 0xd9855d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd985710 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:21:32> <scratch space>:218:1 __fpclassifyf 'int (float)' extern
 
-<scratch space>:186:1 __gamma 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd985648 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:20:50> col:50 __value 'float'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:244:31 'double'
+# (placeholder) | |-NoThrowAttr 0xd9857b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd985810 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:21:22>
 
+# (placeholder) |-FunctionDecl 0xd9858e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:25:32> <scratch space>:219:1 __signbitf 'int (float)' extern
 
-<scratch space>:187:1 lgamma_r 'double (double, int *)' extern
+# (placeholder) | |-ParmVarDecl 0xd985850 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:24:47> col:47 __value 'float'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:252:34 'double'
+# (placeholder) | |-NoThrowAttr 0xd985990 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__signgamp 'int *'
+# (placeholder) | `-ConstAttr 0xd9859e8 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:25:22>
 
+# (placeholder) |-FunctionDecl 0xd985ac0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:30:29> <scratch space>:220:1 __isinff 'int (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd985a28 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:29:45> col:45 __value 'float'
 
-<scratch space>:189:1 __lgamma_r 'double (double, int *)' extern
+# (placeholder) | |-NoThrowAttr 0xd985b68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:252:34 'double'
+# (placeholder) | `-ConstAttr 0xd985bc0 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:30:19>
 
-__signgamp 'int *'
+# (placeholder) |-FunctionDecl 0xd987230 <<scratch space>:221:1> col:1 implicit __finitef 'int (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd987328 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9872d0 <<invalid sloc>> Implicit 929
 
-implicit rint 'double (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd987398 <col:1> Implicit
 
-<invalid sloc> 'double'
+# (placeholder) | `-ConstAttr 0xd9873c0 <col:1> Implicit
 
-Implicit 1060
+# (placeholder) |-FunctionDecl 0xd9873e8 prev 0xd987230 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:34:29> <scratch space>:221:1 __finitef 'int (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd985c00 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:33:46> col:46 __value 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd987510 <<invalid sloc>> Inherited Implicit 929
 
-prev 0x6531c8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:259:13 rint 'double (double)' extern
+# (placeholder) | |-NoThrowAttr 0xd987490 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) | `-ConstAttr 0xd9874e8 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:34:19>
 
-Inherited Implicit 1060
+# (placeholder) |-FunctionDecl 0xd9875e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:38:29> <scratch space>:222:1 __isnanf 'int (float)' extern
 
-Inherited Implicit
+# (placeholder) | |-ParmVarDecl 0xd987550 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:37:45> col:45 __value 'float'
 
+# (placeholder) | |-NoThrowAttr 0xd987690 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9876e8 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:38:19>
 
-<scratch space>:190:1 __rint 'double (double)' extern
+# (placeholder) |-FunctionDecl 0xd987880 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:223:1 __iseqsigf 'int (float, float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd987728 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:41:47> col:47 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9877a8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:41:62> col:62 __y 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd987930 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit nextafter 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd987a38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:45:32> <scratch space>:224:1 __issignalingf 'int (float)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd9879a0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:44:51> col:51 __value 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-NoThrowAttr 0xd987ae0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1048
+# (placeholder) | `-ConstAttr 0xd987b38 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:45:22>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd987c40 <<scratch space>:227:1> col:1 implicit acosf 'float (float)' extern
 
-prev 0x6537b8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:262:13 nextafter 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd987d38 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd987ce0 <<invalid sloc>> Implicit 950
 
-__y 'double'
+# (placeholder) | `-NoThrowAttr 0xd987da8 <col:1> Implicit
 
-Inherited Implicit 1048
+# (placeholder) |-FunctionDecl 0xd987dd0 prev 0xd987c40 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:227:1 acosf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd987b78 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:35> col:35 __x 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd987ed0 <<invalid sloc>> Inherited Implicit 950
 
-<scratch space>:191:1 __nextafter 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd987e78 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd987fa8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:229:1 __acosf 'float (float)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd987f10 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:35> col:35 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd988050 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd988158 <<scratch space>:232:1> col:1 implicit asinf 'float (float)' extern
 
-implicit nexttoward 'double (double, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd988410 <<invalid sloc>> <invalid sloc> 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd9881f8 <<invalid sloc>> Implicit 956
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd988480 <col:1> Implicit
 
-Implicit 1051
+# (placeholder) |-FunctionDecl 0xd9884a8 prev 0xd988158 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:232:1 asinf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9880c0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:35> col:35 __x 'float'
 
-prev 0x653f00 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:264:13 nexttoward 'double (double, long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9885a8 <<invalid sloc>> Inherited Implicit 956
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd988550 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'long double'
+# (placeholder) |-FunctionDecl 0xd988680 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:234:1 __asinf 'float (float)' extern
 
-Inherited Implicit 1051
+# (placeholder) | |-ParmVarDecl 0xd9885e8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:35> col:35 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd988728 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd988830 <<scratch space>:237:1> col:1 implicit atanf 'float (float)' extern
 
-<scratch space>:192:1 __nexttoward 'double (double, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd988928 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd9888d0 <<invalid sloc>> Implicit 962
 
-__y 'long double'
+# (placeholder) | `-NoThrowAttr 0xd988998 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9889c0 prev 0xd988830 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:237:1 atanf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd988798 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:35> col:35 __x 'float'
 
-implicit remainder 'double (double, double)' extern
+# (placeholder) | |-BuiltinAttr 0xd988ac0 <<invalid sloc>> Inherited Implicit 962
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd988a68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd988b98 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:239:1 __atanf 'float (float)' extern
 
-Implicit 1054
+# (placeholder) | |-ParmVarDecl 0xd988b00 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:35> col:35 __x 'float'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd988c40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x6545a8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:275:13 remainder 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd988e10 <<scratch space>:242:1> col:1 implicit atan2f 'float (float, float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd988f08 <<invalid sloc>> <invalid sloc> 'float'
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd988f70 <<invalid sloc>> <invalid sloc> 'float'
 
-Inherited Implicit 1054
+# (placeholder) | |-BuiltinAttr 0xd988eb0 <<invalid sloc>> Implicit 914
 
+# (placeholder) | `-NoThrowAttr 0xd988fe8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd989010 prev 0xd988e10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:242:1 atan2f 'float (float, float)' extern
 
-<scratch space>:194:1 __remainder 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd988cb0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:36> col:36 __y 'float'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd988d30 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:51> col:51 __x 'float'
 
-__y 'double'
+# (placeholder) | |-BuiltinAttr 0xd989118 <<invalid sloc>> Inherited Implicit 914
 
+# (placeholder) | `-NoThrowAttr 0xd9890c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd989278 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:244:1 __atan2f 'float (float, float)' extern
 
-implicit scalbn 'double (double, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd989158 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:36> col:36 __y 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd9891d8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:51> col:51 __x 'float'
 
-<invalid sloc> 'int'
+# (placeholder) | `-NoThrowAttr 0xd989328 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1069
+# (placeholder) |-FunctionDecl 0xd989488 <<scratch space>:247:1> col:1 implicit cosf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd989580 <<invalid sloc>> <invalid sloc> 'float'
 
-prev 0x654c50 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:279:13 scalbn 'double (double, int)' extern
+# (placeholder) | |-BuiltinAttr 0xd989528 <<invalid sloc>> Implicit 974
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd9895f0 <col:1> Implicit
 
-__n 'int'
+# (placeholder) |-FunctionDecl 0xd989618 prev 0xd989488 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:247:1 cosf 'float (float)' extern
 
-Inherited Implicit 1069
+# (placeholder) | |-ParmVarDecl 0xd9893f0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:34> col:34 __x 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd989718 <<invalid sloc>> Inherited Implicit 974
 
+# (placeholder) | `-NoThrowAttr 0xd9896c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:195:1 __scalbn 'double (double, int)' extern
+# (placeholder) |-FunctionDecl 0xd9897f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:249:1 __cosf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd989758 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:34> col:34 __x 'float'
 
-__n 'int'
+# (placeholder) | `-NoThrowAttr 0xd989898 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9899a0 <<scratch space>:252:1> col:1 implicit sinf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd989a98 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit ilogb 'int (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd989a40 <<invalid sloc>> Implicit 1073
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd989b08 <col:1> Implicit
 
-Implicit 1012
+# (placeholder) |-FunctionDecl 0xd989b30 prev 0xd9899a0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:252:1 sinf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd989908 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:34> col:34 __x 'float'
 
-prev 0x655280 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:283:17 ilogb 'int (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd989c30 <<invalid sloc>> Inherited Implicit 1073
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd989bd8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1012
+# (placeholder) |-FunctionDecl 0xd989d08 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:254:1 __sinf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd989c70 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:34> col:34 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd989db0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:196:1 __ilogb 'int (double)' extern
+# (placeholder) |-FunctionDecl 0xd989eb8 <<scratch space>:257:1> col:1 implicit tanf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd989fb0 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd989f58 <<invalid sloc>> Implicit 1082
 
+# (placeholder) | `-NoThrowAttr 0xd98a020 <col:1> Implicit
 
-implicit scalbln 'double (double, long)' extern
+# (placeholder) |-FunctionDecl 0xd98a048 prev 0xd989eb8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:257:1 tanf 'float (float)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd989e20 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:34> col:34 __x 'float'
 
-<invalid sloc> 'long'
+# (placeholder) | |-BuiltinAttr 0xd98a148 <<invalid sloc>> Inherited Implicit 1082
 
-Implicit 1066
+# (placeholder) | `-NoThrowAttr 0xd98a0f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd98a220 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:259:1 __tanf 'float (float)' extern
 
-prev 0x655860 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:293:13 scalbln 'double (double, long)' extern
+# (placeholder) | |-ParmVarDecl 0xd98a188 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:34> col:34 __x 'float'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd98a2c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__n 'long'
+# (placeholder) |-FunctionDecl 0xd98a400 <<scratch space>:262:1> col:1 implicit coshf 'float (float)' extern
 
-Inherited Implicit 1066
+# (placeholder) | |-ParmVarDecl 0xd98a4f8 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd98a4a0 <<invalid sloc>> Implicit 977
 
+# (placeholder) | `-NoThrowAttr 0xd98a568 <col:1> Implicit
 
-<scratch space>:198:1 __scalbln 'double (double, long)' extern
+# (placeholder) |-FunctionDecl 0xd98a590 prev 0xd98a400 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:262:1 coshf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd98a338 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:35> col:35 __x 'float'
 
-__n 'long'
+# (placeholder) | |-BuiltinAttr 0xd98a690 <<invalid sloc>> Inherited Implicit 977
 
+# (placeholder) | `-NoThrowAttr 0xd98a638 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98a768 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:2:1 __coshf 'float (float)' extern
 
-implicit nearbyint 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd98a6d0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:35> col:35 __x 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd98a810 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1045
+# (placeholder) |-FunctionDecl 0xd98a918 <<scratch space>:5:1> col:1 implicit sinhf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd98aa10 <<invalid sloc>> <invalid sloc> 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd98a9b8 <<invalid sloc>> Implicit 1076
 
-prev 0x655f20 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:297:13 nearbyint 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd98aa80 <col:1> Implicit
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd98aaa8 prev 0xd98a918 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:5:1 sinhf 'float (float)' extern
 
-Inherited Implicit 1045
+# (placeholder) | |-ParmVarDecl 0xd98a880 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:35> col:35 __x 'float'
 
-Inherited Implicit
+# (placeholder) | |-BuiltinAttr 0xd98aba8 <<invalid sloc>> Inherited Implicit 1076
 
+# (placeholder) | `-NoThrowAttr 0xd98ab50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98ac80 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:7:1 __sinhf 'float (float)' extern
 
-<scratch space>:199:1 __nearbyint 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd98abe8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:35> col:35 __x 'float'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd98ad28 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98ae30 <<scratch space>:10:1> col:1 implicit tanhf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd98af28 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit round 'double (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd98aed0 <<invalid sloc>> Implicit 1085
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd98af98 <col:1> Implicit
 
-Implicit 1063
+# (placeholder) |-FunctionDecl 0xd98afc0 prev 0xd98ae30 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:10:1 tanhf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd98ad98 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:35> col:35 __x 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd98b0c0 <<invalid sloc>> Inherited Implicit 1085
 
-prev 0x656488 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:301:14 round 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd98b068 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd98b198 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:12:1 __tanhf 'float (float)' extern
 
-Inherited Implicit 1063
+# (placeholder) | |-ParmVarDecl 0xd98b100 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:35> col:35 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd98b240 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98b348 <<scratch space>:15:1> col:1 implicit acoshf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd98e198 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd98e140 <<invalid sloc>> Implicit 953
 
-<scratch space>:200:1 __round 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd98e208 <col:1> Implicit
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd98e230 prev 0xd98b348 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:15:1 acoshf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd98b2b0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:36> col:36 __x 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd98e330 <<invalid sloc>> Inherited Implicit 953
 
+# (placeholder) | `-NoThrowAttr 0xd98e2d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98e408 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:17:1 __acoshf 'float (float)' extern
 
-implicit trunc 'double (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd98e370 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:36> col:36 __x 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd98e4b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1090
+# (placeholder) |-FunctionDecl 0xd98e5b8 <<scratch space>:20:1> col:1 implicit asinhf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd98e6b0 <<invalid sloc>> <invalid sloc> 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd98e658 <<invalid sloc>> Implicit 959
 
-prev 0x656a18 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:305:14 trunc 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd98e720 <col:1> Implicit
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd98e748 prev 0xd98e5b8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:20:1 asinhf 'float (float)' extern
 
-Inherited Implicit 1090
+# (placeholder) | |-ParmVarDecl 0xd98e520 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:36> col:36 __x 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd98e848 <<invalid sloc>> Inherited Implicit 959
 
+# (placeholder) | `-NoThrowAttr 0xd98e7f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98e920 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:22:1 __asinhf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd98e888 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:36> col:36 __x 'float'
 
-<scratch space>:201:1 __trunc 'double (double)' extern
+# (placeholder) | `-NoThrowAttr 0xd98e9c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd98ead0 <<scratch space>:25:1> col:1 implicit atanhf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd98ebc8 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd98eb70 <<invalid sloc>> Implicit 965
 
+# (placeholder) | `-NoThrowAttr 0xd98ec38 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd98ec60 prev 0xd98ead0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:25:1 atanhf 'float (float)' extern
 
-implicit remquo 'double (double, double, int *)' extern
+# (placeholder) | |-ParmVarDecl 0xd98ea38 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:36> col:36 __x 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd98ed60 <<invalid sloc>> Inherited Implicit 965
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd98ed08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'int *'
+# (placeholder) |-FunctionDecl 0xd98ee38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:27:1 __atanhf 'float (float)' extern
 
-Implicit 1057
+# (placeholder) | |-ParmVarDecl 0xd98eda0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:36> col:36 __x 'float'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd98eee0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x6574c0 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:310:13 remquo 'double (double, double, int *)' extern
+# (placeholder) |-FunctionDecl 0xd98efe8 <<scratch space>:30:1> col:1 implicit expf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd98f150 <<invalid sloc>> <invalid sloc> 'float'
 
-__y 'double'
+# (placeholder) | |-BuiltinAttr 0xd98f088 <<invalid sloc>> Implicit 986
 
-__quo 'int *'
+# (placeholder) | `-NoThrowAttr 0xd98f1c0 <col:1> Implicit
 
-Inherited Implicit 1057
+# (placeholder) |-FunctionDecl 0xd98f1e8 prev 0xd98efe8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:30:1 expf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd98ef50 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:34> col:34 __x 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd98f2e8 <<invalid sloc>> Inherited Implicit 986
 
-<scratch space>:202:1 __remquo 'double (double, double, int *)' extern
+# (placeholder) | `-NoThrowAttr 0xd98f290 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd98f3c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:32:1 __expf 'float (float)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd98f328 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:34> col:34 __x 'float'
 
-__quo 'int *'
+# (placeholder) | `-NoThrowAttr 0xd98f468 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98f630 <<scratch space>:33:1> col:1 implicit frexpf 'float (float, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd98f728 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit lrint 'long (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd98f790 <<invalid sloc>> <invalid sloc> 'int *'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd98f6d0 <<invalid sloc>> Implicit 935
 
-Implicit 1039
+# (placeholder) | `-NoThrowAttr 0xd98f808 <col:1> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd98f830 prev 0xd98f630 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:33:1 frexpf 'float (float, int *)' extern
 
-prev 0x657c20 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:317:22 lrint 'long (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd98f4d8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:32> col:32 __x 'float'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd98f558 <col:37, col:42> col:42 __exponent 'int *'
 
-Inherited Implicit 1039
+# (placeholder) | |-BuiltinAttr 0xd98f938 <<invalid sloc>> Inherited Implicit 935
 
+# (placeholder) | `-NoThrowAttr 0xd98f8e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98fa98 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:35:1 __frexpf 'float (float, int *)' extern
 
-<scratch space>:203:1 __lrint 'long (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd98f978 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:32> col:32 __x 'float'
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd98f9f8 <col:37, col:42> col:42 __exponent 'int *'
 
+# (placeholder) | `-NoThrowAttr 0xd98fb48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd98fd10 <<scratch space>:36:1> col:1 implicit ldexpf 'float (float, int)' extern
 
-implicit llrint 'long long (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd98fe08 <<invalid sloc>> <invalid sloc> 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd98fe70 <<invalid sloc>> <invalid sloc> 'int'
 
-Implicit 1018
+# (placeholder) | |-BuiltinAttr 0xd98fdb0 <<invalid sloc>> Implicit 938
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd98fee8 <col:1> Implicit
 
-prev 0x658170 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:319:27 llrint 'long long (double)' extern
+# (placeholder) |-FunctionDecl 0xd98ff10 prev 0xd98fd10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:36:1 ldexpf 'float (float, int)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd98fbb8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:32> col:32 __x 'float'
 
-Inherited Implicit 1018
+# (placeholder) | |-ParmVarDecl 0xd98fc38 <col:37, col:41> col:41 __exponent 'int'
 
+# (placeholder) | |-BuiltinAttr 0xd990018 <<invalid sloc>> Inherited Implicit 938
 
+# (placeholder) | `-NoThrowAttr 0xd98ffc0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:204:1 __llrint 'long long (double)' extern
+# (placeholder) |-FunctionDecl 0xd990198 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:38:1 __ldexpf 'float (float, int)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd990058 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:32> col:32 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9900d8 <col:37, col:41> col:41 __exponent 'int'
 
+# (placeholder) | `-NoThrowAttr 0xd990248 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit lround 'long (double)' extern
+# (placeholder) |-FunctionDecl 0xd990350 <<scratch space>:41:1> col:1 implicit logf 'float (float)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd990448 <<invalid sloc>> <invalid sloc> 'float'
 
-Implicit 1042
+# (placeholder) | |-BuiltinAttr 0xd9903f0 <<invalid sloc>> Implicit 1025
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9904b8 <col:1> Implicit
 
-prev 0x658778 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:323:22 lround 'long (double)' extern
+# (placeholder) |-FunctionDecl 0xd9904e0 prev 0xd990350 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:41:1 logf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd9902b8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:34> col:34 __x 'float'
 
-Inherited Implicit 1042
+# (placeholder) | |-BuiltinAttr 0xd9905e0 <<invalid sloc>> Inherited Implicit 1025
 
+# (placeholder) | `-NoThrowAttr 0xd990588 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9906b8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:43:1 __logf 'float (float)' extern
 
-<scratch space>:205:1 __lround 'long (double)' extern
+# (placeholder) | |-ParmVarDecl 0xd990620 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:34> col:34 __x 'float'
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd990760 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd990868 <<scratch space>:46:1> col:1 implicit log10f 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd990960 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit llround 'long long (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd990908 <<invalid sloc>> Implicit 1028
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd9909d0 <col:1> Implicit
 
-Implicit 1021
+# (placeholder) |-FunctionDecl 0xd9909f8 prev 0xd990868 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:46:1 log10f 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9907d0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:36> col:36 __x 'float'
 
-prev 0x658c90 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:325:27 llround 'long long (double)' extern
+# (placeholder) | |-BuiltinAttr 0xd990af8 <<invalid sloc>> Inherited Implicit 1028
 
-__x 'double'
+# (placeholder) | `-NoThrowAttr 0xd990aa0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1021
+# (placeholder) |-FunctionDecl 0xd990bd0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:48:1 __log10f 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd990b38 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:36> col:36 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd990c78 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:206:1 __llround 'long long (double)' extern
+# (placeholder) |-FunctionDecl 0xd990e70 <<scratch space>:49:1> col:1 implicit modff 'float (float, float *)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd990f68 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd990fd0 <<invalid sloc>> <invalid sloc> 'float *'
 
+# (placeholder) | |-BuiltinAttr 0xd990f10 <<invalid sloc>> Implicit 941
 
-implicit fdim 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd991048 <col:1> Implicit
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd991070 prev 0xd990e70 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:49:1 modff 'float (float, float *)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd990ce8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:31> col:31 __x 'float'
 
-Implicit 994
+# (placeholder) | |-ParmVarDecl 0xd990d90 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:47> col:47 __iptr 'float *'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9911a0 <<invalid sloc>> Inherited Implicit 941
 
-prev 0x659230 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:329:13 fdim 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd991120 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd991320 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> <scratch space>:51:1 __modff 'float (float, float *)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd9911e0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:31> col:31 __x 'float'
 
-Inherited Implicit 994
+# (placeholder) | |-ParmVarDecl 0xd991260 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:47> col:47 __iptr 'float *'
 
+# (placeholder) | |-NoThrowAttr 0xd9913d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-NonNullAttr 0xd991428 <line:384:57, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:69> 2
 
-<scratch space>:207:1 __fdim 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd991518 <<scratch space>:55:1> col:1 implicit expm1f 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd991610 <<invalid sloc>> <invalid sloc> 'float'
 
-__y 'double'
+# (placeholder) | |-BuiltinAttr 0xd9915b8 <<invalid sloc>> Implicit 992
 
+# (placeholder) | `-NoThrowAttr 0xd991680 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9916a8 prev 0xd991518 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:55:1 expm1f 'float (float)' extern
 
-implicit fmax 'double (double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd991480 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:119:36> col:36 __x 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd9917a8 <<invalid sloc>> Inherited Implicit 992
 
-<invalid sloc> 'double'
+# (placeholder) | `-NoThrowAttr 0xd991750 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1003
+# (placeholder) |-FunctionDecl 0xd991880 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:57:1 __expm1f 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9917e8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:119:36> col:36 __x 'float'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd991928 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x659af8 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:333:14 fmax 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd991a30 <<scratch space>:60:1> col:1 implicit log1pf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd991b28 <<invalid sloc>> <invalid sloc> 'float'
 
-__y 'double'
+# (placeholder) | |-BuiltinAttr 0xd991ad0 <<invalid sloc>> Implicit 1031
 
-Inherited Implicit 1003
+# (placeholder) | `-NoThrowAttr 0xd991b98 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd991bc0 prev 0xd991a30 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:60:1 log1pf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd991998 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:36> col:36 __x 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd991cc0 <<invalid sloc>> Inherited Implicit 1031
 
+# (placeholder) | `-NoThrowAttr 0xd991c68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:209:1 __fmax 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd991d98 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:62:1 __log1pf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd991d00 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:36> col:36 __x 'float'
 
-__y 'double'
+# (placeholder) | `-NoThrowAttr 0xd991e40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd991f48 <<scratch space>:63:1> col:1 implicit logbf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd992040 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd991fe8 <<invalid sloc>> Implicit 1037
 
+# (placeholder) | `-NoThrowAttr 0xd9920b0 <col:1> Implicit
 
-implicit fmin 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd992180 prev 0xd991f48 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:63:1 logbf 'float (float)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd991eb0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:31> col:31 __x 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd992280 <<invalid sloc>> Inherited Implicit 1037
 
-Implicit 1006
+# (placeholder) | `-NoThrowAttr 0xd992228 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd992358 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:65:1 __logbf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9922c0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:31> col:31 __x 'float'
 
-prev 0x65a218 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:336:14 fmin 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd992400 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd992508 <<scratch space>:68:1> col:1 implicit exp2f 'float (float)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd992600 <<invalid sloc>> <invalid sloc> 'float'
 
-Inherited Implicit 1006
+# (placeholder) | |-BuiltinAttr 0xd9925a8 <<invalid sloc>> Implicit 989
 
+# (placeholder) | `-NoThrowAttr 0xd992670 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd992698 prev 0xd992508 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:68:1 exp2f 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd992470 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:35> col:35 __x 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd992798 <<invalid sloc>> Inherited Implicit 989
 
-<scratch space>:210:1 __fmin 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd992740 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd992870 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:70:1 __exp2f 'float (float)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd9927d8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:35> col:35 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd992918 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd992a20 <<scratch space>:73:1> col:1 implicit log2f 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd992b18 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd992ac0 <<invalid sloc>> Implicit 1034
 
-implicit fma 'double (double, double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd992b88 <col:1> Implicit
 
-<invalid sloc> 'double'
+# (placeholder) |-FunctionDecl 0xd992bb0 prev 0xd992a20 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:73:1 log2f 'float (float)' extern
 
-<invalid sloc> 'double'
+# (placeholder) | |-ParmVarDecl 0xd992988 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:35> col:35 __x 'float'
 
-<invalid sloc> 'double'
+# (placeholder) | |-BuiltinAttr 0xd992cb0 <<invalid sloc>> Inherited Implicit 1034
 
-Implicit 1000
+# (placeholder) | `-NoThrowAttr 0xd992c58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd992d88 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:75:1 __log2f 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd992cf0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:35> col:35 __x 'float'
 
-prev 0x65ad10 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:340:13 fma 'double (double, double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd992e30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd992fc0 <<scratch space>:78:1> col:1 implicit powf 'float (float, float)' extern
 
-__y 'double'
+# (placeholder) | |-ParmVarDecl 0xd9930b8 <<invalid sloc>> <invalid sloc> 'float'
 
-__z 'double'
+# (placeholder) | |-ParmVarDecl 0xd993190 <<invalid sloc>> <invalid sloc> 'float'
 
-Inherited Implicit 1000
+# (placeholder) | |-BuiltinAttr 0xd993060 <<invalid sloc>> Implicit 947
 
-Inherited Implicit
+# (placeholder) | `-NoThrowAttr 0xd993208 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd993230 prev 0xd992fc0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:78:1 powf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd992ea0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:34> col:34 __x 'float'
 
-<scratch space>:211:1 __fma 'double (double, double, double)' extern
+# (placeholder) | |-ParmVarDecl 0xd992f20 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:49> col:49 __y 'float'
 
-__x 'double'
+# (placeholder) | |-BuiltinAttr 0xd993338 <<invalid sloc>> Inherited Implicit 947
 
-__y 'double'
+# (placeholder) | `-NoThrowAttr 0xd9932e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__z 'double'
+# (placeholder) |-FunctionDecl 0xd993498 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:80:1 __powf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd993378 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:34> col:34 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9933f8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:49> col:49 __y 'float'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:435:13 scalb 'double (double, double)' extern
+# (placeholder) | `-NoThrowAttr 0xd993548 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'double'
+# (placeholder) |-FunctionDecl 0xd993650 <<scratch space>:81:1> col:1 implicit sqrtf 'float (float)' extern
 
-__n 'double'
+# (placeholder) | |-ParmVarDecl 0xd993748 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9936f0 <<invalid sloc>> Implicit 1079
 
+# (placeholder) | `-NoThrowAttr 0xd9937b8 <col:1> Implicit
 
-<scratch space>:217:1 __scalb 'double (double, double)' extern
+# (placeholder) |-FunctionDecl 0xd9937e0 prev 0xd993650 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:81:1 sqrtf 'float (float)' extern
 
-__x 'double'
+# (placeholder) | |-ParmVarDecl 0xd9935b8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:31> col:31 __x 'float'
 
-__n 'double'
+# (placeholder) | |-BuiltinAttr 0xd9938e0 <<invalid sloc>> Inherited Implicit 1079
 
+# (placeholder) | `-NoThrowAttr 0xd993888 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9939b8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:83:1 __sqrtf 'float (float)' extern
 
-<scratch space>:218:1 __fpclassifyf 'int (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd993920 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:31> col:31 __x 'float'
 
-__value 'float'
+# (placeholder) | `-NoThrowAttr 0xd993a60 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd993bf0 <<scratch space>:86:1> col:1 implicit hypotf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd993ce8 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd993d50 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd993c90 <<invalid sloc>> Implicit 1010
 
-<scratch space>:219:1 __signbitf 'int (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd993dc8 <col:1> Implicit
 
-__value 'float'
+# (placeholder) |-FunctionDecl 0xd993df0 prev 0xd993bf0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:86:1 hypotf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd993ad0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:36> col:36 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd993b50 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:51> col:51 __y 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd993ef8 <<invalid sloc>> Inherited Implicit 1010
 
+# (placeholder) | `-NoThrowAttr 0xd993ea0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:220:1 __isinff 'int (float)' extern
+# (placeholder) |-FunctionDecl 0xd994058 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:88:1 __hypotf 'float (float, float)' extern
 
-__value 'float'
+# (placeholder) | |-ParmVarDecl 0xd993f38 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:36> col:36 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd993fb8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:51> col:51 __y 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd994108 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd994238 <<scratch space>:91:1> col:1 implicit cbrtf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd994330 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit __finitef 'int (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9942d8 <<invalid sloc>> Implicit 968
 
-<invalid sloc> 'float'
+# (placeholder) | |-NoThrowAttr 0xd9943a0 <col:1> Implicit
 
-Implicit 929
+# (placeholder) | `-ConstAttr 0xd9943c8 <col:1> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9943f0 prev 0xd994238 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:91:1 cbrtf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9941a0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:35> col:35 __x 'float'
 
-prev 0x65c2f8 <scratch space>:221:1 __finitef 'int (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9944f0 <<invalid sloc>> Inherited Implicit 968
 
-__value 'float'
+# (placeholder) | |-ConstAttr 0xd994518 <<scratch space>:91:1> Inherited Implicit
 
-Inherited Implicit 929
+# (placeholder) | `-NoThrowAttr 0xd994498 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9945f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:93:1 __cbrtf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd994558 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:35> col:35 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd994698 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9947a0 <<scratch space>:94:1> col:1 implicit ceilf 'float (float)' extern
 
-<scratch space>:222:1 __isnanf 'int (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd994898 <<invalid sloc>> <invalid sloc> 'float'
 
-__value 'float'
+# (placeholder) | |-BuiltinAttr 0xd994840 <<invalid sloc>> Implicit 971
 
+# (placeholder) | |-NoThrowAttr 0xd994908 <col:1> Implicit
 
+# (placeholder) | `-ConstAttr 0xd994930 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd994958 prev 0xd9947a0 </usr/include/math.h:297:3, line:294:66> <scratch space>:94:1 ceilf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd994708 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:32> col:32 __x 'float'
 
-<scratch space>:223:1 __iseqsigf 'int (float, float)' extern
+# (placeholder) | |-BuiltinAttr 0xd994a80 <<invalid sloc>> Inherited Implicit 971
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd994a00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'float'
+# (placeholder) | `-ConstAttr 0xd994a58 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:39>
 
+# (placeholder) |-FunctionDecl 0xd994b58 </usr/include/math.h:297:3, line:295:79> <scratch space>:96:1 __ceilf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd994ac0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:32> col:32 __x 'float'
 
-<scratch space>:224:1 __issignalingf 'int (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd994c00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__value 'float'
+# (placeholder) | `-ConstAttr 0xd994c58 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:39>
 
+# (placeholder) |-FunctionDecl 0xd994d30 <<scratch space>:97:1> col:1 implicit fabsf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd994e28 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd994dd0 <<invalid sloc>> Implicit 923
 
+# (placeholder) | |-NoThrowAttr 0xd994e98 <col:1> Implicit
 
-implicit acosf 'float (float)' extern
+# (placeholder) | `-ConstAttr 0xd994ec0 <col:1> Implicit
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd994ee8 prev 0xd994d30 </usr/include/math.h:297:3, line:294:66> <scratch space>:97:1 fabsf 'float (float)' extern
 
-Implicit 950
+# (placeholder) | |-ParmVarDecl 0xd994c98 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:32> col:32 __x 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd995010 <<invalid sloc>> Inherited Implicit 923
 
-prev 0x65d0b0 <scratch space>:227:1 acosf 'float (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd994f90 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd994fe8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:39>
 
-Inherited Implicit 950
+# (placeholder) |-FunctionDecl 0xd9950e8 </usr/include/math.h:297:3, line:295:79> <scratch space>:99:1 __fabsf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd995050 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:32> col:32 __x 'float'
 
+# (placeholder) | |-NoThrowAttr 0xd9951b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:229:1 __acosf 'float (float)' extern
+# (placeholder) | `-ConstAttr 0xd995208 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:39>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9952e0 <<scratch space>:100:1> col:1 implicit floorf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9953d8 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd995380 <<invalid sloc>> Implicit 998
 
-implicit asinf 'float (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd995448 <col:1> Implicit
 
-<invalid sloc> 'float'
+# (placeholder) | `-ConstAttr 0xd995470 <col:1> Implicit
 
-Implicit 956
+# (placeholder) |-FunctionDecl 0xd995498 prev 0xd9952e0 </usr/include/math.h:297:3, line:294:66> <scratch space>:100:1 floorf 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd995248 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:33> col:33 __x 'float'
 
-prev 0x65d5c8 <scratch space>:232:1 asinf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9955c0 <<invalid sloc>> Inherited Implicit 998
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd995540 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 956
+# (placeholder) | `-ConstAttr 0xd995598 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:40>
 
+# (placeholder) |-FunctionDecl 0xd995698 </usr/include/math.h:297:3, line:295:79> <scratch space>:102:1 __floorf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd995600 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:33> col:33 __x 'float'
 
-<scratch space>:234:1 __asinf 'float (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd995740 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd995798 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:40>
 
+# (placeholder) |-FunctionDecl 0xd9958f8 <<scratch space>:103:1> col:1 implicit fmodf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9959f0 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit atanf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd995a58 <<invalid sloc>> <invalid sloc> 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-BuiltinAttr 0xd995998 <<invalid sloc>> Implicit 932
 
-Implicit 962
+# (placeholder) | `-NoThrowAttr 0xd995ad0 <col:1> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd995af8 prev 0xd9958f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:103:1 fmodf 'float (float, float)' extern
 
-prev 0x65dae0 <scratch space>:237:1 atanf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9957d8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:31> col:31 __x 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd995858 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:46> col:46 __y 'float'
 
-Inherited Implicit 962
+# (placeholder) | |-BuiltinAttr 0xd995c00 <<invalid sloc>> Inherited Implicit 932
 
+# (placeholder) | `-NoThrowAttr 0xd995ba8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd995d60 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:105:1 __fmodf 'float (float, float)' extern
 
-<scratch space>:239:1 __atanf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd995c40 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:31> col:31 __x 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd995cc0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:46> col:46 __y 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd995e10 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd995f18 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:178:29> <scratch space>:106:1 isinff 'int (float)' extern
 
-implicit atan2f 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd995e80 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:177:42> col:42 __value 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-NoThrowAttr 0xd995fc0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) | `-ConstAttr 0xd996018 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:178:19>
 
-Implicit 914
+# (placeholder) |-FunctionDecl 0xd9960f0 <<scratch space>:107:1> col:1 implicit finitef 'int (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd996218 <<invalid sloc>> <invalid sloc> 'float'
 
-prev 0x65e0d0 <scratch space>:242:1 atan2f 'float (float, float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9961c0 <<invalid sloc>> Implicit 926
 
-__y 'float'
+# (placeholder) | |-NoThrowAttr 0xd996288 <col:1> Implicit
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd9962b0 <col:1> Implicit
 
-Inherited Implicit 914
+# (placeholder) |-FunctionDecl 0xd9962d8 prev 0xd9960f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:184:29> <scratch space>:107:1 finitef 'int (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd996058 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:183:43> col:43 __value 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd996400 <<invalid sloc>> Inherited Implicit 926
 
-<scratch space>:244:1 __atan2f 'float (float, float)' extern
+# (placeholder) | |-NoThrowAttr 0xd996380 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'float'
+# (placeholder) | `-ConstAttr 0xd9963d8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:184:19>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd996560 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:108:1 dremf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd996440 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:31> col:31 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9964c0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:46> col:46 __y 'float'
 
-implicit cosf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd996610 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd9967a0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:110:1 __dremf 'float (float, float)' extern
 
-Implicit 974
+# (placeholder) | |-ParmVarDecl 0xd996680 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:31> col:31 __x 'float'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd996700 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:46> col:46 __y 'float'
 
-prev 0x65e6f0 <scratch space>:247:1 cosf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd996850 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd996958 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:111:1 significandf 'float (float)' extern
 
-Inherited Implicit 974
+# (placeholder) | |-ParmVarDecl 0xd9968c0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:191:38> col:38 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd996a00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd996b08 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:113:1 __significandf 'float (float)' extern
 
-<scratch space>:249:1 __cosf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd996a70 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:191:38> col:38 __x 'float'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd996bb0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd996d40 <<scratch space>:114:1> col:1 implicit copysignf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd996e38 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit sinf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd996ea0 <<invalid sloc>> <invalid sloc> 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-BuiltinAttr 0xd996de0 <<invalid sloc>> Implicit 920
 
-Implicit 1073
+# (placeholder) | |-NoThrowAttr 0xd996f18 <col:1> Implicit
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd996f40 <col:1> Implicit
 
-prev 0x65ec08 <scratch space>:252:1 sinf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd996f68 prev 0xd996d40 </usr/include/math.h:297:3, line:294:66> <scratch space>:114:1 copysignf 'float (float, float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd996c20 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:36> col:36 __x 'float'
 
-Inherited Implicit 1073
+# (placeholder) | |-ParmVarDecl 0xd996ca0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:51> col:51 __y 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd997098 <<invalid sloc>> Inherited Implicit 920
 
+# (placeholder) | |-NoThrowAttr 0xd997018 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:254:1 __sinf 'float (float)' extern
+# (placeholder) | `-ConstAttr 0xd997070 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:58>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd997208 </usr/include/math.h:297:3, line:295:79> <scratch space>:116:1 __copysignf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9970d8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:36> col:36 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd997158 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:51> col:51 __y 'float'
 
-implicit tanf 'float (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd9972b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) | `-ConstAttr 0xd997310 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:58>
 
-Implicit 1082
+# (placeholder) |-FunctionDecl 0xd997420 <<scratch space>:117:1> col:1 implicit nanf 'float (const char *)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd997518 <<invalid sloc>> <invalid sloc> 'const char *'
 
-prev 0x65f1b0 <scratch space>:257:1 tanf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9974c0 <<invalid sloc>> Implicit 944
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd997588 <col:1> Implicit
 
-Inherited Implicit 1082
+# (placeholder) | `-PureAttr 0xd9975b0 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9975d8 prev 0xd997420 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:117:1 nanf 'float (const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd997350 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:203:20, col:32> col:32 __tagb 'const char *'
 
-<scratch space>:259:1 __tanf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9976d8 <<invalid sloc>> Inherited Implicit 944
 
-__x 'float'
+# (placeholder) | |-PureAttr 0xd997700 <<scratch space>:117:1> Inherited Implicit
 
+# (placeholder) | `-NoThrowAttr 0xd997680 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9977d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:119:1 __nanf 'float (const char *)' extern
 
-implicit coshf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd997740 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:203:20, col:32> col:32 __tagb 'const char *'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd997880 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 977
+# (placeholder) |-FunctionDecl 0xd997988 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:214:29> <scratch space>:120:1 isnanf 'int (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9978f0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:213:42> col:42 __value 'float'
 
-prev 0x65f6c8 <scratch space>:262:1 coshf 'float (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd997a30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd997a88 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:214:19>
 
-Inherited Implicit 977
+# (placeholder) |-FunctionDecl 0xd997b60 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:121:1 j0f 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd997ac8 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:220:28 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd997c08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:2:1 __coshf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd997d10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:123:1 __j0f 'float (float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd997c78 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:220:28 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd997db8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd997ec0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:124:1 j1f 'float (float)' extern
 
-implicit sinhf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd997e28 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:221:28 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd997f68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1076
+# (placeholder) |-FunctionDecl 0xd998070 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:126:1 __j1f 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd997fd8 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:221:28 'float'
 
-prev 0x65fbe0 <scratch space>:5:1 sinhf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd998118 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd998340 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:127:1 jnf 'float (int, float)' extern
 
-Inherited Implicit 1076
+# (placeholder) | |-ParmVarDecl 0xd9981e0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:19> col:22 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd998260 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:33 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd9983f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:7:1 __sinhf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd998580 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:129:1 __jnf 'float (int, float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd998460 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:19> col:22 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd9984e0 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:33 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd998630 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit tanhf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd998738 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:130:1 y0f 'float (float)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9986a0 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:223:28 'float'
 
-Implicit 1085
+# (placeholder) | `-NoThrowAttr 0xd9987e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9988e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:132:1 __y0f 'float (float)' extern
 
-prev 0x6635e8 <scratch space>:10:1 tanhf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd998850 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:223:28 'float'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd998990 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1085
+# (placeholder) |-FunctionDecl 0xd998a98 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:133:1 y1f 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd998a00 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:224:28 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd998b40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:12:1 __tanhf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd998c48 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:135:1 __y1f 'float (float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd998bb0 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:224:28 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd998cf0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd998e80 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:136:1 ynf 'float (int, float)' extern
 
-implicit acoshf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd998d60 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:19> col:22 'int'
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd998de0 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:33 'float'
 
-Implicit 953
+# (placeholder) | `-NoThrowAttr 0xd998f30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9990c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:138:1 __ynf 'float (int, float)' extern
 
-prev 0x663b00 <scratch space>:15:1 acoshf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd998fa0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:19> col:22 'int'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd999020 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:33 'float'
 
-Inherited Implicit 953
+# (placeholder) | `-NoThrowAttr 0xd999170 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd999288 <<scratch space>:141:1> col:1 implicit erff 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd999380 <<invalid sloc>> <invalid sloc> 'float'
 
-<scratch space>:17:1 __acoshf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd999328 <<invalid sloc>> Implicit 980
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9993f0 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd999418 prev 0xd999288 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:141:1 erff 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9991f0 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:33 'float'
 
-implicit asinhf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd999518 <<invalid sloc>> Inherited Implicit 980
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9994c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 959
+# (placeholder) |-FunctionDecl 0xd9995f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:143:1 __erff 'float (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd999558 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:33 'float'
 
-prev 0x664018 <scratch space>:20:1 asinhf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd999698 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9997a0 <<scratch space>:146:1> col:1 implicit erfcf 'float (float)' extern
 
-Inherited Implicit 959
+# (placeholder) | |-ParmVarDecl 0xd999898 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd999840 <<invalid sloc>> Implicit 983
 
+# (placeholder) | `-NoThrowAttr 0xd999908 <col:1> Implicit
 
-<scratch space>:22:1 __asinhf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd999930 prev 0xd9997a0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:146:1 erfcf 'float (float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd999708 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:34 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd999a30 <<invalid sloc>> Inherited Implicit 983
 
+# (placeholder) | `-NoThrowAttr 0xd9999d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit atanhf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd999b08 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:148:1 __erfcf 'float (float)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd999a70 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:34 'float'
 
-Implicit 965
+# (placeholder) | `-NoThrowAttr 0xd999bb0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd999cb8 <<scratch space>:149:1> col:1 implicit lgammaf 'float (float)' extern
 
-prev 0x664588 <scratch space>:25:1 atanhf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd999db0 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd999d58 <<invalid sloc>> Implicit 1016
 
-Inherited Implicit 965
+# (placeholder) | `-NoThrowAttr 0xd999e20 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd999e48 prev 0xd999cb8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:149:1 lgammaf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd999c20 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:32 'float'
 
-<scratch space>:27:1 __atanhf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd999f48 <<invalid sloc>> Inherited Implicit 1016
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd999ef0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd99a020 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:151:1 __lgammaf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd999f88 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:32 'float'
 
-implicit expf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd99a0c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd99a200 <<scratch space>:152:1> col:1 implicit tgammaf 'float (float)' extern
 
-Implicit 986
+# (placeholder) | |-ParmVarDecl 0xd99a2f8 <<invalid sloc>> <invalid sloc> 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd99a2a0 <<invalid sloc>> Implicit 1088
 
-prev 0x664aa0 <scratch space>:30:1 expf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd99a368 <col:1> Implicit
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd99a390 prev 0xd99a200 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:152:1 tgammaf 'float (float)' extern
 
-Inherited Implicit 986
+# (placeholder) | |-ParmVarDecl 0xd99a138 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:32 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd99a490 <<invalid sloc>> Inherited Implicit 1088
 
+# (placeholder) | `-NoThrowAttr 0xd99a438 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:32:1 __expf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd99a568 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:154:1 __tgammaf 'float (float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99a4d0 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:32 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd99a610 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd99a718 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:155:1 gammaf 'float (float)' extern
 
-implicit frexpf 'float (float, int *)' extern
+# (placeholder) | |-ParmVarDecl 0xd99a680 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:244:31 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd99a7c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'int *'
+# (placeholder) |-FunctionDecl 0xd99a8c8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:157:1 __gammaf 'float (float)' extern
 
-Implicit 935
+# (placeholder) | |-ParmVarDecl 0xd99a830 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:244:31 'float'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd99a970 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x665080 <scratch space>:33:1 frexpf 'float (float, int *)' extern
+# (placeholder) |-FunctionDecl 0xd99ab00 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:159:1 lgammaf_r 'float (float, int *)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99a9e0 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:252:34 'float'
 
-__exponent 'int *'
+# (placeholder) | |-ParmVarDecl 0xd99aa60 <col:36, col:41> col:41 __signgamp 'int *'
 
-Inherited Implicit 935
+# (placeholder) | `-NoThrowAttr 0xd99abb0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd99ad40 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:162:1 __lgammaf_r 'float (float, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99ac20 </usr/include/math.h:325:21> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:252:34 'float'
 
-<scratch space>:35:1 __frexpf 'float (float, int *)' extern
+# (placeholder) | |-ParmVarDecl 0xd99aca0 <col:36, col:41> col:41 __signgamp 'int *'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd99adf0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__exponent 'int *'
+# (placeholder) |-FunctionDecl 0xd99aef8 <<scratch space>:163:1> col:1 implicit rintf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99aff0 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd99af98 <<invalid sloc>> Implicit 1061
 
-implicit ldexpf 'float (float, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd99b060 <col:1> Implicit
 
-<invalid sloc> 'float'
+# (placeholder) | `-ConstAttr 0xd99b088 <col:1> Implicit
 
-<invalid sloc> 'int'
+# (placeholder) |-FunctionDecl 0xd99b0b0 prev 0xd99aef8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:163:1 rintf 'float (float)' extern
 
-Implicit 938
+# (placeholder) | |-ParmVarDecl 0xd99ae60 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:31> col:31 __x 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd99b1b0 <<invalid sloc>> Inherited Implicit 1061
 
-prev 0x665780 <scratch space>:36:1 ldexpf 'float (float, int)' extern
+# (placeholder) | |-ConstAttr 0xd99b1d8 <<scratch space>:163:1> Inherited Implicit
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd99b158 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__exponent 'int'
+# (placeholder) |-FunctionDecl 0xd99b4c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:165:1 __rintf 'float (float)' extern
 
-Inherited Implicit 938
+# (placeholder) | |-ParmVarDecl 0xd99b428 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:31> col:31 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd99b568 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd99b6f8 <<scratch space>:166:1> col:1 implicit nextafterf 'float (float, float)' extern
 
-<scratch space>:38:1 __ldexpf 'float (float, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd99b7f0 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99b858 <<invalid sloc>> <invalid sloc> 'float'
 
-__exponent 'int'
+# (placeholder) | |-BuiltinAttr 0xd99b798 <<invalid sloc>> Implicit 1049
 
+# (placeholder) | `-NoThrowAttr 0xd99b8d0 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd99b8f8 prev 0xd99b6f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:166:1 nextafterf 'float (float, float)' extern
 
-implicit logf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99b5d8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:36> col:36 __x 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd99b658 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:51> col:51 __y 'float'
 
-Implicit 1025
+# (placeholder) | |-BuiltinAttr 0xd99ba00 <<invalid sloc>> Inherited Implicit 1049
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd99b9a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x665da0 <scratch space>:41:1 logf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd99bb60 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:168:1 __nextafterf 'float (float, float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99ba40 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:36> col:36 __x 'float'
 
-Inherited Implicit 1025
+# (placeholder) | |-ParmVarDecl 0xd99bac0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:51> col:51 __y 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd99bc10 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd99bde0 <<scratch space>:169:1> col:1 implicit nexttowardf 'float (float, long double)' extern
 
-<scratch space>:43:1 __logf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99bed8 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99bf40 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd99be80 <<invalid sloc>> Implicit 1052
 
+# (placeholder) | `-NoThrowAttr 0xd99bfb8 <col:1> Implicit
 
-implicit log10f 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd99bfe0 prev 0xd99bde0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:169:1 nexttowardf 'float (float, long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd99bc80 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:37> col:37 __x 'float'
 
-Implicit 1028
+# (placeholder) | |-ParmVarDecl 0xd99bd00 <col:42, col:54> col:54 __y 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd99c0e8 <<invalid sloc>> Inherited Implicit 1052
 
-prev 0x6662b8 <scratch space>:46:1 log10f 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd99c090 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd99c248 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:171:1 __nexttowardf 'float (float, long double)' extern
 
-Inherited Implicit 1028
+# (placeholder) | |-ParmVarDecl 0xd99c128 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:37> col:37 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd99c1a8 <col:42, col:54> col:54 __y 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd99c2f8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:48:1 __log10f 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd99c4c0 <<scratch space>:173:1> col:1 implicit remainderf 'float (float, float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99c5b8 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd99c620 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd99c560 <<invalid sloc>> Implicit 1055
 
-implicit modff 'float (float, float *)' extern
+# (placeholder) | `-NoThrowAttr 0xd99c698 <col:1> Implicit
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd99c6c0 prev 0xd99c4c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:173:1 remainderf 'float (float, float)' extern
 
-<invalid sloc> 'float *'
+# (placeholder) | |-ParmVarDecl 0xd99c368 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:36> col:36 __x 'float'
 
-Implicit 941
+# (placeholder) | |-ParmVarDecl 0xd99c420 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:51> col:51 __y 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd99c7c8 <<invalid sloc>> Inherited Implicit 1055
 
-prev 0x6668e0 <scratch space>:49:1 modff 'float (float, float *)' extern
+# (placeholder) | `-NoThrowAttr 0xd99c770 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd99c928 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:175:1 __remainderf 'float (float, float)' extern
 
-__iptr 'float *'
+# (placeholder) | |-ParmVarDecl 0xd99c808 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:36> col:36 __x 'float'
 
-Inherited Implicit 941
+# (placeholder) | |-ParmVarDecl 0xd99c888 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:51> col:51 __y 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd99c9d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd99cb68 <<scratch space>:176:1> col:1 implicit scalbnf 'float (float, int)' extern
 
-<scratch space>:51:1 __modff 'float (float, float *)' extern
+# (placeholder) | |-ParmVarDecl 0xd99cc60 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99ccc8 <<invalid sloc>> <invalid sloc> 'int'
 
-__iptr 'float *'
+# (placeholder) | |-BuiltinAttr 0xd99cc08 <<invalid sloc>> Implicit 1070
 
+# (placeholder) | `-NoThrowAttr 0xd99cd40 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd99cd68 prev 0xd99cb68 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:176:1 scalbnf 'float (float, int)' extern
 
-2
+# (placeholder) | |-ParmVarDecl 0xd99ca48 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:33> col:33 __x 'float'
 
-implicit expm1f 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99cac8 <col:38, col:42> col:42 __n 'int'
 
-<invalid sloc> 'float'
+# (placeholder) | |-BuiltinAttr 0xd99ce70 <<invalid sloc>> Inherited Implicit 1070
 
-Implicit 992
+# (placeholder) | `-NoThrowAttr 0xd99ce18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd99cfd0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:178:1 __scalbnf 'float (float, int)' extern
 
-prev 0x666f58 <scratch space>:55:1 expm1f 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99ceb0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:33> col:33 __x 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99cf30 <col:38, col:42> col:42 __n 'int'
 
-Inherited Implicit 992
+# (placeholder) | `-NoThrowAttr 0xd99d080 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd99d188 <<scratch space>:179:1> col:1 implicit ilogbf 'int (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99d280 <<invalid sloc>> <invalid sloc> 'float'
 
-<scratch space>:57:1 __expm1f 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd99d228 <<invalid sloc>> Implicit 1013
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd99d2f0 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd99d318 prev 0xd99d188 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:179:1 ilogbf 'int (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99d0f0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:36> col:36 __x 'float'
 
-implicit log1pf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd99d430 <<invalid sloc>> Inherited Implicit 1013
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd99d3c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1031
+# (placeholder) |-FunctionDecl 0xd99d508 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:181:1 __ilogbf 'int (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd99d470 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:36> col:36 __x 'float'
 
-prev 0x667470 <scratch space>:60:1 log1pf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd99d5b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd99d780 <<scratch space>:183:1> col:1 implicit scalblnf 'float (float, long)' extern
 
-Inherited Implicit 1031
+# (placeholder) | |-ParmVarDecl 0xd99d878 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd99d8e0 <<invalid sloc>> <invalid sloc> 'long'
 
+# (placeholder) | |-BuiltinAttr 0xd99d820 <<invalid sloc>> Implicit 1067
 
-<scratch space>:62:1 __log1pf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd99d958 <col:1> Implicit
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd99d980 prev 0xd99d780 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:183:1 scalblnf 'float (float, long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99d620 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:34> col:34 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd99d6a0 <col:39, col:48> col:48 __n 'long'
 
-implicit logbf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd99da88 <<invalid sloc>> Inherited Implicit 1067
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd99da30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1037
+# (placeholder) |-FunctionDecl 0xd99dbe8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:185:1 __scalblnf 'float (float, long)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd99dac8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:34> col:34 __x 'float'
 
-prev 0x667998 <scratch space>:63:1 logbf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99db48 <col:39, col:48> col:48 __n 'long'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd99dc98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1037
+# (placeholder) |-FunctionDecl 0xd99dda0 <<scratch space>:186:1> col:1 implicit nearbyintf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99de98 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd99de40 <<invalid sloc>> Implicit 1046
 
-<scratch space>:65:1 __logbf 'float (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd99df08 <col:1> Implicit
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd99df30 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd99df58 prev 0xd99dda0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:186:1 nearbyintf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99dd08 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:36> col:36 __x 'float'
 
-implicit exp2f 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd99e058 <<invalid sloc>> Inherited Implicit 1046
 
-<invalid sloc> 'float'
+# (placeholder) | |-ConstAttr 0xd99e080 <<scratch space>:186:1> Inherited Implicit
 
-Implicit 989
+# (placeholder) | `-NoThrowAttr 0xd99e000 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd99e158 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:188:1 __nearbyintf 'float (float)' extern
 
-prev 0x667eb0 <scratch space>:68:1 exp2f 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99e0c0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:36> col:36 __x 'float'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd99e200 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 989
+# (placeholder) |-FunctionDecl 0xd99e308 <<scratch space>:189:1> col:1 implicit roundf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99e5d0 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd99e3a8 <<invalid sloc>> Implicit 1064
 
-<scratch space>:70:1 __exp2f 'float (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd99e640 <col:1> Implicit
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd99e668 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd99e690 prev 0xd99e308 </usr/include/math.h:297:3, line:294:66> <scratch space>:189:1 roundf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99e270 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:33> col:33 __x 'float'
 
-implicit log2f 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd99e7b8 <<invalid sloc>> Inherited Implicit 1064
 
-<invalid sloc> 'float'
+# (placeholder) | |-NoThrowAttr 0xd99e738 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1034
+# (placeholder) | `-ConstAttr 0xd99e790 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:40>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd99e890 </usr/include/math.h:297:3, line:295:79> <scratch space>:191:1 __roundf 'float (float)' extern
 
-prev 0x6683c8 <scratch space>:73:1 log2f 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99e7f8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:33> col:33 __x 'float'
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd99e938 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1034
+# (placeholder) | `-ConstAttr 0xd99e990 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:40>
 
+# (placeholder) |-FunctionDecl 0xd99ea68 <<scratch space>:192:1> col:1 implicit truncf 'float (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99eb60 <<invalid sloc>> <invalid sloc> 'float'
 
-<scratch space>:75:1 __log2f 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd99eb08 <<invalid sloc>> Implicit 1091
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd99ebd0 <col:1> Implicit
 
+# (placeholder) | `-ConstAttr 0xd99ebf8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd99ec20 prev 0xd99ea68 </usr/include/math.h:297:3, line:294:66> <scratch space>:192:1 truncf 'float (float)' extern
 
-implicit powf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99e9d0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:33> col:33 __x 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-BuiltinAttr 0xd99ed48 <<invalid sloc>> Inherited Implicit 1091
 
-<invalid sloc> 'float'
+# (placeholder) | |-NoThrowAttr 0xd99ecc8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 947
+# (placeholder) | `-ConstAttr 0xd99ed20 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:40>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd99ee20 </usr/include/math.h:297:3, line:295:79> <scratch space>:194:1 __truncf 'float (float)' extern
 
-prev 0x6689d8 <scratch space>:78:1 powf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99ed88 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:33> col:33 __x 'float'
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd99eec8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'float'
+# (placeholder) | `-ConstAttr 0xd99ef20 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:40>
 
-Inherited Implicit 947
+# (placeholder) |-FunctionDecl 0xd99f150 <<scratch space>:195:1> col:1 implicit remquof 'float (float, float, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99f248 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd99f2b0 <<invalid sloc>> <invalid sloc> 'float'
 
-<scratch space>:80:1 __powf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99f318 <<invalid sloc>> <invalid sloc> 'int *'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd99f1f0 <<invalid sloc>> Implicit 1058
 
-__y 'float'
+# (placeholder) | `-NoThrowAttr 0xd99f398 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd99f3c0 prev 0xd99f150 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:195:1 remquof 'float (float, float, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd99ef60 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:33> col:33 __x 'float'
 
-implicit sqrtf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd99efe0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:48> col:48 __y 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd99f060 <col:53, col:58> col:58 __quo 'int *'
 
-Implicit 1079
+# (placeholder) | |-BuiltinAttr 0xd99f4d0 <<invalid sloc>> Inherited Implicit 1058
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd99f478 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x668ff8 <scratch space>:81:1 sqrtf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd99fd88 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:197:1 __remquof 'float (float, float, int *)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd99f510 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:33> col:33 __x 'float'
 
-Inherited Implicit 1079
+# (placeholder) | |-ParmVarDecl 0xd99fc60 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:48> col:48 __y 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd99fce0 <col:53, col:58> col:58 __quo 'int *'
 
+# (placeholder) | `-NoThrowAttr 0xd99fe40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:83:1 __sqrtf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd99ff80 <<scratch space>:198:1> col:1 implicit lrintf 'long (float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a0078 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9a0020 <<invalid sloc>> Implicit 1040
 
+# (placeholder) | `-NoThrowAttr 0xd9a00e8 <col:1> Implicit
 
-implicit hypotf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9a0110 prev 0xd99ff80 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:198:1 lrintf 'long (float)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd99feb0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:41> col:41 __x 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-BuiltinAttr 0xd9a0210 <<invalid sloc>> Inherited Implicit 1040
 
-Implicit 1010
+# (placeholder) | `-NoThrowAttr 0xd9a01b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9a02e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:200:1 __lrintf 'long (float)' extern
 
-prev 0x66a5f0 <scratch space>:86:1 hypotf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a0250 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:41> col:41 __x 'float'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a0390 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'float'
+# (placeholder) |-FunctionDecl 0xd9a04d0 <<scratch space>:201:1> col:1 implicit llrintf 'long long (float)' extern
 
-Inherited Implicit 1010
+# (placeholder) | |-ParmVarDecl 0xd9a05c8 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9a0570 <<invalid sloc>> Implicit 1019
 
+# (placeholder) | `-NoThrowAttr 0xd9a0638 <col:1> Implicit
 
-<scratch space>:88:1 __hypotf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9a0660 prev 0xd9a04d0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:201:1 llrintf 'long long (float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a0400 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:47> col:47 __x 'float'
 
-__y 'float'
+# (placeholder) | |-BuiltinAttr 0xd9a0760 <<invalid sloc>> Inherited Implicit 1019
 
+# (placeholder) | `-NoThrowAttr 0xd9a0708 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a0838 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:203:1 __llrintf 'long long (float)' extern
 
-implicit cbrtf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a07a0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:47> col:47 __x 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a08e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 968
+# (placeholder) |-FunctionDecl 0xd9a09e8 <<scratch space>:204:1> col:1 implicit lroundf 'long (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9a0ae0 <<invalid sloc>> <invalid sloc> 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9a0a88 <<invalid sloc>> Implicit 1043
 
-prev 0x66ac10 <scratch space>:91:1 cbrtf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9a0b50 <col:1> Implicit
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9a0b78 prev 0xd9a09e8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:204:1 lroundf 'long (float)' extern
 
-Inherited Implicit 968
+# (placeholder) | |-ParmVarDecl 0xd9a0950 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:42> col:42 __x 'float'
 
-Inherited Implicit
+# (placeholder) | |-BuiltinAttr 0xd9a0ca0 <<invalid sloc>> Inherited Implicit 1043
 
+# (placeholder) | `-NoThrowAttr 0xd9a0c20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a0d78 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:206:1 __lroundf 'long (float)' extern
 
-<scratch space>:93:1 __cbrtf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a0ce0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:42> col:42 __x 'float'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a0e20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a0f28 <<scratch space>:207:1> col:1 implicit llroundf 'long long (float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a1020 <<invalid sloc>> <invalid sloc> 'float'
 
-implicit ceilf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9a0fc8 <<invalid sloc>> Implicit 1022
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a1090 <col:1> Implicit
 
-Implicit 971
+# (placeholder) |-FunctionDecl 0xd9a10b8 prev 0xd9a0f28 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:207:1 llroundf 'long long (float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9a0e90 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:48> col:48 __x 'float'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9a11b8 <<invalid sloc>> Inherited Implicit 1022
 
-prev 0x66b178 <scratch space>:94:1 ceilf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9a1160 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9a1290 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:209:1 __llroundf 'long long (float)' extern
 
-Inherited Implicit 971
+# (placeholder) | |-ParmVarDecl 0xd9a11f8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:48> col:48 __x 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd9a1338 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a14c8 <<scratch space>:210:1> col:1 implicit fdimf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a15c0 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9a1628 <<invalid sloc>> <invalid sloc> 'float'
 
-<scratch space>:96:1 __ceilf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9a1568 <<invalid sloc>> Implicit 995
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a16a0 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9a16c8 prev 0xd9a14c8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:210:1 fdimf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a13a8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:31> col:31 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9a1428 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:46> col:46 __y 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9a17d0 <<invalid sloc>> Inherited Implicit 995
 
-implicit fabsf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9a1778 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd9a1930 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:212:1 __fdimf 'float (float, float)' extern
 
-Implicit 923
+# (placeholder) | |-ParmVarDecl 0xd9a1810 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:31> col:31 __x 'float'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9a1890 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:46> col:46 __y 'float'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9a19e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x66b738 <scratch space>:97:1 fabsf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9a1b70 <<scratch space>:214:1> col:1 implicit fmaxf 'float (float, float)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a1e60 <<invalid sloc>> <invalid sloc> 'float'
 
-Inherited Implicit 923
+# (placeholder) | |-ParmVarDecl 0xd9a1ec8 <<invalid sloc>> <invalid sloc> 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9a1c10 <<invalid sloc>> Implicit 1004
 
+# (placeholder) | |-NoThrowAttr 0xd9a1f40 <col:1> Implicit
 
+# (placeholder) | `-ConstAttr 0xd9a1f68 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9a1f90 prev 0xd9a1b70 </usr/include/math.h:297:3, line:294:66> <scratch space>:214:1 fmaxf 'float (float, float)' extern
 
-<scratch space>:99:1 __fabsf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a1a50 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:32> col:32 __x 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a1ad0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:47> col:47 __y 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9a20c0 <<invalid sloc>> Inherited Implicit 1004
 
+# (placeholder) | |-NoThrowAttr 0xd9a2040 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9a2098 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:54>
 
+# (placeholder) |-FunctionDecl 0xd9a2220 </usr/include/math.h:297:3, line:295:79> <scratch space>:216:1 __fmaxf 'float (float, float)' extern
 
-implicit floorf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a2100 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:32> col:32 __x 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a2180 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:47> col:47 __y 'float'
 
-Implicit 998
+# (placeholder) | |-NoThrowAttr 0xd9a22d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd9a2328 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:54>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9a2488 <<scratch space>:217:1> col:1 implicit fminf 'float (float, float)' extern
 
-prev 0x66bcc8 <scratch space>:100:1 floorf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a2580 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a25e8 <<invalid sloc>> <invalid sloc> 'float'
 
-Inherited Implicit 998
+# (placeholder) | |-BuiltinAttr 0xd9a2528 <<invalid sloc>> Implicit 1007
 
+# (placeholder) | |-NoThrowAttr 0xd9a2660 <col:1> Implicit
 
+# (placeholder) | `-ConstAttr 0xd9a2688 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9a26b0 prev 0xd9a2488 </usr/include/math.h:297:3, line:294:66> <scratch space>:217:1 fminf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a2368 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:32> col:32 __x 'float'
 
-<scratch space>:102:1 __floorf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a23e8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:47> col:47 __y 'float'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd9a27e0 <<invalid sloc>> Inherited Implicit 1007
 
+# (placeholder) | |-NoThrowAttr 0xd9a2760 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9a27b8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:54>
 
+# (placeholder) |-FunctionDecl 0xd9a2940 </usr/include/math.h:297:3, line:295:79> <scratch space>:219:1 __fminf 'float (float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a2820 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:32> col:32 __x 'float'
 
-implicit fmodf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a28a0 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:47> col:47 __y 'float'
 
-<invalid sloc> 'float'
+# (placeholder) | |-NoThrowAttr 0xd9a29f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) | `-ConstAttr 0xd9a2a48 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:54>
 
-Implicit 932
+# (placeholder) |-FunctionDecl 0xd9a2c70 <<scratch space>:220:1> col:1 implicit fmaf 'float (float, float, float)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9a2d68 <<invalid sloc>> <invalid sloc> 'float'
 
-prev 0x66c2e0 <scratch space>:103:1 fmodf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a2dd0 <<invalid sloc>> <invalid sloc> 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a30d0 <<invalid sloc>> <invalid sloc> 'float'
 
-__y 'float'
+# (placeholder) | |-BuiltinAttr 0xd9a2d10 <<invalid sloc>> Implicit 1001
 
-Inherited Implicit 932
+# (placeholder) | |-ConstAttr 0xd9a3150 <col:1> Implicit
 
+# (placeholder) | `-NoThrowAttr 0xd9a3178 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9a31a0 prev 0xd9a2c70 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:220:1 fmaf 'float (float, float, float)' extern
 
-<scratch space>:105:1 __fmodf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a2a88 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:30> col:30 __x 'float'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a2b08 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:45> col:45 __y 'float'
 
-__y 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a2b88 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:60> col:60 __z 'float'
 
+# (placeholder) | |-BuiltinAttr 0xd9a32b0 <<invalid sloc>> Inherited Implicit 1001
 
+# (placeholder) | |-ConstAttr 0xd9a32d8 <<scratch space>:220:1> Inherited Implicit
 
-<scratch space>:106:1 isinff 'int (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9a3258 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__value 'float'
+# (placeholder) |-FunctionDecl 0xd9a34c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:222:1 __fmaf 'float (float, float, float)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a3318 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:30> col:30 __x 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9a3398 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:45> col:45 __y 'float'
 
+# (placeholder) | |-ParmVarDecl 0xd9a3418 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:60> col:60 __z 'float'
 
+# (placeholder) | `-NoThrowAttr 0xd9a3578 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit finitef 'int (float)' extern
+# (placeholder) |-FunctionDecl 0xd9a3708 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:228:1 scalbf 'float (float, float)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a35e8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:32> col:32 __x 'float'
 
-Implicit 926
+# (placeholder) | |-ParmVarDecl 0xd9a3668 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:47> col:47 __n 'float'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9a37b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9a3948 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:230:1 __scalbf 'float (float, float)' extern
 
-prev 0x66cb68 <scratch space>:107:1 finitef 'int (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a3828 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:32> col:32 __x 'float'
 
-__value 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a38a8 </usr/include/math.h:325:21, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:47> col:47 __n 'float'
 
-Inherited Implicit 926
+# (placeholder) | `-NoThrowAttr 0xd9a39f8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a3b30 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:21:32> <scratch space>:231:1 __fpclassifyl 'int (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a3a68 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:20:50> col:50 __value 'long double'
 
+# (placeholder) | |-NoThrowAttr 0xd9a3bd8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9a3c30 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:21:22>
 
-<scratch space>:108:1 dremf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9a3d08 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:25:32> <scratch space>:232:1 __signbitl 'int (long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a3c70 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:24:47> col:47 __value 'long double'
 
-__y 'float'
+# (placeholder) | |-NoThrowAttr 0xd9a3db0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9a3e08 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:25:22>
 
+# (placeholder) |-FunctionDecl 0xd9a3ee0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:30:29> <scratch space>:233:1 __isinfl 'int (long double)' extern
 
-<scratch space>:110:1 __dremf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a3e48 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:29:45> col:45 __value 'long double'
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd9a3f88 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'float'
+# (placeholder) | `-ConstAttr 0xd9a3fe0 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:30:19>
 
+# (placeholder) |-FunctionDecl 0xd9a4460 <<scratch space>:234:1> col:1 implicit __finitel 'int (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a4558 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:111:1 significandf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9a4500 <<invalid sloc>> Implicit 930
 
-__x 'float'
+# (placeholder) | |-NoThrowAttr 0xd9a45c8 <col:1> Implicit
 
+# (placeholder) | `-ConstAttr 0xd9a45f0 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9a4618 prev 0xd9a4460 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:34:29> <scratch space>:234:1 __finitel 'int (long double)' extern
 
-<scratch space>:113:1 __significandf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a4020 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:33:46> col:46 __value 'long double'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd9a4740 <<invalid sloc>> Inherited Implicit 930
 
+# (placeholder) | |-NoThrowAttr 0xd9a46c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9a4718 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:34:19>
 
-implicit copysignf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9a4818 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:38:29> <scratch space>:235:1 __isnanl 'int (long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a4780 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:37:45> col:45 __value 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | |-NoThrowAttr 0xd9a48c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 920
+# (placeholder) | `-ConstAttr 0xd9a4918 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:38:19>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9a4ab0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:236:1 __iseqsigl 'int (long double, long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9a4958 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:41:47> col:47 __x 'long double'
 
-prev 0x66d7b8 <scratch space>:114:1 copysignf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a49d8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:41:62> col:62 __y 'long double'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a4b60 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'float'
+# (placeholder) |-FunctionDecl 0xd9a4c68 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:45:32> <scratch space>:237:1 __issignalingl 'int (long double)' extern
 
-Inherited Implicit 920
+# (placeholder) | |-ParmVarDecl 0xd9a4bd0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:44:51> col:51 __value 'long double'
 
+# (placeholder) | |-NoThrowAttr 0xd9a4d10 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9a4d68 </usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:45:22>
 
+# (placeholder) |-FunctionDecl 0xd9a4e70 <<scratch space>:240:1> col:1 implicit acosl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a4f68 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:116:1 __copysignf 'float (float, float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9a4f10 <<invalid sloc>> Implicit 951
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a4fd8 <col:1> Implicit
 
-__y 'float'
+# (placeholder) |-FunctionDecl 0xd9a5000 prev 0xd9a4e70 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:240:1 acosl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a4da8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:35> col:35 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9a5100 <<invalid sloc>> Inherited Implicit 951
 
+# (placeholder) | `-NoThrowAttr 0xd9a50a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a51d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:242:1 __acosl 'long double (long double)' extern
 
-implicit nanf 'float (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a5140 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:53:35> col:35 __x 'long double'
 
-<invalid sloc> 'const char *'
+# (placeholder) | `-NoThrowAttr 0xd9a5280 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 944
+# (placeholder) |-FunctionDecl 0xd9a5388 <<scratch space>:245:1> col:1 implicit asinl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd924e40 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9a5428 <<invalid sloc>> Implicit 957
 
-prev 0x66de80 <scratch space>:117:1 nanf 'float (const char *)' extern
+# (placeholder) | `-NoThrowAttr 0xd924eb0 <col:1> Implicit
 
-__tagb 'const char *'
+# (placeholder) |-FunctionDecl 0xd924ed8 prev 0xd9a5388 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:245:1 asinl 'long double (long double)' extern
 
-Inherited Implicit 944
+# (placeholder) | |-ParmVarDecl 0xd9a52f0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:35> col:35 __x 'long double'
 
-Inherited Implicit
+# (placeholder) | |-BuiltinAttr 0xd924fd8 <<invalid sloc>> Inherited Implicit 957
 
+# (placeholder) | `-NoThrowAttr 0xd924f80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9250b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:247:1 __asinl 'long double (long double)' extern
 
-<scratch space>:119:1 __nanf 'float (const char *)' extern
+# (placeholder) | |-ParmVarDecl 0xd925018 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:55:35> col:35 __x 'long double'
 
-__tagb 'const char *'
+# (placeholder) | `-NoThrowAttr 0xd925158 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd925260 <<scratch space>:250:1> col:1 implicit atanl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd925358 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:120:1 isnanf 'int (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd925300 <<invalid sloc>> Implicit 963
 
-__value 'float'
+# (placeholder) | `-NoThrowAttr 0xd9253c8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9253f0 prev 0xd925260 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:250:1 atanl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9251c8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:35> col:35 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9254f0 <<invalid sloc>> Inherited Implicit 963
 
+# (placeholder) | `-NoThrowAttr 0xd925498 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:121:1 j0f 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9255c8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:252:1 __atanl 'long double (long double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:220:28 'float'
+# (placeholder) | |-ParmVarDecl 0xd925530 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:57:35> col:35 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd925670 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd925840 <<scratch space>:255:1> col:1 implicit atan2l 'long double (long double, long double)' extern
 
-<scratch space>:123:1 __j0f 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd925938 <<invalid sloc>> <invalid sloc> 'long double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:220:28 'float'
+# (placeholder) | |-ParmVarDecl 0xd9259a0 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9258e0 <<invalid sloc>> Implicit 915
 
+# (placeholder) | `-NoThrowAttr 0xd925a18 <col:1> Implicit
 
-<scratch space>:124:1 j1f 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd925a40 prev 0xd925840 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:255:1 atan2l 'long double (long double, long double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:221:28 'float'
+# (placeholder) | |-ParmVarDecl 0xd9256e0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:36> col:36 __y 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd925760 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:51> col:51 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd925b48 <<invalid sloc>> Inherited Implicit 915
 
-<scratch space>:126:1 __j1f 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd925af0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:221:28 'float'
+# (placeholder) |-FunctionDecl 0xd925ca8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:257:1 __atan2l 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd925b88 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:36> col:36 __y 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd925c08 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:59:51> col:51 __x 'long double'
 
-<scratch space>:127:1 jnf 'float (int, float)' extern
+# (placeholder) | `-NoThrowAttr 0xd925d58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-'int'
+# (placeholder) |-FunctionDecl 0xd9a96a8 <<scratch space>:260:1> col:1 implicit cosl 'long double (long double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:222:33 'float'
+# (placeholder) | |-ParmVarDecl 0xd9a97a0 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9a9748 <<invalid sloc>> Implicit 975
 
+# (placeholder) | `-NoThrowAttr 0xd9a9810 <col:1> Implicit
 
-<scratch space>:129:1 __jnf 'float (int, float)' extern
+# (placeholder) |-FunctionDecl 0xd9a9838 prev 0xd9a96a8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:260:1 cosl 'long double (long double)' extern
 
-'int'
+# (placeholder) | |-ParmVarDecl 0xd9a9610 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:34> col:34 __x 'long double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:222:33 'float'
+# (placeholder) | |-BuiltinAttr 0xd9a9938 <<invalid sloc>> Inherited Implicit 975
 
+# (placeholder) | `-NoThrowAttr 0xd9a98e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a9a10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:262:1 __cosl 'long double (long double)' extern
 
-<scratch space>:130:1 y0f 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9a9978 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:62:34> col:34 __x 'long double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:223:28 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a9ab8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a9bc0 <<scratch space>:265:1> col:1 implicit sinl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a9cb8 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:132:1 __y0f 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9a9c60 <<invalid sloc>> Implicit 1074
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:223:28 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a9d28 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9a9d50 prev 0xd9a9bc0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:265:1 sinl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a9b28 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:34> col:34 __x 'long double'
 
-<scratch space>:133:1 y1f 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9a9e50 <<invalid sloc>> Inherited Implicit 1074
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:224:28 'float'
+# (placeholder) | `-NoThrowAttr 0xd9a9df8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9a9f28 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:267:1 __sinl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9a9e90 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:64:34> col:34 __x 'long double'
 
-<scratch space>:135:1 __y1f 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9a9fd0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:224:28 'float'
+# (placeholder) |-FunctionDecl 0xd9aa0d8 <<scratch space>:270:1> col:1 implicit tanl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9aa1d0 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9aa178 <<invalid sloc>> Implicit 1083
 
-<scratch space>:136:1 ynf 'float (int, float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9aa240 <col:1> Implicit
 
-'int'
+# (placeholder) |-FunctionDecl 0xd9aa268 prev 0xd9aa0d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:270:1 tanl 'long double (long double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:225:33 'float'
+# (placeholder) | |-ParmVarDecl 0xd9aa040 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:34> col:34 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9aa368 <<invalid sloc>> Inherited Implicit 1083
 
+# (placeholder) | `-NoThrowAttr 0xd9aa310 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:138:1 __ynf 'float (int, float)' extern
+# (placeholder) |-FunctionDecl 0xd9aa440 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:272:1 __tanl 'long double (long double)' extern
 
-'int'
+# (placeholder) | |-ParmVarDecl 0xd9aa3a8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:66:34> col:34 __x 'long double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:225:33 'float'
+# (placeholder) | `-NoThrowAttr 0xd9aa4e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9aa620 <<scratch space>:275:1> col:1 implicit coshl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9aa718 <<invalid sloc>> <invalid sloc> 'long double'
 
-implicit erff 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9aa6c0 <<invalid sloc>> Implicit 978
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9aa788 <col:1> Implicit
 
-Implicit 980
+# (placeholder) |-FunctionDecl 0xd9aa7b0 prev 0xd9aa620 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:275:1 coshl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9aa558 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:35> col:35 __x 'long double'
 
-prev 0x66fd80 <scratch space>:141:1 erff 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9aa8b0 <<invalid sloc>> Inherited Implicit 978
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:231:33 'float'
+# (placeholder) | `-NoThrowAttr 0xd9aa858 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 980
+# (placeholder) |-FunctionDecl 0xd9aa988 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:277:1 __coshl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9aa8f0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:71:35> col:35 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9aaa30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:143:1 __erff 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9aab38 <<scratch space>:280:1> col:1 implicit sinhl 'long double (long double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:231:33 'float'
+# (placeholder) | |-ParmVarDecl 0xd9aac30 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9aabd8 <<invalid sloc>> Implicit 1077
 
+# (placeholder) | `-NoThrowAttr 0xd9aaca0 <col:1> Implicit
 
-implicit erfcf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9aacc8 prev 0xd9aab38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:280:1 sinhl 'long double (long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9aaaa0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:35> col:35 __x 'long double'
 
-Implicit 983
+# (placeholder) | |-BuiltinAttr 0xd9aadc8 <<invalid sloc>> Inherited Implicit 1077
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9aad70 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x670298 <scratch space>:146:1 erfcf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9aaea0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:282:1 __sinhl 'long double (long double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:232:34 'float'
+# (placeholder) | |-ParmVarDecl 0xd9aae08 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:73:35> col:35 __x 'long double'
 
-Inherited Implicit 983
+# (placeholder) | `-NoThrowAttr 0xd9aaf48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9ab050 <<scratch space>:285:1> col:1 implicit tanhl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ab148 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:148:1 __erfcf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9ab0f0 <<invalid sloc>> Implicit 1086
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:232:34 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ab1b8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9ab1e0 prev 0xd9ab050 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:285:1 tanhl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9aafb8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:35> col:35 __x 'long double'
 
-implicit lgammaf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9ab2e0 <<invalid sloc>> Inherited Implicit 1086
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ab288 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1016
+# (placeholder) |-FunctionDecl 0xd9ab3b8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:287:1 __tanhl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9ab320 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:75:35> col:35 __x 'long double'
 
-prev 0x6707f8 <scratch space>:149:1 lgammaf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9ab460 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:233:32 'float'
+# (placeholder) |-FunctionDecl 0xd9ab568 <<scratch space>:290:1> col:1 implicit acoshl 'long double (long double)' extern
 
-Inherited Implicit 1016
+# (placeholder) | |-ParmVarDecl 0xd9ab688 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9ab630 <<invalid sloc>> Implicit 954
 
+# (placeholder) | `-NoThrowAttr 0xd9ab6f8 <col:1> Implicit
 
-<scratch space>:151:1 __lgammaf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9ab720 prev 0xd9ab568 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:290:1 acoshl 'long double (long double)' extern
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:233:32 'float'
+# (placeholder) | |-ParmVarDecl 0xd9ab4d0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:36> col:36 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9ab820 <<invalid sloc>> Inherited Implicit 954
 
+# (placeholder) | `-NoThrowAttr 0xd9ab7c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit tgammaf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9ab8f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:292:1 __acoshl 'long double (long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9ab860 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:85:36> col:36 __x 'long double'
 
-Implicit 1088
+# (placeholder) | `-NoThrowAttr 0xd9ab9a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9abaa8 <<scratch space>:295:1> col:1 implicit asinhl 'long double (long double)' extern
 
-prev 0x670d10 <scratch space>:152:1 tgammaf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9abba0 <<invalid sloc>> <invalid sloc> 'long double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:238:32 'float'
+# (placeholder) | |-BuiltinAttr 0xd9abb48 <<invalid sloc>> Implicit 960
 
-Inherited Implicit 1088
+# (placeholder) | `-NoThrowAttr 0xd9abc10 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9abc38 prev 0xd9abaa8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:295:1 asinhl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9aba10 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:36> col:36 __x 'long double'
 
-<scratch space>:154:1 __tgammaf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9abd38 <<invalid sloc>> Inherited Implicit 960
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:238:32 'float'
+# (placeholder) | `-NoThrowAttr 0xd9abce0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9abe10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:297:1 __asinhl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9abd78 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:87:36> col:36 __x 'long double'
 
-<scratch space>:155:1 gammaf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9abeb8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:244:31 'float'
+# (placeholder) |-FunctionDecl 0xd9abfc0 <<scratch space>:300:1> col:1 implicit atanhl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ac0b8 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9ac060 <<invalid sloc>> Implicit 966
 
-<scratch space>:157:1 __gammaf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9ac128 <col:1> Implicit
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:244:31 'float'
+# (placeholder) |-FunctionDecl 0xd9ac150 prev 0xd9abfc0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:300:1 atanhl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9abf28 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:36> col:36 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9ac250 <<invalid sloc>> Inherited Implicit 966
 
-<scratch space>:159:1 lgammaf_r 'float (float, int *)' extern
+# (placeholder) | `-NoThrowAttr 0xd9ac1f8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:252:34 'float'
+# (placeholder) |-FunctionDecl 0xd9ac328 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:302:1 __atanhl 'long double (long double)' extern
 
-__signgamp 'int *'
+# (placeholder) | |-ParmVarDecl 0xd9ac290 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:89:36> col:36 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9ac3d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9ac4d8 <<scratch space>:305:1> col:1 implicit expl 'long double (long double)' extern
 
-<scratch space>:162:1 __lgammaf_r 'float (float, int *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9ac640 <<invalid sloc>> <invalid sloc> 'long double'
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:252:34 'float'
+# (placeholder) | |-BuiltinAttr 0xd9ac578 <<invalid sloc>> Implicit 987
 
-__signgamp 'int *'
+# (placeholder) | `-NoThrowAttr 0xd9ac6b0 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9ac6d8 prev 0xd9ac4d8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:305:1 expl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ac440 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:34> col:34 __x 'long double'
 
-implicit rintf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9ac7d8 <<invalid sloc>> Inherited Implicit 987
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ac780 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1061
+# (placeholder) |-FunctionDecl 0xd9ac8b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:307:1 __expl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9ac818 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:95:34> col:34 __x 'long double'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9ac958 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x671a58 <scratch space>:163:1 rintf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9acb20 <<scratch space>:308:1> col:1 implicit frexpl 'long double (long double, int *)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9acc18 <<invalid sloc>> <invalid sloc> 'long double'
 
-Inherited Implicit 1061
+# (placeholder) | |-ParmVarDecl 0xd9acc80 <<invalid sloc>> <invalid sloc> 'int *'
 
-Inherited Implicit
+# (placeholder) | |-BuiltinAttr 0xd9acbc0 <<invalid sloc>> Implicit 936
 
+# (placeholder) | `-NoThrowAttr 0xd9accf8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9acd20 prev 0xd9acb20 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:308:1 frexpl 'long double (long double, int *)' extern
 
-<scratch space>:165:1 __rintf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9ac9c8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:32> col:32 __x 'long double'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9aca48 <col:37, col:42> col:42 __exponent 'int *'
 
+# (placeholder) | |-BuiltinAttr 0xd9ace28 <<invalid sloc>> Inherited Implicit 936
 
+# (placeholder) | `-NoThrowAttr 0xd9acdd0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit nextafterf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9acf88 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:310:1 __frexpl 'long double (long double, int *)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9ace68 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:98:32> col:32 __x 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9acee8 <col:37, col:42> col:42 __exponent 'int *'
 
-Implicit 1049
+# (placeholder) | `-NoThrowAttr 0xd9ad038 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9ad200 <<scratch space>:311:1> col:1 implicit ldexpl 'long double (long double, int)' extern
 
-prev 0x672048 <scratch space>:166:1 nextafterf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9ad2f8 <<invalid sloc>> <invalid sloc> 'long double'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9ad360 <<invalid sloc>> <invalid sloc> 'int'
 
-__y 'float'
+# (placeholder) | |-BuiltinAttr 0xd9ad2a0 <<invalid sloc>> Implicit 939
 
-Inherited Implicit 1049
+# (placeholder) | `-NoThrowAttr 0xd9ad3d8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9ad400 prev 0xd9ad200 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:311:1 ldexpl 'long double (long double, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ad0a8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:32> col:32 __x 'long double'
 
-<scratch space>:168:1 __nextafterf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9ad128 <col:37, col:41> col:41 __exponent 'int'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd9ad508 <<invalid sloc>> Inherited Implicit 939
 
-__y 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ad4b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9ad688 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:313:1 __ldexpl 'long double (long double, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ad548 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:101:32> col:32 __x 'long double'
 
-implicit nexttowardf 'float (float, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9ad5c8 <col:37, col:41> col:41 __exponent 'int'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ad738 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9ad840 <<scratch space>:316:1> col:1 implicit logl 'long double (long double)' extern
 
-Implicit 1052
+# (placeholder) | |-ParmVarDecl 0xd9ad938 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9ad8e0 <<invalid sloc>> Implicit 1026
 
-prev 0x672740 <scratch space>:169:1 nexttowardf 'float (float, long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9ad9a8 <col:1> Implicit
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9ad9d0 prev 0xd9ad840 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:316:1 logl 'long double (long double)' extern
 
-__y 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9ad7a8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:34> col:34 __x 'long double'
 
-Inherited Implicit 1052
+# (placeholder) | |-BuiltinAttr 0xd9adad0 <<invalid sloc>> Inherited Implicit 1026
 
+# (placeholder) | `-NoThrowAttr 0xd9ada78 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9adba8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:318:1 __logl 'long double (long double)' extern
 
-<scratch space>:171:1 __nexttowardf 'float (float, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9adb10 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:104:34> col:34 __x 'long double'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9adc50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'long double'
+# (placeholder) |-FunctionDecl 0xd9add58 <<scratch space>:321:1> col:1 implicit log10l 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ade50 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9addf8 <<invalid sloc>> Implicit 1029
 
-implicit remainderf 'float (float, float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9adec0 <col:1> Implicit
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd9adee8 prev 0xd9add58 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:321:1 log10l 'long double (long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9adcc0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:36> col:36 __x 'long double'
 
-Implicit 1055
+# (placeholder) | |-BuiltinAttr 0xd9adfe8 <<invalid sloc>> Inherited Implicit 1029
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9adf90 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x672de8 <scratch space>:173:1 remainderf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9ae0c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:323:1 __log10l 'long double (long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9ae028 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:107:36> col:36 __x 'long double'
 
-__y 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ae168 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1055
+# (placeholder) |-FunctionDecl 0xd9ae360 <<scratch space>:324:1> col:1 implicit modfl 'long double (long double, long double *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ae458 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9ae4c0 <<invalid sloc>> <invalid sloc> 'long double *'
 
-<scratch space>:175:1 __remainderf 'float (float, float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9ae400 <<invalid sloc>> Implicit 942
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ae538 <col:1> Implicit
 
-__y 'float'
+# (placeholder) |-FunctionDecl 0xd9ae560 prev 0xd9ae360 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:324:1 modfl 'long double (long double, long double *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9ae1d8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:31> col:31 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9ae280 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:47> col:47 __iptr 'long double *'
 
-implicit scalbnf 'float (float, int)' extern
+# (placeholder) | |-BuiltinAttr 0xd9ae690 <<invalid sloc>> Inherited Implicit 942
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9ae610 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'int'
+# (placeholder) |-FunctionDecl 0xd9ae810 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> <scratch space>:326:1 __modfl 'long double (long double, long double *)' extern
 
-Implicit 1070
+# (placeholder) | |-ParmVarDecl 0xd9ae6d0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:31> col:31 __x 'long double'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9ae750 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:47> col:47 __iptr 'long double *'
 
-prev 0x673490 <scratch space>:176:1 scalbnf 'float (float, int)' extern
+# (placeholder) | |-NoThrowAttr 0xd9ae8c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) | `-NonNullAttr 0xd9ae918 <line:384:57, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:110:69> 2
 
-__n 'int'
+# (placeholder) |-FunctionDecl 0xd9aea08 <<scratch space>:330:1> col:1 implicit expm1l 'long double (long double)' extern
 
-Inherited Implicit 1070
+# (placeholder) | |-ParmVarDecl 0xd9aeb00 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9aeaa8 <<invalid sloc>> Implicit 993
 
+# (placeholder) | `-NoThrowAttr 0xd9aeb70 <col:1> Implicit
 
-<scratch space>:178:1 __scalbnf 'float (float, int)' extern
+# (placeholder) |-FunctionDecl 0xd9aeb98 prev 0xd9aea08 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:330:1 expm1l 'long double (long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9ae970 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:119:36> col:36 __x 'long double'
 
-__n 'int'
+# (placeholder) | |-BuiltinAttr 0xd9aec98 <<invalid sloc>> Inherited Implicit 993
 
+# (placeholder) | `-NoThrowAttr 0xd9aec40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9aed70 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:332:1 __expm1l 'long double (long double)' extern
 
-implicit ilogbf 'int (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9aecd8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:119:36> col:36 __x 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9aee18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1013
+# (placeholder) |-FunctionDecl 0xd9aef20 <<scratch space>:335:1> col:1 implicit log1pl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9af018 <<invalid sloc>> <invalid sloc> 'long double'
 
-prev 0x673b08 <scratch space>:179:1 ilogbf 'int (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9aefc0 <<invalid sloc>> Implicit 1032
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9af088 <col:1> Implicit
 
-Inherited Implicit 1013
+# (placeholder) |-FunctionDecl 0xd9af0b0 prev 0xd9aef20 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:335:1 log1pl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9aee88 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:36> col:36 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9af1b0 <<invalid sloc>> Inherited Implicit 1032
 
-<scratch space>:181:1 __ilogbf 'int (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9af158 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9af288 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:337:1 __log1pl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9af1f0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:122:36> col:36 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9af330 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit scalblnf 'float (float, long)' extern
+# (placeholder) |-FunctionDecl 0xd9af438 <<scratch space>:338:1> col:1 implicit logbl 'long double (long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9af530 <<invalid sloc>> <invalid sloc> 'long double'
 
-<invalid sloc> 'long'
+# (placeholder) | |-BuiltinAttr 0xd9af4d8 <<invalid sloc>> Implicit 1038
 
-Implicit 1067
+# (placeholder) | `-NoThrowAttr 0xd9af5a0 <col:1> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9af670 prev 0xd9af438 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:338:1 logbl 'long double (long double)' extern
 
-prev 0x6740e0 <scratch space>:183:1 scalblnf 'float (float, long)' extern
+# (placeholder) | |-ParmVarDecl 0xd9af3a0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:31> col:31 __x 'long double'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd9af770 <<invalid sloc>> Inherited Implicit 1038
 
-__n 'long'
+# (placeholder) | `-NoThrowAttr 0xd9af718 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1067
+# (placeholder) |-FunctionDecl 0xd9af848 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:340:1 __logbl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9af7b0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:125:31> col:31 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9af8f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:185:1 __scalblnf 'float (float, long)' extern
+# (placeholder) |-FunctionDecl 0xd9af9f8 <<scratch space>:343:1> col:1 implicit exp2l 'long double (long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9afaf0 <<invalid sloc>> <invalid sloc> 'long double'
 
-__n 'long'
+# (placeholder) | |-BuiltinAttr 0xd9afa98 <<invalid sloc>> Implicit 990
 
+# (placeholder) | `-NoThrowAttr 0xd9afb60 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9afb88 prev 0xd9af9f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:343:1 exp2l 'long double (long double)' extern
 
-implicit nearbyintf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9af960 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:35> col:35 __x 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | |-BuiltinAttr 0xd9afc88 <<invalid sloc>> Inherited Implicit 990
 
-Implicit 1046
+# (placeholder) | `-NoThrowAttr 0xd9afc30 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9afd60 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:345:1 __exp2l 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9afcc8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:130:35> col:35 __x 'long double'
 
-prev 0x6747a8 <scratch space>:186:1 nearbyintf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9afe08 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9aff10 <<scratch space>:348:1> col:1 implicit log2l 'long double (long double)' extern
 
-Inherited Implicit 1046
+# (placeholder) | |-ParmVarDecl 0xd9b0008 <<invalid sloc>> <invalid sloc> 'long double'
 
-Inherited Implicit
+# (placeholder) | |-BuiltinAttr 0xd9affb0 <<invalid sloc>> Implicit 1035
 
+# (placeholder) | `-NoThrowAttr 0xd9b0078 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9b00a0 prev 0xd9aff10 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:348:1 log2l 'long double (long double)' extern
 
-<scratch space>:188:1 __nearbyintf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9afe78 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:35> col:35 __x 'long double'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd9b01a0 <<invalid sloc>> Inherited Implicit 1035
 
+# (placeholder) | `-NoThrowAttr 0xd9b0148 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9b0278 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:350:1 __log2l 'long double (long double)' extern
 
-implicit roundf 'float (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9b01e0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:133:35> col:35 __x 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9b0320 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 1064
+# (placeholder) |-FunctionDecl 0xd9b04b0 <<scratch space>:353:1> col:1 implicit powl 'long double (long double, long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9b05a8 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9b0680 <<invalid sloc>> <invalid sloc> 'long double'
 
-prev 0x674d10 <scratch space>:189:1 roundf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9b0550 <<invalid sloc>> Implicit 948
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9b06f8 <col:1> Implicit
 
-Inherited Implicit 1064
+# (placeholder) |-FunctionDecl 0xd9b0720 prev 0xd9b04b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:353:1 powl 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9b0390 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:34> col:34 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9b0410 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:49> col:49 __y 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9b0828 <<invalid sloc>> Inherited Implicit 948
 
+# (placeholder) | `-NoThrowAttr 0xd9b07d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:191:1 __roundf 'float (float)' extern
+# (placeholder) |-FunctionDecl 0xd9b0988 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:355:1 __powl 'long double (long double, long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9b0868 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:34> col:34 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9b08e8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:140:49> col:49 __y 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9b0a38 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9b0b40 <<scratch space>:356:1> col:1 implicit sqrtl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9b0c38 <<invalid sloc>> <invalid sloc> 'long double'
 
-implicit truncf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9b0be0 <<invalid sloc>> Implicit 1080
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9b0ca8 <col:1> Implicit
 
-Implicit 1091
+# (placeholder) |-FunctionDecl 0xd9b0cd0 prev 0xd9b0b40 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:356:1 sqrtl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9b0aa8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:31> col:31 __x 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9b0dd0 <<invalid sloc>> Inherited Implicit 1080
 
-prev 0x6752a0 <scratch space>:192:1 truncf 'float (float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9b0d78 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9b0ea8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:358:1 __sqrtl 'long double (long double)' extern
 
-Inherited Implicit 1091
+# (placeholder) | |-ParmVarDecl 0xd9b0e10 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:143:31> col:31 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9b0f50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9b10e0 <<scratch space>:361:1> col:1 implicit hypotl 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9b11d8 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9b1240 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:194:1 __truncf 'float (float)' extern
+# (placeholder) | |-BuiltinAttr 0xd9b1180 <<invalid sloc>> Implicit 1011
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9b12b8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9b12e0 prev 0xd9b10e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:361:1 hypotl 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9b0fc0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:36> col:36 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9b1040 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:51> col:51 __y 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9b13e8 <<invalid sloc>> Inherited Implicit 1011
 
-implicit remquof 'float (float, float, int *)' extern
+# (placeholder) | `-NoThrowAttr 0xd9b1390 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd9b1548 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:363:1 __hypotl 'long double (long double, long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9b1428 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:36> col:36 __x 'long double'
 
-<invalid sloc> 'int *'
+# (placeholder) | |-ParmVarDecl 0xd9b14a8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:147:51> col:51 __y 'long double'
 
-Implicit 1058
+# (placeholder) | `-NoThrowAttr 0xd9b15f8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9b1700 <<scratch space>:366:1> col:1 implicit cbrtl 'long double (long double)' extern
 
-prev 0x6759c0 <scratch space>:195:1 remquof 'float (float, float, int *)' extern
+# (placeholder) | |-ParmVarDecl 0xd9b17f8 <<invalid sloc>> <invalid sloc> 'long double'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd9b17a0 <<invalid sloc>> Implicit 969
 
-__y 'float'
+# (placeholder) | |-NoThrowAttr 0xd9b1868 <col:1> Implicit
 
-__quo 'int *'
+# (placeholder) | `-ConstAttr 0xd9b1890 <col:1> Implicit
 
-Inherited Implicit 1058
+# (placeholder) |-FunctionDecl 0xd9b18b8 prev 0xd9b1700 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:366:1 cbrtl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9b1668 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:35> col:35 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9b19b8 <<invalid sloc>> Inherited Implicit 969
 
-<scratch space>:197:1 __remquof 'float (float, float, int *)' extern
+# (placeholder) | |-ConstAttr 0xd9b19e0 <<scratch space>:366:1> Inherited Implicit
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9b1960 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'float'
+# (placeholder) |-FunctionDecl 0xd9b1ab8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:368:1 __cbrtl 'long double (long double)' extern
 
-__quo 'int *'
+# (placeholder) | |-ParmVarDecl 0xd9b1a20 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:152:35> col:35 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9b1b60 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9b1c68 <<scratch space>:369:1> col:1 implicit ceill 'long double (long double)' extern
 
-implicit lrintf 'long (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9b1d60 <<invalid sloc>> <invalid sloc> 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | |-BuiltinAttr 0xd9b1d08 <<invalid sloc>> Implicit 972
 
-Implicit 1040
+# (placeholder) | |-NoThrowAttr 0xd9b1dd0 <col:1> Implicit
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd9b1df8 <col:1> Implicit
 
-prev 0x676120 <scratch space>:198:1 lrintf 'long (float)' extern
+# (placeholder) |-FunctionDecl 0xd9b1e20 prev 0xd9b1c68 </usr/include/math.h:297:3, line:294:66> <scratch space>:369:1 ceill 'long double (long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9b1bd0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:32> col:32 __x 'long double'
 
-Inherited Implicit 1040
+# (placeholder) | |-BuiltinAttr 0xd9b1f48 <<invalid sloc>> Inherited Implicit 972
 
+# (placeholder) | |-NoThrowAttr 0xd9b1ec8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9b1f20 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:39>
 
-<scratch space>:200:1 __lrintf 'long (float)' extern
+# (placeholder) |-FunctionDecl 0xd9b2020 </usr/include/math.h:297:3, line:295:79> <scratch space>:371:1 __ceill 'long double (long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9b1f88 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:32> col:32 __x 'long double'
 
+# (placeholder) | |-NoThrowAttr 0xd9b20c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9b2120 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:159:39>
 
-implicit llrintf 'long long (float)' extern
+# (placeholder) |-FunctionDecl 0xd9b21f8 <<scratch space>:372:1> col:1 implicit fabsl 'long double (long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9b22f0 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit 1019
+# (placeholder) | |-BuiltinAttr 0xd9b2298 <<invalid sloc>> Implicit 924
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd9b2360 <col:1> Implicit
 
-prev 0x676930 <scratch space>:201:1 llrintf 'long long (float)' extern
+# (placeholder) | `-ConstAttr 0xd9b2388 <col:1> Implicit
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9b23b0 prev 0xd9b21f8 </usr/include/math.h:297:3, line:294:66> <scratch space>:372:1 fabsl 'long double (long double)' extern
 
-Inherited Implicit 1019
+# (placeholder) | |-ParmVarDecl 0xd9b2160 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:32> col:32 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9b24d8 <<invalid sloc>> Inherited Implicit 924
 
+# (placeholder) | |-NoThrowAttr 0xd9b2458 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:203:1 __llrintf 'long long (float)' extern
+# (placeholder) | `-ConstAttr 0xd9b24b0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:39>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9b25b0 </usr/include/math.h:297:3, line:295:79> <scratch space>:374:1 __fabsl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9b2518 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:32> col:32 __x 'long double'
 
+# (placeholder) | |-NoThrowAttr 0xd9b2658 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit lroundf 'long (float)' extern
+# (placeholder) | `-ConstAttr 0xd974b10 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:162:39>
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd974be8 <<scratch space>:375:1> col:1 implicit floorl 'long double (long double)' extern
 
-Implicit 1043
+# (placeholder) | |-ParmVarDecl 0xd974ce0 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd974c88 <<invalid sloc>> Implicit 999
 
-prev 0x676e48 <scratch space>:204:1 lroundf 'long (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd974d50 <col:1> Implicit
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd974d78 <col:1> Implicit
 
-Inherited Implicit 1043
+# (placeholder) |-FunctionDecl 0xd974da0 prev 0xd974be8 </usr/include/math.h:297:3, line:294:66> <scratch space>:375:1 floorl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd974b50 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:33> col:33 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd974ec8 <<invalid sloc>> Inherited Implicit 999
 
-<scratch space>:206:1 __lroundf 'long (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd974e48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd974ea0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:40>
 
+# (placeholder) |-FunctionDecl 0xd974fa0 </usr/include/math.h:297:3, line:295:79> <scratch space>:377:1 __floorl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd974f08 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:33> col:33 __x 'long double'
 
-implicit llroundf 'long long (float)' extern
+# (placeholder) | |-NoThrowAttr 0xd975048 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) | `-ConstAttr 0xd9750a0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:165:40>
 
-Implicit 1022
+# (placeholder) |-FunctionDecl 0xd975200 <<scratch space>:378:1> col:1 implicit fmodl 'long double (long double, long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9752f8 <<invalid sloc>> <invalid sloc> 'long double'
 
-prev 0x677360 <scratch space>:207:1 llroundf 'long long (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd975360 <<invalid sloc>> <invalid sloc> 'long double'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd9752a0 <<invalid sloc>> Implicit 933
 
-Inherited Implicit 1022
+# (placeholder) | `-NoThrowAttr 0xd9753d8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd975400 prev 0xd975200 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:378:1 fmodl 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9750e0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:31> col:31 __x 'long double'
 
-<scratch space>:209:1 __llroundf 'long long (float)' extern
+# (placeholder) | |-ParmVarDecl 0xd975160 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:46> col:46 __y 'long double'
 
-__x 'float'
+# (placeholder) | |-BuiltinAttr 0xd975508 <<invalid sloc>> Inherited Implicit 933
 
+# (placeholder) | `-NoThrowAttr 0xd9754b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd975668 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:380:1 __fmodl 'long double (long double, long double)' extern
 
-implicit fdimf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd975548 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:31> col:31 __x 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9755c8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:168:46> col:46 __y 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd975718 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 995
+# (placeholder) |-FunctionDecl 0xd975820 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:178:29> <scratch space>:381:1 isinfl 'int (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd975788 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:177:42> col:42 __value 'long double'
 
-prev 0x6779e0 <scratch space>:210:1 fdimf 'float (float, float)' extern
+# (placeholder) | |-NoThrowAttr 0xd9758c8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) | `-ConstAttr 0xd975920 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:178:19>
 
-__y 'float'
+# (placeholder) |-FunctionDecl 0xd9759f8 <<scratch space>:382:1> col:1 implicit finitel 'int (long double)' extern
 
-Inherited Implicit 995
+# (placeholder) | |-ParmVarDecl 0xd975af0 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd975a98 <<invalid sloc>> Implicit 927
 
+# (placeholder) | |-NoThrowAttr 0xd975b60 <col:1> Implicit
 
-<scratch space>:212:1 __fdimf 'float (float, float)' extern
+# (placeholder) | `-ConstAttr 0xd975b88 <col:1> Implicit
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd975bb0 prev 0xd9759f8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:184:29> <scratch space>:382:1 finitel 'int (long double)' extern
 
-__y 'float'
+# (placeholder) | |-ParmVarDecl 0xd975960 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:183:43> col:43 __value 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd975cd8 <<invalid sloc>> Inherited Implicit 927
 
+# (placeholder) | |-NoThrowAttr 0xd975c58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit fmaxf 'float (float, float)' extern
+# (placeholder) | `-ConstAttr 0xd975cb0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:184:19>
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd975e38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:383:1 dreml 'long double (long double, long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd975d18 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:31> col:31 __x 'long double'
 
-Implicit 1004
+# (placeholder) | |-ParmVarDecl 0xd975d98 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:46> col:46 __y 'long double'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd975ee8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd976078 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:385:1 __dreml 'long double (long double, long double)' extern
 
-prev 0x678088 <scratch space>:214:1 fmaxf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd975f58 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:31> col:31 __x 'long double'
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd975fd8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:187:46> col:46 __y 'long double'
 
-__y 'float'
+# (placeholder) | `-NoThrowAttr 0xd976128 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1004
+# (placeholder) |-FunctionDecl 0xd976230 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:386:1 significandl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd976198 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:191:38> col:38 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9762d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9763e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:388:1 __significandl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd976348 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:191:38> col:38 __x 'long double'
 
-<scratch space>:216:1 __fmaxf 'float (float, float)' extern
+# (placeholder) | `-NoThrowAttr 0xd976488 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd976618 <<scratch space>:389:1> col:1 implicit copysignl 'long double (long double, long double)' extern
 
-__y 'float'
+# (placeholder) | |-ParmVarDecl 0xd976710 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd976778 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9766b8 <<invalid sloc>> Implicit 921
 
+# (placeholder) | |-NoThrowAttr 0xd9767f0 <col:1> Implicit
 
+# (placeholder) | `-ConstAttr 0xd976818 <col:1> Implicit
 
-implicit fminf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd976840 prev 0xd976618 </usr/include/math.h:297:3, line:294:66> <scratch space>:389:1 copysignl 'long double (long double, long double)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9764f8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:36> col:36 __x 'long double'
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd976578 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:51> col:51 __y 'long double'
 
-Implicit 1007
+# (placeholder) | |-BuiltinAttr 0xd976970 <<invalid sloc>> Inherited Implicit 921
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd9768f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd976948 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:58>
 
-prev 0x6787a8 <scratch space>:217:1 fminf 'float (float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9bc6b0 </usr/include/math.h:297:3, line:295:79> <scratch space>:391:1 __copysignl 'long double (long double, long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9769b0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:36> col:36 __x 'long double'
 
-__y 'float'
+# (placeholder) | |-ParmVarDecl 0xd976a30 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:51> col:51 __y 'long double'
 
-Inherited Implicit 1007
+# (placeholder) | |-NoThrowAttr 0xd9bc760 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9bc7b8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:198:58>
 
+# (placeholder) |-FunctionDecl 0xd9bc8c0 <<scratch space>:392:1> col:1 implicit nanl 'long double (const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bc9b8 <<invalid sloc>> <invalid sloc> 'const char *'
 
+# (placeholder) | |-BuiltinAttr 0xd9bc960 <<invalid sloc>> Implicit 945
 
-<scratch space>:219:1 __fminf 'float (float, float)' extern
+# (placeholder) | |-NoThrowAttr 0xd9bca28 <col:1> Implicit
 
-__x 'float'
+# (placeholder) | `-PureAttr 0xd9bca50 <col:1> Implicit
 
-__y 'float'
+# (placeholder) |-FunctionDecl 0xd9bca78 prev 0xd9bc8c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:392:1 nanl 'long double (const char *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bc7f8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:203:20, col:32> col:32 __tagb 'const char *'
 
+# (placeholder) | |-BuiltinAttr 0xd9bcb78 <<invalid sloc>> Inherited Implicit 945
 
+# (placeholder) | |-PureAttr 0xd9bcba0 <<scratch space>:392:1> Inherited Implicit
 
+# (placeholder) | `-NoThrowAttr 0xd9bcb20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit fmaf 'float (float, float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9bcc78 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:394:1 __nanl 'long double (const char *)' extern
 
-<invalid sloc> 'float'
+# (placeholder) | |-ParmVarDecl 0xd9bcbe0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:203:20, col:32> col:32 __tagb 'const char *'
 
-<invalid sloc> 'float'
+# (placeholder) | `-NoThrowAttr 0xd9bcd20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'float'
+# (placeholder) |-FunctionDecl 0xd9bce28 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:214:29> <scratch space>:395:1 isnanl 'int (long double)' extern
 
-Implicit 1001
+# (placeholder) | |-ParmVarDecl 0xd9bcd90 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:213:42> col:42 __value 'long double'
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd9bced0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd9bcf28 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:214:19>
 
-prev 0x679130 <scratch space>:220:1 fmaf 'float (float, float, float)' extern
+# (placeholder) |-FunctionDecl 0xd9bd000 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:396:1 j0l 'long double (long double)' extern
 
-__x 'float'
+# (placeholder) | |-ParmVarDecl 0xd9bcf68 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:220:28 'long double'
 
-__y 'float'
+# (placeholder) | `-NoThrowAttr 0xd9bd0a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__z 'float'
+# (placeholder) |-FunctionDecl 0xd9bd1b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:398:1 __j0l 'long double (long double)' extern
 
-Inherited Implicit 1001
+# (placeholder) | |-ParmVarDecl 0xd9bd118 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:220:28 'long double'
 
-Inherited Implicit
+# (placeholder) | `-NoThrowAttr 0xd9bd258 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9bd360 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:399:1 j1l 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bd2c8 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:221:28 'long double'
 
-<scratch space>:222:1 __fmaf 'float (float, float, float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9bd408 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9bd510 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:401:1 __j1l 'long double (long double)' extern
 
-__y 'float'
+# (placeholder) | |-ParmVarDecl 0xd9bd478 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:221:28 'long double'
 
-__z 'float'
+# (placeholder) | `-NoThrowAttr 0xd9bd5b8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9bd780 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:402:1 jnl 'long double (int, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bd628 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:19> col:22 'int'
 
-<scratch space>:228:1 scalbf 'float (float, float)' extern
+# (placeholder) | |-ParmVarDecl 0xd9bd6a8 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:33 'long double'
 
-__x 'float'
+# (placeholder) | `-NoThrowAttr 0xd9bd830 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__n 'float'
+# (placeholder) |-FunctionDecl 0xd9bd9c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:3:1 __jnl 'long double (int, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bd8a0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:19> col:22 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd9bd920 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:222:33 'long double'
 
-<scratch space>:230:1 __scalbf 'float (float, float)' extern
+# (placeholder) | `-NoThrowAttr 0xd9bda70 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'float'
+# (placeholder) |-FunctionDecl 0xd9bdb78 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:4:1 y0l 'long double (long double)' extern
 
-__n 'float'
+# (placeholder) | |-ParmVarDecl 0xd9bdae0 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:223:28 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9bdc20 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9bdd28 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:6:1 __y0l 'long double (long double)' extern
 
-<scratch space>:231:1 __fpclassifyl 'int (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9bdc90 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:223:28 'long double'
 
-__value 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9bddd0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9bded8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:7:1 y1l 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bde40 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:224:28 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9bdf80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9be088 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:9:1 __y1l 'long double (long double)' extern
 
-<scratch space>:232:1 __signbitl 'int (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9bdff0 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:224:28 'long double'
 
-__value 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9be130 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9be2c0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:10:1 ynl 'long double (int, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9be1a0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:19> col:22 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd9be220 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:33 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9be370 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:233:1 __isinfl 'int (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9be500 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:12:1 __ynl 'long double (int, long double)' extern
 
-__value 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9be3e0 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:19> col:22 'int'
 
+# (placeholder) | |-ParmVarDecl 0xd9be460 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:225:33 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9be5b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9be6f0 <<scratch space>:15:1> col:1 implicit erfl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9be7e8 <<invalid sloc>> <invalid sloc> 'long double'
 
-implicit __finitel 'int (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9be790 <<invalid sloc>> Implicit 981
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9be858 <col:1> Implicit
 
-Implicit 930
+# (placeholder) |-FunctionDecl 0xd9be880 prev 0xd9be6f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:15:1 erfl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9be620 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:33 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9be980 <<invalid sloc>> Inherited Implicit 981
 
-prev 0x67a7d8 <scratch space>:234:1 __finitel 'int (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9be928 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__value 'long double'
+# (placeholder) |-FunctionDecl 0xd9bea58 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:17:1 __erfl 'long double (long double)' extern
 
-Inherited Implicit 930
+# (placeholder) | |-ParmVarDecl 0xd9be9c0 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:231:33 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9beb00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9bec08 <<scratch space>:20:1> col:1 implicit erfcl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bed00 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9beca8 <<invalid sloc>> Implicit 984
 
-<scratch space>:235:1 __isnanl 'int (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9bed70 <col:1> Implicit
 
-__value 'long double'
+# (placeholder) |-FunctionDecl 0xd9bed98 prev 0xd9bec08 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:20:1 erfcl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9beb70 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:34 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9bee98 <<invalid sloc>> Inherited Implicit 984
 
+# (placeholder) | `-NoThrowAttr 0xd9bee40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9bef70 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:22:1 __erfcl 'long double (long double)' extern
 
-<scratch space>:236:1 __iseqsigl 'int (long double, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9beed8 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:232:34 'long double'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9bf018 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'long double'
+# (placeholder) |-FunctionDecl 0xd9bf120 <<scratch space>:23:1> col:1 implicit lgammal 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bf218 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9bf1c0 <<invalid sloc>> Implicit 1017
 
-<scratch space>:237:1 __issignalingl 'int (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9bf288 <col:1> Implicit
 
-__value 'long double'
+# (placeholder) |-FunctionDecl 0xd9bf2b0 prev 0xd9bf120 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:23:1 lgammal 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bf088 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:32 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9bf3b0 <<invalid sloc>> Inherited Implicit 1017
 
+# (placeholder) | `-NoThrowAttr 0xd9bf358 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9bf488 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:25:1 __lgammal 'long double (long double)' extern
 
-implicit acosl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9bf3f0 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:233:32 'long double'
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9bf530 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 951
+# (placeholder) |-FunctionDecl 0xd9bf638 <<scratch space>:26:1> col:1 implicit tgammal 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9bf730 <<invalid sloc>> <invalid sloc> 'long double'
 
-prev 0x67c500 <scratch space>:240:1 acosl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9bf6d8 <<invalid sloc>> Implicit 1089
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9bf7a0 <col:1> Implicit
 
-Inherited Implicit 951
+# (placeholder) |-FunctionDecl 0xd9bf7c8 prev 0xd9bf638 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:26:1 tgammal 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bf5a0 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:32 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9bf8c8 <<invalid sloc>> Inherited Implicit 1089
 
-<scratch space>:242:1 __acosl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9bf870 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9bf9a0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:28:1 __tgammal 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bf908 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:238:32 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9bfa48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit asinl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9bfb50 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:29:1 gammal 'long double (long double)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9bfab8 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:244:31 'long double'
 
-Implicit 957
+# (placeholder) | `-NoThrowAttr 0xd9bfbf8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9bfd00 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:31:1 __gammal 'long double (long double)' extern
 
-prev 0x67ca18 <scratch space>:245:1 asinl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9bfc68 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:244:31 'long double'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9bfda8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 957
+# (placeholder) |-FunctionDecl 0xd9bff38 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:33:1 lgammal_r 'long double (long double, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9bfe18 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:252:34 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9bfe98 <col:36, col:41> col:41 __signgamp 'int *'
 
-<scratch space>:247:1 __asinl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9bffe8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c0178 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:36:1 __lgammal_r 'long double (long double, int *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c0058 </usr/include/math.h:393:22, col:27> /usr/include/aarch64-linux-gnu/bits/mathcalls.h:252:34 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c00d8 <col:36, col:41> col:41 __signgamp 'int *'
 
-implicit atanl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c0228 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9c0330 <<scratch space>:37:1> col:1 implicit rintl 'long double (long double)' extern
 
-Implicit 963
+# (placeholder) | |-ParmVarDecl 0xd9c0428 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9c03d0 <<invalid sloc>> Implicit 1062
 
-prev 0x67cf30 <scratch space>:250:1 atanl 'long double (long double)' extern
+# (placeholder) | |-NoThrowAttr 0xd9c0498 <col:1> Implicit
 
-__x 'long double'
+# (placeholder) | `-ConstAttr 0xd9c04c0 <col:1> Implicit
 
-Inherited Implicit 963
+# (placeholder) |-FunctionDecl 0xd9c04e8 prev 0xd9c0330 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:37:1 rintl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c0298 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:31> col:31 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c05e8 <<invalid sloc>> Inherited Implicit 1062
 
-<scratch space>:252:1 __atanl 'long double (long double)' extern
+# (placeholder) | |-ConstAttr 0xd9c0610 <<scratch space>:37:1> Inherited Implicit
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c0590 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c0700 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:39:1 __rintl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c0650 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:259:31> col:31 __x 'long double'
 
-implicit atan2l 'long double (long double, long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c07a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9c0938 <<scratch space>:40:1> col:1 implicit nextafterl 'long double (long double, long double)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c0a30 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit 915
+# (placeholder) | |-ParmVarDecl 0xd9c0a98 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9c09d8 <<invalid sloc>> Implicit 1050
 
-prev 0x67d560 <scratch space>:255:1 atan2l 'long double (long double, long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c0b10 <col:1> Implicit
 
-__y 'long double'
+# (placeholder) |-FunctionDecl 0xd9c0b38 prev 0xd9c0938 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:40:1 nextafterl 'long double (long double, long double)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c0818 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:36> col:36 __x 'long double'
 
-Inherited Implicit 915
+# (placeholder) | |-ParmVarDecl 0xd9c0898 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:51> col:51 __y 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c0c40 <<invalid sloc>> Inherited Implicit 1050
 
+# (placeholder) | `-NoThrowAttr 0xd9c0be8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:257:1 __atan2l 'long double (long double, long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c0da0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:42:1 __nextafterl 'long double (long double, long double)' extern
 
-__y 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c0c80 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:36> col:36 __x 'long double'
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c0d00 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:262:51> col:51 __y 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9c0e50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c0fe0 <<scratch space>:43:1> col:1 implicit nexttowardl 'long double (long double, long double)' extern
 
-implicit cosl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c10d8 <<invalid sloc>> <invalid sloc> 'long double'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c1140 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit 975
+# (placeholder) | |-BuiltinAttr 0xd9c1080 <<invalid sloc>> Implicit 1053
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9c11b8 <col:1> Implicit
 
-prev 0x67db80 <scratch space>:260:1 cosl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c11e0 prev 0xd9c0fe0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:43:1 nexttowardl 'long double (long double, long double)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c0ec0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:37> col:37 __x 'long double'
 
-Inherited Implicit 975
+# (placeholder) | |-ParmVarDecl 0xd9c0f40 <col:42, col:54> col:54 __y 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c12e8 <<invalid sloc>> Inherited Implicit 1053
 
+# (placeholder) | `-NoThrowAttr 0xd9c1290 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:262:1 __cosl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c1448 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:45:1 __nexttowardl 'long double (long double, long double)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c1328 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:264:37> col:37 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c13a8 <col:42, col:54> col:54 __y 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9c14f8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit sinl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c1688 <<scratch space>:47:1> col:1 implicit remainderl 'long double (long double, long double)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c1780 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit 1074
+# (placeholder) | |-ParmVarDecl 0xd9c17e8 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9c1728 <<invalid sloc>> Implicit 1056
 
-prev 0x67e098 <scratch space>:265:1 sinl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c1860 <col:1> Implicit
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c1888 prev 0xd9c1688 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:47:1 remainderl 'long double (long double, long double)' extern
 
-Inherited Implicit 1074
+# (placeholder) | |-ParmVarDecl 0xd9c1568 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:36> col:36 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c15e8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:51> col:51 __y 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c1990 <<invalid sloc>> Inherited Implicit 1056
 
-<scratch space>:267:1 __sinl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c1938 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c1af0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:49:1 __remainderl 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c19d0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:36> col:36 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c1a50 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:275:51> col:51 __y 'long double'
 
-implicit tanl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c1ba0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9c1d30 <<scratch space>:50:1> col:1 implicit scalbnl 'long double (long double, int)' extern
 
-Implicit 1083
+# (placeholder) | |-ParmVarDecl 0xd9c1e28 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9c1e90 <<invalid sloc>> <invalid sloc> 'int'
 
-prev 0x67e778 <scratch space>:270:1 tanl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c1dd0 <<invalid sloc>> Implicit 1071
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c1f08 <col:1> Implicit
 
-Inherited Implicit 1083
+# (placeholder) |-FunctionDecl 0xd9c1f30 prev 0xd9c1d30 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:50:1 scalbnl 'long double (long double, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c1c10 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:33> col:33 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c1c90 <col:38, col:42> col:42 __n 'int'
 
-<scratch space>:272:1 __tanl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c2038 <<invalid sloc>> Inherited Implicit 1071
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c1fe0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c2198 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:52:1 __scalbnl 'long double (long double, int)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c2078 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:279:33> col:33 __x 'long double'
 
-implicit coshl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c20f8 <col:38, col:42> col:42 __n 'int'
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c2248 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 978
+# (placeholder) |-FunctionDecl 0xd9c2350 <<scratch space>:53:1> col:1 implicit ilogbl 'int (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9c2448 <<invalid sloc>> <invalid sloc> 'long double'
 
-prev 0x67ec90 <scratch space>:275:1 coshl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c23f0 <<invalid sloc>> Implicit 1014
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c24b8 <col:1> Implicit
 
-Inherited Implicit 978
+# (placeholder) |-FunctionDecl 0xd9c24e0 prev 0xd9c2350 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:53:1 ilogbl 'int (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c22b8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:36> col:36 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c25e0 <<invalid sloc>> Inherited Implicit 1014
 
-<scratch space>:277:1 __coshl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c2588 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c26e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:55:1 __ilogbl 'int (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c2620 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:283:36> col:36 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9c2788 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit sinhl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c2950 <<scratch space>:57:1> col:1 implicit scalblnl 'long double (long double, long)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c2a48 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit 1077
+# (placeholder) | |-ParmVarDecl 0xd9c2ab0 <<invalid sloc>> <invalid sloc> 'long'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9c29f0 <<invalid sloc>> Implicit 1068
 
-prev 0x67f1a8 <scratch space>:280:1 sinhl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c2b28 <col:1> Implicit
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c2b50 prev 0xd9c2950 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:57:1 scalblnl 'long double (long double, long)' extern
 
-Inherited Implicit 1077
+# (placeholder) | |-ParmVarDecl 0xd9c27f8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:34> col:34 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c2878 <col:39, col:48> col:48 __n 'long'
 
+# (placeholder) | |-BuiltinAttr 0xd9c2c58 <<invalid sloc>> Inherited Implicit 1068
 
-<scratch space>:282:1 __sinhl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c2c00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c2db8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:59:1 __scalblnl 'long double (long double, long)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c2c98 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:293:34> col:34 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c2d18 <col:39, col:48> col:48 __n 'long'
 
-implicit tanhl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c2e68 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9c2f70 <<scratch space>:60:1> col:1 implicit nearbyintl 'long double (long double)' extern
 
-Implicit 1086
+# (placeholder) | |-ParmVarDecl 0xd9c3068 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9c3010 <<invalid sloc>> Implicit 1047
 
-prev 0x67f6e0 <scratch space>:285:1 tanhl 'long double (long double)' extern
+# (placeholder) | |-NoThrowAttr 0xd9c30d8 <col:1> Implicit
 
-__x 'long double'
+# (placeholder) | `-ConstAttr 0xd9c3100 <col:1> Implicit
 
-Inherited Implicit 1086
+# (placeholder) |-FunctionDecl 0xd9c3128 prev 0xd9c2f70 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:60:1 nearbyintl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c2ed8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:36> col:36 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c3228 <<invalid sloc>> Inherited Implicit 1047
 
-<scratch space>:287:1 __tanhl 'long double (long double)' extern
+# (placeholder) | |-ConstAttr 0xd9c3250 <<scratch space>:60:1> Inherited Implicit
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c31d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c3328 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:62:1 __nearbyintl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c3290 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:297:36> col:36 __x 'long double'
 
-implicit acoshl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c33d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9c34d8 <<scratch space>:63:1> col:1 implicit roundl 'long double (long double)' extern
 
-Implicit 954
+# (placeholder) | |-ParmVarDecl 0xd9c35d0 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9c3578 <<invalid sloc>> Implicit 1065
 
-prev 0x67fbf8 <scratch space>:290:1 acoshl 'long double (long double)' extern
+# (placeholder) | |-NoThrowAttr 0xd9c3640 <col:1> Implicit
 
-__x 'long double'
+# (placeholder) | `-ConstAttr 0xd9c3668 <col:1> Implicit
 
-Inherited Implicit 954
+# (placeholder) |-FunctionDecl 0xd9c3690 prev 0xd9c34d8 </usr/include/math.h:297:3, line:294:66> <scratch space>:63:1 roundl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c3440 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:33> col:33 __x 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c37b8 <<invalid sloc>> Inherited Implicit 1065
 
-<scratch space>:292:1 __acoshl 'long double (long double)' extern
+# (placeholder) | |-NoThrowAttr 0xd9c3738 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) | `-ConstAttr 0xd9c3790 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:40>
 
+# (placeholder) |-FunctionDecl 0xd9c3890 </usr/include/math.h:297:3, line:295:79> <scratch space>:65:1 __roundl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c37f8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:33> col:33 __x 'long double'
 
-implicit asinhl 'long double (long double)' extern
+# (placeholder) | |-NoThrowAttr 0xd9c3938 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) | `-ConstAttr 0xd9c3990 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:301:40>
 
-Implicit 960
+# (placeholder) |-FunctionDecl 0xd9c3a68 <<scratch space>:66:1> col:1 implicit truncl 'long double (long double)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9c3b60 <<invalid sloc>> <invalid sloc> 'long double'
 
-prev 0x680110 <scratch space>:295:1 asinhl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c3b08 <<invalid sloc>> Implicit 1092
 
-__x 'long double'
+# (placeholder) | |-NoThrowAttr 0xd9c3bd0 <col:1> Implicit
 
-Inherited Implicit 960
+# (placeholder) | `-ConstAttr 0xd9c3bf8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9c3c20 prev 0xd9c3a68 </usr/include/math.h:297:3, line:294:66> <scratch space>:66:1 truncl 'long double (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c39d0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:33> col:33 __x 'long double'
 
-<scratch space>:297:1 __asinhl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c3d48 <<invalid sloc>> Inherited Implicit 1092
 
-__x 'long double'
+# (placeholder) | |-NoThrowAttr 0xd9c3cc8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9c3d20 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:40>
 
+# (placeholder) |-FunctionDecl 0xd9c3e20 </usr/include/math.h:297:3, line:295:79> <scratch space>:68:1 __truncl 'long double (long double)' extern
 
-implicit atanhl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c3d88 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:33> col:33 __x 'long double'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-NoThrowAttr 0xd9c3ec8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 966
+# (placeholder) | `-ConstAttr 0xd9c3f20 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:305:40>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9c4150 <<scratch space>:69:1> col:1 implicit remquol 'long double (long double, long double, int *)' extern
 
-prev 0x680658 <scratch space>:300:1 atanhl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c4248 <<invalid sloc>> <invalid sloc> 'long double'
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c42b0 <<invalid sloc>> <invalid sloc> 'long double'
 
-Inherited Implicit 966
+# (placeholder) | |-ParmVarDecl 0xd9c4318 <<invalid sloc>> <invalid sloc> 'int *'
 
+# (placeholder) | |-BuiltinAttr 0xd9c41f0 <<invalid sloc>> Implicit 1059
 
+# (placeholder) | `-NoThrowAttr 0xd9c4398 <col:1> Implicit
 
-<scratch space>:302:1 __atanhl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c43c0 prev 0xd9c4150 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:69:1 remquol 'long double (long double, long double, int *)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c3f60 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:33> col:33 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c3fe0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:48> col:48 __y 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c4060 <col:53, col:58> col:58 __quo 'int *'
 
-implicit expl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c44d0 <<invalid sloc>> Inherited Implicit 1059
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c4478 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 987
+# (placeholder) |-FunctionDecl 0xd9c46f0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:71:1 __remquol 'long double (long double, long double, int *)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9c4510 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:33> col:33 __x 'long double'
 
-prev 0x680b70 <scratch space>:305:1 expl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c4590 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:310:48> col:48 __y 'long double'
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c4610 <col:53, col:58> col:58 __quo 'int *'
 
-Inherited Implicit 987
+# (placeholder) | `-NoThrowAttr 0xd9c47a8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c48e0 <<scratch space>:72:1> col:1 implicit lrintl 'long (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c49d8 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:307:1 __expl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c4980 <<invalid sloc>> Implicit 1041
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c4a48 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9c4a70 prev 0xd9c48e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:72:1 lrintl 'long (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c4818 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:41> col:41 __x 'long double'
 
-implicit frexpl 'long double (long double, int *)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c4b70 <<invalid sloc>> Inherited Implicit 1041
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c4b18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'int *'
+# (placeholder) |-FunctionDecl 0xd9c4c48 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:74:1 __lrintl 'long (long double)' extern
 
-Implicit 936
+# (placeholder) | |-ParmVarDecl 0xd9c4bb0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:317:41> col:41 __x 'long double'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9c4cf0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x681150 <scratch space>:308:1 frexpl 'long double (long double, int *)' extern
+# (placeholder) |-FunctionDecl 0xd9c4e30 <<scratch space>:75:1> col:1 implicit llrintl 'long long (long double)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c4f28 <<invalid sloc>> <invalid sloc> 'long double'
 
-__exponent 'int *'
+# (placeholder) | |-BuiltinAttr 0xd9c4ed0 <<invalid sloc>> Implicit 1020
 
-Inherited Implicit 936
+# (placeholder) | `-NoThrowAttr 0xd9c4f98 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9c4fc0 prev 0xd9c4e30 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:75:1 llrintl 'long long (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c4d60 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:47> col:47 __x 'long double'
 
-<scratch space>:310:1 __frexpl 'long double (long double, int *)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c50c0 <<invalid sloc>> Inherited Implicit 1020
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c5068 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__exponent 'int *'
+# (placeholder) |-FunctionDecl 0xd9c5198 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:77:1 __llrintl 'long long (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c5100 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:319:47> col:47 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9c5240 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit ldexpl 'long double (long double, int)' extern
+# (placeholder) |-FunctionDecl 0xd9c5348 <<scratch space>:78:1> col:1 implicit lroundl 'long (long double)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c5440 <<invalid sloc>> <invalid sloc> 'long double'
 
-<invalid sloc> 'int'
+# (placeholder) | |-BuiltinAttr 0xd9c53e8 <<invalid sloc>> Implicit 1044
 
-Implicit 939
+# (placeholder) | `-NoThrowAttr 0xd9c54b0 <col:1> Implicit
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9c54d8 prev 0xd9c5348 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:78:1 lroundl 'long (long double)' extern
 
-prev 0x681a50 <scratch space>:311:1 ldexpl 'long double (long double, int)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c52b0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:42> col:42 __x 'long double'
 
-__x 'long double'
+# (placeholder) | |-BuiltinAttr 0xd9c55d8 <<invalid sloc>> Inherited Implicit 1044
 
-__exponent 'int'
+# (placeholder) | `-NoThrowAttr 0xd9c5580 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 939
+# (placeholder) |-FunctionDecl 0xd9c56b0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:80:1 __lroundl 'long (long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c5618 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:323:42> col:42 __x 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9c5758 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:313:1 __ldexpl 'long double (long double, int)' extern
+# (placeholder) |-FunctionDecl 0xd9c5860 <<scratch space>:81:1> col:1 implicit llroundl 'long long (long double)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c5958 <<invalid sloc>> <invalid sloc> 'long double'
 
-__exponent 'int'
+# (placeholder) | |-BuiltinAttr 0xd9c5900 <<invalid sloc>> Implicit 1023
 
+# (placeholder) | `-NoThrowAttr 0xd9c59c8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9c59f0 prev 0xd9c5860 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:81:1 llroundl 'long long (long double)' extern
 
-implicit logl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c57c8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:48> col:48 __x 'long double'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-BuiltinAttr 0xd9c5af0 <<invalid sloc>> Inherited Implicit 1023
 
-Implicit 1026
+# (placeholder) | `-NoThrowAttr 0xd9c5a98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9c5bc8 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:83:1 __llroundl 'long long (long double)' extern
 
-prev 0x682070 <scratch space>:316:1 logl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c5b30 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:325:48> col:48 __x 'long double'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c5c70 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1026
+# (placeholder) |-FunctionDecl 0xd9c5e00 <<scratch space>:84:1> col:1 implicit fdiml 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c5ef8 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c5f60 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:318:1 __logl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c5ea0 <<invalid sloc>> Implicit 996
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9c5fd8 <col:1> Implicit
 
+# (placeholder) |-FunctionDecl 0xd9c6000 prev 0xd9c5e00 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:84:1 fdiml 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c5ce0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:31> col:31 __x 'long double'
 
-implicit log10l 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c5d60 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:46> col:46 __y 'long double'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-BuiltinAttr 0xd9c6108 <<invalid sloc>> Inherited Implicit 996
 
-Implicit 1029
+# (placeholder) | `-NoThrowAttr 0xd9c60b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9c6268 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:86:1 __fdiml 'long double (long double, long double)' extern
 
-prev 0x683640 <scratch space>:321:1 log10l 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c6148 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:31> col:31 __x 'long double'
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c61c8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:329:46> col:46 __y 'long double'
 
-Inherited Implicit 1029
+# (placeholder) | `-NoThrowAttr 0xd9c6318 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c64a8 <<scratch space>:88:1> col:1 implicit fmaxl 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c65a0 <<invalid sloc>> <invalid sloc> 'long double'
 
-<scratch space>:323:1 __log10l 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c6608 <<invalid sloc>> <invalid sloc> 'long double'
 
-__x 'long double'
+# (placeholder) | |-BuiltinAttr 0xd9c6548 <<invalid sloc>> Implicit 1005
 
+# (placeholder) | |-NoThrowAttr 0xd9c6680 <col:1> Implicit
 
+# (placeholder) | `-ConstAttr 0xd9c66a8 <col:1> Implicit
 
-implicit modfl 'long double (long double, long double *)' extern
+# (placeholder) |-FunctionDecl 0xd9c6700 prev 0xd9c64a8 </usr/include/math.h:297:3, line:294:66> <scratch space>:88:1 fmaxl 'long double (long double, long double)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c6388 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:32> col:32 __x 'long double'
 
-<invalid sloc> 'long double *'
+# (placeholder) | |-ParmVarDecl 0xd9c6408 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:47> col:47 __y 'long double'
 
-Implicit 942
+# (placeholder) | |-BuiltinAttr 0xd9c6830 <<invalid sloc>> Inherited Implicit 1005
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd9c67b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x683c50 <scratch space>:324:1 modfl 'long double (long double, long double *)' extern
+# (placeholder) | `-ConstAttr 0xd9c6808 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:54>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c6990 </usr/include/math.h:297:3, line:295:79> <scratch space>:90:1 __fmaxl 'long double (long double, long double)' extern
 
-__iptr 'long double *'
+# (placeholder) | |-ParmVarDecl 0xd9c6870 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:32> col:32 __x 'long double'
 
-Inherited Implicit 942
+# (placeholder) | |-ParmVarDecl 0xd9c68f0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:47> col:47 __y 'long double'
 
+# (placeholder) | |-NoThrowAttr 0xd9c6a40 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) | `-ConstAttr 0xd9c6a98 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:333:54>
 
-<scratch space>:326:1 __modfl 'long double (long double, long double *)' extern
+# (placeholder) |-FunctionDecl 0xd9c6bf8 <<scratch space>:91:1> col:1 implicit fminl 'long double (long double, long double)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c6cf0 <<invalid sloc>> <invalid sloc> 'long double'
 
-__iptr 'long double *'
+# (placeholder) | |-ParmVarDecl 0xd9c6d58 <<invalid sloc>> <invalid sloc> 'long double'
 
+# (placeholder) | |-BuiltinAttr 0xd9c6c98 <<invalid sloc>> Implicit 1008
 
+# (placeholder) | |-NoThrowAttr 0xd9c6dd0 <col:1> Implicit
 
-2
+# (placeholder) | `-ConstAttr 0xd9c6df8 <col:1> Implicit
 
-implicit expm1l 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c6e20 prev 0xd9c6bf8 </usr/include/math.h:297:3, line:294:66> <scratch space>:91:1 fminl 'long double (long double, long double)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c6ad8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:32> col:32 __x 'long double'
 
-Implicit 993
+# (placeholder) | |-ParmVarDecl 0xd9c6b58 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:47> col:47 __y 'long double'
 
-Implicit
+# (placeholder) | |-BuiltinAttr 0xd9c6f50 <<invalid sloc>> Inherited Implicit 1008
 
-prev 0x6842c8 <scratch space>:330:1 expm1l 'long double (long double)' extern
+# (placeholder) | |-NoThrowAttr 0xd9c6ed0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) | `-ConstAttr 0xd9c6f28 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:54>
 
-Inherited Implicit 993
+# (placeholder) |-FunctionDecl 0xd9c70b0 </usr/include/math.h:297:3, line:295:79> <scratch space>:93:1 __fminl 'long double (long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c6f90 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:32> col:32 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c7010 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:47> col:47 __y 'long double'
 
-<scratch space>:332:1 __expm1l 'long double (long double)' extern
+# (placeholder) | |-NoThrowAttr 0xd9c7160 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) | `-ConstAttr 0xd9c71b8 </usr/include/aarch64-linux-gnu/bits/mathcalls.h:336:54>
 
+# (placeholder) |-FunctionDecl 0xd9c73e0 <<scratch space>:94:1> col:1 implicit fmal 'long double (long double, long double, long double)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9c74d8 <<invalid sloc>> <invalid sloc> 'long double'
 
-implicit log1pl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c7540 <<invalid sloc>> <invalid sloc> 'long double'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c75a8 <<invalid sloc>> <invalid sloc> 'long double'
 
-Implicit 1032
+# (placeholder) | |-BuiltinAttr 0xd9c7480 <<invalid sloc>> Implicit 1002
 
-Implicit
+# (placeholder) | |-ConstAttr 0xd9c7628 <col:1> Implicit
 
-prev 0x684cc0 <scratch space>:335:1 log1pl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9c7650 <col:1> Implicit
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9c7678 prev 0xd9c73e0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:94:1 fmal 'long double (long double, long double, long double)' extern
 
-Inherited Implicit 1032
+# (placeholder) | |-ParmVarDecl 0xd9c71f8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:30> col:30 __x 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c7278 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:45> col:45 __y 'long double'
 
+# (placeholder) | |-ParmVarDecl 0xd9c72f8 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:60> col:60 __z 'long double'
 
-<scratch space>:337:1 __log1pl 'long double (long double)' extern
+# (placeholder) | |-BuiltinAttr 0xd9c7788 <<invalid sloc>> Inherited Implicit 1002
 
-__x 'long double'
+# (placeholder) | |-ConstAttr 0xd9c77b0 <<scratch space>:94:1> Inherited Implicit
 
+# (placeholder) | `-NoThrowAttr 0xd9c7730 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c7998 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:96:1 __fmal 'long double (long double, long double, long double)' extern
 
-implicit logbl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c77f0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:30> col:30 __x 'long double'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c7870 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:45> col:45 __y 'long double'
 
-Implicit 1038
+# (placeholder) | |-ParmVarDecl 0xd9c78f0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:340:60> col:60 __z 'long double'
 
-Implicit
+# (placeholder) | `-NoThrowAttr 0xd9c7a50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-prev 0x6851d8 <scratch space>:338:1 logbl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9c7be0 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:102:1 scalbl 'long double (long double, long double)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c7ac0 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:32> col:32 __x 'long double'
 
-Inherited Implicit 1038
+# (placeholder) | |-ParmVarDecl 0xd9c7b40 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:47> col:47 __n 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9c7c90 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9c7e20 </usr/include/math.h:297:3, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> <scratch space>:104:1 __scalbl 'long double (long double, long double)' extern
 
-<scratch space>:340:1 __logbl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9c7d00 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:32> col:32 __x 'long double'
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9c7d80 </usr/include/math.h:393:22, /usr/include/aarch64-linux-gnu/bits/mathcalls.h:435:47> col:47 __n 'long double'
 
+# (placeholder) | `-NoThrowAttr 0xd9c7ed0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+alias signgam:  =  # `signgam` was not originally const in the original code
+struct :
+	alias FP_NAN: Int = 0
 
-implicit exp2l 'long double (long double)' extern
+	alias FP_INFINITE: Int = 1
 
-<invalid sloc> 'long double'
+	alias FP_ZERO: Int = 2
 
-Implicit 990
+	alias FP_SUBNORMAL: Int = 3
 
-Implicit
+	alias FP_NORMAL: Int = 4
 
-prev 0x6856f0 <scratch space>:343:1 exp2l 'long double (long double)' extern
+struct tm:
+	var tm_sec: Int
 
-__x 'long double'
+	var tm_min: Int
 
-Inherited Implicit 990
+	var tm_hour: Int
 
+	var tm_mday: Int
 
+	var tm_mon: Int
 
-<scratch space>:345:1 __exp2l 'long double (long double)' extern
+	var tm_year: Int
 
-__x 'long double'
+	var tm_wday: Int
 
+	var tm_yday: Int
 
+	var tm_isdst: Int
 
-implicit log2l 'long double (long double)' extern
+	var tm_gmtoff: Int
 
-<invalid sloc> 'long double'
+	var tm_zone: const char 
 
-Implicit 1035
+struct itimerspec:
+	var it_interval: timespec
 
-Implicit
+	var it_value: timespec
 
-prev 0x685c28 <scratch space>:348:1 log2l 'long double (long double)' extern
+struct _Anonymous:	pass
 
-__x 'long double'
 
-Inherited Implicit 1035
+# (placeholder) |-FunctionDecl 0xd9d3b98 <line:72:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:72:16 clock 'clock_t (void)' extern
 
+# (placeholder) | `-NoThrowAttr 0xd9d3c38 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9d3dd8 </usr/include/time.h:76:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:76:15 time 'time_t (time_t *)' extern
 
-<scratch space>:350:1 __log2l 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d3ce8 <col:21, col:29> col:29 __timer 'time_t *'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9d3e80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9d4080 </usr/include/time.h:79:1, line:80:40> line:79:15 difftime 'double (time_t, time_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9d3ee8 <col:25, col:32> col:32 __time1 'time_t':'long'
 
-implicit powl 'long double (long double, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d3f60 <col:41, col:48> col:48 __time0 'time_t':'long'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-NoThrowAttr 0xd9d4130 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) | `-ConstAttr 0xd9d4188 </usr/include/time.h:80:30>
 
-Implicit 948
+# (placeholder) |-FunctionDecl 0xd9d4358 <line:83:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:83:15 mktime 'time_t (struct tm *)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9d4260 <col:23, col:34> col:34 __tp 'struct tm *'
 
-prev 0x6861c8 <scratch space>:353:1 powl 'long double (long double, long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9d4400 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9d4798 </usr/include/time.h:100:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:100:15 strftime 'size_t (char *restrict, size_t, const char *restrict, const struct tm *restrict)' extern
 
-__y 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d4470 <col:25, col:42> col:42 __s 'char *restrict'
 
-Inherited Implicit 948
+# (placeholder) | |-ParmVarDecl 0xd9d44e8 <col:47, col:54> col:54 __maxsize 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd9d4568 <line:101:4, col:27> col:27 __format 'const char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd9d4650 <line:102:4, col:32> col:32 __tp 'const struct tm *restrict'
 
-<scratch space>:355:1 __powl 'long double (long double, long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9d4858 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9d4c18 </usr/include/time.h:116:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:116:15 strftime_l 'size_t (char *restrict, size_t, const char *restrict, const struct tm *restrict, locale_t)' extern
 
-__y 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d48c8 <col:27, col:44> col:44 __s 'char *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd9d4940 <col:49, col:56> col:56 __maxsize 'size_t':'unsigned long'
 
+# (placeholder) | |-ParmVarDecl 0xd9d49c0 <line:117:6, col:29> col:29 __format 'const char *restrict'
 
-implicit sqrtl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d4a50 <line:118:6, col:34> col:34 __tp 'const struct tm *restrict'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d4ac8 <line:119:6, col:15> col:15 __loc 'locale_t':'struct __locale_struct *'
 
-Implicit 1080
+# (placeholder) | `-NoThrowAttr 0xd9d4ce0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9d4eb0 </usr/include/time.h:132:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:132:19 gmtime 'struct tm *(const time_t *)' extern
 
-prev 0x6867e8 <scratch space>:356:1 sqrtl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d4da8 <col:27, col:41> col:41 __timer 'const time_t *'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9d4f58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 1080
+# (placeholder) |-FunctionDecl 0xd9d5068 </usr/include/time.h:136:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:136:19 localtime 'struct tm *(const time_t *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9d4fc0 <col:30, col:44> col:44 __timer 'const time_t *'
 
+# (placeholder) | `-NoThrowAttr 0xd9d5110 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:358:1 __sqrtl 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9d5330 </usr/include/time.h:154:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:154:19 gmtime_r 'struct tm *(const time_t *restrict, struct tm *restrict)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d5178 <col:29, col:54> col:54 __timer 'const time_t *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd9d5208 <line:155:8, col:30> col:30 __tp 'struct tm *restrict'
 
+# (placeholder) | `-NoThrowAttr 0xd9d53e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit hypotl 'long double (long double, long double)' extern
+# (placeholder) |-FunctionDecl 0xd9d5588 </usr/include/time.h:159:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:159:19 localtime_r 'struct tm *(const time_t *restrict, struct tm *restrict)' extern
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d5448 <col:32, col:57> col:57 __timer 'const time_t *restrict'
 
-<invalid sloc> 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d54d8 <line:160:11, col:33> col:33 __tp 'struct tm *restrict'
 
-Implicit 1011
+# (placeholder) | `-NoThrowAttr 0xd9d5870 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) |-FunctionDecl 0xd9d59f0 </usr/include/time.h:179:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:179:14 asctime 'char *(const struct tm *)' extern
 
-prev 0x60e628 <scratch space>:361:1 hypotl 'long double (long double, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d58f0 <col:23, col:40> col:40 __tp 'const struct tm *'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9d5a98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-__y 'long double'
+# (placeholder) |-FunctionDecl 0xd9d5c00 </usr/include/time.h:183:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:183:14 ctime 'char *(const time_t *)' extern
 
-Inherited Implicit 1011
+# (placeholder) | |-ParmVarDecl 0xd9d5b00 <col:21, col:35> col:35 __timer 'const time_t *'
 
+# (placeholder) | `-NoThrowAttr 0xd9d5ca8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9d5ec0 </usr/include/time.h:197:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:197:14 asctime_r 'char *(const struct tm *restrict, char *restrict)' extern
 
-<scratch space>:363:1 __hypotl 'long double (long double, long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d5d28 <col:25, col:53> col:53 __tp 'const struct tm *restrict'
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d5da8 <line:198:4, col:21> col:21 __buf 'char *restrict'
 
-__y 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9d5f70 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9d6170 </usr/include/time.h:202:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:202:14 ctime_r 'char *(const time_t *restrict, char *restrict)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9d5fd8 <col:23, col:48> col:48 __timer 'const time_t *restrict'
 
-implicit cbrtl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d6058 <line:203:9, col:26> col:26 __buf 'char *restrict'
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9d6220 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 969
+alias __tzname:  =  # `__tzname` was not originally const in the original code
 
-Implicit
+alias __daylight:  =  # `__daylight` was not originally const in the original code
 
-Implicit
+alias __timezone:  =  # `__timezone` was not originally const in the original code
 
-prev 0x60ec48 <scratch space>:366:1 cbrtl 'long double (long double)' extern
+alias tzname:  =  # `tzname` was not originally const in the original code
 
-__x 'long double'
+# (placeholder) |-FunctionDecl 0xd9d65f0 <line:228:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:228:13 tzset 'void (void)' extern
 
-Inherited Implicit 969
+# (placeholder) | `-NoThrowAttr 0xd9d6690 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit
+alias daylight:  =  # `daylight` was not originally const in the original code
 
+alias timezone:  =  # `timezone` was not originally const in the original code
 
+# (placeholder) |-FunctionDecl 0xd9d68a0 <line:249:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:249:15 timegm 'time_t (struct tm *)' extern
 
-<scratch space>:368:1 __cbrtl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d6810 <col:23, col:34> col:34 __tp 'struct tm *'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9d6948 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9d6a58 </usr/include/time.h:251:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:251:15 timelocal 'time_t (struct tm *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9d69c8 <col:26, col:37> col:37 __tp 'struct tm *'
 
-implicit ceill 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9d6b00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9d6c08 </usr/include/time.h:262:1, col:67> col:12 dysize 'int (int)' extern
 
-Implicit 972
+# (placeholder) | |-ParmVarDecl 0xd9d6b70 <col:20, col:24> col:24 __year 'int'
 
-Implicit
+# (placeholder) | |-NoThrowAttr 0xd9d6cb0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit
+# (placeholder) | `-ConstAttr 0xd9d6d08 </usr/include/time.h:262:57>
 
-prev 0x60f1b0 <scratch space>:369:1 ceill 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9d6f60 <line:272:1, line:273:37> line:272:12 nanosleep 'int (const struct timespec *, struct timespec *)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d6d58 <col:23, col:46> col:46 __requested_time 'const struct timespec *'
 
-Inherited Implicit 972
+# (placeholder) | `-ParmVarDecl 0xd9d6e40 <line:273:9, col:26> col:26 __remaining 'struct timespec *'
 
+# (placeholder) |-FunctionDecl 0xd9d71f0 <line:276:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:276:12 clock_getres 'int (clockid_t, struct timespec *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9d7040 <col:26, col:36> col:36 __clock_id 'clockid_t':'int'
 
+# (placeholder) | |-ParmVarDecl 0xd9d70d0 <col:48, col:65> col:65 __res 'struct timespec *'
 
+# (placeholder) | `-NoThrowAttr 0xd9d72a0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<scratch space>:371:1 __ceill 'long double (long double)' extern
+# (placeholder) |-FunctionDecl 0xd9d7438 </usr/include/time.h:279:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:279:12 clock_gettime 'int (clockid_t, struct timespec *)' extern
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9d7308 <col:27, col:37> col:37 __clock_id 'clockid_t':'int'
 
+# (placeholder) | |-ParmVarDecl 0xd9d7398 <col:49, col:66> col:66 __tp 'struct timespec *'
 
+# (placeholder) | `-NoThrowAttr 0xd9d74e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9d7700 </usr/include/time.h:282:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:282:12 clock_settime 'int (clockid_t, const struct timespec *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9d7550 <col:27, col:37> col:37 __clock_id 'clockid_t':'int'
 
-implicit fabsl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d75e0 <col:49, col:72> col:72 __tp 'const struct timespec *'
 
-<invalid sloc> 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9d77b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Implicit 924
+# (placeholder) |-FunctionDecl 0xd9d9ed0 </usr/include/time.h:311:1, line:313:30> line:311:12 clock_nanosleep 'int (clockid_t, int, const struct timespec *, struct timespec *)' extern
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9d9be0 <col:29, col:39> col:39 __clock_id 'clockid_t':'int'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9d9c60 <col:51, col:55> col:55 __flags 'int'
 
-prev 0x64c288 <scratch space>:372:1 fabsl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9d9cf0 <line:312:8, col:31> col:31 __req 'const struct timespec *'
 
-__x 'long double'
+# (placeholder) | `-ParmVarDecl 0xd9d9d80 <line:313:8, col:25> col:25 __rem 'struct timespec *'
 
-Inherited Implicit 924
+# (placeholder) |-FunctionDecl 0xd9da180 <line:326:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:326:12 clock_getcpuclockid 'int (pid_t, clockid_t *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9d9fc0 <col:33, col:39> col:39 __pid 'pid_t':'int'
 
+# (placeholder) | |-ParmVarDecl 0xd9da068 <col:46, col:57> col:57 __clock_id 'clockid_t *'
 
+# (placeholder) | `-NoThrowAttr 0xd9da230 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9da5a0 </usr/include/time.h:331:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:331:12 timer_create 'int (clockid_t, struct sigevent *restrict, timer_t *restrict)' extern
 
-<scratch space>:374:1 __fabsl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9da298 <col:26, col:36> col:36 __clock_id 'clockid_t':'int'
 
-__x 'long double'
+# (placeholder) | |-ParmVarDecl 0xd9da3b0 <line:332:5, col:33> col:33 __evp 'struct sigevent *restrict'
 
+# (placeholder) | |-ParmVarDecl 0xd9da478 <line:333:5, col:25> col:25 __timerid 'timer_t *restrict'
 
+# (placeholder) | `-NoThrowAttr 0xd9da658 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9da7c0 </usr/include/time.h:336:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:336:12 timer_delete 'int (timer_t)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9da6c0 <col:26, col:34> col:34 __timerid 'timer_t':'void *'
 
-implicit floorl 'long double (long double)' extern
+# (placeholder) | `-NoThrowAttr 0xd9da868 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-<invalid sloc> 'long double'
+# (placeholder) |-FunctionDecl 0xd9dacb0 </usr/include/time.h:340:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:340:12 timer_settime 'int (timer_t, int, const struct itimerspec *restrict, struct itimerspec *restrict)' extern
 
-Implicit 999
+# (placeholder) | |-ParmVarDecl 0xd9da8d0 <col:27, col:35> col:35 __timerid 'timer_t':'void *'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9da950 <col:46, col:50> col:50 __flags 'int'
 
-Implicit
+# (placeholder) | |-ParmVarDecl 0xd9daa70 <line:341:6, col:42> col:42 __value 'const struct itimerspec *restrict'
 
-prev 0x64c818 <scratch space>:375:1 floorl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9dab60 <line:342:6, col:36> col:36 __ovalue 'struct itimerspec *restrict'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9dad70 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-Inherited Implicit 999
+# (placeholder) |-FunctionDecl 0xd9daf80 </usr/include/time.h:345:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:345:12 timer_gettime 'int (timer_t, struct itimerspec *)' extern
 
+# (placeholder) | |-ParmVarDecl 0xd9dadd8 <col:27, col:35> col:35 __timerid 'timer_t':'void *'
 
+# (placeholder) | |-ParmVarDecl 0xd9dae68 <col:46, col:65> col:65 __value 'struct itimerspec *'
 
+# (placeholder) | `-NoThrowAttr 0xd9db030 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) |-FunctionDecl 0xd9db130 </usr/include/time.h:364:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/time.h:364:12 timer_getoverrun 'int (timer_t)' extern
 
-<scratch space>:377:1 __floorl 'long double (long double)' extern
+# (placeholder) | |-ParmVarDecl 0xd9db098 <col:30, col:38> col:38 __timerid 'timer_t':'void *'
 
-__x 'long double'
+# (placeholder) | `-NoThrowAttr 0xd9db1d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
+# (placeholder) `-FunctionDecl 0xd9db410 </usr/include/time.h:371:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:384:76> /usr/include/time.h:371:12 timespec_get 'int (struct timespec *, int)' extern
 
+# (placeholder)   |-ParmVarDecl 0xd9db258 <col:26, col:43> col:43 __ts 'struct timespec *'
 
+# (placeholder)   |-ParmVarDecl 0xd9db2d8 <col:49, col:53> col:53 __base 'int'
 
+# (placeholder)   |-NoThrowAttr 0xd9db4c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 
-implicit fmodl 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 933
-
-Implicit
-
-prev 0x64ce30 <scratch space>:378:1 fmodl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 933
-
-
-
-<scratch space>:380:1 __fmodl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-<scratch space>:381:1 isinfl 'int (long double)' extern
-
-__value 'long double'
-
-
-
-
-
-implicit finitel 'int (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 927
-
-Implicit
-
-Implicit
-
-prev 0x64d628 <scratch space>:382:1 finitel 'int (long double)' extern
-
-__value 'long double'
-
-Inherited Implicit 927
-
-
-
-
-
-<scratch space>:383:1 dreml 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-<scratch space>:385:1 __dreml 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-<scratch space>:386:1 significandl 'long double (long double)' extern
-
-__x 'long double'
-
-
-
-<scratch space>:388:1 __significandl 'long double (long double)' extern
-
-__x 'long double'
-
-
-
-implicit copysignl 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 921
-
-Implicit
-
-Implicit
-
-prev 0x692fa8 <scratch space>:389:1 copysignl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 921
-
-
-
-
-
-<scratch space>:391:1 __copysignl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-
-
-implicit nanl 'long double (const char *)' extern
-
-<invalid sloc> 'const char *'
-
-Implicit 945
-
-Implicit
-
-Implicit
-
-prev 0x693670 <scratch space>:392:1 nanl 'long double (const char *)' extern
-
-__tagb 'const char *'
-
-Inherited Implicit 945
-
-Inherited Implicit
-
-
-
-<scratch space>:394:1 __nanl 'long double (const char *)' extern
-
-__tagb 'const char *'
-
-
-
-<scratch space>:395:1 isnanl 'int (long double)' extern
-
-__value 'long double'
-
-
-
-
-
-<scratch space>:396:1 j0l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:220:28 'long double'
-
-
-
-<scratch space>:398:1 __j0l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:220:28 'long double'
-
-
-
-<scratch space>:399:1 j1l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:221:28 'long double'
-
-
-
-<scratch space>:401:1 __j1l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:221:28 'long double'
-
-
-
-<scratch space>:402:1 jnl 'long double (int, long double)' extern
-
-'int'
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:222:33 'long double'
-
-
-
-<scratch space>:3:1 __jnl 'long double (int, long double)' extern
-
-'int'
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:222:33 'long double'
-
-
-
-<scratch space>:4:1 y0l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:223:28 'long double'
-
-
-
-<scratch space>:6:1 __y0l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:223:28 'long double'
-
-
-
-<scratch space>:7:1 y1l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:224:28 'long double'
-
-
-
-<scratch space>:9:1 __y1l 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:224:28 'long double'
-
-
-
-<scratch space>:10:1 ynl 'long double (int, long double)' extern
-
-'int'
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:225:33 'long double'
-
-
-
-<scratch space>:12:1 __ynl 'long double (int, long double)' extern
-
-'int'
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:225:33 'long double'
-
-
-
-implicit erfl 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 981
-
-Implicit
-
-prev 0x695490 <scratch space>:15:1 erfl 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:231:33 'long double'
-
-Inherited Implicit 981
-
-
-
-<scratch space>:17:1 __erfl 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:231:33 'long double'
-
-
-
-implicit erfcl 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 984
-
-Implicit
-
-prev 0x6959a8 <scratch space>:20:1 erfcl 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:232:34 'long double'
-
-Inherited Implicit 984
-
-
-
-<scratch space>:22:1 __erfcl 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:232:34 'long double'
-
-
-
-implicit lgammal 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1017
-
-Implicit
-
-prev 0x695ec0 <scratch space>:23:1 lgammal 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:233:32 'long double'
-
-Inherited Implicit 1017
-
-
-
-<scratch space>:25:1 __lgammal 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:233:32 'long double'
-
-
-
-implicit tgammal 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1089
-
-Implicit
-
-prev 0x6963d8 <scratch space>:26:1 tgammal 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:238:32 'long double'
-
-Inherited Implicit 1089
-
-
-
-<scratch space>:28:1 __tgammal 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:238:32 'long double'
-
-
-
-<scratch space>:29:1 gammal 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:244:31 'long double'
-
-
-
-<scratch space>:31:1 __gammal 'long double (long double)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:244:31 'long double'
-
-
-
-<scratch space>:33:1 lgammal_r 'long double (long double, int *)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:252:34 'long double'
-
-__signgamp 'int *'
-
-
-
-<scratch space>:36:1 __lgammal_r 'long double (long double, int *)' extern
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:252:34 'long double'
-
-__signgamp 'int *'
-
-
-
-implicit rintl 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1062
-
-Implicit
-
-Implicit
-
-prev 0x6970f8 <scratch space>:37:1 rintl 'long double (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1062
-
-Inherited Implicit
-
-
-
-<scratch space>:39:1 __rintl 'long double (long double)' extern
-
-__x 'long double'
-
-
-
-implicit nextafterl 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 1050
-
-Implicit
-
-prev 0x6976e8 <scratch space>:40:1 nextafterl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 1050
-
-
-
-<scratch space>:42:1 __nextafterl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-implicit nexttowardl 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 1053
-
-Implicit
-
-prev 0x697d90 <scratch space>:43:1 nexttowardl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 1053
-
-
-
-<scratch space>:45:1 __nexttowardl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-implicit remainderl 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 1056
-
-Implicit
-
-prev 0x698438 <scratch space>:47:1 remainderl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 1056
-
-
-
-<scratch space>:49:1 __remainderl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-implicit scalbnl 'long double (long double, int)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'int'
-
-Implicit 1071
-
-Implicit
-
-prev 0x698ae0 <scratch space>:50:1 scalbnl 'long double (long double, int)' extern
-
-__x 'long double'
-
-__n 'int'
-
-Inherited Implicit 1071
-
-
-
-<scratch space>:52:1 __scalbnl 'long double (long double, int)' extern
-
-__x 'long double'
-
-__n 'int'
-
-
-
-implicit ilogbl 'int (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1014
-
-Implicit
-
-prev 0x699118 <scratch space>:53:1 ilogbl 'int (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1014
-
-
-
-<scratch space>:55:1 __ilogbl 'int (long double)' extern
-
-__x 'long double'
-
-
-
-implicit scalblnl 'long double (long double, long)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long'
-
-Implicit 1068
-
-Implicit
-
-prev 0x6996f0 <scratch space>:57:1 scalblnl 'long double (long double, long)' extern
-
-__x 'long double'
-
-__n 'long'
-
-Inherited Implicit 1068
-
-
-
-<scratch space>:59:1 __scalblnl 'long double (long double, long)' extern
-
-__x 'long double'
-
-__n 'long'
-
-
-
-implicit nearbyintl 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1047
-
-Implicit
-
-Implicit
-
-prev 0x699d10 <scratch space>:60:1 nearbyintl 'long double (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1047
-
-Inherited Implicit
-
-
-
-<scratch space>:62:1 __nearbyintl 'long double (long double)' extern
-
-__x 'long double'
-
-
-
-implicit roundl 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1065
-
-Implicit
-
-Implicit
-
-prev 0x69a278 <scratch space>:63:1 roundl 'long double (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1065
-
-
-
-
-
-<scratch space>:65:1 __roundl 'long double (long double)' extern
-
-__x 'long double'
-
-
-
-
-
-implicit truncl 'long double (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1092
-
-Implicit
-
-Implicit
-
-prev 0x69a808 <scratch space>:66:1 truncl 'long double (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1092
-
-
-
-
-
-<scratch space>:68:1 __truncl 'long double (long double)' extern
-
-__x 'long double'
-
-
-
-
-
-implicit remquol 'long double (long double, long double, int *)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'int *'
-
-Implicit 1059
-
-Implicit
-
-prev 0x69af30 <scratch space>:69:1 remquol 'long double (long double, long double, int *)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-__quo 'int *'
-
-Inherited Implicit 1059
-
-
-
-<scratch space>:71:1 __remquol 'long double (long double, long double, int *)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-__quo 'int *'
-
-
-
-implicit lrintl 'long (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1041
-
-Implicit
-
-prev 0x69b690 <scratch space>:72:1 lrintl 'long (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1041
-
-
-
-<scratch space>:74:1 __lrintl 'long (long double)' extern
-
-__x 'long double'
-
-
-
-implicit llrintl 'long long (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1020
-
-Implicit
-
-prev 0x69bbe0 <scratch space>:75:1 llrintl 'long long (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1020
-
-
-
-<scratch space>:77:1 __llrintl 'long long (long double)' extern
-
-__x 'long double'
-
-
-
-implicit lroundl 'long (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1044
-
-Implicit
-
-prev 0x69c0f8 <scratch space>:78:1 lroundl 'long (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1044
-
-
-
-<scratch space>:80:1 __lroundl 'long (long double)' extern
-
-__x 'long double'
-
-
-
-implicit llroundl 'long long (long double)' extern
-
-<invalid sloc> 'long double'
-
-Implicit 1023
-
-Implicit
-
-prev 0x69c610 <scratch space>:81:1 llroundl 'long long (long double)' extern
-
-__x 'long double'
-
-Inherited Implicit 1023
-
-
-
-<scratch space>:83:1 __llroundl 'long long (long double)' extern
-
-__x 'long double'
-
-
-
-implicit fdiml 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 996
-
-Implicit
-
-prev 0x69cc10 <scratch space>:84:1 fdiml 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 996
-
-
-
-<scratch space>:86:1 __fdiml 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-implicit fmaxl 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 1005
-
-Implicit
-
-Implicit
-
-prev 0x69d2b8 <scratch space>:88:1 fmaxl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 1005
-
-
-
-
-
-<scratch space>:90:1 __fmaxl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-
-
-implicit fminl 'long double (long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 1008
-
-Implicit
-
-Implicit
-
-prev 0x69d9d8 <scratch space>:91:1 fminl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-Inherited Implicit 1008
-
-
-
-
-
-<scratch space>:93:1 __fminl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-
-
-
-
-implicit fmal 'long double (long double, long double, long double)' extern
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-<invalid sloc> 'long double'
-
-Implicit 1002
-
-Implicit
-
-Implicit
-
-prev 0x69e1c0 <scratch space>:94:1 fmal 'long double (long double, long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-__z 'long double'
-
-Inherited Implicit 1002
-
-Inherited Implicit
-
-
-
-<scratch space>:96:1 __fmal 'long double (long double, long double, long double)' extern
-
-__x 'long double'
-
-__y 'long double'
-
-__z 'long double'
-
-
-
-<scratch space>:102:1 scalbl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__n 'long double'
-
-
-
-<scratch space>:104:1 __scalbl 'long double (long double, long double)' extern
-
-__x 'long double'
-
-__n 'long double'
-
-
-
-signgam 'int' extern
-
-
-
-FP_NAN 'int'
-
-'int'
-
-Int 0
-
-'int' 0
-
-FP_INFINITE 'int'
-
-'int'
-
-Int 1
-
-'int' 1
-
-FP_ZERO 'int'
-
-'int'
-
-Int 2
-
-'int' 2
-
-FP_SUBNORMAL 'int'
-
-'int'
-
-Int 3
-
-'int' 3
-
-FP_NORMAL 'int'
-
-'int'
-
-Int 4
-
-'int' 4
-
-struct tm definition
-
-tm_sec 'int'
-
-tm_min 'int'
-
-tm_hour 'int'
-
-tm_mday 'int'
-
-tm_mon 'int'
-
-tm_year 'int'
-
-tm_wday 'int'
-
-tm_yday 'int'
-
-tm_isdst 'int'
-
-tm_gmtoff 'long'
-
-tm_zone 'const char *'
-
-struct itimerspec definition
-
-it_interval 'struct timespec':'struct timespec'
-
-it_value 'struct timespec':'struct timespec'
-
-struct sigevent
-
-/usr/include/time.h:72:16 clock 'clock_t (void)' extern
-
-
-
-/usr/include/time.h:76:15 time 'time_t (time_t *)' extern
-
-__timer 'time_t *'
-
-
-
-difftime 'double (time_t, time_t)' extern
-
-__time1 'time_t':'long'
-
-__time0 'time_t':'long'
-
-
-
-
-
-/usr/include/time.h:83:15 mktime 'time_t (struct tm *)' extern
-
-__tp 'struct tm *'
-
-
-
-/usr/include/time.h:100:15 strftime 'size_t (char *restrict, size_t, const char *restrict, const struct tm *restrict)' extern
-
-__s 'char *restrict'
-
-__maxsize 'size_t':'unsigned long'
-
-__format 'const char *restrict'
-
-__tp 'const struct tm *restrict'
-
-
-
-/usr/include/time.h:116:15 strftime_l 'size_t (char *restrict, size_t, const char *restrict, const struct tm *restrict, locale_t)' extern
-
-__s 'char *restrict'
-
-__maxsize 'size_t':'unsigned long'
-
-__format 'const char *restrict'
-
-__tp 'const struct tm *restrict'
-
-__loc 'locale_t':'struct __locale_struct *'
-
-
-
-/usr/include/time.h:132:19 gmtime 'struct tm *(const time_t *)' extern
-
-__timer 'const time_t *'
-
-
-
-/usr/include/time.h:136:19 localtime 'struct tm *(const time_t *)' extern
-
-__timer 'const time_t *'
-
-
-
-/usr/include/time.h:154:19 gmtime_r 'struct tm *(const time_t *restrict, struct tm *restrict)' extern
-
-__timer 'const time_t *restrict'
-
-__tp 'struct tm *restrict'
-
-
-
-/usr/include/time.h:159:19 localtime_r 'struct tm *(const time_t *restrict, struct tm *restrict)' extern
-
-__timer 'const time_t *restrict'
-
-__tp 'struct tm *restrict'
-
-
-
-/usr/include/time.h:179:14 asctime 'char *(const struct tm *)' extern
-
-__tp 'const struct tm *'
-
-
-
-/usr/include/time.h:183:14 ctime 'char *(const time_t *)' extern
-
-__timer 'const time_t *'
-
-
-
-/usr/include/time.h:197:14 asctime_r 'char *(const struct tm *restrict, char *restrict)' extern
-
-__tp 'const struct tm *restrict'
-
-__buf 'char *restrict'
-
-
-
-/usr/include/time.h:202:14 ctime_r 'char *(const time_t *restrict, char *restrict)' extern
-
-__timer 'const time_t *restrict'
-
-__buf 'char *restrict'
-
-
-
-__tzname 'char *[2]' extern
-
-__daylight 'int' extern
-
-__timezone 'long' extern
-
-tzname 'char *[2]' extern
-
-/usr/include/time.h:228:13 tzset 'void (void)' extern
-
-
-
-daylight 'int' extern
-
-timezone 'long' extern
-
-/usr/include/time.h:249:15 timegm 'time_t (struct tm *)' extern
-
-__tp 'struct tm *'
-
-
-
-/usr/include/time.h:251:15 timelocal 'time_t (struct tm *)' extern
-
-__tp 'struct tm *'
-
-
-
-dysize 'int (int)' extern
-
-__year 'int'
-
-
-
-
-
-nanosleep 'int (const struct timespec *, struct timespec *)' extern
-
-__requested_time 'const struct timespec *'
-
-__remaining 'struct timespec *'
-
-/usr/include/time.h:276:12 clock_getres 'int (clockid_t, struct timespec *)' extern
-
-__clock_id 'clockid_t':'int'
-
-__res 'struct timespec *'
-
-
-
-/usr/include/time.h:279:12 clock_gettime 'int (clockid_t, struct timespec *)' extern
-
-__clock_id 'clockid_t':'int'
-
-__tp 'struct timespec *'
-
-
-
-/usr/include/time.h:282:12 clock_settime 'int (clockid_t, const struct timespec *)' extern
-
-__clock_id 'clockid_t':'int'
-
-__tp 'const struct timespec *'
-
-
-
-clock_nanosleep 'int (clockid_t, int, const struct timespec *, struct timespec *)' extern
-
-__clock_id 'clockid_t':'int'
-
-__flags 'int'
-
-__req 'const struct timespec *'
-
-__rem 'struct timespec *'
-
-/usr/include/time.h:326:12 clock_getcpuclockid 'int (pid_t, clockid_t *)' extern
-
-__pid 'pid_t':'int'
-
-__clock_id 'clockid_t *'
-
-
-
-/usr/include/time.h:331:12 timer_create 'int (clockid_t, struct sigevent *restrict, timer_t *restrict)' extern
-
-__clock_id 'clockid_t':'int'
-
-__evp 'struct sigevent *restrict'
-
-__timerid 'timer_t *restrict'
-
-
-
-/usr/include/time.h:336:12 timer_delete 'int (timer_t)' extern
-
-__timerid 'timer_t':'void *'
-
-
-
-/usr/include/time.h:340:12 timer_settime 'int (timer_t, int, const struct itimerspec *restrict, struct itimerspec *restrict)' extern
-
-__timerid 'timer_t':'void *'
-
-__flags 'int'
-
-__value 'const struct itimerspec *restrict'
-
-__ovalue 'struct itimerspec *restrict'
-
-
-
-/usr/include/time.h:345:12 timer_gettime 'int (timer_t, struct itimerspec *)' extern
-
-__timerid 'timer_t':'void *'
-
-__value 'struct itimerspec *'
-
-
-
-/usr/include/time.h:364:12 timer_getoverrun 'int (timer_t)' extern
-
-__timerid 'timer_t':'void *'
-
-
-
-/usr/include/time.h:371:12 timespec_get 'int (struct timespec *, int)' extern
-
-__ts 'struct timespec *'
-
-__base 'int'
-
-
-
-1
+# (placeholder)   `-NonNullAttr 0xd9db518 <line:384:57, /usr/include/time.h:372:27> 1

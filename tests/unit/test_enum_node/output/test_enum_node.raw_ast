@@ -1,132 +1,230 @@
-TranslationUnitDecl 0x4e3508 <<invalid sloc>> <invalid sloc>
-|-TypedefDecl 0x4e3d30 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
-| `-BuiltinType 0x4e3ad0 '__int128'
-|-TypedefDecl 0x4e3da0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
-| `-BuiltinType 0x4e3af0 'unsigned __int128'
-|-TypedefDecl 0x4e40a8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
-| `-RecordType 0x4e3e80 'struct __NSConstantString_tag'
-|   `-Record 0x4e3df8 '__NSConstantString_tag'
-|-TypedefDecl 0x4e4140 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
-| `-PointerType 0x4e4100 'char *'
-|   `-BuiltinType 0x4e35b0 'char'
-|-TypedefDecl 0x4e4438 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
-| `-ConstantArrayType 0x4e43e0 'struct __va_list_tag[1]' 1 
-|   `-RecordType 0x4e4220 'struct __va_list_tag'
-|     `-Record 0x4e4198 '__va_list_tag'
-|-EnumDecl 0x53af40 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_enum_node/test_enum_node.h:2:1, line:6:1> line:2:6 Color
-| |-FullComment 0x550450 <line:1:4, col:26>
-| | `-ParagraphComment 0x550420 <col:4, col:26>
-| |   `-TextComment 0x5503f0 <col:4, col:26> Text=" Basic enum with values"
-| |-EnumConstantDecl 0x53b040 <line:3:5, col:11> col:5 RED 'int'
-| | `-ConstantExpr 0x53b020 <col:11> 'int'
+TranslationUnitDecl 0x1caf0238 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x1caf1080 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x1caf0800 '__int128'
+|-TypedefDecl 0x1caf10f0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x1caf0820 'unsigned __int128'
+|-TypedefDecl 0x1cb92a68 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+| `-RecordType 0x1caf11d0 'struct __NSConstantString_tag'
+|   `-Record 0x1caf1148 '__NSConstantString_tag'
+|-TypedefDecl 0x1cb92ad0 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+| `-BuiltinType 0x1caf09c0 '__SVInt8_t'
+|-TypedefDecl 0x1cb92b38 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+| `-BuiltinType 0x1caf09e0 '__SVInt16_t'
+|-TypedefDecl 0x1cb92ba0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+| `-BuiltinType 0x1caf0a00 '__SVInt32_t'
+|-TypedefDecl 0x1cb92c08 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+| `-BuiltinType 0x1caf0a20 '__SVInt64_t'
+|-TypedefDecl 0x1cb92c70 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+| `-BuiltinType 0x1caf0a40 '__SVUint8_t'
+|-TypedefDecl 0x1cb92cd8 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+| `-BuiltinType 0x1caf0a60 '__SVUint16_t'
+|-TypedefDecl 0x1cb92d40 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+| `-BuiltinType 0x1caf0a80 '__SVUint32_t'
+|-TypedefDecl 0x1cb92da8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+| `-BuiltinType 0x1caf0aa0 '__SVUint64_t'
+|-TypedefDecl 0x1cb92e10 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+| `-BuiltinType 0x1caf0ac0 '__SVFloat16_t'
+|-TypedefDecl 0x1cb92e78 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+| `-BuiltinType 0x1caf0ae0 '__SVFloat32_t'
+|-TypedefDecl 0x1cb92ee0 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+| `-BuiltinType 0x1caf0b00 '__SVFloat64_t'
+|-TypedefDecl 0x1cb92f48 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+| `-BuiltinType 0x1caf0b20 '__SVBFloat16_t'
+|-TypedefDecl 0x1cb92fb0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+| `-BuiltinType 0x1caf0b40 '__clang_svint8x2_t'
+|-TypedefDecl 0x1cb93018 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+| `-BuiltinType 0x1caf0b60 '__clang_svint16x2_t'
+|-TypedefDecl 0x1cb93080 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+| `-BuiltinType 0x1caf0b80 '__clang_svint32x2_t'
+|-TypedefDecl 0x1cb930e8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+| `-BuiltinType 0x1caf0ba0 '__clang_svint64x2_t'
+|-TypedefDecl 0x1cb93150 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+| `-BuiltinType 0x1caf0bc0 '__clang_svuint8x2_t'
+|-TypedefDecl 0x1cb931b8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+| `-BuiltinType 0x1caf0be0 '__clang_svuint16x2_t'
+|-TypedefDecl 0x1cb93220 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+| `-BuiltinType 0x1caf0c00 '__clang_svuint32x2_t'
+|-TypedefDecl 0x1cb93288 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+| `-BuiltinType 0x1caf0c20 '__clang_svuint64x2_t'
+|-TypedefDecl 0x1cb932f0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+| `-BuiltinType 0x1caf0c40 '__clang_svfloat16x2_t'
+|-TypedefDecl 0x1cb93358 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+| `-BuiltinType 0x1caf0c60 '__clang_svfloat32x2_t'
+|-TypedefDecl 0x1cb933c0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+| `-BuiltinType 0x1caf0c80 '__clang_svfloat64x2_t'
+|-TypedefDecl 0x1cb93428 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+| `-BuiltinType 0x1caf0ca0 '__clang_svbfloat16x2_t'
+|-TypedefDecl 0x1cb93490 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+| `-BuiltinType 0x1caf0cc0 '__clang_svint8x3_t'
+|-TypedefDecl 0x1cb934f8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+| `-BuiltinType 0x1caf0ce0 '__clang_svint16x3_t'
+|-TypedefDecl 0x1cb93560 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+| `-BuiltinType 0x1caf0d00 '__clang_svint32x3_t'
+|-TypedefDecl 0x1cb935c8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+| `-BuiltinType 0x1caf0d20 '__clang_svint64x3_t'
+|-TypedefDecl 0x1cb93630 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+| `-BuiltinType 0x1caf0d40 '__clang_svuint8x3_t'
+|-TypedefDecl 0x1cb93698 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+| `-BuiltinType 0x1caf0d60 '__clang_svuint16x3_t'
+|-TypedefDecl 0x1cb93700 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+| `-BuiltinType 0x1caf0d80 '__clang_svuint32x3_t'
+|-TypedefDecl 0x1cb93768 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+| `-BuiltinType 0x1caf0da0 '__clang_svuint64x3_t'
+|-TypedefDecl 0x1cb937d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+| `-BuiltinType 0x1caf0dc0 '__clang_svfloat16x3_t'
+|-TypedefDecl 0x1cb93838 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+| `-BuiltinType 0x1caf0de0 '__clang_svfloat32x3_t'
+|-TypedefDecl 0x1cb93cc0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+| `-BuiltinType 0x1caf0e00 '__clang_svfloat64x3_t'
+|-TypedefDecl 0x1cb93d28 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+| `-BuiltinType 0x1caf0e20 '__clang_svbfloat16x3_t'
+|-TypedefDecl 0x1cb93d90 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+| `-BuiltinType 0x1caf0e40 '__clang_svint8x4_t'
+|-TypedefDecl 0x1cb93df8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+| `-BuiltinType 0x1caf0e60 '__clang_svint16x4_t'
+|-TypedefDecl 0x1cb93e60 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+| `-BuiltinType 0x1caf0e80 '__clang_svint32x4_t'
+|-TypedefDecl 0x1cb93ec8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+| `-BuiltinType 0x1caf0ea0 '__clang_svint64x4_t'
+|-TypedefDecl 0x1cb93f30 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+| `-BuiltinType 0x1caf0ec0 '__clang_svuint8x4_t'
+|-TypedefDecl 0x1cb93f98 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+| `-BuiltinType 0x1caf0ee0 '__clang_svuint16x4_t'
+|-TypedefDecl 0x1cb94000 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+| `-BuiltinType 0x1caf0f00 '__clang_svuint32x4_t'
+|-TypedefDecl 0x1cb94068 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+| `-BuiltinType 0x1caf0f20 '__clang_svuint64x4_t'
+|-TypedefDecl 0x1cb940d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+| `-BuiltinType 0x1caf0f40 '__clang_svfloat16x4_t'
+|-TypedefDecl 0x1cb94138 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+| `-BuiltinType 0x1caf0f60 '__clang_svfloat32x4_t'
+|-TypedefDecl 0x1cb941a0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+| `-BuiltinType 0x1caf0f80 '__clang_svfloat64x4_t'
+|-TypedefDecl 0x1cb94208 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+| `-BuiltinType 0x1caf0fa0 '__clang_svbfloat16x4_t'
+|-TypedefDecl 0x1cb94270 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+| `-BuiltinType 0x1caf0fc0 '__SVBool_t'
+|-TypedefDecl 0x1cb94310 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x1cb942d0 'char *'
+|   `-BuiltinType 0x1caf02e0 'char'
+|-TypedefDecl 0x1cb94678 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
+| `-RecordType 0x1cb943f0 'struct std::__va_list'
+|   `-Record 0x1cb94368 '__va_list'
+|-EnumDecl 0x1cb946f8 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_enum_node/test_enum_node.h:2:1, line:6:1> line:2:6 Color
+| |-FullComment 0x1cbbd630 <line:1:4, col:26>
+| | `-ParagraphComment 0x1cbbd600 <col:4, col:26>
+| |   `-TextComment 0x1cbbd5d0 <col:4, col:26> Text=" Basic enum with values"
+| |-EnumConstantDecl 0x1cb94800 <line:3:5, col:11> col:5 RED 'int'
+| | `-ConstantExpr 0x1cb947e0 <col:11> 'int'
 | |   |-value: Int 0
-| |   `-IntegerLiteral 0x53b000 <col:11> 'int' 0
-| |-EnumConstantDecl 0x53b0d0 <line:4:5, col:13> col:5 GREEN 'int'
-| | `-ConstantExpr 0x53b0b0 <col:13> 'int'
+| |   `-IntegerLiteral 0x1cb947c0 <col:11> 'int' 0
+| |-EnumConstantDecl 0x1cb94890 <line:4:5, col:13> col:5 GREEN 'int'
+| | `-ConstantExpr 0x1cb94870 <col:13> 'int'
 | |   |-value: Int 1
-| |   `-IntegerLiteral 0x53b090 <col:13> 'int' 1
-| `-EnumConstantDecl 0x53b160 <line:5:5, col:12> col:5 BLUE 'int'
-|   `-ConstantExpr 0x53b140 <col:12> 'int'
+| |   `-IntegerLiteral 0x1cb94850 <col:13> 'int' 1
+| `-EnumConstantDecl 0x1cb94920 <line:5:5, col:12> col:5 BLUE 'int'
+|   `-ConstantExpr 0x1cb94900 <col:12> 'int'
 |     |-value: Int 2
-|     `-IntegerLiteral 0x53b120 <col:12> 'int' 2
-|-EnumDecl 0x53b1d8 <line:9:1, line:14:1> line:9:6 Direction
-| |-FullComment 0x550520 <line:8:3, col:37>
-| | `-ParagraphComment 0x5504f0 <col:3, col:37>
-| |   `-TextComment 0x5504c0 <col:3, col:37> Text=" Enum with auto-incrementing values"
-| |-EnumConstantDecl 0x53b2a0 <line:10:5> col:5 NORTH 'int'
-| | `-FullComment 0x5505f0 <col:15, col:16>
-| |   `-ParagraphComment 0x5505c0 <col:15, col:16>
-| |     `-TextComment 0x550590 <col:15, col:16> Text=" 0"
-| |-EnumConstantDecl 0x53b318 <line:11:5> col:5 SOUTH 'int'
-| | `-FullComment 0x5506c0 <col:15, col:16>
-| |   `-ParagraphComment 0x550690 <col:15, col:16>
-| |     `-TextComment 0x550660 <col:15, col:16> Text=" 1"
-| |-EnumConstantDecl 0x53b398 <line:12:5> col:5 EAST 'int'
-| | `-FullComment 0x550790 <col:15, col:16>
-| |   `-ParagraphComment 0x550760 <col:15, col:16>
-| |     `-TextComment 0x550730 <col:15, col:16> Text=" 2"
-| `-EnumConstantDecl 0x53b448 <line:13:5> col:5 WEST 'int'
-|   `-FullComment 0x550860 <col:15, col:16>
-|     `-ParagraphComment 0x550830 <col:15, col:16>
-|       `-TextComment 0x550800 <col:15, col:16> Text=" 3"
-|-EnumDecl 0x53b4c8 <line:17:1, line:23:1> line:17:6 Status
-| |-FullComment 0x550930 <line:16:3, col:47>
-| | `-ParagraphComment 0x550900 <col:3, col:47>
-| |   `-TextComment 0x5508d0 <col:3, col:47> Text=" Enum with mixed explicit and implicit values"
-| |-EnumConstantDecl 0x53b5d0 <line:18:5, col:10> col:5 OK 'int'
-| | `-ConstantExpr 0x53b5b0 <col:10> 'int'
+|     `-IntegerLiteral 0x1cb948e0 <col:12> 'int' 2
+|-EnumDecl 0x1cb94998 <line:9:1, line:14:1> line:9:6 Direction
+| |-FullComment 0x1cbbd700 <line:8:3, col:37>
+| | `-ParagraphComment 0x1cbbd6d0 <col:3, col:37>
+| |   `-TextComment 0x1cbbd6a0 <col:3, col:37> Text=" Enum with auto-incrementing values"
+| |-EnumConstantDecl 0x1cb94a60 <line:10:5> col:5 NORTH 'int'
+| | `-FullComment 0x1cbbd7d0 <col:15, col:16>
+| |   `-ParagraphComment 0x1cbbd7a0 <col:15, col:16>
+| |     `-TextComment 0x1cbbd770 <col:15, col:16> Text=" 0"
+| |-EnumConstantDecl 0x1cb94ad8 <line:11:5> col:5 SOUTH 'int'
+| | `-FullComment 0x1cbbd8a0 <col:15, col:16>
+| |   `-ParagraphComment 0x1cbbd870 <col:15, col:16>
+| |     `-TextComment 0x1cbbd840 <col:15, col:16> Text=" 1"
+| |-EnumConstantDecl 0x1cb94b58 <line:12:5> col:5 EAST 'int'
+| | `-FullComment 0x1cbbd970 <col:15, col:16>
+| |   `-ParagraphComment 0x1cbbd940 <col:15, col:16>
+| |     `-TextComment 0x1cbbd910 <col:15, col:16> Text=" 2"
+| `-EnumConstantDecl 0x1cb94c08 <line:13:5> col:5 WEST 'int'
+|   `-FullComment 0x1cbbf490 <col:15, col:16>
+|     `-ParagraphComment 0x1cbbf460 <col:15, col:16>
+|       `-TextComment 0x1cbbf430 <col:15, col:16> Text=" 3"
+|-EnumDecl 0x1cbbc9d0 <line:17:1, line:23:1> line:17:6 Status
+| |-FullComment 0x1cbbf560 <line:16:3, col:47>
+| | `-ParagraphComment 0x1cbbf530 <col:3, col:47>
+| |   `-TextComment 0x1cbbf500 <col:3, col:47> Text=" Enum with mixed explicit and implicit values"
+| |-EnumConstantDecl 0x1cbbcad0 <line:18:5, col:10> col:5 OK 'int'
+| | `-ConstantExpr 0x1cbbcab0 <col:10> 'int'
 | |   |-value: Int 200
-| |   `-IntegerLiteral 0x53b590 <col:10> 'int' 200
-| |-EnumConstantDecl 0x53b660 <line:19:5, col:17> col:5 NOT_FOUND 'int'
-| | `-ConstantExpr 0x53b640 <col:17> 'int'
+| |   `-IntegerLiteral 0x1cbbca90 <col:10> 'int' 200
+| |-EnumConstantDecl 0x1cbbcb60 <line:19:5, col:17> col:5 NOT_FOUND 'int'
+| | `-ConstantExpr 0x1cbbcb40 <col:17> 'int'
 | |   |-value: Int 404
-| |   `-IntegerLiteral 0x53b620 <col:17> 'int' 404
-| |-EnumConstantDecl 0x53b6f0 <line:20:5, col:20> col:5 SERVER_ERROR 'int'
-| | `-ConstantExpr 0x53b6d0 <col:20> 'int'
+| |   `-IntegerLiteral 0x1cbbcb20 <col:17> 'int' 404
+| |-EnumConstantDecl 0x1cbbcbf0 <line:20:5, col:20> col:5 SERVER_ERROR 'int'
+| | `-ConstantExpr 0x1cbbcbd0 <col:20> 'int'
 | |   |-value: Int 500
-| |   `-IntegerLiteral 0x53b6b0 <col:20> 'int' 500
-| |-EnumConstantDecl 0x53b740 <line:21:5> col:5 UNAVAILABLE 'int'
-| | `-FullComment 0x550a00 <col:21, col:24>
-| |   `-ParagraphComment 0x5509d0 <col:21, col:24>
-| |     `-TextComment 0x5509a0 <col:21, col:24> Text=" 501"
-| `-EnumConstantDecl 0x53b7e8 <line:22:5> col:5 TIMEOUT 'int'
-|   `-FullComment 0x550ad0 <col:20, col:23>
-|     `-ParagraphComment 0x550aa0 <col:20, col:23>
-|       `-TextComment 0x550a70 <col:20, col:23> Text=" 502"
-|-EnumDecl 0x53b868 <line:26:1, line:27:1> line:26:6 Empty
-| `-FullComment 0x550ba0 <line:25:3, col:44>
-|   `-ParagraphComment 0x550b70 <col:3, col:44>
-|     `-TextComment 0x550b40 <col:3, col:44> Text=" Enum with name but no values (empty enum)"
-|-EnumDecl 0x53b958 <line:30:1, line:34:1> line:30:6 Flags
-| |-FullComment 0x550c70 <line:29:3, col:36>
-| | `-ParagraphComment 0x550c40 <col:3, col:36>
-| |   `-TextComment 0x550c10 <col:3, col:36> Text=" Enum with hex values and comments"
-| |-EnumConstantDecl 0x53ba60 <line:31:5, col:15> col:5 READ 'int'
-| | |-ConstantExpr 0x53ba40 <col:15> 'int'
+| |   `-IntegerLiteral 0x1cbbcbb0 <col:20> 'int' 500
+| |-EnumConstantDecl 0x1cbbcc40 <line:21:5> col:5 UNAVAILABLE 'int'
+| | `-FullComment 0x1cbbf630 <col:21, col:24>
+| |   `-ParagraphComment 0x1cbbf600 <col:21, col:24>
+| |     `-TextComment 0x1cbbf5d0 <col:21, col:24> Text=" 501"
+| `-EnumConstantDecl 0x1cbbcce8 <line:22:5> col:5 TIMEOUT 'int'
+|   `-FullComment 0x1cbbf700 <col:20, col:23>
+|     `-ParagraphComment 0x1cbbf6d0 <col:20, col:23>
+|       `-TextComment 0x1cbbf6a0 <col:20, col:23> Text=" 502"
+|-EnumDecl 0x1cbbcd68 <line:26:1, line:27:1> line:26:6 Empty
+| `-FullComment 0x1cbbf7d0 <line:25:3, col:44>
+|   `-ParagraphComment 0x1cbbf7a0 <col:3, col:44>
+|     `-TextComment 0x1cbbf770 <col:3, col:44> Text=" Enum with name but no values (empty enum)"
+|-EnumDecl 0x1cbbce58 <line:30:1, line:34:1> line:30:6 Flags
+| |-FullComment 0x1cbbf8a0 <line:29:3, col:36>
+| | `-ParagraphComment 0x1cbbf870 <col:3, col:36>
+| |   `-TextComment 0x1cbbf840 <col:3, col:36> Text=" Enum with hex values and comments"
+| |-EnumConstantDecl 0x1cbbcf60 <line:31:5, col:15> col:5 READ 'int'
+| | |-ConstantExpr 0x1cbbcf40 <col:15> 'int'
 | | | |-value: Int 1
-| | | `-IntegerLiteral 0x53ba20 <col:15> 'int' 1
-| | `-FullComment 0x550d40 <col:24, col:39>
-| |   `-ParagraphComment 0x550d10 <col:24, col:39>
-| |     `-TextComment 0x550ce0 <col:24, col:39> Text=" Read permission"
-| |-EnumConstantDecl 0x53bb18 <line:32:5, col:15> col:5 WRITE 'int'
-| | |-ConstantExpr 0x53baf8 <col:15> 'int'
+| | | `-IntegerLiteral 0x1cbbcf20 <col:15> 'int' 1
+| | `-FullComment 0x1cbbf970 <col:24, col:39>
+| |   `-ParagraphComment 0x1cbbf940 <col:24, col:39>
+| |     `-TextComment 0x1cbbf910 <col:24, col:39> Text=" Read permission"
+| |-EnumConstantDecl 0x1cbbd018 <line:32:5, col:15> col:5 WRITE 'int'
+| | |-ConstantExpr 0x1cbbcff8 <col:15> 'int'
 | | | |-value: Int 2
-| | | `-IntegerLiteral 0x53bad8 <col:15> 'int' 2
-| | `-FullComment 0x550e10 <col:24, col:40>
-| |   `-ParagraphComment 0x550de0 <col:24, col:40>
-| |     `-TextComment 0x550db0 <col:24, col:40> Text=" Write permission"
-| `-EnumConstantDecl 0x53bc08 <line:33:5, col:15> col:5 EXECUTE 'int'
-|   |-ConstantExpr 0x53bbe8 <col:15> 'int'
+| | | `-IntegerLiteral 0x1cbbcfd8 <col:15> 'int' 2
+| | `-FullComment 0x1cbbfa40 <col:24, col:40>
+| |   `-ParagraphComment 0x1cbbfa10 <col:24, col:40>
+| |     `-TextComment 0x1cbbf9e0 <col:24, col:40> Text=" Write permission"
+| `-EnumConstantDecl 0x1cbbd108 <line:33:5, col:15> col:5 EXECUTE 'int'
+|   |-ConstantExpr 0x1cbbd0e8 <col:15> 'int'
 |   | |-value: Int 4
-|   | `-IntegerLiteral 0x53bb98 <col:15> 'int' 4
-|   `-FullComment 0x550ee0 <col:24, col:42>
-|     `-ParagraphComment 0x550eb0 <col:24, col:42>
-|       `-TextComment 0x550e80 <col:24, col:42> Text=" Execute permission"
-`-EnumDecl 0x53bc88 <line:37:1, line:42:1> line:37:6 ByteValues
-  |-FullComment 0x550fb0 <line:36:3, col:24>
-  | `-ParagraphComment 0x550f80 <col:3, col:24>
-  |   `-TextComment 0x550f50 <col:3, col:24> Text=" Enum with byte values"
-  |-EnumConstantDecl 0x53bdd0 <line:38:5, col:19> col:5 BYTE_0 'int'
-  | `-ConstantExpr 0x53bdb0 <col:14, col:19> 'int'
+|   | `-IntegerLiteral 0x1cbbd098 <col:15> 'int' 4
+|   `-FullComment 0x1cbbfb10 <col:24, col:42>
+|     `-ParagraphComment 0x1cbbfae0 <col:24, col:42>
+|       `-TextComment 0x1cbbfab0 <col:24, col:42> Text=" Execute permission"
+`-EnumDecl 0x1cbbd188 <line:37:1, line:42:1> line:37:6 ByteValues
+  |-FullComment 0x1cbbfbe0 <line:36:3, col:24>
+  | `-ParagraphComment 0x1cbbfbb0 <col:3, col:24>
+  |   `-TextComment 0x1cbbfb80 <col:3, col:24> Text=" Enum with byte values"
+  |-EnumConstantDecl 0x1cbbd2d0 <line:38:5, col:19> col:5 BYTE_0 'int'
+  | `-ConstantExpr 0x1cbbd2b0 <col:14, col:19> 'int'
   |   |-value: Int 1
-  |   `-BinaryOperator 0x53bd90 <col:14, col:19> 'int' '<<'
-  |     |-IntegerLiteral 0x53bd50 <col:14> 'int' 1
-  |     `-IntegerLiteral 0x53bd70 <col:19> 'int' 0
-  |-EnumConstantDecl 0x53bea0 <line:39:5, col:19> col:5 BYTE_1 'int'
-  | `-ConstantExpr 0x53be80 <col:14, col:19> 'int'
+  |   `-BinaryOperator 0x1cbbd290 <col:14, col:19> 'int' '<<'
+  |     |-IntegerLiteral 0x1cbbd250 <col:14> 'int' 1
+  |     `-IntegerLiteral 0x1cbbd270 <col:19> 'int' 0
+  |-EnumConstantDecl 0x1cbbd3a0 <line:39:5, col:19> col:5 BYTE_1 'int'
+  | `-ConstantExpr 0x1cbbd380 <col:14, col:19> 'int'
   |   |-value: Int 2
-  |   `-BinaryOperator 0x53be60 <col:14, col:19> 'int' '<<'
-  |     |-IntegerLiteral 0x53be20 <col:14> 'int' 1
-  |     `-IntegerLiteral 0x53be40 <col:19> 'int' 1
-  |-EnumConstantDecl 0x550290 <line:40:5, col:19> col:5 BYTE_2 'int'
-  | `-ConstantExpr 0x550270 <col:14, col:19> 'int'
+  |   `-BinaryOperator 0x1cbbd360 <col:14, col:19> 'int' '<<'
+  |     |-IntegerLiteral 0x1cbbd320 <col:14> 'int' 1
+  |     `-IntegerLiteral 0x1cbbd340 <col:19> 'int' 1
+  |-EnumConstantDecl 0x1cbbd470 <line:40:5, col:19> col:5 BYTE_2 'int'
+  | `-ConstantExpr 0x1cbbd450 <col:14, col:19> 'int'
   |   |-value: Int 4
-  |   `-BinaryOperator 0x550250 <col:14, col:19> 'int' '<<'
-  |     |-IntegerLiteral 0x53bef0 <col:14> 'int' 1
-  |     `-IntegerLiteral 0x53bf10 <col:19> 'int' 2
-  `-EnumConstantDecl 0x550360 <line:41:5, col:19> col:5 BYTE_3 'int'
-    `-ConstantExpr 0x550340 <col:14, col:19> 'int'
+  |   `-BinaryOperator 0x1cbbd430 <col:14, col:19> 'int' '<<'
+  |     |-IntegerLiteral 0x1cbbd3f0 <col:14> 'int' 1
+  |     `-IntegerLiteral 0x1cbbd410 <col:19> 'int' 2
+  `-EnumConstantDecl 0x1cbbd540 <line:41:5, col:19> col:5 BYTE_3 'int'
+    `-ConstantExpr 0x1cbbd520 <col:14, col:19> 'int'
       |-value: Int 8
-      `-BinaryOperator 0x550320 <col:14, col:19> 'int' '<<'
-        |-IntegerLiteral 0x5502e0 <col:14> 'int' 1
-        `-IntegerLiteral 0x550300 <col:19> 'int' 3
+      `-BinaryOperator 0x1cbbd500 <col:14, col:19> 'int' '<<'
+        |-IntegerLiteral 0x1cbbd4c0 <col:14> 'int' 1
+        `-IntegerLiteral 0x1cbbd4e0 <col:19> 'int' 3
+C_BINDER_MOJO_END_FILE

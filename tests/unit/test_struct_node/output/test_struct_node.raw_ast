@@ -1,176 +1,176 @@
-TranslationUnitDecl 0xafc1248 <<invalid sloc>> <invalid sloc>
-|-TypedefDecl 0xafc2090 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
-| `-BuiltinType 0xafc1810 '__int128'
-|-TypedefDecl 0xafc2100 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
-| `-BuiltinType 0xafc1830 'unsigned __int128'
-|-TypedefDecl 0xb063d78 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
-| `-RecordType 0xafc21e0 'struct __NSConstantString_tag'
-|   `-Record 0xafc2158 '__NSConstantString_tag'
-|-TypedefDecl 0xb063de0 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
-| `-BuiltinType 0xafc19d0 '__SVInt8_t'
-|-TypedefDecl 0xb063e48 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
-| `-BuiltinType 0xafc19f0 '__SVInt16_t'
-|-TypedefDecl 0xb063eb0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
-| `-BuiltinType 0xafc1a10 '__SVInt32_t'
-|-TypedefDecl 0xb063f18 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
-| `-BuiltinType 0xafc1a30 '__SVInt64_t'
-|-TypedefDecl 0xb063f80 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
-| `-BuiltinType 0xafc1a50 '__SVUint8_t'
-|-TypedefDecl 0xb063fe8 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
-| `-BuiltinType 0xafc1a70 '__SVUint16_t'
-|-TypedefDecl 0xb064050 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
-| `-BuiltinType 0xafc1a90 '__SVUint32_t'
-|-TypedefDecl 0xb0640b8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
-| `-BuiltinType 0xafc1ab0 '__SVUint64_t'
-|-TypedefDecl 0xb064120 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
-| `-BuiltinType 0xafc1ad0 '__SVFloat16_t'
-|-TypedefDecl 0xb064188 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
-| `-BuiltinType 0xafc1af0 '__SVFloat32_t'
-|-TypedefDecl 0xb0641f0 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
-| `-BuiltinType 0xafc1b10 '__SVFloat64_t'
-|-TypedefDecl 0xb064258 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
-| `-BuiltinType 0xafc1b30 '__SVBFloat16_t'
-|-TypedefDecl 0xb0642c0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
-| `-BuiltinType 0xafc1b50 '__clang_svint8x2_t'
-|-TypedefDecl 0xb064328 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
-| `-BuiltinType 0xafc1b70 '__clang_svint16x2_t'
-|-TypedefDecl 0xb064390 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
-| `-BuiltinType 0xafc1b90 '__clang_svint32x2_t'
-|-TypedefDecl 0xb0643f8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
-| `-BuiltinType 0xafc1bb0 '__clang_svint64x2_t'
-|-TypedefDecl 0xb064460 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
-| `-BuiltinType 0xafc1bd0 '__clang_svuint8x2_t'
-|-TypedefDecl 0xb0644c8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
-| `-BuiltinType 0xafc1bf0 '__clang_svuint16x2_t'
-|-TypedefDecl 0xb064530 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
-| `-BuiltinType 0xafc1c10 '__clang_svuint32x2_t'
-|-TypedefDecl 0xb064598 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
-| `-BuiltinType 0xafc1c30 '__clang_svuint64x2_t'
-|-TypedefDecl 0xb064600 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
-| `-BuiltinType 0xafc1c50 '__clang_svfloat16x2_t'
-|-TypedefDecl 0xb064668 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
-| `-BuiltinType 0xafc1c70 '__clang_svfloat32x2_t'
-|-TypedefDecl 0xb0646d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
-| `-BuiltinType 0xafc1c90 '__clang_svfloat64x2_t'
-|-TypedefDecl 0xb064738 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
-| `-BuiltinType 0xafc1cb0 '__clang_svbfloat16x2_t'
-|-TypedefDecl 0xb0647a0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
-| `-BuiltinType 0xafc1cd0 '__clang_svint8x3_t'
-|-TypedefDecl 0xb064808 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
-| `-BuiltinType 0xafc1cf0 '__clang_svint16x3_t'
-|-TypedefDecl 0xb064870 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
-| `-BuiltinType 0xafc1d10 '__clang_svint32x3_t'
-|-TypedefDecl 0xb0648d8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
-| `-BuiltinType 0xafc1d30 '__clang_svint64x3_t'
-|-TypedefDecl 0xb064940 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
-| `-BuiltinType 0xafc1d50 '__clang_svuint8x3_t'
-|-TypedefDecl 0xb0649a8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
-| `-BuiltinType 0xafc1d70 '__clang_svuint16x3_t'
-|-TypedefDecl 0xb064a10 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
-| `-BuiltinType 0xafc1d90 '__clang_svuint32x3_t'
-|-TypedefDecl 0xb064a78 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
-| `-BuiltinType 0xafc1db0 '__clang_svuint64x3_t'
-|-TypedefDecl 0xb064ae0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
-| `-BuiltinType 0xafc1dd0 '__clang_svfloat16x3_t'
-|-TypedefDecl 0xb064b48 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
-| `-BuiltinType 0xafc1df0 '__clang_svfloat32x3_t'
-|-TypedefDecl 0xb064fd0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
-| `-BuiltinType 0xafc1e10 '__clang_svfloat64x3_t'
-|-TypedefDecl 0xb065038 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
-| `-BuiltinType 0xafc1e30 '__clang_svbfloat16x3_t'
-|-TypedefDecl 0xb0650a0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
-| `-BuiltinType 0xafc1e50 '__clang_svint8x4_t'
-|-TypedefDecl 0xb065108 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
-| `-BuiltinType 0xafc1e70 '__clang_svint16x4_t'
-|-TypedefDecl 0xb065170 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
-| `-BuiltinType 0xafc1e90 '__clang_svint32x4_t'
-|-TypedefDecl 0xb0651d8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
-| `-BuiltinType 0xafc1eb0 '__clang_svint64x4_t'
-|-TypedefDecl 0xb065240 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
-| `-BuiltinType 0xafc1ed0 '__clang_svuint8x4_t'
-|-TypedefDecl 0xb0652a8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
-| `-BuiltinType 0xafc1ef0 '__clang_svuint16x4_t'
-|-TypedefDecl 0xb065310 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
-| `-BuiltinType 0xafc1f10 '__clang_svuint32x4_t'
-|-TypedefDecl 0xb065378 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
-| `-BuiltinType 0xafc1f30 '__clang_svuint64x4_t'
-|-TypedefDecl 0xb0653e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
-| `-BuiltinType 0xafc1f50 '__clang_svfloat16x4_t'
-|-TypedefDecl 0xb065448 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
-| `-BuiltinType 0xafc1f70 '__clang_svfloat32x4_t'
-|-TypedefDecl 0xb0654b0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
-| `-BuiltinType 0xafc1f90 '__clang_svfloat64x4_t'
-|-TypedefDecl 0xb065518 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
-| `-BuiltinType 0xafc1fb0 '__clang_svbfloat16x4_t'
-|-TypedefDecl 0xb065580 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
-| `-BuiltinType 0xafc1fd0 '__SVBool_t'
-|-TypedefDecl 0xb065620 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
-| `-PointerType 0xb0655e0 'char *'
-|   `-BuiltinType 0xafc12f0 'char'
-|-TypedefDecl 0xb065988 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
-| `-RecordType 0xb065700 'struct std::__va_list'
-|   `-Record 0xb065678 '__va_list'
-|-RecordDecl 0xb065a08 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:2:1, line:5:1> line:2:8 struct Point definition
-| |-FullComment 0xb08e5f0 <line:1:3, col:28>
-| | `-ParagraphComment 0xb08e5c0 <col:3, col:28>
-| |   `-TextComment 0xb08e590 <col:3, col:28> Text=" Basic struct declarations"
-| |-FieldDecl 0xb065ac8 <line:3:5, col:9> col:9 x 'int'
-| `-FieldDecl 0xb065b30 <line:4:5, col:9> col:9 y 'int'
-|-RecordDecl 0xb065b80 <line:7:1, line:10:1> line:7:8 struct Person definition
-| |-FieldDecl 0xb065c38 <line:8:5, col:11> col:11 name 'char *'
-| `-FieldDecl 0xb065ca0 <line:9:5, col:9> col:9 age 'int'
-|-RecordDecl 0xb065d18 <line:13:1, line:14:1> line:13:8 struct Empty definition
-| `-FullComment 0xb08e6c0 <line:12:3, col:15>
-|   `-ParagraphComment 0xb08e690 <col:3, col:15>
-|     `-TextComment 0xb08e660 <col:3, col:15> Text=" Empty struct"
-|-RecordDecl 0xb065de8 <line:17:1, line:32:1> line:17:8 struct Complex definition
-| |-FullComment 0xb08e790 <line:16:3, col:34>
-| | `-ParagraphComment 0xb08e760 <col:3, col:34>
-| |   `-TextComment 0xb08e730 <col:3, col:34> Text=" Multi-line struct with comments"
-| |-FieldDecl 0xb065ed0 <line:19:5, col:9> col:9 id 'int'
-| | `-FullComment 0xb08e860 <line:18:7, col:18>
-| |   `-ParagraphComment 0xb08e830 <col:7, col:18>
-| |     `-TextComment 0xb08e800 <col:7, col:18> Text=" Basic types"
-| |-FieldDecl 0xb065f38 <line:20:5, col:11> col:11 value 'float'
-| |-RecordDecl 0xb08dc60 parent 0xafc1248 <line:23:5, line:25:5> line:23:12 struct Inner definition
-| | |-FullComment 0xb08e930 <line:22:7, col:21>
-| | | `-ParagraphComment 0xb08e900 <col:7, col:21>
-| | |   `-TextComment 0xb08e8d0 <col:7, col:21> Text=" Nested struct "
-| | `-FieldDecl 0xb08dd28 <line:24:9, col:16> col:16 data 'double'
-| |-FieldDecl 0xb08ddd8 <line:23:5, line:25:7> col:7 nested 'struct Inner':'struct Inner'
-| |-RecordDecl 0xb08de58 <line:28:5, line:31:5> line:28:5 struct definition
-| | |-FullComment 0xb08ea00 <line:27:7, col:31>
-| | | `-ParagraphComment 0xb08e9d0 <col:7, col:31>
-| | |   `-TextComment 0xb08e9a0 <col:7, col:31> Text=" Nested anonymous struct "
-| | |-FieldDecl 0xb08df18 <line:29:9, col:13> col:13 x 'int'
-| | `-FieldDecl 0xb08df80 <line:30:9, col:13> col:13 y 'int'
-| `-FieldDecl 0xb08e028 <line:28:5, line:31:7> col:7 nested_anonymous 'struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:28:5)':'struct Complex::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:28:5)'
-|-RecordDecl 0xb08e0a8 <line:35:9, line:37:1> line:35:9 struct definition
-| |-FullComment 0xb08ead0 <line:34:3, col:30>
-| | `-ParagraphComment 0xb08eaa0 <col:3, col:30>
-| |   `-TextComment 0xb08ea70 <col:3, col:30> Text=" Anonymous struct in typedef"
-| `-FieldDecl 0xb08e168 <line:36:5, col:19> col:19 flags 'unsigned char'
-|-TypedefDecl 0xb08e218 <line:35:1, line:37:3> col:3 Flags 'struct Flags':'Flags'
-| |-ElaboratedType 0xb08e1c0 'struct Flags' sugar
-| | `-RecordType 0xb08e130 'Flags'
-| |   `-Record 0xb08e0a8 ''
-| `-FullComment 0xb08eba0 <line:34:3, col:30>
-|   `-ParagraphComment 0xb08eb70 <col:3, col:30>
-|     `-TextComment 0xb08eb40 <col:3, col:30> Text=" Anonymous struct in typedef"
-`-RecordDecl 0xb08e2b0 <line:40:1, line:44:1> line:40:8 struct BitFields definition
-  |-FullComment 0xb090330 <line:39:3, col:25>
-  | `-ParagraphComment 0xb08ec40 <col:3, col:25>
-  |   `-TextComment 0xb08ec10 <col:3, col:25> Text=" Struct with bit fields"
-  |-FieldDecl 0xb08e3a8 <line:41:5, col:22> col:18 a 'unsigned int'
-  | `-ConstantExpr 0xb08e388 <col:22> 'int'
+TranslationUnitDecl 0x3cc552a8 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x3cc560f0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x3cc55870 '__int128'
+|-TypedefDecl 0x3cc56160 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x3cc55890 'unsigned __int128'
+|-TypedefDecl 0x3ccf7e08 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+| `-RecordType 0x3cc56240 'struct __NSConstantString_tag'
+|   `-Record 0x3cc561b8 '__NSConstantString_tag'
+|-TypedefDecl 0x3ccf7e70 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+| `-BuiltinType 0x3cc55a30 '__SVInt8_t'
+|-TypedefDecl 0x3ccf7ed8 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+| `-BuiltinType 0x3cc55a50 '__SVInt16_t'
+|-TypedefDecl 0x3ccf7f40 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+| `-BuiltinType 0x3cc55a70 '__SVInt32_t'
+|-TypedefDecl 0x3ccf7fa8 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+| `-BuiltinType 0x3cc55a90 '__SVInt64_t'
+|-TypedefDecl 0x3ccf8010 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+| `-BuiltinType 0x3cc55ab0 '__SVUint8_t'
+|-TypedefDecl 0x3ccf8078 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+| `-BuiltinType 0x3cc55ad0 '__SVUint16_t'
+|-TypedefDecl 0x3ccf80e0 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+| `-BuiltinType 0x3cc55af0 '__SVUint32_t'
+|-TypedefDecl 0x3ccf8148 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+| `-BuiltinType 0x3cc55b10 '__SVUint64_t'
+|-TypedefDecl 0x3ccf81b0 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+| `-BuiltinType 0x3cc55b30 '__SVFloat16_t'
+|-TypedefDecl 0x3ccf8218 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+| `-BuiltinType 0x3cc55b50 '__SVFloat32_t'
+|-TypedefDecl 0x3ccf8280 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+| `-BuiltinType 0x3cc55b70 '__SVFloat64_t'
+|-TypedefDecl 0x3ccf82e8 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+| `-BuiltinType 0x3cc55b90 '__SVBFloat16_t'
+|-TypedefDecl 0x3ccf8350 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+| `-BuiltinType 0x3cc55bb0 '__clang_svint8x2_t'
+|-TypedefDecl 0x3ccf83b8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+| `-BuiltinType 0x3cc55bd0 '__clang_svint16x2_t'
+|-TypedefDecl 0x3ccf8420 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+| `-BuiltinType 0x3cc55bf0 '__clang_svint32x2_t'
+|-TypedefDecl 0x3ccf8488 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+| `-BuiltinType 0x3cc55c10 '__clang_svint64x2_t'
+|-TypedefDecl 0x3ccf84f0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+| `-BuiltinType 0x3cc55c30 '__clang_svuint8x2_t'
+|-TypedefDecl 0x3ccf8558 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+| `-BuiltinType 0x3cc55c50 '__clang_svuint16x2_t'
+|-TypedefDecl 0x3ccf85c0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+| `-BuiltinType 0x3cc55c70 '__clang_svuint32x2_t'
+|-TypedefDecl 0x3ccf8628 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+| `-BuiltinType 0x3cc55c90 '__clang_svuint64x2_t'
+|-TypedefDecl 0x3ccf8690 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+| `-BuiltinType 0x3cc55cb0 '__clang_svfloat16x2_t'
+|-TypedefDecl 0x3ccf86f8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+| `-BuiltinType 0x3cc55cd0 '__clang_svfloat32x2_t'
+|-TypedefDecl 0x3ccf8760 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+| `-BuiltinType 0x3cc55cf0 '__clang_svfloat64x2_t'
+|-TypedefDecl 0x3ccf87c8 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+| `-BuiltinType 0x3cc55d10 '__clang_svbfloat16x2_t'
+|-TypedefDecl 0x3ccf8830 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+| `-BuiltinType 0x3cc55d30 '__clang_svint8x3_t'
+|-TypedefDecl 0x3ccf8898 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+| `-BuiltinType 0x3cc55d50 '__clang_svint16x3_t'
+|-TypedefDecl 0x3ccf8900 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+| `-BuiltinType 0x3cc55d70 '__clang_svint32x3_t'
+|-TypedefDecl 0x3ccf8968 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+| `-BuiltinType 0x3cc55d90 '__clang_svint64x3_t'
+|-TypedefDecl 0x3ccf89d0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+| `-BuiltinType 0x3cc55db0 '__clang_svuint8x3_t'
+|-TypedefDecl 0x3ccf8a38 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+| `-BuiltinType 0x3cc55dd0 '__clang_svuint16x3_t'
+|-TypedefDecl 0x3ccf8aa0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+| `-BuiltinType 0x3cc55df0 '__clang_svuint32x3_t'
+|-TypedefDecl 0x3ccf8b08 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+| `-BuiltinType 0x3cc55e10 '__clang_svuint64x3_t'
+|-TypedefDecl 0x3ccf8b70 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+| `-BuiltinType 0x3cc55e30 '__clang_svfloat16x3_t'
+|-TypedefDecl 0x3ccf8bd8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+| `-BuiltinType 0x3cc55e50 '__clang_svfloat32x3_t'
+|-TypedefDecl 0x3ccf9060 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+| `-BuiltinType 0x3cc55e70 '__clang_svfloat64x3_t'
+|-TypedefDecl 0x3ccf90c8 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+| `-BuiltinType 0x3cc55e90 '__clang_svbfloat16x3_t'
+|-TypedefDecl 0x3ccf9130 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+| `-BuiltinType 0x3cc55eb0 '__clang_svint8x4_t'
+|-TypedefDecl 0x3ccf9198 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+| `-BuiltinType 0x3cc55ed0 '__clang_svint16x4_t'
+|-TypedefDecl 0x3ccf9200 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+| `-BuiltinType 0x3cc55ef0 '__clang_svint32x4_t'
+|-TypedefDecl 0x3ccf9268 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+| `-BuiltinType 0x3cc55f10 '__clang_svint64x4_t'
+|-TypedefDecl 0x3ccf92d0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+| `-BuiltinType 0x3cc55f30 '__clang_svuint8x4_t'
+|-TypedefDecl 0x3ccf9338 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+| `-BuiltinType 0x3cc55f50 '__clang_svuint16x4_t'
+|-TypedefDecl 0x3ccf93a0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+| `-BuiltinType 0x3cc55f70 '__clang_svuint32x4_t'
+|-TypedefDecl 0x3ccf9408 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+| `-BuiltinType 0x3cc55f90 '__clang_svuint64x4_t'
+|-TypedefDecl 0x3ccf9470 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+| `-BuiltinType 0x3cc55fb0 '__clang_svfloat16x4_t'
+|-TypedefDecl 0x3ccf94d8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+| `-BuiltinType 0x3cc55fd0 '__clang_svfloat32x4_t'
+|-TypedefDecl 0x3ccf9540 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+| `-BuiltinType 0x3cc55ff0 '__clang_svfloat64x4_t'
+|-TypedefDecl 0x3ccf95a8 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+| `-BuiltinType 0x3cc56010 '__clang_svbfloat16x4_t'
+|-TypedefDecl 0x3ccf9610 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+| `-BuiltinType 0x3cc56030 '__SVBool_t'
+|-TypedefDecl 0x3ccf96b0 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x3ccf9670 'char *'
+|   `-BuiltinType 0x3cc55350 'char'
+|-TypedefDecl 0x3ccf9a18 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
+| `-RecordType 0x3ccf9790 'struct std::__va_list'
+|   `-Record 0x3ccf9708 '__va_list'
+|-RecordDecl 0x3ccf9a98 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:2:1, line:5:1> line:2:8 struct Point definition
+| |-FullComment 0x3cd22680 <line:1:3, col:28>
+| | `-ParagraphComment 0x3cd22650 <col:3, col:28>
+| |   `-TextComment 0x3cd22620 <col:3, col:28> Text=" Basic struct declarations"
+| |-FieldDecl 0x3ccf9b58 <line:3:5, col:9> col:9 x 'int'
+| `-FieldDecl 0x3ccf9bc0 <line:4:5, col:9> col:9 y 'int'
+|-RecordDecl 0x3ccf9c10 <line:7:1, line:10:1> line:7:8 struct Person definition
+| |-FieldDecl 0x3ccf9cc8 <line:8:5, col:11> col:11 name 'char *'
+| `-FieldDecl 0x3ccf9d30 <line:9:5, col:9> col:9 age 'int'
+|-RecordDecl 0x3ccf9da8 <line:13:1, line:14:1> line:13:8 struct Empty definition
+| `-FullComment 0x3cd22750 <line:12:3, col:15>
+|   `-ParagraphComment 0x3cd22720 <col:3, col:15>
+|     `-TextComment 0x3cd226f0 <col:3, col:15> Text=" Empty struct"
+|-RecordDecl 0x3ccf9e78 <line:17:1, line:32:1> line:17:8 struct Complex definition
+| |-FullComment 0x3cd22820 <line:16:3, col:34>
+| | `-ParagraphComment 0x3cd227f0 <col:3, col:34>
+| |   `-TextComment 0x3cd227c0 <col:3, col:34> Text=" Multi-line struct with comments"
+| |-FieldDecl 0x3ccf9f60 <line:19:5, col:9> col:9 id 'int'
+| | `-FullComment 0x3cd228f0 <line:18:7, col:18>
+| |   `-ParagraphComment 0x3cd228c0 <col:7, col:18>
+| |     `-TextComment 0x3cd22890 <col:7, col:18> Text=" Basic types"
+| |-FieldDecl 0x3ccf9fc8 <line:20:5, col:11> col:11 value 'float'
+| |-RecordDecl 0x3cd21cf0 parent 0x3cc552a8 <line:23:5, line:25:5> line:23:12 struct Inner definition
+| | |-FullComment 0x3cd229c0 <line:22:7, col:21>
+| | | `-ParagraphComment 0x3cd22990 <col:7, col:21>
+| | |   `-TextComment 0x3cd22960 <col:7, col:21> Text=" Nested struct "
+| | `-FieldDecl 0x3cd21db8 <line:24:9, col:16> col:16 data 'double'
+| |-FieldDecl 0x3cd21e68 <line:23:5, line:25:7> col:7 nested 'struct Inner':'struct Inner'
+| |-RecordDecl 0x3cd21ee8 <line:28:5, line:31:5> line:28:5 struct definition
+| | |-FullComment 0x3cd22a90 <line:27:7, col:31>
+| | | `-ParagraphComment 0x3cd22a60 <col:7, col:31>
+| | |   `-TextComment 0x3cd22a30 <col:7, col:31> Text=" Nested anonymous struct "
+| | |-FieldDecl 0x3cd21fa8 <line:29:9, col:13> col:13 x 'int'
+| | `-FieldDecl 0x3cd22010 <line:30:9, col:13> col:13 y 'int'
+| `-FieldDecl 0x3cd220b8 <line:28:5, line:31:7> col:7 nested_anonymous 'struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:28:5)':'struct Complex::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:28:5)'
+|-RecordDecl 0x3cd22138 <line:35:9, line:37:1> line:35:9 struct definition
+| |-FullComment 0x3cd22b60 <line:34:3, col:30>
+| | `-ParagraphComment 0x3cd22b30 <col:3, col:30>
+| |   `-TextComment 0x3cd22b00 <col:3, col:30> Text=" Anonymous struct in typedef"
+| `-FieldDecl 0x3cd221f8 <line:36:5, col:19> col:19 flags 'unsigned char'
+|-TypedefDecl 0x3cd222a8 <line:35:1, line:37:3> col:3 Flags 'struct Flags':'Flags'
+| |-ElaboratedType 0x3cd22250 'struct Flags' sugar
+| | `-RecordType 0x3cd221c0 'Flags'
+| |   `-Record 0x3cd22138 ''
+| `-FullComment 0x3cd22c30 <line:34:3, col:30>
+|   `-ParagraphComment 0x3cd22c00 <col:3, col:30>
+|     `-TextComment 0x3cd22bd0 <col:3, col:30> Text=" Anonymous struct in typedef"
+`-RecordDecl 0x3cd22340 <line:40:1, line:44:1> line:40:8 struct BitFields definition
+  |-FullComment 0x3cd243c0 <line:39:3, col:25>
+  | `-ParagraphComment 0x3cd22cd0 <col:3, col:25>
+  |   `-TextComment 0x3cd22ca0 <col:3, col:25> Text=" Struct with bit fields"
+  |-FieldDecl 0x3cd22438 <line:41:5, col:22> col:18 a 'unsigned int'
+  | `-ConstantExpr 0x3cd22418 <col:22> 'int'
   |   |-value: Int 1
-  |   `-IntegerLiteral 0xb08e350 <col:22> 'int' 1
-  |-FieldDecl 0xb08e450 <line:42:5, col:22> col:18 b 'unsigned int'
-  | `-ConstantExpr 0xb08e430 <col:22> 'int'
+  |   `-IntegerLiteral 0x3cd223e0 <col:22> 'int' 1
+  |-FieldDecl 0x3cd224e0 <line:42:5, col:22> col:18 b 'unsigned int'
+  | `-ConstantExpr 0x3cd224c0 <col:22> 'int'
   |   |-value: Int 2
-  |   `-IntegerLiteral 0xb08e3f8 <col:22> 'int' 2
-  `-FieldDecl 0xb08e4f8 <line:43:5, col:22> col:18 c 'unsigned int'
-    `-ConstantExpr 0xb08e4d8 <col:22> 'int'
+  |   `-IntegerLiteral 0x3cd22488 <col:22> 'int' 2
+  `-FieldDecl 0x3cd22588 <line:43:5, col:22> col:18 c 'unsigned int'
+    `-ConstantExpr 0x3cd22568 <col:22> 'int'
       |-value: Int 3
-      `-IntegerLiteral 0xb08e4a0 <col:22> 'int' 3
+      `-IntegerLiteral 0x3cd22530 <col:22> 'int' 3
 C_BINDER_MOJO_END_FILE

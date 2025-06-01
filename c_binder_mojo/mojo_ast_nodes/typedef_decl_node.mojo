@@ -80,12 +80,12 @@ struct TypedefDeclNode(NodeAstLike):
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
 
-    fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
+    fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
+        self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
-        self._typedef_decl_level = 0
+        self._typedef_decl_level = ast_entry.level
 
     @staticmethod
     fn accept(

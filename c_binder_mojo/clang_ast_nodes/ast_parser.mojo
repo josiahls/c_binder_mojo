@@ -191,8 +191,7 @@ struct AstParser:
     fn clang_call(file_path: Path, extra_args: String = "") raises -> List[String]:
         """Get the AST dump of the processed code."""
         cmd = (
-            "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments"
-            " -fno-color-diagnostics "
+            "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments -fno-color-diagnostics -ast-dump-filter=\"\" -nostdinc "
             + file_path.path
             + " "
             + extra_args

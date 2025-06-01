@@ -1,777 +1,117 @@
 
-# (placeholder) TranslationUnitDecl 0x1ecf6358 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x2a8a1688 <<invalid sloc>> <invalid sloc>
 
 alias <invalid = sloc> implicit __int128_t __int128 
 
-# (placeholder) | `-BuiltinType 0x1ecf6920 '__int128'
-
 alias <invalid = sloc> implicit __uint128_t unsigned __int128 
-
-# (placeholder) | `-BuiltinType 0x1ecf6940 'unsigned __int128'
 
 alias <invalid = sloc> implicit __NSConstantString __NSConstantString_tag 
 
-# (placeholder) | `-RecordType 0x1ecf72f0 'struct __NSConstantString_tag'
-
-# (placeholder) |   `-Record 0x1ecf7268 '__NSConstantString_tag'
-
 alias <invalid = sloc> implicit __SVInt8_t __SVInt8_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6ae0 '__SVInt8_t'
 
 alias <invalid = sloc> implicit __SVInt16_t __SVInt16_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6b00 '__SVInt16_t'
-
 alias <invalid = sloc> implicit __SVInt32_t __SVInt32_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6b20 '__SVInt32_t'
 
 alias <invalid = sloc> implicit __SVInt64_t __SVInt64_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6b40 '__SVInt64_t'
-
 alias <invalid = sloc> implicit __SVUint8_t __SVUint8_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6b60 '__SVUint8_t'
 
 alias <invalid = sloc> implicit __SVUint16_t __SVUint16_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6b80 '__SVUint16_t'
-
 alias <invalid = sloc> implicit __SVUint32_t __SVUint32_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6ba0 '__SVUint32_t'
 
 alias <invalid = sloc> implicit __SVUint64_t __SVUint64_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6bc0 '__SVUint64_t'
-
 alias <invalid = sloc> implicit __SVFloat16_t __SVFloat16_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6be0 '__SVFloat16_t'
 
 alias <invalid = sloc> implicit __SVFloat32_t __SVFloat32_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6c00 '__SVFloat32_t'
-
 alias <invalid = sloc> implicit __SVFloat64_t __SVFloat64_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6c20 '__SVFloat64_t'
 
 alias <invalid = sloc> implicit __SVBFloat16_t __SVBFloat16_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6c40 '__SVBFloat16_t'
-
 alias <invalid = sloc> implicit __clang_svint8x2_t __clang_svint8x2_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6c60 '__clang_svint8x2_t'
 
 alias <invalid = sloc> implicit __clang_svint16x2_t __clang_svint16x2_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6c80 '__clang_svint16x2_t'
-
 alias <invalid = sloc> implicit __clang_svint32x2_t __clang_svint32x2_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6ca0 '__clang_svint32x2_t'
 
 alias <invalid = sloc> implicit __clang_svint64x2_t __clang_svint64x2_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6cc0 '__clang_svint64x2_t'
-
 alias <invalid = sloc> implicit __clang_svuint8x2_t __clang_svuint8x2_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6ce0 '__clang_svuint8x2_t'
 
 alias <invalid = sloc> implicit __clang_svuint16x2_t __clang_svuint16x2_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6d00 '__clang_svuint16x2_t'
-
 alias <invalid = sloc> implicit __clang_svuint32x2_t __clang_svuint32x2_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6d20 '__clang_svuint32x2_t'
 
 alias <invalid = sloc> implicit __clang_svuint64x2_t __clang_svuint64x2_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6d40 '__clang_svuint64x2_t'
-
 alias <invalid = sloc> implicit __clang_svfloat16x2_t __clang_svfloat16x2_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6d60 '__clang_svfloat16x2_t'
 
 alias <invalid = sloc> implicit __clang_svfloat32x2_t __clang_svfloat32x2_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6d80 '__clang_svfloat32x2_t'
-
 alias <invalid = sloc> implicit __clang_svfloat64x2_t __clang_svfloat64x2_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6da0 '__clang_svfloat64x2_t'
 
 alias <invalid = sloc> implicit __clang_svbfloat16x2_t __clang_svbfloat16x2_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6dc0 '__clang_svbfloat16x2_t'
-
 alias <invalid = sloc> implicit __clang_svint8x3_t __clang_svint8x3_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6de0 '__clang_svint8x3_t'
 
 alias <invalid = sloc> implicit __clang_svint16x3_t __clang_svint16x3_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6e00 '__clang_svint16x3_t'
-
 alias <invalid = sloc> implicit __clang_svint32x3_t __clang_svint32x3_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6e20 '__clang_svint32x3_t'
 
 alias <invalid = sloc> implicit __clang_svint64x3_t __clang_svint64x3_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6e40 '__clang_svint64x3_t'
-
 alias <invalid = sloc> implicit __clang_svuint8x3_t __clang_svuint8x3_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6e60 '__clang_svuint8x3_t'
 
 alias <invalid = sloc> implicit __clang_svuint16x3_t __clang_svuint16x3_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6e80 '__clang_svuint16x3_t'
-
 alias <invalid = sloc> implicit __clang_svuint32x3_t __clang_svuint32x3_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6ea0 '__clang_svuint32x3_t'
 
 alias <invalid = sloc> implicit __clang_svuint64x3_t __clang_svuint64x3_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6ec0 '__clang_svuint64x3_t'
-
 alias <invalid = sloc> implicit __clang_svfloat16x3_t __clang_svfloat16x3_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6ee0 '__clang_svfloat16x3_t'
 
 alias <invalid = sloc> implicit __clang_svfloat32x3_t __clang_svfloat32x3_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6f00 '__clang_svfloat32x3_t'
-
 alias <invalid = sloc> implicit __clang_svfloat64x3_t __clang_svfloat64x3_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6f20 '__clang_svfloat64x3_t'
 
 alias <invalid = sloc> implicit __clang_svbfloat16x3_t __clang_svbfloat16x3_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6f40 '__clang_svbfloat16x3_t'
-
 alias <invalid = sloc> implicit __clang_svint8x4_t __clang_svint8x4_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6f60 '__clang_svint8x4_t'
 
 alias <invalid = sloc> implicit __clang_svint16x4_t __clang_svint16x4_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6f80 '__clang_svint16x4_t'
-
 alias <invalid = sloc> implicit __clang_svint32x4_t __clang_svint32x4_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6fa0 '__clang_svint32x4_t'
 
 alias <invalid = sloc> implicit __clang_svint64x4_t __clang_svint64x4_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf6fc0 '__clang_svint64x4_t'
-
 alias <invalid = sloc> implicit __clang_svuint8x4_t __clang_svuint8x4_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf6fe0 '__clang_svuint8x4_t'
 
 alias <invalid = sloc> implicit __clang_svuint16x4_t __clang_svuint16x4_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf7000 '__clang_svuint16x4_t'
-
 alias <invalid = sloc> implicit __clang_svuint32x4_t __clang_svuint32x4_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf7020 '__clang_svuint32x4_t'
 
 alias <invalid = sloc> implicit __clang_svuint64x4_t __clang_svuint64x4_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf7040 '__clang_svuint64x4_t'
-
 alias <invalid = sloc> implicit __clang_svfloat16x4_t __clang_svfloat16x4_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf7060 '__clang_svfloat16x4_t'
 
 alias <invalid = sloc> implicit __clang_svfloat32x4_t __clang_svfloat32x4_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf7080 '__clang_svfloat32x4_t'
-
 alias <invalid = sloc> implicit __clang_svfloat64x4_t __clang_svfloat64x4_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf70a0 '__clang_svfloat64x4_t'
 
 alias <invalid = sloc> implicit __clang_svbfloat16x4_t __clang_svbfloat16x4_t 
 
-# (placeholder) | `-BuiltinType 0x1ecf70c0 '__clang_svbfloat16x4_t'
-
 alias <invalid = sloc> implicit __SVBool_t __SVBool_t 
-
-# (placeholder) | `-BuiltinType 0x1ecf70e0 '__SVBool_t'
 
 alias <invalid = sloc> implicit __builtin_ms_va_list char * 
 
-# (placeholder) | `-PointerType 0x1ed9a440 'char *'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6400 'char'
-
 alias <invalid = sloc> implicit __builtin_va_list std 
-
-# (placeholder) | `-RecordType 0x1ed9a560 'struct std::__va_list'
-
-# (placeholder) |   `-Record 0x1ed9a4d8 '__va_list'
-
-alias ptrdiff_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias size_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias wchar_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-struct _Anonymous:
-	alias __clang_max_align_nonce1: Int64 = 8
-
-	alias __clang_max_align_nonce2: long double = 16
-
-
-alias max_align_t = max_align_t 
-
-# (placeholder) | `-ElaboratedType 0x1ed9aca0 'struct max_align_t' sugar
-
-# (placeholder) |   `-RecordType 0x1ed9aa40 'max_align_t'
-
-# (placeholder) |     `-Record 0x1ed9a9b8 ''
-
-alias __u_char = unsigned char 
-
-# (placeholder) | `-BuiltinType 0x1ecf64c0 'unsigned char'
-
-alias __u_short = unsigned short 
-
-# (placeholder) | `-BuiltinType 0x1ecf64e0 'unsigned short'
-
-alias __u_int = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __u_long = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __int8_t = signed char 
-
-# (placeholder) | `-BuiltinType 0x1ecf6420 'signed char'
-
-alias __uint8_t = unsigned char 
-
-# (placeholder) | `-BuiltinType 0x1ecf64c0 'unsigned char'
-
-alias __int16_t = short 
-
-# (placeholder) | `-BuiltinType 0x1ecf6440 'short'
-
-alias __uint16_t = unsigned short 
-
-# (placeholder) | `-BuiltinType 0x1ecf64e0 'unsigned short'
-
-alias __int32_t = int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
-
-alias __uint32_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __int64_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __uint64_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __int_least8_t = __int8_t 
-
-# (placeholder) | `-TypedefType 0x1edeb280 '__int8_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeaf10 '__int8_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6420 'signed char'
-
-alias __uint_least8_t = __uint8_t 
-
-# (placeholder) | `-TypedefType 0x1edeb310 '__uint8_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeaf80 '__uint8_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf64c0 'unsigned char'
-
-alias __int_least16_t = __int16_t 
-
-# (placeholder) | `-TypedefType 0x1edeb3a0 '__int16_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeaff0 '__int16_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6440 'short'
-
-alias __uint_least16_t = __uint16_t 
-
-# (placeholder) | `-TypedefType 0x1edeb430 '__uint16_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb060 '__uint16_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf64e0 'unsigned short'
-
-alias __int_least32_t = __int32_t 
-
-# (placeholder) | `-TypedefType 0x1edeb4c0 '__int32_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb0d0 '__int32_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6460 'int'
-
-alias __uint_least32_t = __uint32_t 
-
-# (placeholder) | `-TypedefType 0x1edeb550 '__uint32_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb140 '__uint32_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __int_least64_t = __int64_t 
-
-# (placeholder) | `-TypedefType 0x1edeb5e0 '__int64_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb1b0 '__int64_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
-
-alias __uint_least64_t = __uint64_t 
-
-# (placeholder) | `-TypedefType 0x1edeb670 '__uint64_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb220 '__uint64_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __quad_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __u_quad_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __intmax_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __uintmax_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __dev_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __uid_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __gid_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __ino_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __ino64_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __mode_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __nlink_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __off_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __off64_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __pid_t = int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
-struct _Anonymous:
-	var __val: int[2]
-
-
-alias __fsid_t = __fsid_t 
-
-# (placeholder) | `-ElaboratedType 0x1edf4ec0 'struct __fsid_t' sugar
-
-# (placeholder) |   `-RecordType 0x1edebda0 '__fsid_t'
-
-# (placeholder) |     `-Record 0x1edebd18 ''
-
-alias __clock_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __rlim_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __rlim64_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __id_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __time_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __useconds_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __suseconds_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __suseconds64_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __daddr_t = int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
-
-alias __key_t = int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
-
-alias __clockid_t = int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
-
-alias __timer_t = void * 
-
-# (placeholder) | `-PointerType 0x1ecf7100 'void *'
-
-# (placeholder) |   `-BuiltinType 0x1ecf63c0 'void'
-
-alias __blksize_t = int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
-
-alias __blkcnt_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __blkcnt64_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __fsblkcnt_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __fsblkcnt64_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __fsfilcnt_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __fsfilcnt64_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __fsword_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __ssize_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __syscall_slong_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __syscall_ulong_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias __loff_t = __off64_t 
-
-# (placeholder) | `-TypedefType 0x1edf59a0 '__off64_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edebc50 '__off64_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
-
-alias __caddr_t = char * 
-
-# (placeholder) | `-PointerType 0x1ed9a440 'char *'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6400 'char'
-
-alias __intptr_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias __socklen_t = unsigned int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias __sig_atomic_t = int 
-
-# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
-
-alias int8_t = __int8_t 
-
-# (placeholder) | `-TypedefType 0x1edeb280 '__int8_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeaf10 '__int8_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6420 'signed char'
-
-alias int16_t = __int16_t 
-
-# (placeholder) | `-TypedefType 0x1edeb3a0 '__int16_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeaff0 '__int16_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6440 'short'
-
-alias int32_t = __int32_t 
-
-# (placeholder) | `-TypedefType 0x1edeb4c0 '__int32_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb0d0 '__int32_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6460 'int'
-
-alias int64_t = __int64_t 
-
-# (placeholder) | `-TypedefType 0x1edeb5e0 '__int64_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb1b0 '__int64_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
-
-alias uint8_t = __uint8_t 
-
-# (placeholder) | `-TypedefType 0x1edeb310 '__uint8_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeaf80 '__uint8_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf64c0 'unsigned char'
-
-alias uint16_t = __uint16_t 
-
-# (placeholder) | `-TypedefType 0x1edeb430 '__uint16_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb060 '__uint16_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf64e0 'unsigned short'
-
-alias uint32_t = __uint32_t 
-
-# (placeholder) | `-TypedefType 0x1edeb550 '__uint32_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb140 '__uint32_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias uint64_t = __uint64_t 
-
-# (placeholder) | `-TypedefType 0x1edeb670 '__uint64_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb220 '__uint64_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias int_least8_t = __int_least8_t 
-
-# (placeholder) | `-TypedefType 0x1edf9050 '__int_least8_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb2b0 '__int_least8_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb280 '__int8_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeaf10 '__int8_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf6420 'signed char'
-
-alias int_least16_t = __int_least16_t 
-
-# (placeholder) | `-TypedefType 0x1edf90e0 '__int_least16_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb3d0 '__int_least16_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb3a0 '__int16_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeaff0 '__int16_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf6440 'short'
-
-alias int_least32_t = __int_least32_t 
-
-# (placeholder) | `-TypedefType 0x1edf9170 '__int_least32_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb4f0 '__int_least32_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb4c0 '__int32_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeb0d0 '__int32_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf6460 'int'
-
-alias int_least64_t = __int_least64_t 
-
-# (placeholder) | `-TypedefType 0x1edf9200 '__int_least64_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb610 '__int_least64_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb5e0 '__int64_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeb1b0 '__int64_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf6480 'long'
-
-alias uint_least8_t = __uint_least8_t 
-
-# (placeholder) | `-TypedefType 0x1edf9290 '__uint_least8_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb340 '__uint_least8_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb310 '__uint8_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeaf80 '__uint8_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf64c0 'unsigned char'
-
-alias uint_least16_t = __uint_least16_t 
-
-# (placeholder) | `-TypedefType 0x1edf9320 '__uint_least16_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb460 '__uint_least16_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb430 '__uint16_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeb060 '__uint16_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf64e0 'unsigned short'
-
-alias uint_least32_t = __uint_least32_t 
-
-# (placeholder) | `-TypedefType 0x1edf93b0 '__uint_least32_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb580 '__uint_least32_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb550 '__uint32_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeb140 '__uint32_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf6500 'unsigned int'
-
-alias uint_least64_t = __uint_least64_t 
-
-# (placeholder) | `-TypedefType 0x1edf9440 '__uint_least64_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb6a0 '__uint_least64_t'
-
-# (placeholder) |   `-TypedefType 0x1edeb670 '__uint64_t' sugar
-
-# (placeholder) |     |-Typedef 0x1edeb220 '__uint64_t'
-
-# (placeholder) |     `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias int_fast8_t = signed char 
-
-# (placeholder) | `-BuiltinType 0x1ecf6420 'signed char'
-
-alias int_fast16_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias int_fast32_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias int_fast64_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias uint_fast8_t = unsigned char 
-
-# (placeholder) | `-BuiltinType 0x1ecf64c0 'unsigned char'
-
-alias uint_fast16_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias uint_fast32_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias uint_fast64_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias intptr_t = long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
-
-alias uintptr_t = unsigned long 
-
-# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
-
-alias intmax_t = __intmax_t 
-
-# (placeholder) | `-TypedefType 0x1edf9930 '__intmax_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb7f0 '__intmax_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
-
-alias uintmax_t = __uintmax_t 
-
-# (placeholder) | `-TypedefType 0x1edf99c0 '__uintmax_t' sugar
-
-# (placeholder) |   |-Typedef 0x1edeb860 '__uintmax_t'
-
-# (placeholder) |   `-BuiltinType 0x1ecf6520 'unsigned long'
 
 alias mjtNum = double 
 
-# (placeholder) | `-BuiltinType 0x1ecf6580 'double'
-
 alias mjtByte = unsigned char 
-
-# (placeholder) | |-BuiltinType 0x1ecf64c0 'unsigned char'
-
-#-------------------------------------- byte definition -------------------------------------------
 struct mjtDisableBit_:
 	#---------------------------------- enum types (mjt) ----------------------------------------------
 
@@ -811,14 +151,6 @@ struct mjtDisableBit_:
 
 
 alias mjtDisableBit = mjtDisableBit_ 
-
-# (placeholder) | |-ElaboratedType 0x1ee061b0 'enum mjtDisableBit_' sugar
-
-# (placeholder) | | `-EnumType 0x1ee01f40 'enum mjtDisableBit_'
-
-# (placeholder) | |   `-Enum 0x1ee01e98 'mjtDisableBit_'
-
-#---------------------------------- enum types (mjt) ----------------------------------------------
 struct mjtEnableBit_:
 	alias mjENBL_OVERRIDE: Int = 1
 
@@ -838,12 +170,6 @@ struct mjtEnableBit_:
 
 
 alias mjtEnableBit = mjtEnableBit_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee06b30 'enum mjtEnableBit_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee06320 'enum mjtEnableBit_'
-
-# (placeholder) |     `-Enum 0x1ee06278 'mjtEnableBit_'
 struct mjtJoint_:
 	alias mjJNT_FREE: Int = 0
 
@@ -855,12 +181,6 @@ struct mjtJoint_:
 
 
 alias mjtJoint = mjtJoint_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee06f80 'enum mjtJoint_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee06ca0 'enum mjtJoint_'
-
-# (placeholder) |     `-Enum 0x1ee06bf8 'mjtJoint_'
 struct mjtGeom_:
 	alias mjGEOM_PLANE: Int = 0
 
@@ -904,12 +224,6 @@ struct mjtGeom_:
 
 
 alias mjtGeom = mjtGeom_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee07c60 'enum mjtGeom_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee070f0 'enum mjtGeom_'
-
-# (placeholder) |     `-Enum 0x1ee07048 'mjtGeom_'
 struct mjtCamLight_:
 	alias mjCAMLIGHT_FIXED: Int = 0
 
@@ -923,12 +237,6 @@ struct mjtCamLight_:
 
 
 alias mjtCamLight = mjtCamLight_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee09120 'enum mjtCamLight_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee07dd0 'enum mjtCamLight_'
-
-# (placeholder) |     `-Enum 0x1ee07d28 'mjtCamLight_'
 struct mjtTexture_:
 	alias mjTEXTURE_2D: Int = 0
 
@@ -938,12 +246,6 @@ struct mjtTexture_:
 
 
 alias mjtTexture = mjtTexture_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee094a0 'enum mjtTexture_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee09290 'enum mjtTexture_'
-
-# (placeholder) |     `-Enum 0x1ee091e8 'mjtTexture_'
 struct mjtTextureRole_:
 	alias mjTEXROLE_USER: Int = 0
 
@@ -969,12 +271,6 @@ struct mjtTextureRole_:
 
 
 alias mjtTextureRole = mjtTextureRole_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee09bf0 'enum mjtTextureRole_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee09610 'enum mjtTextureRole_'
-
-# (placeholder) |     `-Enum 0x1ee09568 'mjtTextureRole_'
 struct mjtIntegrator_:
 	alias mjINT_EULER: Int = 0
 
@@ -986,12 +282,6 @@ struct mjtIntegrator_:
 
 
 alias mjtIntegrator = mjtIntegrator_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0a030 'enum mjtIntegrator_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee09d60 'enum mjtIntegrator_'
-
-# (placeholder) |     `-Enum 0x1ee09cb8 'mjtIntegrator_'
 struct mjtCone_:
 	alias mjCONE_PYRAMIDAL: Int = 0
 
@@ -999,12 +289,6 @@ struct mjtCone_:
 
 
 alias mjtCone = mjtCone_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0a330 'enum mjtCone_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0a1a0 'enum mjtCone_'
-
-# (placeholder) |     `-Enum 0x1ee0a0f8 'mjtCone_'
 struct mjtJacobian_:
 	alias mjJAC_DENSE: Int = 0
 
@@ -1014,12 +298,6 @@ struct mjtJacobian_:
 
 
 alias mjtJacobian = mjtJacobian_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0a6b0 'enum mjtJacobian_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0a4a0 'enum mjtJacobian_'
-
-# (placeholder) |     `-Enum 0x1ee0a3f8 'mjtJacobian_'
 struct mjtSolver_:
 	alias mjSOL_PGS: Int = 0
 
@@ -1029,12 +307,6 @@ struct mjtSolver_:
 
 
 alias mjtSolver = mjtSolver_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0aa30 'enum mjtSolver_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0a820 'enum mjtSolver_'
-
-# (placeholder) |     `-Enum 0x1ee0a778 'mjtSolver_'
 struct mjtEq_:
 	alias mjEQ_CONNECT: Int = 0
 
@@ -1050,12 +322,6 @@ struct mjtEq_:
 
 
 alias mjtEq = mjtEq_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0b340 'enum mjtEq_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0aba0 'enum mjtEq_'
-
-# (placeholder) |     `-Enum 0x1ee0aaf8 'mjtEq_'
 struct mjtWrap_:
 	alias mjWRAP_NONE: Int = 0
 
@@ -1071,12 +337,6 @@ struct mjtWrap_:
 
 
 alias mjtWrap = mjtWrap_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0b840 'enum mjtWrap_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0b4b0 'enum mjtWrap_'
-
-# (placeholder) |     `-Enum 0x1ee0b408 'mjtWrap_'
 struct mjtTrn_:
 	alias mjTRN_JOINT: Int = 0
 
@@ -1094,12 +354,6 @@ struct mjtTrn_:
 
 
 alias mjtTrn = mjtTrn_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0be00 'enum mjtTrn_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0b9b0 'enum mjtTrn_'
-
-# (placeholder) |     `-Enum 0x1ee0b908 'mjtTrn_'
 struct mjtDyn_:
 	alias mjDYN_NONE: Int = 0
 
@@ -1115,12 +369,6 @@ struct mjtDyn_:
 
 
 alias mjtDyn = mjtDyn_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0e8f0 'enum mjtDyn_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0bf70 'enum mjtDyn_'
-
-# (placeholder) |     `-Enum 0x1ee0bec8 'mjtDyn_'
 struct mjtGain_:
 	alias mjGAIN_FIXED: Int = 0
 
@@ -1132,12 +380,6 @@ struct mjtGain_:
 
 
 alias mjtGain = mjtGain_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0ecf0 'enum mjtGain_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0ea60 'enum mjtGain_'
-
-# (placeholder) |     `-Enum 0x1ee0e9b8 'mjtGain_'
 struct mjtBias_:
 	alias mjBIAS_NONE: Int = 0
 
@@ -1149,12 +391,6 @@ struct mjtBias_:
 
 
 alias mjtBias = mjtBias_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee0f0f0 'enum mjtBias_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0ee60 'enum mjtBias_'
-
-# (placeholder) |     `-Enum 0x1ee0edb8 'mjtBias_'
 struct mjtObj_:
 	alias mjOBJ_UNKNOWN: Int = 0
 
@@ -1214,12 +450,6 @@ struct mjtObj_:
 
 
 alias mjtObj = mjtObj_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee10720 'enum mjtObj_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee0f260 'enum mjtObj_'
-
-# (placeholder) |     `-Enum 0x1ee0f1b8 'mjtObj_'
 struct mjtConstraint_:
 	alias mjCNSTR_EQUALITY: Int = 0
 
@@ -1239,12 +469,6 @@ struct mjtConstraint_:
 
 
 alias mjtConstraint = mjtConstraint_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee10d20 'enum mjtConstraint_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee10890 'enum mjtConstraint_'
-
-# (placeholder) |     `-Enum 0x1ee107e8 'mjtConstraint_'
 struct mjtConstraintState_:
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 
@@ -1258,12 +482,6 @@ struct mjtConstraintState_:
 
 
 alias mjtConstraintState = mjtConstraintState_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee118b0 'enum mjtConstraintState_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee115a0 'enum mjtConstraintState_'
-
-# (placeholder) |     `-Enum 0x1ee11500 'mjtConstraintState_'
 struct mjtSensor_:
 	alias mjSENS_TOUCH: Int = 0
 
@@ -1353,12 +571,6 @@ struct mjtSensor_:
 
 
 alias mjtSensor = mjtSensor_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee139b0 'enum mjtSensor_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee11a20 'enum mjtSensor_'
-
-# (placeholder) |     `-Enum 0x1ee11978 'mjtSensor_'
 struct mjtStage_:
 	alias mjSTAGE_NONE: Int = 0
 
@@ -1370,12 +582,6 @@ struct mjtStage_:
 
 
 alias mjtStage = mjtStage_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee14150 'enum mjtStage_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee13b20 'enum mjtStage_'
-
-# (placeholder) |     `-Enum 0x1ee13a78 'mjtStage_'
 struct mjtDataType_:
 	alias mjDATATYPE_REAL: Int = 0
 
@@ -1387,12 +593,6 @@ struct mjtDataType_:
 
 
 alias mjtDataType = mjtDataType_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee14550 'enum mjtDataType_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee142c0 'enum mjtDataType_'
-
-# (placeholder) |     `-Enum 0x1ee14218 'mjtDataType_'
 struct mjtSameFrame_:
 	alias mjSAMEFRAME_NONE: Int = 0
 
@@ -1406,12 +606,6 @@ struct mjtSameFrame_:
 
 
 alias mjtSameFrame = mjtSameFrame_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee149d0 'enum mjtSameFrame_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee146c0 'enum mjtSameFrame_'
-
-# (placeholder) |     `-Enum 0x1ee14618 'mjtSameFrame_'
 struct mjtLRMode_:
 	alias mjLRMODE_NONE: Int = 0
 
@@ -1423,12 +617,6 @@ struct mjtLRMode_:
 
 
 alias mjtLRMode = mjtLRMode_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee14dd0 'enum mjtLRMode_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee14b40 'enum mjtLRMode_'
-
-# (placeholder) |     `-Enum 0x1ee14a98 'mjtLRMode_'
 struct mjtFlexSelf_:
 	alias mjFLEXSELF_NONE: Int = 0
 
@@ -1442,12 +630,6 @@ struct mjtFlexSelf_:
 
 
 alias mjtFlexSelf = mjtFlexSelf_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee17270 'enum mjtFlexSelf_' sugar
-
-# (placeholder) |   `-EnumType 0x1ee14f40 'enum mjtFlexSelf_'
-
-# (placeholder) |     `-Enum 0x1ee14e98 'mjtFlexSelf_'
 struct mjLROpt_:
 	#---------------------------------- mjLROpt -------------------------------------------------------
 
@@ -1473,12 +655,6 @@ struct mjLROpt_:
 
 
 alias mjLROpt = mjLROpt_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee17a50 'struct mjLROpt_' sugar
-
-# (placeholder) |   `-RecordType 0x1ee173e0 'struct mjLROpt_'
-
-# (placeholder) |     `-Record 0x1ee17360 'mjLROpt_'
 struct mjVFS_:
 	#---------------------------------- mjVFS ---------------------------------------------------------
 
@@ -1486,12 +662,6 @@ struct mjVFS_:
 
 
 alias mjVFS = mjVFS_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee17c90 'struct mjVFS_' sugar
-
-# (placeholder) |   `-RecordType 0x1ee17bb0 'struct mjVFS_'
-
-# (placeholder) |     `-Record 0x1ee17b28 'mjVFS_'
 struct mjOption_:
 	#---------------------------------- mjOption ------------------------------------------------------
 
@@ -1555,13 +725,7 @@ struct mjOption_:
 
 
 alias mjOption = mjOption_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee1c4b0 'struct mjOption_' sugar
-
-# (placeholder) |   `-RecordType 0x1ee17df0 'struct mjOption_'
-
-# (placeholder) |     `-Record 0x1ee17d68 'mjOption_'
-struct _mjVisual___Anonymous_861:
+struct _mjVisual___Anonymous_442:
 	var fog: float[4]
 
 	var haze: float[4]
@@ -1613,7 +777,7 @@ struct _mjVisual___Anonymous_861:
 	var bvactive: float[4]
 
 
-struct _mjVisual___Anonymous_842:
+struct _mjVisual___Anonymous_423:
 	var forcewidth: Float32
 
 	var contactwidth: Float32
@@ -1649,7 +813,7 @@ struct _mjVisual___Anonymous_842:
 	var frustum: Float32
 
 
-struct _mjVisual___Anonymous_827:
+struct _mjVisual___Anonymous_408:
 	var stiffness: Float32
 
 	var stiffnessrot: Float32
@@ -1677,7 +841,7 @@ struct _mjVisual___Anonymous_827:
 	var actuatortendon: Float32
 
 
-struct _mjVisual___Anonymous_821:
+struct _mjVisual___Anonymous_402:
 	var ambient: float[3]
 
 	var diffuse: float[3]
@@ -1687,7 +851,7 @@ struct _mjVisual___Anonymous_821:
 	var active: Int
 
 
-struct _mjVisual___Anonymous_814:
+struct _mjVisual___Anonymous_395:
 	var shadowsize: Int
 
 	var offsamples: Int
@@ -1699,7 +863,7 @@ struct _mjVisual___Anonymous_814:
 	var numquads: Int
 
 
-struct _mjVisual___Anonymous_800:
+struct _mjVisual___Anonymous_381:
 	var orthographic: Int
 
 	var fovy: Float32
@@ -1728,26 +892,20 @@ struct _mjVisual___Anonymous_800:
 struct mjVisual_:
 	#---------------------------------- mjVisual ------------------------------------------------------
 
-	var global: _mjVisual___Anonymous_800
+	var global: _mjVisual___Anonymous_381
 
-	var quality: _mjVisual___Anonymous_814
+	var quality: _mjVisual___Anonymous_395
 
-	var headlight: _mjVisual___Anonymous_821
+	var headlight: _mjVisual___Anonymous_402
 
-	var map: _mjVisual___Anonymous_827
+	var map: _mjVisual___Anonymous_408
 
-	var scale: _mjVisual___Anonymous_842
+	var scale: _mjVisual___Anonymous_423
 
-	var rgba: _mjVisual___Anonymous_861
+	var rgba: _mjVisual___Anonymous_442
 
 
 alias mjVisual = mjVisual_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee21540 'struct mjVisual_' sugar
-
-# (placeholder) |   `-RecordType 0x1ee1c610 'struct mjVisual_'
-
-# (placeholder) |     `-Record 0x1ee1c588 'mjVisual_'
 struct mjStatistic_:
 	#---------------------------------- mjStatistic ---------------------------------------------------
 
@@ -1763,12 +921,6 @@ struct mjStatistic_:
 
 
 alias mjStatistic = mjStatistic_ 
-
-# (placeholder) | `-ElaboratedType 0x1ee21a10 'struct mjStatistic_' sugar
-
-# (placeholder) |   `-RecordType 0x1ee216a0 'struct mjStatistic_'
-
-# (placeholder) |     `-Record 0x1ee21618 'mjStatistic_'
 struct mjModel_:
 	#---------------------------------- mjModel -------------------------------------------------------
 
@@ -1928,9 +1080,9 @@ struct mjModel_:
 
 	var npluginstate: Int
 
-	var narena: size_t:unsigned long
+	var invalid: narena int
 
-	var nbuffer: size_t:unsigned long
+	var invalid: nbuffer int
 
 	var opt: mjOption
 
@@ -2708,9 +1860,3 @@ struct mjModel_:
 
 
 alias mjModel = mjModel_ 
-
-# (placeholder)   `-ElaboratedType 0x1ee45000 'struct mjModel_' sugar
-
-# (placeholder)     `-RecordType 0x1ee21b70 'struct mjModel_'
-
-# (placeholder)       `-Record 0x1ee21ae8 'mjModel_'

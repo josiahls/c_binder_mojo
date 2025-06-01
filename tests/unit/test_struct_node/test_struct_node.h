@@ -13,6 +13,10 @@ struct Person {
 struct Empty {
 };
 
+
+// An even more empty struct
+struct SuperEmpty;
+
 // Multi-line struct with comments
 struct Complex {
     // Basic types

@@ -28,13 +28,13 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
     var _field_type: String
     var _is_const: Bool
     var _value: String
-
+    var _is_extern: Bool
     fn __init__(out self):
         self._field_name = String()
         self._field_type = String()
         self._is_const = False
         self._value = String()
-
+        self._is_extern = False
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         # TODO(josiahls): Toggle depending on whether this is a const
@@ -42,7 +42,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         self._field_type = String()
         self._is_const = False
         self._value = String()
-
+        self._is_extern = False
         not_originally_const = False
         
         for entry in ast_entries:
@@ -51,8 +51,12 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                     self._is_const = True
                     not_originally_const = True
                 for token in entry[].tokens:
-                    if self._field_name == "":
+                    if token[] == "extern":
+                        self._is_extern = True
+                    elif self._field_name == "":
                         self._field_name = token[]
+                    elif self._field_type == "":
+                        self._field_type = token[]
                     # TODO(josiahls): Not sure if we need this.? e.g. there is int cinit.
                     # else:
                     #     self._field_type += " " + token[]
@@ -86,8 +90,10 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
 
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)
-        if self._is_const:
+        if self._is_const and not self._is_extern:
             return "alias " + self._field_name + ": " + mojo_type + " = " + self._value
+        elif self._is_extern:
+            return "alias " + self._field_name + ": " + mojo_type + " # extern"
         else:
             return "var " + self._field_name + ": " + mojo_type
 

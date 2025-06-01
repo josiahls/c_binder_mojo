@@ -26,17 +26,22 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
     var _name: String
     var _type: String
     var _is_referenced: Bool
+    var _is_implicit: Bool
 
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
         self._type = String()
         self._is_referenced = False
+        self._is_implicit = False
         if len(ast_entries) == 1:
             starting_idx = 0
             if ast_entries[0].tokens[0] == "referenced":
                 starting_idx = 1
                 self._is_referenced = True
+            if ast_entries[0].tokens[0] == "implicit":
+                self._is_implicit = True
+                starting_idx = 1
 
             self._name = ast_entries[0].tokens[starting_idx]
             

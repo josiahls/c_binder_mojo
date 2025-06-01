@@ -34,12 +34,17 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         self._name = String()
         if len(ast_entries) > 1 or len(ast_entries) == 0:
             print("RecordDeclNode: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
+            for entry in ast_entries:
+                print("\tentry: " + String(entry))
         else:
             entry = ast_entries._ast_entries[0]
             if len(entry.tokens) == 2:
-                # TODO(josiahls): Add a global counter for anonymous structs to avoid
-                # name collisions.
-                self._name = "_Anonymous"
+                if entry.tokens[0] == "struct" and entry.tokens[1] == "definition":
+                    # TODO(josiahls): Add a global counter for anonymous structs to avoid
+                    # name collisions.
+                    self._name = "_Anonymous"
+                else:
+                    self._name = entry.tokens[1]
             elif len(entry.tokens) == 3:
                 # Idx 0 should be struct
                 # Idx 2 should be definition
@@ -52,6 +57,8 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 self._name = entry.tokens[2]
             else:
                 print("RecordDeclNode: Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
+                for token in entry.tokens:
+                    print("\ttoken: " + token[])
 
 
     fn __str__(self) -> String:
@@ -135,8 +142,8 @@ struct RecordDeclNode(NodeAstLike):
                     anonymous_struct_idx = child_idx[]
                     original_name += "_" + String(anonymous_struct_idx)
 
-                print("original_name: " + original_name)
-                print("parent._name: " + self._grammar._name)
+                
+                
                 self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
                 child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
             elif child.node[].isa[FieldDeclNode]():
@@ -144,7 +151,7 @@ struct RecordDeclNode(NodeAstLike):
                     child.node[][FieldDeclNode]._grammar._field_type = "_" + self._grammar._name + "__Anonymous_" + String(anonymous_struct_idx)
                     anonymous_struct_caught = False
                     anonymous_struct_idx = 0
-                print("field_type: " + child.node[][FieldDeclNode]._grammar._field_type)
+                
                 if child.node[][FieldDeclNode]._grammar._field_type in self._inner_struct_name_map:
                     try:
                         child.node[][FieldDeclNode]._grammar._field_type = self._inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]

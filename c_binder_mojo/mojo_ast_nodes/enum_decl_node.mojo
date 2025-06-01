@@ -25,22 +25,24 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 struct Grammar(Copyable, Movable, Stringable, Writable):
     var _name: String
+    var _is_anonymous: Bool
 
     fn __init__(out self):
         self._name = String()
+        self._is_anonymous = False
 
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
+        self._is_anonymous = False
         if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print("Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
+            print("EnumDeclNode: Invalid grammar (len(ast_entries) > 1 or len(ast_entries) == 0): " + String(ast_entries) + " len: " + String(len(ast_entries)))
         else:
             entry = ast_entries._ast_entries[0]
-            if len(entry.tokens) != 1:
-                print("Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
-            elif len(entry.tokens) == 0:
+            if len(entry.tokens) == 0:
                 # TODO(josiahls): Add a global counter for anonymous structs to avoid
                 # name collisions.
+                self._is_anonymous = True
                 self._name = "_Anonymous"
             else:
                 # Idx 0 should be struct
@@ -183,13 +185,20 @@ struct EnumDeclNode(NodeAstLike):
         if not just_code:
             s += indent + self.name(include_sig=True) + "\n"
   
-        s += indent + String(self._grammar)
+        if not self._grammar._is_anonymous:
+            s += indent + String(self._grammar)
+        else:
+            s += indent + "# Anonymous enum"
 
         has_fields = False
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
 
-            s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+            if not self._grammar._is_anonymous:
+                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+            else:
+                # Alias fields will be printed at the root level.
+                s += child.to_string(just_code, module_interface, parent_indent_level)
             
             if child.name() == "EnumConstantDeclNode":
                 has_fields = True

@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x3cc552a8 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x3c457248 <<invalid sloc>> <invalid sloc>
 
 alias <invalid = sloc> implicit __int128_t __int128 
 
@@ -124,7 +124,11 @@ struct Empty:
 	# Empty struct
 	pass
 
-struct _Complex__Anonymous_73:
+struct SuperEmpty:
+	# An even more empty struct
+	pass
+
+struct _Complex__Anonymous_75:
 	# Nested anonymous struct 
 
 	var x: Int
@@ -147,7 +151,7 @@ struct Complex:
 
 	var nested: _Complex_Inner
 
-	var nested_anonymous: _Complex__Anonymous_73
+	var nested_anonymous: _Complex__Anonymous_75
 
 struct _Anonymous:
 	# Anonymous struct in typedef

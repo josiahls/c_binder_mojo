@@ -249,13 +249,13 @@ struct AstParser:
                 ) and not ast_entry.full_location.endswith(">"):
                     ast_entry.full_location += " " + token[]
                 elif (
-                    "<<invalid sloc>>" in token[]
-                    and ast_entry.full_location == ""
+                    (token[].startswith("<<invalid") and ast_entry.full_location == "")
+                    or (token[].endswith("sloc>>") and not ast_entry.full_location.endswith(">>"))
                 ):
                     ast_entry.full_location = "invalid"
                 elif (
-                    "<invalid sloc>" in token[]
-                    and ast_entry.precise_location == ""
+                    (token[].startswith("<invalid") and ast_entry.precise_location == "")
+                    or (token[].endswith("sloc>") and not ast_entry.precise_location.endswith(">"))
                 ):
                     ast_entry.precise_location = "invalid"
                 elif (
@@ -267,6 +267,8 @@ struct AstParser:
                     token[].startswith("line:")
                     and ast_entry.precise_location == ""
                 ):
+                    ast_entry.precise_location = token[]
+                elif token[].startswith("/") and ":" in token[] and ast_entry.precise_location == "":
                     ast_entry.precise_location = token[]
                 elif (
                     token[] == ""

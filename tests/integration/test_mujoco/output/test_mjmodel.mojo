@@ -1,775 +1,775 @@
 
-# (placeholder) TranslationUnitDecl 0x30cdc358 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x1ecf6358 <<invalid sloc>> <invalid sloc>
 
-# (placeholder) |-TypedefDecl 0x30cdd1a0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+alias <invalid = sloc> implicit __int128_t __int128 
 
-# (placeholder) | `-BuiltinType 0x30cdc920 '__int128'
+# (placeholder) | `-BuiltinType 0x1ecf6920 '__int128'
 
-# (placeholder) |-TypedefDecl 0x30cdd210 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+alias <invalid = sloc> implicit __uint128_t unsigned __int128 
 
-# (placeholder) | `-BuiltinType 0x30cdc940 'unsigned __int128'
+# (placeholder) | `-BuiltinType 0x1ecf6940 'unsigned __int128'
 
-# (placeholder) |-TypedefDecl 0x30d7ebd8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+alias <invalid = sloc> implicit __NSConstantString __NSConstantString_tag 
 
-# (placeholder) | `-RecordType 0x30cdd2f0 'struct __NSConstantString_tag'
+# (placeholder) | `-RecordType 0x1ecf72f0 'struct __NSConstantString_tag'
 
-# (placeholder) |   `-Record 0x30cdd268 '__NSConstantString_tag'
+# (placeholder) |   `-Record 0x1ecf7268 '__NSConstantString_tag'
 
-# (placeholder) |-TypedefDecl 0x30d7ec40 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+alias <invalid = sloc> implicit __SVInt8_t __SVInt8_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcae0 '__SVInt8_t'
+# (placeholder) | `-BuiltinType 0x1ecf6ae0 '__SVInt8_t'
 
-# (placeholder) |-TypedefDecl 0x30d7eca8 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+alias <invalid = sloc> implicit __SVInt16_t __SVInt16_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcb00 '__SVInt16_t'
+# (placeholder) | `-BuiltinType 0x1ecf6b00 '__SVInt16_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ed10 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+alias <invalid = sloc> implicit __SVInt32_t __SVInt32_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcb20 '__SVInt32_t'
+# (placeholder) | `-BuiltinType 0x1ecf6b20 '__SVInt32_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ed78 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+alias <invalid = sloc> implicit __SVInt64_t __SVInt64_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcb40 '__SVInt64_t'
+# (placeholder) | `-BuiltinType 0x1ecf6b40 '__SVInt64_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ede0 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+alias <invalid = sloc> implicit __SVUint8_t __SVUint8_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcb60 '__SVUint8_t'
+# (placeholder) | `-BuiltinType 0x1ecf6b60 '__SVUint8_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ee48 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+alias <invalid = sloc> implicit __SVUint16_t __SVUint16_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcb80 '__SVUint16_t'
+# (placeholder) | `-BuiltinType 0x1ecf6b80 '__SVUint16_t'
 
-# (placeholder) |-TypedefDecl 0x30d7eeb0 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+alias <invalid = sloc> implicit __SVUint32_t __SVUint32_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcba0 '__SVUint32_t'
+# (placeholder) | `-BuiltinType 0x1ecf6ba0 '__SVUint32_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ef18 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+alias <invalid = sloc> implicit __SVUint64_t __SVUint64_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcbc0 '__SVUint64_t'
+# (placeholder) | `-BuiltinType 0x1ecf6bc0 '__SVUint64_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ef80 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+alias <invalid = sloc> implicit __SVFloat16_t __SVFloat16_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcbe0 '__SVFloat16_t'
+# (placeholder) | `-BuiltinType 0x1ecf6be0 '__SVFloat16_t'
 
-# (placeholder) |-TypedefDecl 0x30d7efe8 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+alias <invalid = sloc> implicit __SVFloat32_t __SVFloat32_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcc00 '__SVFloat32_t'
+# (placeholder) | `-BuiltinType 0x1ecf6c00 '__SVFloat32_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f050 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+alias <invalid = sloc> implicit __SVFloat64_t __SVFloat64_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcc20 '__SVFloat64_t'
+# (placeholder) | `-BuiltinType 0x1ecf6c20 '__SVFloat64_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f0b8 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+alias <invalid = sloc> implicit __SVBFloat16_t __SVBFloat16_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcc40 '__SVBFloat16_t'
+# (placeholder) | `-BuiltinType 0x1ecf6c40 '__SVBFloat16_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f120 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+alias <invalid = sloc> implicit __clang_svint8x2_t __clang_svint8x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcc60 '__clang_svint8x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6c60 '__clang_svint8x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f188 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+alias <invalid = sloc> implicit __clang_svint16x2_t __clang_svint16x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcc80 '__clang_svint16x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6c80 '__clang_svint16x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f1f0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+alias <invalid = sloc> implicit __clang_svint32x2_t __clang_svint32x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcca0 '__clang_svint32x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6ca0 '__clang_svint32x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f258 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+alias <invalid = sloc> implicit __clang_svint64x2_t __clang_svint64x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdccc0 '__clang_svint64x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6cc0 '__clang_svint64x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f2c0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+alias <invalid = sloc> implicit __clang_svuint8x2_t __clang_svuint8x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcce0 '__clang_svuint8x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6ce0 '__clang_svuint8x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f328 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+alias <invalid = sloc> implicit __clang_svuint16x2_t __clang_svuint16x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcd00 '__clang_svuint16x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6d00 '__clang_svuint16x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f390 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+alias <invalid = sloc> implicit __clang_svuint32x2_t __clang_svuint32x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcd20 '__clang_svuint32x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6d20 '__clang_svuint32x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f3f8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+alias <invalid = sloc> implicit __clang_svuint64x2_t __clang_svuint64x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcd40 '__clang_svuint64x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6d40 '__clang_svuint64x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f460 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+alias <invalid = sloc> implicit __clang_svfloat16x2_t __clang_svfloat16x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcd60 '__clang_svfloat16x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6d60 '__clang_svfloat16x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f4c8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+alias <invalid = sloc> implicit __clang_svfloat32x2_t __clang_svfloat32x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcd80 '__clang_svfloat32x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6d80 '__clang_svfloat32x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f530 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+alias <invalid = sloc> implicit __clang_svfloat64x2_t __clang_svfloat64x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcda0 '__clang_svfloat64x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6da0 '__clang_svfloat64x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f598 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+alias <invalid = sloc> implicit __clang_svbfloat16x2_t __clang_svbfloat16x2_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcdc0 '__clang_svbfloat16x2_t'
+# (placeholder) | `-BuiltinType 0x1ecf6dc0 '__clang_svbfloat16x2_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f600 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+alias <invalid = sloc> implicit __clang_svint8x3_t __clang_svint8x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcde0 '__clang_svint8x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6de0 '__clang_svint8x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f668 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+alias <invalid = sloc> implicit __clang_svint16x3_t __clang_svint16x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdce00 '__clang_svint16x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6e00 '__clang_svint16x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f6d0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+alias <invalid = sloc> implicit __clang_svint32x3_t __clang_svint32x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdce20 '__clang_svint32x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6e20 '__clang_svint32x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f738 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+alias <invalid = sloc> implicit __clang_svint64x3_t __clang_svint64x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdce40 '__clang_svint64x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6e40 '__clang_svint64x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f7a0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+alias <invalid = sloc> implicit __clang_svuint8x3_t __clang_svuint8x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdce60 '__clang_svuint8x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6e60 '__clang_svuint8x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f808 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+alias <invalid = sloc> implicit __clang_svuint16x3_t __clang_svuint16x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdce80 '__clang_svuint16x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6e80 '__clang_svuint16x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f870 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+alias <invalid = sloc> implicit __clang_svuint32x3_t __clang_svuint32x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcea0 '__clang_svuint32x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6ea0 '__clang_svuint32x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f8d8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+alias <invalid = sloc> implicit __clang_svuint64x3_t __clang_svuint64x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcec0 '__clang_svuint64x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6ec0 '__clang_svuint64x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f940 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+alias <invalid = sloc> implicit __clang_svfloat16x3_t __clang_svfloat16x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcee0 '__clang_svfloat16x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6ee0 '__clang_svfloat16x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7f9a8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+alias <invalid = sloc> implicit __clang_svfloat32x3_t __clang_svfloat32x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcf00 '__clang_svfloat32x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6f00 '__clang_svfloat32x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7fe30 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+alias <invalid = sloc> implicit __clang_svfloat64x3_t __clang_svfloat64x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcf20 '__clang_svfloat64x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6f20 '__clang_svfloat64x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7fe98 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+alias <invalid = sloc> implicit __clang_svbfloat16x3_t __clang_svbfloat16x3_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcf40 '__clang_svbfloat16x3_t'
+# (placeholder) | `-BuiltinType 0x1ecf6f40 '__clang_svbfloat16x3_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ff00 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+alias <invalid = sloc> implicit __clang_svint8x4_t __clang_svint8x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcf60 '__clang_svint8x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf6f60 '__clang_svint8x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ff68 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+alias <invalid = sloc> implicit __clang_svint16x4_t __clang_svint16x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcf80 '__clang_svint16x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf6f80 '__clang_svint16x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d7ffd0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+alias <invalid = sloc> implicit __clang_svint32x4_t __clang_svint32x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcfa0 '__clang_svint32x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf6fa0 '__clang_svint32x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d80038 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+alias <invalid = sloc> implicit __clang_svint64x4_t __clang_svint64x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcfc0 '__clang_svint64x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf6fc0 '__clang_svint64x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d800a0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+alias <invalid = sloc> implicit __clang_svuint8x4_t __clang_svuint8x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdcfe0 '__clang_svuint8x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf6fe0 '__clang_svuint8x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d80108 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+alias <invalid = sloc> implicit __clang_svuint16x4_t __clang_svuint16x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd000 '__clang_svuint16x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf7000 '__clang_svuint16x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d80170 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+alias <invalid = sloc> implicit __clang_svuint32x4_t __clang_svuint32x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd020 '__clang_svuint32x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf7020 '__clang_svuint32x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d801d8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+alias <invalid = sloc> implicit __clang_svuint64x4_t __clang_svuint64x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd040 '__clang_svuint64x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf7040 '__clang_svuint64x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d80240 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+alias <invalid = sloc> implicit __clang_svfloat16x4_t __clang_svfloat16x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd060 '__clang_svfloat16x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf7060 '__clang_svfloat16x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d802a8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+alias <invalid = sloc> implicit __clang_svfloat32x4_t __clang_svfloat32x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd080 '__clang_svfloat32x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf7080 '__clang_svfloat32x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d80310 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+alias <invalid = sloc> implicit __clang_svfloat64x4_t __clang_svfloat64x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd0a0 '__clang_svfloat64x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf70a0 '__clang_svfloat64x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d80378 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+alias <invalid = sloc> implicit __clang_svbfloat16x4_t __clang_svbfloat16x4_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd0c0 '__clang_svbfloat16x4_t'
+# (placeholder) | `-BuiltinType 0x1ecf70c0 '__clang_svbfloat16x4_t'
 
-# (placeholder) |-TypedefDecl 0x30d803e0 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+alias <invalid = sloc> implicit __SVBool_t __SVBool_t 
 
-# (placeholder) | `-BuiltinType 0x30cdd0e0 '__SVBool_t'
+# (placeholder) | `-BuiltinType 0x1ecf70e0 '__SVBool_t'
 
-# (placeholder) |-TypedefDecl 0x30d80480 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+alias <invalid = sloc> implicit __builtin_ms_va_list char * 
 
-# (placeholder) | `-PointerType 0x30d80440 'char *'
+# (placeholder) | `-PointerType 0x1ed9a440 'char *'
 
-# (placeholder) |   `-BuiltinType 0x30cdc400 'char'
+# (placeholder) |   `-BuiltinType 0x1ecf6400 'char'
 
-# (placeholder) |-TypedefDecl 0x30d807e8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
+alias <invalid = sloc> implicit __builtin_va_list std 
 
-# (placeholder) | `-RecordType 0x30d80560 'struct std::__va_list'
+# (placeholder) | `-RecordType 0x1ed9a560 'struct std::__va_list'
 
-# (placeholder) |   `-Record 0x30d804d8 '__va_list'
+# (placeholder) |   `-Record 0x1ed9a4d8 '__va_list'
 
-# (placeholder) |-TypedefDecl 0x30d80880 </usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:35:1, col:26> col:26 ptrdiff_t 'long'
+alias ptrdiff_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30d808f0 <line:46:1, col:23> col:23 referenced size_t 'unsigned long'
+alias size_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30d80960 <line:74:1, col:24> col:24 wchar_t 'unsigned int'
+alias wchar_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 struct _Anonymous:
 	alias __clang_max_align_nonce1: Int64 = 8
 
 	alias __clang_max_align_nonce2: long double = 16
 
 
-# (placeholder) |-TypedefDecl 0x30d80cf8 <line:19:1, line:24:3> col:3 max_align_t 'struct max_align_t':'max_align_t'
+alias max_align_t = max_align_t 
 
-# (placeholder) | `-ElaboratedType 0x30d80ca0 'struct max_align_t' sugar
+# (placeholder) | `-ElaboratedType 0x1ed9aca0 'struct max_align_t' sugar
 
-# (placeholder) |   `-RecordType 0x30d80a40 'max_align_t'
+# (placeholder) |   `-RecordType 0x1ed9aa40 'max_align_t'
 
-# (placeholder) |     `-Record 0x30d809b8 ''
+# (placeholder) |     `-Record 0x1ed9a9b8 ''
 
-# (placeholder) |-TypedefDecl 0x30d80d80 </usr/include/aarch64-linux-gnu/bits/types.h:31:1, col:23> col:23 __u_char 'unsigned char'
+alias __u_char = unsigned char 
 
-# (placeholder) | `-BuiltinType 0x30cdc4c0 'unsigned char'
+# (placeholder) | `-BuiltinType 0x1ecf64c0 'unsigned char'
 
-# (placeholder) |-TypedefDecl 0x30dd0dc0 <line:32:1, col:28> col:28 __u_short 'unsigned short'
+alias __u_short = unsigned short 
 
-# (placeholder) | `-BuiltinType 0x30cdc4e0 'unsigned short'
+# (placeholder) | `-BuiltinType 0x1ecf64e0 'unsigned short'
 
-# (placeholder) |-TypedefDecl 0x30dd0e30 <line:33:1, col:22> col:22 __u_int 'unsigned int'
+alias __u_int = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30dd0ea0 <line:34:1, col:27> col:27 __u_long 'unsigned long'
+alias __u_long = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd0f10 <line:37:1, col:21> col:21 referenced __int8_t 'signed char'
+alias __int8_t = signed char 
 
-# (placeholder) | `-BuiltinType 0x30cdc420 'signed char'
+# (placeholder) | `-BuiltinType 0x1ecf6420 'signed char'
 
-# (placeholder) |-TypedefDecl 0x30dd0f80 <line:38:1, col:23> col:23 referenced __uint8_t 'unsigned char'
+alias __uint8_t = unsigned char 
 
-# (placeholder) | `-BuiltinType 0x30cdc4c0 'unsigned char'
+# (placeholder) | `-BuiltinType 0x1ecf64c0 'unsigned char'
 
-# (placeholder) |-TypedefDecl 0x30dd0ff0 <line:39:1, col:26> col:26 referenced __int16_t 'short'
+alias __int16_t = short 
 
-# (placeholder) | `-BuiltinType 0x30cdc440 'short'
+# (placeholder) | `-BuiltinType 0x1ecf6440 'short'
 
-# (placeholder) |-TypedefDecl 0x30dd1060 <line:40:1, col:28> col:28 referenced __uint16_t 'unsigned short'
+alias __uint16_t = unsigned short 
 
-# (placeholder) | `-BuiltinType 0x30cdc4e0 'unsigned short'
+# (placeholder) | `-BuiltinType 0x1ecf64e0 'unsigned short'
 
-# (placeholder) |-TypedefDecl 0x30dd10d0 <line:41:1, col:20> col:20 referenced __int32_t 'int'
+alias __int32_t = int 
 
-# (placeholder) | `-BuiltinType 0x30cdc460 'int'
+# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30dd1140 <line:42:1, col:22> col:22 referenced __uint32_t 'unsigned int'
+alias __uint32_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30dd11b0 <line:44:1, col:25> col:25 referenced __int64_t 'long'
+alias __int64_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30dd1220 <line:45:1, col:27> col:27 referenced __uint64_t 'unsigned long'
+alias __uint64_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd12b0 <line:52:1, col:18> col:18 referenced __int_least8_t '__int8_t':'signed char'
+alias __int_least8_t = __int8_t 
 
-# (placeholder) | `-TypedefType 0x30dd1280 '__int8_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb280 '__int8_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd0f10 '__int8_t'
+# (placeholder) |   |-Typedef 0x1edeaf10 '__int8_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc420 'signed char'
+# (placeholder) |   `-BuiltinType 0x1ecf6420 'signed char'
 
-# (placeholder) |-TypedefDecl 0x30dd1340 <line:53:1, col:19> col:19 referenced __uint_least8_t '__uint8_t':'unsigned char'
+alias __uint_least8_t = __uint8_t 
 
-# (placeholder) | `-TypedefType 0x30dd1310 '__uint8_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb310 '__uint8_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd0f80 '__uint8_t'
+# (placeholder) |   |-Typedef 0x1edeaf80 '__uint8_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc4c0 'unsigned char'
+# (placeholder) |   `-BuiltinType 0x1ecf64c0 'unsigned char'
 
-# (placeholder) |-TypedefDecl 0x30dd13d0 <line:54:1, col:19> col:19 referenced __int_least16_t '__int16_t':'short'
+alias __int_least16_t = __int16_t 
 
-# (placeholder) | `-TypedefType 0x30dd13a0 '__int16_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb3a0 '__int16_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd0ff0 '__int16_t'
+# (placeholder) |   |-Typedef 0x1edeaff0 '__int16_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc440 'short'
+# (placeholder) |   `-BuiltinType 0x1ecf6440 'short'
 
-# (placeholder) |-TypedefDecl 0x30dd1460 <line:55:1, col:20> col:20 referenced __uint_least16_t '__uint16_t':'unsigned short'
+alias __uint_least16_t = __uint16_t 
 
-# (placeholder) | `-TypedefType 0x30dd1430 '__uint16_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb430 '__uint16_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1060 '__uint16_t'
+# (placeholder) |   |-Typedef 0x1edeb060 '__uint16_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc4e0 'unsigned short'
+# (placeholder) |   `-BuiltinType 0x1ecf64e0 'unsigned short'
 
-# (placeholder) |-TypedefDecl 0x30dd14f0 <line:56:1, col:19> col:19 referenced __int_least32_t '__int32_t':'int'
+alias __int_least32_t = __int32_t 
 
-# (placeholder) | `-TypedefType 0x30dd14c0 '__int32_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb4c0 '__int32_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd10d0 '__int32_t'
+# (placeholder) |   |-Typedef 0x1edeb0d0 '__int32_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc460 'int'
+# (placeholder) |   `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30dd1580 <line:57:1, col:20> col:20 referenced __uint_least32_t '__uint32_t':'unsigned int'
+alias __uint_least32_t = __uint32_t 
 
-# (placeholder) | `-TypedefType 0x30dd1550 '__uint32_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb550 '__uint32_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1140 '__uint32_t'
+# (placeholder) |   |-Typedef 0x1edeb140 '__uint32_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) |   `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30dd1610 <line:58:1, col:19> col:19 referenced __int_least64_t '__int64_t':'long'
+alias __int_least64_t = __int64_t 
 
-# (placeholder) | `-TypedefType 0x30dd15e0 '__int64_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb5e0 '__int64_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd11b0 '__int64_t'
+# (placeholder) |   |-Typedef 0x1edeb1b0 '__int64_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc480 'long'
+# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30dd16a0 <line:59:1, col:20> col:20 referenced __uint_least64_t '__uint64_t':'unsigned long'
+alias __uint_least64_t = __uint64_t 
 
-# (placeholder) | `-TypedefType 0x30dd1670 '__uint64_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb670 '__uint64_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1220 '__uint64_t'
+# (placeholder) |   |-Typedef 0x1edeb220 '__uint64_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) |   `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd1710 <line:63:1, col:18> col:18 __quad_t 'long'
+alias __quad_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30dd1780 <line:64:1, col:27> col:27 __u_quad_t 'unsigned long'
+alias __u_quad_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd17f0 <line:72:1, col:18> col:18 referenced __intmax_t 'long'
+alias __intmax_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30dd1860 <line:73:1, col:27> col:27 referenced __uintmax_t 'unsigned long'
+alias __uintmax_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd18d0 <line:137:22, line:145:25> col:25 __dev_t 'unsigned long'
+alias __dev_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd1940 <line:137:22, line:146:25> col:25 __uid_t 'unsigned int'
+alias __uid_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30dd19b0 <line:137:22, line:147:25> col:25 __gid_t 'unsigned int'
+alias __gid_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30dd1a20 <line:137:22, line:148:25> col:25 __ino_t 'unsigned long'
+alias __ino_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd1a90 <line:137:22, line:149:27> col:27 __ino64_t 'unsigned long'
+alias __ino64_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30dd1b00 <line:137:22, line:150:26> col:26 __mode_t 'unsigned int'
+alias __mode_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30dd1b70 <line:137:22, line:151:27> col:27 __nlink_t 'unsigned int'
+alias __nlink_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30dd1be0 <line:137:22, line:152:25> col:25 __off_t 'long'
+alias __off_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30dd1c50 <line:137:22, line:153:27> col:27 referenced __off64_t 'long'
+alias __off64_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30dd1cc0 <line:137:22, line:154:25> col:25 __pid_t 'int'
+alias __pid_t = int 
 
-# (placeholder) | `-BuiltinType 0x30cdc460 'int'
+# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
 struct _Anonymous:
 	var __val: int[2]
 
 
-# (placeholder) |-TypedefDecl 0x30ddaf18 </usr/include/aarch64-linux-gnu/bits/types.h:137:22, line:155:26> col:26 __fsid_t 'struct __fsid_t':'__fsid_t'
+alias __fsid_t = __fsid_t 
 
-# (placeholder) | `-ElaboratedType 0x30ddaec0 'struct __fsid_t' sugar
+# (placeholder) | `-ElaboratedType 0x1edf4ec0 'struct __fsid_t' sugar
 
-# (placeholder) |   `-RecordType 0x30dd1da0 '__fsid_t'
+# (placeholder) |   `-RecordType 0x1edebda0 '__fsid_t'
 
-# (placeholder) |     `-Record 0x30dd1d18 ''
+# (placeholder) |     `-Record 0x1edebd18 ''
 
-# (placeholder) |-TypedefDecl 0x30ddafa0 <line:137:22, line:156:27> col:27 __clock_t 'long'
+alias __clock_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb010 <line:137:22, line:157:26> col:26 __rlim_t 'unsigned long'
+alias __rlim_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddb080 <line:137:22, line:158:28> col:28 __rlim64_t 'unsigned long'
+alias __rlim64_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddb0f0 <line:137:22, line:159:24> col:24 __id_t 'unsigned int'
+alias __id_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30ddb160 <line:137:22, line:160:26> col:26 __time_t 'long'
+alias __time_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb1d0 <line:137:22, line:161:30> col:30 __useconds_t 'unsigned int'
+alias __useconds_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30ddb240 <line:137:22, line:162:31> col:31 __suseconds_t 'long'
+alias __suseconds_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb2b0 <line:137:22, line:163:33> col:33 __suseconds64_t 'long'
+alias __suseconds64_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb320 <line:137:22, line:165:27> col:27 __daddr_t 'int'
+alias __daddr_t = int 
 
-# (placeholder) | `-BuiltinType 0x30cdc460 'int'
+# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30ddb390 <line:137:22, line:166:25> col:25 __key_t 'int'
+alias __key_t = int 
 
-# (placeholder) | `-BuiltinType 0x30cdc460 'int'
+# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30ddb400 <line:137:22, line:169:29> col:29 __clockid_t 'int'
+alias __clockid_t = int 
 
-# (placeholder) | `-BuiltinType 0x30cdc460 'int'
+# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30ddb470 <line:137:22, line:172:27> col:27 __timer_t 'void *'
+alias __timer_t = void * 
 
-# (placeholder) | `-PointerType 0x30cdd100 'void *'
+# (placeholder) | `-PointerType 0x1ecf7100 'void *'
 
-# (placeholder) |   `-BuiltinType 0x30cdc3c0 'void'
+# (placeholder) |   `-BuiltinType 0x1ecf63c0 'void'
 
-# (placeholder) |-TypedefDecl 0x30ddb4e0 <line:137:22, line:175:29> col:29 __blksize_t 'int'
+alias __blksize_t = int 
 
-# (placeholder) | `-BuiltinType 0x30cdc460 'int'
+# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30ddb550 <line:137:22, line:180:28> col:28 __blkcnt_t 'long'
+alias __blkcnt_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb5c0 <line:137:22, line:181:30> col:30 __blkcnt64_t 'long'
+alias __blkcnt64_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb630 <line:137:22, line:184:30> col:30 __fsblkcnt_t 'unsigned long'
+alias __fsblkcnt_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddb6a0 <line:137:22, line:185:32> col:32 __fsblkcnt64_t 'unsigned long'
+alias __fsblkcnt64_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddb710 <line:137:22, line:188:30> col:30 __fsfilcnt_t 'unsigned long'
+alias __fsfilcnt_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddb780 <line:137:22, line:189:32> col:32 __fsfilcnt64_t 'unsigned long'
+alias __fsfilcnt64_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddb7f0 <line:137:22, line:192:28> col:28 __fsword_t 'long'
+alias __fsword_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb860 <line:137:22, line:194:27> col:27 __ssize_t 'long'
+alias __ssize_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb8d0 <line:137:22, line:197:33> col:33 __syscall_slong_t 'long'
+alias __syscall_slong_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddb940 <line:137:22, line:199:33> col:33 __syscall_ulong_t 'unsigned long'
+alias __syscall_ulong_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddb9d0 <line:203:1, col:19> col:19 __loff_t '__off64_t':'long'
+alias __loff_t = __off64_t 
 
-# (placeholder) | `-TypedefType 0x30ddb9a0 '__off64_t' sugar
+# (placeholder) | `-TypedefType 0x1edf59a0 '__off64_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1c50 '__off64_t'
+# (placeholder) |   |-Typedef 0x1edebc50 '__off64_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc480 'long'
+# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddba40 <line:204:1, col:15> col:15 __caddr_t 'char *'
+alias __caddr_t = char * 
 
-# (placeholder) | `-PointerType 0x30d80440 'char *'
+# (placeholder) | `-PointerType 0x1ed9a440 'char *'
 
-# (placeholder) |   `-BuiltinType 0x30cdc400 'char'
+# (placeholder) |   `-BuiltinType 0x1ecf6400 'char'
 
-# (placeholder) |-TypedefDecl 0x30ddbab0 <line:137:22, line:207:25> col:25 __intptr_t 'long'
+alias __intptr_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddbb20 <line:137:22, line:210:23> col:23 __socklen_t 'unsigned int'
+alias __socklen_t = unsigned int 
 
-# (placeholder) | `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) | `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30ddbb90 <line:215:1, col:13> col:13 __sig_atomic_t 'int'
+alias __sig_atomic_t = int 
 
-# (placeholder) | `-BuiltinType 0x30cdc460 'int'
+# (placeholder) | `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30ddbbf8 </usr/include/aarch64-linux-gnu/bits/stdint-intn.h:24:1, col:18> col:18 int8_t '__int8_t':'signed char'
+alias int8_t = __int8_t 
 
-# (placeholder) | `-TypedefType 0x30dd1280 '__int8_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb280 '__int8_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd0f10 '__int8_t'
+# (placeholder) |   |-Typedef 0x1edeaf10 '__int8_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc420 'signed char'
+# (placeholder) |   `-BuiltinType 0x1ecf6420 'signed char'
 
-# (placeholder) |-TypedefDecl 0x30ddbc60 <line:25:1, col:19> col:19 int16_t '__int16_t':'short'
+alias int16_t = __int16_t 
 
-# (placeholder) | `-TypedefType 0x30dd13a0 '__int16_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb3a0 '__int16_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd0ff0 '__int16_t'
+# (placeholder) |   |-Typedef 0x1edeaff0 '__int16_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc440 'short'
+# (placeholder) |   `-BuiltinType 0x1ecf6440 'short'
 
-# (placeholder) |-TypedefDecl 0x30ddbcc8 <line:26:1, col:19> col:19 int32_t '__int32_t':'int'
+alias int32_t = __int32_t 
 
-# (placeholder) | `-TypedefType 0x30dd14c0 '__int32_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb4c0 '__int32_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd10d0 '__int32_t'
+# (placeholder) |   |-Typedef 0x1edeb0d0 '__int32_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc460 'int'
+# (placeholder) |   `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30ddbd30 <line:27:1, col:19> col:19 int64_t '__int64_t':'long'
+alias int64_t = __int64_t 
 
-# (placeholder) | `-TypedefType 0x30dd15e0 '__int64_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb5e0 '__int64_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd11b0 '__int64_t'
+# (placeholder) |   |-Typedef 0x1edeb1b0 '__int64_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc480 'long'
+# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddeec0 </usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:24:1, col:19> col:19 uint8_t '__uint8_t':'unsigned char'
+alias uint8_t = __uint8_t 
 
-# (placeholder) | `-TypedefType 0x30dd1310 '__uint8_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb310 '__uint8_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd0f80 '__uint8_t'
+# (placeholder) |   |-Typedef 0x1edeaf80 '__uint8_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc4c0 'unsigned char'
+# (placeholder) |   `-BuiltinType 0x1ecf64c0 'unsigned char'
 
-# (placeholder) |-TypedefDecl 0x30ddef28 <line:25:1, col:20> col:20 uint16_t '__uint16_t':'unsigned short'
+alias uint16_t = __uint16_t 
 
-# (placeholder) | `-TypedefType 0x30dd1430 '__uint16_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb430 '__uint16_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1060 '__uint16_t'
+# (placeholder) |   |-Typedef 0x1edeb060 '__uint16_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc4e0 'unsigned short'
+# (placeholder) |   `-BuiltinType 0x1ecf64e0 'unsigned short'
 
-# (placeholder) |-TypedefDecl 0x30ddef90 <line:26:1, col:20> col:20 uint32_t '__uint32_t':'unsigned int'
+alias uint32_t = __uint32_t 
 
-# (placeholder) | `-TypedefType 0x30dd1550 '__uint32_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb550 '__uint32_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1140 '__uint32_t'
+# (placeholder) |   |-Typedef 0x1edeb140 '__uint32_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) |   `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30ddeff8 <line:27:1, col:20> col:20 uint64_t '__uint64_t':'unsigned long'
+alias uint64_t = __uint64_t 
 
-# (placeholder) | `-TypedefType 0x30dd1670 '__uint64_t' sugar
+# (placeholder) | `-TypedefType 0x1edeb670 '__uint64_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1220 '__uint64_t'
+# (placeholder) |   |-Typedef 0x1edeb220 '__uint64_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) |   `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddf080 </usr/include/stdint.h:43:1, col:24> col:24 int_least8_t '__int_least8_t':'signed char'
+alias int_least8_t = __int_least8_t 
 
-# (placeholder) | `-TypedefType 0x30ddf050 '__int_least8_t' sugar
+# (placeholder) | `-TypedefType 0x1edf9050 '__int_least8_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd12b0 '__int_least8_t'
+# (placeholder) |   |-Typedef 0x1edeb2b0 '__int_least8_t'
 
-# (placeholder) |   `-TypedefType 0x30dd1280 '__int8_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb280 '__int8_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd0f10 '__int8_t'
+# (placeholder) |     |-Typedef 0x1edeaf10 '__int8_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc420 'signed char'
+# (placeholder) |     `-BuiltinType 0x1ecf6420 'signed char'
 
-# (placeholder) |-TypedefDecl 0x30ddf110 <line:44:1, col:25> col:25 int_least16_t '__int_least16_t':'short'
+alias int_least16_t = __int_least16_t 
 
-# (placeholder) | `-TypedefType 0x30ddf0e0 '__int_least16_t' sugar
+# (placeholder) | `-TypedefType 0x1edf90e0 '__int_least16_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd13d0 '__int_least16_t'
+# (placeholder) |   |-Typedef 0x1edeb3d0 '__int_least16_t'
 
-# (placeholder) |   `-TypedefType 0x30dd13a0 '__int16_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb3a0 '__int16_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd0ff0 '__int16_t'
+# (placeholder) |     |-Typedef 0x1edeaff0 '__int16_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc440 'short'
+# (placeholder) |     `-BuiltinType 0x1ecf6440 'short'
 
-# (placeholder) |-TypedefDecl 0x30ddf1a0 <line:45:1, col:25> col:25 int_least32_t '__int_least32_t':'int'
+alias int_least32_t = __int_least32_t 
 
-# (placeholder) | `-TypedefType 0x30ddf170 '__int_least32_t' sugar
+# (placeholder) | `-TypedefType 0x1edf9170 '__int_least32_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd14f0 '__int_least32_t'
+# (placeholder) |   |-Typedef 0x1edeb4f0 '__int_least32_t'
 
-# (placeholder) |   `-TypedefType 0x30dd14c0 '__int32_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb4c0 '__int32_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd10d0 '__int32_t'
+# (placeholder) |     |-Typedef 0x1edeb0d0 '__int32_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc460 'int'
+# (placeholder) |     `-BuiltinType 0x1ecf6460 'int'
 
-# (placeholder) |-TypedefDecl 0x30ddf230 <line:46:1, col:25> col:25 int_least64_t '__int_least64_t':'long'
+alias int_least64_t = __int_least64_t 
 
-# (placeholder) | `-TypedefType 0x30ddf200 '__int_least64_t' sugar
+# (placeholder) | `-TypedefType 0x1edf9200 '__int_least64_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1610 '__int_least64_t'
+# (placeholder) |   |-Typedef 0x1edeb610 '__int_least64_t'
 
-# (placeholder) |   `-TypedefType 0x30dd15e0 '__int64_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb5e0 '__int64_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd11b0 '__int64_t'
+# (placeholder) |     |-Typedef 0x1edeb1b0 '__int64_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc480 'long'
+# (placeholder) |     `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddf2c0 <line:49:1, col:25> col:25 uint_least8_t '__uint_least8_t':'unsigned char'
+alias uint_least8_t = __uint_least8_t 
 
-# (placeholder) | `-TypedefType 0x30ddf290 '__uint_least8_t' sugar
+# (placeholder) | `-TypedefType 0x1edf9290 '__uint_least8_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1340 '__uint_least8_t'
+# (placeholder) |   |-Typedef 0x1edeb340 '__uint_least8_t'
 
-# (placeholder) |   `-TypedefType 0x30dd1310 '__uint8_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb310 '__uint8_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd0f80 '__uint8_t'
+# (placeholder) |     |-Typedef 0x1edeaf80 '__uint8_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc4c0 'unsigned char'
+# (placeholder) |     `-BuiltinType 0x1ecf64c0 'unsigned char'
 
-# (placeholder) |-TypedefDecl 0x30ddf350 <line:50:1, col:26> col:26 uint_least16_t '__uint_least16_t':'unsigned short'
+alias uint_least16_t = __uint_least16_t 
 
-# (placeholder) | `-TypedefType 0x30ddf320 '__uint_least16_t' sugar
+# (placeholder) | `-TypedefType 0x1edf9320 '__uint_least16_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1460 '__uint_least16_t'
+# (placeholder) |   |-Typedef 0x1edeb460 '__uint_least16_t'
 
-# (placeholder) |   `-TypedefType 0x30dd1430 '__uint16_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb430 '__uint16_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd1060 '__uint16_t'
+# (placeholder) |     |-Typedef 0x1edeb060 '__uint16_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc4e0 'unsigned short'
+# (placeholder) |     `-BuiltinType 0x1ecf64e0 'unsigned short'
 
-# (placeholder) |-TypedefDecl 0x30ddf3e0 <line:51:1, col:26> col:26 uint_least32_t '__uint_least32_t':'unsigned int'
+alias uint_least32_t = __uint_least32_t 
 
-# (placeholder) | `-TypedefType 0x30ddf3b0 '__uint_least32_t' sugar
+# (placeholder) | `-TypedefType 0x1edf93b0 '__uint_least32_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1580 '__uint_least32_t'
+# (placeholder) |   |-Typedef 0x1edeb580 '__uint_least32_t'
 
-# (placeholder) |   `-TypedefType 0x30dd1550 '__uint32_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb550 '__uint32_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd1140 '__uint32_t'
+# (placeholder) |     |-Typedef 0x1edeb140 '__uint32_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc500 'unsigned int'
+# (placeholder) |     `-BuiltinType 0x1ecf6500 'unsigned int'
 
-# (placeholder) |-TypedefDecl 0x30ddf470 <line:52:1, col:26> col:26 uint_least64_t '__uint_least64_t':'unsigned long'
+alias uint_least64_t = __uint_least64_t 
 
-# (placeholder) | `-TypedefType 0x30ddf440 '__uint_least64_t' sugar
+# (placeholder) | `-TypedefType 0x1edf9440 '__uint_least64_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd16a0 '__uint_least64_t'
+# (placeholder) |   |-Typedef 0x1edeb6a0 '__uint_least64_t'
 
-# (placeholder) |   `-TypedefType 0x30dd1670 '__uint64_t' sugar
+# (placeholder) |   `-TypedefType 0x1edeb670 '__uint64_t' sugar
 
-# (placeholder) |     |-Typedef 0x30dd1220 '__uint64_t'
+# (placeholder) |     |-Typedef 0x1edeb220 '__uint64_t'
 
-# (placeholder) |     `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) |     `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddf4e0 <line:58:1, col:22> col:22 int_fast8_t 'signed char'
+alias int_fast8_t = signed char 
 
-# (placeholder) | `-BuiltinType 0x30cdc420 'signed char'
+# (placeholder) | `-BuiltinType 0x1ecf6420 'signed char'
 
-# (placeholder) |-TypedefDecl 0x30ddf550 <line:60:1, col:19> col:19 int_fast16_t 'long'
+alias int_fast16_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddf5c0 <line:61:1, col:19> col:19 int_fast32_t 'long'
+alias int_fast32_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddf630 <line:62:1, col:19> col:19 int_fast64_t 'long'
+alias int_fast64_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddf6a0 <line:71:1, col:24> col:24 uint_fast8_t 'unsigned char'
+alias uint_fast8_t = unsigned char 
 
-# (placeholder) | `-BuiltinType 0x30cdc4c0 'unsigned char'
+# (placeholder) | `-BuiltinType 0x1ecf64c0 'unsigned char'
 
-# (placeholder) |-TypedefDecl 0x30ddf710 <line:73:1, col:27> col:27 uint_fast16_t 'unsigned long'
+alias uint_fast16_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddf780 <line:74:1, col:27> col:27 uint_fast32_t 'unsigned long'
+alias uint_fast32_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddf7f0 <line:75:1, col:27> col:27 uint_fast64_t 'unsigned long'
+alias uint_fast64_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddf860 <line:87:1, col:19> col:19 intptr_t 'long'
+alias intptr_t = long 
 
-# (placeholder) | `-BuiltinType 0x30cdc480 'long'
+# (placeholder) | `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddf8d0 <line:90:1, col:27> col:27 uintptr_t 'unsigned long'
+alias uintptr_t = unsigned long 
 
-# (placeholder) | `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) | `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddf960 <line:101:1, col:21> col:21 intmax_t '__intmax_t':'long'
+alias intmax_t = __intmax_t 
 
-# (placeholder) | `-TypedefType 0x30ddf930 '__intmax_t' sugar
+# (placeholder) | `-TypedefType 0x1edf9930 '__intmax_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd17f0 '__intmax_t'
+# (placeholder) |   |-Typedef 0x1edeb7f0 '__intmax_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc480 'long'
+# (placeholder) |   `-BuiltinType 0x1ecf6480 'long'
 
-# (placeholder) |-TypedefDecl 0x30ddf9f0 <line:102:1, col:22> col:22 uintmax_t '__uintmax_t':'unsigned long'
+alias uintmax_t = __uintmax_t 
 
-# (placeholder) | `-TypedefType 0x30ddf9c0 '__uintmax_t' sugar
+# (placeholder) | `-TypedefType 0x1edf99c0 '__uintmax_t' sugar
 
-# (placeholder) |   |-Typedef 0x30dd1860 '__uintmax_t'
+# (placeholder) |   |-Typedef 0x1edeb860 '__uintmax_t'
 
-# (placeholder) |   `-BuiltinType 0x30cdc520 'unsigned long'
+# (placeholder) |   `-BuiltinType 0x1ecf6520 'unsigned long'
 
-# (placeholder) |-TypedefDecl 0x30ddfaf0 </home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco/test_mjtnum.h:22:3, col:18> col:18 referenced mjtNum 'double'
+alias mjtNum = double 
 
-# (placeholder) | `-BuiltinType 0x30cdc580 'double'
+# (placeholder) | `-BuiltinType 0x1ecf6580 'double'
 
-# (placeholder) |-TypedefDecl 0x30ddfc20 <line:41:1, col:23> col:23 referenced mjtByte 'unsigned char'
+alias mjtByte = unsigned char 
 
-# (placeholder) | |-BuiltinType 0x30cdc4c0 'unsigned char'
+# (placeholder) | |-BuiltinType 0x1ecf64c0 'unsigned char'
 
 #-------------------------------------- byte definition -------------------------------------------
 struct mjtDisableBit_:
@@ -810,13 +810,13 @@ struct mjtDisableBit_:
 	alias mjNDISABLE: Int = 16
 
 
-# (placeholder) |-TypedefDecl 0x30dec208 <line:48:1, line:67:3> col:3 mjtDisableBit 'enum mjtDisableBit_':'enum mjtDisableBit_'
+alias mjtDisableBit = mjtDisableBit_ 
 
-# (placeholder) | |-ElaboratedType 0x30dec1b0 'enum mjtDisableBit_' sugar
+# (placeholder) | |-ElaboratedType 0x1ee061b0 'enum mjtDisableBit_' sugar
 
-# (placeholder) | | `-EnumType 0x30de7f40 'enum mjtDisableBit_'
+# (placeholder) | | `-EnumType 0x1ee01f40 'enum mjtDisableBit_'
 
-# (placeholder) | |   `-Enum 0x30de7e98 'mjtDisableBit_'
+# (placeholder) | |   `-Enum 0x1ee01e98 'mjtDisableBit_'
 
 #---------------------------------- enum types (mjt) ----------------------------------------------
 struct mjtEnableBit_:
@@ -837,13 +837,13 @@ struct mjtEnableBit_:
 	alias mjNENABLE: Int = 7
 
 
-# (placeholder) |-TypedefDecl 0x30decb88 <line:70:1, line:81:3> col:3 mjtEnableBit 'enum mjtEnableBit_':'enum mjtEnableBit_'
+alias mjtEnableBit = mjtEnableBit_ 
 
-# (placeholder) | `-ElaboratedType 0x30decb30 'enum mjtEnableBit_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee06b30 'enum mjtEnableBit_' sugar
 
-# (placeholder) |   `-EnumType 0x30dec320 'enum mjtEnableBit_'
+# (placeholder) |   `-EnumType 0x1ee06320 'enum mjtEnableBit_'
 
-# (placeholder) |     `-Enum 0x30dec278 'mjtEnableBit_'
+# (placeholder) |     `-Enum 0x1ee06278 'mjtEnableBit_'
 struct mjtJoint_:
 	alias mjJNT_FREE: Int = 0
 
@@ -854,13 +854,13 @@ struct mjtJoint_:
 	alias mjJNT_HINGE: Int = 3
 
 
-# (placeholder) |-TypedefDecl 0x30decfd8 <line:84:1, line:89:3> col:3 mjtJoint 'enum mjtJoint_':'enum mjtJoint_'
+alias mjtJoint = mjtJoint_ 
 
-# (placeholder) | `-ElaboratedType 0x30decf80 'enum mjtJoint_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee06f80 'enum mjtJoint_' sugar
 
-# (placeholder) |   `-EnumType 0x30decca0 'enum mjtJoint_'
+# (placeholder) |   `-EnumType 0x1ee06ca0 'enum mjtJoint_'
 
-# (placeholder) |     `-Enum 0x30decbf8 'mjtJoint_'
+# (placeholder) |     `-Enum 0x1ee06bf8 'mjtJoint_'
 struct mjtGeom_:
 	alias mjGEOM_PLANE: Int = 0
 
@@ -903,13 +903,13 @@ struct mjtGeom_:
 	alias mjGEOM_NONE: Int = 1001
 
 
-# (placeholder) |-TypedefDecl 0x30dedcb8 <line:92:1, line:118:3> col:3 mjtGeom 'enum mjtGeom_':'enum mjtGeom_'
+alias mjtGeom = mjtGeom_ 
 
-# (placeholder) | `-ElaboratedType 0x30dedc60 'enum mjtGeom_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee07c60 'enum mjtGeom_' sugar
 
-# (placeholder) |   `-EnumType 0x30ded0f0 'enum mjtGeom_'
+# (placeholder) |   `-EnumType 0x1ee070f0 'enum mjtGeom_'
 
-# (placeholder) |     `-Enum 0x30ded048 'mjtGeom_'
+# (placeholder) |     `-Enum 0x1ee07048 'mjtGeom_'
 struct mjtCamLight_:
 	alias mjCAMLIGHT_FIXED: Int = 0
 
@@ -922,13 +922,13 @@ struct mjtCamLight_:
 	alias mjCAMLIGHT_TARGETBODYCOM: Int = 4
 
 
-# (placeholder) |-TypedefDecl 0x30def178 <line:121:1, line:127:3> col:3 mjtCamLight 'enum mjtCamLight_':'enum mjtCamLight_'
+alias mjtCamLight = mjtCamLight_ 
 
-# (placeholder) | `-ElaboratedType 0x30def120 'enum mjtCamLight_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee09120 'enum mjtCamLight_' sugar
 
-# (placeholder) |   `-EnumType 0x30deddd0 'enum mjtCamLight_'
+# (placeholder) |   `-EnumType 0x1ee07dd0 'enum mjtCamLight_'
 
-# (placeholder) |     `-Enum 0x30dedd28 'mjtCamLight_'
+# (placeholder) |     `-Enum 0x1ee07d28 'mjtCamLight_'
 struct mjtTexture_:
 	alias mjTEXTURE_2D: Int = 0
 
@@ -937,13 +937,13 @@ struct mjtTexture_:
 	alias mjTEXTURE_SKYBOX: Int = 2
 
 
-# (placeholder) |-TypedefDecl 0x30def4f8 <line:130:1, line:134:3> col:3 mjtTexture 'enum mjtTexture_':'enum mjtTexture_'
+alias mjtTexture = mjtTexture_ 
 
-# (placeholder) | `-ElaboratedType 0x30def4a0 'enum mjtTexture_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee094a0 'enum mjtTexture_' sugar
 
-# (placeholder) |   `-EnumType 0x30def290 'enum mjtTexture_'
+# (placeholder) |   `-EnumType 0x1ee09290 'enum mjtTexture_'
 
-# (placeholder) |     `-Enum 0x30def1e8 'mjtTexture_'
+# (placeholder) |     `-Enum 0x1ee091e8 'mjtTexture_'
 struct mjtTextureRole_:
 	alias mjTEXROLE_USER: Int = 0
 
@@ -968,13 +968,13 @@ struct mjtTextureRole_:
 	alias mjNTEXROLE: Int = 10
 
 
-# (placeholder) |-TypedefDecl 0x30defc48 <line:137:1, line:149:3> col:3 mjtTextureRole 'enum mjtTextureRole_':'enum mjtTextureRole_'
+alias mjtTextureRole = mjtTextureRole_ 
 
-# (placeholder) | `-ElaboratedType 0x30defbf0 'enum mjtTextureRole_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee09bf0 'enum mjtTextureRole_' sugar
 
-# (placeholder) |   `-EnumType 0x30def610 'enum mjtTextureRole_'
+# (placeholder) |   `-EnumType 0x1ee09610 'enum mjtTextureRole_'
 
-# (placeholder) |     `-Enum 0x30def568 'mjtTextureRole_'
+# (placeholder) |     `-Enum 0x1ee09568 'mjtTextureRole_'
 struct mjtIntegrator_:
 	alias mjINT_EULER: Int = 0
 
@@ -985,26 +985,26 @@ struct mjtIntegrator_:
 	alias mjINT_IMPLICITFAST: Int = 3
 
 
-# (placeholder) |-TypedefDecl 0x30df0088 <line:152:1, line:157:3> col:3 mjtIntegrator 'enum mjtIntegrator_':'enum mjtIntegrator_'
+alias mjtIntegrator = mjtIntegrator_ 
 
-# (placeholder) | `-ElaboratedType 0x30df0030 'enum mjtIntegrator_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0a030 'enum mjtIntegrator_' sugar
 
-# (placeholder) |   `-EnumType 0x30defd60 'enum mjtIntegrator_'
+# (placeholder) |   `-EnumType 0x1ee09d60 'enum mjtIntegrator_'
 
-# (placeholder) |     `-Enum 0x30defcb8 'mjtIntegrator_'
+# (placeholder) |     `-Enum 0x1ee09cb8 'mjtIntegrator_'
 struct mjtCone_:
 	alias mjCONE_PYRAMIDAL: Int = 0
 
 	alias mjCONE_ELLIPTIC: Int = 1
 
 
-# (placeholder) |-TypedefDecl 0x30df0388 <line:160:1, line:163:3> col:3 mjtCone 'enum mjtCone_':'enum mjtCone_'
+alias mjtCone = mjtCone_ 
 
-# (placeholder) | `-ElaboratedType 0x30df0330 'enum mjtCone_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0a330 'enum mjtCone_' sugar
 
-# (placeholder) |   `-EnumType 0x30df01a0 'enum mjtCone_'
+# (placeholder) |   `-EnumType 0x1ee0a1a0 'enum mjtCone_'
 
-# (placeholder) |     `-Enum 0x30df00f8 'mjtCone_'
+# (placeholder) |     `-Enum 0x1ee0a0f8 'mjtCone_'
 struct mjtJacobian_:
 	alias mjJAC_DENSE: Int = 0
 
@@ -1013,13 +1013,13 @@ struct mjtJacobian_:
 	alias mjJAC_AUTO: Int = 2
 
 
-# (placeholder) |-TypedefDecl 0x30df0708 <line:166:1, line:170:3> col:3 mjtJacobian 'enum mjtJacobian_':'enum mjtJacobian_'
+alias mjtJacobian = mjtJacobian_ 
 
-# (placeholder) | `-ElaboratedType 0x30df06b0 'enum mjtJacobian_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0a6b0 'enum mjtJacobian_' sugar
 
-# (placeholder) |   `-EnumType 0x30df04a0 'enum mjtJacobian_'
+# (placeholder) |   `-EnumType 0x1ee0a4a0 'enum mjtJacobian_'
 
-# (placeholder) |     `-Enum 0x30df03f8 'mjtJacobian_'
+# (placeholder) |     `-Enum 0x1ee0a3f8 'mjtJacobian_'
 struct mjtSolver_:
 	alias mjSOL_PGS: Int = 0
 
@@ -1028,13 +1028,13 @@ struct mjtSolver_:
 	alias mjSOL_NEWTON: Int = 2
 
 
-# (placeholder) |-TypedefDecl 0x30df0a88 <line:173:1, line:177:3> col:3 mjtSolver 'enum mjtSolver_':'enum mjtSolver_'
+alias mjtSolver = mjtSolver_ 
 
-# (placeholder) | `-ElaboratedType 0x30df0a30 'enum mjtSolver_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0aa30 'enum mjtSolver_' sugar
 
-# (placeholder) |   `-EnumType 0x30df0820 'enum mjtSolver_'
+# (placeholder) |   `-EnumType 0x1ee0a820 'enum mjtSolver_'
 
-# (placeholder) |     `-Enum 0x30df0778 'mjtSolver_'
+# (placeholder) |     `-Enum 0x1ee0a778 'mjtSolver_'
 struct mjtEq_:
 	alias mjEQ_CONNECT: Int = 0
 
@@ -1049,13 +1049,13 @@ struct mjtEq_:
 	alias mjEQ_DISTANCE: Int = 5
 
 
-# (placeholder) |-TypedefDecl 0x30df1398 <line:180:1, line:187:3> col:3 mjtEq 'enum mjtEq_':'enum mjtEq_'
+alias mjtEq = mjtEq_ 
 
-# (placeholder) | `-ElaboratedType 0x30df1340 'enum mjtEq_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0b340 'enum mjtEq_' sugar
 
-# (placeholder) |   `-EnumType 0x30df0ba0 'enum mjtEq_'
+# (placeholder) |   `-EnumType 0x1ee0aba0 'enum mjtEq_'
 
-# (placeholder) |     `-Enum 0x30df0af8 'mjtEq_'
+# (placeholder) |     `-Enum 0x1ee0aaf8 'mjtEq_'
 struct mjtWrap_:
 	alias mjWRAP_NONE: Int = 0
 
@@ -1070,13 +1070,13 @@ struct mjtWrap_:
 	alias mjWRAP_CYLINDER: Int = 5
 
 
-# (placeholder) |-TypedefDecl 0x30df1898 <line:190:1, line:197:3> col:3 mjtWrap 'enum mjtWrap_':'enum mjtWrap_'
+alias mjtWrap = mjtWrap_ 
 
-# (placeholder) | `-ElaboratedType 0x30df1840 'enum mjtWrap_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0b840 'enum mjtWrap_' sugar
 
-# (placeholder) |   `-EnumType 0x30df14b0 'enum mjtWrap_'
+# (placeholder) |   `-EnumType 0x1ee0b4b0 'enum mjtWrap_'
 
-# (placeholder) |     `-Enum 0x30df1408 'mjtWrap_'
+# (placeholder) |     `-Enum 0x1ee0b408 'mjtWrap_'
 struct mjtTrn_:
 	alias mjTRN_JOINT: Int = 0
 
@@ -1093,13 +1093,13 @@ struct mjtTrn_:
 	alias mjTRN_UNDEFINED: Int = 1000
 
 
-# (placeholder) |-TypedefDecl 0x30df1e58 <line:200:1, line:209:3> col:3 mjtTrn 'enum mjtTrn_':'enum mjtTrn_'
+alias mjtTrn = mjtTrn_ 
 
-# (placeholder) | `-ElaboratedType 0x30df1e00 'enum mjtTrn_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0be00 'enum mjtTrn_' sugar
 
-# (placeholder) |   `-EnumType 0x30df19b0 'enum mjtTrn_'
+# (placeholder) |   `-EnumType 0x1ee0b9b0 'enum mjtTrn_'
 
-# (placeholder) |     `-Enum 0x30df1908 'mjtTrn_'
+# (placeholder) |     `-Enum 0x1ee0b908 'mjtTrn_'
 struct mjtDyn_:
 	alias mjDYN_NONE: Int = 0
 
@@ -1114,13 +1114,13 @@ struct mjtDyn_:
 	alias mjDYN_USER: Int = 5
 
 
-# (placeholder) |-TypedefDecl 0x30df4948 <line:212:1, line:219:3> col:3 mjtDyn 'enum mjtDyn_':'enum mjtDyn_'
+alias mjtDyn = mjtDyn_ 
 
-# (placeholder) | `-ElaboratedType 0x30df48f0 'enum mjtDyn_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0e8f0 'enum mjtDyn_' sugar
 
-# (placeholder) |   `-EnumType 0x30df1f70 'enum mjtDyn_'
+# (placeholder) |   `-EnumType 0x1ee0bf70 'enum mjtDyn_'
 
-# (placeholder) |     `-Enum 0x30df1ec8 'mjtDyn_'
+# (placeholder) |     `-Enum 0x1ee0bec8 'mjtDyn_'
 struct mjtGain_:
 	alias mjGAIN_FIXED: Int = 0
 
@@ -1131,13 +1131,13 @@ struct mjtGain_:
 	alias mjGAIN_USER: Int = 3
 
 
-# (placeholder) |-TypedefDecl 0x30df4d48 <line:222:1, line:227:3> col:3 mjtGain 'enum mjtGain_':'enum mjtGain_'
+alias mjtGain = mjtGain_ 
 
-# (placeholder) | `-ElaboratedType 0x30df4cf0 'enum mjtGain_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0ecf0 'enum mjtGain_' sugar
 
-# (placeholder) |   `-EnumType 0x30df4a60 'enum mjtGain_'
+# (placeholder) |   `-EnumType 0x1ee0ea60 'enum mjtGain_'
 
-# (placeholder) |     `-Enum 0x30df49b8 'mjtGain_'
+# (placeholder) |     `-Enum 0x1ee0e9b8 'mjtGain_'
 struct mjtBias_:
 	alias mjBIAS_NONE: Int = 0
 
@@ -1148,13 +1148,13 @@ struct mjtBias_:
 	alias mjBIAS_USER: Int = 3
 
 
-# (placeholder) |-TypedefDecl 0x30df5148 <line:230:1, line:235:3> col:3 mjtBias 'enum mjtBias_':'enum mjtBias_'
+alias mjtBias = mjtBias_ 
 
-# (placeholder) | `-ElaboratedType 0x30df50f0 'enum mjtBias_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee0f0f0 'enum mjtBias_' sugar
 
-# (placeholder) |   `-EnumType 0x30df4e60 'enum mjtBias_'
+# (placeholder) |   `-EnumType 0x1ee0ee60 'enum mjtBias_'
 
-# (placeholder) |     `-Enum 0x30df4db8 'mjtBias_'
+# (placeholder) |     `-Enum 0x1ee0edb8 'mjtBias_'
 struct mjtObj_:
 	alias mjOBJ_UNKNOWN: Int = 0
 
@@ -1213,13 +1213,13 @@ struct mjtObj_:
 	alias mjOBJ_FRAME: Int = 100
 
 
-# (placeholder) |-TypedefDecl 0x30df6778 <line:238:1, line:270:3> col:3 mjtObj 'enum mjtObj_':'enum mjtObj_'
+alias mjtObj = mjtObj_ 
 
-# (placeholder) | `-ElaboratedType 0x30df6720 'enum mjtObj_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee10720 'enum mjtObj_' sugar
 
-# (placeholder) |   `-EnumType 0x30df5260 'enum mjtObj_'
+# (placeholder) |   `-EnumType 0x1ee0f260 'enum mjtObj_'
 
-# (placeholder) |     `-Enum 0x30df51b8 'mjtObj_'
+# (placeholder) |     `-Enum 0x1ee0f1b8 'mjtObj_'
 struct mjtConstraint_:
 	alias mjCNSTR_EQUALITY: Int = 0
 
@@ -1238,13 +1238,13 @@ struct mjtConstraint_:
 	alias mjCNSTR_CONTACT_ELLIPTIC: Int = 7
 
 
-# (placeholder) |-TypedefDecl 0x30df6d78 <line:273:1, line:282:3> col:3 mjtConstraint 'enum mjtConstraint_':'enum mjtConstraint_'
+alias mjtConstraint = mjtConstraint_ 
 
-# (placeholder) | `-ElaboratedType 0x30df6d20 'enum mjtConstraint_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee10d20 'enum mjtConstraint_' sugar
 
-# (placeholder) |   `-EnumType 0x30df6890 'enum mjtConstraint_'
+# (placeholder) |   `-EnumType 0x1ee10890 'enum mjtConstraint_'
 
-# (placeholder) |     `-Enum 0x30df67e8 'mjtConstraint_'
+# (placeholder) |     `-Enum 0x1ee107e8 'mjtConstraint_'
 struct mjtConstraintState_:
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 
@@ -1257,13 +1257,13 @@ struct mjtConstraintState_:
 	alias mjCNSTRSTATE_CONE: Int = 4
 
 
-# (placeholder) |-TypedefDecl 0x30df7908 <line:285:1, line:291:3> col:3 mjtConstraintState 'enum mjtConstraintState_':'enum mjtConstraintState_'
+alias mjtConstraintState = mjtConstraintState_ 
 
-# (placeholder) | `-ElaboratedType 0x30df78b0 'enum mjtConstraintState_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee118b0 'enum mjtConstraintState_' sugar
 
-# (placeholder) |   `-EnumType 0x30df75a0 'enum mjtConstraintState_'
+# (placeholder) |   `-EnumType 0x1ee115a0 'enum mjtConstraintState_'
 
-# (placeholder) |     `-Enum 0x30df7500 'mjtConstraintState_'
+# (placeholder) |     `-Enum 0x1ee11500 'mjtConstraintState_'
 struct mjtSensor_:
 	alias mjSENS_TOUCH: Int = 0
 
@@ -1352,13 +1352,13 @@ struct mjtSensor_:
 	alias mjSENS_USER: Int = 42
 
 
-# (placeholder) |-TypedefDecl 0x30df9a08 <line:294:1, line:357:3> col:3 mjtSensor 'enum mjtSensor_':'enum mjtSensor_'
+alias mjtSensor = mjtSensor_ 
 
-# (placeholder) | `-ElaboratedType 0x30df99b0 'enum mjtSensor_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee139b0 'enum mjtSensor_' sugar
 
-# (placeholder) |   `-EnumType 0x30df7a20 'enum mjtSensor_'
+# (placeholder) |   `-EnumType 0x1ee11a20 'enum mjtSensor_'
 
-# (placeholder) |     `-Enum 0x30df7978 'mjtSensor_'
+# (placeholder) |     `-Enum 0x1ee11978 'mjtSensor_'
 struct mjtStage_:
 	alias mjSTAGE_NONE: Int = 0
 
@@ -1369,13 +1369,13 @@ struct mjtStage_:
 	alias mjSTAGE_ACC: Int = 3
 
 
-# (placeholder) |-TypedefDecl 0x30dfa1a8 <line:360:1, line:365:3> col:3 mjtStage 'enum mjtStage_':'enum mjtStage_'
+alias mjtStage = mjtStage_ 
 
-# (placeholder) | `-ElaboratedType 0x30dfa150 'enum mjtStage_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee14150 'enum mjtStage_' sugar
 
-# (placeholder) |   `-EnumType 0x30df9b20 'enum mjtStage_'
+# (placeholder) |   `-EnumType 0x1ee13b20 'enum mjtStage_'
 
-# (placeholder) |     `-Enum 0x30df9a78 'mjtStage_'
+# (placeholder) |     `-Enum 0x1ee13a78 'mjtStage_'
 struct mjtDataType_:
 	alias mjDATATYPE_REAL: Int = 0
 
@@ -1386,13 +1386,13 @@ struct mjtDataType_:
 	alias mjDATATYPE_QUATERNION: Int = 3
 
 
-# (placeholder) |-TypedefDecl 0x30dfa5a8 <line:368:1, line:373:3> col:3 mjtDataType 'enum mjtDataType_':'enum mjtDataType_'
+alias mjtDataType = mjtDataType_ 
 
-# (placeholder) | `-ElaboratedType 0x30dfa550 'enum mjtDataType_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee14550 'enum mjtDataType_' sugar
 
-# (placeholder) |   `-EnumType 0x30dfa2c0 'enum mjtDataType_'
+# (placeholder) |   `-EnumType 0x1ee142c0 'enum mjtDataType_'
 
-# (placeholder) |     `-Enum 0x30dfa218 'mjtDataType_'
+# (placeholder) |     `-Enum 0x1ee14218 'mjtDataType_'
 struct mjtSameFrame_:
 	alias mjSAMEFRAME_NONE: Int = 0
 
@@ -1405,13 +1405,13 @@ struct mjtSameFrame_:
 	alias mjSAMEFRAME_INERTIAROT: Int = 4
 
 
-# (placeholder) |-TypedefDecl 0x30dfaa28 <line:376:1, line:382:3> col:3 mjtSameFrame 'enum mjtSameFrame_':'enum mjtSameFrame_'
+alias mjtSameFrame = mjtSameFrame_ 
 
-# (placeholder) | `-ElaboratedType 0x30dfa9d0 'enum mjtSameFrame_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee149d0 'enum mjtSameFrame_' sugar
 
-# (placeholder) |   `-EnumType 0x30dfa6c0 'enum mjtSameFrame_'
+# (placeholder) |   `-EnumType 0x1ee146c0 'enum mjtSameFrame_'
 
-# (placeholder) |     `-Enum 0x30dfa618 'mjtSameFrame_'
+# (placeholder) |     `-Enum 0x1ee14618 'mjtSameFrame_'
 struct mjtLRMode_:
 	alias mjLRMODE_NONE: Int = 0
 
@@ -1422,13 +1422,13 @@ struct mjtLRMode_:
 	alias mjLRMODE_ALL: Int = 3
 
 
-# (placeholder) |-TypedefDecl 0x30dfae28 <line:385:1, line:390:3> col:3 mjtLRMode 'enum mjtLRMode_':'enum mjtLRMode_'
+alias mjtLRMode = mjtLRMode_ 
 
-# (placeholder) | `-ElaboratedType 0x30dfadd0 'enum mjtLRMode_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee14dd0 'enum mjtLRMode_' sugar
 
-# (placeholder) |   `-EnumType 0x30dfab40 'enum mjtLRMode_'
+# (placeholder) |   `-EnumType 0x1ee14b40 'enum mjtLRMode_'
 
-# (placeholder) |     `-Enum 0x30dfaa98 'mjtLRMode_'
+# (placeholder) |     `-Enum 0x1ee14a98 'mjtLRMode_'
 struct mjtFlexSelf_:
 	alias mjFLEXSELF_NONE: Int = 0
 
@@ -1441,13 +1441,13 @@ struct mjtFlexSelf_:
 	alias mjFLEXSELF_AUTO: Int = 4
 
 
-# (placeholder) |-TypedefDecl 0x30dfd2c8 <line:393:1, line:399:3> col:3 mjtFlexSelf 'enum mjtFlexSelf_':'enum mjtFlexSelf_'
+alias mjtFlexSelf = mjtFlexSelf_ 
 
-# (placeholder) | `-ElaboratedType 0x30dfd270 'enum mjtFlexSelf_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee17270 'enum mjtFlexSelf_' sugar
 
-# (placeholder) |   `-EnumType 0x30dfaf40 'enum mjtFlexSelf_'
+# (placeholder) |   `-EnumType 0x1ee14f40 'enum mjtFlexSelf_'
 
-# (placeholder) |     `-Enum 0x30dfae98 'mjtFlexSelf_'
+# (placeholder) |     `-Enum 0x1ee14e98 'mjtFlexSelf_'
 struct mjLROpt_:
 	#---------------------------------- mjLROpt -------------------------------------------------------
 
@@ -1472,26 +1472,26 @@ struct mjLROpt_:
 	var tolrange: mjtNum:double
 
 
-# (placeholder) |-TypedefDecl 0x30dfdaa0 <line:419:1, col:25> col:25 mjLROpt 'struct mjLROpt_':'struct mjLROpt_'
+alias mjLROpt = mjLROpt_ 
 
-# (placeholder) | `-ElaboratedType 0x30dfda50 'struct mjLROpt_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee17a50 'struct mjLROpt_' sugar
 
-# (placeholder) |   `-RecordType 0x30dfd3e0 'struct mjLROpt_'
+# (placeholder) |   `-RecordType 0x1ee173e0 'struct mjLROpt_'
 
-# (placeholder) |     `-Record 0x30dfd360 'mjLROpt_'
+# (placeholder) |     `-Record 0x1ee17360 'mjLROpt_'
 struct mjVFS_:
 	#---------------------------------- mjVFS ---------------------------------------------------------
 
 	var impl_: void 
 
 
-# (placeholder) |-TypedefDecl 0x30dfdce0 <line:427:1, col:23> col:23 mjVFS 'struct mjVFS_':'struct mjVFS_'
+alias mjVFS = mjVFS_ 
 
-# (placeholder) | `-ElaboratedType 0x30dfdc90 'struct mjVFS_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee17c90 'struct mjVFS_' sugar
 
-# (placeholder) |   `-RecordType 0x30dfdbb0 'struct mjVFS_'
+# (placeholder) |   `-RecordType 0x1ee17bb0 'struct mjVFS_'
 
-# (placeholder) |     `-Record 0x30dfdb28 'mjVFS_'
+# (placeholder) |     `-Record 0x1ee17b28 'mjVFS_'
 struct mjOption_:
 	#---------------------------------- mjOption ------------------------------------------------------
 
@@ -1554,13 +1554,13 @@ struct mjOption_:
 	var sdf_iterations: Int
 
 
-# (placeholder) |-TypedefDecl 0x30e02500 <line:473:1, col:26> col:26 referenced mjOption 'struct mjOption_':'struct mjOption_'
+alias mjOption = mjOption_ 
 
-# (placeholder) | `-ElaboratedType 0x30e024b0 'struct mjOption_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee1c4b0 'struct mjOption_' sugar
 
-# (placeholder) |   `-RecordType 0x30dfddf0 'struct mjOption_'
+# (placeholder) |   `-RecordType 0x1ee17df0 'struct mjOption_'
 
-# (placeholder) |     `-Record 0x30dfdd68 'mjOption_'
+# (placeholder) |     `-Record 0x1ee17d68 'mjOption_'
 struct _mjVisual___Anonymous_861:
 	var fog: float[4]
 
@@ -1741,13 +1741,13 @@ struct mjVisual_:
 	var rgba: _mjVisual___Anonymous_861
 
 
-# (placeholder) |-TypedefDecl 0x30e07590 <line:573:1, col:26> col:26 referenced mjVisual 'struct mjVisual_':'struct mjVisual_'
+alias mjVisual = mjVisual_ 
 
-# (placeholder) | `-ElaboratedType 0x30e07540 'struct mjVisual_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee21540 'struct mjVisual_' sugar
 
-# (placeholder) |   `-RecordType 0x30e02610 'struct mjVisual_'
+# (placeholder) |   `-RecordType 0x1ee1c610 'struct mjVisual_'
 
-# (placeholder) |     `-Record 0x30e02588 'mjVisual_'
+# (placeholder) |     `-Record 0x1ee1c588 'mjVisual_'
 struct mjStatistic_:
 	#---------------------------------- mjStatistic ---------------------------------------------------
 
@@ -1762,13 +1762,13 @@ struct mjStatistic_:
 	var center: mjtNum[3]
 
 
-# (placeholder) |-TypedefDecl 0x30e07a60 <line:585:1, col:29> col:29 referenced mjStatistic 'struct mjStatistic_':'struct mjStatistic_'
+alias mjStatistic = mjStatistic_ 
 
-# (placeholder) | `-ElaboratedType 0x30e07a10 'struct mjStatistic_' sugar
+# (placeholder) | `-ElaboratedType 0x1ee21a10 'struct mjStatistic_' sugar
 
-# (placeholder) |   `-RecordType 0x30e076a0 'struct mjStatistic_'
+# (placeholder) |   `-RecordType 0x1ee216a0 'struct mjStatistic_'
 
-# (placeholder) |     `-Record 0x30e07618 'mjStatistic_'
+# (placeholder) |     `-Record 0x1ee21618 'mjStatistic_'
 struct mjModel_:
 	#---------------------------------- mjModel -------------------------------------------------------
 
@@ -2707,10 +2707,10 @@ struct mjModel_:
 	var paths: char 
 
 
-# (placeholder) `-TypedefDecl 0x30e2b050 <line:1132:1, col:25> col:25 mjModel 'struct mjModel_':'struct mjModel_'
+alias mjModel = mjModel_ 
 
-# (placeholder)   `-ElaboratedType 0x30e2b000 'struct mjModel_' sugar
+# (placeholder)   `-ElaboratedType 0x1ee45000 'struct mjModel_' sugar
 
-# (placeholder)     `-RecordType 0x30e07b70 'struct mjModel_'
+# (placeholder)     `-RecordType 0x1ee21b70 'struct mjModel_'
 
-# (placeholder)       `-Record 0x30e07ae8 'mjModel_'
+# (placeholder)       `-Record 0x1ee21ae8 'mjModel_'

@@ -1,234 +1,234 @@
 
-# (placeholder) TranslationUnitDecl 0x1e6ab1d8 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x1f2771d8 <<invalid sloc>> <invalid sloc>
 
-# (placeholder) |-TypedefDecl 0x1e6ac020 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+alias <invalid = sloc> implicit __int128_t __int128 
 
-# (placeholder) | `-BuiltinType 0x1e6ab7a0 '__int128'
+# (placeholder) | `-BuiltinType 0x1f2777a0 '__int128'
 
-# (placeholder) |-TypedefDecl 0x1e6ac090 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+alias <invalid = sloc> implicit __uint128_t unsigned __int128 
 
-# (placeholder) | `-BuiltinType 0x1e6ab7c0 'unsigned __int128'
+# (placeholder) | `-BuiltinType 0x1f2777c0 'unsigned __int128'
 
-# (placeholder) |-TypedefDecl 0x1e74dfa8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+alias <invalid = sloc> implicit __NSConstantString __NSConstantString_tag 
 
-# (placeholder) | `-RecordType 0x1e6ac170 'struct __NSConstantString_tag'
+# (placeholder) | `-RecordType 0x1f278170 'struct __NSConstantString_tag'
 
-# (placeholder) |   `-Record 0x1e6ac0e8 '__NSConstantString_tag'
+# (placeholder) |   `-Record 0x1f2780e8 '__NSConstantString_tag'
 
-# (placeholder) |-TypedefDecl 0x1e74e010 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+alias <invalid = sloc> implicit __SVInt8_t __SVInt8_t 
 
-# (placeholder) | `-BuiltinType 0x1e6ab960 '__SVInt8_t'
+# (placeholder) | `-BuiltinType 0x1f277960 '__SVInt8_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e078 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+alias <invalid = sloc> implicit __SVInt16_t __SVInt16_t 
 
-# (placeholder) | `-BuiltinType 0x1e6ab980 '__SVInt16_t'
+# (placeholder) | `-BuiltinType 0x1f277980 '__SVInt16_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e0e0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+alias <invalid = sloc> implicit __SVInt32_t __SVInt32_t 
 
-# (placeholder) | `-BuiltinType 0x1e6ab9a0 '__SVInt32_t'
+# (placeholder) | `-BuiltinType 0x1f2779a0 '__SVInt32_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e148 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+alias <invalid = sloc> implicit __SVInt64_t __SVInt64_t 
 
-# (placeholder) | `-BuiltinType 0x1e6ab9c0 '__SVInt64_t'
+# (placeholder) | `-BuiltinType 0x1f2779c0 '__SVInt64_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e1b0 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+alias <invalid = sloc> implicit __SVUint8_t __SVUint8_t 
 
-# (placeholder) | `-BuiltinType 0x1e6ab9e0 '__SVUint8_t'
+# (placeholder) | `-BuiltinType 0x1f2779e0 '__SVUint8_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e218 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+alias <invalid = sloc> implicit __SVUint16_t __SVUint16_t 
 
-# (placeholder) | `-BuiltinType 0x1e6aba00 '__SVUint16_t'
+# (placeholder) | `-BuiltinType 0x1f277a00 '__SVUint16_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e280 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+alias <invalid = sloc> implicit __SVUint32_t __SVUint32_t 
 
-# (placeholder) | `-BuiltinType 0x1e6aba20 '__SVUint32_t'
+# (placeholder) | `-BuiltinType 0x1f277a20 '__SVUint32_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e2e8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+alias <invalid = sloc> implicit __SVUint64_t __SVUint64_t 
 
-# (placeholder) | `-BuiltinType 0x1e6aba40 '__SVUint64_t'
+# (placeholder) | `-BuiltinType 0x1f277a40 '__SVUint64_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e350 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+alias <invalid = sloc> implicit __SVFloat16_t __SVFloat16_t 
 
-# (placeholder) | `-BuiltinType 0x1e6aba60 '__SVFloat16_t'
+# (placeholder) | `-BuiltinType 0x1f277a60 '__SVFloat16_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e3b8 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+alias <invalid = sloc> implicit __SVFloat32_t __SVFloat32_t 
 
-# (placeholder) | `-BuiltinType 0x1e6aba80 '__SVFloat32_t'
+# (placeholder) | `-BuiltinType 0x1f277a80 '__SVFloat32_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e420 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+alias <invalid = sloc> implicit __SVFloat64_t __SVFloat64_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abaa0 '__SVFloat64_t'
+# (placeholder) | `-BuiltinType 0x1f277aa0 '__SVFloat64_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e488 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+alias <invalid = sloc> implicit __SVBFloat16_t __SVBFloat16_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abac0 '__SVBFloat16_t'
+# (placeholder) | `-BuiltinType 0x1f277ac0 '__SVBFloat16_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e4f0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+alias <invalid = sloc> implicit __clang_svint8x2_t __clang_svint8x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abae0 '__clang_svint8x2_t'
+# (placeholder) | `-BuiltinType 0x1f277ae0 '__clang_svint8x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e558 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+alias <invalid = sloc> implicit __clang_svint16x2_t __clang_svint16x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abb00 '__clang_svint16x2_t'
+# (placeholder) | `-BuiltinType 0x1f277b00 '__clang_svint16x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e5c0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+alias <invalid = sloc> implicit __clang_svint32x2_t __clang_svint32x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abb20 '__clang_svint32x2_t'
+# (placeholder) | `-BuiltinType 0x1f277b20 '__clang_svint32x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e628 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+alias <invalid = sloc> implicit __clang_svint64x2_t __clang_svint64x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abb40 '__clang_svint64x2_t'
+# (placeholder) | `-BuiltinType 0x1f277b40 '__clang_svint64x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e690 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+alias <invalid = sloc> implicit __clang_svuint8x2_t __clang_svuint8x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abb60 '__clang_svuint8x2_t'
+# (placeholder) | `-BuiltinType 0x1f277b60 '__clang_svuint8x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e6f8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+alias <invalid = sloc> implicit __clang_svuint16x2_t __clang_svuint16x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abb80 '__clang_svuint16x2_t'
+# (placeholder) | `-BuiltinType 0x1f277b80 '__clang_svuint16x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e760 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+alias <invalid = sloc> implicit __clang_svuint32x2_t __clang_svuint32x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abba0 '__clang_svuint32x2_t'
+# (placeholder) | `-BuiltinType 0x1f277ba0 '__clang_svuint32x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e7c8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+alias <invalid = sloc> implicit __clang_svuint64x2_t __clang_svuint64x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abbc0 '__clang_svuint64x2_t'
+# (placeholder) | `-BuiltinType 0x1f277bc0 '__clang_svuint64x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e830 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+alias <invalid = sloc> implicit __clang_svfloat16x2_t __clang_svfloat16x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abbe0 '__clang_svfloat16x2_t'
+# (placeholder) | `-BuiltinType 0x1f277be0 '__clang_svfloat16x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e898 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+alias <invalid = sloc> implicit __clang_svfloat32x2_t __clang_svfloat32x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abc00 '__clang_svfloat32x2_t'
+# (placeholder) | `-BuiltinType 0x1f277c00 '__clang_svfloat32x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e900 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+alias <invalid = sloc> implicit __clang_svfloat64x2_t __clang_svfloat64x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abc20 '__clang_svfloat64x2_t'
+# (placeholder) | `-BuiltinType 0x1f277c20 '__clang_svfloat64x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e968 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+alias <invalid = sloc> implicit __clang_svbfloat16x2_t __clang_svbfloat16x2_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abc40 '__clang_svbfloat16x2_t'
+# (placeholder) | `-BuiltinType 0x1f277c40 '__clang_svbfloat16x2_t'
 
-# (placeholder) |-TypedefDecl 0x1e74e9d0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+alias <invalid = sloc> implicit __clang_svint8x3_t __clang_svint8x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abc60 '__clang_svint8x3_t'
+# (placeholder) | `-BuiltinType 0x1f277c60 '__clang_svint8x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74ea38 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+alias <invalid = sloc> implicit __clang_svint16x3_t __clang_svint16x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abc80 '__clang_svint16x3_t'
+# (placeholder) | `-BuiltinType 0x1f277c80 '__clang_svint16x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74eaa0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+alias <invalid = sloc> implicit __clang_svint32x3_t __clang_svint32x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abca0 '__clang_svint32x3_t'
+# (placeholder) | `-BuiltinType 0x1f277ca0 '__clang_svint32x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74eb08 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+alias <invalid = sloc> implicit __clang_svint64x3_t __clang_svint64x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abcc0 '__clang_svint64x3_t'
+# (placeholder) | `-BuiltinType 0x1f277cc0 '__clang_svint64x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74eb70 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+alias <invalid = sloc> implicit __clang_svuint8x3_t __clang_svuint8x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abce0 '__clang_svuint8x3_t'
+# (placeholder) | `-BuiltinType 0x1f277ce0 '__clang_svuint8x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74ebd8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+alias <invalid = sloc> implicit __clang_svuint16x3_t __clang_svuint16x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abd00 '__clang_svuint16x3_t'
+# (placeholder) | `-BuiltinType 0x1f277d00 '__clang_svuint16x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74ec40 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+alias <invalid = sloc> implicit __clang_svuint32x3_t __clang_svuint32x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abd20 '__clang_svuint32x3_t'
+# (placeholder) | `-BuiltinType 0x1f277d20 '__clang_svuint32x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74eca8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+alias <invalid = sloc> implicit __clang_svuint64x3_t __clang_svuint64x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abd40 '__clang_svuint64x3_t'
+# (placeholder) | `-BuiltinType 0x1f277d40 '__clang_svuint64x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74ed10 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+alias <invalid = sloc> implicit __clang_svfloat16x3_t __clang_svfloat16x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abd60 '__clang_svfloat16x3_t'
+# (placeholder) | `-BuiltinType 0x1f277d60 '__clang_svfloat16x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74ed78 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+alias <invalid = sloc> implicit __clang_svfloat32x3_t __clang_svfloat32x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abd80 '__clang_svfloat32x3_t'
+# (placeholder) | `-BuiltinType 0x1f277d80 '__clang_svfloat32x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f200 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+alias <invalid = sloc> implicit __clang_svfloat64x3_t __clang_svfloat64x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abda0 '__clang_svfloat64x3_t'
+# (placeholder) | `-BuiltinType 0x1f277da0 '__clang_svfloat64x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f268 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+alias <invalid = sloc> implicit __clang_svbfloat16x3_t __clang_svbfloat16x3_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abdc0 '__clang_svbfloat16x3_t'
+# (placeholder) | `-BuiltinType 0x1f277dc0 '__clang_svbfloat16x3_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f2d0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+alias <invalid = sloc> implicit __clang_svint8x4_t __clang_svint8x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abde0 '__clang_svint8x4_t'
+# (placeholder) | `-BuiltinType 0x1f277de0 '__clang_svint8x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f338 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+alias <invalid = sloc> implicit __clang_svint16x4_t __clang_svint16x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abe00 '__clang_svint16x4_t'
+# (placeholder) | `-BuiltinType 0x1f277e00 '__clang_svint16x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f3a0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+alias <invalid = sloc> implicit __clang_svint32x4_t __clang_svint32x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abe20 '__clang_svint32x4_t'
+# (placeholder) | `-BuiltinType 0x1f277e20 '__clang_svint32x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f408 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+alias <invalid = sloc> implicit __clang_svint64x4_t __clang_svint64x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abe40 '__clang_svint64x4_t'
+# (placeholder) | `-BuiltinType 0x1f277e40 '__clang_svint64x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f470 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+alias <invalid = sloc> implicit __clang_svuint8x4_t __clang_svuint8x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abe60 '__clang_svuint8x4_t'
+# (placeholder) | `-BuiltinType 0x1f277e60 '__clang_svuint8x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f4d8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+alias <invalid = sloc> implicit __clang_svuint16x4_t __clang_svuint16x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abe80 '__clang_svuint16x4_t'
+# (placeholder) | `-BuiltinType 0x1f277e80 '__clang_svuint16x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f540 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+alias <invalid = sloc> implicit __clang_svuint32x4_t __clang_svuint32x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abea0 '__clang_svuint32x4_t'
+# (placeholder) | `-BuiltinType 0x1f277ea0 '__clang_svuint32x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f5a8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+alias <invalid = sloc> implicit __clang_svuint64x4_t __clang_svuint64x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abec0 '__clang_svuint64x4_t'
+# (placeholder) | `-BuiltinType 0x1f277ec0 '__clang_svuint64x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f610 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+alias <invalid = sloc> implicit __clang_svfloat16x4_t __clang_svfloat16x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abee0 '__clang_svfloat16x4_t'
+# (placeholder) | `-BuiltinType 0x1f277ee0 '__clang_svfloat16x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f678 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+alias <invalid = sloc> implicit __clang_svfloat32x4_t __clang_svfloat32x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abf00 '__clang_svfloat32x4_t'
+# (placeholder) | `-BuiltinType 0x1f277f00 '__clang_svfloat32x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f6e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+alias <invalid = sloc> implicit __clang_svfloat64x4_t __clang_svfloat64x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abf20 '__clang_svfloat64x4_t'
+# (placeholder) | `-BuiltinType 0x1f277f20 '__clang_svfloat64x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f748 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+alias <invalid = sloc> implicit __clang_svbfloat16x4_t __clang_svbfloat16x4_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abf40 '__clang_svbfloat16x4_t'
+# (placeholder) | `-BuiltinType 0x1f277f40 '__clang_svbfloat16x4_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f7b0 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+alias <invalid = sloc> implicit __SVBool_t __SVBool_t 
 
-# (placeholder) | `-BuiltinType 0x1e6abf60 '__SVBool_t'
+# (placeholder) | `-BuiltinType 0x1f277f60 '__SVBool_t'
 
-# (placeholder) |-TypedefDecl 0x1e74f850 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+alias <invalid = sloc> implicit __builtin_ms_va_list char * 
 
-# (placeholder) | `-PointerType 0x1e74f810 'char *'
+# (placeholder) | `-PointerType 0x1f31b810 'char *'
 
-# (placeholder) |   `-BuiltinType 0x1e6ab280 'char'
+# (placeholder) |   `-BuiltinType 0x1f277280 'char'
 
-# (placeholder) |-TypedefDecl 0x1e74fbb8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
+alias <invalid = sloc> implicit __builtin_va_list std 
 
-# (placeholder) | `-RecordType 0x1e74f930 'struct std::__va_list'
+# (placeholder) | `-RecordType 0x1f31b930 'struct std::__va_list'
 
-# (placeholder) |   `-Record 0x1e74f8a8 '__va_list'
+# (placeholder) |   `-Record 0x1f31b8a8 '__va_list'
 
-# (placeholder) |-TypedefDecl 0x1e74fcb0 </home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco/test_mjtnum.h:22:3, col:18> col:18 mjtNum 'double'
+alias mjtNum = double 
 
-# (placeholder) | `-BuiltinType 0x1e6ab400 'double'
+# (placeholder) | `-BuiltinType 0x1f277400 'double'
 
-# (placeholder) `-TypedefDecl 0x1e74fde0 <line:41:1, col:23> col:23 mjtByte 'unsigned char'
+alias mjtByte = unsigned char 
 
-# (placeholder)   |-BuiltinType 0x1e6ab340 'unsigned char'
+# (placeholder)   |-BuiltinType 0x1f277340 'unsigned char'
 
 #-------------------------------------- byte definition -------------------------------------------

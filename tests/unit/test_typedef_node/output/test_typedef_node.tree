@@ -18,12 +18,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 1 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 2 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 2 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2))
@@ -42,12 +42,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 3 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 4 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 4 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4))
@@ -66,12 +66,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 5 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 6 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'RecordType'
     └─ Nodes: 1 active, 6 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, 6))
@@ -102,12 +102,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 8 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 9 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 9 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=9)
@@ -126,12 +126,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 10 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 11 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 11 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=11)
@@ -150,12 +150,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 12 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 13 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 13 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=13)
@@ -174,12 +174,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 14 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 15 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 15 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=15)
@@ -198,12 +198,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 16 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 17 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 17 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=17)
@@ -222,12 +222,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 18 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 19 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 19 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=19)
@@ -246,12 +246,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 20 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 21 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 21 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=21)
@@ -270,12 +270,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 22 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 23 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 23 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=23)
@@ -294,12 +294,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 24 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 25 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 25 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=25)
@@ -318,12 +318,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 26 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 27 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 27 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=27)
@@ -342,12 +342,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 28 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 29 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 29 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=29)
@@ -366,12 +366,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 30 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 31 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 31 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=31)
@@ -390,12 +390,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 32 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 33 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 33 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=33)
@@ -414,12 +414,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 34 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 35 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 35 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=35)
@@ -438,12 +438,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 36 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 37 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 37 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=37)
@@ -462,12 +462,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 38 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 39 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 39 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=39)
@@ -486,12 +486,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 40 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 41 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 41 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=41)
@@ -510,12 +510,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 42 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 43 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 43 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=43)
@@ -534,12 +534,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 44 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 45 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 45 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=45)
@@ -558,12 +558,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 46 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 47 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 47 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=47)
@@ -582,12 +582,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 48 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 49 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 49 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=49)
@@ -606,12 +606,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 50 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 51 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 51 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=51)
@@ -630,12 +630,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 52 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 53 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 53 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=53)
@@ -654,12 +654,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 54 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 55 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 55 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=55)
@@ -678,12 +678,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 57 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 57 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=57)
@@ -702,12 +702,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 58 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 59 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 59 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=59)
@@ -726,12 +726,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 60 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=61, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=61, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 61 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=61, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=61, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 61 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=61)
@@ -750,12 +750,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 62 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 63 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 63 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=63)
@@ -774,12 +774,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 64 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 65 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 65 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=65)
@@ -798,12 +798,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 66 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 67 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 67 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=67)
@@ -822,12 +822,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 68 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 69 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 69 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=69)
@@ -846,12 +846,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 70 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 71 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 71 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=71)
@@ -870,12 +870,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 72 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 73 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 73 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=73)
@@ -894,12 +894,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 74 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=75, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=75, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 75 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=75, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=75, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 75 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=75)
@@ -918,12 +918,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 76 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=77, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=77, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 77 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=77, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=77, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 77 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=77)
@@ -942,12 +942,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 78 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 79 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 79 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=79)
@@ -966,12 +966,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 80 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=81, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=81, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 81 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=81, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=81, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 81 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=81)
@@ -990,12 +990,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 82 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=83, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=83, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 83 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=83, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=83, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 83 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=83)
@@ -1014,12 +1014,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 84 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=85, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=85, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 85 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=85, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=85, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 85 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=85)
@@ -1038,12 +1038,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 86 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=87, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=87, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 87 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=87, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=87, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 87 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=87)
@@ -1062,12 +1062,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 88 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=89, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=89, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 89 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=89, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=89, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 89 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=89)
@@ -1086,12 +1086,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 90 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=91, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=91, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 91 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=91, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=91, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 91 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=91)
@@ -1110,12 +1110,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 92 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=93, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=93, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 93 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=93, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=93, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 93 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=93)
@@ -1134,12 +1134,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 94 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=95, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=95, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 95 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=95, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=95, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 95 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=95)
@@ -1158,12 +1158,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 96 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=97, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=97, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 97 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=97, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=97, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 97 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=97)
@@ -1182,12 +1182,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 98 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=99, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=99, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 99 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=99, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=99, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 99 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=99)
@@ -1206,12 +1206,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 100 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=101, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=101, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 101 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=101, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=101, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 101 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=101)
@@ -1230,12 +1230,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 102 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=103, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=103, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 103 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=103, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=103, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 103 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=103)
@@ -1254,12 +1254,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 104 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=105, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=105, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 105 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=105, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=105, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 105 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=105)
@@ -1278,12 +1278,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 106 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=107, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=107, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 107 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=107, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=107, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'PointerType'
     └─ Nodes: 1 active, 107 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=107)
@@ -1314,12 +1314,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 109 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=110, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=110, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 110 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=110, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=110, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'RecordType'
     └─ Nodes: 1 active, 110 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=110)
@@ -1350,12 +1350,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 112 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=113, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=113, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 113 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=113, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=113, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 113 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=113)
@@ -1394,12 +1394,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 115 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=116, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=116, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 116 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=116, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=116, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 116 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=116)
@@ -1418,12 +1418,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 117 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 118 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 118 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=118)
@@ -1582,12 +1582,12 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 125 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=126, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=126, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 126 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=126, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=126, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 126 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=121)
@@ -1694,12 +1694,12 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 133 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=134, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=134, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 134 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=134, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=134, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 134 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=127)
@@ -1718,12 +1718,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 135 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=136, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=136, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 136 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=136, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=136, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'BuiltinType'
     └─ Nodes: 1 active, 136 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=129)
@@ -1798,12 +1798,12 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 141 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=142, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=142, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 142 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=142, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=142, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 142 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=132)
@@ -1946,12 +1946,12 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 152 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=153, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=153, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 153 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=153, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=153, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 153 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=138)
@@ -2038,12 +2038,12 @@ tree.mojo:215 - INFO: [Depth:-2] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 159 complete
-tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=160, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:-1] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=160, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 160 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=160, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=160, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'ElaboratedType'
     └─ Nodes: 1 active, 160 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=144)
@@ -2086,12 +2086,12 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 163 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=164, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	TypedefDeclNode(parent_idx=0, current_idx=164, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'TypedefDecl'
     └─ Nodes: 1 active, 164 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=164, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	TypedefDeclNode(parent_idx=0, current_idx=164, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> TypedefDeclNode
     └─ Current ast_entry: 'PointerType'
     └─ Nodes: 1 active, 164 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=148)

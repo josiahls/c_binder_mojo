@@ -1,5 +1,21 @@
 
-# (placeholder) TranslationUnitDecl 0x174502a8 <<invalid sloc>> <invalid sloc>
+# (placeholder) #include <stdio.h> /* clang -E -dI */
+
+# (placeholder) #include <stdlib.h> /* clang -E -dI */
+
+# (placeholder) #include "my_header.h" /* clang -E -dI */
+
+# (placeholder) #include "../relative/path.h" /* clang -E -dI */
+
+# (placeholder) #include <string.h> /* clang -E -dI */
+
+# (placeholder) #include "local/header.h" /* clang -E -dI */
+
+# (placeholder) #include <math.h> /* clang -E -dI */
+
+# (placeholder) #include <time.h> /* clang -E -dI */
+
+# (placeholder) TranslationUnitDecl 0x3dad52a8 <<invalid sloc>> <invalid sloc>
 
 alias <invalid = sloc> implicit __int128_t __int128 
 

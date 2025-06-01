@@ -199,10 +199,81 @@ struct AstParser:
         result = run(cmd)
         return result.split("\n")
 
+    @staticmethod
+    fn get_includes(file_path: Path, extra_args: String = "") raises -> List[AstEntry]:
+        """Get include directives from the file without expansion.
+        
+        Uses clang -E -dI to extract include directives as AstEntry objects.
+        This avoids the massive header expansion that occurs with -ast-dump.
+        
+        Args:
+            file_path: Path to the C header file to analyze
+            extra_args: Additional arguments to pass to clang
+            
+        Returns:
+            List of AstEntry objects representing include directives
+        """
+        cmd = (
+            "clang -E -dI -nostdinc "
+            + file_path.path
+            + " "
+            + extra_args
+            + " 2>/dev/null"
+        )
+        result = run(cmd)
+        var lines = result.split("\n")
+        var entries: List[AstEntry] = []
+        
+        for line in lines:
+            # Look for lines that start with #include
+            var line_str = String(line[])
+            if line_str.strip().startswith("#include"):
+                var ast_entry = AstEntry()
+                
+                # Parse the include line: #include <header.h> /* clang -E -dI */
+                var clean_line = String(line_str.strip())
+                if " /* clang -E -dI */" in clean_line:
+                    clean_line = clean_line.replace(" /* clang -E -dI */", "")
+                
+                # Set basic fields
+                ast_entry.ast_name = "IncludeDirective"
+                ast_entry.original_line = line_str
+                ast_entry.level = 0
+                ast_entry.str_just_original_line = False
+                
+                # Parse tokens from the include line
+                var tokens = clean_line.split(" ")
+                for token in tokens:
+                    var token_str = String(token[])
+                    if token_str.strip() != "":
+                        ast_entry.tokens.append(token_str)
+                
+                # Extract the header file name for full_location
+                if len(ast_entry.tokens) >= 2:
+                    var header_file = ast_entry.tokens[1]
+                    # Remove < > or " " from header file name
+                    if header_file.startswith("<") and header_file.endswith(">"):
+                        header_file = String(header_file[1:-1])
+                    elif header_file.startswith('"') and header_file.endswith('"'):
+                        header_file = String(header_file[1:-1])
+                    ast_entry.full_location = header_file
+                
+                # Leave these fields blank as they don't apply to include directives
+                ast_entry.mem_address = ""
+                ast_entry.precise_location = ""
+                
+                entries.append(ast_entry^)
+        
+        return entries
+
     fn parse(self, file_path: Path, extra_args: String = "") raises -> List[AstEntry]:
 
         result = self.clang_call(file_path, extra_args)
         var entries: List[AstEntry] = []
+
+        includes = self.get_includes(file_path, extra_args)
+        for include in includes:
+            entries.append(include[])
 
         for line in result:
             level = 0

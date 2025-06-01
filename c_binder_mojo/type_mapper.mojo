@@ -102,7 +102,8 @@ struct TypeMapper:
         var _type_name = Self.clean_type_name(type_name)
         if Self.is_pointer_type(_type_name):
             # For now, we'll just handle the basic pointer types
-            return _type_name[:-1]
+            # TODO(josiahls): don't change the type yet
+            return _type_name # [:-1]
         return _type_name
 
     @staticmethod

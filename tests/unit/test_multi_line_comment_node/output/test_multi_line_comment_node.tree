@@ -894,47 +894,39 @@ tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=
     └─ Path: RootNode
     └─ Current ast_entry: 'FunctionDecl'
     └─ Nodes: 1 active, 55 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	PlaceHolderNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FunctionDeclNode
     └─ Current ast_entry: 'FunctionDecl'
     └─ Nodes: 1 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	PlaceHolderNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> PlaceHolderNode
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))
+    └─ Path: RootNode -> FunctionDeclNode
     └─ Current ast_entry: 'FullComment'
     └─ Nodes: 1 active, 56 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
+    └─ Path: RootNode -> FunctionDeclNode
+    └─ Current ast_entry: 'ParagraphComment'
+    └─ Nodes: 2 active, 55 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
+    └─ Path: RootNode -> FunctionDeclNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 55 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
+    └─ Path: RootNode -> FunctionDeclNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 55 complete
+tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
+    └─ Path: RootNode -> FunctionDeclNode
+    └─ Current ast_entry: 'TextComment'
+    └─ Nodes: 2 active, 55 complete
+tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=1 (COLLECTING_TOKENS))
+    └─ Path: RootNode -> FunctionDeclNode
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
+    └─ Nodes: 2 active, 55 complete
 tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=56)
     └─ Path: RootNode
-    └─ Current ast_entry: 'FullComment'
+    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
     └─ Nodes: 1 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	FullCommentNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'FullComment'
-    └─ Nodes: 1 active, 57 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'ParagraphComment'
-    └─ Nodes: 1 active, 57 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 1 (CONSUME_TOKEN)|------| 	FullCommentNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'TextComment'
-    └─ Nodes: 2 active, 56 complete
-tree.mojo:215 - INFO: [Depth:0] 2 (PASS_TO_PARENT)|-----| 	FullCommentNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=3 (BUILDING_CHILDREN))
-    └─ Path: RootNode -> FullCommentNode
-    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
-    └─ Nodes: 2 active, 56 complete
-tree.mojo:215 - INFO: [Depth:-1] 3 (CREATE_CHILD)|-------| RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=57)
-    └─ Path: RootNode
-    └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
-    └─ Nodes: 1 active, 57 complete
-tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	EndFileNode(parent_idx=0, current_idx=58, child_idxs=(), node_state=4 (COMPLETED))
+tree.mojo:215 - INFO: [Depth:0] 0 (INITIALIZING) -> 3 (CREATE_CHILD) 	EndFileNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))
     └─ Path: RootNode -> EndFileNode
     └─ Current ast_entry: 'C_BINDER_MOJO_END_FILE'
-    └─ Nodes: 1 active, 58 complete
+    └─ Nodes: 1 active, 57 complete

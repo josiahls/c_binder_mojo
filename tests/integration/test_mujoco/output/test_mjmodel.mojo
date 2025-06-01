@@ -1,113 +1,311 @@
 
-# (placeholder) TranslationUnitDecl 0x2a8a1688 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x2abe0358 <<invalid sloc>> <invalid sloc>
 
-alias <invalid = sloc> implicit __int128_t __int128 
+alias __int128_t = __int128 
 
-alias <invalid = sloc> implicit __uint128_t unsigned __int128 
+alias __uint128_t = unsigned __int128 
 
-alias <invalid = sloc> implicit __NSConstantString __NSConstantString_tag 
+alias __NSConstantString = __NSConstantString_tag 
 
-alias <invalid = sloc> implicit __SVInt8_t __SVInt8_t 
+alias __SVInt8_t = __SVInt8_t 
 
-alias <invalid = sloc> implicit __SVInt16_t __SVInt16_t 
+alias __SVInt16_t = __SVInt16_t 
 
-alias <invalid = sloc> implicit __SVInt32_t __SVInt32_t 
+alias __SVInt32_t = __SVInt32_t 
 
-alias <invalid = sloc> implicit __SVInt64_t __SVInt64_t 
+alias __SVInt64_t = __SVInt64_t 
 
-alias <invalid = sloc> implicit __SVUint8_t __SVUint8_t 
+alias __SVUint8_t = __SVUint8_t 
 
-alias <invalid = sloc> implicit __SVUint16_t __SVUint16_t 
+alias __SVUint16_t = __SVUint16_t 
 
-alias <invalid = sloc> implicit __SVUint32_t __SVUint32_t 
+alias __SVUint32_t = __SVUint32_t 
 
-alias <invalid = sloc> implicit __SVUint64_t __SVUint64_t 
+alias __SVUint64_t = __SVUint64_t 
 
-alias <invalid = sloc> implicit __SVFloat16_t __SVFloat16_t 
+alias __SVFloat16_t = __SVFloat16_t 
 
-alias <invalid = sloc> implicit __SVFloat32_t __SVFloat32_t 
+alias __SVFloat32_t = __SVFloat32_t 
 
-alias <invalid = sloc> implicit __SVFloat64_t __SVFloat64_t 
+alias __SVFloat64_t = __SVFloat64_t 
 
-alias <invalid = sloc> implicit __SVBFloat16_t __SVBFloat16_t 
+alias __SVBFloat16_t = __SVBFloat16_t 
 
-alias <invalid = sloc> implicit __clang_svint8x2_t __clang_svint8x2_t 
+alias __clang_svint8x2_t = __clang_svint8x2_t 
 
-alias <invalid = sloc> implicit __clang_svint16x2_t __clang_svint16x2_t 
+alias __clang_svint16x2_t = __clang_svint16x2_t 
 
-alias <invalid = sloc> implicit __clang_svint32x2_t __clang_svint32x2_t 
+alias __clang_svint32x2_t = __clang_svint32x2_t 
 
-alias <invalid = sloc> implicit __clang_svint64x2_t __clang_svint64x2_t 
+alias __clang_svint64x2_t = __clang_svint64x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint8x2_t __clang_svuint8x2_t 
+alias __clang_svuint8x2_t = __clang_svuint8x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint16x2_t __clang_svuint16x2_t 
+alias __clang_svuint16x2_t = __clang_svuint16x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint32x2_t __clang_svuint32x2_t 
+alias __clang_svuint32x2_t = __clang_svuint32x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint64x2_t __clang_svuint64x2_t 
+alias __clang_svuint64x2_t = __clang_svuint64x2_t 
 
-alias <invalid = sloc> implicit __clang_svfloat16x2_t __clang_svfloat16x2_t 
+alias __clang_svfloat16x2_t = __clang_svfloat16x2_t 
 
-alias <invalid = sloc> implicit __clang_svfloat32x2_t __clang_svfloat32x2_t 
+alias __clang_svfloat32x2_t = __clang_svfloat32x2_t 
 
-alias <invalid = sloc> implicit __clang_svfloat64x2_t __clang_svfloat64x2_t 
+alias __clang_svfloat64x2_t = __clang_svfloat64x2_t 
 
-alias <invalid = sloc> implicit __clang_svbfloat16x2_t __clang_svbfloat16x2_t 
+alias __clang_svbfloat16x2_t = __clang_svbfloat16x2_t 
 
-alias <invalid = sloc> implicit __clang_svint8x3_t __clang_svint8x3_t 
+alias __clang_svint8x3_t = __clang_svint8x3_t 
 
-alias <invalid = sloc> implicit __clang_svint16x3_t __clang_svint16x3_t 
+alias __clang_svint16x3_t = __clang_svint16x3_t 
 
-alias <invalid = sloc> implicit __clang_svint32x3_t __clang_svint32x3_t 
+alias __clang_svint32x3_t = __clang_svint32x3_t 
 
-alias <invalid = sloc> implicit __clang_svint64x3_t __clang_svint64x3_t 
+alias __clang_svint64x3_t = __clang_svint64x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint8x3_t __clang_svuint8x3_t 
+alias __clang_svuint8x3_t = __clang_svuint8x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint16x3_t __clang_svuint16x3_t 
+alias __clang_svuint16x3_t = __clang_svuint16x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint32x3_t __clang_svuint32x3_t 
+alias __clang_svuint32x3_t = __clang_svuint32x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint64x3_t __clang_svuint64x3_t 
+alias __clang_svuint64x3_t = __clang_svuint64x3_t 
 
-alias <invalid = sloc> implicit __clang_svfloat16x3_t __clang_svfloat16x3_t 
+alias __clang_svfloat16x3_t = __clang_svfloat16x3_t 
 
-alias <invalid = sloc> implicit __clang_svfloat32x3_t __clang_svfloat32x3_t 
+alias __clang_svfloat32x3_t = __clang_svfloat32x3_t 
 
-alias <invalid = sloc> implicit __clang_svfloat64x3_t __clang_svfloat64x3_t 
+alias __clang_svfloat64x3_t = __clang_svfloat64x3_t 
 
-alias <invalid = sloc> implicit __clang_svbfloat16x3_t __clang_svbfloat16x3_t 
+alias __clang_svbfloat16x3_t = __clang_svbfloat16x3_t 
 
-alias <invalid = sloc> implicit __clang_svint8x4_t __clang_svint8x4_t 
+alias __clang_svint8x4_t = __clang_svint8x4_t 
 
-alias <invalid = sloc> implicit __clang_svint16x4_t __clang_svint16x4_t 
+alias __clang_svint16x4_t = __clang_svint16x4_t 
 
-alias <invalid = sloc> implicit __clang_svint32x4_t __clang_svint32x4_t 
+alias __clang_svint32x4_t = __clang_svint32x4_t 
 
-alias <invalid = sloc> implicit __clang_svint64x4_t __clang_svint64x4_t 
+alias __clang_svint64x4_t = __clang_svint64x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint8x4_t __clang_svuint8x4_t 
+alias __clang_svuint8x4_t = __clang_svuint8x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint16x4_t __clang_svuint16x4_t 
+alias __clang_svuint16x4_t = __clang_svuint16x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint32x4_t __clang_svuint32x4_t 
+alias __clang_svuint32x4_t = __clang_svuint32x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint64x4_t __clang_svuint64x4_t 
+alias __clang_svuint64x4_t = __clang_svuint64x4_t 
 
-alias <invalid = sloc> implicit __clang_svfloat16x4_t __clang_svfloat16x4_t 
+alias __clang_svfloat16x4_t = __clang_svfloat16x4_t 
 
-alias <invalid = sloc> implicit __clang_svfloat32x4_t __clang_svfloat32x4_t 
+alias __clang_svfloat32x4_t = __clang_svfloat32x4_t 
 
-alias <invalid = sloc> implicit __clang_svfloat64x4_t __clang_svfloat64x4_t 
+alias __clang_svfloat64x4_t = __clang_svfloat64x4_t 
 
-alias <invalid = sloc> implicit __clang_svbfloat16x4_t __clang_svbfloat16x4_t 
+alias __clang_svbfloat16x4_t = __clang_svbfloat16x4_t 
 
-alias <invalid = sloc> implicit __SVBool_t __SVBool_t 
+alias __SVBool_t = __SVBool_t 
 
-alias <invalid = sloc> implicit __builtin_ms_va_list char * 
+alias __builtin_ms_va_list = char * 
 
-alias <invalid = sloc> implicit __builtin_va_list std 
+alias __builtin_va_list = std 
+
+alias ptrdiff_t = long 
+
+alias size_t = unsigned long 
+
+alias wchar_t = unsigned int 
+struct _Anonymous:
+	alias __clang_max_align_nonce1: Int64 = 8
+
+	alias __clang_max_align_nonce2: long double = 16
+
+
+alias max_align_t = max_align_t 
+
+alias __u_char = unsigned char 
+
+alias __u_short = unsigned short 
+
+alias __u_int = unsigned int 
+
+alias __u_long = unsigned long 
+
+alias __int8_t = signed char 
+
+alias __uint8_t = unsigned char 
+
+alias __int16_t = short 
+
+alias __uint16_t = unsigned short 
+
+alias __int32_t = int 
+
+alias __uint32_t = unsigned int 
+
+alias __int64_t = long 
+
+alias __uint64_t = unsigned long 
+
+alias __int_least8_t = __int8_t 
+
+alias __uint_least8_t = __uint8_t 
+
+alias __int_least16_t = __int16_t 
+
+alias __uint_least16_t = __uint16_t 
+
+alias __int_least32_t = __int32_t 
+
+alias __uint_least32_t = __uint32_t 
+
+alias __int_least64_t = __int64_t 
+
+alias __uint_least64_t = __uint64_t 
+
+alias __quad_t = long 
+
+alias __u_quad_t = unsigned long 
+
+alias __intmax_t = long 
+
+alias __uintmax_t = unsigned long 
+
+alias __dev_t = unsigned long 
+
+alias __uid_t = unsigned int 
+
+alias __gid_t = unsigned int 
+
+alias __ino_t = unsigned long 
+
+alias __ino64_t = unsigned long 
+
+alias __mode_t = unsigned int 
+
+alias __nlink_t = unsigned int 
+
+alias __off_t = long 
+
+alias __off64_t = long 
+
+alias __pid_t = int 
+struct _Anonymous:
+	var __val: int[2]
+
+
+alias __fsid_t = __fsid_t 
+
+alias __clock_t = long 
+
+alias __rlim_t = unsigned long 
+
+alias __rlim64_t = unsigned long 
+
+alias __id_t = unsigned int 
+
+alias __time_t = long 
+
+alias __useconds_t = unsigned int 
+
+alias __suseconds_t = long 
+
+alias __suseconds64_t = long 
+
+alias __daddr_t = int 
+
+alias __key_t = int 
+
+alias __clockid_t = int 
+
+alias __timer_t = void * 
+
+alias __blksize_t = int 
+
+alias __blkcnt_t = long 
+
+alias __blkcnt64_t = long 
+
+alias __fsblkcnt_t = unsigned long 
+
+alias __fsblkcnt64_t = unsigned long 
+
+alias __fsfilcnt_t = unsigned long 
+
+alias __fsfilcnt64_t = unsigned long 
+
+alias __fsword_t = long 
+
+alias __ssize_t = long 
+
+alias __syscall_slong_t = long 
+
+alias __syscall_ulong_t = unsigned long 
+
+alias __loff_t = __off64_t 
+
+alias __caddr_t = char * 
+
+alias __intptr_t = long 
+
+alias __socklen_t = unsigned int 
+
+alias __sig_atomic_t = int 
+
+alias int8_t = __int8_t 
+
+alias int16_t = __int16_t 
+
+alias int32_t = __int32_t 
+
+alias int64_t = __int64_t 
+
+alias uint8_t = __uint8_t 
+
+alias uint16_t = __uint16_t 
+
+alias uint32_t = __uint32_t 
+
+alias uint64_t = __uint64_t 
+
+alias int_least8_t = __int_least8_t 
+
+alias int_least16_t = __int_least16_t 
+
+alias int_least32_t = __int_least32_t 
+
+alias int_least64_t = __int_least64_t 
+
+alias uint_least8_t = __uint_least8_t 
+
+alias uint_least16_t = __uint_least16_t 
+
+alias uint_least32_t = __uint_least32_t 
+
+alias uint_least64_t = __uint_least64_t 
+
+alias int_fast8_t = signed char 
+
+alias int_fast16_t = long 
+
+alias int_fast32_t = long 
+
+alias int_fast64_t = long 
+
+alias uint_fast8_t = unsigned char 
+
+alias uint_fast16_t = unsigned long 
+
+alias uint_fast32_t = unsigned long 
+
+alias uint_fast64_t = unsigned long 
+
+alias intptr_t = long 
+
+alias uintptr_t = unsigned long 
+
+alias intmax_t = __intmax_t 
+
+alias uintmax_t = __uintmax_t 
 
 alias mjtNum = double 
 
@@ -658,7 +856,7 @@ alias mjLROpt = mjLROpt_
 struct mjVFS_:
 	#---------------------------------- mjVFS ---------------------------------------------------------
 
-	var impl_: void 
+	var impl_: void *
 
 
 alias mjVFS = mjVFS_ 
@@ -725,7 +923,7 @@ struct mjOption_:
 
 
 alias mjOption = mjOption_ 
-struct _mjVisual___Anonymous_442:
+struct _mjVisual___Anonymous_542:
 	var fog: float[4]
 
 	var haze: float[4]
@@ -777,7 +975,7 @@ struct _mjVisual___Anonymous_442:
 	var bvactive: float[4]
 
 
-struct _mjVisual___Anonymous_423:
+struct _mjVisual___Anonymous_523:
 	var forcewidth: Float32
 
 	var contactwidth: Float32
@@ -813,7 +1011,7 @@ struct _mjVisual___Anonymous_423:
 	var frustum: Float32
 
 
-struct _mjVisual___Anonymous_408:
+struct _mjVisual___Anonymous_508:
 	var stiffness: Float32
 
 	var stiffnessrot: Float32
@@ -841,7 +1039,7 @@ struct _mjVisual___Anonymous_408:
 	var actuatortendon: Float32
 
 
-struct _mjVisual___Anonymous_402:
+struct _mjVisual___Anonymous_502:
 	var ambient: float[3]
 
 	var diffuse: float[3]
@@ -851,7 +1049,7 @@ struct _mjVisual___Anonymous_402:
 	var active: Int
 
 
-struct _mjVisual___Anonymous_395:
+struct _mjVisual___Anonymous_495:
 	var shadowsize: Int
 
 	var offsamples: Int
@@ -863,7 +1061,7 @@ struct _mjVisual___Anonymous_395:
 	var numquads: Int
 
 
-struct _mjVisual___Anonymous_381:
+struct _mjVisual___Anonymous_481:
 	var orthographic: Int
 
 	var fovy: Float32
@@ -892,17 +1090,17 @@ struct _mjVisual___Anonymous_381:
 struct mjVisual_:
 	#---------------------------------- mjVisual ------------------------------------------------------
 
-	var global: _mjVisual___Anonymous_381
+	var global: _mjVisual___Anonymous_481
 
-	var quality: _mjVisual___Anonymous_395
+	var quality: _mjVisual___Anonymous_495
 
-	var headlight: _mjVisual___Anonymous_402
+	var headlight: _mjVisual___Anonymous_502
 
-	var map: _mjVisual___Anonymous_408
+	var map: _mjVisual___Anonymous_508
 
-	var scale: _mjVisual___Anonymous_423
+	var scale: _mjVisual___Anonymous_523
 
-	var rgba: _mjVisual___Anonymous_442
+	var rgba: _mjVisual___Anonymous_542
 
 
 alias mjVisual = mjVisual_ 
@@ -1080,9 +1278,9 @@ struct mjModel_:
 
 	var npluginstate: Int
 
-	var invalid: narena int
+	var narena: size_t:unsigned long
 
-	var invalid: nbuffer int
+	var nbuffer: size_t:unsigned long
 
 	var opt: mjOption
 
@@ -1090,773 +1288,773 @@ struct mjModel_:
 
 	var stat: mjStatistic
 
-	var buffer: void 
+	var buffer: void *
 
-	var qpos0: mjtNum 
+	var qpos0: mjtNum *
 
-	var qpos_spring: mjtNum 
+	var qpos_spring: mjtNum *
 
-	var body_parentid: int 
+	var body_parentid: int *
 
-	var body_rootid: int 
+	var body_rootid: int *
 
-	var body_weldid: int 
+	var body_weldid: int *
 
-	var body_mocapid: int 
+	var body_mocapid: int *
 
-	var body_jntnum: int 
+	var body_jntnum: int *
 
-	var body_jntadr: int 
+	var body_jntadr: int *
 
-	var body_dofnum: int 
+	var body_dofnum: int *
 
-	var body_dofadr: int 
+	var body_dofadr: int *
 
-	var body_treeid: int 
+	var body_treeid: int *
 
-	var body_geomnum: int 
+	var body_geomnum: int *
 
-	var body_geomadr: int 
+	var body_geomadr: int *
 
-	var body_simple: mjtByte 
+	var body_simple: mjtByte *
 
-	var body_sameframe: mjtByte 
+	var body_sameframe: mjtByte *
 
-	var body_pos: mjtNum 
+	var body_pos: mjtNum *
 
-	var body_quat: mjtNum 
+	var body_quat: mjtNum *
 
-	var body_ipos: mjtNum 
+	var body_ipos: mjtNum *
 
-	var body_iquat: mjtNum 
+	var body_iquat: mjtNum *
 
-	var body_mass: mjtNum 
+	var body_mass: mjtNum *
 
-	var body_subtreemass: mjtNum 
+	var body_subtreemass: mjtNum *
 
-	var body_inertia: mjtNum 
+	var body_inertia: mjtNum *
 
-	var body_invweight0: mjtNum 
+	var body_invweight0: mjtNum *
 
-	var body_gravcomp: mjtNum 
+	var body_gravcomp: mjtNum *
 
-	var body_margin: mjtNum 
+	var body_margin: mjtNum *
 
-	var body_user: mjtNum 
+	var body_user: mjtNum *
 
-	var body_plugin: int 
+	var body_plugin: int *
 
-	var body_contype: int 
+	var body_contype: int *
 
-	var body_conaffinity: int 
+	var body_conaffinity: int *
 
-	var body_bvhadr: int 
+	var body_bvhadr: int *
 
-	var body_bvhnum: int 
+	var body_bvhnum: int *
 
-	var bvh_depth: int 
+	var bvh_depth: int *
 
-	var bvh_child: int 
+	var bvh_child: int *
 
-	var bvh_nodeid: int 
+	var bvh_nodeid: int *
 
-	var bvh_aabb: mjtNum 
+	var bvh_aabb: mjtNum *
 
-	var jnt_type: int 
+	var jnt_type: int *
 
-	var jnt_qposadr: int 
+	var jnt_qposadr: int *
 
-	var jnt_dofadr: int 
+	var jnt_dofadr: int *
 
-	var jnt_bodyid: int 
+	var jnt_bodyid: int *
 
-	var jnt_group: int 
+	var jnt_group: int *
 
-	var jnt_limited: mjtByte 
+	var jnt_limited: mjtByte *
 
-	var jnt_actfrclimited: mjtByte 
+	var jnt_actfrclimited: mjtByte *
 
-	var jnt_actgravcomp: mjtByte 
+	var jnt_actgravcomp: mjtByte *
 
-	var jnt_solref: mjtNum 
+	var jnt_solref: mjtNum *
 
-	var jnt_solimp: mjtNum 
+	var jnt_solimp: mjtNum *
 
-	var jnt_pos: mjtNum 
+	var jnt_pos: mjtNum *
 
-	var jnt_axis: mjtNum 
+	var jnt_axis: mjtNum *
 
-	var jnt_stiffness: mjtNum 
+	var jnt_stiffness: mjtNum *
 
-	var jnt_range: mjtNum 
+	var jnt_range: mjtNum *
 
-	var jnt_actfrcrange: mjtNum 
+	var jnt_actfrcrange: mjtNum *
 
-	var jnt_margin: mjtNum 
+	var jnt_margin: mjtNum *
 
-	var jnt_user: mjtNum 
+	var jnt_user: mjtNum *
 
-	var dof_bodyid: int 
+	var dof_bodyid: int *
 
-	var dof_jntid: int 
+	var dof_jntid: int *
 
-	var dof_parentid: int 
+	var dof_parentid: int *
 
-	var dof_treeid: int 
+	var dof_treeid: int *
 
-	var dof_Madr: int 
+	var dof_Madr: int *
 
-	var dof_simplenum: int 
+	var dof_simplenum: int *
 
-	var dof_solref: mjtNum 
+	var dof_solref: mjtNum *
 
-	var dof_solimp: mjtNum 
+	var dof_solimp: mjtNum *
 
-	var dof_frictionloss: mjtNum 
+	var dof_frictionloss: mjtNum *
 
-	var dof_armature: mjtNum 
+	var dof_armature: mjtNum *
 
-	var dof_damping: mjtNum 
+	var dof_damping: mjtNum *
 
-	var dof_invweight0: mjtNum 
+	var dof_invweight0: mjtNum *
 
-	var dof_M0: mjtNum 
+	var dof_M0: mjtNum *
 
-	var geom_type: int 
+	var geom_type: int *
 
-	var geom_contype: int 
+	var geom_contype: int *
 
-	var geom_conaffinity: int 
+	var geom_conaffinity: int *
 
-	var geom_condim: int 
+	var geom_condim: int *
 
-	var geom_bodyid: int 
+	var geom_bodyid: int *
 
-	var geom_dataid: int 
+	var geom_dataid: int *
 
-	var geom_matid: int 
+	var geom_matid: int *
 
-	var geom_group: int 
+	var geom_group: int *
 
-	var geom_priority: int 
+	var geom_priority: int *
 
-	var geom_plugin: int 
+	var geom_plugin: int *
 
-	var geom_sameframe: mjtByte 
+	var geom_sameframe: mjtByte *
 
-	var geom_solmix: mjtNum 
+	var geom_solmix: mjtNum *
 
-	var geom_solref: mjtNum 
+	var geom_solref: mjtNum *
 
-	var geom_solimp: mjtNum 
+	var geom_solimp: mjtNum *
 
-	var geom_size: mjtNum 
+	var geom_size: mjtNum *
 
-	var geom_aabb: mjtNum 
+	var geom_aabb: mjtNum *
 
-	var geom_rbound: mjtNum 
+	var geom_rbound: mjtNum *
 
-	var geom_pos: mjtNum 
+	var geom_pos: mjtNum *
 
-	var geom_quat: mjtNum 
+	var geom_quat: mjtNum *
 
-	var geom_friction: mjtNum 
+	var geom_friction: mjtNum *
 
-	var geom_margin: mjtNum 
+	var geom_margin: mjtNum *
 
-	var geom_gap: mjtNum 
+	var geom_gap: mjtNum *
 
-	var geom_fluid: mjtNum 
+	var geom_fluid: mjtNum *
 
-	var geom_user: mjtNum 
+	var geom_user: mjtNum *
 
-	var geom_rgba: float 
+	var geom_rgba: float *
 
-	var site_type: int 
+	var site_type: int *
 
-	var site_bodyid: int 
+	var site_bodyid: int *
 
-	var site_matid: int 
+	var site_matid: int *
 
-	var site_group: int 
+	var site_group: int *
 
-	var site_sameframe: mjtByte 
+	var site_sameframe: mjtByte *
 
-	var site_size: mjtNum 
+	var site_size: mjtNum *
 
-	var site_pos: mjtNum 
+	var site_pos: mjtNum *
 
-	var site_quat: mjtNum 
+	var site_quat: mjtNum *
 
-	var site_user: mjtNum 
+	var site_user: mjtNum *
 
-	var site_rgba: float 
+	var site_rgba: float *
 
-	var cam_mode: int 
+	var cam_mode: int *
 
-	var cam_bodyid: int 
+	var cam_bodyid: int *
 
-	var cam_targetbodyid: int 
+	var cam_targetbodyid: int *
 
-	var cam_pos: mjtNum 
+	var cam_pos: mjtNum *
 
-	var cam_quat: mjtNum 
+	var cam_quat: mjtNum *
 
-	var cam_poscom0: mjtNum 
+	var cam_poscom0: mjtNum *
 
-	var cam_pos0: mjtNum 
+	var cam_pos0: mjtNum *
 
-	var cam_mat0: mjtNum 
+	var cam_mat0: mjtNum *
 
-	var cam_orthographic: int 
+	var cam_orthographic: int *
 
-	var cam_fovy: mjtNum 
+	var cam_fovy: mjtNum *
 
-	var cam_ipd: mjtNum 
+	var cam_ipd: mjtNum *
 
-	var cam_resolution: int 
+	var cam_resolution: int *
 
-	var cam_sensorsize: float 
+	var cam_sensorsize: float *
 
-	var cam_intrinsic: float 
+	var cam_intrinsic: float *
 
-	var cam_user: mjtNum 
+	var cam_user: mjtNum *
 
-	var light_mode: int 
+	var light_mode: int *
 
-	var light_bodyid: int 
+	var light_bodyid: int *
 
-	var light_targetbodyid: int 
+	var light_targetbodyid: int *
 
-	var light_directional: mjtByte 
+	var light_directional: mjtByte *
 
-	var light_castshadow: mjtByte 
+	var light_castshadow: mjtByte *
 
-	var light_bulbradius: float 
+	var light_bulbradius: float *
 
-	var light_active: mjtByte 
+	var light_active: mjtByte *
 
-	var light_pos: mjtNum 
+	var light_pos: mjtNum *
 
-	var light_dir: mjtNum 
+	var light_dir: mjtNum *
 
-	var light_poscom0: mjtNum 
+	var light_poscom0: mjtNum *
 
-	var light_pos0: mjtNum 
+	var light_pos0: mjtNum *
 
-	var light_dir0: mjtNum 
+	var light_dir0: mjtNum *
 
-	var light_attenuation: float 
+	var light_attenuation: float *
 
-	var light_cutoff: float 
+	var light_cutoff: float *
 
-	var light_exponent: float 
+	var light_exponent: float *
 
-	var light_ambient: float 
+	var light_ambient: float *
 
-	var light_diffuse: float 
+	var light_diffuse: float *
 
-	var light_specular: float 
+	var light_specular: float *
 
-	var flex_contype: int 
+	var flex_contype: int *
 
-	var flex_conaffinity: int 
+	var flex_conaffinity: int *
 
-	var flex_condim: int 
+	var flex_condim: int *
 
-	var flex_priority: int 
+	var flex_priority: int *
 
-	var flex_solmix: mjtNum 
+	var flex_solmix: mjtNum *
 
-	var flex_solref: mjtNum 
+	var flex_solref: mjtNum *
 
-	var flex_solimp: mjtNum 
+	var flex_solimp: mjtNum *
 
-	var flex_friction: mjtNum 
+	var flex_friction: mjtNum *
 
-	var flex_margin: mjtNum 
+	var flex_margin: mjtNum *
 
-	var flex_gap: mjtNum 
+	var flex_gap: mjtNum *
 
-	var flex_internal: mjtByte 
+	var flex_internal: mjtByte *
 
-	var flex_selfcollide: int 
+	var flex_selfcollide: int *
 
-	var flex_activelayers: int 
+	var flex_activelayers: int *
 
-	var flex_dim: int 
+	var flex_dim: int *
 
-	var flex_matid: int 
+	var flex_matid: int *
 
-	var flex_group: int 
+	var flex_group: int *
 
-	var flex_vertadr: int 
+	var flex_vertadr: int *
 
-	var flex_vertnum: int 
+	var flex_vertnum: int *
 
-	var flex_edgeadr: int 
+	var flex_edgeadr: int *
 
-	var flex_edgenum: int 
+	var flex_edgenum: int *
 
-	var flex_elemadr: int 
+	var flex_elemadr: int *
 
-	var flex_elemnum: int 
+	var flex_elemnum: int *
 
-	var flex_elemdataadr: int 
+	var flex_elemdataadr: int *
 
-	var flex_elemedgeadr: int 
+	var flex_elemedgeadr: int *
 
-	var flex_shellnum: int 
+	var flex_shellnum: int *
 
-	var flex_shelldataadr: int 
+	var flex_shelldataadr: int *
 
-	var flex_evpairadr: int 
+	var flex_evpairadr: int *
 
-	var flex_evpairnum: int 
+	var flex_evpairnum: int *
 
-	var flex_texcoordadr: int 
+	var flex_texcoordadr: int *
 
-	var flex_vertbodyid: int 
+	var flex_vertbodyid: int *
 
-	var flex_edge: int 
+	var flex_edge: int *
 
-	var flex_elem: int 
+	var flex_elem: int *
 
-	var flex_elemedge: int 
+	var flex_elemedge: int *
 
-	var flex_elemlayer: int 
+	var flex_elemlayer: int *
 
-	var flex_shell: int 
+	var flex_shell: int *
 
-	var flex_evpair: int 
+	var flex_evpair: int *
 
-	var flex_vert: mjtNum 
+	var flex_vert: mjtNum *
 
-	var flex_xvert0: mjtNum 
+	var flex_xvert0: mjtNum *
 
-	var flexedge_length0: mjtNum 
+	var flexedge_length0: mjtNum *
 
-	var flexedge_invweight0: mjtNum 
+	var flexedge_invweight0: mjtNum *
 
-	var flex_radius: mjtNum 
+	var flex_radius: mjtNum *
 
-	var flex_stiffness: mjtNum 
+	var flex_stiffness: mjtNum *
 
-	var flex_damping: mjtNum 
+	var flex_damping: mjtNum *
 
-	var flex_edgestiffness: mjtNum 
+	var flex_edgestiffness: mjtNum *
 
-	var flex_edgedamping: mjtNum 
+	var flex_edgedamping: mjtNum *
 
-	var flex_edgeequality: mjtByte 
+	var flex_edgeequality: mjtByte *
 
-	var flex_rigid: mjtByte 
+	var flex_rigid: mjtByte *
 
-	var flexedge_rigid: mjtByte 
+	var flexedge_rigid: mjtByte *
 
-	var flex_centered: mjtByte 
+	var flex_centered: mjtByte *
 
-	var flex_flatskin: mjtByte 
+	var flex_flatskin: mjtByte *
 
-	var flex_bvhadr: int 
+	var flex_bvhadr: int *
 
-	var flex_bvhnum: int 
+	var flex_bvhnum: int *
 
-	var flex_rgba: float 
+	var flex_rgba: float *
 
-	var flex_texcoord: float 
+	var flex_texcoord: float *
 
-	var mesh_vertadr: int 
+	var mesh_vertadr: int *
 
-	var mesh_vertnum: int 
+	var mesh_vertnum: int *
 
-	var mesh_faceadr: int 
+	var mesh_faceadr: int *
 
-	var mesh_facenum: int 
+	var mesh_facenum: int *
 
-	var mesh_bvhadr: int 
+	var mesh_bvhadr: int *
 
-	var mesh_bvhnum: int 
+	var mesh_bvhnum: int *
 
-	var mesh_normaladr: int 
+	var mesh_normaladr: int *
 
-	var mesh_normalnum: int 
+	var mesh_normalnum: int *
 
-	var mesh_texcoordadr: int 
+	var mesh_texcoordadr: int *
 
-	var mesh_texcoordnum: int 
+	var mesh_texcoordnum: int *
 
-	var mesh_graphadr: int 
+	var mesh_graphadr: int *
 
-	var mesh_vert: float 
+	var mesh_vert: float *
 
-	var mesh_normal: float 
+	var mesh_normal: float *
 
-	var mesh_texcoord: float 
+	var mesh_texcoord: float *
 
-	var mesh_face: int 
+	var mesh_face: int *
 
-	var mesh_facenormal: int 
+	var mesh_facenormal: int *
 
-	var mesh_facetexcoord: int 
+	var mesh_facetexcoord: int *
 
-	var mesh_graph: int 
+	var mesh_graph: int *
 
-	var mesh_scale: mjtNum 
+	var mesh_scale: mjtNum *
 
-	var mesh_pos: mjtNum 
+	var mesh_pos: mjtNum *
 
-	var mesh_quat: mjtNum 
+	var mesh_quat: mjtNum *
 
-	var mesh_pathadr: int 
+	var mesh_pathadr: int *
 
-	var skin_matid: int 
+	var skin_matid: int *
 
-	var skin_group: int 
+	var skin_group: int *
 
-	var skin_rgba: float 
+	var skin_rgba: float *
 
-	var skin_inflate: float 
+	var skin_inflate: float *
 
-	var skin_vertadr: int 
+	var skin_vertadr: int *
 
-	var skin_vertnum: int 
+	var skin_vertnum: int *
 
-	var skin_texcoordadr: int 
+	var skin_texcoordadr: int *
 
-	var skin_faceadr: int 
+	var skin_faceadr: int *
 
-	var skin_facenum: int 
+	var skin_facenum: int *
 
-	var skin_boneadr: int 
+	var skin_boneadr: int *
 
-	var skin_bonenum: int 
+	var skin_bonenum: int *
 
-	var skin_vert: float 
+	var skin_vert: float *
 
-	var skin_texcoord: float 
+	var skin_texcoord: float *
 
-	var skin_face: int 
+	var skin_face: int *
 
-	var skin_bonevertadr: int 
+	var skin_bonevertadr: int *
 
-	var skin_bonevertnum: int 
+	var skin_bonevertnum: int *
 
-	var skin_bonebindpos: float 
+	var skin_bonebindpos: float *
 
-	var skin_bonebindquat: float 
+	var skin_bonebindquat: float *
 
-	var skin_bonebodyid: int 
+	var skin_bonebodyid: int *
 
-	var skin_bonevertid: int 
+	var skin_bonevertid: int *
 
-	var skin_bonevertweight: float 
+	var skin_bonevertweight: float *
 
-	var skin_pathadr: int 
+	var skin_pathadr: int *
 
-	var hfield_size: mjtNum 
+	var hfield_size: mjtNum *
 
-	var hfield_nrow: int 
+	var hfield_nrow: int *
 
-	var hfield_ncol: int 
+	var hfield_ncol: int *
 
-	var hfield_adr: int 
+	var hfield_adr: int *
 
-	var hfield_data: float 
+	var hfield_data: float *
 
-	var hfield_pathadr: int 
+	var hfield_pathadr: int *
 
-	var tex_type: int 
+	var tex_type: int *
 
-	var tex_height: int 
+	var tex_height: int *
 
-	var tex_width: int 
+	var tex_width: int *
 
-	var tex_nchannel: int 
+	var tex_nchannel: int *
 
-	var tex_adr: int 
+	var tex_adr: int *
 
-	var tex_data: mjtByte 
+	var tex_data: mjtByte *
 
-	var tex_pathadr: int 
+	var tex_pathadr: int *
 
-	var mat_texid: int 
+	var mat_texid: int *
 
-	var mat_texuniform: mjtByte 
+	var mat_texuniform: mjtByte *
 
-	var mat_texrepeat: float 
+	var mat_texrepeat: float *
 
-	var mat_emission: float 
+	var mat_emission: float *
 
-	var mat_specular: float 
+	var mat_specular: float *
 
-	var mat_shininess: float 
+	var mat_shininess: float *
 
-	var mat_reflectance: float 
+	var mat_reflectance: float *
 
-	var mat_metallic: float 
+	var mat_metallic: float *
 
-	var mat_roughness: float 
+	var mat_roughness: float *
 
-	var mat_rgba: float 
+	var mat_rgba: float *
 
-	var pair_dim: int 
+	var pair_dim: int *
 
-	var pair_geom1: int 
+	var pair_geom1: int *
 
-	var pair_geom2: int 
+	var pair_geom2: int *
 
-	var pair_signature: int 
+	var pair_signature: int *
 
-	var pair_solref: mjtNum 
+	var pair_solref: mjtNum *
 
-	var pair_solreffriction: mjtNum 
+	var pair_solreffriction: mjtNum *
 
-	var pair_solimp: mjtNum 
+	var pair_solimp: mjtNum *
 
-	var pair_margin: mjtNum 
+	var pair_margin: mjtNum *
 
-	var pair_gap: mjtNum 
+	var pair_gap: mjtNum *
 
-	var pair_friction: mjtNum 
+	var pair_friction: mjtNum *
 
-	var exclude_signature: int 
+	var exclude_signature: int *
 
-	var eq_type: int 
+	var eq_type: int *
 
-	var eq_obj1id: int 
+	var eq_obj1id: int *
 
-	var eq_obj2id: int 
+	var eq_obj2id: int *
 
-	var eq_objtype: int 
+	var eq_objtype: int *
 
-	var eq_active0: mjtByte 
+	var eq_active0: mjtByte *
 
-	var eq_solref: mjtNum 
+	var eq_solref: mjtNum *
 
-	var eq_solimp: mjtNum 
+	var eq_solimp: mjtNum *
 
-	var eq_data: mjtNum 
+	var eq_data: mjtNum *
 
-	var tendon_adr: int 
+	var tendon_adr: int *
 
-	var tendon_num: int 
+	var tendon_num: int *
 
-	var tendon_matid: int 
+	var tendon_matid: int *
 
-	var tendon_group: int 
+	var tendon_group: int *
 
-	var tendon_limited: mjtByte 
+	var tendon_limited: mjtByte *
 
-	var tendon_width: mjtNum 
+	var tendon_width: mjtNum *
 
-	var tendon_solref_lim: mjtNum 
+	var tendon_solref_lim: mjtNum *
 
-	var tendon_solimp_lim: mjtNum 
+	var tendon_solimp_lim: mjtNum *
 
-	var tendon_solref_fri: mjtNum 
+	var tendon_solref_fri: mjtNum *
 
-	var tendon_solimp_fri: mjtNum 
+	var tendon_solimp_fri: mjtNum *
 
-	var tendon_range: mjtNum 
+	var tendon_range: mjtNum *
 
-	var tendon_margin: mjtNum 
+	var tendon_margin: mjtNum *
 
-	var tendon_stiffness: mjtNum 
+	var tendon_stiffness: mjtNum *
 
-	var tendon_damping: mjtNum 
+	var tendon_damping: mjtNum *
 
-	var tendon_frictionloss: mjtNum 
+	var tendon_frictionloss: mjtNum *
 
-	var tendon_lengthspring: mjtNum 
+	var tendon_lengthspring: mjtNum *
 
-	var tendon_length0: mjtNum 
+	var tendon_length0: mjtNum *
 
-	var tendon_invweight0: mjtNum 
+	var tendon_invweight0: mjtNum *
 
-	var tendon_user: mjtNum 
+	var tendon_user: mjtNum *
 
-	var tendon_rgba: float 
+	var tendon_rgba: float *
 
-	var wrap_type: int 
+	var wrap_type: int *
 
-	var wrap_objid: int 
+	var wrap_objid: int *
 
-	var wrap_prm: mjtNum 
+	var wrap_prm: mjtNum *
 
-	var actuator_trntype: int 
+	var actuator_trntype: int *
 
-	var actuator_dyntype: int 
+	var actuator_dyntype: int *
 
-	var actuator_gaintype: int 
+	var actuator_gaintype: int *
 
-	var actuator_biastype: int 
+	var actuator_biastype: int *
 
-	var actuator_trnid: int 
+	var actuator_trnid: int *
 
-	var actuator_actadr: int 
+	var actuator_actadr: int *
 
-	var actuator_actnum: int 
+	var actuator_actnum: int *
 
-	var actuator_group: int 
+	var actuator_group: int *
 
-	var actuator_ctrllimited: mjtByte 
+	var actuator_ctrllimited: mjtByte *
 
-	var actuator_forcelimited: mjtByte 
+	var actuator_forcelimited: mjtByte *
 
-	var actuator_actlimited: mjtByte 
+	var actuator_actlimited: mjtByte *
 
-	var actuator_dynprm: mjtNum 
+	var actuator_dynprm: mjtNum *
 
-	var actuator_gainprm: mjtNum 
+	var actuator_gainprm: mjtNum *
 
-	var actuator_biasprm: mjtNum 
+	var actuator_biasprm: mjtNum *
 
-	var actuator_actearly: mjtByte 
+	var actuator_actearly: mjtByte *
 
-	var actuator_ctrlrange: mjtNum 
+	var actuator_ctrlrange: mjtNum *
 
-	var actuator_forcerange: mjtNum 
+	var actuator_forcerange: mjtNum *
 
-	var actuator_actrange: mjtNum 
+	var actuator_actrange: mjtNum *
 
-	var actuator_gear: mjtNum 
+	var actuator_gear: mjtNum *
 
-	var actuator_cranklength: mjtNum 
+	var actuator_cranklength: mjtNum *
 
-	var actuator_acc0: mjtNum 
+	var actuator_acc0: mjtNum *
 
-	var actuator_length0: mjtNum 
+	var actuator_length0: mjtNum *
 
-	var actuator_lengthrange: mjtNum 
+	var actuator_lengthrange: mjtNum *
 
-	var actuator_user: mjtNum 
+	var actuator_user: mjtNum *
 
-	var actuator_plugin: int 
+	var actuator_plugin: int *
 
-	var sensor_type: int 
+	var sensor_type: int *
 
-	var sensor_datatype: int 
+	var sensor_datatype: int *
 
-	var sensor_needstage: int 
+	var sensor_needstage: int *
 
-	var sensor_objtype: int 
+	var sensor_objtype: int *
 
-	var sensor_objid: int 
+	var sensor_objid: int *
 
-	var sensor_reftype: int 
+	var sensor_reftype: int *
 
-	var sensor_refid: int 
+	var sensor_refid: int *
 
-	var sensor_dim: int 
+	var sensor_dim: int *
 
-	var sensor_adr: int 
+	var sensor_adr: int *
 
-	var sensor_cutoff: mjtNum 
+	var sensor_cutoff: mjtNum *
 
-	var sensor_noise: mjtNum 
+	var sensor_noise: mjtNum *
 
-	var sensor_user: mjtNum 
+	var sensor_user: mjtNum *
 
-	var sensor_plugin: int 
+	var sensor_plugin: int *
 
-	var plugin: int 
+	var plugin: int *
 
-	var plugin_stateadr: int 
+	var plugin_stateadr: int *
 
-	var plugin_statenum: int 
+	var plugin_statenum: int *
 
-	var plugin_attr: char 
+	var plugin_attr: String
 
-	var plugin_attradr: int 
+	var plugin_attradr: int *
 
-	var numeric_adr: int 
+	var numeric_adr: int *
 
-	var numeric_size: int 
+	var numeric_size: int *
 
-	var numeric_data: mjtNum 
+	var numeric_data: mjtNum *
 
-	var text_adr: int 
+	var text_adr: int *
 
-	var text_size: int 
+	var text_size: int *
 
-	var text_data: char 
+	var text_data: String
 
-	var tuple_adr: int 
+	var tuple_adr: int *
 
-	var tuple_size: int 
+	var tuple_size: int *
 
-	var tuple_objtype: int 
+	var tuple_objtype: int *
 
-	var tuple_objid: int 
+	var tuple_objid: int *
 
-	var tuple_objprm: mjtNum 
+	var tuple_objprm: mjtNum *
 
-	var key_time: mjtNum 
+	var key_time: mjtNum *
 
-	var key_qpos: mjtNum 
+	var key_qpos: mjtNum *
 
-	var key_qvel: mjtNum 
+	var key_qvel: mjtNum *
 
-	var key_act: mjtNum 
+	var key_act: mjtNum *
 
-	var key_mpos: mjtNum 
+	var key_mpos: mjtNum *
 
-	var key_mquat: mjtNum 
+	var key_mquat: mjtNum *
 
-	var key_ctrl: mjtNum 
+	var key_ctrl: mjtNum *
 
-	var name_bodyadr: int 
+	var name_bodyadr: int *
 
-	var name_jntadr: int 
+	var name_jntadr: int *
 
-	var name_geomadr: int 
+	var name_geomadr: int *
 
-	var name_siteadr: int 
+	var name_siteadr: int *
 
-	var name_camadr: int 
+	var name_camadr: int *
 
-	var name_lightadr: int 
+	var name_lightadr: int *
 
-	var name_flexadr: int 
+	var name_flexadr: int *
 
-	var name_meshadr: int 
+	var name_meshadr: int *
 
-	var name_skinadr: int 
+	var name_skinadr: int *
 
-	var name_hfieldadr: int 
+	var name_hfieldadr: int *
 
-	var name_texadr: int 
+	var name_texadr: int *
 
-	var name_matadr: int 
+	var name_matadr: int *
 
-	var name_pairadr: int 
+	var name_pairadr: int *
 
-	var name_excludeadr: int 
+	var name_excludeadr: int *
 
-	var name_eqadr: int 
+	var name_eqadr: int *
 
-	var name_tendonadr: int 
+	var name_tendonadr: int *
 
-	var name_actuatoradr: int 
+	var name_actuatoradr: int *
 
-	var name_sensoradr: int 
+	var name_sensoradr: int *
 
-	var name_numericadr: int 
+	var name_numericadr: int *
 
-	var name_textadr: int 
+	var name_textadr: int *
 
-	var name_tupleadr: int 
+	var name_tupleadr: int *
 
-	var name_keyadr: int 
+	var name_keyadr: int *
 
-	var name_pluginadr: int 
+	var name_pluginadr: int *
 
-	var names: char 
+	var names: String
 
-	var names_map: int 
+	var names_map: int *
 
-	var paths: char 
+	var paths: String
 
 
 alias mjModel = mjModel_ 

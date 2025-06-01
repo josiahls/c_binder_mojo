@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x23e00248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x191ed248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -291,31 +291,31 @@ alias _IO_lock_t = void
 struct _IO_FILE:
 	var _flags: Int
 
-	var _IO_read_ptr: char 
+	var _IO_read_ptr: String
 
-	var _IO_read_end: char 
+	var _IO_read_end: String
 
-	var _IO_read_base: char 
+	var _IO_read_base: String
 
-	var _IO_write_base: char 
+	var _IO_write_base: String
 
-	var _IO_write_ptr: char 
+	var _IO_write_ptr: String
 
-	var _IO_write_end: char 
+	var _IO_write_end: String
 
-	var _IO_buf_base: char 
+	var _IO_buf_base: String
 
-	var _IO_buf_end: char 
+	var _IO_buf_end: String
 
-	var _IO_save_base: char 
+	var _IO_save_base: String
 
-	var _IO_backup_base: char 
+	var _IO_backup_base: String
 
-	var _IO_save_end: char 
+	var _IO_save_end: String
 
-	var _markers: _IO_marker 
+	var _markers: _IO_marker *
 
-	var _chain: _IO_FILE 
+	var _chain: _IO_FILE *
 
 	var _fileno: Int
 
@@ -329,17 +329,17 @@ struct _IO_FILE:
 
 	var _shortbuf: char[1]
 
-	var _lock: _IO_lock_t 
+	var _lock: _IO_lock_t *
 
 	var _offset: __off64_t:long
 
-	var _codecvt: _IO_codecvt 
+	var _codecvt: _IO_codecvt *
 
-	var _wide_data: _IO_wide_data 
+	var _wide_data: _IO_wide_data *
 
-	var _freeres_list: _IO_FILE 
+	var _freeres_list: _IO_FILE *
 
-	var _freeres_buf: void 
+	var _freeres_buf: void *
 
 	var __pad5: size_t:unsigned long
 

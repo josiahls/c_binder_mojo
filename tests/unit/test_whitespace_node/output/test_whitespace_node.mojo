@@ -1,126 +1,112 @@
 
-# (placeholder) TranslationUnitDecl 0x312d8578 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x24d11528 <<invalid sloc>> <invalid sloc>
 
-alias <invalid = sloc> implicit __int128_t __int128 
+alias __int128_t = __int128 
 
-alias <invalid = sloc> implicit __uint128_t unsigned __int128 
+alias __uint128_t = unsigned __int128 
 
-alias <invalid = sloc> implicit __NSConstantString __NSConstantString_tag 
+alias __NSConstantString = __NSConstantString_tag 
 
-alias <invalid = sloc> implicit __SVInt8_t __SVInt8_t 
+alias __SVInt8_t = __SVInt8_t 
 
-alias <invalid = sloc> implicit __SVInt16_t __SVInt16_t 
+alias __SVInt16_t = __SVInt16_t 
 
-alias <invalid = sloc> implicit __SVInt32_t __SVInt32_t 
+alias __SVInt32_t = __SVInt32_t 
 
-alias <invalid = sloc> implicit __SVInt64_t __SVInt64_t 
+alias __SVInt64_t = __SVInt64_t 
 
-alias <invalid = sloc> implicit __SVUint8_t __SVUint8_t 
+alias __SVUint8_t = __SVUint8_t 
 
-alias <invalid = sloc> implicit __SVUint16_t __SVUint16_t 
+alias __SVUint16_t = __SVUint16_t 
 
-alias <invalid = sloc> implicit __SVUint32_t __SVUint32_t 
+alias __SVUint32_t = __SVUint32_t 
 
-alias <invalid = sloc> implicit __SVUint64_t __SVUint64_t 
+alias __SVUint64_t = __SVUint64_t 
 
-alias <invalid = sloc> implicit __SVFloat16_t __SVFloat16_t 
+alias __SVFloat16_t = __SVFloat16_t 
 
-alias <invalid = sloc> implicit __SVFloat32_t __SVFloat32_t 
+alias __SVFloat32_t = __SVFloat32_t 
 
-alias <invalid = sloc> implicit __SVFloat64_t __SVFloat64_t 
+alias __SVFloat64_t = __SVFloat64_t 
 
-alias <invalid = sloc> implicit __SVBFloat16_t __SVBFloat16_t 
+alias __SVBFloat16_t = __SVBFloat16_t 
 
-alias <invalid = sloc> implicit __clang_svint8x2_t __clang_svint8x2_t 
+alias __clang_svint8x2_t = __clang_svint8x2_t 
 
-alias <invalid = sloc> implicit __clang_svint16x2_t __clang_svint16x2_t 
+alias __clang_svint16x2_t = __clang_svint16x2_t 
 
-alias <invalid = sloc> implicit __clang_svint32x2_t __clang_svint32x2_t 
+alias __clang_svint32x2_t = __clang_svint32x2_t 
 
-alias <invalid = sloc> implicit __clang_svint64x2_t __clang_svint64x2_t 
+alias __clang_svint64x2_t = __clang_svint64x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint8x2_t __clang_svuint8x2_t 
+alias __clang_svuint8x2_t = __clang_svuint8x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint16x2_t __clang_svuint16x2_t 
+alias __clang_svuint16x2_t = __clang_svuint16x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint32x2_t __clang_svuint32x2_t 
+alias __clang_svuint32x2_t = __clang_svuint32x2_t 
 
-alias <invalid = sloc> implicit __clang_svuint64x2_t __clang_svuint64x2_t 
+alias __clang_svuint64x2_t = __clang_svuint64x2_t 
 
-alias <invalid = sloc> implicit __clang_svfloat16x2_t __clang_svfloat16x2_t 
+alias __clang_svfloat16x2_t = __clang_svfloat16x2_t 
 
-alias <invalid = sloc> implicit __clang_svfloat32x2_t __clang_svfloat32x2_t 
+alias __clang_svfloat32x2_t = __clang_svfloat32x2_t 
 
-alias <invalid = sloc> implicit __clang_svfloat64x2_t __clang_svfloat64x2_t 
+alias __clang_svfloat64x2_t = __clang_svfloat64x2_t 
 
-alias <invalid = sloc> implicit __clang_svbfloat16x2_t __clang_svbfloat16x2_t 
+alias __clang_svbfloat16x2_t = __clang_svbfloat16x2_t 
 
-alias <invalid = sloc> implicit __clang_svint8x3_t __clang_svint8x3_t 
+alias __clang_svint8x3_t = __clang_svint8x3_t 
 
-alias <invalid = sloc> implicit __clang_svint16x3_t __clang_svint16x3_t 
+alias __clang_svint16x3_t = __clang_svint16x3_t 
 
-alias <invalid = sloc> implicit __clang_svint32x3_t __clang_svint32x3_t 
+alias __clang_svint32x3_t = __clang_svint32x3_t 
 
-alias <invalid = sloc> implicit __clang_svint64x3_t __clang_svint64x3_t 
+alias __clang_svint64x3_t = __clang_svint64x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint8x3_t __clang_svuint8x3_t 
+alias __clang_svuint8x3_t = __clang_svuint8x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint16x3_t __clang_svuint16x3_t 
+alias __clang_svuint16x3_t = __clang_svuint16x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint32x3_t __clang_svuint32x3_t 
+alias __clang_svuint32x3_t = __clang_svuint32x3_t 
 
-alias <invalid = sloc> implicit __clang_svuint64x3_t __clang_svuint64x3_t 
+alias __clang_svuint64x3_t = __clang_svuint64x3_t 
 
-alias <invalid = sloc> implicit __clang_svfloat16x3_t __clang_svfloat16x3_t 
+alias __clang_svfloat16x3_t = __clang_svfloat16x3_t 
 
-alias <invalid = sloc> implicit __clang_svfloat32x3_t __clang_svfloat32x3_t 
+alias __clang_svfloat32x3_t = __clang_svfloat32x3_t 
 
-alias <invalid = sloc> implicit __clang_svfloat64x3_t __clang_svfloat64x3_t 
+alias __clang_svfloat64x3_t = __clang_svfloat64x3_t 
 
-alias <invalid = sloc> implicit __clang_svbfloat16x3_t __clang_svbfloat16x3_t 
+alias __clang_svbfloat16x3_t = __clang_svbfloat16x3_t 
 
-alias <invalid = sloc> implicit __clang_svint8x4_t __clang_svint8x4_t 
+alias __clang_svint8x4_t = __clang_svint8x4_t 
 
-alias <invalid = sloc> implicit __clang_svint16x4_t __clang_svint16x4_t 
+alias __clang_svint16x4_t = __clang_svint16x4_t 
 
-alias <invalid = sloc> implicit __clang_svint32x4_t __clang_svint32x4_t 
+alias __clang_svint32x4_t = __clang_svint32x4_t 
 
-alias <invalid = sloc> implicit __clang_svint64x4_t __clang_svint64x4_t 
+alias __clang_svint64x4_t = __clang_svint64x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint8x4_t __clang_svuint8x4_t 
+alias __clang_svuint8x4_t = __clang_svuint8x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint16x4_t __clang_svuint16x4_t 
+alias __clang_svuint16x4_t = __clang_svuint16x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint32x4_t __clang_svuint32x4_t 
+alias __clang_svuint32x4_t = __clang_svuint32x4_t 
 
-alias <invalid = sloc> implicit __clang_svuint64x4_t __clang_svuint64x4_t 
+alias __clang_svuint64x4_t = __clang_svuint64x4_t 
 
-alias <invalid = sloc> implicit __clang_svfloat16x4_t __clang_svfloat16x4_t 
+alias __clang_svfloat16x4_t = __clang_svfloat16x4_t 
 
-alias <invalid = sloc> implicit __clang_svfloat32x4_t __clang_svfloat32x4_t 
+alias __clang_svfloat32x4_t = __clang_svfloat32x4_t 
 
-alias <invalid = sloc> implicit __clang_svfloat64x4_t __clang_svfloat64x4_t 
+alias __clang_svfloat64x4_t = __clang_svfloat64x4_t 
 
-alias <invalid = sloc> implicit __clang_svbfloat16x4_t __clang_svbfloat16x4_t 
+alias __clang_svbfloat16x4_t = __clang_svbfloat16x4_t 
 
-alias <invalid = sloc> implicit __SVBool_t __SVBool_t 
+alias __SVBool_t = __SVBool_t 
 
-alias <invalid = sloc> implicit __builtin_ms_va_list char * 
+alias __builtin_ms_va_list = char * 
 
-alias <invalid = sloc> implicit __builtin_va_list std 
+alias __builtin_va_list = std 
 
-# (placeholder) `-FunctionDecl 0x3137cca0 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_whitespace_node/test_whitespace_node.h:20:1, line:24:1> line:20:5 function 'int ()'
-
-# (placeholder)   |-CompoundStmt 0x3137cf18 <col:16, line:24:1>
-
-# (placeholder)   | |-DeclStmt 0x3137ce28 <line:21:5, col:14>
-
-var used: Int
-
-# (placeholder)   | `-ReturnStmt 0x3137ce78 <line:23:5, col:12>
-
-# (placeholder)   |   `-ImplicitCastExpr 0x3137ce60 <col:12> 'int' <LValueToRValue>
-
-# (placeholder)   |     `-DeclRefExpr 0x3137ce40 <col:12> 'int' lvalue Var 0x3137cda0 'x' 'int'
-
-# Whitespace in code contexts
+alias function = fn () -> int 

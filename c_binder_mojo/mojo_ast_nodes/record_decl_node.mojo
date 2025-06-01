@@ -26,14 +26,17 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 struct Grammar(Copyable, Movable, Stringable, Writable):
     var _name: String
     var _is_forward_declaration: Bool
+    var _is_anonymous: Bool
 
     fn __init__(out self):
         self._name = String()
         self._is_forward_declaration = False
+        self._is_anonymous = False
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
         self._is_forward_declaration = False
+        self._is_anonymous = False
         if len(ast_entries) > 1 or len(ast_entries) == 0:
             print("RecordDeclNode: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
             for entry in ast_entries:
@@ -51,6 +54,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                     # name collisions.
                     precise_location = entry.precise_location.replace(":", "_")
                     self._name = "_Anonymous_" + precise_location
+                    self._is_anonymous = True
                 else:
                     self._name = entry.tokens[1]
             elif len(entry.tokens) == 3:
@@ -149,7 +153,7 @@ struct RecordDeclNode(NodeAstLike):
 
             if child.node[].isa[Self]():
                 original_name = child.node[][Self]._grammar._name.copy()
-                if original_name.startswith("_Anonymous"):
+                if child.node[][Self]._grammar._is_anonymous:
                     anonymous_struct_caught = True
                 
                 self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
@@ -158,7 +162,6 @@ struct RecordDeclNode(NodeAstLike):
                 if anonymous_struct_caught:
                     child.node[][FieldDeclNode]._grammar._field_type = "_" + self._grammar._name + "_" + original_name
                     anonymous_struct_caught = False
-                    anonymous_struct_idx = 0
                 
                 if child.node[][FieldDeclNode]._grammar._field_type in self._inner_struct_name_map:
                     try:

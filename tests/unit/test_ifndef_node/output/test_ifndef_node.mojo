@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x1bc0a248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x39e44248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -107,7 +107,7 @@ alias __SVBool_t = __SVBool_t
 
 alias __builtin_ms_va_list = char * 
 
-alias referenced = __builtin_va_list std 
+alias referenced = __builtin_va_list std::__va_list 
 
 alias inner_guard_variable: Int =  42 # `inner_guard_variable` was not originally const in the original code
 
@@ -119,9 +119,9 @@ alias complex_variable: Int =  200 # `complex_variable` was not originally const
 
 alias size_t = unsigned long 
 
-alias va_list = __builtin_va_list 
+alias va_list = __builtin_va_list:struct std::__va_list 
 
-alias __gnuc_va_list = __builtin_va_list 
+alias __gnuc_va_list = __builtin_va_list:struct std::__va_list 
 
 alias __u_char = unsigned char 
 
@@ -147,21 +147,21 @@ alias __int64_t = long
 
 alias __uint64_t = unsigned long 
 
-alias __int_least8_t = __int8_t 
+alias __int_least8_t = __int8_t:signed char 
 
-alias __uint_least8_t = __uint8_t 
+alias __uint_least8_t = __uint8_t:unsigned char 
 
-alias __int_least16_t = __int16_t 
+alias __int_least16_t = __int16_t:short 
 
-alias __uint_least16_t = __uint16_t 
+alias __uint_least16_t = __uint16_t:unsigned short 
 
-alias __int_least32_t = __int32_t 
+alias __int_least32_t = __int32_t:int 
 
-alias __uint_least32_t = __uint32_t 
+alias __uint_least32_t = __uint32_t:unsigned int 
 
-alias __int_least64_t = __int64_t 
+alias __int_least64_t = __int64_t:long 
 
-alias __uint_least64_t = __uint64_t 
+alias __uint_least64_t = __uint64_t:unsigned long 
 
 alias __quad_t = long 
 
@@ -190,11 +190,11 @@ alias __off_t = long
 alias __off64_t = long 
 
 alias __pid_t = int 
-struct _Anonymous:
+struct _Anonymous_col_24:
 	var __val: int[2]
 
 
-alias __fsid_t = __fsid_t 
+alias __fsid_t = _Anonymous_col_24
 
 alias __clock_t = long 
 
@@ -242,7 +242,7 @@ alias __syscall_slong_t = long
 
 alias __syscall_ulong_t = unsigned long 
 
-alias __loff_t = __off64_t 
+alias __loff_t = __off64_t:long 
 
 alias __caddr_t = char * 
 
@@ -251,41 +251,41 @@ alias __intptr_t = long
 alias __socklen_t = unsigned int 
 
 alias __sig_atomic_t = int 
-struct __Anonymous_definition:
+struct __Anonymous_line_13_9_definition:
 	var __wch: UInt
 
 	var __wchb: char[4]
 
 
-struct _Anonymous:
+struct _Anonymous_line_13_9:
 	var __count: Int
 
 	var __value: union (unnamed union at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3):union __mbstate_t::(unnamed at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3)
 
 
-alias __mbstate_t = __mbstate_t 
+alias __mbstate_t = _Anonymous_line_13_9
 struct _G_fpos_t:
 	var __pos: __off_t:long
 
 	var __state: __mbstate_t:__mbstate_t
 
 
-alias __fpos_t = _G_fpos_t 
+alias __fpos_t = _G_fpos_t
 struct _G_fpos64_t:
 	var __pos: __off64_t:long
 
 	var __state: __mbstate_t:__mbstate_t
 
 
-alias __fpos64_t = _G_fpos64_t 
+alias __fpos64_t = _G_fpos64_t
 # Forward declaration of _IO_FILE	pass
 
 
-alias __FILE = _IO_FILE 
+alias __FILE = _IO_FILE:struct _IO_FILE 
 # Forward declaration of _IO_FILE	pass
 
 
-alias FILE = _IO_FILE 
+alias FILE = _IO_FILE:struct _IO_FILE 
 # Forward declaration of _IO_FILE	pass
 
 # Forward declaration of _IO_marker	pass
@@ -356,13 +356,13 @@ struct _IO_FILE:
 	var _unused2: char[20]
 
 
-alias va_list = __gnuc_va_list 
+alias va_list = __gnuc_va_list:struct std::__va_list 
 
-alias off_t = __off_t 
+alias off_t = __off_t:long 
 
-alias ssize_t = __ssize_t 
+alias ssize_t = __ssize_t:long 
 
-alias fpos_t = __fpos_t 
+alias fpos_t = _G_fpos_t
 
 alias stdin: FILE # extern
 

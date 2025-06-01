@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x1fe7248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x3b0c4248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -107,36 +107,8 @@ alias __SVBool_t = __SVBool_t
 
 alias __builtin_ms_va_list = char * 
 
-alias __builtin_va_list = std 
-
-alias uint_t = unsigned int 
-
-alias int64_t = long long 
-
-alias byte_t = unsigned char 
-struct NodeState_:
-	# Enum typedef
-
-	alias STATE_NONE: Int = 0
-
-	alias STATE_COLLECTING: Int = 1
-
-	alias STATE_BUILDING: Int = 2
-
-	alias STATE_COMPLETE: Int = 3
-
-
-alias NodeState = NodeState_ 
-struct TestStruct:
-	# This struct should not collect the typedefs that follow
-
-	var value: Int
-
-
-alias integer_t = int 
-
-alias float_t = float 
-struct _Anonymous:
+alias __builtin_va_list = std::__va_list 
+struct _Anonymous_line_3_9:
 	# Struct typedefs - testing nested typedef handling
 
 	var x: Int
@@ -144,24 +116,4 @@ struct _Anonymous:
 	var y: Int
 
 
-alias Point2D = Point2D 
-struct Rectangle_:
-	# Test typedef and struct interaction
-
-	var top_left: Point2D:Point2D
-
-	var bottom_right: Point2D:Point2D
-
-	var width: Int
-
-	var height: Int
-
-
-alias Rectangle = Rectangle_ 
-struct _Anonymous:
-	var data: Int
-
-
-alias NestedStruct = NestedStruct 
-
-alias NestedPtr = NestedStruct * 
+alias Point2D = _Anonymous_line_3_9

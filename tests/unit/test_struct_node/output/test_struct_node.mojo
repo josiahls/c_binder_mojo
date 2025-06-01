@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x14c70248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x182fb248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -159,7 +159,7 @@ struct _Anonymous_line_39_9:
 	var flags: UInt8
 
 
-alias Flags = Flags:Flags 
+alias Flags = _Anonymous_line_39_9
 struct BitFields:
 	# Struct with bit fields
 

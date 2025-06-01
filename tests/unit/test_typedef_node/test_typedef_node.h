@@ -1,29 +1,3 @@
-// Basic type typedefs
-typedef unsigned int uint_t;
-typedef long long int64_t;
-typedef unsigned char byte_t;
-
-// Enum typedef
-typedef enum NodeState_ {
-    STATE_NONE = 0,      // Initial state
-    STATE_COLLECTING,    // Collecting tokens
-    STATE_BUILDING,      // Building children
-    STATE_COMPLETE       // Node is complete
-} NodeState;
-
-// Test preprocessor scoping with typedef
-#ifndef MY_TYPEDEF_TEST
-#define MY_TYPEDEF_TEST
-
-// This struct should not collect the typedefs that follow
-struct TestStruct {
-    int value;
-};
-
-typedef int integer_t;  // Should be independent node
-typedef float float_t;  // Should be independent node
-
-#endif  // MY_TYPEDEF_TEST
 
 // Struct typedefs - testing nested typedef handling
 typedef struct {
@@ -31,25 +5,3 @@ typedef struct {
     int y;
 } Point2D;
 
-// Test typedef and struct interaction
-struct Rectangle_ {
-    Point2D top_left;
-    Point2D bottom_right;
-    int width;
-    int height;
-};
-
-// This typedef should be independent of the struct above
-typedef struct Rectangle_ Rectangle;
-
-// Test preprocessor and typedef interaction
-#ifndef NESTED_TEST
-#define NESTED_TEST
-
-typedef struct {
-    int data;
-} NestedStruct;  // This typedef should not be affected by the ifdef
-
-typedef NestedStruct* NestedPtr;  // This should be an independent typedef
-
-#endif  // NESTED_TEST 

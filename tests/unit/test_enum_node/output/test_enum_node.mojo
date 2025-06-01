@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x3e0b1238 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x8f96238 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -107,7 +107,7 @@ alias __SVBool_t = __SVBool_t
 
 alias __builtin_ms_va_list = char * 
 
-alias __builtin_va_list = std 
+alias __builtin_va_list = std::__va_list 
 struct Color:
 	# Basic enum with values
 

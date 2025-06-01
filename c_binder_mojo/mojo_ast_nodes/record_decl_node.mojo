@@ -96,12 +96,14 @@ struct RecordDeclNode(NodeAstLike):
     var _record_decl_level: Int
     var _grammar: Grammar
     var _inner_struct_name_map: Dict[String, String]
+    var _record_mem_location: String
 
-    fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
+    fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
-        self._record_decl_level = ast_entries.level
+        self._ast_entries[].append(ast_entry)
+        self._record_decl_level = ast_entry.level
+        self._record_mem_location = ast_entry.mem_address
         self._node_state = NodeState.COMPLETED
         self._grammar = Grammar()
         self._inner_struct_name_map = Dict[String, String]()

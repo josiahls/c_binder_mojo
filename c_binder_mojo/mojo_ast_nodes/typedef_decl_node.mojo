@@ -34,7 +34,8 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         self._type = String()
         self._is_referenced = False
         self._is_implicit = False
-        if len(ast_entries) == 1:
+
+        if len(ast_entries) >= 1:
             starting_idx = 0
             if ast_entries[0].tokens[0] == "referenced":
                 starting_idx = 1
@@ -44,17 +45,23 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 starting_idx = 1
 
             self._name = ast_entries[0].tokens[starting_idx]
-            
-            for token in ast_entries[0].tokens[starting_idx+1:]:
-                s = token[].replace("'", "")
-                if s == "struct":
-                    # Skip struct keyword.
-                    continue
-                if s == "enum":
-                    # Skip enum keyword.
-                    continue
 
-                self._type += s + " "
+            for entry in ast_entries:
+                if entry[].ast_name == "AnonymousRecord":
+                    self._type = entry[].tokens[0]
+                    break
+
+            if self._type == "":
+                for token in ast_entries[0].tokens[starting_idx+1:]:
+                    s = token[].replace("'", "")
+                    if s == "struct":
+                        # Skip struct keyword.
+                        continue
+                    if s == "enum":
+                        # Skip enum keyword.
+                        continue
+
+                    self._type += s + " "
 
         else:
             print("TypedefDeclNode: Grammar: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
@@ -113,12 +120,27 @@ struct TypedefDeclNode(NodeAstLike):
         mut module_interface: ModuleInterface,
     ):
         if token_flow == TokenFlow.CONSUME_TOKEN:
-            # NOTE: currently the astes related to the typedefs look redundant.
-            # If needed we can add support for them, however the initial typedef ast node
-            # appears to have enough information
-            pass
+            if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
+                if self.process_anonymous_record(ast_entry, module_interface):
+                    return
+            self._ast_entries[].append(ast_entry)
         else:
             self._node_state = NodeState.COMPLETED
+
+    fn process_anonymous_record(mut self, ast_entry: AstEntry, module_interface: ModuleInterface) -> Bool:
+        mem_addesss = ast_entry.mem_address
+        for node in module_interface.nodes()[]:
+            if node[].node[].isa[RecordDeclNode]():
+                if node[].node[][RecordDeclNode]._record_mem_location == mem_addesss:
+                    struct_name = node[].node[][RecordDeclNode]._grammar._name
+                    new_entry = AstEntry()
+                    new_entry.ast_name = "AnonymousRecord"
+                    new_entry.tokens = [struct_name]
+                    new_entry.precise_location = ast_entry.precise_location
+                    new_entry.mem_address = ast_entry.mem_address
+                    self._ast_entries[].append(new_entry)
+                    return True
+        return False
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

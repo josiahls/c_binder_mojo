@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x1352e358 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x1ce57358 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -114,13 +114,13 @@ alias ptrdiff_t = long
 alias size_t = unsigned long 
 
 alias wchar_t = unsigned int 
-struct _Anonymous:
+struct _Anonymous_line_19_9:
 	alias __clang_max_align_nonce1: Int64 = 8
 
 	alias __clang_max_align_nonce2: long double = 16
 
 
-alias max_align_t = max_align_t:max_align_t 
+alias max_align_t = _Anonymous_line_19_9
 
 alias __u_char = unsigned char 
 
@@ -189,11 +189,11 @@ alias __off_t = long
 alias __off64_t = long 
 
 alias __pid_t = int 
-struct _Anonymous:
+struct _Anonymous_col_24:
 	var __val: int[2]
 
 
-alias __fsid_t = __fsid_t:__fsid_t 
+alias __fsid_t = _Anonymous_col_24
 
 alias __clock_t = long 
 
@@ -852,14 +852,14 @@ struct mjLROpt_:
 	var tolrange: mjtNum:double
 
 
-alias mjLROpt = mjLROpt_:struct mjLROpt_ 
+alias mjLROpt = mjLROpt_
 struct mjVFS_:
 	#---------------------------------- mjVFS ---------------------------------------------------------
 
 	var impl_: void *
 
 
-alias mjVFS = mjVFS_:struct mjVFS_ 
+alias mjVFS = mjVFS_
 struct mjOption_:
 	#---------------------------------- mjOption ------------------------------------------------------
 
@@ -922,8 +922,8 @@ struct mjOption_:
 	var sdf_iterations: Int
 
 
-alias mjOption = mjOption_:struct mjOption_ 
-struct _mjVisual___Anonymous_542:
+alias mjOption = mjOption_
+struct _mjVisual___Anonymous_line_545_3:
 	var fog: float[4]
 
 	var haze: float[4]
@@ -975,7 +975,7 @@ struct _mjVisual___Anonymous_542:
 	var bvactive: float[4]
 
 
-struct _mjVisual___Anonymous_523:
+struct _mjVisual___Anonymous_line_525_3:
 	var forcewidth: Float32
 
 	var contactwidth: Float32
@@ -1011,7 +1011,7 @@ struct _mjVisual___Anonymous_523:
 	var frustum: Float32
 
 
-struct _mjVisual___Anonymous_508:
+struct _mjVisual___Anonymous_line_509_3:
 	var stiffness: Float32
 
 	var stiffnessrot: Float32
@@ -1039,7 +1039,7 @@ struct _mjVisual___Anonymous_508:
 	var actuatortendon: Float32
 
 
-struct _mjVisual___Anonymous_502:
+struct _mjVisual___Anonymous_line_502_3:
 	var ambient: float[3]
 
 	var diffuse: float[3]
@@ -1049,7 +1049,7 @@ struct _mjVisual___Anonymous_502:
 	var active: Int
 
 
-struct _mjVisual___Anonymous_495:
+struct _mjVisual___Anonymous_line_494_3:
 	var shadowsize: Int
 
 	var offsamples: Int
@@ -1061,7 +1061,7 @@ struct _mjVisual___Anonymous_495:
 	var numquads: Int
 
 
-struct _mjVisual___Anonymous_481:
+struct _mjVisual___Anonymous_line_479_3:
 	var orthographic: Int
 
 	var fovy: Float32
@@ -1090,20 +1090,20 @@ struct _mjVisual___Anonymous_481:
 struct mjVisual_:
 	#---------------------------------- mjVisual ------------------------------------------------------
 
-	var global: _mjVisual___Anonymous_481
+	var global: _mjVisual___Anonymous_line_479_3
 
-	var quality: _mjVisual___Anonymous_495
+	var quality: _mjVisual___Anonymous_line_494_3
 
-	var headlight: _mjVisual___Anonymous_502
+	var headlight: _mjVisual___Anonymous_line_502_3
 
-	var map: _mjVisual___Anonymous_508
+	var map: _mjVisual___Anonymous_line_509_3
 
-	var scale: _mjVisual___Anonymous_523
+	var scale: _mjVisual___Anonymous_line_525_3
 
-	var rgba: _mjVisual___Anonymous_542
+	var rgba: _mjVisual___Anonymous_line_545_3
 
 
-alias mjVisual = mjVisual_:struct mjVisual_ 
+alias mjVisual = mjVisual_
 struct mjStatistic_:
 	#---------------------------------- mjStatistic ---------------------------------------------------
 
@@ -1118,7 +1118,7 @@ struct mjStatistic_:
 	var center: mjtNum[3]
 
 
-alias mjStatistic = mjStatistic_:struct mjStatistic_ 
+alias mjStatistic = mjStatistic_
 struct mjModel_:
 	#---------------------------------- mjModel -------------------------------------------------------
 
@@ -2057,4 +2057,4 @@ struct mjModel_:
 	var paths: String
 
 
-alias mjModel = mjModel_:struct mjModel_ 
+alias mjModel = mjModel_

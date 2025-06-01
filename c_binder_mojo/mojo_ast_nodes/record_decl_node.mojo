@@ -25,19 +25,26 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 struct Grammar(Copyable, Movable, Stringable, Writable):
     var _name: String
+    var _is_forward_declaration: Bool
 
     fn __init__(out self):
         self._name = String()
-
+        self._is_forward_declaration = False
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
+        self._is_forward_declaration = False
         if len(ast_entries) > 1 or len(ast_entries) == 0:
             print("RecordDeclNode: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
             for entry in ast_entries:
                 print("\tentry: " + String(entry))
         else:
             entry = ast_entries._ast_entries[0]
+            if "definition" in entry.tokens:
+                self._is_forward_declaration = False
+            else:
+                self._is_forward_declaration = True
+
             if len(entry.tokens) == 2:
                 if entry.tokens[0] == "struct" and entry.tokens[1] == "definition":
                     # TODO(josiahls): Add a global counter for anonymous structs to avoid
@@ -66,6 +73,9 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         if self._name == "":
             print("RecordDeclNode: Invalid grammar: , NAME IS BLANK!")
 
+        if self._is_forward_declaration:
+            return "# Forward declaration of " + self._name
+        
         return "struct " + self._name + ":"
 
     fn write_to[W: Writer](self, mut writer: W):

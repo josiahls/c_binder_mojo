@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x9820248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x3cb17248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -124,7 +124,7 @@ struct Empty:
 	# Empty struct
 	pass
 
-struct SuperEmpty:
+# Forward declaration of SuperEmpty
 	# An even more empty struct
 	pass
 

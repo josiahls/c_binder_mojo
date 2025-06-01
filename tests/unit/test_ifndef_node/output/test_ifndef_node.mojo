@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x2cee5248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x1bc0a248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -278,21 +278,21 @@ struct _G_fpos64_t:
 
 
 alias __fpos64_t = _G_fpos64_t 
-struct _IO_FILE:	pass
+# Forward declaration of _IO_FILE	pass
 
 
 alias __FILE = _IO_FILE 
-struct _IO_FILE:	pass
+# Forward declaration of _IO_FILE	pass
 
 
 alias FILE = _IO_FILE 
-struct _IO_FILE:	pass
+# Forward declaration of _IO_FILE	pass
 
-struct _IO_marker:	pass
+# Forward declaration of _IO_marker	pass
 
-struct _IO_codecvt:	pass
+# Forward declaration of _IO_codecvt	pass
 
-struct _IO_wide_data:	pass
+# Forward declaration of _IO_wide_data	pass
 
 
 alias _IO_lock_t = void 

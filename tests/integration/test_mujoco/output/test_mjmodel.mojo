@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x2a635358 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x1352e358 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -107,7 +107,7 @@ alias __SVBool_t = __SVBool_t
 
 alias __builtin_ms_va_list = char * 
 
-alias __builtin_va_list = std 
+alias __builtin_va_list = std::__va_list 
 
 alias ptrdiff_t = long 
 
@@ -120,7 +120,7 @@ struct _Anonymous:
 	alias __clang_max_align_nonce2: long double = 16
 
 
-alias max_align_t = max_align_t 
+alias max_align_t = max_align_t:max_align_t 
 
 alias __u_char = unsigned char 
 
@@ -146,21 +146,21 @@ alias __int64_t = long
 
 alias __uint64_t = unsigned long 
 
-alias __int_least8_t = __int8_t 
+alias __int_least8_t = __int8_t:signed char 
 
-alias __uint_least8_t = __uint8_t 
+alias __uint_least8_t = __uint8_t:unsigned char 
 
-alias __int_least16_t = __int16_t 
+alias __int_least16_t = __int16_t:short 
 
-alias __uint_least16_t = __uint16_t 
+alias __uint_least16_t = __uint16_t:unsigned short 
 
-alias __int_least32_t = __int32_t 
+alias __int_least32_t = __int32_t:int 
 
-alias __uint_least32_t = __uint32_t 
+alias __uint_least32_t = __uint32_t:unsigned int 
 
-alias __int_least64_t = __int64_t 
+alias __int_least64_t = __int64_t:long 
 
-alias __uint_least64_t = __uint64_t 
+alias __uint_least64_t = __uint64_t:unsigned long 
 
 alias __quad_t = long 
 
@@ -193,7 +193,7 @@ struct _Anonymous:
 	var __val: int[2]
 
 
-alias __fsid_t = __fsid_t 
+alias __fsid_t = __fsid_t:__fsid_t 
 
 alias __clock_t = long 
 
@@ -241,7 +241,7 @@ alias __syscall_slong_t = long
 
 alias __syscall_ulong_t = unsigned long 
 
-alias __loff_t = __off64_t 
+alias __loff_t = __off64_t:long 
 
 alias __caddr_t = char * 
 
@@ -251,37 +251,37 @@ alias __socklen_t = unsigned int
 
 alias __sig_atomic_t = int 
 
-alias int8_t = __int8_t 
+alias int8_t = __int8_t:signed char 
 
-alias int16_t = __int16_t 
+alias int16_t = __int16_t:short 
 
-alias int32_t = __int32_t 
+alias int32_t = __int32_t:int 
 
-alias int64_t = __int64_t 
+alias int64_t = __int64_t:long 
 
-alias uint8_t = __uint8_t 
+alias uint8_t = __uint8_t:unsigned char 
 
-alias uint16_t = __uint16_t 
+alias uint16_t = __uint16_t:unsigned short 
 
-alias uint32_t = __uint32_t 
+alias uint32_t = __uint32_t:unsigned int 
 
-alias uint64_t = __uint64_t 
+alias uint64_t = __uint64_t:unsigned long 
 
-alias int_least8_t = __int_least8_t 
+alias int_least8_t = __int_least8_t:signed char 
 
-alias int_least16_t = __int_least16_t 
+alias int_least16_t = __int_least16_t:short 
 
-alias int_least32_t = __int_least32_t 
+alias int_least32_t = __int_least32_t:int 
 
-alias int_least64_t = __int_least64_t 
+alias int_least64_t = __int_least64_t:long 
 
-alias uint_least8_t = __uint_least8_t 
+alias uint_least8_t = __uint_least8_t:unsigned char 
 
-alias uint_least16_t = __uint_least16_t 
+alias uint_least16_t = __uint_least16_t:unsigned short 
 
-alias uint_least32_t = __uint_least32_t 
+alias uint_least32_t = __uint_least32_t:unsigned int 
 
-alias uint_least64_t = __uint_least64_t 
+alias uint_least64_t = __uint_least64_t:unsigned long 
 
 alias int_fast8_t = signed char 
 
@@ -303,9 +303,9 @@ alias intptr_t = long
 
 alias uintptr_t = unsigned long 
 
-alias intmax_t = __intmax_t 
+alias intmax_t = __intmax_t:long 
 
-alias uintmax_t = __uintmax_t 
+alias uintmax_t = __uintmax_t:unsigned long 
 
 alias mjtNum = double 
 
@@ -348,7 +348,7 @@ struct mjtDisableBit_:
 	alias mjNDISABLE: Int = 16
 
 
-alias mjtDisableBit = mjtDisableBit_ 
+alias mjtDisableBit = mjtDisableBit_:enum mjtDisableBit_ 
 struct mjtEnableBit_:
 	alias mjENBL_OVERRIDE: Int = 1
 
@@ -367,7 +367,7 @@ struct mjtEnableBit_:
 	alias mjNENABLE: Int = 7
 
 
-alias mjtEnableBit = mjtEnableBit_ 
+alias mjtEnableBit = mjtEnableBit_:enum mjtEnableBit_ 
 struct mjtJoint_:
 	alias mjJNT_FREE: Int = 0
 
@@ -378,7 +378,7 @@ struct mjtJoint_:
 	alias mjJNT_HINGE: Int = 3
 
 
-alias mjtJoint = mjtJoint_ 
+alias mjtJoint = mjtJoint_:enum mjtJoint_ 
 struct mjtGeom_:
 	alias mjGEOM_PLANE: Int = 0
 
@@ -421,7 +421,7 @@ struct mjtGeom_:
 	alias mjGEOM_NONE: Int = 1001
 
 
-alias mjtGeom = mjtGeom_ 
+alias mjtGeom = mjtGeom_:enum mjtGeom_ 
 struct mjtCamLight_:
 	alias mjCAMLIGHT_FIXED: Int = 0
 
@@ -434,7 +434,7 @@ struct mjtCamLight_:
 	alias mjCAMLIGHT_TARGETBODYCOM: Int = 4
 
 
-alias mjtCamLight = mjtCamLight_ 
+alias mjtCamLight = mjtCamLight_:enum mjtCamLight_ 
 struct mjtTexture_:
 	alias mjTEXTURE_2D: Int = 0
 
@@ -443,7 +443,7 @@ struct mjtTexture_:
 	alias mjTEXTURE_SKYBOX: Int = 2
 
 
-alias mjtTexture = mjtTexture_ 
+alias mjtTexture = mjtTexture_:enum mjtTexture_ 
 struct mjtTextureRole_:
 	alias mjTEXROLE_USER: Int = 0
 
@@ -468,7 +468,7 @@ struct mjtTextureRole_:
 	alias mjNTEXROLE: Int = 10
 
 
-alias mjtTextureRole = mjtTextureRole_ 
+alias mjtTextureRole = mjtTextureRole_:enum mjtTextureRole_ 
 struct mjtIntegrator_:
 	alias mjINT_EULER: Int = 0
 
@@ -479,14 +479,14 @@ struct mjtIntegrator_:
 	alias mjINT_IMPLICITFAST: Int = 3
 
 
-alias mjtIntegrator = mjtIntegrator_ 
+alias mjtIntegrator = mjtIntegrator_:enum mjtIntegrator_ 
 struct mjtCone_:
 	alias mjCONE_PYRAMIDAL: Int = 0
 
 	alias mjCONE_ELLIPTIC: Int = 1
 
 
-alias mjtCone = mjtCone_ 
+alias mjtCone = mjtCone_:enum mjtCone_ 
 struct mjtJacobian_:
 	alias mjJAC_DENSE: Int = 0
 
@@ -495,7 +495,7 @@ struct mjtJacobian_:
 	alias mjJAC_AUTO: Int = 2
 
 
-alias mjtJacobian = mjtJacobian_ 
+alias mjtJacobian = mjtJacobian_:enum mjtJacobian_ 
 struct mjtSolver_:
 	alias mjSOL_PGS: Int = 0
 
@@ -504,7 +504,7 @@ struct mjtSolver_:
 	alias mjSOL_NEWTON: Int = 2
 
 
-alias mjtSolver = mjtSolver_ 
+alias mjtSolver = mjtSolver_:enum mjtSolver_ 
 struct mjtEq_:
 	alias mjEQ_CONNECT: Int = 0
 
@@ -519,7 +519,7 @@ struct mjtEq_:
 	alias mjEQ_DISTANCE: Int = 5
 
 
-alias mjtEq = mjtEq_ 
+alias mjtEq = mjtEq_:enum mjtEq_ 
 struct mjtWrap_:
 	alias mjWRAP_NONE: Int = 0
 
@@ -534,7 +534,7 @@ struct mjtWrap_:
 	alias mjWRAP_CYLINDER: Int = 5
 
 
-alias mjtWrap = mjtWrap_ 
+alias mjtWrap = mjtWrap_:enum mjtWrap_ 
 struct mjtTrn_:
 	alias mjTRN_JOINT: Int = 0
 
@@ -551,7 +551,7 @@ struct mjtTrn_:
 	alias mjTRN_UNDEFINED: Int = 1000
 
 
-alias mjtTrn = mjtTrn_ 
+alias mjtTrn = mjtTrn_:enum mjtTrn_ 
 struct mjtDyn_:
 	alias mjDYN_NONE: Int = 0
 
@@ -566,7 +566,7 @@ struct mjtDyn_:
 	alias mjDYN_USER: Int = 5
 
 
-alias mjtDyn = mjtDyn_ 
+alias mjtDyn = mjtDyn_:enum mjtDyn_ 
 struct mjtGain_:
 	alias mjGAIN_FIXED: Int = 0
 
@@ -577,7 +577,7 @@ struct mjtGain_:
 	alias mjGAIN_USER: Int = 3
 
 
-alias mjtGain = mjtGain_ 
+alias mjtGain = mjtGain_:enum mjtGain_ 
 struct mjtBias_:
 	alias mjBIAS_NONE: Int = 0
 
@@ -588,7 +588,7 @@ struct mjtBias_:
 	alias mjBIAS_USER: Int = 3
 
 
-alias mjtBias = mjtBias_ 
+alias mjtBias = mjtBias_:enum mjtBias_ 
 struct mjtObj_:
 	alias mjOBJ_UNKNOWN: Int = 0
 
@@ -647,7 +647,7 @@ struct mjtObj_:
 	alias mjOBJ_FRAME: Int = 100
 
 
-alias mjtObj = mjtObj_ 
+alias mjtObj = mjtObj_:enum mjtObj_ 
 struct mjtConstraint_:
 	alias mjCNSTR_EQUALITY: Int = 0
 
@@ -666,7 +666,7 @@ struct mjtConstraint_:
 	alias mjCNSTR_CONTACT_ELLIPTIC: Int = 7
 
 
-alias mjtConstraint = mjtConstraint_ 
+alias mjtConstraint = mjtConstraint_:enum mjtConstraint_ 
 struct mjtConstraintState_:
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 
@@ -679,7 +679,7 @@ struct mjtConstraintState_:
 	alias mjCNSTRSTATE_CONE: Int = 4
 
 
-alias mjtConstraintState = mjtConstraintState_ 
+alias mjtConstraintState = mjtConstraintState_:enum mjtConstraintState_ 
 struct mjtSensor_:
 	alias mjSENS_TOUCH: Int = 0
 
@@ -768,7 +768,7 @@ struct mjtSensor_:
 	alias mjSENS_USER: Int = 42
 
 
-alias mjtSensor = mjtSensor_ 
+alias mjtSensor = mjtSensor_:enum mjtSensor_ 
 struct mjtStage_:
 	alias mjSTAGE_NONE: Int = 0
 
@@ -779,7 +779,7 @@ struct mjtStage_:
 	alias mjSTAGE_ACC: Int = 3
 
 
-alias mjtStage = mjtStage_ 
+alias mjtStage = mjtStage_:enum mjtStage_ 
 struct mjtDataType_:
 	alias mjDATATYPE_REAL: Int = 0
 
@@ -790,7 +790,7 @@ struct mjtDataType_:
 	alias mjDATATYPE_QUATERNION: Int = 3
 
 
-alias mjtDataType = mjtDataType_ 
+alias mjtDataType = mjtDataType_:enum mjtDataType_ 
 struct mjtSameFrame_:
 	alias mjSAMEFRAME_NONE: Int = 0
 
@@ -803,7 +803,7 @@ struct mjtSameFrame_:
 	alias mjSAMEFRAME_INERTIAROT: Int = 4
 
 
-alias mjtSameFrame = mjtSameFrame_ 
+alias mjtSameFrame = mjtSameFrame_:enum mjtSameFrame_ 
 struct mjtLRMode_:
 	alias mjLRMODE_NONE: Int = 0
 
@@ -814,7 +814,7 @@ struct mjtLRMode_:
 	alias mjLRMODE_ALL: Int = 3
 
 
-alias mjtLRMode = mjtLRMode_ 
+alias mjtLRMode = mjtLRMode_:enum mjtLRMode_ 
 struct mjtFlexSelf_:
 	alias mjFLEXSELF_NONE: Int = 0
 
@@ -827,7 +827,7 @@ struct mjtFlexSelf_:
 	alias mjFLEXSELF_AUTO: Int = 4
 
 
-alias mjtFlexSelf = mjtFlexSelf_ 
+alias mjtFlexSelf = mjtFlexSelf_:enum mjtFlexSelf_ 
 struct mjLROpt_:
 	#---------------------------------- mjLROpt -------------------------------------------------------
 
@@ -852,14 +852,14 @@ struct mjLROpt_:
 	var tolrange: mjtNum:double
 
 
-alias mjLROpt = mjLROpt_ 
+alias mjLROpt = mjLROpt_:struct mjLROpt_ 
 struct mjVFS_:
 	#---------------------------------- mjVFS ---------------------------------------------------------
 
 	var impl_: void *
 
 
-alias mjVFS = mjVFS_ 
+alias mjVFS = mjVFS_:struct mjVFS_ 
 struct mjOption_:
 	#---------------------------------- mjOption ------------------------------------------------------
 
@@ -922,7 +922,7 @@ struct mjOption_:
 	var sdf_iterations: Int
 
 
-alias mjOption = mjOption_ 
+alias mjOption = mjOption_:struct mjOption_ 
 struct _mjVisual___Anonymous_542:
 	var fog: float[4]
 
@@ -1103,7 +1103,7 @@ struct mjVisual_:
 	var rgba: _mjVisual___Anonymous_542
 
 
-alias mjVisual = mjVisual_ 
+alias mjVisual = mjVisual_:struct mjVisual_ 
 struct mjStatistic_:
 	#---------------------------------- mjStatistic ---------------------------------------------------
 
@@ -1118,7 +1118,7 @@ struct mjStatistic_:
 	var center: mjtNum[3]
 
 
-alias mjStatistic = mjStatistic_ 
+alias mjStatistic = mjStatistic_:struct mjStatistic_ 
 struct mjModel_:
 	#---------------------------------- mjModel -------------------------------------------------------
 
@@ -2057,4 +2057,4 @@ struct mjModel_:
 	var paths: String
 
 
-alias mjModel = mjModel_ 
+alias mjModel = mjModel_:struct mjModel_ 

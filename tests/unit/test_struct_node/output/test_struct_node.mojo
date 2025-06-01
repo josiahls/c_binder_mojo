@@ -1,5 +1,5 @@
 
-# (placeholder) TranslationUnitDecl 0x3cb17248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0xeacb248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = __int128 
 
@@ -107,7 +107,7 @@ alias __SVBool_t = __SVBool_t
 
 alias __builtin_ms_va_list = char * 
 
-alias __builtin_va_list = std 
+alias __builtin_va_list = std::__va_list 
 struct Point:
 	# Basic struct declarations
 
@@ -128,7 +128,7 @@ struct Empty:
 	# An even more empty struct
 	pass
 
-struct _Complex__Anonymous_75:
+struct _Complex__Anonymous_line_32_5:
 	# Nested anonymous struct 
 
 	var x: Int
@@ -151,15 +151,15 @@ struct Complex:
 
 	var nested: _Complex_Inner
 
-	var nested_anonymous: _Complex__Anonymous_75
+	var nested_anonymous: _Complex__Anonymous_line_32_5
 
-struct _Anonymous:
+struct _Anonymous_line_39_9:
 	# Anonymous struct in typedef
 
 	var flags: UInt8
 
 
-alias Flags = Flags 
+alias Flags = Flags:Flags 
 struct BitFields:
 	# Struct with bit fields
 

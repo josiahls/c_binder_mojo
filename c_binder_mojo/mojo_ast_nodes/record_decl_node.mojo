@@ -49,7 +49,8 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 if entry.tokens[0] == "struct" and entry.tokens[1] == "definition":
                     # TODO(josiahls): Add a global counter for anonymous structs to avoid
                     # name collisions.
-                    self._name = "_Anonymous"
+                    precise_location = entry.precise_location.replace(":", "_")
+                    self._name = "_Anonymous_" + precise_location
                 else:
                     self._name = entry.tokens[1]
             elif len(entry.tokens) == 3:
@@ -140,25 +141,22 @@ struct RecordDeclNode(NodeAstLike):
 
     fn update_child_struct_names(mut self, module_interface: ModuleInterface):
         anonymous_struct_caught = False
-        anonymous_struct_idx = 0
+
+        original_name = String()
 
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx[]]
 
             if child.node[].isa[Self]():
                 original_name = child.node[][Self]._grammar._name.copy()
-                if original_name == "_Anonymous":
+                if original_name.startswith("_Anonymous"):
                     anonymous_struct_caught = True
-                    anonymous_struct_idx = child_idx[]
-                    original_name += "_" + String(anonymous_struct_idx)
-
-                
                 
                 self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
                 child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
             elif child.node[].isa[FieldDeclNode]():
                 if anonymous_struct_caught:
-                    child.node[][FieldDeclNode]._grammar._field_type = "_" + self._grammar._name + "__Anonymous_" + String(anonymous_struct_idx)
+                    child.node[][FieldDeclNode]._grammar._field_type = "_" + self._grammar._name + "_" + original_name
                     anonymous_struct_caught = False
                     anonymous_struct_idx = 0
                 

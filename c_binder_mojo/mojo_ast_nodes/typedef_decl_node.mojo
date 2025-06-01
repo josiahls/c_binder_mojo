@@ -53,18 +53,8 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 if s == "enum":
                     # Skip enum keyword.
                     continue
-                if ':' in s:
-                    try:
-                        s = s.split(':')[0]
-                    except:
-                        print("TypedefDeclNode: Grammar: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
 
                 self._type += s + " "
-
-                if ':' in token[]:
-                    # We only keep the desugared part of the type. e.g.:
-                    # struct Rectangle_: struct Rectangle_ 
-                    break
 
         else:
             print("TypedefDeclNode: Grammar: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))

@@ -4,7 +4,7 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
-from c_binder_mojo.type_mapper import get_global_type_mapper
+from c_binder_mojo.type_mapper import get_global_type_mapper, TypeMapper
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -69,7 +69,8 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
 
 
     fn __str__(self) -> String:
-        return 'alias ' + self._name + ' = ' + self._type
+        mojo_type = TypeMapper.get_mojo_type(self._type)
+        return 'alias ' + self._name + ' = ' + mojo_type
 
     fn write_to[W: Writer](self, mut writer: W):
         writer.write(String(self))

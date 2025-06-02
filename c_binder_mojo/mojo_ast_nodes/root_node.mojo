@@ -101,6 +101,14 @@ struct RootNode(NodeAstLike):
         else:
             return self.__name__
 
+    fn get_imports(self) -> String:
+        imports = List[String]()
+        # for custom_type in get_global_type_mapper()[].custom_types:
+        #     imports.append("from " + custom_type[] + " import " + custom_type[])
+        imports.append("from sys.ffi import _Global, UnsafePointer, OpaquePointer")
+
+        return String("\n").join(imports)
+
     fn to_string(
         self,
         just_code: Bool,
@@ -109,13 +117,15 @@ struct RootNode(NodeAstLike):
     ) raises -> String:
         var s: String
         if just_code:
-            s = string_children(
+            s = self.get_imports() + "\n"
+            s += string_children(
                 AstNode(self), just_code, module_interface, parent_indent_level
             )
             if self._add_main_function:
                 s += "\nfn main():\n    pass"
             return s
         s = self.name(include_sig=True) + "\n"
+        s += self.get_imports() + "\n"
         s += string_children(
             AstNode(self), just_code, module_interface, parent_indent_level
         )

@@ -2,7 +2,7 @@
 
 # Native Mojo Modules
 from sys.ffi import _Global, UnsafePointer
-# Third Party Mojo Modules
+from sys import ffi
 
 # First Party Modules
 
@@ -48,7 +48,7 @@ struct TypeMapper:
         Returns:    
             The cleaned type name.
         """
-        return type_name.replace("'", "")
+        return String(type_name.replace("'", "").strip())
     
     @staticmethod
     fn map_type(type_name: String) -> String:
@@ -62,36 +62,43 @@ struct TypeMapper:
         """
         var _type_name = Self.clean_type_name(type_name)
         
-        if _type_name == "int":
-            return "Int"
-        elif _type_name == "unsigned int":
-            return "UInt"
-        elif _type_name == "char":
-            return "String"
-        elif _type_name == "unsigned char":
-            return "UInt8"
-        elif _type_name == "char *":
-            return "String"
-        elif _type_name == "float":
-            return "Float32"
-        elif _type_name == "double":
-            return "Float64"
-        elif _type_name == "void":
-            return "None"
-        elif _type_name == "bool":
+        if _type_name == "void":
+            return "NoneType"
+        elif _type_name == "bool" or _type_name == "__SVBool_t":
             return "Bool"
-        elif _type_name == "long":
-            return "Int"
-        elif _type_name == "unsigned long":
-            return "UInt"
-        elif _type_name == "short":
-            return "Int16"
-        elif _type_name == "unsigned short":
-            return "UInt16"
-        elif _type_name == "long long":
-            return "Int64"
-        elif _type_name == "unsigned long long":
-            return "UInt64"
+        elif _type_name.endswith("__NSConstantString_tag"):
+            # TODO(josiahls): Not sure this is the current data struct format.
+            return "StaticString"
+
+        # Check for numeric types
+        var numeric_type:String = ""
+        
+        if _type_name.endswith("char") or _type_name.endswith("int8_t") or _type_name.endswith("Int8_t"):
+            numeric_type = "Int8"
+        elif _type_name.endswith("short") or _type_name.endswith("int16_t") or _type_name.endswith("Int16_t"):
+            numeric_type = "Int16"
+        elif _type_name.endswith("int") or _type_name.endswith("int32_t") or _type_name.endswith("Int32_t"):
+            numeric_type = "Int32"
+        elif _type_name.endswith("long long") or _type_name.endswith("int64_t") or _type_name.endswith("Int64_t"):
+            numeric_type = "Int64"
+        elif _type_name.endswith("long long") or _type_name.endswith("int128_t") or _type_name.endswith("Int128_t") or _type_name.endswith("__int128"):
+            numeric_type = "Int128"
+        elif _type_name.endswith("long") or _type_name.endswith("int64_t") or _type_name.endswith("Int64_t"):
+            numeric_type = "Int64"
+        elif _type_name.endswith("Float16_t"):
+            numeric_type = "Float16"
+        elif _type_name.endswith("float") or _type_name.endswith("float32_t") or _type_name.endswith("Float32_t"):
+            numeric_type = "Float32"
+        elif _type_name.endswith("double") or _type_name.endswith("float64_t") or _type_name.endswith("Float64_t"):
+            numeric_type = "Float64"
+
+        if _type_name.startswith("unsigned ") and numeric_type != "":
+            numeric_type = "U" + numeric_type
+        elif _type_name.startswith("__SVU") and numeric_type != "":
+            numeric_type = "U" + numeric_type
+        
+        if numeric_type != "":
+            return numeric_type
         
         for custom_type in get_global_type_mapper()[].custom_types:
             if _type_name == custom_type[]:
@@ -118,21 +125,12 @@ struct TypeMapper:
         return _type_name.endswith("*")
 
     @staticmethod
-    fn get_base_type(type_name: String) -> String:
-        """Gets the base type of a C type, removing pointer notation.
-        
-        Args:
-            type_name: The C type to process.
-            
-        Returns:
-            The base type without pointer notation.
-        """
-        var _type_name = Self.clean_type_name(type_name)
-        if Self.is_pointer_type(_type_name):
-            # For now, we'll just handle the basic pointer types
-            # TODO(josiahls): don't change the type yet
-            return _type_name # [:-1]
-        return _type_name
+    fn get_sugar_type(type_name: String) -> String:
+        try:
+            splits = type_name.split(":")
+            return splits[0]
+        except:
+            return type_name
 
     @staticmethod
     fn get_mojo_type(type_name: String) -> String:
@@ -145,12 +143,20 @@ struct TypeMapper:
             The complete Mojo type mapping, including any necessary pointer handling.
         """
         var _type_name = Self.clean_type_name(type_name)
-        var base_type = Self.get_base_type(_type_name)
-        var mojo_type = Self.map_type(base_type)
-        
+        var is_pointer = False
+        var is_sugar = False
         if Self.is_pointer_type(_type_name):
-            # For now, we'll just return the base type
-            # In the future, we might want to handle pointers differently
-            return mojo_type
-            
+            _type_name = _type_name[:-1]
+            is_pointer = True
+        
+        if ":" in _type_name and not "::" in _type_name:
+            is_sugar = True
+            _type_name = Self.get_sugar_type(_type_name)
+        
+        var mojo_type = Self.map_type(_type_name)
+        if is_pointer:
+            if _type_name == "void":
+                mojo_type = "OpaquePointer"
+            else:
+                mojo_type = "UnsafePointer[" + mojo_type + "]"
         return mojo_type

@@ -1,10 +1,34 @@
 """DType Mapping Utilities."""
 
 # Native Mojo Modules
-
+from sys.ffi import _Global, UnsafePointer
 # Third Party Mojo Modules
 
 # First Party Modules
+
+
+@fieldwise_init
+struct _GlobalTypeMapper(Copyable, Movable):
+    var custom_types: List[String]
+
+    fn __init__(out self):
+        self.custom_types = []
+
+    fn add_custom_type(mut self, custom_type: String):
+        self.custom_types.append(custom_type)
+
+
+fn _init_global_type_mapper() -> _GlobalTypeMapper:
+    return _GlobalTypeMapper()
+
+
+alias GLOBAL_TYPE_MAPPER = _Global[
+    "GLOBAL_TYPE_MAPPER", _GlobalTypeMapper, _init_global_type_mapper
+]
+
+@always_inline
+fn get_global_type_mapper() -> UnsafePointer[_GlobalTypeMapper]:
+    return GLOBAL_TYPE_MAPPER.get_or_create_ptr()
 
 
 struct TypeMapper:
@@ -68,11 +92,15 @@ struct TypeMapper:
             return "Int64"
         elif _type_name == "unsigned long long":
             return "UInt64"
-        else:
-            # For struct types, we'll need to handle them differently
-            # This is a placeholder for now
-            print("TypeMapper: Unknown type: " + _type_name)
-            return _type_name
+        
+        for custom_type in get_global_type_mapper()[].custom_types:
+            if _type_name == custom_type[]:
+                return custom_type[]
+        
+        # For struct types, we'll need to handle them differently
+        # This is a placeholder for now
+        print("TypeMapper: Unknown type: " + _type_name)
+        return _type_name
 
     @staticmethod
     fn is_pointer_type(type_name: String) -> Bool:

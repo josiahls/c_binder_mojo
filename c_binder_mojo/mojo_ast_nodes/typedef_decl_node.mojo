@@ -4,6 +4,7 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
+from c_binder_mojo.type_mapper import get_global_type_mapper
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -81,6 +82,7 @@ struct TypedefDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
+    var _grammar: Grammar
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -88,6 +90,7 @@ struct TypedefDeclNode(NodeAstLike):
         self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
+        self._grammar = Grammar(self._ast_entries[])
 
     @staticmethod
     fn accept(
@@ -125,6 +128,8 @@ struct TypedefDeclNode(NodeAstLike):
                     return
             self._ast_entries[].append(ast_entry)
         else:
+            self._grammar = Grammar(self._ast_entries[])
+            get_global_type_mapper()[].add_custom_type(self._grammar._name)
             self._node_state = NodeState.COMPLETED
 
     fn process_anonymous_record(mut self, ast_entry: AstEntry, module_interface: ModuleInterface) -> Bool:
@@ -191,5 +196,5 @@ struct TypedefDeclNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(Grammar(self._ast_entries[])) if just_code else String(),
+            alternate_string=String(self._grammar) if just_code else String(),
         )

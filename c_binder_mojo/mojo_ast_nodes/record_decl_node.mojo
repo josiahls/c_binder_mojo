@@ -4,6 +4,7 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
+from c_binder_mojo.type_mapper import get_global_type_mapper
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -143,6 +144,7 @@ struct RecordDeclNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
             self.update_child_struct_names(module_interface)
+            get_global_type_mapper()[].add_custom_type(self._grammar._name)
             self._node_state = NodeState.COMPLETED
 
     fn update_child_struct_names(mut self, module_interface: ModuleInterface):
@@ -160,6 +162,8 @@ struct RecordDeclNode(NodeAstLike):
                 
                 self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
                 child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
+                get_global_type_mapper()[].add_custom_type(child.node[][Self]._grammar._name)
+
             elif child.node[].isa[FieldDeclNode]():
                 if anonymous_struct_caught:
                     child.node[][FieldDeclNode]._grammar._field_type = "_" + self._grammar._name + "_" + original_name

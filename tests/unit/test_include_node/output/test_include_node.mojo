@@ -1,6 +1,6 @@
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
 
-# (placeholder) TranslationUnitDecl 0x15fe1248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x35c2c248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = Int128
 
@@ -415,15 +415,15 @@ alias implicit = fn ('char: *, 'const: Int8) -> Int32
 
 alias sprintf = fn (__s: Int8, __format: const) -> Int32
 
-alias implicit = fn ('FILE: *, 'const: Int8, '__builtin_va_list':'struct: std::__va_list) -> Int32
+alias implicit = fn ('FILE: *, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
 
 alias vfprintf = fn (__s: FILE, __format: const, __arg: __gnuc_va_list:struct) -> Int32
 
-alias implicit = fn ('const: Int8, '__builtin_va_list':'struct: std::__va_list) -> Int32
+alias implicit = fn ('const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
 
 alias vprintf = fn (__format: const, __arg: __gnuc_va_list:struct) -> Int32
 
-alias implicit = fn ('char: *, 'const: Int8, '__builtin_va_list':'struct: std::__va_list) -> Int32
+alias implicit = fn ('char: *, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
 
 alias vsprintf = fn (__s: Int8, __format: const, __arg: __gnuc_va_list:struct) -> Int32
 
@@ -431,7 +431,7 @@ alias implicit = fn ('char: *, 'unsigned: Int64, 'const: Int8) -> Int32
 
 alias snprintf = fn (__s: Int8, __maxlen: size_t:unsigned, __format: const) -> Int32
 
-alias implicit = fn ('char: *, 'unsigned: Int64, 'const: Int8, '__builtin_va_list':'struct: std::__va_list) -> Int32
+alias implicit = fn ('char: *, 'unsigned: Int64, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
 
 alias vsnprintf = fn (__s: Int8, __maxlen: size_t:unsigned, __format: const, __arg: __gnuc_va_list:struct) -> Int32
 
@@ -467,15 +467,15 @@ alias scanf = fn (__format: const) -> Int32
 
 alias sscanf = fn (__s: const, __format: const) -> Int32
 
-alias implicit = fn ('FILE: *restrict, 'const: Int8, '__builtin_va_list':'struct: std::__va_list) -> Int32
+alias implicit = fn ('FILE: *restrict, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
 
 alias vfscanf = fn (__s: FILE, __format: const, __arg: __gnuc_va_list:struct) -> Int32
 
-alias implicit = fn ('const: Int8, '__builtin_va_list':'struct: std::__va_list) -> Int32
+alias implicit = fn ('const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
 
 alias vscanf = fn (__format: const, __arg: __gnuc_va_list:struct) -> Int32
 
-alias implicit = fn ('const: Int8, 'const: Int8, '__builtin_va_list':'struct: std::__va_list) -> Int32
+alias implicit = fn ('const: Int8, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
 
 alias vsscanf = fn (__s: const, __format: const, __arg: __gnuc_va_list:struct) -> Int32
 

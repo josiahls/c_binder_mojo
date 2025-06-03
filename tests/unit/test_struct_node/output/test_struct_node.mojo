@@ -1,6 +1,6 @@
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
 
-# (placeholder) TranslationUnitDecl 0x377d6248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x2207d248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = Int128
 
@@ -108,7 +108,7 @@ alias __SVBool_t = Bool
 
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
-alias __builtin_va_list = std::__va_list
+alias __builtin_va_list = OpaquePointer
 struct Point:
 	# Basic struct declarations
 

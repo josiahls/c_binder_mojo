@@ -70,6 +70,9 @@ struct TypeMapper:
         elif _type_name.endswith("__NSConstantString_tag"):
             # TODO(josiahls): Not sure this is the current data struct format.
             return "StaticString"
+        elif _type_name == "__builtin_va_list" or _type_name == "va_list" or _type_name == "std::__va_list":
+            # va_list is used for variable argument functions - map to opaque pointer
+            return "OpaquePointer"
 
         # Check for numeric types
         var numeric_type: String = ""

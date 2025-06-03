@@ -23,7 +23,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 struct Grammar(Copyable, Movable, Stringable, Writable):
     var _name: String
     var _is_forward_declaration: Bool
@@ -33,13 +32,19 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         self._name = String()
         self._is_forward_declaration = False
         self._is_anonymous = False
+
     @implicit
     fn __init__(out self, ast_entries: AstEntries):
         self._name = String()
         self._is_forward_declaration = False
         self._is_anonymous = False
         if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print("RecordDeclNode: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
+            print(
+                "RecordDeclNode: Invalid grammar: "
+                + String(ast_entries)
+                + " len: "
+                + String(len(ast_entries))
+            )
             for entry in ast_entries:
                 print("\tentry: " + String(entry))
         else:
@@ -50,7 +55,10 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 self._is_forward_declaration = True
 
             if len(entry.tokens) == 2:
-                if entry.tokens[0] == "struct" and entry.tokens[1] == "definition":
+                if (
+                    entry.tokens[0] == "struct"
+                    and entry.tokens[1] == "definition"
+                ):
                     # TODO(josiahls): Add a global counter for anonymous structs to avoid
                     # name collisions.
                     precise_location = entry.precise_location.replace(":", "_")
@@ -69,19 +77,22 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 # Idx 3 should be semicolon
                 self._name = entry.tokens[2]
             else:
-                print("RecordDeclNode: Invalid grammar: " + String(entry) + " len: " + String(len(entry.tokens)))
+                print(
+                    "RecordDeclNode: Invalid grammar: "
+                    + String(entry)
+                    + " len: "
+                    + String(len(entry.tokens))
+                )
                 for token in entry.tokens:
                     print("\ttoken: " + token[])
 
-
     fn __str__(self) -> String:
-
         if self._name == "":
             print("RecordDeclNode: Invalid grammar: , NAME IS BLANK!")
 
         if self._is_forward_declaration:
             return "# Forward declaration of " + self._name
-        
+
         return "struct " + self._name + ":"
 
     fn write_to[W: Writer](self, mut writer: W):
@@ -89,7 +100,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
 
 
 @fieldwise_init
-struct RecordDeclNode(NodeAstLike): 
+struct RecordDeclNode(NodeAstLike):
     alias __name__ = "RecordDeclNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
@@ -159,22 +170,40 @@ struct RecordDeclNode(NodeAstLike):
                 original_name = child.node[][Self]._grammar._name.copy()
                 if child.node[][Self]._grammar._is_anonymous:
                     anonymous_struct_caught = True
-                
-                self._inner_struct_name_map[original_name] = "_" + self._grammar._name + "_" + original_name
-                child.node[][Self]._grammar._name = "_" + self._grammar._name + "_" + original_name
-                get_global_type_mapper()[].add_custom_type(child.node[][Self]._grammar._name)
+
+                self._inner_struct_name_map[original_name] = (
+                    "_" + self._grammar._name + "_" + original_name
+                )
+                child.node[][Self]._grammar._name = (
+                    "_" + self._grammar._name + "_" + original_name
+                )
+                get_global_type_mapper()[].add_custom_type(
+                    child.node[][Self]._grammar._name
+                )
 
             elif child.node[].isa[FieldDeclNode]():
                 if anonymous_struct_caught:
-                    child.node[][FieldDeclNode]._grammar._field_type = "_" + self._grammar._name + "_" + original_name
+                    child.node[][FieldDeclNode]._grammar._field_type = (
+                        "_" + self._grammar._name + "_" + original_name
+                    )
                     anonymous_struct_caught = False
-                
-                if child.node[][FieldDeclNode]._grammar._field_type in self._inner_struct_name_map:
-                    try:
-                        child.node[][FieldDeclNode]._grammar._field_type = self._inner_struct_name_map[child.node[][FieldDeclNode]._grammar._field_type]
-                    except:
-                        print("Error: " + child.node[][FieldDeclNode]._grammar._field_type + " not found in inner_struct_name_map")
 
+                if (
+                    child.node[][FieldDeclNode]._grammar._field_type
+                    in self._inner_struct_name_map
+                ):
+                    try:
+                        child.node[][
+                            FieldDeclNode
+                        ]._grammar._field_type = self._inner_struct_name_map[
+                            child.node[][FieldDeclNode]._grammar._field_type
+                        ]
+                    except:
+                        print(
+                            "Error: "
+                            + child.node[][FieldDeclNode]._grammar._field_type
+                            + " not found in inner_struct_name_map"
+                        )
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -217,16 +246,16 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var s:String = ""
-        var indent:String = ""
+        var s: String = ""
+        var indent: String = ""
         # var inner_struct_name_map: Dict[String, String] = {}
-    
+
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level
 
         if not just_code:
             s += indent + self.name(include_sig=True) + "\n"
-  
+
         s += indent + String(self._grammar)
 
         has_fields = False
@@ -234,10 +263,12 @@ struct RecordDeclNode(NodeAstLike):
             child = module_interface.nodes()[][child_idx[]]
 
             if child.node[].isa[Self]():
-                s = child.to_string(just_code, module_interface, 0) + '\n' + s
+                s = child.to_string(just_code, module_interface, 0) + "\n" + s
             else:
-                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
-            
+                s += child.to_string(
+                    just_code, module_interface, parent_indent_level + 1
+                )
+
             if child.name() == "FieldDeclNode":
                 has_fields = True
 

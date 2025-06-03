@@ -53,7 +53,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                     break
 
             if self._type == "":
-                for token in ast_entries[0].tokens[starting_idx+1:]:
+                for token in ast_entries[0].tokens[starting_idx + 1 :]:
                     s = token[].replace("'", "")
                     if s == "struct":
                         # Skip struct keyword.
@@ -65,12 +65,16 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                     self._type += s + " "
 
         else:
-            print("TypedefDeclNode: Grammar: Invalid grammar: " + String(ast_entries) + " len: " + String(len(ast_entries)))
-
+            print(
+                "TypedefDeclNode: Grammar: Invalid grammar: "
+                + String(ast_entries)
+                + " len: "
+                + String(len(ast_entries))
+            )
 
     fn __str__(self) -> String:
         mojo_type = TypeMapper.get_mojo_type(self._type)
-        return 'alias ' + self._name + ' = ' + mojo_type
+        return "alias " + self._name + " = " + mojo_type
 
     fn write_to[W: Writer](self, mut writer: W):
         writer.write(String(self))
@@ -133,11 +137,16 @@ struct TypedefDeclNode(NodeAstLike):
             get_global_type_mapper()[].add_custom_type(self._grammar._name)
             self._node_state = NodeState.COMPLETED
 
-    fn process_anonymous_record(mut self, ast_entry: AstEntry, module_interface: ModuleInterface) -> Bool:
+    fn process_anonymous_record(
+        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
+    ) -> Bool:
         mem_addesss = ast_entry.mem_address
         for node in module_interface.nodes()[]:
             if node[].node[].isa[RecordDeclNode]():
-                if node[].node[][RecordDeclNode]._record_mem_location == mem_addesss:
+                if (
+                    node[].node[][RecordDeclNode]._record_mem_location
+                    == mem_addesss
+                ):
                     struct_name = node[].node[][RecordDeclNode]._grammar._name
                     new_entry = AstEntry()
                     new_entry.ast_name = "AnonymousRecord"

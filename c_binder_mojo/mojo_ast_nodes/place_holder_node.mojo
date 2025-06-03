@@ -31,7 +31,6 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         # Just add # comment to the ast entry name + tokens
         self._name = "# (placeholder) " + ast_entries.join(" ")
 
-
     fn __str__(self) -> String:
         return self._name
 
@@ -130,5 +129,7 @@ struct PlaceHolderNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(Grammar(self._ast_entries[])) if just_code else String(),
+            alternate_string=String(
+                Grammar(self._ast_entries[])
+            ) if just_code else String(),
         )

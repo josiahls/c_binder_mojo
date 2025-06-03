@@ -36,7 +36,13 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         self._name = String()
         self._is_anonymous = False
         if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print("EnumDeclNode: Invalid grammar (len(ast_entries) > 1 or len(ast_entries) == 0): " + String(ast_entries) + " len: " + String(len(ast_entries)))
+            print(
+                "EnumDeclNode: Invalid grammar (len(ast_entries) > 1 or"
+                " len(ast_entries) == 0): "
+                + String(ast_entries)
+                + " len: "
+                + String(len(ast_entries))
+            )
         else:
             entry = ast_entries._ast_entries[0]
             if len(entry.tokens) == 0:
@@ -49,9 +55,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 # Idx 2 should be definition
                 self._name = entry.tokens[0]
 
-
     fn __str__(self) -> String:
-
         if self._name == "":
             print("Invalid grammar: , NAME IS BLANK!")
 
@@ -62,7 +66,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
 
 
 @fieldwise_init
-struct EnumDeclNode(NodeAstLike): 
+struct EnumDeclNode(NodeAstLike):
     alias __name__ = "EnumDeclNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
@@ -131,7 +135,10 @@ struct EnumDeclNode(NodeAstLike):
                     try:
                         max_value = Int(value)
                     except:
-                        print("Error: Enum constant decl has invalid value: " + value)
+                        print(
+                            "Error: Enum constant decl has invalid value: "
+                            + value
+                        )
 
                 child.node[][EnumConstantDeclNode]._grammar._value = value
 
@@ -176,16 +183,16 @@ struct EnumDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var s:String = ""
-        var indent:String = ""
+        var s: String = ""
+        var indent: String = ""
         # var inner_struct_name_map: Dict[String, String] = {}
-    
+
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level
 
         if not just_code:
             s += indent + self.name(include_sig=True) + "\n"
-  
+
         if not self._grammar._is_anonymous:
             s += indent + String(self._grammar)
         else:
@@ -196,11 +203,15 @@ struct EnumDeclNode(NodeAstLike):
             child = module_interface.nodes()[][child_idx[]]
 
             if not self._grammar._is_anonymous:
-                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+                s += child.to_string(
+                    just_code, module_interface, parent_indent_level + 1
+                )
             else:
                 # Alias fields will be printed at the root level.
-                s += child.to_string(just_code, module_interface, parent_indent_level)
-            
+                s += child.to_string(
+                    just_code, module_interface, parent_indent_level
+                )
+
             if child.name() == "EnumConstantDeclNode":
                 has_fields = True
 

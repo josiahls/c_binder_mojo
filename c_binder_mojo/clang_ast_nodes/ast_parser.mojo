@@ -188,10 +188,13 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
 @fieldwise_init
 struct AstParser:
     @staticmethod
-    fn clang_call(file_path: Path, extra_args: String = "") raises -> List[String]:
+    fn clang_call(
+        file_path: Path, extra_args: String = ""
+    ) raises -> List[String]:
         """Get the AST dump of the processed code."""
         cmd = (
-            "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments -fno-color-diagnostics "
+            "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments"
+            " -fno-color-diagnostics "
             + file_path.path
             + " "
             + extra_args
@@ -199,8 +202,9 @@ struct AstParser:
         result = run(cmd)
         return result.split("\n")
 
-    fn parse(self, file_path: Path, extra_args: String = "") raises -> List[AstEntry]:
-
+    fn parse(
+        self, file_path: Path, extra_args: String = ""
+    ) raises -> List[AstEntry]:
         result = self.clang_call(file_path, extra_args)
         var entries: List[AstEntry] = []
 
@@ -219,7 +223,9 @@ struct AstParser:
                     # before the location section of the ast output.
                     expect_parent_address = True
                 elif expect_parent_address and token[].startswith("0x"):
-                    ast_entry.mem_address = token[] + " -> " + ast_entry.mem_address
+                    ast_entry.mem_address = (
+                        token[] + " -> " + ast_entry.mem_address
+                    )
                     expect_parent_address = False
                 elif token[] == "prev" and ast_entry.full_location == "":
                     expect_prev = True
@@ -249,13 +255,19 @@ struct AstParser:
                 ) and not ast_entry.full_location.endswith(">"):
                     ast_entry.full_location += " " + token[]
                 elif (
-                    (token[].startswith("<<invalid") and ast_entry.full_location == "")
-                    or (token[].endswith("sloc>>") and not ast_entry.full_location.endswith(">>"))
+                    token[].startswith("<<invalid")
+                    and ast_entry.full_location == ""
+                ) or (
+                    token[].endswith("sloc>>")
+                    and not ast_entry.full_location.endswith(">>")
                 ):
                     ast_entry.full_location = "invalid"
                 elif (
-                    (token[].startswith("<invalid") and ast_entry.precise_location == "")
-                    or (token[].endswith("sloc>") and not ast_entry.precise_location.endswith(">"))
+                    token[].startswith("<invalid")
+                    and ast_entry.precise_location == ""
+                ) or (
+                    token[].endswith("sloc>")
+                    and not ast_entry.precise_location.endswith(">")
                 ):
                     ast_entry.precise_location = "invalid"
                 elif (
@@ -268,7 +280,11 @@ struct AstParser:
                     and ast_entry.precise_location == ""
                 ):
                     ast_entry.precise_location = token[]
-                elif token[].startswith("/") and ":" in token[] and ast_entry.precise_location == "":
+                elif (
+                    token[].startswith("/")
+                    and ":" in token[]
+                    and ast_entry.precise_location == ""
+                ):
                     ast_entry.precise_location = token[]
                 elif (
                     token[] == ""

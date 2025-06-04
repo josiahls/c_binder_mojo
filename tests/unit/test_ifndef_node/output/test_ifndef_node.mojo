@@ -1,6 +1,6 @@
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
 
-# (placeholder) TranslationUnitDecl 0x8a09248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x31f04248 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = Int128
 
@@ -192,7 +192,7 @@ alias __off64_t = Int64
 
 alias __pid_t = Int32
 struct _Anonymous_col_24:
-	var __val: int[2]
+	var __val: SIMD[Int32, 2]
 
 
 alias __fsid_t = _Anonymous_col_24
@@ -255,7 +255,7 @@ alias __sig_atomic_t = Int32
 struct __Anonymous_line_13_9_definition:
 	var __wch: UInt32
 
-	var __wchb: char[4]
+	var __wchb: SIMD[Int8, 4]
 
 
 struct _Anonymous_line_13_9:
@@ -336,7 +336,7 @@ struct _IO_FILE:
 
 	var _vtable_offset: Int8
 
-	var _shortbuf: char[1]
+	var _shortbuf: SIMD[Int8, 1]
 
 	var _lock: UnsafePointer[_IO_lock_t]
 
@@ -354,7 +354,7 @@ struct _IO_FILE:
 
 	var _mode: Int32
 
-	var _unused2: char[20]
+	var _unused2: SIMD[Int8, 20]
 
 
 alias va_list = __gnuc_va_list:struct std::__va_list

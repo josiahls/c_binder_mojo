@@ -1,172 +1,172 @@
 RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=62)
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
 PlaceHolderNode(parent_idx=0, current_idx=1, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-TranslationUnitDecl 0x39c43238 <<invalid sloc>> <invalid sloc>
+TranslationUnitDecl 0x2c201238 <<invalid sloc>> <invalid sloc>
 TypedefDeclNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39c44080 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
- | `-BuiltinType 0x39c43800 '__int128'
+|-TypedefDecl 0x2c202080 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+ | `-BuiltinType 0x2c201800 '__int128'
 TypedefDeclNode(parent_idx=0, current_idx=3, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39c440f0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
- | `-BuiltinType 0x39c43820 'unsigned __int128'
+|-TypedefDecl 0x2c2020f0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+ | `-BuiltinType 0x2c201820 'unsigned __int128'
 TypedefDeclNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5a68 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
- | `-RecordType 0x39c441d0 'struct __NSConstantString_tag'
- |   `-Record 0x39c44148 '__NSConstantString_tag'
+|-TypedefDecl 0x2c2a3a68 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+ | `-RecordType 0x2c2021d0 'struct __NSConstantString_tag'
+ |   `-Record 0x2c202148 '__NSConstantString_tag'
 TypedefDeclNode(parent_idx=0, current_idx=5, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5ad0 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
- | `-BuiltinType 0x39c439c0 '__SVInt8_t'
+|-TypedefDecl 0x2c2a3ad0 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+ | `-BuiltinType 0x2c2019c0 '__SVInt8_t'
 TypedefDeclNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5b38 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
- | `-BuiltinType 0x39c439e0 '__SVInt16_t'
+|-TypedefDecl 0x2c2a3b38 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+ | `-BuiltinType 0x2c2019e0 '__SVInt16_t'
 TypedefDeclNode(parent_idx=0, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5ba0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
- | `-BuiltinType 0x39c43a00 '__SVInt32_t'
+|-TypedefDecl 0x2c2a3ba0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+ | `-BuiltinType 0x2c201a00 '__SVInt32_t'
 TypedefDeclNode(parent_idx=0, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5c08 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
- | `-BuiltinType 0x39c43a20 '__SVInt64_t'
+|-TypedefDecl 0x2c2a3c08 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+ | `-BuiltinType 0x2c201a20 '__SVInt64_t'
 TypedefDeclNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5c70 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
- | `-BuiltinType 0x39c43a40 '__SVUint8_t'
+|-TypedefDecl 0x2c2a3c70 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+ | `-BuiltinType 0x2c201a40 '__SVUint8_t'
 TypedefDeclNode(parent_idx=0, current_idx=10, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5cd8 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
- | `-BuiltinType 0x39c43a60 '__SVUint16_t'
+|-TypedefDecl 0x2c2a3cd8 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+ | `-BuiltinType 0x2c201a60 '__SVUint16_t'
 TypedefDeclNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5d40 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
- | `-BuiltinType 0x39c43a80 '__SVUint32_t'
+|-TypedefDecl 0x2c2a3d40 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+ | `-BuiltinType 0x2c201a80 '__SVUint32_t'
 TypedefDeclNode(parent_idx=0, current_idx=12, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5da8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
- | `-BuiltinType 0x39c43aa0 '__SVUint64_t'
+|-TypedefDecl 0x2c2a3da8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+ | `-BuiltinType 0x2c201aa0 '__SVUint64_t'
 TypedefDeclNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5e10 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
- | `-BuiltinType 0x39c43ac0 '__SVFloat16_t'
+|-TypedefDecl 0x2c2a3e10 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+ | `-BuiltinType 0x2c201ac0 '__SVFloat16_t'
 TypedefDeclNode(parent_idx=0, current_idx=14, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5e78 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
- | `-BuiltinType 0x39c43ae0 '__SVFloat32_t'
+|-TypedefDecl 0x2c2a3e78 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+ | `-BuiltinType 0x2c201ae0 '__SVFloat32_t'
 TypedefDeclNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5ee0 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
- | `-BuiltinType 0x39c43b00 '__SVFloat64_t'
+|-TypedefDecl 0x2c2a3ee0 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+ | `-BuiltinType 0x2c201b00 '__SVFloat64_t'
 TypedefDeclNode(parent_idx=0, current_idx=16, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5f48 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
- | `-BuiltinType 0x39c43b20 '__SVBFloat16_t'
+|-TypedefDecl 0x2c2a3f48 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+ | `-BuiltinType 0x2c201b20 '__SVBFloat16_t'
 TypedefDeclNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce5fb0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
- | `-BuiltinType 0x39c43b40 '__clang_svint8x2_t'
+|-TypedefDecl 0x2c2a3fb0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+ | `-BuiltinType 0x2c201b40 '__clang_svint8x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6018 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
- | `-BuiltinType 0x39c43b60 '__clang_svint16x2_t'
+|-TypedefDecl 0x2c2a4018 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+ | `-BuiltinType 0x2c201b60 '__clang_svint16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6080 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
- | `-BuiltinType 0x39c43b80 '__clang_svint32x2_t'
+|-TypedefDecl 0x2c2a4080 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+ | `-BuiltinType 0x2c201b80 '__clang_svint32x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=20, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce60e8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
- | `-BuiltinType 0x39c43ba0 '__clang_svint64x2_t'
+|-TypedefDecl 0x2c2a40e8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+ | `-BuiltinType 0x2c201ba0 '__clang_svint64x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6150 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
- | `-BuiltinType 0x39c43bc0 '__clang_svuint8x2_t'
+|-TypedefDecl 0x2c2a4150 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+ | `-BuiltinType 0x2c201bc0 '__clang_svuint8x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce61b8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
- | `-BuiltinType 0x39c43be0 '__clang_svuint16x2_t'
+|-TypedefDecl 0x2c2a41b8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+ | `-BuiltinType 0x2c201be0 '__clang_svuint16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6220 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
- | `-BuiltinType 0x39c43c00 '__clang_svuint32x2_t'
+|-TypedefDecl 0x2c2a4220 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+ | `-BuiltinType 0x2c201c00 '__clang_svuint32x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=24, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6288 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
- | `-BuiltinType 0x39c43c20 '__clang_svuint64x2_t'
+|-TypedefDecl 0x2c2a4288 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+ | `-BuiltinType 0x2c201c20 '__clang_svuint64x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce62f0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
- | `-BuiltinType 0x39c43c40 '__clang_svfloat16x2_t'
+|-TypedefDecl 0x2c2a42f0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+ | `-BuiltinType 0x2c201c40 '__clang_svfloat16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6358 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
- | `-BuiltinType 0x39c43c60 '__clang_svfloat32x2_t'
+|-TypedefDecl 0x2c2a4358 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+ | `-BuiltinType 0x2c201c60 '__clang_svfloat32x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce63c0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
- | `-BuiltinType 0x39c43c80 '__clang_svfloat64x2_t'
+|-TypedefDecl 0x2c2a43c0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+ | `-BuiltinType 0x2c201c80 '__clang_svfloat64x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6428 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
- | `-BuiltinType 0x39c43ca0 '__clang_svbfloat16x2_t'
+|-TypedefDecl 0x2c2a4428 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+ | `-BuiltinType 0x2c201ca0 '__clang_svbfloat16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6490 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
- | `-BuiltinType 0x39c43cc0 '__clang_svint8x3_t'
+|-TypedefDecl 0x2c2a4490 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+ | `-BuiltinType 0x2c201cc0 '__clang_svint8x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce64f8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
- | `-BuiltinType 0x39c43ce0 '__clang_svint16x3_t'
+|-TypedefDecl 0x2c2a44f8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+ | `-BuiltinType 0x2c201ce0 '__clang_svint16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6560 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
- | `-BuiltinType 0x39c43d00 '__clang_svint32x3_t'
+|-TypedefDecl 0x2c2a4560 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+ | `-BuiltinType 0x2c201d00 '__clang_svint32x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce65c8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
- | `-BuiltinType 0x39c43d20 '__clang_svint64x3_t'
+|-TypedefDecl 0x2c2a45c8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+ | `-BuiltinType 0x2c201d20 '__clang_svint64x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6630 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
- | `-BuiltinType 0x39c43d40 '__clang_svuint8x3_t'
+|-TypedefDecl 0x2c2a4630 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+ | `-BuiltinType 0x2c201d40 '__clang_svuint8x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6698 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
- | `-BuiltinType 0x39c43d60 '__clang_svuint16x3_t'
+|-TypedefDecl 0x2c2a4698 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+ | `-BuiltinType 0x2c201d60 '__clang_svuint16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6700 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
- | `-BuiltinType 0x39c43d80 '__clang_svuint32x3_t'
+|-TypedefDecl 0x2c2a4700 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+ | `-BuiltinType 0x2c201d80 '__clang_svuint32x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6768 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
- | `-BuiltinType 0x39c43da0 '__clang_svuint64x3_t'
+|-TypedefDecl 0x2c2a4768 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+ | `-BuiltinType 0x2c201da0 '__clang_svuint64x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce67d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
- | `-BuiltinType 0x39c43dc0 '__clang_svfloat16x3_t'
+|-TypedefDecl 0x2c2a47d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+ | `-BuiltinType 0x2c201dc0 '__clang_svfloat16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=38, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6838 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
- | `-BuiltinType 0x39c43de0 '__clang_svfloat32x3_t'
+|-TypedefDecl 0x2c2a4838 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+ | `-BuiltinType 0x2c201de0 '__clang_svfloat32x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6cc0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
- | `-BuiltinType 0x39c43e00 '__clang_svfloat64x3_t'
+|-TypedefDecl 0x2c2a4cc0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+ | `-BuiltinType 0x2c201e00 '__clang_svfloat64x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6d28 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
- | `-BuiltinType 0x39c43e20 '__clang_svbfloat16x3_t'
+|-TypedefDecl 0x2c2a4d28 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+ | `-BuiltinType 0x2c201e20 '__clang_svbfloat16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6d90 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
- | `-BuiltinType 0x39c43e40 '__clang_svint8x4_t'
+|-TypedefDecl 0x2c2a4d90 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+ | `-BuiltinType 0x2c201e40 '__clang_svint8x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6df8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
- | `-BuiltinType 0x39c43e60 '__clang_svint16x4_t'
+|-TypedefDecl 0x2c2a4df8 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+ | `-BuiltinType 0x2c201e60 '__clang_svint16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6e60 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
- | `-BuiltinType 0x39c43e80 '__clang_svint32x4_t'
+|-TypedefDecl 0x2c2a4e60 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+ | `-BuiltinType 0x2c201e80 '__clang_svint32x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=44, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6ec8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
- | `-BuiltinType 0x39c43ea0 '__clang_svint64x4_t'
+|-TypedefDecl 0x2c2a4ec8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+ | `-BuiltinType 0x2c201ea0 '__clang_svint64x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6f30 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
- | `-BuiltinType 0x39c43ec0 '__clang_svuint8x4_t'
+|-TypedefDecl 0x2c2a4f30 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+ | `-BuiltinType 0x2c201ec0 '__clang_svuint8x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce6f98 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
- | `-BuiltinType 0x39c43ee0 '__clang_svuint16x4_t'
+|-TypedefDecl 0x2c2a4f98 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+ | `-BuiltinType 0x2c201ee0 '__clang_svuint16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce7000 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
- | `-BuiltinType 0x39c43f00 '__clang_svuint32x4_t'
+|-TypedefDecl 0x2c2a5000 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+ | `-BuiltinType 0x2c201f00 '__clang_svuint32x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce7068 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
- | `-BuiltinType 0x39c43f20 '__clang_svuint64x4_t'
+|-TypedefDecl 0x2c2a5068 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+ | `-BuiltinType 0x2c201f20 '__clang_svuint64x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce70d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
- | `-BuiltinType 0x39c43f40 '__clang_svfloat16x4_t'
+|-TypedefDecl 0x2c2a50d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+ | `-BuiltinType 0x2c201f40 '__clang_svfloat16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce7138 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
- | `-BuiltinType 0x39c43f60 '__clang_svfloat32x4_t'
+|-TypedefDecl 0x2c2a5138 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+ | `-BuiltinType 0x2c201f60 '__clang_svfloat32x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce71a0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
- | `-BuiltinType 0x39c43f80 '__clang_svfloat64x4_t'
+|-TypedefDecl 0x2c2a51a0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+ | `-BuiltinType 0x2c201f80 '__clang_svfloat64x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=52, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce7208 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
- | `-BuiltinType 0x39c43fa0 '__clang_svbfloat16x4_t'
+|-TypedefDecl 0x2c2a5208 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+ | `-BuiltinType 0x2c201fa0 '__clang_svbfloat16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce7270 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
- | `-BuiltinType 0x39c43fc0 '__SVBool_t'
+|-TypedefDecl 0x2c2a5270 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+ | `-BuiltinType 0x2c201fc0 '__SVBool_t'
 TypedefDeclNode(parent_idx=0, current_idx=54, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce7310 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
- | `-PointerType 0x39ce72d0 'char *'
- |   `-BuiltinType 0x39c432e0 'char'
+|-TypedefDecl 0x2c2a5310 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+ | `-PointerType 0x2c2a52d0 'char *'
+ |   `-BuiltinType 0x2c2012e0 'char'
 TypedefDeclNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x39ce7678 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
- | `-RecordType 0x39ce73f0 'struct std::__va_list'
- |   `-Record 0x39ce7368 '__va_list'
+|-TypedefDecl 0x2c2a5678 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
+ | `-RecordType 0x2c2a53f0 'struct std::__va_list'
+ |   `-Record 0x2c2a5368 '__va_list'
 EnumDeclNode(parent_idx=0, current_idx=56, child_idxs=(57, 58, 59, 60), node_state=4 (COMPLETED))
 struct Color:
 	FullCommentNode(parent_idx=56, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -174,22 +174,22 @@ struct Color:
 	# Basic enum with values
 
 	EnumConstantDeclNode(parent_idx=56, current_idx=58, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39ce7800 <line:3:5, col:11> col:5 RED 'int'	
- | | `-ConstantExpr 0x39ce77e0 <col:11> 'int'	
+	| |-EnumConstantDecl 0x2c2a5800 <line:3:5, col:11> col:5 RED 'int'	
+ | | `-ConstantExpr 0x2c2a57e0 <col:11> 'int'	
  | |   |-value: Int 0	
- | |   `-IntegerLiteral 0x39ce77c0 <col:11> 'int' 0	
+ | |   `-IntegerLiteral 0x2c2a57c0 <col:11> 'int' 0	
 
 	EnumConstantDeclNode(parent_idx=56, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39ce7890 <line:4:5, col:13> col:5 GREEN 'int'	
- | | `-ConstantExpr 0x39ce7870 <col:13> 'int'	
+	| |-EnumConstantDecl 0x2c2a5890 <line:4:5, col:13> col:5 GREEN 'int'	
+ | | `-ConstantExpr 0x2c2a5870 <col:13> 'int'	
  | |   |-value: Int 1	
- | |   `-IntegerLiteral 0x39ce7850 <col:13> 'int' 1	
+ | |   `-IntegerLiteral 0x2c2a5850 <col:13> 'int' 1	
 
 	EnumConstantDeclNode(parent_idx=56, current_idx=60, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-EnumConstantDecl 0x39ce7920 <line:5:5, col:12> col:5 BLUE 'int'	
- |   `-ConstantExpr 0x39ce7900 <col:12> 'int'	
+	| `-EnumConstantDecl 0x2c2a5920 <line:5:5, col:12> col:5 BLUE 'int'	
+ |   `-ConstantExpr 0x2c2a5900 <col:12> 'int'	
  |     |-value: Int 2	
- |     `-IntegerLiteral 0x39ce78e0 <col:12> 'int' 2	
+ |     `-IntegerLiteral 0x2c2a58e0 <col:12> 'int' 2	
 
 EnumDeclNode(parent_idx=0, current_idx=61, child_idxs=(62, 63, 64, 65, 66), node_state=4 (COMPLETED))
 struct Direction:
@@ -198,28 +198,28 @@ struct Direction:
 	# Enum with auto-incrementing values
 
 	EnumConstantDeclNode(parent_idx=61, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39ce7a60 <line:10:5> col:5 NORTH 'int'	
- | | `-FullComment 0x39d107d0 <col:15, col:16>	
- | |   `-ParagraphComment 0x39d107a0 <col:15, col:16>	
- | |     `-TextComment 0x39d10770 <col:15, col:16> Text=" 0"	
+	| |-EnumConstantDecl 0x2c2a5a60 <line:10:5> col:5 NORTH 'int'	
+ | | `-FullComment 0x2c2ce7d0 <col:15, col:16>	
+ | |   `-ParagraphComment 0x2c2ce7a0 <col:15, col:16>	
+ | |     `-TextComment 0x2c2ce770 <col:15, col:16> Text=" 0"	
 
 	EnumConstantDeclNode(parent_idx=61, current_idx=64, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39ce7ad8 <line:11:5> col:5 SOUTH 'int'	
- | | `-FullComment 0x39d108a0 <col:15, col:16>	
- | |   `-ParagraphComment 0x39d10870 <col:15, col:16>	
- | |     `-TextComment 0x39d10840 <col:15, col:16> Text=" 1"	
+	| |-EnumConstantDecl 0x2c2a5ad8 <line:11:5> col:5 SOUTH 'int'	
+ | | `-FullComment 0x2c2ce8a0 <col:15, col:16>	
+ | |   `-ParagraphComment 0x2c2ce870 <col:15, col:16>	
+ | |     `-TextComment 0x2c2ce840 <col:15, col:16> Text=" 1"	
 
 	EnumConstantDeclNode(parent_idx=61, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39ce7b58 <line:12:5> col:5 EAST 'int'	
- | | `-FullComment 0x39d10970 <col:15, col:16>	
- | |   `-ParagraphComment 0x39d10940 <col:15, col:16>	
- | |     `-TextComment 0x39d10910 <col:15, col:16> Text=" 2"	
+	| |-EnumConstantDecl 0x2c2a5b58 <line:12:5> col:5 EAST 'int'	
+ | | `-FullComment 0x2c2ce970 <col:15, col:16>	
+ | |   `-ParagraphComment 0x2c2ce940 <col:15, col:16>	
+ | |     `-TextComment 0x2c2ce910 <col:15, col:16> Text=" 2"	
 
 	EnumConstantDeclNode(parent_idx=61, current_idx=66, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-EnumConstantDecl 0x39ce7c08 <line:13:5> col:5 WEST 'int'	
- |   `-FullComment 0x39d12490 <col:15, col:16>	
- |     `-ParagraphComment 0x39d12460 <col:15, col:16>	
- |       `-TextComment 0x39d12430 <col:15, col:16> Text=" 3"	
+	| `-EnumConstantDecl 0x2c2a5c08 <line:13:5> col:5 WEST 'int'	
+ |   `-FullComment 0x2c2d0490 <col:15, col:16>	
+ |     `-ParagraphComment 0x2c2d0460 <col:15, col:16>	
+ |       `-TextComment 0x2c2d0430 <col:15, col:16> Text=" 3"	
 
 EnumDeclNode(parent_idx=0, current_idx=67, child_idxs=(68, 69, 70, 71, 72, 73), node_state=4 (COMPLETED))
 struct Status:
@@ -228,34 +228,34 @@ struct Status:
 	# Enum with mixed explicit and implicit values
 
 	EnumConstantDeclNode(parent_idx=67, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39d0fad0 <line:18:5, col:10> col:5 OK 'int'	
- | | `-ConstantExpr 0x39d0fab0 <col:10> 'int'	
+	| |-EnumConstantDecl 0x2c2cdad0 <line:18:5, col:10> col:5 OK 'int'	
+ | | `-ConstantExpr 0x2c2cdab0 <col:10> 'int'	
  | |   |-value: Int 200	
- | |   `-IntegerLiteral 0x39d0fa90 <col:10> 'int' 200	
+ | |   `-IntegerLiteral 0x2c2cda90 <col:10> 'int' 200	
 
 	EnumConstantDeclNode(parent_idx=67, current_idx=70, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39d0fb60 <line:19:5, col:17> col:5 NOT_FOUND 'int'	
- | | `-ConstantExpr 0x39d0fb40 <col:17> 'int'	
+	| |-EnumConstantDecl 0x2c2cdb60 <line:19:5, col:17> col:5 NOT_FOUND 'int'	
+ | | `-ConstantExpr 0x2c2cdb40 <col:17> 'int'	
  | |   |-value: Int 404	
- | |   `-IntegerLiteral 0x39d0fb20 <col:17> 'int' 404	
+ | |   `-IntegerLiteral 0x2c2cdb20 <col:17> 'int' 404	
 
 	EnumConstantDeclNode(parent_idx=67, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39d0fbf0 <line:20:5, col:20> col:5 SERVER_ERROR 'int'	
- | | `-ConstantExpr 0x39d0fbd0 <col:20> 'int'	
+	| |-EnumConstantDecl 0x2c2cdbf0 <line:20:5, col:20> col:5 SERVER_ERROR 'int'	
+ | | `-ConstantExpr 0x2c2cdbd0 <col:20> 'int'	
  | |   |-value: Int 500	
- | |   `-IntegerLiteral 0x39d0fbb0 <col:20> 'int' 500	
+ | |   `-IntegerLiteral 0x2c2cdbb0 <col:20> 'int' 500	
 
 	EnumConstantDeclNode(parent_idx=67, current_idx=72, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39d0fc40 <line:21:5> col:5 UNAVAILABLE 'int'	
- | | `-FullComment 0x39d12630 <col:21, col:24>	
- | |   `-ParagraphComment 0x39d12600 <col:21, col:24>	
- | |     `-TextComment 0x39d125d0 <col:21, col:24> Text=" 501"	
+	| |-EnumConstantDecl 0x2c2cdc40 <line:21:5> col:5 UNAVAILABLE 'int'	
+ | | `-FullComment 0x2c2d0630 <col:21, col:24>	
+ | |   `-ParagraphComment 0x2c2d0600 <col:21, col:24>	
+ | |     `-TextComment 0x2c2d05d0 <col:21, col:24> Text=" 501"	
 
 	EnumConstantDeclNode(parent_idx=67, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-EnumConstantDecl 0x39d0fce8 <line:22:5> col:5 TIMEOUT 'int'	
- |   `-FullComment 0x39d12700 <col:20, col:23>	
- |     `-ParagraphComment 0x39d126d0 <col:20, col:23>	
- |       `-TextComment 0x39d126a0 <col:20, col:23> Text=" 502"	
+	| `-EnumConstantDecl 0x2c2cdce8 <line:22:5> col:5 TIMEOUT 'int'	
+ |   `-FullComment 0x2c2d0700 <col:20, col:23>	
+ |     `-ParagraphComment 0x2c2d06d0 <col:20, col:23>	
+ |       `-TextComment 0x2c2d06a0 <col:20, col:23> Text=" 502"	
 
 EnumDeclNode(parent_idx=0, current_idx=74, child_idxs=(75), node_state=4 (COMPLETED))
 struct Empty:
@@ -271,31 +271,31 @@ struct Flags:
 	# Enum with hex values and comments
 
 	EnumConstantDeclNode(parent_idx=76, current_idx=78, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39d0ff60 <line:31:5, col:15> col:5 READ 'int'	
- | | |-ConstantExpr 0x39d0ff40 <col:15> 'int'	
+	| |-EnumConstantDecl 0x2c2cdf60 <line:31:5, col:15> col:5 READ 'int'	
+ | | |-ConstantExpr 0x2c2cdf40 <col:15> 'int'	
  | | | |-value: Int 1	
- | | | `-IntegerLiteral 0x39d0ff20 <col:15> 'int' 1	
- | | `-FullComment 0x39d12970 <col:24, col:39>	
- | |   `-ParagraphComment 0x39d12940 <col:24, col:39>	
- | |     `-TextComment 0x39d12910 <col:24, col:39> Text=" Read permission"	
+ | | | `-IntegerLiteral 0x2c2cdf20 <col:15> 'int' 1	
+ | | `-FullComment 0x2c2d0970 <col:24, col:39>	
+ | |   `-ParagraphComment 0x2c2d0940 <col:24, col:39>	
+ | |     `-TextComment 0x2c2d0910 <col:24, col:39> Text=" Read permission"	
 
 	EnumConstantDeclNode(parent_idx=76, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-EnumConstantDecl 0x39d10018 <line:32:5, col:15> col:5 WRITE 'int'	
- | | |-ConstantExpr 0x39d0fff8 <col:15> 'int'	
+	| |-EnumConstantDecl 0x2c2ce018 <line:32:5, col:15> col:5 WRITE 'int'	
+ | | |-ConstantExpr 0x2c2cdff8 <col:15> 'int'	
  | | | |-value: Int 2	
- | | | `-IntegerLiteral 0x39d0ffd8 <col:15> 'int' 2	
- | | `-FullComment 0x39d12a40 <col:24, col:40>	
- | |   `-ParagraphComment 0x39d12a10 <col:24, col:40>	
- | |     `-TextComment 0x39d129e0 <col:24, col:40> Text=" Write permission"	
+ | | | `-IntegerLiteral 0x2c2cdfd8 <col:15> 'int' 2	
+ | | `-FullComment 0x2c2d0a40 <col:24, col:40>	
+ | |   `-ParagraphComment 0x2c2d0a10 <col:24, col:40>	
+ | |     `-TextComment 0x2c2d09e0 <col:24, col:40> Text=" Write permission"	
 
 	EnumConstantDeclNode(parent_idx=76, current_idx=80, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-EnumConstantDecl 0x39d10108 <line:33:5, col:15> col:5 EXECUTE 'int'	
- |   |-ConstantExpr 0x39d100e8 <col:15> 'int'	
+	| `-EnumConstantDecl 0x2c2ce108 <line:33:5, col:15> col:5 EXECUTE 'int'	
+ |   |-ConstantExpr 0x2c2ce0e8 <col:15> 'int'	
  |   | |-value: Int 4	
- |   | `-IntegerLiteral 0x39d10098 <col:15> 'int' 4	
- |   `-FullComment 0x39d12b10 <col:24, col:42>	
- |     `-ParagraphComment 0x39d12ae0 <col:24, col:42>	
- |       `-TextComment 0x39d12ab0 <col:24, col:42> Text=" Execute permission"	
+ |   | `-IntegerLiteral 0x2c2ce098 <col:15> 'int' 4	
+ |   `-FullComment 0x2c2d0b10 <col:24, col:42>	
+ |     `-ParagraphComment 0x2c2d0ae0 <col:24, col:42>	
+ |       `-TextComment 0x2c2d0ab0 <col:24, col:42> Text=" Execute permission"	
 
 EnumDeclNode(parent_idx=0, current_idx=81, child_idxs=(82, 83, 84, 85, 86), node_state=4 (COMPLETED))
 struct ByteValues:
@@ -304,36 +304,36 @@ struct ByteValues:
 	# Enum with byte values
 
 	EnumConstantDeclNode(parent_idx=81, current_idx=83, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	  |-EnumConstantDecl 0x39d102d0 <line:38:5, col:19> col:5 BYTE_0 'int'	
-   | `-ConstantExpr 0x39d102b0 <col:14, col:19> 'int'	
+	  |-EnumConstantDecl 0x2c2ce2d0 <line:38:5, col:19> col:5 BYTE_0 'int'	
+   | `-ConstantExpr 0x2c2ce2b0 <col:14, col:19> 'int'	
    |   |-value: Int 1	
-   |   `-BinaryOperator 0x39d10290 <col:14, col:19> 'int' '<<'	
-   |     |-IntegerLiteral 0x39d10250 <col:14> 'int' 1	
-   |     `-IntegerLiteral 0x39d10270 <col:19> 'int' 0	
+   |   `-BinaryOperator 0x2c2ce290 <col:14, col:19> 'int' '<<'	
+   |     |-IntegerLiteral 0x2c2ce250 <col:14> 'int' 1	
+   |     `-IntegerLiteral 0x2c2ce270 <col:19> 'int' 0	
 
 	EnumConstantDeclNode(parent_idx=81, current_idx=84, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	  |-EnumConstantDecl 0x39d103a0 <line:39:5, col:19> col:5 BYTE_1 'int'	
-   | `-ConstantExpr 0x39d10380 <col:14, col:19> 'int'	
+	  |-EnumConstantDecl 0x2c2ce3a0 <line:39:5, col:19> col:5 BYTE_1 'int'	
+   | `-ConstantExpr 0x2c2ce380 <col:14, col:19> 'int'	
    |   |-value: Int 2	
-   |   `-BinaryOperator 0x39d10360 <col:14, col:19> 'int' '<<'	
-   |     |-IntegerLiteral 0x39d10320 <col:14> 'int' 1	
-   |     `-IntegerLiteral 0x39d10340 <col:19> 'int' 1	
+   |   `-BinaryOperator 0x2c2ce360 <col:14, col:19> 'int' '<<'	
+   |     |-IntegerLiteral 0x2c2ce320 <col:14> 'int' 1	
+   |     `-IntegerLiteral 0x2c2ce340 <col:19> 'int' 1	
 
 	EnumConstantDeclNode(parent_idx=81, current_idx=85, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	  |-EnumConstantDecl 0x39d10470 <line:40:5, col:19> col:5 BYTE_2 'int'	
-   | `-ConstantExpr 0x39d10450 <col:14, col:19> 'int'	
+	  |-EnumConstantDecl 0x2c2ce470 <line:40:5, col:19> col:5 BYTE_2 'int'	
+   | `-ConstantExpr 0x2c2ce450 <col:14, col:19> 'int'	
    |   |-value: Int 4	
-   |   `-BinaryOperator 0x39d10430 <col:14, col:19> 'int' '<<'	
-   |     |-IntegerLiteral 0x39d103f0 <col:14> 'int' 1	
-   |     `-IntegerLiteral 0x39d10410 <col:19> 'int' 2	
+   |   `-BinaryOperator 0x2c2ce430 <col:14, col:19> 'int' '<<'	
+   |     |-IntegerLiteral 0x2c2ce3f0 <col:14> 'int' 1	
+   |     `-IntegerLiteral 0x2c2ce410 <col:19> 'int' 2	
 
 	EnumConstantDeclNode(parent_idx=81, current_idx=86, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	  `-EnumConstantDecl 0x39d10540 <line:41:5, col:19> col:5 BYTE_3 'int'	
-     `-ConstantExpr 0x39d10520 <col:14, col:19> 'int'	
+	  `-EnumConstantDecl 0x2c2ce540 <line:41:5, col:19> col:5 BYTE_3 'int'	
+     `-ConstantExpr 0x2c2ce520 <col:14, col:19> 'int'	
        |-value: Int 8	
-       `-BinaryOperator 0x39d10500 <col:14, col:19> 'int' '<<'	
-         |-IntegerLiteral 0x39d104c0 <col:14> 'int' 1	
-         `-IntegerLiteral 0x39d104e0 <col:19> 'int' 3	
+       `-BinaryOperator 0x2c2ce500 <col:14, col:19> 'int' '<<'	
+         |-IntegerLiteral 0x2c2ce4c0 <col:14> 'int' 1	
+         `-IntegerLiteral 0x2c2ce4e0 <col:19> 'int' 3	
 
 EndFileNode(parent_idx=0, current_idx=87, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 # C_BINDER_MOJO_END_FILE

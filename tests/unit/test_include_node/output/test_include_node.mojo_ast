@@ -1,467 +1,467 @@
 RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=258)
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
 PlaceHolderNode(parent_idx=0, current_idx=1, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-TranslationUnitDecl 0x35c2c248 <<invalid sloc>> <invalid sloc>
+TranslationUnitDecl 0x18310248 <<invalid sloc>> <invalid sloc>
 TypedefDeclNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35c2d090 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
- | `-BuiltinType 0x35c2c810 '__int128'
+|-TypedefDecl 0x18311090 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+ | `-BuiltinType 0x18310810 '__int128'
 TypedefDeclNode(parent_idx=0, current_idx=3, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35c2d100 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
- | `-BuiltinType 0x35c2c830 'unsigned __int128'
+|-TypedefDecl 0x18311100 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+ | `-BuiltinType 0x18310830 'unsigned __int128'
 TypedefDeclNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccea78 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
- | `-RecordType 0x35c2d1e0 'struct __NSConstantString_tag'
- |   `-Record 0x35c2d158 '__NSConstantString_tag'
+|-TypedefDecl 0x183b2a78 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+ | `-RecordType 0x183111e0 'struct __NSConstantString_tag'
+ |   `-Record 0x18311158 '__NSConstantString_tag'
 TypedefDeclNode(parent_idx=0, current_idx=5, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cceae0 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
- | `-BuiltinType 0x35c2c9d0 '__SVInt8_t'
+|-TypedefDecl 0x183b2ae0 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
+ | `-BuiltinType 0x183109d0 '__SVInt8_t'
 TypedefDeclNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cceb48 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
- | `-BuiltinType 0x35c2c9f0 '__SVInt16_t'
+|-TypedefDecl 0x183b2b48 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
+ | `-BuiltinType 0x183109f0 '__SVInt16_t'
 TypedefDeclNode(parent_idx=0, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccebb0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
- | `-BuiltinType 0x35c2ca10 '__SVInt32_t'
+|-TypedefDecl 0x183b2bb0 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
+ | `-BuiltinType 0x18310a10 '__SVInt32_t'
 TypedefDeclNode(parent_idx=0, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccec18 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
- | `-BuiltinType 0x35c2ca30 '__SVInt64_t'
+|-TypedefDecl 0x183b2c18 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
+ | `-BuiltinType 0x18310a30 '__SVInt64_t'
 TypedefDeclNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccec80 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
- | `-BuiltinType 0x35c2ca50 '__SVUint8_t'
+|-TypedefDecl 0x183b2c80 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
+ | `-BuiltinType 0x18310a50 '__SVUint8_t'
 TypedefDeclNode(parent_idx=0, current_idx=10, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccece8 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
- | `-BuiltinType 0x35c2ca70 '__SVUint16_t'
+|-TypedefDecl 0x183b2ce8 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
+ | `-BuiltinType 0x18310a70 '__SVUint16_t'
 TypedefDeclNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cced50 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
- | `-BuiltinType 0x35c2ca90 '__SVUint32_t'
+|-TypedefDecl 0x183b2d50 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
+ | `-BuiltinType 0x18310a90 '__SVUint32_t'
 TypedefDeclNode(parent_idx=0, current_idx=12, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccedb8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
- | `-BuiltinType 0x35c2cab0 '__SVUint64_t'
+|-TypedefDecl 0x183b2db8 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
+ | `-BuiltinType 0x18310ab0 '__SVUint64_t'
 TypedefDeclNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccee20 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
- | `-BuiltinType 0x35c2cad0 '__SVFloat16_t'
+|-TypedefDecl 0x183b2e20 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
+ | `-BuiltinType 0x18310ad0 '__SVFloat16_t'
 TypedefDeclNode(parent_idx=0, current_idx=14, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccee88 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
- | `-BuiltinType 0x35c2caf0 '__SVFloat32_t'
+|-TypedefDecl 0x183b2e88 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
+ | `-BuiltinType 0x18310af0 '__SVFloat32_t'
 TypedefDeclNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cceef0 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
- | `-BuiltinType 0x35c2cb10 '__SVFloat64_t'
+|-TypedefDecl 0x183b2ef0 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
+ | `-BuiltinType 0x18310b10 '__SVFloat64_t'
 TypedefDeclNode(parent_idx=0, current_idx=16, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccef58 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
- | `-BuiltinType 0x35c2cb30 '__SVBFloat16_t'
+|-TypedefDecl 0x183b2f58 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
+ | `-BuiltinType 0x18310b30 '__SVBFloat16_t'
 TypedefDeclNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccefc0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
- | `-BuiltinType 0x35c2cb50 '__clang_svint8x2_t'
+|-TypedefDecl 0x183b2fc0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
+ | `-BuiltinType 0x18310b50 '__clang_svint8x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf028 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
- | `-BuiltinType 0x35c2cb70 '__clang_svint16x2_t'
+|-TypedefDecl 0x183b3028 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
+ | `-BuiltinType 0x18310b70 '__clang_svint16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf090 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
- | `-BuiltinType 0x35c2cb90 '__clang_svint32x2_t'
+|-TypedefDecl 0x183b3090 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
+ | `-BuiltinType 0x18310b90 '__clang_svint32x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=20, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf0f8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
- | `-BuiltinType 0x35c2cbb0 '__clang_svint64x2_t'
+|-TypedefDecl 0x183b30f8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
+ | `-BuiltinType 0x18310bb0 '__clang_svint64x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf160 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
- | `-BuiltinType 0x35c2cbd0 '__clang_svuint8x2_t'
+|-TypedefDecl 0x183b3160 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
+ | `-BuiltinType 0x18310bd0 '__clang_svuint8x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf1c8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
- | `-BuiltinType 0x35c2cbf0 '__clang_svuint16x2_t'
+|-TypedefDecl 0x183b31c8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
+ | `-BuiltinType 0x18310bf0 '__clang_svuint16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf230 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
- | `-BuiltinType 0x35c2cc10 '__clang_svuint32x2_t'
+|-TypedefDecl 0x183b3230 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
+ | `-BuiltinType 0x18310c10 '__clang_svuint32x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=24, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf298 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
- | `-BuiltinType 0x35c2cc30 '__clang_svuint64x2_t'
+|-TypedefDecl 0x183b3298 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
+ | `-BuiltinType 0x18310c30 '__clang_svuint64x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf300 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
- | `-BuiltinType 0x35c2cc50 '__clang_svfloat16x2_t'
+|-TypedefDecl 0x183b3300 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
+ | `-BuiltinType 0x18310c50 '__clang_svfloat16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf368 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
- | `-BuiltinType 0x35c2cc70 '__clang_svfloat32x2_t'
+|-TypedefDecl 0x183b3368 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
+ | `-BuiltinType 0x18310c70 '__clang_svfloat32x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf3d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
- | `-BuiltinType 0x35c2cc90 '__clang_svfloat64x2_t'
+|-TypedefDecl 0x183b33d0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
+ | `-BuiltinType 0x18310c90 '__clang_svfloat64x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf438 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
- | `-BuiltinType 0x35c2ccb0 '__clang_svbfloat16x2_t'
+|-TypedefDecl 0x183b3438 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
+ | `-BuiltinType 0x18310cb0 '__clang_svbfloat16x2_t'
 TypedefDeclNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf4a0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
- | `-BuiltinType 0x35c2ccd0 '__clang_svint8x3_t'
+|-TypedefDecl 0x183b34a0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
+ | `-BuiltinType 0x18310cd0 '__clang_svint8x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf508 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
- | `-BuiltinType 0x35c2ccf0 '__clang_svint16x3_t'
+|-TypedefDecl 0x183b3508 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
+ | `-BuiltinType 0x18310cf0 '__clang_svint16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf570 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
- | `-BuiltinType 0x35c2cd10 '__clang_svint32x3_t'
+|-TypedefDecl 0x183b3570 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
+ | `-BuiltinType 0x18310d10 '__clang_svint32x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf5d8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
- | `-BuiltinType 0x35c2cd30 '__clang_svint64x3_t'
+|-TypedefDecl 0x183b35d8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
+ | `-BuiltinType 0x18310d30 '__clang_svint64x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf640 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
- | `-BuiltinType 0x35c2cd50 '__clang_svuint8x3_t'
+|-TypedefDecl 0x183b3640 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
+ | `-BuiltinType 0x18310d50 '__clang_svuint8x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf6a8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
- | `-BuiltinType 0x35c2cd70 '__clang_svuint16x3_t'
+|-TypedefDecl 0x183b36a8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
+ | `-BuiltinType 0x18310d70 '__clang_svuint16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf710 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
- | `-BuiltinType 0x35c2cd90 '__clang_svuint32x3_t'
+|-TypedefDecl 0x183b3710 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
+ | `-BuiltinType 0x18310d90 '__clang_svuint32x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf778 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
- | `-BuiltinType 0x35c2cdb0 '__clang_svuint64x3_t'
+|-TypedefDecl 0x183b3778 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
+ | `-BuiltinType 0x18310db0 '__clang_svuint64x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf7e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
- | `-BuiltinType 0x35c2cdd0 '__clang_svfloat16x3_t'
+|-TypedefDecl 0x183b37e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
+ | `-BuiltinType 0x18310dd0 '__clang_svfloat16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=38, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccf848 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
- | `-BuiltinType 0x35c2cdf0 '__clang_svfloat32x3_t'
+|-TypedefDecl 0x183b3848 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
+ | `-BuiltinType 0x18310df0 '__clang_svfloat32x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccfcd0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
- | `-BuiltinType 0x35c2ce10 '__clang_svfloat64x3_t'
+|-TypedefDecl 0x183b3cd0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
+ | `-BuiltinType 0x18310e10 '__clang_svfloat64x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccfd38 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
- | `-BuiltinType 0x35c2ce30 '__clang_svbfloat16x3_t'
+|-TypedefDecl 0x183b3d38 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
+ | `-BuiltinType 0x18310e30 '__clang_svbfloat16x3_t'
 TypedefDeclNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccfda0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
- | `-BuiltinType 0x35c2ce50 '__clang_svint8x4_t'
+|-TypedefDecl 0x183b3da0 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
+ | `-BuiltinType 0x18310e50 '__clang_svint8x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccfe08 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
- | `-BuiltinType 0x35c2ce70 '__clang_svint16x4_t'
+|-TypedefDecl 0x183b3e08 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
+ | `-BuiltinType 0x18310e70 '__clang_svint16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccfe70 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
- | `-BuiltinType 0x35c2ce90 '__clang_svint32x4_t'
+|-TypedefDecl 0x183b3e70 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
+ | `-BuiltinType 0x18310e90 '__clang_svint32x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=44, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccfed8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
- | `-BuiltinType 0x35c2ceb0 '__clang_svint64x4_t'
+|-TypedefDecl 0x183b3ed8 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
+ | `-BuiltinType 0x18310eb0 '__clang_svint64x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccff40 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
- | `-BuiltinType 0x35c2ced0 '__clang_svuint8x4_t'
+|-TypedefDecl 0x183b3f40 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
+ | `-BuiltinType 0x18310ed0 '__clang_svuint8x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35ccffa8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
- | `-BuiltinType 0x35c2cef0 '__clang_svuint16x4_t'
+|-TypedefDecl 0x183b3fa8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
+ | `-BuiltinType 0x18310ef0 '__clang_svuint16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0010 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
- | `-BuiltinType 0x35c2cf10 '__clang_svuint32x4_t'
+|-TypedefDecl 0x183b4010 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
+ | `-BuiltinType 0x18310f10 '__clang_svuint32x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0078 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
- | `-BuiltinType 0x35c2cf30 '__clang_svuint64x4_t'
+|-TypedefDecl 0x183b4078 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
+ | `-BuiltinType 0x18310f30 '__clang_svuint64x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd00e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
- | `-BuiltinType 0x35c2cf50 '__clang_svfloat16x4_t'
+|-TypedefDecl 0x183b40e0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
+ | `-BuiltinType 0x18310f50 '__clang_svfloat16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0148 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
- | `-BuiltinType 0x35c2cf70 '__clang_svfloat32x4_t'
+|-TypedefDecl 0x183b4148 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
+ | `-BuiltinType 0x18310f70 '__clang_svfloat32x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd01b0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
- | `-BuiltinType 0x35c2cf90 '__clang_svfloat64x4_t'
+|-TypedefDecl 0x183b41b0 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
+ | `-BuiltinType 0x18310f90 '__clang_svfloat64x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=52, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0218 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
- | `-BuiltinType 0x35c2cfb0 '__clang_svbfloat16x4_t'
+|-TypedefDecl 0x183b4218 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
+ | `-BuiltinType 0x18310fb0 '__clang_svbfloat16x4_t'
 TypedefDeclNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0280 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
- | `-BuiltinType 0x35c2cfd0 '__SVBool_t'
+|-TypedefDecl 0x183b4280 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
+ | `-BuiltinType 0x18310fd0 '__SVBool_t'
 TypedefDeclNode(parent_idx=0, current_idx=54, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0320 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
- | `-PointerType 0x35cd02e0 'char *'
- |   `-BuiltinType 0x35c2c2f0 'char'
+|-TypedefDecl 0x183b4320 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+ | `-PointerType 0x183b42e0 'char *'
+ |   `-BuiltinType 0x183102f0 'char'
 TypedefDeclNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0688 <<invalid sloc>> <invalid sloc> implicit referenced __builtin_va_list 'struct std::__va_list'
- | `-RecordType 0x35cd0400 'struct std::__va_list'
- |   `-Record 0x35cd0378 '__va_list'
+|-TypedefDecl 0x183b4688 <<invalid sloc>> <invalid sloc> implicit referenced __builtin_va_list 'struct std::__va_list'
+ | `-RecordType 0x183b4400 'struct std::__va_list'
+ |   `-Record 0x183b4378 '__va_list'
 TypedefDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd06f8 </usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:1, col:23> col:23 referenced size_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183b46f8 </usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:1, col:23> col:23 referenced size_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0780 </usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h:14:1, col:27> col:27 va_list '__builtin_va_list':'struct std::__va_list'
- | `-TypedefType 0x35cd0750 '__builtin_va_list' sugar
- |   |-Typedef 0x35cd0688 '__builtin_va_list'
- |   `-RecordType 0x35cd0400 'struct std::__va_list'
- |     `-Record 0x35cd0378 '__va_list'
+|-TypedefDecl 0x183b4780 </usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h:14:1, col:27> col:27 va_list '__builtin_va_list':'struct std::__va_list'
+ | `-TypedefType 0x183b4750 '__builtin_va_list' sugar
+ |   |-Typedef 0x183b4688 '__builtin_va_list'
+ |   `-RecordType 0x183b4400 'struct std::__va_list'
+ |     `-Record 0x183b4378 '__va_list'
 TypedefDeclNode(parent_idx=0, current_idx=58, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd07e8 <line:32:1, col:27> col:27 referenced __gnuc_va_list '__builtin_va_list':'struct std::__va_list'
- | `-TypedefType 0x35cd0750 '__builtin_va_list' sugar
- |   |-Typedef 0x35cd0688 '__builtin_va_list'
- |   `-RecordType 0x35cd0400 'struct std::__va_list'
- |     `-Record 0x35cd0378 '__va_list'
+|-TypedefDecl 0x183b47e8 <line:32:1, col:27> col:27 referenced __gnuc_va_list '__builtin_va_list':'struct std::__va_list'
+ | `-TypedefType 0x183b4750 '__builtin_va_list' sugar
+ |   |-Typedef 0x183b4688 '__builtin_va_list'
+ |   `-RecordType 0x183b4400 'struct std::__va_list'
+ |     `-Record 0x183b4378 '__va_list'
 TypedefDeclNode(parent_idx=0, current_idx=59, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0858 </usr/include/aarch64-linux-gnu/bits/types.h:31:1, col:23> col:23 __u_char 'unsigned char'
- | `-BuiltinType 0x35c2c3b0 'unsigned char'
+|-TypedefDecl 0x183b4858 </usr/include/aarch64-linux-gnu/bits/types.h:31:1, col:23> col:23 __u_char 'unsigned char'
+ | `-BuiltinType 0x183103b0 'unsigned char'
 TypedefDeclNode(parent_idx=0, current_idx=60, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd08c8 <line:32:1, col:28> col:28 __u_short 'unsigned short'
- | `-BuiltinType 0x35c2c3d0 'unsigned short'
+|-TypedefDecl 0x183b48c8 <line:32:1, col:28> col:28 __u_short 'unsigned short'
+ | `-BuiltinType 0x183103d0 'unsigned short'
 TypedefDeclNode(parent_idx=0, current_idx=61, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0938 <line:33:1, col:22> col:22 __u_int 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183b4938 <line:33:1, col:22> col:22 __u_int 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=62, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd09a8 <line:34:1, col:27> col:27 __u_long 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183b49a8 <line:34:1, col:27> col:27 __u_long 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=63, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0a18 <line:37:1, col:21> col:21 referenced __int8_t 'signed char'
- | `-BuiltinType 0x35c2c310 'signed char'
+|-TypedefDecl 0x183b4a18 <line:37:1, col:21> col:21 referenced __int8_t 'signed char'
+ | `-BuiltinType 0x18310310 'signed char'
 TypedefDeclNode(parent_idx=0, current_idx=64, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0a88 <line:38:1, col:23> col:23 referenced __uint8_t 'unsigned char'
- | `-BuiltinType 0x35c2c3b0 'unsigned char'
+|-TypedefDecl 0x183b4a88 <line:38:1, col:23> col:23 referenced __uint8_t 'unsigned char'
+ | `-BuiltinType 0x183103b0 'unsigned char'
 TypedefDeclNode(parent_idx=0, current_idx=65, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0af8 <line:39:1, col:26> col:26 referenced __int16_t 'short'
- | `-BuiltinType 0x35c2c330 'short'
+|-TypedefDecl 0x183b4af8 <line:39:1, col:26> col:26 referenced __int16_t 'short'
+ | `-BuiltinType 0x18310330 'short'
 TypedefDeclNode(parent_idx=0, current_idx=66, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0b68 <line:40:1, col:28> col:28 referenced __uint16_t 'unsigned short'
- | `-BuiltinType 0x35c2c3d0 'unsigned short'
+|-TypedefDecl 0x183b4b68 <line:40:1, col:28> col:28 referenced __uint16_t 'unsigned short'
+ | `-BuiltinType 0x183103d0 'unsigned short'
 TypedefDeclNode(parent_idx=0, current_idx=67, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0bd8 <line:41:1, col:20> col:20 referenced __int32_t 'int'
- | `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x183b4bd8 <line:41:1, col:20> col:20 referenced __int32_t 'int'
+ | `-BuiltinType 0x18310350 'int'
 TypedefDeclNode(parent_idx=0, current_idx=68, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35cd0c48 <line:42:1, col:22> col:22 referenced __uint32_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183b4c48 <line:42:1, col:22> col:22 referenced __uint32_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=69, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a240 <line:44:1, col:25> col:25 referenced __int64_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183fe240 <line:44:1, col:25> col:25 referenced __int64_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=70, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a2b0 <line:45:1, col:27> col:27 referenced __uint64_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183fe2b0 <line:45:1, col:27> col:27 referenced __uint64_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=71, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a340 <line:52:1, col:18> col:18 __int_least8_t '__int8_t':'signed char'
- | `-TypedefType 0x35d1a310 '__int8_t' sugar
- |   |-Typedef 0x35cd0a18 '__int8_t'
- |   `-BuiltinType 0x35c2c310 'signed char'
+|-TypedefDecl 0x183fe340 <line:52:1, col:18> col:18 __int_least8_t '__int8_t':'signed char'
+ | `-TypedefType 0x183fe310 '__int8_t' sugar
+ |   |-Typedef 0x183b4a18 '__int8_t'
+ |   `-BuiltinType 0x18310310 'signed char'
 TypedefDeclNode(parent_idx=0, current_idx=72, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a3d0 <line:53:1, col:19> col:19 __uint_least8_t '__uint8_t':'unsigned char'
- | `-TypedefType 0x35d1a3a0 '__uint8_t' sugar
- |   |-Typedef 0x35cd0a88 '__uint8_t'
- |   `-BuiltinType 0x35c2c3b0 'unsigned char'
+|-TypedefDecl 0x183fe3d0 <line:53:1, col:19> col:19 __uint_least8_t '__uint8_t':'unsigned char'
+ | `-TypedefType 0x183fe3a0 '__uint8_t' sugar
+ |   |-Typedef 0x183b4a88 '__uint8_t'
+ |   `-BuiltinType 0x183103b0 'unsigned char'
 TypedefDeclNode(parent_idx=0, current_idx=73, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a460 <line:54:1, col:19> col:19 __int_least16_t '__int16_t':'short'
- | `-TypedefType 0x35d1a430 '__int16_t' sugar
- |   |-Typedef 0x35cd0af8 '__int16_t'
- |   `-BuiltinType 0x35c2c330 'short'
+|-TypedefDecl 0x183fe460 <line:54:1, col:19> col:19 __int_least16_t '__int16_t':'short'
+ | `-TypedefType 0x183fe430 '__int16_t' sugar
+ |   |-Typedef 0x183b4af8 '__int16_t'
+ |   `-BuiltinType 0x18310330 'short'
 TypedefDeclNode(parent_idx=0, current_idx=74, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a4f0 <line:55:1, col:20> col:20 __uint_least16_t '__uint16_t':'unsigned short'
- | `-TypedefType 0x35d1a4c0 '__uint16_t' sugar
- |   |-Typedef 0x35cd0b68 '__uint16_t'
- |   `-BuiltinType 0x35c2c3d0 'unsigned short'
+|-TypedefDecl 0x183fe4f0 <line:55:1, col:20> col:20 __uint_least16_t '__uint16_t':'unsigned short'
+ | `-TypedefType 0x183fe4c0 '__uint16_t' sugar
+ |   |-Typedef 0x183b4b68 '__uint16_t'
+ |   `-BuiltinType 0x183103d0 'unsigned short'
 TypedefDeclNode(parent_idx=0, current_idx=75, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a580 <line:56:1, col:19> col:19 __int_least32_t '__int32_t':'int'
- | `-TypedefType 0x35d1a550 '__int32_t' sugar
- |   |-Typedef 0x35cd0bd8 '__int32_t'
- |   `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x183fe580 <line:56:1, col:19> col:19 __int_least32_t '__int32_t':'int'
+ | `-TypedefType 0x183fe550 '__int32_t' sugar
+ |   |-Typedef 0x183b4bd8 '__int32_t'
+ |   `-BuiltinType 0x18310350 'int'
 TypedefDeclNode(parent_idx=0, current_idx=76, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a610 <line:57:1, col:20> col:20 __uint_least32_t '__uint32_t':'unsigned int'
- | `-TypedefType 0x35d1a5e0 '__uint32_t' sugar
- |   |-Typedef 0x35cd0c48 '__uint32_t'
- |   `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183fe610 <line:57:1, col:20> col:20 __uint_least32_t '__uint32_t':'unsigned int'
+ | `-TypedefType 0x183fe5e0 '__uint32_t' sugar
+ |   |-Typedef 0x183b4c48 '__uint32_t'
+ |   `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=77, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a6a0 <line:58:1, col:19> col:19 __int_least64_t '__int64_t':'long'
- | `-TypedefType 0x35d1a670 '__int64_t' sugar
- |   |-Typedef 0x35d1a240 '__int64_t'
- |   `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183fe6a0 <line:58:1, col:19> col:19 __int_least64_t '__int64_t':'long'
+ | `-TypedefType 0x183fe670 '__int64_t' sugar
+ |   |-Typedef 0x183fe240 '__int64_t'
+ |   `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=78, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a730 <line:59:1, col:20> col:20 __uint_least64_t '__uint64_t':'unsigned long'
- | `-TypedefType 0x35d1a700 '__uint64_t' sugar
- |   |-Typedef 0x35d1a2b0 '__uint64_t'
- |   `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183fe730 <line:59:1, col:20> col:20 __uint_least64_t '__uint64_t':'unsigned long'
+ | `-TypedefType 0x183fe700 '__uint64_t' sugar
+ |   |-Typedef 0x183fe2b0 '__uint64_t'
+ |   `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=79, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a7a0 <line:63:1, col:18> col:18 __quad_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183fe7a0 <line:63:1, col:18> col:18 __quad_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=80, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a810 <line:64:1, col:27> col:27 __u_quad_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183fe810 <line:64:1, col:27> col:27 __u_quad_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=81, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a880 <line:72:1, col:18> col:18 __intmax_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183fe880 <line:72:1, col:18> col:18 __intmax_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=82, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a8f0 <line:73:1, col:27> col:27 __uintmax_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183fe8f0 <line:73:1, col:27> col:27 __uintmax_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=83, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a960 <line:137:22, line:145:25> col:25 __dev_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183fe960 <line:137:22, line:145:25> col:25 __dev_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=84, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1a9d0 <line:137:22, line:146:25> col:25 __uid_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183fe9d0 <line:137:22, line:146:25> col:25 __uid_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=85, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1aa40 <line:137:22, line:147:25> col:25 __gid_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183fea40 <line:137:22, line:147:25> col:25 __gid_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=86, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1aab0 <line:137:22, line:148:25> col:25 __ino_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183feab0 <line:137:22, line:148:25> col:25 __ino_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=87, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1ab20 <line:137:22, line:149:27> col:27 __ino64_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183feb20 <line:137:22, line:149:27> col:27 __ino64_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=88, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1ab90 <line:137:22, line:150:26> col:26 __mode_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183feb90 <line:137:22, line:150:26> col:26 __mode_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=89, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1ac00 <line:137:22, line:151:27> col:27 __nlink_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183fec00 <line:137:22, line:151:27> col:27 __nlink_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=90, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1ac70 <line:137:22, line:152:25> col:25 referenced __off_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183fec70 <line:137:22, line:152:25> col:25 referenced __off_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=91, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1ace0 <line:137:22, line:153:27> col:27 referenced __off64_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183fece0 <line:137:22, line:153:27> col:27 referenced __off64_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=92, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1ad50 <line:137:22, line:154:25> col:25 __pid_t 'int'
- | `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x183fed50 <line:137:22, line:154:25> col:25 __pid_t 'int'
+ | `-BuiltinType 0x18310350 'int'
 RecordDeclNode(parent_idx=0, current_idx=93, child_idxs=(94), node_state=4 (COMPLETED))
 struct _Anonymous_col_24:
 	FieldDeclNode(parent_idx=93, current_idx=94, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-FieldDecl 0x35d1aef0 <col:33, col:44> col:37 __val 'int[2]'	
+	| `-FieldDecl 0x183feef0 <col:33, col:44> col:37 __val 'int[2]'	
 
 TypedefDeclNode(parent_idx=0, current_idx=95, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1af98 </usr/include/aarch64-linux-gnu/bits/types.h:137:22, line:155:26> col:26 __fsid_t 'struct __fsid_t':'__fsid_t'
- | `-ElaboratedType 0x35d1af40 'struct __fsid_t' sugar
- |   `-RecordType 0x35d1ae30 '__fsid_t'
+|-TypedefDecl 0x183fef98 </usr/include/aarch64-linux-gnu/bits/types.h:137:22, line:155:26> col:26 __fsid_t 'struct __fsid_t':'__fsid_t'
+ | `-ElaboratedType 0x183fef40 'struct __fsid_t' sugar
+ |   `-RecordType 0x183fee30 '__fsid_t'
  
 TypedefDeclNode(parent_idx=0, current_idx=96, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1b020 <line:137:22, line:156:27> col:27 __clock_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183ff020 <line:137:22, line:156:27> col:27 __clock_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=97, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1b090 <line:137:22, line:157:26> col:26 __rlim_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183ff090 <line:137:22, line:157:26> col:26 __rlim_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=98, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1b100 <line:137:22, line:158:28> col:28 __rlim64_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x183ff100 <line:137:22, line:158:28> col:28 __rlim64_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=99, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1b170 <line:137:22, line:159:24> col:24 __id_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x183ff170 <line:137:22, line:159:24> col:24 __id_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=100, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d1b1e0 <line:137:22, line:160:26> col:26 __time_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x183ff1e0 <line:137:22, line:160:26> col:26 __time_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=101, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26488 <line:137:22, line:161:30> col:30 __useconds_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x1840a488 <line:137:22, line:161:30> col:30 __useconds_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=102, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d264f8 <line:137:22, line:162:31> col:31 __suseconds_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840a4f8 <line:137:22, line:162:31> col:31 __suseconds_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=103, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26568 <line:137:22, line:163:33> col:33 __suseconds64_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840a568 <line:137:22, line:163:33> col:33 __suseconds64_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=104, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d265d8 <line:137:22, line:165:27> col:27 __daddr_t 'int'
- | `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x1840a5d8 <line:137:22, line:165:27> col:27 __daddr_t 'int'
+ | `-BuiltinType 0x18310350 'int'
 TypedefDeclNode(parent_idx=0, current_idx=105, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26648 <line:137:22, line:166:25> col:25 __key_t 'int'
- | `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x1840a648 <line:137:22, line:166:25> col:25 __key_t 'int'
+ | `-BuiltinType 0x18310350 'int'
 TypedefDeclNode(parent_idx=0, current_idx=106, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d266b8 <line:137:22, line:169:29> col:29 __clockid_t 'int'
- | `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x1840a6b8 <line:137:22, line:169:29> col:29 __clockid_t 'int'
+ | `-BuiltinType 0x18310350 'int'
 TypedefDeclNode(parent_idx=0, current_idx=107, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26728 <line:137:22, line:172:27> col:27 __timer_t 'void *'
- | `-PointerType 0x35c2cff0 'void *'
- |   `-BuiltinType 0x35c2c2b0 'void'
+|-TypedefDecl 0x1840a728 <line:137:22, line:172:27> col:27 __timer_t 'void *'
+ | `-PointerType 0x18310ff0 'void *'
+ |   `-BuiltinType 0x183102b0 'void'
 TypedefDeclNode(parent_idx=0, current_idx=108, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26798 <line:137:22, line:175:29> col:29 __blksize_t 'int'
- | `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x1840a798 <line:137:22, line:175:29> col:29 __blksize_t 'int'
+ | `-BuiltinType 0x18310350 'int'
 TypedefDeclNode(parent_idx=0, current_idx=109, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26808 <line:137:22, line:180:28> col:28 __blkcnt_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840a808 <line:137:22, line:180:28> col:28 __blkcnt_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=110, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26878 <line:137:22, line:181:30> col:30 __blkcnt64_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840a878 <line:137:22, line:181:30> col:30 __blkcnt64_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=111, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d268e8 <line:137:22, line:184:30> col:30 __fsblkcnt_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x1840a8e8 <line:137:22, line:184:30> col:30 __fsblkcnt_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=112, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26958 <line:137:22, line:185:32> col:32 __fsblkcnt64_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x1840a958 <line:137:22, line:185:32> col:32 __fsblkcnt64_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=113, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d269c8 <line:137:22, line:188:30> col:30 __fsfilcnt_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x1840a9c8 <line:137:22, line:188:30> col:30 __fsfilcnt_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=114, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26a38 <line:137:22, line:189:32> col:32 __fsfilcnt64_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x1840aa38 <line:137:22, line:189:32> col:32 __fsfilcnt64_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=115, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26aa8 <line:137:22, line:192:28> col:28 __fsword_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840aaa8 <line:137:22, line:192:28> col:28 __fsword_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=116, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26b18 <line:137:22, line:194:27> col:27 referenced __ssize_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840ab18 <line:137:22, line:194:27> col:27 referenced __ssize_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=117, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26b88 <line:137:22, line:197:33> col:33 __syscall_slong_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840ab88 <line:137:22, line:197:33> col:33 __syscall_slong_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=118, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26bf8 <line:137:22, line:199:33> col:33 __syscall_ulong_t 'unsigned long'
- | `-BuiltinType 0x35c2c410 'unsigned long'
+|-TypedefDecl 0x1840abf8 <line:137:22, line:199:33> col:33 __syscall_ulong_t 'unsigned long'
+ | `-BuiltinType 0x18310410 'unsigned long'
 TypedefDeclNode(parent_idx=0, current_idx=119, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26c80 <line:203:1, col:19> col:19 __loff_t '__off64_t':'long'
- | `-TypedefType 0x35d26c50 '__off64_t' sugar
- |   |-Typedef 0x35d1ace0 '__off64_t'
- |   `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840ac80 <line:203:1, col:19> col:19 __loff_t '__off64_t':'long'
+ | `-TypedefType 0x1840ac50 '__off64_t' sugar
+ |   |-Typedef 0x183fece0 '__off64_t'
+ |   `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=120, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26cf0 <line:204:1, col:15> col:15 __caddr_t 'char *'
- | `-PointerType 0x35cd02e0 'char *'
- |   `-BuiltinType 0x35c2c2f0 'char'
+|-TypedefDecl 0x1840acf0 <line:204:1, col:15> col:15 __caddr_t 'char *'
+ | `-PointerType 0x183b42e0 'char *'
+ |   `-BuiltinType 0x183102f0 'char'
 TypedefDeclNode(parent_idx=0, current_idx=121, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26d60 <line:137:22, line:207:25> col:25 __intptr_t 'long'
- | `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840ad60 <line:137:22, line:207:25> col:25 __intptr_t 'long'
+ | `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=122, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26dd0 <line:137:22, line:210:23> col:23 __socklen_t 'unsigned int'
- | `-BuiltinType 0x35c2c3f0 'unsigned int'
+|-TypedefDecl 0x1840add0 <line:137:22, line:210:23> col:23 __socklen_t 'unsigned int'
+ | `-BuiltinType 0x183103f0 'unsigned int'
 TypedefDeclNode(parent_idx=0, current_idx=123, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d26e40 <line:215:1, col:13> col:13 __sig_atomic_t 'int'
- | `-BuiltinType 0x35c2c350 'int'
+|-TypedefDecl 0x1840ae40 <line:215:1, col:13> col:13 __sig_atomic_t 'int'
+ | `-BuiltinType 0x18310350 'int'
 RecordDeclNode(parent_idx=124, current_idx=126, child_idxs=(127, 128), node_state=4 (COMPLETED))
 struct __Anonymous_line_13_9_definition:
 	FieldDeclNode(parent_idx=126, current_idx=127, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| | |-FieldDecl 0x35d27068 <<built-in>:98:23, /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:18:19> col:19 __wch 'unsigned int'	
+	| | |-FieldDecl 0x1840b068 <<built-in>:98:23, /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:18:19> col:19 __wch 'unsigned int'	
 
 	FieldDeclNode(parent_idx=126, current_idx=128, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| | `-FieldDecl 0x35d27158 <line:19:5, col:18> col:10 __wchb 'char[4]'	
+	| | `-FieldDecl 0x1840b158 <line:19:5, col:18> col:10 __wchb 'char[4]'	
 
 
 RecordDeclNode(parent_idx=0, current_idx=124, child_idxs=(125, 126, 129), node_state=4 (COMPLETED))
 struct _Anonymous_line_13_9:
 	FieldDeclNode(parent_idx=124, current_idx=125, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d26f58 <line:15:3, col:7> col:7 __count 'int'	
+	| |-FieldDecl 0x1840af58 <line:15:3, col:7> col:7 __count 'int'	
 
 	FieldDeclNode(parent_idx=124, current_idx=129, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-FieldDecl 0x35d27208 <line:16:3, line:20:5> col:5 __value 'union (unnamed union at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3)':'union __mbstate_t::(unnamed at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3)'	
+	| `-FieldDecl 0x1840b208 <line:16:3, line:20:5> col:5 __value 'union (unnamed union at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3)':'union __mbstate_t::(unnamed at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3)'	
 
 TypedefDeclNode(parent_idx=0, current_idx=130, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d272b8 <line:13:1, line:21:3> col:3 referenced __mbstate_t 'struct __mbstate_t':'__mbstate_t'
- | `-ElaboratedType 0x35d27260 'struct __mbstate_t' sugar
- |   `-RecordType 0x35d26f20 '__mbstate_t'
+|-TypedefDecl 0x1840b2b8 <line:13:1, line:21:3> col:3 referenced __mbstate_t 'struct __mbstate_t':'__mbstate_t'
+ | `-ElaboratedType 0x1840b260 'struct __mbstate_t' sugar
+ |   `-RecordType 0x1840af20 '__mbstate_t'
  
 RecordDeclNode(parent_idx=0, current_idx=131, child_idxs=(132, 133), node_state=4 (COMPLETED))
 struct _G_fpos_t:
 	FieldDeclNode(parent_idx=131, current_idx=132, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d27400 <line:12:3, col:11> col:11 __pos '__off_t':'long'	
+	| |-FieldDecl 0x1840b400 <line:12:3, col:11> col:11 __pos '__off_t':'long'	
 
 	FieldDeclNode(parent_idx=131, current_idx=133, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-FieldDecl 0x35d28ca0 <line:13:3, col:15> col:15 __state '__mbstate_t':'__mbstate_t'	
+	| `-FieldDecl 0x1840cca0 <line:13:3, col:15> col:15 __state '__mbstate_t':'__mbstate_t'	
 
 TypedefDeclNode(parent_idx=0, current_idx=134, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d28d48 <line:10:1, line:14:3> col:3 referenced __fpos_t 'struct _G_fpos_t':'struct _G_fpos_t'
- | `-ElaboratedType 0x35d28cf0 'struct _G_fpos_t' sugar
- |   `-RecordType 0x35d273b0 'struct _G_fpos_t'
+|-TypedefDecl 0x1840cd48 <line:10:1, line:14:3> col:3 referenced __fpos_t 'struct _G_fpos_t':'struct _G_fpos_t'
+ | `-ElaboratedType 0x1840ccf0 'struct _G_fpos_t' sugar
+ |   `-RecordType 0x1840b3b0 'struct _G_fpos_t'
  
 RecordDeclNode(parent_idx=0, current_idx=135, child_idxs=(136, 137), node_state=4 (COMPLETED))
 struct _G_fpos64_t:
 	FieldDeclNode(parent_idx=135, current_idx=136, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d28e70 <line:12:3, col:13> col:13 __pos '__off64_t':'long'	
+	| |-FieldDecl 0x1840ce70 <line:12:3, col:13> col:13 __pos '__off64_t':'long'	
 
 	FieldDeclNode(parent_idx=135, current_idx=137, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-FieldDecl 0x35d28ed0 <line:13:3, col:15> col:15 __state '__mbstate_t':'__mbstate_t'	
+	| `-FieldDecl 0x1840ced0 <line:13:3, col:15> col:15 __state '__mbstate_t':'__mbstate_t'	
 
 TypedefDeclNode(parent_idx=0, current_idx=138, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d28f78 <line:10:1, line:14:3> col:3 __fpos64_t 'struct _G_fpos64_t':'struct _G_fpos64_t'
- | `-ElaboratedType 0x35d28f20 'struct _G_fpos64_t' sugar
- |   `-RecordType 0x35d28e40 'struct _G_fpos64_t'
+|-TypedefDecl 0x1840cf78 <line:10:1, line:14:3> col:3 __fpos64_t 'struct _G_fpos64_t':'struct _G_fpos64_t'
+ | `-ElaboratedType 0x1840cf20 'struct _G_fpos64_t' sugar
+ |   `-RecordType 0x1840ce40 'struct _G_fpos64_t'
  
 RecordDeclNode(parent_idx=0, current_idx=139, child_idxs=(), node_state=4 (COMPLETED))
 # Forward declaration of _IO_FILE	pass
 
 TypedefDeclNode(parent_idx=0, current_idx=140, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d290e0 <line:5:1, col:25> col:25 __FILE 'struct _IO_FILE':'struct _IO_FILE'
- | `-ElaboratedType 0x35d29090 'struct _IO_FILE' sugar
- |   `-RecordType 0x35d29070 'struct _IO_FILE'
- |     `-Record 0x35d294f8 '_IO_FILE'
+|-TypedefDecl 0x1840d0e0 <line:5:1, col:25> col:25 __FILE 'struct _IO_FILE':'struct _IO_FILE'
+ | `-ElaboratedType 0x1840d090 'struct _IO_FILE' sugar
+ |   `-RecordType 0x1840d070 'struct _IO_FILE'
+ |     `-Record 0x1840d4f8 '_IO_FILE'
 RecordDeclNode(parent_idx=0, current_idx=141, child_idxs=(), node_state=4 (COMPLETED))
 # Forward declaration of _IO_FILE	pass
 
 TypedefDeclNode(parent_idx=0, current_idx=142, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d291d8 <line:7:1, col:25> col:25 referenced FILE 'struct _IO_FILE':'struct _IO_FILE'
- | `-ElaboratedType 0x35d29090 'struct _IO_FILE' sugar
- |   `-RecordType 0x35d29070 'struct _IO_FILE'
- |     `-Record 0x35d294f8 '_IO_FILE'
+|-TypedefDecl 0x1840d1d8 <line:7:1, col:25> col:25 referenced FILE 'struct _IO_FILE':'struct _IO_FILE'
+ | `-ElaboratedType 0x1840d090 'struct _IO_FILE' sugar
+ |   `-RecordType 0x1840d070 'struct _IO_FILE'
+ |     `-Record 0x1840d4f8 '_IO_FILE'
 RecordDeclNode(parent_idx=0, current_idx=143, child_idxs=(), node_state=4 (COMPLETED))
 # Forward declaration of _IO_FILE	pass
 
@@ -475,692 +475,692 @@ RecordDeclNode(parent_idx=0, current_idx=146, child_idxs=(), node_state=4 (COMPL
 # Forward declaration of _IO_wide_data	pass
 
 TypedefDeclNode(parent_idx=0, current_idx=147, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d294a0 <line:43:1, col:14> col:14 referenced _IO_lock_t 'void'
- | `-BuiltinType 0x35c2c2b0 'void'
+|-TypedefDecl 0x1840d4a0 <line:43:1, col:14> col:14 referenced _IO_lock_t 'void'
+ | `-BuiltinType 0x183102b0 'void'
 RecordDeclNode(parent_idx=0, current_idx=148, child_idxs=(149, 150, 151, 152, 153, ...) len=29, node_state=4 (COMPLETED))
 struct _IO_FILE:
 	FieldDeclNode(parent_idx=148, current_idx=149, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29590 <line:51:3, col:7> col:7 _flags 'int'	
+	| |-FieldDecl 0x1840d590 <line:51:3, col:7> col:7 _flags 'int'	
 
 	FieldDeclNode(parent_idx=148, current_idx=150, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d295f8 <line:54:3, col:9> col:9 _IO_read_ptr 'char *'	
+	| |-FieldDecl 0x1840d5f8 <line:54:3, col:9> col:9 _IO_read_ptr 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=151, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29660 <line:55:3, col:9> col:9 _IO_read_end 'char *'	
+	| |-FieldDecl 0x1840d660 <line:55:3, col:9> col:9 _IO_read_end 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=152, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d296c8 <line:56:3, col:9> col:9 _IO_read_base 'char *'	
+	| |-FieldDecl 0x1840d6c8 <line:56:3, col:9> col:9 _IO_read_base 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=153, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29730 <line:57:3, col:9> col:9 _IO_write_base 'char *'	
+	| |-FieldDecl 0x1840d730 <line:57:3, col:9> col:9 _IO_write_base 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=154, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29798 <line:58:3, col:9> col:9 _IO_write_ptr 'char *'	
+	| |-FieldDecl 0x1840d798 <line:58:3, col:9> col:9 _IO_write_ptr 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=155, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29800 <line:59:3, col:9> col:9 _IO_write_end 'char *'	
+	| |-FieldDecl 0x1840d800 <line:59:3, col:9> col:9 _IO_write_end 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=156, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29868 <line:60:3, col:9> col:9 _IO_buf_base 'char *'	
+	| |-FieldDecl 0x1840d868 <line:60:3, col:9> col:9 _IO_buf_base 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=157, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d298d0 <line:61:3, col:9> col:9 _IO_buf_end 'char *'	
+	| |-FieldDecl 0x1840d8d0 <line:61:3, col:9> col:9 _IO_buf_end 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=158, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29938 <line:64:3, col:9> col:9 _IO_save_base 'char *'	
+	| |-FieldDecl 0x1840d938 <line:64:3, col:9> col:9 _IO_save_base 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=159, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d299a0 <line:65:3, col:9> col:9 _IO_backup_base 'char *'	
+	| |-FieldDecl 0x1840d9a0 <line:65:3, col:9> col:9 _IO_backup_base 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=160, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29a08 <line:66:3, col:9> col:9 _IO_save_end 'char *'	
+	| |-FieldDecl 0x1840da08 <line:66:3, col:9> col:9 _IO_save_end 'char *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=161, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29b10 <line:68:3, col:22> col:22 _markers 'struct _IO_marker *'	
+	| |-FieldDecl 0x1840db10 <line:68:3, col:22> col:22 _markers 'struct _IO_marker *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=162, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d29be0 <line:70:3, col:20> col:20 _chain 'struct _IO_FILE *'	
+	| |-FieldDecl 0x1840dbe0 <line:70:3, col:20> col:20 _chain 'struct _IO_FILE *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=163, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b2d0 <line:72:3, col:7> col:7 _fileno 'int'	
+	| |-FieldDecl 0x1840f2d0 <line:72:3, col:7> col:7 _fileno 'int'	
 
 	FieldDeclNode(parent_idx=148, current_idx=164, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b338 <line:73:3, col:7> col:7 _flags2 'int'	
+	| |-FieldDecl 0x1840f338 <line:73:3, col:7> col:7 _flags2 'int'	
 
 	FieldDeclNode(parent_idx=148, current_idx=165, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b398 <line:74:3, col:11> col:11 _old_offset '__off_t':'long'	
+	| |-FieldDecl 0x1840f398 <line:74:3, col:11> col:11 _old_offset '__off_t':'long'	
 
 	FieldDeclNode(parent_idx=148, current_idx=166, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b400 <line:77:3, col:18> col:18 _cur_column 'unsigned short'	
+	| |-FieldDecl 0x1840f400 <line:77:3, col:18> col:18 _cur_column 'unsigned short'	
 
 	FieldDeclNode(parent_idx=148, current_idx=167, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b468 <line:78:3, col:15> col:15 _vtable_offset 'signed char'	
+	| |-FieldDecl 0x1840f468 <line:78:3, col:15> col:15 _vtable_offset 'signed char'	
 
 	FieldDeclNode(parent_idx=148, current_idx=168, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b558 <line:79:3, col:19> col:8 _shortbuf 'char[1]'	
+	| |-FieldDecl 0x1840f558 <line:79:3, col:19> col:8 _shortbuf 'char[1]'	
 
 	FieldDeclNode(parent_idx=148, current_idx=169, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b608 <line:81:3, col:15> col:15 _lock '_IO_lock_t *'	
+	| |-FieldDecl 0x1840f608 <line:81:3, col:15> col:15 _lock '_IO_lock_t *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=170, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b668 <line:89:3, col:13> col:13 _offset '__off64_t':'long'	
+	| |-FieldDecl 0x1840f668 <line:89:3, col:13> col:13 _offset '__off64_t':'long'	
 
 	FieldDeclNode(parent_idx=148, current_idx=171, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b770 <line:91:3, col:23> col:23 _codecvt 'struct _IO_codecvt *'	
+	| |-FieldDecl 0x1840f770 <line:91:3, col:23> col:23 _codecvt 'struct _IO_codecvt *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=172, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b870 <line:92:3, col:25> col:25 _wide_data 'struct _IO_wide_data *'	
+	| |-FieldDecl 0x1840f870 <line:92:3, col:25> col:25 _wide_data 'struct _IO_wide_data *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=173, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b8e8 <line:93:3, col:20> col:20 _freeres_list 'struct _IO_FILE *'	
+	| |-FieldDecl 0x1840f8e8 <line:93:3, col:20> col:20 _freeres_list 'struct _IO_FILE *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=174, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b950 <line:94:3, col:9> col:9 _freeres_buf 'void *'	
+	| |-FieldDecl 0x1840f950 <line:94:3, col:9> col:9 _freeres_buf 'void *'	
 
 	FieldDeclNode(parent_idx=148, current_idx=175, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2b9d0 <line:95:3, col:10> col:10 __pad5 'size_t':'unsigned long'	
+	| |-FieldDecl 0x1840f9d0 <line:95:3, col:10> col:10 __pad5 'size_t':'unsigned long'	
 
 	FieldDeclNode(parent_idx=148, current_idx=176, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| |-FieldDecl 0x35d2ba38 <line:96:3, col:7> col:7 _mode 'int'	
+	| |-FieldDecl 0x1840fa38 <line:96:3, col:7> col:7 _mode 'int'	
 
 	FieldDeclNode(parent_idx=148, current_idx=177, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	| `-FieldDecl 0x35d2bc98 <line:98:3, col:74> col:8 _unused2 'char[20]'	
+	| `-FieldDecl 0x1840fc98 <line:98:3, col:74> col:8 _unused2 'char[20]'	
 
 TypedefDeclNode(parent_idx=0, current_idx=178, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d2bd20 prev 0x35cd0780 </usr/include/stdio.h:52:1, col:24> col:24 va_list '__gnuc_va_list':'struct std::__va_list'
- | `-TypedefType 0x35d2bcf0 '__gnuc_va_list' sugar
- |   |-Typedef 0x35cd07e8 '__gnuc_va_list'
- |   `-TypedefType 0x35cd0750 '__builtin_va_list' sugar
- |     |-Typedef 0x35cd0688 '__builtin_va_list'
- |     `-RecordType 0x35cd0400 'struct std::__va_list'
- |       `-Record 0x35cd0378 '__va_list'
+|-TypedefDecl 0x1840fd20 prev 0x183b4780 </usr/include/stdio.h:52:1, col:24> col:24 va_list '__gnuc_va_list':'struct std::__va_list'
+ | `-TypedefType 0x1840fcf0 '__gnuc_va_list' sugar
+ |   |-Typedef 0x183b47e8 '__gnuc_va_list'
+ |   `-TypedefType 0x183b4750 '__builtin_va_list' sugar
+ |     |-Typedef 0x183b4688 '__builtin_va_list'
+ |     `-RecordType 0x183b4400 'struct std::__va_list'
+ |       `-Record 0x183b4378 '__va_list'
 TypedefDeclNode(parent_idx=0, current_idx=179, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d2bd88 <line:63:1, col:17> col:17 off_t '__off_t':'long'
- | `-TypedefType 0x35d273d0 '__off_t' sugar
- |   |-Typedef 0x35d1ac70 '__off_t'
- |   `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840fd88 <line:63:1, col:17> col:17 off_t '__off_t':'long'
+ | `-TypedefType 0x1840b3d0 '__off_t' sugar
+ |   |-Typedef 0x183fec70 '__off_t'
+ |   `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=180, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d2be10 <line:77:1, col:19> col:19 ssize_t '__ssize_t':'long'
- | `-TypedefType 0x35d2bde0 '__ssize_t' sugar
- |   |-Typedef 0x35d26b18 '__ssize_t'
- |   `-BuiltinType 0x35c2c370 'long'
+|-TypedefDecl 0x1840fe10 <line:77:1, col:19> col:19 ssize_t '__ssize_t':'long'
+ | `-TypedefType 0x1840fde0 '__ssize_t' sugar
+ |   |-Typedef 0x1840ab18 '__ssize_t'
+ |   `-BuiltinType 0x18310370 'long'
 TypedefDeclNode(parent_idx=0, current_idx=181, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d2bea0 <line:84:1, col:18> col:18 referenced fpos_t '__fpos_t':'struct _G_fpos_t'
- | `-TypedefType 0x35d2be70 '__fpos_t' sugar
- |   |-Typedef 0x35d28d48 '__fpos_t'
- |   `-ElaboratedType 0x35d28cf0 'struct _G_fpos_t' sugar
- |     `-RecordType 0x35d273b0 'struct _G_fpos_t'
+|-TypedefDecl 0x1840fea0 <line:84:1, col:18> col:18 referenced fpos_t '__fpos_t':'struct _G_fpos_t'
+ | `-TypedefType 0x1840fe70 '__fpos_t' sugar
+ |   |-Typedef 0x1840cd48 '__fpos_t'
+ |   `-ElaboratedType 0x1840ccf0 'struct _G_fpos_t' sugar
+ |     `-RecordType 0x1840b3b0 'struct _G_fpos_t'
  
 VarDeclNode(parent_idx=0, current_idx=182, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-VarDecl 0x35d2bf58 <line:143:1, col:14> col:14 stdin 'FILE *' extern
+|-VarDecl 0x1840ff58 <line:143:1, col:14> col:14 stdin 'FILE *' extern
 VarDeclNode(parent_idx=0, current_idx=183, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-VarDecl 0x35d2c018 <line:144:1, col:14> col:14 stdout 'FILE *' extern
+|-VarDecl 0x18410018 <line:144:1, col:14> col:14 stdout 'FILE *' extern
 VarDeclNode(parent_idx=0, current_idx=184, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-VarDecl 0x35d2c090 <line:145:1, col:14> col:14 stderr 'FILE *' extern
+|-VarDecl 0x18410090 <line:145:1, col:14> col:14 stderr 'FILE *' extern
 FunctionDeclNode(parent_idx=0, current_idx=185, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d2c1e0 <line:152:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:152:12 remove 'int (const char *)' extern
- | |-ParmVarDecl 0x35d2c110 <col:20, col:32> col:32 __filename 'const char *'
- | `-NoThrowAttr 0x35d2c288 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x184101e0 <line:152:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:152:12 remove 'int (const char *)' extern
+ | |-ParmVarDecl 0x18410110 <col:20, col:32> col:32 __filename 'const char *'
+ | `-NoThrowAttr 0x18410288 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=186, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d31760 </usr/include/stdio.h:154:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:154:12 rename 'int (const char *, const char *)' extern
- | |-ParmVarDecl 0x35d31608 <col:20, col:32> col:32 __old 'const char *'
- | |-ParmVarDecl 0x35d31688 <col:39, col:51> col:51 __new 'const char *'
- | `-NoThrowAttr 0x35d31810 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18415760 </usr/include/stdio.h:154:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:154:12 rename 'int (const char *, const char *)' extern
+ | |-ParmVarDecl 0x18415608 <col:20, col:32> col:32 __old 'const char *'
+ | |-ParmVarDecl 0x18415688 <col:39, col:51> col:51 __new 'const char *'
+ | `-NoThrowAttr 0x18415810 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=187, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d31b00 </usr/include/stdio.h:158:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:158:12 renameat 'int (int, const char *, int, const char *)' extern
- | |-ParmVarDecl 0x35d31880 <col:22, col:26> col:26 __oldfd 'int'
- | |-ParmVarDecl 0x35d31900 <col:35, col:47> col:47 __old 'const char *'
- | |-ParmVarDecl 0x35d31980 <col:54, col:58> col:58 __newfd 'int'
- | |-ParmVarDecl 0x35d31a00 <line:159:8, col:20> col:20 __new 'const char *'
- | `-NoThrowAttr 0x35d31bc0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18415b00 </usr/include/stdio.h:158:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:158:12 renameat 'int (int, const char *, int, const char *)' extern
+ | |-ParmVarDecl 0x18415880 <col:22, col:26> col:26 __oldfd 'int'
+ | |-ParmVarDecl 0x18415900 <col:35, col:47> col:47 __old 'const char *'
+ | |-ParmVarDecl 0x18415980 <col:54, col:58> col:58 __newfd 'int'
+ | |-ParmVarDecl 0x18415a00 <line:159:8, col:20> col:20 __new 'const char *'
+ | `-NoThrowAttr 0x18415bc0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=188, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d31d20 </usr/include/stdio.h:178:1, col:34> col:12 fclose 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d31c28 <col:20, col:26> col:26 __stream 'FILE *'
+|-FunctionDecl 0x18415d20 </usr/include/stdio.h:178:1, col:34> col:12 fclose 'int (FILE *)' extern
+ | `-ParmVarDecl 0x18415c28 <col:20, col:26> col:26 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=189, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d31eb8 <line:188:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:188:14 tmpfile 'FILE *(void)' extern
- | `-RestrictAttr 0x35d31f58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
+|-FunctionDecl 0x18415eb8 <line:188:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:188:14 tmpfile 'FILE *(void)' extern
+ | `-RestrictAttr 0x18415f58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
 FunctionDeclNode(parent_idx=0, current_idx=190, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d32140 </usr/include/stdio.h:205:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:205:14 tmpnam 'char *(char *)' extern
- | |-ParmVarDecl 0x35d32040 <col:22, col:35> col:26 'char *':'char *'
- | `-NoThrowAttr 0x35d321e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18416140 </usr/include/stdio.h:205:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:205:14 tmpnam 'char *(char *)' extern
+ | |-ParmVarDecl 0x18416040 <col:22, col:35> col:26 'char *':'char *'
+ | `-NoThrowAttr 0x184161e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=191, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d32338 </usr/include/stdio.h:210:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:210:14 tmpnam_r 'char *(char *)' extern
- | |-ParmVarDecl 0x35d322a0 <col:24, col:41> col:29 __s 'char *':'char *'
- | `-NoThrowAttr 0x35d323e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18416338 </usr/include/stdio.h:210:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:210:14 tmpnam_r 'char *(char *)' extern
+ | |-ParmVarDecl 0x184162a0 <col:24, col:41> col:29 __s 'char *':'char *'
+ | `-NoThrowAttr 0x184163e0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=192, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d35640 </usr/include/stdio.h:222:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:222:14 tempnam 'char *(const char *, const char *)' extern
- | |-ParmVarDecl 0x35d32450 <col:23, col:35> col:35 __dir 'const char *'
- | |-ParmVarDecl 0x35d324d0 <col:42, col:54> col:54 __pfx 'const char *'
- | |-NoThrowAttr 0x35d356f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
- | `-RestrictAttr 0x35d35748 <line:281:47> malloc
+|-FunctionDecl 0x18419640 </usr/include/stdio.h:222:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:222:14 tempnam 'char *(const char *, const char *)' extern
+ | |-ParmVarDecl 0x18416450 <col:23, col:35> col:35 __dir 'const char *'
+ | |-ParmVarDecl 0x184164d0 <col:42, col:54> col:54 __pfx 'const char *'
+ | |-NoThrowAttr 0x184196f0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+ | `-RestrictAttr 0x18419748 <line:281:47> malloc
 FunctionDeclNode(parent_idx=0, current_idx=193, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d35818 </usr/include/stdio.h:230:1, col:34> col:12 fflush 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d35780 <col:20, col:26> col:26 __stream 'FILE *'
+|-FunctionDecl 0x18419818 </usr/include/stdio.h:230:1, col:34> col:12 fflush 'int (FILE *)' extern
+ | `-ParmVarDecl 0x18419780 <col:20, col:26> col:26 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=194, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d35968 <line:239:1, col:43> col:12 fflush_unlocked 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d358d0 <col:29, col:35> col:35 __stream 'FILE *'
+|-FunctionDecl 0x18419968 <line:239:1, col:43> col:12 fflush_unlocked 'int (FILE *)' extern
+ | `-ParmVarDecl 0x184198d0 <col:29, col:35> col:35 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=195, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d35bf8 <line:258:14> col:14 implicit fopen 'FILE *(const char *, const char *)' extern
- | |-ParmVarDecl 0x35d35cf0 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-ParmVarDecl 0x35d35d58 <<invalid sloc>> <invalid sloc> 'const char *'
- | `-BuiltinAttr 0x35d35c98 <<invalid sloc>> Implicit 838
+|-FunctionDecl 0x18419bf8 <line:258:14> col:14 implicit fopen 'FILE *(const char *, const char *)' extern
+ | |-ParmVarDecl 0x18419cf0 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-ParmVarDecl 0x18419d58 <<invalid sloc>> <invalid sloc> 'const char *'
+ | `-BuiltinAttr 0x18419c98 <<invalid sloc>> Implicit 838
 FunctionDeclNode(parent_idx=0, current_idx=196, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d35dd0 prev 0x35d35bf8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:258:14 fopen 'FILE *(const char *, const char *)' extern
- | |-ParmVarDecl 0x35d35a28 <col:21, col:44> col:44 __filename 'const char *restrict'
- | |-ParmVarDecl 0x35d35aa8 <line:259:7, col:30> col:30 __modes 'const char *restrict'
- | |-BuiltinAttr 0x35d35ed8 <<invalid sloc>> Inherited Implicit 838
- | `-RestrictAttr 0x35d35e80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
+|-FunctionDecl 0x18419dd0 prev 0x18419bf8 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:258:14 fopen 'FILE *(const char *, const char *)' extern
+ | |-ParmVarDecl 0x18419a28 <col:21, col:44> col:44 __filename 'const char *restrict'
+ | |-ParmVarDecl 0x18419aa8 <line:259:7, col:30> col:30 __modes 'const char *restrict'
+ | |-BuiltinAttr 0x18419ed8 <<invalid sloc>> Inherited Implicit 838
+ | `-RestrictAttr 0x18419e80 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
 FunctionDeclNode(parent_idx=0, current_idx=197, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d36138 </usr/include/stdio.h:265:1, line:267:34> line:265:14 freopen 'FILE *(const char *restrict, const char *restrict, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d35f18 <col:23, col:46> col:46 __filename 'const char *restrict'
- | |-ParmVarDecl 0x35d35f98 <line:266:9, col:32> col:32 __modes 'const char *restrict'
- | `-ParmVarDecl 0x35d36010 <line:267:9, col:26> col:26 __stream 'FILE *restrict'
+|-FunctionDecl 0x1841a138 </usr/include/stdio.h:265:1, line:267:34> line:265:14 freopen 'FILE *(const char *restrict, const char *restrict, FILE *restrict)' extern
+ | |-ParmVarDecl 0x18419f18 <col:23, col:46> col:46 __filename 'const char *restrict'
+ | |-ParmVarDecl 0x18419f98 <line:266:9, col:32> col:32 __modes 'const char *restrict'
+ | `-ParmVarDecl 0x1841a010 <line:267:9, col:26> col:26 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=198, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d36398 <line:293:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:293:14 fdopen 'FILE *(int, const char *)' extern
- | |-ParmVarDecl 0x35d36208 <col:22, col:26> col:26 __fd 'int'
- | |-ParmVarDecl 0x35d36288 <col:32, col:44> col:44 __modes 'const char *'
- | |-NoThrowAttr 0x35d36448 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
- | `-RestrictAttr 0x35d364a0 <line:281:47> malloc
+|-FunctionDecl 0x1841a398 <line:293:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:293:14 fdopen 'FILE *(int, const char *)' extern
+ | |-ParmVarDecl 0x1841a208 <col:22, col:26> col:26 __fd 'int'
+ | |-ParmVarDecl 0x1841a288 <col:32, col:44> col:44 __modes 'const char *'
+ | |-NoThrowAttr 0x1841a448 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+ | `-RestrictAttr 0x1841a4a0 <line:281:47> malloc
 FunctionDeclNode(parent_idx=0, current_idx=199, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d36708 </usr/include/stdio.h:308:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:308:14 fmemopen 'FILE *(void *, size_t, const char *)' extern
- | |-ParmVarDecl 0x35d364e0 <col:24, col:30> col:30 __s 'void *'
- | |-ParmVarDecl 0x35d36558 <col:35, col:42> col:42 __len 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d365d8 <col:49, col:61> col:61 __modes 'const char *'
- | |-NoThrowAttr 0x35d367c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
- | `-RestrictAttr 0x35d36818 <line:281:47> malloc
+|-FunctionDecl 0x1841a708 </usr/include/stdio.h:308:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:308:14 fmemopen 'FILE *(void *, size_t, const char *)' extern
+ | |-ParmVarDecl 0x1841a4e0 <col:24, col:30> col:30 __s 'void *'
+ | |-ParmVarDecl 0x1841a558 <col:35, col:42> col:42 __len 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x1841a5d8 <col:49, col:61> col:61 __modes 'const char *'
+ | |-NoThrowAttr 0x1841a7c0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+ | `-RestrictAttr 0x1841a818 <line:281:47> malloc
 FunctionDeclNode(parent_idx=0, current_idx=200, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d36a68 </usr/include/stdio.h:314:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:314:14 open_memstream 'FILE *(char **, size_t *)' extern
- | |-ParmVarDecl 0x35d36880 <col:30, col:37> col:37 __bufloc 'char **'
- | |-ParmVarDecl 0x35d36958 <col:47, col:55> col:55 __sizeloc 'size_t *'
- | |-NoThrowAttr 0x35d36b18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
- | `-RestrictAttr 0x35d36b70 <line:281:47> malloc
+|-FunctionDecl 0x1841aa68 </usr/include/stdio.h:314:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:314:14 open_memstream 'FILE *(char **, size_t *)' extern
+ | |-ParmVarDecl 0x1841a880 <col:30, col:37> col:37 __bufloc 'char **'
+ | |-ParmVarDecl 0x1841a958 <col:47, col:55> col:55 __sizeloc 'size_t *'
+ | |-NoThrowAttr 0x1841ab18 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+ | `-RestrictAttr 0x1841ab70 <line:281:47> malloc
 FunctionDeclNode(parent_idx=0, current_idx=201, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d36d38 </usr/include/stdio.h:328:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:328:13 setbuf 'void (FILE *restrict, char *restrict)' extern
- | |-ParmVarDecl 0x35d36ba8 <col:21, col:38> col:38 __stream 'FILE *restrict'
- | |-ParmVarDecl 0x35d36c28 <col:48, col:65> col:65 __buf 'char *restrict'
- | `-NoThrowAttr 0x35d36de8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x1841ad38 </usr/include/stdio.h:328:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:328:13 setbuf 'void (FILE *restrict, char *restrict)' extern
+ | |-ParmVarDecl 0x1841aba8 <col:21, col:38> col:38 __stream 'FILE *restrict'
+ | |-ParmVarDecl 0x1841ac28 <col:48, col:65> col:65 __buf 'char *restrict'
+ | `-NoThrowAttr 0x1841ade8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=202, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d37110 </usr/include/stdio.h:332:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:332:12 setvbuf 'int (FILE *restrict, char *restrict, int, size_t)' extern
- | |-ParmVarDecl 0x35d36e50 <col:21, col:38> col:38 __stream 'FILE *restrict'
- | |-ParmVarDecl 0x35d36ed0 <col:48, col:65> col:65 __buf 'char *restrict'
- | |-ParmVarDecl 0x35d36f50 <line:333:7, col:11> col:11 __modes 'int'
- | |-ParmVarDecl 0x35d36fc8 <col:20, col:27> col:27 __n 'size_t':'unsigned long'
- | `-NoThrowAttr 0x35d371d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x1841b110 </usr/include/stdio.h:332:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:332:12 setvbuf 'int (FILE *restrict, char *restrict, int, size_t)' extern
+ | |-ParmVarDecl 0x1841ae50 <col:21, col:38> col:38 __stream 'FILE *restrict'
+ | |-ParmVarDecl 0x1841aed0 <col:48, col:65> col:65 __buf 'char *restrict'
+ | |-ParmVarDecl 0x1841af50 <line:333:7, col:11> col:11 __modes 'int'
+ | |-ParmVarDecl 0x1841afc8 <col:20, col:27> col:27 __n 'size_t':'unsigned long'
+ | `-NoThrowAttr 0x1841b1d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=203, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d37458 </usr/include/stdio.h:338:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:338:13 setbuffer 'void (FILE *restrict, char *restrict, size_t)' extern
- | |-ParmVarDecl 0x35d37238 <col:24, col:41> col:41 __stream 'FILE *restrict'
- | |-ParmVarDecl 0x35d372b8 <col:51, col:68> col:68 __buf 'char *restrict'
- | |-ParmVarDecl 0x35d37330 <line:339:10, col:17> col:17 __size 'size_t':'unsigned long'
- | `-NoThrowAttr 0x35d37510 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x1841b458 </usr/include/stdio.h:338:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:338:13 setbuffer 'void (FILE *restrict, char *restrict, size_t)' extern
+ | |-ParmVarDecl 0x1841b238 <col:24, col:41> col:41 __stream 'FILE *restrict'
+ | |-ParmVarDecl 0x1841b2b8 <col:51, col:68> col:68 __buf 'char *restrict'
+ | |-ParmVarDecl 0x1841b330 <line:339:10, col:17> col:17 __size 'size_t':'unsigned long'
+ | `-NoThrowAttr 0x1841b510 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=204, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d37728 </usr/include/stdio.h:342:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:342:13 setlinebuf 'void (FILE *)' extern
- | |-ParmVarDecl 0x35d37578 <col:25, col:31> col:31 __stream 'FILE *'
- | `-NoThrowAttr 0x35d377d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x1841b728 </usr/include/stdio.h:342:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:342:13 setlinebuf 'void (FILE *)' extern
+ | |-ParmVarDecl 0x1841b578 <col:25, col:31> col:31 __stream 'FILE *'
+ | `-NoThrowAttr 0x1841b7d0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=205, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d37a20 </usr/include/stdio.h:350:12> col:12 implicit fprintf 'int (FILE *, const char *, ...)' extern
- | |-ParmVarDecl 0x35d37b18 <<invalid sloc>> <invalid sloc> 'FILE *'
- | |-ParmVarDecl 0x35d37b80 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-BuiltinAttr 0x35d37ac0 <<invalid sloc>> Implicit 825
- | `-FormatAttr 0x35d37bf8 <col:12> Implicit printf 2 3
+|-FunctionDecl 0x1841ba20 </usr/include/stdio.h:350:12> col:12 implicit fprintf 'int (FILE *, const char *, ...)' extern
+ | |-ParmVarDecl 0x1841bb18 <<invalid sloc>> <invalid sloc> 'FILE *'
+ | |-ParmVarDecl 0x1841bb80 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-BuiltinAttr 0x1841bac0 <<invalid sloc>> Implicit 825
+ | `-FormatAttr 0x1841bbf8 <col:12> Implicit printf 2 3
 FunctionDeclNode(parent_idx=0, current_idx=206, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d37c30 prev 0x35d37a20 <col:1, line:351:43> line:350:12 fprintf 'int (FILE *, const char *, ...)' extern
- | |-ParmVarDecl 0x35d37838 <col:21, col:38> col:38 __stream 'FILE *restrict'
- | |-ParmVarDecl 0x35d378b8 <line:351:7, col:30> col:30 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d37d10 <<invalid sloc>> Inherited Implicit 825
- | `-FormatAttr 0x35d37d38 <line:350:12> Inherited printf 2 3
+|-FunctionDecl 0x1841bc30 prev 0x1841ba20 <col:1, line:351:43> line:350:12 fprintf 'int (FILE *, const char *, ...)' extern
+ | |-ParmVarDecl 0x1841b838 <col:21, col:38> col:38 __stream 'FILE *restrict'
+ | |-ParmVarDecl 0x1841b8b8 <line:351:7, col:30> col:30 __format 'const char *restrict'
+ | |-BuiltinAttr 0x1841bd10 <<invalid sloc>> Inherited Implicit 825
+ | `-FormatAttr 0x1841bd38 <line:350:12> Inherited printf 2 3
 FunctionDeclNode(parent_idx=0, current_idx=207, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d37e98 <line:356:12> col:12 implicit printf 'int (const char *, ...)' extern
- | |-ParmVarDecl 0x35d37f90 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-BuiltinAttr 0x35d37f38 <<invalid sloc>> Implicit 824
- | `-FormatAttr 0x35d38000 <col:12> Implicit printf 1 2
+|-FunctionDecl 0x1841be98 <line:356:12> col:12 implicit printf 'int (const char *, ...)' extern
+ | |-ParmVarDecl 0x1841bf90 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-BuiltinAttr 0x1841bf38 <<invalid sloc>> Implicit 824
+ | `-FormatAttr 0x1841c000 <col:12> Implicit printf 1 2
 FunctionDeclNode(parent_idx=0, current_idx=208, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d38038 prev 0x35d37e98 <col:1, col:56> col:12 printf 'int (const char *, ...)' extern
- | |-ParmVarDecl 0x35d37d88 <col:20, col:43> col:43 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d38110 <<invalid sloc>> Inherited Implicit 824
- | `-FormatAttr 0x35d38138 <col:12> Inherited printf 1 2
+|-FunctionDecl 0x1841c038 prev 0x1841be98 <col:1, col:56> col:12 printf 'int (const char *, ...)' extern
+ | |-ParmVarDecl 0x1841bd88 <col:20, col:43> col:43 __format 'const char *restrict'
+ | |-BuiltinAttr 0x1841c110 <<invalid sloc>> Inherited Implicit 824
+ | `-FormatAttr 0x1841c138 <col:12> Inherited printf 1 2
 FunctionDeclNode(parent_idx=0, current_idx=209, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d38328 <line:358:12> col:12 implicit sprintf 'int (char *, const char *, ...)' extern
- | |-ParmVarDecl 0x35d38420 <<invalid sloc>> <invalid sloc> 'char *'
- | |-ParmVarDecl 0x35d38488 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-BuiltinAttr 0x35d383c8 <<invalid sloc>> Implicit 827
- | `-FormatAttr 0x35d38500 <col:12> Implicit printf 2 3
+|-FunctionDecl 0x1841c328 <line:358:12> col:12 implicit sprintf 'int (char *, const char *, ...)' extern
+ | |-ParmVarDecl 0x1841c420 <<invalid sloc>> <invalid sloc> 'char *'
+ | |-ParmVarDecl 0x1841c488 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-BuiltinAttr 0x1841c3c8 <<invalid sloc>> Implicit 827
+ | `-FormatAttr 0x1841c500 <col:12> Implicit printf 2 3
 FunctionDeclNode(parent_idx=0, current_idx=210, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d38538 prev 0x35d38328 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:80:49> /usr/include/stdio.h:358:12 sprintf 'int (char *, const char *, ...)' extern
- | |-ParmVarDecl 0x35d38188 <col:21, col:38> col:38 __s 'char *restrict'
- | |-ParmVarDecl 0x35d38208 <line:359:7, col:30> col:30 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d38640 <<invalid sloc>> Inherited Implicit 827
- | |-FormatAttr 0x35d38668 <line:358:12> Inherited printf 2 3
- | `-NoThrowAttr 0x35d385e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
+|-FunctionDecl 0x1841c538 prev 0x1841c328 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:80:49> /usr/include/stdio.h:358:12 sprintf 'int (char *, const char *, ...)' extern
+ | |-ParmVarDecl 0x1841c188 <col:21, col:38> col:38 __s 'char *restrict'
+ | |-ParmVarDecl 0x1841c208 <line:359:7, col:30> col:30 __format 'const char *restrict'
+ | |-BuiltinAttr 0x1841c640 <<invalid sloc>> Inherited Implicit 827
+ | |-FormatAttr 0x1841c668 <line:358:12> Inherited printf 2 3
+ | `-NoThrowAttr 0x1841c5e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
 FunctionDeclNode(parent_idx=0, current_idx=211, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d38970 </usr/include/stdio.h:365:12> col:12 implicit vfprintf 'int (FILE *, const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d38a68 <<invalid sloc>> <invalid sloc> 'FILE *'
- | |-ParmVarDecl 0x35d38ad0 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-ParmVarDecl 0x35d38b38 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d38a10 <<invalid sloc>> Implicit 829
- | `-FormatAttr 0x35d38bb8 <col:12> Implicit printf 2 0
+|-FunctionDecl 0x1841c970 </usr/include/stdio.h:365:12> col:12 implicit vfprintf 'int (FILE *, const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841ca68 <<invalid sloc>> <invalid sloc> 'FILE *'
+ | |-ParmVarDecl 0x1841cad0 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-ParmVarDecl 0x1841cb38 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841ca10 <<invalid sloc>> Implicit 829
+ | `-FormatAttr 0x1841cbb8 <col:12> Implicit printf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=212, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d38bf0 prev 0x35d38970 <col:1, line:366:28> line:365:12 vfprintf 'int (FILE *, const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d38710 <col:22, col:39> col:39 __s 'FILE *restrict'
- | |-ParmVarDecl 0x35d38790 <col:44, col:67> col:67 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d38808 <line:366:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d38cd8 <<invalid sloc>> Inherited Implicit 829
- | `-FormatAttr 0x35d38d00 <line:365:12> Inherited printf 2 0
+|-FunctionDecl 0x1841cbf0 prev 0x1841c970 <col:1, line:366:28> line:365:12 vfprintf 'int (FILE *, const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841c710 <col:22, col:39> col:39 __s 'FILE *restrict'
+ | |-ParmVarDecl 0x1841c790 <col:44, col:67> col:67 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1841c808 <line:366:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841ccd8 <<invalid sloc>> Inherited Implicit 829
+ | `-FormatAttr 0x1841cd00 <line:365:12> Inherited printf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=213, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d38f18 <line:371:12> col:12 implicit vprintf 'int (const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d39010 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-ParmVarDecl 0x35d39078 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d38fb8 <<invalid sloc>> Implicit 828
- | `-FormatAttr 0x35d390f0 <col:12> Implicit printf 1 0
+|-FunctionDecl 0x1841cf18 <line:371:12> col:12 implicit vprintf 'int (const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841d010 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-ParmVarDecl 0x1841d078 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841cfb8 <<invalid sloc>> Implicit 828
+ | `-FormatAttr 0x1841d0f0 <col:12> Implicit printf 1 0
 FunctionDeclNode(parent_idx=0, current_idx=214, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d39128 prev 0x35d38f18 <col:1, col:74> col:12 vprintf 'int (const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d38d50 <col:21, col:44> col:44 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d38dc8 <col:54, col:69> col:69 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d39208 <<invalid sloc>> Inherited Implicit 828
- | `-FormatAttr 0x35d39230 <col:12> Inherited printf 1 0
+|-FunctionDecl 0x1841d128 prev 0x1841cf18 <col:1, col:74> col:12 vprintf 'int (const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841cd50 <col:21, col:44> col:44 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1841cdc8 <col:54, col:69> col:69 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841d208 <<invalid sloc>> Inherited Implicit 828
+ | `-FormatAttr 0x1841d230 <col:12> Inherited printf 1 0
 FunctionDeclNode(parent_idx=0, current_idx=215, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d394e0 <line:373:12> col:12 implicit vsprintf 'int (char *, const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d395d8 <<invalid sloc>> <invalid sloc> 'char *'
- | |-ParmVarDecl 0x35d39640 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-ParmVarDecl 0x35d396a8 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d39580 <<invalid sloc>> Implicit 831
- | `-FormatAttr 0x35d39738 <col:12> Implicit printf 2 0
+|-FunctionDecl 0x1841d4e0 <line:373:12> col:12 implicit vsprintf 'int (char *, const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841d5d8 <<invalid sloc>> <invalid sloc> 'char *'
+ | |-ParmVarDecl 0x1841d640 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-ParmVarDecl 0x1841d6a8 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841d580 <<invalid sloc>> Implicit 831
+ | `-FormatAttr 0x1841d738 <col:12> Implicit printf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=216, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d39770 prev 0x35d394e0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:80:49> /usr/include/stdio.h:373:12 vsprintf 'int (char *, const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d39280 <col:22, col:39> col:39 __s 'char *restrict'
- | |-ParmVarDecl 0x35d39300 <col:44, col:67> col:67 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d39378 <line:374:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d39880 <<invalid sloc>> Inherited Implicit 831
- | |-FormatAttr 0x35d398a8 <line:373:12> Inherited printf 2 0
- | `-NoThrowAttr 0x35d39828 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
+|-FunctionDecl 0x1841d770 prev 0x1841d4e0 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:80:49> /usr/include/stdio.h:373:12 vsprintf 'int (char *, const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841d280 <col:22, col:39> col:39 __s 'char *restrict'
+ | |-ParmVarDecl 0x1841d300 <col:44, col:67> col:67 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1841d378 <line:374:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841d880 <<invalid sloc>> Inherited Implicit 831
+ | |-FormatAttr 0x1841d8a8 <line:373:12> Inherited printf 2 0
+ | `-NoThrowAttr 0x1841d828 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
 FunctionDeclNode(parent_idx=0, current_idx=217, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d39b88 </usr/include/stdio.h:378:12> col:12 implicit snprintf 'int (char *, unsigned long, const char *, ...)' extern
- | |-ParmVarDecl 0x35d39c80 <<invalid sloc>> <invalid sloc> 'char *'
- | |-ParmVarDecl 0x35d39ce8 <<invalid sloc>> <invalid sloc> 'unsigned long'
- | |-ParmVarDecl 0x35d39d50 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-BuiltinAttr 0x35d39c28 <<invalid sloc>> Implicit 826
- | `-FormatAttr 0x35d39dd0 <col:12> Implicit printf 3 4
+|-FunctionDecl 0x1841db88 </usr/include/stdio.h:378:12> col:12 implicit snprintf 'int (char *, unsigned long, const char *, ...)' extern
+ | |-ParmVarDecl 0x1841dc80 <<invalid sloc>> <invalid sloc> 'char *'
+ | |-ParmVarDecl 0x1841dce8 <<invalid sloc>> <invalid sloc> 'unsigned long'
+ | |-ParmVarDecl 0x1841dd50 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-BuiltinAttr 0x1841dc28 <<invalid sloc>> Implicit 826
+ | `-FormatAttr 0x1841ddd0 <col:12> Implicit printf 3 4
 FunctionDeclNode(parent_idx=0, current_idx=218, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d39e08 prev 0x35d39b88 <col:1, line:380:62> line:378:12 snprintf 'int (char *, unsigned long, const char *, ...)' extern
- | |-ParmVarDecl 0x35d398f8 <col:22, col:39> col:39 __s 'char *restrict'
- | |-ParmVarDecl 0x35d39970 <col:44, col:51> col:51 __maxlen 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d399f0 <line:379:8, col:31> col:31 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d39f50 <<invalid sloc>> Inherited Implicit 826
- | |-NoThrowAttr 0x35d39ec0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
- | `-FormatAttr 0x35d39f18 </usr/include/stdio.h:380:32, col:60> printf 3 4
+|-FunctionDecl 0x1841de08 prev 0x1841db88 <col:1, line:380:62> line:378:12 snprintf 'int (char *, unsigned long, const char *, ...)' extern
+ | |-ParmVarDecl 0x1841d8f8 <col:22, col:39> col:39 __s 'char *restrict'
+ | |-ParmVarDecl 0x1841d970 <col:44, col:51> col:51 __maxlen 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x1841d9f0 <line:379:8, col:31> col:31 __format 'const char *restrict'
+ | |-BuiltinAttr 0x1841df50 <<invalid sloc>> Inherited Implicit 826
+ | |-NoThrowAttr 0x1841dec0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
+ | `-FormatAttr 0x1841df18 </usr/include/stdio.h:380:32, col:60> printf 3 4
 FunctionDeclNode(parent_idx=0, current_idx=219, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3a2e8 <line:382:12> col:12 implicit vsnprintf 'int (char *, unsigned long, const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d3a3e0 <<invalid sloc>> <invalid sloc> 'char *'
- | |-ParmVarDecl 0x35d3a448 <<invalid sloc>> <invalid sloc> 'unsigned long'
- | |-ParmVarDecl 0x35d3a4b0 <<invalid sloc>> <invalid sloc> 'const char *'
- | |-ParmVarDecl 0x35d3a518 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d3a388 <<invalid sloc>> Implicit 830
- | `-FormatAttr 0x35d3a5a0 <col:12> Implicit printf 3 0
+|-FunctionDecl 0x1841e2e8 <line:382:12> col:12 implicit vsnprintf 'int (char *, unsigned long, const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841e3e0 <<invalid sloc>> <invalid sloc> 'char *'
+ | |-ParmVarDecl 0x1841e448 <<invalid sloc>> <invalid sloc> 'unsigned long'
+ | |-ParmVarDecl 0x1841e4b0 <<invalid sloc>> <invalid sloc> 'const char *'
+ | |-ParmVarDecl 0x1841e518 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841e388 <<invalid sloc>> Implicit 830
+ | `-FormatAttr 0x1841e5a0 <col:12> Implicit printf 3 0
 FunctionDeclNode(parent_idx=0, current_idx=220, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3a5d8 prev 0x35d3a2e8 <col:1, line:384:62> line:382:12 vsnprintf 'int (char *, unsigned long, const char *, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d39f90 <col:23, col:40> col:40 __s 'char *restrict'
- | |-ParmVarDecl 0x35d3a008 <col:45, col:52> col:52 __maxlen 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d3a088 <line:383:9, col:32> col:32 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d3a100 <col:42, col:57> col:57 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d3a768 <<invalid sloc>> Inherited Implicit 830
- | |-NoThrowAttr 0x35d3a698 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
- | `-FormatAttr 0x35d3a730 </usr/include/stdio.h:384:32, col:60> printf 3 0
+|-FunctionDecl 0x1841e5d8 prev 0x1841e2e8 <col:1, line:384:62> line:382:12 vsnprintf 'int (char *, unsigned long, const char *, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1841df90 <col:23, col:40> col:40 __s 'char *restrict'
+ | |-ParmVarDecl 0x1841e008 <col:45, col:52> col:52 __maxlen 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x1841e088 <line:383:9, col:32> col:32 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1841e100 <col:42, col:57> col:57 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1841e768 <<invalid sloc>> Inherited Implicit 830
+ | |-NoThrowAttr 0x1841e698 </usr/include/aarch64-linux-gnu/sys/cdefs.h:80:37>
+ | `-FormatAttr 0x1841e730 </usr/include/stdio.h:384:32, col:60> printf 3 0
 FunctionDeclNode(parent_idx=0, current_idx=221, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3aa20 <line:403:1, line:405:52> line:403:12 vdprintf 'int (int, const char *restrict, __gnuc_va_list)' extern
- | |-ParmVarDecl 0x35d3a7a8 <col:22, col:26> col:26 __fd 'int'
- | |-ParmVarDecl 0x35d3a828 <col:32, col:55> col:55 __fmt 'const char *restrict'
- | |-ParmVarDecl 0x35d3a8a0 <line:404:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
- | `-FormatAttr 0x35d3aad8 <line:405:22, col:50> printf 2 0
+|-FunctionDecl 0x1841ea20 <line:403:1, line:405:52> line:403:12 vdprintf 'int (int, const char *restrict, __gnuc_va_list)' extern
+ | |-ParmVarDecl 0x1841e7a8 <col:22, col:26> col:26 __fd 'int'
+ | |-ParmVarDecl 0x1841e828 <col:32, col:55> col:55 __fmt 'const char *restrict'
+ | |-ParmVarDecl 0x1841e8a0 <line:404:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
+ | `-FormatAttr 0x1841ead8 <line:405:22, col:50> printf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=222, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3ad48 <line:406:1, line:407:52> line:406:12 dprintf 'int (int, const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3ab58 <col:21, col:25> col:25 __fd 'int'
- | |-ParmVarDecl 0x35d3abd8 <col:31, col:54> col:54 __fmt 'const char *restrict'
- | `-FormatAttr 0x35d3adf8 <line:407:22, col:50> printf 2 3
+|-FunctionDecl 0x1841ed48 <line:406:1, line:407:52> line:406:12 dprintf 'int (int, const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x1841eb58 <col:21, col:25> col:25 __fd 'int'
+ | |-ParmVarDecl 0x1841ebd8 <col:31, col:54> col:54 __fmt 'const char *restrict'
+ | `-FormatAttr 0x1841edf8 <line:407:22, col:50> printf 2 3
 FunctionDeclNode(parent_idx=0, current_idx=223, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3af90 <line:415:12> col:12 implicit fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3b088 <<invalid sloc>> <invalid sloc> 'FILE *restrict'
- | |-ParmVarDecl 0x35d3b0f0 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-BuiltinAttr 0x35d3b030 <<invalid sloc>> Implicit 833
- | `-FormatAttr 0x35d3b168 <col:12> Implicit scanf 2 3
+|-FunctionDecl 0x1841ef90 <line:415:12> col:12 implicit fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x1841f088 <<invalid sloc>> <invalid sloc> 'FILE *restrict'
+ | |-ParmVarDecl 0x1841f0f0 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-BuiltinAttr 0x1841f030 <<invalid sloc>> Implicit 833
+ | `-FormatAttr 0x1841f168 <col:12> Implicit scanf 2 3
 FunctionDeclNode(parent_idx=0, current_idx=224, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3b1a0 prev 0x35d3af90 <col:1, line:416:42> line:415:12 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3ae70 <col:20, col:37> col:37 __stream 'FILE *restrict'
- | |-ParmVarDecl 0x35d3aef0 <line:416:6, col:29> col:29 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d3b280 <<invalid sloc>> Inherited Implicit 833
- | `-FormatAttr 0x35d3b2a8 <line:415:12> Inherited scanf 2 3
+|-FunctionDecl 0x1841f1a0 prev 0x1841ef90 <col:1, line:416:42> line:415:12 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x1841ee70 <col:20, col:37> col:37 __stream 'FILE *restrict'
+ | |-ParmVarDecl 0x1841eef0 <line:416:6, col:29> col:29 __format 'const char *restrict'
+ | |-BuiltinAttr 0x1841f280 <<invalid sloc>> Inherited Implicit 833
+ | `-FormatAttr 0x1841f2a8 <line:415:12> Inherited scanf 2 3
 FunctionDeclNode(parent_idx=0, current_idx=225, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3b390 <line:421:12> col:12 implicit scanf 'int (const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3b488 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-BuiltinAttr 0x35d3b430 <<invalid sloc>> Implicit 832
- | `-FormatAttr 0x35d3b4f8 <col:12> Implicit scanf 1 2
+|-FunctionDecl 0x1841f390 <line:421:12> col:12 implicit scanf 'int (const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x1841f488 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-BuiltinAttr 0x1841f430 <<invalid sloc>> Implicit 832
+ | `-FormatAttr 0x1841f4f8 <col:12> Implicit scanf 1 2
 FunctionDeclNode(parent_idx=0, current_idx=226, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3b530 prev 0x35d3b390 <col:1, col:55> col:12 scanf 'int (const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3b2f8 <col:19, col:42> col:42 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d3b608 <<invalid sloc>> Inherited Implicit 832
- | `-FormatAttr 0x35d3b630 <col:12> Inherited scanf 1 2
+|-FunctionDecl 0x1841f530 prev 0x1841f390 <col:1, col:55> col:12 scanf 'int (const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x1841f2f8 <col:19, col:42> col:42 __format 'const char *restrict'
+ | |-BuiltinAttr 0x1841f608 <<invalid sloc>> Inherited Implicit 832
+ | `-FormatAttr 0x1841f630 <col:12> Inherited scanf 1 2
 FunctionDeclNode(parent_idx=0, current_idx=227, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3c888 <line:423:12> col:12 implicit sscanf 'int (const char *restrict, const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3c980 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-ParmVarDecl 0x35d3c9e8 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-BuiltinAttr 0x35d3c928 <<invalid sloc>> Implicit 834
- | `-FormatAttr 0x35d3ca60 <col:12> Implicit scanf 2 3
+|-FunctionDecl 0x18420888 <line:423:12> col:12 implicit sscanf 'int (const char *restrict, const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x18420980 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-ParmVarDecl 0x184209e8 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-BuiltinAttr 0x18420928 <<invalid sloc>> Implicit 834
+ | `-FormatAttr 0x18420a60 <col:12> Implicit scanf 2 3
 FunctionDeclNode(parent_idx=0, current_idx=228, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3ca98 prev 0x35d3c888 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:423:12 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3b680 <col:20, col:43> col:43 __s 'const char *restrict'
- | |-ParmVarDecl 0x35d3c760 <line:424:6, col:29> col:29 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d3cba0 <<invalid sloc>> Inherited Implicit 834
- | |-FormatAttr 0x35d3cbc8 <line:423:12> Inherited scanf 2 3
- | `-NoThrowAttr 0x35d3cb48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18420a98 prev 0x18420888 <col:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:423:12 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x1841f680 <col:20, col:43> col:43 __s 'const char *restrict'
+ | |-ParmVarDecl 0x18420760 <line:424:6, col:29> col:29 __format 'const char *restrict'
+ | |-BuiltinAttr 0x18420ba0 <<invalid sloc>> Inherited Implicit 834
+ | |-FormatAttr 0x18420bc8 <line:423:12> Inherited scanf 2 3
+ | `-NoThrowAttr 0x18420b48 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 TypedefDeclNode(parent_idx=0, current_idx=229, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d3cc18 </usr/include/aarch64-linux-gnu/bits/floatn.h:80:1, col:21> col:21 _Float128 'long double'
- | `-BuiltinType 0x35c2c490 'long double'
+|-TypedefDecl 0x18420c18 </usr/include/aarch64-linux-gnu/bits/floatn.h:80:1, col:21> col:21 _Float128 'long double'
+ | `-BuiltinType 0x18310490 'long double'
 TypedefDeclNode(parent_idx=0, current_idx=230, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d3cc88 </usr/include/aarch64-linux-gnu/bits/floatn-common.h:214:1, col:15> col:15 _Float32 'float'
- | `-BuiltinType 0x35c2c450 'float'
+|-TypedefDecl 0x18420c88 </usr/include/aarch64-linux-gnu/bits/floatn-common.h:214:1, col:15> col:15 _Float32 'float'
+ | `-BuiltinType 0x18310450 'float'
 TypedefDeclNode(parent_idx=0, current_idx=231, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d3ccf8 <line:251:1, col:16> col:16 _Float64 'double'
- | `-BuiltinType 0x35c2c470 'double'
+|-TypedefDecl 0x18420cf8 <line:251:1, col:16> col:16 _Float64 'double'
+ | `-BuiltinType 0x18310470 'double'
 TypedefDeclNode(parent_idx=0, current_idx=232, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d3cd68 <line:268:1, col:16> col:16 _Float32x 'double'
- | `-BuiltinType 0x35c2c470 'double'
+|-TypedefDecl 0x18420d68 <line:268:1, col:16> col:16 _Float32x 'double'
+ | `-BuiltinType 0x18310470 'double'
 TypedefDeclNode(parent_idx=0, current_idx=233, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x35d3cdd8 <line:285:1, col:21> col:21 _Float64x 'long double'
- | `-BuiltinType 0x35c2c490 'long double'
+|-TypedefDecl 0x18420dd8 <line:285:1, col:21> col:21 _Float64x 'long double'
+ | `-BuiltinType 0x18310490 'long double'
 FunctionDeclNode(parent_idx=0, current_idx=234, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3cfd0 prev 0x35d3b1a0 </usr/include/stdio.h:434:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:247:79> /usr/include/stdio.h:434:24 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3ce40 <col:33, col:50> col:50 __stream 'FILE *restrict'
- | |-ParmVarDecl 0x35d3cec0 <line:435:5, col:28> col:28 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d3d0f8 <<invalid sloc>> Inherited Implicit 833
- | |-FormatAttr 0x35d3d120 <line:415:12> Inherited scanf 2 3
- | `-AsmLabelAttr 0x35d3d070 <<scratch space>:32:1> "__isoc99_fscanf" IsLiteralLabel
+|-FunctionDecl 0x18420fd0 prev 0x1841f1a0 </usr/include/stdio.h:434:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:247:79> /usr/include/stdio.h:434:24 fscanf 'int (FILE *restrict, const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x18420e40 <col:33, col:50> col:50 __stream 'FILE *restrict'
+ | |-ParmVarDecl 0x18420ec0 <line:435:5, col:28> col:28 __format 'const char *restrict'
+ | |-BuiltinAttr 0x184210f8 <<invalid sloc>> Inherited Implicit 833
+ | |-FormatAttr 0x18421120 <line:415:12> Inherited scanf 2 3
+ | `-AsmLabelAttr 0x18421070 <<scratch space>:32:1> "__isoc99_fscanf" IsLiteralLabel
 FunctionDeclNode(parent_idx=0, current_idx=235, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3d278 prev 0x35d3b530 </usr/include/stdio.h:437:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:247:79> /usr/include/stdio.h:437:24 scanf 'int (const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3d170 <col:32, col:55> col:55 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d3d398 <<invalid sloc>> Inherited Implicit 832
- | |-FormatAttr 0x35d3d3c0 <line:421:12> Inherited scanf 1 2
- | `-AsmLabelAttr 0x35d3d318 <<scratch space>:34:1> "__isoc99_scanf" IsLiteralLabel
+|-FunctionDecl 0x18421278 prev 0x1841f530 </usr/include/stdio.h:437:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:247:79> /usr/include/stdio.h:437:24 scanf 'int (const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x18421170 <col:32, col:55> col:55 __format 'const char *restrict'
+ | |-BuiltinAttr 0x18421398 <<invalid sloc>> Inherited Implicit 832
+ | |-FormatAttr 0x184213c0 <line:421:12> Inherited scanf 1 2
+ | `-AsmLabelAttr 0x18421318 <<scratch space>:34:1> "__isoc99_scanf" IsLiteralLabel
 FunctionDeclNode(parent_idx=0, current_idx=236, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d3d560 prev 0x35d3ca98 </usr/include/stdio.h:439:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:439:28 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
- | |-ParmVarDecl 0x35d3d410 <col:37, col:60> col:60 __s 'const char *restrict'
- | |-ParmVarDecl 0x35d3d490 <line:440:9, col:32> col:32 __format 'const char *restrict'
- | |-BuiltinAttr 0x35d3d6b0 <<invalid sloc>> Inherited Implicit 834
- | |-FormatAttr 0x35d3d6d8 <line:423:12> Inherited scanf 2 3
- | |-AsmLabelAttr 0x35d3d600 <<scratch space>:36:1> "__isoc99_sscanf" IsLiteralLabel
- | `-NoThrowAttr 0x35d3d688 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18421560 prev 0x18420a98 </usr/include/stdio.h:439:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:439:28 sscanf 'int (const char *restrict, const char *restrict, ...)' extern
+ | |-ParmVarDecl 0x18421410 <col:37, col:60> col:60 __s 'const char *restrict'
+ | |-ParmVarDecl 0x18421490 <line:440:9, col:32> col:32 __format 'const char *restrict'
+ | |-BuiltinAttr 0x184216b0 <<invalid sloc>> Inherited Implicit 834
+ | |-FormatAttr 0x184216d8 <line:423:12> Inherited scanf 2 3
+ | |-AsmLabelAttr 0x18421600 <<scratch space>:36:1> "__isoc99_sscanf" IsLiteralLabel
+ | `-NoThrowAttr 0x18421688 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=237, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d495a0 </usr/include/stdio.h:459:12> col:12 implicit vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d49698 <<invalid sloc>> <invalid sloc> 'FILE *restrict'
- | |-ParmVarDecl 0x35d49700 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-ParmVarDecl 0x35d49768 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d49640 <<invalid sloc>> Implicit 836
- | `-FormatAttr 0x35d497e8 <col:12> Implicit scanf 2 0
+|-FunctionDecl 0x1842d5a0 </usr/include/stdio.h:459:12> col:12 implicit vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842d698 <<invalid sloc>> <invalid sloc> 'FILE *restrict'
+ | |-ParmVarDecl 0x1842d700 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-ParmVarDecl 0x1842d768 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842d640 <<invalid sloc>> Implicit 836
+ | `-FormatAttr 0x1842d7e8 <col:12> Implicit scanf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=238, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d49820 prev 0x35d495a0 <col:1, line:461:51> line:459:12 vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d49370 <col:21, col:38> col:38 __s 'FILE *restrict'
- | |-ParmVarDecl 0x35d493f0 <col:43, col:66> col:66 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d49468 <line:460:7, col:22> col:22 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d49940 <<invalid sloc>> Inherited Implicit 836
- | `-FormatAttr 0x35d498d8 <line:461:22, col:49> scanf 2 0
+|-FunctionDecl 0x1842d820 prev 0x1842d5a0 <col:1, line:461:51> line:459:12 vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842d370 <col:21, col:38> col:38 __s 'FILE *restrict'
+ | |-ParmVarDecl 0x1842d3f0 <col:43, col:66> col:66 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1842d468 <line:460:7, col:22> col:22 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842d940 <<invalid sloc>> Inherited Implicit 836
+ | `-FormatAttr 0x1842d8d8 <line:461:22, col:49> scanf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=239, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d49b28 <line:467:12> col:12 implicit vscanf 'int (const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d49c20 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-ParmVarDecl 0x35d49c88 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d49bc8 <<invalid sloc>> Implicit 835
- | `-FormatAttr 0x35d49d00 <col:12> Implicit scanf 1 0
+|-FunctionDecl 0x1842db28 <line:467:12> col:12 implicit vscanf 'int (const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842dc20 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-ParmVarDecl 0x1842dc88 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842dbc8 <<invalid sloc>> Implicit 835
+ | `-FormatAttr 0x1842dd00 <col:12> Implicit scanf 1 0
 FunctionDeclNode(parent_idx=0, current_idx=240, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d49d38 prev 0x35d49b28 <col:1, line:468:51> line:467:12 vscanf 'int (const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d49980 <col:20, col:43> col:43 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d499f8 <col:53, col:68> col:68 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d49e50 <<invalid sloc>> Inherited Implicit 835
- | `-FormatAttr 0x35d49de8 <line:468:22, col:49> scanf 1 0
+|-FunctionDecl 0x1842dd38 prev 0x1842db28 <col:1, line:468:51> line:467:12 vscanf 'int (const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842d980 <col:20, col:43> col:43 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1842d9f8 <col:53, col:68> col:68 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842de50 <<invalid sloc>> Inherited Implicit 835
+ | `-FormatAttr 0x1842dde8 <line:468:22, col:49> scanf 1 0
 FunctionDeclNode(parent_idx=0, current_idx=241, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4a140 <line:471:12> col:12 implicit vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d4a238 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-ParmVarDecl 0x35d4a2a0 <<invalid sloc>> <invalid sloc> 'const char *restrict'
- | |-ParmVarDecl 0x35d4a308 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d4a1e0 <<invalid sloc>> Implicit 837
- | `-FormatAttr 0x35d4aba8 <col:12> Implicit scanf 2 0
+|-FunctionDecl 0x1842e140 <line:471:12> col:12 implicit vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842e238 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-ParmVarDecl 0x1842e2a0 <<invalid sloc>> <invalid sloc> 'const char *restrict'
+ | |-ParmVarDecl 0x1842e308 <<invalid sloc>> <invalid sloc> '__builtin_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842e1e0 <<invalid sloc>> Implicit 837
+ | `-FormatAttr 0x1842eba8 <col:12> Implicit scanf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=242, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4abe0 prev 0x35d4a140 <col:1, line:473:59> line:471:12 vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d49e90 <col:21, col:44> col:44 __s 'const char *restrict'
- | |-ParmVarDecl 0x35d49f10 <line:472:7, col:30> col:30 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d49f88 <col:40, col:55> col:55 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d4ad28 <<invalid sloc>> Inherited Implicit 837
- | |-NoThrowAttr 0x35d4ac98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
- | `-FormatAttr 0x35d4acf0 </usr/include/stdio.h:473:30, col:57> scanf 2 0
+|-FunctionDecl 0x1842ebe0 prev 0x1842e140 <col:1, line:473:59> line:471:12 vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842de90 <col:21, col:44> col:44 __s 'const char *restrict'
+ | |-ParmVarDecl 0x1842df10 <line:472:7, col:30> col:30 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1842df88 <col:40, col:55> col:55 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842ed28 <<invalid sloc>> Inherited Implicit 837
+ | |-NoThrowAttr 0x1842ec98 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+ | `-FormatAttr 0x1842ecf0 </usr/include/stdio.h:473:30, col:57> scanf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=243, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4afb8 prev 0x35d49820 <line:479:1, line:483:51> line:479:24 vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d4ad60 <line:480:11, col:28> col:28 __s 'FILE *restrict'
- | |-ParmVarDecl 0x35d4ade0 <line:481:4, col:27> col:27 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d4ae58 <col:37, col:52> col:52 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d4b120 <<invalid sloc>> Inherited Implicit 836
- | |-AsmLabelAttr 0x35d4b058 <<scratch space>:39:1> "__isoc99_vfscanf" IsLiteralLabel
- | `-FormatAttr 0x35d4b0e8 </usr/include/stdio.h:483:22, col:49> scanf 2 0
+|-FunctionDecl 0x1842efb8 prev 0x1842d820 <line:479:1, line:483:51> line:479:24 vfscanf 'int (FILE *restrict, const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842ed60 <line:480:11, col:28> col:28 __s 'FILE *restrict'
+ | |-ParmVarDecl 0x1842ede0 <line:481:4, col:27> col:27 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1842ee58 <col:37, col:52> col:52 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842f120 <<invalid sloc>> Inherited Implicit 836
+ | |-AsmLabelAttr 0x1842f058 <<scratch space>:39:1> "__isoc99_vfscanf" IsLiteralLabel
+ | `-FormatAttr 0x1842f0e8 </usr/include/stdio.h:483:22, col:49> scanf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=244, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4b2f8 prev 0x35d49d38 <line:484:1, line:486:51> line:484:24 vscanf 'int (const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d4b160 <col:33, col:56> col:56 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d4b1d8 <line:485:5, col:20> col:20 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d4b458 <<invalid sloc>> Inherited Implicit 835
- | |-AsmLabelAttr 0x35d4b398 <<scratch space>:41:1> "__isoc99_vscanf" IsLiteralLabel
- | `-FormatAttr 0x35d4b420 </usr/include/stdio.h:486:22, col:49> scanf 1 0
+|-FunctionDecl 0x1842f2f8 prev 0x1842dd38 <line:484:1, line:486:51> line:484:24 vscanf 'int (const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842f160 <col:33, col:56> col:56 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1842f1d8 <line:485:5, col:20> col:20 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842f458 <<invalid sloc>> Inherited Implicit 835
+ | |-AsmLabelAttr 0x1842f398 <<scratch space>:41:1> "__isoc99_vscanf" IsLiteralLabel
+ | `-FormatAttr 0x1842f420 </usr/include/stdio.h:486:22, col:49> scanf 1 0
 FunctionDeclNode(parent_idx=0, current_idx=245, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4b6b8 prev 0x35d4abe0 <line:487:1, line:491:51> line:487:28 vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
- | |-ParmVarDecl 0x35d4b498 <line:488:8, col:31> col:31 __s 'const char *restrict'
- | |-ParmVarDecl 0x35d4b518 <line:489:8, col:31> col:31 __format 'const char *restrict'
- | |-ParmVarDecl 0x35d4b590 <line:490:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
- | |-BuiltinAttr 0x35d4b848 <<invalid sloc>> Inherited Implicit 837
- | |-AsmLabelAttr 0x35d4b758 <<scratch space>:43:1> "__isoc99_vsscanf" IsLiteralLabel
- | |-NoThrowAttr 0x35d4b7e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
- | `-FormatAttr 0x35d4b810 </usr/include/stdio.h:491:22, col:49> scanf 2 0
+|-FunctionDecl 0x1842f6b8 prev 0x1842ebe0 <line:487:1, line:491:51> line:487:28 vsscanf 'int (const char *restrict, const char *restrict, __builtin_va_list)' extern
+ | |-ParmVarDecl 0x1842f498 <line:488:8, col:31> col:31 __s 'const char *restrict'
+ | |-ParmVarDecl 0x1842f518 <line:489:8, col:31> col:31 __format 'const char *restrict'
+ | |-ParmVarDecl 0x1842f590 <line:490:8, col:23> col:23 __arg '__gnuc_va_list':'struct std::__va_list'
+ | |-BuiltinAttr 0x1842f848 <<invalid sloc>> Inherited Implicit 837
+ | |-AsmLabelAttr 0x1842f758 <<scratch space>:43:1> "__isoc99_vsscanf" IsLiteralLabel
+ | |-NoThrowAttr 0x1842f7e8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+ | `-FormatAttr 0x1842f810 </usr/include/stdio.h:491:22, col:49> scanf 2 0
 FunctionDeclNode(parent_idx=0, current_idx=246, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4b918 <line:513:1, col:33> col:12 fgetc 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d4b880 <col:19, col:25> col:25 __stream 'FILE *'
+|-FunctionDecl 0x1842f918 <line:513:1, col:33> col:12 fgetc 'int (FILE *)' extern
+ | `-ParmVarDecl 0x1842f880 <col:19, col:25> col:25 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=247, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4ba68 <line:514:1, col:32> col:12 getc 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d4b9d0 <col:18, col:24> col:24 __stream 'FILE *'
+|-FunctionDecl 0x1842fa68 <line:514:1, col:32> col:12 getc 'int (FILE *)' extern
+ | `-ParmVarDecl 0x1842f9d0 <col:18, col:24> col:24 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=248, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4bbf0 <line:520:1, col:25> col:12 getchar 'int (void)' extern
+|-FunctionDecl 0x1842fbf0 <line:520:1, col:25> col:12 getchar 'int (void)' extern
 FunctionDeclNode(parent_idx=0, current_idx=249, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4bd38 <line:527:1, col:41> col:12 getc_unlocked 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d4bca0 <col:27, col:33> col:33 __stream 'FILE *'
+|-FunctionDecl 0x1842fd38 <line:527:1, col:41> col:12 getc_unlocked 'int (FILE *)' extern
+ | `-ParmVarDecl 0x1842fca0 <col:27, col:33> col:33 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=250, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4be80 <line:528:1, col:34> col:12 getchar_unlocked 'int (void)' extern
+|-FunctionDecl 0x1842fe80 <line:528:1, col:34> col:12 getchar_unlocked 'int (void)' extern
 FunctionDeclNode(parent_idx=0, current_idx=251, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4bfc8 <line:538:1, col:42> col:12 fgetc_unlocked 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d4bf30 <col:28, col:34> col:34 __stream 'FILE *'
+|-FunctionDecl 0x1842ffc8 <line:538:1, col:42> col:12 fgetc_unlocked 'int (FILE *)' extern
+ | `-ParmVarDecl 0x1842ff30 <col:28, col:34> col:34 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=252, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4c220 <line:549:1, col:42> col:12 fputc 'int (int, FILE *)' extern
- | |-ParmVarDecl 0x35d4c088 <col:19, col:23> col:23 __c 'int'
- | `-ParmVarDecl 0x35d4c100 <col:28, col:34> col:34 __stream 'FILE *'
+|-FunctionDecl 0x18430220 <line:549:1, col:42> col:12 fputc 'int (int, FILE *)' extern
+ | |-ParmVarDecl 0x18430088 <col:19, col:23> col:23 __c 'int'
+ | `-ParmVarDecl 0x18430100 <col:28, col:34> col:34 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=253, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4c400 <line:550:1, col:41> col:12 putc 'int (int, FILE *)' extern
- | |-ParmVarDecl 0x35d4c2e8 <col:18, col:22> col:22 __c 'int'
- | `-ParmVarDecl 0x35d4c360 <col:27, col:33> col:33 __stream 'FILE *'
+|-FunctionDecl 0x18430400 <line:550:1, col:41> col:12 putc 'int (int, FILE *)' extern
+ | |-ParmVarDecl 0x184302e8 <col:18, col:22> col:22 __c 'int'
+ | `-ParmVarDecl 0x18430360 <col:27, col:33> col:33 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=254, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4c590 <line:556:1, col:28> col:12 putchar 'int (int)' extern
- | `-ParmVarDecl 0x35d4c4c8 <col:21, col:25> col:25 __c 'int'
+|-FunctionDecl 0x18430590 <line:556:1, col:28> col:12 putchar 'int (int)' extern
+ | `-ParmVarDecl 0x184304c8 <col:21, col:25> col:25 __c 'int'
 FunctionDeclNode(parent_idx=0, current_idx=255, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4c768 <line:565:1, col:51> col:12 fputc_unlocked 'int (int, FILE *)' extern
- | |-ParmVarDecl 0x35d4c650 <col:28, col:32> col:32 __c 'int'
- | `-ParmVarDecl 0x35d4c6c8 <col:37, col:43> col:43 __stream 'FILE *'
+|-FunctionDecl 0x18430768 <line:565:1, col:51> col:12 fputc_unlocked 'int (int, FILE *)' extern
+ | |-ParmVarDecl 0x18430650 <col:28, col:32> col:32 __c 'int'
+ | `-ParmVarDecl 0x184306c8 <col:37, col:43> col:43 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=256, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4c948 <line:573:1, col:50> col:12 putc_unlocked 'int (int, FILE *)' extern
- | |-ParmVarDecl 0x35d4c830 <col:27, col:31> col:31 __c 'int'
- | `-ParmVarDecl 0x35d4c8a8 <col:36, col:42> col:42 __stream 'FILE *'
+|-FunctionDecl 0x18430948 <line:573:1, col:50> col:12 putc_unlocked 'int (int, FILE *)' extern
+ | |-ParmVarDecl 0x18430830 <col:27, col:31> col:31 __c 'int'
+ | `-ParmVarDecl 0x184308a8 <col:36, col:42> col:42 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=257, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4caa8 <line:574:1, col:37> col:12 putchar_unlocked 'int (int)' extern
- | `-ParmVarDecl 0x35d4ca10 <col:30, col:34> col:34 __c 'int'
+|-FunctionDecl 0x18430aa8 <line:574:1, col:37> col:12 putchar_unlocked 'int (int)' extern
+ | `-ParmVarDecl 0x18430a10 <col:30, col:34> col:34 __c 'int'
 FunctionDeclNode(parent_idx=0, current_idx=258, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4cc48 <line:581:1, col:32> col:12 getw 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d4cbb0 <col:18, col:24> col:24 __stream 'FILE *'
+|-FunctionDecl 0x18430c48 <line:581:1, col:32> col:12 getw 'int (FILE *)' extern
+ | `-ParmVarDecl 0x18430bb0 <col:18, col:24> col:24 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=259, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4ce20 <line:584:1, col:41> col:12 putw 'int (int, FILE *)' extern
- | |-ParmVarDecl 0x35d4cd08 <col:18, col:22> col:22 __w 'int'
- | `-ParmVarDecl 0x35d4cd80 <col:27, col:33> col:33 __stream 'FILE *'
+|-FunctionDecl 0x18430e20 <line:584:1, col:41> col:12 putw 'int (int, FILE *)' extern
+ | |-ParmVarDecl 0x18430d08 <col:18, col:22> col:22 __w 'int'
+ | `-ParmVarDecl 0x18430d80 <col:27, col:33> col:33 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=260, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4d110 <line:592:1, col:77> col:14 fgets 'char *(char *restrict, int, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d4cee8 <col:21, col:38> col:38 __s 'char *restrict'
- | |-ParmVarDecl 0x35d4cf68 <col:43, col:47> col:47 __n 'int'
- | `-ParmVarDecl 0x35d4cfe0 <col:52, col:69> col:69 __stream 'FILE *restrict'
+|-FunctionDecl 0x18431110 <line:592:1, col:77> col:14 fgets 'char *(char *restrict, int, FILE *restrict)' extern
+ | |-ParmVarDecl 0x18430ee8 <col:21, col:38> col:38 __s 'char *restrict'
+ | |-ParmVarDecl 0x18430f68 <col:43, col:47> col:47 __n 'int'
+ | `-ParmVarDecl 0x18430fe0 <col:52, col:69> col:69 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=261, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4d498 <line:632:1, line:634:55> line:632:18 __getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d4d1e0 <col:30, col:48> col:48 __lineptr 'char **restrict'
- | |-ParmVarDecl 0x35d4d258 <line:633:30, col:49> col:49 __n 'size_t *restrict'
- | |-ParmVarDecl 0x35d4d2d8 <col:54, col:58> col:58 __delimiter 'int'
- | `-ParmVarDecl 0x35d4d350 <line:634:30, col:47> col:47 __stream 'FILE *restrict'
+|-FunctionDecl 0x18431498 <line:632:1, line:634:55> line:632:18 __getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
+ | |-ParmVarDecl 0x184311e0 <col:30, col:48> col:48 __lineptr 'char **restrict'
+ | |-ParmVarDecl 0x18431258 <line:633:30, col:49> col:49 __n 'size_t *restrict'
+ | |-ParmVarDecl 0x184312d8 <col:54, col:58> col:58 __delimiter 'int'
+ | `-ParmVarDecl 0x18431350 <line:634:30, col:47> col:47 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=262, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4d788 <line:635:1, line:637:53> line:635:18 getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d4d570 <col:28, col:46> col:46 __lineptr 'char **restrict'
- | |-ParmVarDecl 0x35d4d5e8 <line:636:28, col:47> col:47 __n 'size_t *restrict'
- | |-ParmVarDecl 0x35d4d668 <col:52, col:56> col:56 __delimiter 'int'
- | `-ParmVarDecl 0x35d4d6e0 <line:637:28, col:45> col:45 __stream 'FILE *restrict'
+|-FunctionDecl 0x18431788 <line:635:1, line:637:53> line:635:18 getdelim '__ssize_t (char **restrict, size_t *restrict, int, FILE *restrict)' extern
+ | |-ParmVarDecl 0x18431570 <col:28, col:46> col:46 __lineptr 'char **restrict'
+ | |-ParmVarDecl 0x184315e8 <line:636:28, col:47> col:47 __n 'size_t *restrict'
+ | |-ParmVarDecl 0x18431668 <col:52, col:56> col:56 __delimiter 'int'
+ | `-ParmVarDecl 0x184316e0 <line:637:28, col:45> col:45 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=263, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4da78 <line:645:1, line:647:52> line:645:18 getline '__ssize_t (char **restrict, size_t *restrict, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d4d860 <col:27, col:45> col:45 __lineptr 'char **restrict'
- | |-ParmVarDecl 0x35d4d8d8 <line:646:27, col:46> col:46 __n 'size_t *restrict'
- | `-ParmVarDecl 0x35d4d950 <line:647:27, col:44> col:44 __stream 'FILE *restrict'
+|-FunctionDecl 0x18431a78 <line:645:1, line:647:52> line:645:18 getline '__ssize_t (char **restrict, size_t *restrict, FILE *restrict)' extern
+ | |-ParmVarDecl 0x18431860 <col:27, col:45> col:45 __lineptr 'char **restrict'
+ | |-ParmVarDecl 0x184318d8 <line:646:27, col:46> col:46 __n 'size_t *restrict'
+ | `-ParmVarDecl 0x18431950 <line:647:27, col:44> col:44 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=264, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4ed00 <line:655:1, col:72> col:12 fputs 'int (const char *restrict, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d4db48 <col:19, col:42> col:42 __s 'const char *restrict'
- | `-ParmVarDecl 0x35d4ebe0 <col:47, col:64> col:64 __stream 'FILE *restrict'
+|-FunctionDecl 0x18432d00 <line:655:1, col:72> col:12 fputs 'int (const char *restrict, FILE *restrict)' extern
+ | |-ParmVarDecl 0x18431b48 <col:19, col:42> col:42 __s 'const char *restrict'
+ | `-ParmVarDecl 0x18432be0 <col:47, col:64> col:64 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=265, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4ee60 <line:661:1, col:33> col:12 puts 'int (const char *)' extern
- | `-ParmVarDecl 0x35d4edc8 <col:18, col:30> col:30 __s 'const char *'
+|-FunctionDecl 0x18432e60 <line:661:1, col:33> col:12 puts 'int (const char *)' extern
+ | `-ParmVarDecl 0x18432dc8 <col:18, col:30> col:30 __s 'const char *'
 FunctionDeclNode(parent_idx=0, current_idx=266, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4f038 <line:668:1, col:43> col:12 ungetc 'int (int, FILE *)' extern
- | |-ParmVarDecl 0x35d4ef20 <col:20, col:24> col:24 __c 'int'
- | `-ParmVarDecl 0x35d4ef98 <col:29, col:35> col:35 __stream 'FILE *'
+|-FunctionDecl 0x18433038 <line:668:1, col:43> col:12 ungetc 'int (int, FILE *)' extern
+ | |-ParmVarDecl 0x18432f20 <col:20, col:24> col:24 __c 'int'
+ | `-ParmVarDecl 0x18432f98 <col:29, col:35> col:35 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=267, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4f3f8 <line:675:15> col:15 implicit fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
- | |-ParmVarDecl 0x35d4f4f0 <<invalid sloc>> <invalid sloc> 'void *'
- | |-ParmVarDecl 0x35d4f558 <<invalid sloc>> <invalid sloc> 'unsigned long'
- | |-ParmVarDecl 0x35d4f5c0 <<invalid sloc>> <invalid sloc> 'unsigned long'
- | |-ParmVarDecl 0x35d4f628 <<invalid sloc>> <invalid sloc> 'FILE *'
- | `-BuiltinAttr 0x35d4f498 <<invalid sloc>> Implicit 839
+|-FunctionDecl 0x184333f8 <line:675:15> col:15 implicit fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
+ | |-ParmVarDecl 0x184334f0 <<invalid sloc>> <invalid sloc> 'void *'
+ | |-ParmVarDecl 0x18433558 <<invalid sloc>> <invalid sloc> 'unsigned long'
+ | |-ParmVarDecl 0x184335c0 <<invalid sloc>> <invalid sloc> 'unsigned long'
+ | |-ParmVarDecl 0x18433628 <<invalid sloc>> <invalid sloc> 'FILE *'
+ | `-BuiltinAttr 0x18433498 <<invalid sloc>> Implicit 839
 FunctionDeclNode(parent_idx=0, current_idx=268, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4f6b0 prev 0x35d4f3f8 <col:1, line:676:45> line:675:15 fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
- | |-ParmVarDecl 0x35d4f100 <col:22, col:39> col:39 __ptr 'void *restrict'
- | |-ParmVarDecl 0x35d4f178 <col:46, col:53> col:53 __size 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d4f1f0 <line:676:8, col:15> col:15 __n 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d4f268 <col:20, col:37> col:37 __stream 'FILE *restrict'
- | `-BuiltinAttr 0x35d4f7a0 <<invalid sloc>> Inherited Implicit 839
+|-FunctionDecl 0x184336b0 prev 0x184333f8 <col:1, line:676:45> line:675:15 fread 'unsigned long (void *, unsigned long, unsigned long, FILE *)' extern
+ | |-ParmVarDecl 0x18433100 <col:22, col:39> col:39 __ptr 'void *restrict'
+ | |-ParmVarDecl 0x18433178 <col:46, col:53> col:53 __size 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x184331f0 <line:676:8, col:15> col:15 __n 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x18433268 <col:20, col:37> col:37 __stream 'FILE *restrict'
+ | `-BuiltinAttr 0x184337a0 <<invalid sloc>> Inherited Implicit 839
 FunctionDeclNode(parent_idx=0, current_idx=269, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4fb08 <line:681:15> col:15 implicit fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
- | |-ParmVarDecl 0x35d4fc10 <<invalid sloc>> <invalid sloc> 'const void *'
- | |-ParmVarDecl 0x35d4fc78 <<invalid sloc>> <invalid sloc> 'unsigned long'
- | |-ParmVarDecl 0x35d4fce0 <<invalid sloc>> <invalid sloc> 'unsigned long'
- | |-ParmVarDecl 0x35d4fd48 <<invalid sloc>> <invalid sloc> 'FILE *'
- | `-BuiltinAttr 0x35d4fba8 <<invalid sloc>> Implicit 840
+|-FunctionDecl 0x18433b08 <line:681:15> col:15 implicit fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
+ | |-ParmVarDecl 0x18433c10 <<invalid sloc>> <invalid sloc> 'const void *'
+ | |-ParmVarDecl 0x18433c78 <<invalid sloc>> <invalid sloc> 'unsigned long'
+ | |-ParmVarDecl 0x18433ce0 <<invalid sloc>> <invalid sloc> 'unsigned long'
+ | |-ParmVarDecl 0x18433d48 <<invalid sloc>> <invalid sloc> 'FILE *'
+ | `-BuiltinAttr 0x18433ba8 <<invalid sloc>> Implicit 840
 FunctionDeclNode(parent_idx=0, current_idx=270, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d4fdd0 prev 0x35d4fb08 <col:1, line:682:41> line:681:15 fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
- | |-ParmVarDecl 0x35d4f810 <col:23, col:46> col:46 __ptr 'const void *restrict'
- | |-ParmVarDecl 0x35d4f888 <col:53, col:60> col:60 __size 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d4f900 <line:682:9, col:16> col:16 __n 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d4f978 <col:21, col:38> col:38 __s 'FILE *restrict'
- | `-BuiltinAttr 0x35d4fec0 <<invalid sloc>> Inherited Implicit 840
+|-FunctionDecl 0x18433dd0 prev 0x18433b08 <col:1, line:682:41> line:681:15 fwrite 'unsigned long (const void *, unsigned long, unsigned long, FILE *)' extern
+ | |-ParmVarDecl 0x18433810 <col:23, col:46> col:46 __ptr 'const void *restrict'
+ | |-ParmVarDecl 0x18433888 <col:53, col:60> col:60 __size 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x18433900 <line:682:9, col:16> col:16 __n 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x18433978 <col:21, col:38> col:38 __s 'FILE *restrict'
+ | `-BuiltinAttr 0x18433ec0 <<invalid sloc>> Inherited Implicit 840
 FunctionDeclNode(parent_idx=0, current_idx=271, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d50110 <line:702:1, line:703:47> line:702:15 fread_unlocked 'size_t (void *restrict, size_t, size_t, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d4ff00 <col:31, col:48> col:48 __ptr 'void *restrict'
- | |-ParmVarDecl 0x35d4ff78 <col:55, col:62> col:62 __size 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d4fff0 <line:703:10, col:17> col:17 __n 'size_t':'unsigned long'
- | `-ParmVarDecl 0x35d50068 <col:22, col:39> col:39 __stream 'FILE *restrict'
+|-FunctionDecl 0x18434110 <line:702:1, line:703:47> line:702:15 fread_unlocked 'size_t (void *restrict, size_t, size_t, FILE *restrict)' extern
+ | |-ParmVarDecl 0x18433f00 <col:31, col:48> col:48 __ptr 'void *restrict'
+ | |-ParmVarDecl 0x18433f78 <col:55, col:62> col:62 __size 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x18433ff0 <line:703:10, col:17> col:17 __n 'size_t':'unsigned long'
+ | `-ParmVarDecl 0x18434068 <col:22, col:39> col:39 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=272, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d503f8 <line:704:1, line:705:48> line:704:15 fwrite_unlocked 'size_t (const void *restrict, size_t, size_t, FILE *restrict)' extern
- | |-ParmVarDecl 0x35d501e8 <col:32, col:55> col:55 __ptr 'const void *restrict'
- | |-ParmVarDecl 0x35d50260 <col:62, col:69> col:69 __size 'size_t':'unsigned long'
- | |-ParmVarDecl 0x35d502d8 <line:705:11, col:18> col:18 __n 'size_t':'unsigned long'
- | `-ParmVarDecl 0x35d50350 <col:23, col:40> col:40 __stream 'FILE *restrict'
+|-FunctionDecl 0x184343f8 <line:704:1, line:705:48> line:704:15 fwrite_unlocked 'size_t (const void *restrict, size_t, size_t, FILE *restrict)' extern
+ | |-ParmVarDecl 0x184341e8 <col:32, col:55> col:55 __ptr 'const void *restrict'
+ | |-ParmVarDecl 0x18434260 <col:62, col:69> col:69 __size 'size_t':'unsigned long'
+ | |-ParmVarDecl 0x184342d8 <line:705:11, col:18> col:18 __n 'size_t':'unsigned long'
+ | `-ParmVarDecl 0x18434350 <col:23, col:40> col:40 __stream 'FILE *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=273, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d506f0 <line:713:1, col:63> col:12 fseek 'int (FILE *, long, int)' extern
- | |-ParmVarDecl 0x35d504c8 <col:19, col:25> col:25 __stream 'FILE *'
- | |-ParmVarDecl 0x35d50548 <col:35, col:44> col:44 __off 'long'
- | `-ParmVarDecl 0x35d505c8 <col:51, col:55> col:55 __whence 'int'
+|-FunctionDecl 0x184346f0 <line:713:1, col:63> col:12 fseek 'int (FILE *, long, int)' extern
+ | |-ParmVarDecl 0x184344c8 <col:19, col:25> col:25 __stream 'FILE *'
+ | |-ParmVarDecl 0x18434548 <col:35, col:44> col:44 __off 'long'
+ | `-ParmVarDecl 0x184345c8 <col:51, col:55> col:55 __whence 'int'
 FunctionDeclNode(parent_idx=0, current_idx=274, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d508b0 <line:718:1, col:38> col:17 ftell 'long (FILE *)' extern
- | `-ParmVarDecl 0x35d507b8 <col:24, col:30> col:30 __stream 'FILE *'
+|-FunctionDecl 0x184348b0 <line:718:1, col:38> col:17 ftell 'long (FILE *)' extern
+ | `-ParmVarDecl 0x184347b8 <col:24, col:30> col:30 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=275, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d509f8 <line:723:1, col:35> col:13 rewind 'void (FILE *)' extern
- | `-ParmVarDecl 0x35d50968 <col:21, col:27> col:27 __stream 'FILE *'
+|-FunctionDecl 0x184349f8 <line:723:1, col:35> col:13 rewind 'void (FILE *)' extern
+ | `-ParmVarDecl 0x18434968 <col:21, col:27> col:27 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=276, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d51ce0 <line:736:1, col:63> col:12 fseeko 'int (FILE *, __off_t, int)' extern
- | |-ParmVarDecl 0x35d50ab0 <col:20, col:26> col:26 __stream 'FILE *'
- | |-ParmVarDecl 0x35d50b28 <col:36, col:44> col:44 __off '__off_t':'long'
- | `-ParmVarDecl 0x35d51bf0 <col:51, col:55> col:55 __whence 'int'
+|-FunctionDecl 0x18435ce0 <line:736:1, col:63> col:12 fseeko 'int (FILE *, __off_t, int)' extern
+ | |-ParmVarDecl 0x18434ab0 <col:20, col:26> col:26 __stream 'FILE *'
+ | |-ParmVarDecl 0x18434b28 <col:36, col:44> col:44 __off '__off_t':'long'
+ | `-ParmVarDecl 0x18435bf0 <col:51, col:55> col:55 __whence 'int'
 FunctionDeclNode(parent_idx=0, current_idx=277, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d51e68 <line:741:1, col:38> col:16 ftello '__off_t (FILE *)' extern
- | `-ParmVarDecl 0x35d51da8 <col:24, col:30> col:30 __stream 'FILE *'
+|-FunctionDecl 0x18435e68 <line:741:1, col:38> col:16 ftello '__off_t (FILE *)' extern
+ | `-ParmVarDecl 0x18435da8 <col:24, col:30> col:30 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=278, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d52130 <line:760:1, col:72> col:12 fgetpos 'int (FILE *restrict, fpos_t *restrict)' extern
- | |-ParmVarDecl 0x35d51f20 <col:21, col:38> col:38 __stream 'FILE *restrict'
- | `-ParmVarDecl 0x35d52018 <col:48, col:67> col:67 __pos 'fpos_t *restrict'
+|-FunctionDecl 0x18436130 <line:760:1, col:72> col:12 fgetpos 'int (FILE *restrict, fpos_t *restrict)' extern
+ | |-ParmVarDecl 0x18435f20 <col:21, col:38> col:38 __stream 'FILE *restrict'
+ | `-ParmVarDecl 0x18436018 <col:48, col:67> col:67 __pos 'fpos_t *restrict'
 FunctionDeclNode(parent_idx=0, current_idx=279, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d523e0 <line:765:1, col:56> col:12 fsetpos 'int (FILE *, const fpos_t *)' extern
- | |-ParmVarDecl 0x35d521f0 <col:21, col:27> col:27 __stream 'FILE *'
- | `-ParmVarDecl 0x35d522c8 <col:37, col:51> col:51 __pos 'const fpos_t *'
+|-FunctionDecl 0x184363e0 <line:765:1, col:56> col:12 fsetpos 'int (FILE *, const fpos_t *)' extern
+ | |-ParmVarDecl 0x184361f0 <col:21, col:27> col:27 __stream 'FILE *'
+ | `-ParmVarDecl 0x184362c8 <col:37, col:51> col:51 __pos 'const fpos_t *'
 FunctionDeclNode(parent_idx=0, current_idx=280, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d52530 <line:786:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:786:13 clearerr 'void (FILE *)' extern
- | |-ParmVarDecl 0x35d524a0 <col:23, col:29> col:29 __stream 'FILE *'
- | `-NoThrowAttr 0x35d525d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18436530 <line:786:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:786:13 clearerr 'void (FILE *)' extern
+ | |-ParmVarDecl 0x184364a0 <col:23, col:29> col:29 __stream 'FILE *'
+ | `-NoThrowAttr 0x184365d8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=281, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d526d8 </usr/include/stdio.h:788:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:788:12 feof 'int (FILE *)' extern
- | |-ParmVarDecl 0x35d52640 <col:18, col:24> col:24 __stream 'FILE *'
- | `-NoThrowAttr 0x35d52780 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x184366d8 </usr/include/stdio.h:788:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:788:12 feof 'int (FILE *)' extern
+ | |-ParmVarDecl 0x18436640 <col:18, col:24> col:24 __stream 'FILE *'
+ | `-NoThrowAttr 0x18436780 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=282, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d52880 </usr/include/stdio.h:790:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:790:12 ferror 'int (FILE *)' extern
- | |-ParmVarDecl 0x35d527e8 <col:20, col:26> col:26 __stream 'FILE *'
- | `-NoThrowAttr 0x35d52928 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18436880 </usr/include/stdio.h:790:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:790:12 ferror 'int (FILE *)' extern
+ | |-ParmVarDecl 0x184367e8 <col:20, col:26> col:26 __stream 'FILE *'
+ | `-NoThrowAttr 0x18436928 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=283, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d52a20 </usr/include/stdio.h:794:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:794:13 clearerr_unlocked 'void (FILE *)' extern
- | |-ParmVarDecl 0x35d52990 <col:32, col:38> col:38 __stream 'FILE *'
- | `-NoThrowAttr 0x35d52ac8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18436a20 </usr/include/stdio.h:794:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:794:13 clearerr_unlocked 'void (FILE *)' extern
+ | |-ParmVarDecl 0x18436990 <col:32, col:38> col:38 __stream 'FILE *'
+ | `-NoThrowAttr 0x18436ac8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=284, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d52c00 </usr/include/stdio.h:795:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:795:12 feof_unlocked 'int (FILE *)' extern
- | |-ParmVarDecl 0x35d52b30 <col:27, col:33> col:33 __stream 'FILE *'
- | `-NoThrowAttr 0x35d52ca8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18436c00 </usr/include/stdio.h:795:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:795:12 feof_unlocked 'int (FILE *)' extern
+ | |-ParmVarDecl 0x18436b30 <col:27, col:33> col:33 __stream 'FILE *'
+ | `-NoThrowAttr 0x18436ca8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=285, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d52da8 </usr/include/stdio.h:796:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:796:12 ferror_unlocked 'int (FILE *)' extern
- | |-ParmVarDecl 0x35d52d10 <col:29, col:35> col:35 __stream 'FILE *'
- | `-NoThrowAttr 0x35d52e50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18436da8 </usr/include/stdio.h:796:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:796:12 ferror_unlocked 'int (FILE *)' extern
+ | |-ParmVarDecl 0x18436d10 <col:29, col:35> col:35 __stream 'FILE *'
+ | `-NoThrowAttr 0x18436e50 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=286, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d52f88 </usr/include/stdio.h:804:1, col:36> col:13 perror 'void (const char *)' extern
- | `-ParmVarDecl 0x35d52ec0 <col:21, col:33> col:33 __s 'const char *'
+|-FunctionDecl 0x18436f88 </usr/include/stdio.h:804:1, col:36> col:13 perror 'void (const char *)' extern
+ | `-ParmVarDecl 0x18436ec0 <col:21, col:33> col:33 __s 'const char *'
 FunctionDeclNode(parent_idx=0, current_idx=287, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d530d8 <line:809:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:809:12 fileno 'int (FILE *)' extern
- | |-ParmVarDecl 0x35d53040 <col:20, col:26> col:26 __stream 'FILE *'
- | `-NoThrowAttr 0x35d53180 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x184370d8 <line:809:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:809:12 fileno 'int (FILE *)' extern
+ | |-ParmVarDecl 0x18437040 <col:20, col:26> col:26 __stream 'FILE *'
+ | `-NoThrowAttr 0x18437180 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=288, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d53280 </usr/include/stdio.h:814:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:814:12 fileno_unlocked 'int (FILE *)' extern
- | |-ParmVarDecl 0x35d531e8 <col:29, col:35> col:35 __stream 'FILE *'
- | `-NoThrowAttr 0x35d53328 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18437280 </usr/include/stdio.h:814:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:814:12 fileno_unlocked 'int (FILE *)' extern
+ | |-ParmVarDecl 0x184371e8 <col:29, col:35> col:35 __stream 'FILE *'
+ | `-NoThrowAttr 0x18437328 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=289, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d53428 </usr/include/stdio.h:823:1, col:34> col:12 pclose 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d53390 <col:20, col:26> col:26 __stream 'FILE *'
+|-FunctionDecl 0x18437428 </usr/include/stdio.h:823:1, col:34> col:12 pclose 'int (FILE *)' extern
+ | `-ParmVarDecl 0x18437390 <col:20, col:26> col:26 __stream 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=290, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d53600 <line:829:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:829:14 popen 'FILE *(const char *, const char *)' extern
- | |-ParmVarDecl 0x35d534e8 <col:21, col:33> col:33 __command 'const char *'
- | |-ParmVarDecl 0x35d53568 <col:44, col:56> col:56 __modes 'const char *'
- | `-RestrictAttr 0x35d536b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
+|-FunctionDecl 0x18437600 <line:829:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:281:58> /usr/include/stdio.h:829:14 popen 'FILE *(const char *, const char *)' extern
+ | |-ParmVarDecl 0x184374e8 <col:21, col:33> col:33 __command 'const char *'
+ | |-ParmVarDecl 0x18437568 <col:44, col:56> col:56 __modes 'const char *'
+ | `-RestrictAttr 0x184376b0 </usr/include/aarch64-linux-gnu/sys/cdefs.h:281:47> malloc
 FunctionDeclNode(parent_idx=0, current_idx=291, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d537b8 </usr/include/stdio.h:837:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:837:14 ctermid 'char *(char *)' extern
- | |-ParmVarDecl 0x35d53720 <col:23, col:29> col:29 __s 'char *'
- | `-NoThrowAttr 0x35d53860 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x184377b8 </usr/include/stdio.h:837:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:837:14 ctermid 'char *(char *)' extern
+ | |-ParmVarDecl 0x18437720 <col:23, col:29> col:29 __s 'char *'
+ | `-NoThrowAttr 0x18437860 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=292, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d53958 </usr/include/stdio.h:867:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:867:13 flockfile 'void (FILE *)' extern
- | |-ParmVarDecl 0x35d538c8 <col:24, col:30> col:30 __stream 'FILE *'
- | `-NoThrowAttr 0x35d53a00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18437958 </usr/include/stdio.h:867:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:867:13 flockfile 'void (FILE *)' extern
+ | |-ParmVarDecl 0x184378c8 <col:24, col:30> col:30 __stream 'FILE *'
+ | `-NoThrowAttr 0x18437a00 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=293, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d53b00 </usr/include/stdio.h:871:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:871:12 ftrylockfile 'int (FILE *)' extern
- | |-ParmVarDecl 0x35d53a68 <col:26, col:32> col:32 __stream 'FILE *'
- | `-NoThrowAttr 0x35d53ba8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18437b00 </usr/include/stdio.h:871:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:871:12 ftrylockfile 'int (FILE *)' extern
+ | |-ParmVarDecl 0x18437a68 <col:26, col:32> col:32 __stream 'FILE *'
+ | `-NoThrowAttr 0x18437ba8 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=294, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d53cb0 </usr/include/stdio.h:874:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:874:13 funlockfile 'void (FILE *)' extern
- | |-ParmVarDecl 0x35d53c20 <col:26, col:32> col:32 __stream 'FILE *'
- | `-NoThrowAttr 0x35d53d58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
+|-FunctionDecl 0x18437cb0 </usr/include/stdio.h:874:1, /usr/include/aarch64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdio.h:874:13 funlockfile 'void (FILE *)' extern
+ | |-ParmVarDecl 0x18437c20 <col:26, col:32> col:32 __stream 'FILE *'
+ | `-NoThrowAttr 0x18437d58 </usr/include/aarch64-linux-gnu/sys/cdefs.h:79:35>
 FunctionDeclNode(parent_idx=0, current_idx=295, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-FunctionDecl 0x35d53e58 </usr/include/stdio.h:885:1, col:27> col:12 __uflow 'int (FILE *)' extern
- | `-ParmVarDecl 0x35d53dc0 <col:21, col:26> col:27 'FILE *'
+|-FunctionDecl 0x18437e58 </usr/include/stdio.h:885:1, col:27> col:12 __uflow 'int (FILE *)' extern
+ | `-ParmVarDecl 0x18437dc0 <col:21, col:26> col:27 'FILE *'
 FunctionDeclNode(parent_idx=0, current_idx=296, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-`-FunctionDecl 0x35d540b0 <line:886:1, col:35> col:12 __overflow 'int (FILE *, int)' extern
-   |-ParmVarDecl 0x35d53f10 <col:24, col:29> col:30 'FILE *'
-   `-ParmVarDecl 0x35d53f90 <col:32> col:35 'int'
+`-FunctionDecl 0x184380b0 <line:886:1, col:35> col:12 __overflow 'int (FILE *, int)' extern
+   |-ParmVarDecl 0x18437f10 <col:24, col:29> col:30 'FILE *'
+   `-ParmVarDecl 0x18437f90 <col:32> col:35 'int'
 EndFileNode(parent_idx=0, current_idx=297, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 # C_BINDER_MOJO_END_FILE

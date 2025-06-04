@@ -1,6 +1,6 @@
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
 
-# (placeholder) TranslationUnitDecl 0xe6ad358 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x2c4de358 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = Int128
 
@@ -191,7 +191,7 @@ alias __off64_t = Int64
 
 alias __pid_t = Int32
 struct _Anonymous_col_24:
-	var __val: int[2]
+	var __val: SIMD[Int32, 2]
 
 
 alias __fsid_t = _Anonymous_col_24
@@ -878,11 +878,11 @@ struct mjOption_:
 
 	var ccd_tolerance: mjtNum
 
-	var gravity: mjtNum[3]
+	var gravity: SIMD[mjtNum, 3]
 
-	var wind: mjtNum[3]
+	var wind: SIMD[mjtNum, 3]
 
-	var magnetic: mjtNum[3]
+	var magnetic: SIMD[mjtNum, 3]
 
 	var density: mjtNum
 
@@ -890,11 +890,11 @@ struct mjOption_:
 
 	var o_margin: mjtNum
 
-	var o_solref: mjtNum[2]
+	var o_solref: SIMD[mjtNum, 2]
 
-	var o_solimp: mjtNum[5]
+	var o_solimp: SIMD[mjtNum, 5]
 
-	var o_friction: mjtNum[5]
+	var o_friction: SIMD[mjtNum, 5]
 
 	var integrator: Int32
 
@@ -925,55 +925,55 @@ struct mjOption_:
 
 alias mjOption = mjOption_
 struct _mjVisual___Anonymous_line_545_3:
-	var fog: float[4]
+	var fog: SIMD[Float32, 4]
 
-	var haze: float[4]
+	var haze: SIMD[Float32, 4]
 
-	var force: float[4]
+	var force: SIMD[Float32, 4]
 
-	var inertia: float[4]
+	var inertia: SIMD[Float32, 4]
 
-	var joint: float[4]
+	var joint: SIMD[Float32, 4]
 
-	var actuator: float[4]
+	var actuator: SIMD[Float32, 4]
 
-	var actuatornegative: float[4]
+	var actuatornegative: SIMD[Float32, 4]
 
-	var actuatorpositive: float[4]
+	var actuatorpositive: SIMD[Float32, 4]
 
-	var com: float[4]
+	var com: SIMD[Float32, 4]
 
-	var camera: float[4]
+	var camera: SIMD[Float32, 4]
 
-	var light: float[4]
+	var light: SIMD[Float32, 4]
 
-	var selectpoint: float[4]
+	var selectpoint: SIMD[Float32, 4]
 
-	var connect: float[4]
+	var connect: SIMD[Float32, 4]
 
-	var contactpoint: float[4]
+	var contactpoint: SIMD[Float32, 4]
 
-	var contactforce: float[4]
+	var contactforce: SIMD[Float32, 4]
 
-	var contactfriction: float[4]
+	var contactfriction: SIMD[Float32, 4]
 
-	var contacttorque: float[4]
+	var contacttorque: SIMD[Float32, 4]
 
-	var contactgap: float[4]
+	var contactgap: SIMD[Float32, 4]
 
-	var rangefinder: float[4]
+	var rangefinder: SIMD[Float32, 4]
 
-	var constraint: float[4]
+	var constraint: SIMD[Float32, 4]
 
-	var slidercrank: float[4]
+	var slidercrank: SIMD[Float32, 4]
 
-	var crankbroken: float[4]
+	var crankbroken: SIMD[Float32, 4]
 
-	var frustum: float[4]
+	var frustum: SIMD[Float32, 4]
 
-	var bv: float[4]
+	var bv: SIMD[Float32, 4]
 
-	var bvactive: float[4]
+	var bvactive: SIMD[Float32, 4]
 
 
 struct _mjVisual___Anonymous_line_525_3:
@@ -1041,11 +1041,11 @@ struct _mjVisual___Anonymous_line_509_3:
 
 
 struct _mjVisual___Anonymous_line_502_3:
-	var ambient: float[3]
+	var ambient: SIMD[Float32, 3]
 
-	var diffuse: float[3]
+	var diffuse: SIMD[Float32, 3]
 
-	var specular: float[3]
+	var specular: SIMD[Float32, 3]
 
 	var active: Int32
 
@@ -1116,7 +1116,7 @@ struct mjStatistic_:
 
 	var extent: mjtNum
 
-	var center: mjtNum[3]
+	var center: SIMD[mjtNum, 3]
 
 
 alias mjStatistic = mjStatistic_

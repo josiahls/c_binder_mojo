@@ -1,6 +1,6 @@
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
 
-# (placeholder) TranslationUnitDecl 0xa400968 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x14180968 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = Int128
 
@@ -130,7 +130,7 @@ struct Config:
 
 	var special_void_var: UnsafePointer[NoneType]
 
-	var special_array_var: int[10]
+	var special_array_var: SIMD[Int32, 10]
 
 	var special_struct_var: UnsafePointer[Config]
 

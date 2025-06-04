@@ -223,6 +223,45 @@ struct TypeMapper:
             return type_name
 
     @staticmethod
+    fn is_vector_type(type_name: String) -> Bool:
+        """Checks if a C type is a vector type.
+        
+        Args:
+            type_name: The C type to check.
+        """
+        return '[' in type_name and ']' in type_name
+
+    @staticmethod
+    fn get_vector_type(type_name: String) -> String:
+        """Splits a C type into its vector components.
+        
+        Args:
+            type_name: The C type to split.
+        """
+        var _type_name = Self.clean_type_name(type_name)
+        if Self.is_vector_type(_type_name):
+            try:
+                return _type_name.split('[')[0]
+            except:
+                return _type_name
+        return _type_name
+
+    @staticmethod
+    fn get_vector_size(type_name: String) -> String:
+        """Gets the size of a vector type.
+        
+        Args:
+            type_name: The C type to get the size of.
+        """
+        var _type_name = Self.clean_type_name(type_name)
+        if Self.is_vector_type(_type_name):
+            try:
+                return _type_name.split('[')[1].split(']')[0]
+            except:
+                return 'unknown'
+        return 'unknown'
+
+    @staticmethod
     fn get_mojo_type(type_name: String) -> String:
         """Gets the complete Mojo type mapping for a C type.
 
@@ -233,8 +272,10 @@ struct TypeMapper:
             The complete Mojo type mapping, including any necessary pointer handling.
         """
         var _type_name = Self.clean_type_name(type_name)
+        var _vector_size:String = 'unknown'
         var is_pointer = False
         var is_sugar = False
+        var is_vector = False
         if Self.is_pointer_type(_type_name):
             _type_name = _type_name[:-1]
             is_pointer = True
@@ -243,10 +284,19 @@ struct TypeMapper:
             is_sugar = True
             _type_name = Self.get_sugar_type(_type_name)
 
+        if Self.is_vector_type(_type_name):
+            is_vector = True
+            _vector_size = Self.get_vector_size(_type_name)
+            _type_name = Self.get_vector_type(_type_name)
+
         var mojo_type = Self.map_type(_type_name)
         if is_pointer:
             if _type_name == "void":
                 mojo_type = "OpaquePointer"
             else:
                 mojo_type = "UnsafePointer[" + mojo_type + "]"
+
+        if is_vector:
+            mojo_type = "SIMD[" + mojo_type + ", " + _vector_size + "]"
+
         return mojo_type

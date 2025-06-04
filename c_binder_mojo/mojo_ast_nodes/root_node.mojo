@@ -108,6 +108,7 @@ struct RootNode(NodeAstLike):
         imports.append(
             "from sys.ffi import _Global, UnsafePointer, OpaquePointer"
         )
+        imports.append("from sys import ffi")
 
         return String("\n").join(imports)
 

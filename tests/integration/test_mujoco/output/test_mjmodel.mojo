@@ -1,6 +1,7 @@
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
 
-# (placeholder) TranslationUnitDecl 0x2c4de358 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x33b02358 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = Int128
 
@@ -32,75 +33,75 @@ alias __SVFloat64_t = Float64
 
 alias __SVBFloat16_t = Float16
 
-alias __clang_svint8x2_t = Int8
+alias __clang_svint8x2_t = SIMD[DType.int8, 2]
 
-alias __clang_svint16x2_t = Int16
+alias __clang_svint16x2_t = SIMD[DType.int16, 2]
 
-alias __clang_svint32x2_t = Int32
+alias __clang_svint32x2_t = SIMD[DType.int32, 2]
 
-alias __clang_svint64x2_t = Int64
+alias __clang_svint64x2_t = SIMD[DType.int64, 2]
 
-alias __clang_svuint8x2_t = UInt8
+alias __clang_svuint8x2_t = SIMD[DType.uint8, 2]
 
-alias __clang_svuint16x2_t = UInt16
+alias __clang_svuint16x2_t = SIMD[DType.uint16, 2]
 
-alias __clang_svuint32x2_t = UInt32
+alias __clang_svuint32x2_t = SIMD[DType.uint32, 2]
 
-alias __clang_svuint64x2_t = UInt64
+alias __clang_svuint64x2_t = SIMD[DType.uint64, 2]
 
-alias __clang_svfloat16x2_t = Float16
+alias __clang_svfloat16x2_t = SIMD[DType.float16, 2]
 
-alias __clang_svfloat32x2_t = Float32
+alias __clang_svfloat32x2_t = SIMD[DType.float32, 2]
 
-alias __clang_svfloat64x2_t = Float64
+alias __clang_svfloat64x2_t = SIMD[DType.float64, 2]
 
-alias __clang_svbfloat16x2_t = Float16
+alias __clang_svbfloat16x2_t = SIMD[DType.bfloat16, 2]
 
-alias __clang_svint8x3_t = Int8
+alias __clang_svint8x3_t = SIMD[DType.int8, 3]
 
-alias __clang_svint16x3_t = Int16
+alias __clang_svint16x3_t = SIMD[DType.int16, 3]
 
-alias __clang_svint32x3_t = Int32
+alias __clang_svint32x3_t = SIMD[DType.int32, 3]
 
-alias __clang_svint64x3_t = Int64
+alias __clang_svint64x3_t = SIMD[DType.int64, 3]
 
-alias __clang_svuint8x3_t = UInt8
+alias __clang_svuint8x3_t = SIMD[DType.uint8, 3]
 
-alias __clang_svuint16x3_t = UInt16
+alias __clang_svuint16x3_t = SIMD[DType.uint16, 3]
 
-alias __clang_svuint32x3_t = UInt32
+alias __clang_svuint32x3_t = SIMD[DType.uint32, 3]
 
-alias __clang_svuint64x3_t = UInt64
+alias __clang_svuint64x3_t = SIMD[DType.uint64, 3]
 
-alias __clang_svfloat16x3_t = Float16
+alias __clang_svfloat16x3_t = SIMD[DType.float16, 3]
 
-alias __clang_svfloat32x3_t = Float32
+alias __clang_svfloat32x3_t = SIMD[DType.float32, 3]
 
-alias __clang_svfloat64x3_t = Float64
+alias __clang_svfloat64x3_t = SIMD[DType.float64, 3]
 
-alias __clang_svbfloat16x3_t = Float16
+alias __clang_svbfloat16x3_t = SIMD[DType.bfloat16, 3]
 
-alias __clang_svint8x4_t = Int8
+alias __clang_svint8x4_t = SIMD[DType.int8, 4]
 
-alias __clang_svint16x4_t = Int16
+alias __clang_svint16x4_t = SIMD[DType.int16, 4]
 
-alias __clang_svint32x4_t = Int32
+alias __clang_svint32x4_t = SIMD[DType.int32, 4]
 
-alias __clang_svint64x4_t = Int64
+alias __clang_svint64x4_t = SIMD[DType.int64, 4]
 
-alias __clang_svuint8x4_t = UInt8
+alias __clang_svuint8x4_t = SIMD[DType.uint8, 4]
 
-alias __clang_svuint16x4_t = UInt16
+alias __clang_svuint16x4_t = SIMD[DType.uint16, 4]
 
-alias __clang_svuint32x4_t = UInt32
+alias __clang_svuint32x4_t = SIMD[DType.uint32, 4]
 
-alias __clang_svuint64x4_t = UInt64
+alias __clang_svuint64x4_t = SIMD[DType.uint64, 4]
 
-alias __clang_svfloat16x4_t = Float16
+alias __clang_svfloat16x4_t = SIMD[DType.float16, 4]
 
-alias __clang_svfloat32x4_t = Float32
+alias __clang_svfloat32x4_t = SIMD[DType.float32, 4]
 
-alias __clang_svfloat64x4_t = Float64
+alias __clang_svfloat64x4_t = SIMD[DType.float64, 4]
 
 alias __clang_svbfloat16x4_t = Float16
 
@@ -116,7 +117,7 @@ alias size_t = UInt64
 
 alias wchar_t = UInt32
 struct _Anonymous_line_19_9:
-	alias __clang_max_align_nonce1: Int64 = 8
+	alias __clang_max_align_nonce1: Int128 = 8
 
 	alias __clang_max_align_nonce2: Float64 = 16
 
@@ -147,21 +148,21 @@ alias __int64_t = Int64
 
 alias __uint64_t = UInt64
 
-alias __int_least8_t = Int8
+alias __int_least8_t = __int8_t
 
-alias __uint_least8_t = Int8
+alias __uint_least8_t = __uint8_t
 
-alias __int_least16_t = Int16
+alias __int_least16_t = __int16_t
 
-alias __uint_least16_t = Int16
+alias __uint_least16_t = __uint16_t
 
-alias __int_least32_t = Int32
+alias __int_least32_t = __int32_t
 
-alias __uint_least32_t = Int32
+alias __uint_least32_t = __uint32_t
 
-alias __int_least64_t = Int64
+alias __int_least64_t = __int64_t
 
-alias __uint_least64_t = Int64
+alias __uint_least64_t = __uint64_t
 
 alias __quad_t = Int64
 
@@ -191,7 +192,7 @@ alias __off64_t = Int64
 
 alias __pid_t = Int32
 struct _Anonymous_col_24:
-	var __val: SIMD[Int32, 2]
+	var __val: SIMD[Int32., 2]
 
 
 alias __fsid_t = _Anonymous_col_24
@@ -252,21 +253,21 @@ alias __socklen_t = UInt32
 
 alias __sig_atomic_t = Int32
 
-alias int8_t = Int8
+alias int8_t = __int8_t
 
-alias int16_t = Int16
+alias int16_t = __int16_t
 
-alias int32_t = Int32
+alias int32_t = __int32_t
 
-alias int64_t = Int64
+alias int64_t = __int64_t
 
-alias uint8_t = Int8
+alias uint8_t = __uint8_t
 
-alias uint16_t = Int16
+alias uint16_t = __uint16_t
 
-alias uint32_t = Int32
+alias uint32_t = __uint32_t
 
-alias uint64_t = Int64
+alias uint64_t = __uint64_t
 
 alias int_least8_t = __int_least8_t
 

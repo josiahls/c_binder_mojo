@@ -77,115 +77,201 @@ struct TypeMapper:
         # Check for numeric types
         var numeric_type: String = ""
 
-        if (
-            _type_name.endswith("char")
-            or _type_name.endswith("int8_t")
-            or _type_name.endswith("Int8_t")
-            or _type_name.endswith("__clang_svint8x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svuint8x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2 
-            or _type_name.endswith("__clang_svint8x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svuint8x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svint8x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svuint8x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
+        ########## 8-bit types ##########
+        if _type_name == "char":
             numeric_type = "Int8"
-        elif (
-            _type_name.endswith("short")
-            or _type_name.endswith("int16_t")
-            or _type_name.endswith("Int16_t")
-            or _type_name.endswith("__clang_svint16x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svuint16x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svint16x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svuint16x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svint16x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svuint16x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
-            numeric_type = "Int16"
-        elif (
-            _type_name.endswith("int")
-            or _type_name.endswith("int32_t")
-            or _type_name.endswith("Int32_t")
-            or _type_name.endswith("__clang_svint32x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2 
-            or _type_name.endswith("__clang_svuint32x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svint32x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svuint32x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svint32x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svuint32x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
-            numeric_type = "Int32"
-        elif (
-            _type_name.endswith("long long")
-            or _type_name.endswith("int64_t")
-            or _type_name.endswith("Int64_t")
-            or _type_name.endswith("__clang_svint64x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2 
-            or _type_name.endswith("__clang_svuint64x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svint64x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svuint64x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svint64x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svuint64x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
-            numeric_type = "Int64"
-        elif (
-            _type_name.endswith("long long")
-            or _type_name.endswith("int128_t")
-            or _type_name.endswith("Int128_t")
-            or _type_name.endswith("__int128")
-        ):
-            numeric_type = "Int128"
-        elif (
-            _type_name.endswith("long")
-            or _type_name.endswith("int64_t")
-            or _type_name.endswith("Int64_t")
-            or _type_name.endswith("__clang_svint64x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2 
-            or _type_name.endswith("__clang_svuint64x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svint64x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svuint64x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svint64x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svuint64x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
-            numeric_type = "Int64"
-        elif (
-            _type_name.endswith("Float16_t")
-            or _type_name.endswith("__clang_svfloat16x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2 
-            or _type_name.endswith("__clang_svfloat16x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svfloat16x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svbfloat16x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svbfloat16x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svbfloat16x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
-            numeric_type = "Float16"
-        elif (
-            _type_name.endswith("float")
-            or _type_name.endswith("float32_t")
-            or _type_name.endswith("Float32_t")
-            or _type_name.endswith("__clang_svfloat32x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svfloat32x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svfloat32x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svbfloat32x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svbfloat32x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svbfloat32x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
-            numeric_type = "Float32"
-        elif (
-            _type_name.endswith("double")
-            or _type_name.endswith("float64_t")
-            or _type_name.endswith("Float64_t")
-            or _type_name.endswith("__clang_svfloat64x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svfloat64x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svfloat64x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-            or _type_name.endswith("__clang_svbfloat64x2_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 2
-            or _type_name.endswith("__clang_svbfloat64x3_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 3
-            or _type_name.endswith("__clang_svbfloat64x4_t")  # TODO(josiahls): This is probably wrong. Needs to be a SIMD vector of len 4
-        ):
-            numeric_type = "Float64"
+        elif _type_name == "unsigned char":
+            numeric_type = "UInt8"
+        elif _type_name == "signed char":
+            numeric_type = "Int8"
+        elif _type_name == "int8_t":
+            numeric_type = "Int8"
+        elif _type_name == "unsigned int8_t":
+            numeric_type = "UInt8"
+        elif _type_name == "__SVInt8_t":
+            numeric_type = "Int8"
+        elif _type_name == "__SVUint8_t":
+            numeric_type = "UInt8"
+        elif _type_name == "__clang_svint8x2_t":
+            numeric_type = "SIMD[DType.int8, 2]"
+        elif _type_name == "__clang_svuint8x2_t":
+            numeric_type = "SIMD[DType.uint8, 2]"
+        elif _type_name == "__clang_svint8x3_t":
+            numeric_type = "SIMD[DType.int8, 3]"
+        elif _type_name == "__clang_svuint8x3_t":
+            numeric_type = "SIMD[DType.uint8, 3]"
+        elif _type_name == "__clang_svint8x4_t":
+            numeric_type = "SIMD[DType.int8, 4]"
+        elif _type_name == "__clang_svuint8x4_t":
+            numeric_type = "SIMD[DType.uint8, 4]"
 
-        if numeric_type != "":
-            if _type_name.startswith("unsigned "):
-                numeric_type = "U" + numeric_type
-            elif _type_name.startswith("__SVU"):
-                numeric_type = "U" + numeric_type
-            elif _type_name.startswith("__clang_svu"):
-                numeric_type = "U" + numeric_type
+        ########## 16-bit types ##########
+        elif _type_name == "short":
+            numeric_type = "Int16"
+        elif _type_name == "unsigned short":
+            numeric_type = "UInt16"
+        elif _type_name == "int16_t":
+            numeric_type = "Int16"
+        elif _type_name == "unsigned int16_t":
+            numeric_type = "UInt16"
+        elif _type_name == "Int16_t":
+            numeric_type = "Int16"
+        elif _type_name == "__SVInt16_t":
+            numeric_type = "Int16"
+        elif _type_name == "__SVUint16_t":
+            numeric_type = "UInt16"
+        elif _type_name == "Int16_t":
+            numeric_type = "UInt16"
+        elif _type_name == "__clang_svint16x2_t":
+            numeric_type = "SIMD[DType.int16, 2]"
+        elif _type_name == "__clang_svuint16x2_t":
+            numeric_type = "SIMD[DType.uint16, 2]"
+        elif _type_name == "__clang_svint16x3_t":
+            numeric_type = "SIMD[DType.int16, 3]"
+        elif _type_name == "__clang_svuint16x3_t":
+            numeric_type = "SIMD[DType.uint16, 3]"
+        elif _type_name == "__clang_svint16x4_t":
+            numeric_type = "SIMD[DType.int16, 4]"
+        elif _type_name == "__clang_svuint16x4_t":
+            numeric_type = "SIMD[DType.uint16, 4]"
+
+        ########## 32-bit types ##########
+        elif _type_name == "int":
+            numeric_type = "Int32"
+        elif _type_name == "unsigned int":
+            numeric_type = "UInt32"
+        elif _type_name == "int32_t":
+            numeric_type = "Int32"
+        elif _type_name == "unsigned int32_t":
+            numeric_type = "UInt32"
+        elif _type_name == "__SVInt32_t":
+            numeric_type = "Int32"
+        elif _type_name == "__SVUint32_t":
+            numeric_type = "UInt32"
+        elif _type_name == "__clang_svint32x2_t":
+            numeric_type = "SIMD[DType.int32, 2]"
+        elif _type_name == "__clang_svuint32x2_t":
+            numeric_type = "SIMD[DType.uint32, 2]"
+        elif _type_name == "__clang_svint32x3_t":
+            numeric_type = "SIMD[DType.int32, 3]"
+        elif _type_name == "__clang_svuint32x3_t":
+            numeric_type = "SIMD[DType.uint32, 3]"
+        elif _type_name == "__clang_svint32x4_t":
+            numeric_type = "SIMD[DType.int32, 4]"
+        elif _type_name == "__clang_svuint32x4_t":
+            numeric_type = "SIMD[DType.uint32, 4]"
+
+        ########## 64-bit types ##########
+        elif _type_name == "long":
+            numeric_type = "Int64"
+        elif _type_name == "unsigned long":
+            numeric_type = "UInt64"
+        elif _type_name == "int64_t":
+            numeric_type = "Int64"
+        elif _type_name == "unsigned int64_t":
+            numeric_type = "UInt64"
+        elif _type_name == "__SVInt64_t":
+            numeric_type = "Int64"
+        elif _type_name == "__SVUint64_t":
+            numeric_type = "UInt64"
+        elif _type_name == "__clang_svint64x2_t":
+            numeric_type = "SIMD[DType.int64, 2]"
+        elif _type_name == "__clang_svuint64x2_t":
+            numeric_type = "SIMD[DType.uint64, 2]"
+        elif _type_name == "__clang_svint64x3_t":
+            numeric_type = "SIMD[DType.int64, 3]"
+        elif _type_name == "__clang_svuint64x3_t":
+            numeric_type = "SIMD[DType.uint64, 3]"
+        elif _type_name == "__clang_svint64x4_t":
+            numeric_type = "SIMD[DType.int64, 4]"
+        elif _type_name == "__clang_svuint64x4_t":
+            numeric_type = "SIMD[DType.uint64, 4]"
+
+        ########## 128-bit types ##########
+        elif _type_name == "long long":
+            numeric_type = "Int128"
+        elif _type_name == "unsigned long long":
+            numeric_type = "UInt128"
+        elif _type_name == "__int128":
+            numeric_type = "Int128"
+        elif _type_name == "unsigned __int128":
+            numeric_type = "UInt128"
+        elif _type_name == "__SVInt128_t":
+            numeric_type = "Int128"
+        elif _type_name == "__SVUint128_t":
+            numeric_type = "UInt128"
+        elif _type_name == "__clang_svint128x2_t":
+            numeric_type = "SIMD[DType.int128, 2]"
+        elif _type_name == "__clang_svuint128x2_t":
+            numeric_type = "SIMD[DType.uint128, 2]"
+        elif _type_name == "__clang_svint128x3_t":
+            numeric_type = "SIMD[DType.int128, 3]"
+        elif _type_name == "__clang_svuint128x3_t":
+            numeric_type = "SIMD[DType.uint128, 3]"
+        elif _type_name == "__clang_svint128x4_t":
+            numeric_type = "SIMD[DType.int128, 4]"
+        elif _type_name == "__clang_svuint128x4_t":
+            numeric_type = "SIMD[DType.uint128, 4]"
+
+        ########## 16-bit floating point types ##########
+        elif _type_name == "Float16_t":
+            numeric_type = "Float16"
+        elif _type_name == "__SVBFloat16_t":
+            numeric_type = "Float16"
+        elif _type_name == "__SVFloat16_t":
+            numeric_type = "Float16"
+        elif _type_name == "__clang_svfloat16x2_t":
+            numeric_type = "SIMD[DType.float16, 2]"
+        elif _type_name == "__clang_svfloat16x3_t":
+            numeric_type = "SIMD[DType.float16, 3]"
+        elif _type_name == "__clang_svfloat16x4_t":
+            numeric_type = "SIMD[DType.float16, 4]"
+        elif _type_name == "__clang_svbfloat16x2_t":
+            numeric_type = "SIMD[DType.bfloat16, 2]"
+        elif _type_name == "__clang_svbfloat16x3_t":
+            numeric_type = "SIMD[DType.bfloat16, 3]"
+        elif _type_name == "__clang_svbfloat16x4_t":
+            numeric_type = "Float16"
+
+        ########## 32-bit floating point types ##########
+        elif _type_name == "float":
+            numeric_type = "Float32"
+        elif _type_name == "float32_t":
+            numeric_type = "Float32"
+        elif _type_name == "__SVFloat32_t":
+            numeric_type = "Float32"
+        elif _type_name == "Float32_t":
+            numeric_type = "Float32"
+        elif _type_name == "__clang_svfloat32x2_t":
+            numeric_type = "SIMD[DType.float32, 2]"
+        elif _type_name == "__clang_svfloat32x3_t":
+            numeric_type = "SIMD[DType.float32, 3]"
+        elif _type_name == "__clang_svfloat32x4_t":
+            numeric_type = "SIMD[DType.float32, 4]"
+        elif _type_name == "__clang_svbfloat32x2_t":
+            numeric_type = "SIMD[DType.bfloat32, 2]"
+        elif _type_name == "__clang_svbfloat32x3_t":
+            numeric_type = "SIMD[DType.bfloat32, 3]"
+        elif _type_name == "__clang_svbfloat64x4_t":
+            numeric_type = "SIMD[DType.bfloat64, 4]"
+
+        ########## 64-bit floating point types ##########
+        elif _type_name == "double":
+            numeric_type = "Float64"
+        elif _type_name == "long double":
+            numeric_type = "Float64"  # Mojo doesn't have extended precision, use Float64
+        elif _type_name == "float64_t":
+            numeric_type = "Float64"
+        elif _type_name == "Float64_t":
+            numeric_type = "Float64"
+        elif _type_name == "__SVFloat64_t":
+            numeric_type = "Float64"
+        elif _type_name == "__clang_svfloat64x2_t":
+            numeric_type = "SIMD[DType.float64, 2]"
+        elif _type_name == "__clang_svfloat64x3_t":
+            numeric_type = "SIMD[DType.float64, 3]"
+        elif _type_name == "__clang_svfloat64x4_t":
+            numeric_type = "SIMD[DType.float64, 4]"
 
         if numeric_type != "":
             return numeric_type

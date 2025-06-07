@@ -1,176 +1,31 @@
-RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=57)
+RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=8)
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
 PlaceHolderNode(parent_idx=0, current_idx=1, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-TranslationUnitDecl 0x19ce29b8 <<invalid sloc>> <invalid sloc>
+TranslationUnitDecl 0x4e35c8 <<invalid sloc>> <invalid sloc>
 TypedefDeclNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19ce3800 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
- | `-BuiltinType 0x19ce2f80 '__int128'
+|-TypedefDecl 0x4e3df0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+ | `-BuiltinType 0x4e3b90 '__int128'
 TypedefDeclNode(parent_idx=0, current_idx=3, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19ce3870 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
- | `-BuiltinType 0x19ce2fa0 'unsigned __int128'
+|-TypedefDecl 0x4e3e60 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+ | `-BuiltinType 0x4e3bb0 'unsigned __int128'
 TypedefDeclNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d84de8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
- | `-RecordType 0x19ce3950 'struct __NSConstantString_tag'
- |   `-Record 0x19ce38c8 '__NSConstantString_tag'
+|-TypedefDecl 0x4e4168 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+ | `-RecordType 0x4e3f40 'struct __NSConstantString_tag'
+ |   `-Record 0x4e3eb8 '__NSConstantString_tag'
 TypedefDeclNode(parent_idx=0, current_idx=5, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d84e50 <<invalid sloc>> <invalid sloc> implicit __SVInt8_t '__SVInt8_t'
- | `-BuiltinType 0x19ce3140 '__SVInt8_t'
+|-TypedefDecl 0x4e4200 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+ | `-PointerType 0x4e41c0 'char *'
+ |   `-BuiltinType 0x4e3670 'char'
 TypedefDeclNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d84eb8 <<invalid sloc>> <invalid sloc> implicit __SVInt16_t '__SVInt16_t'
- | `-BuiltinType 0x19ce3160 '__SVInt16_t'
-TypedefDeclNode(parent_idx=0, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d84f20 <<invalid sloc>> <invalid sloc> implicit __SVInt32_t '__SVInt32_t'
- | `-BuiltinType 0x19ce3180 '__SVInt32_t'
-TypedefDeclNode(parent_idx=0, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d84f88 <<invalid sloc>> <invalid sloc> implicit __SVInt64_t '__SVInt64_t'
- | `-BuiltinType 0x19ce31a0 '__SVInt64_t'
-TypedefDeclNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d84ff0 <<invalid sloc>> <invalid sloc> implicit __SVUint8_t '__SVUint8_t'
- | `-BuiltinType 0x19ce31c0 '__SVUint8_t'
-TypedefDeclNode(parent_idx=0, current_idx=10, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85058 <<invalid sloc>> <invalid sloc> implicit __SVUint16_t '__SVUint16_t'
- | `-BuiltinType 0x19ce31e0 '__SVUint16_t'
-TypedefDeclNode(parent_idx=0, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d850c0 <<invalid sloc>> <invalid sloc> implicit __SVUint32_t '__SVUint32_t'
- | `-BuiltinType 0x19ce3200 '__SVUint32_t'
-TypedefDeclNode(parent_idx=0, current_idx=12, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85128 <<invalid sloc>> <invalid sloc> implicit __SVUint64_t '__SVUint64_t'
- | `-BuiltinType 0x19ce3220 '__SVUint64_t'
-TypedefDeclNode(parent_idx=0, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85190 <<invalid sloc>> <invalid sloc> implicit __SVFloat16_t '__SVFloat16_t'
- | `-BuiltinType 0x19ce3240 '__SVFloat16_t'
-TypedefDeclNode(parent_idx=0, current_idx=14, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d851f8 <<invalid sloc>> <invalid sloc> implicit __SVFloat32_t '__SVFloat32_t'
- | `-BuiltinType 0x19ce3260 '__SVFloat32_t'
-TypedefDeclNode(parent_idx=0, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85260 <<invalid sloc>> <invalid sloc> implicit __SVFloat64_t '__SVFloat64_t'
- | `-BuiltinType 0x19ce3280 '__SVFloat64_t'
-TypedefDeclNode(parent_idx=0, current_idx=16, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d852c8 <<invalid sloc>> <invalid sloc> implicit __SVBFloat16_t '__SVBFloat16_t'
- | `-BuiltinType 0x19ce32a0 '__SVBFloat16_t'
-TypedefDeclNode(parent_idx=0, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85330 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x2_t '__clang_svint8x2_t'
- | `-BuiltinType 0x19ce32c0 '__clang_svint8x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85398 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x2_t '__clang_svint16x2_t'
- | `-BuiltinType 0x19ce32e0 '__clang_svint16x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85400 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x2_t '__clang_svint32x2_t'
- | `-BuiltinType 0x19ce3300 '__clang_svint32x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=20, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85468 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x2_t '__clang_svint64x2_t'
- | `-BuiltinType 0x19ce3320 '__clang_svint64x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=21, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d854d0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x2_t '__clang_svuint8x2_t'
- | `-BuiltinType 0x19ce3340 '__clang_svuint8x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=22, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85538 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x2_t '__clang_svuint16x2_t'
- | `-BuiltinType 0x19ce3360 '__clang_svuint16x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=23, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d855a0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x2_t '__clang_svuint32x2_t'
- | `-BuiltinType 0x19ce3380 '__clang_svuint32x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=24, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85608 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x2_t '__clang_svuint64x2_t'
- | `-BuiltinType 0x19ce33a0 '__clang_svuint64x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=25, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85670 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x2_t '__clang_svfloat16x2_t'
- | `-BuiltinType 0x19ce33c0 '__clang_svfloat16x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=26, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d856d8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x2_t '__clang_svfloat32x2_t'
- | `-BuiltinType 0x19ce33e0 '__clang_svfloat32x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=27, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85740 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x2_t '__clang_svfloat64x2_t'
- | `-BuiltinType 0x19ce3400 '__clang_svfloat64x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=28, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d857a8 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x2_t '__clang_svbfloat16x2_t'
- | `-BuiltinType 0x19ce3420 '__clang_svbfloat16x2_t'
-TypedefDeclNode(parent_idx=0, current_idx=29, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85810 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x3_t '__clang_svint8x3_t'
- | `-BuiltinType 0x19ce3440 '__clang_svint8x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85878 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x3_t '__clang_svint16x3_t'
- | `-BuiltinType 0x19ce3460 '__clang_svint16x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d858e0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x3_t '__clang_svint32x3_t'
- | `-BuiltinType 0x19ce3480 '__clang_svint32x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85948 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x3_t '__clang_svint64x3_t'
- | `-BuiltinType 0x19ce34a0 '__clang_svint64x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d859b0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x3_t '__clang_svuint8x3_t'
- | `-BuiltinType 0x19ce34c0 '__clang_svuint8x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85a18 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x3_t '__clang_svuint16x3_t'
- | `-BuiltinType 0x19ce34e0 '__clang_svuint16x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=35, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85a80 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x3_t '__clang_svuint32x3_t'
- | `-BuiltinType 0x19ce3500 '__clang_svuint32x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85ae8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x3_t '__clang_svuint64x3_t'
- | `-BuiltinType 0x19ce3520 '__clang_svuint64x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85b50 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x3_t '__clang_svfloat16x3_t'
- | `-BuiltinType 0x19ce3540 '__clang_svfloat16x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=38, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d85bb8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x3_t '__clang_svfloat32x3_t'
- | `-BuiltinType 0x19ce3560 '__clang_svfloat32x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86040 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x3_t '__clang_svfloat64x3_t'
- | `-BuiltinType 0x19ce3580 '__clang_svfloat64x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d860a8 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x3_t '__clang_svbfloat16x3_t'
- | `-BuiltinType 0x19ce35a0 '__clang_svbfloat16x3_t'
-TypedefDeclNode(parent_idx=0, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86110 <<invalid sloc>> <invalid sloc> implicit __clang_svint8x4_t '__clang_svint8x4_t'
- | `-BuiltinType 0x19ce35c0 '__clang_svint8x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=42, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86178 <<invalid sloc>> <invalid sloc> implicit __clang_svint16x4_t '__clang_svint16x4_t'
- | `-BuiltinType 0x19ce35e0 '__clang_svint16x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d861e0 <<invalid sloc>> <invalid sloc> implicit __clang_svint32x4_t '__clang_svint32x4_t'
- | `-BuiltinType 0x19ce3600 '__clang_svint32x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=44, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86248 <<invalid sloc>> <invalid sloc> implicit __clang_svint64x4_t '__clang_svint64x4_t'
- | `-BuiltinType 0x19ce3620 '__clang_svint64x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d862b0 <<invalid sloc>> <invalid sloc> implicit __clang_svuint8x4_t '__clang_svuint8x4_t'
- | `-BuiltinType 0x19ce3640 '__clang_svuint8x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86318 <<invalid sloc>> <invalid sloc> implicit __clang_svuint16x4_t '__clang_svuint16x4_t'
- | `-BuiltinType 0x19ce3660 '__clang_svuint16x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86380 <<invalid sloc>> <invalid sloc> implicit __clang_svuint32x4_t '__clang_svuint32x4_t'
- | `-BuiltinType 0x19ce3680 '__clang_svuint32x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d863e8 <<invalid sloc>> <invalid sloc> implicit __clang_svuint64x4_t '__clang_svuint64x4_t'
- | `-BuiltinType 0x19ce36a0 '__clang_svuint64x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86450 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat16x4_t '__clang_svfloat16x4_t'
- | `-BuiltinType 0x19ce36c0 '__clang_svfloat16x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d864b8 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat32x4_t '__clang_svfloat32x4_t'
- | `-BuiltinType 0x19ce36e0 '__clang_svfloat32x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=51, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86520 <<invalid sloc>> <invalid sloc> implicit __clang_svfloat64x4_t '__clang_svfloat64x4_t'
- | `-BuiltinType 0x19ce3700 '__clang_svfloat64x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=52, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86588 <<invalid sloc>> <invalid sloc> implicit __clang_svbfloat16x4_t '__clang_svbfloat16x4_t'
- | `-BuiltinType 0x19ce3720 '__clang_svbfloat16x4_t'
-TypedefDeclNode(parent_idx=0, current_idx=53, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d865f0 <<invalid sloc>> <invalid sloc> implicit __SVBool_t '__SVBool_t'
- | `-BuiltinType 0x19ce3740 '__SVBool_t'
-TypedefDeclNode(parent_idx=0, current_idx=54, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d86690 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
- | `-PointerType 0x19d86650 'char *'
- |   `-BuiltinType 0x19ce2a60 'char'
-TypedefDeclNode(parent_idx=0, current_idx=55, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x19d869f8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct std::__va_list'
- | `-RecordType 0x19d86770 'struct std::__va_list'
- |   `-Record 0x19d866e8 '__va_list'
-FunctionDeclNode(parent_idx=0, current_idx=56, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-`-FunctionDecl 0x19d86b30 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_single_line_comment_node/test_single_line_comment_node.h:8:1, col:19> col:5 some_function 'int ()'
-   `-FullComment 0x19d86de0 <line:6:3, col:45>
-     `-ParagraphComment 0x19d86db0 <col:3, col:45>
-       `-TextComment 0x19d86d80 <col:3, col:45> Text=" Comment with code-like content: int x = 5;"
-EndFileNode(parent_idx=0, current_idx=57, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e44f8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+ | `-ConstantArrayType 0x4e44a0 'struct __va_list_tag[1]' 1 
+ |   `-RecordType 0x4e42e0 'struct __va_list_tag'
+ |     `-Record 0x4e4258 '__va_list_tag'
+FunctionDeclNode(parent_idx=0, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+`-FunctionDecl 0x53af60 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_single_line_comment_node/test_single_line_comment_node.h:8:1, col:19> col:5 some_function 'int ()'
+   `-FullComment 0x53b210 <line:6:3, col:45>
+     `-ParagraphComment 0x53b1e0 <col:3, col:45>
+       `-TextComment 0x53b1b0 <col:3, col:45> Text=" Comment with code-like content: int x = 5;"
+EndFileNode(parent_idx=0, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 # C_BINDER_MOJO_END_FILE

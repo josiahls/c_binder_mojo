@@ -1,6 +1,7 @@
 from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
 
-# (placeholder) TranslationUnitDecl 0x18310248 <<invalid sloc>> <invalid sloc>
+# (placeholder) TranslationUnitDecl 0x4e3518 <<invalid sloc>> <invalid sloc>
 
 alias __int128_t = Int128
 
@@ -8,113 +9,15 @@ alias __uint128_t = UInt128
 
 alias __NSConstantString = StaticString
 
-alias __SVInt8_t = Int8
-
-alias __SVInt16_t = Int16
-
-alias __SVInt32_t = Int32
-
-alias __SVInt64_t = Int64
-
-alias __SVUint8_t = UInt8
-
-alias __SVUint16_t = UInt16
-
-alias __SVUint32_t = UInt32
-
-alias __SVUint64_t = UInt64
-
-alias __SVFloat16_t = Float16
-
-alias __SVFloat32_t = Float32
-
-alias __SVFloat64_t = Float64
-
-alias __SVBFloat16_t = Float16
-
-alias __clang_svint8x2_t = Int8
-
-alias __clang_svint16x2_t = Int16
-
-alias __clang_svint32x2_t = Int32
-
-alias __clang_svint64x2_t = Int64
-
-alias __clang_svuint8x2_t = UInt8
-
-alias __clang_svuint16x2_t = UInt16
-
-alias __clang_svuint32x2_t = UInt32
-
-alias __clang_svuint64x2_t = UInt64
-
-alias __clang_svfloat16x2_t = Float16
-
-alias __clang_svfloat32x2_t = Float32
-
-alias __clang_svfloat64x2_t = Float64
-
-alias __clang_svbfloat16x2_t = Float16
-
-alias __clang_svint8x3_t = Int8
-
-alias __clang_svint16x3_t = Int16
-
-alias __clang_svint32x3_t = Int32
-
-alias __clang_svint64x3_t = Int64
-
-alias __clang_svuint8x3_t = UInt8
-
-alias __clang_svuint16x3_t = UInt16
-
-alias __clang_svuint32x3_t = UInt32
-
-alias __clang_svuint64x3_t = UInt64
-
-alias __clang_svfloat16x3_t = Float16
-
-alias __clang_svfloat32x3_t = Float32
-
-alias __clang_svfloat64x3_t = Float64
-
-alias __clang_svbfloat16x3_t = Float16
-
-alias __clang_svint8x4_t = Int8
-
-alias __clang_svint16x4_t = Int16
-
-alias __clang_svint32x4_t = Int32
-
-alias __clang_svint64x4_t = Int64
-
-alias __clang_svuint8x4_t = UInt8
-
-alias __clang_svuint16x4_t = UInt16
-
-alias __clang_svuint32x4_t = UInt32
-
-alias __clang_svuint64x4_t = UInt64
-
-alias __clang_svfloat16x4_t = Float16
-
-alias __clang_svfloat32x4_t = Float32
-
-alias __clang_svfloat64x4_t = Float64
-
-alias __clang_svbfloat16x4_t = Float16
-
-alias __SVBool_t = Bool
-
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
-alias referenced = __builtin_va_list std::__va_list
+alias referenced = SIMD[__builtin_va_list __va_list_tag.dtype, 1]
 
 alias size_t = UInt64
 
-alias va_list = __builtin_va_list:struct std::__va_list
+alias va_list = OpaquePointer
 
-alias __gnuc_va_list = __builtin_va_list:struct std::__va_list
+alias __gnuc_va_list = OpaquePointer
 
 alias __u_char = UInt8
 
@@ -140,21 +43,21 @@ alias __int64_t = Int64
 
 alias __uint64_t = UInt64
 
-alias __int_least8_t = Int8
+alias __int_least8_t = __int8_t
 
-alias __uint_least8_t = Int8
+alias __uint_least8_t = __uint8_t
 
-alias __int_least16_t = Int16
+alias __int_least16_t = __int16_t
 
-alias __uint_least16_t = Int16
+alias __uint_least16_t = __uint16_t
 
-alias __int_least32_t = Int32
+alias __int_least32_t = __int32_t
 
-alias __uint_least32_t = Int32
+alias __uint_least32_t = __uint32_t
 
-alias __int_least64_t = Int64
+alias __int_least64_t = __int64_t
 
-alias __uint_least64_t = Int64
+alias __uint_least64_t = __uint64_t
 
 alias __quad_t = Int64
 
@@ -176,7 +79,7 @@ alias __ino64_t = UInt64
 
 alias __mode_t = UInt32
 
-alias __nlink_t = UInt32
+alias __nlink_t = UInt64
 
 alias __off_t = Int64
 
@@ -184,7 +87,7 @@ alias __off64_t = Int64
 
 alias __pid_t = Int32
 struct _Anonymous_col_24:
-	var __val: SIMD[Int32, 2]
+	var __val: SIMD[Int32.dtype, 2]
 
 
 alias __fsid_t = _Anonymous_col_24
@@ -213,7 +116,7 @@ alias __clockid_t = Int32
 
 alias __timer_t = UnsafePointer[NoneType]
 
-alias __blksize_t = Int32
+alias __blksize_t = Int64
 
 alias __blkcnt_t = Int64
 
@@ -247,13 +150,13 @@ alias __sig_atomic_t = Int32
 struct __Anonymous_line_13_9_definition:
 	var __wch: UInt32
 
-	var __wchb: SIMD[Int8, 4]
+	var __wchb: SIMD[Int8.dtype, 4]
 
 
 struct _Anonymous_line_13_9:
 	var __count: Int32
 
-	var __value: union (unnamed union at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3):union __mbstate_t::(unnamed at /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:16:3)
+	var __value: union (unnamed union at /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:16:3):union __mbstate_t::(unnamed at /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:16:3)
 
 
 alias __mbstate_t = _Anonymous_line_13_9
@@ -328,7 +231,7 @@ struct _IO_FILE:
 
 	var _vtable_offset: Int8
 
-	var _shortbuf: SIMD[Int8, 1]
+	var _shortbuf: SIMD[Int8.dtype, 1]
 
 	var _lock: UnsafePointer[_IO_lock_t]
 
@@ -346,10 +249,10 @@ struct _IO_FILE:
 
 	var _mode: Int32
 
-	var _unused2: SIMD[Int8, 20]
+	var _unused2: SIMD[Int8.dtype, 20]
 
 
-alias va_list = __gnuc_va_list:struct std::__va_list
+alias va_list = __gnuc_va_list
 
 alias off_t = __off_t
 
@@ -373,7 +276,7 @@ alias fclose = fn (__stream: FILE) -> Int32
 
 alias tmpfile = fn () -> FILE *(void) extern
 
-alias tmpnam = fn ('char: Int8) -> char *(char *) extern
+alias tmpnam = fn ('char: *:char) -> char *(char *) extern
 
 alias tmpnam_r = fn (__s: Int8) -> char *(char *) extern
 
@@ -403,55 +306,53 @@ alias setbuffer = fn (__stream: FILE, __buf: Int8, __size: size_t:unsigned) -> N
 
 alias setlinebuf = fn (__stream: FILE) -> NoneType
 
-alias implicit = fn ('FILE: *, 'const: Int8) -> Int32
+alias implicit = fn ('FILE: *, 'const: Int8) -> fprintf int
 
 alias fprintf = fn (__stream: FILE, __format: const) -> Int32
 
-alias implicit = fn ('const: Int8) -> Int32
+alias implicit = fn ('const: Int8) -> printf int
 
 alias printf = fn (__format: const) -> Int32
 
-alias implicit = fn ('char: *, 'const: Int8) -> Int32
+alias implicit = fn ('char: *, 'const: Int8) -> sprintf int
 
 alias sprintf = fn (__s: Int8, __format: const) -> Int32
 
-alias implicit = fn ('FILE: *, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
+alias implicit = fn ('FILE: *, 'const: Int8, 'struct: __va_list_tag) -> vfprintf int
 
-alias vfprintf = fn (__s: FILE, __format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vfprintf = fn (__s: FILE, __format: const, __arg: struct) -> Int32
 
-alias implicit = fn ('const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
+alias implicit = fn ('const: Int8, 'struct: __va_list_tag) -> vprintf int
 
-alias vprintf = fn (__format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vprintf = fn (__format: const, __arg: struct) -> Int32
 
-alias implicit = fn ('char: *, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
+alias implicit = fn ('char: *, 'const: Int8, 'struct: __va_list_tag) -> vsprintf int
 
-alias vsprintf = fn (__s: Int8, __format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vsprintf = fn (__s: Int8, __format: const, __arg: struct) -> Int32
 
-alias implicit = fn ('char: *, 'unsigned: Int64, 'const: Int8) -> Int32
+alias implicit = fn ('char: *, 'unsigned: Int64, 'const: Int8) -> snprintf int
 
 alias snprintf = fn (__s: Int8, __maxlen: size_t:unsigned, __format: const) -> Int32
 
-alias implicit = fn ('char: *, 'unsigned: Int64, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
+alias implicit = fn ('char: *, 'unsigned: Int64, 'const: Int8, 'struct: __va_list_tag) -> vsnprintf int
 
-alias vsnprintf = fn (__s: Int8, __maxlen: size_t:unsigned, __format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vsnprintf = fn (__s: Int8, __maxlen: size_t:unsigned, __format: const, __arg: struct) -> Int32
 
-alias vdprintf = fn (__fd: Int32, __fmt: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vdprintf = fn (__fd: Int32, __fmt: const, __arg: struct) -> Int32
 
 alias dprintf = fn (__fd: Int32, __fmt: const) -> Int32
 
-alias implicit = fn ('FILE: *restrict, 'const: Int8) -> Int32
+alias implicit = fn ('FILE: *restrict, 'const: Int8) -> fscanf int
 
 alias fscanf = fn (__stream: FILE, __format: const) -> Int32
 
-alias implicit = fn ('const: Int8) -> Int32
+alias implicit = fn ('const: Int8) -> scanf int
 
 alias scanf = fn (__format: const) -> Int32
 
-alias implicit = fn ('const: Int8, 'const: Int8) -> Int32
+alias implicit = fn ('const: Int8, 'const: Int8) -> sscanf int
 
 alias sscanf = fn (__s: const, __format: const) -> Int32
-
-alias _Float128 = Float64
 
 alias _Float32 = Float32
 
@@ -467,23 +368,23 @@ alias scanf = fn (__format: const) -> Int32
 
 alias sscanf = fn (__s: const, __format: const) -> Int32
 
-alias implicit = fn ('FILE: *restrict, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
+alias implicit = fn ('FILE: *restrict, 'const: Int8, 'struct: __va_list_tag) -> vfscanf int
 
-alias vfscanf = fn (__s: FILE, __format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vfscanf = fn (__s: FILE, __format: const, __arg: struct) -> Int32
 
-alias implicit = fn ('const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
+alias implicit = fn ('const: Int8, 'struct: __va_list_tag) -> vscanf int
 
-alias vscanf = fn (__format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vscanf = fn (__format: const, __arg: struct) -> Int32
 
-alias implicit = fn ('const: Int8, 'const: Int8, '__builtin_va_list':'struct: OpaquePointer) -> Int32
+alias implicit = fn ('const: Int8, 'const: Int8, 'struct: __va_list_tag) -> vsscanf int
 
-alias vsscanf = fn (__s: const, __format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vsscanf = fn (__s: const, __format: const, __arg: struct) -> Int32
 
-alias vfscanf = fn (__s: FILE, __format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vfscanf = fn (__s: FILE, __format: const, __arg: struct) -> Int32
 
-alias vscanf = fn (__format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vscanf = fn (__format: const, __arg: struct) -> Int32
 
-alias vsscanf = fn (__s: const, __format: const, __arg: __gnuc_va_list:struct) -> Int32
+alias vsscanf = fn (__s: const, __format: const, __arg: struct) -> Int32
 
 alias fgetc = fn (__stream: FILE) -> Int32
 
@@ -527,11 +428,11 @@ alias puts = fn (__s: const) -> Int32
 
 alias ungetc = fn (__c: Int32, __stream: FILE) -> Int32
 
-alias implicit = fn ('void: *, 'unsigned: Int64, 'unsigned: Int64, 'FILE: *) -> Int64
+alias implicit = fn ('void: *, 'unsigned: Int64, 'unsigned: Int64, 'FILE: *) -> fread unsigned long
 
 alias fread = fn (__ptr: NoneType, __size: size_t:unsigned, __n: size_t:unsigned, __stream: FILE) -> UInt64
 
-alias implicit = fn ('const: NoneType, 'unsigned: Int64, 'unsigned: Int64, 'FILE: *) -> Int64
+alias implicit = fn ('const: NoneType, 'unsigned: Int64, 'unsigned: Int64, 'FILE: *) -> fwrite unsigned long
 
 alias fwrite = fn (__ptr: const, __size: size_t:unsigned, __n: size_t:unsigned, __s: FILE) -> UInt64
 
@@ -545,7 +446,7 @@ alias ftell = fn (__stream: FILE) -> Int64
 
 alias rewind = fn (__stream: FILE) -> NoneType
 
-alias fseeko = fn (__stream: FILE, __off: Int64, __whence: Int32) -> Int32
+alias fseeko = fn (__stream: FILE, __off: __off_t:long, __whence: Int32) -> Int32
 
 alias ftello = fn (__stream: FILE) -> __off_t
 

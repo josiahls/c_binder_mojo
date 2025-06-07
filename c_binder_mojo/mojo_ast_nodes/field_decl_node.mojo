@@ -64,6 +64,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                         self._value += token
                     idx += 1
 
+        # Handle struct types
         if "struct " in self._field_type:
             # TODO(josiahls): This field generally looks something like struct Inner':'struct Inner'
             # I'm not sure what the repeated name implies or how it will change. This will break if it does.
@@ -74,6 +75,40 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                 self._field_type = self._field_type[:colon_idx][1:-1]
             else:
                 self._field_type = self._field_type[1:-1]
+        
+        # Handle union types, especially unnamed unions
+        elif "union " in self._field_type:
+            print("unnamed union type: " + self._field_type)
+            # Handle cases like 'union (unnamed union at /path/to/file.h:16:3)':'union __mbstate_t::(unnamed at /path/to/file.h:16:3)'
+            if "(unnamed union at" in self._field_type:
+                # This is an unnamed union, we need to create a synthetic type name
+                # Extract the parent struct name from the type if possible
+                colon_idx = self._field_type.find("\':\'")
+                if colon_idx != -1:
+                    # Try to get the parent struct name from the second part
+                    second_part = self._field_type[colon_idx + 3:]
+
+                    print("second part: " + second_part)
+                    if "::(unnamed at" in second_part:
+                        parent_struct = second_part.split("::")[0].replace("'union ", "").strip()
+                        # Create a synthetic union name based on field name and parent struct
+                        self._field_type = "__" + parent_struct + "_" + self._field_name + "_union"
+                    else:
+                        # Fallback: use field name
+                        self._field_type = "__" + self._field_name + "_union_type"
+                else:
+                    # Fallback: use field name
+                    self._field_type = "__" + self._field_name + "_union_type"
+
+                print("synthetic union type: " + self._field_type)
+            else:
+                # Named union, handle similar to struct
+                self._field_type = self._field_type.replace("union ", "")
+                colon_idx = self._field_type.find(":")
+                if colon_idx != -1:
+                    self._field_type = self._field_type[:colon_idx][1:-1]
+                else:
+                    self._field_type = self._field_type[1:-1]
 
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)

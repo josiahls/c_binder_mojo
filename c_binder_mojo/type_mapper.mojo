@@ -282,6 +282,12 @@ struct TypeMapper:
             if _type_name == custom_type:
                 return custom_type
 
+        # Handle synthetic union types created for unnamed unions
+        if _type_name.endswith("_union") or _type_name.endswith("_union_type"):
+            # Map unnamed unions to OpaquePointer for now - this allows compilation
+            # TODO(josiahls): Consider implementing proper union support in the future
+            return "OpaquePointer"
+
         # For struct types, we'll need to handle them differently
         # This is a placeholder for now
         print("TypeMapper: Unknown type: " + _type_name)

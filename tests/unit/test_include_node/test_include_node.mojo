@@ -18,6 +18,7 @@ fn test_include_node() raises:
         logger,
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_include_node"),
         Path("/home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_include_node/output"),
+        extra_args="-I /usr/include/x86_64-linux-gnu/bits/types/"
     )
 
 fn main() raises:

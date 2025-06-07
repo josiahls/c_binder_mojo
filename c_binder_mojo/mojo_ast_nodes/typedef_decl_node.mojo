@@ -44,6 +44,10 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             if ast_entries[0].tokens[0] == "implicit":
                 self._is_implicit = True
                 starting_idx = 1
+            if ast_entries[0].tokens[0] == "implicit" and ast_entries[0].tokens[1] == "referenced":
+                self._is_implicit = True
+                self._is_referenced = True
+                starting_idx = 2
 
             self._name = ast_entries[0].tokens[starting_idx]
 

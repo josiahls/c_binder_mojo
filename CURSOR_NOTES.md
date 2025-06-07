@@ -37,6 +37,8 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 - **CRITICAL**: Refactor the nested if statement mess
 - **CRITICAL**: Improve record/struct handling architecture  
 - **CRITICAL**: Better forward declaration resolution
+- Look into figuring out what to do with `Grammar` objects. They are nice, but very adhoc.
+- Probably just create the missing nodes that we are currently just leaving as ast entries.
 - Beef up the type mapper (more comprehensive type coverage)
 - Type mapper should track what it needs to import
 - Add validation that our generated Mojo types actually work with FFI

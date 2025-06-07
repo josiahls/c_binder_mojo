@@ -77,17 +77,20 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
 
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)
+        field_name = self._field_name
+        if field_name == "global":
+            field_name = "`global`"
         if self._is_const:
             return (
                 "alias "
-                + self._field_name
+                + field_name
                 + ": "
                 + mojo_type
                 + " = "
                 + self._value
             )
         else:
-            return "var " + self._field_name + ": " + mojo_type
+            return "var " + field_name + ": " + mojo_type
 
     fn write_to[W: Writer](self, mut writer: W):
         writer.write(String(self))

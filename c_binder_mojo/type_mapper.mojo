@@ -73,6 +73,8 @@ struct TypeMapper:
         elif _type_name == "__builtin_va_list" or _type_name == "va_list" or _type_name == "std::__va_list":
             # va_list is used for variable argument functions - map to opaque pointer
             return "OpaquePointer"
+        elif _type_name == "__va_list_tag[1]":
+            return "OpaquePointer"
 
         # Check for numeric types
         var numeric_type: String = ""
@@ -315,6 +317,8 @@ struct TypeMapper:
         Args:
             type_name: The C type to check.
         """
+        if type_name == "__va_list_tag[1]":
+            return False
         return '[' in type_name and ']' in type_name
 
     @staticmethod
@@ -354,13 +358,7 @@ struct TypeMapper:
         Args:
             type_name: The C type to convert.
         """
-
-        if type_name == "Float32":
-            return "DType.float32"
-        elif type_name == "Float64":
-            return "DType.float64"
-        else:
-            return type_name
+        return type_name + '.dtype'
 
     @staticmethod
     fn get_mojo_type(type_name: String) -> String:

@@ -11,7 +11,7 @@ alias __NSConstantString = StaticString
 
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
-alias __builtin_va_list = SIMD[__va_list_tag, 1]
+alias __builtin_va_list = OpaquePointer
 
 alias ptrdiff_t = Int64
 
@@ -94,7 +94,7 @@ alias __off64_t = Int64
 
 alias __pid_t = Int32
 struct _Anonymous_col_24:
-	var __val: SIMD[Int32, 2]
+	var __val: SIMD[Int32.dtype, 2]
 
 
 alias __fsid_t = _Anonymous_col_24
@@ -781,11 +781,11 @@ struct mjOption_:
 
 	var ccd_tolerance: mjtNum
 
-	var gravity: SIMD[mjtNum, 3]
+	var gravity: SIMD[mjtNum.dtype, 3]
 
-	var wind: SIMD[mjtNum, 3]
+	var wind: SIMD[mjtNum.dtype, 3]
 
-	var magnetic: SIMD[mjtNum, 3]
+	var magnetic: SIMD[mjtNum.dtype, 3]
 
 	var density: mjtNum
 
@@ -793,11 +793,11 @@ struct mjOption_:
 
 	var o_margin: mjtNum
 
-	var o_solref: SIMD[mjtNum, 2]
+	var o_solref: SIMD[mjtNum.dtype, 2]
 
-	var o_solimp: SIMD[mjtNum, 5]
+	var o_solimp: SIMD[mjtNum.dtype, 5]
 
-	var o_friction: SIMD[mjtNum, 5]
+	var o_friction: SIMD[mjtNum.dtype, 5]
 
 	var integrator: Int32
 
@@ -828,55 +828,55 @@ struct mjOption_:
 
 alias mjOption = mjOption_
 struct _mjVisual___Anonymous_line_545_3:
-	var fog: SIMD[DType.float32, 4]
+	var fog: SIMD[Float32.dtype, 4]
 
-	var haze: SIMD[DType.float32, 4]
+	var haze: SIMD[Float32.dtype, 4]
 
-	var force: SIMD[DType.float32, 4]
+	var force: SIMD[Float32.dtype, 4]
 
-	var inertia: SIMD[DType.float32, 4]
+	var inertia: SIMD[Float32.dtype, 4]
 
-	var joint: SIMD[DType.float32, 4]
+	var joint: SIMD[Float32.dtype, 4]
 
-	var actuator: SIMD[DType.float32, 4]
+	var actuator: SIMD[Float32.dtype, 4]
 
-	var actuatornegative: SIMD[DType.float32, 4]
+	var actuatornegative: SIMD[Float32.dtype, 4]
 
-	var actuatorpositive: SIMD[DType.float32, 4]
+	var actuatorpositive: SIMD[Float32.dtype, 4]
 
-	var com: SIMD[DType.float32, 4]
+	var com: SIMD[Float32.dtype, 4]
 
-	var camera: SIMD[DType.float32, 4]
+	var camera: SIMD[Float32.dtype, 4]
 
-	var light: SIMD[DType.float32, 4]
+	var light: SIMD[Float32.dtype, 4]
 
-	var selectpoint: SIMD[DType.float32, 4]
+	var selectpoint: SIMD[Float32.dtype, 4]
 
-	var connect: SIMD[DType.float32, 4]
+	var connect: SIMD[Float32.dtype, 4]
 
-	var contactpoint: SIMD[DType.float32, 4]
+	var contactpoint: SIMD[Float32.dtype, 4]
 
-	var contactforce: SIMD[DType.float32, 4]
+	var contactforce: SIMD[Float32.dtype, 4]
 
-	var contactfriction: SIMD[DType.float32, 4]
+	var contactfriction: SIMD[Float32.dtype, 4]
 
-	var contacttorque: SIMD[DType.float32, 4]
+	var contacttorque: SIMD[Float32.dtype, 4]
 
-	var contactgap: SIMD[DType.float32, 4]
+	var contactgap: SIMD[Float32.dtype, 4]
 
-	var rangefinder: SIMD[DType.float32, 4]
+	var rangefinder: SIMD[Float32.dtype, 4]
 
-	var constraint: SIMD[DType.float32, 4]
+	var constraint: SIMD[Float32.dtype, 4]
 
-	var slidercrank: SIMD[DType.float32, 4]
+	var slidercrank: SIMD[Float32.dtype, 4]
 
-	var crankbroken: SIMD[DType.float32, 4]
+	var crankbroken: SIMD[Float32.dtype, 4]
 
-	var frustum: SIMD[DType.float32, 4]
+	var frustum: SIMD[Float32.dtype, 4]
 
-	var bv: SIMD[DType.float32, 4]
+	var bv: SIMD[Float32.dtype, 4]
 
-	var bvactive: SIMD[DType.float32, 4]
+	var bvactive: SIMD[Float32.dtype, 4]
 
 
 struct _mjVisual___Anonymous_line_525_3:
@@ -944,11 +944,11 @@ struct _mjVisual___Anonymous_line_509_3:
 
 
 struct _mjVisual___Anonymous_line_502_3:
-	var ambient: SIMD[DType.float32, 3]
+	var ambient: SIMD[Float32.dtype, 3]
 
-	var diffuse: SIMD[DType.float32, 3]
+	var diffuse: SIMD[Float32.dtype, 3]
 
-	var specular: SIMD[DType.float32, 3]
+	var specular: SIMD[Float32.dtype, 3]
 
 	var active: Int32
 
@@ -994,7 +994,7 @@ struct _mjVisual___Anonymous_line_479_3:
 struct mjVisual_:
 	#---------------------------------- mjVisual ------------------------------------------------------
 
-	var global: _mjVisual___Anonymous_line_479_3
+	var `global`: _mjVisual___Anonymous_line_479_3
 
 	var quality: _mjVisual___Anonymous_line_494_3
 
@@ -1019,7 +1019,7 @@ struct mjStatistic_:
 
 	var extent: mjtNum
 
-	var center: SIMD[mjtNum, 3]
+	var center: SIMD[mjtNum.dtype, 3]
 
 
 alias mjStatistic = mjStatistic_

@@ -11,7 +11,7 @@ alias __NSConstantString = StaticString
 
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
-alias __builtin_va_list = SIMD[__va_list_tag, 1]
+alias __builtin_va_list = OpaquePointer
 
 alias mjtNum = Float64
 

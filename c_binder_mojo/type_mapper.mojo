@@ -304,11 +304,8 @@ struct TypeMapper:
 
     @staticmethod
     fn get_sugar_type(type_name: String) -> String:
-        try:
-            splits = type_name.split(":")
-            return splits[0]
-        except:
-            return type_name
+        splits = type_name.split(":")
+        return splits[0]
 
     @staticmethod
     fn is_vector_type(type_name: String) -> Bool:
@@ -330,10 +327,7 @@ struct TypeMapper:
         """
         var _type_name = Self.clean_type_name(type_name)
         if Self.is_vector_type(_type_name):
-            try:
-                return _type_name.split('[')[0]
-            except:
-                return _type_name
+            return _type_name.split('[')[0]
         return _type_name
 
     @staticmethod
@@ -345,10 +339,7 @@ struct TypeMapper:
         """
         var _type_name = Self.clean_type_name(type_name)
         if Self.is_vector_type(_type_name):
-            try:
-                return _type_name.split('[')[1].split(']')[0]
-            except:
-                return 'unknown'
+            return _type_name.split('[')[1].split(']')[0]
         return 'unknown'
 
     @staticmethod
@@ -373,14 +364,12 @@ struct TypeMapper:
         var _type_name = Self.clean_type_name(type_name)
         var _vector_size:String = 'unknown'
         var is_pointer = False
-        var is_sugar = False
         var is_vector = False
         if Self.is_pointer_type(_type_name):
             _type_name = _type_name[:-1]
             is_pointer = True
 
         if ":" in _type_name and not "::" in _type_name:
-            is_sugar = True
             _type_name = Self.get_sugar_type(_type_name)
 
         if Self.is_vector_type(_type_name):

@@ -43,11 +43,11 @@ struct TestFFIBasic(Copyable, Movable):
 
     var lib: DLHandle
     
-    var TestFFIBasic_test_int_identity_func: TestFFIBasic_test_int_identity.type
-    var TestFFIBasic_test_uint_identity_func: TestFFIBasic_test_uint_identity.type
-    var TestFFIBasic_test_long_identity_func: TestFFIBasic_test_long_identity.type
-    var TestFFIBasic_test_float_identity_func: TestFFIBasic_test_float_identity.type
-    var TestFFIBasic_test_double_identity_func: TestFFIBasic_test_double_identity.type
+    var test_int_identity: TestFFIBasic_test_int_identity.type
+    var test_uint_identity: TestFFIBasic_test_uint_identity.type
+    var test_long_identity: TestFFIBasic_test_long_identity.type
+    var test_float_identity: TestFFIBasic_test_float_identity.type
+    var test_double_identity: TestFFIBasic_test_double_identity.type
 
     fn __init__(out self):
         try:
@@ -58,9 +58,9 @@ struct TestFFIBasic(Copyable, Movable):
             )
 
     
-        self.TestFFIBasic_test_int_identity_func = TestFFIBasic_test_int_identity.load(self.lib)
-        self.TestFFIBasic_test_uint_identity_func = TestFFIBasic_test_uint_identity.load(self.lib)
-        self.TestFFIBasic_test_long_identity_func = TestFFIBasic_test_long_identity.load(self.lib)
-        self.TestFFIBasic_test_float_identity_func = TestFFIBasic_test_float_identity.load(self.lib)
-        self.TestFFIBasic_test_double_identity_func = TestFFIBasic_test_double_identity.load(self.lib)
+        self.test_int_identity = TestFFIBasic_test_int_identity.load(self.lib)
+        self.test_uint_identity = TestFFIBasic_test_uint_identity.load(self.lib)
+        self.test_long_identity = TestFFIBasic_test_long_identity.load(self.lib)
+        self.test_float_identity = TestFFIBasic_test_float_identity.load(self.lib)
+        self.test_double_identity = TestFFIBasic_test_double_identity.load(self.lib)
 

@@ -22,12 +22,16 @@ fn generic_test_outputs(
     output_dir: Path,
     skip_c_ast_no_just_code: Bool = False,
     extra_args: String = "",
+    header_filepath: String = "",
 ) raises -> ModuleInterface:
     # ) raises -> (ModuleInterface, MojoModuleInterface):
     logger.info("Starting " + test_name + " test")
 
     # Path to the test header file
     var test_file_path = test_dir / (test_name + ".h")
+    if header_filepath != "":
+        test_file_path = header_filepath
+
     if not test_file_path.exists():
         raise Error("Test file doesn't exist: " + String(test_file_path))
 
@@ -53,6 +57,7 @@ fn generic_test_outputs(
     if len(module_interface.nodes()[]) == 0:
         raise Error("No nodes found for file: " + test_name)
     # Save Mojo AST for debugging
+    (output_dir / "__init__.mojo").write_text(String(""))
     var mojo_ast_file_just_code = output_dir / (test_name + ".mojo")
     mojo_ast_file_just_code.write_text(
         module_interface.nodes()[][0].to_string(

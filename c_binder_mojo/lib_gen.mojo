@@ -68,7 +68,7 @@ struct ExternalFunctionBuilder(Copyable, Movable):
         self.mojo_name = String("{0}_{1}").format(lib_name, c_name)
         self.c_name = c_name
         self.meta_name = String("alias {1}_{0} = ExternalFunction[\'{0}\', {0}]").format(c_name, lib_name)
-        self.dl_field_name = String("{0}_{1}_func").format(lib_name, c_name)
+        self.dl_field_name = c_name # String("{0}_{1}_func").format(lib_name, c_name)
 
 
 fn _get_function_external_declarations(

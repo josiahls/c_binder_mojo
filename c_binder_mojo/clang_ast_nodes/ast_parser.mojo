@@ -95,9 +95,9 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
                 s += sep
 
             if just_tokens:
-                s += sep.join(entry[].tokens)
+                s += sep.join(entry.tokens)
             else:
-                s += entry[].original_line
+                s += entry.original_line
 
             s += indent
             idx += 1
@@ -173,11 +173,11 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
         var precise_location = String()
         for entry in self._ast_entries:
             if precise_location == "":
-                precise_location = entry[].precise_location
-            elif precise_location != entry[].precise_location:
-                precise_location = entry[].precise_location
+                precise_location = entry.precise_location
+            elif precise_location != entry.precise_location:
+                precise_location = entry.precise_location
                 s += "\n"
-            s += String(entry[].ast_name) + " "  # TODO(josiahls): add tokens
+            s += String(entry.ast_name) + " "  # TODO(josiahls): add tokens
         return s
 
     fn clear(mut self):
@@ -215,104 +215,104 @@ struct AstParser:
             expect_prev = False
 
             var ast_entry = AstEntry()
-            for token in line[].split(" "):
-                if token[].startswith("0x") and ast_entry.mem_address == "":
-                    ast_entry.mem_address = token[]
-                elif token[] == "parent" and ast_entry.full_location == "":
+            for token in line.split(" "):
+                if token.startswith("0x") and ast_entry.mem_address == "":
+                    ast_entry.mem_address = token
+                elif token == "parent" and ast_entry.full_location == "":
                     # Check if the next token is a valid address. This happens immendiately
                     # before the location section of the ast output.
                     expect_parent_address = True
-                elif expect_parent_address and token[].startswith("0x"):
+                elif expect_parent_address and token.startswith("0x"):
                     ast_entry.mem_address = (
-                        token[] + " -> " + ast_entry.mem_address
+                        token + " -> " + ast_entry.mem_address
                     )
                     expect_parent_address = False
-                elif token[] == "prev" and ast_entry.full_location == "":
+                elif token == "prev" and ast_entry.full_location == "":
                     expect_prev = True
                     # NOTE: I think that prev implies a redefinition. Not sure what the point is
                     # of this, but I know this will not compile in mojo. So we will skip it.
                     continue
-                elif expect_prev and token[].startswith("0x"):
+                elif expect_prev and token.startswith("0x"):
                     expect_prev = False
                     continue
-                elif token[].startswith("|-") and ast_entry.ast_name == "":
-                    ast_entry.ast_name = token[][2:]
+                elif token.startswith("|-") and ast_entry.ast_name == "":
+                    ast_entry.ast_name = token[2:]
                     level += 1
-                elif token[].startswith("`-") and ast_entry.ast_name == "":
-                    ast_entry.ast_name = token[][2:]
+                elif token.startswith("`-") and ast_entry.ast_name == "":
+                    ast_entry.ast_name = token[2:]
                     level += 1
                 elif (
-                    token[].startswith("TranslationUnitDecl")
+                    token.startswith("TranslationUnitDecl")
                     and ast_entry.ast_name == ""
                 ):
                     # TranslationUnitDecl is a special case which is located at the root
                     # of the ast output.
-                    ast_entry.ast_name = token[]
-                elif token[].startswith("<") and ast_entry.full_location == "":
-                    ast_entry.full_location = token[]
-                elif token[].endswith(
+                    ast_entry.ast_name = token
+                elif token.startswith("<") and ast_entry.full_location == "":
+                    ast_entry.full_location = token
+                elif token.endswith(
                     ">"
                 ) and not ast_entry.full_location.endswith(">"):
-                    ast_entry.full_location += " " + token[]
+                    ast_entry.full_location += " " + token
                 elif (
-                    token[].startswith("<<invalid")
+                    token.startswith("<<invalid")
                     and ast_entry.full_location == ""
                 ) or (
-                    token[].endswith("sloc>>")
+                    token.endswith("sloc>>")
                     and not ast_entry.full_location.endswith(">>")
                 ):
                     ast_entry.full_location = "invalid"
                 elif (
-                    token[].startswith("<invalid")
+                    token.startswith("<invalid")
                     and ast_entry.precise_location == ""
                 ) or (
-                    token[].endswith("sloc>")
+                    token.endswith("sloc>")
                     and not ast_entry.precise_location.endswith(">")
                 ):
                     ast_entry.precise_location = "invalid"
                 elif (
-                    token[].startswith("col:")
+                    token.startswith("col:")
                     and ast_entry.precise_location == ""
                 ):
-                    ast_entry.precise_location = token[]
+                    ast_entry.precise_location = token
                 elif (
-                    token[].startswith("line:")
+                    token.startswith("line:")
                     and ast_entry.precise_location == ""
                 ):
-                    ast_entry.precise_location = token[]
+                    ast_entry.precise_location = token
                 elif (
-                    token[].startswith("/")
-                    and ":" in token[]
+                    token.startswith("/")
+                    and ":" in token
                     and ast_entry.precise_location == ""
                 ):
-                    ast_entry.precise_location = token[]
+                    ast_entry.precise_location = token
                 elif (
-                    token[] == ""
+                    token == ""
                     and ast_entry.ast_name == ""
                     and consequetive_space
                 ):
                     level += 1
                     consequetive_space = False
                 elif (
-                    token[] == ""
+                    token == ""
                     and ast_entry.ast_name == ""
                     and not consequetive_space
                 ):
                     consequetive_space = True
-                elif token[] == "|" and ast_entry.ast_name == "":
+                elif token == "|" and ast_entry.ast_name == "":
                     level += 1
                 else:
-                    ast_entry.tokens.append(token[])
+                    ast_entry.tokens.append(token)
 
                 # Cancel checking for consequtive spaces if the next token
                 # isn't an empty space.
-                if consequetive_space and token[] != "":
+                if consequetive_space and token != "":
                     consequetive_space = False
 
-            ast_entry.original_line = line[]
+            ast_entry.original_line = line
             ast_entry.level = level
             if ast_entry.ast_name == "":
-                raise Error("Could not find name for line: " + line[])
+                raise Error("Could not find name for line: " + line)
 
             entries.append(ast_entry^)
 

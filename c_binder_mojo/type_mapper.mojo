@@ -277,8 +277,8 @@ struct TypeMapper:
             return numeric_type
 
         for custom_type in get_global_type_mapper()[].custom_types:
-            if _type_name == custom_type[]:
-                return custom_type[]
+            if _type_name == custom_type:
+                return custom_type
 
         # For struct types, we'll need to handle them differently
         # This is a placeholder for now
@@ -348,6 +348,21 @@ struct TypeMapper:
         return 'unknown'
 
     @staticmethod
+    fn convert_type_to_dtype(type_name: String) -> String:
+        """Converts a Mojo type to a DType.
+        
+        Args:
+            type_name: The C type to convert.
+        """
+
+        if type_name == "Float32":
+            return "DType.float32"
+        elif type_name == "Float64":
+            return "DType.float64"
+        else:
+            return type_name
+
+    @staticmethod
     fn get_mojo_type(type_name: String) -> String:
         """Gets the complete Mojo type mapping for a C type.
 
@@ -383,6 +398,7 @@ struct TypeMapper:
                 mojo_type = "UnsafePointer[" + mojo_type + "]"
 
         if is_vector:
+            mojo_type = Self.convert_type_to_dtype(mojo_type)
             mojo_type = "SIMD[" + mojo_type + ", " + _vector_size + "]"
 
         return mojo_type

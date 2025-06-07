@@ -72,16 +72,16 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
     fn __init__(out self, ast_entries: AstEntries):
         self._paragraph_comments = List[ParagraphComment]()
         for ast_entry in ast_entries:
-            if ast_entry[].ast_name == "ParagraphComment":
-                self._paragraph_comments.append(ast_entry[])
-            elif ast_entry[].ast_name == "TextComment":
-                self._paragraph_comments[-1].add_ast_entry(ast_entry[])
-            elif ast_entry[].ast_name == "FullComment":
+            if ast_entry.ast_name == "ParagraphComment":
+                self._paragraph_comments.append(ast_entry)
+            elif ast_entry.ast_name == "TextComment":
+                self._paragraph_comments[-1].add_ast_entry(ast_entry)
+            elif ast_entry.ast_name == "FullComment":
                 # Skip this since this a single FullComment node should only ever have 1 FullComment ast
                 # entry.
                 pass
             else:
-                print("Unknown ast entry: " + ast_entry[].original_line)
+                print("Unknown ast entry: " + ast_entry.original_line)
 
     fn __str__(self) -> String:
         return String("\n").join(self._paragraph_comments)

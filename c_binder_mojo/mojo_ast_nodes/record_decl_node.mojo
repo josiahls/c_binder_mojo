@@ -84,7 +84,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
                     + String(len(entry.tokens))
                 )
                 for token in entry.tokens:
-                    print("\ttoken: " + token[])
+                    print("\ttoken: " + token)
 
     fn __str__(self) -> String:
         if self._name == "":
@@ -164,7 +164,7 @@ struct RecordDeclNode(NodeAstLike):
         original_name = String()
 
         for child_idx in self._indicies[].child_idxs:
-            child = module_interface.nodes()[][child_idx[]]
+            child = module_interface.nodes()[][child_idx]
 
             if child.node[].isa[Self]():
                 original_name = child.node[][Self]._grammar._name.copy()
@@ -260,7 +260,7 @@ struct RecordDeclNode(NodeAstLike):
 
         has_fields = False
         for child_idx in self._indicies[].child_idxs:
-            child = module_interface.nodes()[][child_idx[]]
+            child = module_interface.nodes()[][child_idx]
 
             if child.node[].isa[Self]():
                 s = child.to_string(just_code, module_interface, 0) + "\n" + s

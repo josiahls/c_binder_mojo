@@ -421,7 +421,7 @@ fn make_tree(
         1, len(entries) // 10
     )  # Log progress at 10% intervals
 
-    for ast_entry in entries:
+    for ref ast_entry in entries:
         # Log progress periodically
         if token_count % log_interval == 0 or token_count == len(entries) - 1:
             logger.info(
@@ -435,7 +435,7 @@ fn make_tree(
             )
 
         current_idx = get_current_node(
-            ast_entry[],
+            ast_entry,
             current_idx,
             module_interface,
             inner_logger,
@@ -447,12 +447,12 @@ fn make_tree(
     if validate:
         incomplete_nodes = List[AstNode]()
         for node in nodes[]:
-            if node[].node_state() != NodeState.COMPLETED:
-                incomplete_nodes.append(node[])
+            if node.node_state() != NodeState.COMPLETED:
+                incomplete_nodes.append(node)
         if len(incomplete_nodes) > 0:
             var s = String("\t")
             for node in incomplete_nodes:
-                s += node[].name(include_sig=True) + "\n\t"
+                s += node.name(include_sig=True) + "\n\t"
             raise Error("Incomplete mojo ast nodes: \n" + s)
 
     # Log tree construction statistics

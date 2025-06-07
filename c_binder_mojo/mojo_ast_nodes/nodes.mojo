@@ -32,7 +32,7 @@ fn string_children(
     """
     var s = String()
     for child_idx in node.indicies().child_idxs:
-        var child = module_interface.nodes()[][child_idx[]]
+        var child = module_interface.nodes()[][child_idx]
         try:
             s += child.to_string(just_code, module_interface, indent_level)
         except Exception:

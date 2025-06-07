@@ -45,23 +45,23 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         # A field should only have 1 entry
 
         for entry in ast_entries:
-            if entry[].ast_name == "FieldDecl":
-                for token in entry[].tokens:
+            if entry.ast_name == "FieldDecl":
+                for token in entry.tokens:
                     if self._field_name == "":
-                        self._field_name = token[]
+                        self._field_name = token
                     elif self._field_type == "":
-                        self._field_type = token[]
+                        self._field_type = token
                     else:
-                        self._field_type += " " + token[]
-            elif entry[].ast_name == "ConstantExpr":
+                        self._field_type += " " + token
+            elif entry.ast_name == "ConstantExpr":
                 self._is_const = True
-            elif entry[].ast_name == "value:" and self._is_const:
+            elif entry.ast_name == "value:" and self._is_const:
                 idx = 0
-                for token in entry[].tokens:
+                for token in entry.tokens:
                     if idx > 1:
-                        self._value += " " + token[]
+                        self._value += " " + token
                     elif idx == 1:
-                        self._value += token[]
+                        self._value += token
                     idx += 1
 
         if "struct " in self._field_type:

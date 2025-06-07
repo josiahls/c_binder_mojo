@@ -37,8 +37,8 @@ fn generic_test_outputs(
     ast_entries.write_text(String("\n").join(entries))
 
     var raw_ast = output_dir / (test_name + ".raw_ast")
-    for entry in entries:
-        entry[].str_just_original_line = True
+    for ref entry in entries:
+        entry.str_just_original_line = True
     raw_ast.write_text(String("\n").join(entries))
 
     # Generate AST

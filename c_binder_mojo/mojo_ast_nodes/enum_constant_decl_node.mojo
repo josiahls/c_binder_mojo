@@ -42,25 +42,25 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         # A field should only have 1 entry
 
         for entry in ast_entries:
-            if entry[].ast_name == "EnumConstantDecl":
-                for token in entry[].tokens:
+            if entry.ast_name == "EnumConstantDecl":
+                for token in entry.tokens:
                     if self._field_name == "":
-                        self._field_name = token[]
+                        self._field_name = token
                     elif self._field_type == "":
-                        self._field_type = token[]
+                        self._field_type = token
                     else:
-                        self._field_type += " " + token[]
-            elif entry[].ast_name == "ConstantExpr":
+                        self._field_type += " " + token
+            elif entry.ast_name == "ConstantExpr":
                 pass
-            elif entry[].ast_name == "value:":
-                if len(entry[].tokens) > 2:
+            elif entry.ast_name == "value:":
+                if len(entry.tokens) > 2:
                     print(
                         "Error: Enum constant decl has more than one token: "
-                        + String(entry[])
+                        + String(entry)
                     )
 
-                if len(entry[].tokens) == 2:
-                    self._value = entry[].tokens[1]
+                if len(entry.tokens) == 2:
+                    self._value = entry.tokens[1]
 
     fn __str__(self) -> String:
         var mojo_type = TypeMapper.get_mojo_type(self._field_type)

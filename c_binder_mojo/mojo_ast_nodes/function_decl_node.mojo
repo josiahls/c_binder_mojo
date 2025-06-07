@@ -63,40 +63,40 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
         self._return_type = String()
         self._parm_vars = List[ParmVarDecl]()
         for entry in ast_entries:
-            if entry[].ast_name == "ParmVarDecl":
-                if len(entry[].tokens) >= 2:
+            if entry.ast_name == "ParmVarDecl":
+                if len(entry.tokens) >= 2:
                     self._parm_vars.append(
-                        ParmVarDecl(entry[].tokens[0], entry[].tokens[1])
+                        ParmVarDecl(entry.tokens[0], entry.tokens[1])
                     )
-                elif len(entry[].tokens) == 1:
-                    self._parm_vars.append(ParmVarDecl(entry[].tokens[0]))
+                elif len(entry.tokens) == 1:
+                    self._parm_vars.append(ParmVarDecl(entry.tokens[0]))
                 else:
                     print(
                         "ParmVarDecl: Invalid grammar (len(tokens) == 0): "
-                        + String(entry[])
+                        + String(entry)
                     )
-            elif entry[].ast_name == "FunctionDecl":
-                if len(entry[].tokens) >= 2:
-                    self._name = entry[].tokens[0]
-                    for token in entry[].tokens[1:]:
+            elif entry.ast_name == "FunctionDecl":
+                if len(entry.tokens) >= 2:
+                    self._name = entry.tokens[0]
+                    for token in entry.tokens[1:]:
                         # Tokens related to params will be handled via the ParmVarDecls.
-                        if token[].startswith("("):
+                        if token.startswith("("):
                             break
 
-                        self._return_type += token[] + " "
+                        self._return_type += token + " "
                     else:
                         print(
                             "FunctionDecl: Invalid grammar (no params): "
-                            + String(entry[])
+                            + String(entry)
                         )
-            elif entry[].ast_name == "NoThrowAttr":
+            elif entry.ast_name == "NoThrowAttr":
                 # NOTE: not sure how to handle this or if we even have to.
                 pass
             else:
                 print(
                     "FunctionDecl: Invalid grammar (not a ParmVarDecl or"
                     " FunctionDecl): "
-                    + String(entry[])
+                    + String(entry)
                 )
 
     fn __str__(self) -> String:

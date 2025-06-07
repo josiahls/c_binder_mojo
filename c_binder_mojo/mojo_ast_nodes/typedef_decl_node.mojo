@@ -48,13 +48,13 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             self._name = ast_entries[0].tokens[starting_idx]
 
             for entry in ast_entries:
-                if entry[].ast_name == "AnonymousRecord":
-                    self._type = entry[].tokens[0]
+                if entry.ast_name == "AnonymousRecord":
+                    self._type = entry.tokens[0]
                     break
 
             if self._type == "":
                 for token in ast_entries[0].tokens[starting_idx + 1 :]:
-                    s = token[].replace("'", "")
+                    s = token.replace("'", "")
                     if s == "struct":
                         # Skip struct keyword.
                         continue
@@ -142,12 +142,12 @@ struct TypedefDeclNode(NodeAstLike):
     ) -> Bool:
         mem_addesss = ast_entry.mem_address
         for node in module_interface.nodes()[]:
-            if node[].node[].isa[RecordDeclNode]():
+            if node.node[].isa[RecordDeclNode]():
                 if (
-                    node[].node[][RecordDeclNode]._record_mem_location
+                    node.node[][RecordDeclNode]._record_mem_location
                     == mem_addesss
                 ):
-                    struct_name = node[].node[][RecordDeclNode]._grammar._name
+                    struct_name = node.node[][RecordDeclNode]._grammar._name
                     new_entry = AstEntry()
                     new_entry.ast_name = "AnonymousRecord"
                     new_entry.tokens = [struct_name]

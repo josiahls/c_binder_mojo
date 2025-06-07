@@ -1,0 +1,32 @@
+TranslationUnitDecl 0x4e3508 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x4e3d30 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x4e3ad0 '__int128'
+|-TypedefDecl 0x4e3da0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x4e3af0 'unsigned __int128'
+|-TypedefDecl 0x4e40a8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+| `-RecordType 0x4e3e80 'struct __NSConstantString_tag'
+|   `-Record 0x4e3df8 '__NSConstantString_tag'
+|-TypedefDecl 0x4e4140 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x4e4100 'char *'
+|   `-BuiltinType 0x4e35b0 'char'
+|-TypedefDecl 0x4e4438 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+| `-ConstantArrayType 0x4e43e0 'struct __va_list_tag[1]' 1 
+|   `-RecordType 0x4e4220 'struct __va_list_tag'
+|     `-Record 0x4e4198 '__va_list_tag'
+|-FunctionDecl 0x53b010 </home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_bindings/test_ffi_basic.h:8:1, col:32> col:5 test_int_identity 'int (int)'
+| |-ParmVarDecl 0x53af40 <col:23, col:27> col:27 value 'int'
+| `-FullComment 0x53b8d0 <line:7:3, col:27>
+|   `-ParagraphComment 0x53b8a0 <col:3, col:27>
+|     `-TextComment 0x53b870 <col:3, col:27> Text=" Test basic integer types"
+|-FunctionDecl 0x53b1e0 <line:9:1, col:51> col:14 test_uint_identity 'unsigned int (unsigned int)'
+| `-ParmVarDecl 0x53b118 <col:33, col:46> col:46 value 'unsigned int'
+|-FunctionDecl 0x53b370 <line:10:1, col:35> col:6 test_long_identity 'long (long)'
+| `-ParmVarDecl 0x53b2a0 <col:25, col:30> col:30 value 'long'
+|-FunctionDecl 0x53b530 <line:13:1, col:38> col:7 test_float_identity 'float (float)'
+| |-ParmVarDecl 0x53b460 <col:27, col:33> col:33 value 'float'
+| `-FullComment 0x53b9a0 <line:12:3, col:36>
+|   `-ParagraphComment 0x53b970 <col:3, col:36>
+|     `-TextComment 0x53b940 <col:3, col:36> Text=" Test basic floating point types  "
+`-FunctionDecl 0x53b6c0 <line:14:1, col:41> col:8 test_double_identity 'double (double)'
+  `-ParmVarDecl 0x53b5f0 <col:29, col:36> col:36 value 'double'
+C_BINDER_MOJO_END_FILE

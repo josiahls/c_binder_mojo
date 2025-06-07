@@ -66,7 +66,7 @@ struct Grammar(Copyable, Movable, Stringable, Writable):
             if entry.ast_name == "ParmVarDecl":
                 if len(entry.tokens) >= 2:
                     self._parm_vars.append(
-                        ParmVarDecl(entry.tokens[0], entry.tokens[1])
+                        ParmVarDecl(entry.tokens[0], String(' ').join(entry.tokens[1:]))
                     )
                 elif len(entry.tokens) == 1:
                     self._parm_vars.append(ParmVarDecl(entry.tokens[0]))

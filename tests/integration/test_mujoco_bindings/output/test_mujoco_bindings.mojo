@@ -6,8 +6,8 @@ alias __int128_t = Int128
 
 alias __uint128_t = UInt128
 
-alias __NSConstantString =  __NSConstantString_tag# Forward declaration of 	pass
-
+alias __NSConstantString = __NSConstantString_tag
+# Forward declaration of 	pass
 
 
 alias __builtin_ms_va_list = UnsafePointer[Int8]
@@ -15,8 +15,8 @@ alias __builtin_ms_va_list = UnsafePointer[Int8]
 
 alias __builtin_va_list = 
 # (placeholder) | `-ConstantArrayType 0x4e4270 'struct __va_list_tag[1]' 1 
- __va_list_tag# Forward declaration of 	pass
-
+__va_list_tag
+# Forward declaration of 	pass
 
 
 alias size_t = UInt64
@@ -38,7 +38,7 @@ struct _Anonymous_line_59_9:
 
 alias div_t = 
 # (placeholder) | `-ElaboratedType 0x53b140 'struct div_t' sugar
- div_t 
+
 struct _Anonymous_line_67_9:
 	var quot: Int64
 
@@ -47,7 +47,7 @@ struct _Anonymous_line_67_9:
 
 alias ldiv_t = 
 # (placeholder) | `-ElaboratedType 0x53b380 'struct ldiv_t' sugar
- ldiv_t 
+
 struct _Anonymous_line_77_23:
 	var quot: Int128
 
@@ -56,7 +56,7 @@ struct _Anonymous_line_77_23:
 
 alias lldiv_t = 
 # (placeholder) | `-ElaboratedType 0x53b5c0 'struct lldiv_t' sugar
- lldiv_t 
+
 
 # (placeholder) |-FunctionDecl 0x53b7a8 <line:98:1, /usr/include/x86_64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:98:15 __ctype_get_mb_cur_max 'size_t (void)' extern
 
@@ -403,7 +403,7 @@ struct _Anonymous_col_24:
 
 alias __fsid_t = 
 # (placeholder) | `-ElaboratedType 0x58c120 'struct __fsid_t' sugar
- __fsid_t 
+
 
 alias __clock_t = Int64
 
@@ -509,7 +509,7 @@ alias fsid_t =
 # (placeholder) |   |-Typedef 0x58c178 '__fsid_t'
 
 # (placeholder) |   `-ElaboratedType 0x58c120 'struct __fsid_t' sugar
- __fsid_t 
+
 
 alias loff_t = 
 # (placeholder) | `-TypedefType 0x5941d0 '__loff_t' sugar
@@ -1054,7 +1054,7 @@ struct _Anonymous_line_5_9:
 
 alias __sigset_t = 
 # (placeholder) | `-ElaboratedType 0x5a5150 'struct __sigset_t' sugar
- __sigset_t 
+
 
 alias sigset_t = 
 # (placeholder) | `-TypedefType 0x5a5220 '__sigset_t' sugar
@@ -1062,7 +1062,7 @@ alias sigset_t =
 # (placeholder) |   |-Typedef 0x5a51a8 '__sigset_t'
 
 # (placeholder) |   `-ElaboratedType 0x5a5150 'struct __sigset_t' sugar
- __sigset_t 
+
 struct timeval:
 	var tv_sec: __time_t
 
@@ -1087,7 +1087,7 @@ struct _Anonymous_line_59_9:
 
 alias fd_set = 
 # (placeholder) | `-ElaboratedType 0x5af540 'struct fd_set' sugar
- fd_set 
+
 
 alias fd_mask = 
 # (placeholder) | `-TypedefType 0x5af300 '__fd_mask' sugar
@@ -1158,7 +1158,7 @@ struct definition:
 
 alias __atomic_wide_counter = 
 # (placeholder) | `-ElaboratedType 0x5b2740 'union __atomic_wide_counter' sugar
- __atomic_wide_counter 
+
 struct __pthread_internal_list:
 	var __prev: UnsafePointer[__pthread_internal_list]
 
@@ -1167,7 +1167,7 @@ struct __pthread_internal_list:
 
 alias __pthread_list_t = 
 # (placeholder) | `-ElaboratedType 0x5b2a30 'struct __pthread_internal_list' sugar
- __pthread_internal_list __pthread_internal_list
+__pthread_internal_list
 # TypedefDeclNode Unhandled tokens: __pthread_internal_list':'struct 
 struct __pthread_internal_slist:
 	var __next: UnsafePointer[__pthread_internal_slist]
@@ -1175,7 +1175,7 @@ struct __pthread_internal_slist:
 
 alias __pthread_slist_t = 
 # (placeholder) | `-ElaboratedType 0x5b2ca0 'struct __pthread_internal_slist' sugar
- __pthread_internal_slist __pthread_internal_slist
+__pthread_internal_slist
 # TypedefDeclNode Unhandled tokens: __pthread_internal_slist':'struct 
 struct __pthread_mutex_s:
 	var __lock: Int32
@@ -1244,7 +1244,7 @@ struct _Anonymous_line_108_9:
 
 alias __once_flag = 
 # (placeholder) | `-ElaboratedType 0x5b9340 'struct __once_flag' sugar
- __once_flag 
+
 
 alias pthread_t = UInt64
 struct definition:
@@ -1255,7 +1255,7 @@ struct definition:
 
 alias pthread_mutexattr_t = 
 # (placeholder) | `-ElaboratedType 0x5b9670 'union pthread_mutexattr_t' sugar
- pthread_mutexattr_t 
+
 struct definition:
 	var __size: SIMD[Int8.dtype, 4]
 
@@ -1264,7 +1264,7 @@ struct definition:
 
 alias pthread_condattr_t = 
 # (placeholder) | `-ElaboratedType 0x5bc250 'union pthread_condattr_t' sugar
- pthread_condattr_t 
+
 
 alias pthread_key_t = UInt32
 
@@ -1277,7 +1277,7 @@ struct pthread_attr_t:
 
 alias pthread_attr_t = 
 # (placeholder) | `-ElaboratedType 0x5bc5f0 'union pthread_attr_t' sugar
- pthread_attr_t pthread_attr_t
+pthread_attr_t
 # TypedefDeclNode Unhandled tokens: pthread_attr_t':'union 
 struct definition:
 	var __data: __pthread_mutex_s
@@ -1289,7 +1289,7 @@ struct definition:
 
 alias pthread_mutex_t = 
 # (placeholder) | `-ElaboratedType 0x5bca20 'union pthread_mutex_t' sugar
- pthread_mutex_t 
+
 struct definition:
 	var __data: __pthread_cond_s
 
@@ -1300,7 +1300,7 @@ struct definition:
 
 alias pthread_cond_t = 
 # (placeholder) | `-ElaboratedType 0x5bce10 'union pthread_cond_t' sugar
- pthread_cond_t 
+
 struct definition:
 	var __data: __pthread_rwlock_arch_t
 
@@ -1311,7 +1311,7 @@ struct definition:
 
 alias pthread_rwlock_t = 
 # (placeholder) | `-ElaboratedType 0x5c1210 'union pthread_rwlock_t' sugar
- pthread_rwlock_t 
+
 struct definition:
 	var __size: SIMD[Int8.dtype, 8]
 
@@ -1320,7 +1320,7 @@ struct definition:
 
 alias pthread_rwlockattr_t = 
 # (placeholder) | `-ElaboratedType 0x5c14d0 'union pthread_rwlockattr_t' sugar
- pthread_rwlockattr_t 
+
 
 alias pthread_spinlock_t = 
 # (placeholder) | `-QualType 0x4e34a4 'volatile int' volatile
@@ -1333,7 +1333,7 @@ struct definition:
 
 alias pthread_barrier_t = 
 # (placeholder) | `-ElaboratedType 0x5c1800 'union pthread_barrier_t' sugar
- pthread_barrier_t 
+
 struct definition:
 	var __size: SIMD[Int8.dtype, 4]
 
@@ -1342,7 +1342,7 @@ struct definition:
 
 alias pthread_barrierattr_t = 
 # (placeholder) | `-ElaboratedType 0x5c1a90 'union pthread_barrierattr_t' sugar
- pthread_barrierattr_t 
+
 
 # (placeholder) |-FunctionDecl 0x5c1c20 </usr/include/stdlib.h:402:1, /usr/include/x86_64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:402:17 random 'long (void)' extern
 
@@ -7433,7 +7433,7 @@ struct _Anonymous_line_19_9:
 
 alias max_align_t = 
 # (placeholder) | `-ElaboratedType 0x6610b0 'struct max_align_t' sugar
- max_align_t 
+
 
 alias uint8_t = 
 # (placeholder) | `-TypedefType 0x56b590 '__uint8_t' sugar
@@ -10102,7 +10102,7 @@ struct mjLROpt_:
 
 alias mjLROpt = 
 # (placeholder) | `-ElaboratedType 0x68e720 'struct mjLROpt_' sugar
- mjLROpt_ mjLROpt_
+mjLROpt_
 # TypedefDeclNode Unhandled tokens: mjLROpt_':'struct 
 struct mjVFS_:
 	# (placeholder) | |-FullComment 0x7e5b60 <line:429:3, col:100>
@@ -10116,7 +10116,7 @@ struct mjVFS_:
 
 alias mjVFS = 
 # (placeholder) | `-ElaboratedType 0x68e960 'struct mjVFS_' sugar
- mjVFS_ mjVFS_
+mjVFS_
 # TypedefDeclNode Unhandled tokens: mjVFS_':'struct 
 struct mjOption_:
 	# (placeholder) | |-FullComment 0x7e5d20 <line:436:3, col:100>
@@ -10186,7 +10186,7 @@ struct mjOption_:
 
 alias mjOption = 
 # (placeholder) | `-ElaboratedType 0x691cd0 'struct mjOption_' sugar
- mjOption_ mjOption_
+mjOption_
 # TypedefDeclNode Unhandled tokens: mjOption_':'struct 
 struct _mjVisual___Anonymous_line_552_3:
 	var fog: SIMD[Float32.dtype, 4]
@@ -10374,7 +10374,7 @@ struct mjVisual_:
 
 alias mjVisual = 
 # (placeholder) | `-ElaboratedType 0x697800 'struct mjVisual_' sugar
- mjVisual_ mjVisual_
+mjVisual_
 # TypedefDeclNode Unhandled tokens: mjVisual_':'struct 
 struct mjStatistic_:
 	# (placeholder) | |-FullComment 0x7eb440 <line:583:3, col:100>
@@ -10396,7 +10396,7 @@ struct mjStatistic_:
 
 alias mjStatistic = 
 # (placeholder) | `-ElaboratedType 0x697cd0 'struct mjStatistic_' sugar
- mjStatistic_ mjStatistic_
+mjStatistic_
 # TypedefDeclNode Unhandled tokens: mjStatistic_':'struct 
 struct mjModel_:
 	# (placeholder) | |-FullComment 0x7eb920 <line:595:3, col:100>
@@ -11388,7 +11388,7 @@ struct mjModel_:
 
 alias mjModel = 
 # (placeholder) | `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
- mjModel_ mjModel_
+mjModel_
 # TypedefDeclNode Unhandled tokens: mjModel_':'struct 
 
 # (placeholder) |-EnumDecl 0x6b9d08 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjthread.h:20:9, line:24:1> line:20:14 mjtTaskStatus_
@@ -11459,7 +11459,7 @@ struct mjThreadPool_:
 
 alias mjThreadPool = 
 # (placeholder) | `-ElaboratedType 0x6ba3f0 'struct mjThreadPool_' sugar
- mjThreadPool_ mjThreadPool_
+mjThreadPool_
 # TypedefDeclNode Unhandled tokens: mjThreadPool_':'struct 
 struct mjTask_:
 	var func: mjfTask
@@ -11471,7 +11471,7 @@ struct mjTask_:
 
 alias mjTask = 
 # (placeholder) | `-ElaboratedType 0x6b4530 'struct mjTask_' sugar
- mjTask_ mjTask_
+mjTask_
 # TypedefDeclNode Unhandled tokens: mjTask_':'struct 
 
 # (placeholder) |-EnumDecl 0x6b4638 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjdata.h:27:9, line:51:1> line:27:14 mjtState_
@@ -12130,7 +12130,7 @@ struct mjContact_:
 
 alias mjContact = 
 # (placeholder) | `-ElaboratedType 0x6c2370 'struct mjContact_' sugar
- mjContact_ mjContact_
+mjContact_
 # TypedefDeclNode Unhandled tokens: mjContact_':'struct 
 struct mjWarningStat_:
 	# (placeholder) | |-FullComment 0x810900 <line:133:3, col:100>
@@ -12146,7 +12146,7 @@ struct mjWarningStat_:
 
 alias mjWarningStat = 
 # (placeholder) | `-ElaboratedType 0x6c2640 'struct mjWarningStat_' sugar
- mjWarningStat_ mjWarningStat_
+mjWarningStat_
 # TypedefDeclNode Unhandled tokens: mjWarningStat_':'struct 
 struct mjTimerStat_:
 	var duration: mjtNum
@@ -12156,7 +12156,7 @@ struct mjTimerStat_:
 
 alias mjTimerStat = 
 # (placeholder) | `-ElaboratedType 0x6c3080 'struct mjTimerStat_' sugar
- mjTimerStat_ mjTimerStat_
+mjTimerStat_
 # TypedefDeclNode Unhandled tokens: mjTimerStat_':'struct 
 struct mjSolverStat_:
 	var improvement: mjtNum
@@ -12176,7 +12176,7 @@ struct mjSolverStat_:
 
 alias mjSolverStat = 
 # (placeholder) | `-ElaboratedType 0x6c35f0 'struct mjSolverStat_' sugar
- mjSolverStat_ mjSolverStat_
+mjSolverStat_
 # TypedefDeclNode Unhandled tokens: mjSolverStat_':'struct 
 struct mjData_:
 	# (placeholder) | |-FullComment 0x8112c0 <line:161:3, col:100>
@@ -12540,7 +12540,7 @@ struct mjData_:
 
 alias mjData = 
 # (placeholder) | `-ElaboratedType 0x6d0810 'struct mjData_' sugar
- mjData_ mjData_
+mjData_
 # TypedefDeclNode Unhandled tokens: mjData_':'struct 
 
 alias mjfGeneric = UnsafePointer[
@@ -12555,14 +12555,14 @@ NoneTypeUnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
- mjModel_ mjModel_]
+mjModel_]
 UnsafePointer[
 # (placeholder) | |       `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |         |-Typedef 0x6d0860 'mjData'
 
 # (placeholder) | |         `-ElaboratedType 0x6d0810 'struct mjData_' sugar
- mjData_ mjData_]
+mjData_]
 ]
 
 # (placeholder) | `-FullComment 0x81a330 <line:454:3, col:26>
@@ -12585,14 +12585,14 @@ Int32UnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
- mjModel_ mjModel_]
+mjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
 
 # (placeholder) | |     |   `-ElaboratedType 0x6d0810 'struct mjData_' sugar
- mjData_ mjData_]
+mjData_]
 Int32Int32]
 
 # (placeholder) | `-FullComment 0x81a400 <line:457:3, col:41>
@@ -12615,14 +12615,14 @@ NoneTypeUnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
- mjModel_ mjModel_]
+mjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
 
 # (placeholder) | |     |   `-ElaboratedType 0x6d0810 'struct mjData_' sugar
- mjData_ mjData_]
+mjData_]
 Int32]
 
 # (placeholder) | `-FullComment 0x81a4d0 <line:460:3, col:20>
@@ -12666,7 +12666,7 @@ Float64UnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
- mjModel_ mjModel_]
+mjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
 
@@ -12675,7 +12675,7 @@ UnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6d0860 'mjData'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6d0810 'struct mjData_' sugar
- mjData_ mjData_]
+mjData_]
 Int32]
 
 # (placeholder) | `-FullComment 0x81a670 <line:466:3, col:32>
@@ -12698,7 +12698,7 @@ Int32UnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
- mjModel_ mjModel_]
+mjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
 
@@ -12707,14 +12707,14 @@ UnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6d0860 'mjData'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6d0810 'struct mjData_' sugar
- mjData_ mjData_]
+mjData_]
 UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6cef00 'mjContact' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6c23c0 'mjContact'
 
 # (placeholder) | |     |   `-ElaboratedType 0x6c2370 'struct mjContact_' sugar
- mjContact_ mjContact_]
+mjContact_]
 Int32Int32
 # (placeholder) | |     `-TypedefType 0x68e310 'mjtNum' sugar
 
@@ -13677,7 +13677,7 @@ struct mjvPerturb_:
 
 alias mjvPerturb = 
 # (placeholder) | `-ElaboratedType 0x6e8f40 'struct mjvPerturb_' sugar
- mjvPerturb_ mjvPerturb_
+mjvPerturb_
 # TypedefDeclNode Unhandled tokens: mjvPerturb_':'struct 
 struct mjvCamera_:
 	# (placeholder) | |-FullComment 0x81fdc0 <line:182:3, col:100>
@@ -13705,7 +13705,7 @@ struct mjvCamera_:
 
 alias mjvCamera = 
 # (placeholder) | `-ElaboratedType 0x6e9650 'struct mjvCamera_' sugar
- mjvCamera_ mjvCamera_
+mjvCamera_
 # TypedefDeclNode Unhandled tokens: mjvCamera_':'struct 
 struct mjvGLCamera_:
 	# (placeholder) | |-FullComment 0x820510 <line:202:3, col:100>
@@ -13737,7 +13737,7 @@ struct mjvGLCamera_:
 
 alias mjvGLCamera = 
 # (placeholder) | `-ElaboratedType 0x6e9f20 'struct mjvGLCamera_' sugar
- mjvGLCamera_ mjvGLCamera_
+mjvGLCamera_
 # TypedefDeclNode Unhandled tokens: mjvGLCamera_':'struct 
 struct mjvGeom_:
 	# (placeholder) | |-FullComment 0x820e00 <line:224:3, col:100>
@@ -13789,7 +13789,7 @@ struct mjvGeom_:
 
 alias mjvGeom = 
 # (placeholder) | `-ElaboratedType 0x6ebcd0 'struct mjvGeom_' sugar
- mjvGeom_ mjvGeom_
+mjvGeom_
 # TypedefDeclNode Unhandled tokens: mjvGeom_':'struct 
 struct mjvLight_:
 	# (placeholder) | |-FullComment 0x821f20 <line:259:3, col:100>
@@ -13825,7 +13825,7 @@ struct mjvLight_:
 
 alias mjvLight = 
 # (placeholder) | `-ElaboratedType 0x6ec720 'struct mjvLight_' sugar
- mjvLight_ mjvLight_
+mjvLight_
 # TypedefDeclNode Unhandled tokens: mjvLight_':'struct 
 struct mjvOption_:
 	# (placeholder) | |-FullComment 0x8229b0 <line:278:3, col:100>
@@ -13861,7 +13861,7 @@ struct mjvOption_:
 
 alias mjvOption = 
 # (placeholder) | `-ElaboratedType 0x6ed310 'struct mjvOption_' sugar
- mjvOption_ mjvOption_
+mjvOption_
 # TypedefDeclNode Unhandled tokens: mjvOption_':'struct 
 struct mjvScene_:
 	# (placeholder) | |-FullComment 0x823440 <line:297:3, col:100>
@@ -13949,7 +13949,7 @@ struct mjvScene_:
 
 alias mjvScene = 
 # (placeholder) | `-ElaboratedType 0x6f0c50 'struct mjvScene_' sugar
- mjvScene_ mjvScene_
+mjvScene_
 # TypedefDeclNode Unhandled tokens: mjvScene_':'struct 
 struct mjvFigure_:
 	# (placeholder) | |-FullComment 0x8253f0 <line:357:3, col:100>
@@ -14027,7 +14027,7 @@ struct mjvFigure_:
 
 alias mjvFigure = 
 # (placeholder) | `-ElaboratedType 0x6f3900 'struct mjvFigure_' sugar
- mjvFigure_ mjvFigure_
+mjvFigure_
 # TypedefDeclNode Unhandled tokens: mjvFigure_':'struct 
 struct _mjvSceneState___Anonymous_line_634_3:
 	# (placeholder) | | |-FullComment 0x827480 <line:633:5, col:61>
@@ -14539,7 +14539,7 @@ struct mjvSceneState_:
 
 alias mjvSceneState = 
 # (placeholder) | `-ElaboratedType 0x6fb270 'struct mjvSceneState_' sugar
- mjvSceneState_ mjvSceneState_
+mjvSceneState_
 # TypedefDeclNode Unhandled tokens: mjvSceneState_':'struct 
 # Forward declaration of _mjResource__mjpResourceProvider	pass
 
@@ -14562,7 +14562,7 @@ struct mjResource_:
 
 alias mjResource = 
 # (placeholder) | `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
- mjResource_ mjResource_
+mjResource_
 # TypedefDeclNode Unhandled tokens: mjResource_':'struct 
 
 alias mjfOpenResource = UnsafePointer[
@@ -14575,7 +14575,7 @@ Int32UnsafePointer[
 # (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
 
 # (placeholder) | |         `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
- mjResource_ mjResource_]
+mjResource_]
 ]
 
 # (placeholder) | `-FullComment 0x827960 <line:34:3, col:59>
@@ -14596,7 +14596,7 @@ Int32UnsafePointer[
 # (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
 
 # (placeholder) | |     |   `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
- mjResource_ mjResource_]
+mjResource_]
 UnsafePointer[UnsafePointer[
 # (placeholder) | |         `-QualType 0x4e3401 'const void' const
 NoneType]
@@ -14623,7 +14623,7 @@ NoneTypeUnsafePointer[
 # (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
 
 # (placeholder) | |         `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
- mjResource_ mjResource_]
+mjResource_]
 ]
 
 # (placeholder) | `-FullComment 0x827b20 <line:41:3, col:81>
@@ -14644,7 +14644,7 @@ NoneTypeUnsafePointer[
 # (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
 
 # (placeholder) | |     |   `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
- mjResource_ mjResource_]
+mjResource_]
 UnsafePointer[UnsafePointer[
 # (placeholder) | |     |   `-QualType 0x4e3441 'const char' const
 Int8]
@@ -14674,7 +14674,7 @@ Int32UnsafePointer[
 # (placeholder) | |     |     |-Typedef 0x6fd900 'mjResource'
 
 # (placeholder) | |     |     `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
- mjResource_ mjResource_]
+mjResource_]
 UnsafePointer[
 # (placeholder) | |       `-QualType 0x4e3441 'const char' const
 Int8]
@@ -14723,7 +14723,7 @@ struct mjpResourceProvider:
 
 alias mjpResourceProvider = 
 # (placeholder) | `-ElaboratedType 0x6fed10 'struct mjpResourceProvider' sugar
- mjpResourceProvider mjpResourceProvider
+mjpResourceProvider
 # TypedefDeclNode Unhandled tokens: mjpResourceProvider':'struct 
 
 # (placeholder) |-EnumDecl 0x6fede8 <line:70:9, line:75:1> line:70:14 mjtPluginCapabilityBit_
@@ -14864,7 +14864,7 @@ struct mjpPlugin_:
 
 alias mjpPlugin = 
 # (placeholder) | `-ElaboratedType 0x702db0 'struct mjpPlugin_' sugar
- mjpPlugin_ mjpPlugin_
+mjpPlugin_
 # TypedefDeclNode Unhandled tokens: mjpPlugin_':'struct 
 
 alias mjfPluginLibraryLoadCallback = UnsafePointer[
@@ -15196,7 +15196,7 @@ struct mjrRect_:
 
 alias mjrRect = 
 # (placeholder) | `-ElaboratedType 0x707c40 'struct mjrRect_' sugar
- mjrRect_ mjrRect_
+mjrRect_
 # TypedefDeclNode Unhandled tokens: mjrRect_':'struct 
 struct mjrContext_:
 	# (placeholder) | |-FullComment 0x82b130 <line:78:3, col:100>
@@ -15330,7 +15330,7 @@ struct mjrContext_:
 
 alias mjrContext = 
 # (placeholder) | `-ElaboratedType 0x70dba0 'struct mjrContext_' sugar
- mjrContext_ mjrContext_
+mjrContext_
 # TypedefDeclNode Unhandled tokens: mjrContext_':'struct 
 
 alias mjString = NoneType
@@ -15740,7 +15740,7 @@ struct mjsElement_:
 
 alias mjsElement = 
 # (placeholder) | |-ElaboratedType 0x711c50 'struct mjsElement_' sugar
- mjsElement_ mjsElement_
+mjsElement_
 # (placeholder) | `-FullComment 0x82ff40 <line:119:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x82ff10 <col:3, col:100>
@@ -15784,7 +15784,7 @@ struct mjsCompiler_:
 
 alias mjsCompiler = 
 # (placeholder) | `-ElaboratedType 0x7127f0 'struct mjsCompiler_' sugar
- mjsCompiler_ mjsCompiler_
+mjsCompiler_
 # TypedefDeclNode Unhandled tokens: mjsCompiler_':'struct 
 struct mjSpec_:
 	var element: UnsafePointer[mjsElement]
@@ -15844,7 +15844,7 @@ struct mjSpec_:
 
 alias mjSpec = 
 # (placeholder) | `-ElaboratedType 0x715c00 'struct mjSpec_' sugar
- mjSpec_ mjSpec_
+mjSpec_
 # TypedefDeclNode Unhandled tokens: mjSpec_':'struct 
 struct mjsOrientation_:
 	var type: mjtOrientation
@@ -15860,7 +15860,7 @@ struct mjsOrientation_:
 
 alias mjsOrientation = 
 # (placeholder) | `-ElaboratedType 0x7161d0 'struct mjsOrientation_' sugar
- mjsOrientation_ mjsOrientation_
+mjsOrientation_
 # TypedefDeclNode Unhandled tokens: mjsOrientation_':'struct 
 struct mjsPlugin_:
 	var element: UnsafePointer[mjsElement]
@@ -15876,7 +15876,7 @@ struct mjsPlugin_:
 
 alias mjsPlugin = 
 # (placeholder) | `-ElaboratedType 0x716640 'struct mjsPlugin_' sugar
- mjsPlugin_ mjsPlugin_
+mjsPlugin_
 # TypedefDeclNode Unhandled tokens: mjsPlugin_':'struct 
 struct mjsBody_:
 	var element: UnsafePointer[mjsElement]
@@ -15918,7 +15918,7 @@ struct mjsBody_:
 
 alias mjsBody = 
 # (placeholder) | `-ElaboratedType 0x717500 'struct mjsBody_' sugar
- mjsBody_ mjsBody_
+mjsBody_
 # TypedefDeclNode Unhandled tokens: mjsBody_':'struct 
 struct mjsFrame_:
 	var element: UnsafePointer[mjsElement]
@@ -15938,7 +15938,7 @@ struct mjsFrame_:
 
 alias mjsFrame = 
 # (placeholder) | `-ElaboratedType 0x718720 'struct mjsFrame_' sugar
- mjsFrame_ mjsFrame_
+mjsFrame_
 # TypedefDeclNode Unhandled tokens: mjsFrame_':'struct 
 struct mjsJoint_:
 	var element: UnsafePointer[mjsElement]
@@ -15996,7 +15996,7 @@ struct mjsJoint_:
 
 alias mjsJoint = 
 # (placeholder) | `-ElaboratedType 0x719b40 'struct mjsJoint_' sugar
- mjsJoint_ mjsJoint_
+mjsJoint_
 # TypedefDeclNode Unhandled tokens: mjsJoint_':'struct 
 struct mjsGeom_:
 	var element: UnsafePointer[mjsElement]
@@ -16066,7 +16066,7 @@ struct mjsGeom_:
 
 alias mjsGeom = 
 # (placeholder) | `-ElaboratedType 0x71cf40 'struct mjsGeom_' sugar
- mjsGeom_ mjsGeom_
+mjsGeom_
 # TypedefDeclNode Unhandled tokens: mjsGeom_':'struct 
 struct mjsSite_:
 	var element: UnsafePointer[mjsElement]
@@ -16098,7 +16098,7 @@ struct mjsSite_:
 
 alias mjsSite = 
 # (placeholder) | `-ElaboratedType 0x71da50 'struct mjsSite_' sugar
- mjsSite_ mjsSite_
+mjsSite_
 # TypedefDeclNode Unhandled tokens: mjsSite_':'struct 
 struct mjsCamera_:
 	var element: UnsafePointer[mjsElement]
@@ -16142,7 +16142,7 @@ struct mjsCamera_:
 
 alias mjsCamera = 
 # (placeholder) | `-ElaboratedType 0x71fb60 'struct mjsCamera_' sugar
- mjsCamera_ mjsCamera_
+mjsCamera_
 # TypedefDeclNode Unhandled tokens: mjsCamera_':'struct 
 struct mjsLight_:
 	var element: UnsafePointer[mjsElement]
@@ -16182,7 +16182,7 @@ struct mjsLight_:
 
 alias mjsLight = 
 # (placeholder) | `-ElaboratedType 0x720900 'struct mjsLight_' sugar
- mjsLight_ mjsLight_
+mjsLight_
 # TypedefDeclNode Unhandled tokens: mjsLight_':'struct 
 struct mjsFlex_:
 	var element: UnsafePointer[mjsElement]
@@ -16258,7 +16258,7 @@ struct mjsFlex_:
 
 alias mjsFlex = 
 # (placeholder) | `-ElaboratedType 0x722d50 'struct mjsFlex_' sugar
- mjsFlex_ mjsFlex_
+mjsFlex_
 # TypedefDeclNode Unhandled tokens: mjsFlex_':'struct 
 struct mjsMesh_:
 	var element: UnsafePointer[mjsElement]
@@ -16298,7 +16298,7 @@ struct mjsMesh_:
 
 alias mjsMesh = 
 # (placeholder) | `-ElaboratedType 0x723990 'struct mjsMesh_' sugar
- mjsMesh_ mjsMesh_
+mjsMesh_
 # TypedefDeclNode Unhandled tokens: mjsMesh_':'struct 
 struct mjsHField_:
 	var element: UnsafePointer[mjsElement]
@@ -16322,7 +16322,7 @@ struct mjsHField_:
 
 alias mjsHField = 
 # (placeholder) | `-ElaboratedType 0x725170 'struct mjsHField_' sugar
- mjsHField_ mjsHField_
+mjsHField_
 # TypedefDeclNode Unhandled tokens: mjsHField_':'struct 
 struct mjsSkin_:
 	var element: UnsafePointer[mjsElement]
@@ -16360,7 +16360,7 @@ struct mjsSkin_:
 
 alias mjsSkin = 
 # (placeholder) | `-ElaboratedType 0x725d90 'struct mjsSkin_' sugar
- mjsSkin_ mjsSkin_
+mjsSkin_
 # TypedefDeclNode Unhandled tokens: mjsSkin_':'struct 
 struct mjsTexture_:
 	var element: UnsafePointer[mjsElement]
@@ -16408,7 +16408,7 @@ struct mjsTexture_:
 
 alias mjsTexture = 
 # (placeholder) | `-ElaboratedType 0x728b40 'struct mjsTexture_' sugar
- mjsTexture_ mjsTexture_
+mjsTexture_
 # TypedefDeclNode Unhandled tokens: mjsTexture_':'struct 
 struct mjsMaterial_:
 	var element: UnsafePointer[mjsElement]
@@ -16440,7 +16440,7 @@ struct mjsMaterial_:
 
 alias mjsMaterial = 
 # (placeholder) | `-ElaboratedType 0x7294d0 'struct mjsMaterial_' sugar
- mjsMaterial_ mjsMaterial_
+mjsMaterial_
 # TypedefDeclNode Unhandled tokens: mjsMaterial_':'struct 
 struct mjsPair_:
 	var element: UnsafePointer[mjsElement]
@@ -16470,7 +16470,7 @@ struct mjsPair_:
 
 alias mjsPair = 
 # (placeholder) | `-ElaboratedType 0x729ea0 'struct mjsPair_' sugar
- mjsPair_ mjsPair_
+mjsPair_
 # TypedefDeclNode Unhandled tokens: mjsPair_':'struct 
 struct mjsExclude_:
 	var element: UnsafePointer[mjsElement]
@@ -16486,7 +16486,7 @@ struct mjsExclude_:
 
 alias mjsExclude = 
 # (placeholder) | `-ElaboratedType 0x72a310 'struct mjsExclude_' sugar
- mjsExclude_ mjsExclude_
+mjsExclude_
 # TypedefDeclNode Unhandled tokens: mjsExclude_':'struct 
 struct mjsEquality_:
 	var element: UnsafePointer[mjsElement]
@@ -16514,7 +16514,7 @@ struct mjsEquality_:
 
 alias mjsEquality = 
 # (placeholder) | `-ElaboratedType 0x72b7e0 'struct mjsEquality_' sugar
- mjsEquality_ mjsEquality_
+mjsEquality_
 # TypedefDeclNode Unhandled tokens: mjsEquality_':'struct 
 struct mjsTendon_:
 	var element: UnsafePointer[mjsElement]
@@ -16560,7 +16560,7 @@ struct mjsTendon_:
 
 alias mjsTendon = 
 # (placeholder) | `-ElaboratedType 0x72c7b0 'struct mjsTendon_' sugar
- mjsTendon_ mjsTendon_
+mjsTendon_
 # TypedefDeclNode Unhandled tokens: mjsTendon_':'struct 
 struct mjsWrap_:
 	var element: UnsafePointer[mjsElement]
@@ -16570,7 +16570,7 @@ struct mjsWrap_:
 
 alias mjsWrap = 
 # (placeholder) | `-ElaboratedType 0x72ca70 'struct mjsWrap_' sugar
- mjsWrap_ mjsWrap_
+mjsWrap_
 # TypedefDeclNode Unhandled tokens: mjsWrap_':'struct 
 struct mjsActuator_:
 	var element: UnsafePointer[mjsElement]
@@ -16632,7 +16632,7 @@ struct mjsActuator_:
 
 alias mjsActuator = 
 # (placeholder) | `-ElaboratedType 0x72ec20 'struct mjsActuator_' sugar
- mjsActuator_ mjsActuator_
+mjsActuator_
 # TypedefDeclNode Unhandled tokens: mjsActuator_':'struct 
 struct mjsSensor_:
 	var element: UnsafePointer[mjsElement]
@@ -16668,7 +16668,7 @@ struct mjsSensor_:
 
 alias mjsSensor = 
 # (placeholder) | `-ElaboratedType 0x72f750 'struct mjsSensor_' sugar
- mjsSensor_ mjsSensor_
+mjsSensor_
 # TypedefDeclNode Unhandled tokens: mjsSensor_':'struct 
 struct mjsNumeric_:
 	var element: UnsafePointer[mjsElement]
@@ -16684,7 +16684,7 @@ struct mjsNumeric_:
 
 alias mjsNumeric = 
 # (placeholder) | `-ElaboratedType 0x72fbc0 'struct mjsNumeric_' sugar
- mjsNumeric_ mjsNumeric_
+mjsNumeric_
 # TypedefDeclNode Unhandled tokens: mjsNumeric_':'struct 
 struct mjsText_:
 	var element: UnsafePointer[mjsElement]
@@ -16698,7 +16698,7 @@ struct mjsText_:
 
 alias mjsText = 
 # (placeholder) | `-ElaboratedType 0x730cd0 'struct mjsText_' sugar
- mjsText_ mjsText_
+mjsText_
 # TypedefDeclNode Unhandled tokens: mjsText_':'struct 
 struct mjsTuple_:
 	var element: UnsafePointer[mjsElement]
@@ -16716,7 +16716,7 @@ struct mjsTuple_:
 
 alias mjsTuple = 
 # (placeholder) | `-ElaboratedType 0x7311d0 'struct mjsTuple_' sugar
- mjsTuple_ mjsTuple_
+mjsTuple_
 # TypedefDeclNode Unhandled tokens: mjsTuple_':'struct 
 struct mjsKey_:
 	var element: UnsafePointer[mjsElement]
@@ -16742,7 +16742,7 @@ struct mjsKey_:
 
 alias mjsKey = 
 # (placeholder) | `-ElaboratedType 0x731910 'struct mjsKey_' sugar
- mjsKey_ mjsKey_
+mjsKey_
 # TypedefDeclNode Unhandled tokens: mjsKey_':'struct 
 struct mjsDefault_:
 	var element: UnsafePointer[mjsElement]
@@ -16776,7 +16776,7 @@ struct mjsDefault_:
 
 alias mjsDefault = 
 # (placeholder) | `-ElaboratedType 0x732890 'struct mjsDefault_' sugar
- mjsDefault_ mjsDefault_
+mjsDefault_
 # TypedefDeclNode Unhandled tokens: mjsDefault_':'struct 
 
 # (placeholder) |-EnumDecl 0x732bc0 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:65:9, line:70:1> line:65:14 mjtButton_
@@ -17215,7 +17215,7 @@ struct mjuiState_:
 
 alias mjuiState = 
 # (placeholder) | `-ElaboratedType 0x740cb0 'struct mjuiState_' sugar
- mjuiState_ mjuiState_
+mjuiState_
 # TypedefDeclNode Unhandled tokens: mjuiState_':'struct 
 struct mjuiThemeSpacing_:
 	# (placeholder) | |-FullComment 0x855110 <line:167:3, col:100>
@@ -17253,7 +17253,7 @@ struct mjuiThemeSpacing_:
 
 alias mjuiThemeSpacing = 
 # (placeholder) | `-ElaboratedType 0x7415b0 'struct mjuiThemeSpacing_' sugar
- mjuiThemeSpacing_ mjuiThemeSpacing_
+mjuiThemeSpacing_
 # TypedefDeclNode Unhandled tokens: mjuiThemeSpacing_':'struct 
 struct mjuiThemeColor_:
 	# (placeholder) | |-FullComment 0x855c70 <line:187:3, col:100>
@@ -17321,7 +17321,7 @@ struct mjuiThemeColor_:
 
 alias mjuiThemeColor = 
 # (placeholder) | `-ElaboratedType 0x743d00 'struct mjuiThemeColor_' sugar
- mjuiThemeColor_ mjuiThemeColor_
+mjuiThemeColor_
 # TypedefDeclNode Unhandled tokens: mjuiThemeColor_':'struct 
 struct mjuiItemSingle_:
 	# (placeholder) | |-FullComment 0x857410 <line:222:3, col:100>
@@ -17413,7 +17413,7 @@ struct mjuiItem_:
 
 alias mjuiItem = 
 # (placeholder) | `-ElaboratedType 0x746f00 'struct mjuiItem_' sugar
- mjuiItem_ mjuiItem_
+mjuiItem_
 # TypedefDeclNode Unhandled tokens: mjuiItem_':'struct 
 struct mjuiSection_:
 	# (placeholder) | |-FullComment 0x8586c0 <line:273:3, col:100>
@@ -17445,7 +17445,7 @@ struct mjuiSection_:
 
 alias mjuiSection = 
 # (placeholder) | `-ElaboratedType 0x747a20 'struct mjuiSection_' sugar
- mjuiSection_ mjuiSection_
+mjuiSection_
 # TypedefDeclNode Unhandled tokens: mjuiSection_':'struct 
 struct mjUI_:
 	# (placeholder) | |-FullComment 0x858fb0 <line:293:3, col:100>
@@ -17505,7 +17505,7 @@ struct mjUI_:
 
 alias mjUI = 
 # (placeholder) | `-ElaboratedType 0x749980 'struct mjUI_' sugar
- mjUI_ mjUI_
+mjUI_
 # TypedefDeclNode Unhandled tokens: mjUI_':'struct 
 struct mjuiDef_:
 	# (placeholder) | |-FullComment 0x85a410 <line:333:3, col:100>
@@ -17529,7 +17529,7 @@ struct mjuiDef_:
 
 alias mjuiDef = 
 # (placeholder) | `-ElaboratedType 0x749f30 'struct mjuiDef_' sugar
- mjuiDef_ mjuiDef_
+mjuiDef_
 # TypedefDeclNode Unhandled tokens: mjuiDef_':'struct 
 
 # (placeholder) |-VarDecl 0x74a200 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:45:49> col:22 mju_user_error 'void (*)(const char *)' extern

@@ -134,11 +134,13 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> AstNode:
+        print("creating record decl node: " + ast_entries.precise_location)
         return AstNode(Self(indices, ast_entries))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
+        print("RecordDeclNode: determining token flow: " + ast_entry.precise_location)
         if ast_entry.level <= self._record_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:

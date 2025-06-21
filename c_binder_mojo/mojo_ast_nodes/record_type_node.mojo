@@ -32,6 +32,7 @@ struct RecordTypeNode(NodeAstLike):
     var _typedef_decl_level: Int
     var _record_type: String
     var _aliased_record_name: String
+    var _unhandled_tokens: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -40,6 +41,7 @@ struct RecordTypeNode(NodeAstLike):
         self._typedef_decl_level = ast_entry.level
         self._record_type = String()
         self._aliased_record_name = String()
+        self._unhandled_tokens = String()
 
         for entry in ast_entry.tokens:
             stripped_entry = entry.strip("'")
@@ -51,7 +53,10 @@ struct RecordTypeNode(NodeAstLike):
             elif stripped_entry == "enum":
                 self._record_type = "enum"
             else:
+                # NOTE: the record name should come from the sub record node.
                 self._aliased_record_name += stripped_entry
+
+
 
     @staticmethod
     fn accept(
@@ -157,6 +162,7 @@ struct RecordTypeNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
         # return String(self._record_type) + " " + self._aliased_record_name
+
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
@@ -165,5 +171,6 @@ struct RecordTypeNode(NodeAstLike):
             # newline_before_ast_entries=just_code,
             # newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(self._record_type) + " " + self._aliased_record_name,
+            # alternate_string=self._unhandled_tokens,
+            unhandled_tokens='',
         )

@@ -22,6 +22,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.mojo_ast_nodes.record_decl_node import RecordDeclNode
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
+from c_binder_mojo.mojo_ast_nodes.translation_unit_decl_node import TranslationUnitDeclNode
 
 
 @fieldwise_init
@@ -29,30 +30,26 @@ struct RecordNode(NodeAstLike):
     alias __name__ = "RecordNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
+    var _ast_entry: AstEntry
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
-    var _record_type: String
-    var _aliased_record_name: String
+    var _record_name: String
+    var _make_record_decl: Bool
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
+        self._ast_entry = ast_entry
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
-        self._record_type = String()
-        self._aliased_record_name = String()
+        self._record_name = String()
+        # We assume it is declared unless proved otherwise.
+        self._make_record_decl = False
 
         for entry in ast_entry.tokens:
             stripped_entry = entry.strip("'")
 
-            if stripped_entry == "struct":
-                self._record_type = "struct"
-            elif stripped_entry == "union":
-                self._record_type = "union"
-            elif stripped_entry == "enum":
-                self._record_type = "enum"
-            else:
-                self._aliased_record_name += stripped_entry
+            self._record_name += stripped_entry
 
     @staticmethod
     fn accept(
@@ -62,14 +59,20 @@ struct RecordNode(NodeAstLike):
     ) -> Bool:
         return ast_entries.ast_name == "Record"
 
-    @staticmethod
-    fn is_record_declared(self: Self, module_interface: ModuleInterface) -> Bool:
+    fn is_record_declared(mut self, module_interface: ModuleInterface) -> Bool:
         for node in module_interface.nodes()[]:
             if node.node[].isa[RecordDeclNode]():
                 # TODO(josiahls): I think we will be removing the grammar class.
-                if node.node[][RecordDeclNode]._grammar._name == self._aliased_record_name:
+                # print("checking if record is declared: " + node.node[][RecordDeclNode]._grammar._name + " == " + self._record_name)
+                if node.node[][RecordDeclNode]._grammar._name == self._record_name:
                     return True
         return False
+
+    fn get_translation_unit_decl_current_idx(mut self, module_interface: ModuleInterface) -> Int:
+        for node in module_interface.nodes()[]:
+            if node.node[].isa[TranslationUnitDeclNode]():
+                return node.node[][TranslationUnitDeclNode].indicies().current_idx
+        return -1
 
     @staticmethod
     fn create(
@@ -77,18 +80,16 @@ struct RecordNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> AstNode:
-        node = Self(indices, ast_entries)
-
-        if not Self.is_record_declared(node, module_interface):
-            return AstNode(RecordDeclNode(indices, ast_entries))
-        else:
-            return AstNode(node)
-
+        return AstNode(Self(indices, ast_entries))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        if ast_entry.level <= self._typedef_decl_level:
+
+        if not self.is_record_declared(module_interface):
+            self._make_record_decl = True
+            return TokenFlow.PASS_TO_INSERTED_NODE
+        elif ast_entry.level <= self._typedef_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
             return TokenFlow.CREATE_CHILD
@@ -99,6 +100,24 @@ struct RecordNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
+        # TODO(josiahls): We need to do something about the ast_entry param here. Not sure what.
+        if self._make_record_decl:
+            # NOTE: Set the parent to 0 since we are declaring a new record and mojo does
+            # not support nested records.
+            translation_unit_decl_current_idx = self.get_translation_unit_decl_current_idx(module_interface)
+            new_indices = NodeIndices(
+                parent_idx=translation_unit_decl_current_idx, 
+                current_idx=0
+            )
+            new_node = RecordDeclNode.create(self._ast_entry, module_interface, new_indices)
+            new_index = module_interface.insert_node(new_node)
+            module_interface.nodes()[][
+                translation_unit_decl_current_idx
+            ].indicies_ptr()[].child_idxs.append(new_index)
+            self._node_state = NodeState.COMPLETED
+            self._make_record_decl = False
+            return 
+
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
             return
@@ -108,7 +127,6 @@ struct RecordNode(NodeAstLike):
         #             return
         #     self._ast_entries[].append(ast_entry)
         else:
-            self._record_type = String(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
 
     fn process_anonymous_record(
@@ -172,7 +190,7 @@ struct RecordNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        # return String(self._record_type) + " " + self._aliased_record_name
+        # return String(self._record_type) + " " + self._record_name
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
@@ -181,5 +199,5 @@ struct RecordNode(NodeAstLike):
             # newline_before_ast_entries=just_code,
             # newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(self._record_type) + " " + self._aliased_record_name,
+            alternate_string=self._record_name,
         )

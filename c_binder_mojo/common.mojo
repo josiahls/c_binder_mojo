@@ -91,6 +91,8 @@ struct TokenFlow:
 
     alias END_FILE = MessageableEnum(5, "END_FILE")  # End of file
 
+    alias PASS_TO_INSERTED_NODE = MessageableEnum(6, "PASS_TO_INSERTED_NODE")  # Pass token to inserted node
+
 
 struct CTokens:
     alias COMMENT_SINGLE_LINE_BEGIN = "//"

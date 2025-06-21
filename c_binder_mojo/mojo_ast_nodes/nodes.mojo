@@ -150,7 +150,7 @@ trait NodeAstLike(Copyable & Movable, Stringable):
         ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
+    ) -> AstNode:
         ...
 
     fn determine_token_flow(
@@ -227,14 +227,12 @@ struct AstNode(Copyable & Movable & Stringable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept(ast_entry, module_interface, indices):
-                return Self(T.create(ast_entry, module_interface, indices))
+                return T.create(ast_entry, module_interface, indices)
         print(
             "WARNING: none of the nodes accepted the ast_entry: "
             + String(ast_entry.ast_name)
         )
-        return Self(
-            PlaceHolderNode.create(ast_entry, module_interface, indices)
-        )
+        return PlaceHolderNode.create(ast_entry, module_interface, indices)
 
     @always_inline("nodebug")
     fn __str__(self) -> String:

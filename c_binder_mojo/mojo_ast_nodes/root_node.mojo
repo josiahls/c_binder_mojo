@@ -54,8 +54,8 @@ struct RootNode(NodeAstLike):
         ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
-        return Self(indices, ast_entry)
+    ) -> AstNode:
+        return AstNode(Self(indices, ast_entry))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface

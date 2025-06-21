@@ -76,13 +76,13 @@ struct RecordNode(NodeAstLike):
         ast_entries: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
+    ) -> AstNode:
         node = Self(indices, ast_entries)
 
-        if not self.is_record_declared(module_interface):
-            return RecordDeclNode(indices, ast_entries)
+        if not Self.is_record_declared(node, module_interface):
+            return AstNode(RecordDeclNode(indices, ast_entries))
         else:
-            return node
+            return AstNode(node)
 
 
     fn determine_token_flow(

@@ -6,14 +6,18 @@ alias __int128_t = Int128
 
 alias __uint128_t = UInt128
 
-alias __NSConstantString =  __NSConstantString_tag __NSConstantString_tag
+alias __NSConstantString =  __NSConstantString_tag# Forward declaration of 	pass
+
+
 
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
 
 alias __builtin_va_list = 
 # (placeholder) | `-ConstantArrayType 0x4e4270 'struct __va_list_tag[1]' 1 
- __va_list_tag __va_list_tag
+ __va_list_tag# Forward declaration of 	pass
+
+
 
 alias size_t = UInt64
 

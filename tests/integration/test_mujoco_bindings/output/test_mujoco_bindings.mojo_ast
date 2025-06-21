@@ -6,24 +6,20 @@ TranslationUnitDecl 0x4e3398 <<invalid sloc>> <invalid sloc>TypedefDeclNode(pare
 |-TypedefDecl 0x4e3bc0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'Int128
 TypedefDeclNode(parent_idx=1, current_idx=4, child_idxs=(5), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x4e3c30 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'UInt128
-TypedefDeclNode(parent_idx=1, current_idx=6, child_idxs=(7, 8), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x4e3f38 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'PlaceHolderNode(parent_idx=6, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-RecordType 0x4e3d10 'struct __NSConstantString_tag'
-PlaceHolderNode(parent_idx=6, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-Record 0x4e3c88 '__NSConstantString_tag'
-
+TypedefDeclNode(parent_idx=1, current_idx=6, child_idxs=(7), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e3f38 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'RecordTypeNode(parent_idx=6, current_idx=7, child_idxs=(8), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __NSConstantString_tagRecordNode(parent_idx=7, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __NSConstantString_tag
 TypedefDeclNode(parent_idx=1, current_idx=9, child_idxs=(10), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x4e3fd0 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'PointerTypeNode(parent_idx=9, current_idx=10, child_idxs=(11), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-PointerType 0x4e3f90 'char *'Int8
 
-TypedefDeclNode(parent_idx=1, current_idx=12, child_idxs=(13, 14, 15), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=12, child_idxs=(13, 14), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x4e42c8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'PlaceHolderNode(parent_idx=12, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ConstantArrayType 0x4e4270 'struct __va_list_tag[1]' 1 
-PlaceHolderNode(parent_idx=12, current_idx=14, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x4e40b0 'struct __va_list_tag'
-PlaceHolderNode(parent_idx=12, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x4e4028 '__va_list_tag'
-
+RecordTypeNode(parent_idx=12, current_idx=14, child_idxs=(15), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __va_list_tagRecordNode(parent_idx=14, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __va_list_tag
 TypedefDeclNode(parent_idx=1, current_idx=16, child_idxs=(17), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x53ad40 </usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:46:1, col:23> col:23 referenced size_t 'unsigned long'UInt64
 TypedefDeclNode(parent_idx=1, current_idx=18, child_idxs=(19), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -44,14 +40,12 @@ struct _Anonymous_line_59_9:
 	FieldDeclNode(parent_idx=28, current_idx=30, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b0f0 <line:62:5, col:9> col:9 rem 'int'	
 
-TypedefDeclNode(parent_idx=1, current_idx=31, child_idxs=(32, 33, 34), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=31, child_idxs=(32, 33), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x53b198 <line:59:1, line:63:5> col:5 referenced div_t 'struct div_t':'div_t'PlaceHolderNode(parent_idx=31, current_idx=32, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x53b140 'struct div_t' sugar
-PlaceHolderNode(parent_idx=31, current_idx=33, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x53b050 'div_t'
-PlaceHolderNode(parent_idx=31, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x53afc8 ''
-
+RecordTypeNode(parent_idx=31, current_idx=33, child_idxs=(34), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ div_tRecordNode(parent_idx=33, current_idx=34, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=35, child_idxs=(36, 37), node_state=4 (COMPLETED))
 struct _Anonymous_line_67_9:
 	FieldDeclNode(parent_idx=35, current_idx=36, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -60,14 +54,12 @@ struct _Anonymous_line_67_9:
 	FieldDeclNode(parent_idx=35, current_idx=37, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b330 <line:70:5, col:14> col:14 rem 'long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=38, child_idxs=(39, 40, 41), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=38, child_idxs=(39, 40), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x53b3d8 <line:67:1, line:71:5> col:5 referenced ldiv_t 'struct ldiv_t':'ldiv_t'PlaceHolderNode(parent_idx=38, current_idx=39, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x53b380 'struct ldiv_t' sugar
-PlaceHolderNode(parent_idx=38, current_idx=40, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x53b290 'ldiv_t'
-PlaceHolderNode(parent_idx=38, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x53b208 ''
-
+RecordTypeNode(parent_idx=38, current_idx=40, child_idxs=(41), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ ldiv_tRecordNode(parent_idx=40, current_idx=41, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=42, child_idxs=(43, 44), node_state=4 (COMPLETED))
 struct _Anonymous_line_77_23:
 	FieldDeclNode(parent_idx=42, current_idx=43, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -76,14 +68,12 @@ struct _Anonymous_line_77_23:
 	FieldDeclNode(parent_idx=42, current_idx=44, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x53b570 <line:80:5, col:19> col:19 rem 'long long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=45, child_idxs=(46, 47, 48), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=45, child_idxs=(46, 47), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x53b618 <line:77:15, line:81:5> col:5 referenced lldiv_t 'struct lldiv_t':'lldiv_t'PlaceHolderNode(parent_idx=45, current_idx=46, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x53b5c0 'struct lldiv_t' sugar
-PlaceHolderNode(parent_idx=45, current_idx=47, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x53b4d0 'lldiv_t'
-PlaceHolderNode(parent_idx=45, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x53b448 ''
-
+RecordTypeNode(parent_idx=45, current_idx=47, child_idxs=(48), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ lldiv_tRecordNode(parent_idx=47, current_idx=48, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 PlaceHolderNode(parent_idx=1, current_idx=49, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-FunctionDecl 0x53b7a8 <line:98:1, /usr/include/x86_64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:98:15 __ctype_get_mb_cur_max 'size_t (void)' extern
 PlaceHolderNode(parent_idx=1, current_idx=50, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -429,14 +419,12 @@ struct _Anonymous_col_24:
 	FieldDeclNode(parent_idx=253, current_idx=254, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x58c0d0 <col:33, col:44> col:37 __val 'int[2]'	
 
-TypedefDeclNode(parent_idx=1, current_idx=255, child_idxs=(256, 257, 258), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=255, child_idxs=(256, 257), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x58c178 </usr/include/x86_64-linux-gnu/bits/types.h:137:22, line:155:26> col:26 referenced __fsid_t 'struct __fsid_t':'__fsid_t'PlaceHolderNode(parent_idx=255, current_idx=256, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x58c120 'struct __fsid_t' sugar
-PlaceHolderNode(parent_idx=255, current_idx=257, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x58c010 '__fsid_t'
-PlaceHolderNode(parent_idx=255, current_idx=258, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x58bf88 ''
-
+RecordTypeNode(parent_idx=255, current_idx=257, child_idxs=(258), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __fsid_tRecordNode(parent_idx=257, current_idx=258, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 TypedefDeclNode(parent_idx=1, current_idx=259, child_idxs=(260), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x58c200 <line:137:22, line:156:27> col:27 referenced __clock_t 'long'Int64
 TypedefDeclNode(parent_idx=1, current_idx=261, child_idxs=(262), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -537,18 +525,16 @@ TypedefDeclNode(parent_idx=1, current_idx=339, child_idxs=(340, 341, 342), node_
 PlaceHolderNode(parent_idx=339, current_idx=341, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |   |-Typedef 0x58b9f0 '__u_quad_t'
 UInt64
-TypedefDeclNode(parent_idx=1, current_idx=343, child_idxs=(344, 345, 346, 347, 348), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=343, child_idxs=(344, 345, 346, 347), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x594170 <line:39:1, col:18> col:18 fsid_t '__fsid_t':'__fsid_t'PlaceHolderNode(parent_idx=343, current_idx=344, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-TypedefType 0x594140 '__fsid_t' sugar
 PlaceHolderNode(parent_idx=343, current_idx=345, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |   |-Typedef 0x58c178 '__fsid_t'
 PlaceHolderNode(parent_idx=343, current_idx=346, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |   `-ElaboratedType 0x58c120 'struct __fsid_t' sugar
-PlaceHolderNode(parent_idx=343, current_idx=347, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-RecordType 0x58c010 '__fsid_t'
-PlaceHolderNode(parent_idx=343, current_idx=348, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|       `-Record 0x58bf88 ''
-
+RecordTypeNode(parent_idx=343, current_idx=347, child_idxs=(348), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __fsid_tRecordNode(parent_idx=347, current_idx=348, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 TypedefDeclNode(parent_idx=1, current_idx=349, child_idxs=(350, 351, 352, 353, 354), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x594200 <line:42:1, col:18> col:18 loff_t '__loff_t':'long'PlaceHolderNode(parent_idx=349, current_idx=350, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-TypedefType 0x5941d0 '__loff_t' sugar
@@ -1094,26 +1080,22 @@ struct _Anonymous_line_5_9:
 	FieldDeclNode(parent_idx=649, current_idx=650, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5a5100 <line:7:3, col:41> col:21 __val 'unsigned long[16]'	
 
-TypedefDeclNode(parent_idx=1, current_idx=651, child_idxs=(652, 653, 654), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=651, child_idxs=(652, 653), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5a51a8 <line:5:1, line:8:3> col:3 referenced __sigset_t 'struct __sigset_t':'__sigset_t'PlaceHolderNode(parent_idx=651, current_idx=652, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5a5150 'struct __sigset_t' sugar
-PlaceHolderNode(parent_idx=651, current_idx=653, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5a4f30 '__sigset_t'
-PlaceHolderNode(parent_idx=651, current_idx=654, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5a4ea8 ''
-
-TypedefDeclNode(parent_idx=1, current_idx=655, child_idxs=(656, 657, 658, 659, 660), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=651, current_idx=653, child_idxs=(654), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __sigset_tRecordNode(parent_idx=653, current_idx=654, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
+TypedefDeclNode(parent_idx=1, current_idx=655, child_idxs=(656, 657, 658, 659), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5a5250 </usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:7:1, col:20> col:20 sigset_t '__sigset_t':'__sigset_t'PlaceHolderNode(parent_idx=655, current_idx=656, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-TypedefType 0x5a5220 '__sigset_t' sugar
 PlaceHolderNode(parent_idx=655, current_idx=657, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |   |-Typedef 0x5a51a8 '__sigset_t'
 PlaceHolderNode(parent_idx=655, current_idx=658, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |   `-ElaboratedType 0x5a5150 'struct __sigset_t' sugar
-PlaceHolderNode(parent_idx=655, current_idx=659, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-RecordType 0x5a4f30 '__sigset_t'
-PlaceHolderNode(parent_idx=655, current_idx=660, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|       `-Record 0x5a4ea8 ''
-
+RecordTypeNode(parent_idx=655, current_idx=659, child_idxs=(660), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __sigset_tRecordNode(parent_idx=659, current_idx=660, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=661, child_idxs=(662, 663), node_state=4 (COMPLETED))
 struct timeval:
 	FieldDeclNode(parent_idx=661, current_idx=662, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1143,14 +1125,12 @@ struct _Anonymous_line_59_9:
 	FieldDeclNode(parent_idx=673, current_idx=674, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5af4e8 <line:67:5, col:50> col:15 __fds_bits '__fd_mask[16]'	
 
-TypedefDeclNode(parent_idx=1, current_idx=675, child_idxs=(676, 677, 678), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=675, child_idxs=(676, 677), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5af598 <line:59:1, line:70:5> col:5 referenced fd_set 'struct fd_set':'fd_set'PlaceHolderNode(parent_idx=675, current_idx=676, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5af540 'struct fd_set' sugar
-PlaceHolderNode(parent_idx=675, current_idx=677, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5af2e0 'fd_set'
-PlaceHolderNode(parent_idx=675, current_idx=678, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5af260 ''
-
+RecordTypeNode(parent_idx=675, current_idx=677, child_idxs=(678), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ fd_setRecordNode(parent_idx=677, current_idx=678, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 TypedefDeclNode(parent_idx=1, current_idx=679, child_idxs=(680, 681, 682), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5af618 <line:77:1, col:19> col:19 fd_mask '__fd_mask':'long'PlaceHolderNode(parent_idx=679, current_idx=680, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-TypedefType 0x5af300 '__fd_mask' sugar
@@ -1224,14 +1204,12 @@ struct definition:
 	FieldDeclNode(parent_idx=712, current_idx=717, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5b26e8 <line:28:3, line:32:5> col:5 __value32 'struct (unnamed struct at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3)':'struct __atomic_wide_counter::(unnamed at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3)'	
 
-TypedefDeclNode(parent_idx=1, current_idx=718, child_idxs=(719, 720, 721), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=718, child_idxs=(719, 720), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b2798 <line:25:1, line:33:3> col:3 referenced __atomic_wide_counter 'union __atomic_wide_counter':'__atomic_wide_counter'PlaceHolderNode(parent_idx=718, current_idx=719, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5b2740 'union __atomic_wide_counter' sugar
-PlaceHolderNode(parent_idx=718, current_idx=720, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5b2490 '__atomic_wide_counter'
-PlaceHolderNode(parent_idx=718, current_idx=721, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5b2408 ''
-
+RecordTypeNode(parent_idx=718, current_idx=720, child_idxs=(721), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __atomic_wide_counterRecordNode(parent_idx=720, current_idx=721, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=722, child_idxs=(723, 724), node_state=4 (COMPLETED))
 struct __pthread_internal_list:
 	FieldDeclNode(parent_idx=722, current_idx=723, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1240,28 +1218,24 @@ struct __pthread_internal_list:
 	FieldDeclNode(parent_idx=722, current_idx=724, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5b29d8 <line:54:3, col:35> col:35 __next 'struct __pthread_internal_list *'	
 
-TypedefDeclNode(parent_idx=1, current_idx=725, child_idxs=(726, 727, 728), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=725, child_idxs=(726, 727), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b2a88 <line:51:1, line:55:3> col:3 referenced __pthread_list_t 'struct __pthread_internal_list':'struct __pthread_internal_list'PlaceHolderNode(parent_idx=725, current_idx=726, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5b2a30 'struct __pthread_internal_list' sugar
-PlaceHolderNode(parent_idx=725, current_idx=727, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5b2890 'struct __pthread_internal_list'
-PlaceHolderNode(parent_idx=725, current_idx=728, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5b2808 '__pthread_internal_list'
-
+RecordTypeNode(parent_idx=725, current_idx=727, child_idxs=(728), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __pthread_internal_listRecordNode(parent_idx=727, current_idx=728, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __pthread_internal_list
 # TypedefDeclNode Unhandled tokens: __pthread_internal_list':'struct 
 RecordDeclNode(parent_idx=1, current_idx=729, child_idxs=(730), node_state=4 (COMPLETED))
 struct __pthread_internal_slist:
 	FieldDeclNode(parent_idx=729, current_idx=730, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5b2c50 <line:59:3, col:36> col:36 __next 'struct __pthread_internal_slist *'	
 
-TypedefDeclNode(parent_idx=1, current_idx=731, child_idxs=(732, 733, 734), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=731, child_idxs=(732, 733), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b2cf8 <line:57:1, line:60:3> col:3 __pthread_slist_t 'struct __pthread_internal_slist':'struct __pthread_internal_slist'PlaceHolderNode(parent_idx=731, current_idx=732, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5b2ca0 'struct __pthread_internal_slist' sugar
-PlaceHolderNode(parent_idx=731, current_idx=733, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5b2b80 'struct __pthread_internal_slist'
-PlaceHolderNode(parent_idx=731, current_idx=734, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5b2af8 '__pthread_internal_slist'
-
+RecordTypeNode(parent_idx=731, current_idx=733, child_idxs=(734), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __pthread_internal_slistRecordNode(parent_idx=733, current_idx=734, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __pthread_internal_slist
 # TypedefDeclNode Unhandled tokens: __pthread_internal_slist':'struct 
 RecordDeclNode(parent_idx=1, current_idx=735, child_idxs=(736, 737, 738, 739, 740, ...) len=8, node_state=4 (COMPLETED))
 struct __pthread_mutex_s:
@@ -1359,14 +1333,12 @@ struct _Anonymous_line_108_9:
 	FieldDeclNode(parent_idx=769, current_idx=770, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5b92e8 <line:110:3, col:7> col:7 __data 'int'	
 
-TypedefDeclNode(parent_idx=1, current_idx=771, child_idxs=(772, 773, 774), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=771, child_idxs=(772, 773), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b9398 <line:108:1, line:111:3> col:3 __once_flag 'struct __once_flag':'__once_flag'PlaceHolderNode(parent_idx=771, current_idx=772, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5b9340 'struct __once_flag' sugar
-PlaceHolderNode(parent_idx=771, current_idx=773, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5b92b0 '__once_flag'
-PlaceHolderNode(parent_idx=771, current_idx=774, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5b9230 ''
-
+RecordTypeNode(parent_idx=771, current_idx=773, child_idxs=(774), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ __once_flagRecordNode(parent_idx=773, current_idx=774, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 TypedefDeclNode(parent_idx=1, current_idx=775, child_idxs=(776), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b9420 </usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:27:1, col:27> col:27 pthread_t 'unsigned long'UInt64
 RecordDeclNode(parent_idx=1, current_idx=777, child_idxs=(778, 779), node_state=4 (COMPLETED))
@@ -1377,14 +1349,12 @@ struct definition:
 	FieldDeclNode(parent_idx=777, current_idx=779, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5b9620 <line:35:3, col:7> col:7 __align 'int'	
 
-TypedefDeclNode(parent_idx=1, current_idx=780, child_idxs=(781, 782, 783), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=780, child_idxs=(781, 782), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bc020 <line:32:1, line:36:3> col:3 pthread_mutexattr_t 'union pthread_mutexattr_t':'pthread_mutexattr_t'PlaceHolderNode(parent_idx=780, current_idx=781, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5b9670 'union pthread_mutexattr_t' sugar
-PlaceHolderNode(parent_idx=780, current_idx=782, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5b9500 'pthread_mutexattr_t'
-PlaceHolderNode(parent_idx=780, current_idx=783, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5b9478 ''
-
+RecordTypeNode(parent_idx=780, current_idx=782, child_idxs=(783), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_mutexattr_tRecordNode(parent_idx=782, current_idx=783, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=784, child_idxs=(785, 786), node_state=4 (COMPLETED))
 struct definition:
 	FieldDeclNode(parent_idx=784, current_idx=785, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1393,14 +1363,12 @@ struct definition:
 	FieldDeclNode(parent_idx=784, current_idx=786, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5bc1f8 <line:44:3, col:7> col:7 __align 'int'	
 
-TypedefDeclNode(parent_idx=1, current_idx=787, child_idxs=(788, 789, 790), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=787, child_idxs=(788, 789), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bc2a8 <line:41:1, line:45:3> col:3 pthread_condattr_t 'union pthread_condattr_t':'pthread_condattr_t'PlaceHolderNode(parent_idx=787, current_idx=788, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5bc250 'union pthread_condattr_t' sugar
-PlaceHolderNode(parent_idx=787, current_idx=789, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5bc110 'pthread_condattr_t'
-PlaceHolderNode(parent_idx=787, current_idx=790, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5bc090 ''
-
+RecordTypeNode(parent_idx=787, current_idx=789, child_idxs=(790), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_condattr_tRecordNode(parent_idx=789, current_idx=790, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 TypedefDeclNode(parent_idx=1, current_idx=791, child_idxs=(792), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bc330 <line:49:1, col:22> col:22 pthread_key_t 'unsigned int'UInt32
 TypedefDeclNode(parent_idx=1, current_idx=793, child_idxs=(794), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -1413,14 +1381,12 @@ struct pthread_attr_t:
 	FieldDeclNode(parent_idx=795, current_idx=797, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5bc5a0 <line:59:3, col:12> col:12 __align 'long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=798, child_idxs=(799, 800, 801), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=798, child_idxs=(799, 800), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bc640 <line:62:1, col:30> col:30 pthread_attr_t 'union pthread_attr_t':'union pthread_attr_t'PlaceHolderNode(parent_idx=798, current_idx=799, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5bc5f0 'union pthread_attr_t' sugar
-PlaceHolderNode(parent_idx=798, current_idx=800, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5bc480 'union pthread_attr_t'
-PlaceHolderNode(parent_idx=798, current_idx=801, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5bc3f8 'pthread_attr_t'
-
+RecordTypeNode(parent_idx=798, current_idx=800, child_idxs=(801), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_attr_tRecordNode(parent_idx=800, current_idx=801, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_attr_t
 # TypedefDeclNode Unhandled tokens: pthread_attr_t':'union 
 RecordDeclNode(parent_idx=1, current_idx=802, child_idxs=(803, 804, 805), node_state=4 (COMPLETED))
 struct definition:
@@ -1433,14 +1399,12 @@ struct definition:
 	FieldDeclNode(parent_idx=802, current_idx=805, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5bc8e0 <line:71:3, col:12> col:12 __align 'long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=806, child_idxs=(807, 808, 809), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=806, child_idxs=(807, 808), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bca78 <line:67:1, line:72:3> col:3 pthread_mutex_t 'union pthread_mutex_t':'pthread_mutex_t'PlaceHolderNode(parent_idx=806, current_idx=807, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5bca20 'union pthread_mutex_t' sugar
-PlaceHolderNode(parent_idx=806, current_idx=808, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5bc720 'pthread_mutex_t'
-PlaceHolderNode(parent_idx=806, current_idx=809, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5bc698 ''
-
+RecordTypeNode(parent_idx=806, current_idx=808, child_idxs=(809), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_mutex_tRecordNode(parent_idx=808, current_idx=809, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=810, child_idxs=(811, 812, 813), node_state=4 (COMPLETED))
 struct definition:
 	FieldDeclNode(parent_idx=810, current_idx=811, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1452,14 +1416,12 @@ struct definition:
 	FieldDeclNode(parent_idx=810, current_idx=813, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5bcd30 <line:79:17, col:31> col:31 __align 'long long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=814, child_idxs=(815, 816, 817), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=814, child_idxs=(815, 816), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bce68 <line:75:1, line:80:3> col:3 pthread_cond_t 'union pthread_cond_t':'pthread_cond_t'PlaceHolderNode(parent_idx=814, current_idx=815, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5bce10 'union pthread_cond_t' sugar
-PlaceHolderNode(parent_idx=814, current_idx=816, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5bcb70 'pthread_cond_t'
-PlaceHolderNode(parent_idx=814, current_idx=817, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5bcae8 ''
-
+RecordTypeNode(parent_idx=814, current_idx=816, child_idxs=(817), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_cond_tRecordNode(parent_idx=816, current_idx=817, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=818, child_idxs=(819, 820, 821), node_state=4 (COMPLETED))
 struct definition:
 	FieldDeclNode(parent_idx=818, current_idx=819, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1471,14 +1433,12 @@ struct definition:
 	FieldDeclNode(parent_idx=818, current_idx=821, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5c1108 <line:90:3, col:12> col:12 __align 'long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=822, child_idxs=(823, 824, 825), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=822, child_idxs=(823, 824), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5c1268 <line:86:1, line:91:3> col:3 pthread_rwlock_t 'union pthread_rwlock_t':'pthread_rwlock_t'PlaceHolderNode(parent_idx=822, current_idx=823, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5c1210 'union pthread_rwlock_t' sugar
-PlaceHolderNode(parent_idx=822, current_idx=824, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5bcf60 'pthread_rwlock_t'
-PlaceHolderNode(parent_idx=822, current_idx=825, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5bced8 ''
-
+RecordTypeNode(parent_idx=822, current_idx=824, child_idxs=(825), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_rwlock_tRecordNode(parent_idx=824, current_idx=825, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=826, child_idxs=(827, 828), node_state=4 (COMPLETED))
 struct definition:
 	FieldDeclNode(parent_idx=826, current_idx=827, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1487,14 +1447,12 @@ struct definition:
 	FieldDeclNode(parent_idx=826, current_idx=828, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5c1480 <line:96:3, col:12> col:12 __align 'long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=829, child_idxs=(830, 831, 832), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=829, child_idxs=(830, 831), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5c1528 <line:93:1, line:97:3> col:3 pthread_rwlockattr_t 'union pthread_rwlockattr_t':'pthread_rwlockattr_t'PlaceHolderNode(parent_idx=829, current_idx=830, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5c14d0 'union pthread_rwlockattr_t' sugar
-PlaceHolderNode(parent_idx=829, current_idx=831, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5c1360 'pthread_rwlockattr_t'
-PlaceHolderNode(parent_idx=829, current_idx=832, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5c12d8 ''
-
+RecordTypeNode(parent_idx=829, current_idx=831, child_idxs=(832), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_rwlockattr_tRecordNode(parent_idx=831, current_idx=832, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 TypedefDeclNode(parent_idx=1, current_idx=833, child_idxs=(834, 835), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5c15b0 <line:103:1, col:22> col:22 pthread_spinlock_t 'volatile int'PlaceHolderNode(parent_idx=833, current_idx=834, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-QualType 0x4e34a4 'volatile int' volatile
@@ -1507,14 +1465,12 @@ struct definition:
 	FieldDeclNode(parent_idx=836, current_idx=838, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5c17b0 <line:111:3, col:12> col:12 __align 'long'	
 
-TypedefDeclNode(parent_idx=1, current_idx=839, child_idxs=(840, 841, 842), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=839, child_idxs=(840, 841), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5c1858 <line:108:1, line:112:3> col:3 pthread_barrier_t 'union pthread_barrier_t':'pthread_barrier_t'PlaceHolderNode(parent_idx=839, current_idx=840, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5c1800 'union pthread_barrier_t' sugar
-PlaceHolderNode(parent_idx=839, current_idx=841, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5c1690 'pthread_barrier_t'
-PlaceHolderNode(parent_idx=839, current_idx=842, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5c1608 ''
-
+RecordTypeNode(parent_idx=839, current_idx=841, child_idxs=(842), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_barrier_tRecordNode(parent_idx=841, current_idx=842, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 RecordDeclNode(parent_idx=1, current_idx=843, child_idxs=(844, 845), node_state=4 (COMPLETED))
 struct definition:
 	FieldDeclNode(parent_idx=843, current_idx=844, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1523,14 +1479,12 @@ struct definition:
 	FieldDeclNode(parent_idx=843, current_idx=845, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5c1a38 <line:117:3, col:7> col:7 __align 'int'	
 
-TypedefDeclNode(parent_idx=1, current_idx=846, child_idxs=(847, 848, 849), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=846, child_idxs=(847, 848), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5c1ae8 <line:114:1, line:118:3> col:3 pthread_barrierattr_t 'union pthread_barrierattr_t':'pthread_barrierattr_t'PlaceHolderNode(parent_idx=846, current_idx=847, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x5c1a90 'union pthread_barrierattr_t' sugar
-PlaceHolderNode(parent_idx=846, current_idx=848, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x5c1950 'pthread_barrierattr_t'
-PlaceHolderNode(parent_idx=846, current_idx=849, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x5c18c8 ''
-
+RecordTypeNode(parent_idx=846, current_idx=848, child_idxs=(849), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ pthread_barrierattr_tRecordNode(parent_idx=848, current_idx=849, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 PlaceHolderNode(parent_idx=1, current_idx=850, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-FunctionDecl 0x5c1c20 </usr/include/stdlib.h:402:1, /usr/include/x86_64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:402:17 random 'long (void)' extern
 PlaceHolderNode(parent_idx=1, current_idx=851, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -7646,14 +7600,12 @@ struct _Anonymous_line_19_9:
  |       |-value: Int 16	
  |       `-UnaryExprOrTypeTraitExpr 0x660fa8 <col:34, col:57> 'unsigned long' __alignof 'long double'	
 
-TypedefDeclNode(parent_idx=1, current_idx=3902, child_idxs=(3903, 3904, 3905), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=3902, child_idxs=(3903, 3904), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x661108 <line:19:1, line:24:3> col:3 max_align_t 'struct max_align_t':'max_align_t'PlaceHolderNode(parent_idx=3902, current_idx=3903, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6610b0 'struct max_align_t' sugar
-PlaceHolderNode(parent_idx=3902, current_idx=3904, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x660e50 'max_align_t'
-PlaceHolderNode(parent_idx=3902, current_idx=3905, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x660dc8 ''
-
+RecordTypeNode(parent_idx=3902, current_idx=3904, child_idxs=(3905), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ max_align_tRecordNode(parent_idx=3904, current_idx=3905, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ 
 TypedefDeclNode(parent_idx=1, current_idx=3906, child_idxs=(3907, 3908, 3909), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x661188 </usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:24:1, col:19> col:19 uint8_t '__uint8_t':'unsigned char'PlaceHolderNode(parent_idx=3906, current_idx=3907, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-TypedefType 0x56b590 '__uint8_t' sugar
@@ -10363,14 +10315,12 @@ struct mjLROpt_:
  |     `-ParagraphComment 0x7e5a60 <col:37, col:78>	
  |       `-TextComment 0x7e5a30 <col:37, col:78> Text=" convergence tolerance (relative to range)"	
 
-TypedefDeclNode(parent_idx=1, current_idx=5252, child_idxs=(5253, 5254, 5255), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5252, child_idxs=(5253, 5254), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x68e770 <line:426:1, col:25> col:25 referenced mjLROpt 'struct mjLROpt_':'struct mjLROpt_'PlaceHolderNode(parent_idx=5252, current_idx=5253, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x68e720 'struct mjLROpt_' sugar
-PlaceHolderNode(parent_idx=5252, current_idx=5254, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x68e0b0 'struct mjLROpt_'
-PlaceHolderNode(parent_idx=5252, current_idx=5255, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x68e030 'mjLROpt_'
-
+RecordTypeNode(parent_idx=5252, current_idx=5254, child_idxs=(5255), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjLROpt_RecordNode(parent_idx=5254, current_idx=5255, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjLROpt_
 # TypedefDeclNode Unhandled tokens: mjLROpt_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=5256, child_idxs=(5257, 5258, 5259, 5260), node_state=4 (COMPLETED))
 struct mjVFS_:
@@ -10389,14 +10339,12 @@ struct mjVFS_:
  |     `-ParagraphComment 0x7e5c20 <col:49, col:79>	
  |       `-TextComment 0x7e5bf0 <col:49, col:79> Text=" internal pointer to VFS memory"	
 
-TypedefDeclNode(parent_idx=1, current_idx=5261, child_idxs=(5262, 5263, 5264), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5261, child_idxs=(5262, 5263), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x68e9b0 <line:434:1, col:23> col:23 referenced mjVFS 'struct mjVFS_':'struct mjVFS_'PlaceHolderNode(parent_idx=5261, current_idx=5262, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x68e960 'struct mjVFS_' sugar
-PlaceHolderNode(parent_idx=5261, current_idx=5263, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x68e880 'struct mjVFS_'
-PlaceHolderNode(parent_idx=5261, current_idx=5264, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x68e7f8 'mjVFS_'
-
+RecordTypeNode(parent_idx=5261, current_idx=5263, child_idxs=(5264), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjVFS_RecordNode(parent_idx=5263, current_idx=5264, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjVFS_
 # TypedefDeclNode Unhandled tokens: mjVFS_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=5265, child_idxs=(5266, 5267, 5268, 5269, 5270, ...) len=32, node_state=4 (COMPLETED))
 struct mjOption_:
@@ -10583,14 +10531,12 @@ struct mjOption_:
  |     `-ParagraphComment 0x7e7480 <col:37, col:82>	
  |       `-TextComment 0x7e7450 <col:37, col:82> Text=" max number of iterations for gradient descent"	
 
-TypedefDeclNode(parent_idx=1, current_idx=5298, child_idxs=(5299, 5300, 5301), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5298, child_idxs=(5299, 5300), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x691d20 <line:480:1, col:26> col:26 referenced mjOption 'struct mjOption_':'struct mjOption_'PlaceHolderNode(parent_idx=5298, current_idx=5299, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x691cd0 'struct mjOption_' sugar
-PlaceHolderNode(parent_idx=5298, current_idx=5300, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x68eac0 'struct mjOption_'
-PlaceHolderNode(parent_idx=5298, current_idx=5301, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x68ea38 'mjOption_'
-
+RecordTypeNode(parent_idx=5298, current_idx=5300, child_idxs=(5301), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjOption_RecordNode(parent_idx=5300, current_idx=5301, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjOption_
 # TypedefDeclNode Unhandled tokens: mjOption_':'struct 
 RecordDeclNode(parent_idx=5302, current_idx=5367, child_idxs=(5368, 5369, 5370, 5371, 5372, ...) len=25, node_state=4 (COMPLETED))
 struct _mjVisual___Anonymous_line_552_3:
@@ -11095,14 +11041,12 @@ struct mjVisual_:
 	FieldDeclNode(parent_idx=5302, current_idx=5393, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x6976f8 <line:552:3, line:578:5> col:5 rgba 'struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:552:3)':'struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:552:3)'	
 
-TypedefDeclNode(parent_idx=1, current_idx=5394, child_idxs=(5395, 5396, 5397), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5394, child_idxs=(5395, 5396), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x697850 <line:580:1, col:26> col:26 referenced mjVisual 'struct mjVisual_':'struct mjVisual_'PlaceHolderNode(parent_idx=5394, current_idx=5395, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x697800 'struct mjVisual_' sugar
-PlaceHolderNode(parent_idx=5394, current_idx=5396, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x691e30 'struct mjVisual_'
-PlaceHolderNode(parent_idx=5394, current_idx=5397, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x691da8 'mjVisual_'
-
+RecordTypeNode(parent_idx=5394, current_idx=5396, child_idxs=(5397), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjVisual_RecordNode(parent_idx=5396, current_idx=5397, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjVisual_
 # TypedefDeclNode Unhandled tokens: mjVisual_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=5398, child_idxs=(5399, 5400, 5401, 5402, 5403, ...) len=8, node_state=4 (COMPLETED))
 struct mjStatistic_:
@@ -11145,14 +11089,12 @@ struct mjStatistic_:
  |     `-ParagraphComment 0x7eb820 <col:37, col:52>	
  |       `-TextComment 0x7eb7f0 <col:37, col:52> Text=" center of model"	
 
-TypedefDeclNode(parent_idx=1, current_idx=5407, child_idxs=(5408, 5409, 5410), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5407, child_idxs=(5408, 5409), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x697d20 <line:592:1, col:29> col:29 referenced mjStatistic 'struct mjStatistic_':'struct mjStatistic_'PlaceHolderNode(parent_idx=5407, current_idx=5408, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x697cd0 'struct mjStatistic_' sugar
-PlaceHolderNode(parent_idx=5407, current_idx=5409, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x697960 'struct mjStatistic_'
-PlaceHolderNode(parent_idx=5407, current_idx=5410, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6978d8 'mjStatistic_'
-
+RecordTypeNode(parent_idx=5407, current_idx=5409, child_idxs=(5410), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjStatistic_RecordNode(parent_idx=5409, current_idx=5410, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjStatistic_
 # TypedefDeclNode Unhandled tokens: mjStatistic_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=5411, child_idxs=(5412, 5413, 5414, 5415, 5416, ...) len=493, node_state=4 (COMPLETED))
 struct mjModel_:
@@ -14123,14 +14065,12 @@ struct mjModel_:
  |     `-ParagraphComment 0x80cb60 <col:37, col:85>	
  |       `-TextComment 0x80cb30 <col:37, col:85> Text=" also held by the mjSpec that compiled this model"	
 
-TypedefDeclNode(parent_idx=1, current_idx=5905, child_idxs=(5906, 5907, 5908), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5905, child_idxs=(5906, 5907), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6b9c20 <line:1164:1, col:25> col:25 referenced mjModel 'struct mjModel_':'struct mjModel_'PlaceHolderNode(parent_idx=5905, current_idx=5906, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-PlaceHolderNode(parent_idx=5905, current_idx=5907, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x697e30 'struct mjModel_'
-PlaceHolderNode(parent_idx=5905, current_idx=5908, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x697da8 'mjModel_'
-
+RecordTypeNode(parent_idx=5905, current_idx=5907, child_idxs=(5908), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_RecordNode(parent_idx=5907, current_idx=5908, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_
 # TypedefDeclNode Unhandled tokens: mjModel_':'struct 
 PlaceHolderNode(parent_idx=1, current_idx=5909, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-EnumDecl 0x6b9d08 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjthread.h:20:9, line:24:1> line:20:14 mjtTaskStatus_
@@ -14209,14 +14149,12 @@ struct mjThreadPool_:
  |     `-ParagraphComment 0x80d040 <col:19, col:48>	
  |       `-TextComment 0x80d010 <col:19, col:48> Text=" number of workers in the pool"	
 
-TypedefDeclNode(parent_idx=1, current_idx=5945, child_idxs=(5946, 5947, 5948), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5945, child_idxs=(5946, 5947), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6b4230 <line:33:1, col:30> col:30 referenced mjThreadPool 'struct mjThreadPool_':'struct mjThreadPool_'PlaceHolderNode(parent_idx=5945, current_idx=5946, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6ba3f0 'struct mjThreadPool_' sugar
-PlaceHolderNode(parent_idx=5945, current_idx=5947, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6ba330 'struct mjThreadPool_'
-PlaceHolderNode(parent_idx=5945, current_idx=5948, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6ba2a8 'mjThreadPool_'
-
+RecordTypeNode(parent_idx=5945, current_idx=5947, child_idxs=(5948), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjThreadPool_RecordNode(parent_idx=5947, current_idx=5948, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjThreadPool_
 # TypedefDeclNode Unhandled tokens: mjThreadPool_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=5949, child_idxs=(5950, 5951, 5952), node_state=4 (COMPLETED))
 struct mjTask_:
@@ -14238,14 +14176,12 @@ struct mjTask_:
  |     `-ParagraphComment 0x80d2b0 <col:27, col:45>	
  |       `-TextComment 0x80d280 <col:27, col:45> Text=" status of the task"	
 
-TypedefDeclNode(parent_idx=1, current_idx=5953, child_idxs=(5954, 5955, 5956), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=5953, child_idxs=(5954, 5955), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6b4580 <line:40:1, col:24> col:24 referenced mjTask 'struct mjTask_':'struct mjTask_'PlaceHolderNode(parent_idx=5953, current_idx=5954, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6b4530 'struct mjTask_' sugar
-PlaceHolderNode(parent_idx=5953, current_idx=5955, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6b4310 'struct mjTask_'
-PlaceHolderNode(parent_idx=5953, current_idx=5956, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6b4288 'mjTask_'
-
+RecordTypeNode(parent_idx=5953, current_idx=5955, child_idxs=(5956), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjTask_RecordNode(parent_idx=5955, current_idx=5956, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjTask_
 # TypedefDeclNode Unhandled tokens: mjTask_':'struct 
 PlaceHolderNode(parent_idx=1, current_idx=5957, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-EnumDecl 0x6b4638 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjdata.h:27:9, line:51:1> line:27:14 mjtState_
@@ -14983,14 +14919,12 @@ struct mjContact_:
  |     `-ParagraphComment 0x810800 <col:38, col:70>	
  |       `-TextComment 0x8107d0 <col:38, col:70> Text=" address in efc; -1: not included"	
 
-TypedefDeclNode(parent_idx=1, current_idx=6283, child_idxs=(6284, 6285, 6286), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=6283, child_idxs=(6284, 6285), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6c23c0 <line:130:1, col:27> col:27 referenced mjContact 'struct mjContact_':'struct mjContact_'PlaceHolderNode(parent_idx=6283, current_idx=6284, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6c2370 'struct mjContact_' sugar
-PlaceHolderNode(parent_idx=6283, current_idx=6285, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6c12e0 'struct mjContact_'
-PlaceHolderNode(parent_idx=6283, current_idx=6286, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6c1260 'mjContact_'
-
+RecordTypeNode(parent_idx=6283, current_idx=6285, child_idxs=(6286), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjContact_RecordNode(parent_idx=6285, current_idx=6286, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjContact_
 # TypedefDeclNode Unhandled tokens: mjContact_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=6287, child_idxs=(6288, 6289, 6290, 6291, 6292), node_state=4 (COMPLETED))
 struct mjWarningStat_:
@@ -15015,14 +14949,12 @@ struct mjWarningStat_:
  |     `-ParagraphComment 0x810a70 <col:32, col:65>	
  |       `-TextComment 0x810a40 <col:32, col:65> Text=" how many times was warning raised"	
 
-TypedefDeclNode(parent_idx=1, current_idx=6293, child_idxs=(6294, 6295, 6296), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=6293, child_idxs=(6294, 6295), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6c2690 <line:139:1, col:31> col:31 referenced mjWarningStat 'struct mjWarningStat_':'struct mjWarningStat_'PlaceHolderNode(parent_idx=6293, current_idx=6294, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6c2640 'struct mjWarningStat_' sugar
-PlaceHolderNode(parent_idx=6293, current_idx=6295, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6c24d0 'struct mjWarningStat_'
-PlaceHolderNode(parent_idx=6293, current_idx=6296, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6c2448 'mjWarningStat_'
-
+RecordTypeNode(parent_idx=6293, current_idx=6295, child_idxs=(6296), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjWarningStat_RecordNode(parent_idx=6295, current_idx=6296, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjWarningStat_
 # TypedefDeclNode Unhandled tokens: mjWarningStat_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=6297, child_idxs=(6298, 6299), node_state=4 (COMPLETED))
 struct mjTimerStat_:
@@ -15038,14 +14970,12 @@ struct mjTimerStat_:
  |     `-ParagraphComment 0x810c10 <col:32, col:63>	
  |       `-TextComment 0x810be0 <col:32, col:63> Text=" how many times was timer called"	
 
-TypedefDeclNode(parent_idx=1, current_idx=6300, child_idxs=(6301, 6302, 6303), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=6300, child_idxs=(6301, 6302), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6c30d0 <line:146:1, col:29> col:29 referenced mjTimerStat 'struct mjTimerStat_':'struct mjTimerStat_'PlaceHolderNode(parent_idx=6300, current_idx=6301, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6c3080 'struct mjTimerStat_' sugar
-PlaceHolderNode(parent_idx=6300, current_idx=6302, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6c2f10 'struct mjTimerStat_'
-PlaceHolderNode(parent_idx=6300, current_idx=6303, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6c26e8 'mjTimerStat_'
-
+RecordTypeNode(parent_idx=6300, current_idx=6302, child_idxs=(6303), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjTimerStat_RecordNode(parent_idx=6302, current_idx=6303, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjTimerStat_
 # TypedefDeclNode Unhandled tokens: mjTimerStat_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=6304, child_idxs=(6305, 6306, 6307, 6308, 6309, ...) len=7, node_state=4 (COMPLETED))
 struct mjSolverStat_:
@@ -15091,14 +15021,12 @@ struct mjSolverStat_:
  |     `-ParagraphComment 0x8111c0 <col:32, col:73>	
  |       `-TextComment 0x811190 <col:32, col:73> Text=" number of Cholesky updates in line search"	
 
-TypedefDeclNode(parent_idx=1, current_idx=6312, child_idxs=(6313, 6314, 6315), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=6312, child_idxs=(6313, 6314), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6c3640 <line:158:1, col:30> col:30 referenced mjSolverStat 'struct mjSolverStat_':'struct mjSolverStat_'PlaceHolderNode(parent_idx=6312, current_idx=6313, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6c35f0 'struct mjSolverStat_' sugar
-PlaceHolderNode(parent_idx=6312, current_idx=6314, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6c31b0 'struct mjSolverStat_'
-PlaceHolderNode(parent_idx=6312, current_idx=6315, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6c3128 'mjSolverStat_'
-
+RecordTypeNode(parent_idx=6312, current_idx=6314, child_idxs=(6315), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjSolverStat_RecordNode(parent_idx=6314, current_idx=6315, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjSolverStat_
 # TypedefDeclNode Unhandled tokens: mjSolverStat_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=6316, child_idxs=(6317, 6318, 6319, 6320, 6321, ...) len=179, node_state=4 (COMPLETED))
 struct mjData_:
@@ -16168,14 +16096,12 @@ struct mjData_:
  |     `-ParagraphComment 0x81a230 <col:32, col:79>	
  |       `-TextComment 0x81a200 <col:32, col:79> Text=" also held by the mjSpec that compiled the model"	
 
-TypedefDeclNode(parent_idx=1, current_idx=6496, child_idxs=(6497, 6498, 6499), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=6496, child_idxs=(6497, 6498), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6d0860 <line:449:1, col:24> col:24 referenced mjData 'struct mjData_':'struct mjData_'PlaceHolderNode(parent_idx=6496, current_idx=6497, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-PlaceHolderNode(parent_idx=6496, current_idx=6498, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6c3750 'struct mjData_'
-PlaceHolderNode(parent_idx=6496, current_idx=6499, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6c36c8 'mjData_'
-
+RecordTypeNode(parent_idx=6496, current_idx=6498, child_idxs=(6499), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_RecordNode(parent_idx=6498, current_idx=6499, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_
 # TypedefDeclNode Unhandled tokens: mjData_':'struct 
 TypedefDeclNode(parent_idx=1, current_idx=6500, child_idxs=(6501, 6518, 6519, 6520), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6d2c18 <line:455:1, col:55> col:16 referenced mjfGeneric 'void (*)(const mjModel *, mjData *)'PointerTypeNode(parent_idx=6500, current_idx=6501, child_idxs=(6502, 6503, 6504, 6505, 6512), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16183,7 +16109,7 @@ TypedefDeclNode(parent_idx=1, current_idx=6500, child_idxs=(6501, 6518, 6519, 65
 | | `-ParenType 0x6d2b50 'void (const mjModel *, mjData *)' sugar
 PlaceHolderNode(parent_idx=6501, current_idx=6503, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d2b10 'void (const mjModel *, mjData *)' cdecl
-NoneTypePointerTypeNode(parent_idx=6501, current_idx=6505, child_idxs=(6506, 6507, 6508, 6509, 6510, 6511), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+NoneTypePointerTypeNode(parent_idx=6501, current_idx=6505, child_idxs=(6506, 6507, 6508, 6509, 6510), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d0970 'const mjModel *'PlaceHolderNode(parent_idx=6505, current_idx=6506, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6d0921 'const mjModel' const
 PlaceHolderNode(parent_idx=6505, current_idx=6507, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16192,23 +16118,19 @@ PlaceHolderNode(parent_idx=6505, current_idx=6508, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6b9c20 'mjModel'
 PlaceHolderNode(parent_idx=6505, current_idx=6509, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-PlaceHolderNode(parent_idx=6505, current_idx=6510, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x697e30 'struct mjModel_'
-PlaceHolderNode(parent_idx=6505, current_idx=6511, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x697da8 'mjModel_'
-
-PointerTypeNode(parent_idx=6501, current_idx=6512, child_idxs=(6513, 6514, 6515, 6516, 6517), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=6505, current_idx=6510, child_idxs=(6511), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_RecordNode(parent_idx=6510, current_idx=6511, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_
+PointerTypeNode(parent_idx=6501, current_idx=6512, child_idxs=(6513, 6514, 6515, 6516), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     `-PointerType 0x6d0a60 'mjData *'PlaceHolderNode(parent_idx=6512, current_idx=6513, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |       `-TypedefType 0x6d0a10 'mjData' sugar
 PlaceHolderNode(parent_idx=6512, current_idx=6514, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |         |-Typedef 0x6d0860 'mjData'
 PlaceHolderNode(parent_idx=6512, current_idx=6515, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |         `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-PlaceHolderNode(parent_idx=6512, current_idx=6516, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |           `-RecordType 0x6c3750 'struct mjData_'
-PlaceHolderNode(parent_idx=6512, current_idx=6517, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |             `-Record 0x6c36c8 'mjData_'
-
+RecordTypeNode(parent_idx=6512, current_idx=6516, child_idxs=(6517), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_RecordNode(parent_idx=6516, current_idx=6517, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_
 
 PlaceHolderNode(parent_idx=6500, current_idx=6518, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-FullComment 0x81a330 <line:454:3, col:26>
@@ -16224,7 +16146,7 @@ TypedefDeclNode(parent_idx=1, current_idx=6521, child_idxs=(6522, 6541, 6542, 65
 | | `-ParenType 0x6d2f30 'int (const mjModel *, mjData *, int, int)' sugar
 PlaceHolderNode(parent_idx=6522, current_idx=6524, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d2ee0 'int (const mjModel *, mjData *, int, int)' cdecl
-Int32PointerTypeNode(parent_idx=6522, current_idx=6526, child_idxs=(6527, 6528, 6529, 6530, 6531, 6532), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+Int32PointerTypeNode(parent_idx=6522, current_idx=6526, child_idxs=(6527, 6528, 6529, 6530, 6531), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d0970 'const mjModel *'PlaceHolderNode(parent_idx=6526, current_idx=6527, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6d0921 'const mjModel' const
 PlaceHolderNode(parent_idx=6526, current_idx=6528, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16233,23 +16155,19 @@ PlaceHolderNode(parent_idx=6526, current_idx=6529, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6b9c20 'mjModel'
 PlaceHolderNode(parent_idx=6526, current_idx=6530, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-PlaceHolderNode(parent_idx=6526, current_idx=6531, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x697e30 'struct mjModel_'
-PlaceHolderNode(parent_idx=6526, current_idx=6532, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x697da8 'mjModel_'
-
-PointerTypeNode(parent_idx=6522, current_idx=6533, child_idxs=(6534, 6535, 6536, 6537, 6538), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=6526, current_idx=6531, child_idxs=(6532), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_RecordNode(parent_idx=6531, current_idx=6532, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_
+PointerTypeNode(parent_idx=6522, current_idx=6533, child_idxs=(6534, 6535, 6536, 6537), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d0a60 'mjData *'PlaceHolderNode(parent_idx=6533, current_idx=6534, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 PlaceHolderNode(parent_idx=6533, current_idx=6535, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   |-Typedef 0x6d0860 'mjData'
 PlaceHolderNode(parent_idx=6533, current_idx=6536, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-PlaceHolderNode(parent_idx=6533, current_idx=6537, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |     `-RecordType 0x6c3750 'struct mjData_'
-PlaceHolderNode(parent_idx=6533, current_idx=6538, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-Record 0x6c36c8 'mjData_'
-
+RecordTypeNode(parent_idx=6533, current_idx=6537, child_idxs=(6538), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_RecordNode(parent_idx=6537, current_idx=6538, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_
 Int32Int32
 PlaceHolderNode(parent_idx=6521, current_idx=6541, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-FullComment 0x81a400 <line:457:3, col:41>
@@ -16265,7 +16183,7 @@ TypedefDeclNode(parent_idx=1, current_idx=6544, child_idxs=(6545, 6563, 6564, 65
 | | `-ParenType 0x6d3290 'void (const mjModel *, mjData *, int)' sugar
 PlaceHolderNode(parent_idx=6545, current_idx=6547, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d3250 'void (const mjModel *, mjData *, int)' cdecl
-NoneTypePointerTypeNode(parent_idx=6545, current_idx=6549, child_idxs=(6550, 6551, 6552, 6553, 6554, 6555), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+NoneTypePointerTypeNode(parent_idx=6545, current_idx=6549, child_idxs=(6550, 6551, 6552, 6553, 6554), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d0970 'const mjModel *'PlaceHolderNode(parent_idx=6549, current_idx=6550, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6d0921 'const mjModel' const
 PlaceHolderNode(parent_idx=6549, current_idx=6551, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16274,23 +16192,19 @@ PlaceHolderNode(parent_idx=6549, current_idx=6552, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6b9c20 'mjModel'
 PlaceHolderNode(parent_idx=6549, current_idx=6553, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-PlaceHolderNode(parent_idx=6549, current_idx=6554, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x697e30 'struct mjModel_'
-PlaceHolderNode(parent_idx=6549, current_idx=6555, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x697da8 'mjModel_'
-
-PointerTypeNode(parent_idx=6545, current_idx=6556, child_idxs=(6557, 6558, 6559, 6560, 6561), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=6549, current_idx=6554, child_idxs=(6555), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_RecordNode(parent_idx=6554, current_idx=6555, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_
+PointerTypeNode(parent_idx=6545, current_idx=6556, child_idxs=(6557, 6558, 6559, 6560), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d0a60 'mjData *'PlaceHolderNode(parent_idx=6556, current_idx=6557, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 PlaceHolderNode(parent_idx=6556, current_idx=6558, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   |-Typedef 0x6d0860 'mjData'
 PlaceHolderNode(parent_idx=6556, current_idx=6559, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-PlaceHolderNode(parent_idx=6556, current_idx=6560, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |     `-RecordType 0x6c3750 'struct mjData_'
-PlaceHolderNode(parent_idx=6556, current_idx=6561, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-Record 0x6c36c8 'mjData_'
-
+RecordTypeNode(parent_idx=6556, current_idx=6560, child_idxs=(6561), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_RecordNode(parent_idx=6560, current_idx=6561, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_
 Int32
 PlaceHolderNode(parent_idx=6544, current_idx=6563, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-FullComment 0x81a4d0 <line:460:3, col:20>
@@ -16328,7 +16242,7 @@ PlaceHolderNode(parent_idx=6577, current_idx=6580, child_idxs=(), node_state=4 (
 | |     |-TypedefType 0x68e310 'mjtNum' sugar
 PlaceHolderNode(parent_idx=6577, current_idx=6581, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | |-Typedef 0x66e630 'mjtNum'
-Float64PointerTypeNode(parent_idx=6577, current_idx=6583, child_idxs=(6584, 6585, 6586, 6587, 6588, 6589), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+Float64PointerTypeNode(parent_idx=6577, current_idx=6583, child_idxs=(6584, 6585, 6586, 6587, 6588), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d0970 'const mjModel *'PlaceHolderNode(parent_idx=6583, current_idx=6584, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6d0921 'const mjModel' const
 PlaceHolderNode(parent_idx=6583, current_idx=6585, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16337,12 +16251,10 @@ PlaceHolderNode(parent_idx=6583, current_idx=6586, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6b9c20 'mjModel'
 PlaceHolderNode(parent_idx=6583, current_idx=6587, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-PlaceHolderNode(parent_idx=6583, current_idx=6588, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x697e30 'struct mjModel_'
-PlaceHolderNode(parent_idx=6583, current_idx=6589, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x697da8 'mjModel_'
-
-PointerTypeNode(parent_idx=6577, current_idx=6590, child_idxs=(6591, 6592, 6593, 6594, 6595, 6596), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=6583, current_idx=6588, child_idxs=(6589), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_RecordNode(parent_idx=6588, current_idx=6589, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_
+PointerTypeNode(parent_idx=6577, current_idx=6590, child_idxs=(6591, 6592, 6593, 6594, 6595), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d3670 'const mjData *'PlaceHolderNode(parent_idx=6590, current_idx=6591, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6d0a11 'const mjData' const
 PlaceHolderNode(parent_idx=6590, current_idx=6592, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16351,11 +16263,9 @@ PlaceHolderNode(parent_idx=6590, current_idx=6593, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6d0860 'mjData'
 PlaceHolderNode(parent_idx=6590, current_idx=6594, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-PlaceHolderNode(parent_idx=6590, current_idx=6595, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x6c3750 'struct mjData_'
-PlaceHolderNode(parent_idx=6590, current_idx=6596, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x6c36c8 'mjData_'
-
+RecordTypeNode(parent_idx=6590, current_idx=6595, child_idxs=(6596), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_RecordNode(parent_idx=6595, current_idx=6596, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_
 Int32
 PlaceHolderNode(parent_idx=6576, current_idx=6598, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-FullComment 0x81a670 <line:466:3, col:32>
@@ -16371,7 +16281,7 @@ TypedefDeclNode(parent_idx=1, current_idx=6601, child_idxs=(6602, 6631, 6632, 66
 | | `-ParenType 0x6d3d10 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' sugar
 PlaceHolderNode(parent_idx=6602, current_idx=6604, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d3cb0 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' cdecl
-Int32PointerTypeNode(parent_idx=6602, current_idx=6606, child_idxs=(6607, 6608, 6609, 6610, 6611, 6612), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+Int32PointerTypeNode(parent_idx=6602, current_idx=6606, child_idxs=(6607, 6608, 6609, 6610, 6611), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d0970 'const mjModel *'PlaceHolderNode(parent_idx=6606, current_idx=6607, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6d0921 'const mjModel' const
 PlaceHolderNode(parent_idx=6606, current_idx=6608, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16380,12 +16290,10 @@ PlaceHolderNode(parent_idx=6606, current_idx=6609, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6b9c20 'mjModel'
 PlaceHolderNode(parent_idx=6606, current_idx=6610, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-PlaceHolderNode(parent_idx=6606, current_idx=6611, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x697e30 'struct mjModel_'
-PlaceHolderNode(parent_idx=6606, current_idx=6612, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x697da8 'mjModel_'
-
-PointerTypeNode(parent_idx=6602, current_idx=6613, child_idxs=(6614, 6615, 6616, 6617, 6618, 6619), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=6606, current_idx=6611, child_idxs=(6612), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_RecordNode(parent_idx=6611, current_idx=6612, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjModel_
+PointerTypeNode(parent_idx=6602, current_idx=6613, child_idxs=(6614, 6615, 6616, 6617, 6618), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6d3670 'const mjData *'PlaceHolderNode(parent_idx=6613, current_idx=6614, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6d0a11 'const mjData' const
 PlaceHolderNode(parent_idx=6613, current_idx=6615, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -16394,23 +16302,19 @@ PlaceHolderNode(parent_idx=6613, current_idx=6616, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6d0860 'mjData'
 PlaceHolderNode(parent_idx=6613, current_idx=6617, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-PlaceHolderNode(parent_idx=6613, current_idx=6618, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x6c3750 'struct mjData_'
-PlaceHolderNode(parent_idx=6613, current_idx=6619, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x6c36c8 'mjData_'
-
-PointerTypeNode(parent_idx=6602, current_idx=6620, child_idxs=(6621, 6622, 6623, 6624, 6625), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=6613, current_idx=6618, child_idxs=(6619), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_RecordNode(parent_idx=6618, current_idx=6619, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjData_
+PointerTypeNode(parent_idx=6602, current_idx=6620, child_idxs=(6621, 6622, 6623, 6624), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6cef50 'mjContact *'PlaceHolderNode(parent_idx=6620, current_idx=6621, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-TypedefType 0x6cef00 'mjContact' sugar
 PlaceHolderNode(parent_idx=6620, current_idx=6622, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   |-Typedef 0x6c23c0 'mjContact'
 PlaceHolderNode(parent_idx=6620, current_idx=6623, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   `-ElaboratedType 0x6c2370 'struct mjContact_' sugar
-PlaceHolderNode(parent_idx=6620, current_idx=6624, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |     `-RecordType 0x6c12e0 'struct mjContact_'
-PlaceHolderNode(parent_idx=6620, current_idx=6625, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-Record 0x6c1260 'mjContact_'
-
+RecordTypeNode(parent_idx=6620, current_idx=6624, child_idxs=(6625), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjContact_RecordNode(parent_idx=6624, current_idx=6625, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjContact_
 Int32Int32PlaceHolderNode(parent_idx=6602, current_idx=6628, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     `-TypedefType 0x68e310 'mjtNum' sugar
 PlaceHolderNode(parent_idx=6602, current_idx=6629, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -17418,14 +17322,12 @@ struct mjvPerturb_:
  |     `-ParagraphComment 0x81fcc0 <col:37, col:96>	
  |       `-TextComment 0x81fc90 <col:37, col:96> Text=" relative mouse motion-to-space scaling (set by initPerturb)"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7103, child_idxs=(7104, 7105, 7106), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7103, child_idxs=(7104, 7105), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6e8f90 <line:179:1, col:28> col:28 referenced mjvPerturb 'struct mjvPerturb_':'struct mjvPerturb_'PlaceHolderNode(parent_idx=7103, current_idx=7104, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6e8f40 'struct mjvPerturb_' sugar
-PlaceHolderNode(parent_idx=7103, current_idx=7105, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6e6a00 'struct mjvPerturb_'
-PlaceHolderNode(parent_idx=7103, current_idx=7106, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6e6980 'mjvPerturb_'
-
+RecordTypeNode(parent_idx=7103, current_idx=7105, child_idxs=(7106), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvPerturb_RecordNode(parent_idx=7105, current_idx=7106, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvPerturb_
 # TypedefDeclNode Unhandled tokens: mjvPerturb_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7107, child_idxs=(7108, 7109, 7110, 7111, 7112, ...) len=11, node_state=4 (COMPLETED))
 struct mjvCamera_:
@@ -17486,14 +17388,12 @@ struct mjvCamera_:
  |     `-ParagraphComment 0x820410 <col:37, col:68>	
  |       `-TextComment 0x8203e0 <col:37, col:68> Text=" 0: perspective; 1: orthographic"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7119, child_idxs=(7120, 7121, 7122), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7119, child_idxs=(7120, 7121), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6e96a0 <line:199:1, col:27> col:27 referenced mjvCamera 'struct mjvCamera_':'struct mjvCamera_'PlaceHolderNode(parent_idx=7119, current_idx=7120, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6e9650 'struct mjvCamera_' sugar
-PlaceHolderNode(parent_idx=7119, current_idx=7121, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6e90a0 'struct mjvCamera_'
-PlaceHolderNode(parent_idx=7119, current_idx=7122, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6e9018 'mjvCamera_'
-
+RecordTypeNode(parent_idx=7119, current_idx=7121, child_idxs=(7122), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvCamera_RecordNode(parent_idx=7121, current_idx=7122, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvCamera_
 # TypedefDeclNode Unhandled tokens: mjvCamera_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7123, child_idxs=(7124, 7125, 7126, 7127, 7128, ...) len=13, node_state=4 (COMPLETED))
 struct mjvGLCamera_:
@@ -17566,14 +17466,12 @@ struct mjvGLCamera_:
  |     `-ParagraphComment 0x820d00 <col:37, col:68>	
  |       `-TextComment 0x820cd0 <col:37, col:68> Text=" 0: perspective; 1: orthographic"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7137, child_idxs=(7138, 7139, 7140), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7137, child_idxs=(7138, 7139), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6e9f70 <line:221:1, col:29> col:29 referenced mjvGLCamera 'struct mjvGLCamera_':'struct mjvGLCamera_'PlaceHolderNode(parent_idx=7137, current_idx=7138, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6e9f20 'struct mjvGLCamera_' sugar
-PlaceHolderNode(parent_idx=7137, current_idx=7139, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6e97b0 'struct mjvGLCamera_'
-PlaceHolderNode(parent_idx=7137, current_idx=7140, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6e9728 'mjvGLCamera_'
-
+RecordTypeNode(parent_idx=7137, current_idx=7139, child_idxs=(7140), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvGLCamera_RecordNode(parent_idx=7139, current_idx=7140, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvGLCamera_
 # TypedefDeclNode Unhandled tokens: mjvGLCamera_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7141, child_idxs=(7142, 7143, 7144, 7145, 7146, ...) len=23, node_state=4 (COMPLETED))
 struct mjvGeom_:
@@ -17706,14 +17604,12 @@ struct mjvGeom_:
  |     `-ParagraphComment 0x821e20 <col:37, col:62>	
  |       `-TextComment 0x821df0 <col:37, col:62> Text=" treat geom as transparent"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7165, child_idxs=(7166, 7167, 7168), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7165, child_idxs=(7166, 7167), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6ebd20 <line:256:1, col:25> col:25 referenced mjvGeom 'struct mjvGeom_':'struct mjvGeom_'PlaceHolderNode(parent_idx=7165, current_idx=7166, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6ebcd0 'struct mjvGeom_' sugar
-PlaceHolderNode(parent_idx=7165, current_idx=7167, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6ea080 'struct mjvGeom_'
-PlaceHolderNode(parent_idx=7165, current_idx=7168, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6e9ff8 'mjvGeom_'
-
+RecordTypeNode(parent_idx=7165, current_idx=7167, child_idxs=(7168), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvGeom_RecordNode(parent_idx=7167, current_idx=7168, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvGeom_
 # TypedefDeclNode Unhandled tokens: mjvGeom_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7169, child_idxs=(7170, 7171, 7172, 7173, 7174, ...) len=15, node_state=4 (COMPLETED))
 struct mjvLight_:
@@ -17798,14 +17694,12 @@ struct mjvLight_:
  |     `-ParagraphComment 0x8228b0 <col:37, col:65>	
  |       `-TextComment 0x822880 <col:37, col:65> Text=" bulb radius for soft shadows"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7185, child_idxs=(7186, 7187, 7188), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7185, child_idxs=(7186, 7187), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6ec770 <line:275:1, col:26> col:26 referenced mjvLight 'struct mjvLight_':'struct mjvLight_'PlaceHolderNode(parent_idx=7185, current_idx=7186, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6ec720 'struct mjvLight_' sugar
-PlaceHolderNode(parent_idx=7185, current_idx=7187, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6ebe30 'struct mjvLight_'
-PlaceHolderNode(parent_idx=7185, current_idx=7188, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6ebda8 'mjvLight_'
-
+RecordTypeNode(parent_idx=7185, current_idx=7187, child_idxs=(7188), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvLight_RecordNode(parent_idx=7187, current_idx=7188, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvLight_
 # TypedefDeclNode Unhandled tokens: mjvLight_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7189, child_idxs=(7190, 7191, 7192, 7193, 7194, ...) len=15, node_state=4 (COMPLETED))
 struct mjvOption_:
@@ -17890,14 +17784,12 @@ struct mjvOption_:
  |     `-ParagraphComment 0x823340 <col:40, col:82>	
  |       `-TextComment 0x823310 <col:40, col:82> Text=" element layer to be visualized for 3D flex"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7205, child_idxs=(7206, 7207, 7208), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7205, child_idxs=(7206, 7207), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6ed360 <line:294:1, col:27> col:27 referenced mjvOption 'struct mjvOption_':'struct mjvOption_'PlaceHolderNode(parent_idx=7205, current_idx=7206, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6ed310 'struct mjvOption_' sugar
-PlaceHolderNode(parent_idx=7205, current_idx=7207, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6ec880 'struct mjvOption_'
-PlaceHolderNode(parent_idx=7205, current_idx=7208, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6ec7f8 'mjvOption_'
-
+RecordTypeNode(parent_idx=7205, current_idx=7207, child_idxs=(7208), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvOption_RecordNode(parent_idx=7207, current_idx=7208, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvOption_
 # TypedefDeclNode Unhandled tokens: mjvOption_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7209, child_idxs=(7210, 7211, 7212, 7213, 7214, ...) len=41, node_state=4 (COMPLETED))
 struct mjvScene_:
@@ -18138,14 +18030,12 @@ struct mjvScene_:
  |     `-ParagraphComment 0x8252f0 <col:37, col:48>	
  |       `-TextComment 0x8252c0 <col:37, col:48> Text=" frame color"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7251, child_idxs=(7252, 7253, 7254), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7251, child_idxs=(7252, 7253), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6f0ca0 <line:354:1, col:26> col:26 referenced mjvScene 'struct mjvScene_':'struct mjvScene_'PlaceHolderNode(parent_idx=7251, current_idx=7252, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6f0c50 'struct mjvScene_' sugar
-PlaceHolderNode(parent_idx=7251, current_idx=7253, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6ed470 'struct mjvScene_'
-PlaceHolderNode(parent_idx=7251, current_idx=7254, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6ed3e8 'mjvScene_'
-
+RecordTypeNode(parent_idx=7251, current_idx=7253, child_idxs=(7254), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvScene_RecordNode(parent_idx=7253, current_idx=7254, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvScene_
 # TypedefDeclNode Unhandled tokens: mjvScene_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7255, child_idxs=(7256, 7257, 7258, 7259, 7260, ...) len=36, node_state=4 (COMPLETED))
 struct mjvFigure_:
@@ -18356,14 +18246,12 @@ struct mjvFigure_:
  |     `-ParagraphComment 0x826ea0 <col:37, col:66>	
  |       `-TextComment 0x826e70 <col:37, col:66> Text=" range of y-axis in data units"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7292, child_idxs=(7293, 7294, 7295), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7292, child_idxs=(7293, 7294), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6f3950 <line:405:1, col:27> col:27 referenced mjvFigure 'struct mjvFigure_':'struct mjvFigure_'PlaceHolderNode(parent_idx=7292, current_idx=7293, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6f3900 'struct mjvFigure_' sugar
-PlaceHolderNode(parent_idx=7292, current_idx=7294, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6f0db0 'struct mjvFigure_'
-PlaceHolderNode(parent_idx=7292, current_idx=7295, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6f0d28 'mjvFigure_'
-
+RecordTypeNode(parent_idx=7292, current_idx=7294, child_idxs=(7295), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvFigure_RecordNode(parent_idx=7294, current_idx=7295, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvFigure_
 # TypedefDeclNode Unhandled tokens: mjvFigure_':'struct 
 RecordDeclNode(parent_idx=7296, current_idx=7503, child_idxs=(7504, 7505, 7506, 7507, 7508, ...) len=45, node_state=4 (COMPLETED))
 struct _mjvSceneState___Anonymous_line_634_3:
@@ -19138,14 +19026,12 @@ struct mjvSceneState_:
 	FieldDeclNode(parent_idx=7296, current_idx=7549, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x6fb218 <line:634:3, line:688:5> col:5 data 'struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:634:3)':'struct mjvSceneState_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:634:3)'	
 
-TypedefDeclNode(parent_idx=1, current_idx=7550, child_idxs=(7551, 7552, 7553), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7550, child_idxs=(7551, 7552), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6fb2c0 <line:690:1, col:31> col:31 referenced mjvSceneState 'struct mjvSceneState_':'struct mjvSceneState_'PlaceHolderNode(parent_idx=7550, current_idx=7551, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6fb270 'struct mjvSceneState_' sugar
-PlaceHolderNode(parent_idx=7550, current_idx=7552, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6f3a60 'struct mjvSceneState_'
-PlaceHolderNode(parent_idx=7550, current_idx=7553, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6f39d8 'mjvSceneState_'
-
+RecordTypeNode(parent_idx=7550, current_idx=7552, child_idxs=(7553), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvSceneState_RecordNode(parent_idx=7552, current_idx=7553, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjvSceneState_
 # TypedefDeclNode Unhandled tokens: mjvSceneState_':'struct 
 RecordDeclNode(parent_idx=7554, current_idx=7561, child_idxs=(), node_state=4 (COMPLETED))
 # Forward declaration of _mjResource__mjpResourceProvider	pass
@@ -19186,14 +19072,12 @@ struct mjResource_:
  |     `-ParagraphComment 0x827860 <col:51, col:74>	
  |       `-TextComment 0x827830 <col:51, col:74> Text=" pointer to the provider"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7563, child_idxs=(7564, 7565, 7566), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7563, child_idxs=(7564, 7565), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6fd900 <line:32:1, col:28> col:28 referenced mjResource 'struct mjResource_':'struct mjResource_'PlaceHolderNode(parent_idx=7563, current_idx=7564, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-PlaceHolderNode(parent_idx=7563, current_idx=7565, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6fb400 'struct mjResource_'
-PlaceHolderNode(parent_idx=7563, current_idx=7566, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6fb378 'mjResource_'
-
+RecordTypeNode(parent_idx=7563, current_idx=7565, child_idxs=(7566), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_RecordNode(parent_idx=7565, current_idx=7566, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_
 # TypedefDeclNode Unhandled tokens: mjResource_':'struct 
 TypedefDeclNode(parent_idx=1, current_idx=7567, child_idxs=(7568, 7578, 7579, 7580), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6fdba8 <line:35:1, col:52> col:15 referenced mjfOpenResource 'int (*)(mjResource *)'PointerTypeNode(parent_idx=7567, current_idx=7568, child_idxs=(7569, 7570, 7571, 7572), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -19201,18 +19085,16 @@ TypedefDeclNode(parent_idx=1, current_idx=7567, child_idxs=(7568, 7578, 7579, 75
 | | `-ParenType 0x6fdae0 'int (mjResource *)' sugar
 PlaceHolderNode(parent_idx=7568, current_idx=7570, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fdab0 'int (mjResource *)' cdecl
-Int32PointerTypeNode(parent_idx=7568, current_idx=7572, child_idxs=(7573, 7574, 7575, 7576, 7577), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+Int32PointerTypeNode(parent_idx=7568, current_idx=7572, child_idxs=(7573, 7574, 7575, 7576), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     `-PointerType 0x6fd9e0 'mjResource *'PlaceHolderNode(parent_idx=7572, current_idx=7573, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |       `-TypedefType 0x6fd990 'mjResource' sugar
 PlaceHolderNode(parent_idx=7572, current_idx=7574, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |         |-Typedef 0x6fd900 'mjResource'
 PlaceHolderNode(parent_idx=7572, current_idx=7575, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |         `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-PlaceHolderNode(parent_idx=7572, current_idx=7576, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |           `-RecordType 0x6fb400 'struct mjResource_'
-PlaceHolderNode(parent_idx=7572, current_idx=7577, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |             `-Record 0x6fb378 'mjResource_'
-
+RecordTypeNode(parent_idx=7572, current_idx=7576, child_idxs=(7577), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_RecordNode(parent_idx=7576, current_idx=7577, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_
 
 PlaceHolderNode(parent_idx=7567, current_idx=7578, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-FullComment 0x827960 <line:34:3, col:59>
@@ -19228,18 +19110,16 @@ TypedefDeclNode(parent_idx=1, current_idx=7581, child_idxs=(7582, 7596, 7597, 75
 | | `-ParenType 0x6fddd0 'int (mjResource *, const void **)' sugar
 PlaceHolderNode(parent_idx=7582, current_idx=7584, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fdd90 'int (mjResource *, const void **)' cdecl
-Int32PointerTypeNode(parent_idx=7582, current_idx=7586, child_idxs=(7587, 7588, 7589, 7590, 7591), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+Int32PointerTypeNode(parent_idx=7582, current_idx=7586, child_idxs=(7587, 7588, 7589, 7590), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6fd9e0 'mjResource *'PlaceHolderNode(parent_idx=7586, current_idx=7587, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-TypedefType 0x6fd990 'mjResource' sugar
 PlaceHolderNode(parent_idx=7586, current_idx=7588, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   |-Typedef 0x6fd900 'mjResource'
 PlaceHolderNode(parent_idx=7586, current_idx=7589, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-PlaceHolderNode(parent_idx=7586, current_idx=7590, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |     `-RecordType 0x6fb400 'struct mjResource_'
-PlaceHolderNode(parent_idx=7586, current_idx=7591, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-Record 0x6fb378 'mjResource_'
-
+RecordTypeNode(parent_idx=7586, current_idx=7590, child_idxs=(7591), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_RecordNode(parent_idx=7590, current_idx=7591, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_
 PointerTypeNode(parent_idx=7582, current_idx=7592, child_idxs=(7593), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     `-PointerType 0x6fdca0 'const void **'PointerTypeNode(parent_idx=7592, current_idx=7593, child_idxs=(7594, 7595), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |       `-PointerType 0x5d5cf0 'const void *'PlaceHolderNode(parent_idx=7593, current_idx=7594, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -19263,18 +19143,16 @@ TypedefDeclNode(parent_idx=1, current_idx=7600, child_idxs=(7601, 7611, 7612, 76
 | | `-ParenType 0x6fe000 'void (mjResource *)' sugar
 PlaceHolderNode(parent_idx=7601, current_idx=7603, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fdfd0 'void (mjResource *)' cdecl
-NoneTypePointerTypeNode(parent_idx=7601, current_idx=7605, child_idxs=(7606, 7607, 7608, 7609, 7610), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+NoneTypePointerTypeNode(parent_idx=7601, current_idx=7605, child_idxs=(7606, 7607, 7608, 7609), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     `-PointerType 0x6fd9e0 'mjResource *'PlaceHolderNode(parent_idx=7605, current_idx=7606, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |       `-TypedefType 0x6fd990 'mjResource' sugar
 PlaceHolderNode(parent_idx=7605, current_idx=7607, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |         |-Typedef 0x6fd900 'mjResource'
 PlaceHolderNode(parent_idx=7605, current_idx=7608, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |         `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-PlaceHolderNode(parent_idx=7605, current_idx=7609, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |           `-RecordType 0x6fb400 'struct mjResource_'
-PlaceHolderNode(parent_idx=7605, current_idx=7610, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |             `-Record 0x6fb378 'mjResource_'
-
+RecordTypeNode(parent_idx=7605, current_idx=7609, child_idxs=(7610), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_RecordNode(parent_idx=7609, current_idx=7610, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_
 
 PlaceHolderNode(parent_idx=7600, current_idx=7611, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-FullComment 0x827b20 <line:41:3, col:81>
@@ -19290,18 +19168,16 @@ TypedefDeclNode(parent_idx=1, current_idx=7614, child_idxs=(7615, 7631, 7632, 76
 | | `-ParenType 0x6fe370 'void (mjResource *, const char **, int *)' sugar
 PlaceHolderNode(parent_idx=7615, current_idx=7617, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fe330 'void (mjResource *, const char **, int *)' cdecl
-NoneTypePointerTypeNode(parent_idx=7615, current_idx=7619, child_idxs=(7620, 7621, 7622, 7623, 7624), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+NoneTypePointerTypeNode(parent_idx=7615, current_idx=7619, child_idxs=(7620, 7621, 7622, 7623), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6fd9e0 'mjResource *'PlaceHolderNode(parent_idx=7619, current_idx=7620, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-TypedefType 0x6fd990 'mjResource' sugar
 PlaceHolderNode(parent_idx=7619, current_idx=7621, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   |-Typedef 0x6fd900 'mjResource'
 PlaceHolderNode(parent_idx=7619, current_idx=7622, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |   `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-PlaceHolderNode(parent_idx=7619, current_idx=7623, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |     `-RecordType 0x6fb400 'struct mjResource_'
-PlaceHolderNode(parent_idx=7619, current_idx=7624, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-Record 0x6fb378 'mjResource_'
-
+RecordTypeNode(parent_idx=7619, current_idx=7623, child_idxs=(7624), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_RecordNode(parent_idx=7623, current_idx=7624, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_
 PointerTypeNode(parent_idx=7615, current_idx=7625, child_idxs=(7626), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6fe1c0 'const char **'PointerTypeNode(parent_idx=7625, current_idx=7626, child_idxs=(7627, 7628), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-PointerType 0x4e3dc0 'const char *'PlaceHolderNode(parent_idx=7626, current_idx=7627, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -19327,7 +19203,7 @@ TypedefDeclNode(parent_idx=1, current_idx=7635, child_idxs=(7636, 7650, 7651, 76
 | | `-ParenType 0x6fe6a0 'int (const mjResource *, const char *)' sugar
 PlaceHolderNode(parent_idx=7636, current_idx=7638, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fe660 'int (const mjResource *, const char *)' cdecl
-Int32PointerTypeNode(parent_idx=7636, current_idx=7640, child_idxs=(7641, 7642, 7643, 7644, 7645, 7646), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+Int32PointerTypeNode(parent_idx=7636, current_idx=7640, child_idxs=(7641, 7642, 7643, 7644, 7645), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |-PointerType 0x6fe500 'const mjResource *'PlaceHolderNode(parent_idx=7640, current_idx=7641, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     | `-QualType 0x6fd991 'const mjResource' const
 PlaceHolderNode(parent_idx=7640, current_idx=7642, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -19336,11 +19212,9 @@ PlaceHolderNode(parent_idx=7640, current_idx=7643, child_idxs=(), node_state=4 (
 | |     |     |-Typedef 0x6fd900 'mjResource'
 PlaceHolderNode(parent_idx=7640, current_idx=7644, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     |     `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-PlaceHolderNode(parent_idx=7640, current_idx=7645, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |       `-RecordType 0x6fb400 'struct mjResource_'
-PlaceHolderNode(parent_idx=7640, current_idx=7646, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |         `-Record 0x6fb378 'mjResource_'
-
+RecordTypeNode(parent_idx=7640, current_idx=7645, child_idxs=(7646), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_RecordNode(parent_idx=7645, current_idx=7646, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjResource_
 PointerTypeNode(parent_idx=7636, current_idx=7647, child_idxs=(7648, 7649), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |     `-PointerType 0x4e3dc0 'const char *'PlaceHolderNode(parent_idx=7647, current_idx=7648, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |       `-QualType 0x4e3441 'const char' const
@@ -19419,14 +19293,12 @@ struct mjpResourceProvider:
  |     `-ParagraphComment 0x828420 <col:39, col:79>	
  |       `-TextComment 0x8283f0 <col:39, col:79> Text=" opaque data pointer (resource invariant)"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7670, child_idxs=(7671, 7672, 7673), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7670, child_idxs=(7671, 7672), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6fed60 <line:65:1, col:36> col:36 referenced mjpResourceProvider 'struct mjpResourceProvider':'struct mjpResourceProvider'PlaceHolderNode(parent_idx=7670, current_idx=7671, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x6fed10 'struct mjpResourceProvider' sugar
-PlaceHolderNode(parent_idx=7670, current_idx=7672, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6fb6f0 'struct mjpResourceProvider'
-PlaceHolderNode(parent_idx=7670, current_idx=7673, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6fe7f8 'mjpResourceProvider'
-
+RecordTypeNode(parent_idx=7670, current_idx=7672, child_idxs=(7673), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjpResourceProviderRecordNode(parent_idx=7672, current_idx=7673, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjpResourceProvider
 # TypedefDeclNode Unhandled tokens: mjpResourceProvider':'struct 
 PlaceHolderNode(parent_idx=1, current_idx=7674, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-EnumDecl 0x6fede8 <line:70:9, line:75:1> line:70:14 mjtPluginCapabilityBit_
@@ -19646,14 +19518,12 @@ struct mjpPlugin_:
  |     `-ParagraphComment 0x829960 <col:5, col:37>	
  |       `-TextComment 0x829930 <col:5, col:37> Text=" bounding box of implicit surface"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7742, child_idxs=(7743, 7744, 7745), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7742, child_idxs=(7743, 7744), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x702e00 <line:136:1, col:27> col:27 referenced mjpPlugin 'struct mjpPlugin_':'struct mjpPlugin_'PlaceHolderNode(parent_idx=7742, current_idx=7743, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x702db0 'struct mjpPlugin_' sugar
-PlaceHolderNode(parent_idx=7742, current_idx=7744, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x6ff400 'struct mjpPlugin_'
-PlaceHolderNode(parent_idx=7742, current_idx=7745, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x6ff378 'mjpPlugin_'
-
+RecordTypeNode(parent_idx=7742, current_idx=7744, child_idxs=(7745), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjpPlugin_RecordNode(parent_idx=7744, current_idx=7745, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjpPlugin_
 # TypedefDeclNode Unhandled tokens: mjpPlugin_':'struct 
 TypedefDeclNode(parent_idx=1, current_idx=7746, child_idxs=(7747, 7756, 7757, 7758), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x703180 <line:173:1, col:88> col:16 referenced mjfPluginLibraryLoadCallback 'void (*)(const char *, int, int)'PointerTypeNode(parent_idx=7746, current_idx=7747, child_idxs=(7748, 7749, 7750, 7751, 7754, 7755), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -20001,14 +19871,12 @@ struct mjrRect_:
  |     `-ParagraphComment 0x82b030 <col:37, col:67>	
  |       `-TextComment 0x82b000 <col:37, col:67> Text=" height (usually buffer height)"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7912, child_idxs=(7913, 7914, 7915), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7912, child_idxs=(7913, 7914), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x707c90 <line:75:1, col:25> col:25 referenced mjrRect 'struct mjrRect_':'struct mjrRect_'PlaceHolderNode(parent_idx=7912, current_idx=7913, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x707c40 'struct mjrRect_' sugar
-PlaceHolderNode(parent_idx=7912, current_idx=7914, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x7079b0 'struct mjrRect_'
-PlaceHolderNode(parent_idx=7912, current_idx=7915, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x707928 'mjrRect_'
-
+RecordTypeNode(parent_idx=7912, current_idx=7914, child_idxs=(7915), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjrRect_RecordNode(parent_idx=7914, current_idx=7915, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjrRect_
 # TypedefDeclNode Unhandled tokens: mjrRect_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=7916, child_idxs=(7917, 7918, 7919, 7920, 7921, ...) len=64, node_state=4 (COMPLETED))
 struct mjrContext_:
@@ -20387,14 +20255,12 @@ struct mjrContext_:
  |     `-ParagraphComment 0x82e2a0 <col:39, col:89>	
  |       `-TextComment 0x82e270 <col:39, col:89> Text=" depth mapping: mjDEPTH_ZERONEAR or mjDEPTH_ZEROFAR"	
 
-TypedefDeclNode(parent_idx=1, current_idx=7981, child_idxs=(7982, 7983, 7984), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=7981, child_idxs=(7982, 7983), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x70dbf0 <line:172:1, col:28> col:28 referenced mjrContext 'struct mjrContext_':'struct mjrContext_'PlaceHolderNode(parent_idx=7981, current_idx=7982, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x70dba0 'struct mjrContext_' sugar
-PlaceHolderNode(parent_idx=7981, current_idx=7983, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x707da0 'struct mjrContext_'
-PlaceHolderNode(parent_idx=7981, current_idx=7984, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x707d18 'mjrContext_'
-
+RecordTypeNode(parent_idx=7981, current_idx=7983, child_idxs=(7984), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjrContext_RecordNode(parent_idx=7983, current_idx=7984, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjrContext_
 # TypedefDeclNode Unhandled tokens: mjrContext_':'struct 
 TypedefDeclNode(parent_idx=1, current_idx=7985, child_idxs=(7986, 7987, 7988, 7989), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x70de38 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjspec.h:47:3, col:16> col:16 referenced mjString 'void'NoneTypePlaceHolderNode(parent_idx=7985, current_idx=7987, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -20813,14 +20679,12 @@ struct mjsElement_:
  |     `-ParagraphComment 0x82fe40 <col:38, col:59>	
  |       `-TextComment 0x82fe10 <col:38, col:59> Text=" compilation signature"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8192, child_idxs=(8193, 8194, 8195, 8196, 8197, 8198), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8192, child_idxs=(8193, 8194, 8196, 8197, 8198), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x711ca8 <line:121:1, line:124:3> col:3 referenced mjsElement 'struct mjsElement_':'struct mjsElement_'PlaceHolderNode(parent_idx=8192, current_idx=8193, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |-ElaboratedType 0x711c50 'struct mjsElement_' sugar
-PlaceHolderNode(parent_idx=8192, current_idx=8194, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-RecordType 0x711ac0 'struct mjsElement_'
-PlaceHolderNode(parent_idx=8192, current_idx=8195, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |   `-Record 0x711a40 'mjsElement_'
-PlaceHolderNode(parent_idx=8192, current_idx=8196, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+RecordTypeNode(parent_idx=8192, current_idx=8194, child_idxs=(8195), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsElement_RecordNode(parent_idx=8194, current_idx=8195, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsElement_PlaceHolderNode(parent_idx=8192, current_idx=8196, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-FullComment 0x82ff40 <line:119:3, col:100>
 PlaceHolderNode(parent_idx=8192, current_idx=8197, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |   `-ParagraphComment 0x82ff10 <col:3, col:100>
@@ -20928,14 +20792,12 @@ struct mjsCompiler_:
  |     `-ParagraphComment 0x830c60 <col:38, col:73>	
  |       `-TextComment 0x830c30 <col:38, col:73> Text=" options for lengthrange computation"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8216, child_idxs=(8217, 8218, 8219), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8216, child_idxs=(8217, 8218), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x712848 <line:127:1, line:144:3> col:3 referenced mjsCompiler 'struct mjsCompiler_':'struct mjsCompiler_'PlaceHolderNode(parent_idx=8216, current_idx=8217, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x7127f0 'struct mjsCompiler_' sugar
-PlaceHolderNode(parent_idx=8216, current_idx=8218, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x711da0 'struct mjsCompiler_'
-PlaceHolderNode(parent_idx=8216, current_idx=8219, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x711d18 'mjsCompiler_'
-
+RecordTypeNode(parent_idx=8216, current_idx=8218, child_idxs=(8219), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsCompiler_RecordNode(parent_idx=8218, current_idx=8219, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsCompiler_
 # TypedefDeclNode Unhandled tokens: mjsCompiler_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8220, child_idxs=(8221, 8222, 8223, 8224, 8225, ...) len=27, node_state=4 (COMPLETED))
 struct mjSpec_:
@@ -21101,14 +20963,12 @@ struct mjSpec_:
  |     `-ParagraphComment 0x832270 <col:38, col:92>	
  |       `-TextComment 0x832240 <col:38, col:92> Text=" already encountered an implicit plugin sensor/actuator"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8248, child_idxs=(8249, 8250, 8251), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8248, child_idxs=(8249, 8250), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x715c58 <line:147:1, line:185:3> col:3 referenced mjSpec 'struct mjSpec_':'struct mjSpec_'PlaceHolderNode(parent_idx=8248, current_idx=8249, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x715c00 'struct mjSpec_' sugar
-PlaceHolderNode(parent_idx=8248, current_idx=8250, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x712940 'struct mjSpec_'
-PlaceHolderNode(parent_idx=8248, current_idx=8251, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x7128b8 'mjSpec_'
-
+RecordTypeNode(parent_idx=8248, current_idx=8250, child_idxs=(8251), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjSpec_RecordNode(parent_idx=8250, current_idx=8251, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjSpec_
 # TypedefDeclNode Unhandled tokens: mjSpec_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8252, child_idxs=(8253, 8254, 8255, 8256, 8257), node_state=4 (COMPLETED))
 struct mjsOrientation_:
@@ -21142,14 +21002,12 @@ struct mjsOrientation_:
  |     `-ParagraphComment 0x832680 <col:38, col:50>	
  |       `-TextComment 0x832650 <col:38, col:50> Text=" Euler angles"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8258, child_idxs=(8259, 8260, 8261), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8258, child_idxs=(8259, 8260), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x716228 <line:188:1, line:194:3> col:3 referenced mjsOrientation 'struct mjsOrientation_':'struct mjsOrientation_'PlaceHolderNode(parent_idx=8258, current_idx=8259, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x7161d0 'struct mjsOrientation_' sugar
-PlaceHolderNode(parent_idx=8258, current_idx=8260, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x715d50 'struct mjsOrientation_'
-PlaceHolderNode(parent_idx=8258, current_idx=8261, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x715cc8 'mjsOrientation_'
-
+RecordTypeNode(parent_idx=8258, current_idx=8260, child_idxs=(8261), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsOrientation_RecordNode(parent_idx=8260, current_idx=8261, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsOrientation_
 # TypedefDeclNode Unhandled tokens: mjsOrientation_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8262, child_idxs=(8263, 8264, 8265, 8266, 8267), node_state=4 (COMPLETED))
 struct mjsPlugin_:
@@ -21183,14 +21041,12 @@ struct mjsPlugin_:
  |     `-ParagraphComment 0x832a90 <col:38, col:73>	
  |       `-TextComment 0x832a60 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8268, child_idxs=(8269, 8270, 8271), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8268, child_idxs=(8269, 8270), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x716698 <line:197:1, line:203:3> col:3 referenced mjsPlugin 'struct mjsPlugin_':'struct mjsPlugin_'PlaceHolderNode(parent_idx=8268, current_idx=8269, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x716640 'struct mjsPlugin_' sugar
-PlaceHolderNode(parent_idx=8268, current_idx=8270, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x716320 'struct mjsPlugin_'
-PlaceHolderNode(parent_idx=8268, current_idx=8271, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x716298 'mjsPlugin_'
-
+RecordTypeNode(parent_idx=8268, current_idx=8270, child_idxs=(8271), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsPlugin_RecordNode(parent_idx=8270, current_idx=8271, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsPlugin_
 # TypedefDeclNode Unhandled tokens: mjsPlugin_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8272, child_idxs=(8273, 8274, 8275, 8276, 8277, ...) len=18, node_state=4 (COMPLETED))
 struct mjsBody_:
@@ -21302,14 +21158,12 @@ struct mjsBody_:
  |     `-ParagraphComment 0x833930 <col:38, col:73>	
  |       `-TextComment 0x833900 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8291, child_idxs=(8292, 8293, 8294), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8291, child_idxs=(8292, 8293), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x718150 <line:206:1, line:231:3> col:3 referenced mjsBody 'struct mjsBody_':'struct mjsBody_'PlaceHolderNode(parent_idx=8291, current_idx=8292, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x717500 'struct mjsBody_' sugar
-PlaceHolderNode(parent_idx=8291, current_idx=8293, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x716790 'struct mjsBody_'
-PlaceHolderNode(parent_idx=8291, current_idx=8294, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x716708 'mjsBody_'
-
+RecordTypeNode(parent_idx=8291, current_idx=8293, child_idxs=(8294), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsBody_RecordNode(parent_idx=8293, current_idx=8294, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsBody_
 # TypedefDeclNode Unhandled tokens: mjsBody_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8295, child_idxs=(8296, 8297, 8298, 8299, 8300, ...) len=7, node_state=4 (COMPLETED))
 struct mjsFrame_:
@@ -21355,14 +21209,12 @@ struct mjsFrame_:
  |     `-ParagraphComment 0x833ee0 <col:38, col:73>	
  |       `-TextComment 0x833eb0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8303, child_idxs=(8304, 8305, 8306), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8303, child_idxs=(8304, 8305), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x718778 <line:234:1, line:242:3> col:3 referenced mjsFrame 'struct mjsFrame_':'struct mjsFrame_'PlaceHolderNode(parent_idx=8303, current_idx=8304, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x718720 'struct mjsFrame_' sugar
-PlaceHolderNode(parent_idx=8303, current_idx=8305, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x718240 'struct mjsFrame_'
-PlaceHolderNode(parent_idx=8303, current_idx=8306, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x7181c0 'mjsFrame_'
-
+RecordTypeNode(parent_idx=8303, current_idx=8305, child_idxs=(8306), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsFrame_RecordNode(parent_idx=8305, current_idx=8306, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsFrame_
 # TypedefDeclNode Unhandled tokens: mjsFrame_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8307, child_idxs=(8308, 8309, 8310, 8311, 8312, ...) len=26, node_state=4 (COMPLETED))
 struct mjsJoint_:
@@ -21522,14 +21374,12 @@ struct mjsJoint_:
  |     `-ParagraphComment 0x835400 <col:38, col:73>	
  |       `-TextComment 0x8353d0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8334, child_idxs=(8335, 8336, 8337), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8334, child_idxs=(8335, 8336), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x719b98 <line:245:1, line:282:3> col:3 referenced mjsJoint 'struct mjsJoint_':'struct mjsJoint_'PlaceHolderNode(parent_idx=8334, current_idx=8335, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x719b40 'struct mjsJoint_' sugar
-PlaceHolderNode(parent_idx=8334, current_idx=8336, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x718870 'struct mjsJoint_'
-PlaceHolderNode(parent_idx=8334, current_idx=8337, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x7187e8 'mjsJoint_'
-
+RecordTypeNode(parent_idx=8334, current_idx=8336, child_idxs=(8337), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsJoint_RecordNode(parent_idx=8336, current_idx=8337, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsJoint_
 # TypedefDeclNode Unhandled tokens: mjsJoint_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8338, child_idxs=(8339, 8340, 8341, 8342, 8343, ...) len=32, node_state=4 (COMPLETED))
 struct mjsGeom_:
@@ -21727,14 +21577,12 @@ struct mjsGeom_:
  |     `-ParagraphComment 0x804d60 <col:38, col:73>	
  |       `-TextComment 0x804d30 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8371, child_idxs=(8372, 8373, 8374), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8371, child_idxs=(8372, 8373), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x71cf98 <line:285:1, line:330:3> col:3 referenced mjsGeom 'struct mjsGeom_':'struct mjsGeom_'PlaceHolderNode(parent_idx=8371, current_idx=8372, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x71cf40 'struct mjsGeom_' sugar
-PlaceHolderNode(parent_idx=8371, current_idx=8373, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x719c90 'struct mjsGeom_'
-PlaceHolderNode(parent_idx=8371, current_idx=8374, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x719c08 'mjsGeom_'
-
+RecordTypeNode(parent_idx=8371, current_idx=8373, child_idxs=(8374), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsGeom_RecordNode(parent_idx=8373, current_idx=8374, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsGeom_
 # TypedefDeclNode Unhandled tokens: mjsGeom_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8375, child_idxs=(8376, 8377, 8378, 8379, 8380, ...) len=13, node_state=4 (COMPLETED))
 struct mjsSite_:
@@ -21816,14 +21664,12 @@ struct mjsSite_:
  |     `-ParagraphComment 0x8057f0 <col:38, col:73>	
  |       `-TextComment 0x8057c0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8389, child_idxs=(8390, 8391, 8392), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8389, child_idxs=(8390, 8391), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x71daa8 <line:333:1, line:353:3> col:3 referenced mjsSite 'struct mjsSite_':'struct mjsSite_'PlaceHolderNode(parent_idx=8389, current_idx=8390, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x71da50 'struct mjsSite_' sugar
-PlaceHolderNode(parent_idx=8389, current_idx=8391, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x71d090 'struct mjsSite_'
-PlaceHolderNode(parent_idx=8389, current_idx=8392, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x71d008 'mjsSite_'
-
+RecordTypeNode(parent_idx=8389, current_idx=8391, child_idxs=(8392), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsSite_RecordNode(parent_idx=8391, current_idx=8392, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsSite_
 # TypedefDeclNode Unhandled tokens: mjsSite_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8393, child_idxs=(8394, 8395, 8396, 8397, 8398, ...) len=19, node_state=4 (COMPLETED))
 struct mjsCamera_:
@@ -21941,14 +21787,12 @@ struct mjsCamera_:
  |     `-ParagraphComment 0x806760 <col:38, col:73>	
  |       `-TextComment 0x806730 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8413, child_idxs=(8414, 8415, 8416), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8413, child_idxs=(8414, 8415), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x71fbb8 <line:356:1, line:382:3> col:3 referenced mjsCamera 'struct mjsCamera_':'struct mjsCamera_'PlaceHolderNode(parent_idx=8413, current_idx=8414, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x71fb60 'struct mjsCamera_' sugar
-PlaceHolderNode(parent_idx=8413, current_idx=8415, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x71dba0 'struct mjsCamera_'
-PlaceHolderNode(parent_idx=8413, current_idx=8416, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x71db18 'mjsCamera_'
-
+RecordTypeNode(parent_idx=8413, current_idx=8415, child_idxs=(8416), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsCamera_RecordNode(parent_idx=8415, current_idx=8416, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsCamera_
 # TypedefDeclNode Unhandled tokens: mjsCamera_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8417, child_idxs=(8418, 8419, 8420, 8421, 8422, ...) len=17, node_state=4 (COMPLETED))
 struct mjsLight_:
@@ -22054,14 +21898,12 @@ struct mjsLight_:
  |     `-ParagraphComment 0x807530 <col:38, col:74>	
  |       `-TextComment 0x807500 <col:38, col:74> Text=" message appended to compiler errorsx"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8435, child_idxs=(8436, 8437, 8438), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8435, child_idxs=(8436, 8437), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x720958 <line:385:1, line:409:3> col:3 referenced mjsLight 'struct mjsLight_':'struct mjsLight_'PlaceHolderNode(parent_idx=8435, current_idx=8436, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x720900 'struct mjsLight_' sugar
-PlaceHolderNode(parent_idx=8435, current_idx=8437, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x71fcb0 'struct mjsLight_'
-PlaceHolderNode(parent_idx=8435, current_idx=8438, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x71fc28 'mjsLight_'
-
+RecordTypeNode(parent_idx=8435, current_idx=8437, child_idxs=(8438), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsLight_RecordNode(parent_idx=8437, current_idx=8438, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsLight_
 # TypedefDeclNode Unhandled tokens: mjsLight_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8439, child_idxs=(8440, 8441, 8442, 8443, 8444, ...) len=35, node_state=4 (COMPLETED))
 struct mjsFlex_:
@@ -22277,14 +22119,12 @@ struct mjsFlex_:
  |     `-ParagraphComment 0x847320 <col:38, col:73>	
  |       `-TextComment 0x8472f0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8475, child_idxs=(8476, 8477, 8478), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8475, child_idxs=(8476, 8477), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x722da8 <line:412:1, line:456:3> col:3 referenced mjsFlex 'struct mjsFlex_':'struct mjsFlex_'PlaceHolderNode(parent_idx=8475, current_idx=8476, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x722d50 'struct mjsFlex_' sugar
-PlaceHolderNode(parent_idx=8475, current_idx=8477, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x720a50 'struct mjsFlex_'
-PlaceHolderNode(parent_idx=8475, current_idx=8478, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x7209c8 'mjsFlex_'
-
+RecordTypeNode(parent_idx=8475, current_idx=8477, child_idxs=(8478), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsFlex_RecordNode(parent_idx=8477, current_idx=8478, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsFlex_
 # TypedefDeclNode Unhandled tokens: mjsFlex_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8479, child_idxs=(8480, 8481, 8482, 8483, 8484, ...) len=17, node_state=4 (COMPLETED))
 struct mjsMesh_:
@@ -22390,14 +22230,12 @@ struct mjsMesh_:
  |     `-ParagraphComment 0x8480f0 <col:38, col:73>	
  |       `-TextComment 0x8480c0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8497, child_idxs=(8498, 8499, 8500), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8497, child_idxs=(8498, 8499), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x7239e8 <line:459:1, line:477:3> col:3 referenced mjsMesh 'struct mjsMesh_':'struct mjsMesh_'PlaceHolderNode(parent_idx=8497, current_idx=8498, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x723990 'struct mjsMesh_' sugar
-PlaceHolderNode(parent_idx=8497, current_idx=8499, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x722ea0 'struct mjsMesh_'
-PlaceHolderNode(parent_idx=8497, current_idx=8500, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x722e18 'mjsMesh_'
-
+RecordTypeNode(parent_idx=8497, current_idx=8499, child_idxs=(8500), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsMesh_RecordNode(parent_idx=8499, current_idx=8500, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsMesh_
 # TypedefDeclNode Unhandled tokens: mjsMesh_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8501, child_idxs=(8502, 8503, 8504, 8505, 8506, ...) len=9, node_state=4 (COMPLETED))
 struct mjsHField_:
@@ -22455,14 +22293,12 @@ struct mjsHField_:
  |     `-ParagraphComment 0x848840 <col:38, col:73>	
  |       `-TextComment 0x848810 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8511, child_idxs=(8512, 8513, 8514), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8511, child_idxs=(8512, 8513), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x7251c8 <line:480:1, line:490:3> col:3 referenced mjsHField 'struct mjsHField_':'struct mjsHField_'PlaceHolderNode(parent_idx=8511, current_idx=8512, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x725170 'struct mjsHField_' sugar
-PlaceHolderNode(parent_idx=8511, current_idx=8513, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x724bc0 'struct mjsHField_'
-PlaceHolderNode(parent_idx=8511, current_idx=8514, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x724b40 'mjsHField_'
-
+RecordTypeNode(parent_idx=8511, current_idx=8513, child_idxs=(8514), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsHField_RecordNode(parent_idx=8513, current_idx=8514, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsHField_
 # TypedefDeclNode Unhandled tokens: mjsHField_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8515, child_idxs=(8516, 8517, 8518, 8519, 8520, ...) len=16, node_state=4 (COMPLETED))
 struct mjsSkin_:
@@ -22562,14 +22398,12 @@ struct mjsSkin_:
  |     `-ParagraphComment 0x849540 <col:38, col:73>	
  |       `-TextComment 0x849510 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8532, child_idxs=(8533, 8534, 8535), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8532, child_idxs=(8533, 8534), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x725de8 <line:494:1, line:517:3> col:3 referenced mjsSkin 'struct mjsSkin_':'struct mjsSkin_'PlaceHolderNode(parent_idx=8532, current_idx=8533, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x725d90 'struct mjsSkin_' sugar
-PlaceHolderNode(parent_idx=8532, current_idx=8534, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x7252c0 'struct mjsSkin_'
-PlaceHolderNode(parent_idx=8532, current_idx=8535, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x725238 'mjsSkin_'
-
+RecordTypeNode(parent_idx=8532, current_idx=8534, child_idxs=(8535), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsSkin_RecordNode(parent_idx=8534, current_idx=8535, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsSkin_
 # TypedefDeclNode Unhandled tokens: mjsSkin_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8536, child_idxs=(8537, 8538, 8539, 8540, 8541, ...) len=21, node_state=4 (COMPLETED))
 struct mjsTexture_:
@@ -22699,14 +22533,12 @@ struct mjsTexture_:
  |     `-ParagraphComment 0x84a680 <col:38, col:73>	
  |       `-TextComment 0x84a650 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8558, child_idxs=(8559, 8560, 8561), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8558, child_idxs=(8559, 8560), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x728b98 <line:520:1, line:554:3> col:3 referenced mjsTexture 'struct mjsTexture_':'struct mjsTexture_'PlaceHolderNode(parent_idx=8558, current_idx=8559, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x728b40 'struct mjsTexture_' sugar
-PlaceHolderNode(parent_idx=8558, current_idx=8560, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x725ee0 'struct mjsTexture_'
-PlaceHolderNode(parent_idx=8558, current_idx=8561, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x725e58 'mjsTexture_'
-
+RecordTypeNode(parent_idx=8558, current_idx=8560, child_idxs=(8561), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsTexture_RecordNode(parent_idx=8560, current_idx=8561, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsTexture_
 # TypedefDeclNode Unhandled tokens: mjsTexture_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8562, child_idxs=(8563, 8564, 8565, 8566, 8567, ...) len=13, node_state=4 (COMPLETED))
 struct mjsMaterial_:
@@ -22788,14 +22620,12 @@ struct mjsMaterial_:
  |     `-ParagraphComment 0x84b110 <col:38, col:73>	
  |       `-TextComment 0x84b0e0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8576, child_idxs=(8577, 8578, 8579), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8576, child_idxs=(8577, 8578), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x729528 <line:557:1, line:571:3> col:3 referenced mjsMaterial 'struct mjsMaterial_':'struct mjsMaterial_'PlaceHolderNode(parent_idx=8576, current_idx=8577, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x7294d0 'struct mjsMaterial_' sugar
-PlaceHolderNode(parent_idx=8576, current_idx=8578, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x728c90 'struct mjsMaterial_'
-PlaceHolderNode(parent_idx=8576, current_idx=8579, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x728c08 'mjsMaterial_'
-
+RecordTypeNode(parent_idx=8576, current_idx=8578, child_idxs=(8579), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsMaterial_RecordNode(parent_idx=8578, current_idx=8579, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsMaterial_
 # TypedefDeclNode Unhandled tokens: mjsMaterial_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8580, child_idxs=(8581, 8582, 8583, 8584, 8585, ...) len=12, node_state=4 (COMPLETED))
 struct mjsPair_:
@@ -22873,14 +22703,12 @@ struct mjsPair_:
  |     `-ParagraphComment 0x84bb20 <col:38, col:64>	
  |       `-TextComment 0x84baf0 <col:38, col:64> Text=" message appended to errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8593, child_idxs=(8594, 8595, 8596), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8593, child_idxs=(8594, 8595), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x729ef8 <line:574:1, line:589:3> col:3 referenced mjsPair 'struct mjsPair_':'struct mjsPair_'PlaceHolderNode(parent_idx=8593, current_idx=8594, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x729ea0 'struct mjsPair_' sugar
-PlaceHolderNode(parent_idx=8593, current_idx=8595, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x729620 'struct mjsPair_'
-PlaceHolderNode(parent_idx=8593, current_idx=8596, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x729598 'mjsPair_'
-
+RecordTypeNode(parent_idx=8593, current_idx=8595, child_idxs=(8596), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsPair_RecordNode(parent_idx=8595, current_idx=8596, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsPair_
 # TypedefDeclNode Unhandled tokens: mjsPair_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8597, child_idxs=(8598, 8599, 8600, 8601, 8602), node_state=4 (COMPLETED))
 struct mjsExclude_:
@@ -22914,14 +22742,12 @@ struct mjsExclude_:
  |     `-ParagraphComment 0x84bf30 <col:38, col:64>	
  |       `-TextComment 0x84bf00 <col:38, col:64> Text=" message appended to errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8603, child_idxs=(8604, 8605, 8606), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8603, child_idxs=(8604, 8605), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x72a368 <line:592:1, line:598:3> col:3 referenced mjsExclude 'struct mjsExclude_':'struct mjsExclude_'PlaceHolderNode(parent_idx=8603, current_idx=8604, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x72a310 'struct mjsExclude_' sugar
-PlaceHolderNode(parent_idx=8603, current_idx=8605, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x729ff0 'struct mjsExclude_'
-PlaceHolderNode(parent_idx=8603, current_idx=8606, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x729f68 'mjsExclude_'
-
+RecordTypeNode(parent_idx=8603, current_idx=8605, child_idxs=(8606), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsExclude_RecordNode(parent_idx=8605, current_idx=8606, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsExclude_
 # TypedefDeclNode Unhandled tokens: mjsExclude_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8607, child_idxs=(8608, 8609, 8610, 8611, 8612, ...) len=11, node_state=4 (COMPLETED))
 struct mjsEquality_:
@@ -22991,14 +22817,12 @@ struct mjsEquality_:
  |     `-ParagraphComment 0x84c820 <col:38, col:64>	
  |       `-TextComment 0x84c7f0 <col:38, col:64> Text=" message appended to errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8619, child_idxs=(8620, 8621, 8622), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8619, child_idxs=(8620, 8621), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x72b838 <line:601:1, line:613:3> col:3 referenced mjsEquality 'struct mjsEquality_':'struct mjsEquality_'PlaceHolderNode(parent_idx=8619, current_idx=8620, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x72b7e0 'struct mjsEquality_' sugar
-PlaceHolderNode(parent_idx=8619, current_idx=8621, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x72a460 'struct mjsEquality_'
-PlaceHolderNode(parent_idx=8619, current_idx=8622, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x72a3d8 'mjsEquality_'
-
+RecordTypeNode(parent_idx=8619, current_idx=8621, child_idxs=(8622), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsEquality_RecordNode(parent_idx=8621, current_idx=8622, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsEquality_
 # TypedefDeclNode Unhandled tokens: mjsEquality_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8623, child_idxs=(8624, 8625, 8626, 8627, 8628, ...) len=20, node_state=4 (COMPLETED))
 struct mjsTendon_:
@@ -23122,14 +22946,12 @@ struct mjsTendon_:
  |     `-ParagraphComment 0x84d860 <col:38, col:64>	
  |       `-TextComment 0x84d830 <col:38, col:64> Text=" message appended to errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8644, child_idxs=(8645, 8646, 8647), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8644, child_idxs=(8645, 8646), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x72c808 <line:616:1, line:645:3> col:3 referenced mjsTendon 'struct mjsTendon_':'struct mjsTendon_'PlaceHolderNode(parent_idx=8644, current_idx=8645, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x72c7b0 'struct mjsTendon_' sugar
-PlaceHolderNode(parent_idx=8644, current_idx=8646, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x72b930 'struct mjsTendon_'
-PlaceHolderNode(parent_idx=8644, current_idx=8647, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x72b8a8 'mjsTendon_'
-
+RecordTypeNode(parent_idx=8644, current_idx=8646, child_idxs=(8647), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsTendon_RecordNode(parent_idx=8646, current_idx=8647, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsTendon_
 # TypedefDeclNode Unhandled tokens: mjsTendon_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8648, child_idxs=(8649, 8650), node_state=4 (COMPLETED))
 struct mjsWrap_:
@@ -23145,14 +22967,12 @@ struct mjsWrap_:
  |     `-ParagraphComment 0x84da00 <col:38, col:64>	
  |       `-TextComment 0x84d9d0 <col:38, col:64> Text=" message appended to errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8651, child_idxs=(8652, 8653, 8654), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8651, child_idxs=(8652, 8653), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x72cac8 <line:648:1, line:651:3> col:3 referenced mjsWrap 'struct mjsWrap_':'struct mjsWrap_'PlaceHolderNode(parent_idx=8651, current_idx=8652, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x72ca70 'struct mjsWrap_' sugar
-PlaceHolderNode(parent_idx=8651, current_idx=8653, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x72c900 'struct mjsWrap_'
-PlaceHolderNode(parent_idx=8651, current_idx=8654, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x72c878 'mjsWrap_'
-
+RecordTypeNode(parent_idx=8651, current_idx=8653, child_idxs=(8654), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsWrap_RecordNode(parent_idx=8653, current_idx=8654, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsWrap_
 # TypedefDeclNode Unhandled tokens: mjsWrap_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8655, child_idxs=(8656, 8657, 8658, 8659, 8660, ...) len=28, node_state=4 (COMPLETED))
 struct mjsActuator_:
@@ -23324,14 +23144,12 @@ struct mjsActuator_:
  |     `-ParagraphComment 0x84f0e0 <col:38, col:73>	
  |       `-TextComment 0x84f0b0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8684, child_idxs=(8685, 8686, 8687), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8684, child_idxs=(8685, 8686), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x72ec78 <line:654:1, line:693:3> col:3 referenced mjsActuator 'struct mjsActuator_':'struct mjsActuator_'PlaceHolderNode(parent_idx=8684, current_idx=8685, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x72ec20 'struct mjsActuator_' sugar
-PlaceHolderNode(parent_idx=8684, current_idx=8686, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x72cbc0 'struct mjsActuator_'
-PlaceHolderNode(parent_idx=8684, current_idx=8687, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x72cb38 'mjsActuator_'
-
+RecordTypeNode(parent_idx=8684, current_idx=8686, child_idxs=(8687), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsActuator_RecordNode(parent_idx=8686, current_idx=8687, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsActuator_
 # TypedefDeclNode Unhandled tokens: mjsActuator_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8688, child_idxs=(8689, 8690, 8691, 8692, 8693, ...) len=15, node_state=4 (COMPLETED))
 struct mjsSensor_:
@@ -23425,14 +23243,12 @@ struct mjsSensor_:
  |     `-ParagraphComment 0x84fd10 <col:38, col:73>	
  |       `-TextComment 0x84fce0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8704, child_idxs=(8705, 8706, 8707), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8704, child_idxs=(8705, 8706), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x72f7a8 <line:696:1, line:720:3> col:3 referenced mjsSensor 'struct mjsSensor_':'struct mjsSensor_'PlaceHolderNode(parent_idx=8704, current_idx=8705, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x72f750 'struct mjsSensor_' sugar
-PlaceHolderNode(parent_idx=8704, current_idx=8706, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x72ed70 'struct mjsSensor_'
-PlaceHolderNode(parent_idx=8704, current_idx=8707, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x72ece8 'mjsSensor_'
-
+RecordTypeNode(parent_idx=8704, current_idx=8706, child_idxs=(8707), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsSensor_RecordNode(parent_idx=8706, current_idx=8707, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsSensor_
 # TypedefDeclNode Unhandled tokens: mjsSensor_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8708, child_idxs=(8709, 8710, 8711, 8712, 8713), node_state=4 (COMPLETED))
 struct mjsNumeric_:
@@ -23466,14 +23282,12 @@ struct mjsNumeric_:
  |     `-ParagraphComment 0x850120 <col:38, col:73>	
  |       `-TextComment 0x8500f0 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8714, child_idxs=(8715, 8716, 8717), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8714, child_idxs=(8715, 8716), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x72fc18 <line:723:1, line:729:3> col:3 referenced mjsNumeric 'struct mjsNumeric_':'struct mjsNumeric_'PlaceHolderNode(parent_idx=8714, current_idx=8715, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x72fbc0 'struct mjsNumeric_' sugar
-PlaceHolderNode(parent_idx=8714, current_idx=8716, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x72f8a0 'struct mjsNumeric_'
-PlaceHolderNode(parent_idx=8714, current_idx=8717, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x72f818 'mjsNumeric_'
-
+RecordTypeNode(parent_idx=8714, current_idx=8716, child_idxs=(8717), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsNumeric_RecordNode(parent_idx=8716, current_idx=8717, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsNumeric_
 # TypedefDeclNode Unhandled tokens: mjsNumeric_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8718, child_idxs=(8719, 8720, 8721, 8722), node_state=4 (COMPLETED))
 struct mjsText_:
@@ -23501,14 +23315,12 @@ struct mjsText_:
  |     `-ParagraphComment 0x850460 <col:38, col:73>	
  |       `-TextComment 0x850430 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8723, child_idxs=(8724, 8725, 8726), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8723, child_idxs=(8724, 8725), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x730d28 <line:732:1, line:737:3> col:3 referenced mjsText 'struct mjsText_':'struct mjsText_'PlaceHolderNode(parent_idx=8723, current_idx=8724, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x730cd0 'struct mjsText_' sugar
-PlaceHolderNode(parent_idx=8723, current_idx=8725, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x72fd10 'struct mjsText_'
-PlaceHolderNode(parent_idx=8723, current_idx=8726, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x72fc88 'mjsText_'
-
+RecordTypeNode(parent_idx=8723, current_idx=8725, child_idxs=(8726), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsText_RecordNode(parent_idx=8725, current_idx=8726, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsText_
 # TypedefDeclNode Unhandled tokens: mjsText_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8727, child_idxs=(8728, 8729, 8730, 8731, 8732, 8733), node_state=4 (COMPLETED))
 struct mjsTuple_:
@@ -23548,14 +23360,12 @@ struct mjsTuple_:
  |     `-ParagraphComment 0x850940 <col:38, col:73>	
  |       `-TextComment 0x850910 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8734, child_idxs=(8735, 8736, 8737), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8734, child_idxs=(8735, 8736), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x731228 <line:740:1, line:747:3> col:3 referenced mjsTuple 'struct mjsTuple_':'struct mjsTuple_'PlaceHolderNode(parent_idx=8734, current_idx=8735, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x7311d0 'struct mjsTuple_' sugar
-PlaceHolderNode(parent_idx=8734, current_idx=8736, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x730e20 'struct mjsTuple_'
-PlaceHolderNode(parent_idx=8734, current_idx=8737, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x730d98 'mjsTuple_'
-
+RecordTypeNode(parent_idx=8734, current_idx=8736, child_idxs=(8737), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsTuple_RecordNode(parent_idx=8736, current_idx=8737, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsTuple_
 # TypedefDeclNode Unhandled tokens: mjsTuple_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8738, child_idxs=(8739, 8740, 8741, 8742, 8743, ...) len=10, node_state=4 (COMPLETED))
 struct mjsKey_:
@@ -23619,14 +23429,12 @@ struct mjsKey_:
  |     `-ParagraphComment 0x851160 <col:38, col:73>	
  |       `-TextComment 0x851130 <col:38, col:73> Text=" message appended to compiler errors"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8749, child_idxs=(8750, 8751, 8752), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8749, child_idxs=(8750, 8751), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x731968 <line:750:1, line:761:3> col:3 referenced mjsKey 'struct mjsKey_':'struct mjsKey_'PlaceHolderNode(parent_idx=8749, current_idx=8750, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x731910 'struct mjsKey_' sugar
-PlaceHolderNode(parent_idx=8749, current_idx=8751, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x731320 'struct mjsKey_'
-PlaceHolderNode(parent_idx=8749, current_idx=8752, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x731298 'mjsKey_'
-
+RecordTypeNode(parent_idx=8749, current_idx=8751, child_idxs=(8752), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsKey_RecordNode(parent_idx=8751, current_idx=8752, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsKey_
 # TypedefDeclNode Unhandled tokens: mjsKey_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8753, child_idxs=(8754, 8755, 8756, 8757, 8758, ...) len=14, node_state=4 (COMPLETED))
 struct mjsDefault_:
@@ -23714,14 +23522,12 @@ struct mjsDefault_:
  |     `-ParagraphComment 0x851cc0 <col:38, col:55>	
  |       `-TextComment 0x851c90 <col:38, col:55> Text=" actuator defaults"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8768, child_idxs=(8769, 8770, 8771), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8768, child_idxs=(8769, 8770), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x7328e8 <line:764:1, line:779:3> col:3 referenced mjsDefault 'struct mjsDefault_':'struct mjsDefault_'PlaceHolderNode(parent_idx=8768, current_idx=8769, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x732890 'struct mjsDefault_' sugar
-PlaceHolderNode(parent_idx=8768, current_idx=8770, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x731a60 'struct mjsDefault_'
-PlaceHolderNode(parent_idx=8768, current_idx=8771, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x7319d8 'mjsDefault_'
-
+RecordTypeNode(parent_idx=8768, current_idx=8770, child_idxs=(8771), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsDefault_RecordNode(parent_idx=8770, current_idx=8771, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjsDefault_
 # TypedefDeclNode Unhandled tokens: mjsDefault_':'struct 
 PlaceHolderNode(parent_idx=1, current_idx=8772, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-EnumDecl 0x732bc0 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:65:9, line:70:1> line:65:14 mjtButton_
@@ -24267,14 +24073,12 @@ struct mjuiState_:
  |     `-ParagraphComment 0x855010 <col:37, col:59>	
  |       `-TextComment 0x854fe0 <col:37, col:59> Text=" paths to files dropped"	
 
-TypedefDeclNode(parent_idx=1, current_idx=8991, child_idxs=(8992, 8993, 8994), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=8991, child_idxs=(8992, 8993), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x740d00 <line:164:1, col:27> col:27 referenced mjuiState 'struct mjuiState_':'struct mjuiState_'PlaceHolderNode(parent_idx=8991, current_idx=8992, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x740cb0 'struct mjuiState_' sugar
-PlaceHolderNode(parent_idx=8991, current_idx=8993, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x73e660 'struct mjuiState_'
-PlaceHolderNode(parent_idx=8991, current_idx=8994, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x73e5d8 'mjuiState_'
-
+RecordTypeNode(parent_idx=8991, current_idx=8993, child_idxs=(8994), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiState_RecordNode(parent_idx=8993, current_idx=8994, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiState_
 # TypedefDeclNode Unhandled tokens: mjuiState_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=8995, child_idxs=(8996, 8997, 8998, 8999, 9000, ...) len=16, node_state=4 (COMPLETED))
 struct mjuiThemeSpacing_:
@@ -24365,14 +24169,12 @@ struct mjuiThemeSpacing_:
  |     `-ParagraphComment 0x855b70 <col:37, col:59>	
  |       `-TextComment 0x855b40 <col:37, col:59> Text=" number of multisamples"	
 
-TypedefDeclNode(parent_idx=1, current_idx=9012, child_idxs=(9013, 9014, 9015), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=9012, child_idxs=(9013, 9014), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x741600 <line:184:1, col:34> col:34 referenced mjuiThemeSpacing 'struct mjuiThemeSpacing_':'struct mjuiThemeSpacing_'PlaceHolderNode(parent_idx=9012, current_idx=9013, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x7415b0 'struct mjuiThemeSpacing_' sugar
-PlaceHolderNode(parent_idx=9012, current_idx=9014, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x740e10 'struct mjuiThemeSpacing_'
-PlaceHolderNode(parent_idx=9012, current_idx=9015, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x740d88 'mjuiThemeSpacing_'
-
+RecordTypeNode(parent_idx=9012, current_idx=9014, child_idxs=(9015), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiThemeSpacing_RecordNode(parent_idx=9014, current_idx=9015, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiThemeSpacing_
 # TypedefDeclNode Unhandled tokens: mjuiThemeSpacing_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=9016, child_idxs=(9017, 9018, 9019, 9020, 9021, ...) len=31, node_state=4 (COMPLETED))
 struct mjuiThemeColor_:
@@ -24553,14 +24355,12 @@ struct mjuiThemeColor_:
  |     `-ParagraphComment 0x857310 <col:37, col:48>	
  |       `-TextComment 0x8572e0 <col:37, col:48> Text=" edit cursor"	
 
-TypedefDeclNode(parent_idx=1, current_idx=9048, child_idxs=(9049, 9050, 9051), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=9048, child_idxs=(9049, 9050), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x743d50 <line:219:1, col:32> col:32 referenced mjuiThemeColor 'struct mjuiThemeColor_':'struct mjuiThemeColor_'PlaceHolderNode(parent_idx=9048, current_idx=9049, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x743d00 'struct mjuiThemeColor_' sugar
-PlaceHolderNode(parent_idx=9048, current_idx=9050, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x741710 'struct mjuiThemeColor_'
-PlaceHolderNode(parent_idx=9048, current_idx=9051, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x741688 'mjuiThemeColor_'
-
+RecordTypeNode(parent_idx=9048, current_idx=9050, child_idxs=(9051), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiThemeColor_RecordNode(parent_idx=9050, current_idx=9051, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiThemeColor_
 # TypedefDeclNode Unhandled tokens: mjuiThemeColor_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=9052, child_idxs=(9053, 9054, 9055, 9056, 9057), node_state=4 (COMPLETED))
 struct mjuiItemSingle_:
@@ -24758,14 +24558,12 @@ struct mjuiItem_:
  |     `-ParagraphComment 0x8585c0 <col:37, col:73>	
  |       `-TextComment 0x858590 <col:37, col:73> Text=" item skipped due to closed separator"	
 
-TypedefDeclNode(parent_idx=1, current_idx=9098, child_idxs=(9099, 9100, 9101), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=9098, child_idxs=(9099, 9100), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x746f50 <line:270:1, col:26> col:26 referenced mjuiItem 'struct mjuiItem_':'struct mjuiItem_'PlaceHolderNode(parent_idx=9098, current_idx=9099, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x746f00 'struct mjuiItem_' sugar
-PlaceHolderNode(parent_idx=9098, current_idx=9100, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x744830 'struct mjuiItem_'
-PlaceHolderNode(parent_idx=9098, current_idx=9101, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x7447a8 'mjuiItem_'
-
+RecordTypeNode(parent_idx=9098, current_idx=9100, child_idxs=(9101), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiItem_RecordNode(parent_idx=9100, current_idx=9101, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiItem_
 # TypedefDeclNode Unhandled tokens: mjuiItem_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=9102, child_idxs=(9103, 9104, 9105, 9106, 9107, ...) len=13, node_state=4 (COMPLETED))
 struct mjuiSection_:
@@ -24838,14 +24636,12 @@ struct mjuiSection_:
  |     `-ParagraphComment 0x858eb0 <col:37, col:71>	
  |       `-TextComment 0x858e80 <col:37, col:71> Text=" last mouse click over this section"	
 
-TypedefDeclNode(parent_idx=1, current_idx=9116, child_idxs=(9117, 9118, 9119), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=9116, child_idxs=(9117, 9118), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x747a70 <line:290:1, col:29> col:29 referenced mjuiSection 'struct mjuiSection_':'struct mjuiSection_'PlaceHolderNode(parent_idx=9116, current_idx=9117, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x747a20 'struct mjuiSection_' sugar
-PlaceHolderNode(parent_idx=9116, current_idx=9118, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x747060 'struct mjuiSection_'
-PlaceHolderNode(parent_idx=9116, current_idx=9119, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x746fd8 'mjuiSection_'
-
+RecordTypeNode(parent_idx=9116, current_idx=9118, child_idxs=(9119), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiSection_RecordNode(parent_idx=9118, current_idx=9119, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiSection_
 # TypedefDeclNode Unhandled tokens: mjuiSection_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=9120, child_idxs=(9121, 9122, 9123, 9124, 9125, ...) len=27, node_state=4 (COMPLETED))
 struct mjUI_:
@@ -25002,14 +24798,12 @@ struct mjUI_:
  |     `-ParagraphComment 0x85a310 <col:37, col:67>	
  |       `-TextComment 0x85a2e0 <col:37, col:67> Text=" preallocated array of sections"	
 
-TypedefDeclNode(parent_idx=1, current_idx=9148, child_idxs=(9149, 9150, 9151), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=9148, child_idxs=(9149, 9150), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x7499d0 <line:330:1, col:22> col:22 referenced mjUI 'struct mjUI_':'struct mjUI_'PlaceHolderNode(parent_idx=9148, current_idx=9149, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x749980 'struct mjUI_' sugar
-PlaceHolderNode(parent_idx=9148, current_idx=9150, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x747b80 'struct mjUI_'
-PlaceHolderNode(parent_idx=9148, current_idx=9151, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x747af8 'mjUI_'
-
+RecordTypeNode(parent_idx=9148, current_idx=9150, child_idxs=(9151), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjUI_RecordNode(parent_idx=9150, current_idx=9151, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjUI_
 # TypedefDeclNode Unhandled tokens: mjUI_':'struct 
 RecordDeclNode(parent_idx=1, current_idx=9152, child_idxs=(9153, 9154, 9155, 9156, 9157, ...) len=9, node_state=4 (COMPLETED))
 struct mjuiDef_:
@@ -25058,14 +24852,12 @@ struct mjuiDef_:
  |     `-ParagraphComment 0x85a8c0 <col:37, col:70>	
  |       `-TextComment 0x85a890 <col:37, col:70> Text=" int with type-specific properties"	
 
-TypedefDeclNode(parent_idx=1, current_idx=9162, child_idxs=(9163, 9164, 9165), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TypedefDeclNode(parent_idx=1, current_idx=9162, child_idxs=(9163, 9164), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x749f80 <line:343:1, col:25> col:25 referenced mjuiDef 'struct mjuiDef_':'struct mjuiDef_'PlaceHolderNode(parent_idx=9162, current_idx=9163, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-ElaboratedType 0x749f30 'struct mjuiDef_' sugar
-PlaceHolderNode(parent_idx=9162, current_idx=9164, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-RecordType 0x749ae0 'struct mjuiDef_'
-PlaceHolderNode(parent_idx=9162, current_idx=9165, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|     `-Record 0x749a58 'mjuiDef_'
-
+RecordTypeNode(parent_idx=9162, current_idx=9164, child_idxs=(9165), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiDef_RecordNode(parent_idx=9164, current_idx=9165, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+ mjuiDef_
 # TypedefDeclNode Unhandled tokens: mjuiDef_':'struct 
 PlaceHolderNode(parent_idx=1, current_idx=9166, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-VarDecl 0x74a200 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:45:49> col:22 mju_user_error 'void (*)(const char *)' extern

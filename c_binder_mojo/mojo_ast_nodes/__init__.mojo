@@ -18,6 +18,7 @@ from .constant_array_type_node import ConstantArrayTypeNode
 from .elaborated_type_node import ElaboratedTypeNode
 from .parm_var_decl_node import ParmVarDeclNode
 from .translation_unit_decl_node import TranslationUnitDeclNode
+from .record_node import RecordNode
 
 # Setup Variant
 from .node_variant import Variant
@@ -28,7 +29,8 @@ alias AstNodeVariant = Variant[
     BuiltinTypeNode,
     # ParmVarDeclNode,
     # TypedefTypeNode,
-    # RecordTypeNode,
+    RecordTypeNode,
+    RecordNode,
     # ConstantArrayTypeNode,
     # ElaboratedTypeNode,
     # FullCommentNode,

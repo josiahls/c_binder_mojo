@@ -23,75 +23,14 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _type: String
-    var _is_referenced: Bool
-    var _is_implicit: Bool
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        self._type = String()
-        self._is_referenced = False
-        self._is_implicit = False
-
-        if len(ast_entries) >= 1:
-            starting_idx = 0
-            if ast_entries[0].tokens[0] == "referenced":
-                starting_idx = 1
-                self._is_referenced = True
-            if ast_entries[0].tokens[0] == "implicit":
-                self._is_implicit = True
-                starting_idx = 1
-            if ast_entries[0].tokens[0] == "implicit" and ast_entries[0].tokens[1] == "referenced":
-                self._is_implicit = True
-                self._is_referenced = True
-                starting_idx = 2
-
-            self._name = ast_entries[0].tokens[starting_idx]
-
-            for entry in ast_entries:
-                if entry.ast_name == "AnonymousRecord":
-                    self._type = entry.tokens[0]
-                    break
-
-            if self._type == "":
-                for token in ast_entries[0].tokens[starting_idx + 1 :]:
-                    s = token.replace("'", "")
-                    if s == "struct":
-                        # Skip struct keyword.
-                        continue
-                    if s == "enum":
-                        # Skip enum keyword.
-                        continue
-
-                    self._type += s + " "
-
-        else:
-            print(
-                "TypedefDeclNode: Grammar: Invalid grammar: "
-                + String(ast_entries)
-                + " len: "
-                + String(len(ast_entries))
-            )
-
-    fn __str__(self) -> String:
-        mojo_type = TypeMapper.get_mojo_type(self._type)
-        return "alias " + self._name + " = " + mojo_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
 @fieldwise_init
-struct TypedefDeclNode(NodeAstLike):
-    alias __name__ = "TypedefDeclNode"
+struct ConstantArrayTypeNode(NodeAstLike):
+    alias __name__ = "ConstantArrayTypeNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
-    var _grammar: Grammar
+    var _constant_array_type: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -99,7 +38,7 @@ struct TypedefDeclNode(NodeAstLike):
         self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
-        self._grammar = Grammar(self._ast_entries[])
+        self._constant_array_type = String()
 
     @staticmethod
     fn accept(
@@ -107,7 +46,7 @@ struct TypedefDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return ast_entries.ast_name == "TypedefDecl"
+        return ast_entries.ast_name == "ConstantArrayType"
 
     @staticmethod
     fn create(
@@ -123,7 +62,7 @@ struct TypedefDeclNode(NodeAstLike):
         if ast_entry.level <= self._typedef_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CREATE_CHILD
+            return TokenFlow.CONSUME_TOKEN
 
     fn process(
         mut self,
@@ -131,17 +70,13 @@ struct TypedefDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        if token_flow == TokenFlow.CREATE_CHILD:
-            self._node_state = NodeState.BUILDING_CHILDREN
-            return
-        elif token_flow == TokenFlow.CONSUME_TOKEN:
+        if token_flow == TokenFlow.CONSUME_TOKEN:
             if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
                 if self.process_anonymous_record(ast_entry, module_interface):
                     return
             self._ast_entries[].append(ast_entry)
         else:
-            self._grammar = Grammar(self._ast_entries[])
-            get_global_type_mapper()[].add_custom_type(self._grammar._name)
+            self._constant_array_type = String(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
 
     fn process_anonymous_record(
@@ -213,5 +148,5 @@ struct TypedefDeclNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(self._grammar) if just_code else String(),
+            alternate_string=String(self._constant_array_type) if just_code else String(),
         )

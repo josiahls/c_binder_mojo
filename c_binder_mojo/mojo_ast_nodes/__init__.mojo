@@ -10,20 +10,36 @@ from .end_file_node import EndFileNode
 from .var_decl_node import VarDeclNode
 from .typedef_decl_node import TypedefDeclNode
 from .function_decl_node import FunctionDeclNode
+from .pointer_type_node import PointerTypeNode
+from .builtin_type_node import BuiltinTypeNode
+from .typedef_type_node import TypedefTypeNode
+from .record_type_node import RecordTypeNode
+from .constant_array_type_node import ConstantArrayTypeNode
+from .elaborated_type_node import ElaboratedTypeNode
+from .parm_var_decl_node import ParmVarDeclNode
+from .translation_unit_decl_node import TranslationUnitDeclNode
 
 # Setup Variant
 from .node_variant import Variant
 
 alias AstNodeVariant = Variant[
     RootNode,
-    FullCommentNode,
+    # PointerTypeNode,
+    # BuiltinTypeNode,
+    # ParmVarDeclNode,
+    # TypedefTypeNode,
+    # RecordTypeNode,
+    # ConstantArrayTypeNode,
+    # ElaboratedTypeNode,
+    # FullCommentNode,
+    TranslationUnitDeclNode,
     RecordDeclNode,
     FieldDeclNode,
-    EnumDeclNode,
-    EnumConstantDeclNode,
-    EndFileNode,
-    VarDeclNode,
+    # EnumDeclNode,
+    # EnumConstantDeclNode,
+    # EndFileNode,
+    # VarDeclNode,
     TypedefDeclNode,
-    FunctionDeclNode,
+    # FunctionDeclNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]

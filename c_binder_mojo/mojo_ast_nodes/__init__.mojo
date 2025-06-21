@@ -25,7 +25,7 @@ from .node_variant import Variant
 alias AstNodeVariant = Variant[
     RootNode,
     # PointerTypeNode,
-    # BuiltinTypeNode,
+    BuiltinTypeNode,
     # ParmVarDeclNode,
     # TypedefTypeNode,
     # RecordTypeNode,

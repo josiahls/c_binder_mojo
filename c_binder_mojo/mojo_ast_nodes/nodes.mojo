@@ -60,6 +60,7 @@ fn default_to_string(
     print_parent_level: Bool = False,
     alternate_string: String = "",
     alternate_string_tail: String = "",
+    unhandled_tokens: String = "",
 ) -> String:
     """Default string conversion for nodes.
 
@@ -124,6 +125,10 @@ fn default_to_string(
         s += alternate_string_tail.replace("\n", "\n" + indent)
     else:
         s += node.ast_entries_tail().join(" ", indent, just_tokens=just_code)
+
+    if unhandled_tokens != "":
+        s += "\n" + indent + unhandled_tokens
+
     if newline_after_tail:
         s += "\n"
     return s

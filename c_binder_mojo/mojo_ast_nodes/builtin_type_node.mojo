@@ -21,6 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
+from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
 @fieldwise_init
@@ -31,7 +32,9 @@ struct BuiltinTypeNode(NodeAstLike):
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
     var _builtin_type: String
-
+    var _unsigned: Bool
+    var _unhandled_tokens: String
+    
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -39,6 +42,15 @@ struct BuiltinTypeNode(NodeAstLike):
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
         self._builtin_type = String()
+        self._unsigned = False
+        self._unhandled_tokens = String()
+
+        for entry in ast_entry.tokens:
+            if entry.replace("'", "") == "unsigned":
+                self._unsigned = True
+            else:
+                self._builtin_type += entry.replace("'", "")
+
 
     @staticmethod
     fn accept(
@@ -76,7 +88,6 @@ struct BuiltinTypeNode(NodeAstLike):
                     return
             self._ast_entries[].append(ast_entry)
         else:
-            self._builtin_type = String(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
 
     fn process_anonymous_record(
@@ -140,13 +151,9 @@ struct BuiltinTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return default_to_string(
-            node=AstNode(self),
-            module_interface=module_interface,
-            just_code=just_code,
-            indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
-            alternate_string=String(self._builtin_type) if just_code else String(),
-        )
+
+        var s:String = BuiltinTypeMapper.map_type(self._builtin_type, self._unsigned)
+        if self._unhandled_tokens != "":
+            s += " #" + self.__name__ + " Unhandled tokens: " + self._unhandled_tokens
+
+        return s

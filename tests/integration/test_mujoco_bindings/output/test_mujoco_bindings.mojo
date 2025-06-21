@@ -1,4 +1,4 @@
-from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys.ffi import _Global
 from sys import ffi
 
 # (placeholder) TranslationUnitDecl 0x4e3398 <<invalid sloc>> <invalid sloc>
@@ -7077,7 +7077,7 @@ struct mjuiItem_:
 
 	var userid: Int32
 
-	var implicit: union mjuiItem_::(anonymous at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:259:3)
+	var implicit: mjuiItem
 
 	# (placeholder) | |-IndirectFieldDecl 0x746c58 <line:260:28> col:28 implicit single 'struct mjuiItemSingle_':'struct mjuiItemSingle_'
 

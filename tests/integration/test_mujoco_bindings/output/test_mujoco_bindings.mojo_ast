@@ -1,5 +1,5 @@
 RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=1706)
-from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys.ffi import _Global
 from sys import ffi
 PlaceHolderNode(parent_idx=0, current_idx=1, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 TranslationUnitDecl 0x4e3398 <<invalid sloc>> <invalid sloc>

@@ -1,0 +1,119 @@
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 7, 11, ...) len=18)
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)(parent_indent_level: 1, children_indent_level: 0)
+// Basic struct declarations
+
+	StructNode(c_parent_idx=0, c_current_idx=3, c_child_idxs=(4), node_state=4 (COMPLETED), name='Point')(parent_indent_level: 1, children_indent_level: 1)
+struct Point
+
+	ScopeNode(c_parent_idx=3, c_current_idx=4, c_child_idxs=(5, 6), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')(parent_indent_level: 1, children_indent_level: 2)
+	(parent_indent_level: 1, children_indent_level: 2)
+	{
+
+		StructFieldNode(c_parent_idx=4, c_current_idx=5, node_state=4 (COMPLETED), field_type='int', field_name='x')(parent_indent_level: 2, children_indent_level: 0)
+int x ;
+
+		StructFieldNode(c_parent_idx=4, c_current_idx=6, node_state=4 (COMPLETED), field_type='int', field_name='y')(parent_indent_level: 2, children_indent_level: 0)
+int y ;
+
+};
+
+	StructNode(c_parent_idx=0, c_current_idx=7, c_child_idxs=(8), node_state=4 (COMPLETED), name='Person')(parent_indent_level: 1, children_indent_level: 1)
+struct Person
+
+	ScopeNode(c_parent_idx=7, c_current_idx=8, c_child_idxs=(9, 10), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')(parent_indent_level: 1, children_indent_level: 2)
+	(parent_indent_level: 1, children_indent_level: 2)
+	{
+
+		StructFieldNode(c_parent_idx=8, c_current_idx=9, node_state=4 (COMPLETED), field_type='char*', field_name='name')(parent_indent_level: 2, children_indent_level: 0)
+char* name ;
+
+		StructFieldNode(c_parent_idx=8, c_current_idx=10, node_state=4 (COMPLETED), field_type='int', field_name='age')(parent_indent_level: 2, children_indent_level: 0)
+int age ;
+
+};
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)(parent_indent_level: 1, children_indent_level: 0)
+// Empty struct
+
+	StructNode(c_parent_idx=0, c_current_idx=13, c_child_idxs=(14), node_state=4 (COMPLETED), name='Empty')(parent_indent_level: 1, children_indent_level: 1)
+struct Empty
+
+	ScopeNode(c_parent_idx=13, c_current_idx=14, node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')(parent_indent_level: 1, children_indent_level: 2)
+	(parent_indent_level: 1, children_indent_level: 2)
+	{};
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=15)(parent_indent_level: 1, children_indent_level: 0)
+// Multi-line struct with comments
+
+	StructNode(c_parent_idx=0, c_current_idx=17, c_child_idxs=(18), node_state=4 (COMPLETED), name='Complex')(parent_indent_level: 1, children_indent_level: 1)
+struct Complex
+
+	ScopeNode(c_parent_idx=17, c_current_idx=18, c_child_idxs=(19, 20, 21, 22, 23), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')(parent_indent_level: 1, children_indent_level: 2)
+	(parent_indent_level: 1, children_indent_level: 2)
+	{
+
+		SingleLineCommentNode(c_parent_idx=18, c_current_idx=19)(parent_indent_level: 2, children_indent_level: 0)
+// Basic types
+
+		StructFieldNode(c_parent_idx=18, c_current_idx=20, node_state=4 (COMPLETED), field_type='int', field_name='id')(parent_indent_level: 2, children_indent_level: 0)
+int id ;
+
+		StructFieldNode(c_parent_idx=18, c_current_idx=21, node_state=4 (COMPLETED), field_type='float', field_name='value')(parent_indent_level: 2, children_indent_level: 0)
+float value ;
+
+		MultiLineCommentNode(c_parent_idx=18, c_current_idx=22)(parent_indent_level: 2, children_indent_level: 0)
+/* Nested struct */
+
+		StructFieldNode(c_parent_idx=18, c_current_idx=23, c_child_idxs=(24), node_state=4 (COMPLETED), field_type='Inner', field_name='nested')(parent_indent_level: 2, children_indent_level: 0)
+StructNode(c_parent_idx=23, c_current_idx=24, c_child_idxs=(25), node_state=4 (COMPLETED), name='Inner', nested=true)(parent_indent_level: 0, children_indent_level: 0)
+struct Inner
+ScopeNode(c_parent_idx=24, c_current_idx=25, c_child_idxs=(26), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')(parent_indent_level: 0, children_indent_level: 1)
+(parent_indent_level: 0, children_indent_level: 1)
+{
+
+	StructFieldNode(c_parent_idx=25, c_current_idx=26, node_state=4 (COMPLETED), field_type='double', field_name='data')(parent_indent_level: 1, children_indent_level: 0)
+double data ;
+
+}
+nested ;
+
+};
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)(parent_indent_level: 1, children_indent_level: 0)
+// Anonymous struct in typedef
+
+	TypedefNode(c_parent_idx=0, c_current_idx=29, c_child_idxs=(30), node_state=4 (COMPLETED), type='Flags')(parent_indent_level: 1, children_indent_level: 0)
+typedefStructNode(c_parent_idx=29, c_current_idx=30, c_child_idxs=(31), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+struct
+ScopeNode(c_parent_idx=30, c_current_idx=31, c_child_idxs=(32), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')(parent_indent_level: 0, children_indent_level: 1)
+(parent_indent_level: 0, children_indent_level: 1)
+{
+
+	StructFieldNode(c_parent_idx=31, c_current_idx=32, node_state=4 (COMPLETED), field_type='unsigned', field_name='flags')(parent_indent_level: 1, children_indent_level: 0)
+unsigned char flags ;
+
+}
+Flags
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=34)(parent_indent_level: 1, children_indent_level: 0)
+// Struct with bit fields
+
+	StructNode(c_parent_idx=0, c_current_idx=36, c_child_idxs=(37), node_state=4 (COMPLETED), name='BitFields')(parent_indent_level: 1, children_indent_level: 1)
+struct BitFields
+
+	ScopeNode(c_parent_idx=36, c_current_idx=37, c_child_idxs=(38, 39, 40), node_state=4 (COMPLETED), n_tokens=1, n_tokens_tail=1, parent_type='StructNode')(parent_indent_level: 1, children_indent_level: 2)
+	(parent_indent_level: 1, children_indent_level: 2)
+	{
+
+		StructFieldNode(c_parent_idx=37, c_current_idx=38, node_state=4 (COMPLETED), field_type='unsigned', field_name='a', bit_width='1')(parent_indent_level: 2, children_indent_level: 0)
+unsigned int a : 1 ;
+
+		StructFieldNode(c_parent_idx=37, c_current_idx=39, node_state=4 (COMPLETED), field_type='unsigned', field_name='b', bit_width='2')(parent_indent_level: 2, children_indent_level: 0)
+unsigned int b : 2 ;
+
+		StructFieldNode(c_parent_idx=37, c_current_idx=40, node_state=4 (COMPLETED), field_type='unsigned', field_name='c', bit_width='3')(parent_indent_level: 2, children_indent_level: 0)
+unsigned int c : 3 ;
+
+};
+
+	EndFileNode(c_parent_idx=0, c_current_idx=41)(parent_indent_level: 1, children_indent_level: 0)
+C_BINDER_MOJO_END_FILE

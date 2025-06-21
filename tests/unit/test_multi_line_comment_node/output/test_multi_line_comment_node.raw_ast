@@ -1,0 +1,22 @@
+TranslationUnitDecl 0x4e35c8 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x4e3df0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x4e3b90 '__int128'
+|-TypedefDecl 0x4e3e60 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x4e3bb0 'unsigned __int128'
+|-TypedefDecl 0x4e4168 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+| `-RecordType 0x4e3f40 'struct __NSConstantString_tag'
+|   `-Record 0x4e3eb8 '__NSConstantString_tag'
+|-TypedefDecl 0x4e4200 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x4e41c0 'char *'
+|   `-BuiltinType 0x4e3670 'char'
+|-TypedefDecl 0x4e44f8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+| `-ConstantArrayType 0x4e44a0 'struct __va_list_tag[1]' 1 
+|   `-RecordType 0x4e42e0 'struct __va_list_tag'
+|     `-Record 0x4e4258 '__va_list_tag'
+`-FunctionDecl 0x53b2f0 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_multi_line_comment_node/test_multi_line_comment_node.h:22:1, col:19> col:5 some_function 'int ()'
+  `-FullComment 0x53b650 <line:17:3, line:19:14>
+    `-ParagraphComment 0x53b620 <line:17:3, line:19:14>
+      |-TextComment 0x53b5a0 <line:17:3, col:35> Text=" Comment with code-like content: "
+      |-TextComment 0x53b5c0 <line:18:3, col:13> Text=" int x = 5;"
+      `-TextComment 0x53b5e0 <line:19:3, col:14> Text=" void foo();"
+C_BINDER_MOJO_END_FILE

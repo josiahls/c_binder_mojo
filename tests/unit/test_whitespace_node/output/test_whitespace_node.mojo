@@ -1,49 +1,16 @@
-# Different types of whitespace: <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# Single space 
-<C_BINDER_MOJO_NEWLINE> 
-  <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# Multiple spaces 
-<C_BINDER_MOJO_NEWLINE> 
-     <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# Tabs 
-<C_BINDER_MOJO_NEWLINE> 
- 	  <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# Mixed whitespace 
-<C_BINDER_MOJO_NEWLINE> 
- 	    	   <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# New lines 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# Whitespace in code contexts 
-<C_BINDER_MOJO_NEWLINE> 
-alias function : Int = (){<C_BINDER_MOJO_NEWLINE>intx5 
- <C_BINDER_MOJO_NEWLINE> 
-     <C_BINDER_MOJO_NEWLINE> 
-    
-return 
-x 
-; 
- <C_BINDER_MOJO_NEWLINE> 
- 
-} 
- <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# Whitespace after comment 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Whitespace <C_BINDER_MOJO_NEWLINE> 
-   in multiline <C_BINDER_MOJO_NEWLINE> 
-   comment """ 
-<C_BINDER_MOJO_NEWLINE> 
-    <C_BINDER_MOJO_NEWLINE> 
-# Whitespace at beginning and end of file  
-<C_BINDER_MOJO_NEWLINE> 
-fn main():
-    pass
+from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
+
+# (placeholder) TranslationUnitDecl 0x4e3958 <<invalid sloc>> <invalid sloc>
+
+alias __int128_t = Int128
+
+alias __uint128_t = UInt128
+
+alias __NSConstantString = StaticString
+
+alias __builtin_ms_va_list = UnsafePointer[Int8]
+
+alias __builtin_va_list = OpaquePointer
+
+alias function = fn () -> Int32

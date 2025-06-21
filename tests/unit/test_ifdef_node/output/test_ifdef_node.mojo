@@ -1,145 +1,39 @@
-# Basic ifdef test 
- 
-#ifdef BASIC_DEFINE 
+from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
 
- 
-alias INSIDE_BASIC = 1 
- 
+# (placeholder) TranslationUnitDecl 0x4e3cc8 <<invalid sloc>> <invalid sloc>
 
- 
- 
- 
-# ifdef with else 
- 
-#ifdef WITH_ELSE 
+alias __int128_t = Int128
 
- 
-    
-var a : Int = 1 
- 
- 
-#else 
+alias __uint128_t = UInt128
 
- 
-    
-var a : Int = 2 
- 
- 
+alias __NSConstantString = StaticString
 
- 
- 
- 
-# Nested ifdefs 
- 
-#ifdef OUTER 
+alias __builtin_ms_va_list = UnsafePointer[Int8]
 
- 
-    
-#ifdef INNER 
+alias __builtin_va_list = OpaquePointer
 
- 
-        
-var nested_var : Int = 42 
- 
- 
-    
+alias a: Int32 =  1 # `a` was not originally const in the original code
 
- 
+alias nested_var: Int32 =  42 # `nested_var` was not originally const in the original code
 
- 
- 
- 
-# ifdef with elif chain 
- 
-#ifdef _WIN32 
+alias mixed_var: Int32 =  1 # `mixed_var` was not originally const in the original code
+struct Config:
+	var special_var: Int32
 
- 
-    
-alias OS = "Windows" 
- 
-#elif 
-defined ( __APPLE__ ) 
- 
- 
-    
-alias OS = "MacOS" 
- 
-#else 
+	var special_double_var: Float64
 
- 
-    
-alias OS = "Linux" 
- 
+	var special_int_var: Int32
 
- 
- 
- 
-# ifdef with comments 
- 
-#ifdef COMMENTED 
-""" Multi-line comment after ifdef """ 
+	var special_char_var: Int8
 
- 
-    
-# Single line comment inside 
- 
-    
-alias INSIDE_COMMENT = 1 
- 
-    
-""" Another multi-line 
- 
-       comment inside """ 
+	var special_float_var: Float32
 
- 
+	var special_bool_var: Int32
 
- 
- 
- 
-# Empty ifdef  ( edge case )  
- 
-#ifdef EMPTY 
+	var special_void_var: UnsafePointer[NoneType]
 
- 
+	var special_array_var: SIMD[Int32.dtype, 10]
 
- 
- 
- 
-# Mixed ifdef/ifndef 
- 
-#ifdef MIXED 
+	var special_struct_var: UnsafePointer[Config]
 
- 
-    
-#ifndef INNER_NOT 
-
- 
-        
-alias mixed_var : Int = 1 
- 
- 
-    
-
- 
-
- 
- 
- 
-# ifdef with multiple defines 
- 
-#ifdef MULTIPLE_DEFINES 
-
- 
-    
-alias A = 1 
- 
-    
-alias B = 2 
- 
-    
-alias C = 3 
- 
- 
- 
-fn main():
-    pass

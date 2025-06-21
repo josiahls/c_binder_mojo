@@ -1,0 +1,203 @@
+RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=36, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=61)
+PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 4, 5, ...) len=36, node_state=4 (COMPLETED))
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
+# Basic type typedefs 
+WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4, type_name=)
+alias 
+WhitespaceNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5, n_tokens=2)
+ <C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6, type_name=)
+alias 
+WhitespaceNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, n_tokens=2)
+ <C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8, type_name=)
+alias 
+WhitespaceNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, n_tokens=4)
+ <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10)
+# Enum typedef 
+WhitespaceNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12, c_child_idxs=(12), mojo_child_idxs=(13), type_name=NodeState)
+alias NodeState = 
+EnumNode(c_parent_idx=11, c_current_idx=12, mojo_parent_idx=12, mojo_current_idx=13, c_child_idxs=(13), mojo_child_idxs=(14), enum_name=NodeState_)
+struct NodeState_ : 
+ScopeNode(c_parent_idx=12, c_current_idx=13, mojo_parent_idx=13, mojo_current_idx=14, c_child_idxs=(14, 15, 16, 17, 18, ...) len=8, mojo_child_idxs=(15, 16, 17, 18, 19, ...) len=8)
+ 
+EnumFieldNode(c_parent_idx=13, c_current_idx=14, mojo_parent_idx=14, mojo_current_idx=15, STATE_NONE)
+alias STATE_NONE = 0 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=15, mojo_parent_idx=14, mojo_current_idx=16)
+# Initial state 
+EnumFieldNode(c_parent_idx=13, c_current_idx=16, mojo_parent_idx=14, mojo_current_idx=17, STATE_COLLECTING)
+alias STATE_COLLECTING = 1 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=17, mojo_parent_idx=14, mojo_current_idx=18)
+# Collecting tokens 
+EnumFieldNode(c_parent_idx=13, c_current_idx=18, mojo_parent_idx=14, mojo_current_idx=19, STATE_BUILDING)
+alias STATE_BUILDING = 2 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=19, mojo_parent_idx=14, mojo_current_idx=20)
+# Building children 
+EnumFieldNode(c_parent_idx=13, c_current_idx=20, mojo_parent_idx=14, mojo_current_idx=21, STATE_COMPLETE)
+alias STATE_COMPLETE = 3 
+SingleLineCommentNode(c_parent_idx=13, c_current_idx=21, mojo_parent_idx=14, mojo_current_idx=22)
+# Node is complete 
+
+
+
+WhitespaceNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, n_tokens=4)
+ <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24)
+# Test preprocessor scoping with typedef 
+WhitespaceNode(c_parent_idx=0, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26, c_child_idxs=(26, 27, 28, 29, 30, ...) len=14, node_state=4 (COMPLETED))
+#ifndef MY_TYPEDEF_TEST 
+
+WhitespaceNode(c_parent_idx=25, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+MacroDefineNode(c_parent_idx=25, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28, mojo_child_idxs=(29))
+alias MY_TYPEDEF_TEST 
+WhitespaceNode(c_parent_idx=25, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=30, n_tokens=3)
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+SingleLineCommentNode(c_parent_idx=25, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=31)
+# This struct should not collect the typedefs that follow 
+WhitespaceNode(c_parent_idx=25, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=32, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+StructNode(c_parent_idx=25, c_current_idx=31, mojo_parent_idx=0, mojo_current_idx=33, c_child_idxs=(32), mojo_child_idxs=(34), struct_name=TestStruct)
+@value 
+struct TestStruct : 
+	ScopeNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=33, mojo_current_idx=34, c_child_idxs=(33), mojo_child_idxs=(35))
+	 
+	StructFieldNode(c_parent_idx=32, c_current_idx=33, mojo_parent_idx=34, mojo_current_idx=35, field_name=value, field_type=int)
+var value : Int 
+
+
+TypedefNode(c_parent_idx=25, c_current_idx=34, mojo_parent_idx=0, mojo_current_idx=36, type_name=)
+alias 
+WhitespaceNode(c_parent_idx=25, c_current_idx=35, mojo_parent_idx=0, mojo_current_idx=37, n_tokens=2)
+  
+SingleLineCommentNode(c_parent_idx=25, c_current_idx=36, mojo_parent_idx=0, mojo_current_idx=38)
+# Should be independent node 
+WhitespaceNode(c_parent_idx=25, c_current_idx=37, mojo_parent_idx=0, mojo_current_idx=39, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=25, c_current_idx=38, mojo_parent_idx=0, mojo_current_idx=40, type_name=)
+alias 
+WhitespaceNode(c_parent_idx=25, c_current_idx=39, mojo_parent_idx=0, mojo_current_idx=41, n_tokens=2)
+  
+SingleLineCommentNode(c_parent_idx=25, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=42)
+# Should be independent node 
+WhitespaceNode(c_parent_idx=25, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=43, n_tokens=3)
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+WhitespaceNode(c_parent_idx=0, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=44, n_tokens=1)
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=43, mojo_parent_idx=0, mojo_current_idx=45)
+# MY_TYPEDEF_TEST 
+WhitespaceNode(c_parent_idx=0, c_current_idx=44, mojo_parent_idx=0, mojo_current_idx=46, n_tokens=3)
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=45, mojo_parent_idx=0, mojo_current_idx=47)
+# Struct typedefs - testing nested typedef handling 
+WhitespaceNode(c_parent_idx=0, c_current_idx=46, mojo_parent_idx=0, mojo_current_idx=48, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=0, c_current_idx=47, mojo_parent_idx=0, mojo_current_idx=49, c_child_idxs=(48), mojo_child_idxs=(50), type_name=Point2D)
+alias Point2D = 
+StructNode(c_parent_idx=47, c_current_idx=48, mojo_parent_idx=49, mojo_current_idx=50, c_child_idxs=(49), mojo_child_idxs=(51), struct_name=)
+@value 
+struct : 
+	ScopeNode(c_parent_idx=48, c_current_idx=49, mojo_parent_idx=50, mojo_current_idx=51, c_child_idxs=(50, 51), mojo_child_idxs=(52, 53))
+	 
+	StructFieldNode(c_parent_idx=49, c_current_idx=50, mojo_parent_idx=51, mojo_current_idx=52, field_name=x, field_type=int)
+var x : Int 
+StructFieldNode(c_parent_idx=49, c_current_idx=51, mojo_parent_idx=51, mojo_current_idx=53, field_name=y, field_type=int)
+var y : Int 
+
+
+
+WhitespaceNode(c_parent_idx=0, c_current_idx=52, mojo_parent_idx=0, mojo_current_idx=54, n_tokens=4)
+ <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=53, mojo_parent_idx=0, mojo_current_idx=55)
+# Test typedef and struct interaction 
+WhitespaceNode(c_parent_idx=0, c_current_idx=54, mojo_parent_idx=0, mojo_current_idx=56, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+StructNode(c_parent_idx=0, c_current_idx=55, mojo_parent_idx=0, mojo_current_idx=57, c_child_idxs=(56), mojo_child_idxs=(58), struct_name=Rectangle_)
+@value 
+struct Rectangle_ : 
+	ScopeNode(c_parent_idx=55, c_current_idx=56, mojo_parent_idx=57, mojo_current_idx=58, c_child_idxs=(57, 58, 59, 60), mojo_child_idxs=(59, 60, 61, 62))
+	 
+	StructFieldNode(c_parent_idx=56, c_current_idx=57, mojo_parent_idx=58, mojo_current_idx=59, field_name=top_left, field_type=Point2D)
+var top_left : Point2D 
+StructFieldNode(c_parent_idx=56, c_current_idx=58, mojo_parent_idx=58, mojo_current_idx=60, field_name=bottom_right, field_type=Point2D)
+var bottom_right : Point2D 
+StructFieldNode(c_parent_idx=56, c_current_idx=59, mojo_parent_idx=58, mojo_current_idx=61, field_name=width, field_type=int)
+var width : Int 
+StructFieldNode(c_parent_idx=56, c_current_idx=60, mojo_parent_idx=58, mojo_current_idx=62, field_name=height, field_type=int)
+var height : Int 
+
+
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=61, mojo_parent_idx=0, mojo_current_idx=63)
+# This typedef should be independent of the struct above 
+WhitespaceNode(c_parent_idx=0, c_current_idx=62, mojo_parent_idx=0, mojo_current_idx=64, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=0, c_current_idx=63, mojo_parent_idx=0, mojo_current_idx=65, c_child_idxs=(64), mojo_child_idxs=(66), type_name=Rectangle)
+alias Rectangle = 
+StructNode(c_parent_idx=63, c_current_idx=64, mojo_parent_idx=65, mojo_current_idx=66, struct_name=Rectangle_)
+@value 
+struct Rectangle_ : 
+
+WhitespaceNode(c_parent_idx=0, c_current_idx=65, mojo_parent_idx=0, mojo_current_idx=67, n_tokens=4)
+ <C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=66, mojo_parent_idx=0, mojo_current_idx=68)
+# Test preprocessor and typedef interaction 
+WhitespaceNode(c_parent_idx=0, c_current_idx=67, mojo_parent_idx=0, mojo_current_idx=69, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+PlaceHolderNode(c_parent_idx=0, c_current_idx=68, mojo_parent_idx=0, mojo_current_idx=70, c_child_idxs=(69, 70, 71, 72, 76, ...) len=11, node_state=4 (COMPLETED))
+#ifndef NESTED_TEST 
+
+WhitespaceNode(c_parent_idx=68, c_current_idx=69, mojo_parent_idx=0, mojo_current_idx=71, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 
+MacroDefineNode(c_parent_idx=68, c_current_idx=70, mojo_parent_idx=0, mojo_current_idx=72, mojo_child_idxs=(73))
+alias NESTED_TEST 
+WhitespaceNode(c_parent_idx=68, c_current_idx=71, mojo_parent_idx=0, mojo_current_idx=74, n_tokens=3)
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=68, c_current_idx=72, mojo_parent_idx=0, mojo_current_idx=75, c_child_idxs=(73), mojo_child_idxs=(76), type_name=NestedStruct)
+alias NestedStruct = 
+StructNode(c_parent_idx=72, c_current_idx=73, mojo_parent_idx=75, mojo_current_idx=76, c_child_idxs=(74), mojo_child_idxs=(77), struct_name=)
+@value 
+struct : 
+	ScopeNode(c_parent_idx=73, c_current_idx=74, mojo_parent_idx=76, mojo_current_idx=77, c_child_idxs=(75), mojo_child_idxs=(78))
+	 
+	StructFieldNode(c_parent_idx=74, c_current_idx=75, mojo_parent_idx=77, mojo_current_idx=78, field_name=data, field_type=int)
+var data : Int 
+
+
+
+WhitespaceNode(c_parent_idx=68, c_current_idx=76, mojo_parent_idx=0, mojo_current_idx=79, n_tokens=2)
+  
+SingleLineCommentNode(c_parent_idx=68, c_current_idx=77, mojo_parent_idx=0, mojo_current_idx=80)
+# This typedef should not be affected by the ifdef 
+WhitespaceNode(c_parent_idx=68, c_current_idx=78, mojo_parent_idx=0, mojo_current_idx=81, n_tokens=3)
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+TypedefNode(c_parent_idx=68, c_current_idx=79, mojo_parent_idx=0, mojo_current_idx=82, type_name=)
+alias 
+WhitespaceNode(c_parent_idx=68, c_current_idx=80, mojo_parent_idx=0, mojo_current_idx=83, n_tokens=2)
+  
+SingleLineCommentNode(c_parent_idx=68, c_current_idx=81, mojo_parent_idx=0, mojo_current_idx=84)
+# This should be an independent typedef 
+WhitespaceNode(c_parent_idx=68, c_current_idx=82, mojo_parent_idx=0, mojo_current_idx=85, n_tokens=3)
+<C_BINDER_MOJO_NEWLINE> 
+ <C_BINDER_MOJO_NEWLINE> 
+WhitespaceNode(c_parent_idx=0, c_current_idx=83, mojo_parent_idx=0, mojo_current_idx=86, n_tokens=1)
+ 
+SingleLineCommentNode(c_parent_idx=0, c_current_idx=84, mojo_parent_idx=0, mojo_current_idx=87)
+# NESTED_TEST  
+WhitespaceNode(c_parent_idx=0, c_current_idx=85, mojo_parent_idx=0, mojo_current_idx=88, n_tokens=1)
+<C_BINDER_MOJO_NEWLINE> 

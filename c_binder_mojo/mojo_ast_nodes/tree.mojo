@@ -21,11 +21,11 @@ from c_binder_mojo.common import (
     MessageableEnum,
 )
 from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, NodeAstLike
-from c_binder_mojo import c_ast_nodes
+from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry
 
 
-@value
-struct ModuleInterface:
+@fieldwise_init
+struct ModuleInterface(Movable & Copyable):
     """Interface for interacting with the AST.
 
     This struct provides methods for accessing and modifying the AST nodes and tokens.
@@ -38,7 +38,7 @@ struct ModuleInterface:
     """
 
     var _nodes: ArcPointer[List[AstNode]]
-    var _c_nodes: ArcPointer[List[c_ast_nodes.AstNode]]
+    var _entries: ArcPointer[List[AstEntry]]
 
     fn nodes(self) -> ArcPointer[List[AstNode]]:
         """Get the list of AST nodes.
@@ -48,13 +48,13 @@ struct ModuleInterface:
         """
         return self._nodes
 
-    fn c_nodes(self) -> ArcPointer[List[c_ast_nodes.AstNode]]:
+    fn entries(self) -> ArcPointer[List[AstEntry]]:
         """Get the list of tokens.
 
         Returns:
             Reference-counted pointer to the list of tokens.
         """
-        return self._c_nodes
+        return self._entries
 
     fn insert_node(mut self, owned node: AstNode) -> Int:
         """Insert a new node into the AST.
@@ -66,7 +66,7 @@ struct ModuleInterface:
             The index of the newly inserted node.
         """
         new_idx = len(self._nodes[])
-        node.indicies_ptr()[].mojo_current_idx = new_idx
+        node.indicies_ptr()[].current_idx = new_idx
         self._nodes[].append(node)
         return new_idx
 
@@ -81,7 +81,7 @@ struct ModuleInterface:
         started = False
         count = 0
         while parent_idx != -1 or not started:
-            parent_idx = self._nodes[][_current_idx].indicies().mojo_parent_idx
+            parent_idx = self._nodes[][_current_idx].indicies().parent_idx
             if parent_idx != -1:
                 count += 1
             started = True
@@ -114,7 +114,7 @@ fn get_node_path(nodes: ArcPointer[List[AstNode]], current_idx: Int) -> String:
 
     while idx >= 0 and count < 100:
         path.append(nodes[][idx].name())
-        idx = nodes[][idx].indicies().mojo_parent_idx
+        idx = nodes[][idx].indicies().parent_idx
         count += 1
 
     # Build path string from root to current (reverse order)
@@ -129,7 +129,7 @@ fn get_node_path(nodes: ArcPointer[List[AstNode]], current_idx: Int) -> String:
 
 fn log_state_transition(
     mut logger: Logger,
-    c_node: c_ast_nodes.AstNode,
+    ast_entry: AstEntry,
     current_node: AstNode,  # Renamed parameter to avoid shadowing
     module_interface: ModuleInterface,
     token_flow: MessageableEnum,
@@ -140,7 +140,7 @@ fn log_state_transition(
 
     Args:
         logger: Logger instance.
-        c_node: Current c_node.
+        ast_entry: Current ast_entry.
         current_node: Current node.
         module_interface: Tree interface.
         token_flow: New state.
@@ -148,7 +148,7 @@ fn log_state_transition(
         recursion_depth: Current depth of get_current_node recursion.
     """
     # Format the transition string with fixed width
-    var transition_str:String
+    var transition_str: String
     if prev_state == MessageableEnum(-1) or prev_state == token_flow:
         transition_str = String(token_flow)
     else:
@@ -173,12 +173,12 @@ fn log_state_transition(
 
     # Get node path using a constant path length
     var path = get_node_path(
-        module_interface.nodes(), current_node.indicies().mojo_current_idx
+        module_interface.nodes(), current_node.indicies().current_idx
     )
 
     # Build indentation based on parent count
     var n_parents = module_interface.n_parents(
-        current_node.indicies().mojo_current_idx
+        current_node.indicies().current_idx
     )
     var indent = String()
     for _ in range(n_parents):
@@ -194,7 +194,7 @@ fn log_state_transition(
     msg += indent
     msg += node_info
     msg += "\n    └─ Path: " + path
-    msg += "\n    └─ Current C_Node: '" + c_node.name() + "'"
+    msg += "\n    └─ Current ast_entry: '" + ast_entry.ast_name + "'"
 
     # Add active nodes count
     var active_count = 0
@@ -216,51 +216,49 @@ fn log_state_transition(
 
 
 fn _initialize_module(
-    mut c_node: c_ast_nodes.AstNode,
+    mut ast_entry: AstEntry,
     current_idx: Int,
     mut module_interface: ModuleInterface,
     mut logger: Logger,
 ) raises -> Int:
     var indices = NodeIndices(
-        c_node.indicies(),
-        -1,
-        current_idx,
+        parent_idx=-1,
+        current_idx=current_idx,
     )
-    var node = AstNode.accept(c_node, module_interface, indices)
+    var node = AstNode.accept(ast_entry, module_interface, indices)
     var new_idx = module_interface.insert_node(node)
-    var new_token_flow = node.determine_token_flow(c_node, module_interface)
+    var new_token_flow = node.determine_token_flow(ast_entry, module_interface)
     log_state_transition(
         logger,
-        c_node,
+        ast_entry,
         node,
         module_interface,
         new_token_flow,
         recursion_depth=0,
     )
     return get_current_node(
-        c_node, new_idx, module_interface, logger, recursion_depth=0
+        ast_entry, new_idx, module_interface, logger, recursion_depth=0
     )
 
 
 fn _create_child(
-    mut c_node: c_ast_nodes.AstNode,
+    mut ast_entry: AstEntry,
     current_idx: Int,
     mut module_interface: ModuleInterface,
     mut logger: Logger,
     recursion_depth: Int = 0,
 ) raises -> Int:
     var indices = NodeIndices(
-        c_node.indicies(),
         current_idx,
         -1,
     )
     var node = module_interface.nodes()[][current_idx]
-    new_node = AstNode.accept(c_node, module_interface, indices)
+    new_node = AstNode.accept(ast_entry, module_interface, indices)
     var new_idx = module_interface.insert_node(new_node)
-    node.indicies_ptr()[].mojo_child_idxs.append(new_idx)
+    node.indicies_ptr()[].child_idxs.append(new_idx)
     log_state_transition(
         logger,
-        c_node,
+        ast_entry,
         new_node,
         module_interface,
         TokenFlow.CREATE_CHILD,
@@ -271,18 +269,18 @@ fn _create_child(
 
 
 fn _consume_token(
-    mut c_node: c_ast_nodes.AstNode,
+    mut ast_entry: AstEntry,
     current_idx: Int,
     mut module_interface: ModuleInterface,
     mut logger: Logger,
 ) raises -> Int:
     var node = module_interface.nodes()[][current_idx]
-    node.process(c_node, TokenFlow.CONSUME_TOKEN, module_interface)
+    node.process(ast_entry, TokenFlow.CONSUME_TOKEN, module_interface)
     return current_idx
 
 
 fn get_current_node(
-    mut c_node: c_ast_nodes.AstNode,
+    mut ast_entry: AstEntry,
     current_idx: Int,
     mut module_interface: ModuleInterface,
     mut logger: Logger,
@@ -290,8 +288,8 @@ fn get_current_node(
 ) raises -> Int:
     """Process a token and determine the current node in the AST.
 
-    This function processes c_nodes and manages the AST construction flow. The token flow
-    directives determine how each c_node should be handled:
+    This function processes entries and manages the AST construction flow. The token flow
+    directives determine how each ast_entry should be handled:
 
     - INITIALIZE_MODULE:
         Initial state when tree construction begins.
@@ -308,7 +306,7 @@ fn get_current_node(
         Current node captures this token then marks itself complete.
 
     Args:
-        c_node: The c_node to process.
+        ast_entry: The ast_entry to process.
         current_idx: Index of the current node.
         module_interface: Interface for interacting with the AST.
         logger: Logger for recording processing information.
@@ -320,21 +318,25 @@ fn get_current_node(
     var _current_idx = current_idx
 
     # TODO(josiahls): Need to add a DeletedNode version
-    # if c_node.deleted:
-    #     raise Error("Token is deleted: " + String(c_node))
+    # if ast_entry.deleted:
+    #     raise Error("Token is deleted: " + String(ast_entry))
 
     # State machine branching based on current state
     if current_idx == -1:
         if len(module_interface.nodes()[]) > 0:
-            raise Error("Tree already has a module given node: " + String(c_node))
-        return _initialize_module(c_node, current_idx, module_interface, logger)
+            raise Error(
+                "Tree already has a module given node: " + String(ast_entry)
+            )
+        return _initialize_module(
+            ast_entry, current_idx, module_interface, logger
+        )
 
     # var prev_state = token_flow
     var node = module_interface.nodes()[][current_idx]
-    var token_flow = node.determine_token_flow(c_node, module_interface)
+    var token_flow = node.determine_token_flow(ast_entry, module_interface)
     log_state_transition(
         logger,
-        c_node,
+        ast_entry,
         node,
         module_interface,
         token_flow,
@@ -342,25 +344,29 @@ fn get_current_node(
         recursion_depth=recursion_depth,
     )
     if token_flow == TokenFlow.CREATE_CHILD:
-        node.process(c_node, TokenFlow.CREATE_CHILD, module_interface)
+        node.process(ast_entry, TokenFlow.CREATE_CHILD, module_interface)
         return _create_child(
-            c_node, current_idx, module_interface, logger, recursion_depth + 1
+            ast_entry,
+            current_idx,
+            module_interface,
+            logger,
+            recursion_depth + 1,
         )
 
     elif token_flow == TokenFlow.PASS_TO_PARENT:
-        node.process(c_node, TokenFlow.PASS_TO_PARENT, module_interface)
+        node.process(ast_entry, TokenFlow.PASS_TO_PARENT, module_interface)
         return get_current_node(
-            c_node,
-            node.indicies().mojo_parent_idx,
+            ast_entry,
+            node.indicies().parent_idx,
             module_interface,
             logger,
             recursion_depth - 1,
         )
     elif token_flow == TokenFlow.CONSUME_TOKEN:
-        node.process(c_node, TokenFlow.CONSUME_TOKEN, module_interface)
+        node.process(ast_entry, TokenFlow.CONSUME_TOKEN, module_interface)
         return current_idx
     elif token_flow == TokenFlow.END_FILE:
-        node.process(c_node, TokenFlow.END_FILE, module_interface)
+        node.process(ast_entry, TokenFlow.END_FILE, module_interface)
         return current_idx
     else:
         raise Error(
@@ -371,7 +377,9 @@ fn get_current_node(
 
 
 fn make_tree(
-    owned c_nodes: List[c_ast_nodes.AstNode], tree_transition_file: String = "", validate_tree: Bool = True
+    owned entries: List[AstEntry],
+    tree_transition_file: String = "",
+    validate: Bool = True,
 ) raises -> ModuleInterface:
     """Build an AST from a list of tokens.
 
@@ -379,7 +387,7 @@ fn make_tree(
     representing the structure of the code.
 
     Args:
-        c_nodes: List of c_nodes to process.
+        entries: List of entries to process.
         tree_transition_file: File to write tree transition information to.
 
     Returns:
@@ -393,16 +401,16 @@ fn make_tree(
             FileLoggerOutputer(tree_transition_file, "w")
         )
     logger.info(
-        "Starting tree construction with " + String(len(c_nodes)) + " tokens"
+        "Starting tree construction with " + String(len(entries)) + " tokens"
     )
 
     # Create reference-counted pointers for tokens and nodes
-    var _c_nodes = ArcPointer(c_nodes)
+    var _entries = ArcPointer(entries)
     var nodes = ArcPointer(List[AstNode]())
 
     # Reserve space for nodes (estimate based on token count)
-    nodes[].reserve(len(c_nodes) // 3)  # Rough estimate: ~1 node per 3 tokens
-    var module_interface = ModuleInterface(nodes, _c_nodes)
+    nodes[].reserve(len(entries) // 3)  # Rough estimate: ~1 node per 3 tokens
+    var module_interface = ModuleInterface(nodes, _entries)
 
     var current_idx = -1
 
@@ -410,24 +418,24 @@ fn make_tree(
     logger.info("Processing tokens to build AST...")
     var token_count = 0
     var log_interval = max(
-        1, len(c_nodes) // 10
+        1, len(entries) // 10
     )  # Log progress at 10% intervals
 
-    for c_node in c_nodes:
+    for ref ast_entry in entries:
         # Log progress periodically
-        if token_count % log_interval == 0 or token_count == len(c_nodes) - 1:
+        if token_count % log_interval == 0 or token_count == len(entries) - 1:
             logger.info(
                 "Processing token "
                 + String(token_count + 1)
                 + "/"
-                + String(len(c_nodes))
+                + String(len(entries))
                 + " ("
-                + String((token_count + 1) * 100 / len(c_nodes))
+                + String((token_count + 1) * 100 / len(entries))
                 + "%)"
             )
 
         current_idx = get_current_node(
-            c_node[],
+            ast_entry,
             current_idx,
             module_interface,
             inner_logger,
@@ -436,25 +444,25 @@ fn make_tree(
         token_count += 1
 
     # Verify that all nodes are completed
-    if validate_tree:
+    if validate:
         incomplete_nodes = List[AstNode]()
         for node in nodes[]:
-            if node[].node_state() != NodeState.COMPLETED:
-                incomplete_nodes.append(node[])
+            if node.node_state() != NodeState.COMPLETED:
+                incomplete_nodes.append(node)
         if len(incomplete_nodes) > 0:
-            var s = String('\t')
+            var s = String("\t")
             for node in incomplete_nodes:
-                s += node[].name(include_sig=True) + "\n\t"
+                s += node.name(include_sig=True) + "\n\t"
             raise Error("Incomplete mojo ast nodes: \n" + s)
 
     # Log tree construction statistics
     logger.info("Tree construction complete")
     logger.info("Statistics:")
-    logger.info("  - Tokens processed: " + String(len(c_nodes)))
+    logger.info("  - Tokens processed: " + String(len(entries)))
     logger.info("  - Nodes created: " + String(len(nodes[])))
     logger.info(
         "  - Tokens per node ratio: "
-        + String(Float64(len(c_nodes)) / Float64(len(nodes[])))
+        + String(Float64(len(entries)) / Float64(len(nodes[])))
     )
 
     return module_interface

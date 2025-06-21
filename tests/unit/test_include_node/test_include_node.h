@@ -1,17 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include "my_header.h"
-#include "../relative/path.h"
+// #include <stdlib.h>
+// #include "my_header.h"
+// #include "../relative/path.h"
 
-// Comment between includes
-#include <string.h>
+// // Comment between includes
+// #include <string.h>
 
-/* Multi-line comment
-   between includes */
-#include "local/header.h"
+// /* Multi-line comment
+//    between includes */
+// #include "local/header.h"
 
-// Include with extra whitespace
-#include    <math.h>
+// // Include with extra whitespace
+// #include    <math.h>
 
-// Include with trailing comment
-#include <time.h> // Time functions 
+// // Include with trailing comment
+// #include <time.h> // Time functions 

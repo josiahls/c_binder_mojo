@@ -13,6 +13,10 @@ struct Person {
 struct Empty {
 };
 
+
+// An even more empty struct
+struct SuperEmpty;
+
 // Multi-line struct with comments
 struct Complex {
     // Basic types
@@ -23,6 +27,12 @@ struct Complex {
     struct Inner {
         double data;
     } nested;
+
+    /* Nested anonymous struct */
+    struct {
+        int x;
+        int y;
+    } nested_anonymous;
 };
 
 // Anonymous struct in typedef

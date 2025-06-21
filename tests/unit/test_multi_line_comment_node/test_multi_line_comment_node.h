@@ -37,4 +37,4 @@ int some_function(); /* Comment after code */
  *       indentation
  */
 
-/* Comment with trailing spaces    */
+/* Comment with trailing spaces    */ 

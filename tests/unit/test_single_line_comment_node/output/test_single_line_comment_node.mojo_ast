@@ -1,71 +1,31 @@
-RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=31, mojo_child_idxs=(1, 2, 3, 4, 5, ...) len=31)
-PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 3, 4, 5, ...) len=31, node_state=4 (COMPLETED))
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
-# Basic single line comment 
-WhitespaceNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, n_tokens=1)
-<C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=3, mojo_parent_idx=0, mojo_current_idx=4)
-# Another single line comment 
-WhitespaceNode(c_parent_idx=0, c_current_idx=4, mojo_parent_idx=0, mojo_current_idx=5, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=5, mojo_parent_idx=0, mojo_current_idx=6)
-# Comment with special characters: !@#$%^&* (  ) _+ 
-WhitespaceNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8)
-# Comment with code-like content: int x  =  5 ;  
-WhitespaceNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-VariableNode(c_parent_idx=0, c_current_idx=9, mojo_parent_idx=0, mojo_current_idx=10, is_module_level=True)
-alias some_function : Int = () 
-WhitespaceNode(c_parent_idx=0, c_current_idx=10, mojo_parent_idx=0, mojo_current_idx=11, n_tokens=1)
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=11, mojo_parent_idx=0, mojo_current_idx=12)
-# Comment after code 
-WhitespaceNode(c_parent_idx=0, c_current_idx=12, mojo_parent_idx=0, mojo_current_idx=13, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-MultiLineCommentNode(c_parent_idx=0, c_current_idx=13, mojo_parent_idx=0, mojo_current_idx=14)
-""" This is not a single line comment """ 
-WhitespaceNode(c_parent_idx=0, c_current_idx=14, mojo_parent_idx=0, mojo_current_idx=15, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=15, mojo_parent_idx=0, mojo_current_idx=16)
-# Comment with Unicode: 你好世界 
-WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18)
-# Empty comment followed by another comment 
-WhitespaceNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, n_tokens=1)
-<C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=19, mojo_parent_idx=0, mojo_current_idx=20)
-# 
-WhitespaceNode(c_parent_idx=0, c_current_idx=20, mojo_parent_idx=0, mojo_current_idx=21, n_tokens=1)
-<C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=21, mojo_parent_idx=0, mojo_current_idx=22)
-# Comment after empty comment 
-WhitespaceNode(c_parent_idx=0, c_current_idx=22, mojo_parent_idx=0, mojo_current_idx=23, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=23, mojo_parent_idx=0, mojo_current_idx=24)
-# Multiple comments 
-WhitespaceNode(c_parent_idx=0, c_current_idx=24, mojo_parent_idx=0, mojo_current_idx=25, n_tokens=1)
-<C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26)
-# in a 
-WhitespaceNode(c_parent_idx=0, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27, n_tokens=1)
-<C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28)
-# row 
-WhitespaceNode(c_parent_idx=0, c_current_idx=28, mojo_parent_idx=0, mojo_current_idx=29, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=29, mojo_parent_idx=0, mojo_current_idx=30)
-# Comment with trailing spaces     
-WhitespaceNode(c_parent_idx=0, c_current_idx=30, mojo_parent_idx=0, mojo_current_idx=31, n_tokens=3)
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
+RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=8)
+from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
+PlaceHolderNode(parent_idx=0, current_idx=1, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TranslationUnitDecl 0x4e35c8 <<invalid sloc>> <invalid sloc>
+TypedefDeclNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e3df0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+ | `-BuiltinType 0x4e3b90 '__int128'
+TypedefDeclNode(parent_idx=0, current_idx=3, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e3e60 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+ | `-BuiltinType 0x4e3bb0 'unsigned __int128'
+TypedefDeclNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e4168 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+ | `-RecordType 0x4e3f40 'struct __NSConstantString_tag'
+ |   `-Record 0x4e3eb8 '__NSConstantString_tag'
+TypedefDeclNode(parent_idx=0, current_idx=5, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e4200 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+ | `-PointerType 0x4e41c0 'char *'
+ |   `-BuiltinType 0x4e3670 'char'
+TypedefDeclNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e44f8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+ | `-ConstantArrayType 0x4e44a0 'struct __va_list_tag[1]' 1 
+ |   `-RecordType 0x4e42e0 'struct __va_list_tag'
+ |     `-Record 0x4e4258 '__va_list_tag'
+FunctionDeclNode(parent_idx=0, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+`-FunctionDecl 0x53af60 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_single_line_comment_node/test_single_line_comment_node.h:8:1, col:19> col:5 some_function 'int ()'
+   `-FullComment 0x53b210 <line:6:3, col:45>
+     `-ParagraphComment 0x53b1e0 <col:3, col:45>
+       `-TextComment 0x53b1b0 <col:3, col:45> Text=" Comment with code-like content: int x = 5;"
+EndFileNode(parent_idx=0, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+# C_BINDER_MOJO_END_FILE

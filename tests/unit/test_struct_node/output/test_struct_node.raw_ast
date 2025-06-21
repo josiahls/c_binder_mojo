@@ -1,0 +1,83 @@
+TranslationUnitDecl 0x4e3518 <<invalid sloc>> <invalid sloc>
+|-TypedefDecl 0x4e3d40 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+| `-BuiltinType 0x4e3ae0 '__int128'
+|-TypedefDecl 0x4e3db0 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+| `-BuiltinType 0x4e3b00 'unsigned __int128'
+|-TypedefDecl 0x4e40b8 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+| `-RecordType 0x4e3e90 'struct __NSConstantString_tag'
+|   `-Record 0x4e3e08 '__NSConstantString_tag'
+|-TypedefDecl 0x4e4150 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+| `-PointerType 0x4e4110 'char *'
+|   `-BuiltinType 0x4e35c0 'char'
+|-TypedefDecl 0x4e4448 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+| `-ConstantArrayType 0x4e43f0 'struct __va_list_tag[1]' 1 
+|   `-RecordType 0x4e4230 'struct __va_list_tag'
+|     `-Record 0x4e41a8 '__va_list_tag'
+|-RecordDecl 0x53b290 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:2:1, line:5:1> line:2:8 struct Point definition
+| |-FullComment 0x5515c0 <line:1:3, col:28>
+| | `-ParagraphComment 0x53c270 <col:3, col:28>
+| |   `-TextComment 0x53c240 <col:3, col:28> Text=" Basic struct declarations"
+| |-FieldDecl 0x53b348 <line:3:5, col:9> col:9 x 'int'
+| `-FieldDecl 0x53b3b0 <line:4:5, col:9> col:9 y 'int'
+|-RecordDecl 0x53b400 <line:7:1, line:10:1> line:7:8 struct Person definition
+| |-FieldDecl 0x53b4b8 <line:8:5, col:11> col:11 name 'char *'
+| `-FieldDecl 0x53b520 <line:9:5, col:9> col:9 age 'int'
+|-RecordDecl 0x53b598 <line:13:1, line:14:1> line:13:8 struct Empty definition
+| `-FullComment 0x551690 <line:12:3, col:15>
+|   `-ParagraphComment 0x551660 <col:3, col:15>
+|     `-TextComment 0x551630 <col:3, col:15> Text=" Empty struct"
+|-RecordDecl 0x53b668 <line:18:1, col:8> col:8 struct SuperEmpty
+| `-FullComment 0x551760 <line:17:3, col:28>
+|   `-ParagraphComment 0x551730 <col:3, col:28>
+|     `-TextComment 0x551700 <col:3, col:28> Text=" An even more empty struct"
+|-RecordDecl 0x53b738 <line:21:1, line:36:1> line:21:8 struct Complex definition
+| |-FullComment 0x551830 <line:20:3, col:34>
+| | `-ParagraphComment 0x551800 <col:3, col:34>
+| |   `-TextComment 0x5517d0 <col:3, col:34> Text=" Multi-line struct with comments"
+| |-FieldDecl 0x53b820 <line:23:5, col:9> col:9 id 'int'
+| | `-FullComment 0x551900 <line:22:7, col:18>
+| |   `-ParagraphComment 0x5518d0 <col:7, col:18>
+| |     `-TextComment 0x5518a0 <col:7, col:18> Text=" Basic types"
+| |-FieldDecl 0x53b888 <line:24:5, col:11> col:11 value 'float'
+| |-RecordDecl 0x53b908 parent 0x4e3518 <line:27:5, line:29:5> line:27:12 struct Inner definition
+| | |-FullComment 0x5519d0 <line:26:7, col:21>
+| | | `-ParagraphComment 0x5519a0 <col:7, col:21>
+| | |   `-TextComment 0x551970 <col:7, col:21> Text=" Nested struct "
+| | `-FieldDecl 0x53b9d8 <line:28:9, col:16> col:16 data 'double'
+| |-FieldDecl 0x53ba88 <line:27:5, line:29:7> col:7 nested 'struct Inner':'struct Inner'
+| |-RecordDecl 0x53bb08 <line:32:5, line:35:5> line:32:5 struct definition
+| | |-FullComment 0x551aa0 <line:31:7, col:31>
+| | | `-ParagraphComment 0x551a70 <col:7, col:31>
+| | |   `-TextComment 0x551a40 <col:7, col:31> Text=" Nested anonymous struct "
+| | |-FieldDecl 0x53bbc8 <line:33:9, col:13> col:13 x 'int'
+| | `-FieldDecl 0x53bc30 <line:34:9, col:13> col:13 y 'int'
+| `-FieldDecl 0x53bcd8 <line:32:5, line:35:7> col:7 nested_anonymous 'struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:32:5)':'struct Complex::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.h:32:5)'
+|-RecordDecl 0x53bd58 <line:39:9, line:41:1> line:39:9 struct definition
+| |-FullComment 0x551b70 <line:38:3, col:30>
+| | `-ParagraphComment 0x551b40 <col:3, col:30>
+| |   `-TextComment 0x551b10 <col:3, col:30> Text=" Anonymous struct in typedef"
+| `-FieldDecl 0x53be18 <line:40:5, col:19> col:19 flags 'unsigned char'
+|-TypedefDecl 0x53bec8 <line:39:1, line:41:3> col:3 Flags 'struct Flags':'Flags'
+| |-ElaboratedType 0x53be70 'struct Flags' sugar
+| | `-RecordType 0x53bde0 'Flags'
+| |   `-Record 0x53bd58 ''
+| `-FullComment 0x551c40 <line:38:3, col:30>
+|   `-ParagraphComment 0x551c10 <col:3, col:30>
+|     `-TextComment 0x551be0 <col:3, col:30> Text=" Anonymous struct in typedef"
+`-RecordDecl 0x53bf60 <line:44:1, line:48:1> line:44:8 struct BitFields definition
+  |-FullComment 0x551d10 <line:43:3, col:25>
+  | `-ParagraphComment 0x551ce0 <col:3, col:25>
+  |   `-TextComment 0x551cb0 <col:3, col:25> Text=" Struct with bit fields"
+  |-FieldDecl 0x53c058 <line:45:5, col:22> col:18 a 'unsigned int'
+  | `-ConstantExpr 0x53c038 <col:22> 'int'
+  |   |-value: Int 1
+  |   `-IntegerLiteral 0x53c000 <col:22> 'int' 1
+  |-FieldDecl 0x53c100 <line:46:5, col:22> col:18 b 'unsigned int'
+  | `-ConstantExpr 0x53c0e0 <col:22> 'int'
+  |   |-value: Int 2
+  |   `-IntegerLiteral 0x53c0a8 <col:22> 'int' 2
+  `-FieldDecl 0x53c1a8 <line:47:5, col:22> col:18 c 'unsigned int'
+    `-ConstantExpr 0x53c188 <col:22> 'int'
+      |-value: Int 3
+      `-IntegerLiteral 0x53c150 <col:22> 'int' 3
+C_BINDER_MOJO_END_FILE

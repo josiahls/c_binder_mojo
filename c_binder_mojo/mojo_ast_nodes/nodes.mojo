@@ -6,7 +6,6 @@ from memory import ArcPointer
 from c_binder_mojo.common import (
     TokenBundle,
     MessageableEnum,
-    TokenBundles,
     NodeIndices,
     TokenFlow,
     NodeState,
@@ -14,12 +13,15 @@ from c_binder_mojo.common import (
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes import AstNodeVariant
 from c_binder_mojo.mojo_ast_nodes.place_holder_node import PlaceHolderNode
-from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
+from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
 fn string_children(
-    node: AstNode, just_code: Bool, module_interface: ModuleInterface
-) raises -> String:
+    node: AstNode,
+    just_code: Bool,
+    module_interface: ModuleInterface,
+    indent_level: Int,
+) -> String:
     """Converts children to string with proper indentation and line breaks.
 
     Args:
@@ -29,99 +31,44 @@ fn string_children(
         module_interface: The tree interface to use for the node.
     """
     var s = String()
-
-    for child_idx in node.indicies().mojo_child_idxs:
-        var child = module_interface.nodes()[][child_idx[]]
-        s += child.to_string(just_code, module_interface)
+    for child_idx in node.indicies().child_idxs:
+        var child = module_interface.nodes()[][child_idx]
+        try:
+            s += child.to_string(just_code, module_interface, indent_level)
+        except Exception:
+            print(
+                "WARNING: error converting child to string:"
+                + child.name(include_sig=True)
+            )
     return s
-
-
-fn default_scope_level(
-    parent_idx: Int, just_code: Bool, module_interface: ModuleInterface
-) -> Int:
-    """Default scope level implementation that most nodes can use.
-
-    Calculates scope level by walking up parent chain and summing scope_offsets.
-    """
-    var level = 0
-    var current_parent_idx = parent_idx
-    if parent_idx == -1:
-        var parent = module_interface.nodes()[][0]
-        var scope_offset = parent.scope_offset(just_code)
-        return scope_offset
-
-    while current_parent_idx != -1:
-        var parent = module_interface.nodes()[][current_parent_idx]
-        level += parent.scope_offset(just_code)
-        current_parent_idx = parent.indicies().c_parent_idx
-    return level
 
 
 fn default_to_string(
     node: AstNode,
     module_interface: ModuleInterface,
-) raises -> String:
-    """Default string conversion for nodes. Includes the node signature and the node's content.
-
-    If we want just code, use default_to_string_just_code instead.
-
-    Args:
-        node: The node to convert to a string.
-        module_interface: The tree interface to use for the node.
-
-    Format when just_code=False:
-        NodeName >>> actual content
-        NodeName >>> continued content
-        NodeName >>> more content...
-    """
-    var s = String()
-    var level = node.scope_level(False, module_interface)
-    var indent = String()
-    if level > 0:
-        indent = "\t" * level
-    var line_num = -1
-
-    # Add node name if not just code
-    s += indent + node.name(include_sig=True)
-
-    # Add tokens
-    for token in node.token_bundles():
-        if token[].row_num != line_num:
-            s += "\n"
-            s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
-
-    # Add children
-    if len(node.indicies().c_child_idxs) > 0:
-        if line_num != -1:
-            s += "\n"
-        s += indent
-        s += string_children(node, False, module_interface)
-
-    for token in node.token_bundles_tail():
-        if token[].row_num != line_num:
-            s += "\n"
-            s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
-
-    s += "\n"
-    return s
-
-
-fn default_to_string_just_code(
-    node: AstNode,
-    module_interface: ModuleInterface,
-    inline_children: Bool = False,
-    inline_nodes: Bool = False,
-    inline_tail: Bool = False,
-) raises -> String:
+    just_code: Bool = False,
+    indent_level: Int = 0,
+    children_indent_level: Int = 0,
+    space_before_code: Bool = False,
+    newline_before_ast_entries: Bool = False,
+    newline_before_children: Bool = False,
+    newline_after_children: Bool = False,
+    newline_after_tail: Bool = False,
+    indent_before_ast_entries: Bool = False,
+    indent_before_children: Bool = False,
+    indent_after_children: Bool = False,
+    print_parent_level: Bool = False,
+    alternate_string: String = "",
+    alternate_string_tail: String = "",
+) -> String:
     """Default string conversion for nodes.
 
     Args:
         node: The node to convert to a string.
         module_interface: The tree interface to use for the node.
+        just_code: If True, only output code content (no metadata).
+        indent_level: The indentation level for the parent node.
+        children_indent_level: The indentation level for the children nodes. If 0, will use indent_level.
 
     Format when just_code=False:
         NodeName >>> actual content
@@ -129,38 +76,56 @@ fn default_to_string_just_code(
         NodeName >>> more content...
     """
     var s = String()
-    var level = node.scope_level(True, module_interface)
     var indent = String()
+    var children_indent = String()
+    if indent_level > 0:
+        indent = "\t" * indent_level
+    if children_indent_level > 0:
+        children_indent = "\t" * children_indent_level
 
-    if level > 0:
-        indent = "\t" * level
-    # NOTE(josiahls): This is different from the default_to_string function.
-    # We start at line_num = 0 because we want to include the first line of code.
-    # For default_to_string, we start at line_num = -1 because otherwise,
-    # the first line of code is going to be on the same line as the signature.
-    var line_num = 0
-
-    # Add tokens
-    for token in node.token_bundles():
-        if token[].row_num != line_num and not inline_nodes:
+    parent_level = String(
+        "(parent_indent_level: "
+        + String(indent_level)
+        + ", children_indent_level: "
+        + String(children_indent_level)
+        + ")"
+    )
+    if not just_code:
+        if indent_level != 0:
             s += "\n"
-            s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
+        s += indent + node.name(include_sig=True) + parent_level + "\n"
+    if print_parent_level:
+        s += indent + (parent_level) + "\n"
+    if space_before_code:
+        s += " "
+    if newline_before_ast_entries:
+        s += "\n"
+    if indent_before_ast_entries:
+        s += indent
+
+    if alternate_string:
+        s += alternate_string.replace("\n", "\n" + indent)
+    else:
+        s += node.ast_entries().join(" ", indent, just_tokens=just_code)
 
     # Add children
-    if len(node.indicies().mojo_child_idxs) > 0:
-        if not inline_children:
-            s += indent
-        s += string_children(node, True, module_interface)
-
-    for token in node.token_bundles_tail():
-        if token[].row_num != line_num and not inline_tail:
+    if len(node.indicies().child_idxs) > 0:
+        if newline_before_children:
             s += "\n"
+        if indent_before_children:
+            s += children_indent
+        s += string_children(node, just_code, module_interface, indent_level)
+        if newline_after_children:
+            s += "\n"
+        if indent_after_children:
             s += indent
-            line_num = token[].row_num
-        s += token[].token + " "
 
+    if alternate_string_tail:
+        s += alternate_string_tail.replace("\n", "\n" + indent)
+    else:
+        s += node.ast_entries_tail().join(" ", indent, just_tokens=just_code)
+    if newline_after_tail:
+        s += "\n"
     return s
 
 
@@ -169,7 +134,7 @@ trait NodeAstLike(Copyable & Movable, Stringable):
 
     @staticmethod
     fn accept(
-        c_node: C_AstNode,
+        ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
@@ -177,14 +142,14 @@ trait NodeAstLike(Copyable & Movable, Stringable):
 
     @staticmethod
     fn create(
-        c_node: C_AstNode,
+        ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
         ...
 
     fn determine_token_flow(
-        mut self, c_node: C_AstNode, module_interface: ModuleInterface
+        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
         ...
 
@@ -193,8 +158,8 @@ trait NodeAstLike(Copyable & Movable, Stringable):
 
     fn process(
         mut self,
-        c_node: C_AstNode,
-        token_flow: MessageableEnum,
+        ast_entry: AstEntry,
+        ast_entry_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
         ...
@@ -207,33 +172,28 @@ trait NodeAstLike(Copyable & Movable, Stringable):
         ...
 
     # NOTE(josiahls): I think this will return a immutable reference.
-    fn token_bundles(self) -> TokenBundles:
+    fn ast_entries(self) -> AstEntries:
         ...
 
-    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
+    fn ast_entries_ptr(mut self) -> ArcPointer[AstEntries]:
         ...
 
-    fn token_bundles_tail(self) -> TokenBundles:
+    fn ast_entries_tail(self) -> AstEntries:
         ...
 
     fn name(self, include_sig: Bool = False) -> String:
         ...
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
         ...
 
-    fn scope_level(
-        self, just_code: Bool, module_interface: ModuleInterface
-    ) -> Int:
-        ...
 
-    fn scope_offset(self, just_code: Bool) -> Int:
-        ...
-
-
-@value
+@fieldwise_init
 struct AstNode(Copyable & Movable & Stringable):
     alias type = AstNodeVariant
     var node: ArcPointer[Self.type]
@@ -250,7 +210,7 @@ struct AstNode(Copyable & Movable & Stringable):
     @always_inline("nodebug")
     @staticmethod
     fn accept(
-        c_node: C_AstNode,
+        ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
@@ -261,13 +221,15 @@ struct AstNode(Copyable & Movable & Stringable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept(c_node, module_interface, indices):
-                return Self(T.create(c_node, module_interface, indices))
+            if T.accept(ast_entry, module_interface, indices):
+                return Self(T.create(ast_entry, module_interface, indices))
         print(
-            "WARNING: none of the nodes accepted the c_node: "
-            + String(c_node.name())
+            "WARNING: none of the nodes accepted the ast_entry: "
+            + String(ast_entry.ast_name)
         )
-        return Self(PlaceHolderNode.create(c_node, module_interface, indices))
+        return Self(
+            PlaceHolderNode.create(ast_entry, module_interface, indices)
+        )
 
     @always_inline("nodebug")
     fn __str__(self) -> String:
@@ -314,44 +276,43 @@ struct AstNode(Copyable & Movable & Stringable):
         return ArcPointer[NodeIndices](NodeIndices(-1, -1))
 
     @always_inline("nodebug")
-    fn token_bundles(self) -> TokenBundles:
+    fn ast_entries(self) -> AstEntries:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].token_bundles()
-        print("WARNING: token_bundles called on AstNode with no token_bundles")
-        return TokenBundles()
+                return self.node[]._get_ptr[T]()[].ast_entries()
+        print("WARNING: ast_entries called on AstNode with no ast_entries")
+        return AstEntries()
 
     @always_inline("nodebug")
-    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
+    fn ast_entries_ptr(mut self) -> ArcPointer[AstEntries]:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].token_bundles_ptr()
+                return self.node[]._get_ptr[T]()[].ast_entries_ptr()
         print(
-            "WARNING: token_bundles_ptr called on AstNode with no"
-            " token_bundles_ptr"
+            "WARNING: ast_entries_ptr called on AstNode with no ast_entries_ptr"
         )
-        return ArcPointer[TokenBundles](TokenBundles())
+        return ArcPointer[AstEntries](AstEntries())
 
     @always_inline("nodebug")
-    fn token_bundles_tail(self) -> TokenBundles:
+    fn ast_entries_tail(self) -> AstEntries:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].token_bundles_tail()
+                return self.node[]._get_ptr[T]()[].ast_entries_tail()
         print(
-            "WARNING: token_bundles_tail called on AstNode with no"
-            " token_bundles_tail"
+            "WARNING: ast_entries_tail called on AstNode with no"
+            " ast_entries_tail"
         )
-        return TokenBundles()
+        return AstEntries()
 
     @always_inline("nodebug")
     fn determine_token_flow(
-        mut self, c_node: C_AstNode, module_interface: ModuleInterface
+        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -360,7 +321,7 @@ struct AstNode(Copyable & Movable & Stringable):
                 return (
                     self.node[]
                     ._get_ptr[T]()[]
-                    .determine_token_flow(c_node, module_interface)
+                    .determine_token_flow(ast_entry, module_interface)
                 )
         print(
             "WARNING: determine_token_flow called on AstNode with no"
@@ -371,8 +332,8 @@ struct AstNode(Copyable & Movable & Stringable):
     @always_inline("nodebug")
     fn process(
         mut self,
-        c_node: C_AstNode,
-        token_flow: MessageableEnum,
+        ast_entry: AstEntry,
+        ast_entry_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
         @parameter
@@ -380,7 +341,7 @@ struct AstNode(Copyable & Movable & Stringable):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
                 self.node[]._get_ptr[T]()[].process(
-                    c_node, token_flow, module_interface
+                    ast_entry, ast_entry_flow, module_interface
                 )
                 return
         print(
@@ -418,7 +379,10 @@ struct AstNode(Copyable & Movable & Stringable):
 
     @always_inline("nodebug")
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -427,7 +391,7 @@ struct AstNode(Copyable & Movable & Stringable):
                 return (
                     self.node[]
                     ._get_ptr[T]()[]
-                    .to_string(just_code, module_interface)
+                    .to_string(just_code, module_interface, parent_indent_level)
                 )
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
@@ -435,37 +399,3 @@ struct AstNode(Copyable & Movable & Stringable):
             + self.__str__()
         )
         return "<unknown type>"
-
-    @always_inline("nodebug")
-    fn scope_level(
-        self, just_code: Bool, module_interface: ModuleInterface
-    ) -> Int:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                return (
-                    self.node[]
-                    ._get_ptr[T]()[]
-                    .scope_level(just_code, module_interface)
-                )
-        print(
-            "WARNING: scope_level called on AstNode with no scope_level method"
-            " for node: "
-            + self.__str__()
-        )
-        return 0
-
-    @always_inline("nodebug")
-    fn scope_offset(self, just_code: Bool) -> Int:
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].scope_offset(just_code)
-        print(
-            "WARNING: scope_offset called on AstNode with no scope_offset"
-            " method for node: "
-            + self.__str__()
-        )
-        return 0

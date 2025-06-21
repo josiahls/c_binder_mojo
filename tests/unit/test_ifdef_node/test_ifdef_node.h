@@ -51,3 +51,27 @@
     #define B 2
     #define C 3
 #endif 
+
+
+#define SPECIAL_TYPE int
+#define SPECIAL_DOUBLE_TYPE double
+#define SPECIAL_INT_TYPE int
+#define SPECIAL_CHAR_TYPE char
+#define SPECIAL_FLOAT_TYPE float
+#define SPECIAL_BOOL_TYPE int
+#define SPECIAL_VOID_TYPE void*
+#define SPECIAL_ARRAY_SIZE 10
+#define SPECIAL_STRUCT_TYPE struct Config
+
+struct Config {
+    SPECIAL_TYPE special_var;
+    SPECIAL_DOUBLE_TYPE special_double_var;
+    SPECIAL_INT_TYPE special_int_var;
+    SPECIAL_CHAR_TYPE special_char_var;
+    SPECIAL_FLOAT_TYPE special_float_var;
+    SPECIAL_BOOL_TYPE special_bool_var;
+    SPECIAL_VOID_TYPE special_void_var;
+    SPECIAL_INT_TYPE special_array_var[SPECIAL_ARRAY_SIZE];
+    SPECIAL_STRUCT_TYPE* special_struct_var;
+};
+

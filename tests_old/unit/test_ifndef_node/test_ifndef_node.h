@@ -1,0 +1,78 @@
+// Basic header guards
+#ifndef TEST_IFNDEF_NODE_H
+#define TEST_IFNDEF_NODE_H
+
+// Simple define inside an ifndef
+#ifndef SIMPLE_DEFINE
+#define SIMPLE_DEFINE 1
+#endif
+
+// Nested ifndefs
+#ifndef OUTER_GUARD
+#define OUTER_GUARD
+
+    #ifndef INNER_GUARD
+    #define INNER_GUARD
+        int inner_guard_variable = 42;
+    #endif // INNER_GUARD
+
+    int outer_guard_variable = 100;
+
+#endif // OUTER_GUARD
+
+// Ifdef with code blocks
+#ifndef CODE_BLOCK_TEST
+#define CODE_BLOCK_TEST
+    void test_function() {
+        int x = 10;
+        if (x > 5) {
+            x = 5;
+        }
+    }
+#endif // CODE_BLOCK_TEST
+
+// Complex guards with comments
+#ifndef COMPLEX_GUARD // This is a comment after ifndef
+#define COMPLEX_GUARD /* This is a comment after define */
+
+    // A single line comment inside the guard
+    /* A multi-line comment 
+       inside the guard */
+    int complex_variable = 200;
+
+#endif /* End of complex guard */
+
+// Conditional compilation
+#ifndef PLATFORM_SPECIFIC
+    #ifdef _WIN32
+        #define PLATFORM_SPECIFIC "Windows"
+    #elif defined(__APPLE__)
+        #define PLATFORM_SPECIFIC "MacOS"
+    #else
+        #define PLATFORM_SPECIFIC "Linux"
+    #endif
+#endif
+
+// Include with ifndef guard
+#ifndef INCLUDED_STDIO
+#define INCLUDED_STDIO
+#include <stdio.h>
+#endif
+
+
+// Totally Empty ifndef (edge case)
+#ifndef EMPTY_GUARD
+#endif
+
+// Empty ifndef (edge case)
+#ifndef EMPTY_GUARD
+#define EMPTY_GUARD
+#endif
+
+// Typedef inside ifndef
+#ifndef MY_TYPE_GUARD
+#define MY_TYPE_GUARD
+typedef unsigned int uint_t;
+#endif
+
+#endif // TEST_IFNDEF_NODE_H 

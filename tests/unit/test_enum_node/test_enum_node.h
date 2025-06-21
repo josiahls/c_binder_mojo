@@ -1,4 +1,4 @@
-// Basic enum with values
+ // Basic enum with values
 enum Color {
     RED = 0,
     GREEN = 1,

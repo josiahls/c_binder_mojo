@@ -1,0 +1,45 @@
+// Basic enum with values
+enum Color{
+	RED  =  0 ,
+	GREEN  =  1 ,
+	BLUE  =  2 
+};
+// Enum with auto-incrementing values
+enum Direction{
+	NORTH ,
+	// 0
+	SOUTH ,
+	// 1
+	EAST ,
+	// 2
+	WEST   
+	// 3
+};
+// Enum with mixed explicit and implicit values
+enum Status{
+	OK  =  200 ,
+	NOT_FOUND  =  404 ,
+	SERVER_ERROR  =  500 ,
+	UNAVAILABLE ,
+	// 501
+	TIMEOUT     
+	// 502
+};
+// Enum with name but no values  ( empty enum ) 
+enum Empty{};
+// Enum with hex values and comments
+enum Flags{
+	READ     =  0x01 ,
+	// Read permission
+	WRITE    =  0x02 ,
+	// Write permission
+	EXECUTE  =  0x04  
+	// Execute permission
+};
+// Enum with byte values
+enum ByteValues{
+	BYTE_0  =  1 << 0 ,
+	BYTE_1  =  1 << 1 ,
+	BYTE_2  =  1 << 2 ,
+	BYTE_3  =  1 << 3 
+};

@@ -11,37 +11,39 @@ from c_binder_mojo.common import (
     MessageableEnum,
     NodeIndices,
     TokenFlow,
-    TokenBundles,
     NodeState,
 )
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.nodes import (
     AstNode,
     NodeAstLike,
-    default_scope_level,
-    default_to_string,
     string_children,
 )
-from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
+from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-@value
+@fieldwise_init
 struct RootNode(NodeAstLike):
     alias __name__ = "RootNode"
     var _indicies: ArcPointer[NodeIndices]
-    var _token_bundles: ArcPointer[TokenBundles]
+    var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _add_main_function: Bool
 
-    fn __init__(out self, indicies: NodeIndices, token_bundles: TokenBundles, add_main_function: Bool = False):
+    fn __init__(
+        out self,
+        indicies: NodeIndices,
+        ast_entry: AstEntry,
+        add_main_function: Bool = False,
+    ):
         self._indicies = indicies
-        self._token_bundles = token_bundles
+        self._ast_entries = AstEntries()
         self._node_state = NodeState.INITIALIZING
         self._add_main_function = add_main_function
 
     @staticmethod
     fn accept(
-        c_node: C_AstNode,
+        ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
@@ -49,23 +51,23 @@ struct RootNode(NodeAstLike):
 
     @staticmethod
     fn create(
-        c_node: C_AstNode,
+        ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        return Self(indices, TokenBundles())
+        return Self(indices, ast_entry)
 
     fn determine_token_flow(
-        mut self, c_node: C_AstNode, module_interface: ModuleInterface
+        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        if c_node.name() == "EndFileNode":
+        if ast_entry.ast_name == "EndFileNode":
             self._node_state = NodeState.COMPLETED
             return TokenFlow.END_FILE
         return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
-        c_node: C_AstNode,
+        ast_entry: AstEntry,
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
@@ -77,14 +79,14 @@ struct RootNode(NodeAstLike):
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
         return self._indicies
 
-    fn token_bundles(self) -> TokenBundles:
-        return self._token_bundles[]
+    fn ast_entries(self) -> AstEntries:
+        return self._ast_entries[]
 
-    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
-        return self._token_bundles
+    fn ast_entries_ptr(mut self) -> ArcPointer[AstEntries]:
+        return self._ast_entries
 
-    fn token_bundles_tail(self) -> TokenBundles:
-        return TokenBundles()
+    fn ast_entries_tail(self) -> AstEntries:
+        return AstEntries()
 
     fn node_state(self) -> MessageableEnum:
         return self._node_state
@@ -99,25 +101,35 @@ struct RootNode(NodeAstLike):
         else:
             return self.__name__
 
+    fn get_imports(self) -> String:
+        imports = List[String]()
+        # for custom_type in get_global_type_mapper()[].custom_types:
+        #     imports.append("from " + custom_type[] + " import " + custom_type[])
+        imports.append(
+            "from sys.ffi import _Global, UnsafePointer, OpaquePointer"
+        )
+        imports.append("from sys import ffi")
+
+        return String("\n").join(imports)
+
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
+        var s: String
         if just_code:
-            s = string_children(AstNode(self), just_code, module_interface)
+            s = self.get_imports() + "\n"
+            s += string_children(
+                AstNode(self), just_code, module_interface, parent_indent_level
+            )
             if self._add_main_function:
                 s += "\nfn main():\n    pass"
             return s
-
         s = self.name(include_sig=True) + "\n"
-        s += string_children(AstNode(self), just_code, module_interface)
-        return s
-
-    fn scope_level(
-        self, just_code: Bool, module_interface: ModuleInterface
-    ) -> Int:
-        return default_scope_level(
-            self._indicies[].mojo_parent_idx, just_code, module_interface
+        s += self.get_imports() + "\n"
+        s += string_children(
+            AstNode(self), just_code, module_interface, parent_indent_level
         )
-
-    fn scope_offset(self, just_code: Bool) -> Int:
-        return 0 if just_code else 0  # Root adds one level of scope
+        return s

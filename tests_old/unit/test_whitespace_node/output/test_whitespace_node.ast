@@ -1,0 +1,42 @@
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=29)
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
+	// Different types of whitespace:
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
+	// Single space
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
+	// Multiple spaces
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
+	// Tabs
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=9)
+	// Mixed whitespace
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
+	// New lines
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=13)
+	// Whitespace in code contexts
+
+	VariableNode(c_parent_idx=0, c_current_idx=15, node_state=4 (COMPLETED))
+	int function (  )   {  <C_BINDER_MOJO_NEWLINE>	    int x  =  5 ;
+	PlaceHolderNode(c_parent_idx=0, c_current_idx=17)
+	return
+	PlaceHolderNode(c_parent_idx=0, c_current_idx=18)
+	x
+	PlaceHolderNode(c_parent_idx=0, c_current_idx=19)
+	;
+	PlaceHolderNode(c_parent_idx=0, c_current_idx=21)
+	}
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=23)
+	// Whitespace after comment
+
+	MultiLineCommentNode(c_parent_idx=0, c_current_idx=25)
+	/* Whitespace <C_BINDER_MOJO_NEWLINE>	   in multiline <C_BINDER_MOJO_NEWLINE>	   comment */
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)
+	// Whitespace at beginning and end of file 
+
+	EndFileNode(c_parent_idx=0, c_current_idx=29)
+	C_BINDER_MOJO_END_FILE

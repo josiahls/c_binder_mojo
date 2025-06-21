@@ -1,251 +1,64 @@
-RootNode(c_current_idx=0, mojo_current_idx=0, c_child_idxs=(1, 2, 6, 7, 8, ...) len=25, mojo_child_idxs=(1, 2, 3, 7, 8, ...) len=29)
-PlaceHolderNode(c_current_idx=0, mojo_parent_idx=0, mojo_current_idx=1, c_child_idxs=(1, 2, 6, 7, 8, ...) len=25, node_state=4 (COMPLETED))
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=1, mojo_parent_idx=0, mojo_current_idx=2)
-# Basic ifdef test 
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=2, mojo_parent_idx=0, mojo_current_idx=3, c_child_idxs=(3, 4), mojo_child_idxs=(4, 5), node_state=4 (COMPLETED), macro='BASIC_DEFINE')
-#ifdef BASIC_DEFINE 
-WhitespaceNode(c_parent_idx=2, c_current_idx=3, mojo_parent_idx=3, mojo_current_idx=4, n_tokens=1)
+RootNode(current_idx=0, child_idxs=(1, 2, 3, 4, 5, ...) len=11)
+from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
+PlaceHolderNode(parent_idx=0, current_idx=1, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+TranslationUnitDecl 0x4e3cc8 <<invalid sloc>> <invalid sloc>
+TypedefDeclNode(parent_idx=0, current_idx=2, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e44f0 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
+ | `-BuiltinType 0x4e4290 '__int128'
+TypedefDeclNode(parent_idx=0, current_idx=3, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e4560 <<invalid sloc>> <invalid sloc> implicit __uint128_t 'unsigned __int128'
+ | `-BuiltinType 0x4e42b0 'unsigned __int128'
+TypedefDeclNode(parent_idx=0, current_idx=4, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e4868 <<invalid sloc>> <invalid sloc> implicit __NSConstantString 'struct __NSConstantString_tag'
+ | `-RecordType 0x4e4640 'struct __NSConstantString_tag'
+ |   `-Record 0x4e45b8 '__NSConstantString_tag'
+TypedefDeclNode(parent_idx=0, current_idx=5, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e4900 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'
+ | `-PointerType 0x4e48c0 'char *'
+ |   `-BuiltinType 0x4e3d70 'char'
+TypedefDeclNode(parent_idx=0, current_idx=6, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x4e4bf8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'
+ | `-ConstantArrayType 0x4e4ba0 'struct __va_list_tag[1]' 1 
+ |   `-RecordType 0x4e49e0 'struct __va_list_tag'
+ |     `-Record 0x4e4958 '__va_list_tag'
+VarDeclNode(parent_idx=0, current_idx=7, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-VarDecl 0x551150 </home/c_binder_mojo_user/c_binder_mojo/tests/unit/test_ifdef_node/test_ifdef_node.h:8:5, col:13> col:9 a 'int' cinit
+ | `-IntegerLiteral 0x551200 <col:13> 'int' 1
+VarDeclNode(parent_idx=0, current_idx=8, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-VarDecl 0x551260 <line:16:9, col:26> col:13 nested_var 'int' cinit
+ | `-IntegerLiteral 0x5512c8 <col:26> 'int' 42
+VarDeclNode(parent_idx=0, current_idx=9, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-VarDecl 0x551450 <line:44:9, col:25> col:13 mixed_var 'int' cinit
+ | `-IntegerLiteral 0x5514b8 <col:25> 'int' 1
+RecordDeclNode(parent_idx=0, current_idx=10, child_idxs=(11, 12, 13, 14, 15, ...) len=9, node_state=4 (COMPLETED))
+struct Config:
+	FieldDeclNode(parent_idx=10, current_idx=11, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x5515c8 <line:56:22, line:67:18> col:18 special_var 'int'	
 
- 
-	MacroDefineNode(c_parent_idx=2, c_current_idx=4, mojo_parent_idx=3, mojo_current_idx=5, c_child_idxs=(5), mojo_child_idxs=(6))
-	alias INSIDE_BASIC 
-	MacroDefineValueNode(c_parent_idx=4, c_current_idx=5, mojo_parent_idx=5, mojo_current_idx=6, node_state=4 (COMPLETED))
-= 1 
- 
+	FieldDeclNode(parent_idx=10, current_idx=12, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x551630 <line:57:29, line:68:25> col:25 special_double_var 'double'	
 
+	FieldDeclNode(parent_idx=10, current_idx=13, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x551698 <line:58:26, line:69:22> col:22 special_int_var 'int'	
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=6, mojo_parent_idx=0, mojo_current_idx=7, n_tokens=3)
+	FieldDeclNode(parent_idx=10, current_idx=14, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x5516f8 <line:59:27, line:70:23> col:23 special_char_var 'char'	
 
- 
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=7, mojo_parent_idx=0, mojo_current_idx=8)
-# ifdef with else 
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=8, mojo_parent_idx=0, mojo_current_idx=9, c_child_idxs=(9, 10, 11, 12), mojo_child_idxs=(10, 11, 12, 13), node_state=4 (COMPLETED), macro='WITH_ELSE')
-#ifdef WITH_ELSE 
-WhitespaceNode(c_parent_idx=8, c_current_idx=9, mojo_parent_idx=9, mojo_current_idx=10, n_tokens=5)
+	FieldDeclNode(parent_idx=10, current_idx=15, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x551760 <line:60:28, line:71:24> col:24 special_float_var 'float'	
 
- 
-    
-	VariableNode(c_parent_idx=8, c_current_idx=10, mojo_parent_idx=9, mojo_current_idx=11, is_module_level=False)
-	var a : Int = 1 
-WhitespaceNode(c_parent_idx=8, c_current_idx=11, mojo_parent_idx=9, mojo_current_idx=12, n_tokens=2)
- 
- 
-	MacroElseNode(c_parent_idx=8, c_current_idx=12, mojo_parent_idx=9, mojo_current_idx=13, c_child_idxs=(13, 14, 15), mojo_child_idxs=(14, 15, 16), node_state=4 (COMPLETED))
-	#else 
-	WhitespaceNode(c_parent_idx=12, c_current_idx=13, mojo_parent_idx=13, mojo_current_idx=14, n_tokens=5)
+	FieldDeclNode(parent_idx=10, current_idx=16, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x5517c8 <line:61:27, line:72:23> col:23 special_bool_var 'int'	
 
- 
-    
-	VariableNode(c_parent_idx=12, c_current_idx=14, mojo_parent_idx=13, mojo_current_idx=15, is_module_level=False)
-	var a : Int = 2 
-WhitespaceNode(c_parent_idx=12, c_current_idx=15, mojo_parent_idx=13, mojo_current_idx=16, n_tokens=2)
- 
- 
+	FieldDeclNode(parent_idx=10, current_idx=17, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x551830 <line:62:27, line:73:23> col:23 special_void_var 'void *'	
 
+	FieldDeclNode(parent_idx=10, current_idx=18, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  |-FieldDecl 0x551920 <line:58:26, line:74:58> col:22 special_array_var 'int[10]'	
 
-WhitespaceNode(c_parent_idx=0, c_current_idx=16, mojo_parent_idx=0, mojo_current_idx=17, n_tokens=3)
+	FieldDeclNode(parent_idx=10, current_idx=19, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+	  `-FieldDecl 0x551a20 <line:64:29, line:75:26> col:26 special_struct_var 'struct Config *'	
 
- 
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=17, mojo_parent_idx=0, mojo_current_idx=18)
-# Nested ifdefs 
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=18, mojo_parent_idx=0, mojo_current_idx=19, c_child_idxs=(19, 20, 24), mojo_child_idxs=(20, 21, 25), node_state=4 (COMPLETED), macro='OUTER')
-#ifdef OUTER 
-WhitespaceNode(c_parent_idx=18, c_current_idx=19, mojo_parent_idx=19, mojo_current_idx=20, n_tokens=5)
-
- 
-    
-	MacroIfDefNode(c_parent_idx=18, c_current_idx=20, mojo_parent_idx=19, mojo_current_idx=21, c_child_idxs=(21, 22, 23), mojo_child_idxs=(22, 23, 24), node_state=4 (COMPLETED), macro='INNER')
-	#ifdef INNER 
-	WhitespaceNode(c_parent_idx=20, c_current_idx=21, mojo_parent_idx=21, mojo_current_idx=22, n_tokens=9)
-
- 
-        
-	VariableNode(c_parent_idx=20, c_current_idx=22, mojo_parent_idx=21, mojo_current_idx=23, is_module_level=False)
-	var nested_var : Int = 42 
-WhitespaceNode(c_parent_idx=20, c_current_idx=23, mojo_parent_idx=21, mojo_current_idx=24, n_tokens=6)
- 
- 
-    
-
-WhitespaceNode(c_parent_idx=18, c_current_idx=24, mojo_parent_idx=19, mojo_current_idx=25, n_tokens=1)
-
- 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=25, mojo_parent_idx=0, mojo_current_idx=26, n_tokens=3)
-
- 
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=26, mojo_parent_idx=0, mojo_current_idx=27)
-# ifdef with elif chain 
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=27, mojo_parent_idx=0, mojo_current_idx=28, c_child_idxs=(28, 29, 31, 36), mojo_child_idxs=(29, 30, 32, 37), node_state=4 (COMPLETED), macro='_WIN32')
-#ifdef _WIN32 
-WhitespaceNode(c_parent_idx=27, c_current_idx=28, mojo_parent_idx=28, mojo_current_idx=29, n_tokens=5)
-
- 
-    
-	MacroDefineNode(c_parent_idx=27, c_current_idx=29, mojo_parent_idx=28, mojo_current_idx=30, c_child_idxs=(30), mojo_child_idxs=(31))
-	alias OS 
-	MacroDefineValueNode(c_parent_idx=29, c_current_idx=30, mojo_parent_idx=30, mojo_current_idx=31, node_state=4 (COMPLETED))
-= "Windows" 
- 
-
-	MacroElIfDefNode(c_parent_idx=27, c_current_idx=31, mojo_parent_idx=28, mojo_current_idx=32, c_child_idxs=(32, 33, 34), mojo_child_idxs=(33, 34, 35), node_state=4 (COMPLETED))
-	#elif 
-		FunctionCallNode(c_parent_idx=31, c_current_idx=32, mojo_parent_idx=32, mojo_current_idx=33)
-	defined ( __APPLE__ ) 
-WhitespaceNode(c_parent_idx=31, c_current_idx=33, mojo_parent_idx=32, mojo_current_idx=34, n_tokens=6)
- 
- 
-    
-	MacroDefineNode(c_parent_idx=31, c_current_idx=34, mojo_parent_idx=32, mojo_current_idx=35, c_child_idxs=(35), mojo_child_idxs=(36))
-	alias OS 
-	MacroDefineValueNode(c_parent_idx=34, c_current_idx=35, mojo_parent_idx=35, mojo_current_idx=36, node_state=4 (COMPLETED))
-= "MacOS" 
- 
-
-
-	MacroElseNode(c_parent_idx=27, c_current_idx=36, mojo_parent_idx=28, mojo_current_idx=37, c_child_idxs=(37, 38), mojo_child_idxs=(38, 39), node_state=4 (COMPLETED))
-	#else 
-	WhitespaceNode(c_parent_idx=36, c_current_idx=37, mojo_parent_idx=37, mojo_current_idx=38, n_tokens=5)
-
- 
-    
-	MacroDefineNode(c_parent_idx=36, c_current_idx=38, mojo_parent_idx=37, mojo_current_idx=39, c_child_idxs=(39), mojo_child_idxs=(40))
-	alias OS 
-	MacroDefineValueNode(c_parent_idx=38, c_current_idx=39, mojo_parent_idx=39, mojo_current_idx=40, node_state=4 (COMPLETED))
-= "Linux" 
- 
-
-
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=40, mojo_parent_idx=0, mojo_current_idx=41, n_tokens=3)
-
- 
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=41, mojo_parent_idx=0, mojo_current_idx=42)
-# ifdef with comments 
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=42, mojo_parent_idx=0, mojo_current_idx=43, c_child_idxs=(43, 44, 45, 46, 47, ...) len=8, mojo_child_idxs=(44, 45, 46, 47, 48, ...) len=8, node_state=4 (COMPLETED), macro='COMMENTED')
-#ifdef COMMENTED 
-	MultiLineCommentNode(c_parent_idx=42, c_current_idx=43, mojo_parent_idx=43, mojo_current_idx=44)
-	""" Multi-line comment after ifdef """ 
-WhitespaceNode(c_parent_idx=42, c_current_idx=44, mojo_parent_idx=43, mojo_current_idx=45, n_tokens=5)
-
- 
-    
-	SingleLineCommentNode(c_parent_idx=42, c_current_idx=45, mojo_parent_idx=43, mojo_current_idx=46)
-	# Single line comment inside 
- 
-WhitespaceNode(c_parent_idx=42, c_current_idx=46, mojo_parent_idx=43, mojo_current_idx=47, n_tokens=4)
-    
-	MacroDefineNode(c_parent_idx=42, c_current_idx=47, mojo_parent_idx=43, mojo_current_idx=48, c_child_idxs=(48), mojo_child_idxs=(49))
-	alias INSIDE_COMMENT 
-	MacroDefineValueNode(c_parent_idx=47, c_current_idx=48, mojo_parent_idx=48, mojo_current_idx=49, node_state=4 (COMPLETED))
-= 1 
- 
-
-WhitespaceNode(c_parent_idx=42, c_current_idx=49, mojo_parent_idx=43, mojo_current_idx=50, n_tokens=4)
-    
-	MultiLineCommentNode(c_parent_idx=42, c_current_idx=50, mojo_parent_idx=43, mojo_current_idx=51)
-	""" Another multi-line 
- 
-	       comment inside """ 
-WhitespaceNode(c_parent_idx=42, c_current_idx=51, mojo_parent_idx=43, mojo_current_idx=52, n_tokens=1)
-
- 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=52, mojo_parent_idx=0, mojo_current_idx=53, n_tokens=3)
-
- 
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=53, mojo_parent_idx=0, mojo_current_idx=54)
-# Empty ifdef  ( edge case )  
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=54, mojo_parent_idx=0, mojo_current_idx=55, c_child_idxs=(55), mojo_child_idxs=(56), node_state=4 (COMPLETED), macro='EMPTY')
-#ifdef EMPTY 
-WhitespaceNode(c_parent_idx=54, c_current_idx=55, mojo_parent_idx=55, mojo_current_idx=56, n_tokens=1)
-
- 
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=56, mojo_parent_idx=0, mojo_current_idx=57, n_tokens=3)
-
- 
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=57, mojo_parent_idx=0, mojo_current_idx=58)
-# Mixed ifdef/ifndef 
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=58, mojo_parent_idx=0, mojo_current_idx=59, c_child_idxs=(59, 60, 64), mojo_child_idxs=(60, 61), node_state=4 (COMPLETED), macro='MIXED')
-#ifdef MIXED 
-WhitespaceNode(c_parent_idx=58, c_current_idx=59, mojo_parent_idx=59, mojo_current_idx=60, n_tokens=5)
-
- 
-    
-	PlaceHolderNode(c_parent_idx=58, c_current_idx=60, mojo_parent_idx=59, mojo_current_idx=61, c_child_idxs=(61, 62, 63), node_state=4 (COMPLETED))
-	#ifndef INNER_NOT 
-	
-
-WhitespaceNode(c_parent_idx=60, c_current_idx=61, mojo_parent_idx=0, mojo_current_idx=62, n_tokens=9)
-
- 
-        
-VariableNode(c_parent_idx=60, c_current_idx=62, mojo_parent_idx=0, mojo_current_idx=63, is_module_level=True)
-alias mixed_var : Int = 1 
-WhitespaceNode(c_parent_idx=60, c_current_idx=63, mojo_parent_idx=0, mojo_current_idx=64, n_tokens=6)
- 
- 
-    
-WhitespaceNode(c_parent_idx=58, c_current_idx=64, mojo_parent_idx=0, mojo_current_idx=65, n_tokens=1)
-
- 
-WhitespaceNode(c_parent_idx=0, c_current_idx=65, mojo_parent_idx=0, mojo_current_idx=66, n_tokens=3)
-
- 
- 
- 
-SingleLineCommentNode(c_parent_idx=0, c_current_idx=66, mojo_parent_idx=0, mojo_current_idx=67)
-# ifdef with multiple defines 
- 
-MacroIfDefNode(c_parent_idx=0, c_current_idx=67, mojo_parent_idx=0, mojo_current_idx=68, c_child_idxs=(68, 69, 71, 72, 74, 75), mojo_child_idxs=(69, 70, 72, 73, 75, 76), node_state=4 (COMPLETED), macro='MULTIPLE_DEFINES')
-#ifdef MULTIPLE_DEFINES 
-WhitespaceNode(c_parent_idx=67, c_current_idx=68, mojo_parent_idx=68, mojo_current_idx=69, n_tokens=5)
-
- 
-    
-	MacroDefineNode(c_parent_idx=67, c_current_idx=69, mojo_parent_idx=68, mojo_current_idx=70, c_child_idxs=(70), mojo_child_idxs=(71))
-	alias A 
-	MacroDefineValueNode(c_parent_idx=69, c_current_idx=70, mojo_parent_idx=70, mojo_current_idx=71, node_state=4 (COMPLETED))
-= 1 
- 
-
-WhitespaceNode(c_parent_idx=67, c_current_idx=71, mojo_parent_idx=68, mojo_current_idx=72, n_tokens=4)
-    
-	MacroDefineNode(c_parent_idx=67, c_current_idx=72, mojo_parent_idx=68, mojo_current_idx=73, c_child_idxs=(73), mojo_child_idxs=(74))
-	alias B 
-	MacroDefineValueNode(c_parent_idx=72, c_current_idx=73, mojo_parent_idx=73, mojo_current_idx=74, node_state=4 (COMPLETED))
-= 2 
- 
-
-WhitespaceNode(c_parent_idx=67, c_current_idx=74, mojo_parent_idx=68, mojo_current_idx=75, n_tokens=4)
-    
-	MacroDefineNode(c_parent_idx=67, c_current_idx=75, mojo_parent_idx=68, mojo_current_idx=76, c_child_idxs=(76), mojo_child_idxs=(77))
-	alias C 
-	MacroDefineValueNode(c_parent_idx=75, c_current_idx=76, mojo_parent_idx=76, mojo_current_idx=77, node_state=4 (COMPLETED))
-= 3 
- 
-
-
-WhitespaceNode(c_parent_idx=0, c_current_idx=77, mojo_parent_idx=0, mojo_current_idx=78, n_tokens=2)
- 
- 
+EndFileNode(parent_idx=0, current_idx=20, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+# C_BINDER_MOJO_END_FILE

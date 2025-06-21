@@ -36,11 +36,10 @@ lines
 
 **/
 
-
 //-------------------------------------- byte definition -------------------------------------------
 
 typedef unsigned char mjtByte;    // used for true/false
 
 
 
-#endif  // MUJOCO_INCLUDE_MJTNUM_H_
+#endif  // MUJOCO_INCLUDE_MJTNUM_H_ 

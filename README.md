@@ -15,7 +15,7 @@ cd c_binder_mojo
 
 git clone https://github.com/josiahls/firehose.git
 
-magic shell
+pixi shell
 ```
 
 

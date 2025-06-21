@@ -10,7 +10,6 @@ from c_binder_mojo.common import (
     TokenBundle,
     MessageableEnum,
     NodeIndices,
-    TokenBundles,
     TokenFlow,
     NodeState,
 )
@@ -18,49 +17,64 @@ from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.nodes import (
     AstNode,
     NodeAstLike,
-    default_scope_level,
     default_to_string,
-    default_to_string_just_code,
 )
-from c_binder_mojo.c_ast_nodes import AstNode as C_AstNode
+from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-@value
+struct Grammar(Copyable, Movable, Stringable, Writable):
+    var _name: String
+
+    @implicit
+    fn __init__(out self, ast_entries: AstEntries):
+        self._name = String()
+        # Just add # comment to the ast entry name + tokens
+        self._name = "# (placeholder) " + ast_entries.join(" ")
+
+    fn __str__(self) -> String:
+        return self._name
+
+    fn write_to[W: Writer](self, mut writer: W):
+        writer.write(String(self))
+
+
+@fieldwise_init
 struct PlaceHolderNode(NodeAstLike):
     alias __name__ = "PlaceHolderNode"
     var _indicies: ArcPointer[NodeIndices]
-    var _token_bundles: ArcPointer[TokenBundles]
+    var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
 
-    fn __init__(out self, indicies: NodeIndices, c_node: C_AstNode):
+    fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
-        self._token_bundles = c_node.token_bundles()
+        self._ast_entries = AstEntries()
+        self._ast_entries[].append(ast_entries)
         self._node_state = NodeState.COMPLETED
 
     @staticmethod
     fn accept(
-        c_node: C_AstNode,
+        ast_entries: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return c_node.name() != "EndFileNode"
+        return ast_entries.ast_name != "EndFileNode"
 
     @staticmethod
     fn create(
-        c_node: C_AstNode,
+        ast_entries: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Self:
-        return Self(indices, c_node)
+        return Self(indices, ast_entries)
 
     fn determine_token_flow(
-        mut self, c_node: C_AstNode, module_interface: ModuleInterface
+        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
         return TokenFlow.PASS_TO_PARENT
 
     fn process(
         mut self,
-        c_node: C_AstNode,
+        ast_entry: AstEntry,
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
@@ -72,14 +86,14 @@ struct PlaceHolderNode(NodeAstLike):
     fn indicies_ptr(mut self) -> ArcPointer[NodeIndices]:
         return self._indicies
 
-    fn token_bundles(self) -> TokenBundles:
-        return self._token_bundles[]
+    fn ast_entries(self) -> AstEntries:
+        return self._ast_entries[]
 
-    fn token_bundles_ptr(mut self) -> ArcPointer[TokenBundles]:
-        return self._token_bundles
+    fn ast_entries_ptr(mut self) -> ArcPointer[AstEntries]:
+        return self._ast_entries
 
-    fn token_bundles_tail(self) -> TokenBundles:
-        return TokenBundles()
+    fn ast_entries_tail(self) -> AstEntries:
+        return AstEntries()
 
     fn node_state(self) -> MessageableEnum:
         return self._node_state
@@ -90,24 +104,32 @@ struct PlaceHolderNode(NodeAstLike):
 
     fn name(self, include_sig: Bool = False) -> String:
         if include_sig:
-            return self.__name__ + "(" + String(self._indicies[]) + ", node_state=" + String(self._node_state) + ")"
+            return (
+                self.__name__
+                + "("
+                + String(self._indicies[])
+                + ", node_state="
+                + String(self._node_state)
+                + ")"
+            )
         else:
             return self.__name__
 
     fn to_string(
-        self, just_code: Bool, module_interface: ModuleInterface
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
     ) raises -> String:
-        if just_code:
-            return default_to_string_just_code(AstNode(self), module_interface)
-        else:
-            return default_to_string(AstNode(self), module_interface)
-
-    fn scope_level(
-        self, just_code: Bool, module_interface: ModuleInterface
-    ) -> Int:
-        return default_scope_level(
-            self._indicies[].mojo_parent_idx, just_code, module_interface
+        return default_to_string(
+            node=AstNode(self),
+            module_interface=module_interface,
+            just_code=just_code,
+            indent_level=parent_indent_level,
+            newline_before_ast_entries=just_code,
+            newline_after_tail=True,
+            indent_before_ast_entries=True,
+            alternate_string=String(
+                Grammar(self._ast_entries[])
+            ) if just_code else String(),
         )
-
-    fn scope_offset(self, just_code: Bool) -> Int:
-        return 0  # Root adds one level of scope

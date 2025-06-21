@@ -1,0 +1,52 @@
+// Basic struct declarations
+struct Point
+(parent_indent_level: 0, children_indent_level: 1)
+{
+int x ;
+int y ;
+
+};
+struct Person
+(parent_indent_level: 0, children_indent_level: 1)
+{
+char* name ;
+int age ;
+
+};
+// Empty struct
+struct Empty
+(parent_indent_level: 0, children_indent_level: 1)
+{};
+// Multi-line struct with comments
+struct Complex
+(parent_indent_level: 0, children_indent_level: 1)
+{
+// Basic types
+int id ;
+float value ;
+/* Nested struct */
+struct Inner
+(parent_indent_level: 0, children_indent_level: 1)
+{
+double data ;
+
+}
+nested ;
+
+};
+// Anonymous struct in typedef
+typedefstruct
+(parent_indent_level: 0, children_indent_level: 1)
+{
+unsigned char flags ;
+
+}
+Flags// Struct with bit fields
+struct BitFields
+(parent_indent_level: 0, children_indent_level: 1)
+{
+unsigned int a : 1 ;
+unsigned int b : 2 ;
+unsigned int c : 3 ;
+
+};

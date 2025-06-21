@@ -58,8 +58,6 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1 &
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.11 get-pip.py
 RUN ln -fs /usr/bin/python3.11 /usr/bin/python3
 
- 
-
 WORKDIR /home/$CONTAINER_USER
 RUN mkdir -p /home/c_binder_mojo_user/.local/lib
 RUN mkdir -p /home/c_binder_mojo_user/.local/bin
@@ -74,16 +72,16 @@ ENV SHELL=/bin/bash
 
 ENV C_BINDING_MOJO_TEST_MUJOCO="$HOME/mujoco"
 
-# Install magic and set up PATH in the same layer
+# Install pixi and set up PATH in the same layer
 ENV PATH="/home/c_binder_mojo_user/.modular/bin:$PATH"
-RUN curl -ssL https://magic.modular.com/d20f3cdf-1cd4-4e1f-9173-e84f90b8c257 | bash 
+RUN curl -fsSL https://pixi.sh/install.sh | sh
 
-# Add magic completion to bashrc - escape the $() so it's evaluated at runtime
-RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
-RUN echo 'eval "$(magic completion --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
+# Add pixi completion to bashrc - escape the $() so it's evaluated at runtime
+# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
+RUN echo 'eval "$(pixi completion --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
 # Add bash shell init to the bashrc
-RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
-RUN echo 'eval "$(magic shell-hook --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
+# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
+RUN echo 'eval "$(pixi shell-hook --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
 
 WORKDIR /home/$CONTAINER_USER
 COPY pixi.toml .

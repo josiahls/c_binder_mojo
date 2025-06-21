@@ -19,4 +19,4 @@ int some_function(); // Comment after code
 // in a
 // row
 
-// Comment with trailing spaces    
+// Comment with trailing spaces 

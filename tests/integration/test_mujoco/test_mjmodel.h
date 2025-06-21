@@ -19,7 +19,7 @@
 #include <stdint.h>
 
 
-#include <mujoco/mjtnum.h>
+#include <test_mjtnum.h>
 
 // global constants
 #define mjPI            3.14159265358979323846

@@ -1,0 +1,46 @@
+RootNode(c_current_idx=0, c_child_idxs=(1, 2, 3, 4, 5, ...) len=31)
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=1)
+	// Basic single line comment
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=3)
+	// Another single line comment
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=5)
+	// Comment with special characters: !@#$%^&* (  ) _+
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=7)
+	// Comment with code-like content: int x  =  5 ; 
+
+	VariableNode(c_parent_idx=0, c_current_idx=9, node_state=4 (COMPLETED))
+	int some_function (  )  ;
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=11)
+	// Comment after code
+
+	MultiLineCommentNode(c_parent_idx=0, c_current_idx=13)
+	/* This is not a single line comment */
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=15)
+	// Comment with Unicode: 你好世界
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=17)
+	// Empty comment followed by another comment
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=19)
+	//
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=21)
+	// Comment after empty comment
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=23)
+	// Multiple comments
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=25)
+	// in a
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=27)
+	// row
+
+	SingleLineCommentNode(c_parent_idx=0, c_current_idx=29)
+	// Comment with trailing spaces    
+
+	EndFileNode(c_parent_idx=0, c_current_idx=31)
+	C_BINDER_MOJO_END_FILE

@@ -1,57 +1,16 @@
-""" Basic multiline comment """ <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Multiline comment <C_BINDER_MOJO_NEWLINE> 
- * with multiple <C_BINDER_MOJO_NEWLINE> 
- * lines <C_BINDER_MOJO_NEWLINE> 
- """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-"""* Documentation comment """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-"""* Documentation comment <C_BINDER_MOJO_NEWLINE> 
- * with multiple <C_BINDER_MOJO_NEWLINE> 
- * lines <C_BINDER_MOJO_NEWLINE> 
- """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Comment with special characters: !@#$%^&* (  ) _+ """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Comment with code-like content:  <C_BINDER_MOJO_NEWLINE> 
- * int x  =  5 ;  <C_BINDER_MOJO_NEWLINE> 
- * void foo (  )  ;  <C_BINDER_MOJO_NEWLINE> 
- """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-alias some_function : Int = () 
- 
-""" Comment after code """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-# This is not a multiline comment 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Comment with Unicode: 你好世界 """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Empty multiline comment """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-"""""" <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Nested-looking comment /*  ( not actually nested )  """ 
- <C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" <C_BINDER_MOJO_NEWLINE> 
- * Comment <C_BINDER_MOJO_NEWLINE> 
- *    with <C_BINDER_MOJO_NEWLINE> 
- *       indentation <C_BINDER_MOJO_NEWLINE> 
- """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-""" Comment with trailing spaces    """ 
-<C_BINDER_MOJO_NEWLINE> 
- <C_BINDER_MOJO_NEWLINE> 
-fn main():
-    pass
+from sys.ffi import _Global, UnsafePointer, OpaquePointer
+from sys import ffi
+
+# (placeholder) TranslationUnitDecl 0x4e35c8 <<invalid sloc>> <invalid sloc>
+
+alias __int128_t = Int128
+
+alias __uint128_t = UInt128
+
+alias __NSConstantString = StaticString
+
+alias __builtin_ms_va_list = UnsafePointer[Int8]
+
+alias __builtin_va_list = OpaquePointer
+
+alias some_function = fn () -> Int32

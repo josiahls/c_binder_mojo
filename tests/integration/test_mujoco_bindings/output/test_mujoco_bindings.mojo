@@ -12,9 +12,8 @@ alias __NSConstantString =
 # (placeholder) |   `-Record 0x4e3c88 '__NSConstantString_tag'
 
 
-alias __builtin_ms_va_list = 
-# (placeholder) | `-PointerType 0x4e3f90 'char *'
-Int8
+alias __builtin_ms_va_list = UnsafePointer[Int8]
+
 
 alias __builtin_va_list = 
 # (placeholder) | `-ConstantArrayType 0x4e4270 'struct __va_list_tag[1]' 1 
@@ -448,9 +447,8 @@ alias __key_t = Int32
 
 alias __clockid_t = Int32
 
-alias __timer_t = 
-# (placeholder) | `-PointerType 0x4e3b20 'void *'
-NoneType
+alias __timer_t = UnsafePointer[NoneType]
+
 
 alias __blksize_t = Int64
 
@@ -480,9 +478,8 @@ alias __loff_t =
 # (placeholder) |   |-Typedef 0x58bec0 '__off64_t'
 Int64
 
-alias __caddr_t = 
-# (placeholder) | `-PointerType 0x4e3f90 'char *'
-Int8
+alias __caddr_t = UnsafePointer[Int8]
+
 
 alias __intptr_t = Int64
 
@@ -618,9 +615,8 @@ alias caddr_t =
 # (placeholder) | `-TypedefType 0x596110 '__caddr_t' sugar
 
 # (placeholder) |   |-Typedef 0x593c30 '__caddr_t'
+UnsafePointer[Int8]
 
-# (placeholder) |   `-PointerType 0x4e3f90 'char *'
-Int8
 
 alias key_t = 
 # (placeholder) | `-TypedefType 0x5961a0 '__key_t' sugar
@@ -650,9 +646,8 @@ alias timer_t =
 # (placeholder) | `-TypedefType 0x5963e0 '__timer_t' sugar
 
 # (placeholder) |   |-Typedef 0x58c6d0 '__timer_t'
+UnsafePointer[NoneType]
 
-# (placeholder) |   `-PointerType 0x4e3b20 'void *'
-NoneType
 
 alias ulong = UInt64
 
@@ -2011,21 +2006,18 @@ struct drand48_data:
 
 # (placeholder) | `-NoThrowAttr 0x5d5c90 </usr/include/x86_64-linux-gnu/sys/cdefs.h:79:35>
 
-alias __compar_fn_t = 
-# (placeholder) | `-PointerType 0x5d5ec0 'int (*)(const void *, const void *)'
-
+alias __compar_fn_t = UnsafePointer[
 # (placeholder) |   `-ParenType 0x5d5e60 'int (const void *, const void *)' sugar
 
 # (placeholder) |     `-FunctionProtoType 0x5d5e20 'int (const void *, const void *)' cdecl
-Int32
-# (placeholder) |       |-PointerType 0x5d5cf0 'const void *'
-
+Int32UnsafePointer[
 # (placeholder) |       | `-QualType 0x4e3401 'const void' const
-NoneType
-# (placeholder) |       `-PointerType 0x5d5cf0 'const void *'
-
+NoneType]
+UnsafePointer[
 # (placeholder) |         `-QualType 0x4e3401 'const void' const
-NoneType
+NoneType]
+]
+
 # TypedefDeclNode Unhandled tokens: (*)(const void *, const void 
 
 # (placeholder) |-FunctionDecl 0x5d6380 <line:828:1, /usr/include/x86_64-linux-gnu/sys/cdefs.h:384:76> /usr/include/stdlib.h:828:14 bsearch 'void *(const void *, const void *, size_t, size_t, __compar_fn_t)' extern
@@ -11556,17 +11548,14 @@ alias mjtTaskStatus =
 
 # TypedefDeclNode Unhandled tokens: mjtTaskStatus_':'enum 
 
-alias mjfTask = 
-# (placeholder) | |-PointerType 0x6ba1c0 'void *(*)(void *)'
-
+alias mjfTask = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6ba160 'void *(void *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6ba130 'void *(void *)' cdecl
+UnsafePointer[NoneType]
+UnsafePointer[NoneType]
+]
 
-# (placeholder) | |     |-PointerType 0x4e3b20 'void *'
-NoneType
-# (placeholder) | |     `-PointerType 0x4e3b20 'void *'
-NoneType
 # (placeholder) | `-FullComment 0x80ced0 <line:26:3, col:35>
 
 # (placeholder) |   `-ParagraphComment 0x80cea0 <col:3, col:35>
@@ -12698,15 +12687,11 @@ alias mjData =
 
 # TypedefDeclNode Unhandled tokens: mjData_':'struct 
 
-alias mjfGeneric = 
-# (placeholder) | |-PointerType 0x6d2bb0 'void (*)(const mjModel *, mjData *)'
-
+alias mjfGeneric = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d2b50 'void (const mjModel *, mjData *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d2b10 'void (const mjModel *, mjData *)' cdecl
-NoneType
-# (placeholder) | |     |-PointerType 0x6d0970 'const mjModel *'
-
+NoneTypeUnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
@@ -12718,9 +12703,8 @@ NoneType
 # (placeholder) | |     |       `-RecordType 0x697e30 'struct mjModel_'
 
 # (placeholder) | |     |         `-Record 0x697da8 'mjModel_'
-
-# (placeholder) | |     `-PointerType 0x6d0a60 'mjData *'
-
+]
+UnsafePointer[
 # (placeholder) | |       `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |         |-Typedef 0x6d0860 'mjData'
@@ -12730,6 +12714,8 @@ NoneType
 # (placeholder) | |           `-RecordType 0x6c3750 'struct mjData_'
 
 # (placeholder) | |             `-Record 0x6c36c8 'mjData_'
+]
+]
 
 # (placeholder) | `-FullComment 0x81a330 <line:454:3, col:26>
 
@@ -12739,15 +12725,11 @@ NoneType
 
 # TypedefDeclNode Unhandled tokens: (*)(const mjModel *, mjData 
 
-alias mjfConFilt = 
-# (placeholder) | |-PointerType 0x6d2f90 'int (*)(const mjModel *, mjData *, int, int)'
-
+alias mjfConFilt = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d2f30 'int (const mjModel *, mjData *, int, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d2ee0 'int (const mjModel *, mjData *, int, int)' cdecl
-Int32
-# (placeholder) | |     |-PointerType 0x6d0970 'const mjModel *'
-
+Int32UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
@@ -12759,9 +12741,8 @@ Int32
 # (placeholder) | |     |       `-RecordType 0x697e30 'struct mjModel_'
 
 # (placeholder) | |     |         `-Record 0x697da8 'mjModel_'
-
-# (placeholder) | |     |-PointerType 0x6d0a60 'mjData *'
-
+]
+UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
@@ -12771,7 +12752,9 @@ Int32
 # (placeholder) | |     |     `-RecordType 0x6c3750 'struct mjData_'
 
 # (placeholder) | |     |       `-Record 0x6c36c8 'mjData_'
-Int32Int32
+]
+Int32Int32]
+
 # (placeholder) | `-FullComment 0x81a400 <line:457:3, col:41>
 
 # (placeholder) |   `-ParagraphComment 0x81a3d0 <col:3, col:41>
@@ -12780,15 +12763,11 @@ Int32Int32
 
 # TypedefDeclNode Unhandled tokens: (*)(const mjModel *, mjData *, int, 
 
-alias mjfSensor = 
-# (placeholder) | |-PointerType 0x6d32f0 'void (*)(const mjModel *, mjData *, int)'
-
+alias mjfSensor = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3290 'void (const mjModel *, mjData *, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d3250 'void (const mjModel *, mjData *, int)' cdecl
-NoneType
-# (placeholder) | |     |-PointerType 0x6d0970 'const mjModel *'
-
+NoneTypeUnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
@@ -12800,9 +12779,8 @@ NoneType
 # (placeholder) | |     |       `-RecordType 0x697e30 'struct mjModel_'
 
 # (placeholder) | |     |         `-Record 0x697da8 'mjModel_'
-
-# (placeholder) | |     |-PointerType 0x6d0a60 'mjData *'
-
+]
+UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
@@ -12812,7 +12790,9 @@ NoneType
 # (placeholder) | |     |     `-RecordType 0x6c3750 'struct mjData_'
 
 # (placeholder) | |     |       `-Record 0x6c36c8 'mjData_'
-Int32
+]
+Int32]
+
 # (placeholder) | `-FullComment 0x81a4d0 <line:460:3, col:20>
 
 # (placeholder) |   `-ParagraphComment 0x81a4a0 <col:3, col:20>
@@ -12821,9 +12801,7 @@ Int32
 
 # TypedefDeclNode Unhandled tokens: (*)(const mjModel *, mjData *, 
 
-alias mjfTime = 
-# (placeholder) | |-PointerType 0x6d34f0 'mjtNum (*)(void)'
-
+alias mjfTime = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3490 'mjtNum (void)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d3460 'mjtNum (void)' cdecl
@@ -12831,7 +12809,8 @@ alias mjfTime =
 # (placeholder) | |     `-TypedefType 0x68e310 'mjtNum' sugar
 
 # (placeholder) | |       |-Typedef 0x66e630 'mjtNum'
-Float64
+Float64]
+
 # (placeholder) | `-FullComment 0x81a5a0 <line:463:3, col:8>
 
 # (placeholder) |   `-ParagraphComment 0x81a570 <col:3, col:8>
@@ -12839,9 +12818,7 @@ Float64
 # (placeholder) |     `-TextComment 0x81a540 <col:3, col:8> Text=" timer"
 
 
-alias mjfAct = 
-# (placeholder) | |-PointerType 0x6d3870 'mjtNum (*)(const mjModel *, const mjData *, int)'
-
+alias mjfAct = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3810 'mjtNum (const mjModel *, const mjData *, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d37d0 'mjtNum (const mjModel *, const mjData *, int)' cdecl
@@ -12849,9 +12826,7 @@ alias mjfAct =
 # (placeholder) | |     |-TypedefType 0x68e310 'mjtNum' sugar
 
 # (placeholder) | |     | |-Typedef 0x66e630 'mjtNum'
-Float64
-# (placeholder) | |     |-PointerType 0x6d0970 'const mjModel *'
-
+Float64UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
@@ -12863,9 +12838,8 @@ Float64
 # (placeholder) | |     |       `-RecordType 0x697e30 'struct mjModel_'
 
 # (placeholder) | |     |         `-Record 0x697da8 'mjModel_'
-
-# (placeholder) | |     |-PointerType 0x6d3670 'const mjData *'
-
+]
+UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0a10 'mjData' sugar
@@ -12877,7 +12851,9 @@ Float64
 # (placeholder) | |     |       `-RecordType 0x6c3750 'struct mjData_'
 
 # (placeholder) | |     |         `-Record 0x6c36c8 'mjData_'
-Int32
+]
+Int32]
+
 # (placeholder) | `-FullComment 0x81a670 <line:466:3, col:32>
 
 # (placeholder) |   `-ParagraphComment 0x81a640 <col:3, col:32>
@@ -12886,15 +12862,11 @@ Int32
 
 # TypedefDeclNode Unhandled tokens: (*)(const mjModel *, const mjData *, 
 
-alias mjfCollision = 
-# (placeholder) | |-PointerType 0x6d3d70 'int (*)(const mjModel *, const mjData *, mjContact *, int, int, mjtNum)'
-
+alias mjfCollision = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3d10 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d3cb0 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' cdecl
-Int32
-# (placeholder) | |     |-PointerType 0x6d0970 'const mjModel *'
-
+Int32UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
@@ -12906,9 +12878,8 @@ Int32
 # (placeholder) | |     |       `-RecordType 0x697e30 'struct mjModel_'
 
 # (placeholder) | |     |         `-Record 0x697da8 'mjModel_'
-
-# (placeholder) | |     |-PointerType 0x6d3670 'const mjData *'
-
+]
+UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0a10 'mjData' sugar
@@ -12920,9 +12891,8 @@ Int32
 # (placeholder) | |     |       `-RecordType 0x6c3750 'struct mjData_'
 
 # (placeholder) | |     |         `-Record 0x6c36c8 'mjData_'
-
-# (placeholder) | |     |-PointerType 0x6cef50 'mjContact *'
-
+]
+UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6cef00 'mjContact' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6c23c0 'mjContact'
@@ -12932,11 +12902,13 @@ Int32
 # (placeholder) | |     |     `-RecordType 0x6c12e0 'struct mjContact_'
 
 # (placeholder) | |     |       `-Record 0x6c1260 'mjContact_'
+]
 Int32Int32
 # (placeholder) | |     `-TypedefType 0x68e310 'mjtNum' sugar
 
 # (placeholder) | |       |-Typedef 0x66e630 'mjtNum'
-Float64
+Float64]
+
 # (placeholder) | `-FullComment 0x81a740 <line:469:3, col:22>
 
 # (placeholder) |   `-ParagraphComment 0x81a710 <col:3, col:22>
@@ -14821,15 +14793,11 @@ alias mjResource =
 
 # TypedefDeclNode Unhandled tokens: mjResource_':'struct 
 
-alias mjfOpenResource = 
-# (placeholder) | |-PointerType 0x6fdb40 'int (*)(mjResource *)'
-
+alias mjfOpenResource = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fdae0 'int (mjResource *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fdab0 'int (mjResource *)' cdecl
-Int32
-# (placeholder) | |     `-PointerType 0x6fd9e0 'mjResource *'
-
+Int32UnsafePointer[
 # (placeholder) | |       `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
@@ -14839,6 +14807,8 @@ Int32
 # (placeholder) | |           `-RecordType 0x6fb400 'struct mjResource_'
 
 # (placeholder) | |             `-Record 0x6fb378 'mjResource_'
+]
+]
 
 # (placeholder) | `-FullComment 0x827960 <line:34:3, col:59>
 
@@ -14848,15 +14818,11 @@ Int32
 
 # TypedefDeclNode Unhandled tokens: (*)(mjResource 
 
-alias mjfReadResource = 
-# (placeholder) | |-PointerType 0x6fde30 'int (*)(mjResource *, const void **)'
-
+alias mjfReadResource = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fddd0 'int (mjResource *, const void **)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fdd90 'int (mjResource *, const void **)' cdecl
-Int32
-# (placeholder) | |     |-PointerType 0x6fd9e0 'mjResource *'
-
+Int32UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
@@ -14866,13 +14832,13 @@ Int32
 # (placeholder) | |     |     `-RecordType 0x6fb400 'struct mjResource_'
 
 # (placeholder) | |     |       `-Record 0x6fb378 'mjResource_'
-
-# (placeholder) | |     `-PointerType 0x6fdca0 'const void **'
-
-# (placeholder) | |       `-PointerType 0x5d5cf0 'const void *'
-
+]
+UnsafePointer[UnsafePointer[
 # (placeholder) | |         `-QualType 0x4e3401 'const void' const
-NoneType
+NoneType]
+]
+]
+
 # (placeholder) | `-FullComment 0x827a50 <line:37:3, line:38:62>
 
 # (placeholder) |   `-ParagraphComment 0x827a20 <line:37:3, line:38:62>
@@ -14883,15 +14849,11 @@ NoneType
 
 # TypedefDeclNode Unhandled tokens: (*)(mjResource *, const void 
 
-alias mjfCloseResource = 
-# (placeholder) | |-PointerType 0x6fe060 'void (*)(mjResource *)'
-
+alias mjfCloseResource = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fe000 'void (mjResource *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fdfd0 'void (mjResource *)' cdecl
-NoneType
-# (placeholder) | |     `-PointerType 0x6fd9e0 'mjResource *'
-
+NoneTypeUnsafePointer[
 # (placeholder) | |       `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
@@ -14901,6 +14863,8 @@ NoneType
 # (placeholder) | |           `-RecordType 0x6fb400 'struct mjResource_'
 
 # (placeholder) | |             `-Record 0x6fb378 'mjResource_'
+]
+]
 
 # (placeholder) | `-FullComment 0x827b20 <line:41:3, col:81>
 
@@ -14910,15 +14874,11 @@ NoneType
 
 # TypedefDeclNode Unhandled tokens: (*)(mjResource 
 
-alias mjfGetResourceDir = 
-# (placeholder) | |-PointerType 0x6fe3d0 'void (*)(mjResource *, const char **, int *)'
-
+alias mjfGetResourceDir = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fe370 'void (mjResource *, const char **, int *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fe330 'void (mjResource *, const char **, int *)' cdecl
-NoneType
-# (placeholder) | |     |-PointerType 0x6fd9e0 'mjResource *'
-
+NoneTypeUnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
@@ -14928,15 +14888,14 @@ NoneType
 # (placeholder) | |     |     `-RecordType 0x6fb400 'struct mjResource_'
 
 # (placeholder) | |     |       `-Record 0x6fb378 'mjResource_'
-
-# (placeholder) | |     |-PointerType 0x6fe1c0 'const char **'
-
-# (placeholder) | |     | `-PointerType 0x4e3dc0 'const char *'
-
+]
+UnsafePointer[UnsafePointer[
 # (placeholder) | |     |   `-QualType 0x4e3441 'const char' const
-Int8
-# (placeholder) | |     `-PointerType 0x5c25f0 'int *'
-Int32
+Int8]
+]
+UnsafePointer[Int32]
+]
+
 # (placeholder) | `-FullComment 0x827c10 <line:44:3, line:45:72>
 
 # (placeholder) |   `-ParagraphComment 0x827be0 <line:44:3, line:45:72>
@@ -14947,15 +14906,11 @@ Int32
 
 # TypedefDeclNode Unhandled tokens: (*)(mjResource *, const char **, int 
 
-alias mjfResourceModified = 
-# (placeholder) | |-PointerType 0x6fe700 'int (*)(const mjResource *, const char *)'
-
+alias mjfResourceModified = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fe6a0 'int (const mjResource *, const char *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fe660 'int (const mjResource *, const char *)' cdecl
-Int32
-# (placeholder) | |     |-PointerType 0x6fe500 'const mjResource *'
-
+Int32UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6fd991 'const mjResource' const
 
 # (placeholder) | |     |   `-TypedefType 0x6fd990 'mjResource' sugar
@@ -14967,11 +14922,12 @@ Int32
 # (placeholder) | |     |       `-RecordType 0x6fb400 'struct mjResource_'
 
 # (placeholder) | |     |         `-Record 0x6fb378 'mjResource_'
-
-# (placeholder) | |     `-PointerType 0x4e3dc0 'const char *'
-
+]
+UnsafePointer[
 # (placeholder) | |       `-QualType 0x4e3441 'const char' const
-Int8
+Int8]
+]
+
 # (placeholder) | `-FullComment 0x827dd0 <line:48:3, line:52:64>
 
 # (placeholder) |   `-ParagraphComment 0x827da0 <line:48:3, line:52:64>
@@ -15167,17 +15123,15 @@ alias mjpPlugin =
 
 # TypedefDeclNode Unhandled tokens: mjpPlugin_':'struct 
 
-alias mjfPluginLibraryLoadCallback = 
-# (placeholder) | |-PointerType 0x703110 'void (*)(const char *, int, int)'
-
+alias mjfPluginLibraryLoadCallback = UnsafePointer[
 # (placeholder) | | `-ParenType 0x7030b0 'void (const char *, int, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x703070 'void (const char *, int, int)' cdecl
-NoneType
-# (placeholder) | |     |-PointerType 0x4e3dc0 'const char *'
-
+NoneTypeUnsafePointer[
 # (placeholder) | |     | `-QualType 0x4e3441 'const char' const
-Int8Int32Int32
+Int8]
+Int32Int32]
+
 # (placeholder) | `-FullComment 0x829a60 <line:172:3, col:63>
 
 # (placeholder) |   `-ParagraphComment 0x829a30 <col:3, col:63>
@@ -17569,15 +17523,13 @@ alias mjtSection =
 
 # TypedefDeclNode Unhandled tokens: mjtSection_':'enum 
 
-alias mjfItemEnable = 
-# (placeholder) | |-PointerType 0x73e4e0 'int (*)(int, void *)'
-
+alias mjfItemEnable = UnsafePointer[
 # (placeholder) | | `-ParenType 0x73e480 'int (int, void *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x73e440 'int (int, void *)' cdecl
-Int32Int32
-# (placeholder) | |     `-PointerType 0x4e3b20 'void *'
-NoneType
+Int32Int32UnsafePointer[NoneType]
+]
+
 # (placeholder) | `-FullComment 0x853a50 <line:117:3, col:64>
 
 # (placeholder) |   `-ParagraphComment 0x853a20 <col:3, col:64>

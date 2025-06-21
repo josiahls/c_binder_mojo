@@ -10,8 +10,7 @@ from firehose.logging import Logger
 # First Party Modules
 
 
-@value
-struct MessageableEnum(Stringable):
+struct MessageableEnum(Movable & Copyable & Stringable):
     # NOTE(josiahls): tried doing int literal, but it made typing more complicated.
     var value: Int
     var _message: String
@@ -155,8 +154,8 @@ struct WhitespaceEnum:
         return False
 
 
-@value
-struct NodeIndices(Stringable):
+@fieldwise_init
+struct NodeIndices(Movable & Copyable & Stringable):
     """Stores indices for tracking node relationships in the AST.
 
     This struct maintains references between original and new positions of nodes

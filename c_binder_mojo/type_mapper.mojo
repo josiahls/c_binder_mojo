@@ -1,7 +1,7 @@
 """DType Mapping Utilities."""
 
 # Native Mojo Modules
-from sys.ffi import _Global, UnsafePointer
+from sys.ffi import _Global
 from sys import ffi
 
 # First Party Modules

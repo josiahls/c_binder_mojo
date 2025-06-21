@@ -70,7 +70,7 @@ fn generic_test_outputs(
             just_code=False, module_interface=module_interface
         )
     )
-    return module_interface
+    return module_interface^
 
 
 fn make_so_file(

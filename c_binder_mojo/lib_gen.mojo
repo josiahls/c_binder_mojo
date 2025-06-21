@@ -41,7 +41,7 @@ struct {0}(Copyable, Movable):
 
     {3}
 
-""").format(lib_name, so_file, fields, field_inits)
+""").format(lib_name, String(so_file), fields, field_inits)
 
 
 fn _get_import_statements(

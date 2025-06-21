@@ -24,8 +24,8 @@ from c_binder_mojo.mojo_ast_nodes.nodes import AstNode, NodeAstLike
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry
 
 
-@value
-struct ModuleInterface:
+@fieldwise_init
+struct ModuleInterface(Movable & Copyable):
     """Interface for interacting with the AST.
 
     This struct provides methods for accessing and modifying the AST nodes and tokens.

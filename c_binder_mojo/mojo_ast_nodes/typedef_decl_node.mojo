@@ -111,22 +111,44 @@ struct TypedefDeclNode(NodeAstLike):
 
         self._is_implicit = False
         self._is_referenced = False
-        
-        for entry in ast_entry.tokens:
+
+        var start_idx, end_idx = self._start_end_quotes(ast_entry.tokens)
+
+        for entry in ast_entry.tokens[:start_idx]:
             if entry == "implicit":
                 self._is_implicit = True
-                # NOTE: Why is referenced surounded by double quotes?
-            elif entry.replace("\"", "") == "referenced":
+            elif entry == "referenced":
                 self._is_referenced = True
-            elif entry.startswith("'") or entry.endswith("'"):
-                self._type_aliased = entry.replace("'", "")
+            else:
+                self._type_aliased = entry
+
+        for entry in ast_entry.tokens[start_idx:end_idx]:
+            if entry == "'":
+                pass
             elif self._type_name == "":
                 self._type_name = entry
             else:
-                if self._unhandled_tokens == "":
-                    self._unhandled_tokens = "# " + self.__name__ + " Unhandled tokens: "
-                self._unhandled_tokens += entry + " "
+                self._type_name += " " + entry
+    
 
+    fn _start_end_quotes(mut self, read tokens: List[String]) -> Tuple[Int, Int]:
+        var start_idx = -1
+        var end_idx = -1
+        var idx = -1
+        for token in tokens:
+            idx += 1
+            if token.startswith("'") and start_idx == -1:
+                start_idx = idx
+                continue
+            elif token.endswith("'") and end_idx == -1:
+                end_idx = idx
+            elif token.endswith("'"):
+                print("ParmVarDeclNode: Unhandled token: " + token + " from " + String(' ').join(tokens))
+
+        if end_idx == -1:
+            start_idx = 0
+            end_idx = len(tokens) - 1
+        return (start_idx, end_idx)
 
     @staticmethod
     fn accept(

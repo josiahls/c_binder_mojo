@@ -59,8 +59,12 @@ struct ElaboratedTypeNode(NodeAstLike):
                 self._elaborated_type = _entry
             else:
                 if self._unhandled_tokens == "":
-                    self._unhandled_tokens = '# Unhandled tokens: '
-                self._unhandled_tokens += " " + _entry
+                    self._unhandled_tokens = _entry
+                else:
+                    self._unhandled_tokens += " " + _entry
+
+        if self._unhandled_tokens != "":
+            self._unhandled_tokens = "# ElaboratedTypeNode: Unhandled tokens: " + self._unhandled_tokens
 
     @staticmethod
     fn accept(

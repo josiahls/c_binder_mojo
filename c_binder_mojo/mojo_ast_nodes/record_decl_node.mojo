@@ -135,12 +135,14 @@ struct RecordDeclNode(NodeAstLike):
         self._has_fields = False
 
         for entry in ast_entry.tokens:
-            if entry == "struct":
+            if entry == "'":
+                pass
+            elif entry == "struct":
                 pass
             elif entry == "definition":
                 pass
             elif self._record_name == "":
-                self._record_name = String(entry.strip("'"))
+                self._record_name = entry
             else:
                 self._unhandled_tokens.append(entry)
 
@@ -317,7 +319,7 @@ struct RecordDeclNode(NodeAstLike):
                     s += child.to_string(just_code, module_interface, parent_indent_level + 1)
 
         if self._unhandled_tokens:
-            s += " # Unhandled tokens: "
+            s += " # RecordDeclNode Unhandled tokens: "
             for token in self._unhandled_tokens:
                 s += " " + token
 

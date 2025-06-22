@@ -178,6 +178,6 @@ struct BuiltinTypeNode(NodeAstLike):
 
         var s:String = BuiltinTypeMapper.map_type(self._builtin_type, self._unsigned)
         if self._unhandled_tokens != "":
-            s += " #" + self.__name__ + " Unhandled tokens: " + self._unhandled_tokens
+            s += " #" + self.__name__ + " BuiltinTypeNode Unhandled tokens: " + self._unhandled_tokens
 
         return s

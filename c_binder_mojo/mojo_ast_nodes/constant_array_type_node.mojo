@@ -61,9 +61,12 @@ struct ConstantArrayTypeNode(NodeAstLike):
                 self._n_elements = entry
             elif entry != "":
                 if self._unhandled_tokens == "":
-                    self._unhandled_tokens = '# Unhandled tokens: `' + entry + '`'
+                    self._unhandled_tokens = entry
                 else:
-                    self._unhandled_tokens += " `" + entry + "`"
+                    self._unhandled_tokens += " " + entry
+
+        if self._unhandled_tokens != "":
+            self._unhandled_tokens = "# ConstantArrayTypeNode Unhandled tokens: " + self._unhandled_tokens
 
     @staticmethod
     fn accept(

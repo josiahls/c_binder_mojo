@@ -365,15 +365,6 @@ fn get_current_node(
             logger,
             recursion_depth - 1,
         )
-    elif token_flow == TokenFlow.PASS_TO_INSERTED_NODE:
-        node.process(ast_entry, TokenFlow.PASS_TO_INSERTED_NODE, module_interface)
-        return get_current_node(
-            ast_entry,
-            len(module_interface.nodes()[]) - 1,
-            module_interface,
-            logger,
-            recursion_depth - 1, # NOTE: do we need to change this?
-        )
     elif token_flow == TokenFlow.CONSUME_TOKEN:
         node.process(ast_entry, TokenFlow.CONSUME_TOKEN, module_interface)
         return current_idx

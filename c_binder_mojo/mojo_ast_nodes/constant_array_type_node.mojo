@@ -30,7 +30,10 @@ struct ConstantArrayTypeNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
-    var _constant_array_type: String
+    var _full_constant_array_type: String
+    var _n_elements: String
+    var _unhandled_tokens: String
+    var _aliased_record_name: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -38,7 +41,30 @@ struct ConstantArrayTypeNode(NodeAstLike):
         self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
-        self._constant_array_type = String()
+        self._full_constant_array_type = String()
+        self._n_elements = String()
+        self._unhandled_tokens = String()
+        self._aliased_record_name = String()
+
+        accumulate_type:Bool = False
+        print('ConstantArrayTypeNode: Processing ast entry: ' + ast_entry.precise_location)
+        for entry in ast_entry.tokens:
+            # NOTE: The single quotes are useful in cases where there are spaces in the type name. :/
+            if "'" in entry and not accumulate_type:
+                self._full_constant_array_type += entry.strip("'")
+                accumulate_type = True
+            elif "'" in entry and accumulate_type:
+                self._full_constant_array_type += ' ' + entry.strip("'")
+                accumulate_type = False
+            elif accumulate_type:
+                self._full_constant_array_type += entry
+            elif entry.isdigit():
+                self._n_elements = entry
+            else:
+                if self._unhandled_tokens == "":
+                    self._unhandled_tokens = '# Unhandled tokens: ' + entry
+                else:
+                    self._unhandled_tokens += " " + entry
 
     @staticmethod
     fn accept(
@@ -60,9 +86,11 @@ struct ConstantArrayTypeNode(NodeAstLike):
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
         if ast_entry.level <= self._typedef_decl_level:
+            print('ConstantArrayTypeNode: Determining token flow, passing to parent: ' + ast_entry.precise_location)
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CONSUME_TOKEN
+            print('ConstantArrayTypeNode: Determining token flow, making child: ' + ast_entry.precise_location)
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -70,34 +98,27 @@ struct ConstantArrayTypeNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        if token_flow == TokenFlow.CONSUME_TOKEN:
-            if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
-                if self.process_anonymous_record(ast_entry, module_interface):
-                    return
-            self._ast_entries[].append(ast_entry)
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
         else:
-            self._constant_array_type = String(self._ast_entries[])
+            self._aliased_record_name = self.get_aliased_record_name(module_interface)
             self._node_state = NodeState.COMPLETED
 
-    fn process_anonymous_record(
-        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
-    ) -> Bool:
-        mem_addesss = ast_entry.mem_address
-        for node in module_interface.nodes()[]:
-            if node.node[].isa[RecordDeclNode]():
-                if (
-                    node.node[][RecordDeclNode]._record_mem_location
-                    == mem_addesss
-                ):
-                    struct_name = node.node[][RecordDeclNode]._grammar._name
-                    new_entry = AstEntry()
-                    new_entry.ast_name = "AnonymousRecord"
-                    new_entry.tokens = [struct_name]
-                    new_entry.precise_location = ast_entry.precise_location
-                    new_entry.mem_address = ast_entry.mem_address
-                    self._ast_entries[].append(new_entry)
-                    return True
-        return False
+
+    fn get_aliased_record_name(self, module_interface: ModuleInterface) -> String:
+        print('ConstantArrayTypeNode: Getting aliased record name')
+        for child in self._indicies[].child_idxs:
+            node = module_interface.get_node(child)
+            if node.node[].isa[RecordTypeNode]():
+                optional_node = node.node[][RecordTypeNode].get_aliased_record_decl(module_interface)
+                if optional_node:
+                    try:
+                        return optional_node[].node[][RecordDeclNode]._record_name
+                    except e:
+                        print('ConstantArrayTypeNode: Unhandled node type: ' + String(e))
+            else:
+                print('ConstantArrayTypeNode: Unhandled node type: ' + node.name())
+        return String()
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -148,5 +169,6 @@ struct ConstantArrayTypeNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(self._constant_array_type) if just_code else String(),
+            alternate_string=String(self._full_constant_array_type) + " aliased record name: " + self._aliased_record_name + " n elements: " + String(self._n_elements),
+            unhandled_tokens=self._unhandled_tokens,
         )

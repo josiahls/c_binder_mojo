@@ -82,17 +82,12 @@ struct RecordNode(NodeAstLike):
         return -1
 
     fn get_aliased_record_decl(self, module_interface: ModuleInterface) -> Optional[AstNode]:
-        if self._is_anonymous_record:
-            mem_address = self._ast_entry.mem_address
-            for node in module_interface.nodes()[]:
-                if node.node[].isa[RecordDeclNode]():
-                    if node.node[][RecordDeclNode]._record_mem_location == mem_address:
-                        return node
-
-        for child in self._indicies[].child_idxs:
-            node = module_interface.get_node(child)
+        mem_address = self._ast_entry.mem_address
+        for node in module_interface.nodes()[]:
             if node.node[].isa[RecordDeclNode]():
-                return node
+                if node.node[][RecordDeclNode]._record_mem_location == mem_address:
+                    return node
+        print('RecordNode: No record decl found for mem address: ' + mem_address)
         return None
 
     @staticmethod
@@ -107,10 +102,7 @@ struct RecordNode(NodeAstLike):
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
 
-        if not self.is_record_declared(module_interface):
-            self._make_record_decl = True
-            return TokenFlow.PASS_TO_INSERTED_NODE
-        elif ast_entry.level <= self._typedef_decl_level:
+        if ast_entry.level <= self._typedef_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
             return TokenFlow.CREATE_CHILD
@@ -122,7 +114,7 @@ struct RecordNode(NodeAstLike):
         mut module_interface: ModuleInterface,
     ):
         # TODO(josiahls): We need to do something about the ast_entry param here. Not sure what.
-        if self._make_record_decl:
+        if not self.is_record_declared(module_interface):
             # NOTE: Set the parent to 0 since we are declaring a new record and mojo does
             # not support nested records.
             translation_unit_decl_current_idx = self.get_translation_unit_decl_current_idx(module_interface)
@@ -137,7 +129,7 @@ struct RecordNode(NodeAstLike):
             ].indicies_ptr()[].child_idxs.append(new_index)
             self._node_state = NodeState.COMPLETED
             self._make_record_decl = False
-            return 
+            # return 
 
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN

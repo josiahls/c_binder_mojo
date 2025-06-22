@@ -31,7 +31,7 @@ alias AstNodeVariant = Variant[
     # TypedefTypeNode,
     RecordTypeNode,
     RecordNode,
-    # ConstantArrayTypeNode,
+    ConstantArrayTypeNode,
     ElaboratedTypeNode,
     # FullCommentNode,
     TranslationUnitDeclNode,

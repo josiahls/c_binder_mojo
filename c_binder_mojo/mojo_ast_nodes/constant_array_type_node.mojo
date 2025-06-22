@@ -47,7 +47,6 @@ struct ConstantArrayTypeNode(NodeAstLike):
         self._aliased_record_name = String()
 
         accumulate_type:Bool = False
-        print('ConstantArrayTypeNode: Processing ast entry: ' + ast_entry.precise_location)
         for entry in ast_entry.tokens:
             # NOTE: The single quotes are useful in cases where there are spaces in the type name. :/
             if "'" in entry and not accumulate_type:
@@ -86,10 +85,8 @@ struct ConstantArrayTypeNode(NodeAstLike):
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
         if ast_entry.level <= self._typedef_decl_level:
-            print('ConstantArrayTypeNode: Determining token flow, passing to parent: ' + ast_entry.precise_location)
             return TokenFlow.PASS_TO_PARENT
         else:
-            print('ConstantArrayTypeNode: Determining token flow, making child: ' + ast_entry.precise_location)
             return TokenFlow.CREATE_CHILD
 
     fn process(
@@ -106,7 +103,6 @@ struct ConstantArrayTypeNode(NodeAstLike):
 
 
     fn get_aliased_record_name(self, module_interface: ModuleInterface) -> String:
-        print('ConstantArrayTypeNode: Getting aliased record name')
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[RecordTypeNode]():

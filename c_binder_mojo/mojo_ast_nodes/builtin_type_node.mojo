@@ -45,15 +45,36 @@ struct BuiltinTypeNode(NodeAstLike):
         self._unsigned = False
         self._unhandled_tokens = String()
 
-        for entry in ast_entry.tokens:
-            if entry.replace("'", "") == "unsigned":
-                self._unsigned = True
-            else:
-                if self._builtin_type == "":
-                    self._builtin_type += entry.replace("'", "")
-                else:
-                    self._builtin_type += " " + entry.replace("'", "")
+        var start_idx, end_idx = self._start_end_quotes(ast_entry.tokens)
 
+        for entry in ast_entry.tokens[start_idx:end_idx]:
+            if entry == "'":
+                pass
+            elif entry == "unsigned":
+                self._unsigned = True
+            elif self._builtin_type == "":
+                self._builtin_type = entry
+            else:
+                self._builtin_type += " " + entry
+
+    fn _start_end_quotes(mut self, read tokens: List[String]) -> Tuple[Int, Int]:
+        var start_idx = -1
+        var end_idx = -1
+        var idx = -1
+        for token in tokens:
+            idx += 1
+            if token.startswith("'") and start_idx == -1:
+                start_idx = idx
+                continue
+            elif token.endswith("'") and end_idx == -1:
+                end_idx = idx
+            elif token.endswith("'"):
+                print("ParmVarDeclNode: Unhandled token: " + token + " from " + String(' ').join(tokens))
+
+        if end_idx == -1:
+            start_idx = 0
+            end_idx = len(tokens) - 1
+        return (start_idx, end_idx)
 
     @staticmethod
     fn accept(

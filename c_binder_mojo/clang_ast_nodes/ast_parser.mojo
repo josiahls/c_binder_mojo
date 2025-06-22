@@ -302,7 +302,14 @@ struct AstParser:
                 elif token == "|" and ast_entry.ast_name == "":
                     level += 1
                 else:
-                    ast_entry.tokens.append(token)
+                    if "'" in token:
+                        for t in token.split("'"):
+                            if t != "":
+                                ast_entry.tokens.append(t)
+                            else:
+                                ast_entry.tokens.append("'")
+                    else:
+                        ast_entry.tokens.append(token)
 
                 # Cancel checking for consequtive spaces if the next token
                 # isn't an empty space.

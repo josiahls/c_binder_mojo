@@ -27,7 +27,7 @@ alias AstNodeVariant = Variant[
     RootNode,
     PointerTypeNode,
     BuiltinTypeNode,
-    # ParmVarDeclNode,
+    ParmVarDeclNode,
     # TypedefTypeNode,
     RecordTypeNode,
     RecordNode,
@@ -42,6 +42,6 @@ alias AstNodeVariant = Variant[
     # EndFileNode,
     # VarDeclNode,
     TypedefDeclNode,
-    # FunctionDeclNode,
+    FunctionDeclNode,
     PlaceHolderNode,  # Placeholder must be the last node
 ]

@@ -18,12 +18,7 @@ TypedefDeclNode(parent_idx=1, current_idx=10, child_idxs=(11), node_state=4 (COM
 | `-PointerType 0x4e3f90 'char *'Int8
 
 TypedefDeclNode(parent_idx=1, current_idx=13, child_idxs=(14), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x4e42c8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'ConstantArrayTypeNode(parent_idx=13, current_idx=14, child_idxs=(15), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-struct __va_list_tag[1] aliased record name: __va_list_tag n elements: 1RecordTypeNode(parent_idx=14, current_idx=15, child_idxs=(16), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-RecordNode(parent_idx=15, current_idx=16, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-__va_list_tag
-# Unhandled tokens: 
-
+|-TypedefDecl 0x4e42c8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'OpaquePointer # __va_list_tag[1]
 struct __va_list_tag:
 	pass
 

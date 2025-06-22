@@ -38,7 +38,7 @@ struct ConstantArrayTypeNode(NodeAstLike):
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entry)
+        # self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
         self._full_constant_array_type = String()
@@ -60,11 +60,11 @@ struct ConstantArrayTypeNode(NodeAstLike):
                 self._full_constant_array_type += entry
             elif entry.isdigit():
                 self._n_elements = entry
-            else:
+            elif entry != "":
                 if self._unhandled_tokens == "":
-                    self._unhandled_tokens = '# Unhandled tokens: ' + entry
+                    self._unhandled_tokens = '# Unhandled tokens: `' + entry + '`'
                 else:
-                    self._unhandled_tokens += " " + entry
+                    self._unhandled_tokens += " `" + entry + "`"
 
     @staticmethod
     fn accept(
@@ -161,14 +161,8 @@ struct ConstantArrayTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return default_to_string(
-            node=AstNode(self),
-            module_interface=module_interface,
-            just_code=just_code,
-            indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
-            alternate_string=String(self._full_constant_array_type) + " aliased record name: " + self._aliased_record_name + " n elements: " + String(self._n_elements),
-            unhandled_tokens=self._unhandled_tokens,
-        )
+        # TODO(josiahls): We will need to set a field property that
+        # tells us if this is a struct / record type, in which case, OpaquePointer
+        # makes sense, or otherwise if its a builtin type, we should use SIMD.
+        var array_type = "OpaquePointer" + " # " + self._aliased_record_name + "[" + String(self._n_elements) + "]"
+        return array_type

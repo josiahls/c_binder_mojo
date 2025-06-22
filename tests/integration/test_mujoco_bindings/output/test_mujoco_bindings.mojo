@@ -14,10 +14,7 @@ struct __NSConstantString_tag:
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
 
-alias __builtin_va_list = 
-struct __va_list_tag[1] aliased record name: __va_list_tag n elements: 1__va_list_tag
-# Unhandled tokens: 
-
+alias __builtin_va_list = OpaquePointer # __va_list_tag[1]
 struct __va_list_tag:
 	pass
 

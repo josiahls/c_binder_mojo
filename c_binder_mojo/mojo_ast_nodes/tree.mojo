@@ -40,6 +40,9 @@ struct ModuleInterface(Movable & Copyable):
     var _nodes: ArcPointer[List[AstNode]]
     var _entries: ArcPointer[List[AstEntry]]
 
+    fn get_node(self, idx: Int) -> AstNode:
+        return self._nodes[][idx]
+
     fn nodes(self) -> ArcPointer[List[AstNode]]:
         """Get the list of AST nodes.
 

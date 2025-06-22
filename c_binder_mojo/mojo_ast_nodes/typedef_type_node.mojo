@@ -73,11 +73,11 @@ struct TypedefTypeNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
             return
-        elif token_flow == TokenFlow.CONSUME_TOKEN:
-            if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
-                if self.process_anonymous_record(ast_entry, module_interface):
-                    return
-            self._ast_entries[].append(ast_entry)
+        # elif token_flow == TokenFlow.CONSUME_TOKEN:
+        #     if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
+        #         if self.process_anonymous_record(ast_entry, module_interface):
+        #             return
+        #     self._ast_entries[].append(ast_entry)
         else:
             self._typedef_type = String(self._ast_entries[])
             self._node_state = NodeState.COMPLETED

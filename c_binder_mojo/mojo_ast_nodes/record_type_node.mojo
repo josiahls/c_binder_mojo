@@ -56,8 +56,6 @@ struct RecordTypeNode(NodeAstLike):
                 # NOTE: the record name should come from the sub record node.
                 self._aliased_record_name += stripped_entry
 
-
-
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -97,8 +95,18 @@ struct RecordTypeNode(NodeAstLike):
         #             return
         #     self._ast_entries[].append(ast_entry)
         else:
-            self._record_type = String(self._ast_entries[])
+            # self._record_type = String(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
+
+
+    fn get_aliased_record_decl(self, module_interface: ModuleInterface) -> Optional[AstNode]:
+        for child in self._indicies[].child_idxs:
+            node = module_interface.get_node(child)
+            if node.node[].isa[RecordDeclNode]():
+                return node
+            elif node.node[].isa[RecordNode]():
+                return node.node[][RecordNode].get_aliased_record_decl(module_interface)
+        return None
 
     fn process_anonymous_record(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface

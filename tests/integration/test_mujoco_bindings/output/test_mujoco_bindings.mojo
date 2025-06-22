@@ -7,7 +7,8 @@ alias __int128_t = Int128
 alias __uint128_t = UInt128
 
 alias __NSConstantString = __NSConstantString_tag
-# Forward declaration of 	pass
+struct __NSConstantString_tag:
+	pass
 
 
 alias __builtin_ms_va_list = UnsafePointer[Int8]
@@ -16,7 +17,8 @@ alias __builtin_ms_va_list = UnsafePointer[Int8]
 alias __builtin_va_list = 
 # (placeholder) | `-ConstantArrayType 0x4e4270 'struct __va_list_tag[1]' 1 
 __va_list_tag
-# Forward declaration of 	pass
+struct __va_list_tag:
+	pass
 
 
 alias size_t = UInt64
@@ -29,34 +31,31 @@ alias _Float64 = Float64
 
 alias _Float32x = Float64
 
-alias _Float64x = longdouble
-struct _Anonymous_line_59_9:
+alias _Float64x = Float64
+struct Anonymous_line_59_9:
+
 	var quot: Int32
 
 	var rem: Int32
 
 
-alias div_t = 
-# (placeholder) | `-ElaboratedType 0x53b140 'struct div_t' sugar
+alias div_t = Anonymous_line_59_9
+struct Anonymous_line_67_9:
 
-struct _Anonymous_line_67_9:
 	var quot: Int64
 
 	var rem: Int64
 
 
-alias ldiv_t = 
-# (placeholder) | `-ElaboratedType 0x53b380 'struct ldiv_t' sugar
+alias ldiv_t = Anonymous_line_67_9
+struct Anonymous_line_77_23:
 
-struct _Anonymous_line_77_23:
 	var quot: Int128
 
 	var rem: Int128
 
 
-alias lldiv_t = 
-# (placeholder) | `-ElaboratedType 0x53b5c0 'struct lldiv_t' sugar
-
+alias lldiv_t = Anonymous_line_77_23
 
 # (placeholder) |-FunctionDecl 0x53b7a8 <line:98:1, /usr/include/x86_64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:98:15 __ctype_get_mb_cur_max 'size_t (void)' extern
 
@@ -306,7 +305,7 @@ alias __u_int = UInt32
 
 alias __u_long = UInt64
 
-alias __int8_t = signedchar
+alias __int8_t = Int8
 
 alias __uint8_t = UInt8
 
@@ -326,7 +325,7 @@ alias __int_least8_t =
 # (placeholder) | `-TypedefType 0x56b500 '__int8_t' sugar
 
 # (placeholder) |   |-Typedef 0x56b190 '__int8_t'
-signedchar
+Int8
 
 alias __uint_least8_t = 
 # (placeholder) | `-TypedefType 0x56b590 '__uint8_t' sugar
@@ -397,13 +396,12 @@ alias __off_t = Int64
 alias __off64_t = Int64
 
 alias __pid_t = Int32
-struct _Anonymous_col_24:
+struct Anonymous_col_24:
+
 	var __val: SIMD[Int32.dtype, 2]
 
 
-alias __fsid_t = 
-# (placeholder) | `-ElaboratedType 0x58c120 'struct __fsid_t' sugar
-
+alias __fsid_t = Anonymous_col_24
 
 alias __clock_t = Int64
 
@@ -507,9 +505,7 @@ alias fsid_t =
 # (placeholder) | `-TypedefType 0x594140 '__fsid_t' sugar
 
 # (placeholder) |   |-Typedef 0x58c178 '__fsid_t'
-
-# (placeholder) |   `-ElaboratedType 0x58c120 'struct __fsid_t' sugar
-
+Anonymous_col_24
 
 alias loff_t = 
 # (placeholder) | `-TypedefType 0x5941d0 '__loff_t' sugar
@@ -635,7 +631,7 @@ alias int8_t =
 # (placeholder) | `-TypedefType 0x56b500 '__int8_t' sugar
 
 # (placeholder) |   |-Typedef 0x56b190 '__int8_t'
-signedchar
+Int8
 
 alias int16_t = 
 # (placeholder) | `-TypedefType 0x56b620 '__int16_t' sugar
@@ -1048,27 +1044,26 @@ alias register_t = Int64
 # (placeholder) |     `-ImplicitCastExpr 0x5a4e68 <col:10> '__uint64_t':'unsigned long' <LValueToRValue>
 
 # (placeholder) |       `-DeclRefExpr 0x5a4e48 <col:10> '__uint64_t':'unsigned long' lvalue ParmVar 0x5a4d10 '__x' '__uint64_t':'unsigned long'
-struct _Anonymous_line_5_9:
+struct Anonymous_line_5_9:
+
 	var __val: SIMD[UInt64.dtype, 16]
 
 
-alias __sigset_t = 
-# (placeholder) | `-ElaboratedType 0x5a5150 'struct __sigset_t' sugar
-
+alias __sigset_t = Anonymous_line_5_9
 
 alias sigset_t = 
 # (placeholder) | `-TypedefType 0x5a5220 '__sigset_t' sugar
 
 # (placeholder) |   |-Typedef 0x5a51a8 '__sigset_t'
-
-# (placeholder) |   `-ElaboratedType 0x5a5150 'struct __sigset_t' sugar
-
+Anonymous_line_5_9
 struct timeval:
+
 	var tv_sec: __time_t
 
 	var tv_usec: __suseconds_t
 
 struct timespec:
+
 	var tv_sec: __time_t
 
 	var tv_nsec: __syscall_slong_t
@@ -1081,13 +1076,12 @@ alias suseconds_t =
 Int64
 
 alias __fd_mask = Int64
-struct _Anonymous_line_59_9:
+struct Anonymous_line_59_9:
+
 	var __fds_bits: SIMD[__fd_mask.dtype, 16]
 
 
-alias fd_set = 
-# (placeholder) | `-ElaboratedType 0x5af540 'struct fd_set' sugar
-
+alias fd_set = Anonymous_line_59_9
 
 alias fd_mask = 
 # (placeholder) | `-TypedefType 0x5af300 '__fd_mask' sugar
@@ -1144,40 +1138,33 @@ alias fsfilcnt_t =
 
 # (placeholder) |   |-Typedef 0x593900 '__fsfilcnt_t'
 UInt64
-struct _definition__Anonymous_line_28_3:
-	var __low: UInt32
+struct union:
 
-	var __high: UInt32
-
-
-struct definition:
 	var __value64: UInt128
 
 	var __value32: _definition__Anonymous_line_28_3
 
 
-alias __atomic_wide_counter = 
-# (placeholder) | `-ElaboratedType 0x5b2740 'union __atomic_wide_counter' sugar
-
+alias __atomic_wide_counter = union
+# Unhandled tokens:  __atomic_wide_counter
 struct __pthread_internal_list:
+
 	var __prev: UnsafePointer[__pthread_internal_list]
 
 	var __next: UnsafePointer[__pthread_internal_list]
 
 
-alias __pthread_list_t = 
-# (placeholder) | `-ElaboratedType 0x5b2a30 'struct __pthread_internal_list' sugar
-__pthread_internal_list
+alias __pthread_list_t = 'struct __pthread_internal_list' sugar__pthread_internal_list
 # TypedefDeclNode Unhandled tokens: __pthread_internal_list':'struct 
 struct __pthread_internal_slist:
+
 	var __next: UnsafePointer[__pthread_internal_slist]
 
 
-alias __pthread_slist_t = 
-# (placeholder) | `-ElaboratedType 0x5b2ca0 'struct __pthread_internal_slist' sugar
-__pthread_internal_slist
+alias __pthread_slist_t = 'struct __pthread_internal_slist' sugar__pthread_internal_slist
 # TypedefDeclNode Unhandled tokens: __pthread_internal_slist':'struct 
 struct __pthread_mutex_s:
+
 	var __lock: Int32
 
 	var __count: UInt32
@@ -1195,6 +1182,7 @@ struct __pthread_mutex_s:
 	var __list: __pthread_list_t
 
 struct __pthread_rwlock_arch_t:
+
 	var __readers: UInt32
 
 	var __writers: UInt32
@@ -1220,6 +1208,7 @@ struct __pthread_rwlock_arch_t:
 	var __flags: UInt32
 
 struct __pthread_cond_s:
+
 	var __wseq: __atomic_wide_counter
 
 	var __g1_start: __atomic_wide_counter
@@ -1238,48 +1227,48 @@ struct __pthread_cond_s:
 alias __tss_t = UInt32
 
 alias __thrd_t = UInt64
-struct _Anonymous_line_108_9:
+struct Anonymous_line_108_9:
+
 	var __data: Int32
 
 
-alias __once_flag = 
-# (placeholder) | `-ElaboratedType 0x5b9340 'struct __once_flag' sugar
-
+alias __once_flag = Anonymous_line_108_9
 
 alias pthread_t = UInt64
-struct definition:
+struct union:
+
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_mutexattr_t = 
-# (placeholder) | `-ElaboratedType 0x5b9670 'union pthread_mutexattr_t' sugar
+alias pthread_mutexattr_t = union
+# Unhandled tokens:  pthread_mutexattr_t
+struct union:
 
-struct definition:
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_condattr_t = 
-# (placeholder) | `-ElaboratedType 0x5bc250 'union pthread_condattr_t' sugar
-
+alias pthread_condattr_t = union
+# Unhandled tokens:  pthread_condattr_t
 
 alias pthread_key_t = UInt32
 
 alias pthread_once_t = Int32
-struct pthread_attr_t:
+struct union:
+
 	var __size: SIMD[Int8.dtype, 56]
 
 	var __align: Int64
+ # Unhandled tokens:  pthread_attr_t
 
-
-alias pthread_attr_t = 
-# (placeholder) | `-ElaboratedType 0x5bc5f0 'union pthread_attr_t' sugar
-pthread_attr_t
+alias pthread_attr_t = 'union pthread_attr_t' sugarpthread_attr_t
+# Unhandled tokens:  pthread_attr_t
 # TypedefDeclNode Unhandled tokens: pthread_attr_t':'union 
-struct definition:
+struct union:
+
 	var __data: __pthread_mutex_s
 
 	var __size: SIMD[Int8.dtype, 40]
@@ -1287,10 +1276,10 @@ struct definition:
 	var __align: Int64
 
 
-alias pthread_mutex_t = 
-# (placeholder) | `-ElaboratedType 0x5bca20 'union pthread_mutex_t' sugar
+alias pthread_mutex_t = union
+# Unhandled tokens:  pthread_mutex_t
+struct union:
 
-struct definition:
 	var __data: __pthread_cond_s
 
 	var __size: SIMD[Int8.dtype, 48]
@@ -1298,10 +1287,10 @@ struct definition:
 	var __align: Int128
 
 
-alias pthread_cond_t = 
-# (placeholder) | `-ElaboratedType 0x5bce10 'union pthread_cond_t' sugar
+alias pthread_cond_t = union
+# Unhandled tokens:  pthread_cond_t
+struct union:
 
-struct definition:
 	var __data: __pthread_rwlock_arch_t
 
 	var __size: SIMD[Int8.dtype, 56]
@@ -1309,40 +1298,39 @@ struct definition:
 	var __align: Int64
 
 
-alias pthread_rwlock_t = 
-# (placeholder) | `-ElaboratedType 0x5c1210 'union pthread_rwlock_t' sugar
+alias pthread_rwlock_t = union
+# Unhandled tokens:  pthread_rwlock_t
+struct union:
 
-struct definition:
 	var __size: SIMD[Int8.dtype, 8]
 
 	var __align: Int64
 
 
-alias pthread_rwlockattr_t = 
-# (placeholder) | `-ElaboratedType 0x5c14d0 'union pthread_rwlockattr_t' sugar
-
+alias pthread_rwlockattr_t = union
+# Unhandled tokens:  pthread_rwlockattr_t
 
 alias pthread_spinlock_t = 
 # (placeholder) | `-QualType 0x4e34a4 'volatile int' volatile
 Int32
-struct definition:
+struct union:
+
 	var __size: SIMD[Int8.dtype, 32]
 
 	var __align: Int64
 
 
-alias pthread_barrier_t = 
-# (placeholder) | `-ElaboratedType 0x5c1800 'union pthread_barrier_t' sugar
+alias pthread_barrier_t = union
+# Unhandled tokens:  pthread_barrier_t
+struct union:
 
-struct definition:
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_barrierattr_t = 
-# (placeholder) | `-ElaboratedType 0x5c1a90 'union pthread_barrierattr_t' sugar
-
+alias pthread_barrierattr_t = union
+# Unhandled tokens:  pthread_barrierattr_t
 
 # (placeholder) |-FunctionDecl 0x5c1c20 </usr/include/stdlib.h:402:1, /usr/include/x86_64-linux-gnu/sys/cdefs.h:79:54> /usr/include/stdlib.h:402:17 random 'long (void)' extern
 
@@ -1374,6 +1362,7 @@ alias pthread_barrierattr_t =
 
 # (placeholder) | `-NonNullAttr 0x5c24f0 <line:384:57, /usr/include/stdlib.h:416:63> 1
 struct random_data:
+
 	var fptr: UnsafePointer[Int32]
 
 	var rptr: UnsafePointer[Int32]
@@ -1507,6 +1496,7 @@ struct random_data:
 
 # (placeholder) | `-NonNullAttr 0x5c82e8 <line:384:57, /usr/include/stdlib.h:485:74> 1
 struct drand48_data:
+
 	var __x: SIMD[UInt16.dtype, 3]
 
 	var __old_x: SIMD[UInt16.dtype, 3]
@@ -7425,15 +7415,14 @@ alias double_t = Float64
 # (placeholder) |     `-IntegerLiteral 0x660c70 <col:20> 'int' 4
 
 alias ptrdiff_t = Int64
-struct _Anonymous_line_19_9:
+struct Anonymous_line_19_9:
+
 	alias __clang_max_align_nonce1: Int128 = 8
 
 	alias __clang_max_align_nonce2: Float64 = 16
 
 
-alias max_align_t = 
-# (placeholder) | `-ElaboratedType 0x6610b0 'struct max_align_t' sugar
-
+alias max_align_t = Anonymous_line_19_9
 
 alias uint8_t = 
 # (placeholder) | `-TypedefType 0x56b590 '__uint8_t' sugar
@@ -7467,7 +7456,7 @@ alias int_least8_t =
 # (placeholder) |   `-TypedefType 0x56b500 '__int8_t' sugar
 
 # (placeholder) |     |-Typedef 0x56b190 '__int8_t'
-signedchar
+Int8
 
 alias int_least16_t = 
 # (placeholder) | `-TypedefType 0x66dc20 '__int_least16_t' sugar
@@ -7539,7 +7528,7 @@ alias uint_least64_t =
 # (placeholder) |     |-Typedef 0x56b4a0 '__uint64_t'
 UInt64
 
-alias int_fast8_t = signedchar
+alias int_fast8_t = Int8
 
 alias int_fast16_t = Int64
 
@@ -7909,13 +7898,12 @@ alias mjtByte = UInt8
 
 # (placeholder) |       `-TextComment 0x7d7980 <col:37, col:60> Text=" number of disable flags"
 
-alias mjtDisableBit = 
-# (placeholder) | |-ElaboratedType 0x67b0a0 'enum mjtDisableBit_' sugar
-
+alias mjtDisableBit = 'enum mjtDisableBit_' sugar
 # (placeholder) | | `-EnumType 0x679e60 'enum mjtDisableBit_'
 
 # (placeholder) | |   `-Enum 0x679db8 'mjtDisableBit_'
 
+# Unhandled tokens:  mjtDisableBit_
 # (placeholder) | `-FullComment 0x7d7ab0 <line:48:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x7d7a80 <col:3, col:100>
@@ -8050,13 +8038,12 @@ alias mjtDisableBit =
 
 # (placeholder) |       `-TextComment 0x7d8020 <col:37, col:59> Text=" number of enable flags"
 
-alias mjtEnableBit = 
-# (placeholder) | `-ElaboratedType 0x67b920 'enum mjtEnableBit_' sugar
-
+alias mjtEnableBit = 'enum mjtEnableBit_' sugar
 # (placeholder) |   `-EnumType 0x67b210 'enum mjtEnableBit_'
 
 # (placeholder) |     `-Enum 0x67b168 'mjtEnableBit_'
 
+# Unhandled tokens:  mjtEnableBit_
 # TypedefDeclNode Unhandled tokens: mjtEnableBit_':'enum 
 
 # (placeholder) |-EnumDecl 0x67b9e8 <line:86:9, line:91:1> line:86:14 mjtJoint_
@@ -8099,13 +8086,12 @@ alias mjtEnableBit =
 
 # (placeholder) |       `-TextComment 0x7d8360 <col:37, col:85> Text=" rotation angle (rad) around body-fixed axis  (1)"
 
-alias mjtJoint = 
-# (placeholder) | `-ElaboratedType 0x67bd40 'enum mjtJoint_' sugar
-
+alias mjtJoint = 'enum mjtJoint_' sugar
 # (placeholder) |   `-EnumType 0x67ba90 'enum mjtJoint_'
 
 # (placeholder) |     `-Enum 0x67b9e8 'mjtJoint_'
 
+# Unhandled tokens:  mjtJoint_
 # TypedefDeclNode Unhandled tokens: mjtJoint_':'enum 
 
 # (placeholder) |-EnumDecl 0x67be08 <line:94:9, line:120:1> line:94:14 mjtGeom_
@@ -8288,13 +8274,12 @@ alias mjtJoint =
 
 # (placeholder) |       `-TextComment 0x7d93e0 <col:37, col:54> Text=" missing geom type"
 
-alias mjtGeom = 
-# (placeholder) | `-ElaboratedType 0x67ca20 'enum mjtGeom_' sugar
-
+alias mjtGeom = 'enum mjtGeom_' sugar
 # (placeholder) |   `-EnumType 0x67beb0 'enum mjtGeom_'
 
 # (placeholder) |     `-Enum 0x67be08 'mjtGeom_'
 
+# Unhandled tokens:  mjtGeom_
 # TypedefDeclNode Unhandled tokens: mjtGeom_':'enum 
 
 # (placeholder) |-EnumDecl 0x67cae8 <line:123:9, line:129:1> line:123:14 mjtCamLight_
@@ -8345,13 +8330,12 @@ alias mjtGeom =
 
 # (placeholder) |       `-TextComment 0x7d97f0 <col:37, col:85> Text=" pos fixed in body, rot tracks target subtree com"
 
-alias mjtCamLight = 
-# (placeholder) | `-ElaboratedType 0x680ee0 'enum mjtCamLight_' sugar
-
+alias mjtCamLight = 'enum mjtCamLight_' sugar
 # (placeholder) |   `-EnumType 0x67cb90 'enum mjtCamLight_'
 
 # (placeholder) |     `-Enum 0x67cae8 'mjtCamLight_'
 
+# Unhandled tokens:  mjtCamLight_
 # TypedefDeclNode Unhandled tokens: mjtCamLight_':'enum 
 
 # (placeholder) |-EnumDecl 0x680fa8 <line:132:9, line:136:1> line:132:14 mjtTexture_
@@ -8386,13 +8370,12 @@ alias mjtCamLight =
 
 # (placeholder) |       `-TextComment 0x7d9a60 <col:37, col:64> Text=" cube texture used as skybox"
 
-alias mjtTexture = 
-# (placeholder) | `-ElaboratedType 0x681260 'enum mjtTexture_' sugar
-
+alias mjtTexture = 'enum mjtTexture_' sugar
 # (placeholder) |   `-EnumType 0x681050 'enum mjtTexture_'
 
 # (placeholder) |     `-Enum 0x680fa8 'mjtTexture_'
 
+# Unhandled tokens:  mjtTexture_
 # TypedefDeclNode Unhandled tokens: mjtTexture_':'enum 
 
 # (placeholder) |-EnumDecl 0x681328 <line:139:9, line:151:1> line:139:14 mjtTextureRole_
@@ -8485,13 +8468,12 @@ alias mjtTexture =
 
 # (placeholder) | `-EnumConstantDecl 0x681958 <line:150:3> col:3 referenced mjNTEXROLE 'int'
 
-alias mjtTextureRole = 
-# (placeholder) | `-ElaboratedType 0x6819b0 'enum mjtTextureRole_' sugar
-
+alias mjtTextureRole = 'enum mjtTextureRole_' sugar
 # (placeholder) |   `-EnumType 0x6813d0 'enum mjtTextureRole_'
 
 # (placeholder) |     `-Enum 0x681328 'mjtTextureRole_'
 
+# Unhandled tokens:  mjtTextureRole_
 # TypedefDeclNode Unhandled tokens: mjtTextureRole_':'enum 
 
 # (placeholder) |-EnumDecl 0x681a78 <line:154:9, line:159:1> line:154:14 mjtIntegrator_
@@ -8534,13 +8516,12 @@ alias mjtTextureRole =
 
 # (placeholder) |       `-TextComment 0x7da5c0 <col:37, col:76> Text=" implicit in velocity, no rne derivative"
 
-alias mjtIntegrator = 
-# (placeholder) | `-ElaboratedType 0x681df0 'enum mjtIntegrator_' sugar
-
+alias mjtIntegrator = 'enum mjtIntegrator_' sugar
 # (placeholder) |   `-EnumType 0x681b20 'enum mjtIntegrator_'
 
 # (placeholder) |     `-Enum 0x681a78 'mjtIntegrator_'
 
+# Unhandled tokens:  mjtIntegrator_
 # TypedefDeclNode Unhandled tokens: mjtIntegrator_':'enum 
 
 # (placeholder) |-EnumDecl 0x681eb8 <line:162:9, line:165:1> line:162:14 mjtCone_
@@ -8567,13 +8548,12 @@ alias mjtIntegrator =
 
 # (placeholder) |       `-TextComment 0x7da760 <col:37, col:45> Text=" elliptic"
 
-alias mjtCone = 
-# (placeholder) | `-ElaboratedType 0x6820f0 'enum mjtCone_' sugar
-
+alias mjtCone = 'enum mjtCone_' sugar
 # (placeholder) |   `-EnumType 0x681f60 'enum mjtCone_'
 
 # (placeholder) |     `-Enum 0x681eb8 'mjtCone_'
 
+# Unhandled tokens:  mjtCone_
 # TypedefDeclNode Unhandled tokens: mjtCone_':'enum 
 
 # (placeholder) |-EnumDecl 0x6821b8 <line:168:9, line:172:1> line:168:14 mjtJacobian_
@@ -8612,13 +8592,12 @@ alias mjtCone =
 
 # (placeholder) |       `-TextComment 0x7daa10 <col:50, col:69> Text="60, sparse otherwise"
 
-alias mjtJacobian = 
-# (placeholder) | `-ElaboratedType 0x682470 'enum mjtJacobian_' sugar
-
+alias mjtJacobian = 'enum mjtJacobian_' sugar
 # (placeholder) |   `-EnumType 0x682260 'enum mjtJacobian_'
 
 # (placeholder) |     `-Enum 0x6821b8 'mjtJacobian_'
 
+# Unhandled tokens:  mjtJacobian_
 # TypedefDeclNode Unhandled tokens: mjtJacobian_':'enum 
 
 # (placeholder) |-EnumDecl 0x682538 <line:175:9, line:179:1> line:175:14 mjtSolver_
@@ -8653,13 +8632,12 @@ alias mjtJacobian =
 
 # (placeholder) |       `-TextComment 0x7daca0 <col:37, col:52> Text=" Newton (primal)"
 
-alias mjtSolver = 
-# (placeholder) | `-ElaboratedType 0x6827f0 'enum mjtSolver_' sugar
-
+alias mjtSolver = 'enum mjtSolver_' sugar
 # (placeholder) |   `-EnumType 0x6825e0 'enum mjtSolver_'
 
 # (placeholder) |     `-Enum 0x682538 'mjtSolver_'
 
+# Unhandled tokens:  mjtSolver_
 # TypedefDeclNode Unhandled tokens: mjtSolver_':'enum 
 
 # (placeholder) |-EnumDecl 0x6828b8 <line:182:9, line:189:1> line:182:14 mjtEq_
@@ -8718,13 +8696,12 @@ alias mjtSolver =
 
 # (placeholder) |       `-TextComment 0x7db180 <col:37, col:77> Text=" unsupported, will cause an error if used"
 
-alias mjtEq = 
-# (placeholder) | `-ElaboratedType 0x682d00 'enum mjtEq_' sugar
-
+alias mjtEq = 'enum mjtEq_' sugar
 # (placeholder) |   `-EnumType 0x682960 'enum mjtEq_'
 
 # (placeholder) |     `-Enum 0x6828b8 'mjtEq_'
 
+# Unhandled tokens:  mjtEq_
 # TypedefDeclNode Unhandled tokens: mjtEq_':'enum 
 
 # (placeholder) |-EnumDecl 0x682dc8 <line:192:9, line:199:1> line:192:14 mjtWrap_
@@ -8783,13 +8760,12 @@ alias mjtEq =
 
 # (placeholder) |       `-TextComment 0x7db660 <col:37, col:68> Text=" wrap around (infinite) cylinder"
 
-alias mjtWrap = 
-# (placeholder) | `-ElaboratedType 0x683200 'enum mjtWrap_' sugar
-
+alias mjtWrap = 'enum mjtWrap_' sugar
 # (placeholder) |   `-EnumType 0x682e70 'enum mjtWrap_'
 
 # (placeholder) |     `-Enum 0x682dc8 'mjtWrap_'
 
+# Unhandled tokens:  mjtWrap_
 # TypedefDeclNode Unhandled tokens: mjtWrap_':'enum 
 
 # (placeholder) |-EnumDecl 0x6832c8 <line:202:9, line:211:1> line:202:14 mjtTrn_
@@ -8862,13 +8838,12 @@ alias mjtWrap =
 
 # (placeholder) |       `-TextComment 0x7dbc10 <col:37, col:64> Text=" undefined transmission type"
 
-alias mjtTrn = 
-# (placeholder) | `-ElaboratedType 0x6837c0 'enum mjtTrn_' sugar
-
+alias mjtTrn = 'enum mjtTrn_' sugar
 # (placeholder) |   `-EnumType 0x683370 'enum mjtTrn_'
 
 # (placeholder) |     `-Enum 0x6832c8 'mjtTrn_'
 
+# Unhandled tokens:  mjtTrn_
 # TypedefDeclNode Unhandled tokens: mjtTrn_':'enum 
 
 # (placeholder) |-EnumDecl 0x683888 <line:214:9, line:221:1> line:214:14 mjtDyn_
@@ -8927,13 +8902,12 @@ alias mjtTrn =
 
 # (placeholder) |       `-TextComment 0x7dc0f0 <col:37, col:63> Text=" user-defined dynamics type"
 
-alias mjtDyn = 
-# (placeholder) | `-ElaboratedType 0x683cc0 'enum mjtDyn_' sugar
-
+alias mjtDyn = 'enum mjtDyn_' sugar
 # (placeholder) |   `-EnumType 0x683930 'enum mjtDyn_'
 
 # (placeholder) |     `-Enum 0x683888 'mjtDyn_'
 
+# Unhandled tokens:  mjtDyn_
 # TypedefDeclNode Unhandled tokens: mjtDyn_':'enum 
 
 # (placeholder) |-EnumDecl 0x684eb0 <line:224:9, line:229:1> line:224:14 mjtGain_
@@ -8976,13 +8950,12 @@ alias mjtDyn =
 
 # (placeholder) |       `-TextComment 0x7dc430 <col:37, col:59> Text=" user-defined gain type"
 
-alias mjtGain = 
-# (placeholder) | `-ElaboratedType 0x6851e0 'enum mjtGain_' sugar
-
+alias mjtGain = 'enum mjtGain_' sugar
 # (placeholder) |   `-EnumType 0x684f50 'enum mjtGain_'
 
 # (placeholder) |     `-Enum 0x684eb0 'mjtGain_'
 
+# Unhandled tokens:  mjtGain_
 # TypedefDeclNode Unhandled tokens: mjtGain_':'enum 
 
 # (placeholder) |-EnumDecl 0x6852a8 <line:232:9, line:237:1> line:232:14 mjtBias_
@@ -9025,13 +8998,12 @@ alias mjtGain =
 
 # (placeholder) |       `-TextComment 0x7dc770 <col:37, col:59> Text=" user-defined bias type"
 
-alias mjtBias = 
-# (placeholder) | `-ElaboratedType 0x6855e0 'enum mjtBias_' sugar
-
+alias mjtBias = 'enum mjtBias_' sugar
 # (placeholder) |   `-EnumType 0x685350 'enum mjtBias_'
 
 # (placeholder) |     `-Enum 0x6852a8 'mjtBias_'
 
+# Unhandled tokens:  mjtBias_
 # TypedefDeclNode Unhandled tokens: mjtBias_':'enum 
 
 # (placeholder) |-EnumDecl 0x6856a8 <line:240:9, line:275:1> line:240:14 mjtObj_
@@ -9288,13 +9260,12 @@ alias mjtBias =
 
 # (placeholder) |       `-TextComment 0x7df000 <col:37, col:49> Text=" entire model"
 
-alias mjtObj = 
-# (placeholder) | `-ElaboratedType 0x686d60 'enum mjtObj_' sugar
-
+alias mjtObj = 'enum mjtObj_' sugar
 # (placeholder) |   `-EnumType 0x685750 'enum mjtObj_'
 
 # (placeholder) |     `-Enum 0x6856a8 'mjtObj_'
 
+# Unhandled tokens:  mjtObj_
 # TypedefDeclNode Unhandled tokens: mjtObj_':'enum 
 
 # (placeholder) |-EnumDecl 0x686e28 <line:278:9, line:287:1> line:278:14 mjtConstraint_
@@ -9369,13 +9340,12 @@ alias mjtObj =
 
 # (placeholder) |       `-TextComment 0x7df680 <col:37, col:79> Text=" frictional contact, elliptic friction cone"
 
-alias mjtConstraint = 
-# (placeholder) | `-ElaboratedType 0x687360 'enum mjtConstraint_' sugar
-
+alias mjtConstraint = 'enum mjtConstraint_' sugar
 # (placeholder) |   `-EnumType 0x686ed0 'enum mjtConstraint_'
 
 # (placeholder) |     `-Enum 0x686e28 'mjtConstraint_'
 
+# Unhandled tokens:  mjtConstraint_
 # TypedefDeclNode Unhandled tokens: mjtConstraint_':'enum 
 
 # (placeholder) |-EnumDecl 0x687b70 <line:290:9, line:296:1> line:290:14 mjtConstraintState_
@@ -9426,13 +9396,12 @@ alias mjtConstraint =
 
 # (placeholder) |       `-TextComment 0x7dfa90 <col:39, col:87> Text=" squared distance to cone cost (elliptic contact)"
 
-alias mjtConstraintState = 
-# (placeholder) | `-ElaboratedType 0x687f20 'enum mjtConstraintState_' sugar
-
+alias mjtConstraintState = 'enum mjtConstraintState_' sugar
 # (placeholder) |   `-EnumType 0x687c10 'enum mjtConstraintState_'
 
 # (placeholder) |     `-Enum 0x687b70 'mjtConstraintState_'
 
+# Unhandled tokens:  mjtConstraintState_
 # TypedefDeclNode Unhandled tokens: mjtConstraintState_':'enum 
 
 # (placeholder) |-EnumDecl 0x687fe8 <line:299:9, line:364:1> line:299:14 mjtSensor_
@@ -9803,13 +9772,12 @@ alias mjtConstraintState =
 
 # (placeholder) |       `-TextComment 0x7e3f60 <col:37, col:81> Text=" sensor data provided by mjcb_sensor callback"
 
-alias mjtSensor = 
-# (placeholder) | `-ElaboratedType 0x68b0a0 'enum mjtSensor_' sugar
-
+alias mjtSensor = 'enum mjtSensor_' sugar
 # (placeholder) |   `-EnumType 0x688090 'enum mjtSensor_'
 
 # (placeholder) |     `-Enum 0x687fe8 'mjtSensor_'
 
+# Unhandled tokens:  mjtSensor_
 # TypedefDeclNode Unhandled tokens: mjtSensor_':'enum 
 
 # (placeholder) |-EnumDecl 0x68b168 <line:367:9, line:372:1> line:367:14 mjtStage_
@@ -9852,13 +9820,12 @@ alias mjtSensor =
 
 # (placeholder) |       `-TextComment 0x7e42a0 <col:37, col:78> Text=" acceleration/force-dependent computations"
 
-alias mjtStage = 
-# (placeholder) | `-ElaboratedType 0x68b8c0 'enum mjtStage_' sugar
-
+alias mjtStage = 'enum mjtStage_' sugar
 # (placeholder) |   `-EnumType 0x68b630 'enum mjtStage_'
 
 # (placeholder) |     `-Enum 0x68b168 'mjtStage_'
 
+# Unhandled tokens:  mjtStage_
 # TypedefDeclNode Unhandled tokens: mjtStage_':'enum 
 
 # (placeholder) |-EnumDecl 0x68b988 <line:375:9, line:380:1> line:375:14 mjtDataType_
@@ -9901,13 +9868,12 @@ alias mjtStage =
 
 # (placeholder) |       `-TextComment 0x7e45e0 <col:37, col:52> Text=" unit quaternion"
 
-alias mjtDataType = 
-# (placeholder) | `-ElaboratedType 0x68bcc0 'enum mjtDataType_' sugar
-
+alias mjtDataType = 'enum mjtDataType_' sugar
 # (placeholder) |   `-EnumType 0x68ba30 'enum mjtDataType_'
 
 # (placeholder) |     `-Enum 0x68b988 'mjtDataType_'
 
+# Unhandled tokens:  mjtDataType_
 # TypedefDeclNode Unhandled tokens: mjtDataType_':'enum 
 
 # (placeholder) |-EnumDecl 0x68bd88 <line:383:9, line:389:1> line:383:14 mjtSameFrame_
@@ -9958,13 +9924,12 @@ alias mjtDataType =
 
 # (placeholder) |       `-TextComment 0x7e49f0 <col:37, col:85> Text=" frame orientation is same as inertia orientation"
 
-alias mjtSameFrame = 
-# (placeholder) | `-ElaboratedType 0x68c140 'enum mjtSameFrame_' sugar
-
+alias mjtSameFrame = 'enum mjtSameFrame_' sugar
 # (placeholder) |   `-EnumType 0x68be30 'enum mjtSameFrame_'
 
 # (placeholder) |     `-Enum 0x68bd88 'mjtSameFrame_'
 
+# Unhandled tokens:  mjtSameFrame_
 # TypedefDeclNode Unhandled tokens: mjtSameFrame_':'enum 
 
 # (placeholder) |-EnumDecl 0x68c208 <line:392:9, line:397:1> line:392:14 mjtLRMode_
@@ -10007,13 +9972,12 @@ alias mjtSameFrame =
 
 # (placeholder) |       `-TextComment 0x7e4d30 <col:37, col:58> Text=" process all actuators"
 
-alias mjtLRMode = 
-# (placeholder) | `-ElaboratedType 0x68c540 'enum mjtLRMode_' sugar
-
+alias mjtLRMode = 'enum mjtLRMode_' sugar
 # (placeholder) |   `-EnumType 0x68c2b0 'enum mjtLRMode_'
 
 # (placeholder) |     `-Enum 0x68c208 'mjtLRMode_'
 
+# Unhandled tokens:  mjtLRMode_
 # TypedefDeclNode Unhandled tokens: mjtLRMode_':'enum 
 
 # (placeholder) |-EnumDecl 0x68db90 <line:400:9, line:406:1> line:400:14 mjtFlexSelf_
@@ -10064,20 +10028,14 @@ alias mjtLRMode =
 
 # (placeholder) |       `-TextComment 0x7e5140 <col:37, col:77> Text=" choose between BVH and SAP automatically"
 
-alias mjtFlexSelf = 
-# (placeholder) | `-ElaboratedType 0x68df40 'enum mjtFlexSelf_' sugar
-
+alias mjtFlexSelf = 'enum mjtFlexSelf_' sugar
 # (placeholder) |   `-EnumType 0x68dc30 'enum mjtFlexSelf_'
 
 # (placeholder) |     `-Enum 0x68db90 'mjtFlexSelf_'
 
+# Unhandled tokens:  mjtFlexSelf_
 # TypedefDeclNode Unhandled tokens: mjtFlexSelf_':'enum 
 struct mjLROpt_:
-	# (placeholder) | |-FullComment 0x7e5270 <line:409:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x7e5240 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x7e5210 <col:3, col:100> Text="---------------------------------- mjLROpt -------------------------------------------------------"
 
 	var mode: Int32
 
@@ -10100,30 +10058,16 @@ struct mjLROpt_:
 	var tolrange: mjtNum
 
 
-alias mjLROpt = 
-# (placeholder) | `-ElaboratedType 0x68e720 'struct mjLROpt_' sugar
-mjLROpt_
+alias mjLROpt = 'struct mjLROpt_' sugarmjLROpt_
 # TypedefDeclNode Unhandled tokens: mjLROpt_':'struct 
 struct mjVFS_:
-	# (placeholder) | |-FullComment 0x7e5b60 <line:429:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x7e5b30 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x7e5b00 <col:3, col:100> Text="---------------------------------- mjVFS ---------------------------------------------------------"
 
 	var impl_: UnsafePointer[NoneType]
 
 
-alias mjVFS = 
-# (placeholder) | `-ElaboratedType 0x68e960 'struct mjVFS_' sugar
-mjVFS_
+alias mjVFS = 'struct mjVFS_' sugarmjVFS_
 # TypedefDeclNode Unhandled tokens: mjVFS_':'struct 
 struct mjOption_:
-	# (placeholder) | |-FullComment 0x7e5d20 <line:436:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x7e5cf0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x7e5cc0 <col:3, col:100> Text="---------------------------------- mjOption ------------------------------------------------------"
 
 	var timestep: mjtNum
 
@@ -10184,180 +10128,9 @@ struct mjOption_:
 	var sdf_iterations: Int32
 
 
-alias mjOption = 
-# (placeholder) | `-ElaboratedType 0x691cd0 'struct mjOption_' sugar
-mjOption_
+alias mjOption = 'struct mjOption_' sugarmjOption_
 # TypedefDeclNode Unhandled tokens: mjOption_':'struct 
-struct _mjVisual___Anonymous_line_552_3:
-	var fog: SIMD[Float32.dtype, 4]
-
-	var haze: SIMD[Float32.dtype, 4]
-
-	var force: SIMD[Float32.dtype, 4]
-
-	var inertia: SIMD[Float32.dtype, 4]
-
-	var joint: SIMD[Float32.dtype, 4]
-
-	var actuator: SIMD[Float32.dtype, 4]
-
-	var actuatornegative: SIMD[Float32.dtype, 4]
-
-	var actuatorpositive: SIMD[Float32.dtype, 4]
-
-	var com: SIMD[Float32.dtype, 4]
-
-	var camera: SIMD[Float32.dtype, 4]
-
-	var light: SIMD[Float32.dtype, 4]
-
-	var selectpoint: SIMD[Float32.dtype, 4]
-
-	var connect: SIMD[Float32.dtype, 4]
-
-	var contactpoint: SIMD[Float32.dtype, 4]
-
-	var contactforce: SIMD[Float32.dtype, 4]
-
-	var contactfriction: SIMD[Float32.dtype, 4]
-
-	var contacttorque: SIMD[Float32.dtype, 4]
-
-	var contactgap: SIMD[Float32.dtype, 4]
-
-	var rangefinder: SIMD[Float32.dtype, 4]
-
-	var constraint: SIMD[Float32.dtype, 4]
-
-	var slidercrank: SIMD[Float32.dtype, 4]
-
-	var crankbroken: SIMD[Float32.dtype, 4]
-
-	var frustum: SIMD[Float32.dtype, 4]
-
-	var bv: SIMD[Float32.dtype, 4]
-
-	var bvactive: SIMD[Float32.dtype, 4]
-
-
-struct _mjVisual___Anonymous_line_532_3:
-	var forcewidth: Float32
-
-	var contactwidth: Float32
-
-	var contactheight: Float32
-
-	var connect: Float32
-
-	var com: Float32
-
-	var camera: Float32
-
-	var light: Float32
-
-	var selectpoint: Float32
-
-	var jointlength: Float32
-
-	var jointwidth: Float32
-
-	var actuatorlength: Float32
-
-	var actuatorwidth: Float32
-
-	var framelength: Float32
-
-	var framewidth: Float32
-
-	var constraint: Float32
-
-	var slidercrank: Float32
-
-	var frustum: Float32
-
-
-struct _mjVisual___Anonymous_line_516_3:
-	var stiffness: Float32
-
-	var stiffnessrot: Float32
-
-	var force: Float32
-
-	var torque: Float32
-
-	var alpha: Float32
-
-	var fogstart: Float32
-
-	var fogend: Float32
-
-	var znear: Float32
-
-	var zfar: Float32
-
-	var haze: Float32
-
-	var shadowclip: Float32
-
-	var shadowscale: Float32
-
-	var actuatortendon: Float32
-
-
-struct _mjVisual___Anonymous_line_509_3:
-	var ambient: SIMD[Float32.dtype, 3]
-
-	var diffuse: SIMD[Float32.dtype, 3]
-
-	var specular: SIMD[Float32.dtype, 3]
-
-	var active: Int32
-
-
-struct _mjVisual___Anonymous_line_501_3:
-	var shadowsize: Int32
-
-	var offsamples: Int32
-
-	var numslices: Int32
-
-	var numstacks: Int32
-
-	var numquads: Int32
-
-
-struct _mjVisual___Anonymous_line_486_3:
-	var orthographic: Int32
-
-	var fovy: Float32
-
-	var ipd: Float32
-
-	var azimuth: Float32
-
-	var elevation: Float32
-
-	var linewidth: Float32
-
-	var glow: Float32
-
-	var realtime: Float32
-
-	var offwidth: Int32
-
-	var offheight: Int32
-
-	var ellipsoidinertia: Int32
-
-	var bvactive: Int32
-
-
 struct mjVisual_:
-	# (placeholder) | |-FullComment 0x7e7580 <line:483:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x7e7550 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x7e7520 <col:3, col:100> Text="---------------------------------- mjVisual ------------------------------------------------------"
 
 	var `global`: _mjVisual___Anonymous_line_486_3
 
@@ -10372,16 +10145,9 @@ struct mjVisual_:
 	var rgba: _mjVisual___Anonymous_line_552_3
 
 
-alias mjVisual = 
-# (placeholder) | `-ElaboratedType 0x697800 'struct mjVisual_' sugar
-mjVisual_
+alias mjVisual = 'struct mjVisual_' sugarmjVisual_
 # TypedefDeclNode Unhandled tokens: mjVisual_':'struct 
 struct mjStatistic_:
-	# (placeholder) | |-FullComment 0x7eb440 <line:583:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x7eb410 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x7eb3e0 <col:3, col:100> Text="---------------------------------- mjStatistic ---------------------------------------------------"
 
 	var meaninertia: mjtNum
 
@@ -10394,16 +10160,9 @@ struct mjStatistic_:
 	var center: SIMD[mjtNum.dtype, 3]
 
 
-alias mjStatistic = 
-# (placeholder) | `-ElaboratedType 0x697cd0 'struct mjStatistic_' sugar
-mjStatistic_
+alias mjStatistic = 'struct mjStatistic_' sugarmjStatistic_
 # TypedefDeclNode Unhandled tokens: mjStatistic_':'struct 
 struct mjModel_:
-	# (placeholder) | |-FullComment 0x7eb920 <line:595:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x7eb8f0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x7eb8c0 <col:3, col:100> Text="---------------------------------- mjModel -------------------------------------------------------"
 
 	var nq: Int32
 
@@ -11386,9 +11145,7 @@ struct mjModel_:
 	var signature: uint64_t
 
 
-alias mjModel = 
-# (placeholder) | `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-mjModel_
+alias mjModel = 'struct mjModel_' sugarmjModel_
 # TypedefDeclNode Unhandled tokens: mjModel_':'struct 
 
 # (placeholder) |-EnumDecl 0x6b9d08 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjthread.h:20:9, line:24:1> line:20:14 mjtTaskStatus_
@@ -11423,13 +11180,12 @@ mjModel_
 
 # (placeholder) |       `-TextComment 0x80cda0 <col:34, col:53> Text=" completed execution"
 
-alias mjtTaskStatus = 
-# (placeholder) | `-ElaboratedType 0x6b9fc0 'enum mjtTaskStatus_' sugar
-
+alias mjtTaskStatus = 'enum mjtTaskStatus_' sugar
 # (placeholder) |   `-EnumType 0x6b9db0 'enum mjtTaskStatus_'
 
 # (placeholder) |     `-Enum 0x6b9d08 'mjtTaskStatus_'
 
+# Unhandled tokens:  mjtTaskStatus_
 # TypedefDeclNode Unhandled tokens: mjtTaskStatus_':'enum 
 
 alias mjfTask = UnsafePointer[
@@ -11448,20 +11204,14 @@ UnsafePointer[NoneType]
 
 # TypedefDeclNode Unhandled tokens: *(*)(void 
 struct mjThreadPool_:
-	# (placeholder) | |-FullComment 0x80cfa0 <line:29:3, col:45>
-
-	# (placeholder) | | `-ParagraphComment 0x80cf70 <col:3, col:45>
-
-	# (placeholder) | |   `-TextComment 0x80cf40 <col:3, col:45> Text=" An opaque type representing a thread pool."
 
 	var nworker: Int32
 
 
-alias mjThreadPool = 
-# (placeholder) | `-ElaboratedType 0x6ba3f0 'struct mjThreadPool_' sugar
-mjThreadPool_
+alias mjThreadPool = 'struct mjThreadPool_' sugarmjThreadPool_
 # TypedefDeclNode Unhandled tokens: mjThreadPool_':'struct 
 struct mjTask_:
+
 	var func: mjfTask
 
 	var args: UnsafePointer[NoneType]
@@ -11469,9 +11219,7 @@ struct mjTask_:
 	var status: volatile int
 
 
-alias mjTask = 
-# (placeholder) | `-ElaboratedType 0x6b4530 'struct mjTask_' sugar
-mjTask_
+alias mjTask = 'struct mjTask_' sugarmjTask_
 # TypedefDeclNode Unhandled tokens: mjTask_':'struct 
 
 # (placeholder) |-EnumDecl 0x6b4638 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjdata.h:27:9, line:51:1> line:27:14 mjtState_
@@ -11834,13 +11582,12 @@ mjTask_
 
 # (placeholder) |       `-TextComment 0x80e210 <col:5, col:62> Text=" convenience values for commonly used state specifications"
 
-alias mjtState = 
-# (placeholder) | |-ElaboratedType 0x6b5a60 'enum mjtState_' sugar
-
+alias mjtState = 'enum mjtState_' sugar
 # (placeholder) | | `-EnumType 0x6b46e0 'enum mjtState_'
 
 # (placeholder) | |   `-Enum 0x6b4638 'mjtState_'
 
+# Unhandled tokens:  mjtState_
 # (placeholder) | `-FullComment 0x80e340 <line:25:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x80e310 <col:3, col:100>
@@ -11929,13 +11676,12 @@ alias mjtState =
 
 # (placeholder) |       `-TextComment 0x80ea30 <col:32, col:50> Text=" number of warnings"
 
-alias mjtWarning = 
-# (placeholder) | `-ElaboratedType 0x6b60e0 'enum mjtWarning_' sugar
-
+alias mjtWarning = 'enum mjtWarning_' sugar
 # (placeholder) |   `-EnumType 0x6b5bd0 'enum mjtWarning_'
 
 # (placeholder) |     `-Enum 0x6b5b28 'mjtWarning_'
 
+# Unhandled tokens:  mjtWarning_
 # TypedefDeclNode Unhandled tokens: mjtWarning_':'enum 
 
 # (placeholder) |-EnumDecl 0x6c0780 <line:68:9, line:93:1> line:68:14 mjtTimer_
@@ -12074,20 +11820,14 @@ alias mjtWarning =
 
 # (placeholder) |       `-TextComment 0x80f730 <col:32, col:48> Text=" number of timers"
 
-alias mjtTimer = 
-# (placeholder) | `-ElaboratedType 0x6c1170 'enum mjtTimer_' sugar
-
+alias mjtTimer = 'enum mjtTimer_' sugar
 # (placeholder) |   `-EnumType 0x6c0820 'enum mjtTimer_'
 
 # (placeholder) |     `-Enum 0x6c0780 'mjtTimer_'
 
+# Unhandled tokens:  mjtTimer_
 # TypedefDeclNode Unhandled tokens: mjtTimer_':'enum 
 struct mjContact_:
-	# (placeholder) | |-FullComment 0x80f860 <line:96:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x80f830 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x80f800 <col:3, col:100> Text="---------------------------------- mjContact -----------------------------------------------------"
 
 	var dist: mjtNum
 
@@ -12128,37 +11868,28 @@ struct mjContact_:
 	var efc_address: Int32
 
 
-alias mjContact = 
-# (placeholder) | `-ElaboratedType 0x6c2370 'struct mjContact_' sugar
-mjContact_
+alias mjContact = 'struct mjContact_' sugarmjContact_
 # TypedefDeclNode Unhandled tokens: mjContact_':'struct 
 struct mjWarningStat_:
-	# (placeholder) | |-FullComment 0x810900 <line:133:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x8108d0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x8108a0 <col:3, col:100> Text="---------------------------------- diagnostics ---------------------------------------------------"
 
 	var lastinfo: Int32
 
 	var number: Int32
 
 
-alias mjWarningStat = 
-# (placeholder) | `-ElaboratedType 0x6c2640 'struct mjWarningStat_' sugar
-mjWarningStat_
+alias mjWarningStat = 'struct mjWarningStat_' sugarmjWarningStat_
 # TypedefDeclNode Unhandled tokens: mjWarningStat_':'struct 
 struct mjTimerStat_:
+
 	var duration: mjtNum
 
 	var number: Int32
 
 
-alias mjTimerStat = 
-# (placeholder) | `-ElaboratedType 0x6c3080 'struct mjTimerStat_' sugar
-mjTimerStat_
+alias mjTimerStat = 'struct mjTimerStat_' sugarmjTimerStat_
 # TypedefDeclNode Unhandled tokens: mjTimerStat_':'struct 
 struct mjSolverStat_:
+
 	var improvement: mjtNum
 
 	var gradient: mjtNum
@@ -12174,16 +11905,9 @@ struct mjSolverStat_:
 	var nupdate: Int32
 
 
-alias mjSolverStat = 
-# (placeholder) | `-ElaboratedType 0x6c35f0 'struct mjSolverStat_' sugar
-mjSolverStat_
+alias mjSolverStat = 'struct mjSolverStat_' sugarmjSolverStat_
 # TypedefDeclNode Unhandled tokens: mjSolverStat_':'struct 
 struct mjData_:
-	# (placeholder) | |-FullComment 0x8112c0 <line:161:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x811290 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x811260 <col:3, col:100> Text="---------------------------------- mjData --------------------------------------------------------"
 
 	var narena: size_t
 
@@ -12538,9 +12262,7 @@ struct mjData_:
 	var signature: uint64_t
 
 
-alias mjData = 
-# (placeholder) | `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-mjData_
+alias mjData = 'struct mjData_' sugarmjData_
 # TypedefDeclNode Unhandled tokens: mjData_':'struct 
 
 alias mjfGeneric = UnsafePointer[
@@ -12553,16 +12275,12 @@ NoneTypeUnsafePointer[
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-mjModel_]
+'struct mjModel_' sugarmjModel_]
 UnsafePointer[
 # (placeholder) | |       `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |         |-Typedef 0x6d0860 'mjData'
-
-# (placeholder) | |         `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-mjData_]
+'struct mjData_' sugarmjData_]
 ]
 
 # (placeholder) | `-FullComment 0x81a330 <line:454:3, col:26>
@@ -12583,16 +12301,12 @@ Int32UnsafePointer[
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-mjModel_]
+'struct mjModel_' sugarmjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
-
-# (placeholder) | |     |   `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-mjData_]
+'struct mjData_' sugarmjData_]
 Int32Int32]
 
 # (placeholder) | `-FullComment 0x81a400 <line:457:3, col:41>
@@ -12613,16 +12327,12 @@ NoneTypeUnsafePointer[
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-mjModel_]
+'struct mjModel_' sugarmjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
-
-# (placeholder) | |     |   `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-mjData_]
+'struct mjData_' sugarmjData_]
 Int32]
 
 # (placeholder) | `-FullComment 0x81a4d0 <line:460:3, col:20>
@@ -12664,18 +12374,14 @@ Float64UnsafePointer[
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-mjModel_]
+'struct mjModel_' sugarmjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6d0860 'mjData'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-mjData_]
+'struct mjData_' sugarmjData_]
 Int32]
 
 # (placeholder) | `-FullComment 0x81a670 <line:466:3, col:32>
@@ -12696,25 +12402,19 @@ Int32UnsafePointer[
 # (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6b9bd0 'struct mjModel_' sugar
-mjModel_]
+'struct mjModel_' sugarmjModel_]
 UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
 
 # (placeholder) | |     |   `-TypedefType 0x6d0a10 'mjData' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6d0860 'mjData'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6d0810 'struct mjData_' sugar
-mjData_]
+'struct mjData_' sugarmjData_]
 UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6cef00 'mjContact' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6c23c0 'mjContact'
-
-# (placeholder) | |     |   `-ElaboratedType 0x6c2370 'struct mjContact_' sugar
-mjContact_]
+'struct mjContact_' sugarmjContact_]
 Int32Int32
 # (placeholder) | |     `-TypedefType 0x68e310 'mjtNum' sugar
 
@@ -12793,13 +12493,12 @@ Float64]
 
 # (placeholder) |       `-TextComment 0x81aaf0 <col:37, col:58> Text=" select all categories"
 
-alias mjtCatBit = 
-# (placeholder) | |-ElaboratedType 0x6d45b0 'enum mjtCatBit_' sugar
-
+alias mjtCatBit = 'enum mjtCatBit_' sugar
 # (placeholder) | | `-EnumType 0x6d4260 'enum mjtCatBit_'
 
 # (placeholder) | |   `-Enum 0x6d41b8 'mjtCatBit_'
 
+# Unhandled tokens:  mjtCatBit_
 # (placeholder) | `-FullComment 0x81ac20 <line:31:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x81abf0 <col:3, col:100>
@@ -12872,13 +12571,12 @@ alias mjtCatBit =
 
 # (placeholder) |       `-TextComment 0x81b170 <col:37, col:46> Text=" selection"
 
-alias mjtMouse = 
-# (placeholder) | `-ElaboratedType 0x6e3140 'enum mjtMouse_' sugar
-
+alias mjtMouse = 'enum mjtMouse_' sugar
 # (placeholder) |   `-EnumType 0x6d4720 'enum mjtMouse_'
 
 # (placeholder) |     `-Enum 0x6d4678 'mjtMouse_'
 
+# Unhandled tokens:  mjtMouse_
 # TypedefDeclNode Unhandled tokens: mjtMouse_':'enum 
 
 # (placeholder) |-EnumDecl 0x6e3208 <line:52:9, line:55:1> line:52:14 mjtPertBit_
@@ -12911,13 +12609,12 @@ alias mjtMouse =
 
 # (placeholder) |       `-TextComment 0x81b310 <col:37, col:45> Text=" rotation"
 
-alias mjtPertBit = 
-# (placeholder) | `-ElaboratedType 0x6e3480 'enum mjtPertBit_' sugar
-
+alias mjtPertBit = 'enum mjtPertBit_' sugar
 # (placeholder) |   `-EnumType 0x6e32b0 'enum mjtPertBit_'
 
 # (placeholder) |     `-Enum 0x6e3208 'mjtPertBit_'
 
+# Unhandled tokens:  mjtPertBit_
 # TypedefDeclNode Unhandled tokens: mjtPertBit_':'enum 
 
 # (placeholder) |-EnumDecl 0x6e3548 <line:58:9, line:63:1> line:58:14 mjtCamera_
@@ -12960,13 +12657,12 @@ alias mjtPertBit =
 
 # (placeholder) |       `-TextComment 0x81b650 <col:37, col:82> Text=" user is responsible for setting OpenGL camera"
 
-alias mjtCamera = 
-# (placeholder) | `-ElaboratedType 0x6e3880 'enum mjtCamera_' sugar
-
+alias mjtCamera = 'enum mjtCamera_' sugar
 # (placeholder) |   `-EnumType 0x6e35f0 'enum mjtCamera_'
 
 # (placeholder) |     `-Enum 0x6e3548 'mjtCamera_'
 
+# Unhandled tokens:  mjtCamera_
 # TypedefDeclNode Unhandled tokens: mjtCamera_':'enum 
 
 # (placeholder) |-EnumDecl 0x6e3948 <line:66:9, line:86:1> line:66:14 mjtLabel_
@@ -13121,13 +12817,12 @@ alias mjtCamera =
 
 # (placeholder) |       `-TextComment 0x81c520 <col:37, col:58> Text=" number of label types"
 
-alias mjtLabel = 
-# (placeholder) | `-ElaboratedType 0x6e4380 'enum mjtLabel_' sugar
-
+alias mjtLabel = 'enum mjtLabel_' sugar
 # (placeholder) |   `-EnumType 0x6e39f0 'enum mjtLabel_'
 
 # (placeholder) |     `-Enum 0x6e3948 'mjtLabel_'
 
+# Unhandled tokens:  mjtLabel_
 # TypedefDeclNode Unhandled tokens: mjtLabel_':'enum 
 
 # (placeholder) |-EnumDecl 0x6e4448 <line:89:9, line:100:1> line:89:14 mjtFrame_
@@ -13210,13 +12905,12 @@ alias mjtLabel =
 
 # (placeholder) |       `-TextComment 0x81cc70 <col:37, col:67> Text=" number of visualization frames"
 
-alias mjtFrame = 
-# (placeholder) | `-ElaboratedType 0x6e4a00 'enum mjtFrame_' sugar
-
+alias mjtFrame = 'enum mjtFrame_' sugar
 # (placeholder) |   `-EnumType 0x6e44f0 'enum mjtFrame_'
 
 # (placeholder) |     `-Enum 0x6e4448 'mjtFrame_'
 
+# Unhandled tokens:  mjtFrame_
 # TypedefDeclNode Unhandled tokens: mjtFrame_':'enum 
 
 # (placeholder) |-EnumDecl 0x6e4ac8 <line:103:9, line:138:1> line:103:14 mjtVisFlag_
@@ -13491,13 +13185,12 @@ alias mjtFrame =
 
 # (placeholder) |       `-TextComment 0x81e770 <col:37, col:66> Text=" number of visualization flags"
 
-alias mjtVisFlag = 
-# (placeholder) | `-ElaboratedType 0x6e5d90 'enum mjtVisFlag_' sugar
-
+alias mjtVisFlag = 'enum mjtVisFlag_' sugar
 # (placeholder) |   `-EnumType 0x6e4b70 'enum mjtVisFlag_'
 
 # (placeholder) |     `-Enum 0x6e4ac8 'mjtVisFlag_'
 
+# Unhandled tokens:  mjtVisFlag_
 # TypedefDeclNode Unhandled tokens: mjtVisFlag_':'enum 
 
 # (placeholder) |-EnumDecl 0x6e5e58 <line:141:9, line:154:1> line:141:14 mjtRndFlag_
@@ -13596,13 +13289,12 @@ alias mjtVisFlag =
 
 # (placeholder) |       `-TextComment 0x81f060 <col:37, col:62> Text=" number of rendering flags"
 
-alias mjtRndFlag = 
-# (placeholder) | `-ElaboratedType 0x6e6510 'enum mjtRndFlag_' sugar
-
+alias mjtRndFlag = 'enum mjtRndFlag_' sugar
 # (placeholder) |   `-EnumType 0x6e5f00 'enum mjtRndFlag_'
 
 # (placeholder) |     `-Enum 0x6e5e58 'mjtRndFlag_'
 
+# Unhandled tokens:  mjtRndFlag_
 # TypedefDeclNode Unhandled tokens: mjtRndFlag_':'enum 
 
 # (placeholder) |-EnumDecl 0x6e65d8 <line:157:9, line:161:1> line:157:14 mjtStereo_
@@ -13637,20 +13329,14 @@ alias mjtRndFlag =
 
 # (placeholder) |       `-TextComment 0x81f2d0 <col:37, col:49> Text=" side-by-side"
 
-alias mjtStereo = 
-# (placeholder) | `-ElaboratedType 0x6e6890 'enum mjtStereo_' sugar
-
+alias mjtStereo = 'enum mjtStereo_' sugar
 # (placeholder) |   `-EnumType 0x6e6680 'enum mjtStereo_'
 
 # (placeholder) |     `-Enum 0x6e65d8 'mjtStereo_'
 
+# Unhandled tokens:  mjtStereo_
 # TypedefDeclNode Unhandled tokens: mjtStereo_':'enum 
 struct mjvPerturb_:
-	# (placeholder) | |-FullComment 0x81f400 <line:164:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x81f3d0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x81f3a0 <col:3, col:100> Text="---------------------------------- mjvPerturb ----------------------------------------------------"
 
 	var select: Int32
 
@@ -13675,16 +13361,9 @@ struct mjvPerturb_:
 	var scale: mjtNum
 
 
-alias mjvPerturb = 
-# (placeholder) | `-ElaboratedType 0x6e8f40 'struct mjvPerturb_' sugar
-mjvPerturb_
+alias mjvPerturb = 'struct mjvPerturb_' sugarmjvPerturb_
 # TypedefDeclNode Unhandled tokens: mjvPerturb_':'struct 
 struct mjvCamera_:
-	# (placeholder) | |-FullComment 0x81fdc0 <line:182:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x81fd90 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x81fd60 <col:3, col:100> Text="---------------------------------- mjvCamera -----------------------------------------------------"
 
 	var type: Int32
 
@@ -13703,16 +13382,9 @@ struct mjvCamera_:
 	var orthographic: Int32
 
 
-alias mjvCamera = 
-# (placeholder) | `-ElaboratedType 0x6e9650 'struct mjvCamera_' sugar
-mjvCamera_
+alias mjvCamera = 'struct mjvCamera_' sugarmjvCamera_
 # TypedefDeclNode Unhandled tokens: mjvCamera_':'struct 
 struct mjvGLCamera_:
-	# (placeholder) | |-FullComment 0x820510 <line:202:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x8204e0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x8204b0 <col:3, col:100> Text="---------------------------------- mjvGLCamera ---------------------------------------------------"
 
 	var pos: SIMD[Float32.dtype, 3]
 
@@ -13735,16 +13407,9 @@ struct mjvGLCamera_:
 	var orthographic: Int32
 
 
-alias mjvGLCamera = 
-# (placeholder) | `-ElaboratedType 0x6e9f20 'struct mjvGLCamera_' sugar
-mjvGLCamera_
+alias mjvGLCamera = 'struct mjvGLCamera_' sugarmjvGLCamera_
 # TypedefDeclNode Unhandled tokens: mjvGLCamera_':'struct 
 struct mjvGeom_:
-	# (placeholder) | |-FullComment 0x820e00 <line:224:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x820dd0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x820da0 <col:3, col:100> Text="---------------------------------- mjvGeom -------------------------------------------------------"
 
 	var type: Int32
 
@@ -13787,16 +13452,9 @@ struct mjvGeom_:
 	var transparent: mjtByte
 
 
-alias mjvGeom = 
-# (placeholder) | `-ElaboratedType 0x6ebcd0 'struct mjvGeom_' sugar
-mjvGeom_
+alias mjvGeom = 'struct mjvGeom_' sugarmjvGeom_
 # TypedefDeclNode Unhandled tokens: mjvGeom_':'struct 
 struct mjvLight_:
-	# (placeholder) | |-FullComment 0x821f20 <line:259:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x821ef0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x821ec0 <col:3, col:100> Text="---------------------------------- mjvLight ------------------------------------------------------"
 
 	var pos: SIMD[Float32.dtype, 3]
 
@@ -13823,16 +13481,9 @@ struct mjvLight_:
 	var bulbradius: Float32
 
 
-alias mjvLight = 
-# (placeholder) | `-ElaboratedType 0x6ec720 'struct mjvLight_' sugar
-mjvLight_
+alias mjvLight = 'struct mjvLight_' sugarmjvLight_
 # TypedefDeclNode Unhandled tokens: mjvLight_':'struct 
 struct mjvOption_:
-	# (placeholder) | |-FullComment 0x8229b0 <line:278:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x822980 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x822950 <col:3, col:100> Text="---------------------------------- mjvOption -----------------------------------------------------"
 
 	var label: Int32
 
@@ -13859,16 +13510,9 @@ struct mjvOption_:
 	var flex_layer: Int32
 
 
-alias mjvOption = 
-# (placeholder) | `-ElaboratedType 0x6ed310 'struct mjvOption_' sugar
-mjvOption_
+alias mjvOption = 'struct mjvOption_' sugarmjvOption_
 # TypedefDeclNode Unhandled tokens: mjvOption_':'struct 
 struct mjvScene_:
-	# (placeholder) | |-FullComment 0x823440 <line:297:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x823410 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x8233e0 <col:3, col:100> Text="---------------------------------- mjvScene ------------------------------------------------------"
 
 	var maxgeom: Int32
 
@@ -13947,16 +13591,9 @@ struct mjvScene_:
 	var framergb: SIMD[Float32.dtype, 3]
 
 
-alias mjvScene = 
-# (placeholder) | `-ElaboratedType 0x6f0c50 'struct mjvScene_' sugar
-mjvScene_
+alias mjvScene = 'struct mjvScene_' sugarmjvScene_
 # TypedefDeclNode Unhandled tokens: mjvScene_':'struct 
 struct mjvFigure_:
-	# (placeholder) | |-FullComment 0x8253f0 <line:357:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x8253c0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x825390 <col:3, col:100> Text="---------------------------------- mjvFigure -----------------------------------------------------"
 
 	var flg_legend: Int32
 
@@ -14025,504 +13662,9 @@ struct mjvFigure_:
 	var yaxisdata: SIMD[Float32.dtype, 2]
 
 
-alias mjvFigure = 
-# (placeholder) | `-ElaboratedType 0x6f3900 'struct mjvFigure_' sugar
-mjvFigure_
+alias mjvFigure = 'struct mjvFigure_' sugarmjvFigure_
 # TypedefDeclNode Unhandled tokens: mjvFigure_':'struct 
-struct _mjvSceneState___Anonymous_line_634_3:
-	# (placeholder) | | |-FullComment 0x827480 <line:633:5, col:61>
-
-	# (placeholder) | | | `-ParagraphComment 0x827450 <col:5, col:61>
-
-	# (placeholder) | | |   `-TextComment 0x827420 <col:5, col:61> Text=" fields in mjData that are necessary to re-render a scene"
-
-	var warning: SIMD[mjWarningStat.dtype, 8]
-
-	var nefc: Int32
-
-	var ncon: Int32
-
-	var nisland: Int32
-
-	var time: mjtNum
-
-	var act: UnsafePointer[mjtNum]
-
-	var ctrl: UnsafePointer[mjtNum]
-
-	var xfrc_applied: UnsafePointer[mjtNum]
-
-	var eq_active: UnsafePointer[mjtByte]
-
-	var sensordata: UnsafePointer[mjtNum]
-
-	var xpos: UnsafePointer[mjtNum]
-
-	var xquat: UnsafePointer[mjtNum]
-
-	var xmat: UnsafePointer[mjtNum]
-
-	var xipos: UnsafePointer[mjtNum]
-
-	var ximat: UnsafePointer[mjtNum]
-
-	var xanchor: UnsafePointer[mjtNum]
-
-	var xaxis: UnsafePointer[mjtNum]
-
-	var geom_xpos: UnsafePointer[mjtNum]
-
-	var geom_xmat: UnsafePointer[mjtNum]
-
-	var site_xpos: UnsafePointer[mjtNum]
-
-	var site_xmat: UnsafePointer[mjtNum]
-
-	var cam_xpos: UnsafePointer[mjtNum]
-
-	var cam_xmat: UnsafePointer[mjtNum]
-
-	var light_xpos: UnsafePointer[mjtNum]
-
-	var light_xdir: UnsafePointer[mjtNum]
-
-	var subtree_com: UnsafePointer[mjtNum]
-
-	var ten_wrapadr: UnsafePointer[Int32]
-
-	var ten_wrapnum: UnsafePointer[Int32]
-
-	var wrap_obj: UnsafePointer[Int32]
-
-	var ten_length: UnsafePointer[mjtNum]
-
-	var wrap_xpos: UnsafePointer[mjtNum]
-
-	var bvh_aabb_dyn: UnsafePointer[mjtNum]
-
-	var bvh_active: UnsafePointer[mjtByte]
-
-	var island_dofadr: UnsafePointer[Int32]
-
-	var island_dofind: UnsafePointer[Int32]
-
-	var dof_island: UnsafePointer[Int32]
-
-	var efc_island: UnsafePointer[Int32]
-
-	var tendon_efcadr: UnsafePointer[Int32]
-
-	var flexvert_xpos: UnsafePointer[mjtNum]
-
-	var contact: UnsafePointer[mjContact]
-
-	var efc_force: UnsafePointer[mjtNum]
-
-	var arena: UnsafePointer[NoneType]
-
-
-struct _mjvSceneState___Anonymous_line_417_3:
-	# (placeholder) | | |-FullComment 0x8273b0 <line:416:5, col:62>
-
-	# (placeholder) | | | `-ParagraphComment 0x827380 <col:5, col:62>
-
-	# (placeholder) | | |   `-TextComment 0x827350 <col:5, col:62> Text=" fields in mjModel that are necessary to re-render a scene"
-
-	var nv: Int32
-
-	var nu: Int32
-
-	var na: Int32
-
-	var nbody: Int32
-
-	var nbvh: Int32
-
-	var nbvhstatic: Int32
-
-	var njnt: Int32
-
-	var ngeom: Int32
-
-	var nsite: Int32
-
-	var ncam: Int32
-
-	var nlight: Int32
-
-	var nmesh: Int32
-
-	var nskin: Int32
-
-	var nflex: Int32
-
-	var nflexvert: Int32
-
-	var nflextexcoord: Int32
-
-	var nskinvert: Int32
-
-	var nskinface: Int32
-
-	var nskinbone: Int32
-
-	var nskinbonevert: Int32
-
-	var nmat: Int32
-
-	var neq: Int32
-
-	var ntendon: Int32
-
-	var ntree: Int32
-
-	var nwrap: Int32
-
-	var nsensor: Int32
-
-	var nnames: Int32
-
-	var npaths: Int32
-
-	var nsensordata: Int32
-
-	var narena: Int32
-
-	var opt: mjOption
-
-	var vis: mjVisual
-
-	var stat: mjStatistic
-
-	var body_parentid: UnsafePointer[Int32]
-
-	var body_rootid: UnsafePointer[Int32]
-
-	var body_weldid: UnsafePointer[Int32]
-
-	var body_mocapid: UnsafePointer[Int32]
-
-	var body_jntnum: UnsafePointer[Int32]
-
-	var body_jntadr: UnsafePointer[Int32]
-
-	var body_dofnum: UnsafePointer[Int32]
-
-	var body_dofadr: UnsafePointer[Int32]
-
-	var body_geomnum: UnsafePointer[Int32]
-
-	var body_geomadr: UnsafePointer[Int32]
-
-	var body_iquat: UnsafePointer[mjtNum]
-
-	var body_mass: UnsafePointer[mjtNum]
-
-	var body_inertia: UnsafePointer[mjtNum]
-
-	var body_bvhadr: UnsafePointer[Int32]
-
-	var body_bvhnum: UnsafePointer[Int32]
-
-	var bvh_depth: UnsafePointer[Int32]
-
-	var bvh_child: UnsafePointer[Int32]
-
-	var bvh_nodeid: UnsafePointer[Int32]
-
-	var bvh_aabb: UnsafePointer[mjtNum]
-
-	var jnt_type: UnsafePointer[Int32]
-
-	var jnt_bodyid: UnsafePointer[Int32]
-
-	var jnt_group: UnsafePointer[Int32]
-
-	var geom_type: UnsafePointer[Int32]
-
-	var geom_bodyid: UnsafePointer[Int32]
-
-	var geom_contype: UnsafePointer[Int32]
-
-	var geom_conaffinity: UnsafePointer[Int32]
-
-	var geom_dataid: UnsafePointer[Int32]
-
-	var geom_matid: UnsafePointer[Int32]
-
-	var geom_group: UnsafePointer[Int32]
-
-	var geom_size: UnsafePointer[mjtNum]
-
-	var geom_aabb: UnsafePointer[mjtNum]
-
-	var geom_rbound: UnsafePointer[mjtNum]
-
-	var geom_rgba: UnsafePointer[Float32]
-
-	var site_type: UnsafePointer[Int32]
-
-	var site_bodyid: UnsafePointer[Int32]
-
-	var site_matid: UnsafePointer[Int32]
-
-	var site_group: UnsafePointer[Int32]
-
-	var site_size: UnsafePointer[mjtNum]
-
-	var site_rgba: UnsafePointer[Float32]
-
-	var cam_orthographic: UnsafePointer[Int32]
-
-	var cam_fovy: UnsafePointer[mjtNum]
-
-	var cam_ipd: UnsafePointer[mjtNum]
-
-	var cam_resolution: UnsafePointer[Int32]
-
-	var cam_sensorsize: UnsafePointer[Float32]
-
-	var cam_intrinsic: UnsafePointer[Float32]
-
-	var light_directional: UnsafePointer[mjtByte]
-
-	var light_castshadow: UnsafePointer[mjtByte]
-
-	var light_bulbradius: UnsafePointer[Float32]
-
-	var light_active: UnsafePointer[mjtByte]
-
-	var light_attenuation: UnsafePointer[Float32]
-
-	var light_cutoff: UnsafePointer[Float32]
-
-	var light_exponent: UnsafePointer[Float32]
-
-	var light_ambient: UnsafePointer[Float32]
-
-	var light_diffuse: UnsafePointer[Float32]
-
-	var light_specular: UnsafePointer[Float32]
-
-	var flex_flatskin: UnsafePointer[mjtByte]
-
-	var flex_dim: UnsafePointer[Int32]
-
-	var flex_matid: UnsafePointer[Int32]
-
-	var flex_group: UnsafePointer[Int32]
-
-	var flex_interp: UnsafePointer[Int32]
-
-	var flex_nodeadr: UnsafePointer[Int32]
-
-	var flex_nodenum: UnsafePointer[Int32]
-
-	var flex_nodebodyid: UnsafePointer[Int32]
-
-	var flex_vertadr: UnsafePointer[Int32]
-
-	var flex_vertnum: UnsafePointer[Int32]
-
-	var flex_elem: UnsafePointer[Int32]
-
-	var flex_elemtexcoord: UnsafePointer[Int32]
-
-	var flex_elemlayer: UnsafePointer[Int32]
-
-	var flex_elemadr: UnsafePointer[Int32]
-
-	var flex_elemnum: UnsafePointer[Int32]
-
-	var flex_elemdataadr: UnsafePointer[Int32]
-
-	var flex_shell: UnsafePointer[Int32]
-
-	var flex_shellnum: UnsafePointer[Int32]
-
-	var flex_shelldataadr: UnsafePointer[Int32]
-
-	var flex_texcoordadr: UnsafePointer[Int32]
-
-	var flex_bvhadr: UnsafePointer[Int32]
-
-	var flex_bvhnum: UnsafePointer[Int32]
-
-	var flex_centered: UnsafePointer[mjtByte]
-
-	var flex_node: UnsafePointer[mjtNum]
-
-	var flex_radius: UnsafePointer[mjtNum]
-
-	var flex_rgba: UnsafePointer[Float32]
-
-	var flex_texcoord: UnsafePointer[Float32]
-
-	var hfield_pathadr: UnsafePointer[Int32]
-
-	var mesh_bvhadr: UnsafePointer[Int32]
-
-	var mesh_bvhnum: UnsafePointer[Int32]
-
-	var mesh_texcoordadr: UnsafePointer[Int32]
-
-	var mesh_graphadr: UnsafePointer[Int32]
-
-	var mesh_pathadr: UnsafePointer[Int32]
-
-	var skin_matid: UnsafePointer[Int32]
-
-	var skin_group: UnsafePointer[Int32]
-
-	var skin_rgba: UnsafePointer[Float32]
-
-	var skin_inflate: UnsafePointer[Float32]
-
-	var skin_vertadr: UnsafePointer[Int32]
-
-	var skin_vertnum: UnsafePointer[Int32]
-
-	var skin_texcoordadr: UnsafePointer[Int32]
-
-	var skin_faceadr: UnsafePointer[Int32]
-
-	var skin_facenum: UnsafePointer[Int32]
-
-	var skin_boneadr: UnsafePointer[Int32]
-
-	var skin_bonenum: UnsafePointer[Int32]
-
-	var skin_vert: UnsafePointer[Float32]
-
-	var skin_face: UnsafePointer[Int32]
-
-	var skin_bonevertadr: UnsafePointer[Int32]
-
-	var skin_bonevertnum: UnsafePointer[Int32]
-
-	var skin_bonebindpos: UnsafePointer[Float32]
-
-	var skin_bonebindquat: UnsafePointer[Float32]
-
-	var skin_bonebodyid: UnsafePointer[Int32]
-
-	var skin_bonevertid: UnsafePointer[Int32]
-
-	var skin_bonevertweight: UnsafePointer[Float32]
-
-	var skin_pathadr: UnsafePointer[Int32]
-
-	var tex_pathadr: UnsafePointer[Int32]
-
-	var mat_texid: UnsafePointer[Int32]
-
-	var mat_texuniform: UnsafePointer[mjtByte]
-
-	var mat_texrepeat: UnsafePointer[Float32]
-
-	var mat_emission: UnsafePointer[Float32]
-
-	var mat_specular: UnsafePointer[Float32]
-
-	var mat_shininess: UnsafePointer[Float32]
-
-	var mat_reflectance: UnsafePointer[Float32]
-
-	var mat_metallic: UnsafePointer[Float32]
-
-	var mat_roughness: UnsafePointer[Float32]
-
-	var mat_rgba: UnsafePointer[Float32]
-
-	var eq_type: UnsafePointer[Int32]
-
-	var eq_obj1id: UnsafePointer[Int32]
-
-	var eq_obj2id: UnsafePointer[Int32]
-
-	var eq_objtype: UnsafePointer[Int32]
-
-	var eq_data: UnsafePointer[mjtNum]
-
-	var tendon_num: UnsafePointer[Int32]
-
-	var tendon_matid: UnsafePointer[Int32]
-
-	var tendon_group: UnsafePointer[Int32]
-
-	var tendon_limited: UnsafePointer[mjtByte]
-
-	var tendon_width: UnsafePointer[mjtNum]
-
-	var tendon_range: UnsafePointer[mjtNum]
-
-	var tendon_stiffness: UnsafePointer[mjtNum]
-
-	var tendon_damping: UnsafePointer[mjtNum]
-
-	var tendon_frictionloss: UnsafePointer[mjtNum]
-
-	var tendon_lengthspring: UnsafePointer[mjtNum]
-
-	var tendon_rgba: UnsafePointer[Float32]
-
-	var actuator_trntype: UnsafePointer[Int32]
-
-	var actuator_dyntype: UnsafePointer[Int32]
-
-	var actuator_trnid: UnsafePointer[Int32]
-
-	var actuator_actadr: UnsafePointer[Int32]
-
-	var actuator_actnum: UnsafePointer[Int32]
-
-	var actuator_group: UnsafePointer[Int32]
-
-	var actuator_ctrllimited: UnsafePointer[mjtByte]
-
-	var actuator_actlimited: UnsafePointer[mjtByte]
-
-	var actuator_ctrlrange: UnsafePointer[mjtNum]
-
-	var actuator_actrange: UnsafePointer[mjtNum]
-
-	var actuator_cranklength: UnsafePointer[mjtNum]
-
-	var sensor_type: UnsafePointer[Int32]
-
-	var sensor_objid: UnsafePointer[Int32]
-
-	var sensor_adr: UnsafePointer[Int32]
-
-	var name_bodyadr: UnsafePointer[Int32]
-
-	var name_jntadr: UnsafePointer[Int32]
-
-	var name_geomadr: UnsafePointer[Int32]
-
-	var name_siteadr: UnsafePointer[Int32]
-
-	var name_camadr: UnsafePointer[Int32]
-
-	var name_lightadr: UnsafePointer[Int32]
-
-	var name_eqadr: UnsafePointer[Int32]
-
-	var name_tendonadr: UnsafePointer[Int32]
-
-	var name_actuatoradr: UnsafePointer[Int32]
-
-	var names: UnsafePointer[Int8]
-
-	var paths: UnsafePointer[Int8]
-
-
 struct mjvSceneState_:
-	# (placeholder) | |-FullComment 0x826fa0 <line:408:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x826f70 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x826f40 <col:3, col:100> Text="---------------------------------- mjvSceneState -------------------------------------------------"
 
 	var nbuffer: Int32
 
@@ -14537,19 +13679,9 @@ struct mjvSceneState_:
 	var data: _mjvSceneState___Anonymous_line_634_3
 
 
-alias mjvSceneState = 
-# (placeholder) | `-ElaboratedType 0x6fb270 'struct mjvSceneState_' sugar
-mjvSceneState_
+alias mjvSceneState = 'struct mjvSceneState_' sugarmjvSceneState_
 # TypedefDeclNode Unhandled tokens: mjvSceneState_':'struct 
-# Forward declaration of _mjResource__mjpResourceProvider	pass
-
-
 struct mjResource_:
-	# (placeholder) | |-FullComment 0x827550 <line:24:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x827520 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x8274f0 <col:3, col:100> Text="---------------------------------- Resource Provider ---------------------------------------------"
 
 	var name: UnsafePointer[Int8]
 
@@ -14560,9 +13692,7 @@ struct mjResource_:
 	var provider: UnsafePointer[const mjpResourceProvider]
 
 
-alias mjResource = 
-# (placeholder) | `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-mjResource_
+alias mjResource = 'struct mjResource_' sugarmjResource_
 # TypedefDeclNode Unhandled tokens: mjResource_':'struct 
 
 alias mjfOpenResource = UnsafePointer[
@@ -14573,9 +13703,7 @@ Int32UnsafePointer[
 # (placeholder) | |       `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
-
-# (placeholder) | |         `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-mjResource_]
+'struct mjResource_' sugarmjResource_]
 ]
 
 # (placeholder) | `-FullComment 0x827960 <line:34:3, col:59>
@@ -14594,9 +13722,7 @@ Int32UnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
-
-# (placeholder) | |     |   `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-mjResource_]
+'struct mjResource_' sugarmjResource_]
 UnsafePointer[UnsafePointer[
 # (placeholder) | |         `-QualType 0x4e3401 'const void' const
 NoneType]
@@ -14621,9 +13747,7 @@ NoneTypeUnsafePointer[
 # (placeholder) | |       `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
-
-# (placeholder) | |         `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-mjResource_]
+'struct mjResource_' sugarmjResource_]
 ]
 
 # (placeholder) | `-FullComment 0x827b20 <line:41:3, col:81>
@@ -14642,9 +13766,7 @@ NoneTypeUnsafePointer[
 # (placeholder) | |     | `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
-
-# (placeholder) | |     |   `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-mjResource_]
+'struct mjResource_' sugarmjResource_]
 UnsafePointer[UnsafePointer[
 # (placeholder) | |     |   `-QualType 0x4e3441 'const char' const
 Int8]
@@ -14672,9 +13794,7 @@ Int32UnsafePointer[
 # (placeholder) | |     |   `-TypedefType 0x6fd990 'mjResource' sugar
 
 # (placeholder) | |     |     |-Typedef 0x6fd900 'mjResource'
-
-# (placeholder) | |     |     `-ElaboratedType 0x6fd8b0 'struct mjResource_' sugar
-mjResource_]
+'struct mjResource_' sugarmjResource_]
 UnsafePointer[
 # (placeholder) | |       `-QualType 0x4e3441 'const char' const
 Int8]
@@ -14700,11 +13820,6 @@ Int8]
 
 # TypedefDeclNode Unhandled tokens: (*)(const mjResource *, const char 
 struct mjpResourceProvider:
-	# (placeholder) | |-FullComment 0x827ea0 <line:55:3, col:47>
-
-	# (placeholder) | | `-ParagraphComment 0x827e70 <col:3, col:47>
-
-	# (placeholder) | |   `-TextComment 0x827e40 <col:3, col:47> Text=" struct describing a single resource provider"
 
 	var prefix: UnsafePointer[const char]
 
@@ -14721,9 +13836,7 @@ struct mjpResourceProvider:
 	var data: UnsafePointer[NoneType]
 
 
-alias mjpResourceProvider = 
-# (placeholder) | `-ElaboratedType 0x6fed10 'struct mjpResourceProvider' sugar
-mjpResourceProvider
+alias mjpResourceProvider = 'struct mjpResourceProvider' sugarmjpResourceProvider
 # TypedefDeclNode Unhandled tokens: mjpResourceProvider':'struct 
 
 # (placeholder) |-EnumDecl 0x6fede8 <line:70:9, line:75:1> line:70:14 mjtPluginCapabilityBit_
@@ -14806,13 +13919,12 @@ mjpResourceProvider
 
 # (placeholder) |       `-TextComment 0x828800 <col:37, col:59> Text=" signed distance fields"
 
-alias mjtPluginCapabilityBit = 
-# (placeholder) | |-ElaboratedType 0x6ff2b0 'enum mjtPluginCapabilityBit_' sugar
-
+alias mjtPluginCapabilityBit = 'enum mjtPluginCapabilityBit_' sugar
 # (placeholder) | | `-EnumType 0x6fee90 'enum mjtPluginCapabilityBit_'
 
 # (placeholder) | |   `-Enum 0x6fede8 'mjtPluginCapabilityBit_'
 
+# Unhandled tokens:  mjtPluginCapabilityBit_
 # (placeholder) | `-FullComment 0x828930 <line:68:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x828900 <col:3, col:100>
@@ -14821,6 +13933,7 @@ alias mjtPluginCapabilityBit =
 
 # TypedefDeclNode Unhandled tokens: mjtPluginCapabilityBit_':'enum 
 struct mjpPlugin_:
+
 	var name: UnsafePointer[const char]
 
 	var nattribute: Int32
@@ -14862,9 +13975,7 @@ struct mjpPlugin_:
 	var sdf_aabb: void (*)(mjtNum *, const mjtNum *)
 
 
-alias mjpPlugin = 
-# (placeholder) | `-ElaboratedType 0x702db0 'struct mjpPlugin_' sugar
-mjpPlugin_
+alias mjpPlugin = 'struct mjpPlugin_' sugarmjpPlugin_
 # TypedefDeclNode Unhandled tokens: mjpPlugin_':'struct 
 
 alias mjfPluginLibraryLoadCallback = UnsafePointer[
@@ -14962,13 +14073,12 @@ Int32Int32]
 
 # (placeholder) |       `-TextComment 0x82a160 <col:37, col:49> Text=" right center"
 
-alias mjtGridPos = 
-# (placeholder) | |-ElaboratedType 0x706860 'enum mjtGridPos_' sugar
-
+alias mjtGridPos = 'enum mjtGridPos_' sugar
 # (placeholder) | | `-EnumType 0x7033a0 'enum mjtGridPos_'
 
 # (placeholder) | |   `-Enum 0x7032f8 'mjtGridPos_'
 
+# Unhandled tokens:  mjtGridPos_
 # (placeholder) | `-FullComment 0x82a290 <line:28:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x82a260 <col:3, col:100>
@@ -15001,13 +14111,12 @@ alias mjtGridPos =
 
 # (placeholder) |       `-TextComment 0x82a3d0 <col:37, col:53> Text=" offscreen buffer"
 
-alias mjtFramebuffer = 
-# (placeholder) | `-ElaboratedType 0x706b60 'enum mjtFramebuffer_' sugar
-
+alias mjtFramebuffer = 'enum mjtFramebuffer_' sugar
 # (placeholder) |   `-EnumType 0x7069d0 'enum mjtFramebuffer_'
 
 # (placeholder) |     `-Enum 0x706928 'mjtFramebuffer_'
 
+# Unhandled tokens:  mjtFramebuffer_
 # TypedefDeclNode Unhandled tokens: mjtFramebuffer_':'enum 
 
 # (placeholder) |-EnumDecl 0x706c28 <line:47:9, line:50:1> line:47:14 mjtDepthMap_
@@ -15040,13 +14149,12 @@ alias mjtFramebuffer =
 
 # (placeholder) |       `-TextComment 0x82a570 <col:37, col:74> Text=" reversed depth map; 1: znear, 0: zfar"
 
-alias mjtDepthMap = 
-# (placeholder) | `-ElaboratedType 0x706ea0 'enum mjtDepthMap_' sugar
-
+alias mjtDepthMap = 'enum mjtDepthMap_' sugar
 # (placeholder) |   `-EnumType 0x706cd0 'enum mjtDepthMap_'
 
 # (placeholder) |     `-Enum 0x706c28 'mjtDepthMap_'
 
+# Unhandled tokens:  mjtDepthMap_
 # TypedefDeclNode Unhandled tokens: mjtDepthMap_':'enum 
 
 # (placeholder) |-EnumDecl 0x706f68 <line:52:9, line:59:1> line:52:14 mjtFontScale_
@@ -15135,13 +14243,12 @@ alias mjtDepthMap =
 
 # (placeholder) |       `-TextComment 0x82aa50 <col:37, col:47> Text=" 300% scale"
 
-alias mjtFontScale = 
-# (placeholder) | `-ElaboratedType 0x7074e0 'enum mjtFontScale_' sugar
-
+alias mjtFontScale = 'enum mjtFontScale_' sugar
 # (placeholder) |   `-EnumType 0x707010 'enum mjtFontScale_'
 
 # (placeholder) |     `-Enum 0x706f68 'mjtFontScale_'
 
+# Unhandled tokens:  mjtFontScale_
 # TypedefDeclNode Unhandled tokens: mjtFontScale_':'enum 
 
 # (placeholder) |-EnumDecl 0x7075a8 <line:62:9, line:66:1> line:62:14 mjtFont_
@@ -15176,15 +14283,15 @@ alias mjtFontScale =
 
 # (placeholder) |       `-TextComment 0x82acc0 <col:37, col:63> Text=" big font (for user alerts)"
 
-alias mjtFont = 
-# (placeholder) | `-ElaboratedType 0x707860 'enum mjtFont_' sugar
-
+alias mjtFont = 'enum mjtFont_' sugar
 # (placeholder) |   `-EnumType 0x707650 'enum mjtFont_'
 
 # (placeholder) |     `-Enum 0x7075a8 'mjtFont_'
 
+# Unhandled tokens:  mjtFont_
 # TypedefDeclNode Unhandled tokens: mjtFont_':'enum 
 struct mjrRect_:
+
 	var left: Int32
 
 	var bottom: Int32
@@ -15194,16 +14301,9 @@ struct mjrRect_:
 	var height: Int32
 
 
-alias mjrRect = 
-# (placeholder) | `-ElaboratedType 0x707c40 'struct mjrRect_' sugar
-mjrRect_
+alias mjrRect = 'struct mjrRect_' sugarmjrRect_
 # TypedefDeclNode Unhandled tokens: mjrRect_':'struct 
 struct mjrContext_:
-	# (placeholder) | |-FullComment 0x82b130 <line:78:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x82b100 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x82b0d0 <col:3, col:100> Text="---------------------------------- mjrContext ----------------------------------------------------"
 
 	var lineWidth: Float32
 
@@ -15328,9 +14428,7 @@ struct mjrContext_:
 	var readDepthMap: Int32
 
 
-alias mjrContext = 
-# (placeholder) | `-ElaboratedType 0x70dba0 'struct mjrContext_' sugar
-mjrContext_
+alias mjrContext = 'struct mjrContext_' sugarmjrContext_
 # TypedefDeclNode Unhandled tokens: mjrContext_':'struct 
 
 alias mjString = NoneType
@@ -15385,13 +14483,12 @@ alias mjByteVec = NoneType
 
 # (placeholder) |       `-TextComment 0x82e5b0 <col:38, col:69> Text=" mass distributed on the surface"
 
-alias mjtGeomInertia = 
-# (placeholder) | |-ElaboratedType 0x70e3d0 'enum mjtGeomInertia_' sugar
-
+alias mjtGeomInertia = 'enum mjtGeomInertia_' sugar
 # (placeholder) | | `-EnumType 0x70e240 'enum mjtGeomInertia_'
 
 # (placeholder) | |   `-Enum 0x70e198 'mjtGeomInertia_'
 
+# Unhandled tokens:  mjtGeomInertia_
 # (placeholder) | `-FullComment 0x82e6e0 <line:58:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x82e6b0 <col:3, col:100>
@@ -15440,13 +14537,12 @@ alias mjtGeomInertia =
 
 # (placeholder) |       `-TextComment 0x82e9c0 <col:39, col:57> Text=" shell mesh inertia"
 
-alias mjtMeshInertia = 
-# (placeholder) | `-ElaboratedType 0x70e7d0 'enum mjtMeshInertia_' sugar
-
+alias mjtMeshInertia = 'enum mjtMeshInertia_' sugar
 # (placeholder) |   `-EnumType 0x70e540 'enum mjtMeshInertia_'
 
 # (placeholder) |     `-Enum 0x70e498 'mjtMeshInertia_'
 
+# Unhandled tokens:  mjtMeshInertia_
 # TypedefDeclNode Unhandled tokens: mjtMeshInertia_':'enum 
 
 # (placeholder) |-EnumDecl 0x70e898 <line:74:9, line:79:1> line:74:14 mjtBuiltin_
@@ -15489,13 +14585,12 @@ alias mjtMeshInertia =
 
 # (placeholder) |       `-TextComment 0x82ed00 <col:38, col:83> Text=" 2d: rgb1; cube: rgb1-up, rgb2-side, rgb3-down"
 
-alias mjtBuiltin = 
-# (placeholder) | `-ElaboratedType 0x70ebd0 'enum mjtBuiltin_' sugar
-
+alias mjtBuiltin = 'enum mjtBuiltin_' sugar
 # (placeholder) |   `-EnumType 0x70e940 'enum mjtBuiltin_'
 
 # (placeholder) |     `-Enum 0x70e898 'mjtBuiltin_'
 
+# Unhandled tokens:  mjtBuiltin_
 # TypedefDeclNode Unhandled tokens: mjtBuiltin_':'enum 
 
 # (placeholder) |-EnumDecl 0x70ec98 <line:82:9, line:87:1> line:82:14 mjtMark_
@@ -15538,13 +14633,12 @@ alias mjtBuiltin =
 
 # (placeholder) |       `-TextComment 0x82f040 <col:38, col:49> Text=" random dots"
 
-alias mjtMark = 
-# (placeholder) | `-ElaboratedType 0x70efd0 'enum mjtMark_' sugar
-
+alias mjtMark = 'enum mjtMark_' sugar
 # (placeholder) |   `-EnumType 0x70ed40 'enum mjtMark_'
 
 # (placeholder) |     `-Enum 0x70ec98 'mjtMark_'
 
+# Unhandled tokens:  mjtMark_
 # TypedefDeclNode Unhandled tokens: mjtMark_':'enum 
 
 # (placeholder) |-EnumDecl 0x70f098 <line:90:9, line:94:1> line:90:14 mjtLimited_
@@ -15579,13 +14673,12 @@ alias mjtMark =
 
 # (placeholder) |       `-TextComment 0x82f2b0 <col:38, col:77> Text=" limited inferred from presence of range"
 
-alias mjtLimited = 
-# (placeholder) | `-ElaboratedType 0x70f350 'enum mjtLimited_' sugar
-
+alias mjtLimited = 'enum mjtLimited_' sugar
 # (placeholder) |   `-EnumType 0x70f140 'enum mjtLimited_'
 
 # (placeholder) |     `-Enum 0x70f098 'mjtLimited_'
 
+# Unhandled tokens:  mjtLimited_
 # TypedefDeclNode Unhandled tokens: mjtLimited_':'enum 
 
 # (placeholder) |-EnumDecl 0x70f418 <line:96:9, line:100:1> line:96:14 mjtAlignFree_
@@ -15620,13 +14713,12 @@ alias mjtLimited =
 
 # (placeholder) |       `-TextComment 0x82f520 <col:38, col:70> Text=" respect the global compiler flag"
 
-alias mjtAlignFree = 
-# (placeholder) | `-ElaboratedType 0x70f6d0 'enum mjtAlignFree_' sugar
-
+alias mjtAlignFree = 'enum mjtAlignFree_' sugar
 # (placeholder) |   `-EnumType 0x70f4c0 'enum mjtAlignFree_'
 
 # (placeholder) |     `-Enum 0x70f418 'mjtAlignFree_'
 
+# Unhandled tokens:  mjtAlignFree_
 # TypedefDeclNode Unhandled tokens: mjtAlignFree_':'enum 
 
 # (placeholder) |-EnumDecl 0x70f798 <line:103:9, line:107:1> line:103:14 mjtInertiaFromGeom_
@@ -15661,13 +14753,12 @@ alias mjtAlignFree =
 
 # (placeholder) |       `-TextComment 0x82f790 <col:38, col:77> Text=" use only if inertial element is missing"
 
-alias mjtInertiaFromGeom = 
-# (placeholder) | `-ElaboratedType 0x7114d0 'enum mjtInertiaFromGeom_' sugar
-
+alias mjtInertiaFromGeom = 'enum mjtInertiaFromGeom_' sugar
 # (placeholder) |   `-EnumType 0x70f840 'enum mjtInertiaFromGeom_'
 
 # (placeholder) |     `-Enum 0x70f798 'mjtInertiaFromGeom_'
 
+# Unhandled tokens:  mjtInertiaFromGeom_
 # TypedefDeclNode Unhandled tokens: mjtInertiaFromGeom_':'enum 
 
 # (placeholder) |-EnumDecl 0x711598 <line:110:9, line:116:1> line:110:14 mjtOrientation_
@@ -15718,29 +14809,21 @@ alias mjtInertiaFromGeom =
 
 # (placeholder) |       `-TextComment 0x82fba0 <col:38, col:50> Text=" Euler angles"
 
-alias mjtOrientation = 
-# (placeholder) | `-ElaboratedType 0x711950 'enum mjtOrientation_' sugar
-
+alias mjtOrientation = 'enum mjtOrientation_' sugar
 # (placeholder) |   `-EnumType 0x711640 'enum mjtOrientation_'
 
 # (placeholder) |     `-Enum 0x711598 'mjtOrientation_'
 
+# Unhandled tokens:  mjtOrientation_
 # TypedefDeclNode Unhandled tokens: mjtOrientation_':'enum 
 struct mjsElement_:
-	# (placeholder) | |-FullComment 0x82fcd0 <line:119:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x82fca0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x82fc70 <col:3, col:100> Text="-------------------------------- attribute structs (mjs) -----------------------------------------"
 
 	var elemtype: mjtObj
 
 	var signature: uint64_t
 
 
-alias mjsElement = 
-# (placeholder) | |-ElaboratedType 0x711c50 'struct mjsElement_' sugar
-mjsElement_
+alias mjsElement = 'struct mjsElement_' sugarmjsElement_
 # (placeholder) | `-FullComment 0x82ff40 <line:119:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x82ff10 <col:3, col:100>
@@ -15749,6 +14832,7 @@ mjsElement_
 
 # TypedefDeclNode Unhandled tokens: mjsElement_':'struct 
 struct mjsCompiler_:
+
 	var autolimits: mjtByte
 
 	var boundmass: Float64
@@ -15782,11 +14866,10 @@ struct mjsCompiler_:
 	var LRopt: mjLROpt
 
 
-alias mjsCompiler = 
-# (placeholder) | `-ElaboratedType 0x7127f0 'struct mjsCompiler_' sugar
-mjsCompiler_
+alias mjsCompiler = 'struct mjsCompiler_' sugarmjsCompiler_
 # TypedefDeclNode Unhandled tokens: mjsCompiler_':'struct 
 struct mjSpec_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var modelname: UnsafePointer[mjString]
@@ -15842,11 +14925,10 @@ struct mjSpec_:
 	var hasImplicitPluginElem: mjtByte
 
 
-alias mjSpec = 
-# (placeholder) | `-ElaboratedType 0x715c00 'struct mjSpec_' sugar
-mjSpec_
+alias mjSpec = 'struct mjSpec_' sugarmjSpec_
 # TypedefDeclNode Unhandled tokens: mjSpec_':'struct 
 struct mjsOrientation_:
+
 	var type: mjtOrientation
 
 	var axisangle: SIMD[Float64.dtype, 4]
@@ -15858,11 +14940,10 @@ struct mjsOrientation_:
 	var euler: SIMD[Float64.dtype, 3]
 
 
-alias mjsOrientation = 
-# (placeholder) | `-ElaboratedType 0x7161d0 'struct mjsOrientation_' sugar
-mjsOrientation_
+alias mjsOrientation = 'struct mjsOrientation_' sugarmjsOrientation_
 # TypedefDeclNode Unhandled tokens: mjsOrientation_':'struct 
 struct mjsPlugin_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -15874,11 +14955,10 @@ struct mjsPlugin_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsPlugin = 
-# (placeholder) | `-ElaboratedType 0x716640 'struct mjsPlugin_' sugar
-mjsPlugin_
+alias mjsPlugin = 'struct mjsPlugin_' sugarmjsPlugin_
 # TypedefDeclNode Unhandled tokens: mjsPlugin_':'struct 
 struct mjsBody_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -15916,11 +14996,10 @@ struct mjsBody_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsBody = 
-# (placeholder) | `-ElaboratedType 0x717500 'struct mjsBody_' sugar
-mjsBody_
+alias mjsBody = 'struct mjsBody_' sugarmjsBody_
 # TypedefDeclNode Unhandled tokens: mjsBody_':'struct 
 struct mjsFrame_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -15936,11 +15015,10 @@ struct mjsFrame_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsFrame = 
-# (placeholder) | `-ElaboratedType 0x718720 'struct mjsFrame_' sugar
-mjsFrame_
+alias mjsFrame = 'struct mjsFrame_' sugarmjsFrame_
 # TypedefDeclNode Unhandled tokens: mjsFrame_':'struct 
 struct mjsJoint_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -15994,11 +15072,10 @@ struct mjsJoint_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsJoint = 
-# (placeholder) | `-ElaboratedType 0x719b40 'struct mjsJoint_' sugar
-mjsJoint_
+alias mjsJoint = 'struct mjsJoint_' sugarmjsJoint_
 # TypedefDeclNode Unhandled tokens: mjsJoint_':'struct 
 struct mjsGeom_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16064,11 +15141,10 @@ struct mjsGeom_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsGeom = 
-# (placeholder) | `-ElaboratedType 0x71cf40 'struct mjsGeom_' sugar
-mjsGeom_
+alias mjsGeom = 'struct mjsGeom_' sugarmjsGeom_
 # TypedefDeclNode Unhandled tokens: mjsGeom_':'struct 
 struct mjsSite_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16096,11 +15172,10 @@ struct mjsSite_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsSite = 
-# (placeholder) | `-ElaboratedType 0x71da50 'struct mjsSite_' sugar
-mjsSite_
+alias mjsSite = 'struct mjsSite_' sugarmjsSite_
 # TypedefDeclNode Unhandled tokens: mjsSite_':'struct 
 struct mjsCamera_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16140,11 +15215,10 @@ struct mjsCamera_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsCamera = 
-# (placeholder) | `-ElaboratedType 0x71fb60 'struct mjsCamera_' sugar
-mjsCamera_
+alias mjsCamera = 'struct mjsCamera_' sugarmjsCamera_
 # TypedefDeclNode Unhandled tokens: mjsCamera_':'struct 
 struct mjsLight_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16180,11 +15254,10 @@ struct mjsLight_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsLight = 
-# (placeholder) | `-ElaboratedType 0x720900 'struct mjsLight_' sugar
-mjsLight_
+alias mjsLight = 'struct mjsLight_' sugarmjsLight_
 # TypedefDeclNode Unhandled tokens: mjsLight_':'struct 
 struct mjsFlex_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16256,11 +15329,10 @@ struct mjsFlex_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsFlex = 
-# (placeholder) | `-ElaboratedType 0x722d50 'struct mjsFlex_' sugar
-mjsFlex_
+alias mjsFlex = 'struct mjsFlex_' sugarmjsFlex_
 # TypedefDeclNode Unhandled tokens: mjsFlex_':'struct 
 struct mjsMesh_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16296,11 +15368,10 @@ struct mjsMesh_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsMesh = 
-# (placeholder) | `-ElaboratedType 0x723990 'struct mjsMesh_' sugar
-mjsMesh_
+alias mjsMesh = 'struct mjsMesh_' sugarmjsMesh_
 # TypedefDeclNode Unhandled tokens: mjsMesh_':'struct 
 struct mjsHField_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16320,11 +15391,10 @@ struct mjsHField_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsHField = 
-# (placeholder) | `-ElaboratedType 0x725170 'struct mjsHField_' sugar
-mjsHField_
+alias mjsHField = 'struct mjsHField_' sugarmjsHField_
 # TypedefDeclNode Unhandled tokens: mjsHField_':'struct 
 struct mjsSkin_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16358,11 +15428,10 @@ struct mjsSkin_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsSkin = 
-# (placeholder) | `-ElaboratedType 0x725d90 'struct mjsSkin_' sugar
-mjsSkin_
+alias mjsSkin = 'struct mjsSkin_' sugarmjsSkin_
 # TypedefDeclNode Unhandled tokens: mjsSkin_':'struct 
 struct mjsTexture_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16406,11 +15475,10 @@ struct mjsTexture_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsTexture = 
-# (placeholder) | `-ElaboratedType 0x728b40 'struct mjsTexture_' sugar
-mjsTexture_
+alias mjsTexture = 'struct mjsTexture_' sugarmjsTexture_
 # TypedefDeclNode Unhandled tokens: mjsTexture_':'struct 
 struct mjsMaterial_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16438,11 +15506,10 @@ struct mjsMaterial_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsMaterial = 
-# (placeholder) | `-ElaboratedType 0x7294d0 'struct mjsMaterial_' sugar
-mjsMaterial_
+alias mjsMaterial = 'struct mjsMaterial_' sugarmjsMaterial_
 # TypedefDeclNode Unhandled tokens: mjsMaterial_':'struct 
 struct mjsPair_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16468,11 +15535,10 @@ struct mjsPair_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsPair = 
-# (placeholder) | `-ElaboratedType 0x729ea0 'struct mjsPair_' sugar
-mjsPair_
+alias mjsPair = 'struct mjsPair_' sugarmjsPair_
 # TypedefDeclNode Unhandled tokens: mjsPair_':'struct 
 struct mjsExclude_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16484,11 +15550,10 @@ struct mjsExclude_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsExclude = 
-# (placeholder) | `-ElaboratedType 0x72a310 'struct mjsExclude_' sugar
-mjsExclude_
+alias mjsExclude = 'struct mjsExclude_' sugarmjsExclude_
 # TypedefDeclNode Unhandled tokens: mjsExclude_':'struct 
 struct mjsEquality_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16512,11 +15577,10 @@ struct mjsEquality_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsEquality = 
-# (placeholder) | `-ElaboratedType 0x72b7e0 'struct mjsEquality_' sugar
-mjsEquality_
+alias mjsEquality = 'struct mjsEquality_' sugarmjsEquality_
 # TypedefDeclNode Unhandled tokens: mjsEquality_':'struct 
 struct mjsTendon_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16558,21 +15622,19 @@ struct mjsTendon_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsTendon = 
-# (placeholder) | `-ElaboratedType 0x72c7b0 'struct mjsTendon_' sugar
-mjsTendon_
+alias mjsTendon = 'struct mjsTendon_' sugarmjsTendon_
 # TypedefDeclNode Unhandled tokens: mjsTendon_':'struct 
 struct mjsWrap_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var info: UnsafePointer[mjString]
 
 
-alias mjsWrap = 
-# (placeholder) | `-ElaboratedType 0x72ca70 'struct mjsWrap_' sugar
-mjsWrap_
+alias mjsWrap = 'struct mjsWrap_' sugarmjsWrap_
 # TypedefDeclNode Unhandled tokens: mjsWrap_':'struct 
 struct mjsActuator_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16630,11 +15692,10 @@ struct mjsActuator_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsActuator = 
-# (placeholder) | `-ElaboratedType 0x72ec20 'struct mjsActuator_' sugar
-mjsActuator_
+alias mjsActuator = 'struct mjsActuator_' sugarmjsActuator_
 # TypedefDeclNode Unhandled tokens: mjsActuator_':'struct 
 struct mjsSensor_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16666,11 +15727,10 @@ struct mjsSensor_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsSensor = 
-# (placeholder) | `-ElaboratedType 0x72f750 'struct mjsSensor_' sugar
-mjsSensor_
+alias mjsSensor = 'struct mjsSensor_' sugarmjsSensor_
 # TypedefDeclNode Unhandled tokens: mjsSensor_':'struct 
 struct mjsNumeric_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16682,11 +15742,10 @@ struct mjsNumeric_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsNumeric = 
-# (placeholder) | `-ElaboratedType 0x72fbc0 'struct mjsNumeric_' sugar
-mjsNumeric_
+alias mjsNumeric = 'struct mjsNumeric_' sugarmjsNumeric_
 # TypedefDeclNode Unhandled tokens: mjsNumeric_':'struct 
 struct mjsText_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16696,11 +15755,10 @@ struct mjsText_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsText = 
-# (placeholder) | `-ElaboratedType 0x730cd0 'struct mjsText_' sugar
-mjsText_
+alias mjsText = 'struct mjsText_' sugarmjsText_
 # TypedefDeclNode Unhandled tokens: mjsText_':'struct 
 struct mjsTuple_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16714,11 +15772,10 @@ struct mjsTuple_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsTuple = 
-# (placeholder) | `-ElaboratedType 0x7311d0 'struct mjsTuple_' sugar
-mjsTuple_
+alias mjsTuple = 'struct mjsTuple_' sugarmjsTuple_
 # TypedefDeclNode Unhandled tokens: mjsTuple_':'struct 
 struct mjsKey_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16740,11 +15797,10 @@ struct mjsKey_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsKey = 
-# (placeholder) | `-ElaboratedType 0x731910 'struct mjsKey_' sugar
-mjsKey_
+alias mjsKey = 'struct mjsKey_' sugarmjsKey_
 # TypedefDeclNode Unhandled tokens: mjsKey_':'struct 
 struct mjsDefault_:
+
 	var element: UnsafePointer[mjsElement]
 
 	var name: UnsafePointer[mjString]
@@ -16774,9 +15830,7 @@ struct mjsDefault_:
 	var actuator: UnsafePointer[mjsActuator]
 
 
-alias mjsDefault = 
-# (placeholder) | `-ElaboratedType 0x732890 'struct mjsDefault_' sugar
-mjsDefault_
+alias mjsDefault = 'struct mjsDefault_' sugarmjsDefault_
 # TypedefDeclNode Unhandled tokens: mjsDefault_':'struct 
 
 # (placeholder) |-EnumDecl 0x732bc0 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:65:9, line:70:1> line:65:14 mjtButton_
@@ -16825,13 +15879,12 @@ mjsDefault_
 
 # (placeholder) |       `-TextComment 0x8520c0 <col:37, col:50> Text=" middle button"
 
-alias mjtButton = 
-# (placeholder) | |-ElaboratedType 0x73cd00 'enum mjtButton_' sugar
-
+alias mjtButton = 'enum mjtButton_' sugar
 # (placeholder) | | `-EnumType 0x732c60 'enum mjtButton_'
 
 # (placeholder) | |   `-Enum 0x732bc0 'mjtButton_'
 
+# Unhandled tokens:  mjtButton_
 # (placeholder) | `-FullComment 0x8521f0 <line:63:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x8521c0 <col:3, col:100>
@@ -16920,13 +15973,12 @@ alias mjtButton =
 
 # (placeholder) |       `-TextComment 0x8528e0 <col:37, col:47> Text=" files drop"
 
-alias mjtEvent = 
-# (placeholder) | `-ElaboratedType 0x73d380 'enum mjtEvent_' sugar
-
+alias mjtEvent = 'enum mjtEvent_' sugar
 # (placeholder) |   `-EnumType 0x73ce70 'enum mjtEvent_'
 
 # (placeholder) |     `-Enum 0x73cdc8 'mjtEvent_'
 
+# Unhandled tokens:  mjtEvent_
 # TypedefDeclNode Unhandled tokens: mjtEvent_':'enum 
 
 # (placeholder) |-EnumDecl 0x73d448 <line:86:9, line:107:1> line:86:14 mjtItem_
@@ -17089,13 +16141,12 @@ alias mjtEvent =
 
 # (placeholder) |       `-TextComment 0x8536b0 <col:37, col:57> Text=" number of item types"
 
-alias mjtItem = 
-# (placeholder) | `-ElaboratedType 0x73ded0 'enum mjtItem_' sugar
-
+alias mjtItem = 'enum mjtItem_' sugar
 # (placeholder) |   `-EnumType 0x73d4f0 'enum mjtItem_'
 
 # (placeholder) |     `-Enum 0x73d448 'mjtItem_'
 
+# Unhandled tokens:  mjtItem_
 # TypedefDeclNode Unhandled tokens: mjtItem_':'enum 
 
 # (placeholder) |-EnumDecl 0x73df98 <line:110:9, line:114:1> line:110:14 mjtSection_
@@ -17130,13 +16181,12 @@ alias mjtItem =
 
 # (placeholder) |       `-TextComment 0x853920 <col:37, col:73> Text=" fixed section: always open, no title"
 
-alias mjtSection = 
-# (placeholder) | `-ElaboratedType 0x73e250 'enum mjtSection_' sugar
-
+alias mjtSection = 'enum mjtSection_' sugar
 # (placeholder) |   `-EnumType 0x73e040 'enum mjtSection_'
 
 # (placeholder) |     `-Enum 0x73df98 'mjtSection_'
 
+# Unhandled tokens:  mjtSection_
 # TypedefDeclNode Unhandled tokens: mjtSection_':'enum 
 
 alias mjfItemEnable = UnsafePointer[
@@ -17154,11 +16204,6 @@ Int32Int32UnsafePointer[NoneType]
 
 # TypedefDeclNode Unhandled tokens: (*)(int, void 
 struct mjuiState_:
-	# (placeholder) | |-FullComment 0x853b20 <line:121:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x853af0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x853ac0 <col:3, col:100> Text="---------------------------------- mjuiState -----------------------------------------------------"
 
 	var nrect: Int32
 
@@ -17213,16 +16258,9 @@ struct mjuiState_:
 	var droppaths: UnsafePointer[const char *]
 
 
-alias mjuiState = 
-# (placeholder) | `-ElaboratedType 0x740cb0 'struct mjuiState_' sugar
-mjuiState_
+alias mjuiState = 'struct mjuiState_' sugarmjuiState_
 # TypedefDeclNode Unhandled tokens: mjuiState_':'struct 
 struct mjuiThemeSpacing_:
-	# (placeholder) | |-FullComment 0x855110 <line:167:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x8550e0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x8550b0 <col:3, col:100> Text="---------------------------------- mjuiThemeSpacing ----------------------------------------------"
 
 	var total: Int32
 
@@ -17251,16 +16289,9 @@ struct mjuiThemeSpacing_:
 	var samples: Int32
 
 
-alias mjuiThemeSpacing = 
-# (placeholder) | `-ElaboratedType 0x7415b0 'struct mjuiThemeSpacing_' sugar
-mjuiThemeSpacing_
+alias mjuiThemeSpacing = 'struct mjuiThemeSpacing_' sugarmjuiThemeSpacing_
 # TypedefDeclNode Unhandled tokens: mjuiThemeSpacing_':'struct 
 struct mjuiThemeColor_:
-	# (placeholder) | |-FullComment 0x855c70 <line:187:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x855c40 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x855c10 <col:3, col:100> Text="---------------------------------- mjuiThemeColor ------------------------------------------------"
 
 	var master: SIMD[Float32.dtype, 3]
 
@@ -17319,53 +16350,34 @@ struct mjuiThemeColor_:
 	var cursor: SIMD[Float32.dtype, 3]
 
 
-alias mjuiThemeColor = 
-# (placeholder) | `-ElaboratedType 0x743d00 'struct mjuiThemeColor_' sugar
-mjuiThemeColor_
+alias mjuiThemeColor = 'struct mjuiThemeColor_' sugarmjuiThemeColor_
 # TypedefDeclNode Unhandled tokens: mjuiThemeColor_':'struct 
 struct mjuiItemSingle_:
-	# (placeholder) | |-FullComment 0x857410 <line:222:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x8573e0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x8573b0 <col:3, col:100> Text="---------------------------------- mjuiItem ------------------------------------------------------"
 
 	var modifier: Int32
 
 	var shortcut: Int32
 
 struct mjuiItemMulti_:
+
 	var nelem: Int32
 
 	var name: SIMD[Int8.dtype, 35]
 
 struct mjuiItemSlider_:
+
 	var range: SIMD[Float64.dtype, 2]
 
 	var divisions: Float64
 
 struct mjuiItemEdit_:
+
 	var nelem: Int32
 
 	var range: SIMD[Float64.dtype, 7]
 
-struct _mjuiItem__definition:
-	# (placeholder) | | |-FullComment 0x858110 <line:258:5, col:29>
-
-	# (placeholder) | | | `-ParagraphComment 0x8580e0 <col:5, col:29>
-
-	# (placeholder) | | |   `-TextComment 0x8580b0 <col:5, col:29> Text=" type-specific properties"
-
-	var single: mjuiItemSingle_
-
-	var multi: mjuiItemMulti_
-
-	var slider: mjuiItemSlider_
-
-	var edit: mjuiItemEdit_
-
-
 struct mjuiItem_:
+
 	var type: Int32
 
 	var name: SIMD[Int8.dtype, 40]
@@ -17382,45 +16394,14 @@ struct mjuiItem_:
 
 	var implicit: mjuiItem
 
-	# (placeholder) | |-IndirectFieldDecl 0x746c58 <line:260:28> col:28 implicit single 'struct mjuiItemSingle_':'struct mjuiItemSingle_'
-
-	# (placeholder) | | |-Field 0x746bf8 '' 'union mjuiItem_::(anonymous at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:259:3)'
-
-	# (placeholder) | | `-Field 0x746850 'single' 'struct mjuiItemSingle_':'struct mjuiItemSingle_'
-
-	# (placeholder) | |-IndirectFieldDecl 0x746cb0 <line:261:27> col:27 implicit multi 'struct mjuiItemMulti_':'struct mjuiItemMulti_'
-
-	# (placeholder) | | |-Field 0x746bf8 '' 'union mjuiItem_::(anonymous at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:259:3)'
-
-	# (placeholder) | | `-Field 0x746920 'multi' 'struct mjuiItemMulti_':'struct mjuiItemMulti_'
-
-	# (placeholder) | |-IndirectFieldDecl 0x746d08 <line:262:28> col:28 implicit slider 'struct mjuiItemSlider_':'struct mjuiItemSlider_'
-
-	# (placeholder) | | |-Field 0x746bf8 '' 'union mjuiItem_::(anonymous at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:259:3)'
-
-	# (placeholder) | | `-Field 0x7469f0 'slider' 'struct mjuiItemSlider_':'struct mjuiItemSlider_'
-
-	# (placeholder) | |-IndirectFieldDecl 0x746d60 <line:263:26> col:26 implicit edit 'struct mjuiItemEdit_':'struct mjuiItemEdit_'
-
-	# (placeholder) | | |-Field 0x746bf8 '' 'union mjuiItem_::(anonymous at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:259:3)'
-
-	# (placeholder) | | `-Field 0x746ac0 'edit' 'struct mjuiItemEdit_':'struct mjuiItemEdit_'
-
 	var rect: mjrRect
 
 	var skip: Int32
 
 
-alias mjuiItem = 
-# (placeholder) | `-ElaboratedType 0x746f00 'struct mjuiItem_' sugar
-mjuiItem_
+alias mjuiItem = 'struct mjuiItem_' sugarmjuiItem_
 # TypedefDeclNode Unhandled tokens: mjuiItem_':'struct 
 struct mjuiSection_:
-	# (placeholder) | |-FullComment 0x8586c0 <line:273:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x858690 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x858660 <col:3, col:100> Text="---------------------------------- mjuiSection ---------------------------------------------------"
 
 	var name: SIMD[Int8.dtype, 40]
 
@@ -17443,16 +16424,9 @@ struct mjuiSection_:
 	var lastclick: Int32
 
 
-alias mjuiSection = 
-# (placeholder) | `-ElaboratedType 0x747a20 'struct mjuiSection_' sugar
-mjuiSection_
+alias mjuiSection = 'struct mjuiSection_' sugarmjuiSection_
 # TypedefDeclNode Unhandled tokens: mjuiSection_':'struct 
 struct mjUI_:
-	# (placeholder) | |-FullComment 0x858fb0 <line:293:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x858f80 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x858f50 <col:3, col:100> Text="---------------------------------- mjUI ----------------------------------------------------------"
 
 	var spacing: mjuiThemeSpacing
 
@@ -17503,16 +16477,9 @@ struct mjUI_:
 	var sect: SIMD[mjuiSection.dtype, 10]
 
 
-alias mjUI = 
-# (placeholder) | `-ElaboratedType 0x749980 'struct mjUI_' sugar
-mjUI_
+alias mjUI = 'struct mjUI_' sugarmjUI_
 # TypedefDeclNode Unhandled tokens: mjUI_':'struct 
 struct mjuiDef_:
-	# (placeholder) | |-FullComment 0x85a410 <line:333:3, col:100>
-
-	# (placeholder) | | `-ParagraphComment 0x85a3e0 <col:3, col:100>
-
-	# (placeholder) | |   `-TextComment 0x85a3b0 <col:3, col:100> Text="---------------------------------- mjuiDef -------------------------------------------------------"
 
 	var type: Int32
 
@@ -17527,9 +16494,7 @@ struct mjuiDef_:
 	var otherint: Int32
 
 
-alias mjuiDef = 
-# (placeholder) | `-ElaboratedType 0x749f30 'struct mjuiDef_' sugar
-mjuiDef_
+alias mjuiDef = 'struct mjuiDef_' sugarmjuiDef_
 # TypedefDeclNode Unhandled tokens: mjuiDef_':'struct 
 
 # (placeholder) |-VarDecl 0x74a200 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:45:49> col:22 mju_user_error 'void (*)(const char *)' extern

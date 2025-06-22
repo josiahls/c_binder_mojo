@@ -110,15 +110,42 @@ struct RecordDeclNode(NodeAstLike):
     var _inner_struct_name_map: Dict[String, String]
     var _record_mem_location: String
 
+    var _record_name: String
+    var _unhandled_tokens: List[String]
+    var _is_anonymous: Bool
+    var _is_forward_declaration: Bool
+    var _has_fields: Bool
+    var _location: String
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
         self._ast_entries[].append(ast_entry)
         self._record_decl_level = ast_entry.level
+        self._location = ast_entry.precise_location
         self._record_mem_location = ast_entry.mem_address
         self._node_state = NodeState.COMPLETED
         self._grammar = Grammar()
         self._inner_struct_name_map = Dict[String, String]()
+
+        self._record_name = String()
+        self._unhandled_tokens = List[String]()
+        self._is_anonymous = False
+        self._is_forward_declaration = False
+        self._has_fields = False
+
+        for entry in ast_entry.tokens:
+            if entry == "struct":
+                pass
+            elif entry == "definition":
+                pass
+            elif self._record_name == "":
+                self._record_name = String(entry.strip("'"))
+            else:
+                self._unhandled_tokens.append(entry)
+
+        if self._record_name == "":
+            self._record_name = "Anonymous_" + self._location.replace(":", "_")
 
     @staticmethod
     fn accept(
@@ -134,13 +161,14 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> AstNode:
-        print("creating record decl node: " + ast_entries.precise_location)
+        # print("creating record decl node: " + ast_entries.precise_location)
+        # TODO(josiahls): This node might need to be a factory (?)
         return AstNode(Self(indices, ast_entries))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-        print("RecordDeclNode: determining token flow: " + ast_entry.precise_location)
+        # print("RecordDeclNode: determining token flow: " + ast_entry.precise_location)
         if ast_entry.level <= self._record_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
@@ -159,6 +187,8 @@ struct RecordDeclNode(NodeAstLike):
             self.update_child_struct_names(module_interface)
             get_global_type_mapper()[].add_custom_type(self._grammar._name)
             self._node_state = NodeState.COMPLETED
+            if self._indicies[].child_idxs:
+                self._has_fields = True
 
     fn update_child_struct_names(mut self, module_interface: ModuleInterface):
         anonymous_struct_caught = False
@@ -248,33 +278,47 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var s: String = ""
+        # var s: String = ""
         var indent: String = ""
-        # var inner_struct_name_map: Dict[String, String] = {}
+        # # var inner_struct_name_map: Dict[String, String] = {}
 
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level
 
-        if not just_code:
-            s += indent + self.name(include_sig=True) + "\n"
+        # if not just_code:
+        #     s += indent + self.name(include_sig=True) + "\n"
 
-        s += indent + String(self._grammar)
+        # s += indent + String(self._grammar)
 
-        has_fields = False
-        for child_idx in self._indicies[].child_idxs:
-            child = module_interface.nodes()[][child_idx]
+        # has_fields = False
+        # for child_idx in self._indicies[].child_idxs:
+        #     child = module_interface.nodes()[][child_idx]
 
-            if child.node[].isa[Self]():
-                s = child.to_string(just_code, module_interface, 0) + "\n" + s
-            else:
-                s += child.to_string(
-                    just_code, module_interface, parent_indent_level + 1
-                )
+        #     if child.node[].isa[Self]():
+        #         s = child.to_string(just_code, module_interface, 0) + "\n" + s
+        #     else:
+        #         s += child.to_string(
+        #             just_code, module_interface, parent_indent_level + 1
+        #         )
 
-            if child.name() == "FieldDeclNode":
-                has_fields = True
+        #     if child.name() == "FieldDeclNode":
+        #         has_fields = True
 
-        if not has_fields:
-            s += indent + "\t" + "pass" + "\n"
+        # if not has_fields:
+        #     s += indent + "\t" + "pass" + "\n"
+
+        s = 'struct ' + self._record_name + ":\n"
+        if not self._has_fields:
+            s += indent + "\tpass\n"
+        else:
+            for child_idx in self._indicies[].child_idxs:
+                child = module_interface.nodes()[][child_idx]
+                if child.node[].isa[FieldDeclNode]():
+                    s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+
+        if self._unhandled_tokens:
+            s += " # Unhandled tokens: "
+            for token in self._unhandled_tokens:
+                s += " " + token
 
         return s + "\n"

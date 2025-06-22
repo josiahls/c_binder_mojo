@@ -32,9 +32,11 @@ struct RecordNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _ast_entry: AstEntry
     var _node_state: MessageableEnum
+    var _mem_address: String
     var _typedef_decl_level: Int
     var _record_name: String
     var _make_record_decl: Bool
+    var _is_anonymous_record: Bool
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -45,11 +47,16 @@ struct RecordNode(NodeAstLike):
         self._record_name = String()
         # We assume it is declared unless proved otherwise.
         self._make_record_decl = False
+        self._is_anonymous_record = False
+        self._mem_address = ast_entry.mem_address
 
         for entry in ast_entry.tokens:
             stripped_entry = entry.strip("'")
 
             self._record_name += stripped_entry
+
+        if self._record_name == "":
+            self._is_anonymous_record = True
 
     @staticmethod
     fn accept(
@@ -73,6 +80,20 @@ struct RecordNode(NodeAstLike):
             if node.node[].isa[TranslationUnitDeclNode]():
                 return node.node[][TranslationUnitDeclNode].indicies().current_idx
         return -1
+
+    fn get_aliased_record_decl(self, module_interface: ModuleInterface) -> Optional[AstNode]:
+        if self._is_anonymous_record:
+            mem_address = self._ast_entry.mem_address
+            for node in module_interface.nodes()[]:
+                if node.node[].isa[RecordDeclNode]():
+                    if node.node[][RecordDeclNode]._record_mem_location == mem_address:
+                        return node
+
+        for child in self._indicies[].child_idxs:
+            node = module_interface.get_node(child)
+            if node.node[].isa[RecordDeclNode]():
+                return node
+        return None
 
     @staticmethod
     fn create(

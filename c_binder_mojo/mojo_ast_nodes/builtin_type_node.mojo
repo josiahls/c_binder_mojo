@@ -49,7 +49,10 @@ struct BuiltinTypeNode(NodeAstLike):
             if entry.replace("'", "") == "unsigned":
                 self._unsigned = True
             else:
-                self._builtin_type += entry.replace("'", "")
+                if self._builtin_type == "":
+                    self._builtin_type += entry.replace("'", "")
+                else:
+                    self._builtin_type += " " + entry.replace("'", "")
 
 
     @staticmethod

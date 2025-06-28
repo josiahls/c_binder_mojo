@@ -8458,5 +8458,3 @@ alias mjs_asTexture = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mj
 alias mjs_asMaterial = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsMaterial]
 alias mjs_asPlugin = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsPlugin]
 
-
-# (placeholder) C_BINDER_MOJO_END_FILE

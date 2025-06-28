@@ -41,7 +41,7 @@ alias AstNodeVariant = Variant[
     FieldDeclNode,
     # EnumDeclNode,
     # EnumConstantDeclNode,
-    # EndFileNode,
+    EndFileNode,
     VarDeclNode,
     TypedefDeclNode,
     FunctionDeclNode,

@@ -15316,5 +15316,5 @@ alias mjs_asTexture = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mj
 alias mjs_asMaterial = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsMaterial]
 alias mjs_asPlugin = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsPlugin]
 
-PlaceHolderNode(parent_idx=0, current_idx=10874, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-C_BINDER_MOJO_END_FILE
+EndFileNode(parent_idx=0, current_idx=10874, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+# C_BINDER_MOJO_END_FILE

@@ -13,6 +13,7 @@ from .function_decl_node import FunctionDeclNode
 from .pointer_type_node import PointerTypeNode
 from .builtin_type_node import BuiltinTypeNode
 from .typedef_type_node import TypedefTypeNode
+from .typedef_node import TypedefNode
 from .record_type_node import RecordTypeNode
 from .constant_array_type_node import ConstantArrayTypeNode
 from .elaborated_type_node import ElaboratedTypeNode
@@ -28,7 +29,8 @@ alias AstNodeVariant = Variant[
     PointerTypeNode,
     BuiltinTypeNode,
     ParmVarDeclNode,
-    # TypedefTypeNode,
+    TypedefTypeNode,
+    TypedefNode,
     RecordTypeNode,
     RecordNode,
     ConstantArrayTypeNode,

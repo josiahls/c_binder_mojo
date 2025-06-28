@@ -24,51 +24,27 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
 @fieldwise_init
-struct ElaboratedTypeNode(NodeAstLike):
-    alias __name__ = "ElaboratedTypeNode"
+struct TypedefNode(NodeAstLike):
+    alias __name__ = "TypedefNode"
     var _indicies: ArcPointer[NodeIndices]
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
-    var _elaborated_type: String
-    var _unhandled_tokens: String
-    var _aliased_record_name: String
-
-    var _is_struct: Bool
-    var _is_sugar: Bool
+    var _typedef_type: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
-        self._elaborated_type = String()
-        self._unhandled_tokens = String()
-        self._is_struct = False
-        self._is_sugar = False
-        self._aliased_record_name = String()
+        self._typedef_type = String()
 
         var quoted_indices = ast_entry.get_quoted_indices()
-        var start_idx = 0
-        var end_idx = len(ast_entry.tokens) - 1
 
-        if len(quoted_indices) > 0:
-            if len(quoted_indices) == 1:
-                start_idx = quoted_indices[0]
-                end_idx = len(ast_entry.tokens) - 1
-                for token in ast_entry.tokens[start_idx:end_idx]:
-                    if token == "struct":
-                        self._is_struct = True
-                    elif self._elaborated_type == "":
-                        self._elaborated_type = token
-                    else:
-                        self._elaborated_type += " " + token
-
-        for token in ast_entry.tokens[end_idx:]:
-            if token == "sugar":
-                self._is_sugar = True
-
+        if len(quoted_indices) > 1:
+            self._typedef_type = String(' ').join(ast_entry.tokens[quoted_indices[0] + 1:quoted_indices[1]])
+        else:
+            self._typedef_type = String(' ').join(ast_entry.tokens)
 
     @staticmethod
     fn accept(
@@ -76,7 +52,7 @@ struct ElaboratedTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return ast_entries.ast_name == "ElaboratedType"
+        return ast_entries.ast_name == "Typedef"
 
     @staticmethod
     fn create(
@@ -101,25 +77,10 @@ struct ElaboratedTypeNode(NodeAstLike):
         mut module_interface: ModuleInterface,
     ):
         if token_flow == TokenFlow.CREATE_CHILD:
-            pass
+            self._node_state = NodeState.BUILDING_CHILDREN
+            return
         else:
-            self._aliased_record_name = self.get_aliased_record_name(module_interface)
-            print("ElaboratedTypeNode: " + self._aliased_record_name)
             self._node_state = NodeState.COMPLETED
-
-    fn get_aliased_record_name(self, module_interface: ModuleInterface) -> String:
-        for child in self._indicies[].child_idxs:
-            node = module_interface.get_node(child)
-            if node.node[].isa[RecordTypeNode]():
-                optional_node = node.node[][RecordTypeNode].get_aliased_record_decl(module_interface)
-                if optional_node:
-                    try:
-                        return optional_node[].node[][RecordDeclNode]._record_name 
-                    except e:
-                        print('ElaboratedTypeNode: Unhandled node type: ' + String(e))
-            else:
-                print('ElaboratedTypeNode: Unhandled node type: ' + node.name())
-        return String()
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -162,4 +123,16 @@ struct ElaboratedTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return self._aliased_record_name
+
+        var s = String()
+        s += self._typedef_type
+        return default_to_string(
+            node=AstNode(self),
+            module_interface=module_interface,
+            just_code=just_code,
+            indent_level=parent_indent_level,
+            # newline_before_ast_entries=just_code,
+            # newline_after_tail=True,
+            # indent_before_ast_entries=True,
+            alternate_string=s,
+        )

@@ -32,6 +32,10 @@ struct TypedefTypeNode(NodeAstLike):
     var _typedef_decl_level: Int
     var _typedef_type: String
 
+    var _typedef_type_is_sugar: Bool
+    var _typedef_type_is_reference: Bool
+    var _typedef_type_is_referenced: Bool
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -39,6 +43,43 @@ struct TypedefTypeNode(NodeAstLike):
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
         self._typedef_type = String()
+        self._typedef_type_is_sugar = False
+        self._typedef_type_is_reference = False
+        self._typedef_type_is_referenced = False
+
+        var quoted_indices = ast_entry.get_quoted_indices()
+
+        # Phase 1: Before first quote (handle any prefix tokens)
+        var first_quote_idx = quoted_indices[0] if len(quoted_indices) > 0 else len(ast_entry.tokens) - 1
+        for token in ast_entry.tokens[:first_quote_idx]:
+            if token == "referenced":
+                self._typedef_type_is_referenced = True
+            elif token == "sugar":
+                self._typedef_type_is_sugar = True
+
+        # Phase 2: Extract content between quote pairs
+        if len(quoted_indices) >= 2:
+            # We have at least one complete quote pair
+            var start_idx = quoted_indices[0]
+            var end_idx = quoted_indices[1]
+            for token in ast_entry.tokens[start_idx:end_idx]:
+                if token == "'":
+                    continue  # Skip the quote tokens themselves
+                elif self._typedef_type == "":
+                    self._typedef_type = token
+                else:
+                    self._typedef_type += " " + token
+        else:
+            # No quotes or incomplete quotes - use all tokens
+            self._typedef_type = String(' ').join(ast_entry.tokens)
+
+        # Phase 3: After last quote (check for sugar, etc.)
+        var last_quote_idx = quoted_indices[-1] if len(quoted_indices) > 0 else 0
+        for token in ast_entry.tokens[last_quote_idx:]:
+            if token == "sugar":
+                self._typedef_type_is_sugar = True
+            elif token == "referenced":
+                self._typedef_type_is_referenced = True
 
     @staticmethod
     fn accept(
@@ -73,34 +114,8 @@ struct TypedefTypeNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
             return
-        # elif token_flow == TokenFlow.CONSUME_TOKEN:
-        #     if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
-        #         if self.process_anonymous_record(ast_entry, module_interface):
-        #             return
-        #     self._ast_entries[].append(ast_entry)
         else:
-            self._typedef_type = String(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
-
-    fn process_anonymous_record(
-        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
-    ) -> Bool:
-        mem_addesss = ast_entry.mem_address
-        for node in module_interface.nodes()[]:
-            if node.node[].isa[RecordDeclNode]():
-                if (
-                    node.node[][RecordDeclNode]._record_mem_location
-                    == mem_addesss
-                ):
-                    struct_name = node.node[][RecordDeclNode]._grammar._name
-                    new_entry = AstEntry()
-                    new_entry.ast_name = "AnonymousRecord"
-                    new_entry.tokens = [struct_name]
-                    new_entry.precise_location = ast_entry.precise_location
-                    new_entry.mem_address = ast_entry.mem_address
-                    self._ast_entries[].append(new_entry)
-                    return True
-        return False
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -143,13 +158,18 @@ struct TypedefTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return default_to_string(
-            node=AstNode(self),
-            module_interface=module_interface,
-            just_code=just_code,
-            indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
-            alternate_string=String(self._typedef_type) if just_code else String(),
-        )
+
+        _typedef_type = self._typedef_type
+
+        for child_idx in self._indicies[].child_idxs:
+            var child = module_interface.get_node(child_idx)
+            if child.node[].isa[TypedefNode]():
+                _typedef_type = child.node[][TypedefNode].to_string(just_code, module_interface, parent_indent_level)
+                # _typedef_type += " # From TypedefNode"
+            elif child.node[].isa[BuiltinTypeNode]():
+                # NOTE: BuiltinTypes are priority over Typedefs since they are more specific.
+                _typedef_type = child.node[][BuiltinTypeNode].to_string(just_code, module_interface, parent_indent_level)
+                # _typedef_type += " # From BuiltinTypeNode"
+                break
+
+        return  _typedef_type

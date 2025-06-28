@@ -36,7 +36,11 @@ struct RecordNode(NodeAstLike):
     var _typedef_decl_level: Int
     var _record_name: String
     var _make_record_decl: Bool
+    var _unhandled_tokens: String
     var _is_anonymous_record: Bool
+    var _is_struct: Bool
+    var _is_union: Bool
+    var _is_enum: Bool
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -48,15 +52,30 @@ struct RecordNode(NodeAstLike):
         # We assume it is declared unless proved otherwise.
         self._make_record_decl = False
         self._is_anonymous_record = False
+        self._is_struct = False
+        self._is_union = False
+        self._is_enum = False
+        self._unhandled_tokens = String()
         self._mem_address = ast_entry.mem_address
 
         for entry in ast_entry.tokens:
-            stripped_entry = entry.strip("'")
-
-            self._record_name += stripped_entry
+            if entry == "'":
+                continue
+            elif entry == "struct":
+                self._is_struct = True
+            elif entry == "union":
+                self._is_union = True
+            elif entry == "enum":
+                self._is_enum = True
+            elif self._record_name == "":
+                self._record_name = entry
+            else:
+                self._unhandled_tokens += " " + entry
 
         if self._record_name == "":
             self._is_anonymous_record = True
+
+        # TODO(josiahls): Unions probably need to return as Opque pointers since mojo doesn't support unions.
 
     @staticmethod
     fn accept(
@@ -134,11 +153,6 @@ struct RecordNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
             return
-        # elif token_flow == TokenFlow.CONSUME_TOKEN:
-        #     if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
-        #         if self.process_anonymous_record(ast_entry, module_interface):
-        #             return
-        #     self._ast_entries[].append(ast_entry)
         else:
             self._node_state = NodeState.COMPLETED
 
@@ -203,7 +217,7 @@ struct RecordNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        # return String(self._record_type) + " " + self._record_name
+        print("RecordNode: " + self._record_name)
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,

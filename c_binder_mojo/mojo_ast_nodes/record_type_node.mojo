@@ -43,18 +43,34 @@ struct RecordTypeNode(NodeAstLike):
         self._aliased_record_name = String()
         self._unhandled_tokens = String()
 
-        for entry in ast_entry.tokens:
-            stripped_entry = entry.strip("'")
+        var quoted_indices = ast_entry.get_quoted_indices()
+        var start_idx = 0
+        var end_idx = len(ast_entry.tokens) - 1
 
-            if stripped_entry == "struct":
-                self._record_type = "struct"
-            elif stripped_entry == "union":
-                self._record_type = "union"
-            elif stripped_entry == "enum":
-                self._record_type = "enum"
-            else:
-                # NOTE: the record name should come from the sub record node.
-                self._aliased_record_name += stripped_entry
+        if len(quoted_indices) > 1:
+            start_idx = 0
+            end_idx = quoted_indices[0]
+            for token in ast_entry.tokens[start_idx:end_idx]:
+                if token == "struct":
+                    self._record_type = "struct"
+                elif token == "union":
+                    self._record_type = "union"
+                elif token == "enum":
+                    self._record_type = "enum"
+
+            start_idx = end_idx
+            end_idx = quoted_indices[-1]
+            for token in ast_entry.tokens[start_idx:end_idx]:
+                if token == "'":
+                    continue
+                elif self._record_type == "":
+                    self._record_type = token
+                else:
+                    self._record_type += " " + token
+        else:
+            if len(quoted_indices) == 1:
+                print("RecordTypeNode: Unhandled quoted indices: " + String(' ').join(ast_entry.tokens))
+
 
     @staticmethod
     fn accept(
@@ -89,13 +105,7 @@ struct RecordTypeNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
             return
-        # elif token_flow == TokenFlow.CONSUME_TOKEN:
-        #     if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
-        #         if self.process_anonymous_record(ast_entry, module_interface):
-        #             return
-        #     self._ast_entries[].append(ast_entry)
         else:
-            # self._record_type = String(self._ast_entries[])
             self._node_state = NodeState.COMPLETED
 
 

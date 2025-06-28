@@ -66,8 +66,6 @@ struct ParmVarDeclNode(NodeAstLike):
 
         self.unhandled_tokens = String()
 
-        is_adding_type = False
-
         var start_idx, end_idx = self._start_end_quotes(ast_entry.tokens)
 
         for entry in ast_entry.tokens[:start_idx]:

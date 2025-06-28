@@ -114,6 +114,9 @@ struct RecordDeclNode(NodeAstLike):
     var _unhandled_tokens: List[String]
     var _is_anonymous: Bool
     var _is_forward_declaration: Bool
+    var _is_struct: Bool
+    var _is_union: Bool
+    var _is_enum: Bool
     var _has_fields: Bool
     var _location: String
 
@@ -133,12 +136,19 @@ struct RecordDeclNode(NodeAstLike):
         self._is_anonymous = False
         self._is_forward_declaration = False
         self._has_fields = False
+        self._is_struct = False
+        self._is_union = False
+        self._is_enum = False
 
         for entry in ast_entry.tokens:
             if entry == "'":
                 pass
             elif entry == "struct":
-                pass
+                self._is_struct = True
+            elif entry == "union":
+                self._is_union = True
+            elif entry == "enum":
+                self._is_enum = True
             elif entry == "definition":
                 pass
             elif self._record_name == "":

@@ -38,6 +38,24 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         self.level = 0
         self.str_just_original_line = False
 
+    fn get_quoted_indices(self) -> List[Int]:
+        """Find the indices of quoted content in tokens.
+        
+        This is used to extract type information from clang AST dump format
+        where types are quoted like 'char *(long)' or may have multiple
+        quoted sections.
+        
+        Returns:
+            List of indices where quotes appear in the tokens
+        """
+        var quoted_indices = List[Int]()
+        var idx = 0
+        for token in self.tokens:
+            if token == "'":
+                quoted_indices.append(idx)
+            idx += 1
+        return quoted_indices
+
     fn __str__(read self: Self) -> String:
         var s: String = ""
         s += " " * self.level
@@ -264,6 +282,14 @@ struct AstParser:
                 ):
                     ast_entry.full_location = "invalid"
                 elif (
+                    token.startswith("<<scratch")
+                    and ast_entry.full_location == ""
+                ) or (
+                    "space>" in token
+                    and ':' not in ast_entry.full_location
+                ):
+                    ast_entry.full_location = "scratch"
+                elif (
                     token.startswith("<invalid")
                     and ast_entry.precise_location == ""
                 ) or (
@@ -271,6 +297,14 @@ struct AstParser:
                     and not ast_entry.precise_location.endswith(">")
                 ):
                     ast_entry.precise_location = "invalid"
+                elif (
+                    token.startswith("<scratch")
+                    and ast_entry.precise_location == ""
+                ) or (
+                    "space>" in token
+                    and ':' not in ast_entry.precise_location
+                ):
+                    ast_entry.precise_location = "scratch"
                 elif (
                     token.startswith("col:")
                     and ast_entry.precise_location == ""

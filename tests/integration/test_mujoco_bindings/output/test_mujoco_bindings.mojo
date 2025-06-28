@@ -102,53 +102,21 @@ alias __int64_t = Int64
 
 alias __uint64_t = UInt64
 
-alias __int_least8_t = 
-# (placeholder) | `-TypedefType 0x56b500 '__int8_t' sugar
+alias __int_least8_t = Int8
 
-# (placeholder) |   |-Typedef 0x56b190 '__int8_t'
-Int8
+alias __uint_least8_t = UInt8
 
-alias __uint_least8_t = 
-# (placeholder) | `-TypedefType 0x56b590 '__uint8_t' sugar
+alias __int_least16_t = Int16
 
-# (placeholder) |   |-Typedef 0x56b200 '__uint8_t'
-UInt8
+alias __uint_least16_t = UInt16
 
-alias __int_least16_t = 
-# (placeholder) | `-TypedefType 0x56b620 '__int16_t' sugar
+alias __int_least32_t = Int32
 
-# (placeholder) |   |-Typedef 0x56b270 '__int16_t'
-Int16
+alias __uint_least32_t = UInt32
 
-alias __uint_least16_t = 
-# (placeholder) | `-TypedefType 0x56b6b0 '__uint16_t' sugar
+alias __int_least64_t = Int64
 
-# (placeholder) |   |-Typedef 0x56b2e0 '__uint16_t'
-UInt16
-
-alias __int_least32_t = 
-# (placeholder) | `-TypedefType 0x56b740 '__int32_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b350 '__int32_t'
-Int32
-
-alias __uint_least32_t = 
-# (placeholder) | `-TypedefType 0x58b7c0 '__uint32_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b3c0 '__uint32_t'
-UInt32
-
-alias __int_least64_t = 
-# (placeholder) | `-TypedefType 0x58b850 '__int64_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b430 '__int64_t'
-Int64
-
-alias __uint_least64_t = 
-# (placeholder) | `-TypedefType 0x58b8e0 '__uint64_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b4a0 '__uint64_t'
-UInt64
+alias __uint_least64_t = UInt64
 
 alias __quad_t = Int64
 
@@ -231,11 +199,7 @@ alias __syscall_slong_t = Int64
 
 alias __syscall_ulong_t = UInt64
 
-alias __loff_t = 
-# (placeholder) | `-TypedefType 0x593b90 '__off64_t' sugar
-
-# (placeholder) |   |-Typedef 0x58bec0 '__off64_t'
-Int64
+alias __loff_t = Int64
 
 alias __caddr_t = UnsafePointer[Int8]
 
@@ -246,161 +210,55 @@ alias __socklen_t = UInt32
 
 alias __sig_atomic_t = Int32
 
-alias u_char = 
-# (placeholder) | `-TypedefType 0x593de0 '__u_char' sugar
+alias u_char = UInt8
 
-# (placeholder) |   |-Typedef 0x56afd0 '__u_char'
-UInt8
+alias u_short = UInt16
 
-alias u_short = 
-# (placeholder) | `-TypedefType 0x593e70 '__u_short' sugar
+alias u_int = UInt32
 
-# (placeholder) |   |-Typedef 0x56b040 '__u_short'
-UInt16
+alias u_long = UInt64
 
-alias u_int = 
-# (placeholder) | `-TypedefType 0x593f00 '__u_int' sugar
+alias quad_t = Int64
 
-# (placeholder) |   |-Typedef 0x56b0b0 '__u_int'
-UInt32
+alias u_quad_t = UInt64
 
-alias u_long = 
-# (placeholder) | `-TypedefType 0x593f90 '__u_long' sugar
+alias fsid_t = __fsid_t
 
-# (placeholder) |   |-Typedef 0x56b120 '__u_long'
-UInt64
+alias loff_t = __loff_t
 
-alias quad_t = 
-# (placeholder) | `-TypedefType 0x594020 '__quad_t' sugar
+alias ino_t = UInt64
 
-# (placeholder) |   |-Typedef 0x58b980 '__quad_t'
-Int64
+alias dev_t = UInt64
 
-alias u_quad_t = 
-# (placeholder) | `-TypedefType 0x5940b0 '__u_quad_t' sugar
+alias gid_t = UInt32
 
-# (placeholder) |   |-Typedef 0x58b9f0 '__u_quad_t'
-UInt64
+alias mode_t = UInt32
 
-alias fsid_t = 
-# (placeholder) | `-TypedefType 0x594140 '__fsid_t' sugar
+alias nlink_t = UInt64
 
-# (placeholder) |   |-Typedef 0x58c178 '__fsid_t'
-Anonymous_col_24
+alias uid_t = UInt32
 
-alias loff_t = 
-# (placeholder) | `-TypedefType 0x5941d0 '__loff_t' sugar
+alias off_t = Int64
 
-# (placeholder) |   |-Typedef 0x593bc0 '__loff_t'
+alias pid_t = Int32
 
-# (placeholder) |   `-TypedefType 0x593b90 '__off64_t' sugar
+alias id_t = UInt32
 
-# (placeholder) |     |-Typedef 0x58bec0 '__off64_t'
-Int64
+alias ssize_t = Int64
 
-alias ino_t = 
-# (placeholder) | `-TypedefType 0x594260 '__ino_t' sugar
+alias daddr_t = Int32
 
-# (placeholder) |   |-Typedef 0x58bc90 '__ino_t'
-UInt64
+alias caddr_t = __caddr_t
 
-alias dev_t = 
-# (placeholder) | `-TypedefType 0x5942f0 '__dev_t' sugar
+alias key_t = Int32
 
-# (placeholder) |   |-Typedef 0x58bb40 '__dev_t'
-UInt64
+alias clock_t = Int64
 
-alias gid_t = 
-# (placeholder) | `-TypedefType 0x594380 '__gid_t' sugar
+alias clockid_t = Int32
 
-# (placeholder) |   |-Typedef 0x58bc20 '__gid_t'
-UInt32
+alias time_t = Int64
 
-alias mode_t = 
-# (placeholder) | `-TypedefType 0x594410 '__mode_t' sugar
-
-# (placeholder) |   |-Typedef 0x58bd70 '__mode_t'
-UInt32
-
-alias nlink_t = 
-# (placeholder) | `-TypedefType 0x5944a0 '__nlink_t' sugar
-
-# (placeholder) |   |-Typedef 0x58bde0 '__nlink_t'
-UInt64
-
-alias uid_t = 
-# (placeholder) | `-TypedefType 0x594530 '__uid_t' sugar
-
-# (placeholder) |   |-Typedef 0x58bbb0 '__uid_t'
-UInt32
-
-alias off_t = 
-# (placeholder) | `-TypedefType 0x5945c0 '__off_t' sugar
-
-# (placeholder) |   |-Typedef 0x58be50 '__off_t'
-Int64
-
-alias pid_t = 
-# (placeholder) | `-TypedefType 0x594650 '__pid_t' sugar
-
-# (placeholder) |   |-Typedef 0x58bf30 '__pid_t'
-Int32
-
-alias id_t = 
-# (placeholder) | `-TypedefType 0x595f60 '__id_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c350 '__id_t'
-UInt32
-
-alias ssize_t = 
-# (placeholder) | `-TypedefType 0x595ff0 '__ssize_t' sugar
-
-# (placeholder) |   |-Typedef 0x593a50 '__ssize_t'
-Int64
-
-alias daddr_t = 
-# (placeholder) | `-TypedefType 0x596080 '__daddr_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c580 '__daddr_t'
-Int32
-
-alias caddr_t = 
-# (placeholder) | `-TypedefType 0x596110 '__caddr_t' sugar
-
-# (placeholder) |   |-Typedef 0x593c30 '__caddr_t'
-UnsafePointer[Int8]
-
-
-alias key_t = 
-# (placeholder) | `-TypedefType 0x5961a0 '__key_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c5f0 '__key_t'
-Int32
-
-alias clock_t = 
-# (placeholder) | `-TypedefType 0x596230 '__clock_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c200 '__clock_t'
-Int64
-
-alias clockid_t = 
-# (placeholder) | `-TypedefType 0x5962c0 '__clockid_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c660 '__clockid_t'
-Int32
-
-alias time_t = 
-# (placeholder) | `-TypedefType 0x596350 '__time_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c3c0 '__time_t'
-Int64
-
-alias timer_t = 
-# (placeholder) | `-TypedefType 0x5963e0 '__timer_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c6d0 '__timer_t'
-UnsafePointer[NoneType]
-
+alias timer_t = __timer_t
 
 alias ulong = UInt64
 
@@ -408,53 +266,21 @@ alias ushort = UInt16
 
 alias uint = UInt32
 
-alias int8_t = 
-# (placeholder) | `-TypedefType 0x56b500 '__int8_t' sugar
+alias int8_t = Int8
 
-# (placeholder) |   |-Typedef 0x56b190 '__int8_t'
-Int8
+alias int16_t = Int16
 
-alias int16_t = 
-# (placeholder) | `-TypedefType 0x56b620 '__int16_t' sugar
+alias int32_t = Int32
 
-# (placeholder) |   |-Typedef 0x56b270 '__int16_t'
-Int16
+alias int64_t = Int64
 
-alias int32_t = 
-# (placeholder) | `-TypedefType 0x56b740 '__int32_t' sugar
+alias u_int8_t = UInt8
 
-# (placeholder) |   |-Typedef 0x56b350 '__int32_t'
-Int32
+alias u_int16_t = UInt16
 
-alias int64_t = 
-# (placeholder) | `-TypedefType 0x58b850 '__int64_t' sugar
+alias u_int32_t = UInt32
 
-# (placeholder) |   |-Typedef 0x56b430 '__int64_t'
-Int64
-
-alias u_int8_t = 
-# (placeholder) | `-TypedefType 0x56b590 '__uint8_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b200 '__uint8_t'
-UInt8
-
-alias u_int16_t = 
-# (placeholder) | `-TypedefType 0x56b6b0 '__uint16_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b2e0 '__uint16_t'
-UInt16
-
-alias u_int32_t = 
-# (placeholder) | `-TypedefType 0x58b7c0 '__uint32_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b3c0 '__uint32_t'
-UInt32
-
-alias u_int64_t = 
-# (placeholder) | `-TypedefType 0x58b8e0 '__uint64_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b4a0 '__uint64_t'
-UInt64
+alias u_int64_t = UInt64
 
 alias register_t = Int64
 # (placeholder) | `-ModeAttr 0x596988 <col:40, col:58> __word__
@@ -472,11 +298,7 @@ struct Anonymous_line_5_9:
 
 alias __sigset_t = Anonymous_line_5_9
 
-alias sigset_t = 
-# (placeholder) | `-TypedefType 0x5a5220 '__sigset_t' sugar
-
-# (placeholder) |   |-Typedef 0x5a51a8 '__sigset_t'
-Anonymous_line_5_9
+alias sigset_t = __sigset_t
 struct timeval:
 
 	var tv_sec: __time_t
@@ -490,11 +312,7 @@ struct timespec:
 	var tv_nsec: __syscall_slong_t
 
 
-alias suseconds_t = 
-# (placeholder) | `-TypedefType 0x5a53b0 '__suseconds_t' sugar
-
-# (placeholder) |   |-Typedef 0x58c4a0 '__suseconds_t'
-Int64
+alias suseconds_t = Int64
 
 alias __fd_mask = Int64
 struct Anonymous_line_59_9:
@@ -504,46 +322,25 @@ struct Anonymous_line_59_9:
 
 alias fd_set = Anonymous_line_59_9
 
-alias fd_mask = 
-# (placeholder) | `-TypedefType 0x5af300 '__fd_mask' sugar
-
-# (placeholder) |   |-Typedef 0x5a5630 '__fd_mask'
-Int64
+alias fd_mask = Int64
 alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[struct timeval]) -> Int32
 alias pselect = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], read __timeout: UnsafePointer[struct timespec], read __sigmask: UnsafePointer[__sigset_t]) -> Int32
 
-alias blksize_t = 
-# (placeholder) | `-TypedefType 0x5b0160 '__blksize_t' sugar
+alias blksize_t = Int64
 
-# (placeholder) |   |-Typedef 0x5936d0 '__blksize_t'
-Int64
+alias blkcnt_t = Int64
 
-alias blkcnt_t = 
-# (placeholder) | `-TypedefType 0x5b01f0 '__blkcnt_t' sugar
+alias fsblkcnt_t = UInt64
 
-# (placeholder) |   |-Typedef 0x593740 '__blkcnt_t'
-Int64
-
-alias fsblkcnt_t = 
-# (placeholder) | `-TypedefType 0x5b22f0 '__fsblkcnt_t' sugar
-
-# (placeholder) |   |-Typedef 0x593820 '__fsblkcnt_t'
-UInt64
-
-alias fsfilcnt_t = 
-# (placeholder) | `-TypedefType 0x5b2380 '__fsfilcnt_t' sugar
-
-# (placeholder) |   |-Typedef 0x593900 '__fsfilcnt_t'
-UInt64
-struct union:
+alias fsfilcnt_t = UInt64
+struct Anonymous_line_25_9:
 
 	var __value64: UInt128
 
 	var __value32: _definition__Anonymous_line_28_3
 
 
-alias __atomic_wide_counter = union
-# ElaboratedTypeNode: Unhandled tokens: __atomic_wide_counter 
+alias __atomic_wide_counter = Anonymous_line_25_9
 struct __pthread_internal_list:
 
 	var __prev: UnsafePointer[__pthread_internal_list]
@@ -551,13 +348,13 @@ struct __pthread_internal_list:
 	var __next: UnsafePointer[__pthread_internal_list]
 
 
-alias __pthread_list_t = __pthread_internal_list__pthread_internal_list
+alias __pthread_list_t = __pthread_internal_list
 struct __pthread_internal_slist:
 
 	var __next: UnsafePointer[__pthread_internal_slist]
 
 
-alias __pthread_slist_t = __pthread_internal_slist__pthread_internal_slist
+alias __pthread_slist_t = __pthread_internal_slist
 struct __pthread_mutex_s:
 
 	var __lock: Int32
@@ -630,38 +427,35 @@ struct Anonymous_line_108_9:
 alias __once_flag = Anonymous_line_108_9
 
 alias pthread_t = UInt64
-struct union:
+struct Anonymous_line_32_9:
 
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_mutexattr_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_mutexattr_t 
-struct union:
+alias pthread_mutexattr_t = Anonymous_line_32_9
+struct Anonymous_line_41_9:
 
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_condattr_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_condattr_t 
+alias pthread_condattr_t = Anonymous_line_41_9
 
 alias pthread_key_t = UInt32
 
 alias pthread_once_t = Int32
-struct union:
+struct pthread_attr_t:
 
 	var __size: SIMD[Int8.dtype, 56]
 
 	var __align: Int64
- # RecordDeclNode Unhandled tokens:  pthread_attr_t
 
-alias pthread_attr_t = unionpthread_attr_t
-# ElaboratedTypeNode: Unhandled tokens: pthread_attr_t 
-struct union:
+
+alias pthread_attr_t = pthread_attr_t
+struct Anonymous_line_67_9:
 
 	var __data: __pthread_mutex_s
 
@@ -670,9 +464,8 @@ struct union:
 	var __align: Int64
 
 
-alias pthread_mutex_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_mutex_t 
-struct union:
+alias pthread_mutex_t = Anonymous_line_67_9
+struct Anonymous_line_75_9:
 
 	var __data: __pthread_cond_s
 
@@ -681,9 +474,8 @@ struct union:
 	var __align: Int128
 
 
-alias pthread_cond_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_cond_t 
-struct union:
+alias pthread_cond_t = Anonymous_line_75_9
+struct Anonymous_line_86_9:
 
 	var __data: __pthread_rwlock_arch_t
 
@@ -692,39 +484,35 @@ struct union:
 	var __align: Int64
 
 
-alias pthread_rwlock_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_rwlock_t 
-struct union:
+alias pthread_rwlock_t = Anonymous_line_86_9
+struct Anonymous_line_93_9:
 
 	var __size: SIMD[Int8.dtype, 8]
 
 	var __align: Int64
 
 
-alias pthread_rwlockattr_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_rwlockattr_t 
+alias pthread_rwlockattr_t = Anonymous_line_93_9
 
 alias pthread_spinlock_t = 
 # (placeholder) | `-QualType 0x4e34a4 'volatile int' volatile
 Int32
-struct union:
+struct Anonymous_line_108_9:
 
 	var __size: SIMD[Int8.dtype, 32]
 
 	var __align: Int64
 
 
-alias pthread_barrier_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_barrier_t 
-struct union:
+alias pthread_barrier_t = Anonymous_line_108_9
+struct Anonymous_line_114_9:
 
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_barrierattr_t = union
-# ElaboratedTypeNode: Unhandled tokens: pthread_barrierattr_t 
+alias pthread_barrierattr_t = Anonymous_line_114_9
 alias random = fn() -> Int64
 alias srandom = fn(__seed: Int32) -> NoneType
 alias initstate = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t : long) -> UnsafePointer[Int8]
@@ -875,611 +663,611 @@ alias __iseqsig = fn(__x: Float64, __y: Float64) -> Int32
 alias __issignaling = fn(__value: Float64) -> Int32
 alias acos = fn(Float64) -> Float64
 alias acos = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __acos = fn(__x: Float64) -> Float64
 alias asin = fn(Float64) -> Float64
 alias asin = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __asin = fn(__x: Float64) -> Float64
 alias atan = fn(Float64) -> Float64
 alias atan = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __atan = fn(__x: Float64) -> Float64
 alias atan2 = fn(Float64, Float64) -> Float64
 alias atan2 = fn(__y: Float64, __x: Float64) -> Float64
-alias <scratch = fn(__y: Float64, __x: Float64) -> Float64
+alias __atan2 = fn(__y: Float64, __x: Float64) -> Float64
 alias cos = fn(Float64) -> Float64
 alias cos = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __cos = fn(__x: Float64) -> Float64
 alias sin = fn(Float64) -> Float64
 alias sin = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __sin = fn(__x: Float64) -> Float64
 alias tan = fn(Float64) -> Float64
 alias tan = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __tan = fn(__x: Float64) -> Float64
 alias cosh = fn(Float64) -> Float64
 alias cosh = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __cosh = fn(__x: Float64) -> Float64
 alias sinh = fn(Float64) -> Float64
 alias sinh = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __sinh = fn(__x: Float64) -> Float64
 alias tanh = fn(Float64) -> Float64
 alias tanh = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __tanh = fn(__x: Float64) -> Float64
 alias acosh = fn(Float64) -> Float64
 alias acosh = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __acosh = fn(__x: Float64) -> Float64
 alias asinh = fn(Float64) -> Float64
 alias asinh = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __asinh = fn(__x: Float64) -> Float64
 alias atanh = fn(Float64) -> Float64
 alias atanh = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __atanh = fn(__x: Float64) -> Float64
 alias exp = fn(Float64) -> Float64
 alias exp = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __exp = fn(__x: Float64) -> Float64
 alias frexp = fn(Float64, UnsafePointer[Int32]) -> Float64
 alias frexp = fn(__x: Float64, __exponent: UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(__x: Float64, __exponent: UnsafePointer[Int32]) -> Float64
+alias __frexp = fn(__x: Float64, __exponent: UnsafePointer[Int32]) -> Float64
 alias ldexp = fn(Float64, Int32) -> Float64
 alias ldexp = fn(__x: Float64, __exponent: Int32) -> Float64
-alias <scratch = fn(__x: Float64, __exponent: Int32) -> Float64
+alias __ldexp = fn(__x: Float64, __exponent: Int32) -> Float64
 alias log = fn(Float64) -> Float64
 alias log = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __log = fn(__x: Float64) -> Float64
 alias log10 = fn(Float64) -> Float64
 alias log10 = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __log10 = fn(__x: Float64) -> Float64
 alias modf = fn(Float64, UnsafePointer[Float64]) -> Float64
 alias modf = fn(__x: Float64, __iptr: UnsafePointer[Float64]) -> Float64
-alias <scratch = fn(__x: Float64, __iptr: UnsafePointer[Float64]) -> Float64
+alias __modf = fn(__x: Float64, __iptr: UnsafePointer[Float64]) -> Float64
 alias expm1 = fn(Float64) -> Float64
 alias expm1 = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __expm1 = fn(__x: Float64) -> Float64
 alias log1p = fn(Float64) -> Float64
 alias log1p = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __log1p = fn(__x: Float64) -> Float64
 alias logb = fn(Float64) -> Float64
 alias logb = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __logb = fn(__x: Float64) -> Float64
 alias exp2 = fn(Float64) -> Float64
 alias exp2 = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __exp2 = fn(__x: Float64) -> Float64
 alias log2 = fn(Float64) -> Float64
 alias log2 = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __log2 = fn(__x: Float64) -> Float64
 alias pow = fn(Float64, Float64) -> Float64
 alias pow = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __pow = fn(__x: Float64, __y: Float64) -> Float64
 alias sqrt = fn(Float64) -> Float64
 alias sqrt = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __sqrt = fn(__x: Float64) -> Float64
 alias hypot = fn(Float64, Float64) -> Float64
 alias hypot = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __hypot = fn(__x: Float64, __y: Float64) -> Float64
 alias cbrt = fn(Float64) -> Float64
 alias cbrt = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __cbrt = fn(__x: Float64) -> Float64
 alias ceil = fn(Float64) -> Float64
 alias ceil = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __ceil = fn(__x: Float64) -> Float64
 alias fabs = fn(Float64) -> Float64
 alias fabs = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __fabs = fn(__x: Float64) -> Float64
 alias floor = fn(Float64) -> Float64
 alias floor = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __floor = fn(__x: Float64) -> Float64
 alias fmod = fn(Float64, Float64) -> Float64
 alias fmod = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __fmod = fn(__x: Float64, __y: Float64) -> Float64
 alias isinf = fn(__value: Float64) -> Int32
 alias finite = fn(Float64) -> Int32
 alias finite = fn(__value: Float64) -> Int32
 alias drem = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __drem = fn(__x: Float64, __y: Float64) -> Float64
 alias significand = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __significand = fn(__x: Float64) -> Float64
 alias copysign = fn(Float64, Float64) -> Float64
 alias copysign = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __copysign = fn(__x: Float64, __y: Float64) -> Float64
 alias nan = fn(read UnsafePointer[Int8]) -> Float64
 alias nan = fn(read __tagb: UnsafePointer[Int8]) -> Float64
-alias <scratch = fn(read __tagb: UnsafePointer[Int8]) -> Float64
+alias __nan = fn(read __tagb: UnsafePointer[Int8]) -> Float64
 alias isnan = fn(__value: Float64) -> Int32
 alias j0 = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __j0 = fn(Float64) -> Float64
 alias j1 = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __j1 = fn(Float64) -> Float64
 alias jn = fn(Int32, Float64) -> Float64
-alias <scratch = fn(Int32, Float64) -> Float64
+alias __jn = fn(Int32, Float64) -> Float64
 alias y0 = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __y0 = fn(Float64) -> Float64
 alias y1 = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __y1 = fn(Float64) -> Float64
 alias yn = fn(Int32, Float64) -> Float64
-alias <scratch = fn(Int32, Float64) -> Float64
+alias __yn = fn(Int32, Float64) -> Float64
 alias erf = fn(Float64) -> Float64
 alias erf = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __erf = fn(Float64) -> Float64
 alias erfc = fn(Float64) -> Float64
 alias erfc = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __erfc = fn(Float64) -> Float64
 alias lgamma = fn(Float64) -> Float64
 alias lgamma = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __lgamma = fn(Float64) -> Float64
 alias tgamma = fn(Float64) -> Float64
 alias tgamma = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias __tgamma = fn(Float64) -> Float64
 alias gamma = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
+alias __gamma = fn(Float64) -> Float64
+alias lgamma_r = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
+alias __lgamma_r = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
 alias rint = fn(Float64) -> Float64
 alias rint = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __rint = fn(__x: Float64) -> Float64
 alias nextafter = fn(Float64, Float64) -> Float64
 alias nextafter = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __nextafter = fn(__x: Float64, __y: Float64) -> Float64
 alias nexttoward = fn(Float64, Float64) -> Float64
 alias nexttoward = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __nexttoward = fn(__x: Float64, __y: Float64) -> Float64
 alias remainder = fn(Float64, Float64) -> Float64
 alias remainder = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __remainder = fn(__x: Float64, __y: Float64) -> Float64
 alias scalbn = fn(Float64, Int32) -> Float64
 alias scalbn = fn(__x: Float64, __n: Int32) -> Float64
-alias <scratch = fn(__x: Float64, __n: Int32) -> Float64
+alias __scalbn = fn(__x: Float64, __n: Int32) -> Float64
 alias ilogb = fn(Float64) -> Int32
 alias ilogb = fn(__x: Float64) -> Int32
-alias <scratch = fn(__x: Float64) -> Int32
+alias __ilogb = fn(__x: Float64) -> Int32
 alias scalbln = fn(Float64, Int64) -> Float64
 alias scalbln = fn(__x: Float64, __n: Int64) -> Float64
-alias <scratch = fn(__x: Float64, __n: Int64) -> Float64
+alias __scalbln = fn(__x: Float64, __n: Int64) -> Float64
 alias nearbyint = fn(Float64) -> Float64
 alias nearbyint = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __nearbyint = fn(__x: Float64) -> Float64
 alias round = fn(Float64) -> Float64
 alias round = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __round = fn(__x: Float64) -> Float64
 alias trunc = fn(Float64) -> Float64
 alias trunc = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias __trunc = fn(__x: Float64) -> Float64
 alias remquo = fn(Float64, Float64, UnsafePointer[Int32]) -> Float64
 alias remquo = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
+alias __remquo = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
 alias lrint = fn(Float64) -> Int64
 alias lrint = fn(__x: Float64) -> Int64
-alias <scratch = fn(__x: Float64) -> Int64
+alias __lrint = fn(__x: Float64) -> Int64
 alias llrint = fn(Float64) -> Int128
 alias llrint = fn(__x: Float64) -> Int128
-alias <scratch = fn(__x: Float64) -> Int128
+alias __llrint = fn(__x: Float64) -> Int128
 alias lround = fn(Float64) -> Int64
 alias lround = fn(__x: Float64) -> Int64
-alias <scratch = fn(__x: Float64) -> Int64
+alias __lround = fn(__x: Float64) -> Int64
 alias llround = fn(Float64) -> Int128
 alias llround = fn(__x: Float64) -> Int128
-alias <scratch = fn(__x: Float64) -> Int128
+alias __llround = fn(__x: Float64) -> Int128
 alias fdim = fn(Float64, Float64) -> Float64
 alias fdim = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __fdim = fn(__x: Float64, __y: Float64) -> Float64
 alias fmax = fn(Float64, Float64) -> Float64
 alias fmax = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __fmax = fn(__x: Float64, __y: Float64) -> Float64
 alias fmin = fn(Float64, Float64) -> Float64
 alias fmin = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias __fmin = fn(__x: Float64, __y: Float64) -> Float64
 alias fma = fn(Float64, Float64, Float64) -> Float64
 alias fma = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
+alias __fma = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
 alias scalb = fn(__x: Float64, __n: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __n: Float64) -> Float64
-alias <scratch = fn(__value: Float32) -> Int32
-alias <scratch = fn(__value: Float32) -> Int32
-alias <scratch = fn(__value: Float32) -> Int32
+alias __scalb = fn(__x: Float64, __n: Float64) -> Float64
+alias __fpclassifyf = fn(__value: Float32) -> Int32
+alias __signbitf = fn(__value: Float32) -> Int32
+alias __isinff = fn(__value: Float32) -> Int32
 alias __finitef = fn(Float32) -> Int32
-alias <scratch = fn(__value: Float32) -> Int32
-alias <scratch = fn(__value: Float32) -> Int32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Int32
-alias <scratch = fn(__value: Float32) -> Int32
+alias __finitef = fn(__value: Float32) -> Int32
+alias __isnanf = fn(__value: Float32) -> Int32
+alias __iseqsigf = fn(__x: Float32, __y: Float32) -> Int32
+alias __issignalingf = fn(__value: Float32) -> Int32
 alias acosf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias acosf = fn(__x: Float32) -> Float32
+alias __acosf = fn(__x: Float32) -> Float32
 alias asinf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias asinf = fn(__x: Float32) -> Float32
+alias __asinf = fn(__x: Float32) -> Float32
 alias atanf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias atanf = fn(__x: Float32) -> Float32
+alias __atanf = fn(__x: Float32) -> Float32
 alias atan2f = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__y: Float32, __x: Float32) -> Float32
-alias <scratch = fn(__y: Float32, __x: Float32) -> Float32
+alias atan2f = fn(__y: Float32, __x: Float32) -> Float32
+alias __atan2f = fn(__y: Float32, __x: Float32) -> Float32
 alias cosf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias cosf = fn(__x: Float32) -> Float32
+alias __cosf = fn(__x: Float32) -> Float32
 alias sinf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias sinf = fn(__x: Float32) -> Float32
+alias __sinf = fn(__x: Float32) -> Float32
 alias tanf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias tanf = fn(__x: Float32) -> Float32
+alias __tanf = fn(__x: Float32) -> Float32
 alias coshf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias coshf = fn(__x: Float32) -> Float32
+alias __coshf = fn(__x: Float32) -> Float32
 alias sinhf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias sinhf = fn(__x: Float32) -> Float32
+alias __sinhf = fn(__x: Float32) -> Float32
 alias tanhf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias tanhf = fn(__x: Float32) -> Float32
+alias __tanhf = fn(__x: Float32) -> Float32
 alias acoshf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias acoshf = fn(__x: Float32) -> Float32
+alias __acoshf = fn(__x: Float32) -> Float32
 alias asinhf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias asinhf = fn(__x: Float32) -> Float32
+alias __asinhf = fn(__x: Float32) -> Float32
 alias atanhf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias atanhf = fn(__x: Float32) -> Float32
+alias __atanhf = fn(__x: Float32) -> Float32
 alias expf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias expf = fn(__x: Float32) -> Float32
+alias __expf = fn(__x: Float32) -> Float32
 alias frexpf = fn(Float32, UnsafePointer[Int32]) -> Float32
-alias <scratch = fn(__x: Float32, __exponent: UnsafePointer[Int32]) -> Float32
-alias <scratch = fn(__x: Float32, __exponent: UnsafePointer[Int32]) -> Float32
+alias frexpf = fn(__x: Float32, __exponent: UnsafePointer[Int32]) -> Float32
+alias __frexpf = fn(__x: Float32, __exponent: UnsafePointer[Int32]) -> Float32
 alias ldexpf = fn(Float32, Int32) -> Float32
-alias <scratch = fn(__x: Float32, __exponent: Int32) -> Float32
-alias <scratch = fn(__x: Float32, __exponent: Int32) -> Float32
+alias ldexpf = fn(__x: Float32, __exponent: Int32) -> Float32
+alias __ldexpf = fn(__x: Float32, __exponent: Int32) -> Float32
 alias logf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias logf = fn(__x: Float32) -> Float32
+alias __logf = fn(__x: Float32) -> Float32
 alias log10f = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias log10f = fn(__x: Float32) -> Float32
+alias __log10f = fn(__x: Float32) -> Float32
 alias modff = fn(Float32, UnsafePointer[Float32]) -> Float32
-alias <scratch = fn(__x: Float32, __iptr: UnsafePointer[Float32]) -> Float32
-alias <scratch = fn(__x: Float32, __iptr: UnsafePointer[Float32]) -> Float32
+alias modff = fn(__x: Float32, __iptr: UnsafePointer[Float32]) -> Float32
+alias __modff = fn(__x: Float32, __iptr: UnsafePointer[Float32]) -> Float32
 alias expm1f = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias expm1f = fn(__x: Float32) -> Float32
+alias __expm1f = fn(__x: Float32) -> Float32
 alias log1pf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias log1pf = fn(__x: Float32) -> Float32
+alias __log1pf = fn(__x: Float32) -> Float32
 alias logbf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias logbf = fn(__x: Float32) -> Float32
+alias __logbf = fn(__x: Float32) -> Float32
 alias exp2f = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias exp2f = fn(__x: Float32) -> Float32
+alias __exp2f = fn(__x: Float32) -> Float32
 alias log2f = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias log2f = fn(__x: Float32) -> Float32
+alias __log2f = fn(__x: Float32) -> Float32
 alias powf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias powf = fn(__x: Float32, __y: Float32) -> Float32
+alias __powf = fn(__x: Float32, __y: Float32) -> Float32
 alias sqrtf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias sqrtf = fn(__x: Float32) -> Float32
+alias __sqrtf = fn(__x: Float32) -> Float32
 alias hypotf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias hypotf = fn(__x: Float32, __y: Float32) -> Float32
+alias __hypotf = fn(__x: Float32, __y: Float32) -> Float32
 alias cbrtf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias cbrtf = fn(__x: Float32) -> Float32
+alias __cbrtf = fn(__x: Float32) -> Float32
 alias ceilf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias ceilf = fn(__x: Float32) -> Float32
+alias __ceilf = fn(__x: Float32) -> Float32
 alias fabsf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias fabsf = fn(__x: Float32) -> Float32
+alias __fabsf = fn(__x: Float32) -> Float32
 alias floorf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias floorf = fn(__x: Float32) -> Float32
+alias __floorf = fn(__x: Float32) -> Float32
 alias fmodf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__value: Float32) -> Int32
+alias fmodf = fn(__x: Float32, __y: Float32) -> Float32
+alias __fmodf = fn(__x: Float32, __y: Float32) -> Float32
+alias isinff = fn(__value: Float32) -> Int32
 alias finitef = fn(Float32) -> Int32
-alias <scratch = fn(__value: Float32) -> Int32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias finitef = fn(__value: Float32) -> Int32
+alias dremf = fn(__x: Float32, __y: Float32) -> Float32
+alias __dremf = fn(__x: Float32, __y: Float32) -> Float32
+alias significandf = fn(__x: Float32) -> Float32
+alias __significandf = fn(__x: Float32) -> Float32
 alias copysignf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias copysignf = fn(__x: Float32, __y: Float32) -> Float32
+alias __copysignf = fn(__x: Float32, __y: Float32) -> Float32
 alias nanf = fn(read UnsafePointer[Int8]) -> Float32
-alias <scratch = fn(read __tagb: UnsafePointer[Int8]) -> Float32
-alias <scratch = fn(read __tagb: UnsafePointer[Int8]) -> Float32
-alias <scratch = fn(__value: Float32) -> Int32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Int32, Float32) -> Float32
-alias <scratch = fn(Int32, Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Int32, Float32) -> Float32
-alias <scratch = fn(Int32, Float32) -> Float32
+alias nanf = fn(read __tagb: UnsafePointer[Int8]) -> Float32
+alias __nanf = fn(read __tagb: UnsafePointer[Int8]) -> Float32
+alias isnanf = fn(__value: Float32) -> Int32
+alias j0f = fn(Float32) -> Float32
+alias __j0f = fn(Float32) -> Float32
+alias j1f = fn(Float32) -> Float32
+alias __j1f = fn(Float32) -> Float32
+alias jnf = fn(Int32, Float32) -> Float32
+alias __jnf = fn(Int32, Float32) -> Float32
+alias y0f = fn(Float32) -> Float32
+alias __y0f = fn(Float32) -> Float32
+alias y1f = fn(Float32) -> Float32
+alias __y1f = fn(Float32) -> Float32
+alias ynf = fn(Int32, Float32) -> Float32
+alias __ynf = fn(Int32, Float32) -> Float32
 alias erff = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
+alias erff = fn(Float32) -> Float32
+alias __erff = fn(Float32) -> Float32
 alias erfcf = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
+alias erfcf = fn(Float32) -> Float32
+alias __erfcf = fn(Float32) -> Float32
 alias lgammaf = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
+alias lgammaf = fn(Float32) -> Float32
+alias __lgammaf = fn(Float32) -> Float32
 alias tgammaf = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32) -> Float32
-alias <scratch = fn(Float32, __signgamp: UnsafePointer[Int32]) -> Float32
-alias <scratch = fn(Float32, __signgamp: UnsafePointer[Int32]) -> Float32
+alias tgammaf = fn(Float32) -> Float32
+alias __tgammaf = fn(Float32) -> Float32
+alias gammaf = fn(Float32) -> Float32
+alias __gammaf = fn(Float32) -> Float32
+alias lgammaf_r = fn(Float32, __signgamp: UnsafePointer[Int32]) -> Float32
+alias __lgammaf_r = fn(Float32, __signgamp: UnsafePointer[Int32]) -> Float32
 alias rintf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias rintf = fn(__x: Float32) -> Float32
+alias __rintf = fn(__x: Float32) -> Float32
 alias nextafterf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias nextafterf = fn(__x: Float32, __y: Float32) -> Float32
+alias __nextafterf = fn(__x: Float32, __y: Float32) -> Float32
 alias nexttowardf = fn(Float32, Float64) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float64) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float64) -> Float32
+alias nexttowardf = fn(__x: Float32, __y: Float64) -> Float32
+alias __nexttowardf = fn(__x: Float32, __y: Float64) -> Float32
 alias remainderf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias remainderf = fn(__x: Float32, __y: Float32) -> Float32
+alias __remainderf = fn(__x: Float32, __y: Float32) -> Float32
 alias scalbnf = fn(Float32, Int32) -> Float32
-alias <scratch = fn(__x: Float32, __n: Int32) -> Float32
-alias <scratch = fn(__x: Float32, __n: Int32) -> Float32
+alias scalbnf = fn(__x: Float32, __n: Int32) -> Float32
+alias __scalbnf = fn(__x: Float32, __n: Int32) -> Float32
 alias ilogbf = fn(Float32) -> Int32
-alias <scratch = fn(__x: Float32) -> Int32
-alias <scratch = fn(__x: Float32) -> Int32
+alias ilogbf = fn(__x: Float32) -> Int32
+alias __ilogbf = fn(__x: Float32) -> Int32
 alias scalblnf = fn(Float32, Int64) -> Float32
-alias <scratch = fn(__x: Float32, __n: Int64) -> Float32
-alias <scratch = fn(__x: Float32, __n: Int64) -> Float32
+alias scalblnf = fn(__x: Float32, __n: Int64) -> Float32
+alias __scalblnf = fn(__x: Float32, __n: Int64) -> Float32
 alias nearbyintf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias nearbyintf = fn(__x: Float32) -> Float32
+alias __nearbyintf = fn(__x: Float32) -> Float32
 alias roundf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias roundf = fn(__x: Float32) -> Float32
+alias __roundf = fn(__x: Float32) -> Float32
 alias truncf = fn(Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
-alias <scratch = fn(__x: Float32) -> Float32
+alias truncf = fn(__x: Float32) -> Float32
+alias __truncf = fn(__x: Float32) -> Float32
 alias remquof = fn(Float32, Float32, UnsafePointer[Int32]) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32, __quo: UnsafePointer[Int32]) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32, __quo: UnsafePointer[Int32]) -> Float32
+alias remquof = fn(__x: Float32, __y: Float32, __quo: UnsafePointer[Int32]) -> Float32
+alias __remquof = fn(__x: Float32, __y: Float32, __quo: UnsafePointer[Int32]) -> Float32
 alias lrintf = fn(Float32) -> Int64
-alias <scratch = fn(__x: Float32) -> Int64
-alias <scratch = fn(__x: Float32) -> Int64
+alias lrintf = fn(__x: Float32) -> Int64
+alias __lrintf = fn(__x: Float32) -> Int64
 alias llrintf = fn(Float32) -> Int128
-alias <scratch = fn(__x: Float32) -> Int128
-alias <scratch = fn(__x: Float32) -> Int128
+alias llrintf = fn(__x: Float32) -> Int128
+alias __llrintf = fn(__x: Float32) -> Int128
 alias lroundf = fn(Float32) -> Int64
-alias <scratch = fn(__x: Float32) -> Int64
-alias <scratch = fn(__x: Float32) -> Int64
+alias lroundf = fn(__x: Float32) -> Int64
+alias __lroundf = fn(__x: Float32) -> Int64
 alias llroundf = fn(Float32) -> Int128
-alias <scratch = fn(__x: Float32) -> Int128
-alias <scratch = fn(__x: Float32) -> Int128
+alias llroundf = fn(__x: Float32) -> Int128
+alias __llroundf = fn(__x: Float32) -> Int128
 alias fdimf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias fdimf = fn(__x: Float32, __y: Float32) -> Float32
+alias __fdimf = fn(__x: Float32, __y: Float32) -> Float32
 alias fmaxf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias fmaxf = fn(__x: Float32, __y: Float32) -> Float32
+alias __fmaxf = fn(__x: Float32, __y: Float32) -> Float32
 alias fminf = fn(Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32) -> Float32
+alias fminf = fn(__x: Float32, __y: Float32) -> Float32
+alias __fminf = fn(__x: Float32, __y: Float32) -> Float32
 alias fmaf = fn(Float32, Float32, Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32, __z: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __y: Float32, __z: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __n: Float32) -> Float32
-alias <scratch = fn(__x: Float32, __n: Float32) -> Float32
-alias <scratch = fn(__value: Float64) -> Int32
-alias <scratch = fn(__value: Float64) -> Int32
-alias <scratch = fn(__value: Float64) -> Int32
+alias fmaf = fn(__x: Float32, __y: Float32, __z: Float32) -> Float32
+alias __fmaf = fn(__x: Float32, __y: Float32, __z: Float32) -> Float32
+alias scalbf = fn(__x: Float32, __n: Float32) -> Float32
+alias __scalbf = fn(__x: Float32, __n: Float32) -> Float32
+alias __fpclassifyl = fn(__value: Float64) -> Int32
+alias __signbitl = fn(__value: Float64) -> Int32
+alias __isinfl = fn(__value: Float64) -> Int32
 alias __finitel = fn(Float64) -> Int32
-alias <scratch = fn(__value: Float64) -> Int32
-alias <scratch = fn(__value: Float64) -> Int32
-alias <scratch = fn(__x: Float64, __y: Float64) -> Int32
-alias <scratch = fn(__value: Float64) -> Int32
+alias __finitel = fn(__value: Float64) -> Int32
+alias __isnanl = fn(__value: Float64) -> Int32
+alias __iseqsigl = fn(__x: Float64, __y: Float64) -> Int32
+alias __issignalingl = fn(__value: Float64) -> Int32
 alias acosl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias acosl = fn(__x: Float64) -> Float64
+alias __acosl = fn(__x: Float64) -> Float64
 alias asinl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias asinl = fn(__x: Float64) -> Float64
+alias __asinl = fn(__x: Float64) -> Float64
 alias atanl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias atanl = fn(__x: Float64) -> Float64
+alias __atanl = fn(__x: Float64) -> Float64
 alias atan2l = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__y: Float64, __x: Float64) -> Float64
-alias <scratch = fn(__y: Float64, __x: Float64) -> Float64
+alias atan2l = fn(__y: Float64, __x: Float64) -> Float64
+alias __atan2l = fn(__y: Float64, __x: Float64) -> Float64
 alias cosl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias cosl = fn(__x: Float64) -> Float64
+alias __cosl = fn(__x: Float64) -> Float64
 alias sinl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias sinl = fn(__x: Float64) -> Float64
+alias __sinl = fn(__x: Float64) -> Float64
 alias tanl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias tanl = fn(__x: Float64) -> Float64
+alias __tanl = fn(__x: Float64) -> Float64
 alias coshl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias coshl = fn(__x: Float64) -> Float64
+alias __coshl = fn(__x: Float64) -> Float64
 alias sinhl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias sinhl = fn(__x: Float64) -> Float64
+alias __sinhl = fn(__x: Float64) -> Float64
 alias tanhl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias tanhl = fn(__x: Float64) -> Float64
+alias __tanhl = fn(__x: Float64) -> Float64
 alias acoshl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias acoshl = fn(__x: Float64) -> Float64
+alias __acoshl = fn(__x: Float64) -> Float64
 alias asinhl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias asinhl = fn(__x: Float64) -> Float64
+alias __asinhl = fn(__x: Float64) -> Float64
 alias atanhl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias atanhl = fn(__x: Float64) -> Float64
+alias __atanhl = fn(__x: Float64) -> Float64
 alias expl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias expl = fn(__x: Float64) -> Float64
+alias __expl = fn(__x: Float64) -> Float64
 alias frexpl = fn(Float64, UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(__x: Float64, __exponent: UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(__x: Float64, __exponent: UnsafePointer[Int32]) -> Float64
+alias frexpl = fn(__x: Float64, __exponent: UnsafePointer[Int32]) -> Float64
+alias __frexpl = fn(__x: Float64, __exponent: UnsafePointer[Int32]) -> Float64
 alias ldexpl = fn(Float64, Int32) -> Float64
-alias <scratch = fn(__x: Float64, __exponent: Int32) -> Float64
-alias <scratch = fn(__x: Float64, __exponent: Int32) -> Float64
+alias ldexpl = fn(__x: Float64, __exponent: Int32) -> Float64
+alias __ldexpl = fn(__x: Float64, __exponent: Int32) -> Float64
 alias logl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias logl = fn(__x: Float64) -> Float64
+alias __logl = fn(__x: Float64) -> Float64
 alias log10l = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias log10l = fn(__x: Float64) -> Float64
+alias __log10l = fn(__x: Float64) -> Float64
 alias modfl = fn(Float64, UnsafePointer[Float64]) -> Float64
-alias <scratch = fn(__x: Float64, __iptr: UnsafePointer[Float64]) -> Float64
-alias <scratch = fn(__x: Float64, __iptr: UnsafePointer[Float64]) -> Float64
+alias modfl = fn(__x: Float64, __iptr: UnsafePointer[Float64]) -> Float64
+alias __modfl = fn(__x: Float64, __iptr: UnsafePointer[Float64]) -> Float64
 alias expm1l = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias expm1l = fn(__x: Float64) -> Float64
+alias __expm1l = fn(__x: Float64) -> Float64
 alias log1pl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias log1pl = fn(__x: Float64) -> Float64
+alias __log1pl = fn(__x: Float64) -> Float64
 alias logbl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias logbl = fn(__x: Float64) -> Float64
+alias __logbl = fn(__x: Float64) -> Float64
 alias exp2l = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias exp2l = fn(__x: Float64) -> Float64
+alias __exp2l = fn(__x: Float64) -> Float64
 alias log2l = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias log2l = fn(__x: Float64) -> Float64
+alias __log2l = fn(__x: Float64) -> Float64
 alias powl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias powl = fn(__x: Float64, __y: Float64) -> Float64
+alias __powl = fn(__x: Float64, __y: Float64) -> Float64
 alias sqrtl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias sqrtl = fn(__x: Float64) -> Float64
+alias __sqrtl = fn(__x: Float64) -> Float64
 alias hypotl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias hypotl = fn(__x: Float64, __y: Float64) -> Float64
+alias __hypotl = fn(__x: Float64, __y: Float64) -> Float64
 alias cbrtl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias cbrtl = fn(__x: Float64) -> Float64
+alias __cbrtl = fn(__x: Float64) -> Float64
 alias ceill = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias ceill = fn(__x: Float64) -> Float64
+alias __ceill = fn(__x: Float64) -> Float64
 alias fabsl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias fabsl = fn(__x: Float64) -> Float64
+alias __fabsl = fn(__x: Float64) -> Float64
 alias floorl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias floorl = fn(__x: Float64) -> Float64
+alias __floorl = fn(__x: Float64) -> Float64
 alias fmodl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__value: Float64) -> Int32
+alias fmodl = fn(__x: Float64, __y: Float64) -> Float64
+alias __fmodl = fn(__x: Float64, __y: Float64) -> Float64
+alias isinfl = fn(__value: Float64) -> Int32
 alias finitel = fn(Float64) -> Int32
-alias <scratch = fn(__value: Float64) -> Int32
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias finitel = fn(__value: Float64) -> Int32
+alias dreml = fn(__x: Float64, __y: Float64) -> Float64
+alias __dreml = fn(__x: Float64, __y: Float64) -> Float64
+alias significandl = fn(__x: Float64) -> Float64
+alias __significandl = fn(__x: Float64) -> Float64
 alias copysignl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias copysignl = fn(__x: Float64, __y: Float64) -> Float64
+alias __copysignl = fn(__x: Float64, __y: Float64) -> Float64
 alias nanl = fn(read UnsafePointer[Int8]) -> Float64
-alias <scratch = fn(read __tagb: UnsafePointer[Int8]) -> Float64
-alias <scratch = fn(read __tagb: UnsafePointer[Int8]) -> Float64
-alias <scratch = fn(__value: Float64) -> Int32
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Int32, Float64) -> Float64
-alias <scratch = fn(Int32, Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Int32, Float64) -> Float64
-alias <scratch = fn(Int32, Float64) -> Float64
+alias nanl = fn(read __tagb: UnsafePointer[Int8]) -> Float64
+alias __nanl = fn(read __tagb: UnsafePointer[Int8]) -> Float64
+alias isnanl = fn(__value: Float64) -> Int32
+alias j0l = fn(Float64) -> Float64
+alias __j0l = fn(Float64) -> Float64
+alias j1l = fn(Float64) -> Float64
+alias __j1l = fn(Float64) -> Float64
+alias jnl = fn(Int32, Float64) -> Float64
+alias __jnl = fn(Int32, Float64) -> Float64
+alias y0l = fn(Float64) -> Float64
+alias __y0l = fn(Float64) -> Float64
+alias y1l = fn(Float64) -> Float64
+alias __y1l = fn(Float64) -> Float64
+alias ynl = fn(Int32, Float64) -> Float64
+alias __ynl = fn(Int32, Float64) -> Float64
 alias erfl = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias erfl = fn(Float64) -> Float64
+alias __erfl = fn(Float64) -> Float64
 alias erfcl = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias erfcl = fn(Float64) -> Float64
+alias __erfcl = fn(Float64) -> Float64
 alias lgammal = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
+alias lgammal = fn(Float64) -> Float64
+alias __lgammal = fn(Float64) -> Float64
 alias tgammal = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64) -> Float64
-alias <scratch = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
+alias tgammal = fn(Float64) -> Float64
+alias __tgammal = fn(Float64) -> Float64
+alias gammal = fn(Float64) -> Float64
+alias __gammal = fn(Float64) -> Float64
+alias lgammal_r = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
+alias __lgammal_r = fn(Float64, __signgamp: UnsafePointer[Int32]) -> Float64
 alias rintl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias rintl = fn(__x: Float64) -> Float64
+alias __rintl = fn(__x: Float64) -> Float64
 alias nextafterl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias nextafterl = fn(__x: Float64, __y: Float64) -> Float64
+alias __nextafterl = fn(__x: Float64, __y: Float64) -> Float64
 alias nexttowardl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias nexttowardl = fn(__x: Float64, __y: Float64) -> Float64
+alias __nexttowardl = fn(__x: Float64, __y: Float64) -> Float64
 alias remainderl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias remainderl = fn(__x: Float64, __y: Float64) -> Float64
+alias __remainderl = fn(__x: Float64, __y: Float64) -> Float64
 alias scalbnl = fn(Float64, Int32) -> Float64
-alias <scratch = fn(__x: Float64, __n: Int32) -> Float64
-alias <scratch = fn(__x: Float64, __n: Int32) -> Float64
+alias scalbnl = fn(__x: Float64, __n: Int32) -> Float64
+alias __scalbnl = fn(__x: Float64, __n: Int32) -> Float64
 alias ilogbl = fn(Float64) -> Int32
-alias <scratch = fn(__x: Float64) -> Int32
-alias <scratch = fn(__x: Float64) -> Int32
+alias ilogbl = fn(__x: Float64) -> Int32
+alias __ilogbl = fn(__x: Float64) -> Int32
 alias scalblnl = fn(Float64, Int64) -> Float64
-alias <scratch = fn(__x: Float64, __n: Int64) -> Float64
-alias <scratch = fn(__x: Float64, __n: Int64) -> Float64
+alias scalblnl = fn(__x: Float64, __n: Int64) -> Float64
+alias __scalblnl = fn(__x: Float64, __n: Int64) -> Float64
 alias nearbyintl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias nearbyintl = fn(__x: Float64) -> Float64
+alias __nearbyintl = fn(__x: Float64) -> Float64
 alias roundl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias roundl = fn(__x: Float64) -> Float64
+alias __roundl = fn(__x: Float64) -> Float64
 alias truncl = fn(Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
-alias <scratch = fn(__x: Float64) -> Float64
+alias truncl = fn(__x: Float64) -> Float64
+alias __truncl = fn(__x: Float64) -> Float64
 alias remquol = fn(Float64, Float64, UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
+alias remquol = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
+alias __remquol = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
 alias lrintl = fn(Float64) -> Int64
-alias <scratch = fn(__x: Float64) -> Int64
-alias <scratch = fn(__x: Float64) -> Int64
+alias lrintl = fn(__x: Float64) -> Int64
+alias __lrintl = fn(__x: Float64) -> Int64
 alias llrintl = fn(Float64) -> Int128
-alias <scratch = fn(__x: Float64) -> Int128
-alias <scratch = fn(__x: Float64) -> Int128
+alias llrintl = fn(__x: Float64) -> Int128
+alias __llrintl = fn(__x: Float64) -> Int128
 alias lroundl = fn(Float64) -> Int64
-alias <scratch = fn(__x: Float64) -> Int64
-alias <scratch = fn(__x: Float64) -> Int64
+alias lroundl = fn(__x: Float64) -> Int64
+alias __lroundl = fn(__x: Float64) -> Int64
 alias llroundl = fn(Float64) -> Int128
-alias <scratch = fn(__x: Float64) -> Int128
-alias <scratch = fn(__x: Float64) -> Int128
+alias llroundl = fn(__x: Float64) -> Int128
+alias __llroundl = fn(__x: Float64) -> Int128
 alias fdiml = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias fdiml = fn(__x: Float64, __y: Float64) -> Float64
+alias __fdiml = fn(__x: Float64, __y: Float64) -> Float64
 alias fmaxl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias fmaxl = fn(__x: Float64, __y: Float64) -> Float64
+alias __fmaxl = fn(__x: Float64, __y: Float64) -> Float64
 alias fminl = fn(Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64) -> Float64
+alias fminl = fn(__x: Float64, __y: Float64) -> Float64
+alias __fminl = fn(__x: Float64, __y: Float64) -> Float64
 alias fmal = fn(Float64, Float64, Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __n: Float64) -> Float64
-alias <scratch = fn(__x: Float64, __n: Float64) -> Float64
+alias fmal = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
+alias __fmal = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
+alias scalbl = fn(__x: Float64, __n: Float64) -> Float64
+alias __scalbl = fn(__x: Float64, __n: Float64) -> Float64
 
 # (placeholder) |-VarDecl 0x660900 </usr/include/math.h:854:1, col:12> col:12 signgam 'int' extern
 
@@ -1535,109 +1323,29 @@ struct Anonymous_line_19_9:
 
 alias max_align_t = Anonymous_line_19_9
 
-alias uint8_t = 
-# (placeholder) | `-TypedefType 0x56b590 '__uint8_t' sugar
+alias uint8_t = UInt8
 
-# (placeholder) |   |-Typedef 0x56b200 '__uint8_t'
-UInt8
+alias uint16_t = UInt16
 
-alias uint16_t = 
-# (placeholder) | `-TypedefType 0x56b6b0 '__uint16_t' sugar
+alias uint32_t = UInt32
 
-# (placeholder) |   |-Typedef 0x56b2e0 '__uint16_t'
-UInt16
+alias uint64_t = UInt64
 
-alias uint32_t = 
-# (placeholder) | `-TypedefType 0x58b7c0 '__uint32_t' sugar
+alias int_least8_t = __int_least8_t
 
-# (placeholder) |   |-Typedef 0x56b3c0 '__uint32_t'
-UInt32
+alias int_least16_t = __int_least16_t
 
-alias uint64_t = 
-# (placeholder) | `-TypedefType 0x58b8e0 '__uint64_t' sugar
+alias int_least32_t = __int_least32_t
 
-# (placeholder) |   |-Typedef 0x56b4a0 '__uint64_t'
-UInt64
+alias int_least64_t = __int_least64_t
 
-alias int_least8_t = 
-# (placeholder) | `-TypedefType 0x66db90 '__int_least8_t' sugar
+alias uint_least8_t = __uint_least8_t
 
-# (placeholder) |   |-Typedef 0x56b530 '__int_least8_t'
+alias uint_least16_t = __uint_least16_t
 
-# (placeholder) |   `-TypedefType 0x56b500 '__int8_t' sugar
+alias uint_least32_t = __uint_least32_t
 
-# (placeholder) |     |-Typedef 0x56b190 '__int8_t'
-Int8
-
-alias int_least16_t = 
-# (placeholder) | `-TypedefType 0x66dc20 '__int_least16_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b650 '__int_least16_t'
-
-# (placeholder) |   `-TypedefType 0x56b620 '__int16_t' sugar
-
-# (placeholder) |     |-Typedef 0x56b270 '__int16_t'
-Int16
-
-alias int_least32_t = 
-# (placeholder) | `-TypedefType 0x66dcb0 '__int_least32_t' sugar
-
-# (placeholder) |   |-Typedef 0x58b760 '__int_least32_t'
-
-# (placeholder) |   `-TypedefType 0x56b740 '__int32_t' sugar
-
-# (placeholder) |     |-Typedef 0x56b350 '__int32_t'
-Int32
-
-alias int_least64_t = 
-# (placeholder) | `-TypedefType 0x66dd40 '__int_least64_t' sugar
-
-# (placeholder) |   |-Typedef 0x58b880 '__int_least64_t'
-
-# (placeholder) |   `-TypedefType 0x58b850 '__int64_t' sugar
-
-# (placeholder) |     |-Typedef 0x56b430 '__int64_t'
-Int64
-
-alias uint_least8_t = 
-# (placeholder) | `-TypedefType 0x66ddd0 '__uint_least8_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b5c0 '__uint_least8_t'
-
-# (placeholder) |   `-TypedefType 0x56b590 '__uint8_t' sugar
-
-# (placeholder) |     |-Typedef 0x56b200 '__uint8_t'
-UInt8
-
-alias uint_least16_t = 
-# (placeholder) | `-TypedefType 0x66de60 '__uint_least16_t' sugar
-
-# (placeholder) |   |-Typedef 0x56b6e0 '__uint_least16_t'
-
-# (placeholder) |   `-TypedefType 0x56b6b0 '__uint16_t' sugar
-
-# (placeholder) |     |-Typedef 0x56b2e0 '__uint16_t'
-UInt16
-
-alias uint_least32_t = 
-# (placeholder) | `-TypedefType 0x66def0 '__uint_least32_t' sugar
-
-# (placeholder) |   |-Typedef 0x58b7f0 '__uint_least32_t'
-
-# (placeholder) |   `-TypedefType 0x58b7c0 '__uint32_t' sugar
-
-# (placeholder) |     |-Typedef 0x56b3c0 '__uint32_t'
-UInt32
-
-alias uint_least64_t = 
-# (placeholder) | `-TypedefType 0x66df80 '__uint_least64_t' sugar
-
-# (placeholder) |   |-Typedef 0x58b910 '__uint_least64_t'
-
-# (placeholder) |   `-TypedefType 0x58b8e0 '__uint64_t' sugar
-
-# (placeholder) |     |-Typedef 0x56b4a0 '__uint64_t'
-UInt64
+alias uint_least64_t = __uint_least64_t
 
 alias int_fast8_t = Int8
 
@@ -1659,17 +1367,9 @@ alias intptr_t = Int64
 
 alias uintptr_t = UInt64
 
-alias intmax_t = 
-# (placeholder) | `-TypedefType 0x66e470 '__intmax_t' sugar
+alias intmax_t = Int64
 
-# (placeholder) |   |-Typedef 0x58ba60 '__intmax_t'
-Int64
-
-alias uintmax_t = 
-# (placeholder) | `-TypedefType 0x66e500 '__uintmax_t' sugar
-
-# (placeholder) |   |-Typedef 0x58bad0 '__uintmax_t'
-UInt64
+alias uintmax_t = UInt64
 
 alias mjtNum = Float64
 
@@ -2009,12 +1709,7 @@ alias mjtByte = UInt8
 
 # (placeholder) |       `-TextComment 0x7d7980 <col:37, col:60> Text=" number of disable flags"
 
-alias mjtDisableBit = ' enum mjtDisableBit_ ' sugar
-# (placeholder) | | `-EnumType 0x679e60 'enum mjtDisableBit_'
-
-# (placeholder) | |   `-Enum 0x679db8 'mjtDisableBit_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtDisableBit_ 
+alias mjtDisableBit = 
 # (placeholder) | `-FullComment 0x7d7ab0 <line:48:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x7d7a80 <col:3, col:100>
@@ -2148,12 +1843,7 @@ alias mjtDisableBit = ' enum mjtDisableBit_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7d8020 <col:37, col:59> Text=" number of enable flags"
 
-alias mjtEnableBit = ' enum mjtEnableBit_ ' sugar
-# (placeholder) |   `-EnumType 0x67b210 'enum mjtEnableBit_'
-
-# (placeholder) |     `-Enum 0x67b168 'mjtEnableBit_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtEnableBit_ 
+alias mjtEnableBit = 
 
 # (placeholder) |-EnumDecl 0x67b9e8 <line:86:9, line:91:1> line:86:14 mjtJoint_
 
@@ -2195,12 +1885,7 @@ alias mjtEnableBit = ' enum mjtEnableBit_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7d8360 <col:37, col:85> Text=" rotation angle (rad) around body-fixed axis  (1)"
 
-alias mjtJoint = ' enum mjtJoint_ ' sugar
-# (placeholder) |   `-EnumType 0x67ba90 'enum mjtJoint_'
-
-# (placeholder) |     `-Enum 0x67b9e8 'mjtJoint_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtJoint_ 
+alias mjtJoint = 
 
 # (placeholder) |-EnumDecl 0x67be08 <line:94:9, line:120:1> line:94:14 mjtGeom_
 
@@ -2382,12 +2067,7 @@ alias mjtJoint = ' enum mjtJoint_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7d93e0 <col:37, col:54> Text=" missing geom type"
 
-alias mjtGeom = ' enum mjtGeom_ ' sugar
-# (placeholder) |   `-EnumType 0x67beb0 'enum mjtGeom_'
-
-# (placeholder) |     `-Enum 0x67be08 'mjtGeom_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtGeom_ 
+alias mjtGeom = 
 
 # (placeholder) |-EnumDecl 0x67cae8 <line:123:9, line:129:1> line:123:14 mjtCamLight_
 
@@ -2437,12 +2117,7 @@ alias mjtGeom = ' enum mjtGeom_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7d97f0 <col:37, col:85> Text=" pos fixed in body, rot tracks target subtree com"
 
-alias mjtCamLight = ' enum mjtCamLight_ ' sugar
-# (placeholder) |   `-EnumType 0x67cb90 'enum mjtCamLight_'
-
-# (placeholder) |     `-Enum 0x67cae8 'mjtCamLight_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtCamLight_ 
+alias mjtCamLight = 
 
 # (placeholder) |-EnumDecl 0x680fa8 <line:132:9, line:136:1> line:132:14 mjtTexture_
 
@@ -2476,12 +2151,7 @@ alias mjtCamLight = ' enum mjtCamLight_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7d9a60 <col:37, col:64> Text=" cube texture used as skybox"
 
-alias mjtTexture = ' enum mjtTexture_ ' sugar
-# (placeholder) |   `-EnumType 0x681050 'enum mjtTexture_'
-
-# (placeholder) |     `-Enum 0x680fa8 'mjtTexture_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtTexture_ 
+alias mjtTexture = 
 
 # (placeholder) |-EnumDecl 0x681328 <line:139:9, line:151:1> line:139:14 mjtTextureRole_
 
@@ -2573,12 +2243,7 @@ alias mjtTexture = ' enum mjtTexture_ ' sugar
 
 # (placeholder) | `-EnumConstantDecl 0x681958 <line:150:3> col:3 referenced mjNTEXROLE 'int'
 
-alias mjtTextureRole = ' enum mjtTextureRole_ ' sugar
-# (placeholder) |   `-EnumType 0x6813d0 'enum mjtTextureRole_'
-
-# (placeholder) |     `-Enum 0x681328 'mjtTextureRole_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtTextureRole_ 
+alias mjtTextureRole = 
 
 # (placeholder) |-EnumDecl 0x681a78 <line:154:9, line:159:1> line:154:14 mjtIntegrator_
 
@@ -2620,12 +2285,7 @@ alias mjtTextureRole = ' enum mjtTextureRole_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7da5c0 <col:37, col:76> Text=" implicit in velocity, no rne derivative"
 
-alias mjtIntegrator = ' enum mjtIntegrator_ ' sugar
-# (placeholder) |   `-EnumType 0x681b20 'enum mjtIntegrator_'
-
-# (placeholder) |     `-Enum 0x681a78 'mjtIntegrator_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtIntegrator_ 
+alias mjtIntegrator = 
 
 # (placeholder) |-EnumDecl 0x681eb8 <line:162:9, line:165:1> line:162:14 mjtCone_
 
@@ -2651,12 +2311,7 @@ alias mjtIntegrator = ' enum mjtIntegrator_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7da760 <col:37, col:45> Text=" elliptic"
 
-alias mjtCone = ' enum mjtCone_ ' sugar
-# (placeholder) |   `-EnumType 0x681f60 'enum mjtCone_'
-
-# (placeholder) |     `-Enum 0x681eb8 'mjtCone_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtCone_ 
+alias mjtCone = 
 
 # (placeholder) |-EnumDecl 0x6821b8 <line:168:9, line:172:1> line:168:14 mjtJacobian_
 
@@ -2694,12 +2349,7 @@ alias mjtCone = ' enum mjtCone_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7daa10 <col:50, col:69> Text="60, sparse otherwise"
 
-alias mjtJacobian = ' enum mjtJacobian_ ' sugar
-# (placeholder) |   `-EnumType 0x682260 'enum mjtJacobian_'
-
-# (placeholder) |     `-Enum 0x6821b8 'mjtJacobian_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtJacobian_ 
+alias mjtJacobian = 
 
 # (placeholder) |-EnumDecl 0x682538 <line:175:9, line:179:1> line:175:14 mjtSolver_
 
@@ -2733,12 +2383,7 @@ alias mjtJacobian = ' enum mjtJacobian_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7daca0 <col:37, col:52> Text=" Newton (primal)"
 
-alias mjtSolver = ' enum mjtSolver_ ' sugar
-# (placeholder) |   `-EnumType 0x6825e0 'enum mjtSolver_'
-
-# (placeholder) |     `-Enum 0x682538 'mjtSolver_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtSolver_ 
+alias mjtSolver = 
 
 # (placeholder) |-EnumDecl 0x6828b8 <line:182:9, line:189:1> line:182:14 mjtEq_
 
@@ -2796,12 +2441,7 @@ alias mjtSolver = ' enum mjtSolver_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7db180 <col:37, col:77> Text=" unsupported, will cause an error if used"
 
-alias mjtEq = ' enum mjtEq_ ' sugar
-# (placeholder) |   `-EnumType 0x682960 'enum mjtEq_'
-
-# (placeholder) |     `-Enum 0x6828b8 'mjtEq_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtEq_ 
+alias mjtEq = 
 
 # (placeholder) |-EnumDecl 0x682dc8 <line:192:9, line:199:1> line:192:14 mjtWrap_
 
@@ -2859,12 +2499,7 @@ alias mjtEq = ' enum mjtEq_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7db660 <col:37, col:68> Text=" wrap around (infinite) cylinder"
 
-alias mjtWrap = ' enum mjtWrap_ ' sugar
-# (placeholder) |   `-EnumType 0x682e70 'enum mjtWrap_'
-
-# (placeholder) |     `-Enum 0x682dc8 'mjtWrap_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtWrap_ 
+alias mjtWrap = 
 
 # (placeholder) |-EnumDecl 0x6832c8 <line:202:9, line:211:1> line:202:14 mjtTrn_
 
@@ -2936,12 +2571,7 @@ alias mjtWrap = ' enum mjtWrap_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7dbc10 <col:37, col:64> Text=" undefined transmission type"
 
-alias mjtTrn = ' enum mjtTrn_ ' sugar
-# (placeholder) |   `-EnumType 0x683370 'enum mjtTrn_'
-
-# (placeholder) |     `-Enum 0x6832c8 'mjtTrn_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtTrn_ 
+alias mjtTrn = 
 
 # (placeholder) |-EnumDecl 0x683888 <line:214:9, line:221:1> line:214:14 mjtDyn_
 
@@ -2999,12 +2629,7 @@ alias mjtTrn = ' enum mjtTrn_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7dc0f0 <col:37, col:63> Text=" user-defined dynamics type"
 
-alias mjtDyn = ' enum mjtDyn_ ' sugar
-# (placeholder) |   `-EnumType 0x683930 'enum mjtDyn_'
-
-# (placeholder) |     `-Enum 0x683888 'mjtDyn_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtDyn_ 
+alias mjtDyn = 
 
 # (placeholder) |-EnumDecl 0x684eb0 <line:224:9, line:229:1> line:224:14 mjtGain_
 
@@ -3046,12 +2671,7 @@ alias mjtDyn = ' enum mjtDyn_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7dc430 <col:37, col:59> Text=" user-defined gain type"
 
-alias mjtGain = ' enum mjtGain_ ' sugar
-# (placeholder) |   `-EnumType 0x684f50 'enum mjtGain_'
-
-# (placeholder) |     `-Enum 0x684eb0 'mjtGain_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtGain_ 
+alias mjtGain = 
 
 # (placeholder) |-EnumDecl 0x6852a8 <line:232:9, line:237:1> line:232:14 mjtBias_
 
@@ -3093,12 +2713,7 @@ alias mjtGain = ' enum mjtGain_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7dc770 <col:37, col:59> Text=" user-defined bias type"
 
-alias mjtBias = ' enum mjtBias_ ' sugar
-# (placeholder) |   `-EnumType 0x685350 'enum mjtBias_'
-
-# (placeholder) |     `-Enum 0x6852a8 'mjtBias_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtBias_ 
+alias mjtBias = 
 
 # (placeholder) |-EnumDecl 0x6856a8 <line:240:9, line:275:1> line:240:14 mjtObj_
 
@@ -3354,12 +2969,7 @@ alias mjtBias = ' enum mjtBias_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7df000 <col:37, col:49> Text=" entire model"
 
-alias mjtObj = ' enum mjtObj_ ' sugar
-# (placeholder) |   `-EnumType 0x685750 'enum mjtObj_'
-
-# (placeholder) |     `-Enum 0x6856a8 'mjtObj_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtObj_ 
+alias mjtObj = 
 
 # (placeholder) |-EnumDecl 0x686e28 <line:278:9, line:287:1> line:278:14 mjtConstraint_
 
@@ -3433,12 +3043,7 @@ alias mjtObj = ' enum mjtObj_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7df680 <col:37, col:79> Text=" frictional contact, elliptic friction cone"
 
-alias mjtConstraint = ' enum mjtConstraint_ ' sugar
-# (placeholder) |   `-EnumType 0x686ed0 'enum mjtConstraint_'
-
-# (placeholder) |     `-Enum 0x686e28 'mjtConstraint_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtConstraint_ 
+alias mjtConstraint = 
 
 # (placeholder) |-EnumDecl 0x687b70 <line:290:9, line:296:1> line:290:14 mjtConstraintState_
 
@@ -3488,12 +3093,7 @@ alias mjtConstraint = ' enum mjtConstraint_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7dfa90 <col:39, col:87> Text=" squared distance to cone cost (elliptic contact)"
 
-alias mjtConstraintState = ' enum mjtConstraintState_ ' sugar
-# (placeholder) |   `-EnumType 0x687c10 'enum mjtConstraintState_'
-
-# (placeholder) |     `-Enum 0x687b70 'mjtConstraintState_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtConstraintState_ 
+alias mjtConstraintState = 
 
 # (placeholder) |-EnumDecl 0x687fe8 <line:299:9, line:364:1> line:299:14 mjtSensor_
 
@@ -3863,12 +3463,7 @@ alias mjtConstraintState = ' enum mjtConstraintState_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7e3f60 <col:37, col:81> Text=" sensor data provided by mjcb_sensor callback"
 
-alias mjtSensor = ' enum mjtSensor_ ' sugar
-# (placeholder) |   `-EnumType 0x688090 'enum mjtSensor_'
-
-# (placeholder) |     `-Enum 0x687fe8 'mjtSensor_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtSensor_ 
+alias mjtSensor = 
 
 # (placeholder) |-EnumDecl 0x68b168 <line:367:9, line:372:1> line:367:14 mjtStage_
 
@@ -3910,12 +3505,7 @@ alias mjtSensor = ' enum mjtSensor_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7e42a0 <col:37, col:78> Text=" acceleration/force-dependent computations"
 
-alias mjtStage = ' enum mjtStage_ ' sugar
-# (placeholder) |   `-EnumType 0x68b630 'enum mjtStage_'
-
-# (placeholder) |     `-Enum 0x68b168 'mjtStage_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtStage_ 
+alias mjtStage = 
 
 # (placeholder) |-EnumDecl 0x68b988 <line:375:9, line:380:1> line:375:14 mjtDataType_
 
@@ -3957,12 +3547,7 @@ alias mjtStage = ' enum mjtStage_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7e45e0 <col:37, col:52> Text=" unit quaternion"
 
-alias mjtDataType = ' enum mjtDataType_ ' sugar
-# (placeholder) |   `-EnumType 0x68ba30 'enum mjtDataType_'
-
-# (placeholder) |     `-Enum 0x68b988 'mjtDataType_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtDataType_ 
+alias mjtDataType = 
 
 # (placeholder) |-EnumDecl 0x68bd88 <line:383:9, line:389:1> line:383:14 mjtSameFrame_
 
@@ -4012,12 +3597,7 @@ alias mjtDataType = ' enum mjtDataType_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7e49f0 <col:37, col:85> Text=" frame orientation is same as inertia orientation"
 
-alias mjtSameFrame = ' enum mjtSameFrame_ ' sugar
-# (placeholder) |   `-EnumType 0x68be30 'enum mjtSameFrame_'
-
-# (placeholder) |     `-Enum 0x68bd88 'mjtSameFrame_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtSameFrame_ 
+alias mjtSameFrame = 
 
 # (placeholder) |-EnumDecl 0x68c208 <line:392:9, line:397:1> line:392:14 mjtLRMode_
 
@@ -4059,12 +3639,7 @@ alias mjtSameFrame = ' enum mjtSameFrame_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7e4d30 <col:37, col:58> Text=" process all actuators"
 
-alias mjtLRMode = ' enum mjtLRMode_ ' sugar
-# (placeholder) |   `-EnumType 0x68c2b0 'enum mjtLRMode_'
-
-# (placeholder) |     `-Enum 0x68c208 'mjtLRMode_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtLRMode_ 
+alias mjtLRMode = 
 
 # (placeholder) |-EnumDecl 0x68db90 <line:400:9, line:406:1> line:400:14 mjtFlexSelf_
 
@@ -4114,12 +3689,7 @@ alias mjtLRMode = ' enum mjtLRMode_ ' sugar
 
 # (placeholder) |       `-TextComment 0x7e5140 <col:37, col:77> Text=" choose between BVH and SAP automatically"
 
-alias mjtFlexSelf = ' enum mjtFlexSelf_ ' sugar
-# (placeholder) |   `-EnumType 0x68dc30 'enum mjtFlexSelf_'
-
-# (placeholder) |     `-Enum 0x68db90 'mjtFlexSelf_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtFlexSelf_ 
+alias mjtFlexSelf = 
 struct mjLROpt_:
 
 	var mode: Int32
@@ -4143,13 +3713,13 @@ struct mjLROpt_:
 	var tolrange: mjtNum
 
 
-alias mjLROpt = mjLROpt_mjLROpt_
+alias mjLROpt = mjLROpt_
 struct mjVFS_:
 
 	var impl_: UnsafePointer[NoneType]
 
 
-alias mjVFS = mjVFS_mjVFS_
+alias mjVFS = mjVFS_
 struct mjOption_:
 
 	var timestep: mjtNum
@@ -4211,7 +3781,7 @@ struct mjOption_:
 	var sdf_iterations: Int32
 
 
-alias mjOption = mjOption_mjOption_
+alias mjOption = mjOption_
 struct mjVisual_:
 
 	var `global`: _mjVisual___Anonymous_line_486_3
@@ -4227,7 +3797,7 @@ struct mjVisual_:
 	var rgba: _mjVisual___Anonymous_line_552_3
 
 
-alias mjVisual = mjVisual_mjVisual_
+alias mjVisual = mjVisual_
 struct mjStatistic_:
 
 	var meaninertia: mjtNum
@@ -4241,7 +3811,7 @@ struct mjStatistic_:
 	var center: SIMD[mjtNum.dtype, 3]
 
 
-alias mjStatistic = mjStatistic_mjStatistic_
+alias mjStatistic = mjStatistic_
 struct mjModel_:
 
 	var nq: Int32
@@ -5225,7 +4795,7 @@ struct mjModel_:
 	var signature: uint64_t
 
 
-alias mjModel = mjModel_mjModel_
+alias mjModel = mjModel_
 
 # (placeholder) |-EnumDecl 0x6b9d08 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjthread.h:20:9, line:24:1> line:20:14 mjtTaskStatus_
 
@@ -5259,12 +4829,7 @@ alias mjModel = mjModel_mjModel_
 
 # (placeholder) |       `-TextComment 0x80cda0 <col:34, col:53> Text=" completed execution"
 
-alias mjtTaskStatus = ' enum mjtTaskStatus_ ' sugar
-# (placeholder) |   `-EnumType 0x6b9db0 'enum mjtTaskStatus_'
-
-# (placeholder) |     `-Enum 0x6b9d08 'mjtTaskStatus_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtTaskStatus_ 
+alias mjtTaskStatus = 
 
 alias mjfTask = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6ba160 'void *(void *)' sugar
@@ -5285,7 +4850,7 @@ struct mjThreadPool_:
 	var nworker: Int32
 
 
-alias mjThreadPool = mjThreadPool_mjThreadPool_
+alias mjThreadPool = mjThreadPool_
 struct mjTask_:
 
 	var func: mjfTask
@@ -5295,7 +4860,7 @@ struct mjTask_:
 	var status: volatile int
 
 
-alias mjTask = mjTask_mjTask_
+alias mjTask = mjTask_
 
 # (placeholder) |-EnumDecl 0x6b4638 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjdata.h:27:9, line:51:1> line:27:14 mjtState_
 
@@ -5657,12 +5222,7 @@ alias mjTask = mjTask_mjTask_
 
 # (placeholder) |       `-TextComment 0x80e210 <col:5, col:62> Text=" convenience values for commonly used state specifications"
 
-alias mjtState = ' enum mjtState_ ' sugar
-# (placeholder) | | `-EnumType 0x6b46e0 'enum mjtState_'
-
-# (placeholder) | |   `-Enum 0x6b4638 'mjtState_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtState_ 
+alias mjtState = 
 # (placeholder) | `-FullComment 0x80e340 <line:25:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x80e310 <col:3, col:100>
@@ -5750,12 +5310,7 @@ alias mjtState = ' enum mjtState_ ' sugar
 
 # (placeholder) |       `-TextComment 0x80ea30 <col:32, col:50> Text=" number of warnings"
 
-alias mjtWarning = ' enum mjtWarning_ ' sugar
-# (placeholder) |   `-EnumType 0x6b5bd0 'enum mjtWarning_'
-
-# (placeholder) |     `-Enum 0x6b5b28 'mjtWarning_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtWarning_ 
+alias mjtWarning = 
 
 # (placeholder) |-EnumDecl 0x6c0780 <line:68:9, line:93:1> line:68:14 mjtTimer_
 
@@ -5893,12 +5448,7 @@ alias mjtWarning = ' enum mjtWarning_ ' sugar
 
 # (placeholder) |       `-TextComment 0x80f730 <col:32, col:48> Text=" number of timers"
 
-alias mjtTimer = ' enum mjtTimer_ ' sugar
-# (placeholder) |   `-EnumType 0x6c0820 'enum mjtTimer_'
-
-# (placeholder) |     `-Enum 0x6c0780 'mjtTimer_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtTimer_ 
+alias mjtTimer = 
 struct mjContact_:
 
 	var dist: mjtNum
@@ -5940,7 +5490,7 @@ struct mjContact_:
 	var efc_address: Int32
 
 
-alias mjContact = mjContact_mjContact_
+alias mjContact = mjContact_
 struct mjWarningStat_:
 
 	var lastinfo: Int32
@@ -5948,7 +5498,7 @@ struct mjWarningStat_:
 	var number: Int32
 
 
-alias mjWarningStat = mjWarningStat_mjWarningStat_
+alias mjWarningStat = mjWarningStat_
 struct mjTimerStat_:
 
 	var duration: mjtNum
@@ -5956,7 +5506,7 @@ struct mjTimerStat_:
 	var number: Int32
 
 
-alias mjTimerStat = mjTimerStat_mjTimerStat_
+alias mjTimerStat = mjTimerStat_
 struct mjSolverStat_:
 
 	var improvement: mjtNum
@@ -5974,7 +5524,7 @@ struct mjSolverStat_:
 	var nupdate: Int32
 
 
-alias mjSolverStat = mjSolverStat_mjSolverStat_
+alias mjSolverStat = mjSolverStat_
 struct mjData_:
 
 	var narena: size_t
@@ -6330,7 +5880,7 @@ struct mjData_:
 	var signature: uint64_t
 
 
-alias mjData = mjData_mjData_
+alias mjData = mjData_
 
 alias mjfGeneric = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d2b50 'void (const mjModel *, mjData *)' sugar
@@ -6338,16 +5888,8 @@ alias mjfGeneric = UnsafePointer[
 # (placeholder) | |   `-FunctionProtoType 0x6d2b10 'void (const mjModel *, mjData *)' cdecl
 NoneTypeUnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-
-# (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-mjModel_mjModel_]
-UnsafePointer[
-# (placeholder) | |       `-TypedefType 0x6d0a10 'mjData' sugar
-
-# (placeholder) | |         |-Typedef 0x6d0860 'mjData'
-mjData_mjData_]
+mjModel]
+UnsafePointer[mjData]
 ]
 
 # (placeholder) | `-FullComment 0x81a330 <line:454:3, col:26>
@@ -6363,16 +5905,8 @@ alias mjfConFilt = UnsafePointer[
 # (placeholder) | |   `-FunctionProtoType 0x6d2ee0 'int (const mjModel *, mjData *, int, int)' cdecl
 Int32UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-
-# (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-mjModel_mjModel_]
-UnsafePointer[
-# (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
-
-# (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
-mjData_mjData_]
+mjModel]
+UnsafePointer[mjData]
 Int32Int32]
 
 # (placeholder) | `-FullComment 0x81a400 <line:457:3, col:41>
@@ -6388,16 +5922,8 @@ alias mjfSensor = UnsafePointer[
 # (placeholder) | |   `-FunctionProtoType 0x6d3250 'void (const mjModel *, mjData *, int)' cdecl
 NoneTypeUnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-
-# (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-mjModel_mjModel_]
-UnsafePointer[
-# (placeholder) | |     | `-TypedefType 0x6d0a10 'mjData' sugar
-
-# (placeholder) | |     |   |-Typedef 0x6d0860 'mjData'
-mjData_mjData_]
+mjModel]
+UnsafePointer[mjData]
 Int32]
 
 # (placeholder) | `-FullComment 0x81a4d0 <line:460:3, col:20>
@@ -6411,10 +5937,6 @@ alias mjfTime = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3490 'mjtNum (void)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d3460 'mjtNum (void)' cdecl
-
-# (placeholder) | |     `-TypedefType 0x68e310 'mjtNum' sugar
-
-# (placeholder) | |       |-Typedef 0x66e630 'mjtNum'
 Float64]
 
 # (placeholder) | `-FullComment 0x81a5a0 <line:463:3, col:8>
@@ -6428,24 +5950,12 @@ alias mjfAct = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3810 'mjtNum (const mjModel *, const mjData *, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d37d0 'mjtNum (const mjModel *, const mjData *, int)' cdecl
-
-# (placeholder) | |     |-TypedefType 0x68e310 'mjtNum' sugar
-
-# (placeholder) | |     | |-Typedef 0x66e630 'mjtNum'
 Float64UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-
-# (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-mjModel_mjModel_]
+mjModel]
 UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
-
-# (placeholder) | |     |   `-TypedefType 0x6d0a10 'mjData' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6d0860 'mjData'
-mjData_mjData_]
+mjData]
 Int32]
 
 # (placeholder) | `-FullComment 0x81a670 <line:466:3, col:32>
@@ -6461,28 +5971,12 @@ alias mjfCollision = UnsafePointer[
 # (placeholder) | |   `-FunctionProtoType 0x6d3cb0 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' cdecl
 Int32UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-
-# (placeholder) | |     |   `-TypedefType 0x6d0920 'mjModel' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6b9c20 'mjModel'
-mjModel_mjModel_]
+mjModel]
 UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
-
-# (placeholder) | |     |   `-TypedefType 0x6d0a10 'mjData' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6d0860 'mjData'
-mjData_mjData_]
-UnsafePointer[
-# (placeholder) | |     | `-TypedefType 0x6cef00 'mjContact' sugar
-
-# (placeholder) | |     |   |-Typedef 0x6c23c0 'mjContact'
-mjContact_mjContact_]
-Int32Int32
-# (placeholder) | |     `-TypedefType 0x68e310 'mjtNum' sugar
-
-# (placeholder) | |       |-Typedef 0x66e630 'mjtNum'
-Float64]
+mjData]
+UnsafePointer[mjContact]
+Int32Int32Float64]
 
 # (placeholder) | `-FullComment 0x81a740 <line:469:3, col:22>
 
@@ -6555,12 +6049,7 @@ Float64]
 
 # (placeholder) |       `-TextComment 0x81aaf0 <col:37, col:58> Text=" select all categories"
 
-alias mjtCatBit = ' enum mjtCatBit_ ' sugar
-# (placeholder) | | `-EnumType 0x6d4260 'enum mjtCatBit_'
-
-# (placeholder) | |   `-Enum 0x6d41b8 'mjtCatBit_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtCatBit_ 
+alias mjtCatBit = 
 # (placeholder) | `-FullComment 0x81ac20 <line:31:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x81abf0 <col:3, col:100>
@@ -6632,12 +6121,7 @@ alias mjtCatBit = ' enum mjtCatBit_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81b170 <col:37, col:46> Text=" selection"
 
-alias mjtMouse = ' enum mjtMouse_ ' sugar
-# (placeholder) |   `-EnumType 0x6d4720 'enum mjtMouse_'
-
-# (placeholder) |     `-Enum 0x6d4678 'mjtMouse_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtMouse_ 
+alias mjtMouse = 
 
 # (placeholder) |-EnumDecl 0x6e3208 <line:52:9, line:55:1> line:52:14 mjtPertBit_
 
@@ -6669,12 +6153,7 @@ alias mjtMouse = ' enum mjtMouse_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81b310 <col:37, col:45> Text=" rotation"
 
-alias mjtPertBit = ' enum mjtPertBit_ ' sugar
-# (placeholder) |   `-EnumType 0x6e32b0 'enum mjtPertBit_'
-
-# (placeholder) |     `-Enum 0x6e3208 'mjtPertBit_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtPertBit_ 
+alias mjtPertBit = 
 
 # (placeholder) |-EnumDecl 0x6e3548 <line:58:9, line:63:1> line:58:14 mjtCamera_
 
@@ -6716,12 +6195,7 @@ alias mjtPertBit = ' enum mjtPertBit_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81b650 <col:37, col:82> Text=" user is responsible for setting OpenGL camera"
 
-alias mjtCamera = ' enum mjtCamera_ ' sugar
-# (placeholder) |   `-EnumType 0x6e35f0 'enum mjtCamera_'
-
-# (placeholder) |     `-Enum 0x6e3548 'mjtCamera_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtCamera_ 
+alias mjtCamera = 
 
 # (placeholder) |-EnumDecl 0x6e3948 <line:66:9, line:86:1> line:66:14 mjtLabel_
 
@@ -6875,12 +6349,7 @@ alias mjtCamera = ' enum mjtCamera_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81c520 <col:37, col:58> Text=" number of label types"
 
-alias mjtLabel = ' enum mjtLabel_ ' sugar
-# (placeholder) |   `-EnumType 0x6e39f0 'enum mjtLabel_'
-
-# (placeholder) |     `-Enum 0x6e3948 'mjtLabel_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtLabel_ 
+alias mjtLabel = 
 
 # (placeholder) |-EnumDecl 0x6e4448 <line:89:9, line:100:1> line:89:14 mjtFrame_
 
@@ -6962,12 +6431,7 @@ alias mjtLabel = ' enum mjtLabel_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81cc70 <col:37, col:67> Text=" number of visualization frames"
 
-alias mjtFrame = ' enum mjtFrame_ ' sugar
-# (placeholder) |   `-EnumType 0x6e44f0 'enum mjtFrame_'
-
-# (placeholder) |     `-Enum 0x6e4448 'mjtFrame_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtFrame_ 
+alias mjtFrame = 
 
 # (placeholder) |-EnumDecl 0x6e4ac8 <line:103:9, line:138:1> line:103:14 mjtVisFlag_
 
@@ -7241,12 +6705,7 @@ alias mjtFrame = ' enum mjtFrame_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81e770 <col:37, col:66> Text=" number of visualization flags"
 
-alias mjtVisFlag = ' enum mjtVisFlag_ ' sugar
-# (placeholder) |   `-EnumType 0x6e4b70 'enum mjtVisFlag_'
-
-# (placeholder) |     `-Enum 0x6e4ac8 'mjtVisFlag_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtVisFlag_ 
+alias mjtVisFlag = 
 
 # (placeholder) |-EnumDecl 0x6e5e58 <line:141:9, line:154:1> line:141:14 mjtRndFlag_
 
@@ -7344,12 +6803,7 @@ alias mjtVisFlag = ' enum mjtVisFlag_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81f060 <col:37, col:62> Text=" number of rendering flags"
 
-alias mjtRndFlag = ' enum mjtRndFlag_ ' sugar
-# (placeholder) |   `-EnumType 0x6e5f00 'enum mjtRndFlag_'
-
-# (placeholder) |     `-Enum 0x6e5e58 'mjtRndFlag_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtRndFlag_ 
+alias mjtRndFlag = 
 
 # (placeholder) |-EnumDecl 0x6e65d8 <line:157:9, line:161:1> line:157:14 mjtStereo_
 
@@ -7383,12 +6837,7 @@ alias mjtRndFlag = ' enum mjtRndFlag_ ' sugar
 
 # (placeholder) |       `-TextComment 0x81f2d0 <col:37, col:49> Text=" side-by-side"
 
-alias mjtStereo = ' enum mjtStereo_ ' sugar
-# (placeholder) |   `-EnumType 0x6e6680 'enum mjtStereo_'
-
-# (placeholder) |     `-Enum 0x6e65d8 'mjtStereo_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtStereo_ 
+alias mjtStereo = 
 struct mjvPerturb_:
 
 	var select: Int32
@@ -7414,7 +6863,7 @@ struct mjvPerturb_:
 	var scale: mjtNum
 
 
-alias mjvPerturb = mjvPerturb_mjvPerturb_
+alias mjvPerturb = mjvPerturb_
 struct mjvCamera_:
 
 	var type: Int32
@@ -7434,7 +6883,7 @@ struct mjvCamera_:
 	var orthographic: Int32
 
 
-alias mjvCamera = mjvCamera_mjvCamera_
+alias mjvCamera = mjvCamera_
 struct mjvGLCamera_:
 
 	var pos: SIMD[Float32.dtype, 3]
@@ -7458,7 +6907,7 @@ struct mjvGLCamera_:
 	var orthographic: Int32
 
 
-alias mjvGLCamera = mjvGLCamera_mjvGLCamera_
+alias mjvGLCamera = mjvGLCamera_
 struct mjvGeom_:
 
 	var type: Int32
@@ -7502,7 +6951,7 @@ struct mjvGeom_:
 	var transparent: mjtByte
 
 
-alias mjvGeom = mjvGeom_mjvGeom_
+alias mjvGeom = mjvGeom_
 struct mjvLight_:
 
 	var pos: SIMD[Float32.dtype, 3]
@@ -7530,7 +6979,7 @@ struct mjvLight_:
 	var bulbradius: Float32
 
 
-alias mjvLight = mjvLight_mjvLight_
+alias mjvLight = mjvLight_
 struct mjvOption_:
 
 	var label: Int32
@@ -7558,7 +7007,7 @@ struct mjvOption_:
 	var flex_layer: Int32
 
 
-alias mjvOption = mjvOption_mjvOption_
+alias mjvOption = mjvOption_
 struct mjvScene_:
 
 	var maxgeom: Int32
@@ -7638,7 +7087,7 @@ struct mjvScene_:
 	var framergb: SIMD[Float32.dtype, 3]
 
 
-alias mjvScene = mjvScene_mjvScene_
+alias mjvScene = mjvScene_
 struct mjvFigure_:
 
 	var flg_legend: Int32
@@ -7708,7 +7157,7 @@ struct mjvFigure_:
 	var yaxisdata: SIMD[Float32.dtype, 2]
 
 
-alias mjvFigure = mjvFigure_mjvFigure_
+alias mjvFigure = mjvFigure_
 struct mjvSceneState_:
 
 	var nbuffer: Int32
@@ -7724,7 +7173,7 @@ struct mjvSceneState_:
 	var data: _mjvSceneState___Anonymous_line_634_3
 
 
-alias mjvSceneState = mjvSceneState_mjvSceneState_
+alias mjvSceneState = mjvSceneState_
 struct mjResource_:
 
 	var name: UnsafePointer[Int8]
@@ -7736,17 +7185,13 @@ struct mjResource_:
 	var provider: UnsafePointer[const mjpResourceProvider]
 
 
-alias mjResource = mjResource_mjResource_
+alias mjResource = mjResource_
 
 alias mjfOpenResource = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fdae0 'int (mjResource *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fdab0 'int (mjResource *)' cdecl
-Int32UnsafePointer[
-# (placeholder) | |       `-TypedefType 0x6fd990 'mjResource' sugar
-
-# (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
-mjResource_mjResource_]
+Int32UnsafePointer[mjResource]
 ]
 
 # (placeholder) | `-FullComment 0x827960 <line:34:3, col:59>
@@ -7760,11 +7205,7 @@ alias mjfReadResource = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fddd0 'int (mjResource *, const void **)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fdd90 'int (mjResource *, const void **)' cdecl
-Int32UnsafePointer[
-# (placeholder) | |     | `-TypedefType 0x6fd990 'mjResource' sugar
-
-# (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
-mjResource_mjResource_]
+Int32UnsafePointer[mjResource]
 UnsafePointer[UnsafePointer[
 # (placeholder) | |         `-QualType 0x4e3401 'const void' const
 NoneType]
@@ -7784,11 +7225,7 @@ alias mjfCloseResource = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fe000 'void (mjResource *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fdfd0 'void (mjResource *)' cdecl
-NoneTypeUnsafePointer[
-# (placeholder) | |       `-TypedefType 0x6fd990 'mjResource' sugar
-
-# (placeholder) | |         |-Typedef 0x6fd900 'mjResource'
-mjResource_mjResource_]
+NoneTypeUnsafePointer[mjResource]
 ]
 
 # (placeholder) | `-FullComment 0x827b20 <line:41:3, col:81>
@@ -7802,11 +7239,7 @@ alias mjfGetResourceDir = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fe370 'void (mjResource *, const char **, int *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fe330 'void (mjResource *, const char **, int *)' cdecl
-NoneTypeUnsafePointer[
-# (placeholder) | |     | `-TypedefType 0x6fd990 'mjResource' sugar
-
-# (placeholder) | |     |   |-Typedef 0x6fd900 'mjResource'
-mjResource_mjResource_]
+NoneTypeUnsafePointer[mjResource]
 UnsafePointer[UnsafePointer[
 # (placeholder) | |     |   `-QualType 0x4e3441 'const char' const
 Int8]
@@ -7829,11 +7262,7 @@ alias mjfResourceModified = UnsafePointer[
 # (placeholder) | |   `-FunctionProtoType 0x6fe660 'int (const mjResource *, const char *)' cdecl
 Int32UnsafePointer[
 # (placeholder) | |     | `-QualType 0x6fd991 'const mjResource' const
-
-# (placeholder) | |     |   `-TypedefType 0x6fd990 'mjResource' sugar
-
-# (placeholder) | |     |     |-Typedef 0x6fd900 'mjResource'
-mjResource_mjResource_]
+mjResource]
 UnsafePointer[
 # (placeholder) | |       `-QualType 0x4e3441 'const char' const
 Int8]
@@ -7874,7 +7303,7 @@ struct mjpResourceProvider:
 	var data: UnsafePointer[NoneType]
 
 
-alias mjpResourceProvider = mjpResourceProvidermjpResourceProvider
+alias mjpResourceProvider = mjpResourceProvider
 
 # (placeholder) |-EnumDecl 0x6fede8 <line:70:9, line:75:1> line:70:14 mjtPluginCapabilityBit_
 
@@ -7956,12 +7385,7 @@ alias mjpResourceProvider = mjpResourceProvidermjpResourceProvider
 
 # (placeholder) |       `-TextComment 0x828800 <col:37, col:59> Text=" signed distance fields"
 
-alias mjtPluginCapabilityBit = ' enum mjtPluginCapabilityBit_ ' sugar
-# (placeholder) | | `-EnumType 0x6fee90 'enum mjtPluginCapabilityBit_'
-
-# (placeholder) | |   `-Enum 0x6fede8 'mjtPluginCapabilityBit_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtPluginCapabilityBit_ 
+alias mjtPluginCapabilityBit = 
 # (placeholder) | `-FullComment 0x828930 <line:68:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x828900 <col:3, col:100>
@@ -8011,7 +7435,7 @@ struct mjpPlugin_:
 	var sdf_aabb: void (*)(mjtNum *, const mjtNum *)
 
 
-alias mjpPlugin = mjpPlugin_mjpPlugin_
+alias mjpPlugin = mjpPlugin_
 
 alias mjfPluginLibraryLoadCallback = UnsafePointer[
 # (placeholder) | | `-ParenType 0x7030b0 'void (const char *, int, int)' sugar
@@ -8107,12 +7531,7 @@ Int32Int32]
 
 # (placeholder) |       `-TextComment 0x82a160 <col:37, col:49> Text=" right center"
 
-alias mjtGridPos = ' enum mjtGridPos_ ' sugar
-# (placeholder) | | `-EnumType 0x7033a0 'enum mjtGridPos_'
-
-# (placeholder) | |   `-Enum 0x7032f8 'mjtGridPos_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtGridPos_ 
+alias mjtGridPos = 
 # (placeholder) | `-FullComment 0x82a290 <line:28:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x82a260 <col:3, col:100>
@@ -8144,12 +7563,7 @@ alias mjtGridPos = ' enum mjtGridPos_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82a3d0 <col:37, col:53> Text=" offscreen buffer"
 
-alias mjtFramebuffer = ' enum mjtFramebuffer_ ' sugar
-# (placeholder) |   `-EnumType 0x7069d0 'enum mjtFramebuffer_'
-
-# (placeholder) |     `-Enum 0x706928 'mjtFramebuffer_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtFramebuffer_ 
+alias mjtFramebuffer = 
 
 # (placeholder) |-EnumDecl 0x706c28 <line:47:9, line:50:1> line:47:14 mjtDepthMap_
 
@@ -8181,12 +7595,7 @@ alias mjtFramebuffer = ' enum mjtFramebuffer_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82a570 <col:37, col:74> Text=" reversed depth map; 1: znear, 0: zfar"
 
-alias mjtDepthMap = ' enum mjtDepthMap_ ' sugar
-# (placeholder) |   `-EnumType 0x706cd0 'enum mjtDepthMap_'
-
-# (placeholder) |     `-Enum 0x706c28 'mjtDepthMap_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtDepthMap_ 
+alias mjtDepthMap = 
 
 # (placeholder) |-EnumDecl 0x706f68 <line:52:9, line:59:1> line:52:14 mjtFontScale_
 
@@ -8274,12 +7683,7 @@ alias mjtDepthMap = ' enum mjtDepthMap_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82aa50 <col:37, col:47> Text=" 300% scale"
 
-alias mjtFontScale = ' enum mjtFontScale_ ' sugar
-# (placeholder) |   `-EnumType 0x707010 'enum mjtFontScale_'
-
-# (placeholder) |     `-Enum 0x706f68 'mjtFontScale_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtFontScale_ 
+alias mjtFontScale = 
 
 # (placeholder) |-EnumDecl 0x7075a8 <line:62:9, line:66:1> line:62:14 mjtFont_
 
@@ -8313,12 +7717,7 @@ alias mjtFontScale = ' enum mjtFontScale_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82acc0 <col:37, col:63> Text=" big font (for user alerts)"
 
-alias mjtFont = ' enum mjtFont_ ' sugar
-# (placeholder) |   `-EnumType 0x707650 'enum mjtFont_'
-
-# (placeholder) |     `-Enum 0x7075a8 'mjtFont_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtFont_ 
+alias mjtFont = 
 struct mjrRect_:
 
 	var left: Int32
@@ -8330,7 +7729,7 @@ struct mjrRect_:
 	var height: Int32
 
 
-alias mjrRect = mjrRect_mjrRect_
+alias mjrRect = mjrRect_
 struct mjrContext_:
 
 	var lineWidth: Float32
@@ -8456,7 +7855,7 @@ struct mjrContext_:
 	var readDepthMap: Int32
 
 
-alias mjrContext = mjrContext_mjrContext_
+alias mjrContext = mjrContext_
 
 alias mjString = NoneType
 # (placeholder) | `-FullComment 0x82e3a0 <line:46:5, col:20>
@@ -8510,12 +7909,7 @@ alias mjByteVec = NoneType
 
 # (placeholder) |       `-TextComment 0x82e5b0 <col:38, col:69> Text=" mass distributed on the surface"
 
-alias mjtGeomInertia = ' enum mjtGeomInertia_ ' sugar
-# (placeholder) | | `-EnumType 0x70e240 'enum mjtGeomInertia_'
-
-# (placeholder) | |   `-Enum 0x70e198 'mjtGeomInertia_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtGeomInertia_ 
+alias mjtGeomInertia = 
 # (placeholder) | `-FullComment 0x82e6e0 <line:58:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x82e6b0 <col:3, col:100>
@@ -8563,12 +7957,7 @@ alias mjtGeomInertia = ' enum mjtGeomInertia_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82e9c0 <col:39, col:57> Text=" shell mesh inertia"
 
-alias mjtMeshInertia = ' enum mjtMeshInertia_ ' sugar
-# (placeholder) |   `-EnumType 0x70e540 'enum mjtMeshInertia_'
-
-# (placeholder) |     `-Enum 0x70e498 'mjtMeshInertia_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtMeshInertia_ 
+alias mjtMeshInertia = 
 
 # (placeholder) |-EnumDecl 0x70e898 <line:74:9, line:79:1> line:74:14 mjtBuiltin_
 
@@ -8610,12 +7999,7 @@ alias mjtMeshInertia = ' enum mjtMeshInertia_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82ed00 <col:38, col:83> Text=" 2d: rgb1; cube: rgb1-up, rgb2-side, rgb3-down"
 
-alias mjtBuiltin = ' enum mjtBuiltin_ ' sugar
-# (placeholder) |   `-EnumType 0x70e940 'enum mjtBuiltin_'
-
-# (placeholder) |     `-Enum 0x70e898 'mjtBuiltin_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtBuiltin_ 
+alias mjtBuiltin = 
 
 # (placeholder) |-EnumDecl 0x70ec98 <line:82:9, line:87:1> line:82:14 mjtMark_
 
@@ -8657,12 +8041,7 @@ alias mjtBuiltin = ' enum mjtBuiltin_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82f040 <col:38, col:49> Text=" random dots"
 
-alias mjtMark = ' enum mjtMark_ ' sugar
-# (placeholder) |   `-EnumType 0x70ed40 'enum mjtMark_'
-
-# (placeholder) |     `-Enum 0x70ec98 'mjtMark_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtMark_ 
+alias mjtMark = 
 
 # (placeholder) |-EnumDecl 0x70f098 <line:90:9, line:94:1> line:90:14 mjtLimited_
 
@@ -8696,12 +8075,7 @@ alias mjtMark = ' enum mjtMark_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82f2b0 <col:38, col:77> Text=" limited inferred from presence of range"
 
-alias mjtLimited = ' enum mjtLimited_ ' sugar
-# (placeholder) |   `-EnumType 0x70f140 'enum mjtLimited_'
-
-# (placeholder) |     `-Enum 0x70f098 'mjtLimited_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtLimited_ 
+alias mjtLimited = 
 
 # (placeholder) |-EnumDecl 0x70f418 <line:96:9, line:100:1> line:96:14 mjtAlignFree_
 
@@ -8735,12 +8109,7 @@ alias mjtLimited = ' enum mjtLimited_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82f520 <col:38, col:70> Text=" respect the global compiler flag"
 
-alias mjtAlignFree = ' enum mjtAlignFree_ ' sugar
-# (placeholder) |   `-EnumType 0x70f4c0 'enum mjtAlignFree_'
-
-# (placeholder) |     `-Enum 0x70f418 'mjtAlignFree_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtAlignFree_ 
+alias mjtAlignFree = 
 
 # (placeholder) |-EnumDecl 0x70f798 <line:103:9, line:107:1> line:103:14 mjtInertiaFromGeom_
 
@@ -8774,12 +8143,7 @@ alias mjtAlignFree = ' enum mjtAlignFree_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82f790 <col:38, col:77> Text=" use only if inertial element is missing"
 
-alias mjtInertiaFromGeom = ' enum mjtInertiaFromGeom_ ' sugar
-# (placeholder) |   `-EnumType 0x70f840 'enum mjtInertiaFromGeom_'
-
-# (placeholder) |     `-Enum 0x70f798 'mjtInertiaFromGeom_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtInertiaFromGeom_ 
+alias mjtInertiaFromGeom = 
 
 # (placeholder) |-EnumDecl 0x711598 <line:110:9, line:116:1> line:110:14 mjtOrientation_
 
@@ -8829,12 +8193,7 @@ alias mjtInertiaFromGeom = ' enum mjtInertiaFromGeom_ ' sugar
 
 # (placeholder) |       `-TextComment 0x82fba0 <col:38, col:50> Text=" Euler angles"
 
-alias mjtOrientation = ' enum mjtOrientation_ ' sugar
-# (placeholder) |   `-EnumType 0x711640 'enum mjtOrientation_'
-
-# (placeholder) |     `-Enum 0x711598 'mjtOrientation_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtOrientation_ 
+alias mjtOrientation = 
 struct mjsElement_:
 
 	var elemtype: mjtObj
@@ -8842,7 +8201,7 @@ struct mjsElement_:
 	var signature: uint64_t
 
 
-alias mjsElement = mjsElement_mjsElement_
+alias mjsElement = mjsElement_
 # (placeholder) | `-FullComment 0x82ff40 <line:119:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x82ff10 <col:3, col:100>
@@ -8884,7 +8243,7 @@ struct mjsCompiler_:
 	var LRopt: mjLROpt
 
 
-alias mjsCompiler = mjsCompiler_mjsCompiler_
+alias mjsCompiler = mjsCompiler_
 struct mjSpec_:
 
 	var element: UnsafePointer[mjsElement]
@@ -8942,7 +8301,7 @@ struct mjSpec_:
 	var hasImplicitPluginElem: mjtByte
 
 
-alias mjSpec = mjSpec_mjSpec_
+alias mjSpec = mjSpec_
 struct mjsOrientation_:
 
 	var type: mjtOrientation
@@ -8956,7 +8315,7 @@ struct mjsOrientation_:
 	var euler: SIMD[Float64.dtype, 3]
 
 
-alias mjsOrientation = mjsOrientation_mjsOrientation_
+alias mjsOrientation = mjsOrientation_
 struct mjsPlugin_:
 
 	var element: UnsafePointer[mjsElement]
@@ -8970,7 +8329,7 @@ struct mjsPlugin_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsPlugin = mjsPlugin_mjsPlugin_
+alias mjsPlugin = mjsPlugin_
 struct mjsBody_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9010,7 +8369,7 @@ struct mjsBody_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsBody = mjsBody_mjsBody_
+alias mjsBody = mjsBody_
 struct mjsFrame_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9028,7 +8387,7 @@ struct mjsFrame_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsFrame = mjsFrame_mjsFrame_
+alias mjsFrame = mjsFrame_
 struct mjsJoint_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9084,7 +8443,7 @@ struct mjsJoint_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsJoint = mjsJoint_mjsJoint_
+alias mjsJoint = mjsJoint_
 struct mjsGeom_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9152,7 +8511,7 @@ struct mjsGeom_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsGeom = mjsGeom_mjsGeom_
+alias mjsGeom = mjsGeom_
 struct mjsSite_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9182,7 +8541,7 @@ struct mjsSite_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsSite = mjsSite_mjsSite_
+alias mjsSite = mjsSite_
 struct mjsCamera_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9224,7 +8583,7 @@ struct mjsCamera_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsCamera = mjsCamera_mjsCamera_
+alias mjsCamera = mjsCamera_
 struct mjsLight_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9262,7 +8621,7 @@ struct mjsLight_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsLight = mjsLight_mjsLight_
+alias mjsLight = mjsLight_
 struct mjsFlex_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9336,7 +8695,7 @@ struct mjsFlex_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsFlex = mjsFlex_mjsFlex_
+alias mjsFlex = mjsFlex_
 struct mjsMesh_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9374,7 +8733,7 @@ struct mjsMesh_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsMesh = mjsMesh_mjsMesh_
+alias mjsMesh = mjsMesh_
 struct mjsHField_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9396,7 +8755,7 @@ struct mjsHField_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsHField = mjsHField_mjsHField_
+alias mjsHField = mjsHField_
 struct mjsSkin_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9432,7 +8791,7 @@ struct mjsSkin_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsSkin = mjsSkin_mjsSkin_
+alias mjsSkin = mjsSkin_
 struct mjsTexture_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9478,7 +8837,7 @@ struct mjsTexture_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsTexture = mjsTexture_mjsTexture_
+alias mjsTexture = mjsTexture_
 struct mjsMaterial_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9508,7 +8867,7 @@ struct mjsMaterial_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsMaterial = mjsMaterial_mjsMaterial_
+alias mjsMaterial = mjsMaterial_
 struct mjsPair_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9536,7 +8895,7 @@ struct mjsPair_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsPair = mjsPair_mjsPair_
+alias mjsPair = mjsPair_
 struct mjsExclude_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9550,7 +8909,7 @@ struct mjsExclude_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsExclude = mjsExclude_mjsExclude_
+alias mjsExclude = mjsExclude_
 struct mjsEquality_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9576,7 +8935,7 @@ struct mjsEquality_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsEquality = mjsEquality_mjsEquality_
+alias mjsEquality = mjsEquality_
 struct mjsTendon_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9620,7 +8979,7 @@ struct mjsTendon_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsTendon = mjsTendon_mjsTendon_
+alias mjsTendon = mjsTendon_
 struct mjsWrap_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9628,7 +8987,7 @@ struct mjsWrap_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsWrap = mjsWrap_mjsWrap_
+alias mjsWrap = mjsWrap_
 struct mjsActuator_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9688,7 +9047,7 @@ struct mjsActuator_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsActuator = mjsActuator_mjsActuator_
+alias mjsActuator = mjsActuator_
 struct mjsSensor_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9722,7 +9081,7 @@ struct mjsSensor_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsSensor = mjsSensor_mjsSensor_
+alias mjsSensor = mjsSensor_
 struct mjsNumeric_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9736,7 +9095,7 @@ struct mjsNumeric_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsNumeric = mjsNumeric_mjsNumeric_
+alias mjsNumeric = mjsNumeric_
 struct mjsText_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9748,7 +9107,7 @@ struct mjsText_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsText = mjsText_mjsText_
+alias mjsText = mjsText_
 struct mjsTuple_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9764,7 +9123,7 @@ struct mjsTuple_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsTuple = mjsTuple_mjsTuple_
+alias mjsTuple = mjsTuple_
 struct mjsKey_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9788,7 +9147,7 @@ struct mjsKey_:
 	var info: UnsafePointer[mjString]
 
 
-alias mjsKey = mjsKey_mjsKey_
+alias mjsKey = mjsKey_
 struct mjsDefault_:
 
 	var element: UnsafePointer[mjsElement]
@@ -9820,7 +9179,7 @@ struct mjsDefault_:
 	var actuator: UnsafePointer[mjsActuator]
 
 
-alias mjsDefault = mjsDefault_mjsDefault_
+alias mjsDefault = mjsDefault_
 
 # (placeholder) |-EnumDecl 0x732bc0 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:65:9, line:70:1> line:65:14 mjtButton_
 
@@ -9868,12 +9227,7 @@ alias mjsDefault = mjsDefault_mjsDefault_
 
 # (placeholder) |       `-TextComment 0x8520c0 <col:37, col:50> Text=" middle button"
 
-alias mjtButton = ' enum mjtButton_ ' sugar
-# (placeholder) | | `-EnumType 0x732c60 'enum mjtButton_'
-
-# (placeholder) | |   `-Enum 0x732bc0 'mjtButton_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtButton_ 
+alias mjtButton = 
 # (placeholder) | `-FullComment 0x8521f0 <line:63:3, col:100>
 
 # (placeholder) |   `-ParagraphComment 0x8521c0 <col:3, col:100>
@@ -9961,12 +9315,7 @@ alias mjtButton = ' enum mjtButton_ ' sugar
 
 # (placeholder) |       `-TextComment 0x8528e0 <col:37, col:47> Text=" files drop"
 
-alias mjtEvent = ' enum mjtEvent_ ' sugar
-# (placeholder) |   `-EnumType 0x73ce70 'enum mjtEvent_'
-
-# (placeholder) |     `-Enum 0x73cdc8 'mjtEvent_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtEvent_ 
+alias mjtEvent = 
 
 # (placeholder) |-EnumDecl 0x73d448 <line:86:9, line:107:1> line:86:14 mjtItem_
 
@@ -10128,12 +9477,7 @@ alias mjtEvent = ' enum mjtEvent_ ' sugar
 
 # (placeholder) |       `-TextComment 0x8536b0 <col:37, col:57> Text=" number of item types"
 
-alias mjtItem = ' enum mjtItem_ ' sugar
-# (placeholder) |   `-EnumType 0x73d4f0 'enum mjtItem_'
-
-# (placeholder) |     `-Enum 0x73d448 'mjtItem_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtItem_ 
+alias mjtItem = 
 
 # (placeholder) |-EnumDecl 0x73df98 <line:110:9, line:114:1> line:110:14 mjtSection_
 
@@ -10167,12 +9511,7 @@ alias mjtItem = ' enum mjtItem_ ' sugar
 
 # (placeholder) |       `-TextComment 0x853920 <col:37, col:73> Text=" fixed section: always open, no title"
 
-alias mjtSection = ' enum mjtSection_ ' sugar
-# (placeholder) |   `-EnumType 0x73e040 'enum mjtSection_'
-
-# (placeholder) |     `-Enum 0x73df98 'mjtSection_'
-
-# ElaboratedTypeNode: Unhandled tokens: mjtSection_ 
+alias mjtSection = 
 
 alias mjfItemEnable = UnsafePointer[
 # (placeholder) | | `-ParenType 0x73e480 'int (int, void *)' sugar
@@ -10242,7 +9581,7 @@ struct mjuiState_:
 	var droppaths: UnsafePointer[const char *]
 
 
-alias mjuiState = mjuiState_mjuiState_
+alias mjuiState = mjuiState_
 struct mjuiThemeSpacing_:
 
 	var total: Int32
@@ -10272,7 +9611,7 @@ struct mjuiThemeSpacing_:
 	var samples: Int32
 
 
-alias mjuiThemeSpacing = mjuiThemeSpacing_mjuiThemeSpacing_
+alias mjuiThemeSpacing = mjuiThemeSpacing_
 struct mjuiThemeColor_:
 
 	var master: SIMD[Float32.dtype, 3]
@@ -10332,7 +9671,7 @@ struct mjuiThemeColor_:
 	var cursor: SIMD[Float32.dtype, 3]
 
 
-alias mjuiThemeColor = mjuiThemeColor_mjuiThemeColor_
+alias mjuiThemeColor = mjuiThemeColor_
 struct mjuiItemSingle_:
 
 	var modifier: Int32
@@ -10380,7 +9719,7 @@ struct mjuiItem_:
 	var skip: Int32
 
 
-alias mjuiItem = mjuiItem_mjuiItem_
+alias mjuiItem = mjuiItem_
 struct mjuiSection_:
 
 	var name: SIMD[Int8.dtype, 40]
@@ -10404,7 +9743,7 @@ struct mjuiSection_:
 	var lastclick: Int32
 
 
-alias mjuiSection = mjuiSection_mjuiSection_
+alias mjuiSection = mjuiSection_
 struct mjUI_:
 
 	var spacing: mjuiThemeSpacing
@@ -10456,7 +9795,7 @@ struct mjUI_:
 	var sect: SIMD[mjuiSection.dtype, 10]
 
 
-alias mjUI = mjUI_mjUI_
+alias mjUI = mjUI_
 struct mjuiDef_:
 
 	var type: Int32
@@ -10472,7 +9811,7 @@ struct mjuiDef_:
 	var otherint: Int32
 
 
-alias mjuiDef = mjuiDef_mjuiDef_
+alias mjuiDef = mjuiDef_
 
 # (placeholder) |-VarDecl 0x74a200 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:45:49> col:22 mju_user_error 'void (*)(const char *)' extern
 

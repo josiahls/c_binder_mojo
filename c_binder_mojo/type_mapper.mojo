@@ -292,7 +292,7 @@ struct TypeMapper:
 
         # For struct types, we'll need to handle them differently
         # This is a placeholder for now
-        print("TypeMapper: Unknown type: " + _type_name)
+        # print("TypeMapper: Unknown type: " + _type_name)
         return _type_name
 
     @staticmethod

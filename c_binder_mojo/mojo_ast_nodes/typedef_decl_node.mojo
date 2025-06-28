@@ -119,6 +119,8 @@ struct TypedefDeclNode(NodeAstLike):
                 self._is_implicit = True
             elif entry == "referenced":
                 self._is_referenced = True
+            elif self._type_name == "":
+                self._type_name = entry
             else:
                 self._type_aliased = entry
 
@@ -127,8 +129,8 @@ struct TypedefDeclNode(NodeAstLike):
                 pass
             elif self._type_name == "":
                 self._type_name = entry
-            else:
-                self._type_name += " " + entry
+            # else:
+            #     self._type_name += " " + entry
     
 
     fn _start_end_quotes(mut self, read tokens: List[String]) -> Tuple[Int, Int]:

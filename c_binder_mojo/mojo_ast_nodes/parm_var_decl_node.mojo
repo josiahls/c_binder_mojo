@@ -224,7 +224,7 @@ struct ParmVarDeclNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
 
-        print("ParmVarDeclNode: _parm_var_name: " + self._parm_var_name + " param type: " + self._parm_var_type)
+        # print("ParmVarDeclNode: _parm_var_name: " + self._parm_var_name + " param type: " + self._parm_var_type)
 
         var type_name = TypeMapper.map_type(self._parm_var_type)
 

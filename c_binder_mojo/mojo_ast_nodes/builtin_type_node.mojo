@@ -176,7 +176,9 @@ struct BuiltinTypeNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
 
+
         var s:String = BuiltinTypeMapper.map_type(self._builtin_type, self._unsigned)
+        # print("BuiltinTypeNode: _builtin_type: " + self._builtin_type + " unsigned: " + String(self._unsigned) + " s: " + s)
         if self._unhandled_tokens != "":
             s += " #" + self.__name__ + " BuiltinTypeNode Unhandled tokens: " + self._unhandled_tokens
 

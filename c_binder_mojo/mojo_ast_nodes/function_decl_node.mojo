@@ -294,7 +294,7 @@ struct FunctionDeclNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
         var return_type = TypeMapper.map_type(self._return_type)
-        print("FunctionDeclNode: to_string: " + self._function_name + " return type: " + self._return_type)
+
         var function_name = self._function_name
         if function_name == "":
             function_name = "anonymous_function"

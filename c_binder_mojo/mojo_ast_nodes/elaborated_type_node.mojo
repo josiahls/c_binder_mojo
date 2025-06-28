@@ -106,7 +106,6 @@ struct ElaboratedTypeNode(NodeAstLike):
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[RecordTypeNode]():
-                print('getting record type node')
                 optional_node = node.node[][RecordTypeNode].get_aliased_record_decl(module_interface)
                 if optional_node:
                     try:

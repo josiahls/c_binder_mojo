@@ -123,12 +123,14 @@ struct FunctionDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _record_decl_level: Int
+    var _is_disabled: Bool
 
     var _is_no_throw: Bool
     var _is_pure: Bool
     var _is_no_null: Bool
     var _is_external: Bool
     var _is_implicit: Bool
+    var _is_prev: Bool
 
     var _function_name: String
     var _return_type: String
@@ -146,6 +148,9 @@ struct FunctionDeclNode(NodeAstLike):
         self._ast_entries[].append(ast_entries)
         self._node_state = NodeState.COMPLETED
         self._record_decl_level = ast_entries.level
+        print("FunctionDeclNode: is_prev: " + String(ast_entries.is_prev))
+        self._is_prev = ast_entries.is_prev
+        self._is_disabled = False
 
         self._is_no_throw = False
         self._is_pure = False
@@ -160,10 +165,12 @@ struct FunctionDeclNode(NodeAstLike):
         self._return_type_is_const = False
         self._return_type_is_volatile = False
         self._return_type_is_restrict = False
+        
 
         self.unhandled_tokens = String()
 
         # TODO(josiahls): Need to handle multiple declarations. e.g. strtoull
+        
 
         var start_idx, end_idx = self._start_end_quotes(ast_entries.tokens)
 
@@ -252,7 +259,20 @@ struct FunctionDeclNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
+            if self._is_prev:
+                self.disable_previous_declarations(module_interface)
             self._node_state = NodeState.COMPLETED
+
+    fn disable_previous_declarations(self, mut module_interface: ModuleInterface):
+        for node in module_interface.nodes()[]:
+            if node.node[].isa[FunctionDeclNode]():
+                print("Disabling previous declaration: " + node.node[][FunctionDeclNode]._function_name)
+                if node.node[][FunctionDeclNode]._is_implicit \
+                   and node.node[][FunctionDeclNode]._function_name == self._function_name:
+                    node.node[][FunctionDeclNode].disable()
+
+    fn disable(mut self):
+        self._is_disabled = True
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -338,5 +358,8 @@ struct FunctionDeclNode(NodeAstLike):
 
         var function_sig = "fn" + "(" + String(", ").join(parm_var_strings) + ") -> " + return_type
         var function_decl = "alias " + function_name + " = " + function_sig
+
+        if self._is_disabled:
+            function_decl = " # Disabled either due to a redefinition or a previous declaration: " + function_decl
 
         return function_decl + "\n"

@@ -22,6 +22,7 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
     var full_location: String
     var precise_location: String
     var tokens: List[String]
+    var is_prev: Bool
     var original_line: String
 
     # Meta fields
@@ -37,6 +38,7 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         self.original_line = ""
         self.level = 0
         self.str_just_original_line = False
+        self.is_prev = False
 
     fn get_quoted_indices(self) -> List[Int]:
         """Find the indices of quoted content in tokens.
@@ -232,6 +234,7 @@ struct AstParser:
             consequetive_space = False
             expect_parent_address = False
             expect_prev = False
+            var is_prev = False
 
             var ast_entry = AstEntry()
             for token in line.split(" "):
@@ -248,6 +251,7 @@ struct AstParser:
                     expect_parent_address = False
                 elif token == "prev" and ast_entry.full_location == "":
                     expect_prev = True
+                    is_prev = True
                     # NOTE: I think that prev implies a redefinition. Not sure what the point is
                     # of this, but I know this will not compile in mojo. So we will skip it.
                     continue
@@ -353,6 +357,7 @@ struct AstParser:
 
             ast_entry.original_line = line
             ast_entry.level = level
+            ast_entry.is_prev = is_prev
             if ast_entry.ast_name == "":
                 raise Error("Could not find name for line: " + line)
 
@@ -366,5 +371,6 @@ struct AstParser:
         entry.mem_address = ""
         entry.full_location = ""
         entry.precise_location = ""
+        entry.is_prev = False
         entries.append(entry^)
         return entries

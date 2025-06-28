@@ -21,6 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.type_mapper import TypeMapper
+from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
 struct ParmVarDecl(Copyable, Movable, Stringable, Writable):
@@ -131,6 +132,11 @@ struct FunctionDeclNode(NodeAstLike):
 
     var _function_name: String
     var _return_type: String
+    var _return_type_is_pointer: Bool
+    var _return_type_is_unsigned: Bool
+    var _return_type_is_const: Bool
+    var _return_type_is_volatile: Bool
+    var _return_type_is_restrict: Bool
 
     var unhandled_tokens: String
 
@@ -149,6 +155,11 @@ struct FunctionDeclNode(NodeAstLike):
 
         self._function_name = String()
         self._return_type = String()
+        self._return_type_is_pointer = False
+        self._return_type_is_unsigned = False
+        self._return_type_is_const = False
+        self._return_type_is_volatile = False
+        self._return_type_is_restrict = False
 
         self.unhandled_tokens = String()
 
@@ -164,17 +175,23 @@ struct FunctionDeclNode(NodeAstLike):
             else:
                 self.unhandled_tokens += " " + entry
 
-        for entry in ast_entries.tokens[start_idx:end_idx]:
+        for entry in ast_entries.tokens[start_idx + 1:end_idx]:
             if entry.startswith("("):
                 break
-            elif entry == "'":
-                pass
+            elif entry == "unsigned":
+                self._return_type_is_unsigned = True
+            elif entry == "const":
+                self._return_type_is_const = True
+            elif entry == "volatile":
+                self._return_type_is_volatile = True
+            elif entry == "restrict":
+                self._return_type_is_restrict = True
             elif self._return_type == "":
                 self._return_type = entry
             else:
                 self._return_type += " " + entry
 
-        for entry in ast_entries.tokens[end_idx:]:
+        for entry in ast_entries.tokens[end_idx + 1:]:
             if entry == "extern":
                 self._is_external = True
             else:
@@ -287,13 +304,31 @@ struct FunctionDeclNode(NodeAstLike):
                     print(node.name(include_sig=True))
         return strings
 
+    fn parse_return_type(self) -> Tuple[String, Bool]:
+        var is_pointer = False
+        var return_type = self._return_type
+        if '(' in return_type:
+            return_type = return_type.split('(')[0]
+        if '*' in return_type:
+            is_pointer = True
+            return_type = return_type.replace('*', '')
+        return_type = String(return_type.strip())
+        return (return_type, is_pointer)
+
     fn to_string(
         self,
         just_code: Bool,
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var return_type = TypeMapper.map_type(self._return_type)
+
+        # TODO(josiahls): This is annoying. Clang does not support decomposing the return type,
+        # so we need to manually parse it.
+        var (return_type, is_pointer) = self.parse_return_type()
+
+        return_type = BuiltinTypeMapper.map_type(return_type, self._return_type_is_unsigned)
+        if is_pointer:
+            return_type = "UnsafePointer[" + return_type + "]"
 
         var function_name = self._function_name
         if function_name == "":

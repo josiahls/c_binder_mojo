@@ -1269,7 +1269,7 @@ alias __fmal = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
 alias scalbl = fn(__x: Float64, __n: Float64) -> Float64
 alias __scalbl = fn(__x: Float64, __n: Float64) -> Float64
 
-# (placeholder) |-VarDecl 0x660900 </usr/include/math.h:854:1, col:12> col:12 signgam 'int' extern
+alias signgam = Int32 # extern
 
 # (placeholder) |-EnumDecl 0x660968 <line:934:1, line:951:3> line:934:1
 
@@ -1374,20 +1374,12 @@ alias uintmax_t = UInt64
 alias mjtNum = Float64
 
 alias mjtByte = UInt8
-# (placeholder) | `-FullComment 0x7d1ae0 <line:31:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x7d1ab0 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x7d1a80 <col:3, col:100> Text="-------------------------------------- byte definition -------------------------------------------"
+#-------------------------------------- byte definition -------------------------------------------
 
 
 # (placeholder) |-EnumDecl 0x679db8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:50:9, line:70:1> line:50:14 mjtDisableBit_
 
-# (placeholder) | |-FullComment 0x7d1bb0 <line:48:3, col:100>
-
-# (placeholder) | | `-ParagraphComment 0x7d1b80 <col:3, col:100>
-
-# (placeholder) | |   `-TextComment 0x7d1b50 <col:3, col:100> Text="---------------------------------- enum types (mjt) ----------------------------------------------"
+#---------------------------------- enum types (mjt) ----------------------------------------------
 
 # (placeholder) | |-EnumConstantDecl 0x679f28 <line:51:3, col:28> col:3 mjDSBL_CONSTRAINT 'int'
 
@@ -1401,11 +1393,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x679ec8 <col:28> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7d6c10 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x7d6be0 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x7d6bb0 <col:37, col:61> Text=" entire constraint solver"
+# entire constraint solver
 
 # (placeholder) | |-EnumConstantDecl 0x67a028 <line:52:3, col:28> col:3 mjDSBL_EQUALITY 'int'
 
@@ -1419,11 +1407,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x679fc8 <col:28> 'int' 1
 
-# (placeholder) | | `-FullComment 0x7d6ce0 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7d6cb0 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7d6c80 <col:37, col:57> Text=" equality constraints"
+# equality constraints
 
 # (placeholder) | |-EnumConstantDecl 0x67a128 <line:53:3, col:28> col:3 mjDSBL_FRICTIONLOSS 'int'
 
@@ -1437,11 +1421,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a0c8 <col:28> 'int' 2
 
-# (placeholder) | | `-FullComment 0x7d6db0 <col:37, col:78>
-
-# (placeholder) | |   `-ParagraphComment 0x7d6d80 <col:37, col:78>
-
-# (placeholder) | |     `-TextComment 0x7d6d50 <col:37, col:78> Text=" joint and tendon frictionloss constraints"
+# joint and tendon frictionloss constraints
 
 # (placeholder) | |-EnumConstantDecl 0x67a228 <line:54:3, col:28> col:3 mjDSBL_LIMIT 'int'
 
@@ -1455,11 +1435,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a1c8 <col:28> 'int' 3
 
-# (placeholder) | | `-FullComment 0x7d6e80 <col:37, col:71>
-
-# (placeholder) | |   `-ParagraphComment 0x7d6e50 <col:37, col:71>
-
-# (placeholder) | |     `-TextComment 0x7d6e20 <col:37, col:71> Text=" joint and tendon limit constraints"
+# joint and tendon limit constraints
 
 # (placeholder) | |-EnumConstantDecl 0x67a328 <line:55:3, col:28> col:3 mjDSBL_CONTACT 'int'
 
@@ -1473,11 +1449,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a2c8 <col:28> 'int' 4
 
-# (placeholder) | | `-FullComment 0x7d6f50 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7d6f20 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7d6ef0 <col:37, col:56> Text=" contact constraints"
+# contact constraints
 
 # (placeholder) | |-EnumConstantDecl 0x67a428 <line:56:3, col:28> col:3 mjDSBL_PASSIVE 'int'
 
@@ -1491,11 +1463,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a3c8 <col:28> 'int' 5
 
-# (placeholder) | | `-FullComment 0x7d7020 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x7d6ff0 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x7d6fc0 <col:37, col:51> Text=" passive forces"
+# passive forces
 
 # (placeholder) | |-EnumConstantDecl 0x67a528 <line:57:3, col:28> col:3 mjDSBL_GRAVITY 'int'
 
@@ -1509,11 +1477,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a4c8 <col:28> 'int' 6
 
-# (placeholder) | | `-FullComment 0x7d70f0 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7d70c0 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7d7090 <col:37, col:57> Text=" gravitational forces"
+# gravitational forces
 
 # (placeholder) | |-EnumConstantDecl 0x67a628 <line:58:3, col:28> col:3 mjDSBL_CLAMPCTRL 'int'
 
@@ -1527,11 +1491,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a5c8 <col:28> 'int' 7
 
-# (placeholder) | | `-FullComment 0x7d71c0 <col:37, col:69>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7190 <col:37, col:69>
-
-# (placeholder) | |     `-TextComment 0x7d7160 <col:37, col:69> Text=" clamp control to specified range"
+# clamp control to specified range
 
 # (placeholder) | |-EnumConstantDecl 0x67a728 <line:59:3, col:28> col:3 mjDSBL_WARMSTART 'int'
 
@@ -1545,11 +1505,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a6c8 <col:28> 'int' 8
 
-# (placeholder) | | `-FullComment 0x7d7290 <col:37, col:64>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7260 <col:37, col:64>
-
-# (placeholder) | |     `-TextComment 0x7d7230 <col:37, col:64> Text=" warmstart constraint solver"
+# warmstart constraint solver
 
 # (placeholder) | |-EnumConstantDecl 0x67a828 <line:60:3, col:28> col:3 mjDSBL_FILTERPARENT 'int'
 
@@ -1563,11 +1519,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a7c8 <col:28> 'int' 9
 
-# (placeholder) | | `-FullComment 0x7d7360 <col:37, col:71>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7330 <col:37, col:71>
-
-# (placeholder) | |     `-TextComment 0x7d7300 <col:37, col:71> Text=" remove collisions with parent body"
+# remove collisions with parent body
 
 # (placeholder) | |-EnumConstantDecl 0x67a928 <line:61:3, col:28> col:3 mjDSBL_ACTUATION 'int'
 
@@ -1581,11 +1533,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a8c8 <col:28> 'int' 10
 
-# (placeholder) | | `-FullComment 0x7d7430 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7400 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x7d73d0 <col:37, col:59> Text=" apply actuation forces"
+# apply actuation forces
 
 # (placeholder) | |-EnumConstantDecl 0x67aa28 <line:62:3, col:28> col:3 mjDSBL_REFSAFE 'int'
 
@@ -1599,11 +1547,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67a9c8 <col:28> 'int' 11
 
-# (placeholder) | | `-FullComment 0x7d7500 <col:37, col:79>
-
-# (placeholder) | |   `-ParagraphComment 0x7d74d0 <col:37, col:79>
-
-# (placeholder) | |     `-TextComment 0x7d74a0 <col:37, col:79> Text=" integrator safety: make ref[0]>=2*timestep"
+# integrator safety: make ref[0]>=2*timestep
 
 # (placeholder) | |-EnumConstantDecl 0x67ab28 <line:63:3, col:28> col:3 mjDSBL_SENSOR 'int'
 
@@ -1617,11 +1561,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67aac8 <col:28> 'int' 12
 
-# (placeholder) | | `-FullComment 0x7d75d0 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x7d75a0 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x7d7570 <col:37, col:44> Text=" sensors"
+# sensors
 
 # (placeholder) | |-EnumConstantDecl 0x67ac28 <line:64:3, col:28> col:3 mjDSBL_MIDPHASE 'int'
 
@@ -1635,11 +1575,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67abc8 <col:28> 'int' 13
 
-# (placeholder) | | `-FullComment 0x7d76a0 <col:37, col:66>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7670 <col:37, col:66>
-
-# (placeholder) | |     `-TextComment 0x7d7640 <col:37, col:66> Text=" mid-phase collision filtering"
+# mid-phase collision filtering
 
 # (placeholder) | |-EnumConstantDecl 0x67ad58 <line:65:3, col:28> col:3 mjDSBL_EULERDAMP 'int'
 
@@ -1653,11 +1589,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67acf8 <col:28> 'int' 14
 
-# (placeholder) | | `-FullComment 0x7d7770 <col:37, col:94>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7740 <col:37, col:94>
-
-# (placeholder) | |     `-TextComment 0x7d7710 <col:37, col:94> Text=" implicit integration of joint damping in Euler integrator"
+# implicit integration of joint damping in Euler integrator
 
 # (placeholder) | |-EnumConstantDecl 0x67ae58 <line:66:3, col:28> col:3 mjDSBL_AUTORESET 'int'
 
@@ -1671,11 +1603,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67adf8 <col:28> 'int' 15
 
-# (placeholder) | | `-FullComment 0x7d7840 <col:37, col:87>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7810 <col:37, col:87>
-
-# (placeholder) | |     `-TextComment 0x7d77e0 <col:37, col:87> Text=" automatic reset when numerical issues are detected"
+# automatic reset when numerical issues are detected
 
 # (placeholder) | |-EnumConstantDecl 0x67af58 <line:67:3, col:28> col:3 mjDSBL_NATIVECCD 'int'
 
@@ -1689,11 +1617,7 @@ alias mjtByte = UInt8
 
 # (placeholder) | | |   `-IntegerLiteral 0x67aef8 <col:28> 'int' 16
 
-# (placeholder) | | `-FullComment 0x7d7910 <col:37, col:70>
-
-# (placeholder) | |   `-ParagraphComment 0x7d78e0 <col:37, col:70>
-
-# (placeholder) | |     `-TextComment 0x7d78b0 <col:37, col:70> Text=" native convex collision detection"
+# native convex collision detection
 
 # (placeholder) | `-EnumConstantDecl 0x67b048 <line:69:3, col:25> col:3 referenced mjNDISABLE 'int'
 
@@ -1703,18 +1627,10 @@ alias mjtByte = UInt8
 
 # (placeholder) |   | `-IntegerLiteral 0x67afd8 <col:25> 'int' 17
 
-# (placeholder) |   `-FullComment 0x7d79e0 <col:37, col:60>
-
-# (placeholder) |     `-ParagraphComment 0x7d79b0 <col:37, col:60>
-
-# (placeholder) |       `-TextComment 0x7d7980 <col:37, col:60> Text=" number of disable flags"
+# number of disable flags
 
 alias mjtDisableBit = 
-# (placeholder) | `-FullComment 0x7d7ab0 <line:48:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x7d7a80 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x7d7a50 <col:3, col:100> Text="---------------------------------- enum types (mjt) ----------------------------------------------"
+#---------------------------------- enum types (mjt) ----------------------------------------------
 
 
 # (placeholder) |-EnumDecl 0x67b168 <line:73:9, line:83:1> line:73:14 mjtEnableBit_
@@ -1731,11 +1647,7 @@ alias mjtDisableBit =
 
 # (placeholder) | | |   `-IntegerLiteral 0x67b278 <col:28> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7d7b80 <col:37, col:64>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7b50 <col:37, col:64>
-
-# (placeholder) | |     `-TextComment 0x7d7b20 <col:37, col:64> Text=" override contact parameters"
+# override contact parameters
 
 # (placeholder) | |-EnumConstantDecl 0x67b3d8 <line:75:3, col:28> col:3 mjENBL_ENERGY 'int'
 
@@ -1749,11 +1661,7 @@ alias mjtDisableBit =
 
 # (placeholder) | | |   `-IntegerLiteral 0x67b378 <col:28> 'int' 1
 
-# (placeholder) | | `-FullComment 0x7d7c50 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7c20 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x7d7bf0 <col:37, col:55> Text=" energy computation"
+# energy computation
 
 # (placeholder) | |-EnumConstantDecl 0x67b4d8 <line:76:3, col:28> col:3 mjENBL_FWDINV 'int'
 
@@ -1767,11 +1675,7 @@ alias mjtDisableBit =
 
 # (placeholder) | | |   `-IntegerLiteral 0x67b478 <col:28> 'int' 2
 
-# (placeholder) | | `-FullComment 0x7d7d20 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7cf0 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x7d7cc0 <col:37, col:61> Text=" record solver statistics"
+# record solver statistics
 
 # (placeholder) | |-EnumConstantDecl 0x67b5d8 <line:77:3, col:28> col:3 mjENBL_INVDISCRETE 'int'
 
@@ -1785,13 +1689,8 @@ alias mjtDisableBit =
 
 # (placeholder) | | |   `-IntegerLiteral 0x67b578 <col:28> 'int' 3
 
-# (placeholder) | | `-FullComment 0x7d7e10 <col:37, line:78:59>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7de0 <line:77:37, line:78:59>
-
-# (placeholder) | |     |-TextComment 0x7d7d90 <line:77:37, col:67> Text=" discrete-time inverse dynamics"
-
-# (placeholder) | |     `-TextComment 0x7d7db0 <line:78:37, col:59> Text=" experimental features:"
+# discrete-time inverse dynamics
+# experimental features:
 
 # (placeholder) | |-EnumConstantDecl 0x67b6d8 <line:79:3, col:28> col:3 mjENBL_MULTICCD 'int'
 
@@ -1805,11 +1704,7 @@ alias mjtDisableBit =
 
 # (placeholder) | | |   `-IntegerLiteral 0x67b678 <col:28> 'int' 4
 
-# (placeholder) | | `-FullComment 0x7d7ee0 <col:37, col:75>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7eb0 <col:37, col:75>
-
-# (placeholder) | |     `-TextComment 0x7d7e80 <col:37, col:75> Text=" multi-point convex collision detection"
+# multi-point convex collision detection
 
 # (placeholder) | |-EnumConstantDecl 0x67b7d8 <line:80:3, col:28> col:3 mjENBL_ISLAND 'int'
 
@@ -1823,11 +1718,7 @@ alias mjtDisableBit =
 
 # (placeholder) | | |   `-IntegerLiteral 0x67b778 <col:28> 'int' 5
 
-# (placeholder) | | `-FullComment 0x7d7fb0 <col:37, col:64>
-
-# (placeholder) | |   `-ParagraphComment 0x7d7f80 <col:37, col:64>
-
-# (placeholder) | |     `-TextComment 0x7d7f50 <col:37, col:64> Text=" constraint island discovery"
+# constraint island discovery
 
 # (placeholder) | `-EnumConstantDecl 0x67b8c8 <line:82:3, col:25> col:3 referenced mjNENABLE 'int'
 
@@ -1837,11 +1728,7 @@ alias mjtDisableBit =
 
 # (placeholder) |   | `-IntegerLiteral 0x67b858 <col:25> 'int' 6
 
-# (placeholder) |   `-FullComment 0x7d8080 <col:37, col:59>
-
-# (placeholder) |     `-ParagraphComment 0x7d8050 <col:37, col:59>
-
-# (placeholder) |       `-TextComment 0x7d8020 <col:37, col:59> Text=" number of enable flags"
+# number of enable flags
 
 alias mjtEnableBit = 
 
@@ -1855,35 +1742,19 @@ alias mjtEnableBit =
 
 # (placeholder) | | | `-IntegerLiteral 0x67bad8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7d8150 <col:37, col:85>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8120 <col:37, col:85>
-
-# (placeholder) | |     `-TextComment 0x7d80f0 <col:37, col:85> Text=" global position and orientation (quat)       (7)"
+# global position and orientation (quat)       (7)
 
 # (placeholder) | |-EnumConstantDecl 0x67bb98 <line:88:3> col:3 mjJNT_BALL 'int'
 
-# (placeholder) | | `-FullComment 0x7d8220 <col:37, col:85>
-
-# (placeholder) | |   `-ParagraphComment 0x7d81f0 <col:37, col:85>
-
-# (placeholder) | |     `-TextComment 0x7d81c0 <col:37, col:85> Text=" orientation (quat) relative to parent        (4)"
+# orientation (quat) relative to parent        (4)
 
 # (placeholder) | |-EnumConstantDecl 0x67bc18 <line:89:3> col:3 mjJNT_SLIDE 'int'
 
-# (placeholder) | | `-FullComment 0x7d82f0 <col:37, col:85>
-
-# (placeholder) | |   `-ParagraphComment 0x7d82c0 <col:37, col:85>
-
-# (placeholder) | |     `-TextComment 0x7d8290 <col:37, col:85> Text=" sliding distance along body-fixed axis       (1)"
+# sliding distance along body-fixed axis       (1)
 
 # (placeholder) | `-EnumConstantDecl 0x67bce8 <line:90:3> col:3 mjJNT_HINGE 'int'
 
-# (placeholder) |   `-FullComment 0x7d83c0 <col:37, col:85>
-
-# (placeholder) |     `-ParagraphComment 0x7d8390 <col:37, col:85>
-
-# (placeholder) |       `-TextComment 0x7d8360 <col:37, col:85> Text=" rotation angle (rad) around body-fixed axis  (1)"
+# rotation angle (rad) around body-fixed axis  (1)
 
 alias mjtJoint = 
 
@@ -1897,83 +1768,43 @@ alias mjtJoint =
 
 # (placeholder) | | | `-IntegerLiteral 0x67bf28 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7d8490 <col:37, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8460 <col:37, col:42>
-
-# (placeholder) | |     `-TextComment 0x7d8430 <col:37, col:42> Text=" plane"
+# plane
 
 # (placeholder) | |-EnumConstantDecl 0x67bfe8 <line:97:3> col:3 mjGEOM_HFIELD 'int'
 
-# (placeholder) | | `-FullComment 0x7d8560 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8530 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x7d8500 <col:37, col:49> Text=" height field"
+# height field
 
 # (placeholder) | |-EnumConstantDecl 0x67c068 <line:98:3> col:3 mjGEOM_SPHERE 'int'
 
-# (placeholder) | | `-FullComment 0x7d8630 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8600 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x7d85d0 <col:37, col:43> Text=" sphere"
+# sphere
 
 # (placeholder) | |-EnumConstantDecl 0x67c0e8 <line:99:3> col:3 mjGEOM_CAPSULE 'int'
 
-# (placeholder) | | `-FullComment 0x7d8700 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x7d86d0 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x7d86a0 <col:37, col:44> Text=" capsule"
+# capsule
 
 # (placeholder) | |-EnumConstantDecl 0x67c168 <line:100:3> col:3 mjGEOM_ELLIPSOID 'int'
 
-# (placeholder) | | `-FullComment 0x7d87d0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x7d87a0 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x7d8770 <col:37, col:46> Text=" ellipsoid"
+# ellipsoid
 
 # (placeholder) | |-EnumConstantDecl 0x67c1e8 <line:101:3> col:3 mjGEOM_CYLINDER 'int'
 
-# (placeholder) | | `-FullComment 0x7d88a0 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8870 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x7d8840 <col:37, col:45> Text=" cylinder"
+# cylinder
 
 # (placeholder) | |-EnumConstantDecl 0x67c268 <line:102:3> col:3 mjGEOM_BOX 'int'
 
-# (placeholder) | | `-FullComment 0x7d8970 <col:37, col:40>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8940 <col:37, col:40>
-
-# (placeholder) | |     `-TextComment 0x7d8910 <col:37, col:40> Text=" box"
+# box
 
 # (placeholder) | |-EnumConstantDecl 0x67c2e8 <line:103:3> col:3 mjGEOM_MESH 'int'
 
-# (placeholder) | | `-FullComment 0x7d8a40 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8a10 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7d89e0 <col:37, col:41> Text=" mesh"
+# mesh
 
 # (placeholder) | |-EnumConstantDecl 0x67c368 <line:104:3> col:3 mjGEOM_SDF 'int'
 
-# (placeholder) | | `-FullComment 0x7d8b10 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8ae0 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x7d8ab0 <col:37, col:58> Text=" signed distance field"
+# signed distance field
 
 # (placeholder) | |-EnumConstantDecl 0x67c3e8 <line:106:3> col:3 referenced mjNGEOMTYPES 'int'
 
-# (placeholder) | | `-FullComment 0x7d8c20 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8bf0 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x7d8bc0 <col:37, col:65> Text=" number of regular geom types"
+# number of regular geom types
 
 # (placeholder) | |-EnumConstantDecl 0x67c4d8 <line:109:3, col:25> col:3 mjGEOM_ARROW 'int'
 
@@ -1983,75 +1814,39 @@ alias mjtJoint =
 
 # (placeholder) | | | `-IntegerLiteral 0x67c498 <col:25> 'int' 100
 
-# (placeholder) | | `-FullComment 0x7d8cf0 <col:37, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8cc0 <col:37, col:42>
-
-# (placeholder) | |     `-TextComment 0x7d8c90 <col:37, col:42> Text=" arrow"
+# arrow
 
 # (placeholder) | |-EnumConstantDecl 0x67c558 <line:110:3> col:3 mjGEOM_ARROW1 'int'
 
-# (placeholder) | | `-FullComment 0x7d8dc0 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8d90 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7d8d60 <col:37, col:57> Text=" arrow without wedges"
+# arrow without wedges
 
 # (placeholder) | |-EnumConstantDecl 0x67c5d8 <line:111:3> col:3 mjGEOM_ARROW2 'int'
 
-# (placeholder) | | `-FullComment 0x7d8e90 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8e60 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x7d8e30 <col:37, col:61> Text=" arrow in both directions"
+# arrow in both directions
 
 # (placeholder) | |-EnumConstantDecl 0x67c658 <line:112:3> col:3 mjGEOM_LINE 'int'
 
-# (placeholder) | | `-FullComment 0x7d8f60 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7d8f30 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7d8f00 <col:37, col:41> Text=" line"
+# line
 
 # (placeholder) | |-EnumConstantDecl 0x67c6d8 <line:113:3> col:3 mjGEOM_LINEBOX 'int'
 
-# (placeholder) | | `-FullComment 0x7d9030 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9000 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7d8fd0 <col:37, col:56> Text=" box with line edges"
+# box with line edges
 
 # (placeholder) | |-EnumConstantDecl 0x67c758 <line:114:3> col:3 mjGEOM_FLEX 'int'
 
-# (placeholder) | | `-FullComment 0x7d9100 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7d90d0 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7d90a0 <col:37, col:41> Text=" flex"
+# flex
 
 # (placeholder) | |-EnumConstantDecl 0x67c7d8 <line:115:3> col:3 mjGEOM_SKIN 'int'
 
-# (placeholder) | | `-FullComment 0x7d91d0 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7d91a0 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7d9170 <col:37, col:41> Text=" skin"
+# skin
 
 # (placeholder) | |-EnumConstantDecl 0x67c858 <line:116:3> col:3 mjGEOM_LABEL 'int'
 
-# (placeholder) | | `-FullComment 0x7d92a0 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9270 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x7d9240 <col:37, col:47> Text=" text label"
+# text label
 
 # (placeholder) | |-EnumConstantDecl 0x67c8d8 <line:117:3> col:3 mjGEOM_TRIANGLE 'int'
 
-# (placeholder) | | `-FullComment 0x7d9370 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9340 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x7d9310 <col:37, col:45> Text=" triangle"
+# triangle
 
 # (placeholder) | `-EnumConstantDecl 0x67c9c8 <line:119:3, col:25> col:3 mjGEOM_NONE 'int'
 
@@ -2061,11 +1856,7 @@ alias mjtJoint =
 
 # (placeholder) |   | `-IntegerLiteral 0x67c958 <col:25> 'int' 1001
 
-# (placeholder) |   `-FullComment 0x7d9440 <col:37, col:54>
-
-# (placeholder) |     `-ParagraphComment 0x7d9410 <col:37, col:54>
-
-# (placeholder) |       `-TextComment 0x7d93e0 <col:37, col:54> Text=" missing geom type"
+# missing geom type
 
 alias mjtGeom = 
 
@@ -2079,43 +1870,23 @@ alias mjtGeom =
 
 # (placeholder) | | | `-IntegerLiteral 0x67cbd8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7d9510 <col:37, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x7d94e0 <col:37, col:62>
-
-# (placeholder) | |     `-TextComment 0x7d94b0 <col:37, col:62> Text=" pos and rot fixed in body"
+# pos and rot fixed in body
 
 # (placeholder) | |-EnumConstantDecl 0x680ce0 <line:125:3> col:3 mjCAMLIGHT_TRACK 'int'
 
-# (placeholder) | | `-FullComment 0x7d95e0 <col:37, col:73>
-
-# (placeholder) | |   `-ParagraphComment 0x7d95b0 <col:37, col:73>
-
-# (placeholder) | |     `-TextComment 0x7d9580 <col:37, col:73> Text=" pos tracks body, rot fixed in global"
+# pos tracks body, rot fixed in global
 
 # (placeholder) | |-EnumConstantDecl 0x680d58 <line:126:3> col:3 mjCAMLIGHT_TRACKCOM 'int'
 
-# (placeholder) | | `-FullComment 0x7d96b0 <col:37, col:78>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9680 <col:37, col:78>
-
-# (placeholder) | |     `-TextComment 0x7d9650 <col:37, col:78> Text=" pos tracks subtree com, rot fixed in body"
+# pos tracks subtree com, rot fixed in body
 
 # (placeholder) | |-EnumConstantDecl 0x680dd8 <line:127:3> col:3 mjCAMLIGHT_TARGETBODY 'int'
 
-# (placeholder) | | `-FullComment 0x7d9780 <col:37, col:78>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9750 <col:37, col:78>
-
-# (placeholder) | |     `-TextComment 0x7d9720 <col:37, col:78> Text=" pos fixed in body, rot tracks target body"
+# pos fixed in body, rot tracks target body
 
 # (placeholder) | `-EnumConstantDecl 0x680e88 <line:128:3> col:3 mjCAMLIGHT_TARGETBODYCOM 'int'
 
-# (placeholder) |   `-FullComment 0x7d9850 <col:37, col:85>
-
-# (placeholder) |     `-ParagraphComment 0x7d9820 <col:37, col:85>
-
-# (placeholder) |       `-TextComment 0x7d97f0 <col:37, col:85> Text=" pos fixed in body, rot tracks target subtree com"
+# pos fixed in body, rot tracks target subtree com
 
 alias mjtCamLight = 
 
@@ -2129,27 +1900,15 @@ alias mjtCamLight =
 
 # (placeholder) | | | `-IntegerLiteral 0x681098 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7d9920 <col:37, col:80>
-
-# (placeholder) | |   `-ParagraphComment 0x7d98f0 <col:37, col:80>
-
-# (placeholder) | |     `-TextComment 0x7d98c0 <col:37, col:80> Text=" 2d texture, suitable for planes and hfields"
+# 2d texture, suitable for planes and hfields
 
 # (placeholder) | |-EnumConstantDecl 0x681158 <line:134:3> col:3 mjTEXTURE_CUBE 'int'
 
-# (placeholder) | | `-FullComment 0x7d99f0 <col:37, col:84>
-
-# (placeholder) | |   `-ParagraphComment 0x7d99c0 <col:37, col:84>
-
-# (placeholder) | |     `-TextComment 0x7d9990 <col:37, col:84> Text=" cube texture, suitable for all other geom types"
+# cube texture, suitable for all other geom types
 
 # (placeholder) | `-EnumConstantDecl 0x681208 <line:135:3> col:3 mjTEXTURE_SKYBOX 'int'
 
-# (placeholder) |   `-FullComment 0x7d9ac0 <col:37, col:64>
-
-# (placeholder) |     `-ParagraphComment 0x7d9a90 <col:37, col:64>
-
-# (placeholder) |       `-TextComment 0x7d9a60 <col:37, col:64> Text=" cube texture used as skybox"
+# cube texture used as skybox
 
 alias mjtTexture = 
 
@@ -2163,83 +1922,43 @@ alias mjtTexture =
 
 # (placeholder) | | | `-IntegerLiteral 0x681418 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7d9b90 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9b60 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x7d9b30 <col:37, col:48> Text=" unspecified"
+# unspecified
 
 # (placeholder) | |-EnumConstantDecl 0x6814d8 <line:141:3> col:3 mjTEXROLE_RGB 'int'
 
-# (placeholder) | | `-FullComment 0x7d9c60 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9c30 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7d9c00 <col:37, col:56> Text=" base color (albedo)"
+# base color (albedo)
 
 # (placeholder) | |-EnumConstantDecl 0x681558 <line:142:3> col:3 mjTEXROLE_OCCLUSION 'int'
 
-# (placeholder) | | `-FullComment 0x7d9d30 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9d00 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x7d9cd0 <col:37, col:54> Text=" ambient occlusion"
+# ambient occlusion
 
 # (placeholder) | |-EnumConstantDecl 0x6815d8 <line:143:3> col:3 mjTEXROLE_ROUGHNESS 'int'
 
-# (placeholder) | | `-FullComment 0x7d9e00 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9dd0 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x7d9da0 <col:37, col:46> Text=" roughness"
+# roughness
 
 # (placeholder) | |-EnumConstantDecl 0x681658 <line:144:3> col:3 mjTEXROLE_METALLIC 'int'
 
-# (placeholder) | | `-FullComment 0x7d9ed0 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9ea0 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x7d9e70 <col:37, col:45> Text=" metallic"
+# metallic
 
 # (placeholder) | |-EnumConstantDecl 0x6816d8 <line:145:3> col:3 mjTEXROLE_NORMAL 'int'
 
-# (placeholder) | | `-FullComment 0x7d9fa0 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x7d9f70 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x7d9f40 <col:37, col:54> Text=" normal (bump) map"
+# normal (bump) map
 
 # (placeholder) | |-EnumConstantDecl 0x681758 <line:146:3> col:3 mjTEXROLE_OPACITY 'int'
 
-# (placeholder) | | `-FullComment 0x7da070 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x7da040 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x7da010 <col:37, col:49> Text=" transperancy"
+# transperancy
 
 # (placeholder) | |-EnumConstantDecl 0x6817d8 <line:147:3> col:3 mjTEXROLE_EMISSIVE 'int'
 
-# (placeholder) | | `-FullComment 0x7da140 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x7da110 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x7da0e0 <col:37, col:51> Text=" light emission"
+# light emission
 
 # (placeholder) | |-EnumConstantDecl 0x681858 <line:148:3> col:3 mjTEXROLE_RGBA 'int'
 
-# (placeholder) | | `-FullComment 0x7da210 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7da1e0 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7da1b0 <col:37, col:56> Text=" base color, opacity"
+# base color, opacity
 
 # (placeholder) | |-EnumConstantDecl 0x6818d8 <line:149:3> col:3 mjTEXROLE_ORM 'int'
 
-# (placeholder) | | `-FullComment 0x7da2e0 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x7da2b0 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x7da280 <col:37, col:67> Text=" occlusion, roughness, metallic"
+# occlusion, roughness, metallic
 
 # (placeholder) | `-EnumConstantDecl 0x681958 <line:150:3> col:3 referenced mjNTEXROLE 'int'
 
@@ -2255,35 +1974,19 @@ alias mjtTextureRole =
 
 # (placeholder) | | | `-IntegerLiteral 0x681b68 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7da3b0 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7da380 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7da350 <col:37, col:56> Text=" semi-implicit Euler"
+# semi-implicit Euler
 
 # (placeholder) | |-EnumConstantDecl 0x681c28 <line:156:3> col:3 mjINT_RK4 'int'
 
-# (placeholder) | | `-FullComment 0x7da480 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x7da450 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x7da420 <col:37, col:58> Text=" 4th-order Runge Kutta"
+# 4th-order Runge Kutta
 
 # (placeholder) | |-EnumConstantDecl 0x681cf0 <line:157:3> col:3 mjINT_IMPLICIT 'int'
 
-# (placeholder) | | `-FullComment 0x7da550 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7da520 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7da4f0 <col:37, col:57> Text=" implicit in velocity"
+# implicit in velocity
 
 # (placeholder) | `-EnumConstantDecl 0x681d98 <line:158:3> col:3 mjINT_IMPLICITFAST 'int'
 
-# (placeholder) |   `-FullComment 0x7da620 <col:37, col:76>
-
-# (placeholder) |     `-ParagraphComment 0x7da5f0 <col:37, col:76>
-
-# (placeholder) |       `-TextComment 0x7da5c0 <col:37, col:76> Text=" implicit in velocity, no rne derivative"
+# implicit in velocity, no rne derivative
 
 alias mjtIntegrator = 
 
@@ -2297,19 +2000,11 @@ alias mjtIntegrator =
 
 # (placeholder) | | | `-IntegerLiteral 0x681fa8 <col:26> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7da6f0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x7da6c0 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x7da690 <col:37, col:46> Text=" pyramidal"
+# pyramidal
 
 # (placeholder) | `-EnumConstantDecl 0x682098 <line:164:3> col:3 mjCONE_ELLIPTIC 'int'
 
-# (placeholder) |   `-FullComment 0x7da7c0 <col:37, col:45>
-
-# (placeholder) |     `-ParagraphComment 0x7da790 <col:37, col:45>
-
-# (placeholder) |       `-TextComment 0x7da760 <col:37, col:45> Text=" elliptic"
+# elliptic
 
 alias mjtCone = 
 
@@ -2323,31 +2018,17 @@ alias mjtCone =
 
 # (placeholder) | | | `-IntegerLiteral 0x6822a8 <col:26> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7da890 <col:37, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x7da860 <col:37, col:42>
-
-# (placeholder) | |     `-TextComment 0x7da830 <col:37, col:42> Text=" dense"
+# dense
 
 # (placeholder) | |-EnumConstantDecl 0x682368 <line:170:3> col:3 mjJAC_SPARSE 'int'
 
-# (placeholder) | | `-FullComment 0x7da960 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x7da930 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x7da900 <col:37, col:43> Text=" sparse"
+# sparse
 
 # (placeholder) | `-EnumConstantDecl 0x682418 <line:171:3> col:3 mjJAC_AUTO 'int'
 
-# (placeholder) |   `-FullComment 0x7daa80 <col:37, col:69>
-
-# (placeholder) |     `-ParagraphComment 0x7daa50 <col:37, col:69>
-
-# (placeholder) |       |-TextComment 0x7da9d0 <col:37, col:48> Text=" dense if nv"
-
-# (placeholder) |       |-TextComment 0x7da9f0 <col:49> Text="<"
-
-# (placeholder) |       `-TextComment 0x7daa10 <col:50, col:69> Text="60, sparse otherwise"
+# dense if nv
+#<
+#60, sparse otherwise
 
 alias mjtJacobian = 
 
@@ -2361,27 +2042,15 @@ alias mjtJacobian =
 
 # (placeholder) | | | `-IntegerLiteral 0x682628 <col:26> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7dab50 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x7dab20 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x7daaf0 <col:37, col:50> Text=" PGS    (dual)"
+# PGS    (dual)
 
 # (placeholder) | |-EnumConstantDecl 0x6826e8 <line:177:3> col:3 mjSOL_CG 'int'
 
-# (placeholder) | | `-FullComment 0x7dac30 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x7dac00 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x7dabd0 <col:37, col:52> Text=" CG     (primal)"
+# CG     (primal)
 
 # (placeholder) | `-EnumConstantDecl 0x682798 <line:178:3> col:3 mjSOL_NEWTON 'int'
 
-# (placeholder) |   `-FullComment 0x7dad00 <col:37, col:52>
-
-# (placeholder) |     `-ParagraphComment 0x7dacd0 <col:37, col:52>
-
-# (placeholder) |       `-TextComment 0x7daca0 <col:37, col:52> Text=" Newton (primal)"
+# Newton (primal)
 
 alias mjtSolver = 
 
@@ -2395,51 +2064,27 @@ alias mjtSolver =
 
 # (placeholder) | | | `-IntegerLiteral 0x6829a8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7dadd0 <col:37, col:79>
-
-# (placeholder) | |   `-ParagraphComment 0x7dada0 <col:37, col:79>
-
-# (placeholder) | |     `-TextComment 0x7dad70 <col:37, col:79> Text=" connect two bodies at a point (ball joint)"
+# connect two bodies at a point (ball joint)
 
 # (placeholder) | |-EnumConstantDecl 0x682a68 <line:184:3> col:3 mjEQ_WELD 'int'
 
-# (placeholder) | | `-FullComment 0x7daea0 <col:37, col:88>
-
-# (placeholder) | |   `-ParagraphComment 0x7dae70 <col:37, col:88>
-
-# (placeholder) | |     `-TextComment 0x7dae40 <col:37, col:88> Text=" fix relative position and orientation of two bodies"
+# fix relative position and orientation of two bodies
 
 # (placeholder) | |-EnumConstantDecl 0x682ae8 <line:185:3> col:3 mjEQ_JOINT 'int'
 
-# (placeholder) | | `-FullComment 0x7daf70 <col:37, col:86>
-
-# (placeholder) | |   `-ParagraphComment 0x7daf40 <col:37, col:86>
-
-# (placeholder) | |     `-TextComment 0x7daf10 <col:37, col:86> Text=" couple the values of two scalar joints with cubic"
+# couple the values of two scalar joints with cubic
 
 # (placeholder) | |-EnumConstantDecl 0x682b68 <line:186:3> col:3 mjEQ_TENDON 'int'
 
-# (placeholder) | | `-FullComment 0x7db040 <col:37, col:81>
-
-# (placeholder) | |   `-ParagraphComment 0x7db010 <col:37, col:81>
-
-# (placeholder) | |     `-TextComment 0x7dafe0 <col:37, col:81> Text=" couple the lengths of two tendons with cubic"
+# couple the lengths of two tendons with cubic
 
 # (placeholder) | |-EnumConstantDecl 0x682be8 <line:187:3> col:3 mjEQ_FLEX 'int'
 
-# (placeholder) | | `-FullComment 0x7db110 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x7db0e0 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x7db0b0 <col:37, col:67> Text=" fix all edge lengths of a flex"
+# fix all edge lengths of a flex
 
 # (placeholder) | `-EnumConstantDecl 0x682c98 <line:188:3> col:3 mjEQ_DISTANCE 'int'
 
-# (placeholder) |   `-FullComment 0x7db1e0 <col:37, col:77>
-
-# (placeholder) |     `-ParagraphComment 0x7db1b0 <col:37, col:77>
-
-# (placeholder) |       `-TextComment 0x7db180 <col:37, col:77> Text=" unsupported, will cause an error if used"
+# unsupported, will cause an error if used
 
 alias mjtEq = 
 
@@ -2453,51 +2098,27 @@ alias mjtEq =
 
 # (placeholder) | | | `-IntegerLiteral 0x682eb8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7db2b0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x7db280 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x7db250 <col:37, col:48> Text=" null object"
+# null object
 
 # (placeholder) | |-EnumConstantDecl 0x682f78 <line:194:3> col:3 mjWRAP_JOINT 'int'
 
-# (placeholder) | | `-FullComment 0x7db380 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7db350 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7db320 <col:37, col:56> Text=" constant moment arm"
+# constant moment arm
 
 # (placeholder) | |-EnumConstantDecl 0x682ff8 <line:195:3> col:3 mjWRAP_PULLEY 'int'
 
-# (placeholder) | | `-FullComment 0x7db450 <col:37, col:64>
-
-# (placeholder) | |   `-ParagraphComment 0x7db420 <col:37, col:64>
-
-# (placeholder) | |     `-TextComment 0x7db3f0 <col:37, col:64> Text=" pulley used to split tendon"
+# pulley used to split tendon
 
 # (placeholder) | |-EnumConstantDecl 0x683078 <line:196:3> col:3 mjWRAP_SITE 'int'
 
-# (placeholder) | | `-FullComment 0x7db520 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x7db4f0 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x7db4c0 <col:37, col:54> Text=" pass through site"
+# pass through site
 
 # (placeholder) | |-EnumConstantDecl 0x6830f8 <line:197:3> col:3 mjWRAP_SPHERE 'int'
 
-# (placeholder) | | `-FullComment 0x7db5f0 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x7db5c0 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x7db590 <col:37, col:55> Text=" wrap around sphere"
+# wrap around sphere
 
 # (placeholder) | `-EnumConstantDecl 0x6831a8 <line:198:3> col:3 mjWRAP_CYLINDER 'int'
 
-# (placeholder) |   `-FullComment 0x7db6c0 <col:37, col:68>
-
-# (placeholder) |     `-ParagraphComment 0x7db690 <col:37, col:68>
-
-# (placeholder) |       `-TextComment 0x7db660 <col:37, col:68> Text=" wrap around (infinite) cylinder"
+# wrap around (infinite) cylinder
 
 alias mjtWrap = 
 
@@ -2511,51 +2132,27 @@ alias mjtWrap =
 
 # (placeholder) | | | `-IntegerLiteral 0x6833b8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7db790 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x7db760 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x7db730 <col:37, col:51> Text=" force on joint"
+# force on joint
 
 # (placeholder) | |-EnumConstantDecl 0x683478 <line:204:3> col:3 mjTRN_JOINTINPARENT 'int'
 
-# (placeholder) | | `-FullComment 0x7db860 <col:37, col:78>
-
-# (placeholder) | |   `-ParagraphComment 0x7db830 <col:37, col:78>
-
-# (placeholder) | |     `-TextComment 0x7db800 <col:37, col:78> Text=" force on joint, expressed in parent frame"
+# force on joint, expressed in parent frame
 
 # (placeholder) | |-EnumConstantDecl 0x6834f8 <line:205:3> col:3 mjTRN_SLIDERCRANK 'int'
 
-# (placeholder) | | `-FullComment 0x7db930 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x7db900 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x7db8d0 <col:37, col:67> Text=" force via slider-crank linkage"
+# force via slider-crank linkage
 
 # (placeholder) | |-EnumConstantDecl 0x683578 <line:206:3> col:3 mjTRN_TENDON 'int'
 
-# (placeholder) | | `-FullComment 0x7dba00 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x7db9d0 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x7db9a0 <col:37, col:52> Text=" force on tendon"
+# force on tendon
 
 # (placeholder) | |-EnumConstantDecl 0x6835f8 <line:207:3> col:3 mjTRN_SITE 'int'
 
-# (placeholder) | | `-FullComment 0x7dbad0 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x7dbaa0 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x7dba70 <col:37, col:50> Text=" force on site"
+# force on site
 
 # (placeholder) | |-EnumConstantDecl 0x683678 <line:208:3> col:3 mjTRN_BODY 'int'
 
-# (placeholder) | | `-FullComment 0x7dbba0 <col:37, col:69>
-
-# (placeholder) | |   `-ParagraphComment 0x7dbb70 <col:37, col:69>
-
-# (placeholder) | |     `-TextComment 0x7dbb40 <col:37, col:69> Text=" adhesion force on a body's geoms"
+# adhesion force on a body s geoms
 
 # (placeholder) | `-EnumConstantDecl 0x683768 <line:210:3, col:25> col:3 mjTRN_UNDEFINED 'int'
 
@@ -2565,11 +2162,7 @@ alias mjtWrap =
 
 # (placeholder) |   | `-IntegerLiteral 0x6836f8 <col:25> 'int' 1000
 
-# (placeholder) |   `-FullComment 0x7dbc70 <col:37, col:64>
-
-# (placeholder) |     `-ParagraphComment 0x7dbc40 <col:37, col:64>
-
-# (placeholder) |       `-TextComment 0x7dbc10 <col:37, col:64> Text=" undefined transmission type"
+# undefined transmission type
 
 alias mjtTrn = 
 
@@ -2583,51 +2176,27 @@ alias mjtTrn =
 
 # (placeholder) | | | `-IntegerLiteral 0x683978 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7dbd40 <col:37, col:79>
-
-# (placeholder) | |   `-ParagraphComment 0x7dbd10 <col:37, col:79>
-
-# (placeholder) | |     `-TextComment 0x7dbce0 <col:37, col:79> Text=" no internal dynamics; ctrl specifies force"
+# no internal dynamics; ctrl specifies force
 
 # (placeholder) | |-EnumConstantDecl 0x683a38 <line:216:3> col:3 mjDYN_INTEGRATOR 'int'
 
-# (placeholder) | | `-FullComment 0x7dbe10 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x7dbde0 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x7dbdb0 <col:37, col:58> Text=" integrator: da/dt = u"
+# integrator: da/dt = u
 
 # (placeholder) | |-EnumConstantDecl 0x683ab8 <line:217:3> col:3 mjDYN_FILTER 'int'
 
-# (placeholder) | | `-FullComment 0x7dbee0 <col:37, col:71>
-
-# (placeholder) | |   `-ParagraphComment 0x7dbeb0 <col:37, col:71>
-
-# (placeholder) | |     `-TextComment 0x7dbe80 <col:37, col:71> Text=" linear filter: da/dt = (u-a) / tau"
+# linear filter: da/dt = (u-a) / tau
 
 # (placeholder) | |-EnumConstantDecl 0x683b38 <line:218:3> col:3 mjDYN_FILTEREXACT 'int'
 
-# (placeholder) | | `-FullComment 0x7dbfb0 <col:37, col:95>
-
-# (placeholder) | |   `-ParagraphComment 0x7dbf80 <col:37, col:95>
-
-# (placeholder) | |     `-TextComment 0x7dbf50 <col:37, col:95> Text=" linear filter: da/dt = (u-a) / tau, with exact integration"
+# linear filter: da/dt = (u-a) / tau, with exact integration
 
 # (placeholder) | |-EnumConstantDecl 0x683bb8 <line:219:3> col:3 mjDYN_MUSCLE 'int'
 
-# (placeholder) | | `-FullComment 0x7dc080 <col:37, col:85>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc050 <col:37, col:85>
-
-# (placeholder) | |     `-TextComment 0x7dc020 <col:37, col:85> Text=" piece-wise linear filter with two time constants"
+# piece-wise linear filter with two time constants
 
 # (placeholder) | `-EnumConstantDecl 0x683c68 <line:220:3> col:3 mjDYN_USER 'int'
 
-# (placeholder) |   `-FullComment 0x7dc150 <col:37, col:63>
-
-# (placeholder) |     `-ParagraphComment 0x7dc120 <col:37, col:63>
-
-# (placeholder) |       `-TextComment 0x7dc0f0 <col:37, col:63> Text=" user-defined dynamics type"
+# user-defined dynamics type
 
 alias mjtDyn = 
 
@@ -2641,35 +2210,19 @@ alias mjtDyn =
 
 # (placeholder) | | | `-IntegerLiteral 0x684f98 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7dc220 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc1f0 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x7dc1c0 <col:37, col:47> Text=" fixed gain"
+# fixed gain
 
 # (placeholder) | |-EnumConstantDecl 0x685058 <line:226:3> col:3 mjGAIN_AFFINE 'int'
 
-# (placeholder) | | `-FullComment 0x7dc2f0 <col:37, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc2c0 <col:37, col:68>
-
-# (placeholder) | |     `-TextComment 0x7dc290 <col:37, col:68> Text=" const + kp*length + kv*velocity"
+# const + kp*length + kv*velocity
 
 # (placeholder) | |-EnumConstantDecl 0x6850d8 <line:227:3> col:3 mjGAIN_MUSCLE 'int'
 
-# (placeholder) | | `-FullComment 0x7dc3c0 <col:37, col:82>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc390 <col:37, col:82>
-
-# (placeholder) | |     `-TextComment 0x7dc360 <col:37, col:82> Text=" muscle FLV curve computed by mju_muscleGain()"
+# muscle FLV curve computed by mju_muscleGain()
 
 # (placeholder) | `-EnumConstantDecl 0x685188 <line:228:3> col:3 mjGAIN_USER 'int'
 
-# (placeholder) |   `-FullComment 0x7dc490 <col:37, col:59>
-
-# (placeholder) |     `-ParagraphComment 0x7dc460 <col:37, col:59>
-
-# (placeholder) |       `-TextComment 0x7dc430 <col:37, col:59> Text=" user-defined gain type"
+# user-defined gain type
 
 alias mjtGain = 
 
@@ -2683,35 +2236,19 @@ alias mjtGain =
 
 # (placeholder) | | | `-IntegerLiteral 0x685398 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7dc560 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc530 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x7dc500 <col:37, col:44> Text=" no bias"
+# no bias
 
 # (placeholder) | |-EnumConstantDecl 0x685458 <line:234:3> col:3 mjBIAS_AFFINE 'int'
 
-# (placeholder) | | `-FullComment 0x7dc630 <col:37, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc600 <col:37, col:68>
-
-# (placeholder) | |     `-TextComment 0x7dc5d0 <col:37, col:68> Text=" const + kp*length + kv*velocity"
+# const + kp*length + kv*velocity
 
 # (placeholder) | |-EnumConstantDecl 0x6854d8 <line:235:3> col:3 mjBIAS_MUSCLE 'int'
 
-# (placeholder) | | `-FullComment 0x7dc700 <col:37, col:86>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc6d0 <col:37, col:86>
-
-# (placeholder) | |     `-TextComment 0x7dc6a0 <col:37, col:86> Text=" muscle passive force computed by mju_muscleBias()"
+# muscle passive force computed by mju_muscleBias()
 
 # (placeholder) | `-EnumConstantDecl 0x685588 <line:236:3> col:3 mjBIAS_USER 'int'
 
-# (placeholder) |   `-FullComment 0x7dc7d0 <col:37, col:59>
-
-# (placeholder) |     `-ParagraphComment 0x7dc7a0 <col:37, col:59>
-
-# (placeholder) |       `-TextComment 0x7dc770 <col:37, col:59> Text=" user-defined bias type"
+# user-defined bias type
 
 alias mjtBias = 
 
@@ -2725,219 +2262,111 @@ alias mjtBias =
 
 # (placeholder) | | | `-IntegerLiteral 0x685798 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7dc8a0 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc870 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7dc840 <col:37, col:56> Text=" unknown object type"
+# unknown object type
 
 # (placeholder) | |-EnumConstantDecl 0x685858 <line:242:3> col:3 mjOBJ_BODY 'int'
 
-# (placeholder) | | `-FullComment 0x7dc970 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7dc940 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7dc910 <col:37, col:41> Text=" body"
+# body
 
 # (placeholder) | |-EnumConstantDecl 0x6858d8 <line:243:3> col:3 mjOBJ_XBODY 'int'
 
-# (placeholder) | | `-FullComment 0x7dca40 <col:37, col:90>
-
-# (placeholder) | |   `-ParagraphComment 0x7dca10 <col:37, col:90>
-
-# (placeholder) | |     `-TextComment 0x7dc9e0 <col:37, col:90> Text=" body, used to access regular frame instead of i-frame"
+# body, used to access regular frame instead of i-frame
 
 # (placeholder) | |-EnumConstantDecl 0x685958 <line:244:3> col:3 mjOBJ_JOINT 'int'
 
-# (placeholder) | | `-FullComment 0x7dcb10 <col:37, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x7dcae0 <col:37, col:42>
-
-# (placeholder) | |     `-TextComment 0x7dcab0 <col:37, col:42> Text=" joint"
+# joint
 
 # (placeholder) | |-EnumConstantDecl 0x6859d8 <line:245:3> col:3 mjOBJ_DOF 'int'
 
-# (placeholder) | | `-FullComment 0x7ddc10 <col:37, col:40>
-
-# (placeholder) | |   `-ParagraphComment 0x7ddbe0 <col:37, col:40>
-
-# (placeholder) | |     `-TextComment 0x7ddbb0 <col:37, col:40> Text=" dof"
+# dof
 
 # (placeholder) | |-EnumConstantDecl 0x685a58 <line:246:3> col:3 mjOBJ_GEOM 'int'
 
-# (placeholder) | | `-FullComment 0x7ddce0 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7ddcb0 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7ddc80 <col:37, col:41> Text=" geom"
+# geom
 
 # (placeholder) | |-EnumConstantDecl 0x685ad8 <line:247:3> col:3 mjOBJ_SITE 'int'
 
-# (placeholder) | | `-FullComment 0x7dddb0 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7ddd80 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7ddd50 <col:37, col:41> Text=" site"
+# site
 
 # (placeholder) | |-EnumConstantDecl 0x685b58 <line:248:3> col:3 mjOBJ_CAMERA 'int'
 
-# (placeholder) | | `-FullComment 0x7dde80 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x7dde50 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x7dde20 <col:37, col:43> Text=" camera"
+# camera
 
 # (placeholder) | |-EnumConstantDecl 0x685bd8 <line:249:3> col:3 mjOBJ_LIGHT 'int'
 
-# (placeholder) | | `-FullComment 0x7ddf50 <col:37, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x7ddf20 <col:37, col:42>
-
-# (placeholder) | |     `-TextComment 0x7ddef0 <col:37, col:42> Text=" light"
+# light
 
 # (placeholder) | |-EnumConstantDecl 0x685c58 <line:250:3> col:3 mjOBJ_FLEX 'int'
 
-# (placeholder) | | `-FullComment 0x7de020 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7ddff0 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7ddfc0 <col:37, col:41> Text=" flex"
+# flex
 
 # (placeholder) | |-EnumConstantDecl 0x685cd8 <line:251:3> col:3 mjOBJ_MESH 'int'
 
-# (placeholder) | | `-FullComment 0x7de0f0 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7de0c0 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7de090 <col:37, col:41> Text=" mesh"
+# mesh
 
 # (placeholder) | |-EnumConstantDecl 0x685d58 <line:252:3> col:3 mjOBJ_SKIN 'int'
 
-# (placeholder) | | `-FullComment 0x7de1c0 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7de190 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7de160 <col:37, col:41> Text=" skin"
+# skin
 
 # (placeholder) | |-EnumConstantDecl 0x6863f0 <line:253:3> col:3 mjOBJ_HFIELD 'int'
 
-# (placeholder) | | `-FullComment 0x7de290 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x7de260 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x7de230 <col:37, col:48> Text=" heightfield"
+# heightfield
 
 # (placeholder) | |-EnumConstantDecl 0x686468 <line:254:3> col:3 mjOBJ_TEXTURE 'int'
 
-# (placeholder) | | `-FullComment 0x7de360 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x7de330 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x7de300 <col:37, col:44> Text=" texture"
+# texture
 
 # (placeholder) | |-EnumConstantDecl 0x6864e8 <line:255:3> col:3 mjOBJ_MATERIAL 'int'
 
-# (placeholder) | | `-FullComment 0x7de430 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x7de400 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x7de3d0 <col:37, col:59> Text=" material for rendering"
+# material for rendering
 
 # (placeholder) | |-EnumConstantDecl 0x686568 <line:256:3> col:3 mjOBJ_PAIR 'int'
 
-# (placeholder) | | `-FullComment 0x7de500 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7de4d0 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7de4a0 <col:37, col:57> Text=" geom pair to include"
+# geom pair to include
 
 # (placeholder) | |-EnumConstantDecl 0x6865e8 <line:257:3> col:3 mjOBJ_EXCLUDE 'int'
 
-# (placeholder) | | `-FullComment 0x7de5d0 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7de5a0 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7de570 <col:37, col:57> Text=" body pair to exclude"
+# body pair to exclude
 
 # (placeholder) | |-EnumConstantDecl 0x686668 <line:258:3> col:3 mjOBJ_EQUALITY 'int'
 
-# (placeholder) | | `-FullComment 0x7de6a0 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7de670 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7de640 <col:37, col:56> Text=" equality constraint"
+# equality constraint
 
 # (placeholder) | |-EnumConstantDecl 0x6866e8 <line:259:3> col:3 mjOBJ_TENDON 'int'
 
-# (placeholder) | | `-FullComment 0x7de770 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x7de740 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x7de710 <col:37, col:43> Text=" tendon"
+# tendon
 
 # (placeholder) | |-EnumConstantDecl 0x686768 <line:260:3> col:3 mjOBJ_ACTUATOR 'int'
 
-# (placeholder) | | `-FullComment 0x7de840 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x7de810 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x7de7e0 <col:37, col:45> Text=" actuator"
+# actuator
 
 # (placeholder) | |-EnumConstantDecl 0x6867e8 <line:261:3> col:3 mjOBJ_SENSOR 'int'
 
-# (placeholder) | | `-FullComment 0x7de910 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x7de8e0 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x7de8b0 <col:37, col:43> Text=" sensor"
+# sensor
 
 # (placeholder) | |-EnumConstantDecl 0x686868 <line:262:3> col:3 mjOBJ_NUMERIC 'int'
 
-# (placeholder) | | `-FullComment 0x7de9e0 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x7de9b0 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x7de980 <col:37, col:44> Text=" numeric"
+# numeric
 
 # (placeholder) | |-EnumConstantDecl 0x6868e8 <line:263:3> col:3 mjOBJ_TEXT 'int'
 
-# (placeholder) | | `-FullComment 0x7deab0 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x7dea80 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x7dea50 <col:37, col:41> Text=" text"
+# text
 
 # (placeholder) | |-EnumConstantDecl 0x686968 <line:264:3> col:3 mjOBJ_TUPLE 'int'
 
-# (placeholder) | | `-FullComment 0x7deb80 <col:37, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x7deb50 <col:37, col:42>
-
-# (placeholder) | |     `-TextComment 0x7deb20 <col:37, col:42> Text=" tuple"
+# tuple
 
 # (placeholder) | |-EnumConstantDecl 0x6869e8 <line:265:3> col:3 mjOBJ_KEY 'int'
 
-# (placeholder) | | `-FullComment 0x7dec50 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x7dec20 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x7debf0 <col:37, col:45> Text=" keyframe"
+# keyframe
 
 # (placeholder) | |-EnumConstantDecl 0x686a68 <line:266:3> col:3 mjOBJ_PLUGIN 'int'
 
-# (placeholder) | | `-FullComment 0x7ded20 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x7decf0 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x7decc0 <col:37, col:52> Text=" plugin instance"
+# plugin instance
 
 # (placeholder) | |-EnumConstantDecl 0x686ae8 <line:268:3> col:3 mjNOBJECT 'int'
 
-# (placeholder) | | `-FullComment 0x7dedf0 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x7dedc0 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x7ded90 <col:37, col:59> Text=" number of object types"
+# number of object types
 
 # (placeholder) | |-EnumConstantDecl 0x686bd8 <line:271:3, col:25> col:3 mjOBJ_FRAME 'int'
 
@@ -2947,27 +2376,15 @@ alias mjtBias =
 
 # (placeholder) | | | `-IntegerLiteral 0x686b98 <col:25> 'int' 100
 
-# (placeholder) | | `-FullComment 0x7deec0 <col:37, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x7dee90 <col:37, col:42>
-
-# (placeholder) | |     `-TextComment 0x7dee60 <col:37, col:42> Text=" frame"
+# frame
 
 # (placeholder) | |-EnumConstantDecl 0x686c58 <line:272:3> col:3 mjOBJ_DEFAULT 'int'
 
-# (placeholder) | | `-FullComment 0x7def90 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x7def60 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x7def30 <col:37, col:44> Text=" default"
+# default
 
 # (placeholder) | `-EnumConstantDecl 0x686d08 <line:273:3> col:3 mjOBJ_MODEL 'int'
 
-# (placeholder) |   `-FullComment 0x7df060 <col:37, col:49>
-
-# (placeholder) |     `-ParagraphComment 0x7df030 <col:37, col:49>
-
-# (placeholder) |       `-TextComment 0x7df000 <col:37, col:49> Text=" entire model"
+# entire model
 
 alias mjtObj = 
 
@@ -2981,67 +2398,35 @@ alias mjtObj =
 
 # (placeholder) | | | `-IntegerLiteral 0x686f18 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7df130 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7df100 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7df0d0 <col:37, col:56> Text=" equality constraint"
+# equality constraint
 
 # (placeholder) | |-EnumConstantDecl 0x686fd8 <line:280:3> col:3 mjCNSTR_FRICTION_DOF 'int'
 
-# (placeholder) | | `-FullComment 0x7df200 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x7df1d0 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x7df1a0 <col:37, col:49> Text=" dof friction"
+# dof friction
 
 # (placeholder) | |-EnumConstantDecl 0x687058 <line:281:3> col:3 mjCNSTR_FRICTION_TENDON 'int'
 
-# (placeholder) | | `-FullComment 0x7df2d0 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x7df2a0 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x7df270 <col:37, col:52> Text=" tendon friction"
+# tendon friction
 
 # (placeholder) | |-EnumConstantDecl 0x6870d8 <line:282:3> col:3 mjCNSTR_LIMIT_JOINT 'int'
 
-# (placeholder) | | `-FullComment 0x7df3a0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x7df370 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x7df340 <col:37, col:48> Text=" joint limit"
+# joint limit
 
 # (placeholder) | |-EnumConstantDecl 0x687158 <line:283:3> col:3 mjCNSTR_LIMIT_TENDON 'int'
 
-# (placeholder) | | `-FullComment 0x7df470 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x7df440 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x7df410 <col:37, col:49> Text=" tendon limit"
+# tendon limit
 
 # (placeholder) | |-EnumConstantDecl 0x6871d8 <line:284:3> col:3 mjCNSTR_CONTACT_FRICTIONLESS 'int'
 
-# (placeholder) | | `-FullComment 0x7df540 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7df510 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7df4e0 <col:37, col:57> Text=" frictionless contact"
+# frictionless contact
 
 # (placeholder) | |-EnumConstantDecl 0x687258 <line:285:3> col:3 mjCNSTR_CONTACT_PYRAMIDAL 'int'
 
-# (placeholder) | | `-FullComment 0x7df610 <col:37, col:80>
-
-# (placeholder) | |   `-ParagraphComment 0x7df5e0 <col:37, col:80>
-
-# (placeholder) | |     `-TextComment 0x7df5b0 <col:37, col:80> Text=" frictional contact, pyramidal friction cone"
+# frictional contact, pyramidal friction cone
 
 # (placeholder) | `-EnumConstantDecl 0x687308 <line:286:3> col:3 mjCNSTR_CONTACT_ELLIPTIC 'int'
 
-# (placeholder) |   `-FullComment 0x7df6e0 <col:37, col:79>
-
-# (placeholder) |     `-ParagraphComment 0x7df6b0 <col:37, col:79>
-
-# (placeholder) |       `-TextComment 0x7df680 <col:37, col:79> Text=" frictional contact, elliptic friction cone"
+# frictional contact, elliptic friction cone
 
 alias mjtConstraint = 
 
@@ -3055,43 +2440,23 @@ alias mjtConstraint =
 
 # (placeholder) | | | `-IntegerLiteral 0x687c58 <col:28> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7df7b0 <col:39, col:87>
-
-# (placeholder) | |   `-ParagraphComment 0x7df780 <col:39, col:87>
-
-# (placeholder) | |     `-TextComment 0x7df750 <col:39, col:87> Text=" constraint satisfied, zero cost (limit, contact)"
+# constraint satisfied, zero cost (limit, contact)
 
 # (placeholder) | |-EnumConstantDecl 0x687d18 <line:292:3> col:3 mjCNSTRSTATE_QUADRATIC 'int'
 
-# (placeholder) | | `-FullComment 0x7df880 <col:39, col:90>
-
-# (placeholder) | |   `-ParagraphComment 0x7df850 <col:39, col:90>
-
-# (placeholder) | |     `-TextComment 0x7df820 <col:39, col:90> Text=" quadratic cost (equality, friction, limit, contact)"
+# quadratic cost (equality, friction, limit, contact)
 
 # (placeholder) | |-EnumConstantDecl 0x687d98 <line:293:3> col:3 mjCNSTRSTATE_LINEARNEG 'int'
 
-# (placeholder) | | `-FullComment 0x7df950 <col:39, col:76>
-
-# (placeholder) | |   `-ParagraphComment 0x7df920 <col:39, col:76>
-
-# (placeholder) | |     `-TextComment 0x7df8f0 <col:39, col:76> Text=" linear cost, negative side (friction)"
+# linear cost, negative side (friction)
 
 # (placeholder) | |-EnumConstantDecl 0x687e18 <line:294:3> col:3 mjCNSTRSTATE_LINEARPOS 'int'
 
-# (placeholder) | | `-FullComment 0x7dfa20 <col:39, col:76>
-
-# (placeholder) | |   `-ParagraphComment 0x7df9f0 <col:39, col:76>
-
-# (placeholder) | |     `-TextComment 0x7df9c0 <col:39, col:76> Text=" linear cost, positive side (friction)"
+# linear cost, positive side (friction)
 
 # (placeholder) | `-EnumConstantDecl 0x687ec8 <line:295:3> col:3 mjCNSTRSTATE_CONE 'int'
 
-# (placeholder) |   `-FullComment 0x7dfaf0 <col:39, col:87>
-
-# (placeholder) |     `-ParagraphComment 0x7dfac0 <col:39, col:87>
-
-# (placeholder) |       `-TextComment 0x7dfa90 <col:39, col:87> Text=" squared distance to cone cost (elliptic contact)"
+# squared distance to cone cost (elliptic contact)
 
 alias mjtConstraintState = 
 
@@ -3105,363 +2470,183 @@ alias mjtConstraintState =
 
 # (placeholder) | | | `-IntegerLiteral 0x688108 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7dfbd0 <col:37, col:89>
-
-# (placeholder) | |   `-ParagraphComment 0x7dfb90 <col:37, col:89>
-
-# (placeholder) | |     `-TextComment 0x7dfb60 <col:37, col:89> Text=" scalar contact normal forces summed over sensor zone"
+# scalar contact normal forces summed over sensor zone
 
 # (placeholder) | |-EnumConstantDecl 0x6881c8 <line:302:3> col:3 mjSENS_ACCELEROMETER 'int'
 
-# (placeholder) | | `-FullComment 0x7dfca0 <col:37, col:75>
-
-# (placeholder) | |   `-ParagraphComment 0x7dfc70 <col:37, col:75>
-
-# (placeholder) | |     `-TextComment 0x7dfc40 <col:37, col:75> Text=" 3D linear acceleration, in local frame"
+# 3D linear acceleration, in local frame
 
 # (placeholder) | |-EnumConstantDecl 0x688248 <line:303:3> col:3 mjSENS_VELOCIMETER 'int'
 
-# (placeholder) | | `-FullComment 0x7dfd70 <col:37, col:71>
-
-# (placeholder) | |   `-ParagraphComment 0x7dfd40 <col:37, col:71>
-
-# (placeholder) | |     `-TextComment 0x7dfd10 <col:37, col:71> Text=" 3D linear velocity, in local frame"
+# 3D linear velocity, in local frame
 
 # (placeholder) | |-EnumConstantDecl 0x6882c8 <line:304:3> col:3 mjSENS_GYRO 'int'
 
-# (placeholder) | | `-FullComment 0x7dfe40 <col:37, col:72>
-
-# (placeholder) | |   `-ParagraphComment 0x7dfe10 <col:37, col:72>
-
-# (placeholder) | |     `-TextComment 0x7dfde0 <col:37, col:72> Text=" 3D angular velocity, in local frame"
+# 3D angular velocity, in local frame
 
 # (placeholder) | |-EnumConstantDecl 0x688348 <line:305:3> col:3 mjSENS_FORCE 'int'
 
-# (placeholder) | | `-FullComment 0x7dff10 <col:37, col:85>
-
-# (placeholder) | |   `-ParagraphComment 0x7dfee0 <col:37, col:85>
-
-# (placeholder) | |     `-TextComment 0x7dfeb0 <col:37, col:85> Text=" 3D force between site's body and its parent body"
+# 3D force between site s body and its parent body
 
 # (placeholder) | |-EnumConstantDecl 0x6883c8 <line:306:3> col:3 mjSENS_TORQUE 'int'
 
-# (placeholder) | | `-FullComment 0x7dffe0 <col:37, col:86>
-
-# (placeholder) | |   `-ParagraphComment 0x7dffb0 <col:37, col:86>
-
-# (placeholder) | |     `-TextComment 0x7dff80 <col:37, col:86> Text=" 3D torque between site's body and its parent body"
+# 3D torque between site s body and its parent body
 
 # (placeholder) | |-EnumConstantDecl 0x688448 <line:307:3> col:3 mjSENS_MAGNETOMETER 'int'
 
-# (placeholder) | | `-FullComment 0x7e00b0 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0080 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x7e0050 <col:37, col:52> Text=" 3D magnetometer"
+# 3D magnetometer
 
 # (placeholder) | |-EnumConstantDecl 0x6884c8 <line:308:3> col:3 mjSENS_RANGEFINDER 'int'
 
-# (placeholder) | | `-FullComment 0x7e0180 <col:37, col:89>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0150 <col:37, col:89>
-
-# (placeholder) | |     `-TextComment 0x7e0120 <col:37, col:89> Text=" scalar distance to nearest geom or site along z-axis"
+# scalar distance to nearest geom or site along z-axis
 
 # (placeholder) | |-EnumConstantDecl 0x688548 <line:309:3> col:3 mjSENS_CAMPROJECTION 'int'
 
-# (placeholder) | | `-FullComment 0x7e0250 <col:37, col:84>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0220 <col:37, col:84>
-
-# (placeholder) | |     `-TextComment 0x7e01f0 <col:37, col:84> Text=" pixel coordinates of a site in the camera image"
+# pixel coordinates of a site in the camera image
 
 # (placeholder) | |-EnumConstantDecl 0x6885f8 <line:312:3> col:3 mjSENS_JOINTPOS 'int'
 
-# (placeholder) | | `-FullComment 0x7e0320 <col:37, col:81>
-
-# (placeholder) | |   `-ParagraphComment 0x7e02f0 <col:37, col:81>
-
-# (placeholder) | |     `-TextComment 0x7e02c0 <col:37, col:81> Text=" scalar joint position (hinge and slide only)"
+# scalar joint position (hinge and slide only)
 
 # (placeholder) | |-EnumConstantDecl 0x688678 <line:313:3> col:3 mjSENS_JOINTVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e03f0 <col:37, col:81>
-
-# (placeholder) | |   `-ParagraphComment 0x7e03c0 <col:37, col:81>
-
-# (placeholder) | |     `-TextComment 0x7e0390 <col:37, col:81> Text=" scalar joint velocity (hinge and slide only)"
+# scalar joint velocity (hinge and slide only)
 
 # (placeholder) | |-EnumConstantDecl 0x6886f8 <line:314:3> col:3 mjSENS_TENDONPOS 'int'
 
-# (placeholder) | | `-FullComment 0x7e04c0 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0490 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x7e0460 <col:37, col:59> Text=" scalar tendon position"
+# scalar tendon position
 
 # (placeholder) | |-EnumConstantDecl 0x688778 <line:315:3> col:3 mjSENS_TENDONVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e0590 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0560 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x7e0530 <col:37, col:59> Text=" scalar tendon velocity"
+# scalar tendon velocity
 
 # (placeholder) | |-EnumConstantDecl 0x6887f8 <line:316:3> col:3 mjSENS_ACTUATORPOS 'int'
 
-# (placeholder) | | `-FullComment 0x7e0660 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0630 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x7e0600 <col:37, col:61> Text=" scalar actuator position"
+# scalar actuator position
 
 # (placeholder) | |-EnumConstantDecl 0x688878 <line:317:3> col:3 mjSENS_ACTUATORVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e0730 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0700 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x7e06d0 <col:37, col:61> Text=" scalar actuator velocity"
+# scalar actuator velocity
 
 # (placeholder) | |-EnumConstantDecl 0x6888f8 <line:318:3> col:3 mjSENS_ACTUATORFRC 'int'
 
-# (placeholder) | | `-FullComment 0x7e0800 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x7e07d0 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x7e07a0 <col:37, col:58> Text=" scalar actuator force"
+# scalar actuator force
 
 # (placeholder) | |-EnumConstantDecl 0x688978 <line:319:3> col:3 mjSENS_JOINTACTFRC 'int'
 
-# (placeholder) | | `-FullComment 0x7e08d0 <col:37, col:81>
-
-# (placeholder) | |   `-ParagraphComment 0x7e08a0 <col:37, col:81>
-
-# (placeholder) | |     `-TextComment 0x7e0870 <col:37, col:81> Text=" scalar actuator force, measured at the joint"
+# scalar actuator force, measured at the joint
 
 # (placeholder) | |-EnumConstantDecl 0x688a28 <line:322:3> col:3 mjSENS_BALLQUAT 'int'
 
-# (placeholder) | | `-FullComment 0x7e09a0 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0970 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x7e0940 <col:37, col:61> Text=" 4D ball joint quaternion"
+# 4D ball joint quaternion
 
 # (placeholder) | |-EnumConstantDecl 0x688aa8 <line:323:3> col:3 mjSENS_BALLANGVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e0a70 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0a40 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x7e0a10 <col:37, col:67> Text=" 3D ball joint angular velocity"
+# 3D ball joint angular velocity
 
 # (placeholder) | |-EnumConstantDecl 0x68a278 <line:326:3> col:3 mjSENS_JOINTLIMITPOS 'int'
 
-# (placeholder) | | `-FullComment 0x7e0b40 <col:37, col:64>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0b10 <col:37, col:64>
-
-# (placeholder) | |     `-TextComment 0x7e0ae0 <col:37, col:64> Text=" joint limit distance-margin"
+# joint limit distance-margin
 
 # (placeholder) | |-EnumConstantDecl 0x68a2f8 <line:327:3> col:3 mjSENS_JOINTLIMITVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e0c10 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0be0 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x7e0bb0 <col:37, col:57> Text=" joint limit velocity"
+# joint limit velocity
 
 # (placeholder) | |-EnumConstantDecl 0x68a378 <line:328:3> col:3 mjSENS_JOINTLIMITFRC 'int'
 
-# (placeholder) | | `-FullComment 0x7e0ce0 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0cb0 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x7e0c80 <col:37, col:54> Text=" joint limit force"
+# joint limit force
 
 # (placeholder) | |-EnumConstantDecl 0x68a3f8 <line:329:3> col:3 mjSENS_TENDONLIMITPOS 'int'
 
-# (placeholder) | | `-FullComment 0x7e0db0 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0d80 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x7e0d50 <col:37, col:65> Text=" tendon limit distance-margin"
+# tendon limit distance-margin
 
 # (placeholder) | |-EnumConstantDecl 0x68a478 <line:330:3> col:3 mjSENS_TENDONLIMITVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e0e80 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0e50 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x7e0e20 <col:37, col:58> Text=" tendon limit velocity"
+# tendon limit velocity
 
 # (placeholder) | |-EnumConstantDecl 0x68a4f8 <line:331:3> col:3 mjSENS_TENDONLIMITFRC 'int'
 
-# (placeholder) | | `-FullComment 0x7e0f50 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0f20 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x7e0ef0 <col:37, col:55> Text=" tendon limit force"
+# tendon limit force
 
 # (placeholder) | |-EnumConstantDecl 0x68a5a8 <line:334:3> col:3 mjSENS_FRAMEPOS 'int'
 
-# (placeholder) | | `-FullComment 0x7e1020 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x7e0ff0 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x7e0fc0 <col:37, col:48> Text=" 3D position"
+# 3D position
 
 # (placeholder) | |-EnumConstantDecl 0x68a628 <line:335:3> col:3 mjSENS_FRAMEQUAT 'int'
 
-# (placeholder) | | `-FullComment 0x7e10f0 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x7e10c0 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x7e1090 <col:37, col:67> Text=" 4D unit quaternion orientation"
+# 4D unit quaternion orientation
 
 # (placeholder) | |-EnumConstantDecl 0x68a6a8 <line:336:3> col:3 mjSENS_FRAMEXAXIS 'int'
 
-# (placeholder) | | `-FullComment 0x7e11c0 <col:37, col:77>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1190 <col:37, col:77>
-
-# (placeholder) | |     `-TextComment 0x7e1160 <col:37, col:77> Text=" 3D unit vector: x-axis of object's frame"
+# 3D unit vector: x-axis of object s frame
 
 # (placeholder) | |-EnumConstantDecl 0x68a728 <line:337:3> col:3 mjSENS_FRAMEYAXIS 'int'
 
-# (placeholder) | | `-FullComment 0x7e1290 <col:37, col:77>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1260 <col:37, col:77>
-
-# (placeholder) | |     `-TextComment 0x7e1230 <col:37, col:77> Text=" 3D unit vector: y-axis of object's frame"
+# 3D unit vector: y-axis of object s frame
 
 # (placeholder) | |-EnumConstantDecl 0x68a7a8 <line:338:3> col:3 mjSENS_FRAMEZAXIS 'int'
 
-# (placeholder) | | `-FullComment 0x7e1360 <col:37, col:77>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1330 <col:37, col:77>
-
-# (placeholder) | |     `-TextComment 0x7e1300 <col:37, col:77> Text=" 3D unit vector: z-axis of object's frame"
+# 3D unit vector: z-axis of object s frame
 
 # (placeholder) | |-EnumConstantDecl 0x68a828 <line:339:3> col:3 mjSENS_FRAMELINVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e1430 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1400 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x7e13d0 <col:37, col:55> Text=" 3D linear velocity"
+# 3D linear velocity
 
 # (placeholder) | |-EnumConstantDecl 0x68a8a8 <line:340:3> col:3 mjSENS_FRAMEANGVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e1500 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7e14d0 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7e14a0 <col:37, col:56> Text=" 3D angular velocity"
+# 3D angular velocity
 
 # (placeholder) | |-EnumConstantDecl 0x68a928 <line:341:3> col:3 mjSENS_FRAMELINACC 'int'
 
-# (placeholder) | | `-FullComment 0x7e15d0 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x7e15a0 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x7e1570 <col:37, col:59> Text=" 3D linear acceleration"
+# 3D linear acceleration
 
 # (placeholder) | |-EnumConstantDecl 0x68a9a8 <line:342:3> col:3 mjSENS_FRAMEANGACC 'int'
 
-# (placeholder) | | `-FullComment 0x7e16a0 <col:37, col:60>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1670 <col:37, col:60>
-
-# (placeholder) | |     `-TextComment 0x7e1640 <col:37, col:60> Text=" 3D angular acceleration"
+# 3D angular acceleration
 
 # (placeholder) | |-EnumConstantDecl 0x68aa58 <line:345:3> col:3 mjSENS_SUBTREECOM 'int'
 
-# (placeholder) | | `-FullComment 0x7e1770 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1740 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x7e1710 <col:37, col:65> Text=" 3D center of mass of subtree"
+# 3D center of mass of subtree
 
 # (placeholder) | |-EnumConstantDecl 0x68aad8 <line:346:3> col:3 mjSENS_SUBTREELINVEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e1840 <col:37, col:66>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1810 <col:37, col:66>
-
-# (placeholder) | |     `-TextComment 0x7e17e0 <col:37, col:66> Text=" 3D linear velocity of subtree"
+# 3D linear velocity of subtree
 
 # (placeholder) | |-EnumConstantDecl 0x68ab58 <line:347:3> col:3 mjSENS_SUBTREEANGMOM 'int'
 
-# (placeholder) | | `-FullComment 0x7e1910 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x7e18e0 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x7e18b0 <col:37, col:67> Text=" 3D angular momentum of subtree"
+# 3D angular momentum of subtree
 
 # (placeholder) | |-EnumConstantDecl 0x68ac08 <line:350:3> col:3 mjSENS_GEOMDIST 'int'
 
-# (placeholder) | | `-FullComment 0x7e19e0 <col:37, col:70>
-
-# (placeholder) | |   `-ParagraphComment 0x7e19b0 <col:37, col:70>
-
-# (placeholder) | |     `-TextComment 0x7e1980 <col:37, col:70> Text=" signed distance between two geoms"
+# signed distance between two geoms
 
 # (placeholder) | |-EnumConstantDecl 0x68ac88 <line:351:3> col:3 mjSENS_GEOMNORMAL 'int'
 
-# (placeholder) | | `-FullComment 0x7e1ab0 <col:37, col:71>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1a80 <col:37, col:71>
-
-# (placeholder) | |     `-TextComment 0x7e1a50 <col:37, col:71> Text=" normal direction between two geoms"
+# normal direction between two geoms
 
 # (placeholder) | |-EnumConstantDecl 0x68ad08 <line:352:3> col:3 mjSENS_GEOMFROMTO 'int'
 
-# (placeholder) | | `-FullComment 0x7e1b80 <col:37, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x7e1b50 <col:37, col:62>
-
-# (placeholder) | |     `-TextComment 0x7e1b20 <col:37, col:62> Text=" segment between two geoms"
+# segment between two geoms
 
 # (placeholder) | |-EnumConstantDecl 0x68adb8 <line:355:3> col:3 mjSENS_E_POTENTIAL 'int'
 
-# (placeholder) | | `-FullComment 0x7e3c80 <col:37, col:53>
-
-# (placeholder) | |   `-ParagraphComment 0x7e3c50 <col:37, col:53>
-
-# (placeholder) | |     `-TextComment 0x7e3c20 <col:37, col:53> Text=" potential energy"
+# potential energy
 
 # (placeholder) | |-EnumConstantDecl 0x68ae38 <line:356:3> col:3 mjSENS_E_KINETIC 'int'
 
-# (placeholder) | | `-FullComment 0x7e3d50 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x7e3d20 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x7e3cf0 <col:37, col:51> Text=" kinetic energy"
+# kinetic energy
 
 # (placeholder) | |-EnumConstantDecl 0x68aeb8 <line:357:3> col:3 mjSENS_CLOCK 'int'
 
-# (placeholder) | | `-FullComment 0x7e3e20 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x7e3df0 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x7e3dc0 <col:37, col:52> Text=" simulation time"
+# simulation time
 
 # (placeholder) | |-EnumConstantDecl 0x68af68 <line:360:3> col:3 mjSENS_PLUGIN 'int'
 
-# (placeholder) | | `-FullComment 0x7e3ef0 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x7e3ec0 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x7e3e90 <col:37, col:54> Text=" plugin-controlled"
+# plugin-controlled
 
 # (placeholder) | `-EnumConstantDecl 0x68b048 <line:363:3> col:3 mjSENS_USER 'int'
 
-# (placeholder) |   `-FullComment 0x7e3fc0 <col:37, col:81>
-
-# (placeholder) |     `-ParagraphComment 0x7e3f90 <col:37, col:81>
-
-# (placeholder) |       `-TextComment 0x7e3f60 <col:37, col:81> Text=" sensor data provided by mjcb_sensor callback"
+# sensor data provided by mjcb_sensor callback
 
 alias mjtSensor = 
 
@@ -3475,35 +2660,19 @@ alias mjtSensor =
 
 # (placeholder) | | | `-IntegerLiteral 0x68b678 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7e4090 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4060 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x7e4030 <col:37, col:52> Text=" no computations"
+# no computations
 
 # (placeholder) | |-EnumConstantDecl 0x68b738 <line:369:3> col:3 mjSTAGE_POS 'int'
 
-# (placeholder) | | `-FullComment 0x7e4160 <col:37, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4130 <col:37, col:68>
-
-# (placeholder) | |     `-TextComment 0x7e4100 <col:37, col:68> Text=" position-dependent computations"
+# position-dependent computations
 
 # (placeholder) | |-EnumConstantDecl 0x68b7b8 <line:370:3> col:3 mjSTAGE_VEL 'int'
 
-# (placeholder) | | `-FullComment 0x7e4230 <col:37, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4200 <col:37, col:68>
-
-# (placeholder) | |     `-TextComment 0x7e41d0 <col:37, col:68> Text=" velocity-dependent computations"
+# velocity-dependent computations
 
 # (placeholder) | `-EnumConstantDecl 0x68b868 <line:371:3> col:3 mjSTAGE_ACC 'int'
 
-# (placeholder) |   `-FullComment 0x7e4300 <col:37, col:78>
-
-# (placeholder) |     `-ParagraphComment 0x7e42d0 <col:37, col:78>
-
-# (placeholder) |       `-TextComment 0x7e42a0 <col:37, col:78> Text=" acceleration/force-dependent computations"
+# acceleration/force-dependent computations
 
 alias mjtStage = 
 
@@ -3517,35 +2686,19 @@ alias mjtStage =
 
 # (placeholder) | | | `-IntegerLiteral 0x68ba78 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7e43d0 <col:37, col:64>
-
-# (placeholder) | |   `-ParagraphComment 0x7e43a0 <col:37, col:64>
-
-# (placeholder) | |     `-TextComment 0x7e4370 <col:37, col:64> Text=" real values, no constraints"
+# real values, no constraints
 
 # (placeholder) | |-EnumConstantDecl 0x68bb38 <line:377:3> col:3 mjDATATYPE_POSITIVE 'int'
 
-# (placeholder) | | `-FullComment 0x7e44a0 <col:37, col:77>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4470 <col:37, col:77>
-
-# (placeholder) | |     `-TextComment 0x7e4440 <col:37, col:77> Text=" positive values; 0 or negative: inactive"
+# positive values; 0 or negative: inactive
 
 # (placeholder) | |-EnumConstantDecl 0x68bbb8 <line:378:3> col:3 mjDATATYPE_AXIS 'int'
 
-# (placeholder) | | `-FullComment 0x7e4570 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4540 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x7e4510 <col:37, col:51> Text=" 3D unit vector"
+# 3D unit vector
 
 # (placeholder) | `-EnumConstantDecl 0x68bc68 <line:379:3> col:3 mjDATATYPE_QUATERNION 'int'
 
-# (placeholder) |   `-FullComment 0x7e4640 <col:37, col:52>
-
-# (placeholder) |     `-ParagraphComment 0x7e4610 <col:37, col:52>
-
-# (placeholder) |       `-TextComment 0x7e45e0 <col:37, col:52> Text=" unit quaternion"
+# unit quaternion
 
 alias mjtDataType = 
 
@@ -3559,43 +2712,23 @@ alias mjtDataType =
 
 # (placeholder) | | | `-IntegerLiteral 0x68be78 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7e4710 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x7e46e0 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x7e46b0 <col:37, col:49> Text=" no alignment"
+# no alignment
 
 # (placeholder) | |-EnumConstantDecl 0x68bf38 <line:385:3> col:3 mjSAMEFRAME_BODY 'int'
 
-# (placeholder) | | `-FullComment 0x7e47e0 <col:37, col:64>
-
-# (placeholder) | |   `-ParagraphComment 0x7e47b0 <col:37, col:64>
-
-# (placeholder) | |     `-TextComment 0x7e4780 <col:37, col:64> Text=" frame is same as body frame"
+# frame is same as body frame
 
 # (placeholder) | |-EnumConstantDecl 0x68bfb8 <line:386:3> col:3 mjSAMEFRAME_INERTIA 'int'
 
-# (placeholder) | | `-FullComment 0x7e48b0 <col:37, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4880 <col:37, col:68>
-
-# (placeholder) | |     `-TextComment 0x7e4850 <col:37, col:68> Text=" frame is same as inertial frame"
+# frame is same as inertial frame
 
 # (placeholder) | |-EnumConstantDecl 0x68c038 <line:387:3> col:3 mjSAMEFRAME_BODYROT 'int'
 
-# (placeholder) | | `-FullComment 0x7e4980 <col:37, col:82>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4950 <col:37, col:82>
-
-# (placeholder) | |     `-TextComment 0x7e4920 <col:37, col:82> Text=" frame orientation is same as body orientation"
+# frame orientation is same as body orientation
 
 # (placeholder) | `-EnumConstantDecl 0x68c0e8 <line:388:3> col:3 mjSAMEFRAME_INERTIAROT 'int'
 
-# (placeholder) |   `-FullComment 0x7e4a50 <col:37, col:85>
-
-# (placeholder) |     `-ParagraphComment 0x7e4a20 <col:37, col:85>
-
-# (placeholder) |       `-TextComment 0x7e49f0 <col:37, col:85> Text=" frame orientation is same as inertia orientation"
+# frame orientation is same as inertia orientation
 
 alias mjtSameFrame = 
 
@@ -3609,35 +2742,19 @@ alias mjtSameFrame =
 
 # (placeholder) | | | `-IntegerLiteral 0x68c2f8 <col:21> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7e4b20 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4af0 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x7e4ac0 <col:37, col:65> Text=" do not process any actuators"
+# do not process any actuators
 
 # (placeholder) | |-EnumConstantDecl 0x68c3b8 <line:394:3> col:3 mjLRMODE_MUSCLE 'int'
 
-# (placeholder) | | `-FullComment 0x7e4bf0 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4bc0 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x7e4b90 <col:37, col:61> Text=" process muscle actuators"
+# process muscle actuators
 
 # (placeholder) | |-EnumConstantDecl 0x68c438 <line:395:3> col:3 mjLRMODE_MUSCLEUSER 'int'
 
-# (placeholder) | | `-FullComment 0x7e4cc0 <col:37, col:70>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4c90 <col:37, col:70>
-
-# (placeholder) | |     `-TextComment 0x7e4c60 <col:37, col:70> Text=" process muscle and user actuators"
+# process muscle and user actuators
 
 # (placeholder) | `-EnumConstantDecl 0x68c4e8 <line:396:3> col:3 mjLRMODE_ALL 'int'
 
-# (placeholder) |   `-FullComment 0x7e4d90 <col:37, col:58>
-
-# (placeholder) |     `-ParagraphComment 0x7e4d60 <col:37, col:58>
-
-# (placeholder) |       `-TextComment 0x7e4d30 <col:37, col:58> Text=" process all actuators"
+# process all actuators
 
 alias mjtLRMode = 
 
@@ -3651,43 +2768,23 @@ alias mjtLRMode =
 
 # (placeholder) | | | `-IntegerLiteral 0x68dc78 <col:23> 'int' 0
 
-# (placeholder) | | `-FullComment 0x7e4e60 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4e30 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x7e4e00 <col:37, col:55> Text=" no self-collisions"
+# no self-collisions
 
 # (placeholder) | |-EnumConstantDecl 0x68dd38 <line:402:3> col:3 mjFLEXSELF_NARROW 'int'
 
-# (placeholder) | | `-FullComment 0x7e4f30 <col:37, col:78>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4f00 <col:37, col:78>
-
-# (placeholder) | |     `-TextComment 0x7e4ed0 <col:37, col:78> Text=" skip midphase, go directly to narrowphase"
+# skip midphase, go directly to narrowphase
 
 # (placeholder) | |-EnumConstantDecl 0x68ddb8 <line:403:3> col:3 mjFLEXSELF_BVH 'int'
 
-# (placeholder) | | `-FullComment 0x7e5000 <col:37, col:78>
-
-# (placeholder) | |   `-ParagraphComment 0x7e4fd0 <col:37, col:78>
-
-# (placeholder) | |     `-TextComment 0x7e4fa0 <col:37, col:78> Text=" use BVH in midphase (if midphase enabled)"
+# use BVH in midphase (if midphase enabled)
 
 # (placeholder) | |-EnumConstantDecl 0x68de38 <line:404:3> col:3 mjFLEXSELF_SAP 'int'
 
-# (placeholder) | | `-FullComment 0x7e50d0 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x7e50a0 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x7e5070 <col:37, col:56> Text=" use SAP in midphase"
+# use SAP in midphase
 
 # (placeholder) | `-EnumConstantDecl 0x68dee8 <line:405:3> col:3 mjFLEXSELF_AUTO 'int'
 
-# (placeholder) |   `-FullComment 0x7e51a0 <col:37, col:77>
-
-# (placeholder) |     `-ParagraphComment 0x7e5170 <col:37, col:77>
-
-# (placeholder) |       `-TextComment 0x7e5140 <col:37, col:77> Text=" choose between BVH and SAP automatically"
+# choose between BVH and SAP automatically
 
 alias mjtFlexSelf = 
 struct mjLROpt_:
@@ -4807,27 +3904,15 @@ alias mjModel = mjModel_
 
 # (placeholder) | | | `-IntegerLiteral 0x6b9df8 <col:16> 'int' 0
 
-# (placeholder) | | `-FullComment 0x80cc60 <col:34, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x80cc30 <col:34, col:47>
-
-# (placeholder) | |     `-TextComment 0x80cc00 <col:34, col:47> Text=" newly created"
+# newly created
 
 # (placeholder) | |-EnumConstantDecl 0x6b9eb8 <line:22:3> col:3 mjTASK_QUEUED 'int'
 
-# (placeholder) | | `-FullComment 0x80cd30 <col:34, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x80cd00 <col:34, col:59>
-
-# (placeholder) | |     `-TextComment 0x80ccd0 <col:34, col:59> Text=" enqueued in a thread pool"
+# enqueued in a thread pool
 
 # (placeholder) | `-EnumConstantDecl 0x6b9f68 <line:23:3> col:3 mjTASK_COMPLETED 'int'
 
-# (placeholder) |   `-FullComment 0x80ce00 <col:34, col:53>
-
-# (placeholder) |     `-ParagraphComment 0x80cdd0 <col:34, col:53>
-
-# (placeholder) |       `-TextComment 0x80cda0 <col:34, col:53> Text=" completed execution"
+# completed execution
 
 alias mjtTaskStatus = 
 
@@ -4839,11 +3924,7 @@ UnsafePointer[NoneType]
 UnsafePointer[NoneType]
 ]
 
-# (placeholder) | `-FullComment 0x80ced0 <line:26:3, col:35>
-
-# (placeholder) |   `-ParagraphComment 0x80cea0 <col:3, col:35>
-
-# (placeholder) |     `-TextComment 0x80ce70 <col:3, col:35> Text=" function pointer type for mjTask"
+# function pointer type for mjTask
 
 struct mjThreadPool_:
 
@@ -4864,11 +3945,7 @@ alias mjTask = mjTask_
 
 # (placeholder) |-EnumDecl 0x6b4638 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjdata.h:27:9, line:51:1> line:27:14 mjtState_
 
-# (placeholder) | |-FullComment 0x80d3b0 <line:25:3, col:100>
-
-# (placeholder) | | `-ParagraphComment 0x80d380 <col:3, col:100>
-
-# (placeholder) | |   `-TextComment 0x80d350 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 # (placeholder) | |-EnumConstantDecl 0x6b47a8 <line:28:3, col:30> col:3 referenced mjSTATE_TIME 'int'
 
@@ -4882,11 +3959,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4748 <col:30> 'int' 0
 
-# (placeholder) | | `-FullComment 0x80d480 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x80d450 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x80d420 <col:37, col:41> Text=" time"
+# time
 
 # (placeholder) | |-EnumConstantDecl 0x6b48a8 <line:29:3, col:30> col:3 referenced mjSTATE_QPOS 'int'
 
@@ -4900,11 +3973,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4848 <col:30> 'int' 1
 
-# (placeholder) | | `-FullComment 0x80d550 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x80d520 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x80d4f0 <col:37, col:45> Text=" position"
+# position
 
 # (placeholder) | |-EnumConstantDecl 0x6b49a8 <line:30:3, col:30> col:3 referenced mjSTATE_QVEL 'int'
 
@@ -4918,11 +3987,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4948 <col:30> 'int' 2
 
-# (placeholder) | | `-FullComment 0x80d620 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x80d5f0 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x80d5c0 <col:37, col:45> Text=" velocity"
+# velocity
 
 # (placeholder) | |-EnumConstantDecl 0x6b4aa8 <line:31:3, col:30> col:3 referenced mjSTATE_ACT 'int'
 
@@ -4936,11 +4001,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4a48 <col:30> 'int' 3
 
-# (placeholder) | | `-FullComment 0x80d6f0 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x80d6c0 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x80d690 <col:37, col:56> Text=" actuator activation"
+# actuator activation
 
 # (placeholder) | |-EnumConstantDecl 0x6b4ba8 <line:32:3, col:30> col:3 referenced mjSTATE_WARMSTART 'int'
 
@@ -4954,11 +4015,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4b48 <col:30> 'int' 4
 
-# (placeholder) | | `-FullComment 0x80d7c0 <col:37, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x80d790 <col:37, col:68>
-
-# (placeholder) | |     `-TextComment 0x80d760 <col:37, col:68> Text=" acceleration used for warmstart"
+# acceleration used for warmstart
 
 # (placeholder) | |-EnumConstantDecl 0x6b4ca8 <line:33:3, col:30> col:3 referenced mjSTATE_CTRL 'int'
 
@@ -4972,11 +4029,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4c48 <col:30> 'int' 5
 
-# (placeholder) | | `-FullComment 0x80d890 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x80d860 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x80d830 <col:37, col:44> Text=" control"
+# control
 
 # (placeholder) | |-EnumConstantDecl 0x6b4da8 <line:34:3, col:30> col:3 referenced mjSTATE_QFRC_APPLIED 'int'
 
@@ -4990,11 +4043,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4d48 <col:30> 'int' 6
 
-# (placeholder) | | `-FullComment 0x80d960 <col:37, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x80d930 <col:37, col:62>
-
-# (placeholder) | |     `-TextComment 0x80d900 <col:37, col:62> Text=" applied generalized force"
+# applied generalized force
 
 # (placeholder) | |-EnumConstantDecl 0x6b4ea8 <line:35:3, col:30> col:3 referenced mjSTATE_XFRC_APPLIED 'int'
 
@@ -5008,11 +4057,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4e48 <col:30> 'int' 7
 
-# (placeholder) | | `-FullComment 0x80da30 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x80da00 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x80d9d0 <col:37, col:67> Text=" applied Cartesian force/torque"
+# applied Cartesian force/torque
 
 # (placeholder) | |-EnumConstantDecl 0x6b4fa8 <line:36:3, col:30> col:3 referenced mjSTATE_EQ_ACTIVE 'int'
 
@@ -5026,11 +4071,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b4f48 <col:30> 'int' 8
 
-# (placeholder) | | `-FullComment 0x80db00 <col:37, col:63>
-
-# (placeholder) | |   `-ParagraphComment 0x80dad0 <col:37, col:63>
-
-# (placeholder) | |     `-TextComment 0x80daa0 <col:37, col:63> Text=" enable/disable constraints"
+# enable/disable constraints
 
 # (placeholder) | |-EnumConstantDecl 0x6b50a8 <line:37:3, col:30> col:3 referenced mjSTATE_MOCAP_POS 'int'
 
@@ -5044,11 +4085,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b5048 <col:30> 'int' 9
 
-# (placeholder) | | `-FullComment 0x80dbd0 <col:37, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x80dba0 <col:37, col:62>
-
-# (placeholder) | |     `-TextComment 0x80db70 <col:37, col:62> Text=" positions of mocap bodies"
+# positions of mocap bodies
 
 # (placeholder) | |-EnumConstantDecl 0x6b51a8 <line:38:3, col:30> col:3 referenced mjSTATE_MOCAP_QUAT 'int'
 
@@ -5062,11 +4099,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b5148 <col:30> 'int' 10
 
-# (placeholder) | | `-FullComment 0x80dca0 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x80dc70 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x80dc40 <col:37, col:65> Text=" orientations of mocap bodies"
+# orientations of mocap bodies
 
 # (placeholder) | |-EnumConstantDecl 0x6b52a8 <line:39:3, col:30> col:3 referenced mjSTATE_USERDATA 'int'
 
@@ -5080,11 +4113,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b5248 <col:30> 'int' 11
 
-# (placeholder) | | `-FullComment 0x80dd90 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x80dd60 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x80dd30 <col:37, col:46> Text=" user data"
+# user data
 
 # (placeholder) | |-EnumConstantDecl 0x6b53a8 <line:40:3, col:30> col:3 referenced mjSTATE_PLUGIN 'int'
 
@@ -5098,11 +4127,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-IntegerLiteral 0x6b5348 <col:30> 'int' 12
 
-# (placeholder) | | `-FullComment 0x80de60 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x80de30 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x80de00 <col:37, col:49> Text=" plugin state"
+# plugin state
 
 # (placeholder) | |-EnumConstantDecl 0x6b5468 <line:42:3, col:27> col:3 mjNSTATE 'int'
 
@@ -5112,11 +4137,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | | `-IntegerLiteral 0x6b5428 <col:27> 'int' 13
 
-# (placeholder) | | `-FullComment 0x80df30 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x80df00 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x80ded0 <col:37, col:61> Text=" number of state elements"
+# number of state elements
 
 # (placeholder) | |-EnumConstantDecl 0x6b55d8 <line:45:3, col:57> col:3 referenced mjSTATE_PHYSICS 'int'
 
@@ -5134,11 +4155,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-DeclRefExpr 0x6b5578 <col:57> 'int' EnumConstant 0x6b4aa8 'mjSTATE_ACT' 'int'
 
-# (placeholder) | | `-FullComment 0x80e000 <line:44:5, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x80dfd0 <col:5, col:62>
-
-# (placeholder) | |     `-TextComment 0x80dfa0 <col:5, col:62> Text=" convenience values for commonly used state specifications"
+# convenience values for commonly used state specifications
 
 # (placeholder) | |-EnumConstantDecl 0x6b56e8 <line:46:3, col:60> col:3 referenced mjSTATE_FULLPHYSICS 'int'
 
@@ -5156,11 +4173,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-DeclRefExpr 0x6b5688 <col:60> 'int' EnumConstant 0x6b53a8 'mjSTATE_PLUGIN' 'int'
 
-# (placeholder) | | `-FullComment 0x80e0d0 <line:44:5, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x80e0a0 <col:5, col:62>
-
-# (placeholder) | |     `-TextComment 0x80e070 <col:5, col:62> Text=" convenience values for commonly used state specifications"
+# convenience values for commonly used state specifications
 
 # (placeholder) | |-EnumConstantDecl 0x6b58f8 <line:47:3, line:49:27> line:47:3 referenced mjSTATE_USER 'int'
 
@@ -5194,11 +4207,7 @@ alias mjTask = mjTask_
 
 # (placeholder) | | |   `-DeclRefExpr 0x6b5898 <line:49:27> 'int' EnumConstant 0x6b52a8 'mjSTATE_USERDATA' 'int'
 
-# (placeholder) | | `-FullComment 0x80e1a0 <line:44:5, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x80e170 <col:5, col:62>
-
-# (placeholder) | |     `-TextComment 0x80e140 <col:5, col:62> Text=" convenience values for commonly used state specifications"
+# convenience values for commonly used state specifications
 
 # (placeholder) | `-EnumConstantDecl 0x6b5a08 <line:50:3, col:64> col:3 mjSTATE_INTEGRATION 'int'
 
@@ -5216,18 +4225,10 @@ alias mjTask = mjTask_
 
 # (placeholder) |   |   `-DeclRefExpr 0x6b59a8 <col:64> 'int' EnumConstant 0x6b4ba8 'mjSTATE_WARMSTART' 'int'
 
-# (placeholder) |   `-FullComment 0x80e270 <line:44:5, col:62>
-
-# (placeholder) |     `-ParagraphComment 0x80e240 <col:5, col:62>
-
-# (placeholder) |       `-TextComment 0x80e210 <col:5, col:62> Text=" convenience values for commonly used state specifications"
+# convenience values for commonly used state specifications
 
 alias mjtState = 
-# (placeholder) | `-FullComment 0x80e340 <line:25:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x80e310 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x80e2e0 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 
 # (placeholder) |-EnumDecl 0x6b5b28 <line:54:9, line:65:1> line:54:14 mjtWarning_
@@ -5240,75 +4241,39 @@ alias mjtState =
 
 # (placeholder) | | | `-IntegerLiteral 0x6b5c18 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x80e410 <col:32, col:62>
-
-# (placeholder) | |   `-ParagraphComment 0x80e3e0 <col:32, col:62>
-
-# (placeholder) | |     `-TextComment 0x80e3b0 <col:32, col:62> Text=" (near) singular inertia matrix"
+# (near) singular inertia matrix
 
 # (placeholder) | |-EnumConstantDecl 0x6b5cd8 <line:56:3> col:3 mjWARN_CONTACTFULL 'int'
 
-# (placeholder) | | `-FullComment 0x80e4e0 <col:32, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x80e4b0 <col:32, col:65>
-
-# (placeholder) | |     `-TextComment 0x80e480 <col:32, col:65> Text=" too many contacts in contact list"
+# too many contacts in contact list
 
 # (placeholder) | |-EnumConstantDecl 0x6b5d58 <line:57:3> col:3 mjWARN_CNSTRFULL 'int'
 
-# (placeholder) | | `-FullComment 0x80e5b0 <col:32, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x80e580 <col:32, col:52>
-
-# (placeholder) | |     `-TextComment 0x80e550 <col:32, col:52> Text=" too many constraints"
+# too many constraints
 
 # (placeholder) | |-EnumConstantDecl 0x6b5dd8 <line:58:3> col:3 mjWARN_VGEOMFULL 'int'
 
-# (placeholder) | | `-FullComment 0x80e680 <col:32, col:53>
-
-# (placeholder) | |   `-ParagraphComment 0x80e650 <col:32, col:53>
-
-# (placeholder) | |     `-TextComment 0x80e620 <col:32, col:53> Text=" too many visual geoms"
+# too many visual geoms
 
 # (placeholder) | |-EnumConstantDecl 0x6b5e58 <line:59:3> col:3 mjWARN_BADQPOS 'int'
 
-# (placeholder) | | `-FullComment 0x80e750 <col:32, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x80e720 <col:32, col:50>
-
-# (placeholder) | |     `-TextComment 0x80e6f0 <col:32, col:50> Text=" bad number in qpos"
+# bad number in qpos
 
 # (placeholder) | |-EnumConstantDecl 0x6b5ed8 <line:60:3> col:3 mjWARN_BADQVEL 'int'
 
-# (placeholder) | | `-FullComment 0x80e820 <col:32, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x80e7f0 <col:32, col:50>
-
-# (placeholder) | |     `-TextComment 0x80e7c0 <col:32, col:50> Text=" bad number in qvel"
+# bad number in qvel
 
 # (placeholder) | |-EnumConstantDecl 0x6b5f58 <line:61:3> col:3 mjWARN_BADQACC 'int'
 
-# (placeholder) | | `-FullComment 0x80e8f0 <col:32, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x80e8c0 <col:32, col:50>
-
-# (placeholder) | |     `-TextComment 0x80e890 <col:32, col:50> Text=" bad number in qacc"
+# bad number in qacc
 
 # (placeholder) | |-EnumConstantDecl 0x6b5fd8 <line:62:3> col:3 mjWARN_BADCTRL 'int'
 
-# (placeholder) | | `-FullComment 0x80e9c0 <col:32, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x80e990 <col:32, col:50>
-
-# (placeholder) | |     `-TextComment 0x80e960 <col:32, col:50> Text=" bad number in ctrl"
+# bad number in ctrl
 
 # (placeholder) | `-EnumConstantDecl 0x6b6088 <line:64:3> col:3 referenced mjNWARNING 'int'
 
-# (placeholder) |   `-FullComment 0x80ea90 <col:32, col:50>
-
-# (placeholder) |     `-ParagraphComment 0x80ea60 <col:32, col:50>
-
-# (placeholder) |       `-TextComment 0x80ea30 <col:32, col:50> Text=" number of warnings"
+# number of warnings
 
 alias mjtWarning = 
 
@@ -5322,131 +4287,67 @@ alias mjtWarning =
 
 # (placeholder) | | | `-IntegerLiteral 0x6c0898 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x80eb60 <col:32, col:36>
-
-# (placeholder) | |   `-ParagraphComment 0x80eb30 <col:32, col:36>
-
-# (placeholder) | |     `-TextComment 0x80eb00 <col:32, col:36> Text=" step"
+# step
 
 # (placeholder) | |-EnumConstantDecl 0x6c0958 <line:71:3> col:3 mjTIMER_FORWARD 'int'
 
-# (placeholder) | | `-FullComment 0x80ec30 <col:32, col:39>
-
-# (placeholder) | |   `-ParagraphComment 0x80ec00 <col:32, col:39>
-
-# (placeholder) | |     `-TextComment 0x80ebd0 <col:32, col:39> Text=" forward"
+# forward
 
 # (placeholder) | |-EnumConstantDecl 0x6c09d8 <line:72:3> col:3 mjTIMER_INVERSE 'int'
 
-# (placeholder) | | `-FullComment 0x80ed00 <col:32, col:39>
-
-# (placeholder) | |   `-ParagraphComment 0x80ecd0 <col:32, col:39>
-
-# (placeholder) | |     `-TextComment 0x80eca0 <col:32, col:39> Text=" inverse"
+# inverse
 
 # (placeholder) | |-EnumConstantDecl 0x6c0a88 <line:75:3> col:3 mjTIMER_POSITION 'int'
 
-# (placeholder) | | `-FullComment 0x80edd0 <col:32, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x80eda0 <col:32, col:43>
-
-# (placeholder) | |     `-TextComment 0x80ed70 <col:32, col:43> Text=" fwdPosition"
+# fwdPosition
 
 # (placeholder) | |-EnumConstantDecl 0x6c0b08 <line:76:3> col:3 mjTIMER_VELOCITY 'int'
 
-# (placeholder) | | `-FullComment 0x80eea0 <col:32, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x80ee70 <col:32, col:43>
-
-# (placeholder) | |     `-TextComment 0x80ee40 <col:32, col:43> Text=" fwdVelocity"
+# fwdVelocity
 
 # (placeholder) | |-EnumConstantDecl 0x6c0b88 <line:77:3> col:3 mjTIMER_ACTUATION 'int'
 
-# (placeholder) | | `-FullComment 0x80ef70 <col:32, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x80ef40 <col:32, col:44>
-
-# (placeholder) | |     `-TextComment 0x80ef10 <col:32, col:44> Text=" fwdActuation"
+# fwdActuation
 
 # (placeholder) | |-EnumConstantDecl 0x6c0c08 <line:78:3> col:3 mjTIMER_CONSTRAINT 'int'
 
-# (placeholder) | | `-FullComment 0x80f040 <col:32, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x80f010 <col:32, col:45>
-
-# (placeholder) | |     `-TextComment 0x80efe0 <col:32, col:45> Text=" fwdConstraint"
+# fwdConstraint
 
 # (placeholder) | |-EnumConstantDecl 0x6c0c88 <line:79:3> col:3 mjTIMER_ADVANCE 'int'
 
-# (placeholder) | | `-FullComment 0x80f110 <col:32, col:53>
-
-# (placeholder) | |   `-ParagraphComment 0x80f0e0 <col:32, col:53>
-
-# (placeholder) | |     `-TextComment 0x80f0b0 <col:32, col:53> Text=" mj_Euler, mj_implicit"
+# mj_Euler, mj_implicit
 
 # (placeholder) | |-EnumConstantDecl 0x6c0d38 <line:82:3> col:3 mjTIMER_POS_KINEMATICS 'int'
 
-# (placeholder) | | `-FullComment 0x80f1e0 <col:32, col:69>
-
-# (placeholder) | |   `-ParagraphComment 0x80f1b0 <col:32, col:69>
-
-# (placeholder) | |     `-TextComment 0x80f180 <col:32, col:69> Text=" kinematics, com, tendon, transmission"
+# kinematics, com, tendon, transmission
 
 # (placeholder) | |-EnumConstantDecl 0x6c0db8 <line:83:3> col:3 mjTIMER_POS_INERTIA 'int'
 
-# (placeholder) | | `-FullComment 0x80f2b0 <col:32, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x80f280 <col:32, col:52>
-
-# (placeholder) | |     `-TextComment 0x80f250 <col:32, col:52> Text=" inertia computations"
+# inertia computations
 
 # (placeholder) | |-EnumConstantDecl 0x6c0e38 <line:84:3> col:3 mjTIMER_POS_COLLISION 'int'
 
-# (placeholder) | | `-FullComment 0x80f380 <col:32, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x80f350 <col:32, col:51>
-
-# (placeholder) | |     `-TextComment 0x80f320 <col:32, col:51> Text=" collision detection"
+# collision detection
 
 # (placeholder) | |-EnumConstantDecl 0x6c0eb8 <line:85:3> col:3 mjTIMER_POS_MAKE 'int'
 
-# (placeholder) | | `-FullComment 0x80f450 <col:32, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x80f420 <col:32, col:48>
-
-# (placeholder) | |     `-TextComment 0x80f3f0 <col:32, col:48> Text=" make constraints"
+# make constraints
 
 # (placeholder) | |-EnumConstantDecl 0x6c0f38 <line:86:3> col:3 mjTIMER_POS_PROJECT 'int'
 
-# (placeholder) | | `-FullComment 0x80f520 <col:32, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x80f4f0 <col:32, col:51>
-
-# (placeholder) | |     `-TextComment 0x80f4c0 <col:32, col:51> Text=" project constraints"
+# project constraints
 
 # (placeholder) | |-EnumConstantDecl 0x6c0fe8 <line:89:3> col:3 mjTIMER_COL_BROAD 'int'
 
-# (placeholder) | | `-FullComment 0x80f5f0 <col:32, col:42>
-
-# (placeholder) | |   `-ParagraphComment 0x80f5c0 <col:32, col:42>
-
-# (placeholder) | |     `-TextComment 0x80f590 <col:32, col:42> Text=" broadphase"
+# broadphase
 
 # (placeholder) | |-EnumConstantDecl 0x6c1068 <line:90:3> col:3 mjTIMER_COL_NARROW 'int'
 
-# (placeholder) | | `-FullComment 0x80f6c0 <col:32, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x80f690 <col:32, col:43>
-
-# (placeholder) | |     `-TextComment 0x80f660 <col:32, col:43> Text=" narrowphase"
+# narrowphase
 
 # (placeholder) | `-EnumConstantDecl 0x6c1118 <line:92:3> col:3 referenced mjNTIMER 'int'
 
-# (placeholder) |   `-FullComment 0x80f790 <col:32, col:48>
-
-# (placeholder) |     `-ParagraphComment 0x80f760 <col:32, col:48>
-
-# (placeholder) |       `-TextComment 0x80f730 <col:32, col:48> Text=" number of timers"
+# number of timers
 
 alias mjtTimer = 
 struct mjContact_:
@@ -5892,11 +4793,7 @@ mjModel]
 UnsafePointer[mjData]
 ]
 
-# (placeholder) | `-FullComment 0x81a330 <line:454:3, col:26>
-
-# (placeholder) |   `-ParagraphComment 0x81a300 <col:3, col:26>
-
-# (placeholder) |     `-TextComment 0x81a2d0 <col:3, col:26> Text=" generic MuJoCo function"
+# generic MuJoCo function
 
 
 alias mjfConFilt = UnsafePointer[
@@ -5909,11 +4806,7 @@ mjModel]
 UnsafePointer[mjData]
 Int32Int32]
 
-# (placeholder) | `-FullComment 0x81a400 <line:457:3, col:41>
-
-# (placeholder) |   `-ParagraphComment 0x81a3d0 <col:3, col:41>
-
-# (placeholder) |     `-TextComment 0x81a3a0 <col:3, col:41> Text=" contact filter: 1- discard, 0- collide"
+# contact filter: 1- discard, 0- collide
 
 
 alias mjfSensor = UnsafePointer[
@@ -5926,11 +4819,7 @@ mjModel]
 UnsafePointer[mjData]
 Int32]
 
-# (placeholder) | `-FullComment 0x81a4d0 <line:460:3, col:20>
-
-# (placeholder) |   `-ParagraphComment 0x81a4a0 <col:3, col:20>
-
-# (placeholder) |     `-TextComment 0x81a470 <col:3, col:20> Text=" sensor simulation"
+# sensor simulation
 
 
 alias mjfTime = UnsafePointer[
@@ -5939,11 +4828,7 @@ alias mjfTime = UnsafePointer[
 # (placeholder) | |   `-FunctionProtoType 0x6d3460 'mjtNum (void)' cdecl
 Float64]
 
-# (placeholder) | `-FullComment 0x81a5a0 <line:463:3, col:8>
-
-# (placeholder) |   `-ParagraphComment 0x81a570 <col:3, col:8>
-
-# (placeholder) |     `-TextComment 0x81a540 <col:3, col:8> Text=" timer"
+# timer
 
 
 alias mjfAct = UnsafePointer[
@@ -5958,11 +4843,7 @@ UnsafePointer[
 mjData]
 Int32]
 
-# (placeholder) | `-FullComment 0x81a670 <line:466:3, col:32>
-
-# (placeholder) |   `-ParagraphComment 0x81a640 <col:3, col:32>
-
-# (placeholder) |     `-TextComment 0x81a610 <col:3, col:32> Text=" actuator dynamics, gain, bias"
+# actuator dynamics, gain, bias
 
 
 alias mjfCollision = UnsafePointer[
@@ -5978,20 +4859,12 @@ mjData]
 UnsafePointer[mjContact]
 Int32Int32Float64]
 
-# (placeholder) | `-FullComment 0x81a740 <line:469:3, col:22>
-
-# (placeholder) |   `-ParagraphComment 0x81a710 <col:3, col:22>
-
-# (placeholder) |     `-TextComment 0x81a6e0 <col:3, col:22> Text=" collision detection"
+# collision detection
 
 
 # (placeholder) |-EnumDecl 0x6d41b8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:33:9, line:38:1> line:33:14 mjtCatBit_
 
-# (placeholder) | |-FullComment 0x81a810 <line:31:3, col:100>
-
-# (placeholder) | | `-ParagraphComment 0x81a7e0 <col:3, col:100>
-
-# (placeholder) | |   `-TextComment 0x81a7b0 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 # (placeholder) | |-EnumConstantDecl 0x6d42e8 <line:34:3, col:25> col:3 mjCAT_STATIC 'int'
 
@@ -6001,11 +4874,7 @@ Int32Int32Float64]
 
 # (placeholder) | | | `-IntegerLiteral 0x6d42a8 <col:25> 'int' 1
 
-# (placeholder) | | `-FullComment 0x81a8e0 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x81a8b0 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x81a880 <col:37, col:61> Text=" model elements in body 0"
+# model elements in body 0
 
 # (placeholder) | |-EnumConstantDecl 0x6d43a8 <line:35:3, col:25> col:3 mjCAT_DYNAMIC 'int'
 
@@ -6015,11 +4884,7 @@ Int32Int32Float64]
 
 # (placeholder) | | | `-IntegerLiteral 0x6d4368 <col:25> 'int' 2
 
-# (placeholder) | | `-FullComment 0x81a9b0 <col:37, col:71>
-
-# (placeholder) | |   `-ParagraphComment 0x81a980 <col:37, col:71>
-
-# (placeholder) | |     `-TextComment 0x81a950 <col:37, col:71> Text=" model elements in all other bodies"
+# model elements in all other bodies
 
 # (placeholder) | |-EnumConstantDecl 0x6d4468 <line:36:3, col:25> col:3 mjCAT_DECOR 'int'
 
@@ -6029,11 +4894,7 @@ Int32Int32Float64]
 
 # (placeholder) | | | `-IntegerLiteral 0x6d4428 <col:25> 'int' 4
 
-# (placeholder) | | `-FullComment 0x81aa80 <col:37, col:53>
-
-# (placeholder) | |   `-ParagraphComment 0x81aa50 <col:37, col:53>
-
-# (placeholder) | |     `-TextComment 0x81aa20 <col:37, col:53> Text=" decorative geoms"
+# decorative geoms
 
 # (placeholder) | `-EnumConstantDecl 0x6d4558 <line:37:3, col:25> col:3 mjCAT_ALL 'int'
 
@@ -6043,18 +4904,10 @@ Int32Int32Float64]
 
 # (placeholder) |   | `-IntegerLiteral 0x6d44e8 <col:25> 'int' 7
 
-# (placeholder) |   `-FullComment 0x81ab50 <col:37, col:58>
-
-# (placeholder) |     `-ParagraphComment 0x81ab20 <col:37, col:58>
-
-# (placeholder) |       `-TextComment 0x81aaf0 <col:37, col:58> Text=" select all categories"
+# select all categories
 
 alias mjtCatBit = 
-# (placeholder) | `-FullComment 0x81ac20 <line:31:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x81abf0 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x81abc0 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 
 # (placeholder) |-EnumDecl 0x6d4678 <line:41:9, line:49:1> line:41:14 mjtMouse_
@@ -6067,59 +4920,31 @@ alias mjtCatBit =
 
 # (placeholder) | | | `-IntegerLiteral 0x6d4768 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x81acf0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x81acc0 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x81ac90 <col:37, col:46> Text=" no action"
+# no action
 
 # (placeholder) | |-EnumConstantDecl 0x6d4828 <line:43:3> col:3 mjMOUSE_ROTATE_V 'int'
 
-# (placeholder) | | `-FullComment 0x81adc0 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x81ad90 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x81ad60 <col:37, col:59> Text=" rotate, vertical plane"
+# rotate, vertical plane
 
 # (placeholder) | |-EnumConstantDecl 0x6d48a8 <line:44:3> col:3 mjMOUSE_ROTATE_H 'int'
 
-# (placeholder) | | `-FullComment 0x81ae90 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x81ae60 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x81ae30 <col:37, col:61> Text=" rotate, horizontal plane"
+# rotate, horizontal plane
 
 # (placeholder) | |-EnumConstantDecl 0x6d4928 <line:45:3> col:3 mjMOUSE_MOVE_V 'int'
 
-# (placeholder) | | `-FullComment 0x81af60 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x81af30 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x81af00 <col:37, col:57> Text=" move, vertical plane"
+# move, vertical plane
 
 # (placeholder) | |-EnumConstantDecl 0x6d49a8 <line:46:3> col:3 mjMOUSE_MOVE_H 'int'
 
-# (placeholder) | | `-FullComment 0x81b030 <col:37, col:59>
-
-# (placeholder) | |   `-ParagraphComment 0x81b000 <col:37, col:59>
-
-# (placeholder) | |     `-TextComment 0x81afd0 <col:37, col:59> Text=" move, horizontal plane"
+# move, horizontal plane
 
 # (placeholder) | |-EnumConstantDecl 0x6e3040 <line:47:3> col:3 mjMOUSE_ZOOM 'int'
 
-# (placeholder) | | `-FullComment 0x81b100 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x81b0d0 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x81b0a0 <col:37, col:41> Text=" zoom"
+# zoom
 
 # (placeholder) | `-EnumConstantDecl 0x6e30e8 <line:48:3> col:3 mjMOUSE_SELECT 'int'
 
-# (placeholder) |   `-FullComment 0x81b1d0 <col:37, col:46>
-
-# (placeholder) |     `-ParagraphComment 0x81b1a0 <col:37, col:46>
-
-# (placeholder) |       `-TextComment 0x81b170 <col:37, col:46> Text=" selection"
+# selection
 
 alias mjtMouse = 
 
@@ -6133,11 +4958,7 @@ alias mjtMouse =
 
 # (placeholder) | | | `-IntegerLiteral 0x6e32f8 <col:25> 'int' 1
 
-# (placeholder) | | `-FullComment 0x81b2a0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81b270 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81b240 <col:37, col:48> Text=" translation"
+# translation
 
 # (placeholder) | `-EnumConstantDecl 0x6e3428 <line:54:3, col:25> col:3 mjPERT_ROTATE 'int'
 
@@ -6147,11 +4968,7 @@ alias mjtMouse =
 
 # (placeholder) |   | `-IntegerLiteral 0x6e33b8 <col:25> 'int' 2
 
-# (placeholder) |   `-FullComment 0x81b370 <col:37, col:45>
-
-# (placeholder) |     `-ParagraphComment 0x81b340 <col:37, col:45>
-
-# (placeholder) |       `-TextComment 0x81b310 <col:37, col:45> Text=" rotation"
+# rotation
 
 alias mjtPertBit = 
 
@@ -6165,35 +4982,19 @@ alias mjtPertBit =
 
 # (placeholder) | | | `-IntegerLiteral 0x6e3638 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x81b440 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81b410 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81b3e0 <col:37, col:48> Text=" free camera"
+# free camera
 
 # (placeholder) | |-EnumConstantDecl 0x6e36f8 <line:60:3> col:3 mjCAMERA_TRACKING 'int'
 
-# (placeholder) | | `-FullComment 0x81b510 <col:37, col:70>
-
-# (placeholder) | |   `-ParagraphComment 0x81b4e0 <col:37, col:70>
-
-# (placeholder) | |     `-TextComment 0x81b4b0 <col:37, col:70> Text=" tracking camera; uses trackbodyid"
+# tracking camera; uses trackbodyid
 
 # (placeholder) | |-EnumConstantDecl 0x6e3778 <line:61:3> col:3 mjCAMERA_FIXED 'int'
 
-# (placeholder) | | `-FullComment 0x81b5e0 <col:37, col:66>
-
-# (placeholder) | |   `-ParagraphComment 0x81b5b0 <col:37, col:66>
-
-# (placeholder) | |     `-TextComment 0x81b580 <col:37, col:66> Text=" fixed camera; uses fixedcamid"
+# fixed camera; uses fixedcamid
 
 # (placeholder) | `-EnumConstantDecl 0x6e3828 <line:62:3> col:3 mjCAMERA_USER 'int'
 
-# (placeholder) |   `-FullComment 0x81b6b0 <col:37, col:82>
-
-# (placeholder) |     `-ParagraphComment 0x81b680 <col:37, col:82>
-
-# (placeholder) |       `-TextComment 0x81b650 <col:37, col:82> Text=" user is responsible for setting OpenGL camera"
+# user is responsible for setting OpenGL camera
 
 alias mjtCamera = 
 
@@ -6207,147 +5008,75 @@ alias mjtCamera =
 
 # (placeholder) | | | `-IntegerLiteral 0x6e3a38 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x81b780 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x81b750 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x81b720 <col:37, col:44> Text=" nothing"
+# nothing
 
 # (placeholder) | |-EnumConstantDecl 0x6e3af8 <line:68:3> col:3 mjLABEL_BODY 'int'
 
-# (placeholder) | | `-FullComment 0x81b850 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81b820 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81b7f0 <col:37, col:48> Text=" body labels"
+# body labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3b78 <line:69:3> col:3 mjLABEL_JOINT 'int'
 
-# (placeholder) | | `-FullComment 0x81b920 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x81b8f0 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x81b8c0 <col:37, col:49> Text=" joint labels"
+# joint labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3bf8 <line:70:3> col:3 mjLABEL_GEOM 'int'
 
-# (placeholder) | | `-FullComment 0x81b9f0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81b9c0 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81b990 <col:37, col:48> Text=" geom labels"
+# geom labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3c78 <line:71:3> col:3 mjLABEL_SITE 'int'
 
-# (placeholder) | | `-FullComment 0x81bac0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81ba90 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81ba60 <col:37, col:48> Text=" site labels"
+# site labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3cf8 <line:72:3> col:3 mjLABEL_CAMERA 'int'
 
-# (placeholder) | | `-FullComment 0x81bb90 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x81bb60 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x81bb30 <col:37, col:50> Text=" camera labels"
+# camera labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3d78 <line:73:3> col:3 mjLABEL_LIGHT 'int'
 
-# (placeholder) | | `-FullComment 0x81bc60 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x81bc30 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x81bc00 <col:37, col:49> Text=" light labels"
+# light labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3df8 <line:74:3> col:3 mjLABEL_TENDON 'int'
 
-# (placeholder) | | `-FullComment 0x81bd60 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x81bd00 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x81bcd0 <col:37, col:50> Text=" tendon labels"
+# tendon labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3e78 <line:75:3> col:3 mjLABEL_ACTUATOR 'int'
 
-# (placeholder) | | `-FullComment 0x81be30 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x81be00 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x81bdd0 <col:37, col:52> Text=" actuator labels"
+# actuator labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3ef8 <line:76:3> col:3 mjLABEL_CONSTRAINT 'int'
 
-# (placeholder) | | `-FullComment 0x81bf00 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x81bed0 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x81bea0 <col:37, col:54> Text=" constraint labels"
+# constraint labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3f78 <line:77:3> col:3 mjLABEL_FLEX 'int'
 
-# (placeholder) | | `-FullComment 0x81bfd0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81bfa0 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81bf70 <col:37, col:48> Text=" flex labels"
+# flex labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e3ff8 <line:78:3> col:3 mjLABEL_SKIN 'int'
 
-# (placeholder) | | `-FullComment 0x81c0a0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81c070 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81c040 <col:37, col:48> Text=" skin labels"
+# skin labels
 
 # (placeholder) | |-EnumConstantDecl 0x6e4078 <line:79:3> col:3 mjLABEL_SELECTION 'int'
 
-# (placeholder) | | `-FullComment 0x81c170 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x81c140 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x81c110 <col:37, col:52> Text=" selected object"
+# selected object
 
 # (placeholder) | |-EnumConstantDecl 0x6e40f8 <line:80:3> col:3 mjLABEL_SELPNT 'int'
 
-# (placeholder) | | `-FullComment 0x81c240 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x81c210 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x81c1e0 <col:37, col:67> Text=" coordinates of selection point"
+# coordinates of selection point
 
 # (placeholder) | |-EnumConstantDecl 0x6e4178 <line:81:3> col:3 mjLABEL_CONTACTPOINT 'int'
 
-# (placeholder) | | `-FullComment 0x81c310 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x81c2e0 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x81c2b0 <col:37, col:56> Text=" contact information"
+# contact information
 
 # (placeholder) | |-EnumConstantDecl 0x6e41f8 <line:82:3> col:3 mjLABEL_CONTACTFORCE 'int'
 
-# (placeholder) | | `-FullComment 0x81c3e0 <col:37, col:63>
-
-# (placeholder) | |   `-ParagraphComment 0x81c3b0 <col:37, col:63>
-
-# (placeholder) | |     `-TextComment 0x81c380 <col:37, col:63> Text=" magnitude of contact force"
+# magnitude of contact force
 
 # (placeholder) | |-EnumConstantDecl 0x6e4278 <line:83:3> col:3 mjLABEL_ISLAND 'int'
 
-# (placeholder) | | `-FullComment 0x81c4b0 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x81c480 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x81c450 <col:37, col:49> Text=" id of island"
+# id of island
 
 # (placeholder) | `-EnumConstantDecl 0x6e4328 <line:85:3> col:3 referenced mjNLABEL 'int'
 
-# (placeholder) |   `-FullComment 0x81c580 <col:37, col:58>
-
-# (placeholder) |     `-ParagraphComment 0x81c550 <col:37, col:58>
-
-# (placeholder) |       `-TextComment 0x81c520 <col:37, col:58> Text=" number of label types"
+# number of label types
 
 alias mjtLabel = 
 
@@ -6361,75 +5090,39 @@ alias mjtLabel =
 
 # (placeholder) | | | `-IntegerLiteral 0x6e4538 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x81c650 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x81c620 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x81c5f0 <col:37, col:46> Text=" no frames"
+# no frames
 
 # (placeholder) | |-EnumConstantDecl 0x6e45f8 <line:91:3> col:3 mjFRAME_BODY 'int'
 
-# (placeholder) | | `-FullComment 0x81c720 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81c6f0 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81c6c0 <col:37, col:48> Text=" body frames"
+# body frames
 
 # (placeholder) | |-EnumConstantDecl 0x6e4678 <line:92:3> col:3 mjFRAME_GEOM 'int'
 
-# (placeholder) | | `-FullComment 0x81c7f0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81c7c0 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81c790 <col:37, col:48> Text=" geom frames"
+# geom frames
 
 # (placeholder) | |-EnumConstantDecl 0x6e46f8 <line:93:3> col:3 mjFRAME_SITE 'int'
 
-# (placeholder) | | `-FullComment 0x81c8c0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81c890 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81c860 <col:37, col:48> Text=" site frames"
+# site frames
 
 # (placeholder) | |-EnumConstantDecl 0x6e4778 <line:94:3> col:3 mjFRAME_CAMERA 'int'
 
-# (placeholder) | | `-FullComment 0x81c990 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x81c960 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x81c930 <col:37, col:50> Text=" camera frames"
+# camera frames
 
 # (placeholder) | |-EnumConstantDecl 0x6e47f8 <line:95:3> col:3 mjFRAME_LIGHT 'int'
 
-# (placeholder) | | `-FullComment 0x81ca60 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x81ca30 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x81ca00 <col:37, col:49> Text=" light frames"
+# light frames
 
 # (placeholder) | |-EnumConstantDecl 0x6e4878 <line:96:3> col:3 mjFRAME_CONTACT 'int'
 
-# (placeholder) | | `-FullComment 0x81cb30 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x81cb00 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x81cad0 <col:37, col:51> Text=" contact frames"
+# contact frames
 
 # (placeholder) | |-EnumConstantDecl 0x6e48f8 <line:97:3> col:3 mjFRAME_WORLD 'int'
 
-# (placeholder) | | `-FullComment 0x81cc00 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81cbd0 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81cba0 <col:37, col:48> Text=" world frame"
+# world frame
 
 # (placeholder) | `-EnumConstantDecl 0x6e49a8 <line:99:3> col:3 referenced mjNFRAME 'int'
 
-# (placeholder) |   `-FullComment 0x81ccd0 <col:37, col:67>
-
-# (placeholder) |     `-ParagraphComment 0x81cca0 <col:37, col:67>
-
-# (placeholder) |       `-TextComment 0x81cc70 <col:37, col:67> Text=" number of visualization frames"
+# number of visualization frames
 
 alias mjtFrame = 
 
@@ -6443,267 +5136,135 @@ alias mjtFrame =
 
 # (placeholder) | | | `-IntegerLiteral 0x6e4bb8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x81cda0 <col:37, col:53>
-
-# (placeholder) | |   `-ParagraphComment 0x81cd70 <col:37, col:53>
-
-# (placeholder) | |     `-TextComment 0x81cd40 <col:37, col:53> Text=" mesh convex hull"
+# mesh convex hull
 
 # (placeholder) | |-EnumConstantDecl 0x6e4c78 <line:105:3> col:3 mjVIS_TEXTURE 'int'
 
-# (placeholder) | | `-FullComment 0x81ce70 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x81ce40 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x81ce10 <col:37, col:45> Text=" textures"
+# textures
 
 # (placeholder) | |-EnumConstantDecl 0x6e4cf8 <line:106:3> col:3 mjVIS_JOINT 'int'
 
-# (placeholder) | | `-FullComment 0x81cf40 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x81cf10 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x81cee0 <col:37, col:43> Text=" joints"
+# joints
 
 # (placeholder) | |-EnumConstantDecl 0x6e4d78 <line:107:3> col:3 mjVIS_CAMERA 'int'
 
-# (placeholder) | | `-FullComment 0x81d010 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x81cfe0 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x81cfb0 <col:37, col:44> Text=" cameras"
+# cameras
 
 # (placeholder) | |-EnumConstantDecl 0x6e4df8 <line:108:3> col:3 mjVIS_ACTUATOR 'int'
 
-# (placeholder) | | `-FullComment 0x81d0e0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x81d0b0 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x81d080 <col:37, col:46> Text=" actuators"
+# actuators
 
 # (placeholder) | |-EnumConstantDecl 0x6e4e78 <line:109:3> col:3 mjVIS_ACTIVATION 'int'
 
-# (placeholder) | | `-FullComment 0x81d1b0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81d180 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81d150 <col:37, col:48> Text=" activations"
+# activations
 
 # (placeholder) | |-EnumConstantDecl 0x6e4ef8 <line:110:3> col:3 mjVIS_LIGHT 'int'
 
-# (placeholder) | | `-FullComment 0x81d280 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x81d250 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x81d220 <col:37, col:43> Text=" lights"
+# lights
 
 # (placeholder) | |-EnumConstantDecl 0x6e4f78 <line:111:3> col:3 mjVIS_TENDON 'int'
 
-# (placeholder) | | `-FullComment 0x81d350 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x81d320 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x81d2f0 <col:37, col:44> Text=" tendons"
+# tendons
 
 # (placeholder) | |-EnumConstantDecl 0x6e5110 <line:112:3> col:3 mjVIS_RANGEFINDER 'int'
 
-# (placeholder) | | `-FullComment 0x81d420 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x81d3f0 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x81d3c0 <col:37, col:56> Text=" rangefinder sensors"
+# rangefinder sensors
 
 # (placeholder) | |-EnumConstantDecl 0x6e5188 <line:113:3> col:3 mjVIS_CONSTRAINT 'int'
 
-# (placeholder) | | `-FullComment 0x81d4f0 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x81d4c0 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x81d490 <col:37, col:54> Text=" point constraints"
+# point constraints
 
 # (placeholder) | |-EnumConstantDecl 0x6e5208 <line:114:3> col:3 mjVIS_INERTIA 'int'
 
-# (placeholder) | | `-FullComment 0x81d5c0 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x81d590 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x81d560 <col:37, col:61> Text=" equivalent inertia boxes"
+# equivalent inertia boxes
 
 # (placeholder) | |-EnumConstantDecl 0x6e5288 <line:115:3> col:3 mjVIS_SCLINERTIA 'int'
 
-# (placeholder) | | `-FullComment 0x81d690 <col:37, col:77>
-
-# (placeholder) | |   `-ParagraphComment 0x81d660 <col:37, col:77>
-
-# (placeholder) | |     `-TextComment 0x81d630 <col:37, col:77> Text=" scale equivalent inertia boxes with mass"
+# scale equivalent inertia boxes with mass
 
 # (placeholder) | |-EnumConstantDecl 0x6e5308 <line:116:3> col:3 mjVIS_PERTFORCE 'int'
 
-# (placeholder) | | `-FullComment 0x81d760 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x81d730 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x81d700 <col:37, col:55> Text=" perturbation force"
+# perturbation force
 
 # (placeholder) | |-EnumConstantDecl 0x6e5388 <line:117:3> col:3 mjVIS_PERTOBJ 'int'
 
-# (placeholder) | | `-FullComment 0x81d830 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x81d800 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x81d7d0 <col:37, col:56> Text=" perturbation object"
+# perturbation object
 
 # (placeholder) | |-EnumConstantDecl 0x6e5408 <line:118:3> col:3 mjVIS_CONTACTPOINT 'int'
 
-# (placeholder) | | `-FullComment 0x81d900 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x81d8d0 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x81d8a0 <col:37, col:51> Text=" contact points"
+# contact points
 
 # (placeholder) | |-EnumConstantDecl 0x6e5488 <line:119:3> col:3 mjVIS_ISLAND 'int'
 
-# (placeholder) | | `-FullComment 0x81d9d0 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x81d9a0 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x81d970 <col:37, col:55> Text=" constraint islands"
+# constraint islands
 
 # (placeholder) | |-EnumConstantDecl 0x6e5508 <line:120:3> col:3 mjVIS_CONTACTFORCE 'int'
 
-# (placeholder) | | `-FullComment 0x81daa0 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x81da70 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x81da40 <col:37, col:50> Text=" contact force"
+# contact force
 
 # (placeholder) | |-EnumConstantDecl 0x6e5588 <line:121:3> col:3 mjVIS_CONTACTSPLIT 'int'
 
-# (placeholder) | | `-FullComment 0x81db70 <col:37, col:80>
-
-# (placeholder) | |   `-ParagraphComment 0x81db40 <col:37, col:80>
-
-# (placeholder) | |     `-TextComment 0x81db10 <col:37, col:80> Text=" split contact force into normal and tangent"
+# split contact force into normal and tangent
 
 # (placeholder) | |-EnumConstantDecl 0x6e5608 <line:122:3> col:3 mjVIS_TRANSPARENT 'int'
 
-# (placeholder) | | `-FullComment 0x81dc40 <col:37, col:72>
-
-# (placeholder) | |   `-ParagraphComment 0x81dc10 <col:37, col:72>
-
-# (placeholder) | |     `-TextComment 0x81dbe0 <col:37, col:72> Text=" make dynamic geoms more transparent"
+# make dynamic geoms more transparent
 
 # (placeholder) | |-EnumConstantDecl 0x6e5688 <line:123:3> col:3 mjVIS_AUTOCONNECT 'int'
 
-# (placeholder) | | `-FullComment 0x81dd10 <col:37, col:70>
-
-# (placeholder) | |   `-ParagraphComment 0x81dce0 <col:37, col:70>
-
-# (placeholder) | |     `-TextComment 0x81dcb0 <col:37, col:70> Text=" auto connect joints and body coms"
+# auto connect joints and body coms
 
 # (placeholder) | |-EnumConstantDecl 0x6e5708 <line:124:3> col:3 mjVIS_COM 'int'
 
-# (placeholder) | | `-FullComment 0x81de10 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x81dde0 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x81ddb0 <col:37, col:51> Text=" center of mass"
+# center of mass
 
 # (placeholder) | |-EnumConstantDecl 0x6e5788 <line:125:3> col:3 mjVIS_SELECT 'int'
 
-# (placeholder) | | `-FullComment 0x81dee0 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x81deb0 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x81de80 <col:37, col:52> Text=" selection point"
+# selection point
 
 # (placeholder) | |-EnumConstantDecl 0x6e5808 <line:126:3> col:3 mjVIS_STATIC 'int'
 
-# (placeholder) | | `-FullComment 0x81dfb0 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x81df80 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x81df50 <col:37, col:50> Text=" static bodies"
+# static bodies
 
 # (placeholder) | |-EnumConstantDecl 0x6e5888 <line:127:3> col:3 mjVIS_SKIN 'int'
 
-# (placeholder) | | `-FullComment 0x81e080 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x81e050 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x81e020 <col:37, col:41> Text=" skin"
+# skin
 
 # (placeholder) | |-EnumConstantDecl 0x6e5908 <line:128:3> col:3 mjVIS_FLEXVERT 'int'
 
-# (placeholder) | | `-FullComment 0x81e150 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x81e120 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x81e0f0 <col:37, col:50> Text=" flex vertices"
+# flex vertices
 
 # (placeholder) | |-EnumConstantDecl 0x6e5988 <line:129:3> col:3 mjVIS_FLEXEDGE 'int'
 
-# (placeholder) | | `-FullComment 0x81e220 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x81e1f0 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x81e1c0 <col:37, col:47> Text=" flex edges"
+# flex edges
 
 # (placeholder) | |-EnumConstantDecl 0x6e5a08 <line:130:3> col:3 mjVIS_FLEXFACE 'int'
 
-# (placeholder) | | `-FullComment 0x81e2f0 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x81e2c0 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x81e290 <col:37, col:55> Text=" flex element faces"
+# flex element faces
 
 # (placeholder) | |-EnumConstantDecl 0x6e5a88 <line:131:3> col:3 mjVIS_FLEXSKIN 'int'
 
-# (placeholder) | | `-FullComment 0x81e3c0 <col:37, col:73>
-
-# (placeholder) | |   `-ParagraphComment 0x81e390 <col:37, col:73>
-
-# (placeholder) | |     `-TextComment 0x81e360 <col:37, col:73> Text=" flex smooth skin (disables the rest)"
+# flex smooth skin (disables the rest)
 
 # (placeholder) | |-EnumConstantDecl 0x6e5b08 <line:132:3> col:3 mjVIS_BODYBVH 'int'
 
-# (placeholder) | | `-FullComment 0x81e490 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x81e460 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x81e430 <col:37, col:67> Text=" body bounding volume hierarchy"
+# body bounding volume hierarchy
 
 # (placeholder) | |-EnumConstantDecl 0x6e5b88 <line:133:3> col:3 mjVIS_FLEXBVH 'int'
 
-# (placeholder) | | `-FullComment 0x81e560 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x81e530 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x81e500 <col:37, col:67> Text=" flex bounding volume hierarchy"
+# flex bounding volume hierarchy
 
 # (placeholder) | |-EnumConstantDecl 0x6e5c08 <line:134:3> col:3 mjVIS_MESHBVH 'int'
 
-# (placeholder) | | `-FullComment 0x81e630 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x81e600 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x81e5d0 <col:37, col:67> Text=" mesh bounding volume hierarchy"
+# mesh bounding volume hierarchy
 
 # (placeholder) | |-EnumConstantDecl 0x6e5c88 <line:135:3> col:3 mjVIS_SDFITER 'int'
 
-# (placeholder) | | `-FullComment 0x81e700 <col:37, col:71>
-
-# (placeholder) | |   `-ParagraphComment 0x81e6d0 <col:37, col:71>
-
-# (placeholder) | |     `-TextComment 0x81e6a0 <col:37, col:71> Text=" iterations of SDF gradient descent"
+# iterations of SDF gradient descent
 
 # (placeholder) | `-EnumConstantDecl 0x6e5d38 <line:137:3> col:3 referenced mjNVISFLAG 'int'
 
-# (placeholder) |   `-FullComment 0x81e7d0 <col:37, col:66>
-
-# (placeholder) |     `-ParagraphComment 0x81e7a0 <col:37, col:66>
-
-# (placeholder) |       `-TextComment 0x81e770 <col:37, col:66> Text=" number of visualization flags"
+# number of visualization flags
 
 alias mjtVisFlag = 
 
@@ -6717,91 +5278,47 @@ alias mjtVisFlag =
 
 # (placeholder) | | | `-IntegerLiteral 0x6e5f48 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x81e8a0 <col:37, col:44>
-
-# (placeholder) | |   `-ParagraphComment 0x81e870 <col:37, col:44>
-
-# (placeholder) | |     `-TextComment 0x81e840 <col:37, col:44> Text=" shadows"
+# shadows
 
 # (placeholder) | |-EnumConstantDecl 0x6e6008 <line:143:3> col:3 mjRND_WIREFRAME 'int'
 
-# (placeholder) | | `-FullComment 0x81e970 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x81e940 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x81e910 <col:37, col:46> Text=" wireframe"
+# wireframe
 
 # (placeholder) | |-EnumConstantDecl 0x6e6088 <line:144:3> col:3 mjRND_REFLECTION 'int'
 
-# (placeholder) | | `-FullComment 0x81ea40 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x81ea10 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x81e9e0 <col:37, col:48> Text=" reflections"
+# reflections
 
 # (placeholder) | |-EnumConstantDecl 0x6e6108 <line:145:3> col:3 mjRND_ADDITIVE 'int'
 
-# (placeholder) | | `-FullComment 0x81eb10 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x81eae0 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x81eab0 <col:37, col:58> Text=" additive transparency"
+# additive transparency
 
 # (placeholder) | |-EnumConstantDecl 0x6e6188 <line:146:3> col:3 mjRND_SKYBOX 'int'
 
-# (placeholder) | | `-FullComment 0x81ebe0 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x81ebb0 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x81eb80 <col:37, col:43> Text=" skybox"
+# skybox
 
 # (placeholder) | |-EnumConstantDecl 0x6e6208 <line:147:3> col:3 mjRND_FOG 'int'
 
-# (placeholder) | | `-FullComment 0x81ecb0 <col:37, col:40>
-
-# (placeholder) | |   `-ParagraphComment 0x81ec80 <col:37, col:40>
-
-# (placeholder) | |     `-TextComment 0x81ec50 <col:37, col:40> Text=" fog"
+# fog
 
 # (placeholder) | |-EnumConstantDecl 0x6e6288 <line:148:3> col:3 mjRND_HAZE 'int'
 
-# (placeholder) | | `-FullComment 0x81ed80 <col:37, col:41>
-
-# (placeholder) | |   `-ParagraphComment 0x81ed50 <col:37, col:41>
-
-# (placeholder) | |     `-TextComment 0x81ed20 <col:37, col:41> Text=" haze"
+# haze
 
 # (placeholder) | |-EnumConstantDecl 0x6e6308 <line:149:3> col:3 mjRND_SEGMENT 'int'
 
-# (placeholder) | | `-FullComment 0x81ee50 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x81ee20 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x81edf0 <col:37, col:67> Text=" segmentation with random color"
+# segmentation with random color
 
 # (placeholder) | |-EnumConstantDecl 0x6e6388 <line:150:3> col:3 mjRND_IDCOLOR 'int'
 
-# (placeholder) | | `-FullComment 0x81ef20 <col:37, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x81eef0 <col:37, col:68>
-
-# (placeholder) | |     `-TextComment 0x81eec0 <col:37, col:68> Text=" segmentation with segid+1 color"
+# segmentation with segid+1 color
 
 # (placeholder) | |-EnumConstantDecl 0x6e6408 <line:151:3> col:3 mjRND_CULL_FACE 'int'
 
-# (placeholder) | | `-FullComment 0x81eff0 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x81efc0 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x81ef90 <col:37, col:56> Text=" cull backward faces"
+# cull backward faces
 
 # (placeholder) | `-EnumConstantDecl 0x6e64b8 <line:153:3> col:3 referenced mjNRNDFLAG 'int'
 
-# (placeholder) |   `-FullComment 0x81f0c0 <col:37, col:62>
-
-# (placeholder) |     `-ParagraphComment 0x81f090 <col:37, col:62>
-
-# (placeholder) |       `-TextComment 0x81f060 <col:37, col:62> Text=" number of rendering flags"
+# number of rendering flags
 
 alias mjtRndFlag = 
 
@@ -6815,27 +5332,15 @@ alias mjtRndFlag =
 
 # (placeholder) | | | `-IntegerLiteral 0x6e66c8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x81f190 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x81f160 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x81f130 <col:37, col:65> Text=" no stereo; use left eye only"
+# no stereo; use left eye only
 
 # (placeholder) | |-EnumConstantDecl 0x6e6788 <line:159:3> col:3 mjSTEREO_QUADBUFFERED 'int'
 
-# (placeholder) | | `-FullComment 0x81f260 <col:37, col:97>
-
-# (placeholder) | |   `-ParagraphComment 0x81f230 <col:37, col:97>
-
-# (placeholder) | |     `-TextComment 0x81f200 <col:37, col:97> Text=" quad buffered; revert to side-by-side if no hardware support"
+# quad buffered; revert to side-by-side if no hardware support
 
 # (placeholder) | `-EnumConstantDecl 0x6e6838 <line:160:3> col:3 mjSTEREO_SIDEBYSIDE 'int'
 
-# (placeholder) |   `-FullComment 0x81f330 <col:37, col:49>
-
-# (placeholder) |     `-ParagraphComment 0x81f300 <col:37, col:49>
-
-# (placeholder) |       `-TextComment 0x81f2d0 <col:37, col:49> Text=" side-by-side"
+# side-by-side
 
 alias mjtStereo = 
 struct mjvPerturb_:
@@ -7194,11 +5699,7 @@ alias mjfOpenResource = UnsafePointer[
 Int32UnsafePointer[mjResource]
 ]
 
-# (placeholder) | `-FullComment 0x827960 <line:34:3, col:59>
-
-# (placeholder) |   `-ParagraphComment 0x827930 <col:3, col:59>
-
-# (placeholder) |     `-TextComment 0x827900 <col:3, col:59> Text=" callback for opening a resource, returns zero on failure"
+# callback for opening a resource, returns zero on failure
 
 
 alias mjfReadResource = UnsafePointer[
@@ -7212,13 +5713,8 @@ NoneType]
 ]
 ]
 
-# (placeholder) | `-FullComment 0x827a50 <line:37:3, line:38:62>
-
-# (placeholder) |   `-ParagraphComment 0x827a20 <line:37:3, line:38:62>
-
-# (placeholder) |     |-TextComment 0x8279d0 <line:37:3, col:34> Text=" callback for reading a resource"
-
-# (placeholder) |     `-TextComment 0x8279f0 <line:38:3, col:62> Text=" return number of bytes stored in buffer, return -1 if error"
+# callback for reading a resource
+# return number of bytes stored in buffer, return -1 if error
 
 
 alias mjfCloseResource = UnsafePointer[
@@ -7228,11 +5724,7 @@ alias mjfCloseResource = UnsafePointer[
 NoneTypeUnsafePointer[mjResource]
 ]
 
-# (placeholder) | `-FullComment 0x827b20 <line:41:3, col:81>
-
-# (placeholder) |   `-ParagraphComment 0x827af0 <col:3, col:81>
-
-# (placeholder) |     `-TextComment 0x827ac0 <col:3, col:81> Text=" callback for closing a resource (responsible for freeing any allocated memory)"
+# callback for closing a resource (responsible for freeing any allocated memory)
 
 
 alias mjfGetResourceDir = UnsafePointer[
@@ -7247,13 +5739,8 @@ Int8]
 UnsafePointer[Int32]
 ]
 
-# (placeholder) | `-FullComment 0x827c10 <line:44:3, line:45:72>
-
-# (placeholder) |   `-ParagraphComment 0x827be0 <line:44:3, line:45:72>
-
-# (placeholder) |     |-TextComment 0x827b90 <line:44:3, col:53> Text=" callback for returning the directory of a resource"
-
-# (placeholder) |     `-TextComment 0x827bb0 <line:45:3, col:72> Text=" sets dir to directory string with ndir being size of directory string"
+# callback for returning the directory of a resource
+# sets dir to directory string with ndir being size of directory string
 
 
 alias mjfResourceModified = UnsafePointer[
@@ -7268,23 +5755,13 @@ UnsafePointer[
 Int8]
 ]
 
-# (placeholder) | `-FullComment 0x827dd0 <line:48:3, line:52:64>
-
-# (placeholder) |   `-ParagraphComment 0x827da0 <line:48:3, line:52:64>
-
-# (placeholder) |     |-TextComment 0x827c80 <line:48:3, col:75> Text=" callback for checking if the current resource was modified from the time"
-
-# (placeholder) |     |-TextComment 0x827ca0 <line:49:3, col:29> Text=" specified by the timestamp"
-
-# (placeholder) |     |-TextComment 0x827cc0 <line:50:3, col:71> Text=" returns 0 if the resource's timestamp matches the provided timestamp"
-
-# (placeholder) |     |-TextComment 0x827ce0 <line:51:3, col:66> Text=" returns > 0 if the resource is younger than the given timestamp"
-
-# (placeholder) |     |-TextComment 0x827d00 <line:52:3, col:11> Text=" returns "
-
-# (placeholder) |     |-TextComment 0x827d20 <col:12> Text="<"
-
-# (placeholder) |     `-TextComment 0x827d40 <col:13, col:64> Text=" 0 if the resource is older than the given timestamp"
+# callback for checking if the current resource was modified from the time
+# specified by the timestamp
+# returns 0 if the resource s timestamp matches the provided timestamp
+# returns > 0 if the resource is younger than the given timestamp
+# returns 
+#<
+# 0 if the resource is older than the given timestamp
 
 struct mjpResourceProvider:
 
@@ -7307,11 +5784,7 @@ alias mjpResourceProvider = mjpResourceProvider
 
 # (placeholder) |-EnumDecl 0x6fede8 <line:70:9, line:75:1> line:70:14 mjtPluginCapabilityBit_
 
-# (placeholder) | |-FullComment 0x828520 <line:68:3, col:100>
-
-# (placeholder) | | `-ParagraphComment 0x8284f0 <col:3, col:100>
-
-# (placeholder) | |   `-TextComment 0x8284c0 <col:3, col:100> Text="---------------------------------- Plugins -------------------------------------------------------"
+#---------------------------------- Plugins -------------------------------------------------------
 
 # (placeholder) | |-EnumConstantDecl 0x6fef30 <line:71:3, col:26> col:3 mjPLUGIN_ACTUATOR 'int'
 
@@ -7325,11 +5798,7 @@ alias mjpResourceProvider = mjpResourceProvider
 
 # (placeholder) | | |   `-IntegerLiteral 0x6feed0 <col:26> 'int' 0
 
-# (placeholder) | | `-FullComment 0x8285f0 <col:37, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x8285c0 <col:37, col:52>
-
-# (placeholder) | |     `-TextComment 0x828590 <col:37, col:52> Text=" actuator forces"
+# actuator forces
 
 # (placeholder) | |-EnumConstantDecl 0x6ff028 <line:72:3, col:26> col:3 mjPLUGIN_SENSOR 'int'
 
@@ -7343,11 +5812,7 @@ alias mjpResourceProvider = mjpResourceProvider
 
 # (placeholder) | | |   `-IntegerLiteral 0x6fefc8 <col:26> 'int' 1
 
-# (placeholder) | | `-FullComment 0x8286c0 <col:37, col:56>
-
-# (placeholder) | |   `-ParagraphComment 0x828690 <col:37, col:56>
-
-# (placeholder) | |     `-TextComment 0x828660 <col:37, col:56> Text=" sensor measurements"
+# sensor measurements
 
 # (placeholder) | |-EnumConstantDecl 0x6ff128 <line:73:3, col:26> col:3 mjPLUGIN_PASSIVE 'int'
 
@@ -7361,11 +5826,7 @@ alias mjpResourceProvider = mjpResourceProvider
 
 # (placeholder) | | |   `-IntegerLiteral 0x6ff0c8 <col:26> 'int' 2
 
-# (placeholder) | | `-FullComment 0x828790 <col:37, col:51>
-
-# (placeholder) | |   `-ParagraphComment 0x828760 <col:37, col:51>
-
-# (placeholder) | |     `-TextComment 0x828730 <col:37, col:51> Text=" passive forces"
+# passive forces
 
 # (placeholder) | `-EnumConstantDecl 0x6ff228 <line:74:3, col:26> col:3 mjPLUGIN_SDF 'int'
 
@@ -7379,18 +5840,10 @@ alias mjpResourceProvider = mjpResourceProvider
 
 # (placeholder) |   |   `-IntegerLiteral 0x6ff1c8 <col:26> 'int' 3
 
-# (placeholder) |   `-FullComment 0x828860 <col:37, col:59>
-
-# (placeholder) |     `-ParagraphComment 0x828830 <col:37, col:59>
-
-# (placeholder) |       `-TextComment 0x828800 <col:37, col:59> Text=" signed distance fields"
+# signed distance fields
 
 alias mjtPluginCapabilityBit = 
-# (placeholder) | `-FullComment 0x828930 <line:68:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x828900 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x8288d0 <col:3, col:100> Text="---------------------------------- Plugins -------------------------------------------------------"
+#---------------------------------- Plugins -------------------------------------------------------
 
 struct mjpPlugin_:
 
@@ -7446,20 +5899,12 @@ NoneTypeUnsafePointer[
 Int8]
 Int32Int32]
 
-# (placeholder) | `-FullComment 0x829a60 <line:172:3, col:63>
-
-# (placeholder) |   `-ParagraphComment 0x829a30 <col:3, col:63>
-
-# (placeholder) |     `-TextComment 0x829a00 <col:3, col:63> Text=" function pointer type for mj_loadAllPluginLibraries callback"
+# function pointer type for mj_loadAllPluginLibraries callback
 
 
 # (placeholder) |-EnumDecl 0x7032f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjrender.h:30:9, line:39:1> line:30:14 mjtGridPos_
 
-# (placeholder) | |-FullComment 0x829b30 <line:28:3, col:100>
-
-# (placeholder) | | `-ParagraphComment 0x829b00 <col:3, col:100>
-
-# (placeholder) | |   `-TextComment 0x829ad0 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 # (placeholder) | |-EnumConstantDecl 0x703428 <line:31:3, col:25> col:3 mjGRID_TOPLEFT 'int'
 
@@ -7469,74 +5914,38 @@ Int32Int32]
 
 # (placeholder) | | | `-IntegerLiteral 0x7033e8 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x829c00 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x829bd0 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x829ba0 <col:37, col:45> Text=" top left"
+# top left
 
 # (placeholder) | |-EnumConstantDecl 0x7034a8 <line:32:3> col:3 mjGRID_TOPRIGHT 'int'
 
-# (placeholder) | | `-FullComment 0x829cd0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x829ca0 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x829c70 <col:37, col:46> Text=" top right"
+# top right
 
 # (placeholder) | |-EnumConstantDecl 0x703528 <line:33:3> col:3 mjGRID_BOTTOMLEFT 'int'
 
-# (placeholder) | | `-FullComment 0x829db0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x829d70 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x829d40 <col:37, col:48> Text=" bottom left"
+# bottom left
 
 # (placeholder) | |-EnumConstantDecl 0x7035a8 <line:34:3> col:3 mjGRID_BOTTOMRIGHT 'int'
 
-# (placeholder) | | `-FullComment 0x829e80 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x829e50 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x829e20 <col:37, col:49> Text=" bottom right"
+# bottom right
 
 # (placeholder) | |-EnumConstantDecl 0x703628 <line:35:3> col:3 mjGRID_TOP 'int'
 
-# (placeholder) | | `-FullComment 0x829f50 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x829f20 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x829ef0 <col:37, col:47> Text=" top center"
+# top center
 
 # (placeholder) | |-EnumConstantDecl 0x7036a8 <line:36:3> col:3 mjGRID_BOTTOM 'int'
 
-# (placeholder) | | `-FullComment 0x82a020 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x829ff0 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x829fc0 <col:37, col:50> Text=" bottom center"
+# bottom center
 
 # (placeholder) | |-EnumConstantDecl 0x703728 <line:37:3> col:3 mjGRID_LEFT 'int'
 
-# (placeholder) | | `-FullComment 0x82a0f0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x82a0c0 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x82a090 <col:37, col:48> Text=" left center"
+# left center
 
 # (placeholder) | `-EnumConstantDecl 0x706808 <line:38:3> col:3 mjGRID_RIGHT 'int'
 
-# (placeholder) |   `-FullComment 0x82a1c0 <col:37, col:49>
-
-# (placeholder) |     `-ParagraphComment 0x82a190 <col:37, col:49>
-
-# (placeholder) |       `-TextComment 0x82a160 <col:37, col:49> Text=" right center"
+# right center
 
 alias mjtGridPos = 
-# (placeholder) | `-FullComment 0x82a290 <line:28:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x82a260 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x82a230 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 
 # (placeholder) |-EnumDecl 0x706928 <line:42:9, line:45:1> line:42:14 mjtFramebuffer_
@@ -7549,19 +5958,11 @@ alias mjtGridPos =
 
 # (placeholder) | | | `-IntegerLiteral 0x706a18 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82a360 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x82a330 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x82a300 <col:37, col:58> Text=" default/window buffer"
+# default/window buffer
 
 # (placeholder) | `-EnumConstantDecl 0x706b08 <line:44:3> col:3 mjFB_OFFSCREEN 'int'
 
-# (placeholder) |   `-FullComment 0x82a430 <col:37, col:53>
-
-# (placeholder) |     `-ParagraphComment 0x82a400 <col:37, col:53>
-
-# (placeholder) |       `-TextComment 0x82a3d0 <col:37, col:53> Text=" offscreen buffer"
+# offscreen buffer
 
 alias mjtFramebuffer = 
 
@@ -7575,11 +5976,7 @@ alias mjtFramebuffer =
 
 # (placeholder) | | | `-IntegerLiteral 0x706d18 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82a500 <col:37, col:74>
-
-# (placeholder) | |   `-ParagraphComment 0x82a4d0 <col:37, col:74>
-
-# (placeholder) | |     `-TextComment 0x82a4a0 <col:37, col:74> Text=" standard depth map; 0: znear, 1: zfar"
+# standard depth map; 0: znear, 1: zfar
 
 # (placeholder) | `-EnumConstantDecl 0x706e48 <line:49:3, col:25> col:3 mjDEPTH_ZEROFAR 'int'
 
@@ -7589,11 +5986,7 @@ alias mjtFramebuffer =
 
 # (placeholder) |   | `-IntegerLiteral 0x706dd8 <col:25> 'int' 1
 
-# (placeholder) |   `-FullComment 0x82a5d0 <col:37, col:74>
-
-# (placeholder) |     `-ParagraphComment 0x82a5a0 <col:37, col:74>
-
-# (placeholder) |       `-TextComment 0x82a570 <col:37, col:74> Text=" reversed depth map; 1: znear, 0: zfar"
+# reversed depth map; 1: znear, 0: zfar
 
 alias mjtDepthMap = 
 
@@ -7607,11 +6000,7 @@ alias mjtDepthMap =
 
 # (placeholder) | | | `-IntegerLiteral 0x707058 <col:25> 'int' 50
 
-# (placeholder) | | `-FullComment 0x82a6a0 <col:37, col:78>
-
-# (placeholder) | |   `-ParagraphComment 0x82a670 <col:37, col:78>
-
-# (placeholder) | |     `-TextComment 0x82a640 <col:37, col:78> Text=" 50% scale, suitable for low-res rendering"
+# 50% scale, suitable for low-res rendering
 
 # (placeholder) | |-EnumConstantDecl 0x707158 <line:54:3, col:25> col:3 mjFONTSCALE_100 'int'
 
@@ -7621,11 +6010,7 @@ alias mjtDepthMap =
 
 # (placeholder) | | | `-IntegerLiteral 0x707118 <col:25> 'int' 100
 
-# (placeholder) | | `-FullComment 0x82a770 <col:37, col:89>
-
-# (placeholder) | |   `-ParagraphComment 0x82a740 <col:37, col:89>
-
-# (placeholder) | |     `-TextComment 0x82a710 <col:37, col:89> Text=" normal scale, suitable in the absence of DPI scaling"
+# normal scale, suitable in the absence of DPI scaling
 
 # (placeholder) | |-EnumConstantDecl 0x707218 <line:55:3, col:25> col:3 mjFONTSCALE_150 'int'
 
@@ -7635,11 +6020,7 @@ alias mjtDepthMap =
 
 # (placeholder) | | | `-IntegerLiteral 0x7071d8 <col:25> 'int' 150
 
-# (placeholder) | | `-FullComment 0x82a840 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x82a810 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x82a7e0 <col:37, col:47> Text=" 150% scale"
+# 150% scale
 
 # (placeholder) | |-EnumConstantDecl 0x7072d8 <line:56:3, col:25> col:3 mjFONTSCALE_200 'int'
 
@@ -7649,11 +6030,7 @@ alias mjtDepthMap =
 
 # (placeholder) | | | `-IntegerLiteral 0x707298 <col:25> 'int' 200
 
-# (placeholder) | | `-FullComment 0x82a910 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x82a8e0 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x82a8b0 <col:37, col:47> Text=" 200% scale"
+# 200% scale
 
 # (placeholder) | |-EnumConstantDecl 0x707398 <line:57:3, col:25> col:3 mjFONTSCALE_250 'int'
 
@@ -7663,11 +6040,7 @@ alias mjtDepthMap =
 
 # (placeholder) | | | `-IntegerLiteral 0x707358 <col:25> 'int' 250
 
-# (placeholder) | | `-FullComment 0x82a9e0 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x82a9b0 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x82a980 <col:37, col:47> Text=" 250% scale"
+# 250% scale
 
 # (placeholder) | `-EnumConstantDecl 0x707488 <line:58:3, col:25> col:3 mjFONTSCALE_300 'int'
 
@@ -7677,11 +6050,7 @@ alias mjtDepthMap =
 
 # (placeholder) |   | `-IntegerLiteral 0x707418 <col:25> 'int' 300
 
-# (placeholder) |   `-FullComment 0x82aab0 <col:37, col:47>
-
-# (placeholder) |     `-ParagraphComment 0x82aa80 <col:37, col:47>
-
-# (placeholder) |       `-TextComment 0x82aa50 <col:37, col:47> Text=" 300% scale"
+# 300% scale
 
 alias mjtFontScale = 
 
@@ -7695,27 +6064,15 @@ alias mjtFontScale =
 
 # (placeholder) | | | `-IntegerLiteral 0x707698 <col:25> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82ab80 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x82ab50 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x82ab20 <col:37, col:48> Text=" normal font"
+# normal font
 
 # (placeholder) | |-EnumConstantDecl 0x707758 <line:64:3> col:3 mjFONT_SHADOW 'int'
 
-# (placeholder) | | `-FullComment 0x82ac50 <col:37, col:82>
-
-# (placeholder) | |   `-ParagraphComment 0x82ac20 <col:37, col:82>
-
-# (placeholder) | |     `-TextComment 0x82abf0 <col:37, col:82> Text=" normal font with shadow (for higher contrast)"
+# normal font with shadow (for higher contrast)
 
 # (placeholder) | `-EnumConstantDecl 0x707808 <line:65:3> col:3 mjFONT_BIG 'int'
 
-# (placeholder) |   `-FullComment 0x82ad20 <col:37, col:63>
-
-# (placeholder) |     `-ParagraphComment 0x82acf0 <col:37, col:63>
-
-# (placeholder) |       `-TextComment 0x82acc0 <col:37, col:63> Text=" big font (for user alerts)"
+# big font (for user alerts)
 
 alias mjtFont = 
 struct mjrRect_:
@@ -7858,11 +6215,7 @@ struct mjrContext_:
 alias mjrContext = mjrContext_
 
 alias mjString = NoneType
-# (placeholder) | `-FullComment 0x82e3a0 <line:46:5, col:20>
-
-# (placeholder) |   `-ParagraphComment 0x82e370 <col:5, col:20>
-
-# (placeholder) |     `-TextComment 0x82e340 <col:5, col:20> Text=" C: opaque types"
+# C: opaque types
 
 
 alias mjStringVec = NoneType
@@ -7881,11 +6234,7 @@ alias mjByteVec = NoneType
 
 # (placeholder) |-EnumDecl 0x70e198 <line:60:9, line:63:1> line:60:14 mjtGeomInertia_
 
-# (placeholder) | |-FullComment 0x82e470 <line:58:3, col:100>
-
-# (placeholder) | | `-ParagraphComment 0x82e440 <col:3, col:100>
-
-# (placeholder) | |   `-TextComment 0x82e410 <col:3, col:100> Text="-------------------------------- enum types (mjt) ------------------------------------------------"
+#-------------------------------- enum types (mjt) ------------------------------------------------
 
 # (placeholder) | |-EnumConstantDecl 0x70e2c8 <line:61:3, col:22> col:3 mjINERTIA_VOLUME 'int'
 
@@ -7895,26 +6244,14 @@ alias mjByteVec = NoneType
 
 # (placeholder) | | | `-IntegerLiteral 0x70e288 <col:22> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82e540 <col:38, col:68>
-
-# (placeholder) | |   `-ParagraphComment 0x82e510 <col:38, col:68>
-
-# (placeholder) | |     `-TextComment 0x82e4e0 <col:38, col:68> Text=" mass distributed in the volume"
+# mass distributed in the volume
 
 # (placeholder) | `-EnumConstantDecl 0x70e348 <line:62:3> col:3 mjINERTIA_SHELL 'int'
 
-# (placeholder) |   `-FullComment 0x82e610 <col:38, col:69>
-
-# (placeholder) |     `-ParagraphComment 0x82e5e0 <col:38, col:69>
-
-# (placeholder) |       `-TextComment 0x82e5b0 <col:38, col:69> Text=" mass distributed on the surface"
+# mass distributed on the surface
 
 alias mjtGeomInertia = 
-# (placeholder) | `-FullComment 0x82e6e0 <line:58:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x82e6b0 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x82e680 <col:3, col:100> Text="-------------------------------- enum types (mjt) ------------------------------------------------"
+#-------------------------------- enum types (mjt) ------------------------------------------------
 
 
 # (placeholder) |-EnumDecl 0x70e498 <line:66:9, line:71:1> line:66:14 mjtMeshInertia_
@@ -7927,35 +6264,19 @@ alias mjtGeomInertia =
 
 # (placeholder) | | | `-IntegerLiteral 0x70e588 <col:27> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82e7b0 <col:39, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x82e780 <col:39, col:58>
-
-# (placeholder) | |     `-TextComment 0x82e750 <col:39, col:58> Text=" convex mesh inertia"
+# convex mesh inertia
 
 # (placeholder) | |-EnumConstantDecl 0x70e648 <line:68:3> col:3 mjMESH_INERTIA_EXACT 'int'
 
-# (placeholder) | | `-FullComment 0x82e880 <col:39, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x82e850 <col:39, col:57>
-
-# (placeholder) | |     `-TextComment 0x82e820 <col:39, col:57> Text=" exact mesh inertia"
+# exact mesh inertia
 
 # (placeholder) | |-EnumConstantDecl 0x70e6c8 <line:69:3> col:3 mjMESH_INERTIA_LEGACY 'int'
 
-# (placeholder) | | `-FullComment 0x82e950 <col:39, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x82e920 <col:39, col:58>
-
-# (placeholder) | |     `-TextComment 0x82e8f0 <col:39, col:58> Text=" legacy mesh inertia"
+# legacy mesh inertia
 
 # (placeholder) | `-EnumConstantDecl 0x70e778 <line:70:3> col:3 mjMESH_INERTIA_SHELL 'int'
 
-# (placeholder) |   `-FullComment 0x82ea20 <col:39, col:57>
-
-# (placeholder) |     `-ParagraphComment 0x82e9f0 <col:39, col:57>
-
-# (placeholder) |       `-TextComment 0x82e9c0 <col:39, col:57> Text=" shell mesh inertia"
+# shell mesh inertia
 
 alias mjtMeshInertia = 
 
@@ -7969,35 +6290,19 @@ alias mjtMeshInertia =
 
 # (placeholder) | | | `-IntegerLiteral 0x70e988 <col:20> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82eaf0 <col:38, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x82eac0 <col:38, col:57>
-
-# (placeholder) | |     `-TextComment 0x82ea90 <col:38, col:57> Text=" no built-in texture"
+# no built-in texture
 
 # (placeholder) | |-EnumConstantDecl 0x70ea48 <line:76:3> col:3 mjBUILTIN_GRADIENT 'int'
 
-# (placeholder) | | `-FullComment 0x82ebc0 <col:38, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x82eb90 <col:38, col:58>
-
-# (placeholder) | |     `-TextComment 0x82eb60 <col:38, col:58> Text=" gradient: rgb1->rgb2"
+# gradient: rgb1->rgb2
 
 # (placeholder) | |-EnumConstantDecl 0x70eac8 <line:77:3> col:3 mjBUILTIN_CHECKER 'int'
 
-# (placeholder) | | `-FullComment 0x82ec90 <col:38, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x82ec60 <col:38, col:65>
-
-# (placeholder) | |     `-TextComment 0x82ec30 <col:38, col:65> Text=" checker pattern: rgb1, rgb2"
+# checker pattern: rgb1, rgb2
 
 # (placeholder) | `-EnumConstantDecl 0x70eb78 <line:78:3> col:3 mjBUILTIN_FLAT 'int'
 
-# (placeholder) |   `-FullComment 0x82ed60 <col:38, col:83>
-
-# (placeholder) |     `-ParagraphComment 0x82ed30 <col:38, col:83>
-
-# (placeholder) |       `-TextComment 0x82ed00 <col:38, col:83> Text=" 2d: rgb1; cube: rgb1-up, rgb2-side, rgb3-down"
+# 2d: rgb1; cube: rgb1-up, rgb2-side, rgb3-down
 
 alias mjtBuiltin = 
 
@@ -8011,35 +6316,19 @@ alias mjtBuiltin =
 
 # (placeholder) | | | `-IntegerLiteral 0x70ed88 <col:17> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82ee30 <col:38, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x82ee00 <col:38, col:45>
-
-# (placeholder) | |     `-TextComment 0x82edd0 <col:38, col:45> Text=" no mark"
+# no mark
 
 # (placeholder) | |-EnumConstantDecl 0x70ee48 <line:84:3> col:3 mjMARK_EDGE 'int'
 
-# (placeholder) | | `-FullComment 0x82ef00 <col:38, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x82eed0 <col:38, col:43>
-
-# (placeholder) | |     `-TextComment 0x82eea0 <col:38, col:43> Text=" edges"
+# edges
 
 # (placeholder) | |-EnumConstantDecl 0x70eec8 <line:85:3> col:3 mjMARK_CROSS 'int'
 
-# (placeholder) | | `-FullComment 0x82efd0 <col:38, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x82efa0 <col:38, col:43>
-
-# (placeholder) | |     `-TextComment 0x82ef70 <col:38, col:43> Text=" cross"
+# cross
 
 # (placeholder) | `-EnumConstantDecl 0x70ef78 <line:86:3> col:3 mjMARK_RANDOM 'int'
 
-# (placeholder) |   `-FullComment 0x82f0a0 <col:38, col:49>
-
-# (placeholder) |     `-ParagraphComment 0x82f070 <col:38, col:49>
-
-# (placeholder) |       `-TextComment 0x82f040 <col:38, col:49> Text=" random dots"
+# random dots
 
 alias mjtMark = 
 
@@ -8053,27 +6342,15 @@ alias mjtMark =
 
 # (placeholder) | | | `-IntegerLiteral 0x70f188 <col:21> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82f170 <col:38, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x82f140 <col:38, col:49>
-
-# (placeholder) | |     `-TextComment 0x82f110 <col:38, col:49> Text=" not limited"
+# not limited
 
 # (placeholder) | |-EnumConstantDecl 0x70f248 <line:92:3> col:3 mjLIMITED_TRUE 'int'
 
-# (placeholder) | | `-FullComment 0x82f240 <col:38, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x82f210 <col:38, col:45>
-
-# (placeholder) | |     `-TextComment 0x82f1e0 <col:38, col:45> Text=" limited"
+# limited
 
 # (placeholder) | `-EnumConstantDecl 0x70f2c8 <line:93:3> col:3 mjLIMITED_AUTO 'int'
 
-# (placeholder) |   `-FullComment 0x82f310 <col:38, col:77>
-
-# (placeholder) |     `-ParagraphComment 0x82f2e0 <col:38, col:77>
-
-# (placeholder) |       `-TextComment 0x82f2b0 <col:38, col:77> Text=" limited inferred from presence of range"
+# limited inferred from presence of range
 
 alias mjtLimited = 
 
@@ -8087,27 +6364,15 @@ alias mjtLimited =
 
 # (placeholder) | | | `-IntegerLiteral 0x70f508 <col:23> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82f3e0 <col:38, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x82f3b0 <col:38, col:49>
-
-# (placeholder) | |     `-TextComment 0x82f380 <col:38, col:49> Text=" don't align"
+# don t align
 
 # (placeholder) | |-EnumConstantDecl 0x70f5c8 <line:98:3> col:3 mjALIGNFREE_TRUE 'int'
 
-# (placeholder) | | `-FullComment 0x82f4b0 <col:38, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x82f480 <col:38, col:43>
-
-# (placeholder) | |     `-TextComment 0x82f450 <col:38, col:43> Text=" align"
+# align
 
 # (placeholder) | `-EnumConstantDecl 0x70f648 <line:99:3> col:3 mjALIGNFREE_AUTO 'int'
 
-# (placeholder) |   `-FullComment 0x82f580 <col:38, col:70>
-
-# (placeholder) |     `-ParagraphComment 0x82f550 <col:38, col:70>
-
-# (placeholder) |       `-TextComment 0x82f520 <col:38, col:70> Text=" respect the global compiler flag"
+# respect the global compiler flag
 
 alias mjtAlignFree = 
 
@@ -8121,27 +6386,15 @@ alias mjtAlignFree =
 
 # (placeholder) | | | `-IntegerLiteral 0x70f888 <col:29> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82f650 <col:38, col:75>
-
-# (placeholder) | |   `-ParagraphComment 0x82f620 <col:38, col:75>
-
-# (placeholder) | |     `-TextComment 0x82f5f0 <col:38, col:75> Text=" do not use; inertial element required"
+# do not use; inertial element required
 
 # (placeholder) | |-EnumConstantDecl 0x70f948 <line:105:3> col:3 mjINERTIAFROMGEOM_TRUE 'int'
 
-# (placeholder) | | `-FullComment 0x82f720 <col:38, col:76>
-
-# (placeholder) | |   `-ParagraphComment 0x82f6f0 <col:38, col:76>
-
-# (placeholder) | |     `-TextComment 0x82f6c0 <col:38, col:76> Text=" always use; overwrite inertial element"
+# always use; overwrite inertial element
 
 # (placeholder) | `-EnumConstantDecl 0x711478 <line:106:3> col:3 mjINERTIAFROMGEOM_AUTO 'int'
 
-# (placeholder) |   `-FullComment 0x82f7f0 <col:38, col:77>
-
-# (placeholder) |     `-ParagraphComment 0x82f7c0 <col:38, col:77>
-
-# (placeholder) |       `-TextComment 0x82f790 <col:38, col:77> Text=" use only if inertial element is missing"
+# use only if inertial element is missing
 
 alias mjtInertiaFromGeom = 
 
@@ -8155,43 +6408,23 @@ alias mjtInertiaFromGeom =
 
 # (placeholder) | | | `-IntegerLiteral 0x711688 <col:24> 'int' 0
 
-# (placeholder) | | `-FullComment 0x82f8c0 <col:38, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x82f890 <col:38, col:48>
-
-# (placeholder) | |     `-TextComment 0x82f860 <col:38, col:48> Text=" quaternion"
+# quaternion
 
 # (placeholder) | |-EnumConstantDecl 0x711748 <line:112:3> col:3 mjORIENTATION_AXISANGLE 'int'
 
-# (placeholder) | | `-FullComment 0x82f990 <col:38, col:52>
-
-# (placeholder) | |   `-ParagraphComment 0x82f960 <col:38, col:52>
-
-# (placeholder) | |     `-TextComment 0x82f930 <col:38, col:52> Text=" axis and angle"
+# axis and angle
 
 # (placeholder) | |-EnumConstantDecl 0x7117c8 <line:113:3> col:3 mjORIENTATION_XYAXES 'int'
 
-# (placeholder) | | `-FullComment 0x82fa60 <col:38, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x82fa30 <col:38, col:50>
-
-# (placeholder) | |     `-TextComment 0x82fa00 <col:38, col:50> Text=" x and y axes"
+# x and y axes
 
 # (placeholder) | |-EnumConstantDecl 0x711848 <line:114:3> col:3 mjORIENTATION_ZAXIS 'int'
 
-# (placeholder) | | `-FullComment 0x82fb30 <col:38, col:63>
-
-# (placeholder) | |   `-ParagraphComment 0x82fb00 <col:38, col:63>
-
-# (placeholder) | |     `-TextComment 0x82fad0 <col:38, col:63> Text=" z axis (minimal rotation)"
+# z axis (minimal rotation)
 
 # (placeholder) | `-EnumConstantDecl 0x7118c8 <line:115:3> col:3 mjORIENTATION_EULER 'int'
 
-# (placeholder) |   `-FullComment 0x82fc00 <col:38, col:50>
-
-# (placeholder) |     `-ParagraphComment 0x82fbd0 <col:38, col:50>
-
-# (placeholder) |       `-TextComment 0x82fba0 <col:38, col:50> Text=" Euler angles"
+# Euler angles
 
 alias mjtOrientation = 
 struct mjsElement_:
@@ -8202,11 +6435,7 @@ struct mjsElement_:
 
 
 alias mjsElement = mjsElement_
-# (placeholder) | `-FullComment 0x82ff40 <line:119:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x82ff10 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x82fee0 <col:3, col:100> Text="-------------------------------- attribute structs (mjs) -----------------------------------------"
+#-------------------------------- attribute structs (mjs) -----------------------------------------
 
 struct mjsCompiler_:
 
@@ -9183,11 +7412,7 @@ alias mjsDefault = mjsDefault_
 
 # (placeholder) |-EnumDecl 0x732bc0 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:65:9, line:70:1> line:65:14 mjtButton_
 
-# (placeholder) | |-FullComment 0x851dc0 <line:63:3, col:100>
-
-# (placeholder) | | `-ParagraphComment 0x851d90 <col:3, col:100>
-
-# (placeholder) | |   `-TextComment 0x851d60 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 # (placeholder) | |-EnumConstantDecl 0x73cb00 <line:66:3, col:19> col:3 mjBUTTON_NONE 'int'
 
@@ -9197,42 +7422,22 @@ alias mjsDefault = mjsDefault_
 
 # (placeholder) | | | `-IntegerLiteral 0x732ca8 <col:19> 'int' 0
 
-# (placeholder) | | `-FullComment 0x851eb0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x851e80 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x851e50 <col:37, col:46> Text=" no button"
+# no button
 
 # (placeholder) | |-EnumConstantDecl 0x73cb78 <line:67:3> col:3 mjBUTTON_LEFT 'int'
 
-# (placeholder) | | `-FullComment 0x851f80 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x851f50 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x851f20 <col:37, col:48> Text=" left button"
+# left button
 
 # (placeholder) | |-EnumConstantDecl 0x73cbf8 <line:68:3> col:3 mjBUTTON_RIGHT 'int'
 
-# (placeholder) | | `-FullComment 0x852050 <col:37, col:49>
-
-# (placeholder) | |   `-ParagraphComment 0x852020 <col:37, col:49>
-
-# (placeholder) | |     `-TextComment 0x851ff0 <col:37, col:49> Text=" right button"
+# right button
 
 # (placeholder) | `-EnumConstantDecl 0x73cca8 <line:69:3> col:3 mjBUTTON_MIDDLE 'int'
 
-# (placeholder) |   `-FullComment 0x852120 <col:37, col:50>
-
-# (placeholder) |     `-ParagraphComment 0x8520f0 <col:37, col:50>
-
-# (placeholder) |       `-TextComment 0x8520c0 <col:37, col:50> Text=" middle button"
+# middle button
 
 alias mjtButton = 
-# (placeholder) | `-FullComment 0x8521f0 <line:63:3, col:100>
-
-# (placeholder) |   `-ParagraphComment 0x8521c0 <col:3, col:100>
-
-# (placeholder) |     `-TextComment 0x852190 <col:3, col:100> Text="---------------------------------- primitive types (mjt) -----------------------------------------"
+#---------------------------------- primitive types (mjt) -----------------------------------------
 
 
 # (placeholder) |-EnumDecl 0x73cdc8 <line:73:9, line:83:1> line:73:14 mjtEvent_
@@ -9245,75 +7450,39 @@ alias mjtButton =
 
 # (placeholder) | | | `-IntegerLiteral 0x73ceb8 <col:18> 'int' 0
 
-# (placeholder) | | `-FullComment 0x8522c0 <col:37, col:45>
-
-# (placeholder) | |   `-ParagraphComment 0x852290 <col:37, col:45>
-
-# (placeholder) | |     `-TextComment 0x852260 <col:37, col:45> Text=" no event"
+# no event
 
 # (placeholder) | |-EnumConstantDecl 0x73cf78 <line:75:3> col:3 mjEVENT_MOVE 'int'
 
-# (placeholder) | | `-FullComment 0x852390 <col:37, col:47>
-
-# (placeholder) | |   `-ParagraphComment 0x852360 <col:37, col:47>
-
-# (placeholder) | |     `-TextComment 0x852330 <col:37, col:47> Text=" mouse move"
+# mouse move
 
 # (placeholder) | |-EnumConstantDecl 0x73cff8 <line:76:3> col:3 mjEVENT_PRESS 'int'
 
-# (placeholder) | | `-FullComment 0x852460 <col:37, col:55>
-
-# (placeholder) | |   `-ParagraphComment 0x852430 <col:37, col:55>
-
-# (placeholder) | |     `-TextComment 0x852400 <col:37, col:55> Text=" mouse button press"
+# mouse button press
 
 # (placeholder) | |-EnumConstantDecl 0x73d078 <line:77:3> col:3 mjEVENT_RELEASE 'int'
 
-# (placeholder) | | `-FullComment 0x852530 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x852500 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x8524d0 <col:37, col:57> Text=" mouse button release"
+# mouse button release
 
 # (placeholder) | |-EnumConstantDecl 0x73d0f8 <line:78:3> col:3 mjEVENT_SCROLL 'int'
 
-# (placeholder) | | `-FullComment 0x852600 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x8525d0 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x8525a0 <col:37, col:43> Text=" scroll"
+# scroll
 
 # (placeholder) | |-EnumConstantDecl 0x73d178 <line:79:3> col:3 mjEVENT_KEY 'int'
 
-# (placeholder) | | `-FullComment 0x8526d0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x8526a0 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x852670 <col:37, col:46> Text=" key press"
+# key press
 
 # (placeholder) | |-EnumConstantDecl 0x73d1f8 <line:80:3> col:3 mjEVENT_RESIZE 'int'
 
-# (placeholder) | | `-FullComment 0x8527a0 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x852770 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x852740 <col:37, col:43> Text=" resize"
+# resize
 
 # (placeholder) | |-EnumConstantDecl 0x73d278 <line:81:3> col:3 mjEVENT_REDRAW 'int'
 
-# (placeholder) | | `-FullComment 0x852870 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x852840 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x852810 <col:37, col:43> Text=" redraw"
+# redraw
 
 # (placeholder) | `-EnumConstantDecl 0x73d328 <line:82:3> col:3 mjEVENT_FILESDROP 'int'
 
-# (placeholder) |   `-FullComment 0x852940 <col:37, col:47>
-
-# (placeholder) |     `-ParagraphComment 0x852910 <col:37, col:47>
-
-# (placeholder) |       `-TextComment 0x8528e0 <col:37, col:47> Text=" files drop"
+# files drop
 
 alias mjtEvent = 
 
@@ -9329,11 +7498,7 @@ alias mjtEvent =
 
 # (placeholder) | | |   `-IntegerLiteral 0x73d538 <col:17> 'int' 2
 
-# (placeholder) | | `-FullComment 0x852a10 <col:37, col:73>
-
-# (placeholder) | |   `-ParagraphComment 0x8529e0 <col:37, col:73>
-
-# (placeholder) | |     `-TextComment 0x8529b0 <col:37, col:73> Text=" end of definition list (not an item)"
+# end of definition list (not an item)
 
 # (placeholder) | |-EnumConstantDecl 0x73d660 <line:88:3, col:21> col:3 mjITEM_SECTION 'int'
 
@@ -9345,11 +7510,7 @@ alias mjtEvent =
 
 # (placeholder) | | |   `-IntegerLiteral 0x73d608 <col:21> 'int' 1
 
-# (placeholder) | | `-FullComment 0x852ae0 <col:37, col:58>
-
-# (placeholder) | |   `-ParagraphComment 0x852ab0 <col:37, col:58>
-
-# (placeholder) | |     `-TextComment 0x852a80 <col:37, col:58> Text=" section (not an item)"
+# section (not an item)
 
 # (placeholder) | |-EnumConstantDecl 0x73d718 <line:89:3, col:22> col:3 mjITEM_SEPARATOR 'int'
 
@@ -9359,123 +7520,63 @@ alias mjtEvent =
 
 # (placeholder) | | | `-IntegerLiteral 0x73d6d8 <col:22> 'int' 0
 
-# (placeholder) | | `-FullComment 0x852bb0 <col:37, col:46>
-
-# (placeholder) | |   `-ParagraphComment 0x852b80 <col:37, col:46>
-
-# (placeholder) | |     `-TextComment 0x852b50 <col:37, col:46> Text=" separator"
+# separator
 
 # (placeholder) | |-EnumConstantDecl 0x73d798 <line:90:3> col:3 mjITEM_STATIC 'int'
 
-# (placeholder) | | `-FullComment 0x852c80 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x852c50 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x852c20 <col:37, col:48> Text=" static text"
+# static text
 
 # (placeholder) | |-EnumConstantDecl 0x73d818 <line:91:3> col:3 mjITEM_BUTTON 'int'
 
-# (placeholder) | | `-FullComment 0x852d50 <col:37, col:43>
-
-# (placeholder) | |   `-ParagraphComment 0x852d20 <col:37, col:43>
-
-# (placeholder) | |     `-TextComment 0x852cf0 <col:37, col:43> Text=" button"
+# button
 
 # (placeholder) | |-EnumConstantDecl 0x73d8c8 <line:94:3> col:3 mjITEM_CHECKINT 'int'
 
-# (placeholder) | | `-FullComment 0x852e20 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x852df0 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x852dc0 <col:37, col:57> Text=" check box, int value"
+# check box, int value
 
 # (placeholder) | |-EnumConstantDecl 0x73d948 <line:95:3> col:3 mjITEM_CHECKBYTE 'int'
 
-# (placeholder) | | `-FullComment 0x852ef0 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x852ec0 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x852e90 <col:37, col:61> Text=" check box, mjtByte value"
+# check box, mjtByte value
 
 # (placeholder) | |-EnumConstantDecl 0x73d9c8 <line:96:3> col:3 mjITEM_RADIO 'int'
 
-# (placeholder) | | `-FullComment 0x852fc0 <col:37, col:48>
-
-# (placeholder) | |   `-ParagraphComment 0x852f90 <col:37, col:48>
-
-# (placeholder) | |     `-TextComment 0x852f60 <col:37, col:48> Text=" radio group"
+# radio group
 
 # (placeholder) | |-EnumConstantDecl 0x73da48 <line:97:3> col:3 mjITEM_RADIOLINE 'int'
 
-# (placeholder) | | `-FullComment 0x853090 <col:37, col:61>
-
-# (placeholder) | |   `-ParagraphComment 0x853060 <col:37, col:61>
-
-# (placeholder) | |     `-TextComment 0x853030 <col:37, col:61> Text=" radio group, single line"
+# radio group, single line
 
 # (placeholder) | |-EnumConstantDecl 0x73dac8 <line:98:3> col:3 mjITEM_SELECT 'int'
 
-# (placeholder) | | `-FullComment 0x853160 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x853130 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x853100 <col:37, col:50> Text=" selection box"
+# selection box
 
 # (placeholder) | |-EnumConstantDecl 0x73db48 <line:99:3> col:3 mjITEM_SLIDERINT 'int'
 
-# (placeholder) | | `-FullComment 0x853230 <col:37, col:54>
-
-# (placeholder) | |   `-ParagraphComment 0x853200 <col:37, col:54>
-
-# (placeholder) | |     `-TextComment 0x8531d0 <col:37, col:54> Text=" slider, int value"
+# slider, int value
 
 # (placeholder) | |-EnumConstantDecl 0x73dbc8 <line:100:3> col:3 mjITEM_SLIDERNUM 'int'
 
-# (placeholder) | | `-FullComment 0x853300 <col:37, col:57>
-
-# (placeholder) | |   `-ParagraphComment 0x8532d0 <col:37, col:57>
-
-# (placeholder) | |     `-TextComment 0x8532a0 <col:37, col:57> Text=" slider, mjtNum value"
+# slider, mjtNum value
 
 # (placeholder) | |-EnumConstantDecl 0x73dc48 <line:101:3> col:3 mjITEM_EDITINT 'int'
 
-# (placeholder) | | `-FullComment 0x8533d0 <col:37, col:63>
-
-# (placeholder) | |   `-ParagraphComment 0x8533a0 <col:37, col:63>
-
-# (placeholder) | |     `-TextComment 0x853370 <col:37, col:63> Text=" editable array, int values"
+# editable array, int values
 
 # (placeholder) | |-EnumConstantDecl 0x73dcc8 <line:102:3> col:3 mjITEM_EDITNUM 'int'
 
-# (placeholder) | | `-FullComment 0x8534a0 <col:37, col:66>
-
-# (placeholder) | |   `-ParagraphComment 0x853470 <col:37, col:66>
-
-# (placeholder) | |     `-TextComment 0x853440 <col:37, col:66> Text=" editable array, mjtNum values"
+# editable array, mjtNum values
 
 # (placeholder) | |-EnumConstantDecl 0x73dd48 <line:103:3> col:3 mjITEM_EDITFLOAT 'int'
 
-# (placeholder) | | `-FullComment 0x853570 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x853540 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x853510 <col:37, col:65> Text=" editable array, float values"
+# editable array, float values
 
 # (placeholder) | |-EnumConstantDecl 0x73ddc8 <line:104:3> col:3 mjITEM_EDITTXT 'int'
 
-# (placeholder) | | `-FullComment 0x853640 <col:37, col:50>
-
-# (placeholder) | |   `-ParagraphComment 0x853610 <col:37, col:50>
-
-# (placeholder) | |     `-TextComment 0x8535e0 <col:37, col:50> Text=" editable text"
+# editable text
 
 # (placeholder) | `-EnumConstantDecl 0x73de78 <line:106:3> col:3 mjNITEM 'int'
 
-# (placeholder) |   `-FullComment 0x853710 <col:37, col:57>
-
-# (placeholder) |     `-ParagraphComment 0x8536e0 <col:37, col:57>
-
-# (placeholder) |       `-TextComment 0x8536b0 <col:37, col:57> Text=" number of item types"
+# number of item types
 
 alias mjtItem = 
 
@@ -9489,27 +7590,15 @@ alias mjtItem =
 
 # (placeholder) | | | `-IntegerLiteral 0x73e088 <col:19> 'int' 0
 
-# (placeholder) | | `-FullComment 0x8537e0 <col:37, col:67>
-
-# (placeholder) | |   `-ParagraphComment 0x8537b0 <col:37, col:67>
-
-# (placeholder) | |     `-TextComment 0x853780 <col:37, col:67> Text=" closed state (regular section)"
+# closed state (regular section)
 
 # (placeholder) | |-EnumConstantDecl 0x73e148 <line:112:3> col:3 mjSECT_OPEN 'int'
 
-# (placeholder) | | `-FullComment 0x8538b0 <col:37, col:65>
-
-# (placeholder) | |   `-ParagraphComment 0x853880 <col:37, col:65>
-
-# (placeholder) | |     `-TextComment 0x853850 <col:37, col:65> Text=" open state (regular section)"
+# open state (regular section)
 
 # (placeholder) | `-EnumConstantDecl 0x73e1f8 <line:113:3> col:3 mjSECT_FIXED 'int'
 
-# (placeholder) |   `-FullComment 0x853980 <col:37, col:73>
-
-# (placeholder) |     `-ParagraphComment 0x853950 <col:37, col:73>
-
-# (placeholder) |       `-TextComment 0x853920 <col:37, col:73> Text=" fixed section: always open, no title"
+# fixed section: always open, no title
 
 alias mjtSection = 
 
@@ -9520,11 +7609,7 @@ alias mjfItemEnable = UnsafePointer[
 Int32Int32UnsafePointer[NoneType]
 ]
 
-# (placeholder) | `-FullComment 0x853a50 <line:117:3, col:64>
-
-# (placeholder) |   `-ParagraphComment 0x853a20 <col:3, col:64>
-
-# (placeholder) |     `-TextComment 0x8539f0 <col:3, col:64> Text=" predicate function: set enable/disable based on item category"
+# predicate function: set enable/disable based on item category
 
 struct mjuiState_:
 
@@ -9813,109 +7898,93 @@ struct mjuiDef_:
 
 alias mjuiDef = mjuiDef_
 
-# (placeholder) |-VarDecl 0x74a200 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:45:49> col:22 mju_user_error 'void (*)(const char *)' extern
-
+alias mju_user_error = NoneType # extern
 # (placeholder) | |-VisibilityAttr 0x74a268 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) | `-FullComment 0x85a9c0 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:44:3, col:33>
+# user error and memory handlers
 
-# (placeholder) |   `-ParagraphComment 0x85a990 <col:3, col:33>
 
-# (placeholder) |     `-TextComment 0x85a960 <col:3, col:33> Text=" user error and memory handlers"
-
-# (placeholder) |-VarDecl 0x74a398 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:46:51> col:22 mju_user_warning 'void (*)(const char *)' extern
-
+alias mju_user_warning = NoneType # extern
 # (placeholder) | `-VisibilityAttr 0x74a400 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74a5b8 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:47:45> col:22 mju_user_malloc 'void *(*)(size_t)' extern
 
+alias mju_user_malloc = NoneType # extern
 # (placeholder) | `-VisibilityAttr 0x74a620 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74a7e0 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:48:42> col:22 mju_user_free 'void (*)(void *)' extern
 
+alias mju_user_free = NoneType # extern
 # (placeholder) | `-VisibilityAttr 0x74a848 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74a920 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:52:26> col:26 mjcb_passive 'mjfGeneric':'void (*)(const mjModel *, mjData *)' extern
 
+alias mjcb_passive = mjfGeneric # extern
 # (placeholder) | |-VisibilityAttr 0x74a988 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) | `-FullComment 0x85aa90 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:51:3, col:43>
+# callbacks extending computation pipeline
 
-# (placeholder) |   `-ParagraphComment 0x85aa60 <col:3, col:43>
 
-# (placeholder) |     `-TextComment 0x85aa30 <col:3, col:43> Text=" callbacks extending computation pipeline"
-
-# (placeholder) |-VarDecl 0x74aa10 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:53:26> col:26 mjcb_control 'mjfGeneric':'void (*)(const mjModel *, mjData *)' extern
-
+alias mjcb_control = mjfGeneric # extern
 # (placeholder) | `-VisibilityAttr 0x74aa78 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74ab20 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:54:26> col:26 mjcb_contactfilter 'mjfConFilt':'int (*)(const mjModel *, mjData *, int, int)' extern
 
+alias mjcb_contactfilter = mjfConFilt # extern
 # (placeholder) | `-VisibilityAttr 0x74ab88 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74ac30 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:55:26> col:26 mjcb_sensor 'mjfSensor':'void (*)(const mjModel *, mjData *, int)' extern
 
+alias mjcb_sensor = mjfSensor # extern
 # (placeholder) | `-VisibilityAttr 0x74ac98 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74ad40 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:56:26> col:26 mjcb_time 'mjfTime':'mjtNum (*)(void)' extern
 
+alias mjcb_time = mjfTime # extern
 # (placeholder) | `-VisibilityAttr 0x74ada8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74ae50 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:57:26> col:26 mjcb_act_dyn 'mjfAct':'mjtNum (*)(const mjModel *, const mjData *, int)' extern
 
+alias mjcb_act_dyn = mjfAct # extern
 # (placeholder) | `-VisibilityAttr 0x74aeb8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74af40 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:58:26> col:26 mjcb_act_gain 'mjfAct':'mjtNum (*)(const mjModel *, const mjData *, int)' extern
 
+alias mjcb_act_gain = mjfAct # extern
 # (placeholder) | `-VisibilityAttr 0x74afa8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74b030 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:59:26> col:26 mjcb_act_bias 'mjfAct':'mjtNum (*)(const mjModel *, const mjData *, int)' extern
 
+alias mjcb_act_bias = mjfAct # extern
 # (placeholder) | `-VisibilityAttr 0x74b098 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74f3d8 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:63:69> col:27 mjCOLLISIONFUNC 'mjfCollision[9][9]' extern
 
+alias mjCOLLISIONFUNC = mjfCollision[9][9] # extern
 # (placeholder) | |-VisibilityAttr 0x74f440 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) | `-FullComment 0x85ab60 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:62:3, col:27>
+# collision function table
 
-# (placeholder) |   `-ParagraphComment 0x85ab30 <col:3, col:27>
 
-# (placeholder) |     `-TextComment 0x85ab00 <col:3, col:27> Text=" collision function table"
-
-# (placeholder) |-VarDecl 0x74f590 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:67:52> col:26 mjDISABLESTRING 'const char *[17]' extern
-
+alias mjDISABLESTRING = const # extern
 # (placeholder) | |-VisibilityAttr 0x74f5f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) | `-FullComment 0x85ac30 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:66:3, col:15>
+# string names
 
-# (placeholder) |   `-ParagraphComment 0x85ac00 <col:3, col:15>
 
-# (placeholder) |     `-TextComment 0x85abd0 <col:3, col:15> Text=" string names"
-
-# (placeholder) |-VarDecl 0x74f710 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:68:50> col:26 mjENABLESTRING 'const char *[6]' extern
-
+alias mjENABLESTRING = const # extern
 # (placeholder) | `-VisibilityAttr 0x74f778 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74f890 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:69:48> col:26 mjTIMERSTRING 'const char *[15]' extern
 
+alias mjTIMERSTRING = const # extern
 # (placeholder) | `-VisibilityAttr 0x74f8f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74f9d8 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:70:48> col:26 mjLABELSTRING 'const char *[17]' extern
 
+alias mjLABELSTRING = const # extern
 # (placeholder) | `-VisibilityAttr 0x74fa40 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74fb60 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:71:48> col:26 mjFRAMESTRING 'const char *[8]' extern
 
+alias mjFRAMESTRING = const # extern
 # (placeholder) | `-VisibilityAttr 0x74fbc8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74fd70 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:72:51> col:26 mjVISSTRING 'const char *[32][3]' extern
 
+alias mjVISSTRING = const # extern
 # (placeholder) | `-VisibilityAttr 0x74fdd8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
 
-# (placeholder) |-VarDecl 0x74ff40 <col:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:73:51> col:26 mjRNDSTRING 'const char *[10][3]' extern
 
+alias mjRNDSTRING = const # extern
 # (placeholder) | `-VisibilityAttr 0x74ffa8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+
 alias mj_defaultVFS = fn(vfs: UnsafePointer[mjVFS]) -> NoneType
 alias mj_addFileVFS = fn(vfs: UnsafePointer[mjVFS], read directory: UnsafePointer[Int8], read filename: UnsafePointer[Int8]) -> Int32
 alias mj_addBufferVFS = fn(vfs: UnsafePointer[mjVFS], read name: UnsafePointer[Int8], read buffer: UnsafePointer[NoneType], nbuffer: Int32) -> Int32

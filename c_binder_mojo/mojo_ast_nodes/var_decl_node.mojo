@@ -21,6 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.type_mapper import TypeMapper
+from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
 struct Grammar(Copyable, Movable, Stringable, Writable):
@@ -121,15 +122,36 @@ struct VarDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _ast_entry_level: Int
-    var _grammar: Grammar
+    var _var_name: String
+    var _var_type: String
+    var _is_extern: Bool
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
         self._ast_entry_level = ast_entries.level
-        self._ast_entries[].append(ast_entries)
         self._node_state = NodeState.COMPLETED
-        self._grammar = Grammar()
+
+        self._var_name = String()
+        self._var_type = String()
+
+        self._is_extern = False
+
+        var quoted_indices = ast_entries.get_quoted_indices()
+        if len(quoted_indices) > 0:
+            for token in ast_entries.tokens[quoted_indices[0]:quoted_indices[1]]:
+                if token == "'":
+                    continue
+                elif self._var_type == "":
+                    self._var_type = token
+
+        for entry in ast_entries.tokens:
+            if entry == "extern":
+                self._is_extern = True
+            elif self._var_name == "":
+                self._var_name = entry
+            elif self._var_type == "":
+                self._var_type = entry
 
     @staticmethod
     fn accept(
@@ -153,7 +175,7 @@ struct VarDeclNode(NodeAstLike):
         if ast_entry.level <= self._ast_entry_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CONSUME_TOKEN
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -161,10 +183,8 @@ struct VarDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._grammar = Grammar(self._ast_entries[])
-        if token_flow == TokenFlow.CONSUME_TOKEN:
-            self._node_state = NodeState.COLLECTING_TOKENS
-            self._ast_entries[].append(ast_entry)
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
         else:
             self._node_state = NodeState.COMPLETED
 
@@ -209,6 +229,15 @@ struct VarDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
+        var s = String()
+
+        var mojo_type = BuiltinTypeMapper.map_type(self._var_type)
+
+        if self._is_extern:
+            s += "alias " + self._var_name + " = " + mojo_type + " # extern"
+        else:
+            s += "var " + self._var_name + " = " + mojo_type
+
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
@@ -217,7 +246,5 @@ struct VarDeclNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(
-                Grammar(self._ast_entries[])
-            ) if just_code else String(),
+            alternate_string=s,
         )

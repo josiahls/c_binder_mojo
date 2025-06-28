@@ -192,6 +192,7 @@ struct AstParser:
         file_path: Path, extra_args: String = ""
     ) raises -> List[String]:
         """Get the AST dump of the processed code."""
+        # TODO(josiahls): change to -ast-dump=json
         cmd = (
             "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments"
             " -fno-color-diagnostics "

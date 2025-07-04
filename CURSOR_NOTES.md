@@ -7,7 +7,9 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 - ✅ Full MuJoCo bindings generated and compilable
 - ✅ **Basic dl binding works** - we have auto-generation code for this
 - ✅ **AST parsing improvements** - better handling of TypedefDecl, FunctionDecl, and other node types
-- ⚠️ **Hitting limits**: Grammar objects are nice but we're pushing them to their breaking point
+- ✅ **Grammar object migration** - moving away from grammar objects to direct node metadata stripping
+- ✅ **Composable node architecture** - creating nodes for EVERY AST node in Clang output
+- ✅ **Improved quote handling** - cleaner parsing of quoted sections (sugar, types, etc.)
 - ⚠️ **Edge case explosion**: Loads of edge cases surfacing at this point
 - ⚠️ **Boilerplate explosion**: NodeAstLike implementations have significant repetitive code
 
@@ -18,43 +20,59 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 4. **Code correctness** - need cleanup and validation
 5. **Boilerplate code** - NodeAstLike trait implementations have lots of repetitive getter methods
 
+## Current Next Steps (IMMEDIATE PRIORITIES)
+1. **TypeDef enum support** - typedefs don't support enums yet and are blank
+2. **Enum auto-assignment** - enum fields with missing values don't get auto-assigned
+3. **Function pointer parsing** - `void (*)(void)` and `void (*)(int, void)` from atexit/on_exit still fail to parse
+4. **Missing node types** - ParenType, FunctionProtoType, QualType, and VisibilityAttr nodes not created/supported yet
+
 ## Recent Progress & Insights
 - **AST Token Parsing**: Improved understanding of how Clang represents typedefs, function declarations, etc.
 - **Referenced vs Defined**: Better handling of `referenced` vs `implicit` vs defined typedefs
 - **Quote Handling**: Fixed issues with single vs double quotes in AST token parsing
+- **Grammar Object Migration**: Successfully moved away from grammar objects to direct node metadata stripping
+- **Composable Architecture**: Creating nodes for every AST node type keeps the system composable and extensible
 - **Boilerplate Reduction**: Identified several approaches to reduce repetitive code in node implementations
 
 ## Roadmap - Code Quality & Robustness
 **Focus on fundamentals before expanding:**
 
-1. **Code cleanup and correctness**:
+1. **Immediate fixes** (CURRENT PRIORITY):
+   - Fix typedef enum support
+   - Implement enum auto-assignment for missing values
+   - Fix function pointer parsing (`void (*)(void)`, `void (*)(int, void)`)
+   - Create missing node types (ParenType, FunctionProtoType, QualType, VisibilityAttr)
+
+2. **Code cleanup and correctness**:
    - Refactor nested if statement logic
    - Improve maintainability and readability
    - Add proper error handling and validation
 
-2. **Fix record handling**:
+3. **Fix record handling**:
    - Better strategy for parsing and representing C structs/unions
    - Handle complex nested structures properly
    - Improve forward declaration resolution
 
-3. **Architecture improvements**:
-   - Grammar objects are at their limit - consider redesign
+4. **Architecture improvements**:
+   - Grammar object migration completed - focus on node completeness
    - Better separation of concerns
    - More robust edge case handling
 
-4. **Boilerplate reduction** (NEW PRIORITY):
+5. **Boilerplate reduction**:
    - Implement base node struct with common fields
    - Create DefaultNodeImpl mixin trait for common NodeAstLike methods
    - Reduce repetitive getter implementations across all node types
    - Consider composition-based approach for node implementations
 
 ## Technical Debt to Address
+- **CRITICAL**: Fix typedef enum support and enum auto-assignment
+- **CRITICAL**: Fix function pointer parsing for atexit/on_exit
+- **CRITICAL**: Create missing node types (ParenType, FunctionProtoType, QualType, VisibilityAttr)
 - **CRITICAL**: Refactor the nested if statement mess
 - **CRITICAL**: Improve record/struct handling architecture  
 - **CRITICAL**: Better forward declaration resolution
 - **HIGH**: Reduce boilerplate in NodeAstLike implementations
-- Look into figuring out what to do with `Grammar` objects. They are nice, but very adhoc.
-- Probably just create the missing nodes that we are currently just leaving as ast entries.
+- **COMPLETED**: Grammar object migration - now using direct node metadata stripping
 - Beef up the type mapper (more comprehensive type coverage)
 - Type mapper should track what it needs to import
 - Add validation that our generated Mojo types actually work with FFI
@@ -70,4 +88,8 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 We're at a crossroads - lots of edge cases means we need to step back and improve the foundation before pushing forward. Quality over quantity at this stage. The boilerplate reduction work will make the codebase much more maintainable and reduce the cognitive load when adding new node types.
 
 ## Immediate Next Steps
-1. Complete mapping and supporting all nodes produced by Clang.
+1. **Fix typedef enum support** - typedefs are currently blank for enums
+2. **Implement enum auto-assignment** - enum fields with missing values need auto-assignment
+3. **Fix function pointer parsing** - `void (*)(void)` and `void (*)(int, void)` from atexit/on_exit
+4. **Create missing node types** - ParenType, FunctionProtoType, QualType, VisibilityAttr
+5. Complete mapping and supporting all nodes produced by Clang

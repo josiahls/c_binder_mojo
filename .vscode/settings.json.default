@@ -1,0 +1,7 @@
+{
+    "mojo.lsp.includeDirs": [
+        "c_binder_mojo",
+        "firehose",
+        "modular/mojo/stdlib/stdlib"
+    ]
+} 

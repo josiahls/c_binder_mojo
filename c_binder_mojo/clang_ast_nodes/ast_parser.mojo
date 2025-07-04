@@ -342,11 +342,17 @@ struct AstParser:
                     level += 1
                 else:
                     if "'" in token:
-                        for t in token.split("'"):
-                            if t != "":
-                                ast_entry.tokens.append(t)
-                            else:
+                        current_token:String = ""
+                        for ch in token.codepoint_slices():
+                            if ch == "'":
                                 ast_entry.tokens.append("'")
+                                if current_token != "":
+                                    ast_entry.tokens.append(current_token)
+                                    current_token = ""
+                            else:
+                                current_token += ch
+                        if current_token != "":
+                            ast_entry.tokens.append(current_token)
                     else:
                         ast_entry.tokens.append(token)
 

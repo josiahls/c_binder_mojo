@@ -38,12 +38,15 @@ struct ParmVarDeclNode(NodeAstLike):
     var _is_volatile: Bool
     var _is_restrict: Bool
     var _is_unsigned: Bool
+    var _is_used: Bool
     # Doesn't have a parameter name.
     var _is_positional: Bool
 
     # NOTE: We could change this to handle N pointers. Maybe revisit this.
     var _is_pointer: Bool
     var _is_double_pointer: Bool
+
+    var _has_sugar_mapping: Bool
 
     var unhandled_tokens: String
 
@@ -55,35 +58,67 @@ struct ParmVarDeclNode(NodeAstLike):
         self._parm_var_name = String()
         self._parm_var_type = String()
 
+        # TODO(josiahls): Const, volatile, restrict, and used I'm unclear how to convert to mojo.
+        # This needs to be revisited. 
         self._is_const = False
         self._is_volatile = False
         self._is_restrict = False
         self._is_unsigned = False
+        self._is_used = False
         self._is_positional = False
 
         self._is_pointer = False
         self._is_double_pointer = False
 
+        self._has_sugar_mapping = False
+
         self.unhandled_tokens = String()
 
-        var start_idx, end_idx = self._start_end_quotes(ast_entry.tokens)
+        var quoted_indicies = ast_entry.get_quoted_indices()
 
-        for entry in ast_entry.tokens[:start_idx]:
-            if self._parm_var_name == "":
-                self._parm_var_name = entry
+        section_idx = 0
+        start_idx = 0
+        for idx in quoted_indicies:
+            print("ParmVarDeclNode: section_idx: " + String(section_idx) + " for ast entry: " + String(ast_entry))
+            if section_idx == 0:
+                self._parse_section_0(ast_entry.tokens[:idx])
+            elif section_idx == 1:
+                self._parse_section_1(ast_entry.tokens[start_idx:idx])
+            elif section_idx == 2:
+                self._parse_section_2(ast_entry.tokens[start_idx:idx])
+            elif section_idx == 3:
+                if not self._has_sugar_mapping:
+                    self._parse_section_3(ast_entry.tokens[start_idx:idx])
+                # else:
+                #     self._parse_section_4(ast_entry.tokens[start_idx:idx])
             else:
-                self.unhandled_tokens += " " + entry
+                print("ParmVarDeclNode: Unhandled section: " + String(section_idx))
 
-        if self._parm_var_name == "":
-            self._is_positional = True
-        
-        for entry in ast_entry.tokens[start_idx:end_idx]:
-            var base_entry:String = entry
-            if '**' in entry:
-                base_entry = String(entry.strip("*"))
+
+            start_idx = idx
+            section_idx += 1
+    
+        if self.unhandled_tokens != "":
+            self.unhandled_tokens = "# ParmVarDeclNode Unhandled tokens: " + self.unhandled_tokens
+
+
+    fn _parse_section_0(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "used":
+                self._is_used = True
+            elif self._parm_var_name == "":
+                self._parm_var_name = token
+            else:
+                self.unhandled_tokens += " " + token
+
+    fn _parse_section_1(mut self, tokens: List[String]):
+        for token in tokens:
+            var base_entry:String = token
+            if '**' in token:
+                base_entry = String(token.strip("*"))
                 self._is_double_pointer = True
-            elif '*' in entry:
-                base_entry = String(entry.strip("*"))
+            elif '*' in token:
+                base_entry = String(token.strip("*"))
                 self._is_pointer = True
 
             if base_entry == "const":
@@ -103,27 +138,44 @@ struct ParmVarDeclNode(NodeAstLike):
             else:
                 self._parm_var_type += " " + base_entry
 
-        if self.unhandled_tokens != "":
-            self.unhandled_tokens = "# ParmVarDeclNode Unhandled tokens: " + self.unhandled_tokens
-
-    fn _start_end_quotes(mut self, read tokens: List[String]) -> Tuple[Int, Int]:
-        var start_idx = -1
-        var end_idx = -1
-        var idx = -1
+    fn _parse_section_2(mut self, tokens: List[String]):
         for token in tokens:
-            idx += 1
-            if token.startswith("'") and start_idx == -1:
-                start_idx = idx
-                continue
-            elif token.endswith("'") and end_idx == -1:
-                end_idx = idx
-            elif token.endswith("'"):
-                print("ParmVarDeclNode: Unhandled token: " + token + " from " + String(' ').join(tokens))
+            print("ParmVarDeclNode: _parse_section_2: " + token)
+            if token == ":":
+                self._has_sugar_mapping = True
+            else:
+                self.unhandled_tokens += " " + token
 
-        if end_idx == -1:
-            start_idx = 0
-            end_idx = len(tokens) - 1
-        return (start_idx, end_idx)
+    fn _parse_section_3(mut self, tokens: List[String]):
+        if self._has_sugar_mapping:
+            # Wipe the type, we'll use the sugar mapping.
+            self._parm_var_type = ""
+
+        for token in tokens:
+            var base_entry:String = token
+            if '**' in token:
+                base_entry = String(token.strip("*"))
+                self._is_double_pointer = True
+            elif '*' in token:
+                base_entry = String(token.strip("*"))
+                self._is_pointer = True
+
+            if base_entry == "const":
+                self._is_const = True
+            elif base_entry == "unsigned":
+                self._is_unsigned = True
+            elif base_entry == "volatile":
+                self._is_volatile = True
+            elif base_entry == "restrict":
+                self._is_restrict = True
+            elif base_entry == "*":
+                self._is_pointer = True
+            elif base_entry == "**":
+                self._is_double_pointer = True
+            elif self._parm_var_type == "":
+                self._parm_var_type = base_entry
+            else:
+                self._parm_var_type += " " + base_entry
 
     @staticmethod
     fn accept(

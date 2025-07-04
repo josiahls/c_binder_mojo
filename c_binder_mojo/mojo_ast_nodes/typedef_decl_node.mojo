@@ -112,45 +112,59 @@ struct TypedefDeclNode(NodeAstLike):
         self._is_implicit = False
         self._is_referenced = False
 
-        var start_idx, end_idx = self._start_end_quotes(ast_entry.tokens)
+        var quoted_indicies = ast_entry.get_quoted_indices()
 
-        for entry in ast_entry.tokens[:start_idx]:
-            if entry == "implicit":
+        start_idx = 0
+        section_idx = 0
+
+        for idx in quoted_indicies:
+            if section_idx == 0:
+                self._parse_section_0(ast_entry.tokens[start_idx:idx])
+            elif section_idx == 1:
+                self._parse_section_1(ast_entry.tokens[idx:])
+            else:
+                print("TypedefDeclNode: Unhandled section: " + String(section_idx))
+
+            start_idx = idx
+            section_idx += 1
+
+        # for entry in ast_entry.tokens[:start_idx]:
+        #     if entry == "implicit":
+        #         self._is_implicit = True
+        #     elif entry == "referenced":
+        #         self._is_referenced = True
+        #     elif self._type_name == "":
+        #         self._type_name = entry
+        #     else:
+        #         self._type_aliased = entry
+
+        # for entry in ast_entry.tokens[start_idx:end_idx]:
+        #     if entry == "'":
+        #         pass
+        #     elif self._type_name == "":
+        #         self._type_name = entry
+        #     # else:
+        #     #     self._type_name += " " + entry
+    
+    fn _parse_section_0(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "implicit":
                 self._is_implicit = True
-            elif entry == "referenced":
+            elif token == "referenced":
                 self._is_referenced = True
             elif self._type_name == "":
-                self._type_name = entry
+                self._type_name = token
             else:
-                self._type_aliased = entry
+                self._type_aliased = token
 
-        for entry in ast_entry.tokens[start_idx:end_idx]:
-            if entry == "'":
+    fn _parse_section_1(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "'":
                 pass
             elif self._type_name == "":
-                self._type_name = entry
+                self._type_name = token
             # else:
-            #     self._type_name += " " + entry
-    
-
-    fn _start_end_quotes(mut self, read tokens: List[String]) -> Tuple[Int, Int]:
-        var start_idx = -1
-        var end_idx = -1
-        var idx = -1
-        for token in tokens:
-            idx += 1
-            if token.startswith("'") and start_idx == -1:
-                start_idx = idx
-                continue
-            elif token.endswith("'") and end_idx == -1:
-                end_idx = idx
-            elif token.endswith("'"):
-                print("ParmVarDeclNode: Unhandled token: " + token + " from " + String(' ').join(tokens))
-
-        if end_idx == -1:
-            start_idx = 0
-            end_idx = len(tokens) - 1
-        return (start_idx, end_idx)
+            #     self._type_name += " " + token
 
     @staticmethod
     fn accept(

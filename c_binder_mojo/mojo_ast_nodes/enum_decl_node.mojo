@@ -78,11 +78,11 @@ struct EnumDeclNode(NodeAstLike):
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
+        # self._ast_entries[].append(ast_entries)
         self._record_decl_level = ast_entries.level
         self._node_state = NodeState.COMPLETED
-        self._grammar = Grammar()
-        self._inner_struct_name_map = Dict[String, String]()
+        # self._grammar = Grammar()
+        # self._inner_struct_name_map = Dict[String, String]()
 
     @staticmethod
     fn accept(
@@ -183,39 +183,39 @@ struct EnumDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var s: String = ""
+        var s: String = "hi"
         var indent: String = ""
         # var inner_struct_name_map: Dict[String, String] = {}
 
-        if parent_indent_level > 0:
-            indent = "\t" * parent_indent_level
+        # if parent_indent_level > 0:
+        #     indent = "\t" * parent_indent_level
 
-        if not just_code:
-            s += indent + self.name(include_sig=True) + "\n"
+        # if not just_code:
+        #     s += indent + self.name(include_sig=True) + "\n"
 
-        if not self._grammar._is_anonymous:
-            s += indent + String(self._grammar)
-        else:
-            s += indent + "# Anonymous enum"
+        # if not self._grammar._is_anonymous:
+        #     s += indent + String(self._grammar)
+        # else:
+        #     s += indent + "# Anonymous enum"
 
-        has_fields = False
-        for child_idx in self._indicies[].child_idxs:
-            child = module_interface.nodes()[][child_idx]
+        # has_fields = False
+        # for child_idx in self._indicies[].child_idxs:
+        #     child = module_interface.nodes()[][child_idx]
 
-            if not self._grammar._is_anonymous:
-                s += child.to_string(
-                    just_code, module_interface, parent_indent_level + 1
-                )
-            else:
-                # Alias fields will be printed at the root level.
-                s += child.to_string(
-                    just_code, module_interface, parent_indent_level
-                )
+        #     if not self._grammar._is_anonymous:
+        #         s += child.to_string(
+        #             just_code, module_interface, parent_indent_level + 1
+        #         )
+        #     else:
+        #         # Alias fields will be printed at the root level.
+        #         s += child.to_string(
+        #             just_code, module_interface, parent_indent_level
+        #         )
 
-            if child.name() == "EnumConstantDeclNode":
-                has_fields = True
+        #     if child.name() == "EnumConstantDeclNode":
+        #         has_fields = True
 
-        if not has_fields:
-            s += indent + "\t" + "pass" + "\n"
+        # if not has_fields:
+        #     s += indent + "\t" + "pass" + "\n"
 
         return s + "\n"

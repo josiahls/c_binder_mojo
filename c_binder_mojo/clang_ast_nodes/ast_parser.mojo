@@ -345,10 +345,10 @@ struct AstParser:
                         current_token:String = ""
                         for ch in token.codepoint_slices():
                             if ch == "'":
-                                ast_entry.tokens.append("'")
                                 if current_token != "":
                                     ast_entry.tokens.append(current_token)
                                     current_token = ""
+                                ast_entry.tokens.append("'")
                             else:
                                 current_token += ch
                         if current_token != "":

@@ -55,7 +55,7 @@ struct ExampleNode(NodeAstLike):
         indices: NodeIndices,
     ) -> Bool:
         # NOTE(josiahls): Critical to change, needs to be 
-        return ast_entries.ast_name == Self.__name__
+        return ast_entries.ast_name == String(Self.__name__)[:-4]
 
     @staticmethod
     fn create(

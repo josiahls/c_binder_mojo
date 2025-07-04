@@ -1269,48 +1269,18 @@ alias scalbl = fn(__x: Float64, __n: Float64) -> Float64
 alias __scalbl = fn(__x: Float64, __n: Float64) -> Float64
 
 alias signgam = Int32 # extern
+# Anonymous enum
+alias FP_NAN: Int = 0
 
-# (placeholder) |-EnumDecl 0x660968 <line:934:1, line:951:3> line:934:1
+alias FP_INFINITE: Int = 1
 
-# (placeholder) | |-EnumConstantDecl 0x660a70 <line:936:5, line:937:17> line:936:5 FP_NAN 'int'
+alias FP_ZERO: Int = 2
 
-# (placeholder) | | `-ConstantExpr 0x660a50 <line:937:17> 'int'
+alias FP_SUBNORMAL: Int = 3
 
-# (placeholder) | |   |-value: Int 0
+alias FP_NORMAL: Int = 4
 
-# (placeholder) | |   `-IntegerLiteral 0x660a30 <col:17> 'int' 0
 
-# (placeholder) | |-EnumConstantDecl 0x660b00 <line:939:5, line:940:22> line:939:5 FP_INFINITE 'int'
-
-# (placeholder) | | `-ConstantExpr 0x660ae0 <line:940:22> 'int'
-
-# (placeholder) | |   |-value: Int 1
-
-# (placeholder) | |   `-IntegerLiteral 0x660ac0 <col:22> 'int' 1
-
-# (placeholder) | |-EnumConstantDecl 0x660b90 <line:942:5, line:943:18> line:942:5 FP_ZERO 'int'
-
-# (placeholder) | | `-ConstantExpr 0x660b70 <line:943:18> 'int'
-
-# (placeholder) | |   |-value: Int 2
-
-# (placeholder) | |   `-IntegerLiteral 0x660b50 <col:18> 'int' 2
-
-# (placeholder) | |-EnumConstantDecl 0x660c20 <line:945:5, line:946:23> line:945:5 FP_SUBNORMAL 'int'
-
-# (placeholder) | | `-ConstantExpr 0x660c00 <line:946:23> 'int'
-
-# (placeholder) | |   |-value: Int 3
-
-# (placeholder) | |   `-IntegerLiteral 0x660be0 <col:23> 'int' 3
-
-# (placeholder) | `-EnumConstantDecl 0x660cb0 <line:948:5, line:949:20> line:948:5 FP_NORMAL 'int'
-
-# (placeholder) |   `-ConstantExpr 0x660c90 <line:949:20> 'int'
-
-# (placeholder) |     |-value: Int 4
-
-# (placeholder) |     `-IntegerLiteral 0x660c70 <col:20> 'int' 4
 
 alias ptrdiff_t = Int64
 struct Anonymous_line_19_9:
@@ -1375,1415 +1345,388 @@ alias mjtNum = Float64
 alias mjtByte = UInt8
 #-------------------------------------- byte definition -------------------------------------------
 
+struct mjtDisableBit_:
 
-# (placeholder) |-EnumDecl 0x679db8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:50:9, line:70:1> line:50:14 mjtDisableBit_
+	#---------------------------------- enum types (mjt) ----------------------------------------------
+	alias mjDSBL_CONSTRAINT: Int = 1
 
-#---------------------------------- enum types (mjt) ----------------------------------------------
+	alias mjDSBL_EQUALITY: Int = 2
 
-# (placeholder) | |-EnumConstantDecl 0x679f28 <line:51:3, col:28> col:3 mjDSBL_CONSTRAINT 'int'
+	alias mjDSBL_FRICTIONLOSS: Int = 4
 
-# (placeholder) | | |-ConstantExpr 0x679f08 <col:25, col:28> 'int'
+	alias mjDSBL_LIMIT: Int = 8
 
-# (placeholder) | | | |-value: Int 1
+	alias mjDSBL_CONTACT: Int = 16
 
-# (placeholder) | | | `-BinaryOperator 0x679ee8 <col:25, col:28> 'int' '<<'
+	alias mjDSBL_PASSIVE: Int = 32
 
-# (placeholder) | | |   |-IntegerLiteral 0x679ea8 <col:25> 'int' 1
+	alias mjDSBL_GRAVITY: Int = 64
 
-# (placeholder) | | |   `-IntegerLiteral 0x679ec8 <col:28> 'int' 0
+	alias mjDSBL_CLAMPCTRL: Int = 128
 
-# entire constraint solver
+	alias mjDSBL_WARMSTART: Int = 256
 
-# (placeholder) | |-EnumConstantDecl 0x67a028 <line:52:3, col:28> col:3 mjDSBL_EQUALITY 'int'
+	alias mjDSBL_FILTERPARENT: Int = 512
 
-# (placeholder) | | |-ConstantExpr 0x67a008 <col:25, col:28> 'int'
+	alias mjDSBL_ACTUATION: Int = 1024
 
-# (placeholder) | | | |-value: Int 2
+	alias mjDSBL_REFSAFE: Int = 2048
 
-# (placeholder) | | | `-BinaryOperator 0x679fe8 <col:25, col:28> 'int' '<<'
+	alias mjDSBL_SENSOR: Int = 4096
 
-# (placeholder) | | |   |-IntegerLiteral 0x679fa8 <col:25> 'int' 1
+	alias mjDSBL_MIDPHASE: Int = 8192
 
-# (placeholder) | | |   `-IntegerLiteral 0x679fc8 <col:28> 'int' 1
+	alias mjDSBL_EULERDAMP: Int = 16384
 
-# equality constraints
+	alias mjDSBL_AUTORESET: Int = 32768
 
-# (placeholder) | |-EnumConstantDecl 0x67a128 <line:53:3, col:28> col:3 mjDSBL_FRICTIONLOSS 'int'
+	alias mjDSBL_NATIVECCD: Int = 65536
 
-# (placeholder) | | |-ConstantExpr 0x67a108 <col:25, col:28> 'int'
+	alias referenced: Int = 17
 
-# (placeholder) | | | |-value: Int 4
 
-# (placeholder) | | | `-BinaryOperator 0x67a0e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a0a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a0c8 <col:28> 'int' 2
-
-# joint and tendon frictionloss constraints
-
-# (placeholder) | |-EnumConstantDecl 0x67a228 <line:54:3, col:28> col:3 mjDSBL_LIMIT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a208 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 8
-
-# (placeholder) | | | `-BinaryOperator 0x67a1e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a1a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a1c8 <col:28> 'int' 3
-
-# joint and tendon limit constraints
-
-# (placeholder) | |-EnumConstantDecl 0x67a328 <line:55:3, col:28> col:3 mjDSBL_CONTACT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a308 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 16
-
-# (placeholder) | | | `-BinaryOperator 0x67a2e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a2a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a2c8 <col:28> 'int' 4
-
-# contact constraints
-
-# (placeholder) | |-EnumConstantDecl 0x67a428 <line:56:3, col:28> col:3 mjDSBL_PASSIVE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a408 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 32
-
-# (placeholder) | | | `-BinaryOperator 0x67a3e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a3a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a3c8 <col:28> 'int' 5
-
-# passive forces
-
-# (placeholder) | |-EnumConstantDecl 0x67a528 <line:57:3, col:28> col:3 mjDSBL_GRAVITY 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a508 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 64
-
-# (placeholder) | | | `-BinaryOperator 0x67a4e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a4a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a4c8 <col:28> 'int' 6
-
-# gravitational forces
-
-# (placeholder) | |-EnumConstantDecl 0x67a628 <line:58:3, col:28> col:3 mjDSBL_CLAMPCTRL 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a608 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 128
-
-# (placeholder) | | | `-BinaryOperator 0x67a5e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a5a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a5c8 <col:28> 'int' 7
-
-# clamp control to specified range
-
-# (placeholder) | |-EnumConstantDecl 0x67a728 <line:59:3, col:28> col:3 mjDSBL_WARMSTART 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a708 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 256
-
-# (placeholder) | | | `-BinaryOperator 0x67a6e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a6a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a6c8 <col:28> 'int' 8
-
-# warmstart constraint solver
-
-# (placeholder) | |-EnumConstantDecl 0x67a828 <line:60:3, col:28> col:3 mjDSBL_FILTERPARENT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a808 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 512
-
-# (placeholder) | | | `-BinaryOperator 0x67a7e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a7a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a7c8 <col:28> 'int' 9
-
-# remove collisions with parent body
-
-# (placeholder) | |-EnumConstantDecl 0x67a928 <line:61:3, col:28> col:3 mjDSBL_ACTUATION 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67a908 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 1024
-
-# (placeholder) | | | `-BinaryOperator 0x67a8e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a8a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a8c8 <col:28> 'int' 10
-
-# apply actuation forces
-
-# (placeholder) | |-EnumConstantDecl 0x67aa28 <line:62:3, col:28> col:3 mjDSBL_REFSAFE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67aa08 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 2048
-
-# (placeholder) | | | `-BinaryOperator 0x67a9e8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67a9a8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67a9c8 <col:28> 'int' 11
-
-# integrator safety: make ref[0]>=2*timestep
-
-# (placeholder) | |-EnumConstantDecl 0x67ab28 <line:63:3, col:28> col:3 mjDSBL_SENSOR 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67ab08 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 4096
-
-# (placeholder) | | | `-BinaryOperator 0x67aae8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67aaa8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67aac8 <col:28> 'int' 12
-
-# sensors
-
-# (placeholder) | |-EnumConstantDecl 0x67ac28 <line:64:3, col:28> col:3 mjDSBL_MIDPHASE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67ac08 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 8192
-
-# (placeholder) | | | `-BinaryOperator 0x67abe8 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67aba8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67abc8 <col:28> 'int' 13
-
-# mid-phase collision filtering
-
-# (placeholder) | |-EnumConstantDecl 0x67ad58 <line:65:3, col:28> col:3 mjDSBL_EULERDAMP 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67ad38 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 16384
-
-# (placeholder) | | | `-BinaryOperator 0x67ad18 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67acd8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67acf8 <col:28> 'int' 14
-
-# implicit integration of joint damping in Euler integrator
-
-# (placeholder) | |-EnumConstantDecl 0x67ae58 <line:66:3, col:28> col:3 mjDSBL_AUTORESET 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67ae38 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 32768
-
-# (placeholder) | | | `-BinaryOperator 0x67ae18 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67add8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67adf8 <col:28> 'int' 15
-
-# automatic reset when numerical issues are detected
-
-# (placeholder) | |-EnumConstantDecl 0x67af58 <line:67:3, col:28> col:3 mjDSBL_NATIVECCD 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67af38 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 65536
-
-# (placeholder) | | | `-BinaryOperator 0x67af18 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67aed8 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67aef8 <col:28> 'int' 16
-
-# native convex collision detection
-
-# (placeholder) | `-EnumConstantDecl 0x67b048 <line:69:3, col:25> col:3 referenced mjNDISABLE 'int'
-
-# (placeholder) |   |-ConstantExpr 0x67b028 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 17
-
-# (placeholder) |   | `-IntegerLiteral 0x67afd8 <col:25> 'int' 17
-
-# number of disable flags
 
 alias mjtDisableBit = 
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
+struct mjtEnableBit_:
+	alias mjENBL_OVERRIDE: Int = 1
 
-# (placeholder) |-EnumDecl 0x67b168 <line:73:9, line:83:1> line:73:14 mjtEnableBit_
+	alias mjENBL_ENERGY: Int = 2
 
-# (placeholder) | |-EnumConstantDecl 0x67b2d8 <line:74:3, col:28> col:3 mjENBL_OVERRIDE 'int'
+	alias mjENBL_FWDINV: Int = 4
 
-# (placeholder) | | |-ConstantExpr 0x67b2b8 <col:25, col:28> 'int'
+	alias mjENBL_INVDISCRETE: Int = 8
 
-# (placeholder) | | | |-value: Int 1
+	alias mjENBL_MULTICCD: Int = 16
 
-# (placeholder) | | | `-BinaryOperator 0x67b298 <col:25, col:28> 'int' '<<'
+	alias mjENBL_ISLAND: Int = 32
 
-# (placeholder) | | |   |-IntegerLiteral 0x67b258 <col:25> 'int' 1
+	alias referenced: Int = 6
 
-# (placeholder) | | |   `-IntegerLiteral 0x67b278 <col:28> 'int' 0
 
-# override contact parameters
-
-# (placeholder) | |-EnumConstantDecl 0x67b3d8 <line:75:3, col:28> col:3 mjENBL_ENERGY 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67b3b8 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 2
-
-# (placeholder) | | | `-BinaryOperator 0x67b398 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67b358 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67b378 <col:28> 'int' 1
-
-# energy computation
-
-# (placeholder) | |-EnumConstantDecl 0x67b4d8 <line:76:3, col:28> col:3 mjENBL_FWDINV 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67b4b8 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 4
-
-# (placeholder) | | | `-BinaryOperator 0x67b498 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67b458 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67b478 <col:28> 'int' 2
-
-# record solver statistics
-
-# (placeholder) | |-EnumConstantDecl 0x67b5d8 <line:77:3, col:28> col:3 mjENBL_INVDISCRETE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67b5b8 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 8
-
-# (placeholder) | | | `-BinaryOperator 0x67b598 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67b558 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67b578 <col:28> 'int' 3
-
-# discrete-time inverse dynamics
-# experimental features:
-
-# (placeholder) | |-EnumConstantDecl 0x67b6d8 <line:79:3, col:28> col:3 mjENBL_MULTICCD 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67b6b8 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 16
-
-# (placeholder) | | | `-BinaryOperator 0x67b698 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67b658 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67b678 <col:28> 'int' 4
-
-# multi-point convex collision detection
-
-# (placeholder) | |-EnumConstantDecl 0x67b7d8 <line:80:3, col:28> col:3 mjENBL_ISLAND 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67b7b8 <col:25, col:28> 'int'
-
-# (placeholder) | | | |-value: Int 32
-
-# (placeholder) | | | `-BinaryOperator 0x67b798 <col:25, col:28> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x67b758 <col:25> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x67b778 <col:28> 'int' 5
-
-# constraint island discovery
-
-# (placeholder) | `-EnumConstantDecl 0x67b8c8 <line:82:3, col:25> col:3 referenced mjNENABLE 'int'
-
-# (placeholder) |   |-ConstantExpr 0x67b8a8 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 6
-
-# (placeholder) |   | `-IntegerLiteral 0x67b858 <col:25> 'int' 6
-
-# number of enable flags
 
 alias mjtEnableBit = 
+struct mjtJoint_:
+	alias mjJNT_FREE: Int = 0
 
-# (placeholder) |-EnumDecl 0x67b9e8 <line:86:9, line:91:1> line:86:14 mjtJoint_
+	alias mjJNT_BALL: 
+	alias mjJNT_SLIDE: 
+	alias mjJNT_HINGE: 
 
-# (placeholder) | |-EnumConstantDecl 0x67bb18 <line:87:3, col:25> col:3 mjJNT_FREE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67baf8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x67bad8 <col:25> 'int' 0
-
-# global position and orientation (quat)       (7)
-
-# (placeholder) | |-EnumConstantDecl 0x67bb98 <line:88:3> col:3 mjJNT_BALL 'int'
-
-# orientation (quat) relative to parent        (4)
-
-# (placeholder) | |-EnumConstantDecl 0x67bc18 <line:89:3> col:3 mjJNT_SLIDE 'int'
-
-# sliding distance along body-fixed axis       (1)
-
-# (placeholder) | `-EnumConstantDecl 0x67bce8 <line:90:3> col:3 mjJNT_HINGE 'int'
-
-# rotation angle (rad) around body-fixed axis  (1)
 
 alias mjtJoint = 
+struct mjtGeom_:
+	alias mjGEOM_PLANE: Int = 0
 
-# (placeholder) |-EnumDecl 0x67be08 <line:94:9, line:120:1> line:94:14 mjtGeom_
+	alias mjGEOM_HFIELD: 
+	alias mjGEOM_SPHERE: 
+	alias mjGEOM_CAPSULE: 
+	alias mjGEOM_ELLIPSOID: 
+	alias mjGEOM_CYLINDER: 
+	alias mjGEOM_BOX: 
+	alias mjGEOM_MESH: 
+	alias mjGEOM_SDF: 
+	alias referenced: 
+	alias mjGEOM_ARROW: Int = 100
 
-# (placeholder) | |-EnumConstantDecl 0x67bf68 <line:96:3, col:25> col:3 mjGEOM_PLANE 'int'
+	alias mjGEOM_ARROW1: 
+	alias mjGEOM_ARROW2: 
+	alias mjGEOM_LINE: 
+	alias mjGEOM_LINEBOX: 
+	alias mjGEOM_FLEX: 
+	alias mjGEOM_SKIN: 
+	alias mjGEOM_LABEL: 
+	alias mjGEOM_TRIANGLE: 
+	alias mjGEOM_NONE: Int = 1001
 
-# (placeholder) | | |-ConstantExpr 0x67bf48 <col:25> 'int'
 
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x67bf28 <col:25> 'int' 0
-
-# plane
-
-# (placeholder) | |-EnumConstantDecl 0x67bfe8 <line:97:3> col:3 mjGEOM_HFIELD 'int'
-
-# height field
-
-# (placeholder) | |-EnumConstantDecl 0x67c068 <line:98:3> col:3 mjGEOM_SPHERE 'int'
-
-# sphere
-
-# (placeholder) | |-EnumConstantDecl 0x67c0e8 <line:99:3> col:3 mjGEOM_CAPSULE 'int'
-
-# capsule
-
-# (placeholder) | |-EnumConstantDecl 0x67c168 <line:100:3> col:3 mjGEOM_ELLIPSOID 'int'
-
-# ellipsoid
-
-# (placeholder) | |-EnumConstantDecl 0x67c1e8 <line:101:3> col:3 mjGEOM_CYLINDER 'int'
-
-# cylinder
-
-# (placeholder) | |-EnumConstantDecl 0x67c268 <line:102:3> col:3 mjGEOM_BOX 'int'
-
-# box
-
-# (placeholder) | |-EnumConstantDecl 0x67c2e8 <line:103:3> col:3 mjGEOM_MESH 'int'
-
-# mesh
-
-# (placeholder) | |-EnumConstantDecl 0x67c368 <line:104:3> col:3 mjGEOM_SDF 'int'
-
-# signed distance field
-
-# (placeholder) | |-EnumConstantDecl 0x67c3e8 <line:106:3> col:3 referenced mjNGEOMTYPES 'int'
-
-# number of regular geom types
-
-# (placeholder) | |-EnumConstantDecl 0x67c4d8 <line:109:3, col:25> col:3 mjGEOM_ARROW 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67c4b8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 100
-
-# (placeholder) | | | `-IntegerLiteral 0x67c498 <col:25> 'int' 100
-
-# arrow
-
-# (placeholder) | |-EnumConstantDecl 0x67c558 <line:110:3> col:3 mjGEOM_ARROW1 'int'
-
-# arrow without wedges
-
-# (placeholder) | |-EnumConstantDecl 0x67c5d8 <line:111:3> col:3 mjGEOM_ARROW2 'int'
-
-# arrow in both directions
-
-# (placeholder) | |-EnumConstantDecl 0x67c658 <line:112:3> col:3 mjGEOM_LINE 'int'
-
-# line
-
-# (placeholder) | |-EnumConstantDecl 0x67c6d8 <line:113:3> col:3 mjGEOM_LINEBOX 'int'
-
-# box with line edges
-
-# (placeholder) | |-EnumConstantDecl 0x67c758 <line:114:3> col:3 mjGEOM_FLEX 'int'
-
-# flex
-
-# (placeholder) | |-EnumConstantDecl 0x67c7d8 <line:115:3> col:3 mjGEOM_SKIN 'int'
-
-# skin
-
-# (placeholder) | |-EnumConstantDecl 0x67c858 <line:116:3> col:3 mjGEOM_LABEL 'int'
-
-# text label
-
-# (placeholder) | |-EnumConstantDecl 0x67c8d8 <line:117:3> col:3 mjGEOM_TRIANGLE 'int'
-
-# triangle
-
-# (placeholder) | `-EnumConstantDecl 0x67c9c8 <line:119:3, col:25> col:3 mjGEOM_NONE 'int'
-
-# (placeholder) |   |-ConstantExpr 0x67c9a8 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 1001
-
-# (placeholder) |   | `-IntegerLiteral 0x67c958 <col:25> 'int' 1001
-
-# missing geom type
 
 alias mjtGeom = 
+struct mjtCamLight_:
+	alias mjCAMLIGHT_FIXED: Int = 0
 
-# (placeholder) |-EnumDecl 0x67cae8 <line:123:9, line:129:1> line:123:14 mjtCamLight_
+	alias mjCAMLIGHT_TRACK: 
+	alias mjCAMLIGHT_TRACKCOM: 
+	alias mjCAMLIGHT_TARGETBODY: 
+	alias mjCAMLIGHT_TARGETBODYCOM: 
 
-# (placeholder) | |-EnumConstantDecl 0x67cc18 <line:124:3, col:25> col:3 mjCAMLIGHT_FIXED 'int'
-
-# (placeholder) | | |-ConstantExpr 0x67cbf8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x67cbd8 <col:25> 'int' 0
-
-# pos and rot fixed in body
-
-# (placeholder) | |-EnumConstantDecl 0x680ce0 <line:125:3> col:3 mjCAMLIGHT_TRACK 'int'
-
-# pos tracks body, rot fixed in global
-
-# (placeholder) | |-EnumConstantDecl 0x680d58 <line:126:3> col:3 mjCAMLIGHT_TRACKCOM 'int'
-
-# pos tracks subtree com, rot fixed in body
-
-# (placeholder) | |-EnumConstantDecl 0x680dd8 <line:127:3> col:3 mjCAMLIGHT_TARGETBODY 'int'
-
-# pos fixed in body, rot tracks target body
-
-# (placeholder) | `-EnumConstantDecl 0x680e88 <line:128:3> col:3 mjCAMLIGHT_TARGETBODYCOM 'int'
-
-# pos fixed in body, rot tracks target subtree com
 
 alias mjtCamLight = 
+struct mjtTexture_:
+	alias mjTEXTURE_2D: Int = 0
 
-# (placeholder) |-EnumDecl 0x680fa8 <line:132:9, line:136:1> line:132:14 mjtTexture_
+	alias mjTEXTURE_CUBE: 
+	alias mjTEXTURE_SKYBOX: 
 
-# (placeholder) | |-EnumConstantDecl 0x6810d8 <line:133:3, col:25> col:3 mjTEXTURE_2D 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6810b8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x681098 <col:25> 'int' 0
-
-# 2d texture, suitable for planes and hfields
-
-# (placeholder) | |-EnumConstantDecl 0x681158 <line:134:3> col:3 mjTEXTURE_CUBE 'int'
-
-# cube texture, suitable for all other geom types
-
-# (placeholder) | `-EnumConstantDecl 0x681208 <line:135:3> col:3 mjTEXTURE_SKYBOX 'int'
-
-# cube texture used as skybox
 
 alias mjtTexture = 
+struct mjtTextureRole_:
+	alias mjTEXROLE_USER: Int = 0
 
-# (placeholder) |-EnumDecl 0x681328 <line:139:9, line:151:1> line:139:14 mjtTextureRole_
+	alias mjTEXROLE_RGB: 
+	alias mjTEXROLE_OCCLUSION: 
+	alias mjTEXROLE_ROUGHNESS: 
+	alias mjTEXROLE_METALLIC: 
+	alias mjTEXROLE_NORMAL: 
+	alias mjTEXROLE_OPACITY: 
+	alias mjTEXROLE_EMISSIVE: 
+	alias mjTEXROLE_RGBA: 
+	alias mjTEXROLE_ORM: 
+	alias referenced: 
 
-# (placeholder) | |-EnumConstantDecl 0x681458 <line:140:3, col:25> col:3 mjTEXROLE_USER 'int'
-
-# (placeholder) | | |-ConstantExpr 0x681438 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x681418 <col:25> 'int' 0
-
-# unspecified
-
-# (placeholder) | |-EnumConstantDecl 0x6814d8 <line:141:3> col:3 mjTEXROLE_RGB 'int'
-
-# base color (albedo)
-
-# (placeholder) | |-EnumConstantDecl 0x681558 <line:142:3> col:3 mjTEXROLE_OCCLUSION 'int'
-
-# ambient occlusion
-
-# (placeholder) | |-EnumConstantDecl 0x6815d8 <line:143:3> col:3 mjTEXROLE_ROUGHNESS 'int'
-
-# roughness
-
-# (placeholder) | |-EnumConstantDecl 0x681658 <line:144:3> col:3 mjTEXROLE_METALLIC 'int'
-
-# metallic
-
-# (placeholder) | |-EnumConstantDecl 0x6816d8 <line:145:3> col:3 mjTEXROLE_NORMAL 'int'
-
-# normal (bump) map
-
-# (placeholder) | |-EnumConstantDecl 0x681758 <line:146:3> col:3 mjTEXROLE_OPACITY 'int'
-
-# transperancy
-
-# (placeholder) | |-EnumConstantDecl 0x6817d8 <line:147:3> col:3 mjTEXROLE_EMISSIVE 'int'
-
-# light emission
-
-# (placeholder) | |-EnumConstantDecl 0x681858 <line:148:3> col:3 mjTEXROLE_RGBA 'int'
-
-# base color, opacity
-
-# (placeholder) | |-EnumConstantDecl 0x6818d8 <line:149:3> col:3 mjTEXROLE_ORM 'int'
-
-# occlusion, roughness, metallic
-
-# (placeholder) | `-EnumConstantDecl 0x681958 <line:150:3> col:3 referenced mjNTEXROLE 'int'
 
 alias mjtTextureRole = 
+struct mjtIntegrator_:
+	alias mjINT_EULER: Int = 0
 
-# (placeholder) |-EnumDecl 0x681a78 <line:154:9, line:159:1> line:154:14 mjtIntegrator_
+	alias mjINT_RK4: 
+	alias mjINT_IMPLICIT: 
+	alias mjINT_IMPLICITFAST: 
 
-# (placeholder) | |-EnumConstantDecl 0x681ba8 <line:155:3, col:25> col:3 mjINT_EULER 'int'
-
-# (placeholder) | | |-ConstantExpr 0x681b88 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x681b68 <col:25> 'int' 0
-
-# semi-implicit Euler
-
-# (placeholder) | |-EnumConstantDecl 0x681c28 <line:156:3> col:3 mjINT_RK4 'int'
-
-# 4th-order Runge Kutta
-
-# (placeholder) | |-EnumConstantDecl 0x681cf0 <line:157:3> col:3 mjINT_IMPLICIT 'int'
-
-# implicit in velocity
-
-# (placeholder) | `-EnumConstantDecl 0x681d98 <line:158:3> col:3 mjINT_IMPLICITFAST 'int'
-
-# implicit in velocity, no rne derivative
 
 alias mjtIntegrator = 
+struct mjtCone_:
+	alias mjCONE_PYRAMIDAL: Int = 0
 
-# (placeholder) |-EnumDecl 0x681eb8 <line:162:9, line:165:1> line:162:14 mjtCone_
+	alias mjCONE_ELLIPTIC: 
 
-# (placeholder) | |-EnumConstantDecl 0x681fe8 <line:163:3, col:26> col:3 mjCONE_PYRAMIDAL 'int'
-
-# (placeholder) | | |-ConstantExpr 0x681fc8 <col:26> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x681fa8 <col:26> 'int' 0
-
-# pyramidal
-
-# (placeholder) | `-EnumConstantDecl 0x682098 <line:164:3> col:3 mjCONE_ELLIPTIC 'int'
-
-# elliptic
 
 alias mjtCone = 
+struct mjtJacobian_:
+	alias mjJAC_DENSE: Int = 0
 
-# (placeholder) |-EnumDecl 0x6821b8 <line:168:9, line:172:1> line:168:14 mjtJacobian_
+	alias mjJAC_SPARSE: 
+	alias mjJAC_AUTO: 
 
-# (placeholder) | |-EnumConstantDecl 0x6822e8 <line:169:3, col:26> col:3 mjJAC_DENSE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6822c8 <col:26> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6822a8 <col:26> 'int' 0
-
-# dense
-
-# (placeholder) | |-EnumConstantDecl 0x682368 <line:170:3> col:3 mjJAC_SPARSE 'int'
-
-# sparse
-
-# (placeholder) | `-EnumConstantDecl 0x682418 <line:171:3> col:3 mjJAC_AUTO 'int'
-
-# dense if nv
-#<
-#60, sparse otherwise
 
 alias mjtJacobian = 
+struct mjtSolver_:
+	alias mjSOL_PGS: Int = 0
 
-# (placeholder) |-EnumDecl 0x682538 <line:175:9, line:179:1> line:175:14 mjtSolver_
+	alias mjSOL_CG: 
+	alias mjSOL_NEWTON: 
 
-# (placeholder) | |-EnumConstantDecl 0x682668 <line:176:3, col:26> col:3 mjSOL_PGS 'int'
-
-# (placeholder) | | |-ConstantExpr 0x682648 <col:26> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x682628 <col:26> 'int' 0
-
-# PGS    (dual)
-
-# (placeholder) | |-EnumConstantDecl 0x6826e8 <line:177:3> col:3 mjSOL_CG 'int'
-
-# CG     (primal)
-
-# (placeholder) | `-EnumConstantDecl 0x682798 <line:178:3> col:3 mjSOL_NEWTON 'int'
-
-# Newton (primal)
 
 alias mjtSolver = 
+struct mjtEq_:
+	alias mjEQ_CONNECT: Int = 0
 
-# (placeholder) |-EnumDecl 0x6828b8 <line:182:9, line:189:1> line:182:14 mjtEq_
+	alias mjEQ_WELD: 
+	alias mjEQ_JOINT: 
+	alias mjEQ_TENDON: 
+	alias mjEQ_FLEX: 
+	alias mjEQ_DISTANCE: 
 
-# (placeholder) | |-EnumConstantDecl 0x6829e8 <line:183:3, col:25> col:3 mjEQ_CONNECT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6829c8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6829a8 <col:25> 'int' 0
-
-# connect two bodies at a point (ball joint)
-
-# (placeholder) | |-EnumConstantDecl 0x682a68 <line:184:3> col:3 mjEQ_WELD 'int'
-
-# fix relative position and orientation of two bodies
-
-# (placeholder) | |-EnumConstantDecl 0x682ae8 <line:185:3> col:3 mjEQ_JOINT 'int'
-
-# couple the values of two scalar joints with cubic
-
-# (placeholder) | |-EnumConstantDecl 0x682b68 <line:186:3> col:3 mjEQ_TENDON 'int'
-
-# couple the lengths of two tendons with cubic
-
-# (placeholder) | |-EnumConstantDecl 0x682be8 <line:187:3> col:3 mjEQ_FLEX 'int'
-
-# fix all edge lengths of a flex
-
-# (placeholder) | `-EnumConstantDecl 0x682c98 <line:188:3> col:3 mjEQ_DISTANCE 'int'
-
-# unsupported, will cause an error if used
 
 alias mjtEq = 
+struct mjtWrap_:
+	alias mjWRAP_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x682dc8 <line:192:9, line:199:1> line:192:14 mjtWrap_
+	alias mjWRAP_JOINT: 
+	alias mjWRAP_PULLEY: 
+	alias mjWRAP_SITE: 
+	alias mjWRAP_SPHERE: 
+	alias mjWRAP_CYLINDER: 
 
-# (placeholder) | |-EnumConstantDecl 0x682ef8 <line:193:3, col:25> col:3 mjWRAP_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x682ed8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x682eb8 <col:25> 'int' 0
-
-# null object
-
-# (placeholder) | |-EnumConstantDecl 0x682f78 <line:194:3> col:3 mjWRAP_JOINT 'int'
-
-# constant moment arm
-
-# (placeholder) | |-EnumConstantDecl 0x682ff8 <line:195:3> col:3 mjWRAP_PULLEY 'int'
-
-# pulley used to split tendon
-
-# (placeholder) | |-EnumConstantDecl 0x683078 <line:196:3> col:3 mjWRAP_SITE 'int'
-
-# pass through site
-
-# (placeholder) | |-EnumConstantDecl 0x6830f8 <line:197:3> col:3 mjWRAP_SPHERE 'int'
-
-# wrap around sphere
-
-# (placeholder) | `-EnumConstantDecl 0x6831a8 <line:198:3> col:3 mjWRAP_CYLINDER 'int'
-
-# wrap around (infinite) cylinder
 
 alias mjtWrap = 
+struct mjtTrn_:
+	alias mjTRN_JOINT: Int = 0
 
-# (placeholder) |-EnumDecl 0x6832c8 <line:202:9, line:211:1> line:202:14 mjtTrn_
+	alias mjTRN_JOINTINPARENT: 
+	alias mjTRN_SLIDERCRANK: 
+	alias mjTRN_TENDON: 
+	alias mjTRN_SITE: 
+	alias mjTRN_BODY: 
+	alias mjTRN_UNDEFINED: Int = 1000
 
-# (placeholder) | |-EnumConstantDecl 0x6833f8 <line:203:3, col:25> col:3 mjTRN_JOINT 'int'
 
-# (placeholder) | | |-ConstantExpr 0x6833d8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6833b8 <col:25> 'int' 0
-
-# force on joint
-
-# (placeholder) | |-EnumConstantDecl 0x683478 <line:204:3> col:3 mjTRN_JOINTINPARENT 'int'
-
-# force on joint, expressed in parent frame
-
-# (placeholder) | |-EnumConstantDecl 0x6834f8 <line:205:3> col:3 mjTRN_SLIDERCRANK 'int'
-
-# force via slider-crank linkage
-
-# (placeholder) | |-EnumConstantDecl 0x683578 <line:206:3> col:3 mjTRN_TENDON 'int'
-
-# force on tendon
-
-# (placeholder) | |-EnumConstantDecl 0x6835f8 <line:207:3> col:3 mjTRN_SITE 'int'
-
-# force on site
-
-# (placeholder) | |-EnumConstantDecl 0x683678 <line:208:3> col:3 mjTRN_BODY 'int'
-
-# adhesion force on a body ' s geoms
-
-# (placeholder) | `-EnumConstantDecl 0x683768 <line:210:3, col:25> col:3 mjTRN_UNDEFINED 'int'
-
-# (placeholder) |   |-ConstantExpr 0x683748 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 1000
-
-# (placeholder) |   | `-IntegerLiteral 0x6836f8 <col:25> 'int' 1000
-
-# undefined transmission type
 
 alias mjtTrn = 
+struct mjtDyn_:
+	alias mjDYN_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x683888 <line:214:9, line:221:1> line:214:14 mjtDyn_
+	alias mjDYN_INTEGRATOR: 
+	alias mjDYN_FILTER: 
+	alias mjDYN_FILTEREXACT: 
+	alias mjDYN_MUSCLE: 
+	alias mjDYN_USER: 
 
-# (placeholder) | |-EnumConstantDecl 0x6839b8 <line:215:3, col:25> col:3 mjDYN_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x683998 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x683978 <col:25> 'int' 0
-
-# no internal dynamics; ctrl specifies force
-
-# (placeholder) | |-EnumConstantDecl 0x683a38 <line:216:3> col:3 mjDYN_INTEGRATOR 'int'
-
-# integrator: da/dt = u
-
-# (placeholder) | |-EnumConstantDecl 0x683ab8 <line:217:3> col:3 mjDYN_FILTER 'int'
-
-# linear filter: da/dt = (u-a) / tau
-
-# (placeholder) | |-EnumConstantDecl 0x683b38 <line:218:3> col:3 mjDYN_FILTEREXACT 'int'
-
-# linear filter: da/dt = (u-a) / tau, with exact integration
-
-# (placeholder) | |-EnumConstantDecl 0x683bb8 <line:219:3> col:3 mjDYN_MUSCLE 'int'
-
-# piece-wise linear filter with two time constants
-
-# (placeholder) | `-EnumConstantDecl 0x683c68 <line:220:3> col:3 mjDYN_USER 'int'
-
-# user-defined dynamics type
 
 alias mjtDyn = 
+struct mjtGain_:
+	alias mjGAIN_FIXED: Int = 0
 
-# (placeholder) |-EnumDecl 0x684eb0 <line:224:9, line:229:1> line:224:14 mjtGain_
+	alias mjGAIN_AFFINE: 
+	alias mjGAIN_MUSCLE: 
+	alias mjGAIN_USER: 
 
-# (placeholder) | |-EnumConstantDecl 0x684fd8 <line:225:3, col:25> col:3 mjGAIN_FIXED 'int'
-
-# (placeholder) | | |-ConstantExpr 0x684fb8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x684f98 <col:25> 'int' 0
-
-# fixed gain
-
-# (placeholder) | |-EnumConstantDecl 0x685058 <line:226:3> col:3 mjGAIN_AFFINE 'int'
-
-# const + kp*length + kv*velocity
-
-# (placeholder) | |-EnumConstantDecl 0x6850d8 <line:227:3> col:3 mjGAIN_MUSCLE 'int'
-
-# muscle FLV curve computed by mju_muscleGain()
-
-# (placeholder) | `-EnumConstantDecl 0x685188 <line:228:3> col:3 mjGAIN_USER 'int'
-
-# user-defined gain type
 
 alias mjtGain = 
+struct mjtBias_:
+	alias mjBIAS_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x6852a8 <line:232:9, line:237:1> line:232:14 mjtBias_
+	alias mjBIAS_AFFINE: 
+	alias mjBIAS_MUSCLE: 
+	alias mjBIAS_USER: 
 
-# (placeholder) | |-EnumConstantDecl 0x6853d8 <line:233:3, col:25> col:3 mjBIAS_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6853b8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x685398 <col:25> 'int' 0
-
-# no bias
-
-# (placeholder) | |-EnumConstantDecl 0x685458 <line:234:3> col:3 mjBIAS_AFFINE 'int'
-
-# const + kp*length + kv*velocity
-
-# (placeholder) | |-EnumConstantDecl 0x6854d8 <line:235:3> col:3 mjBIAS_MUSCLE 'int'
-
-# muscle passive force computed by mju_muscleBias()
-
-# (placeholder) | `-EnumConstantDecl 0x685588 <line:236:3> col:3 mjBIAS_USER 'int'
-
-# user-defined bias type
 
 alias mjtBias = 
+struct mjtObj_:
+	alias mjOBJ_UNKNOWN: Int = 0
+
+	alias mjOBJ_BODY: 
+	alias mjOBJ_XBODY: 
+	alias mjOBJ_JOINT: 
+	alias mjOBJ_DOF: 
+	alias mjOBJ_GEOM: 
+	alias mjOBJ_SITE: 
+	alias mjOBJ_CAMERA: 
+	alias mjOBJ_LIGHT: 
+	alias mjOBJ_FLEX: 
+	alias mjOBJ_MESH: 
+	alias mjOBJ_SKIN: 
+	alias mjOBJ_HFIELD: 
+	alias mjOBJ_TEXTURE: 
+	alias mjOBJ_MATERIAL: 
+	alias mjOBJ_PAIR: 
+	alias mjOBJ_EXCLUDE: 
+	alias mjOBJ_EQUALITY: 
+	alias mjOBJ_TENDON: 
+	alias mjOBJ_ACTUATOR: 
+	alias mjOBJ_SENSOR: 
+	alias mjOBJ_NUMERIC: 
+	alias mjOBJ_TEXT: 
+	alias mjOBJ_TUPLE: 
+	alias mjOBJ_KEY: 
+	alias mjOBJ_PLUGIN: 
+	alias mjNOBJECT: 
+	alias mjOBJ_FRAME: Int = 100
+
+	alias mjOBJ_DEFAULT: 
+	alias mjOBJ_MODEL: 
 
-# (placeholder) |-EnumDecl 0x6856a8 <line:240:9, line:275:1> line:240:14 mjtObj_
-
-# (placeholder) | |-EnumConstantDecl 0x6857d8 <line:241:3, col:25> col:3 mjOBJ_UNKNOWN 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6857b8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x685798 <col:25> 'int' 0
-
-# unknown object type
-
-# (placeholder) | |-EnumConstantDecl 0x685858 <line:242:3> col:3 mjOBJ_BODY 'int'
-
-# body
-
-# (placeholder) | |-EnumConstantDecl 0x6858d8 <line:243:3> col:3 mjOBJ_XBODY 'int'
-
-# body, used to access regular frame instead of i-frame
-
-# (placeholder) | |-EnumConstantDecl 0x685958 <line:244:3> col:3 mjOBJ_JOINT 'int'
-
-# joint
-
-# (placeholder) | |-EnumConstantDecl 0x6859d8 <line:245:3> col:3 mjOBJ_DOF 'int'
-
-# dof
-
-# (placeholder) | |-EnumConstantDecl 0x685a58 <line:246:3> col:3 mjOBJ_GEOM 'int'
-
-# geom
-
-# (placeholder) | |-EnumConstantDecl 0x685ad8 <line:247:3> col:3 mjOBJ_SITE 'int'
-
-# site
-
-# (placeholder) | |-EnumConstantDecl 0x685b58 <line:248:3> col:3 mjOBJ_CAMERA 'int'
-
-# camera
-
-# (placeholder) | |-EnumConstantDecl 0x685bd8 <line:249:3> col:3 mjOBJ_LIGHT 'int'
-
-# light
-
-# (placeholder) | |-EnumConstantDecl 0x685c58 <line:250:3> col:3 mjOBJ_FLEX 'int'
-
-# flex
-
-# (placeholder) | |-EnumConstantDecl 0x685cd8 <line:251:3> col:3 mjOBJ_MESH 'int'
-
-# mesh
-
-# (placeholder) | |-EnumConstantDecl 0x685d58 <line:252:3> col:3 mjOBJ_SKIN 'int'
-
-# skin
-
-# (placeholder) | |-EnumConstantDecl 0x6863f0 <line:253:3> col:3 mjOBJ_HFIELD 'int'
-
-# heightfield
-
-# (placeholder) | |-EnumConstantDecl 0x686468 <line:254:3> col:3 mjOBJ_TEXTURE 'int'
-
-# texture
-
-# (placeholder) | |-EnumConstantDecl 0x6864e8 <line:255:3> col:3 mjOBJ_MATERIAL 'int'
-
-# material for rendering
-
-# (placeholder) | |-EnumConstantDecl 0x686568 <line:256:3> col:3 mjOBJ_PAIR 'int'
-
-# geom pair to include
-
-# (placeholder) | |-EnumConstantDecl 0x6865e8 <line:257:3> col:3 mjOBJ_EXCLUDE 'int'
-
-# body pair to exclude
-
-# (placeholder) | |-EnumConstantDecl 0x686668 <line:258:3> col:3 mjOBJ_EQUALITY 'int'
-
-# equality constraint
-
-# (placeholder) | |-EnumConstantDecl 0x6866e8 <line:259:3> col:3 mjOBJ_TENDON 'int'
-
-# tendon
-
-# (placeholder) | |-EnumConstantDecl 0x686768 <line:260:3> col:3 mjOBJ_ACTUATOR 'int'
-
-# actuator
-
-# (placeholder) | |-EnumConstantDecl 0x6867e8 <line:261:3> col:3 mjOBJ_SENSOR 'int'
-
-# sensor
-
-# (placeholder) | |-EnumConstantDecl 0x686868 <line:262:3> col:3 mjOBJ_NUMERIC 'int'
-
-# numeric
-
-# (placeholder) | |-EnumConstantDecl 0x6868e8 <line:263:3> col:3 mjOBJ_TEXT 'int'
-
-# text
-
-# (placeholder) | |-EnumConstantDecl 0x686968 <line:264:3> col:3 mjOBJ_TUPLE 'int'
-
-# tuple
-
-# (placeholder) | |-EnumConstantDecl 0x6869e8 <line:265:3> col:3 mjOBJ_KEY 'int'
-
-# keyframe
-
-# (placeholder) | |-EnumConstantDecl 0x686a68 <line:266:3> col:3 mjOBJ_PLUGIN 'int'
-
-# plugin instance
-
-# (placeholder) | |-EnumConstantDecl 0x686ae8 <line:268:3> col:3 mjNOBJECT 'int'
-
-# number of object types
-
-# (placeholder) | |-EnumConstantDecl 0x686bd8 <line:271:3, col:25> col:3 mjOBJ_FRAME 'int'
-
-# (placeholder) | | |-ConstantExpr 0x686bb8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 100
-
-# (placeholder) | | | `-IntegerLiteral 0x686b98 <col:25> 'int' 100
-
-# frame
-
-# (placeholder) | |-EnumConstantDecl 0x686c58 <line:272:3> col:3 mjOBJ_DEFAULT 'int'
-
-# default
-
-# (placeholder) | `-EnumConstantDecl 0x686d08 <line:273:3> col:3 mjOBJ_MODEL 'int'
-
-# entire model
 
 alias mjtObj = 
+struct mjtConstraint_:
+	alias mjCNSTR_EQUALITY: Int = 0
 
-# (placeholder) |-EnumDecl 0x686e28 <line:278:9, line:287:1> line:278:14 mjtConstraint_
+	alias mjCNSTR_FRICTION_DOF: 
+	alias mjCNSTR_FRICTION_TENDON: 
+	alias mjCNSTR_LIMIT_JOINT: 
+	alias mjCNSTR_LIMIT_TENDON: 
+	alias mjCNSTR_CONTACT_FRICTIONLESS: 
+	alias mjCNSTR_CONTACT_PYRAMIDAL: 
+	alias mjCNSTR_CONTACT_ELLIPTIC: 
 
-# (placeholder) | |-EnumConstantDecl 0x686f58 <line:279:3, col:25> col:3 mjCNSTR_EQUALITY 'int'
-
-# (placeholder) | | |-ConstantExpr 0x686f38 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x686f18 <col:25> 'int' 0
-
-# equality constraint
-
-# (placeholder) | |-EnumConstantDecl 0x686fd8 <line:280:3> col:3 mjCNSTR_FRICTION_DOF 'int'
-
-# dof friction
-
-# (placeholder) | |-EnumConstantDecl 0x687058 <line:281:3> col:3 mjCNSTR_FRICTION_TENDON 'int'
-
-# tendon friction
-
-# (placeholder) | |-EnumConstantDecl 0x6870d8 <line:282:3> col:3 mjCNSTR_LIMIT_JOINT 'int'
-
-# joint limit
-
-# (placeholder) | |-EnumConstantDecl 0x687158 <line:283:3> col:3 mjCNSTR_LIMIT_TENDON 'int'
-
-# tendon limit
-
-# (placeholder) | |-EnumConstantDecl 0x6871d8 <line:284:3> col:3 mjCNSTR_CONTACT_FRICTIONLESS 'int'
-
-# frictionless contact
-
-# (placeholder) | |-EnumConstantDecl 0x687258 <line:285:3> col:3 mjCNSTR_CONTACT_PYRAMIDAL 'int'
-
-# frictional contact, pyramidal friction cone
-
-# (placeholder) | `-EnumConstantDecl 0x687308 <line:286:3> col:3 mjCNSTR_CONTACT_ELLIPTIC 'int'
-
-# frictional contact, elliptic friction cone
 
 alias mjtConstraint = 
+struct mjtConstraintState_:
+	alias mjCNSTRSTATE_SATISFIED: Int = 0
 
-# (placeholder) |-EnumDecl 0x687b70 <line:290:9, line:296:1> line:290:14 mjtConstraintState_
+	alias mjCNSTRSTATE_QUADRATIC: 
+	alias mjCNSTRSTATE_LINEARNEG: 
+	alias mjCNSTRSTATE_LINEARPOS: 
+	alias mjCNSTRSTATE_CONE: 
 
-# (placeholder) | |-EnumConstantDecl 0x687c98 <line:291:3, col:28> col:3 mjCNSTRSTATE_SATISFIED 'int'
-
-# (placeholder) | | |-ConstantExpr 0x687c78 <col:28> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x687c58 <col:28> 'int' 0
-
-# constraint satisfied, zero cost (limit, contact)
-
-# (placeholder) | |-EnumConstantDecl 0x687d18 <line:292:3> col:3 mjCNSTRSTATE_QUADRATIC 'int'
-
-# quadratic cost (equality, friction, limit, contact)
-
-# (placeholder) | |-EnumConstantDecl 0x687d98 <line:293:3> col:3 mjCNSTRSTATE_LINEARNEG 'int'
-
-# linear cost, negative side (friction)
-
-# (placeholder) | |-EnumConstantDecl 0x687e18 <line:294:3> col:3 mjCNSTRSTATE_LINEARPOS 'int'
-
-# linear cost, positive side (friction)
-
-# (placeholder) | `-EnumConstantDecl 0x687ec8 <line:295:3> col:3 mjCNSTRSTATE_CONE 'int'
-
-# squared distance to cone cost (elliptic contact)
 
 alias mjtConstraintState = 
+struct mjtSensor_:
+	alias mjSENS_TOUCH: Int = 0
+
+	alias mjSENS_ACCELEROMETER: 
+	alias mjSENS_VELOCIMETER: 
+	alias mjSENS_GYRO: 
+	alias mjSENS_FORCE: 
+	alias mjSENS_TORQUE: 
+	alias mjSENS_MAGNETOMETER: 
+	alias mjSENS_RANGEFINDER: 
+	alias mjSENS_CAMPROJECTION: 
+	alias mjSENS_JOINTPOS: 
+	alias mjSENS_JOINTVEL: 
+	alias mjSENS_TENDONPOS: 
+	alias mjSENS_TENDONVEL: 
+	alias mjSENS_ACTUATORPOS: 
+	alias mjSENS_ACTUATORVEL: 
+	alias mjSENS_ACTUATORFRC: 
+	alias mjSENS_JOINTACTFRC: 
+	alias mjSENS_BALLQUAT: 
+	alias mjSENS_BALLANGVEL: 
+	alias mjSENS_JOINTLIMITPOS: 
+	alias mjSENS_JOINTLIMITVEL: 
+	alias mjSENS_JOINTLIMITFRC: 
+	alias mjSENS_TENDONLIMITPOS: 
+	alias mjSENS_TENDONLIMITVEL: 
+	alias mjSENS_TENDONLIMITFRC: 
+	alias mjSENS_FRAMEPOS: 
+	alias mjSENS_FRAMEQUAT: 
+	alias mjSENS_FRAMEXAXIS: 
+	alias mjSENS_FRAMEYAXIS: 
+	alias mjSENS_FRAMEZAXIS: 
+	alias mjSENS_FRAMELINVEL: 
+	alias mjSENS_FRAMEANGVEL: 
+	alias mjSENS_FRAMELINACC: 
+	alias mjSENS_FRAMEANGACC: 
+	alias mjSENS_SUBTREECOM: 
+	alias mjSENS_SUBTREELINVEL: 
+	alias mjSENS_SUBTREEANGMOM: 
+	alias mjSENS_GEOMDIST: 
+	alias mjSENS_GEOMNORMAL: 
+	alias mjSENS_GEOMFROMTO: 
+	alias mjSENS_E_POTENTIAL: 
+	alias mjSENS_E_KINETIC: 
+	alias mjSENS_CLOCK: 
+	alias mjSENS_PLUGIN: 
+	alias mjSENS_USER: 
 
-# (placeholder) |-EnumDecl 0x687fe8 <line:299:9, line:364:1> line:299:14 mjtSensor_
-
-# (placeholder) | |-EnumConstantDecl 0x688148 <line:301:3, col:25> col:3 mjSENS_TOUCH 'int'
-
-# (placeholder) | | |-ConstantExpr 0x688128 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x688108 <col:25> 'int' 0
-
-# scalar contact normal forces summed over sensor zone
-
-# (placeholder) | |-EnumConstantDecl 0x6881c8 <line:302:3> col:3 mjSENS_ACCELEROMETER 'int'
-
-# 3D linear acceleration, in local frame
-
-# (placeholder) | |-EnumConstantDecl 0x688248 <line:303:3> col:3 mjSENS_VELOCIMETER 'int'
-
-# 3D linear velocity, in local frame
-
-# (placeholder) | |-EnumConstantDecl 0x6882c8 <line:304:3> col:3 mjSENS_GYRO 'int'
-
-# 3D angular velocity, in local frame
-
-# (placeholder) | |-EnumConstantDecl 0x688348 <line:305:3> col:3 mjSENS_FORCE 'int'
-
-# 3D force between site ' s body and its parent body
-
-# (placeholder) | |-EnumConstantDecl 0x6883c8 <line:306:3> col:3 mjSENS_TORQUE 'int'
-
-# 3D torque between site ' s body and its parent body
-
-# (placeholder) | |-EnumConstantDecl 0x688448 <line:307:3> col:3 mjSENS_MAGNETOMETER 'int'
-
-# 3D magnetometer
-
-# (placeholder) | |-EnumConstantDecl 0x6884c8 <line:308:3> col:3 mjSENS_RANGEFINDER 'int'
-
-# scalar distance to nearest geom or site along z-axis
-
-# (placeholder) | |-EnumConstantDecl 0x688548 <line:309:3> col:3 mjSENS_CAMPROJECTION 'int'
-
-# pixel coordinates of a site in the camera image
-
-# (placeholder) | |-EnumConstantDecl 0x6885f8 <line:312:3> col:3 mjSENS_JOINTPOS 'int'
-
-# scalar joint position (hinge and slide only)
-
-# (placeholder) | |-EnumConstantDecl 0x688678 <line:313:3> col:3 mjSENS_JOINTVEL 'int'
-
-# scalar joint velocity (hinge and slide only)
-
-# (placeholder) | |-EnumConstantDecl 0x6886f8 <line:314:3> col:3 mjSENS_TENDONPOS 'int'
-
-# scalar tendon position
-
-# (placeholder) | |-EnumConstantDecl 0x688778 <line:315:3> col:3 mjSENS_TENDONVEL 'int'
-
-# scalar tendon velocity
-
-# (placeholder) | |-EnumConstantDecl 0x6887f8 <line:316:3> col:3 mjSENS_ACTUATORPOS 'int'
-
-# scalar actuator position
-
-# (placeholder) | |-EnumConstantDecl 0x688878 <line:317:3> col:3 mjSENS_ACTUATORVEL 'int'
-
-# scalar actuator velocity
-
-# (placeholder) | |-EnumConstantDecl 0x6888f8 <line:318:3> col:3 mjSENS_ACTUATORFRC 'int'
-
-# scalar actuator force
-
-# (placeholder) | |-EnumConstantDecl 0x688978 <line:319:3> col:3 mjSENS_JOINTACTFRC 'int'
-
-# scalar actuator force, measured at the joint
-
-# (placeholder) | |-EnumConstantDecl 0x688a28 <line:322:3> col:3 mjSENS_BALLQUAT 'int'
-
-# 4D ball joint quaternion
-
-# (placeholder) | |-EnumConstantDecl 0x688aa8 <line:323:3> col:3 mjSENS_BALLANGVEL 'int'
-
-# 3D ball joint angular velocity
-
-# (placeholder) | |-EnumConstantDecl 0x68a278 <line:326:3> col:3 mjSENS_JOINTLIMITPOS 'int'
-
-# joint limit distance-margin
-
-# (placeholder) | |-EnumConstantDecl 0x68a2f8 <line:327:3> col:3 mjSENS_JOINTLIMITVEL 'int'
-
-# joint limit velocity
-
-# (placeholder) | |-EnumConstantDecl 0x68a378 <line:328:3> col:3 mjSENS_JOINTLIMITFRC 'int'
-
-# joint limit force
-
-# (placeholder) | |-EnumConstantDecl 0x68a3f8 <line:329:3> col:3 mjSENS_TENDONLIMITPOS 'int'
-
-# tendon limit distance-margin
-
-# (placeholder) | |-EnumConstantDecl 0x68a478 <line:330:3> col:3 mjSENS_TENDONLIMITVEL 'int'
-
-# tendon limit velocity
-
-# (placeholder) | |-EnumConstantDecl 0x68a4f8 <line:331:3> col:3 mjSENS_TENDONLIMITFRC 'int'
-
-# tendon limit force
-
-# (placeholder) | |-EnumConstantDecl 0x68a5a8 <line:334:3> col:3 mjSENS_FRAMEPOS 'int'
-
-# 3D position
-
-# (placeholder) | |-EnumConstantDecl 0x68a628 <line:335:3> col:3 mjSENS_FRAMEQUAT 'int'
-
-# 4D unit quaternion orientation
-
-# (placeholder) | |-EnumConstantDecl 0x68a6a8 <line:336:3> col:3 mjSENS_FRAMEXAXIS 'int'
-
-# 3D unit vector: x-axis of object ' s frame
-
-# (placeholder) | |-EnumConstantDecl 0x68a728 <line:337:3> col:3 mjSENS_FRAMEYAXIS 'int'
-
-# 3D unit vector: y-axis of object ' s frame
-
-# (placeholder) | |-EnumConstantDecl 0x68a7a8 <line:338:3> col:3 mjSENS_FRAMEZAXIS 'int'
-
-# 3D unit vector: z-axis of object ' s frame
-
-# (placeholder) | |-EnumConstantDecl 0x68a828 <line:339:3> col:3 mjSENS_FRAMELINVEL 'int'
-
-# 3D linear velocity
-
-# (placeholder) | |-EnumConstantDecl 0x68a8a8 <line:340:3> col:3 mjSENS_FRAMEANGVEL 'int'
-
-# 3D angular velocity
-
-# (placeholder) | |-EnumConstantDecl 0x68a928 <line:341:3> col:3 mjSENS_FRAMELINACC 'int'
-
-# 3D linear acceleration
-
-# (placeholder) | |-EnumConstantDecl 0x68a9a8 <line:342:3> col:3 mjSENS_FRAMEANGACC 'int'
-
-# 3D angular acceleration
-
-# (placeholder) | |-EnumConstantDecl 0x68aa58 <line:345:3> col:3 mjSENS_SUBTREECOM 'int'
-
-# 3D center of mass of subtree
-
-# (placeholder) | |-EnumConstantDecl 0x68aad8 <line:346:3> col:3 mjSENS_SUBTREELINVEL 'int'
-
-# 3D linear velocity of subtree
-
-# (placeholder) | |-EnumConstantDecl 0x68ab58 <line:347:3> col:3 mjSENS_SUBTREEANGMOM 'int'
-
-# 3D angular momentum of subtree
-
-# (placeholder) | |-EnumConstantDecl 0x68ac08 <line:350:3> col:3 mjSENS_GEOMDIST 'int'
-
-# signed distance between two geoms
-
-# (placeholder) | |-EnumConstantDecl 0x68ac88 <line:351:3> col:3 mjSENS_GEOMNORMAL 'int'
-
-# normal direction between two geoms
-
-# (placeholder) | |-EnumConstantDecl 0x68ad08 <line:352:3> col:3 mjSENS_GEOMFROMTO 'int'
-
-# segment between two geoms
-
-# (placeholder) | |-EnumConstantDecl 0x68adb8 <line:355:3> col:3 mjSENS_E_POTENTIAL 'int'
-
-# potential energy
-
-# (placeholder) | |-EnumConstantDecl 0x68ae38 <line:356:3> col:3 mjSENS_E_KINETIC 'int'
-
-# kinetic energy
-
-# (placeholder) | |-EnumConstantDecl 0x68aeb8 <line:357:3> col:3 mjSENS_CLOCK 'int'
-
-# simulation time
-
-# (placeholder) | |-EnumConstantDecl 0x68af68 <line:360:3> col:3 mjSENS_PLUGIN 'int'
-
-# plugin-controlled
-
-# (placeholder) | `-EnumConstantDecl 0x68b048 <line:363:3> col:3 mjSENS_USER 'int'
-
-# sensor data provided by mjcb_sensor callback
 
 alias mjtSensor = 
+struct mjtStage_:
+	alias mjSTAGE_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x68b168 <line:367:9, line:372:1> line:367:14 mjtStage_
+	alias mjSTAGE_POS: 
+	alias mjSTAGE_VEL: 
+	alias mjSTAGE_ACC: 
 
-# (placeholder) | |-EnumConstantDecl 0x68b6b8 <line:368:3, col:25> col:3 mjSTAGE_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x68b698 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x68b678 <col:25> 'int' 0
-
-# no computations
-
-# (placeholder) | |-EnumConstantDecl 0x68b738 <line:369:3> col:3 mjSTAGE_POS 'int'
-
-# position-dependent computations
-
-# (placeholder) | |-EnumConstantDecl 0x68b7b8 <line:370:3> col:3 mjSTAGE_VEL 'int'
-
-# velocity-dependent computations
-
-# (placeholder) | `-EnumConstantDecl 0x68b868 <line:371:3> col:3 mjSTAGE_ACC 'int'
-
-# acceleration/force-dependent computations
 
 alias mjtStage = 
+struct mjtDataType_:
+	alias mjDATATYPE_REAL: Int = 0
 
-# (placeholder) |-EnumDecl 0x68b988 <line:375:9, line:380:1> line:375:14 mjtDataType_
+	alias mjDATATYPE_POSITIVE: 
+	alias mjDATATYPE_AXIS: 
+	alias mjDATATYPE_QUATERNION: 
 
-# (placeholder) | |-EnumConstantDecl 0x68bab8 <line:376:3, col:25> col:3 mjDATATYPE_REAL 'int'
-
-# (placeholder) | | |-ConstantExpr 0x68ba98 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x68ba78 <col:25> 'int' 0
-
-# real values, no constraints
-
-# (placeholder) | |-EnumConstantDecl 0x68bb38 <line:377:3> col:3 mjDATATYPE_POSITIVE 'int'
-
-# positive values; 0 or negative: inactive
-
-# (placeholder) | |-EnumConstantDecl 0x68bbb8 <line:378:3> col:3 mjDATATYPE_AXIS 'int'
-
-# 3D unit vector
-
-# (placeholder) | `-EnumConstantDecl 0x68bc68 <line:379:3> col:3 mjDATATYPE_QUATERNION 'int'
-
-# unit quaternion
 
 alias mjtDataType = 
+struct mjtSameFrame_:
+	alias mjSAMEFRAME_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x68bd88 <line:383:9, line:389:1> line:383:14 mjtSameFrame_
+	alias mjSAMEFRAME_BODY: 
+	alias mjSAMEFRAME_INERTIA: 
+	alias mjSAMEFRAME_BODYROT: 
+	alias mjSAMEFRAME_INERTIAROT: 
 
-# (placeholder) | |-EnumConstantDecl 0x68beb8 <line:384:3, col:25> col:3 mjSAMEFRAME_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x68be98 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x68be78 <col:25> 'int' 0
-
-# no alignment
-
-# (placeholder) | |-EnumConstantDecl 0x68bf38 <line:385:3> col:3 mjSAMEFRAME_BODY 'int'
-
-# frame is same as body frame
-
-# (placeholder) | |-EnumConstantDecl 0x68bfb8 <line:386:3> col:3 mjSAMEFRAME_INERTIA 'int'
-
-# frame is same as inertial frame
-
-# (placeholder) | |-EnumConstantDecl 0x68c038 <line:387:3> col:3 mjSAMEFRAME_BODYROT 'int'
-
-# frame orientation is same as body orientation
-
-# (placeholder) | `-EnumConstantDecl 0x68c0e8 <line:388:3> col:3 mjSAMEFRAME_INERTIAROT 'int'
-
-# frame orientation is same as inertia orientation
 
 alias mjtSameFrame = 
+struct mjtLRMode_:
+	alias mjLRMODE_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x68c208 <line:392:9, line:397:1> line:392:14 mjtLRMode_
+	alias mjLRMODE_MUSCLE: 
+	alias mjLRMODE_MUSCLEUSER: 
+	alias mjLRMODE_ALL: 
 
-# (placeholder) | |-EnumConstantDecl 0x68c338 <line:393:3, col:21> col:3 mjLRMODE_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x68c318 <col:21> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x68c2f8 <col:21> 'int' 0
-
-# do not process any actuators
-
-# (placeholder) | |-EnumConstantDecl 0x68c3b8 <line:394:3> col:3 mjLRMODE_MUSCLE 'int'
-
-# process muscle actuators
-
-# (placeholder) | |-EnumConstantDecl 0x68c438 <line:395:3> col:3 mjLRMODE_MUSCLEUSER 'int'
-
-# process muscle and user actuators
-
-# (placeholder) | `-EnumConstantDecl 0x68c4e8 <line:396:3> col:3 mjLRMODE_ALL 'int'
-
-# process all actuators
 
 alias mjtLRMode = 
+struct mjtFlexSelf_:
+	alias mjFLEXSELF_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x68db90 <line:400:9, line:406:1> line:400:14 mjtFlexSelf_
+	alias mjFLEXSELF_NARROW: 
+	alias mjFLEXSELF_BVH: 
+	alias mjFLEXSELF_SAP: 
+	alias mjFLEXSELF_AUTO: 
 
-# (placeholder) | |-EnumConstantDecl 0x68dcb8 <line:401:3, col:23> col:3 mjFLEXSELF_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x68dc98 <col:23> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x68dc78 <col:23> 'int' 0
-
-# no self-collisions
-
-# (placeholder) | |-EnumConstantDecl 0x68dd38 <line:402:3> col:3 mjFLEXSELF_NARROW 'int'
-
-# skip midphase, go directly to narrowphase
-
-# (placeholder) | |-EnumConstantDecl 0x68ddb8 <line:403:3> col:3 mjFLEXSELF_BVH 'int'
-
-# use BVH in midphase (if midphase enabled)
-
-# (placeholder) | |-EnumConstantDecl 0x68de38 <line:404:3> col:3 mjFLEXSELF_SAP 'int'
-
-# use SAP in midphase
-
-# (placeholder) | `-EnumConstantDecl 0x68dee8 <line:405:3> col:3 mjFLEXSELF_AUTO 'int'
-
-# choose between BVH and SAP automatically
 
 alias mjtFlexSelf = 
 struct mjLROpt_:
@@ -3892,26 +2835,12 @@ struct mjModel_:
 
 
 alias mjModel = mjModel_
+struct mjtTaskStatus_:
+	alias mjTASK_NEW: Int = 0
 
-# (placeholder) |-EnumDecl 0x6b9d08 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjthread.h:20:9, line:24:1> line:20:14 mjtTaskStatus_
+	alias mjTASK_QUEUED: 
+	alias mjTASK_COMPLETED: 
 
-# (placeholder) | |-EnumConstantDecl 0x6b9e38 <line:21:3, col:16> col:3 mjTASK_NEW 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b9e18 <col:16> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6b9df8 <col:16> 'int' 0
-
-# newly created
-
-# (placeholder) | |-EnumConstantDecl 0x6b9eb8 <line:22:3> col:3 mjTASK_QUEUED 'int'
-
-# enqueued in a thread pool
-
-# (placeholder) | `-EnumConstantDecl 0x6b9f68 <line:23:3> col:3 mjTASK_COMPLETED 'int'
-
-# completed execution
 
 alias mjtTaskStatus = 
 
@@ -3941,412 +2870,83 @@ struct mjTask_:
 
 
 alias mjTask = mjTask_
+struct mjtState_:
 
-# (placeholder) |-EnumDecl 0x6b4638 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjdata.h:27:9, line:51:1> line:27:14 mjtState_
+	#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias referenced: Int = 1
 
-#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias referenced: Int = 2
 
-# (placeholder) | |-EnumConstantDecl 0x6b47a8 <line:28:3, col:30> col:3 referenced mjSTATE_TIME 'int'
+	alias referenced: Int = 4
 
-# (placeholder) | | |-ConstantExpr 0x6b4788 <col:27, col:30> 'int'
+	alias referenced: Int = 8
 
-# (placeholder) | | | |-value: Int 1
+	alias referenced: Int = 16
 
-# (placeholder) | | | `-BinaryOperator 0x6b4768 <col:27, col:30> 'int' '<<'
+	alias referenced: Int = 32
 
-# (placeholder) | | |   |-IntegerLiteral 0x6b4728 <col:27> 'int' 1
+	alias referenced: Int = 64
 
-# (placeholder) | | |   `-IntegerLiteral 0x6b4748 <col:30> 'int' 0
+	alias referenced: Int = 128
 
-# time
+	alias referenced: Int = 256
 
-# (placeholder) | |-EnumConstantDecl 0x6b48a8 <line:29:3, col:30> col:3 referenced mjSTATE_QPOS 'int'
+	alias referenced: Int = 512
 
-# (placeholder) | | |-ConstantExpr 0x6b4888 <col:27, col:30> 'int'
+	alias referenced: Int = 1024
 
-# (placeholder) | | | |-value: Int 2
+	alias referenced: Int = 2048
 
-# (placeholder) | | | `-BinaryOperator 0x6b4868 <col:27, col:30> 'int' '<<'
+	alias referenced: Int = 4096
 
-# (placeholder) | | |   |-IntegerLiteral 0x6b4828 <col:27> 'int' 1
+	alias mjNSTATE: Int = 13
 
-# (placeholder) | | |   `-IntegerLiteral 0x6b4848 <col:30> 'int' 1
+	alias referenced: Int = 14
 
-# position
+	alias referenced: Int = 4111
 
-# (placeholder) | |-EnumConstantDecl 0x6b49a8 <line:30:3, col:30> col:3 referenced mjSTATE_QVEL 'int'
+	alias referenced: Int = 4064
 
-# (placeholder) | | |-ConstantExpr 0x6b4988 <col:27, col:30> 'int'
+	alias mjSTATE_INTEGRATION: Int = 8191
 
-# (placeholder) | | | |-value: Int 4
 
-# (placeholder) | | | `-BinaryOperator 0x6b4968 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b4928 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b4948 <col:30> 'int' 2
-
-# velocity
-
-# (placeholder) | |-EnumConstantDecl 0x6b4aa8 <line:31:3, col:30> col:3 referenced mjSTATE_ACT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b4a88 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 8
-
-# (placeholder) | | | `-BinaryOperator 0x6b4a68 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b4a28 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b4a48 <col:30> 'int' 3
-
-# actuator activation
-
-# (placeholder) | |-EnumConstantDecl 0x6b4ba8 <line:32:3, col:30> col:3 referenced mjSTATE_WARMSTART 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b4b88 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 16
-
-# (placeholder) | | | `-BinaryOperator 0x6b4b68 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b4b28 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b4b48 <col:30> 'int' 4
-
-# acceleration used for warmstart
-
-# (placeholder) | |-EnumConstantDecl 0x6b4ca8 <line:33:3, col:30> col:3 referenced mjSTATE_CTRL 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b4c88 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 32
-
-# (placeholder) | | | `-BinaryOperator 0x6b4c68 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b4c28 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b4c48 <col:30> 'int' 5
-
-# control
-
-# (placeholder) | |-EnumConstantDecl 0x6b4da8 <line:34:3, col:30> col:3 referenced mjSTATE_QFRC_APPLIED 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b4d88 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 64
-
-# (placeholder) | | | `-BinaryOperator 0x6b4d68 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b4d28 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b4d48 <col:30> 'int' 6
-
-# applied generalized force
-
-# (placeholder) | |-EnumConstantDecl 0x6b4ea8 <line:35:3, col:30> col:3 referenced mjSTATE_XFRC_APPLIED 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b4e88 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 128
-
-# (placeholder) | | | `-BinaryOperator 0x6b4e68 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b4e28 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b4e48 <col:30> 'int' 7
-
-# applied Cartesian force/torque
-
-# (placeholder) | |-EnumConstantDecl 0x6b4fa8 <line:36:3, col:30> col:3 referenced mjSTATE_EQ_ACTIVE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b4f88 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 256
-
-# (placeholder) | | | `-BinaryOperator 0x6b4f68 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b4f28 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b4f48 <col:30> 'int' 8
-
-# enable/disable constraints
-
-# (placeholder) | |-EnumConstantDecl 0x6b50a8 <line:37:3, col:30> col:3 referenced mjSTATE_MOCAP_POS 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b5088 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 512
-
-# (placeholder) | | | `-BinaryOperator 0x6b5068 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b5028 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b5048 <col:30> 'int' 9
-
-# positions of mocap bodies
-
-# (placeholder) | |-EnumConstantDecl 0x6b51a8 <line:38:3, col:30> col:3 referenced mjSTATE_MOCAP_QUAT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b5188 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 1024
-
-# (placeholder) | | | `-BinaryOperator 0x6b5168 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b5128 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b5148 <col:30> 'int' 10
-
-# orientations of mocap bodies
-
-# (placeholder) | |-EnumConstantDecl 0x6b52a8 <line:39:3, col:30> col:3 referenced mjSTATE_USERDATA 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b5288 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 2048
-
-# (placeholder) | | | `-BinaryOperator 0x6b5268 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b5228 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b5248 <col:30> 'int' 11
-
-# user data
-
-# (placeholder) | |-EnumConstantDecl 0x6b53a8 <line:40:3, col:30> col:3 referenced mjSTATE_PLUGIN 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b5388 <col:27, col:30> 'int'
-
-# (placeholder) | | | |-value: Int 4096
-
-# (placeholder) | | | `-BinaryOperator 0x6b5368 <col:27, col:30> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6b5328 <col:27> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6b5348 <col:30> 'int' 12
-
-# plugin state
-
-# (placeholder) | |-EnumConstantDecl 0x6b5468 <line:42:3, col:27> col:3 mjNSTATE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b5448 <col:27> 'int'
-
-# (placeholder) | | | |-value: Int 13
-
-# (placeholder) | | | `-IntegerLiteral 0x6b5428 <col:27> 'int' 13
-
-# number of state elements
-
-# (placeholder) | |-EnumConstantDecl 0x6b55d8 <line:45:3, col:57> col:3 referenced mjSTATE_PHYSICS 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b55b8 <col:27, col:57> 'int'
-
-# (placeholder) | | | |-value: Int 14
-
-# (placeholder) | | | `-BinaryOperator 0x6b5598 <col:27, col:57> 'int' '|'
-
-# (placeholder) | | |   |-BinaryOperator 0x6b5558 <col:27, col:42> 'int' '|'
-
-# (placeholder) | | |   | |-DeclRefExpr 0x6b5518 <col:27> 'int' EnumConstant 0x6b48a8 'mjSTATE_QPOS' 'int'
-
-# (placeholder) | | |   | `-DeclRefExpr 0x6b5538 <col:42> 'int' EnumConstant 0x6b49a8 'mjSTATE_QVEL' 'int'
-
-# (placeholder) | | |   `-DeclRefExpr 0x6b5578 <col:57> 'int' EnumConstant 0x6b4aa8 'mjSTATE_ACT' 'int'
-
-# convenience values for commonly used state specifications
-
-# (placeholder) | |-EnumConstantDecl 0x6b56e8 <line:46:3, col:60> col:3 referenced mjSTATE_FULLPHYSICS 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b56c8 <col:27, col:60> 'int'
-
-# (placeholder) | | | |-value: Int 4111
-
-# (placeholder) | | | `-BinaryOperator 0x6b56a8 <col:27, col:60> 'int' '|'
-
-# (placeholder) | | |   |-BinaryOperator 0x6b5668 <col:27, col:42> 'int' '|'
-
-# (placeholder) | | |   | |-DeclRefExpr 0x6b5628 <col:27> 'int' EnumConstant 0x6b47a8 'mjSTATE_TIME' 'int'
-
-# (placeholder) | | |   | `-DeclRefExpr 0x6b5648 <col:42> 'int' EnumConstant 0x6b55d8 'mjSTATE_PHYSICS' 'int'
-
-# (placeholder) | | |   `-DeclRefExpr 0x6b5688 <col:60> 'int' EnumConstant 0x6b53a8 'mjSTATE_PLUGIN' 'int'
-
-# convenience values for commonly used state specifications
-
-# (placeholder) | |-EnumConstantDecl 0x6b58f8 <line:47:3, line:49:27> line:47:3 referenced mjSTATE_USER 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b58d8 <col:27, line:49:27> 'int'
-
-# (placeholder) | | | |-value: Int 4064
-
-# (placeholder) | | | `-BinaryOperator 0x6b58b8 <line:47:27, line:49:27> 'int' '|'
-
-# (placeholder) | | |   |-BinaryOperator 0x6b5878 <line:47:27, line:48:67> 'int' '|'
-
-# (placeholder) | | |   | |-BinaryOperator 0x6b5838 <line:47:27, line:48:47> 'int' '|'
-
-# (placeholder) | | |   | | |-BinaryOperator 0x6b57f8 <line:47:27, line:48:27> 'int' '|'
-
-# (placeholder) | | |   | | | |-BinaryOperator 0x6b57b8 <line:47:27, col:65> 'int' '|'
-
-# (placeholder) | | |   | | | | |-BinaryOperator 0x6b5778 <col:27, col:42> 'int' '|'
-
-# (placeholder) | | |   | | | | | |-DeclRefExpr 0x6b5738 <col:27> 'int' EnumConstant 0x6b4ca8 'mjSTATE_CTRL' 'int'
-
-# (placeholder) | | |   | | | | | `-DeclRefExpr 0x6b5758 <col:42> 'int' EnumConstant 0x6b4da8 'mjSTATE_QFRC_APPLIED' 'int'
-
-# (placeholder) | | |   | | | | `-DeclRefExpr 0x6b5798 <col:65> 'int' EnumConstant 0x6b4ea8 'mjSTATE_XFRC_APPLIED' 'int'
-
-# (placeholder) | | |   | | | `-DeclRefExpr 0x6b57d8 <line:48:27> 'int' EnumConstant 0x6b4fa8 'mjSTATE_EQ_ACTIVE' 'int'
-
-# (placeholder) | | |   | | `-DeclRefExpr 0x6b5818 <col:47> 'int' EnumConstant 0x6b50a8 'mjSTATE_MOCAP_POS' 'int'
-
-# (placeholder) | | |   | `-DeclRefExpr 0x6b5858 <col:67> 'int' EnumConstant 0x6b51a8 'mjSTATE_MOCAP_QUAT' 'int'
-
-# (placeholder) | | |   `-DeclRefExpr 0x6b5898 <line:49:27> 'int' EnumConstant 0x6b52a8 'mjSTATE_USERDATA' 'int'
-
-# convenience values for commonly used state specifications
-
-# (placeholder) | `-EnumConstantDecl 0x6b5a08 <line:50:3, col:64> col:3 mjSTATE_INTEGRATION 'int'
-
-# (placeholder) |   |-ConstantExpr 0x6b59e8 <col:27, col:64> 'int'
-
-# (placeholder) |   | |-value: Int 8191
-
-# (placeholder) |   | `-BinaryOperator 0x6b59c8 <col:27, col:64> 'int' '|'
-
-# (placeholder) |   |   |-BinaryOperator 0x6b5988 <col:27, col:49> 'int' '|'
-
-# (placeholder) |   |   | |-DeclRefExpr 0x6b5948 <col:27> 'int' EnumConstant 0x6b56e8 'mjSTATE_FULLPHYSICS' 'int'
-
-# (placeholder) |   |   | `-DeclRefExpr 0x6b5968 <col:49> 'int' EnumConstant 0x6b58f8 'mjSTATE_USER' 'int'
-
-# (placeholder) |   |   `-DeclRefExpr 0x6b59a8 <col:64> 'int' EnumConstant 0x6b4ba8 'mjSTATE_WARMSTART' 'int'
-
-# convenience values for commonly used state specifications
 
 alias mjtState = 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+struct mjtWarning_:
+	alias mjWARN_INERTIA: Int = 0
 
-# (placeholder) |-EnumDecl 0x6b5b28 <line:54:9, line:65:1> line:54:14 mjtWarning_
+	alias mjWARN_CONTACTFULL: 
+	alias mjWARN_CNSTRFULL: 
+	alias mjWARN_VGEOMFULL: 
+	alias mjWARN_BADQPOS: 
+	alias mjWARN_BADQVEL: 
+	alias mjWARN_BADQACC: 
+	alias mjWARN_BADCTRL: 
+	alias referenced: 
 
-# (placeholder) | |-EnumConstantDecl 0x6b5c58 <line:55:3, col:25> col:3 mjWARN_INERTIA 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6b5c38 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6b5c18 <col:25> 'int' 0
-
-# (near) singular inertia matrix
-
-# (placeholder) | |-EnumConstantDecl 0x6b5cd8 <line:56:3> col:3 mjWARN_CONTACTFULL 'int'
-
-# too many contacts in contact list
-
-# (placeholder) | |-EnumConstantDecl 0x6b5d58 <line:57:3> col:3 mjWARN_CNSTRFULL 'int'
-
-# too many constraints
-
-# (placeholder) | |-EnumConstantDecl 0x6b5dd8 <line:58:3> col:3 mjWARN_VGEOMFULL 'int'
-
-# too many visual geoms
-
-# (placeholder) | |-EnumConstantDecl 0x6b5e58 <line:59:3> col:3 mjWARN_BADQPOS 'int'
-
-# bad number in qpos
-
-# (placeholder) | |-EnumConstantDecl 0x6b5ed8 <line:60:3> col:3 mjWARN_BADQVEL 'int'
-
-# bad number in qvel
-
-# (placeholder) | |-EnumConstantDecl 0x6b5f58 <line:61:3> col:3 mjWARN_BADQACC 'int'
-
-# bad number in qacc
-
-# (placeholder) | |-EnumConstantDecl 0x6b5fd8 <line:62:3> col:3 mjWARN_BADCTRL 'int'
-
-# bad number in ctrl
-
-# (placeholder) | `-EnumConstantDecl 0x6b6088 <line:64:3> col:3 referenced mjNWARNING 'int'
-
-# number of warnings
 
 alias mjtWarning = 
+struct mjtTimer_:
+	alias mjTIMER_STEP: Int = 0
 
-# (placeholder) |-EnumDecl 0x6c0780 <line:68:9, line:93:1> line:68:14 mjtTimer_
+	alias mjTIMER_FORWARD: 
+	alias mjTIMER_INVERSE: 
+	alias mjTIMER_POSITION: 
+	alias mjTIMER_VELOCITY: 
+	alias mjTIMER_ACTUATION: 
+	alias mjTIMER_CONSTRAINT: 
+	alias mjTIMER_ADVANCE: 
+	alias mjTIMER_POS_KINEMATICS: 
+	alias mjTIMER_POS_INERTIA: 
+	alias mjTIMER_POS_COLLISION: 
+	alias mjTIMER_POS_MAKE: 
+	alias mjTIMER_POS_PROJECT: 
+	alias mjTIMER_COL_BROAD: 
+	alias mjTIMER_COL_NARROW: 
+	alias referenced: 
 
-# (placeholder) | |-EnumConstantDecl 0x6c08d8 <line:70:3, col:25> col:3 mjTIMER_STEP 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6c08b8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6c0898 <col:25> 'int' 0
-
-# step
-
-# (placeholder) | |-EnumConstantDecl 0x6c0958 <line:71:3> col:3 mjTIMER_FORWARD 'int'
-
-# forward
-
-# (placeholder) | |-EnumConstantDecl 0x6c09d8 <line:72:3> col:3 mjTIMER_INVERSE 'int'
-
-# inverse
-
-# (placeholder) | |-EnumConstantDecl 0x6c0a88 <line:75:3> col:3 mjTIMER_POSITION 'int'
-
-# fwdPosition
-
-# (placeholder) | |-EnumConstantDecl 0x6c0b08 <line:76:3> col:3 mjTIMER_VELOCITY 'int'
-
-# fwdVelocity
-
-# (placeholder) | |-EnumConstantDecl 0x6c0b88 <line:77:3> col:3 mjTIMER_ACTUATION 'int'
-
-# fwdActuation
-
-# (placeholder) | |-EnumConstantDecl 0x6c0c08 <line:78:3> col:3 mjTIMER_CONSTRAINT 'int'
-
-# fwdConstraint
-
-# (placeholder) | |-EnumConstantDecl 0x6c0c88 <line:79:3> col:3 mjTIMER_ADVANCE 'int'
-
-# mj_Euler, mj_implicit
-
-# (placeholder) | |-EnumConstantDecl 0x6c0d38 <line:82:3> col:3 mjTIMER_POS_KINEMATICS 'int'
-
-# kinematics, com, tendon, transmission
-
-# (placeholder) | |-EnumConstantDecl 0x6c0db8 <line:83:3> col:3 mjTIMER_POS_INERTIA 'int'
-
-# inertia computations
-
-# (placeholder) | |-EnumConstantDecl 0x6c0e38 <line:84:3> col:3 mjTIMER_POS_COLLISION 'int'
-
-# collision detection
-
-# (placeholder) | |-EnumConstantDecl 0x6c0eb8 <line:85:3> col:3 mjTIMER_POS_MAKE 'int'
-
-# make constraints
-
-# (placeholder) | |-EnumConstantDecl 0x6c0f38 <line:86:3> col:3 mjTIMER_POS_PROJECT 'int'
-
-# project constraints
-
-# (placeholder) | |-EnumConstantDecl 0x6c0fe8 <line:89:3> col:3 mjTIMER_COL_BROAD 'int'
-
-# broadphase
-
-# (placeholder) | |-EnumConstantDecl 0x6c1068 <line:90:3> col:3 mjTIMER_COL_NARROW 'int'
-
-# narrowphase
-
-# (placeholder) | `-EnumConstantDecl 0x6c1118 <line:92:3> col:3 referenced mjNTIMER 'int'
-
-# number of timers
 
 alias mjtTimer = 
 struct mjContact_:
@@ -4860,486 +3460,148 @@ Int32Int32Float64]
 
 # collision detection
 
+struct mjtCatBit_:
 
-# (placeholder) |-EnumDecl 0x6d41b8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:33:9, line:38:1> line:33:14 mjtCatBit_
+	#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias mjCAT_STATIC: Int = 1
 
-#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias mjCAT_DYNAMIC: Int = 2
 
-# (placeholder) | |-EnumConstantDecl 0x6d42e8 <line:34:3, col:25> col:3 mjCAT_STATIC 'int'
+	alias mjCAT_DECOR: Int = 4
 
-# (placeholder) | | |-ConstantExpr 0x6d42c8 <col:25> 'int'
+	alias mjCAT_ALL: Int = 7
 
-# (placeholder) | | | |-value: Int 1
 
-# (placeholder) | | | `-IntegerLiteral 0x6d42a8 <col:25> 'int' 1
-
-# model elements in body 0
-
-# (placeholder) | |-EnumConstantDecl 0x6d43a8 <line:35:3, col:25> col:3 mjCAT_DYNAMIC 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6d4388 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 2
-
-# (placeholder) | | | `-IntegerLiteral 0x6d4368 <col:25> 'int' 2
-
-# model elements in all other bodies
-
-# (placeholder) | |-EnumConstantDecl 0x6d4468 <line:36:3, col:25> col:3 mjCAT_DECOR 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6d4448 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 4
-
-# (placeholder) | | | `-IntegerLiteral 0x6d4428 <col:25> 'int' 4
-
-# decorative geoms
-
-# (placeholder) | `-EnumConstantDecl 0x6d4558 <line:37:3, col:25> col:3 mjCAT_ALL 'int'
-
-# (placeholder) |   |-ConstantExpr 0x6d4538 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 7
-
-# (placeholder) |   | `-IntegerLiteral 0x6d44e8 <col:25> 'int' 7
-
-# select all categories
 
 alias mjtCatBit = 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+struct mjtMouse_:
+	alias mjMOUSE_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x6d4678 <line:41:9, line:49:1> line:41:14 mjtMouse_
+	alias mjMOUSE_ROTATE_V: 
+	alias mjMOUSE_ROTATE_H: 
+	alias mjMOUSE_MOVE_V: 
+	alias mjMOUSE_MOVE_H: 
+	alias mjMOUSE_ZOOM: 
+	alias mjMOUSE_SELECT: 
 
-# (placeholder) | |-EnumConstantDecl 0x6d47a8 <line:42:3, col:25> col:3 mjMOUSE_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6d4788 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6d4768 <col:25> 'int' 0
-
-# no action
-
-# (placeholder) | |-EnumConstantDecl 0x6d4828 <line:43:3> col:3 mjMOUSE_ROTATE_V 'int'
-
-# rotate, vertical plane
-
-# (placeholder) | |-EnumConstantDecl 0x6d48a8 <line:44:3> col:3 mjMOUSE_ROTATE_H 'int'
-
-# rotate, horizontal plane
-
-# (placeholder) | |-EnumConstantDecl 0x6d4928 <line:45:3> col:3 mjMOUSE_MOVE_V 'int'
-
-# move, vertical plane
-
-# (placeholder) | |-EnumConstantDecl 0x6d49a8 <line:46:3> col:3 mjMOUSE_MOVE_H 'int'
-
-# move, horizontal plane
-
-# (placeholder) | |-EnumConstantDecl 0x6e3040 <line:47:3> col:3 mjMOUSE_ZOOM 'int'
-
-# zoom
-
-# (placeholder) | `-EnumConstantDecl 0x6e30e8 <line:48:3> col:3 mjMOUSE_SELECT 'int'
-
-# selection
 
 alias mjtMouse = 
+struct mjtPertBit_:
+	alias mjPERT_TRANSLATE: Int = 1
 
-# (placeholder) |-EnumDecl 0x6e3208 <line:52:9, line:55:1> line:52:14 mjtPertBit_
+	alias mjPERT_ROTATE: Int = 2
 
-# (placeholder) | |-EnumConstantDecl 0x6e3338 <line:53:3, col:25> col:3 mjPERT_TRANSLATE 'int'
 
-# (placeholder) | | |-ConstantExpr 0x6e3318 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 1
-
-# (placeholder) | | | `-IntegerLiteral 0x6e32f8 <col:25> 'int' 1
-
-# translation
-
-# (placeholder) | `-EnumConstantDecl 0x6e3428 <line:54:3, col:25> col:3 mjPERT_ROTATE 'int'
-
-# (placeholder) |   |-ConstantExpr 0x6e3408 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 2
-
-# (placeholder) |   | `-IntegerLiteral 0x6e33b8 <col:25> 'int' 2
-
-# rotation
 
 alias mjtPertBit = 
+struct mjtCamera_:
+	alias mjCAMERA_FREE: Int = 0
 
-# (placeholder) |-EnumDecl 0x6e3548 <line:58:9, line:63:1> line:58:14 mjtCamera_
+	alias mjCAMERA_TRACKING: 
+	alias mjCAMERA_FIXED: 
+	alias mjCAMERA_USER: 
 
-# (placeholder) | |-EnumConstantDecl 0x6e3678 <line:59:3, col:25> col:3 mjCAMERA_FREE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6e3658 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6e3638 <col:25> 'int' 0
-
-# free camera
-
-# (placeholder) | |-EnumConstantDecl 0x6e36f8 <line:60:3> col:3 mjCAMERA_TRACKING 'int'
-
-# tracking camera; uses trackbodyid
-
-# (placeholder) | |-EnumConstantDecl 0x6e3778 <line:61:3> col:3 mjCAMERA_FIXED 'int'
-
-# fixed camera; uses fixedcamid
-
-# (placeholder) | `-EnumConstantDecl 0x6e3828 <line:62:3> col:3 mjCAMERA_USER 'int'
-
-# user is responsible for setting OpenGL camera
 
 alias mjtCamera = 
+struct mjtLabel_:
+	alias mjLABEL_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x6e3948 <line:66:9, line:86:1> line:66:14 mjtLabel_
+	alias mjLABEL_BODY: 
+	alias mjLABEL_JOINT: 
+	alias mjLABEL_GEOM: 
+	alias mjLABEL_SITE: 
+	alias mjLABEL_CAMERA: 
+	alias mjLABEL_LIGHT: 
+	alias mjLABEL_TENDON: 
+	alias mjLABEL_ACTUATOR: 
+	alias mjLABEL_CONSTRAINT: 
+	alias mjLABEL_FLEX: 
+	alias mjLABEL_SKIN: 
+	alias mjLABEL_SELECTION: 
+	alias mjLABEL_SELPNT: 
+	alias mjLABEL_CONTACTPOINT: 
+	alias mjLABEL_CONTACTFORCE: 
+	alias mjLABEL_ISLAND: 
+	alias referenced: 
 
-# (placeholder) | |-EnumConstantDecl 0x6e3a78 <line:67:3, col:25> col:3 mjLABEL_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6e3a58 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6e3a38 <col:25> 'int' 0
-
-# nothing
-
-# (placeholder) | |-EnumConstantDecl 0x6e3af8 <line:68:3> col:3 mjLABEL_BODY 'int'
-
-# body labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3b78 <line:69:3> col:3 mjLABEL_JOINT 'int'
-
-# joint labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3bf8 <line:70:3> col:3 mjLABEL_GEOM 'int'
-
-# geom labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3c78 <line:71:3> col:3 mjLABEL_SITE 'int'
-
-# site labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3cf8 <line:72:3> col:3 mjLABEL_CAMERA 'int'
-
-# camera labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3d78 <line:73:3> col:3 mjLABEL_LIGHT 'int'
-
-# light labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3df8 <line:74:3> col:3 mjLABEL_TENDON 'int'
-
-# tendon labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3e78 <line:75:3> col:3 mjLABEL_ACTUATOR 'int'
-
-# actuator labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3ef8 <line:76:3> col:3 mjLABEL_CONSTRAINT 'int'
-
-# constraint labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3f78 <line:77:3> col:3 mjLABEL_FLEX 'int'
-
-# flex labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e3ff8 <line:78:3> col:3 mjLABEL_SKIN 'int'
-
-# skin labels
-
-# (placeholder) | |-EnumConstantDecl 0x6e4078 <line:79:3> col:3 mjLABEL_SELECTION 'int'
-
-# selected object
-
-# (placeholder) | |-EnumConstantDecl 0x6e40f8 <line:80:3> col:3 mjLABEL_SELPNT 'int'
-
-# coordinates of selection point
-
-# (placeholder) | |-EnumConstantDecl 0x6e4178 <line:81:3> col:3 mjLABEL_CONTACTPOINT 'int'
-
-# contact information
-
-# (placeholder) | |-EnumConstantDecl 0x6e41f8 <line:82:3> col:3 mjLABEL_CONTACTFORCE 'int'
-
-# magnitude of contact force
-
-# (placeholder) | |-EnumConstantDecl 0x6e4278 <line:83:3> col:3 mjLABEL_ISLAND 'int'
-
-# id of island
-
-# (placeholder) | `-EnumConstantDecl 0x6e4328 <line:85:3> col:3 referenced mjNLABEL 'int'
-
-# number of label types
 
 alias mjtLabel = 
+struct mjtFrame_:
+	alias mjFRAME_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x6e4448 <line:89:9, line:100:1> line:89:14 mjtFrame_
+	alias mjFRAME_BODY: 
+	alias mjFRAME_GEOM: 
+	alias mjFRAME_SITE: 
+	alias mjFRAME_CAMERA: 
+	alias mjFRAME_LIGHT: 
+	alias mjFRAME_CONTACT: 
+	alias mjFRAME_WORLD: 
+	alias referenced: 
 
-# (placeholder) | |-EnumConstantDecl 0x6e4578 <line:90:3, col:25> col:3 mjFRAME_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6e4558 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6e4538 <col:25> 'int' 0
-
-# no frames
-
-# (placeholder) | |-EnumConstantDecl 0x6e45f8 <line:91:3> col:3 mjFRAME_BODY 'int'
-
-# body frames
-
-# (placeholder) | |-EnumConstantDecl 0x6e4678 <line:92:3> col:3 mjFRAME_GEOM 'int'
-
-# geom frames
-
-# (placeholder) | |-EnumConstantDecl 0x6e46f8 <line:93:3> col:3 mjFRAME_SITE 'int'
-
-# site frames
-
-# (placeholder) | |-EnumConstantDecl 0x6e4778 <line:94:3> col:3 mjFRAME_CAMERA 'int'
-
-# camera frames
-
-# (placeholder) | |-EnumConstantDecl 0x6e47f8 <line:95:3> col:3 mjFRAME_LIGHT 'int'
-
-# light frames
-
-# (placeholder) | |-EnumConstantDecl 0x6e4878 <line:96:3> col:3 mjFRAME_CONTACT 'int'
-
-# contact frames
-
-# (placeholder) | |-EnumConstantDecl 0x6e48f8 <line:97:3> col:3 mjFRAME_WORLD 'int'
-
-# world frame
-
-# (placeholder) | `-EnumConstantDecl 0x6e49a8 <line:99:3> col:3 referenced mjNFRAME 'int'
-
-# number of visualization frames
 
 alias mjtFrame = 
+struct mjtVisFlag_:
+	alias mjVIS_CONVEXHULL: Int = 0
+
+	alias mjVIS_TEXTURE: 
+	alias mjVIS_JOINT: 
+	alias mjVIS_CAMERA: 
+	alias mjVIS_ACTUATOR: 
+	alias mjVIS_ACTIVATION: 
+	alias mjVIS_LIGHT: 
+	alias mjVIS_TENDON: 
+	alias mjVIS_RANGEFINDER: 
+	alias mjVIS_CONSTRAINT: 
+	alias mjVIS_INERTIA: 
+	alias mjVIS_SCLINERTIA: 
+	alias mjVIS_PERTFORCE: 
+	alias mjVIS_PERTOBJ: 
+	alias mjVIS_CONTACTPOINT: 
+	alias mjVIS_ISLAND: 
+	alias mjVIS_CONTACTFORCE: 
+	alias mjVIS_CONTACTSPLIT: 
+	alias mjVIS_TRANSPARENT: 
+	alias mjVIS_AUTOCONNECT: 
+	alias mjVIS_COM: 
+	alias mjVIS_SELECT: 
+	alias mjVIS_STATIC: 
+	alias mjVIS_SKIN: 
+	alias mjVIS_FLEXVERT: 
+	alias mjVIS_FLEXEDGE: 
+	alias mjVIS_FLEXFACE: 
+	alias mjVIS_FLEXSKIN: 
+	alias mjVIS_BODYBVH: 
+	alias mjVIS_FLEXBVH: 
+	alias mjVIS_MESHBVH: 
+	alias mjVIS_SDFITER: 
+	alias referenced: 
 
-# (placeholder) |-EnumDecl 0x6e4ac8 <line:103:9, line:138:1> line:103:14 mjtVisFlag_
-
-# (placeholder) | |-EnumConstantDecl 0x6e4bf8 <line:104:3, col:25> col:3 mjVIS_CONVEXHULL 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6e4bd8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6e4bb8 <col:25> 'int' 0
-
-# mesh convex hull
-
-# (placeholder) | |-EnumConstantDecl 0x6e4c78 <line:105:3> col:3 mjVIS_TEXTURE 'int'
-
-# textures
-
-# (placeholder) | |-EnumConstantDecl 0x6e4cf8 <line:106:3> col:3 mjVIS_JOINT 'int'
-
-# joints
-
-# (placeholder) | |-EnumConstantDecl 0x6e4d78 <line:107:3> col:3 mjVIS_CAMERA 'int'
-
-# cameras
-
-# (placeholder) | |-EnumConstantDecl 0x6e4df8 <line:108:3> col:3 mjVIS_ACTUATOR 'int'
-
-# actuators
-
-# (placeholder) | |-EnumConstantDecl 0x6e4e78 <line:109:3> col:3 mjVIS_ACTIVATION 'int'
-
-# activations
-
-# (placeholder) | |-EnumConstantDecl 0x6e4ef8 <line:110:3> col:3 mjVIS_LIGHT 'int'
-
-# lights
-
-# (placeholder) | |-EnumConstantDecl 0x6e4f78 <line:111:3> col:3 mjVIS_TENDON 'int'
-
-# tendons
-
-# (placeholder) | |-EnumConstantDecl 0x6e5110 <line:112:3> col:3 mjVIS_RANGEFINDER 'int'
-
-# rangefinder sensors
-
-# (placeholder) | |-EnumConstantDecl 0x6e5188 <line:113:3> col:3 mjVIS_CONSTRAINT 'int'
-
-# point constraints
-
-# (placeholder) | |-EnumConstantDecl 0x6e5208 <line:114:3> col:3 mjVIS_INERTIA 'int'
-
-# equivalent inertia boxes
-
-# (placeholder) | |-EnumConstantDecl 0x6e5288 <line:115:3> col:3 mjVIS_SCLINERTIA 'int'
-
-# scale equivalent inertia boxes with mass
-
-# (placeholder) | |-EnumConstantDecl 0x6e5308 <line:116:3> col:3 mjVIS_PERTFORCE 'int'
-
-# perturbation force
-
-# (placeholder) | |-EnumConstantDecl 0x6e5388 <line:117:3> col:3 mjVIS_PERTOBJ 'int'
-
-# perturbation object
-
-# (placeholder) | |-EnumConstantDecl 0x6e5408 <line:118:3> col:3 mjVIS_CONTACTPOINT 'int'
-
-# contact points
-
-# (placeholder) | |-EnumConstantDecl 0x6e5488 <line:119:3> col:3 mjVIS_ISLAND 'int'
-
-# constraint islands
-
-# (placeholder) | |-EnumConstantDecl 0x6e5508 <line:120:3> col:3 mjVIS_CONTACTFORCE 'int'
-
-# contact force
-
-# (placeholder) | |-EnumConstantDecl 0x6e5588 <line:121:3> col:3 mjVIS_CONTACTSPLIT 'int'
-
-# split contact force into normal and tangent
-
-# (placeholder) | |-EnumConstantDecl 0x6e5608 <line:122:3> col:3 mjVIS_TRANSPARENT 'int'
-
-# make dynamic geoms more transparent
-
-# (placeholder) | |-EnumConstantDecl 0x6e5688 <line:123:3> col:3 mjVIS_AUTOCONNECT 'int'
-
-# auto connect joints and body coms
-
-# (placeholder) | |-EnumConstantDecl 0x6e5708 <line:124:3> col:3 mjVIS_COM 'int'
-
-# center of mass
-
-# (placeholder) | |-EnumConstantDecl 0x6e5788 <line:125:3> col:3 mjVIS_SELECT 'int'
-
-# selection point
-
-# (placeholder) | |-EnumConstantDecl 0x6e5808 <line:126:3> col:3 mjVIS_STATIC 'int'
-
-# static bodies
-
-# (placeholder) | |-EnumConstantDecl 0x6e5888 <line:127:3> col:3 mjVIS_SKIN 'int'
-
-# skin
-
-# (placeholder) | |-EnumConstantDecl 0x6e5908 <line:128:3> col:3 mjVIS_FLEXVERT 'int'
-
-# flex vertices
-
-# (placeholder) | |-EnumConstantDecl 0x6e5988 <line:129:3> col:3 mjVIS_FLEXEDGE 'int'
-
-# flex edges
-
-# (placeholder) | |-EnumConstantDecl 0x6e5a08 <line:130:3> col:3 mjVIS_FLEXFACE 'int'
-
-# flex element faces
-
-# (placeholder) | |-EnumConstantDecl 0x6e5a88 <line:131:3> col:3 mjVIS_FLEXSKIN 'int'
-
-# flex smooth skin (disables the rest)
-
-# (placeholder) | |-EnumConstantDecl 0x6e5b08 <line:132:3> col:3 mjVIS_BODYBVH 'int'
-
-# body bounding volume hierarchy
-
-# (placeholder) | |-EnumConstantDecl 0x6e5b88 <line:133:3> col:3 mjVIS_FLEXBVH 'int'
-
-# flex bounding volume hierarchy
-
-# (placeholder) | |-EnumConstantDecl 0x6e5c08 <line:134:3> col:3 mjVIS_MESHBVH 'int'
-
-# mesh bounding volume hierarchy
-
-# (placeholder) | |-EnumConstantDecl 0x6e5c88 <line:135:3> col:3 mjVIS_SDFITER 'int'
-
-# iterations of SDF gradient descent
-
-# (placeholder) | `-EnumConstantDecl 0x6e5d38 <line:137:3> col:3 referenced mjNVISFLAG 'int'
-
-# number of visualization flags
 
 alias mjtVisFlag = 
+struct mjtRndFlag_:
+	alias mjRND_SHADOW: Int = 0
 
-# (placeholder) |-EnumDecl 0x6e5e58 <line:141:9, line:154:1> line:141:14 mjtRndFlag_
+	alias mjRND_WIREFRAME: 
+	alias mjRND_REFLECTION: 
+	alias mjRND_ADDITIVE: 
+	alias mjRND_SKYBOX: 
+	alias mjRND_FOG: 
+	alias mjRND_HAZE: 
+	alias mjRND_SEGMENT: 
+	alias mjRND_IDCOLOR: 
+	alias mjRND_CULL_FACE: 
+	alias referenced: 
 
-# (placeholder) | |-EnumConstantDecl 0x6e5f88 <line:142:3, col:25> col:3 mjRND_SHADOW 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6e5f68 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6e5f48 <col:25> 'int' 0
-
-# shadows
-
-# (placeholder) | |-EnumConstantDecl 0x6e6008 <line:143:3> col:3 mjRND_WIREFRAME 'int'
-
-# wireframe
-
-# (placeholder) | |-EnumConstantDecl 0x6e6088 <line:144:3> col:3 mjRND_REFLECTION 'int'
-
-# reflections
-
-# (placeholder) | |-EnumConstantDecl 0x6e6108 <line:145:3> col:3 mjRND_ADDITIVE 'int'
-
-# additive transparency
-
-# (placeholder) | |-EnumConstantDecl 0x6e6188 <line:146:3> col:3 mjRND_SKYBOX 'int'
-
-# skybox
-
-# (placeholder) | |-EnumConstantDecl 0x6e6208 <line:147:3> col:3 mjRND_FOG 'int'
-
-# fog
-
-# (placeholder) | |-EnumConstantDecl 0x6e6288 <line:148:3> col:3 mjRND_HAZE 'int'
-
-# haze
-
-# (placeholder) | |-EnumConstantDecl 0x6e6308 <line:149:3> col:3 mjRND_SEGMENT 'int'
-
-# segmentation with random color
-
-# (placeholder) | |-EnumConstantDecl 0x6e6388 <line:150:3> col:3 mjRND_IDCOLOR 'int'
-
-# segmentation with segid+1 color
-
-# (placeholder) | |-EnumConstantDecl 0x6e6408 <line:151:3> col:3 mjRND_CULL_FACE 'int'
-
-# cull backward faces
-
-# (placeholder) | `-EnumConstantDecl 0x6e64b8 <line:153:3> col:3 referenced mjNRNDFLAG 'int'
-
-# number of rendering flags
 
 alias mjtRndFlag = 
+struct mjtStereo_:
+	alias mjSTEREO_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x6e65d8 <line:157:9, line:161:1> line:157:14 mjtStereo_
+	alias mjSTEREO_QUADBUFFERED: 
+	alias mjSTEREO_SIDEBYSIDE: 
 
-# (placeholder) | |-EnumConstantDecl 0x6e6708 <line:158:3, col:25> col:3 mjSTEREO_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6e66e8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x6e66c8 <col:25> 'int' 0
-
-# no stereo; use left eye only
-
-# (placeholder) | |-EnumConstantDecl 0x6e6788 <line:159:3> col:3 mjSTEREO_QUADBUFFERED 'int'
-
-# quad buffered; revert to side-by-side if no hardware support
-
-# (placeholder) | `-EnumConstantDecl 0x6e6838 <line:160:3> col:3 mjSTEREO_SIDEBYSIDE 'int'
-
-# side-by-side
 
 alias mjtStereo = 
 struct mjvPerturb_:
@@ -5780,66 +4042,18 @@ struct mjpResourceProvider:
 
 
 alias mjpResourceProvider = mjpResourceProvider
+struct mjtPluginCapabilityBit_:
 
-# (placeholder) |-EnumDecl 0x6fede8 <line:70:9, line:75:1> line:70:14 mjtPluginCapabilityBit_
+	#---------------------------------- Plugins -------------------------------------------------------
+	alias mjPLUGIN_ACTUATOR: Int = 1
 
-#---------------------------------- Plugins -------------------------------------------------------
+	alias mjPLUGIN_SENSOR: Int = 2
 
-# (placeholder) | |-EnumConstantDecl 0x6fef30 <line:71:3, col:26> col:3 mjPLUGIN_ACTUATOR 'int'
+	alias mjPLUGIN_PASSIVE: Int = 4
 
-# (placeholder) | | |-ConstantExpr 0x6fef10 <col:23, col:26> 'int'
+	alias mjPLUGIN_SDF: Int = 8
 
-# (placeholder) | | | |-value: Int 1
 
-# (placeholder) | | | `-BinaryOperator 0x6feef0 <col:23, col:26> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6feeb0 <col:23> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6feed0 <col:26> 'int' 0
-
-# actuator forces
-
-# (placeholder) | |-EnumConstantDecl 0x6ff028 <line:72:3, col:26> col:3 mjPLUGIN_SENSOR 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6ff008 <col:23, col:26> 'int'
-
-# (placeholder) | | | |-value: Int 2
-
-# (placeholder) | | | `-BinaryOperator 0x6fefe8 <col:23, col:26> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6fefa8 <col:23> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6fefc8 <col:26> 'int' 1
-
-# sensor measurements
-
-# (placeholder) | |-EnumConstantDecl 0x6ff128 <line:73:3, col:26> col:3 mjPLUGIN_PASSIVE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x6ff108 <col:23, col:26> 'int'
-
-# (placeholder) | | | |-value: Int 4
-
-# (placeholder) | | | `-BinaryOperator 0x6ff0e8 <col:23, col:26> 'int' '<<'
-
-# (placeholder) | | |   |-IntegerLiteral 0x6ff0a8 <col:23> 'int' 1
-
-# (placeholder) | | |   `-IntegerLiteral 0x6ff0c8 <col:26> 'int' 2
-
-# passive forces
-
-# (placeholder) | `-EnumConstantDecl 0x6ff228 <line:74:3, col:26> col:3 mjPLUGIN_SDF 'int'
-
-# (placeholder) |   |-ConstantExpr 0x6ff208 <col:23, col:26> 'int'
-
-# (placeholder) |   | |-value: Int 8
-
-# (placeholder) |   | `-BinaryOperator 0x6ff1e8 <col:23, col:26> 'int' '<<'
-
-# (placeholder) |   |   |-IntegerLiteral 0x6ff1a8 <col:23> 'int' 1
-
-# (placeholder) |   |   `-IntegerLiteral 0x6ff1c8 <col:26> 'int' 3
-
-# signed distance fields
 
 alias mjtPluginCapabilityBit = 
 #---------------------------------- Plugins -------------------------------------------------------
@@ -5900,178 +4114,60 @@ Int32Int32]
 
 # function pointer type for mj_loadAllPluginLibraries callback
 
+struct mjtGridPos_:
 
-# (placeholder) |-EnumDecl 0x7032f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjrender.h:30:9, line:39:1> line:30:14 mjtGridPos_
+	#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias mjGRID_TOPLEFT: Int = 0
 
-#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias mjGRID_TOPRIGHT: 
+	alias mjGRID_BOTTOMLEFT: 
+	alias mjGRID_BOTTOMRIGHT: 
+	alias mjGRID_TOP: 
+	alias mjGRID_BOTTOM: 
+	alias mjGRID_LEFT: 
+	alias mjGRID_RIGHT: 
 
-# (placeholder) | |-EnumConstantDecl 0x703428 <line:31:3, col:25> col:3 mjGRID_TOPLEFT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x703408 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x7033e8 <col:25> 'int' 0
-
-# top left
-
-# (placeholder) | |-EnumConstantDecl 0x7034a8 <line:32:3> col:3 mjGRID_TOPRIGHT 'int'
-
-# top right
-
-# (placeholder) | |-EnumConstantDecl 0x703528 <line:33:3> col:3 mjGRID_BOTTOMLEFT 'int'
-
-# bottom left
-
-# (placeholder) | |-EnumConstantDecl 0x7035a8 <line:34:3> col:3 mjGRID_BOTTOMRIGHT 'int'
-
-# bottom right
-
-# (placeholder) | |-EnumConstantDecl 0x703628 <line:35:3> col:3 mjGRID_TOP 'int'
-
-# top center
-
-# (placeholder) | |-EnumConstantDecl 0x7036a8 <line:36:3> col:3 mjGRID_BOTTOM 'int'
-
-# bottom center
-
-# (placeholder) | |-EnumConstantDecl 0x703728 <line:37:3> col:3 mjGRID_LEFT 'int'
-
-# left center
-
-# (placeholder) | `-EnumConstantDecl 0x706808 <line:38:3> col:3 mjGRID_RIGHT 'int'
-
-# right center
 
 alias mjtGridPos = 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+struct mjtFramebuffer_:
+	alias mjFB_WINDOW: Int = 0
 
-# (placeholder) |-EnumDecl 0x706928 <line:42:9, line:45:1> line:42:14 mjtFramebuffer_
+	alias mjFB_OFFSCREEN: 
 
-# (placeholder) | |-EnumConstantDecl 0x706a58 <line:43:3, col:25> col:3 mjFB_WINDOW 'int'
-
-# (placeholder) | | |-ConstantExpr 0x706a38 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x706a18 <col:25> 'int' 0
-
-# default/window buffer
-
-# (placeholder) | `-EnumConstantDecl 0x706b08 <line:44:3> col:3 mjFB_OFFSCREEN 'int'
-
-# offscreen buffer
 
 alias mjtFramebuffer = 
+struct mjtDepthMap_:
+	alias mjDEPTH_ZERONEAR: Int = 0
 
-# (placeholder) |-EnumDecl 0x706c28 <line:47:9, line:50:1> line:47:14 mjtDepthMap_
+	alias mjDEPTH_ZEROFAR: Int = 1
 
-# (placeholder) | |-EnumConstantDecl 0x706d58 <line:48:3, col:25> col:3 mjDEPTH_ZERONEAR 'int'
 
-# (placeholder) | | |-ConstantExpr 0x706d38 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x706d18 <col:25> 'int' 0
-
-# standard depth map; 0: znear, 1: zfar
-
-# (placeholder) | `-EnumConstantDecl 0x706e48 <line:49:3, col:25> col:3 mjDEPTH_ZEROFAR 'int'
-
-# (placeholder) |   |-ConstantExpr 0x706e28 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 1
-
-# (placeholder) |   | `-IntegerLiteral 0x706dd8 <col:25> 'int' 1
-
-# reversed depth map; 1: znear, 0: zfar
 
 alias mjtDepthMap = 
+struct mjtFontScale_:
+	alias mjFONTSCALE_50: Int = 50
 
-# (placeholder) |-EnumDecl 0x706f68 <line:52:9, line:59:1> line:52:14 mjtFontScale_
+	alias mjFONTSCALE_100: Int = 100
 
-# (placeholder) | |-EnumConstantDecl 0x707098 <line:53:3, col:25> col:3 mjFONTSCALE_50 'int'
+	alias mjFONTSCALE_150: Int = 150
 
-# (placeholder) | | |-ConstantExpr 0x707078 <col:25> 'int'
+	alias mjFONTSCALE_200: Int = 200
 
-# (placeholder) | | | |-value: Int 50
+	alias mjFONTSCALE_250: Int = 250
 
-# (placeholder) | | | `-IntegerLiteral 0x707058 <col:25> 'int' 50
+	alias mjFONTSCALE_300: Int = 300
 
-# 50% scale, suitable for low-res rendering
 
-# (placeholder) | |-EnumConstantDecl 0x707158 <line:54:3, col:25> col:3 mjFONTSCALE_100 'int'
-
-# (placeholder) | | |-ConstantExpr 0x707138 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 100
-
-# (placeholder) | | | `-IntegerLiteral 0x707118 <col:25> 'int' 100
-
-# normal scale, suitable in the absence of DPI scaling
-
-# (placeholder) | |-EnumConstantDecl 0x707218 <line:55:3, col:25> col:3 mjFONTSCALE_150 'int'
-
-# (placeholder) | | |-ConstantExpr 0x7071f8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 150
-
-# (placeholder) | | | `-IntegerLiteral 0x7071d8 <col:25> 'int' 150
-
-# 150% scale
-
-# (placeholder) | |-EnumConstantDecl 0x7072d8 <line:56:3, col:25> col:3 mjFONTSCALE_200 'int'
-
-# (placeholder) | | |-ConstantExpr 0x7072b8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 200
-
-# (placeholder) | | | `-IntegerLiteral 0x707298 <col:25> 'int' 200
-
-# 200% scale
-
-# (placeholder) | |-EnumConstantDecl 0x707398 <line:57:3, col:25> col:3 mjFONTSCALE_250 'int'
-
-# (placeholder) | | |-ConstantExpr 0x707378 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 250
-
-# (placeholder) | | | `-IntegerLiteral 0x707358 <col:25> 'int' 250
-
-# 250% scale
-
-# (placeholder) | `-EnumConstantDecl 0x707488 <line:58:3, col:25> col:3 mjFONTSCALE_300 'int'
-
-# (placeholder) |   |-ConstantExpr 0x707468 <col:25> 'int'
-
-# (placeholder) |   | |-value: Int 300
-
-# (placeholder) |   | `-IntegerLiteral 0x707418 <col:25> 'int' 300
-
-# 300% scale
 
 alias mjtFontScale = 
+struct mjtFont_:
+	alias mjFONT_NORMAL: Int = 0
 
-# (placeholder) |-EnumDecl 0x7075a8 <line:62:9, line:66:1> line:62:14 mjtFont_
+	alias mjFONT_SHADOW: 
+	alias mjFONT_BIG: 
 
-# (placeholder) | |-EnumConstantDecl 0x7076d8 <line:63:3, col:25> col:3 mjFONT_NORMAL 'int'
-
-# (placeholder) | | |-ConstantExpr 0x7076b8 <col:25> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x707698 <col:25> 'int' 0
-
-# normal font
-
-# (placeholder) | |-EnumConstantDecl 0x707758 <line:64:3> col:3 mjFONT_SHADOW 'int'
-
-# normal font with shadow (for higher contrast)
-
-# (placeholder) | `-EnumConstantDecl 0x707808 <line:65:3> col:3 mjFONT_BIG 'int'
-
-# big font (for user alerts)
 
 alias mjtFont = 
 struct mjrRect_:
@@ -6230,200 +4326,76 @@ alias mjFloatVecVec = NoneType
 alias mjDoubleVec = NoneType
 
 alias mjByteVec = NoneType
+struct mjtGeomInertia_:
 
-# (placeholder) |-EnumDecl 0x70e198 <line:60:9, line:63:1> line:60:14 mjtGeomInertia_
+	#-------------------------------- enum types (mjt) ------------------------------------------------
+	alias mjINERTIA_VOLUME: Int = 0
 
-#-------------------------------- enum types (mjt) ------------------------------------------------
+	alias mjINERTIA_SHELL: 
 
-# (placeholder) | |-EnumConstantDecl 0x70e2c8 <line:61:3, col:22> col:3 mjINERTIA_VOLUME 'int'
-
-# (placeholder) | | |-ConstantExpr 0x70e2a8 <col:22> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x70e288 <col:22> 'int' 0
-
-# mass distributed in the volume
-
-# (placeholder) | `-EnumConstantDecl 0x70e348 <line:62:3> col:3 mjINERTIA_SHELL 'int'
-
-# mass distributed on the surface
 
 alias mjtGeomInertia = 
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
+struct mjtMeshInertia_:
+	alias mjMESH_INERTIA_CONVEX: Int = 0
 
-# (placeholder) |-EnumDecl 0x70e498 <line:66:9, line:71:1> line:66:14 mjtMeshInertia_
+	alias mjMESH_INERTIA_EXACT: 
+	alias mjMESH_INERTIA_LEGACY: 
+	alias mjMESH_INERTIA_SHELL: 
 
-# (placeholder) | |-EnumConstantDecl 0x70e5c8 <line:67:3, col:27> col:3 mjMESH_INERTIA_CONVEX 'int'
-
-# (placeholder) | | |-ConstantExpr 0x70e5a8 <col:27> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x70e588 <col:27> 'int' 0
-
-# convex mesh inertia
-
-# (placeholder) | |-EnumConstantDecl 0x70e648 <line:68:3> col:3 mjMESH_INERTIA_EXACT 'int'
-
-# exact mesh inertia
-
-# (placeholder) | |-EnumConstantDecl 0x70e6c8 <line:69:3> col:3 mjMESH_INERTIA_LEGACY 'int'
-
-# legacy mesh inertia
-
-# (placeholder) | `-EnumConstantDecl 0x70e778 <line:70:3> col:3 mjMESH_INERTIA_SHELL 'int'
-
-# shell mesh inertia
 
 alias mjtMeshInertia = 
+struct mjtBuiltin_:
+	alias mjBUILTIN_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x70e898 <line:74:9, line:79:1> line:74:14 mjtBuiltin_
+	alias mjBUILTIN_GRADIENT: 
+	alias mjBUILTIN_CHECKER: 
+	alias mjBUILTIN_FLAT: 
 
-# (placeholder) | |-EnumConstantDecl 0x70e9c8 <line:75:3, col:20> col:3 mjBUILTIN_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x70e9a8 <col:20> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x70e988 <col:20> 'int' 0
-
-# no built-in texture
-
-# (placeholder) | |-EnumConstantDecl 0x70ea48 <line:76:3> col:3 mjBUILTIN_GRADIENT 'int'
-
-# gradient: rgb1->rgb2
-
-# (placeholder) | |-EnumConstantDecl 0x70eac8 <line:77:3> col:3 mjBUILTIN_CHECKER 'int'
-
-# checker pattern: rgb1, rgb2
-
-# (placeholder) | `-EnumConstantDecl 0x70eb78 <line:78:3> col:3 mjBUILTIN_FLAT 'int'
-
-# 2d: rgb1; cube: rgb1-up, rgb2-side, rgb3-down
 
 alias mjtBuiltin = 
+struct mjtMark_:
+	alias mjMARK_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x70ec98 <line:82:9, line:87:1> line:82:14 mjtMark_
+	alias mjMARK_EDGE: 
+	alias mjMARK_CROSS: 
+	alias mjMARK_RANDOM: 
 
-# (placeholder) | |-EnumConstantDecl 0x70edc8 <line:83:3, col:17> col:3 mjMARK_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x70eda8 <col:17> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x70ed88 <col:17> 'int' 0
-
-# no mark
-
-# (placeholder) | |-EnumConstantDecl 0x70ee48 <line:84:3> col:3 mjMARK_EDGE 'int'
-
-# edges
-
-# (placeholder) | |-EnumConstantDecl 0x70eec8 <line:85:3> col:3 mjMARK_CROSS 'int'
-
-# cross
-
-# (placeholder) | `-EnumConstantDecl 0x70ef78 <line:86:3> col:3 mjMARK_RANDOM 'int'
-
-# random dots
 
 alias mjtMark = 
+struct mjtLimited_:
+	alias mjLIMITED_FALSE: Int = 0
 
-# (placeholder) |-EnumDecl 0x70f098 <line:90:9, line:94:1> line:90:14 mjtLimited_
+	alias mjLIMITED_TRUE: 
+	alias mjLIMITED_AUTO: 
 
-# (placeholder) | |-EnumConstantDecl 0x70f1c8 <line:91:3, col:21> col:3 mjLIMITED_FALSE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x70f1a8 <col:21> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x70f188 <col:21> 'int' 0
-
-# not limited
-
-# (placeholder) | |-EnumConstantDecl 0x70f248 <line:92:3> col:3 mjLIMITED_TRUE 'int'
-
-# limited
-
-# (placeholder) | `-EnumConstantDecl 0x70f2c8 <line:93:3> col:3 mjLIMITED_AUTO 'int'
-
-# limited inferred from presence of range
 
 alias mjtLimited = 
+struct mjtAlignFree_:
+	alias mjALIGNFREE_FALSE: Int = 0
 
-# (placeholder) |-EnumDecl 0x70f418 <line:96:9, line:100:1> line:96:14 mjtAlignFree_
+	alias mjALIGNFREE_TRUE: 
+	alias mjALIGNFREE_AUTO: 
 
-# (placeholder) | |-EnumConstantDecl 0x70f548 <line:97:3, col:23> col:3 mjALIGNFREE_FALSE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x70f528 <col:23> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x70f508 <col:23> 'int' 0
-
-# don ' t align
-
-# (placeholder) | |-EnumConstantDecl 0x70f5c8 <line:98:3> col:3 mjALIGNFREE_TRUE 'int'
-
-# align
-
-# (placeholder) | `-EnumConstantDecl 0x70f648 <line:99:3> col:3 mjALIGNFREE_AUTO 'int'
-
-# respect the global compiler flag
 
 alias mjtAlignFree = 
+struct mjtInertiaFromGeom_:
+	alias mjINERTIAFROMGEOM_FALSE: Int = 0
 
-# (placeholder) |-EnumDecl 0x70f798 <line:103:9, line:107:1> line:103:14 mjtInertiaFromGeom_
+	alias mjINERTIAFROMGEOM_TRUE: 
+	alias mjINERTIAFROMGEOM_AUTO: 
 
-# (placeholder) | |-EnumConstantDecl 0x70f8c8 <line:104:3, col:29> col:3 mjINERTIAFROMGEOM_FALSE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x70f8a8 <col:29> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x70f888 <col:29> 'int' 0
-
-# do not use; inertial element required
-
-# (placeholder) | |-EnumConstantDecl 0x70f948 <line:105:3> col:3 mjINERTIAFROMGEOM_TRUE 'int'
-
-# always use; overwrite inertial element
-
-# (placeholder) | `-EnumConstantDecl 0x711478 <line:106:3> col:3 mjINERTIAFROMGEOM_AUTO 'int'
-
-# use only if inertial element is missing
 
 alias mjtInertiaFromGeom = 
+struct mjtOrientation_:
+	alias mjORIENTATION_QUAT: Int = 0
 
-# (placeholder) |-EnumDecl 0x711598 <line:110:9, line:116:1> line:110:14 mjtOrientation_
+	alias mjORIENTATION_AXISANGLE: 
+	alias mjORIENTATION_XYAXES: 
+	alias mjORIENTATION_ZAXIS: 
+	alias mjORIENTATION_EULER: 
 
-# (placeholder) | |-EnumConstantDecl 0x7116c8 <line:111:3, col:24> col:3 mjORIENTATION_QUAT 'int'
-
-# (placeholder) | | |-ConstantExpr 0x7116a8 <col:24> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x711688 <col:24> 'int' 0
-
-# quaternion
-
-# (placeholder) | |-EnumConstantDecl 0x711748 <line:112:3> col:3 mjORIENTATION_AXISANGLE 'int'
-
-# axis and angle
-
-# (placeholder) | |-EnumConstantDecl 0x7117c8 <line:113:3> col:3 mjORIENTATION_XYAXES 'int'
-
-# x and y axes
-
-# (placeholder) | |-EnumConstantDecl 0x711848 <line:114:3> col:3 mjORIENTATION_ZAXIS 'int'
-
-# z axis (minimal rotation)
-
-# (placeholder) | `-EnumConstantDecl 0x7118c8 <line:115:3> col:3 mjORIENTATION_EULER 'int'
-
-# Euler angles
 
 alias mjtOrientation = 
 struct mjsElement_:
@@ -7408,196 +5380,63 @@ struct mjsDefault_:
 
 
 alias mjsDefault = mjsDefault_
+struct mjtButton_:
 
-# (placeholder) |-EnumDecl 0x732bc0 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:65:9, line:70:1> line:65:14 mjtButton_
+	#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias mjBUTTON_NONE: Int = 0
 
-#---------------------------------- primitive types (mjt) -----------------------------------------
+	alias mjBUTTON_LEFT: 
+	alias mjBUTTON_RIGHT: 
+	alias mjBUTTON_MIDDLE: 
 
-# (placeholder) | |-EnumConstantDecl 0x73cb00 <line:66:3, col:19> col:3 mjBUTTON_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x73cae0 <col:19> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x732ca8 <col:19> 'int' 0
-
-# no button
-
-# (placeholder) | |-EnumConstantDecl 0x73cb78 <line:67:3> col:3 mjBUTTON_LEFT 'int'
-
-# left button
-
-# (placeholder) | |-EnumConstantDecl 0x73cbf8 <line:68:3> col:3 mjBUTTON_RIGHT 'int'
-
-# right button
-
-# (placeholder) | `-EnumConstantDecl 0x73cca8 <line:69:3> col:3 mjBUTTON_MIDDLE 'int'
-
-# middle button
 
 alias mjtButton = 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+struct mjtEvent_:
+	alias mjEVENT_NONE: Int = 0
 
-# (placeholder) |-EnumDecl 0x73cdc8 <line:73:9, line:83:1> line:73:14 mjtEvent_
+	alias mjEVENT_MOVE: 
+	alias mjEVENT_PRESS: 
+	alias mjEVENT_RELEASE: 
+	alias mjEVENT_SCROLL: 
+	alias mjEVENT_KEY: 
+	alias mjEVENT_RESIZE: 
+	alias mjEVENT_REDRAW: 
+	alias mjEVENT_FILESDROP: 
 
-# (placeholder) | |-EnumConstantDecl 0x73cef8 <line:74:3, col:18> col:3 mjEVENT_NONE 'int'
-
-# (placeholder) | | |-ConstantExpr 0x73ced8 <col:18> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x73ceb8 <col:18> 'int' 0
-
-# no event
-
-# (placeholder) | |-EnumConstantDecl 0x73cf78 <line:75:3> col:3 mjEVENT_MOVE 'int'
-
-# mouse move
-
-# (placeholder) | |-EnumConstantDecl 0x73cff8 <line:76:3> col:3 mjEVENT_PRESS 'int'
-
-# mouse button press
-
-# (placeholder) | |-EnumConstantDecl 0x73d078 <line:77:3> col:3 mjEVENT_RELEASE 'int'
-
-# mouse button release
-
-# (placeholder) | |-EnumConstantDecl 0x73d0f8 <line:78:3> col:3 mjEVENT_SCROLL 'int'
-
-# scroll
-
-# (placeholder) | |-EnumConstantDecl 0x73d178 <line:79:3> col:3 mjEVENT_KEY 'int'
-
-# key press
-
-# (placeholder) | |-EnumConstantDecl 0x73d1f8 <line:80:3> col:3 mjEVENT_RESIZE 'int'
-
-# resize
-
-# (placeholder) | |-EnumConstantDecl 0x73d278 <line:81:3> col:3 mjEVENT_REDRAW 'int'
-
-# redraw
-
-# (placeholder) | `-EnumConstantDecl 0x73d328 <line:82:3> col:3 mjEVENT_FILESDROP 'int'
-
-# files drop
 
 alias mjtEvent = 
+struct mjtItem_:
+	alias mjITEM_END: Int = -2
 
-# (placeholder) |-EnumDecl 0x73d448 <line:86:9, line:107:1> line:86:14 mjtItem_
+	alias mjITEM_SECTION: Int = -1
 
-# (placeholder) | |-EnumConstantDecl 0x73d590 <line:87:3, col:17> col:3 mjITEM_END 'int'
+	alias mjITEM_SEPARATOR: Int = 0
 
-# (placeholder) | | |-ConstantExpr 0x73d570 <col:16, col:17> 'int'
+	alias mjITEM_STATIC: 
+	alias mjITEM_BUTTON: 
+	alias mjITEM_CHECKINT: 
+	alias mjITEM_CHECKBYTE: 
+	alias mjITEM_RADIO: 
+	alias mjITEM_RADIOLINE: 
+	alias mjITEM_SELECT: 
+	alias mjITEM_SLIDERINT: 
+	alias mjITEM_SLIDERNUM: 
+	alias mjITEM_EDITINT: 
+	alias mjITEM_EDITNUM: 
+	alias mjITEM_EDITFLOAT: 
+	alias mjITEM_EDITTXT: 
+	alias mjNITEM: 
 
-# (placeholder) | | | |-value: Int -2
-
-# (placeholder) | | | `-UnaryOperator 0x73d558 <col:16, col:17> 'int' prefix '-'
-
-# (placeholder) | | |   `-IntegerLiteral 0x73d538 <col:17> 'int' 2
-
-# end of definition list (not an item)
-
-# (placeholder) | |-EnumConstantDecl 0x73d660 <line:88:3, col:21> col:3 mjITEM_SECTION 'int'
-
-# (placeholder) | | |-ConstantExpr 0x73d640 <col:20, col:21> 'int'
-
-# (placeholder) | | | |-value: Int -1
-
-# (placeholder) | | | `-UnaryOperator 0x73d628 <col:20, col:21> 'int' prefix '-'
-
-# (placeholder) | | |   `-IntegerLiteral 0x73d608 <col:21> 'int' 1
-
-# section (not an item)
-
-# (placeholder) | |-EnumConstantDecl 0x73d718 <line:89:3, col:22> col:3 mjITEM_SEPARATOR 'int'
-
-# (placeholder) | | |-ConstantExpr 0x73d6f8 <col:22> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x73d6d8 <col:22> 'int' 0
-
-# separator
-
-# (placeholder) | |-EnumConstantDecl 0x73d798 <line:90:3> col:3 mjITEM_STATIC 'int'
-
-# static text
-
-# (placeholder) | |-EnumConstantDecl 0x73d818 <line:91:3> col:3 mjITEM_BUTTON 'int'
-
-# button
-
-# (placeholder) | |-EnumConstantDecl 0x73d8c8 <line:94:3> col:3 mjITEM_CHECKINT 'int'
-
-# check box, int value
-
-# (placeholder) | |-EnumConstantDecl 0x73d948 <line:95:3> col:3 mjITEM_CHECKBYTE 'int'
-
-# check box, mjtByte value
-
-# (placeholder) | |-EnumConstantDecl 0x73d9c8 <line:96:3> col:3 mjITEM_RADIO 'int'
-
-# radio group
-
-# (placeholder) | |-EnumConstantDecl 0x73da48 <line:97:3> col:3 mjITEM_RADIOLINE 'int'
-
-# radio group, single line
-
-# (placeholder) | |-EnumConstantDecl 0x73dac8 <line:98:3> col:3 mjITEM_SELECT 'int'
-
-# selection box
-
-# (placeholder) | |-EnumConstantDecl 0x73db48 <line:99:3> col:3 mjITEM_SLIDERINT 'int'
-
-# slider, int value
-
-# (placeholder) | |-EnumConstantDecl 0x73dbc8 <line:100:3> col:3 mjITEM_SLIDERNUM 'int'
-
-# slider, mjtNum value
-
-# (placeholder) | |-EnumConstantDecl 0x73dc48 <line:101:3> col:3 mjITEM_EDITINT 'int'
-
-# editable array, int values
-
-# (placeholder) | |-EnumConstantDecl 0x73dcc8 <line:102:3> col:3 mjITEM_EDITNUM 'int'
-
-# editable array, mjtNum values
-
-# (placeholder) | |-EnumConstantDecl 0x73dd48 <line:103:3> col:3 mjITEM_EDITFLOAT 'int'
-
-# editable array, float values
-
-# (placeholder) | |-EnumConstantDecl 0x73ddc8 <line:104:3> col:3 mjITEM_EDITTXT 'int'
-
-# editable text
-
-# (placeholder) | `-EnumConstantDecl 0x73de78 <line:106:3> col:3 mjNITEM 'int'
-
-# number of item types
 
 alias mjtItem = 
+struct mjtSection_:
+	alias mjSECT_CLOSED: Int = 0
 
-# (placeholder) |-EnumDecl 0x73df98 <line:110:9, line:114:1> line:110:14 mjtSection_
+	alias mjSECT_OPEN: 
+	alias mjSECT_FIXED: 
 
-# (placeholder) | |-EnumConstantDecl 0x73e0c8 <line:111:3, col:19> col:3 mjSECT_CLOSED 'int'
-
-# (placeholder) | | |-ConstantExpr 0x73e0a8 <col:19> 'int'
-
-# (placeholder) | | | |-value: Int 0
-
-# (placeholder) | | | `-IntegerLiteral 0x73e088 <col:19> 'int' 0
-
-# closed state (regular section)
-
-# (placeholder) | |-EnumConstantDecl 0x73e148 <line:112:3> col:3 mjSECT_OPEN 'int'
-
-# open state (regular section)
-
-# (placeholder) | `-EnumConstantDecl 0x73e1f8 <line:113:3> col:3 mjSECT_FIXED 'int'
-
-# fixed section: always open, no title
 
 alias mjtSection = 
 

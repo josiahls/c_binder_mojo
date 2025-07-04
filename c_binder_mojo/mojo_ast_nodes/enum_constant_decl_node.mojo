@@ -79,15 +79,30 @@ struct EnumConstantDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _ast_entry_level: Int
-    var _grammar: Grammar
+    # var _grammar: Grammar
+    var _field_name: String
+    var _field_type: String
+    var _value: String
 
-    fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
+    fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
-        self._ast_entry_level = ast_entries.level
+        self._ast_entry_level = ast_entry.level
         self._node_state = NodeState.COMPLETED
-        self._grammar = Grammar()
+        # self._grammar = Grammar()
+        self._field_name = String()
+        self._field_type = String()
+        self._value = String()
+
+        for token in ast_entry.tokens:
+            if token == "'":
+                pass
+            elif self._field_name == "":
+                self._field_name = token
+            elif self._field_type == "":
+                self._field_type = token
+            else:
+                self._value = token
 
     @staticmethod
     fn accept(
@@ -111,7 +126,7 @@ struct EnumConstantDeclNode(NodeAstLike):
         if ast_entry.level <= self._ast_entry_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CONSUME_TOKEN
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -119,10 +134,10 @@ struct EnumConstantDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._grammar = Grammar(self._ast_entries[])
-        if token_flow == TokenFlow.CONSUME_TOKEN:
-            self._node_state = NodeState.COLLECTING_TOKENS
-            self._ast_entries[].append(ast_entry)
+        # self._grammar = Grammar(self._ast_entries[])
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
+            # self._ast_entries[].append(ast_entry)
         else:
             self._node_state = NodeState.COMPLETED
 
@@ -167,13 +182,13 @@ struct EnumConstantDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return default_to_string(
-            node=AstNode(self),
-            module_interface=module_interface,
-            just_code=just_code,
-            indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
-            alternate_string=String(self._grammar) if just_code else String(),
-        )
+
+        var s: String = ""
+        var indent: String = "\t" * parent_indent_level
+        s += indent + "alias " + self._field_name + ": "  #+ ": " + self._field_type + " = " + self._value + "\n"
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.get_node(child_idx)
+            if child.node[].isa[ConstantExprNode]():
+                s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+
+        return s + "\n"

@@ -22,6 +22,8 @@ from .translation_unit_decl_node import TranslationUnitDeclNode
 from .record_node import RecordNode
 from .example_node import ExampleNode
 from .mode_attr_node import ModeAttrNode
+from .constant_expr_node import ConstantExprNode
+from .value_node import ValueNode
 
 # Setup Variant
 from .node_variant import Variant
@@ -32,6 +34,8 @@ alias AstNodeVariant = Variant[
     PointerTypeNode,
     BuiltinTypeNode,
     ParmVarDeclNode,
+    ConstantExprNode,
+    ValueNode,
     TypedefTypeNode,
     TypedefNode,
     RecordTypeNode,
@@ -42,12 +46,13 @@ alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
     RecordDeclNode,
     FieldDeclNode,
-    # EnumDeclNode,
-    # EnumConstantDeclNode,
+    EnumDeclNode,
+    EnumConstantDeclNode,
     EndFileNode,
     VarDeclNode,
     TypedefDeclNode,
     FunctionDeclNode,
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,
+
 ]

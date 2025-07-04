@@ -299,8 +299,7 @@ TypedefDeclNode(parent_idx=1, current_idx=457, child_idxs=(458), node_state=4 (C
 TypedefDeclNode(parent_idx=1, current_idx=461, child_idxs=(462), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5968a0 <line:161:1, col:20> col:20 u_int64_t '__uint64_t':'unsigned long'UInt64
 TypedefDeclNode(parent_idx=1, current_idx=465, child_idxs=(466, 467), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x596920 <line:164:1, col:13> col:13 register_t 'long'Int64PlaceHolderNode(parent_idx=465, current_idx=467, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-ModeAttr 0x596988 <col:40, col:58> __word__
+|-TypedefDecl 0x596920 <line:164:1, col:13> col:13 register_t 'long'Int64 # TODO(josiahls): c_binder_mojo does not support mode attributes yet: mode_attr_node: mode: __word__
 
 alias __bswap_16 = fn(used: __uint16_t : short) -> __uint16_t
 alias __bswap_32 = fn(used: __uint32_t : int) -> __uint32_t

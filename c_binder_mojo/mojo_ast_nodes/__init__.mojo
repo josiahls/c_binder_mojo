@@ -21,12 +21,14 @@ from .parm_var_decl_node import ParmVarDeclNode
 from .translation_unit_decl_node import TranslationUnitDeclNode
 from .record_node import RecordNode
 from .example_node import ExampleNode
+from .mode_attr_node import ModeAttrNode
 
 # Setup Variant
 from .node_variant import Variant
 
 alias AstNodeVariant = Variant[
     RootNode,
+    ModeAttrNode,
     PointerTypeNode,
     BuiltinTypeNode,
     ParmVarDeclNode,

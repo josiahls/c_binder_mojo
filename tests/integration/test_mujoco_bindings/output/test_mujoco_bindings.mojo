@@ -322,8 +322,8 @@ struct Anonymous__line_59_9__line_70_3_:
 alias fd_set = Anonymous__line_59_9__line_70_3_
 
 alias fd_mask = Int64
-alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[struct timeval]) -> Int32
-alias pselect = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], read __timeout: UnsafePointer[struct timespec], read __sigmask: UnsafePointer[__sigset_t]) -> Int32
+alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[timeval]) -> Int32
+alias pselect = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], read __timeout: UnsafePointer[timespec], read __sigmask: UnsafePointer[__sigset_t]) -> Int32
 
 alias blksize_t = Int64
 
@@ -532,10 +532,10 @@ struct random_data:
 
 	var end_ptr: UnsafePointer[Int32]
 
-alias random_r = fn(__buf: UnsafePointer[struct random_data], __result: UnsafePointer[Int32]) -> Int32
-alias srandom_r = fn(__seed: Int32, __buf: UnsafePointer[struct random_data]) -> Int32
-alias initstate_r = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t, __buf: UnsafePointer[struct random_data]) -> Int32
-alias setstate_r = fn(__statebuf: UnsafePointer[Int8], __buf: UnsafePointer[struct random_data]) -> Int32
+alias random_r = fn(__buf: UnsafePointer[random_data], __result: UnsafePointer[Int32]) -> Int32
+alias srandom_r = fn(__seed: Int32, __buf: UnsafePointer[random_data]) -> Int32
+alias initstate_r = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t, __buf: UnsafePointer[random_data]) -> Int32
+alias setstate_r = fn(__statebuf: UnsafePointer[Int8], __buf: UnsafePointer[random_data]) -> Int32
 alias rand = fn() -> Int32
 alias srand = fn(__seed: Int32) -> NoneType
 alias rand_r = fn(__seed: UnsafePointer[Int32]) -> Int32
@@ -560,15 +560,15 @@ struct drand48_data:
 
 	var __a: UInt128
 
-alias drand48_r = fn(__buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Float64]) -> Int32
-alias erand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Float64]) -> Int32
-alias lrand48_r = fn(__buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias nrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias mrand48_r = fn(__buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias jrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias srand48_r = fn(__seedval: Int64, __buffer: UnsafePointer[struct drand48_data]) -> Int32
-alias seed48_r = fn(__seed16v: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data]) -> Int32
-alias lcong48_r = fn(__param: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data]) -> Int32
+alias drand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Float64]) -> Int32
+alias erand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Float64]) -> Int32
+alias lrand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias nrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias mrand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias jrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias srand48_r = fn(__seedval: Int64, __buffer: UnsafePointer[drand48_data]) -> Int32
+alias seed48_r = fn(__seed16v: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data]) -> Int32
+alias lcong48_r = fn(__param: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data]) -> Int32
  # Disabled either due to a redefinition or a previous declaration: alias malloc = fn(: Int64) -> UnsafePointer[NoneType]
 alias malloc = fn(__size: size_t) -> UnsafePointer[NoneType]
  # Disabled either due to a redefinition or a previous declaration: alias calloc = fn(: Int64, : Int64) -> UnsafePointer[NoneType]

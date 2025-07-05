@@ -39,6 +39,7 @@ struct ParmVarDeclNode(NodeAstLike):
     var _is_restrict: Bool
     var _is_unsigned: Bool
     var _is_used: Bool
+    var _is_struct: Bool
     # Doesn't have a parameter name.
     var _is_positional: Bool
 
@@ -66,6 +67,7 @@ struct ParmVarDeclNode(NodeAstLike):
         self._is_unsigned = False
         self._is_used = False
         self._is_positional = False
+        self._is_struct = False
 
         self._is_pointer = False
         self._is_double_pointer = False
@@ -133,6 +135,8 @@ struct ParmVarDeclNode(NodeAstLike):
                 self._is_pointer = True
             elif base_entry == "**":
                 self._is_double_pointer = True
+            elif base_entry == "struct":
+                self._is_struct = True
             elif self._parm_var_type == "":
                 self._parm_var_type = base_entry
             else:
@@ -172,6 +176,8 @@ struct ParmVarDeclNode(NodeAstLike):
                 self._is_pointer = True
             elif base_entry == "**":
                 self._is_double_pointer = True
+            elif base_entry == "struct":
+                self._is_struct = True
             elif self._parm_var_type == "":
                 self._parm_var_type = base_entry
             else:

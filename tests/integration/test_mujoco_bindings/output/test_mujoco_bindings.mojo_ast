@@ -346,8 +346,8 @@ TypedefDeclNode(parent_idx=1, current_idx=677, child_idxs=(678), node_state=4 (C
 |-TypedefDecl 0x5af598 <line:59:1, line:70:5> col:5 referenced fd_set 'struct fd_set':'fd_set'Anonymous__line_59_9__line_70_3_
 TypedefDeclNode(parent_idx=1, current_idx=681, child_idxs=(682), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5af618 <line:77:1, col:19> col:19 fd_mask '__fd_mask':'long'Int64
-alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[struct timeval]) -> Int32
-alias pselect = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], read __timeout: UnsafePointer[struct timespec], read __sigmask: UnsafePointer[__sigset_t]) -> Int32
+alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[timeval]) -> Int32
+alias pselect = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], read __timeout: UnsafePointer[timespec], read __sigmask: UnsafePointer[__sigset_t]) -> Int32
 TypedefDeclNode(parent_idx=1, current_idx=698, child_idxs=(699), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b0190 </usr/include/x86_64-linux-gnu/sys/types.h:185:1, col:21> col:21 blksize_t '__blksize_t':'long'Int64
 TypedefDeclNode(parent_idx=1, current_idx=702, child_idxs=(703), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -617,10 +617,10 @@ struct random_data:
 	FieldDeclNode(parent_idx=867, current_idx=874, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5c28b0 <line:432:5, col:14> col:14 end_ptr 'int32_t *'	
 
-alias random_r = fn(__buf: UnsafePointer[struct random_data], __result: UnsafePointer[Int32]) -> Int32
-alias srandom_r = fn(__seed: Int32, __buf: UnsafePointer[struct random_data]) -> Int32
-alias initstate_r = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t, __buf: UnsafePointer[struct random_data]) -> Int32
-alias setstate_r = fn(__statebuf: UnsafePointer[Int8], __buf: UnsafePointer[struct random_data]) -> Int32
+alias random_r = fn(__buf: UnsafePointer[random_data], __result: UnsafePointer[Int32]) -> Int32
+alias srandom_r = fn(__seed: Int32, __buf: UnsafePointer[random_data]) -> Int32
+alias initstate_r = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t, __buf: UnsafePointer[random_data]) -> Int32
+alias setstate_r = fn(__statebuf: UnsafePointer[Int8], __buf: UnsafePointer[random_data]) -> Int32
 alias rand = fn() -> Int32
 alias srand = fn(__seed: Int32) -> NoneType
 alias rand_r = fn(__seed: UnsafePointer[Int32]) -> Int32
@@ -650,15 +650,15 @@ struct drand48_data:
 	FieldDeclNode(parent_idx=934, current_idx=939, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5c8628 <line:497:19, col:42> col:42 __a 'unsigned long long'	
 
-alias drand48_r = fn(__buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Float64]) -> Int32
-alias erand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Float64]) -> Int32
-alias lrand48_r = fn(__buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias nrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias mrand48_r = fn(__buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias jrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias srand48_r = fn(__seedval: Int64, __buffer: UnsafePointer[struct drand48_data]) -> Int32
-alias seed48_r = fn(__seed16v: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data]) -> Int32
-alias lcong48_r = fn(__param: UnsafePointer[Int16], __buffer: UnsafePointer[struct drand48_data]) -> Int32
+alias drand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Float64]) -> Int32
+alias erand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Float64]) -> Int32
+alias lrand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias nrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias mrand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias jrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias srand48_r = fn(__seedval: Int64, __buffer: UnsafePointer[drand48_data]) -> Int32
+alias seed48_r = fn(__seed16v: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data]) -> Int32
+alias lcong48_r = fn(__param: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data]) -> Int32
  # Disabled either due to a redefinition or a previous declaration: alias malloc = fn(: Int64) -> UnsafePointer[NoneType]
 alias malloc = fn(__size: size_t) -> UnsafePointer[NoneType]
  # Disabled either due to a redefinition or a previous declaration: alias calloc = fn(: Int64, : Int64) -> UnsafePointer[NoneType]

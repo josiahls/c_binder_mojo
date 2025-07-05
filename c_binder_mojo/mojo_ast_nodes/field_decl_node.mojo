@@ -213,6 +213,8 @@ struct FieldDeclNode(NodeAstLike):
         for entry in entries:
             if entry.replace("(", "") == "unnamed":
                 self._is_unnamed_type = True
+            elif entry == "struct":
+                pass
             elif self._field_type == "":
                 self._field_type = entry
             else:

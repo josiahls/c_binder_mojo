@@ -363,24 +363,24 @@ struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9_
 	var __value64: UInt128
 	
 
-	var __value32: # Unnamed type
+	var __value32: _Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_
 	
 
 
 alias __atomic_wide_counter = Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_
 struct __pthread_internal_list:
 
-	var __prev: UnsafePointer[struct __pthread_internal_list]
+	var __prev: UnsafePointer[__pthread_internal_list]
 	
 
-	var __next: UnsafePointer[struct __pthread_internal_list]
+	var __next: UnsafePointer[__pthread_internal_list]
 	
 
 
 alias __pthread_list_t = __pthread_internal_list
 struct __pthread_internal_slist:
 
-	var __next: UnsafePointer[struct __pthread_internal_slist]
+	var __next: UnsafePointer[__pthread_internal_slist]
 	
 
 
@@ -524,7 +524,7 @@ struct pthread_attr_t:
 alias pthread_attr_t = pthread_attr_t
 struct Anonymous__line_67_9__line_72_1_:
 
-	var __data: struct __pthread_mutex_s
+	var __data: __pthread_mutex_s
 	# Unhandled tokens: struct __pthread_mutex_s
 	
 
@@ -538,7 +538,7 @@ struct Anonymous__line_67_9__line_72_1_:
 alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
 struct Anonymous__line_75_9__line_80_1_:
 
-	var __data: struct __pthread_cond_s
+	var __data: __pthread_cond_s
 	# Unhandled tokens: struct __pthread_cond_s
 	
 
@@ -552,7 +552,7 @@ struct Anonymous__line_75_9__line_80_1_:
 alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
 struct Anonymous__line_86_9__line_91_1_:
 
-	var __data: struct __pthread_rwlock_arch_t
+	var __data: __pthread_rwlock_arch_t
 	# Unhandled tokens: struct __pthread_rwlock_arch_t
 	
 
@@ -2464,22 +2464,22 @@ struct _mjVisual__Anonymous__line_486_3__line_499_3_:
 
 struct mjVisual_:
 
-	var global: # Unnamed type
+	var global: _mjVisual__Anonymous__line_486_3__line_499_3_
 	
 
-	var quality: # Unnamed type
+	var quality: _mjVisual__Anonymous__line_501_3__line_507_3_
 	
 
-	var headlight: # Unnamed type
+	var headlight: _mjVisual__Anonymous__line_509_3__line_514_3_
 	
 
-	var map: # Unnamed type
+	var map: _mjVisual__Anonymous__line_516_3__line_530_3_
 	
 
-	var scale: # Unnamed type
+	var scale: _mjVisual__Anonymous__line_532_3__line_550_3_
 	
 
-	var rgba: # Unnamed type
+	var rgba: _mjVisual__Anonymous__line_552_3__line_578_3_
 	
 
 
@@ -7922,10 +7922,10 @@ struct mjvSceneState_:
 	# scratch space for vis geoms inserted by the user and plugins
 
 
-	var model: # Unnamed type
+	var model: _mjvSceneState__Anonymous__line_417_3__line_631_3_
 	
 
-	var data: # Unnamed type
+	var data: _mjvSceneState__Anonymous__line_634_3__line_688_3_
 	
 
 
@@ -7951,7 +7951,7 @@ struct mjResource_:
 	# timestamp of the resource
 
 
-	var provider: UnsafePointer[const struct mjpResourceProvider]
+	var provider: UnsafePointer[const mjpResourceProvider]
 	
 	# pointer to the provider
 
@@ -11498,25 +11498,25 @@ struct mjuiItemEdit_:
 
 struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 
-	var single: struct mjuiItemSingle_
+	var single: mjuiItemSingle_
 	# Unhandled tokens: struct mjuiItemSingle_
 	
 	# check and button
 
 
-	var multi: struct mjuiItemMulti_
+	var multi: mjuiItemMulti_
 	# Unhandled tokens: struct mjuiItemMulti_
 	
 	# static, radio and select
 
 
-	var slider: struct mjuiItemSlider_
+	var slider: mjuiItemSlider_
 	# Unhandled tokens: struct mjuiItemSlider_
 	
 	# slider
 
 
-	var edit: struct mjuiItemEdit_
+	var edit: mjuiItemEdit_
 	# Unhandled tokens: struct mjuiItemEdit_
 	
 	# edit
@@ -11560,7 +11560,7 @@ struct mjuiItem_:
 	# user-supplied id (for event handling)
 
 
-	var implicit: union mjuiItem_::(anonymous at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:259:3)
+	var implicit: _mjuiItem__Anonymous__line_259_3__line_264_3_
 	
 
 	var rect: mjrRect

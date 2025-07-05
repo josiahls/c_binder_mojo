@@ -90,6 +90,7 @@ struct RecordDeclNode(NodeAstLike):
 
         if self._record_name == "":
             self._record_name = "Anonymous_" + clean_location(self._location)
+            self._is_anonymous = True
 
         print("RecordDeclNode: record name: " + self._record_name + " at " + self._location + " with entry: " + String(ast_entry))
 
@@ -159,6 +160,10 @@ struct RecordDeclNode(NodeAstLike):
                 )
 
             elif child.node[].isa[FieldDeclNode]():
+                print("FieldDeclNode: update_child_struct_names: " + String(child.node[][FieldDeclNode]))
+                print("FieldDeclNode: update_child_struct_names:field type: " + child.node[][FieldDeclNode]._field_type)
+                print("FieldDeclNode: update_child_struct_names:field name: " + child.node[][FieldDeclNode]._field_name)
+                print("FieldDeclNode: update_child_struct_names:field anonymous_struct_caught " + String(anonymous_struct_caught))
                 if anonymous_struct_caught:
                     child.node[][FieldDeclNode]._field_type = (
                         "_" + self._record_name + "_" + original_name

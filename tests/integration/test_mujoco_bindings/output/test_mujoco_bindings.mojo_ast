@@ -391,7 +391,7 @@ struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9_
 	
 
 	FieldDeclNode(parent_idx=714, current_idx=719, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var __value32: # Unnamed type
+	var __value32: _Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=720, child_idxs=(721), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -399,11 +399,11 @@ TypedefDeclNode(parent_idx=1, current_idx=720, child_idxs=(721), node_state=4 (C
 struct __pthread_internal_list:
 
 	FieldDeclNode(parent_idx=724, current_idx=725, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var __prev: UnsafePointer[struct __pthread_internal_list]
+	var __prev: UnsafePointer[__pthread_internal_list]
 	
 
 	FieldDeclNode(parent_idx=724, current_idx=726, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var __next: UnsafePointer[struct __pthread_internal_list]
+	var __next: UnsafePointer[__pthread_internal_list]
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=727, child_idxs=(728), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -411,7 +411,7 @@ TypedefDeclNode(parent_idx=1, current_idx=727, child_idxs=(728), node_state=4 (C
 struct __pthread_internal_slist:
 
 	FieldDeclNode(parent_idx=731, current_idx=732, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var __next: UnsafePointer[struct __pthread_internal_slist]
+	var __next: UnsafePointer[__pthread_internal_slist]
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=733, child_idxs=(734), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -590,7 +590,7 @@ TypedefDeclNode(parent_idx=1, current_idx=800, child_idxs=(801), node_state=4 (C
 struct Anonymous__line_67_9__line_72_1_:
 
 	FieldDeclNode(parent_idx=804, current_idx=805, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var __data: struct __pthread_mutex_s
+	var __data: __pthread_mutex_s
 	# Unhandled tokens: struct __pthread_mutex_s
 	
 
@@ -607,7 +607,7 @@ TypedefDeclNode(parent_idx=1, current_idx=808, child_idxs=(809), node_state=4 (C
 struct Anonymous__line_75_9__line_80_1_:
 
 	FieldDeclNode(parent_idx=812, current_idx=813, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var __data: struct __pthread_cond_s
+	var __data: __pthread_cond_s
 	# Unhandled tokens: struct __pthread_cond_s
 	
 
@@ -624,7 +624,7 @@ TypedefDeclNode(parent_idx=1, current_idx=816, child_idxs=(817), node_state=4 (C
 struct Anonymous__line_86_9__line_91_1_:
 
 	FieldDeclNode(parent_idx=820, current_idx=821, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var __data: struct __pthread_rwlock_arch_t
+	var __data: __pthread_rwlock_arch_t
 	# Unhandled tokens: struct __pthread_rwlock_arch_t
 	
 
@@ -2951,27 +2951,27 @@ struct _mjVisual__Anonymous__line_486_3__line_499_3_:
 struct mjVisual_:
 
 	FieldDeclNode(parent_idx=4893, current_idx=4920, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var global: # Unnamed type
+	var global: _mjVisual__Anonymous__line_486_3__line_499_3_
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=4932, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var quality: # Unnamed type
+	var quality: _mjVisual__Anonymous__line_501_3__line_507_3_
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=4942, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var headlight: # Unnamed type
+	var headlight: _mjVisual__Anonymous__line_509_3__line_514_3_
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=4970, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var map: # Unnamed type
+	var map: _mjVisual__Anonymous__line_516_3__line_530_3_
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=5006, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var scale: # Unnamed type
+	var scale: _mjVisual__Anonymous__line_532_3__line_550_3_
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=5058, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var rgba: # Unnamed type
+	var rgba: _mjVisual__Anonymous__line_552_3__line_578_3_
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=5059, child_idxs=(5060), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -11267,11 +11267,11 @@ struct mjvSceneState_:
 
 
 	FieldDeclNode(parent_idx=7486, current_idx=7692, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var model: # Unnamed type
+	var model: _mjvSceneState__Anonymous__line_417_3__line_631_3_
 	
 
 	FieldDeclNode(parent_idx=7486, current_idx=7737, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var data: # Unnamed type
+	var data: _mjvSceneState__Anonymous__line_634_3__line_688_3_
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=7738, child_idxs=(7739), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -11307,7 +11307,7 @@ struct mjResource_:
 
 
 	FieldDeclNode(parent_idx=7742, current_idx=7751, child_idxs=(7752), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var provider: UnsafePointer[const struct mjpResourceProvider]
+	var provider: UnsafePointer[const mjpResourceProvider]
 	
 	FullCommentNode(parent_idx=7751, current_idx=7752, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -16712,7 +16712,7 @@ struct mjuiItemEdit_:
 struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 
 	FieldDeclNode(parent_idx=9641, current_idx=9643, child_idxs=(9644), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var single: struct mjuiItemSingle_
+	var single: mjuiItemSingle_
 	# Unhandled tokens: struct mjuiItemSingle_
 	
 	FullCommentNode(parent_idx=9643, current_idx=9644, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -16721,7 +16721,7 @@ struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 
 
 	FieldDeclNode(parent_idx=9641, current_idx=9645, child_idxs=(9646), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var multi: struct mjuiItemMulti_
+	var multi: mjuiItemMulti_
 	# Unhandled tokens: struct mjuiItemMulti_
 	
 	FullCommentNode(parent_idx=9645, current_idx=9646, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -16730,7 +16730,7 @@ struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 
 
 	FieldDeclNode(parent_idx=9641, current_idx=9647, child_idxs=(9648), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var slider: struct mjuiItemSlider_
+	var slider: mjuiItemSlider_
 	# Unhandled tokens: struct mjuiItemSlider_
 	
 	FullCommentNode(parent_idx=9647, current_idx=9648, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -16739,7 +16739,7 @@ struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 
 
 	FieldDeclNode(parent_idx=9641, current_idx=9649, child_idxs=(9650), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var edit: struct mjuiItemEdit_
+	var edit: mjuiItemEdit_
 	# Unhandled tokens: struct mjuiItemEdit_
 	
 	FullCommentNode(parent_idx=9649, current_idx=9650, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -16807,7 +16807,7 @@ struct mjuiItem_:
 
 
 	FieldDeclNode(parent_idx=9626, current_idx=9651, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var implicit: union mjuiItem_::(anonymous at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjui.h:259:3)
+	var implicit: _mjuiItem__Anonymous__line_259_3__line_264_3_
 	
 
 	FieldDeclNode(parent_idx=9626, current_idx=9664, child_idxs=(9665), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)

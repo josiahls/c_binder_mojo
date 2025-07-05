@@ -160,25 +160,25 @@ struct RecordDeclNode(NodeAstLike):
 
             elif child.node[].isa[FieldDeclNode]():
                 if anonymous_struct_caught:
-                    child.node[][FieldDeclNode]._grammar._field_type = (
+                    child.node[][FieldDeclNode]._field_type = (
                         "_" + self._record_name + "_" + original_name
                     )
                     anonymous_struct_caught = False
 
                 if (
-                    child.node[][FieldDeclNode]._grammar._field_type
+                    child.node[][FieldDeclNode]._field_type
                     in self._inner_struct_name_map
                 ):
                     try:
                         child.node[][
                             FieldDeclNode
-                        ]._grammar._field_type = self._inner_struct_name_map[
-                            child.node[][FieldDeclNode]._grammar._field_type
+                        ]._field_type = self._inner_struct_name_map[
+                            child.node[][FieldDeclNode]._field_type
                         ]
                     except:
                         print(
                             "Error: "
-                            + child.node[][FieldDeclNode]._grammar._field_type
+                            + child.node[][FieldDeclNode]._field_type
                             + " not found in inner_struct_name_map"
                         )
 

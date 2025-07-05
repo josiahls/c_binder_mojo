@@ -138,15 +138,66 @@ struct FieldDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _ast_entry_level: Int
-    var _grammar: Grammar
+
+    var _field_name: String
+    var _field_type: String
+    var _is_const: Bool
+    var _is_struct: Bool
+    var _is_union: Bool
+    var _value: String
+
+    var _unhandled_tokens: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
         self._ast_entry_level = ast_entries.level
         self._node_state = NodeState.COMPLETED
-        self._grammar = Grammar()
+
+        self._field_name = String()
+        self._field_type = String()
+        self._is_const = False
+        self._is_struct = False
+        self._is_union = False
+        self._value = String()
+        self._unhandled_tokens = String()
+
+        var quoted_indicies = ast_entries.get_quoted_indices()
+
+        var start_idx = 0
+        var section_idx = 0
+
+        for idx in quoted_indicies:
+            if section_idx == 0:
+                self.parse_section_0(ast_entries.tokens[:idx])
+            elif section_idx == 1:
+                self.parse_section_1(ast_entries.tokens[start_idx + 1:idx])
+            elif section_idx == 2:
+                # TODO(josiahls): Handle section 2, likely in the event there is sugar
+                self._unhandled_tokens += String(' ').join(ast_entries.tokens[start_idx + 1:])
+                # self.parse_section_2(ast_entries.tokens[start_idx:])
+            section_idx += 1
+            start_idx = idx
+
+    fn parse_section_0(mut self, entries: List[String]):
+        for entry in entries:
+            if entry == "const":
+                self._is_const = True
+            elif entry == "struct":
+                self._is_struct = True
+            elif entry == "union":
+                self._is_union = True
+            elif self._field_name == "":
+                self._field_name = entry
+            else:
+                self._unhandled_tokens += entry + " "
+
+    fn parse_section_1(mut self, entries: List[String]):
+        for entry in entries:
+            if self._field_type == "":
+                self._field_type = entry
+            else:
+                self._field_type += " " + entry
 
     @staticmethod
     fn accept(
@@ -170,7 +221,7 @@ struct FieldDeclNode(NodeAstLike):
         if ast_entry.level <= self._ast_entry_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CONSUME_TOKEN
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -178,10 +229,8 @@ struct FieldDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._grammar = Grammar(self._ast_entries[])
-        if token_flow == TokenFlow.CONSUME_TOKEN:
-            self._node_state = NodeState.COLLECTING_TOKENS
-            self._ast_entries[].append(ast_entry)
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
         else:
             self._node_state = NodeState.COMPLETED
 
@@ -226,6 +275,19 @@ struct FieldDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
+
+        var s: String = ""
+
+        field_type = TypeMapper.get_mojo_type(self._field_type)
+
+        if self._is_const:
+            s += "alias " + self._field_name + ": " + field_type + " = " + self._value + "\n"
+        else:
+            s += "var " + self._field_name + ": " + field_type + "\n"
+
+        if self._unhandled_tokens != "":
+            s += "# Unhandled tokens: " + self._unhandled_tokens + "\n"
+
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
@@ -234,5 +296,5 @@ struct FieldDeclNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(self._grammar) if just_code else String(),
+            alternate_string=s
         )

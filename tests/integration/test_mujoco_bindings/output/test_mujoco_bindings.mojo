@@ -30,30 +30,30 @@ alias _Float64 = Float64
 alias _Float32x = Float64
 
 alias _Float64x = Float64
-struct Anonymous_line_59_9:
+struct Anonymous___usr_include_stdlib_h_59_9__line_63_3_:
 
 	var quot: Int32
 
 	var rem: Int32
 
 
-alias div_t = Anonymous_line_59_9
-struct Anonymous_line_67_9:
+alias div_t = Anonymous___usr_include_stdlib_h_59_9__line_63_3_
+struct Anonymous__line_67_9__line_71_3_:
 
 	var quot: Int64
 
 	var rem: Int64
 
 
-alias ldiv_t = Anonymous_line_67_9
-struct Anonymous_line_77_23:
+alias ldiv_t = Anonymous__line_67_9__line_71_3_
+struct Anonymous__line_77_23__line_81_3_:
 
 	var quot: Int128
 
 	var rem: Int128
 
 
-alias lldiv_t = Anonymous_line_77_23
+alias lldiv_t = Anonymous__line_77_23__line_81_3_
 alias __ctype_get_mb_cur_max = fn() -> size_t
 alias atof = fn(read __nptr: UnsafePointer[Int8]) -> Float64
 alias atoi = fn(read __nptr: UnsafePointer[Int8]) -> Int32
@@ -145,12 +145,12 @@ alias __off_t = Int64
 alias __off64_t = Int64
 
 alias __pid_t = Int32
-struct Anonymous_col_24:
+struct Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_:
 
 	var __val: SIMD[Int32.dtype, 2]
 
 
-alias __fsid_t = Anonymous_col_24
+alias __fsid_t = Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_
 
 alias __clock_t = Int64
 
@@ -290,12 +290,12 @@ alias __bswap_64 = fn(__bsx: __uint64_t) -> __uint64_t
 alias __uint16_identity = fn(__x: __uint16_t) -> __uint16_t
 alias __uint32_identity = fn(__x: __uint32_t) -> __uint32_t
 alias __uint64_identity = fn(__x: __uint64_t) -> __uint64_t
-struct Anonymous_line_5_9:
+struct Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_:
 
 	var __val: SIMD[UInt64.dtype, 16]
 
 
-alias __sigset_t = Anonymous_line_5_9
+alias __sigset_t = Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_
 
 alias sigset_t = __sigset_t
 struct timeval:
@@ -314,12 +314,12 @@ struct timespec:
 alias suseconds_t = Int64
 
 alias __fd_mask = Int64
-struct Anonymous_line_59_9:
+struct Anonymous__line_59_9__line_70_3_:
 
 	var __fds_bits: SIMD[__fd_mask.dtype, 16]
 
 
-alias fd_set = Anonymous_line_59_9
+alias fd_set = Anonymous__line_59_9__line_70_3_
 
 alias fd_mask = Int64
 alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[struct timeval]) -> Int32
@@ -332,14 +332,14 @@ alias blkcnt_t = Int64
 alias fsblkcnt_t = UInt64
 
 alias fsfilcnt_t = UInt64
-struct Anonymous_line_25_9:
+struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_:
 
 	var __value64: UInt128
 
-	var __value32: _definition__Anonymous_line_28_3
+	var __value32: (unnamed at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.
 
 
-alias __atomic_wide_counter = Anonymous_line_25_9
+alias __atomic_wide_counter = Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_
 struct __pthread_internal_list:
 
 	var __prev: UnsafePointer[__pthread_internal_list]
@@ -418,30 +418,30 @@ struct __pthread_cond_s:
 alias __tss_t = UInt32
 
 alias __thrd_t = UInt64
-struct Anonymous_line_108_9:
+struct Anonymous__line_108_9__line_111_1_:
 
 	var __data: Int32
 
 
-alias __once_flag = Anonymous_line_108_9
+alias __once_flag = Anonymous__line_108_9__line_111_1_
 
 alias pthread_t = UInt64
-struct Anonymous_line_32_9:
+struct Anonymous__line_32_9__line_36_1_:
 
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_mutexattr_t = Anonymous_line_32_9
-struct Anonymous_line_41_9:
+alias pthread_mutexattr_t = Anonymous__line_32_9__line_36_1_
+struct Anonymous__line_41_9__line_45_1_:
 
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_condattr_t = Anonymous_line_41_9
+alias pthread_condattr_t = Anonymous__line_41_9__line_45_1_
 
 alias pthread_key_t = UInt32
 
@@ -454,7 +454,7 @@ struct pthread_attr_t:
 
 
 alias pthread_attr_t = pthread_attr_t
-struct Anonymous_line_67_9:
+struct Anonymous__line_67_9__line_72_1_:
 
 	var __data: __pthread_mutex_s
 
@@ -463,8 +463,8 @@ struct Anonymous_line_67_9:
 	var __align: Int64
 
 
-alias pthread_mutex_t = Anonymous_line_67_9
-struct Anonymous_line_75_9:
+alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
+struct Anonymous__line_75_9__line_80_1_:
 
 	var __data: __pthread_cond_s
 
@@ -473,8 +473,8 @@ struct Anonymous_line_75_9:
 	var __align: Int128
 
 
-alias pthread_cond_t = Anonymous_line_75_9
-struct Anonymous_line_86_9:
+alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
+struct Anonymous__line_86_9__line_91_1_:
 
 	var __data: __pthread_rwlock_arch_t
 
@@ -483,35 +483,35 @@ struct Anonymous_line_86_9:
 	var __align: Int64
 
 
-alias pthread_rwlock_t = Anonymous_line_86_9
-struct Anonymous_line_93_9:
+alias pthread_rwlock_t = Anonymous__line_86_9__line_91_1_
+struct Anonymous__line_93_9__line_97_1_:
 
 	var __size: SIMD[Int8.dtype, 8]
 
 	var __align: Int64
 
 
-alias pthread_rwlockattr_t = Anonymous_line_93_9
+alias pthread_rwlockattr_t = Anonymous__line_93_9__line_97_1_
 
 alias pthread_spinlock_t = 
 # (placeholder) | `-QualType 0x4e34a4 'volatile int' volatile
 Int32
-struct Anonymous_line_108_9:
+struct Anonymous__line_108_9__line_112_1_:
 
 	var __size: SIMD[Int8.dtype, 32]
 
 	var __align: Int64
 
 
-alias pthread_barrier_t = Anonymous_line_108_9
-struct Anonymous_line_114_9:
+alias pthread_barrier_t = Anonymous__line_108_9__line_112_1_
+struct Anonymous__line_114_9__line_118_1_:
 
 	var __size: SIMD[Int8.dtype, 4]
 
 	var __align: Int32
 
 
-alias pthread_barrierattr_t = Anonymous_line_114_9
+alias pthread_barrierattr_t = Anonymous__line_114_9__line_118_1_
 alias random = fn() -> Int64
 alias srandom = fn(__seed: Int32) -> NoneType
 alias initstate = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t) -> UnsafePointer[Int8]
@@ -1283,14 +1283,14 @@ alias FP_NORMAL: Int = 4
 
 
 alias ptrdiff_t = Int64
-struct Anonymous_line_19_9:
+struct Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_:
 
 	alias __clang_max_align_nonce1: Int128 = 8
 
 	alias __clang_max_align_nonce2: Float64 = 16
 
 
-alias max_align_t = Anonymous_line_19_9
+alias max_align_t = Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_
 
 alias uint8_t = UInt8
 
@@ -1823,17 +1823,17 @@ struct mjOption_:
 alias mjOption = mjOption_
 struct mjVisual_:
 
-	var `global`: _mjVisual___Anonymous_line_486_3
+	var `global`: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.
 
-	var quality: _mjVisual___Anonymous_line_501_3
+	var quality: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.
 
-	var headlight: _mjVisual___Anonymous_line_509_3
+	var headlight: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.
 
-	var map: _mjVisual___Anonymous_line_516_3
+	var map: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.
 
-	var scale: _mjVisual___Anonymous_line_532_3
+	var scale: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.
 
-	var rgba: _mjVisual___Anonymous_line_552_3
+	var rgba: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.
 
 
 alias mjVisual = mjVisual_
@@ -3934,9 +3934,9 @@ struct mjvSceneState_:
 
 	var scratch: mjvScene
 
-	var model: _mjvSceneState___Anonymous_line_417_3
+	var model: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.
 
-	var data: _mjvSceneState___Anonymous_line_634_3
+	var data: (unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.
 
 
 alias mjvSceneState = mjvSceneState_

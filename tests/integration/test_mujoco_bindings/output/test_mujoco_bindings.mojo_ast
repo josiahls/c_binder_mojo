@@ -34,7 +34,7 @@ TypedefDeclNode(parent_idx=1, current_idx=26, child_idxs=(27), node_state=4 (COM
 |-TypedefDecl 0x53af00 <line:268:1, col:16> col:16 _Float32x 'double'Float64
 TypedefDeclNode(parent_idx=1, current_idx=28, child_idxs=(29), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x53af70 <line:285:1, col:21> col:21 _Float64x 'long double'Float64
-struct Anonymous_line_59_9:
+struct Anonymous___usr_include_stdlib_h_59_9__line_63_3_:
 
 	FieldDeclNode(parent_idx=30, current_idx=31, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b088 <line:61:5, col:9> col:9 quot 'int'	
@@ -43,8 +43,8 @@ struct Anonymous_line_59_9:
 	| `-FieldDecl 0x53b0f0 <line:62:5, col:9> col:9 rem 'int'	
 
 TypedefDeclNode(parent_idx=1, current_idx=33, child_idxs=(34), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x53b198 <line:59:1, line:63:5> col:5 referenced div_t 'struct div_t':'div_t'Anonymous_line_59_9
-struct Anonymous_line_67_9:
+|-TypedefDecl 0x53b198 <line:59:1, line:63:5> col:5 referenced div_t 'struct div_t':'div_t'Anonymous___usr_include_stdlib_h_59_9__line_63_3_
+struct Anonymous__line_67_9__line_71_3_:
 
 	FieldDeclNode(parent_idx=37, current_idx=38, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b2c8 <line:69:5, col:14> col:14 quot 'long'	
@@ -53,8 +53,8 @@ struct Anonymous_line_67_9:
 	| `-FieldDecl 0x53b330 <line:70:5, col:14> col:14 rem 'long'	
 
 TypedefDeclNode(parent_idx=1, current_idx=40, child_idxs=(41), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x53b3d8 <line:67:1, line:71:5> col:5 referenced ldiv_t 'struct ldiv_t':'ldiv_t'Anonymous_line_67_9
-struct Anonymous_line_77_23:
+|-TypedefDecl 0x53b3d8 <line:67:1, line:71:5> col:5 referenced ldiv_t 'struct ldiv_t':'ldiv_t'Anonymous__line_67_9__line_71_3_
+struct Anonymous__line_77_23__line_81_3_:
 
 	FieldDeclNode(parent_idx=44, current_idx=45, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x53b508 <line:79:5, col:19> col:19 quot 'long long'	
@@ -63,7 +63,7 @@ struct Anonymous_line_77_23:
 	| `-FieldDecl 0x53b570 <line:80:5, col:19> col:19 rem 'long long'	
 
 TypedefDeclNode(parent_idx=1, current_idx=47, child_idxs=(48), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x53b618 <line:77:15, line:81:5> col:5 referenced lldiv_t 'struct lldiv_t':'lldiv_t'Anonymous_line_77_23
+|-TypedefDecl 0x53b618 <line:77:15, line:81:5> col:5 referenced lldiv_t 'struct lldiv_t':'lldiv_t'Anonymous__line_77_23__line_81_3_
 alias __ctype_get_mb_cur_max = fn() -> size_t
 alias atof = fn(read __nptr: UnsafePointer[Int8]) -> Float64
 alias atoi = fn(read __nptr: UnsafePointer[Int8]) -> Int32
@@ -155,13 +155,13 @@ TypedefDeclNode(parent_idx=1, current_idx=251, child_idxs=(252), node_state=4 (C
 |-TypedefDecl 0x58bec0 <line:137:22, line:153:27> col:27 referenced __off64_t 'long'Int64
 TypedefDeclNode(parent_idx=1, current_idx=253, child_idxs=(254), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x58bf30 <line:137:22, line:154:25> col:25 referenced __pid_t 'int'Int32
-struct Anonymous_col_24:
+struct Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_:
 
 	FieldDeclNode(parent_idx=255, current_idx=256, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x58c0d0 <col:33, col:44> col:37 __val 'int[2]'	
 
 TypedefDeclNode(parent_idx=1, current_idx=257, child_idxs=(258), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x58c178 </usr/include/x86_64-linux-gnu/bits/types.h:137:22, line:155:26> col:26 referenced __fsid_t 'struct __fsid_t':'__fsid_t'Anonymous_col_24
+|-TypedefDecl 0x58c178 </usr/include/x86_64-linux-gnu/bits/types.h:137:22, line:155:26> col:26 referenced __fsid_t 'struct __fsid_t':'__fsid_t'Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_
 TypedefDeclNode(parent_idx=1, current_idx=261, child_idxs=(262), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x58c200 <line:137:22, line:156:27> col:27 referenced __clock_t 'long'Int64
 TypedefDeclNode(parent_idx=1, current_idx=263, child_idxs=(264), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -307,13 +307,13 @@ alias __bswap_64 = fn(__bsx: __uint64_t) -> __uint64_t
 alias __uint16_identity = fn(__x: __uint16_t) -> __uint16_t
 alias __uint32_identity = fn(__x: __uint32_t) -> __uint32_t
 alias __uint64_identity = fn(__x: __uint64_t) -> __uint64_t
-struct Anonymous_line_5_9:
+struct Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_:
 
 	FieldDeclNode(parent_idx=651, current_idx=652, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5a5100 <line:7:3, col:41> col:21 __val 'unsigned long[16]'	
 
 TypedefDeclNode(parent_idx=1, current_idx=653, child_idxs=(654), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5a51a8 <line:5:1, line:8:3> col:3 referenced __sigset_t 'struct __sigset_t':'__sigset_t'Anonymous_line_5_9
+|-TypedefDecl 0x5a51a8 <line:5:1, line:8:3> col:3 referenced __sigset_t 'struct __sigset_t':'__sigset_t'Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_
 TypedefDeclNode(parent_idx=1, current_idx=657, child_idxs=(658), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5a5250 </usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:7:1, col:20> col:20 sigset_t '__sigset_t':'__sigset_t'TypedefNode(parent_idx=658, current_idx=659, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 __sigset_t
@@ -337,13 +337,13 @@ TypedefDeclNode(parent_idx=1, current_idx=669, child_idxs=(670), node_state=4 (C
 |-TypedefDecl 0x5a55c0 </usr/include/x86_64-linux-gnu/sys/select.h:43:1, col:23> col:23 suseconds_t '__suseconds_t':'long'Int64
 TypedefDeclNode(parent_idx=1, current_idx=673, child_idxs=(674), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5a5630 <line:49:1, col:18> col:18 referenced __fd_mask 'long'Int64
-struct Anonymous_line_59_9:
+struct Anonymous__line_59_9__line_70_3_:
 
 	FieldDeclNode(parent_idx=675, current_idx=676, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5af4e8 <line:67:5, col:50> col:15 __fds_bits '__fd_mask[16]'	
 
 TypedefDeclNode(parent_idx=1, current_idx=677, child_idxs=(678), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5af598 <line:59:1, line:70:5> col:5 referenced fd_set 'struct fd_set':'fd_set'Anonymous_line_59_9
+|-TypedefDecl 0x5af598 <line:59:1, line:70:5> col:5 referenced fd_set 'struct fd_set':'fd_set'Anonymous__line_59_9__line_70_3_
 TypedefDeclNode(parent_idx=1, current_idx=681, child_idxs=(682), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5af618 <line:77:1, col:19> col:19 fd_mask '__fd_mask':'long'Int64
 alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[struct timeval]) -> Int32
@@ -356,7 +356,7 @@ TypedefDeclNode(parent_idx=1, current_idx=706, child_idxs=(707), node_state=4 (C
 |-TypedefDecl 0x5b2320 <line:196:1, col:22> col:22 fsblkcnt_t '__fsblkcnt_t':'unsigned long'UInt64
 TypedefDeclNode(parent_idx=1, current_idx=710, child_idxs=(711), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b23b0 <line:200:1, col:22> col:22 fsfilcnt_t '__fsfilcnt_t':'unsigned long'UInt64
-struct Anonymous_line_25_9:
+struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_:
 
 	FieldDeclNode(parent_idx=714, current_idx=715, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5b24c8 <line:27:17, col:40> col:40 __value64 'unsigned long long'	
@@ -365,7 +365,7 @@ struct Anonymous_line_25_9:
 	| `-FieldDecl 0x5b26e8 <line:28:3, line:32:5> col:5 __value32 'struct (unnamed struct at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3)':'struct __atomic_wide_counter::(unnamed at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3)'	
 
 TypedefDeclNode(parent_idx=1, current_idx=720, child_idxs=(721), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5b2798 <line:25:1, line:33:3> col:3 referenced __atomic_wide_counter 'union __atomic_wide_counter':'__atomic_wide_counter'Anonymous_line_25_9
+|-TypedefDecl 0x5b2798 <line:25:1, line:33:3> col:3 referenced __atomic_wide_counter 'union __atomic_wide_counter':'__atomic_wide_counter'Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_
 struct __pthread_internal_list:
 
 	FieldDeclNode(parent_idx=724, current_idx=725, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -474,16 +474,16 @@ TypedefDeclNode(parent_idx=1, current_idx=767, child_idxs=(768), node_state=4 (C
 |-TypedefDecl 0x5b9168 <line:105:1, col:22> col:22 __tss_t 'unsigned int'UInt32
 TypedefDeclNode(parent_idx=1, current_idx=769, child_idxs=(770), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b91d8 <line:106:1, col:27> col:27 __thrd_t 'unsigned long'UInt64
-struct Anonymous_line_108_9:
+struct Anonymous__line_108_9__line_111_1_:
 
 	FieldDeclNode(parent_idx=771, current_idx=772, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| `-FieldDecl 0x5b92e8 <line:110:3, col:7> col:7 __data 'int'	
 
 TypedefDeclNode(parent_idx=1, current_idx=773, child_idxs=(774), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5b9398 <line:108:1, line:111:3> col:3 __once_flag 'struct __once_flag':'__once_flag'Anonymous_line_108_9
+|-TypedefDecl 0x5b9398 <line:108:1, line:111:3> col:3 __once_flag 'struct __once_flag':'__once_flag'Anonymous__line_108_9__line_111_1_
 TypedefDeclNode(parent_idx=1, current_idx=777, child_idxs=(778), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5b9420 </usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:27:1, col:27> col:27 pthread_t 'unsigned long'UInt64
-struct Anonymous_line_32_9:
+struct Anonymous__line_32_9__line_36_1_:
 
 	FieldDeclNode(parent_idx=779, current_idx=780, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5b95b8 <line:34:3, col:43> col:8 __size 'char[4]'	
@@ -492,8 +492,8 @@ struct Anonymous_line_32_9:
 	| `-FieldDecl 0x5b9620 <line:35:3, col:7> col:7 __align 'int'	
 
 TypedefDeclNode(parent_idx=1, current_idx=782, child_idxs=(783), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5bc020 <line:32:1, line:36:3> col:3 pthread_mutexattr_t 'union pthread_mutexattr_t':'pthread_mutexattr_t'Anonymous_line_32_9
-struct Anonymous_line_41_9:
+|-TypedefDecl 0x5bc020 <line:32:1, line:36:3> col:3 pthread_mutexattr_t 'union pthread_mutexattr_t':'pthread_mutexattr_t'Anonymous__line_32_9__line_36_1_
+struct Anonymous__line_41_9__line_45_1_:
 
 	FieldDeclNode(parent_idx=786, current_idx=787, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5bc190 <line:43:3, col:42> col:8 __size 'char[4]'	
@@ -502,7 +502,7 @@ struct Anonymous_line_41_9:
 	| `-FieldDecl 0x5bc1f8 <line:44:3, col:7> col:7 __align 'int'	
 
 TypedefDeclNode(parent_idx=1, current_idx=789, child_idxs=(790), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5bc2a8 <line:41:1, line:45:3> col:3 pthread_condattr_t 'union pthread_condattr_t':'pthread_condattr_t'Anonymous_line_41_9
+|-TypedefDecl 0x5bc2a8 <line:41:1, line:45:3> col:3 pthread_condattr_t 'union pthread_condattr_t':'pthread_condattr_t'Anonymous__line_41_9__line_45_1_
 TypedefDeclNode(parent_idx=1, current_idx=793, child_idxs=(794), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bc330 <line:49:1, col:22> col:22 pthread_key_t 'unsigned int'UInt32
 TypedefDeclNode(parent_idx=1, current_idx=795, child_idxs=(796), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -517,7 +517,7 @@ struct pthread_attr_t:
 
 TypedefDeclNode(parent_idx=1, current_idx=800, child_idxs=(801), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bc640 <line:62:1, col:30> col:30 pthread_attr_t 'union pthread_attr_t':'union pthread_attr_t'pthread_attr_t
-struct Anonymous_line_67_9:
+struct Anonymous__line_67_9__line_72_1_:
 
 	FieldDeclNode(parent_idx=804, current_idx=805, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5bc790 <line:69:3, col:28> col:28 __data 'struct __pthread_mutex_s':'struct __pthread_mutex_s'	
@@ -529,8 +529,8 @@ struct Anonymous_line_67_9:
 	| `-FieldDecl 0x5bc8e0 <line:71:3, col:12> col:12 __align 'long'	
 
 TypedefDeclNode(parent_idx=1, current_idx=808, child_idxs=(809), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5bca78 <line:67:1, line:72:3> col:3 pthread_mutex_t 'union pthread_mutex_t':'pthread_mutex_t'Anonymous_line_67_9
-struct Anonymous_line_75_9:
+|-TypedefDecl 0x5bca78 <line:67:1, line:72:3> col:3 pthread_mutex_t 'union pthread_mutex_t':'pthread_mutex_t'Anonymous__line_67_9__line_72_1_
+struct Anonymous__line_75_9__line_80_1_:
 
 	FieldDeclNode(parent_idx=812, current_idx=813, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5bcbe0 <line:77:3, col:27> col:27 __data 'struct __pthread_cond_s':'struct __pthread_cond_s'	
@@ -542,8 +542,8 @@ struct Anonymous_line_75_9:
 	| `-FieldDecl 0x5bcd30 <line:79:17, col:31> col:31 __align 'long long'	
 
 TypedefDeclNode(parent_idx=1, current_idx=816, child_idxs=(817), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5bce68 <line:75:1, line:80:3> col:3 pthread_cond_t 'union pthread_cond_t':'pthread_cond_t'Anonymous_line_75_9
-struct Anonymous_line_86_9:
+|-TypedefDecl 0x5bce68 <line:75:1, line:80:3> col:3 pthread_cond_t 'union pthread_cond_t':'pthread_cond_t'Anonymous__line_75_9__line_80_1_
+struct Anonymous__line_86_9__line_91_1_:
 
 	FieldDeclNode(parent_idx=820, current_idx=821, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5bcfd0 <line:88:3, col:34> col:34 __data 'struct __pthread_rwlock_arch_t':'struct __pthread_rwlock_arch_t'	
@@ -555,8 +555,8 @@ struct Anonymous_line_86_9:
 	| `-FieldDecl 0x5c1108 <line:90:3, col:12> col:12 __align 'long'	
 
 TypedefDeclNode(parent_idx=1, current_idx=824, child_idxs=(825), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5c1268 <line:86:1, line:91:3> col:3 pthread_rwlock_t 'union pthread_rwlock_t':'pthread_rwlock_t'Anonymous_line_86_9
-struct Anonymous_line_93_9:
+|-TypedefDecl 0x5c1268 <line:86:1, line:91:3> col:3 pthread_rwlock_t 'union pthread_rwlock_t':'pthread_rwlock_t'Anonymous__line_86_9__line_91_1_
+struct Anonymous__line_93_9__line_97_1_:
 
 	FieldDeclNode(parent_idx=828, current_idx=829, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5c1418 <line:95:3, col:44> col:8 __size 'char[8]'	
@@ -565,12 +565,12 @@ struct Anonymous_line_93_9:
 	| `-FieldDecl 0x5c1480 <line:96:3, col:12> col:12 __align 'long'	
 
 TypedefDeclNode(parent_idx=1, current_idx=831, child_idxs=(832), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5c1528 <line:93:1, line:97:3> col:3 pthread_rwlockattr_t 'union pthread_rwlockattr_t':'pthread_rwlockattr_t'Anonymous_line_93_9
+|-TypedefDecl 0x5c1528 <line:93:1, line:97:3> col:3 pthread_rwlockattr_t 'union pthread_rwlockattr_t':'pthread_rwlockattr_t'Anonymous__line_93_9__line_97_1_
 TypedefDeclNode(parent_idx=1, current_idx=835, child_idxs=(836, 837), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5c15b0 <line:103:1, col:22> col:22 pthread_spinlock_t 'volatile int'PlaceHolderNode(parent_idx=835, current_idx=836, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | `-QualType 0x4e34a4 'volatile int' volatile
 Int32
-struct Anonymous_line_108_9:
+struct Anonymous__line_108_9__line_112_1_:
 
 	FieldDeclNode(parent_idx=838, current_idx=839, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5c1748 <line:110:3, col:41> col:8 __size 'char[32]'	
@@ -579,8 +579,8 @@ struct Anonymous_line_108_9:
 	| `-FieldDecl 0x5c17b0 <line:111:3, col:12> col:12 __align 'long'	
 
 TypedefDeclNode(parent_idx=1, current_idx=841, child_idxs=(842), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5c1858 <line:108:1, line:112:3> col:3 pthread_barrier_t 'union pthread_barrier_t':'pthread_barrier_t'Anonymous_line_108_9
-struct Anonymous_line_114_9:
+|-TypedefDecl 0x5c1858 <line:108:1, line:112:3> col:3 pthread_barrier_t 'union pthread_barrier_t':'pthread_barrier_t'Anonymous__line_108_9__line_112_1_
+struct Anonymous__line_114_9__line_118_1_:
 
 	FieldDeclNode(parent_idx=845, current_idx=846, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x5c19d0 <line:116:3, col:45> col:8 __size 'char[4]'	
@@ -589,7 +589,7 @@ struct Anonymous_line_114_9:
 	| `-FieldDecl 0x5c1a38 <line:117:3, col:7> col:7 __align 'int'	
 
 TypedefDeclNode(parent_idx=1, current_idx=848, child_idxs=(849), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5c1ae8 <line:114:1, line:118:3> col:3 pthread_barrierattr_t 'union pthread_barrierattr_t':'pthread_barrierattr_t'Anonymous_line_114_9
+|-TypedefDecl 0x5c1ae8 <line:114:1, line:118:3> col:3 pthread_barrierattr_t 'union pthread_barrierattr_t':'pthread_barrierattr_t'Anonymous__line_114_9__line_118_1_
 alias random = fn() -> Int64
 alias srandom = fn(__seed: Int32) -> NoneType
 alias initstate = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t) -> UnsafePointer[Int8]
@@ -1377,7 +1377,7 @@ alias FP_NORMAL: Int = 4
 
 TypedefDeclNode(parent_idx=1, current_idx=3899, child_idxs=(3900), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x660d70 </usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:35:1, col:26> col:26 ptrdiff_t 'long'Int64
-struct Anonymous_line_19_9:
+struct Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_:
 
 	FieldDeclNode(parent_idx=3901, current_idx=3902, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	| |-FieldDecl 0x660ec0 <line:20:3, col:13> col:13 __clang_max_align_nonce1 'long long'	
@@ -1394,7 +1394,7 @@ struct Anonymous_line_19_9:
  |       `-UnaryExprOrTypeTraitExpr 0x660fa8 <col:34, col:57> 'unsigned long' __alignof 'long double'	
 
 TypedefDeclNode(parent_idx=1, current_idx=3904, child_idxs=(3905), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x661108 <line:19:1, line:24:3> col:3 max_align_t 'struct max_align_t':'max_align_t'Anonymous_line_19_9
+|-TypedefDecl 0x661108 <line:19:1, line:24:3> col:3 max_align_t 'struct max_align_t':'max_align_t'Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_
 TypedefDeclNode(parent_idx=1, current_idx=3908, child_idxs=(3909), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x661188 </usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:24:1, col:19> col:19 uint8_t '__uint8_t':'unsigned char'UInt8
 TypedefDeclNode(parent_idx=1, current_idx=3912, child_idxs=(3913), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)

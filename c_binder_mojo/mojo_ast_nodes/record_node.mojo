@@ -88,9 +88,11 @@ struct RecordNode(NodeAstLike):
     fn is_record_declared(mut self, module_interface: ModuleInterface) -> Bool:
         for node in module_interface.nodes()[]:
             if node.node[].isa[RecordDeclNode]():
-                # TODO(josiahls): I think we will be removing the grammar class.
-                # print("checking if record is declared: " + node.node[][RecordDeclNode]._grammar._name + " == " + self._record_name)
-                if node.node[][RecordDeclNode]._grammar._name == self._record_name:
+                # Check by memory address first (more reliable for anonymous structs)
+                if node.node[][RecordDeclNode]._record_mem_location == self._mem_address:
+                    return True
+                # Fallback to name comparison
+                if node.node[][RecordDeclNode]._record_name == self._record_name:
                     return True
         return False
 
@@ -166,7 +168,7 @@ struct RecordNode(NodeAstLike):
                     node.node[][RecordDeclNode]._record_mem_location
                     == mem_addesss
                 ):
-                    struct_name = node.node[][RecordDeclNode]._grammar._name
+                    struct_name = node.node[][RecordDeclNode]._record_name
                     new_entry = AstEntry()
                     new_entry.ast_name = "AnonymousRecord"
                     new_entry.tokens = [struct_name]
@@ -217,7 +219,6 @@ struct RecordNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        print("RecordNode: " + self._record_name)
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,

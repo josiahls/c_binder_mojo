@@ -23,80 +23,12 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _is_forward_declaration: Bool
-    var _is_anonymous: Bool
-
-    fn __init__(out self):
-        self._name = String()
-        self._is_forward_declaration = False
-        self._is_anonymous = False
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        self._is_forward_declaration = False
-        self._is_anonymous = False
-        if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print(
-                "RecordDeclNode: Invalid grammar: "
-                + String(ast_entries)
-                + " len: "
-                + String(len(ast_entries))
-            )
-            for entry in ast_entries:
-                print("\tentry: " + String(entry))
-        else:
-            entry = ast_entries._ast_entries[0]
-            if "definition" in entry.tokens:
-                self._is_forward_declaration = False
-            else:
-                self._is_forward_declaration = True
-
-            if len(entry.tokens) == 2:
-                if (
-                    entry.tokens[0] == "struct"
-                    and entry.tokens[1] == "definition"
-                ):
-                    # TODO(josiahls): Add a global counter for anonymous structs to avoid
-                    # name collisions.
-                    precise_location = entry.precise_location.replace(":", "_")
-                    self._name = "_Anonymous_" + precise_location
-                    self._is_anonymous = True
-                else:
-                    self._name = entry.tokens[1]
-            elif len(entry.tokens) == 3:
-                # Idx 0 should be struct
-                # Idx 2 should be definition
-                self._name = entry.tokens[1]
-            elif len(entry.tokens) == 4:
-                # Idx 0 should be invalid which indicates an issue.
-                # Idx 1 should be struct
-                # Idx 2 should be definition
-                # Idx 3 should be semicolon
-                self._name = entry.tokens[2]
-            else:
-                print(
-                    "RecordDeclNode: Invalid grammar: "
-                    + String(entry)
-                    + " len: "
-                    + String(len(entry.tokens))
-                )
-                for token in entry.tokens:
-                    print("\ttoken: " + token)
-
-    fn __str__(self) -> String:
-        if self._name == "":
-            print("RecordDeclNode: Invalid grammar: , NAME IS BLANK!")
-
-        if self._is_forward_declaration:
-            return "# Forward declaration of " + self._name
-
-        return "struct " + self._name + ":"
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
+fn clean_location(location: String) -> String:
+    var new_location = location.copy()
+    var chars = [":", " ", "/", ")", "(", "<", ">", ".", ",", "-"]
+    for char in chars:
+        new_location = new_location.replace(char, "_")
+    return new_location
 
 
 @fieldwise_init
@@ -106,7 +38,7 @@ struct RecordDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _record_decl_level: Int
-    var _grammar: Grammar
+
     var _inner_struct_name_map: Dict[String, String]
     var _record_mem_location: String
 
@@ -125,10 +57,10 @@ struct RecordDeclNode(NodeAstLike):
         self._ast_entries = AstEntries()
         self._ast_entries[].append(ast_entry)
         self._record_decl_level = ast_entry.level
-        self._location = ast_entry.precise_location
+        self._location = ast_entry.full_location
         self._record_mem_location = ast_entry.mem_address
         self._node_state = NodeState.COMPLETED
-        self._grammar = Grammar()
+
         self._inner_struct_name_map = Dict[String, String]()
 
         self._record_name = String()
@@ -157,7 +89,9 @@ struct RecordDeclNode(NodeAstLike):
                 self._unhandled_tokens.append(entry)
 
         if self._record_name == "":
-            self._record_name = "Anonymous_" + self._location.replace(":", "_")
+            self._record_name = "Anonymous_" + clean_location(self._location)
+
+        print("RecordDeclNode: record name: " + self._record_name + " at " + self._location + " with entry: " + String(ast_entry))
 
     @staticmethod
     fn accept(
@@ -192,12 +126,11 @@ struct RecordDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._grammar = Grammar(self._ast_entries[])
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
             self.update_child_struct_names(module_interface)
-            get_global_type_mapper()[].add_custom_type(self._grammar._name)
+            get_global_type_mapper()[].add_custom_type(self._record_name)
             self._node_state = NodeState.COMPLETED
             if self._indicies[].child_idxs:
                 self._has_fields = True
@@ -211,24 +144,24 @@ struct RecordDeclNode(NodeAstLike):
             child = module_interface.nodes()[][child_idx]
 
             if child.node[].isa[Self]():
-                original_name = child.node[][Self]._grammar._name.copy()
-                if child.node[][Self]._grammar._is_anonymous:
+                original_name = child.node[][Self]._record_name.copy()
+                if child.node[][Self]._is_anonymous:
                     anonymous_struct_caught = True
 
                 self._inner_struct_name_map[original_name] = (
-                    "_" + self._grammar._name + "_" + original_name
+                    "_" + self._record_name + "_" + original_name
                 )
-                child.node[][Self]._grammar._name = (
-                    "_" + self._grammar._name + "_" + original_name
+                child.node[][Self]._record_name = (
+                    "_" + self._record_name + "_" + original_name
                 )
                 get_global_type_mapper()[].add_custom_type(
-                    child.node[][Self]._grammar._name
+                    child.node[][Self]._record_name
                 )
 
             elif child.node[].isa[FieldDeclNode]():
                 if anonymous_struct_caught:
                     child.node[][FieldDeclNode]._grammar._field_type = (
-                        "_" + self._grammar._name + "_" + original_name
+                        "_" + self._record_name + "_" + original_name
                     )
                     anonymous_struct_caught = False
 
@@ -290,34 +223,11 @@ struct RecordDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        # var s: String = ""
+        var s: String = ""
         var indent: String = ""
-        # # var inner_struct_name_map: Dict[String, String] = {}
 
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level
-
-        # if not just_code:
-        #     s += indent + self.name(include_sig=True) + "\n"
-
-        # s += indent + String(self._grammar)
-
-        # has_fields = False
-        # for child_idx in self._indicies[].child_idxs:
-        #     child = module_interface.nodes()[][child_idx]
-
-        #     if child.node[].isa[Self]():
-        #         s = child.to_string(just_code, module_interface, 0) + "\n" + s
-        #     else:
-        #         s += child.to_string(
-        #             just_code, module_interface, parent_indent_level + 1
-        #         )
-
-        #     if child.name() == "FieldDeclNode":
-        #         has_fields = True
-
-        # if not has_fields:
-        #     s += indent + "\t" + "pass" + "\n"
 
         s = 'struct ' + self._record_name + ":\n"
         if not self._has_fields:

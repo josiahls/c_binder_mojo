@@ -309,21 +309,17 @@ alias sigset_t = __sigset_t
 struct timeval:
 
 	var tv_sec: __time_t
-	# Unhandled tokens: : ' long '
 	
 
 	var tv_usec: __suseconds_t
-	# Unhandled tokens: : ' long '
 	
 
 struct timespec:
 
 	var tv_sec: __time_t
-	# Unhandled tokens: : ' long '
 	
 
 	var tv_nsec: __syscall_slong_t
-	# Unhandled tokens: : ' long '
 	
 
 
@@ -355,7 +351,6 @@ struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9_
 	
 
 	var __value32: struct (unnamed struct at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h
-	# Unhandled tokens: : ' struct __atomic_wide_counter::(unnamed at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3) '
 	
 
 
@@ -401,7 +396,6 @@ struct __pthread_mutex_s:
 	
 
 	var __list: __pthread_list_t
-	# Unhandled tokens: : ' struct __pthread_internal_list '
 	
 
 struct __pthread_rwlock_arch_t:
@@ -445,11 +439,9 @@ struct __pthread_rwlock_arch_t:
 struct __pthread_cond_s:
 
 	var __wseq: __atomic_wide_counter
-	# Unhandled tokens: : ' __atomic_wide_counter '
 	
 
 	var __g1_start: __atomic_wide_counter
-	# Unhandled tokens: : ' __atomic_wide_counter '
 	
 
 	var __g_refs: SIMD[UInt32.dtype, 2]
@@ -517,7 +509,6 @@ alias pthread_attr_t = pthread_attr_t
 struct Anonymous__line_67_9__line_72_1_:
 
 	var __data: struct __pthread_mutex_s
-	# Unhandled tokens: : ' struct __pthread_mutex_s '
 	
 
 	var __size: SIMD[Int8.dtype, 40]
@@ -531,7 +522,6 @@ alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
 struct Anonymous__line_75_9__line_80_1_:
 
 	var __data: struct __pthread_cond_s
-	# Unhandled tokens: : ' struct __pthread_cond_s '
 	
 
 	var __size: SIMD[Int8.dtype, 48]
@@ -545,7 +535,6 @@ alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
 struct Anonymous__line_86_9__line_91_1_:
 
 	var __data: struct __pthread_rwlock_arch_t
-	# Unhandled tokens: : ' struct __pthread_rwlock_arch_t '
 	
 
 	var __size: SIMD[Int8.dtype, 56]
@@ -1845,43 +1834,36 @@ struct mjLROpt_:
 
 
 	var accel: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# target acceleration used to compute force
 
 
 	var maxforce: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# maximum force; 0: no limit
 
 
 	var timeconst: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# time constant for velocity reduction; min 0.01
 
 
 	var timestep: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# simulation timestep; 0: use mjOption.timestep
 
 
 	var inttotal: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# total simulation time interval
 
 
 	var interval: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# evaluation time interval (at the end)
 
 
 	var tolrange: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# convergence tolerance (relative to range)
 
@@ -1900,43 +1882,36 @@ alias mjVFS = mjVFS_
 struct mjOption_:
 
 	var timestep: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# timestep
 
 
 	var apirate: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# update rate for remote API (Hz)
 
 
 	var impratio: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# ratio of friction-to-normal contact impedance
 
 
 	var tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# main solver tolerance
 
 
 	var ls_tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# CG/Newton linesearch tolerance
 
 
 	var noslip_tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# noslip solver tolerance
 
 
 	var ccd_tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# convex collision solver tolerance
 
@@ -1957,19 +1932,16 @@ struct mjOption_:
 
 
 	var density: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# density of medium
 
 
 	var viscosity: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# viscosity of medium
 
 
 	var o_margin: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# margin
 
@@ -2059,27 +2031,21 @@ alias mjOption = mjOption_
 struct mjVisual_:
 
 	var global: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:486:3) '
 	
 
 	var quality: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:501:3) '
 	
 
 	var headlight: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:509:3) '
 	
 
 	var map: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:516:3) '
 	
 
 	var scale: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:532:3) '
 	
 
 	var rgba: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:552:3) '
 	
 
 
@@ -2087,25 +2053,21 @@ alias mjVisual = mjVisual_
 struct mjStatistic_:
 
 	var meaninertia: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# mean diagonal inertia
 
 
 	var meanmass: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# mean body mass
 
 
 	var meansize: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# mean body size
 
 
 	var extent: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# spatial extent
 
@@ -2535,31 +2497,26 @@ struct mjModel_:
 
 
 	var narena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# number of bytes in the mjData arena (inclusive of stack)
 
 
 	var nbuffer: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# number of bytes in buffer
 
 
 	var opt: mjOption
-	# Unhandled tokens: : ' struct mjOption_ '
 	
 	# physics options
 
 
 	var vis: mjVisual
-	# Unhandled tokens: : ' struct mjVisual_ '
 	
 	# visualization options
 
 
 	var stat: mjStatistic
-	# Unhandled tokens: : ' struct mjStatistic_ '
 	
 	# model statistics
 
@@ -4588,7 +4545,6 @@ struct mjModel_:
 
 
 	var signature: uint64_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# also held by the mjSpec that compiled this model
 
@@ -4626,7 +4582,6 @@ alias mjThreadPool = mjThreadPool_
 struct mjTask_:
 
 	var func: mjfTask
-	# Unhandled tokens: : ' void *(*)(void *) '
 	
 	# pointer to the function that implements the task
 
@@ -4725,7 +4680,6 @@ alias mjtTimer =
 struct mjContact_:
 
 	var dist: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# distance between nearest points; neg: penetration
 
@@ -4741,7 +4695,6 @@ struct mjContact_:
 
 
 	var includemargin: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# include if dist
 	#<includemargin
@@ -4769,7 +4722,6 @@ struct mjContact_:
 
 
 	var mu: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# friction of regularized cone, set by mj_makeConstraint
 
@@ -4843,7 +4795,6 @@ alias mjWarningStat = mjWarningStat_
 struct mjTimerStat_:
 
 	var duration: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# cumulative duration
 
@@ -4858,19 +4809,16 @@ alias mjTimerStat = mjTimerStat_
 struct mjSolverStat_:
 
 	var improvement: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# cost reduction, scaled by 1/trace(M(qpos0))
 
 
 	var gradient: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# gradient norm (primal only, scaled)
 
 
 	var lineslope: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# slope in linesearch
 
@@ -4900,13 +4848,11 @@ alias mjSolverStat = mjSolverStat_
 struct mjData_:
 
 	var narena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# size of the arena in bytes (inclusive of the stack)
 
 
 	var nbuffer: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# size of main buffer in bytes
 
@@ -4917,25 +4863,21 @@ struct mjData_:
 
 
 	var pstack: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# first available byte in stack
 
 
 	var pbase: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# value of pstack when mj_markStack was last called
 
 
 	var parena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# first available byte in arena
 
 
 	var maxuse_stack: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# maximum stack allocation in bytes
 
@@ -4946,7 +4888,6 @@ struct mjData_:
 
 
 	var maxuse_arena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# maximum arena allocation in bytes
 
@@ -5037,7 +4978,6 @@ struct mjData_:
 
 
 	var time: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# simulation time
 
@@ -5779,13 +5719,11 @@ struct mjData_:
 
 
 	var threadpool: uintptr_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# thread pool pointer
 
 
 	var signature: uint64_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# also held by the mjSpec that compiled the model
 
@@ -6063,13 +6001,11 @@ struct mjvPerturb_:
 
 
 	var localmass: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# spatial inertia at selection point
 
 
 	var scale: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# relative mouse motion-to-space scaling (set by initPerturb)
 
@@ -6099,19 +6035,16 @@ struct mjvCamera_:
 
 
 	var distance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# distance to lookat point or tracked body
 
 
 	var azimuth: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# camera azimuth (deg)
 
 
 	var elevation: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# camera elevation (deg)
 
@@ -6275,7 +6208,6 @@ struct mjvGeom_:
 
 
 	var transparent: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# treat geom as transparent
 
@@ -6325,19 +6257,16 @@ struct mjvLight_:
 
 
 	var headlight: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# headlight
 
 
 	var directional: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# directional light
 
 
 	var castshadow: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# does light cast shadows
 
@@ -6501,25 +6430,21 @@ struct mjvScene_:
 
 
 	var flexvertopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# copy of mjVIS_FLEXVERT mjvOption flag
 
 
 	var flexedgeopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# copy of mjVIS_FLEXEDGE mjvOption flag
 
 
 	var flexfaceopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# copy of mjVIS_FLEXFACE mjvOption flag
 
 
 	var flexskinopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# copy of mjVIS_FLEXSKIN mjvOption flag
 
@@ -6570,7 +6495,6 @@ struct mjvScene_:
 
 
 	var enabletransform: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# enable model transformation
 
@@ -6799,17 +6723,14 @@ struct mjvSceneState_:
 
 
 	var scratch: mjvScene
-	# Unhandled tokens: : ' struct mjvScene_ '
 	
 	# scratch space for vis geoms inserted by the user and plugins
 
 
 	var model: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h
-	# Unhandled tokens: : ' struct mjvSceneState_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:417:3) '
 	
 
 	var data: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h
-	# Unhandled tokens: : ' struct mjvSceneState_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:634:3) '
 	
 
 
@@ -6918,31 +6839,26 @@ struct mjpResourceProvider:
 
 
 	var open: mjfOpenResource
-	# Unhandled tokens: : ' int (*)(mjResource *) '
 	
 	# opening callback
 
 
 	var read: mjfReadResource
-	# Unhandled tokens: : ' int (*)(mjResource *, const void **) '
 	
 	# reading callback
 
 
 	var close: mjfCloseResource
-	# Unhandled tokens: : ' void (*)(mjResource *) '
 	
 	# closing callback
 
 
 	var getdir: mjfGetResourceDir
-	# Unhandled tokens: : ' void (*)(mjResource *, const char **, int *) '
 	
 	# get directory callback (optional)
 
 
 	var modified: mjfResourceModified
-	# Unhandled tokens: : ' int (*)(const mjResource *, const char *) '
 	
 	# resource modified callback (optional)
 
@@ -7569,13 +7485,11 @@ alias mjtOrientation =
 struct mjsElement_:
 
 	var elemtype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	# element type
 
 
 	var signature: uint64_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# compilation signature
 
@@ -7587,7 +7501,6 @@ alias mjsElement = mjsElement_
 struct mjsCompiler_:
 
 	var autolimits: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# infer "limited" attribute based on range
 
@@ -7610,19 +7523,16 @@ struct mjsCompiler_:
 
 
 	var balanceinertia: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# automatically impose A + B >= C rule
 
 
 	var fitaabb: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# meshfit to aabb instead of inertia box
 
 
 	var degree: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# angles in radians or degrees
 
@@ -7633,19 +7543,16 @@ struct mjsCompiler_:
 
 
 	var discardvisual: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# discard visual geoms in parser
 
 
 	var usethread: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# use multiple threads to speed up compiler
 
 
 	var fusestatic: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# fuse static bodies with parent
 
@@ -7661,7 +7568,6 @@ struct mjsCompiler_:
 
 
 	var saveinertial: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# save explicit inertial clause for all bodies to XML
 
@@ -7672,7 +7578,6 @@ struct mjsCompiler_:
 
 
 	var LRopt: mjLROpt
-	# Unhandled tokens: : ' struct mjLROpt_ '
 	
 	# options for lengthrange computation
 
@@ -7692,13 +7597,11 @@ struct mjSpec_:
 
 
 	var compiler: mjsCompiler
-	# Unhandled tokens: : ' struct mjsCompiler_ '
 	
 	# compiler options
 
 
 	var strippath: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# automatically strip paths from mesh files
 
@@ -7714,25 +7617,21 @@ struct mjSpec_:
 
 
 	var option: mjOption
-	# Unhandled tokens: : ' struct mjOption_ '
 	
 	# physics options
 
 
 	var visual: mjVisual
-	# Unhandled tokens: : ' struct mjVisual_ '
 	
 	# visual options
 
 
 	var stat: mjStatistic
-	# Unhandled tokens: : ' struct mjStatistic_ '
 	
 	# statistics override (if defined)
 
 
 	var memory: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# number of bytes in arena+stack memory
 
@@ -7803,7 +7702,6 @@ struct mjSpec_:
 
 
 	var nstack: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	# (deprecated) number of mjtNums in mjData stack
 
@@ -7819,7 +7717,6 @@ struct mjSpec_:
 
 
 	var hasImplicitPluginElem: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# already encountered an implicit plugin sensor/actuator
 
@@ -7829,7 +7726,6 @@ alias mjSpec = mjSpec_
 struct mjsOrientation_:
 
 	var type: mjtOrientation
-	# Unhandled tokens: : ' enum mjtOrientation_ '
 	
 	# active orientation specifier
 
@@ -7874,7 +7770,6 @@ struct mjsPlugin_:
 
 
 	var active: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# is the plugin active
 
@@ -7914,7 +7809,6 @@ struct mjsBody_:
 
 
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	# frame alternative orientation
 
@@ -7940,7 +7834,6 @@ struct mjsBody_:
 
 
 	var ialt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	# inertial frame alternative orientation
 
@@ -7951,7 +7844,6 @@ struct mjsBody_:
 
 
 	var mocap: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# is this a mocap body
 
@@ -7967,13 +7859,11 @@ struct mjsBody_:
 
 
 	var explicitinertial: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# whether to save the body with explicit inertial clause
 
 
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	# passive force plugin
 
@@ -8013,7 +7903,6 @@ struct mjsFrame_:
 
 
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	# alternative orientation
 
@@ -8038,7 +7927,6 @@ struct mjsJoint_:
 
 
 	var type: mjtJoint
-	# Unhandled tokens: : ' enum mjtJoint_ '
 	
 	# joint type
 
@@ -8144,7 +8032,6 @@ struct mjsJoint_:
 
 
 	var actgravcomp: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# is gravcomp force applied via actuators
 
@@ -8174,7 +8061,6 @@ struct mjsGeom_:
 
 
 	var type: mjtGeom
-	# Unhandled tokens: : ' enum mjtGeom_ '
 	
 	# geom type
 
@@ -8190,7 +8076,6 @@ struct mjsGeom_:
 
 
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	# alternative orientation
 
@@ -8268,13 +8153,11 @@ struct mjsGeom_:
 
 
 	var typeinertia: mjtGeomInertia
-	# Unhandled tokens: : ' enum mjtGeomInertia_ '
 	
 	# selects between surface and volume inertia
 
 
 	var fluid_ellipsoid: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	# whether ellipsoid-fluid model is active
 
@@ -8320,7 +8203,6 @@ struct mjsGeom_:
 
 
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	# sdf plugin
 
@@ -8355,7 +8237,6 @@ struct mjsSite_:
 
 
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	# alternative orientation
 
@@ -8371,7 +8252,6 @@ struct mjsSite_:
 
 
 	var type: mjtGeom
-	# Unhandled tokens: : ' enum mjtGeom_ '
 	
 	# geom type
 
@@ -8426,13 +8306,11 @@ struct mjsCamera_:
 
 
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	# alternative orientation
 
 
 	var mode: mjtCamLight
-	# Unhandled tokens: : ' enum mjtCamLight_ '
 	
 	# tracking mode
 
@@ -8527,7 +8405,6 @@ struct mjsLight_:
 
 
 	var mode: mjtCamLight
-	# Unhandled tokens: : ' enum mjtCamLight_ '
 	
 	# tracking mode
 
@@ -8538,19 +8415,16 @@ struct mjsLight_:
 
 
 	var active: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# is light active
 
 
 	var directional: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# is light directional or spot
 
 
 	var castshadow: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# does light cast shadows
 
@@ -8672,13 +8546,11 @@ struct mjsFlex_:
 
 
 	var internal: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# enable internal collisions
 
 
 	var flatskin: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# render flex skin with flat shading
 
@@ -8818,13 +8690,11 @@ struct mjsMesh_:
 
 
 	var inertia: mjtMeshInertia
-	# Unhandled tokens: : ' enum mjtMeshInertia_ '
 	
 	# inertia type (convex, legacy, exact, shell)
 
 
 	var smoothnormal: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# do not exclude large-angle faces from normals
 
@@ -8860,7 +8730,6 @@ struct mjsMesh_:
 
 
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	# sdf plugin
 
@@ -9018,7 +8887,6 @@ struct mjsTexture_:
 
 
 	var type: mjtTexture
-	# Unhandled tokens: : ' enum mjtTexture_ '
 	
 	# texture type
 
@@ -9099,13 +8967,11 @@ struct mjsTexture_:
 
 
 	var hflip: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# horizontal flip
 
 
 	var vflip: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# vertical flip
 
@@ -9135,7 +9001,6 @@ struct mjsMaterial_:
 
 
 	var texuniform: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# make texture cube uniform
 
@@ -9295,7 +9160,6 @@ struct mjsEquality_:
 
 
 	var type: mjtEq
-	# Unhandled tokens: : ' enum mjtEq_ '
 	
 	# constraint type
 
@@ -9306,7 +9170,6 @@ struct mjsEquality_:
 
 
 	var active: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# is equality initially active
 
@@ -9322,7 +9185,6 @@ struct mjsEquality_:
 
 
 	var objtype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	# type of both objects
 
@@ -9475,7 +9337,6 @@ struct mjsActuator_:
 
 
 	var gaintype: mjtGain
-	# Unhandled tokens: : ' enum mjtGain_ '
 	
 	# gain type
 
@@ -9486,7 +9347,6 @@ struct mjsActuator_:
 
 
 	var biastype: mjtBias
-	# Unhandled tokens: : ' enum mjtBias_ '
 	
 	# bias type
 
@@ -9497,7 +9357,6 @@ struct mjsActuator_:
 
 
 	var dyntype: mjtDyn
-	# Unhandled tokens: : ' enum mjtDyn_ '
 	
 	# dynamics type
 
@@ -9513,13 +9372,11 @@ struct mjsActuator_:
 
 
 	var actearly: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	# apply next activations to qfrc
 
 
 	var trntype: mjtTrn
-	# Unhandled tokens: : ' enum mjtTrn_ '
 	
 	# transmission type
 
@@ -9600,7 +9457,6 @@ struct mjsActuator_:
 
 
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	# actuator plugin
 
@@ -9625,13 +9481,11 @@ struct mjsSensor_:
 
 
 	var type: mjtSensor
-	# Unhandled tokens: : ' enum mjtSensor_ '
 	
 	# type of sensor
 
 
 	var objtype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	# type of sensorized object
 
@@ -9642,7 +9496,6 @@ struct mjsSensor_:
 
 
 	var reftype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	# type of referenced object
 
@@ -9653,13 +9506,11 @@ struct mjsSensor_:
 
 
 	var datatype: mjtDataType
-	# Unhandled tokens: : ' enum mjtDataType_ '
 	
 	# data type for sensor measurement
 
 
 	var needstage: mjtStage
-	# Unhandled tokens: : ' enum mjtStage_ '
 	
 	# compute stage needed to simulate sensor
 
@@ -9685,7 +9536,6 @@ struct mjsSensor_:
 
 
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	# sensor plugin
 
@@ -10417,7 +10267,6 @@ struct mjuiItem_:
 	
 
 	var rect: mjrRect
-	# Unhandled tokens: : ' struct mjrRect_ '
 	
 	# rectangle occupied by item
 
@@ -10467,13 +10316,11 @@ struct mjuiSection_:
 
 
 	var rtitle: mjrRect
-	# Unhandled tokens: : ' struct mjrRect_ '
 	
 	# rectangle occupied by title
 
 
 	var rcontent: mjrRect
-	# Unhandled tokens: : ' struct mjrRect_ '
 	
 	# rectangle occupied by content
 
@@ -10488,19 +10335,16 @@ alias mjuiSection = mjuiSection_
 struct mjUI_:
 
 	var spacing: mjuiThemeSpacing
-	# Unhandled tokens: : ' struct mjuiThemeSpacing_ '
 	
 	# UI theme spacing
 
 
 	var color: mjuiThemeColor
-	# Unhandled tokens: : ' struct mjuiThemeColor_ '
 	
 	# UI theme color
 
 
 	var predicate: mjfItemEnable
-	# Unhandled tokens: : ' int (*)(int, void *) '
 	
 	# callback to set item state programmatically
 

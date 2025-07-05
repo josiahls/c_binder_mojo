@@ -144,6 +144,7 @@ struct FieldDeclNode(NodeAstLike):
     var _is_const: Bool
     var _is_struct: Bool
     var _is_union: Bool
+    var _has_sugar: Bool
     var _value: String
 
     var _unhandled_tokens: String
@@ -159,6 +160,7 @@ struct FieldDeclNode(NodeAstLike):
         self._is_const = False
         self._is_struct = False
         self._is_union = False
+        self._has_sugar = False
         self._value = String()
         self._unhandled_tokens = String()
 
@@ -173,9 +175,9 @@ struct FieldDeclNode(NodeAstLike):
             elif section_idx == 1:
                 self.parse_section_1(ast_entries.tokens[start_idx + 1:idx])
             elif section_idx == 2:
-                # TODO(josiahls): Handle section 2, likely in the event there is sugar
-                self._unhandled_tokens += String(' ').join(ast_entries.tokens[start_idx + 1:])
-                # self.parse_section_2(ast_entries.tokens[start_idx:])
+                self.parse_section_2(ast_entries.tokens[start_idx + 1:idx])
+            elif section_idx == 3:
+                self.parse_section_3(ast_entries.tokens[start_idx + 1:idx])
             section_idx += 1
             start_idx = idx
 
@@ -198,6 +200,20 @@ struct FieldDeclNode(NodeAstLike):
                 self._field_type = entry
             else:
                 self._field_type += " " + entry
+
+    fn parse_section_2(mut self, entries: List[String]):
+        for entry in entries:
+            if entry == ":":
+                self._has_sugar = True
+            else:
+                self._value += entry + " "
+
+    fn parse_section_3(mut self, entries: List[String]):
+        for entry in entries:
+            if self._has_sugar:
+                pass # We will keep the field_type assigned in section 1
+            else:
+                self._unhandled_tokens += entry + " "
 
     @staticmethod
     fn accept(

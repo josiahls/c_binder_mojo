@@ -329,24 +329,20 @@ struct timeval:
 
 	FieldDeclNode(parent_idx=663, current_idx=664, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var tv_sec: __time_t
-	# Unhandled tokens: : ' long '
 	
 
 	FieldDeclNode(parent_idx=663, current_idx=665, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var tv_usec: __suseconds_t
-	# Unhandled tokens: : ' long '
 	
 
 struct timespec:
 
 	FieldDeclNode(parent_idx=666, current_idx=667, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var tv_sec: __time_t
-	# Unhandled tokens: : ' long '
 	
 
 	FieldDeclNode(parent_idx=666, current_idx=668, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var tv_nsec: __syscall_slong_t
-	# Unhandled tokens: : ' long '
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=669, child_idxs=(670), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -381,7 +377,6 @@ struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9_
 
 	FieldDeclNode(parent_idx=714, current_idx=719, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var __value32: struct (unnamed struct at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h
-	# Unhandled tokens: : ' struct __atomic_wide_counter::(unnamed at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:28:3) '
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=720, child_idxs=(721), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -438,7 +433,6 @@ struct __pthread_mutex_s:
 
 	FieldDeclNode(parent_idx=737, current_idx=745, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var __list: __pthread_list_t
-	# Unhandled tokens: : ' struct __pthread_internal_list '
 	
 
 struct __pthread_rwlock_arch_t:
@@ -495,12 +489,10 @@ struct __pthread_cond_s:
 
 	FieldDeclNode(parent_idx=759, current_idx=760, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var __wseq: __atomic_wide_counter
-	# Unhandled tokens: : ' __atomic_wide_counter '
 	
 
 	FieldDeclNode(parent_idx=759, current_idx=761, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var __g1_start: __atomic_wide_counter
-	# Unhandled tokens: : ' __atomic_wide_counter '
 	
 
 	FieldDeclNode(parent_idx=759, current_idx=762, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -581,7 +573,6 @@ struct Anonymous__line_67_9__line_72_1_:
 
 	FieldDeclNode(parent_idx=804, current_idx=805, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var __data: struct __pthread_mutex_s
-	# Unhandled tokens: : ' struct __pthread_mutex_s '
 	
 
 	FieldDeclNode(parent_idx=804, current_idx=806, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -598,7 +589,6 @@ struct Anonymous__line_75_9__line_80_1_:
 
 	FieldDeclNode(parent_idx=812, current_idx=813, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var __data: struct __pthread_cond_s
-	# Unhandled tokens: : ' struct __pthread_cond_s '
 	
 
 	FieldDeclNode(parent_idx=812, current_idx=814, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -615,7 +605,6 @@ struct Anonymous__line_86_9__line_91_1_:
 
 	FieldDeclNode(parent_idx=820, current_idx=821, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var __data: struct __pthread_rwlock_arch_t
-	# Unhandled tokens: : ' struct __pthread_rwlock_arch_t '
 	
 
 	FieldDeclNode(parent_idx=820, current_idx=822, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -1991,7 +1980,6 @@ struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4803, child_idxs=(4804), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var accel: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4803, current_idx=4804, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2000,7 +1988,6 @@ struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4805, child_idxs=(4806), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var maxforce: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4805, current_idx=4806, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2009,7 +1996,6 @@ struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4807, child_idxs=(4808), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var timeconst: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4807, current_idx=4808, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2018,7 +2004,6 @@ struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4809, child_idxs=(4810), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var timestep: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4809, current_idx=4810, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2027,7 +2012,6 @@ struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4811, child_idxs=(4812), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var inttotal: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4811, current_idx=4812, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2036,7 +2020,6 @@ struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4813, child_idxs=(4814), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var interval: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4813, current_idx=4814, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2045,7 +2028,6 @@ struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4815, child_idxs=(4816), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var tolrange: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4815, current_idx=4816, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2070,7 +2052,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4831, child_idxs=(4832), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var timestep: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4831, current_idx=4832, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2079,7 +2060,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4833, child_idxs=(4834), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var apirate: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4833, current_idx=4834, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2088,7 +2068,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4835, child_idxs=(4836), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var impratio: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4835, current_idx=4836, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2097,7 +2076,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4837, child_idxs=(4838), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4837, current_idx=4838, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2106,7 +2084,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4839, child_idxs=(4840), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var ls_tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4839, current_idx=4840, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2115,7 +2092,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4841, child_idxs=(4842), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var noslip_tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4841, current_idx=4842, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2124,7 +2100,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4843, child_idxs=(4844), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var ccd_tolerance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4843, current_idx=4844, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2157,7 +2132,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4851, child_idxs=(4852), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var density: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4851, current_idx=4852, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2166,7 +2140,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4853, child_idxs=(4854), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var viscosity: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4853, current_idx=4854, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2175,7 +2148,6 @@ struct mjOption_:
 
 	FieldDeclNode(parent_idx=4829, current_idx=4855, child_idxs=(4856), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var o_margin: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=4855, current_idx=4856, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2316,32 +2288,26 @@ struct mjVisual_:
 
 	FieldDeclNode(parent_idx=4893, current_idx=4920, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var global: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:486:3) '
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=4932, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var quality: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:501:3) '
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=4942, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var headlight: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:509:3) '
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=4970, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var map: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:516:3) '
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=5006, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var scale: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:532:3) '
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=5058, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var rgba: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
-	# Unhandled tokens: : ' struct mjVisual_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h:552:3) '
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=5059, child_idxs=(5060), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -2350,7 +2316,6 @@ struct mjStatistic_:
 
 	FieldDeclNode(parent_idx=5063, current_idx=5065, child_idxs=(5066), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var meaninertia: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=5065, current_idx=5066, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2359,7 +2324,6 @@ struct mjStatistic_:
 
 	FieldDeclNode(parent_idx=5063, current_idx=5067, child_idxs=(5068), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var meanmass: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=5067, current_idx=5068, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2368,7 +2332,6 @@ struct mjStatistic_:
 
 	FieldDeclNode(parent_idx=5063, current_idx=5069, child_idxs=(5070), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var meansize: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=5069, current_idx=5070, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -2377,7 +2340,6 @@ struct mjStatistic_:
 
 	FieldDeclNode(parent_idx=5063, current_idx=5071, child_idxs=(5072), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var extent: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=5071, current_idx=5072, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -3062,7 +3024,6 @@ struct mjModel_:
 
 	FieldDeclNode(parent_idx=5079, current_idx=5247, child_idxs=(5248), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var narena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=5247, current_idx=5248, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -3071,7 +3032,6 @@ struct mjModel_:
 
 	FieldDeclNode(parent_idx=5079, current_idx=5249, child_idxs=(5250), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var nbuffer: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=5249, current_idx=5250, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -3080,7 +3040,6 @@ struct mjModel_:
 
 	FieldDeclNode(parent_idx=5079, current_idx=5251, child_idxs=(5252), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var opt: mjOption
-	# Unhandled tokens: : ' struct mjOption_ '
 	
 	FullCommentNode(parent_idx=5251, current_idx=5252, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -3089,7 +3048,6 @@ struct mjModel_:
 
 	FieldDeclNode(parent_idx=5079, current_idx=5253, child_idxs=(5254), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var vis: mjVisual
-	# Unhandled tokens: : ' struct mjVisual_ '
 	
 	FullCommentNode(parent_idx=5253, current_idx=5254, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -3098,7 +3056,6 @@ struct mjModel_:
 
 	FieldDeclNode(parent_idx=5079, current_idx=5255, child_idxs=(5256), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var stat: mjStatistic
-	# Unhandled tokens: : ' struct mjStatistic_ '
 	
 	FullCommentNode(parent_idx=5255, current_idx=5256, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6333,7 +6290,6 @@ struct mjModel_:
 
 	FieldDeclNode(parent_idx=5079, current_idx=6059, child_idxs=(6060), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var signature: uint64_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6059, current_idx=6060, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6382,7 +6338,6 @@ struct mjTask_:
 
 	FieldDeclNode(parent_idx=6096, current_idx=6097, child_idxs=(6098), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var func: mjfTask
-	# Unhandled tokens: : ' void *(*)(void *) '
 	
 	FullCommentNode(parent_idx=6097, current_idx=6098, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6496,7 +6451,6 @@ struct mjContact_:
 
 	FieldDeclNode(parent_idx=6320, current_idx=6322, child_idxs=(6323), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var dist: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6322, current_idx=6323, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6521,7 +6475,6 @@ struct mjContact_:
 
 	FieldDeclNode(parent_idx=6320, current_idx=6328, child_idxs=(6329), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var includemargin: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6328, current_idx=6329, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6564,7 +6517,6 @@ struct mjContact_:
 
 	FieldDeclNode(parent_idx=6320, current_idx=6338, child_idxs=(6339), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var mu: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6338, current_idx=6339, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6677,7 +6629,6 @@ struct mjTimerStat_:
 
 	FieldDeclNode(parent_idx=6374, current_idx=6375, child_idxs=(6376), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var duration: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6375, current_idx=6376, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6698,7 +6649,6 @@ struct mjSolverStat_:
 
 	FieldDeclNode(parent_idx=6383, current_idx=6384, child_idxs=(6385), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var improvement: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6384, current_idx=6385, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6707,7 +6657,6 @@ struct mjSolverStat_:
 
 	FieldDeclNode(parent_idx=6383, current_idx=6386, child_idxs=(6387), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var gradient: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6386, current_idx=6387, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6716,7 +6665,6 @@ struct mjSolverStat_:
 
 	FieldDeclNode(parent_idx=6383, current_idx=6388, child_idxs=(6389), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var lineslope: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6388, current_idx=6389, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6761,7 +6709,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6404, child_idxs=(6405), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var narena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6404, current_idx=6405, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6770,7 +6717,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6406, child_idxs=(6407), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var nbuffer: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6406, current_idx=6407, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6787,7 +6733,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6410, child_idxs=(6411), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var pstack: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6410, current_idx=6411, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6796,7 +6741,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6412, child_idxs=(6413), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var pbase: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6412, current_idx=6413, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6805,7 +6749,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6414, child_idxs=(6415), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var parena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6414, current_idx=6415, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6814,7 +6757,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6416, child_idxs=(6417), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var maxuse_stack: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6416, current_idx=6417, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6831,7 +6773,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6420, child_idxs=(6421), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var maxuse_arena: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6420, current_idx=6421, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -6976,7 +6917,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6456, child_idxs=(6457), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var time: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=6456, current_idx=6457, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8162,7 +8102,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6752, child_idxs=(6753), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var threadpool: uintptr_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6752, current_idx=6753, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8171,7 +8110,6 @@ struct mjData_:
 
 	FieldDeclNode(parent_idx=6402, current_idx=6754, child_idxs=(6755), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var signature: uint64_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=6754, current_idx=6755, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8525,7 +8463,6 @@ struct mjvPerturb_:
 
 	FieldDeclNode(parent_idx=7150, current_idx=7170, child_idxs=(7171), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var localmass: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=7170, current_idx=7171, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8534,7 +8471,6 @@ struct mjvPerturb_:
 
 	FieldDeclNode(parent_idx=7150, current_idx=7172, child_idxs=(7173), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var scale: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=7172, current_idx=7173, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8579,7 +8515,6 @@ struct mjvCamera_:
 
 	FieldDeclNode(parent_idx=7178, current_idx=7188, child_idxs=(7189), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var distance: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=7188, current_idx=7189, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8588,7 +8523,6 @@ struct mjvCamera_:
 
 	FieldDeclNode(parent_idx=7178, current_idx=7190, child_idxs=(7191), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var azimuth: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=7190, current_idx=7191, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8597,7 +8531,6 @@ struct mjvCamera_:
 
 	FieldDeclNode(parent_idx=7178, current_idx=7192, child_idxs=(7193), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var elevation: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=7192, current_idx=7193, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8854,7 +8787,6 @@ struct mjvGeom_:
 
 	FieldDeclNode(parent_idx=7226, current_idx=7266, child_idxs=(7267), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var transparent: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7266, current_idx=7267, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8931,7 +8863,6 @@ struct mjvLight_:
 
 	FieldDeclNode(parent_idx=7272, current_idx=7290, child_idxs=(7291), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var headlight: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7290, current_idx=7291, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8940,7 +8871,6 @@ struct mjvLight_:
 
 	FieldDeclNode(parent_idx=7272, current_idx=7292, child_idxs=(7293), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var directional: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7292, current_idx=7293, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -8949,7 +8879,6 @@ struct mjvLight_:
 
 	FieldDeclNode(parent_idx=7272, current_idx=7294, child_idxs=(7295), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var castshadow: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7294, current_idx=7295, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9206,7 +9135,6 @@ struct mjvScene_:
 
 	FieldDeclNode(parent_idx=7332, current_idx=7368, child_idxs=(7369), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var flexvertopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7368, current_idx=7369, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9215,7 +9143,6 @@ struct mjvScene_:
 
 	FieldDeclNode(parent_idx=7332, current_idx=7370, child_idxs=(7371), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var flexedgeopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7370, current_idx=7371, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9224,7 +9151,6 @@ struct mjvScene_:
 
 	FieldDeclNode(parent_idx=7332, current_idx=7372, child_idxs=(7373), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var flexfaceopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7372, current_idx=7373, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9233,7 +9159,6 @@ struct mjvScene_:
 
 	FieldDeclNode(parent_idx=7332, current_idx=7374, child_idxs=(7375), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var flexskinopt: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7374, current_idx=7375, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9314,7 +9239,6 @@ struct mjvScene_:
 
 	FieldDeclNode(parent_idx=7332, current_idx=7394, child_idxs=(7395), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var enabletransform: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=7394, current_idx=7395, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9675,7 +9599,6 @@ struct mjvSceneState_:
 
 	FieldDeclNode(parent_idx=7486, current_idx=7494, child_idxs=(7495), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var scratch: mjvScene
-	# Unhandled tokens: : ' struct mjvScene_ '
 	
 	FullCommentNode(parent_idx=7494, current_idx=7495, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9684,12 +9607,10 @@ struct mjvSceneState_:
 
 	FieldDeclNode(parent_idx=7486, current_idx=7692, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var model: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h
-	# Unhandled tokens: : ' struct mjvSceneState_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:417:3) '
 	
 
 	FieldDeclNode(parent_idx=7486, current_idx=7737, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var data: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h
-	# Unhandled tokens: : ' struct mjvSceneState_::(unnamed at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h:634:3) '
 	
 
 TypedefDeclNode(parent_idx=1, current_idx=7738, child_idxs=(7739), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -9840,7 +9761,6 @@ struct mjpResourceProvider:
 
 	FieldDeclNode(parent_idx=7831, current_idx=7835, child_idxs=(7836), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var open: mjfOpenResource
-	# Unhandled tokens: : ' int (*)(mjResource *) '
 	
 	FullCommentNode(parent_idx=7835, current_idx=7836, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9849,7 +9769,6 @@ struct mjpResourceProvider:
 
 	FieldDeclNode(parent_idx=7831, current_idx=7837, child_idxs=(7838), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var read: mjfReadResource
-	# Unhandled tokens: : ' int (*)(mjResource *, const void **) '
 	
 	FullCommentNode(parent_idx=7837, current_idx=7838, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9858,7 +9777,6 @@ struct mjpResourceProvider:
 
 	FieldDeclNode(parent_idx=7831, current_idx=7839, child_idxs=(7840), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var close: mjfCloseResource
-	# Unhandled tokens: : ' void (*)(mjResource *) '
 	
 	FullCommentNode(parent_idx=7839, current_idx=7840, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9867,7 +9785,6 @@ struct mjpResourceProvider:
 
 	FieldDeclNode(parent_idx=7831, current_idx=7841, child_idxs=(7842), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var getdir: mjfGetResourceDir
-	# Unhandled tokens: : ' void (*)(mjResource *, const char **, int *) '
 	
 	FullCommentNode(parent_idx=7841, current_idx=7842, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -9876,7 +9793,6 @@ struct mjpResourceProvider:
 
 	FieldDeclNode(parent_idx=7831, current_idx=7843, child_idxs=(7844), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var modified: mjfResourceModified
-	# Unhandled tokens: : ' int (*)(const mjResource *, const char *) '
 	
 	FullCommentNode(parent_idx=7843, current_idx=7844, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10791,7 +10707,6 @@ struct mjsElement_:
 
 	FieldDeclNode(parent_idx=8324, current_idx=8326, child_idxs=(8327), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var elemtype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	FullCommentNode(parent_idx=8326, current_idx=8327, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10800,7 +10715,6 @@ struct mjsElement_:
 
 	FieldDeclNode(parent_idx=8324, current_idx=8328, child_idxs=(8329), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var signature: uint64_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=8328, current_idx=8329, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10816,7 +10730,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8336, child_idxs=(8337), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var autolimits: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8336, current_idx=8337, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10851,7 +10764,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8344, child_idxs=(8345), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var balanceinertia: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8344, current_idx=8345, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10860,7 +10772,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8346, child_idxs=(8347), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var fitaabb: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8346, current_idx=8347, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10869,7 +10780,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8348, child_idxs=(8349), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var degree: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8348, current_idx=8349, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10886,7 +10796,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8352, child_idxs=(8353), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var discardvisual: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8352, current_idx=8353, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10895,7 +10804,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8354, child_idxs=(8355), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var usethread: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8354, current_idx=8355, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10904,7 +10812,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8356, child_idxs=(8357), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var fusestatic: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8356, current_idx=8357, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10929,7 +10836,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8362, child_idxs=(8363), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var saveinertial: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8362, current_idx=8363, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10946,7 +10852,6 @@ struct mjsCompiler_:
 
 	FieldDeclNode(parent_idx=8335, current_idx=8366, child_idxs=(8367), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var LRopt: mjLROpt
-	# Unhandled tokens: : ' struct mjLROpt_ '
 	
 	FullCommentNode(parent_idx=8366, current_idx=8367, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10975,7 +10880,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8377, child_idxs=(8378), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var compiler: mjsCompiler
-	# Unhandled tokens: : ' struct mjsCompiler_ '
 	
 	FullCommentNode(parent_idx=8377, current_idx=8378, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -10984,7 +10888,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8379, child_idxs=(8380), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var strippath: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8379, current_idx=8380, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11009,7 +10912,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8385, child_idxs=(8386), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var option: mjOption
-	# Unhandled tokens: : ' struct mjOption_ '
 	
 	FullCommentNode(parent_idx=8385, current_idx=8386, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11018,7 +10920,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8387, child_idxs=(8388), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var visual: mjVisual
-	# Unhandled tokens: : ' struct mjVisual_ '
 	
 	FullCommentNode(parent_idx=8387, current_idx=8388, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11027,7 +10928,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8389, child_idxs=(8390), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var stat: mjStatistic
-	# Unhandled tokens: : ' struct mjStatistic_ '
 	
 	FullCommentNode(parent_idx=8389, current_idx=8390, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11036,7 +10936,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8391, child_idxs=(8392), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var memory: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=8391, current_idx=8392, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11149,7 +11048,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8419, child_idxs=(8420), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var nstack: size_t
-	# Unhandled tokens: : ' unsigned long '
 	
 	FullCommentNode(parent_idx=8419, current_idx=8420, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11174,7 +11072,6 @@ struct mjSpec_:
 
 	FieldDeclNode(parent_idx=8372, current_idx=8425, child_idxs=(8426), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var hasImplicitPluginElem: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8425, current_idx=8426, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11187,7 +11084,6 @@ struct mjsOrientation_:
 
 	FieldDeclNode(parent_idx=8431, current_idx=8432, child_idxs=(8433), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var type: mjtOrientation
-	# Unhandled tokens: : ' enum mjtOrientation_ '
 	
 	FullCommentNode(parent_idx=8432, current_idx=8433, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11256,7 +11152,6 @@ struct mjsPlugin_:
 
 	FieldDeclNode(parent_idx=8446, current_idx=8453, child_idxs=(8454), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var active: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8453, current_idx=8454, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11317,7 +11212,6 @@ struct mjsBody_:
 
 	FieldDeclNode(parent_idx=8461, current_idx=8472, child_idxs=(8473), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	FullCommentNode(parent_idx=8472, current_idx=8473, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11358,7 +11252,6 @@ struct mjsBody_:
 
 	FieldDeclNode(parent_idx=8461, current_idx=8482, child_idxs=(8483), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var ialt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	FullCommentNode(parent_idx=8482, current_idx=8483, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11375,7 +11268,6 @@ struct mjsBody_:
 
 	FieldDeclNode(parent_idx=8461, current_idx=8486, child_idxs=(8487), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var mocap: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8486, current_idx=8487, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11400,7 +11292,6 @@ struct mjsBody_:
 
 	FieldDeclNode(parent_idx=8461, current_idx=8492, child_idxs=(8493), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var explicitinertial: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8492, current_idx=8493, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11409,7 +11300,6 @@ struct mjsBody_:
 
 	FieldDeclNode(parent_idx=8461, current_idx=8494, child_idxs=(8495), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	FullCommentNode(parent_idx=8494, current_idx=8495, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11470,7 +11360,6 @@ struct mjsFrame_:
 
 	FieldDeclNode(parent_idx=8502, current_idx=8513, child_idxs=(8514), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	FullCommentNode(parent_idx=8513, current_idx=8514, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11507,7 +11396,6 @@ struct mjsJoint_:
 
 	FieldDeclNode(parent_idx=8521, current_idx=8526, child_idxs=(8527), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var type: mjtJoint
-	# Unhandled tokens: : ' enum mjtJoint_ '
 	
 	FullCommentNode(parent_idx=8526, current_idx=8527, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11676,7 +11564,6 @@ struct mjsJoint_:
 
 	FieldDeclNode(parent_idx=8521, current_idx=8568, child_idxs=(8569), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var actgravcomp: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8568, current_idx=8569, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11721,7 +11608,6 @@ struct mjsGeom_:
 
 	FieldDeclNode(parent_idx=8578, current_idx=8583, child_idxs=(8584), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var type: mjtGeom
-	# Unhandled tokens: : ' enum mjtGeom_ '
 	
 	FullCommentNode(parent_idx=8583, current_idx=8584, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11746,7 +11632,6 @@ struct mjsGeom_:
 
 	FieldDeclNode(parent_idx=8578, current_idx=8589, child_idxs=(8590), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	FullCommentNode(parent_idx=8589, current_idx=8590, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11869,7 +11754,6 @@ struct mjsGeom_:
 
 	FieldDeclNode(parent_idx=8578, current_idx=8619, child_idxs=(8620), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var typeinertia: mjtGeomInertia
-	# Unhandled tokens: : ' enum mjtGeomInertia_ '
 	
 	FullCommentNode(parent_idx=8619, current_idx=8620, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11878,7 +11762,6 @@ struct mjsGeom_:
 
 	FieldDeclNode(parent_idx=8578, current_idx=8621, child_idxs=(8622), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var fluid_ellipsoid: mjtNum
-	# Unhandled tokens: : ' double '
 	
 	FullCommentNode(parent_idx=8621, current_idx=8622, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -11951,7 +11834,6 @@ struct mjsGeom_:
 
 	FieldDeclNode(parent_idx=8578, current_idx=8639, child_idxs=(8640), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	FullCommentNode(parent_idx=8639, current_idx=8640, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12004,7 +11886,6 @@ struct mjsSite_:
 
 	FieldDeclNode(parent_idx=8647, current_idx=8656, child_idxs=(8657), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	FullCommentNode(parent_idx=8656, current_idx=8657, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12029,7 +11910,6 @@ struct mjsSite_:
 
 	FieldDeclNode(parent_idx=8647, current_idx=8662, child_idxs=(8663), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var type: mjtGeom
-	# Unhandled tokens: : ' enum mjtGeom_ '
 	
 	FullCommentNode(parent_idx=8662, current_idx=8663, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12114,7 +11994,6 @@ struct mjsCamera_:
 
 	FieldDeclNode(parent_idx=8678, current_idx=8687, child_idxs=(8688), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var alt: mjsOrientation
-	# Unhandled tokens: : ' struct mjsOrientation_ '
 	
 	FullCommentNode(parent_idx=8687, current_idx=8688, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12123,7 +12002,6 @@ struct mjsCamera_:
 
 	FieldDeclNode(parent_idx=8678, current_idx=8689, child_idxs=(8690), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var mode: mjtCamLight
-	# Unhandled tokens: : ' enum mjtCamLight_ '
 	
 	FullCommentNode(parent_idx=8689, current_idx=8690, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12272,7 +12150,6 @@ struct mjsLight_:
 
 	FieldDeclNode(parent_idx=8721, current_idx=8730, child_idxs=(8731), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var mode: mjtCamLight
-	# Unhandled tokens: : ' enum mjtCamLight_ '
 	
 	FullCommentNode(parent_idx=8730, current_idx=8731, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12289,7 +12166,6 @@ struct mjsLight_:
 
 	FieldDeclNode(parent_idx=8721, current_idx=8734, child_idxs=(8735), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var active: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8734, current_idx=8735, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12298,7 +12174,6 @@ struct mjsLight_:
 
 	FieldDeclNode(parent_idx=8721, current_idx=8736, child_idxs=(8737), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var directional: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8736, current_idx=8737, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12307,7 +12182,6 @@ struct mjsLight_:
 
 	FieldDeclNode(parent_idx=8721, current_idx=8738, child_idxs=(8739), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var castshadow: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8738, current_idx=8739, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12498,7 +12372,6 @@ struct mjsFlex_:
 
 	FieldDeclNode(parent_idx=8760, current_idx=8789, child_idxs=(8790), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var internal: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8789, current_idx=8790, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12507,7 +12380,6 @@ struct mjsFlex_:
 
 	FieldDeclNode(parent_idx=8760, current_idx=8791, child_idxs=(8792), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var flatskin: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8791, current_idx=8792, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12728,7 +12600,6 @@ struct mjsMesh_:
 
 	FieldDeclNode(parent_idx=8835, current_idx=8850, child_idxs=(8851), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var inertia: mjtMeshInertia
-	# Unhandled tokens: : ' enum mjtMeshInertia_ '
 	
 	FullCommentNode(parent_idx=8850, current_idx=8851, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12737,7 +12608,6 @@ struct mjsMesh_:
 
 	FieldDeclNode(parent_idx=8835, current_idx=8852, child_idxs=(8853), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var smoothnormal: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8852, current_idx=8853, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -12794,7 +12664,6 @@ struct mjsMesh_:
 
 	FieldDeclNode(parent_idx=8835, current_idx=8866, child_idxs=(8867), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	FullCommentNode(parent_idx=8866, current_idx=8867, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13039,7 +12908,6 @@ struct mjsTexture_:
 
 	FieldDeclNode(parent_idx=8934, current_idx=8939, child_idxs=(8940), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var type: mjtTexture
-	# Unhandled tokens: : ' enum mjtTexture_ '
 	
 	FullCommentNode(parent_idx=8939, current_idx=8940, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13168,7 +13036,6 @@ struct mjsTexture_:
 
 	FieldDeclNode(parent_idx=8934, current_idx=8971, child_idxs=(8972), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var hflip: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8971, current_idx=8972, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13177,7 +13044,6 @@ struct mjsTexture_:
 
 	FieldDeclNode(parent_idx=8934, current_idx=8973, child_idxs=(8974), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var vflip: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8973, current_idx=8974, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13222,7 +13088,6 @@ struct mjsMaterial_:
 
 	FieldDeclNode(parent_idx=8981, current_idx=8988, child_idxs=(8989), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var texuniform: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=8988, current_idx=8989, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13469,7 +13334,6 @@ struct mjsEquality_:
 
 	FieldDeclNode(parent_idx=9056, current_idx=9061, child_idxs=(9062), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var type: mjtEq
-	# Unhandled tokens: : ' enum mjtEq_ '
 	
 	FullCommentNode(parent_idx=9061, current_idx=9062, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13486,7 +13350,6 @@ struct mjsEquality_:
 
 	FieldDeclNode(parent_idx=9056, current_idx=9065, child_idxs=(9066), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var active: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=9065, current_idx=9066, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13511,7 +13374,6 @@ struct mjsEquality_:
 
 	FieldDeclNode(parent_idx=9056, current_idx=9071, child_idxs=(9072), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var objtype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	FullCommentNode(parent_idx=9071, current_idx=9072, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13748,7 +13610,6 @@ struct mjsActuator_:
 
 	FieldDeclNode(parent_idx=9137, current_idx=9142, child_idxs=(9143), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var gaintype: mjtGain
-	# Unhandled tokens: : ' enum mjtGain_ '
 	
 	FullCommentNode(parent_idx=9142, current_idx=9143, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13765,7 +13626,6 @@ struct mjsActuator_:
 
 	FieldDeclNode(parent_idx=9137, current_idx=9146, child_idxs=(9147), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var biastype: mjtBias
-	# Unhandled tokens: : ' enum mjtBias_ '
 	
 	FullCommentNode(parent_idx=9146, current_idx=9147, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13782,7 +13642,6 @@ struct mjsActuator_:
 
 	FieldDeclNode(parent_idx=9137, current_idx=9150, child_idxs=(9151), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var dyntype: mjtDyn
-	# Unhandled tokens: : ' enum mjtDyn_ '
 	
 	FullCommentNode(parent_idx=9150, current_idx=9151, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13807,7 +13666,6 @@ struct mjsActuator_:
 
 	FieldDeclNode(parent_idx=9137, current_idx=9156, child_idxs=(9157), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var actearly: mjtByte
-	# Unhandled tokens: : ' unsigned char '
 	
 	FullCommentNode(parent_idx=9156, current_idx=9157, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13816,7 +13674,6 @@ struct mjsActuator_:
 
 	FieldDeclNode(parent_idx=9137, current_idx=9158, child_idxs=(9159), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var trntype: mjtTrn
-	# Unhandled tokens: : ' enum mjtTrn_ '
 	
 	FullCommentNode(parent_idx=9158, current_idx=9159, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13945,7 +13802,6 @@ struct mjsActuator_:
 
 	FieldDeclNode(parent_idx=9137, current_idx=9190, child_idxs=(9191), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	FullCommentNode(parent_idx=9190, current_idx=9191, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13982,7 +13838,6 @@ struct mjsSensor_:
 
 	FieldDeclNode(parent_idx=9198, current_idx=9203, child_idxs=(9204), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var type: mjtSensor
-	# Unhandled tokens: : ' enum mjtSensor_ '
 	
 	FullCommentNode(parent_idx=9203, current_idx=9204, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -13991,7 +13846,6 @@ struct mjsSensor_:
 
 	FieldDeclNode(parent_idx=9198, current_idx=9205, child_idxs=(9206), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var objtype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	FullCommentNode(parent_idx=9205, current_idx=9206, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -14008,7 +13862,6 @@ struct mjsSensor_:
 
 	FieldDeclNode(parent_idx=9198, current_idx=9209, child_idxs=(9210), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var reftype: mjtObj
-	# Unhandled tokens: : ' enum mjtObj_ '
 	
 	FullCommentNode(parent_idx=9209, current_idx=9210, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -14025,7 +13878,6 @@ struct mjsSensor_:
 
 	FieldDeclNode(parent_idx=9198, current_idx=9213, child_idxs=(9214), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var datatype: mjtDataType
-	# Unhandled tokens: : ' enum mjtDataType_ '
 	
 	FullCommentNode(parent_idx=9213, current_idx=9214, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -14034,7 +13886,6 @@ struct mjsSensor_:
 
 	FieldDeclNode(parent_idx=9198, current_idx=9215, child_idxs=(9216), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var needstage: mjtStage
-	# Unhandled tokens: : ' enum mjtStage_ '
 	
 	FullCommentNode(parent_idx=9215, current_idx=9216, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -14075,7 +13926,6 @@ struct mjsSensor_:
 
 	FieldDeclNode(parent_idx=9198, current_idx=9225, child_idxs=(9226), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var plugin: mjsPlugin
-	# Unhandled tokens: : ' struct mjsPlugin_ '
 	
 	FullCommentNode(parent_idx=9225, current_idx=9226, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -15187,7 +15037,6 @@ struct mjuiItem_:
 
 	FieldDeclNode(parent_idx=9626, current_idx=9664, child_idxs=(9665), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var rect: mjrRect
-	# Unhandled tokens: : ' struct mjrRect_ '
 	
 	FullCommentNode(parent_idx=9664, current_idx=9665, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -15264,7 +15113,6 @@ struct mjuiSection_:
 
 	FieldDeclNode(parent_idx=9672, current_idx=9688, child_idxs=(9689), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var rtitle: mjrRect
-	# Unhandled tokens: : ' struct mjrRect_ '
 	
 	FullCommentNode(parent_idx=9688, current_idx=9689, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -15273,7 +15121,6 @@ struct mjuiSection_:
 
 	FieldDeclNode(parent_idx=9672, current_idx=9690, child_idxs=(9691), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var rcontent: mjrRect
-	# Unhandled tokens: : ' struct mjrRect_ '
 	
 	FullCommentNode(parent_idx=9690, current_idx=9691, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -15294,7 +15141,6 @@ struct mjUI_:
 
 	FieldDeclNode(parent_idx=9698, current_idx=9700, child_idxs=(9701), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var spacing: mjuiThemeSpacing
-	# Unhandled tokens: : ' struct mjuiThemeSpacing_ '
 	
 	FullCommentNode(parent_idx=9700, current_idx=9701, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -15303,7 +15149,6 @@ struct mjUI_:
 
 	FieldDeclNode(parent_idx=9698, current_idx=9702, child_idxs=(9703), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var color: mjuiThemeColor
-	# Unhandled tokens: : ' struct mjuiThemeColor_ '
 	
 	FullCommentNode(parent_idx=9702, current_idx=9703, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 
@@ -15312,7 +15157,6 @@ struct mjUI_:
 
 	FieldDeclNode(parent_idx=9698, current_idx=9704, child_idxs=(9705), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 	var predicate: mjfItemEnable
-	# Unhandled tokens: : ' int (*)(int, void *) '
 	
 	FullCommentNode(parent_idx=9704, current_idx=9705, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 

@@ -145,6 +145,7 @@ struct FieldDeclNode(NodeAstLike):
     var _is_struct: Bool
     var _is_union: Bool
     var _has_sugar: Bool
+    var _is_unnamed_type: Bool
     var _value: String
 
     var _unhandled_tokens: String
@@ -161,6 +162,7 @@ struct FieldDeclNode(NodeAstLike):
         self._is_struct = False
         self._is_union = False
         self._has_sugar = False
+        self._is_unnamed_type = False
         self._value = String()
         self._unhandled_tokens = String()
 
@@ -169,7 +171,13 @@ struct FieldDeclNode(NodeAstLike):
         var start_idx = 0
         var section_idx = 0
 
+        # print("FieldDeclNode: " + String(ast_entries))
+        # print("FieldDeclNode: quoted_indicies: " + String(',').join(quoted_indicies))
+
         for idx in quoted_indicies:
+            # print("FieldDeclNode: section_idx: " + String(section_idx))
+            # print("FieldDeclNode: start_idx: " + String(start_idx))
+            # print("FieldDeclNode: idx: " + String(idx))
             if section_idx == 0:
                 self.parse_section_0(ast_entries.tokens[:idx])
             elif section_idx == 1:
@@ -180,6 +188,13 @@ struct FieldDeclNode(NodeAstLike):
                 self.parse_section_3(ast_entries.tokens[start_idx + 1:idx])
             section_idx += 1
             start_idx = idx
+        # print("FieldDeclNode: record name: " + self._field_name)
+        # print("FieldDeclNode: field type: " + self._field_type)
+        # print("FieldDeclNode: is const: " + String(self._is_const))
+        # print("FieldDeclNode: is struct: " + String(self._is_struct))
+        # print("FieldDeclNode: is union: " + String(self._is_union))
+        # print("FieldDeclNode: has sugar: " + String(self._has_sugar))
+        # print("FieldDeclNode: value: " + self._value)
 
     fn parse_section_0(mut self, entries: List[String]):
         for entry in entries:
@@ -196,7 +211,9 @@ struct FieldDeclNode(NodeAstLike):
 
     fn parse_section_1(mut self, entries: List[String]):
         for entry in entries:
-            if self._field_type == "":
+            if entry.replace("(", "") == "unnamed":
+                self._is_unnamed_type = True
+            elif self._field_type == "":
                 self._field_type = entry
             else:
                 self._field_type += " " + entry
@@ -209,11 +226,18 @@ struct FieldDeclNode(NodeAstLike):
                 self._value += entry + " "
 
     fn parse_section_3(mut self, entries: List[String]):
-        for entry in entries:
-            if self._has_sugar:
-                pass # We will keep the field_type assigned in section 1
-            else:
-                self._unhandled_tokens += entry + " "
+        if self._has_sugar and self._is_unnamed_type:
+            self._field_type = " # Unnamed type"
+            # for entry in entries:
+            #     if entry == "struct":
+            #         pass
+            #     elif "::" in entry:
+            #         self._field_type = entry.split("::")[0]
+                # NOTE: Ignore the rest since that will be the unnamed path.
+                # else:
+                #     self._field_type += entry + " "
+        else:
+            self._unhandled_tokens += String(' ').join(entries)
 
     @staticmethod
     fn accept(

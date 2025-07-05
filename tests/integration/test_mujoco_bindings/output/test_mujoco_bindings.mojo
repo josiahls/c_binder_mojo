@@ -309,17 +309,21 @@ alias sigset_t = __sigset_t
 struct timeval:
 
 	var tv_sec: __time_t
+	# Unhandled tokens: long
 	
 
 	var tv_usec: __suseconds_t
+	# Unhandled tokens: long
 	
 
 struct timespec:
 
 	var tv_sec: __time_t
+	# Unhandled tokens: long
 	
 
 	var tv_nsec: __syscall_slong_t
+	# Unhandled tokens: long
 	
 
 
@@ -345,12 +349,21 @@ alias blkcnt_t = Int64
 alias fsblkcnt_t = UInt64
 
 alias fsfilcnt_t = UInt64
+struct _Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_:
+
+	var __low: UInt32
+	
+
+	var __high: UInt32
+	
+
+
 struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_:
 
 	var __value64: UInt128
 	
 
-	var __value32: struct (unnamed struct at /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h
+	var __value32: # Unnamed type
 	
 
 
@@ -396,6 +409,7 @@ struct __pthread_mutex_s:
 	
 
 	var __list: __pthread_list_t
+	# Unhandled tokens: struct __pthread_internal_list
 	
 
 struct __pthread_rwlock_arch_t:
@@ -439,9 +453,11 @@ struct __pthread_rwlock_arch_t:
 struct __pthread_cond_s:
 
 	var __wseq: __atomic_wide_counter
+	# Unhandled tokens: __atomic_wide_counter
 	
 
 	var __g1_start: __atomic_wide_counter
+	# Unhandled tokens: __atomic_wide_counter
 	
 
 	var __g_refs: SIMD[UInt32.dtype, 2]
@@ -509,6 +525,7 @@ alias pthread_attr_t = pthread_attr_t
 struct Anonymous__line_67_9__line_72_1_:
 
 	var __data: struct __pthread_mutex_s
+	# Unhandled tokens: struct __pthread_mutex_s
 	
 
 	var __size: SIMD[Int8.dtype, 40]
@@ -522,6 +539,7 @@ alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
 struct Anonymous__line_75_9__line_80_1_:
 
 	var __data: struct __pthread_cond_s
+	# Unhandled tokens: struct __pthread_cond_s
 	
 
 	var __size: SIMD[Int8.dtype, 48]
@@ -535,6 +553,7 @@ alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
 struct Anonymous__line_86_9__line_91_1_:
 
 	var __data: struct __pthread_rwlock_arch_t
+	# Unhandled tokens: struct __pthread_rwlock_arch_t
 	
 
 	var __size: SIMD[Int8.dtype, 56]
@@ -1834,36 +1853,43 @@ struct mjLROpt_:
 
 
 	var accel: mjtNum
+	# Unhandled tokens: double
 	
 	# target acceleration used to compute force
 
 
 	var maxforce: mjtNum
+	# Unhandled tokens: double
 	
 	# maximum force; 0: no limit
 
 
 	var timeconst: mjtNum
+	# Unhandled tokens: double
 	
 	# time constant for velocity reduction; min 0.01
 
 
 	var timestep: mjtNum
+	# Unhandled tokens: double
 	
 	# simulation timestep; 0: use mjOption.timestep
 
 
 	var inttotal: mjtNum
+	# Unhandled tokens: double
 	
 	# total simulation time interval
 
 
 	var interval: mjtNum
+	# Unhandled tokens: double
 	
 	# evaluation time interval (at the end)
 
 
 	var tolrange: mjtNum
+	# Unhandled tokens: double
 	
 	# convergence tolerance (relative to range)
 
@@ -1882,36 +1908,43 @@ alias mjVFS = mjVFS_
 struct mjOption_:
 
 	var timestep: mjtNum
+	# Unhandled tokens: double
 	
 	# timestep
 
 
 	var apirate: mjtNum
+	# Unhandled tokens: double
 	
 	# update rate for remote API (Hz)
 
 
 	var impratio: mjtNum
+	# Unhandled tokens: double
 	
 	# ratio of friction-to-normal contact impedance
 
 
 	var tolerance: mjtNum
+	# Unhandled tokens: double
 	
 	# main solver tolerance
 
 
 	var ls_tolerance: mjtNum
+	# Unhandled tokens: double
 	
 	# CG/Newton linesearch tolerance
 
 
 	var noslip_tolerance: mjtNum
+	# Unhandled tokens: double
 	
 	# noslip solver tolerance
 
 
 	var ccd_tolerance: mjtNum
+	# Unhandled tokens: double
 	
 	# convex collision solver tolerance
 
@@ -1932,16 +1965,19 @@ struct mjOption_:
 
 
 	var density: mjtNum
+	# Unhandled tokens: double
 	
 	# density of medium
 
 
 	var viscosity: mjtNum
+	# Unhandled tokens: double
 	
 	# viscosity of medium
 
 
 	var o_margin: mjtNum
+	# Unhandled tokens: double
 	
 	# margin
 
@@ -2028,24 +2064,422 @@ struct mjOption_:
 
 
 alias mjOption = mjOption_
+struct _mjVisual__Anonymous__line_552_3__line_578_3_:
+
+	var fog: SIMD[Float32.dtype, 4]
+	
+	# fog
+
+
+	var haze: SIMD[Float32.dtype, 4]
+	
+	# haze
+
+
+	var force: SIMD[Float32.dtype, 4]
+	
+	# external force
+
+
+	var inertia: SIMD[Float32.dtype, 4]
+	
+	# inertia box
+
+
+	var joint: SIMD[Float32.dtype, 4]
+	
+	# joint
+
+
+	var actuator: SIMD[Float32.dtype, 4]
+	
+	# actuator, neutral
+
+
+	var actuatornegative: SIMD[Float32.dtype, 4]
+	
+	# actuator, negative limit
+
+
+	var actuatorpositive: SIMD[Float32.dtype, 4]
+	
+	# actuator, positive limit
+
+
+	var com: SIMD[Float32.dtype, 4]
+	
+	# center of mass
+
+
+	var camera: SIMD[Float32.dtype, 4]
+	
+	# camera object
+
+
+	var light: SIMD[Float32.dtype, 4]
+	
+	# light object
+
+
+	var selectpoint: SIMD[Float32.dtype, 4]
+	
+	# selection point
+
+
+	var connect: SIMD[Float32.dtype, 4]
+	
+	# auto connect
+
+
+	var contactpoint: SIMD[Float32.dtype, 4]
+	
+	# contact point
+
+
+	var contactforce: SIMD[Float32.dtype, 4]
+	
+	# contact force
+
+
+	var contactfriction: SIMD[Float32.dtype, 4]
+	
+	# contact friction force
+
+
+	var contacttorque: SIMD[Float32.dtype, 4]
+	
+	# contact torque
+
+
+	var contactgap: SIMD[Float32.dtype, 4]
+	
+	# contact point in gap
+
+
+	var rangefinder: SIMD[Float32.dtype, 4]
+	
+	# rangefinder ray
+
+
+	var constraint: SIMD[Float32.dtype, 4]
+	
+	# constraint
+
+
+	var slidercrank: SIMD[Float32.dtype, 4]
+	
+	# slidercrank
+
+
+	var crankbroken: SIMD[Float32.dtype, 4]
+	
+	# used when crank must be stretched/broken
+
+
+	var frustum: SIMD[Float32.dtype, 4]
+	
+	# camera frustum
+
+
+	var bv: SIMD[Float32.dtype, 4]
+	
+	# bounding volume
+
+
+	var bvactive: SIMD[Float32.dtype, 4]
+	
+	# active bounding volume
+
+
+
+struct _mjVisual__Anonymous__line_532_3__line_550_3_:
+
+	var forcewidth: Float32
+	
+	# width of force arrow
+
+
+	var contactwidth: Float32
+	
+	# contact width
+
+
+	var contactheight: Float32
+	
+	# contact height
+
+
+	var connect: Float32
+	
+	# autoconnect capsule width
+
+
+	var com: Float32
+	
+	# com radius
+
+
+	var camera: Float32
+	
+	# camera object
+
+
+	var light: Float32
+	
+	# light object
+
+
+	var selectpoint: Float32
+	
+	# selection point
+
+
+	var jointlength: Float32
+	
+	# joint length
+
+
+	var jointwidth: Float32
+	
+	# joint width
+
+
+	var actuatorlength: Float32
+	
+	# actuator length
+
+
+	var actuatorwidth: Float32
+	
+	# actuator width
+
+
+	var framelength: Float32
+	
+	# bodyframe axis length
+
+
+	var framewidth: Float32
+	
+	# bodyframe axis width
+
+
+	var constraint: Float32
+	
+	# constraint width
+
+
+	var slidercrank: Float32
+	
+	# slidercrank width
+
+
+	var frustum: Float32
+	
+	# frustum zfar plane
+
+
+
+struct _mjVisual__Anonymous__line_516_3__line_530_3_:
+
+	var stiffness: Float32
+	
+	# mouse perturbation stiffness (space->force)
+
+
+	var stiffnessrot: Float32
+	
+	# mouse perturbation stiffness (space->torque)
+
+
+	var force: Float32
+	
+	# from force units to space units
+
+
+	var torque: Float32
+	
+	# from torque units to space units
+
+
+	var alpha: Float32
+	
+	# scale geom alphas when transparency is enabled
+
+
+	var fogstart: Float32
+	
+	# OpenGL fog starts at fogstart * mjModel.stat.extent
+
+
+	var fogend: Float32
+	
+	# OpenGL fog ends at fogend * mjModel.stat.extent
+
+
+	var znear: Float32
+	
+	# near clipping plane = znear * mjModel.stat.extent
+
+
+	var zfar: Float32
+	
+	# far clipping plane = zfar * mjModel.stat.extent
+
+
+	var haze: Float32
+	
+	# haze ratio
+
+
+	var shadowclip: Float32
+	
+	# directional light: shadowclip * mjModel.stat.extent
+
+
+	var shadowscale: Float32
+	
+	# spot light: shadowscale * light.cutoff
+
+
+	var actuatortendon: Float32
+	
+	# scale tendon width
+
+
+
+struct _mjVisual__Anonymous__line_509_3__line_514_3_:
+
+	var ambient: SIMD[Float32.dtype, 3]
+	
+	# ambient rgb (alpha=1)
+
+
+	var diffuse: SIMD[Float32.dtype, 3]
+	
+	# diffuse rgb (alpha=1)
+
+
+	var specular: SIMD[Float32.dtype, 3]
+	
+	# specular rgb (alpha=1)
+
+
+	var active: Int32
+	
+	# is headlight active
+
+
+
+struct _mjVisual__Anonymous__line_501_3__line_507_3_:
+
+	var shadowsize: Int32
+	
+	# size of shadowmap texture
+
+
+	var offsamples: Int32
+	
+	# number of multisamples for offscreen rendering
+
+
+	var numslices: Int32
+	
+	# number of slices for builtin geom drawing
+
+
+	var numstacks: Int32
+	
+	# number of stacks for builtin geom drawing
+
+
+	var numquads: Int32
+	
+	# number of quads for box rendering
+
+
+
+struct _mjVisual__Anonymous__line_486_3__line_499_3_:
+
+	var orthographic: Int32
+	
+	# is the free camera orthographic (0: no, 1: yes)
+
+
+	var fovy: Float32
+	
+	# y field-of-view of free camera (orthographic ? length : degree)
+
+
+	var ipd: Float32
+	
+	# inter-pupilary distance for free camera
+
+
+	var azimuth: Float32
+	
+	# initial azimuth of free camera (degrees)
+
+
+	var elevation: Float32
+	
+	# initial elevation of free camera (degrees)
+
+
+	var linewidth: Float32
+	
+	# line width for wireframe and ray rendering
+
+
+	var glow: Float32
+	
+	# glow coefficient for selected body
+
+
+	var realtime: Float32
+	
+	# initial real-time factor (1: real time)
+
+
+	var offwidth: Int32
+	
+	# width of offscreen buffer
+
+
+	var offheight: Int32
+	
+	# height of offscreen buffer
+
+
+	var ellipsoidinertia: Int32
+	
+	# geom for inertia visualization (0: box, 1: ellipsoid)
+
+
+	var bvactive: Int32
+	
+	# visualize active bounding volumes (0: no, 1: yes)
+
+
+
 struct mjVisual_:
 
-	var global: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
+	var global: # Unnamed type
 	
 
-	var quality: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
+	var quality: # Unnamed type
 	
 
-	var headlight: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
+	var headlight: # Unnamed type
 	
 
-	var map: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
+	var map: # Unnamed type
 	
 
-	var scale: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
+	var scale: # Unnamed type
 	
 
-	var rgba: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjmodel.h
+	var rgba: # Unnamed type
 	
 
 
@@ -2053,21 +2487,25 @@ alias mjVisual = mjVisual_
 struct mjStatistic_:
 
 	var meaninertia: mjtNum
+	# Unhandled tokens: double
 	
 	# mean diagonal inertia
 
 
 	var meanmass: mjtNum
+	# Unhandled tokens: double
 	
 	# mean body mass
 
 
 	var meansize: mjtNum
+	# Unhandled tokens: double
 	
 	# mean body size
 
 
 	var extent: mjtNum
+	# Unhandled tokens: double
 	
 	# spatial extent
 
@@ -2497,26 +2935,31 @@ struct mjModel_:
 
 
 	var narena: size_t
+	# Unhandled tokens: unsigned long
 	
 	# number of bytes in the mjData arena (inclusive of stack)
 
 
 	var nbuffer: size_t
+	# Unhandled tokens: unsigned long
 	
 	# number of bytes in buffer
 
 
 	var opt: mjOption
+	# Unhandled tokens: struct mjOption_
 	
 	# physics options
 
 
 	var vis: mjVisual
+	# Unhandled tokens: struct mjVisual_
 	
 	# visualization options
 
 
 	var stat: mjStatistic
+	# Unhandled tokens: struct mjStatistic_
 	
 	# model statistics
 
@@ -4545,6 +4988,7 @@ struct mjModel_:
 
 
 	var signature: uint64_t
+	# Unhandled tokens: unsigned long
 	
 	# also held by the mjSpec that compiled this model
 
@@ -4582,6 +5026,7 @@ alias mjThreadPool = mjThreadPool_
 struct mjTask_:
 
 	var func: mjfTask
+	# Unhandled tokens: void *(*)(void *)
 	
 	# pointer to the function that implements the task
 
@@ -4680,6 +5125,7 @@ alias mjtTimer =
 struct mjContact_:
 
 	var dist: mjtNum
+	# Unhandled tokens: double
 	
 	# distance between nearest points; neg: penetration
 
@@ -4695,6 +5141,7 @@ struct mjContact_:
 
 
 	var includemargin: mjtNum
+	# Unhandled tokens: double
 	
 	# include if dist
 	#<includemargin
@@ -4722,6 +5169,7 @@ struct mjContact_:
 
 
 	var mu: mjtNum
+	# Unhandled tokens: double
 	
 	# friction of regularized cone, set by mj_makeConstraint
 
@@ -4795,6 +5243,7 @@ alias mjWarningStat = mjWarningStat_
 struct mjTimerStat_:
 
 	var duration: mjtNum
+	# Unhandled tokens: double
 	
 	# cumulative duration
 
@@ -4809,16 +5258,19 @@ alias mjTimerStat = mjTimerStat_
 struct mjSolverStat_:
 
 	var improvement: mjtNum
+	# Unhandled tokens: double
 	
 	# cost reduction, scaled by 1/trace(M(qpos0))
 
 
 	var gradient: mjtNum
+	# Unhandled tokens: double
 	
 	# gradient norm (primal only, scaled)
 
 
 	var lineslope: mjtNum
+	# Unhandled tokens: double
 	
 	# slope in linesearch
 
@@ -4848,11 +5300,13 @@ alias mjSolverStat = mjSolverStat_
 struct mjData_:
 
 	var narena: size_t
+	# Unhandled tokens: unsigned long
 	
 	# size of the arena in bytes (inclusive of the stack)
 
 
 	var nbuffer: size_t
+	# Unhandled tokens: unsigned long
 	
 	# size of main buffer in bytes
 
@@ -4863,21 +5317,25 @@ struct mjData_:
 
 
 	var pstack: size_t
+	# Unhandled tokens: unsigned long
 	
 	# first available byte in stack
 
 
 	var pbase: size_t
+	# Unhandled tokens: unsigned long
 	
 	# value of pstack when mj_markStack was last called
 
 
 	var parena: size_t
+	# Unhandled tokens: unsigned long
 	
 	# first available byte in arena
 
 
 	var maxuse_stack: size_t
+	# Unhandled tokens: unsigned long
 	
 	# maximum stack allocation in bytes
 
@@ -4888,6 +5346,7 @@ struct mjData_:
 
 
 	var maxuse_arena: size_t
+	# Unhandled tokens: unsigned long
 	
 	# maximum arena allocation in bytes
 
@@ -4978,6 +5437,7 @@ struct mjData_:
 
 
 	var time: mjtNum
+	# Unhandled tokens: double
 	
 	# simulation time
 
@@ -5719,11 +6179,13 @@ struct mjData_:
 
 
 	var threadpool: uintptr_t
+	# Unhandled tokens: unsigned long
 	
 	# thread pool pointer
 
 
 	var signature: uint64_t
+	# Unhandled tokens: unsigned long
 	
 	# also held by the mjSpec that compiled the model
 
@@ -6001,11 +6463,13 @@ struct mjvPerturb_:
 
 
 	var localmass: mjtNum
+	# Unhandled tokens: double
 	
 	# spatial inertia at selection point
 
 
 	var scale: mjtNum
+	# Unhandled tokens: double
 	
 	# relative mouse motion-to-space scaling (set by initPerturb)
 
@@ -6035,16 +6499,19 @@ struct mjvCamera_:
 
 
 	var distance: mjtNum
+	# Unhandled tokens: double
 	
 	# distance to lookat point or tracked body
 
 
 	var azimuth: mjtNum
+	# Unhandled tokens: double
 	
 	# camera azimuth (deg)
 
 
 	var elevation: mjtNum
+	# Unhandled tokens: double
 	
 	# camera elevation (deg)
 
@@ -6208,6 +6675,7 @@ struct mjvGeom_:
 
 
 	var transparent: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# treat geom as transparent
 
@@ -6257,16 +6725,19 @@ struct mjvLight_:
 
 
 	var headlight: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# headlight
 
 
 	var directional: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# directional light
 
 
 	var castshadow: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# does light cast shadows
 
@@ -6430,21 +6901,25 @@ struct mjvScene_:
 
 
 	var flexvertopt: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# copy of mjVIS_FLEXVERT mjvOption flag
 
 
 	var flexedgeopt: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# copy of mjVIS_FLEXEDGE mjvOption flag
 
 
 	var flexfaceopt: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# copy of mjVIS_FLEXFACE mjvOption flag
 
 
 	var flexskinopt: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# copy of mjVIS_FLEXSKIN mjvOption flag
 
@@ -6495,6 +6970,7 @@ struct mjvScene_:
 
 
 	var enabletransform: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# enable model transformation
 
@@ -6705,6 +7181,724 @@ struct mjvFigure_:
 
 
 alias mjvFigure = mjvFigure_
+struct _mjvSceneState__Anonymous__line_634_3__line_688_3_:
+
+	var warning: SIMD[mjWarningStat.dtype, 8]
+	
+
+	var nefc: Int32
+	
+
+	var ncon: Int32
+	
+
+	var nisland: Int32
+	
+
+	var time: mjtNum
+	# Unhandled tokens: double
+	
+
+	var act: UnsafePointer[mjtNum]
+	
+
+	var ctrl: UnsafePointer[mjtNum]
+	
+
+	var xfrc_applied: UnsafePointer[mjtNum]
+	
+
+	var eq_active: UnsafePointer[mjtByte]
+	
+
+	var sensordata: UnsafePointer[mjtNum]
+	
+
+	var xpos: UnsafePointer[mjtNum]
+	
+
+	var xquat: UnsafePointer[mjtNum]
+	
+
+	var xmat: UnsafePointer[mjtNum]
+	
+
+	var xipos: UnsafePointer[mjtNum]
+	
+
+	var ximat: UnsafePointer[mjtNum]
+	
+
+	var xanchor: UnsafePointer[mjtNum]
+	
+
+	var xaxis: UnsafePointer[mjtNum]
+	
+
+	var geom_xpos: UnsafePointer[mjtNum]
+	
+
+	var geom_xmat: UnsafePointer[mjtNum]
+	
+
+	var site_xpos: UnsafePointer[mjtNum]
+	
+
+	var site_xmat: UnsafePointer[mjtNum]
+	
+
+	var cam_xpos: UnsafePointer[mjtNum]
+	
+
+	var cam_xmat: UnsafePointer[mjtNum]
+	
+
+	var light_xpos: UnsafePointer[mjtNum]
+	
+
+	var light_xdir: UnsafePointer[mjtNum]
+	
+
+	var subtree_com: UnsafePointer[mjtNum]
+	
+
+	var ten_wrapadr: UnsafePointer[Int32]
+	
+
+	var ten_wrapnum: UnsafePointer[Int32]
+	
+
+	var wrap_obj: UnsafePointer[Int32]
+	
+
+	var ten_length: UnsafePointer[mjtNum]
+	
+
+	var wrap_xpos: UnsafePointer[mjtNum]
+	
+
+	var bvh_aabb_dyn: UnsafePointer[mjtNum]
+	
+
+	var bvh_active: UnsafePointer[mjtByte]
+	
+
+	var island_dofadr: UnsafePointer[Int32]
+	
+
+	var island_dofind: UnsafePointer[Int32]
+	
+
+	var dof_island: UnsafePointer[Int32]
+	
+
+	var efc_island: UnsafePointer[Int32]
+	
+
+	var tendon_efcadr: UnsafePointer[Int32]
+	
+
+	var flexvert_xpos: UnsafePointer[mjtNum]
+	
+
+	var contact: UnsafePointer[mjContact]
+	
+
+	var efc_force: UnsafePointer[mjtNum]
+	
+
+	var arena: UnsafePointer[NoneType]
+	
+
+
+struct _mjvSceneState__Anonymous__line_417_3__line_631_3_:
+
+	var nv: Int32
+	
+
+	var nu: Int32
+	
+
+	var na: Int32
+	
+
+	var nbody: Int32
+	
+
+	var nbvh: Int32
+	
+
+	var nbvhstatic: Int32
+	
+
+	var njnt: Int32
+	
+
+	var ngeom: Int32
+	
+
+	var nsite: Int32
+	
+
+	var ncam: Int32
+	
+
+	var nlight: Int32
+	
+
+	var nmesh: Int32
+	
+
+	var nskin: Int32
+	
+
+	var nflex: Int32
+	
+
+	var nflexvert: Int32
+	
+
+	var nflextexcoord: Int32
+	
+
+	var nskinvert: Int32
+	
+
+	var nskinface: Int32
+	
+
+	var nskinbone: Int32
+	
+
+	var nskinbonevert: Int32
+	
+
+	var nmat: Int32
+	
+
+	var neq: Int32
+	
+
+	var ntendon: Int32
+	
+
+	var ntree: Int32
+	
+
+	var nwrap: Int32
+	
+
+	var nsensor: Int32
+	
+
+	var nnames: Int32
+	
+
+	var npaths: Int32
+	
+
+	var nsensordata: Int32
+	
+
+	var narena: Int32
+	
+
+	var opt: mjOption
+	# Unhandled tokens: struct mjOption_
+	
+
+	var vis: mjVisual
+	# Unhandled tokens: struct mjVisual_
+	
+
+	var stat: mjStatistic
+	# Unhandled tokens: struct mjStatistic_
+	
+
+	var body_parentid: UnsafePointer[Int32]
+	
+
+	var body_rootid: UnsafePointer[Int32]
+	
+
+	var body_weldid: UnsafePointer[Int32]
+	
+
+	var body_mocapid: UnsafePointer[Int32]
+	
+
+	var body_jntnum: UnsafePointer[Int32]
+	
+
+	var body_jntadr: UnsafePointer[Int32]
+	
+
+	var body_dofnum: UnsafePointer[Int32]
+	
+
+	var body_dofadr: UnsafePointer[Int32]
+	
+
+	var body_geomnum: UnsafePointer[Int32]
+	
+
+	var body_geomadr: UnsafePointer[Int32]
+	
+
+	var body_iquat: UnsafePointer[mjtNum]
+	
+
+	var body_mass: UnsafePointer[mjtNum]
+	
+
+	var body_inertia: UnsafePointer[mjtNum]
+	
+
+	var body_bvhadr: UnsafePointer[Int32]
+	
+
+	var body_bvhnum: UnsafePointer[Int32]
+	
+
+	var bvh_depth: UnsafePointer[Int32]
+	
+
+	var bvh_child: UnsafePointer[Int32]
+	
+
+	var bvh_nodeid: UnsafePointer[Int32]
+	
+
+	var bvh_aabb: UnsafePointer[mjtNum]
+	
+
+	var jnt_type: UnsafePointer[Int32]
+	
+
+	var jnt_bodyid: UnsafePointer[Int32]
+	
+
+	var jnt_group: UnsafePointer[Int32]
+	
+
+	var geom_type: UnsafePointer[Int32]
+	
+
+	var geom_bodyid: UnsafePointer[Int32]
+	
+
+	var geom_contype: UnsafePointer[Int32]
+	
+
+	var geom_conaffinity: UnsafePointer[Int32]
+	
+
+	var geom_dataid: UnsafePointer[Int32]
+	
+
+	var geom_matid: UnsafePointer[Int32]
+	
+
+	var geom_group: UnsafePointer[Int32]
+	
+
+	var geom_size: UnsafePointer[mjtNum]
+	
+
+	var geom_aabb: UnsafePointer[mjtNum]
+	
+
+	var geom_rbound: UnsafePointer[mjtNum]
+	
+
+	var geom_rgba: UnsafePointer[Float32]
+	
+
+	var site_type: UnsafePointer[Int32]
+	
+
+	var site_bodyid: UnsafePointer[Int32]
+	
+
+	var site_matid: UnsafePointer[Int32]
+	
+
+	var site_group: UnsafePointer[Int32]
+	
+
+	var site_size: UnsafePointer[mjtNum]
+	
+
+	var site_rgba: UnsafePointer[Float32]
+	
+
+	var cam_orthographic: UnsafePointer[Int32]
+	
+
+	var cam_fovy: UnsafePointer[mjtNum]
+	
+
+	var cam_ipd: UnsafePointer[mjtNum]
+	
+
+	var cam_resolution: UnsafePointer[Int32]
+	
+
+	var cam_sensorsize: UnsafePointer[Float32]
+	
+
+	var cam_intrinsic: UnsafePointer[Float32]
+	
+
+	var light_directional: UnsafePointer[mjtByte]
+	
+
+	var light_castshadow: UnsafePointer[mjtByte]
+	
+
+	var light_bulbradius: UnsafePointer[Float32]
+	
+
+	var light_active: UnsafePointer[mjtByte]
+	
+
+	var light_attenuation: UnsafePointer[Float32]
+	
+
+	var light_cutoff: UnsafePointer[Float32]
+	
+
+	var light_exponent: UnsafePointer[Float32]
+	
+
+	var light_ambient: UnsafePointer[Float32]
+	
+
+	var light_diffuse: UnsafePointer[Float32]
+	
+
+	var light_specular: UnsafePointer[Float32]
+	
+
+	var flex_flatskin: UnsafePointer[mjtByte]
+	
+
+	var flex_dim: UnsafePointer[Int32]
+	
+
+	var flex_matid: UnsafePointer[Int32]
+	
+
+	var flex_group: UnsafePointer[Int32]
+	
+
+	var flex_interp: UnsafePointer[Int32]
+	
+
+	var flex_nodeadr: UnsafePointer[Int32]
+	
+
+	var flex_nodenum: UnsafePointer[Int32]
+	
+
+	var flex_nodebodyid: UnsafePointer[Int32]
+	
+
+	var flex_vertadr: UnsafePointer[Int32]
+	
+
+	var flex_vertnum: UnsafePointer[Int32]
+	
+
+	var flex_elem: UnsafePointer[Int32]
+	
+
+	var flex_elemtexcoord: UnsafePointer[Int32]
+	
+
+	var flex_elemlayer: UnsafePointer[Int32]
+	
+
+	var flex_elemadr: UnsafePointer[Int32]
+	
+
+	var flex_elemnum: UnsafePointer[Int32]
+	
+
+	var flex_elemdataadr: UnsafePointer[Int32]
+	
+
+	var flex_shell: UnsafePointer[Int32]
+	
+
+	var flex_shellnum: UnsafePointer[Int32]
+	
+
+	var flex_shelldataadr: UnsafePointer[Int32]
+	
+
+	var flex_texcoordadr: UnsafePointer[Int32]
+	
+
+	var flex_bvhadr: UnsafePointer[Int32]
+	
+
+	var flex_bvhnum: UnsafePointer[Int32]
+	
+
+	var flex_centered: UnsafePointer[mjtByte]
+	
+
+	var flex_node: UnsafePointer[mjtNum]
+	
+
+	var flex_radius: UnsafePointer[mjtNum]
+	
+
+	var flex_rgba: UnsafePointer[Float32]
+	
+
+	var flex_texcoord: UnsafePointer[Float32]
+	
+
+	var hfield_pathadr: UnsafePointer[Int32]
+	
+
+	var mesh_bvhadr: UnsafePointer[Int32]
+	
+
+	var mesh_bvhnum: UnsafePointer[Int32]
+	
+
+	var mesh_texcoordadr: UnsafePointer[Int32]
+	
+
+	var mesh_graphadr: UnsafePointer[Int32]
+	
+
+	var mesh_pathadr: UnsafePointer[Int32]
+	
+
+	var skin_matid: UnsafePointer[Int32]
+	
+
+	var skin_group: UnsafePointer[Int32]
+	
+
+	var skin_rgba: UnsafePointer[Float32]
+	
+
+	var skin_inflate: UnsafePointer[Float32]
+	
+
+	var skin_vertadr: UnsafePointer[Int32]
+	
+
+	var skin_vertnum: UnsafePointer[Int32]
+	
+
+	var skin_texcoordadr: UnsafePointer[Int32]
+	
+
+	var skin_faceadr: UnsafePointer[Int32]
+	
+
+	var skin_facenum: UnsafePointer[Int32]
+	
+
+	var skin_boneadr: UnsafePointer[Int32]
+	
+
+	var skin_bonenum: UnsafePointer[Int32]
+	
+
+	var skin_vert: UnsafePointer[Float32]
+	
+
+	var skin_face: UnsafePointer[Int32]
+	
+
+	var skin_bonevertadr: UnsafePointer[Int32]
+	
+
+	var skin_bonevertnum: UnsafePointer[Int32]
+	
+
+	var skin_bonebindpos: UnsafePointer[Float32]
+	
+
+	var skin_bonebindquat: UnsafePointer[Float32]
+	
+
+	var skin_bonebodyid: UnsafePointer[Int32]
+	
+
+	var skin_bonevertid: UnsafePointer[Int32]
+	
+
+	var skin_bonevertweight: UnsafePointer[Float32]
+	
+
+	var skin_pathadr: UnsafePointer[Int32]
+	
+
+	var tex_pathadr: UnsafePointer[Int32]
+	
+
+	var mat_texid: UnsafePointer[Int32]
+	
+
+	var mat_texuniform: UnsafePointer[mjtByte]
+	
+
+	var mat_texrepeat: UnsafePointer[Float32]
+	
+
+	var mat_emission: UnsafePointer[Float32]
+	
+
+	var mat_specular: UnsafePointer[Float32]
+	
+
+	var mat_shininess: UnsafePointer[Float32]
+	
+
+	var mat_reflectance: UnsafePointer[Float32]
+	
+
+	var mat_metallic: UnsafePointer[Float32]
+	
+
+	var mat_roughness: UnsafePointer[Float32]
+	
+
+	var mat_rgba: UnsafePointer[Float32]
+	
+
+	var eq_type: UnsafePointer[Int32]
+	
+
+	var eq_obj1id: UnsafePointer[Int32]
+	
+
+	var eq_obj2id: UnsafePointer[Int32]
+	
+
+	var eq_objtype: UnsafePointer[Int32]
+	
+
+	var eq_data: UnsafePointer[mjtNum]
+	
+
+	var tendon_num: UnsafePointer[Int32]
+	
+
+	var tendon_matid: UnsafePointer[Int32]
+	
+
+	var tendon_group: UnsafePointer[Int32]
+	
+
+	var tendon_limited: UnsafePointer[mjtByte]
+	
+
+	var tendon_width: UnsafePointer[mjtNum]
+	
+
+	var tendon_range: UnsafePointer[mjtNum]
+	
+
+	var tendon_stiffness: UnsafePointer[mjtNum]
+	
+
+	var tendon_damping: UnsafePointer[mjtNum]
+	
+
+	var tendon_frictionloss: UnsafePointer[mjtNum]
+	
+
+	var tendon_lengthspring: UnsafePointer[mjtNum]
+	
+
+	var tendon_rgba: UnsafePointer[Float32]
+	
+
+	var actuator_trntype: UnsafePointer[Int32]
+	
+
+	var actuator_dyntype: UnsafePointer[Int32]
+	
+
+	var actuator_trnid: UnsafePointer[Int32]
+	
+
+	var actuator_actadr: UnsafePointer[Int32]
+	
+
+	var actuator_actnum: UnsafePointer[Int32]
+	
+
+	var actuator_group: UnsafePointer[Int32]
+	
+
+	var actuator_ctrllimited: UnsafePointer[mjtByte]
+	
+
+	var actuator_actlimited: UnsafePointer[mjtByte]
+	
+
+	var actuator_ctrlrange: UnsafePointer[mjtNum]
+	
+
+	var actuator_actrange: UnsafePointer[mjtNum]
+	
+
+	var actuator_cranklength: UnsafePointer[mjtNum]
+	
+
+	var sensor_type: UnsafePointer[Int32]
+	
+
+	var sensor_objid: UnsafePointer[Int32]
+	
+
+	var sensor_adr: UnsafePointer[Int32]
+	
+
+	var name_bodyadr: UnsafePointer[Int32]
+	
+
+	var name_jntadr: UnsafePointer[Int32]
+	
+
+	var name_geomadr: UnsafePointer[Int32]
+	
+
+	var name_siteadr: UnsafePointer[Int32]
+	
+
+	var name_camadr: UnsafePointer[Int32]
+	
+
+	var name_lightadr: UnsafePointer[Int32]
+	
+
+	var name_eqadr: UnsafePointer[Int32]
+	
+
+	var name_tendonadr: UnsafePointer[Int32]
+	
+
+	var name_actuatoradr: UnsafePointer[Int32]
+	
+
+	var names: UnsafePointer[Int8]
+	
+
+	var paths: UnsafePointer[Int8]
+	
+
+
 struct mjvSceneState_:
 
 	var nbuffer: Int32
@@ -6723,18 +7917,23 @@ struct mjvSceneState_:
 
 
 	var scratch: mjvScene
+	# Unhandled tokens: struct mjvScene_
 	
 	# scratch space for vis geoms inserted by the user and plugins
 
 
-	var model: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h
+	var model: # Unnamed type
 	
 
-	var data: struct (unnamed struct at /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjvisualize.h
+	var data: # Unnamed type
 	
 
 
 alias mjvSceneState = mjvSceneState_
+struct _mjResource__mjpResourceProvider:
+	pass
+
+
 struct mjResource_:
 
 	var name: UnsafePointer[Int8]
@@ -6839,26 +8038,31 @@ struct mjpResourceProvider:
 
 
 	var open: mjfOpenResource
+	# Unhandled tokens: int (*)(mjResource *)
 	
 	# opening callback
 
 
 	var read: mjfReadResource
+	# Unhandled tokens: int (*)(mjResource *, const void **)
 	
 	# reading callback
 
 
 	var close: mjfCloseResource
+	# Unhandled tokens: void (*)(mjResource *)
 	
 	# closing callback
 
 
 	var getdir: mjfGetResourceDir
+	# Unhandled tokens: void (*)(mjResource *, const char **, int *)
 	
 	# get directory callback (optional)
 
 
 	var modified: mjfResourceModified
+	# Unhandled tokens: int (*)(const mjResource *, const char *)
 	
 	# resource modified callback (optional)
 
@@ -7485,11 +8689,13 @@ alias mjtOrientation =
 struct mjsElement_:
 
 	var elemtype: mjtObj
+	# Unhandled tokens: enum mjtObj_
 	
 	# element type
 
 
 	var signature: uint64_t
+	# Unhandled tokens: unsigned long
 	
 	# compilation signature
 
@@ -7501,6 +8707,7 @@ alias mjsElement = mjsElement_
 struct mjsCompiler_:
 
 	var autolimits: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# infer "limited" attribute based on range
 
@@ -7523,16 +8730,19 @@ struct mjsCompiler_:
 
 
 	var balanceinertia: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# automatically impose A + B >= C rule
 
 
 	var fitaabb: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# meshfit to aabb instead of inertia box
 
 
 	var degree: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# angles in radians or degrees
 
@@ -7543,16 +8753,19 @@ struct mjsCompiler_:
 
 
 	var discardvisual: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# discard visual geoms in parser
 
 
 	var usethread: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# use multiple threads to speed up compiler
 
 
 	var fusestatic: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# fuse static bodies with parent
 
@@ -7568,6 +8781,7 @@ struct mjsCompiler_:
 
 
 	var saveinertial: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# save explicit inertial clause for all bodies to XML
 
@@ -7578,6 +8792,7 @@ struct mjsCompiler_:
 
 
 	var LRopt: mjLROpt
+	# Unhandled tokens: struct mjLROpt_
 	
 	# options for lengthrange computation
 
@@ -7597,11 +8812,13 @@ struct mjSpec_:
 
 
 	var compiler: mjsCompiler
+	# Unhandled tokens: struct mjsCompiler_
 	
 	# compiler options
 
 
 	var strippath: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# automatically strip paths from mesh files
 
@@ -7617,21 +8834,25 @@ struct mjSpec_:
 
 
 	var option: mjOption
+	# Unhandled tokens: struct mjOption_
 	
 	# physics options
 
 
 	var visual: mjVisual
+	# Unhandled tokens: struct mjVisual_
 	
 	# visual options
 
 
 	var stat: mjStatistic
+	# Unhandled tokens: struct mjStatistic_
 	
 	# statistics override (if defined)
 
 
 	var memory: size_t
+	# Unhandled tokens: unsigned long
 	
 	# number of bytes in arena+stack memory
 
@@ -7702,6 +8923,7 @@ struct mjSpec_:
 
 
 	var nstack: size_t
+	# Unhandled tokens: unsigned long
 	
 	# (deprecated) number of mjtNums in mjData stack
 
@@ -7717,6 +8939,7 @@ struct mjSpec_:
 
 
 	var hasImplicitPluginElem: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# already encountered an implicit plugin sensor/actuator
 
@@ -7726,6 +8949,7 @@ alias mjSpec = mjSpec_
 struct mjsOrientation_:
 
 	var type: mjtOrientation
+	# Unhandled tokens: enum mjtOrientation_
 	
 	# active orientation specifier
 
@@ -7770,6 +8994,7 @@ struct mjsPlugin_:
 
 
 	var active: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# is the plugin active
 
@@ -7809,6 +9034,7 @@ struct mjsBody_:
 
 
 	var alt: mjsOrientation
+	# Unhandled tokens: struct mjsOrientation_
 	
 	# frame alternative orientation
 
@@ -7834,6 +9060,7 @@ struct mjsBody_:
 
 
 	var ialt: mjsOrientation
+	# Unhandled tokens: struct mjsOrientation_
 	
 	# inertial frame alternative orientation
 
@@ -7844,6 +9071,7 @@ struct mjsBody_:
 
 
 	var mocap: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# is this a mocap body
 
@@ -7859,11 +9087,13 @@ struct mjsBody_:
 
 
 	var explicitinertial: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# whether to save the body with explicit inertial clause
 
 
 	var plugin: mjsPlugin
+	# Unhandled tokens: struct mjsPlugin_
 	
 	# passive force plugin
 
@@ -7903,6 +9133,7 @@ struct mjsFrame_:
 
 
 	var alt: mjsOrientation
+	# Unhandled tokens: struct mjsOrientation_
 	
 	# alternative orientation
 
@@ -7927,6 +9158,7 @@ struct mjsJoint_:
 
 
 	var type: mjtJoint
+	# Unhandled tokens: enum mjtJoint_
 	
 	# joint type
 
@@ -8032,6 +9264,7 @@ struct mjsJoint_:
 
 
 	var actgravcomp: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# is gravcomp force applied via actuators
 
@@ -8061,6 +9294,7 @@ struct mjsGeom_:
 
 
 	var type: mjtGeom
+	# Unhandled tokens: enum mjtGeom_
 	
 	# geom type
 
@@ -8076,6 +9310,7 @@ struct mjsGeom_:
 
 
 	var alt: mjsOrientation
+	# Unhandled tokens: struct mjsOrientation_
 	
 	# alternative orientation
 
@@ -8153,11 +9388,13 @@ struct mjsGeom_:
 
 
 	var typeinertia: mjtGeomInertia
+	# Unhandled tokens: enum mjtGeomInertia_
 	
 	# selects between surface and volume inertia
 
 
 	var fluid_ellipsoid: mjtNum
+	# Unhandled tokens: double
 	
 	# whether ellipsoid-fluid model is active
 
@@ -8203,6 +9440,7 @@ struct mjsGeom_:
 
 
 	var plugin: mjsPlugin
+	# Unhandled tokens: struct mjsPlugin_
 	
 	# sdf plugin
 
@@ -8237,6 +9475,7 @@ struct mjsSite_:
 
 
 	var alt: mjsOrientation
+	# Unhandled tokens: struct mjsOrientation_
 	
 	# alternative orientation
 
@@ -8252,6 +9491,7 @@ struct mjsSite_:
 
 
 	var type: mjtGeom
+	# Unhandled tokens: enum mjtGeom_
 	
 	# geom type
 
@@ -8306,11 +9546,13 @@ struct mjsCamera_:
 
 
 	var alt: mjsOrientation
+	# Unhandled tokens: struct mjsOrientation_
 	
 	# alternative orientation
 
 
 	var mode: mjtCamLight
+	# Unhandled tokens: enum mjtCamLight_
 	
 	# tracking mode
 
@@ -8405,6 +9647,7 @@ struct mjsLight_:
 
 
 	var mode: mjtCamLight
+	# Unhandled tokens: enum mjtCamLight_
 	
 	# tracking mode
 
@@ -8415,16 +9658,19 @@ struct mjsLight_:
 
 
 	var active: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# is light active
 
 
 	var directional: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# is light directional or spot
 
 
 	var castshadow: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# does light cast shadows
 
@@ -8546,11 +9792,13 @@ struct mjsFlex_:
 
 
 	var internal: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# enable internal collisions
 
 
 	var flatskin: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# render flex skin with flat shading
 
@@ -8690,11 +9938,13 @@ struct mjsMesh_:
 
 
 	var inertia: mjtMeshInertia
+	# Unhandled tokens: enum mjtMeshInertia_
 	
 	# inertia type (convex, legacy, exact, shell)
 
 
 	var smoothnormal: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# do not exclude large-angle faces from normals
 
@@ -8730,6 +9980,7 @@ struct mjsMesh_:
 
 
 	var plugin: mjsPlugin
+	# Unhandled tokens: struct mjsPlugin_
 	
 	# sdf plugin
 
@@ -8887,6 +10138,7 @@ struct mjsTexture_:
 
 
 	var type: mjtTexture
+	# Unhandled tokens: enum mjtTexture_
 	
 	# texture type
 
@@ -8967,11 +10219,13 @@ struct mjsTexture_:
 
 
 	var hflip: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# horizontal flip
 
 
 	var vflip: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# vertical flip
 
@@ -9001,6 +10255,7 @@ struct mjsMaterial_:
 
 
 	var texuniform: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# make texture cube uniform
 
@@ -9160,6 +10415,7 @@ struct mjsEquality_:
 
 
 	var type: mjtEq
+	# Unhandled tokens: enum mjtEq_
 	
 	# constraint type
 
@@ -9170,6 +10426,7 @@ struct mjsEquality_:
 
 
 	var active: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# is equality initially active
 
@@ -9185,6 +10442,7 @@ struct mjsEquality_:
 
 
 	var objtype: mjtObj
+	# Unhandled tokens: enum mjtObj_
 	
 	# type of both objects
 
@@ -9337,6 +10595,7 @@ struct mjsActuator_:
 
 
 	var gaintype: mjtGain
+	# Unhandled tokens: enum mjtGain_
 	
 	# gain type
 
@@ -9347,6 +10606,7 @@ struct mjsActuator_:
 
 
 	var biastype: mjtBias
+	# Unhandled tokens: enum mjtBias_
 	
 	# bias type
 
@@ -9357,6 +10617,7 @@ struct mjsActuator_:
 
 
 	var dyntype: mjtDyn
+	# Unhandled tokens: enum mjtDyn_
 	
 	# dynamics type
 
@@ -9372,11 +10633,13 @@ struct mjsActuator_:
 
 
 	var actearly: mjtByte
+	# Unhandled tokens: unsigned char
 	
 	# apply next activations to qfrc
 
 
 	var trntype: mjtTrn
+	# Unhandled tokens: enum mjtTrn_
 	
 	# transmission type
 
@@ -9457,6 +10720,7 @@ struct mjsActuator_:
 
 
 	var plugin: mjsPlugin
+	# Unhandled tokens: struct mjsPlugin_
 	
 	# actuator plugin
 
@@ -9481,11 +10745,13 @@ struct mjsSensor_:
 
 
 	var type: mjtSensor
+	# Unhandled tokens: enum mjtSensor_
 	
 	# type of sensor
 
 
 	var objtype: mjtObj
+	# Unhandled tokens: enum mjtObj_
 	
 	# type of sensorized object
 
@@ -9496,6 +10762,7 @@ struct mjsSensor_:
 
 
 	var reftype: mjtObj
+	# Unhandled tokens: enum mjtObj_
 	
 	# type of referenced object
 
@@ -9506,11 +10773,13 @@ struct mjsSensor_:
 
 
 	var datatype: mjtDataType
+	# Unhandled tokens: enum mjtDataType_
 	
 	# data type for sensor measurement
 
 
 	var needstage: mjtStage
+	# Unhandled tokens: enum mjtStage_
 	
 	# compute stage needed to simulate sensor
 
@@ -9536,6 +10805,7 @@ struct mjsSensor_:
 
 
 	var plugin: mjsPlugin
+	# Unhandled tokens: struct mjsPlugin_
 	
 	# sensor plugin
 
@@ -10226,6 +11496,33 @@ struct mjuiItemEdit_:
 	# element range (min>=max: ignore)
 
 
+struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
+
+	var single: struct mjuiItemSingle_
+	# Unhandled tokens: struct mjuiItemSingle_
+	
+	# check and button
+
+
+	var multi: struct mjuiItemMulti_
+	# Unhandled tokens: struct mjuiItemMulti_
+	
+	# static, radio and select
+
+
+	var slider: struct mjuiItemSlider_
+	# Unhandled tokens: struct mjuiItemSlider_
+	
+	# slider
+
+
+	var edit: struct mjuiItemEdit_
+	# Unhandled tokens: struct mjuiItemEdit_
+	
+	# edit
+
+
+
 struct mjuiItem_:
 
 	var type: Int32
@@ -10267,6 +11564,7 @@ struct mjuiItem_:
 	
 
 	var rect: mjrRect
+	# Unhandled tokens: struct mjrRect_
 	
 	# rectangle occupied by item
 
@@ -10316,11 +11614,13 @@ struct mjuiSection_:
 
 
 	var rtitle: mjrRect
+	# Unhandled tokens: struct mjrRect_
 	
 	# rectangle occupied by title
 
 
 	var rcontent: mjrRect
+	# Unhandled tokens: struct mjrRect_
 	
 	# rectangle occupied by content
 
@@ -10335,16 +11635,19 @@ alias mjuiSection = mjuiSection_
 struct mjUI_:
 
 	var spacing: mjuiThemeSpacing
+	# Unhandled tokens: struct mjuiThemeSpacing_
 	
 	# UI theme spacing
 
 
 	var color: mjuiThemeColor
+	# Unhandled tokens: struct mjuiThemeColor_
 	
 	# UI theme color
 
 
 	var predicate: mjfItemEnable
+	# Unhandled tokens: int (*)(int, void *)
 	
 	# callback to set item state programmatically
 

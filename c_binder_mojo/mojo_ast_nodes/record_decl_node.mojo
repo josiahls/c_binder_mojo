@@ -235,7 +235,9 @@ struct RecordDeclNode(NodeAstLike):
         else:
             for child_idx in self._indicies[].child_idxs:
                 child = module_interface.nodes()[][child_idx]
-                if child.node[].isa[FieldDeclNode]():
+                if child.node[].isa[Self]():
+                    s = child.to_string(just_code, module_interface, 0) + '\n' + s
+                elif child.node[].isa[FieldDeclNode]():
                     s += child.to_string(just_code, module_interface, parent_indent_level + 1)
 
         if self._unhandled_tokens:

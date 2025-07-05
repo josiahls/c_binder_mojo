@@ -21,10 +21,13 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 5. **Boilerplate code** - NodeAstLike trait implementations have lots of repetitive getter methods
 
 ## Current Next Steps (IMMEDIATE PRIORITIES)
-1. **TypeDef enum support** - typedefs don't support enums yet and are blank
-2. **Enum auto-assignment** - enum fields with missing values don't get auto-assigned
-3. **Function pointer parsing** - `void (*)(void)` and `void (*)(int, void)` from atexit/on_exit still fail to parse
-4. **Missing node types** - ParenType, FunctionProtoType, QualType, and VisibilityAttr nodes not created/supported yet
+1. **Fix typedef self-reference issue** - typedefs like `alias pthread_attr_t = pthread_attr_t` should not return themselves if the type is already defined
+2. **Handle QualType nodes** - `-QualType 0x4e34a4 'volatile int' volatile` needs proper parsing and type mapping
+3. **Fix function pointer parsing** - `void (*)(void)` is still not handled correctly
+4. **Create missing node types** - ParenType and FunctionProtoType nodes need to be implemented:
+   - `-ParenType 0x5d5e60 'int (const void *, const void *)' sugar`
+   - `-FunctionProtoType 0x5d5e20 'int (const void *, const void *)' cdecl`
+5. **Fix function alias generation** - aliases like `lgammal_r` and `__lgammal_r` are failing to generate properly
 
 ## Recent Progress & Insights
 - **AST Token Parsing**: Improved understanding of how Clang represents typedefs, function declarations, etc.
@@ -37,45 +40,26 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 ## Roadmap - Code Quality & Robustness
 **Focus on fundamentals before expanding:**
 
-1. **Immediate fixes** (CURRENT PRIORITY):
-   - Fix typedef enum support
-   - Implement enum auto-assignment for missing values
-   - Fix function pointer parsing (`void (*)(void)`, `void (*)(int, void)`)
-   - Create missing node types (ParenType, FunctionProtoType, QualType, VisibilityAttr)
-
-2. **Code cleanup and correctness**:
+1. **Code cleanup and correctness**:
    - Refactor nested if statement logic
    - Improve maintainability and readability
    - Add proper error handling and validation
 
-3. **Fix record handling**:
+2. **Fix record handling**:
    - Better strategy for parsing and representing C structs/unions
    - Handle complex nested structures properly
    - Improve forward declaration resolution
 
-4. **Architecture improvements**:
+3. **Architecture improvements**:
    - Grammar object migration completed - focus on node completeness
    - Better separation of concerns
    - More robust edge case handling
 
-5. **Boilerplate reduction**:
+4. **Boilerplate reduction**:
    - Implement base node struct with common fields
    - Create DefaultNodeImpl mixin trait for common NodeAstLike methods
    - Reduce repetitive getter implementations across all node types
    - Consider composition-based approach for node implementations
-
-## Technical Debt to Address
-- **CRITICAL**: Fix typedef enum support and enum auto-assignment
-- **CRITICAL**: Fix function pointer parsing for atexit/on_exit
-- **CRITICAL**: Create missing node types (ParenType, FunctionProtoType, QualType, VisibilityAttr)
-- **CRITICAL**: Refactor the nested if statement mess
-- **CRITICAL**: Improve record/struct handling architecture  
-- **CRITICAL**: Better forward declaration resolution
-- **HIGH**: Reduce boilerplate in NodeAstLike implementations
-- **COMPLETED**: Grammar object migration - now using direct node metadata stripping
-- Beef up the type mapper (more comprehensive type coverage)
-- Type mapper should track what it needs to import
-- Add validation that our generated Mojo types actually work with FFI
 
 ## Boilerplate Reduction Approaches Explored
 1. **Base Node Struct**: Common fields and methods shared across nodes
@@ -86,10 +70,3 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 
 ## Philosophy
 We're at a crossroads - lots of edge cases means we need to step back and improve the foundation before pushing forward. Quality over quantity at this stage. The boilerplate reduction work will make the codebase much more maintainable and reduce the cognitive load when adding new node types.
-
-## Immediate Next Steps
-1. **Fix typedef enum support** - typedefs are currently blank for enums
-2. **Implement enum auto-assignment** - enum fields with missing values need auto-assignment
-3. **Fix function pointer parsing** - `void (*)(void)` and `void (*)(int, void)` from atexit/on_exit
-4. **Create missing node types** - ParenType, FunctionProtoType, QualType, VisibilityAttr
-5. Complete mapping and supporting all nodes produced by Clang

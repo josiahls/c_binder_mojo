@@ -238,6 +238,8 @@ struct FieldDeclNode(NodeAstLike):
                 # NOTE: Ignore the rest since that will be the unnamed path.
                 # else:
                 #     self._field_type += entry + " "
+        elif self._has_sugar:
+            pass # TODO(josiahls): Not sure if we want to add a comment as part of this.
         else:
             self._unhandled_tokens += String(' ').join(entries)
 

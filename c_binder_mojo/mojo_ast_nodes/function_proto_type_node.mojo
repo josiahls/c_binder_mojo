@@ -22,75 +22,28 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
-from c_binder_mojo.mojo_ast_nodes.builtin_type_node import BuiltinTypeNode
 
 
 @fieldwise_init
-struct QualTypeNode(NodeAstLike):
-    alias __name__ = "QualTypeNode"
+struct FunctionProtoTypeNode(NodeAstLike):
+    alias __name__ = "FunctionProtoTypeNode"
     var _indicies: ArcPointer[NodeIndices]
     var _current_level: Int
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
 
-    var _type_name: String
-
-    var _is_volatile: Bool
-    var _is_const: Bool
-
     var _unhandled_tokens: String
     
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
-        # TODO(josiahls): Not sure I understand the purpose of QualType. The docs say its a pointer to a type (?). 
-        # but it doesn't look like there are any pointers in the original header so idk.
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entry)
         self._current_level = ast_entry.level
         self._node_state = NodeState.COMPLETED
-
-        self._is_volatile = False
-        self._is_const = False
-
-        self._type_name = String()
-
         self._unhandled_tokens = String()
 
-        var quoted_indicies = ast_entry.get_quoted_indices()
+        # NOTE: I think clang decomposes FunctionProtoTypes into individual nodes.
+        # so we should not need to parse anything here.
 
-        start_idx = 0
-        section_idx = 0
-
-        for idx in quoted_indicies:
-            if section_idx == 0:
-                self._parse_section_0(ast_entry.tokens[:idx])
-            elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
-
-            start_idx = idx
-            section_idx += 1
-
-    fn _parse_section_0(mut self, tokens: List[String]):
-        for token in tokens:
-            if token == "volatile":
-                self._is_volatile = True
-            elif token == "const":
-                self._is_const = True
-            elif self._type_name == "":
-                self._type_name = token
-            else:
-                self._unhandled_tokens += " " + token
-
-    fn _parse_section_1(mut self, tokens: List[String]):
-        for token in tokens:
-            if token == "volatile":
-                self._is_volatile = True
-            elif token == "const":
-                self._is_const = True
-            elif self._type_name == "":
-                self._type_name = token
-            else:
-                self._unhandled_tokens += " " + token
 
     @staticmethod
     fn accept(
@@ -171,28 +124,33 @@ struct QualTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var s:String
 
-        _type_name = self._type_name
+        var s:String = "fn("
+        var return_type:String = ""
+        var params = List[String]()
 
-        var error_msg = String()
+        var error_msg:String = ""
 
-        for child in self._indicies[].child_idxs:
-            node = module_interface.get_node(child)
-            if node.node[].isa[BuiltinTypeNode]():
-                _type_name = node.node[][BuiltinTypeNode].to_string(just_code, module_interface, parent_indent_level)
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.nodes()[][child_idx]
+            if child.node[].isa[BuiltinTypeNode]():
+                if return_type == "":
+                    return_type = child.to_string(just_code, module_interface, parent_indent_level + 1)
+                else:
+                    params.append(child.to_string(just_code, module_interface, parent_indent_level + 1))
+            elif child.node[].isa[PointerTypeNode]():
+                if return_type == "":
+                    return_type = child.to_string(just_code, module_interface, parent_indent_level + 1)
+                else:
+                    params.append(child.to_string(just_code, module_interface, parent_indent_level + 1))
             else:
-                # NOTE(josiahls): There are cases where we get unhandled typedef, but I don't understand the output.
-                error_msg += "QualTypeNode: Unhandled node type: " + node.name() + "\n"
+                error_msg = "FunctionProtoTypeNode: Unknown child type: " + child.name()
 
-        s = _type_name
-        # if self._is_volatile:
-        #     s += "\n# Marked as volatile. c_binder_mojo does not know how to handle this."
+        if error_msg != "":
+            s += '\n' + error_msg
 
-        # if self._is_const:
-        #     s += "\n# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)"
-
-        # if error_msg != "":
-        #     s += "\n# " + error_msg
+        s += String(',').join(params)
+        s += ")"
+        s += " -> " + return_type
 
         return s

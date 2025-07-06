@@ -26,6 +26,7 @@ from .constant_expr_node import ConstantExprNode
 from .value_node import ValueNode
 from .qual_type_node import QualTypeNode
 from .paren_type_node import ParenTypeNode
+from .function_proto_type_node import FunctionProtoTypeNode
 
 # Setup Variant
 from .node_variant import Variant
@@ -56,6 +57,7 @@ alias AstNodeVariant = Variant[
     FunctionDeclNode,
     QualTypeNode,
     ParenTypeNode,
+    FunctionProtoTypeNode,
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,
 

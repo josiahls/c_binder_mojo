@@ -38,7 +38,6 @@ struct PointerTypeNode(NodeAstLike):
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
         self._pointer_type = String()
@@ -69,8 +68,8 @@ struct PointerTypeNode(NodeAstLike):
         for token in tokens:
             if "(*)" in token:
                 self._is_function_pointer = True
-            else:
-                self._pointer_type += token + " "
+            # else:
+            #     self._pointer_type += token + " "
     
     fn _parse_section_2(mut self, tokens: List[String]):
         for token in tokens:
@@ -192,8 +191,8 @@ struct PointerTypeNode(NodeAstLike):
             just_code=just_code,
             indent_level=parent_indent_level,
             # newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
+            # newline_after_tail=True,
+            # indent_before_ast_entries=True,
             alternate_string=prefix,
             alternate_string_tail=suffix,
         )

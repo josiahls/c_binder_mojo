@@ -23,67 +23,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _type: String
-    var _is_referenced: Bool
-    var _is_implicit: Bool
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        self._type = String()
-        self._is_referenced = False
-        self._is_implicit = False
-
-        if len(ast_entries) >= 1:
-            starting_idx = 0
-            if ast_entries[0].tokens[0] == "referenced":
-                starting_idx = 1
-                self._is_referenced = True
-            if ast_entries[0].tokens[0] == "implicit":
-                self._is_implicit = True
-                starting_idx = 1
-            if ast_entries[0].tokens[0] == "implicit" and ast_entries[0].tokens[1] == "referenced":
-                self._is_implicit = True
-                self._is_referenced = True
-                starting_idx = 2
-
-            self._name = ast_entries[0].tokens[starting_idx]
-
-            for entry in ast_entries:
-                if entry.ast_name == "AnonymousRecord":
-                    self._type = entry.tokens[0]
-                    break
-
-            if self._type == "":
-                for token in ast_entries[0].tokens[starting_idx + 1 :]:
-                    s = token.replace("'", "")
-                    if s == "struct":
-                        # Skip struct keyword.
-                        continue
-                    if s == "enum":
-                        # Skip enum keyword.
-                        continue
-
-                    self._type += s + " "
-
-        else:
-            print(
-                "TypedefDeclNode: Grammar: Invalid grammar: "
-                + String(ast_entries)
-                + " len: "
-                + String(len(ast_entries))
-            )
-
-    fn __str__(self) -> String:
-        mojo_type = TypeMapper.get_mojo_type(self._type)
-        return "alias " + self._name + " = " + mojo_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
 @fieldwise_init
 struct TypedefDeclNode(NodeAstLike):
     alias __name__ = "TypedefDeclNode"
@@ -91,7 +30,6 @@ struct TypedefDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
-    # var _grammar: Grammar
     var _unhandled_tokens: String
     var _is_implicit: Bool
     var _type_name: String
@@ -127,24 +65,6 @@ struct TypedefDeclNode(NodeAstLike):
 
             start_idx = idx
             section_idx += 1
-
-        # for entry in ast_entry.tokens[:start_idx]:
-        #     if entry == "implicit":
-        #         self._is_implicit = True
-        #     elif entry == "referenced":
-        #         self._is_referenced = True
-        #     elif self._type_name == "":
-        #         self._type_name = entry
-        #     else:
-        #         self._type_aliased = entry
-
-        # for entry in ast_entry.tokens[start_idx:end_idx]:
-        #     if entry == "'":
-        #         pass
-        #     elif self._type_name == "":
-        #         self._type_name = entry
-        #     # else:
-        #     #     self._type_name += " " + entry
     
     fn _parse_section_0(mut self, tokens: List[String]):
         for token in tokens:

@@ -104,7 +104,6 @@ struct ElaboratedTypeNode(NodeAstLike):
             pass
         else:
             self._aliased_record_name = self.get_aliased_record_name(module_interface)
-            print("ElaboratedTypeNode: " + self._aliased_record_name)
             self._node_state = NodeState.COMPLETED
 
     fn get_aliased_record_name(self, module_interface: ModuleInterface) -> String:

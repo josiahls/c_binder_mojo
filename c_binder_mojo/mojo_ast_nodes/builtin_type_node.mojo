@@ -51,7 +51,6 @@ struct BuiltinTypeNode(NodeAstLike):
         section_idx = 0
 
         for idx in quoted_indicies:
-            print("BuiltinTypeNode: section_idx: " + String(section_idx) + " for ast entry: " + String(ast_entry))
             if section_idx == 0:
                 pass
                 # self._parse_section_0(ast_entry.tokens[start_idx:idx])
@@ -186,7 +185,6 @@ struct BuiltinTypeNode(NodeAstLike):
 
 
         var s:String = BuiltinTypeMapper.map_type(self._builtin_type, self._unsigned)
-        # print("BuiltinTypeNode: _builtin_type: " + self._builtin_type + " unsigned: " + String(self._unsigned) + " s: " + s)
         if self._unhandled_tokens != "":
             s += " #" + self.__name__ + " BuiltinTypeNode Unhandled tokens: " + self._unhandled_tokens
 

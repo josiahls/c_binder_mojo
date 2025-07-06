@@ -85,7 +85,6 @@ struct ParmVarDeclNode(NodeAstLike):
         section_idx = 0
         start_idx = 0
         for idx in quoted_indicies:
-            print("ParmVarDeclNode: section_idx: " + String(section_idx) + " for ast entry: " + String(ast_entry))
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
@@ -166,7 +165,6 @@ struct ParmVarDeclNode(NodeAstLike):
 
     fn _parse_section_2(mut self, tokens: List[String]):
         for token in tokens:
-            print("ParmVarDeclNode: _parse_section_2: " + token)
             if token == ":":
                 self._has_sugar_mapping = True
             else:
@@ -306,8 +304,6 @@ struct ParmVarDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
-        # print("ParmVarDeclNode: _parm_var_name: " + self._parm_var_name + " param type: " + self._parm_var_type)
 
         var type_name = TypeMapper.map_type(self._parm_var_type)
 

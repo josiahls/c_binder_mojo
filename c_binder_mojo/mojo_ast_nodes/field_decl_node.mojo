@@ -23,114 +23,6 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.type_mapper import TypeMapper
 
 
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _field_name: String
-    var _field_type: String
-    var _is_const: Bool
-    var _value: String
-
-    fn __init__(out self):
-        self._field_name = String()
-        self._field_type = String()
-        self._is_const = False
-        self._value = String()
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        # TODO(josiahls): Toggle depending on whether this is a const
-        self._field_name = String()
-        self._field_type = String()
-        self._is_const = False
-        self._value = String()
-        # A field should only have 1 entry
-
-        for entry in ast_entries:
-            if entry.ast_name == "FieldDecl":
-                for token in entry.tokens:
-                    if self._field_name == "":
-                        self._field_name = token
-                    elif self._field_type == "":
-                        self._field_type = token
-                    else:
-                        self._field_type += " " + token
-            elif entry.ast_name == "ConstantExpr":
-                self._is_const = True
-            elif entry.ast_name == "value:" and self._is_const:
-                idx = 0
-                for token in entry.tokens:
-                    if idx > 1:
-                        self._value += " " + token
-                    elif idx == 1:
-                        self._value += token
-                    idx += 1
-
-        # Handle struct types
-        if "struct " in self._field_type:
-            # TODO(josiahls): This field generally looks something like struct Inner':'struct Inner'
-            # I'm not sure what the repeated name implies or how it will change. This will break if it does.
-            self._field_type = self._field_type.replace("struct ", "")
-
-            colon_idx = self._field_type.find(":")
-            if colon_idx != -1:
-                self._field_type = self._field_type[:colon_idx][1:-1]
-            else:
-                self._field_type = self._field_type[1:-1]
-        
-        # Handle union types, especially unnamed unions
-        elif "union " in self._field_type:
-            print("unnamed union type: " + self._field_type)
-            # Handle cases like 'union (unnamed union at /path/to/file.h:16:3)':'union __mbstate_t::(unnamed at /path/to/file.h:16:3)'
-            if "(unnamed union at" in self._field_type:
-                # This is an unnamed union, we need to create a synthetic type name
-                # Extract the parent struct name from the type if possible
-                colon_idx = self._field_type.find("\':\'")
-                if colon_idx != -1:
-                    # Try to get the parent struct name from the second part
-                    second_part = self._field_type[colon_idx + 3:]
-
-                    print("second part: " + second_part)
-                    if "::(unnamed at" in second_part:
-                        parent_struct = second_part.split("::")[0].replace("'union ", "").strip()
-                        # Create a synthetic union name based on field name and parent struct
-                        self._field_type = "__" + parent_struct + "_" + self._field_name + "_union"
-                    else:
-                        # Fallback: use field name
-                        self._field_type = "__" + self._field_name + "_union_type"
-                else:
-                    # Fallback: use field name
-                    self._field_type = "__" + self._field_name + "_union_type"
-
-                print("synthetic union type: " + self._field_type)
-            else:
-                # Named union, handle similar to struct
-                self._field_type = self._field_type.replace("union ", "")
-                colon_idx = self._field_type.find(":")
-                if colon_idx != -1:
-                    self._field_type = self._field_type[:colon_idx][1:-1]
-                else:
-                    self._field_type = self._field_type[1:-1]
-
-    fn __str__(self) -> String:
-        var mojo_type = TypeMapper.get_mojo_type(self._field_type)
-        field_name = self._field_name
-        if field_name == "global":
-            field_name = "`global`"
-        if self._is_const:
-            return (
-                "alias "
-                + field_name
-                + ": "
-                + mojo_type
-                + " = "
-                + self._value
-            )
-        else:
-            return "var " + field_name + ": " + mojo_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
 @fieldwise_init
 struct FieldDeclNode(NodeAstLike):
     alias __name__ = "FieldDeclNode"
@@ -171,13 +63,7 @@ struct FieldDeclNode(NodeAstLike):
         var start_idx = 0
         var section_idx = 0
 
-        # print("FieldDeclNode: " + String(ast_entries))
-        # print("FieldDeclNode: quoted_indicies: " + String(',').join(quoted_indicies))
-
         for idx in quoted_indicies:
-            # print("FieldDeclNode: section_idx: " + String(section_idx))
-            # print("FieldDeclNode: start_idx: " + String(start_idx))
-            # print("FieldDeclNode: idx: " + String(idx))
             if section_idx == 0:
                 self.parse_section_0(ast_entries.tokens[:idx])
             elif section_idx == 1:
@@ -188,13 +74,6 @@ struct FieldDeclNode(NodeAstLike):
                 self.parse_section_3(ast_entries.tokens[start_idx + 1:idx])
             section_idx += 1
             start_idx = idx
-        # print("FieldDeclNode: record name: " + self._field_name)
-        # print("FieldDeclNode: field type: " + self._field_type)
-        # print("FieldDeclNode: is const: " + String(self._is_const))
-        # print("FieldDeclNode: is struct: " + String(self._is_struct))
-        # print("FieldDeclNode: is union: " + String(self._is_union))
-        # print("FieldDeclNode: has sugar: " + String(self._has_sugar))
-        # print("FieldDeclNode: value: " + self._value)
 
     fn parse_section_0(mut self, entries: List[String]):
         for entry in entries:

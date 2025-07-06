@@ -125,6 +125,21 @@ struct ConstantExprNode(NodeAstLike):
         else:
             return self.__name__
 
+
+    fn get_constant_expr_type(self, module_interface: ModuleInterface) -> String:
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.get_node(child_idx)
+            if child.node[].isa[ValueNode]():
+                return child.node[][ValueNode]._value_type
+        return self._constant_expr_type
+
+    fn get_constant_expr_value(self, module_interface: ModuleInterface) -> String:
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.get_node(child_idx)
+            if child.node[].isa[ValueNode]():
+                return child.node[][ValueNode]._value
+        return self._constant_expr_value
+
     fn to_string(
         self,
         just_code: Bool,
@@ -132,16 +147,6 @@ struct ConstantExprNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
 
-        var constant_type:String = self._constant_expr_type
-        var constant_value:String = self._constant_expr_value
-
-        for child_idx in self._indicies[].child_idxs:
-            child = module_interface.get_node(child_idx)
-            if child.node[].isa[ValueNode]():
-                constant_value = child.node[][ValueNode]._value
-                constant_type = child.node[][ValueNode]._value_type
-                break
-
         var s: String = ""
-        s += constant_type + " = " + constant_value + "\n"
+        s += self.get_constant_expr_type(module_interface) + " = " + self.get_constant_expr_value(module_interface) + "\n"
         return s

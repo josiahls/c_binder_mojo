@@ -1181,15 +1181,10 @@ alias __scalbl = fn(__x: Float64, __n: Float64) -> Float64
 alias signgam = Int32 # extern
 # Anonymous enum
 alias FP_NAN: Int = 0
-
 alias FP_INFINITE: Int = 1
-
 alias FP_ZERO: Int = 2
-
 alias FP_SUBNORMAL: Int = 3
-
 alias FP_NORMAL: Int = 4
-
 
 
 alias ptrdiff_t = Int64
@@ -1253,387 +1248,334 @@ alias mjtNum = Float64
 alias mjtByte = UInt8
 #-------------------------------------- byte definition -------------------------------------------
 
-struct mjtDisableBit_:
+struct mjtDisableBit_: # Enum
 
 	#---------------------------------- enum types (mjt) ----------------------------------------------
 	alias mjDSBL_CONSTRAINT: Int = 1
-
 	alias mjDSBL_EQUALITY: Int = 2
-
 	alias mjDSBL_FRICTIONLOSS: Int = 4
-
 	alias mjDSBL_LIMIT: Int = 8
-
 	alias mjDSBL_CONTACT: Int = 16
-
 	alias mjDSBL_PASSIVE: Int = 32
-
 	alias mjDSBL_GRAVITY: Int = 64
-
 	alias mjDSBL_CLAMPCTRL: Int = 128
-
 	alias mjDSBL_WARMSTART: Int = 256
-
 	alias mjDSBL_FILTERPARENT: Int = 512
-
 	alias mjDSBL_ACTUATION: Int = 1024
-
 	alias mjDSBL_REFSAFE: Int = 2048
-
 	alias mjDSBL_SENSOR: Int = 4096
-
 	alias mjDSBL_MIDPHASE: Int = 8192
-
 	alias mjDSBL_EULERDAMP: Int = 16384
-
 	alias mjDSBL_AUTORESET: Int = 32768
-
 	alias mjDSBL_NATIVECCD: Int = 65536
-
-	alias referenced: Int = 17
-
+	alias mjNDISABLE: Int = 17
 
 
 alias mjtDisableBit = mjtDisableBit_
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
-struct mjtEnableBit_:
+struct mjtEnableBit_: # Enum
 	alias mjENBL_OVERRIDE: Int = 1
-
 	alias mjENBL_ENERGY: Int = 2
-
 	alias mjENBL_FWDINV: Int = 4
-
 	alias mjENBL_INVDISCRETE: Int = 8
-
 	alias mjENBL_MULTICCD: Int = 16
-
 	alias mjENBL_ISLAND: Int = 32
-
-	alias referenced: Int = 6
-
+	alias mjNENABLE: Int = 6
 
 
 alias mjtEnableBit = mjtEnableBit_
-struct mjtJoint_:
+struct mjtJoint_: # Enum
 	alias mjJNT_FREE: Int = 0
-
-	alias mjJNT_BALL: 
-	alias mjJNT_SLIDE: 
-	alias mjJNT_HINGE: 
+	alias mjJNT_BALL:  = 0
+	alias mjJNT_SLIDE:  = 1
+	alias mjJNT_HINGE:  = 2
 
 
 alias mjtJoint = mjtJoint_
-struct mjtGeom_:
+struct mjtGeom_: # Enum
 	alias mjGEOM_PLANE: Int = 0
-
-	alias mjGEOM_HFIELD: 
-	alias mjGEOM_SPHERE: 
-	alias mjGEOM_CAPSULE: 
-	alias mjGEOM_ELLIPSOID: 
-	alias mjGEOM_CYLINDER: 
-	alias mjGEOM_BOX: 
-	alias mjGEOM_MESH: 
-	alias mjGEOM_SDF: 
-	alias referenced: 
+	alias mjGEOM_HFIELD:  = 0
+	alias mjGEOM_SPHERE:  = 1
+	alias mjGEOM_CAPSULE:  = 2
+	alias mjGEOM_ELLIPSOID:  = 3
+	alias mjGEOM_CYLINDER:  = 4
+	alias mjGEOM_BOX:  = 5
+	alias mjGEOM_MESH:  = 6
+	alias mjGEOM_SDF:  = 7
+	alias mjNGEOMTYPES:  = 8
 	alias mjGEOM_ARROW: Int = 100
-
-	alias mjGEOM_ARROW1: 
-	alias mjGEOM_ARROW2: 
-	alias mjGEOM_LINE: 
-	alias mjGEOM_LINEBOX: 
-	alias mjGEOM_FLEX: 
-	alias mjGEOM_SKIN: 
-	alias mjGEOM_LABEL: 
-	alias mjGEOM_TRIANGLE: 
+	alias mjGEOM_ARROW1:  = 100
+	alias mjGEOM_ARROW2:  = 101
+	alias mjGEOM_LINE:  = 102
+	alias mjGEOM_LINEBOX:  = 103
+	alias mjGEOM_FLEX:  = 104
+	alias mjGEOM_SKIN:  = 105
+	alias mjGEOM_LABEL:  = 106
+	alias mjGEOM_TRIANGLE:  = 107
 	alias mjGEOM_NONE: Int = 1001
 
 
-
 alias mjtGeom = mjtGeom_
-struct mjtCamLight_:
+struct mjtCamLight_: # Enum
 	alias mjCAMLIGHT_FIXED: Int = 0
-
-	alias mjCAMLIGHT_TRACK: 
-	alias mjCAMLIGHT_TRACKCOM: 
-	alias mjCAMLIGHT_TARGETBODY: 
-	alias mjCAMLIGHT_TARGETBODYCOM: 
+	alias mjCAMLIGHT_TRACK:  = 0
+	alias mjCAMLIGHT_TRACKCOM:  = 1
+	alias mjCAMLIGHT_TARGETBODY:  = 2
+	alias mjCAMLIGHT_TARGETBODYCOM:  = 3
 
 
 alias mjtCamLight = mjtCamLight_
-struct mjtTexture_:
+struct mjtTexture_: # Enum
 	alias mjTEXTURE_2D: Int = 0
-
-	alias mjTEXTURE_CUBE: 
-	alias mjTEXTURE_SKYBOX: 
+	alias mjTEXTURE_CUBE:  = 0
+	alias mjTEXTURE_SKYBOX:  = 1
 
 
 alias mjtTexture = mjtTexture_
-struct mjtTextureRole_:
+struct mjtTextureRole_: # Enum
 	alias mjTEXROLE_USER: Int = 0
-
-	alias mjTEXROLE_RGB: 
-	alias mjTEXROLE_OCCLUSION: 
-	alias mjTEXROLE_ROUGHNESS: 
-	alias mjTEXROLE_METALLIC: 
-	alias mjTEXROLE_NORMAL: 
-	alias mjTEXROLE_OPACITY: 
-	alias mjTEXROLE_EMISSIVE: 
-	alias mjTEXROLE_RGBA: 
-	alias mjTEXROLE_ORM: 
-	alias referenced: 
+	alias mjTEXROLE_RGB:  = 0
+	alias mjTEXROLE_OCCLUSION:  = 1
+	alias mjTEXROLE_ROUGHNESS:  = 2
+	alias mjTEXROLE_METALLIC:  = 3
+	alias mjTEXROLE_NORMAL:  = 4
+	alias mjTEXROLE_OPACITY:  = 5
+	alias mjTEXROLE_EMISSIVE:  = 6
+	alias mjTEXROLE_RGBA:  = 7
+	alias mjTEXROLE_ORM:  = 8
+	alias mjNTEXROLE:  = 9
 
 
 alias mjtTextureRole = mjtTextureRole_
-struct mjtIntegrator_:
+struct mjtIntegrator_: # Enum
 	alias mjINT_EULER: Int = 0
-
-	alias mjINT_RK4: 
-	alias mjINT_IMPLICIT: 
-	alias mjINT_IMPLICITFAST: 
+	alias mjINT_RK4:  = 0
+	alias mjINT_IMPLICIT:  = 1
+	alias mjINT_IMPLICITFAST:  = 2
 
 
 alias mjtIntegrator = mjtIntegrator_
-struct mjtCone_:
+struct mjtCone_: # Enum
 	alias mjCONE_PYRAMIDAL: Int = 0
-
-	alias mjCONE_ELLIPTIC: 
+	alias mjCONE_ELLIPTIC:  = 0
 
 
 alias mjtCone = mjtCone_
-struct mjtJacobian_:
+struct mjtJacobian_: # Enum
 	alias mjJAC_DENSE: Int = 0
-
-	alias mjJAC_SPARSE: 
-	alias mjJAC_AUTO: 
+	alias mjJAC_SPARSE:  = 0
+	alias mjJAC_AUTO:  = 1
 
 
 alias mjtJacobian = mjtJacobian_
-struct mjtSolver_:
+struct mjtSolver_: # Enum
 	alias mjSOL_PGS: Int = 0
-
-	alias mjSOL_CG: 
-	alias mjSOL_NEWTON: 
+	alias mjSOL_CG:  = 0
+	alias mjSOL_NEWTON:  = 1
 
 
 alias mjtSolver = mjtSolver_
-struct mjtEq_:
+struct mjtEq_: # Enum
 	alias mjEQ_CONNECT: Int = 0
-
-	alias mjEQ_WELD: 
-	alias mjEQ_JOINT: 
-	alias mjEQ_TENDON: 
-	alias mjEQ_FLEX: 
-	alias mjEQ_DISTANCE: 
+	alias mjEQ_WELD:  = 0
+	alias mjEQ_JOINT:  = 1
+	alias mjEQ_TENDON:  = 2
+	alias mjEQ_FLEX:  = 3
+	alias mjEQ_DISTANCE:  = 4
 
 
 alias mjtEq = mjtEq_
-struct mjtWrap_:
+struct mjtWrap_: # Enum
 	alias mjWRAP_NONE: Int = 0
-
-	alias mjWRAP_JOINT: 
-	alias mjWRAP_PULLEY: 
-	alias mjWRAP_SITE: 
-	alias mjWRAP_SPHERE: 
-	alias mjWRAP_CYLINDER: 
+	alias mjWRAP_JOINT:  = 0
+	alias mjWRAP_PULLEY:  = 1
+	alias mjWRAP_SITE:  = 2
+	alias mjWRAP_SPHERE:  = 3
+	alias mjWRAP_CYLINDER:  = 4
 
 
 alias mjtWrap = mjtWrap_
-struct mjtTrn_:
+struct mjtTrn_: # Enum
 	alias mjTRN_JOINT: Int = 0
-
-	alias mjTRN_JOINTINPARENT: 
-	alias mjTRN_SLIDERCRANK: 
-	alias mjTRN_TENDON: 
-	alias mjTRN_SITE: 
-	alias mjTRN_BODY: 
+	alias mjTRN_JOINTINPARENT:  = 0
+	alias mjTRN_SLIDERCRANK:  = 1
+	alias mjTRN_TENDON:  = 2
+	alias mjTRN_SITE:  = 3
+	alias mjTRN_BODY:  = 4
 	alias mjTRN_UNDEFINED: Int = 1000
 
 
-
 alias mjtTrn = mjtTrn_
-struct mjtDyn_:
+struct mjtDyn_: # Enum
 	alias mjDYN_NONE: Int = 0
-
-	alias mjDYN_INTEGRATOR: 
-	alias mjDYN_FILTER: 
-	alias mjDYN_FILTEREXACT: 
-	alias mjDYN_MUSCLE: 
-	alias mjDYN_USER: 
+	alias mjDYN_INTEGRATOR:  = 0
+	alias mjDYN_FILTER:  = 1
+	alias mjDYN_FILTEREXACT:  = 2
+	alias mjDYN_MUSCLE:  = 3
+	alias mjDYN_USER:  = 4
 
 
 alias mjtDyn = mjtDyn_
-struct mjtGain_:
+struct mjtGain_: # Enum
 	alias mjGAIN_FIXED: Int = 0
-
-	alias mjGAIN_AFFINE: 
-	alias mjGAIN_MUSCLE: 
-	alias mjGAIN_USER: 
+	alias mjGAIN_AFFINE:  = 0
+	alias mjGAIN_MUSCLE:  = 1
+	alias mjGAIN_USER:  = 2
 
 
 alias mjtGain = mjtGain_
-struct mjtBias_:
+struct mjtBias_: # Enum
 	alias mjBIAS_NONE: Int = 0
-
-	alias mjBIAS_AFFINE: 
-	alias mjBIAS_MUSCLE: 
-	alias mjBIAS_USER: 
+	alias mjBIAS_AFFINE:  = 0
+	alias mjBIAS_MUSCLE:  = 1
+	alias mjBIAS_USER:  = 2
 
 
 alias mjtBias = mjtBias_
-struct mjtObj_:
+struct mjtObj_: # Enum
 	alias mjOBJ_UNKNOWN: Int = 0
-
-	alias mjOBJ_BODY: 
-	alias mjOBJ_XBODY: 
-	alias mjOBJ_JOINT: 
-	alias mjOBJ_DOF: 
-	alias mjOBJ_GEOM: 
-	alias mjOBJ_SITE: 
-	alias mjOBJ_CAMERA: 
-	alias mjOBJ_LIGHT: 
-	alias mjOBJ_FLEX: 
-	alias mjOBJ_MESH: 
-	alias mjOBJ_SKIN: 
-	alias mjOBJ_HFIELD: 
-	alias mjOBJ_TEXTURE: 
-	alias mjOBJ_MATERIAL: 
-	alias mjOBJ_PAIR: 
-	alias mjOBJ_EXCLUDE: 
-	alias mjOBJ_EQUALITY: 
-	alias mjOBJ_TENDON: 
-	alias mjOBJ_ACTUATOR: 
-	alias mjOBJ_SENSOR: 
-	alias mjOBJ_NUMERIC: 
-	alias mjOBJ_TEXT: 
-	alias mjOBJ_TUPLE: 
-	alias mjOBJ_KEY: 
-	alias mjOBJ_PLUGIN: 
-	alias mjNOBJECT: 
+	alias mjOBJ_BODY:  = 0
+	alias mjOBJ_XBODY:  = 1
+	alias mjOBJ_JOINT:  = 2
+	alias mjOBJ_DOF:  = 3
+	alias mjOBJ_GEOM:  = 4
+	alias mjOBJ_SITE:  = 5
+	alias mjOBJ_CAMERA:  = 6
+	alias mjOBJ_LIGHT:  = 7
+	alias mjOBJ_FLEX:  = 8
+	alias mjOBJ_MESH:  = 9
+	alias mjOBJ_SKIN:  = 10
+	alias mjOBJ_HFIELD:  = 11
+	alias mjOBJ_TEXTURE:  = 12
+	alias mjOBJ_MATERIAL:  = 13
+	alias mjOBJ_PAIR:  = 14
+	alias mjOBJ_EXCLUDE:  = 15
+	alias mjOBJ_EQUALITY:  = 16
+	alias mjOBJ_TENDON:  = 17
+	alias mjOBJ_ACTUATOR:  = 18
+	alias mjOBJ_SENSOR:  = 19
+	alias mjOBJ_NUMERIC:  = 20
+	alias mjOBJ_TEXT:  = 21
+	alias mjOBJ_TUPLE:  = 22
+	alias mjOBJ_KEY:  = 23
+	alias mjOBJ_PLUGIN:  = 24
+	alias mjNOBJECT:  = 25
 	alias mjOBJ_FRAME: Int = 100
-
-	alias mjOBJ_DEFAULT: 
-	alias mjOBJ_MODEL: 
+	alias mjOBJ_DEFAULT:  = 100
+	alias mjOBJ_MODEL:  = 101
 
 
 alias mjtObj = mjtObj_
-struct mjtConstraint_:
+struct mjtConstraint_: # Enum
 	alias mjCNSTR_EQUALITY: Int = 0
-
-	alias mjCNSTR_FRICTION_DOF: 
-	alias mjCNSTR_FRICTION_TENDON: 
-	alias mjCNSTR_LIMIT_JOINT: 
-	alias mjCNSTR_LIMIT_TENDON: 
-	alias mjCNSTR_CONTACT_FRICTIONLESS: 
-	alias mjCNSTR_CONTACT_PYRAMIDAL: 
-	alias mjCNSTR_CONTACT_ELLIPTIC: 
+	alias mjCNSTR_FRICTION_DOF:  = 0
+	alias mjCNSTR_FRICTION_TENDON:  = 1
+	alias mjCNSTR_LIMIT_JOINT:  = 2
+	alias mjCNSTR_LIMIT_TENDON:  = 3
+	alias mjCNSTR_CONTACT_FRICTIONLESS:  = 4
+	alias mjCNSTR_CONTACT_PYRAMIDAL:  = 5
+	alias mjCNSTR_CONTACT_ELLIPTIC:  = 6
 
 
 alias mjtConstraint = mjtConstraint_
-struct mjtConstraintState_:
+struct mjtConstraintState_: # Enum
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
-
-	alias mjCNSTRSTATE_QUADRATIC: 
-	alias mjCNSTRSTATE_LINEARNEG: 
-	alias mjCNSTRSTATE_LINEARPOS: 
-	alias mjCNSTRSTATE_CONE: 
+	alias mjCNSTRSTATE_QUADRATIC:  = 0
+	alias mjCNSTRSTATE_LINEARNEG:  = 1
+	alias mjCNSTRSTATE_LINEARPOS:  = 2
+	alias mjCNSTRSTATE_CONE:  = 3
 
 
 alias mjtConstraintState = mjtConstraintState_
-struct mjtSensor_:
+struct mjtSensor_: # Enum
 	alias mjSENS_TOUCH: Int = 0
-
-	alias mjSENS_ACCELEROMETER: 
-	alias mjSENS_VELOCIMETER: 
-	alias mjSENS_GYRO: 
-	alias mjSENS_FORCE: 
-	alias mjSENS_TORQUE: 
-	alias mjSENS_MAGNETOMETER: 
-	alias mjSENS_RANGEFINDER: 
-	alias mjSENS_CAMPROJECTION: 
-	alias mjSENS_JOINTPOS: 
-	alias mjSENS_JOINTVEL: 
-	alias mjSENS_TENDONPOS: 
-	alias mjSENS_TENDONVEL: 
-	alias mjSENS_ACTUATORPOS: 
-	alias mjSENS_ACTUATORVEL: 
-	alias mjSENS_ACTUATORFRC: 
-	alias mjSENS_JOINTACTFRC: 
-	alias mjSENS_BALLQUAT: 
-	alias mjSENS_BALLANGVEL: 
-	alias mjSENS_JOINTLIMITPOS: 
-	alias mjSENS_JOINTLIMITVEL: 
-	alias mjSENS_JOINTLIMITFRC: 
-	alias mjSENS_TENDONLIMITPOS: 
-	alias mjSENS_TENDONLIMITVEL: 
-	alias mjSENS_TENDONLIMITFRC: 
-	alias mjSENS_FRAMEPOS: 
-	alias mjSENS_FRAMEQUAT: 
-	alias mjSENS_FRAMEXAXIS: 
-	alias mjSENS_FRAMEYAXIS: 
-	alias mjSENS_FRAMEZAXIS: 
-	alias mjSENS_FRAMELINVEL: 
-	alias mjSENS_FRAMEANGVEL: 
-	alias mjSENS_FRAMELINACC: 
-	alias mjSENS_FRAMEANGACC: 
-	alias mjSENS_SUBTREECOM: 
-	alias mjSENS_SUBTREELINVEL: 
-	alias mjSENS_SUBTREEANGMOM: 
-	alias mjSENS_GEOMDIST: 
-	alias mjSENS_GEOMNORMAL: 
-	alias mjSENS_GEOMFROMTO: 
-	alias mjSENS_E_POTENTIAL: 
-	alias mjSENS_E_KINETIC: 
-	alias mjSENS_CLOCK: 
-	alias mjSENS_PLUGIN: 
-	alias mjSENS_USER: 
+	alias mjSENS_ACCELEROMETER:  = 0
+	alias mjSENS_VELOCIMETER:  = 1
+	alias mjSENS_GYRO:  = 2
+	alias mjSENS_FORCE:  = 3
+	alias mjSENS_TORQUE:  = 4
+	alias mjSENS_MAGNETOMETER:  = 5
+	alias mjSENS_RANGEFINDER:  = 6
+	alias mjSENS_CAMPROJECTION:  = 7
+	alias mjSENS_JOINTPOS:  = 8
+	alias mjSENS_JOINTVEL:  = 9
+	alias mjSENS_TENDONPOS:  = 10
+	alias mjSENS_TENDONVEL:  = 11
+	alias mjSENS_ACTUATORPOS:  = 12
+	alias mjSENS_ACTUATORVEL:  = 13
+	alias mjSENS_ACTUATORFRC:  = 14
+	alias mjSENS_JOINTACTFRC:  = 15
+	alias mjSENS_BALLQUAT:  = 16
+	alias mjSENS_BALLANGVEL:  = 17
+	alias mjSENS_JOINTLIMITPOS:  = 18
+	alias mjSENS_JOINTLIMITVEL:  = 19
+	alias mjSENS_JOINTLIMITFRC:  = 20
+	alias mjSENS_TENDONLIMITPOS:  = 21
+	alias mjSENS_TENDONLIMITVEL:  = 22
+	alias mjSENS_TENDONLIMITFRC:  = 23
+	alias mjSENS_FRAMEPOS:  = 24
+	alias mjSENS_FRAMEQUAT:  = 25
+	alias mjSENS_FRAMEXAXIS:  = 26
+	alias mjSENS_FRAMEYAXIS:  = 27
+	alias mjSENS_FRAMEZAXIS:  = 28
+	alias mjSENS_FRAMELINVEL:  = 29
+	alias mjSENS_FRAMEANGVEL:  = 30
+	alias mjSENS_FRAMELINACC:  = 31
+	alias mjSENS_FRAMEANGACC:  = 32
+	alias mjSENS_SUBTREECOM:  = 33
+	alias mjSENS_SUBTREELINVEL:  = 34
+	alias mjSENS_SUBTREEANGMOM:  = 35
+	alias mjSENS_GEOMDIST:  = 36
+	alias mjSENS_GEOMNORMAL:  = 37
+	alias mjSENS_GEOMFROMTO:  = 38
+	alias mjSENS_E_POTENTIAL:  = 39
+	alias mjSENS_E_KINETIC:  = 40
+	alias mjSENS_CLOCK:  = 41
+	alias mjSENS_PLUGIN:  = 42
+	alias mjSENS_USER:  = 43
 
 
 alias mjtSensor = mjtSensor_
-struct mjtStage_:
+struct mjtStage_: # Enum
 	alias mjSTAGE_NONE: Int = 0
-
-	alias mjSTAGE_POS: 
-	alias mjSTAGE_VEL: 
-	alias mjSTAGE_ACC: 
+	alias mjSTAGE_POS:  = 0
+	alias mjSTAGE_VEL:  = 1
+	alias mjSTAGE_ACC:  = 2
 
 
 alias mjtStage = mjtStage_
-struct mjtDataType_:
+struct mjtDataType_: # Enum
 	alias mjDATATYPE_REAL: Int = 0
-
-	alias mjDATATYPE_POSITIVE: 
-	alias mjDATATYPE_AXIS: 
-	alias mjDATATYPE_QUATERNION: 
+	alias mjDATATYPE_POSITIVE:  = 0
+	alias mjDATATYPE_AXIS:  = 1
+	alias mjDATATYPE_QUATERNION:  = 2
 
 
 alias mjtDataType = mjtDataType_
-struct mjtSameFrame_:
+struct mjtSameFrame_: # Enum
 	alias mjSAMEFRAME_NONE: Int = 0
-
-	alias mjSAMEFRAME_BODY: 
-	alias mjSAMEFRAME_INERTIA: 
-	alias mjSAMEFRAME_BODYROT: 
-	alias mjSAMEFRAME_INERTIAROT: 
+	alias mjSAMEFRAME_BODY:  = 0
+	alias mjSAMEFRAME_INERTIA:  = 1
+	alias mjSAMEFRAME_BODYROT:  = 2
+	alias mjSAMEFRAME_INERTIAROT:  = 3
 
 
 alias mjtSameFrame = mjtSameFrame_
-struct mjtLRMode_:
+struct mjtLRMode_: # Enum
 	alias mjLRMODE_NONE: Int = 0
-
-	alias mjLRMODE_MUSCLE: 
-	alias mjLRMODE_MUSCLEUSER: 
-	alias mjLRMODE_ALL: 
+	alias mjLRMODE_MUSCLE:  = 0
+	alias mjLRMODE_MUSCLEUSER:  = 1
+	alias mjLRMODE_ALL:  = 2
 
 
 alias mjtLRMode = mjtLRMode_
-struct mjtFlexSelf_:
+struct mjtFlexSelf_: # Enum
 	alias mjFLEXSELF_NONE: Int = 0
-
-	alias mjFLEXSELF_NARROW: 
-	alias mjFLEXSELF_BVH: 
-	alias mjFLEXSELF_SAP: 
-	alias mjFLEXSELF_AUTO: 
+	alias mjFLEXSELF_NARROW:  = 0
+	alias mjFLEXSELF_BVH:  = 1
+	alias mjFLEXSELF_SAP:  = 2
+	alias mjFLEXSELF_AUTO:  = 3
 
 
 alias mjtFlexSelf = mjtFlexSelf_
@@ -2296,11 +2238,10 @@ struct mjModel_:
 
 
 alias mjModel = mjModel_
-struct mjtTaskStatus_:
+struct mjtTaskStatus_: # Enum
 	alias mjTASK_NEW: Int = 0
-
-	alias mjTASK_QUEUED: 
-	alias mjTASK_COMPLETED: 
+	alias mjTASK_QUEUED:  = 0
+	alias mjTASK_COMPLETED:  = 1
 
 
 alias mjtTaskStatus = mjtTaskStatus_
@@ -2320,82 +2261,62 @@ struct mjTask_:
 
 
 alias mjTask = mjTask_
-struct mjtState_:
+struct mjtState_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
-	alias referenced: Int = 1
-
-	alias referenced: Int = 2
-
-	alias referenced: Int = 4
-
-	alias referenced: Int = 8
-
-	alias referenced: Int = 16
-
-	alias referenced: Int = 32
-
-	alias referenced: Int = 64
-
-	alias referenced: Int = 128
-
-	alias referenced: Int = 256
-
-	alias referenced: Int = 512
-
-	alias referenced: Int = 1024
-
-	alias referenced: Int = 2048
-
-	alias referenced: Int = 4096
-
+	alias mjSTATE_TIME: Int = 1
+	alias mjSTATE_QPOS: Int = 2
+	alias mjSTATE_QVEL: Int = 4
+	alias mjSTATE_ACT: Int = 8
+	alias mjSTATE_WARMSTART: Int = 16
+	alias mjSTATE_CTRL: Int = 32
+	alias mjSTATE_QFRC_APPLIED: Int = 64
+	alias mjSTATE_XFRC_APPLIED: Int = 128
+	alias mjSTATE_EQ_ACTIVE: Int = 256
+	alias mjSTATE_MOCAP_POS: Int = 512
+	alias mjSTATE_MOCAP_QUAT: Int = 1024
+	alias mjSTATE_USERDATA: Int = 2048
+	alias mjSTATE_PLUGIN: Int = 4096
 	alias mjNSTATE: Int = 13
-
-	alias referenced: Int = 14
-
-	alias referenced: Int = 4111
-
-	alias referenced: Int = 4064
-
+	alias mjSTATE_PHYSICS: Int = 14
+	alias mjSTATE_FULLPHYSICS: Int = 4111
+	alias mjSTATE_USER: Int = 4064
 	alias mjSTATE_INTEGRATION: Int = 8191
-
 
 
 alias mjtState = mjtState_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtWarning_:
+struct mjtWarning_: # Enum
 	alias mjWARN_INERTIA: Int = 0
-
-	alias mjWARN_CONTACTFULL: 
-	alias mjWARN_CNSTRFULL: 
-	alias mjWARN_VGEOMFULL: 
-	alias mjWARN_BADQPOS: 
-	alias mjWARN_BADQVEL: 
-	alias mjWARN_BADQACC: 
-	alias mjWARN_BADCTRL: 
-	alias referenced: 
+	alias mjWARN_CONTACTFULL:  = 0
+	alias mjWARN_CNSTRFULL:  = 1
+	alias mjWARN_VGEOMFULL:  = 2
+	alias mjWARN_BADQPOS:  = 3
+	alias mjWARN_BADQVEL:  = 4
+	alias mjWARN_BADQACC:  = 5
+	alias mjWARN_BADCTRL:  = 6
+	alias mjNWARNING:  = 7
 
 
 alias mjtWarning = mjtWarning_
-struct mjtTimer_:
+struct mjtTimer_: # Enum
 	alias mjTIMER_STEP: Int = 0
-
-	alias mjTIMER_FORWARD: 
-	alias mjTIMER_INVERSE: 
-	alias mjTIMER_POSITION: 
-	alias mjTIMER_VELOCITY: 
-	alias mjTIMER_ACTUATION: 
-	alias mjTIMER_CONSTRAINT: 
-	alias mjTIMER_ADVANCE: 
-	alias mjTIMER_POS_KINEMATICS: 
-	alias mjTIMER_POS_INERTIA: 
-	alias mjTIMER_POS_COLLISION: 
-	alias mjTIMER_POS_MAKE: 
-	alias mjTIMER_POS_PROJECT: 
-	alias mjTIMER_COL_BROAD: 
-	alias mjTIMER_COL_NARROW: 
-	alias referenced: 
+	alias mjTIMER_FORWARD:  = 0
+	alias mjTIMER_INVERSE:  = 1
+	alias mjTIMER_POSITION:  = 2
+	alias mjTIMER_VELOCITY:  = 3
+	alias mjTIMER_ACTUATION:  = 4
+	alias mjTIMER_CONSTRAINT:  = 5
+	alias mjTIMER_ADVANCE:  = 6
+	alias mjTIMER_POS_KINEMATICS:  = 7
+	alias mjTIMER_POS_INERTIA:  = 8
+	alias mjTIMER_POS_COLLISION:  = 9
+	alias mjTIMER_POS_MAKE:  = 10
+	alias mjTIMER_POS_PROJECT:  = 11
+	alias mjTIMER_COL_BROAD:  = 12
+	alias mjTIMER_COL_NARROW:  = 13
+	alias mjNTIMER:  = 14
 
 
 alias mjtTimer = mjtTimer_
@@ -2652,147 +2573,134 @@ alias mjfCollision = fn(
 FunctionProtoTypeNode: Unknown child type: TypedefTypeNodeUnsafePointer[mjModel],UnsafePointer[mjData],UnsafePointer[mjContact],Int32,Int32) -> Int32
 # collision detection
 
-struct mjtCatBit_:
+struct mjtCatBit_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjCAT_STATIC: Int = 1
-
 	alias mjCAT_DYNAMIC: Int = 2
-
 	alias mjCAT_DECOR: Int = 4
-
 	alias mjCAT_ALL: Int = 7
-
 
 
 alias mjtCatBit = mjtCatBit_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtMouse_:
+struct mjtMouse_: # Enum
 	alias mjMOUSE_NONE: Int = 0
-
-	alias mjMOUSE_ROTATE_V: 
-	alias mjMOUSE_ROTATE_H: 
-	alias mjMOUSE_MOVE_V: 
-	alias mjMOUSE_MOVE_H: 
-	alias mjMOUSE_ZOOM: 
-	alias mjMOUSE_SELECT: 
+	alias mjMOUSE_ROTATE_V:  = 0
+	alias mjMOUSE_ROTATE_H:  = 1
+	alias mjMOUSE_MOVE_V:  = 2
+	alias mjMOUSE_MOVE_H:  = 3
+	alias mjMOUSE_ZOOM:  = 4
+	alias mjMOUSE_SELECT:  = 5
 
 
 alias mjtMouse = mjtMouse_
-struct mjtPertBit_:
+struct mjtPertBit_: # Enum
 	alias mjPERT_TRANSLATE: Int = 1
-
 	alias mjPERT_ROTATE: Int = 2
 
 
-
 alias mjtPertBit = mjtPertBit_
-struct mjtCamera_:
+struct mjtCamera_: # Enum
 	alias mjCAMERA_FREE: Int = 0
-
-	alias mjCAMERA_TRACKING: 
-	alias mjCAMERA_FIXED: 
-	alias mjCAMERA_USER: 
+	alias mjCAMERA_TRACKING:  = 0
+	alias mjCAMERA_FIXED:  = 1
+	alias mjCAMERA_USER:  = 2
 
 
 alias mjtCamera = mjtCamera_
-struct mjtLabel_:
+struct mjtLabel_: # Enum
 	alias mjLABEL_NONE: Int = 0
-
-	alias mjLABEL_BODY: 
-	alias mjLABEL_JOINT: 
-	alias mjLABEL_GEOM: 
-	alias mjLABEL_SITE: 
-	alias mjLABEL_CAMERA: 
-	alias mjLABEL_LIGHT: 
-	alias mjLABEL_TENDON: 
-	alias mjLABEL_ACTUATOR: 
-	alias mjLABEL_CONSTRAINT: 
-	alias mjLABEL_FLEX: 
-	alias mjLABEL_SKIN: 
-	alias mjLABEL_SELECTION: 
-	alias mjLABEL_SELPNT: 
-	alias mjLABEL_CONTACTPOINT: 
-	alias mjLABEL_CONTACTFORCE: 
-	alias mjLABEL_ISLAND: 
-	alias referenced: 
+	alias mjLABEL_BODY:  = 0
+	alias mjLABEL_JOINT:  = 1
+	alias mjLABEL_GEOM:  = 2
+	alias mjLABEL_SITE:  = 3
+	alias mjLABEL_CAMERA:  = 4
+	alias mjLABEL_LIGHT:  = 5
+	alias mjLABEL_TENDON:  = 6
+	alias mjLABEL_ACTUATOR:  = 7
+	alias mjLABEL_CONSTRAINT:  = 8
+	alias mjLABEL_FLEX:  = 9
+	alias mjLABEL_SKIN:  = 10
+	alias mjLABEL_SELECTION:  = 11
+	alias mjLABEL_SELPNT:  = 12
+	alias mjLABEL_CONTACTPOINT:  = 13
+	alias mjLABEL_CONTACTFORCE:  = 14
+	alias mjLABEL_ISLAND:  = 15
+	alias mjNLABEL:  = 16
 
 
 alias mjtLabel = mjtLabel_
-struct mjtFrame_:
+struct mjtFrame_: # Enum
 	alias mjFRAME_NONE: Int = 0
-
-	alias mjFRAME_BODY: 
-	alias mjFRAME_GEOM: 
-	alias mjFRAME_SITE: 
-	alias mjFRAME_CAMERA: 
-	alias mjFRAME_LIGHT: 
-	alias mjFRAME_CONTACT: 
-	alias mjFRAME_WORLD: 
-	alias referenced: 
+	alias mjFRAME_BODY:  = 0
+	alias mjFRAME_GEOM:  = 1
+	alias mjFRAME_SITE:  = 2
+	alias mjFRAME_CAMERA:  = 3
+	alias mjFRAME_LIGHT:  = 4
+	alias mjFRAME_CONTACT:  = 5
+	alias mjFRAME_WORLD:  = 6
+	alias mjNFRAME:  = 7
 
 
 alias mjtFrame = mjtFrame_
-struct mjtVisFlag_:
+struct mjtVisFlag_: # Enum
 	alias mjVIS_CONVEXHULL: Int = 0
-
-	alias mjVIS_TEXTURE: 
-	alias mjVIS_JOINT: 
-	alias mjVIS_CAMERA: 
-	alias mjVIS_ACTUATOR: 
-	alias mjVIS_ACTIVATION: 
-	alias mjVIS_LIGHT: 
-	alias mjVIS_TENDON: 
-	alias mjVIS_RANGEFINDER: 
-	alias mjVIS_CONSTRAINT: 
-	alias mjVIS_INERTIA: 
-	alias mjVIS_SCLINERTIA: 
-	alias mjVIS_PERTFORCE: 
-	alias mjVIS_PERTOBJ: 
-	alias mjVIS_CONTACTPOINT: 
-	alias mjVIS_ISLAND: 
-	alias mjVIS_CONTACTFORCE: 
-	alias mjVIS_CONTACTSPLIT: 
-	alias mjVIS_TRANSPARENT: 
-	alias mjVIS_AUTOCONNECT: 
-	alias mjVIS_COM: 
-	alias mjVIS_SELECT: 
-	alias mjVIS_STATIC: 
-	alias mjVIS_SKIN: 
-	alias mjVIS_FLEXVERT: 
-	alias mjVIS_FLEXEDGE: 
-	alias mjVIS_FLEXFACE: 
-	alias mjVIS_FLEXSKIN: 
-	alias mjVIS_BODYBVH: 
-	alias mjVIS_FLEXBVH: 
-	alias mjVIS_MESHBVH: 
-	alias mjVIS_SDFITER: 
-	alias referenced: 
+	alias mjVIS_TEXTURE:  = 0
+	alias mjVIS_JOINT:  = 1
+	alias mjVIS_CAMERA:  = 2
+	alias mjVIS_ACTUATOR:  = 3
+	alias mjVIS_ACTIVATION:  = 4
+	alias mjVIS_LIGHT:  = 5
+	alias mjVIS_TENDON:  = 6
+	alias mjVIS_RANGEFINDER:  = 7
+	alias mjVIS_CONSTRAINT:  = 8
+	alias mjVIS_INERTIA:  = 9
+	alias mjVIS_SCLINERTIA:  = 10
+	alias mjVIS_PERTFORCE:  = 11
+	alias mjVIS_PERTOBJ:  = 12
+	alias mjVIS_CONTACTPOINT:  = 13
+	alias mjVIS_ISLAND:  = 14
+	alias mjVIS_CONTACTFORCE:  = 15
+	alias mjVIS_CONTACTSPLIT:  = 16
+	alias mjVIS_TRANSPARENT:  = 17
+	alias mjVIS_AUTOCONNECT:  = 18
+	alias mjVIS_COM:  = 19
+	alias mjVIS_SELECT:  = 20
+	alias mjVIS_STATIC:  = 21
+	alias mjVIS_SKIN:  = 22
+	alias mjVIS_FLEXVERT:  = 23
+	alias mjVIS_FLEXEDGE:  = 24
+	alias mjVIS_FLEXFACE:  = 25
+	alias mjVIS_FLEXSKIN:  = 26
+	alias mjVIS_BODYBVH:  = 27
+	alias mjVIS_FLEXBVH:  = 28
+	alias mjVIS_MESHBVH:  = 29
+	alias mjVIS_SDFITER:  = 30
+	alias mjNVISFLAG:  = 31
 
 
 alias mjtVisFlag = mjtVisFlag_
-struct mjtRndFlag_:
+struct mjtRndFlag_: # Enum
 	alias mjRND_SHADOW: Int = 0
-
-	alias mjRND_WIREFRAME: 
-	alias mjRND_REFLECTION: 
-	alias mjRND_ADDITIVE: 
-	alias mjRND_SKYBOX: 
-	alias mjRND_FOG: 
-	alias mjRND_HAZE: 
-	alias mjRND_SEGMENT: 
-	alias mjRND_IDCOLOR: 
-	alias mjRND_CULL_FACE: 
-	alias referenced: 
+	alias mjRND_WIREFRAME:  = 0
+	alias mjRND_REFLECTION:  = 1
+	alias mjRND_ADDITIVE:  = 2
+	alias mjRND_SKYBOX:  = 3
+	alias mjRND_FOG:  = 4
+	alias mjRND_HAZE:  = 5
+	alias mjRND_SEGMENT:  = 6
+	alias mjRND_IDCOLOR:  = 7
+	alias mjRND_CULL_FACE:  = 8
+	alias mjNRNDFLAG:  = 9
 
 
 alias mjtRndFlag = mjtRndFlag_
-struct mjtStereo_:
+struct mjtStereo_: # Enum
 	alias mjSTEREO_NONE: Int = 0
-
-	alias mjSTEREO_QUADBUFFERED: 
-	alias mjSTEREO_SIDEBYSIDE: 
+	alias mjSTEREO_QUADBUFFERED:  = 0
+	alias mjSTEREO_SIDEBYSIDE:  = 1
 
 
 alias mjtStereo = mjtStereo_
@@ -3275,17 +3183,13 @@ struct mjpResourceProvider:
 
 # Disabled since this is already declared
 # alias mjpResourceProvider = mjpResourceProvider
-struct mjtPluginCapabilityBit_:
+struct mjtPluginCapabilityBit_: # Enum
 
 	#---------------------------------- Plugins -------------------------------------------------------
 	alias mjPLUGIN_ACTUATOR: Int = 1
-
 	alias mjPLUGIN_SENSOR: Int = 2
-
 	alias mjPLUGIN_PASSIVE: Int = 4
-
 	alias mjPLUGIN_SDF: Int = 8
-
 
 
 alias mjtPluginCapabilityBit = mjtPluginCapabilityBit_
@@ -3319,59 +3223,48 @@ alias mjpPlugin = mjpPlugin_
 alias mjfPluginLibraryLoadCallback = fn(UnsafePointer[Int8],Int32,Int32) -> NoneType
 # function pointer type for mj_loadAllPluginLibraries callback
 
-struct mjtGridPos_:
+struct mjtGridPos_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjGRID_TOPLEFT: Int = 0
-
-	alias mjGRID_TOPRIGHT: 
-	alias mjGRID_BOTTOMLEFT: 
-	alias mjGRID_BOTTOMRIGHT: 
-	alias mjGRID_TOP: 
-	alias mjGRID_BOTTOM: 
-	alias mjGRID_LEFT: 
-	alias mjGRID_RIGHT: 
+	alias mjGRID_TOPRIGHT:  = 0
+	alias mjGRID_BOTTOMLEFT:  = 1
+	alias mjGRID_BOTTOMRIGHT:  = 2
+	alias mjGRID_TOP:  = 3
+	alias mjGRID_BOTTOM:  = 4
+	alias mjGRID_LEFT:  = 5
+	alias mjGRID_RIGHT:  = 6
 
 
 alias mjtGridPos = mjtGridPos_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtFramebuffer_:
+struct mjtFramebuffer_: # Enum
 	alias mjFB_WINDOW: Int = 0
-
-	alias mjFB_OFFSCREEN: 
+	alias mjFB_OFFSCREEN:  = 0
 
 
 alias mjtFramebuffer = mjtFramebuffer_
-struct mjtDepthMap_:
+struct mjtDepthMap_: # Enum
 	alias mjDEPTH_ZERONEAR: Int = 0
-
 	alias mjDEPTH_ZEROFAR: Int = 1
 
 
-
 alias mjtDepthMap = mjtDepthMap_
-struct mjtFontScale_:
+struct mjtFontScale_: # Enum
 	alias mjFONTSCALE_50: Int = 50
-
 	alias mjFONTSCALE_100: Int = 100
-
 	alias mjFONTSCALE_150: Int = 150
-
 	alias mjFONTSCALE_200: Int = 200
-
 	alias mjFONTSCALE_250: Int = 250
-
 	alias mjFONTSCALE_300: Int = 300
 
 
-
 alias mjtFontScale = mjtFontScale_
-struct mjtFont_:
+struct mjtFont_: # Enum
 	alias mjFONT_NORMAL: Int = 0
-
-	alias mjFONT_SHADOW: 
-	alias mjFONT_BIG: 
+	alias mjFONT_SHADOW:  = 0
+	alias mjFONT_BIG:  = 1
 
 
 alias mjtFont = mjtFont_
@@ -3466,75 +3359,67 @@ alias mjFloatVecVec = NoneType
 alias mjDoubleVec = NoneType
 
 alias mjByteVec = NoneType
-struct mjtGeomInertia_:
+struct mjtGeomInertia_: # Enum
 
 	#-------------------------------- enum types (mjt) ------------------------------------------------
 	alias mjINERTIA_VOLUME: Int = 0
-
-	alias mjINERTIA_SHELL: 
+	alias mjINERTIA_SHELL:  = 0
 
 
 alias mjtGeomInertia = mjtGeomInertia_
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
-struct mjtMeshInertia_:
+struct mjtMeshInertia_: # Enum
 	alias mjMESH_INERTIA_CONVEX: Int = 0
-
-	alias mjMESH_INERTIA_EXACT: 
-	alias mjMESH_INERTIA_LEGACY: 
-	alias mjMESH_INERTIA_SHELL: 
+	alias mjMESH_INERTIA_EXACT:  = 0
+	alias mjMESH_INERTIA_LEGACY:  = 1
+	alias mjMESH_INERTIA_SHELL:  = 2
 
 
 alias mjtMeshInertia = mjtMeshInertia_
-struct mjtBuiltin_:
+struct mjtBuiltin_: # Enum
 	alias mjBUILTIN_NONE: Int = 0
-
-	alias mjBUILTIN_GRADIENT: 
-	alias mjBUILTIN_CHECKER: 
-	alias mjBUILTIN_FLAT: 
+	alias mjBUILTIN_GRADIENT:  = 0
+	alias mjBUILTIN_CHECKER:  = 1
+	alias mjBUILTIN_FLAT:  = 2
 
 
 alias mjtBuiltin = mjtBuiltin_
-struct mjtMark_:
+struct mjtMark_: # Enum
 	alias mjMARK_NONE: Int = 0
-
-	alias mjMARK_EDGE: 
-	alias mjMARK_CROSS: 
-	alias mjMARK_RANDOM: 
+	alias mjMARK_EDGE:  = 0
+	alias mjMARK_CROSS:  = 1
+	alias mjMARK_RANDOM:  = 2
 
 
 alias mjtMark = mjtMark_
-struct mjtLimited_:
+struct mjtLimited_: # Enum
 	alias mjLIMITED_FALSE: Int = 0
-
-	alias mjLIMITED_TRUE: 
-	alias mjLIMITED_AUTO: 
+	alias mjLIMITED_TRUE:  = 0
+	alias mjLIMITED_AUTO:  = 1
 
 
 alias mjtLimited = mjtLimited_
-struct mjtAlignFree_:
+struct mjtAlignFree_: # Enum
 	alias mjALIGNFREE_FALSE: Int = 0
-
-	alias mjALIGNFREE_TRUE: 
-	alias mjALIGNFREE_AUTO: 
+	alias mjALIGNFREE_TRUE:  = 0
+	alias mjALIGNFREE_AUTO:  = 1
 
 
 alias mjtAlignFree = mjtAlignFree_
-struct mjtInertiaFromGeom_:
+struct mjtInertiaFromGeom_: # Enum
 	alias mjINERTIAFROMGEOM_FALSE: Int = 0
-
-	alias mjINERTIAFROMGEOM_TRUE: 
-	alias mjINERTIAFROMGEOM_AUTO: 
+	alias mjINERTIAFROMGEOM_TRUE:  = 0
+	alias mjINERTIAFROMGEOM_AUTO:  = 1
 
 
 alias mjtInertiaFromGeom = mjtInertiaFromGeom_
-struct mjtOrientation_:
+struct mjtOrientation_: # Enum
 	alias mjORIENTATION_QUAT: Int = 0
-
-	alias mjORIENTATION_AXISANGLE: 
-	alias mjORIENTATION_XYAXES: 
-	alias mjORIENTATION_ZAXIS: 
-	alias mjORIENTATION_EULER: 
+	alias mjORIENTATION_AXISANGLE:  = 0
+	alias mjORIENTATION_XYAXES:  = 1
+	alias mjORIENTATION_ZAXIS:  = 2
+	alias mjORIENTATION_EULER:  = 3
 
 
 alias mjtOrientation = mjtOrientation_
@@ -4090,62 +3975,56 @@ struct mjsDefault_:
 
 
 alias mjsDefault = mjsDefault_
-struct mjtButton_:
+struct mjtButton_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjBUTTON_NONE: Int = 0
-
-	alias mjBUTTON_LEFT: 
-	alias mjBUTTON_RIGHT: 
-	alias mjBUTTON_MIDDLE: 
+	alias mjBUTTON_LEFT:  = 0
+	alias mjBUTTON_RIGHT:  = 1
+	alias mjBUTTON_MIDDLE:  = 2
 
 
 alias mjtButton = mjtButton_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtEvent_:
+struct mjtEvent_: # Enum
 	alias mjEVENT_NONE: Int = 0
-
-	alias mjEVENT_MOVE: 
-	alias mjEVENT_PRESS: 
-	alias mjEVENT_RELEASE: 
-	alias mjEVENT_SCROLL: 
-	alias mjEVENT_KEY: 
-	alias mjEVENT_RESIZE: 
-	alias mjEVENT_REDRAW: 
-	alias mjEVENT_FILESDROP: 
+	alias mjEVENT_MOVE:  = 0
+	alias mjEVENT_PRESS:  = 1
+	alias mjEVENT_RELEASE:  = 2
+	alias mjEVENT_SCROLL:  = 3
+	alias mjEVENT_KEY:  = 4
+	alias mjEVENT_RESIZE:  = 5
+	alias mjEVENT_REDRAW:  = 6
+	alias mjEVENT_FILESDROP:  = 7
 
 
 alias mjtEvent = mjtEvent_
-struct mjtItem_:
+struct mjtItem_: # Enum
 	alias mjITEM_END: Int = -2
-
 	alias mjITEM_SECTION: Int = -1
-
 	alias mjITEM_SEPARATOR: Int = 0
-
-	alias mjITEM_STATIC: 
-	alias mjITEM_BUTTON: 
-	alias mjITEM_CHECKINT: 
-	alias mjITEM_CHECKBYTE: 
-	alias mjITEM_RADIO: 
-	alias mjITEM_RADIOLINE: 
-	alias mjITEM_SELECT: 
-	alias mjITEM_SLIDERINT: 
-	alias mjITEM_SLIDERNUM: 
-	alias mjITEM_EDITINT: 
-	alias mjITEM_EDITNUM: 
-	alias mjITEM_EDITFLOAT: 
-	alias mjITEM_EDITTXT: 
-	alias mjNITEM: 
+	alias mjITEM_STATIC:  = 0
+	alias mjITEM_BUTTON:  = 1
+	alias mjITEM_CHECKINT:  = 2
+	alias mjITEM_CHECKBYTE:  = 3
+	alias mjITEM_RADIO:  = 4
+	alias mjITEM_RADIOLINE:  = 5
+	alias mjITEM_SELECT:  = 6
+	alias mjITEM_SLIDERINT:  = 7
+	alias mjITEM_SLIDERNUM:  = 8
+	alias mjITEM_EDITINT:  = 9
+	alias mjITEM_EDITNUM:  = 10
+	alias mjITEM_EDITFLOAT:  = 11
+	alias mjITEM_EDITTXT:  = 12
+	alias mjNITEM:  = 13
 
 
 alias mjtItem = mjtItem_
-struct mjtSection_:
+struct mjtSection_: # Enum
 	alias mjSECT_CLOSED: Int = 0
-
-	alias mjSECT_OPEN: 
-	alias mjSECT_FIXED: 
+	alias mjSECT_OPEN:  = 0
+	alias mjSECT_FIXED:  = 1
 
 
 alias mjtSection = mjtSection_

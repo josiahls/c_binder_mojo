@@ -169,6 +169,42 @@ struct EnumDeclNode(NodeAstLike):
         else:
             get_global_type_mapper()[].add_custom_type(self._enum_name)
             self._node_state = NodeState.COMPLETED
+            self._process_enum_values(module_interface)
+
+    fn _process_enum_values(mut self, mut module_interface: ModuleInterface):
+        var current_value = 0
+        var field_type:String = ""
+        # TODO(josiahls): This is a hack to get the enum values to work.
+        # We need to find a better way to do this.
+        for child_idx in self._indicies[].child_idxs:
+            child = module_interface.get_node(child_idx)
+            if child.node[].isa[EnumConstantDeclNode]():
+                field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
+                value = child.node[][EnumConstantDeclNode].get_value(module_interface)
+                if value == "":
+                    print("EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
+                    value = String(current_value)
+                    current_value += 1
+                    child.node[][EnumConstantDeclNode]._value = value
+                    child.node[][EnumConstantDeclNode]._field_type = field_type
+                else:
+                    try:
+                        current_value = Int(value)
+                        field_type = child.node[][EnumConstantDeclNode]._field_type
+                        print("EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
+                    except:
+                        print("Error: Enum constant decl has invalid value: " + child.node[][EnumConstantDeclNode]._value)
+                # if child.node[][EnumConstantDeclNode]._value == "":
+                #     child.node[][EnumConstantDeclNode]._value = String(current_value)
+                #     child.node[][EnumConstantDeclNode]._field_type = field_type
+                #     current_value += 1
+                # else:
+                #     try:
+                #         current_value = Int(child.node[][EnumConstantDeclNode]._value)
+                #         field_type = child.node[][EnumConstantDeclNode]._field_type
+                #         print("EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
+                #     except:
+                #         print("Error: Enum constant decl has invalid value: " + child.node[][EnumConstantDeclNode]._value)
 
     fn process_anonymous_enum(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
@@ -277,7 +313,7 @@ struct EnumDeclNode(NodeAstLike):
             s += indent + self.name(include_sig=True) + "\n"
 
         if not self._is_anonymous:
-            s += indent + "struct " + String(self._enum_name) + ":\n"
+            s += indent + "struct " + String(self._enum_name) + ": # Enum\n"
         else:
             s += indent + "# Anonymous enum\n"
 

@@ -55,10 +55,6 @@ struct ValueNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        print("ast_entries.ast_name: " + ast_entries.ast_name)
-        print("Self.__name__: " + Self.__name__)
-        print("String(Self.__name__)[:-4].lower(): " + String(Self.__name__)[:-4].lower())
-        print("ast_entries.ast_name == String(Self.__name__)[:-4].lower(): " + String(ast_entries.ast_name == String(Self.__name__)[:-4].lower()))
         return ast_entries.ast_name == String(Self.__name__)[:-4].lower() + ':'
 
     @staticmethod

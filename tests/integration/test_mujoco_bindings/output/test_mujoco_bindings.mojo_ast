@@ -2659,8 +2659,7 @@ mjData],Int32) -> NoneTypeFullCommentNode(parent_idx=6800, current_idx=6819, chi
 TypedefDeclNode(parent_idx=1, current_idx=6820, child_idxs=(6821, 6827), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6d3548 <line:464:1, col:31> col:18 referenced mjfTime 'mjtNum (*)(void)'PointerTypeNode(parent_idx=6820, current_idx=6821, child_idxs=(6822), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 ParenTypeNode(parent_idx=6821, current_idx=6822, child_idxs=(6823), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-fn(
-FunctionProtoTypeNode: Unknown child type: TypedefTypeNode) -> FullCommentNode(parent_idx=6820, current_idx=6827, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+fn() -> Float64FullCommentNode(parent_idx=6820, current_idx=6827, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # timer
 
@@ -2668,11 +2667,10 @@ TypedefDeclNode(parent_idx=1, current_idx=6828, child_idxs=(6829, 6850), node_st
 |-TypedefDecl 0x6d38e0 <line:467:1, col:67> col:18 referenced mjfAct 'mjtNum (*)(const mjModel *, const mjData *, int)'PointerTypeNode(parent_idx=6828, current_idx=6829, child_idxs=(6830), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 ParenTypeNode(parent_idx=6829, current_idx=6830, child_idxs=(6831), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 fn(
-FunctionProtoTypeNode: Unknown child type: TypedefTypeNode
-	PointerTypeNode(parent_idx=6831, current_idx=6842, child_idxs=(6843), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-UnsafePointer[mjData],Int32) -> 
 	PointerTypeNode(parent_idx=6831, current_idx=6835, child_idxs=(6836), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-UnsafePointer[mjModel]FullCommentNode(parent_idx=6828, current_idx=6850, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjModel],
+	PointerTypeNode(parent_idx=6831, current_idx=6842, child_idxs=(6843), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
+UnsafePointer[mjData],Int32) -> Float64FullCommentNode(parent_idx=6828, current_idx=6850, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # actuator dynamics, gain, bias
 
@@ -2680,7 +2678,6 @@ TypedefDeclNode(parent_idx=1, current_idx=6851, child_idxs=(6852, 6881), node_st
 |-TypedefDecl 0x6d3e00 <line:470:1, line:471:74> line:470:15 referenced mjfCollision 'int (*)(const mjModel *, const mjData *, mjContact *, int, int, mjtNum)'PointerTypeNode(parent_idx=6851, current_idx=6852, child_idxs=(6853), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 ParenTypeNode(parent_idx=6852, current_idx=6853, child_idxs=(6854), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 fn(
-FunctionProtoTypeNode: Unknown child type: TypedefTypeNode
 	PointerTypeNode(parent_idx=6854, current_idx=6856, child_idxs=(6857), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 UnsafePointer[mjModel],
 	PointerTypeNode(parent_idx=6854, current_idx=6863, child_idxs=(6864), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -2688,7 +2685,7 @@ UnsafePointer[mjData],
 	PointerTypeNode(parent_idx=6854, current_idx=6870, child_idxs=(6871), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 UnsafePointer[
 	TypedefNode(parent_idx=6871, current_idx=6872, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-mjContact],Int32,Int32) -> Int32FullCommentNode(parent_idx=6851, current_idx=6881, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjContact],Int32,Int32,Float64) -> Int32FullCommentNode(parent_idx=6851, current_idx=6881, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # collision detection
 

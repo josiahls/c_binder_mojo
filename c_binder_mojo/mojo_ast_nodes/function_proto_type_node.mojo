@@ -22,6 +22,9 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
+from c_binder_mojo.mojo_ast_nodes.builtin_type_node import BuiltinTypeNode
+from c_binder_mojo.mojo_ast_nodes.pointer_type_node import PointerTypeNode
+from c_binder_mojo.mojo_ast_nodes.typedef_type_node import TypedefTypeNode
 
 
 @fieldwise_init
@@ -139,6 +142,13 @@ struct FunctionProtoTypeNode(NodeAstLike):
                 else:
                     params.append(child.to_string(just_code, module_interface, parent_indent_level + 1))
             elif child.node[].isa[PointerTypeNode]():
+                if return_type == "":
+                    return_type = child.to_string(just_code, module_interface, parent_indent_level + 1)
+                else:
+                    params.append(child.to_string(just_code, module_interface, parent_indent_level + 1))
+            elif child.node[].isa[TypedefTypeNode]():
+                # TODO(josiahls): I'm not sure if this is right. I think we need to search `module_interface` for the type.
+                # We are not trying to define it, we are trying to reference it.
                 if return_type == "":
                     return_type = child.to_string(just_code, module_interface, parent_indent_level + 1)
                 else:

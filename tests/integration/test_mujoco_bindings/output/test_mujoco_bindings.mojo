@@ -2559,18 +2559,15 @@ alias mjfSensor = fn(UnsafePointer[mjModel],UnsafePointer[mjData],Int32) -> None
 # sensor simulation
 
 
-alias mjfTime = fn(
-FunctionProtoTypeNode: Unknown child type: TypedefTypeNode) -> 
+alias mjfTime = fn() -> Float64
 # timer
 
 
-alias mjfAct = fn(
-FunctionProtoTypeNode: Unknown child type: TypedefTypeNodeUnsafePointer[mjData],Int32) -> UnsafePointer[mjModel]
+alias mjfAct = fn(UnsafePointer[mjModel],UnsafePointer[mjData],Int32) -> Float64
 # actuator dynamics, gain, bias
 
 
-alias mjfCollision = fn(
-FunctionProtoTypeNode: Unknown child type: TypedefTypeNodeUnsafePointer[mjModel],UnsafePointer[mjData],UnsafePointer[mjContact],Int32,Int32) -> Int32
+alias mjfCollision = fn(UnsafePointer[mjModel],UnsafePointer[mjData],UnsafePointer[mjContact],Int32,Int32,Float64) -> Int32
 # collision detection
 
 struct mjtCatBit_: # Enum

@@ -4417,96 +4417,76 @@ struct mjuiDef_:
 TypedefDeclNode(parent_idx=1, current_idx=9766, child_idxs=(9767), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x749f80 <line:343:1, col:25> col:25 referenced mjuiDef 'struct mjuiDef_':'struct mjuiDef_'mjuiDef_
 VarDeclNode(parent_idx=1, current_idx=9770, child_idxs=(9771, 9772), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mju_user_error = NoneType # externPlaceHolderNode(parent_idx=9770, current_idx=9771, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-VisibilityAttr 0x74a268 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_error = NoneType # extern # VisibilityAttrNode: Default
 FullCommentNode(parent_idx=9770, current_idx=9772, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # user error and memory handlers
 
 VarDeclNode(parent_idx=1, current_idx=9773, child_idxs=(9774), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mju_user_warning = NoneType # externPlaceHolderNode(parent_idx=9773, current_idx=9774, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74a400 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_warning = NoneType # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9775, child_idxs=(9776), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mju_user_malloc = NoneType # externPlaceHolderNode(parent_idx=9775, current_idx=9776, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74a620 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_malloc = NoneType # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9777, child_idxs=(9778), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mju_user_free = NoneType # externPlaceHolderNode(parent_idx=9777, current_idx=9778, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74a848 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_free = NoneType # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9779, child_idxs=(9780, 9781), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_passive = mjfGeneric # externPlaceHolderNode(parent_idx=9779, current_idx=9780, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-VisibilityAttr 0x74a988 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_passive = mjfGeneric # extern # VisibilityAttrNode: Default
 FullCommentNode(parent_idx=9779, current_idx=9781, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # callbacks extending computation pipeline
 
 VarDeclNode(parent_idx=1, current_idx=9782, child_idxs=(9783), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_control = mjfGeneric # externPlaceHolderNode(parent_idx=9782, current_idx=9783, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74aa78 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_control = mjfGeneric # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9784, child_idxs=(9785), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_contactfilter = mjfConFilt # externPlaceHolderNode(parent_idx=9784, current_idx=9785, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74ab88 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_contactfilter = mjfConFilt # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9786, child_idxs=(9787), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_sensor = mjfSensor # externPlaceHolderNode(parent_idx=9786, current_idx=9787, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74ac98 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_sensor = mjfSensor # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9788, child_idxs=(9789), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_time = mjfTime # externPlaceHolderNode(parent_idx=9788, current_idx=9789, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74ada8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_time = mjfTime # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9790, child_idxs=(9791), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_act_dyn = mjfAct # externPlaceHolderNode(parent_idx=9790, current_idx=9791, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74aeb8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_act_dyn = mjfAct # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9792, child_idxs=(9793), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_act_gain = mjfAct # externPlaceHolderNode(parent_idx=9792, current_idx=9793, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74afa8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_act_gain = mjfAct # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9794, child_idxs=(9795), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjcb_act_bias = mjfAct # externPlaceHolderNode(parent_idx=9794, current_idx=9795, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74b098 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_act_bias = mjfAct # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9796, child_idxs=(9797, 9798), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjCOLLISIONFUNC = mjfCollision[9][9] # externPlaceHolderNode(parent_idx=9796, current_idx=9797, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-VisibilityAttr 0x74f440 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjCOLLISIONFUNC = mjfCollision[9][9] # extern # VisibilityAttrNode: Default
 FullCommentNode(parent_idx=9796, current_idx=9798, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # collision function table
 
 VarDeclNode(parent_idx=1, current_idx=9799, child_idxs=(9800, 9801), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjDISABLESTRING = const # externPlaceHolderNode(parent_idx=9799, current_idx=9800, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-VisibilityAttr 0x74f5f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjDISABLESTRING = const # extern # VisibilityAttrNode: Default
 FullCommentNode(parent_idx=9799, current_idx=9801, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # string names
 
 VarDeclNode(parent_idx=1, current_idx=9802, child_idxs=(9803), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjENABLESTRING = const # externPlaceHolderNode(parent_idx=9802, current_idx=9803, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74f778 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjENABLESTRING = const # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9804, child_idxs=(9805), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjTIMERSTRING = const # externPlaceHolderNode(parent_idx=9804, current_idx=9805, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74f8f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjTIMERSTRING = const # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9806, child_idxs=(9807), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjLABELSTRING = const # externPlaceHolderNode(parent_idx=9806, current_idx=9807, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74fa40 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjLABELSTRING = const # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9808, child_idxs=(9809), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjFRAMESTRING = const # externPlaceHolderNode(parent_idx=9808, current_idx=9809, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74fbc8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjFRAMESTRING = const # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9810, child_idxs=(9811), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjVISSTRING = const # externPlaceHolderNode(parent_idx=9810, current_idx=9811, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74fdd8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjVISSTRING = const # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9812, child_idxs=(9813), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjRNDSTRING = const # externPlaceHolderNode(parent_idx=9812, current_idx=9813, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-VisibilityAttr 0x74ffa8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjRNDSTRING = const # extern # VisibilityAttrNode: Default
 
 alias mj_defaultVFS = fn(vfs: UnsafePointer[mjVFS]) -> NoneType
 alias mj_addFileVFS = fn(vfs: UnsafePointer[mjVFS], read directory: UnsafePointer[Int8], read filename: UnsafePointer[Int8]) -> Int32

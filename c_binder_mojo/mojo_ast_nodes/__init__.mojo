@@ -30,6 +30,7 @@ from .function_proto_type_node import FunctionProtoTypeNode
 from .enum_type_node import EnumTypeNode
 from .enum_node import EnumNode
 from .aligned_attr_node import AlignedAttrNode
+from .visibility_attr_node import VisibilityAttrNode
 # Setup Variant
 from .node_variant import Variant
 
@@ -63,6 +64,7 @@ alias AstNodeVariant = Variant[
     EnumTypeNode,
     EnumNode,
     AlignedAttrNode,
+    VisibilityAttrNode,
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode
 ]

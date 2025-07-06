@@ -23,5 +23,7 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 5. **Boilerplate code** - NodeAstLike trait implementations have lots of repetitive getter methods
 
 ## Current Next Steps (IMMEDIATE PRIORITIES)
-- 
+- Need to revise our type handing. Running into cases like: 	var sect: SIMD[mjuiSection.dtype, 10]
+- This node is incorrectly parsing:  |-VarDecl 0x74a200 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:45:49> col:22 mju_user_error 'void (*)(const char *)' extern
+
 

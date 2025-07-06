@@ -4198,92 +4198,72 @@ struct mjuiDef_:
 
 alias mjuiDef = mjuiDef_
 
-alias mju_user_error = NoneType # extern
-# (placeholder) | |-VisibilityAttr 0x74a268 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_error = NoneType # extern # VisibilityAttrNode: Default
 
 # user error and memory handlers
 
 
-alias mju_user_warning = NoneType # extern
-# (placeholder) | `-VisibilityAttr 0x74a400 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_warning = NoneType # extern # VisibilityAttrNode: Default
 
 
-alias mju_user_malloc = NoneType # extern
-# (placeholder) | `-VisibilityAttr 0x74a620 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_malloc = NoneType # extern # VisibilityAttrNode: Default
 
 
-alias mju_user_free = NoneType # extern
-# (placeholder) | `-VisibilityAttr 0x74a848 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mju_user_free = NoneType # extern # VisibilityAttrNode: Default
 
 
-alias mjcb_passive = mjfGeneric # extern
-# (placeholder) | |-VisibilityAttr 0x74a988 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_passive = mjfGeneric # extern # VisibilityAttrNode: Default
 
 # callbacks extending computation pipeline
 
 
-alias mjcb_control = mjfGeneric # extern
-# (placeholder) | `-VisibilityAttr 0x74aa78 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_control = mjfGeneric # extern # VisibilityAttrNode: Default
 
 
-alias mjcb_contactfilter = mjfConFilt # extern
-# (placeholder) | `-VisibilityAttr 0x74ab88 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_contactfilter = mjfConFilt # extern # VisibilityAttrNode: Default
 
 
-alias mjcb_sensor = mjfSensor # extern
-# (placeholder) | `-VisibilityAttr 0x74ac98 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_sensor = mjfSensor # extern # VisibilityAttrNode: Default
 
 
-alias mjcb_time = mjfTime # extern
-# (placeholder) | `-VisibilityAttr 0x74ada8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_time = mjfTime # extern # VisibilityAttrNode: Default
 
 
-alias mjcb_act_dyn = mjfAct # extern
-# (placeholder) | `-VisibilityAttr 0x74aeb8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_act_dyn = mjfAct # extern # VisibilityAttrNode: Default
 
 
-alias mjcb_act_gain = mjfAct # extern
-# (placeholder) | `-VisibilityAttr 0x74afa8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_act_gain = mjfAct # extern # VisibilityAttrNode: Default
 
 
-alias mjcb_act_bias = mjfAct # extern
-# (placeholder) | `-VisibilityAttr 0x74b098 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjcb_act_bias = mjfAct # extern # VisibilityAttrNode: Default
 
 
-alias mjCOLLISIONFUNC = mjfCollision[9][9] # extern
-# (placeholder) | |-VisibilityAttr 0x74f440 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjCOLLISIONFUNC = mjfCollision[9][9] # extern # VisibilityAttrNode: Default
 
 # collision function table
 
 
-alias mjDISABLESTRING = const # extern
-# (placeholder) | |-VisibilityAttr 0x74f5f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjDISABLESTRING = const # extern # VisibilityAttrNode: Default
 
 # string names
 
 
-alias mjENABLESTRING = const # extern
-# (placeholder) | `-VisibilityAttr 0x74f778 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjENABLESTRING = const # extern # VisibilityAttrNode: Default
 
 
-alias mjTIMERSTRING = const # extern
-# (placeholder) | `-VisibilityAttr 0x74f8f8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjTIMERSTRING = const # extern # VisibilityAttrNode: Default
 
 
-alias mjLABELSTRING = const # extern
-# (placeholder) | `-VisibilityAttr 0x74fa40 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjLABELSTRING = const # extern # VisibilityAttrNode: Default
 
 
-alias mjFRAMESTRING = const # extern
-# (placeholder) | `-VisibilityAttr 0x74fbc8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjFRAMESTRING = const # extern # VisibilityAttrNode: Default
 
 
-alias mjVISSTRING = const # extern
-# (placeholder) | `-VisibilityAttr 0x74fdd8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjVISSTRING = const # extern # VisibilityAttrNode: Default
 
 
-alias mjRNDSTRING = const # extern
-# (placeholder) | `-VisibilityAttr 0x74ffa8 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:54, col:75> Default
+alias mjRNDSTRING = const # extern # VisibilityAttrNode: Default
 
 alias mj_defaultVFS = fn(vfs: UnsafePointer[mjVFS]) -> NoneType
 alias mj_addFileVFS = fn(vfs: UnsafePointer[mjVFS], read directory: UnsafePointer[Int8], read filename: UnsafePointer[Int8]) -> Int32

@@ -15,7 +15,7 @@ struct __NSConstantString_tag:
 
 TypedefDeclNode(parent_idx=1, current_idx=10, child_idxs=(11), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x4e3fd0 <<invalid sloc>> <invalid sloc> implicit __builtin_ms_va_list 'char *'PointerTypeNode(parent_idx=10, current_idx=11, child_idxs=(12), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-PointerType 0x4e3f90 'char *'Int8
+UnsafePointer[Int8]
 
 TypedefDeclNode(parent_idx=1, current_idx=13, child_idxs=(14), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x4e42c8 <<invalid sloc>> <invalid sloc> implicit __builtin_va_list 'struct __va_list_tag[1]'OpaquePointer # __va_list_tag[1]
@@ -193,7 +193,7 @@ TypedefDeclNode(parent_idx=1, current_idx=281, child_idxs=(282), node_state=4 (C
 |-TypedefDecl 0x58c660 <line:137:22, line:169:29> col:29 referenced __clockid_t 'int'Int32
 TypedefDeclNode(parent_idx=1, current_idx=283, child_idxs=(284), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x58c6d0 <line:137:22, line:172:27> col:27 referenced __timer_t 'void *'PointerTypeNode(parent_idx=283, current_idx=284, child_idxs=(285), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-PointerType 0x4e3b20 'void *'NoneType
+UnsafePointer[NoneType]
 
 TypedefDeclNode(parent_idx=1, current_idx=286, child_idxs=(287), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5936d0 <line:137:22, line:175:29> col:29 referenced __blksize_t 'long'Int64
@@ -221,7 +221,7 @@ TypedefDeclNode(parent_idx=1, current_idx=308, child_idxs=(309), node_state=4 (C
 |-TypedefDecl 0x593bc0 <line:203:1, col:19> col:19 referenced __loff_t '__off64_t':'long'Int64
 TypedefDeclNode(parent_idx=1, current_idx=312, child_idxs=(313), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x593c30 <line:204:1, col:15> col:15 referenced __caddr_t 'char *'PointerTypeNode(parent_idx=312, current_idx=313, child_idxs=(314), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-PointerType 0x4e3f90 'char *'Int8
+UnsafePointer[Int8]
 
 TypedefDeclNode(parent_idx=1, current_idx=315, child_idxs=(316), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x593ca0 <line:137:22, line:207:25> col:25 __intptr_t 'long'Int64
@@ -787,17 +787,16 @@ alias mkdtemp = fn(__template: UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias system = fn(read __command: UnsafePointer[Int8]) -> Int32
 alias realpath = fn(read __name: UnsafePointer[Int8], __resolved: UnsafePointer[Int8]) -> UnsafePointer[Int8]
 TypedefDeclNode(parent_idx=1, current_idx=1140, child_idxs=(1141), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x5d5f30 </usr/include/stdlib.h:816:1, col:57> col:15 referenced __compar_fn_t 'int (*)(const void *, const void *)'PointerTypeNode(parent_idx=1140, current_idx=1141, child_idxs=(1142, 1143, 1144, 1145, 1148), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| `-PointerType 0x5d5ec0 'int (*)(const void *, const void *)'PlaceHolderNode(parent_idx=1141, current_idx=1142, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|   `-ParenType 0x5d5e60 'int (const void *, const void *)' sugar
-PlaceHolderNode(parent_idx=1141, current_idx=1143, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x5d5f30 </usr/include/stdlib.h:816:1, col:57> col:15 referenced __compar_fn_t 'int (*)(const void *, const void *)'PointerTypeNode(parent_idx=1140, current_idx=1141, child_idxs=(1142), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| `-PointerType 0x5d5ec0 'int (*)(const void *, const void *)'ParenTypeNode(parent_idx=1141, current_idx=1142, child_idxs=(1143, 1144, 1145, 1148), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=1142, current_idx=1143, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |     `-FunctionProtoType 0x5d5e20 'int (const void *, const void *)' cdecl
-Int32PointerTypeNode(parent_idx=1141, current_idx=1145, child_idxs=(1146), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|       |-PointerType 0x5d5cf0 'const void *'NoneType
-# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
-PointerTypeNode(parent_idx=1141, current_idx=1148, child_idxs=(1149), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|       `-PointerType 0x5d5cf0 'const void *'NoneType
-# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+Int32PointerTypeNode(parent_idx=1142, current_idx=1145, child_idxs=(1146), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[NoneType
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
+PointerTypeNode(parent_idx=1142, current_idx=1148, child_idxs=(1149), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[NoneType
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 
 
 alias bsearch = fn(read __key: UnsafePointer[NoneType], read __base: UnsafePointer[NoneType], __nmemb: size_t, __size: size_t, __compar: __compar_fn_t) -> UnsafePointer[NoneType]
@@ -6943,15 +6942,14 @@ struct mjtTaskStatus_:
 TypedefDeclNode(parent_idx=1, current_idx=6075, child_idxs=(6076), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6ba018 <line:20:1, line:24:3> col:3 mjtTaskStatus 'enum mjtTaskStatus_':'enum mjtTaskStatus_'
 TypedefDeclNode(parent_idx=1, current_idx=6079, child_idxs=(6080, 6087), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6ba228 <line:27:1, col:31> col:17 referenced mjfTask 'void *(*)(void *)'PointerTypeNode(parent_idx=6079, current_idx=6080, child_idxs=(6081, 6082, 6083, 6085), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6ba1c0 'void *(*)(void *)'PlaceHolderNode(parent_idx=6080, current_idx=6081, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6ba160 'void *(void *)' sugar
-PlaceHolderNode(parent_idx=6080, current_idx=6082, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6ba228 <line:27:1, col:31> col:17 referenced mjfTask 'void *(*)(void *)'PointerTypeNode(parent_idx=6079, current_idx=6080, child_idxs=(6081), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6ba1c0 'void *(*)(void *)'ParenTypeNode(parent_idx=6080, current_idx=6081, child_idxs=(6082, 6083, 6085), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=6081, current_idx=6082, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6ba130 'void *(void *)' cdecl
-PointerTypeNode(parent_idx=6080, current_idx=6083, child_idxs=(6084), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x4e3b20 'void *'NoneType
-PointerTypeNode(parent_idx=6080, current_idx=6085, child_idxs=(6086), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x4e3b20 'void *'NoneType
+PointerTypeNode(parent_idx=6081, current_idx=6083, child_idxs=(6084), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[NoneType]
+PointerTypeNode(parent_idx=6081, current_idx=6085, child_idxs=(6086), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[NoneType]
 
 FullCommentNode(parent_idx=6079, current_idx=6087, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
@@ -8754,67 +8752,63 @@ struct mjData_:
 TypedefDeclNode(parent_idx=1, current_idx=6756, child_idxs=(6757), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6d0860 <line:449:1, col:24> col:24 referenced mjData 'struct mjData_':'struct mjData_'mjData_
 TypedefDeclNode(parent_idx=1, current_idx=6760, child_idxs=(6761, 6778), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6d2c18 <line:455:1, col:55> col:16 referenced mjfGeneric 'void (*)(const mjModel *, mjData *)'PointerTypeNode(parent_idx=6760, current_idx=6761, child_idxs=(6762, 6763, 6764, 6765, 6772), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6d2bb0 'void (*)(const mjModel *, mjData *)'PlaceHolderNode(parent_idx=6761, current_idx=6762, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6d2b50 'void (const mjModel *, mjData *)' sugar
-PlaceHolderNode(parent_idx=6761, current_idx=6763, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6d2c18 <line:455:1, col:55> col:16 referenced mjfGeneric 'void (*)(const mjModel *, mjData *)'PointerTypeNode(parent_idx=6760, current_idx=6761, child_idxs=(6762), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6d2bb0 'void (*)(const mjModel *, mjData *)'ParenTypeNode(parent_idx=6761, current_idx=6762, child_idxs=(6763, 6764, 6765, 6772), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=6762, current_idx=6763, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d2b10 'void (const mjModel *, mjData *)' cdecl
-NoneTypePointerTypeNode(parent_idx=6761, current_idx=6765, child_idxs=(6766), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d0970 'const mjModel *'mjModel
+NoneTypePointerTypeNode(parent_idx=6762, current_idx=6765, child_idxs=(6766), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjModel
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
-PointerTypeNode(parent_idx=6761, current_idx=6772, child_idxs=(6773), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x6d0a60 'mjData *'TypedefNode(parent_idx=6773, current_idx=6774, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjData
+]
+PointerTypeNode(parent_idx=6762, current_idx=6772, child_idxs=(6773), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=6773, current_idx=6774, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjData]
 
 FullCommentNode(parent_idx=6760, current_idx=6778, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # generic MuJoCo function
 
 TypedefDeclNode(parent_idx=1, current_idx=6779, child_idxs=(6780, 6799), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6d3010 <line:458:1, col:76> col:15 referenced mjfConFilt 'int (*)(const mjModel *, mjData *, int, int)'PointerTypeNode(parent_idx=6779, current_idx=6780, child_idxs=(6781, 6782, 6783, 6784, 6791, ...) len=7, node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6d2f90 'int (*)(const mjModel *, mjData *, int, int)'PlaceHolderNode(parent_idx=6780, current_idx=6781, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6d2f30 'int (const mjModel *, mjData *, int, int)' sugar
-PlaceHolderNode(parent_idx=6780, current_idx=6782, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6d3010 <line:458:1, col:76> col:15 referenced mjfConFilt 'int (*)(const mjModel *, mjData *, int, int)'PointerTypeNode(parent_idx=6779, current_idx=6780, child_idxs=(6781), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6d2f90 'int (*)(const mjModel *, mjData *, int, int)'ParenTypeNode(parent_idx=6780, current_idx=6781, child_idxs=(6782, 6783, 6784, 6791, 6797, 6798), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=6781, current_idx=6782, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d2ee0 'int (const mjModel *, mjData *, int, int)' cdecl
-Int32PointerTypeNode(parent_idx=6780, current_idx=6784, child_idxs=(6785), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d0970 'const mjModel *'mjModel
+Int32PointerTypeNode(parent_idx=6781, current_idx=6784, child_idxs=(6785), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjModel
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
-PointerTypeNode(parent_idx=6780, current_idx=6791, child_idxs=(6792), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d0a60 'mjData *'TypedefNode(parent_idx=6792, current_idx=6793, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjData
+]
+PointerTypeNode(parent_idx=6781, current_idx=6791, child_idxs=(6792), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=6792, current_idx=6793, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjData]
 Int32Int32
 FullCommentNode(parent_idx=6779, current_idx=6799, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # contact filter: 1- discard, 0- collide
 
 TypedefDeclNode(parent_idx=1, current_idx=6800, child_idxs=(6801, 6819), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6d3360 <line:461:1, col:65> col:16 referenced mjfSensor 'void (*)(const mjModel *, mjData *, int)'PointerTypeNode(parent_idx=6800, current_idx=6801, child_idxs=(6802, 6803, 6804, 6805, 6812, 6818), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6d32f0 'void (*)(const mjModel *, mjData *, int)'PlaceHolderNode(parent_idx=6801, current_idx=6802, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6d3290 'void (const mjModel *, mjData *, int)' sugar
-PlaceHolderNode(parent_idx=6801, current_idx=6803, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6d3360 <line:461:1, col:65> col:16 referenced mjfSensor 'void (*)(const mjModel *, mjData *, int)'PointerTypeNode(parent_idx=6800, current_idx=6801, child_idxs=(6802), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6d32f0 'void (*)(const mjModel *, mjData *, int)'ParenTypeNode(parent_idx=6801, current_idx=6802, child_idxs=(6803, 6804, 6805, 6812, 6818), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=6802, current_idx=6803, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d3250 'void (const mjModel *, mjData *, int)' cdecl
-NoneTypePointerTypeNode(parent_idx=6801, current_idx=6805, child_idxs=(6806), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d0970 'const mjModel *'mjModel
+NoneTypePointerTypeNode(parent_idx=6802, current_idx=6805, child_idxs=(6806), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjModel
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
-PointerTypeNode(parent_idx=6801, current_idx=6812, child_idxs=(6813), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d0a60 'mjData *'TypedefNode(parent_idx=6813, current_idx=6814, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjData
+]
+PointerTypeNode(parent_idx=6802, current_idx=6812, child_idxs=(6813), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=6813, current_idx=6814, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjData]
 Int32
 FullCommentNode(parent_idx=6800, current_idx=6819, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # sensor simulation
 
 TypedefDeclNode(parent_idx=1, current_idx=6820, child_idxs=(6821, 6827), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6d3548 <line:464:1, col:31> col:18 referenced mjfTime 'mjtNum (*)(void)'PointerTypeNode(parent_idx=6820, current_idx=6821, child_idxs=(6822, 6823, 6824), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6d34f0 'mjtNum (*)(void)'PlaceHolderNode(parent_idx=6821, current_idx=6822, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6d3490 'mjtNum (void)' sugar
-PlaceHolderNode(parent_idx=6821, current_idx=6823, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6d3548 <line:464:1, col:31> col:18 referenced mjfTime 'mjtNum (*)(void)'PointerTypeNode(parent_idx=6820, current_idx=6821, child_idxs=(6822), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6d34f0 'mjtNum (*)(void)'ParenTypeNode(parent_idx=6821, current_idx=6822, child_idxs=(6823, 6824), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=6822, current_idx=6823, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d3460 'mjtNum (void)' cdecl
 Float64
 FullCommentNode(parent_idx=6820, current_idx=6827, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -8822,45 +8816,43 @@ FullCommentNode(parent_idx=6820, current_idx=6827, child_idxs=(), node_state=4 (
 # timer
 
 TypedefDeclNode(parent_idx=1, current_idx=6828, child_idxs=(6829, 6850), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6d38e0 <line:467:1, col:67> col:18 referenced mjfAct 'mjtNum (*)(const mjModel *, const mjData *, int)'PointerTypeNode(parent_idx=6828, current_idx=6829, child_idxs=(6830, 6831, 6832, 6835, 6842, 6849), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6d3870 'mjtNum (*)(const mjModel *, const mjData *, int)'PlaceHolderNode(parent_idx=6829, current_idx=6830, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6d3810 'mjtNum (const mjModel *, const mjData *, int)' sugar
-PlaceHolderNode(parent_idx=6829, current_idx=6831, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6d38e0 <line:467:1, col:67> col:18 referenced mjfAct 'mjtNum (*)(const mjModel *, const mjData *, int)'PointerTypeNode(parent_idx=6828, current_idx=6829, child_idxs=(6830), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6d3870 'mjtNum (*)(const mjModel *, const mjData *, int)'ParenTypeNode(parent_idx=6829, current_idx=6830, child_idxs=(6831, 6832, 6835, 6842, 6849), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=6830, current_idx=6831, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d37d0 'mjtNum (const mjModel *, const mjData *, int)' cdecl
-Float64PointerTypeNode(parent_idx=6829, current_idx=6835, child_idxs=(6836), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d0970 'const mjModel *'mjModel
+Float64PointerTypeNode(parent_idx=6830, current_idx=6835, child_idxs=(6836), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjModel
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
-PointerTypeNode(parent_idx=6829, current_idx=6842, child_idxs=(6843), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d3670 'const mjData *'mjData
+]
+PointerTypeNode(parent_idx=6830, current_idx=6842, child_idxs=(6843), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjData
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
+]
 Int32
 FullCommentNode(parent_idx=6828, current_idx=6850, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # actuator dynamics, gain, bias
 
 TypedefDeclNode(parent_idx=1, current_idx=6851, child_idxs=(6852, 6881), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6d3e00 <line:470:1, line:471:74> line:470:15 referenced mjfCollision 'int (*)(const mjModel *, const mjData *, mjContact *, int, int, mjtNum)'PointerTypeNode(parent_idx=6851, current_idx=6852, child_idxs=(6853, 6854, 6855, 6856, 6863, ...) len=9, node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6d3d70 'int (*)(const mjModel *, const mjData *, mjContact *, int, int, mjtNum)'PlaceHolderNode(parent_idx=6852, current_idx=6853, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6d3d10 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' sugar
-PlaceHolderNode(parent_idx=6852, current_idx=6854, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6d3e00 <line:470:1, line:471:74> line:470:15 referenced mjfCollision 'int (*)(const mjModel *, const mjData *, mjContact *, int, int, mjtNum)'PointerTypeNode(parent_idx=6851, current_idx=6852, child_idxs=(6853), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6d3d70 'int (*)(const mjModel *, const mjData *, mjContact *, int, int, mjtNum)'ParenTypeNode(parent_idx=6852, current_idx=6853, child_idxs=(6854, 6855, 6856, 6863, 6870, ...) len=8, node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=6853, current_idx=6854, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6d3cb0 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' cdecl
-Int32PointerTypeNode(parent_idx=6852, current_idx=6856, child_idxs=(6857), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d0970 'const mjModel *'mjModel
+Int32PointerTypeNode(parent_idx=6853, current_idx=6856, child_idxs=(6857), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjModel
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
-PointerTypeNode(parent_idx=6852, current_idx=6863, child_idxs=(6864), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6d3670 'const mjData *'mjData
+]
+PointerTypeNode(parent_idx=6853, current_idx=6863, child_idxs=(6864), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjData
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
-PointerTypeNode(parent_idx=6852, current_idx=6870, child_idxs=(6871), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6cef50 'mjContact *'TypedefNode(parent_idx=6871, current_idx=6872, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjContact
+]
+PointerTypeNode(parent_idx=6853, current_idx=6870, child_idxs=(6871), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=6871, current_idx=6872, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjContact]
 Int32Int32Float64
 FullCommentNode(parent_idx=6851, current_idx=6881, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
@@ -11241,33 +11233,31 @@ struct mjResource_:
 TypedefDeclNode(parent_idx=1, current_idx=7753, child_idxs=(7754), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6fd900 <line:32:1, col:28> col:28 referenced mjResource 'struct mjResource_':'struct mjResource_'mjResource_
 TypedefDeclNode(parent_idx=1, current_idx=7757, child_idxs=(7758, 7768), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6fdba8 <line:35:1, col:52> col:15 referenced mjfOpenResource 'int (*)(mjResource *)'PointerTypeNode(parent_idx=7757, current_idx=7758, child_idxs=(7759, 7760, 7761, 7762), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6fdb40 'int (*)(mjResource *)'PlaceHolderNode(parent_idx=7758, current_idx=7759, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6fdae0 'int (mjResource *)' sugar
-PlaceHolderNode(parent_idx=7758, current_idx=7760, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6fdba8 <line:35:1, col:52> col:15 referenced mjfOpenResource 'int (*)(mjResource *)'PointerTypeNode(parent_idx=7757, current_idx=7758, child_idxs=(7759), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6fdb40 'int (*)(mjResource *)'ParenTypeNode(parent_idx=7758, current_idx=7759, child_idxs=(7760, 7761, 7762), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=7759, current_idx=7760, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fdab0 'int (mjResource *)' cdecl
-Int32PointerTypeNode(parent_idx=7758, current_idx=7762, child_idxs=(7763), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x6fd9e0 'mjResource *'TypedefNode(parent_idx=7763, current_idx=7764, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjResource
+Int32PointerTypeNode(parent_idx=7759, current_idx=7762, child_idxs=(7763), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=7763, current_idx=7764, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjResource]
 
 FullCommentNode(parent_idx=7757, current_idx=7768, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # callback for opening a resource, returns zero on failure
 
 TypedefDeclNode(parent_idx=1, current_idx=7769, child_idxs=(7770, 7784), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6fdea0 <line:39:1, col:73> col:15 referenced mjfReadResource 'int (*)(mjResource *, const void **)'PointerTypeNode(parent_idx=7769, current_idx=7770, child_idxs=(7771, 7772, 7773, 7774, 7780), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6fde30 'int (*)(mjResource *, const void **)'PlaceHolderNode(parent_idx=7770, current_idx=7771, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6fddd0 'int (mjResource *, const void **)' sugar
-PlaceHolderNode(parent_idx=7770, current_idx=7772, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6fdea0 <line:39:1, col:73> col:15 referenced mjfReadResource 'int (*)(mjResource *, const void **)'PointerTypeNode(parent_idx=7769, current_idx=7770, child_idxs=(7771), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6fde30 'int (*)(mjResource *, const void **)'ParenTypeNode(parent_idx=7770, current_idx=7771, child_idxs=(7772, 7773, 7774, 7780), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=7771, current_idx=7772, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fdd90 'int (mjResource *, const void **)' cdecl
-Int32PointerTypeNode(parent_idx=7770, current_idx=7774, child_idxs=(7775), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6fd9e0 'mjResource *'TypedefNode(parent_idx=7775, current_idx=7776, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjResource
-PointerTypeNode(parent_idx=7770, current_idx=7780, child_idxs=(7781), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x6fdca0 'const void **'PointerTypeNode(parent_idx=7780, current_idx=7781, child_idxs=(7782), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |       `-PointerType 0x5d5cf0 'const void *'NoneType
-# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
-
+Int32PointerTypeNode(parent_idx=7771, current_idx=7774, child_idxs=(7775), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=7775, current_idx=7776, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjResource]
+PointerTypeNode(parent_idx=7771, current_idx=7780, child_idxs=(7781), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[PointerTypeNode(parent_idx=7780, current_idx=7781, child_idxs=(7782), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[NoneType
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
+]
 
 FullCommentNode(parent_idx=7769, current_idx=7784, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
@@ -11275,35 +11265,33 @@ FullCommentNode(parent_idx=7769, current_idx=7784, child_idxs=(), node_state=4 (
 # return number of bytes stored in buffer, return -1 if error
 
 TypedefDeclNode(parent_idx=1, current_idx=7785, child_idxs=(7786, 7796), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6fe0c0 <line:42:1, col:54> col:16 referenced mjfCloseResource 'void (*)(mjResource *)'PointerTypeNode(parent_idx=7785, current_idx=7786, child_idxs=(7787, 7788, 7789, 7790), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6fe060 'void (*)(mjResource *)'PlaceHolderNode(parent_idx=7786, current_idx=7787, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6fe000 'void (mjResource *)' sugar
-PlaceHolderNode(parent_idx=7786, current_idx=7788, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6fe0c0 <line:42:1, col:54> col:16 referenced mjfCloseResource 'void (*)(mjResource *)'PointerTypeNode(parent_idx=7785, current_idx=7786, child_idxs=(7787), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6fe060 'void (*)(mjResource *)'ParenTypeNode(parent_idx=7786, current_idx=7787, child_idxs=(7788, 7789, 7790), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=7787, current_idx=7788, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fdfd0 'void (mjResource *)' cdecl
-NoneTypePointerTypeNode(parent_idx=7786, current_idx=7790, child_idxs=(7791), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x6fd9e0 'mjResource *'TypedefNode(parent_idx=7791, current_idx=7792, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjResource
+NoneTypePointerTypeNode(parent_idx=7787, current_idx=7790, child_idxs=(7791), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=7791, current_idx=7792, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjResource]
 
 FullCommentNode(parent_idx=7785, current_idx=7796, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # callback for closing a resource (responsible for freeing any allocated memory)
 
 TypedefDeclNode(parent_idx=1, current_idx=7797, child_idxs=(7798, 7814), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6fe440 <line:46:1, col:84> col:16 referenced mjfGetResourceDir 'void (*)(mjResource *, const char **, int *)'PointerTypeNode(parent_idx=7797, current_idx=7798, child_idxs=(7799, 7800, 7801, 7802, 7808, 7812), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6fe3d0 'void (*)(mjResource *, const char **, int *)'PlaceHolderNode(parent_idx=7798, current_idx=7799, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6fe370 'void (mjResource *, const char **, int *)' sugar
-PlaceHolderNode(parent_idx=7798, current_idx=7800, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6fe440 <line:46:1, col:84> col:16 referenced mjfGetResourceDir 'void (*)(mjResource *, const char **, int *)'PointerTypeNode(parent_idx=7797, current_idx=7798, child_idxs=(7799), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6fe3d0 'void (*)(mjResource *, const char **, int *)'ParenTypeNode(parent_idx=7798, current_idx=7799, child_idxs=(7800, 7801, 7802, 7808, 7812), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=7799, current_idx=7800, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fe330 'void (mjResource *, const char **, int *)' cdecl
-NoneTypePointerTypeNode(parent_idx=7798, current_idx=7802, child_idxs=(7803), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6fd9e0 'mjResource *'TypedefNode(parent_idx=7803, current_idx=7804, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-mjResource
-PointerTypeNode(parent_idx=7798, current_idx=7808, child_idxs=(7809), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6fe1c0 'const char **'PointerTypeNode(parent_idx=7808, current_idx=7809, child_idxs=(7810), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     | `-PointerType 0x4e3dc0 'const char *'Int8
-# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
-
-PointerTypeNode(parent_idx=7798, current_idx=7812, child_idxs=(7813), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x5c25f0 'int *'Int32
+NoneTypePointerTypeNode(parent_idx=7799, current_idx=7802, child_idxs=(7803), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[TypedefNode(parent_idx=7803, current_idx=7804, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+mjResource]
+PointerTypeNode(parent_idx=7799, current_idx=7808, child_idxs=(7809), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[PointerTypeNode(parent_idx=7808, current_idx=7809, child_idxs=(7810), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[Int8
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
+]
+PointerTypeNode(parent_idx=7799, current_idx=7812, child_idxs=(7813), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[Int32]
 
 FullCommentNode(parent_idx=7797, current_idx=7814, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
@@ -11311,19 +11299,18 @@ FullCommentNode(parent_idx=7797, current_idx=7814, child_idxs=(), node_state=4 (
 # sets dir to directory string with ndir being size of directory string
 
 TypedefDeclNode(parent_idx=1, current_idx=7815, child_idxs=(7816, 7830), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6fe770 <line:53:1, col:85> col:15 referenced mjfResourceModified 'int (*)(const mjResource *, const char *)'PointerTypeNode(parent_idx=7815, current_idx=7816, child_idxs=(7817, 7818, 7819, 7820, 7827), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x6fe700 'int (*)(const mjResource *, const char *)'PlaceHolderNode(parent_idx=7816, current_idx=7817, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x6fe6a0 'int (const mjResource *, const char *)' sugar
-PlaceHolderNode(parent_idx=7816, current_idx=7818, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6fe770 <line:53:1, col:85> col:15 referenced mjfResourceModified 'int (*)(const mjResource *, const char *)'PointerTypeNode(parent_idx=7815, current_idx=7816, child_idxs=(7817), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x6fe700 'int (*)(const mjResource *, const char *)'ParenTypeNode(parent_idx=7816, current_idx=7817, child_idxs=(7818, 7819, 7820, 7827), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=7817, current_idx=7818, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x6fe660 'int (const mjResource *, const char *)' cdecl
-Int32PointerTypeNode(parent_idx=7816, current_idx=7820, child_idxs=(7821), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x6fe500 'const mjResource *'mjResource
+Int32PointerTypeNode(parent_idx=7817, current_idx=7820, child_idxs=(7821), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[mjResource
 # Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
 # QualTypeNode: Unhandled node type: TypedefTypeNode
-
-PointerTypeNode(parent_idx=7816, current_idx=7827, child_idxs=(7828), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x4e3dc0 'const char *'Int8
-# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+]
+PointerTypeNode(parent_idx=7817, current_idx=7827, child_idxs=(7828), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[Int8
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 
 FullCommentNode(parent_idx=7815, current_idx=7830, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
@@ -11582,14 +11569,13 @@ struct mjpPlugin_:
 TypedefDeclNode(parent_idx=1, current_idx=7927, child_idxs=(7928), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x702e00 <line:136:1, col:27> col:27 referenced mjpPlugin 'struct mjpPlugin_':'struct mjpPlugin_'mjpPlugin_
 TypedefDeclNode(parent_idx=1, current_idx=7931, child_idxs=(7932, 7941), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x703180 <line:173:1, col:88> col:16 referenced mjfPluginLibraryLoadCallback 'void (*)(const char *, int, int)'PointerTypeNode(parent_idx=7931, current_idx=7932, child_idxs=(7933, 7934, 7935, 7936, 7939, 7940), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x703110 'void (*)(const char *, int, int)'PlaceHolderNode(parent_idx=7932, current_idx=7933, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x7030b0 'void (const char *, int, int)' sugar
-PlaceHolderNode(parent_idx=7932, current_idx=7934, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x703180 <line:173:1, col:88> col:16 referenced mjfPluginLibraryLoadCallback 'void (*)(const char *, int, int)'PointerTypeNode(parent_idx=7931, current_idx=7932, child_idxs=(7933), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x703110 'void (*)(const char *, int, int)'ParenTypeNode(parent_idx=7932, current_idx=7933, child_idxs=(7934, 7935, 7936, 7939, 7940), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=7933, current_idx=7934, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x703070 'void (const char *, int, int)' cdecl
-NoneTypePointerTypeNode(parent_idx=7932, current_idx=7936, child_idxs=(7937), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     |-PointerType 0x4e3dc0 'const char *'Int8
-# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+NoneTypePointerTypeNode(parent_idx=7933, current_idx=7936, child_idxs=(7937), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[Int8
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 Int32Int32
 FullCommentNode(parent_idx=7931, current_idx=7941, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
@@ -15927,13 +15913,12 @@ struct mjtSection_:
 TypedefDeclNode(parent_idx=1, current_idx=9440, child_idxs=(9441), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x73e2a8 <line:110:1, line:114:3> col:3 mjtSection 'enum mjtSection_':'enum mjtSection_'
 TypedefDeclNode(parent_idx=1, current_idx=9444, child_idxs=(9445, 9452), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x73e550 <line:118:1, col:54> col:15 referenced mjfItemEnable 'int (*)(int, void *)'PointerTypeNode(parent_idx=9444, current_idx=9445, child_idxs=(9446, 9447, 9448, 9449, 9450), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |-PointerType 0x73e4e0 'int (*)(int, void *)'PlaceHolderNode(parent_idx=9445, current_idx=9446, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| | `-ParenType 0x73e480 'int (int, void *)' sugar
-PlaceHolderNode(parent_idx=9445, current_idx=9447, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x73e550 <line:118:1, col:54> col:15 referenced mjfItemEnable 'int (*)(int, void *)'PointerTypeNode(parent_idx=9444, current_idx=9445, child_idxs=(9446), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+| |-PointerType 0x73e4e0 'int (*)(int, void *)'ParenTypeNode(parent_idx=9445, current_idx=9446, child_idxs=(9447, 9448, 9449, 9450), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+PlaceHolderNode(parent_idx=9446, current_idx=9447, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 | |   `-FunctionProtoType 0x73e440 'int (int, void *)' cdecl
-Int32Int32PointerTypeNode(parent_idx=9445, current_idx=9450, child_idxs=(9451), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-| |     `-PointerType 0x4e3b20 'void *'NoneType
+Int32Int32PointerTypeNode(parent_idx=9446, current_idx=9450, child_idxs=(9451), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+UnsafePointer[NoneType]
 
 FullCommentNode(parent_idx=9444, current_idx=9452, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 

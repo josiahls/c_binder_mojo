@@ -21,7 +21,6 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 5. **Boilerplate code** - NodeAstLike trait implementations have lots of repetitive getter methods
 
 ## Current Next Steps (IMMEDIATE PRIORITIES)
-1. **Fix function pointer parsing** - `void (*)(void)` is still not handled correctly
 2. **Create missing node types** - ParenType and FunctionProtoType nodes need to be implemented:
    - `-ParenType 0x5d5e60 'int (const void *, const void *)' sugar`
    - `-FunctionProtoType 0x5d5e20 'int (const void *, const void *)' cdecl`

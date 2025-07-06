@@ -31,6 +31,9 @@ struct PointerTypeNode(NodeAstLike):
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
     var _pointer_type: String
+    var _is_function_pointer: Bool
+
+    var _unhandled_tokens: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -39,6 +42,40 @@ struct PointerTypeNode(NodeAstLike):
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
         self._pointer_type = String()
+        self._is_function_pointer = False
+        self._unhandled_tokens = String()
+
+        var quoted_indicies = ast_entry.get_quoted_indices()
+
+        section_idx = 0
+        start_idx = 0
+        for idx in quoted_indicies:
+            if section_idx == 0:
+                self._parse_section_0(ast_entry.tokens[:idx])
+            elif section_idx == 1:
+                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+            else:
+                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
+
+            start_idx = idx
+            section_idx += 1
+
+    fn _parse_section_0(mut self, tokens: List[String]):
+        # NOTE: usually I dont see anything before the first quote.
+        for token in tokens:
+            self._unhandled_tokens += token + " "
+
+    fn _parse_section_1(mut self, tokens: List[String]):
+        for token in tokens:
+            if "(*)" in token:
+                self._is_function_pointer = True
+            else:
+                self._pointer_type += token + " "
+    
+    fn _parse_section_2(mut self, tokens: List[String]):
+        for token in tokens:
+            self._unhandled_tokens += token + " "
+
 
     @staticmethod
     fn accept(
@@ -138,6 +175,17 @@ struct PointerTypeNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
         # TODO(josiahls): Check if the child is a NoneType and switch this to OpaquePointer
+        var prefix:String = ""
+        var suffix:String = ""
+
+
+        # NOTE: For function pointers, from what I can tell, clang
+        # will give us a ParenType + FunctionProtoType.
+        # So we need to handle that from the children.
+        if not self._is_function_pointer:
+            prefix = "UnsafePointer["
+            suffix = "]"
+
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
@@ -146,6 +194,6 @@ struct PointerTypeNode(NodeAstLike):
             # newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string="UnsafePointer[" if just_code else String(),
-            alternate_string_tail="]" if just_code else String(),
+            alternate_string=prefix,
+            alternate_string_tail=suffix,
         )

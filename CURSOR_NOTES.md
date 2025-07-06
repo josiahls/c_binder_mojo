@@ -21,13 +21,11 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 5. **Boilerplate code** - NodeAstLike trait implementations have lots of repetitive getter methods
 
 ## Current Next Steps (IMMEDIATE PRIORITIES)
-1. **Fix typedef self-reference issue** - typedefs like `alias pthread_attr_t = pthread_attr_t` should not return themselves if the type is already defined
-2. **Handle QualType nodes** - `-QualType 0x4e34a4 'volatile int' volatile` needs proper parsing and type mapping
-3. **Fix function pointer parsing** - `void (*)(void)` is still not handled correctly
-4. **Create missing node types** - ParenType and FunctionProtoType nodes need to be implemented:
+1. **Fix function pointer parsing** - `void (*)(void)` is still not handled correctly
+2. **Create missing node types** - ParenType and FunctionProtoType nodes need to be implemented:
    - `-ParenType 0x5d5e60 'int (const void *, const void *)' sugar`
    - `-FunctionProtoType 0x5d5e20 'int (const void *, const void *)' cdecl`
-5. **Fix function alias generation** - aliases like `lgammal_r` and `__lgammal_r` are failing to generate properly
+3. **Fix function alias generation** - aliases like `lgammal_r` and `__lgammal_r` are failing to generate properly
 
 ## Recent Progress & Insights
 - **AST Token Parsing**: Improved understanding of how Clang represents typedefs, function declarations, etc.

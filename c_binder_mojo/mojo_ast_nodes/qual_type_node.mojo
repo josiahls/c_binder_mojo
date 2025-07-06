@@ -182,6 +182,7 @@ struct QualTypeNode(NodeAstLike):
             if node.node[].isa[BuiltinTypeNode]():
                 _type_name = node.node[][BuiltinTypeNode].to_string(just_code, module_interface, parent_indent_level)
             else:
+                # NOTE(josiahls): There are cases where we get unhandled typedef, but I don't understand the output.
                 error_msg += "QualTypeNode: Unhandled node type: " + node.name() + "\n"
 
         s = _type_name

@@ -4274,7 +4274,7 @@ struct mjuiState_:
 	var dragrect: Int32
 	var dragbutton: Int32
 	var dropcount: Int32
-	var droppaths: UnsafePointer[char *] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var droppaths: UnsafePointer[UnsafePointer[Int8]] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 
 TypedefDeclNode(parent_idx=1, current_idx=9507, child_idxs=(9508), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x740d00 <line:164:1, col:27> col:27 referenced mjuiState 'struct mjuiState_':'struct mjuiState_'mjuiState_

@@ -4055,7 +4055,7 @@ struct mjuiState_:
 	var dragrect: Int32
 	var dragbutton: Int32
 	var dropcount: Int32
-	var droppaths: UnsafePointer[char *] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var droppaths: UnsafePointer[UnsafePointer[Int8]] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 
 
 alias mjuiState = mjuiState_

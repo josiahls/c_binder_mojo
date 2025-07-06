@@ -311,6 +311,16 @@ struct TypeMapper:
         return _type_name.endswith("*")
 
     @staticmethod
+    fn is_double_pointer_type(type_name: String) -> Bool:
+        """Checks if a C type is a double pointer type.
+        
+        Args:
+            type_name: The C type to check.
+        """ 
+        var _type_name = Self.clean_type_name(type_name)
+        return _type_name.endswith("**")
+
+    @staticmethod
     fn get_sugar_type(type_name: String) -> String:
         splits = type_name.split(":")
         return splits[0]
@@ -372,8 +382,13 @@ struct TypeMapper:
         var _type_name = Self.clean_type_name(type_name)
         var _vector_size:String = 'unknown'
         var is_pointer = False
+        var is_double_pointer = False
         var is_vector = False
-        if Self.is_pointer_type(_type_name):
+
+        if Self.is_double_pointer_type(_type_name):
+            is_double_pointer = True
+            _type_name = _type_name[:-2]
+        elif Self.is_pointer_type(_type_name):
             _type_name = _type_name[:-1]
             is_pointer = True
 
@@ -391,6 +406,13 @@ struct TypeMapper:
                 mojo_type = "OpaquePointer"
             else:
                 mojo_type = "UnsafePointer[" + mojo_type + "]"
+
+        if is_double_pointer:
+            if _type_name == "void":
+                # NOTE: Debating if this should be UnsafePointer[OpaquePointer] or OpaquePointer.
+                mojo_type = "OpaquePointer"
+            else:
+                mojo_type = "UnsafePointer[UnsafePointer[" + mojo_type + "]]"
 
         if is_vector:
             mojo_type = Self.convert_type_to_dtype(mojo_type)

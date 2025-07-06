@@ -321,11 +321,20 @@ struct FieldDeclNode(NodeAstLike):
     ) raises -> String:
 
         var s: String = ""
+        var indent_level = parent_indent_level
+        var indent_string = "\t" * indent_level
 
         field_type = TypeMapper.get_mojo_type(self._field_type)
         field_name = self._field_name
         if field_name == "global":
             field_name = "`global`"
+
+        for child in self._indicies[].child_idxs:
+            node = module_interface.get_node(child)
+            if node.node[].isa[AlignedAttrNode]():
+                pass
+                # I think mojo handles this automatically
+                # field_type = node.node[][AlignedAttrNode].to_string(False, module_interface, 0)
 
         if self._is_const:
             s += "alias " + field_name + ": " + field_type + " = " + self._value + "\n"
@@ -335,13 +344,14 @@ struct FieldDeclNode(NodeAstLike):
         if self._unhandled_tokens != "":
             s += "# Unhandled tokens: " + self._unhandled_tokens + "\n"
 
-        return default_to_string(
-            node=AstNode(self),
-            module_interface=module_interface,
-            just_code=just_code,
-            indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
-            alternate_string=s
-        )
+        return indent_string + s
+        # return default_to_string(
+        #     node=AstNode(self),
+        #     module_interface=module_interface,
+        #     just_code=just_code,
+        #     indent_level=parent_indent_level,
+        #     newline_before_ast_entries=just_code,
+        #     newline_after_tail=True,
+        #     indent_before_ast_entries=True,
+        #     alternate_string=s
+        # )

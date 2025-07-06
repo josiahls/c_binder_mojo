@@ -108,7 +108,7 @@ struct RootNode(NodeAstLike):
         imports.append(
             "from sys.ffi import _Global"
         )
-        imports.append("from sys import ffi")
+        imports.append("from sys import ffi, alignof, simdwidthof")
 
         return String("\n").join(imports)
 

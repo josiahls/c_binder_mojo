@@ -3137,7 +3137,7 @@ struct mjResource_:
 	var name: UnsafePointer[Int8]
 	var data: UnsafePointer[NoneType]
 	var timestamp: SIMD[Int8.dtype, 512]
-	var provider: UnsafePointer[const mjpResourceProvider]
+	alias provider: UnsafePointer[mjpResourceProvider] = 
 
 
 alias mjResource = mjResource_
@@ -3170,7 +3170,7 @@ alias mjfResourceModified = fn(UnsafePointer[mjResource],UnsafePointer[Int8]) ->
 # 0 if the resource is older than the given timestamp
 
 struct mjpResourceProvider:
-	var prefix: UnsafePointer[const char]
+	alias prefix: UnsafePointer[Int8] = 
 	var open: mjfOpenResource
 	var read: mjfReadResource
 	var close: mjfCloseResource
@@ -3193,26 +3193,26 @@ alias mjtPluginCapabilityBit = mjtPluginCapabilityBit_
 #---------------------------------- Plugins -------------------------------------------------------
 
 struct mjpPlugin_:
-	var name: UnsafePointer[const char]
+	alias name: UnsafePointer[Int8] = 
 	var nattribute: Int32
-	var attributes: UnsafePointer[const char *const]
+	alias attributes: UnsafePointer[char *const] = 
 	var capabilityflags: Int32
 	var needstage: Int32
 	var nstate: int (*)(const mjModel *, int)
 	var nsensordata: int (*)(const mjModel *, int, int)
 	var init: int (*)(const mjModel *, mjData *, int)
 	var destroy: void (*)(mjData *, int)
-	var copy: void (*)(mjData *, const mjModel *, const mjData *, int)
+	alias copy: void (*)(mjData *, mjModel *, mjData *, int) = 
 	var reset: void (*)(const mjModel *, mjtNum *, void *, int)
 	var compute: void (*)(const mjModel *, mjData *, int, int)
 	var advance: void (*)(const mjModel *, mjData *, int)
-	var visualize: void (*)(const mjModel *, mjData *, const mjvOption *, mjvScene *, int)
+	alias visualize: void (*)(const mjModel *, mjData *, mjvOption *, mjvScene *, int) = 
 	var actuator_act_dot: void (*)(const mjModel *, mjData *, int)
-	var sdf_distance: mjtNum (*)(const mjtNum *, const mjData *, int)
-	var sdf_gradient: void (*)(mjtNum *, const mjtNum *, const mjData *, int)
-	var sdf_staticdistance: mjtNum (*)(const mjtNum *, const mjtNum *)
-	var sdf_attribute: void (*)(mjtNum *, const char **, const char **)
-	var sdf_aabb: void (*)(mjtNum *, const mjtNum *)
+	alias sdf_distance: mjtNum (*)(const mjtNum *, mjData *, int) = 
+	alias sdf_gradient: void (*)(mjtNum *, mjtNum *, mjData *, int) = 
+	alias sdf_staticdistance: mjtNum (*)(const mjtNum *, mjtNum *) = 
+	alias sdf_attribute: void (*)(mjtNum *, char **, char **) = 
+	alias sdf_aabb: void (*)(mjtNum *, mjtNum *) = 
 
 
 alias mjpPlugin = mjpPlugin_
@@ -4055,7 +4055,7 @@ struct mjuiState_:
 	var dragrect: Int32
 	var dragbutton: Int32
 	var dropcount: Int32
-	var droppaths: UnsafePointer[const char *]
+	alias droppaths: UnsafePointer[char *] = 
 
 
 alias mjuiState = mjuiState_

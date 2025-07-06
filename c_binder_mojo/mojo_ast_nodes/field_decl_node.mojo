@@ -35,6 +35,7 @@ struct FieldDeclNode(NodeAstLike):
     var _field_name: String
     var _field_type: String
     var _is_const: Bool
+    var _is_const_alias: Bool
     var _is_struct: Bool
     var _is_union: Bool
     var _has_sugar: Bool
@@ -52,6 +53,7 @@ struct FieldDeclNode(NodeAstLike):
         self._field_name = String()
         self._field_type = String()
         self._is_const = False
+        self._is_const_alias = False
         self._is_struct = False
         self._is_union = False
         self._has_sugar = False
@@ -96,6 +98,15 @@ struct FieldDeclNode(NodeAstLike):
                 self._is_unnamed_type = True
             elif entry == "struct":
                 pass
+            elif entry == "const":
+                # Not sure what to do here. it produces:
+                # struct mjResource_:
+                # 	var name: UnsafePointer[Int8]
+                # 	var data: UnsafePointer[NoneType]
+                # 	var timestamp: SIMD[Int8.dtype, 512]
+                # 	alias provider: UnsafePointer[mjpResourceProvider] = 
+                # Which is weird. alias really implies compile time constant.
+                self._is_const_alias = True
             elif entry == "volatile":
                 self._is_volatile = True
             elif self._field_type == "":
@@ -222,7 +233,12 @@ struct FieldDeclNode(NodeAstLike):
         if self._is_const:
             s += "alias " + field_name + ": " + field_type + " = " + self._value + "\n"
         else:
-            s += "var " + field_name + ": " + field_type + "\n"
+            s += "var " + field_name + ": " + field_type
+
+            if self._is_const_alias:
+                s += " # This is a const param, but shouldn't be assigned as an alias since it doesn't have a value."
+
+            s += "\n"
 
         if self._unhandled_tokens != "":
             s += "# Unhandled tokens: " + self._unhandled_tokens + "\n"

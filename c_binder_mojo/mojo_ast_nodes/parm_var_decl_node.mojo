@@ -74,6 +74,7 @@ struct ParmVarDeclNode(NodeAstLike):
         self._is_pointer = False
         self._is_double_pointer = False
         self._is_function_pointer = False
+        self._is_positional = False
 
         self._has_sugar_mapping = False
 
@@ -88,12 +89,12 @@ struct ParmVarDeclNode(NodeAstLike):
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
             elif section_idx == 2:
-                self._parse_section_2(ast_entry.tokens[start_idx:idx])
+                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
             elif section_idx == 3:
                 if not self._has_sugar_mapping:
-                    self._parse_section_3(ast_entry.tokens[start_idx:idx])
+                    self._parse_section_3(ast_entry.tokens[start_idx + 1:idx])
                 # else:
                 #     self._parse_section_4(ast_entry.tokens[start_idx:idx])
             else:
@@ -119,6 +120,9 @@ struct ParmVarDeclNode(NodeAstLike):
     fn _parse_section_1(mut self, tokens: List[String]):
         for token in tokens:
             var base_entry:String = token
+
+            if self._parm_var_name == "":
+                self._is_positional = True
 
             # Check for function pointer pattern (*)(...)
             # We don't allow the statements after this block to run, since these tokens are going to be nested in the function param.

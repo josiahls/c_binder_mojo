@@ -35,6 +35,7 @@ struct TypedefDeclNode(NodeAstLike):
     var _type_name: String
     var _type_aliased: String
     var _is_referenced: Bool
+    var _is_disabled: Bool
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -49,6 +50,7 @@ struct TypedefDeclNode(NodeAstLike):
 
         self._is_implicit = False
         self._is_referenced = False
+        self._is_disabled = False
 
         var quoted_indicies = ast_entry.get_quoted_indices()
 
@@ -127,6 +129,8 @@ struct TypedefDeclNode(NodeAstLike):
         else:
             # self._grammar = Grammar(self._ast_entries[])
             # get_global_type_mapper()[].add_custom_type(self._grammar._name)
+            if self._type_name in get_global_type_mapper()[].custom_types:
+                self._is_disabled = True
             self._node_state = NodeState.COMPLETED
 
     # fn process_anonymous_record(
@@ -196,14 +200,19 @@ struct TypedefDeclNode(NodeAstLike):
         #     s += module_interface.nodes()[][child_idx].to_string(just_code, module_interface, parent_indent_level + 1)
         # s += " # Original type: " + String(self._type_aliased)
 
-        return default_to_string(
+        var out_s = default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
             just_code=just_code,
             indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
+            newline_before_ast_entries=just_code and not self._is_disabled,
             newline_after_tail=True,
             indent_before_ast_entries=True,
             alternate_string=s if just_code else String(),
             unhandled_tokens=self._unhandled_tokens,
         )
+
+        if self._is_disabled:
+            out_s = "# Disabled since this is already declared\n# " + out_s
+
+        return out_s

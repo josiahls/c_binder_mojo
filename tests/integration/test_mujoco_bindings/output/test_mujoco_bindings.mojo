@@ -513,8 +513,8 @@ struct pthread_attr_t:
 	var __align: Int64
 	
 
-
-alias pthread_attr_t = pthread_attr_t
+# Disabled since this is already declared
+# alias pthread_attr_t = pthread_attr_t
 struct Anonymous__line_67_9__line_72_1_:
 
 	var __data: __pthread_mutex_s
@@ -7993,8 +7993,8 @@ struct mjpResourceProvider:
 	# opaque data pointer (resource invariant)
 
 
-
-alias mjpResourceProvider = mjpResourceProvider
+# Disabled since this is already declared
+# alias mjpResourceProvider = mjpResourceProvider
 struct mjtPluginCapabilityBit_:
 
 	#---------------------------------- Plugins -------------------------------------------------------

@@ -578,7 +578,8 @@ struct pthread_attr_t:
 	var __align: Int64
 	
 
-TypedefDeclNode(parent_idx=1, current_idx=800, child_idxs=(801), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+# Disabled since this is already declared
+# TypedefDeclNode(parent_idx=1, current_idx=800, child_idxs=(801), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5bc640 <line:62:1, col:30> col:30 pthread_attr_t 'union pthread_attr_t':'union pthread_attr_t'pthread_attr_t
 struct Anonymous__line_67_9__line_72_1_:
 
@@ -11398,7 +11399,8 @@ struct mjpResourceProvider:
 	# opaque data pointer (resource invariant)
 
 
-TypedefDeclNode(parent_idx=1, current_idx=7847, child_idxs=(7848), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+# Disabled since this is already declared
+# TypedefDeclNode(parent_idx=1, current_idx=7847, child_idxs=(7848), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6fed60 <line:65:1, col:36> col:36 referenced mjpResourceProvider 'struct mjpResourceProvider':'struct mjpResourceProvider'mjpResourceProvider
 EnumDeclNode(parent_idx=1, current_idx=7851, child_idxs=(7852, 7853, 7860, 7867, 7874), node_state=4 (COMPLETED))
 struct mjtPluginCapabilityBit_:

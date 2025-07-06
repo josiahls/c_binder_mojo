@@ -311,12 +311,21 @@ struct FunctionDeclNode(NodeAstLike):
 
     fn parm_var_decl_to_strings(self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0) -> List[String]:
         var strings = List[String]()
+        var is_tracking_positional = False
         for child in self.indicies().child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[ParmVarDeclNode]():
                 try:
                     s = node.to_string(just_code, module_interface, parent_indent_level)
+
+                    if is_tracking_positional and not node.node[][ParmVarDeclNode]._is_positional:
+                        strings.append("/")
+                        is_tracking_positional = False
+
                     strings.append(String(s))
+                    
+                    if node.node[][ParmVarDeclNode]._is_positional:
+                        is_tracking_positional = True
                 except e:
                     print(e)
                     print(node.name())

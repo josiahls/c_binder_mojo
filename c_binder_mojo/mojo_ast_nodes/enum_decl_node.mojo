@@ -173,7 +173,7 @@ struct EnumDeclNode(NodeAstLike):
 
     fn _process_enum_values(mut self, mut module_interface: ModuleInterface):
         var current_value = 0
-        var field_type:String = ""
+        var current_field_type:String = ""
         # TODO(josiahls): This is a hack to get the enum values to work.
         # We need to find a better way to do this.
         for child_idx in self._indicies[].child_idxs:
@@ -182,29 +182,19 @@ struct EnumDeclNode(NodeAstLike):
                 field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
                 value = child.node[][EnumConstantDeclNode].get_value(module_interface)
                 if value == "":
-                    print("EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
+                    print("(no value)EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
                     value = String(current_value)
+                    field_type = current_field_type
                     current_value += 1
                     child.node[][EnumConstantDeclNode]._value = value
                     child.node[][EnumConstantDeclNode]._field_type = field_type
                 else:
                     try:
                         current_value = Int(value)
-                        field_type = child.node[][EnumConstantDeclNode]._field_type
-                        print("EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
+                        current_field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
+                        print("(udpate value and field) EnumDeclNode: EnumConstantDeclNode: field_type: " + current_field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
                     except:
                         print("Error: Enum constant decl has invalid value: " + child.node[][EnumConstantDeclNode]._value)
-                # if child.node[][EnumConstantDeclNode]._value == "":
-                #     child.node[][EnumConstantDeclNode]._value = String(current_value)
-                #     child.node[][EnumConstantDeclNode]._field_type = field_type
-                #     current_value += 1
-                # else:
-                #     try:
-                #         current_value = Int(child.node[][EnumConstantDeclNode]._value)
-                #         field_type = child.node[][EnumConstantDeclNode]._field_type
-                #         print("EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
-                #     except:
-                #         print("Error: Enum constant decl has invalid value: " + child.node[][EnumConstantDeclNode]._value)
 
     fn process_anonymous_enum(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
@@ -225,41 +215,6 @@ struct EnumDeclNode(NodeAstLike):
                     self._ast_entries[].append(new_entry)
                     return True
         return False
-
-
-    # fn process(
-    #     mut self,
-    #     ast_entry: AstEntry,
-    #     token_flow: MessageableEnum,
-    #     mut module_interface: ModuleInterface,
-    # ):
-    #     self._grammar = Grammar(self._ast_entries[])
-    #     if token_flow == TokenFlow.CREATE_CHILD:
-    #         self._node_state = NodeState.BUILDING_CHILDREN
-    #     else:
-    #         self.update_enum_constant_values(module_interface)
-    #         get_global_type_mapper()[].add_custom_type(self._grammar._name)
-    #         self._node_state = NodeState.COMPLETED
-
-    # fn update_enum_constant_values(mut self, module_interface: ModuleInterface):
-    #     max_value = -1
-    #     for child_idx in self._indicies[].child_idxs:
-    #         child = module_interface.nodes()[][child_idx]
-    #         if child.node[].isa[EnumConstantDeclNode]():
-    #             value = child.node[][EnumConstantDeclNode]._grammar._value
-    #             if value == "":
-    #                 max_value += 1
-    #                 value = String(max_value)
-    #             else:
-    #                 try:
-    #                     max_value = Int(value)
-    #                 except:
-    #                     print(
-    #                         "Error: Enum constant decl has invalid value: "
-    #                         + value
-    #                     )
-
-    #             child.node[][EnumConstantDeclNode]._grammar._value = value
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]

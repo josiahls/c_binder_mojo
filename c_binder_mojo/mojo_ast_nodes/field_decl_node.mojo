@@ -323,11 +323,14 @@ struct FieldDeclNode(NodeAstLike):
         var s: String = ""
 
         field_type = TypeMapper.get_mojo_type(self._field_type)
+        field_name = self._field_name
+        if field_name == "global":
+            field_name = "`global`"
 
         if self._is_const:
-            s += "alias " + self._field_name + ": " + field_type + " = " + self._value + "\n"
+            s += "alias " + field_name + ": " + field_type + " = " + self._value + "\n"
         else:
-            s += "var " + self._field_name + ": " + field_type + "\n"
+            s += "var " + field_name + ": " + field_type + "\n"
 
         if self._unhandled_tokens != "":
             s += "# Unhandled tokens: " + self._unhandled_tokens + "\n"

@@ -24,98 +24,6 @@ from c_binder_mojo.type_mapper import TypeMapper
 from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
-struct ParmVarDecl(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _type: String
-    var _is_positional: Bool
-
-    fn __init__(out self, name: String, type: String):
-        self._name = name
-        self._type = type
-        self._is_positional = False
-
-    fn __init__(out self, type: String):
-        self._type = type
-        self._name = String()
-        self._is_positional = True
-
-    fn __str__(self) -> String:
-        param_type = self._type
-
-        param_type = TypeMapper.map_type(param_type)
-
-        if self._is_positional:
-            return param_type
-        else:
-            return self._name + ": " + param_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _return_type: String
-    var _parm_vars: List[ParmVarDecl]
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        self._return_type = String()
-        self._parm_vars = List[ParmVarDecl]()
-        for entry in ast_entries:
-            if entry.ast_name == "ParmVarDecl":
-                if len(entry.tokens) >= 2:
-                    self._parm_vars.append(
-                        ParmVarDecl(entry.tokens[0], String(' ').join(entry.tokens[1:]))
-                    )
-                elif len(entry.tokens) == 1:
-                    self._parm_vars.append(ParmVarDecl(entry.tokens[0]))
-                else:
-                    print(
-                        "ParmVarDecl: Invalid grammar (len(tokens) == 0): "
-                        + String(entry)
-                    )
-            elif entry.ast_name == "FunctionDecl":
-                if len(entry.tokens) >= 2:
-                    self._name = entry.tokens[0]
-                    for token in entry.tokens[1:]:
-                        # Tokens related to params will be handled via the ParmVarDecls.
-                        if token.startswith("("):
-                            break
-
-                        self._return_type += token + " "
-                    else:
-                        print(
-                            "FunctionDecl: Invalid grammar (no params): "
-                            + String(entry)
-                        )
-            elif entry.ast_name == "NoThrowAttr":
-                # NOTE: not sure how to handle this or if we even have to.
-                pass
-            else:
-                print(
-                    "FunctionDecl: Invalid grammar (not a ParmVarDecl or"
-                    " FunctionDecl): "
-                    + String(entry)
-                )
-
-    fn __str__(self) -> String:
-        return_type = TypeMapper.map_type(self._return_type)
-        return (
-            "alias "
-            + self._name
-            + " = fn "
-            + "("
-            + String(", ").join(self._parm_vars)
-            + ") -> "
-            + return_type
-        )
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
 @fieldwise_init
 struct FunctionDeclNode(NodeAstLike):
     alias __name__ = "FunctionDeclNode"
@@ -145,10 +53,8 @@ struct FunctionDeclNode(NodeAstLike):
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
         self._node_state = NodeState.COMPLETED
         self._record_decl_level = ast_entries.level
-        print("FunctionDeclNode: is_prev: " + String(ast_entries.is_prev))
         self._is_prev = ast_entries.is_prev
         self._is_disabled = False
 

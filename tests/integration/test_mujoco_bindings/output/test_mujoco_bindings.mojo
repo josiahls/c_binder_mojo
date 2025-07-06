@@ -2257,7 +2257,7 @@ alias mjThreadPool = mjThreadPool_
 struct mjTask_:
 	var func: mjfTask
 	var args: UnsafePointer[NoneType]
-	var status: volatile int
+	var status: Int32
 
 
 alias mjTask = mjTask_

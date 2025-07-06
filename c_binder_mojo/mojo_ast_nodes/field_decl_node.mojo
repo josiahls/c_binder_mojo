@@ -39,7 +39,7 @@ struct FieldDeclNode(NodeAstLike):
     var _has_sugar: Bool
     var _is_unnamed_type: Bool
     var _value: String
-
+    var _is_volatile: Bool
     var _unhandled_tokens: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
@@ -56,6 +56,7 @@ struct FieldDeclNode(NodeAstLike):
         self._has_sugar = False
         self._is_unnamed_type = False
         self._value = String()
+        self._is_volatile = False
         self._unhandled_tokens = String()
 
         var quoted_indicies = ast_entries.get_quoted_indices()
@@ -94,6 +95,8 @@ struct FieldDeclNode(NodeAstLike):
                 self._is_unnamed_type = True
             elif entry == "struct":
                 pass
+            elif entry == "volatile":
+                self._is_volatile = True
             elif self._field_type == "":
                 self._field_type = entry
             else:

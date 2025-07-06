@@ -2322,7 +2322,7 @@ TypedefDeclNode(parent_idx=1, current_idx=6092, child_idxs=(6093), node_state=4 
 struct mjTask_:
 	var func: mjfTask
 	var args: UnsafePointer[NoneType]
-	var status: volatile int
+	var status: Int32
 
 TypedefDeclNode(parent_idx=1, current_idx=6103, child_idxs=(6104), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6b4580 <line:40:1, col:24> col:24 referenced mjTask 'struct mjTask_':'struct mjTask_'mjTask_

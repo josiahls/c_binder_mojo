@@ -565,9 +565,8 @@ struct Anonymous__line_93_9__line_97_1_:
 
 alias pthread_rwlockattr_t = Anonymous__line_93_9__line_97_1_
 
-alias pthread_spinlock_t = 
-# (placeholder) | `-QualType 0x4e34a4 'volatile int' volatile
-Int32
+alias pthread_spinlock_t = Int32
+# Marked as volatile. c_binder_mojo does not know how to handle this.
 struct Anonymous__line_108_9__line_112_1_:
 
 	var __size: SIMD[Int8.dtype, 32]
@@ -699,12 +698,10 @@ alias __compar_fn_t = UnsafePointer[
 # (placeholder) |   `-ParenType 0x5d5e60 'int (const void *, const void *)' sugar
 
 # (placeholder) |     `-FunctionProtoType 0x5d5e20 'int (const void *, const void *)' cdecl
-Int32UnsafePointer[
-# (placeholder) |       | `-QualType 0x4e3401 'const void' const
-NoneType]
-UnsafePointer[
-# (placeholder) |         `-QualType 0x4e3401 'const void' const
-NoneType]
+Int32UnsafePointer[NoneType
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
+UnsafePointer[NoneType
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 ]
 
 alias bsearch = fn(read __key: UnsafePointer[NoneType], read __base: UnsafePointer[NoneType], __nmemb: size_t, __size: size_t, __compar: __compar_fn_t) -> UnsafePointer[NoneType]
@@ -6142,9 +6139,10 @@ alias mjfGeneric = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d2b50 'void (const mjModel *, mjData *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d2b10 'void (const mjModel *, mjData *)' cdecl
-NoneTypeUnsafePointer[
-# (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-mjModel]
+NoneTypeUnsafePointer[mjModel
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
 UnsafePointer[mjData]
 ]
 
@@ -6155,9 +6153,10 @@ alias mjfConFilt = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d2f30 'int (const mjModel *, mjData *, int, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d2ee0 'int (const mjModel *, mjData *, int, int)' cdecl
-Int32UnsafePointer[
-# (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-mjModel]
+Int32UnsafePointer[mjModel
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
 UnsafePointer[mjData]
 Int32Int32]
 
@@ -6168,9 +6167,10 @@ alias mjfSensor = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3290 'void (const mjModel *, mjData *, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d3250 'void (const mjModel *, mjData *, int)' cdecl
-NoneTypeUnsafePointer[
-# (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-mjModel]
+NoneTypeUnsafePointer[mjModel
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
 UnsafePointer[mjData]
 Int32]
 
@@ -6190,12 +6190,14 @@ alias mjfAct = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3810 'mjtNum (const mjModel *, const mjData *, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d37d0 'mjtNum (const mjModel *, const mjData *, int)' cdecl
-Float64UnsafePointer[
-# (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-mjModel]
-UnsafePointer[
-# (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
-mjData]
+Float64UnsafePointer[mjModel
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
+UnsafePointer[mjData
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
 Int32]
 
 # actuator dynamics, gain, bias
@@ -6205,12 +6207,14 @@ alias mjfCollision = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6d3d10 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6d3cb0 'int (const mjModel *, const mjData *, mjContact *, int, int, mjtNum)' cdecl
-Int32UnsafePointer[
-# (placeholder) | |     | `-QualType 0x6d0921 'const mjModel' const
-mjModel]
-UnsafePointer[
-# (placeholder) | |     | `-QualType 0x6d0a11 'const mjData' const
-mjData]
+Int32UnsafePointer[mjModel
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
+UnsafePointer[mjData
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
 UnsafePointer[mjContact]
 Int32Int32Float64]
 
@@ -7900,9 +7904,8 @@ alias mjfReadResource = UnsafePointer[
 
 # (placeholder) | |   `-FunctionProtoType 0x6fdd90 'int (mjResource *, const void **)' cdecl
 Int32UnsafePointer[mjResource]
-UnsafePointer[UnsafePointer[
-# (placeholder) | |         `-QualType 0x4e3401 'const void' const
-NoneType]
+UnsafePointer[UnsafePointer[NoneType
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 ]
 ]
 
@@ -7925,9 +7928,8 @@ alias mjfGetResourceDir = UnsafePointer[
 
 # (placeholder) | |   `-FunctionProtoType 0x6fe330 'void (mjResource *, const char **, int *)' cdecl
 NoneTypeUnsafePointer[mjResource]
-UnsafePointer[UnsafePointer[
-# (placeholder) | |     |   `-QualType 0x4e3441 'const char' const
-Int8]
+UnsafePointer[UnsafePointer[Int8
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 ]
 UnsafePointer[Int32]
 ]
@@ -7940,12 +7942,12 @@ alias mjfResourceModified = UnsafePointer[
 # (placeholder) | | `-ParenType 0x6fe6a0 'int (const mjResource *, const char *)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x6fe660 'int (const mjResource *, const char *)' cdecl
-Int32UnsafePointer[
-# (placeholder) | |     | `-QualType 0x6fd991 'const mjResource' const
-mjResource]
-UnsafePointer[
-# (placeholder) | |       `-QualType 0x4e3441 'const char' const
-Int8]
+Int32UnsafePointer[mjResource
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)
+# QualTypeNode: Unhandled node type: TypedefTypeNode
+]
+UnsafePointer[Int8
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 ]
 
 # callback for checking if the current resource was modified from the time
@@ -8121,9 +8123,8 @@ alias mjfPluginLibraryLoadCallback = UnsafePointer[
 # (placeholder) | | `-ParenType 0x7030b0 'void (const char *, int, int)' sugar
 
 # (placeholder) | |   `-FunctionProtoType 0x703070 'void (const char *, int, int)' cdecl
-NoneTypeUnsafePointer[
-# (placeholder) | |     | `-QualType 0x4e3441 'const char' const
-Int8]
+NoneTypeUnsafePointer[Int8
+# Marked as const. c_binder_mojo does not know how to handle this. (typically handled via typdef)]
 Int32Int32]
 
 # function pointer type for mj_loadAllPluginLibraries callback

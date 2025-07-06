@@ -190,7 +190,7 @@ struct EnumDeclNode(NodeAstLike):
                     child.node[][EnumConstantDeclNode]._field_type = field_type
                 else:
                     try:
-                        current_value = Int(value)
+                        current_value = Int(value) + 1
                         current_field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
                         print("(udpate value and field) EnumDeclNode: EnumConstantDeclNode: field_type: " + current_field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
                     except:

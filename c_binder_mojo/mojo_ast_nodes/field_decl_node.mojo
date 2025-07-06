@@ -219,6 +219,8 @@ struct FieldDeclNode(NodeAstLike):
         var indent_string = "\t" * indent_level
 
         field_type = TypeMapper.get_mojo_type(self._field_type)
+
+        # TODO(josiahls): handle nested structs. Agail. Lol
         field_name = self._field_name
         if field_name == "global":
             field_name = "`global`"
@@ -236,7 +238,7 @@ struct FieldDeclNode(NodeAstLike):
             s += "var " + field_name + ": " + field_type
 
             if self._is_const_alias:
-                s += " # This is a const param, but shouldn't be assigned as an alias since it doesn't have a value."
+                s += " # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value."
 
             s += "\n"
 
@@ -244,13 +246,3 @@ struct FieldDeclNode(NodeAstLike):
             s += "# Unhandled tokens: " + self._unhandled_tokens + "\n"
 
         return indent_string + s
-        # return default_to_string(
-        #     node=AstNode(self),
-        #     module_interface=module_interface,
-        #     just_code=just_code,
-        #     indent_level=parent_indent_level,
-        #     newline_before_ast_entries=just_code,
-        #     newline_after_tail=True,
-        #     indent_before_ast_entries=True,
-        #     alternate_string=s
-        # )

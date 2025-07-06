@@ -1582,7 +1582,7 @@ struct mjtDisableBit_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=4139, child_idxs=(4140, 4143), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x67b0f8 <line:50:1, line:70:3> col:3 mjtDisableBit 'enum mjtDisableBit_':'enum mjtDisableBit_'FullCommentNode(parent_idx=4139, current_idx=4143, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x67b0f8 <line:50:1, line:70:3> col:3 mjtDisableBit 'enum mjtDisableBit_':'enum mjtDisableBit_'mjtDisableBit_FullCommentNode(parent_idx=4139, current_idx=4143, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
@@ -1604,7 +1604,7 @@ struct mjtEnableBit_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=4192, child_idxs=(4193), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x67b978 <line:73:1, line:83:3> col:3 mjtEnableBit 'enum mjtEnableBit_':'enum mjtEnableBit_'
+|-TypedefDecl 0x67b978 <line:73:1, line:83:3> col:3 mjtEnableBit 'enum mjtEnableBit_':'enum mjtEnableBit_'mjtEnableBit_
 EnumDeclNode(parent_idx=1, current_idx=4196, child_idxs=(4197, 4202, 4204, 4206), node_state=4 (COMPLETED))
 struct mjtJoint_:
 	alias mjJNT_FREE: Int = 0
@@ -1614,7 +1614,7 @@ struct mjtJoint_:
 	alias mjJNT_HINGE: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4208, child_idxs=(4209), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x67bd98 <line:86:1, line:91:3> col:3 referenced mjtJoint 'enum mjtJoint_':'enum mjtJoint_'
+|-TypedefDecl 0x67bd98 <line:86:1, line:91:3> col:3 referenced mjtJoint 'enum mjtJoint_':'enum mjtJoint_'mjtJoint_
 EnumDeclNode(parent_idx=1, current_idx=4212, child_idxs=(4213, 4218, 4220, 4222, 4224, ...) len=20, node_state=4 (COMPLETED))
 struct mjtGeom_:
 	alias mjGEOM_PLANE: Int = 0
@@ -1642,7 +1642,7 @@ struct mjtGeom_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=4262, child_idxs=(4263), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x67ca78 <line:94:1, line:120:3> col:3 referenced mjtGeom 'enum mjtGeom_':'enum mjtGeom_'
+|-TypedefDecl 0x67ca78 <line:94:1, line:120:3> col:3 referenced mjtGeom 'enum mjtGeom_':'enum mjtGeom_'mjtGeom_
 EnumDeclNode(parent_idx=1, current_idx=4266, child_idxs=(4267, 4272, 4274, 4276, 4278), node_state=4 (COMPLETED))
 struct mjtCamLight_:
 	alias mjCAMLIGHT_FIXED: Int = 0
@@ -1653,7 +1653,7 @@ struct mjtCamLight_:
 	alias mjCAMLIGHT_TARGETBODYCOM: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4280, child_idxs=(4281), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x680f38 <line:123:1, line:129:3> col:3 referenced mjtCamLight 'enum mjtCamLight_':'enum mjtCamLight_'
+|-TypedefDecl 0x680f38 <line:123:1, line:129:3> col:3 referenced mjtCamLight 'enum mjtCamLight_':'enum mjtCamLight_'mjtCamLight_
 EnumDeclNode(parent_idx=1, current_idx=4284, child_idxs=(4285, 4290, 4292), node_state=4 (COMPLETED))
 struct mjtTexture_:
 	alias mjTEXTURE_2D: Int = 0
@@ -1662,7 +1662,7 @@ struct mjtTexture_:
 	alias mjTEXTURE_SKYBOX: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4294, child_idxs=(4295), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6812b8 <line:132:1, line:136:3> col:3 referenced mjtTexture 'enum mjtTexture_':'enum mjtTexture_'
+|-TypedefDecl 0x6812b8 <line:132:1, line:136:3> col:3 referenced mjtTexture 'enum mjtTexture_':'enum mjtTexture_'mjtTexture_
 EnumDeclNode(parent_idx=1, current_idx=4298, child_idxs=(4299, 4304, 4306, 4308, 4310, ...) len=11, node_state=4 (COMPLETED))
 struct mjtTextureRole_:
 	alias mjTEXROLE_USER: Int = 0
@@ -1679,7 +1679,7 @@ struct mjtTextureRole_:
 	alias referenced: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4323, child_idxs=(4324), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x681a08 <line:139:1, line:151:3> col:3 mjtTextureRole 'enum mjtTextureRole_':'enum mjtTextureRole_'
+|-TypedefDecl 0x681a08 <line:139:1, line:151:3> col:3 mjtTextureRole 'enum mjtTextureRole_':'enum mjtTextureRole_'mjtTextureRole_
 EnumDeclNode(parent_idx=1, current_idx=4327, child_idxs=(4328, 4333, 4335, 4337), node_state=4 (COMPLETED))
 struct mjtIntegrator_:
 	alias mjINT_EULER: Int = 0
@@ -1689,7 +1689,7 @@ struct mjtIntegrator_:
 	alias mjINT_IMPLICITFAST: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4339, child_idxs=(4340), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x681e48 <line:154:1, line:159:3> col:3 mjtIntegrator 'enum mjtIntegrator_':'enum mjtIntegrator_'
+|-TypedefDecl 0x681e48 <line:154:1, line:159:3> col:3 mjtIntegrator 'enum mjtIntegrator_':'enum mjtIntegrator_'mjtIntegrator_
 EnumDeclNode(parent_idx=1, current_idx=4343, child_idxs=(4344, 4349), node_state=4 (COMPLETED))
 struct mjtCone_:
 	alias mjCONE_PYRAMIDAL: Int = 0
@@ -1697,7 +1697,7 @@ struct mjtCone_:
 	alias mjCONE_ELLIPTIC: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4351, child_idxs=(4352), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x682148 <line:162:1, line:165:3> col:3 mjtCone 'enum mjtCone_':'enum mjtCone_'
+|-TypedefDecl 0x682148 <line:162:1, line:165:3> col:3 mjtCone 'enum mjtCone_':'enum mjtCone_'mjtCone_
 EnumDeclNode(parent_idx=1, current_idx=4355, child_idxs=(4356, 4361, 4363), node_state=4 (COMPLETED))
 struct mjtJacobian_:
 	alias mjJAC_DENSE: Int = 0
@@ -1706,7 +1706,7 @@ struct mjtJacobian_:
 	alias mjJAC_AUTO: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4365, child_idxs=(4366), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6824c8 <line:168:1, line:172:3> col:3 mjtJacobian 'enum mjtJacobian_':'enum mjtJacobian_'
+|-TypedefDecl 0x6824c8 <line:168:1, line:172:3> col:3 mjtJacobian 'enum mjtJacobian_':'enum mjtJacobian_'mjtJacobian_
 EnumDeclNode(parent_idx=1, current_idx=4369, child_idxs=(4370, 4375, 4377), node_state=4 (COMPLETED))
 struct mjtSolver_:
 	alias mjSOL_PGS: Int = 0
@@ -1715,7 +1715,7 @@ struct mjtSolver_:
 	alias mjSOL_NEWTON: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4379, child_idxs=(4380), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x682848 <line:175:1, line:179:3> col:3 mjtSolver 'enum mjtSolver_':'enum mjtSolver_'
+|-TypedefDecl 0x682848 <line:175:1, line:179:3> col:3 mjtSolver 'enum mjtSolver_':'enum mjtSolver_'mjtSolver_
 EnumDeclNode(parent_idx=1, current_idx=4383, child_idxs=(4384, 4389, 4391, 4393, 4395, 4397), node_state=4 (COMPLETED))
 struct mjtEq_:
 	alias mjEQ_CONNECT: Int = 0
@@ -1727,7 +1727,7 @@ struct mjtEq_:
 	alias mjEQ_DISTANCE: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4399, child_idxs=(4400), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x682d58 <line:182:1, line:189:3> col:3 referenced mjtEq 'enum mjtEq_':'enum mjtEq_'
+|-TypedefDecl 0x682d58 <line:182:1, line:189:3> col:3 referenced mjtEq 'enum mjtEq_':'enum mjtEq_'mjtEq_
 EnumDeclNode(parent_idx=1, current_idx=4403, child_idxs=(4404, 4409, 4411, 4413, 4415, 4417), node_state=4 (COMPLETED))
 struct mjtWrap_:
 	alias mjWRAP_NONE: Int = 0
@@ -1739,7 +1739,7 @@ struct mjtWrap_:
 	alias mjWRAP_CYLINDER: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4419, child_idxs=(4420), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x683258 <line:192:1, line:199:3> col:3 mjtWrap 'enum mjtWrap_':'enum mjtWrap_'
+|-TypedefDecl 0x683258 <line:192:1, line:199:3> col:3 mjtWrap 'enum mjtWrap_':'enum mjtWrap_'mjtWrap_
 EnumDeclNode(parent_idx=1, current_idx=4423, child_idxs=(4424, 4429, 4431, 4433, 4435, ...) len=7, node_state=4 (COMPLETED))
 struct mjtTrn_:
 	alias mjTRN_JOINT: Int = 0
@@ -1753,7 +1753,7 @@ struct mjtTrn_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=4444, child_idxs=(4445), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x683818 <line:202:1, line:211:3> col:3 referenced mjtTrn 'enum mjtTrn_':'enum mjtTrn_'
+|-TypedefDecl 0x683818 <line:202:1, line:211:3> col:3 referenced mjtTrn 'enum mjtTrn_':'enum mjtTrn_'mjtTrn_
 EnumDeclNode(parent_idx=1, current_idx=4448, child_idxs=(4449, 4454, 4456, 4458, 4460, 4462), node_state=4 (COMPLETED))
 struct mjtDyn_:
 	alias mjDYN_NONE: Int = 0
@@ -1765,7 +1765,7 @@ struct mjtDyn_:
 	alias mjDYN_USER: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4464, child_idxs=(4465), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x684e40 <line:214:1, line:221:3> col:3 referenced mjtDyn 'enum mjtDyn_':'enum mjtDyn_'
+|-TypedefDecl 0x684e40 <line:214:1, line:221:3> col:3 referenced mjtDyn 'enum mjtDyn_':'enum mjtDyn_'mjtDyn_
 EnumDeclNode(parent_idx=1, current_idx=4468, child_idxs=(4469, 4474, 4476, 4478), node_state=4 (COMPLETED))
 struct mjtGain_:
 	alias mjGAIN_FIXED: Int = 0
@@ -1775,7 +1775,7 @@ struct mjtGain_:
 	alias mjGAIN_USER: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4480, child_idxs=(4481), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x685238 <line:224:1, line:229:3> col:3 referenced mjtGain 'enum mjtGain_':'enum mjtGain_'
+|-TypedefDecl 0x685238 <line:224:1, line:229:3> col:3 referenced mjtGain 'enum mjtGain_':'enum mjtGain_'mjtGain_
 EnumDeclNode(parent_idx=1, current_idx=4484, child_idxs=(4485, 4490, 4492, 4494), node_state=4 (COMPLETED))
 struct mjtBias_:
 	alias mjBIAS_NONE: Int = 0
@@ -1785,7 +1785,7 @@ struct mjtBias_:
 	alias mjBIAS_USER: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4496, child_idxs=(4497), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x685638 <line:232:1, line:237:3> col:3 referenced mjtBias 'enum mjtBias_':'enum mjtBias_'
+|-TypedefDecl 0x685638 <line:232:1, line:237:3> col:3 referenced mjtBias 'enum mjtBias_':'enum mjtBias_'mjtBias_
 EnumDeclNode(parent_idx=1, current_idx=4500, child_idxs=(4501, 4506, 4508, 4510, 4512, ...) len=30, node_state=4 (COMPLETED))
 struct mjtObj_:
 	alias mjOBJ_UNKNOWN: Int = 0
@@ -1822,7 +1822,7 @@ struct mjtObj_:
 	alias mjOBJ_MODEL: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4567, child_idxs=(4568), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x686db8 <line:240:1, line:275:3> col:3 referenced mjtObj 'enum mjtObj_':'enum mjtObj_'
+|-TypedefDecl 0x686db8 <line:240:1, line:275:3> col:3 referenced mjtObj 'enum mjtObj_':'enum mjtObj_'mjtObj_
 EnumDeclNode(parent_idx=1, current_idx=4571, child_idxs=(4572, 4577, 4579, 4581, 4583, ...) len=8, node_state=4 (COMPLETED))
 struct mjtConstraint_:
 	alias mjCNSTR_EQUALITY: Int = 0
@@ -1836,7 +1836,7 @@ struct mjtConstraint_:
 	alias mjCNSTR_CONTACT_ELLIPTIC: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4591, child_idxs=(4592), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x687b00 <line:278:1, line:287:3> col:3 mjtConstraint 'enum mjtConstraint_':'enum mjtConstraint_'
+|-TypedefDecl 0x687b00 <line:278:1, line:287:3> col:3 mjtConstraint 'enum mjtConstraint_':'enum mjtConstraint_'mjtConstraint_
 EnumDeclNode(parent_idx=1, current_idx=4595, child_idxs=(4596, 4601, 4603, 4605, 4607), node_state=4 (COMPLETED))
 struct mjtConstraintState_:
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
@@ -1847,7 +1847,7 @@ struct mjtConstraintState_:
 	alias mjCNSTRSTATE_CONE: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4609, child_idxs=(4610), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x687f78 <line:290:1, line:296:3> col:3 mjtConstraintState 'enum mjtConstraintState_':'enum mjtConstraintState_'
+|-TypedefDecl 0x687f78 <line:290:1, line:296:3> col:3 mjtConstraintState 'enum mjtConstraintState_':'enum mjtConstraintState_'mjtConstraintState_
 EnumDeclNode(parent_idx=1, current_idx=4613, child_idxs=(4614, 4619, 4621, 4623, 4625, ...) len=45, node_state=4 (COMPLETED))
 struct mjtSensor_:
 	alias mjSENS_TOUCH: Int = 0
@@ -1898,7 +1898,7 @@ struct mjtSensor_:
 	alias mjSENS_USER: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4707, child_idxs=(4708), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x68b0f8 <line:299:1, line:364:3> col:3 referenced mjtSensor 'enum mjtSensor_':'enum mjtSensor_'
+|-TypedefDecl 0x68b0f8 <line:299:1, line:364:3> col:3 referenced mjtSensor 'enum mjtSensor_':'enum mjtSensor_'mjtSensor_
 EnumDeclNode(parent_idx=1, current_idx=4711, child_idxs=(4712, 4717, 4719, 4721), node_state=4 (COMPLETED))
 struct mjtStage_:
 	alias mjSTAGE_NONE: Int = 0
@@ -1908,7 +1908,7 @@ struct mjtStage_:
 	alias mjSTAGE_ACC: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4723, child_idxs=(4724), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x68b918 <line:367:1, line:372:3> col:3 referenced mjtStage 'enum mjtStage_':'enum mjtStage_'
+|-TypedefDecl 0x68b918 <line:367:1, line:372:3> col:3 referenced mjtStage 'enum mjtStage_':'enum mjtStage_'mjtStage_
 EnumDeclNode(parent_idx=1, current_idx=4727, child_idxs=(4728, 4733, 4735, 4737), node_state=4 (COMPLETED))
 struct mjtDataType_:
 	alias mjDATATYPE_REAL: Int = 0
@@ -1918,7 +1918,7 @@ struct mjtDataType_:
 	alias mjDATATYPE_QUATERNION: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4739, child_idxs=(4740), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x68bd18 <line:375:1, line:380:3> col:3 referenced mjtDataType 'enum mjtDataType_':'enum mjtDataType_'
+|-TypedefDecl 0x68bd18 <line:375:1, line:380:3> col:3 referenced mjtDataType 'enum mjtDataType_':'enum mjtDataType_'mjtDataType_
 EnumDeclNode(parent_idx=1, current_idx=4743, child_idxs=(4744, 4749, 4751, 4753, 4755), node_state=4 (COMPLETED))
 struct mjtSameFrame_:
 	alias mjSAMEFRAME_NONE: Int = 0
@@ -1929,7 +1929,7 @@ struct mjtSameFrame_:
 	alias mjSAMEFRAME_INERTIAROT: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4757, child_idxs=(4758), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x68c198 <line:383:1, line:389:3> col:3 mjtSameFrame 'enum mjtSameFrame_':'enum mjtSameFrame_'
+|-TypedefDecl 0x68c198 <line:383:1, line:389:3> col:3 mjtSameFrame 'enum mjtSameFrame_':'enum mjtSameFrame_'mjtSameFrame_
 EnumDeclNode(parent_idx=1, current_idx=4761, child_idxs=(4762, 4767, 4769, 4771), node_state=4 (COMPLETED))
 struct mjtLRMode_:
 	alias mjLRMODE_NONE: Int = 0
@@ -1939,7 +1939,7 @@ struct mjtLRMode_:
 	alias mjLRMODE_ALL: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4773, child_idxs=(4774), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x68c598 <line:392:1, line:397:3> col:3 mjtLRMode 'enum mjtLRMode_':'enum mjtLRMode_'
+|-TypedefDecl 0x68c598 <line:392:1, line:397:3> col:3 mjtLRMode 'enum mjtLRMode_':'enum mjtLRMode_'mjtLRMode_
 EnumDeclNode(parent_idx=1, current_idx=4777, child_idxs=(4778, 4783, 4785, 4787, 4789), node_state=4 (COMPLETED))
 struct mjtFlexSelf_:
 	alias mjFLEXSELF_NONE: Int = 0
@@ -1950,7 +1950,7 @@ struct mjtFlexSelf_:
 	alias mjFLEXSELF_AUTO: 
 
 TypedefDeclNode(parent_idx=1, current_idx=4791, child_idxs=(4792), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x68df98 <line:400:1, line:406:3> col:3 mjtFlexSelf 'enum mjtFlexSelf_':'enum mjtFlexSelf_'
+|-TypedefDecl 0x68df98 <line:400:1, line:406:3> col:3 mjtFlexSelf 'enum mjtFlexSelf_':'enum mjtFlexSelf_'mjtFlexSelf_
 struct mjLROpt_:
 
 	FieldDeclNode(parent_idx=4795, current_idx=4797, child_idxs=(4798), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -2912,7 +2912,7 @@ struct _mjVisual__Anonymous__line_486_3__line_499_3_:
 struct mjVisual_:
 
 	FieldDeclNode(parent_idx=4893, current_idx=4920, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
-	var global: _mjVisual__Anonymous__line_486_3__line_499_3_
+	var `global`: _mjVisual__Anonymous__line_486_3__line_499_3_
 	
 
 	FieldDeclNode(parent_idx=4893, current_idx=4932, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -6931,7 +6931,7 @@ struct mjtTaskStatus_:
 	alias mjTASK_COMPLETED: 
 
 TypedefDeclNode(parent_idx=1, current_idx=6075, child_idxs=(6076), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6ba018 <line:20:1, line:24:3> col:3 mjtTaskStatus 'enum mjtTaskStatus_':'enum mjtTaskStatus_'
+|-TypedefDecl 0x6ba018 <line:20:1, line:24:3> col:3 mjtTaskStatus 'enum mjtTaskStatus_':'enum mjtTaskStatus_'mjtTaskStatus_
 TypedefDeclNode(parent_idx=1, current_idx=6079, child_idxs=(6080, 6087), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x6ba228 <line:27:1, col:31> col:17 referenced mjfTask 'void *(*)(void *)'PointerTypeNode(parent_idx=6079, current_idx=6080, child_idxs=(6081), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 ParenTypeNode(parent_idx=6080, current_idx=6081, child_idxs=(6082), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
@@ -7027,7 +7027,7 @@ struct mjtState_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=6249, child_idxs=(6250, 6253), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6b5ab8 <line:27:1, line:51:3> col:3 mjtState 'enum mjtState_':'enum mjtState_'FullCommentNode(parent_idx=6249, current_idx=6253, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6b5ab8 <line:27:1, line:51:3> col:3 mjtState 'enum mjtState_':'enum mjtState_'mjtState_FullCommentNode(parent_idx=6249, current_idx=6253, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
@@ -7045,7 +7045,7 @@ struct mjtWarning_:
 	alias referenced: 
 
 TypedefDeclNode(parent_idx=1, current_idx=6276, child_idxs=(6277), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6b6138 <line:54:1, line:65:3> col:3 mjtWarning 'enum mjtWarning_':'enum mjtWarning_'
+|-TypedefDecl 0x6b6138 <line:54:1, line:65:3> col:3 mjtWarning 'enum mjtWarning_':'enum mjtWarning_'mjtWarning_
 EnumDeclNode(parent_idx=1, current_idx=6280, child_idxs=(6281, 6286, 6288, 6290, 6292, ...) len=16, node_state=4 (COMPLETED))
 struct mjtTimer_:
 	alias mjTIMER_STEP: Int = 0
@@ -7067,7 +7067,7 @@ struct mjtTimer_:
 	alias referenced: 
 
 TypedefDeclNode(parent_idx=1, current_idx=6316, child_idxs=(6317), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6c11c8 <line:68:1, line:93:3> col:3 mjtTimer 'enum mjtTimer_':'enum mjtTimer_'
+|-TypedefDecl 0x6c11c8 <line:68:1, line:93:3> col:3 mjtTimer 'enum mjtTimer_':'enum mjtTimer_'mjtTimer_
 struct mjContact_:
 
 	FieldDeclNode(parent_idx=6320, current_idx=6322, child_idxs=(6323), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -8830,7 +8830,7 @@ struct mjtCatBit_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=6904, child_idxs=(6905, 6908), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6d4608 <line:33:1, line:38:3> col:3 mjtCatBit 'enum mjtCatBit_':'enum mjtCatBit_'FullCommentNode(parent_idx=6904, current_idx=6908, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6d4608 <line:33:1, line:38:3> col:3 mjtCatBit 'enum mjtCatBit_':'enum mjtCatBit_'mjtCatBit_FullCommentNode(parent_idx=6904, current_idx=6908, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
@@ -8846,7 +8846,7 @@ struct mjtMouse_:
 	alias mjMOUSE_SELECT: 
 
 TypedefDeclNode(parent_idx=1, current_idx=6927, child_idxs=(6928), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e3198 <line:41:1, line:49:3> col:3 mjtMouse 'enum mjtMouse_':'enum mjtMouse_'
+|-TypedefDecl 0x6e3198 <line:41:1, line:49:3> col:3 mjtMouse 'enum mjtMouse_':'enum mjtMouse_'mjtMouse_
 EnumDeclNode(parent_idx=1, current_idx=6931, child_idxs=(6932, 6937), node_state=4 (COMPLETED))
 struct mjtPertBit_:
 	alias mjPERT_TRANSLATE: Int = 1
@@ -8855,7 +8855,7 @@ struct mjtPertBit_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=6942, child_idxs=(6943), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e34d8 <line:52:1, line:55:3> col:3 mjtPertBit 'enum mjtPertBit_':'enum mjtPertBit_'
+|-TypedefDecl 0x6e34d8 <line:52:1, line:55:3> col:3 mjtPertBit 'enum mjtPertBit_':'enum mjtPertBit_'mjtPertBit_
 EnumDeclNode(parent_idx=1, current_idx=6946, child_idxs=(6947, 6952, 6954, 6956), node_state=4 (COMPLETED))
 struct mjtCamera_:
 	alias mjCAMERA_FREE: Int = 0
@@ -8865,7 +8865,7 @@ struct mjtCamera_:
 	alias mjCAMERA_USER: 
 
 TypedefDeclNode(parent_idx=1, current_idx=6958, child_idxs=(6959), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e38d8 <line:58:1, line:63:3> col:3 mjtCamera 'enum mjtCamera_':'enum mjtCamera_'
+|-TypedefDecl 0x6e38d8 <line:58:1, line:63:3> col:3 mjtCamera 'enum mjtCamera_':'enum mjtCamera_'mjtCamera_
 EnumDeclNode(parent_idx=1, current_idx=6962, child_idxs=(6963, 6968, 6970, 6972, 6974, ...) len=18, node_state=4 (COMPLETED))
 struct mjtLabel_:
 	alias mjLABEL_NONE: Int = 0
@@ -8889,7 +8889,7 @@ struct mjtLabel_:
 	alias referenced: 
 
 TypedefDeclNode(parent_idx=1, current_idx=7002, child_idxs=(7003), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e43d8 <line:66:1, line:86:3> col:3 mjtLabel 'enum mjtLabel_':'enum mjtLabel_'
+|-TypedefDecl 0x6e43d8 <line:66:1, line:86:3> col:3 mjtLabel 'enum mjtLabel_':'enum mjtLabel_'mjtLabel_
 EnumDeclNode(parent_idx=1, current_idx=7006, child_idxs=(7007, 7012, 7014, 7016, 7018, ...) len=9, node_state=4 (COMPLETED))
 struct mjtFrame_:
 	alias mjFRAME_NONE: Int = 0
@@ -8904,7 +8904,7 @@ struct mjtFrame_:
 	alias referenced: 
 
 TypedefDeclNode(parent_idx=1, current_idx=7028, child_idxs=(7029), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e4a58 <line:89:1, line:100:3> col:3 mjtFrame 'enum mjtFrame_':'enum mjtFrame_'
+|-TypedefDecl 0x6e4a58 <line:89:1, line:100:3> col:3 mjtFrame 'enum mjtFrame_':'enum mjtFrame_'mjtFrame_
 EnumDeclNode(parent_idx=1, current_idx=7032, child_idxs=(7033, 7038, 7040, 7042, 7044, ...) len=33, node_state=4 (COMPLETED))
 struct mjtVisFlag_:
 	alias mjVIS_CONVEXHULL: Int = 0
@@ -8943,7 +8943,7 @@ struct mjtVisFlag_:
 	alias referenced: 
 
 TypedefDeclNode(parent_idx=1, current_idx=7102, child_idxs=(7103), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e5de8 <line:103:1, line:138:3> col:3 mjtVisFlag 'enum mjtVisFlag_':'enum mjtVisFlag_'
+|-TypedefDecl 0x6e5de8 <line:103:1, line:138:3> col:3 mjtVisFlag 'enum mjtVisFlag_':'enum mjtVisFlag_'mjtVisFlag_
 EnumDeclNode(parent_idx=1, current_idx=7106, child_idxs=(7107, 7112, 7114, 7116, 7118, ...) len=11, node_state=4 (COMPLETED))
 struct mjtRndFlag_:
 	alias mjRND_SHADOW: Int = 0
@@ -8960,7 +8960,7 @@ struct mjtRndFlag_:
 	alias referenced: 
 
 TypedefDeclNode(parent_idx=1, current_idx=7132, child_idxs=(7133), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e6568 <line:141:1, line:154:3> col:3 mjtRndFlag 'enum mjtRndFlag_':'enum mjtRndFlag_'
+|-TypedefDecl 0x6e6568 <line:141:1, line:154:3> col:3 mjtRndFlag 'enum mjtRndFlag_':'enum mjtRndFlag_'mjtRndFlag_
 EnumDeclNode(parent_idx=1, current_idx=7136, child_idxs=(7137, 7142, 7144), node_state=4 (COMPLETED))
 struct mjtStereo_:
 	alias mjSTEREO_NONE: Int = 0
@@ -8969,7 +8969,7 @@ struct mjtStereo_:
 	alias mjSTEREO_SIDEBYSIDE: 
 
 TypedefDeclNode(parent_idx=1, current_idx=7146, child_idxs=(7147), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6e68e8 <line:157:1, line:161:3> col:3 mjtStereo 'enum mjtStereo_':'enum mjtStereo_'
+|-TypedefDecl 0x6e68e8 <line:157:1, line:161:3> col:3 mjtStereo 'enum mjtStereo_':'enum mjtStereo_'mjtStereo_
 struct mjvPerturb_:
 
 	FieldDeclNode(parent_idx=7150, current_idx=7152, child_idxs=(7153), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -11338,7 +11338,7 @@ struct mjtPluginCapabilityBit_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=7881, child_idxs=(7882, 7885), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x6ff308 <line:70:1, line:75:3> col:3 mjtPluginCapabilityBit 'enum mjtPluginCapabilityBit_':'enum mjtPluginCapabilityBit_'FullCommentNode(parent_idx=7881, current_idx=7885, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x6ff308 <line:70:1, line:75:3> col:3 mjtPluginCapabilityBit 'enum mjtPluginCapabilityBit_':'enum mjtPluginCapabilityBit_'mjtPluginCapabilityBit_FullCommentNode(parent_idx=7881, current_idx=7885, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 #---------------------------------- Plugins -------------------------------------------------------
 
@@ -11533,7 +11533,7 @@ struct mjtGridPos_:
 	alias mjGRID_RIGHT: 
 
 TypedefDeclNode(parent_idx=1, current_idx=7963, child_idxs=(7964, 7967), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x7068b8 <line:30:1, line:39:3> col:3 mjtGridPos 'enum mjtGridPos_':'enum mjtGridPos_'FullCommentNode(parent_idx=7963, current_idx=7967, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x7068b8 <line:30:1, line:39:3> col:3 mjtGridPos 'enum mjtGridPos_':'enum mjtGridPos_'mjtGridPos_FullCommentNode(parent_idx=7963, current_idx=7967, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
@@ -11544,7 +11544,7 @@ struct mjtFramebuffer_:
 	alias mjFB_OFFSCREEN: 
 
 TypedefDeclNode(parent_idx=1, current_idx=7976, child_idxs=(7977), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x706bb8 <line:42:1, line:45:3> col:3 mjtFramebuffer 'enum mjtFramebuffer_':'enum mjtFramebuffer_'
+|-TypedefDecl 0x706bb8 <line:42:1, line:45:3> col:3 mjtFramebuffer 'enum mjtFramebuffer_':'enum mjtFramebuffer_'mjtFramebuffer_
 EnumDeclNode(parent_idx=1, current_idx=7980, child_idxs=(7981, 7986), node_state=4 (COMPLETED))
 struct mjtDepthMap_:
 	alias mjDEPTH_ZERONEAR: Int = 0
@@ -11553,7 +11553,7 @@ struct mjtDepthMap_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=7991, child_idxs=(7992), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x706ef8 <line:47:1, line:50:3> col:3 mjtDepthMap 'enum mjtDepthMap_':'enum mjtDepthMap_'
+|-TypedefDecl 0x706ef8 <line:47:1, line:50:3> col:3 mjtDepthMap 'enum mjtDepthMap_':'enum mjtDepthMap_'mjtDepthMap_
 EnumDeclNode(parent_idx=1, current_idx=7995, child_idxs=(7996, 8001, 8006, 8011, 8016, 8021), node_state=4 (COMPLETED))
 struct mjtFontScale_:
 	alias mjFONTSCALE_50: Int = 50
@@ -11570,7 +11570,7 @@ struct mjtFontScale_:
 
 
 TypedefDeclNode(parent_idx=1, current_idx=8026, child_idxs=(8027), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x707538 <line:52:1, line:59:3> col:3 mjtFontScale 'enum mjtFontScale_':'enum mjtFontScale_'
+|-TypedefDecl 0x707538 <line:52:1, line:59:3> col:3 mjtFontScale 'enum mjtFontScale_':'enum mjtFontScale_'mjtFontScale_
 EnumDeclNode(parent_idx=1, current_idx=8030, child_idxs=(8031, 8036, 8038), node_state=4 (COMPLETED))
 struct mjtFont_:
 	alias mjFONT_NORMAL: Int = 0
@@ -11579,7 +11579,7 @@ struct mjtFont_:
 	alias mjFONT_BIG: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8040, child_idxs=(8041), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x7078b8 <line:62:1, line:66:3> col:3 mjtFont 'enum mjtFont_':'enum mjtFont_'
+|-TypedefDecl 0x7078b8 <line:62:1, line:66:3> col:3 mjtFont 'enum mjtFont_':'enum mjtFont_'mjtFont_
 struct mjrRect_:
 
 	FieldDeclNode(parent_idx=8044, current_idx=8045, child_idxs=(8046), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -12138,7 +12138,7 @@ struct mjtGeomInertia_:
 	alias mjINERTIA_SHELL: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8211, child_idxs=(8212, 8215), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x70e428 <line:60:1, line:63:3> col:3 referenced mjtGeomInertia 'enum mjtGeomInertia_':'enum mjtGeomInertia_'FullCommentNode(parent_idx=8211, current_idx=8215, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x70e428 <line:60:1, line:63:3> col:3 referenced mjtGeomInertia 'enum mjtGeomInertia_':'enum mjtGeomInertia_'mjtGeomInertia_FullCommentNode(parent_idx=8211, current_idx=8215, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
@@ -12151,7 +12151,7 @@ struct mjtMeshInertia_:
 	alias mjMESH_INERTIA_SHELL: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8228, child_idxs=(8229), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x70e828 <line:66:1, line:71:3> col:3 referenced mjtMeshInertia 'enum mjtMeshInertia_':'enum mjtMeshInertia_'
+|-TypedefDecl 0x70e828 <line:66:1, line:71:3> col:3 referenced mjtMeshInertia 'enum mjtMeshInertia_':'enum mjtMeshInertia_'mjtMeshInertia_
 EnumDeclNode(parent_idx=1, current_idx=8232, child_idxs=(8233, 8238, 8240, 8242), node_state=4 (COMPLETED))
 struct mjtBuiltin_:
 	alias mjBUILTIN_NONE: Int = 0
@@ -12161,7 +12161,7 @@ struct mjtBuiltin_:
 	alias mjBUILTIN_FLAT: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8244, child_idxs=(8245), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x70ec28 <line:74:1, line:79:3> col:3 mjtBuiltin 'enum mjtBuiltin_':'enum mjtBuiltin_'
+|-TypedefDecl 0x70ec28 <line:74:1, line:79:3> col:3 mjtBuiltin 'enum mjtBuiltin_':'enum mjtBuiltin_'mjtBuiltin_
 EnumDeclNode(parent_idx=1, current_idx=8248, child_idxs=(8249, 8254, 8256, 8258), node_state=4 (COMPLETED))
 struct mjtMark_:
 	alias mjMARK_NONE: Int = 0
@@ -12171,7 +12171,7 @@ struct mjtMark_:
 	alias mjMARK_RANDOM: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8260, child_idxs=(8261), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x70f028 <line:82:1, line:87:3> col:3 mjtMark 'enum mjtMark_':'enum mjtMark_'
+|-TypedefDecl 0x70f028 <line:82:1, line:87:3> col:3 mjtMark 'enum mjtMark_':'enum mjtMark_'mjtMark_
 EnumDeclNode(parent_idx=1, current_idx=8264, child_idxs=(8265, 8270, 8272), node_state=4 (COMPLETED))
 struct mjtLimited_:
 	alias mjLIMITED_FALSE: Int = 0
@@ -12180,7 +12180,7 @@ struct mjtLimited_:
 	alias mjLIMITED_AUTO: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8274, child_idxs=(8275), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x70f3a8 <line:90:1, line:94:3> col:3 mjtLimited 'enum mjtLimited_':'enum mjtLimited_'
+|-TypedefDecl 0x70f3a8 <line:90:1, line:94:3> col:3 mjtLimited 'enum mjtLimited_':'enum mjtLimited_'mjtLimited_
 EnumDeclNode(parent_idx=1, current_idx=8278, child_idxs=(8279, 8284, 8286), node_state=4 (COMPLETED))
 struct mjtAlignFree_:
 	alias mjALIGNFREE_FALSE: Int = 0
@@ -12189,7 +12189,7 @@ struct mjtAlignFree_:
 	alias mjALIGNFREE_AUTO: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8288, child_idxs=(8289), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x70f728 <line:96:1, line:100:3> col:3 mjtAlignFree 'enum mjtAlignFree_':'enum mjtAlignFree_'
+|-TypedefDecl 0x70f728 <line:96:1, line:100:3> col:3 mjtAlignFree 'enum mjtAlignFree_':'enum mjtAlignFree_'mjtAlignFree_
 EnumDeclNode(parent_idx=1, current_idx=8292, child_idxs=(8293, 8298, 8300), node_state=4 (COMPLETED))
 struct mjtInertiaFromGeom_:
 	alias mjINERTIAFROMGEOM_FALSE: Int = 0
@@ -12198,7 +12198,7 @@ struct mjtInertiaFromGeom_:
 	alias mjINERTIAFROMGEOM_AUTO: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8302, child_idxs=(8303), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x711528 <line:103:1, line:107:3> col:3 mjtInertiaFromGeom 'enum mjtInertiaFromGeom_':'enum mjtInertiaFromGeom_'
+|-TypedefDecl 0x711528 <line:103:1, line:107:3> col:3 mjtInertiaFromGeom 'enum mjtInertiaFromGeom_':'enum mjtInertiaFromGeom_'mjtInertiaFromGeom_
 EnumDeclNode(parent_idx=1, current_idx=8306, child_idxs=(8307, 8312, 8314, 8316, 8318), node_state=4 (COMPLETED))
 struct mjtOrientation_:
 	alias mjORIENTATION_QUAT: Int = 0
@@ -12209,7 +12209,7 @@ struct mjtOrientation_:
 	alias mjORIENTATION_EULER: 
 
 TypedefDeclNode(parent_idx=1, current_idx=8320, child_idxs=(8321), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x7119a8 <line:110:1, line:116:3> col:3 referenced mjtOrientation 'enum mjtOrientation_':'enum mjtOrientation_'
+|-TypedefDecl 0x7119a8 <line:110:1, line:116:3> col:3 referenced mjtOrientation 'enum mjtOrientation_':'enum mjtOrientation_'mjtOrientation_
 struct mjsElement_:
 
 	FieldDeclNode(parent_idx=8324, current_idx=8326, child_idxs=(8327), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
@@ -15794,7 +15794,7 @@ struct mjtButton_:
 	alias mjBUTTON_MIDDLE: 
 
 TypedefDeclNode(parent_idx=1, current_idx=9349, child_idxs=(9350, 9353), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x73cd58 <line:65:1, line:70:3> col:3 mjtButton 'enum mjtButton_':'enum mjtButton_'FullCommentNode(parent_idx=9349, current_idx=9353, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
+|-TypedefDecl 0x73cd58 <line:65:1, line:70:3> col:3 mjtButton 'enum mjtButton_':'enum mjtButton_'mjtButton_FullCommentNode(parent_idx=9349, current_idx=9353, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
@@ -15812,7 +15812,7 @@ struct mjtEvent_:
 	alias mjEVENT_FILESDROP: 
 
 TypedefDeclNode(parent_idx=1, current_idx=9376, child_idxs=(9377), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x73d3d8 <line:73:1, line:83:3> col:3 mjtEvent 'enum mjtEvent_':'enum mjtEvent_'
+|-TypedefDecl 0x73d3d8 <line:73:1, line:83:3> col:3 mjtEvent 'enum mjtEvent_':'enum mjtEvent_'mjtEvent_
 EnumDeclNode(parent_idx=1, current_idx=9380, child_idxs=(9381, 9387, 9393, 9398, 9400, ...) len=17, node_state=4 (COMPLETED))
 struct mjtItem_:
 	alias mjITEM_END: Int = -2
@@ -15837,7 +15837,7 @@ struct mjtItem_:
 	alias mjNITEM: 
 
 TypedefDeclNode(parent_idx=1, current_idx=9426, child_idxs=(9427), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x73df28 <line:86:1, line:107:3> col:3 mjtItem 'enum mjtItem_':'enum mjtItem_'
+|-TypedefDecl 0x73df28 <line:86:1, line:107:3> col:3 mjtItem 'enum mjtItem_':'enum mjtItem_'mjtItem_
 EnumDeclNode(parent_idx=1, current_idx=9430, child_idxs=(9431, 9436, 9438), node_state=4 (COMPLETED))
 struct mjtSection_:
 	alias mjSECT_CLOSED: Int = 0
@@ -15846,7 +15846,7 @@ struct mjtSection_:
 	alias mjSECT_FIXED: 
 
 TypedefDeclNode(parent_idx=1, current_idx=9440, child_idxs=(9441), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-|-TypedefDecl 0x73e2a8 <line:110:1, line:114:3> col:3 mjtSection 'enum mjtSection_':'enum mjtSection_'
+|-TypedefDecl 0x73e2a8 <line:110:1, line:114:3> col:3 mjtSection 'enum mjtSection_':'enum mjtSection_'mjtSection_
 TypedefDeclNode(parent_idx=1, current_idx=9444, child_idxs=(9445, 9452), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x73e550 <line:118:1, col:54> col:15 referenced mjfItemEnable 'int (*)(int, void *)'PointerTypeNode(parent_idx=9444, current_idx=9445, child_idxs=(9446), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 ParenTypeNode(parent_idx=9445, current_idx=9446, child_idxs=(9447), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)

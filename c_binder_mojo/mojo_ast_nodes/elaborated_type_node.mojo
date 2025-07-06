@@ -111,12 +111,18 @@ struct ElaboratedTypeNode(NodeAstLike):
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[RecordTypeNode]():
+                # TODO(josiahls): Why don't we just return the string version here?
                 optional_node = node.node[][RecordTypeNode].get_aliased_record_decl(module_interface)
                 if optional_node:
                     try:
                         return optional_node[].node[][RecordDeclNode]._record_name 
                     except e:
                         print('ElaboratedTypeNode: Unhandled node type: ' + String(e))
+            elif node.node[].isa[EnumTypeNode]():
+                try:
+                    return node.node[][EnumTypeNode].to_string(True, module_interface, 0)
+                except e:
+                    print('ElaboratedTypeNode: Unhandled node type: ' + String(e))
             else:
                 print('ElaboratedTypeNode: Unhandled node type: ' + node.name())
         return String()

@@ -1466,7 +1466,7 @@ struct mjtDisableBit_:
 
 
 
-alias mjtDisableBit = 
+alias mjtDisableBit = mjtDisableBit_
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
 struct mjtEnableBit_:
@@ -1486,7 +1486,7 @@ struct mjtEnableBit_:
 
 
 
-alias mjtEnableBit = 
+alias mjtEnableBit = mjtEnableBit_
 struct mjtJoint_:
 	alias mjJNT_FREE: Int = 0
 
@@ -1495,7 +1495,7 @@ struct mjtJoint_:
 	alias mjJNT_HINGE: 
 
 
-alias mjtJoint = 
+alias mjtJoint = mjtJoint_
 struct mjtGeom_:
 	alias mjGEOM_PLANE: Int = 0
 
@@ -1522,7 +1522,7 @@ struct mjtGeom_:
 
 
 
-alias mjtGeom = 
+alias mjtGeom = mjtGeom_
 struct mjtCamLight_:
 	alias mjCAMLIGHT_FIXED: Int = 0
 
@@ -1532,7 +1532,7 @@ struct mjtCamLight_:
 	alias mjCAMLIGHT_TARGETBODYCOM: 
 
 
-alias mjtCamLight = 
+alias mjtCamLight = mjtCamLight_
 struct mjtTexture_:
 	alias mjTEXTURE_2D: Int = 0
 
@@ -1540,7 +1540,7 @@ struct mjtTexture_:
 	alias mjTEXTURE_SKYBOX: 
 
 
-alias mjtTexture = 
+alias mjtTexture = mjtTexture_
 struct mjtTextureRole_:
 	alias mjTEXROLE_USER: Int = 0
 
@@ -1556,7 +1556,7 @@ struct mjtTextureRole_:
 	alias referenced: 
 
 
-alias mjtTextureRole = 
+alias mjtTextureRole = mjtTextureRole_
 struct mjtIntegrator_:
 	alias mjINT_EULER: Int = 0
 
@@ -1565,14 +1565,14 @@ struct mjtIntegrator_:
 	alias mjINT_IMPLICITFAST: 
 
 
-alias mjtIntegrator = 
+alias mjtIntegrator = mjtIntegrator_
 struct mjtCone_:
 	alias mjCONE_PYRAMIDAL: Int = 0
 
 	alias mjCONE_ELLIPTIC: 
 
 
-alias mjtCone = 
+alias mjtCone = mjtCone_
 struct mjtJacobian_:
 	alias mjJAC_DENSE: Int = 0
 
@@ -1580,7 +1580,7 @@ struct mjtJacobian_:
 	alias mjJAC_AUTO: 
 
 
-alias mjtJacobian = 
+alias mjtJacobian = mjtJacobian_
 struct mjtSolver_:
 	alias mjSOL_PGS: Int = 0
 
@@ -1588,7 +1588,7 @@ struct mjtSolver_:
 	alias mjSOL_NEWTON: 
 
 
-alias mjtSolver = 
+alias mjtSolver = mjtSolver_
 struct mjtEq_:
 	alias mjEQ_CONNECT: Int = 0
 
@@ -1599,7 +1599,7 @@ struct mjtEq_:
 	alias mjEQ_DISTANCE: 
 
 
-alias mjtEq = 
+alias mjtEq = mjtEq_
 struct mjtWrap_:
 	alias mjWRAP_NONE: Int = 0
 
@@ -1610,7 +1610,7 @@ struct mjtWrap_:
 	alias mjWRAP_CYLINDER: 
 
 
-alias mjtWrap = 
+alias mjtWrap = mjtWrap_
 struct mjtTrn_:
 	alias mjTRN_JOINT: Int = 0
 
@@ -1623,7 +1623,7 @@ struct mjtTrn_:
 
 
 
-alias mjtTrn = 
+alias mjtTrn = mjtTrn_
 struct mjtDyn_:
 	alias mjDYN_NONE: Int = 0
 
@@ -1634,7 +1634,7 @@ struct mjtDyn_:
 	alias mjDYN_USER: 
 
 
-alias mjtDyn = 
+alias mjtDyn = mjtDyn_
 struct mjtGain_:
 	alias mjGAIN_FIXED: Int = 0
 
@@ -1643,7 +1643,7 @@ struct mjtGain_:
 	alias mjGAIN_USER: 
 
 
-alias mjtGain = 
+alias mjtGain = mjtGain_
 struct mjtBias_:
 	alias mjBIAS_NONE: Int = 0
 
@@ -1652,7 +1652,7 @@ struct mjtBias_:
 	alias mjBIAS_USER: 
 
 
-alias mjtBias = 
+alias mjtBias = mjtBias_
 struct mjtObj_:
 	alias mjOBJ_UNKNOWN: Int = 0
 
@@ -1688,7 +1688,7 @@ struct mjtObj_:
 	alias mjOBJ_MODEL: 
 
 
-alias mjtObj = 
+alias mjtObj = mjtObj_
 struct mjtConstraint_:
 	alias mjCNSTR_EQUALITY: Int = 0
 
@@ -1701,7 +1701,7 @@ struct mjtConstraint_:
 	alias mjCNSTR_CONTACT_ELLIPTIC: 
 
 
-alias mjtConstraint = 
+alias mjtConstraint = mjtConstraint_
 struct mjtConstraintState_:
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 
@@ -1711,7 +1711,7 @@ struct mjtConstraintState_:
 	alias mjCNSTRSTATE_CONE: 
 
 
-alias mjtConstraintState = 
+alias mjtConstraintState = mjtConstraintState_
 struct mjtSensor_:
 	alias mjSENS_TOUCH: Int = 0
 
@@ -1761,7 +1761,7 @@ struct mjtSensor_:
 	alias mjSENS_USER: 
 
 
-alias mjtSensor = 
+alias mjtSensor = mjtSensor_
 struct mjtStage_:
 	alias mjSTAGE_NONE: Int = 0
 
@@ -1770,7 +1770,7 @@ struct mjtStage_:
 	alias mjSTAGE_ACC: 
 
 
-alias mjtStage = 
+alias mjtStage = mjtStage_
 struct mjtDataType_:
 	alias mjDATATYPE_REAL: Int = 0
 
@@ -1779,7 +1779,7 @@ struct mjtDataType_:
 	alias mjDATATYPE_QUATERNION: 
 
 
-alias mjtDataType = 
+alias mjtDataType = mjtDataType_
 struct mjtSameFrame_:
 	alias mjSAMEFRAME_NONE: Int = 0
 
@@ -1789,7 +1789,7 @@ struct mjtSameFrame_:
 	alias mjSAMEFRAME_INERTIAROT: 
 
 
-alias mjtSameFrame = 
+alias mjtSameFrame = mjtSameFrame_
 struct mjtLRMode_:
 	alias mjLRMODE_NONE: Int = 0
 
@@ -1798,7 +1798,7 @@ struct mjtLRMode_:
 	alias mjLRMODE_ALL: 
 
 
-alias mjtLRMode = 
+alias mjtLRMode = mjtLRMode_
 struct mjtFlexSelf_:
 	alias mjFLEXSELF_NONE: Int = 0
 
@@ -1808,7 +1808,7 @@ struct mjtFlexSelf_:
 	alias mjFLEXSELF_AUTO: 
 
 
-alias mjtFlexSelf = 
+alias mjtFlexSelf = mjtFlexSelf_
 struct mjLROpt_:
 
 	var mode: Int32
@@ -2421,7 +2421,7 @@ struct _mjVisual__Anonymous__line_486_3__line_499_3_:
 
 struct mjVisual_:
 
-	var global: _mjVisual__Anonymous__line_486_3__line_499_3_
+	var `global`: _mjVisual__Anonymous__line_486_3__line_499_3_
 	
 
 	var quality: _mjVisual__Anonymous__line_501_3__line_507_3_
@@ -4949,7 +4949,7 @@ struct mjtTaskStatus_:
 	alias mjTASK_COMPLETED: 
 
 
-alias mjtTaskStatus = 
+alias mjtTaskStatus = mjtTaskStatus_
 
 alias mjfTask = fn(UnsafePointer[NoneType]) -> UnsafePointer[NoneType]
 # function pointer type for mjTask
@@ -5023,7 +5023,7 @@ struct mjtState_:
 
 
 
-alias mjtState = 
+alias mjtState = mjtState_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 struct mjtWarning_:
@@ -5039,7 +5039,7 @@ struct mjtWarning_:
 	alias referenced: 
 
 
-alias mjtWarning = 
+alias mjtWarning = mjtWarning_
 struct mjtTimer_:
 	alias mjTIMER_STEP: Int = 0
 
@@ -5060,7 +5060,7 @@ struct mjtTimer_:
 	alias referenced: 
 
 
-alias mjtTimer = 
+alias mjtTimer = mjtTimer_
 struct mjContact_:
 
 	var dist: mjtNum
@@ -6154,7 +6154,7 @@ struct mjtCatBit_:
 
 
 
-alias mjtCatBit = 
+alias mjtCatBit = mjtCatBit_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 struct mjtMouse_:
@@ -6168,7 +6168,7 @@ struct mjtMouse_:
 	alias mjMOUSE_SELECT: 
 
 
-alias mjtMouse = 
+alias mjtMouse = mjtMouse_
 struct mjtPertBit_:
 	alias mjPERT_TRANSLATE: Int = 1
 
@@ -6176,7 +6176,7 @@ struct mjtPertBit_:
 
 
 
-alias mjtPertBit = 
+alias mjtPertBit = mjtPertBit_
 struct mjtCamera_:
 	alias mjCAMERA_FREE: Int = 0
 
@@ -6185,7 +6185,7 @@ struct mjtCamera_:
 	alias mjCAMERA_USER: 
 
 
-alias mjtCamera = 
+alias mjtCamera = mjtCamera_
 struct mjtLabel_:
 	alias mjLABEL_NONE: Int = 0
 
@@ -6208,7 +6208,7 @@ struct mjtLabel_:
 	alias referenced: 
 
 
-alias mjtLabel = 
+alias mjtLabel = mjtLabel_
 struct mjtFrame_:
 	alias mjFRAME_NONE: Int = 0
 
@@ -6222,7 +6222,7 @@ struct mjtFrame_:
 	alias referenced: 
 
 
-alias mjtFrame = 
+alias mjtFrame = mjtFrame_
 struct mjtVisFlag_:
 	alias mjVIS_CONVEXHULL: Int = 0
 
@@ -6260,7 +6260,7 @@ struct mjtVisFlag_:
 	alias referenced: 
 
 
-alias mjtVisFlag = 
+alias mjtVisFlag = mjtVisFlag_
 struct mjtRndFlag_:
 	alias mjRND_SHADOW: Int = 0
 
@@ -6276,7 +6276,7 @@ struct mjtRndFlag_:
 	alias referenced: 
 
 
-alias mjtRndFlag = 
+alias mjtRndFlag = mjtRndFlag_
 struct mjtStereo_:
 	alias mjSTEREO_NONE: Int = 0
 
@@ -6284,7 +6284,7 @@ struct mjtStereo_:
 	alias mjSTEREO_SIDEBYSIDE: 
 
 
-alias mjtStereo = 
+alias mjtStereo = mjtStereo_
 struct mjvPerturb_:
 
 	var select: Int32
@@ -7889,7 +7889,7 @@ struct mjtPluginCapabilityBit_:
 
 
 
-alias mjtPluginCapabilityBit = 
+alias mjtPluginCapabilityBit = mjtPluginCapabilityBit_
 #---------------------------------- Plugins -------------------------------------------------------
 
 struct mjpPlugin_:
@@ -8015,7 +8015,7 @@ struct mjtGridPos_:
 	alias mjGRID_RIGHT: 
 
 
-alias mjtGridPos = 
+alias mjtGridPos = mjtGridPos_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 struct mjtFramebuffer_:
@@ -8024,7 +8024,7 @@ struct mjtFramebuffer_:
 	alias mjFB_OFFSCREEN: 
 
 
-alias mjtFramebuffer = 
+alias mjtFramebuffer = mjtFramebuffer_
 struct mjtDepthMap_:
 	alias mjDEPTH_ZERONEAR: Int = 0
 
@@ -8032,7 +8032,7 @@ struct mjtDepthMap_:
 
 
 
-alias mjtDepthMap = 
+alias mjtDepthMap = mjtDepthMap_
 struct mjtFontScale_:
 	alias mjFONTSCALE_50: Int = 50
 
@@ -8048,7 +8048,7 @@ struct mjtFontScale_:
 
 
 
-alias mjtFontScale = 
+alias mjtFontScale = mjtFontScale_
 struct mjtFont_:
 	alias mjFONT_NORMAL: Int = 0
 
@@ -8056,7 +8056,7 @@ struct mjtFont_:
 	alias mjFONT_BIG: 
 
 
-alias mjtFont = 
+alias mjtFont = mjtFont_
 struct mjrRect_:
 
 	var left: Int32
@@ -8416,7 +8416,7 @@ struct mjtGeomInertia_:
 	alias mjINERTIA_SHELL: 
 
 
-alias mjtGeomInertia = 
+alias mjtGeomInertia = mjtGeomInertia_
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
 struct mjtMeshInertia_:
@@ -8427,7 +8427,7 @@ struct mjtMeshInertia_:
 	alias mjMESH_INERTIA_SHELL: 
 
 
-alias mjtMeshInertia = 
+alias mjtMeshInertia = mjtMeshInertia_
 struct mjtBuiltin_:
 	alias mjBUILTIN_NONE: Int = 0
 
@@ -8436,7 +8436,7 @@ struct mjtBuiltin_:
 	alias mjBUILTIN_FLAT: 
 
 
-alias mjtBuiltin = 
+alias mjtBuiltin = mjtBuiltin_
 struct mjtMark_:
 	alias mjMARK_NONE: Int = 0
 
@@ -8445,7 +8445,7 @@ struct mjtMark_:
 	alias mjMARK_RANDOM: 
 
 
-alias mjtMark = 
+alias mjtMark = mjtMark_
 struct mjtLimited_:
 	alias mjLIMITED_FALSE: Int = 0
 
@@ -8453,7 +8453,7 @@ struct mjtLimited_:
 	alias mjLIMITED_AUTO: 
 
 
-alias mjtLimited = 
+alias mjtLimited = mjtLimited_
 struct mjtAlignFree_:
 	alias mjALIGNFREE_FALSE: Int = 0
 
@@ -8461,7 +8461,7 @@ struct mjtAlignFree_:
 	alias mjALIGNFREE_AUTO: 
 
 
-alias mjtAlignFree = 
+alias mjtAlignFree = mjtAlignFree_
 struct mjtInertiaFromGeom_:
 	alias mjINERTIAFROMGEOM_FALSE: Int = 0
 
@@ -8469,7 +8469,7 @@ struct mjtInertiaFromGeom_:
 	alias mjINERTIAFROMGEOM_AUTO: 
 
 
-alias mjtInertiaFromGeom = 
+alias mjtInertiaFromGeom = mjtInertiaFromGeom_
 struct mjtOrientation_:
 	alias mjORIENTATION_QUAT: Int = 0
 
@@ -8479,7 +8479,7 @@ struct mjtOrientation_:
 	alias mjORIENTATION_EULER: 
 
 
-alias mjtOrientation = 
+alias mjtOrientation = mjtOrientation_
 struct mjsElement_:
 
 	var elemtype: mjtObj
@@ -10770,7 +10770,7 @@ struct mjtButton_:
 	alias mjBUTTON_MIDDLE: 
 
 
-alias mjtButton = 
+alias mjtButton = mjtButton_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 struct mjtEvent_:
@@ -10786,7 +10786,7 @@ struct mjtEvent_:
 	alias mjEVENT_FILESDROP: 
 
 
-alias mjtEvent = 
+alias mjtEvent = mjtEvent_
 struct mjtItem_:
 	alias mjITEM_END: Int = -2
 
@@ -10810,7 +10810,7 @@ struct mjtItem_:
 	alias mjNITEM: 
 
 
-alias mjtItem = 
+alias mjtItem = mjtItem_
 struct mjtSection_:
 	alias mjSECT_CLOSED: Int = 0
 
@@ -10818,7 +10818,7 @@ struct mjtSection_:
 	alias mjSECT_FIXED: 
 
 
-alias mjtSection = 
+alias mjtSection = mjtSection_
 
 alias mjfItemEnable = fn(Int32,UnsafePointer[NoneType]) -> Int32
 # predicate function: set enable/disable based on item category

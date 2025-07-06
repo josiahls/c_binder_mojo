@@ -22,6 +22,11 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 
 ## Current Next Steps (IMMEDIATE PRIORITIES)
 
+### MuJoCo Bindings Issues Found
+1. **Blank alias issue**: `alias mjtDisableBit = ` is blank - TypedefDeclNode not properly extracting type name
+2. **AlignedAttr support missing**: Need to handle `AlignedAttr` nodes for field alignment (e.g., `aligned Int = 8`)
+3. **Enum value auto-assignment**: Enum constants without explicit values need automatic incrementing values
+4. **Struct syntax errors**: Multiple enum structs have malformed syntax causing linter errors
 
 ## Recent Progress & Insights
 - **AST Token Parsing**: Improved understanding of how Clang represents typedefs, function declarations, etc.

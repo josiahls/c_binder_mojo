@@ -322,7 +322,15 @@ struct ParmVarDeclNode(NodeAstLike):
         else:
             param_name = self._parm_var_name
             if self._parm_var_name == "def":
-                param_name = "default"
+                param_name = "def_"
+            elif self._parm_var_name == "len":
+                param_name = "len_"
+            elif self._parm_var_name == "type":
+                param_name = "type_"
+            elif self._parm_var_name == "from":
+                param_name = "from_"
+            elif self._parm_var_name == "id":
+                param_name = "id_"
 
             type_decl = param_name + ": " + type_name
 

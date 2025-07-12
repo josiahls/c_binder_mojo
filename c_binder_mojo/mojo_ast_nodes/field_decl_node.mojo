@@ -20,7 +20,8 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.type_mapper import TypeMapper
+# from c_binder_mojo.type_mapper import TypeMapper
+from c_binder_mojo.typing import TypeMapper
 from c_binder_mojo.mojo_ast_nodes.function_proto_type_node import FunctionProtoTypeNode
 
 
@@ -218,7 +219,7 @@ struct FieldDeclNode(NodeAstLike):
         var indent_level = parent_indent_level
         var indent_string = "\t" * indent_level
 
-        field_type = TypeMapper.get_mojo_type(self._field_type)
+        field_type = TypeMapper.convert_c_type_to_mojo_type(self._field_type)
 
         # TODO(josiahls): handle nested structs. Agail. Lol
         field_name = self._field_name

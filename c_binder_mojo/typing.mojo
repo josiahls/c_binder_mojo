@@ -273,12 +273,9 @@ struct TypeMapper:
     fn _convert_restrict_type(
         c_type: String,
     ) -> String:
-        print("Converting restrict type: " + c_type)
         stripped_type = String(c_type.removeprefix("restrict "))
         if stripped_type.replace("*", " ").endswith(" restrict"):
-            print("Removing restrict suffix")
             stripped_type = String(stripped_type.removesuffix("restrict"))
-        print("Converted restrict type: " + stripped_type)
         return Self.convert_c_type_to_mojo_type(stripped_type)
 
     @staticmethod

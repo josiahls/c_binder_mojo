@@ -22,8 +22,9 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 4. **Code correctness** - need cleanup and validation
 5. **Boilerplate code** - NodeAstLike trait implementations have lots of repetitive getter methods
 
-## Current Next Steps (IMMEDIATE PRIORITIES)
-- Need to revise our type handing. Running into cases like: 	var sect: SIMD[mjuiSection.dtype, 10]
-- This node is incorrectly parsing:  |-VarDecl 0x74a200 </home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mjexport.h:24:38, /home/c_binder_mojo_user/c_binder_mojo/mujoco/include/mujoco/mujoco.h:45:49> col:22 mju_user_error 'void (*)(const char *)' extern
+## Immediate previous progress
+- SIMD[Int32.dtype, 2] is now just UnsafePointer[Int32]. Not sure if we actually want this or not.
+- Unified a ton of code under a recursive type mapping system. Appears to be working, and fixed a few data type issues actually.
+- 
 
 

@@ -139,7 +139,7 @@ alias __off64_t = Int64
 
 alias __pid_t = Int32
 struct Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_:
-	var __val: SIMD[Int32.dtype, 2]
+	var __val: UnsafePointer[Int32]
 
 
 alias __fsid_t = Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_
@@ -281,7 +281,7 @@ alias __uint16_identity = fn(__x: __uint16_t) -> __uint16_t
 alias __uint32_identity = fn(__x: __uint32_t) -> __uint32_t
 alias __uint64_identity = fn(__x: __uint64_t) -> __uint64_t
 struct Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_:
-	var __val: SIMD[UInt64.dtype, 16]
+	var __val: UnsafePointer[UInt64]
 
 
 alias __sigset_t = Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_
@@ -300,7 +300,7 @@ alias suseconds_t = Int64
 
 alias __fd_mask = Int64
 struct Anonymous__line_59_9__line_70_3_:
-	var __fds_bits: SIMD[__fd_mask.dtype, 16]
+	var __fds_bits: UnsafePointer[__fd_mask]
 
 
 alias fd_set = Anonymous__line_59_9__line_70_3_
@@ -358,18 +358,18 @@ struct __pthread_rwlock_arch_t:
 	var __cur_writer: Int32
 	var __shared: Int32
 	var __rwelision: Int8
-	var __pad1: SIMD[UInt8.dtype, 7]
+	var __pad1: UnsafePointer[UInt8]
 	var __pad2: UInt64
 	var __flags: UInt32
 
 struct __pthread_cond_s:
 	var __wseq: __atomic_wide_counter
 	var __g1_start: __atomic_wide_counter
-	var __g_refs: SIMD[UInt32.dtype, 2]
-	var __g_size: SIMD[UInt32.dtype, 2]
+	var __g_refs: UnsafePointer[UInt32]
+	var __g_size: UnsafePointer[UInt32]
 	var __g1_orig_size: UInt32
 	var __wrefs: UInt32
-	var __g_signals: SIMD[UInt32.dtype, 2]
+	var __g_signals: UnsafePointer[UInt32]
 
 
 alias __tss_t = UInt32
@@ -383,13 +383,13 @@ alias __once_flag = Anonymous__line_108_9__line_111_1_
 
 alias pthread_t = UInt64
 struct Anonymous__line_32_9__line_36_1_:
-	var __size: SIMD[Int8.dtype, 4]
+	var __size: UnsafePointer[Int8]
 	var __align: Int32
 
 
 alias pthread_mutexattr_t = Anonymous__line_32_9__line_36_1_
 struct Anonymous__line_41_9__line_45_1_:
-	var __size: SIMD[Int8.dtype, 4]
+	var __size: UnsafePointer[Int8]
 	var __align: Int32
 
 
@@ -399,34 +399,34 @@ alias pthread_key_t = UInt32
 
 alias pthread_once_t = Int32
 struct pthread_attr_t:
-	var __size: SIMD[Int8.dtype, 56]
+	var __size: UnsafePointer[Int8]
 	var __align: Int64
 
 # Disabled since this is already declared
 # alias pthread_attr_t = pthread_attr_t
 struct Anonymous__line_67_9__line_72_1_:
 	var __data: __pthread_mutex_s
-	var __size: SIMD[Int8.dtype, 40]
+	var __size: UnsafePointer[Int8]
 	var __align: Int64
 
 
 alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
 struct Anonymous__line_75_9__line_80_1_:
 	var __data: __pthread_cond_s
-	var __size: SIMD[Int8.dtype, 48]
+	var __size: UnsafePointer[Int8]
 	var __align: Int128
 
 
 alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
 struct Anonymous__line_86_9__line_91_1_:
 	var __data: __pthread_rwlock_arch_t
-	var __size: SIMD[Int8.dtype, 56]
+	var __size: UnsafePointer[Int8]
 	var __align: Int64
 
 
 alias pthread_rwlock_t = Anonymous__line_86_9__line_91_1_
 struct Anonymous__line_93_9__line_97_1_:
-	var __size: SIMD[Int8.dtype, 8]
+	var __size: UnsafePointer[Int8]
 	var __align: Int64
 
 
@@ -434,13 +434,13 @@ alias pthread_rwlockattr_t = Anonymous__line_93_9__line_97_1_
 
 alias pthread_spinlock_t = Int32
 struct Anonymous__line_108_9__line_112_1_:
-	var __size: SIMD[Int8.dtype, 32]
+	var __size: UnsafePointer[Int8]
 	var __align: Int64
 
 
 alias pthread_barrier_t = Anonymous__line_108_9__line_112_1_
 struct Anonymous__line_114_9__line_118_1_:
-	var __size: SIMD[Int8.dtype, 4]
+	var __size: UnsafePointer[Int8]
 	var __align: Int32
 
 
@@ -475,8 +475,8 @@ alias srand48 = fn(__seedval: Int64) -> NoneType
 alias seed48 = fn(__seed16v: UnsafePointer[UInt16]) -> UnsafePointer[UInt16]
 alias lcong48 = fn(__param: UnsafePointer[UInt16]) -> NoneType
 struct drand48_data:
-	var __x: SIMD[UInt16.dtype, 3]
-	var __old_x: SIMD[UInt16.dtype, 3]
+	var __x: UnsafePointer[UInt16]
+	var __old_x: UnsafePointer[UInt16]
 	var __c: UInt16
 	var __init: UInt16
 	var __a: UInt128
@@ -1594,7 +1594,7 @@ struct mjLROpt_:
 
 alias mjLROpt = mjLROpt_
 struct mjVFS_:
-	var impl_: UnsafePointer[NoneType]
+	var impl_: OpaquePointer
 
 
 alias mjVFS = mjVFS_
@@ -1606,15 +1606,15 @@ struct mjOption_:
 	var ls_tolerance: mjtNum
 	var noslip_tolerance: mjtNum
 	var ccd_tolerance: mjtNum
-	var gravity: SIMD[mjtNum.dtype, 3]
-	var wind: SIMD[mjtNum.dtype, 3]
-	var magnetic: SIMD[mjtNum.dtype, 3]
+	var gravity: UnsafePointer[mjtNum]
+	var wind: UnsafePointer[mjtNum]
+	var magnetic: UnsafePointer[mjtNum]
 	var density: mjtNum
 	var viscosity: mjtNum
 	var o_margin: mjtNum
-	var o_solref: SIMD[mjtNum.dtype, 2]
-	var o_solimp: SIMD[mjtNum.dtype, 5]
-	var o_friction: SIMD[mjtNum.dtype, 5]
+	var o_solref: UnsafePointer[mjtNum]
+	var o_solimp: UnsafePointer[mjtNum]
+	var o_friction: UnsafePointer[mjtNum]
 	var integrator: Int32
 	var cone: Int32
 	var jacobian: Int32
@@ -1632,31 +1632,31 @@ struct mjOption_:
 
 alias mjOption = mjOption_
 struct _mjVisual__Anonymous__line_552_3__line_578_3_:
-	var fog: SIMD[Float32.dtype, 4]
-	var haze: SIMD[Float32.dtype, 4]
-	var force: SIMD[Float32.dtype, 4]
-	var inertia: SIMD[Float32.dtype, 4]
-	var joint: SIMD[Float32.dtype, 4]
-	var actuator: SIMD[Float32.dtype, 4]
-	var actuatornegative: SIMD[Float32.dtype, 4]
-	var actuatorpositive: SIMD[Float32.dtype, 4]
-	var com: SIMD[Float32.dtype, 4]
-	var camera: SIMD[Float32.dtype, 4]
-	var light: SIMD[Float32.dtype, 4]
-	var selectpoint: SIMD[Float32.dtype, 4]
-	var connect: SIMD[Float32.dtype, 4]
-	var contactpoint: SIMD[Float32.dtype, 4]
-	var contactforce: SIMD[Float32.dtype, 4]
-	var contactfriction: SIMD[Float32.dtype, 4]
-	var contacttorque: SIMD[Float32.dtype, 4]
-	var contactgap: SIMD[Float32.dtype, 4]
-	var rangefinder: SIMD[Float32.dtype, 4]
-	var constraint: SIMD[Float32.dtype, 4]
-	var slidercrank: SIMD[Float32.dtype, 4]
-	var crankbroken: SIMD[Float32.dtype, 4]
-	var frustum: SIMD[Float32.dtype, 4]
-	var bv: SIMD[Float32.dtype, 4]
-	var bvactive: SIMD[Float32.dtype, 4]
+	var fog: UnsafePointer[Float32]
+	var haze: UnsafePointer[Float32]
+	var force: UnsafePointer[Float32]
+	var inertia: UnsafePointer[Float32]
+	var joint: UnsafePointer[Float32]
+	var actuator: UnsafePointer[Float32]
+	var actuatornegative: UnsafePointer[Float32]
+	var actuatorpositive: UnsafePointer[Float32]
+	var com: UnsafePointer[Float32]
+	var camera: UnsafePointer[Float32]
+	var light: UnsafePointer[Float32]
+	var selectpoint: UnsafePointer[Float32]
+	var connect: UnsafePointer[Float32]
+	var contactpoint: UnsafePointer[Float32]
+	var contactforce: UnsafePointer[Float32]
+	var contactfriction: UnsafePointer[Float32]
+	var contacttorque: UnsafePointer[Float32]
+	var contactgap: UnsafePointer[Float32]
+	var rangefinder: UnsafePointer[Float32]
+	var constraint: UnsafePointer[Float32]
+	var slidercrank: UnsafePointer[Float32]
+	var crankbroken: UnsafePointer[Float32]
+	var frustum: UnsafePointer[Float32]
+	var bv: UnsafePointer[Float32]
+	var bvactive: UnsafePointer[Float32]
 
 
 struct _mjVisual__Anonymous__line_532_3__line_550_3_:
@@ -1696,9 +1696,9 @@ struct _mjVisual__Anonymous__line_516_3__line_530_3_:
 
 
 struct _mjVisual__Anonymous__line_509_3__line_514_3_:
-	var ambient: SIMD[Float32.dtype, 3]
-	var diffuse: SIMD[Float32.dtype, 3]
-	var specular: SIMD[Float32.dtype, 3]
+	var ambient: UnsafePointer[Float32]
+	var diffuse: UnsafePointer[Float32]
+	var specular: UnsafePointer[Float32]
 	var active: Int32
 
 
@@ -1740,7 +1740,7 @@ struct mjStatistic_:
 	var meanmass: mjtNum
 	var meansize: mjtNum
 	var extent: mjtNum
-	var center: SIMD[mjtNum.dtype, 3]
+	var center: UnsafePointer[mjtNum]
 
 
 alias mjStatistic = mjStatistic_
@@ -1833,7 +1833,7 @@ struct mjModel_:
 	var opt: mjOption
 	var vis: mjVisual
 	var stat: mjStatistic
-	var buffer: UnsafePointer[NoneType]
+	var buffer: OpaquePointer
 	var qpos0: UnsafePointer[mjtNum]
 	var qpos_spring: UnsafePointer[mjtNum]
 	var body_parentid: UnsafePointer[Int32]
@@ -2234,7 +2234,7 @@ struct mjModel_:
 	var names: UnsafePointer[Int8]
 	var names_map: UnsafePointer[Int32]
 	var paths: UnsafePointer[Int8]
-	var signature: uint64_t
+	var signature: UInt64
 
 
 alias mjModel = mjModel_
@@ -2256,7 +2256,7 @@ struct mjThreadPool_:
 alias mjThreadPool = mjThreadPool_
 struct mjTask_:
 	var func: mjfTask
-	var args: UnsafePointer[NoneType]
+	var args: OpaquePointer
 	var status: Int32
 
 
@@ -2322,22 +2322,22 @@ struct mjtTimer_: # Enum
 alias mjtTimer = mjtTimer_
 struct mjContact_:
 	var dist: mjtNum
-	var pos: SIMD[mjtNum.dtype, 3]
-	var frame: SIMD[mjtNum.dtype, 9]
+	var pos: UnsafePointer[mjtNum]
+	var frame: UnsafePointer[mjtNum]
 	var includemargin: mjtNum
-	var friction: SIMD[mjtNum.dtype, 5]
-	var solref: SIMD[mjtNum.dtype, 2]
-	var solreffriction: SIMD[mjtNum.dtype, 2]
-	var solimp: SIMD[mjtNum.dtype, 5]
+	var friction: UnsafePointer[mjtNum]
+	var solref: UnsafePointer[mjtNum]
+	var solreffriction: UnsafePointer[mjtNum]
+	var solimp: UnsafePointer[mjtNum]
 	var mu: mjtNum
-	var H: SIMD[mjtNum.dtype, 36]
+	var H: UnsafePointer[mjtNum]
 	var dim: Int32
 	var geom1: Int32
 	var geom2: Int32
-	var geom: SIMD[Int32.dtype, 2]
-	var flex: SIMD[Int32.dtype, 2]
-	var elem: SIMD[Int32.dtype, 2]
-	var vert: SIMD[Int32.dtype, 2]
+	var geom: UnsafePointer[Int32]
+	var flex: UnsafePointer[Int32]
+	var elem: UnsafePointer[Int32]
+	var vert: UnsafePointer[Int32]
 	var exclude: Int32
 	var efc_address: Int32
 
@@ -2374,17 +2374,17 @@ struct mjData_:
 	var pbase: size_t
 	var parena: size_t
 	var maxuse_stack: size_t
-	var maxuse_threadstack: SIMD[size_t.dtype, 128]
+	var maxuse_threadstack: UnsafePointer[size_t]
 	var maxuse_arena: size_t
 	var maxuse_con: Int32
 	var maxuse_efc: Int32
-	var solver: SIMD[mjSolverStat.dtype, 4000]
+	var solver: UnsafePointer[mjSolverStat]
 	var solver_nisland: Int32
-	var solver_niter: SIMD[Int32.dtype, 20]
-	var solver_nnz: SIMD[Int32.dtype, 20]
-	var solver_fwdinv: SIMD[mjtNum.dtype, 2]
-	var warning: SIMD[mjWarningStat.dtype, 8]
-	var timer: SIMD[mjTimerStat.dtype, 15]
+	var solver_niter: UnsafePointer[Int32]
+	var solver_nnz: UnsafePointer[Int32]
+	var solver_fwdinv: UnsafePointer[mjtNum]
+	var warning: UnsafePointer[mjWarningStat]
+	var timer: UnsafePointer[mjTimerStat]
 	var ncon: Int32
 	var ne: Int32
 	var nf: Int32
@@ -2394,9 +2394,9 @@ struct mjData_:
 	var nA: Int32
 	var nisland: Int32
 	var time: mjtNum
-	var energy: SIMD[mjtNum.dtype, 2]
-	var buffer: UnsafePointer[NoneType]
-	var arena: UnsafePointer[NoneType]
+	var energy: UnsafePointer[mjtNum]
+	var buffer: OpaquePointer
+	var arena: OpaquePointer
 	var qpos: UnsafePointer[mjtNum]
 	var qvel: UnsafePointer[mjtNum]
 	var act: UnsafePointer[mjtNum]
@@ -2542,7 +2542,7 @@ struct mjData_:
 	var efc_force: UnsafePointer[mjtNum]
 	var efc_state: UnsafePointer[Int32]
 	var threadpool: uintptr_t
-	var signature: uint64_t
+	var signature: UInt64
 
 
 alias mjData = mjData_
@@ -2707,10 +2707,10 @@ struct mjvPerturb_:
 	var skinselect: Int32
 	var active: Int32
 	var active2: Int32
-	var refpos: SIMD[mjtNum.dtype, 3]
-	var refquat: SIMD[mjtNum.dtype, 4]
-	var refselpos: SIMD[mjtNum.dtype, 3]
-	var localpos: SIMD[mjtNum.dtype, 3]
+	var refpos: UnsafePointer[mjtNum]
+	var refquat: UnsafePointer[mjtNum]
+	var refselpos: UnsafePointer[mjtNum]
+	var localpos: UnsafePointer[mjtNum]
 	var localmass: mjtNum
 	var scale: mjtNum
 
@@ -2720,7 +2720,7 @@ struct mjvCamera_:
 	var type: Int32
 	var fixedcamid: Int32
 	var trackbodyid: Int32
-	var lookat: SIMD[mjtNum.dtype, 3]
+	var lookat: UnsafePointer[mjtNum]
 	var distance: mjtNum
 	var azimuth: mjtNum
 	var elevation: mjtNum
@@ -2729,9 +2729,9 @@ struct mjvCamera_:
 
 alias mjvCamera = mjvCamera_
 struct mjvGLCamera_:
-	var pos: SIMD[Float32.dtype, 3]
-	var forward: SIMD[Float32.dtype, 3]
-	var up: SIMD[Float32.dtype, 3]
+	var pos: UnsafePointer[Float32]
+	var forward: UnsafePointer[Float32]
+	var up: UnsafePointer[Float32]
 	var frustum_center: Float32
 	var frustum_width: Float32
 	var frustum_bottom: Float32
@@ -2751,15 +2751,15 @@ struct mjvGeom_:
 	var matid: Int32
 	var texcoord: Int32
 	var segid: Int32
-	var size: SIMD[Float32.dtype, 3]
-	var pos: SIMD[Float32.dtype, 3]
-	var mat: SIMD[Float32.dtype, 9]
-	var rgba: SIMD[Float32.dtype, 4]
+	var size: UnsafePointer[Float32]
+	var pos: UnsafePointer[Float32]
+	var mat: UnsafePointer[Float32]
+	var rgba: UnsafePointer[Float32]
 	var emission: Float32
 	var specular: Float32
 	var shininess: Float32
 	var reflectance: Float32
-	var label: SIMD[Int8.dtype, 100]
+	var label: UnsafePointer[Int8]
 	var camdist: Float32
 	var modelrbound: Float32
 	var transparent: mjtByte
@@ -2767,14 +2767,14 @@ struct mjvGeom_:
 
 alias mjvGeom = mjvGeom_
 struct mjvLight_:
-	var pos: SIMD[Float32.dtype, 3]
-	var dir: SIMD[Float32.dtype, 3]
-	var attenuation: SIMD[Float32.dtype, 3]
+	var pos: UnsafePointer[Float32]
+	var dir: UnsafePointer[Float32]
+	var attenuation: UnsafePointer[Float32]
 	var cutoff: Float32
 	var exponent: Float32
-	var ambient: SIMD[Float32.dtype, 3]
-	var diffuse: SIMD[Float32.dtype, 3]
-	var specular: SIMD[Float32.dtype, 3]
+	var ambient: UnsafePointer[Float32]
+	var diffuse: UnsafePointer[Float32]
+	var specular: UnsafePointer[Float32]
 	var headlight: mjtByte
 	var directional: mjtByte
 	var castshadow: mjtByte
@@ -2785,14 +2785,14 @@ alias mjvLight = mjvLight_
 struct mjvOption_:
 	var label: Int32
 	var frame: Int32
-	var geomgroup: SIMD[mjtByte.dtype, 6]
-	var sitegroup: SIMD[mjtByte.dtype, 6]
-	var jointgroup: SIMD[mjtByte.dtype, 6]
-	var tendongroup: SIMD[mjtByte.dtype, 6]
-	var actuatorgroup: SIMD[mjtByte.dtype, 6]
-	var flexgroup: SIMD[mjtByte.dtype, 6]
-	var skingroup: SIMD[mjtByte.dtype, 6]
-	var flags: SIMD[mjtByte.dtype, 32]
+	var geomgroup: UnsafePointer[mjtByte]
+	var sitegroup: UnsafePointer[mjtByte]
+	var jointgroup: UnsafePointer[mjtByte]
+	var tendongroup: UnsafePointer[mjtByte]
+	var actuatorgroup: UnsafePointer[mjtByte]
+	var flexgroup: UnsafePointer[mjtByte]
+	var skingroup: UnsafePointer[mjtByte]
+	var flags: UnsafePointer[mjtByte]
 	var bvh_depth: Int32
 	var flex_layer: Int32
 
@@ -2827,58 +2827,58 @@ struct mjvScene_:
 	var skinvert: UnsafePointer[Float32]
 	var skinnormal: UnsafePointer[Float32]
 	var nlight: Int32
-	var lights: SIMD[mjvLight.dtype, 100]
-	var camera: SIMD[mjvGLCamera.dtype, 2]
+	var lights: UnsafePointer[mjvLight]
+	var camera: UnsafePointer[mjvGLCamera]
 	var enabletransform: mjtByte
-	var translate: SIMD[Float32.dtype, 3]
-	var rotate: SIMD[Float32.dtype, 4]
+	var translate: UnsafePointer[Float32]
+	var rotate: UnsafePointer[Float32]
 	var scale: Float32
 	var stereo: Int32
-	var flags: SIMD[mjtByte.dtype, 10]
+	var flags: UnsafePointer[mjtByte]
 	var framewidth: Int32
-	var framergb: SIMD[Float32.dtype, 3]
+	var framergb: UnsafePointer[Float32]
 
 
 alias mjvScene = mjvScene_
 struct mjvFigure_:
 	var flg_legend: Int32
-	var flg_ticklabel: SIMD[Int32.dtype, 2]
+	var flg_ticklabel: UnsafePointer[Int32]
 	var flg_extend: Int32
 	var flg_barplot: Int32
 	var flg_selection: Int32
 	var flg_symmetric: Int32
 	var linewidth: Float32
 	var gridwidth: Float32
-	var gridsize: SIMD[Int32.dtype, 2]
-	var gridrgb: SIMD[Float32.dtype, 3]
-	var figurergba: SIMD[Float32.dtype, 4]
-	var panergba: SIMD[Float32.dtype, 4]
-	var legendrgba: SIMD[Float32.dtype, 4]
-	var textrgb: SIMD[Float32.dtype, 3]
-	var linergb: SIMD[Float32.dtype, 100]
-	var range: SIMD[Float32.dtype, 2]
-	var xformat: SIMD[Int8.dtype, 20]
-	var yformat: SIMD[Int8.dtype, 20]
-	var minwidth: SIMD[Int8.dtype, 20]
-	var title: SIMD[Int8.dtype, 1000]
-	var xlabel: SIMD[Int8.dtype, 100]
-	var linename: SIMD[Int8.dtype, 100]
+	var gridsize: UnsafePointer[Int32]
+	var gridrgb: UnsafePointer[Float32]
+	var figurergba: UnsafePointer[Float32]
+	var panergba: UnsafePointer[Float32]
+	var legendrgba: UnsafePointer[Float32]
+	var textrgb: UnsafePointer[Float32]
+	var linergb: UnsafePointer[Float32]
+	var range: UnsafePointer[Float32]
+	var xformat: UnsafePointer[Int8]
+	var yformat: UnsafePointer[Int8]
+	var minwidth: UnsafePointer[Int8]
+	var title: UnsafePointer[Int8]
+	var xlabel: UnsafePointer[Int8]
+	var linename: UnsafePointer[Int8]
 	var legendoffset: Int32
 	var subplot: Int32
-	var highlight: SIMD[Int32.dtype, 2]
+	var highlight: UnsafePointer[Int32]
 	var highlightid: Int32
 	var selection: Float32
-	var linepnt: SIMD[Int32.dtype, 100]
-	var linedata: SIMD[Float32.dtype, 100]
-	var xaxispixel: SIMD[Int32.dtype, 2]
-	var yaxispixel: SIMD[Int32.dtype, 2]
-	var xaxisdata: SIMD[Float32.dtype, 2]
-	var yaxisdata: SIMD[Float32.dtype, 2]
+	var linepnt: UnsafePointer[Int32]
+	var linedata: UnsafePointer[Float32]
+	var xaxispixel: UnsafePointer[Int32]
+	var yaxispixel: UnsafePointer[Int32]
+	var xaxisdata: UnsafePointer[Float32]
+	var yaxisdata: UnsafePointer[Float32]
 
 
 alias mjvFigure = mjvFigure_
 struct _mjvSceneState__Anonymous__line_634_3__line_688_3_:
-	var warning: SIMD[mjWarningStat.dtype, 8]
+	var warning: UnsafePointer[mjWarningStat]
 	var nefc: Int32
 	var ncon: Int32
 	var nisland: Int32
@@ -2919,7 +2919,7 @@ struct _mjvSceneState__Anonymous__line_634_3__line_688_3_:
 	var flexvert_xpos: UnsafePointer[mjtNum]
 	var contact: UnsafePointer[mjContact]
 	var efc_force: UnsafePointer[mjtNum]
-	var arena: UnsafePointer[NoneType]
+	var arena: OpaquePointer
 
 
 struct _mjvSceneState__Anonymous__line_417_3__line_631_3_:
@@ -3121,7 +3121,7 @@ struct _mjvSceneState__Anonymous__line_417_3__line_631_3_:
 
 struct mjvSceneState_:
 	var nbuffer: Int32
-	var buffer: UnsafePointer[NoneType]
+	var buffer: OpaquePointer
 	var maxgeom: Int32
 	var scratch: mjvScene
 	var model: _mjvSceneState__Anonymous__line_417_3__line_631_3_
@@ -3135,8 +3135,8 @@ struct _mjResource__mjpResourceProvider:
 
 struct mjResource_:
 	var name: UnsafePointer[Int8]
-	var data: UnsafePointer[NoneType]
-	var timestamp: SIMD[Int8.dtype, 512]
+	var data: OpaquePointer
+	var timestamp: UnsafePointer[Int8]
 	var provider: UnsafePointer[mjpResourceProvider] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 
 
@@ -3176,7 +3176,7 @@ struct mjpResourceProvider:
 	var close: mjfCloseResource
 	var getdir: mjfGetResourceDir
 	var modified: mjfResourceModified
-	var data: UnsafePointer[NoneType]
+	var data: OpaquePointer
 
 # Disabled since this is already declared
 # alias mjpResourceProvider = mjpResourceProvider
@@ -3198,21 +3198,21 @@ struct mjpPlugin_:
 	var attributes: UnsafePointer[char *const] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 	var capabilityflags: Int32
 	var needstage: Int32
-	var nstate: int (*)(const mjModel *, int)
-	var nsensordata: int (*)(const mjModel *, int, int)
-	var init: int (*)(const mjModel *, mjData *, int)
-	var destroy: void (*)(mjData *, int)
-	var copy: void (*)(mjData *, mjModel *, mjData *, int) # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
-	var reset: void (*)(const mjModel *, mjtNum *, void *, int)
-	var compute: void (*)(const mjModel *, mjData *, int, int)
-	var advance: void (*)(const mjModel *, mjData *, int)
-	var visualize: void (*)(const mjModel *, mjData *, mjvOption *, mjvScene *, int) # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
-	var actuator_act_dot: void (*)(const mjModel *, mjData *, int)
-	var sdf_distance: mjtNum (*)(const mjtNum *, mjData *, int) # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
-	var sdf_gradient: void (*)(mjtNum *, mjtNum *, mjData *, int) # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
-	var sdf_staticdistance: mjtNum (*)(const mjtNum *, mjtNum *) # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
-	var sdf_attribute: void (*)(mjtNum *, char **, char **) # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
-	var sdf_aabb: void (*)(mjtNum *, mjtNum *) # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var nstate: fn(read UnsafePointer[mjModel], Int32) -> Int32
+	var nsensordata: fn(read UnsafePointer[mjModel], Int32, Int32) -> Int32
+	var init: fn(read UnsafePointer[mjModel], UnsafePointer[mjData], Int32) -> Int32
+	var destroy: fn(UnsafePointer[mjData], Int32) -> NoneType
+	var copy: fn(UnsafePointer[mjData], UnsafePointer[mjModel], UnsafePointer[mjData], Int32) -> NoneType # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var reset: fn(read UnsafePointer[mjModel], UnsafePointer[mjtNum], OpaquePointer, Int32) -> NoneType
+	var compute: fn(read UnsafePointer[mjModel], UnsafePointer[mjData], Int32, Int32) -> NoneType
+	var advance: fn(read UnsafePointer[mjModel], UnsafePointer[mjData], Int32) -> NoneType
+	var visualize: fn(read UnsafePointer[mjModel], UnsafePointer[mjData], UnsafePointer[mjvOption], UnsafePointer[mjvScene], Int32) -> NoneType # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var actuator_act_dot: fn(read UnsafePointer[mjModel], UnsafePointer[mjData], Int32) -> NoneType
+	var sdf_distance: fn(read UnsafePointer[mjtNum], UnsafePointer[mjData], Int32) -> mjtNum # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var sdf_gradient: fn(UnsafePointer[mjtNum], UnsafePointer[mjtNum], UnsafePointer[mjData], Int32) -> NoneType # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var sdf_staticdistance: fn(read UnsafePointer[mjtNum], UnsafePointer[mjtNum]) -> mjtNum # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var sdf_attribute: fn(UnsafePointer[mjtNum], UnsafePointer[UnsafePointer[Int8]], UnsafePointer[UnsafePointer[Int8]]) -> NoneType # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var sdf_aabb: fn(UnsafePointer[mjtNum], UnsafePointer[mjtNum]) -> NoneType # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 
 
 alias mjpPlugin = mjpPlugin_
@@ -3279,15 +3279,15 @@ struct mjrContext_:
 	var shadowScale: Float32
 	var fogStart: Float32
 	var fogEnd: Float32
-	var fogRGBA: SIMD[Float32.dtype, 4]
+	var fogRGBA: UnsafePointer[Float32]
 	var shadowSize: Int32
 	var offWidth: Int32
 	var offHeight: Int32
 	var offSamples: Int32
 	var fontScale: Int32
-	var auxWidth: SIMD[Int32.dtype, 10]
-	var auxHeight: SIMD[Int32.dtype, 10]
-	var auxSamples: SIMD[Int32.dtype, 10]
+	var auxWidth: UnsafePointer[Int32]
+	var auxHeight: UnsafePointer[Int32]
+	var auxSamples: UnsafePointer[Int32]
 	var offFBO: UInt32
 	var offFBO_r: UInt32
 	var offColor: UInt32
@@ -3296,16 +3296,16 @@ struct mjrContext_:
 	var offDepthStencil_r: UInt32
 	var shadowFBO: UInt32
 	var shadowTex: UInt32
-	var auxFBO: SIMD[UInt32.dtype, 10]
-	var auxFBO_r: SIMD[UInt32.dtype, 10]
-	var auxColor: SIMD[UInt32.dtype, 10]
-	var auxColor_r: SIMD[UInt32.dtype, 10]
-	var mat_texid: SIMD[Int32.dtype, 10000]
-	var mat_texuniform: SIMD[Int32.dtype, 1000]
-	var mat_texrepeat: SIMD[Float32.dtype, 2000]
+	var auxFBO: UnsafePointer[UInt32]
+	var auxFBO_r: UnsafePointer[UInt32]
+	var auxColor: UnsafePointer[UInt32]
+	var auxColor_r: UnsafePointer[UInt32]
+	var mat_texid: UnsafePointer[Int32]
+	var mat_texuniform: UnsafePointer[Int32]
+	var mat_texrepeat: UnsafePointer[Float32]
 	var ntexture: Int32
-	var textureType: SIMD[Int32.dtype, 1000]
-	var texture: SIMD[UInt32.dtype, 1000]
+	var textureType: UnsafePointer[Int32]
+	var texture: UnsafePointer[UInt32]
 	var basePlane: UInt32
 	var baseMesh: UInt32
 	var baseHField: UInt32
@@ -3323,8 +3323,8 @@ struct mjrContext_:
 	var skinnormalVBO: UnsafePointer[UInt32]
 	var skintexcoordVBO: UnsafePointer[UInt32]
 	var skinfaceVBO: UnsafePointer[UInt32]
-	var charWidth: SIMD[Int32.dtype, 127]
-	var charWidthBig: SIMD[Int32.dtype, 127]
+	var charWidth: UnsafePointer[Int32]
+	var charWidthBig: UnsafePointer[Int32]
 	var charHeight: Int32
 	var charHeightBig: Int32
 	var glInitialized: Int32
@@ -3422,7 +3422,7 @@ struct mjtOrientation_: # Enum
 alias mjtOrientation = mjtOrientation_
 struct mjsElement_:
 	var elemtype: mjtObj
-	var signature: uint64_t
+	var signature: UInt64
 
 
 alias mjsElement = mjsElement_
@@ -3436,12 +3436,12 @@ struct mjsCompiler_:
 	var balanceinertia: mjtByte
 	var fitaabb: mjtByte
 	var degree: mjtByte
-	var eulerseq: SIMD[Int8.dtype, 3]
+	var eulerseq: UnsafePointer[Int8]
 	var discardvisual: mjtByte
 	var usethread: mjtByte
 	var fusestatic: mjtByte
 	var inertiafromgeom: Int32
-	var inertiagrouprange: SIMD[Int32.dtype, 2]
+	var inertiagrouprange: UnsafePointer[Int32]
 	var saveinertial: mjtByte
 	var alignfree: Int32
 	var LRopt: mjLROpt
@@ -3481,10 +3481,10 @@ struct mjSpec_:
 alias mjSpec = mjSpec_
 struct mjsOrientation_:
 	var type: mjtOrientation
-	var axisangle: SIMD[Float64.dtype, 4]
-	var xyaxes: SIMD[Float64.dtype, 6]
-	var zaxis: SIMD[Float64.dtype, 3]
-	var euler: SIMD[Float64.dtype, 3]
+	var axisangle: UnsafePointer[Float64]
+	var xyaxes: UnsafePointer[Float64]
+	var zaxis: UnsafePointer[Float64]
+	var euler: UnsafePointer[Float64]
 
 
 alias mjsOrientation = mjsOrientation_
@@ -3501,15 +3501,15 @@ struct mjsBody_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var childclass: UnsafePointer[mjString]
-	var pos: SIMD[Float64.dtype, 3]
-	var quat: SIMD[Float64.dtype, 4]
+	var pos: UnsafePointer[Float64]
+	var quat: UnsafePointer[Float64]
 	var alt: mjsOrientation
 	var mass: Float64
-	var ipos: SIMD[Float64.dtype, 3]
-	var iquat: SIMD[Float64.dtype, 4]
-	var inertia: SIMD[Float64.dtype, 3]
+	var ipos: UnsafePointer[Float64]
+	var iquat: UnsafePointer[Float64]
+	var inertia: UnsafePointer[Float64]
 	var ialt: mjsOrientation
-	var fullinertia: SIMD[Float64.dtype, 6]
+	var fullinertia: UnsafePointer[Float64]
 	var mocap: mjtByte
 	var gravcomp: Float64
 	var userdata: UnsafePointer[mjDoubleVec]
@@ -3523,8 +3523,8 @@ struct mjsFrame_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var childclass: UnsafePointer[mjString]
-	var pos: SIMD[Float64.dtype, 3]
-	var quat: SIMD[Float64.dtype, 4]
+	var pos: UnsafePointer[Float64]
+	var quat: UnsafePointer[Float64]
 	var alt: mjsOrientation
 	var info: UnsafePointer[mjString]
 
@@ -3534,25 +3534,25 @@ struct mjsJoint_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var type: mjtJoint
-	var pos: SIMD[Float64.dtype, 3]
-	var axis: SIMD[Float64.dtype, 3]
+	var pos: UnsafePointer[Float64]
+	var axis: UnsafePointer[Float64]
 	var ref: Float64
 	var align: Int32
 	var stiffness: Float64
 	var springref: Float64
-	var springdamper: SIMD[Float64.dtype, 2]
+	var springdamper: UnsafePointer[Float64]
 	var limited: Int32
-	var range: SIMD[Float64.dtype, 2]
+	var range: UnsafePointer[Float64]
 	var margin: Float64
-	var solref_limit: SIMD[mjtNum.dtype, 2]
-	var solimp_limit: SIMD[mjtNum.dtype, 5]
+	var solref_limit: UnsafePointer[mjtNum]
+	var solimp_limit: UnsafePointer[mjtNum]
 	var actfrclimited: Int32
-	var actfrcrange: SIMD[Float64.dtype, 2]
+	var actfrcrange: UnsafePointer[Float64]
 	var armature: Float64
 	var damping: Float64
 	var frictionloss: Float64
-	var solref_friction: SIMD[mjtNum.dtype, 2]
-	var solimp_friction: SIMD[mjtNum.dtype, 5]
+	var solref_friction: UnsafePointer[mjtNum]
+	var solimp_friction: UnsafePointer[mjtNum]
 	var group: Int32
 	var actgravcomp: mjtByte
 	var userdata: UnsafePointer[mjDoubleVec]
@@ -3564,28 +3564,28 @@ struct mjsGeom_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var type: mjtGeom
-	var pos: SIMD[Float64.dtype, 3]
-	var quat: SIMD[Float64.dtype, 4]
+	var pos: UnsafePointer[Float64]
+	var quat: UnsafePointer[Float64]
 	var alt: mjsOrientation
-	var fromto: SIMD[Float64.dtype, 6]
-	var size: SIMD[Float64.dtype, 3]
+	var fromto: UnsafePointer[Float64]
+	var size: UnsafePointer[Float64]
 	var contype: Int32
 	var conaffinity: Int32
 	var condim: Int32
 	var priority: Int32
-	var friction: SIMD[Float64.dtype, 3]
+	var friction: UnsafePointer[Float64]
 	var solmix: Float64
-	var solref: SIMD[mjtNum.dtype, 2]
-	var solimp: SIMD[mjtNum.dtype, 5]
+	var solref: UnsafePointer[mjtNum]
+	var solimp: UnsafePointer[mjtNum]
 	var margin: Float64
 	var gap: Float64
 	var mass: Float64
 	var density: Float64
 	var typeinertia: mjtGeomInertia
 	var fluid_ellipsoid: mjtNum
-	var fluid_coefs: SIMD[mjtNum.dtype, 5]
+	var fluid_coefs: UnsafePointer[mjtNum]
 	var material: UnsafePointer[mjString]
-	var rgba: SIMD[Float32.dtype, 4]
+	var rgba: UnsafePointer[Float32]
 	var group: Int32
 	var hfieldname: UnsafePointer[mjString]
 	var meshname: UnsafePointer[mjString]
@@ -3599,15 +3599,15 @@ alias mjsGeom = mjsGeom_
 struct mjsSite_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
-	var pos: SIMD[Float64.dtype, 3]
-	var quat: SIMD[Float64.dtype, 4]
+	var pos: UnsafePointer[Float64]
+	var quat: UnsafePointer[Float64]
 	var alt: mjsOrientation
-	var fromto: SIMD[Float64.dtype, 6]
-	var size: SIMD[Float64.dtype, 3]
+	var fromto: UnsafePointer[Float64]
+	var size: UnsafePointer[Float64]
 	var type: mjtGeom
 	var material: UnsafePointer[mjString]
 	var group: Int32
-	var rgba: SIMD[Float32.dtype, 4]
+	var rgba: UnsafePointer[Float32]
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
 
@@ -3616,21 +3616,21 @@ alias mjsSite = mjsSite_
 struct mjsCamera_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
-	var pos: SIMD[Float64.dtype, 3]
-	var quat: SIMD[Float64.dtype, 4]
+	var pos: UnsafePointer[Float64]
+	var quat: UnsafePointer[Float64]
 	var alt: mjsOrientation
 	var mode: mjtCamLight
 	var targetbody: UnsafePointer[mjString]
 	var orthographic: Int32
 	var fovy: Float64
 	var ipd: Float64
-	var intrinsic: SIMD[Float32.dtype, 4]
-	var sensor_size: SIMD[Float32.dtype, 2]
-	var resolution: SIMD[Float32.dtype, 2]
-	var focal_length: SIMD[Float32.dtype, 2]
-	var focal_pixel: SIMD[Float32.dtype, 2]
-	var principal_length: SIMD[Float32.dtype, 2]
-	var principal_pixel: SIMD[Float32.dtype, 2]
+	var intrinsic: UnsafePointer[Float32]
+	var sensor_size: UnsafePointer[Float32]
+	var resolution: UnsafePointer[Float32]
+	var focal_length: UnsafePointer[Float32]
+	var focal_pixel: UnsafePointer[Float32]
+	var principal_length: UnsafePointer[Float32]
+	var principal_pixel: UnsafePointer[Float32]
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
 
@@ -3639,20 +3639,20 @@ alias mjsCamera = mjsCamera_
 struct mjsLight_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
-	var pos: SIMD[Float64.dtype, 3]
-	var dir: SIMD[Float64.dtype, 3]
+	var pos: UnsafePointer[Float64]
+	var dir: UnsafePointer[Float64]
 	var mode: mjtCamLight
 	var targetbody: UnsafePointer[mjString]
 	var active: mjtByte
 	var directional: mjtByte
 	var castshadow: mjtByte
 	var bulbradius: Float64
-	var attenuation: SIMD[Float32.dtype, 3]
+	var attenuation: UnsafePointer[Float32]
 	var cutoff: Float32
 	var exponent: Float32
-	var ambient: SIMD[Float32.dtype, 3]
-	var diffuse: SIMD[Float32.dtype, 3]
-	var specular: SIMD[Float32.dtype, 3]
+	var ambient: UnsafePointer[Float32]
+	var diffuse: UnsafePointer[Float32]
+	var specular: UnsafePointer[Float32]
 	var info: UnsafePointer[mjString]
 
 
@@ -3664,10 +3664,10 @@ struct mjsFlex_:
 	var conaffinity: Int32
 	var condim: Int32
 	var priority: Int32
-	var friction: SIMD[Float64.dtype, 3]
+	var friction: UnsafePointer[Float64]
 	var solmix: Float64
-	var solref: SIMD[mjtNum.dtype, 2]
-	var solimp: SIMD[mjtNum.dtype, 5]
+	var solref: UnsafePointer[mjtNum]
+	var solimp: UnsafePointer[mjtNum]
 	var margin: Float64
 	var gap: Float64
 	var dim: Int32
@@ -3679,7 +3679,7 @@ struct mjsFlex_:
 	var group: Int32
 	var edgestiffness: Float64
 	var edgedamping: Float64
-	var rgba: SIMD[Float32.dtype, 4]
+	var rgba: UnsafePointer[Float32]
 	var material: UnsafePointer[mjString]
 	var young: Float64
 	var poisson: Float64
@@ -3701,9 +3701,9 @@ struct mjsMesh_:
 	var name: UnsafePointer[mjString]
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var refpos: SIMD[Float64.dtype, 3]
-	var refquat: SIMD[Float64.dtype, 4]
-	var scale: SIMD[Float64.dtype, 3]
+	var refpos: UnsafePointer[Float64]
+	var refquat: UnsafePointer[Float64]
+	var scale: UnsafePointer[Float64]
 	var inertia: mjtMeshInertia
 	var smoothnormal: mjtByte
 	var maxhullvert: Int32
@@ -3722,7 +3722,7 @@ struct mjsHField_:
 	var name: UnsafePointer[mjString]
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var size: SIMD[Float64.dtype, 4]
+	var size: UnsafePointer[Float64]
 	var nrow: Int32
 	var ncol: Int32
 	var userdata: UnsafePointer[mjFloatVec]
@@ -3735,7 +3735,7 @@ struct mjsSkin_:
 	var name: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
 	var material: UnsafePointer[mjString]
-	var rgba: SIMD[Float32.dtype, 4]
+	var rgba: UnsafePointer[Float32]
 	var inflate: Float32
 	var group: Int32
 	var vert: UnsafePointer[mjFloatVec]
@@ -3756,17 +3756,17 @@ struct mjsTexture_:
 	var type: mjtTexture
 	var builtin: Int32
 	var mark: Int32
-	var rgb1: SIMD[Float64.dtype, 3]
-	var rgb2: SIMD[Float64.dtype, 3]
-	var markrgb: SIMD[Float64.dtype, 3]
+	var rgb1: UnsafePointer[Float64]
+	var rgb2: UnsafePointer[Float64]
+	var markrgb: UnsafePointer[Float64]
 	var random: Float64
 	var height: Int32
 	var width: Int32
 	var nchannel: Int32
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var gridsize: SIMD[Int32.dtype, 2]
-	var gridlayout: SIMD[Int8.dtype, 13]
+	var gridsize: UnsafePointer[Int32]
+	var gridlayout: UnsafePointer[Int8]
 	var cubefiles: UnsafePointer[mjStringVec]
 	var data: UnsafePointer[mjByteVec]
 	var hflip: mjtByte
@@ -3780,14 +3780,14 @@ struct mjsMaterial_:
 	var name: UnsafePointer[mjString]
 	var textures: UnsafePointer[mjStringVec]
 	var texuniform: mjtByte
-	var texrepeat: SIMD[Float32.dtype, 2]
+	var texrepeat: UnsafePointer[Float32]
 	var emission: Float32
 	var specular: Float32
 	var shininess: Float32
 	var reflectance: Float32
 	var metallic: Float32
 	var roughness: Float32
-	var rgba: SIMD[Float32.dtype, 4]
+	var rgba: UnsafePointer[Float32]
 	var info: UnsafePointer[mjString]
 
 
@@ -3798,12 +3798,12 @@ struct mjsPair_:
 	var geomname1: UnsafePointer[mjString]
 	var geomname2: UnsafePointer[mjString]
 	var condim: Int32
-	var solref: SIMD[mjtNum.dtype, 2]
-	var solreffriction: SIMD[mjtNum.dtype, 2]
-	var solimp: SIMD[mjtNum.dtype, 5]
+	var solref: UnsafePointer[mjtNum]
+	var solreffriction: UnsafePointer[mjtNum]
+	var solimp: UnsafePointer[mjtNum]
 	var margin: Float64
 	var gap: Float64
-	var friction: SIMD[Float64.dtype, 5]
+	var friction: UnsafePointer[Float64]
 	var info: UnsafePointer[mjString]
 
 
@@ -3821,13 +3821,13 @@ struct mjsEquality_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var type: mjtEq
-	var data: SIMD[Float64.dtype, 11]
+	var data: UnsafePointer[Float64]
 	var active: mjtByte
 	var name1: UnsafePointer[mjString]
 	var name2: UnsafePointer[mjString]
 	var objtype: mjtObj
-	var solref: SIMD[mjtNum.dtype, 2]
-	var solimp: SIMD[mjtNum.dtype, 5]
+	var solref: UnsafePointer[mjtNum]
+	var solimp: UnsafePointer[mjtNum]
 	var info: UnsafePointer[mjString]
 
 
@@ -3836,20 +3836,20 @@ struct mjsTendon_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var stiffness: Float64
-	var springlength: SIMD[Float64.dtype, 2]
+	var springlength: UnsafePointer[Float64]
 	var damping: Float64
 	var frictionloss: Float64
-	var solref_friction: SIMD[mjtNum.dtype, 2]
-	var solimp_friction: SIMD[mjtNum.dtype, 5]
+	var solref_friction: UnsafePointer[mjtNum]
+	var solimp_friction: UnsafePointer[mjtNum]
 	var armature: Float64
 	var limited: Int32
-	var range: SIMD[Float64.dtype, 2]
+	var range: UnsafePointer[Float64]
 	var margin: Float64
-	var solref_limit: SIMD[mjtNum.dtype, 2]
-	var solimp_limit: SIMD[mjtNum.dtype, 5]
+	var solref_limit: UnsafePointer[mjtNum]
+	var solimp_limit: UnsafePointer[mjtNum]
 	var material: UnsafePointer[mjString]
 	var width: Float64
-	var rgba: SIMD[Float32.dtype, 4]
+	var rgba: UnsafePointer[Float32]
 	var group: Int32
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
@@ -3866,27 +3866,27 @@ struct mjsActuator_:
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var gaintype: mjtGain
-	var gainprm: SIMD[Float64.dtype, 10]
+	var gainprm: UnsafePointer[Float64]
 	var biastype: mjtBias
-	var biasprm: SIMD[Float64.dtype, 10]
+	var biasprm: UnsafePointer[Float64]
 	var dyntype: mjtDyn
-	var dynprm: SIMD[Float64.dtype, 10]
+	var dynprm: UnsafePointer[Float64]
 	var actdim: Int32
 	var actearly: mjtByte
 	var trntype: mjtTrn
-	var gear: SIMD[Float64.dtype, 6]
+	var gear: UnsafePointer[Float64]
 	var target: UnsafePointer[mjString]
 	var refsite: UnsafePointer[mjString]
 	var slidersite: UnsafePointer[mjString]
 	var cranklength: Float64
-	var lengthrange: SIMD[Float64.dtype, 2]
+	var lengthrange: UnsafePointer[Float64]
 	var inheritrange: Float64
 	var ctrllimited: Int32
-	var ctrlrange: SIMD[Float64.dtype, 2]
+	var ctrlrange: UnsafePointer[Float64]
 	var forcelimited: Int32
-	var forcerange: SIMD[Float64.dtype, 2]
+	var forcerange: UnsafePointer[Float64]
 	var actlimited: Int32
-	var actrange: SIMD[Float64.dtype, 2]
+	var actrange: UnsafePointer[Float64]
 	var group: Int32
 	var userdata: UnsafePointer[mjDoubleVec]
 	var plugin: mjsPlugin
@@ -4031,8 +4031,8 @@ alias mjfItemEnable = fn(Int32,UnsafePointer[NoneType]) -> Int32
 
 struct mjuiState_:
 	var nrect: Int32
-	var rect: SIMD[mjrRect.dtype, 25]
-	var userdata: UnsafePointer[NoneType]
+	var rect: UnsafePointer[mjrRect]
+	var userdata: OpaquePointer
 	var type: Int32
 	var left: Int32
 	var right: Int32
@@ -4077,34 +4077,34 @@ struct mjuiThemeSpacing_:
 
 alias mjuiThemeSpacing = mjuiThemeSpacing_
 struct mjuiThemeColor_:
-	var master: SIMD[Float32.dtype, 3]
-	var thumb: SIMD[Float32.dtype, 3]
-	var secttitle: SIMD[Float32.dtype, 3]
-	var secttitle2: SIMD[Float32.dtype, 3]
-	var secttitleuncheck: SIMD[Float32.dtype, 3]
-	var secttitleuncheck2: SIMD[Float32.dtype, 3]
-	var secttitlecheck: SIMD[Float32.dtype, 3]
-	var secttitlecheck2: SIMD[Float32.dtype, 3]
-	var sectfont: SIMD[Float32.dtype, 3]
-	var sectsymbol: SIMD[Float32.dtype, 3]
-	var sectpane: SIMD[Float32.dtype, 3]
-	var separator: SIMD[Float32.dtype, 3]
-	var separator2: SIMD[Float32.dtype, 3]
-	var shortcut: SIMD[Float32.dtype, 3]
-	var fontactive: SIMD[Float32.dtype, 3]
-	var fontinactive: SIMD[Float32.dtype, 3]
-	var decorinactive: SIMD[Float32.dtype, 3]
-	var decorinactive2: SIMD[Float32.dtype, 3]
-	var button: SIMD[Float32.dtype, 3]
-	var check: SIMD[Float32.dtype, 3]
-	var radio: SIMD[Float32.dtype, 3]
-	var select: SIMD[Float32.dtype, 3]
-	var select2: SIMD[Float32.dtype, 3]
-	var slider: SIMD[Float32.dtype, 3]
-	var slider2: SIMD[Float32.dtype, 3]
-	var edit: SIMD[Float32.dtype, 3]
-	var edit2: SIMD[Float32.dtype, 3]
-	var cursor: SIMD[Float32.dtype, 3]
+	var master: UnsafePointer[Float32]
+	var thumb: UnsafePointer[Float32]
+	var secttitle: UnsafePointer[Float32]
+	var secttitle2: UnsafePointer[Float32]
+	var secttitleuncheck: UnsafePointer[Float32]
+	var secttitleuncheck2: UnsafePointer[Float32]
+	var secttitlecheck: UnsafePointer[Float32]
+	var secttitlecheck2: UnsafePointer[Float32]
+	var sectfont: UnsafePointer[Float32]
+	var sectsymbol: UnsafePointer[Float32]
+	var sectpane: UnsafePointer[Float32]
+	var separator: UnsafePointer[Float32]
+	var separator2: UnsafePointer[Float32]
+	var shortcut: UnsafePointer[Float32]
+	var fontactive: UnsafePointer[Float32]
+	var fontinactive: UnsafePointer[Float32]
+	var decorinactive: UnsafePointer[Float32]
+	var decorinactive2: UnsafePointer[Float32]
+	var button: UnsafePointer[Float32]
+	var check: UnsafePointer[Float32]
+	var radio: UnsafePointer[Float32]
+	var select: UnsafePointer[Float32]
+	var select2: UnsafePointer[Float32]
+	var slider: UnsafePointer[Float32]
+	var slider2: UnsafePointer[Float32]
+	var edit: UnsafePointer[Float32]
+	var edit2: UnsafePointer[Float32]
+	var cursor: UnsafePointer[Float32]
 
 
 alias mjuiThemeColor = mjuiThemeColor_
@@ -4114,15 +4114,15 @@ struct mjuiItemSingle_:
 
 struct mjuiItemMulti_:
 	var nelem: Int32
-	var name: SIMD[Int8.dtype, 35]
+	var name: UnsafePointer[Int8]
 
 struct mjuiItemSlider_:
-	var range: SIMD[Float64.dtype, 2]
+	var range: UnsafePointer[Float64]
 	var divisions: Float64
 
 struct mjuiItemEdit_:
 	var nelem: Int32
-	var range: SIMD[Float64.dtype, 7]
+	var range: UnsafePointer[Float64]
 
 struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 	var single: mjuiItemSingle_
@@ -4133,9 +4133,9 @@ struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 
 struct mjuiItem_:
 	var type: Int32
-	var name: SIMD[Int8.dtype, 40]
+	var name: UnsafePointer[Int8]
 	var state: Int32
-	var pdata: UnsafePointer[NoneType]
+	var pdata: OpaquePointer
 	var sectionid: Int32
 	var itemid: Int32
 	var userid: Int32
@@ -4146,13 +4146,13 @@ struct mjuiItem_:
 
 alias mjuiItem = mjuiItem_
 struct mjuiSection_:
-	var name: SIMD[Int8.dtype, 40]
+	var name: UnsafePointer[Int8]
 	var state: Int32
 	var modifier: Int32
 	var shortcut: Int32
 	var checkbox: Int32
 	var nitem: Int32
-	var item: SIMD[mjuiItem.dtype, 200]
+	var item: UnsafePointer[mjuiItem]
 	var rtitle: mjrRect
 	var rcontent: mjrRect
 	var lastclick: Int32
@@ -4163,7 +4163,7 @@ struct mjUI_:
 	var spacing: mjuiThemeSpacing
 	var color: mjuiThemeColor
 	var predicate: mjfItemEnable
-	var userdata: UnsafePointer[NoneType]
+	var userdata: OpaquePointer
 	var rectid: Int32
 	var auxid: Int32
 	var radiocol: Int32
@@ -4180,19 +4180,19 @@ struct mjUI_:
 	var edititem: Int32
 	var editcursor: Int32
 	var editscroll: Int32
-	var edittext: SIMD[Int8.dtype, 300]
+	var edittext: UnsafePointer[Int8]
 	var editchanged: UnsafePointer[mjuiItem]
 	var nsect: Int32
-	var sect: SIMD[mjuiSection.dtype, 10]
+	var sect: UnsafePointer[mjuiSection]
 
 
 alias mjUI = mjUI_
 struct mjuiDef_:
 	var type: Int32
-	var name: SIMD[Int8.dtype, 40]
+	var name: UnsafePointer[Int8]
 	var state: Int32
-	var pdata: UnsafePointer[NoneType]
-	var other: SIMD[Int8.dtype, 300]
+	var pdata: OpaquePointer
+	var other: UnsafePointer[Int8]
 	var otherint: Int32
 
 

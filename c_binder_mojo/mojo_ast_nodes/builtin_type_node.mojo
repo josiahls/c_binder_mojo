@@ -21,7 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-# from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
+# 
 # from c_binder_mojo.typing import TypeMapper
 
 

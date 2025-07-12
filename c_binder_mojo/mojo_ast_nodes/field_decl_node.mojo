@@ -225,6 +225,8 @@ struct FieldDeclNode(NodeAstLike):
         field_name = self._field_name
         if field_name == "global":
             field_name = "`global`"
+        elif field_name == "ref":
+            field_name = "`ref`"
 
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)

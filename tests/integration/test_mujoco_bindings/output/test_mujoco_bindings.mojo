@@ -3536,7 +3536,7 @@ struct mjsJoint_:
 	var type: mjtJoint
 	var pos: UnsafePointer[Float64]
 	var axis: UnsafePointer[Float64]
-	var ref: Float64
+	var `ref`: Float64
 	var align: Int32
 	var stiffness: Float64
 	var springref: Float64

@@ -56,7 +56,7 @@ alias NUMERIC_TYPES:Dict[String, String] = {
     "short": "Int16",
     "int": "Int32",
     "long": "Int64",
-    "long long": "Int64",
+    "long long": "Int128",
     "long double": "Float64",
     "float": "Float32",
     "double": "Float64",

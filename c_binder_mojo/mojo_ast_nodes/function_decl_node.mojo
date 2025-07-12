@@ -20,7 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.type_mapper import TypeMapper
+from c_binder_mojo.typing import TypeMapper
 from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
@@ -91,8 +91,8 @@ struct FunctionDeclNode(NodeAstLike):
         for entry in ast_entries.tokens[start_idx + 1:end_idx]:
             if entry.startswith("("):
                 break
-            elif entry == "unsigned":
-                self._return_type_is_unsigned = True
+            # elif entry == "unsigned":
+            #     self._return_type_is_unsigned = True
             elif entry == "const":
                 self._return_type_is_const = True
             elif entry == "volatile":
@@ -259,11 +259,16 @@ struct FunctionDeclNode(NodeAstLike):
 
         # TODO(josiahls): This is annoying. Clang does not support decomposing the return type,
         # so we need to manually parse it.
-        var (return_type, is_pointer) = self.parse_return_type()
+        var return_type = self._return_type
+        if '(' in return_type:
+            return_type = return_type.split('(')[0]
 
-        return_type = BuiltinTypeMapper.map_type(return_type, self._return_type_is_unsigned)
-        if is_pointer:
-            return_type = "UnsafePointer[" + return_type + "]"
+        return_type = TypeMapper.convert_c_type_to_mojo_type(return_type)
+        # var (return_type, is_pointer) = self.parse_return_type()
+
+        # return_type = BuiltinTypeMapper.map_type(return_type, self._return_type_is_unsigned)
+        # if is_pointer:
+        #     return_type = "UnsafePointer[" + return_type + "]"
 
         var function_name = self._function_name
         if function_name == "":

@@ -257,12 +257,15 @@ struct TypeMapper:
     @staticmethod
     fn convert_c_type_to_mojo_type(
         c_type: String,
-        is_fn_param: Bool = False
+        is_fn_param: Bool = False,
+        unsigned: Bool = False
     ) -> String:
         stripped_type = String(c_type.strip())
         try:
             # print('processing type: ' + stripped_type)
-            if stripped_type in NON_NUMERIC_TYPES:
+            if unsigned:
+                return Self._convert_unsigned_type(stripped_type)
+            elif stripped_type in NON_NUMERIC_TYPES:
                 return NON_NUMERIC_TYPES[stripped_type]
             elif stripped_type in NUMERIC_TYPES:
                 return NUMERIC_TYPES[stripped_type]

@@ -3536,7 +3536,7 @@ struct mjsJoint_:
 	var type: mjtJoint
 	var pos: SIMD[Float64.dtype, 3]
 	var axis: SIMD[Float64.dtype, 3]
-	var `ref`: Float64
+	var ref: Float64
 	var align: Int32
 	var stiffness: Float64
 	var springref: Float64

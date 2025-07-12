@@ -4,7 +4,7 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
-from c_binder_mojo.type_mapper import get_global_type_mapper, TypeMapper
+from c_binder_mojo.typing import get_global_type_mapper, TypeMapper
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -21,7 +21,8 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
+# from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
+# from c_binder_mojo.typing import TypeMapper
 
 
 @fieldwise_init
@@ -184,7 +185,8 @@ struct BuiltinTypeNode(NodeAstLike):
     ) raises -> String:
 
 
-        var s:String = BuiltinTypeMapper.map_type(self._builtin_type, self._unsigned)
+        # var s:String = BuiltinTypeMapper.map_type(self._builtin_type, self._unsigned)
+        var s:String = TypeMapper.convert_c_type_to_mojo_type(self._builtin_type, unsigned=self._unsigned)
         if self._unhandled_tokens != "":
             s += " #" + self.__name__ + " BuiltinTypeNode Unhandled tokens: " + self._unhandled_tokens
 

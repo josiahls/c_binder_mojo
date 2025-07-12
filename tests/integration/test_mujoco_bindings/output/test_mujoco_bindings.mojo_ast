@@ -4459,7 +4459,7 @@ VarDeclNode(parent_idx=1, current_idx=9794, child_idxs=(9795), node_state=4 (COM
 alias mjcb_act_bias = mjfAct # extern # VisibilityAttrNode: Default
 
 VarDeclNode(parent_idx=1, current_idx=9796, child_idxs=(9797, 9798), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
-alias mjCOLLISIONFUNC = mjfCollision[9][9] # extern # VisibilityAttrNode: Default
+alias mjCOLLISIONFUNC = UnsafePointer[mjfCollision] # extern # VisibilityAttrNode: Default
 FullCommentNode(parent_idx=9796, current_idx=9798, child_idxs=(), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 
 # collision function table

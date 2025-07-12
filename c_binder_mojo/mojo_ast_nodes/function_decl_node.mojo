@@ -21,7 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.typing import TypeMapper
-from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
+
 
 
 @fieldwise_init
@@ -264,11 +264,6 @@ struct FunctionDeclNode(NodeAstLike):
             return_type = return_type.split('(')[0]
 
         return_type = TypeMapper.convert_c_type_to_mojo_type(return_type)
-        # var (return_type, is_pointer) = self.parse_return_type()
-
-        # return_type = BuiltinTypeMapper.map_type(return_type, self._return_type_is_unsigned)
-        # if is_pointer:
-        #     return_type = "UnsafePointer[" + return_type + "]"
 
         var function_name = self._function_name
         if function_name == "":

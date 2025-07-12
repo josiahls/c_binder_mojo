@@ -20,7 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.type_mapper import TypeMapper
+from c_binder_mojo.typing import TypeMapper
 from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
@@ -168,7 +168,7 @@ struct VarDeclNode(NodeAstLike):
     ) raises -> String:
         var s = String()
 
-        var mojo_type = BuiltinTypeMapper.map_type(self._var_type)
+        var mojo_type = TypeMapper.convert_c_type_to_mojo_type(self._var_type)
 
         if self._is_extern:
             s += "alias " + self._var_name + " = " + mojo_type + " # extern"

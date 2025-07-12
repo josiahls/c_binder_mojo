@@ -4238,7 +4238,7 @@ alias mjcb_act_gain = mjfAct # extern # VisibilityAttrNode: Default
 alias mjcb_act_bias = mjfAct # extern # VisibilityAttrNode: Default
 
 
-alias mjCOLLISIONFUNC = mjfCollision[9][9] # extern # VisibilityAttrNode: Default
+alias mjCOLLISIONFUNC = UnsafePointer[mjfCollision] # extern # VisibilityAttrNode: Default
 
 # collision function table
 

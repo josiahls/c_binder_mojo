@@ -320,7 +320,11 @@ struct ParmVarDeclNode(NodeAstLike):
         if self._is_positional:
             type_decl = type_name
         else:
-            type_decl = self._parm_var_name + ": " + type_name
+            param_name = self._parm_var_name
+            if self._parm_var_name == "def":
+                param_name = "default"
+
+            type_decl = param_name + ": " + type_name
 
         if self._is_const:
             type_decl = "read " + type_decl

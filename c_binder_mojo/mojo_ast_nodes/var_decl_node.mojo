@@ -24,97 +24,6 @@ from c_binder_mojo.type_mapper import TypeMapper
 from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _field_name: String
-    var _field_type: String
-    var _is_const: Bool
-    var _value: String
-    var _is_extern: Bool
-
-    fn __init__(out self):
-        self._field_name = String()
-        self._field_type = String()
-        self._is_const = False
-        self._value = String()
-        self._is_extern = False
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        # TODO(josiahls): Toggle depending on whether this is a const
-        self._field_name = String()
-        self._field_type = String()
-        self._is_const = False
-        self._value = String()
-        self._is_extern = False
-        not_originally_const = False
-
-        for entry in ast_entries:
-            if entry.ast_name == "VarDecl":
-                if entry.level == 1:
-                    self._is_const = True
-                    not_originally_const = True
-                for token in entry.tokens:
-                    if token == "extern":
-                        self._is_extern = True
-                    elif self._field_name == "":
-                        self._field_name = token
-                    elif self._field_type == "":
-                        self._field_type = token
-                    # TODO(josiahls): Not sure if we need this.? e.g. there is int cinit.
-                    # else:
-                    #     self._field_type += " " + token[]
-            elif entry.ast_name == "ConstantExpr":
-                self._is_const = True
-            elif entry.ast_name == "IntegerLiteral":
-                self._field_type = entry.tokens[0]
-                for token in entry.tokens[1:]:
-                    self._value += " " + token
-            elif entry.ast_name == "value:" and self._is_const:
-                idx = 0
-                for token in entry.tokens:
-                    if idx > 1:
-                        self._value += " " + token
-                    elif idx == 1:
-                        self._value += token
-                    idx += 1
-
-        if "struct " in self._field_type:
-            # TODO(josiahls): This field generally looks something like struct Inner':'struct Inner'
-            # I'm not sure what the repeated name implies or how it will change. This will break if it does.
-            self._field_type = self._field_type.replace("struct ", "")
-            colon_idx = self._field_type.find(":")
-            if colon_idx != -1:
-                self._field_type = self._field_type[:colon_idx][1:-1]
-            else:
-                self._field_type = self._field_type[1:-1]
-
-        if not_originally_const:
-            self._value += (
-                " # `"
-                + self._field_name
-                + "` was not originally const in the original code"
-            )
-
-    fn __str__(self) -> String:
-        var mojo_type = TypeMapper.get_mojo_type(self._field_type)
-        if self._is_const and not self._is_extern:
-            return (
-                "alias "
-                + self._field_name
-                + ": "
-                + mojo_type
-                + " = "
-                + self._value
-            )
-        elif self._is_extern:
-            return "alias " + self._field_name + ": " + mojo_type + " # extern"
-        else:
-            return "var " + self._field_name + ": " + mojo_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
 @fieldwise_init
 struct VarDeclNode(NodeAstLike):
     alias __name__ = "VarDeclNode"
@@ -125,7 +34,7 @@ struct VarDeclNode(NodeAstLike):
     var _var_name: String
     var _var_type: String
     var _is_extern: Bool
-
+    var _is_const: Bool
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -137,21 +46,49 @@ struct VarDeclNode(NodeAstLike):
 
         self._is_extern = False
 
-        var quoted_indices = ast_entries.get_quoted_indices()
-        if len(quoted_indices) > 0:
-            for token in ast_entries.tokens[quoted_indices[0]:quoted_indices[1]]:
-                if token == "'":
-                    continue
-                elif self._var_type == "":
-                    self._var_type = token
+        self._is_const = False
+        var quoted_indicies = ast_entries.get_quoted_indices()
 
-        for entry in ast_entries.tokens:
-            if entry == "extern":
+        start_idx = 0
+        section_idx = 0
+
+        for idx in quoted_indicies:
+            if section_idx == 0:
+                self._parse_section_0(ast_entries.tokens[:idx])
+            elif section_idx == 1:
+                self._parse_section_1(ast_entries.tokens[start_idx + 1:idx])
+            # elif section_idx == 2:
+                self._parse_section_2(ast_entries.tokens[idx:])
+            else:
+                print("TypedefDeclNode: Unhandled section: " + String(section_idx))
+
+            start_idx = idx
+            section_idx += 1
+
+    fn _parse_section_0(mut self, tokens: List[String]):
+        for token in tokens:
+            if self._var_name == "":
+                self._var_name = token
+
+    fn _parse_section_1(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "extern":
+                self._is_extern = True
+            elif token == "const":
+                self._is_const = True
+            elif self._var_name == "":
+                self._var_name = token
+            elif self._var_type == "":
+                self._var_type = token
+
+    fn _parse_section_2(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "extern":
                 self._is_extern = True
             elif self._var_name == "":
-                self._var_name = entry
+                self._var_name = token
             elif self._var_type == "":
-                self._var_type = entry
+                self._var_type = token
 
     @staticmethod
     fn accept(

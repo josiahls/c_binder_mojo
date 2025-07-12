@@ -3536,7 +3536,7 @@ struct mjsJoint_:
 	var type: mjtJoint
 	var pos: SIMD[Float64.dtype, 3]
 	var axis: SIMD[Float64.dtype, 3]
-	var ref: Float64
+	var `ref`: Float64
 	var align: Int32
 	var stiffness: Float64
 	var springref: Float64
@@ -4243,27 +4243,27 @@ alias mjCOLLISIONFUNC = mjfCollision[9][9] # extern # VisibilityAttrNode: Defaul
 # collision function table
 
 
-alias mjDISABLESTRING = const # extern # VisibilityAttrNode: Default
+alias mjDISABLESTRING = Int8 # extern # VisibilityAttrNode: Default
 
 # string names
 
 
-alias mjENABLESTRING = const # extern # VisibilityAttrNode: Default
+alias mjENABLESTRING = Int8 # extern # VisibilityAttrNode: Default
 
 
-alias mjTIMERSTRING = const # extern # VisibilityAttrNode: Default
+alias mjTIMERSTRING = Int8 # extern # VisibilityAttrNode: Default
 
 
-alias mjLABELSTRING = const # extern # VisibilityAttrNode: Default
+alias mjLABELSTRING = Int8 # extern # VisibilityAttrNode: Default
 
 
-alias mjFRAMESTRING = const # extern # VisibilityAttrNode: Default
+alias mjFRAMESTRING = Int8 # extern # VisibilityAttrNode: Default
 
 
-alias mjVISSTRING = const # extern # VisibilityAttrNode: Default
+alias mjVISSTRING = Int8 # extern # VisibilityAttrNode: Default
 
 
-alias mjRNDSTRING = const # extern # VisibilityAttrNode: Default
+alias mjRNDSTRING = Int8 # extern # VisibilityAttrNode: Default
 
 alias mj_defaultVFS = fn(vfs: UnsafePointer[mjVFS]) -> NoneType
 alias mj_addFileVFS = fn(vfs: UnsafePointer[mjVFS], read directory: UnsafePointer[Int8], read filename: UnsafePointer[Int8]) -> Int32
@@ -4475,8 +4475,8 @@ alias mjr_getError = fn() -> Int32
 alias mjr_findRect = fn(x: Int32, y: Int32, nrect: Int32, read rect: UnsafePointer[mjrRect]) -> Int32
 alias mjui_themeSpacing = fn(ind: Int32) -> mjuiThemeSpacing
 alias mjui_themeColor = fn(ind: Int32) -> mjuiThemeColor
-alias mjui_add = fn(ui: UnsafePointer[mjUI], read def: UnsafePointer[mjuiDef]) -> NoneType
-alias mjui_addToSection = fn(ui: UnsafePointer[mjUI], sect: Int32, read def: UnsafePointer[mjuiDef]) -> NoneType
+alias mjui_add = fn(ui: UnsafePointer[mjUI], read default: UnsafePointer[mjuiDef]) -> NoneType
+alias mjui_addToSection = fn(ui: UnsafePointer[mjUI], sect: Int32, read default: UnsafePointer[mjuiDef]) -> NoneType
 alias mjui_resize = fn(ui: UnsafePointer[mjUI], read con: UnsafePointer[mjrContext]) -> NoneType
 alias mjui_update = fn(section: Int32, item: Int32, read ui: UnsafePointer[mjUI], read state: UnsafePointer[mjuiState], read con: UnsafePointer[mjrContext]) -> NoneType
 alias mjui_event = fn(ui: UnsafePointer[mjUI], state: UnsafePointer[mjuiState], read con: UnsafePointer[mjrContext]) -> UnsafePointer[mjuiItem]
@@ -4621,22 +4621,22 @@ alias mju_taskJoin = fn(task: UnsafePointer[mjTask]) -> NoneType
 alias mjs_attach = fn(parent: UnsafePointer[mjsElement], read child: UnsafePointer[mjsElement], read prefix: UnsafePointer[Int8], read suffix: UnsafePointer[Int8]) -> UnsafePointer[mjsElement]
 alias mjs_detachBody = fn(s: UnsafePointer[mjSpec], b: UnsafePointer[mjsBody]) -> Int32
 alias mjs_detachDefault = fn(s: UnsafePointer[mjSpec], d: UnsafePointer[mjsDefault]) -> Int32
-alias mjs_addBody = fn(body: UnsafePointer[mjsBody], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsBody]
-alias mjs_addSite = fn(body: UnsafePointer[mjsBody], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsSite]
-alias mjs_addJoint = fn(body: UnsafePointer[mjsBody], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsJoint]
+alias mjs_addBody = fn(body: UnsafePointer[mjsBody], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsBody]
+alias mjs_addSite = fn(body: UnsafePointer[mjsBody], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsSite]
+alias mjs_addJoint = fn(body: UnsafePointer[mjsBody], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsJoint]
 alias mjs_addFreeJoint = fn(body: UnsafePointer[mjsBody]) -> UnsafePointer[mjsJoint]
-alias mjs_addGeom = fn(body: UnsafePointer[mjsBody], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsGeom]
-alias mjs_addCamera = fn(body: UnsafePointer[mjsBody], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsCamera]
-alias mjs_addLight = fn(body: UnsafePointer[mjsBody], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsLight]
+alias mjs_addGeom = fn(body: UnsafePointer[mjsBody], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsGeom]
+alias mjs_addCamera = fn(body: UnsafePointer[mjsBody], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsCamera]
+alias mjs_addLight = fn(body: UnsafePointer[mjsBody], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsLight]
 alias mjs_addFrame = fn(body: UnsafePointer[mjsBody], parentframe: UnsafePointer[mjsFrame]) -> UnsafePointer[mjsFrame]
 alias mjs_delete = fn(element: UnsafePointer[mjsElement]) -> Int32
-alias mjs_addActuator = fn(s: UnsafePointer[mjSpec], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsActuator]
+alias mjs_addActuator = fn(s: UnsafePointer[mjSpec], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsActuator]
 alias mjs_addSensor = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsSensor]
 alias mjs_addFlex = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsFlex]
-alias mjs_addPair = fn(s: UnsafePointer[mjSpec], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsPair]
+alias mjs_addPair = fn(s: UnsafePointer[mjSpec], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsPair]
 alias mjs_addExclude = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsExclude]
-alias mjs_addEquality = fn(s: UnsafePointer[mjSpec], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsEquality]
-alias mjs_addTendon = fn(s: UnsafePointer[mjSpec], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsTendon]
+alias mjs_addEquality = fn(s: UnsafePointer[mjSpec], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsEquality]
+alias mjs_addTendon = fn(s: UnsafePointer[mjSpec], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsTendon]
 alias mjs_wrapSite = fn(tendon: UnsafePointer[mjsTendon], read name: UnsafePointer[Int8]) -> UnsafePointer[mjsWrap]
 alias mjs_wrapGeom = fn(tendon: UnsafePointer[mjsTendon], read name: UnsafePointer[Int8], read sidesite: UnsafePointer[Int8]) -> UnsafePointer[mjsWrap]
 alias mjs_wrapJoint = fn(tendon: UnsafePointer[mjsTendon], read name: UnsafePointer[Int8], coef: Float64) -> UnsafePointer[mjsWrap]
@@ -4647,11 +4647,11 @@ alias mjs_addTuple = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsTuple]
 alias mjs_addKey = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsKey]
 alias mjs_addPlugin = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsPlugin]
 alias mjs_addDefault = fn(s: UnsafePointer[mjSpec], read classname: UnsafePointer[Int8], read parent: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsDefault]
-alias mjs_addMesh = fn(s: UnsafePointer[mjSpec], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsMesh]
+alias mjs_addMesh = fn(s: UnsafePointer[mjSpec], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsMesh]
 alias mjs_addHField = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsHField]
 alias mjs_addSkin = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsSkin]
 alias mjs_addTexture = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsTexture]
-alias mjs_addMaterial = fn(s: UnsafePointer[mjSpec], read def: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsMaterial]
+alias mjs_addMaterial = fn(s: UnsafePointer[mjSpec], read default: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsMaterial]
 alias mjs_getSpec = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjSpec]
 alias mjs_findSpec = fn(spec: UnsafePointer[mjSpec], read name: UnsafePointer[Int8]) -> UnsafePointer[mjSpec]
 alias mjs_findBody = fn(s: UnsafePointer[mjSpec], read name: UnsafePointer[Int8]) -> UnsafePointer[mjsBody]
@@ -4681,7 +4681,7 @@ alias mjs_setDouble = fn(dest: UnsafePointer[mjDoubleVec], read array: UnsafePoi
 alias mjs_setPluginAttributes = fn(plugin: UnsafePointer[mjsPlugin], attributes: UnsafePointer[NoneType]) -> NoneType
 alias mjs_getString = fn(read source: UnsafePointer[mjString]) -> UnsafePointer[Int8]
 alias mjs_getDouble = fn(read source: UnsafePointer[mjDoubleVec], size: UnsafePointer[Int32]) -> UnsafePointer[Float64]
-alias mjs_setDefault = fn(element: UnsafePointer[mjsElement], read def: UnsafePointer[mjsDefault]) -> NoneType
+alias mjs_setDefault = fn(element: UnsafePointer[mjsElement], read default: UnsafePointer[mjsDefault]) -> NoneType
 alias mjs_setFrame = fn(dest: UnsafePointer[mjsElement], frame: UnsafePointer[mjsFrame]) -> Int32
 alias mjs_resolveOrientation = fn(quat: UnsafePointer[Float64], degree: mjtByte, read sequence: UnsafePointer[Int8], read orientation: UnsafePointer[mjsOrientation]) -> UnsafePointer[Int8]
 alias mjs_bodyToFrame = fn(body: UnsafePointer[UnsafePointer[mjsBody]]) -> UnsafePointer[mjsFrame]

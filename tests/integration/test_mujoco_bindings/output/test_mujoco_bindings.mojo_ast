@@ -458,8 +458,8 @@ struct Anonymous__line_114_9__line_118_1_:
 TypedefDeclNode(parent_idx=1, current_idx=848, child_idxs=(849), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5c1ae8 <line:114:1, line:118:3> col:3 pthread_barrierattr_t 'union pthread_barrierattr_t':'pthread_barrierattr_t'Anonymous__line_114_9__line_118_1_
 alias random = fn() -> Int64
-alias srandom = fn(__seed: Int32) -> NoneType
-alias initstate = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t) -> UnsafePointer[Int8]
+alias srandom = fn(__seed: UInt32) -> NoneType
+alias initstate = fn(__seed: UInt32, __statebuf: UnsafePointer[Int8], __statelen: size_t) -> UnsafePointer[Int8]
 alias setstate = fn(__statebuf: UnsafePointer[Int8]) -> UnsafePointer[Int8]
 struct random_data:
 	var fptr: UnsafePointer[Int32]
@@ -471,21 +471,21 @@ struct random_data:
 	var end_ptr: UnsafePointer[Int32]
 
 alias random_r = fn(__buf: UnsafePointer[random_data], __result: UnsafePointer[Int32]) -> Int32
-alias srandom_r = fn(__seed: Int32, __buf: UnsafePointer[random_data]) -> Int32
-alias initstate_r = fn(__seed: Int32, __statebuf: UnsafePointer[Int8], __statelen: size_t, __buf: UnsafePointer[random_data]) -> Int32
+alias srandom_r = fn(__seed: UInt32, __buf: UnsafePointer[random_data]) -> Int32
+alias initstate_r = fn(__seed: UInt32, __statebuf: UnsafePointer[Int8], __statelen: size_t, __buf: UnsafePointer[random_data]) -> Int32
 alias setstate_r = fn(__statebuf: UnsafePointer[Int8], __buf: UnsafePointer[random_data]) -> Int32
 alias rand = fn() -> Int32
-alias srand = fn(__seed: Int32) -> NoneType
-alias rand_r = fn(__seed: UnsafePointer[Int32]) -> Int32
+alias srand = fn(__seed: UInt32) -> NoneType
+alias rand_r = fn(__seed: UnsafePointer[UInt32]) -> Int32
 alias drand48 = fn() -> Float64
-alias erand48 = fn(__xsubi: UnsafePointer[Int16]) -> Float64
+alias erand48 = fn(__xsubi: UnsafePointer[UInt16]) -> Float64
 alias lrand48 = fn() -> Int64
-alias nrand48 = fn(__xsubi: UnsafePointer[Int16]) -> Int64
+alias nrand48 = fn(__xsubi: UnsafePointer[UInt16]) -> Int64
 alias mrand48 = fn() -> Int64
-alias jrand48 = fn(__xsubi: UnsafePointer[Int16]) -> Int64
+alias jrand48 = fn(__xsubi: UnsafePointer[UInt16]) -> Int64
 alias srand48 = fn(__seedval: Int64) -> NoneType
-alias seed48 = fn(__seed16v: UnsafePointer[Int16]) -> UnsafePointer[UInt16]
-alias lcong48 = fn(__param: UnsafePointer[Int16]) -> NoneType
+alias seed48 = fn(__seed16v: UnsafePointer[UInt16]) -> UnsafePointer[UInt16]
+alias lcong48 = fn(__param: UnsafePointer[UInt16]) -> NoneType
 struct drand48_data:
 	var __x: SIMD[UInt16.dtype, 3]
 	var __old_x: SIMD[UInt16.dtype, 3]
@@ -494,35 +494,35 @@ struct drand48_data:
 	var __a: UInt128
 
 alias drand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Float64]) -> Int32
-alias erand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Float64]) -> Int32
+alias erand48_r = fn(__xsubi: UnsafePointer[UInt16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Float64]) -> Int32
 alias lrand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias nrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias nrand48_r = fn(__xsubi: UnsafePointer[UInt16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
 alias mrand48_r = fn(__buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
-alias jrand48_r = fn(__xsubi: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
+alias jrand48_r = fn(__xsubi: UnsafePointer[UInt16], __buffer: UnsafePointer[drand48_data], __result: UnsafePointer[Int64]) -> Int32
 alias srand48_r = fn(__seedval: Int64, __buffer: UnsafePointer[drand48_data]) -> Int32
-alias seed48_r = fn(__seed16v: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data]) -> Int32
-alias lcong48_r = fn(__param: UnsafePointer[Int16], __buffer: UnsafePointer[drand48_data]) -> Int32
- # Disabled either due to a redefinition or a previous declaration: alias malloc = fn(Int64) -> OpaquePointer
+alias seed48_r = fn(__seed16v: UnsafePointer[UInt16], __buffer: UnsafePointer[drand48_data]) -> Int32
+alias lcong48_r = fn(__param: UnsafePointer[UInt16], __buffer: UnsafePointer[drand48_data]) -> Int32
+ # Disabled either due to a redefinition or a previous declaration: alias malloc = fn(UInt64) -> OpaquePointer
 alias malloc = fn(__size: size_t) -> OpaquePointer
- # Disabled either due to a redefinition or a previous declaration: alias calloc = fn(Int64, Int64) -> OpaquePointer
+ # Disabled either due to a redefinition or a previous declaration: alias calloc = fn(UInt64, UInt64) -> OpaquePointer
 alias calloc = fn(__nmemb: size_t, __size: size_t) -> OpaquePointer
- # Disabled either due to a redefinition or a previous declaration: alias realloc = fn(UnsafePointer[NoneType], Int64) -> OpaquePointer
-alias realloc = fn(__ptr: UnsafePointer[NoneType], __size: size_t) -> OpaquePointer
- # Disabled either due to a redefinition or a previous declaration: alias free = fn(UnsafePointer[NoneType]) -> NoneType
-alias free = fn(__ptr: UnsafePointer[NoneType]) -> NoneType
-alias reallocarray = fn(__ptr: UnsafePointer[NoneType], __nmemb: size_t, __size: size_t) -> OpaquePointer
-alias reallocarray = fn(__ptr: UnsafePointer[NoneType], __nmemb: size_t, __size: size_t) -> OpaquePointer
- # Disabled either due to a redefinition or a previous declaration: alias alloca = fn(Int64) -> OpaquePointer
+ # Disabled either due to a redefinition or a previous declaration: alias realloc = fn(OpaquePointer, UInt64) -> OpaquePointer
+alias realloc = fn(__ptr: OpaquePointer, __size: size_t) -> OpaquePointer
+ # Disabled either due to a redefinition or a previous declaration: alias free = fn(OpaquePointer) -> NoneType
+alias free = fn(__ptr: OpaquePointer) -> NoneType
+alias reallocarray = fn(__ptr: OpaquePointer, __nmemb: size_t, __size: size_t) -> OpaquePointer
+alias reallocarray = fn(__ptr: OpaquePointer, __nmemb: size_t, __size: size_t) -> OpaquePointer
+ # Disabled either due to a redefinition or a previous declaration: alias alloca = fn(UInt64) -> OpaquePointer
 alias alloca = fn(__size: size_t) -> OpaquePointer
 alias valloc = fn(__size: size_t) -> OpaquePointer
-alias posix_memalign = fn(__memptr: UnsafePointer[UnsafePointer[NoneType]], __alignment: size_t, __size: size_t) -> Int32
- # Disabled either due to a redefinition or a previous declaration: alias aligned_alloc = fn(Int64, Int64) -> OpaquePointer
+alias posix_memalign = fn(__memptr: UnsafePointer[OpaquePointer], __alignment: size_t, __size: size_t) -> Int32
+ # Disabled either due to a redefinition or a previous declaration: alias aligned_alloc = fn(UInt64, UInt64) -> OpaquePointer
 alias aligned_alloc = fn(__alignment: size_t, __size: size_t) -> OpaquePointer
  # Disabled either due to a redefinition or a previous declaration: alias abort = fn() -> NoneType
 alias abort = fn() -> NoneType
 alias atexit = fn(__func: fn() -> NoneType) -> Int32
 alias at_quick_exit = fn(__func: fn() -> NoneType) -> Int32
-alias on_exit = fn(__func: fn(Int32, UnsafePointer[NoneType]) -> NoneType, __arg: UnsafePointer[NoneType]) -> Int32
+alias on_exit = fn(__func: fn(Int32, OpaquePointer) -> NoneType, __arg: OpaquePointer) -> Int32
  # Disabled either due to a redefinition or a previous declaration: alias exit = fn(Int32) -> NoneType
 alias exit = fn(__status: Int32) -> NoneType
 alias quick_exit = fn(__status: Int32) -> NoneType
@@ -547,8 +547,8 @@ fn(
 UnsafePointer[NoneType],
 	PointerTypeNode(parent_idx=1143, current_idx=1148, child_idxs=(1149), node_state=4 (COMPLETED))(parent_indent_level: 1, children_indent_level: 0)
 UnsafePointer[NoneType]) -> Int32
-alias bsearch = fn(read __key: UnsafePointer[NoneType], read __base: UnsafePointer[NoneType], __nmemb: size_t, __size: size_t, __compar: __compar_fn_t) -> OpaquePointer
-alias qsort = fn(__base: UnsafePointer[NoneType], __nmemb: size_t, __size: size_t, __compar: __compar_fn_t) -> NoneType
+alias bsearch = fn(read __key: OpaquePointer, read __base: OpaquePointer, __nmemb: size_t, __size: size_t, __compar: __compar_fn_t) -> OpaquePointer
+alias qsort = fn(__base: OpaquePointer, __nmemb: size_t, __size: size_t, __compar: __compar_fn_t) -> NoneType
  # Disabled either due to a redefinition or a previous declaration: alias abs = fn(Int32) -> Int32
 alias abs = fn(__x: Int32) -> Int32
  # Disabled either due to a redefinition or a previous declaration: alias labs = fn(Int64) -> Int64
@@ -574,7 +574,7 @@ alias wctomb = fn(__s: UnsafePointer[Int8], __wchar: wchar_t) -> Int32
 alias mbstowcs = fn(__pwcs: UnsafePointer[wchar_t], read __s: UnsafePointer[Int8], __n: size_t) -> size_t
 alias wcstombs = fn(__s: UnsafePointer[Int8], read __pwcs: UnsafePointer[wchar_t], __n: size_t) -> size_t
 alias rpmatch = fn(read __response: UnsafePointer[Int8]) -> Int32
-alias getsubopt = fn(__optionp: UnsafePointer[UnsafePointer[Int8]], read __tokens: UnsafePointer[Int8], __valuep: UnsafePointer[UnsafePointer[Int8]]) -> Int32
+alias getsubopt = fn(__optionp: UnsafePointer[UnsafePointer[Int8]], __tokens: UnsafePointer[char *const], __valuep: UnsafePointer[UnsafePointer[Int8]]) -> Int32
 alias getloadavg = fn(__loadavg: UnsafePointer[Float64], __nelem: Int32) -> Int32
 TypedefDeclNode(parent_idx=1, current_idx=1323, child_idxs=(1324), node_state=4 (COMPLETED))(parent_indent_level: 0, children_indent_level: 0)
 |-TypedefDecl 0x5e5580 </usr/include/math.h:163:1, col:15> col:15 float_t 'float'Float32
@@ -4490,7 +4490,7 @@ alias mjRNDSTRING = Int8 # extern # VisibilityAttrNode: Default
 
 alias mj_defaultVFS = fn(vfs: UnsafePointer[mjVFS]) -> NoneType
 alias mj_addFileVFS = fn(vfs: UnsafePointer[mjVFS], read directory: UnsafePointer[Int8], read filename: UnsafePointer[Int8]) -> Int32
-alias mj_addBufferVFS = fn(vfs: UnsafePointer[mjVFS], read name: UnsafePointer[Int8], read buffer: UnsafePointer[NoneType], nbuffer: Int32) -> Int32
+alias mj_addBufferVFS = fn(vfs: UnsafePointer[mjVFS], read name: UnsafePointer[Int8], read buffer: OpaquePointer, nbuffer: Int32) -> Int32
 alias mj_deleteFileVFS = fn(vfs: UnsafePointer[mjVFS], read filename: UnsafePointer[Int8]) -> Int32
 alias mj_deleteVFS = fn(vfs: UnsafePointer[mjVFS]) -> NoneType
 alias mj_loadXML = fn(read filename: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS], error: UnsafePointer[Int8], error_sz: Int32) -> UnsafePointer[mjModel]
@@ -4514,14 +4514,14 @@ alias mj_defaultSolRefImp = fn(solref: UnsafePointer[mjtNum], solimp: UnsafePoin
 alias mj_defaultOption = fn(opt: UnsafePointer[mjOption]) -> NoneType
 alias mj_defaultVisual = fn(vis: UnsafePointer[mjVisual]) -> NoneType
 alias mj_copyModel = fn(dest: UnsafePointer[mjModel], read src: UnsafePointer[mjModel]) -> UnsafePointer[mjModel]
-alias mj_saveModel = fn(read m: UnsafePointer[mjModel], read filename: UnsafePointer[Int8], buffer: UnsafePointer[NoneType], buffer_sz: Int32) -> NoneType
+alias mj_saveModel = fn(read m: UnsafePointer[mjModel], read filename: UnsafePointer[Int8], buffer: OpaquePointer, buffer_sz: Int32) -> NoneType
 alias mj_loadModel = fn(read filename: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS]) -> UnsafePointer[mjModel]
 alias mj_deleteModel = fn(m: UnsafePointer[mjModel]) -> NoneType
 alias mj_sizeModel = fn(read m: UnsafePointer[mjModel]) -> Int32
 alias mj_makeData = fn(read m: UnsafePointer[mjModel]) -> UnsafePointer[mjData]
 alias mj_copyData = fn(dest: UnsafePointer[mjData], read m: UnsafePointer[mjModel], read src: UnsafePointer[mjData]) -> UnsafePointer[mjData]
 alias mj_resetData = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
-alias mj_resetDataDebug = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], debug_value: Int8) -> NoneType
+alias mj_resetDataDebug = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], debug_value: UInt8) -> NoneType
 alias mj_resetDataKeyframe = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], key: Int32) -> NoneType
 alias mj_markStack = fn(d: UnsafePointer[mjData]) -> NoneType
 alias mj_freeStack = fn(d: UnsafePointer[mjData]) -> NoneType
@@ -4585,9 +4585,9 @@ alias mj_island = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -
 alias mj_projectConstraint = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_referenceConstraint = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_constraintUpdate = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read jar: UnsafePointer[mjtNum], cost: UnsafePointer[mjtNum], flg_coneHessian: Int32) -> NoneType
-alias mj_stateSize = fn(read m: UnsafePointer[mjModel], spec: Int32) -> Int32
-alias mj_getState = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], state: UnsafePointer[mjtNum], spec: Int32) -> NoneType
-alias mj_setState = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read state: UnsafePointer[mjtNum], spec: Int32) -> NoneType
+alias mj_stateSize = fn(read m: UnsafePointer[mjModel], spec: UInt32) -> Int32
+alias mj_getState = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], state: UnsafePointer[mjtNum], spec: UInt32) -> NoneType
+alias mj_setState = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read state: UnsafePointer[mjtNum], spec: UInt32) -> NoneType
 alias mj_setKeyframe = fn(m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], k: Int32) -> NoneType
 alias mj_addContact = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read con: UnsafePointer[mjContact]) -> Int32
 alias mj_isPyramidal = fn(read m: UnsafePointer[mjModel]) -> Int32
@@ -4681,8 +4681,8 @@ alias mjr_uploadMesh = fn(read m: UnsafePointer[mjModel], read con: UnsafePointe
 alias mjr_uploadHField = fn(read m: UnsafePointer[mjModel], read con: UnsafePointer[mjrContext], hfieldid: Int32) -> NoneType
 alias mjr_restoreBuffer = fn(read con: UnsafePointer[mjrContext]) -> NoneType
 alias mjr_setBuffer = fn(framebuffer: Int32, con: UnsafePointer[mjrContext]) -> NoneType
-alias mjr_readPixels = fn(rgb: UnsafePointer[Int8], depth: UnsafePointer[Float32], viewport: mjrRect, read con: UnsafePointer[mjrContext]) -> NoneType
-alias mjr_drawPixels = fn(read rgb: UnsafePointer[Int8], read depth: UnsafePointer[Float32], viewport: mjrRect, read con: UnsafePointer[mjrContext]) -> NoneType
+alias mjr_readPixels = fn(rgb: UnsafePointer[UInt8], depth: UnsafePointer[Float32], viewport: mjrRect, read con: UnsafePointer[mjrContext]) -> NoneType
+alias mjr_drawPixels = fn(read rgb: UnsafePointer[UInt8], read depth: UnsafePointer[Float32], viewport: mjrRect, read con: UnsafePointer[mjrContext]) -> NoneType
 alias mjr_blitBuffer = fn(src: mjrRect, dst: mjrRect, flg_color: Int32, flg_depth: Int32, read con: UnsafePointer[mjrContext]) -> NoneType
 alias mjr_setAux = fn(index: Int32, read con: UnsafePointer[mjrContext]) -> NoneType
 alias mjr_blitAux = fn(index: Int32, src: mjrRect, left: Int32, bottom: Int32, read con: UnsafePointer[mjrContext]) -> NoneType
@@ -4712,7 +4712,7 @@ alias mju_warning_i = fn(read msg: UnsafePointer[Int8], i: Int32) -> NoneType
 alias mju_warning_s = fn(read msg: UnsafePointer[Int8], read text: UnsafePointer[Int8]) -> NoneType
 alias mju_clearHandlers = fn() -> NoneType
 alias mju_malloc = fn(size: size_t) -> OpaquePointer
-alias mju_free = fn(ptr: UnsafePointer[NoneType]) -> NoneType
+alias mju_free = fn(ptr: OpaquePointer) -> NoneType
 alias mj_warning = fn(d: UnsafePointer[mjData], warning: Int32, info: Int32) -> NoneType
 alias mju_writeLog = fn(read type_: UnsafePointer[Int8], read msg: UnsafePointer[Int8]) -> NoneType
 alias mjs_getError = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[Int8]
@@ -4836,7 +4836,7 @@ alias mjp_resourceProviderCount = fn() -> Int32
 alias mjp_getResourceProvider = fn(read resource_name: UnsafePointer[Int8]) -> UnsafePointer[mjpResourceProvider]
 alias mjp_getResourceProviderAtSlot = fn(slot: Int32) -> UnsafePointer[mjpResourceProvider]
 alias mju_threadPoolCreate = fn(number_of_threads: size_t) -> UnsafePointer[mjThreadPool]
-alias mju_bindThreadPool = fn(d: UnsafePointer[mjData], thread_pool: UnsafePointer[NoneType]) -> NoneType
+alias mju_bindThreadPool = fn(d: UnsafePointer[mjData], thread_pool: OpaquePointer) -> NoneType
 alias mju_threadPoolEnqueue = fn(thread_pool: UnsafePointer[mjThreadPool], task: UnsafePointer[mjTask]) -> NoneType
 alias mju_threadPoolDestroy = fn(thread_pool: UnsafePointer[mjThreadPool]) -> NoneType
 alias mju_defaultTask = fn(task: UnsafePointer[mjTask]) -> NoneType
@@ -4891,7 +4891,7 @@ alias mjs_firstChild = fn(body: UnsafePointer[mjsBody], type_: mjtObj, recurse: 
 alias mjs_nextChild = fn(body: UnsafePointer[mjsBody], child: UnsafePointer[mjsElement], recurse: Int32) -> UnsafePointer[mjsElement]
 alias mjs_firstElement = fn(s: UnsafePointer[mjSpec], type_: mjtObj) -> UnsafePointer[mjsElement]
 alias mjs_nextElement = fn(s: UnsafePointer[mjSpec], element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsElement]
-alias mjs_setBuffer = fn(dest: UnsafePointer[mjByteVec], read array: UnsafePointer[NoneType], size: Int32) -> NoneType
+alias mjs_setBuffer = fn(dest: UnsafePointer[mjByteVec], read array: OpaquePointer, size: Int32) -> NoneType
 alias mjs_setString = fn(dest: UnsafePointer[mjString], read text: UnsafePointer[Int8]) -> NoneType
 alias mjs_setStringVec = fn(dest: UnsafePointer[mjStringVec], read text: UnsafePointer[Int8]) -> NoneType
 alias mjs_setInStringVec = fn(dest: UnsafePointer[mjStringVec], i: Int32, read text: UnsafePointer[Int8]) -> mjtByte
@@ -4901,14 +4901,14 @@ alias mjs_appendIntVec = fn(dest: UnsafePointer[mjIntVecVec], read array: Unsafe
 alias mjs_setFloat = fn(dest: UnsafePointer[mjFloatVec], read array: UnsafePointer[Float32], size: Int32) -> NoneType
 alias mjs_appendFloatVec = fn(dest: UnsafePointer[mjFloatVecVec], read array: UnsafePointer[Float32], size: Int32) -> NoneType
 alias mjs_setDouble = fn(dest: UnsafePointer[mjDoubleVec], read array: UnsafePointer[Float64], size: Int32) -> NoneType
-alias mjs_setPluginAttributes = fn(plugin: UnsafePointer[mjsPlugin], attributes: UnsafePointer[NoneType]) -> NoneType
+alias mjs_setPluginAttributes = fn(plugin: UnsafePointer[mjsPlugin], attributes: OpaquePointer) -> NoneType
 alias mjs_getString = fn(read source: UnsafePointer[mjString]) -> UnsafePointer[Int8]
 alias mjs_getDouble = fn(read source: UnsafePointer[mjDoubleVec], size: UnsafePointer[Int32]) -> UnsafePointer[Float64]
 alias mjs_setDefault = fn(element: UnsafePointer[mjsElement], read def_: UnsafePointer[mjsDefault]) -> NoneType
 alias mjs_setFrame = fn(dest: UnsafePointer[mjsElement], frame: UnsafePointer[mjsFrame]) -> Int32
 alias mjs_resolveOrientation = fn(quat: UnsafePointer[Float64], degree: mjtByte, read sequence: UnsafePointer[Int8], read orientation: UnsafePointer[mjsOrientation]) -> UnsafePointer[Int8]
 alias mjs_bodyToFrame = fn(body: UnsafePointer[UnsafePointer[mjsBody]]) -> UnsafePointer[mjsFrame]
-alias mjs_setUserValue = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8], read data: UnsafePointer[NoneType]) -> NoneType
+alias mjs_setUserValue = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8], read data: OpaquePointer) -> NoneType
 alias mjs_getUserValue = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8]) -> OpaquePointer
 alias mjs_deleteUserValue = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8]) -> NoneType
 alias mjs_defaultSpec = fn(spec: UnsafePointer[mjSpec]) -> NoneType

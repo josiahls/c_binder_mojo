@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
-from c_binder_mojo.type_mapper import get_global_type_mapper, TypeMapper
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -22,6 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.mojo_ast_nodes.record_decl_node import RecordDeclNode
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
+from c_binder_mojo.typing import TypeMapper, get_global_type_mapper
 
 
 
@@ -125,37 +125,37 @@ struct ParmVarDeclNode(NodeAstLike):
 
             # Check for function pointer pattern (*)(...)
             # We don't allow the statements after this block to run, since these tokens are going to be nested in the function param.
-            if "(*)" in token:
-                self._is_function_pointer = True
-                if self._parm_var_type == "":
-                    self._parm_var_type = base_entry
-                else:
-                    self._parm_var_type += " " + base_entry
-                continue
-                # Don't strip the (*) as we need it for function pointer parsing
-            elif self._is_function_pointer:
-                self._parm_var_type += " " + base_entry
-                continue
+            # if "(*)" in token:
+            #     self._is_function_pointer = True
+            #     if self._parm_var_type == "":
+            #         self._parm_var_type = base_entry
+            #     else:
+            #         self._parm_var_type += " " + base_entry
+            #     continue
+            #     # Don't strip the (*) as we need it for function pointer parsing
+            # elif self._is_function_pointer:
+            #     self._parm_var_type += " " + base_entry
+            #     continue
 
-            if '**' in token:
-                base_entry = String(token.strip("*"))
-                self._is_double_pointer = True
-            elif '*' in token:
-                base_entry = String(token.strip("*"))
-                self._is_pointer = True
+            # if '**' in token:
+            #     base_entry = String(token.strip("*"))
+            #     self._is_double_pointer = True
+            # elif '*' in token:
+            #     base_entry = String(token.strip("*"))
+            #     self._is_pointer = True
 
             if base_entry == "const":
                 self._is_const = True
-            elif base_entry == "unsigned":
-                self._is_unsigned = True
+            # elif base_entry == "unsigned":
+            #     self._is_unsigned = True
             elif base_entry == "volatile":
                 self._is_volatile = True
             elif base_entry == "restrict":
                 self._is_restrict = True
-            elif base_entry == "*":
-                self._is_pointer = True
-            elif base_entry == "**":
-                self._is_double_pointer = True
+            # elif base_entry == "*":
+            #     self._is_pointer = True
+            # elif base_entry == "**":
+            #     self._is_double_pointer = True
             elif base_entry == "struct":
                 self._is_struct = True
             elif self._parm_var_type == "":
@@ -177,29 +177,29 @@ struct ParmVarDeclNode(NodeAstLike):
 
         for token in tokens:
             var base_entry:String = token
-            if '**' in token:
-                base_entry = String(token.strip("*"))
-                self._is_double_pointer = True
-            elif '*' in token:
-                base_entry = String(token.strip("*"))
-                self._is_pointer = True
+            # if '**' in token:
+            #     base_entry = String(token.strip("*"))
+            #     self._is_double_pointer = True
+            # elif '*' in token:
+            #     base_entry = String(token.strip("*"))
+            #     self._is_pointer = True
 
             # Check for function pointer pattern (*)(...)
-            if "(*)" in token:
-                self._is_function_pointer = True
+            # if "(*)" in token:
+            #     self._is_function_pointer = True
                 # Don't strip the (*) as we need it for function pointer parsing
-            elif base_entry == "const":
+            if base_entry == "const":
                 self._is_const = True
-            elif base_entry == "unsigned":
-                self._is_unsigned = True
+            # elif base_entry == "unsigned":
+            #     self._is_unsigned = True
             elif base_entry == "volatile":
                 self._is_volatile = True
             elif base_entry == "restrict":
                 self._is_restrict = True
-            elif base_entry == "*":
-                self._is_pointer = True
-            elif base_entry == "**":
-                self._is_double_pointer = True
+            # elif base_entry == "*":
+            #     self._is_pointer = True
+            # elif base_entry == "**":
+            #     self._is_double_pointer = True
             elif base_entry == "struct":
                 self._is_struct = True
             elif self._parm_var_type == "":
@@ -305,16 +305,16 @@ struct ParmVarDeclNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
 
-        var type_name = TypeMapper.map_type(self._parm_var_type)
+        var type_name = TypeMapper.convert_c_type_to_mojo_type(self._parm_var_type)
 
-        if self._is_function_pointer:
-            # Parse function pointer type like "void (*)(int, void *)"
-            type_name = self._parse_function_pointer_type(self._parm_var_type)
+        # if self._is_function_pointer:
+        #     # Parse function pointer type like "void (*)(int, void *)"
+        #     type_name = self._parse_function_pointer_type(self._parm_var_type)
         
-        if self._is_pointer:
-            type_name = "UnsafePointer[" + type_name + "]"
-        elif self._is_double_pointer:
-            type_name = "UnsafePointer[UnsafePointer[" + type_name + "]]"
+        # if self._is_pointer:
+        #     type_name = "UnsafePointer[" + type_name + "]"
+        # elif self._is_double_pointer:
+        #     type_name = "UnsafePointer[UnsafePointer[" + type_name + "]]"
         
         var type_decl: String
         if self._is_positional:
@@ -339,59 +339,59 @@ struct ParmVarDeclNode(NodeAstLike):
 
         return type_decl
 
-    fn _parse_param_type(self, type_str: String) -> String:
-        # TODO(josiahls): The type mapper is not very composable.
-        return TypeMapper.get_mojo_type(type_str) 
+    # fn _parse_param_type(self, type_str: String) -> String:
+    #     # TODO(josiahls): The type mapper is not very composable.
+    #     return TypeMapper.get_mojo_type(type_str) 
 
-    fn _parse_function_pointer_type(self, type_str: String) -> String:
-        """Parse function pointer type and convert to Mojo function signature.
+    # fn _parse_function_pointer_type(self, type_str: String) -> String:
+    #     """Parse function pointer type and convert to Mojo function signature.
         
-        Examples:
-        - "void (*)(void)" -> "fn() -> None"
-        - "void (*)(int, void *)" -> "fn(Int, UnsafePointer[None]) -> None"
-        - "int (*)(const void *, const void *)" -> "fn(read UnsafePointer[None], read UnsafePointer[None]) -> Int"
-        """
-        # Find the return type (before the (*))
-        var return_type = String()
-        var param_types = String()
+    #     Examples:
+    #     - "void (*)(void)" -> "fn() -> None"
+    #     - "void (*)(int, void *)" -> "fn(Int, UnsafePointer[None]) -> None"
+    #     - "int (*)(const void *, const void *)" -> "fn(read UnsafePointer[None], read UnsafePointer[None]) -> Int"
+    #     """
+    #     # Find the return type (before the (*))
+    #     var return_type = String()
+    #     var param_types = String()
         
-        # Look for the (*) pattern
-        var paren_star_idx = type_str.find("(*)")
-        if paren_star_idx == -1:
-            return type_str  # Not a function pointer, return as-is
+    #     # Look for the (*) pattern
+    #     var paren_star_idx = type_str.find("(*)")
+    #     if paren_star_idx == -1:
+    #         return type_str  # Not a function pointer, return as-is
         
-        # Extract return type (everything before (*))
-        return_type = String(type_str[:paren_star_idx])
-        return_type = String(return_type.strip())
+    #     # Extract return type (everything before (*))
+    #     return_type = String(type_str[:paren_star_idx])
+    #     return_type = String(return_type.strip())
         
-        # Find the parameter list (between the parentheses after (*))
-        var open_paren_idx = type_str.find("(", paren_star_idx + 1)
-        var close_paren_idx = type_str.find(")", open_paren_idx)
+    #     # Find the parameter list (between the parentheses after (*))
+    #     var open_paren_idx = type_str.find("(", paren_star_idx + 1)
+    #     var close_paren_idx = type_str.find(")", open_paren_idx)
         
-        if open_paren_idx != -1 and close_paren_idx != -1:
-            var param_str = String(type_str[open_paren_idx + 1:close_paren_idx])
-            param_str = String(param_str.strip())
+    #     if open_paren_idx != -1 and close_paren_idx != -1:
+    #         var param_str = String(type_str[open_paren_idx + 1:close_paren_idx])
+    #         param_str = String(param_str.strip())
             
-            if param_str == "":
-                param_types = ""
-            elif param_str == "void":
-                param_types = ""
-            else:
-                # Split parameters by comma and map each type
-                var params = param_str.split(",")
-                var mapped_params = List[String]()
+    #         if param_str == "":
+    #             param_types = ""
+    #         elif param_str == "void":
+    #             param_types = ""
+    #         else:
+    #             # Split parameters by comma and map each type
+    #             var params = param_str.split(",")
+    #             var mapped_params = List[String]()
                 
-                for param in params:
-                    mapped_params.append(self._parse_param_type(param))
+    #             for param in params:
+    #                 mapped_params.append(self._parse_param_type(param))
                 
-                param_types = String(", ").join(mapped_params)
+    #             param_types = String(", ").join(mapped_params)
         
-        # Map return type
-        var mapped_return_type = TypeMapper.map_type(return_type)
-        if mapped_return_type == "void":
-            mapped_return_type = "None"
+    #     # Map return type
+    #     var mapped_return_type = TypeMapper.map_type(return_type)
+    #     if mapped_return_type == "void":
+    #         mapped_return_type = "None"
         
-        # Construct Mojo function signature
-        var mojo_signature = "fn(" + param_types + ") -> " + mapped_return_type
+    #     # Construct Mojo function signature
+    #     var mojo_signature = "fn(" + param_types + ") -> " + mapped_return_type
         
-        return mojo_signature
+    #     return mojo_signature

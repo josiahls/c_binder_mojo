@@ -45,6 +45,11 @@ fn _init_global_type_registry() -> _GlobalTypeRegistry:
     return _GlobalTypeRegistry()
 
 
+@always_inline
+fn get_global_type_registry() -> UnsafePointer[_GlobalTypeRegistry]:
+    return GLOBAL_TYPE_REGISTRY.get_or_create_ptr()
+
+
 alias GLOBAL_TYPE_REGISTRY = _Global[
     "GLOBAL_TYPE_REGISTRY", _GlobalTypeRegistry, _init_global_type_registry
 ]
@@ -112,6 +117,16 @@ struct TypeMapper:
     @staticmethod
     fn _is_unsigned(c_type: String) -> Bool:
         return c_type.startswith("unsigned ")
+
+    @staticmethod
+    fn _has_restrict_attribute(c_type: String) -> Bool:
+        # Check if the type starts with "restrict " (with space) to avoid matching type names
+        # that contain "restrict" as part of their name (e.g., "restrict_t", "my_restrict_type")
+        if "restrict " in c_type:
+            return c_type.startswith("restrict ")
+        elif c_type.replace("*", " ").endswith(" restrict"):
+            return True
+        return False
 
     @staticmethod
     fn _is_function(c_type: String) -> Bool:
@@ -255,6 +270,18 @@ struct TypeMapper:
         return String(", ").join(returned_elements)
 
     @staticmethod
+    fn _convert_restrict_type(
+        c_type: String,
+    ) -> String:
+        print("Converting restrict type: " + c_type)
+        stripped_type = String(c_type.removeprefix("restrict "))
+        if stripped_type.replace("*", " ").endswith(" restrict"):
+            print("Removing restrict suffix")
+            stripped_type = String(stripped_type.removesuffix("restrict"))
+        print("Converted restrict type: " + stripped_type)
+        return Self.convert_c_type_to_mojo_type(stripped_type)
+
+    @staticmethod
     fn convert_c_type_to_mojo_type(
         c_type: String,
         is_fn_param: Bool = False,
@@ -269,6 +296,8 @@ struct TypeMapper:
                 return NON_NUMERIC_TYPES[stripped_type]
             elif stripped_type in NUMERIC_TYPES:
                 return NUMERIC_TYPES[stripped_type]
+            elif Self._has_restrict_attribute(stripped_type):
+                return Self._convert_restrict_type(stripped_type)
             elif Self._is_function(stripped_type):
                 return Self._convert_function_type(stripped_type, is_fn_param)
             elif Self._is_parentheses_wrapped(stripped_type):

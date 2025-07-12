@@ -21,7 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-
+from c_binder_mojo.typing import get_global_type_registry
 
 @fieldwise_init
 struct TypedefDeclNode(NodeAstLike):
@@ -129,7 +129,7 @@ struct TypedefDeclNode(NodeAstLike):
         else:
             # self._grammar = Grammar(self._ast_entries[])
             # get_global_type_mapper()[].add_custom_type(self._grammar._name)
-            if self._type_name in get_global_type_mapper()[].custom_types:
+            if get_global_type_registry()[].is_defined(self._type_name):
                 self._is_disabled = True
             self._node_state = NodeState.COMPLETED
 

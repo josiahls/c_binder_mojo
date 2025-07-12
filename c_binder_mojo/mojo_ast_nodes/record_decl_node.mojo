@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
-from c_binder_mojo.type_mapper import get_global_type_mapper
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -21,6 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
+from c_binder_mojo.typing import get_global_type_registry
 
 
 fn clean_location(location: String) -> String:
@@ -131,7 +131,7 @@ struct RecordDeclNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
             self.update_child_struct_names(module_interface)
-            get_global_type_mapper()[].add_custom_type(self._record_name)
+            get_global_type_registry()[].custom_structs.append(self._record_name)
             self._node_state = NodeState.COMPLETED
             if self._indicies[].child_idxs:
                 self._has_fields = True
@@ -155,7 +155,7 @@ struct RecordDeclNode(NodeAstLike):
                 child.node[][Self]._record_name = (
                     "_" + self._record_name + "_" + original_name
                 )
-                get_global_type_mapper()[].add_custom_type(
+                get_global_type_registry()[].custom_structs.append(
                     child.node[][Self]._record_name
                 )
 

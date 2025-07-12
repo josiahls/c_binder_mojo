@@ -20,7 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.type_mapper import get_global_type_mapper
+from c_binder_mojo.typing import get_global_type_registry
 
 
 struct Grammar(Copyable, Movable, Stringable, Writable):
@@ -167,7 +167,7 @@ struct EnumDeclNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
             return
         else:
-            get_global_type_mapper()[].add_custom_type(self._enum_name)
+            get_global_type_registry()[].custom_enums.append(self._enum_name)
             self._node_state = NodeState.COMPLETED
             self._process_enum_values(module_interface)
 

@@ -38,6 +38,8 @@ RUN apt-get update && apt-get install -y \
     xorg-dev \
     llvm \
     clang \
+    x11-apps \
+    xauth \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

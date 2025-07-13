@@ -20,99 +20,8 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.type_mapper import TypeMapper
+from c_binder_mojo.typing import TypeMapper
 
-
-struct ParmVarDecl(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _type: String
-    var _is_positional: Bool
-
-    fn __init__(out self, name: String, type: String):
-        self._name = name
-        self._type = type
-        self._is_positional = False
-
-    fn __init__(out self, type: String):
-        self._type = type
-        self._name = String()
-        self._is_positional = True
-
-    fn __str__(self) -> String:
-        param_type = self._type
-
-        param_type = TypeMapper.map_type(param_type)
-
-        if self._is_positional:
-            return param_type
-        else:
-            return self._name + ": " + param_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _return_type: String
-    var _parm_vars: List[ParmVarDecl]
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        self._return_type = String()
-        self._parm_vars = List[ParmVarDecl]()
-        for entry in ast_entries:
-            if entry.ast_name == "ParmVarDecl":
-                if len(entry.tokens) >= 2:
-                    self._parm_vars.append(
-                        ParmVarDecl(entry.tokens[0], String(' ').join(entry.tokens[1:]))
-                    )
-                elif len(entry.tokens) == 1:
-                    self._parm_vars.append(ParmVarDecl(entry.tokens[0]))
-                else:
-                    print(
-                        "ParmVarDecl: Invalid grammar (len(tokens) == 0): "
-                        + String(entry)
-                    )
-            elif entry.ast_name == "FunctionDecl":
-                if len(entry.tokens) >= 2:
-                    self._name = entry.tokens[0]
-                    for token in entry.tokens[1:]:
-                        # Tokens related to params will be handled via the ParmVarDecls.
-                        if token.startswith("("):
-                            break
-
-                        self._return_type += token + " "
-                    else:
-                        print(
-                            "FunctionDecl: Invalid grammar (no params): "
-                            + String(entry)
-                        )
-            elif entry.ast_name == "NoThrowAttr":
-                # NOTE: not sure how to handle this or if we even have to.
-                pass
-            else:
-                print(
-                    "FunctionDecl: Invalid grammar (not a ParmVarDecl or"
-                    " FunctionDecl): "
-                    + String(entry)
-                )
-
-    fn __str__(self) -> String:
-        return_type = TypeMapper.map_type(self._return_type)
-        return (
-            "alias "
-            + self._name
-            + " = fn "
-            + "("
-            + String(", ").join(self._parm_vars)
-            + ") -> "
-            + return_type
-        )
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
 
 
 @fieldwise_init
@@ -122,16 +31,107 @@ struct FunctionDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _record_decl_level: Int
-    var _grammar: Grammar
+    var _is_disabled: Bool
+
+    var _is_no_throw: Bool
+    var _is_pure: Bool
+    var _is_no_null: Bool
+    var _is_external: Bool
+    var _is_implicit: Bool
+    var _is_prev: Bool
+
+    var _function_name: String
+    var _return_type: String
+    var _return_type_is_pointer: Bool
+    var _return_type_is_unsigned: Bool
+    var _return_type_is_const: Bool
+    var _return_type_is_volatile: Bool
+    var _return_type_is_restrict: Bool
+
+    var unhandled_tokens: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entries[].append(ast_entries)
         self._node_state = NodeState.COMPLETED
         self._record_decl_level = ast_entries.level
-        self._grammar = Grammar(self._ast_entries[])
+        self._is_prev = ast_entries.is_prev
+        self._is_disabled = False
 
+        self._is_no_throw = False
+        self._is_pure = False
+        self._is_no_null = False
+        self._is_external = False
+        self._is_implicit = False
+
+        self._function_name = String()
+        self._return_type = String()
+        self._return_type_is_pointer = False
+        self._return_type_is_unsigned = False
+        self._return_type_is_const = False
+        self._return_type_is_volatile = False
+        self._return_type_is_restrict = False
+        
+
+        self.unhandled_tokens = String()
+
+        # TODO(josiahls): Need to handle multiple declarations. e.g. strtoull
+        
+
+        var start_idx, end_idx = self._start_end_quotes(ast_entries.tokens)
+
+        for entry in ast_entries.tokens[:start_idx]:
+            if entry == "implicit":
+                self._is_implicit = True
+            elif self._function_name == "":
+                self._function_name = entry
+            else:
+                self.unhandled_tokens += " " + entry
+
+        for entry in ast_entries.tokens[start_idx + 1:end_idx]:
+            if entry.startswith("("):
+                break
+            # elif entry == "unsigned":
+            #     self._return_type_is_unsigned = True
+            elif entry == "const":
+                self._return_type_is_const = True
+            elif entry == "volatile":
+                self._return_type_is_volatile = True
+            elif entry == "restrict":
+                self._return_type_is_restrict = True
+            elif self._return_type == "":
+                self._return_type = entry
+            else:
+                self._return_type += " " + entry
+
+        for entry in ast_entries.tokens[end_idx + 1:]:
+            if entry == "extern":
+                self._is_external = True
+            else:
+                self.unhandled_tokens += " " + entry
+
+        if self.unhandled_tokens != "":
+            self.unhandled_tokens = "# Unhandled tokens: " + self.unhandled_tokens
+
+    fn _start_end_quotes(mut self, read tokens: List[String]) -> Tuple[Int, Int]:
+        var start_idx = -1
+        var end_idx = -1
+        var idx = -1
+        for token in tokens:
+            idx += 1
+            if token.startswith("'") and start_idx == -1:
+                start_idx = idx
+                continue
+            elif token.endswith("'") and end_idx == -1:
+                end_idx = idx
+            elif token.endswith("'"):
+                print("ParmVarDeclNode: Unhandled token: " + token + " from " + String(' ').join(tokens))
+
+        if end_idx == -1:
+            start_idx = 0
+            end_idx = len(tokens) - 1
+        return (start_idx, end_idx)
+    
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -145,8 +145,8 @@ struct FunctionDeclNode(NodeAstLike):
         ast_entries: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
-        return Self(indices, ast_entries)
+    ) -> AstNode:
+        return AstNode(Self(indices, ast_entries))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
@@ -154,7 +154,7 @@ struct FunctionDeclNode(NodeAstLike):
         if ast_entry.level <= self._record_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CONSUME_TOKEN
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -162,12 +162,23 @@ struct FunctionDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        if token_flow == TokenFlow.CONSUME_TOKEN:
-            self._ast_entries[].append(ast_entry)
-            self._node_state = NodeState.COLLECTING_TOKENS
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
         else:
-            self._grammar = Grammar(self._ast_entries[])
+            if self._is_prev:
+                self.disable_previous_declarations(module_interface)
             self._node_state = NodeState.COMPLETED
+
+    fn disable_previous_declarations(self, mut module_interface: ModuleInterface):
+        for node in module_interface.nodes()[]:
+            if node.node[].isa[FunctionDeclNode]():
+                print("Disabling previous declaration: " + node.node[][FunctionDeclNode]._function_name)
+                if node.node[][FunctionDeclNode]._is_implicit \
+                   and node.node[][FunctionDeclNode]._function_name == self._function_name:
+                    node.node[][FunctionDeclNode].disable()
+
+    fn disable(mut self):
+        self._is_disabled = True
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -204,21 +215,66 @@ struct FunctionDeclNode(NodeAstLike):
         else:
             return self.__name__
 
+    fn parm_var_decl_to_strings(self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0) -> List[String]:
+        var strings = List[String]()
+        var is_tracking_positional = False
+        for child in self.indicies().child_idxs:
+            node = module_interface.get_node(child)
+            if node.node[].isa[ParmVarDeclNode]():
+                try:
+                    s = node.to_string(just_code, module_interface, parent_indent_level)
+
+                    if is_tracking_positional and not node.node[][ParmVarDeclNode]._is_positional:
+                        strings.append("/")
+                        is_tracking_positional = False
+
+                    strings.append(String(s))
+                    
+                    if node.node[][ParmVarDeclNode]._is_positional:
+                        is_tracking_positional = True
+                except e:
+                    print(e)
+                    print(node.name())
+                    print(node.name(include_sig=True))
+                    print(node.name(include_sig=True))
+        return strings
+
+    fn parse_return_type(self) -> Tuple[String, Bool]:
+        var is_pointer = False
+        var return_type = self._return_type
+        if '(' in return_type:
+            return_type = return_type.split('(')[0]
+        if '*' in return_type:
+            is_pointer = True
+            return_type = return_type.replace('*', '')
+        return_type = String(return_type.strip())
+        return (return_type, is_pointer)
+
     fn to_string(
         self,
         just_code: Bool,
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return default_to_string(
-            node=AstNode(self),
-            module_interface=module_interface,
-            just_code=just_code,
-            indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
-            newline_after_tail=True,
-            indent_before_ast_entries=True,
-            alternate_string=String(
-                Grammar(self._ast_entries[])
-            ) if just_code else String(),
-        )
+
+        # TODO(josiahls): This is annoying. Clang does not support decomposing the return type,
+        # so we need to manually parse it.
+        var return_type = self._return_type
+        if '(' in return_type:
+            return_type = return_type.split('(')[0]
+
+        return_type = TypeMapper.convert_c_type_to_mojo_type(return_type)
+
+        var function_name = self._function_name
+        if function_name == "":
+            function_name = "anonymous_function"
+
+        var parm_var_strings = self.parm_var_decl_to_strings(just_code, module_interface, parent_indent_level)
+
+        var function_sig = "fn" + "(" + String(", ").join(parm_var_strings) + ") -> " + return_type
+        var function_decl = "alias " + function_name + " = " + function_sig
+
+        if self._is_disabled:
+            function_decl = " # Disabled either due to a redefinition or a previous declaration: " + function_decl
+
+        return function_decl + "\n"

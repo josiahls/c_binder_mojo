@@ -22,6 +22,7 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
     var full_location: String
     var precise_location: String
     var tokens: List[String]
+    var is_prev: Bool
     var original_line: String
 
     # Meta fields
@@ -37,6 +38,25 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         self.original_line = ""
         self.level = 0
         self.str_just_original_line = False
+        self.is_prev = False
+
+    fn get_quoted_indices(self) -> List[Int]:
+        """Find the indices of quoted content in tokens.
+        
+        This is used to extract type information from clang AST dump format
+        where types are quoted like 'char *(long)' or may have multiple
+        quoted sections.
+        
+        Returns:
+            List of indices where quotes appear in the tokens
+        """
+        var quoted_indices = List[Int]()
+        var idx = 0
+        for token in self.tokens:
+            if token == "'":
+                quoted_indices.append(idx)
+            idx += 1
+        return quoted_indices
 
     fn __str__(read self: Self) -> String:
         var s: String = ""
@@ -192,6 +212,7 @@ struct AstParser:
         file_path: Path, extra_args: String = ""
     ) raises -> List[String]:
         """Get the AST dump of the processed code."""
+        # TODO(josiahls): change to -ast-dump=json
         cmd = (
             "clang -Xclang -ast-dump -fsyntax-only -fparse-all-comments"
             " -fno-color-diagnostics "
@@ -213,6 +234,7 @@ struct AstParser:
             consequetive_space = False
             expect_parent_address = False
             expect_prev = False
+            var is_prev = False
 
             var ast_entry = AstEntry()
             for token in line.split(" "):
@@ -229,6 +251,7 @@ struct AstParser:
                     expect_parent_address = False
                 elif token == "prev" and ast_entry.full_location == "":
                     expect_prev = True
+                    is_prev = True
                     # NOTE: I think that prev implies a redefinition. Not sure what the point is
                     # of this, but I know this will not compile in mojo. So we will skip it.
                     continue
@@ -263,6 +286,14 @@ struct AstParser:
                 ):
                     ast_entry.full_location = "invalid"
                 elif (
+                    token.startswith("<<scratch")
+                    and ast_entry.full_location == ""
+                ) or (
+                    "space>" in token
+                    and ':' not in ast_entry.full_location
+                ):
+                    ast_entry.full_location = "scratch"
+                elif (
                     token.startswith("<invalid")
                     and ast_entry.precise_location == ""
                 ) or (
@@ -270,6 +301,14 @@ struct AstParser:
                     and not ast_entry.precise_location.endswith(">")
                 ):
                     ast_entry.precise_location = "invalid"
+                elif (
+                    token.startswith("<scratch")
+                    and ast_entry.precise_location == ""
+                ) or (
+                    "space>" in token
+                    and ':' not in ast_entry.precise_location
+                ):
+                    ast_entry.precise_location = "scratch"
                 elif (
                     token.startswith("col:")
                     and ast_entry.precise_location == ""
@@ -302,7 +341,20 @@ struct AstParser:
                 elif token == "|" and ast_entry.ast_name == "":
                     level += 1
                 else:
-                    ast_entry.tokens.append(token)
+                    if "'" in token:
+                        current_token:String = ""
+                        for ch in token.codepoint_slices():
+                            if ch == "'":
+                                if current_token != "":
+                                    ast_entry.tokens.append(current_token)
+                                    current_token = ""
+                                ast_entry.tokens.append("'")
+                            else:
+                                current_token += ch
+                        if current_token != "":
+                            ast_entry.tokens.append(current_token)
+                    else:
+                        ast_entry.tokens.append(token)
 
                 # Cancel checking for consequtive spaces if the next token
                 # isn't an empty space.
@@ -311,6 +363,7 @@ struct AstParser:
 
             ast_entry.original_line = line
             ast_entry.level = level
+            ast_entry.is_prev = is_prev
             if ast_entry.ast_name == "":
                 raise Error("Could not find name for line: " + line)
 
@@ -324,5 +377,6 @@ struct AstParser:
         entry.mem_address = ""
         entry.full_location = ""
         entry.precise_location = ""
+        entry.is_prev = False
         entries.append(entry^)
         return entries

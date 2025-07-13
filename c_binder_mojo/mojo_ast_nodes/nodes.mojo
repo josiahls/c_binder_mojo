@@ -60,6 +60,7 @@ fn default_to_string(
     print_parent_level: Bool = False,
     alternate_string: String = "",
     alternate_string_tail: String = "",
+    unhandled_tokens: String = "",
 ) -> String:
     """Default string conversion for nodes.
 
@@ -124,6 +125,10 @@ fn default_to_string(
         s += alternate_string_tail.replace("\n", "\n" + indent)
     else:
         s += node.ast_entries_tail().join(" ", indent, just_tokens=just_code)
+
+    if unhandled_tokens != "":
+        s += "\n" + indent + unhandled_tokens
+
     if newline_after_tail:
         s += "\n"
     return s
@@ -145,7 +150,7 @@ trait NodeAstLike(Copyable & Movable, Stringable):
         ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
+    ) -> AstNode:
         ...
 
     fn determine_token_flow(
@@ -222,14 +227,12 @@ struct AstNode(Copyable & Movable & Stringable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept(ast_entry, module_interface, indices):
-                return Self(T.create(ast_entry, module_interface, indices))
+                return T.create(ast_entry, module_interface, indices)
         print(
             "WARNING: none of the nodes accepted the ast_entry: "
             + String(ast_entry.ast_name)
         )
-        return Self(
-            PlaceHolderNode.create(ast_entry, module_interface, indices)
-        )
+        return PlaceHolderNode.create(ast_entry, module_interface, indices)
 
     @always_inline("nodebug")
     fn __str__(self) -> String:

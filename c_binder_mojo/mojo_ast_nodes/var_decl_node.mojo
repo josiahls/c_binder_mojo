@@ -20,98 +20,8 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.type_mapper import TypeMapper
-
-
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _field_name: String
-    var _field_type: String
-    var _is_const: Bool
-    var _value: String
-    var _is_extern: Bool
-
-    fn __init__(out self):
-        self._field_name = String()
-        self._field_type = String()
-        self._is_const = False
-        self._value = String()
-        self._is_extern = False
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        # TODO(josiahls): Toggle depending on whether this is a const
-        self._field_name = String()
-        self._field_type = String()
-        self._is_const = False
-        self._value = String()
-        self._is_extern = False
-        not_originally_const = False
-
-        for entry in ast_entries:
-            if entry.ast_name == "VarDecl":
-                if entry.level == 1:
-                    self._is_const = True
-                    not_originally_const = True
-                for token in entry.tokens:
-                    if token == "extern":
-                        self._is_extern = True
-                    elif self._field_name == "":
-                        self._field_name = token
-                    elif self._field_type == "":
-                        self._field_type = token
-                    # TODO(josiahls): Not sure if we need this.? e.g. there is int cinit.
-                    # else:
-                    #     self._field_type += " " + token[]
-            elif entry.ast_name == "ConstantExpr":
-                self._is_const = True
-            elif entry.ast_name == "IntegerLiteral":
-                self._field_type = entry.tokens[0]
-                for token in entry.tokens[1:]:
-                    self._value += " " + token
-            elif entry.ast_name == "value:" and self._is_const:
-                idx = 0
-                for token in entry.tokens:
-                    if idx > 1:
-                        self._value += " " + token
-                    elif idx == 1:
-                        self._value += token
-                    idx += 1
-
-        if "struct " in self._field_type:
-            # TODO(josiahls): This field generally looks something like struct Inner':'struct Inner'
-            # I'm not sure what the repeated name implies or how it will change. This will break if it does.
-            self._field_type = self._field_type.replace("struct ", "")
-            colon_idx = self._field_type.find(":")
-            if colon_idx != -1:
-                self._field_type = self._field_type[:colon_idx][1:-1]
-            else:
-                self._field_type = self._field_type[1:-1]
-
-        if not_originally_const:
-            self._value += (
-                " # `"
-                + self._field_name
-                + "` was not originally const in the original code"
-            )
-
-    fn __str__(self) -> String:
-        var mojo_type = TypeMapper.get_mojo_type(self._field_type)
-        if self._is_const and not self._is_extern:
-            return (
-                "alias "
-                + self._field_name
-                + ": "
-                + mojo_type
-                + " = "
-                + self._value
-            )
-        elif self._is_extern:
-            return "alias " + self._field_name + ": " + mojo_type + " # extern"
-        else:
-            return "var " + self._field_name + ": " + mojo_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
+from c_binder_mojo.typing import TypeMapper
+from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
 @fieldwise_init
@@ -121,15 +31,64 @@ struct VarDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _ast_entry_level: Int
-    var _grammar: Grammar
-
+    var _var_name: String
+    var _var_type: String
+    var _is_extern: Bool
+    var _is_const: Bool
     fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
         self._ast_entry_level = ast_entries.level
-        self._ast_entries[].append(ast_entries)
         self._node_state = NodeState.COMPLETED
-        self._grammar = Grammar()
+
+        self._var_name = String()
+        self._var_type = String()
+
+        self._is_extern = False
+
+        self._is_const = False
+        var quoted_indicies = ast_entries.get_quoted_indices()
+
+        start_idx = 0
+        section_idx = 0
+
+        for idx in quoted_indicies:
+            if section_idx == 0:
+                self._parse_section_0(ast_entries.tokens[:idx])
+            elif section_idx == 1:
+                self._parse_section_1(ast_entries.tokens[start_idx + 1:idx])
+            # elif section_idx == 2:
+                self._parse_section_2(ast_entries.tokens[idx:])
+            else:
+                print("TypedefDeclNode: Unhandled section: " + String(section_idx))
+
+            start_idx = idx
+            section_idx += 1
+
+    fn _parse_section_0(mut self, tokens: List[String]):
+        for token in tokens:
+            if self._var_name == "":
+                self._var_name = token
+
+    fn _parse_section_1(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "extern":
+                self._is_extern = True
+            elif token == "const":
+                self._is_const = True
+            elif self._var_name == "":
+                self._var_name = token
+            elif self._var_type == "":
+                self._var_type = token
+
+    fn _parse_section_2(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "extern":
+                self._is_extern = True
+            elif self._var_name == "":
+                self._var_name = token
+            elif self._var_type == "":
+                self._var_type = token
 
     @staticmethod
     fn accept(
@@ -144,8 +103,8 @@ struct VarDeclNode(NodeAstLike):
         ast_entries: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
-        return Self(indices, ast_entries)
+    ) -> AstNode:
+        return AstNode(Self(indices, ast_entries))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
@@ -153,7 +112,7 @@ struct VarDeclNode(NodeAstLike):
         if ast_entry.level <= self._ast_entry_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CONSUME_TOKEN
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -161,10 +120,8 @@ struct VarDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        self._grammar = Grammar(self._ast_entries[])
-        if token_flow == TokenFlow.CONSUME_TOKEN:
-            self._node_state = NodeState.COLLECTING_TOKENS
-            self._ast_entries[].append(ast_entry)
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
         else:
             self._node_state = NodeState.COMPLETED
 
@@ -209,6 +166,15 @@ struct VarDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
+        var s = String()
+
+        var mojo_type = TypeMapper.convert_c_type_to_mojo_type(self._var_type)
+
+        if self._is_extern:
+            s += "alias " + self._var_name + " = " + mojo_type + " # extern"
+        else:
+            s += "var " + self._var_name + " = " + mojo_type
+
         return default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
@@ -217,7 +183,5 @@ struct VarDeclNode(NodeAstLike):
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(
-                Grammar(self._ast_entries[])
-            ) if just_code else String(),
+            alternate_string=s,
         )

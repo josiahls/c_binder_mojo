@@ -54,8 +54,8 @@ struct RootNode(NodeAstLike):
         ast_entry: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
-        return Self(indices, ast_entry)
+    ) -> AstNode:
+        return AstNode(Self(indices, ast_entry))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
@@ -106,9 +106,9 @@ struct RootNode(NodeAstLike):
         # for custom_type in get_global_type_mapper()[].custom_types:
         #     imports.append("from " + custom_type[] + " import " + custom_type[])
         imports.append(
-            "from sys.ffi import _Global, UnsafePointer, OpaquePointer"
+            "from sys.ffi import _Global"
         )
-        imports.append("from sys import ffi")
+        imports.append("from sys import ffi, alignof, simdwidthof")
 
         return String("\n").join(imports)
 

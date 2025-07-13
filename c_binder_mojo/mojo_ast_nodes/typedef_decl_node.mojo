@@ -4,7 +4,7 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 from firehose.logging import Logger
 from firehose import FileLoggerOutputer, OutputerVariant
-from c_binder_mojo.type_mapper import get_global_type_mapper, TypeMapper
+
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -21,68 +21,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-
-
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _type: String
-    var _is_referenced: Bool
-    var _is_implicit: Bool
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        self._type = String()
-        self._is_referenced = False
-        self._is_implicit = False
-
-        if len(ast_entries) >= 1:
-            starting_idx = 0
-            if ast_entries[0].tokens[0] == "referenced":
-                starting_idx = 1
-                self._is_referenced = True
-            if ast_entries[0].tokens[0] == "implicit":
-                self._is_implicit = True
-                starting_idx = 1
-            if ast_entries[0].tokens[0] == "implicit" and ast_entries[0].tokens[1] == "referenced":
-                self._is_implicit = True
-                self._is_referenced = True
-                starting_idx = 2
-
-            self._name = ast_entries[0].tokens[starting_idx]
-
-            for entry in ast_entries:
-                if entry.ast_name == "AnonymousRecord":
-                    self._type = entry.tokens[0]
-                    break
-
-            if self._type == "":
-                for token in ast_entries[0].tokens[starting_idx + 1 :]:
-                    s = token.replace("'", "")
-                    if s == "struct":
-                        # Skip struct keyword.
-                        continue
-                    if s == "enum":
-                        # Skip enum keyword.
-                        continue
-
-                    self._type += s + " "
-
-        else:
-            print(
-                "TypedefDeclNode: Grammar: Invalid grammar: "
-                + String(ast_entries)
-                + " len: "
-                + String(len(ast_entries))
-            )
-
-    fn __str__(self) -> String:
-        mojo_type = TypeMapper.get_mojo_type(self._type)
-        return "alias " + self._name + " = " + mojo_type
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
+from c_binder_mojo.typing import get_global_type_registry
 
 @fieldwise_init
 struct TypedefDeclNode(NodeAstLike):
@@ -91,7 +30,12 @@ struct TypedefDeclNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _typedef_decl_level: Int
-    var _grammar: Grammar
+    var _unhandled_tokens: String
+    var _is_implicit: Bool
+    var _type_name: String
+    var _type_aliased: String
+    var _is_referenced: Bool
+    var _is_disabled: Bool
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -99,7 +43,50 @@ struct TypedefDeclNode(NodeAstLike):
         self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._typedef_decl_level = ast_entry.level
-        self._grammar = Grammar(self._ast_entries[])
+        # self._grammar = Grammar(self._ast_entries[])
+        self._unhandled_tokens = String()
+        self._type_name = String()
+        self._type_aliased = String()
+
+        self._is_implicit = False
+        self._is_referenced = False
+        self._is_disabled = False
+
+        var quoted_indicies = ast_entry.get_quoted_indices()
+
+        start_idx = 0
+        section_idx = 0
+
+        for idx in quoted_indicies:
+            if section_idx == 0:
+                self._parse_section_0(ast_entry.tokens[start_idx:idx])
+            elif section_idx == 1:
+                self._parse_section_1(ast_entry.tokens[idx:])
+            else:
+                print("TypedefDeclNode: Unhandled section: " + String(section_idx))
+
+            start_idx = idx
+            section_idx += 1
+    
+    fn _parse_section_0(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "implicit":
+                self._is_implicit = True
+            elif token == "referenced":
+                self._is_referenced = True
+            elif self._type_name == "":
+                self._type_name = token
+            else:
+                self._type_aliased = token
+
+    fn _parse_section_1(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == "'":
+                pass
+            elif self._type_name == "":
+                self._type_name = token
+            # else:
+            #     self._type_name += " " + token
 
     @staticmethod
     fn accept(
@@ -114,8 +101,8 @@ struct TypedefDeclNode(NodeAstLike):
         ast_entries: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
-    ) -> Self:
-        return Self(indices, ast_entries)
+    ) -> AstNode:
+        return AstNode(Self(indices, ast_entries))
 
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
@@ -123,7 +110,7 @@ struct TypedefDeclNode(NodeAstLike):
         if ast_entry.level <= self._typedef_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
-            return TokenFlow.CONSUME_TOKEN
+            return TokenFlow.CREATE_CHILD
 
     fn process(
         mut self,
@@ -131,35 +118,40 @@ struct TypedefDeclNode(NodeAstLike):
         token_flow: MessageableEnum,
         mut module_interface: ModuleInterface,
     ):
-        if token_flow == TokenFlow.CONSUME_TOKEN:
-            if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
-                if self.process_anonymous_record(ast_entry, module_interface):
-                    return
-            self._ast_entries[].append(ast_entry)
+        if token_flow == TokenFlow.CREATE_CHILD:
+            self._node_state = NodeState.BUILDING_CHILDREN
+            return
+        # elif token_flow == TokenFlow.CONSUME_TOKEN:
+        #     if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
+        #         if self.process_anonymous_record(ast_entry, module_interface):
+        #             return
+        #     self._ast_entries[].append(ast_entry)
         else:
-            self._grammar = Grammar(self._ast_entries[])
-            get_global_type_mapper()[].add_custom_type(self._grammar._name)
+            # self._grammar = Grammar(self._ast_entries[])
+            # get_global_type_mapper()[].add_custom_type(self._grammar._name)
+            if get_global_type_registry()[].is_defined(self._type_name):
+                self._is_disabled = True
             self._node_state = NodeState.COMPLETED
 
-    fn process_anonymous_record(
-        mut self, ast_entry: AstEntry, module_interface: ModuleInterface
-    ) -> Bool:
-        mem_addesss = ast_entry.mem_address
-        for node in module_interface.nodes()[]:
-            if node.node[].isa[RecordDeclNode]():
-                if (
-                    node.node[][RecordDeclNode]._record_mem_location
-                    == mem_addesss
-                ):
-                    struct_name = node.node[][RecordDeclNode]._grammar._name
-                    new_entry = AstEntry()
-                    new_entry.ast_name = "AnonymousRecord"
-                    new_entry.tokens = [struct_name]
-                    new_entry.precise_location = ast_entry.precise_location
-                    new_entry.mem_address = ast_entry.mem_address
-                    self._ast_entries[].append(new_entry)
-                    return True
-        return False
+    # fn process_anonymous_record(
+    #     mut self, ast_entry: AstEntry, module_interface: ModuleInterface
+    # ) -> Bool:
+    #     mem_addesss = ast_entry.mem_address
+    #     for node in module_interface.nodes()[]:
+    #         if node.node[].isa[RecordDeclNode]():
+    #             if (
+    #                 node.node[][RecordDeclNode]._record_mem_location
+    #                 == mem_addesss
+    #             ):
+    #                 struct_name = node.node[][RecordDeclNode]._grammar._name
+    #                 new_entry = AstEntry()
+    #                 new_entry.ast_name = "AnonymousRecord"
+    #                 new_entry.tokens = [struct_name]
+    #                 new_entry.precise_location = ast_entry.precise_location
+    #                 new_entry.mem_address = ast_entry.mem_address
+    #                 self._ast_entries[].append(new_entry)
+    #                 return True
+    #     return False
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -202,13 +194,25 @@ struct TypedefDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        return default_to_string(
+
+        var s  = 'alias ' + String(self._type_name) + " = "
+        # for child_idx in self._indicies[].child_idxs:
+        #     s += module_interface.nodes()[][child_idx].to_string(just_code, module_interface, parent_indent_level + 1)
+        # s += " # Original type: " + String(self._type_aliased)
+
+        var out_s = default_to_string(
             node=AstNode(self),
             module_interface=module_interface,
             just_code=just_code,
             indent_level=parent_indent_level,
-            newline_before_ast_entries=just_code,
+            newline_before_ast_entries=just_code and not self._is_disabled,
             newline_after_tail=True,
             indent_before_ast_entries=True,
-            alternate_string=String(self._grammar) if just_code else String(),
+            alternate_string=s if just_code else String(),
+            unhandled_tokens=self._unhandled_tokens,
         )
+
+        if self._is_disabled:
+            out_s = "# Disabled since this is already declared\n# " + out_s
+
+        return out_s

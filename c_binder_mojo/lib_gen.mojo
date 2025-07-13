@@ -79,7 +79,7 @@ fn _get_function_external_declarations(
     external_declarations: List[ExternalFunctionBuilder] = []
     for node in ast_tree.nodes()[]:
         if node.node[].isa[FunctionDeclNode]():
-            name = node.node[][FunctionDeclNode]._grammar._name
+            name = node.node[][FunctionDeclNode]._function_name
             external_declarations.append(ExternalFunctionBuilder(lib_name, name))
         # elif node.node.isa(TypedefDeclNode):
         #     external_declarations.append(String("alias {0} = {1}".format(node.node.name(), node.node.type())))

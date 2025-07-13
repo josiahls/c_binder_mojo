@@ -11,12 +11,12 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runner.RUNNER_NAME }}
     strategy:
       max-parallel: 2
       matrix:
         runner:
-          - RUNNER_NAME: ubuntu-latest-arm64
+          - RUNNER_NAME: ubuntu-24.04-arm
             PLATFORM: arm64
           - RUNNER_NAME: ubuntu-latest
             PLATFORM: x86_64

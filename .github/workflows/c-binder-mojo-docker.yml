@@ -7,6 +7,7 @@ on:
     branches:
       - main
       - master
+      - feat/mujoco-binding-fixes
 
 jobs:
   build:
@@ -23,9 +24,7 @@ jobs:
     steps:
     - name: Copy This Repository Contents
       uses: actions/checkout@v2
-      # with:
-      #   submodules: recursive
-      
+
     - name: build, tag, and push image
       run: |
         export DOCKER_BUILDKIT=1

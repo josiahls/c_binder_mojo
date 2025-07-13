@@ -33,6 +33,7 @@ services:
       - josiahls/c_binder_mojo-cpu:${VERSION:-latest}
     image: josiahls/c_binder_mojo-cpu:${VERSION:-latest}
     profiles: ["build_cpu"]
+    platform: linux/arm64
 
   c_binder_mojo_gpu_build:
     build:
@@ -45,12 +46,14 @@ services:
       - josiahls/c_binder_mojo-gpu:${VERSION:-latest}
     image: josiahls/c_binder_mojo-gpu:${VERSION:-latest}
     profiles: ["build_gpu"]
+    platform: linux/arm64
 
   c_binder_mojo_gpu: &c_binder_mojo_gpu
     <<: *c_binder_mojo_base
     restart: unless-stopped
     image: josiahls/c_binder_mojo-gpu:${VERSION:-latest}
     profiles: ["gpu"]
+    platform: linux/arm64
     # depends_on:
     #   - ollama
     deploy:
@@ -65,4 +68,5 @@ services:
     <<: *c_binder_mojo_base
     profiles: ["cpu"]
     restart: unless-stopped
+    platform: linux/arm64
     image: josiahls/c_binder_mojo-cpu:${VERSION:-latest}

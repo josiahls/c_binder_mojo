@@ -35,6 +35,13 @@ RUN apt-get update && apt-get install -y \
     wget \
     libosmesa6-dev \
     libgl1-mesa-glx \
+    libgl1-mesa-dri \
+    libosmesa6 \
+    mesa-utils \
+    libgl1-mesa-dev \
+    xvfb \
+    x11vnc \
+    fluxbox \
     xorg-dev \
     llvm \
     clang \

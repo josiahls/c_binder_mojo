@@ -9,6 +9,8 @@ x-c_binder_mojo_base: &c_binder_mojo_base
   stdin_open: true
   tty: true
   shm_size: 16000000000
+  ports:
+    - "5900:5900"
   volumes:
     - .:/home/c_binder_mojo_user/c_binder_mojo/
     - ~/.ssh:/home/c_binder_mojo_user/.ssh:rw

@@ -2,6 +2,7 @@ from pathlib import Path
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.function_decl_node import FunctionDeclNode
 from c_binder_mojo.mojo_ast_nodes.typedef_decl_node import TypedefDeclNode
+from c_binder.typing import MOJO_FUNCTIONS
 
 
 fn _get_module_dl_handle(
@@ -74,13 +75,28 @@ struct ExternalFunctionBuilder(Copyable, Movable):
 fn _get_function_external_declarations(
     lib_name: String,
     ast_tree: ModuleInterface,
+    include_private_methods:Bool,
+    include_only_prefixes:List[String]
 ) raises -> List[ExternalFunctionBuilder]:
     """Get the function external declarations for the module."""
     external_declarations: List[ExternalFunctionBuilder] = []
+    function_names: List[String] = []
     for node in ast_tree.nodes()[]:
-        if node.node[].isa[FunctionDeclNode]():
+        if node.node[].isa[FunctionDeclNode]() and not node.node[][FunctionDeclNode]._is_disabled:
             name = node.node[][FunctionDeclNode]._function_name
-            external_declarations.append(ExternalFunctionBuilder(lib_name, name))
+            if not include_private_methods and name.startswith('_'):
+                continue
+            if len(include_only_prefixes) != 0:
+                starts_with_prefix:Bool = False
+                for prefix in include_only_prefixes:
+                    if name.startswith(prefix):
+                        starts_with_prefix = True
+                if not starts_with_prefix:
+                    continue
+            external_function = ExternalFunctionBuilder(lib_name, name)
+            if external_function.mojo_name not in function_names:
+                external_declarations.append(external_function)
+                function_names.append(external_function.mojo_name)
         # elif node.node.isa(TypedefDeclNode):
         #     external_declarations.append(String("alias {0} = {1}".format(node.node.name(), node.node.type())))
     return external_declarations
@@ -91,13 +107,22 @@ fn append_to_mojo_file(
     mojo_file: Path,
     so_file: Path,
     lib_name: String = "",
+    include_only_prefixes: List[String] = [],
+    include_private_methods: Bool= False
 ) raises:
     """Append the contents of the shared object file to the mojo file."""
     var _lib_name:String = lib_name if lib_name != "" else mojo_file.path.split("/")[-1].split(".")[0]
+    if include_private_methods:
+        print('Warning: Some libs such as mujoco seg fault when include_private_methods=True')
 
     text:String = _get_import_statements(ast_tree)
     text += mojo_file.read_text() + "\n"
-    external_declarations = _get_function_external_declarations(_lib_name, ast_tree)
+    external_declarations = _get_function_external_declarations(
+        _lib_name, 
+        ast_tree, 
+        include_private_methods,
+        include_only_prefixes
+    )
     for external_declaration in external_declarations:
         text += String("\n") + external_declaration.meta_name
 

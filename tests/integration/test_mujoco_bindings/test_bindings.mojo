@@ -24,18 +24,20 @@ fn test_mujoco_bindings() raises:
         extra_args="-I /home/c_binder_mojo_user/c_binder_mojo/mujoco/include"
     )
 
-    var so_file_path = make_so_file(
-        logger,
-        "test_ffi_basic",
-        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco_bindings"),
-        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco_bindings/output"),
-    )
+    # var so_file_path = make_so_file(
+    #     logger,
+    #     "test_ffi_basic",
+    #     Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco_bindings"),
+    #     Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco_bindings/output"),
+    # )
+    var so_file_path = Path("/home/c_binder_mojo_user/c_binder_mojo/mujoco/build/lib/libmujoco.so")
 
     append_to_mojo_file(
         module_interface,
-        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco_bindings/output/test_mujoco_bindings_ffi.mojo"),
+        Path("/home/c_binder_mojo_user/c_binder_mojo/tests/integration/test_mujoco_bindings/output/test_mujoco_bindings.mojo"),
         so_file_path,
-        "TestFFIBasic",
+        "LibMuJoCo",
+        include_only_prefixes = ['mj']
     )
 
     # var test_ffi_basic = TestFFIBasic()

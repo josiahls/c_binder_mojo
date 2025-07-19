@@ -66,6 +66,7 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         s += "mem_address: " + self.mem_address + ", "
         s += "full_location: " + self.full_location + ", "
         s += "precise_location: " + self.precise_location + ", "
+        s += "is_prev: " + String(self.is_prev) + ", "
         s += "tokens: " + String(", ").join(self.tokens) + ", "
         s += "level: " + String(self.level)
         s += ")"

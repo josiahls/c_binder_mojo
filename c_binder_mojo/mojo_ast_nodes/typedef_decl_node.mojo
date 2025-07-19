@@ -131,6 +131,8 @@ struct TypedefDeclNode(NodeAstLike):
             # get_global_type_mapper()[].add_custom_type(self._grammar._name)
             if get_global_type_registry()[].is_defined(self._type_name):
                 self._is_disabled = True
+            else:
+                get_global_type_registry()[].custom_typedefs.append(self._type_name)
             self._node_state = NodeState.COMPLETED
 
     # fn process_anonymous_record(

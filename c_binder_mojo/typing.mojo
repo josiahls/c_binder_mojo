@@ -5,7 +5,6 @@ from sys.ffi import _Global
 from sys import ffi
 
 # First Party Modules
-from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
 @fieldwise_init
@@ -88,9 +87,51 @@ alias NUMERIC_TYPES:Dict[String, String] = {
     "__SVUInt16_t": "UInt16",
     "__SVUInt32_t": "UInt32",
     "__SVUInt64_t": "UInt64",
+    "__SVUint8_t": "UInt8",
+    "__SVUint16_t": "UInt16",
+    "__SVUint32_t": "UInt32",
+    "__SVUint64_t": "UInt64",
     "__SVFloat16_t": "Float16",
     "__SVFloat32_t": "Float32",
     "__SVFloat64_t": "Float64",
+    "__SVBFloat16_t": "BFloat16",
+    # Complicated SIMD types
+    "__clang_svint8x2_t": "UnsafePointer[Int8]",
+    "__clang_svint16x2_t": "UnsafePointer[Int16]",
+    "__clang_svint32x2_t": "UnsafePointer[Int32]",
+    "__clang_svint64x2_t": "UnsafePointer[Int64]",
+    "__clang_svuint8x2_t": "UnsafePointer[UInt8]",
+    "__clang_svuint16x2_t": "UnsafePointer[UInt16]",
+    "__clang_svuint32x2_t": "UnsafePointer[UInt32]",
+    "__clang_svuint64x2_t": "UnsafePointer[UInt64]",
+    "__clang_svfloat16x2_t": "UnsafePointer[Float16]",
+    "__clang_svfloat32x2_t": "UnsafePointer[Float32]",
+    "__clang_svfloat64x2_t": "UnsafePointer[Float64]",
+    "__clang_svbfloat16x2_t": "UnsafePointer[BFloat16]",
+    "__clang_svint8x3_t": "UnsafePointer[Int8]",
+    "__clang_svint16x3_t": "UnsafePointer[Int16]",
+    "__clang_svint32x3_t": "UnsafePointer[Int32]",
+    "__clang_svint64x3_t": "UnsafePointer[Int64]",
+    "__clang_svuint8x3_t": "UnsafePointer[UInt8]",
+    "__clang_svuint16x3_t": "UnsafePointer[UInt16]",
+    "__clang_svuint32x3_t": "UnsafePointer[UInt32]",
+    "__clang_svuint64x3_t": "UnsafePointer[UInt64]",
+    "__clang_svfloat16x3_t": "UnsafePointer[Float16]",
+    "__clang_svfloat32x3_t": "UnsafePointer[Float32]",
+    "__clang_svfloat64x3_t": "UnsafePointer[Float64]",
+    "__clang_svbfloat16x3_t": "UnsafePointer[BFloat16]",
+    "__clang_svint8x4_t": "UnsafePointer[Int8]",
+    "__clang_svint16x4_t": "UnsafePointer[Int16]",
+    "__clang_svint32x4_t": "UnsafePointer[Int32]",
+    "__clang_svint64x4_t": "UnsafePointer[Int64]",
+    "__clang_svuint8x4_t": "UnsafePointer[UInt8]",
+    "__clang_svuint16x4_t": "UnsafePointer[UInt16]",
+    "__clang_svuint32x4_t": "UnsafePointer[UInt32]",
+    "__clang_svuint64x4_t": "UnsafePointer[UInt64]",
+    "__clang_svfloat16x4_t": "UnsafePointer[Float16]",
+    "__clang_svfloat32x4_t": "UnsafePointer[Float32]",
+    "__clang_svfloat64x4_t": "UnsafePointer[Float64]",
+    "__clang_svbfloat16x4_t": "UnsafePointer[BFloat16]",
 }
 
 
@@ -100,6 +141,13 @@ alias NON_NUMERIC_TYPES:Dict[String, String] = {
     "__SVBool_t": "Bool",
     "__NSConstantString_tag": "StaticString",
 }
+
+
+alias MOJO_FUNCTIONS: List[String] = [
+    "abort",
+    "getenv",
+    "setenv"
+]
 
 
 struct TypeMapper:
@@ -128,6 +176,16 @@ struct TypeMapper:
             return True
         return False
 
+
+    @staticmethod
+    fn _has_const_attribute(c_type:String) -> Bool:
+        """Evaluate const from right to left. 
+        
+        Note, if `c_type` ends with a pointer, we return False. We want the `_convert_pointer_type`
+        to first remove that, then we can reevaluate.
+        """
+        return c_type.replace("*", " ").endswith('const') and not c_type.endswith('*')
+
     @staticmethod
     fn _is_function(c_type: String) -> Bool:
         has_input = "(*)" in c_type
@@ -151,6 +209,13 @@ struct TypeMapper:
     @staticmethod
     fn _is_variadic_list(c_type: String) -> Bool:
         return ',' in c_type
+
+    @staticmethod
+    fn _convert_const_attribute(c_type:String) -> String:
+        # TODO: This is sloppy. We need to do proper left <- right evaluation of attributes.
+        stripped_type = String(c_type.removesuffix("const"))
+        stripped_type = String(stripped_type.removeprefix("const "))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
 
     @staticmethod
     fn _convert_pointer_type(
@@ -251,6 +316,8 @@ struct TypeMapper:
 
         for element in c_type_split: 
             stripped_element = String(element.strip())
+            # TODO(josiahls): I think we need to generalize these attributes like const, 
+            # and make it easier to do custom ops like `read` or even eventually origin modification.
             is_const = False
 
             if stripped_element.startswith('const'):
@@ -286,13 +353,22 @@ struct TypeMapper:
     ) -> String:
         stripped_type = String(c_type.strip())
         try:
-            # print('processing type: ' + stripped_type)
+            # NOTE: I think there is some confusion on the ordering here.
+            # Should we be evaluating everything from right to left? Right now
+            # its kind of all over the place. I like that we do:
+            #   stripped_type in NON_NUMERIC_TYPES
+            #   stripped_type in NUMERIC_TYPES
+            # But we might want to instead of 
+            #   any(stripped_type.endswith(non_numeric_type) for non_numeric_type in NON_NUMERIC_TYPES)
             if unsigned:
                 return Self._convert_unsigned_type(stripped_type)
             elif stripped_type in NON_NUMERIC_TYPES:
                 return NON_NUMERIC_TYPES[stripped_type]
             elif stripped_type in NUMERIC_TYPES:
                 return NUMERIC_TYPES[stripped_type]
+            elif Self._has_const_attribute(stripped_type) and not is_fn_param:
+                # NOTE: is_fn_param==True, const's currently get handled differently.
+                return Self._convert_const_attribute(stripped_type)
             elif Self._has_restrict_attribute(stripped_type):
                 return Self._convert_restrict_type(stripped_type)
             elif Self._is_function(stripped_type):

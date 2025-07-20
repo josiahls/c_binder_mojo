@@ -365,8 +365,8 @@ struct TokenBundles(Stringable, Sized, Copyable, Movable):
         for token in self._token_bundles:
             if len(s) > 0 and not was_newline:
                 s += sep
-            s += token[].token
-            if token[].is_newline():
+            s += token.token
+            if token.is_newline():
                 s += indent
                 was_newline = True
             else:
@@ -441,11 +441,11 @@ struct TokenBundles(Stringable, Sized, Copyable, Movable):
         var row_num = -1
         for token in self._token_bundles:
             if row_num == -1:
-                row_num = token[].row_num
-            elif row_num != token[].row_num:
-                row_num = token[].row_num
+                row_num = token.row_num
+            elif row_num != token.row_num:
+                row_num = token.row_num
                 s += "\n"
-            s += String(token[].token) + " "
+            s += String(token.token) + " "
         return s
 
     fn clear(mut self):
@@ -482,7 +482,7 @@ struct Tokenizer(Copyable, Movable):
         """
         _line = line
         for char in self.ISOLATED_TOKEN_CHARS:
-            _line = _line.replace(char[], " " + char[] + " ")
+            _line = _line.replace(char, " " + char + " ")
         try:
             return _line.split(" ")
         except e:
@@ -503,15 +503,14 @@ struct Tokenizer(Copyable, Movable):
         lines = path.read_text().split("\n")
         self.tokens.reserve(len(lines))
         skip_newline = False
-        for line_ptr in lines:
-            line = line_ptr[]
+        for line in lines:
             col_num = 0
             for token_string in self.tokenize_line(line):
-                token = TokenBundle(token_string[], current_row_num, col_num)
+                token = TokenBundle(token_string, current_row_num, col_num)
                 self.tokens.append(token)
                 if token.token == WhitespaceEnum.LINE_CONTINUATION:
                     skip_newline = True
-                col_num += len(token_string[])
+                col_num += len(token_string)
             # Re add the newline token
             if not skip_newline:
                 self.tokens.append(
@@ -535,11 +534,11 @@ struct Tokenizer(Copyable, Movable):
             if make_flat:
                 s += "\n"  # Add new line for each token
             elif current_row_num == -1:
-                current_row_num = token[].row_num
-            elif current_row_num != token[].row_num:
-                current_row_num = token[].row_num
+                current_row_num = token.row_num
+            elif current_row_num != token.row_num:
+                current_row_num = token.row_num
                 s += "\n"
-            s += String(token[]) + " "
+            s += String(token.token) + " "
         return s
 
     fn __str__(self) -> String:

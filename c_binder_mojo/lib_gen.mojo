@@ -4,6 +4,34 @@ from c_binder_mojo.mojo_ast_nodes.function_decl_node import FunctionDeclNode
 from c_binder_mojo.mojo_ast_nodes.typedef_decl_node import TypedefDeclNode
 
 
+
+
+fn _get_so_lib_path_function() -> String:
+    return String("""\n
+@always_inline
+fn _get_lib_path(so_file_name: String) raises -> Path:
+    var env_var_name:String = so_file_name.split('.')[0].upper() + '_LIB_PATH'
+
+    if (path := Path('/usr/local/lib') / so_file_name).exists():
+        return path
+    elif (path := Path('/usr/lib') / so_file_name).exists():
+        return path
+    elif (path := Path('/lib') / so_file_name).exists():
+        return path
+    elif (path := Path.home() / '.local' / 'lib' / so_file_name).exists():
+        return path
+    elif (path := Path(getenv(env_var_name)) / so_file_name).exists():
+        return path
+    else:
+        raise Error(
+            'Could not find library: ' + so_file_name + ' in any of the following paths: /usr/local/lib, /usr/lib, /lib, ~/.local/lib, or ' + env_var_name + '=' + getenv(env_var_name)
+        )
+""")
+
+
+
+
+
 fn _get_module_dl_handle(
     lib_name: String,
     so_file: Path,
@@ -33,7 +61,7 @@ struct {0}(Copyable, Movable):
 
     fn __init__(out self):
         try:
-            self.lib = DLHandle(\'{1}\')
+            self.lib = DLHandle(_get_lib_path(\'{1}\'))
         except e:
             self.lib = abort[DLHandle](
                 String("Failed to load {0} from", \'{1}\', ":\\n", e)
@@ -53,6 +81,7 @@ fn _get_import_statements(
         "from sys.ffi import DLHandle",
         "from os import abort, getenv, setenv",
         "from python._cpython import ExternalFunction",
+        "from pathlib import Path",
     ]
     return String("\n").join(statements) + "\n"
 
@@ -125,6 +154,7 @@ fn append_to_mojo_file(
     for external_declaration in external_declarations:
         text += String("\n") + external_declaration.meta_name
 
-    text += _get_module_dl_handle(_lib_name, so_file, external_declarations)
+    text += _get_so_lib_path_function()
+    text += _get_module_dl_handle(_lib_name, so_file.path.split("/")[-1], external_declarations)
 
     mojo_file.write_text(text)

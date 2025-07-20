@@ -20,7 +20,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.typing import TypeMapper
-from c_binder_mojo.builtin_type_mapper import BuiltinTypeMapper
 
 
 @fieldwise_init
@@ -34,32 +33,45 @@ struct VarDeclNode(NodeAstLike):
     var _var_type: String
     var _is_extern: Bool
     var _is_const: Bool
-    fn __init__(out self, indicies: NodeIndices, ast_entries: AstEntry):
+    var _is_sugar: Bool
+    var _unhandled_tokens: String
+
+    fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
-        self._ast_entry_level = ast_entries.level
+        self._ast_entry_level = ast_entry.level
         self._node_state = NodeState.COMPLETED
-
+        self._is_sugar = False
+        self._unhandled_tokens = String()
+        
         self._var_name = String()
         self._var_type = String()
 
         self._is_extern = False
 
         self._is_const = False
-        var quoted_indicies = ast_entries.get_quoted_indices()
+        var quoted_indicies = ast_entry.get_quoted_indices()
 
         start_idx = 0
         section_idx = 0
 
+
         for idx in quoted_indicies:
             if section_idx == 0:
-                self._parse_section_0(ast_entries.tokens[:idx])
+                self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entries.tokens[start_idx + 1:idx])
-            # elif section_idx == 2:
-                self._parse_section_2(ast_entries.tokens[idx:])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                if len(quoted_indicies) == 2:
+                    self._parse_section_3(ast_entry.tokens[idx + 1:])
+            elif section_idx == 2:
+                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
+                if len(quoted_indicies) == 3:
+                    self._parse_section_3(ast_entry.tokens[idx + 1:])
+            elif section_idx == 3:
+                self._parse_section_3(ast_entry.tokens[idx + 1:])
             else:
-                print("TypedefDeclNode: Unhandled section: " + String(section_idx))
+                print("VarDeclNode: Unhandled section: " + String(section_idx))
+                print("For ast entry: " + String(ast_entry.original_line))
 
             start_idx = idx
             section_idx += 1
@@ -81,6 +93,16 @@ struct VarDeclNode(NodeAstLike):
                 self._var_type = token
 
     fn _parse_section_2(mut self, tokens: List[String]):
+        print("VarDeclNode: " + self._var_name + ": section 2 tokens: " + String(' ').join(tokens))
+        for token in tokens:
+            if token == ":":
+                self._is_sugar = True
+            elif token == "extern":
+                self._is_extern = True
+            else:
+                self._unhandled_tokens += token + " "
+
+    fn _parse_section_3(mut self, tokens: List[String]):
         for token in tokens:
             if token == "extern":
                 self._is_extern = True
@@ -173,6 +195,9 @@ struct VarDeclNode(NodeAstLike):
             s += "alias " + self._var_name + " = " + mojo_type + " # extern"
         else:
             s += "var " + self._var_name + " = " + mojo_type
+
+        if self._unhandled_tokens != "":
+            s += "\n# Unhandled tokens: " + self._unhandled_tokens
 
         return default_to_string(
             node=AstNode(self),

@@ -35,6 +35,8 @@ struct TypedefDeclNode(NodeAstLike):
     var _type_aliased: String
     var _is_referenced: Bool
     var _is_disabled: Bool
+    var _is_sugar: Bool
+    var _sugared_type: String
 
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
@@ -46,10 +48,11 @@ struct TypedefDeclNode(NodeAstLike):
         self._unhandled_tokens = String()
         self._type_name = String()
         self._type_aliased = String()
-
+        self._sugared_type = String()
         self._is_implicit = False
         self._is_referenced = False
         self._is_disabled = False
+        self._is_sugar = False
 
         var quoted_indicies = ast_entry.get_quoted_indices()
 
@@ -58,15 +61,20 @@ struct TypedefDeclNode(NodeAstLike):
 
         for idx in quoted_indicies:
             if section_idx == 0:
-                self._parse_section_0(ast_entry.tokens[start_idx:idx])
+                self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[idx:])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+            elif section_idx == 2:
+                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
+            elif section_idx == 3:
+                self._parse_section_3(ast_entry.tokens[idx + 1:])
             else:
                 print("TypedefDeclNode: Unhandled section: " + String(section_idx))
+                print("For ast entry: " + String(ast_entry.original_line))
 
             start_idx = idx
             section_idx += 1
-    
+
     fn _parse_section_0(mut self, tokens: List[String]):
         for token in tokens:
             if token == "implicit":
@@ -80,12 +88,27 @@ struct TypedefDeclNode(NodeAstLike):
 
     fn _parse_section_1(mut self, tokens: List[String]):
         for token in tokens:
-            if token == "'":
-                pass
-            elif self._type_name == "":
-                self._type_name = token
-            # else:
-            #     self._type_name += " " + token
+            if self._type_name == "":
+                self._type_aliased = token
+            else:
+                self._type_aliased += " " + token
+
+    fn _parse_section_2(mut self, tokens: List[String]):
+        for token in tokens:
+            if token == ":":
+                self._is_sugar = True
+            else:
+                self._unhandled_tokens += token + " "
+
+    fn _parse_section_3(mut self, tokens: List[String]):
+        for token in tokens:
+            if not self._is_sugar:
+                self._unhandled_tokens += token + " "
+            elif self._sugared_type == "":
+                self._sugared_type = token
+            else:
+                self._sugared_type += " " + token
+
 
     @staticmethod
     fn accept(
@@ -119,40 +142,12 @@ struct TypedefDeclNode(NodeAstLike):
     ):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
-            return
-        # elif token_flow == TokenFlow.CONSUME_TOKEN:
-        #     if ast_entry.ast_name == "Record" and len(ast_entry.tokens) == 1:
-        #         if self.process_anonymous_record(ast_entry, module_interface):
-        #             return
-        #     self._ast_entries[].append(ast_entry)
         else:
-            # self._grammar = Grammar(self._ast_entries[])
-            # get_global_type_mapper()[].add_custom_type(self._grammar._name)
             if get_global_type_registry()[].is_defined(self._type_name):
                 self._is_disabled = True
             else:
                 get_global_type_registry()[].custom_typedefs.append(self._type_name)
             self._node_state = NodeState.COMPLETED
-
-    # fn process_anonymous_record(
-    #     mut self, ast_entry: AstEntry, module_interface: ModuleInterface
-    # ) -> Bool:
-    #     mem_addesss = ast_entry.mem_address
-    #     for node in module_interface.nodes()[]:
-    #         if node.node[].isa[RecordDeclNode]():
-    #             if (
-    #                 node.node[][RecordDeclNode]._record_mem_location
-    #                 == mem_addesss
-    #             ):
-    #                 struct_name = node.node[][RecordDeclNode]._grammar._name
-    #                 new_entry = AstEntry()
-    #                 new_entry.ast_name = "AnonymousRecord"
-    #                 new_entry.tokens = [struct_name]
-    #                 new_entry.precise_location = ast_entry.precise_location
-    #                 new_entry.mem_address = ast_entry.mem_address
-    #                 self._ast_entries[].append(new_entry)
-    #                 return True
-    #     return False
 
     fn indicies(self) -> NodeIndices:
         return self._indicies[]
@@ -197,9 +192,6 @@ struct TypedefDeclNode(NodeAstLike):
     ) raises -> String:
 
         var s  = 'alias ' + String(self._type_name) + " = "
-        # for child_idx in self._indicies[].child_idxs:
-        #     s += module_interface.nodes()[][child_idx].to_string(just_code, module_interface, parent_indent_level + 1)
-        # s += " # Original type: " + String(self._type_aliased)
 
         var out_s = default_to_string(
             node=AstNode(self),
@@ -215,5 +207,7 @@ struct TypedefDeclNode(NodeAstLike):
 
         if self._is_disabled:
             out_s = "# Disabled since this is already declared\n# " + out_s
+        if self._unhandled_tokens != "":
+            out_s += "\n# Unhandled tokens: " + self._unhandled_tokens
 
         return out_s

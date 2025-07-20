@@ -20,7 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.typing import TypeMapper
+from c_binder_mojo.typing import TypeMapper, MOJO_FUNCTIONS
 
 
 
@@ -32,6 +32,7 @@ struct FunctionDeclNode(NodeAstLike):
     var _node_state: MessageableEnum
     var _record_decl_level: Int
     var _is_disabled: Bool
+    var _mem_address: String
 
     var _is_no_throw: Bool
     var _is_pure: Bool
@@ -56,6 +57,7 @@ struct FunctionDeclNode(NodeAstLike):
         self._node_state = NodeState.COMPLETED
         self._record_decl_level = ast_entries.level
         self._is_prev = ast_entries.is_prev
+        self._mem_address = ast_entries.mem_address
         self._is_disabled = False
 
         self._is_no_throw = False
@@ -165,16 +167,20 @@ struct FunctionDeclNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
+            # print()
             if self._is_prev:
                 self.disable_previous_declarations(module_interface)
+            if self._function_name in MOJO_FUNCTIONS:
+                self.disable()
+            
             self._node_state = NodeState.COMPLETED
 
     fn disable_previous_declarations(self, mut module_interface: ModuleInterface):
         for node in module_interface.nodes()[]:
             if node.node[].isa[FunctionDeclNode]():
+                # TODO(josiahls): Should add an equality function so that we only duplicate, not overloaded function defitiions.
                 print("Disabling previous declaration: " + node.node[][FunctionDeclNode]._function_name)
-                if node.node[][FunctionDeclNode]._is_implicit \
-                   and node.node[][FunctionDeclNode]._function_name == self._function_name:
+                if node.node[][FunctionDeclNode]._function_name == self._function_name and node.node[][FunctionDeclNode]._mem_address != self._mem_address:
                     node.node[][FunctionDeclNode].disable()
 
     fn disable(mut self):

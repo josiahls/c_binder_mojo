@@ -1,5 +1,9 @@
+from sys.ffi import DLHandle
+from os import abort, getenv, setenv
+from python._cpython import ExternalFunction
 from sys.ffi import _Global
 from sys import ffi, alignof, simdwidthof
+from utils import StaticTuple
 
 
 alias __int128_t = Int128
@@ -7,20 +11,122 @@ alias __int128_t = Int128
 alias __uint128_t = UInt128
 
 alias __NSConstantString = __NSConstantString_tag
-struct __NSConstantString_tag:
+@register_passable("trivial")
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 
 
+alias __SVInt8_t = Int8
+
+alias __SVInt16_t = Int16
+
+alias __SVInt32_t = Int32
+
+alias __SVInt64_t = Int64
+
+alias __SVUint8_t = UInt8
+
+alias __SVUint16_t = UInt16
+
+alias __SVUint32_t = UInt32
+
+alias __SVUint64_t = UInt64
+
+alias __SVFloat16_t = Float16
+
+alias __SVFloat32_t = Float32
+
+alias __SVFloat64_t = Float64
+
+alias __SVBFloat16_t = BFloat16
+
+alias __clang_svint8x2_t = UnsafePointer[Int8]
+
+alias __clang_svint16x2_t = UnsafePointer[Int16]
+
+alias __clang_svint32x2_t = UnsafePointer[Int32]
+
+alias __clang_svint64x2_t = UnsafePointer[Int64]
+
+alias __clang_svuint8x2_t = UnsafePointer[UInt8]
+
+alias __clang_svuint16x2_t = UnsafePointer[UInt16]
+
+alias __clang_svuint32x2_t = UnsafePointer[UInt32]
+
+alias __clang_svuint64x2_t = UnsafePointer[UInt64]
+
+alias __clang_svfloat16x2_t = UnsafePointer[Float16]
+
+alias __clang_svfloat32x2_t = UnsafePointer[Float32]
+
+alias __clang_svfloat64x2_t = UnsafePointer[Float64]
+
+alias __clang_svbfloat16x2_t = UnsafePointer[BFloat16]
+
+alias __clang_svint8x3_t = UnsafePointer[Int8]
+
+alias __clang_svint16x3_t = UnsafePointer[Int16]
+
+alias __clang_svint32x3_t = UnsafePointer[Int32]
+
+alias __clang_svint64x3_t = UnsafePointer[Int64]
+
+alias __clang_svuint8x3_t = UnsafePointer[UInt8]
+
+alias __clang_svuint16x3_t = UnsafePointer[UInt16]
+
+alias __clang_svuint32x3_t = UnsafePointer[UInt32]
+
+alias __clang_svuint64x3_t = UnsafePointer[UInt64]
+
+alias __clang_svfloat16x3_t = UnsafePointer[Float16]
+
+alias __clang_svfloat32x3_t = UnsafePointer[Float32]
+
+alias __clang_svfloat64x3_t = UnsafePointer[Float64]
+
+alias __clang_svbfloat16x3_t = UnsafePointer[BFloat16]
+
+alias __clang_svint8x4_t = UnsafePointer[Int8]
+
+alias __clang_svint16x4_t = UnsafePointer[Int16]
+
+alias __clang_svint32x4_t = UnsafePointer[Int32]
+
+alias __clang_svint64x4_t = UnsafePointer[Int64]
+
+alias __clang_svuint8x4_t = UnsafePointer[UInt8]
+
+alias __clang_svuint16x4_t = UnsafePointer[UInt16]
+
+alias __clang_svuint32x4_t = UnsafePointer[UInt32]
+
+alias __clang_svuint64x4_t = UnsafePointer[UInt64]
+
+alias __clang_svfloat16x4_t = UnsafePointer[Float16]
+
+alias __clang_svfloat32x4_t = UnsafePointer[Float32]
+
+alias __clang_svfloat64x4_t = UnsafePointer[Float64]
+
+alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
+
+alias __SVBool_t = Bool
+
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
-alias __builtin_va_list = OpaquePointer # __va_list_tag[1]
-struct __va_list_tag:
+alias __builtin_va_list = __va_list
+@register_passable("trivial")
+struct __va_list(Copyable & Movable):
 	pass
 
 
 alias size_t = UInt64
 
-alias wchar_t = Int32
+alias wchar_t = UInt32
+
+alias _Float128 = Float64
 
 alias _Float32 = Float32
 
@@ -29,19 +135,22 @@ alias _Float64 = Float64
 alias _Float32x = Float64
 
 alias _Float64x = Float64
-struct Anonymous___usr_include_stdlib_h_59_9__line_63_3_:
+@register_passable("trivial")
+struct Anonymous___usr_include_stdlib_h_59_9__line_63_3_(Copyable & Movable):
 	var quot: Int32
 	var rem: Int32
 
 
 alias div_t = Anonymous___usr_include_stdlib_h_59_9__line_63_3_
-struct Anonymous__line_67_9__line_71_3_:
+@register_passable("trivial")
+struct Anonymous__line_67_9__line_71_3_(Copyable & Movable):
 	var quot: Int64
 	var rem: Int64
 
 
 alias ldiv_t = Anonymous__line_67_9__line_71_3_
-struct Anonymous__line_77_23__line_81_3_:
+@register_passable("trivial")
+struct Anonymous__line_77_23__line_81_3_(Copyable & Movable):
 	var quot: Int128
 	var rem: Int128
 
@@ -131,18 +240,19 @@ alias __ino64_t = UInt64
 
 alias __mode_t = UInt32
 
-alias __nlink_t = UInt64
+alias __nlink_t = UInt32
 
 alias __off_t = Int64
 
 alias __off64_t = Int64
 
 alias __pid_t = Int32
-struct Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_:
-	var __val: UnsafePointer[Int32]
+@register_passable("trivial")
+struct Anonymous___usr_include_aarch64_linux_gnu_bits_typesizes_h_72_24__col_47_(Copyable & Movable):
+	var __val: StaticTuple[Int32, 2]
 
 
-alias __fsid_t = Anonymous___usr_include_x86_64_linux_gnu_bits_typesizes_h_73_24__col_47_
+alias __fsid_t = Anonymous___usr_include_aarch64_linux_gnu_bits_typesizes_h_72_24__col_47_
 
 alias __clock_t = Int64
 
@@ -168,7 +278,7 @@ alias __clockid_t = Int32
 
 alias __timer_t = UnsafePointer[NoneType]
 
-alias __blksize_t = Int64
+alias __blksize_t = Int32
 
 alias __blkcnt_t = Int64
 
@@ -224,7 +334,7 @@ alias gid_t = UInt32
 
 alias mode_t = UInt32
 
-alias nlink_t = UInt64
+alias nlink_t = UInt32
 
 alias uid_t = UInt32
 
@@ -280,18 +390,21 @@ alias __bswap_64 = fn(__bsx: __uint64_t) -> __uint64_t
 alias __uint16_identity = fn(__x: __uint16_t) -> __uint16_t
 alias __uint32_identity = fn(__x: __uint32_t) -> __uint32_t
 alias __uint64_identity = fn(__x: __uint64_t) -> __uint64_t
-struct Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_:
-	var __val: UnsafePointer[UInt64]
+@register_passable("trivial")
+struct Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_(Copyable & Movable):
+	var __val: StaticTuple[UInt64, 16]
 
 
-alias __sigset_t = Anonymous___usr_include_x86_64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_
+alias __sigset_t = Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_
 
 alias sigset_t = __sigset_t
-struct timeval:
+@register_passable("trivial")
+struct timeval(Copyable & Movable):
 	var tv_sec: __time_t
 	var tv_usec: __suseconds_t
 
-struct timespec:
+@register_passable("trivial")
+struct timespec(Copyable & Movable):
 	var tv_sec: __time_t
 	var tv_nsec: __syscall_slong_t
 
@@ -299,8 +412,9 @@ struct timespec:
 alias suseconds_t = Int64
 
 alias __fd_mask = Int64
-struct Anonymous__line_59_9__line_70_3_:
-	var __fds_bits: UnsafePointer[__fd_mask]
+@register_passable("trivial")
+struct Anonymous__line_59_9__line_70_3_(Copyable & Movable):
+	var __fds_bits: StaticTuple[__fd_mask, 16]
 
 
 alias fd_set = Anonymous__line_59_9__line_70_3_
@@ -309,46 +423,51 @@ alias fd_mask = Int64
 alias select = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], __timeout: UnsafePointer[timeval]) -> Int32
 alias pselect = fn(__nfds: Int32, __readfds: UnsafePointer[fd_set], __writefds: UnsafePointer[fd_set], __exceptfds: UnsafePointer[fd_set], read __timeout: UnsafePointer[timespec], read __sigmask: UnsafePointer[__sigset_t]) -> Int32
 
-alias blksize_t = Int64
+alias blksize_t = Int32
 
 alias blkcnt_t = Int64
 
 alias fsblkcnt_t = UInt64
 
 alias fsfilcnt_t = UInt64
-struct _Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_:
+@register_passable("trivial")
+struct _Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_(Copyable & Movable):
 	var __low: UInt32
 	var __high: UInt32
 
 
-struct Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_:
+@register_passable("trivial")
+struct Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_(Copyable & Movable):
 	var __value64: UInt128
-	var __value32: _Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_
+	var __value32: _Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_
 
 
-alias __atomic_wide_counter = Anonymous___usr_include_x86_64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_
-struct __pthread_internal_list:
+alias __atomic_wide_counter = Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_
+@register_passable("trivial")
+struct __pthread_internal_list(Copyable & Movable):
 	var __prev: UnsafePointer[__pthread_internal_list]
 	var __next: UnsafePointer[__pthread_internal_list]
 
 
 alias __pthread_list_t = __pthread_internal_list
-struct __pthread_internal_slist:
+@register_passable("trivial")
+struct __pthread_internal_slist(Copyable & Movable):
 	var __next: UnsafePointer[__pthread_internal_slist]
 
 
 alias __pthread_slist_t = __pthread_internal_slist
-struct __pthread_mutex_s:
+@register_passable("trivial")
+struct __pthread_mutex_s(Copyable & Movable):
 	var __lock: Int32
 	var __count: UInt32
 	var __owner: Int32
 	var __nusers: UInt32
 	var __kind: Int32
-	var __spins: Int16
-	var __elision: Int16
+	var __spins: Int32
 	var __list: __pthread_list_t
 
-struct __pthread_rwlock_arch_t:
+@register_passable("trivial")
+struct __pthread_rwlock_arch_t(Copyable & Movable):
 	var __readers: UInt32
 	var __writers: UInt32
 	var __wrphase_futex: UInt32
@@ -357,39 +476,42 @@ struct __pthread_rwlock_arch_t:
 	var __pad4: UInt32
 	var __cur_writer: Int32
 	var __shared: Int32
-	var __rwelision: Int8
-	var __pad1: UnsafePointer[UInt8]
+	var __pad1: UInt64
 	var __pad2: UInt64
 	var __flags: UInt32
 
-struct __pthread_cond_s:
+@register_passable("trivial")
+struct __pthread_cond_s(Copyable & Movable):
 	var __wseq: __atomic_wide_counter
 	var __g1_start: __atomic_wide_counter
-	var __g_refs: UnsafePointer[UInt32]
-	var __g_size: UnsafePointer[UInt32]
+	var __g_refs: StaticTuple[UInt32, 2]
+	var __g_size: StaticTuple[UInt32, 2]
 	var __g1_orig_size: UInt32
 	var __wrefs: UInt32
-	var __g_signals: UnsafePointer[UInt32]
+	var __g_signals: StaticTuple[UInt32, 2]
 
 
 alias __tss_t = UInt32
 
 alias __thrd_t = UInt64
-struct Anonymous__line_108_9__line_111_1_:
+@register_passable("trivial")
+struct Anonymous__line_108_9__line_111_1_(Copyable & Movable):
 	var __data: Int32
 
 
 alias __once_flag = Anonymous__line_108_9__line_111_1_
 
 alias pthread_t = UInt64
-struct Anonymous__line_32_9__line_36_1_:
-	var __size: UnsafePointer[Int8]
+@register_passable("trivial")
+struct Anonymous__line_32_9__line_36_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int32
 
 
 alias pthread_mutexattr_t = Anonymous__line_32_9__line_36_1_
-struct Anonymous__line_41_9__line_45_1_:
-	var __size: UnsafePointer[Int8]
+@register_passable("trivial")
+struct Anonymous__line_41_9__line_45_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int32
 
 
@@ -398,49 +520,56 @@ alias pthread_condattr_t = Anonymous__line_41_9__line_45_1_
 alias pthread_key_t = UInt32
 
 alias pthread_once_t = Int32
-struct pthread_attr_t:
-	var __size: UnsafePointer[Int8]
+@register_passable("trivial")
+struct pthread_attr_t(Copyable & Movable):
+	var __size: StaticTuple[Int8, 64]
 	var __align: Int64
 
 # Disabled since this is already declared
 # alias pthread_attr_t = pthread_attr_t
-struct Anonymous__line_67_9__line_72_1_:
+@register_passable("trivial")
+struct Anonymous__line_67_9__line_72_1_(Copyable & Movable):
 	var __data: __pthread_mutex_s
-	var __size: UnsafePointer[Int8]
+	var __size: StaticTuple[Int8, 48]
 	var __align: Int64
 
 
 alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
-struct Anonymous__line_75_9__line_80_1_:
+@register_passable("trivial")
+struct Anonymous__line_75_9__line_80_1_(Copyable & Movable):
 	var __data: __pthread_cond_s
-	var __size: UnsafePointer[Int8]
+	var __size: StaticTuple[Int8, 48]
 	var __align: Int128
 
 
 alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
-struct Anonymous__line_86_9__line_91_1_:
+@register_passable("trivial")
+struct Anonymous__line_86_9__line_91_1_(Copyable & Movable):
 	var __data: __pthread_rwlock_arch_t
-	var __size: UnsafePointer[Int8]
+	var __size: StaticTuple[Int8, 56]
 	var __align: Int64
 
 
 alias pthread_rwlock_t = Anonymous__line_86_9__line_91_1_
-struct Anonymous__line_93_9__line_97_1_:
-	var __size: UnsafePointer[Int8]
+@register_passable("trivial")
+struct Anonymous__line_93_9__line_97_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int64
 
 
 alias pthread_rwlockattr_t = Anonymous__line_93_9__line_97_1_
 
 alias pthread_spinlock_t = Int32
-struct Anonymous__line_108_9__line_112_1_:
-	var __size: UnsafePointer[Int8]
+@register_passable("trivial")
+struct Anonymous__line_108_9__line_112_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 32]
 	var __align: Int64
 
 
 alias pthread_barrier_t = Anonymous__line_108_9__line_112_1_
-struct Anonymous__line_114_9__line_118_1_:
-	var __size: UnsafePointer[Int8]
+@register_passable("trivial")
+struct Anonymous__line_114_9__line_118_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int32
 
 
@@ -449,7 +578,8 @@ alias random = fn() -> Int64
 alias srandom = fn(__seed: UInt32) -> NoneType
 alias initstate = fn(__seed: UInt32, __statebuf: UnsafePointer[Int8], __statelen: size_t) -> UnsafePointer[Int8]
 alias setstate = fn(__statebuf: UnsafePointer[Int8]) -> UnsafePointer[Int8]
-struct random_data:
+@register_passable("trivial")
+struct random_data(Copyable & Movable):
 	var fptr: UnsafePointer[Int32]
 	var rptr: UnsafePointer[Int32]
 	var state: UnsafePointer[Int32]
@@ -474,9 +604,10 @@ alias jrand48 = fn(__xsubi: UnsafePointer[UInt16]) -> Int64
 alias srand48 = fn(__seedval: Int64) -> NoneType
 alias seed48 = fn(__seed16v: UnsafePointer[UInt16]) -> UnsafePointer[UInt16]
 alias lcong48 = fn(__param: UnsafePointer[UInt16]) -> NoneType
-struct drand48_data:
-	var __x: UnsafePointer[UInt16]
-	var __old_x: UnsafePointer[UInt16]
+@register_passable("trivial")
+struct drand48_data(Copyable & Movable):
+	var __x: StaticTuple[UInt16, 3]
+	var __old_x: StaticTuple[UInt16, 3]
 	var __c: UInt16
 	var __init: UInt16
 	var __a: UInt128
@@ -498,7 +629,7 @@ alias calloc = fn(__nmemb: size_t, __size: size_t) -> OpaquePointer
 alias realloc = fn(__ptr: OpaquePointer, __size: size_t) -> OpaquePointer
  # Disabled either due to a redefinition or a previous declaration: alias free = fn(OpaquePointer) -> NoneType
 alias free = fn(__ptr: OpaquePointer) -> NoneType
-alias reallocarray = fn(__ptr: OpaquePointer, __nmemb: size_t, __size: size_t) -> OpaquePointer
+ # Disabled either due to a redefinition or a previous declaration: alias reallocarray = fn(__ptr: OpaquePointer, __nmemb: size_t, __size: size_t) -> OpaquePointer
 alias reallocarray = fn(__ptr: OpaquePointer, __nmemb: size_t, __size: size_t) -> OpaquePointer
  # Disabled either due to a redefinition or a previous declaration: alias alloca = fn(UInt64) -> OpaquePointer
 alias alloca = fn(__size: size_t) -> OpaquePointer
@@ -507,7 +638,7 @@ alias posix_memalign = fn(__memptr: UnsafePointer[OpaquePointer], __alignment: s
  # Disabled either due to a redefinition or a previous declaration: alias aligned_alloc = fn(UInt64, UInt64) -> OpaquePointer
 alias aligned_alloc = fn(__alignment: size_t, __size: size_t) -> OpaquePointer
  # Disabled either due to a redefinition or a previous declaration: alias abort = fn() -> NoneType
-alias abort = fn() -> NoneType
+ # Disabled either due to a redefinition or a previous declaration: alias abort = fn() -> NoneType
 alias atexit = fn(__func: fn() -> NoneType) -> Int32
 alias at_quick_exit = fn(__func: fn() -> NoneType) -> Int32
 alias on_exit = fn(__func: fn(Int32, OpaquePointer) -> NoneType, __arg: OpaquePointer) -> Int32
@@ -516,9 +647,9 @@ alias exit = fn(__status: Int32) -> NoneType
 alias quick_exit = fn(__status: Int32) -> NoneType
  # Disabled either due to a redefinition or a previous declaration: alias _Exit = fn(Int32) -> NoneType
 alias _Exit = fn(__status: Int32) -> NoneType
-alias getenv = fn(read __name: UnsafePointer[Int8]) -> UnsafePointer[Int8]
+ # Disabled either due to a redefinition or a previous declaration: alias getenv = fn(read __name: UnsafePointer[Int8]) -> UnsafePointer[Int8]
 alias putenv = fn(__string: UnsafePointer[Int8]) -> Int32
-alias setenv = fn(read __name: UnsafePointer[Int8], read __value: UnsafePointer[Int8], __replace: Int32) -> Int32
+ # Disabled either due to a redefinition or a previous declaration: alias setenv = fn(read __name: UnsafePointer[Int8], read __value: UnsafePointer[Int8], __replace: Int32) -> Int32
 alias unsetenv = fn(read __name: UnsafePointer[Int8]) -> Int32
 alias clearenv = fn() -> Int32
 alias mktemp = fn(__template: UnsafePointer[Int8]) -> UnsafePointer[Int8]
@@ -556,7 +687,7 @@ alias wctomb = fn(__s: UnsafePointer[Int8], __wchar: wchar_t) -> Int32
 alias mbstowcs = fn(__pwcs: UnsafePointer[wchar_t], read __s: UnsafePointer[Int8], __n: size_t) -> size_t
 alias wcstombs = fn(__s: UnsafePointer[Int8], read __pwcs: UnsafePointer[wchar_t], __n: size_t) -> size_t
 alias rpmatch = fn(read __response: UnsafePointer[Int8]) -> Int32
-alias getsubopt = fn(__optionp: UnsafePointer[UnsafePointer[Int8]], __tokens: UnsafePointer[char *const], __valuep: UnsafePointer[UnsafePointer[Int8]]) -> Int32
+alias getsubopt = fn(__optionp: UnsafePointer[UnsafePointer[Int8]], __tokens: UnsafePointer[UnsafePointer[Int8]], __valuep: UnsafePointer[UnsafePointer[Int8]]) -> Int32
 alias getloadavg = fn(__loadavg: UnsafePointer[Float64], __nelem: Int32) -> Int32
 
 alias float_t = Float32
@@ -1188,7 +1319,8 @@ alias FP_NORMAL: Int = 4
 
 
 alias ptrdiff_t = Int64
-struct Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_:
+@register_passable("trivial")
+struct Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_(Copyable & Movable):
 	var __clang_max_align_nonce1: Int128
 	var __clang_max_align_nonce2: Float64
 
@@ -1248,7 +1380,8 @@ alias mjtNum = Float64
 alias mjtByte = UInt8
 #-------------------------------------- byte definition -------------------------------------------
 
-struct mjtDisableBit_: # Enum
+@register_passable("trivial")
+struct mjtDisableBit_(Copyable & Movable): # Enum
 
 	#---------------------------------- enum types (mjt) ----------------------------------------------
 	alias mjDSBL_CONSTRAINT: Int = 1
@@ -1274,7 +1407,8 @@ struct mjtDisableBit_: # Enum
 alias mjtDisableBit = mjtDisableBit_
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
-struct mjtEnableBit_: # Enum
+@register_passable("trivial")
+struct mjtEnableBit_(Copyable & Movable): # Enum
 	alias mjENBL_OVERRIDE: Int = 1
 	alias mjENBL_ENERGY: Int = 2
 	alias mjENBL_FWDINV: Int = 4
@@ -1285,7 +1419,8 @@ struct mjtEnableBit_: # Enum
 
 
 alias mjtEnableBit = mjtEnableBit_
-struct mjtJoint_: # Enum
+@register_passable("trivial")
+struct mjtJoint_(Copyable & Movable): # Enum
 	alias mjJNT_FREE: Int = 0
 	alias mjJNT_BALL: Int = 1
 	alias mjJNT_SLIDE: Int = 2
@@ -1293,7 +1428,8 @@ struct mjtJoint_: # Enum
 
 
 alias mjtJoint = mjtJoint_
-struct mjtGeom_: # Enum
+@register_passable("trivial")
+struct mjtGeom_(Copyable & Movable): # Enum
 	alias mjGEOM_PLANE: Int = 0
 	alias mjGEOM_HFIELD: Int = 1
 	alias mjGEOM_SPHERE: Int = 2
@@ -1317,7 +1453,8 @@ struct mjtGeom_: # Enum
 
 
 alias mjtGeom = mjtGeom_
-struct mjtCamLight_: # Enum
+@register_passable("trivial")
+struct mjtCamLight_(Copyable & Movable): # Enum
 	alias mjCAMLIGHT_FIXED: Int = 0
 	alias mjCAMLIGHT_TRACK: Int = 1
 	alias mjCAMLIGHT_TRACKCOM: Int = 2
@@ -1326,14 +1463,25 @@ struct mjtCamLight_: # Enum
 
 
 alias mjtCamLight = mjtCamLight_
-struct mjtTexture_: # Enum
+@register_passable("trivial")
+struct mjtLightType_(Copyable & Movable): # Enum
+	alias mjLIGHT_SPOT: Int = 0
+	alias mjLIGHT_DIRECTIONAL: Int = 1
+	alias mjLIGHT_POINT: Int = 2
+	alias mjLIGHT_IMAGE: Int = 3
+
+
+alias mjtLightType = mjtLightType_
+@register_passable("trivial")
+struct mjtTexture_(Copyable & Movable): # Enum
 	alias mjTEXTURE_2D: Int = 0
 	alias mjTEXTURE_CUBE: Int = 1
 	alias mjTEXTURE_SKYBOX: Int = 2
 
 
 alias mjtTexture = mjtTexture_
-struct mjtTextureRole_: # Enum
+@register_passable("trivial")
+struct mjtTextureRole_(Copyable & Movable): # Enum
 	alias mjTEXROLE_USER: Int = 0
 	alias mjTEXROLE_RGB: Int = 1
 	alias mjTEXROLE_OCCLUSION: Int = 2
@@ -1348,7 +1496,16 @@ struct mjtTextureRole_: # Enum
 
 
 alias mjtTextureRole = mjtTextureRole_
-struct mjtIntegrator_: # Enum
+@register_passable("trivial")
+struct mjtColorSpace_(Copyable & Movable): # Enum
+	alias mjCOLORSPACE_AUTO: Int = 0
+	alias mjCOLORSPACE_LINEAR: Int = 1
+	alias mjCOLORSPACE_SRGB: Int = 2
+
+
+alias mjtColorSpace = mjtColorSpace_
+@register_passable("trivial")
+struct mjtIntegrator_(Copyable & Movable): # Enum
 	alias mjINT_EULER: Int = 0
 	alias mjINT_RK4: Int = 1
 	alias mjINT_IMPLICIT: Int = 2
@@ -1356,27 +1513,31 @@ struct mjtIntegrator_: # Enum
 
 
 alias mjtIntegrator = mjtIntegrator_
-struct mjtCone_: # Enum
+@register_passable("trivial")
+struct mjtCone_(Copyable & Movable): # Enum
 	alias mjCONE_PYRAMIDAL: Int = 0
 	alias mjCONE_ELLIPTIC: Int = 1
 
 
 alias mjtCone = mjtCone_
-struct mjtJacobian_: # Enum
+@register_passable("trivial")
+struct mjtJacobian_(Copyable & Movable): # Enum
 	alias mjJAC_DENSE: Int = 0
 	alias mjJAC_SPARSE: Int = 1
 	alias mjJAC_AUTO: Int = 2
 
 
 alias mjtJacobian = mjtJacobian_
-struct mjtSolver_: # Enum
+@register_passable("trivial")
+struct mjtSolver_(Copyable & Movable): # Enum
 	alias mjSOL_PGS: Int = 0
 	alias mjSOL_CG: Int = 1
 	alias mjSOL_NEWTON: Int = 2
 
 
 alias mjtSolver = mjtSolver_
-struct mjtEq_: # Enum
+@register_passable("trivial")
+struct mjtEq_(Copyable & Movable): # Enum
 	alias mjEQ_CONNECT: Int = 0
 	alias mjEQ_WELD: Int = 1
 	alias mjEQ_JOINT: Int = 2
@@ -1386,7 +1547,8 @@ struct mjtEq_: # Enum
 
 
 alias mjtEq = mjtEq_
-struct mjtWrap_: # Enum
+@register_passable("trivial")
+struct mjtWrap_(Copyable & Movable): # Enum
 	alias mjWRAP_NONE: Int = 0
 	alias mjWRAP_JOINT: Int = 1
 	alias mjWRAP_PULLEY: Int = 2
@@ -1396,7 +1558,8 @@ struct mjtWrap_: # Enum
 
 
 alias mjtWrap = mjtWrap_
-struct mjtTrn_: # Enum
+@register_passable("trivial")
+struct mjtTrn_(Copyable & Movable): # Enum
 	alias mjTRN_JOINT: Int = 0
 	alias mjTRN_JOINTINPARENT: Int = 1
 	alias mjTRN_SLIDERCRANK: Int = 2
@@ -1407,7 +1570,8 @@ struct mjtTrn_: # Enum
 
 
 alias mjtTrn = mjtTrn_
-struct mjtDyn_: # Enum
+@register_passable("trivial")
+struct mjtDyn_(Copyable & Movable): # Enum
 	alias mjDYN_NONE: Int = 0
 	alias mjDYN_INTEGRATOR: Int = 1
 	alias mjDYN_FILTER: Int = 2
@@ -1417,7 +1581,8 @@ struct mjtDyn_: # Enum
 
 
 alias mjtDyn = mjtDyn_
-struct mjtGain_: # Enum
+@register_passable("trivial")
+struct mjtGain_(Copyable & Movable): # Enum
 	alias mjGAIN_FIXED: Int = 0
 	alias mjGAIN_AFFINE: Int = 1
 	alias mjGAIN_MUSCLE: Int = 2
@@ -1425,7 +1590,8 @@ struct mjtGain_: # Enum
 
 
 alias mjtGain = mjtGain_
-struct mjtBias_: # Enum
+@register_passable("trivial")
+struct mjtBias_(Copyable & Movable): # Enum
 	alias mjBIAS_NONE: Int = 0
 	alias mjBIAS_AFFINE: Int = 1
 	alias mjBIAS_MUSCLE: Int = 2
@@ -1433,7 +1599,8 @@ struct mjtBias_: # Enum
 
 
 alias mjtBias = mjtBias_
-struct mjtObj_: # Enum
+@register_passable("trivial")
+struct mjtObj_(Copyable & Movable): # Enum
 	alias mjOBJ_UNKNOWN: Int = 0
 	alias mjOBJ_BODY: Int = 1
 	alias mjOBJ_XBODY: Int = 2
@@ -1467,7 +1634,8 @@ struct mjtObj_: # Enum
 
 
 alias mjtObj = mjtObj_
-struct mjtConstraint_: # Enum
+@register_passable("trivial")
+struct mjtConstraint_(Copyable & Movable): # Enum
 	alias mjCNSTR_EQUALITY: Int = 0
 	alias mjCNSTR_FRICTION_DOF: Int = 1
 	alias mjCNSTR_FRICTION_TENDON: Int = 2
@@ -1479,7 +1647,8 @@ struct mjtConstraint_: # Enum
 
 
 alias mjtConstraint = mjtConstraint_
-struct mjtConstraintState_: # Enum
+@register_passable("trivial")
+struct mjtConstraintState_(Copyable & Movable): # Enum
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 	alias mjCNSTRSTATE_QUADRATIC: Int = 1
 	alias mjCNSTRSTATE_LINEARNEG: Int = 2
@@ -1488,7 +1657,8 @@ struct mjtConstraintState_: # Enum
 
 
 alias mjtConstraintState = mjtConstraintState_
-struct mjtSensor_: # Enum
+@register_passable("trivial")
+struct mjtSensor_(Copyable & Movable): # Enum
 	alias mjSENS_TOUCH: Int = 0
 	alias mjSENS_ACCELEROMETER: Int = 1
 	alias mjSENS_VELOCIMETER: Int = 2
@@ -1506,38 +1676,42 @@ struct mjtSensor_: # Enum
 	alias mjSENS_ACTUATORVEL: Int = 14
 	alias mjSENS_ACTUATORFRC: Int = 15
 	alias mjSENS_JOINTACTFRC: Int = 16
-	alias mjSENS_BALLQUAT: Int = 17
-	alias mjSENS_BALLANGVEL: Int = 18
-	alias mjSENS_JOINTLIMITPOS: Int = 19
-	alias mjSENS_JOINTLIMITVEL: Int = 20
-	alias mjSENS_JOINTLIMITFRC: Int = 21
-	alias mjSENS_TENDONLIMITPOS: Int = 22
-	alias mjSENS_TENDONLIMITVEL: Int = 23
-	alias mjSENS_TENDONLIMITFRC: Int = 24
-	alias mjSENS_FRAMEPOS: Int = 25
-	alias mjSENS_FRAMEQUAT: Int = 26
-	alias mjSENS_FRAMEXAXIS: Int = 27
-	alias mjSENS_FRAMEYAXIS: Int = 28
-	alias mjSENS_FRAMEZAXIS: Int = 29
-	alias mjSENS_FRAMELINVEL: Int = 30
-	alias mjSENS_FRAMEANGVEL: Int = 31
-	alias mjSENS_FRAMELINACC: Int = 32
-	alias mjSENS_FRAMEANGACC: Int = 33
-	alias mjSENS_SUBTREECOM: Int = 34
-	alias mjSENS_SUBTREELINVEL: Int = 35
-	alias mjSENS_SUBTREEANGMOM: Int = 36
-	alias mjSENS_GEOMDIST: Int = 37
-	alias mjSENS_GEOMNORMAL: Int = 38
-	alias mjSENS_GEOMFROMTO: Int = 39
-	alias mjSENS_E_POTENTIAL: Int = 40
-	alias mjSENS_E_KINETIC: Int = 41
-	alias mjSENS_CLOCK: Int = 42
-	alias mjSENS_PLUGIN: Int = 43
-	alias mjSENS_USER: Int = 44
+	alias mjSENS_TENDONACTFRC: Int = 17
+	alias mjSENS_BALLQUAT: Int = 18
+	alias mjSENS_BALLANGVEL: Int = 19
+	alias mjSENS_JOINTLIMITPOS: Int = 20
+	alias mjSENS_JOINTLIMITVEL: Int = 21
+	alias mjSENS_JOINTLIMITFRC: Int = 22
+	alias mjSENS_TENDONLIMITPOS: Int = 23
+	alias mjSENS_TENDONLIMITVEL: Int = 24
+	alias mjSENS_TENDONLIMITFRC: Int = 25
+	alias mjSENS_FRAMEPOS: Int = 26
+	alias mjSENS_FRAMEQUAT: Int = 27
+	alias mjSENS_FRAMEXAXIS: Int = 28
+	alias mjSENS_FRAMEYAXIS: Int = 29
+	alias mjSENS_FRAMEZAXIS: Int = 30
+	alias mjSENS_FRAMELINVEL: Int = 31
+	alias mjSENS_FRAMEANGVEL: Int = 32
+	alias mjSENS_FRAMELINACC: Int = 33
+	alias mjSENS_FRAMEANGACC: Int = 34
+	alias mjSENS_SUBTREECOM: Int = 35
+	alias mjSENS_SUBTREELINVEL: Int = 36
+	alias mjSENS_SUBTREEANGMOM: Int = 37
+	alias mjSENS_INSIDESITE: Int = 38
+	alias mjSENS_GEOMDIST: Int = 39
+	alias mjSENS_GEOMNORMAL: Int = 40
+	alias mjSENS_GEOMFROMTO: Int = 41
+	alias mjSENS_CONTACT: Int = 42
+	alias mjSENS_E_POTENTIAL: Int = 43
+	alias mjSENS_E_KINETIC: Int = 44
+	alias mjSENS_CLOCK: Int = 45
+	alias mjSENS_PLUGIN: Int = 46
+	alias mjSENS_USER: Int = 47
 
 
 alias mjtSensor = mjtSensor_
-struct mjtStage_: # Enum
+@register_passable("trivial")
+struct mjtStage_(Copyable & Movable): # Enum
 	alias mjSTAGE_NONE: Int = 0
 	alias mjSTAGE_POS: Int = 1
 	alias mjSTAGE_VEL: Int = 2
@@ -1545,7 +1719,8 @@ struct mjtStage_: # Enum
 
 
 alias mjtStage = mjtStage_
-struct mjtDataType_: # Enum
+@register_passable("trivial")
+struct mjtDataType_(Copyable & Movable): # Enum
 	alias mjDATATYPE_REAL: Int = 0
 	alias mjDATATYPE_POSITIVE: Int = 1
 	alias mjDATATYPE_AXIS: Int = 2
@@ -1553,7 +1728,21 @@ struct mjtDataType_: # Enum
 
 
 alias mjtDataType = mjtDataType_
-struct mjtSameFrame_: # Enum
+@register_passable("trivial")
+struct mjtConDataField_(Copyable & Movable): # Enum
+	alias mjCONDATA_FOUND: Int = 0
+	alias mjCONDATA_FORCE: Int = 1
+	alias mjCONDATA_TORQUE: Int = 2
+	alias mjCONDATA_DIST: Int = 3
+	alias mjCONDATA_POS: Int = 4
+	alias mjCONDATA_NORMAL: Int = 5
+	alias mjCONDATA_TANGENT: Int = 6
+	alias mjNCONDATA: Int = 7
+
+
+alias mjtConDataField = mjtConDataField_
+@register_passable("trivial")
+struct mjtSameFrame_(Copyable & Movable): # Enum
 	alias mjSAMEFRAME_NONE: Int = 0
 	alias mjSAMEFRAME_BODY: Int = 1
 	alias mjSAMEFRAME_INERTIA: Int = 2
@@ -1562,7 +1751,8 @@ struct mjtSameFrame_: # Enum
 
 
 alias mjtSameFrame = mjtSameFrame_
-struct mjtLRMode_: # Enum
+@register_passable("trivial")
+struct mjtLRMode_(Copyable & Movable): # Enum
 	alias mjLRMODE_NONE: Int = 0
 	alias mjLRMODE_MUSCLE: Int = 1
 	alias mjLRMODE_MUSCLEUSER: Int = 2
@@ -1570,7 +1760,8 @@ struct mjtLRMode_: # Enum
 
 
 alias mjtLRMode = mjtLRMode_
-struct mjtFlexSelf_: # Enum
+@register_passable("trivial")
+struct mjtFlexSelf_(Copyable & Movable): # Enum
 	alias mjFLEXSELF_NONE: Int = 0
 	alias mjFLEXSELF_NARROW: Int = 1
 	alias mjFLEXSELF_BVH: Int = 2
@@ -1579,7 +1770,17 @@ struct mjtFlexSelf_: # Enum
 
 
 alias mjtFlexSelf = mjtFlexSelf_
-struct mjLROpt_:
+@register_passable("trivial")
+struct mjtSDFType_(Copyable & Movable): # Enum
+	alias mjSDFTYPE_SINGLE: Int = 0
+	alias mjSDFTYPE_INTERSECTION: Int = 1
+	alias mjSDFTYPE_MIDSURFACE: Int = 2
+	alias mjSDFTYPE_COLLISION: Int = 3
+
+
+alias mjtSDFType = mjtSDFType_
+@register_passable("trivial")
+struct mjLROpt_(Copyable & Movable):
 	var mode: Int32
 	var useexisting: Int32
 	var uselimit: Int32
@@ -1593,12 +1794,14 @@ struct mjLROpt_:
 
 
 alias mjLROpt = mjLROpt_
-struct mjVFS_:
+@register_passable("trivial")
+struct mjVFS_(Copyable & Movable):
 	var impl_: OpaquePointer
 
 
 alias mjVFS = mjVFS_
-struct mjOption_:
+@register_passable("trivial")
+struct mjOption_(Copyable & Movable):
 	var timestep: mjtNum
 	var apirate: mjtNum
 	var impratio: mjtNum
@@ -1606,15 +1809,15 @@ struct mjOption_:
 	var ls_tolerance: mjtNum
 	var noslip_tolerance: mjtNum
 	var ccd_tolerance: mjtNum
-	var gravity: UnsafePointer[mjtNum]
-	var wind: UnsafePointer[mjtNum]
-	var magnetic: UnsafePointer[mjtNum]
+	var gravity: StaticTuple[mjtNum, 3]
+	var wind: StaticTuple[mjtNum, 3]
+	var magnetic: StaticTuple[mjtNum, 3]
 	var density: mjtNum
 	var viscosity: mjtNum
 	var o_margin: mjtNum
-	var o_solref: UnsafePointer[mjtNum]
-	var o_solimp: UnsafePointer[mjtNum]
-	var o_friction: UnsafePointer[mjtNum]
+	var o_solref: StaticTuple[mjtNum, 2]
+	var o_solimp: StaticTuple[mjtNum, 5]
+	var o_friction: StaticTuple[mjtNum, 5]
 	var integrator: Int32
 	var cone: Int32
 	var jacobian: Int32
@@ -1631,35 +1834,37 @@ struct mjOption_:
 
 
 alias mjOption = mjOption_
-struct _mjVisual__Anonymous__line_552_3__line_578_3_:
-	var fog: UnsafePointer[Float32]
-	var haze: UnsafePointer[Float32]
-	var force: UnsafePointer[Float32]
-	var inertia: UnsafePointer[Float32]
-	var joint: UnsafePointer[Float32]
-	var actuator: UnsafePointer[Float32]
-	var actuatornegative: UnsafePointer[Float32]
-	var actuatorpositive: UnsafePointer[Float32]
-	var com: UnsafePointer[Float32]
-	var camera: UnsafePointer[Float32]
-	var light: UnsafePointer[Float32]
-	var selectpoint: UnsafePointer[Float32]
-	var connect: UnsafePointer[Float32]
-	var contactpoint: UnsafePointer[Float32]
-	var contactforce: UnsafePointer[Float32]
-	var contactfriction: UnsafePointer[Float32]
-	var contacttorque: UnsafePointer[Float32]
-	var contactgap: UnsafePointer[Float32]
-	var rangefinder: UnsafePointer[Float32]
-	var constraint: UnsafePointer[Float32]
-	var slidercrank: UnsafePointer[Float32]
-	var crankbroken: UnsafePointer[Float32]
-	var frustum: UnsafePointer[Float32]
-	var bv: UnsafePointer[Float32]
-	var bvactive: UnsafePointer[Float32]
+@register_passable("trivial")
+struct _mjVisual__Anonymous__line_595_3__line_621_3_(Copyable & Movable):
+	var fog: StaticTuple[Float32, 4]
+	var haze: StaticTuple[Float32, 4]
+	var force: StaticTuple[Float32, 4]
+	var inertia: StaticTuple[Float32, 4]
+	var joint: StaticTuple[Float32, 4]
+	var actuator: StaticTuple[Float32, 4]
+	var actuatornegative: StaticTuple[Float32, 4]
+	var actuatorpositive: StaticTuple[Float32, 4]
+	var com: StaticTuple[Float32, 4]
+	var camera: StaticTuple[Float32, 4]
+	var light: StaticTuple[Float32, 4]
+	var selectpoint: StaticTuple[Float32, 4]
+	var connect: StaticTuple[Float32, 4]
+	var contactpoint: StaticTuple[Float32, 4]
+	var contactforce: StaticTuple[Float32, 4]
+	var contactfriction: StaticTuple[Float32, 4]
+	var contacttorque: StaticTuple[Float32, 4]
+	var contactgap: StaticTuple[Float32, 4]
+	var rangefinder: StaticTuple[Float32, 4]
+	var constraint: StaticTuple[Float32, 4]
+	var slidercrank: StaticTuple[Float32, 4]
+	var crankbroken: StaticTuple[Float32, 4]
+	var frustum: StaticTuple[Float32, 4]
+	var bv: StaticTuple[Float32, 4]
+	var bvactive: StaticTuple[Float32, 4]
 
 
-struct _mjVisual__Anonymous__line_532_3__line_550_3_:
+@register_passable("trivial")
+struct _mjVisual__Anonymous__line_575_3__line_593_3_(Copyable & Movable):
 	var forcewidth: Float32
 	var contactwidth: Float32
 	var contactheight: Float32
@@ -1679,7 +1884,8 @@ struct _mjVisual__Anonymous__line_532_3__line_550_3_:
 	var frustum: Float32
 
 
-struct _mjVisual__Anonymous__line_516_3__line_530_3_:
+@register_passable("trivial")
+struct _mjVisual__Anonymous__line_559_3__line_573_3_(Copyable & Movable):
 	var stiffness: Float32
 	var stiffnessrot: Float32
 	var force: Float32
@@ -1695,14 +1901,16 @@ struct _mjVisual__Anonymous__line_516_3__line_530_3_:
 	var actuatortendon: Float32
 
 
-struct _mjVisual__Anonymous__line_509_3__line_514_3_:
-	var ambient: UnsafePointer[Float32]
-	var diffuse: UnsafePointer[Float32]
-	var specular: UnsafePointer[Float32]
+@register_passable("trivial")
+struct _mjVisual__Anonymous__line_552_3__line_557_3_(Copyable & Movable):
+	var ambient: StaticTuple[Float32, 3]
+	var diffuse: StaticTuple[Float32, 3]
+	var specular: StaticTuple[Float32, 3]
 	var active: Int32
 
 
-struct _mjVisual__Anonymous__line_501_3__line_507_3_:
+@register_passable("trivial")
+struct _mjVisual__Anonymous__line_544_3__line_550_3_(Copyable & Movable):
 	var shadowsize: Int32
 	var offsamples: Int32
 	var numslices: Int32
@@ -1710,7 +1918,9 @@ struct _mjVisual__Anonymous__line_501_3__line_507_3_:
 	var numquads: Int32
 
 
-struct _mjVisual__Anonymous__line_486_3__line_499_3_:
+@register_passable("trivial")
+struct _mjVisual__Anonymous__line_528_3__line_542_3_(Copyable & Movable):
+	var cameraid: Int32
 	var orthographic: Int32
 	var fovy: Float32
 	var ipd: Float32
@@ -1725,26 +1935,29 @@ struct _mjVisual__Anonymous__line_486_3__line_499_3_:
 	var bvactive: Int32
 
 
-struct mjVisual_:
-	var `global`: _mjVisual__Anonymous__line_486_3__line_499_3_
-	var quality: _mjVisual__Anonymous__line_501_3__line_507_3_
-	var headlight: _mjVisual__Anonymous__line_509_3__line_514_3_
-	var map: _mjVisual__Anonymous__line_516_3__line_530_3_
-	var scale: _mjVisual__Anonymous__line_532_3__line_550_3_
-	var rgba: _mjVisual__Anonymous__line_552_3__line_578_3_
+@register_passable("trivial")
+struct mjVisual_(Copyable & Movable):
+	var `global`: _mjVisual__Anonymous__line_528_3__line_542_3_
+	var quality: _mjVisual__Anonymous__line_544_3__line_550_3_
+	var headlight: _mjVisual__Anonymous__line_552_3__line_557_3_
+	var map: _mjVisual__Anonymous__line_559_3__line_573_3_
+	var scale: _mjVisual__Anonymous__line_575_3__line_593_3_
+	var rgba: _mjVisual__Anonymous__line_595_3__line_621_3_
 
 
 alias mjVisual = mjVisual_
-struct mjStatistic_:
+@register_passable("trivial")
+struct mjStatistic_(Copyable & Movable):
 	var meaninertia: mjtNum
 	var meanmass: mjtNum
 	var meansize: mjtNum
 	var extent: mjtNum
-	var center: UnsafePointer[mjtNum]
+	var center: StaticTuple[mjtNum, 3]
 
 
 alias mjStatistic = mjStatistic_
-struct mjModel_:
+@register_passable("trivial")
+struct mjModel_(Copyable & Movable):
 	var nq: Int32
 	var nv: Int32
 	var nu: Int32
@@ -1753,6 +1966,7 @@ struct mjModel_:
 	var nbvh: Int32
 	var nbvhstatic: Int32
 	var nbvhdynamic: Int32
+	var noct: Int32
 	var njnt: Int32
 	var ngeom: Int32
 	var nsite: Int32
@@ -1869,6 +2083,10 @@ struct mjModel_:
 	var bvh_child: UnsafePointer[Int32]
 	var bvh_nodeid: UnsafePointer[Int32]
 	var bvh_aabb: UnsafePointer[mjtNum]
+	var oct_depth: UnsafePointer[Int32]
+	var oct_child: UnsafePointer[Int32]
+	var oct_aabb: UnsafePointer[mjtNum]
+	var oct_coeff: UnsafePointer[mjtNum]
 	var jnt_type: UnsafePointer[Int32]
 	var jnt_qposadr: UnsafePointer[Int32]
 	var jnt_dofadr: UnsafePointer[Int32]
@@ -1952,9 +2170,12 @@ struct mjModel_:
 	var light_mode: UnsafePointer[Int32]
 	var light_bodyid: UnsafePointer[Int32]
 	var light_targetbodyid: UnsafePointer[Int32]
-	var light_directional: UnsafePointer[mjtByte]
+	var light_type: UnsafePointer[Int32]
+	var light_texid: UnsafePointer[Int32]
 	var light_castshadow: UnsafePointer[mjtByte]
 	var light_bulbradius: UnsafePointer[Float32]
+	var light_intensity: UnsafePointer[Float32]
+	var light_range: UnsafePointer[Float32]
 	var light_active: UnsafePointer[mjtByte]
 	var light_pos: UnsafePointer[mjtNum]
 	var light_dir: UnsafePointer[mjtNum]
@@ -2002,6 +2223,7 @@ struct mjModel_:
 	var flex_nodebodyid: UnsafePointer[Int32]
 	var flex_vertbodyid: UnsafePointer[Int32]
 	var flex_edge: UnsafePointer[Int32]
+	var flex_edgeflap: UnsafePointer[Int32]
 	var flex_elem: UnsafePointer[Int32]
 	var flex_elemtexcoord: UnsafePointer[Int32]
 	var flex_elemedge: UnsafePointer[Int32]
@@ -2016,6 +2238,7 @@ struct mjModel_:
 	var flexedge_invweight0: UnsafePointer[mjtNum]
 	var flex_radius: UnsafePointer[mjtNum]
 	var flex_stiffness: UnsafePointer[mjtNum]
+	var flex_bending: UnsafePointer[mjtNum]
 	var flex_damping: UnsafePointer[mjtNum]
 	var flex_edgestiffness: UnsafePointer[mjtNum]
 	var flex_edgedamping: UnsafePointer[mjtNum]
@@ -2034,6 +2257,8 @@ struct mjModel_:
 	var mesh_facenum: UnsafePointer[Int32]
 	var mesh_bvhadr: UnsafePointer[Int32]
 	var mesh_bvhnum: UnsafePointer[Int32]
+	var mesh_octadr: UnsafePointer[Int32]
+	var mesh_octnum: UnsafePointer[Int32]
 	var mesh_normaladr: UnsafePointer[Int32]
 	var mesh_normalnum: UnsafePointer[Int32]
 	var mesh_texcoordadr: UnsafePointer[Int32]
@@ -2088,6 +2313,7 @@ struct mjModel_:
 	var hfield_data: UnsafePointer[Float32]
 	var hfield_pathadr: UnsafePointer[Int32]
 	var tex_type: UnsafePointer[Int32]
+	var tex_colorspace: UnsafePointer[Int32]
 	var tex_height: UnsafePointer[Int32]
 	var tex_width: UnsafePointer[Int32]
 	var tex_nchannel: UnsafePointer[Int32]
@@ -2128,12 +2354,14 @@ struct mjModel_:
 	var tendon_matid: UnsafePointer[Int32]
 	var tendon_group: UnsafePointer[Int32]
 	var tendon_limited: UnsafePointer[mjtByte]
+	var tendon_actfrclimited: UnsafePointer[mjtByte]
 	var tendon_width: UnsafePointer[mjtNum]
 	var tendon_solref_lim: UnsafePointer[mjtNum]
 	var tendon_solimp_lim: UnsafePointer[mjtNum]
 	var tendon_solref_fri: UnsafePointer[mjtNum]
 	var tendon_solimp_fri: UnsafePointer[mjtNum]
 	var tendon_range: UnsafePointer[mjtNum]
+	var tendon_actfrcrange: UnsafePointer[mjtNum]
 	var tendon_margin: UnsafePointer[mjtNum]
 	var tendon_stiffness: UnsafePointer[mjtNum]
 	var tendon_damping: UnsafePointer[mjtNum]
@@ -2179,6 +2407,7 @@ struct mjModel_:
 	var sensor_objid: UnsafePointer[Int32]
 	var sensor_reftype: UnsafePointer[Int32]
 	var sensor_refid: UnsafePointer[Int32]
+	var sensor_intprm: UnsafePointer[Int32]
 	var sensor_dim: UnsafePointer[Int32]
 	var sensor_adr: UnsafePointer[Int32]
 	var sensor_cutoff: UnsafePointer[mjtNum]
@@ -2238,7 +2467,8 @@ struct mjModel_:
 
 
 alias mjModel = mjModel_
-struct mjtTaskStatus_: # Enum
+@register_passable("trivial")
+struct mjtTaskStatus_(Copyable & Movable): # Enum
 	alias mjTASK_NEW: Int = 0
 	alias mjTASK_QUEUED: Int = 1
 	alias mjTASK_COMPLETED: Int = 2
@@ -2249,19 +2479,22 @@ alias mjtTaskStatus = mjtTaskStatus_
 alias mjfTask = fn(UnsafePointer[NoneType]) -> UnsafePointer[NoneType]
 # function pointer type for mjTask
 
-struct mjThreadPool_:
+@register_passable("trivial")
+struct mjThreadPool_(Copyable & Movable):
 	var nworker: Int32
 
 
 alias mjThreadPool = mjThreadPool_
-struct mjTask_:
+@register_passable("trivial")
+struct mjTask_(Copyable & Movable):
 	var func: mjfTask
 	var args: OpaquePointer
 	var status: Int32
 
 
 alias mjTask = mjTask_
-struct mjtState_: # Enum
+@register_passable("trivial")
+struct mjtState_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjSTATE_TIME: Int = 1
@@ -2287,7 +2520,8 @@ struct mjtState_: # Enum
 alias mjtState = mjtState_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtWarning_: # Enum
+@register_passable("trivial")
+struct mjtWarning_(Copyable & Movable): # Enum
 	alias mjWARN_INERTIA: Int = 0
 	alias mjWARN_CONTACTFULL: Int = 1
 	alias mjWARN_CNSTRFULL: Int = 2
@@ -2300,7 +2534,8 @@ struct mjtWarning_: # Enum
 
 
 alias mjtWarning = mjtWarning_
-struct mjtTimer_: # Enum
+@register_passable("trivial")
+struct mjtTimer_(Copyable & Movable): # Enum
 	alias mjTIMER_STEP: Int = 0
 	alias mjTIMER_FORWARD: Int = 1
 	alias mjTIMER_INVERSE: Int = 2
@@ -2320,42 +2555,46 @@ struct mjtTimer_: # Enum
 
 
 alias mjtTimer = mjtTimer_
-struct mjContact_:
+@register_passable("trivial")
+struct mjContact_(Copyable & Movable):
 	var dist: mjtNum
-	var pos: UnsafePointer[mjtNum]
-	var frame: UnsafePointer[mjtNum]
+	var pos: StaticTuple[mjtNum, 3]
+	var frame: StaticTuple[mjtNum, 9]
 	var includemargin: mjtNum
-	var friction: UnsafePointer[mjtNum]
-	var solref: UnsafePointer[mjtNum]
-	var solreffriction: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var friction: StaticTuple[mjtNum, 5]
+	var solref: StaticTuple[mjtNum, 2]
+	var solreffriction: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var mu: mjtNum
-	var H: UnsafePointer[mjtNum]
+	var H: StaticTuple[mjtNum, 36]
 	var dim: Int32
 	var geom1: Int32
 	var geom2: Int32
-	var geom: UnsafePointer[Int32]
-	var flex: UnsafePointer[Int32]
-	var elem: UnsafePointer[Int32]
-	var vert: UnsafePointer[Int32]
+	var geom: StaticTuple[Int32, 2]
+	var flex: StaticTuple[Int32, 2]
+	var elem: StaticTuple[Int32, 2]
+	var vert: StaticTuple[Int32, 2]
 	var exclude: Int32
 	var efc_address: Int32
 
 
 alias mjContact = mjContact_
-struct mjWarningStat_:
+@register_passable("trivial")
+struct mjWarningStat_(Copyable & Movable):
 	var lastinfo: Int32
 	var number: Int32
 
 
 alias mjWarningStat = mjWarningStat_
-struct mjTimerStat_:
+@register_passable("trivial")
+struct mjTimerStat_(Copyable & Movable):
 	var duration: mjtNum
 	var number: Int32
 
 
 alias mjTimerStat = mjTimerStat_
-struct mjSolverStat_:
+@register_passable("trivial")
+struct mjSolverStat_(Copyable & Movable):
 	var improvement: mjtNum
 	var gradient: mjtNum
 	var lineslope: mjtNum
@@ -2366,7 +2605,8 @@ struct mjSolverStat_:
 
 
 alias mjSolverStat = mjSolverStat_
-struct mjData_:
+@register_passable("trivial")
+struct mjData_(Copyable & Movable):
 	var narena: size_t
 	var nbuffer: size_t
 	var nplugin: Int32
@@ -2374,17 +2614,16 @@ struct mjData_:
 	var pbase: size_t
 	var parena: size_t
 	var maxuse_stack: size_t
-	var maxuse_threadstack: UnsafePointer[size_t]
+	var maxuse_threadstack: StaticTuple[size_t, 128]
 	var maxuse_arena: size_t
 	var maxuse_con: Int32
 	var maxuse_efc: Int32
-	var solver: UnsafePointer[mjSolverStat]
-	var solver_nisland: Int32
-	var solver_niter: UnsafePointer[Int32]
-	var solver_nnz: UnsafePointer[Int32]
-	var solver_fwdinv: UnsafePointer[mjtNum]
-	var warning: UnsafePointer[mjWarningStat]
-	var timer: UnsafePointer[mjTimerStat]
+	var solver: StaticTuple[mjSolverStat, 4000]
+	var solver_niter: StaticTuple[Int32, 20]
+	var solver_nnz: StaticTuple[Int32, 20]
+	var solver_fwdinv: StaticTuple[mjtNum, 2]
+	var warning: StaticTuple[mjWarningStat, 8]
+	var timer: StaticTuple[mjTimerStat, 15]
 	var ncon: Int32
 	var ne: Int32
 	var nf: Int32
@@ -2393,8 +2632,9 @@ struct mjData_:
 	var nJ: Int32
 	var nA: Int32
 	var nisland: Int32
+	var nidof: Int32
 	var time: mjtNum
-	var energy: UnsafePointer[mjtNum]
+	var energy: StaticTuple[mjtNum, 2]
 	var buffer: OpaquePointer
 	var arena: OpaquePointer
 	var qpos: UnsafePointer[mjtNum]
@@ -2455,6 +2695,7 @@ struct mjData_:
 	var actuator_moment: UnsafePointer[mjtNum]
 	var crb: UnsafePointer[mjtNum]
 	var qM: UnsafePointer[mjtNum]
+	var M: UnsafePointer[mjtNum]
 	var qLD: UnsafePointer[mjtNum]
 	var qLDiagInv: UnsafePointer[mjtNum]
 	var bvh_aabb_dyn: UnsafePointer[mjtNum]
@@ -2481,10 +2722,6 @@ struct mjData_:
 	var M_rowadr: UnsafePointer[Int32]
 	var M_colind: UnsafePointer[Int32]
 	var mapM2M: UnsafePointer[Int32]
-	var C_rownnz: UnsafePointer[Int32]
-	var C_rowadr: UnsafePointer[Int32]
-	var C_colind: UnsafePointer[Int32]
-	var mapM2C: UnsafePointer[Int32]
 	var D_rownnz: UnsafePointer[Int32]
 	var D_rowadr: UnsafePointer[Int32]
 	var D_diag: UnsafePointer[Int32]
@@ -2524,14 +2761,42 @@ struct mjData_:
 	var efc_R: UnsafePointer[mjtNum]
 	var tendon_efcadr: UnsafePointer[Int32]
 	var dof_island: UnsafePointer[Int32]
-	var island_dofnum: UnsafePointer[Int32]
+	var island_nv: UnsafePointer[Int32]
+	var island_idofadr: UnsafePointer[Int32]
 	var island_dofadr: UnsafePointer[Int32]
-	var island_dofind: UnsafePointer[Int32]
-	var dof_islandind: UnsafePointer[Int32]
+	var map_dof2idof: UnsafePointer[Int32]
+	var map_idof2dof: UnsafePointer[Int32]
+	var ifrc_smooth: UnsafePointer[mjtNum]
+	var iacc_smooth: UnsafePointer[mjtNum]
+	var iM_rownnz: UnsafePointer[Int32]
+	var iM_rowadr: UnsafePointer[Int32]
+	var iM_colind: UnsafePointer[Int32]
+	var iM: UnsafePointer[mjtNum]
+	var iLD: UnsafePointer[mjtNum]
+	var iLDiagInv: UnsafePointer[mjtNum]
+	var iacc: UnsafePointer[mjtNum]
 	var efc_island: UnsafePointer[Int32]
-	var island_efcnum: UnsafePointer[Int32]
-	var island_efcadr: UnsafePointer[Int32]
-	var island_efcind: UnsafePointer[Int32]
+	var island_ne: UnsafePointer[Int32]
+	var island_nf: UnsafePointer[Int32]
+	var island_nefc: UnsafePointer[Int32]
+	var island_iefcadr: UnsafePointer[Int32]
+	var map_efc2iefc: UnsafePointer[Int32]
+	var map_iefc2efc: UnsafePointer[Int32]
+	var iefc_type: UnsafePointer[Int32]
+	var iefc_id: UnsafePointer[Int32]
+	var iefc_J_rownnz: UnsafePointer[Int32]
+	var iefc_J_rowadr: UnsafePointer[Int32]
+	var iefc_J_rowsuper: UnsafePointer[Int32]
+	var iefc_J_colind: UnsafePointer[Int32]
+	var iefc_JT_rownnz: UnsafePointer[Int32]
+	var iefc_JT_rowadr: UnsafePointer[Int32]
+	var iefc_JT_rowsuper: UnsafePointer[Int32]
+	var iefc_JT_colind: UnsafePointer[Int32]
+	var iefc_J: UnsafePointer[mjtNum]
+	var iefc_JT: UnsafePointer[mjtNum]
+	var iefc_frictionloss: UnsafePointer[mjtNum]
+	var iefc_D: UnsafePointer[mjtNum]
+	var iefc_R: UnsafePointer[mjtNum]
 	var efc_AR_rownnz: UnsafePointer[Int32]
 	var efc_AR_rowadr: UnsafePointer[Int32]
 	var efc_AR_colind: UnsafePointer[Int32]
@@ -2539,8 +2804,12 @@ struct mjData_:
 	var efc_vel: UnsafePointer[mjtNum]
 	var efc_aref: UnsafePointer[mjtNum]
 	var efc_b: UnsafePointer[mjtNum]
-	var efc_force: UnsafePointer[mjtNum]
+	var iefc_aref: UnsafePointer[mjtNum]
+	var iefc_state: UnsafePointer[Int32]
+	var iefc_force: UnsafePointer[mjtNum]
 	var efc_state: UnsafePointer[Int32]
+	var efc_force: UnsafePointer[mjtNum]
+	var ifrc_constraint: UnsafePointer[mjtNum]
 	var threadpool: uintptr_t
 	var signature: UInt64
 
@@ -2570,7 +2839,8 @@ alias mjfAct = fn(UnsafePointer[mjModel],UnsafePointer[mjData],Int32) -> Float64
 alias mjfCollision = fn(UnsafePointer[mjModel],UnsafePointer[mjData],UnsafePointer[mjContact],Int32,Int32,Float64) -> Int32
 # collision detection
 
-struct mjtCatBit_: # Enum
+@register_passable("trivial")
+struct mjtCatBit_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjCAT_STATIC: Int = 1
@@ -2582,7 +2852,8 @@ struct mjtCatBit_: # Enum
 alias mjtCatBit = mjtCatBit_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtMouse_: # Enum
+@register_passable("trivial")
+struct mjtMouse_(Copyable & Movable): # Enum
 	alias mjMOUSE_NONE: Int = 0
 	alias mjMOUSE_ROTATE_V: Int = 1
 	alias mjMOUSE_ROTATE_H: Int = 2
@@ -2593,13 +2864,15 @@ struct mjtMouse_: # Enum
 
 
 alias mjtMouse = mjtMouse_
-struct mjtPertBit_: # Enum
+@register_passable("trivial")
+struct mjtPertBit_(Copyable & Movable): # Enum
 	alias mjPERT_TRANSLATE: Int = 1
 	alias mjPERT_ROTATE: Int = 2
 
 
 alias mjtPertBit = mjtPertBit_
-struct mjtCamera_: # Enum
+@register_passable("trivial")
+struct mjtCamera_(Copyable & Movable): # Enum
 	alias mjCAMERA_FREE: Int = 0
 	alias mjCAMERA_TRACKING: Int = 1
 	alias mjCAMERA_FIXED: Int = 2
@@ -2607,7 +2880,8 @@ struct mjtCamera_: # Enum
 
 
 alias mjtCamera = mjtCamera_
-struct mjtLabel_: # Enum
+@register_passable("trivial")
+struct mjtLabel_(Copyable & Movable): # Enum
 	alias mjLABEL_NONE: Int = 0
 	alias mjLABEL_BODY: Int = 1
 	alias mjLABEL_JOINT: Int = 2
@@ -2629,7 +2903,8 @@ struct mjtLabel_: # Enum
 
 
 alias mjtLabel = mjtLabel_
-struct mjtFrame_: # Enum
+@register_passable("trivial")
+struct mjtFrame_(Copyable & Movable): # Enum
 	alias mjFRAME_NONE: Int = 0
 	alias mjFRAME_BODY: Int = 1
 	alias mjFRAME_GEOM: Int = 2
@@ -2642,7 +2917,8 @@ struct mjtFrame_: # Enum
 
 
 alias mjtFrame = mjtFrame_
-struct mjtVisFlag_: # Enum
+@register_passable("trivial")
+struct mjtVisFlag_(Copyable & Movable): # Enum
 	alias mjVIS_CONVEXHULL: Int = 0
 	alias mjVIS_TEXTURE: Int = 1
 	alias mjVIS_JOINT: Int = 2
@@ -2672,14 +2948,14 @@ struct mjtVisFlag_: # Enum
 	alias mjVIS_FLEXFACE: Int = 26
 	alias mjVIS_FLEXSKIN: Int = 27
 	alias mjVIS_BODYBVH: Int = 28
-	alias mjVIS_FLEXBVH: Int = 29
-	alias mjVIS_MESHBVH: Int = 30
-	alias mjVIS_SDFITER: Int = 31
-	alias mjNVISFLAG: Int = 32
+	alias mjVIS_MESHBVH: Int = 29
+	alias mjVIS_SDFITER: Int = 30
+	alias mjNVISFLAG: Int = 31
 
 
 alias mjtVisFlag = mjtVisFlag_
-struct mjtRndFlag_: # Enum
+@register_passable("trivial")
+struct mjtRndFlag_(Copyable & Movable): # Enum
 	alias mjRND_SHADOW: Int = 0
 	alias mjRND_WIREFRAME: Int = 1
 	alias mjRND_REFLECTION: Int = 2
@@ -2694,33 +2970,36 @@ struct mjtRndFlag_: # Enum
 
 
 alias mjtRndFlag = mjtRndFlag_
-struct mjtStereo_: # Enum
+@register_passable("trivial")
+struct mjtStereo_(Copyable & Movable): # Enum
 	alias mjSTEREO_NONE: Int = 0
 	alias mjSTEREO_QUADBUFFERED: Int = 1
 	alias mjSTEREO_SIDEBYSIDE: Int = 2
 
 
 alias mjtStereo = mjtStereo_
-struct mjvPerturb_:
+@register_passable("trivial")
+struct mjvPerturb_(Copyable & Movable):
 	var select: Int32
 	var flexselect: Int32
 	var skinselect: Int32
 	var active: Int32
 	var active2: Int32
-	var refpos: UnsafePointer[mjtNum]
-	var refquat: UnsafePointer[mjtNum]
-	var refselpos: UnsafePointer[mjtNum]
-	var localpos: UnsafePointer[mjtNum]
+	var refpos: StaticTuple[mjtNum, 3]
+	var refquat: StaticTuple[mjtNum, 4]
+	var refselpos: StaticTuple[mjtNum, 3]
+	var localpos: StaticTuple[mjtNum, 3]
 	var localmass: mjtNum
 	var scale: mjtNum
 
 
 alias mjvPerturb = mjvPerturb_
-struct mjvCamera_:
+@register_passable("trivial")
+struct mjvCamera_(Copyable & Movable):
 	var type: Int32
 	var fixedcamid: Int32
 	var trackbodyid: Int32
-	var lookat: UnsafePointer[mjtNum]
+	var lookat: StaticTuple[mjtNum, 3]
 	var distance: mjtNum
 	var azimuth: mjtNum
 	var elevation: mjtNum
@@ -2728,10 +3007,11 @@ struct mjvCamera_:
 
 
 alias mjvCamera = mjvCamera_
-struct mjvGLCamera_:
-	var pos: UnsafePointer[Float32]
-	var forward: UnsafePointer[Float32]
-	var up: UnsafePointer[Float32]
+@register_passable("trivial")
+struct mjvGLCamera_(Copyable & Movable):
+	var pos: StaticTuple[Float32, 3]
+	var forward: StaticTuple[Float32, 3]
+	var up: StaticTuple[Float32, 3]
 	var frustum_center: Float32
 	var frustum_width: Float32
 	var frustum_bottom: Float32
@@ -2742,7 +3022,8 @@ struct mjvGLCamera_:
 
 
 alias mjvGLCamera = mjvGLCamera_
-struct mjvGeom_:
+@register_passable("trivial")
+struct mjvGeom_(Copyable & Movable):
 	var type: Int32
 	var dataid: Int32
 	var objtype: Int32
@@ -2751,54 +3032,60 @@ struct mjvGeom_:
 	var matid: Int32
 	var texcoord: Int32
 	var segid: Int32
-	var size: UnsafePointer[Float32]
-	var pos: UnsafePointer[Float32]
-	var mat: UnsafePointer[Float32]
-	var rgba: UnsafePointer[Float32]
+	var size: StaticTuple[Float32, 3]
+	var pos: StaticTuple[Float32, 3]
+	var mat: StaticTuple[Float32, 9]
+	var rgba: StaticTuple[Float32, 4]
 	var emission: Float32
 	var specular: Float32
 	var shininess: Float32
 	var reflectance: Float32
-	var label: UnsafePointer[Int8]
+	var label: StaticTuple[Int8, 100]
 	var camdist: Float32
 	var modelrbound: Float32
 	var transparent: mjtByte
 
 
 alias mjvGeom = mjvGeom_
-struct mjvLight_:
-	var pos: UnsafePointer[Float32]
-	var dir: UnsafePointer[Float32]
-	var attenuation: UnsafePointer[Float32]
+@register_passable("trivial")
+struct mjvLight_(Copyable & Movable):
+	var pos: StaticTuple[Float32, 3]
+	var dir: StaticTuple[Float32, 3]
+	var type: Int32
+	var texid: Int32
+	var attenuation: StaticTuple[Float32, 3]
 	var cutoff: Float32
 	var exponent: Float32
-	var ambient: UnsafePointer[Float32]
-	var diffuse: UnsafePointer[Float32]
-	var specular: UnsafePointer[Float32]
+	var ambient: StaticTuple[Float32, 3]
+	var diffuse: StaticTuple[Float32, 3]
+	var specular: StaticTuple[Float32, 3]
 	var headlight: mjtByte
-	var directional: mjtByte
 	var castshadow: mjtByte
 	var bulbradius: Float32
+	var intensity: Float32
+	var range: Float32
 
 
 alias mjvLight = mjvLight_
-struct mjvOption_:
+@register_passable("trivial")
+struct mjvOption_(Copyable & Movable):
 	var label: Int32
 	var frame: Int32
-	var geomgroup: UnsafePointer[mjtByte]
-	var sitegroup: UnsafePointer[mjtByte]
-	var jointgroup: UnsafePointer[mjtByte]
-	var tendongroup: UnsafePointer[mjtByte]
-	var actuatorgroup: UnsafePointer[mjtByte]
-	var flexgroup: UnsafePointer[mjtByte]
-	var skingroup: UnsafePointer[mjtByte]
-	var flags: UnsafePointer[mjtByte]
+	var geomgroup: StaticTuple[mjtByte, 6]
+	var sitegroup: StaticTuple[mjtByte, 6]
+	var jointgroup: StaticTuple[mjtByte, 6]
+	var tendongroup: StaticTuple[mjtByte, 6]
+	var actuatorgroup: StaticTuple[mjtByte, 6]
+	var flexgroup: StaticTuple[mjtByte, 6]
+	var skingroup: StaticTuple[mjtByte, 6]
+	var flags: StaticTuple[mjtByte, 31]
 	var bvh_depth: Int32
 	var flex_layer: Int32
 
 
 alias mjvOption = mjvOption_
-struct mjvScene_:
+@register_passable("trivial")
+struct mjvScene_(Copyable & Movable):
 	var maxgeom: Int32
 	var ngeom: Int32
 	var geoms: UnsafePointer[mjvGeom]
@@ -2827,316 +3114,67 @@ struct mjvScene_:
 	var skinvert: UnsafePointer[Float32]
 	var skinnormal: UnsafePointer[Float32]
 	var nlight: Int32
-	var lights: UnsafePointer[mjvLight]
-	var camera: UnsafePointer[mjvGLCamera]
+	var lights: StaticTuple[mjvLight, 100]
+	var camera: StaticTuple[mjvGLCamera, 2]
 	var enabletransform: mjtByte
-	var translate: UnsafePointer[Float32]
-	var rotate: UnsafePointer[Float32]
+	var translate: StaticTuple[Float32, 3]
+	var rotate: StaticTuple[Float32, 4]
 	var scale: Float32
 	var stereo: Int32
-	var flags: UnsafePointer[mjtByte]
+	var flags: StaticTuple[mjtByte, 10]
 	var framewidth: Int32
-	var framergb: UnsafePointer[Float32]
+	var framergb: StaticTuple[Float32, 3]
 
 
 alias mjvScene = mjvScene_
-struct mjvFigure_:
+@register_passable("trivial")
+struct mjvFigure_(Copyable & Movable):
 	var flg_legend: Int32
-	var flg_ticklabel: UnsafePointer[Int32]
+	var flg_ticklabel: StaticTuple[Int32, 2]
 	var flg_extend: Int32
 	var flg_barplot: Int32
 	var flg_selection: Int32
 	var flg_symmetric: Int32
 	var linewidth: Float32
 	var gridwidth: Float32
-	var gridsize: UnsafePointer[Int32]
-	var gridrgb: UnsafePointer[Float32]
-	var figurergba: UnsafePointer[Float32]
-	var panergba: UnsafePointer[Float32]
-	var legendrgba: UnsafePointer[Float32]
-	var textrgb: UnsafePointer[Float32]
-	var linergb: UnsafePointer[Float32]
-	var range: UnsafePointer[Float32]
-	var xformat: UnsafePointer[Int8]
-	var yformat: UnsafePointer[Int8]
-	var minwidth: UnsafePointer[Int8]
-	var title: UnsafePointer[Int8]
-	var xlabel: UnsafePointer[Int8]
-	var linename: UnsafePointer[Int8]
+	var gridsize: StaticTuple[Int32, 2]
+	var gridrgb: StaticTuple[Float32, 3]
+	var figurergba: StaticTuple[Float32, 4]
+	var panergba: StaticTuple[Float32, 4]
+	var legendrgba: StaticTuple[Float32, 4]
+	var textrgb: StaticTuple[Float32, 3]
+	var linergb: StaticTuple[Float32, 100]
+	var range: StaticTuple[Float32, 2]
+	var xformat: StaticTuple[Int8, 20]
+	var yformat: StaticTuple[Int8, 20]
+	var minwidth: StaticTuple[Int8, 20]
+	var title: StaticTuple[Int8, 1000]
+	var xlabel: StaticTuple[Int8, 100]
+	var linename: StaticTuple[Int8, 100]
 	var legendoffset: Int32
 	var subplot: Int32
-	var highlight: UnsafePointer[Int32]
+	var highlight: StaticTuple[Int32, 2]
 	var highlightid: Int32
 	var selection: Float32
-	var linepnt: UnsafePointer[Int32]
-	var linedata: UnsafePointer[Float32]
-	var xaxispixel: UnsafePointer[Int32]
-	var yaxispixel: UnsafePointer[Int32]
-	var xaxisdata: UnsafePointer[Float32]
-	var yaxisdata: UnsafePointer[Float32]
+	var linepnt: StaticTuple[Int32, 100]
+	var linedata: StaticTuple[Float32, 100]
+	var xaxispixel: StaticTuple[Int32, 2]
+	var yaxispixel: StaticTuple[Int32, 2]
+	var xaxisdata: StaticTuple[Float32, 2]
+	var yaxisdata: StaticTuple[Float32, 2]
 
 
 alias mjvFigure = mjvFigure_
-struct _mjvSceneState__Anonymous__line_634_3__line_688_3_:
-	var warning: UnsafePointer[mjWarningStat]
-	var nefc: Int32
-	var ncon: Int32
-	var nisland: Int32
-	var time: mjtNum
-	var act: UnsafePointer[mjtNum]
-	var ctrl: UnsafePointer[mjtNum]
-	var xfrc_applied: UnsafePointer[mjtNum]
-	var eq_active: UnsafePointer[mjtByte]
-	var sensordata: UnsafePointer[mjtNum]
-	var xpos: UnsafePointer[mjtNum]
-	var xquat: UnsafePointer[mjtNum]
-	var xmat: UnsafePointer[mjtNum]
-	var xipos: UnsafePointer[mjtNum]
-	var ximat: UnsafePointer[mjtNum]
-	var xanchor: UnsafePointer[mjtNum]
-	var xaxis: UnsafePointer[mjtNum]
-	var geom_xpos: UnsafePointer[mjtNum]
-	var geom_xmat: UnsafePointer[mjtNum]
-	var site_xpos: UnsafePointer[mjtNum]
-	var site_xmat: UnsafePointer[mjtNum]
-	var cam_xpos: UnsafePointer[mjtNum]
-	var cam_xmat: UnsafePointer[mjtNum]
-	var light_xpos: UnsafePointer[mjtNum]
-	var light_xdir: UnsafePointer[mjtNum]
-	var subtree_com: UnsafePointer[mjtNum]
-	var ten_wrapadr: UnsafePointer[Int32]
-	var ten_wrapnum: UnsafePointer[Int32]
-	var wrap_obj: UnsafePointer[Int32]
-	var ten_length: UnsafePointer[mjtNum]
-	var wrap_xpos: UnsafePointer[mjtNum]
-	var bvh_aabb_dyn: UnsafePointer[mjtNum]
-	var bvh_active: UnsafePointer[mjtByte]
-	var island_dofadr: UnsafePointer[Int32]
-	var island_dofind: UnsafePointer[Int32]
-	var dof_island: UnsafePointer[Int32]
-	var efc_island: UnsafePointer[Int32]
-	var tendon_efcadr: UnsafePointer[Int32]
-	var flexvert_xpos: UnsafePointer[mjtNum]
-	var contact: UnsafePointer[mjContact]
-	var efc_force: UnsafePointer[mjtNum]
-	var arena: OpaquePointer
-
-
-struct _mjvSceneState__Anonymous__line_417_3__line_631_3_:
-	var nv: Int32
-	var nu: Int32
-	var na: Int32
-	var nbody: Int32
-	var nbvh: Int32
-	var nbvhstatic: Int32
-	var njnt: Int32
-	var ngeom: Int32
-	var nsite: Int32
-	var ncam: Int32
-	var nlight: Int32
-	var nmesh: Int32
-	var nskin: Int32
-	var nflex: Int32
-	var nflexvert: Int32
-	var nflextexcoord: Int32
-	var nskinvert: Int32
-	var nskinface: Int32
-	var nskinbone: Int32
-	var nskinbonevert: Int32
-	var nmat: Int32
-	var neq: Int32
-	var ntendon: Int32
-	var ntree: Int32
-	var nwrap: Int32
-	var nsensor: Int32
-	var nnames: Int32
-	var npaths: Int32
-	var nsensordata: Int32
-	var narena: Int32
-	var opt: mjOption
-	var vis: mjVisual
-	var stat: mjStatistic
-	var body_parentid: UnsafePointer[Int32]
-	var body_rootid: UnsafePointer[Int32]
-	var body_weldid: UnsafePointer[Int32]
-	var body_mocapid: UnsafePointer[Int32]
-	var body_jntnum: UnsafePointer[Int32]
-	var body_jntadr: UnsafePointer[Int32]
-	var body_dofnum: UnsafePointer[Int32]
-	var body_dofadr: UnsafePointer[Int32]
-	var body_geomnum: UnsafePointer[Int32]
-	var body_geomadr: UnsafePointer[Int32]
-	var body_iquat: UnsafePointer[mjtNum]
-	var body_mass: UnsafePointer[mjtNum]
-	var body_inertia: UnsafePointer[mjtNum]
-	var body_bvhadr: UnsafePointer[Int32]
-	var body_bvhnum: UnsafePointer[Int32]
-	var bvh_depth: UnsafePointer[Int32]
-	var bvh_child: UnsafePointer[Int32]
-	var bvh_nodeid: UnsafePointer[Int32]
-	var bvh_aabb: UnsafePointer[mjtNum]
-	var jnt_type: UnsafePointer[Int32]
-	var jnt_bodyid: UnsafePointer[Int32]
-	var jnt_group: UnsafePointer[Int32]
-	var geom_type: UnsafePointer[Int32]
-	var geom_bodyid: UnsafePointer[Int32]
-	var geom_contype: UnsafePointer[Int32]
-	var geom_conaffinity: UnsafePointer[Int32]
-	var geom_dataid: UnsafePointer[Int32]
-	var geom_matid: UnsafePointer[Int32]
-	var geom_group: UnsafePointer[Int32]
-	var geom_size: UnsafePointer[mjtNum]
-	var geom_aabb: UnsafePointer[mjtNum]
-	var geom_rbound: UnsafePointer[mjtNum]
-	var geom_rgba: UnsafePointer[Float32]
-	var site_type: UnsafePointer[Int32]
-	var site_bodyid: UnsafePointer[Int32]
-	var site_matid: UnsafePointer[Int32]
-	var site_group: UnsafePointer[Int32]
-	var site_size: UnsafePointer[mjtNum]
-	var site_rgba: UnsafePointer[Float32]
-	var cam_orthographic: UnsafePointer[Int32]
-	var cam_fovy: UnsafePointer[mjtNum]
-	var cam_ipd: UnsafePointer[mjtNum]
-	var cam_resolution: UnsafePointer[Int32]
-	var cam_sensorsize: UnsafePointer[Float32]
-	var cam_intrinsic: UnsafePointer[Float32]
-	var light_directional: UnsafePointer[mjtByte]
-	var light_castshadow: UnsafePointer[mjtByte]
-	var light_bulbradius: UnsafePointer[Float32]
-	var light_active: UnsafePointer[mjtByte]
-	var light_attenuation: UnsafePointer[Float32]
-	var light_cutoff: UnsafePointer[Float32]
-	var light_exponent: UnsafePointer[Float32]
-	var light_ambient: UnsafePointer[Float32]
-	var light_diffuse: UnsafePointer[Float32]
-	var light_specular: UnsafePointer[Float32]
-	var flex_flatskin: UnsafePointer[mjtByte]
-	var flex_dim: UnsafePointer[Int32]
-	var flex_matid: UnsafePointer[Int32]
-	var flex_group: UnsafePointer[Int32]
-	var flex_interp: UnsafePointer[Int32]
-	var flex_nodeadr: UnsafePointer[Int32]
-	var flex_nodenum: UnsafePointer[Int32]
-	var flex_nodebodyid: UnsafePointer[Int32]
-	var flex_vertadr: UnsafePointer[Int32]
-	var flex_vertnum: UnsafePointer[Int32]
-	var flex_elem: UnsafePointer[Int32]
-	var flex_elemtexcoord: UnsafePointer[Int32]
-	var flex_elemlayer: UnsafePointer[Int32]
-	var flex_elemadr: UnsafePointer[Int32]
-	var flex_elemnum: UnsafePointer[Int32]
-	var flex_elemdataadr: UnsafePointer[Int32]
-	var flex_shell: UnsafePointer[Int32]
-	var flex_shellnum: UnsafePointer[Int32]
-	var flex_shelldataadr: UnsafePointer[Int32]
-	var flex_texcoordadr: UnsafePointer[Int32]
-	var flex_bvhadr: UnsafePointer[Int32]
-	var flex_bvhnum: UnsafePointer[Int32]
-	var flex_centered: UnsafePointer[mjtByte]
-	var flex_node: UnsafePointer[mjtNum]
-	var flex_radius: UnsafePointer[mjtNum]
-	var flex_rgba: UnsafePointer[Float32]
-	var flex_texcoord: UnsafePointer[Float32]
-	var hfield_pathadr: UnsafePointer[Int32]
-	var mesh_bvhadr: UnsafePointer[Int32]
-	var mesh_bvhnum: UnsafePointer[Int32]
-	var mesh_texcoordadr: UnsafePointer[Int32]
-	var mesh_graphadr: UnsafePointer[Int32]
-	var mesh_pathadr: UnsafePointer[Int32]
-	var skin_matid: UnsafePointer[Int32]
-	var skin_group: UnsafePointer[Int32]
-	var skin_rgba: UnsafePointer[Float32]
-	var skin_inflate: UnsafePointer[Float32]
-	var skin_vertadr: UnsafePointer[Int32]
-	var skin_vertnum: UnsafePointer[Int32]
-	var skin_texcoordadr: UnsafePointer[Int32]
-	var skin_faceadr: UnsafePointer[Int32]
-	var skin_facenum: UnsafePointer[Int32]
-	var skin_boneadr: UnsafePointer[Int32]
-	var skin_bonenum: UnsafePointer[Int32]
-	var skin_vert: UnsafePointer[Float32]
-	var skin_face: UnsafePointer[Int32]
-	var skin_bonevertadr: UnsafePointer[Int32]
-	var skin_bonevertnum: UnsafePointer[Int32]
-	var skin_bonebindpos: UnsafePointer[Float32]
-	var skin_bonebindquat: UnsafePointer[Float32]
-	var skin_bonebodyid: UnsafePointer[Int32]
-	var skin_bonevertid: UnsafePointer[Int32]
-	var skin_bonevertweight: UnsafePointer[Float32]
-	var skin_pathadr: UnsafePointer[Int32]
-	var tex_pathadr: UnsafePointer[Int32]
-	var mat_texid: UnsafePointer[Int32]
-	var mat_texuniform: UnsafePointer[mjtByte]
-	var mat_texrepeat: UnsafePointer[Float32]
-	var mat_emission: UnsafePointer[Float32]
-	var mat_specular: UnsafePointer[Float32]
-	var mat_shininess: UnsafePointer[Float32]
-	var mat_reflectance: UnsafePointer[Float32]
-	var mat_metallic: UnsafePointer[Float32]
-	var mat_roughness: UnsafePointer[Float32]
-	var mat_rgba: UnsafePointer[Float32]
-	var eq_type: UnsafePointer[Int32]
-	var eq_obj1id: UnsafePointer[Int32]
-	var eq_obj2id: UnsafePointer[Int32]
-	var eq_objtype: UnsafePointer[Int32]
-	var eq_data: UnsafePointer[mjtNum]
-	var tendon_num: UnsafePointer[Int32]
-	var tendon_matid: UnsafePointer[Int32]
-	var tendon_group: UnsafePointer[Int32]
-	var tendon_limited: UnsafePointer[mjtByte]
-	var tendon_width: UnsafePointer[mjtNum]
-	var tendon_range: UnsafePointer[mjtNum]
-	var tendon_stiffness: UnsafePointer[mjtNum]
-	var tendon_damping: UnsafePointer[mjtNum]
-	var tendon_frictionloss: UnsafePointer[mjtNum]
-	var tendon_lengthspring: UnsafePointer[mjtNum]
-	var tendon_rgba: UnsafePointer[Float32]
-	var actuator_trntype: UnsafePointer[Int32]
-	var actuator_dyntype: UnsafePointer[Int32]
-	var actuator_trnid: UnsafePointer[Int32]
-	var actuator_actadr: UnsafePointer[Int32]
-	var actuator_actnum: UnsafePointer[Int32]
-	var actuator_group: UnsafePointer[Int32]
-	var actuator_ctrllimited: UnsafePointer[mjtByte]
-	var actuator_actlimited: UnsafePointer[mjtByte]
-	var actuator_ctrlrange: UnsafePointer[mjtNum]
-	var actuator_actrange: UnsafePointer[mjtNum]
-	var actuator_cranklength: UnsafePointer[mjtNum]
-	var sensor_type: UnsafePointer[Int32]
-	var sensor_objid: UnsafePointer[Int32]
-	var sensor_adr: UnsafePointer[Int32]
-	var name_bodyadr: UnsafePointer[Int32]
-	var name_jntadr: UnsafePointer[Int32]
-	var name_geomadr: UnsafePointer[Int32]
-	var name_siteadr: UnsafePointer[Int32]
-	var name_camadr: UnsafePointer[Int32]
-	var name_lightadr: UnsafePointer[Int32]
-	var name_eqadr: UnsafePointer[Int32]
-	var name_tendonadr: UnsafePointer[Int32]
-	var name_actuatoradr: UnsafePointer[Int32]
-	var names: UnsafePointer[Int8]
-	var paths: UnsafePointer[Int8]
-
-
-struct mjvSceneState_:
-	var nbuffer: Int32
-	var buffer: OpaquePointer
-	var maxgeom: Int32
-	var scratch: mjvScene
-	var model: _mjvSceneState__Anonymous__line_417_3__line_631_3_
-	var data: _mjvSceneState__Anonymous__line_634_3__line_688_3_
-
-
-alias mjvSceneState = mjvSceneState_
-struct _mjResource__mjpResourceProvider:
+@register_passable("trivial")
+struct _mjResource__mjpResourceProvider(Copyable & Movable):
 	pass
 
 
-struct mjResource_:
+@register_passable("trivial")
+struct mjResource_(Copyable & Movable):
 	var name: UnsafePointer[Int8]
 	var data: OpaquePointer
-	var timestamp: UnsafePointer[Int8]
+	var timestamp: StaticTuple[Int8, 512]
 	var provider: UnsafePointer[mjpResourceProvider] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 
 
@@ -3169,7 +3207,8 @@ alias mjfResourceModified = fn(UnsafePointer[mjResource],UnsafePointer[Int8]) ->
 #<
 # 0 if the resource is older than the given timestamp
 
-struct mjpResourceProvider:
+@register_passable("trivial")
+struct mjpResourceProvider(Copyable & Movable):
 	var prefix: UnsafePointer[Int8] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 	var open: mjfOpenResource
 	var read: mjfReadResource
@@ -3180,7 +3219,8 @@ struct mjpResourceProvider:
 
 # Disabled since this is already declared
 # alias mjpResourceProvider = mjpResourceProvider
-struct mjtPluginCapabilityBit_: # Enum
+@register_passable("trivial")
+struct mjtPluginCapabilityBit_(Copyable & Movable): # Enum
 
 	#---------------------------------- Plugins -------------------------------------------------------
 	alias mjPLUGIN_ACTUATOR: Int = 1
@@ -3192,10 +3232,11 @@ struct mjtPluginCapabilityBit_: # Enum
 alias mjtPluginCapabilityBit = mjtPluginCapabilityBit_
 #---------------------------------- Plugins -------------------------------------------------------
 
-struct mjpPlugin_:
+@register_passable("trivial")
+struct mjpPlugin_(Copyable & Movable):
 	var name: UnsafePointer[Int8] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 	var nattribute: Int32
-	var attributes: UnsafePointer[char *const] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var attributes: UnsafePointer[UnsafePointer[Int8]] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 	var capabilityflags: Int32
 	var needstage: Int32
 	var nstate: fn(read UnsafePointer[mjModel], Int32) -> Int32
@@ -3216,11 +3257,23 @@ struct mjpPlugin_:
 
 
 alias mjpPlugin = mjpPlugin_
+@register_passable("trivial")
+struct mjSDF_(Copyable & Movable):
+	var plugin: UnsafePointer[UnsafePointer[mjpPlugin]] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
+	var id: UnsafePointer[Int32]
+	var type: mjtSDFType
+	var relpos: UnsafePointer[mjtNum]
+	var relmat: UnsafePointer[mjtNum]
+	var geomtype: UnsafePointer[mjtGeom]
+
+
+alias mjSDF = mjSDF_
 
 alias mjfPluginLibraryLoadCallback = fn(UnsafePointer[Int8],Int32,Int32) -> NoneType
 # function pointer type for mj_loadAllPluginLibraries callback
 
-struct mjtGridPos_: # Enum
+@register_passable("trivial")
+struct mjtGridPos_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjGRID_TOPLEFT: Int = 0
@@ -3236,19 +3289,22 @@ struct mjtGridPos_: # Enum
 alias mjtGridPos = mjtGridPos_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtFramebuffer_: # Enum
+@register_passable("trivial")
+struct mjtFramebuffer_(Copyable & Movable): # Enum
 	alias mjFB_WINDOW: Int = 0
 	alias mjFB_OFFSCREEN: Int = 1
 
 
 alias mjtFramebuffer = mjtFramebuffer_
-struct mjtDepthMap_: # Enum
+@register_passable("trivial")
+struct mjtDepthMap_(Copyable & Movable): # Enum
 	alias mjDEPTH_ZERONEAR: Int = 0
 	alias mjDEPTH_ZEROFAR: Int = 1
 
 
 alias mjtDepthMap = mjtDepthMap_
-struct mjtFontScale_: # Enum
+@register_passable("trivial")
+struct mjtFontScale_(Copyable & Movable): # Enum
 	alias mjFONTSCALE_50: Int = 50
 	alias mjFONTSCALE_100: Int = 100
 	alias mjFONTSCALE_150: Int = 150
@@ -3258,14 +3314,16 @@ struct mjtFontScale_: # Enum
 
 
 alias mjtFontScale = mjtFontScale_
-struct mjtFont_: # Enum
+@register_passable("trivial")
+struct mjtFont_(Copyable & Movable): # Enum
 	alias mjFONT_NORMAL: Int = 0
 	alias mjFONT_SHADOW: Int = 1
 	alias mjFONT_BIG: Int = 2
 
 
 alias mjtFont = mjtFont_
-struct mjrRect_:
+@register_passable("trivial")
+struct mjrRect_(Copyable & Movable):
 	var left: Int32
 	var bottom: Int32
 	var width: Int32
@@ -3273,21 +3331,22 @@ struct mjrRect_:
 
 
 alias mjrRect = mjrRect_
-struct mjrContext_:
+@register_passable("trivial")
+struct mjrContext_(Copyable & Movable):
 	var lineWidth: Float32
 	var shadowClip: Float32
 	var shadowScale: Float32
 	var fogStart: Float32
 	var fogEnd: Float32
-	var fogRGBA: UnsafePointer[Float32]
+	var fogRGBA: StaticTuple[Float32, 4]
 	var shadowSize: Int32
 	var offWidth: Int32
 	var offHeight: Int32
 	var offSamples: Int32
 	var fontScale: Int32
-	var auxWidth: UnsafePointer[Int32]
-	var auxHeight: UnsafePointer[Int32]
-	var auxSamples: UnsafePointer[Int32]
+	var auxWidth: StaticTuple[Int32, 10]
+	var auxHeight: StaticTuple[Int32, 10]
+	var auxSamples: StaticTuple[Int32, 10]
 	var offFBO: UInt32
 	var offFBO_r: UInt32
 	var offColor: UInt32
@@ -3296,16 +3355,16 @@ struct mjrContext_:
 	var offDepthStencil_r: UInt32
 	var shadowFBO: UInt32
 	var shadowTex: UInt32
-	var auxFBO: UnsafePointer[UInt32]
-	var auxFBO_r: UnsafePointer[UInt32]
-	var auxColor: UnsafePointer[UInt32]
-	var auxColor_r: UnsafePointer[UInt32]
-	var mat_texid: UnsafePointer[Int32]
-	var mat_texuniform: UnsafePointer[Int32]
-	var mat_texrepeat: UnsafePointer[Float32]
+	var auxFBO: StaticTuple[UInt32, 10]
+	var auxFBO_r: StaticTuple[UInt32, 10]
+	var auxColor: StaticTuple[UInt32, 10]
+	var auxColor_r: StaticTuple[UInt32, 10]
+	var mat_texid: StaticTuple[Int32, 10000]
+	var mat_texuniform: StaticTuple[Int32, 1000]
+	var mat_texrepeat: StaticTuple[Float32, 2000]
 	var ntexture: Int32
-	var textureType: UnsafePointer[Int32]
-	var texture: UnsafePointer[UInt32]
+	var textureType: StaticTuple[Int32, 1000]
+	var texture: StaticTuple[UInt32, 1000]
 	var basePlane: UInt32
 	var baseMesh: UInt32
 	var baseHField: UInt32
@@ -3323,8 +3382,8 @@ struct mjrContext_:
 	var skinnormalVBO: UnsafePointer[UInt32]
 	var skintexcoordVBO: UnsafePointer[UInt32]
 	var skinfaceVBO: UnsafePointer[UInt32]
-	var charWidth: UnsafePointer[Int32]
-	var charWidthBig: UnsafePointer[Int32]
+	var charWidth: StaticTuple[Int32, 127]
+	var charWidthBig: StaticTuple[Int32, 127]
 	var charHeight: Int32
 	var charHeightBig: Int32
 	var glInitialized: Int32
@@ -3356,7 +3415,8 @@ alias mjFloatVecVec = NoneType
 alias mjDoubleVec = NoneType
 
 alias mjByteVec = NoneType
-struct mjtGeomInertia_: # Enum
+@register_passable("trivial")
+struct mjtGeomInertia_(Copyable & Movable): # Enum
 
 	#-------------------------------- enum types (mjt) ------------------------------------------------
 	alias mjINERTIA_VOLUME: Int = 0
@@ -3366,7 +3426,8 @@ struct mjtGeomInertia_: # Enum
 alias mjtGeomInertia = mjtGeomInertia_
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
-struct mjtMeshInertia_: # Enum
+@register_passable("trivial")
+struct mjtMeshInertia_(Copyable & Movable): # Enum
 	alias mjMESH_INERTIA_CONVEX: Int = 0
 	alias mjMESH_INERTIA_EXACT: Int = 1
 	alias mjMESH_INERTIA_LEGACY: Int = 2
@@ -3374,7 +3435,8 @@ struct mjtMeshInertia_: # Enum
 
 
 alias mjtMeshInertia = mjtMeshInertia_
-struct mjtBuiltin_: # Enum
+@register_passable("trivial")
+struct mjtBuiltin_(Copyable & Movable): # Enum
 	alias mjBUILTIN_NONE: Int = 0
 	alias mjBUILTIN_GRADIENT: Int = 1
 	alias mjBUILTIN_CHECKER: Int = 2
@@ -3382,7 +3444,8 @@ struct mjtBuiltin_: # Enum
 
 
 alias mjtBuiltin = mjtBuiltin_
-struct mjtMark_: # Enum
+@register_passable("trivial")
+struct mjtMark_(Copyable & Movable): # Enum
 	alias mjMARK_NONE: Int = 0
 	alias mjMARK_EDGE: Int = 1
 	alias mjMARK_CROSS: Int = 2
@@ -3390,28 +3453,32 @@ struct mjtMark_: # Enum
 
 
 alias mjtMark = mjtMark_
-struct mjtLimited_: # Enum
+@register_passable("trivial")
+struct mjtLimited_(Copyable & Movable): # Enum
 	alias mjLIMITED_FALSE: Int = 0
 	alias mjLIMITED_TRUE: Int = 1
 	alias mjLIMITED_AUTO: Int = 2
 
 
 alias mjtLimited = mjtLimited_
-struct mjtAlignFree_: # Enum
+@register_passable("trivial")
+struct mjtAlignFree_(Copyable & Movable): # Enum
 	alias mjALIGNFREE_FALSE: Int = 0
 	alias mjALIGNFREE_TRUE: Int = 1
 	alias mjALIGNFREE_AUTO: Int = 2
 
 
 alias mjtAlignFree = mjtAlignFree_
-struct mjtInertiaFromGeom_: # Enum
+@register_passable("trivial")
+struct mjtInertiaFromGeom_(Copyable & Movable): # Enum
 	alias mjINERTIAFROMGEOM_FALSE: Int = 0
 	alias mjINERTIAFROMGEOM_TRUE: Int = 1
 	alias mjINERTIAFROMGEOM_AUTO: Int = 2
 
 
 alias mjtInertiaFromGeom = mjtInertiaFromGeom_
-struct mjtOrientation_: # Enum
+@register_passable("trivial")
+struct mjtOrientation_(Copyable & Movable): # Enum
 	alias mjORIENTATION_QUAT: Int = 0
 	alias mjORIENTATION_AXISANGLE: Int = 1
 	alias mjORIENTATION_XYAXES: Int = 2
@@ -3420,7 +3487,8 @@ struct mjtOrientation_: # Enum
 
 
 alias mjtOrientation = mjtOrientation_
-struct mjsElement_:
+@register_passable("trivial")
+struct mjsElement_(Copyable & Movable):
 	var elemtype: mjtObj
 	var signature: UInt64
 
@@ -3428,7 +3496,8 @@ struct mjsElement_:
 alias mjsElement = mjsElement_
 #-------------------------------- attribute structs (mjs) -----------------------------------------
 
-struct mjsCompiler_:
+@register_passable("trivial")
+struct mjsCompiler_(Copyable & Movable):
 	var autolimits: mjtByte
 	var boundmass: Float64
 	var boundinertia: Float64
@@ -3436,19 +3505,20 @@ struct mjsCompiler_:
 	var balanceinertia: mjtByte
 	var fitaabb: mjtByte
 	var degree: mjtByte
-	var eulerseq: UnsafePointer[Int8]
+	var eulerseq: StaticTuple[Int8, 3]
 	var discardvisual: mjtByte
 	var usethread: mjtByte
 	var fusestatic: mjtByte
 	var inertiafromgeom: Int32
-	var inertiagrouprange: UnsafePointer[Int32]
+	var inertiagrouprange: StaticTuple[Int32, 2]
 	var saveinertial: mjtByte
 	var alignfree: Int32
 	var LRopt: mjLROpt
 
 
 alias mjsCompiler = mjsCompiler_
-struct mjSpec_:
+@register_passable("trivial")
+struct mjSpec_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var modelname: UnsafePointer[mjString]
 	var compiler: mjsCompiler
@@ -3479,16 +3549,18 @@ struct mjSpec_:
 
 
 alias mjSpec = mjSpec_
-struct mjsOrientation_:
+@register_passable("trivial")
+struct mjsOrientation_(Copyable & Movable):
 	var type: mjtOrientation
-	var axisangle: UnsafePointer[Float64]
-	var xyaxes: UnsafePointer[Float64]
-	var zaxis: UnsafePointer[Float64]
-	var euler: UnsafePointer[Float64]
+	var axisangle: StaticTuple[Float64, 4]
+	var xyaxes: StaticTuple[Float64, 6]
+	var zaxis: StaticTuple[Float64, 3]
+	var euler: StaticTuple[Float64, 3]
 
 
 alias mjsOrientation = mjsOrientation_
-struct mjsPlugin_:
+@register_passable("trivial")
+struct mjsPlugin_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var plugin_name: UnsafePointer[mjString]
@@ -3497,19 +3569,19 @@ struct mjsPlugin_:
 
 
 alias mjsPlugin = mjsPlugin_
-struct mjsBody_:
+@register_passable("trivial")
+struct mjsBody_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var childclass: UnsafePointer[mjString]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
 	var mass: Float64
-	var ipos: UnsafePointer[Float64]
-	var iquat: UnsafePointer[Float64]
-	var inertia: UnsafePointer[Float64]
+	var ipos: StaticTuple[Float64, 3]
+	var iquat: StaticTuple[Float64, 4]
+	var inertia: StaticTuple[Float64, 3]
 	var ialt: mjsOrientation
-	var fullinertia: UnsafePointer[Float64]
+	var fullinertia: StaticTuple[Float64, 6]
 	var mocap: mjtByte
 	var gravcomp: Float64
 	var userdata: UnsafePointer[mjDoubleVec]
@@ -3519,40 +3591,40 @@ struct mjsBody_:
 
 
 alias mjsBody = mjsBody_
-struct mjsFrame_:
+@register_passable("trivial")
+struct mjsFrame_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var childclass: UnsafePointer[mjString]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
 	var info: UnsafePointer[mjString]
 
 
 alias mjsFrame = mjsFrame_
-struct mjsJoint_:
+@register_passable("trivial")
+struct mjsJoint_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var type: mjtJoint
-	var pos: UnsafePointer[Float64]
-	var axis: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var axis: StaticTuple[Float64, 3]
 	var `ref`: Float64
 	var align: Int32
 	var stiffness: Float64
 	var springref: Float64
-	var springdamper: UnsafePointer[Float64]
+	var springdamper: StaticTuple[Float64, 2]
 	var limited: Int32
-	var range: UnsafePointer[Float64]
+	var range: StaticTuple[Float64, 2]
 	var margin: Float64
-	var solref_limit: UnsafePointer[mjtNum]
-	var solimp_limit: UnsafePointer[mjtNum]
+	var solref_limit: StaticTuple[mjtNum, 2]
+	var solimp_limit: StaticTuple[mjtNum, 5]
 	var actfrclimited: Int32
-	var actfrcrange: UnsafePointer[Float64]
+	var actfrcrange: StaticTuple[Float64, 2]
 	var armature: Float64
 	var damping: Float64
 	var frictionloss: Float64
-	var solref_friction: UnsafePointer[mjtNum]
-	var solimp_friction: UnsafePointer[mjtNum]
+	var solref_friction: StaticTuple[mjtNum, 2]
+	var solimp_friction: StaticTuple[mjtNum, 5]
 	var group: Int32
 	var actgravcomp: mjtByte
 	var userdata: UnsafePointer[mjDoubleVec]
@@ -3560,32 +3632,32 @@ struct mjsJoint_:
 
 
 alias mjsJoint = mjsJoint_
-struct mjsGeom_:
+@register_passable("trivial")
+struct mjsGeom_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var type: mjtGeom
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
-	var fromto: UnsafePointer[Float64]
-	var size: UnsafePointer[Float64]
+	var fromto: StaticTuple[Float64, 6]
+	var size: StaticTuple[Float64, 3]
 	var contype: Int32
 	var conaffinity: Int32
 	var condim: Int32
 	var priority: Int32
-	var friction: UnsafePointer[Float64]
+	var friction: StaticTuple[Float64, 3]
 	var solmix: Float64
-	var solref: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var margin: Float64
 	var gap: Float64
 	var mass: Float64
 	var density: Float64
 	var typeinertia: mjtGeomInertia
 	var fluid_ellipsoid: mjtNum
-	var fluid_coefs: UnsafePointer[mjtNum]
+	var fluid_coefs: StaticTuple[mjtNum, 5]
 	var material: UnsafePointer[mjString]
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var group: Int32
 	var hfieldname: UnsafePointer[mjString]
 	var meshname: UnsafePointer[mjString]
@@ -3596,78 +3668,81 @@ struct mjsGeom_:
 
 
 alias mjsGeom = mjsGeom_
-struct mjsSite_:
+@register_passable("trivial")
+struct mjsSite_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
-	var fromto: UnsafePointer[Float64]
-	var size: UnsafePointer[Float64]
+	var fromto: StaticTuple[Float64, 6]
+	var size: StaticTuple[Float64, 3]
 	var type: mjtGeom
 	var material: UnsafePointer[mjString]
 	var group: Int32
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsSite = mjsSite_
-struct mjsCamera_:
+@register_passable("trivial")
+struct mjsCamera_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
 	var mode: mjtCamLight
 	var targetbody: UnsafePointer[mjString]
 	var orthographic: Int32
 	var fovy: Float64
 	var ipd: Float64
-	var intrinsic: UnsafePointer[Float32]
-	var sensor_size: UnsafePointer[Float32]
-	var resolution: UnsafePointer[Float32]
-	var focal_length: UnsafePointer[Float32]
-	var focal_pixel: UnsafePointer[Float32]
-	var principal_length: UnsafePointer[Float32]
-	var principal_pixel: UnsafePointer[Float32]
+	var intrinsic: StaticTuple[Float32, 4]
+	var sensor_size: StaticTuple[Float32, 2]
+	var resolution: StaticTuple[Float32, 2]
+	var focal_length: StaticTuple[Float32, 2]
+	var focal_pixel: StaticTuple[Float32, 2]
+	var principal_length: StaticTuple[Float32, 2]
+	var principal_pixel: StaticTuple[Float32, 2]
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsCamera = mjsCamera_
-struct mjsLight_:
+@register_passable("trivial")
+struct mjsLight_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
-	var pos: UnsafePointer[Float64]
-	var dir: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var dir: StaticTuple[Float64, 3]
 	var mode: mjtCamLight
 	var targetbody: UnsafePointer[mjString]
 	var active: mjtByte
-	var directional: mjtByte
+	var type: mjtLightType
+	var texture: UnsafePointer[mjString]
 	var castshadow: mjtByte
-	var bulbradius: Float64
-	var attenuation: UnsafePointer[Float32]
+	var bulbradius: Float32
+	var intensity: Float32
+	var range: Float32
+	var attenuation: StaticTuple[Float32, 3]
 	var cutoff: Float32
 	var exponent: Float32
-	var ambient: UnsafePointer[Float32]
-	var diffuse: UnsafePointer[Float32]
-	var specular: UnsafePointer[Float32]
+	var ambient: StaticTuple[Float32, 3]
+	var diffuse: StaticTuple[Float32, 3]
+	var specular: StaticTuple[Float32, 3]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsLight = mjsLight_
-struct mjsFlex_:
+@register_passable("trivial")
+struct mjsFlex_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var contype: Int32
 	var conaffinity: Int32
 	var condim: Int32
 	var priority: Int32
-	var friction: UnsafePointer[Float64]
+	var friction: StaticTuple[Float64, 3]
 	var solmix: Float64
-	var solref: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var margin: Float64
 	var gap: Float64
 	var dim: Int32
@@ -3675,16 +3750,18 @@ struct mjsFlex_:
 	var internal: mjtByte
 	var flatskin: mjtByte
 	var selfcollide: Int32
+	var vertcollide: Int32
 	var activelayers: Int32
 	var group: Int32
 	var edgestiffness: Float64
 	var edgedamping: Float64
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var material: UnsafePointer[mjString]
 	var young: Float64
 	var poisson: Float64
 	var damping: Float64
 	var thickness: Float64
+	var elastic2d: Int32
 	var nodebody: UnsafePointer[mjStringVec]
 	var vertbody: UnsafePointer[mjStringVec]
 	var node: UnsafePointer[mjDoubleVec]
@@ -3696,16 +3773,17 @@ struct mjsFlex_:
 
 
 alias mjsFlex = mjsFlex_
-struct mjsMesh_:
+@register_passable("trivial")
+struct mjsMesh_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var refpos: UnsafePointer[Float64]
-	var refquat: UnsafePointer[Float64]
-	var scale: UnsafePointer[Float64]
+	var refpos: StaticTuple[Float64, 3]
+	var refquat: StaticTuple[Float64, 4]
+	var scale: StaticTuple[Float64, 3]
 	var inertia: mjtMeshInertia
 	var smoothnormal: mjtByte
+	var needsdf: mjtByte
 	var maxhullvert: Int32
 	var uservert: UnsafePointer[mjFloatVec]
 	var usernormal: UnsafePointer[mjFloatVec]
@@ -3717,12 +3795,12 @@ struct mjsMesh_:
 
 
 alias mjsMesh = mjsMesh_
-struct mjsHField_:
+@register_passable("trivial")
+struct mjsHField_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var size: UnsafePointer[Float64]
+	var size: StaticTuple[Float64, 4]
 	var nrow: Int32
 	var ncol: Int32
 	var userdata: UnsafePointer[mjFloatVec]
@@ -3730,12 +3808,12 @@ struct mjsHField_:
 
 
 alias mjsHField = mjsHField_
-struct mjsSkin_:
+@register_passable("trivial")
+struct mjsSkin_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
 	var material: UnsafePointer[mjString]
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var inflate: Float32
 	var group: Int32
 	var vert: UnsafePointer[mjFloatVec]
@@ -3750,23 +3828,24 @@ struct mjsSkin_:
 
 
 alias mjsSkin = mjsSkin_
-struct mjsTexture_:
+@register_passable("trivial")
+struct mjsTexture_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var type: mjtTexture
+	var colorspace: mjtColorSpace
 	var builtin: Int32
 	var mark: Int32
-	var rgb1: UnsafePointer[Float64]
-	var rgb2: UnsafePointer[Float64]
-	var markrgb: UnsafePointer[Float64]
+	var rgb1: StaticTuple[Float64, 3]
+	var rgb2: StaticTuple[Float64, 3]
+	var markrgb: StaticTuple[Float64, 3]
 	var random: Float64
 	var height: Int32
 	var width: Int32
 	var nchannel: Int32
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var gridsize: UnsafePointer[Int32]
-	var gridlayout: UnsafePointer[Int8]
+	var gridsize: StaticTuple[Int32, 2]
+	var gridlayout: StaticTuple[Int8, 13]
 	var cubefiles: UnsafePointer[mjStringVec]
 	var data: UnsafePointer[mjByteVec]
 	var hflip: mjtByte
@@ -3775,118 +3854,121 @@ struct mjsTexture_:
 
 
 alias mjsTexture = mjsTexture_
-struct mjsMaterial_:
+@register_passable("trivial")
+struct mjsMaterial_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var textures: UnsafePointer[mjStringVec]
 	var texuniform: mjtByte
-	var texrepeat: UnsafePointer[Float32]
+	var texrepeat: StaticTuple[Float32, 2]
 	var emission: Float32
 	var specular: Float32
 	var shininess: Float32
 	var reflectance: Float32
 	var metallic: Float32
 	var roughness: Float32
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsMaterial = mjsMaterial_
-struct mjsPair_:
+@register_passable("trivial")
+struct mjsPair_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var geomname1: UnsafePointer[mjString]
 	var geomname2: UnsafePointer[mjString]
 	var condim: Int32
-	var solref: UnsafePointer[mjtNum]
-	var solreffriction: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solreffriction: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var margin: Float64
 	var gap: Float64
-	var friction: UnsafePointer[Float64]
+	var friction: StaticTuple[Float64, 5]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsPair = mjsPair_
-struct mjsExclude_:
+@register_passable("trivial")
+struct mjsExclude_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var bodyname1: UnsafePointer[mjString]
 	var bodyname2: UnsafePointer[mjString]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsExclude = mjsExclude_
-struct mjsEquality_:
+@register_passable("trivial")
+struct mjsEquality_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var type: mjtEq
-	var data: UnsafePointer[Float64]
+	var data: StaticTuple[Float64, 11]
 	var active: mjtByte
 	var name1: UnsafePointer[mjString]
 	var name2: UnsafePointer[mjString]
 	var objtype: mjtObj
-	var solref: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsEquality = mjsEquality_
-struct mjsTendon_:
+@register_passable("trivial")
+struct mjsTendon_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var stiffness: Float64
-	var springlength: UnsafePointer[Float64]
+	var springlength: StaticTuple[Float64, 2]
 	var damping: Float64
 	var frictionloss: Float64
-	var solref_friction: UnsafePointer[mjtNum]
-	var solimp_friction: UnsafePointer[mjtNum]
+	var solref_friction: StaticTuple[mjtNum, 2]
+	var solimp_friction: StaticTuple[mjtNum, 5]
 	var armature: Float64
 	var limited: Int32
-	var range: UnsafePointer[Float64]
+	var actfrclimited: Int32
+	var range: StaticTuple[Float64, 2]
+	var actfrcrange: StaticTuple[Float64, 2]
 	var margin: Float64
-	var solref_limit: UnsafePointer[mjtNum]
-	var solimp_limit: UnsafePointer[mjtNum]
+	var solref_limit: StaticTuple[mjtNum, 2]
+	var solimp_limit: StaticTuple[mjtNum, 5]
 	var material: UnsafePointer[mjString]
 	var width: Float64
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var group: Int32
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsTendon = mjsTendon_
-struct mjsWrap_:
+@register_passable("trivial")
+struct mjsWrap_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsWrap = mjsWrap_
-struct mjsActuator_:
+@register_passable("trivial")
+struct mjsActuator_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var gaintype: mjtGain
-	var gainprm: UnsafePointer[Float64]
+	var gainprm: StaticTuple[Float64, 10]
 	var biastype: mjtBias
-	var biasprm: UnsafePointer[Float64]
+	var biasprm: StaticTuple[Float64, 10]
 	var dyntype: mjtDyn
-	var dynprm: UnsafePointer[Float64]
+	var dynprm: StaticTuple[Float64, 10]
 	var actdim: Int32
 	var actearly: mjtByte
 	var trntype: mjtTrn
-	var gear: UnsafePointer[Float64]
+	var gear: StaticTuple[Float64, 6]
 	var target: UnsafePointer[mjString]
 	var refsite: UnsafePointer[mjString]
 	var slidersite: UnsafePointer[mjString]
 	var cranklength: Float64
-	var lengthrange: UnsafePointer[Float64]
+	var lengthrange: StaticTuple[Float64, 2]
 	var inheritrange: Float64
 	var ctrllimited: Int32
-	var ctrlrange: UnsafePointer[Float64]
+	var ctrlrange: StaticTuple[Float64, 2]
 	var forcelimited: Int32
-	var forcerange: UnsafePointer[Float64]
+	var forcerange: StaticTuple[Float64, 2]
 	var actlimited: Int32
-	var actrange: UnsafePointer[Float64]
+	var actrange: StaticTuple[Float64, 2]
 	var group: Int32
 	var userdata: UnsafePointer[mjDoubleVec]
 	var plugin: mjsPlugin
@@ -3894,14 +3976,15 @@ struct mjsActuator_:
 
 
 alias mjsActuator = mjsActuator_
-struct mjsSensor_:
+@register_passable("trivial")
+struct mjsSensor_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var type: mjtSensor
 	var objtype: mjtObj
 	var objname: UnsafePointer[mjString]
 	var reftype: mjtObj
 	var refname: UnsafePointer[mjString]
+	var intprm: StaticTuple[Int32, 2]
 	var datatype: mjtDataType
 	var needstage: mjtStage
 	var dim: Int32
@@ -3913,26 +3996,26 @@ struct mjsSensor_:
 
 
 alias mjsSensor = mjsSensor_
-struct mjsNumeric_:
+@register_passable("trivial")
+struct mjsNumeric_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var data: UnsafePointer[mjDoubleVec]
 	var size: Int32
 	var info: UnsafePointer[mjString]
 
 
 alias mjsNumeric = mjsNumeric_
-struct mjsText_:
+@register_passable("trivial")
+struct mjsText_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var data: UnsafePointer[mjString]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsText = mjsText_
-struct mjsTuple_:
+@register_passable("trivial")
+struct mjsTuple_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var objtype: UnsafePointer[mjIntVec]
 	var objname: UnsafePointer[mjStringVec]
 	var objprm: UnsafePointer[mjDoubleVec]
@@ -3940,9 +4023,9 @@ struct mjsTuple_:
 
 
 alias mjsTuple = mjsTuple_
-struct mjsKey_:
+@register_passable("trivial")
+struct mjsKey_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var time: Float64
 	var qpos: UnsafePointer[mjDoubleVec]
 	var qvel: UnsafePointer[mjDoubleVec]
@@ -3954,9 +4037,9 @@ struct mjsKey_:
 
 
 alias mjsKey = mjsKey_
-struct mjsDefault_:
+@register_passable("trivial")
+struct mjsDefault_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var name: UnsafePointer[mjString]
 	var joint: UnsafePointer[mjsJoint]
 	var geom: UnsafePointer[mjsGeom]
 	var site: UnsafePointer[mjsSite]
@@ -3972,7 +4055,8 @@ struct mjsDefault_:
 
 
 alias mjsDefault = mjsDefault_
-struct mjtButton_: # Enum
+@register_passable("trivial")
+struct mjtButton_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjBUTTON_NONE: Int = 0
@@ -3984,7 +4068,8 @@ struct mjtButton_: # Enum
 alias mjtButton = mjtButton_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-struct mjtEvent_: # Enum
+@register_passable("trivial")
+struct mjtEvent_(Copyable & Movable): # Enum
 	alias mjEVENT_NONE: Int = 0
 	alias mjEVENT_MOVE: Int = 1
 	alias mjEVENT_PRESS: Int = 2
@@ -3997,7 +4082,8 @@ struct mjtEvent_: # Enum
 
 
 alias mjtEvent = mjtEvent_
-struct mjtItem_: # Enum
+@register_passable("trivial")
+struct mjtItem_(Copyable & Movable): # Enum
 	alias mjITEM_END: Int = -2
 	alias mjITEM_SECTION: Int = -1
 	alias mjITEM_SEPARATOR: Int = 0
@@ -4018,7 +4104,8 @@ struct mjtItem_: # Enum
 
 
 alias mjtItem = mjtItem_
-struct mjtSection_: # Enum
+@register_passable("trivial")
+struct mjtSection_(Copyable & Movable): # Enum
 	alias mjSECT_CLOSED: Int = 0
 	alias mjSECT_OPEN: Int = 1
 	alias mjSECT_FIXED: Int = 2
@@ -4029,9 +4116,10 @@ alias mjtSection = mjtSection_
 alias mjfItemEnable = fn(Int32,UnsafePointer[NoneType]) -> Int32
 # predicate function: set enable/disable based on item category
 
-struct mjuiState_:
+@register_passable("trivial")
+struct mjuiState_(Copyable & Movable):
 	var nrect: Int32
-	var rect: UnsafePointer[mjrRect]
+	var rect: StaticTuple[mjrRect, 25]
 	var userdata: OpaquePointer
 	var type: Int32
 	var left: Int32
@@ -4059,7 +4147,8 @@ struct mjuiState_:
 
 
 alias mjuiState = mjuiState_
-struct mjuiThemeSpacing_:
+@register_passable("trivial")
+struct mjuiThemeSpacing_(Copyable & Movable):
 	var total: Int32
 	var scroll: Int32
 	var label: Int32
@@ -4076,64 +4165,71 @@ struct mjuiThemeSpacing_:
 
 
 alias mjuiThemeSpacing = mjuiThemeSpacing_
-struct mjuiThemeColor_:
-	var master: UnsafePointer[Float32]
-	var thumb: UnsafePointer[Float32]
-	var secttitle: UnsafePointer[Float32]
-	var secttitle2: UnsafePointer[Float32]
-	var secttitleuncheck: UnsafePointer[Float32]
-	var secttitleuncheck2: UnsafePointer[Float32]
-	var secttitlecheck: UnsafePointer[Float32]
-	var secttitlecheck2: UnsafePointer[Float32]
-	var sectfont: UnsafePointer[Float32]
-	var sectsymbol: UnsafePointer[Float32]
-	var sectpane: UnsafePointer[Float32]
-	var separator: UnsafePointer[Float32]
-	var separator2: UnsafePointer[Float32]
-	var shortcut: UnsafePointer[Float32]
-	var fontactive: UnsafePointer[Float32]
-	var fontinactive: UnsafePointer[Float32]
-	var decorinactive: UnsafePointer[Float32]
-	var decorinactive2: UnsafePointer[Float32]
-	var button: UnsafePointer[Float32]
-	var check: UnsafePointer[Float32]
-	var radio: UnsafePointer[Float32]
-	var select: UnsafePointer[Float32]
-	var select2: UnsafePointer[Float32]
-	var slider: UnsafePointer[Float32]
-	var slider2: UnsafePointer[Float32]
-	var edit: UnsafePointer[Float32]
-	var edit2: UnsafePointer[Float32]
-	var cursor: UnsafePointer[Float32]
+@register_passable("trivial")
+struct mjuiThemeColor_(Copyable & Movable):
+	var master: StaticTuple[Float32, 3]
+	var thumb: StaticTuple[Float32, 3]
+	var secttitle: StaticTuple[Float32, 3]
+	var secttitle2: StaticTuple[Float32, 3]
+	var secttitleuncheck: StaticTuple[Float32, 3]
+	var secttitleuncheck2: StaticTuple[Float32, 3]
+	var secttitlecheck: StaticTuple[Float32, 3]
+	var secttitlecheck2: StaticTuple[Float32, 3]
+	var sectfont: StaticTuple[Float32, 3]
+	var sectsymbol: StaticTuple[Float32, 3]
+	var sectpane: StaticTuple[Float32, 3]
+	var separator: StaticTuple[Float32, 3]
+	var separator2: StaticTuple[Float32, 3]
+	var shortcut: StaticTuple[Float32, 3]
+	var fontactive: StaticTuple[Float32, 3]
+	var fontinactive: StaticTuple[Float32, 3]
+	var decorinactive: StaticTuple[Float32, 3]
+	var decorinactive2: StaticTuple[Float32, 3]
+	var button: StaticTuple[Float32, 3]
+	var check: StaticTuple[Float32, 3]
+	var radio: StaticTuple[Float32, 3]
+	var select: StaticTuple[Float32, 3]
+	var select2: StaticTuple[Float32, 3]
+	var slider: StaticTuple[Float32, 3]
+	var slider2: StaticTuple[Float32, 3]
+	var edit: StaticTuple[Float32, 3]
+	var edit2: StaticTuple[Float32, 3]
+	var cursor: StaticTuple[Float32, 3]
 
 
 alias mjuiThemeColor = mjuiThemeColor_
-struct mjuiItemSingle_:
+@register_passable("trivial")
+struct mjuiItemSingle_(Copyable & Movable):
 	var modifier: Int32
 	var shortcut: Int32
 
-struct mjuiItemMulti_:
+@register_passable("trivial")
+struct mjuiItemMulti_(Copyable & Movable):
 	var nelem: Int32
-	var name: UnsafePointer[Int8]
+	var name: StaticTuple[Int8, 35]
 
-struct mjuiItemSlider_:
-	var range: UnsafePointer[Float64]
+@register_passable("trivial")
+struct mjuiItemSlider_(Copyable & Movable):
+	var range: StaticTuple[Float64, 2]
 	var divisions: Float64
 
-struct mjuiItemEdit_:
+@register_passable("trivial")
+struct mjuiItemEdit_(Copyable & Movable):
 	var nelem: Int32
-	var range: UnsafePointer[Float64]
+	var range: StaticTuple[Float64, 7]
 
-struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
+@register_passable("trivial")
+struct _mjuiItem__Anonymous__line_259_3__line_264_3_(Copyable & Movable):
 	var single: mjuiItemSingle_
 	var multi: mjuiItemMulti_
 	var slider: mjuiItemSlider_
 	var edit: mjuiItemEdit_
 
 
-struct mjuiItem_:
+@register_passable("trivial")
+struct mjuiItem_(Copyable & Movable):
 	var type: Int32
-	var name: UnsafePointer[Int8]
+	var name: StaticTuple[Int8, 40]
 	var state: Int32
 	var pdata: OpaquePointer
 	var sectionid: Int32
@@ -4145,21 +4241,23 @@ struct mjuiItem_:
 
 
 alias mjuiItem = mjuiItem_
-struct mjuiSection_:
-	var name: UnsafePointer[Int8]
+@register_passable("trivial")
+struct mjuiSection_(Copyable & Movable):
+	var name: StaticTuple[Int8, 40]
 	var state: Int32
 	var modifier: Int32
 	var shortcut: Int32
 	var checkbox: Int32
 	var nitem: Int32
-	var item: UnsafePointer[mjuiItem]
+	var item: StaticTuple[mjuiItem, 200]
 	var rtitle: mjrRect
 	var rcontent: mjrRect
 	var lastclick: Int32
 
 
 alias mjuiSection = mjuiSection_
-struct mjUI_:
+@register_passable("trivial")
+struct mjUI_(Copyable & Movable):
 	var spacing: mjuiThemeSpacing
 	var color: mjuiThemeColor
 	var predicate: mjfItemEnable
@@ -4180,19 +4278,20 @@ struct mjUI_:
 	var edititem: Int32
 	var editcursor: Int32
 	var editscroll: Int32
-	var edittext: UnsafePointer[Int8]
+	var edittext: StaticTuple[Int8, 300]
 	var editchanged: UnsafePointer[mjuiItem]
 	var nsect: Int32
-	var sect: UnsafePointer[mjuiSection]
+	var sect: StaticTuple[mjuiSection, 10]
 
 
 alias mjUI = mjUI_
-struct mjuiDef_:
+@register_passable("trivial")
+struct mjuiDef_(Copyable & Movable):
 	var type: Int32
-	var name: UnsafePointer[Int8]
+	var name: StaticTuple[Int8, 40]
 	var state: Int32
 	var pdata: OpaquePointer
-	var other: UnsafePointer[Int8]
+	var other: StaticTuple[Int8, 300]
 	var otherint: Int32
 
 
@@ -4238,7 +4337,7 @@ alias mjcb_act_gain = mjfAct # extern # VisibilityAttrNode: Default
 alias mjcb_act_bias = mjfAct # extern # VisibilityAttrNode: Default
 
 
-alias mjCOLLISIONFUNC = UnsafePointer[mjfCollision] # extern # VisibilityAttrNode: Default
+alias mjCOLLISIONFUNC = StaticTuple[mjfCollision, 9] # extern # VisibilityAttrNode: Default
 
 # collision function table
 
@@ -4274,6 +4373,7 @@ alias mj_loadXML = fn(read filename: UnsafePointer[Int8], read vfs: UnsafePointe
 alias mj_parseXML = fn(read filename: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS], error: UnsafePointer[Int8], error_sz: Int32) -> UnsafePointer[mjSpec]
 alias mj_parseXMLString = fn(read xml: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS], error: UnsafePointer[Int8], error_sz: Int32) -> UnsafePointer[mjSpec]
 alias mj_compile = fn(s: UnsafePointer[mjSpec], read vfs: UnsafePointer[mjVFS]) -> UnsafePointer[mjModel]
+alias mj_copyBack = fn(s: UnsafePointer[mjSpec], read m: UnsafePointer[mjModel]) -> Int32
 alias mj_recompile = fn(s: UnsafePointer[mjSpec], read vfs: UnsafePointer[mjVFS], m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> Int32
 alias mj_saveLastXML = fn(read filename: UnsafePointer[Int8], read m: UnsafePointer[mjModel], error: UnsafePointer[Int8], error_sz: Int32) -> Int32
 alias mj_freeLastXML = fn() -> NoneType
@@ -4297,6 +4397,7 @@ alias mj_deleteModel = fn(m: UnsafePointer[mjModel]) -> NoneType
 alias mj_sizeModel = fn(read m: UnsafePointer[mjModel]) -> Int32
 alias mj_makeData = fn(read m: UnsafePointer[mjModel]) -> UnsafePointer[mjData]
 alias mj_copyData = fn(dest: UnsafePointer[mjData], read m: UnsafePointer[mjModel], read src: UnsafePointer[mjData]) -> UnsafePointer[mjData]
+alias mjv_copyData = fn(dest: UnsafePointer[mjData], read m: UnsafePointer[mjModel], read src: UnsafePointer[mjData]) -> UnsafePointer[mjData]
 alias mj_resetData = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_resetDataDebug = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], debug_value: UInt8) -> NoneType
 alias mj_resetDataKeyframe = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], key: Int32) -> NoneType
@@ -4348,6 +4449,7 @@ alias mj_flex = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> 
 alias mj_tendon = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_transmission = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_crb = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
+alias mj_makeM = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_factorM = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_solveM = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], x: UnsafePointer[mjtNum], read y: UnsafePointer[mjtNum], n: Int32) -> NoneType
 alias mj_solveM2 = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], x: UnsafePointer[mjtNum], read y: UnsafePointer[mjtNum], read sqrtInvD: UnsafePointer[mjtNum], n: Int32) -> NoneType
@@ -4420,9 +4522,7 @@ alias mjv_cameraInRoom = fn(headpos: UnsafePointer[mjtNum], forward: UnsafePoint
 alias mjv_frustumHeight = fn(read scn: UnsafePointer[mjvScene]) -> mjtNum
 alias mjv_alignToCamera = fn(res: UnsafePointer[mjtNum], read vec: UnsafePointer[mjtNum], read forward: UnsafePointer[mjtNum]) -> NoneType
 alias mjv_moveCamera = fn(read m: UnsafePointer[mjModel], action: Int32, reldx: mjtNum, reldy: mjtNum, read scn: UnsafePointer[mjvScene], cam: UnsafePointer[mjvCamera]) -> NoneType
-alias mjv_moveCameraFromState = fn(read scnstate: UnsafePointer[mjvSceneState], action: Int32, reldx: mjtNum, reldy: mjtNum, read scn: UnsafePointer[mjvScene], cam: UnsafePointer[mjvCamera]) -> NoneType
 alias mjv_movePerturb = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], action: Int32, reldx: mjtNum, reldy: mjtNum, read scn: UnsafePointer[mjvScene], pert: UnsafePointer[mjvPerturb]) -> NoneType
-alias mjv_movePerturbFromState = fn(read scnstate: UnsafePointer[mjvSceneState], action: Int32, reldx: mjtNum, reldy: mjtNum, read scn: UnsafePointer[mjvScene], pert: UnsafePointer[mjvPerturb]) -> NoneType
 alias mjv_moveModel = fn(read m: UnsafePointer[mjModel], action: Int32, reldx: mjtNum, reldy: mjtNum, read roomup: UnsafePointer[mjtNum], scn: UnsafePointer[mjvScene]) -> NoneType
 alias mjv_initPerturb = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read scn: UnsafePointer[mjvScene], pert: UnsafePointer[mjvPerturb]) -> NoneType
 alias mjv_applyPerturbPose = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read pert: UnsafePointer[mjvPerturb], flg_paused: Int32) -> NoneType
@@ -4437,12 +4537,7 @@ alias mjv_defaultScene = fn(scn: UnsafePointer[mjvScene]) -> NoneType
 alias mjv_makeScene = fn(read m: UnsafePointer[mjModel], scn: UnsafePointer[mjvScene], maxgeom: Int32) -> NoneType
 alias mjv_freeScene = fn(scn: UnsafePointer[mjvScene]) -> NoneType
 alias mjv_updateScene = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read opt: UnsafePointer[mjvOption], read pert: UnsafePointer[mjvPerturb], cam: UnsafePointer[mjvCamera], catmask: Int32, scn: UnsafePointer[mjvScene]) -> NoneType
-alias mjv_updateSceneFromState = fn(read scnstate: UnsafePointer[mjvSceneState], read opt: UnsafePointer[mjvOption], read pert: UnsafePointer[mjvPerturb], cam: UnsafePointer[mjvCamera], catmask: Int32, scn: UnsafePointer[mjvScene]) -> Int32
 alias mjv_copyModel = fn(dest: UnsafePointer[mjModel], read src: UnsafePointer[mjModel]) -> NoneType
-alias mjv_defaultSceneState = fn(scnstate: UnsafePointer[mjvSceneState]) -> NoneType
-alias mjv_makeSceneState = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], scnstate: UnsafePointer[mjvSceneState], maxgeom: Int32) -> NoneType
-alias mjv_freeSceneState = fn(scnstate: UnsafePointer[mjvSceneState]) -> NoneType
-alias mjv_updateSceneState = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read opt: UnsafePointer[mjvOption], scnstate: UnsafePointer[mjvSceneState]) -> NoneType
 alias mjv_addGeoms = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], read opt: UnsafePointer[mjvOption], read pert: UnsafePointer[mjvPerturb], catmask: Int32, scn: UnsafePointer[mjvScene]) -> NoneType
 alias mjv_makeLights = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], scn: UnsafePointer[mjvScene]) -> NoneType
 alias mjv_updateCamera = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], cam: UnsafePointer[mjvCamera], scn: UnsafePointer[mjvScene]) -> NoneType
@@ -4598,6 +4693,9 @@ alias mju_insertionSortInt = fn(list: UnsafePointer[Int32], n: Int32) -> NoneTyp
 alias mju_Halton = fn(index: Int32, base: Int32) -> mjtNum
 alias mju_strncpy = fn(dst: UnsafePointer[Int8], read src: UnsafePointer[Int8], n: Int32) -> UnsafePointer[Int8]
 alias mju_sigmoid = fn(x: mjtNum) -> mjtNum
+alias mjc_getSDF = fn(read m: UnsafePointer[mjModel], id_: Int32) -> UnsafePointer[mjpPlugin]
+alias mjc_distance = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], read s: UnsafePointer[mjSDF], read x: UnsafePointer[mjtNum]) -> mjtNum
+alias mjc_gradient = fn(read m: UnsafePointer[mjModel], read d: UnsafePointer[mjData], read s: UnsafePointer[mjSDF], gradient: UnsafePointer[mjtNum], read x: UnsafePointer[mjtNum]) -> NoneType
 alias mjd_transitionFD = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], eps: mjtNum, flg_centered: mjtByte, A: UnsafePointer[mjtNum], B: UnsafePointer[mjtNum], C: UnsafePointer[mjtNum], D: UnsafePointer[mjtNum]) -> NoneType
 alias mjd_inverseFD = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData], eps: mjtNum, flg_actuation: mjtByte, DfDq: UnsafePointer[mjtNum], DfDv: UnsafePointer[mjtNum], DfDa: UnsafePointer[mjtNum], DsDq: UnsafePointer[mjtNum], DsDv: UnsafePointer[mjtNum], DsDa: UnsafePointer[mjtNum], DmDq: UnsafePointer[mjtNum]) -> NoneType
 alias mjd_subQuat = fn(read qa: UnsafePointer[mjtNum], read qb: UnsafePointer[mjtNum], Da: UnsafePointer[mjtNum], Db: UnsafePointer[mjtNum]) -> NoneType
@@ -4619,8 +4717,6 @@ alias mju_threadPoolDestroy = fn(thread_pool: UnsafePointer[mjThreadPool]) -> No
 alias mju_defaultTask = fn(task: UnsafePointer[mjTask]) -> NoneType
 alias mju_taskJoin = fn(task: UnsafePointer[mjTask]) -> NoneType
 alias mjs_attach = fn(parent: UnsafePointer[mjsElement], read child: UnsafePointer[mjsElement], read prefix: UnsafePointer[Int8], read suffix: UnsafePointer[Int8]) -> UnsafePointer[mjsElement]
-alias mjs_detachBody = fn(s: UnsafePointer[mjSpec], b: UnsafePointer[mjsBody]) -> Int32
-alias mjs_detachDefault = fn(s: UnsafePointer[mjSpec], d: UnsafePointer[mjsDefault]) -> Int32
 alias mjs_addBody = fn(body: UnsafePointer[mjsBody], read def_: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsBody]
 alias mjs_addSite = fn(body: UnsafePointer[mjsBody], read def_: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsSite]
 alias mjs_addJoint = fn(body: UnsafePointer[mjsBody], read def_: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsJoint]
@@ -4629,7 +4725,7 @@ alias mjs_addGeom = fn(body: UnsafePointer[mjsBody], read def_: UnsafePointer[mj
 alias mjs_addCamera = fn(body: UnsafePointer[mjsBody], read def_: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsCamera]
 alias mjs_addLight = fn(body: UnsafePointer[mjsBody], read def_: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsLight]
 alias mjs_addFrame = fn(body: UnsafePointer[mjsBody], parentframe: UnsafePointer[mjsFrame]) -> UnsafePointer[mjsFrame]
-alias mjs_delete = fn(element: UnsafePointer[mjsElement]) -> Int32
+alias mjs_delete = fn(spec: UnsafePointer[mjSpec], element: UnsafePointer[mjsElement]) -> Int32
 alias mjs_addActuator = fn(s: UnsafePointer[mjSpec], read def_: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsActuator]
 alias mjs_addSensor = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsSensor]
 alias mjs_addFlex = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsFlex]
@@ -4647,6 +4743,14 @@ alias mjs_addTuple = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsTuple]
 alias mjs_addKey = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsKey]
 alias mjs_addPlugin = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsPlugin]
 alias mjs_addDefault = fn(s: UnsafePointer[mjSpec], read classname: UnsafePointer[Int8], read parent: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsDefault]
+alias mjs_setToMotor = fn(actuator: UnsafePointer[mjsActuator]) -> UnsafePointer[Int8]
+alias mjs_setToPosition = fn(actuator: UnsafePointer[mjsActuator], kp: Float64, kv: UnsafePointer[Float64], dampratio: UnsafePointer[Float64], timeconst: UnsafePointer[Float64], inheritrange: Float64) -> UnsafePointer[Int8]
+alias mjs_setToIntVelocity = fn(actuator: UnsafePointer[mjsActuator], kp: Float64, kv: UnsafePointer[Float64], dampratio: UnsafePointer[Float64], timeconst: UnsafePointer[Float64], inheritrange: Float64) -> UnsafePointer[Int8]
+alias mjs_setToVelocity = fn(actuator: UnsafePointer[mjsActuator], kv: Float64) -> UnsafePointer[Int8]
+alias mjs_setToDamper = fn(actuator: UnsafePointer[mjsActuator], kv: Float64) -> UnsafePointer[Int8]
+alias mjs_setToCylinder = fn(actuator: UnsafePointer[mjsActuator], timeconst: Float64, bias: Float64, area: Float64, diameter: Float64) -> UnsafePointer[Int8]
+alias mjs_setToMuscle = fn(actuator: UnsafePointer[mjsActuator], timeconst: UnsafePointer[Float64], tausmooth: Float64, range: UnsafePointer[Float64], force: Float64, scale: Float64, lmin: Float64, lmax: Float64, vmax: Float64, fpmax: Float64, fvmax: Float64) -> UnsafePointer[Int8]
+alias mjs_setToAdhesion = fn(actuator: UnsafePointer[mjsActuator], gain: Float64) -> UnsafePointer[Int8]
 alias mjs_addMesh = fn(s: UnsafePointer[mjSpec], read def_: UnsafePointer[mjsDefault]) -> UnsafePointer[mjsMesh]
 alias mjs_addHField = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsHField]
 alias mjs_addSkin = fn(s: UnsafePointer[mjSpec]) -> UnsafePointer[mjsSkin]
@@ -4668,6 +4772,7 @@ alias mjs_firstChild = fn(body: UnsafePointer[mjsBody], type_: mjtObj, recurse: 
 alias mjs_nextChild = fn(body: UnsafePointer[mjsBody], child: UnsafePointer[mjsElement], recurse: Int32) -> UnsafePointer[mjsElement]
 alias mjs_firstElement = fn(s: UnsafePointer[mjSpec], type_: mjtObj) -> UnsafePointer[mjsElement]
 alias mjs_nextElement = fn(s: UnsafePointer[mjSpec], element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsElement]
+alias mjs_setName = fn(element: UnsafePointer[mjsElement], read name: UnsafePointer[Int8]) -> Int32
 alias mjs_setBuffer = fn(dest: UnsafePointer[mjByteVec], read array: OpaquePointer, size: Int32) -> NoneType
 alias mjs_setString = fn(dest: UnsafePointer[mjString], read text: UnsafePointer[Int8]) -> NoneType
 alias mjs_setStringVec = fn(dest: UnsafePointer[mjStringVec], read text: UnsafePointer[Int8]) -> NoneType
@@ -4679,13 +4784,16 @@ alias mjs_setFloat = fn(dest: UnsafePointer[mjFloatVec], read array: UnsafePoint
 alias mjs_appendFloatVec = fn(dest: UnsafePointer[mjFloatVecVec], read array: UnsafePointer[Float32], size: Int32) -> NoneType
 alias mjs_setDouble = fn(dest: UnsafePointer[mjDoubleVec], read array: UnsafePointer[Float64], size: Int32) -> NoneType
 alias mjs_setPluginAttributes = fn(plugin: UnsafePointer[mjsPlugin], attributes: OpaquePointer) -> NoneType
+alias mjs_getName = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjString]
 alias mjs_getString = fn(read source: UnsafePointer[mjString]) -> UnsafePointer[Int8]
 alias mjs_getDouble = fn(read source: UnsafePointer[mjDoubleVec], size: UnsafePointer[Int32]) -> UnsafePointer[Float64]
+alias mjs_getPluginAttributes = fn(read plugin: UnsafePointer[mjsPlugin]) -> OpaquePointer
 alias mjs_setDefault = fn(element: UnsafePointer[mjsElement], read def_: UnsafePointer[mjsDefault]) -> NoneType
 alias mjs_setFrame = fn(dest: UnsafePointer[mjsElement], frame: UnsafePointer[mjsFrame]) -> Int32
 alias mjs_resolveOrientation = fn(quat: UnsafePointer[Float64], degree: mjtByte, read sequence: UnsafePointer[Int8], read orientation: UnsafePointer[mjsOrientation]) -> UnsafePointer[Int8]
 alias mjs_bodyToFrame = fn(body: UnsafePointer[UnsafePointer[mjsBody]]) -> UnsafePointer[mjsFrame]
 alias mjs_setUserValue = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8], read data: OpaquePointer) -> NoneType
+alias mjs_setUserValueWithCleanup = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8], read data: OpaquePointer, cleanup: fn(read OpaquePointer) -> NoneType) -> NoneType
 alias mjs_getUserValue = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8]) -> OpaquePointer
 alias mjs_deleteUserValue = fn(element: UnsafePointer[mjsElement], read key: UnsafePointer[Int8]) -> NoneType
 alias mjs_defaultSpec = fn(spec: UnsafePointer[mjSpec]) -> NoneType
@@ -4737,4 +4845,1471 @@ alias mjs_asSkin = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsSk
 alias mjs_asTexture = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsTexture]
 alias mjs_asMaterial = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsMaterial]
 alias mjs_asPlugin = fn(element: UnsafePointer[mjsElement]) -> UnsafePointer[mjsPlugin]
+
+
+
+alias LibMuJoCo_mj_defaultVFS = ExternalFunction['mj_defaultVFS', mj_defaultVFS]
+alias LibMuJoCo_mj_addFileVFS = ExternalFunction['mj_addFileVFS', mj_addFileVFS]
+alias LibMuJoCo_mj_addBufferVFS = ExternalFunction['mj_addBufferVFS', mj_addBufferVFS]
+alias LibMuJoCo_mj_deleteFileVFS = ExternalFunction['mj_deleteFileVFS', mj_deleteFileVFS]
+alias LibMuJoCo_mj_deleteVFS = ExternalFunction['mj_deleteVFS', mj_deleteVFS]
+alias LibMuJoCo_mj_loadXML = ExternalFunction['mj_loadXML', mj_loadXML]
+alias LibMuJoCo_mj_parseXML = ExternalFunction['mj_parseXML', mj_parseXML]
+alias LibMuJoCo_mj_parseXMLString = ExternalFunction['mj_parseXMLString', mj_parseXMLString]
+alias LibMuJoCo_mj_compile = ExternalFunction['mj_compile', mj_compile]
+alias LibMuJoCo_mj_copyBack = ExternalFunction['mj_copyBack', mj_copyBack]
+alias LibMuJoCo_mj_recompile = ExternalFunction['mj_recompile', mj_recompile]
+alias LibMuJoCo_mj_saveLastXML = ExternalFunction['mj_saveLastXML', mj_saveLastXML]
+alias LibMuJoCo_mj_freeLastXML = ExternalFunction['mj_freeLastXML', mj_freeLastXML]
+alias LibMuJoCo_mj_saveXMLString = ExternalFunction['mj_saveXMLString', mj_saveXMLString]
+alias LibMuJoCo_mj_saveXML = ExternalFunction['mj_saveXML', mj_saveXML]
+alias LibMuJoCo_mj_step = ExternalFunction['mj_step', mj_step]
+alias LibMuJoCo_mj_step1 = ExternalFunction['mj_step1', mj_step1]
+alias LibMuJoCo_mj_step2 = ExternalFunction['mj_step2', mj_step2]
+alias LibMuJoCo_mj_forward = ExternalFunction['mj_forward', mj_forward]
+alias LibMuJoCo_mj_inverse = ExternalFunction['mj_inverse', mj_inverse]
+alias LibMuJoCo_mj_forwardSkip = ExternalFunction['mj_forwardSkip', mj_forwardSkip]
+alias LibMuJoCo_mj_inverseSkip = ExternalFunction['mj_inverseSkip', mj_inverseSkip]
+alias LibMuJoCo_mj_defaultLROpt = ExternalFunction['mj_defaultLROpt', mj_defaultLROpt]
+alias LibMuJoCo_mj_defaultSolRefImp = ExternalFunction['mj_defaultSolRefImp', mj_defaultSolRefImp]
+alias LibMuJoCo_mj_defaultOption = ExternalFunction['mj_defaultOption', mj_defaultOption]
+alias LibMuJoCo_mj_defaultVisual = ExternalFunction['mj_defaultVisual', mj_defaultVisual]
+alias LibMuJoCo_mj_copyModel = ExternalFunction['mj_copyModel', mj_copyModel]
+alias LibMuJoCo_mj_saveModel = ExternalFunction['mj_saveModel', mj_saveModel]
+alias LibMuJoCo_mj_loadModel = ExternalFunction['mj_loadModel', mj_loadModel]
+alias LibMuJoCo_mj_deleteModel = ExternalFunction['mj_deleteModel', mj_deleteModel]
+alias LibMuJoCo_mj_sizeModel = ExternalFunction['mj_sizeModel', mj_sizeModel]
+alias LibMuJoCo_mj_makeData = ExternalFunction['mj_makeData', mj_makeData]
+alias LibMuJoCo_mj_copyData = ExternalFunction['mj_copyData', mj_copyData]
+alias LibMuJoCo_mjv_copyData = ExternalFunction['mjv_copyData', mjv_copyData]
+alias LibMuJoCo_mj_resetData = ExternalFunction['mj_resetData', mj_resetData]
+alias LibMuJoCo_mj_resetDataDebug = ExternalFunction['mj_resetDataDebug', mj_resetDataDebug]
+alias LibMuJoCo_mj_resetDataKeyframe = ExternalFunction['mj_resetDataKeyframe', mj_resetDataKeyframe]
+alias LibMuJoCo_mj_markStack = ExternalFunction['mj_markStack', mj_markStack]
+alias LibMuJoCo_mj_freeStack = ExternalFunction['mj_freeStack', mj_freeStack]
+alias LibMuJoCo_mj_stackAllocByte = ExternalFunction['mj_stackAllocByte', mj_stackAllocByte]
+alias LibMuJoCo_mj_stackAllocNum = ExternalFunction['mj_stackAllocNum', mj_stackAllocNum]
+alias LibMuJoCo_mj_stackAllocInt = ExternalFunction['mj_stackAllocInt', mj_stackAllocInt]
+alias LibMuJoCo_mj_deleteData = ExternalFunction['mj_deleteData', mj_deleteData]
+alias LibMuJoCo_mj_resetCallbacks = ExternalFunction['mj_resetCallbacks', mj_resetCallbacks]
+alias LibMuJoCo_mj_setConst = ExternalFunction['mj_setConst', mj_setConst]
+alias LibMuJoCo_mj_setLengthRange = ExternalFunction['mj_setLengthRange', mj_setLengthRange]
+alias LibMuJoCo_mj_makeSpec = ExternalFunction['mj_makeSpec', mj_makeSpec]
+alias LibMuJoCo_mj_copySpec = ExternalFunction['mj_copySpec', mj_copySpec]
+alias LibMuJoCo_mj_deleteSpec = ExternalFunction['mj_deleteSpec', mj_deleteSpec]
+alias LibMuJoCo_mjs_activatePlugin = ExternalFunction['mjs_activatePlugin', mjs_activatePlugin]
+alias LibMuJoCo_mjs_setDeepCopy = ExternalFunction['mjs_setDeepCopy', mjs_setDeepCopy]
+alias LibMuJoCo_mj_printFormattedModel = ExternalFunction['mj_printFormattedModel', mj_printFormattedModel]
+alias LibMuJoCo_mj_printModel = ExternalFunction['mj_printModel', mj_printModel]
+alias LibMuJoCo_mj_printFormattedData = ExternalFunction['mj_printFormattedData', mj_printFormattedData]
+alias LibMuJoCo_mj_printData = ExternalFunction['mj_printData', mj_printData]
+alias LibMuJoCo_mju_printMat = ExternalFunction['mju_printMat', mju_printMat]
+alias LibMuJoCo_mju_printMatSparse = ExternalFunction['mju_printMatSparse', mju_printMatSparse]
+alias LibMuJoCo_mj_printSchema = ExternalFunction['mj_printSchema', mj_printSchema]
+alias LibMuJoCo_mj_fwdPosition = ExternalFunction['mj_fwdPosition', mj_fwdPosition]
+alias LibMuJoCo_mj_fwdVelocity = ExternalFunction['mj_fwdVelocity', mj_fwdVelocity]
+alias LibMuJoCo_mj_fwdActuation = ExternalFunction['mj_fwdActuation', mj_fwdActuation]
+alias LibMuJoCo_mj_fwdAcceleration = ExternalFunction['mj_fwdAcceleration', mj_fwdAcceleration]
+alias LibMuJoCo_mj_fwdConstraint = ExternalFunction['mj_fwdConstraint', mj_fwdConstraint]
+alias LibMuJoCo_mj_Euler = ExternalFunction['mj_Euler', mj_Euler]
+alias LibMuJoCo_mj_RungeKutta = ExternalFunction['mj_RungeKutta', mj_RungeKutta]
+alias LibMuJoCo_mj_implicit = ExternalFunction['mj_implicit', mj_implicit]
+alias LibMuJoCo_mj_invPosition = ExternalFunction['mj_invPosition', mj_invPosition]
+alias LibMuJoCo_mj_invVelocity = ExternalFunction['mj_invVelocity', mj_invVelocity]
+alias LibMuJoCo_mj_invConstraint = ExternalFunction['mj_invConstraint', mj_invConstraint]
+alias LibMuJoCo_mj_compareFwdInv = ExternalFunction['mj_compareFwdInv', mj_compareFwdInv]
+alias LibMuJoCo_mj_sensorPos = ExternalFunction['mj_sensorPos', mj_sensorPos]
+alias LibMuJoCo_mj_sensorVel = ExternalFunction['mj_sensorVel', mj_sensorVel]
+alias LibMuJoCo_mj_sensorAcc = ExternalFunction['mj_sensorAcc', mj_sensorAcc]
+alias LibMuJoCo_mj_energyPos = ExternalFunction['mj_energyPos', mj_energyPos]
+alias LibMuJoCo_mj_energyVel = ExternalFunction['mj_energyVel', mj_energyVel]
+alias LibMuJoCo_mj_checkPos = ExternalFunction['mj_checkPos', mj_checkPos]
+alias LibMuJoCo_mj_checkVel = ExternalFunction['mj_checkVel', mj_checkVel]
+alias LibMuJoCo_mj_checkAcc = ExternalFunction['mj_checkAcc', mj_checkAcc]
+alias LibMuJoCo_mj_kinematics = ExternalFunction['mj_kinematics', mj_kinematics]
+alias LibMuJoCo_mj_comPos = ExternalFunction['mj_comPos', mj_comPos]
+alias LibMuJoCo_mj_camlight = ExternalFunction['mj_camlight', mj_camlight]
+alias LibMuJoCo_mj_flex = ExternalFunction['mj_flex', mj_flex]
+alias LibMuJoCo_mj_tendon = ExternalFunction['mj_tendon', mj_tendon]
+alias LibMuJoCo_mj_transmission = ExternalFunction['mj_transmission', mj_transmission]
+alias LibMuJoCo_mj_crb = ExternalFunction['mj_crb', mj_crb]
+alias LibMuJoCo_mj_makeM = ExternalFunction['mj_makeM', mj_makeM]
+alias LibMuJoCo_mj_factorM = ExternalFunction['mj_factorM', mj_factorM]
+alias LibMuJoCo_mj_solveM = ExternalFunction['mj_solveM', mj_solveM]
+alias LibMuJoCo_mj_solveM2 = ExternalFunction['mj_solveM2', mj_solveM2]
+alias LibMuJoCo_mj_comVel = ExternalFunction['mj_comVel', mj_comVel]
+alias LibMuJoCo_mj_passive = ExternalFunction['mj_passive', mj_passive]
+alias LibMuJoCo_mj_subtreeVel = ExternalFunction['mj_subtreeVel', mj_subtreeVel]
+alias LibMuJoCo_mj_rne = ExternalFunction['mj_rne', mj_rne]
+alias LibMuJoCo_mj_rnePostConstraint = ExternalFunction['mj_rnePostConstraint', mj_rnePostConstraint]
+alias LibMuJoCo_mj_collision = ExternalFunction['mj_collision', mj_collision]
+alias LibMuJoCo_mj_makeConstraint = ExternalFunction['mj_makeConstraint', mj_makeConstraint]
+alias LibMuJoCo_mj_island = ExternalFunction['mj_island', mj_island]
+alias LibMuJoCo_mj_projectConstraint = ExternalFunction['mj_projectConstraint', mj_projectConstraint]
+alias LibMuJoCo_mj_referenceConstraint = ExternalFunction['mj_referenceConstraint', mj_referenceConstraint]
+alias LibMuJoCo_mj_constraintUpdate = ExternalFunction['mj_constraintUpdate', mj_constraintUpdate]
+alias LibMuJoCo_mj_stateSize = ExternalFunction['mj_stateSize', mj_stateSize]
+alias LibMuJoCo_mj_getState = ExternalFunction['mj_getState', mj_getState]
+alias LibMuJoCo_mj_setState = ExternalFunction['mj_setState', mj_setState]
+alias LibMuJoCo_mj_setKeyframe = ExternalFunction['mj_setKeyframe', mj_setKeyframe]
+alias LibMuJoCo_mj_addContact = ExternalFunction['mj_addContact', mj_addContact]
+alias LibMuJoCo_mj_isPyramidal = ExternalFunction['mj_isPyramidal', mj_isPyramidal]
+alias LibMuJoCo_mj_isSparse = ExternalFunction['mj_isSparse', mj_isSparse]
+alias LibMuJoCo_mj_isDual = ExternalFunction['mj_isDual', mj_isDual]
+alias LibMuJoCo_mj_mulJacVec = ExternalFunction['mj_mulJacVec', mj_mulJacVec]
+alias LibMuJoCo_mj_mulJacTVec = ExternalFunction['mj_mulJacTVec', mj_mulJacTVec]
+alias LibMuJoCo_mj_jac = ExternalFunction['mj_jac', mj_jac]
+alias LibMuJoCo_mj_jacBody = ExternalFunction['mj_jacBody', mj_jacBody]
+alias LibMuJoCo_mj_jacBodyCom = ExternalFunction['mj_jacBodyCom', mj_jacBodyCom]
+alias LibMuJoCo_mj_jacSubtreeCom = ExternalFunction['mj_jacSubtreeCom', mj_jacSubtreeCom]
+alias LibMuJoCo_mj_jacGeom = ExternalFunction['mj_jacGeom', mj_jacGeom]
+alias LibMuJoCo_mj_jacSite = ExternalFunction['mj_jacSite', mj_jacSite]
+alias LibMuJoCo_mj_jacPointAxis = ExternalFunction['mj_jacPointAxis', mj_jacPointAxis]
+alias LibMuJoCo_mj_jacDot = ExternalFunction['mj_jacDot', mj_jacDot]
+alias LibMuJoCo_mj_angmomMat = ExternalFunction['mj_angmomMat', mj_angmomMat]
+alias LibMuJoCo_mj_name2id = ExternalFunction['mj_name2id', mj_name2id]
+alias LibMuJoCo_mj_id2name = ExternalFunction['mj_id2name', mj_id2name]
+alias LibMuJoCo_mj_fullM = ExternalFunction['mj_fullM', mj_fullM]
+alias LibMuJoCo_mj_mulM = ExternalFunction['mj_mulM', mj_mulM]
+alias LibMuJoCo_mj_mulM2 = ExternalFunction['mj_mulM2', mj_mulM2]
+alias LibMuJoCo_mj_addM = ExternalFunction['mj_addM', mj_addM]
+alias LibMuJoCo_mj_applyFT = ExternalFunction['mj_applyFT', mj_applyFT]
+alias LibMuJoCo_mj_objectVelocity = ExternalFunction['mj_objectVelocity', mj_objectVelocity]
+alias LibMuJoCo_mj_objectAcceleration = ExternalFunction['mj_objectAcceleration', mj_objectAcceleration]
+alias LibMuJoCo_mj_geomDistance = ExternalFunction['mj_geomDistance', mj_geomDistance]
+alias LibMuJoCo_mj_contactForce = ExternalFunction['mj_contactForce', mj_contactForce]
+alias LibMuJoCo_mj_differentiatePos = ExternalFunction['mj_differentiatePos', mj_differentiatePos]
+alias LibMuJoCo_mj_integratePos = ExternalFunction['mj_integratePos', mj_integratePos]
+alias LibMuJoCo_mj_normalizeQuat = ExternalFunction['mj_normalizeQuat', mj_normalizeQuat]
+alias LibMuJoCo_mj_local2Global = ExternalFunction['mj_local2Global', mj_local2Global]
+alias LibMuJoCo_mj_getTotalmass = ExternalFunction['mj_getTotalmass', mj_getTotalmass]
+alias LibMuJoCo_mj_setTotalmass = ExternalFunction['mj_setTotalmass', mj_setTotalmass]
+alias LibMuJoCo_mj_getPluginConfig = ExternalFunction['mj_getPluginConfig', mj_getPluginConfig]
+alias LibMuJoCo_mj_loadPluginLibrary = ExternalFunction['mj_loadPluginLibrary', mj_loadPluginLibrary]
+alias LibMuJoCo_mj_loadAllPluginLibraries = ExternalFunction['mj_loadAllPluginLibraries', mj_loadAllPluginLibraries]
+alias LibMuJoCo_mj_version = ExternalFunction['mj_version', mj_version]
+alias LibMuJoCo_mj_versionString = ExternalFunction['mj_versionString', mj_versionString]
+alias LibMuJoCo_mj_multiRay = ExternalFunction['mj_multiRay', mj_multiRay]
+alias LibMuJoCo_mj_ray = ExternalFunction['mj_ray', mj_ray]
+alias LibMuJoCo_mj_rayHfield = ExternalFunction['mj_rayHfield', mj_rayHfield]
+alias LibMuJoCo_mj_rayMesh = ExternalFunction['mj_rayMesh', mj_rayMesh]
+alias LibMuJoCo_mju_rayGeom = ExternalFunction['mju_rayGeom', mju_rayGeom]
+alias LibMuJoCo_mju_rayFlex = ExternalFunction['mju_rayFlex', mju_rayFlex]
+alias LibMuJoCo_mju_raySkin = ExternalFunction['mju_raySkin', mju_raySkin]
+alias LibMuJoCo_mjv_defaultCamera = ExternalFunction['mjv_defaultCamera', mjv_defaultCamera]
+alias LibMuJoCo_mjv_defaultFreeCamera = ExternalFunction['mjv_defaultFreeCamera', mjv_defaultFreeCamera]
+alias LibMuJoCo_mjv_defaultPerturb = ExternalFunction['mjv_defaultPerturb', mjv_defaultPerturb]
+alias LibMuJoCo_mjv_room2model = ExternalFunction['mjv_room2model', mjv_room2model]
+alias LibMuJoCo_mjv_model2room = ExternalFunction['mjv_model2room', mjv_model2room]
+alias LibMuJoCo_mjv_cameraInModel = ExternalFunction['mjv_cameraInModel', mjv_cameraInModel]
+alias LibMuJoCo_mjv_cameraInRoom = ExternalFunction['mjv_cameraInRoom', mjv_cameraInRoom]
+alias LibMuJoCo_mjv_frustumHeight = ExternalFunction['mjv_frustumHeight', mjv_frustumHeight]
+alias LibMuJoCo_mjv_alignToCamera = ExternalFunction['mjv_alignToCamera', mjv_alignToCamera]
+alias LibMuJoCo_mjv_moveCamera = ExternalFunction['mjv_moveCamera', mjv_moveCamera]
+alias LibMuJoCo_mjv_movePerturb = ExternalFunction['mjv_movePerturb', mjv_movePerturb]
+alias LibMuJoCo_mjv_moveModel = ExternalFunction['mjv_moveModel', mjv_moveModel]
+alias LibMuJoCo_mjv_initPerturb = ExternalFunction['mjv_initPerturb', mjv_initPerturb]
+alias LibMuJoCo_mjv_applyPerturbPose = ExternalFunction['mjv_applyPerturbPose', mjv_applyPerturbPose]
+alias LibMuJoCo_mjv_applyPerturbForce = ExternalFunction['mjv_applyPerturbForce', mjv_applyPerturbForce]
+alias LibMuJoCo_mjv_averageCamera = ExternalFunction['mjv_averageCamera', mjv_averageCamera]
+alias LibMuJoCo_mjv_select = ExternalFunction['mjv_select', mjv_select]
+alias LibMuJoCo_mjv_defaultOption = ExternalFunction['mjv_defaultOption', mjv_defaultOption]
+alias LibMuJoCo_mjv_defaultFigure = ExternalFunction['mjv_defaultFigure', mjv_defaultFigure]
+alias LibMuJoCo_mjv_initGeom = ExternalFunction['mjv_initGeom', mjv_initGeom]
+alias LibMuJoCo_mjv_connector = ExternalFunction['mjv_connector', mjv_connector]
+alias LibMuJoCo_mjv_defaultScene = ExternalFunction['mjv_defaultScene', mjv_defaultScene]
+alias LibMuJoCo_mjv_makeScene = ExternalFunction['mjv_makeScene', mjv_makeScene]
+alias LibMuJoCo_mjv_freeScene = ExternalFunction['mjv_freeScene', mjv_freeScene]
+alias LibMuJoCo_mjv_updateScene = ExternalFunction['mjv_updateScene', mjv_updateScene]
+alias LibMuJoCo_mjv_copyModel = ExternalFunction['mjv_copyModel', mjv_copyModel]
+alias LibMuJoCo_mjv_addGeoms = ExternalFunction['mjv_addGeoms', mjv_addGeoms]
+alias LibMuJoCo_mjv_makeLights = ExternalFunction['mjv_makeLights', mjv_makeLights]
+alias LibMuJoCo_mjv_updateCamera = ExternalFunction['mjv_updateCamera', mjv_updateCamera]
+alias LibMuJoCo_mjv_updateSkin = ExternalFunction['mjv_updateSkin', mjv_updateSkin]
+alias LibMuJoCo_mjr_defaultContext = ExternalFunction['mjr_defaultContext', mjr_defaultContext]
+alias LibMuJoCo_mjr_makeContext = ExternalFunction['mjr_makeContext', mjr_makeContext]
+alias LibMuJoCo_mjr_changeFont = ExternalFunction['mjr_changeFont', mjr_changeFont]
+alias LibMuJoCo_mjr_addAux = ExternalFunction['mjr_addAux', mjr_addAux]
+alias LibMuJoCo_mjr_freeContext = ExternalFunction['mjr_freeContext', mjr_freeContext]
+alias LibMuJoCo_mjr_resizeOffscreen = ExternalFunction['mjr_resizeOffscreen', mjr_resizeOffscreen]
+alias LibMuJoCo_mjr_uploadTexture = ExternalFunction['mjr_uploadTexture', mjr_uploadTexture]
+alias LibMuJoCo_mjr_uploadMesh = ExternalFunction['mjr_uploadMesh', mjr_uploadMesh]
+alias LibMuJoCo_mjr_uploadHField = ExternalFunction['mjr_uploadHField', mjr_uploadHField]
+alias LibMuJoCo_mjr_restoreBuffer = ExternalFunction['mjr_restoreBuffer', mjr_restoreBuffer]
+alias LibMuJoCo_mjr_setBuffer = ExternalFunction['mjr_setBuffer', mjr_setBuffer]
+alias LibMuJoCo_mjr_readPixels = ExternalFunction['mjr_readPixels', mjr_readPixels]
+alias LibMuJoCo_mjr_drawPixels = ExternalFunction['mjr_drawPixels', mjr_drawPixels]
+alias LibMuJoCo_mjr_blitBuffer = ExternalFunction['mjr_blitBuffer', mjr_blitBuffer]
+alias LibMuJoCo_mjr_setAux = ExternalFunction['mjr_setAux', mjr_setAux]
+alias LibMuJoCo_mjr_blitAux = ExternalFunction['mjr_blitAux', mjr_blitAux]
+alias LibMuJoCo_mjr_text = ExternalFunction['mjr_text', mjr_text]
+alias LibMuJoCo_mjr_overlay = ExternalFunction['mjr_overlay', mjr_overlay]
+alias LibMuJoCo_mjr_maxViewport = ExternalFunction['mjr_maxViewport', mjr_maxViewport]
+alias LibMuJoCo_mjr_rectangle = ExternalFunction['mjr_rectangle', mjr_rectangle]
+alias LibMuJoCo_mjr_label = ExternalFunction['mjr_label', mjr_label]
+alias LibMuJoCo_mjr_figure = ExternalFunction['mjr_figure', mjr_figure]
+alias LibMuJoCo_mjr_render = ExternalFunction['mjr_render', mjr_render]
+alias LibMuJoCo_mjr_finish = ExternalFunction['mjr_finish', mjr_finish]
+alias LibMuJoCo_mjr_getError = ExternalFunction['mjr_getError', mjr_getError]
+alias LibMuJoCo_mjr_findRect = ExternalFunction['mjr_findRect', mjr_findRect]
+alias LibMuJoCo_mjui_themeSpacing = ExternalFunction['mjui_themeSpacing', mjui_themeSpacing]
+alias LibMuJoCo_mjui_themeColor = ExternalFunction['mjui_themeColor', mjui_themeColor]
+alias LibMuJoCo_mjui_add = ExternalFunction['mjui_add', mjui_add]
+alias LibMuJoCo_mjui_addToSection = ExternalFunction['mjui_addToSection', mjui_addToSection]
+alias LibMuJoCo_mjui_resize = ExternalFunction['mjui_resize', mjui_resize]
+alias LibMuJoCo_mjui_update = ExternalFunction['mjui_update', mjui_update]
+alias LibMuJoCo_mjui_event = ExternalFunction['mjui_event', mjui_event]
+alias LibMuJoCo_mjui_render = ExternalFunction['mjui_render', mjui_render]
+alias LibMuJoCo_mju_error = ExternalFunction['mju_error', mju_error]
+alias LibMuJoCo_mju_error_i = ExternalFunction['mju_error_i', mju_error_i]
+alias LibMuJoCo_mju_error_s = ExternalFunction['mju_error_s', mju_error_s]
+alias LibMuJoCo_mju_warning = ExternalFunction['mju_warning', mju_warning]
+alias LibMuJoCo_mju_warning_i = ExternalFunction['mju_warning_i', mju_warning_i]
+alias LibMuJoCo_mju_warning_s = ExternalFunction['mju_warning_s', mju_warning_s]
+alias LibMuJoCo_mju_clearHandlers = ExternalFunction['mju_clearHandlers', mju_clearHandlers]
+alias LibMuJoCo_mju_malloc = ExternalFunction['mju_malloc', mju_malloc]
+alias LibMuJoCo_mju_free = ExternalFunction['mju_free', mju_free]
+alias LibMuJoCo_mj_warning = ExternalFunction['mj_warning', mj_warning]
+alias LibMuJoCo_mju_writeLog = ExternalFunction['mju_writeLog', mju_writeLog]
+alias LibMuJoCo_mjs_getError = ExternalFunction['mjs_getError', mjs_getError]
+alias LibMuJoCo_mjs_isWarning = ExternalFunction['mjs_isWarning', mjs_isWarning]
+alias LibMuJoCo_mju_zero3 = ExternalFunction['mju_zero3', mju_zero3]
+alias LibMuJoCo_mju_copy3 = ExternalFunction['mju_copy3', mju_copy3]
+alias LibMuJoCo_mju_scl3 = ExternalFunction['mju_scl3', mju_scl3]
+alias LibMuJoCo_mju_add3 = ExternalFunction['mju_add3', mju_add3]
+alias LibMuJoCo_mju_sub3 = ExternalFunction['mju_sub3', mju_sub3]
+alias LibMuJoCo_mju_addTo3 = ExternalFunction['mju_addTo3', mju_addTo3]
+alias LibMuJoCo_mju_subFrom3 = ExternalFunction['mju_subFrom3', mju_subFrom3]
+alias LibMuJoCo_mju_addToScl3 = ExternalFunction['mju_addToScl3', mju_addToScl3]
+alias LibMuJoCo_mju_addScl3 = ExternalFunction['mju_addScl3', mju_addScl3]
+alias LibMuJoCo_mju_normalize3 = ExternalFunction['mju_normalize3', mju_normalize3]
+alias LibMuJoCo_mju_norm3 = ExternalFunction['mju_norm3', mju_norm3]
+alias LibMuJoCo_mju_dot3 = ExternalFunction['mju_dot3', mju_dot3]
+alias LibMuJoCo_mju_dist3 = ExternalFunction['mju_dist3', mju_dist3]
+alias LibMuJoCo_mju_mulMatVec3 = ExternalFunction['mju_mulMatVec3', mju_mulMatVec3]
+alias LibMuJoCo_mju_mulMatTVec3 = ExternalFunction['mju_mulMatTVec3', mju_mulMatTVec3]
+alias LibMuJoCo_mju_cross = ExternalFunction['mju_cross', mju_cross]
+alias LibMuJoCo_mju_zero4 = ExternalFunction['mju_zero4', mju_zero4]
+alias LibMuJoCo_mju_unit4 = ExternalFunction['mju_unit4', mju_unit4]
+alias LibMuJoCo_mju_copy4 = ExternalFunction['mju_copy4', mju_copy4]
+alias LibMuJoCo_mju_normalize4 = ExternalFunction['mju_normalize4', mju_normalize4]
+alias LibMuJoCo_mju_zero = ExternalFunction['mju_zero', mju_zero]
+alias LibMuJoCo_mju_fill = ExternalFunction['mju_fill', mju_fill]
+alias LibMuJoCo_mju_copy = ExternalFunction['mju_copy', mju_copy]
+alias LibMuJoCo_mju_sum = ExternalFunction['mju_sum', mju_sum]
+alias LibMuJoCo_mju_L1 = ExternalFunction['mju_L1', mju_L1]
+alias LibMuJoCo_mju_scl = ExternalFunction['mju_scl', mju_scl]
+alias LibMuJoCo_mju_add = ExternalFunction['mju_add', mju_add]
+alias LibMuJoCo_mju_sub = ExternalFunction['mju_sub', mju_sub]
+alias LibMuJoCo_mju_addTo = ExternalFunction['mju_addTo', mju_addTo]
+alias LibMuJoCo_mju_subFrom = ExternalFunction['mju_subFrom', mju_subFrom]
+alias LibMuJoCo_mju_addToScl = ExternalFunction['mju_addToScl', mju_addToScl]
+alias LibMuJoCo_mju_addScl = ExternalFunction['mju_addScl', mju_addScl]
+alias LibMuJoCo_mju_normalize = ExternalFunction['mju_normalize', mju_normalize]
+alias LibMuJoCo_mju_norm = ExternalFunction['mju_norm', mju_norm]
+alias LibMuJoCo_mju_dot = ExternalFunction['mju_dot', mju_dot]
+alias LibMuJoCo_mju_mulMatVec = ExternalFunction['mju_mulMatVec', mju_mulMatVec]
+alias LibMuJoCo_mju_mulMatTVec = ExternalFunction['mju_mulMatTVec', mju_mulMatTVec]
+alias LibMuJoCo_mju_mulVecMatVec = ExternalFunction['mju_mulVecMatVec', mju_mulVecMatVec]
+alias LibMuJoCo_mju_transpose = ExternalFunction['mju_transpose', mju_transpose]
+alias LibMuJoCo_mju_symmetrize = ExternalFunction['mju_symmetrize', mju_symmetrize]
+alias LibMuJoCo_mju_eye = ExternalFunction['mju_eye', mju_eye]
+alias LibMuJoCo_mju_mulMatMat = ExternalFunction['mju_mulMatMat', mju_mulMatMat]
+alias LibMuJoCo_mju_mulMatMatT = ExternalFunction['mju_mulMatMatT', mju_mulMatMatT]
+alias LibMuJoCo_mju_mulMatTMat = ExternalFunction['mju_mulMatTMat', mju_mulMatTMat]
+alias LibMuJoCo_mju_sqrMatTD = ExternalFunction['mju_sqrMatTD', mju_sqrMatTD]
+alias LibMuJoCo_mju_transformSpatial = ExternalFunction['mju_transformSpatial', mju_transformSpatial]
+alias LibMuJoCo_mju_dense2sparse = ExternalFunction['mju_dense2sparse', mju_dense2sparse]
+alias LibMuJoCo_mju_sparse2dense = ExternalFunction['mju_sparse2dense', mju_sparse2dense]
+alias LibMuJoCo_mju_rotVecQuat = ExternalFunction['mju_rotVecQuat', mju_rotVecQuat]
+alias LibMuJoCo_mju_negQuat = ExternalFunction['mju_negQuat', mju_negQuat]
+alias LibMuJoCo_mju_mulQuat = ExternalFunction['mju_mulQuat', mju_mulQuat]
+alias LibMuJoCo_mju_mulQuatAxis = ExternalFunction['mju_mulQuatAxis', mju_mulQuatAxis]
+alias LibMuJoCo_mju_axisAngle2Quat = ExternalFunction['mju_axisAngle2Quat', mju_axisAngle2Quat]
+alias LibMuJoCo_mju_quat2Vel = ExternalFunction['mju_quat2Vel', mju_quat2Vel]
+alias LibMuJoCo_mju_subQuat = ExternalFunction['mju_subQuat', mju_subQuat]
+alias LibMuJoCo_mju_quat2Mat = ExternalFunction['mju_quat2Mat', mju_quat2Mat]
+alias LibMuJoCo_mju_mat2Quat = ExternalFunction['mju_mat2Quat', mju_mat2Quat]
+alias LibMuJoCo_mju_derivQuat = ExternalFunction['mju_derivQuat', mju_derivQuat]
+alias LibMuJoCo_mju_quatIntegrate = ExternalFunction['mju_quatIntegrate', mju_quatIntegrate]
+alias LibMuJoCo_mju_quatZ2Vec = ExternalFunction['mju_quatZ2Vec', mju_quatZ2Vec]
+alias LibMuJoCo_mju_mat2Rot = ExternalFunction['mju_mat2Rot', mju_mat2Rot]
+alias LibMuJoCo_mju_euler2Quat = ExternalFunction['mju_euler2Quat', mju_euler2Quat]
+alias LibMuJoCo_mju_mulPose = ExternalFunction['mju_mulPose', mju_mulPose]
+alias LibMuJoCo_mju_negPose = ExternalFunction['mju_negPose', mju_negPose]
+alias LibMuJoCo_mju_trnVecPose = ExternalFunction['mju_trnVecPose', mju_trnVecPose]
+alias LibMuJoCo_mju_cholFactor = ExternalFunction['mju_cholFactor', mju_cholFactor]
+alias LibMuJoCo_mju_cholSolve = ExternalFunction['mju_cholSolve', mju_cholSolve]
+alias LibMuJoCo_mju_cholUpdate = ExternalFunction['mju_cholUpdate', mju_cholUpdate]
+alias LibMuJoCo_mju_cholFactorBand = ExternalFunction['mju_cholFactorBand', mju_cholFactorBand]
+alias LibMuJoCo_mju_cholSolveBand = ExternalFunction['mju_cholSolveBand', mju_cholSolveBand]
+alias LibMuJoCo_mju_band2Dense = ExternalFunction['mju_band2Dense', mju_band2Dense]
+alias LibMuJoCo_mju_dense2Band = ExternalFunction['mju_dense2Band', mju_dense2Band]
+alias LibMuJoCo_mju_bandMulMatVec = ExternalFunction['mju_bandMulMatVec', mju_bandMulMatVec]
+alias LibMuJoCo_mju_bandDiag = ExternalFunction['mju_bandDiag', mju_bandDiag]
+alias LibMuJoCo_mju_eig3 = ExternalFunction['mju_eig3', mju_eig3]
+alias LibMuJoCo_mju_boxQP = ExternalFunction['mju_boxQP', mju_boxQP]
+alias LibMuJoCo_mju_boxQPmalloc = ExternalFunction['mju_boxQPmalloc', mju_boxQPmalloc]
+alias LibMuJoCo_mju_muscleGain = ExternalFunction['mju_muscleGain', mju_muscleGain]
+alias LibMuJoCo_mju_muscleBias = ExternalFunction['mju_muscleBias', mju_muscleBias]
+alias LibMuJoCo_mju_muscleDynamics = ExternalFunction['mju_muscleDynamics', mju_muscleDynamics]
+alias LibMuJoCo_mju_encodePyramid = ExternalFunction['mju_encodePyramid', mju_encodePyramid]
+alias LibMuJoCo_mju_decodePyramid = ExternalFunction['mju_decodePyramid', mju_decodePyramid]
+alias LibMuJoCo_mju_springDamper = ExternalFunction['mju_springDamper', mju_springDamper]
+alias LibMuJoCo_mju_min = ExternalFunction['mju_min', mju_min]
+alias LibMuJoCo_mju_max = ExternalFunction['mju_max', mju_max]
+alias LibMuJoCo_mju_clip = ExternalFunction['mju_clip', mju_clip]
+alias LibMuJoCo_mju_sign = ExternalFunction['mju_sign', mju_sign]
+alias LibMuJoCo_mju_round = ExternalFunction['mju_round', mju_round]
+alias LibMuJoCo_mju_type2Str = ExternalFunction['mju_type2Str', mju_type2Str]
+alias LibMuJoCo_mju_str2Type = ExternalFunction['mju_str2Type', mju_str2Type]
+alias LibMuJoCo_mju_writeNumBytes = ExternalFunction['mju_writeNumBytes', mju_writeNumBytes]
+alias LibMuJoCo_mju_warningText = ExternalFunction['mju_warningText', mju_warningText]
+alias LibMuJoCo_mju_isBad = ExternalFunction['mju_isBad', mju_isBad]
+alias LibMuJoCo_mju_isZero = ExternalFunction['mju_isZero', mju_isZero]
+alias LibMuJoCo_mju_standardNormal = ExternalFunction['mju_standardNormal', mju_standardNormal]
+alias LibMuJoCo_mju_f2n = ExternalFunction['mju_f2n', mju_f2n]
+alias LibMuJoCo_mju_n2f = ExternalFunction['mju_n2f', mju_n2f]
+alias LibMuJoCo_mju_d2n = ExternalFunction['mju_d2n', mju_d2n]
+alias LibMuJoCo_mju_n2d = ExternalFunction['mju_n2d', mju_n2d]
+alias LibMuJoCo_mju_insertionSort = ExternalFunction['mju_insertionSort', mju_insertionSort]
+alias LibMuJoCo_mju_insertionSortInt = ExternalFunction['mju_insertionSortInt', mju_insertionSortInt]
+alias LibMuJoCo_mju_Halton = ExternalFunction['mju_Halton', mju_Halton]
+alias LibMuJoCo_mju_strncpy = ExternalFunction['mju_strncpy', mju_strncpy]
+alias LibMuJoCo_mju_sigmoid = ExternalFunction['mju_sigmoid', mju_sigmoid]
+alias LibMuJoCo_mjc_getSDF = ExternalFunction['mjc_getSDF', mjc_getSDF]
+alias LibMuJoCo_mjc_distance = ExternalFunction['mjc_distance', mjc_distance]
+alias LibMuJoCo_mjc_gradient = ExternalFunction['mjc_gradient', mjc_gradient]
+alias LibMuJoCo_mjd_transitionFD = ExternalFunction['mjd_transitionFD', mjd_transitionFD]
+alias LibMuJoCo_mjd_inverseFD = ExternalFunction['mjd_inverseFD', mjd_inverseFD]
+alias LibMuJoCo_mjd_subQuat = ExternalFunction['mjd_subQuat', mjd_subQuat]
+alias LibMuJoCo_mjd_quatIntegrate = ExternalFunction['mjd_quatIntegrate', mjd_quatIntegrate]
+alias LibMuJoCo_mjp_defaultPlugin = ExternalFunction['mjp_defaultPlugin', mjp_defaultPlugin]
+alias LibMuJoCo_mjp_registerPlugin = ExternalFunction['mjp_registerPlugin', mjp_registerPlugin]
+alias LibMuJoCo_mjp_pluginCount = ExternalFunction['mjp_pluginCount', mjp_pluginCount]
+alias LibMuJoCo_mjp_getPlugin = ExternalFunction['mjp_getPlugin', mjp_getPlugin]
+alias LibMuJoCo_mjp_getPluginAtSlot = ExternalFunction['mjp_getPluginAtSlot', mjp_getPluginAtSlot]
+alias LibMuJoCo_mjp_defaultResourceProvider = ExternalFunction['mjp_defaultResourceProvider', mjp_defaultResourceProvider]
+alias LibMuJoCo_mjp_registerResourceProvider = ExternalFunction['mjp_registerResourceProvider', mjp_registerResourceProvider]
+alias LibMuJoCo_mjp_resourceProviderCount = ExternalFunction['mjp_resourceProviderCount', mjp_resourceProviderCount]
+alias LibMuJoCo_mjp_getResourceProvider = ExternalFunction['mjp_getResourceProvider', mjp_getResourceProvider]
+alias LibMuJoCo_mjp_getResourceProviderAtSlot = ExternalFunction['mjp_getResourceProviderAtSlot', mjp_getResourceProviderAtSlot]
+alias LibMuJoCo_mju_threadPoolCreate = ExternalFunction['mju_threadPoolCreate', mju_threadPoolCreate]
+alias LibMuJoCo_mju_bindThreadPool = ExternalFunction['mju_bindThreadPool', mju_bindThreadPool]
+alias LibMuJoCo_mju_threadPoolEnqueue = ExternalFunction['mju_threadPoolEnqueue', mju_threadPoolEnqueue]
+alias LibMuJoCo_mju_threadPoolDestroy = ExternalFunction['mju_threadPoolDestroy', mju_threadPoolDestroy]
+alias LibMuJoCo_mju_defaultTask = ExternalFunction['mju_defaultTask', mju_defaultTask]
+alias LibMuJoCo_mju_taskJoin = ExternalFunction['mju_taskJoin', mju_taskJoin]
+alias LibMuJoCo_mjs_attach = ExternalFunction['mjs_attach', mjs_attach]
+alias LibMuJoCo_mjs_addBody = ExternalFunction['mjs_addBody', mjs_addBody]
+alias LibMuJoCo_mjs_addSite = ExternalFunction['mjs_addSite', mjs_addSite]
+alias LibMuJoCo_mjs_addJoint = ExternalFunction['mjs_addJoint', mjs_addJoint]
+alias LibMuJoCo_mjs_addFreeJoint = ExternalFunction['mjs_addFreeJoint', mjs_addFreeJoint]
+alias LibMuJoCo_mjs_addGeom = ExternalFunction['mjs_addGeom', mjs_addGeom]
+alias LibMuJoCo_mjs_addCamera = ExternalFunction['mjs_addCamera', mjs_addCamera]
+alias LibMuJoCo_mjs_addLight = ExternalFunction['mjs_addLight', mjs_addLight]
+alias LibMuJoCo_mjs_addFrame = ExternalFunction['mjs_addFrame', mjs_addFrame]
+alias LibMuJoCo_mjs_delete = ExternalFunction['mjs_delete', mjs_delete]
+alias LibMuJoCo_mjs_addActuator = ExternalFunction['mjs_addActuator', mjs_addActuator]
+alias LibMuJoCo_mjs_addSensor = ExternalFunction['mjs_addSensor', mjs_addSensor]
+alias LibMuJoCo_mjs_addFlex = ExternalFunction['mjs_addFlex', mjs_addFlex]
+alias LibMuJoCo_mjs_addPair = ExternalFunction['mjs_addPair', mjs_addPair]
+alias LibMuJoCo_mjs_addExclude = ExternalFunction['mjs_addExclude', mjs_addExclude]
+alias LibMuJoCo_mjs_addEquality = ExternalFunction['mjs_addEquality', mjs_addEquality]
+alias LibMuJoCo_mjs_addTendon = ExternalFunction['mjs_addTendon', mjs_addTendon]
+alias LibMuJoCo_mjs_wrapSite = ExternalFunction['mjs_wrapSite', mjs_wrapSite]
+alias LibMuJoCo_mjs_wrapGeom = ExternalFunction['mjs_wrapGeom', mjs_wrapGeom]
+alias LibMuJoCo_mjs_wrapJoint = ExternalFunction['mjs_wrapJoint', mjs_wrapJoint]
+alias LibMuJoCo_mjs_wrapPulley = ExternalFunction['mjs_wrapPulley', mjs_wrapPulley]
+alias LibMuJoCo_mjs_addNumeric = ExternalFunction['mjs_addNumeric', mjs_addNumeric]
+alias LibMuJoCo_mjs_addText = ExternalFunction['mjs_addText', mjs_addText]
+alias LibMuJoCo_mjs_addTuple = ExternalFunction['mjs_addTuple', mjs_addTuple]
+alias LibMuJoCo_mjs_addKey = ExternalFunction['mjs_addKey', mjs_addKey]
+alias LibMuJoCo_mjs_addPlugin = ExternalFunction['mjs_addPlugin', mjs_addPlugin]
+alias LibMuJoCo_mjs_addDefault = ExternalFunction['mjs_addDefault', mjs_addDefault]
+alias LibMuJoCo_mjs_setToMotor = ExternalFunction['mjs_setToMotor', mjs_setToMotor]
+alias LibMuJoCo_mjs_setToPosition = ExternalFunction['mjs_setToPosition', mjs_setToPosition]
+alias LibMuJoCo_mjs_setToIntVelocity = ExternalFunction['mjs_setToIntVelocity', mjs_setToIntVelocity]
+alias LibMuJoCo_mjs_setToVelocity = ExternalFunction['mjs_setToVelocity', mjs_setToVelocity]
+alias LibMuJoCo_mjs_setToDamper = ExternalFunction['mjs_setToDamper', mjs_setToDamper]
+alias LibMuJoCo_mjs_setToCylinder = ExternalFunction['mjs_setToCylinder', mjs_setToCylinder]
+alias LibMuJoCo_mjs_setToMuscle = ExternalFunction['mjs_setToMuscle', mjs_setToMuscle]
+alias LibMuJoCo_mjs_setToAdhesion = ExternalFunction['mjs_setToAdhesion', mjs_setToAdhesion]
+alias LibMuJoCo_mjs_addMesh = ExternalFunction['mjs_addMesh', mjs_addMesh]
+alias LibMuJoCo_mjs_addHField = ExternalFunction['mjs_addHField', mjs_addHField]
+alias LibMuJoCo_mjs_addSkin = ExternalFunction['mjs_addSkin', mjs_addSkin]
+alias LibMuJoCo_mjs_addTexture = ExternalFunction['mjs_addTexture', mjs_addTexture]
+alias LibMuJoCo_mjs_addMaterial = ExternalFunction['mjs_addMaterial', mjs_addMaterial]
+alias LibMuJoCo_mjs_getSpec = ExternalFunction['mjs_getSpec', mjs_getSpec]
+alias LibMuJoCo_mjs_findSpec = ExternalFunction['mjs_findSpec', mjs_findSpec]
+alias LibMuJoCo_mjs_findBody = ExternalFunction['mjs_findBody', mjs_findBody]
+alias LibMuJoCo_mjs_findElement = ExternalFunction['mjs_findElement', mjs_findElement]
+alias LibMuJoCo_mjs_findChild = ExternalFunction['mjs_findChild', mjs_findChild]
+alias LibMuJoCo_mjs_getParent = ExternalFunction['mjs_getParent', mjs_getParent]
+alias LibMuJoCo_mjs_getFrame = ExternalFunction['mjs_getFrame', mjs_getFrame]
+alias LibMuJoCo_mjs_findFrame = ExternalFunction['mjs_findFrame', mjs_findFrame]
+alias LibMuJoCo_mjs_getDefault = ExternalFunction['mjs_getDefault', mjs_getDefault]
+alias LibMuJoCo_mjs_findDefault = ExternalFunction['mjs_findDefault', mjs_findDefault]
+alias LibMuJoCo_mjs_getSpecDefault = ExternalFunction['mjs_getSpecDefault', mjs_getSpecDefault]
+alias LibMuJoCo_mjs_getId = ExternalFunction['mjs_getId', mjs_getId]
+alias LibMuJoCo_mjs_firstChild = ExternalFunction['mjs_firstChild', mjs_firstChild]
+alias LibMuJoCo_mjs_nextChild = ExternalFunction['mjs_nextChild', mjs_nextChild]
+alias LibMuJoCo_mjs_firstElement = ExternalFunction['mjs_firstElement', mjs_firstElement]
+alias LibMuJoCo_mjs_nextElement = ExternalFunction['mjs_nextElement', mjs_nextElement]
+alias LibMuJoCo_mjs_setName = ExternalFunction['mjs_setName', mjs_setName]
+alias LibMuJoCo_mjs_setBuffer = ExternalFunction['mjs_setBuffer', mjs_setBuffer]
+alias LibMuJoCo_mjs_setString = ExternalFunction['mjs_setString', mjs_setString]
+alias LibMuJoCo_mjs_setStringVec = ExternalFunction['mjs_setStringVec', mjs_setStringVec]
+alias LibMuJoCo_mjs_setInStringVec = ExternalFunction['mjs_setInStringVec', mjs_setInStringVec]
+alias LibMuJoCo_mjs_appendString = ExternalFunction['mjs_appendString', mjs_appendString]
+alias LibMuJoCo_mjs_setInt = ExternalFunction['mjs_setInt', mjs_setInt]
+alias LibMuJoCo_mjs_appendIntVec = ExternalFunction['mjs_appendIntVec', mjs_appendIntVec]
+alias LibMuJoCo_mjs_setFloat = ExternalFunction['mjs_setFloat', mjs_setFloat]
+alias LibMuJoCo_mjs_appendFloatVec = ExternalFunction['mjs_appendFloatVec', mjs_appendFloatVec]
+alias LibMuJoCo_mjs_setDouble = ExternalFunction['mjs_setDouble', mjs_setDouble]
+alias LibMuJoCo_mjs_setPluginAttributes = ExternalFunction['mjs_setPluginAttributes', mjs_setPluginAttributes]
+alias LibMuJoCo_mjs_getName = ExternalFunction['mjs_getName', mjs_getName]
+alias LibMuJoCo_mjs_getString = ExternalFunction['mjs_getString', mjs_getString]
+alias LibMuJoCo_mjs_getDouble = ExternalFunction['mjs_getDouble', mjs_getDouble]
+alias LibMuJoCo_mjs_getPluginAttributes = ExternalFunction['mjs_getPluginAttributes', mjs_getPluginAttributes]
+alias LibMuJoCo_mjs_setDefault = ExternalFunction['mjs_setDefault', mjs_setDefault]
+alias LibMuJoCo_mjs_setFrame = ExternalFunction['mjs_setFrame', mjs_setFrame]
+alias LibMuJoCo_mjs_resolveOrientation = ExternalFunction['mjs_resolveOrientation', mjs_resolveOrientation]
+alias LibMuJoCo_mjs_bodyToFrame = ExternalFunction['mjs_bodyToFrame', mjs_bodyToFrame]
+alias LibMuJoCo_mjs_setUserValue = ExternalFunction['mjs_setUserValue', mjs_setUserValue]
+alias LibMuJoCo_mjs_setUserValueWithCleanup = ExternalFunction['mjs_setUserValueWithCleanup', mjs_setUserValueWithCleanup]
+alias LibMuJoCo_mjs_getUserValue = ExternalFunction['mjs_getUserValue', mjs_getUserValue]
+alias LibMuJoCo_mjs_deleteUserValue = ExternalFunction['mjs_deleteUserValue', mjs_deleteUserValue]
+alias LibMuJoCo_mjs_defaultSpec = ExternalFunction['mjs_defaultSpec', mjs_defaultSpec]
+alias LibMuJoCo_mjs_defaultOrientation = ExternalFunction['mjs_defaultOrientation', mjs_defaultOrientation]
+alias LibMuJoCo_mjs_defaultBody = ExternalFunction['mjs_defaultBody', mjs_defaultBody]
+alias LibMuJoCo_mjs_defaultFrame = ExternalFunction['mjs_defaultFrame', mjs_defaultFrame]
+alias LibMuJoCo_mjs_defaultJoint = ExternalFunction['mjs_defaultJoint', mjs_defaultJoint]
+alias LibMuJoCo_mjs_defaultGeom = ExternalFunction['mjs_defaultGeom', mjs_defaultGeom]
+alias LibMuJoCo_mjs_defaultSite = ExternalFunction['mjs_defaultSite', mjs_defaultSite]
+alias LibMuJoCo_mjs_defaultCamera = ExternalFunction['mjs_defaultCamera', mjs_defaultCamera]
+alias LibMuJoCo_mjs_defaultLight = ExternalFunction['mjs_defaultLight', mjs_defaultLight]
+alias LibMuJoCo_mjs_defaultFlex = ExternalFunction['mjs_defaultFlex', mjs_defaultFlex]
+alias LibMuJoCo_mjs_defaultMesh = ExternalFunction['mjs_defaultMesh', mjs_defaultMesh]
+alias LibMuJoCo_mjs_defaultHField = ExternalFunction['mjs_defaultHField', mjs_defaultHField]
+alias LibMuJoCo_mjs_defaultSkin = ExternalFunction['mjs_defaultSkin', mjs_defaultSkin]
+alias LibMuJoCo_mjs_defaultTexture = ExternalFunction['mjs_defaultTexture', mjs_defaultTexture]
+alias LibMuJoCo_mjs_defaultMaterial = ExternalFunction['mjs_defaultMaterial', mjs_defaultMaterial]
+alias LibMuJoCo_mjs_defaultPair = ExternalFunction['mjs_defaultPair', mjs_defaultPair]
+alias LibMuJoCo_mjs_defaultEquality = ExternalFunction['mjs_defaultEquality', mjs_defaultEquality]
+alias LibMuJoCo_mjs_defaultTendon = ExternalFunction['mjs_defaultTendon', mjs_defaultTendon]
+alias LibMuJoCo_mjs_defaultActuator = ExternalFunction['mjs_defaultActuator', mjs_defaultActuator]
+alias LibMuJoCo_mjs_defaultSensor = ExternalFunction['mjs_defaultSensor', mjs_defaultSensor]
+alias LibMuJoCo_mjs_defaultNumeric = ExternalFunction['mjs_defaultNumeric', mjs_defaultNumeric]
+alias LibMuJoCo_mjs_defaultText = ExternalFunction['mjs_defaultText', mjs_defaultText]
+alias LibMuJoCo_mjs_defaultTuple = ExternalFunction['mjs_defaultTuple', mjs_defaultTuple]
+alias LibMuJoCo_mjs_defaultKey = ExternalFunction['mjs_defaultKey', mjs_defaultKey]
+alias LibMuJoCo_mjs_defaultPlugin = ExternalFunction['mjs_defaultPlugin', mjs_defaultPlugin]
+alias LibMuJoCo_mjs_asBody = ExternalFunction['mjs_asBody', mjs_asBody]
+alias LibMuJoCo_mjs_asGeom = ExternalFunction['mjs_asGeom', mjs_asGeom]
+alias LibMuJoCo_mjs_asJoint = ExternalFunction['mjs_asJoint', mjs_asJoint]
+alias LibMuJoCo_mjs_asSite = ExternalFunction['mjs_asSite', mjs_asSite]
+alias LibMuJoCo_mjs_asCamera = ExternalFunction['mjs_asCamera', mjs_asCamera]
+alias LibMuJoCo_mjs_asLight = ExternalFunction['mjs_asLight', mjs_asLight]
+alias LibMuJoCo_mjs_asFrame = ExternalFunction['mjs_asFrame', mjs_asFrame]
+alias LibMuJoCo_mjs_asActuator = ExternalFunction['mjs_asActuator', mjs_asActuator]
+alias LibMuJoCo_mjs_asSensor = ExternalFunction['mjs_asSensor', mjs_asSensor]
+alias LibMuJoCo_mjs_asFlex = ExternalFunction['mjs_asFlex', mjs_asFlex]
+alias LibMuJoCo_mjs_asPair = ExternalFunction['mjs_asPair', mjs_asPair]
+alias LibMuJoCo_mjs_asEquality = ExternalFunction['mjs_asEquality', mjs_asEquality]
+alias LibMuJoCo_mjs_asExclude = ExternalFunction['mjs_asExclude', mjs_asExclude]
+alias LibMuJoCo_mjs_asTendon = ExternalFunction['mjs_asTendon', mjs_asTendon]
+alias LibMuJoCo_mjs_asNumeric = ExternalFunction['mjs_asNumeric', mjs_asNumeric]
+alias LibMuJoCo_mjs_asText = ExternalFunction['mjs_asText', mjs_asText]
+alias LibMuJoCo_mjs_asTuple = ExternalFunction['mjs_asTuple', mjs_asTuple]
+alias LibMuJoCo_mjs_asKey = ExternalFunction['mjs_asKey', mjs_asKey]
+alias LibMuJoCo_mjs_asMesh = ExternalFunction['mjs_asMesh', mjs_asMesh]
+alias LibMuJoCo_mjs_asHField = ExternalFunction['mjs_asHField', mjs_asHField]
+alias LibMuJoCo_mjs_asSkin = ExternalFunction['mjs_asSkin', mjs_asSkin]
+alias LibMuJoCo_mjs_asTexture = ExternalFunction['mjs_asTexture', mjs_asTexture]
+alias LibMuJoCo_mjs_asMaterial = ExternalFunction['mjs_asMaterial', mjs_asMaterial]
+alias LibMuJoCo_mjs_asPlugin = ExternalFunction['mjs_asPlugin', mjs_asPlugin]
+
+@fieldwise_init
+struct LibMuJoCo(Copyable, Movable):
+    """Handle to the CPython interpreter present in the current process."""
+
+    # ===-------------------------------------------------------------------===#
+    # Fields
+    # ===-------------------------------------------------------------------===#
+
+    var lib: DLHandle
+    
+    var mj_defaultVFS: LibMuJoCo_mj_defaultVFS.type
+    var mj_addFileVFS: LibMuJoCo_mj_addFileVFS.type
+    var mj_addBufferVFS: LibMuJoCo_mj_addBufferVFS.type
+    var mj_deleteFileVFS: LibMuJoCo_mj_deleteFileVFS.type
+    var mj_deleteVFS: LibMuJoCo_mj_deleteVFS.type
+    var mj_loadXML: LibMuJoCo_mj_loadXML.type
+    var mj_parseXML: LibMuJoCo_mj_parseXML.type
+    var mj_parseXMLString: LibMuJoCo_mj_parseXMLString.type
+    var mj_compile: LibMuJoCo_mj_compile.type
+    var mj_copyBack: LibMuJoCo_mj_copyBack.type
+    var mj_recompile: LibMuJoCo_mj_recompile.type
+    var mj_saveLastXML: LibMuJoCo_mj_saveLastXML.type
+    var mj_freeLastXML: LibMuJoCo_mj_freeLastXML.type
+    var mj_saveXMLString: LibMuJoCo_mj_saveXMLString.type
+    var mj_saveXML: LibMuJoCo_mj_saveXML.type
+    var mj_step: LibMuJoCo_mj_step.type
+    var mj_step1: LibMuJoCo_mj_step1.type
+    var mj_step2: LibMuJoCo_mj_step2.type
+    var mj_forward: LibMuJoCo_mj_forward.type
+    var mj_inverse: LibMuJoCo_mj_inverse.type
+    var mj_forwardSkip: LibMuJoCo_mj_forwardSkip.type
+    var mj_inverseSkip: LibMuJoCo_mj_inverseSkip.type
+    var mj_defaultLROpt: LibMuJoCo_mj_defaultLROpt.type
+    var mj_defaultSolRefImp: LibMuJoCo_mj_defaultSolRefImp.type
+    var mj_defaultOption: LibMuJoCo_mj_defaultOption.type
+    var mj_defaultVisual: LibMuJoCo_mj_defaultVisual.type
+    var mj_copyModel: LibMuJoCo_mj_copyModel.type
+    var mj_saveModel: LibMuJoCo_mj_saveModel.type
+    var mj_loadModel: LibMuJoCo_mj_loadModel.type
+    var mj_deleteModel: LibMuJoCo_mj_deleteModel.type
+    var mj_sizeModel: LibMuJoCo_mj_sizeModel.type
+    var mj_makeData: LibMuJoCo_mj_makeData.type
+    var mj_copyData: LibMuJoCo_mj_copyData.type
+    var mjv_copyData: LibMuJoCo_mjv_copyData.type
+    var mj_resetData: LibMuJoCo_mj_resetData.type
+    var mj_resetDataDebug: LibMuJoCo_mj_resetDataDebug.type
+    var mj_resetDataKeyframe: LibMuJoCo_mj_resetDataKeyframe.type
+    var mj_markStack: LibMuJoCo_mj_markStack.type
+    var mj_freeStack: LibMuJoCo_mj_freeStack.type
+    var mj_stackAllocByte: LibMuJoCo_mj_stackAllocByte.type
+    var mj_stackAllocNum: LibMuJoCo_mj_stackAllocNum.type
+    var mj_stackAllocInt: LibMuJoCo_mj_stackAllocInt.type
+    var mj_deleteData: LibMuJoCo_mj_deleteData.type
+    var mj_resetCallbacks: LibMuJoCo_mj_resetCallbacks.type
+    var mj_setConst: LibMuJoCo_mj_setConst.type
+    var mj_setLengthRange: LibMuJoCo_mj_setLengthRange.type
+    var mj_makeSpec: LibMuJoCo_mj_makeSpec.type
+    var mj_copySpec: LibMuJoCo_mj_copySpec.type
+    var mj_deleteSpec: LibMuJoCo_mj_deleteSpec.type
+    var mjs_activatePlugin: LibMuJoCo_mjs_activatePlugin.type
+    var mjs_setDeepCopy: LibMuJoCo_mjs_setDeepCopy.type
+    var mj_printFormattedModel: LibMuJoCo_mj_printFormattedModel.type
+    var mj_printModel: LibMuJoCo_mj_printModel.type
+    var mj_printFormattedData: LibMuJoCo_mj_printFormattedData.type
+    var mj_printData: LibMuJoCo_mj_printData.type
+    var mju_printMat: LibMuJoCo_mju_printMat.type
+    var mju_printMatSparse: LibMuJoCo_mju_printMatSparse.type
+    var mj_printSchema: LibMuJoCo_mj_printSchema.type
+    var mj_fwdPosition: LibMuJoCo_mj_fwdPosition.type
+    var mj_fwdVelocity: LibMuJoCo_mj_fwdVelocity.type
+    var mj_fwdActuation: LibMuJoCo_mj_fwdActuation.type
+    var mj_fwdAcceleration: LibMuJoCo_mj_fwdAcceleration.type
+    var mj_fwdConstraint: LibMuJoCo_mj_fwdConstraint.type
+    var mj_Euler: LibMuJoCo_mj_Euler.type
+    var mj_RungeKutta: LibMuJoCo_mj_RungeKutta.type
+    var mj_implicit: LibMuJoCo_mj_implicit.type
+    var mj_invPosition: LibMuJoCo_mj_invPosition.type
+    var mj_invVelocity: LibMuJoCo_mj_invVelocity.type
+    var mj_invConstraint: LibMuJoCo_mj_invConstraint.type
+    var mj_compareFwdInv: LibMuJoCo_mj_compareFwdInv.type
+    var mj_sensorPos: LibMuJoCo_mj_sensorPos.type
+    var mj_sensorVel: LibMuJoCo_mj_sensorVel.type
+    var mj_sensorAcc: LibMuJoCo_mj_sensorAcc.type
+    var mj_energyPos: LibMuJoCo_mj_energyPos.type
+    var mj_energyVel: LibMuJoCo_mj_energyVel.type
+    var mj_checkPos: LibMuJoCo_mj_checkPos.type
+    var mj_checkVel: LibMuJoCo_mj_checkVel.type
+    var mj_checkAcc: LibMuJoCo_mj_checkAcc.type
+    var mj_kinematics: LibMuJoCo_mj_kinematics.type
+    var mj_comPos: LibMuJoCo_mj_comPos.type
+    var mj_camlight: LibMuJoCo_mj_camlight.type
+    var mj_flex: LibMuJoCo_mj_flex.type
+    var mj_tendon: LibMuJoCo_mj_tendon.type
+    var mj_transmission: LibMuJoCo_mj_transmission.type
+    var mj_crb: LibMuJoCo_mj_crb.type
+    var mj_makeM: LibMuJoCo_mj_makeM.type
+    var mj_factorM: LibMuJoCo_mj_factorM.type
+    var mj_solveM: LibMuJoCo_mj_solveM.type
+    var mj_solveM2: LibMuJoCo_mj_solveM2.type
+    var mj_comVel: LibMuJoCo_mj_comVel.type
+    var mj_passive: LibMuJoCo_mj_passive.type
+    var mj_subtreeVel: LibMuJoCo_mj_subtreeVel.type
+    var mj_rne: LibMuJoCo_mj_rne.type
+    var mj_rnePostConstraint: LibMuJoCo_mj_rnePostConstraint.type
+    var mj_collision: LibMuJoCo_mj_collision.type
+    var mj_makeConstraint: LibMuJoCo_mj_makeConstraint.type
+    var mj_island: LibMuJoCo_mj_island.type
+    var mj_projectConstraint: LibMuJoCo_mj_projectConstraint.type
+    var mj_referenceConstraint: LibMuJoCo_mj_referenceConstraint.type
+    var mj_constraintUpdate: LibMuJoCo_mj_constraintUpdate.type
+    var mj_stateSize: LibMuJoCo_mj_stateSize.type
+    var mj_getState: LibMuJoCo_mj_getState.type
+    var mj_setState: LibMuJoCo_mj_setState.type
+    var mj_setKeyframe: LibMuJoCo_mj_setKeyframe.type
+    var mj_addContact: LibMuJoCo_mj_addContact.type
+    var mj_isPyramidal: LibMuJoCo_mj_isPyramidal.type
+    var mj_isSparse: LibMuJoCo_mj_isSparse.type
+    var mj_isDual: LibMuJoCo_mj_isDual.type
+    var mj_mulJacVec: LibMuJoCo_mj_mulJacVec.type
+    var mj_mulJacTVec: LibMuJoCo_mj_mulJacTVec.type
+    var mj_jac: LibMuJoCo_mj_jac.type
+    var mj_jacBody: LibMuJoCo_mj_jacBody.type
+    var mj_jacBodyCom: LibMuJoCo_mj_jacBodyCom.type
+    var mj_jacSubtreeCom: LibMuJoCo_mj_jacSubtreeCom.type
+    var mj_jacGeom: LibMuJoCo_mj_jacGeom.type
+    var mj_jacSite: LibMuJoCo_mj_jacSite.type
+    var mj_jacPointAxis: LibMuJoCo_mj_jacPointAxis.type
+    var mj_jacDot: LibMuJoCo_mj_jacDot.type
+    var mj_angmomMat: LibMuJoCo_mj_angmomMat.type
+    var mj_name2id: LibMuJoCo_mj_name2id.type
+    var mj_id2name: LibMuJoCo_mj_id2name.type
+    var mj_fullM: LibMuJoCo_mj_fullM.type
+    var mj_mulM: LibMuJoCo_mj_mulM.type
+    var mj_mulM2: LibMuJoCo_mj_mulM2.type
+    var mj_addM: LibMuJoCo_mj_addM.type
+    var mj_applyFT: LibMuJoCo_mj_applyFT.type
+    var mj_objectVelocity: LibMuJoCo_mj_objectVelocity.type
+    var mj_objectAcceleration: LibMuJoCo_mj_objectAcceleration.type
+    var mj_geomDistance: LibMuJoCo_mj_geomDistance.type
+    var mj_contactForce: LibMuJoCo_mj_contactForce.type
+    var mj_differentiatePos: LibMuJoCo_mj_differentiatePos.type
+    var mj_integratePos: LibMuJoCo_mj_integratePos.type
+    var mj_normalizeQuat: LibMuJoCo_mj_normalizeQuat.type
+    var mj_local2Global: LibMuJoCo_mj_local2Global.type
+    var mj_getTotalmass: LibMuJoCo_mj_getTotalmass.type
+    var mj_setTotalmass: LibMuJoCo_mj_setTotalmass.type
+    var mj_getPluginConfig: LibMuJoCo_mj_getPluginConfig.type
+    var mj_loadPluginLibrary: LibMuJoCo_mj_loadPluginLibrary.type
+    var mj_loadAllPluginLibraries: LibMuJoCo_mj_loadAllPluginLibraries.type
+    var mj_version: LibMuJoCo_mj_version.type
+    var mj_versionString: LibMuJoCo_mj_versionString.type
+    var mj_multiRay: LibMuJoCo_mj_multiRay.type
+    var mj_ray: LibMuJoCo_mj_ray.type
+    var mj_rayHfield: LibMuJoCo_mj_rayHfield.type
+    var mj_rayMesh: LibMuJoCo_mj_rayMesh.type
+    var mju_rayGeom: LibMuJoCo_mju_rayGeom.type
+    var mju_rayFlex: LibMuJoCo_mju_rayFlex.type
+    var mju_raySkin: LibMuJoCo_mju_raySkin.type
+    var mjv_defaultCamera: LibMuJoCo_mjv_defaultCamera.type
+    var mjv_defaultFreeCamera: LibMuJoCo_mjv_defaultFreeCamera.type
+    var mjv_defaultPerturb: LibMuJoCo_mjv_defaultPerturb.type
+    var mjv_room2model: LibMuJoCo_mjv_room2model.type
+    var mjv_model2room: LibMuJoCo_mjv_model2room.type
+    var mjv_cameraInModel: LibMuJoCo_mjv_cameraInModel.type
+    var mjv_cameraInRoom: LibMuJoCo_mjv_cameraInRoom.type
+    var mjv_frustumHeight: LibMuJoCo_mjv_frustumHeight.type
+    var mjv_alignToCamera: LibMuJoCo_mjv_alignToCamera.type
+    var mjv_moveCamera: LibMuJoCo_mjv_moveCamera.type
+    var mjv_movePerturb: LibMuJoCo_mjv_movePerturb.type
+    var mjv_moveModel: LibMuJoCo_mjv_moveModel.type
+    var mjv_initPerturb: LibMuJoCo_mjv_initPerturb.type
+    var mjv_applyPerturbPose: LibMuJoCo_mjv_applyPerturbPose.type
+    var mjv_applyPerturbForce: LibMuJoCo_mjv_applyPerturbForce.type
+    var mjv_averageCamera: LibMuJoCo_mjv_averageCamera.type
+    var mjv_select: LibMuJoCo_mjv_select.type
+    var mjv_defaultOption: LibMuJoCo_mjv_defaultOption.type
+    var mjv_defaultFigure: LibMuJoCo_mjv_defaultFigure.type
+    var mjv_initGeom: LibMuJoCo_mjv_initGeom.type
+    var mjv_connector: LibMuJoCo_mjv_connector.type
+    var mjv_defaultScene: LibMuJoCo_mjv_defaultScene.type
+    var mjv_makeScene: LibMuJoCo_mjv_makeScene.type
+    var mjv_freeScene: LibMuJoCo_mjv_freeScene.type
+    var mjv_updateScene: LibMuJoCo_mjv_updateScene.type
+    var mjv_copyModel: LibMuJoCo_mjv_copyModel.type
+    var mjv_addGeoms: LibMuJoCo_mjv_addGeoms.type
+    var mjv_makeLights: LibMuJoCo_mjv_makeLights.type
+    var mjv_updateCamera: LibMuJoCo_mjv_updateCamera.type
+    var mjv_updateSkin: LibMuJoCo_mjv_updateSkin.type
+    var mjr_defaultContext: LibMuJoCo_mjr_defaultContext.type
+    var mjr_makeContext: LibMuJoCo_mjr_makeContext.type
+    var mjr_changeFont: LibMuJoCo_mjr_changeFont.type
+    var mjr_addAux: LibMuJoCo_mjr_addAux.type
+    var mjr_freeContext: LibMuJoCo_mjr_freeContext.type
+    var mjr_resizeOffscreen: LibMuJoCo_mjr_resizeOffscreen.type
+    var mjr_uploadTexture: LibMuJoCo_mjr_uploadTexture.type
+    var mjr_uploadMesh: LibMuJoCo_mjr_uploadMesh.type
+    var mjr_uploadHField: LibMuJoCo_mjr_uploadHField.type
+    var mjr_restoreBuffer: LibMuJoCo_mjr_restoreBuffer.type
+    var mjr_setBuffer: LibMuJoCo_mjr_setBuffer.type
+    var mjr_readPixels: LibMuJoCo_mjr_readPixels.type
+    var mjr_drawPixels: LibMuJoCo_mjr_drawPixels.type
+    var mjr_blitBuffer: LibMuJoCo_mjr_blitBuffer.type
+    var mjr_setAux: LibMuJoCo_mjr_setAux.type
+    var mjr_blitAux: LibMuJoCo_mjr_blitAux.type
+    var mjr_text: LibMuJoCo_mjr_text.type
+    var mjr_overlay: LibMuJoCo_mjr_overlay.type
+    var mjr_maxViewport: LibMuJoCo_mjr_maxViewport.type
+    var mjr_rectangle: LibMuJoCo_mjr_rectangle.type
+    var mjr_label: LibMuJoCo_mjr_label.type
+    var mjr_figure: LibMuJoCo_mjr_figure.type
+    var mjr_render: LibMuJoCo_mjr_render.type
+    var mjr_finish: LibMuJoCo_mjr_finish.type
+    var mjr_getError: LibMuJoCo_mjr_getError.type
+    var mjr_findRect: LibMuJoCo_mjr_findRect.type
+    var mjui_themeSpacing: LibMuJoCo_mjui_themeSpacing.type
+    var mjui_themeColor: LibMuJoCo_mjui_themeColor.type
+    var mjui_add: LibMuJoCo_mjui_add.type
+    var mjui_addToSection: LibMuJoCo_mjui_addToSection.type
+    var mjui_resize: LibMuJoCo_mjui_resize.type
+    var mjui_update: LibMuJoCo_mjui_update.type
+    var mjui_event: LibMuJoCo_mjui_event.type
+    var mjui_render: LibMuJoCo_mjui_render.type
+    var mju_error: LibMuJoCo_mju_error.type
+    var mju_error_i: LibMuJoCo_mju_error_i.type
+    var mju_error_s: LibMuJoCo_mju_error_s.type
+    var mju_warning: LibMuJoCo_mju_warning.type
+    var mju_warning_i: LibMuJoCo_mju_warning_i.type
+    var mju_warning_s: LibMuJoCo_mju_warning_s.type
+    var mju_clearHandlers: LibMuJoCo_mju_clearHandlers.type
+    var mju_malloc: LibMuJoCo_mju_malloc.type
+    var mju_free: LibMuJoCo_mju_free.type
+    var mj_warning: LibMuJoCo_mj_warning.type
+    var mju_writeLog: LibMuJoCo_mju_writeLog.type
+    var mjs_getError: LibMuJoCo_mjs_getError.type
+    var mjs_isWarning: LibMuJoCo_mjs_isWarning.type
+    var mju_zero3: LibMuJoCo_mju_zero3.type
+    var mju_copy3: LibMuJoCo_mju_copy3.type
+    var mju_scl3: LibMuJoCo_mju_scl3.type
+    var mju_add3: LibMuJoCo_mju_add3.type
+    var mju_sub3: LibMuJoCo_mju_sub3.type
+    var mju_addTo3: LibMuJoCo_mju_addTo3.type
+    var mju_subFrom3: LibMuJoCo_mju_subFrom3.type
+    var mju_addToScl3: LibMuJoCo_mju_addToScl3.type
+    var mju_addScl3: LibMuJoCo_mju_addScl3.type
+    var mju_normalize3: LibMuJoCo_mju_normalize3.type
+    var mju_norm3: LibMuJoCo_mju_norm3.type
+    var mju_dot3: LibMuJoCo_mju_dot3.type
+    var mju_dist3: LibMuJoCo_mju_dist3.type
+    var mju_mulMatVec3: LibMuJoCo_mju_mulMatVec3.type
+    var mju_mulMatTVec3: LibMuJoCo_mju_mulMatTVec3.type
+    var mju_cross: LibMuJoCo_mju_cross.type
+    var mju_zero4: LibMuJoCo_mju_zero4.type
+    var mju_unit4: LibMuJoCo_mju_unit4.type
+    var mju_copy4: LibMuJoCo_mju_copy4.type
+    var mju_normalize4: LibMuJoCo_mju_normalize4.type
+    var mju_zero: LibMuJoCo_mju_zero.type
+    var mju_fill: LibMuJoCo_mju_fill.type
+    var mju_copy: LibMuJoCo_mju_copy.type
+    var mju_sum: LibMuJoCo_mju_sum.type
+    var mju_L1: LibMuJoCo_mju_L1.type
+    var mju_scl: LibMuJoCo_mju_scl.type
+    var mju_add: LibMuJoCo_mju_add.type
+    var mju_sub: LibMuJoCo_mju_sub.type
+    var mju_addTo: LibMuJoCo_mju_addTo.type
+    var mju_subFrom: LibMuJoCo_mju_subFrom.type
+    var mju_addToScl: LibMuJoCo_mju_addToScl.type
+    var mju_addScl: LibMuJoCo_mju_addScl.type
+    var mju_normalize: LibMuJoCo_mju_normalize.type
+    var mju_norm: LibMuJoCo_mju_norm.type
+    var mju_dot: LibMuJoCo_mju_dot.type
+    var mju_mulMatVec: LibMuJoCo_mju_mulMatVec.type
+    var mju_mulMatTVec: LibMuJoCo_mju_mulMatTVec.type
+    var mju_mulVecMatVec: LibMuJoCo_mju_mulVecMatVec.type
+    var mju_transpose: LibMuJoCo_mju_transpose.type
+    var mju_symmetrize: LibMuJoCo_mju_symmetrize.type
+    var mju_eye: LibMuJoCo_mju_eye.type
+    var mju_mulMatMat: LibMuJoCo_mju_mulMatMat.type
+    var mju_mulMatMatT: LibMuJoCo_mju_mulMatMatT.type
+    var mju_mulMatTMat: LibMuJoCo_mju_mulMatTMat.type
+    var mju_sqrMatTD: LibMuJoCo_mju_sqrMatTD.type
+    var mju_transformSpatial: LibMuJoCo_mju_transformSpatial.type
+    var mju_dense2sparse: LibMuJoCo_mju_dense2sparse.type
+    var mju_sparse2dense: LibMuJoCo_mju_sparse2dense.type
+    var mju_rotVecQuat: LibMuJoCo_mju_rotVecQuat.type
+    var mju_negQuat: LibMuJoCo_mju_negQuat.type
+    var mju_mulQuat: LibMuJoCo_mju_mulQuat.type
+    var mju_mulQuatAxis: LibMuJoCo_mju_mulQuatAxis.type
+    var mju_axisAngle2Quat: LibMuJoCo_mju_axisAngle2Quat.type
+    var mju_quat2Vel: LibMuJoCo_mju_quat2Vel.type
+    var mju_subQuat: LibMuJoCo_mju_subQuat.type
+    var mju_quat2Mat: LibMuJoCo_mju_quat2Mat.type
+    var mju_mat2Quat: LibMuJoCo_mju_mat2Quat.type
+    var mju_derivQuat: LibMuJoCo_mju_derivQuat.type
+    var mju_quatIntegrate: LibMuJoCo_mju_quatIntegrate.type
+    var mju_quatZ2Vec: LibMuJoCo_mju_quatZ2Vec.type
+    var mju_mat2Rot: LibMuJoCo_mju_mat2Rot.type
+    var mju_euler2Quat: LibMuJoCo_mju_euler2Quat.type
+    var mju_mulPose: LibMuJoCo_mju_mulPose.type
+    var mju_negPose: LibMuJoCo_mju_negPose.type
+    var mju_trnVecPose: LibMuJoCo_mju_trnVecPose.type
+    var mju_cholFactor: LibMuJoCo_mju_cholFactor.type
+    var mju_cholSolve: LibMuJoCo_mju_cholSolve.type
+    var mju_cholUpdate: LibMuJoCo_mju_cholUpdate.type
+    var mju_cholFactorBand: LibMuJoCo_mju_cholFactorBand.type
+    var mju_cholSolveBand: LibMuJoCo_mju_cholSolveBand.type
+    var mju_band2Dense: LibMuJoCo_mju_band2Dense.type
+    var mju_dense2Band: LibMuJoCo_mju_dense2Band.type
+    var mju_bandMulMatVec: LibMuJoCo_mju_bandMulMatVec.type
+    var mju_bandDiag: LibMuJoCo_mju_bandDiag.type
+    var mju_eig3: LibMuJoCo_mju_eig3.type
+    var mju_boxQP: LibMuJoCo_mju_boxQP.type
+    var mju_boxQPmalloc: LibMuJoCo_mju_boxQPmalloc.type
+    var mju_muscleGain: LibMuJoCo_mju_muscleGain.type
+    var mju_muscleBias: LibMuJoCo_mju_muscleBias.type
+    var mju_muscleDynamics: LibMuJoCo_mju_muscleDynamics.type
+    var mju_encodePyramid: LibMuJoCo_mju_encodePyramid.type
+    var mju_decodePyramid: LibMuJoCo_mju_decodePyramid.type
+    var mju_springDamper: LibMuJoCo_mju_springDamper.type
+    var mju_min: LibMuJoCo_mju_min.type
+    var mju_max: LibMuJoCo_mju_max.type
+    var mju_clip: LibMuJoCo_mju_clip.type
+    var mju_sign: LibMuJoCo_mju_sign.type
+    var mju_round: LibMuJoCo_mju_round.type
+    var mju_type2Str: LibMuJoCo_mju_type2Str.type
+    var mju_str2Type: LibMuJoCo_mju_str2Type.type
+    var mju_writeNumBytes: LibMuJoCo_mju_writeNumBytes.type
+    var mju_warningText: LibMuJoCo_mju_warningText.type
+    var mju_isBad: LibMuJoCo_mju_isBad.type
+    var mju_isZero: LibMuJoCo_mju_isZero.type
+    var mju_standardNormal: LibMuJoCo_mju_standardNormal.type
+    var mju_f2n: LibMuJoCo_mju_f2n.type
+    var mju_n2f: LibMuJoCo_mju_n2f.type
+    var mju_d2n: LibMuJoCo_mju_d2n.type
+    var mju_n2d: LibMuJoCo_mju_n2d.type
+    var mju_insertionSort: LibMuJoCo_mju_insertionSort.type
+    var mju_insertionSortInt: LibMuJoCo_mju_insertionSortInt.type
+    var mju_Halton: LibMuJoCo_mju_Halton.type
+    var mju_strncpy: LibMuJoCo_mju_strncpy.type
+    var mju_sigmoid: LibMuJoCo_mju_sigmoid.type
+    var mjc_getSDF: LibMuJoCo_mjc_getSDF.type
+    var mjc_distance: LibMuJoCo_mjc_distance.type
+    var mjc_gradient: LibMuJoCo_mjc_gradient.type
+    var mjd_transitionFD: LibMuJoCo_mjd_transitionFD.type
+    var mjd_inverseFD: LibMuJoCo_mjd_inverseFD.type
+    var mjd_subQuat: LibMuJoCo_mjd_subQuat.type
+    var mjd_quatIntegrate: LibMuJoCo_mjd_quatIntegrate.type
+    var mjp_defaultPlugin: LibMuJoCo_mjp_defaultPlugin.type
+    var mjp_registerPlugin: LibMuJoCo_mjp_registerPlugin.type
+    var mjp_pluginCount: LibMuJoCo_mjp_pluginCount.type
+    var mjp_getPlugin: LibMuJoCo_mjp_getPlugin.type
+    var mjp_getPluginAtSlot: LibMuJoCo_mjp_getPluginAtSlot.type
+    var mjp_defaultResourceProvider: LibMuJoCo_mjp_defaultResourceProvider.type
+    var mjp_registerResourceProvider: LibMuJoCo_mjp_registerResourceProvider.type
+    var mjp_resourceProviderCount: LibMuJoCo_mjp_resourceProviderCount.type
+    var mjp_getResourceProvider: LibMuJoCo_mjp_getResourceProvider.type
+    var mjp_getResourceProviderAtSlot: LibMuJoCo_mjp_getResourceProviderAtSlot.type
+    var mju_threadPoolCreate: LibMuJoCo_mju_threadPoolCreate.type
+    var mju_bindThreadPool: LibMuJoCo_mju_bindThreadPool.type
+    var mju_threadPoolEnqueue: LibMuJoCo_mju_threadPoolEnqueue.type
+    var mju_threadPoolDestroy: LibMuJoCo_mju_threadPoolDestroy.type
+    var mju_defaultTask: LibMuJoCo_mju_defaultTask.type
+    var mju_taskJoin: LibMuJoCo_mju_taskJoin.type
+    var mjs_attach: LibMuJoCo_mjs_attach.type
+    var mjs_addBody: LibMuJoCo_mjs_addBody.type
+    var mjs_addSite: LibMuJoCo_mjs_addSite.type
+    var mjs_addJoint: LibMuJoCo_mjs_addJoint.type
+    var mjs_addFreeJoint: LibMuJoCo_mjs_addFreeJoint.type
+    var mjs_addGeom: LibMuJoCo_mjs_addGeom.type
+    var mjs_addCamera: LibMuJoCo_mjs_addCamera.type
+    var mjs_addLight: LibMuJoCo_mjs_addLight.type
+    var mjs_addFrame: LibMuJoCo_mjs_addFrame.type
+    var mjs_delete: LibMuJoCo_mjs_delete.type
+    var mjs_addActuator: LibMuJoCo_mjs_addActuator.type
+    var mjs_addSensor: LibMuJoCo_mjs_addSensor.type
+    var mjs_addFlex: LibMuJoCo_mjs_addFlex.type
+    var mjs_addPair: LibMuJoCo_mjs_addPair.type
+    var mjs_addExclude: LibMuJoCo_mjs_addExclude.type
+    var mjs_addEquality: LibMuJoCo_mjs_addEquality.type
+    var mjs_addTendon: LibMuJoCo_mjs_addTendon.type
+    var mjs_wrapSite: LibMuJoCo_mjs_wrapSite.type
+    var mjs_wrapGeom: LibMuJoCo_mjs_wrapGeom.type
+    var mjs_wrapJoint: LibMuJoCo_mjs_wrapJoint.type
+    var mjs_wrapPulley: LibMuJoCo_mjs_wrapPulley.type
+    var mjs_addNumeric: LibMuJoCo_mjs_addNumeric.type
+    var mjs_addText: LibMuJoCo_mjs_addText.type
+    var mjs_addTuple: LibMuJoCo_mjs_addTuple.type
+    var mjs_addKey: LibMuJoCo_mjs_addKey.type
+    var mjs_addPlugin: LibMuJoCo_mjs_addPlugin.type
+    var mjs_addDefault: LibMuJoCo_mjs_addDefault.type
+    var mjs_setToMotor: LibMuJoCo_mjs_setToMotor.type
+    var mjs_setToPosition: LibMuJoCo_mjs_setToPosition.type
+    var mjs_setToIntVelocity: LibMuJoCo_mjs_setToIntVelocity.type
+    var mjs_setToVelocity: LibMuJoCo_mjs_setToVelocity.type
+    var mjs_setToDamper: LibMuJoCo_mjs_setToDamper.type
+    var mjs_setToCylinder: LibMuJoCo_mjs_setToCylinder.type
+    var mjs_setToMuscle: LibMuJoCo_mjs_setToMuscle.type
+    var mjs_setToAdhesion: LibMuJoCo_mjs_setToAdhesion.type
+    var mjs_addMesh: LibMuJoCo_mjs_addMesh.type
+    var mjs_addHField: LibMuJoCo_mjs_addHField.type
+    var mjs_addSkin: LibMuJoCo_mjs_addSkin.type
+    var mjs_addTexture: LibMuJoCo_mjs_addTexture.type
+    var mjs_addMaterial: LibMuJoCo_mjs_addMaterial.type
+    var mjs_getSpec: LibMuJoCo_mjs_getSpec.type
+    var mjs_findSpec: LibMuJoCo_mjs_findSpec.type
+    var mjs_findBody: LibMuJoCo_mjs_findBody.type
+    var mjs_findElement: LibMuJoCo_mjs_findElement.type
+    var mjs_findChild: LibMuJoCo_mjs_findChild.type
+    var mjs_getParent: LibMuJoCo_mjs_getParent.type
+    var mjs_getFrame: LibMuJoCo_mjs_getFrame.type
+    var mjs_findFrame: LibMuJoCo_mjs_findFrame.type
+    var mjs_getDefault: LibMuJoCo_mjs_getDefault.type
+    var mjs_findDefault: LibMuJoCo_mjs_findDefault.type
+    var mjs_getSpecDefault: LibMuJoCo_mjs_getSpecDefault.type
+    var mjs_getId: LibMuJoCo_mjs_getId.type
+    var mjs_firstChild: LibMuJoCo_mjs_firstChild.type
+    var mjs_nextChild: LibMuJoCo_mjs_nextChild.type
+    var mjs_firstElement: LibMuJoCo_mjs_firstElement.type
+    var mjs_nextElement: LibMuJoCo_mjs_nextElement.type
+    var mjs_setName: LibMuJoCo_mjs_setName.type
+    var mjs_setBuffer: LibMuJoCo_mjs_setBuffer.type
+    var mjs_setString: LibMuJoCo_mjs_setString.type
+    var mjs_setStringVec: LibMuJoCo_mjs_setStringVec.type
+    var mjs_setInStringVec: LibMuJoCo_mjs_setInStringVec.type
+    var mjs_appendString: LibMuJoCo_mjs_appendString.type
+    var mjs_setInt: LibMuJoCo_mjs_setInt.type
+    var mjs_appendIntVec: LibMuJoCo_mjs_appendIntVec.type
+    var mjs_setFloat: LibMuJoCo_mjs_setFloat.type
+    var mjs_appendFloatVec: LibMuJoCo_mjs_appendFloatVec.type
+    var mjs_setDouble: LibMuJoCo_mjs_setDouble.type
+    var mjs_setPluginAttributes: LibMuJoCo_mjs_setPluginAttributes.type
+    var mjs_getName: LibMuJoCo_mjs_getName.type
+    var mjs_getString: LibMuJoCo_mjs_getString.type
+    var mjs_getDouble: LibMuJoCo_mjs_getDouble.type
+    var mjs_getPluginAttributes: LibMuJoCo_mjs_getPluginAttributes.type
+    var mjs_setDefault: LibMuJoCo_mjs_setDefault.type
+    var mjs_setFrame: LibMuJoCo_mjs_setFrame.type
+    var mjs_resolveOrientation: LibMuJoCo_mjs_resolveOrientation.type
+    var mjs_bodyToFrame: LibMuJoCo_mjs_bodyToFrame.type
+    var mjs_setUserValue: LibMuJoCo_mjs_setUserValue.type
+    var mjs_setUserValueWithCleanup: LibMuJoCo_mjs_setUserValueWithCleanup.type
+    var mjs_getUserValue: LibMuJoCo_mjs_getUserValue.type
+    var mjs_deleteUserValue: LibMuJoCo_mjs_deleteUserValue.type
+    var mjs_defaultSpec: LibMuJoCo_mjs_defaultSpec.type
+    var mjs_defaultOrientation: LibMuJoCo_mjs_defaultOrientation.type
+    var mjs_defaultBody: LibMuJoCo_mjs_defaultBody.type
+    var mjs_defaultFrame: LibMuJoCo_mjs_defaultFrame.type
+    var mjs_defaultJoint: LibMuJoCo_mjs_defaultJoint.type
+    var mjs_defaultGeom: LibMuJoCo_mjs_defaultGeom.type
+    var mjs_defaultSite: LibMuJoCo_mjs_defaultSite.type
+    var mjs_defaultCamera: LibMuJoCo_mjs_defaultCamera.type
+    var mjs_defaultLight: LibMuJoCo_mjs_defaultLight.type
+    var mjs_defaultFlex: LibMuJoCo_mjs_defaultFlex.type
+    var mjs_defaultMesh: LibMuJoCo_mjs_defaultMesh.type
+    var mjs_defaultHField: LibMuJoCo_mjs_defaultHField.type
+    var mjs_defaultSkin: LibMuJoCo_mjs_defaultSkin.type
+    var mjs_defaultTexture: LibMuJoCo_mjs_defaultTexture.type
+    var mjs_defaultMaterial: LibMuJoCo_mjs_defaultMaterial.type
+    var mjs_defaultPair: LibMuJoCo_mjs_defaultPair.type
+    var mjs_defaultEquality: LibMuJoCo_mjs_defaultEquality.type
+    var mjs_defaultTendon: LibMuJoCo_mjs_defaultTendon.type
+    var mjs_defaultActuator: LibMuJoCo_mjs_defaultActuator.type
+    var mjs_defaultSensor: LibMuJoCo_mjs_defaultSensor.type
+    var mjs_defaultNumeric: LibMuJoCo_mjs_defaultNumeric.type
+    var mjs_defaultText: LibMuJoCo_mjs_defaultText.type
+    var mjs_defaultTuple: LibMuJoCo_mjs_defaultTuple.type
+    var mjs_defaultKey: LibMuJoCo_mjs_defaultKey.type
+    var mjs_defaultPlugin: LibMuJoCo_mjs_defaultPlugin.type
+    var mjs_asBody: LibMuJoCo_mjs_asBody.type
+    var mjs_asGeom: LibMuJoCo_mjs_asGeom.type
+    var mjs_asJoint: LibMuJoCo_mjs_asJoint.type
+    var mjs_asSite: LibMuJoCo_mjs_asSite.type
+    var mjs_asCamera: LibMuJoCo_mjs_asCamera.type
+    var mjs_asLight: LibMuJoCo_mjs_asLight.type
+    var mjs_asFrame: LibMuJoCo_mjs_asFrame.type
+    var mjs_asActuator: LibMuJoCo_mjs_asActuator.type
+    var mjs_asSensor: LibMuJoCo_mjs_asSensor.type
+    var mjs_asFlex: LibMuJoCo_mjs_asFlex.type
+    var mjs_asPair: LibMuJoCo_mjs_asPair.type
+    var mjs_asEquality: LibMuJoCo_mjs_asEquality.type
+    var mjs_asExclude: LibMuJoCo_mjs_asExclude.type
+    var mjs_asTendon: LibMuJoCo_mjs_asTendon.type
+    var mjs_asNumeric: LibMuJoCo_mjs_asNumeric.type
+    var mjs_asText: LibMuJoCo_mjs_asText.type
+    var mjs_asTuple: LibMuJoCo_mjs_asTuple.type
+    var mjs_asKey: LibMuJoCo_mjs_asKey.type
+    var mjs_asMesh: LibMuJoCo_mjs_asMesh.type
+    var mjs_asHField: LibMuJoCo_mjs_asHField.type
+    var mjs_asSkin: LibMuJoCo_mjs_asSkin.type
+    var mjs_asTexture: LibMuJoCo_mjs_asTexture.type
+    var mjs_asMaterial: LibMuJoCo_mjs_asMaterial.type
+    var mjs_asPlugin: LibMuJoCo_mjs_asPlugin.type
+
+    fn __init__(out self):
+        try:
+            self.lib = DLHandle('/home/c_binder_mojo_user/c_binder_mojo/mujoco/build/lib/libmujoco.so')
+        except e:
+            self.lib = abort[DLHandle](
+                String("Failed to load LibMuJoCo from", '/home/c_binder_mojo_user/c_binder_mojo/mujoco/build/lib/libmujoco.so', ":\n", e)
+            )
+
+    
+        self.mj_defaultVFS = LibMuJoCo_mj_defaultVFS.load(self.lib)
+        self.mj_addFileVFS = LibMuJoCo_mj_addFileVFS.load(self.lib)
+        self.mj_addBufferVFS = LibMuJoCo_mj_addBufferVFS.load(self.lib)
+        self.mj_deleteFileVFS = LibMuJoCo_mj_deleteFileVFS.load(self.lib)
+        self.mj_deleteVFS = LibMuJoCo_mj_deleteVFS.load(self.lib)
+        self.mj_loadXML = LibMuJoCo_mj_loadXML.load(self.lib)
+        self.mj_parseXML = LibMuJoCo_mj_parseXML.load(self.lib)
+        self.mj_parseXMLString = LibMuJoCo_mj_parseXMLString.load(self.lib)
+        self.mj_compile = LibMuJoCo_mj_compile.load(self.lib)
+        self.mj_copyBack = LibMuJoCo_mj_copyBack.load(self.lib)
+        self.mj_recompile = LibMuJoCo_mj_recompile.load(self.lib)
+        self.mj_saveLastXML = LibMuJoCo_mj_saveLastXML.load(self.lib)
+        self.mj_freeLastXML = LibMuJoCo_mj_freeLastXML.load(self.lib)
+        self.mj_saveXMLString = LibMuJoCo_mj_saveXMLString.load(self.lib)
+        self.mj_saveXML = LibMuJoCo_mj_saveXML.load(self.lib)
+        self.mj_step = LibMuJoCo_mj_step.load(self.lib)
+        self.mj_step1 = LibMuJoCo_mj_step1.load(self.lib)
+        self.mj_step2 = LibMuJoCo_mj_step2.load(self.lib)
+        self.mj_forward = LibMuJoCo_mj_forward.load(self.lib)
+        self.mj_inverse = LibMuJoCo_mj_inverse.load(self.lib)
+        self.mj_forwardSkip = LibMuJoCo_mj_forwardSkip.load(self.lib)
+        self.mj_inverseSkip = LibMuJoCo_mj_inverseSkip.load(self.lib)
+        self.mj_defaultLROpt = LibMuJoCo_mj_defaultLROpt.load(self.lib)
+        self.mj_defaultSolRefImp = LibMuJoCo_mj_defaultSolRefImp.load(self.lib)
+        self.mj_defaultOption = LibMuJoCo_mj_defaultOption.load(self.lib)
+        self.mj_defaultVisual = LibMuJoCo_mj_defaultVisual.load(self.lib)
+        self.mj_copyModel = LibMuJoCo_mj_copyModel.load(self.lib)
+        self.mj_saveModel = LibMuJoCo_mj_saveModel.load(self.lib)
+        self.mj_loadModel = LibMuJoCo_mj_loadModel.load(self.lib)
+        self.mj_deleteModel = LibMuJoCo_mj_deleteModel.load(self.lib)
+        self.mj_sizeModel = LibMuJoCo_mj_sizeModel.load(self.lib)
+        self.mj_makeData = LibMuJoCo_mj_makeData.load(self.lib)
+        self.mj_copyData = LibMuJoCo_mj_copyData.load(self.lib)
+        self.mjv_copyData = LibMuJoCo_mjv_copyData.load(self.lib)
+        self.mj_resetData = LibMuJoCo_mj_resetData.load(self.lib)
+        self.mj_resetDataDebug = LibMuJoCo_mj_resetDataDebug.load(self.lib)
+        self.mj_resetDataKeyframe = LibMuJoCo_mj_resetDataKeyframe.load(self.lib)
+        self.mj_markStack = LibMuJoCo_mj_markStack.load(self.lib)
+        self.mj_freeStack = LibMuJoCo_mj_freeStack.load(self.lib)
+        self.mj_stackAllocByte = LibMuJoCo_mj_stackAllocByte.load(self.lib)
+        self.mj_stackAllocNum = LibMuJoCo_mj_stackAllocNum.load(self.lib)
+        self.mj_stackAllocInt = LibMuJoCo_mj_stackAllocInt.load(self.lib)
+        self.mj_deleteData = LibMuJoCo_mj_deleteData.load(self.lib)
+        self.mj_resetCallbacks = LibMuJoCo_mj_resetCallbacks.load(self.lib)
+        self.mj_setConst = LibMuJoCo_mj_setConst.load(self.lib)
+        self.mj_setLengthRange = LibMuJoCo_mj_setLengthRange.load(self.lib)
+        self.mj_makeSpec = LibMuJoCo_mj_makeSpec.load(self.lib)
+        self.mj_copySpec = LibMuJoCo_mj_copySpec.load(self.lib)
+        self.mj_deleteSpec = LibMuJoCo_mj_deleteSpec.load(self.lib)
+        self.mjs_activatePlugin = LibMuJoCo_mjs_activatePlugin.load(self.lib)
+        self.mjs_setDeepCopy = LibMuJoCo_mjs_setDeepCopy.load(self.lib)
+        self.mj_printFormattedModel = LibMuJoCo_mj_printFormattedModel.load(self.lib)
+        self.mj_printModel = LibMuJoCo_mj_printModel.load(self.lib)
+        self.mj_printFormattedData = LibMuJoCo_mj_printFormattedData.load(self.lib)
+        self.mj_printData = LibMuJoCo_mj_printData.load(self.lib)
+        self.mju_printMat = LibMuJoCo_mju_printMat.load(self.lib)
+        self.mju_printMatSparse = LibMuJoCo_mju_printMatSparse.load(self.lib)
+        self.mj_printSchema = LibMuJoCo_mj_printSchema.load(self.lib)
+        self.mj_fwdPosition = LibMuJoCo_mj_fwdPosition.load(self.lib)
+        self.mj_fwdVelocity = LibMuJoCo_mj_fwdVelocity.load(self.lib)
+        self.mj_fwdActuation = LibMuJoCo_mj_fwdActuation.load(self.lib)
+        self.mj_fwdAcceleration = LibMuJoCo_mj_fwdAcceleration.load(self.lib)
+        self.mj_fwdConstraint = LibMuJoCo_mj_fwdConstraint.load(self.lib)
+        self.mj_Euler = LibMuJoCo_mj_Euler.load(self.lib)
+        self.mj_RungeKutta = LibMuJoCo_mj_RungeKutta.load(self.lib)
+        self.mj_implicit = LibMuJoCo_mj_implicit.load(self.lib)
+        self.mj_invPosition = LibMuJoCo_mj_invPosition.load(self.lib)
+        self.mj_invVelocity = LibMuJoCo_mj_invVelocity.load(self.lib)
+        self.mj_invConstraint = LibMuJoCo_mj_invConstraint.load(self.lib)
+        self.mj_compareFwdInv = LibMuJoCo_mj_compareFwdInv.load(self.lib)
+        self.mj_sensorPos = LibMuJoCo_mj_sensorPos.load(self.lib)
+        self.mj_sensorVel = LibMuJoCo_mj_sensorVel.load(self.lib)
+        self.mj_sensorAcc = LibMuJoCo_mj_sensorAcc.load(self.lib)
+        self.mj_energyPos = LibMuJoCo_mj_energyPos.load(self.lib)
+        self.mj_energyVel = LibMuJoCo_mj_energyVel.load(self.lib)
+        self.mj_checkPos = LibMuJoCo_mj_checkPos.load(self.lib)
+        self.mj_checkVel = LibMuJoCo_mj_checkVel.load(self.lib)
+        self.mj_checkAcc = LibMuJoCo_mj_checkAcc.load(self.lib)
+        self.mj_kinematics = LibMuJoCo_mj_kinematics.load(self.lib)
+        self.mj_comPos = LibMuJoCo_mj_comPos.load(self.lib)
+        self.mj_camlight = LibMuJoCo_mj_camlight.load(self.lib)
+        self.mj_flex = LibMuJoCo_mj_flex.load(self.lib)
+        self.mj_tendon = LibMuJoCo_mj_tendon.load(self.lib)
+        self.mj_transmission = LibMuJoCo_mj_transmission.load(self.lib)
+        self.mj_crb = LibMuJoCo_mj_crb.load(self.lib)
+        self.mj_makeM = LibMuJoCo_mj_makeM.load(self.lib)
+        self.mj_factorM = LibMuJoCo_mj_factorM.load(self.lib)
+        self.mj_solveM = LibMuJoCo_mj_solveM.load(self.lib)
+        self.mj_solveM2 = LibMuJoCo_mj_solveM2.load(self.lib)
+        self.mj_comVel = LibMuJoCo_mj_comVel.load(self.lib)
+        self.mj_passive = LibMuJoCo_mj_passive.load(self.lib)
+        self.mj_subtreeVel = LibMuJoCo_mj_subtreeVel.load(self.lib)
+        self.mj_rne = LibMuJoCo_mj_rne.load(self.lib)
+        self.mj_rnePostConstraint = LibMuJoCo_mj_rnePostConstraint.load(self.lib)
+        self.mj_collision = LibMuJoCo_mj_collision.load(self.lib)
+        self.mj_makeConstraint = LibMuJoCo_mj_makeConstraint.load(self.lib)
+        self.mj_island = LibMuJoCo_mj_island.load(self.lib)
+        self.mj_projectConstraint = LibMuJoCo_mj_projectConstraint.load(self.lib)
+        self.mj_referenceConstraint = LibMuJoCo_mj_referenceConstraint.load(self.lib)
+        self.mj_constraintUpdate = LibMuJoCo_mj_constraintUpdate.load(self.lib)
+        self.mj_stateSize = LibMuJoCo_mj_stateSize.load(self.lib)
+        self.mj_getState = LibMuJoCo_mj_getState.load(self.lib)
+        self.mj_setState = LibMuJoCo_mj_setState.load(self.lib)
+        self.mj_setKeyframe = LibMuJoCo_mj_setKeyframe.load(self.lib)
+        self.mj_addContact = LibMuJoCo_mj_addContact.load(self.lib)
+        self.mj_isPyramidal = LibMuJoCo_mj_isPyramidal.load(self.lib)
+        self.mj_isSparse = LibMuJoCo_mj_isSparse.load(self.lib)
+        self.mj_isDual = LibMuJoCo_mj_isDual.load(self.lib)
+        self.mj_mulJacVec = LibMuJoCo_mj_mulJacVec.load(self.lib)
+        self.mj_mulJacTVec = LibMuJoCo_mj_mulJacTVec.load(self.lib)
+        self.mj_jac = LibMuJoCo_mj_jac.load(self.lib)
+        self.mj_jacBody = LibMuJoCo_mj_jacBody.load(self.lib)
+        self.mj_jacBodyCom = LibMuJoCo_mj_jacBodyCom.load(self.lib)
+        self.mj_jacSubtreeCom = LibMuJoCo_mj_jacSubtreeCom.load(self.lib)
+        self.mj_jacGeom = LibMuJoCo_mj_jacGeom.load(self.lib)
+        self.mj_jacSite = LibMuJoCo_mj_jacSite.load(self.lib)
+        self.mj_jacPointAxis = LibMuJoCo_mj_jacPointAxis.load(self.lib)
+        self.mj_jacDot = LibMuJoCo_mj_jacDot.load(self.lib)
+        self.mj_angmomMat = LibMuJoCo_mj_angmomMat.load(self.lib)
+        self.mj_name2id = LibMuJoCo_mj_name2id.load(self.lib)
+        self.mj_id2name = LibMuJoCo_mj_id2name.load(self.lib)
+        self.mj_fullM = LibMuJoCo_mj_fullM.load(self.lib)
+        self.mj_mulM = LibMuJoCo_mj_mulM.load(self.lib)
+        self.mj_mulM2 = LibMuJoCo_mj_mulM2.load(self.lib)
+        self.mj_addM = LibMuJoCo_mj_addM.load(self.lib)
+        self.mj_applyFT = LibMuJoCo_mj_applyFT.load(self.lib)
+        self.mj_objectVelocity = LibMuJoCo_mj_objectVelocity.load(self.lib)
+        self.mj_objectAcceleration = LibMuJoCo_mj_objectAcceleration.load(self.lib)
+        self.mj_geomDistance = LibMuJoCo_mj_geomDistance.load(self.lib)
+        self.mj_contactForce = LibMuJoCo_mj_contactForce.load(self.lib)
+        self.mj_differentiatePos = LibMuJoCo_mj_differentiatePos.load(self.lib)
+        self.mj_integratePos = LibMuJoCo_mj_integratePos.load(self.lib)
+        self.mj_normalizeQuat = LibMuJoCo_mj_normalizeQuat.load(self.lib)
+        self.mj_local2Global = LibMuJoCo_mj_local2Global.load(self.lib)
+        self.mj_getTotalmass = LibMuJoCo_mj_getTotalmass.load(self.lib)
+        self.mj_setTotalmass = LibMuJoCo_mj_setTotalmass.load(self.lib)
+        self.mj_getPluginConfig = LibMuJoCo_mj_getPluginConfig.load(self.lib)
+        self.mj_loadPluginLibrary = LibMuJoCo_mj_loadPluginLibrary.load(self.lib)
+        self.mj_loadAllPluginLibraries = LibMuJoCo_mj_loadAllPluginLibraries.load(self.lib)
+        self.mj_version = LibMuJoCo_mj_version.load(self.lib)
+        self.mj_versionString = LibMuJoCo_mj_versionString.load(self.lib)
+        self.mj_multiRay = LibMuJoCo_mj_multiRay.load(self.lib)
+        self.mj_ray = LibMuJoCo_mj_ray.load(self.lib)
+        self.mj_rayHfield = LibMuJoCo_mj_rayHfield.load(self.lib)
+        self.mj_rayMesh = LibMuJoCo_mj_rayMesh.load(self.lib)
+        self.mju_rayGeom = LibMuJoCo_mju_rayGeom.load(self.lib)
+        self.mju_rayFlex = LibMuJoCo_mju_rayFlex.load(self.lib)
+        self.mju_raySkin = LibMuJoCo_mju_raySkin.load(self.lib)
+        self.mjv_defaultCamera = LibMuJoCo_mjv_defaultCamera.load(self.lib)
+        self.mjv_defaultFreeCamera = LibMuJoCo_mjv_defaultFreeCamera.load(self.lib)
+        self.mjv_defaultPerturb = LibMuJoCo_mjv_defaultPerturb.load(self.lib)
+        self.mjv_room2model = LibMuJoCo_mjv_room2model.load(self.lib)
+        self.mjv_model2room = LibMuJoCo_mjv_model2room.load(self.lib)
+        self.mjv_cameraInModel = LibMuJoCo_mjv_cameraInModel.load(self.lib)
+        self.mjv_cameraInRoom = LibMuJoCo_mjv_cameraInRoom.load(self.lib)
+        self.mjv_frustumHeight = LibMuJoCo_mjv_frustumHeight.load(self.lib)
+        self.mjv_alignToCamera = LibMuJoCo_mjv_alignToCamera.load(self.lib)
+        self.mjv_moveCamera = LibMuJoCo_mjv_moveCamera.load(self.lib)
+        self.mjv_movePerturb = LibMuJoCo_mjv_movePerturb.load(self.lib)
+        self.mjv_moveModel = LibMuJoCo_mjv_moveModel.load(self.lib)
+        self.mjv_initPerturb = LibMuJoCo_mjv_initPerturb.load(self.lib)
+        self.mjv_applyPerturbPose = LibMuJoCo_mjv_applyPerturbPose.load(self.lib)
+        self.mjv_applyPerturbForce = LibMuJoCo_mjv_applyPerturbForce.load(self.lib)
+        self.mjv_averageCamera = LibMuJoCo_mjv_averageCamera.load(self.lib)
+        self.mjv_select = LibMuJoCo_mjv_select.load(self.lib)
+        self.mjv_defaultOption = LibMuJoCo_mjv_defaultOption.load(self.lib)
+        self.mjv_defaultFigure = LibMuJoCo_mjv_defaultFigure.load(self.lib)
+        self.mjv_initGeom = LibMuJoCo_mjv_initGeom.load(self.lib)
+        self.mjv_connector = LibMuJoCo_mjv_connector.load(self.lib)
+        self.mjv_defaultScene = LibMuJoCo_mjv_defaultScene.load(self.lib)
+        self.mjv_makeScene = LibMuJoCo_mjv_makeScene.load(self.lib)
+        self.mjv_freeScene = LibMuJoCo_mjv_freeScene.load(self.lib)
+        self.mjv_updateScene = LibMuJoCo_mjv_updateScene.load(self.lib)
+        self.mjv_copyModel = LibMuJoCo_mjv_copyModel.load(self.lib)
+        self.mjv_addGeoms = LibMuJoCo_mjv_addGeoms.load(self.lib)
+        self.mjv_makeLights = LibMuJoCo_mjv_makeLights.load(self.lib)
+        self.mjv_updateCamera = LibMuJoCo_mjv_updateCamera.load(self.lib)
+        self.mjv_updateSkin = LibMuJoCo_mjv_updateSkin.load(self.lib)
+        self.mjr_defaultContext = LibMuJoCo_mjr_defaultContext.load(self.lib)
+        self.mjr_makeContext = LibMuJoCo_mjr_makeContext.load(self.lib)
+        self.mjr_changeFont = LibMuJoCo_mjr_changeFont.load(self.lib)
+        self.mjr_addAux = LibMuJoCo_mjr_addAux.load(self.lib)
+        self.mjr_freeContext = LibMuJoCo_mjr_freeContext.load(self.lib)
+        self.mjr_resizeOffscreen = LibMuJoCo_mjr_resizeOffscreen.load(self.lib)
+        self.mjr_uploadTexture = LibMuJoCo_mjr_uploadTexture.load(self.lib)
+        self.mjr_uploadMesh = LibMuJoCo_mjr_uploadMesh.load(self.lib)
+        self.mjr_uploadHField = LibMuJoCo_mjr_uploadHField.load(self.lib)
+        self.mjr_restoreBuffer = LibMuJoCo_mjr_restoreBuffer.load(self.lib)
+        self.mjr_setBuffer = LibMuJoCo_mjr_setBuffer.load(self.lib)
+        self.mjr_readPixels = LibMuJoCo_mjr_readPixels.load(self.lib)
+        self.mjr_drawPixels = LibMuJoCo_mjr_drawPixels.load(self.lib)
+        self.mjr_blitBuffer = LibMuJoCo_mjr_blitBuffer.load(self.lib)
+        self.mjr_setAux = LibMuJoCo_mjr_setAux.load(self.lib)
+        self.mjr_blitAux = LibMuJoCo_mjr_blitAux.load(self.lib)
+        self.mjr_text = LibMuJoCo_mjr_text.load(self.lib)
+        self.mjr_overlay = LibMuJoCo_mjr_overlay.load(self.lib)
+        self.mjr_maxViewport = LibMuJoCo_mjr_maxViewport.load(self.lib)
+        self.mjr_rectangle = LibMuJoCo_mjr_rectangle.load(self.lib)
+        self.mjr_label = LibMuJoCo_mjr_label.load(self.lib)
+        self.mjr_figure = LibMuJoCo_mjr_figure.load(self.lib)
+        self.mjr_render = LibMuJoCo_mjr_render.load(self.lib)
+        self.mjr_finish = LibMuJoCo_mjr_finish.load(self.lib)
+        self.mjr_getError = LibMuJoCo_mjr_getError.load(self.lib)
+        self.mjr_findRect = LibMuJoCo_mjr_findRect.load(self.lib)
+        self.mjui_themeSpacing = LibMuJoCo_mjui_themeSpacing.load(self.lib)
+        self.mjui_themeColor = LibMuJoCo_mjui_themeColor.load(self.lib)
+        self.mjui_add = LibMuJoCo_mjui_add.load(self.lib)
+        self.mjui_addToSection = LibMuJoCo_mjui_addToSection.load(self.lib)
+        self.mjui_resize = LibMuJoCo_mjui_resize.load(self.lib)
+        self.mjui_update = LibMuJoCo_mjui_update.load(self.lib)
+        self.mjui_event = LibMuJoCo_mjui_event.load(self.lib)
+        self.mjui_render = LibMuJoCo_mjui_render.load(self.lib)
+        self.mju_error = LibMuJoCo_mju_error.load(self.lib)
+        self.mju_error_i = LibMuJoCo_mju_error_i.load(self.lib)
+        self.mju_error_s = LibMuJoCo_mju_error_s.load(self.lib)
+        self.mju_warning = LibMuJoCo_mju_warning.load(self.lib)
+        self.mju_warning_i = LibMuJoCo_mju_warning_i.load(self.lib)
+        self.mju_warning_s = LibMuJoCo_mju_warning_s.load(self.lib)
+        self.mju_clearHandlers = LibMuJoCo_mju_clearHandlers.load(self.lib)
+        self.mju_malloc = LibMuJoCo_mju_malloc.load(self.lib)
+        self.mju_free = LibMuJoCo_mju_free.load(self.lib)
+        self.mj_warning = LibMuJoCo_mj_warning.load(self.lib)
+        self.mju_writeLog = LibMuJoCo_mju_writeLog.load(self.lib)
+        self.mjs_getError = LibMuJoCo_mjs_getError.load(self.lib)
+        self.mjs_isWarning = LibMuJoCo_mjs_isWarning.load(self.lib)
+        self.mju_zero3 = LibMuJoCo_mju_zero3.load(self.lib)
+        self.mju_copy3 = LibMuJoCo_mju_copy3.load(self.lib)
+        self.mju_scl3 = LibMuJoCo_mju_scl3.load(self.lib)
+        self.mju_add3 = LibMuJoCo_mju_add3.load(self.lib)
+        self.mju_sub3 = LibMuJoCo_mju_sub3.load(self.lib)
+        self.mju_addTo3 = LibMuJoCo_mju_addTo3.load(self.lib)
+        self.mju_subFrom3 = LibMuJoCo_mju_subFrom3.load(self.lib)
+        self.mju_addToScl3 = LibMuJoCo_mju_addToScl3.load(self.lib)
+        self.mju_addScl3 = LibMuJoCo_mju_addScl3.load(self.lib)
+        self.mju_normalize3 = LibMuJoCo_mju_normalize3.load(self.lib)
+        self.mju_norm3 = LibMuJoCo_mju_norm3.load(self.lib)
+        self.mju_dot3 = LibMuJoCo_mju_dot3.load(self.lib)
+        self.mju_dist3 = LibMuJoCo_mju_dist3.load(self.lib)
+        self.mju_mulMatVec3 = LibMuJoCo_mju_mulMatVec3.load(self.lib)
+        self.mju_mulMatTVec3 = LibMuJoCo_mju_mulMatTVec3.load(self.lib)
+        self.mju_cross = LibMuJoCo_mju_cross.load(self.lib)
+        self.mju_zero4 = LibMuJoCo_mju_zero4.load(self.lib)
+        self.mju_unit4 = LibMuJoCo_mju_unit4.load(self.lib)
+        self.mju_copy4 = LibMuJoCo_mju_copy4.load(self.lib)
+        self.mju_normalize4 = LibMuJoCo_mju_normalize4.load(self.lib)
+        self.mju_zero = LibMuJoCo_mju_zero.load(self.lib)
+        self.mju_fill = LibMuJoCo_mju_fill.load(self.lib)
+        self.mju_copy = LibMuJoCo_mju_copy.load(self.lib)
+        self.mju_sum = LibMuJoCo_mju_sum.load(self.lib)
+        self.mju_L1 = LibMuJoCo_mju_L1.load(self.lib)
+        self.mju_scl = LibMuJoCo_mju_scl.load(self.lib)
+        self.mju_add = LibMuJoCo_mju_add.load(self.lib)
+        self.mju_sub = LibMuJoCo_mju_sub.load(self.lib)
+        self.mju_addTo = LibMuJoCo_mju_addTo.load(self.lib)
+        self.mju_subFrom = LibMuJoCo_mju_subFrom.load(self.lib)
+        self.mju_addToScl = LibMuJoCo_mju_addToScl.load(self.lib)
+        self.mju_addScl = LibMuJoCo_mju_addScl.load(self.lib)
+        self.mju_normalize = LibMuJoCo_mju_normalize.load(self.lib)
+        self.mju_norm = LibMuJoCo_mju_norm.load(self.lib)
+        self.mju_dot = LibMuJoCo_mju_dot.load(self.lib)
+        self.mju_mulMatVec = LibMuJoCo_mju_mulMatVec.load(self.lib)
+        self.mju_mulMatTVec = LibMuJoCo_mju_mulMatTVec.load(self.lib)
+        self.mju_mulVecMatVec = LibMuJoCo_mju_mulVecMatVec.load(self.lib)
+        self.mju_transpose = LibMuJoCo_mju_transpose.load(self.lib)
+        self.mju_symmetrize = LibMuJoCo_mju_symmetrize.load(self.lib)
+        self.mju_eye = LibMuJoCo_mju_eye.load(self.lib)
+        self.mju_mulMatMat = LibMuJoCo_mju_mulMatMat.load(self.lib)
+        self.mju_mulMatMatT = LibMuJoCo_mju_mulMatMatT.load(self.lib)
+        self.mju_mulMatTMat = LibMuJoCo_mju_mulMatTMat.load(self.lib)
+        self.mju_sqrMatTD = LibMuJoCo_mju_sqrMatTD.load(self.lib)
+        self.mju_transformSpatial = LibMuJoCo_mju_transformSpatial.load(self.lib)
+        self.mju_dense2sparse = LibMuJoCo_mju_dense2sparse.load(self.lib)
+        self.mju_sparse2dense = LibMuJoCo_mju_sparse2dense.load(self.lib)
+        self.mju_rotVecQuat = LibMuJoCo_mju_rotVecQuat.load(self.lib)
+        self.mju_negQuat = LibMuJoCo_mju_negQuat.load(self.lib)
+        self.mju_mulQuat = LibMuJoCo_mju_mulQuat.load(self.lib)
+        self.mju_mulQuatAxis = LibMuJoCo_mju_mulQuatAxis.load(self.lib)
+        self.mju_axisAngle2Quat = LibMuJoCo_mju_axisAngle2Quat.load(self.lib)
+        self.mju_quat2Vel = LibMuJoCo_mju_quat2Vel.load(self.lib)
+        self.mju_subQuat = LibMuJoCo_mju_subQuat.load(self.lib)
+        self.mju_quat2Mat = LibMuJoCo_mju_quat2Mat.load(self.lib)
+        self.mju_mat2Quat = LibMuJoCo_mju_mat2Quat.load(self.lib)
+        self.mju_derivQuat = LibMuJoCo_mju_derivQuat.load(self.lib)
+        self.mju_quatIntegrate = LibMuJoCo_mju_quatIntegrate.load(self.lib)
+        self.mju_quatZ2Vec = LibMuJoCo_mju_quatZ2Vec.load(self.lib)
+        self.mju_mat2Rot = LibMuJoCo_mju_mat2Rot.load(self.lib)
+        self.mju_euler2Quat = LibMuJoCo_mju_euler2Quat.load(self.lib)
+        self.mju_mulPose = LibMuJoCo_mju_mulPose.load(self.lib)
+        self.mju_negPose = LibMuJoCo_mju_negPose.load(self.lib)
+        self.mju_trnVecPose = LibMuJoCo_mju_trnVecPose.load(self.lib)
+        self.mju_cholFactor = LibMuJoCo_mju_cholFactor.load(self.lib)
+        self.mju_cholSolve = LibMuJoCo_mju_cholSolve.load(self.lib)
+        self.mju_cholUpdate = LibMuJoCo_mju_cholUpdate.load(self.lib)
+        self.mju_cholFactorBand = LibMuJoCo_mju_cholFactorBand.load(self.lib)
+        self.mju_cholSolveBand = LibMuJoCo_mju_cholSolveBand.load(self.lib)
+        self.mju_band2Dense = LibMuJoCo_mju_band2Dense.load(self.lib)
+        self.mju_dense2Band = LibMuJoCo_mju_dense2Band.load(self.lib)
+        self.mju_bandMulMatVec = LibMuJoCo_mju_bandMulMatVec.load(self.lib)
+        self.mju_bandDiag = LibMuJoCo_mju_bandDiag.load(self.lib)
+        self.mju_eig3 = LibMuJoCo_mju_eig3.load(self.lib)
+        self.mju_boxQP = LibMuJoCo_mju_boxQP.load(self.lib)
+        self.mju_boxQPmalloc = LibMuJoCo_mju_boxQPmalloc.load(self.lib)
+        self.mju_muscleGain = LibMuJoCo_mju_muscleGain.load(self.lib)
+        self.mju_muscleBias = LibMuJoCo_mju_muscleBias.load(self.lib)
+        self.mju_muscleDynamics = LibMuJoCo_mju_muscleDynamics.load(self.lib)
+        self.mju_encodePyramid = LibMuJoCo_mju_encodePyramid.load(self.lib)
+        self.mju_decodePyramid = LibMuJoCo_mju_decodePyramid.load(self.lib)
+        self.mju_springDamper = LibMuJoCo_mju_springDamper.load(self.lib)
+        self.mju_min = LibMuJoCo_mju_min.load(self.lib)
+        self.mju_max = LibMuJoCo_mju_max.load(self.lib)
+        self.mju_clip = LibMuJoCo_mju_clip.load(self.lib)
+        self.mju_sign = LibMuJoCo_mju_sign.load(self.lib)
+        self.mju_round = LibMuJoCo_mju_round.load(self.lib)
+        self.mju_type2Str = LibMuJoCo_mju_type2Str.load(self.lib)
+        self.mju_str2Type = LibMuJoCo_mju_str2Type.load(self.lib)
+        self.mju_writeNumBytes = LibMuJoCo_mju_writeNumBytes.load(self.lib)
+        self.mju_warningText = LibMuJoCo_mju_warningText.load(self.lib)
+        self.mju_isBad = LibMuJoCo_mju_isBad.load(self.lib)
+        self.mju_isZero = LibMuJoCo_mju_isZero.load(self.lib)
+        self.mju_standardNormal = LibMuJoCo_mju_standardNormal.load(self.lib)
+        self.mju_f2n = LibMuJoCo_mju_f2n.load(self.lib)
+        self.mju_n2f = LibMuJoCo_mju_n2f.load(self.lib)
+        self.mju_d2n = LibMuJoCo_mju_d2n.load(self.lib)
+        self.mju_n2d = LibMuJoCo_mju_n2d.load(self.lib)
+        self.mju_insertionSort = LibMuJoCo_mju_insertionSort.load(self.lib)
+        self.mju_insertionSortInt = LibMuJoCo_mju_insertionSortInt.load(self.lib)
+        self.mju_Halton = LibMuJoCo_mju_Halton.load(self.lib)
+        self.mju_strncpy = LibMuJoCo_mju_strncpy.load(self.lib)
+        self.mju_sigmoid = LibMuJoCo_mju_sigmoid.load(self.lib)
+        self.mjc_getSDF = LibMuJoCo_mjc_getSDF.load(self.lib)
+        self.mjc_distance = LibMuJoCo_mjc_distance.load(self.lib)
+        self.mjc_gradient = LibMuJoCo_mjc_gradient.load(self.lib)
+        self.mjd_transitionFD = LibMuJoCo_mjd_transitionFD.load(self.lib)
+        self.mjd_inverseFD = LibMuJoCo_mjd_inverseFD.load(self.lib)
+        self.mjd_subQuat = LibMuJoCo_mjd_subQuat.load(self.lib)
+        self.mjd_quatIntegrate = LibMuJoCo_mjd_quatIntegrate.load(self.lib)
+        self.mjp_defaultPlugin = LibMuJoCo_mjp_defaultPlugin.load(self.lib)
+        self.mjp_registerPlugin = LibMuJoCo_mjp_registerPlugin.load(self.lib)
+        self.mjp_pluginCount = LibMuJoCo_mjp_pluginCount.load(self.lib)
+        self.mjp_getPlugin = LibMuJoCo_mjp_getPlugin.load(self.lib)
+        self.mjp_getPluginAtSlot = LibMuJoCo_mjp_getPluginAtSlot.load(self.lib)
+        self.mjp_defaultResourceProvider = LibMuJoCo_mjp_defaultResourceProvider.load(self.lib)
+        self.mjp_registerResourceProvider = LibMuJoCo_mjp_registerResourceProvider.load(self.lib)
+        self.mjp_resourceProviderCount = LibMuJoCo_mjp_resourceProviderCount.load(self.lib)
+        self.mjp_getResourceProvider = LibMuJoCo_mjp_getResourceProvider.load(self.lib)
+        self.mjp_getResourceProviderAtSlot = LibMuJoCo_mjp_getResourceProviderAtSlot.load(self.lib)
+        self.mju_threadPoolCreate = LibMuJoCo_mju_threadPoolCreate.load(self.lib)
+        self.mju_bindThreadPool = LibMuJoCo_mju_bindThreadPool.load(self.lib)
+        self.mju_threadPoolEnqueue = LibMuJoCo_mju_threadPoolEnqueue.load(self.lib)
+        self.mju_threadPoolDestroy = LibMuJoCo_mju_threadPoolDestroy.load(self.lib)
+        self.mju_defaultTask = LibMuJoCo_mju_defaultTask.load(self.lib)
+        self.mju_taskJoin = LibMuJoCo_mju_taskJoin.load(self.lib)
+        self.mjs_attach = LibMuJoCo_mjs_attach.load(self.lib)
+        self.mjs_addBody = LibMuJoCo_mjs_addBody.load(self.lib)
+        self.mjs_addSite = LibMuJoCo_mjs_addSite.load(self.lib)
+        self.mjs_addJoint = LibMuJoCo_mjs_addJoint.load(self.lib)
+        self.mjs_addFreeJoint = LibMuJoCo_mjs_addFreeJoint.load(self.lib)
+        self.mjs_addGeom = LibMuJoCo_mjs_addGeom.load(self.lib)
+        self.mjs_addCamera = LibMuJoCo_mjs_addCamera.load(self.lib)
+        self.mjs_addLight = LibMuJoCo_mjs_addLight.load(self.lib)
+        self.mjs_addFrame = LibMuJoCo_mjs_addFrame.load(self.lib)
+        self.mjs_delete = LibMuJoCo_mjs_delete.load(self.lib)
+        self.mjs_addActuator = LibMuJoCo_mjs_addActuator.load(self.lib)
+        self.mjs_addSensor = LibMuJoCo_mjs_addSensor.load(self.lib)
+        self.mjs_addFlex = LibMuJoCo_mjs_addFlex.load(self.lib)
+        self.mjs_addPair = LibMuJoCo_mjs_addPair.load(self.lib)
+        self.mjs_addExclude = LibMuJoCo_mjs_addExclude.load(self.lib)
+        self.mjs_addEquality = LibMuJoCo_mjs_addEquality.load(self.lib)
+        self.mjs_addTendon = LibMuJoCo_mjs_addTendon.load(self.lib)
+        self.mjs_wrapSite = LibMuJoCo_mjs_wrapSite.load(self.lib)
+        self.mjs_wrapGeom = LibMuJoCo_mjs_wrapGeom.load(self.lib)
+        self.mjs_wrapJoint = LibMuJoCo_mjs_wrapJoint.load(self.lib)
+        self.mjs_wrapPulley = LibMuJoCo_mjs_wrapPulley.load(self.lib)
+        self.mjs_addNumeric = LibMuJoCo_mjs_addNumeric.load(self.lib)
+        self.mjs_addText = LibMuJoCo_mjs_addText.load(self.lib)
+        self.mjs_addTuple = LibMuJoCo_mjs_addTuple.load(self.lib)
+        self.mjs_addKey = LibMuJoCo_mjs_addKey.load(self.lib)
+        self.mjs_addPlugin = LibMuJoCo_mjs_addPlugin.load(self.lib)
+        self.mjs_addDefault = LibMuJoCo_mjs_addDefault.load(self.lib)
+        self.mjs_setToMotor = LibMuJoCo_mjs_setToMotor.load(self.lib)
+        self.mjs_setToPosition = LibMuJoCo_mjs_setToPosition.load(self.lib)
+        self.mjs_setToIntVelocity = LibMuJoCo_mjs_setToIntVelocity.load(self.lib)
+        self.mjs_setToVelocity = LibMuJoCo_mjs_setToVelocity.load(self.lib)
+        self.mjs_setToDamper = LibMuJoCo_mjs_setToDamper.load(self.lib)
+        self.mjs_setToCylinder = LibMuJoCo_mjs_setToCylinder.load(self.lib)
+        self.mjs_setToMuscle = LibMuJoCo_mjs_setToMuscle.load(self.lib)
+        self.mjs_setToAdhesion = LibMuJoCo_mjs_setToAdhesion.load(self.lib)
+        self.mjs_addMesh = LibMuJoCo_mjs_addMesh.load(self.lib)
+        self.mjs_addHField = LibMuJoCo_mjs_addHField.load(self.lib)
+        self.mjs_addSkin = LibMuJoCo_mjs_addSkin.load(self.lib)
+        self.mjs_addTexture = LibMuJoCo_mjs_addTexture.load(self.lib)
+        self.mjs_addMaterial = LibMuJoCo_mjs_addMaterial.load(self.lib)
+        self.mjs_getSpec = LibMuJoCo_mjs_getSpec.load(self.lib)
+        self.mjs_findSpec = LibMuJoCo_mjs_findSpec.load(self.lib)
+        self.mjs_findBody = LibMuJoCo_mjs_findBody.load(self.lib)
+        self.mjs_findElement = LibMuJoCo_mjs_findElement.load(self.lib)
+        self.mjs_findChild = LibMuJoCo_mjs_findChild.load(self.lib)
+        self.mjs_getParent = LibMuJoCo_mjs_getParent.load(self.lib)
+        self.mjs_getFrame = LibMuJoCo_mjs_getFrame.load(self.lib)
+        self.mjs_findFrame = LibMuJoCo_mjs_findFrame.load(self.lib)
+        self.mjs_getDefault = LibMuJoCo_mjs_getDefault.load(self.lib)
+        self.mjs_findDefault = LibMuJoCo_mjs_findDefault.load(self.lib)
+        self.mjs_getSpecDefault = LibMuJoCo_mjs_getSpecDefault.load(self.lib)
+        self.mjs_getId = LibMuJoCo_mjs_getId.load(self.lib)
+        self.mjs_firstChild = LibMuJoCo_mjs_firstChild.load(self.lib)
+        self.mjs_nextChild = LibMuJoCo_mjs_nextChild.load(self.lib)
+        self.mjs_firstElement = LibMuJoCo_mjs_firstElement.load(self.lib)
+        self.mjs_nextElement = LibMuJoCo_mjs_nextElement.load(self.lib)
+        self.mjs_setName = LibMuJoCo_mjs_setName.load(self.lib)
+        self.mjs_setBuffer = LibMuJoCo_mjs_setBuffer.load(self.lib)
+        self.mjs_setString = LibMuJoCo_mjs_setString.load(self.lib)
+        self.mjs_setStringVec = LibMuJoCo_mjs_setStringVec.load(self.lib)
+        self.mjs_setInStringVec = LibMuJoCo_mjs_setInStringVec.load(self.lib)
+        self.mjs_appendString = LibMuJoCo_mjs_appendString.load(self.lib)
+        self.mjs_setInt = LibMuJoCo_mjs_setInt.load(self.lib)
+        self.mjs_appendIntVec = LibMuJoCo_mjs_appendIntVec.load(self.lib)
+        self.mjs_setFloat = LibMuJoCo_mjs_setFloat.load(self.lib)
+        self.mjs_appendFloatVec = LibMuJoCo_mjs_appendFloatVec.load(self.lib)
+        self.mjs_setDouble = LibMuJoCo_mjs_setDouble.load(self.lib)
+        self.mjs_setPluginAttributes = LibMuJoCo_mjs_setPluginAttributes.load(self.lib)
+        self.mjs_getName = LibMuJoCo_mjs_getName.load(self.lib)
+        self.mjs_getString = LibMuJoCo_mjs_getString.load(self.lib)
+        self.mjs_getDouble = LibMuJoCo_mjs_getDouble.load(self.lib)
+        self.mjs_getPluginAttributes = LibMuJoCo_mjs_getPluginAttributes.load(self.lib)
+        self.mjs_setDefault = LibMuJoCo_mjs_setDefault.load(self.lib)
+        self.mjs_setFrame = LibMuJoCo_mjs_setFrame.load(self.lib)
+        self.mjs_resolveOrientation = LibMuJoCo_mjs_resolveOrientation.load(self.lib)
+        self.mjs_bodyToFrame = LibMuJoCo_mjs_bodyToFrame.load(self.lib)
+        self.mjs_setUserValue = LibMuJoCo_mjs_setUserValue.load(self.lib)
+        self.mjs_setUserValueWithCleanup = LibMuJoCo_mjs_setUserValueWithCleanup.load(self.lib)
+        self.mjs_getUserValue = LibMuJoCo_mjs_getUserValue.load(self.lib)
+        self.mjs_deleteUserValue = LibMuJoCo_mjs_deleteUserValue.load(self.lib)
+        self.mjs_defaultSpec = LibMuJoCo_mjs_defaultSpec.load(self.lib)
+        self.mjs_defaultOrientation = LibMuJoCo_mjs_defaultOrientation.load(self.lib)
+        self.mjs_defaultBody = LibMuJoCo_mjs_defaultBody.load(self.lib)
+        self.mjs_defaultFrame = LibMuJoCo_mjs_defaultFrame.load(self.lib)
+        self.mjs_defaultJoint = LibMuJoCo_mjs_defaultJoint.load(self.lib)
+        self.mjs_defaultGeom = LibMuJoCo_mjs_defaultGeom.load(self.lib)
+        self.mjs_defaultSite = LibMuJoCo_mjs_defaultSite.load(self.lib)
+        self.mjs_defaultCamera = LibMuJoCo_mjs_defaultCamera.load(self.lib)
+        self.mjs_defaultLight = LibMuJoCo_mjs_defaultLight.load(self.lib)
+        self.mjs_defaultFlex = LibMuJoCo_mjs_defaultFlex.load(self.lib)
+        self.mjs_defaultMesh = LibMuJoCo_mjs_defaultMesh.load(self.lib)
+        self.mjs_defaultHField = LibMuJoCo_mjs_defaultHField.load(self.lib)
+        self.mjs_defaultSkin = LibMuJoCo_mjs_defaultSkin.load(self.lib)
+        self.mjs_defaultTexture = LibMuJoCo_mjs_defaultTexture.load(self.lib)
+        self.mjs_defaultMaterial = LibMuJoCo_mjs_defaultMaterial.load(self.lib)
+        self.mjs_defaultPair = LibMuJoCo_mjs_defaultPair.load(self.lib)
+        self.mjs_defaultEquality = LibMuJoCo_mjs_defaultEquality.load(self.lib)
+        self.mjs_defaultTendon = LibMuJoCo_mjs_defaultTendon.load(self.lib)
+        self.mjs_defaultActuator = LibMuJoCo_mjs_defaultActuator.load(self.lib)
+        self.mjs_defaultSensor = LibMuJoCo_mjs_defaultSensor.load(self.lib)
+        self.mjs_defaultNumeric = LibMuJoCo_mjs_defaultNumeric.load(self.lib)
+        self.mjs_defaultText = LibMuJoCo_mjs_defaultText.load(self.lib)
+        self.mjs_defaultTuple = LibMuJoCo_mjs_defaultTuple.load(self.lib)
+        self.mjs_defaultKey = LibMuJoCo_mjs_defaultKey.load(self.lib)
+        self.mjs_defaultPlugin = LibMuJoCo_mjs_defaultPlugin.load(self.lib)
+        self.mjs_asBody = LibMuJoCo_mjs_asBody.load(self.lib)
+        self.mjs_asGeom = LibMuJoCo_mjs_asGeom.load(self.lib)
+        self.mjs_asJoint = LibMuJoCo_mjs_asJoint.load(self.lib)
+        self.mjs_asSite = LibMuJoCo_mjs_asSite.load(self.lib)
+        self.mjs_asCamera = LibMuJoCo_mjs_asCamera.load(self.lib)
+        self.mjs_asLight = LibMuJoCo_mjs_asLight.load(self.lib)
+        self.mjs_asFrame = LibMuJoCo_mjs_asFrame.load(self.lib)
+        self.mjs_asActuator = LibMuJoCo_mjs_asActuator.load(self.lib)
+        self.mjs_asSensor = LibMuJoCo_mjs_asSensor.load(self.lib)
+        self.mjs_asFlex = LibMuJoCo_mjs_asFlex.load(self.lib)
+        self.mjs_asPair = LibMuJoCo_mjs_asPair.load(self.lib)
+        self.mjs_asEquality = LibMuJoCo_mjs_asEquality.load(self.lib)
+        self.mjs_asExclude = LibMuJoCo_mjs_asExclude.load(self.lib)
+        self.mjs_asTendon = LibMuJoCo_mjs_asTendon.load(self.lib)
+        self.mjs_asNumeric = LibMuJoCo_mjs_asNumeric.load(self.lib)
+        self.mjs_asText = LibMuJoCo_mjs_asText.load(self.lib)
+        self.mjs_asTuple = LibMuJoCo_mjs_asTuple.load(self.lib)
+        self.mjs_asKey = LibMuJoCo_mjs_asKey.load(self.lib)
+        self.mjs_asMesh = LibMuJoCo_mjs_asMesh.load(self.lib)
+        self.mjs_asHField = LibMuJoCo_mjs_asHField.load(self.lib)
+        self.mjs_asSkin = LibMuJoCo_mjs_asSkin.load(self.lib)
+        self.mjs_asTexture = LibMuJoCo_mjs_asTexture.load(self.lib)
+        self.mjs_asMaterial = LibMuJoCo_mjs_asMaterial.load(self.lib)
+        self.mjs_asPlugin = LibMuJoCo_mjs_asPlugin.load(self.lib)
 

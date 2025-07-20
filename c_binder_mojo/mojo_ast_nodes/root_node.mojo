@@ -109,6 +109,7 @@ struct RootNode(NodeAstLike):
             "from sys.ffi import _Global"
         )
         imports.append("from sys import ffi, alignof, simdwidthof")
+        imports.append("from utils import StaticTuple")
 
         return String("\n").join(imports)
 

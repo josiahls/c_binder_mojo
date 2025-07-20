@@ -28,3 +28,13 @@ git clone https://github.com/google-deepmind/mujoco.git
 
 export C_BINDING_MOJO_TEST_MUJOCO=$HOME/mujoco
 ```
+
+## With Mujoco
+
+**MaxOS Arm64**
+
+Reference [docs/SHARP_EDGES.md](docs/SHARP_EDGES.md) for known issues. Getting a OpenGL app to work from docker to mac host is not possible.
+
+---
+
+

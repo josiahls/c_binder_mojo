@@ -1,9 +1,0 @@
-// Different types of whitespace:
-// Single space
-// Multiple spaces
-// Tabs
-// Mixed whitespace
-// New lines
-// Whitespace in code contexts
-int function (  )   {  <C_BINDER_MOJO_NEWLINE>    int x  =  5 ;returnx;}// Whitespace after comment
-/* Whitespace <C_BINDER_MOJO_NEWLINE>   in multiline <C_BINDER_MOJO_NEWLINE>   comment */// Whitespace at beginning and end of file 

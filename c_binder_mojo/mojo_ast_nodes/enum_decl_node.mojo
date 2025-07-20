@@ -23,48 +23,6 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.typing import get_global_type_registry
 
 
-struct Grammar(Copyable, Movable, Stringable, Writable):
-    var _name: String
-    var _is_anonymous: Bool
-
-    fn __init__(out self):
-        self._name = String()
-        self._is_anonymous = False
-
-    @implicit
-    fn __init__(out self, ast_entries: AstEntries):
-        self._name = String()
-        self._is_anonymous = False
-        if len(ast_entries) > 1 or len(ast_entries) == 0:
-            print(
-                "EnumDeclNode: Invalid grammar (len(ast_entries) > 1 or"
-                " len(ast_entries) == 0): "
-                + String(ast_entries)
-                + " len: "
-                + String(len(ast_entries))
-            )
-        else:
-            entry = ast_entries._ast_entries[0]
-            if len(entry.tokens) == 0:
-                # TODO(josiahls): Add a global counter for anonymous structs to avoid
-                # name collisions.
-                self._is_anonymous = True
-                self._name = "_Anonymous"
-            else:
-                # Idx 0 should be struct
-                # Idx 2 should be definition
-                self._name = entry.tokens[0]
-
-    fn __str__(self) -> String:
-        if self._name == "":
-            print("Invalid grammar: , NAME IS BLANK!")
-
-        return "struct " + self._name + ":"
-
-    fn write_to[W: Writer](self, mut writer: W):
-        writer.write(String(self))
-
-
 @fieldwise_init
 struct EnumDeclNode(NodeAstLike):
     alias __name__ = "EnumDeclNode"
@@ -268,7 +226,8 @@ struct EnumDeclNode(NodeAstLike):
             s += indent + self.name(include_sig=True) + "\n"
 
         if not self._is_anonymous:
-            s += indent + "struct " + String(self._enum_name) + ": # Enum\n"
+            s += indent + '@register_passable("trivial")\n'
+            s += indent + "struct " + String(self._enum_name) + "(Copyable & Movable): # Enum\n"
         else:
             s += indent + "# Anonymous enum\n"
 

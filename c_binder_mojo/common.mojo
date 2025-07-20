@@ -332,8 +332,8 @@ struct TokenBundle(EqualityComparable & Stringable & Copyable & Movable):
             )
 
 
-@value
-struct TokenBundles(Stringable, Sized):
+@fieldwise_init
+struct TokenBundles(Stringable, Sized, Copyable, Movable):
     """A collection of TokenBundle objects with list-like operations.
 
     This struct provides a container for multiple TokenBundles with standard
@@ -453,8 +453,8 @@ struct TokenBundles(Stringable, Sized):
         self._token_bundles.clear()
 
 
-@value
-struct Tokenizer:
+@fieldwise_init
+struct Tokenizer(Copyable, Movable):
     """A utility for breaking source code into tokens.
 
     This struct provides functionality to read source code and break it into

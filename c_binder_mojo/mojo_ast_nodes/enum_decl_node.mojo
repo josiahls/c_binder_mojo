@@ -136,10 +136,11 @@ struct EnumDeclNode(NodeAstLike):
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.get_node(child_idx)
             if child.node[].isa[EnumConstantDeclNode]():
-                field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
-                value = child.node[][EnumConstantDeclNode].get_value(module_interface)
+                # NOTE: getting  warning: assignment to 'field_type' was never used; assign to '_' instead?
+                # Why?
+                var field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
+                var value = child.node[][EnumConstantDeclNode].get_value(module_interface)
                 if value == "":
-                    print("(no value)EnumDeclNode: EnumConstantDeclNode: field_type: " + field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
                     value = String(current_value)
                     field_type = current_field_type
                     current_value += 1
@@ -149,7 +150,6 @@ struct EnumDeclNode(NodeAstLike):
                     try:
                         current_value = Int(value) + 1
                         current_field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
-                        print("(udpate value and field) EnumDeclNode: EnumConstantDeclNode: field_type: " + current_field_type + " value: " + value + " for field name: " + child.node[][EnumConstantDeclNode]._field_name)
                     except:
                         print("Error: Enum constant decl has invalid value: " + child.node[][EnumConstantDeclNode]._value)
 
@@ -216,7 +216,6 @@ struct EnumDeclNode(NodeAstLike):
     ) raises -> String:
         var s: String = ""
         var indent: String = ""
-        var inner_struct_name_map: Dict[String, String] = {}
 
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level

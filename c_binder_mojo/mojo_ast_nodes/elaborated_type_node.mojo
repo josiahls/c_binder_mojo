@@ -49,7 +49,6 @@ struct ElaboratedTypeNode(NodeAstLike):
         self._aliased_record_name = String()
 
         var quoted_indices = ast_entry.get_quoted_indices()
-        var start_idx = 0
         var end_idx = len(ast_entry.tokens) - 1
 
         if len(quoted_indices) > 0:

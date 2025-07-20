@@ -177,7 +177,7 @@ struct EnumConstantDeclNode(NodeAstLike):
 
         var s: String = ""
         var indent: String = "\t" * parent_indent_level
-        var field_type = self._field_type
+        # var field_type = self._field_type
         s += indent + "alias " + self._field_name + ": "  #+ ": " + self._field_type + " = " + self._value + "\n"
 
         s += self.get_field_type(module_interface) + " = " + self.get_value(module_interface)

@@ -178,7 +178,6 @@ struct FunctionDeclNode(NodeAstLike):
         for node in module_interface.nodes()[]:
             if node.node[].isa[FunctionDeclNode]():
                 # TODO(josiahls): Should add an equality function so that we only duplicate, not overloaded function defitiions.
-                print("Disabling previous declaration: " + node.node[][FunctionDeclNode]._function_name)
                 if node.node[][FunctionDeclNode]._function_name == self._function_name and node.node[][FunctionDeclNode]._mem_address != self._mem_address:
                     node.node[][FunctionDeclNode].disable()
 

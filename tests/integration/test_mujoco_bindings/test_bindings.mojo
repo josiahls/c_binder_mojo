@@ -8,7 +8,7 @@ from firehose.logging import Logger, set_global_logger_settings
 
 # First Party Modules
 from c_binder_mojo.lib_gen import append_to_mojo_file
-from c_binder_mojo.testing import generic_test_outputs, test_ffi_bindings, make_so_file
+from c_binder_mojo.testing import generic_test_outputs, make_so_file
 # from tests.integration.test_mujoco_bindings.output.test_mujoco_bindings import TestMujocoBindings
 
 fn test_mujoco_bindings() raises:

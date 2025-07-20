@@ -55,7 +55,7 @@ fn to_string_mjModel(model: UnsafePointer[mjModel]) -> String:
     return result
 
 
-fn main_old() raises:
+fn main() raises:
     try:
         mujoco = LibMuJoCo()
 
@@ -109,7 +109,7 @@ fn main_old() raises:
         print("Test failed: " + String(e)) 
 
 
-fn main() raises:
+fn main_no_comments() raises:
     try:
         mujoco = LibMuJoCo()
 

@@ -43,8 +43,6 @@ struct RecordTypeNode(NodeAstLike):
         self._unhandled_tokens = String()
 
         var quoted_indices = ast_entry.get_quoted_indices()
-        var start_idx = 0
-        var end_idx = len(ast_entry.tokens) - 1
 
         if len(quoted_indices) > 1:
             start_idx = 0

@@ -71,7 +71,7 @@ services:
       dockerfile: c_binder_mojo.Dockerfile
       context: .
       args:
-      - BASE_IMAGE=nvidia/cuda-arm64:12.0.0-runtime-ubuntu22.04-arm64
+      - BASE_IMAGE=nvidia/cuda:12.0.0-runtime-ubuntu22.04
       target: build_gpu
       cache_from:
       - josiahls/c_binder_mojo-arm64-gpu:${VERSION:-latest}

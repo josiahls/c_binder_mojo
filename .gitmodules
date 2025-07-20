@@ -1,6 +1,6 @@
-[submodule "mujoco"]
-    path = mujoco
-    url = https://github.com/google-deepmind/mujoco.git
+[submodule "mujoco_mojo"]
+    path = mujoco_mojo
+    url = https://github.com/josiahls/mujoco_mojo.git
     branch = main
     ignore = all
 

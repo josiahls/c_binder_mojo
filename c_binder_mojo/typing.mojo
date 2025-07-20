@@ -239,7 +239,22 @@ struct TypeMapper:
         """
         l_bracket_idx = c_type.find("[")
         stripped_type = String(c_type[:l_bracket_idx])
-        return 'UnsafePointer[' + Self.convert_c_type_to_mojo_type(stripped_type) + ']'
+        array_type = Self.convert_c_type_to_mojo_type(stripped_type)
+        try:
+            array_size = Int(c_type[l_bracket_idx+1:c_type.find("]")])
+            # if array_size > 5:
+            #     return 'UnsafePointer[' + array_type + ']'
+            return 'StaticTuple[' + array_type + ', ' + String(array_size) + ']'
+            # var s:String = '('
+            # for i in range(array_size):
+            #     if i == array_size - 1:
+            #         s += array_type
+            #     else:
+            #         s += array_type + ', '
+            # s += ')'
+            # return s
+        except:
+            return 'UnsafePointer[' + array_type + '] # Failed to parse array size'
 
     @staticmethod
     fn _convert_function_type(

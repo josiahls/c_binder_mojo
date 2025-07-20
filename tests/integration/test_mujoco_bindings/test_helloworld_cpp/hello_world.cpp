@@ -104,6 +104,9 @@ std::string to_string_mjModel(mjModel* m) {
     ss << "\t\topt.wind: " << m->opt.wind << std::endl;
     ss << "\t\topt.magnetic: " << m->opt.magnetic << std::endl;
 
+    ss << "  buffer: " << m->buffer << std::endl;
+    ss << "  qpos0: " << m->qpos0 << std::endl;
+
     return ss.str();
 }
 

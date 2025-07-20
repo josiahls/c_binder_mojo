@@ -234,8 +234,8 @@ struct RecordDeclNode(NodeAstLike):
         if parent_indent_level > 0:
             indent = "\t" * parent_indent_level
 
-        s = '' #'@register_passable("trivial")\n'
-        s += 'struct ' + self._record_name + ":\n"
+        s = '@register_passable("trivial")\n'
+        s += 'struct ' + self._record_name + "(Copyable & Movable):\n"
         if not self._has_fields:
             s += indent + "\tpass\n"
         else:

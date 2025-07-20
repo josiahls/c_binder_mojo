@@ -3,6 +3,7 @@ from os import abort, getenv, setenv
 from python._cpython import ExternalFunction
 from sys.ffi import _Global
 from sys import ffi, alignof, simdwidthof
+from utils import StaticTuple
 
 
 alias __int128_t = Int128
@@ -11,7 +12,7 @@ alias __uint128_t = UInt128
 
 alias __NSConstantString = __NSConstantString_tag
 @register_passable("trivial")
-struct __NSConstantString_tag:
+struct __NSConstantString_tag(Copyable & Movable):
 	pass
 
 
@@ -117,7 +118,7 @@ alias __builtin_ms_va_list = UnsafePointer[Int8]
 
 alias __builtin_va_list = __va_list
 @register_passable("trivial")
-struct __va_list:
+struct __va_list(Copyable & Movable):
 	pass
 
 
@@ -135,21 +136,21 @@ alias _Float32x = Float64
 
 alias _Float64x = Float64
 @register_passable("trivial")
-struct Anonymous___usr_include_stdlib_h_59_9__line_63_3_:
+struct Anonymous___usr_include_stdlib_h_59_9__line_63_3_(Copyable & Movable):
 	var quot: Int32
 	var rem: Int32
 
 
 alias div_t = Anonymous___usr_include_stdlib_h_59_9__line_63_3_
 @register_passable("trivial")
-struct Anonymous__line_67_9__line_71_3_:
+struct Anonymous__line_67_9__line_71_3_(Copyable & Movable):
 	var quot: Int64
 	var rem: Int64
 
 
 alias ldiv_t = Anonymous__line_67_9__line_71_3_
 @register_passable("trivial")
-struct Anonymous__line_77_23__line_81_3_:
+struct Anonymous__line_77_23__line_81_3_(Copyable & Movable):
 	var quot: Int128
 	var rem: Int128
 
@@ -247,8 +248,8 @@ alias __off64_t = Int64
 
 alias __pid_t = Int32
 @register_passable("trivial")
-struct Anonymous___usr_include_aarch64_linux_gnu_bits_typesizes_h_72_24__col_47_:
-	var __val: UnsafePointer[Int32]
+struct Anonymous___usr_include_aarch64_linux_gnu_bits_typesizes_h_72_24__col_47_(Copyable & Movable):
+	var __val: StaticTuple[Int32, 2]
 
 
 alias __fsid_t = Anonymous___usr_include_aarch64_linux_gnu_bits_typesizes_h_72_24__col_47_
@@ -390,20 +391,20 @@ alias __uint16_identity = fn(__x: __uint16_t) -> __uint16_t
 alias __uint32_identity = fn(__x: __uint32_t) -> __uint32_t
 alias __uint64_identity = fn(__x: __uint64_t) -> __uint64_t
 @register_passable("trivial")
-struct Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_:
-	var __val: UnsafePointer[UInt64]
+struct Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_(Copyable & Movable):
+	var __val: StaticTuple[UInt64, 16]
 
 
 alias __sigset_t = Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_
 
 alias sigset_t = __sigset_t
 @register_passable("trivial")
-struct timeval:
+struct timeval(Copyable & Movable):
 	var tv_sec: __time_t
 	var tv_usec: __suseconds_t
 
 @register_passable("trivial")
-struct timespec:
+struct timespec(Copyable & Movable):
 	var tv_sec: __time_t
 	var tv_nsec: __syscall_slong_t
 
@@ -412,8 +413,8 @@ alias suseconds_t = Int64
 
 alias __fd_mask = Int64
 @register_passable("trivial")
-struct Anonymous__line_59_9__line_70_3_:
-	var __fds_bits: UnsafePointer[__fd_mask]
+struct Anonymous__line_59_9__line_70_3_(Copyable & Movable):
+	var __fds_bits: StaticTuple[__fd_mask, 16]
 
 
 alias fd_set = Anonymous__line_59_9__line_70_3_
@@ -430,33 +431,33 @@ alias fsblkcnt_t = UInt64
 
 alias fsfilcnt_t = UInt64
 @register_passable("trivial")
-struct _Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_:
+struct _Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_(Copyable & Movable):
 	var __low: UInt32
 	var __high: UInt32
 
 
 @register_passable("trivial")
-struct Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_:
+struct Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_(Copyable & Movable):
 	var __value64: UInt128
 	var __value32: _Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_
 
 
 alias __atomic_wide_counter = Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_
 @register_passable("trivial")
-struct __pthread_internal_list:
+struct __pthread_internal_list(Copyable & Movable):
 	var __prev: UnsafePointer[__pthread_internal_list]
 	var __next: UnsafePointer[__pthread_internal_list]
 
 
 alias __pthread_list_t = __pthread_internal_list
 @register_passable("trivial")
-struct __pthread_internal_slist:
+struct __pthread_internal_slist(Copyable & Movable):
 	var __next: UnsafePointer[__pthread_internal_slist]
 
 
 alias __pthread_slist_t = __pthread_internal_slist
 @register_passable("trivial")
-struct __pthread_mutex_s:
+struct __pthread_mutex_s(Copyable & Movable):
 	var __lock: Int32
 	var __count: UInt32
 	var __owner: Int32
@@ -466,7 +467,7 @@ struct __pthread_mutex_s:
 	var __list: __pthread_list_t
 
 @register_passable("trivial")
-struct __pthread_rwlock_arch_t:
+struct __pthread_rwlock_arch_t(Copyable & Movable):
 	var __readers: UInt32
 	var __writers: UInt32
 	var __wrphase_futex: UInt32
@@ -480,21 +481,21 @@ struct __pthread_rwlock_arch_t:
 	var __flags: UInt32
 
 @register_passable("trivial")
-struct __pthread_cond_s:
+struct __pthread_cond_s(Copyable & Movable):
 	var __wseq: __atomic_wide_counter
 	var __g1_start: __atomic_wide_counter
-	var __g_refs: UnsafePointer[UInt32]
-	var __g_size: UnsafePointer[UInt32]
+	var __g_refs: StaticTuple[UInt32, 2]
+	var __g_size: StaticTuple[UInt32, 2]
 	var __g1_orig_size: UInt32
 	var __wrefs: UInt32
-	var __g_signals: UnsafePointer[UInt32]
+	var __g_signals: StaticTuple[UInt32, 2]
 
 
 alias __tss_t = UInt32
 
 alias __thrd_t = UInt64
 @register_passable("trivial")
-struct Anonymous__line_108_9__line_111_1_:
+struct Anonymous__line_108_9__line_111_1_(Copyable & Movable):
 	var __data: Int32
 
 
@@ -502,15 +503,15 @@ alias __once_flag = Anonymous__line_108_9__line_111_1_
 
 alias pthread_t = UInt64
 @register_passable("trivial")
-struct Anonymous__line_32_9__line_36_1_:
-	var __size: UnsafePointer[Int8]
+struct Anonymous__line_32_9__line_36_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int32
 
 
 alias pthread_mutexattr_t = Anonymous__line_32_9__line_36_1_
 @register_passable("trivial")
-struct Anonymous__line_41_9__line_45_1_:
-	var __size: UnsafePointer[Int8]
+struct Anonymous__line_41_9__line_45_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int32
 
 
@@ -520,39 +521,39 @@ alias pthread_key_t = UInt32
 
 alias pthread_once_t = Int32
 @register_passable("trivial")
-struct pthread_attr_t:
-	var __size: UnsafePointer[Int8]
+struct pthread_attr_t(Copyable & Movable):
+	var __size: StaticTuple[Int8, 64]
 	var __align: Int64
 
 # Disabled since this is already declared
 # alias pthread_attr_t = pthread_attr_t
 @register_passable("trivial")
-struct Anonymous__line_67_9__line_72_1_:
+struct Anonymous__line_67_9__line_72_1_(Copyable & Movable):
 	var __data: __pthread_mutex_s
-	var __size: UnsafePointer[Int8]
+	var __size: StaticTuple[Int8, 48]
 	var __align: Int64
 
 
 alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
 @register_passable("trivial")
-struct Anonymous__line_75_9__line_80_1_:
+struct Anonymous__line_75_9__line_80_1_(Copyable & Movable):
 	var __data: __pthread_cond_s
-	var __size: UnsafePointer[Int8]
+	var __size: StaticTuple[Int8, 48]
 	var __align: Int128
 
 
 alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
 @register_passable("trivial")
-struct Anonymous__line_86_9__line_91_1_:
+struct Anonymous__line_86_9__line_91_1_(Copyable & Movable):
 	var __data: __pthread_rwlock_arch_t
-	var __size: UnsafePointer[Int8]
+	var __size: StaticTuple[Int8, 56]
 	var __align: Int64
 
 
 alias pthread_rwlock_t = Anonymous__line_86_9__line_91_1_
 @register_passable("trivial")
-struct Anonymous__line_93_9__line_97_1_:
-	var __size: UnsafePointer[Int8]
+struct Anonymous__line_93_9__line_97_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int64
 
 
@@ -560,15 +561,15 @@ alias pthread_rwlockattr_t = Anonymous__line_93_9__line_97_1_
 
 alias pthread_spinlock_t = Int32
 @register_passable("trivial")
-struct Anonymous__line_108_9__line_112_1_:
-	var __size: UnsafePointer[Int8]
+struct Anonymous__line_108_9__line_112_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 32]
 	var __align: Int64
 
 
 alias pthread_barrier_t = Anonymous__line_108_9__line_112_1_
 @register_passable("trivial")
-struct Anonymous__line_114_9__line_118_1_:
-	var __size: UnsafePointer[Int8]
+struct Anonymous__line_114_9__line_118_1_(Copyable & Movable):
+	var __size: StaticTuple[Int8, 8]
 	var __align: Int32
 
 
@@ -578,7 +579,7 @@ alias srandom = fn(__seed: UInt32) -> NoneType
 alias initstate = fn(__seed: UInt32, __statebuf: UnsafePointer[Int8], __statelen: size_t) -> UnsafePointer[Int8]
 alias setstate = fn(__statebuf: UnsafePointer[Int8]) -> UnsafePointer[Int8]
 @register_passable("trivial")
-struct random_data:
+struct random_data(Copyable & Movable):
 	var fptr: UnsafePointer[Int32]
 	var rptr: UnsafePointer[Int32]
 	var state: UnsafePointer[Int32]
@@ -604,9 +605,9 @@ alias srand48 = fn(__seedval: Int64) -> NoneType
 alias seed48 = fn(__seed16v: UnsafePointer[UInt16]) -> UnsafePointer[UInt16]
 alias lcong48 = fn(__param: UnsafePointer[UInt16]) -> NoneType
 @register_passable("trivial")
-struct drand48_data:
-	var __x: UnsafePointer[UInt16]
-	var __old_x: UnsafePointer[UInt16]
+struct drand48_data(Copyable & Movable):
+	var __x: StaticTuple[UInt16, 3]
+	var __old_x: StaticTuple[UInt16, 3]
 	var __c: UInt16
 	var __init: UInt16
 	var __a: UInt128
@@ -1319,7 +1320,7 @@ alias FP_NORMAL: Int = 4
 
 alias ptrdiff_t = Int64
 @register_passable("trivial")
-struct Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_:
+struct Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_(Copyable & Movable):
 	var __clang_max_align_nonce1: Int128
 	var __clang_max_align_nonce2: Float64
 
@@ -1380,7 +1381,7 @@ alias mjtByte = UInt8
 #-------------------------------------- byte definition -------------------------------------------
 
 @register_passable("trivial")
-struct mjtDisableBit_: # Enum
+struct mjtDisableBit_(Copyable & Movable): # Enum
 
 	#---------------------------------- enum types (mjt) ----------------------------------------------
 	alias mjDSBL_CONSTRAINT: Int = 1
@@ -1407,7 +1408,7 @@ alias mjtDisableBit = mjtDisableBit_
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
 @register_passable("trivial")
-struct mjtEnableBit_: # Enum
+struct mjtEnableBit_(Copyable & Movable): # Enum
 	alias mjENBL_OVERRIDE: Int = 1
 	alias mjENBL_ENERGY: Int = 2
 	alias mjENBL_FWDINV: Int = 4
@@ -1419,7 +1420,7 @@ struct mjtEnableBit_: # Enum
 
 alias mjtEnableBit = mjtEnableBit_
 @register_passable("trivial")
-struct mjtJoint_: # Enum
+struct mjtJoint_(Copyable & Movable): # Enum
 	alias mjJNT_FREE: Int = 0
 	alias mjJNT_BALL: Int = 1
 	alias mjJNT_SLIDE: Int = 2
@@ -1428,7 +1429,7 @@ struct mjtJoint_: # Enum
 
 alias mjtJoint = mjtJoint_
 @register_passable("trivial")
-struct mjtGeom_: # Enum
+struct mjtGeom_(Copyable & Movable): # Enum
 	alias mjGEOM_PLANE: Int = 0
 	alias mjGEOM_HFIELD: Int = 1
 	alias mjGEOM_SPHERE: Int = 2
@@ -1453,7 +1454,7 @@ struct mjtGeom_: # Enum
 
 alias mjtGeom = mjtGeom_
 @register_passable("trivial")
-struct mjtCamLight_: # Enum
+struct mjtCamLight_(Copyable & Movable): # Enum
 	alias mjCAMLIGHT_FIXED: Int = 0
 	alias mjCAMLIGHT_TRACK: Int = 1
 	alias mjCAMLIGHT_TRACKCOM: Int = 2
@@ -1463,7 +1464,7 @@ struct mjtCamLight_: # Enum
 
 alias mjtCamLight = mjtCamLight_
 @register_passable("trivial")
-struct mjtLightType_: # Enum
+struct mjtLightType_(Copyable & Movable): # Enum
 	alias mjLIGHT_SPOT: Int = 0
 	alias mjLIGHT_DIRECTIONAL: Int = 1
 	alias mjLIGHT_POINT: Int = 2
@@ -1472,7 +1473,7 @@ struct mjtLightType_: # Enum
 
 alias mjtLightType = mjtLightType_
 @register_passable("trivial")
-struct mjtTexture_: # Enum
+struct mjtTexture_(Copyable & Movable): # Enum
 	alias mjTEXTURE_2D: Int = 0
 	alias mjTEXTURE_CUBE: Int = 1
 	alias mjTEXTURE_SKYBOX: Int = 2
@@ -1480,7 +1481,7 @@ struct mjtTexture_: # Enum
 
 alias mjtTexture = mjtTexture_
 @register_passable("trivial")
-struct mjtTextureRole_: # Enum
+struct mjtTextureRole_(Copyable & Movable): # Enum
 	alias mjTEXROLE_USER: Int = 0
 	alias mjTEXROLE_RGB: Int = 1
 	alias mjTEXROLE_OCCLUSION: Int = 2
@@ -1496,7 +1497,7 @@ struct mjtTextureRole_: # Enum
 
 alias mjtTextureRole = mjtTextureRole_
 @register_passable("trivial")
-struct mjtColorSpace_: # Enum
+struct mjtColorSpace_(Copyable & Movable): # Enum
 	alias mjCOLORSPACE_AUTO: Int = 0
 	alias mjCOLORSPACE_LINEAR: Int = 1
 	alias mjCOLORSPACE_SRGB: Int = 2
@@ -1504,7 +1505,7 @@ struct mjtColorSpace_: # Enum
 
 alias mjtColorSpace = mjtColorSpace_
 @register_passable("trivial")
-struct mjtIntegrator_: # Enum
+struct mjtIntegrator_(Copyable & Movable): # Enum
 	alias mjINT_EULER: Int = 0
 	alias mjINT_RK4: Int = 1
 	alias mjINT_IMPLICIT: Int = 2
@@ -1513,14 +1514,14 @@ struct mjtIntegrator_: # Enum
 
 alias mjtIntegrator = mjtIntegrator_
 @register_passable("trivial")
-struct mjtCone_: # Enum
+struct mjtCone_(Copyable & Movable): # Enum
 	alias mjCONE_PYRAMIDAL: Int = 0
 	alias mjCONE_ELLIPTIC: Int = 1
 
 
 alias mjtCone = mjtCone_
 @register_passable("trivial")
-struct mjtJacobian_: # Enum
+struct mjtJacobian_(Copyable & Movable): # Enum
 	alias mjJAC_DENSE: Int = 0
 	alias mjJAC_SPARSE: Int = 1
 	alias mjJAC_AUTO: Int = 2
@@ -1528,7 +1529,7 @@ struct mjtJacobian_: # Enum
 
 alias mjtJacobian = mjtJacobian_
 @register_passable("trivial")
-struct mjtSolver_: # Enum
+struct mjtSolver_(Copyable & Movable): # Enum
 	alias mjSOL_PGS: Int = 0
 	alias mjSOL_CG: Int = 1
 	alias mjSOL_NEWTON: Int = 2
@@ -1536,7 +1537,7 @@ struct mjtSolver_: # Enum
 
 alias mjtSolver = mjtSolver_
 @register_passable("trivial")
-struct mjtEq_: # Enum
+struct mjtEq_(Copyable & Movable): # Enum
 	alias mjEQ_CONNECT: Int = 0
 	alias mjEQ_WELD: Int = 1
 	alias mjEQ_JOINT: Int = 2
@@ -1547,7 +1548,7 @@ struct mjtEq_: # Enum
 
 alias mjtEq = mjtEq_
 @register_passable("trivial")
-struct mjtWrap_: # Enum
+struct mjtWrap_(Copyable & Movable): # Enum
 	alias mjWRAP_NONE: Int = 0
 	alias mjWRAP_JOINT: Int = 1
 	alias mjWRAP_PULLEY: Int = 2
@@ -1558,7 +1559,7 @@ struct mjtWrap_: # Enum
 
 alias mjtWrap = mjtWrap_
 @register_passable("trivial")
-struct mjtTrn_: # Enum
+struct mjtTrn_(Copyable & Movable): # Enum
 	alias mjTRN_JOINT: Int = 0
 	alias mjTRN_JOINTINPARENT: Int = 1
 	alias mjTRN_SLIDERCRANK: Int = 2
@@ -1570,7 +1571,7 @@ struct mjtTrn_: # Enum
 
 alias mjtTrn = mjtTrn_
 @register_passable("trivial")
-struct mjtDyn_: # Enum
+struct mjtDyn_(Copyable & Movable): # Enum
 	alias mjDYN_NONE: Int = 0
 	alias mjDYN_INTEGRATOR: Int = 1
 	alias mjDYN_FILTER: Int = 2
@@ -1581,7 +1582,7 @@ struct mjtDyn_: # Enum
 
 alias mjtDyn = mjtDyn_
 @register_passable("trivial")
-struct mjtGain_: # Enum
+struct mjtGain_(Copyable & Movable): # Enum
 	alias mjGAIN_FIXED: Int = 0
 	alias mjGAIN_AFFINE: Int = 1
 	alias mjGAIN_MUSCLE: Int = 2
@@ -1590,7 +1591,7 @@ struct mjtGain_: # Enum
 
 alias mjtGain = mjtGain_
 @register_passable("trivial")
-struct mjtBias_: # Enum
+struct mjtBias_(Copyable & Movable): # Enum
 	alias mjBIAS_NONE: Int = 0
 	alias mjBIAS_AFFINE: Int = 1
 	alias mjBIAS_MUSCLE: Int = 2
@@ -1599,7 +1600,7 @@ struct mjtBias_: # Enum
 
 alias mjtBias = mjtBias_
 @register_passable("trivial")
-struct mjtObj_: # Enum
+struct mjtObj_(Copyable & Movable): # Enum
 	alias mjOBJ_UNKNOWN: Int = 0
 	alias mjOBJ_BODY: Int = 1
 	alias mjOBJ_XBODY: Int = 2
@@ -1634,7 +1635,7 @@ struct mjtObj_: # Enum
 
 alias mjtObj = mjtObj_
 @register_passable("trivial")
-struct mjtConstraint_: # Enum
+struct mjtConstraint_(Copyable & Movable): # Enum
 	alias mjCNSTR_EQUALITY: Int = 0
 	alias mjCNSTR_FRICTION_DOF: Int = 1
 	alias mjCNSTR_FRICTION_TENDON: Int = 2
@@ -1647,7 +1648,7 @@ struct mjtConstraint_: # Enum
 
 alias mjtConstraint = mjtConstraint_
 @register_passable("trivial")
-struct mjtConstraintState_: # Enum
+struct mjtConstraintState_(Copyable & Movable): # Enum
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 	alias mjCNSTRSTATE_QUADRATIC: Int = 1
 	alias mjCNSTRSTATE_LINEARNEG: Int = 2
@@ -1657,7 +1658,7 @@ struct mjtConstraintState_: # Enum
 
 alias mjtConstraintState = mjtConstraintState_
 @register_passable("trivial")
-struct mjtSensor_: # Enum
+struct mjtSensor_(Copyable & Movable): # Enum
 	alias mjSENS_TOUCH: Int = 0
 	alias mjSENS_ACCELEROMETER: Int = 1
 	alias mjSENS_VELOCIMETER: Int = 2
@@ -1710,7 +1711,7 @@ struct mjtSensor_: # Enum
 
 alias mjtSensor = mjtSensor_
 @register_passable("trivial")
-struct mjtStage_: # Enum
+struct mjtStage_(Copyable & Movable): # Enum
 	alias mjSTAGE_NONE: Int = 0
 	alias mjSTAGE_POS: Int = 1
 	alias mjSTAGE_VEL: Int = 2
@@ -1719,7 +1720,7 @@ struct mjtStage_: # Enum
 
 alias mjtStage = mjtStage_
 @register_passable("trivial")
-struct mjtDataType_: # Enum
+struct mjtDataType_(Copyable & Movable): # Enum
 	alias mjDATATYPE_REAL: Int = 0
 	alias mjDATATYPE_POSITIVE: Int = 1
 	alias mjDATATYPE_AXIS: Int = 2
@@ -1728,7 +1729,7 @@ struct mjtDataType_: # Enum
 
 alias mjtDataType = mjtDataType_
 @register_passable("trivial")
-struct mjtConDataField_: # Enum
+struct mjtConDataField_(Copyable & Movable): # Enum
 	alias mjCONDATA_FOUND: Int = 0
 	alias mjCONDATA_FORCE: Int = 1
 	alias mjCONDATA_TORQUE: Int = 2
@@ -1741,7 +1742,7 @@ struct mjtConDataField_: # Enum
 
 alias mjtConDataField = mjtConDataField_
 @register_passable("trivial")
-struct mjtSameFrame_: # Enum
+struct mjtSameFrame_(Copyable & Movable): # Enum
 	alias mjSAMEFRAME_NONE: Int = 0
 	alias mjSAMEFRAME_BODY: Int = 1
 	alias mjSAMEFRAME_INERTIA: Int = 2
@@ -1751,7 +1752,7 @@ struct mjtSameFrame_: # Enum
 
 alias mjtSameFrame = mjtSameFrame_
 @register_passable("trivial")
-struct mjtLRMode_: # Enum
+struct mjtLRMode_(Copyable & Movable): # Enum
 	alias mjLRMODE_NONE: Int = 0
 	alias mjLRMODE_MUSCLE: Int = 1
 	alias mjLRMODE_MUSCLEUSER: Int = 2
@@ -1760,7 +1761,7 @@ struct mjtLRMode_: # Enum
 
 alias mjtLRMode = mjtLRMode_
 @register_passable("trivial")
-struct mjtFlexSelf_: # Enum
+struct mjtFlexSelf_(Copyable & Movable): # Enum
 	alias mjFLEXSELF_NONE: Int = 0
 	alias mjFLEXSELF_NARROW: Int = 1
 	alias mjFLEXSELF_BVH: Int = 2
@@ -1770,7 +1771,7 @@ struct mjtFlexSelf_: # Enum
 
 alias mjtFlexSelf = mjtFlexSelf_
 @register_passable("trivial")
-struct mjtSDFType_: # Enum
+struct mjtSDFType_(Copyable & Movable): # Enum
 	alias mjSDFTYPE_SINGLE: Int = 0
 	alias mjSDFTYPE_INTERSECTION: Int = 1
 	alias mjSDFTYPE_MIDSURFACE: Int = 2
@@ -1779,7 +1780,7 @@ struct mjtSDFType_: # Enum
 
 alias mjtSDFType = mjtSDFType_
 @register_passable("trivial")
-struct mjLROpt_:
+struct mjLROpt_(Copyable & Movable):
 	var mode: Int32
 	var useexisting: Int32
 	var uselimit: Int32
@@ -1794,13 +1795,13 @@ struct mjLROpt_:
 
 alias mjLROpt = mjLROpt_
 @register_passable("trivial")
-struct mjVFS_:
+struct mjVFS_(Copyable & Movable):
 	var impl_: OpaquePointer
 
 
 alias mjVFS = mjVFS_
 @register_passable("trivial")
-struct mjOption_:
+struct mjOption_(Copyable & Movable):
 	var timestep: mjtNum
 	var apirate: mjtNum
 	var impratio: mjtNum
@@ -1808,15 +1809,15 @@ struct mjOption_:
 	var ls_tolerance: mjtNum
 	var noslip_tolerance: mjtNum
 	var ccd_tolerance: mjtNum
-	var gravity: UnsafePointer[mjtNum]
-	var wind: UnsafePointer[mjtNum]
-	var magnetic: UnsafePointer[mjtNum]
+	var gravity: StaticTuple[mjtNum, 3]
+	var wind: StaticTuple[mjtNum, 3]
+	var magnetic: StaticTuple[mjtNum, 3]
 	var density: mjtNum
 	var viscosity: mjtNum
 	var o_margin: mjtNum
-	var o_solref: UnsafePointer[mjtNum]
-	var o_solimp: UnsafePointer[mjtNum]
-	var o_friction: UnsafePointer[mjtNum]
+	var o_solref: StaticTuple[mjtNum, 2]
+	var o_solimp: StaticTuple[mjtNum, 5]
+	var o_friction: StaticTuple[mjtNum, 5]
 	var integrator: Int32
 	var cone: Int32
 	var jacobian: Int32
@@ -1834,36 +1835,36 @@ struct mjOption_:
 
 alias mjOption = mjOption_
 @register_passable("trivial")
-struct _mjVisual__Anonymous__line_595_3__line_621_3_:
-	var fog: UnsafePointer[Float32]
-	var haze: UnsafePointer[Float32]
-	var force: UnsafePointer[Float32]
-	var inertia: UnsafePointer[Float32]
-	var joint: UnsafePointer[Float32]
-	var actuator: UnsafePointer[Float32]
-	var actuatornegative: UnsafePointer[Float32]
-	var actuatorpositive: UnsafePointer[Float32]
-	var com: UnsafePointer[Float32]
-	var camera: UnsafePointer[Float32]
-	var light: UnsafePointer[Float32]
-	var selectpoint: UnsafePointer[Float32]
-	var connect: UnsafePointer[Float32]
-	var contactpoint: UnsafePointer[Float32]
-	var contactforce: UnsafePointer[Float32]
-	var contactfriction: UnsafePointer[Float32]
-	var contacttorque: UnsafePointer[Float32]
-	var contactgap: UnsafePointer[Float32]
-	var rangefinder: UnsafePointer[Float32]
-	var constraint: UnsafePointer[Float32]
-	var slidercrank: UnsafePointer[Float32]
-	var crankbroken: UnsafePointer[Float32]
-	var frustum: UnsafePointer[Float32]
-	var bv: UnsafePointer[Float32]
-	var bvactive: UnsafePointer[Float32]
+struct _mjVisual__Anonymous__line_595_3__line_621_3_(Copyable & Movable):
+	var fog: StaticTuple[Float32, 4]
+	var haze: StaticTuple[Float32, 4]
+	var force: StaticTuple[Float32, 4]
+	var inertia: StaticTuple[Float32, 4]
+	var joint: StaticTuple[Float32, 4]
+	var actuator: StaticTuple[Float32, 4]
+	var actuatornegative: StaticTuple[Float32, 4]
+	var actuatorpositive: StaticTuple[Float32, 4]
+	var com: StaticTuple[Float32, 4]
+	var camera: StaticTuple[Float32, 4]
+	var light: StaticTuple[Float32, 4]
+	var selectpoint: StaticTuple[Float32, 4]
+	var connect: StaticTuple[Float32, 4]
+	var contactpoint: StaticTuple[Float32, 4]
+	var contactforce: StaticTuple[Float32, 4]
+	var contactfriction: StaticTuple[Float32, 4]
+	var contacttorque: StaticTuple[Float32, 4]
+	var contactgap: StaticTuple[Float32, 4]
+	var rangefinder: StaticTuple[Float32, 4]
+	var constraint: StaticTuple[Float32, 4]
+	var slidercrank: StaticTuple[Float32, 4]
+	var crankbroken: StaticTuple[Float32, 4]
+	var frustum: StaticTuple[Float32, 4]
+	var bv: StaticTuple[Float32, 4]
+	var bvactive: StaticTuple[Float32, 4]
 
 
 @register_passable("trivial")
-struct _mjVisual__Anonymous__line_575_3__line_593_3_:
+struct _mjVisual__Anonymous__line_575_3__line_593_3_(Copyable & Movable):
 	var forcewidth: Float32
 	var contactwidth: Float32
 	var contactheight: Float32
@@ -1884,7 +1885,7 @@ struct _mjVisual__Anonymous__line_575_3__line_593_3_:
 
 
 @register_passable("trivial")
-struct _mjVisual__Anonymous__line_559_3__line_573_3_:
+struct _mjVisual__Anonymous__line_559_3__line_573_3_(Copyable & Movable):
 	var stiffness: Float32
 	var stiffnessrot: Float32
 	var force: Float32
@@ -1901,15 +1902,15 @@ struct _mjVisual__Anonymous__line_559_3__line_573_3_:
 
 
 @register_passable("trivial")
-struct _mjVisual__Anonymous__line_552_3__line_557_3_:
-	var ambient: UnsafePointer[Float32]
-	var diffuse: UnsafePointer[Float32]
-	var specular: UnsafePointer[Float32]
+struct _mjVisual__Anonymous__line_552_3__line_557_3_(Copyable & Movable):
+	var ambient: StaticTuple[Float32, 3]
+	var diffuse: StaticTuple[Float32, 3]
+	var specular: StaticTuple[Float32, 3]
 	var active: Int32
 
 
 @register_passable("trivial")
-struct _mjVisual__Anonymous__line_544_3__line_550_3_:
+struct _mjVisual__Anonymous__line_544_3__line_550_3_(Copyable & Movable):
 	var shadowsize: Int32
 	var offsamples: Int32
 	var numslices: Int32
@@ -1918,7 +1919,7 @@ struct _mjVisual__Anonymous__line_544_3__line_550_3_:
 
 
 @register_passable("trivial")
-struct _mjVisual__Anonymous__line_528_3__line_542_3_:
+struct _mjVisual__Anonymous__line_528_3__line_542_3_(Copyable & Movable):
 	var cameraid: Int32
 	var orthographic: Int32
 	var fovy: Float32
@@ -1935,7 +1936,7 @@ struct _mjVisual__Anonymous__line_528_3__line_542_3_:
 
 
 @register_passable("trivial")
-struct mjVisual_:
+struct mjVisual_(Copyable & Movable):
 	var `global`: _mjVisual__Anonymous__line_528_3__line_542_3_
 	var quality: _mjVisual__Anonymous__line_544_3__line_550_3_
 	var headlight: _mjVisual__Anonymous__line_552_3__line_557_3_
@@ -1946,17 +1947,17 @@ struct mjVisual_:
 
 alias mjVisual = mjVisual_
 @register_passable("trivial")
-struct mjStatistic_:
+struct mjStatistic_(Copyable & Movable):
 	var meaninertia: mjtNum
 	var meanmass: mjtNum
 	var meansize: mjtNum
 	var extent: mjtNum
-	var center: UnsafePointer[mjtNum]
+	var center: StaticTuple[mjtNum, 3]
 
 
 alias mjStatistic = mjStatistic_
 @register_passable("trivial")
-struct mjModel_:
+struct mjModel_(Copyable & Movable):
 	var nq: Int32
 	var nv: Int32
 	var nu: Int32
@@ -2467,7 +2468,7 @@ struct mjModel_:
 
 alias mjModel = mjModel_
 @register_passable("trivial")
-struct mjtTaskStatus_: # Enum
+struct mjtTaskStatus_(Copyable & Movable): # Enum
 	alias mjTASK_NEW: Int = 0
 	alias mjTASK_QUEUED: Int = 1
 	alias mjTASK_COMPLETED: Int = 2
@@ -2479,13 +2480,13 @@ alias mjfTask = fn(UnsafePointer[NoneType]) -> UnsafePointer[NoneType]
 # function pointer type for mjTask
 
 @register_passable("trivial")
-struct mjThreadPool_:
+struct mjThreadPool_(Copyable & Movable):
 	var nworker: Int32
 
 
 alias mjThreadPool = mjThreadPool_
 @register_passable("trivial")
-struct mjTask_:
+struct mjTask_(Copyable & Movable):
 	var func: mjfTask
 	var args: OpaquePointer
 	var status: Int32
@@ -2493,7 +2494,7 @@ struct mjTask_:
 
 alias mjTask = mjTask_
 @register_passable("trivial")
-struct mjtState_: # Enum
+struct mjtState_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjSTATE_TIME: Int = 1
@@ -2520,7 +2521,7 @@ alias mjtState = mjtState_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 @register_passable("trivial")
-struct mjtWarning_: # Enum
+struct mjtWarning_(Copyable & Movable): # Enum
 	alias mjWARN_INERTIA: Int = 0
 	alias mjWARN_CONTACTFULL: Int = 1
 	alias mjWARN_CNSTRFULL: Int = 2
@@ -2534,7 +2535,7 @@ struct mjtWarning_: # Enum
 
 alias mjtWarning = mjtWarning_
 @register_passable("trivial")
-struct mjtTimer_: # Enum
+struct mjtTimer_(Copyable & Movable): # Enum
 	alias mjTIMER_STEP: Int = 0
 	alias mjTIMER_FORWARD: Int = 1
 	alias mjTIMER_INVERSE: Int = 2
@@ -2555,45 +2556,45 @@ struct mjtTimer_: # Enum
 
 alias mjtTimer = mjtTimer_
 @register_passable("trivial")
-struct mjContact_:
+struct mjContact_(Copyable & Movable):
 	var dist: mjtNum
-	var pos: UnsafePointer[mjtNum]
-	var frame: UnsafePointer[mjtNum]
+	var pos: StaticTuple[mjtNum, 3]
+	var frame: StaticTuple[mjtNum, 9]
 	var includemargin: mjtNum
-	var friction: UnsafePointer[mjtNum]
-	var solref: UnsafePointer[mjtNum]
-	var solreffriction: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var friction: StaticTuple[mjtNum, 5]
+	var solref: StaticTuple[mjtNum, 2]
+	var solreffriction: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var mu: mjtNum
-	var H: UnsafePointer[mjtNum]
+	var H: StaticTuple[mjtNum, 36]
 	var dim: Int32
 	var geom1: Int32
 	var geom2: Int32
-	var geom: UnsafePointer[Int32]
-	var flex: UnsafePointer[Int32]
-	var elem: UnsafePointer[Int32]
-	var vert: UnsafePointer[Int32]
+	var geom: StaticTuple[Int32, 2]
+	var flex: StaticTuple[Int32, 2]
+	var elem: StaticTuple[Int32, 2]
+	var vert: StaticTuple[Int32, 2]
 	var exclude: Int32
 	var efc_address: Int32
 
 
 alias mjContact = mjContact_
 @register_passable("trivial")
-struct mjWarningStat_:
+struct mjWarningStat_(Copyable & Movable):
 	var lastinfo: Int32
 	var number: Int32
 
 
 alias mjWarningStat = mjWarningStat_
 @register_passable("trivial")
-struct mjTimerStat_:
+struct mjTimerStat_(Copyable & Movable):
 	var duration: mjtNum
 	var number: Int32
 
 
 alias mjTimerStat = mjTimerStat_
 @register_passable("trivial")
-struct mjSolverStat_:
+struct mjSolverStat_(Copyable & Movable):
 	var improvement: mjtNum
 	var gradient: mjtNum
 	var lineslope: mjtNum
@@ -2605,7 +2606,7 @@ struct mjSolverStat_:
 
 alias mjSolverStat = mjSolverStat_
 @register_passable("trivial")
-struct mjData_:
+struct mjData_(Copyable & Movable):
 	var narena: size_t
 	var nbuffer: size_t
 	var nplugin: Int32
@@ -2613,16 +2614,16 @@ struct mjData_:
 	var pbase: size_t
 	var parena: size_t
 	var maxuse_stack: size_t
-	var maxuse_threadstack: UnsafePointer[size_t]
+	var maxuse_threadstack: StaticTuple[size_t, 128]
 	var maxuse_arena: size_t
 	var maxuse_con: Int32
 	var maxuse_efc: Int32
-	var solver: UnsafePointer[mjSolverStat]
-	var solver_niter: UnsafePointer[Int32]
-	var solver_nnz: UnsafePointer[Int32]
-	var solver_fwdinv: UnsafePointer[mjtNum]
-	var warning: UnsafePointer[mjWarningStat]
-	var timer: UnsafePointer[mjTimerStat]
+	var solver: StaticTuple[mjSolverStat, 4000]
+	var solver_niter: StaticTuple[Int32, 20]
+	var solver_nnz: StaticTuple[Int32, 20]
+	var solver_fwdinv: StaticTuple[mjtNum, 2]
+	var warning: StaticTuple[mjWarningStat, 8]
+	var timer: StaticTuple[mjTimerStat, 15]
 	var ncon: Int32
 	var ne: Int32
 	var nf: Int32
@@ -2633,7 +2634,7 @@ struct mjData_:
 	var nisland: Int32
 	var nidof: Int32
 	var time: mjtNum
-	var energy: UnsafePointer[mjtNum]
+	var energy: StaticTuple[mjtNum, 2]
 	var buffer: OpaquePointer
 	var arena: OpaquePointer
 	var qpos: UnsafePointer[mjtNum]
@@ -2839,7 +2840,7 @@ alias mjfCollision = fn(UnsafePointer[mjModel],UnsafePointer[mjData],UnsafePoint
 # collision detection
 
 @register_passable("trivial")
-struct mjtCatBit_: # Enum
+struct mjtCatBit_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjCAT_STATIC: Int = 1
@@ -2852,7 +2853,7 @@ alias mjtCatBit = mjtCatBit_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 @register_passable("trivial")
-struct mjtMouse_: # Enum
+struct mjtMouse_(Copyable & Movable): # Enum
 	alias mjMOUSE_NONE: Int = 0
 	alias mjMOUSE_ROTATE_V: Int = 1
 	alias mjMOUSE_ROTATE_H: Int = 2
@@ -2864,14 +2865,14 @@ struct mjtMouse_: # Enum
 
 alias mjtMouse = mjtMouse_
 @register_passable("trivial")
-struct mjtPertBit_: # Enum
+struct mjtPertBit_(Copyable & Movable): # Enum
 	alias mjPERT_TRANSLATE: Int = 1
 	alias mjPERT_ROTATE: Int = 2
 
 
 alias mjtPertBit = mjtPertBit_
 @register_passable("trivial")
-struct mjtCamera_: # Enum
+struct mjtCamera_(Copyable & Movable): # Enum
 	alias mjCAMERA_FREE: Int = 0
 	alias mjCAMERA_TRACKING: Int = 1
 	alias mjCAMERA_FIXED: Int = 2
@@ -2880,7 +2881,7 @@ struct mjtCamera_: # Enum
 
 alias mjtCamera = mjtCamera_
 @register_passable("trivial")
-struct mjtLabel_: # Enum
+struct mjtLabel_(Copyable & Movable): # Enum
 	alias mjLABEL_NONE: Int = 0
 	alias mjLABEL_BODY: Int = 1
 	alias mjLABEL_JOINT: Int = 2
@@ -2903,7 +2904,7 @@ struct mjtLabel_: # Enum
 
 alias mjtLabel = mjtLabel_
 @register_passable("trivial")
-struct mjtFrame_: # Enum
+struct mjtFrame_(Copyable & Movable): # Enum
 	alias mjFRAME_NONE: Int = 0
 	alias mjFRAME_BODY: Int = 1
 	alias mjFRAME_GEOM: Int = 2
@@ -2917,7 +2918,7 @@ struct mjtFrame_: # Enum
 
 alias mjtFrame = mjtFrame_
 @register_passable("trivial")
-struct mjtVisFlag_: # Enum
+struct mjtVisFlag_(Copyable & Movable): # Enum
 	alias mjVIS_CONVEXHULL: Int = 0
 	alias mjVIS_TEXTURE: Int = 1
 	alias mjVIS_JOINT: Int = 2
@@ -2954,7 +2955,7 @@ struct mjtVisFlag_: # Enum
 
 alias mjtVisFlag = mjtVisFlag_
 @register_passable("trivial")
-struct mjtRndFlag_: # Enum
+struct mjtRndFlag_(Copyable & Movable): # Enum
 	alias mjRND_SHADOW: Int = 0
 	alias mjRND_WIREFRAME: Int = 1
 	alias mjRND_REFLECTION: Int = 2
@@ -2970,7 +2971,7 @@ struct mjtRndFlag_: # Enum
 
 alias mjtRndFlag = mjtRndFlag_
 @register_passable("trivial")
-struct mjtStereo_: # Enum
+struct mjtStereo_(Copyable & Movable): # Enum
 	alias mjSTEREO_NONE: Int = 0
 	alias mjSTEREO_QUADBUFFERED: Int = 1
 	alias mjSTEREO_SIDEBYSIDE: Int = 2
@@ -2978,27 +2979,27 @@ struct mjtStereo_: # Enum
 
 alias mjtStereo = mjtStereo_
 @register_passable("trivial")
-struct mjvPerturb_:
+struct mjvPerturb_(Copyable & Movable):
 	var select: Int32
 	var flexselect: Int32
 	var skinselect: Int32
 	var active: Int32
 	var active2: Int32
-	var refpos: UnsafePointer[mjtNum]
-	var refquat: UnsafePointer[mjtNum]
-	var refselpos: UnsafePointer[mjtNum]
-	var localpos: UnsafePointer[mjtNum]
+	var refpos: StaticTuple[mjtNum, 3]
+	var refquat: StaticTuple[mjtNum, 4]
+	var refselpos: StaticTuple[mjtNum, 3]
+	var localpos: StaticTuple[mjtNum, 3]
 	var localmass: mjtNum
 	var scale: mjtNum
 
 
 alias mjvPerturb = mjvPerturb_
 @register_passable("trivial")
-struct mjvCamera_:
+struct mjvCamera_(Copyable & Movable):
 	var type: Int32
 	var fixedcamid: Int32
 	var trackbodyid: Int32
-	var lookat: UnsafePointer[mjtNum]
+	var lookat: StaticTuple[mjtNum, 3]
 	var distance: mjtNum
 	var azimuth: mjtNum
 	var elevation: mjtNum
@@ -3007,10 +3008,10 @@ struct mjvCamera_:
 
 alias mjvCamera = mjvCamera_
 @register_passable("trivial")
-struct mjvGLCamera_:
-	var pos: UnsafePointer[Float32]
-	var forward: UnsafePointer[Float32]
-	var up: UnsafePointer[Float32]
+struct mjvGLCamera_(Copyable & Movable):
+	var pos: StaticTuple[Float32, 3]
+	var forward: StaticTuple[Float32, 3]
+	var up: StaticTuple[Float32, 3]
 	var frustum_center: Float32
 	var frustum_width: Float32
 	var frustum_bottom: Float32
@@ -3022,7 +3023,7 @@ struct mjvGLCamera_:
 
 alias mjvGLCamera = mjvGLCamera_
 @register_passable("trivial")
-struct mjvGeom_:
+struct mjvGeom_(Copyable & Movable):
 	var type: Int32
 	var dataid: Int32
 	var objtype: Int32
@@ -3031,15 +3032,15 @@ struct mjvGeom_:
 	var matid: Int32
 	var texcoord: Int32
 	var segid: Int32
-	var size: UnsafePointer[Float32]
-	var pos: UnsafePointer[Float32]
-	var mat: UnsafePointer[Float32]
-	var rgba: UnsafePointer[Float32]
+	var size: StaticTuple[Float32, 3]
+	var pos: StaticTuple[Float32, 3]
+	var mat: StaticTuple[Float32, 9]
+	var rgba: StaticTuple[Float32, 4]
 	var emission: Float32
 	var specular: Float32
 	var shininess: Float32
 	var reflectance: Float32
-	var label: UnsafePointer[Int8]
+	var label: StaticTuple[Int8, 100]
 	var camdist: Float32
 	var modelrbound: Float32
 	var transparent: mjtByte
@@ -3047,17 +3048,17 @@ struct mjvGeom_:
 
 alias mjvGeom = mjvGeom_
 @register_passable("trivial")
-struct mjvLight_:
-	var pos: UnsafePointer[Float32]
-	var dir: UnsafePointer[Float32]
+struct mjvLight_(Copyable & Movable):
+	var pos: StaticTuple[Float32, 3]
+	var dir: StaticTuple[Float32, 3]
 	var type: Int32
 	var texid: Int32
-	var attenuation: UnsafePointer[Float32]
+	var attenuation: StaticTuple[Float32, 3]
 	var cutoff: Float32
 	var exponent: Float32
-	var ambient: UnsafePointer[Float32]
-	var diffuse: UnsafePointer[Float32]
-	var specular: UnsafePointer[Float32]
+	var ambient: StaticTuple[Float32, 3]
+	var diffuse: StaticTuple[Float32, 3]
+	var specular: StaticTuple[Float32, 3]
 	var headlight: mjtByte
 	var castshadow: mjtByte
 	var bulbradius: Float32
@@ -3067,24 +3068,24 @@ struct mjvLight_:
 
 alias mjvLight = mjvLight_
 @register_passable("trivial")
-struct mjvOption_:
+struct mjvOption_(Copyable & Movable):
 	var label: Int32
 	var frame: Int32
-	var geomgroup: UnsafePointer[mjtByte]
-	var sitegroup: UnsafePointer[mjtByte]
-	var jointgroup: UnsafePointer[mjtByte]
-	var tendongroup: UnsafePointer[mjtByte]
-	var actuatorgroup: UnsafePointer[mjtByte]
-	var flexgroup: UnsafePointer[mjtByte]
-	var skingroup: UnsafePointer[mjtByte]
-	var flags: UnsafePointer[mjtByte]
+	var geomgroup: StaticTuple[mjtByte, 6]
+	var sitegroup: StaticTuple[mjtByte, 6]
+	var jointgroup: StaticTuple[mjtByte, 6]
+	var tendongroup: StaticTuple[mjtByte, 6]
+	var actuatorgroup: StaticTuple[mjtByte, 6]
+	var flexgroup: StaticTuple[mjtByte, 6]
+	var skingroup: StaticTuple[mjtByte, 6]
+	var flags: StaticTuple[mjtByte, 31]
 	var bvh_depth: Int32
 	var flex_layer: Int32
 
 
 alias mjvOption = mjvOption_
 @register_passable("trivial")
-struct mjvScene_:
+struct mjvScene_(Copyable & Movable):
 	var maxgeom: Int32
 	var ngeom: Int32
 	var geoms: UnsafePointer[mjvGeom]
@@ -3113,67 +3114,67 @@ struct mjvScene_:
 	var skinvert: UnsafePointer[Float32]
 	var skinnormal: UnsafePointer[Float32]
 	var nlight: Int32
-	var lights: UnsafePointer[mjvLight]
-	var camera: UnsafePointer[mjvGLCamera]
+	var lights: StaticTuple[mjvLight, 100]
+	var camera: StaticTuple[mjvGLCamera, 2]
 	var enabletransform: mjtByte
-	var translate: UnsafePointer[Float32]
-	var rotate: UnsafePointer[Float32]
+	var translate: StaticTuple[Float32, 3]
+	var rotate: StaticTuple[Float32, 4]
 	var scale: Float32
 	var stereo: Int32
-	var flags: UnsafePointer[mjtByte]
+	var flags: StaticTuple[mjtByte, 10]
 	var framewidth: Int32
-	var framergb: UnsafePointer[Float32]
+	var framergb: StaticTuple[Float32, 3]
 
 
 alias mjvScene = mjvScene_
 @register_passable("trivial")
-struct mjvFigure_:
+struct mjvFigure_(Copyable & Movable):
 	var flg_legend: Int32
-	var flg_ticklabel: UnsafePointer[Int32]
+	var flg_ticklabel: StaticTuple[Int32, 2]
 	var flg_extend: Int32
 	var flg_barplot: Int32
 	var flg_selection: Int32
 	var flg_symmetric: Int32
 	var linewidth: Float32
 	var gridwidth: Float32
-	var gridsize: UnsafePointer[Int32]
-	var gridrgb: UnsafePointer[Float32]
-	var figurergba: UnsafePointer[Float32]
-	var panergba: UnsafePointer[Float32]
-	var legendrgba: UnsafePointer[Float32]
-	var textrgb: UnsafePointer[Float32]
-	var linergb: UnsafePointer[Float32]
-	var range: UnsafePointer[Float32]
-	var xformat: UnsafePointer[Int8]
-	var yformat: UnsafePointer[Int8]
-	var minwidth: UnsafePointer[Int8]
-	var title: UnsafePointer[Int8]
-	var xlabel: UnsafePointer[Int8]
-	var linename: UnsafePointer[Int8]
+	var gridsize: StaticTuple[Int32, 2]
+	var gridrgb: StaticTuple[Float32, 3]
+	var figurergba: StaticTuple[Float32, 4]
+	var panergba: StaticTuple[Float32, 4]
+	var legendrgba: StaticTuple[Float32, 4]
+	var textrgb: StaticTuple[Float32, 3]
+	var linergb: StaticTuple[Float32, 100]
+	var range: StaticTuple[Float32, 2]
+	var xformat: StaticTuple[Int8, 20]
+	var yformat: StaticTuple[Int8, 20]
+	var minwidth: StaticTuple[Int8, 20]
+	var title: StaticTuple[Int8, 1000]
+	var xlabel: StaticTuple[Int8, 100]
+	var linename: StaticTuple[Int8, 100]
 	var legendoffset: Int32
 	var subplot: Int32
-	var highlight: UnsafePointer[Int32]
+	var highlight: StaticTuple[Int32, 2]
 	var highlightid: Int32
 	var selection: Float32
-	var linepnt: UnsafePointer[Int32]
-	var linedata: UnsafePointer[Float32]
-	var xaxispixel: UnsafePointer[Int32]
-	var yaxispixel: UnsafePointer[Int32]
-	var xaxisdata: UnsafePointer[Float32]
-	var yaxisdata: UnsafePointer[Float32]
+	var linepnt: StaticTuple[Int32, 100]
+	var linedata: StaticTuple[Float32, 100]
+	var xaxispixel: StaticTuple[Int32, 2]
+	var yaxispixel: StaticTuple[Int32, 2]
+	var xaxisdata: StaticTuple[Float32, 2]
+	var yaxisdata: StaticTuple[Float32, 2]
 
 
 alias mjvFigure = mjvFigure_
 @register_passable("trivial")
-struct _mjResource__mjpResourceProvider:
+struct _mjResource__mjpResourceProvider(Copyable & Movable):
 	pass
 
 
 @register_passable("trivial")
-struct mjResource_:
+struct mjResource_(Copyable & Movable):
 	var name: UnsafePointer[Int8]
 	var data: OpaquePointer
-	var timestamp: UnsafePointer[Int8]
+	var timestamp: StaticTuple[Int8, 512]
 	var provider: UnsafePointer[mjpResourceProvider] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 
 
@@ -3207,7 +3208,7 @@ alias mjfResourceModified = fn(UnsafePointer[mjResource],UnsafePointer[Int8]) ->
 # 0 if the resource is older than the given timestamp
 
 @register_passable("trivial")
-struct mjpResourceProvider:
+struct mjpResourceProvider(Copyable & Movable):
 	var prefix: UnsafePointer[Int8] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 	var open: mjfOpenResource
 	var read: mjfReadResource
@@ -3219,7 +3220,7 @@ struct mjpResourceProvider:
 # Disabled since this is already declared
 # alias mjpResourceProvider = mjpResourceProvider
 @register_passable("trivial")
-struct mjtPluginCapabilityBit_: # Enum
+struct mjtPluginCapabilityBit_(Copyable & Movable): # Enum
 
 	#---------------------------------- Plugins -------------------------------------------------------
 	alias mjPLUGIN_ACTUATOR: Int = 1
@@ -3232,7 +3233,7 @@ alias mjtPluginCapabilityBit = mjtPluginCapabilityBit_
 #---------------------------------- Plugins -------------------------------------------------------
 
 @register_passable("trivial")
-struct mjpPlugin_:
+struct mjpPlugin_(Copyable & Movable):
 	var name: UnsafePointer[Int8] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 	var nattribute: Int32
 	var attributes: UnsafePointer[UnsafePointer[Int8]] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
@@ -3257,7 +3258,7 @@ struct mjpPlugin_:
 
 alias mjpPlugin = mjpPlugin_
 @register_passable("trivial")
-struct mjSDF_:
+struct mjSDF_(Copyable & Movable):
 	var plugin: UnsafePointer[UnsafePointer[mjpPlugin]] # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value.
 	var id: UnsafePointer[Int32]
 	var type: mjtSDFType
@@ -3272,7 +3273,7 @@ alias mjfPluginLibraryLoadCallback = fn(UnsafePointer[Int8],Int32,Int32) -> None
 # function pointer type for mj_loadAllPluginLibraries callback
 
 @register_passable("trivial")
-struct mjtGridPos_: # Enum
+struct mjtGridPos_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjGRID_TOPLEFT: Int = 0
@@ -3289,21 +3290,21 @@ alias mjtGridPos = mjtGridPos_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 @register_passable("trivial")
-struct mjtFramebuffer_: # Enum
+struct mjtFramebuffer_(Copyable & Movable): # Enum
 	alias mjFB_WINDOW: Int = 0
 	alias mjFB_OFFSCREEN: Int = 1
 
 
 alias mjtFramebuffer = mjtFramebuffer_
 @register_passable("trivial")
-struct mjtDepthMap_: # Enum
+struct mjtDepthMap_(Copyable & Movable): # Enum
 	alias mjDEPTH_ZERONEAR: Int = 0
 	alias mjDEPTH_ZEROFAR: Int = 1
 
 
 alias mjtDepthMap = mjtDepthMap_
 @register_passable("trivial")
-struct mjtFontScale_: # Enum
+struct mjtFontScale_(Copyable & Movable): # Enum
 	alias mjFONTSCALE_50: Int = 50
 	alias mjFONTSCALE_100: Int = 100
 	alias mjFONTSCALE_150: Int = 150
@@ -3314,7 +3315,7 @@ struct mjtFontScale_: # Enum
 
 alias mjtFontScale = mjtFontScale_
 @register_passable("trivial")
-struct mjtFont_: # Enum
+struct mjtFont_(Copyable & Movable): # Enum
 	alias mjFONT_NORMAL: Int = 0
 	alias mjFONT_SHADOW: Int = 1
 	alias mjFONT_BIG: Int = 2
@@ -3322,7 +3323,7 @@ struct mjtFont_: # Enum
 
 alias mjtFont = mjtFont_
 @register_passable("trivial")
-struct mjrRect_:
+struct mjrRect_(Copyable & Movable):
 	var left: Int32
 	var bottom: Int32
 	var width: Int32
@@ -3331,21 +3332,21 @@ struct mjrRect_:
 
 alias mjrRect = mjrRect_
 @register_passable("trivial")
-struct mjrContext_:
+struct mjrContext_(Copyable & Movable):
 	var lineWidth: Float32
 	var shadowClip: Float32
 	var shadowScale: Float32
 	var fogStart: Float32
 	var fogEnd: Float32
-	var fogRGBA: UnsafePointer[Float32]
+	var fogRGBA: StaticTuple[Float32, 4]
 	var shadowSize: Int32
 	var offWidth: Int32
 	var offHeight: Int32
 	var offSamples: Int32
 	var fontScale: Int32
-	var auxWidth: UnsafePointer[Int32]
-	var auxHeight: UnsafePointer[Int32]
-	var auxSamples: UnsafePointer[Int32]
+	var auxWidth: StaticTuple[Int32, 10]
+	var auxHeight: StaticTuple[Int32, 10]
+	var auxSamples: StaticTuple[Int32, 10]
 	var offFBO: UInt32
 	var offFBO_r: UInt32
 	var offColor: UInt32
@@ -3354,16 +3355,16 @@ struct mjrContext_:
 	var offDepthStencil_r: UInt32
 	var shadowFBO: UInt32
 	var shadowTex: UInt32
-	var auxFBO: UnsafePointer[UInt32]
-	var auxFBO_r: UnsafePointer[UInt32]
-	var auxColor: UnsafePointer[UInt32]
-	var auxColor_r: UnsafePointer[UInt32]
-	var mat_texid: UnsafePointer[Int32]
-	var mat_texuniform: UnsafePointer[Int32]
-	var mat_texrepeat: UnsafePointer[Float32]
+	var auxFBO: StaticTuple[UInt32, 10]
+	var auxFBO_r: StaticTuple[UInt32, 10]
+	var auxColor: StaticTuple[UInt32, 10]
+	var auxColor_r: StaticTuple[UInt32, 10]
+	var mat_texid: StaticTuple[Int32, 10000]
+	var mat_texuniform: StaticTuple[Int32, 1000]
+	var mat_texrepeat: StaticTuple[Float32, 2000]
 	var ntexture: Int32
-	var textureType: UnsafePointer[Int32]
-	var texture: UnsafePointer[UInt32]
+	var textureType: StaticTuple[Int32, 1000]
+	var texture: StaticTuple[UInt32, 1000]
 	var basePlane: UInt32
 	var baseMesh: UInt32
 	var baseHField: UInt32
@@ -3381,8 +3382,8 @@ struct mjrContext_:
 	var skinnormalVBO: UnsafePointer[UInt32]
 	var skintexcoordVBO: UnsafePointer[UInt32]
 	var skinfaceVBO: UnsafePointer[UInt32]
-	var charWidth: UnsafePointer[Int32]
-	var charWidthBig: UnsafePointer[Int32]
+	var charWidth: StaticTuple[Int32, 127]
+	var charWidthBig: StaticTuple[Int32, 127]
 	var charHeight: Int32
 	var charHeightBig: Int32
 	var glInitialized: Int32
@@ -3415,7 +3416,7 @@ alias mjDoubleVec = NoneType
 
 alias mjByteVec = NoneType
 @register_passable("trivial")
-struct mjtGeomInertia_: # Enum
+struct mjtGeomInertia_(Copyable & Movable): # Enum
 
 	#-------------------------------- enum types (mjt) ------------------------------------------------
 	alias mjINERTIA_VOLUME: Int = 0
@@ -3426,7 +3427,7 @@ alias mjtGeomInertia = mjtGeomInertia_
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
 @register_passable("trivial")
-struct mjtMeshInertia_: # Enum
+struct mjtMeshInertia_(Copyable & Movable): # Enum
 	alias mjMESH_INERTIA_CONVEX: Int = 0
 	alias mjMESH_INERTIA_EXACT: Int = 1
 	alias mjMESH_INERTIA_LEGACY: Int = 2
@@ -3435,7 +3436,7 @@ struct mjtMeshInertia_: # Enum
 
 alias mjtMeshInertia = mjtMeshInertia_
 @register_passable("trivial")
-struct mjtBuiltin_: # Enum
+struct mjtBuiltin_(Copyable & Movable): # Enum
 	alias mjBUILTIN_NONE: Int = 0
 	alias mjBUILTIN_GRADIENT: Int = 1
 	alias mjBUILTIN_CHECKER: Int = 2
@@ -3444,7 +3445,7 @@ struct mjtBuiltin_: # Enum
 
 alias mjtBuiltin = mjtBuiltin_
 @register_passable("trivial")
-struct mjtMark_: # Enum
+struct mjtMark_(Copyable & Movable): # Enum
 	alias mjMARK_NONE: Int = 0
 	alias mjMARK_EDGE: Int = 1
 	alias mjMARK_CROSS: Int = 2
@@ -3453,7 +3454,7 @@ struct mjtMark_: # Enum
 
 alias mjtMark = mjtMark_
 @register_passable("trivial")
-struct mjtLimited_: # Enum
+struct mjtLimited_(Copyable & Movable): # Enum
 	alias mjLIMITED_FALSE: Int = 0
 	alias mjLIMITED_TRUE: Int = 1
 	alias mjLIMITED_AUTO: Int = 2
@@ -3461,7 +3462,7 @@ struct mjtLimited_: # Enum
 
 alias mjtLimited = mjtLimited_
 @register_passable("trivial")
-struct mjtAlignFree_: # Enum
+struct mjtAlignFree_(Copyable & Movable): # Enum
 	alias mjALIGNFREE_FALSE: Int = 0
 	alias mjALIGNFREE_TRUE: Int = 1
 	alias mjALIGNFREE_AUTO: Int = 2
@@ -3469,7 +3470,7 @@ struct mjtAlignFree_: # Enum
 
 alias mjtAlignFree = mjtAlignFree_
 @register_passable("trivial")
-struct mjtInertiaFromGeom_: # Enum
+struct mjtInertiaFromGeom_(Copyable & Movable): # Enum
 	alias mjINERTIAFROMGEOM_FALSE: Int = 0
 	alias mjINERTIAFROMGEOM_TRUE: Int = 1
 	alias mjINERTIAFROMGEOM_AUTO: Int = 2
@@ -3477,7 +3478,7 @@ struct mjtInertiaFromGeom_: # Enum
 
 alias mjtInertiaFromGeom = mjtInertiaFromGeom_
 @register_passable("trivial")
-struct mjtOrientation_: # Enum
+struct mjtOrientation_(Copyable & Movable): # Enum
 	alias mjORIENTATION_QUAT: Int = 0
 	alias mjORIENTATION_AXISANGLE: Int = 1
 	alias mjORIENTATION_XYAXES: Int = 2
@@ -3487,7 +3488,7 @@ struct mjtOrientation_: # Enum
 
 alias mjtOrientation = mjtOrientation_
 @register_passable("trivial")
-struct mjsElement_:
+struct mjsElement_(Copyable & Movable):
 	var elemtype: mjtObj
 	var signature: UInt64
 
@@ -3496,7 +3497,7 @@ alias mjsElement = mjsElement_
 #-------------------------------- attribute structs (mjs) -----------------------------------------
 
 @register_passable("trivial")
-struct mjsCompiler_:
+struct mjsCompiler_(Copyable & Movable):
 	var autolimits: mjtByte
 	var boundmass: Float64
 	var boundinertia: Float64
@@ -3504,12 +3505,12 @@ struct mjsCompiler_:
 	var balanceinertia: mjtByte
 	var fitaabb: mjtByte
 	var degree: mjtByte
-	var eulerseq: UnsafePointer[Int8]
+	var eulerseq: StaticTuple[Int8, 3]
 	var discardvisual: mjtByte
 	var usethread: mjtByte
 	var fusestatic: mjtByte
 	var inertiafromgeom: Int32
-	var inertiagrouprange: UnsafePointer[Int32]
+	var inertiagrouprange: StaticTuple[Int32, 2]
 	var saveinertial: mjtByte
 	var alignfree: Int32
 	var LRopt: mjLROpt
@@ -3517,7 +3518,7 @@ struct mjsCompiler_:
 
 alias mjsCompiler = mjsCompiler_
 @register_passable("trivial")
-struct mjSpec_:
+struct mjSpec_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var modelname: UnsafePointer[mjString]
 	var compiler: mjsCompiler
@@ -3549,17 +3550,17 @@ struct mjSpec_:
 
 alias mjSpec = mjSpec_
 @register_passable("trivial")
-struct mjsOrientation_:
+struct mjsOrientation_(Copyable & Movable):
 	var type: mjtOrientation
-	var axisangle: UnsafePointer[Float64]
-	var xyaxes: UnsafePointer[Float64]
-	var zaxis: UnsafePointer[Float64]
-	var euler: UnsafePointer[Float64]
+	var axisangle: StaticTuple[Float64, 4]
+	var xyaxes: StaticTuple[Float64, 6]
+	var zaxis: StaticTuple[Float64, 3]
+	var euler: StaticTuple[Float64, 3]
 
 
 alias mjsOrientation = mjsOrientation_
 @register_passable("trivial")
-struct mjsPlugin_:
+struct mjsPlugin_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var name: UnsafePointer[mjString]
 	var plugin_name: UnsafePointer[mjString]
@@ -3569,18 +3570,18 @@ struct mjsPlugin_:
 
 alias mjsPlugin = mjsPlugin_
 @register_passable("trivial")
-struct mjsBody_:
+struct mjsBody_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var childclass: UnsafePointer[mjString]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
 	var mass: Float64
-	var ipos: UnsafePointer[Float64]
-	var iquat: UnsafePointer[Float64]
-	var inertia: UnsafePointer[Float64]
+	var ipos: StaticTuple[Float64, 3]
+	var iquat: StaticTuple[Float64, 4]
+	var inertia: StaticTuple[Float64, 3]
 	var ialt: mjsOrientation
-	var fullinertia: UnsafePointer[Float64]
+	var fullinertia: StaticTuple[Float64, 6]
 	var mocap: mjtByte
 	var gravcomp: Float64
 	var userdata: UnsafePointer[mjDoubleVec]
@@ -3591,39 +3592,39 @@ struct mjsBody_:
 
 alias mjsBody = mjsBody_
 @register_passable("trivial")
-struct mjsFrame_:
+struct mjsFrame_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var childclass: UnsafePointer[mjString]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
 	var info: UnsafePointer[mjString]
 
 
 alias mjsFrame = mjsFrame_
 @register_passable("trivial")
-struct mjsJoint_:
+struct mjsJoint_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var type: mjtJoint
-	var pos: UnsafePointer[Float64]
-	var axis: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var axis: StaticTuple[Float64, 3]
 	var `ref`: Float64
 	var align: Int32
 	var stiffness: Float64
 	var springref: Float64
-	var springdamper: UnsafePointer[Float64]
+	var springdamper: StaticTuple[Float64, 2]
 	var limited: Int32
-	var range: UnsafePointer[Float64]
+	var range: StaticTuple[Float64, 2]
 	var margin: Float64
-	var solref_limit: UnsafePointer[mjtNum]
-	var solimp_limit: UnsafePointer[mjtNum]
+	var solref_limit: StaticTuple[mjtNum, 2]
+	var solimp_limit: StaticTuple[mjtNum, 5]
 	var actfrclimited: Int32
-	var actfrcrange: UnsafePointer[Float64]
+	var actfrcrange: StaticTuple[Float64, 2]
 	var armature: Float64
 	var damping: Float64
 	var frictionloss: Float64
-	var solref_friction: UnsafePointer[mjtNum]
-	var solimp_friction: UnsafePointer[mjtNum]
+	var solref_friction: StaticTuple[mjtNum, 2]
+	var solimp_friction: StaticTuple[mjtNum, 5]
 	var group: Int32
 	var actgravcomp: mjtByte
 	var userdata: UnsafePointer[mjDoubleVec]
@@ -3632,31 +3633,31 @@ struct mjsJoint_:
 
 alias mjsJoint = mjsJoint_
 @register_passable("trivial")
-struct mjsGeom_:
+struct mjsGeom_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var type: mjtGeom
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
-	var fromto: UnsafePointer[Float64]
-	var size: UnsafePointer[Float64]
+	var fromto: StaticTuple[Float64, 6]
+	var size: StaticTuple[Float64, 3]
 	var contype: Int32
 	var conaffinity: Int32
 	var condim: Int32
 	var priority: Int32
-	var friction: UnsafePointer[Float64]
+	var friction: StaticTuple[Float64, 3]
 	var solmix: Float64
-	var solref: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var margin: Float64
 	var gap: Float64
 	var mass: Float64
 	var density: Float64
 	var typeinertia: mjtGeomInertia
 	var fluid_ellipsoid: mjtNum
-	var fluid_coefs: UnsafePointer[mjtNum]
+	var fluid_coefs: StaticTuple[mjtNum, 5]
 	var material: UnsafePointer[mjString]
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var group: Int32
 	var hfieldname: UnsafePointer[mjString]
 	var meshname: UnsafePointer[mjString]
@@ -3668,50 +3669,50 @@ struct mjsGeom_:
 
 alias mjsGeom = mjsGeom_
 @register_passable("trivial")
-struct mjsSite_:
+struct mjsSite_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
-	var fromto: UnsafePointer[Float64]
-	var size: UnsafePointer[Float64]
+	var fromto: StaticTuple[Float64, 6]
+	var size: StaticTuple[Float64, 3]
 	var type: mjtGeom
 	var material: UnsafePointer[mjString]
 	var group: Int32
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsSite = mjsSite_
 @register_passable("trivial")
-struct mjsCamera_:
+struct mjsCamera_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var pos: UnsafePointer[Float64]
-	var quat: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var quat: StaticTuple[Float64, 4]
 	var alt: mjsOrientation
 	var mode: mjtCamLight
 	var targetbody: UnsafePointer[mjString]
 	var orthographic: Int32
 	var fovy: Float64
 	var ipd: Float64
-	var intrinsic: UnsafePointer[Float32]
-	var sensor_size: UnsafePointer[Float32]
-	var resolution: UnsafePointer[Float32]
-	var focal_length: UnsafePointer[Float32]
-	var focal_pixel: UnsafePointer[Float32]
-	var principal_length: UnsafePointer[Float32]
-	var principal_pixel: UnsafePointer[Float32]
+	var intrinsic: StaticTuple[Float32, 4]
+	var sensor_size: StaticTuple[Float32, 2]
+	var resolution: StaticTuple[Float32, 2]
+	var focal_length: StaticTuple[Float32, 2]
+	var focal_pixel: StaticTuple[Float32, 2]
+	var principal_length: StaticTuple[Float32, 2]
+	var principal_pixel: StaticTuple[Float32, 2]
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsCamera = mjsCamera_
 @register_passable("trivial")
-struct mjsLight_:
+struct mjsLight_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
-	var pos: UnsafePointer[Float64]
-	var dir: UnsafePointer[Float64]
+	var pos: StaticTuple[Float64, 3]
+	var dir: StaticTuple[Float64, 3]
 	var mode: mjtCamLight
 	var targetbody: UnsafePointer[mjString]
 	var active: mjtByte
@@ -3721,27 +3722,27 @@ struct mjsLight_:
 	var bulbradius: Float32
 	var intensity: Float32
 	var range: Float32
-	var attenuation: UnsafePointer[Float32]
+	var attenuation: StaticTuple[Float32, 3]
 	var cutoff: Float32
 	var exponent: Float32
-	var ambient: UnsafePointer[Float32]
-	var diffuse: UnsafePointer[Float32]
-	var specular: UnsafePointer[Float32]
+	var ambient: StaticTuple[Float32, 3]
+	var diffuse: StaticTuple[Float32, 3]
+	var specular: StaticTuple[Float32, 3]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsLight = mjsLight_
 @register_passable("trivial")
-struct mjsFlex_:
+struct mjsFlex_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var contype: Int32
 	var conaffinity: Int32
 	var condim: Int32
 	var priority: Int32
-	var friction: UnsafePointer[Float64]
+	var friction: StaticTuple[Float64, 3]
 	var solmix: Float64
-	var solref: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var margin: Float64
 	var gap: Float64
 	var dim: Int32
@@ -3754,7 +3755,7 @@ struct mjsFlex_:
 	var group: Int32
 	var edgestiffness: Float64
 	var edgedamping: Float64
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var material: UnsafePointer[mjString]
 	var young: Float64
 	var poisson: Float64
@@ -3773,13 +3774,13 @@ struct mjsFlex_:
 
 alias mjsFlex = mjsFlex_
 @register_passable("trivial")
-struct mjsMesh_:
+struct mjsMesh_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var refpos: UnsafePointer[Float64]
-	var refquat: UnsafePointer[Float64]
-	var scale: UnsafePointer[Float64]
+	var refpos: StaticTuple[Float64, 3]
+	var refquat: StaticTuple[Float64, 4]
+	var scale: StaticTuple[Float64, 3]
 	var inertia: mjtMeshInertia
 	var smoothnormal: mjtByte
 	var needsdf: mjtByte
@@ -3795,11 +3796,11 @@ struct mjsMesh_:
 
 alias mjsMesh = mjsMesh_
 @register_passable("trivial")
-struct mjsHField_:
+struct mjsHField_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var size: UnsafePointer[Float64]
+	var size: StaticTuple[Float64, 4]
 	var nrow: Int32
 	var ncol: Int32
 	var userdata: UnsafePointer[mjFloatVec]
@@ -3808,11 +3809,11 @@ struct mjsHField_:
 
 alias mjsHField = mjsHField_
 @register_passable("trivial")
-struct mjsSkin_:
+struct mjsSkin_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var file: UnsafePointer[mjString]
 	var material: UnsafePointer[mjString]
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var inflate: Float32
 	var group: Int32
 	var vert: UnsafePointer[mjFloatVec]
@@ -3828,23 +3829,23 @@ struct mjsSkin_:
 
 alias mjsSkin = mjsSkin_
 @register_passable("trivial")
-struct mjsTexture_:
+struct mjsTexture_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var type: mjtTexture
 	var colorspace: mjtColorSpace
 	var builtin: Int32
 	var mark: Int32
-	var rgb1: UnsafePointer[Float64]
-	var rgb2: UnsafePointer[Float64]
-	var markrgb: UnsafePointer[Float64]
+	var rgb1: StaticTuple[Float64, 3]
+	var rgb2: StaticTuple[Float64, 3]
+	var markrgb: StaticTuple[Float64, 3]
 	var random: Float64
 	var height: Int32
 	var width: Int32
 	var nchannel: Int32
 	var content_type: UnsafePointer[mjString]
 	var file: UnsafePointer[mjString]
-	var gridsize: UnsafePointer[Int32]
-	var gridlayout: UnsafePointer[Int8]
+	var gridsize: StaticTuple[Int32, 2]
+	var gridlayout: StaticTuple[Int8, 13]
 	var cubefiles: UnsafePointer[mjStringVec]
 	var data: UnsafePointer[mjByteVec]
 	var hflip: mjtByte
@@ -3854,40 +3855,40 @@ struct mjsTexture_:
 
 alias mjsTexture = mjsTexture_
 @register_passable("trivial")
-struct mjsMaterial_:
+struct mjsMaterial_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var textures: UnsafePointer[mjStringVec]
 	var texuniform: mjtByte
-	var texrepeat: UnsafePointer[Float32]
+	var texrepeat: StaticTuple[Float32, 2]
 	var emission: Float32
 	var specular: Float32
 	var shininess: Float32
 	var reflectance: Float32
 	var metallic: Float32
 	var roughness: Float32
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsMaterial = mjsMaterial_
 @register_passable("trivial")
-struct mjsPair_:
+struct mjsPair_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var geomname1: UnsafePointer[mjString]
 	var geomname2: UnsafePointer[mjString]
 	var condim: Int32
-	var solref: UnsafePointer[mjtNum]
-	var solreffriction: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solreffriction: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var margin: Float64
 	var gap: Float64
-	var friction: UnsafePointer[Float64]
+	var friction: StaticTuple[Float64, 5]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsPair = mjsPair_
 @register_passable("trivial")
-struct mjsExclude_:
+struct mjsExclude_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var bodyname1: UnsafePointer[mjString]
 	var bodyname2: UnsafePointer[mjString]
@@ -3896,40 +3897,40 @@ struct mjsExclude_:
 
 alias mjsExclude = mjsExclude_
 @register_passable("trivial")
-struct mjsEquality_:
+struct mjsEquality_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var type: mjtEq
-	var data: UnsafePointer[Float64]
+	var data: StaticTuple[Float64, 11]
 	var active: mjtByte
 	var name1: UnsafePointer[mjString]
 	var name2: UnsafePointer[mjString]
 	var objtype: mjtObj
-	var solref: UnsafePointer[mjtNum]
-	var solimp: UnsafePointer[mjtNum]
+	var solref: StaticTuple[mjtNum, 2]
+	var solimp: StaticTuple[mjtNum, 5]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsEquality = mjsEquality_
 @register_passable("trivial")
-struct mjsTendon_:
+struct mjsTendon_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var stiffness: Float64
-	var springlength: UnsafePointer[Float64]
+	var springlength: StaticTuple[Float64, 2]
 	var damping: Float64
 	var frictionloss: Float64
-	var solref_friction: UnsafePointer[mjtNum]
-	var solimp_friction: UnsafePointer[mjtNum]
+	var solref_friction: StaticTuple[mjtNum, 2]
+	var solimp_friction: StaticTuple[mjtNum, 5]
 	var armature: Float64
 	var limited: Int32
 	var actfrclimited: Int32
-	var range: UnsafePointer[Float64]
-	var actfrcrange: UnsafePointer[Float64]
+	var range: StaticTuple[Float64, 2]
+	var actfrcrange: StaticTuple[Float64, 2]
 	var margin: Float64
-	var solref_limit: UnsafePointer[mjtNum]
-	var solimp_limit: UnsafePointer[mjtNum]
+	var solref_limit: StaticTuple[mjtNum, 2]
+	var solimp_limit: StaticTuple[mjtNum, 5]
 	var material: UnsafePointer[mjString]
 	var width: Float64
-	var rgba: UnsafePointer[Float32]
+	var rgba: StaticTuple[Float32, 4]
 	var group: Int32
 	var userdata: UnsafePointer[mjDoubleVec]
 	var info: UnsafePointer[mjString]
@@ -3937,37 +3938,37 @@ struct mjsTendon_:
 
 alias mjsTendon = mjsTendon_
 @register_passable("trivial")
-struct mjsWrap_:
+struct mjsWrap_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var info: UnsafePointer[mjString]
 
 
 alias mjsWrap = mjsWrap_
 @register_passable("trivial")
-struct mjsActuator_:
+struct mjsActuator_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var gaintype: mjtGain
-	var gainprm: UnsafePointer[Float64]
+	var gainprm: StaticTuple[Float64, 10]
 	var biastype: mjtBias
-	var biasprm: UnsafePointer[Float64]
+	var biasprm: StaticTuple[Float64, 10]
 	var dyntype: mjtDyn
-	var dynprm: UnsafePointer[Float64]
+	var dynprm: StaticTuple[Float64, 10]
 	var actdim: Int32
 	var actearly: mjtByte
 	var trntype: mjtTrn
-	var gear: UnsafePointer[Float64]
+	var gear: StaticTuple[Float64, 6]
 	var target: UnsafePointer[mjString]
 	var refsite: UnsafePointer[mjString]
 	var slidersite: UnsafePointer[mjString]
 	var cranklength: Float64
-	var lengthrange: UnsafePointer[Float64]
+	var lengthrange: StaticTuple[Float64, 2]
 	var inheritrange: Float64
 	var ctrllimited: Int32
-	var ctrlrange: UnsafePointer[Float64]
+	var ctrlrange: StaticTuple[Float64, 2]
 	var forcelimited: Int32
-	var forcerange: UnsafePointer[Float64]
+	var forcerange: StaticTuple[Float64, 2]
 	var actlimited: Int32
-	var actrange: UnsafePointer[Float64]
+	var actrange: StaticTuple[Float64, 2]
 	var group: Int32
 	var userdata: UnsafePointer[mjDoubleVec]
 	var plugin: mjsPlugin
@@ -3976,14 +3977,14 @@ struct mjsActuator_:
 
 alias mjsActuator = mjsActuator_
 @register_passable("trivial")
-struct mjsSensor_:
+struct mjsSensor_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var type: mjtSensor
 	var objtype: mjtObj
 	var objname: UnsafePointer[mjString]
 	var reftype: mjtObj
 	var refname: UnsafePointer[mjString]
-	var intprm: UnsafePointer[Int32]
+	var intprm: StaticTuple[Int32, 2]
 	var datatype: mjtDataType
 	var needstage: mjtStage
 	var dim: Int32
@@ -3996,7 +3997,7 @@ struct mjsSensor_:
 
 alias mjsSensor = mjsSensor_
 @register_passable("trivial")
-struct mjsNumeric_:
+struct mjsNumeric_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var data: UnsafePointer[mjDoubleVec]
 	var size: Int32
@@ -4005,7 +4006,7 @@ struct mjsNumeric_:
 
 alias mjsNumeric = mjsNumeric_
 @register_passable("trivial")
-struct mjsText_:
+struct mjsText_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var data: UnsafePointer[mjString]
 	var info: UnsafePointer[mjString]
@@ -4013,7 +4014,7 @@ struct mjsText_:
 
 alias mjsText = mjsText_
 @register_passable("trivial")
-struct mjsTuple_:
+struct mjsTuple_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var objtype: UnsafePointer[mjIntVec]
 	var objname: UnsafePointer[mjStringVec]
@@ -4023,7 +4024,7 @@ struct mjsTuple_:
 
 alias mjsTuple = mjsTuple_
 @register_passable("trivial")
-struct mjsKey_:
+struct mjsKey_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var time: Float64
 	var qpos: UnsafePointer[mjDoubleVec]
@@ -4037,7 +4038,7 @@ struct mjsKey_:
 
 alias mjsKey = mjsKey_
 @register_passable("trivial")
-struct mjsDefault_:
+struct mjsDefault_(Copyable & Movable):
 	var element: UnsafePointer[mjsElement]
 	var joint: UnsafePointer[mjsJoint]
 	var geom: UnsafePointer[mjsGeom]
@@ -4055,7 +4056,7 @@ struct mjsDefault_:
 
 alias mjsDefault = mjsDefault_
 @register_passable("trivial")
-struct mjtButton_: # Enum
+struct mjtButton_(Copyable & Movable): # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
 	alias mjBUTTON_NONE: Int = 0
@@ -4068,7 +4069,7 @@ alias mjtButton = mjtButton_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
 @register_passable("trivial")
-struct mjtEvent_: # Enum
+struct mjtEvent_(Copyable & Movable): # Enum
 	alias mjEVENT_NONE: Int = 0
 	alias mjEVENT_MOVE: Int = 1
 	alias mjEVENT_PRESS: Int = 2
@@ -4082,7 +4083,7 @@ struct mjtEvent_: # Enum
 
 alias mjtEvent = mjtEvent_
 @register_passable("trivial")
-struct mjtItem_: # Enum
+struct mjtItem_(Copyable & Movable): # Enum
 	alias mjITEM_END: Int = -2
 	alias mjITEM_SECTION: Int = -1
 	alias mjITEM_SEPARATOR: Int = 0
@@ -4104,7 +4105,7 @@ struct mjtItem_: # Enum
 
 alias mjtItem = mjtItem_
 @register_passable("trivial")
-struct mjtSection_: # Enum
+struct mjtSection_(Copyable & Movable): # Enum
 	alias mjSECT_CLOSED: Int = 0
 	alias mjSECT_OPEN: Int = 1
 	alias mjSECT_FIXED: Int = 2
@@ -4116,9 +4117,9 @@ alias mjfItemEnable = fn(Int32,UnsafePointer[NoneType]) -> Int32
 # predicate function: set enable/disable based on item category
 
 @register_passable("trivial")
-struct mjuiState_:
+struct mjuiState_(Copyable & Movable):
 	var nrect: Int32
-	var rect: UnsafePointer[mjrRect]
+	var rect: StaticTuple[mjrRect, 25]
 	var userdata: OpaquePointer
 	var type: Int32
 	var left: Int32
@@ -4147,7 +4148,7 @@ struct mjuiState_:
 
 alias mjuiState = mjuiState_
 @register_passable("trivial")
-struct mjuiThemeSpacing_:
+struct mjuiThemeSpacing_(Copyable & Movable):
 	var total: Int32
 	var scroll: Int32
 	var label: Int32
@@ -4165,60 +4166,60 @@ struct mjuiThemeSpacing_:
 
 alias mjuiThemeSpacing = mjuiThemeSpacing_
 @register_passable("trivial")
-struct mjuiThemeColor_:
-	var master: UnsafePointer[Float32]
-	var thumb: UnsafePointer[Float32]
-	var secttitle: UnsafePointer[Float32]
-	var secttitle2: UnsafePointer[Float32]
-	var secttitleuncheck: UnsafePointer[Float32]
-	var secttitleuncheck2: UnsafePointer[Float32]
-	var secttitlecheck: UnsafePointer[Float32]
-	var secttitlecheck2: UnsafePointer[Float32]
-	var sectfont: UnsafePointer[Float32]
-	var sectsymbol: UnsafePointer[Float32]
-	var sectpane: UnsafePointer[Float32]
-	var separator: UnsafePointer[Float32]
-	var separator2: UnsafePointer[Float32]
-	var shortcut: UnsafePointer[Float32]
-	var fontactive: UnsafePointer[Float32]
-	var fontinactive: UnsafePointer[Float32]
-	var decorinactive: UnsafePointer[Float32]
-	var decorinactive2: UnsafePointer[Float32]
-	var button: UnsafePointer[Float32]
-	var check: UnsafePointer[Float32]
-	var radio: UnsafePointer[Float32]
-	var select: UnsafePointer[Float32]
-	var select2: UnsafePointer[Float32]
-	var slider: UnsafePointer[Float32]
-	var slider2: UnsafePointer[Float32]
-	var edit: UnsafePointer[Float32]
-	var edit2: UnsafePointer[Float32]
-	var cursor: UnsafePointer[Float32]
+struct mjuiThemeColor_(Copyable & Movable):
+	var master: StaticTuple[Float32, 3]
+	var thumb: StaticTuple[Float32, 3]
+	var secttitle: StaticTuple[Float32, 3]
+	var secttitle2: StaticTuple[Float32, 3]
+	var secttitleuncheck: StaticTuple[Float32, 3]
+	var secttitleuncheck2: StaticTuple[Float32, 3]
+	var secttitlecheck: StaticTuple[Float32, 3]
+	var secttitlecheck2: StaticTuple[Float32, 3]
+	var sectfont: StaticTuple[Float32, 3]
+	var sectsymbol: StaticTuple[Float32, 3]
+	var sectpane: StaticTuple[Float32, 3]
+	var separator: StaticTuple[Float32, 3]
+	var separator2: StaticTuple[Float32, 3]
+	var shortcut: StaticTuple[Float32, 3]
+	var fontactive: StaticTuple[Float32, 3]
+	var fontinactive: StaticTuple[Float32, 3]
+	var decorinactive: StaticTuple[Float32, 3]
+	var decorinactive2: StaticTuple[Float32, 3]
+	var button: StaticTuple[Float32, 3]
+	var check: StaticTuple[Float32, 3]
+	var radio: StaticTuple[Float32, 3]
+	var select: StaticTuple[Float32, 3]
+	var select2: StaticTuple[Float32, 3]
+	var slider: StaticTuple[Float32, 3]
+	var slider2: StaticTuple[Float32, 3]
+	var edit: StaticTuple[Float32, 3]
+	var edit2: StaticTuple[Float32, 3]
+	var cursor: StaticTuple[Float32, 3]
 
 
 alias mjuiThemeColor = mjuiThemeColor_
 @register_passable("trivial")
-struct mjuiItemSingle_:
+struct mjuiItemSingle_(Copyable & Movable):
 	var modifier: Int32
 	var shortcut: Int32
 
 @register_passable("trivial")
-struct mjuiItemMulti_:
+struct mjuiItemMulti_(Copyable & Movable):
 	var nelem: Int32
-	var name: UnsafePointer[Int8]
+	var name: StaticTuple[Int8, 35]
 
 @register_passable("trivial")
-struct mjuiItemSlider_:
-	var range: UnsafePointer[Float64]
+struct mjuiItemSlider_(Copyable & Movable):
+	var range: StaticTuple[Float64, 2]
 	var divisions: Float64
 
 @register_passable("trivial")
-struct mjuiItemEdit_:
+struct mjuiItemEdit_(Copyable & Movable):
 	var nelem: Int32
-	var range: UnsafePointer[Float64]
+	var range: StaticTuple[Float64, 7]
 
 @register_passable("trivial")
-struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
+struct _mjuiItem__Anonymous__line_259_3__line_264_3_(Copyable & Movable):
 	var single: mjuiItemSingle_
 	var multi: mjuiItemMulti_
 	var slider: mjuiItemSlider_
@@ -4226,9 +4227,9 @@ struct _mjuiItem__Anonymous__line_259_3__line_264_3_:
 
 
 @register_passable("trivial")
-struct mjuiItem_:
+struct mjuiItem_(Copyable & Movable):
 	var type: Int32
-	var name: UnsafePointer[Int8]
+	var name: StaticTuple[Int8, 40]
 	var state: Int32
 	var pdata: OpaquePointer
 	var sectionid: Int32
@@ -4241,14 +4242,14 @@ struct mjuiItem_:
 
 alias mjuiItem = mjuiItem_
 @register_passable("trivial")
-struct mjuiSection_:
-	var name: UnsafePointer[Int8]
+struct mjuiSection_(Copyable & Movable):
+	var name: StaticTuple[Int8, 40]
 	var state: Int32
 	var modifier: Int32
 	var shortcut: Int32
 	var checkbox: Int32
 	var nitem: Int32
-	var item: UnsafePointer[mjuiItem]
+	var item: StaticTuple[mjuiItem, 200]
 	var rtitle: mjrRect
 	var rcontent: mjrRect
 	var lastclick: Int32
@@ -4256,7 +4257,7 @@ struct mjuiSection_:
 
 alias mjuiSection = mjuiSection_
 @register_passable("trivial")
-struct mjUI_:
+struct mjUI_(Copyable & Movable):
 	var spacing: mjuiThemeSpacing
 	var color: mjuiThemeColor
 	var predicate: mjfItemEnable
@@ -4277,20 +4278,20 @@ struct mjUI_:
 	var edititem: Int32
 	var editcursor: Int32
 	var editscroll: Int32
-	var edittext: UnsafePointer[Int8]
+	var edittext: StaticTuple[Int8, 300]
 	var editchanged: UnsafePointer[mjuiItem]
 	var nsect: Int32
-	var sect: UnsafePointer[mjuiSection]
+	var sect: StaticTuple[mjuiSection, 10]
 
 
 alias mjUI = mjUI_
 @register_passable("trivial")
-struct mjuiDef_:
+struct mjuiDef_(Copyable & Movable):
 	var type: Int32
-	var name: UnsafePointer[Int8]
+	var name: StaticTuple[Int8, 40]
 	var state: Int32
 	var pdata: OpaquePointer
-	var other: UnsafePointer[Int8]
+	var other: StaticTuple[Int8, 300]
 	var otherint: Int32
 
 
@@ -4336,7 +4337,7 @@ alias mjcb_act_gain = mjfAct # extern # VisibilityAttrNode: Default
 alias mjcb_act_bias = mjfAct # extern # VisibilityAttrNode: Default
 
 
-alias mjCOLLISIONFUNC = UnsafePointer[mjfCollision] # extern # VisibilityAttrNode: Default
+alias mjCOLLISIONFUNC = StaticTuple[mjfCollision, 9] # extern # VisibilityAttrNode: Default
 
 # collision function table
 

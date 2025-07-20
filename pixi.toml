@@ -12,7 +12,7 @@ s = "pixi run shell"
 p = "pixi run package"
 bt = "pixi run build_test"
 
-generate_bindings = "mojo run -I . -I firehose c_binder_mojo/cli.mojo"
+generate_bindings = "mojo run -I . -I firehose cli.mojo"
 
 
 # c_binder_mojo Development tools

@@ -121,7 +121,7 @@ struct PointerTypeNode(NodeAstLike):
                     node.node[][RecordDeclNode]._record_mem_location
                     == mem_addesss
                 ):
-                    struct_name = node.node[][RecordDeclNode]._grammar._name
+                    struct_name = node.node[][RecordDeclNode]._record_name
                     new_entry = AstEntry()
                     new_entry.ast_name = "AnonymousRecord"
                     new_entry.tokens = [struct_name]

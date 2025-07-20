@@ -163,7 +163,7 @@ struct EnumDeclNode(NodeAstLike):
                     node.node[][EnumDeclNode]._enum_mem_location
                     == mem_addesss
                 ):
-                    enum_name = node.node[][EnumDeclNode]._grammar._name
+                    enum_name = node.node[][EnumDeclNode]._enum_name
                     new_entry = AstEntry()
                     new_entry.ast_name = "AnonymousEnum"
                     new_entry.tokens = [enum_name]

@@ -29,6 +29,7 @@ fn string_children(
         just_code: If True, outputs only code and comments. If False, includes node metadata
             with '>>>' separator to show node ownership.
         module_interface: The tree interface to use for the node.
+        indent_level: The indentation level for the parent node.
     """
     var s = String()
     for child_idx in node.indicies().child_idxs:
@@ -70,6 +71,18 @@ fn default_to_string(
         just_code: If True, only output code content (no metadata).
         indent_level: The indentation level for the parent node.
         children_indent_level: The indentation level for the children nodes. If 0, will use indent_level.
+        space_before_code: If True, will add a space before the code.
+        newline_before_ast_entries: If True, will add a newline before the ast entries.
+        newline_before_children: If True, will add a newline before the children.
+        newline_after_children: If True, will add a newline after the children.
+        newline_after_tail: If True, will add a newline after the tail.
+        indent_before_ast_entries: If True, will add an indent before the ast entries.
+        indent_before_children: If True, will add an indent before the children.
+        indent_after_children: If True, will add an indent after the children.
+        print_parent_level: If True, will print the parent level.
+        alternate_string: If provided, will use this string instead of the node's ast_entries().join(" ", indent, just_tokens=just_code).
+        alternate_string_tail: If provided, will use this string instead of the node's ast_entries_tail().join(" ", indent, just_tokens=just_code).
+        unhandled_tokens: If provided, will add this string to the end of the string.
 
     Format when just_code=False:
         NodeName >>> actual content

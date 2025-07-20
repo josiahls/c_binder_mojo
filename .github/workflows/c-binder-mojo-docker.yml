@@ -5,9 +5,10 @@ on:
   workflow_dispatch: #allows you to trigger manually
   push:
     branches:
-      - main
       - master
-      - feat/mujoco-binding-fixes
+    paths:
+      - c_binder_mojo.Dockerfile
+      - pixi.lock
 
 jobs:
   build:

@@ -2,8 +2,7 @@
 from memory import ArcPointer
 
 # Third Party Mojo Modules
-from firehose.logging import Logger
-from firehose import FileLoggerOutputer, OutputerVariant
+
 from c_binder_mojo.typing import get_global_type_mapper, TypeMapper
 
 # First Party Modules

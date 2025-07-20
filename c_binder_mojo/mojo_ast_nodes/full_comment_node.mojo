@@ -2,8 +2,7 @@
 from memory import ArcPointer
 
 # Third Party Mojo Modules
-from firehose.logging import Logger
-from firehose import FileLoggerOutputer, OutputerVariant
+
 
 # First Party Modules
 from c_binder_mojo.common import (

@@ -39,34 +39,6 @@ fn test_mujoco_bindings() raises:
         "LibMuJoCo",
         include_only_prefixes = ['mj']
     )
-
-    # var test_ffi_basic = TestFFIBasic()
-    # var int_result = test_ffi_basic.test_int_identity(123)
-    # if int_result != 123:
-    #     raise Error("int identity test failed: expected 123, got " + String(int_result))
-    # logger.info("✅ int identity test passed")
-
-    # var uint_result = test_ffi_basic.test_uint_identity(123)
-    # if uint_result != 123:
-    #     raise Error("uint identity test failed: expected 123, got " + String(uint_result))
-    # logger.info("✅ uint identity test passed")
-
-    # var long_result = test_ffi_basic.test_long_identity(123)
-    # if long_result != 123:
-    #     raise Error("long identity test failed: expected 123, got " + String(long_result))
-    # logger.info("✅ long identity test passed")
-
-    # var float_result = test_ffi_basic.test_float_identity(1.23)
-    # if float_result != 1.23:
-    #     raise Error("float identity test failed: expected 1.23, got " + String(float_result))
-    # logger.info("✅ float identity test passed")
-
-    # var double_result = test_ffi_basic.test_double_identity(1.23)
-    # if double_result != 1.23:
-    #     raise Error("double identity test failed: expected 1.23, got " + String(double_result))
-    # logger.info("✅ double identity test passed")
-
-    # logger.info("🎉 All FFI validation tests passed!")
  
 
 fn main() raises:

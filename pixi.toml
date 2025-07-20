@@ -7,7 +7,7 @@ version = "0.1.0"
 
 [tasks]
 # Shell commands
-shell = "cd $HOME/fastrl_mojo && magic shell"
+shell = "cd . && pixi shell"
 s = "pixi run shell"
 p = "pixi run package"
 bt = "pixi run build_test"
@@ -15,27 +15,27 @@ bt = "pixi run build_test"
 
 # c_binder_mojo Development tools
 ## Just format the c_binder_mojo src directory, not the tests.
-format = "mojo format $HOME/c_binder_mojo/c_binder_mojo"
+format = "mojo format ."
 f = "pixi run format"
 
 ## Common testing tasks
-test_all = "mojo test -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests"
+test_all = "mojo test -I . -I tests -I firehose tests"
 
-test_integration_hello_world = "mojo run -I $HOME/c_binder_mojo -I $HOME/tests -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/test_mujoco_bindings/test_hello_world.mojo"
-test_integration_mujoco_bindings = "mojo run -I $HOME/c_binder_mojo -I $HOME/tests -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/test_mujoco_bindings/test_bindings.mojo"
-test_integration_bindings = "mojo run -I $HOME/c_binder_mojo -I $HOME/tests -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/test_bindings/test_bindings.mojo"
-test_integration = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/*/test_*.mojo"
-test_include = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_include_node/test_include_node.mojo"
-test_struct = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_struct_node/test_struct_node.mojo"
-test_enum = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_enum_node/test_enum_node.mojo"
-test_typedef = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_typedef_node/test_typedef_node.mojo"
-test_ifndef = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_ifndef_node/test_ifndef_node.mojo"
-test_ifdef = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_ifdef_node/test_ifdef_node.mojo"
-test_define = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_define_node/test_define_node.mojo"
-test_whitespace = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_whitespace_node/test_whitespace_node.mojo"
-test_single_line_comment = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_single_line_comment_node/test_single_line_comment_node.mojo"
-test_multi_line_comment = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_multi_line_comment_node/test_multi_line_comment_node.mojo"
-test_type_mapping = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/unit/test_type_mapping.mojo"
+test_integration_hello_world = "mojo run -I . -I firehose tests/integration/test_mujoco_bindings/test_hello_world.mojo"
+test_integration_mujoco_bindings = "mojo run -I . -I firehose tests/integration/test_mujoco_bindings/test_bindings.mojo"
+test_integration_bindings = "mojo run -I . -I firehose tests/integration/test_bindings/test_bindings.mojo"
+test_integration = "mojo run -I . -I firehose tests/integration/*/test_*.mojo"
+test_include = "mojo run -I . -I firehose tests/unit/test_include_node/test_include_node.mojo"
+test_struct = "mojo run -I . -I firehose tests/unit/test_struct_node/test_struct_node.mojo"
+test_enum = "mojo run -I . -I firehose tests/unit/test_enum_node/test_enum_node.mojo"
+test_typedef = "mojo run -I . -I firehose tests/unit/test_typedef_node/test_typedef_node.mojo"
+test_ifndef = "mojo run -I . -I firehose tests/unit/test_ifndef_node/test_ifndef_node.mojo"
+test_ifdef = "mojo run -I . -I firehose tests/unit/test_ifdef_node/test_ifdef_node.mojo"
+test_define = "mojo run -I . -I firehose tests/unit/test_define_node/test_define_node.mojo"
+test_whitespace = "mojo run -I . -I firehose tests/unit/test_whitespace_node/test_whitespace_node.mojo"
+test_single_line_comment = "mojo run -I . -I firehose tests/unit/test_single_line_comment_node/test_single_line_comment_node.mojo"
+test_multi_line_comment = "mojo run -I . -I firehose tests/unit/test_multi_line_comment_node/test_multi_line_comment_node.mojo"
+test_type_mapping = "mojo run -I . -I firehose tests/unit/test_type_mapping.mojo"
 
 ## Package management
 package = "mojo package $HOME/c_binder_mojo"

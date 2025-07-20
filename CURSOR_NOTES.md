@@ -23,8 +23,6 @@ HUGE MILESTONE! 🎉 We have tests/integration/test_mujoco/output/test_mjmodel.m
 5. **Boilerplate code** - NodeAstLike trait implementations have lots of repetitive getter methods
 
 ## Immediate previous progress
-- SIMD[Int32.dtype, 2] is now just UnsafePointer[Int32]. Not sure if we actually want this or not.
-- Unified a ton of code under a recursive type mapping system. Appears to be working, and fixed a few data type issues actually.
-- 
+- Mujoco similation works for the first time. Need to do additional testing. Ideally save mujoco camera outputs to a video.
 
 

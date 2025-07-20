@@ -268,6 +268,7 @@ struct EnumDeclNode(NodeAstLike):
             s += indent + self.name(include_sig=True) + "\n"
 
         if not self._is_anonymous:
+            s += indent + '@register_passable("trivial")\n'
             s += indent + "struct " + String(self._enum_name) + ": # Enum\n"
         else:
             s += indent + "# Anonymous enum\n"

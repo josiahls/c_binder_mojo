@@ -10,6 +10,7 @@ alias __int128_t = Int128
 alias __uint128_t = UInt128
 
 alias __NSConstantString = __NSConstantString_tag
+@register_passable("trivial")
 struct __NSConstantString_tag:
 	pass
 
@@ -115,6 +116,7 @@ alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
 
 alias __builtin_va_list = __va_list
+@register_passable("trivial")
 struct __va_list:
 	pass
 
@@ -132,18 +134,21 @@ alias _Float64 = Float64
 alias _Float32x = Float64
 
 alias _Float64x = Float64
+@register_passable("trivial")
 struct Anonymous___usr_include_stdlib_h_59_9__line_63_3_:
 	var quot: Int32
 	var rem: Int32
 
 
 alias div_t = Anonymous___usr_include_stdlib_h_59_9__line_63_3_
+@register_passable("trivial")
 struct Anonymous__line_67_9__line_71_3_:
 	var quot: Int64
 	var rem: Int64
 
 
 alias ldiv_t = Anonymous__line_67_9__line_71_3_
+@register_passable("trivial")
 struct Anonymous__line_77_23__line_81_3_:
 	var quot: Int128
 	var rem: Int128
@@ -241,6 +246,7 @@ alias __off_t = Int64
 alias __off64_t = Int64
 
 alias __pid_t = Int32
+@register_passable("trivial")
 struct Anonymous___usr_include_aarch64_linux_gnu_bits_typesizes_h_72_24__col_47_:
 	var __val: UnsafePointer[Int32]
 
@@ -383,6 +389,7 @@ alias __bswap_64 = fn(__bsx: __uint64_t) -> __uint64_t
 alias __uint16_identity = fn(__x: __uint16_t) -> __uint16_t
 alias __uint32_identity = fn(__x: __uint32_t) -> __uint32_t
 alias __uint64_identity = fn(__x: __uint64_t) -> __uint64_t
+@register_passable("trivial")
 struct Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_:
 	var __val: UnsafePointer[UInt64]
 
@@ -390,10 +397,12 @@ struct Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__li
 alias __sigset_t = Anonymous___usr_include_aarch64_linux_gnu_bits_types___sigset_t_h_5_9__line_8_1_
 
 alias sigset_t = __sigset_t
+@register_passable("trivial")
 struct timeval:
 	var tv_sec: __time_t
 	var tv_usec: __suseconds_t
 
+@register_passable("trivial")
 struct timespec:
 	var tv_sec: __time_t
 	var tv_nsec: __syscall_slong_t
@@ -402,6 +411,7 @@ struct timespec:
 alias suseconds_t = Int64
 
 alias __fd_mask = Int64
+@register_passable("trivial")
 struct Anonymous__line_59_9__line_70_3_:
 	var __fds_bits: UnsafePointer[__fd_mask]
 
@@ -419,28 +429,33 @@ alias blkcnt_t = Int64
 alias fsblkcnt_t = UInt64
 
 alias fsfilcnt_t = UInt64
+@register_passable("trivial")
 struct _Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_:
 	var __low: UInt32
 	var __high: UInt32
 
 
+@register_passable("trivial")
 struct Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_:
 	var __value64: UInt128
 	var __value32: _Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1__Anonymous__line_28_3__line_32_3_
 
 
 alias __atomic_wide_counter = Anonymous___usr_include_aarch64_linux_gnu_bits_atomic_wide_counter_h_25_9__line_33_1_
+@register_passable("trivial")
 struct __pthread_internal_list:
 	var __prev: UnsafePointer[__pthread_internal_list]
 	var __next: UnsafePointer[__pthread_internal_list]
 
 
 alias __pthread_list_t = __pthread_internal_list
+@register_passable("trivial")
 struct __pthread_internal_slist:
 	var __next: UnsafePointer[__pthread_internal_slist]
 
 
 alias __pthread_slist_t = __pthread_internal_slist
+@register_passable("trivial")
 struct __pthread_mutex_s:
 	var __lock: Int32
 	var __count: UInt32
@@ -450,6 +465,7 @@ struct __pthread_mutex_s:
 	var __spins: Int32
 	var __list: __pthread_list_t
 
+@register_passable("trivial")
 struct __pthread_rwlock_arch_t:
 	var __readers: UInt32
 	var __writers: UInt32
@@ -463,6 +479,7 @@ struct __pthread_rwlock_arch_t:
 	var __pad2: UInt64
 	var __flags: UInt32
 
+@register_passable("trivial")
 struct __pthread_cond_s:
 	var __wseq: __atomic_wide_counter
 	var __g1_start: __atomic_wide_counter
@@ -476,6 +493,7 @@ struct __pthread_cond_s:
 alias __tss_t = UInt32
 
 alias __thrd_t = UInt64
+@register_passable("trivial")
 struct Anonymous__line_108_9__line_111_1_:
 	var __data: Int32
 
@@ -483,12 +501,14 @@ struct Anonymous__line_108_9__line_111_1_:
 alias __once_flag = Anonymous__line_108_9__line_111_1_
 
 alias pthread_t = UInt64
+@register_passable("trivial")
 struct Anonymous__line_32_9__line_36_1_:
 	var __size: UnsafePointer[Int8]
 	var __align: Int32
 
 
 alias pthread_mutexattr_t = Anonymous__line_32_9__line_36_1_
+@register_passable("trivial")
 struct Anonymous__line_41_9__line_45_1_:
 	var __size: UnsafePointer[Int8]
 	var __align: Int32
@@ -499,12 +519,14 @@ alias pthread_condattr_t = Anonymous__line_41_9__line_45_1_
 alias pthread_key_t = UInt32
 
 alias pthread_once_t = Int32
+@register_passable("trivial")
 struct pthread_attr_t:
 	var __size: UnsafePointer[Int8]
 	var __align: Int64
 
 # Disabled since this is already declared
 # alias pthread_attr_t = pthread_attr_t
+@register_passable("trivial")
 struct Anonymous__line_67_9__line_72_1_:
 	var __data: __pthread_mutex_s
 	var __size: UnsafePointer[Int8]
@@ -512,6 +534,7 @@ struct Anonymous__line_67_9__line_72_1_:
 
 
 alias pthread_mutex_t = Anonymous__line_67_9__line_72_1_
+@register_passable("trivial")
 struct Anonymous__line_75_9__line_80_1_:
 	var __data: __pthread_cond_s
 	var __size: UnsafePointer[Int8]
@@ -519,6 +542,7 @@ struct Anonymous__line_75_9__line_80_1_:
 
 
 alias pthread_cond_t = Anonymous__line_75_9__line_80_1_
+@register_passable("trivial")
 struct Anonymous__line_86_9__line_91_1_:
 	var __data: __pthread_rwlock_arch_t
 	var __size: UnsafePointer[Int8]
@@ -526,6 +550,7 @@ struct Anonymous__line_86_9__line_91_1_:
 
 
 alias pthread_rwlock_t = Anonymous__line_86_9__line_91_1_
+@register_passable("trivial")
 struct Anonymous__line_93_9__line_97_1_:
 	var __size: UnsafePointer[Int8]
 	var __align: Int64
@@ -534,12 +559,14 @@ struct Anonymous__line_93_9__line_97_1_:
 alias pthread_rwlockattr_t = Anonymous__line_93_9__line_97_1_
 
 alias pthread_spinlock_t = Int32
+@register_passable("trivial")
 struct Anonymous__line_108_9__line_112_1_:
 	var __size: UnsafePointer[Int8]
 	var __align: Int64
 
 
 alias pthread_barrier_t = Anonymous__line_108_9__line_112_1_
+@register_passable("trivial")
 struct Anonymous__line_114_9__line_118_1_:
 	var __size: UnsafePointer[Int8]
 	var __align: Int32
@@ -550,6 +577,7 @@ alias random = fn() -> Int64
 alias srandom = fn(__seed: UInt32) -> NoneType
 alias initstate = fn(__seed: UInt32, __statebuf: UnsafePointer[Int8], __statelen: size_t) -> UnsafePointer[Int8]
 alias setstate = fn(__statebuf: UnsafePointer[Int8]) -> UnsafePointer[Int8]
+@register_passable("trivial")
 struct random_data:
 	var fptr: UnsafePointer[Int32]
 	var rptr: UnsafePointer[Int32]
@@ -575,6 +603,7 @@ alias jrand48 = fn(__xsubi: UnsafePointer[UInt16]) -> Int64
 alias srand48 = fn(__seedval: Int64) -> NoneType
 alias seed48 = fn(__seed16v: UnsafePointer[UInt16]) -> UnsafePointer[UInt16]
 alias lcong48 = fn(__param: UnsafePointer[UInt16]) -> NoneType
+@register_passable("trivial")
 struct drand48_data:
 	var __x: UnsafePointer[UInt16]
 	var __old_x: UnsafePointer[UInt16]
@@ -796,52 +825,74 @@ alias __yn = fn(Int32, Float64) -> Float64
  # Disabled either due to a redefinition or a previous declaration: alias erf = fn(Float64) -> Float64
 alias erf = fn(Float64) -> Float64
 alias __erf = fn(Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias erfc = fn(Float64) -> Float64
 alias erfc = fn(Float64) -> Float64
 alias __erfc = fn(Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias lgamma = fn(Float64) -> Float64
 alias lgamma = fn(Float64) -> Float64
 alias __lgamma = fn(Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias tgamma = fn(Float64) -> Float64
 alias tgamma = fn(Float64) -> Float64
 alias __tgamma = fn(Float64) -> Float64
 alias gamma = fn(Float64) -> Float64
 alias __gamma = fn(Float64) -> Float64
 alias lgamma_r = fn(Float64, /, __signgamp: UnsafePointer[Int32]) -> Float64
 alias __lgamma_r = fn(Float64, /, __signgamp: UnsafePointer[Int32]) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias rint = fn(Float64) -> Float64
 alias rint = fn(__x: Float64) -> Float64
 alias __rint = fn(__x: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias nextafter = fn(Float64, Float64) -> Float64
 alias nextafter = fn(__x: Float64, __y: Float64) -> Float64
 alias __nextafter = fn(__x: Float64, __y: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias nexttoward = fn(Float64, Float64) -> Float64
 alias nexttoward = fn(__x: Float64, __y: Float64) -> Float64
 alias __nexttoward = fn(__x: Float64, __y: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias remainder = fn(Float64, Float64) -> Float64
 alias remainder = fn(__x: Float64, __y: Float64) -> Float64
 alias __remainder = fn(__x: Float64, __y: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias scalbn = fn(Float64, Int32) -> Float64
 alias scalbn = fn(__x: Float64, __n: Int32) -> Float64
 alias __scalbn = fn(__x: Float64, __n: Int32) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias ilogb = fn(Float64) -> Int32
 alias ilogb = fn(__x: Float64) -> Int32
 alias __ilogb = fn(__x: Float64) -> Int32
+ # Disabled either due to a redefinition or a previous declaration: alias scalbln = fn(Float64, Int64) -> Float64
 alias scalbln = fn(__x: Float64, __n: Int64) -> Float64
 alias __scalbln = fn(__x: Float64, __n: Int64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias nearbyint = fn(Float64) -> Float64
 alias nearbyint = fn(__x: Float64) -> Float64
 alias __nearbyint = fn(__x: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias round = fn(Float64) -> Float64
 alias round = fn(__x: Float64) -> Float64
 alias __round = fn(__x: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias trunc = fn(Float64) -> Float64
 alias trunc = fn(__x: Float64) -> Float64
 alias __trunc = fn(__x: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias remquo = fn(Float64, Float64, UnsafePointer[Int32]) -> Float64
 alias remquo = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
 alias __remquo = fn(__x: Float64, __y: Float64, __quo: UnsafePointer[Int32]) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias lrint = fn(Float64) -> Int64
 alias lrint = fn(__x: Float64) -> Int64
 alias __lrint = fn(__x: Float64) -> Int64
+ # Disabled either due to a redefinition or a previous declaration: alias llrint = fn(Float64) -> Int128
 alias llrint = fn(__x: Float64) -> Int128
 alias __llrint = fn(__x: Float64) -> Int128
+ # Disabled either due to a redefinition or a previous declaration: alias lround = fn(Float64) -> Int64
 alias lround = fn(__x: Float64) -> Int64
 alias __lround = fn(__x: Float64) -> Int64
+ # Disabled either due to a redefinition or a previous declaration: alias llround = fn(Float64) -> Int128
 alias llround = fn(__x: Float64) -> Int128
 alias __llround = fn(__x: Float64) -> Int128
+ # Disabled either due to a redefinition or a previous declaration: alias fdim = fn(Float64, Float64) -> Float64
 alias fdim = fn(__x: Float64, __y: Float64) -> Float64
 alias __fdim = fn(__x: Float64, __y: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias fmax = fn(Float64, Float64) -> Float64
 alias fmax = fn(__x: Float64, __y: Float64) -> Float64
 alias __fmax = fn(__x: Float64, __y: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias fmin = fn(Float64, Float64) -> Float64
 alias fmin = fn(__x: Float64, __y: Float64) -> Float64
 alias __fmin = fn(__x: Float64, __y: Float64) -> Float64
+ # Disabled either due to a redefinition or a previous declaration: alias fma = fn(Float64, Float64, Float64) -> Float64
 alias fma = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
 alias __fma = fn(__x: Float64, __y: Float64, __z: Float64) -> Float64
 alias scalb = fn(__x: Float64, __n: Float64) -> Float64
@@ -849,82 +900,118 @@ alias __scalb = fn(__x: Float64, __n: Float64) -> Float64
 alias __fpclassifyf = fn(__value: Float32) -> Int32
 alias __signbitf = fn(__value: Float32) -> Int32
 alias __isinff = fn(__value: Float32) -> Int32
+ # Disabled either due to a redefinition or a previous declaration: alias __finitef = fn(Float32) -> Int32
 alias __finitef = fn(__value: Float32) -> Int32
 alias __isnanf = fn(__value: Float32) -> Int32
 alias __iseqsigf = fn(__x: Float32, __y: Float32) -> Int32
 alias __issignalingf = fn(__value: Float32) -> Int32
+ # Disabled either due to a redefinition or a previous declaration: alias acosf = fn(Float32) -> Float32
 alias acosf = fn(__x: Float32) -> Float32
 alias __acosf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias asinf = fn(Float32) -> Float32
 alias asinf = fn(__x: Float32) -> Float32
 alias __asinf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias atanf = fn(Float32) -> Float32
 alias atanf = fn(__x: Float32) -> Float32
 alias __atanf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias atan2f = fn(Float32, Float32) -> Float32
 alias atan2f = fn(__y: Float32, __x: Float32) -> Float32
 alias __atan2f = fn(__y: Float32, __x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias cosf = fn(Float32) -> Float32
 alias cosf = fn(__x: Float32) -> Float32
 alias __cosf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias sinf = fn(Float32) -> Float32
 alias sinf = fn(__x: Float32) -> Float32
 alias __sinf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias tanf = fn(Float32) -> Float32
 alias tanf = fn(__x: Float32) -> Float32
 alias __tanf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias coshf = fn(Float32) -> Float32
 alias coshf = fn(__x: Float32) -> Float32
 alias __coshf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias sinhf = fn(Float32) -> Float32
 alias sinhf = fn(__x: Float32) -> Float32
 alias __sinhf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias tanhf = fn(Float32) -> Float32
 alias tanhf = fn(__x: Float32) -> Float32
 alias __tanhf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias acoshf = fn(Float32) -> Float32
 alias acoshf = fn(__x: Float32) -> Float32
 alias __acoshf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias asinhf = fn(Float32) -> Float32
 alias asinhf = fn(__x: Float32) -> Float32
 alias __asinhf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias atanhf = fn(Float32) -> Float32
 alias atanhf = fn(__x: Float32) -> Float32
 alias __atanhf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias expf = fn(Float32) -> Float32
 alias expf = fn(__x: Float32) -> Float32
 alias __expf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias frexpf = fn(Float32, UnsafePointer[Int32]) -> Float32
 alias frexpf = fn(__x: Float32, __exponent: UnsafePointer[Int32]) -> Float32
 alias __frexpf = fn(__x: Float32, __exponent: UnsafePointer[Int32]) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias ldexpf = fn(Float32, Int32) -> Float32
 alias ldexpf = fn(__x: Float32, __exponent: Int32) -> Float32
 alias __ldexpf = fn(__x: Float32, __exponent: Int32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias logf = fn(Float32) -> Float32
 alias logf = fn(__x: Float32) -> Float32
 alias __logf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias log10f = fn(Float32) -> Float32
 alias log10f = fn(__x: Float32) -> Float32
 alias __log10f = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias modff = fn(Float32, UnsafePointer[Float32]) -> Float32
 alias modff = fn(__x: Float32, __iptr: UnsafePointer[Float32]) -> Float32
 alias __modff = fn(__x: Float32, __iptr: UnsafePointer[Float32]) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias expm1f = fn(Float32) -> Float32
 alias expm1f = fn(__x: Float32) -> Float32
 alias __expm1f = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias log1pf = fn(Float32) -> Float32
 alias log1pf = fn(__x: Float32) -> Float32
 alias __log1pf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias logbf = fn(Float32) -> Float32
 alias logbf = fn(__x: Float32) -> Float32
 alias __logbf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias exp2f = fn(Float32) -> Float32
 alias exp2f = fn(__x: Float32) -> Float32
 alias __exp2f = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias log2f = fn(Float32) -> Float32
 alias log2f = fn(__x: Float32) -> Float32
 alias __log2f = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias powf = fn(Float32, Float32) -> Float32
 alias powf = fn(__x: Float32, __y: Float32) -> Float32
 alias __powf = fn(__x: Float32, __y: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias sqrtf = fn(Float32) -> Float32
 alias sqrtf = fn(__x: Float32) -> Float32
 alias __sqrtf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias hypotf = fn(Float32, Float32) -> Float32
 alias hypotf = fn(__x: Float32, __y: Float32) -> Float32
 alias __hypotf = fn(__x: Float32, __y: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias cbrtf = fn(Float32) -> Float32
 alias cbrtf = fn(__x: Float32) -> Float32
 alias __cbrtf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias ceilf = fn(Float32) -> Float32
 alias ceilf = fn(__x: Float32) -> Float32
 alias __ceilf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias fabsf = fn(Float32) -> Float32
 alias fabsf = fn(__x: Float32) -> Float32
 alias __fabsf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias floorf = fn(Float32) -> Float32
 alias floorf = fn(__x: Float32) -> Float32
 alias __floorf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias fmodf = fn(Float32, Float32) -> Float32
 alias fmodf = fn(__x: Float32, __y: Float32) -> Float32
 alias __fmodf = fn(__x: Float32, __y: Float32) -> Float32
 alias isinff = fn(__value: Float32) -> Int32
+ # Disabled either due to a redefinition or a previous declaration: alias finitef = fn(Float32) -> Int32
 alias finitef = fn(__value: Float32) -> Int32
 alias dremf = fn(__x: Float32, __y: Float32) -> Float32
 alias __dremf = fn(__x: Float32, __y: Float32) -> Float32
 alias significandf = fn(__x: Float32) -> Float32
 alias __significandf = fn(__x: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias copysignf = fn(Float32, Float32) -> Float32
 alias copysignf = fn(__x: Float32, __y: Float32) -> Float32
 alias __copysignf = fn(__x: Float32, __y: Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias nanf = fn(read UnsafePointer[Int8]) -> Float32
 alias nanf = fn(read __tagb: UnsafePointer[Int8]) -> Float32
 alias __nanf = fn(read __tagb: UnsafePointer[Int8]) -> Float32
 alias isnanf = fn(__value: Float32) -> Int32
@@ -940,12 +1027,16 @@ alias y1f = fn(Float32) -> Float32
 alias __y1f = fn(Float32) -> Float32
 alias ynf = fn(Int32, Float32) -> Float32
 alias __ynf = fn(Int32, Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias erff = fn(Float32) -> Float32
 alias erff = fn(Float32) -> Float32
 alias __erff = fn(Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias erfcf = fn(Float32) -> Float32
 alias erfcf = fn(Float32) -> Float32
 alias __erfcf = fn(Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias lgammaf = fn(Float32) -> Float32
 alias lgammaf = fn(Float32) -> Float32
 alias __lgammaf = fn(Float32) -> Float32
+ # Disabled either due to a redefinition or a previous declaration: alias tgammaf = fn(Float32) -> Float32
 alias tgammaf = fn(Float32) -> Float32
 alias __tgammaf = fn(Float32) -> Float32
 alias gammaf = fn(Float32) -> Float32
@@ -1227,6 +1318,7 @@ alias FP_NORMAL: Int = 4
 
 
 alias ptrdiff_t = Int64
+@register_passable("trivial")
 struct Anonymous___usr_lib_llvm_14_lib_clang_14_0_0_include___stddef_max_align_t_h_19_9__line_24_1_:
 	var __clang_max_align_nonce1: Int128
 	var __clang_max_align_nonce2: Float64
@@ -1287,7 +1379,6 @@ alias mjtNum = Float64
 alias mjtByte = UInt8
 #-------------------------------------- byte definition -------------------------------------------
 
-@register_passable("trivial")
 struct mjtDisableBit_: # Enum
 
 	#---------------------------------- enum types (mjt) ----------------------------------------------
@@ -1314,7 +1405,6 @@ struct mjtDisableBit_: # Enum
 alias mjtDisableBit = mjtDisableBit_
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
-@register_passable("trivial")
 struct mjtEnableBit_: # Enum
 	alias mjENBL_OVERRIDE: Int = 1
 	alias mjENBL_ENERGY: Int = 2
@@ -1326,7 +1416,6 @@ struct mjtEnableBit_: # Enum
 
 
 alias mjtEnableBit = mjtEnableBit_
-@register_passable("trivial")
 struct mjtJoint_: # Enum
 	alias mjJNT_FREE: Int = 0
 	alias mjJNT_BALL: Int = 1
@@ -1335,7 +1424,6 @@ struct mjtJoint_: # Enum
 
 
 alias mjtJoint = mjtJoint_
-@register_passable("trivial")
 struct mjtGeom_: # Enum
 	alias mjGEOM_PLANE: Int = 0
 	alias mjGEOM_HFIELD: Int = 1
@@ -1360,7 +1448,6 @@ struct mjtGeom_: # Enum
 
 
 alias mjtGeom = mjtGeom_
-@register_passable("trivial")
 struct mjtCamLight_: # Enum
 	alias mjCAMLIGHT_FIXED: Int = 0
 	alias mjCAMLIGHT_TRACK: Int = 1
@@ -1370,7 +1457,6 @@ struct mjtCamLight_: # Enum
 
 
 alias mjtCamLight = mjtCamLight_
-@register_passable("trivial")
 struct mjtLightType_: # Enum
 	alias mjLIGHT_SPOT: Int = 0
 	alias mjLIGHT_DIRECTIONAL: Int = 1
@@ -1379,7 +1465,6 @@ struct mjtLightType_: # Enum
 
 
 alias mjtLightType = mjtLightType_
-@register_passable("trivial")
 struct mjtTexture_: # Enum
 	alias mjTEXTURE_2D: Int = 0
 	alias mjTEXTURE_CUBE: Int = 1
@@ -1387,7 +1472,6 @@ struct mjtTexture_: # Enum
 
 
 alias mjtTexture = mjtTexture_
-@register_passable("trivial")
 struct mjtTextureRole_: # Enum
 	alias mjTEXROLE_USER: Int = 0
 	alias mjTEXROLE_RGB: Int = 1
@@ -1403,7 +1487,6 @@ struct mjtTextureRole_: # Enum
 
 
 alias mjtTextureRole = mjtTextureRole_
-@register_passable("trivial")
 struct mjtColorSpace_: # Enum
 	alias mjCOLORSPACE_AUTO: Int = 0
 	alias mjCOLORSPACE_LINEAR: Int = 1
@@ -1419,7 +1502,6 @@ struct mjtIntegrator_: # Enum
 
 
 alias mjtIntegrator = mjtIntegrator_
-@register_passable("trivial")
 struct mjtCone_: # Enum
 	alias mjCONE_PYRAMIDAL: Int = 0
 	alias mjCONE_ELLIPTIC: Int = 1
@@ -1433,7 +1515,6 @@ struct mjtJacobian_: # Enum
 
 
 alias mjtJacobian = mjtJacobian_
-@register_passable("trivial")
 struct mjtSolver_: # Enum
 	alias mjSOL_PGS: Int = 0
 	alias mjSOL_CG: Int = 1
@@ -1441,7 +1522,6 @@ struct mjtSolver_: # Enum
 
 
 alias mjtSolver = mjtSolver_
-@register_passable("trivial")
 struct mjtEq_: # Enum
 	alias mjEQ_CONNECT: Int = 0
 	alias mjEQ_WELD: Int = 1
@@ -1452,7 +1532,6 @@ struct mjtEq_: # Enum
 
 
 alias mjtEq = mjtEq_
-@register_passable("trivial")
 struct mjtWrap_: # Enum
 	alias mjWRAP_NONE: Int = 0
 	alias mjWRAP_JOINT: Int = 1
@@ -1463,7 +1542,6 @@ struct mjtWrap_: # Enum
 
 
 alias mjtWrap = mjtWrap_
-@register_passable("trivial")
 struct mjtTrn_: # Enum
 	alias mjTRN_JOINT: Int = 0
 	alias mjTRN_JOINTINPARENT: Int = 1
@@ -1475,7 +1553,6 @@ struct mjtTrn_: # Enum
 
 
 alias mjtTrn = mjtTrn_
-@register_passable("trivial")
 struct mjtDyn_: # Enum
 	alias mjDYN_NONE: Int = 0
 	alias mjDYN_INTEGRATOR: Int = 1
@@ -1486,7 +1563,6 @@ struct mjtDyn_: # Enum
 
 
 alias mjtDyn = mjtDyn_
-@register_passable("trivial")
 struct mjtGain_: # Enum
 	alias mjGAIN_FIXED: Int = 0
 	alias mjGAIN_AFFINE: Int = 1
@@ -1495,7 +1571,6 @@ struct mjtGain_: # Enum
 
 
 alias mjtGain = mjtGain_
-@register_passable("trivial")
 struct mjtBias_: # Enum
 	alias mjBIAS_NONE: Int = 0
 	alias mjBIAS_AFFINE: Int = 1
@@ -1504,7 +1579,6 @@ struct mjtBias_: # Enum
 
 
 alias mjtBias = mjtBias_
-@register_passable("trivial")
 struct mjtObj_: # Enum
 	alias mjOBJ_UNKNOWN: Int = 0
 	alias mjOBJ_BODY: Int = 1
@@ -1539,7 +1613,6 @@ struct mjtObj_: # Enum
 
 
 alias mjtObj = mjtObj_
-@register_passable("trivial")
 struct mjtConstraint_: # Enum
 	alias mjCNSTR_EQUALITY: Int = 0
 	alias mjCNSTR_FRICTION_DOF: Int = 1
@@ -1552,7 +1625,6 @@ struct mjtConstraint_: # Enum
 
 
 alias mjtConstraint = mjtConstraint_
-@register_passable("trivial")
 struct mjtConstraintState_: # Enum
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 	alias mjCNSTRSTATE_QUADRATIC: Int = 1
@@ -1562,7 +1634,6 @@ struct mjtConstraintState_: # Enum
 
 
 alias mjtConstraintState = mjtConstraintState_
-@register_passable("trivial")
 struct mjtSensor_: # Enum
 	alias mjSENS_TOUCH: Int = 0
 	alias mjSENS_ACCELEROMETER: Int = 1
@@ -1615,7 +1686,6 @@ struct mjtSensor_: # Enum
 
 
 alias mjtSensor = mjtSensor_
-@register_passable("trivial")
 struct mjtStage_: # Enum
 	alias mjSTAGE_NONE: Int = 0
 	alias mjSTAGE_POS: Int = 1
@@ -1624,7 +1694,6 @@ struct mjtStage_: # Enum
 
 
 alias mjtStage = mjtStage_
-@register_passable("trivial")
 struct mjtDataType_: # Enum
 	alias mjDATATYPE_REAL: Int = 0
 	alias mjDATATYPE_POSITIVE: Int = 1
@@ -1633,7 +1702,6 @@ struct mjtDataType_: # Enum
 
 
 alias mjtDataType = mjtDataType_
-@register_passable("trivial")
 struct mjtConDataField_: # Enum
 	alias mjCONDATA_FOUND: Int = 0
 	alias mjCONDATA_FORCE: Int = 1
@@ -1646,7 +1714,6 @@ struct mjtConDataField_: # Enum
 
 
 alias mjtConDataField = mjtConDataField_
-@register_passable("trivial")
 struct mjtSameFrame_: # Enum
 	alias mjSAMEFRAME_NONE: Int = 0
 	alias mjSAMEFRAME_BODY: Int = 1
@@ -1656,7 +1723,6 @@ struct mjtSameFrame_: # Enum
 
 
 alias mjtSameFrame = mjtSameFrame_
-@register_passable("trivial")
 struct mjtLRMode_: # Enum
 	alias mjLRMODE_NONE: Int = 0
 	alias mjLRMODE_MUSCLE: Int = 1
@@ -1665,7 +1731,6 @@ struct mjtLRMode_: # Enum
 
 
 alias mjtLRMode = mjtLRMode_
-@register_passable("trivial")
 struct mjtFlexSelf_: # Enum
 	alias mjFLEXSELF_NONE: Int = 0
 	alias mjFLEXSELF_NARROW: Int = 1
@@ -1675,7 +1740,6 @@ struct mjtFlexSelf_: # Enum
 
 
 alias mjtFlexSelf = mjtFlexSelf_
-@register_passable("trivial")
 struct mjtSDFType_: # Enum
 	alias mjSDFTYPE_SINGLE: Int = 0
 	alias mjSDFTYPE_INTERSECTION: Int = 1
@@ -2383,11 +2447,13 @@ alias mjtTaskStatus = mjtTaskStatus_
 alias mjfTask = fn(UnsafePointer[NoneType]) -> UnsafePointer[NoneType]
 # function pointer type for mjTask
 
+@register_passable("trivial")
 struct mjThreadPool_:
 	var nworker: Int32
 
 
 alias mjThreadPool = mjThreadPool_
+@register_passable("trivial")
 struct mjTask_:
 	var func: mjfTask
 	var args: OpaquePointer
@@ -2395,7 +2461,6 @@ struct mjTask_:
 
 
 alias mjTask = mjTask_
-@register_passable("trivial")
 struct mjtState_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -2422,7 +2487,6 @@ struct mjtState_: # Enum
 alias mjtState = mjtState_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-@register_passable("trivial")
 struct mjtWarning_: # Enum
 	alias mjWARN_INERTIA: Int = 0
 	alias mjWARN_CONTACTFULL: Int = 1
@@ -2436,7 +2500,6 @@ struct mjtWarning_: # Enum
 
 
 alias mjtWarning = mjtWarning_
-@register_passable("trivial")
 struct mjtTimer_: # Enum
 	alias mjTIMER_STEP: Int = 0
 	alias mjTIMER_FORWARD: Int = 1
@@ -2516,7 +2579,7 @@ struct mjData_:
 	var pbase: size_t
 	var parena: size_t
 	var maxuse_stack: size_t
-	var maxuse_threadstack:UnsafePointer[size_t, mut=True]
+	var maxuse_threadstack: UnsafePointer[size_t]
 	var maxuse_arena: size_t
 	var maxuse_con: Int32
 	var maxuse_efc: Int32
@@ -2535,8 +2598,8 @@ struct mjData_:
 	var nA: Int32
 	var nisland: Int32
 	var nidof: Int32
-	var time: Float64
-	var energy: OpaquePointer
+	var time: mjtNum
+	var energy: UnsafePointer[mjtNum]
 	var buffer: OpaquePointer
 	var arena: OpaquePointer
 	var qpos: UnsafePointer[mjtNum]
@@ -2741,8 +2804,6 @@ alias mjfAct = fn(UnsafePointer[mjModel],UnsafePointer[mjData],Int32) -> Float64
 alias mjfCollision = fn(UnsafePointer[mjModel],UnsafePointer[mjData],UnsafePointer[mjContact],Int32,Int32,Float64) -> Int32
 # collision detection
 
-
-@register_passable("trivial")
 struct mjtCatBit_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -2755,7 +2816,6 @@ struct mjtCatBit_: # Enum
 alias mjtCatBit = mjtCatBit_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-@register_passable("trivial")
 struct mjtMouse_: # Enum
 	alias mjMOUSE_NONE: Int = 0
 	alias mjMOUSE_ROTATE_V: Int = 1
@@ -2767,14 +2827,12 @@ struct mjtMouse_: # Enum
 
 
 alias mjtMouse = mjtMouse_
-@register_passable("trivial")
 struct mjtPertBit_: # Enum
 	alias mjPERT_TRANSLATE: Int = 1
 	alias mjPERT_ROTATE: Int = 2
 
 
 alias mjtPertBit = mjtPertBit_
-@register_passable("trivial")
 struct mjtCamera_: # Enum
 	alias mjCAMERA_FREE: Int = 0
 	alias mjCAMERA_TRACKING: Int = 1
@@ -2783,7 +2841,6 @@ struct mjtCamera_: # Enum
 
 
 alias mjtCamera = mjtCamera_
-@register_passable("trivial")
 struct mjtLabel_: # Enum
 	alias mjLABEL_NONE: Int = 0
 	alias mjLABEL_BODY: Int = 1
@@ -2806,7 +2863,6 @@ struct mjtLabel_: # Enum
 
 
 alias mjtLabel = mjtLabel_
-@register_passable("trivial")
 struct mjtFrame_: # Enum
 	alias mjFRAME_NONE: Int = 0
 	alias mjFRAME_BODY: Int = 1
@@ -2820,7 +2876,6 @@ struct mjtFrame_: # Enum
 
 
 alias mjtFrame = mjtFrame_
-@register_passable("trivial")
 struct mjtVisFlag_: # Enum
 	alias mjVIS_CONVEXHULL: Int = 0
 	alias mjVIS_TEXTURE: Int = 1
@@ -2857,7 +2912,6 @@ struct mjtVisFlag_: # Enum
 
 
 alias mjtVisFlag = mjtVisFlag_
-@register_passable("trivial")
 struct mjtRndFlag_: # Enum
 	alias mjRND_SHADOW: Int = 0
 	alias mjRND_WIREFRAME: Int = 1
@@ -2873,7 +2927,6 @@ struct mjtRndFlag_: # Enum
 
 
 alias mjtRndFlag = mjtRndFlag_
-@register_passable("trivial")
 struct mjtStereo_: # Enum
 	alias mjSTEREO_NONE: Int = 0
 	alias mjSTEREO_QUADBUFFERED: Int = 1
@@ -3122,7 +3175,6 @@ struct mjpResourceProvider:
 
 # Disabled since this is already declared
 # alias mjpResourceProvider = mjpResourceProvider
-@register_passable("trivial")
 struct mjtPluginCapabilityBit_: # Enum
 
 	#---------------------------------- Plugins -------------------------------------------------------
@@ -3175,7 +3227,6 @@ alias mjSDF = mjSDF_
 alias mjfPluginLibraryLoadCallback = fn(UnsafePointer[Int8],Int32,Int32) -> NoneType
 # function pointer type for mj_loadAllPluginLibraries callback
 
-@register_passable("trivial")
 struct mjtGridPos_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -3192,21 +3243,18 @@ struct mjtGridPos_: # Enum
 alias mjtGridPos = mjtGridPos_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-@register_passable("trivial")
 struct mjtFramebuffer_: # Enum
 	alias mjFB_WINDOW: Int = 0
 	alias mjFB_OFFSCREEN: Int = 1
 
 
 alias mjtFramebuffer = mjtFramebuffer_
-@register_passable("trivial")
 struct mjtDepthMap_: # Enum
 	alias mjDEPTH_ZERONEAR: Int = 0
 	alias mjDEPTH_ZEROFAR: Int = 1
 
 
 alias mjtDepthMap = mjtDepthMap_
-@register_passable("trivial")
 struct mjtFontScale_: # Enum
 	alias mjFONTSCALE_50: Int = 50
 	alias mjFONTSCALE_100: Int = 100
@@ -3217,7 +3265,6 @@ struct mjtFontScale_: # Enum
 
 
 alias mjtFontScale = mjtFontScale_
-@register_passable("trivial")
 struct mjtFont_: # Enum
 	alias mjFONT_NORMAL: Int = 0
 	alias mjFONT_SHADOW: Int = 1
@@ -3318,7 +3365,6 @@ alias mjFloatVecVec = NoneType
 alias mjDoubleVec = NoneType
 
 alias mjByteVec = NoneType
-@register_passable("trivial")
 struct mjtGeomInertia_: # Enum
 
 	#-------------------------------- enum types (mjt) ------------------------------------------------
@@ -3329,7 +3375,6 @@ struct mjtGeomInertia_: # Enum
 alias mjtGeomInertia = mjtGeomInertia_
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
-@register_passable("trivial")
 struct mjtMeshInertia_: # Enum
 	alias mjMESH_INERTIA_CONVEX: Int = 0
 	alias mjMESH_INERTIA_EXACT: Int = 1
@@ -3338,7 +3383,6 @@ struct mjtMeshInertia_: # Enum
 
 
 alias mjtMeshInertia = mjtMeshInertia_
-@register_passable("trivial")
 struct mjtBuiltin_: # Enum
 	alias mjBUILTIN_NONE: Int = 0
 	alias mjBUILTIN_GRADIENT: Int = 1
@@ -3347,7 +3391,6 @@ struct mjtBuiltin_: # Enum
 
 
 alias mjtBuiltin = mjtBuiltin_
-@register_passable("trivial")
 struct mjtMark_: # Enum
 	alias mjMARK_NONE: Int = 0
 	alias mjMARK_EDGE: Int = 1
@@ -3356,7 +3399,6 @@ struct mjtMark_: # Enum
 
 
 alias mjtMark = mjtMark_
-@register_passable("trivial")
 struct mjtLimited_: # Enum
 	alias mjLIMITED_FALSE: Int = 0
 	alias mjLIMITED_TRUE: Int = 1
@@ -3364,7 +3406,6 @@ struct mjtLimited_: # Enum
 
 
 alias mjtLimited = mjtLimited_
-@register_passable("trivial")
 struct mjtAlignFree_: # Enum
 	alias mjALIGNFREE_FALSE: Int = 0
 	alias mjALIGNFREE_TRUE: Int = 1
@@ -3372,7 +3413,6 @@ struct mjtAlignFree_: # Enum
 
 
 alias mjtAlignFree = mjtAlignFree_
-@register_passable("trivial")
 struct mjtInertiaFromGeom_: # Enum
 	alias mjINERTIAFROMGEOM_FALSE: Int = 0
 	alias mjINERTIAFROMGEOM_TRUE: Int = 1
@@ -3380,7 +3420,6 @@ struct mjtInertiaFromGeom_: # Enum
 
 
 alias mjtInertiaFromGeom = mjtInertiaFromGeom_
-@register_passable("trivial")
 struct mjtOrientation_: # Enum
 	alias mjORIENTATION_QUAT: Int = 0
 	alias mjORIENTATION_AXISANGLE: Int = 1
@@ -3958,7 +3997,6 @@ struct mjsDefault_:
 
 
 alias mjsDefault = mjsDefault_
-@register_passable("trivial")
 struct mjtButton_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -3971,7 +4009,6 @@ struct mjtButton_: # Enum
 alias mjtButton = mjtButton_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
-@register_passable("trivial")
 struct mjtEvent_: # Enum
 	alias mjEVENT_NONE: Int = 0
 	alias mjEVENT_MOVE: Int = 1
@@ -3985,7 +4022,6 @@ struct mjtEvent_: # Enum
 
 
 alias mjtEvent = mjtEvent_
-@register_passable("trivial")
 struct mjtItem_: # Enum
 	alias mjITEM_END: Int = -2
 	alias mjITEM_SECTION: Int = -1
@@ -4007,7 +4043,6 @@ struct mjtItem_: # Enum
 
 
 alias mjtItem = mjtItem_
-@register_passable("trivial")
 struct mjtSection_: # Enum
 	alias mjSECT_CLOSED: Int = 0
 	alias mjSECT_OPEN: Int = 1
@@ -4272,7 +4307,7 @@ alias mj_addFileVFS = fn(vfs: UnsafePointer[mjVFS], read directory: UnsafePointe
 alias mj_addBufferVFS = fn(vfs: UnsafePointer[mjVFS], read name: UnsafePointer[Int8], read buffer: OpaquePointer, nbuffer: Int32) -> Int32
 alias mj_deleteFileVFS = fn(vfs: UnsafePointer[mjVFS], read filename: UnsafePointer[Int8]) -> Int32
 alias mj_deleteVFS = fn(vfs: UnsafePointer[mjVFS]) -> NoneType
-alias mj_loadXML = fn(filename: UnsafePointer[Int8, mut=False], read vfs: UnsafePointer[mjVFS], error: UnsafePointer[Int8], error_sz: Int32) -> UnsafePointer[mjModel]
+alias mj_loadXML = fn(read filename: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS], error: UnsafePointer[Int8], error_sz: Int32) -> UnsafePointer[mjModel]
 alias mj_parseXML = fn(read filename: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS], error: UnsafePointer[Int8], error_sz: Int32) -> UnsafePointer[mjSpec]
 alias mj_parseXMLString = fn(read xml: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS], error: UnsafePointer[Int8], error_sz: Int32) -> UnsafePointer[mjSpec]
 alias mj_compile = fn(s: UnsafePointer[mjSpec], read vfs: UnsafePointer[mjVFS]) -> UnsafePointer[mjModel]
@@ -4282,7 +4317,7 @@ alias mj_saveLastXML = fn(read filename: UnsafePointer[Int8], read m: UnsafePoin
 alias mj_freeLastXML = fn() -> NoneType
 alias mj_saveXMLString = fn(read s: UnsafePointer[mjSpec], xml: UnsafePointer[Int8], xml_sz: Int32, error: UnsafePointer[Int8], error_sz: Int32) -> Int32
 alias mj_saveXML = fn(read s: UnsafePointer[mjSpec], read filename: UnsafePointer[Int8], error: UnsafePointer[Int8], error_sz: Int32) -> Int32
-alias mj_step = fn(m: UnsafePointer[mjModel, mut=False], d: UnsafePointer[mjData, mut=True]) -> NoneType
+alias mj_step = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_step1 = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_step2 = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
 alias mj_forward = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType
@@ -4298,7 +4333,7 @@ alias mj_saveModel = fn(read m: UnsafePointer[mjModel], read filename: UnsafePoi
 alias mj_loadModel = fn(read filename: UnsafePointer[Int8], read vfs: UnsafePointer[mjVFS]) -> UnsafePointer[mjModel]
 alias mj_deleteModel = fn(m: UnsafePointer[mjModel]) -> NoneType
 alias mj_sizeModel = fn(read m: UnsafePointer[mjModel]) -> Int32
-alias mj_makeData = fn(m: UnsafePointer[mjModel, mut=False]) -> UnsafePointer[mjData, mut=True]
+alias mj_makeData = fn(read m: UnsafePointer[mjModel]) -> UnsafePointer[mjData]
 alias mj_copyData = fn(dest: UnsafePointer[mjData], read m: UnsafePointer[mjModel], read src: UnsafePointer[mjData]) -> UnsafePointer[mjData]
 alias mjv_copyData = fn(dest: UnsafePointer[mjData], read m: UnsafePointer[mjModel], read src: UnsafePointer[mjData]) -> UnsafePointer[mjData]
 alias mj_resetData = fn(read m: UnsafePointer[mjModel], d: UnsafePointer[mjData]) -> NoneType

@@ -21,6 +21,7 @@ f = "pixi run format"
 ## Common testing tasks
 test_all = "mojo test -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests"
 
+test_integration_hello_world = "mojo run -I $HOME/c_binder_mojo -I $HOME/tests -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/test_mujoco_bindings/test_hello_world.mojo"
 test_integration_mujoco_bindings = "mojo run -I $HOME/c_binder_mojo -I $HOME/tests -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/test_mujoco_bindings/test_bindings.mojo"
 test_integration_bindings = "mojo run -I $HOME/c_binder_mojo -I $HOME/tests -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/test_bindings/test_bindings.mojo"
 test_integration = "mojo run -I $HOME/c_binder_mojo -I $HOME/c_binder_mojo/firehose $HOME/c_binder_mojo/tests/integration/*/test_*.mojo"

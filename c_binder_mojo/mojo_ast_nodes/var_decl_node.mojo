@@ -93,7 +93,6 @@ struct VarDeclNode(NodeAstLike):
                 self._var_type = token
 
     fn _parse_section_2(mut self, tokens: List[String]):
-        print("VarDeclNode: " + self._var_name + ": section 2 tokens: " + String(' ').join(tokens))
         for token in tokens:
             if token == ":":
                 self._is_sugar = True

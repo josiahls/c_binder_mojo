@@ -48,7 +48,7 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
         quoted sections.
         
         Returns:
-            List of indices where quotes appear in the tokens
+            List of indices where quotes appear in the tokens.
         """
         var quoted_indices = List[Int]()
         var idx = 0
@@ -107,6 +107,7 @@ struct AstEntries(Stringable, Movable, Copyable, Sized):
         Args:
             sep: The separator to use between tokens.
             indent: The indent to use for newlines.
+            just_tokens: If True, will only join the tokens.
         """
         var s = String()
         var n_entries = len(self._ast_entries)

@@ -105,11 +105,11 @@ fn get_node_path(nodes: ArcPointer[List[AstNode]], current_idx: Int) -> String:
     """Build a path string showing the hierarchy from root to current node.
 
     Args:
-        nodes: The list of AST nodes
-        current_idx: Current node index
+        nodes: The list of AST nodes.
+        current_idx: Current node index.
 
     Returns:
-        String like "Root -> Function -> Block -> Statement"
+        String like "Root -> Function -> Block -> Statement".
     """
     var path = List[String]()
     var idx = current_idx
@@ -316,7 +316,7 @@ fn get_current_node(
         recursion_depth: Current depth of recursion (for logging).
 
     Returns:
-        The index of the node that should process the next token
+        The index of the node that should process the next token.
     """
     var _current_idx = current_idx
 
@@ -392,6 +392,7 @@ fn make_tree(
     Args:
         entries: List of entries to process.
         tree_transition_file: File to write tree transition information to.
+        validate: If True, will validate that all nodes are completed.
 
     Returns:
         Reference-counted pointer to the list of AST nodes forming the tree.

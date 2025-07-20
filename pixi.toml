@@ -46,5 +46,5 @@ package = "mojo package c_binder_mojo"
 build_test = "pixi run format && pixi run test_all"
 
 [dependencies]
-max = ">=25.4.0.dev2025062005,<26"
+max = ">=25.5.0.dev2025072005,<26"
 

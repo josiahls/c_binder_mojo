@@ -1379,6 +1379,7 @@ alias mjtNum = Float64
 alias mjtByte = UInt8
 #-------------------------------------- byte definition -------------------------------------------
 
+@register_passable("trivial")
 struct mjtDisableBit_: # Enum
 
 	#---------------------------------- enum types (mjt) ----------------------------------------------
@@ -1405,6 +1406,7 @@ struct mjtDisableBit_: # Enum
 alias mjtDisableBit = mjtDisableBit_
 #---------------------------------- enum types (mjt) ----------------------------------------------
 
+@register_passable("trivial")
 struct mjtEnableBit_: # Enum
 	alias mjENBL_OVERRIDE: Int = 1
 	alias mjENBL_ENERGY: Int = 2
@@ -1416,6 +1418,7 @@ struct mjtEnableBit_: # Enum
 
 
 alias mjtEnableBit = mjtEnableBit_
+@register_passable("trivial")
 struct mjtJoint_: # Enum
 	alias mjJNT_FREE: Int = 0
 	alias mjJNT_BALL: Int = 1
@@ -1424,6 +1427,7 @@ struct mjtJoint_: # Enum
 
 
 alias mjtJoint = mjtJoint_
+@register_passable("trivial")
 struct mjtGeom_: # Enum
 	alias mjGEOM_PLANE: Int = 0
 	alias mjGEOM_HFIELD: Int = 1
@@ -1448,6 +1452,7 @@ struct mjtGeom_: # Enum
 
 
 alias mjtGeom = mjtGeom_
+@register_passable("trivial")
 struct mjtCamLight_: # Enum
 	alias mjCAMLIGHT_FIXED: Int = 0
 	alias mjCAMLIGHT_TRACK: Int = 1
@@ -1457,6 +1462,7 @@ struct mjtCamLight_: # Enum
 
 
 alias mjtCamLight = mjtCamLight_
+@register_passable("trivial")
 struct mjtLightType_: # Enum
 	alias mjLIGHT_SPOT: Int = 0
 	alias mjLIGHT_DIRECTIONAL: Int = 1
@@ -1465,6 +1471,7 @@ struct mjtLightType_: # Enum
 
 
 alias mjtLightType = mjtLightType_
+@register_passable("trivial")
 struct mjtTexture_: # Enum
 	alias mjTEXTURE_2D: Int = 0
 	alias mjTEXTURE_CUBE: Int = 1
@@ -1472,6 +1479,7 @@ struct mjtTexture_: # Enum
 
 
 alias mjtTexture = mjtTexture_
+@register_passable("trivial")
 struct mjtTextureRole_: # Enum
 	alias mjTEXROLE_USER: Int = 0
 	alias mjTEXROLE_RGB: Int = 1
@@ -1487,6 +1495,7 @@ struct mjtTextureRole_: # Enum
 
 
 alias mjtTextureRole = mjtTextureRole_
+@register_passable("trivial")
 struct mjtColorSpace_: # Enum
 	alias mjCOLORSPACE_AUTO: Int = 0
 	alias mjCOLORSPACE_LINEAR: Int = 1
@@ -1494,6 +1503,7 @@ struct mjtColorSpace_: # Enum
 
 
 alias mjtColorSpace = mjtColorSpace_
+@register_passable("trivial")
 struct mjtIntegrator_: # Enum
 	alias mjINT_EULER: Int = 0
 	alias mjINT_RK4: Int = 1
@@ -1502,12 +1512,14 @@ struct mjtIntegrator_: # Enum
 
 
 alias mjtIntegrator = mjtIntegrator_
+@register_passable("trivial")
 struct mjtCone_: # Enum
 	alias mjCONE_PYRAMIDAL: Int = 0
 	alias mjCONE_ELLIPTIC: Int = 1
 
 
 alias mjtCone = mjtCone_
+@register_passable("trivial")
 struct mjtJacobian_: # Enum
 	alias mjJAC_DENSE: Int = 0
 	alias mjJAC_SPARSE: Int = 1
@@ -1515,6 +1527,7 @@ struct mjtJacobian_: # Enum
 
 
 alias mjtJacobian = mjtJacobian_
+@register_passable("trivial")
 struct mjtSolver_: # Enum
 	alias mjSOL_PGS: Int = 0
 	alias mjSOL_CG: Int = 1
@@ -1522,6 +1535,7 @@ struct mjtSolver_: # Enum
 
 
 alias mjtSolver = mjtSolver_
+@register_passable("trivial")
 struct mjtEq_: # Enum
 	alias mjEQ_CONNECT: Int = 0
 	alias mjEQ_WELD: Int = 1
@@ -1532,6 +1546,7 @@ struct mjtEq_: # Enum
 
 
 alias mjtEq = mjtEq_
+@register_passable("trivial")
 struct mjtWrap_: # Enum
 	alias mjWRAP_NONE: Int = 0
 	alias mjWRAP_JOINT: Int = 1
@@ -1542,6 +1557,7 @@ struct mjtWrap_: # Enum
 
 
 alias mjtWrap = mjtWrap_
+@register_passable("trivial")
 struct mjtTrn_: # Enum
 	alias mjTRN_JOINT: Int = 0
 	alias mjTRN_JOINTINPARENT: Int = 1
@@ -1553,6 +1569,7 @@ struct mjtTrn_: # Enum
 
 
 alias mjtTrn = mjtTrn_
+@register_passable("trivial")
 struct mjtDyn_: # Enum
 	alias mjDYN_NONE: Int = 0
 	alias mjDYN_INTEGRATOR: Int = 1
@@ -1563,6 +1580,7 @@ struct mjtDyn_: # Enum
 
 
 alias mjtDyn = mjtDyn_
+@register_passable("trivial")
 struct mjtGain_: # Enum
 	alias mjGAIN_FIXED: Int = 0
 	alias mjGAIN_AFFINE: Int = 1
@@ -1571,6 +1589,7 @@ struct mjtGain_: # Enum
 
 
 alias mjtGain = mjtGain_
+@register_passable("trivial")
 struct mjtBias_: # Enum
 	alias mjBIAS_NONE: Int = 0
 	alias mjBIAS_AFFINE: Int = 1
@@ -1579,6 +1598,7 @@ struct mjtBias_: # Enum
 
 
 alias mjtBias = mjtBias_
+@register_passable("trivial")
 struct mjtObj_: # Enum
 	alias mjOBJ_UNKNOWN: Int = 0
 	alias mjOBJ_BODY: Int = 1
@@ -1613,6 +1633,7 @@ struct mjtObj_: # Enum
 
 
 alias mjtObj = mjtObj_
+@register_passable("trivial")
 struct mjtConstraint_: # Enum
 	alias mjCNSTR_EQUALITY: Int = 0
 	alias mjCNSTR_FRICTION_DOF: Int = 1
@@ -1625,6 +1646,7 @@ struct mjtConstraint_: # Enum
 
 
 alias mjtConstraint = mjtConstraint_
+@register_passable("trivial")
 struct mjtConstraintState_: # Enum
 	alias mjCNSTRSTATE_SATISFIED: Int = 0
 	alias mjCNSTRSTATE_QUADRATIC: Int = 1
@@ -1634,6 +1656,7 @@ struct mjtConstraintState_: # Enum
 
 
 alias mjtConstraintState = mjtConstraintState_
+@register_passable("trivial")
 struct mjtSensor_: # Enum
 	alias mjSENS_TOUCH: Int = 0
 	alias mjSENS_ACCELEROMETER: Int = 1
@@ -1686,6 +1709,7 @@ struct mjtSensor_: # Enum
 
 
 alias mjtSensor = mjtSensor_
+@register_passable("trivial")
 struct mjtStage_: # Enum
 	alias mjSTAGE_NONE: Int = 0
 	alias mjSTAGE_POS: Int = 1
@@ -1694,6 +1718,7 @@ struct mjtStage_: # Enum
 
 
 alias mjtStage = mjtStage_
+@register_passable("trivial")
 struct mjtDataType_: # Enum
 	alias mjDATATYPE_REAL: Int = 0
 	alias mjDATATYPE_POSITIVE: Int = 1
@@ -1702,6 +1727,7 @@ struct mjtDataType_: # Enum
 
 
 alias mjtDataType = mjtDataType_
+@register_passable("trivial")
 struct mjtConDataField_: # Enum
 	alias mjCONDATA_FOUND: Int = 0
 	alias mjCONDATA_FORCE: Int = 1
@@ -1714,6 +1740,7 @@ struct mjtConDataField_: # Enum
 
 
 alias mjtConDataField = mjtConDataField_
+@register_passable("trivial")
 struct mjtSameFrame_: # Enum
 	alias mjSAMEFRAME_NONE: Int = 0
 	alias mjSAMEFRAME_BODY: Int = 1
@@ -1723,6 +1750,7 @@ struct mjtSameFrame_: # Enum
 
 
 alias mjtSameFrame = mjtSameFrame_
+@register_passable("trivial")
 struct mjtLRMode_: # Enum
 	alias mjLRMODE_NONE: Int = 0
 	alias mjLRMODE_MUSCLE: Int = 1
@@ -1731,6 +1759,7 @@ struct mjtLRMode_: # Enum
 
 
 alias mjtLRMode = mjtLRMode_
+@register_passable("trivial")
 struct mjtFlexSelf_: # Enum
 	alias mjFLEXSELF_NONE: Int = 0
 	alias mjFLEXSELF_NARROW: Int = 1
@@ -1740,6 +1769,7 @@ struct mjtFlexSelf_: # Enum
 
 
 alias mjtFlexSelf = mjtFlexSelf_
+@register_passable("trivial")
 struct mjtSDFType_: # Enum
 	alias mjSDFTYPE_SINGLE: Int = 0
 	alias mjSDFTYPE_INTERSECTION: Int = 1
@@ -2436,6 +2466,7 @@ struct mjModel_:
 
 
 alias mjModel = mjModel_
+@register_passable("trivial")
 struct mjtTaskStatus_: # Enum
 	alias mjTASK_NEW: Int = 0
 	alias mjTASK_QUEUED: Int = 1
@@ -2461,6 +2492,7 @@ struct mjTask_:
 
 
 alias mjTask = mjTask_
+@register_passable("trivial")
 struct mjtState_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -2487,6 +2519,7 @@ struct mjtState_: # Enum
 alias mjtState = mjtState_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+@register_passable("trivial")
 struct mjtWarning_: # Enum
 	alias mjWARN_INERTIA: Int = 0
 	alias mjWARN_CONTACTFULL: Int = 1
@@ -2500,6 +2533,7 @@ struct mjtWarning_: # Enum
 
 
 alias mjtWarning = mjtWarning_
+@register_passable("trivial")
 struct mjtTimer_: # Enum
 	alias mjTIMER_STEP: Int = 0
 	alias mjTIMER_FORWARD: Int = 1
@@ -2804,6 +2838,7 @@ alias mjfAct = fn(UnsafePointer[mjModel],UnsafePointer[mjData],Int32) -> Float64
 alias mjfCollision = fn(UnsafePointer[mjModel],UnsafePointer[mjData],UnsafePointer[mjContact],Int32,Int32,Float64) -> Int32
 # collision detection
 
+@register_passable("trivial")
 struct mjtCatBit_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -2816,6 +2851,7 @@ struct mjtCatBit_: # Enum
 alias mjtCatBit = mjtCatBit_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+@register_passable("trivial")
 struct mjtMouse_: # Enum
 	alias mjMOUSE_NONE: Int = 0
 	alias mjMOUSE_ROTATE_V: Int = 1
@@ -2827,12 +2863,14 @@ struct mjtMouse_: # Enum
 
 
 alias mjtMouse = mjtMouse_
+@register_passable("trivial")
 struct mjtPertBit_: # Enum
 	alias mjPERT_TRANSLATE: Int = 1
 	alias mjPERT_ROTATE: Int = 2
 
 
 alias mjtPertBit = mjtPertBit_
+@register_passable("trivial")
 struct mjtCamera_: # Enum
 	alias mjCAMERA_FREE: Int = 0
 	alias mjCAMERA_TRACKING: Int = 1
@@ -2841,6 +2879,7 @@ struct mjtCamera_: # Enum
 
 
 alias mjtCamera = mjtCamera_
+@register_passable("trivial")
 struct mjtLabel_: # Enum
 	alias mjLABEL_NONE: Int = 0
 	alias mjLABEL_BODY: Int = 1
@@ -2863,6 +2902,7 @@ struct mjtLabel_: # Enum
 
 
 alias mjtLabel = mjtLabel_
+@register_passable("trivial")
 struct mjtFrame_: # Enum
 	alias mjFRAME_NONE: Int = 0
 	alias mjFRAME_BODY: Int = 1
@@ -2876,6 +2916,7 @@ struct mjtFrame_: # Enum
 
 
 alias mjtFrame = mjtFrame_
+@register_passable("trivial")
 struct mjtVisFlag_: # Enum
 	alias mjVIS_CONVEXHULL: Int = 0
 	alias mjVIS_TEXTURE: Int = 1
@@ -2912,6 +2953,7 @@ struct mjtVisFlag_: # Enum
 
 
 alias mjtVisFlag = mjtVisFlag_
+@register_passable("trivial")
 struct mjtRndFlag_: # Enum
 	alias mjRND_SHADOW: Int = 0
 	alias mjRND_WIREFRAME: Int = 1
@@ -2927,6 +2969,7 @@ struct mjtRndFlag_: # Enum
 
 
 alias mjtRndFlag = mjtRndFlag_
+@register_passable("trivial")
 struct mjtStereo_: # Enum
 	alias mjSTEREO_NONE: Int = 0
 	alias mjSTEREO_QUADBUFFERED: Int = 1
@@ -3175,6 +3218,7 @@ struct mjpResourceProvider:
 
 # Disabled since this is already declared
 # alias mjpResourceProvider = mjpResourceProvider
+@register_passable("trivial")
 struct mjtPluginCapabilityBit_: # Enum
 
 	#---------------------------------- Plugins -------------------------------------------------------
@@ -3227,6 +3271,7 @@ alias mjSDF = mjSDF_
 alias mjfPluginLibraryLoadCallback = fn(UnsafePointer[Int8],Int32,Int32) -> NoneType
 # function pointer type for mj_loadAllPluginLibraries callback
 
+@register_passable("trivial")
 struct mjtGridPos_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -3243,18 +3288,21 @@ struct mjtGridPos_: # Enum
 alias mjtGridPos = mjtGridPos_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+@register_passable("trivial")
 struct mjtFramebuffer_: # Enum
 	alias mjFB_WINDOW: Int = 0
 	alias mjFB_OFFSCREEN: Int = 1
 
 
 alias mjtFramebuffer = mjtFramebuffer_
+@register_passable("trivial")
 struct mjtDepthMap_: # Enum
 	alias mjDEPTH_ZERONEAR: Int = 0
 	alias mjDEPTH_ZEROFAR: Int = 1
 
 
 alias mjtDepthMap = mjtDepthMap_
+@register_passable("trivial")
 struct mjtFontScale_: # Enum
 	alias mjFONTSCALE_50: Int = 50
 	alias mjFONTSCALE_100: Int = 100
@@ -3265,6 +3313,7 @@ struct mjtFontScale_: # Enum
 
 
 alias mjtFontScale = mjtFontScale_
+@register_passable("trivial")
 struct mjtFont_: # Enum
 	alias mjFONT_NORMAL: Int = 0
 	alias mjFONT_SHADOW: Int = 1
@@ -3365,6 +3414,7 @@ alias mjFloatVecVec = NoneType
 alias mjDoubleVec = NoneType
 
 alias mjByteVec = NoneType
+@register_passable("trivial")
 struct mjtGeomInertia_: # Enum
 
 	#-------------------------------- enum types (mjt) ------------------------------------------------
@@ -3375,6 +3425,7 @@ struct mjtGeomInertia_: # Enum
 alias mjtGeomInertia = mjtGeomInertia_
 #-------------------------------- enum types (mjt) ------------------------------------------------
 
+@register_passable("trivial")
 struct mjtMeshInertia_: # Enum
 	alias mjMESH_INERTIA_CONVEX: Int = 0
 	alias mjMESH_INERTIA_EXACT: Int = 1
@@ -3383,6 +3434,7 @@ struct mjtMeshInertia_: # Enum
 
 
 alias mjtMeshInertia = mjtMeshInertia_
+@register_passable("trivial")
 struct mjtBuiltin_: # Enum
 	alias mjBUILTIN_NONE: Int = 0
 	alias mjBUILTIN_GRADIENT: Int = 1
@@ -3391,6 +3443,7 @@ struct mjtBuiltin_: # Enum
 
 
 alias mjtBuiltin = mjtBuiltin_
+@register_passable("trivial")
 struct mjtMark_: # Enum
 	alias mjMARK_NONE: Int = 0
 	alias mjMARK_EDGE: Int = 1
@@ -3399,6 +3452,7 @@ struct mjtMark_: # Enum
 
 
 alias mjtMark = mjtMark_
+@register_passable("trivial")
 struct mjtLimited_: # Enum
 	alias mjLIMITED_FALSE: Int = 0
 	alias mjLIMITED_TRUE: Int = 1
@@ -3406,6 +3460,7 @@ struct mjtLimited_: # Enum
 
 
 alias mjtLimited = mjtLimited_
+@register_passable("trivial")
 struct mjtAlignFree_: # Enum
 	alias mjALIGNFREE_FALSE: Int = 0
 	alias mjALIGNFREE_TRUE: Int = 1
@@ -3413,6 +3468,7 @@ struct mjtAlignFree_: # Enum
 
 
 alias mjtAlignFree = mjtAlignFree_
+@register_passable("trivial")
 struct mjtInertiaFromGeom_: # Enum
 	alias mjINERTIAFROMGEOM_FALSE: Int = 0
 	alias mjINERTIAFROMGEOM_TRUE: Int = 1
@@ -3420,6 +3476,7 @@ struct mjtInertiaFromGeom_: # Enum
 
 
 alias mjtInertiaFromGeom = mjtInertiaFromGeom_
+@register_passable("trivial")
 struct mjtOrientation_: # Enum
 	alias mjORIENTATION_QUAT: Int = 0
 	alias mjORIENTATION_AXISANGLE: Int = 1
@@ -3997,6 +4054,7 @@ struct mjsDefault_:
 
 
 alias mjsDefault = mjsDefault_
+@register_passable("trivial")
 struct mjtButton_: # Enum
 
 	#---------------------------------- primitive types (mjt) -----------------------------------------
@@ -4009,6 +4067,7 @@ struct mjtButton_: # Enum
 alias mjtButton = mjtButton_
 #---------------------------------- primitive types (mjt) -----------------------------------------
 
+@register_passable("trivial")
 struct mjtEvent_: # Enum
 	alias mjEVENT_NONE: Int = 0
 	alias mjEVENT_MOVE: Int = 1
@@ -4022,6 +4081,7 @@ struct mjtEvent_: # Enum
 
 
 alias mjtEvent = mjtEvent_
+@register_passable("trivial")
 struct mjtItem_: # Enum
 	alias mjITEM_END: Int = -2
 	alias mjITEM_SECTION: Int = -1
@@ -4043,6 +4103,7 @@ struct mjtItem_: # Enum
 
 
 alias mjtItem = mjtItem_
+@register_passable("trivial")
 struct mjtSection_: # Enum
 	alias mjSECT_CLOSED: Int = 0
 	alias mjSECT_OPEN: Int = 1

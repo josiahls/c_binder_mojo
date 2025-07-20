@@ -6,3 +6,5 @@
 .magic
 # vscode / cursor
 .vscode/settings.json
+
+tests/simple_struct_test

@@ -37,6 +37,22 @@ fn to_string(data: UnsafePointer[mjData]) -> String:
     return result
 
 
+fn to_string_mjModel(model: UnsafePointer[mjModel]) -> String:
+    var result:String = "mjModel Debug Info (from mojo):\n"
+    result += "  nq: " + String(model[].nq) + "\n"
+    result += "  nv: " + String(model[].nv) + "\n"
+    result += "  narena: " + String(model[].narena) + "\n"
+    result += "  nbuffer: " + String(model[].nbuffer) + "\n"
+    result += "  opt.timestep: " + String(model[].opt.timestep) + "\n"
+    result += "  opt.apirate: " + String(model[].opt.apirate) + "\n"
+    result += "  opt.impratio: " + String(model[].opt.impratio) + "\n"
+    result += "  opt.tolerance: " + String(model[].opt.tolerance) + "\n"
+    result += "  opt.noslip_tolerance: " + String(model[].opt.noslip_tolerance) + "\n"
+    result += "  opt.ccd_tolerance: " + String(model[].opt.ccd_tolerance) + "\n"
+    result += "  opt.gravity: " + String(model[].opt.gravity) + "\n"
+    return result
+
+
 fn main() raises:
     try:
         mujoco = LibMuJoCo()
@@ -47,70 +63,49 @@ fn main() raises:
 
         var model = mujoco.mj_loadXML(s.unsafe_cstr_ptr(), vfs, errors, 4)
         print('loaded the model: ' + String(model))
+        print(to_string_mjModel(model))
         
         # Debug: Print initial time and step info
-        print("Initial qpos size: " + String(model[].nq))
-        print("Initial qvel size: " + String(model[].nv))
+        # print("Initial qpos size: " + String(model[].nq))
+        # print("Initial qvel size: " + String(model[].nv))
         
-        var data = mujoco.mj_makeData(model)
-        print('loaded_data: ' + String(data))
-        # data[].time = 1
+        # var data = mujoco.mj_makeData(model)
+        # print('loaded_data: ' + String(data))
+        # # data[].time = 1
         
-        # Debug: Print initial time and step info
-        print("Initial time: " + String(data[].time))
+        # # Debug: Print initial time and step info
+        # print("Initial time: " + String(data[].time))
         
-        # Check if we need to initialize the simulation
-        if data[].time == 0.0:
-            print("Time is 0, checking if we need to initialize...")
-            print("Initial time: " + String(data[].time))
+        # # Check if we need to initialize the simulation
+        # if data[].time == 0.0:
+        #     print("Time is 0, checking if we need to initialize...")
+        #     print("Initial time: " + String(data[].time))
 
-        print("narena: " + String(data[].narena))
-        print("nbuffer: " + String(data[].nbuffer))
-        print("nplugin: " + String(data[].nplugin))
-        print("pstack: " + String(data[].pstack))
-        print("pbase: " + String(data[].pbase))
-        print("parena: " + String(data[].parena))
-        print("maxuse_stack: " + String(data[].maxuse_stack))
-        print("maxuse_arena: " + String(data[].maxuse_arena))
-        print("maxuse_con: " + String(data[].maxuse_con))
-        print("maxuse_efc: " + String(data[].maxuse_efc))
-        # Some pointers in between
-        print("ncon: " + String(data[].ncon))
-        print("ne: " + String(data[].ne))
-        print("nf: " + String(data[].nf))
-        print("nl: " + String(data[].nl))
-        print("nefc: " + String(data[].nefc))
-        print("nJ: " + String(data[].nJ))
-        print("nA: " + String(data[].nA))
-        print("nisland: " + String(data[].nisland))
-        print("nidof: " + String(data[].nidof))
-        print("time: " + String(data[].time))
-
-        print("=== BEFORE STEPPING ===")
-        print(to_string(data))
+        # print("=== BEFORE STEPPING ===")
+        # print(to_string(data))
 
 
-        counter = 0
-        while data[].time < 10.0:
-            print('stepping where time is: ' + String(data[].time))
-            mujoco.mj_step(model, data)
-            print('after step time is: ' + String(data[].time))
-            counter += 1
+        # counter = 0
+        # while data[].time < 10.0:
+        #     print('stepping where time is: ' + String(data[].time))
+        #     mujoco.mj_step(model, data)
+        #     print('after step time is: ' + String(data[].time))
+        #     counter += 1
             
-            # Remove the early break condition to match C++ version
-            if counter > 10 and data[].time < 0.001:
-                print("WARNING: Time is still 0 after step!")
-                print("Model timestep: " + String(model[].opt.timestep))
-                print("Data timestep: " + String(data[].time))
-                print("=== AFTER FIRST STEP ===")
-                print(to_string(data))
-                break # Exit to avoid infinite loop
+        #     # Remove the early break condition to match C++ version
+        #     if counter > 10 and data[].time < 0.001:
+        #         print("WARNING: Time is still 0 after step!")
+        #         print("Model timestep: " + String(model[].opt.timestep))
+        #         print("Data timestep: " + String(data[].time))
+        #         print("=== AFTER FIRST STEP ===")
+        #         print(to_string(data))
+        #         break # Exit to avoid infinite loop
 
-        print("=== AFTER STEPPING ===")
-        print(to_string(data))
+        # print("=== AFTER STEPPING ===")
+        # print(to_string(data))
 
         print("Test completed")
         mujoco.mj_deleteModel(model)
-        mujoco.mj_deleteData(data)
+        # mujoco.mj_deleteData(data)
     except e:
         print("Test failed: " + String(e)) 

@@ -46,5 +46,5 @@ package = "mojo package -I firehose c_binder_mojo"
 build_test = "pixi run format && pixi run test_all"
 
 [dependencies]
-max = ">=25.5.0.dev2025062005,<25.5.0.dev2025071805"
+max = ">=25.5.0.dev2025062005,<25.5.0.dev2025070105"
 

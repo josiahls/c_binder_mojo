@@ -483,10 +483,8 @@ struct Tokenizer(Copyable, Movable):
         _line = line
         for char in self.ISOLATED_TOKEN_CHARS:
             _line = _line.replace(char, " " + char + " ")
-        try:
-            return _line.split(" ")
-        except e:
-            return List[String](_line)
+        return _line.split(" ")
+
 
     fn tokenize(mut self, path: Path) raises -> None:
         """Tokenize an entire source file.

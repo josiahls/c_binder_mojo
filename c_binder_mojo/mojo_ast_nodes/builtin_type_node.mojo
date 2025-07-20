@@ -3,7 +3,7 @@ from memory import ArcPointer
 
 # Third Party Mojo Modules
 
-from c_binder_mojo.typing import get_global_type_mapper, TypeMapper
+from c_binder_mojo.typing import TypeMapper
 
 # First Party Modules
 from c_binder_mojo.common import (
@@ -20,8 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-# 
-# from c_binder_mojo.typing import TypeMapper
+
 
 
 @fieldwise_init

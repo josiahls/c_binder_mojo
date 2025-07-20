@@ -20,7 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.mojo_ast_nodes.record_decl_node import RecordDeclNode
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.typing import TypeMapper, get_global_type_mapper
+from c_binder_mojo.typing import TypeMapper
 
 
 

@@ -321,7 +321,7 @@ struct AstParser:
                 ):
                     ast_entry.precise_location = token
                 elif (
-                    token.startswith("/")
+                    '/' in token
                     and ":" in token
                     and ast_entry.precise_location == ""
                 ):

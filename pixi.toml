@@ -12,10 +12,12 @@ s = "pixi run shell"
 p = "pixi run package"
 bt = "pixi run build_test"
 
+generate_bindings = "mojo run -I . -I firehose c_binder_mojo/cli.mojo"
+
 
 # c_binder_mojo Development tools
 ## Just format the c_binder_mojo src directory, not the tests.
-format = "mojo format ."
+format = "mojo format c_binder_mojo"
 f = "pixi run format"
 
 ## Common testing tasks
@@ -38,7 +40,7 @@ test_multi_line_comment = "mojo run -I . -I firehose tests/unit/test_multi_line_
 test_type_mapping = "mojo run -I . -I firehose tests/unit/test_type_mapping.mojo"
 
 ## Package management
-package = "mojo package $HOME/c_binder_mojo"
+package = "mojo package c_binder_mojo"
 
 ## Combined workflows
 build_test = "pixi run format && pixi run test_all"

@@ -40,11 +40,11 @@ test_multi_line_comment = "mojo run -I . -I firehose tests/unit/test_multi_line_
 test_type_mapping = "mojo run -I . -I firehose tests/unit/test_type_mapping.mojo"
 
 ## Package management
-package = "mojo package c_binder_mojo"
+package = "mojo package -I firehose c_binder_mojo"
 
 ## Combined workflows
 build_test = "pixi run format && pixi run test_all"
 
 [dependencies]
-max = ">=25.5.0.dev2025072005,<26"
+max = ">=25.5.0.dev2025062005,<25.5.0.dev2025071805"
 

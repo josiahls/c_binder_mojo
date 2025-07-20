@@ -2,7 +2,6 @@ from pathlib import Path
 from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.function_decl_node import FunctionDeclNode
 from c_binder_mojo.mojo_ast_nodes.typedef_decl_node import TypedefDeclNode
-from c_binder.typing import MOJO_FUNCTIONS
 
 
 fn _get_module_dl_handle(

@@ -1,9 +1,3 @@
-[submodule "mujoco_mojo"]
-    path = mujoco_mojo
-    url = https://github.com/josiahls/mujoco_mojo.git
-    branch = main
-    ignore = all
-
 [submodule "modular"]
     path = modular
     url = https://github.com/modular/modular.git
@@ -14,4 +8,4 @@
     path = firehose
     url = https://github.com/josiahls/firehose.git
     branch = main
-    ignore = dirty
+    ignore = all

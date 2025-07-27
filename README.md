@@ -24,11 +24,11 @@ pixi run test_all
 Reference `tests/test_c_project` for a working example. This should be populated after running `pixi run test_all`.
 
 ```bash
-pixi run generate_bindings
+pixi run generate_bindings --help
 ```
 
 ```bash
-pixi run package
+pixi run package --help
 ```
 
 ```bash

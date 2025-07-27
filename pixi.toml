@@ -43,12 +43,17 @@ clone_firehose = { cmd = [
 
 ################## Core API ##################
 
-package = "mojo package -I firehose c_binder_mojo"
 generate_bindings = "mojo run -I . -I firehose cli.mojo"
 configure = { cmd = [
     "git", "submodule", "update", "--remote",
 ], depends-on = [ "clone_firehose", "build_test_c_project" ] }
 
+
+################## Deploying ##################
+
+package = { cmd = [
+    "mojo", "package", "-I", "firehose", "c_binder_mojo"
+], depends-on = [ "configure" ]}
 
 ################## Testing Configuration ##################
 # Build the c bindings.

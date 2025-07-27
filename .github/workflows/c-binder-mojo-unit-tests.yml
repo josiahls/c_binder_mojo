@@ -35,7 +35,7 @@ jobs:
             echo "Docker Compose pull failed."
         fi
         
-        docker compose exec c_binder_mojo_${COMPOSE_PROFILES} pixi run test_all
+        docker compose run --rm c_binder_mojo_${COMPOSE_PROFILES} pixi run test_all
       env:
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

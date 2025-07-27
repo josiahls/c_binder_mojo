@@ -16,8 +16,8 @@ jobs:
         runner:
           - RUNNER_NAME: ubuntu-24.04-arm
             PLATFORM: arm64
-          # - RUNNER_NAME: ubuntu-latest
-          #   PLATFORM: x86_64
+          - RUNNER_NAME: ubuntu-latest
+            PLATFORM: x86_64
         build_type: [cpu]
     steps:
     - name: Copy This Repository Contents

@@ -35,10 +35,10 @@ simple_type_short get_simple_type_short(simple_type_short a);
 typedef unsigned int simple_type_uint;
 simple_type_uint get_simple_type_uint(simple_type_uint a);
 
-typedef unsigned long long simple_type_long_long;
+typedef long long simple_type_long_long;
 simple_type_long_long get_simple_type_long_long(simple_type_long_long a);
 
-typedef unsigned long simple_type_long;
+typedef long simple_type_long;
 simple_type_long get_simple_type_long(simple_type_long a);
 
 typedef unsigned long long simple_type_ulong_long;

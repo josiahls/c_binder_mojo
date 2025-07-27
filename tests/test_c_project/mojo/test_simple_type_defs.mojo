@@ -9,6 +9,10 @@ fn test_simple_type_defs() raises:
     assert_equal(simple_type_defs.get_simple_type_byte(3), 3)
     assert_equal(simple_type_defs.get_simple_type_short(4), 4)
     assert_equal(simple_type_defs.get_simple_type_uint(5), 5)
+    assert_equal(simple_type_defs.get_simple_type_long_long(6), 6)
+    assert_equal(simple_type_defs.get_simple_type_long(7), 7)
+    assert_equal(simple_type_defs.get_simple_type_ulong_long(8), 8)
+    assert_equal(simple_type_defs.get_simple_type_ulong(9), 9)
 
 fn main() raises:
     test_simple_type_defs()

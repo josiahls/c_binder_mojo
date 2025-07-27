@@ -26,7 +26,7 @@ jobs:
     - name: build, tag, and push image
       run: |
         export DOCKER_BUILDKIT=1
-        export COMPOSE_PROFILES=build_${BUILD_TYPE}_${PLATFORM}
+        export COMPOSE_PROFILES=${BUILD_TYPE}_${PLATFORM}
         echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
 
         if docker compose pull; then
@@ -35,7 +35,7 @@ jobs:
             echo "Docker Compose pull failed."
         fi
         
-        docker compose run pixi run test_all
+        docker compose c_binder_mojo_${COMPOSE_PROFILES} run pixi run test_all
       env:
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

@@ -23,7 +23,11 @@ jobs:
     - name: Copy This Repository Contents
       uses: actions/checkout@v2
 
-    - name: build, tag, and push image
+    - name: Fix workspace permissions
+      run: |
+        sudo chown -R 1000:1000 .
+
+    - name: Pull docker image and run tests
       run: |
         export DOCKER_BUILDKIT=1
         export COMPOSE_PROFILES=${BUILD_TYPE}_${PLATFORM}

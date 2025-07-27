@@ -7,6 +7,11 @@
 
 # Installation
 
+Minimal installation requires pixi:
+```bash
+curl -fsSL https://pixi.sh/install.sh | sh
+```
+
 Below command will pull all the deps, build them, and run the tests to verify the installation worked.
 ```bash
 pixi run test_all

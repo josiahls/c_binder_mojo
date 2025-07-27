@@ -17,8 +17,6 @@ max = ">=25.5.0.dev2025072705"
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 
 [tasks]
-
-
 ################## Test C Project Configuration ##################
 init_test_c_project = { cmd = [
     "cd", "tests/test_c_project", "&&",
@@ -72,22 +70,5 @@ test_all = { cmd = [
 
 
 
-################## Misc ##################
-# Shell commands
-shell = "cd . && pixi shell"
-s = "pixi run shell"
-p = "pixi run package"
-bt = "pixi run build_test"
-
-
-# c_binder_mojo Development tools
-## Just format the c_binder_mojo src directory, not the tests.
-format = "mojo format c_binder_mojo"
-f = "pixi run format"
-
-
-
-## Combined workflows
-build_test = "pixi run format && pixi run test_all"
 
 

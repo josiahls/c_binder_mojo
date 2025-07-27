@@ -79,18 +79,12 @@ SHELL [ "/bin/bash", "-c" ]
 ENV SHELL=/bin/bash
 
 
-ENV C_BINDING_MOJO_TEST_MUJOCO="$HOME/mujoco"
-
 # Install pixi and set up PATH in the same layer
 RUN curl -fsSL https://pixi.sh/install.sh | sh
 ENV PATH="/home/$CONTAINER_USER/.pixi/bin:/home/$CONTAINER_USER/.modular/bin:$PATH"
 
 # Add pixi completion to bashrc - escape the $() so it's evaluated at runtime
-# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
 RUN echo 'eval "$(pixi completion --shell bash)"' >> "/home/$CONTAINER_USER/.bashrc"
-# Add bash shell init to the bashrc
-# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
-RUN echo 'eval "$(pixi shell-hook --shell bash)"' >> "/home/$CONTAINER_USER/.bashrc"
 
 WORKDIR /home/$CONTAINER_USER
 

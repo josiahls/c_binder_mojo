@@ -1,7 +1,7 @@
 # version: "3.8"
 
 x-c_binder_mojo_base: &c_binder_mojo_base
-  working_dir: /home/c_binder_mojo_user/c_binder_mojo
+  working_dir: /home/mojo_user/c_binder_mojo
   logging:
     driver: json-file
     options:
@@ -12,12 +12,12 @@ x-c_binder_mojo_base: &c_binder_mojo_base
   ports:
     - "5900:5900"
   volumes:
-    - .:/home/c_binder_mojo_user/c_binder_mojo/
-    - ~/.ssh:/home/c_binder_mojo_user/.ssh:rw
-    - c_binder_mojo_vscode_data_cache:/home/c_binder_mojo_user/.vscode-server/data/User/globalStorage:rw
+    - .:/home/mojo_user/c_binder_mojo/
+    - ~/.ssh:/home/mojo_user/.ssh:rw
+    - c_binder_mojo_vscode_data_cache:/home/mojo_user/.vscode-server/data/User/globalStorage:rw
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
   environment:
-    C_BINDING_MOJO_TEST_MUJOCO: /home/c_binder_mojo_user/c_binder_mojo/mujoco_mojo/mujoco
+    C_BINDING_MOJO_TEST_MUJOCO: /home/mojo_user/c_binder_mojo/mujoco_mojo/mujoco
     DISPLAY: host.docker.internal:0
 
 volumes:

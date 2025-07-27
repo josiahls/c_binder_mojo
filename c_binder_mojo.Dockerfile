@@ -1,8 +1,8 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE AS base
 
-ENV CONTAINER_USER c_binder_mojo_user
-ENV CONTAINER_GROUP c_binder_mojo_group
+ENV CONTAINER_USER mojo_user
+ENV CONTAINER_GROUP mojo_group
 ENV CONTAINER_UID 1000
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -68,8 +68,8 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.11 get-pi
 RUN ln -fs /usr/bin/python3.11 /usr/bin/python3
 
 WORKDIR /home/$CONTAINER_USER
-RUN mkdir -p /home/c_binder_mojo_user/.local/lib
-RUN mkdir -p /home/c_binder_mojo_user/.local/bin
+RUN mkdir -p /home/$CONTAINER_USER/.local/lib
+RUN mkdir -p /home/$CONTAINER_USER/.local/bin
 RUN chown $CONTAINER_USER:$CONTAINER_GROUP -R /home/$CONTAINER_USER
 
 USER $CONTAINER_USER
@@ -79,23 +79,14 @@ SHELL [ "/bin/bash", "-c" ]
 ENV SHELL=/bin/bash
 
 
-ENV C_BINDING_MOJO_TEST_MUJOCO="$HOME/mujoco"
-
 # Install pixi and set up PATH in the same layer
-ENV PATH="/home/c_binder_mojo_user/.modular/bin:$PATH"
 RUN curl -fsSL https://pixi.sh/install.sh | sh
+ENV PATH="/home/$CONTAINER_USER/.pixi/bin:/home/$CONTAINER_USER/.modular/bin:$PATH"
 
 # Add pixi completion to bashrc - escape the $() so it's evaluated at runtime
-# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
-RUN echo 'eval "$(pixi completion --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
-# Add bash shell init to the bashrc
-# RUN echo '\n' >> "/home/c_binder_mojo_user/.bashrc"
-RUN echo 'eval "$(pixi shell-hook --shell bash)"' >> "/home/c_binder_mojo_user/.bashrc"
+RUN echo 'eval "$(pixi completion --shell bash)"' >> "/home/$CONTAINER_USER/.bashrc"
 
 WORKDIR /home/$CONTAINER_USER
-COPY pixi.toml .
-
-COPY --chown=$CONTAINER_USER:$CONTAINER_GROUP  . c_binder_mojo
 
 FROM base as build_cpu
 

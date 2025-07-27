@@ -8,9 +8,8 @@ on:
       - fix/generalize-tests
 
 jobs:
-  build:
+  run_tests:
     runs-on: ${{ matrix.runner.RUNNER_NAME }}
-    image: "josiahls/c_binder_mojo-${{ matrix.build_type }}-${{ matrix.runner.PLATFORM }}:latest"
     strategy:
       max-parallel: 2
       matrix:
@@ -26,7 +25,17 @@ jobs:
 
     - name: build, tag, and push image
       run: |
-        echo "Hello, world!"
+        export DOCKER_BUILDKIT=1
+        export COMPOSE_PROFILES=build_${BUILD_TYPE}_${PLATFORM}
+        echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
+
+        if docker compose pull; then
+            echo "Docker Compose pull succeeded."
+        else
+            echo "Docker Compose pull failed."
+        fi
+        
+        docker compose run pixi run test_all
       env:
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

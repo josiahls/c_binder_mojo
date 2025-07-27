@@ -4,27 +4,43 @@ from c_binder_mojo.mojo_ast_nodes.function_decl_node import FunctionDeclNode
 from c_binder_mojo.mojo_ast_nodes.typedef_decl_node import TypedefDeclNode
 
 
-
-
 fn _get_so_lib_path_function() -> String:
     return String("""\n
 @always_inline
 fn _get_lib_path(so_file_name: String) raises -> Path:
     var env_var_name:String = so_file_name.split('.')[0].upper() + '_LIB_PATH'
 
-    if (path := Path('/usr/local/lib') / so_file_name).exists():
-        return path
-    elif (path := Path('/usr/lib') / so_file_name).exists():
-        return path
-    elif (path := Path('/lib') / so_file_name).exists():
-        return path
-    elif (path := Path.home() / '.local' / 'lib' / so_file_name).exists():
-        return path
-    elif (path := Path(getenv(env_var_name)) / so_file_name).exists():
+    var checked_paths: List[Path] = []
+
+    for ld_path in getenv('LD_LIBRARY_PATH').split(':'):
+        if (path := Path(ld_path) / so_file_name).exists():
+            return path
+        checked_paths.append(path)
+
+    var extra_paths: List[Path] = [
+        Path('/usr/local/lib'),
+        Path('/usr/lib'),
+        Path('/lib'),
+        Path(so_file_name),
+        Path.home() / '.local' / 'lib',
+    ]
+
+    for extra_path in extra_paths:
+        if (path := extra_path / so_file_name).exists():
+            return path
+        checked_paths.append(extra_path)
+
+    if (path := Path(getenv(env_var_name)) / so_file_name).exists():
         return path
     else:
+        var msg = String("Could not find library: {0} in any of the following paths: {1} or {2}={3}").format(
+            so_file_name, 
+            String(", ").join(checked_paths), 
+            env_var_name, 
+            getenv(env_var_name)
+        )
         raise Error(
-            'Could not find library: ' + so_file_name + ' in any of the following paths: /usr/local/lib, /usr/lib, /lib, ~/.local/lib, or ' + env_var_name + '=' + getenv(env_var_name)
+            msg
         )
 """)
 

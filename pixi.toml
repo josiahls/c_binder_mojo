@@ -11,9 +11,14 @@ platforms = ["linux-64", "linux-aarch64"]
 version = "0.1.0"
 
 [dependencies]
-max = ">=25.5.0.dev2025062005,<25.5.0.dev2025070105"
+max = ">=25.5.0.dev2025072705"
+
+[activation.env]
+LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 
 [tasks]
+
+
 ################## Test C Project Configuration ##################
 init_test_c_project = { cmd = [
     "cd", "tests/test_c_project", "&&",
@@ -31,26 +36,43 @@ build_test_c_project = { cmd = [
         "tests/test_c_project/build/libtest_c_project.so" 
 ]}
 
-################## Firehose Setup ##################
+
+################## Firehose Configuration ##################
 clone_firehose = { cmd = [
     "bash", "-c", 
     "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
 ]}
 
-configure = { cmd = [
-    "git", "submodule", "update", "--remote",
-], depends-on = [ "clone_firehose" ] }
-
-
-
 ################## Core API ##################
 
 package = "mojo package -I firehose c_binder_mojo"
 generate_bindings = "mojo run -I . -I firehose cli.mojo"
+configure = { cmd = [
+    "git", "submodule", "update", "--remote",
+], depends-on = [ "clone_firehose", "build_test_c_project" ] }
+
+
+################## Testing Configuration ##################
+# Build the c bindings.
+build_test_c_project_bindings = { cmd = [
+    "pixi", "run", "generate_bindings", 
+    "tests/test_c_project/include/simple_type_defs.h",
+    "tests/test_c_project/build",
+    "tests/test_c_project/build/libtest_c_project.so",
+], depends-on = [ "configure" ]}
 
 
 ################## Testing ##################
 
+test_all = { cmd = [
+    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
+], depends-on = [ "configure", "build_test_c_project_bindings" ]}
+
+
+
+
+
+################## Misc ##################
 # Shell commands
 shell = "cd . && pixi shell"
 s = "pixi run shell"
@@ -62,9 +84,6 @@ bt = "pixi run build_test"
 ## Just format the c_binder_mojo src directory, not the tests.
 format = "mojo format c_binder_mojo"
 f = "pixi run format"
-
-## Common testing tasks
-test_all = "mojo test -I . -I tests -I firehose tests"
 
 
 

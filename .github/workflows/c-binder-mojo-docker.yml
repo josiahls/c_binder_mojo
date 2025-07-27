@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - master
-      - fix/generalize-tests
     paths:
       - c_binder_mojo.Dockerfile
       - pixi.lock

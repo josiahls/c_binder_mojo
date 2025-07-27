@@ -17,3 +17,20 @@ Below command will pull all the deps, build them, and run the tests to verify th
 pixi run test_all
 ```
 
+# Usage
+> This is a super early alpha stage right now very likely will not work for usecases beyond what I can develop against (mujoco / opencv). Here be dragons.
+> With that said, here are the core commands to generate a binded c project. 
+
+Reference `tests/test_c_project` for a working example. This should be populated after running `pixi run test_all`.
+
+```bash
+pixi run generate_bindings
+```
+
+```bash
+pixi run package
+```
+
+```bash
+pixi run configure
+```

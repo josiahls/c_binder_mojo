@@ -82,6 +82,11 @@ fn main() raises:
 
     var args = sys.argv()
 
+    for arg in args:
+        if '--help' in arg or '-h' in arg or 'help' in arg:
+            print(HELP_STRING)
+            return
+
     if len(args) < 4:
         var s:String = ""
         for arg in args:

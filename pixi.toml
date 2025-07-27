@@ -43,11 +43,17 @@ clone_firehose = { cmd = [
 
 ################## Core API ##################
 
-package = "mojo package -I firehose c_binder_mojo"
-generate_bindings = "mojo run -I . -I firehose cli.mojo"
 configure = { cmd = [
     "git", "submodule", "update", "--remote",
 ], depends-on = [ "clone_firehose", "build_test_c_project" ] }
+
+generate_bindings = { cmd = [
+    "mojo", "run", "-I", ".", "-I", "firehose", "cli.mojo"
+], depends-on = [ "configure" ]}
+
+package = { cmd = [
+    "mojo", "package", "-I", "firehose", "c_binder_mojo"
+], depends-on = [ "configure" ]}
 
 
 ################## Testing Configuration ##################
@@ -64,7 +70,7 @@ build_test_c_project_bindings = { cmd = [
 
 test_all = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
-], depends-on = [ "configure", "build_test_c_project_bindings" ]}
+], depends-on = [ "build_test_c_project_bindings" ]}
 
 
 

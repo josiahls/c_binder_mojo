@@ -115,15 +115,16 @@ fn main() raises:
         extra_args=extra_args
     )
 
-    var handler_name:String = input_header_path.path.split("/")[-1].split(".")[0]
+    var handler_name = String(input_header_path.path.split("/")[-1].split(".")[0])
     var output_file_path = (output_dir / (input_header_path.path.split("/")[-1].split(".")[0] + ".mojo"))
+    var include_only_prefixes_list = [String(prefix) for prefix in include_only_prefixes.split(",")]
 
     append_to_mojo_file(
         module_interface,
         output_file_path,
         so_file_path,
         handler_name,
-        include_only_prefixes = include_only_prefixes.split(",")
+        include_only_prefixes = include_only_prefixes_list
     )
 
     logger.info("Done")

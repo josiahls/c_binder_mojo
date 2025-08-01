@@ -155,7 +155,7 @@ fn append_to_mojo_file(
     include_private_methods: Bool= False
 ) raises:
     """Append the contents of the shared object file to the mojo file."""
-    var _lib_name:String = lib_name if lib_name != "" else mojo_file.path.split("/")[-1].split(".")[0]
+    var _lib_name:String = lib_name if lib_name != "" else String(mojo_file.path.split("/")[-1].split(".")[0])
     if include_private_methods:
         print('Warning: Some libs such as mujoco seg fault when include_private_methods=True')
 
@@ -171,6 +171,6 @@ fn append_to_mojo_file(
         text += String("\n") + external_declaration.meta_name
 
     text += _get_so_lib_path_function()
-    text += _get_module_dl_handle(_lib_name, so_file.path.split("/")[-1], external_declarations)
+    text += _get_module_dl_handle(_lib_name, String(so_file.path.split("/")[-1]), external_declarations)
 
     mojo_file.write_text(text)

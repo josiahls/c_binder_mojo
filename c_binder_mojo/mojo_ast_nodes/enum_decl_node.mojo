@@ -136,16 +136,12 @@ struct EnumDeclNode(NodeAstLike):
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.get_node(child_idx)
             if child.node[].isa[EnumConstantDeclNode]():
-                # NOTE: getting  warning: assignment to 'field_type' was never used; assign to '_' instead?
-                # Why?
-                var field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
                 var value = child.node[][EnumConstantDeclNode].get_value(module_interface)
                 if value == "":
                     value = String(current_value)
-                    field_type = current_field_type
                     current_value += 1
                     child.node[][EnumConstantDeclNode]._value = value
-                    child.node[][EnumConstantDeclNode]._field_type = field_type
+                    child.node[][EnumConstantDeclNode]._field_type = current_field_type
                 else:
                     try:
                         current_value = Int(value) + 1

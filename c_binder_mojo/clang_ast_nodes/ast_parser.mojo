@@ -223,7 +223,7 @@ struct AstParser:
             + extra_args
         )
         result = run(cmd)
-        return result.split("\n")
+        return [String(line) for line in result.split("\n")]
 
     fn parse(
         self, file_path: Path, extra_args: String = ""
@@ -239,7 +239,8 @@ struct AstParser:
             var is_prev = False
 
             var ast_entry = AstEntry()
-            for token in line.split(" "):
+            for _token in line.split(" "):
+                var token = String(_token)
                 if token.startswith("0x") and ast_entry.mem_address == "":
                     ast_entry.mem_address = token
                 elif token == "parent" and ast_entry.full_location == "":

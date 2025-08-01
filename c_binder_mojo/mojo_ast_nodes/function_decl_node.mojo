@@ -247,7 +247,7 @@ struct FunctionDeclNode(NodeAstLike):
         var is_pointer = False
         var return_type = self._return_type
         if '(' in return_type:
-            return_type = return_type.split('(')[0]
+            return_type = return_type.split('(')[0].copy()
         if '*' in return_type:
             is_pointer = True
             return_type = return_type.replace('*', '')
@@ -265,7 +265,7 @@ struct FunctionDeclNode(NodeAstLike):
         # so we need to manually parse it.
         var return_type = self._return_type
         if '(' in return_type:
-            return_type = return_type.split('(')[0]
+            return_type = String(return_type.split('(')[0])
 
         return_type = TypeMapper.convert_c_type_to_mojo_type(return_type)
 

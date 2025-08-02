@@ -15,6 +15,7 @@ max = ">=25.5.0.dev2025073105"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
+MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
 
 [tasks]
 ################## Test C Project Configuration ##################
@@ -45,7 +46,7 @@ clone_firehose = { cmd = [
 
 update_stdlib = { cmd = [
     "cd", "modular", "&&",
-    "bazelw", "build", "//mojo/stdlib/..."
+    "bazelw", "build", "//mojo/stdlib/stdlib"
 ]}
 
 ################## Core API ##################
@@ -77,7 +78,7 @@ build_test_c_project_bindings = { cmd = [
 
 test_all = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
-], depends-on = [ "build_test_c_project_bindings" ]}
+], depends-on = [ "build_test_c_project_bindings", "update_stdlib" ]}
 
 
 

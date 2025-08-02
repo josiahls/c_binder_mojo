@@ -93,6 +93,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Cache Modular repository
+      uses: actions/cache@v4
+      with:
+        path: modular
+        key: modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-${{ github.sha }}
+        restore-keys: |
+          modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-
+          modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-
+          modular-repo-${{ matrix.runner.PLATFORM }}-
+          modular-repo-
+
     - name: Fix workspace permissions
       run: |
         sudo chown -R 1000:1000 .

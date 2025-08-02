@@ -1,11 +1,11 @@
-[submodule "modular"]
-    path = modular
-    url = https://github.com/modular/modular.git
-    branch = main
-    ignore = all
-
 [submodule "firehose"]
     path = firehose
     url = https://github.com/josiahls/firehose.git
     branch = main
+    ignore = all
+
+[submodule "modular"]
+    path = modular
+    url = https://github.com/josiahls/modular.git
+    branch = josiahls/add-ulong-c-ffi
     ignore = all

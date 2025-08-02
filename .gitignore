@@ -9,4 +9,9 @@
 
 tests/simple_struct_test
 
+# Submodules
 firehose
+modular
+
+# Stdlib build artifacts
+kgen.trace*

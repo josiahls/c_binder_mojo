@@ -15,6 +15,7 @@ max = ">=25.5.0.dev2025073105"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
+MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
 
 [tasks]
 ################## Test C Project Configuration ##################
@@ -41,10 +42,22 @@ clone_firehose = { cmd = [
     "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
 ]}
 
-################## Core API ##################
+################## Mojo Standard Library ##################
+clone_stdlib = { cmd = [
+    "bash", "-c", 
+    "if [ ! -d modular ]; then git clone -b josiahls/add-ulong-c-ffi https://github.com/josiahls/modular.git; else echo 'Modular directory already exists.'; fi"
+]}
 
+update_stdlib = { cmd = [
+    "cd", "modular", "&&",
+    "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
+    "git", "pull", "origin", "josiahls/add-ulong-c-ffi", "&&",
+    "bazelw", "build", "//mojo/stdlib/stdlib"
+], depends-on = [ "clone_stdlib" ]}
+
+################## Core API ##################
 configure = { cmd = [
-    "git", "submodule", "update", "--remote",
+    "echo", "configuring"
 ], depends-on = [ "clone_firehose", "build_test_c_project" ] }
 
 generate_bindings = { cmd = [
@@ -70,7 +83,7 @@ build_test_c_project_bindings = { cmd = [
 
 test_all = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
-], depends-on = [ "build_test_c_project_bindings" ]}
+], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
 
 
 

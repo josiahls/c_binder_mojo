@@ -195,7 +195,6 @@ struct TypeMapper:
             return True
         return False
 
-
     @staticmethod
     fn _has_const_attribute(c_type:String) -> Bool:
         """Evaluate const from right to left. 

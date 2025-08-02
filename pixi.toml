@@ -44,10 +44,15 @@ clone_firehose = { cmd = [
 
 ################## Mojo Standard Library ##################
 
+clone_stdlib = { cmd = [
+    "bash", "-c", 
+    "if [ ! -d modular ]; then git clone https://github.com/max-lang/modular.git; else echo 'Modular directory already exists.'; fi"
+]}
+
 update_stdlib = { cmd = [
     "cd", "modular", "&&",
     "bazelw", "build", "//mojo/stdlib/stdlib"
-]}
+], depends-on = [ "clone_stdlib" ]}
 
 ################## Core API ##################
 

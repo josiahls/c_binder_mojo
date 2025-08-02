@@ -3,3 +3,9 @@
     url = https://github.com/josiahls/firehose.git
     branch = main
     ignore = all
+
+[submodule "modular"]
+    path = modular
+    url = https://github.com/josiahls/modular.git
+    branch = main
+    ignore = all

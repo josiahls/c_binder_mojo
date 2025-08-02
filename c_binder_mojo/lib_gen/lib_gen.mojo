@@ -98,6 +98,7 @@ fn _get_import_statements(
         "from os import abort, getenv, setenv",
         "from python._cpython import ExternalFunction",
         "from pathlib import Path",
+        "from sys import ffi",
     ]
     return String("\n").join(statements) + "\n"
 

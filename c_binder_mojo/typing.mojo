@@ -55,15 +55,24 @@ alias GLOBAL_TYPE_REGISTRY = _Global[
 
 
 alias NUMERIC_TYPES:Dict[String, String] = {
-    # Primitive types
-    "char": "Int8",
-    "short": "Int16",
-    "int": "Int32",
-    "long": "Int64",
-    "long long": "Int128",
-    "long double": "Float64",
-    "float": "Float32",
-    "double": "Float64",
+   # Signed Primitive types
+    "signed char": "Int8",
+    "signed short": "Int16",
+    "signed int": "Int32",
+    "signed long": "ffi.c_long",
+    "signed long long": "ffi.c_long_long",
+    "signed long double": "Float64",
+    "signed float": "Float32",
+    "signed double": "Float64",
+    # Unsigned Primitive types
+    "unsigned char": "Int8",
+    "unsigned short": "Int16",
+    "unsigned int": "Int32",
+    "unsigned long": "Int64",
+    "unsigned long long": "Int128",
+    "unsigned long double": "Float64",
+    "unsigned float": "Float32",
+    "unsigned double": "Float64",
     # Strictly defined types
     "int8_t": "Int8",
     "uint8_t": "UInt8",
@@ -276,15 +285,13 @@ struct TypeMapper:
     fn _convert_signed_type(
         c_type: String,
     ) -> String:
-        stripped_type = String(c_type.removeprefix('signed '))
-        return Self.convert_c_type_to_mojo_type(stripped_type)
+        return Self.convert_c_type_to_mojo_type(c_type)
 
     @staticmethod
     fn _convert_unsigned_type(
         c_type: String,
     ) -> String:
-        stripped_type = String(c_type.removeprefix('unsigned '))
-        return 'U' + Self.convert_c_type_to_mojo_type(stripped_type)
+        return Self.convert_c_type_to_mojo_type(c_type)
 
     @staticmethod
     fn _is_parentheses_wrapped(c_type: String) -> Bool:

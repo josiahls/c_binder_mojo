@@ -93,6 +93,21 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Cache Bazel artifacts
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cache/bazel-disk-cache
+          modular/bazel-bin
+          modular/bazel-out
+          modular/bazel-testlogs
+          modular/bazel-modular
+        key: bazel-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('modular/MODULE.bazel', 'modular/MODULE.bazel.lock', 'modular/.bazelrc', 'modular/bazel/**') }}
+        restore-keys: |
+          bazel-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-
+          bazel-${{ matrix.runner.PLATFORM }}-
+          bazel-
+
     - name: Fix workspace permissions
       run: |
         sudo chown -R 1000:1000 .

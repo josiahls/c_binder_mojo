@@ -17,35 +17,65 @@
 #define mjMAXCONPAIR    50        // maximum number of contacts per geom pair
 
 // Simple type definitions and function declarations for Mojo C bindings
+
+/** Byte types */
+typedef char simple_type_byte; 
+simple_type_byte get_simple_type_byte(simple_type_byte a);
+
+typedef unsigned char simple_type_ubyte; 
+simple_type_ubyte get_simple_type_ubyte(simple_type_ubyte a);
+
+typedef signed char simple_type_sbyte; 
+simple_type_sbyte get_simple_type_sbyte(simple_type_sbyte a);
+
+/** Short types */
+typedef short simple_type_short; 
+simple_type_short get_simple_type_short(simple_type_short a);
+
+typedef unsigned short simple_type_ushort; 
+simple_type_ushort get_simple_type_ushort(simple_type_ushort a);
+
+typedef signed short simple_type_sshort; 
+simple_type_sshort get_simple_type_sshort(simple_type_sshort a);
+
+/** Int types */
 typedef int simple_type_int;
 simple_type_int get_simple_type_int(simple_type_int a);
 
-typedef float simple_type_float;
-simple_type_float get_simple_type_float(simple_type_float a);
-
-typedef double simple_type_double;
-simple_type_double get_simple_type_double(simple_type_double a);
-
-typedef unsigned char simple_type_byte; 
-simple_type_byte get_simple_type_byte(simple_type_byte a);
-
-typedef unsigned short simple_type_short;
-simple_type_short get_simple_type_short(simple_type_short a);
-
 typedef unsigned int simple_type_uint;
-simple_type_uint get_simple_type_uint(simple_type_uint a);
+simple_type_uint get_simple_type_uint(simple_type_uint a); 
 
-typedef long long simple_type_long_long;
-simple_type_long_long get_simple_type_long_long(simple_type_long_long a);
+typedef signed int simple_type_sint;
+simple_type_sint get_simple_type_sint(simple_type_sint a); 
 
+/** Long types */
 typedef long simple_type_long;
 simple_type_long get_simple_type_long(simple_type_long a);
-
-typedef unsigned long long simple_type_ulong_long;
-simple_type_ulong_long get_simple_type_ulong_long(simple_type_ulong_long a);
 
 typedef unsigned long simple_type_ulong;
 simple_type_ulong get_simple_type_ulong(simple_type_ulong a);
 
+typedef signed long simple_type_slong;
+simple_type_slong get_simple_type_slong(simple_type_slong a);
 
+/** Long long types */
+typedef long long simple_type_long_long;
+simple_type_long_long get_simple_type_long_long(simple_type_long_long a);
 
+typedef unsigned long long simple_type_ulong_long;
+simple_type_ulong_long get_simple_type_ulong_long(simple_type_ulong_long a);
+
+typedef signed long long simple_type_slong_long;
+simple_type_slong_long get_simple_type_slong_long(simple_type_slong_long a);
+
+/** Float types */
+typedef float simple_type_float;
+simple_type_float get_simple_type_float(simple_type_float a);
+
+/** Double types */
+typedef double simple_type_double;
+simple_type_double get_simple_type_double(simple_type_double a);
+
+/** Long double types */
+typedef long double simple_type_long_double;
+simple_type_long_double get_simple_type_long_double(simple_type_long_double a);

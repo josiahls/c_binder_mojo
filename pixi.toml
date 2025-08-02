@@ -43,21 +43,24 @@ clone_firehose = { cmd = [
 ]}
 
 ################## Mojo Standard Library ##################
-
 clone_stdlib = { cmd = [
     "bash", "-c", 
-    "if [ ! -d modular ]; then git clone https://github.com/josiahls/modular.git; else echo 'Modular directory already exists.'; fi"
+    "if [ ! -d modular ]; then git clone -b josiahls/add-ulong-c-ffi https://github.com/josiahls/modular.git; else echo 'Modular directory already exists.'; fi"
 ]}
+
+stdlib_configure = { cmd = [
+    "bash", "-c",
+    "cd modular && git checkout josiahls/add-ulong-c-ffi && git pull origin josiahls/add-ulong-c-ffi"
+], depends-on = [ "clone_stdlib" ]}
 
 update_stdlib = { cmd = [
     "cd", "modular", "&&",
     "bazelw", "build", "//mojo/stdlib/stdlib"
-], depends-on = [ "clone_stdlib" ]}
+], depends-on = [ "stdlib_configure" ]}
 
 ################## Core API ##################
-
 configure = { cmd = [
-    "git", "submodule", "update", "--remote",
+    "echo", "configuring"
 ], depends-on = [ "clone_firehose", "build_test_c_project" ] }
 
 generate_bindings = { cmd = [

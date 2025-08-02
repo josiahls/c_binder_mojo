@@ -18,7 +18,7 @@ LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
 
 [tasks]
-################## Test C Project Configuration ##################
+######################## Test C Project Configuration #########################
 init_test_c_project = { cmd = [
     "cd", "tests/test_c_project", "&&",
     "mkdir", "-p", "build", "&&",
@@ -36,13 +36,13 @@ build_test_c_project = { cmd = [
 ]}
 
 
-################## Firehose Configuration ##################
+########################### Firehose Configuration ############################
 clone_firehose = { cmd = [
     "bash", "-c", 
     "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
 ]}
 
-################## Mojo Standard Library ##################
+########################## Mojo Standard Library ##############################
 clone_stdlib = { cmd = [
     "bash", "-c", 
     "if [ ! -d modular ]; then git clone -b josiahls/add-ulong-c-ffi https://github.com/josiahls/modular.git; else echo 'Modular directory already exists.'; fi"
@@ -55,7 +55,7 @@ update_stdlib = { cmd = [
     "bazelw", "build", "//mojo/stdlib/stdlib"
 ], depends-on = [ "clone_stdlib" ]}
 
-################## Core API ##################
+######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
 ], depends-on = [ "clone_firehose", "build_test_c_project" ] }
@@ -69,7 +69,7 @@ package = { cmd = [
 ], depends-on = [ "configure" ]}
 
 
-################## Testing Configuration ##################
+######################### Testing Configuration ###############################
 # Build the c bindings.
 build_test_c_project_bindings = { cmd = [
     "pixi", "run", "generate_bindings", 
@@ -79,15 +79,8 @@ build_test_c_project_bindings = { cmd = [
 ], depends-on = [ "configure" ]}
 
 
-################## Testing ##################
+######################### Testing #############################################
 
 test_all = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
 ], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
-
-
-
-
-
-
-

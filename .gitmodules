@@ -7,5 +7,5 @@
 [submodule "modular"]
     path = modular
     url = https://github.com/josiahls/modular.git
-    branch = main
+    branch = josiahls/add-ulong-c-ffi
     ignore = all

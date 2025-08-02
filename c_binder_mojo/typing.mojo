@@ -302,7 +302,6 @@ struct TypeMapper:
     ) -> String:
         if not c_type.startswith("unsigned "):
             var unsigned_type = String("unsigned ") + c_type.copy()
-            print("unsigned_type: " + unsigned_type)
             return Self.convert_c_type_to_mojo_type(unsigned_type)
         return Self.convert_c_type_to_mojo_type(c_type)
 

@@ -48,15 +48,12 @@ clone_stdlib = { cmd = [
     "if [ ! -d modular ]; then git clone -b josiahls/add-ulong-c-ffi https://github.com/josiahls/modular.git; else echo 'Modular directory already exists.'; fi"
 ]}
 
-stdlib_configure = { cmd = [
-    "bash", "-c",
-    "cd modular && git checkout josiahls/add-ulong-c-ffi && git pull origin josiahls/add-ulong-c-ffi"
-], depends-on = [ "clone_stdlib" ]}
-
 update_stdlib = { cmd = [
     "cd", "modular", "&&",
+    "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
+    "git", "pull", "origin", "josiahls/add-ulong-c-ffi", "&&",
     "bazelw", "build", "//mojo/stdlib/stdlib"
-], depends-on = [ "stdlib_configure" ]}
+], depends-on = [ "clone_stdlib" ]}
 
 ################## Core API ##################
 configure = { cmd = [

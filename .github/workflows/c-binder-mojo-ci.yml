@@ -93,20 +93,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Cache Bazel artifacts
+    - name: Cache Modular repository
       uses: actions/cache@v4
       with:
-        path: |
-          ~/.cache/bazel-disk-cache
-          modular/bazel-bin
-          modular/bazel-out
-          modular/bazel-testlogs
-          modular/bazel-modular
-        key: bazel-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('modular/MODULE.bazel', 'modular/MODULE.bazel.lock', 'modular/.bazelrc', 'modular/bazel/**') }}
+        path: modular
+        key: modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-${{ github.sha }}
         restore-keys: |
-          bazel-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-
-          bazel-${{ matrix.runner.PLATFORM }}-
-          bazel-
+          modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-
+          modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-
+          modular-repo-${{ matrix.runner.PLATFORM }}-
+          modular-repo-
 
     - name: Fix workspace permissions
       run: |
@@ -123,8 +119,6 @@ jobs:
         else
             echo "Docker Compose pull failed."
         fi
-
-        echo $(ls modular)
         
         docker compose run --rm c_binder_mojo_${COMPOSE_PROFILES} bash -l -c "pixi run test_all"
       env:

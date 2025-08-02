@@ -51,8 +51,17 @@ clone_stdlib = { cmd = [
 
 update_stdlib = { cmd = [
     "cd", "modular", "&&",
+    "git", "fetch", "origin", "&&",
     "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
     "git", "pull", "origin", "josiahls/add-ulong-c-ffi", "&&",
+    "bazelw", "build", "//mojo/stdlib/stdlib"
+], depends-on = [ "clone_stdlib" ]}
+
+clean_update_stdlib = { cmd = [
+    "cd", "modular", "&&",
+    "git", "fetch", "origin", "&&",
+    "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
+    "git", "reset", "--hard", "origin/josiahls/add-ulong-c-ffi", "&&",
     "bazelw", "build", "//mojo/stdlib/stdlib"
 ], depends-on = [ "clone_stdlib" ]}
 
@@ -85,3 +94,7 @@ build_test_c_project_bindings = { cmd = [
 test_all = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
 ], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
+
+test_all_clean = { cmd = [
+    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
+], depends-on = [ "clean_update_stdlib", "build_test_c_project_bindings" ]}

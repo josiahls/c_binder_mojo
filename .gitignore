@@ -12,6 +12,7 @@ tests/simple_struct_test
 # Submodules
 firehose
 modular
+EmberJson
 
 # Stdlib build artifacts
 kgen.trace*

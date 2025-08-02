@@ -46,7 +46,7 @@ clone_firehose = { cmd = [
 
 clone_stdlib = { cmd = [
     "bash", "-c", 
-    "if [ ! -d modular ]; then git clone https://github.com/max-lang/modular.git; else echo 'Modular directory already exists.'; fi"
+    "if [ ! -d modular ]; then git clone https://github.com/josiahls/modular.git; else echo 'Modular directory already exists.'; fi"
 ]}
 
 update_stdlib = { cmd = [

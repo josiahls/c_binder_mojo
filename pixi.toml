@@ -43,6 +43,12 @@ clone_firehose = { cmd = [
     "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
 ]}
 
+########################### EmberJson Configuration ############################
+clone_emberjson = { cmd = [
+    "bash", "-c", 
+    "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
+]}
+
 ########################## Mojo Standard Library ##############################
 clone_stdlib = { cmd = [
     "bash", "-c", 
@@ -68,14 +74,14 @@ clean_update_stdlib = { cmd = [
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
-], depends-on = [ "clone_firehose", "build_test_c_project" ] }
+], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project" ] }
 
 generate_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "-I", "firehose", "cli.mojo"
+    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "cli.mojo"
 ], depends-on = [ "configure" ]}
 
 package = { cmd = [
-    "mojo", "package", "-I", "firehose", "c_binder_mojo"
+    "mojo", "package", "-I", "firehose", "-I", "EmberJson", "c_binder_mojo"
 ], depends-on = [ "configure" ]}
 
 
@@ -92,9 +98,9 @@ build_test_c_project_bindings = { cmd = [
 ######################### Testing #############################################
 
 test_all = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
+    "bash", "tests/run_tests.sh"
 ], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
 
 test_all_clean = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
+    "bash", "tests/run_tests.sh"
 ], depends-on = [ "clean_update_stdlib", "build_test_c_project_bindings" ]}

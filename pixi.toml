@@ -11,7 +11,7 @@ platforms = ["linux-64", "linux-aarch64"]
 version = "0.1.0"
 
 [dependencies]
-max = ">=25.5.0.dev2025073105"
+modular = ">=25.6.0.dev2025080116,<26"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
@@ -45,8 +45,15 @@ clone_firehose = { cmd = [
 ########################## Mojo Standard Library ##############################
 clone_stdlib = { cmd = [
     "bash", "-c", 
-    "if [ ! -d modular ]; then git clone -b josiahls/add-ulong-c-ffi https://github.com/josiahls/modular.git; else echo 'Modular directory already exists.'; fi"
+    "if [ ! -d modular ]; then git clone https://github.com/max-lang/modular.git; else echo 'Modular directory already exists.'; fi"
 ]}
+
+update_stdlib = { cmd = [
+    "cd", "modular", "&&",
+    "bazelw", "build", "//mojo/stdlib/stdlib"
+], depends-on = [ "clone_stdlib" ]}
+
+################## Core API ##################
 
 update_stdlib = { cmd = [
     "cd", "modular", "&&",

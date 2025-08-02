@@ -41,6 +41,13 @@ clone_firehose = { cmd = [
     "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
 ]}
 
+################## Mojo Standard Library ##################
+
+update_stdlib = { cmd = [
+    "cd", "modular", "&&",
+    "bazelw", "build", "//mojo/stdlib/..."
+]}
+
 ################## Core API ##################
 
 configure = { cmd = [

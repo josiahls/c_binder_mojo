@@ -95,9 +95,10 @@ fn _get_import_statements(
 
     statements: List[String] = [
         "from sys.ffi import DLHandle",
+        "from sys import ffi",
         "from os import abort, getenv, setenv",
         "from python._cpython import ExternalFunction",
-        "from pathlib import Path",
+        "from pathlib import Path"
     ]
     return String("\n").join(statements) + "\n"
 

@@ -31,9 +31,7 @@ build_test_c_project = { cmd = [
         "make",
     ], depends-on = [
         "init_test_c_project"
-    ],  outputs = [
-        "tests/test_c_project/build/libtest_c_project.so" 
-]}
+    ]}
 
 
 ########################### Firehose Configuration ############################

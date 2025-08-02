@@ -1,7 +1,8 @@
 {
     "mojo.lsp.includeDirs": [
-        "c_binder_mojo",
-        "firehose",
-        "modular/mojo/stdlib/stdlib"
-    ]
+        "/home/mojo_user/c_binder_mojo",
+        "/home/mojo_user/c_binder_mojo/firehose",
+        "/home/mojo_user/c_binder_mojo/tests",
+        "/home/mojo_user/c_binder_mojo/EmberJson"
+    ],
 } 

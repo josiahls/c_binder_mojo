@@ -56,8 +56,16 @@ update_stdlib = { cmd = [
 
 ################## Core API ##################
 
+update_stdlib = { cmd = [
+    "cd", "modular", "&&",
+    "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
+    "git", "pull", "origin", "josiahls/add-ulong-c-ffi", "&&",
+    "bazelw", "build", "//mojo/stdlib/stdlib"
+], depends-on = [ "clone_stdlib" ]}
+
+################## Core API ##################
 configure = { cmd = [
-    "git", "submodule", "update", "--remote",
+    "echo", "configuring"
 ], depends-on = [ "clone_firehose", "build_test_c_project" ] }
 
 generate_bindings = { cmd = [

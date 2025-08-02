@@ -123,6 +123,8 @@ jobs:
         else
             echo "Docker Compose pull failed."
         fi
+
+        echo $(ls modular)
         
         docker compose run --rm c_binder_mojo_${COMPOSE_PROFILES} bash -l -c "pixi run test_all"
       env:

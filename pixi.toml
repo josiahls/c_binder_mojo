@@ -78,7 +78,7 @@ build_test_c_project_bindings = { cmd = [
 
 test_all = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
-], depends-on = [ "build_test_c_project_bindings", "update_stdlib" ]}
+], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
 
 
 

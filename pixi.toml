@@ -80,7 +80,7 @@ install_pre_commit_hooks = { cmd = [
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
-], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
+], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks", "update_stdlib" ] }
 
 generate_bindings = { cmd = [
     "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "cli.mojo"
@@ -89,7 +89,6 @@ generate_bindings = { cmd = [
 package = { cmd = [
     "mojo", "package", "-I", "firehose", "-I", "EmberJson", "c_binder_mojo"
 ], depends-on = [ "configure" ]}
-
 
 format = { cmd = [
     "mojo", "format", "c_binder_mojo"

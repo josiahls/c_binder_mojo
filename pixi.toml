@@ -75,12 +75,12 @@ clean_update_stdlib = { cmd = [
 ######################### Pre-commit Configuration ##########################
 install_pre_commit_hooks = { cmd = [
     "pre-commit", "install"
-]}
+], outputs = [".git/hooks/pre-commit"]}
 
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
-], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project" ] }
+], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
 
 generate_bindings = { cmd = [
     "mojo", "run", "-I", ".", "-I", "firehose", "-I", "emberjson", "cli.mojo"

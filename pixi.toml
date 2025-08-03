@@ -15,6 +15,7 @@ repository = "https://github.com/josiahls/c_binder_mojo"
 
 [dependencies]
 mojo = ">=25.6.0.dev2025080116"
+pre-commit = ">=4.2.0,<5"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
@@ -71,17 +72,22 @@ clean_update_stdlib = { cmd = [
     "bazelw", "build", "//mojo/stdlib/stdlib"
 ], depends-on = [ "clone_stdlib" ]}
 
+######################### Pre-commit Configuration ##########################
+install_pre_commit_hooks = { cmd = [
+    "pre-commit", "install"
+]}
+
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
 ], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project" ] }
 
 generate_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "cli.mojo"
+    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "emberjson", "cli.mojo"
 ], depends-on = [ "configure" ]}
 
 package = { cmd = [
-    "mojo", "package", "-I", "firehose", "-I", "EmberJson", "c_binder_mojo"
+    "mojo", "package", "-I", "firehose", "-I", "emberjson", "c_binder_mojo"
 ], depends-on = [ "configure" ]}
 
 
@@ -99,8 +105,12 @@ build_test_c_project_bindings = { cmd = [
 
 test_all = { cmd = [
     "bash", "tests/run_tests.sh"
+], depends-on = [ "build_test_c_project_bindings" ]}
+
+test_all_stdlib = { cmd = [
+    "bash", "tests/run_tests.sh"
 ], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
 
-test_all_clean = { cmd = [
+test_all_stdlib_clean = { cmd = [
     "bash", "tests/run_tests.sh"
 ], depends-on = [ "clean_update_stdlib", "build_test_c_project_bindings" ]}

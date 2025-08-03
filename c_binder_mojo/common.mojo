@@ -91,7 +91,9 @@ struct TokenFlow:
 
     alias END_FILE = MessageableEnum(5, "END_FILE")  # End of file
 
-    alias PASS_TO_INSERTED_NODE = MessageableEnum(6, "PASS_TO_INSERTED_NODE")  # Pass token to inserted node
+    alias PASS_TO_INSERTED_NODE = MessageableEnum(
+        6, "PASS_TO_INSERTED_NODE"
+    )  # Pass token to inserted node
 
 
 struct CTokens:
@@ -333,7 +335,7 @@ struct TokenBundle(EqualityComparable & Stringable & Copyable & Movable):
 
 
 @fieldwise_init
-struct TokenBundles(Stringable, Sized, Copyable, Movable):
+struct TokenBundles(Copyable, Movable, Sized, Stringable):
     """A collection of TokenBundle objects with list-like operations.
 
     This struct provides a container for multiple TokenBundles with standard
@@ -484,7 +486,6 @@ struct Tokenizer(Copyable, Movable):
         for char in self.ISOLATED_TOKEN_CHARS:
             _line = _line.replace(char, " " + char + " ")
         return _line.split(" ")
-
 
     fn tokenize(mut self, path: Path) raises -> None:
         """Tokenize an entire source file.

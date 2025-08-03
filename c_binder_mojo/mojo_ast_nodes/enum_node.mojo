@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -20,7 +19,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-
 
 
 @fieldwise_init
@@ -53,12 +51,13 @@ struct EnumNode(NodeAstLike):
             if section_idx == 0:
                 self._parse_unhandled_section(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1 : idx])
             elif section_idx == 2:
-                self._parse_unhandled_section(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_unhandled_section(
+                    ast_entry.tokens[start_idx + 1 : idx]
+                )
             else:
                 print("EnumNode: Unhandled section: " + String(section_idx))
-
 
             start_idx = idx
             section_idx += 1

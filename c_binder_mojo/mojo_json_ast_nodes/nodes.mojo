@@ -1,0 +1,142 @@
+from emberjson import Object
+from memory import ArcPointer
+from c_binder_mojo.mojo_json_ast_nodes.node_variant import Variant
+
+
+trait JsonNodeAstLike(Copyable & Movable):
+    alias __name__: String
+
+    @staticmethod
+    fn accept_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Bool:
+        pass
+
+    @staticmethod
+    fn create_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> JsonAstNode:
+        pass
+
+
+struct PlaceHolderNode(JsonNodeAstLike):
+    alias __name__ = "PlaceHolder"
+
+    fn __init__(out self):
+        pass
+
+    @staticmethod
+    fn accept_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Bool:
+        return True
+
+    @staticmethod
+    fn create_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> JsonAstNode:
+        return JsonAstNode(PlaceHolderNode())
+
+
+struct TranslationUnitDeclNode(JsonNodeAstLike):
+    alias __name__ = "TranslationUnitDecl"
+
+    fn __init__(out self):
+        pass
+
+    @staticmethod
+    fn accept_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Bool:
+        return True
+
+    @staticmethod
+    fn create_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> JsonAstNode:
+        return JsonAstNode(TranslationUnitDeclNode())
+
+
+struct ExampleNode(JsonNodeAstLike):
+    alias __name__ = "Example"
+
+    fn __init__(out self):
+        pass
+
+    @staticmethod
+    fn accept_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Bool:
+        return True
+
+    @staticmethod
+    fn create_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> JsonAstNode:
+        return JsonAstNode(ExampleNode())
+
+
+alias JsonAstNodeVariant = Variant[
+    TranslationUnitDeclNode,
+    PlaceHolderNode,  # Placeholder must be the last node
+    ExampleNode,
+]
+
+
+struct JsonAstNode(Copyable & Movable):
+    alias __name__ = "JsonAstNode"
+    alias type = JsonAstNodeVariant
+    var node: ArcPointer[Self.type]
+
+    fn __init__(out self, node: Self.type):
+        self.node = ArcPointer[Self.type](node)
+
+    fn __copyinit__(out self, other: Self):
+        self.node = other.node
+
+    fn __moveinit__(out self, owned other: Self):
+        self.node = other.node^
+
+    @always_inline("nodebug")
+    @staticmethod
+    fn accept_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Self:
+        """
+        Iterates over each type in the variant at compile-time and calls accept.
+        """
+
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if T.accept_from_json_object(json_object, level):
+                return T.create_from_json_object(json_object, level)
+        print(
+            "WARNING: none of the nodes accepted the json_object: "
+            + String(json_object["kind"].string())
+        )
+        return PlaceHolderNode.create_from_json_object(json_object, level)
+
+    @always_inline("nodebug")
+    @staticmethod
+    fn create_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Self:
+        """
+        Iterates over each type in the variant at compile-time and calls accept.
+        """
+
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return (
+                    self.node[]
+                    ._get_ptr[T]()[]
+                    .create_from_json_object(json_object, level)
+                )
+        print(
+            "WARNING: none of the nodes accepted the json_object: "
+            + String(json_object["kind"].string())
+        )
+        return PlaceHolderNode.create_from_json_object(json_object, level)

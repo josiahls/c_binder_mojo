@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -22,7 +21,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 @fieldwise_init
 struct VisibilityAttrNode(NodeAstLike):
     alias __name__ = "VisibilityAttrNode"
@@ -33,7 +31,7 @@ struct VisibilityAttrNode(NodeAstLike):
 
     var _visibility_type: String
     var _unhandled_tokens: String
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -55,7 +53,7 @@ struct VisibilityAttrNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        # NOTE(josiahls): Critical to change, needs to be 
+        # NOTE(josiahls): Critical to change, needs to be
         return ast_entries.ast_name == String(Self.__name__)[:-4]
 
     @staticmethod

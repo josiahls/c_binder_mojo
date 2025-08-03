@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -36,7 +35,7 @@ struct TranslationUnitDeclNode(NodeAstLike):
         self._ast_entries[].append(ast_entry)
         self._node_state = NodeState.COMPLETED
         self._translation_unit_decl_level = ast_entry.level
-    
+
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -120,5 +119,5 @@ struct TranslationUnitDeclNode(NodeAstLike):
             indent_level=parent_indent_level,
             newline_before_ast_entries=just_code,
             newline_after_tail=True,
-            indent_before_ast_entries=True
+            indent_before_ast_entries=True,
         )

@@ -44,7 +44,7 @@ from sys.intrinsics import _type_is_eq
 
 from memory import UnsafePointer
 
-from c_binder_mojo.mojo_ast_nodes.nodes import NodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonNodeAstLike
 
 # ===----------------------------------------------------------------------=== #
 # Utilities
@@ -62,7 +62,7 @@ fn _align_up(value: Int, alignment: Int) -> Int:
 # ===----------------------------------------------------------------------=== #
 
 
-struct Variant[*Ts: NodeAstLike](Copyable & Movable, ExplicitlyCopyable):
+struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
     """A runtime-variant type.
 
     Data for this type is stored internally. Currently, its size is the

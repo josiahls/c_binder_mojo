@@ -22,7 +22,6 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.typing import TypeMapper, MOJO_FUNCTIONS
 
 
-
 @fieldwise_init
 struct FunctionDeclNode(NodeAstLike):
     alias __name__ = "FunctionDeclNode"
@@ -72,12 +71,10 @@ struct FunctionDeclNode(NodeAstLike):
         self._return_type_is_const = False
         self._return_type_is_volatile = False
         self._return_type_is_restrict = False
-        
 
         self.unhandled_tokens = String()
 
         # TODO(josiahls): Need to handle multiple declarations. e.g. strtoull
-        
 
         var start_idx, end_idx = self._start_end_quotes(ast_entries.tokens)
 
@@ -89,7 +86,7 @@ struct FunctionDeclNode(NodeAstLike):
             else:
                 self.unhandled_tokens += " " + entry
 
-        for entry in ast_entries.tokens[start_idx + 1:end_idx]:
+        for entry in ast_entries.tokens[start_idx + 1 : end_idx]:
             if entry.startswith("("):
                 break
             # elif entry == "unsigned":
@@ -105,16 +102,20 @@ struct FunctionDeclNode(NodeAstLike):
             else:
                 self._return_type += " " + entry
 
-        for entry in ast_entries.tokens[end_idx + 1:]:
+        for entry in ast_entries.tokens[end_idx + 1 :]:
             if entry == "extern":
                 self._is_external = True
             else:
                 self.unhandled_tokens += " " + entry
 
         if self.unhandled_tokens != "":
-            self.unhandled_tokens = "# Unhandled tokens: " + self.unhandled_tokens
+            self.unhandled_tokens = (
+                "# Unhandled tokens: " + self.unhandled_tokens
+            )
 
-    fn _start_end_quotes(mut self, read tokens: List[String]) -> Tuple[Int, Int]:
+    fn _start_end_quotes(
+        mut self, read tokens: List[String]
+    ) -> Tuple[Int, Int]:
         var start_idx = -1
         var end_idx = -1
         var idx = -1
@@ -126,13 +127,18 @@ struct FunctionDeclNode(NodeAstLike):
             elif token.endswith("'") and end_idx == -1:
                 end_idx = idx
             elif token.endswith("'"):
-                print("ParmVarDeclNode: Unhandled token: " + token + " from " + String(' ').join(tokens))
+                print(
+                    "ParmVarDeclNode: Unhandled token: "
+                    + token
+                    + " from "
+                    + String(" ").join(tokens)
+                )
 
         if end_idx == -1:
             start_idx = 0
             end_idx = len(tokens) - 1
         return (start_idx, end_idx)
-    
+
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -171,14 +177,21 @@ struct FunctionDeclNode(NodeAstLike):
                 self.disable_previous_declarations(module_interface)
             if self._function_name in MOJO_FUNCTIONS:
                 self.disable()
-            
+
             self._node_state = NodeState.COMPLETED
 
-    fn disable_previous_declarations(self, mut module_interface: ModuleInterface):
+    fn disable_previous_declarations(
+        self, mut module_interface: ModuleInterface
+    ):
         for node in module_interface.nodes()[]:
             if node.node[].isa[FunctionDeclNode]():
                 # TODO(josiahls): Should add an equality function so that we only duplicate, not overloaded function defitiions.
-                if node.node[][FunctionDeclNode]._function_name == self._function_name and node.node[][FunctionDeclNode]._mem_address != self._mem_address:
+                if (
+                    node.node[][FunctionDeclNode]._function_name
+                    == self._function_name
+                    and node.node[][FunctionDeclNode]._mem_address
+                    != self._mem_address
+                ):
                     node.node[][FunctionDeclNode].disable()
 
     fn disable(mut self):
@@ -219,21 +232,31 @@ struct FunctionDeclNode(NodeAstLike):
         else:
             return self.__name__
 
-    fn parm_var_decl_to_strings(self, just_code: Bool, module_interface: ModuleInterface, parent_indent_level: Int = 0) -> List[String]:
+    fn parm_var_decl_to_strings(
+        self,
+        just_code: Bool,
+        module_interface: ModuleInterface,
+        parent_indent_level: Int = 0,
+    ) -> List[String]:
         var strings = List[String]()
         var is_tracking_positional = False
         for child in self.indicies().child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[ParmVarDeclNode]():
                 try:
-                    s = node.to_string(just_code, module_interface, parent_indent_level)
+                    s = node.to_string(
+                        just_code, module_interface, parent_indent_level
+                    )
 
-                    if is_tracking_positional and not node.node[][ParmVarDeclNode]._is_positional:
+                    if (
+                        is_tracking_positional
+                        and not node.node[][ParmVarDeclNode]._is_positional
+                    ):
                         strings.append("/")
                         is_tracking_positional = False
 
                     strings.append(String(s))
-                    
+
                     if node.node[][ParmVarDeclNode]._is_positional:
                         is_tracking_positional = True
                 except e:
@@ -246,11 +269,11 @@ struct FunctionDeclNode(NodeAstLike):
     fn parse_return_type(self) -> Tuple[String, Bool]:
         var is_pointer = False
         var return_type = self._return_type
-        if '(' in return_type:
-            return_type = return_type.split('(')[0].copy()
-        if '*' in return_type:
+        if "(" in return_type:
+            return_type = return_type.split("(")[0].copy()
+        if "*" in return_type:
             is_pointer = True
-            return_type = return_type.replace('*', '')
+            return_type = return_type.replace("*", "")
         return_type = String(return_type.strip())
         return (return_type, is_pointer)
 
@@ -260,12 +283,11 @@ struct FunctionDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
         # TODO(josiahls): This is annoying. Clang does not support decomposing the return type,
         # so we need to manually parse it.
         var return_type = self._return_type
-        if '(' in return_type:
-            return_type = String(return_type.split('(')[0])
+        if "(" in return_type:
+            return_type = String(return_type.split("(")[0])
 
         return_type = TypeMapper.convert_c_type_to_mojo_type(return_type)
 
@@ -273,12 +295,24 @@ struct FunctionDeclNode(NodeAstLike):
         if function_name == "":
             function_name = "anonymous_function"
 
-        var parm_var_strings = self.parm_var_decl_to_strings(just_code, module_interface, parent_indent_level)
+        var parm_var_strings = self.parm_var_decl_to_strings(
+            just_code, module_interface, parent_indent_level
+        )
 
-        var function_sig = "fn" + "(" + String(", ").join(parm_var_strings) + ") -> " + return_type
+        var function_sig = (
+            "fn"
+            + "("
+            + String(", ").join(parm_var_strings)
+            + ") -> "
+            + return_type
+        )
         var function_decl = "alias " + function_name + " = " + function_sig
 
         if self._is_disabled:
-            function_decl = " # Disabled either due to a redefinition or a previous declaration: " + function_decl
+            function_decl = (
+                " # Disabled either due to a redefinition or a previous"
+                " declaration: "
+                + function_decl
+            )
 
         return function_decl + "\n"

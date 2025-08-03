@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -35,7 +34,7 @@ struct FunctionProtoTypeNode(NodeAstLike):
     var _node_state: MessageableEnum
 
     var _unhandled_tokens: String
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -45,7 +44,6 @@ struct FunctionProtoTypeNode(NodeAstLike):
 
         # NOTE: I think clang decomposes FunctionProtoTypes into individual nodes.
         # so we should not need to parse anything here.
-
 
     @staticmethod
     fn accept(
@@ -126,39 +124,58 @@ struct FunctionProtoTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
-        var s:String = "fn("
-        var return_type:String = ""
+        var s: String = "fn("
+        var return_type: String = ""
         var params = List[String]()
 
-        var error_msg:String = ""
+        var error_msg: String = ""
 
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.nodes()[][child_idx]
             if child.node[].isa[BuiltinTypeNode]():
                 if return_type == "":
-                    return_type = child.to_string(just_code, module_interface, parent_indent_level + 1)
+                    return_type = child.to_string(
+                        just_code, module_interface, parent_indent_level + 1
+                    )
                 else:
-                    params.append(child.to_string(just_code, module_interface, parent_indent_level + 1))
+                    params.append(
+                        child.to_string(
+                            just_code, module_interface, parent_indent_level + 1
+                        )
+                    )
             elif child.node[].isa[PointerTypeNode]():
                 if return_type == "":
-                    return_type = child.to_string(just_code, module_interface, parent_indent_level + 1)
+                    return_type = child.to_string(
+                        just_code, module_interface, parent_indent_level + 1
+                    )
                 else:
-                    params.append(child.to_string(just_code, module_interface, parent_indent_level + 1))
+                    params.append(
+                        child.to_string(
+                            just_code, module_interface, parent_indent_level + 1
+                        )
+                    )
             elif child.node[].isa[TypedefTypeNode]():
                 # TODO(josiahls): I'm not sure if this is right. I think we need to search `module_interface` for the type.
                 # We are not trying to define it, we are trying to reference it.
                 if return_type == "":
-                    return_type = child.to_string(just_code, module_interface, parent_indent_level + 1)
+                    return_type = child.to_string(
+                        just_code, module_interface, parent_indent_level + 1
+                    )
                 else:
-                    params.append(child.to_string(just_code, module_interface, parent_indent_level + 1))
+                    params.append(
+                        child.to_string(
+                            just_code, module_interface, parent_indent_level + 1
+                        )
+                    )
             else:
-                error_msg = "FunctionProtoTypeNode: Unknown child type: " + child.name()
+                error_msg = (
+                    "FunctionProtoTypeNode: Unknown child type: " + child.name()
+                )
 
         if error_msg != "":
-            s += '\n' + error_msg
+            s += "\n" + error_msg
 
-        s += String(',').join(params)
+        s += String(",").join(params)
         s += ")"
         s += " -> " + return_type
 

@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -22,7 +21,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 @fieldwise_init
 struct ModeAttrNode(NodeAstLike):
     alias __name__ = "ModeAttrNode"
@@ -31,7 +29,7 @@ struct ModeAttrNode(NodeAstLike):
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
     var _mode: String
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -51,7 +49,7 @@ struct ModeAttrNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        # NOTE(josiahls): Critical to change, needs to be 
+        # NOTE(josiahls): Critical to change, needs to be
         return ast_entries.ast_name == String(Self.__name__)[:-4]
 
     @staticmethod
@@ -124,5 +122,10 @@ struct ModeAttrNode(NodeAstLike):
         just_code: Bool,
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
-        ) raises -> String:
-        return  " # TODO(josiahls): c_binder_mojo does not support mode attributes yet: mode_attr_node: mode: " + self._mode + "\n"
+    ) raises -> String:
+        return (
+            " # TODO(josiahls): c_binder_mojo does not support mode attributes"
+            " yet: mode_attr_node: mode: "
+            + self._mode
+            + "\n"
+        )

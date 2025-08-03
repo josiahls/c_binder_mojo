@@ -104,9 +104,7 @@ struct RootNode(NodeAstLike):
         imports = List[String]()
         # for custom_type in get_global_type_mapper()[].custom_types:
         #     imports.append("from " + custom_type[] + " import " + custom_type[])
-        imports.append(
-            "from sys.ffi import _Global"
-        )
+        imports.append("from sys.ffi import _Global")
         imports.append("from sys import ffi, alignof, simdwidthof")
         imports.append("from utils import StaticTuple")
 

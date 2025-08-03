@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -67,7 +66,6 @@ struct ElaboratedTypeNode(NodeAstLike):
             if token == "sugar":
                 self._is_sugar = True
 
-
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -101,27 +99,42 @@ struct ElaboratedTypeNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             pass
         else:
-            self._aliased_record_name = self.get_aliased_record_name(module_interface)
+            self._aliased_record_name = self.get_aliased_record_name(
+                module_interface
+            )
             self._node_state = NodeState.COMPLETED
 
-    fn get_aliased_record_name(self, module_interface: ModuleInterface) -> String:
+    fn get_aliased_record_name(
+        self, module_interface: ModuleInterface
+    ) -> String:
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[RecordTypeNode]():
                 # TODO(josiahls): Why don't we just return the string version here?
-                optional_node = node.node[][RecordTypeNode].get_aliased_record_decl(module_interface)
+                optional_node = node.node[][
+                    RecordTypeNode
+                ].get_aliased_record_decl(module_interface)
                 if optional_node:
                     try:
-                        return optional_node[].node[][RecordDeclNode]._record_name 
+                        return (
+                            optional_node[].node[][RecordDeclNode]._record_name
+                        )
                     except e:
-                        print('ElaboratedTypeNode: Unhandled node type: ' + String(e))
+                        print(
+                            "ElaboratedTypeNode: Unhandled node type: "
+                            + String(e)
+                        )
             elif node.node[].isa[EnumTypeNode]():
                 try:
-                    return node.node[][EnumTypeNode].to_string(True, module_interface, 0)
+                    return node.node[][EnumTypeNode].to_string(
+                        True, module_interface, 0
+                    )
                 except e:
-                    print('ElaboratedTypeNode: Unhandled node type: ' + String(e))
+                    print(
+                        "ElaboratedTypeNode: Unhandled node type: " + String(e)
+                    )
             else:
-                print('ElaboratedTypeNode: Unhandled node type: ' + node.name())
+                print("ElaboratedTypeNode: Unhandled node type: " + node.name())
         return String()
 
     fn indicies(self) -> NodeIndices:

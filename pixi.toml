@@ -91,6 +91,11 @@ package = { cmd = [
 ], depends-on = [ "configure" ]}
 
 
+format = { cmd = [
+    "mojo", "format", "c_binder_mojo"
+]}
+
+
 ######################### Testing Configuration ###############################
 # Build the c bindings.
 build_test_c_project_bindings = { cmd = [

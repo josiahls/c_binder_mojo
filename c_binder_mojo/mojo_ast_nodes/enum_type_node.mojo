@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -22,7 +21,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 @fieldwise_init
 struct EnumTypeNode(NodeAstLike):
     alias __name__ = "EnumTypeNode"
@@ -30,7 +28,7 @@ struct EnumTypeNode(NodeAstLike):
     var _current_level: Int
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()

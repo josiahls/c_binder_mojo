@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -22,18 +21,17 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 @fieldwise_init
 struct ExampleNode(NodeAstLike):
     alias __name__ = "ExampleNode"
     var _indicies: ArcPointer[NodeIndices]
     var _current_level: Int
     # TODO(josiahls): I think we are moving away from using ast_entries.
-    # It makes more sense for each node to have its own context related 
+    # It makes more sense for each node to have its own context related
     # fields. Maybe we can use a context object to pass around in the future.
     var _ast_entries: ArcPointer[AstEntries]
     var _node_state: MessageableEnum
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         # TODO(josiahls): I think we are moving away from using ast_entries.
@@ -44,16 +42,15 @@ struct ExampleNode(NodeAstLike):
         # NOTE(josiahls): Instead of ingesting est entries above, we parse the ast entry,
         # and set context fields + tokens here.
 
-
     # TODO(josiahls): Shouldn't this be a class method? Then we can just do
-    # ast_entries.ast_name == 
+    # ast_entries.ast_name ==
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        # NOTE(josiahls): Critical to change, needs to be 
+        # NOTE(josiahls): Critical to change, needs to be
         return ast_entries.ast_name == String(Self.__name__)[:-4]
 
     @staticmethod
@@ -127,7 +124,7 @@ struct ExampleNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        # TODO(josiahls): The default behavior here, is to 
+        # TODO(josiahls): The default behavior here, is to
         # iterate through the ast entries, and print them.
         # However we are moving away from using ast entries as outputs
         # so we will need to switch this to supporting a list of strings.

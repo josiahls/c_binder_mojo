@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -51,9 +50,9 @@ struct PointerTypeNode(NodeAstLike):
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1 : idx])
             else:
-                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_2(ast_entry.tokens[start_idx + 1 : idx])
 
             start_idx = idx
             section_idx += 1
@@ -69,11 +68,10 @@ struct PointerTypeNode(NodeAstLike):
                 self._is_function_pointer = True
             # else:
             #     self._pointer_type += token + " "
-    
+
     fn _parse_section_2(mut self, tokens: List[String]):
         for token in tokens:
             self._unhandled_tokens += token + " "
-
 
     @staticmethod
     fn accept(
@@ -173,9 +171,8 @@ struct PointerTypeNode(NodeAstLike):
         parent_indent_level: Int = 0,
     ) raises -> String:
         # TODO(josiahls): Check if the child is a NoneType and switch this to OpaquePointer
-        var prefix:String = ""
-        var suffix:String = ""
-
+        var prefix: String = ""
+        var suffix: String = ""
 
         # NOTE: For function pointers, from what I can tell, clang
         # will give us a ParenType + FunctionProtoType.

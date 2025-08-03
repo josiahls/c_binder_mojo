@@ -22,7 +22,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 @fieldwise_init
 struct BuiltinTypeNode(NodeAstLike):
     alias __name__ = "BuiltinTypeNode"
@@ -33,7 +32,7 @@ struct BuiltinTypeNode(NodeAstLike):
     var _builtin_type: String
     var _unsigned: Bool
     var _unhandled_tokens: String
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -56,7 +55,9 @@ struct BuiltinTypeNode(NodeAstLike):
             elif section_idx == 1:
                 self._parse_section_1(ast_entry.tokens[start_idx:idx])
             else:
-                print("BuiltinTypeNode: Unhandled section: " + String(section_idx))
+                print(
+                    "BuiltinTypeNode: Unhandled section: " + String(section_idx)
+                )
 
             start_idx = idx
             section_idx += 1
@@ -181,11 +182,16 @@ struct BuiltinTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
-
         # var s:String = BuiltinTypeMapper.map_type(self._builtin_type, self._unsigned)
-        var s:String = TypeMapper.convert_c_type_to_mojo_type(self._builtin_type, unsigned=self._unsigned)
+        var s: String = TypeMapper.convert_c_type_to_mojo_type(
+            self._builtin_type, unsigned=self._unsigned
+        )
         if self._unhandled_tokens != "":
-            s += " #" + self.__name__ + " BuiltinTypeNode Unhandled tokens: " + self._unhandled_tokens
+            s += (
+                " #"
+                + self.__name__
+                + " BuiltinTypeNode Unhandled tokens: "
+                + self._unhandled_tokens
+            )
 
         return s

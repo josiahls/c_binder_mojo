@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -49,7 +48,10 @@ struct TypedefTypeNode(NodeAstLike):
         var quoted_indices = ast_entry.get_quoted_indices()
 
         # Phase 1: Before first quote (handle any prefix tokens)
-        var first_quote_idx = quoted_indices[0] if len(quoted_indices) > 0 else len(ast_entry.tokens) - 1
+        var first_quote_idx = (
+            quoted_indices[0] if len(quoted_indices)
+            > 0 else len(ast_entry.tokens) - 1
+        )
         for token in ast_entry.tokens[:first_quote_idx]:
             if token == "referenced":
                 self._typedef_type_is_referenced = True
@@ -70,10 +72,12 @@ struct TypedefTypeNode(NodeAstLike):
                     self._typedef_type += " " + token
         else:
             # No quotes or incomplete quotes - use all tokens
-            self._typedef_type = String(' ').join(ast_entry.tokens)
+            self._typedef_type = String(" ").join(ast_entry.tokens)
 
         # Phase 3: After last quote (check for sugar, etc.)
-        var last_quote_idx = quoted_indices[-1] if len(quoted_indices) > 0 else 0
+        var last_quote_idx = (
+            quoted_indices[-1] if len(quoted_indices) > 0 else 0
+        )
         for token in ast_entry.tokens[last_quote_idx:]:
             if token == "sugar":
                 self._typedef_type_is_sugar = True
@@ -157,18 +161,21 @@ struct TypedefTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
         _typedef_type = self._typedef_type
 
         for child_idx in self._indicies[].child_idxs:
             var child = module_interface.get_node(child_idx)
             if child.node[].isa[TypedefNode]():
-                _typedef_type = child.node[][TypedefNode].to_string(just_code, module_interface, parent_indent_level)
+                _typedef_type = child.node[][TypedefNode].to_string(
+                    just_code, module_interface, parent_indent_level
+                )
                 # _typedef_type += " # From TypedefNode"
             elif child.node[].isa[BuiltinTypeNode]():
                 # NOTE: BuiltinTypes are priority over Typedefs since they are more specific.
-                _typedef_type = child.node[][BuiltinTypeNode].to_string(just_code, module_interface, parent_indent_level)
+                _typedef_type = child.node[][BuiltinTypeNode].to_string(
+                    just_code, module_interface, parent_indent_level
+                )
                 # _typedef_type += " # From BuiltinTypeNode"
                 break
 
-        return  _typedef_type
+        return _typedef_type

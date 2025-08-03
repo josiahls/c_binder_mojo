@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -38,10 +37,10 @@ struct QualTypeNode(NodeAstLike):
     var _is_const: Bool
 
     var _unhandled_tokens: String
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
-        # TODO(josiahls): Not sure I understand the purpose of QualType. The docs say its a pointer to a type (?). 
+        # TODO(josiahls): Not sure I understand the purpose of QualType. The docs say its a pointer to a type (?).
         # but it doesn't look like there are any pointers in the original header so idk.
         self._ast_entries = AstEntries()
         self._ast_entries[].append(ast_entry)
@@ -64,7 +63,7 @@ struct QualTypeNode(NodeAstLike):
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1 : idx])
 
             start_idx = idx
             section_idx += 1
@@ -170,7 +169,7 @@ struct QualTypeNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-        var s:String
+        var s: String
 
         _type_name = self._type_name
 
@@ -179,10 +178,14 @@ struct QualTypeNode(NodeAstLike):
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[BuiltinTypeNode]():
-                _type_name = node.node[][BuiltinTypeNode].to_string(just_code, module_interface, parent_indent_level)
+                _type_name = node.node[][BuiltinTypeNode].to_string(
+                    just_code, module_interface, parent_indent_level
+                )
             else:
                 # NOTE(josiahls): There are cases where we get unhandled typedef, but I don't understand the output.
-                error_msg += "QualTypeNode: Unhandled node type: " + node.name() + "\n"
+                error_msg += (
+                    "QualTypeNode: Unhandled node type: " + node.name() + "\n"
+                )
 
         s = _type_name
         # if self._is_volatile:

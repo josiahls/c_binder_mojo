@@ -52,13 +52,20 @@ struct EnumConstantDeclNode(NodeAstLike):
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1 : idx])
             elif section_idx == 2:
-                self._parse_unhandled_section(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_unhandled_section(
+                    ast_entry.tokens[start_idx + 1 : idx]
+                )
             elif section_idx == 3:
-                self._parse_unhandled_section(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_unhandled_section(
+                    ast_entry.tokens[start_idx + 1 : idx]
+                )
             else:
-                print("EnumConstantDeclNode: Unhandled section: " + String(section_idx))
+                print(
+                    "EnumConstantDeclNode: Unhandled section: "
+                    + String(section_idx)
+                )
 
     fn _parse_section_0(mut self, tokens: List[String]):
         for token in tokens:
@@ -80,19 +87,22 @@ struct EnumConstantDeclNode(NodeAstLike):
         for token in tokens:
             self._unhandled_tokens += " " + token
 
-
     fn get_value(self, module_interface: ModuleInterface) -> String:
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.get_node(child_idx)
             if child.node[].isa[ConstantExprNode]():
-                return child.node[][ConstantExprNode].get_constant_expr_value(module_interface)
+                return child.node[][ConstantExprNode].get_constant_expr_value(
+                    module_interface
+                )
         return self._value
 
     fn get_field_type(self, module_interface: ModuleInterface) -> String:
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.get_node(child_idx)
             if child.node[].isa[ConstantExprNode]():
-                return child.node[][ConstantExprNode].get_constant_expr_type(module_interface)
+                return child.node[][ConstantExprNode].get_constant_expr_type(
+                    module_interface
+                )
         return self._field_type
 
     @staticmethod
@@ -173,12 +183,17 @@ struct EnumConstantDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
         var s: String = ""
         var indent: String = "\t" * parent_indent_level
         # var field_type = self._field_type
-        s += indent + "alias " + self._field_name + ": "  #+ ": " + self._field_type + " = " + self._value + "\n"
+        s += (
+            indent + "alias " + self._field_name + ": "
+        )  # + ": " + self._field_type + " = " + self._value + "\n"
 
-        s += self.get_field_type(module_interface) + " = " + self.get_value(module_interface)
+        s += (
+            self.get_field_type(module_interface)
+            + " = "
+            + self.get_value(module_interface)
+        )
 
         return s + "\n"

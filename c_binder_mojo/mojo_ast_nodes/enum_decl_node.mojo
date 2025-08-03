@@ -48,7 +48,7 @@ struct EnumDeclNode(NodeAstLike):
         self._inner_struct_name_map = Dict[String, String]()
         self._enum_mem_location = ast_entry.mem_address
         self._is_anonymous = False
-        self._enum_name = String() # String(ast_entry)
+        self._enum_name = String()  # String(ast_entry)
         if len(ast_entry.tokens) > 0:
             self._enum_name = ast_entry.tokens[0]
         else:
@@ -84,16 +84,19 @@ struct EnumDeclNode(NodeAstLike):
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-
         if ast_entry.level <= self._enum_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
             return TokenFlow.CREATE_CHILD
 
-    fn get_translation_unit_decl_current_idx(mut self, module_interface: ModuleInterface) -> Int:
+    fn get_translation_unit_decl_current_idx(
+        mut self, module_interface: ModuleInterface
+    ) -> Int:
         for node in module_interface.nodes()[]:
             if node.node[].isa[TranslationUnitDeclNode]():
-                return node.node[][TranslationUnitDeclNode].indicies().current_idx
+                return (
+                    node.node[][TranslationUnitDeclNode].indicies().current_idx
+                )
         return -1
 
     fn process(
@@ -106,19 +109,22 @@ struct EnumDeclNode(NodeAstLike):
         if not self.is_enum_declared(module_interface):
             # NOTE: Set the parent to 0 since we are declaring a new record and mojo does
             # not support nested records.
-            translation_unit_decl_current_idx = self.get_translation_unit_decl_current_idx(module_interface)
-            new_indices = NodeIndices(
-                parent_idx=translation_unit_decl_current_idx, 
-                current_idx=0
+            translation_unit_decl_current_idx = (
+                self.get_translation_unit_decl_current_idx(module_interface)
             )
-            new_node = EnumDeclNode.create(self._ast_entry, module_interface, new_indices)
+            new_indices = NodeIndices(
+                parent_idx=translation_unit_decl_current_idx, current_idx=0
+            )
+            new_node = EnumDeclNode.create(
+                self._ast_entry, module_interface, new_indices
+            )
             new_index = module_interface.insert_node(new_node)
             module_interface.nodes()[][
                 translation_unit_decl_current_idx
             ].indicies_ptr()[].child_idxs.append(new_index)
             self._node_state = NodeState.COMPLETED
             self._make_enum_decl = False
-            # return 
+            # return
 
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
@@ -130,24 +136,33 @@ struct EnumDeclNode(NodeAstLike):
 
     fn _process_enum_values(mut self, mut module_interface: ModuleInterface):
         var current_value = 0
-        var current_field_type:String = ""
+        var current_field_type: String = ""
         # TODO(josiahls): This is a hack to get the enum values to work.
         # We need to find a better way to do this.
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.get_node(child_idx)
             if child.node[].isa[EnumConstantDeclNode]():
-                var value = child.node[][EnumConstantDeclNode].get_value(module_interface)
+                var value = child.node[][EnumConstantDeclNode].get_value(
+                    module_interface
+                )
                 if value == "":
                     value = String(current_value)
                     current_value += 1
                     child.node[][EnumConstantDeclNode]._value = value
-                    child.node[][EnumConstantDeclNode]._field_type = current_field_type
+                    child.node[][
+                        EnumConstantDeclNode
+                    ]._field_type = current_field_type
                 else:
                     try:
                         current_value = Int(value) + 1
-                        current_field_type = child.node[][EnumConstantDeclNode].get_field_type(module_interface)
+                        current_field_type = child.node[][
+                            EnumConstantDeclNode
+                        ].get_field_type(module_interface)
                     except:
-                        print("Error: Enum constant decl has invalid value: " + child.node[][EnumConstantDeclNode]._value)
+                        print(
+                            "Error: Enum constant decl has invalid value: "
+                            + child.node[][EnumConstantDeclNode]._value
+                        )
 
     fn process_anonymous_enum(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
@@ -155,10 +170,7 @@ struct EnumDeclNode(NodeAstLike):
         mem_addesss = ast_entry.mem_address
         for node in module_interface.nodes()[]:
             if node.node[].isa[EnumDeclNode]():
-                if (
-                    node.node[][EnumDeclNode]._enum_mem_location
-                    == mem_addesss
-                ):
+                if node.node[][EnumDeclNode]._enum_mem_location == mem_addesss:
                     enum_name = node.node[][EnumDeclNode]._enum_name
                     new_entry = AstEntry()
                     new_entry.ast_name = "AnonymousEnum"
@@ -221,7 +233,12 @@ struct EnumDeclNode(NodeAstLike):
 
         if not self._is_anonymous:
             s += indent + '@register_passable("trivial")\n'
-            s += indent + "struct " + String(self._enum_name) + "(Copyable & Movable): # Enum\n"
+            s += (
+                indent
+                + "struct "
+                + String(self._enum_name)
+                + "(Copyable & Movable): # Enum\n"
+            )
         else:
             s += indent + "# Anonymous enum\n"
 

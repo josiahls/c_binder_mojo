@@ -42,11 +42,11 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
 
     fn get_quoted_indices(self) -> List[Int]:
         """Find the indices of quoted content in tokens.
-        
+
         This is used to extract type information from clang AST dump format
         where types are quoted like 'char *(long)' or may have multiple
         quoted sections.
-        
+
         Returns:
             List of indices where quotes appear in the tokens.
         """
@@ -80,7 +80,7 @@ struct AstEntry(Copyable & Movable & Stringable & Writable):
 
 
 @fieldwise_init
-struct AstEntries(Stringable, Movable, Copyable, Sized):
+struct AstEntries(Copyable, Movable, Sized, Stringable):
     """A collection of AstEntry objects with list-like operations.
 
     This struct provides a container for multiple AstEntry with standard
@@ -291,10 +291,7 @@ struct AstParser:
                 elif (
                     token.startswith("<<scratch")
                     and ast_entry.full_location == ""
-                ) or (
-                    "space>" in token
-                    and ':' not in ast_entry.full_location
-                ):
+                ) or ("space>" in token and ":" not in ast_entry.full_location):
                     ast_entry.full_location = "scratch"
                 elif (
                     token.startswith("<invalid")
@@ -308,8 +305,7 @@ struct AstParser:
                     token.startswith("<scratch")
                     and ast_entry.precise_location == ""
                 ) or (
-                    "space>" in token
-                    and ':' not in ast_entry.precise_location
+                    "space>" in token and ":" not in ast_entry.precise_location
                 ):
                     ast_entry.precise_location = "scratch"
                 elif (
@@ -323,7 +319,7 @@ struct AstParser:
                 ):
                     ast_entry.precise_location = token
                 elif (
-                    '/' in token
+                    "/" in token
                     and ":" in token
                     and ast_entry.precise_location == ""
                 ):
@@ -345,7 +341,7 @@ struct AstParser:
                     level += 1
                 else:
                     if "'" in token:
-                        current_token:String = ""
+                        current_token: String = ""
                         for ch in token.codepoint_slices():
                             if ch == "'":
                                 if current_token != "":

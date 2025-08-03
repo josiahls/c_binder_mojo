@@ -19,9 +19,12 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
     default_to_string,
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
+
 # from c_binder_mojo.type_mapper import TypeMapper
 from c_binder_mojo.typing import TypeMapper
-from c_binder_mojo.mojo_ast_nodes.function_proto_type_node import FunctionProtoTypeNode
+from c_binder_mojo.mojo_ast_nodes.function_proto_type_node import (
+    FunctionProtoTypeNode,
+)
 
 
 @fieldwise_init
@@ -71,11 +74,11 @@ struct FieldDeclNode(NodeAstLike):
             if section_idx == 0:
                 self.parse_section_0(ast_entries.tokens[:idx])
             elif section_idx == 1:
-                self.parse_section_1(ast_entries.tokens[start_idx + 1:idx])
+                self.parse_section_1(ast_entries.tokens[start_idx + 1 : idx])
             elif section_idx == 2:
-                self.parse_section_2(ast_entries.tokens[start_idx + 1:idx])
+                self.parse_section_2(ast_entries.tokens[start_idx + 1 : idx])
             elif section_idx == 3:
-                self.parse_section_3(ast_entries.tokens[start_idx + 1:idx])
+                self.parse_section_3(ast_entries.tokens[start_idx + 1 : idx])
             section_idx += 1
             start_idx = idx
 
@@ -104,7 +107,7 @@ struct FieldDeclNode(NodeAstLike):
                 # 	var name: UnsafePointer[Int8]
                 # 	var data: UnsafePointer[NoneType]
                 # 	var timestamp: SIMD[Int8.dtype, 512]
-                # 	alias provider: UnsafePointer[mjpResourceProvider] = 
+                # 	alias provider: UnsafePointer[mjpResourceProvider] =
                 # Which is weird. alias really implies compile time constant.
                 self._is_const_alias = True
             elif entry == "volatile":
@@ -129,13 +132,13 @@ struct FieldDeclNode(NodeAstLike):
             #         pass
             #     elif "::" in entry:
             #         self._field_type = entry.split("::")[0]
-                # NOTE: Ignore the rest since that will be the unnamed path.
-                # else:
-                #     self._field_type += entry + " "
+            # NOTE: Ignore the rest since that will be the unnamed path.
+            # else:
+            #     self._field_type += entry + " "
         elif self._has_sugar:
-            pass # TODO(josiahls): Not sure if we want to add a comment as part of this.
+            pass  # TODO(josiahls): Not sure if we want to add a comment as part of this.
         else:
-            self._unhandled_tokens += String(' ').join(entries)
+            self._unhandled_tokens += String(" ").join(entries)
 
     @staticmethod
     fn accept(
@@ -213,7 +216,6 @@ struct FieldDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
         var s: String = ""
         var indent_level = parent_indent_level
         var indent_string = "\t" * indent_level
@@ -235,12 +237,23 @@ struct FieldDeclNode(NodeAstLike):
                 # field_type = node.node[][AlignedAttrNode].to_string(False, module_interface, 0)
 
         if self._is_const:
-            s += "alias " + field_name + ": " + field_type + " = " + self._value + "\n"
+            s += (
+                "alias "
+                + field_name
+                + ": "
+                + field_type
+                + " = "
+                + self._value
+                + "\n"
+            )
         else:
             s += "var " + field_name + ": " + field_type
 
             if self._is_const_alias:
-                s += " # FieldDeclNode: This is a const param, but shouldn't be assigned as an alias since it doesn't have a value."
+                s += (
+                    " # FieldDeclNode: This is a const param, but shouldn't be"
+                    " assigned as an alias since it doesn't have a value."
+                )
 
             s += "\n"
 

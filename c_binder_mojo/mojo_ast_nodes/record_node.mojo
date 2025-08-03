@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -21,7 +20,9 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.mojo_ast_nodes.record_decl_node import RecordDeclNode
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
-from c_binder_mojo.mojo_ast_nodes.translation_unit_decl_node import TranslationUnitDeclNode
+from c_binder_mojo.mojo_ast_nodes.translation_unit_decl_node import (
+    TranslationUnitDeclNode,
+)
 
 
 @fieldwise_init
@@ -88,26 +89,43 @@ struct RecordNode(NodeAstLike):
         for node in module_interface.nodes()[]:
             if node.node[].isa[RecordDeclNode]():
                 # Check by memory address first (more reliable for anonymous structs)
-                if node.node[][RecordDeclNode]._record_mem_location == self._mem_address:
+                if (
+                    node.node[][RecordDeclNode]._record_mem_location
+                    == self._mem_address
+                ):
                     return True
                 # Fallback to name comparison
-                if node.node[][RecordDeclNode]._record_name == self._record_name:
+                if (
+                    node.node[][RecordDeclNode]._record_name
+                    == self._record_name
+                ):
                     return True
         return False
 
-    fn get_translation_unit_decl_current_idx(mut self, module_interface: ModuleInterface) -> Int:
+    fn get_translation_unit_decl_current_idx(
+        mut self, module_interface: ModuleInterface
+    ) -> Int:
         for node in module_interface.nodes()[]:
             if node.node[].isa[TranslationUnitDeclNode]():
-                return node.node[][TranslationUnitDeclNode].indicies().current_idx
+                return (
+                    node.node[][TranslationUnitDeclNode].indicies().current_idx
+                )
         return -1
 
-    fn get_aliased_record_decl(self, module_interface: ModuleInterface) -> Optional[AstNode]:
+    fn get_aliased_record_decl(
+        self, module_interface: ModuleInterface
+    ) -> Optional[AstNode]:
         mem_address = self._ast_entry.mem_address
         for node in module_interface.nodes()[]:
             if node.node[].isa[RecordDeclNode]():
-                if node.node[][RecordDeclNode]._record_mem_location == mem_address:
+                if (
+                    node.node[][RecordDeclNode]._record_mem_location
+                    == mem_address
+                ):
                     return node
-        print('RecordNode: No record decl found for mem address: ' + mem_address)
+        print(
+            "RecordNode: No record decl found for mem address: " + mem_address
+        )
         return None
 
     @staticmethod
@@ -121,7 +139,6 @@ struct RecordNode(NodeAstLike):
     fn determine_token_flow(
         mut self, ast_entry: AstEntry, module_interface: ModuleInterface
     ) -> MessageableEnum:
-
         if ast_entry.level <= self._typedef_decl_level:
             return TokenFlow.PASS_TO_PARENT
         else:
@@ -137,19 +154,22 @@ struct RecordNode(NodeAstLike):
         if not self.is_record_declared(module_interface):
             # NOTE: Set the parent to 0 since we are declaring a new record and mojo does
             # not support nested records.
-            translation_unit_decl_current_idx = self.get_translation_unit_decl_current_idx(module_interface)
-            new_indices = NodeIndices(
-                parent_idx=translation_unit_decl_current_idx, 
-                current_idx=0
+            translation_unit_decl_current_idx = (
+                self.get_translation_unit_decl_current_idx(module_interface)
             )
-            new_node = RecordDeclNode.create(self._ast_entry, module_interface, new_indices)
+            new_indices = NodeIndices(
+                parent_idx=translation_unit_decl_current_idx, current_idx=0
+            )
+            new_node = RecordDeclNode.create(
+                self._ast_entry, module_interface, new_indices
+            )
             new_index = module_interface.insert_node(new_node)
             module_interface.nodes()[][
                 translation_unit_decl_current_idx
             ].indicies_ptr()[].child_idxs.append(new_index)
             self._node_state = NodeState.COMPLETED
             self._make_record_decl = False
-            # return 
+            # return
 
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN

@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -22,7 +21,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 @fieldwise_init
 struct ValueNode(NodeAstLike):
     alias __name__ = "ValueNode"
@@ -33,7 +31,7 @@ struct ValueNode(NodeAstLike):
 
     var _value_type: String
     var _value: String
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
         self._ast_entries = AstEntries()
@@ -54,7 +52,7 @@ struct ValueNode(NodeAstLike):
         module_interface: ModuleInterface,
         indices: NodeIndices,
     ) -> Bool:
-        return ast_entries.ast_name == String(Self.__name__)[:-4].lower() + ':'
+        return ast_entries.ast_name == String(Self.__name__)[:-4].lower() + ":"
 
     @staticmethod
     fn create(

@@ -23,7 +23,6 @@ from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.typing import TypeMapper
 
 
-
 @fieldwise_init
 struct ParmVarDeclNode(NodeAstLike):
     alias __name__ = "ParmVarDeclNode"
@@ -61,7 +60,7 @@ struct ParmVarDeclNode(NodeAstLike):
         self._parm_var_type = String()
 
         # TODO(josiahls): Const, volatile, restrict, and used I'm unclear how to convert to mojo.
-        # This needs to be revisited. 
+        # This needs to be revisited.
         self._is_const = False
         self._is_volatile = False
         self._is_restrict = False
@@ -87,24 +86,26 @@ struct ParmVarDeclNode(NodeAstLike):
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1 : idx])
             elif section_idx == 2:
-                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_2(ast_entry.tokens[start_idx + 1 : idx])
             elif section_idx == 3:
                 if not self._has_sugar_mapping:
-                    self._parse_section_3(ast_entry.tokens[start_idx + 1:idx])
+                    self._parse_section_3(ast_entry.tokens[start_idx + 1 : idx])
                 # else:
                 #     self._parse_section_4(ast_entry.tokens[start_idx:idx])
             else:
-                print("ParmVarDeclNode: Unhandled section: " + String(section_idx))
-
+                print(
+                    "ParmVarDeclNode: Unhandled section: " + String(section_idx)
+                )
 
             start_idx = idx
             section_idx += 1
-    
-        if self.unhandled_tokens != "":
-            self.unhandled_tokens = "# ParmVarDeclNode Unhandled tokens: " + self.unhandled_tokens
 
+        if self.unhandled_tokens != "":
+            self.unhandled_tokens = (
+                "# ParmVarDeclNode Unhandled tokens: " + self.unhandled_tokens
+            )
 
     fn _parse_section_0(mut self, tokens: List[String]):
         for token in tokens:
@@ -117,7 +118,7 @@ struct ParmVarDeclNode(NodeAstLike):
 
     fn _parse_section_1(mut self, tokens: List[String]):
         for token in tokens:
-            var base_entry:String = token
+            var base_entry: String = token
 
             if self._parm_var_name == "":
                 self._is_positional = True
@@ -175,7 +176,7 @@ struct ParmVarDeclNode(NodeAstLike):
             self._parm_var_type = ""
 
         for token in tokens:
-            var base_entry:String = token
+            var base_entry: String = token
             # if '**' in token:
             #     base_entry = String(token.strip("*"))
             #     self._is_double_pointer = True
@@ -186,7 +187,7 @@ struct ParmVarDeclNode(NodeAstLike):
             # Check for function pointer pattern (*)(...)
             # if "(*)" in token:
             #     self._is_function_pointer = True
-                # Don't strip the (*) as we need it for function pointer parsing
+            # Don't strip the (*) as we need it for function pointer parsing
             if base_entry == "const":
                 self._is_const = True
             # elif base_entry == "unsigned":
@@ -303,18 +304,19 @@ struct ParmVarDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
-        var type_name = TypeMapper.convert_c_type_to_mojo_type(self._parm_var_type)
+        var type_name = TypeMapper.convert_c_type_to_mojo_type(
+            self._parm_var_type
+        )
 
         # if self._is_function_pointer:
         #     # Parse function pointer type like "void (*)(int, void *)"
         #     type_name = self._parse_function_pointer_type(self._parm_var_type)
-        
+
         # if self._is_pointer:
         #     type_name = "UnsafePointer[" + type_name + "]"
         # elif self._is_double_pointer:
         #     type_name = "UnsafePointer[UnsafePointer[" + type_name + "]]"
-        
+
         var type_decl: String
         if self._is_positional:
             type_decl = type_name
@@ -340,11 +342,11 @@ struct ParmVarDeclNode(NodeAstLike):
 
     # fn _parse_param_type(self, type_str: String) -> String:
     #     # TODO(josiahls): The type mapper is not very composable.
-    #     return TypeMapper.get_mojo_type(type_str) 
+    #     return TypeMapper.get_mojo_type(type_str)
 
     # fn _parse_function_pointer_type(self, type_str: String) -> String:
     #     """Parse function pointer type and convert to Mojo function signature.
-        
+
     #     Examples:
     #     - "void (*)(void)" -> "fn() -> None"
     #     - "void (*)(int, void *)" -> "fn(Int, UnsafePointer[None]) -> None"
@@ -353,24 +355,24 @@ struct ParmVarDeclNode(NodeAstLike):
     #     # Find the return type (before the (*))
     #     var return_type = String()
     #     var param_types = String()
-        
+
     #     # Look for the (*) pattern
     #     var paren_star_idx = type_str.find("(*)")
     #     if paren_star_idx == -1:
     #         return type_str  # Not a function pointer, return as-is
-        
+
     #     # Extract return type (everything before (*))
     #     return_type = String(type_str[:paren_star_idx])
     #     return_type = String(return_type.strip())
-        
+
     #     # Find the parameter list (between the parentheses after (*))
     #     var open_paren_idx = type_str.find("(", paren_star_idx + 1)
     #     var close_paren_idx = type_str.find(")", open_paren_idx)
-        
+
     #     if open_paren_idx != -1 and close_paren_idx != -1:
     #         var param_str = String(type_str[open_paren_idx + 1:close_paren_idx])
     #         param_str = String(param_str.strip())
-            
+
     #         if param_str == "":
     #             param_types = ""
     #         elif param_str == "void":
@@ -379,18 +381,18 @@ struct ParmVarDeclNode(NodeAstLike):
     #             # Split parameters by comma and map each type
     #             var params = param_str.split(",")
     #             var mapped_params = List[String]()
-                
+
     #             for param in params:
     #                 mapped_params.append(self._parse_param_type(param))
-                
+
     #             param_types = String(", ").join(mapped_params)
-        
+
     #     # Map return type
     #     var mapped_return_type = TypeMapper.map_type(return_type)
     #     if mapped_return_type == "void":
     #         mapped_return_type = "None"
-        
+
     #     # Construct Mojo function signature
     #     var mojo_signature = "fn(" + param_types + ") -> " + mapped_return_type
-        
+
     #     return mojo_signature

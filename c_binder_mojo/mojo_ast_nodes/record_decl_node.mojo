@@ -91,7 +91,6 @@ struct RecordDeclNode(NodeAstLike):
             self._record_name = "Anonymous_" + clean_location(self._location)
             self._is_anonymous = True
 
-
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -129,7 +128,9 @@ struct RecordDeclNode(NodeAstLike):
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
             self.update_child_struct_names(module_interface)
-            get_global_type_registry()[].custom_structs.append(self._record_name)
+            get_global_type_registry()[].custom_structs.append(
+                self._record_name
+            )
             self._node_state = NodeState.COMPLETED
             if self._indicies[].child_idxs:
                 self._has_fields = True
@@ -228,16 +229,22 @@ struct RecordDeclNode(NodeAstLike):
             indent = "\t" * parent_indent_level
 
         var s: String = '@register_passable("trivial")\n'
-        s += 'struct ' + self._record_name + "(Copyable & Movable):\n"
+        s += "struct " + self._record_name + "(Copyable & Movable):\n"
         if not self._has_fields:
             s += indent + "\tpass\n"
         else:
             for child_idx in self._indicies[].child_idxs:
                 child = module_interface.nodes()[][child_idx]
                 if child.node[].isa[Self]():
-                    s = child.to_string(just_code, module_interface, 0) + '\n' + s
+                    s = (
+                        child.to_string(just_code, module_interface, 0)
+                        + "\n"
+                        + s
+                    )
                 elif child.node[].isa[FieldDeclNode]():
-                    s += child.to_string(just_code, module_interface, parent_indent_level + 1)
+                    s += child.to_string(
+                        just_code, module_interface, parent_indent_level + 1
+                    )
 
         if self._unhandled_tokens:
             s += " # RecordDeclNode Unhandled tokens: "

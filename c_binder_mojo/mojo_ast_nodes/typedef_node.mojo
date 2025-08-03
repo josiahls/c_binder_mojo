@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -41,9 +40,11 @@ struct TypedefNode(NodeAstLike):
         var quoted_indices = ast_entry.get_quoted_indices()
 
         if len(quoted_indices) > 1:
-            self._typedef_type = String(' ').join(ast_entry.tokens[quoted_indices[0] + 1:quoted_indices[1]])
+            self._typedef_type = String(" ").join(
+                ast_entry.tokens[quoted_indices[0] + 1 : quoted_indices[1]]
+            )
         else:
-            self._typedef_type = String(' ').join(ast_entry.tokens)
+            self._typedef_type = String(" ").join(ast_entry.tokens)
 
     @staticmethod
     fn accept(
@@ -122,7 +123,6 @@ struct TypedefNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
         var s = String()
         s += self._typedef_type
         return default_to_string(

@@ -43,7 +43,7 @@ struct VarDeclNode(NodeAstLike):
         self._node_state = NodeState.COMPLETED
         self._is_sugar = False
         self._unhandled_tokens = String()
-        
+
         self._var_name = String()
         self._var_type = String()
 
@@ -55,20 +55,19 @@ struct VarDeclNode(NodeAstLike):
         start_idx = 0
         section_idx = 0
 
-
         for idx in quoted_indicies:
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1 : idx])
                 if len(quoted_indicies) == 2:
-                    self._parse_section_3(ast_entry.tokens[idx + 1:])
+                    self._parse_section_3(ast_entry.tokens[idx + 1 :])
             elif section_idx == 2:
-                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_2(ast_entry.tokens[start_idx + 1 : idx])
                 if len(quoted_indicies) == 3:
-                    self._parse_section_3(ast_entry.tokens[idx + 1:])
+                    self._parse_section_3(ast_entry.tokens[idx + 1 :])
             elif section_idx == 3:
-                self._parse_section_3(ast_entry.tokens[idx + 1:])
+                self._parse_section_3(ast_entry.tokens[idx + 1 :])
             else:
                 print("VarDeclNode: Unhandled section: " + String(section_idx))
                 print("For ast entry: " + String(ast_entry.original_line))

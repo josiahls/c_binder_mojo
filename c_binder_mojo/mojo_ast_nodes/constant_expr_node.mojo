@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -22,7 +21,6 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 
 
-
 @fieldwise_init
 struct ConstantExprNode(NodeAstLike):
     alias __name__ = "ConstantExprNode"
@@ -33,7 +31,7 @@ struct ConstantExprNode(NodeAstLike):
 
     var _constant_expr_type: String
     var _constant_expr_value: String
-    
+
     fn __init__(out self, indicies: NodeIndices, ast_entry: AstEntry):
         self._indicies = indicies
 
@@ -124,15 +122,18 @@ struct ConstantExprNode(NodeAstLike):
         else:
             return self.__name__
 
-
-    fn get_constant_expr_type(self, module_interface: ModuleInterface) -> String:
+    fn get_constant_expr_type(
+        self, module_interface: ModuleInterface
+    ) -> String:
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.get_node(child_idx)
             if child.node[].isa[ValueNode]():
                 return child.node[][ValueNode]._value_type
         return self._constant_expr_type
 
-    fn get_constant_expr_value(self, module_interface: ModuleInterface) -> String:
+    fn get_constant_expr_value(
+        self, module_interface: ModuleInterface
+    ) -> String:
         for child_idx in self._indicies[].child_idxs:
             child = module_interface.get_node(child_idx)
             if child.node[].isa[ValueNode]():
@@ -145,7 +146,11 @@ struct ConstantExprNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
         var s: String = ""
-        s += self.get_constant_expr_type(module_interface) + " = " + self.get_constant_expr_value(module_interface) + "\n"
+        s += (
+            self.get_constant_expr_type(module_interface)
+            + " = "
+            + self.get_constant_expr_value(module_interface)
+            + "\n"
+        )
         return s

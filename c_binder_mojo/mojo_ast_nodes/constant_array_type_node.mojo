@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -45,14 +44,14 @@ struct ConstantArrayTypeNode(NodeAstLike):
         self._unhandled_tokens = String()
         self._aliased_record_name = String()
 
-        accumulate_type:Bool = False
+        accumulate_type: Bool = False
         for entry in ast_entry.tokens:
             # NOTE: The single quotes are useful in cases where there are spaces in the type name. :/
             if "'" in entry and not accumulate_type:
                 self._full_constant_array_type += entry.strip("'")
                 accumulate_type = True
             elif "'" in entry and accumulate_type:
-                self._full_constant_array_type += ' ' + entry.strip("'")
+                self._full_constant_array_type += " " + entry.strip("'")
                 accumulate_type = False
             elif accumulate_type:
                 self._full_constant_array_type += entry
@@ -65,7 +64,10 @@ struct ConstantArrayTypeNode(NodeAstLike):
                     self._unhandled_tokens += " " + entry
 
         if self._unhandled_tokens != "":
-            self._unhandled_tokens = "# ConstantArrayTypeNode Unhandled tokens: " + self._unhandled_tokens
+            self._unhandled_tokens = (
+                "# ConstantArrayTypeNode Unhandled tokens: "
+                + self._unhandled_tokens
+            )
 
     @staticmethod
     fn accept(
@@ -100,22 +102,34 @@ struct ConstantArrayTypeNode(NodeAstLike):
         if token_flow == TokenFlow.CREATE_CHILD:
             self._node_state = NodeState.BUILDING_CHILDREN
         else:
-            self._aliased_record_name = self.get_aliased_record_name(module_interface)
+            self._aliased_record_name = self.get_aliased_record_name(
+                module_interface
+            )
             self._node_state = NodeState.COMPLETED
 
-
-    fn get_aliased_record_name(self, module_interface: ModuleInterface) -> String:
+    fn get_aliased_record_name(
+        self, module_interface: ModuleInterface
+    ) -> String:
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[RecordTypeNode]():
-                optional_node = node.node[][RecordTypeNode].get_aliased_record_decl(module_interface)
+                optional_node = node.node[][
+                    RecordTypeNode
+                ].get_aliased_record_decl(module_interface)
                 if optional_node:
                     try:
-                        return optional_node[].node[][RecordDeclNode]._record_name
+                        return (
+                            optional_node[].node[][RecordDeclNode]._record_name
+                        )
                     except e:
-                        print('ConstantArrayTypeNode: Unhandled node type: ' + String(e))
+                        print(
+                            "ConstantArrayTypeNode: Unhandled node type: "
+                            + String(e)
+                        )
             else:
-                print('ConstantArrayTypeNode: Unhandled node type: ' + node.name())
+                print(
+                    "ConstantArrayTypeNode: Unhandled node type: " + node.name()
+                )
         return String()
 
     fn indicies(self) -> NodeIndices:
@@ -162,5 +176,12 @@ struct ConstantArrayTypeNode(NodeAstLike):
         # TODO(josiahls): We will need to set a field property that
         # tells us if this is a struct / record type, in which case, OpaquePointer
         # makes sense, or otherwise if its a builtin type, we should use SIMD.
-        var array_type = "OpaquePointer" + " # " + self._aliased_record_name + "[" + String(self._n_elements) + "]"
+        var array_type = (
+            "OpaquePointer"
+            + " # "
+            + self._aliased_record_name
+            + "["
+            + String(self._n_elements)
+            + "]"
+        )
         return array_type

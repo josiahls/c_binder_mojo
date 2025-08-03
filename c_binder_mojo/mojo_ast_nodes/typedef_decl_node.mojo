@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -21,6 +20,7 @@ from c_binder_mojo.mojo_ast_nodes.nodes import (
 )
 from c_binder_mojo.clang_ast_nodes.ast_parser import AstEntry, AstEntries
 from c_binder_mojo.typing import get_global_type_registry
+
 
 @fieldwise_init
 struct TypedefDeclNode(NodeAstLike):
@@ -63,13 +63,15 @@ struct TypedefDeclNode(NodeAstLike):
             if section_idx == 0:
                 self._parse_section_0(ast_entry.tokens[:idx])
             elif section_idx == 1:
-                self._parse_section_1(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_1(ast_entry.tokens[start_idx + 1 : idx])
             elif section_idx == 2:
-                self._parse_section_2(ast_entry.tokens[start_idx + 1:idx])
+                self._parse_section_2(ast_entry.tokens[start_idx + 1 : idx])
             elif section_idx == 3:
-                self._parse_section_3(ast_entry.tokens[idx + 1:])
+                self._parse_section_3(ast_entry.tokens[idx + 1 :])
             else:
-                print("TypedefDeclNode: Unhandled section: " + String(section_idx))
+                print(
+                    "TypedefDeclNode: Unhandled section: " + String(section_idx)
+                )
                 print("For ast entry: " + String(ast_entry.original_line))
 
             start_idx = idx
@@ -109,7 +111,6 @@ struct TypedefDeclNode(NodeAstLike):
             else:
                 self._sugared_type += " " + token
 
-
     @staticmethod
     fn accept(
         ast_entries: AstEntry,
@@ -146,7 +147,9 @@ struct TypedefDeclNode(NodeAstLike):
             if get_global_type_registry()[].is_defined(self._type_name):
                 self._is_disabled = True
             else:
-                get_global_type_registry()[].custom_typedefs.append(self._type_name)
+                get_global_type_registry()[].custom_typedefs.append(
+                    self._type_name
+                )
             self._node_state = NodeState.COMPLETED
 
     fn indicies(self) -> NodeIndices:
@@ -190,8 +193,7 @@ struct TypedefDeclNode(NodeAstLike):
         module_interface: ModuleInterface,
         parent_indent_level: Int = 0,
     ) raises -> String:
-
-        var s  = 'alias ' + String(self._type_name) + " = "
+        var s = "alias " + String(self._type_name) + " = "
 
         var out_s = default_to_string(
             node=AstNode(self),

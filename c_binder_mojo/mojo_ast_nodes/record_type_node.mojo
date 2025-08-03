@@ -4,7 +4,6 @@ from memory import ArcPointer
 # Third Party Mojo Modules
 
 
-
 # First Party Modules
 from c_binder_mojo.common import (
     TokenBundle,
@@ -66,8 +65,10 @@ struct RecordTypeNode(NodeAstLike):
                     self._record_type += " " + token
         else:
             if len(quoted_indices) == 1:
-                print("RecordTypeNode: Unhandled quoted indices: " + String(' ').join(ast_entry.tokens))
-
+                print(
+                    "RecordTypeNode: Unhandled quoted indices: "
+                    + String(" ").join(ast_entry.tokens)
+                )
 
     @staticmethod
     fn accept(
@@ -105,14 +106,17 @@ struct RecordTypeNode(NodeAstLike):
         else:
             self._node_state = NodeState.COMPLETED
 
-
-    fn get_aliased_record_decl(self, module_interface: ModuleInterface) -> Optional[AstNode]:
+    fn get_aliased_record_decl(
+        self, module_interface: ModuleInterface
+    ) -> Optional[AstNode]:
         for child in self._indicies[].child_idxs:
             node = module_interface.get_node(child)
             if node.node[].isa[RecordDeclNode]():
                 return node
             elif node.node[].isa[RecordNode]():
-                return node.node[][RecordNode].get_aliased_record_decl(module_interface)
+                return node.node[][RecordNode].get_aliased_record_decl(
+                    module_interface
+                )
         return None
 
     fn process_anonymous_record(
@@ -187,5 +191,5 @@ struct RecordTypeNode(NodeAstLike):
             # newline_after_tail=True,
             indent_before_ast_entries=True,
             # alternate_string=self._unhandled_tokens,
-            unhandled_tokens='',
+            unhandled_tokens="",
         )

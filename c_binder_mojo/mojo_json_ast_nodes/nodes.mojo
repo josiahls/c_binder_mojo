@@ -18,6 +18,10 @@ trait JsonNodeAstLike(Copyable & Movable):
     ) raises -> JsonAstNode:
         pass
 
+    @always_inline("nodebug")
+    fn to_string(self, just_code: Bool) raises -> String:
+        pass
+
 
 struct PlaceHolderNode(JsonNodeAstLike):
     alias __name__ = "PlaceHolder"
@@ -37,6 +41,10 @@ struct PlaceHolderNode(JsonNodeAstLike):
     ) raises -> JsonAstNode:
         return JsonAstNode(PlaceHolderNode())
 
+    @always_inline("nodebug")
+    fn to_string(self, just_code: Bool) raises -> String:
+        return "PlaceHolderNode"
+
 
 struct TranslationUnitDeclNode(JsonNodeAstLike):
     alias __name__ = "TranslationUnitDecl"
@@ -48,13 +56,17 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
     fn accept_from_json_object(
         read json_object: Object, read level: Int
     ) raises -> Bool:
-        return True
+        return Self.__name__ == json_object["kind"].string()
 
     @staticmethod
     fn create_from_json_object(
         read json_object: Object, read level: Int
     ) raises -> JsonAstNode:
         return JsonAstNode(TranslationUnitDeclNode())
+
+    @always_inline("nodebug")
+    fn to_string(self, just_code: Bool) raises -> String:
+        return "TranslationUnitDeclNode"
 
 
 struct ExampleNode(JsonNodeAstLike):
@@ -74,6 +86,10 @@ struct ExampleNode(JsonNodeAstLike):
         read json_object: Object, read level: Int
     ) raises -> JsonAstNode:
         return JsonAstNode(ExampleNode())
+
+    @always_inline("nodebug")
+    fn to_string(self, just_code: Bool) raises -> String:
+        return "ExampleNode"
 
 
 alias JsonAstNodeVariant = Variant[
@@ -140,3 +156,17 @@ struct JsonAstNode(Copyable & Movable):
             + String(json_object["kind"].string())
         )
         return PlaceHolderNode.create_from_json_object(json_object, level)
+
+    @always_inline("nodebug")
+    fn to_string(self, just_code: Bool) raises -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].to_string(just_code)
+        print(
+            "WARNING: to_string called on AstNode with no to_string method for"
+            " node: "
+            + self.__name__
+        )
+        return "<unknown type>"

@@ -83,11 +83,11 @@ configure = { cmd = [
 ], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
 
 generate_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "emberjson", "cli.mojo"
+    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "cli.mojo"
 ], depends-on = [ "configure" ]}
 
 package = { cmd = [
-    "mojo", "package", "-I", "firehose", "-I", "emberjson", "c_binder_mojo"
+    "mojo", "package", "-I", "firehose", "-I", "EmberJson", "c_binder_mojo"
 ], depends-on = [ "configure" ]}
 
 

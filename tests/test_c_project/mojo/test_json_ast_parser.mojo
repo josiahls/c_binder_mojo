@@ -6,11 +6,13 @@ fn test_json_ast_parser() raises:
     var raw_ast = Path(
         "tests/test_c_project/build/simple_type_defs.raw_json_ast"
     )
-    var ast_entries = ast_parser.parse(
+    var root_node = ast_parser.parse(
         Path("tests/test_c_project/include/simple_type_defs.h"), raw_ast=raw_ast
     )
-    # var ast_entries_path = Path("tests/test_c_project/build/simple_type_defs_json_parsed.ast_entries")
-    # ast_entries_path.write_text(String("\n").join(ast_entries))
+    var output_path = Path(
+        "tests/test_c_project/build/simple_type_defs_with_ast.mojo"
+    )
+    output_path.write_text(root_node.to_string(just_code=False))
 
 
 fn main() raises:

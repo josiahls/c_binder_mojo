@@ -83,10 +83,22 @@ fn make_so_file(
     var test_file_path = test_dir / (test_name + ".c")
     if not test_file_path.exists():
         raise Error("Test file doesn't exist: " + String(test_file_path))
-    
+
     var so_file_path = output_dir / (test_name + ".so")
-    var command = "gcc -shared -fPIC -o " + String(so_file_path) + " " + String(test_file_path)
+    var command = (
+        "gcc -shared -fPIC -o "
+        + String(so_file_path)
+        + " "
+        + String(test_file_path)
+    )
     var result = run(String(command))
-    if result != '':
-        raise Error("Failed to make shared object file: " + String(so_file_path) + " with command: " + String(command) + " and result: " + String(result))
+    if result != "":
+        raise Error(
+            "Failed to make shared object file: "
+            + String(so_file_path)
+            + " with command: "
+            + String(command)
+            + " and result: "
+            + String(result)
+        )
     return so_file_path

@@ -71,17 +71,26 @@ struct RecordDeclNode(JsonNodeAstLike):
     var children: List[JsonAstNode]
     var level: Int
     var mem_address: String
+    var disabled: Bool
 
     fn __init__(out self, object: Object, level: Int):
         self.record_name = ""
         self.children = List[JsonAstNode]()
         self.level = level
         self.mem_address = ""
+        self.disabled = False
         try:
             if "name" in object:
                 self.record_name = object["name"].string()
             if "id" in object:
                 self.mem_address = object["id"].string()
+            if "inner" in object:
+                for inner_object in object["inner"].array():
+                    self.children.append(
+                        JsonAstNode.accept_from_json_object(
+                            inner_object.object(), level + 1
+                        )
+                    )
         except e:
             print("Error creating RecordDeclNode: ", e)
 
@@ -103,6 +112,7 @@ struct RecordDeclNode(JsonNodeAstLike):
                     record_id = registry[].record_decl_type_registry[
                         self.mem_address
                     ]
+                    self.disabled = True
                 self.record_name = "anonomous_record_" + String(record_id)
             except e:
                 print("Error creating RecordDeclNode: ", e)
@@ -129,6 +139,10 @@ struct RecordDeclNode(JsonNodeAstLike):
             s += child.to_string(just_code) + "\n"
         if len(self.children) == 0:
             s += indent + "pass\n"
+        if self.disabled:
+            comment = "# Forward declaration of " + self.record_name + "\n"
+            s = comment + "# " + s.replace("\n", "\n# ")
+
         return s
 
     fn signature(self) -> String:

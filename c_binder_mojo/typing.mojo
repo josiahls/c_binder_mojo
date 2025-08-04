@@ -180,6 +180,10 @@ struct TypeMapper:
         return c_type.endswith(" restrict") or c_type.endswith("*restrict")
 
     @staticmethod
+    fn _is_union(c_type: String) -> Bool:
+        return c_type.startswith("union ")
+
+    @staticmethod
     fn _has_const_attribute(c_type: String) -> Bool:
         """Evaluate const from right to left.
 
@@ -217,6 +221,10 @@ struct TypeMapper:
     @staticmethod
     fn _is_variadic_list(c_type: String) -> Bool:
         return "," in c_type
+
+    @staticmethod
+    fn _convert_union_type(c_type: String) -> String:
+        return "OpaquePointer # TODO: Union type"
 
     @staticmethod
     fn _convert_restrict_type(c_type: String) -> String:
@@ -429,6 +437,8 @@ struct TypeMapper:
                 )
             if unsigned:
                 return Self._convert_unsigned_type(stripped_type)
+            elif Self._is_union(stripped_type):
+                return Self._convert_union_type(stripped_type)
             elif Self._is_struct(stripped_type):
                 return Self._convert_struct_type(stripped_type)
             elif Self._is_restrict_type(stripped_type) and not is_fn_param:

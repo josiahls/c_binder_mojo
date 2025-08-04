@@ -1,36 +1,43 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object
+from emberjson import Object, to_string
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 
 
-struct IntegerLiteralNode(JsonNodeAstLike):
-    alias __name__ = "IntegerLiteral"
+struct IndirectFieldDeclNode(JsonNodeAstLike):
+    alias __name__ = "IndirectFieldDecl"
 
-    var value: String
+    var name: String
     var children: List[JsonAstNode]
     var level: Int
+    var type: String
+    var desugared_type: String
 
     fn __init__(out self, object: Object, level: Int):
-        self.level = level
+        self.name = ""
         self.children = List[JsonAstNode]()
-        self.value = ""
+        self.level = 1  # Fields must always be at the top level + 1
+        self.type = ""
+        self.desugared_type = ""
         try:
-            if "value" in object:
-                self.value = object["value"].string()
+            if "name" in object:
+                self.name = object["name"].string()
+            if "type" in object:
+                type_object = object["type"].object()
+                if "qualType" in type_object:
+                    self.type = type_object["qualType"].string()
+                if "desugaredQualType" in type_object:
+                    self.desugared_type = type_object[
+                        "desugaredQualType"
+                    ].string()
         except e:
-            print("Error creating IntegerLiteralNode: ", e)
-
-    fn get_value(self) -> Optional[Int]:
-        try:
-            return Int(self.value)
-        except e:
-            print("Error getting value from IntegerLiteralNode: ", e)
-            return None
+            print(
+                "Error creating IndirectFieldDeclNode: ", e, to_string(object)
+            )
 
     @staticmethod
     fn accept_from_json_object(
@@ -49,8 +56,6 @@ struct IntegerLiteralNode(JsonNodeAstLike):
         var indent: String = "\t" * self.level
         if not just_code:
             s += indent + self.signature() + "\n"
-        for child in self.children:
-            s += child.to_string(just_code)
         return s
 
     fn signature(self) -> String:

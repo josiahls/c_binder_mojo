@@ -6,6 +6,9 @@ from emberjson import Object
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.enum_constant_decl_node import (
+    EnumConstantDeclNode,
+)
 
 
 struct EnumDeclNode(JsonNodeAstLike):
@@ -22,6 +25,9 @@ struct EnumDeclNode(JsonNodeAstLike):
         self.name = ""
         self.children = List[JsonAstNode]()
         self.is_anonymous = False
+
+        var max_value: Int = -1
+
         try:
             if "name" in object:
                 self.name = object["name"].string()
@@ -33,11 +39,30 @@ struct EnumDeclNode(JsonNodeAstLike):
                     if self.is_anonymous:
                         # Anonymous enums are at the top level
                         child_level = 0
-                    self.children.append(
-                        JsonAstNode.accept_from_json_object(
-                            inner_object.object(), child_level
-                        )
+
+                    node = JsonAstNode.accept_from_json_object(
+                        inner_object.object(), child_level
                     )
+                    if node.node[].isa[EnumConstantDeclNode]():
+                        if self.is_anonymous:
+                            node.node[][
+                                EnumConstantDeclNode
+                            ].parent_is_anonymous = True
+
+                        var value: Optional[Int] = node.node[][
+                            EnumConstantDeclNode
+                        ].get_value()
+
+                        if value:
+                            if value[] > max_value:
+                                max_value = value[]
+                        else:
+                            max_value += 1
+                            node.node[][EnumConstantDeclNode].set_value(
+                                max_value
+                            )
+
+                    self.children.append(node)
         except e:
             print("Error creating EnumDeclNode: ", e)
 

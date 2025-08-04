@@ -1,0 +1,74 @@
+# Native Mojo Modules
+
+# Third Party Mojo Modules
+from emberjson import Object, to_string
+
+# First Party Modules
+from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.typing import TypeMapper
+
+
+struct FieldDeclNode(JsonNodeAstLike):
+    alias __name__ = "FieldDecl"
+
+    var name: String
+    var children: List[JsonAstNode]
+    var level: Int
+    var type: String
+    var desugared_type: String
+    var is_union: Bool
+
+    fn __init__(out self, object: Object, level: Int):
+        self.name = ""
+        self.children = List[JsonAstNode]()
+        self.level = 1  # Fields must always be at the top level + 1
+        self.type = ""
+        self.desugared_type = ""
+        self.is_union = False
+        try:
+            if "name" in object:
+                self.name = object["name"].string()
+            if "type" in object:
+                type_object = object["type"].object()
+                if "qualType" in type_object:
+                    self.type = type_object["qualType"].string()
+                if "desugaredQualType" in type_object:
+                    self.desugared_type = type_object[
+                        "desugaredQualType"
+                    ].string()
+                # else:
+                #     print("Error creating FieldDeclNode: ", to_string(type_object))
+        except e:
+            print("Error creating FieldDeclNode: ", e, to_string(object))
+
+    @staticmethod
+    fn accept_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Bool:
+        return json_object["kind"].string() == Self.__name__
+
+    @staticmethod
+    fn create_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> JsonAstNode:
+        return JsonAstNode(Self(json_object, level))
+
+    fn to_string(self, just_code: Bool) raises -> String:
+        var s: String = ""
+        var indent: String = "\t" * self.level
+        if not just_code:
+            s += indent + self.signature() + "\n"
+        s += indent + "var " + self.name + ": "
+
+        var dtype: String = ""
+        if self.desugared_type != "":
+            dtype = self.desugared_type
+        else:
+            dtype = self.type
+
+        s += TypeMapper.convert_c_type_to_mojo_type(dtype) + "\n"
+        return s
+
+    fn signature(self) -> String:
+        return "# Node: " + self.__name__ + "()"

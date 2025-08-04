@@ -8,29 +8,31 @@ from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 
 
-struct IntegerLiteralNode(JsonNodeAstLike):
-    alias __name__ = "IntegerLiteral"
+struct EnumTypeNode(JsonNodeAstLike):
+    alias __name__ = "EnumType"
 
-    var value: String
+    var name: String
     var children: List[JsonAstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
+        self.name = ""
         self.children = List[JsonAstNode]()
-        self.value = ""
         try:
-            if "value" in object:
-                self.value = object["value"].string()
+            if "type" in object:
+                type_object = object["type"].object()
+                if "qualType" in type_object:
+                    name = type_object["qualType"].string()
+                    self.name = String(name.removeprefix("enum "))
+                if "decl" in type_object:
+                    self.children.append(
+                        JsonAstNode.accept_from_json_object(
+                            type_object["decl"].object(), level + 1
+                        )
+                    )
         except e:
-            print("Error creating IntegerLiteralNode: ", e)
-
-    fn get_value(self) -> Optional[Int]:
-        try:
-            return Int(self.value)
-        except e:
-            print("Error getting value from IntegerLiteralNode: ", e)
-            return None
+            print("Error creating EnumTypeNode: ", e)
 
     @staticmethod
     fn accept_from_json_object(
@@ -45,13 +47,7 @@ struct IntegerLiteralNode(JsonNodeAstLike):
         return JsonAstNode(Self(json_object, level))
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        var indent: String = "\t" * self.level
-        if not just_code:
-            s += indent + self.signature() + "\n"
-        for child in self.children:
-            s += child.to_string(just_code)
-        return s
+        return self.name
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"

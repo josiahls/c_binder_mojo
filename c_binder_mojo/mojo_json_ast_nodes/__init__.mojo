@@ -42,6 +42,11 @@ from c_binder_mojo.mojo_json_ast_nodes.binary_operator_node import (
 from c_binder_mojo.mojo_json_ast_nodes.integer_literal_node import (
     IntegerLiteralNode,
 )
+from c_binder_mojo.mojo_json_ast_nodes.enum_type_node import EnumTypeNode
+from c_binder_mojo.mojo_json_ast_nodes.field_decl_node import FieldDeclNode
+from c_binder_mojo.mojo_json_ast_nodes.indirect_field_decl_node import (
+    IndirectFieldDeclNode,
+)
 
 
 alias JsonAstNodeVariant = Variant[
@@ -65,6 +70,9 @@ alias JsonAstNodeVariant = Variant[
     TextCommentNode,
     BinaryOperatorNode,
     IntegerLiteralNode,
+    EnumTypeNode,
+    FieldDeclNode,
+    IndirectFieldDeclNode,
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,
 ]

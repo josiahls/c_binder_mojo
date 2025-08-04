@@ -45,6 +45,13 @@ struct ConstantExprNode(JsonNodeAstLike):
         except e:
             print("Error creating ConstantExprNode: ", e)
 
+    fn get_value(self) -> Optional[Int]:
+        try:
+            return Int(self.value)
+        except e:
+            print("Error getting value from ConstantExprNode: ", e)
+            return None
+
     @staticmethod
     fn accept_from_json_object(
         read json_object: Object, read level: Int

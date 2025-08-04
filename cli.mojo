@@ -143,6 +143,8 @@ fn main() raises:
         debug_output=debug_output,
     )
 
+    _ = include_only_prefixes
+
     # var handler_name = String(input_header_path.path.split("/")[-1].split(".")[0])
     # var output_file_path = (output_dir / (input_header_path.path.split("/")[-1].split(".")[0] + ".mojo"))
     # var include_only_prefixes_list = [String(prefix) for prefix in include_only_prefixes.split(",")]

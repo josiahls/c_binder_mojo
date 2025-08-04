@@ -13,10 +13,12 @@ struct PlaceHolderNode(JsonNodeAstLike):
 
     var nodes: List[JsonAstNode]
     var level: Int
+    var json_string: String
 
     fn __init__(out self, object: Object, level: Int):
         self.nodes = List[JsonAstNode]()
         self.level = level
+        self.json_string = to_string(object)
 
         if "inner" in object:
             try:
@@ -48,11 +50,8 @@ struct PlaceHolderNode(JsonNodeAstLike):
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
         var indent = "\t" * self.level
-        if not just_code:
-            for node in self.nodes:
-                s += node.to_string(just_code)
-        else:
-            s += indent + "# " + self.signature() + "\n"
-            for node in self.nodes:
-                s += node.to_string(just_code)
+        s += indent + "# " + self.signature() + "\n"
+        s += indent + "# " + self.json_string + "\n"
+        # for node in self.nodes:
+        #     s += node.to_string(just_code)
         return s

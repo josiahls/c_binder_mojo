@@ -24,8 +24,6 @@ struct TypedefDeclNode(JsonNodeAstLike):
         try:
             if "name" in object:
                 self.name = object["name"].string()
-            if "dtype" in object:
-                self.dtype = object["dtype"].string()
             if "inner" in object:
                 for value in object["inner"].array():
                     self.children.append(
@@ -57,10 +55,16 @@ struct TypedefDeclNode(JsonNodeAstLike):
         var s = String()
         var indent = "\t" * self.level
         if not just_code:
-            for node in self.children:
-                s += node.to_string(just_code) + "\n"
-        else:
-            s += indent + "# " + self.signature() + "\n"
-            for node in self.children:
-                s += node.to_string(just_code) + "\n"
+            s += indent + self.signature() + "\n"
+
+        s += indent + "alias " + self.name + " = "
+        for node in self.children:
+            s += node.to_string(False) + "\n"
+        # if not just_code:
+        #     for node in self.children:
+        #         s += node.to_string(just_code) + "\n"
+        # else:
+        #     s += indent + "# " + self.signature() + "\n"
+        #     for node in self.children:
+        #         s += node.to_string(just_code) + "\n"
         return s

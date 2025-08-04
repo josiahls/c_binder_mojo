@@ -20,6 +20,9 @@ from c_binder_mojo.mojo_json_ast_nodes.elaborated_type_node import (
 from c_binder_mojo.mojo_json_ast_nodes.function_decl_node import (
     FunctionDeclNode,
 )
+from c_binder_mojo.mojo_json_ast_nodes.typedef_type_node import TypedefTypeNode
+from c_binder_mojo.mojo_json_ast_nodes.mode_attr_node import ModeAttrNode
+from c_binder_mojo.mojo_json_ast_nodes.qual_type_node import QualTypeNode
 
 
 alias JsonAstNodeVariant = Variant[
@@ -31,6 +34,9 @@ alias JsonAstNodeVariant = Variant[
     PointerTypeNode,
     ElaboratedTypeNode,
     FunctionDeclNode,
+    TypedefTypeNode,
+    QualTypeNode,
+    ModeAttrNode,
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,
 ]

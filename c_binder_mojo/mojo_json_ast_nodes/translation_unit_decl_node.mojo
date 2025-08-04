@@ -16,6 +16,15 @@ from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
 )
 
 
+alias header: String = """
+from sys.ffi import DLHandle
+from sys import ffi
+from os import abort, getenv, setenv
+from python._cpython import ExternalFunction
+from pathlib import Path
+"""
+
+
 struct TranslationUnitDeclNode(JsonNodeAstLike):
     alias __name__ = "TranslationUnitDecl"
 
@@ -58,6 +67,7 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
+        s += String(header) + "\n"
         var indent = "\t" * self.level
         if not just_code:
             for child in self.children:

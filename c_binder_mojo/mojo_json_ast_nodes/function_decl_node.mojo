@@ -66,7 +66,6 @@ struct FunctionDeclNode(JsonNodeAstLike):
         if not just_code:
             s += indent + self.signature() + "\n"
         s += indent + "alias " + self.function_name + " = "
-        print("function_type: ", self.function_type)
         s += TypeMapper.convert_c_type_to_mojo_type(
             self.function_type, is_fn_decl=True
         )

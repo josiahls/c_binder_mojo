@@ -176,14 +176,8 @@ struct TypeMapper:
         return c_type.startswith("unsigned ")
 
     @staticmethod
-    fn _has_restrict_attribute(c_type: String) -> Bool:
-        # Check if the type starts with "restrict " (with space) to avoid matching type names
-        # that contain "restrict" as part of their name (e.g., "restrict_t", "my_restrict_type")
-        if "restrict " in c_type:
-            return c_type.startswith("restrict ")
-        elif c_type.replace("*", " ").endswith(" restrict"):
-            return True
-        return False
+    fn _is_restrict_type(c_type: String) -> Bool:
+        return c_type.endswith(" restrict") or c_type.endswith("*restrict")
 
     @staticmethod
     fn _has_const_attribute(c_type: String) -> Bool:
@@ -213,6 +207,10 @@ struct TypeMapper:
         return c_type.endswith("*")
 
     @staticmethod
+    fn _is_struct(c_type: String) -> Bool:
+        return c_type.startswith("struct ")
+
+    @staticmethod
     fn _is_array(c_type: String) -> Bool:
         return "[" in c_type and "]" in c_type
 
@@ -221,10 +219,21 @@ struct TypeMapper:
         return "," in c_type
 
     @staticmethod
+    fn _convert_restrict_type(c_type: String) -> String:
+        # TODO: Does mojo have any equivalent?
+        var stripped_type = String(c_type.removesuffix("restrict"))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
+
+    @staticmethod
     fn _convert_const_attribute(c_type: String) -> String:
         # TODO: This is sloppy. We need to do proper left <- right evaluation of attributes.
         stripped_type = String(c_type.removesuffix("const"))
         stripped_type = String(stripped_type.removeprefix("const "))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
+
+    @staticmethod
+    fn _convert_struct_type(c_type: String) -> String:
+        var stripped_type = String(c_type.removeprefix("struct "))
         return Self.convert_c_type_to_mojo_type(stripped_type)
 
     @staticmethod
@@ -295,13 +304,19 @@ struct TypeMapper:
         This is used for function declarations. Main difference is `c_type` does
         not contain the `(*)` pointer.
         """
-        param_start_idx = c_type.find("(")
-        param_end_idx = c_type.rfind(")")
-        if param_start_idx == -1:
-            return c_type
+        var stripped_type = String(c_type)
+        if c_type.endswith("__attribute__((noreturn))"):
+            stripped_type = String(
+                c_type.removesuffix("__attribute__((noreturn))")
+            )
 
-        fn_return_type = String(c_type[:param_start_idx])
-        fn_params = String(c_type[param_start_idx + 1 : param_end_idx])
+        param_start_idx = stripped_type.find("(")
+        param_end_idx = stripped_type.rfind(")")
+        if param_start_idx == -1:
+            return stripped_type
+
+        fn_return_type = String(stripped_type[:param_start_idx])
+        fn_params = String(stripped_type[param_start_idx + 1 : param_end_idx])
 
         fn_return_type = Self.convert_c_type_to_mojo_type(fn_return_type)
         fn_params = Self.convert_c_type_to_mojo_type(fn_params, True)
@@ -392,15 +407,6 @@ struct TypeMapper:
         return String(", ").join(returned_elements)
 
     @staticmethod
-    fn _convert_restrict_type(
-        c_type: String,
-    ) -> String:
-        stripped_type = String(c_type.removeprefix("restrict "))
-        if stripped_type.replace("*", " ").endswith(" restrict"):
-            stripped_type = String(stripped_type.removesuffix("restrict"))
-        return Self.convert_c_type_to_mojo_type(stripped_type)
-
-    @staticmethod
     fn convert_c_type_to_mojo_type(
         c_type: String,
         is_fn_param: Bool = False,
@@ -423,6 +429,10 @@ struct TypeMapper:
                 )
             if unsigned:
                 return Self._convert_unsigned_type(stripped_type)
+            elif Self._is_struct(stripped_type):
+                return Self._convert_struct_type(stripped_type)
+            elif Self._is_restrict_type(stripped_type) and not is_fn_param:
+                return Self._convert_restrict_type(stripped_type)
             elif stripped_type in NON_NUMERIC_TYPES:
                 return NON_NUMERIC_TYPES[stripped_type]
             elif stripped_type in NUMERIC_TYPES:
@@ -430,8 +440,6 @@ struct TypeMapper:
             elif Self._has_const_attribute(stripped_type) and not is_fn_param:
                 # NOTE: is_fn_param==True, const's currently get handled differently.
                 return Self._convert_const_attribute(stripped_type)
-            elif Self._has_restrict_attribute(stripped_type):
-                return Self._convert_restrict_type(stripped_type)
             elif Self._is_function(stripped_type):
                 return Self._convert_function_type(stripped_type, is_fn_param)
             elif Self._is_parentheses_wrapped(stripped_type):

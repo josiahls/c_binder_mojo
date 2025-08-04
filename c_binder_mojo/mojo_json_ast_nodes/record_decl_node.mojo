@@ -124,7 +124,7 @@ struct RecordDeclNode(JsonNodeAstLike):
         var indent = "\t" * 1  # structs must not be indented.
         # structs must not be indented.
         s += "struct " + self.record_name + ":\n"
-        print("to_string RecordDeclNode: ", self.record_name)
+
         for child in self.children:
             s += child.to_string(just_code) + "\n"
         if len(self.children) == 0:

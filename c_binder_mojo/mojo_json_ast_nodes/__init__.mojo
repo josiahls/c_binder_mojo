@@ -23,6 +23,14 @@ from c_binder_mojo.mojo_json_ast_nodes.function_decl_node import (
 from c_binder_mojo.mojo_json_ast_nodes.typedef_type_node import TypedefTypeNode
 from c_binder_mojo.mojo_json_ast_nodes.mode_attr_node import ModeAttrNode
 from c_binder_mojo.mojo_json_ast_nodes.qual_type_node import QualTypeNode
+from c_binder_mojo.mojo_json_ast_nodes.var_decl_node import VarDeclNode
+from c_binder_mojo.mojo_json_ast_nodes.enum_decl_node import EnumDeclNode
+from c_binder_mojo.mojo_json_ast_nodes.enum_constant_decl_node import (
+    EnumConstantDeclNode,
+)
+from c_binder_mojo.mojo_json_ast_nodes.constant_expr_node import (
+    ConstantExprNode,
+)
 
 
 alias JsonAstNodeVariant = Variant[
@@ -37,6 +45,10 @@ alias JsonAstNodeVariant = Variant[
     TypedefTypeNode,
     QualTypeNode,
     ModeAttrNode,
+    VarDeclNode,
+    EnumDeclNode,
+    EnumConstantDeclNode,
+    ConstantExprNode,
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,
 ]

@@ -53,7 +53,6 @@ struct RecordTypeNode(JsonNodeAstLike):
                 decl_record_node = JsonAstNode.accept_from_json_object(
                     object["decl"].object(), 1
                 )
-                print("RecordDeclNode: ", to_string(object["decl"].object()))
                 get_global_record_decl_node_queue()[].record_decl_node_queue.append(
                     decl_record_node
                 )
@@ -61,32 +60,6 @@ struct RecordTypeNode(JsonNodeAstLike):
                     self.record_name = decl_record_node.node[][
                         RecordDeclNode
                     ].record_name
-
-                # TODO: Probably add to a global decl registry.
-                # if root_node:
-                #     if root_node[].node[].isa[TranslationUnitDeclNode]():
-                #         # NOTE: We possibly need to maintain a reference to this node for
-                #         # getting the node name.
-                #         record_decl_node = JsonAstNode.accept_from_json_object(
-                #             # NOTE: This is set from the TranslationUnitDeclNode so the level is also
-                #             # reset to 1.
-                #             object["decl"].object(),
-                #             1,
-                #         )
-                #         if record_decl_node.node[].isa[RecordDeclNode]():
-                #             self.record_name = record_decl_node.node[][
-                #                 RecordDeclNode
-                #             ].record_name
-
-                #             print("RecordTypeNode: ", self.record_name)
-                #             root_node[].node[][
-                #                 TranslationUnitDeclNode
-                #             ].children.append(record_decl_node)
-
-                #     else:
-                #         print(
-                #             "Error creating RecordTypeNode: ", to_string(object)
-                #         )
         except e:
             print("Error creating RecordTypeNode: ", e)
 

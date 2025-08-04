@@ -288,6 +288,26 @@ struct TypeMapper:
         return "fn" + fn_params + " -> " + fn_return_type
 
     @staticmethod
+    fn _convert_function_decl_type(
+        c_type: String, is_fn_param: Bool = False
+    ) -> String:
+        """
+        This is used for function declarations. Main difference is `c_type` does
+        not contain the `(*)` pointer.
+        """
+        param_start_idx = c_type.find("(")
+        param_end_idx = c_type.rfind(")")
+        if param_start_idx == -1:
+            return c_type
+
+        fn_return_type = String(c_type[:param_start_idx])
+        fn_params = String(c_type[param_start_idx + 1 : param_end_idx])
+
+        fn_return_type = Self.convert_c_type_to_mojo_type(fn_return_type)
+        fn_params = Self.convert_c_type_to_mojo_type(fn_params, True)
+        return "fn (" + fn_params + ") -> " + fn_return_type
+
+    @staticmethod
     fn _convert_signed_type(
         c_type: String,
     ) -> String:
@@ -382,7 +402,10 @@ struct TypeMapper:
 
     @staticmethod
     fn convert_c_type_to_mojo_type(
-        c_type: String, is_fn_param: Bool = False, unsigned: Bool = False
+        c_type: String,
+        is_fn_param: Bool = False,
+        unsigned: Bool = False,
+        is_fn_decl: Bool = False,
     ) -> String:
         stripped_type = String(c_type.strip())
         try:
@@ -393,6 +416,11 @@ struct TypeMapper:
             #   stripped_type in NUMERIC_TYPES
             # But we might want to instead of
             #   any(stripped_type.endswith(non_numeric_type) for non_numeric_type in NON_NUMERIC_TYPES)
+            if is_fn_decl:
+                # NOTE: Used when whether or not the c_type is a function is important.
+                return Self._convert_function_decl_type(
+                    stripped_type, is_fn_param
+                )
             if unsigned:
                 return Self._convert_unsigned_type(stripped_type)
             elif stripped_type in NON_NUMERIC_TYPES:

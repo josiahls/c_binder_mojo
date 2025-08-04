@@ -16,7 +16,9 @@ struct TypedefDeclNode(JsonNodeAstLike):
     var name: String
     var dtype: String
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(
+        out self, object: Object, level: Int, root_node: Optional[JsonAstNode]
+    ):
         self.level = level
         self.name = ""
         self.dtype = ""
@@ -28,7 +30,7 @@ struct TypedefDeclNode(JsonNodeAstLike):
                 for value in object["inner"].array():
                     self.children.append(
                         JsonAstNode.accept_from_json_object(
-                            value.object(), level + 1
+                            value.object(), level + 1, root_node
                         )
                     )
             else:
@@ -38,15 +40,19 @@ struct TypedefDeclNode(JsonNodeAstLike):
 
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object, read level: Int
+        read json_object: Object,
+        read level: Int,
+        root_node: Optional[JsonAstNode],
     ) raises -> Bool:
         return json_object["kind"].string() == Self.__name__
 
     @staticmethod
     fn create_from_json_object(
-        read json_object: Object, read level: Int
+        read json_object: Object,
+        read level: Int,
+        root_node: Optional[JsonAstNode],
     ) raises -> JsonAstNode:
-        return JsonAstNode(Self(json_object, level))
+        return JsonAstNode(Self(json_object, level, root_node))
 
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "(" + self.name + ")"

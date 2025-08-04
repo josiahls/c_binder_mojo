@@ -15,7 +15,9 @@ struct PlaceHolderNode(JsonNodeAstLike):
     var level: Int
     var json_string: String
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(
+        out self, object: Object, level: Int, root_node: Optional[JsonAstNode]
+    ):
         self.nodes = List[JsonAstNode]()
         self.level = level
         self.json_string = to_string(object)
@@ -25,7 +27,7 @@ struct PlaceHolderNode(JsonNodeAstLike):
                 for value in object["inner"].array():
                     self.nodes.append(
                         JsonAstNode.accept_from_json_object(
-                            value.object(), level + 1
+                            value.object(), level + 1, root_node
                         )
                     )
             except e:
@@ -34,15 +36,19 @@ struct PlaceHolderNode(JsonNodeAstLike):
 
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object, read level: Int
+        read json_object: Object,
+        read level: Int,
+        root_node: Optional[JsonAstNode],
     ) raises -> Bool:
         return True
 
     @staticmethod
     fn create_from_json_object(
-        read json_object: Object, read level: Int
+        read json_object: Object,
+        read level: Int,
+        root_node: Optional[JsonAstNode],
     ) raises -> JsonAstNode:
-        return JsonAstNode(PlaceHolderNode(json_object, level))
+        return JsonAstNode(PlaceHolderNode(json_object, level, root_node))
 
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "()"

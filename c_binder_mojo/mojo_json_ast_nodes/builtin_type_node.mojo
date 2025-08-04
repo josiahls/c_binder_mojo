@@ -15,7 +15,9 @@ struct BuiltinTypeNode(JsonNodeAstLike):
     var level: Int
     var dtype: String
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(
+        out self, object: Object, level: Int, root_node: Optional[JsonAstNode]
+    ):
         self.level = level
         self.dtype = ""
         try:
@@ -30,15 +32,19 @@ struct BuiltinTypeNode(JsonNodeAstLike):
 
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object, read level: Int
+        read json_object: Object,
+        read level: Int,
+        root_node: Optional[JsonAstNode],
     ) raises -> Bool:
         return json_object["kind"].string() == Self.__name__
 
     @staticmethod
     fn create_from_json_object(
-        read json_object: Object, read level: Int
+        read json_object: Object,
+        read level: Int,
+        root_node: Optional[JsonAstNode],
     ) raises -> JsonAstNode:
-        return JsonAstNode(Self(json_object, level))
+        return JsonAstNode(Self(json_object, level, root_node))
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

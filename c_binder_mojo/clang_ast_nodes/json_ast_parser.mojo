@@ -42,7 +42,7 @@ struct AstParser:
             raw_ast[].write_text(to_string[pretty=True](root_object))
 
         var root_node = JsonAstNode.accept_from_json_object(
-            root_object.object(), level=0, root_node=None
+            root_object.object(), level=0
         )
         # var json_object_stack = List(root_object.object())
 

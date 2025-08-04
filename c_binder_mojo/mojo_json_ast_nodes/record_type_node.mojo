@@ -23,9 +23,7 @@ struct RecordTypeNode(JsonNodeAstLike):
 
     var is_struct: Bool
 
-    fn __init__(
-        out self, object: Object, level: Int, root_node: Optional[JsonAstNode]
-    ):
+    fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.mem_address = ""
         self.record_name = ""
@@ -48,52 +46,50 @@ struct RecordTypeNode(JsonNodeAstLike):
                 for child in object["inner"].array():
                     self.children.append(
                         JsonAstNode.accept_from_json_object(
-                            child.object(), level + 1, root_node
+                            child.object(), level + 1
                         )
                     )
             if "decl" in object:
-                if root_node:
-                    if root_node[].node[].isa[TranslationUnitDeclNode]():
-                        # NOTE: We possibly need to maintain a reference to this node for
-                        # getting the node name.
-                        record_decl_node = JsonAstNode.accept_from_json_object(
-                            # NOTE: This is set from the TranslationUnitDeclNode so the level is also
-                            # reset to 1.
-                            object["decl"].object(),
-                            1,
-                            root_node,
-                        )
-                        if record_decl_node.node[].isa[RecordDeclNode]():
-                            self.record_name = record_decl_node.node[][
-                                RecordDeclNode
-                            ].record_name
-                            print("RecordTypeNode: ", self.record_name)
-                            root_node[].node[][
-                                TranslationUnitDeclNode
-                            ].children.append(record_decl_node)
+                pass
+                # TODO: Probably add to a global decl registry.
+                # if root_node:
+                #     if root_node[].node[].isa[TranslationUnitDeclNode]():
+                #         # NOTE: We possibly need to maintain a reference to this node for
+                #         # getting the node name.
+                #         record_decl_node = JsonAstNode.accept_from_json_object(
+                #             # NOTE: This is set from the TranslationUnitDeclNode so the level is also
+                #             # reset to 1.
+                #             object["decl"].object(),
+                #             1,
+                #         )
+                #         if record_decl_node.node[].isa[RecordDeclNode]():
+                #             self.record_name = record_decl_node.node[][
+                #                 RecordDeclNode
+                #             ].record_name
 
-                    else:
-                        print(
-                            "Error creating RecordTypeNode: ", to_string(object)
-                        )
+                #             print("RecordTypeNode: ", self.record_name)
+                #             root_node[].node[][
+                #                 TranslationUnitDeclNode
+                #             ].children.append(record_decl_node)
+
+                #     else:
+                #         print(
+                #             "Error creating RecordTypeNode: ", to_string(object)
+                #         )
         except e:
             print("Error creating RecordTypeNode: ", e)
 
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> Bool:
         return json_object["kind"].string() == Self.__name__
 
     @staticmethod
     fn create_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> JsonAstNode:
-        return JsonAstNode(Self(json_object, level, root_node))
+        return JsonAstNode(Self(json_object, level))
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

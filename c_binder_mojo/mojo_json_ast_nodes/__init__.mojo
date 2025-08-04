@@ -13,6 +13,10 @@ from c_binder_mojo.mojo_json_ast_nodes.typedef_decl_node import TypedefDeclNode
 from c_binder_mojo.mojo_json_ast_nodes.builtin_type_node import BuiltinTypeNode
 from c_binder_mojo.mojo_json_ast_nodes.record_type_node import RecordTypeNode
 from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import RecordDeclNode
+from c_binder_mojo.mojo_json_ast_nodes.pointer_type_node import PointerTypeNode
+from c_binder_mojo.mojo_json_ast_nodes.elaborated_type_node import (
+    ElaboratedTypeNode,
+)
 
 
 alias JsonAstNodeVariant = Variant[
@@ -21,6 +25,8 @@ alias JsonAstNodeVariant = Variant[
     BuiltinTypeNode,
     RecordTypeNode,
     RecordDeclNode,
+    PointerTypeNode,
+    ElaboratedTypeNode,
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,
 ]

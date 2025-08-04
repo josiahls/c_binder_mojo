@@ -19,38 +19,28 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
     var children: List[JsonAstNode]
     var level: Int
 
-    fn __init__(
-        out self, object: Object, level: Int, root_node: Optional[JsonAstNode]
-    ):
+    fn __init__(out self, object: Object, level: Int):
         self.children = List[JsonAstNode]()
         self.level = level
         try:
             for value in object["inner"].array():
                 self.children.append(
-                    JsonAstNode.accept_from_json_object(
-                        value.object(), level, JsonAstNode(self)
-                    )
+                    JsonAstNode.accept_from_json_object(value.object(), level)
                 )
         except e:
             print("Error creating TranslationUnitDeclNode: ", e)
 
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> Bool:
         return Self.__name__ == json_object["kind"].string()
 
     @staticmethod
     fn create_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> JsonAstNode:
-        return JsonAstNode(
-            TranslationUnitDeclNode(json_object, level, root_node)
-        )
+        return JsonAstNode(Self(json_object, level))
 
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "()"

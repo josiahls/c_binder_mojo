@@ -46,9 +46,7 @@ struct RecordDeclNode(JsonNodeAstLike):
     var level: Int
     var mem_address: String
 
-    fn __init__(
-        out self, object: Object, level: Int, root_node: Optional[JsonAstNode]
-    ):
+    fn __init__(out self, object: Object, level: Int):
         self.record_name = ""
         self.children = List[JsonAstNode]()
         self.level = level
@@ -65,44 +63,42 @@ struct RecordDeclNode(JsonNodeAstLike):
             registry = get_global_anonomous_record_decl_type_registry()
 
             try:
+                var record_id = 0
                 if self.mem_address not in registry[].record_decl_type_registry:
                     max_num = 0
                     for value in registry[].record_decl_type_registry.values():
                         if value > max_num:
                             max_num = value
-                    registry[].record_decl_type_registry[self.mem_address] = (
-                        max_num + 1
-                    )
-                    self.record_name = "anonomous_record_" + String(max_num + 1)
+                    record_id = max_num + 1
+                    registry[].record_decl_type_registry[
+                        self.mem_address
+                    ] = record_id
                 else:
                     record_id = registry[].record_decl_type_registry[
                         self.mem_address
                     ]
-                    self.record_name = "anonomous_record_" + String(record_id)
+                self.record_name = "anonomous_record_" + String(record_id)
             except e:
                 print("Error creating RecordDeclNode: ", e)
 
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> Bool:
         return json_object["kind"].string() == Self.__name__
 
     @staticmethod
     fn create_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> JsonAstNode:
-        return JsonAstNode(Self(json_object, level, root_node))
+        return JsonAstNode(Self(json_object, level))
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
         var indent = "\t" * 1  # structs must not be indented.
         # structs must not be indented.
         s += "struct " + self.record_name + ":\n"
+        print("to_string RecordDeclNode: ", self.record_name)
         for child in self.children:
             s += child.to_string(just_code) + "\n"
         if len(self.children) == 0:

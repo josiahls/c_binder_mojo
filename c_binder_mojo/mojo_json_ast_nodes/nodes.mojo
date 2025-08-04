@@ -32,9 +32,7 @@ struct JsonAstNode(Copyable & Movable):
     @always_inline("nodebug")
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> Self:
         """
         Iterates over each type in the variant at compile-time and calls accept.
@@ -43,15 +41,13 @@ struct JsonAstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept_from_json_object(json_object, level, root_node):
-                return T.create_from_json_object(json_object, level, root_node)
+            if T.accept_from_json_object(json_object, level):
+                return T.create_from_json_object(json_object, level)
         print(
             "WARNING: none of the nodes accepted the json_object: "
             + String(json_object["kind"].string())
         )
-        return PlaceHolderNode.create_from_json_object(
-            json_object, level, root_node
-        )
+        return PlaceHolderNode.create_from_json_object(json_object, level)
 
     @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:

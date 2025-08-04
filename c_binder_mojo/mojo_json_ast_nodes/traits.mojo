@@ -12,17 +12,13 @@ trait JsonNodeAstLike(Copyable & Movable):
 
     @staticmethod
     fn accept_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> Bool:
         pass
 
     @staticmethod
     fn create_from_json_object(
-        read json_object: Object,
-        read level: Int,
-        root_node: Optional[JsonAstNode],
+        read json_object: Object, read level: Int
     ) raises -> JsonAstNode:
         pass
 

@@ -141,7 +141,7 @@ struct RecordDeclNode(JsonNodeAstLike):
             s += indent + "pass\n"
         if self.disabled:
             comment = "# Forward declaration of " + self.record_name + "\n"
-            s = comment + "# " + s.replace("\n", "\n# ")
+            s = comment + "# " + s.replace("\n", "\n# ") + "\n"
 
         return s
 

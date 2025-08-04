@@ -31,11 +31,11 @@ init_test_c_project = { cmd = [
 ], outputs = ["tests/test_c_project/build"]}
 
 build_test_c_project = { cmd = [
-        "cd", "tests/test_c_project/build", "&&",
-        "make",
-    ], depends-on = [
-        "init_test_c_project"
-    ]}
+    "cd", "tests/test_c_project/build", "&&",
+    "make",
+], depends-on = [
+    "init_test_c_project"
+]}
 
 
 ########################### Firehose Configuration ############################
@@ -69,7 +69,7 @@ clean_update_stdlib = { cmd = [
     "git", "fetch", "origin", "&&",
     "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
     "git", "reset", "--hard", "origin/josiahls/add-ulong-c-ffi", "&&",
-    "bazelw", "build", "//mojo/stdlib/stdlib"
+    "bazelw", "build", "//mojo/stdlib/..."
 ], depends-on = [ "clone_stdlib" ]}
 
 ######################### Pre-commit Configuration ##########################

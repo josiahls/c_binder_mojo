@@ -11,6 +11,9 @@ from emberjson import Object
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
+    get_global_record_decl_node_queue,
+)
 
 
 struct TranslationUnitDeclNode(JsonNodeAstLike):
@@ -27,6 +30,14 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
                 self.children.append(
                     JsonAstNode.accept_from_json_object(value.object(), level)
                 )
+
+                while (
+                    get_global_record_decl_node_queue()[].record_decl_node_queue
+                ):
+                    var node = (
+                        get_global_record_decl_node_queue()[].record_decl_node_queue.pop()
+                    )
+                    self.children.append(node)
         except e:
             print("Error creating TranslationUnitDeclNode: ", e)
 

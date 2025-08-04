@@ -37,6 +37,32 @@ alias GLOBAL_ANONOMOUS_RECORD_DECL_TYPE_REGISTRY = _Global[
 ]
 
 
+struct _GlobalRecordDeclNodeQueue(Movable):
+    # Mem address and record inc name
+    var record_decl_node_queue: List[JsonAstNode]
+
+    fn __init__(out self):
+        self.record_decl_node_queue = List[JsonAstNode]()
+
+
+fn _init_global_record_decl_node_queue() -> _GlobalRecordDeclNodeQueue:
+    return _GlobalRecordDeclNodeQueue()
+
+
+@always_inline
+fn get_global_record_decl_node_queue() -> (
+    UnsafePointer[_GlobalRecordDeclNodeQueue]
+):
+    return GLOBAL_RECORD_DECL_NODE_QUEUE.get_or_create_ptr()
+
+
+alias GLOBAL_RECORD_DECL_NODE_QUEUE = _Global[
+    "GLOBAL_RECORD_DECL_NODE_QUEUE",
+    _GlobalRecordDeclNodeQueue,
+    _init_global_record_decl_node_queue,
+]
+
+
 struct RecordDeclNode(JsonNodeAstLike):
     alias __name__ = "RecordDecl"
 

@@ -7,8 +7,8 @@ from emberjson import Object, to_string
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
-from c_binder_mojo.mojo_json_ast_nodes.translation_unit_decl_node import (
-    TranslationUnitDeclNode,
+from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
+    get_global_record_decl_node_queue,
 )
 
 
@@ -50,7 +50,18 @@ struct RecordTypeNode(JsonNodeAstLike):
                         )
                     )
             if "decl" in object:
-                pass
+                decl_record_node = JsonAstNode.accept_from_json_object(
+                    object["decl"].object(), 1
+                )
+                print("RecordDeclNode: ", to_string(object["decl"].object()))
+                get_global_record_decl_node_queue()[].record_decl_node_queue.append(
+                    decl_record_node
+                )
+                if decl_record_node.node[].isa[RecordDeclNode]():
+                    self.record_name = decl_record_node.node[][
+                        RecordDeclNode
+                    ].record_name
+
                 # TODO: Probably add to a global decl registry.
                 # if root_node:
                 #     if root_node[].node[].isa[TranslationUnitDeclNode]():

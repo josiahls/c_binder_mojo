@@ -42,6 +42,9 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
     ) raises -> JsonAstNode:
         return JsonAstNode(TranslationUnitDeclNode(json_object, level))
 
+    fn signature(self) -> String:
+        return "Node: " + self.__name__ + "()"
+
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
         var indent = "\t" * self.level
@@ -49,7 +52,7 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
             for node in self.nodes:
                 s += node.to_string(just_code)
         else:
-            s += indent + "Node: " + self.__name__ + "\n"
+            s += indent + "# " + self.signature() + "\n"
             for node in self.nodes:
                 s += node.to_string(just_code)
         return s

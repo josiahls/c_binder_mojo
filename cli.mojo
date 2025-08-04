@@ -37,7 +37,7 @@ fn generate_bindings(
     # Tokenize the file
     var raw_ast: Optional[Path] = None
     if debug_output:
-        raw_ast = output_path / (module_name + ".raw_ast")
+        raw_ast = output_path / (module_name + "_raw_ast.json")
 
     var ast_parser = AstParser()
     var root_node = ast_parser.parse(

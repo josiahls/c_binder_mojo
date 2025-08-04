@@ -1,102 +1,18 @@
-from emberjson import Object
+# Native Mojo Modules
+import os
+from pathlib import Path
+from memory import UnsafePointer
 from memory import ArcPointer
+import sys
+
+# Third Party Mojo Modules
+from firehose.logging import Logger, set_global_logger_settings
+from emberjson import Object, to_string
+
+# First Party Modules
+from c_binder_mojo.mojo_json_ast_nodes import JsonAstNodeVariant
 from c_binder_mojo.mojo_json_ast_nodes.node_variant import Variant
-
-
-trait JsonNodeAstLike(Copyable & Movable):
-    alias __name__: String
-
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        pass
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> JsonAstNode:
-        pass
-
-    @always_inline("nodebug")
-    fn to_string(self, just_code: Bool) raises -> String:
-        pass
-
-
-struct PlaceHolderNode(JsonNodeAstLike):
-    alias __name__ = "PlaceHolder"
-
-    fn __init__(out self):
-        pass
-
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        return True
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> JsonAstNode:
-        return JsonAstNode(PlaceHolderNode())
-
-    @always_inline("nodebug")
-    fn to_string(self, just_code: Bool) raises -> String:
-        return "PlaceHolderNode"
-
-
-struct TranslationUnitDeclNode(JsonNodeAstLike):
-    alias __name__ = "TranslationUnitDecl"
-
-    fn __init__(out self):
-        pass
-
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        return Self.__name__ == json_object["kind"].string()
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> JsonAstNode:
-        return JsonAstNode(TranslationUnitDeclNode())
-
-    @always_inline("nodebug")
-    fn to_string(self, just_code: Bool) raises -> String:
-        return "TranslationUnitDeclNode"
-
-
-struct ExampleNode(JsonNodeAstLike):
-    alias __name__ = "Example"
-
-    fn __init__(out self):
-        pass
-
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        return True
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> JsonAstNode:
-        return JsonAstNode(ExampleNode())
-
-    @always_inline("nodebug")
-    fn to_string(self, just_code: Bool) raises -> String:
-        return "ExampleNode"
-
-
-alias JsonAstNodeVariant = Variant[
-    TranslationUnitDeclNode,
-    PlaceHolderNode,  # Placeholder must be the last node
-    ExampleNode,
-]
+from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 
 
 struct JsonAstNode(Copyable & Movable):
@@ -127,30 +43,6 @@ struct JsonAstNode(Copyable & Movable):
             alias T = Self.type.Ts[i]
             if T.accept_from_json_object(json_object, level):
                 return T.create_from_json_object(json_object, level)
-        print(
-            "WARNING: none of the nodes accepted the json_object: "
-            + String(json_object["kind"].string())
-        )
-        return PlaceHolderNode.create_from_json_object(json_object, level)
-
-    @always_inline("nodebug")
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
-        """
-        Iterates over each type in the variant at compile-time and calls accept.
-        """
-
-        @parameter
-        for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                return (
-                    self.node[]
-                    ._get_ptr[T]()[]
-                    .create_from_json_object(json_object, level)
-                )
         print(
             "WARNING: none of the nodes accepted the json_object: "
             + String(json_object["kind"].string())

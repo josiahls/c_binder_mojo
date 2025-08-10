@@ -68,7 +68,7 @@ struct FieldDeclNode(JsonNodeAstLike):
             s += indent + self.signature() + "\n"
         s += indent + "var " + self.name + ": "
 
-        var dtype: String = ""
+        var dtype: String
         if self.desugared_type != "":
             dtype = self.desugared_type
         else:

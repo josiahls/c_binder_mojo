@@ -77,7 +77,7 @@ struct RecordTypeNode(JsonNodeAstLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
-        var indent = "\t" * self.level
+        # var indent = "\t" * self.level
         # We do not indent since this is part of more complex types.
         s += self.record_name + "\n"
         for child in self.children:

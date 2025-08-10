@@ -7,7 +7,7 @@ from emberjson import Object
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 
 
-trait JsonNodeAstLike(Copyable & Movable):
+trait JsonNodeAstLike(ExplicitlyCopyable & Copyable & Movable):
     alias __name__: String
 
     @staticmethod

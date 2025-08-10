@@ -26,7 +26,7 @@ fn to_string(mut x: IntOrString) -> String:
 
 # They have to be mutable for now, and implement Copyable & Movable
 var an_int = IntOrString(4)
-var a_string = IntOrString(String("I'm a string!"))
+var a_string = IntOrString("I'm a string!")
 var who_knows = IntOrString(0)
 import random
 if random.random_ui64(0, 1):
@@ -39,30 +39,17 @@ print(to_string(who_knows))
 """
 
 from os import abort
-from sys import alignof, sizeof
 from sys.intrinsics import _type_is_eq
-
-from memory import UnsafePointer
-
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonNodeAstLike
-
-# ===----------------------------------------------------------------------=== #
-# Utilities
-# ===----------------------------------------------------------------------=== #
-
-
-@always_inline
-fn _align_up(value: Int, alignment: Int) -> Int:
-    var div_ceil = (value + alignment - 1)._positive_div(alignment)
-    return div_ceil * alignment
 
 
 # ===----------------------------------------------------------------------=== #
 # Variant
 # ===----------------------------------------------------------------------=== #
 
+from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 
-struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
+
+struct Variant[*Ts: JsonNodeAstLike](Copyable, ExplicitlyCopyable, Movable):
     """A runtime-variant type.
 
     Data for this type is stored internally. Currently, its size is the
@@ -74,7 +61,8 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         - use `[T]` to get a value out of a variant
             - This currently does an extra copy/move until we have origins
             - It also temporarily requires the value to be mutable
-        - use `set[T](owned new_value: T)` to reset the variant to a new value
+        - use `set[T](var new_value: T)` to reset the variant to a new value
+        - use `is_type_supported[T]` to check if the variant permits the type `T`
 
     Example:
     ```mojo
@@ -88,7 +76,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
 
     # They have to be mutable for now, and implement Copyable & Movable
     var an_int = IntOrString(4)
-    var a_string = IntOrString(String("I'm a string!"))
+    var a_string = IntOrString("I'm a string!")
     var who_knows = IntOrString(0)
     import random
     if random.random_ui64(0, 1):
@@ -123,7 +111,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         __mlir_op.`lit.ownership.mark_initialized`(__get_mvalue_as_litref(self))
 
     @implicit
-    fn __init__[T: Copyable & Movable](out self, var value: T):
+    fn __init__[T: Movable](out self, var value: T):
         """Create a variant with one of the types.
 
         Parameters:
@@ -151,7 +139,9 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         for i in range(len(VariadicList(Ts))):
             alias T = Ts[i]
             if copy._get_discr() == i:
-                copy._get_ptr[T]().init_pointee_move(self._get_ptr[T]()[])
+                copy._get_ptr[T]().init_pointee_move(
+                    self._get_ptr[T]()[].copy()
+                )
                 return
 
     fn __copyinit__(out self, other: Self):
@@ -194,7 +184,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
     # Operator dunders
     # ===-------------------------------------------------------------------===#
 
-    fn __getitem__[T: Copyable & Movable](ref self) -> ref [self] T:
+    fn __getitem__[T: AnyType](ref self) -> ref [self] T:
         """Get the value out of the variant as a type-checked type.
 
         This explicitly check that your value is of that type!
@@ -220,7 +210,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
     # ===-------------------------------------------------------------------===#
 
     @always_inline("nodebug")
-    fn _get_ptr[T: Copyable & Movable](self) -> UnsafePointer[T]:
+    fn _get_ptr[T: AnyType](self) -> UnsafePointer[T]:
         alias idx = Self._check[T]()
         constrained[idx != Self._sentinel, "not a union element type"]()
         var ptr = UnsafePointer(to=self._impl).address
@@ -238,7 +228,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         return UnsafePointer(discr_ptr).bitcast[UInt8]()[]
 
     @always_inline
-    fn take[T: Copyable & Movable](mut self) -> T:
+    fn take[T: Movable](mut self) -> T:
         """Take the current value of the variant with the provided type.
 
         The caller takes ownership of the underlying value.
@@ -259,7 +249,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         return self.unsafe_take[T]()
 
     @always_inline
-    fn unsafe_take[T: Copyable & Movable](mut self) -> T:
+    fn unsafe_take[T: Movable](mut self) -> T:
         """Unsafely take the current value of the variant with the provided type.
 
         The caller takes ownership of the underlying value.
@@ -281,9 +271,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         return self._get_ptr[T]().take_pointee()
 
     @always_inline
-    fn replace[
-        Tin: Copyable & Movable, Tout: Copyable & Movable
-    ](mut self, var value: Tin) -> Tout:
+    fn replace[Tin: Movable, Tout: Movable](mut self, var value: Tin) -> Tout:
         """Replace the current value of the variant with the provided type.
 
         The caller takes ownership of the underlying value.
@@ -309,7 +297,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
 
     @always_inline
     fn unsafe_replace[
-        Tin: Copyable & Movable, Tout: Copyable & Movable
+        Tin: Movable, Tout: Movable
     ](mut self, var value: Tin) -> Tout:
         """Unsafely replace the current value of the variant with the provided type.
 
@@ -336,7 +324,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         self.set[Tin](value^)
         return x^
 
-    fn set[T: Copyable & Movable](mut self, var value: T):
+    fn set[T: Movable](mut self, var value: T):
         """Set the variant value.
 
         This will call the destructor on the old value, and update the variant's
@@ -350,7 +338,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         """
         self = Self(value^)
 
-    fn isa[T: Copyable & Movable](self) -> Bool:
+    fn isa[T: AnyType](self) -> Bool:
         """Check if the variant contains the required type.
 
         Parameters:
@@ -362,7 +350,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         alias idx = Self._check[T]()
         return self._get_discr() == idx
 
-    fn unsafe_get[T: Copyable & Movable](ref self) -> ref [self] T:
+    fn unsafe_get[T: AnyType](ref self) -> ref [self] T:
         """Get the value out of the variant as a type-checked type.
 
         This doesn't explicitly check that your value is of that type!
@@ -383,9 +371,39 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         return self._get_ptr[T]()[]
 
     @staticmethod
-    fn _check[T: Copyable & Movable]() -> Int:
+    fn _check[T: AnyType]() -> Int:
         @parameter
         for i in range(len(VariadicList(Ts))):
             if _type_is_eq[Ts[i], T]():
                 return i
         return Self._sentinel
+
+    @staticmethod
+    fn is_type_supported[T: AnyType]() -> Bool:
+        """Check if a type can be used by the `Variant`.
+
+        Parameters:
+            T: The type of the value to check support for.
+
+        Returns:
+            `True` if type `T` is supported by the `Variant`.
+
+        Example:
+
+        ```mojo
+        from utils import Variant
+
+        def takes_variant(mut arg: Variant):
+            if arg.is_type_supported[Float64]():
+                arg = Float64(1.5)
+
+        def main():
+            var x = Variant[Int, Float64](1)
+            takes_variant(x)
+            if x.isa[Float64]():
+                print(x[Float64]) # 1.5
+        ```
+
+        For example, the `Variant[Int, Bool]` permits `Int` and `Bool`.
+        """
+        return Self._check[T]() != Self._sentinel

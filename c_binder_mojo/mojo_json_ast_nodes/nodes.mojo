@@ -26,7 +26,7 @@ struct JsonAstNode(Copyable & Movable):
     fn __copyinit__(out self, other: Self):
         self.node = other.node
 
-    fn __moveinit__(out self, owned other: Self):
+    fn __moveinit__(out self, deinit other: Self):
         self.node = other.node^
 
     @always_inline("nodebug")

@@ -1,5 +1,6 @@
 from pathlib import Path
-from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
+
+# from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
 from c_binder_mojo.mojo_ast_nodes.function_decl_node import FunctionDeclNode
 from c_binder_mojo.mojo_ast_nodes.typedef_decl_node import TypedefDeclNode
 
@@ -93,19 +94,19 @@ struct {0}(Copyable, Movable):
     ).format(lib_name, String(so_file), fields, field_inits)
 
 
-fn _get_import_statements(
-    ast_tree: ModuleInterface,
-) raises -> String:
-    """Get the import statements for the module."""
+# fn _get_import_statements(
+#     ast_tree: ModuleInterface,
+# ) raises -> String:
+#     """Get the import statements for the module."""
 
-    statements: List[String] = [
-        "from sys.ffi import DLHandle",
-        "from sys import ffi",
-        "from os import abort, getenv, setenv",
-        "from python._cpython import ExternalFunction",
-        "from pathlib import Path",
-    ]
-    return String("\n").join(statements) + "\n"
+#     statements: List[String] = [
+#         "from sys.ffi import DLHandle",
+#         "from sys import ffi",
+#         "from os import abort, getenv, setenv",
+#         "from python._cpython import ExternalFunction",
+#         "from pathlib import Path",
+#     ]
+#     return String("\n").join(statements) + "\n"
 
 
 struct ExternalFunctionBuilder(Copyable, Movable):
@@ -158,35 +159,35 @@ fn _get_function_external_declarations(
     return external_declarations
 
 
-fn append_to_mojo_file(
-    ast_tree: ModuleInterface,
-    mojo_file: Path,
-    so_file: Path,
-    lib_name: String = "",
-    include_only_prefixes: List[String] = [],
-    include_private_methods: Bool = False,
-) raises:
-    """Append the contents of the shared object file to the mojo file."""
-    var _lib_name: String = lib_name if lib_name != "" else String(
-        mojo_file.path.split("/")[-1].split(".")[0]
-    )
-    if include_private_methods:
-        print(
-            "Warning: Some libs such as mujoco seg fault when"
-            " include_private_methods=True"
-        )
+# fn append_to_mojo_file(
+#     ast_tree: ModuleInterface,
+#     mojo_file: Path,
+#     so_file: Path,
+#     lib_name: String = "",
+#     include_only_prefixes: List[String] = [],
+#     include_private_methods: Bool = False,
+# ) raises:
+#     """Append the contents of the shared object file to the mojo file."""
+#     var _lib_name: String = lib_name if lib_name != "" else String(
+#         mojo_file.path.split("/")[-1].split(".")[0]
+#     )
+#     if include_private_methods:
+#         print(
+#             "Warning: Some libs such as mujoco seg fault when"
+#             " include_private_methods=True"
+#         )
 
-    text: String = _get_import_statements(ast_tree)
-    text += mojo_file.read_text() + "\n"
-    external_declarations = _get_function_external_declarations(
-        _lib_name, ast_tree, include_private_methods, include_only_prefixes
-    )
-    for external_declaration in external_declarations:
-        text += String("\n") + external_declaration.meta_name
+#     text: String = _get_import_statements(ast_tree)
+#     text += mojo_file.read_text() + "\n"
+#     external_declarations = _get_function_external_declarations(
+#         _lib_name, ast_tree, include_private_methods, include_only_prefixes
+#     )
+#     for external_declaration in external_declarations:
+#         text += String("\n") + external_declaration.meta_name
 
-    text += _get_so_lib_path_function()
-    text += _get_module_dl_handle(
-        _lib_name, String(so_file.path.split("/")[-1]), external_declarations
-    )
+#     text += _get_so_lib_path_function()
+#     text += _get_module_dl_handle(
+#         _lib_name, String(so_file.path.split("/")[-1]), external_declarations
+#     )
 
-    mojo_file.write_text(text)
+#     mojo_file.write_text(text)

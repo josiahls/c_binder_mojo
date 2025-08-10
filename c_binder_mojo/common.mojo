@@ -375,7 +375,7 @@ struct TokenBundles(Copyable, Movable, Sized, Stringable):
                 was_newline = False
         return s
 
-    fn append(mut self, owned value: TokenBundle):
+    fn append(mut self, var value: TokenBundle):
         """Add a new TokenBundle to the collection.
 
         Args:

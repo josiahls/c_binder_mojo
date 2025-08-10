@@ -123,7 +123,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         __mlir_op.`lit.ownership.mark_initialized`(__get_mvalue_as_litref(self))
 
     @implicit
-    fn __init__[T: Copyable & Movable](out self, owned value: T):
+    fn __init__[T: Copyable & Movable](out self, var value: T):
         """Create a variant with one of the types.
 
         Parameters:
@@ -164,7 +164,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         # Delegate to explicit copy initializer.
         self = other.copy()
 
-    fn __moveinit__(out self, owned other: Self):
+    fn __moveinit__(out self, deinit other: Self):
         """Move initializer for the variant.
 
         Args:
@@ -181,7 +181,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
                 other._get_ptr[T]().move_pointee_into(self._get_ptr[T]())
                 return
 
-    fn __del__(owned self):
+    fn __del__(deinit self):
         """Destroy the variant."""
 
         @parameter
@@ -283,7 +283,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
     @always_inline
     fn replace[
         Tin: Copyable & Movable, Tout: Copyable & Movable
-    ](mut self, owned value: Tin) -> Tout:
+    ](mut self, var value: Tin) -> Tout:
         """Replace the current value of the variant with the provided type.
 
         The caller takes ownership of the underlying value.
@@ -310,7 +310,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
     @always_inline
     fn unsafe_replace[
         Tin: Copyable & Movable, Tout: Copyable & Movable
-    ](mut self, owned value: Tin) -> Tout:
+    ](mut self, var value: Tin) -> Tout:
         """Unsafely replace the current value of the variant with the provided type.
 
         The caller takes ownership of the underlying value.
@@ -336,7 +336,7 @@ struct Variant[*Ts: JsonNodeAstLike](Copyable & Movable, ExplicitlyCopyable):
         self.set[Tin](value^)
         return x^
 
-    fn set[T: Copyable & Movable](mut self, owned value: T):
+    fn set[T: Copyable & Movable](mut self, var value: T):
         """Set the variant value.
 
         This will call the destructor on the old value, and update the variant's

@@ -86,11 +86,10 @@ struct RecordDeclNode(JsonNodeAstLike):
                 self.mem_address = object["id"].string()
             if "inner" in object:
                 for inner_object in object["inner"].array():
-                    self.children.append(
-                        JsonAstNode.accept_from_json_object(
-                            inner_object.object(), level + 1
-                        )
+                    var node = JsonAstNode.accept_from_json_object(
+                        inner_object.object(), level + 1
                     )
+                    self.children.append(node)
         except e:
             print("Error creating RecordDeclNode: ", e)
 

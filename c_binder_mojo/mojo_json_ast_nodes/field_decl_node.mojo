@@ -18,6 +18,7 @@ struct FieldDeclNode(JsonNodeAstLike):
     var type: String
     var desugared_type: String
     var is_union: Bool
+    var is_struct: Bool
 
     fn __init__(out self, object: Object, level: Int):
         self.name = ""
@@ -26,6 +27,8 @@ struct FieldDeclNode(JsonNodeAstLike):
         self.type = ""
         self.desugared_type = ""
         self.is_union = False
+        self.is_struct = False
+
         try:
             if "name" in object:
                 self.name = object["name"].string()
@@ -33,6 +36,10 @@ struct FieldDeclNode(JsonNodeAstLike):
                 type_object = object["type"].object()
                 if "qualType" in type_object:
                     self.type = type_object["qualType"].string()
+                    if self.type.startswith("union "):
+                        self.is_union = True
+                    if self.type.startswith("struct "):
+                        self.is_struct = True
                 if "desugaredQualType" in type_object:
                     self.desugared_type = type_object[
                         "desugaredQualType"

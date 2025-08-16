@@ -28,5 +28,7 @@ struct mjVisual_2_ {
     struct {
         float fog[4]; 
     } rgba;
+
+    struct mjVisual_1_ visual_1;
 };
 typedef struct mjVisual_2_ mjVisual_2;

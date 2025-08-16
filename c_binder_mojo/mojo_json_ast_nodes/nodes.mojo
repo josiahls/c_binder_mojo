@@ -71,10 +71,24 @@ struct JsonAstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].children[mut=mut]()
+                # Brekaing this down:
+                # Get the underlying reference to the variant intance: self.node[]
+                # Get a pointer to the specific type of node: ._get_ptr[T]()
+                # Cast the ptr to the mut and origin: .origin_cast[mut=mut, origin=origin]()
+                # Dereference the pointer: []
+                # Return the result of children: children()
+                return (
+                    self.node[]
+                    ._get_ptr[T]()
+                    .origin_cast[mut=mut, origin=origin]()[]
+                    .children()
+                )
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
             " node: "
             + self.__name__
         )
-        return List[JsonAstNode]()
+        # NOTE: this node does not have any children, so it will return an empty list
+        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

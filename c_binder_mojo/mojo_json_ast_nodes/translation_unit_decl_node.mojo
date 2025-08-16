@@ -29,26 +29,34 @@ fn move_record_decls_to_top_level(
     mut ast_node: JsonAstNode,
 ) raises -> List[JsonAstNode]:
     var record_decls: List[JsonAstNode] = []
+    var indicies: List[Int] = []
+    var i: Int = 0
     for ref node in ast_node.children[mut=True]():
         if node.node[].isa[RecordDeclNode]():
-            record_decls.append(node)
+            indicies.append(i)
+        else:
+            pass
+            # Need to make this recursive.
+        i += 1
 
-    for node in record_decls:
-        ast_node.children().remove(node)
+    indicies.reverse()
+    for i in indicies:
+        record_decls.append(ast_node.children[mut=True]().pop(i))
+
     return record_decls
 
 
-fn move_enum_decls_to_top_level(
-    mut ast_node: JsonAstNode,
-) raises -> List[JsonAstNode]:
-    var enum_decls: List[JsonAstNode] = []
-    for ref node in ast_node.children[mut=True]():
-        if node.node[].isa[EnumDeclNode]():
-            enum_decls.append(node)
+# fn move_enum_decls_to_top_level(
+#     mut ast_node: JsonAstNode,
+# ) raises -> List[JsonAstNode]:
+#     var enum_decls: List[JsonAstNode] = []
+#     for ref node in ast_node.children[mut=True]():
+#         if node.node[].isa[EnumDeclNode]():
+#             enum_decls.append(node)
 
-    for node in enum_decls:
-        ast_node.children().remove(node)
-    return enum_decls
+#     for node in enum_decls:
+#         ast_node.children().remove(node)
+#     return enum_decls
 
 
 struct TranslationUnitDeclNode(JsonNodeAstLike):

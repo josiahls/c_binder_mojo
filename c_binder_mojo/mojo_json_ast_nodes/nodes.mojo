@@ -30,6 +30,20 @@ struct JsonAstNode(Copyable & Movable):
         self.node = other.node^
 
     @always_inline("nodebug")
+    fn name(self) -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return T.__name__
+        print(
+            "WARNING: to_string called on AstNode with no to_string method for"
+            " node: "
+            + self.__name__
+        )
+        return "<unknown type>"
+
+    @always_inline("nodebug")
     @staticmethod
     fn accept_from_json_object(
         read json_object: Object, read level: Int

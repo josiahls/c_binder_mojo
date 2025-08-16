@@ -55,6 +55,10 @@ struct BuiltinTypeNode(JsonNodeAstLike):
     ](ref [origin]self) -> ref [self] List[JsonAstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         # NOTE: this node does not have any children, so it will return an empty list
+
+        # TODO: This is too complicated. We should just have this as a field in thsi node
+        # so the origins are standard. I have no idea if we do a var somelist = List[JsonAstNode]()
+        # whether it will get removed after this funciton call.
         return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
             origin = __origin_of(self)
         ]()[]

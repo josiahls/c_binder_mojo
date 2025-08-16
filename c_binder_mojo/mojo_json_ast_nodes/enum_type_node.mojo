@@ -12,13 +12,13 @@ struct EnumTypeNode(JsonNodeAstLike):
     alias __name__ = "EnumType"
 
     var name: String
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.name = ""
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         try:
             if "type" in object:
                 type_object = object["type"].object()
@@ -26,7 +26,7 @@ struct EnumTypeNode(JsonNodeAstLike):
                     name = type_object["qualType"].string()
                     self.name = String(name.removeprefix("enum "))
                 if "decl" in type_object:
-                    self.children.append(
+                    self.children_.append(
                         JsonAstNode.accept_from_json_object(
                             type_object["decl"].object(), level + 1
                         )
@@ -51,3 +51,11 @@ struct EnumTypeNode(JsonNodeAstLike):
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

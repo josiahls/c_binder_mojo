@@ -37,30 +37,30 @@ alias GLOBAL_ANONOMOUS_RECORD_DECL_TYPE_REGISTRY = _Global[
 ]
 
 
-struct _GlobalRecordDeclNodeQueue(Movable):
-    # Mem address and record inc name
-    var record_decl_node_queue: List[JsonAstNode]
+# struct _GlobalRecordDeclNodeQueue(Movable):
+#     # Mem address and record inc name
+#     var record_decl_node_queue: List[JsonAstNode]
 
-    fn __init__(out self):
-        self.record_decl_node_queue = List[JsonAstNode]()
-
-
-fn _init_global_record_decl_node_queue() -> _GlobalRecordDeclNodeQueue:
-    return _GlobalRecordDeclNodeQueue()
+#     fn __init__(out self):
+#         self.record_decl_node_queue = List[JsonAstNode]()
 
 
-@always_inline
-fn get_global_record_decl_node_queue() -> (
-    UnsafePointer[_GlobalRecordDeclNodeQueue]
-):
-    return GLOBAL_RECORD_DECL_NODE_QUEUE.get_or_create_ptr()
+# fn _init_global_record_decl_node_queue() -> _GlobalRecordDeclNodeQueue:
+#     return _GlobalRecordDeclNodeQueue()
 
 
-alias GLOBAL_RECORD_DECL_NODE_QUEUE = _Global[
-    "GLOBAL_RECORD_DECL_NODE_QUEUE",
-    _GlobalRecordDeclNodeQueue,
-    _init_global_record_decl_node_queue,
-]
+# @always_inline
+# fn get_global_record_decl_node_queue() -> (
+#     UnsafePointer[_GlobalRecordDeclNodeQueue]
+# ):
+#     return GLOBAL_RECORD_DECL_NODE_QUEUE.get_or_create_ptr()
+
+
+# alias GLOBAL_RECORD_DECL_NODE_QUEUE = _Global[
+#     "GLOBAL_RECORD_DECL_NODE_QUEUE",
+#     _GlobalRecordDeclNodeQueue,
+#     _init_global_record_decl_node_queue,
+# ]
 
 
 struct RecordDeclNode(JsonNodeAstLike):
@@ -68,14 +68,14 @@ struct RecordDeclNode(JsonNodeAstLike):
 
     var record_name: String
 
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
     var level: Int
     var mem_address: String
     var disabled: Bool
 
     fn __init__(out self, object: Object, level: Int):
         self.record_name = ""
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.level = level
         self.mem_address = ""
         self.disabled = False
@@ -89,7 +89,7 @@ struct RecordDeclNode(JsonNodeAstLike):
                     var node = JsonAstNode.accept_from_json_object(
                         inner_object.object(), level + 1
                     )
-                    self.children.append(node)
+                    self.children_.append(node)
         except e:
             print("Error creating RecordDeclNode: ", e)
 
@@ -134,9 +134,9 @@ struct RecordDeclNode(JsonNodeAstLike):
         # structs must not be indented.
         s += "struct " + self.record_name + ":\n"
 
-        for child in self.children:
+        for child in self.children_:
             s += child.to_string(just_code) + "\n"
-        if len(self.children) == 0:
+        if len(self.children_) == 0:
             s += indent + "pass\n"
         if self.disabled:
             comment = "# Forward declaration of " + self.record_name + "\n"
@@ -146,3 +146,11 @@ struct RecordDeclNode(JsonNodeAstLike):
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

@@ -10,32 +10,32 @@ from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 from c_binder_mojo.typing import TypeMapper
 
 
-struct _GlobalFunctionDeclTypeRegistry(Movable):
-    # Mem address and typedef inc name
-    var function_decl_type_registry: List[String]
+# struct _GlobalFunctionDeclTypeRegistry(Movable):
+#     # Mem address and typedef inc name
+#     var function_decl_type_registry: List[String]
 
-    fn __init__(out self):
-        self.function_decl_type_registry = List[String]()
-
-
-fn _init_global_function_decl_type_registry() -> (
-    _GlobalFunctionDeclTypeRegistry
-):
-    return _GlobalFunctionDeclTypeRegistry()
+#     fn __init__(out self):
+#         self.function_decl_type_registry = List[String]()
 
 
-@always_inline
-fn get_global_function_decl_type_registry() -> (
-    UnsafePointer[_GlobalFunctionDeclTypeRegistry]
-):
-    return GLOBAL_FUNCTION_DECL_TYPE_REGISTRY.get_or_create_ptr()
+# fn _init_global_function_decl_type_registry() -> (
+#     _GlobalFunctionDeclTypeRegistry
+# ):
+#     return _GlobalFunctionDeclTypeRegistry()
 
 
-alias GLOBAL_FUNCTION_DECL_TYPE_REGISTRY = _Global[
-    "GLOBAL_FUNCTION_DECL_TYPE_REGISTRY",
-    _GlobalFunctionDeclTypeRegistry,
-    _init_global_function_decl_type_registry,
-]
+# @always_inline
+# fn get_global_function_decl_type_registry() -> (
+#     UnsafePointer[_GlobalFunctionDeclTypeRegistry]
+# ):
+#     return GLOBAL_FUNCTION_DECL_TYPE_REGISTRY.get_or_create_ptr()
+
+
+# alias GLOBAL_FUNCTION_DECL_TYPE_REGISTRY = _Global[
+#     "GLOBAL_FUNCTION_DECL_TYPE_REGISTRY",
+#     _GlobalFunctionDeclTypeRegistry,
+#     _init_global_function_decl_type_registry,
+# ]
 
 
 struct FunctionDeclNode(JsonNodeAstLike):
@@ -48,7 +48,7 @@ struct FunctionDeclNode(JsonNodeAstLike):
     var is_disabled: Bool
     var level: Int
 
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
@@ -56,7 +56,7 @@ struct FunctionDeclNode(JsonNodeAstLike):
         self.function_name = ""
         self.function_mangled_name = ""
         self.function_type = ""
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.is_disabled = False
         self.level = level
         try:
@@ -64,15 +64,15 @@ struct FunctionDeclNode(JsonNodeAstLike):
                 self.storage_class = object["storageClass"].string()
             if "name" in object:
                 self.function_name = object["name"].string()
-                if (
-                    self.function_name
-                    in get_global_function_decl_type_registry()[].function_decl_type_registry
-                ):
-                    self.is_disabled = True
-                else:
-                    get_global_function_decl_type_registry()[].function_decl_type_registry.append(
-                        self.function_name
-                    )
+                # if (
+                #     self.function_name
+                #     in get_global_function_decl_type_registry()[].function_decl_type_registry
+                # ):
+                #     self.is_disabled = True
+                # else:
+                #     get_global_function_decl_type_registry()[].function_decl_type_registry.append(
+                #         self.function_name
+                #     )
             if "mangledName" in object:
                 self.function_mangled_name = object["mangledName"].string()
             if "type" in object:
@@ -118,3 +118,11 @@ struct FunctionDeclNode(JsonNodeAstLike):
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

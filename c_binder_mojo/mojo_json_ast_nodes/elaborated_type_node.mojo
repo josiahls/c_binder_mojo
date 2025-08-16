@@ -11,15 +11,15 @@ from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 struct ElaboratedTypeNode(JsonNodeAstLike):
     alias __name__ = "ElaboratedType"
 
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
 
     fn __init__(out self, object: Object, level: Int):
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
 
         try:
             if "inner" in object:
                 for child in object["inner"].array():
-                    self.children.append(
+                    self.children_.append(
                         JsonAstNode.accept_from_json_object(
                             child.object(), level + 1
                         )
@@ -41,9 +41,17 @@ struct ElaboratedTypeNode(JsonNodeAstLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
-        for child in self.children:
+        for child in self.children_:
             s += child.to_string(just_code)
         return s
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

@@ -17,13 +17,13 @@ struct EnumDeclNode(JsonNodeAstLike):
     var level: Int
 
     var name: String
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
     var is_anonymous: Bool
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.name = ""
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.is_anonymous = False
 
         var max_value: Int = -1
@@ -62,7 +62,7 @@ struct EnumDeclNode(JsonNodeAstLike):
                                 max_value
                             )
 
-                    self.children.append(node)
+                    self.children_.append(node)
         except e:
             print("Error creating EnumDeclNode: ", e)
 
@@ -85,9 +85,17 @@ struct EnumDeclNode(JsonNodeAstLike):
         # TODO(josiahls): Are there cases where we need to actually assign an anonymous enum's name?
         if not self.is_anonymous:
             s += "struct " + self.name + ":\n"
-        for child in self.children:
+        for child in self.children_:
             s += child.to_string(just_code) + "\n"
         return s
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

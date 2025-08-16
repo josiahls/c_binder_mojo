@@ -1,44 +1,32 @@
 
 
-struct Struct1_ {
+struct mjVisual_1_ {
     struct {
-      float   cameraid;
+      int   cameraid;
     } global;
   
-    struct {                        
-      int   shadowsize;             
+    struct { 
+      int   shadowsize;
     } quality;
-} Struct1;
-
-Struct1 make_struct1() {
-    return Struct1 {
-        .global = {
-            .cameraid = 1.0
-        },
-        .quality = {
-            .shadowsize = 10
-        }
-    };
-};
-
-
-struct Struct2_ {
-    struct {
-      float   cameraid2;
-    } global2;
   
-    struct {                        
-      int   shadowsize2;             
-    } quality2;
-} Struct2;
+    struct {
+      float ambient[3];
+    } headlight;
 
-Struct2 make_struct2() {
-    return Struct2 {
-        .global2 = {
-            .cameraid2 = 2.0
-        },
-        .quality2 = {
-            .shadowsize2 = 20
-        }
-    };
 };
+typedef struct mjVisual_1_ mjVisual_1;
+
+struct mjVisual_2_ {
+    struct {
+        float stiffness;
+    } map;
+
+    struct {
+        float forcewidth;
+    } scale;
+
+    struct {
+        float fog[4]; 
+    } rgba;
+};
+typedef struct mjVisual_2_ mjVisual_2;

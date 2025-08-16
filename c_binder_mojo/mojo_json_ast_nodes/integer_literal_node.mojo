@@ -12,12 +12,12 @@ struct IntegerLiteralNode(JsonNodeAstLike):
     alias __name__ = "IntegerLiteral"
 
     var value: String
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.value = ""
         try:
             if "value" in object:
@@ -49,9 +49,17 @@ struct IntegerLiteralNode(JsonNodeAstLike):
         var indent: String = "\t" * self.level
         if not just_code:
             s += indent + self.signature() + "\n"
-        for child in self.children:
+        for child in self.children_:
             s += child.to_string(just_code)
         return s
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

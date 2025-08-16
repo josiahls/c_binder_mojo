@@ -12,14 +12,14 @@ struct IndirectFieldDeclNode(JsonNodeAstLike):
     alias __name__ = "IndirectFieldDecl"
 
     var name: String
-    var children: List[JsonAstNode]
+
     var level: Int
     var type: String
     var desugared_type: String
 
     fn __init__(out self, object: Object, level: Int):
         self.name = ""
-        self.children = List[JsonAstNode]()
+
         self.level = 1  # Fields must always be at the top level + 1
         self.type = ""
         self.desugared_type = ""
@@ -60,3 +60,11 @@ struct IndirectFieldDeclNode(JsonNodeAstLike):
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

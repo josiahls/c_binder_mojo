@@ -7,9 +7,10 @@ from emberjson import Object, to_string
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
-from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
-    get_global_record_decl_node_queue,
-)
+
+# from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
+#     get_global_record_decl_node_queue,
+# )
 
 
 struct RecordTypeNode(JsonNodeAstLike):
@@ -19,7 +20,7 @@ struct RecordTypeNode(JsonNodeAstLike):
     var level: Int
     var record_name: String
 
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
 
     var is_struct: Bool
 
@@ -27,7 +28,7 @@ struct RecordTypeNode(JsonNodeAstLike):
         self.level = level
         self.mem_address = ""
         self.record_name = ""
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.is_struct = False
 
         try:
@@ -44,7 +45,7 @@ struct RecordTypeNode(JsonNodeAstLike):
                     print("Error creating RecordTypeNode: ", to_string(object))
             if "inner" in object:
                 for child in object["inner"].array():
-                    self.children.append(
+                    self.children_.append(
                         JsonAstNode.accept_from_json_object(
                             child.object(), level + 1
                         )
@@ -52,9 +53,6 @@ struct RecordTypeNode(JsonNodeAstLike):
             if "decl" in object:
                 decl_record_node = JsonAstNode.accept_from_json_object(
                     object["decl"].object(), 1
-                )
-                get_global_record_decl_node_queue()[].record_decl_node_queue.append(
-                    decl_record_node
                 )
                 if decl_record_node.node[].isa[RecordDeclNode]():
                     self.record_name = decl_record_node.node[][
@@ -80,9 +78,17 @@ struct RecordTypeNode(JsonNodeAstLike):
         # var indent = "\t" * self.level
         # We do not indent since this is part of more complex types.
         s += self.record_name + "\n"
-        for child in self.children:
+        for child in self.children_:
             s += child.to_string(just_code) + "\n"
         return s
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "(" + self.record_name + ")"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

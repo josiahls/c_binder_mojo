@@ -11,6 +11,7 @@ from firehose.logging import Logger, set_global_logger_settings
 from c_binder_mojo.clang_ast_nodes.json_ast_parser import AstParser
 
 # from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
+from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 
 
 fn generate_bindings(
@@ -20,7 +21,7 @@ fn generate_bindings(
     mut logger: Logger,
     extra_args: String = "",
     debug_output: Bool = False,
-) raises -> String:
+) raises -> JsonAstNode:
     logger.info("Outputing binded module to: " + String(output_path))
 
     var module_name = input_header_path.path.split("/")[-1].split(".")[0]
@@ -40,6 +41,7 @@ fn generate_bindings(
     var root_node = ast_parser.parse(
         test_file_path, extra_args=extra_args, raw_ast=raw_ast
     )
+
     # var output_path = Path(
     #     "tests/test_c_project/build/simple_type_defs_with_ast.mojo"
     # )
@@ -67,7 +69,7 @@ fn generate_bindings(
         root_node.to_string(just_code=True)
     )
     # return module_interface
-    return ""
+    return root_node^
 
 
 alias HELP_STRING = """
@@ -122,8 +124,8 @@ fn main() raises:
             + String(output_dir)
         )
     var so_file_path = Path(args[3])
-    if not so_file_path.exists():
-        raise Error("Shared object file doesn't exist: " + String(so_file_path))
+    # if not so_file_path.exists():
+    #     raise Error("Shared object file doesn't exist: " + String(so_file_path))
     var extra_args = String(args[4]) if len(args) > 4 else String("")
     var include_only_prefixes = String(args[5]) if len(args) > 5 else String("")
 
@@ -140,8 +142,6 @@ fn main() raises:
         debug_output=debug_output,
     )
 
-    _ = include_only_prefixes
-
     # var handler_name = String(input_header_path.path.split("/")[-1].split(".")[0])
     # var output_file_path = (output_dir / (input_header_path.path.split("/")[-1].split(".")[0] + ".mojo"))
     # var include_only_prefixes_list = [String(prefix) for prefix in include_only_prefixes.split(",")]
@@ -154,4 +154,4 @@ fn main() raises:
     #     include_only_prefixes = include_only_prefixes_list
     # )
 
-    # logger.info("Done")
+    logger.info("Done")

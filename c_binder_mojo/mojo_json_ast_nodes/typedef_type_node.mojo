@@ -52,3 +52,12 @@ struct TypedefTypeNode(JsonNodeAstLike):
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        # NOTE: this node does not have any children, so it will return an empty list
+        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

@@ -13,7 +13,7 @@ struct FieldDeclNode(JsonNodeAstLike):
     alias __name__ = "FieldDecl"
 
     var name: String
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
     var level: Int
     var type: String
     var desugared_type: String
@@ -22,7 +22,7 @@ struct FieldDeclNode(JsonNodeAstLike):
 
     fn __init__(out self, object: Object, level: Int):
         self.name = ""
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.level = 1  # Fields must always be at the top level + 1
         self.type = ""
         self.desugared_type = ""
@@ -79,3 +79,11 @@ struct FieldDeclNode(JsonNodeAstLike):
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

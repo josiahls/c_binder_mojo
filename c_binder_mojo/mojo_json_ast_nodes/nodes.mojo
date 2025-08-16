@@ -62,3 +62,19 @@ struct JsonAstNode(Copyable & Movable):
             + self.__name__
         )
         return "<unknown type>"
+
+    @always_inline("nodebug")
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.node[].isa[T]():
+                return self.node[]._get_ptr[T]()[].children[mut=mut]()
+        print(
+            "WARNING: to_string called on AstNode with no to_string method for"
+            " node: "
+            + self.__name__
+        )
+        return List[JsonAstNode]()

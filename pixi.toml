@@ -20,7 +20,7 @@ pre-commit = ">=4.2.0,<5"
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
-MOJO_ENABLE_STACK_TRACE_ON_ERROR="1"
+# MOJO_ENABLE_STACK_TRACE_ON_ERROR="1"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -59,10 +59,7 @@ clone_stdlib = { cmd = [
 
 update_stdlib = { cmd = [
     "cd", "modular", "&&",
-    "git", "fetch", "origin", "&&",
-    "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
-    "git", "pull", "origin", "josiahls/add-ulong-c-ffi", "&&",
-    "bazelw", "build", "//mojo/stdlib/stdlib"
+    "./bazelw", "build", "//mojo/stdlib/stdlib"
 ], depends-on = [ "clone_stdlib" ]}
 
 clean_update_stdlib = { cmd = [
@@ -98,12 +95,26 @@ format = { cmd = [
 
 ######################### Testing Configuration ###############################
 # Build the c bindings.
-build_test_c_project_bindings = { cmd = [
+build_test_c_project_bindings_simple_type_defs = { cmd = [
     "pixi", "run", "generate_bindings", 
     "tests/test_c_project/include/simple_type_defs.h",
     "tests/test_c_project/build",
     "tests/test_c_project/build/libtest_c_project.so",
 ], depends-on = [ "configure" ]}
+
+build_test_c_project_bindings_complex_structs = { cmd = [
+    "pixi", "run", "generate_bindings", 
+    "tests/test_c_project/include/complex_structs.h",
+    "tests/test_c_project/build",
+    "tests/test_c_project/build/libtest_c_project_complex_structs.so",
+], depends-on = [ "configure" ]}
+
+
+build_test_c_project_bindings = { depends-on = [ 
+    "configure", 
+#    "build_test_c_project_bindings_simple_type_defs",
+    "build_test_c_project_bindings_complex_structs" 
+]}
 
 
 ######################### Testing #############################################

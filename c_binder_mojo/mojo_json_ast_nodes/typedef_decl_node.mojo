@@ -10,37 +10,11 @@ from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 from c_binder_mojo.typing import TypeMapper
 
 
-struct _GlobalTypedefDeclTypeRegistry(Movable):
-    # Mem address and typedef inc name
-    var typedef_decl_type_registry: List[String]
-
-    fn __init__(out self):
-        self.typedef_decl_type_registry = List[String]()
-
-
-fn _init_global_typedef_decl_type_registry() -> _GlobalTypedefDeclTypeRegistry:
-    return _GlobalTypedefDeclTypeRegistry()
-
-
-@always_inline
-fn get_global_typedef_decl_type_registry() -> (
-    UnsafePointer[_GlobalTypedefDeclTypeRegistry]
-):
-    return GLOBAL_TYPEDEF_DECL_TYPE_REGISTRY.get_or_create_ptr()
-
-
-alias GLOBAL_TYPEDEF_DECL_TYPE_REGISTRY = _Global[
-    "GLOBAL_TYPEDEF_DECL_TYPE_REGISTRY",
-    _GlobalTypedefDeclTypeRegistry,
-    _init_global_typedef_decl_type_registry,
-]
-
-
 struct TypedefDeclNode(JsonNodeAstLike):
     alias __name__ = "TypedefDecl"
 
     var level: Int
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
     var name: String
     var dtype: String
     var is_function_type_def: Bool
@@ -50,23 +24,12 @@ struct TypedefDeclNode(JsonNodeAstLike):
         self.level = level
         self.name = ""
         self.dtype = ""
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.is_function_type_def = False
         self.is_disabled = False
         try:
             if "name" in object:
                 self.name = object["name"].string()
-
-                if (
-                    self.name
-                    in get_global_typedef_decl_type_registry()[].typedef_decl_type_registry
-                ):
-                    self.is_disabled = True
-                else:
-                    get_global_typedef_decl_type_registry()[].typedef_decl_type_registry.append(
-                        self.name
-                    )
-
             if "type" in object:
                 type_object = object["type"].object()
                 if "qualType" in type_object:
@@ -80,7 +43,7 @@ struct TypedefDeclNode(JsonNodeAstLike):
                     )
             if "inner" in object:
                 for value in object["inner"].array():
-                    self.children.append(
+                    self.children_.append(
                         JsonAstNode.accept_from_json_object(
                             value.object(), level + 1
                         )
@@ -117,7 +80,7 @@ struct TypedefDeclNode(JsonNodeAstLike):
         if self.is_function_type_def:
             s += TypeMapper.convert_c_type_to_mojo_type(self.dtype) + "\n"
         else:
-            for node in self.children:
+            for node in self.children_:
                 s += node.to_string(False) + "\n"
 
         if self.is_disabled:
@@ -125,3 +88,11 @@ struct TypedefDeclNode(JsonNodeAstLike):
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
 
         return s
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

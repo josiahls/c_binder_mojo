@@ -22,14 +22,14 @@ struct EnumConstantDeclNode(JsonNodeAstLike):
 
     var name: String
     var level: Int
-    var children: List[JsonAstNode]
+    var children_: List[JsonAstNode]
     var parent_is_anonymous: Bool
     var value: Optional[Int]
 
     fn __init__(out self, object: Object, level: Int):
         self.name = ""
         self.level = level
-        self.children = List[JsonAstNode]()
+        self.children_ = List[JsonAstNode]()
         self.parent_is_anonymous = False
         self.value = None
         try:
@@ -46,7 +46,7 @@ struct EnumConstantDeclNode(JsonNodeAstLike):
                     #     self.value = node.node[][BinaryOperatorNode].get_value()
                     elif node.node[].isa[ConstantExprNode]():
                         self.value = node.node[][ConstantExprNode].get_value()
-                    self.children.append(node)
+                    self.children_.append(node)
             else:
                 print("This enum constant has no children")
         except e:
@@ -88,3 +88,11 @@ struct EnumConstantDeclNode(JsonNodeAstLike):
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "(" + self.name + ")"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer(to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

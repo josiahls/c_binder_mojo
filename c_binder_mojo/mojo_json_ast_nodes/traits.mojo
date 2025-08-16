@@ -24,3 +24,8 @@ trait JsonNodeAstLike(ExplicitlyCopyable & Copyable & Movable):
 
     fn to_string(self, just_code: Bool) raises -> String:
         pass
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        pass

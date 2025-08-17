@@ -129,7 +129,7 @@ fn main() raises:
     var extra_args = String(args[4]) if len(args) > 4 else String("")
     var include_only_prefixes = String(args[5]) if len(args) > 5 else String("")
 
-    var debug_output = False
+    var debug_output = True
     if len(args) > 6:
         debug_output = args[6] == "true"
 

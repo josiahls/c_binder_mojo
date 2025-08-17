@@ -25,6 +25,17 @@ from pathlib import Path
 """
 
 
+fn update_record_decl_fields(
+    mut children: List[JsonAstNode],
+    mut node: JsonAstNode,
+) raises:
+    for ref child in node.children[mut=True]():
+        if child.node[].isa[RecordDeclNode]():
+            # child.node[].update_fields()
+            print("child: ", child.to_string(just_code=False))
+        update_record_decl_fields(children, child)
+
+
 fn move_record_decls_to_top_level(
     mut children: List[JsonAstNode],
     mut node: JsonAstNode,
@@ -36,11 +47,14 @@ fn move_record_decls_to_top_level(
         if child.node[].isa[RecordDeclNode]():
             indicies.append(i)
 
+        # print("child: ", child.name())
+
         move_record_decls_to_top_level(children, child)
         i += 1
 
     indicies.reverse()
     for i in indicies:
+        # print('index: ', i)
         children.append(node.children[mut=True]().pop(i))
 
 
@@ -76,17 +90,9 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
                 var node = JsonAstNode.accept_from_json_object(
                     value.object(), level
                 )
-
+                # update_record_decl_fields(self.children_, node)
                 move_record_decls_to_top_level(self.children_, node)
-                move_enum_decls_to_top_level(self.children_, node)
-
-                # while (
-                #     get_global_record_decl_node_queue()[].record_decl_node_queue
-                # ):
-                #     var node = (
-                #         get_global_record_decl_node_queue()[].record_decl_node_queue.pop()
-                #     )
-                #     self.children.append(node)
+                # move_enum_decls_to_top_level(self.children_, node)
                 self.children_.append(node)
 
         except e:

@@ -16,13 +16,14 @@ struct VarDeclNode(JsonNodeAstLike):
     var name: String
     var mangled_name: String
     var type: String
+    var children_: List[JsonAstNode]
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.name = ""
         self.mangled_name = ""
         self.type = ""
-
+        self.children_ = List[JsonAstNode]()
         try:
             if "name" in object:
                 self.name = object["name"].string()
@@ -67,6 +68,6 @@ struct VarDeclNode(JsonNodeAstLike):
     ](ref [origin]self) -> ref [self] List[JsonAstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         # NOTE: this node does not have any children, so it will return an empty list
-        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+        return UnsafePointer[mut=mut](to=self.children_).origin_cast[
             origin = __origin_of(self)
         ]()[]

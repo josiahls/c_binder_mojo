@@ -12,9 +12,11 @@ struct ModeAttrNode(JsonNodeAstLike):
     alias __name__ = "ModeAttr"
 
     var level: Int
+    var children_: List[JsonAstNode]
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
+        self.children_ = List[JsonAstNode]()
 
     @staticmethod
     fn accept_from_json_object(
@@ -41,6 +43,6 @@ struct ModeAttrNode(JsonNodeAstLike):
     ](ref [origin]self) -> ref [self] List[JsonAstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         # NOTE: this node does not have any children, so it will return an empty list
-        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+        return UnsafePointer[mut=mut](to=self.children_).origin_cast[
             origin = __origin_of(self)
         ]()[]

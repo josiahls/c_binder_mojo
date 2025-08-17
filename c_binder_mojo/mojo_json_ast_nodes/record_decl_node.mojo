@@ -79,6 +79,9 @@ struct RecordDeclNode(JsonNodeAstLike):
         self.level = level
         self.mem_address = ""
         self.disabled = False
+
+        struct_type_queue = List[String]()
+        enum_type_queue = List[String]()
         try:
             if "name" in object:
                 self.record_name = object["name"].string()
@@ -89,6 +92,22 @@ struct RecordDeclNode(JsonNodeAstLike):
                     var node = JsonAstNode.accept_from_json_object(
                         inner_object.object(), level + 1
                     )
+                    if node.node[].isa[Self]():
+                        struct_type_queue.append(node.node[][Self].record_name)
+                    elif node.node[].isa[EnumDeclNode]():
+                        enum_type_queue.append(node.node[][EnumDeclNode].name)
+                    elif node.node[].isa[FieldDeclNode]():
+                        if struct_type_queue:
+                            var desugared_type = struct_type_queue.pop()
+                            node.node[][
+                                FieldDeclNode
+                            ].desugared_type = desugared_type
+                        elif enum_type_queue:
+                            var desugared_type = enum_type_queue.pop()
+                            node.node[][
+                                FieldDeclNode
+                            ].desugared_type = desugared_type
+
                     self.children_.append(node)
         except e:
             print("Error creating RecordDeclNode: ", e)

@@ -14,12 +14,13 @@ struct PlaceHolderNode(JsonNodeAstLike):
     var nodes: List[JsonAstNode]
     var level: Int
     var json_string: String
+    var children_: List[JsonAstNode]
 
     fn __init__(out self, object: Object, level: Int):
         self.nodes = List[JsonAstNode]()
         self.level = level
         self.json_string = to_string(object)
-
+        self.children_ = List[JsonAstNode]()
         if "inner" in object:
             try:
                 for value in object["inner"].array():
@@ -61,6 +62,6 @@ struct PlaceHolderNode(JsonNodeAstLike):
     ](ref [origin]self) -> ref [self] List[JsonAstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         # NOTE: this node does not have any children, so it will return an empty list
-        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+        return UnsafePointer[mut=mut](to=self.children_).origin_cast[
             origin = __origin_of(self)
         ]()[]

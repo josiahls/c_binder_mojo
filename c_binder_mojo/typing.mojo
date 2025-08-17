@@ -215,6 +215,10 @@ struct TypeMapper:
         return c_type.startswith("struct ")
 
     @staticmethod
+    fn _is_enum(c_type: String) -> Bool:
+        return c_type.startswith("enum ")
+
+    @staticmethod
     fn _is_array(c_type: String) -> Bool:
         return "[" in c_type and "]" in c_type
 
@@ -225,6 +229,11 @@ struct TypeMapper:
     @staticmethod
     fn _convert_union_type(c_type: String) -> String:
         return "OpaquePointer # TODO: Union type"
+
+    @staticmethod
+    fn _convert_enum_type(c_type: String) -> String:
+        var stripped_type = String(c_type.removeprefix("enum "))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
 
     @staticmethod
     fn _convert_restrict_type(c_type: String) -> String:
@@ -443,6 +452,8 @@ struct TypeMapper:
             #     return Self._convert_union_type(stripped_type)
             elif Self._is_struct(stripped_type):
                 return Self._convert_struct_type(stripped_type)
+            elif Self._is_enum(stripped_type):
+                return Self._convert_enum_type(stripped_type)
             elif Self._is_restrict_type(stripped_type) and not is_fn_param:
                 return Self._convert_restrict_type(stripped_type)
             elif stripped_type in NON_NUMERIC_TYPES:

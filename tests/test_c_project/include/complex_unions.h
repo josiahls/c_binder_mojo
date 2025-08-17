@@ -42,3 +42,7 @@ struct mjuiItem_ {
     int skip;
 };
 typedef struct mjuiItem_ mjuiItem;
+
+union __atomic_wide_counter {
+    unsigned long long __value64;
+};

@@ -10,7 +10,7 @@ from firehose.logging import Logger, set_global_logger_settings
 # First Party Modules
 from c_binder_mojo.clang_ast_nodes.json_ast_parser import AstParser
 
-# from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
+from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 
 
@@ -133,7 +133,7 @@ fn main() raises:
     if len(args) > 6:
         debug_output = args[6] == "true"
 
-    module_interface = generate_bindings(
+    root_node = generate_bindings(
         input_header_path,
         output_dir,
         so_file_path,
@@ -142,19 +142,22 @@ fn main() raises:
         debug_output=debug_output,
     )
 
-    _ = include_only_prefixes
-    _ = module_interface
+    var handler_name = String(
+        input_header_path.path.split("/")[-1].split(".")[0]
+    )
+    var output_file_path = output_dir / (
+        input_header_path.path.split("/")[-1].split(".")[0] + ".mojo"
+    )
+    var include_only_prefixes_list = [
+        String(prefix) for prefix in include_only_prefixes.split(",")
+    ]
 
-    # var handler_name = String(input_header_path.path.split("/")[-1].split(".")[0])
-    # var output_file_path = (output_dir / (input_header_path.path.split("/")[-1].split(".")[0] + ".mojo"))
-    # var include_only_prefixes_list = [String(prefix) for prefix in include_only_prefixes.split(",")]
-
-    # append_to_mojo_file(
-    #     module_interface,
-    #     output_file_path,
-    #     so_file_path,
-    #     handler_name,
-    #     include_only_prefixes = include_only_prefixes_list
-    # )
+    append_to_mojo_file(
+        root_node,
+        output_file_path,
+        so_file_path,
+        handler_name,
+        include_only_prefixes=include_only_prefixes_list,
+    )
 
     logger.info("Done")

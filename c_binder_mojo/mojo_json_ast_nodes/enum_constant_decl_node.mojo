@@ -47,8 +47,8 @@ struct EnumConstantDeclNode(JsonNodeAstLike):
                     elif node.node[].isa[ConstantExprNode]():
                         self.value = node.node[][ConstantExprNode].get_value()
                     self.children_.append(node)
-            else:
-                print("This enum constant has no children")
+            # else:
+            #     print("This enum constant has no children: ", self.name)
         except e:
             print("Error creating EnumConstantDeclNode: ", e)
 

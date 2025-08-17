@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from memory import UnsafePointer
 from memory import ArcPointer
+from collections import Set
 import sys
 
 # Third Party Mojo Modules
@@ -16,25 +17,17 @@ from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
 )
 
 
-alias header: String = """
+alias HEADER: String = """
 from sys.ffi import DLHandle
 from sys import ffi
 from os import abort, getenv, setenv
 from python._cpython import ExternalFunction
 from pathlib import Path
 from c_binder_mojo.stdlib_ext import C_Union
+from utils import StaticTuple
 """
 
-
-fn update_record_decl_fields(
-    mut children: List[JsonAstNode],
-    mut node: JsonAstNode,
-) raises:
-    for ref child in node.children[mut=True]():
-        if child.node[].isa[RecordDeclNode]():
-            # child.node[].update_fields()
-            print("child: ", child.to_string(just_code=False))
-        update_record_decl_fields(children, child)
+alias BANNED_TYPES: Set[String] = Set[String]("abort", "getenv", "setenv")
 
 
 fn move_record_decls_to_top_level(
@@ -77,6 +70,45 @@ fn move_enum_decls_to_top_level(
         children.append(node.children[mut=True]().pop(i))
 
 
+fn prune_repeated_decls(
+    mut children: List[JsonAstNode],
+) raises:
+    var names: Set[String] = Set[String]()
+    var indicies: List[Int] = []
+    var i: Int = -1
+    for child in children:
+        i += 1
+        var name = ""
+        if child.node[].isa[RecordDeclNode]():
+            name = child.node[][RecordDeclNode].record_name
+
+        elif child.node[].isa[EnumDeclNode]():
+            name = child.node[][EnumDeclNode].name
+
+        elif child.node[].isa[TypedefDeclNode]():
+            name = child.node[][TypedefDeclNode].name
+
+        elif child.node[].isa[VarDeclNode]():
+            name = child.node[][VarDeclNode].name
+
+        elif child.node[].isa[FunctionDeclNode]():
+            name = child.node[][FunctionDeclNode].function_name
+
+        if name == "":
+            continue
+
+        if name in names:
+            indicies.append(i)
+        elif name in BANNED_TYPES:
+            indicies.append(i)
+        else:
+            names.add(name)
+
+    indicies.reverse()
+    for i in indicies:
+        _ = children.pop(i)
+
+
 struct TranslationUnitDeclNode(JsonNodeAstLike):
     alias __name__ = "TranslationUnitDecl"
 
@@ -91,11 +123,11 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
                 var node = JsonAstNode.accept_from_json_object(
                     value.object(), level
                 )
-                # update_record_decl_fields(self.children_, node)
                 move_record_decls_to_top_level(self.children_, node)
-                # move_enum_decls_to_top_level(self.children_, node)
+                move_enum_decls_to_top_level(self.children_, node)
                 self.children_.append(node)
 
+            prune_repeated_decls(self.children_)
         except e:
             print("Error creating TranslationUnitDeclNode: ", e)
 
@@ -116,7 +148,7 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
-        s += String(header) + "\n"
+        s += String(HEADER) + "\n"
         var indent = "\t" * self.level
         if not just_code:
             for child in self.children_:

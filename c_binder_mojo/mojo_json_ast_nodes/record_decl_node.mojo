@@ -169,20 +169,20 @@ struct RecordDeclNode(JsonNodeAstLike):
         var indent = "\t" * 1  # structs must not be indented.
         if self.tag_used == "union":
             s += "alias " + self.record_name + " = C_Union["
+            var overflow: String = ""
             iter_started = False
             for child in self.children_:
                 if iter_started:
                     s += ", "
                 if child.node[].isa[FieldDeclNode]():
                     var dtype = child.node[][FieldDeclNode].desugared_type
+                    if dtype == "":
+                        dtype = child.node[][FieldDeclNode].type
                     s += TypeMapper.convert_c_type_to_mojo_type(dtype)
                     iter_started = True
                 else:
-                    print(
-                        "RecordDeclNode: union: Cant handlechild: ",
-                        child.to_string(just_code),
-                    )
-            s += "]" + "\n"
+                    overflow += child.to_string(just_code)
+            s += "]" + "\n" + overflow + "\n"
         else:
             # structs must not be indented.
             s += "struct " + self.record_name + ":\n"

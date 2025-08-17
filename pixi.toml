@@ -110,11 +110,24 @@ build_test_c_project_bindings_complex_structs = { cmd = [
 ], depends-on = [ "configure" ]}
 
 
+build_test_c_project_bindings_complex_unions = { cmd = [
+    "pixi", "run", "generate_bindings", 
+    "tests/test_c_project/include/complex_unions.h",
+    "tests/test_c_project/build",
+    "tests/test_c_project/build/libtest_c_project_unions.so",
+], depends-on = [ "configure" ]}
+
+
 build_test_c_project_bindings = { depends-on = [ 
     "configure", 
 #    "build_test_c_project_bindings_simple_type_defs",
-    "build_test_c_project_bindings_complex_structs" 
+#    "build_test_c_project_bindings_complex_structs",
+    "build_test_c_project_bindings_complex_unions" 
 ]}
+
+test_test_stdlib_ext = { cmd = [
+    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_stdlib_ext.mojo"
+], depends-on = [  ]}
 
 
 ######################### Testing #############################################

@@ -10,11 +10,12 @@ alias _mlir_type_variant = __mlir_type[
 
 fn test_c_union() raises:
     alias example_union = C_Union[UInt8, UInt16]
-    var c_union = C_Union[UInt8, UInt32](UInt8(4))
+    var c_union = C_Union[UInt8, UInt32](UInt32(4))
     print("sizeof[example_union]: ", sizeof[example_union]())
 
     print("sizeof[_mlir_type]: ", sizeof[_mlir_type]())
     print("sizeof[UInt8]: ", sizeof[UInt8]())
+    print("sizeof[Int8]: ", sizeof[Int8]())
     print("sizeof[_mlir_type_variant]: ", sizeof[_mlir_type_variant]())
 
 

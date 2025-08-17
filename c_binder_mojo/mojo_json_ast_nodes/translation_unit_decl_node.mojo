@@ -22,6 +22,7 @@ from sys import ffi
 from os import abort, getenv, setenv
 from python._cpython import ExternalFunction
 from pathlib import Path
+from c_binder_mojo.stdlib_ext import C_Union
 """
 
 

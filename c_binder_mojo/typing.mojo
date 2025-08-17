@@ -437,8 +437,10 @@ struct TypeMapper:
                 )
             if unsigned:
                 return Self._convert_unsigned_type(stripped_type)
-            elif Self._is_union(stripped_type):
-                return Self._convert_union_type(stripped_type)
+            # TODO: Should we keep the unions in the "c style" in
+            # c_binder_mojo/c_binder_mojo/mojo_json_ast_nodes/record_decl_node.mojo? Then convert correctly here?
+            # elif Self._is_union(stripped_type):
+            #     return Self._convert_union_type(stripped_type)
             elif Self._is_struct(stripped_type):
                 return Self._convert_struct_type(stripped_type)
             elif Self._is_restrict_type(stripped_type) and not is_fn_param:

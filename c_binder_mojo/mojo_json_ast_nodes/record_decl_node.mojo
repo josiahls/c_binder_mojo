@@ -7,6 +7,7 @@ from emberjson import Object
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.typing import TypeMapper
 
 
 struct _GlobalAnonomousRecordDeclTypeRegistry(Movable):
@@ -72,6 +73,7 @@ struct RecordDeclNode(JsonNodeAstLike):
     var level: Int
     var mem_address: String
     var disabled: Bool
+    var tag_used: String
 
     fn __init__(out self, object: Object, level: Int):
         self.record_name = ""
@@ -79,14 +81,19 @@ struct RecordDeclNode(JsonNodeAstLike):
         self.level = level
         self.mem_address = ""
         self.disabled = False
+        self.tag_used = ""
 
         struct_type_queue = List[String]()
+        union_struct_type_queue = List[String]()
         enum_type_queue = List[String]()
+        anonomous_record_increment = 0
         try:
             if "name" in object:
                 self.record_name = object["name"].string()
             if "id" in object:
                 self.mem_address = object["id"].string()
+            if "tagUsed" in object:
+                self.tag_used = object["tagUsed"].string()
             if "inner" in object:
                 for inner_object in object["inner"].array():
                     var node = JsonAstNode.accept_from_json_object(
@@ -97,7 +104,17 @@ struct RecordDeclNode(JsonNodeAstLike):
                     elif node.node[].isa[EnumDeclNode]():
                         enum_type_queue.append(node.node[][EnumDeclNode].name)
                     elif node.node[].isa[FieldDeclNode]():
-                        if struct_type_queue:
+                        if node.node[][FieldDeclNode].is_union:
+                            anonomous_record_increment += 1
+                            node.node[][
+                                FieldDeclNode
+                            ].name = "union_placeholder_" + String(
+                                anonomous_record_increment
+                            )
+                            node.node[][
+                                FieldDeclNode
+                            ].desugared_type = struct_type_queue.pop()
+                        elif struct_type_queue:
                             var desugared_type = struct_type_queue.pop()
                             node.node[][
                                 FieldDeclNode
@@ -150,13 +167,30 @@ struct RecordDeclNode(JsonNodeAstLike):
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
         var indent = "\t" * 1  # structs must not be indented.
-        # structs must not be indented.
-        s += "struct " + self.record_name + ":\n"
+        if self.tag_used == "union":
+            s += "alias " + self.record_name + " = C_Union["
+            iter_started = False
+            for child in self.children_:
+                if iter_started:
+                    s += ", "
+                if child.node[].isa[FieldDeclNode]():
+                    var dtype = child.node[][FieldDeclNode].desugared_type
+                    s += TypeMapper.convert_c_type_to_mojo_type(dtype)
+                    iter_started = True
+                else:
+                    print(
+                        "RecordDeclNode: union: Cant handlechild: ",
+                        child.to_string(just_code),
+                    )
+            s += "]" + "\n"
+        else:
+            # structs must not be indented.
+            s += "struct " + self.record_name + ":\n"
 
-        for child in self.children_:
-            s += child.to_string(just_code) + "\n"
-        if len(self.children_) == 0:
-            s += indent + "pass\n"
+            for child in self.children_:
+                s += child.to_string(just_code) + "\n"
+            if len(self.children_) == 0:
+                s += indent + "pass\n"
         if self.disabled:
             comment = "# Forward declaration of " + self.record_name + "\n"
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"

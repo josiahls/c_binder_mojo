@@ -14,10 +14,12 @@ struct BuiltinTypeNode(JsonNodeAstLike):
 
     var level: Int
     var dtype: String
+    var children_: List[JsonAstNode]
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.dtype = ""
+        self.children_ = List[JsonAstNode]()
         try:
             if "type" in object:
                 var type_object = object["type"].object()
@@ -59,6 +61,6 @@ struct BuiltinTypeNode(JsonNodeAstLike):
         # TODO: This is too complicated. We should just have this as a field in thsi node
         # so the origins are standard. I have no idea if we do a var somelist = List[JsonAstNode]()
         # whether it will get removed after this funciton call.
-        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+        return UnsafePointer[mut=mut](to=self.children_).origin_cast[
             origin = __origin_of(self)
         ]()[]

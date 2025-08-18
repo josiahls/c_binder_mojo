@@ -14,6 +14,8 @@ alias MOJO_KEYWORDS: List[String] = List[String](
     "alias", "fn", "struct", "enum", "union", "global", "var", "ref"
 )
 
+alias MOJO_METHOD_KEYWORDS: List[String] = List[String]("copy")
+
 
 struct MessageableEnum(Movable & Copyable & Stringable):
     # NOTE(josiahls): tried doing int literal, but it made typing more complicated.

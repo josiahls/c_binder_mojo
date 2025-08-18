@@ -7,7 +7,7 @@ from emberjson import Object, to_string
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 from c_binder_mojo.typing import TypeMapper
-from c_binder_mojo.common import MOJO_KEYWORDS
+from c_binder_mojo.common import MOJO_KEYWORDS, MOJO_METHOD_KEYWORDS
 
 
 struct FieldDeclNode(JsonNodeAstLike):
@@ -69,10 +69,10 @@ struct FieldDeclNode(JsonNodeAstLike):
             s += indent + self.signature() + "\n"
 
         name = self.name
-        if name in MOJO_KEYWORDS:
-            name = "`" + name + "`"
+        if name in MOJO_KEYWORDS or name in MOJO_METHOD_KEYWORDS:
+            name = name + "_"
 
-        s += indent + "var " + name + ": "
+        s += indent + "var " + name + " : "
 
         var dtype: String
         if self.desugared_type != "":

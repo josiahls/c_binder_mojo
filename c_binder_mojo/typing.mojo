@@ -468,7 +468,6 @@ struct TypeMapper:
     ) -> String:
         stripped_type = String(c_type.strip())
         try:
-            print("Converting type: ", stripped_type)
             # NOTE: I think there is some confusion on the ordering here.
             # Should we be evaluating everything from right to left? Right now
             # its kind of all over the place. I like that we do:

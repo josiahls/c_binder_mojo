@@ -184,8 +184,14 @@ struct TypeMapper:
         return c_type.startswith("union ")
 
     @staticmethod
+    fn _is_volatile_type(c_type: String) -> Bool:
+        return c_type.startswith("volatile ")
+
+    @staticmethod
     fn _has_const_attribute(c_type: String) -> Bool:
         """Evaluate const from right to left.
+
+        TODO: Look into replacing this will just using `_is_const_attribute`
 
         Note, if `c_type` ends with a pointer, we return False. We want the `_convert_pointer_type`
         to first remove that, then we can reevaluate.
@@ -193,6 +199,15 @@ struct TypeMapper:
         return c_type.replace("*", " ").endswith(
             "const"
         ) and not c_type.endswith("*")
+
+    @staticmethod
+    fn _is_const_attribute(c_type: String) -> Bool:
+        """Evaluate const from right to left.
+
+        Note, if `c_type` ends with a pointer, we return False. We want the `_convert_pointer_type`
+        to first remove that, then we can reevaluate.
+        """
+        return c_type.startswith("const ")
 
     @staticmethod
     fn _is_function(c_type: String) -> Bool:
@@ -225,6 +240,11 @@ struct TypeMapper:
     @staticmethod
     fn _is_variadic_list(c_type: String) -> Bool:
         return "," in c_type
+
+    @staticmethod
+    fn _convert_volatile_type(c_type: String) -> String:
+        var stripped_type = String(c_type.removeprefix("volatile "))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
 
     @staticmethod
     fn _convert_union_type(c_type: String) -> String:
@@ -397,6 +417,7 @@ struct TypeMapper:
         else:
             c_type_split = [c_type]
 
+        is_variadic = False
         for element in c_type_split:
             stripped_element = String(element.strip())
             # TODO(josiahls): I think we need to generalize these attributes like const,
@@ -408,6 +429,10 @@ struct TypeMapper:
                     stripped_element.removeprefix("const ")
                 )
                 is_const = True
+
+            if stripped_element == "...":
+                is_variadic = True
+                continue
 
             converted_element = Self.convert_c_type_to_mojo_type(
                 stripped_element
@@ -421,6 +446,17 @@ struct TypeMapper:
                 continue
             returned_elements.append(converted_element)
 
+        if is_variadic:
+            variadic = returned_elements[-1]
+            for modifier in ["read ", "mut ", ""]:
+                if modifier == "":
+                    variadic = "*" + variadic
+                    break
+                if variadic.startswith(modifier):
+                    variadic = modifier + "*" + variadic.removeprefix(modifier)
+                    break
+            returned_elements[-1] = variadic
+
         return String(", ").join(returned_elements)
 
     @staticmethod
@@ -432,6 +468,7 @@ struct TypeMapper:
     ) -> String:
         stripped_type = String(c_type.strip())
         try:
+            print("Converting type: ", stripped_type)
             # NOTE: I think there is some confusion on the ordering here.
             # Should we be evaluating everything from right to left? Right now
             # its kind of all over the place. I like that we do:
@@ -456,6 +493,8 @@ struct TypeMapper:
                 return Self._convert_enum_type(stripped_type)
             elif Self._is_restrict_type(stripped_type) and not is_fn_param:
                 return Self._convert_restrict_type(stripped_type)
+            elif Self._is_volatile_type(stripped_type) and not is_fn_param:
+                return Self._convert_volatile_type(stripped_type)
             elif stripped_type in NON_NUMERIC_TYPES:
                 return NON_NUMERIC_TYPES[stripped_type]
             elif stripped_type in NUMERIC_TYPES:
@@ -477,6 +516,8 @@ struct TypeMapper:
                 return Self._convert_pointer_type(stripped_type)
             elif Self._is_array(stripped_type):
                 return Self._convert_array_type(stripped_type)
+            elif Self._is_const_attribute(stripped_type):
+                return Self._convert_const_attribute(stripped_type)
             elif Self._is_signed(stripped_type):
                 return Self._convert_signed_type(stripped_type)
             elif Self._is_unsigned(stripped_type):

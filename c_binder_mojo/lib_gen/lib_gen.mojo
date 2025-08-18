@@ -123,11 +123,9 @@ fn _get_function_external_declarations(
     external_declarations: List[ExternalFunctionBuilder] = []
     function_names: List[String] = []
     for node in ast_root_node.children():
-        print("node: ", node.name())
         if node.node[].isa[FunctionDeclNode]():
             name = node.node[][FunctionDeclNode].function_name
             if not include_private_methods and name.startswith("_"):
-                print("Skipping private method: ", name)
                 continue
             if len(include_only_prefixes) != 0:
                 starts_with_prefix: Bool = False
@@ -135,12 +133,6 @@ fn _get_function_external_declarations(
                     if name.startswith(prefix):
                         starts_with_prefix = True
                 if not starts_with_prefix:
-                    print(
-                        "Skipping method: ",
-                        name,
-                        " because it doesn't start with any of the prefixes: ",
-                        String(", ").join(include_only_prefixes),
-                    )
                     continue
             external_function = ExternalFunctionBuilder(lib_name, name)
             if external_function.mojo_name not in function_names:

@@ -15,6 +15,8 @@ fn build_union_mlir_type[*Ts: ExplicitlyCopyable & Movable]() -> Int:
     return max_size
 
 
+# TODO(josiahls): We absolutely can't do it this way as a long term thing.
+@register_passable("trivial")
 struct C_Union[*Ts: ExplicitlyCopyable & Movable](
     Copyable, ExplicitlyCopyable, Movable
 ):

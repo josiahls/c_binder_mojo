@@ -32,8 +32,10 @@ fn test_simple_type_defs() raises:
     assert_almost_equal(simple_type_defs.get_simple_type_double(-2.0), -2.0)
     # Long double types
     assert_almost_equal(simple_type_defs.get_simple_type_long_double(3.0), 3.0)
-    assert_almost_equal(simple_type_defs.get_simple_type_long_double(-3.0), -3.0)
+    assert_almost_equal(
+        simple_type_defs.get_simple_type_long_double(-3.0), -3.0
+    )
+
 
 fn main() raises:
     test_simple_type_defs()
-

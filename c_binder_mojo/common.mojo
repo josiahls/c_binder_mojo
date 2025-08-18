@@ -10,6 +10,11 @@ from firehose.logging import Logger
 # First Party Modules
 
 
+alias MOJO_KEYWORDS: List[String] = List[String](
+    "alias", "fn", "struct", "enum", "union", "global", "var", "ref"
+)
+
+
 struct MessageableEnum(Movable & Copyable & Stringable):
     # NOTE(josiahls): tried doing int literal, but it made typing more complicated.
     var value: Int

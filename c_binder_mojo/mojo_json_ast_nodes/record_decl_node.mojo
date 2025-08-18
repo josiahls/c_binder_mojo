@@ -185,6 +185,8 @@ struct RecordDeclNode(JsonNodeAstLike):
             s += "]" + "\n" + overflow + "\n"
         else:
             # structs must not be indented.
+            # TODO(josiahls): Is there ever a case where we can't do this? Like struct size or something?
+            s += '@register_passable("trivial")\n'
             s += "struct " + self.record_name + ":\n"
 
             for child in self.children_:

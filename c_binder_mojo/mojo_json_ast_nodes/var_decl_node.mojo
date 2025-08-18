@@ -56,7 +56,7 @@ struct VarDeclNode(JsonNodeAstLike):
         var s: String = ""
         if not just_code:
             s += self.signature() + "\n"
-        s += "alias " + self.name + ": "
+        s += "alias " + self.name + " = "
         s += TypeMapper.convert_c_type_to_mojo_type(self.type) + "\n"
         return s
 

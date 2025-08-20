@@ -65,7 +65,7 @@ update_stdlib = { cmd = [
 clean_update_stdlib = { cmd = [
     "cd", "modular", "&&",
     "git", "fetch", "origin", "&&",
-    "git", "reset", "--hard", "origin/main", "&&",
+    "git", "reset", "--hard", "574193db643a36d279a6751530f0f54e4203f617", "&&",
     "./bazelw", "build", "//mojo/stdlib/..."
 ], depends-on = [ "clone_stdlib" ]}
 

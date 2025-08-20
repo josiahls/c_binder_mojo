@@ -1,11 +1,15 @@
 from pathlib import Path
-from c_binder_mojo.mojo_ast_nodes.tree import ModuleInterface
-from c_binder_mojo.mojo_ast_nodes.function_decl_node import FunctionDeclNode
-from c_binder_mojo.mojo_ast_nodes.typedef_decl_node import TypedefDeclNode
+
+from c_binder_mojo.mojo_json_ast_nodes.function_decl_node import (
+    FunctionDeclNode,
+)
+from c_binder_mojo.mojo_json_ast_nodes.typedef_decl_node import TypedefDeclNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
 
 
 fn _get_so_lib_path_function() -> String:
-    return String("""\n
+    return String(
+        """\n
 @always_inline
 fn _get_lib_path(so_file_name: String) raises -> Path:
     var env_var_name:String = so_file_name.split('.')[0].upper() + '_LIB_PATH'
@@ -42,10 +46,8 @@ fn _get_lib_path(so_file_name: String) raises -> Path:
         raise Error(
             msg
         )
-""")
-
-
-
+"""
+    )
 
 
 fn _get_module_dl_handle(
@@ -57,13 +59,18 @@ fn _get_module_dl_handle(
 
     fields: String = String()
     for external_declaration in external_declarations:
-        fields += String("\n    var {0}: {1}.type").format(external_declaration.dl_field_name, external_declaration.mojo_name)
+        fields += String("\n    var {0}: {1}.type").format(
+            external_declaration.dl_field_name, external_declaration.mojo_name
+        )
 
     field_inits: String = String()
     for external_declaration in external_declarations:
-        field_inits += String("\n        self.{0} = {1}.load(self.lib)").format(external_declaration.dl_field_name, external_declaration.mojo_name)
+        field_inits += String("\n        self.{0} = {1}.load(self.lib)").format(
+            external_declaration.dl_field_name, external_declaration.mojo_name
+        )
 
-    return String("""\n
+    return String(
+        """\n
 @fieldwise_init
 struct {0}(Copyable, Movable):
     \"""Handle to the CPython interpreter present in the current process.\"""
@@ -85,23 +92,8 @@ struct {0}(Copyable, Movable):
 
     {3}
 
-""").format(lib_name, String(so_file), fields, field_inits)
-
-
-fn _get_import_statements(
-    ast_tree: ModuleInterface,
-) raises -> String:
-    """Get the import statements for the module."""
-
-    statements: List[String] = [
-        "from sys.ffi import DLHandle",
-        "from sys import ffi",
-        "from os import abort, getenv, setenv",
-        "from python._cpython import ExternalFunction",
-        "from pathlib import Path"
-    ]
-    return String("\n").join(statements) + "\n"
-
+"""
+    ).format(lib_name, String(so_file), fields, field_inits)
 
 
 struct ExternalFunctionBuilder(Copyable, Movable):
@@ -113,26 +105,30 @@ struct ExternalFunctionBuilder(Copyable, Movable):
     fn __init__(out self, lib_name: String, c_name: String) raises:
         self.mojo_name = String("{0}_{1}").format(lib_name, c_name)
         self.c_name = c_name
-        self.meta_name = String("alias {1}_{0} = ExternalFunction[\'{0}\', {0}]").format(c_name, lib_name)
-        self.dl_field_name = c_name # String("{0}_{1}_func").format(lib_name, c_name)
+        self.meta_name = String(
+            "alias {1}_{0} = ExternalFunction['{0}', {0}]"
+        ).format(c_name, lib_name)
+        self.dl_field_name = (
+            c_name  # String("{0}_{1}_func").format(lib_name, c_name)
+        )
 
 
 fn _get_function_external_declarations(
     lib_name: String,
-    ast_tree: ModuleInterface,
-    include_private_methods:Bool,
-    include_only_prefixes:List[String]
+    ast_root_node: JsonAstNode,
+    include_private_methods: Bool,
+    include_only_prefixes: List[String],
 ) raises -> List[ExternalFunctionBuilder]:
     """Get the function external declarations for the module."""
     external_declarations: List[ExternalFunctionBuilder] = []
     function_names: List[String] = []
-    for node in ast_tree.nodes()[]:
-        if node.node[].isa[FunctionDeclNode]() and not node.node[][FunctionDeclNode]._is_disabled:
-            name = node.node[][FunctionDeclNode]._function_name
-            if not include_private_methods and name.startswith('_'):
+    for node in ast_root_node.children():
+        if node.node[].isa[FunctionDeclNode]():
+            name = node.node[][FunctionDeclNode].function_name
+            if not include_private_methods and name.startswith("_"):
                 continue
             if len(include_only_prefixes) != 0:
-                starts_with_prefix:Bool = False
+                starts_with_prefix: Bool = False
                 for prefix in include_only_prefixes:
                     if name.startswith(prefix):
                         starts_with_prefix = True
@@ -148,30 +144,34 @@ fn _get_function_external_declarations(
 
 
 fn append_to_mojo_file(
-    ast_tree: ModuleInterface,
+    ast_root_node: JsonAstNode,
     mojo_file: Path,
     so_file: Path,
     lib_name: String = "",
     include_only_prefixes: List[String] = [],
-    include_private_methods: Bool= False
+    include_private_methods: Bool = False,
 ) raises:
     """Append the contents of the shared object file to the mojo file."""
-    var _lib_name:String = lib_name if lib_name != "" else String(mojo_file.path.split("/")[-1].split(".")[0])
+    var _lib_name: String = lib_name if lib_name != "" else String(
+        mojo_file.path.split("/")[-1].split(".")[0]
+    )
     if include_private_methods:
-        print('Warning: Some libs such as mujoco seg fault when include_private_methods=True')
+        print(
+            "Warning: Some libs such as mujoco seg fault when"
+            " include_private_methods=True"
+        )
 
-    text:String = _get_import_statements(ast_tree)
+    text: String = ""
     text += mojo_file.read_text() + "\n"
     external_declarations = _get_function_external_declarations(
-        _lib_name, 
-        ast_tree, 
-        include_private_methods,
-        include_only_prefixes
+        _lib_name, ast_root_node, include_private_methods, include_only_prefixes
     )
     for external_declaration in external_declarations:
         text += String("\n") + external_declaration.meta_name
 
     text += _get_so_lib_path_function()
-    text += _get_module_dl_handle(_lib_name, String(so_file.path.split("/")[-1]), external_declarations)
+    text += _get_module_dl_handle(
+        _lib_name, String(so_file.path.split("/")[-1]), external_declarations
+    )
 
     mojo_file.write_text(text)

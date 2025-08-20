@@ -54,7 +54,7 @@ alias GLOBAL_TYPE_REGISTRY = _Global[
 ]
 
 
-alias NUMERIC_TYPES:Dict[String, String] = {
+alias NUMERIC_TYPES: Dict[String, String] = {
     # Primitive types
     "char": "Int8",
     "short": "Int16",
@@ -149,7 +149,7 @@ alias NUMERIC_TYPES:Dict[String, String] = {
 }
 
 
-alias NON_NUMERIC_TYPES:Dict[String, String] = {
+alias NON_NUMERIC_TYPES: Dict[String, String] = {
     "bool": "Bool",
     "void": "NoneType",
     "__SVBool_t": "Bool",
@@ -157,15 +157,10 @@ alias NON_NUMERIC_TYPES:Dict[String, String] = {
 }
 
 
-alias MOJO_FUNCTIONS: List[String] = [
-    "abort",
-    "getenv",
-    "setenv"
-]
+alias MOJO_FUNCTIONS: List[String] = ["abort", "getenv", "setenv"]
 
 
 struct TypeMapper:
-
     @staticmethod
     fn _convert_non_numeric_type(
         c_type: String,
@@ -181,23 +176,38 @@ struct TypeMapper:
         return c_type.startswith("unsigned ")
 
     @staticmethod
-    fn _has_restrict_attribute(c_type: String) -> Bool:
-        # Check if the type starts with "restrict " (with space) to avoid matching type names
-        # that contain "restrict" as part of their name (e.g., "restrict_t", "my_restrict_type")
-        if "restrict " in c_type:
-            return c_type.startswith("restrict ")
-        elif c_type.replace("*", " ").endswith(" restrict"):
-            return True
-        return False
+    fn _is_restrict_type(c_type: String) -> Bool:
+        return c_type.endswith(" restrict") or c_type.endswith("*restrict")
 
     @staticmethod
-    fn _has_const_attribute(c_type:String) -> Bool:
-        """Evaluate const from right to left. 
-        
+    fn _is_union(c_type: String) -> Bool:
+        return c_type.startswith("union ")
+
+    @staticmethod
+    fn _is_volatile_type(c_type: String) -> Bool:
+        return c_type.startswith("volatile ")
+
+    @staticmethod
+    fn _has_const_attribute(c_type: String) -> Bool:
+        """Evaluate const from right to left.
+
+        TODO: Look into replacing this will just using `_is_const_attribute`
+
         Note, if `c_type` ends with a pointer, we return False. We want the `_convert_pointer_type`
         to first remove that, then we can reevaluate.
         """
-        return c_type.replace("*", " ").endswith('const') and not c_type.endswith('*')
+        return c_type.replace("*", " ").endswith(
+            "const"
+        ) and not c_type.endswith("*")
+
+    @staticmethod
+    fn _is_const_attribute(c_type: String) -> Bool:
+        """Evaluate const from right to left.
+
+        Note, if `c_type` ends with a pointer, we return False. We want the `_convert_pointer_type`
+        to first remove that, then we can reevaluate.
+        """
+        return c_type.startswith("const ")
 
     @staticmethod
     fn _is_function(c_type: String) -> Bool:
@@ -209,11 +219,19 @@ struct TypeMapper:
         if idx == -1:
             return False
         # Check whether we have this structure: (*)(...)
-        return "(" in c_type[idx+1:] and ")" in c_type[idx+1:]
+        return "(" in c_type[idx + 1 :] and ")" in c_type[idx + 1 :]
 
     @staticmethod
     fn _is_pointer(c_type: String) -> Bool:
         return c_type.endswith("*")
+
+    @staticmethod
+    fn _is_struct(c_type: String) -> Bool:
+        return c_type.startswith("struct ")
+
+    @staticmethod
+    fn _is_enum(c_type: String) -> Bool:
+        return c_type.startswith("enum ")
 
     @staticmethod
     fn _is_array(c_type: String) -> Bool:
@@ -221,13 +239,38 @@ struct TypeMapper:
 
     @staticmethod
     fn _is_variadic_list(c_type: String) -> Bool:
-        return ',' in c_type
+        return "," in c_type
 
     @staticmethod
-    fn _convert_const_attribute(c_type:String) -> String:
+    fn _convert_volatile_type(c_type: String) -> String:
+        var stripped_type = String(c_type.removeprefix("volatile "))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
+
+    @staticmethod
+    fn _convert_union_type(c_type: String) -> String:
+        return "OpaquePointer # TODO: Union type"
+
+    @staticmethod
+    fn _convert_enum_type(c_type: String) -> String:
+        var stripped_type = String(c_type.removeprefix("enum "))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
+
+    @staticmethod
+    fn _convert_restrict_type(c_type: String) -> String:
+        # TODO: Does mojo have any equivalent?
+        var stripped_type = String(c_type.removesuffix("restrict"))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
+
+    @staticmethod
+    fn _convert_const_attribute(c_type: String) -> String:
         # TODO: This is sloppy. We need to do proper left <- right evaluation of attributes.
         stripped_type = String(c_type.removesuffix("const"))
         stripped_type = String(stripped_type.removeprefix("const "))
+        return Self.convert_c_type_to_mojo_type(stripped_type)
+
+    @staticmethod
+    fn _convert_struct_type(c_type: String) -> String:
+        var stripped_type = String(c_type.removeprefix("struct "))
         return Self.convert_c_type_to_mojo_type(stripped_type)
 
     @staticmethod
@@ -235,7 +278,11 @@ struct TypeMapper:
         c_type: String,
     ) -> String:
         stripped_type = String(c_type.removesuffix("*"))
-        ptr =  'UnsafePointer[' + Self.convert_c_type_to_mojo_type(stripped_type) + ']'
+        ptr = (
+            "UnsafePointer["
+            + Self.convert_c_type_to_mojo_type(stripped_type)
+            + "]"
+        )
         if ptr == "UnsafePointer[NoneType]":
             return "OpaquePointer"
         return ptr
@@ -254,10 +301,10 @@ struct TypeMapper:
         stripped_type = String(c_type[:l_bracket_idx])
         array_type = Self.convert_c_type_to_mojo_type(stripped_type)
         try:
-            array_size = Int(c_type[l_bracket_idx+1:c_type.find("]")])
+            array_size = Int(c_type[l_bracket_idx + 1 : c_type.find("]")])
             # if array_size > 5:
             #     return 'UnsafePointer[' + array_type + ']'
-            return 'StaticTuple[' + array_type + ', ' + String(array_size) + ']'
+            return "StaticTuple[" + array_type + ", " + String(array_size) + "]"
             # var s:String = '('
             # for i in range(array_size):
             #     if i == array_size - 1:
@@ -267,23 +314,50 @@ struct TypeMapper:
             # s += ')'
             # return s
         except:
-            return 'UnsafePointer[' + array_type + '] # Failed to parse array size'
+            return (
+                "UnsafePointer[" + array_type + "] # Failed to parse array size"
+            )
 
     @staticmethod
     fn _convert_function_type(
-        c_type: String,
-        is_fn_param: Bool = False
+        c_type: String, is_fn_param: Bool = False
     ) -> String:
         function_ptr_idx = c_type.find("(*)")
         if function_ptr_idx == -1:
             return c_type
 
         fn_return_type = String(c_type[:function_ptr_idx])
-        fn_params = String(c_type[function_ptr_idx+3:])
+        fn_params = String(c_type[function_ptr_idx + 3 :])
 
         fn_return_type = Self.convert_c_type_to_mojo_type(fn_return_type)
         fn_params = Self.convert_c_type_to_mojo_type(fn_params, True)
         return "fn" + fn_params + " -> " + fn_return_type
+
+    @staticmethod
+    fn _convert_function_decl_type(
+        c_type: String, is_fn_param: Bool = False
+    ) -> String:
+        """
+        This is used for function declarations. Main difference is `c_type` does
+        not contain the `(*)` pointer.
+        """
+        var stripped_type = String(c_type)
+        if c_type.endswith("__attribute__((noreturn))"):
+            stripped_type = String(
+                c_type.removesuffix("__attribute__((noreturn))")
+            )
+
+        param_start_idx = stripped_type.find("(")
+        param_end_idx = stripped_type.rfind(")")
+        if param_start_idx == -1:
+            return stripped_type
+
+        fn_return_type = String(stripped_type[:param_start_idx])
+        fn_params = String(stripped_type[param_start_idx + 1 : param_end_idx])
+
+        fn_return_type = Self.convert_c_type_to_mojo_type(fn_return_type)
+        fn_params = Self.convert_c_type_to_mojo_type(fn_params, True)
+        return "fn (" + fn_params + ") -> " + fn_return_type
 
     @staticmethod
     fn _convert_signed_type(
@@ -311,19 +385,20 @@ struct TypeMapper:
 
     @staticmethod
     fn _convert_parentheses_wrapped_type(
-        c_type: String,
-        is_fn_param: Bool = False
+        c_type: String, is_fn_param: Bool = False
     ) -> String:
         first_open_paren = c_type.find("(")
         last_close_paren = c_type.rfind(")")
         if first_open_paren == -1 or last_close_paren == -1:
             return c_type
         left_type = String(c_type[:first_open_paren])
-        middle_type = String(c_type[first_open_paren+1:last_close_paren])
-        right_type = String(c_type[last_close_paren+1:])   
+        middle_type = String(c_type[first_open_paren + 1 : last_close_paren])
+        right_type = String(c_type[last_close_paren + 1 :])
 
-        return_type:String = Self.convert_c_type_to_mojo_type(left_type)
-        middle_types = Self.convert_c_type_to_mojo_type(middle_type, is_fn_param)
+        return_type: String = Self.convert_c_type_to_mojo_type(left_type)
+        middle_types = Self.convert_c_type_to_mojo_type(
+            middle_type, is_fn_param
+        )
         if middle_types == "NoneType" and is_fn_param:
             middle_types = ""
         return_type += "(" + middle_types + ")"
@@ -333,27 +408,35 @@ struct TypeMapper:
 
     @staticmethod
     fn _convert_variadic_list_type(
-        c_type: String,
-        is_fn_param: Bool = False
+        c_type: String, is_fn_param: Bool = False
     ) -> String:
-        returned_elements:List[String] = []
+        returned_elements: List[String] = []
 
-        if ',' in c_type:
+        if "," in c_type:
             c_type_split = c_type.split(",")
         else:
             c_type_split = [c_type]
 
-        for element in c_type_split: 
+        is_variadic = False
+        for element in c_type_split:
             stripped_element = String(element.strip())
-            # TODO(josiahls): I think we need to generalize these attributes like const, 
+            # TODO(josiahls): I think we need to generalize these attributes like const,
             # and make it easier to do custom ops like `read` or even eventually origin modification.
             is_const = False
 
-            if stripped_element.startswith('const'):
-                stripped_element = String(stripped_element.removeprefix('const '))
+            if stripped_element.startswith("const"):
+                stripped_element = String(
+                    stripped_element.removeprefix("const ")
+                )
                 is_const = True
-            
-            converted_element = Self.convert_c_type_to_mojo_type(stripped_element)
+
+            if stripped_element == "...":
+                is_variadic = True
+                continue
+
+            converted_element = Self.convert_c_type_to_mojo_type(
+                stripped_element
+            )
 
             if is_const:
                 converted_element = "read " + converted_element
@@ -363,22 +446,25 @@ struct TypeMapper:
                 continue
             returned_elements.append(converted_element)
 
-        return String(", ").join(returned_elements)
+        if is_variadic:
+            variadic = returned_elements[-1]
+            for modifier in ["read ", "mut ", ""]:
+                if modifier == "":
+                    variadic = "*" + variadic
+                    break
+                if variadic.startswith(modifier):
+                    variadic = modifier + "*" + variadic.removeprefix(modifier)
+                    break
+            returned_elements[-1] = variadic
 
-    @staticmethod
-    fn _convert_restrict_type(
-        c_type: String,
-    ) -> String:
-        stripped_type = String(c_type.removeprefix("restrict "))
-        if stripped_type.replace("*", " ").endswith(" restrict"):
-            stripped_type = String(stripped_type.removesuffix("restrict"))
-        return Self.convert_c_type_to_mojo_type(stripped_type)
+        return String(", ").join(returned_elements)
 
     @staticmethod
     fn convert_c_type_to_mojo_type(
         c_type: String,
         is_fn_param: Bool = False,
-        unsigned: Bool = False
+        unsigned: Bool = False,
+        is_fn_decl: Bool = False,
     ) -> String:
         stripped_type = String(c_type.strip())
         try:
@@ -387,10 +473,27 @@ struct TypeMapper:
             # its kind of all over the place. I like that we do:
             #   stripped_type in NON_NUMERIC_TYPES
             #   stripped_type in NUMERIC_TYPES
-            # But we might want to instead of 
+            # But we might want to instead of
             #   any(stripped_type.endswith(non_numeric_type) for non_numeric_type in NON_NUMERIC_TYPES)
+            if is_fn_decl:
+                # NOTE: Used when whether or not the c_type is a function is important.
+                return Self._convert_function_decl_type(
+                    stripped_type, is_fn_param
+                )
             if unsigned:
                 return Self._convert_unsigned_type(stripped_type)
+            # TODO: Should we keep the unions in the "c style" in
+            # c_binder_mojo/c_binder_mojo/mojo_json_ast_nodes/record_decl_node.mojo? Then convert correctly here?
+            # elif Self._is_union(stripped_type):
+            #     return Self._convert_union_type(stripped_type)
+            elif Self._is_struct(stripped_type):
+                return Self._convert_struct_type(stripped_type)
+            elif Self._is_enum(stripped_type):
+                return Self._convert_enum_type(stripped_type)
+            elif Self._is_restrict_type(stripped_type) and not is_fn_param:
+                return Self._convert_restrict_type(stripped_type)
+            elif Self._is_volatile_type(stripped_type) and not is_fn_param:
+                return Self._convert_volatile_type(stripped_type)
             elif stripped_type in NON_NUMERIC_TYPES:
                 return NON_NUMERIC_TYPES[stripped_type]
             elif stripped_type in NUMERIC_TYPES:
@@ -398,23 +501,27 @@ struct TypeMapper:
             elif Self._has_const_attribute(stripped_type) and not is_fn_param:
                 # NOTE: is_fn_param==True, const's currently get handled differently.
                 return Self._convert_const_attribute(stripped_type)
-            elif Self._has_restrict_attribute(stripped_type):
-                return Self._convert_restrict_type(stripped_type)
             elif Self._is_function(stripped_type):
                 return Self._convert_function_type(stripped_type, is_fn_param)
             elif Self._is_parentheses_wrapped(stripped_type):
-                return Self._convert_parentheses_wrapped_type(stripped_type, is_fn_param)
+                return Self._convert_parentheses_wrapped_type(
+                    stripped_type, is_fn_param
+                )
             elif Self._is_variadic_list(stripped_type) or is_fn_param:
-                return Self._convert_variadic_list_type(stripped_type, is_fn_param)
+                return Self._convert_variadic_list_type(
+                    stripped_type, is_fn_param
+                )
             elif Self._is_pointer(stripped_type):
                 return Self._convert_pointer_type(stripped_type)
             elif Self._is_array(stripped_type):
                 return Self._convert_array_type(stripped_type)
+            elif Self._is_const_attribute(stripped_type):
+                return Self._convert_const_attribute(stripped_type)
             elif Self._is_signed(stripped_type):
                 return Self._convert_signed_type(stripped_type)
             elif Self._is_unsigned(stripped_type):
                 return Self._convert_unsigned_type(stripped_type)
-            
+
         except e:
             print("Error: " + String(e) + " for type " + stripped_type)
         return stripped_type

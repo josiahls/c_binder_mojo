@@ -1,0 +1,72 @@
+# Native Mojo Modules
+
+# Third Party Mojo Modules
+from emberjson import Object, to_string
+
+# First Party Modules
+from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+
+
+struct IndirectFieldDeclNode(JsonNodeAstLike):
+    alias __name__ = "IndirectFieldDecl"
+
+    var name: String
+
+    var level: Int
+    var type: String
+    var desugared_type: String
+    var children_: List[JsonAstNode]
+
+    fn __init__(out self, object: Object, level: Int):
+        self.name = ""
+
+        self.level = 1  # Fields must always be at the top level + 1
+        self.type = ""
+        self.desugared_type = ""
+        self.children_ = List[JsonAstNode]()
+        try:
+            if "name" in object:
+                self.name = object["name"].string()
+            if "type" in object:
+                type_object = object["type"].object()
+                if "qualType" in type_object:
+                    self.type = type_object["qualType"].string()
+                if "desugaredQualType" in type_object:
+                    self.desugared_type = type_object[
+                        "desugaredQualType"
+                    ].string()
+        except e:
+            print(
+                "Error creating IndirectFieldDeclNode: ", e, to_string(object)
+            )
+
+    @staticmethod
+    fn accept_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> Bool:
+        return json_object["kind"].string() == Self.__name__
+
+    @staticmethod
+    fn create_from_json_object(
+        read json_object: Object, read level: Int
+    ) raises -> JsonAstNode:
+        return JsonAstNode(Self(json_object, level))
+
+    fn to_string(self, just_code: Bool) raises -> String:
+        var s: String = ""
+        var indent: String = "\t" * self.level
+        if not just_code:
+            s += indent + self.signature() + "\n"
+        return s
+
+    fn signature(self) -> String:
+        return "# Node: " + self.__name__ + "()"
+
+    fn children[
+        mut: Bool, //, origin: Origin[mut]
+    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+        # Create an unsafe pointer to the member, then cast the origin
+        return UnsafePointer[mut=mut](to=self.children_).origin_cast[
+            origin = __origin_of(self)
+        ]()[]

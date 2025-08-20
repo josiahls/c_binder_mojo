@@ -15,10 +15,12 @@ repository = "https://github.com/josiahls/c_binder_mojo"
 
 [dependencies]
 mojo = ">=25.6.0.dev2025080116"
+pre-commit = ">=4.2.0,<5"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
+# MOJO_ENABLE_STACK_TRACE_ON_ERROR="1"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -30,17 +32,23 @@ init_test_c_project = { cmd = [
 ], outputs = ["tests/test_c_project/build"]}
 
 build_test_c_project = { cmd = [
-        "cd", "tests/test_c_project/build", "&&",
-        "make",
-    ], depends-on = [
-        "init_test_c_project"
-    ]}
+    "cd", "tests/test_c_project/build", "&&",
+    "make",
+], depends-on = [
+    "init_test_c_project"
+]}
 
 
 ########################### Firehose Configuration ############################
 clone_firehose = { cmd = [
     "bash", "-c", 
     "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
+]}
+
+########################### EmberJson Configuration ############################
+clone_emberjson = { cmd = [
+    "bash", "-c", 
+    "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
 ]}
 
 ########################## Mojo Standard Library ##############################
@@ -51,50 +59,101 @@ clone_stdlib = { cmd = [
 
 update_stdlib = { cmd = [
     "cd", "modular", "&&",
-    "git", "fetch", "origin", "&&",
-    "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
-    "git", "pull", "origin", "josiahls/add-ulong-c-ffi", "&&",
-    "bazelw", "build", "//mojo/stdlib/stdlib"
+    "./bazelw", "build", "//mojo/stdlib/stdlib"
 ], depends-on = [ "clone_stdlib" ]}
 
 clean_update_stdlib = { cmd = [
     "cd", "modular", "&&",
     "git", "fetch", "origin", "&&",
-    "git", "checkout", "josiahls/add-ulong-c-ffi", "&&",
-    "git", "reset", "--hard", "origin/josiahls/add-ulong-c-ffi", "&&",
-    "bazelw", "build", "//mojo/stdlib/stdlib"
+    "git", "reset", "--hard", "574193db643a36d279a6751530f0f54e4203f617", "&&",
+    "./bazelw", "build", "//mojo/stdlib/..."
 ], depends-on = [ "clone_stdlib" ]}
+
+######################### Pre-commit Configuration ##########################
+install_pre_commit_hooks = { cmd = [
+    "pre-commit", "install"
+], outputs = [".git/hooks/pre-commit"]}
 
 ######################### Core API ############################################
 configure = { cmd = [
     "echo", "configuring"
-], depends-on = [ "clone_firehose", "build_test_c_project" ] }
+], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks", "update_stdlib" ] }
 
 generate_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "-I", "firehose", "cli.mojo"
+    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "cli.mojo"
 ], depends-on = [ "configure" ]}
 
 package = { cmd = [
-    "mojo", "package", "-I", "firehose", "c_binder_mojo"
+    "mojo", "package", "-I", "firehose", "-I", "EmberJson", "c_binder_mojo"
 ], depends-on = [ "configure" ]}
+
+format = { cmd = [
+    "mojo", "format", "c_binder_mojo"
+]}
 
 
 ######################### Testing Configuration ###############################
 # Build the c bindings.
-build_test_c_project_bindings = { cmd = [
+build_test_c_project_bindings_simple_type_defs = { cmd = [
     "pixi", "run", "generate_bindings", 
     "tests/test_c_project/include/simple_type_defs.h",
     "tests/test_c_project/build",
     "tests/test_c_project/build/libtest_c_project.so",
 ], depends-on = [ "configure" ]}
 
+build_test_c_project_bindings_complex_structs = { cmd = [
+    "pixi", "run", "generate_bindings", 
+    "tests/test_c_project/include/complex_structs.h",
+    "tests/test_c_project/build",
+    "tests/test_c_project/build/libtest_c_project_complex_structs.so",
+], depends-on = [ "configure" ]}
 
-######################### Testing #############################################
 
-test_all = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
-], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
+build_test_c_project_bindings_complex_unions = { cmd = [
+    "pixi", "run", "generate_bindings", 
+    "tests/test_c_project/include/complex_unions.h",
+    "tests/test_c_project/build",
+    "tests/test_c_project/build/libtest_c_project_unions.so",
+], depends-on = [ "configure" ]}
 
-test_all_clean = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_simple_type_defs.mojo"
-], depends-on = [ "clean_update_stdlib", "build_test_c_project_bindings" ]}
+
+build_test_c_project_bindings_complex_type_defs = { cmd = [
+    "pixi", "run", "generate_bindings", 
+    "tests/test_c_project/include/complex_type_defs.h",
+    "tests/test_c_project/build",
+    "tests/test_c_project/build/libtest_c_project_complex_type_defs.so",
+], depends-on = [ "configure" ]}
+
+
+build_test_c_project_bindings = { depends-on = [ 
+    "configure", 
+    "build_test_c_project_bindings_simple_type_defs",
+    "build_test_c_project_bindings_complex_structs",
+    "build_test_c_project_bindings_complex_unions",
+]}
+
+test = { cmd = [
+    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "-I", ".", "-I", "firehose", "-I", "EmberJson"
+]}
+
+test_test_stdlib_ext = { cmd = [
+    "pixi", "run", "test", "tests/test_stdlib_ext.mojo"
+], depends-on = [  ]}
+
+test_test_typing = { cmd = [
+    "pixi", "run", "test", "tests/test_typing.mojo"
+], depends-on = [  ]}
+
+test_all = { depends-on = [ 
+    "build_test_c_project_bindings",
+    "test_test_stdlib_ext",
+    "test_test_typing",
+]}
+
+test_all_stdlib = { depends-on = [ 
+    "update_stdlib", "test_all" 
+]}
+
+test_all_stdlib_clean = { depends-on = [ 
+    "clean_update_stdlib", "test_all" 
+]}

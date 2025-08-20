@@ -127,31 +127,33 @@ build_test_c_project_bindings_complex_type_defs = { cmd = [
 
 build_test_c_project_bindings = { depends-on = [ 
     "configure", 
-#    "build_test_c_project_bindings_simple_type_defs",
-#    "build_test_c_project_bindings_complex_structs",
-#    "build_test_c_project_bindings_complex_unions",
-    "build_test_c_project_bindings_complex_type_defs"
+    "build_test_c_project_bindings_simple_type_defs",
+    "build_test_c_project_bindings_complex_structs",
+    "build_test_c_project_bindings_complex_unions",
+]}
+
+test = { cmd = [
+    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "-I", ".", "-I", "firehose", "-I", "EmberJson"
 ]}
 
 test_test_stdlib_ext = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_stdlib_ext.mojo"
+    "pixi", "run", "test", "tests/test_stdlib_ext.mojo"
 ], depends-on = [  ]}
 
 test_test_typing = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "tests/test_typing.mojo"
+    "pixi", "run", "test", "tests/test_typing.mojo"
 ], depends-on = [  ]}
 
+test_all = { depends-on = [ 
+    "build_test_c_project_bindings",
+    "test_test_stdlib_ext",
+    "test_test_typing",
+]}
 
-######################### Testing #############################################
+test_all_stdlib = { depends-on = [ 
+    "update_stdlib", "test_all" 
+]}
 
-test_all = { cmd = [
-    "bash", "tests/run_tests.sh"
-], depends-on = [ "build_test_c_project_bindings" ]}
-
-test_all_stdlib = { cmd = [
-    "bash", "tests/run_tests.sh"
-], depends-on = [ "update_stdlib", "build_test_c_project_bindings" ]}
-
-test_all_stdlib_clean = { cmd = [
-    "bash", "tests/run_tests.sh"
-], depends-on = [ "clean_update_stdlib", "build_test_c_project_bindings" ]}
+test_all_stdlib_clean = { depends-on = [ 
+    "clean_update_stdlib", "test_all" 
+]}

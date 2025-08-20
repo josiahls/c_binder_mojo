@@ -27,7 +27,7 @@ fn test_type_mapper() raises:
         TypeMapper.convert_c_type_to_mojo_type(
             "void (const char *, ...)", is_fn_decl=True
         ),
-        "fn (*read UnsafePointer[Int8]) -> NoneType",
+        "fn (read *UnsafePointer[Int8]) -> NoneType",
     )
 
 

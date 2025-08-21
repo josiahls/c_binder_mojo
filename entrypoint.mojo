@@ -12,6 +12,7 @@ from c_binder_mojo.clang_ast_nodes.json_ast_parser import AstParser
 
 from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.cli import ArgParser
 
 
 fn generate_bindings(
@@ -79,9 +80,9 @@ Usage:
 Positional Arguments:
     input_header_path: The path to the header file to bind. Should end in .h.
     output_dir: The path to the output directory. Will create a file in this directory with the name of the input header file.
-    so_file_path: The path to the shared object file. Should end in .so.
 
 Optional Arguments:
+    so_file_path: The path to the shared object file. Should end in .so.
     extra_args: Extra arguments to pass to the clang compiler. e.g.: `clang -I /some/extra/include/path`
     include_only_prefixes: Only include symbols with these prefixes. Comma separated list. e.g.: `mj` for only binding mujoco symbols.
     debug_output: Whether to output the raw AST to the output directory.
@@ -92,23 +93,29 @@ fn main() raises:
     var logger = Logger.get_default_logger("c_binder_mojo")
 
     var args = sys.argv()
+    var arg_parser = ArgParser(
+        args=args,
+        positional_args=["input_header_path", "output_dir"],
+        named_args=[
+            "input_header_path",
+            "output_dir",
+            "so_file_path",
+            "extra_args",
+            "include_only_prefixes",
+            "debug_output",
+            "help",
+        ],
+    )
+    var parsed_args = arg_parser.parse()
 
-    for arg in args:
-        if "--help" in arg or "-h" in arg or "help" in arg:
-            print(HELP_STRING)
-            return
+    for item in parsed_args.items():
+        print("arg: " + item.key + " value: " + item.value)
 
-    if len(args) < 4:
-        var s: String = ""
-        for arg in args:
-            s += String(arg) + " "
-        raise Error(
-            "Requires at least 4 positional arguments: input_header_path,"
-            " output_path, so_file_path. Instead got: "
-            + s
-        )
+    if "help" in parsed_args:
+        print(HELP_STRING)
+        return
 
-    var input_header_path = Path(args[1])
+    var input_header_path = Path(parsed_args["input_header_path"])
     if not input_header_path.exists():
         raise Error(
             "Input header file doesn't exist: " + String(input_header_path)
@@ -117,21 +124,38 @@ fn main() raises:
         raise Error(
             "Input header file must end in .h: " + String(input_header_path)
         )
-    var output_dir = Path(args[2])
+
+    var output_dir = Path(parsed_args["output_dir"])
     if not output_dir.exists():
         print(
             "Output directory doesn't exist, will create it: "
             + String(output_dir)
         )
-    var so_file_path = Path(args[3])
-    # if not so_file_path.exists():
-    #     raise Error("Shared object file doesn't exist: " + String(so_file_path))
-    var extra_args = String(args[4]) if len(args) > 4 else String("")
-    var include_only_prefixes = String(args[5]) if len(args) > 5 else String("")
+
+    var so_file_path: Path
+    if "so_file_path" not in parsed_args:
+        so_file_path = output_dir / (
+            "lib" + input_header_path.path.split("/")[-1].split(".")[0] + ".so"
+        )
+        logger.info(
+            "No so_file_path provided, will use default: "
+            + String(so_file_path)
+        )
+    else:
+        so_file_path = Path(parsed_args["so_file_path"])
+
+    if not so_file_path.exists():
+        raise Error("Shared object file doesn't exist: " + String(so_file_path))
+    var extra_args = String(
+        parsed_args["extra_args"]
+    ) if "extra_args" in parsed_args else String("")
+    var include_only_prefixes = String(
+        parsed_args["include_only_prefixes"]
+    ) if "include_only_prefixes" in parsed_args else String("")
 
     var debug_output = True
-    if len(args) > 6:
-        debug_output = args[6] == "true"
+    if "debug_output" in parsed_args:
+        debug_output = parsed_args["debug_output"] == "true"
 
     root_node = generate_bindings(
         input_header_path,

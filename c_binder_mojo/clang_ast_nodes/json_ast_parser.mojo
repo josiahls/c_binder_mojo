@@ -11,7 +11,7 @@ from firehose.logging import Logger, set_global_logger_settings
 from emberjson import parse, to_string, Object
 
 # First Party Modules
-from c_binder_mojo.common import C_BINDER_MOJO_END_FILE
+
 from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode, JsonNodeAstLike
 
 

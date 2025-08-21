@@ -18,6 +18,7 @@ x-c_binder_mojo_base: &c_binder_mojo_base
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
   environment:
     C_BINDING_MOJO_TEST_MUJOCO: /home/mojo_user/c_binder_mojo/mujoco_mojo/mujoco
+    PIXI_ENVIRONMENT_NAME: ${PIXI_ENVIRONMENT_NAME:-default}
     DISPLAY: host.docker.internal:0
 
 volumes:

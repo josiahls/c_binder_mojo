@@ -38,14 +38,11 @@ fn move_record_decls_to_top_level(
         if child.node[].isa[RecordDeclNode]():
             indicies.append(i)
 
-        # print("child: ", child.name())
-
         move_record_decls_to_top_level(children, child)
         i += 1
 
     indicies.reverse()
     for i in indicies:
-        # print('index: ', i)
         children.append(node.children[mut=True]().pop(i))
 
 

@@ -13,14 +13,15 @@ license-file = "LICENSE"
 homepage = "https://github.com/josiahls/c_binder_mojo"
 repository = "https://github.com/josiahls/c_binder_mojo"
 
+[environments]
+stdlib_dev = ["stdlib_dev"]
+
 [dependencies]
 mojo = ">=25.6.0.dev2025080116"
 pre-commit = ">=4.2.0,<5"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
-MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
-# MOJO_ENABLE_STACK_TRACE_ON_ERROR="1"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -51,23 +52,7 @@ clone_emberjson = { cmd = [
     "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
 ]}
 
-########################## Mojo Standard Library ##############################
-clone_stdlib = { cmd = [
-    "bash", "-c", 
-    "if [ ! -d modular ]; then git clone https://github.com/max-lang/modular.git; else echo 'Modular directory already exists.'; fi"
-]}
 
-update_stdlib = { cmd = [
-    "cd", "modular", "&&",
-    "./bazelw", "build", "//mojo/stdlib/stdlib"
-], depends-on = [ "clone_stdlib" ]}
-
-clean_update_stdlib = { cmd = [
-    "cd", "modular", "&&",
-    "git", "fetch", "origin", "&&",
-    "git", "reset", "--hard", "574193db643a36d279a6751530f0f54e4203f617", "&&",
-    "./bazelw", "build", "//mojo/stdlib/..."
-], depends-on = [ "clone_stdlib" ]}
 
 ######################### Pre-commit Configuration ##########################
 install_pre_commit_hooks = { cmd = [
@@ -142,10 +127,29 @@ test_all = { depends-on = [
     "test_test_typing",
 ]}
 
-test_all_stdlib = { depends-on = [ 
-    "update_stdlib", "test_all" 
+[feature.stdlib_dev.activation.env]
+MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
+# MOJO_ENABLE_STACK_TRACE_ON_ERROR="1"
+
+[feature.stdlib_dev.tasks]
+########################## Mojo Standard Library ##############################
+clone_stdlib = { cmd = [
+    "bash", "-c", 
+    "if [ ! -d modular ]; then git clone https://github.com/max-lang/modular.git; else echo 'Modular directory already exists.'; fi"
 ]}
 
-test_all_stdlib_clean = { depends-on = [ 
-    "clean_update_stdlib", "test_all" 
-]}
+update_stdlib = { cmd = [
+    "cd", "modular", "&&",
+    "./bazelw", "build", "//mojo/stdlib/stdlib"
+], depends-on = [ "clone_stdlib" ]}
+
+clean_update_stdlib = { cmd = [
+    "cd", "modular", "&&",
+    "git", "fetch", "origin", "&&",
+    "git", "reset", "--hard", "574193db643a36d279a6751530f0f54e4203f617", "&&",
+    "./bazelw", "build", "//mojo/stdlib/..."
+], depends-on = [ "clone_stdlib" ]}
+
+configure = { cmd = [
+    "echo", "configuring (with stdlib)"
+], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks", "update_stdlib" ] }

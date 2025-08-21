@@ -14,7 +14,7 @@ homepage = "https://github.com/josiahls/c_binder_mojo"
 repository = "https://github.com/josiahls/c_binder_mojo"
 
 [environments]
-stdlib_dev = ["stdlib_dev"]
+stdlib-dev = ["stdlib-dev"]
 
 [dependencies]
 mojo = ">=25.6.0.dev2025080116"
@@ -122,16 +122,17 @@ test_test_typing = { cmd = [
 ], depends-on = [  ]}
 
 test_all = { depends-on = [ 
+    "package",
     "build_test_c_project_bindings",
     "test_test_stdlib_ext",
     "test_test_typing",
 ]}
 
-[feature.stdlib_dev.activation.env]
+[feature.stdlib-dev.activation.env]
 MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
 # MOJO_ENABLE_STACK_TRACE_ON_ERROR="1"
 
-[feature.stdlib_dev.tasks]
+[feature.stdlib-dev.tasks]
 ########################## Mojo Standard Library ##############################
 clone_stdlib = { cmd = [
     "bash", "-c", 

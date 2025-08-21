@@ -119,10 +119,10 @@ jobs:
         else
             echo "Docker Compose pull failed."
         fi
-        # Testing the package command
-        docker compose run --rm c_binder_mojo_${COMPOSE_PROFILES} bash -l -c "pixi run package"
-        # Testing the test_all_stdlib_clean command
-        docker compose run --rm c_binder_mojo_${COMPOSE_PROFILES} bash -l -c "pixi run test_all_stdlib_clean"
+        # Toggle if there is a need to build the stdlib
+        # export PIXI_ENVIRONMENT_NAME=stdlib_dev
+        
+        docker compose run --rm c_binder_mojo_${COMPOSE_PROFILES} bash -l -c "pixi run test_all"
       env:
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

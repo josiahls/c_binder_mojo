@@ -80,7 +80,7 @@ configure = { cmd = [
 ], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks", "update_stdlib" ] }
 
 generate_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "cli.mojo"
+    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "entrypoint.mojo"
 ], depends-on = [ "configure" ]}
 
 package = { cmd = [
@@ -94,35 +94,27 @@ format = { cmd = [
 
 ######################### Testing Configuration ###############################
 # Build the c bindings.
-build_test_c_project_bindings_simple_type_defs = { cmd = [
+build_test_c_project_base = { cmd = [
     "pixi", "run", "generate_bindings", 
-    "tests/test_c_project/include/simple_type_defs.h",
-    "tests/test_c_project/build",
-    "tests/test_c_project/build/libtest_c_project.so",
-], depends-on = [ "configure" ]}
+    "--output_dir", "tests/test_c_project/build",
+    "--input_header_path"
+]}
+
+build_test_c_project_bindings_simple_type_defs = { cmd = [
+    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/simple_type_defs.h"
+]}
 
 build_test_c_project_bindings_complex_structs = { cmd = [
-    "pixi", "run", "generate_bindings", 
-    "tests/test_c_project/include/complex_structs.h",
-    "tests/test_c_project/build",
-    "tests/test_c_project/build/libtest_c_project_complex_structs.so",
-], depends-on = [ "configure" ]}
-
+    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/complex_structs.h"
+]}
 
 build_test_c_project_bindings_complex_unions = { cmd = [
-    "pixi", "run", "generate_bindings", 
-    "tests/test_c_project/include/complex_unions.h",
-    "tests/test_c_project/build",
-    "tests/test_c_project/build/libtest_c_project_unions.so",
-], depends-on = [ "configure" ]}
-
+    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/complex_unions.h"
+]}
 
 build_test_c_project_bindings_complex_type_defs = { cmd = [
-    "pixi", "run", "generate_bindings", 
-    "tests/test_c_project/include/complex_type_defs.h",
-    "tests/test_c_project/build",
-    "tests/test_c_project/build/libtest_c_project_complex_type_defs.so",
-], depends-on = [ "configure" ]}
+    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/complex_type_defs.h"
+]}
 
 
 build_test_c_project_bindings = { depends-on = [ 

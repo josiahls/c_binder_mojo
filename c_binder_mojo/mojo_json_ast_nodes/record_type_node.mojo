@@ -58,6 +58,7 @@ struct RecordTypeNode(JsonNodeAstLike):
                     self.record_name = decl_record_node.node[][
                         RecordDeclNode
                     ].record_name
+                self.children_.append(decl_record_node)
         except e:
             print("Error creating RecordTypeNode: ", e)
 

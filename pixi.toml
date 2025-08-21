@@ -14,7 +14,7 @@ homepage = "https://github.com/josiahls/c_binder_mojo"
 repository = "https://github.com/josiahls/c_binder_mojo"
 
 [environments]
-stdlib-dev = ["stdlib-dev"]
+stdlib-dev = {features = ["stdlib-dev"]}
 
 [dependencies]
 mojo = ">=25.6.0.dev2025080116"
@@ -39,7 +39,6 @@ build_test_c_project = { cmd = [
     "init_test_c_project"
 ]}
 
-
 ########################### Firehose Configuration ############################
 clone_firehose = { cmd = [
     "bash", "-c", 
@@ -52,17 +51,18 @@ clone_emberjson = { cmd = [
     "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
 ]}
 
-
-
 ######################### Pre-commit Configuration ##########################
 install_pre_commit_hooks = { cmd = [
     "pre-commit", "install"
 ], outputs = [".git/hooks/pre-commit"]}
 
 ######################### Core API ############################################
+# NOTE: If we want to use the stdlib, we need to run the update_stdlib during configure to make dev work convenient.
+# pixi supports overriding the default task, but then the user gets prompted on which task they are to run every time.
 configure = { cmd = [
-    "echo", "configuring"
-], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks", "update_stdlib" ] }
+    "bash", "-c", 
+    "echo 'configuring' && if [ \"$PIXI_ENVIRONMENT_NAME\" = \"stdlib-dev\" ]; then echo 'Running in stdlib-dev environment, updating stdlib...'; pixi run update_stdlib; fi"
+], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
 
 generate_bindings = { cmd = [
     "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "entrypoint.mojo"
@@ -100,7 +100,6 @@ build_test_c_project_bindings_complex_unions = { cmd = [
 build_test_c_project_bindings_complex_type_defs = { cmd = [
     "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/complex_type_defs.h"
 ]}
-
 
 build_test_c_project_bindings = { depends-on = [ 
     "configure", 
@@ -152,6 +151,3 @@ clean_update_stdlib = { cmd = [
     "./bazelw", "build", "//mojo/stdlib/..."
 ], depends-on = [ "clone_stdlib" ]}
 
-configure = { cmd = [
-    "echo", "configuring (with stdlib)"
-], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks", "update_stdlib" ] }

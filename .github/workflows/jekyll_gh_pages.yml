@@ -30,9 +30,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Install gems
-        working-directory: docs
-        run: bundle install --jobs 4 --retry 3
+
+      # Install Ruby + Bundler and cache gems for docs/Gemfile
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'           # 3.2 or 3.3 are fine for Jekyll 4.4
+          bundler-cache: true
+        env:
+          BUNDLE_GEMFILE: docs/Gemfile  # <-- important if Gemfile lives in docs/
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

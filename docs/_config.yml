@@ -1,2 +1,2 @@
 include: ../README.md
-remote_theme: just-the-docs
+theme: just-the-docs

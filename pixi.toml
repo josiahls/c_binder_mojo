@@ -22,8 +22,8 @@ pre-commit = ">=4.2.0,<5"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
-GEM_HOME="$HOME/gems"
-PATH="$HOME/gems/bin:$PATH"
+GEM_HOME="$HOME/.local/share/gem"
+PATH="$HOME/.local/share/gem/bin:$PATH"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -58,6 +58,13 @@ install_pre_commit_hooks = { cmd = [
     "pre-commit", "install"
 ], outputs = [".git/hooks/pre-commit"]}
 
+######################### Documentation Configuration ##########################
+
+build_jekyll = { cmd = [
+    "gem", "install", "jekyll", "bundler", "--user"
+]}
+
+
 ######################### Core API ############################################
 # NOTE: If we want to use the stdlib, we need to run the update_stdlib during configure to make dev work convenient.
 # pixi supports overriding the default task, but then the user gets prompted on which task they are to run every time.
@@ -80,7 +87,7 @@ format = { cmd = [
 
 docs = { cmd = [
     "pixi", "run", "mojo", "doc", "-o", "docs/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
-]}
+], depends-on = [ "build_jekyll" ]}
 
 
 ######################### Testing Configuration ###############################

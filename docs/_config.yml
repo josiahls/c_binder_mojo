@@ -1,1 +1,2 @@
 include: ../README.md
+remote_theme: zendesk/jekyll-theme-zendesk-garden@main

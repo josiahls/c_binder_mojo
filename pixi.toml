@@ -23,7 +23,6 @@ pre-commit = ">=4.2.0,<5"
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 GEM_HOME="$HOME/.local/share/gem"
-PATH="$HOME/.local/share/gem/bin:$PATH"
 
 [tasks]
 ######################## Test C Project Configuration #########################

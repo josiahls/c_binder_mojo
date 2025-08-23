@@ -5,3 +5,6 @@ permalink: /c_binder_mojo/mojo_json_ast_nodes
 parent: c_binder_mojo
 ---
 
+## Aliases
+### alias JsonAstNodeVariant
+

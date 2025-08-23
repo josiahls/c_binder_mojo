@@ -10,7 +10,89 @@ from emberjson import parse, to_string, Object
 
 
 @fieldwise_init
-struct DocStruct(Copyable & Movable):
+struct DocFunctionOverload(Copyable & Movable):
+    var name: String
+    var signature: String
+    var description: String
+
+    @staticmethod
+    fn from_object(
+        parent_path: Path, uri_path: String, object: Object
+    ) raises -> Self:
+        var name = object["name"].string()
+        var signature = object["signature"].string()
+        var description = object["description"].string()
+        return Self(name=name, signature=signature, description=description)
+
+    fn to_markdown(self) raises -> String:
+        s = """### `fn {}`
+""".format(
+            self.signature
+        )
+        return String(s)
+
+
+@fieldwise_init
+struct DocFunction(Copyable & Movable):
+    var name: String
+    var signature: String
+    var overloads: List[DocFunctionOverload]
+
+    @staticmethod
+    fn from_object(
+        parent_path: Path, uri_path: String, object: Object
+    ) raises -> Self:
+        var name = object["name"].string()
+        var signature = ""
+        if "signature" in object:
+            signature = object["signature"].string()
+        var overloads: List[DocFunctionOverload] = []
+        if "overloads" in object:
+            overloads = [
+                DocFunctionOverload.from_object(
+                    parent_path, uri_path, o.object()
+                )
+                for o in object["overloads"].array()
+            ]
+        return Self(name=name, signature=signature, overloads=overloads)
+
+    fn to_markdown(self) raises -> String:
+        s: String = ""
+        #         s = """### fn `{}`
+        # """.format(
+        #             self.signature
+        #         )
+        if self.overloads:
+            for doc_overload in self.overloads:
+                s += doc_overload.to_markdown() + "\n"
+        return String(s)
+
+
+@fieldwise_init
+struct DocField(Copyable & Movable):
+    var name: String
+    var type: String
+    var description: String
+
+    @staticmethod
+    fn from_object(
+        parent_path: Path, uri_path: String, object: Object
+    ) raises -> Self:
+        var name = object["name"].string()
+        var type = object["type"].string()
+        var description = object["description"].string()
+        return Self(name=name, type=type, description=description)
+
+    fn to_markdown(self) raises -> String:
+        s = """### var `{}`: `{}`
+""".format(
+            self.name, self.type
+        )
+        return String(s)
+
+
+@fieldwise_init
+struct DocAlias(Copyable & Movable):
     var uri_path: String
     var fs_path: Path
     var name: String
@@ -30,10 +112,70 @@ struct DocStruct(Copyable & Movable):
         )
 
     fn to_markdown(self) raises -> String:
-        s = """# {}
+        s = """### {}
 """.format(
             self.signature
         )
+        return String(s)
+
+
+@fieldwise_init
+struct DocStruct(Copyable & Movable):
+    var uri_path: String
+    var fs_path: Path
+    var name: String
+    var signature: String
+    var aliases: List[DocAlias]
+    var fields: List[DocField]
+    var functions: List[DocFunction]
+
+    @staticmethod
+    fn from_object(
+        parent_path: Path, uri_path: String, object: Object
+    ) raises -> Self:
+        var name = object["name"].string()
+        var signature = object["signature"].string()
+        var aliases = [
+            DocAlias.from_object(parent_path, uri_path, a.object())
+            for a in object["aliases"].array()
+        ]
+        var fields = [
+            DocField.from_object(parent_path, uri_path, f.object())
+            for f in object["fields"].array()
+        ]
+        var functions: List[DocFunction] = []
+        if "functions" in object:
+            functions = [
+                DocFunction.from_object(parent_path, uri_path, f.object())
+                for f in object["functions"].array()
+            ]
+        return Self(
+            uri_path=uri_path,
+            fs_path=parent_path / (name + ".md"),
+            name=name,
+            signature=signature,
+            aliases=aliases,
+            fields=fields,
+            functions=functions,
+        )
+
+    fn to_markdown(self) raises -> String:
+        s = """# `{}`
+""".format(
+            self.signature
+        )
+        if self.aliases:
+            s += "## Aliases\n"
+            for doc_alias in self.aliases:
+                s += doc_alias.to_markdown() + "\n"
+        if self.fields:
+            s += "## Fields\n"
+            for doc_field in self.fields:
+                s += doc_field.to_markdown() + "\n"
+        if self.functions:
+            s += "## Functions\n"
+            for doc_function in self.functions:
+                s += doc_function.to_markdown() + "\n"
         return String(s)
 
 
@@ -43,6 +185,8 @@ struct DocModule(Writable):
     var fs_path: Path
     var name: String
     var structs: List[DocStruct]
+    var aliases: List[DocAlias]
+    var functions: List[DocFunction]
 
     @staticmethod
     fn to_file(parent_path: Path, uri_path: String, object: Object) raises:
@@ -67,6 +211,14 @@ struct DocModule(Writable):
                 DocStruct.from_object(parent_path, _uri_path, s.object())
                 for s in object["structs"].array()
             ],
+            aliases=[
+                DocAlias.from_object(parent_path, _uri_path, a.object())
+                for a in object["aliases"].array()
+            ],
+            functions=[
+                DocFunction.from_object(parent_path, _uri_path, f.object())
+                for f in object["functions"].array()
+            ],
         )
         print(obj)
 
@@ -84,8 +236,16 @@ parent: {}
 """.format(
             self.name, self.uri_path, parent
         )
+        if self.aliases:
+            s += "## Aliases\n"
+            for doc_alias in self.aliases:
+                s += doc_alias.to_markdown() + "\n"
         for doc_struct in self.structs:
             s += doc_struct.to_markdown() + "\n"
+        if self.functions:
+            s += "## Functions\n"
+            for doc_function in self.functions:
+                s += doc_function.to_markdown() + "\n"
         return String(s)
 
     fn write_to[W: Writer](self, mut writer: W):

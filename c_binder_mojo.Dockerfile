@@ -48,6 +48,7 @@ RUN apt-get update && apt-get install -y \
     x11-apps \
     gnupg \ 
     xauth \
+    ruby-full zlib1g-dev \ # For jekyll doc gen.
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

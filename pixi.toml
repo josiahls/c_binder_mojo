@@ -66,13 +66,13 @@ build_jekyll = { cmd = [
 
 build_blank_docs = { cmd = [
     "bash", "-c",
-    "if [ ! -d _docs ]; then pixi run jekyll new _docs --blank; else echo '_docs directory already exists.'; fi"
+    "if [ ! -d docs ]; then pixi run jekyll new docs --blank; else echo 'docs directory already exists.'; fi"
 ], depends-on = [ 
     "build_jekyll" 
-], outputs = [ "_docs" ]}
+], outputs = [ "docs" ]}
 
 build_docs = { cmd = [
-    "pixi", "run", "mojo", "doc", "-o", "_docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
+    "pixi", "run", "mojo", "doc", "-o", "docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
 ], depends-on = [ "build_blank_docs" ]}
 
 
@@ -97,7 +97,7 @@ format = { cmd = [
 ]}
 
 docs = { cmd = [
-    "cd", "_docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload"
+    "cd", "docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload"
 ], depends-on = [ "build_docs" ]}
 
 

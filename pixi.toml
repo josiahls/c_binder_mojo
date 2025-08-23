@@ -84,7 +84,7 @@ build_mojo_docs = { cmd = [
 ], depends-on = [ "build_mojo_docs_json" ]}
 
 build_docs = { cmd = [
-    "pixi", "run", "docs_entrypoint.mojo"
+    "echo", "Built docs!"
 ], depends-on = [ "build_blank_docs", "build_gems", "build_mojo_docs" ]}
 
 
@@ -109,7 +109,7 @@ format = { cmd = [
 ]}
 
 docs = { cmd = [
-    "cd", "docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload", "--baseurl", "/c_binder_mojo"
+    "cd", "docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload"
 ], depends-on = [ "build_docs" ]}
 
 

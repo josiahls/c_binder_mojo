@@ -35,7 +35,7 @@ jobs:
 
           sudo chown -R 1000:1000 .
 
-          docker compose run --rm c_binder_mojo_cpu_x86_64 bash -l -c "sudo mkdir -p /home/mojo_user/.local/share/gem && sudo chmod -R 777 /home/mojo_user/.local/share/gem && pixi shell && pixi run build_docs"
+          docker compose run --rm c_binder_mojo_cpu_x86_64 bash -l -c "sudo mkdir -p /home/mojo_user/.local/share/gem && sudo chmod -R 777 /home/mojo_user/.local/share/gem && pixi run build_docs"
         env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

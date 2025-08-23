@@ -23,7 +23,7 @@ pre-commit = ">=4.2.0,<5"
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 GEM_HOME="$HOME/.local/share/gem"
-PATH="$HOME/.local/share/gem/bin:${PATH}"
+PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/share/gem/bin:${PATH}"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -69,7 +69,7 @@ build_blank_docs = { cmd = [
     "if [ ! -d docs ]; then pixi run jekyll new docs --blank; else echo 'docs directory already exists.'; fi"
 ], depends-on = [ 
     "build_jekyll" 
-], outputs = [ "docs" ]}
+]}
 
 build_gems = { cmd = [
     "cd", "docs", "&&", "bundle"

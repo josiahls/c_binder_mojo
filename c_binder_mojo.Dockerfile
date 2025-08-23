@@ -77,6 +77,7 @@ RUN chown $CONTAINER_USER:$CONTAINER_GROUP -R /home/$CONTAINER_USER
 USER $CONTAINER_USER
 ENV PATH="/home/$CONTAINER_USER/.local/bin:${PATH}"
 ENV PATH="/home/$CONTAINER_USER/.local/share/gem/bin:${PATH}"
+ENV PATH="/home/$CONTAINER_USER/.local/share/gem/ruby/3.0.0/bin:${PATH}"
 
 SHELL [ "/bin/bash", "-c" ]
 ENV SHELL=/bin/bash

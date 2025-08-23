@@ -30,7 +30,9 @@ github_username: josiahls
 repository: c_binder_mojo/c_binder_mojo
 
 # Build settings
-theme: just-the-docs
+plugins:
+  - jekyll-remote-theme
+remote_theme: just-the-docs/just-the-docs
 nav_enabled: true
 
 # defaults:

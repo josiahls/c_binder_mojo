@@ -86,7 +86,7 @@ build_mojo_docs = { cmd = [
 
 build_docs = { cmd = [
     "echo", "Built docs!"
-], depends-on = [ "build_blank_docs", "build_gems", "build_mojo_docs" ]}
+], depends-on = [ "configure", "build_blank_docs", "build_gems", "build_mojo_docs" ]}
 
 
 ######################### Core API ############################################

@@ -84,9 +84,13 @@ build_mojo_docs = { cmd = [
     "pixi", "run", "mojo", "run", "-I", "firehose", "-I", "EmberJson", "docs_entrypoint.mojo"
 ], depends-on = [ "build_mojo_docs_json" ]}
 
+build_jekyll_site = { cmd = [
+    "cd", "docs", "&&", "bundle", "exec", "jekyll", "build"
+], depends-on = [ "build_mojo_docs" ]}
+
 build_docs = { cmd = [
     "echo", "Built docs!"
-], depends-on = [ "configure", "build_blank_docs", "build_gems", "build_mojo_docs" ]}
+], depends-on = [ "configure", "build_blank_docs", "build_gems", "build_jekyll_site" ]}
 
 
 ######################### Core API ############################################

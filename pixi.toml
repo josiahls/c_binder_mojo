@@ -76,6 +76,10 @@ format = { cmd = [
     "mojo", "format", "c_binder_mojo"
 ]}
 
+docs = { cmd = [
+    "pixi", "run", "mojo", "doc", "-o", "docs/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
+]}
+
 
 ######################### Testing Configuration ###############################
 # Build the c bindings.

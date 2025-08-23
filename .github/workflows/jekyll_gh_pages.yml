@@ -38,7 +38,7 @@ jobs:
 
           sudo apt install ruby-full zlib1g-dev 
 
-          docker compose run --rm c_binder_mojo_cpu_x86_64 bash -l -c "sudo apt update && sudo apt install ruby-full zlib1g-dev && pixi run build_docs"
+          docker compose run --rm c_binder_mojo_cpu_x86_64 bash -l -c "sudo apt -y update && sudo apt install -y ruby-full zlib1g-dev && pixi run build_docs"
         env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

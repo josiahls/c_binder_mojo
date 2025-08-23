@@ -33,7 +33,7 @@ jobs:
           export COMPOSE_PROFILES=build_cpu_x86_64
           echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
 
-          docker compose run --rm c_binder_mojo_${COMPOSE_PROFILES} bash -l -c "pixi run build_docs"
+          docker compose run --rm c_binder_mojo_cpu_x86_64 bash -l -c "pixi run build_docs"
         env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

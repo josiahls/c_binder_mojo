@@ -15,7 +15,7 @@ x-c_binder_mojo_base: &c_binder_mojo_base
     - .:/home/mojo_user/c_binder_mojo/
     - ~/.ssh:/home/mojo_user/.ssh:rw
     - c_binder_mojo_vscode_data_cache:/home/mojo_user/.vscode-server/data/User/globalStorage:rw
-    - c_binder_mojo_doc_gems:/home/mojo_user/gems
+    - c_binder_mojo_doc_gems:/home/mojo_user/.local/share/gem
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
   environment:
     C_BINDING_MOJO_TEST_MUJOCO: /home/mojo_user/c_binder_mojo/mujoco_mojo/mujoco

@@ -72,12 +72,20 @@ build_blank_docs = { cmd = [
 ], outputs = [ "docs" ]}
 
 build_gems = { cmd = [
-    "cd", "docs", "&&", "bundle", "install"
+    "cd", "docs", "&&", "bundle"
 ]}
 
-build_docs = { cmd = [
+build_mojo_docs_json = { cmd = [
     "pixi", "run", "mojo", "doc", "-o", "docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
-], depends-on = [ "build_blank_docs", "build_gems" ]}
+]}
+
+build_mojo_docs = { cmd = [
+    "pixi", "run", "mojo", "run", "-I", "firehose", "-I", "EmberJson", "docs_entrypoint.mojo"
+], depends-on = [ "build_mojo_docs_json" ]}
+
+build_docs = { cmd = [
+    "pixi", "run", "docs_entrypoint.mojo"
+], depends-on = [ "build_blank_docs", "build_gems", "build_mojo_docs" ]}
 
 
 ######################### Core API ############################################

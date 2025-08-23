@@ -28,15 +28,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Fix workspace permissions
-        run: |
-          sudo chown -R 1000:1000 .
       - name: Build jekyll Site
         run: |
           export COMPOSE_PROFILES=build_cpu_x86_64
           echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
 
-          sudo apt install ruby-full zlib1g-dev 
+          sudo chown -R 1000:1000 .
 
           docker compose run --rm c_binder_mojo_cpu_x86_64 bash -l -c "sudo apt -y update && sudo apt install -y ruby-full zlib1g-dev && pixi run build_docs"
         env:

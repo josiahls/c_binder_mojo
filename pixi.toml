@@ -76,6 +76,7 @@ build_gems = { cmd = [
 ], depends-on = [ "build_blank_docs" ]}
 
 build_mojo_docs_json = { cmd = [
+    "mkdir", "-p", "docs/.jekyll-cache", "&&",
     "pixi", "run", "mojo", "doc", "-o", "docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
 ]}
 

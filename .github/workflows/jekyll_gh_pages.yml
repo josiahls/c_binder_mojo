@@ -28,6 +28,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Fix workspace permissions
+        run: |
+          sudo chown -R 1000:1000 .
       - name: Build jekyll Site
         run: |
           export COMPOSE_PROFILES=build_cpu_x86_64

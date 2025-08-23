@@ -46,6 +46,7 @@ RUN apt-get update && apt-get install -y \
     llvm \
     clang \
     x11-apps \
+    ruby-full zlib1g-dev \ 
     gnupg \ 
     xauth \
     && apt-get clean \

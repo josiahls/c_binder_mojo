@@ -17,7 +17,7 @@ repository = "https://github.com/josiahls/c_binder_mojo"
 stdlib-dev = {features = ["stdlib-dev"]}
 
 [dependencies]
-mojo = ">=25.6.0.dev2025080116"
+mojo = ">=25.6.0.dev2025080116,<25.6.0.dev2025081216"
 pre-commit = ">=4.2.0,<5"
 
 [activation.env]
@@ -64,6 +64,17 @@ build_jekyll = { cmd = [
     "gem", "install", "jekyll", "bundler", "--user"
 ]}
 
+build_blank_docs = { cmd = [
+    "bash", "-c",
+    "if [ ! -d _docs ]; then pixi run jekyll new _docs --blank; else echo '_docs directory already exists.'; fi"
+], depends-on = [ 
+    "build_jekyll" 
+], outputs = [ "_docs" ]}
+
+build_docs = { cmd = [
+    "pixi", "run", "mojo", "doc", "-o", "_docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
+], depends-on = [ "build_blank_docs" ]}
+
 
 ######################### Core API ############################################
 # NOTE: If we want to use the stdlib, we need to run the update_stdlib during configure to make dev work convenient.
@@ -86,8 +97,8 @@ format = { cmd = [
 ]}
 
 docs = { cmd = [
-    "pixi", "run", "mojo", "doc", "-o", "docs/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
-], depends-on = [ "build_jekyll" ]}
+    "cd", "_docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload"
+], depends-on = [ "build_docs" ]}
 
 
 ######################### Testing Configuration ###############################

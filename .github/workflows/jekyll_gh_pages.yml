@@ -35,7 +35,7 @@ jobs:
 
           echo "user $(id -u) group $(id -g)"
 
-          docker compose run --rm c_binder_mojo_cpu_x86_64 bash -l -c "pixi run build_docs"
+          docker compose run --rm --user $(id -u):$(id -g) c_binder_mojo_cpu_x86_64 bash -l -c "pixi run build_docs"
         env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

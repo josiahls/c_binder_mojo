@@ -25,10 +25,10 @@ struct DocFunctionOverload(Copyable & Movable):
         return Self(name=name, signature=signature, description=description)
 
     fn to_markdown(self) raises -> String:
-        s = """### `fn {}`
-""".format(
-            self.signature
-        )
+        s = String(
+            """### `fn {}`
+"""
+        ).format(self.signature)
         return String(s)
 
 
@@ -84,10 +84,10 @@ struct DocField(Copyable & Movable):
         return Self(name=name, type=type, description=description)
 
     fn to_markdown(self) raises -> String:
-        s = """### var `{}`: `{}`
-""".format(
-            self.name, self.type
-        )
+        s = String(
+            """### var `{}`: `{}`
+"""
+        ).format(self.name, self.type)
         return String(s)
 
 
@@ -112,10 +112,10 @@ struct DocAlias(Copyable & Movable):
         )
 
     fn to_markdown(self) raises -> String:
-        s = """### {}
-""".format(
-            self.signature
-        )
+        s = String(
+            """### {}
+"""
+        ).format(self.signature)
         return String(s)
 
 
@@ -160,10 +160,10 @@ struct DocStruct(Copyable & Movable):
         )
 
     fn to_markdown(self) raises -> String:
-        s = """# `{}`
-""".format(
-            self.signature
-        )
+        s = String(
+            """# `{}`
+"""
+        ).format(self.signature)
         if self.aliases:
             s += "## Aliases\n"
             for doc_alias in self.aliases:
@@ -227,30 +227,35 @@ struct DocModule(Writable):
         obj.fs_path.write_text(obj.to_markdown(String(parent)))
 
     fn to_markdown(self, parent: String) raises -> String:
-        s = """---
+        var s = String(
+            """---
 title: {}
 layout: page
 permalink: {}
 parent: {}
 ---\n
-""".format(
-            self.name, self.uri_path, parent
-        )
+"""
+        ).format(self.name, self.uri_path, parent)
         if self.aliases:
             s += "## Aliases\n"
             for doc_alias in self.aliases:
                 s += doc_alias.to_markdown() + "\n"
-        for doc_struct in self.structs:
-            s += doc_struct.to_markdown() + "\n"
+
         if self.functions:
             s += "## Functions\n"
             for doc_function in self.functions:
                 s += doc_function.to_markdown() + "\n"
+        if self.structs:
+            s += "## Structs\n"
+            for doc_struct in self.structs:
+                s += doc_struct.to_markdown() + "\n"
         return String(s)
 
     fn write_to[W: Writer](self, mut writer: W):
         try:
-            s = "DocModule: name: {}, uri_path: {}, file_path: {}".format(
+            s = String(
+                "DocModule: name: {}, uri_path: {}, file_path: {}"
+            ).format(
                 self.name.ljust(20),
                 self.uri_path.ljust(30),
                 String(self.fs_path),
@@ -286,9 +291,9 @@ struct DocPackage(Writable):
 
     fn write_to[W: Writer](self, mut writer: W):
         try:
-            s = "DocPackage: name: {}, uri_path: {}, file_path: {}".format(
-                self.name, self.uri_path, String(self.fs_path)
-            )
+            s = String(
+                "DocPackage: name: {}, uri_path: {}, file_path: {}"
+            ).format(self.name, self.uri_path, String(self.fs_path))
             writer.write(s)
         except e:
             print(e)

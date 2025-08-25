@@ -9,6 +9,12 @@ from emberjson import parse, to_string, Object
 # First Party Modules
 
 
+alias _DOC_FUNCTION_OVERLOAD_TEMPLATE = """### `fn {}`
+
+{}
+"""
+
+
 @fieldwise_init
 struct DocFunctionOverload(Copyable & Movable):
     var name: String
@@ -21,14 +27,13 @@ struct DocFunctionOverload(Copyable & Movable):
     ) raises -> Self:
         var name = object["name"].string()
         var signature = object["signature"].string()
-        var description = object["description"].string()
+        var description = object["description"].string().replace("\\n", "\n")
         return Self(name=name, signature=signature, description=description)
 
     fn to_markdown(self) raises -> String:
-        s = String(
-            """### `fn {}`
-"""
-        ).format(self.signature)
+        s = String(_DOC_FUNCTION_OVERLOAD_TEMPLATE).format(
+            self.signature, self.description
+        )
         return String(s)
 
 
@@ -68,6 +73,12 @@ struct DocFunction(Copyable & Movable):
         return String(s)
 
 
+alias _DOC_FIELD_TEMPLATE = """### var `{}`: `{}`
+
+{}
+"""
+
+
 @fieldwise_init
 struct DocField(Copyable & Movable):
     var name: String
@@ -80,15 +91,20 @@ struct DocField(Copyable & Movable):
     ) raises -> Self:
         var name = object["name"].string()
         var type = object["type"].string()
-        var description = object["description"].string()
+        var description = object["description"].string().replace("\\n", "\n")
         return Self(name=name, type=type, description=description)
 
     fn to_markdown(self) raises -> String:
-        s = String(
-            """### var `{}`: `{}`
-"""
-        ).format(self.name, self.type)
+        s = String(_DOC_FIELD_TEMPLATE).format(
+            self.name, self.type, self.description
+        )
         return String(s)
+
+
+alias _DOC_ALIAS_TEMPLATE = """### {}
+
+{}
+"""
 
 
 @fieldwise_init
@@ -97,6 +113,7 @@ struct DocAlias(Copyable & Movable):
     var fs_path: Path
     var name: String
     var signature: String
+    var description: String
 
     @staticmethod
     fn from_object(
@@ -104,19 +121,24 @@ struct DocAlias(Copyable & Movable):
     ) raises -> Self:
         var name = object["name"].string()
         var signature = object["signature"].string()
+        var description = object["description"].string()
         return Self(
             uri_path=uri_path,
             fs_path=parent_path / (name + ".md"),
             name=name,
             signature=signature,
+            description=description,
         )
 
     fn to_markdown(self) raises -> String:
-        s = String(
-            """### {}
-"""
-        ).format(self.signature)
+        s = String(_DOC_ALIAS_TEMPLATE).format(self.signature, self.description)
         return String(s)
+
+
+alias _DOC_STRUCT_TEMPLATE = """# `{}`
+
+{}
+"""
 
 
 @fieldwise_init
@@ -125,6 +147,7 @@ struct DocStruct(Copyable & Movable):
     var fs_path: Path
     var name: String
     var signature: String
+    var description: String
     var aliases: List[DocAlias]
     var fields: List[DocField]
     var functions: List[DocFunction]
@@ -135,6 +158,7 @@ struct DocStruct(Copyable & Movable):
     ) raises -> Self:
         var name = object["name"].string()
         var signature = object["signature"].string()
+        var description = object["description"].string().replace("\\n", "\n")
         var aliases = [
             DocAlias.from_object(parent_path, uri_path, a.object())
             for a in object["aliases"].array()
@@ -154,16 +178,16 @@ struct DocStruct(Copyable & Movable):
             fs_path=parent_path / (name + ".md"),
             name=name,
             signature=signature,
+            description=description,
             aliases=aliases,
             fields=fields,
             functions=functions,
         )
 
     fn to_markdown(self) raises -> String:
-        s = String(
-            """# `{}`
-"""
-        ).format(self.signature)
+        s = String(_DOC_STRUCT_TEMPLATE).format(
+            self.signature, self.description
+        )
         if self.aliases:
             s += "## Aliases\n"
             for doc_alias in self.aliases:
@@ -179,11 +203,23 @@ struct DocStruct(Copyable & Movable):
         return String(s)
 
 
+alias _DOC_MODULE_TEMPLATE = """---
+title: {}
+layout: page
+permalink: {}
+parent: {}
+---\n
+
+{}
+"""
+
+
 @fieldwise_init
 struct DocModule(Writable):
     var uri_path: String
     var fs_path: Path
     var name: String
+    var description: String
     var structs: List[DocStruct]
     var aliases: List[DocAlias]
     var functions: List[DocFunction]
@@ -191,6 +227,7 @@ struct DocModule(Writable):
     @staticmethod
     fn to_file(parent_path: Path, uri_path: String, object: Object) raises:
         var name = object["name"].string()
+        var description = object["description"].string().replace("\\n", "\n")
         var _uri_path = uri_path
         var uri_path_parts = uri_path.split("/")
         if name == "__init__":
@@ -207,6 +244,7 @@ struct DocModule(Writable):
             uri_path=_uri_path,
             fs_path=parent_path / (name + ".md"),
             name=name,
+            description=description,
             structs=[
                 DocStruct.from_object(parent_path, _uri_path, s.object())
                 for s in object["structs"].array()
@@ -227,15 +265,9 @@ struct DocModule(Writable):
         obj.fs_path.write_text(obj.to_markdown(String(parent)))
 
     fn to_markdown(self, parent: String) raises -> String:
-        var s = String(
-            """---
-title: {}
-layout: page
-permalink: {}
-parent: {}
----\n
-"""
-        ).format(self.name, self.uri_path, parent)
+        var s = String(_DOC_MODULE_TEMPLATE).format(
+            self.name, self.uri_path, parent, self.description
+        )
         if self.aliases:
             s += "## Aliases\n"
             for doc_alias in self.aliases:

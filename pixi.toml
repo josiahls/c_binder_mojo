@@ -17,11 +17,13 @@ repository = "https://github.com/josiahls/c_binder_mojo"
 stdlib-dev = {features = ["stdlib-dev"]}
 
 [dependencies]
-mojo = ">=25.6.0.dev2025080116"
+mojo = ">=25.6.0.dev2025080116,<25.6.0.dev2025081216"
 pre-commit = ">=4.2.0,<5"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
+GEM_HOME="$HOME/.local/share/gem"
+PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/share/gem/bin:${PATH}"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -56,6 +58,41 @@ install_pre_commit_hooks = { cmd = [
     "pre-commit", "install"
 ], outputs = [".git/hooks/pre-commit"]}
 
+######################### Documentation Configuration ##########################
+
+build_jekyll = { cmd = [
+    "gem", "install", "jekyll", "bundler", "--user"
+]}
+
+build_blank_docs = { cmd = [
+    "bash", "-c",
+    "if [ ! -d docs ]; then pixi run jekyll new docs --blank; else echo 'docs directory already exists.'; fi"
+], depends-on = [ 
+    "build_jekyll" 
+]}
+
+build_gems = { cmd = [
+    "cd", "docs", "&&", "bundle"
+], depends-on = [ "build_blank_docs" ]}
+
+build_mojo_docs_json = { cmd = [
+    "mkdir", "-p", "docs/.jekyll-cache", "&&",
+    "pixi", "run", "mojo", "doc", "-o", "docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
+]}
+
+build_mojo_docs = { cmd = [
+    "pixi", "run", "mojo", "run", "-I", "firehose", "-I", "EmberJson", "docs_entrypoint.mojo"
+], depends-on = [ "build_mojo_docs_json" ]}
+
+build_jekyll_site = { cmd = [
+    "cd", "docs", "&&", "bundle", "exec", "jekyll", "build"
+], depends-on = [ "build_mojo_docs" ]}
+
+build_docs = { cmd = [
+    "echo", "Built docs!"
+], depends-on = [ "configure", "build_blank_docs", "build_gems", "build_jekyll_site" ]}
+
+
 ######################### Core API ############################################
 # NOTE: If we want to use the stdlib, we need to run the update_stdlib during configure to make dev work convenient.
 # pixi supports overriding the default task, but then the user gets prompted on which task they are to run every time.
@@ -75,6 +112,10 @@ package = { cmd = [
 format = { cmd = [
     "mojo", "format", "c_binder_mojo"
 ]}
+
+docs = { cmd = [
+    "cd", "docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload"
+], depends-on = [ "build_docs" ]}
 
 
 ######################### Testing Configuration ###############################

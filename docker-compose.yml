@@ -15,7 +15,6 @@ x-c_binder_mojo_base: &c_binder_mojo_base
     - .:/home/mojo_user/c_binder_mojo/
     - ~/.ssh:/home/mojo_user/.ssh:rw
     - c_binder_mojo_vscode_data_cache:/home/mojo_user/.vscode-server/data/User/globalStorage:rw
-    # - c_binder_mojo_doc_gems:/home/mojo_user/.local/share/gem
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
   environment:
     C_BINDING_MOJO_TEST_MUJOCO: /home/mojo_user/c_binder_mojo/mujoco_mojo/mujoco
@@ -25,93 +24,60 @@ x-c_binder_mojo_base: &c_binder_mojo_base
 volumes:
   c_binder_mojo_vscode_data_cache:
       external: false
-  # c_binder_mojo_doc_gems:
-  #     external: false
 
 services:
-
-  c_binder_mojo_cpu_build_x86_64:
+  c_binder_mojo_build_x86_64:
     build:
       dockerfile: c_binder_mojo.Dockerfile
       context: .
       args:
       - BASE_IMAGE=ubuntu:22.04
-      target: build_cpu
       cache_from:
-      - josiahls/c_binder_mojo-x86_64-cpu:${VERSION:-latest}
-    image: josiahls/c_binder_mojo-x86_64-cpu:${VERSION:-latest}
-    profiles: ["build_cpu_x86_64"]
+      - josiahls/c_binder_mojo-x86_64:${VERSION:-latest}
+    image: josiahls/c_binder_mojo-x86_64:${VERSION:-latest}
+    profiles: ["build_x86_64"]
     platform: linux/amd64
 
-  c_binder_mojo_gpu_build_x86_64:
-    build:
-      dockerfile: c_binder_mojo.Dockerfile
-      context: .
-      args:
-        - BASE_IMAGE=nvidia/cuda:12.0.0-runtime-ubuntu22.04
-      target: build_gpu
-      cache_from:
-      - josiahls/c_binder_mojo-x86_64-gpu:${VERSION:-latest}
-    image: josiahls/c_binder_mojo-x86_64-gpu:${VERSION:-latest}
-    profiles: ["build_gpu_x86_64"]
-    platform: linux/amd64
-
-  c_binder_mojo_cpu_build_arm64:
+  c_binder_mojo_build_arm64:
     build:
       dockerfile: c_binder_mojo.Dockerfile
       context: .
       args:
       - BASE_IMAGE=arm64v8/ubuntu:22.04
-      target: build_cpu
       cache_from:
-      - josiahls/c_binder_mojo-arm64-cpu:${VERSION:-latest}
-    image: josiahls/c_binder_mojo-arm64-cpu:${VERSION:-latest}
-    profiles: ["build_cpu_arm64"]
+      - josiahls/c_binder_mojo-arm64:${VERSION:-latest}
+    image: josiahls/c_binder_mojo-arm64:${VERSION:-latest}
+    profiles: ["build_arm64"]
     platform: linux/arm64
 
-  c_binder_mojo_gpu_build_arm64:
-    build:
-      dockerfile: c_binder_mojo.Dockerfile
-      context: .
-      args:
-      - BASE_IMAGE=nvidia/cuda:12.0.0-runtime-ubuntu22.04
-      target: build_gpu
-      cache_from:
-      - josiahls/c_binder_mojo-arm64-gpu:${VERSION:-latest}
-    image: josiahls/c_binder_mojo-arm64-gpu:${VERSION:-latest}
-    profiles: ["build_gpu_arm64"]
-    platform: linux/arm64
-
-  c_binder_mojo_gpu_arm64: &c_binder_mojo_gpu_arm64
-    <<: *c_binder_mojo_base
-    restart: unless-stopped
-    image: josiahls/c_binder_mojo-arm64-gpu:${VERSION:-latest}
-    profiles: ["gpu_arm64"]
-    platform: linux/arm64
-    # depends_on:
-    #   - ollama
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
-  
   c_binder_mojo_cpu_arm64: &c_binder_mojo_cpu_arm64
     <<: *c_binder_mojo_base
     profiles: ["cpu_arm64"]
     restart: unless-stopped
     platform: linux/arm64
-    image: josiahls/c_binder_mojo-arm64-cpu:${VERSION:-latest}
+    image: josiahls/c_binder_mojo-arm64:${VERSION:-latest}
 
+  c_binder_mojo_gpu_arm64: &c_binder_mojo_gpu_arm64
+    <<: *c_binder_mojo_cpu_arm64
+    profiles: ["gpu_arm64"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  c_binder_mojo_cpu_x86_64: &c_binder_mojo_cpu_x86_64
+    <<: *c_binder_mojo_base
+    profiles: ["cpu_x86_64"]
+    restart: unless-stopped
+    platform: linux/amd64
+    image: josiahls/c_binder_mojo-x86_64:${VERSION:-latest}
 
   c_binder_mojo_gpu_x86_64: &c_binder_mojo_gpu_x86_64
-    <<: *c_binder_mojo_base
-    restart: unless-stopped
-    image: josiahls/c_binder_mojo-x86_64-gpu:${VERSION:-latest}
+    <<: *c_binder_mojo_cpu_x86_64
     profiles: ["gpu_x86_64"]
-    platform: linux/amd64
     deploy:
       resources:
         reservations:
@@ -120,9 +86,4 @@ services:
               count: 1
               capabilities: [gpu]
   
-  c_binder_mojo_cpu_x86_64: &c_binder_mojo_cpu_x86_64
-    <<: *c_binder_mojo_base
-    profiles: ["cpu_x86_64"]
-    restart: unless-stopped
-    platform: linux/amd64
-    image: josiahls/c_binder_mojo-x86_64-cpu:${VERSION:-latest}
+

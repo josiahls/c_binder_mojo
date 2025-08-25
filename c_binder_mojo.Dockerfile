@@ -92,8 +92,3 @@ ENV PATH="/home/$CONTAINER_USER/.pixi/bin:/home/$CONTAINER_USER/.modular/bin:$PA
 RUN echo 'eval "$(pixi completion --shell bash)"' >> "/home/$CONTAINER_USER/.bashrc"
 
 WORKDIR /home/$CONTAINER_USER
-
-FROM base as build_cpu
-
-
-FROM base as build_gpu

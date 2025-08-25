@@ -49,7 +49,7 @@ RUN apt-get update && apt-get install -y \
     ruby-full zlib1g-dev \ 
     gnupg \ 
     xauth \
-    ruby-full zlib1g-dev \
+    ninja-build meson \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

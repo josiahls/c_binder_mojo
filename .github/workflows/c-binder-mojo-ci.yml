@@ -47,7 +47,6 @@ jobs:
             PLATFORM: arm64
           - RUNNER_NAME: ubuntu-latest
             PLATFORM: x86_64
-        build_type: [gpu, cpu]
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -55,7 +54,7 @@ jobs:
     - name: Build, tag, and push image
       run: |
         export DOCKER_BUILDKIT=1
-        export COMPOSE_PROFILES=build_${BUILD_TYPE}_${PLATFORM}
+        export COMPOSE_PROFILES=build_${PLATFORM}
         echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
 
         if docker compose pull; then
@@ -73,7 +72,6 @@ jobs:
       env:
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        BUILD_TYPE: ${{ matrix.build_type }}
         PLATFORM: ${{ matrix.runner.PLATFORM }}
 
   test:
@@ -88,7 +86,6 @@ jobs:
             PLATFORM: arm64
           - RUNNER_NAME: ubuntu-latest
             PLATFORM: x86_64
-        build_type: [cpu]
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -97,10 +94,9 @@ jobs:
       uses: actions/cache@v4
       with:
         path: modular
-        key: modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-${{ github.sha }}
+        key: modular-repo-${{ matrix.runner.PLATFORM }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-${{ github.sha }}
         restore-keys: |
-          modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-
-          modular-repo-${{ matrix.runner.PLATFORM }}-${{ matrix.build_type }}-
+          modular-repo-${{ matrix.runner.PLATFORM }}-${{ hashFiles('pixi.toml', 'pixi.lock') }}-
           modular-repo-${{ matrix.runner.PLATFORM }}-
           modular-repo-
 
@@ -111,7 +107,7 @@ jobs:
     - name: Pull docker image and run tests
       run: |
         export DOCKER_BUILDKIT=1
-        export COMPOSE_PROFILES=${BUILD_TYPE}_${PLATFORM}
+        export COMPOSE_PROFILES=cpu_${PLATFORM}
         echo ${PASSWORD} | docker login -u $USERNAME --password-stdin
 
         if docker compose pull; then
@@ -126,5 +122,4 @@ jobs:
       env:
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        BUILD_TYPE: ${{ matrix.build_type }}
         PLATFORM: ${{ matrix.runner.PLATFORM }} 

@@ -120,7 +120,9 @@ fn main() raises:
         raise Error(
             "Input header file doesn't exist: " + String(input_header_path)
         )
-    if not input_header_path.path.endswith(".h"):
+    if not input_header_path.path.endswith(
+        ".h"
+    ) and not input_header_path.path.endswith(".hpp"):
         raise Error(
             "Input header file must end in .h: " + String(input_header_path)
         )

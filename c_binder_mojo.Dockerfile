@@ -91,9 +91,6 @@ ENV PATH="/home/$CONTAINER_USER/.pixi/bin:/home/$CONTAINER_USER/.modular/bin:$PA
 # Add pixi completion to bashrc - escape the $() so it's evaluated at runtime
 RUN echo 'eval "$(pixi completion --shell bash)"' >> "/home/$CONTAINER_USER/.bashrc"
 
+# placeholder
+
 WORKDIR /home/$CONTAINER_USER
-
-FROM base as build_cpu
-
-
-FROM base as build_gpu

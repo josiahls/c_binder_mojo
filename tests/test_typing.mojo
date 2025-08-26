@@ -12,7 +12,7 @@ fn test_type_mapper() raises:
     # assert_equal(TypeMapper.convert_c_type_to_mojo_type("unsigned short"), "UInt16")
     assert_equal(
         TypeMapper.convert_c_type_to_mojo_type("const int *[10]"),
-        "StaticTuple[UnsafePointer[Int32], 10]",
+        "InlineArray[UnsafePointer[Int32], 10]",
     )
     assert_equal(
         TypeMapper.convert_c_type_to_mojo_type(

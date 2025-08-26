@@ -304,7 +304,7 @@ struct TypeMapper:
             array_size = Int(c_type[l_bracket_idx + 1 : c_type.find("]")])
             # if array_size > 5:
             #     return 'UnsafePointer[' + array_type + ']'
-            return "StaticTuple[" + array_type + ", " + String(array_size) + "]"
+            return "InlineArray[" + array_type + ", " + String(array_size) + "]"
             # var s:String = '('
             # for i in range(array_size):
             #     if i == array_size - 1:

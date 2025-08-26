@@ -231,14 +231,14 @@ struct DocModule(Writable):
         var _uri_path = uri_path
         var uri_path_parts = uri_path.split("/")
         if name == "__init__":
-            name = String(uri_path_parts[-1])
+            name = Path(uri_path).name()
             if len(uri_path_parts) > 1:
                 parent = String(uri_path_parts[-2])
             else:
                 parent = ""
         else:
             _uri_path = _uri_path + "/" + name
-            parent = String(uri_path_parts[-1])
+            parent = Path(uri_path).name()
 
         obj = DocModule(
             uri_path=_uri_path,

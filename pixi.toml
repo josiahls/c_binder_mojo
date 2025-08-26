@@ -187,8 +187,7 @@ update_stdlib = { cmd = [
 clean_update_stdlib = { cmd = [
     "cd", "modular", "&&",
     "git", "fetch", "origin", "&&",
-    # TODO: This commit is right before the change to Copyable to require a is trivial flag. Entire stdlib is broken from this.
-    "git", "reset", "--hard", "574193db643a36d279a6751530f0f54e4203f617", "&&",
+    "git", "reset", "--hard", "origin/main", "&&",
     "./bazelw", "build", "//mojo/stdlib/..."
 ], depends-on = [ "clone_stdlib" ]}
 

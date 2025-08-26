@@ -1,6 +1,7 @@
 struct ParseMode:
     alias NEXT_ARG = 0
     alias NEXT_NAMED_ARG_VALUE = 1
+    alias ACCUMULATE_ARG_VALUE = 2
 
 
 @fieldwise_init
@@ -29,14 +30,26 @@ struct ArgParser:
                 skipped_first_arg = True
                 continue
 
+            if (
+                self.is_named_arg(arg)
+                and mode == ParseMode.ACCUMULATE_ARG_VALUE
+                and self.get_named_arg_name(arg) in self.named_args
+            ):
+                mode = ParseMode.NEXT_ARG
+
             # Some named args don't have values, so the next token could be another arg.
-            if mode == ParseMode.NEXT_ARG or self.is_named_arg(arg):
+            if mode == ParseMode.NEXT_ARG or (
+                self.is_named_arg(arg)
+                and mode != ParseMode.ACCUMULATE_ARG_VALUE
+            ):
                 if self.is_named_arg(arg):
                     named_arg_key = self.get_named_arg_name(arg)
                     if named_arg_key not in self.named_args:
                         raise Error("Unknown named argument: " + named_arg_key)
                     parsed_args[named_arg_key] = ""
                     mode = ParseMode.NEXT_NAMED_ARG_VALUE
+                    if named_arg_key == "extra_args":
+                        mode = ParseMode.ACCUMULATE_ARG_VALUE
                 else:
                     # Is positional arg
                     if positional_arg_idx >= len(self.positional_args):
@@ -54,6 +67,9 @@ struct ArgParser:
             elif mode == ParseMode.NEXT_NAMED_ARG_VALUE:
                 parsed_args[named_arg_key] = arg
                 mode = ParseMode.NEXT_ARG
+            elif mode == ParseMode.ACCUMULATE_ARG_VALUE:
+                parsed_args["extra_args"] += " " + arg
+                mode = ParseMode.ACCUMULATE_ARG_VALUE
 
         for arg in self.positional_args:
             if arg not in parsed_args:

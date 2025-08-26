@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
     python3.11-venv \
     cmake \
     git \
+    gdb \
     libglib2.0-dev \
     graphviz \
     libxext6 \

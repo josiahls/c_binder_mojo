@@ -74,6 +74,7 @@ struct RecordDeclNode(JsonNodeAstLike):
     var mem_address: String
     var disabled: Bool
     var tag_used: String
+    var has_body: Bool
 
     fn __init__(out self, object: Object, level: Int):
         self.record_name = ""
@@ -82,6 +83,7 @@ struct RecordDeclNode(JsonNodeAstLike):
         self.mem_address = ""
         self.disabled = False
         self.tag_used = ""
+        self.has_body = False
 
         struct_type_queue = List[String]()
         union_struct_type_queue = List[String]()
@@ -100,10 +102,13 @@ struct RecordDeclNode(JsonNodeAstLike):
                         inner_object.object(), level + 1
                     )
                     if node.node[].isa[Self]():
+                        self.has_body = True
                         struct_type_queue.append(node.node[][Self].record_name)
                     elif node.node[].isa[EnumDeclNode]():
+                        self.has_body = True
                         enum_type_queue.append(node.node[][EnumDeclNode].name)
                     elif node.node[].isa[FieldDeclNode]():
+                        self.has_body = True
                         if node.node[][FieldDeclNode].is_union:
                             anonomous_record_increment += 1
                             node.node[][
@@ -191,7 +196,7 @@ struct RecordDeclNode(JsonNodeAstLike):
 
             for child in self.children_:
                 s += child.to_string(just_code) + "\n"
-            if len(self.children_) == 0:
+            if not self.has_body:
                 s += indent + "pass\n"
         if self.disabled:
             comment = "# Forward declaration of " + self.record_name + "\n"

@@ -73,12 +73,6 @@ fn _get_module_dl_handle(
         """\n
 @fieldwise_init
 struct {0}(Copyable, Movable):
-    \"""Handle to the CPython interpreter present in the current process.\"""
-
-    # ===-------------------------------------------------------------------===#
-    # Fields
-    # ===-------------------------------------------------------------------===#
-
     var lib: DLHandle
     {2}
 

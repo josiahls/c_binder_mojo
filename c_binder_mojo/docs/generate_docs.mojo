@@ -347,14 +347,14 @@ fn generate_docs(json_path: Path) raises:
 
     for module in root_object["modules"].array():
         doc_dispatch(
-            Path(String("/").join(json_path.path.split("/")[:-2])),
+            Path(String("/").join(json_path.parts()[:-2])),
             "",
             module.object(),
         )
 
     for package in root_object["packages"].array():
         doc_dispatch(
-            Path(String("/").join(json_path.path.split("/")[:-2])),
+            Path(String("/").join(json_path.parts()[:-2])),
             "",
             package.object(),
         )

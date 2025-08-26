@@ -43,33 +43,11 @@ fn generate_bindings(
         test_file_path, extra_args=extra_args, raw_ast=raw_ast
     )
 
-    # var output_path = Path(
-    #     "tests/test_c_project/build/simple_type_defs_with_ast.mojo"
-    # )
-    # output_path.write_text(root_node.to_string(just_code=False))
-
-    # Save tokenized output for debugging
-    # var ast_entries = output_path / (module_name + ".ast_entries")
-    # ast_entries.write_text(String("\n").join(entries))
-
-    # var raw_ast = output_path / (module_name + ".raw_ast")
-    # for ref entry in entries:
-    #     entry.str_just_original_line = True
-    # raw_ast.write_text(String("\n").join(entries))
-
-    # # Generate AST
-    # var tree_log_file = output_path / (module_name + ".tree")
-    # var module_interface = make_mojo_tree(
-    #     entries, String(tree_log_file), validate=False
-    # )
-
-    # if len(module_interface.nodes()[]) == 0:
-    #     raise Error("No nodes found for file: " + String(input_header_path))
-    # # Save Mojo AST for debugging
+    # Save Mojo AST for debugging
     (output_path / (module_name + ".mojo")).write_text(
         root_node.to_string(just_code=True)
     )
-    # return module_interface
+
     return root_node^
 
 

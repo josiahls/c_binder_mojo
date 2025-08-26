@@ -85,8 +85,12 @@ struct EnumDeclNode(JsonNodeAstLike):
         # TODO(josiahls): Are there cases where we need to actually assign an anonymous enum's name?
         if not self.is_anonymous:
             # TODO(josiahls): Is there ever a case where we can't do this? Like struct size or something?
-            s += '@register_passable("trivial")\n'
-            s += "struct " + self.name + ":\n"
+            # s += '@register_passable("trivial")\n'
+            s += (
+                "struct "
+                + self.name
+                + "(ExplicitlyCopyable & Copyable & Movable):\n"
+            )
         for child in self.children_:
             s += child.to_string(just_code) + "\n"
         return s

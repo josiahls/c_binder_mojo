@@ -229,7 +229,7 @@ struct DocModule(Writable):
         var name = object["name"].string()
         var description = object["description"].string().replace("\\n", "\n")
         var _uri_path = uri_path
-        var uri_path_parts = uri_path.split("/")
+        var uri_path_parts = uri_path.parts()
         if name == "__init__":
             name = String(uri_path_parts[-1])
             if len(uri_path_parts) > 1:
@@ -347,14 +347,14 @@ fn generate_docs(json_path: Path) raises:
 
     for module in root_object["modules"].array():
         doc_dispatch(
-            Path(String("/").join(json_path.path.split("/")[:-2])),
+            Path(String("/").join(json_path.path.parts()[:-2])),
             "",
             module.object(),
         )
 
     for package in root_object["packages"].array():
         doc_dispatch(
-            Path(String("/").join(json_path.path.split("/")[:-2])),
+            Path(String("/").join(json_path.path.parts()[:-2])),
             "",
             package.object(),
         )

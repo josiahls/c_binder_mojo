@@ -147,7 +147,7 @@ fn append_to_mojo_file(
 ) raises:
     """Append the contents of the shared object file to the mojo file."""
     var _lib_name: String = lib_name if lib_name != "" else String(
-        mojo_file.path.split("/")[-1].split(".")[0]
+        mojo_file.name().split(".")[0]
     )
     if include_private_methods:
         print(
@@ -165,7 +165,7 @@ fn append_to_mojo_file(
 
     text += _get_so_lib_path_function()
     text += _get_module_dl_handle(
-        _lib_name, String(so_file.path.split("/")[-1]), external_declarations
+        _lib_name, so_file.name(), external_declarations
     )
 
     mojo_file.write_text(text)

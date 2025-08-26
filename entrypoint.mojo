@@ -22,6 +22,7 @@ fn generate_bindings(
     mut logger: Logger,
     extra_args: String = "",
     debug_output: Bool = False,
+    recursive_header_include: String = "",
 ) raises -> JsonAstNode:
     logger.info("Outputing binded module to: " + String(output_path))
 
@@ -40,7 +41,10 @@ fn generate_bindings(
 
     var ast_parser = AstParser()
     var root_node = ast_parser.parse(
-        test_file_path, extra_args=extra_args, raw_ast=raw_ast
+        test_file_path,
+        extra_args=extra_args,
+        raw_ast=raw_ast,
+        recursive_header_include=recursive_header_include,
     )
 
     # Save Mojo AST for debugging
@@ -61,6 +65,7 @@ Positional Arguments:
 
 Optional Arguments:
     so_file_path: The path to the shared object file. Should end in .so.
+    recursive_header_include: A comma separated list of dirs or header files to include recursively. `/path/to/dir1,/path/to/dir2,/path/to/header.h`
     extra_args: Extra arguments to pass to the clang compiler. e.g.: `clang -I /some/extra/include/path`
     include_only_prefixes: Only include symbols with these prefixes. Comma separated list. e.g.: `mj` for only binding mujoco symbols.
     debug_output: Whether to output the raw AST to the output directory.
@@ -81,10 +86,13 @@ fn main() raises:
             "extra_args",
             "include_only_prefixes",
             "debug_output",
+            "recursive_header_include",
             "help",
         ],
     )
+    print("Parsing args")
     var parsed_args = arg_parser.parse()
+    print("Done parsing args")
 
     for item in parsed_args.items():
         print("arg: " + item.key + " value: " + item.value)
@@ -131,9 +139,15 @@ fn main() raises:
         parsed_args["include_only_prefixes"]
     ) if "include_only_prefixes" in parsed_args else String("")
 
+    var recursive_header_include = String(
+        parsed_args["recursive_header_include"]
+    ) if "recursive_header_include" in parsed_args else String("")
+
     var debug_output = True
     if "debug_output" in parsed_args:
         debug_output = parsed_args["debug_output"] == "true"
+
+    print("Generating bindings for: " + String(input_header_path))
 
     root_node = generate_bindings(
         input_header_path,
@@ -142,7 +156,9 @@ fn main() raises:
         logger,
         extra_args=extra_args,
         debug_output=debug_output,
+        recursive_header_include=recursive_header_include,
     )
+    print("Done generating bindings")
 
     var handler_name = String(
         input_header_path.path.split("/")[-1].split(".")[0]

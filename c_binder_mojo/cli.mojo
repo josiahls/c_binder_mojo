@@ -45,7 +45,13 @@ struct ArgParser:
                 if self.is_named_arg(arg):
                     named_arg_key = self.get_named_arg_name(arg)
                     if named_arg_key not in self.named_args:
-                        raise Error("Unknown named argument: " + named_arg_key)
+                        raise Error(
+                            "Unknown named argument: `"
+                            + named_arg_key
+                            + "`"
+                            + " Expected one of: "
+                            + String(",".join(self.named_args))
+                        )
                     parsed_args[named_arg_key] = ""
                     mode = ParseMode.NEXT_NAMED_ARG_VALUE
                     if named_arg_key == "extra_args":

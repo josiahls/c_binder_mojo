@@ -29,13 +29,34 @@ struct AstParser:
         )
         return run(cmd)
 
+    @staticmethod
+    fn process_recursive_header_include(
+        recursive_header_include: String,
+    ) raises -> String:
+        if recursive_header_include == "":
+            return ""
+
+        var dirs = recursive_header_include.split(",")
+        var extra_args = ""
+        for d in dirs:
+            if not Path(d).exists():
+                raise Error("Path `" + d + "` does not exist")
+
+            extra_args += " -I" + d
+
+        return extra_args
+
     fn parse(
         self,
         file_path: Path,
         extra_args: String = "",
         raw_ast: Optional[Path] = None,
+        recursive_header_include: String = "",
     ) raises -> JsonAstNode:
-        result = self.clang_call(file_path, extra_args)
+        var _extra_args = extra_args + self.process_recursive_header_include(
+            recursive_header_include
+        )
+        result = self.clang_call(file_path, _extra_args)
         var root_object = parse(result)
 
         if raw_ast:

@@ -117,8 +117,8 @@ fn _get_function_external_declarations(
     external_declarations: List[ExternalFunctionBuilder] = []
     function_names: List[String] = []
     for node in ast_root_node.children():
-        if node.node[].isa[FunctionDeclNode]():
-            name = node.node[][FunctionDeclNode].function_name
+        if node._impl[].isa[FunctionDeclNode]():
+            name = node._impl[][FunctionDeclNode].function_name
             if not include_private_methods and name.startswith("_"):
                 continue
             if len(include_only_prefixes) != 0:

@@ -101,8 +101,8 @@ configure = { cmd = [
     "echo 'configuring' && if [ \"$PIXI_ENVIRONMENT_NAME\" = \"stdlib-dev\" ]; then echo 'Running in stdlib-dev environment, updating stdlib...'; pixi run update_stdlib; fi"
 ], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
 
-generate_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "entrypoint.mojo"
+generate_example_bindings = { cmd = [
+    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "example_binding_gen.mojo"
 ], depends-on = [ "configure" ]}
 
 package = { cmd = [
@@ -120,26 +120,20 @@ docs = { cmd = [
 
 ######################### Testing Configuration ###############################
 # Build the c bindings.
-build_test_c_project_base = { cmd = [
-    "pixi", "run", "generate_bindings", 
-    "--output_dir", "tests/test_c_project/build",
-    "--input_header_path"
-]}
-
 build_test_c_project_bindings_simple_type_defs = { cmd = [
-    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/simple_type_defs.h"
+    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/simple_type_defs.h"
 ]}
 
 build_test_c_project_bindings_complex_structs = { cmd = [
-    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/complex_structs.h"
+    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_structs.h"
 ]}
 
 build_test_c_project_bindings_complex_unions = { cmd = [
-    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/complex_unions.h"
+    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_unions.h"
 ]}
 
 build_test_c_project_bindings_complex_type_defs = { cmd = [
-    "pixi", "run", "build_test_c_project_base", "tests/test_c_project/include/complex_type_defs.h"
+    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_type_defs.h"
 ]}
 
 build_test_c_project_bindings = { depends-on = [ 

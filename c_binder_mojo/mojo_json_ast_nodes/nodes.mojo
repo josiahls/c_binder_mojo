@@ -23,12 +23,6 @@ struct JsonAstNode(Copyable & Movable):
     fn __init__(out self, node: Self.type):
         self._impl = ArcPointer[Self.type](node)
 
-    fn __copyinit__(out self, other: Self):
-        self._impl = other._impl
-
-    fn __moveinit__(out self, deinit other: Self):
-        self._impl = other._impl^
-
     fn isa[T: AnyType](self) -> Bool:
         return self._impl[].isa[T]()
 

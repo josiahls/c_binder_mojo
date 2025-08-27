@@ -32,6 +32,9 @@ struct JsonAstNode(Copyable & Movable):
     fn isa[T: AnyType](self) -> Bool:
         return self._impl[].isa[T]()
 
+    fn __getitem__[T: AnyType](ref self) -> ref [self._impl[]] T:
+        return self._impl[][T]
+
     @always_inline("nodebug")
     fn name(self) -> String:
         @parameter
@@ -72,7 +75,7 @@ struct JsonAstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
-                return self._impl[]._get_ptr[T]()[].to_string(just_code)
+                return self[T].to_string(just_code)
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
             " node: "

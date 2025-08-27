@@ -41,13 +41,11 @@ struct EnumConstantDeclNode(JsonNodeAstLike):
                         inner_object.object(), level + 1
                     )
                     if node.isa[IntegerLiteralNode]():
-                        self.value = node._impl[][
-                            IntegerLiteralNode
-                        ].get_value()
+                        self.value = node[IntegerLiteralNode].get_value()
                     # elif node.isa[BinaryOperatorNode]():
-                    #     self.value = node._impl[][BinaryOperatorNode].get_value()
+                    #     self.value = node[BinaryOperatorNode].get_value()
                     elif node.isa[ConstantExprNode]():
-                        self.value = node._impl[][ConstantExprNode].get_value()
+                        self.value = node[ConstantExprNode].get_value()
                     self.children_.append(node)
             # else:
             #     print("This enum constant has no children: ", self.name)

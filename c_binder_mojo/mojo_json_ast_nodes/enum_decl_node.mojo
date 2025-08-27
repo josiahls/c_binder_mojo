@@ -45,11 +45,11 @@ struct EnumDeclNode(JsonNodeAstLike):
                     )
                     if node.isa[EnumConstantDeclNode]():
                         if self.is_anonymous:
-                            node._impl[][
+                            node[
                                 EnumConstantDeclNode
                             ].parent_is_anonymous = True
 
-                        var value: Optional[Int] = node._impl[][
+                        var value: Optional[Int] = node[
                             EnumConstantDeclNode
                         ].get_value()
 
@@ -58,9 +58,7 @@ struct EnumDeclNode(JsonNodeAstLike):
                                 max_value = value[]
                         else:
                             max_value += 1
-                            node._impl[][EnumConstantDeclNode].set_value(
-                                max_value
-                            )
+                            node[EnumConstantDeclNode].set_value(max_value)
 
                     self.children_.append(node)
         except e:

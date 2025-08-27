@@ -74,19 +74,19 @@ fn prune_repeated_decls(
         i += 1
         var name = ""
         if child.isa[RecordDeclNode]():
-            name = child._impl[][RecordDeclNode].record_name
+            name = child[RecordDeclNode].record_name
 
         elif child.isa[EnumDeclNode]():
-            name = child._impl[][EnumDeclNode].name
+            name = child[EnumDeclNode].name
 
         elif child.isa[TypedefDeclNode]():
-            name = child._impl[][TypedefDeclNode].name
+            name = child[TypedefDeclNode].name
 
         elif child.isa[VarDeclNode]():
-            name = child._impl[][VarDeclNode].name
+            name = child[VarDeclNode].name
 
         elif child.isa[FunctionDeclNode]():
-            name = child._impl[][FunctionDeclNode].function_name
+            name = child[FunctionDeclNode].function_name
 
         if name == "":
             continue

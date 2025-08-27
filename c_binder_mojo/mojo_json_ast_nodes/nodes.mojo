@@ -62,12 +62,12 @@ struct JsonAstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_from_json_object(json_object, level):
-                return T.create_from_json_object(json_object, level)
+                return Self(T.create_from_json_object(json_object, level))
         print(
             "WARNING: none of the nodes accepted the json_object: "
             + String(json_object["kind"].string())
         )
-        return PlaceHolderNode.create_from_json_object(json_object, level)
+        return Self(PlaceHolderNode.create_from_json_object(json_object, level))
 
     @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:

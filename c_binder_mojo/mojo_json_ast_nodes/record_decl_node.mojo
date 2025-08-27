@@ -101,32 +101,32 @@ struct RecordDeclNode(JsonNodeAstLike):
                     var node = JsonAstNode.accept_from_json_object(
                         inner_object.object(), level + 1
                     )
-                    if node.node[].isa[Self]():
+                    if node._impl[].isa[Self]():
                         self.has_body = True
-                        struct_type_queue.append(node.node[][Self].record_name)
-                    elif node.node[].isa[EnumDeclNode]():
+                        struct_type_queue.append(node._impl[][Self].record_name)
+                    elif node._impl[].isa[EnumDeclNode]():
                         self.has_body = True
-                        enum_type_queue.append(node.node[][EnumDeclNode].name)
-                    elif node.node[].isa[FieldDeclNode]():
+                        enum_type_queue.append(node._impl[][EnumDeclNode].name)
+                    elif node._impl[].isa[FieldDeclNode]():
                         self.has_body = True
-                        if node.node[][FieldDeclNode].is_union:
+                        if node._impl[][FieldDeclNode].is_union:
                             anonomous_record_increment += 1
-                            node.node[][
+                            node._impl[][
                                 FieldDeclNode
                             ].name = "union_placeholder_" + String(
                                 anonomous_record_increment
                             )
-                            node.node[][
+                            node._impl[][
                                 FieldDeclNode
                             ].desugared_type = struct_type_queue.pop()
                         elif struct_type_queue:
                             var desugared_type = struct_type_queue.pop()
-                            node.node[][
+                            node._impl[][
                                 FieldDeclNode
                             ].desugared_type = desugared_type
                         elif enum_type_queue:
                             var desugared_type = enum_type_queue.pop()
-                            node.node[][
+                            node._impl[][
                                 FieldDeclNode
                             ].desugared_type = desugared_type
 
@@ -179,10 +179,10 @@ struct RecordDeclNode(JsonNodeAstLike):
             for child in self.children_:
                 if iter_started:
                     s += ", "
-                if child.node[].isa[FieldDeclNode]():
-                    var dtype = child.node[][FieldDeclNode].desugared_type
+                if child._impl[].isa[FieldDeclNode]():
+                    var dtype = child._impl[][FieldDeclNode].desugared_type
                     if dtype == "":
-                        dtype = child.node[][FieldDeclNode].type
+                        dtype = child._impl[][FieldDeclNode].type
                     s += TypeMapper.convert_c_type_to_mojo_type(dtype)
                     iter_started = True
                 else:

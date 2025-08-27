@@ -35,7 +35,7 @@ fn move_record_decls_to_top_level(
     var i: Int = 0
 
     for ref child in node.children[mut=True]():
-        if child.node[].isa[RecordDeclNode]():
+        if child._impl[].isa[RecordDeclNode]():
             indicies.append(i)
 
         move_record_decls_to_top_level(children, child)
@@ -53,7 +53,7 @@ fn move_enum_decls_to_top_level(
     var indicies: List[Int] = []
     var i: Int = 0
     for ref child in node.children[mut=True]():
-        if child.node[].isa[EnumDeclNode]():
+        if child._impl[].isa[EnumDeclNode]():
             indicies.append(i)
 
         move_enum_decls_to_top_level(children, child)
@@ -73,20 +73,20 @@ fn prune_repeated_decls(
     for child in children:
         i += 1
         var name = ""
-        if child.node[].isa[RecordDeclNode]():
-            name = child.node[][RecordDeclNode].record_name
+        if child._impl[].isa[RecordDeclNode]():
+            name = child._impl[][RecordDeclNode].record_name
 
-        elif child.node[].isa[EnumDeclNode]():
-            name = child.node[][EnumDeclNode].name
+        elif child._impl[].isa[EnumDeclNode]():
+            name = child._impl[][EnumDeclNode].name
 
-        elif child.node[].isa[TypedefDeclNode]():
-            name = child.node[][TypedefDeclNode].name
+        elif child._impl[].isa[TypedefDeclNode]():
+            name = child._impl[][TypedefDeclNode].name
 
-        elif child.node[].isa[VarDeclNode]():
-            name = child.node[][VarDeclNode].name
+        elif child._impl[].isa[VarDeclNode]():
+            name = child._impl[][VarDeclNode].name
 
-        elif child.node[].isa[FunctionDeclNode]():
-            name = child.node[][FunctionDeclNode].function_name
+        elif child._impl[].isa[FunctionDeclNode]():
+            name = child._impl[][FunctionDeclNode].function_name
 
         if name == "":
             continue

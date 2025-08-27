@@ -18,23 +18,23 @@ from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 struct JsonAstNode(Copyable & Movable):
     alias __name__ = "JsonAstNode"
     alias type = JsonAstNodeVariant
-    var node: ArcPointer[Self.type]
+    var _impl: ArcPointer[Self.type]
 
     fn __init__(out self, node: Self.type):
-        self.node = ArcPointer[Self.type](node)
+        self._impl = ArcPointer[Self.type](node)
 
     fn __copyinit__(out self, other: Self):
-        self.node = other.node
+        self._impl = other._impl
 
     fn __moveinit__(out self, deinit other: Self):
-        self.node = other.node^
+        self._impl = other._impl^
 
     @always_inline("nodebug")
     fn name(self) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
+            if self._impl[].isa[T]():
                 return T.__name__
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
@@ -68,8 +68,8 @@ struct JsonAstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
-                return self.node[]._get_ptr[T]()[].to_string(just_code)
+            if self._impl[].isa[T]():
+                return self._impl[]._get_ptr[T]()[].to_string(just_code)
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
             " node: "
@@ -84,15 +84,15 @@ struct JsonAstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if self.node[].isa[T]():
+            if self._impl[].isa[T]():
                 # Brekaing this down:
-                # Get the underlying reference to the variant intance: self.node[]
+                # Get the underlying reference to the variant intance: self._impl[]
                 # Get a pointer to the specific type of node: ._get_ptr[T]()
                 # Cast the ptr to the mut and origin: .origin_cast[mut=mut, origin=origin]()
                 # Dereference the pointer: []
                 # Return the result of children: children()
                 return (
-                    self.node[]
+                    self._impl[]
                     ._get_ptr[T]()
                     .origin_cast[mut=mut, origin=origin]()[]
                     .children()

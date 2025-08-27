@@ -1,8 +1,6 @@
 # Native Mojo Modules
 import os
 from pathlib import Path
-from memory import UnsafePointer
-from memory import ArcPointer
 from collections import Set
 import sys
 

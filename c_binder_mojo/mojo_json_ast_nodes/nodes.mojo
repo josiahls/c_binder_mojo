@@ -11,7 +11,6 @@ from emberjson import Object, to_string
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes import JsonAstNodeVariant
-from c_binder_mojo.mojo_json_ast_nodes.node_variant import Variant
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 
 

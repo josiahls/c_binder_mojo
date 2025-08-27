@@ -25,8 +25,8 @@ struct ExampleNode(JsonNodeAstLike):
     @staticmethod
     fn create_from_json_object(
         read json_object: Object, read level: Int
-    ) raises -> JsonAstNode:
-        return JsonAstNode(Self())
+    ) raises -> Self:
+        return Self()
 
     fn to_string(self, just_code: Bool) raises -> String:
         return self.signature()

@@ -71,8 +71,8 @@ struct RecordTypeNode(JsonNodeAstLike):
     @staticmethod
     fn create_from_json_object(
         read json_object: Object, read level: Int
-    ) raises -> JsonAstNode:
-        return JsonAstNode(Self(json_object, level))
+    ) raises -> Self:
+        return Self(json_object, level)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

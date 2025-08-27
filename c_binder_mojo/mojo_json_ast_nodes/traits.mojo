@@ -19,7 +19,7 @@ trait JsonNodeAstLike(ExplicitlyCopyable & Copyable & Movable):
     @staticmethod
     fn create_from_json_object(
         read json_object: Object, read level: Int
-    ) raises -> JsonAstNode:
+    ) raises -> Self:
         pass
 
     fn to_string(self, just_code: Bool) raises -> String:

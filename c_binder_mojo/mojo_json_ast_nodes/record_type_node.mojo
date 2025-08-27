@@ -54,7 +54,7 @@ struct RecordTypeNode(JsonNodeAstLike):
                 decl_record_node = JsonAstNode.accept_from_json_object(
                     object["decl"].object(), 1
                 )
-                if decl_record_node._impl[].isa[RecordDeclNode]():
+                if decl_record_node.isa[RecordDeclNode]():
                     self.record_name = decl_record_node._impl[][
                         RecordDeclNode
                     ].record_name

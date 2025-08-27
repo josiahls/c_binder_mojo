@@ -101,13 +101,13 @@ struct RecordDeclNode(JsonNodeAstLike):
                     var node = JsonAstNode.accept_from_json_object(
                         inner_object.object(), level + 1
                     )
-                    if node._impl[].isa[Self]():
+                    if node.isa[Self]():
                         self.has_body = True
                         struct_type_queue.append(node._impl[][Self].record_name)
-                    elif node._impl[].isa[EnumDeclNode]():
+                    elif node.isa[EnumDeclNode]():
                         self.has_body = True
                         enum_type_queue.append(node._impl[][EnumDeclNode].name)
-                    elif node._impl[].isa[FieldDeclNode]():
+                    elif node.isa[FieldDeclNode]():
                         self.has_body = True
                         if node._impl[][FieldDeclNode].is_union:
                             anonomous_record_increment += 1
@@ -179,7 +179,7 @@ struct RecordDeclNode(JsonNodeAstLike):
             for child in self.children_:
                 if iter_started:
                     s += ", "
-                if child._impl[].isa[FieldDeclNode]():
+                if child.isa[FieldDeclNode]():
                     var dtype = child._impl[][FieldDeclNode].desugared_type
                     if dtype == "":
                         dtype = child._impl[][FieldDeclNode].type

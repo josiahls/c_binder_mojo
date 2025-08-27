@@ -10,6 +10,6 @@ alwaysApply: false
    - In the past you tend to remove nodes from the init for now reason. Don't remove any nodes unless you have good reason to.
 - Use [example_node.mojo](mdc:c_binder_mojo/mojo_ast_nodes/example_node.mojo) on how to make a basic node. It also has useful comments
 and notes on the direction this API is moving.
-- You can test anything via magic run test_some_test_name. Look in the pixi.toml for how. This command is available from the shell
+- You can test anything via pixi run test_some_test_name. Look in the pixi.toml for how. This command is available from the shell
 so you dont need to adjust any pathing.
 Reference [how-to-code-in-mojo.mdc](mdc:.cursor/rules/how-to-code-in-mojo.mdc) for extra details.

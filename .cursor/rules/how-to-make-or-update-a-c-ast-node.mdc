@@ -5,7 +5,7 @@ alwaysApply: false
 ---
 
 # Please follow these mojo standards (these change frequently):
-- Reference the [tasks] section of the root pixi.toml. They are executed via magic run thetaskinquestion
+- Reference the [tasks] section of the root pixi.toml. They are executed via pixi run thetaskinquestion
 - Implement everything in c_binder.c_ast_nodes.nodes.mojo: NodeAstLike
 - Add the new node to c_binder_mojo.c_binder_mojo.c_ast_nodes.__init__.mojo: As an import
 Reference [how-to-code-in-mojo.mdc](mdc:.cursor/rules/how-to-code-in-mojo.mdc) for extra details.

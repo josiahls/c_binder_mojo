@@ -40,13 +40,13 @@ struct EnumConstantDeclNode(JsonNodeAstLike):
                     node = JsonAstNode.accept_from_json_object(
                         inner_object.object(), level + 1
                     )
-                    if node._impl[].isa[IntegerLiteralNode]():
+                    if node.isa[IntegerLiteralNode]():
                         self.value = node._impl[][
                             IntegerLiteralNode
                         ].get_value()
-                    # elif node._impl[].isa[BinaryOperatorNode]():
+                    # elif node.isa[BinaryOperatorNode]():
                     #     self.value = node._impl[][BinaryOperatorNode].get_value()
-                    elif node._impl[].isa[ConstantExprNode]():
+                    elif node.isa[ConstantExprNode]():
                         self.value = node._impl[][ConstantExprNode].get_value()
                     self.children_.append(node)
             # else:

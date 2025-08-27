@@ -43,7 +43,7 @@ struct EnumDeclNode(JsonNodeAstLike):
                     node = JsonAstNode.accept_from_json_object(
                         inner_object.object(), child_level
                     )
-                    if node._impl[].isa[EnumConstantDeclNode]():
+                    if node.isa[EnumConstantDeclNode]():
                         if self.is_anonymous:
                             node._impl[][
                                 EnumConstantDeclNode

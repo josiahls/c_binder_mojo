@@ -29,12 +29,15 @@ struct JsonAstNode(Copyable & Movable):
     fn __moveinit__(out self, deinit other: Self):
         self._impl = other._impl^
 
+    fn isa[T: AnyType](self) -> Bool:
+        return self._impl[].isa[T]()
+
     @always_inline("nodebug")
     fn name(self) -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if self._impl[].isa[T]():
+            if self.isa[T]():
                 return T.__name__
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
@@ -68,7 +71,7 @@ struct JsonAstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if self._impl[].isa[T]():
+            if self.isa[T]():
                 return self._impl[]._get_ptr[T]()[].to_string(just_code)
         print(
             "WARNING: to_string called on AstNode with no to_string method for"
@@ -84,7 +87,7 @@ struct JsonAstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if self._impl[].isa[T]():
+            if self.isa[T]():
                 # Brekaing this down:
                 # Get the underlying reference to the variant intance: self._impl[]
                 # Get a pointer to the specific type of node: ._get_ptr[T]()

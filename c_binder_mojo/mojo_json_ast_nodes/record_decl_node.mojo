@@ -103,32 +103,28 @@ struct RecordDeclNode(JsonNodeAstLike):
                     )
                     if node.isa[Self]():
                         self.has_body = True
-                        struct_type_queue.append(node._impl[][Self].record_name)
+                        struct_type_queue.append(node[Self].record_name)
                     elif node.isa[EnumDeclNode]():
                         self.has_body = True
-                        enum_type_queue.append(node._impl[][EnumDeclNode].name)
+                        enum_type_queue.append(node[EnumDeclNode].name)
                     elif node.isa[FieldDeclNode]():
                         self.has_body = True
-                        if node._impl[][FieldDeclNode].is_union:
+                        if node[FieldDeclNode].is_union:
                             anonomous_record_increment += 1
-                            node._impl[][
+                            node[
                                 FieldDeclNode
                             ].name = "union_placeholder_" + String(
                                 anonomous_record_increment
                             )
-                            node._impl[][
+                            node[
                                 FieldDeclNode
                             ].desugared_type = struct_type_queue.pop()
                         elif struct_type_queue:
                             var desugared_type = struct_type_queue.pop()
-                            node._impl[][
-                                FieldDeclNode
-                            ].desugared_type = desugared_type
+                            node[FieldDeclNode].desugared_type = desugared_type
                         elif enum_type_queue:
                             var desugared_type = enum_type_queue.pop()
-                            node._impl[][
-                                FieldDeclNode
-                            ].desugared_type = desugared_type
+                            node[FieldDeclNode].desugared_type = desugared_type
 
                     self.children_.append(node)
         except e:
@@ -180,9 +176,9 @@ struct RecordDeclNode(JsonNodeAstLike):
                 if iter_started:
                     s += ", "
                 if child.isa[FieldDeclNode]():
-                    var dtype = child._impl[][FieldDeclNode].desugared_type
+                    var dtype = child[FieldDeclNode].desugared_type
                     if dtype == "":
-                        dtype = child._impl[][FieldDeclNode].type
+                        dtype = child[FieldDeclNode].type
                     s += TypeMapper.convert_c_type_to_mojo_type(dtype)
                     iter_started = True
                 else:

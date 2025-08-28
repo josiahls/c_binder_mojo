@@ -9,7 +9,7 @@ from emberjson import Object
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 alias HEADER: String = """
@@ -26,8 +26,8 @@ alias BANNED_TYPES: Set[String] = Set[String]("abort", "getenv", "setenv")
 
 
 fn move_record_decls_to_top_level(
-    mut children: List[JsonAstNode],
-    mut node: JsonAstNode,
+    mut children: List[AstNode],
+    mut node: AstNode,
 ) raises:
     var indicies: List[Int] = []
     var i: Int = 0
@@ -45,8 +45,8 @@ fn move_record_decls_to_top_level(
 
 
 fn move_enum_decls_to_top_level(
-    mut children: List[JsonAstNode],
-    mut node: JsonAstNode,
+    mut children: List[AstNode],
+    mut node: AstNode,
 ) raises:
     var indicies: List[Int] = []
     var i: Int = 0
@@ -63,7 +63,7 @@ fn move_enum_decls_to_top_level(
 
 
 fn prune_repeated_decls(
-    mut children: List[JsonAstNode],
+    mut children: List[AstNode],
 ) raises:
     var names: Set[String] = Set[String]()
     var indicies: List[Int] = []
@@ -104,15 +104,15 @@ fn prune_repeated_decls(
 struct TranslationUnitDeclNode(JsonNodeAstLike):
     alias __name__ = "TranslationUnitDecl"
 
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         self.level = level
         try:
             for value in object["inner"].array():
-                var node = JsonAstNode.accept_from_json_object(
+                var node = AstNode.accept_from_json_object(
                     value.object(), level
                 )
                 move_record_decls_to_top_level(self.children_, node)
@@ -153,7 +153,7 @@ struct TranslationUnitDeclNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         return UnsafePointer(to=self.children_).origin_cast[
             origin = __origin_of(self)

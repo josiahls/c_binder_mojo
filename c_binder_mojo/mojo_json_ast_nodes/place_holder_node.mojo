@@ -5,27 +5,27 @@ from emberjson import Object, to_string
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 struct PlaceHolderNode(JsonNodeAstLike):
     alias __name__ = "PlaceHolder"
 
-    var nodes: List[JsonAstNode]
+    var nodes: List[AstNode]
     var level: Int
     var json_string: String
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
 
     fn __init__(out self, object: Object, level: Int):
-        self.nodes = List[JsonAstNode]()
+        self.nodes = List[AstNode]()
         self.level = level
         self.json_string = to_string(object)
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         if "inner" in object:
             try:
                 for value in object["inner"].array():
                     self.nodes.append(
-                        JsonAstNode.accept_from_json_object(
+                        AstNode.accept_from_json_object(
                             value.object(), level + 1
                         )
                     )
@@ -59,7 +59,7 @@ struct PlaceHolderNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         # NOTE: this node does not have any children, so it will return an empty list
         return UnsafePointer[mut=mut](to=self.children_).origin_cast[

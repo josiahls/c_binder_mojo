@@ -10,13 +10,13 @@ from firehose.logging import Logger, set_global_logger_settings
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes import JsonAstNodeVariant
+from c_binder_mojo.mojo_json_ast_nodes import AstNodeVariant
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 
 
-struct JsonAstNode(Copyable & Movable):
-    alias __name__ = "JsonAstNode"
-    alias type = JsonAstNodeVariant
+struct AstNode(Copyable & Movable):
+    alias __name__ = "AstNode"
+    alias type = AstNodeVariant
     var _impl: ArcPointer[Self.type]
 
     fn __init__(out self, node: Self.type):
@@ -79,7 +79,7 @@ struct JsonAstNode(Copyable & Movable):
     @always_inline("nodebug")
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
@@ -102,6 +102,6 @@ struct JsonAstNode(Copyable & Movable):
             + self.__name__
         )
         # NOTE: this node does not have any children, so it will return an empty list
-        return UnsafePointer[mut=mut](to=List[JsonAstNode]()).origin_cast[
+        return UnsafePointer[mut=mut](to=List[AstNode]()).origin_cast[
             origin = __origin_of(self)
         ]()[]

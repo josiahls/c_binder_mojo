@@ -5,16 +5,16 @@ from emberjson import Object
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 struct ExampleNode(JsonNodeAstLike):
     alias __name__ = "Example"
 
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
 
     fn __init__(out self):
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
 
     @staticmethod
     fn accept_from_json_object(
@@ -36,7 +36,7 @@ struct ExampleNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         # NOTE: this node does not have any children, so it will return an empty list
         return UnsafePointer[mut=mut](to=self.children_).origin_cast[

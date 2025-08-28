@@ -6,7 +6,7 @@ from emberjson import Object, to_string
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 # from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
 #     get_global_record_decl_node_queue,
@@ -20,7 +20,7 @@ struct RecordTypeNode(JsonNodeAstLike):
     var level: Int
     var record_name: String
 
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
 
     var is_struct: Bool
 
@@ -28,7 +28,7 @@ struct RecordTypeNode(JsonNodeAstLike):
         self.level = level
         self.mem_address = ""
         self.record_name = ""
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         self.is_struct = False
 
         try:
@@ -46,12 +46,12 @@ struct RecordTypeNode(JsonNodeAstLike):
             if "inner" in object:
                 for child in object["inner"].array():
                     self.children_.append(
-                        JsonAstNode.accept_from_json_object(
+                        AstNode.accept_from_json_object(
                             child.object(), level + 1
                         )
                     )
             if "decl" in object:
-                decl_record_node = JsonAstNode.accept_from_json_object(
+                decl_record_node = AstNode.accept_from_json_object(
                     object["decl"].object(), 1
                 )
                 if decl_record_node.isa[RecordDeclNode]():
@@ -88,7 +88,7 @@ struct RecordTypeNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         return UnsafePointer(to=self.children_).origin_cast[
             origin = __origin_of(self)

@@ -4,7 +4,7 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 trait JsonNodeAstLike(ExplicitlyCopyable & Copyable & Movable):
@@ -27,5 +27,5 @@ trait JsonNodeAstLike(ExplicitlyCopyable & Copyable & Movable):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         pass

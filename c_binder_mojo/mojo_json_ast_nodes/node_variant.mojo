@@ -10,87 +10,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ===----------------------------------------------------------------------=== #
-"""Defines a Variant type.
-
-You can use this type to implement variant/sum types. For example:
-
-```mojo
-from utils import Variant
-
-alias IntOrString = Variant[Int, String]
-fn to_string(mut x: IntOrString) -> String:
-  if x.isa[String]():
-    return x[String]
-  # x.isa[Int]()
-  return String(x[Int])
-
-# They have to be mutable for now, and implement Copyable & Movable
-var an_int = IntOrString(4)
-var a_string = IntOrString("I'm a string!")
-var who_knows = IntOrString(0)
-import random
-if random.random_ui64(0, 1):
-    who_knows.set[String]("I'm actually a string too!")
-
-print(to_string(an_int))
-print(to_string(a_string))
-print(to_string(who_knows))
-```
-"""
-
 from os import abort
 from sys.intrinsics import _type_is_eq
-
-
-# ===----------------------------------------------------------------------=== #
-# Variant
-# ===----------------------------------------------------------------------=== #
-
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
 
 
 struct Variant[*Ts: JsonNodeAstLike](Copyable, ExplicitlyCopyable, Movable):
-    """A runtime-variant type.
-
-    Data for this type is stored internally. Currently, its size is the
-    largest size of any of its variants plus a 16-bit discriminant.
-
-    You can
-        - use `isa[T]()` to check what type a variant is
-        - use `unsafe_take[T]()` to take a value from the variant
-        - use `[T]` to get a value out of a variant
-            - This currently does an extra copy/move until we have origins
-            - It also temporarily requires the value to be mutable
-        - use `set[T](var new_value: T)` to reset the variant to a new value
-        - use `is_type_supported[T]` to check if the variant permits the type `T`
-
-    Example:
-    ```mojo
-    from utils import Variant
-    alias IntOrString = Variant[Int, String]
-    fn to_string(mut x: IntOrString) -> String:
-        if x.isa[String]():
-            return x[String]
-        # x.isa[Int]()
-        return String(x[Int])
-
-    # They have to be mutable for now, and implement Copyable & Movable
-    var an_int = IntOrString(4)
-    var a_string = IntOrString("I'm a string!")
-    var who_knows = IntOrString(0)
-    import random
-    if random.random_ui64(0, 1):
-        who_knows.set[String]("I'm actually a string too!")
-
-    print(to_string(an_int))
-    print(to_string(a_string))
-    print(to_string(who_knows))
-    ```
-
-    Parameters:
-      Ts: The elements of the variadic.
-    """
-
     # Fields
     alias _sentinel: Int = -1
     alias _mlir_type = __mlir_type[

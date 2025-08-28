@@ -3,7 +3,7 @@
 # Third Party Mojo Modules
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.node_variant import Variant
+from c_binder_mojo.mojo_json_ast_nodes.variant import Variant
 from c_binder_mojo.mojo_json_ast_nodes.translation_unit_decl_node import (
     TranslationUnitDeclNode,
 )

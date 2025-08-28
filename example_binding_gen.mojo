@@ -11,7 +11,8 @@ from firehose.logging import Logger, set_global_logger_settings
 from c_binder_mojo.ast_parser import AstParser
 
 from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+
+from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode, JsonNodeAstLike
 
 
 fn generate_bindings(
@@ -39,11 +40,14 @@ fn generate_bindings(
         raw_ast = output_path / (module_name + "_raw_ast.json")
 
     var ast_parser = AstParser()
-    var root_node = ast_parser.parse(
+    var json_value = ast_parser.parse(
         test_file_path,
         extra_args=extra_args,
         raw_ast=raw_ast,
         recursive_header_include=recursive_header_include,
+    )
+    var root_node = JsonAstNode.accept_from_json_object(
+        json_value.object(), level=0
     )
 
     # Save Mojo AST for debugging

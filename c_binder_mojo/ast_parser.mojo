@@ -8,11 +8,9 @@ from subprocess import run
 
 # Third Party Mojo Modules
 from firehose.logging import Logger, set_global_logger_settings
-from emberjson import parse, to_string, Object
+from emberjson import parse, to_string, Object, Value
 
 # First Party Modules
-
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode, JsonNodeAstLike
 
 
 @fieldwise_init
@@ -52,17 +50,14 @@ struct AstParser:
         extra_args: String = "",
         raw_ast: Optional[Path] = None,
         recursive_header_include: String = "",
-    ) raises -> JsonAstNode:
+    ) raises -> Value:
         var _extra_args = extra_args + self.process_recursive_header_include(
             recursive_header_include
         )
         result = self.clang_call(file_path, _extra_args)
-        var root_object = parse(result)
+        var json_value = parse(result)
 
         if raw_ast:
-            raw_ast[].write_text(to_string[pretty=True](root_object))
+            raw_ast[].write_text(to_string[pretty=True](json_value))
 
-        var root_node = JsonAstNode.accept_from_json_object(
-            root_object.object(), level=0
-        )
-        return root_node
+        return json_value^

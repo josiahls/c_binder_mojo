@@ -6,7 +6,7 @@ from emberjson import Object
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 
 
@@ -40,10 +40,10 @@ alias GLOBAL_ANONOMOUS_RECORD_DECL_TYPE_REGISTRY = _Global[
 
 # struct _GlobalRecordDeclNodeQueue(Movable):
 #     # Mem address and record inc name
-#     var record_decl_node_queue: List[JsonAstNode]
+#     var record_decl_node_queue: List[AstNode]
 
 #     fn __init__(out self):
-#         self.record_decl_node_queue = List[JsonAstNode]()
+#         self.record_decl_node_queue = List[AstNode]()
 
 
 # fn _init_global_record_decl_node_queue() -> _GlobalRecordDeclNodeQueue:
@@ -69,7 +69,7 @@ struct RecordDeclNode(JsonNodeAstLike):
 
     var record_name: String
 
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
     var level: Int
     var mem_address: String
     var disabled: Bool
@@ -78,7 +78,7 @@ struct RecordDeclNode(JsonNodeAstLike):
 
     fn __init__(out self, object: Object, level: Int):
         self.record_name = ""
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         self.level = level
         self.mem_address = ""
         self.disabled = False
@@ -98,7 +98,7 @@ struct RecordDeclNode(JsonNodeAstLike):
                 self.tag_used = object["tagUsed"].string()
             if "inner" in object:
                 for inner_object in object["inner"].array():
-                    var node = JsonAstNode.accept_from_json_object(
+                    var node = AstNode.accept_from_json_object(
                         inner_object.object(), level + 1
                     )
                     if node.isa[Self]():
@@ -209,7 +209,7 @@ struct RecordDeclNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         return UnsafePointer(to=self.children_).origin_cast[
             origin = __origin_of(self)

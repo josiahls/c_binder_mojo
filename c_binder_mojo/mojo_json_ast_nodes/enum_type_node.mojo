@@ -5,20 +5,20 @@ from emberjson import Object
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 struct EnumTypeNode(JsonNodeAstLike):
     alias __name__ = "EnumType"
 
     var name: String
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.name = ""
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         try:
             if "type" in object:
                 type_object = object["type"].object()
@@ -27,7 +27,7 @@ struct EnumTypeNode(JsonNodeAstLike):
                     self.name = String(name.removeprefix("enum "))
                 if "decl" in type_object:
                     self.children_.append(
-                        JsonAstNode.accept_from_json_object(
+                        AstNode.accept_from_json_object(
                             type_object["decl"].object(), level + 1
                         )
                     )
@@ -54,7 +54,7 @@ struct EnumTypeNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         return UnsafePointer(to=self.children_).origin_cast[
             origin = __origin_of(self)

@@ -5,23 +5,23 @@ from emberjson import Object
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 struct ParagraphCommentNode(JsonNodeAstLike):
     alias __name__ = "ParagraphComment"
 
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         try:
             if "inner" in object:
                 for inner_object in object["inner"].array():
                     self.children_.append(
-                        JsonAstNode.accept_from_json_object(
+                        AstNode.accept_from_json_object(
                             # NOTE: level is not a concept in this node,
                             inner_object.object(),
                             level,
@@ -57,7 +57,7 @@ struct ParagraphCommentNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         return UnsafePointer(to=self.children_).origin_cast[
             origin = __origin_of(self)

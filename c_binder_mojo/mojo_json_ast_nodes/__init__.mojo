@@ -49,7 +49,7 @@ from c_binder_mojo.mojo_json_ast_nodes.indirect_field_decl_node import (
 )
 
 
-alias JsonAstNodeVariant = Variant[
+alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
     TypedefDeclNode,
     BuiltinTypeNode,

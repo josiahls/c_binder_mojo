@@ -5,7 +5,7 @@ from emberjson import Object
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.mojo_json_ast_nodes.enum_constant_decl_node import (
     EnumConstantDeclNode,
 )
@@ -17,13 +17,13 @@ struct EnumDeclNode(JsonNodeAstLike):
     var level: Int
 
     var name: String
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
     var is_anonymous: Bool
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.name = ""
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         self.is_anonymous = False
 
         var max_value: Int = -1
@@ -40,7 +40,7 @@ struct EnumDeclNode(JsonNodeAstLike):
                         # Anonymous enums are at the top level
                         child_level = 0
 
-                    node = JsonAstNode.accept_from_json_object(
+                    node = AstNode.accept_from_json_object(
                         inner_object.object(), child_level
                     )
                     if node.isa[EnumConstantDeclNode]():
@@ -98,7 +98,7 @@ struct EnumDeclNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         return UnsafePointer(to=self.children_).origin_cast[
             origin = __origin_of(self)

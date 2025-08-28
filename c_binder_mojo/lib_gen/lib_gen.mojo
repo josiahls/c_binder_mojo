@@ -4,7 +4,7 @@ from c_binder_mojo.mojo_json_ast_nodes.function_decl_node import (
     FunctionDeclNode,
 )
 from c_binder_mojo.mojo_json_ast_nodes.typedef_decl_node import TypedefDeclNode
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 fn _get_so_lib_path_function() -> String:
@@ -109,7 +109,7 @@ struct ExternalFunctionBuilder(Copyable, Movable):
 
 fn _get_function_external_declarations(
     lib_name: String,
-    ast_root_node: JsonAstNode,
+    ast_root_node: AstNode,
     include_private_methods: Bool,
     include_only_prefixes: List[String],
 ) raises -> List[ExternalFunctionBuilder]:
@@ -138,7 +138,7 @@ fn _get_function_external_declarations(
 
 
 fn append_to_mojo_file(
-    ast_root_node: JsonAstNode,
+    ast_root_node: AstNode,
     mojo_file: Path,
     so_file: Path,
     lib_name: String = "",

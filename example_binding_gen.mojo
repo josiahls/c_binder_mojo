@@ -12,7 +12,7 @@ from c_binder_mojo.ast_parser import AstParser
 
 from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
 
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode, JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 fn generate_bindings(
@@ -23,7 +23,7 @@ fn generate_bindings(
     extra_args: String = "",
     debug_output: Bool = False,
     recursive_header_include: String = "",
-) raises -> JsonAstNode:
+) raises -> AstNode:
     logger.info("Outputing binded module to: " + String(output_path))
 
     var module_name = input_header_path.path.split("/")[-1].split(".")[0]
@@ -46,7 +46,7 @@ fn generate_bindings(
         raw_ast=raw_ast,
         recursive_header_include=recursive_header_include,
     )
-    var root_node = JsonAstNode.accept_from_json_object(
+    var root_node = AstNode.accept_from_json_object(
         json_value.object(), level=0
     )
 

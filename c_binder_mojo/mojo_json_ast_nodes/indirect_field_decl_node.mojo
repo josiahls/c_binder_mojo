@@ -5,7 +5,7 @@ from emberjson import Object, to_string
 
 # First Party Modules
 from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import JsonAstNode
+from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
 struct IndirectFieldDeclNode(JsonNodeAstLike):
@@ -16,7 +16,7 @@ struct IndirectFieldDeclNode(JsonNodeAstLike):
     var level: Int
     var type: String
     var desugared_type: String
-    var children_: List[JsonAstNode]
+    var children_: List[AstNode]
 
     fn __init__(out self, object: Object, level: Int):
         self.name = ""
@@ -24,7 +24,7 @@ struct IndirectFieldDeclNode(JsonNodeAstLike):
         self.level = 1  # Fields must always be at the top level + 1
         self.type = ""
         self.desugared_type = ""
-        self.children_ = List[JsonAstNode]()
+        self.children_ = List[AstNode]()
         try:
             if "name" in object:
                 self.name = object["name"].string()
@@ -65,7 +65,7 @@ struct IndirectFieldDeclNode(JsonNodeAstLike):
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[JsonAstNode]:
+    ](ref [origin]self) -> ref [self] List[AstNode]:
         # Create an unsafe pointer to the member, then cast the origin
         return UnsafePointer[mut=mut](to=self.children_).origin_cast[
             origin = __origin_of(self)

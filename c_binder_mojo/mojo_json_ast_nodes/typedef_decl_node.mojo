@@ -5,12 +5,12 @@ from sys.ffi import _Global
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 
 
-struct TypedefDeclNode(JsonNodeAstLike):
+struct TypedefDeclNode(AstNodeLike):
     alias __name__ = "TypedefDecl"
 
     var level: Int

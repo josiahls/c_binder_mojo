@@ -5,7 +5,7 @@ from sys.ffi import _Global
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 
@@ -38,7 +38,7 @@ from c_binder_mojo.typing import TypeMapper
 # ]
 
 
-struct FunctionDeclNode(JsonNodeAstLike):
+struct FunctionDeclNode(AstNodeLike):
     alias __name__ = "FunctionDecl"
 
     var storage_class: String

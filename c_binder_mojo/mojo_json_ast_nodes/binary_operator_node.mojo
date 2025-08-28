@@ -4,11 +4,11 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
-struct BinaryOperatorNode(JsonNodeAstLike):
+struct BinaryOperatorNode(AstNodeLike):
     alias __name__ = "BinaryOperator"
 
     var opcode: String

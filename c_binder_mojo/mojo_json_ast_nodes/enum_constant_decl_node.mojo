@@ -4,7 +4,7 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.mojo_json_ast_nodes.integer_literal_node import (
     IntegerLiteralNode,
@@ -17,7 +17,7 @@ from c_binder_mojo.mojo_json_ast_nodes.constant_expr_node import (
 )
 
 
-struct EnumConstantDeclNode(JsonNodeAstLike):
+struct EnumConstantDeclNode(AstNodeLike):
     alias __name__ = "EnumConstantDecl"
 
     var name: String

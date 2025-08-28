@@ -5,7 +5,7 @@ from sys.ffi import _Global
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 # from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
@@ -13,7 +13,7 @@ from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 # )
 
 
-struct RecordTypeNode(JsonNodeAstLike):
+struct RecordTypeNode(AstNodeLike):
     alias __name__ = "RecordType"
 
     var mem_address: String

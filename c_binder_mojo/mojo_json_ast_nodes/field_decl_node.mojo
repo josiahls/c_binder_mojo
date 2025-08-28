@@ -4,13 +4,13 @@
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 from c_binder_mojo.common import MOJO_KEYWORDS, MOJO_METHOD_KEYWORDS
 
 
-struct FieldDeclNode(JsonNodeAstLike):
+struct FieldDeclNode(AstNodeLike):
     alias __name__ = "FieldDecl"
 
     var name: String

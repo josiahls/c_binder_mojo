@@ -8,7 +8,7 @@ import sys
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
@@ -101,7 +101,7 @@ fn prune_repeated_decls(
         _ = children.pop(i)
 
 
-struct TranslationUnitDeclNode(JsonNodeAstLike):
+struct TranslationUnitDeclNode(AstNodeLike):
     alias __name__ = "TranslationUnitDecl"
 
     var children_: List[AstNode]

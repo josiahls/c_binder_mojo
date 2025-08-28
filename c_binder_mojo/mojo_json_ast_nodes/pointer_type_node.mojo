@@ -4,12 +4,12 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 
 
-struct PointerTypeNode(JsonNodeAstLike):
+struct PointerTypeNode(AstNodeLike):
     alias __name__ = "PointerType"
 
     var children_: List[AstNode]

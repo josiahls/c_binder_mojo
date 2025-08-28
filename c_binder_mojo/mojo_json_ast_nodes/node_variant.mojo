@@ -12,10 +12,10 @@
 # ===----------------------------------------------------------------------=== #
 from os import abort
 from sys.intrinsics import _type_is_eq
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 
 
-struct Variant[*Ts: JsonNodeAstLike](Copyable, ExplicitlyCopyable, Movable):
+struct Variant[*Ts: AstNodeLike](Copyable, ExplicitlyCopyable, Movable):
     # Fields
     alias _sentinel: Int = -1
     alias _mlir_type = __mlir_type[

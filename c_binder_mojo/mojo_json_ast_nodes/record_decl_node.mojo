@@ -5,7 +5,7 @@ from sys.ffi import _Global
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 
@@ -64,7 +64,7 @@ alias GLOBAL_ANONOMOUS_RECORD_DECL_TYPE_REGISTRY = _Global[
 # ]
 
 
-struct RecordDeclNode(JsonNodeAstLike):
+struct RecordDeclNode(AstNodeLike):
     alias __name__ = "RecordDecl"
 
     var record_name: String

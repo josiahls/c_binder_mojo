@@ -4,11 +4,11 @@
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
-struct TypedefTypeNode(JsonNodeAstLike):
+struct TypedefTypeNode(AstNodeLike):
     alias __name__ = "TypedefType"
 
     var typedef_type: String

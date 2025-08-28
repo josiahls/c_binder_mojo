@@ -4,11 +4,11 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import JsonNodeAstLike
+from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
 from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
 
 
-struct FullCommentNode(JsonNodeAstLike):
+struct FullCommentNode(AstNodeLike):
     alias __name__ = "FullComment"
 
     var children_: List[AstNode]

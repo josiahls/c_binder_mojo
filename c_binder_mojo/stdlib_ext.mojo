@@ -1,5 +1,5 @@
 from sys.intrinsics import _type_is_eq
-from sys.info import sizeof
+from sys.info import size_of
 from utils import StaticTuple
 
 
@@ -9,7 +9,7 @@ fn build_union_mlir_type[*Ts: ExplicitlyCopyable & Movable]() -> Int:
 
     @parameter
     for i in range(len(VariadicList(Ts))):
-        alias current_size = sizeof[Ts[i]]()
+        alias current_size = size_of[Ts[i]]()
         if current_size > max_size:
             max_size = current_size
     return max_size

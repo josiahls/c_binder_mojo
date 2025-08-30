@@ -117,6 +117,15 @@ docs = { cmd = [
     "cd", "docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload"
 ], depends-on = [ "build_docs" ]}
 
+######################### Git Ops #############################
+push = { cmd = [
+    "git", "push", "--force-with-lease"
+]}
+
+i_rebase = { cmd = [
+    "git", "rebase", "-i", "HEAD~{{ n_commits}}"
+], args = [{ arg = "n_commits", default = "1" }]}
+
 
 ######################### Testing Configuration ###############################
 # Build the c bindings.

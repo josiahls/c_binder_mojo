@@ -19,9 +19,6 @@ struct ExampleNode(AstNodeLike):
     fn to_string(self, just_code: Bool) raises -> String:
         return self.signature()
 
-    fn signature(self) -> String:
-        return "# Node: " + self.__name__ + "()"
-
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:

@@ -24,9 +24,6 @@ struct ModeAttrNode(AstNodeLike):
         # surface unhandled properties in c just so we are aware of them.
         return ""
 
-    fn signature(self) -> String:
-        return "# Node: " + self.__name__ + "()"
-
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:

@@ -24,6 +24,9 @@ trait AstNodeLike(ExplicitlyCopyable & Copyable & Movable):
     ) raises -> Self:
         return Self(json_object, level)
 
+    fn signature(self) -> String:
+        return "# Node: " + String(Self.__name__) + "()"
+
     fn to_string(self, just_code: Bool) raises -> String:
         pass
 

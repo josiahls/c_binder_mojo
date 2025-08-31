@@ -81,9 +81,6 @@ struct EnumDeclNode(AstNodeLike):
             s += child.to_string(just_code) + "\n"
         return s
 
-    fn signature(self) -> String:
-        return "# Node: " + self.__name__ + "()"
-
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:

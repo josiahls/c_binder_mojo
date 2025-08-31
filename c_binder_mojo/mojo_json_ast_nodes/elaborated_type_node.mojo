@@ -27,18 +27,6 @@ struct ElaboratedTypeNode(AstNodeLike):
         except e:
             print("Error creating ElaboratedTypeNode: ", e)
 
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        return json_object["kind"].string() == Self.__name__
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
-        return Self(json_object, level)
-
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
         for child in self.children_:

@@ -39,12 +39,6 @@ struct PlaceHolderNode(AstNodeLike):
     ) raises -> Bool:
         return True
 
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
-        return Self(json_object, level)
-
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "()"
 

@@ -13,20 +13,8 @@ struct ExampleNode(AstNodeLike):
 
     var children_: List[AstNode]
 
-    fn __init__(out self):
+    fn __init__(out self, json_object: Object, level: Int):
         self.children_ = List[AstNode]()
-
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        return json_object["kind"].string() == Self.__name__
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
-        return Self()
 
     fn to_string(self, just_code: Bool) raises -> String:
         return self.signature()

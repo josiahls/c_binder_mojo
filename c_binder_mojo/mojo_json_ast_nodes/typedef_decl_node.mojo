@@ -53,18 +53,6 @@ struct TypedefDeclNode(AstNodeLike):
         except e:
             print("Error creating TypedefDeclNode: ", e)
 
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        return json_object["kind"].string() == Self.__name__
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
-        return Self(json_object, level)
-
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "(" + self.name + ")"
 

@@ -41,18 +41,6 @@ struct IndirectFieldDeclNode(AstNodeLike):
                 "Error creating IndirectFieldDeclNode: ", e, to_string(object)
             )
 
-    @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
-        return json_object["kind"].string() == Self.__name__
-
-    @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
-        return Self(json_object, level)
-
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""
         var indent: String = "\t" * self.level

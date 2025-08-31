@@ -16,9 +16,6 @@ struct ExampleNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int):
         self.children_ = List[AstNode]()
 
-    fn to_string(self, just_code: Bool) raises -> String:
-        return self.signature()
-
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:

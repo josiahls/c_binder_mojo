@@ -28,7 +28,7 @@ trait AstNodeLike(ExplicitlyCopyable & Copyable & Movable):
         return "# Node: " + String(Self.__name__) + "()"
 
     fn to_string(self, just_code: Bool) raises -> String:
-        pass
+        return self.signature()
 
     fn children[
         T: ExplicitlyCopyable & Movable

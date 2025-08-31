@@ -71,9 +71,6 @@ struct FieldDeclNode(AstNodeLike):
         s += TypeMapper.convert_c_type_to_mojo_type(dtype) + "\n"
         return s
 
-    fn signature(self) -> String:
-        return "# Node: " + self.__name__ + "()"
-
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:

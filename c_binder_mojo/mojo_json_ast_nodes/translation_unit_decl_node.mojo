@@ -123,9 +123,6 @@ struct TranslationUnitDeclNode(AstNodeLike):
         except e:
             print("Error creating TranslationUnitDeclNode: ", e)
 
-    fn signature(self) -> String:
-        return "Node: " + self.__name__ + "()"
-
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
         s += String(HEADER) + "\n"

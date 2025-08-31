@@ -41,9 +41,6 @@ struct IntegerLiteralNode(AstNodeLike):
             s += child.to_string(just_code)
         return s
 
-    fn signature(self) -> String:
-        return "# Node: " + self.__name__ + "()"
-
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:

@@ -39,9 +39,6 @@ struct TypedefTypeNode(AstNodeLike):
         # used in a typedef decl node or wrapping type node.
         return self.typedef_type
 
-    fn signature(self) -> String:
-        return "# Node: " + self.__name__ + "()"
-
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:

@@ -57,9 +57,10 @@ struct QualTypeNode(AstNodeLike):
         return "# Node: " + self.__name__ + "()"
 
     fn children[
-        mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[AstNode]:
-        # Create an unsafe pointer to the member, then cast the origin
-        return UnsafePointer(to=self.children_).origin_cast[
-            origin = __origin_of(self)
-        ]()[]
+        T: ExplicitlyCopyable & Movable = AstNodeVariant
+    ](ref self: Self) -> ref [self] List[T]:
+        return (
+            UnsafePointer(to=self.children_)
+            .bitcast[List[T]]()
+            .origin_cast[origin = __origin_of(self)]()[]
+        )

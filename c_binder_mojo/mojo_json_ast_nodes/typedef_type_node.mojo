@@ -55,10 +55,10 @@ struct TypedefTypeNode(AstNodeLike):
         return "# Node: " + self.__name__ + "()"
 
     fn children[
-        mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[AstNode]:
-        # Create an unsafe pointer to the member, then cast the origin
-        # NOTE: this node does not have any children, so it will return an empty list
-        return UnsafePointer[mut=mut](to=self.children_).origin_cast[
-            origin = __origin_of(self)
-        ]()[]
+        T: ExplicitlyCopyable & Movable = AstNodeVariant
+    ](ref self: Self) -> ref [self] List[T]:
+        return (
+            UnsafePointer(to=self.children_)
+            .bitcast[List[T]]()
+            .origin_cast[origin = __origin_of(self)]()[]
+        )

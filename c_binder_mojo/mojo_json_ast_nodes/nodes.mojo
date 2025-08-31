@@ -76,32 +76,17 @@ struct AstNode(Copyable & Movable):
         )
         return "<unknown type>"
 
-    @always_inline("nodebug")
     fn children[
         mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self) -> ref [self] List[AstNode]:
+    ](ref [origin]self: Self) -> ref [self] List[Self]:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
-            alias T = Self.type.Ts[i]
-            if self.isa[T]():
-                # Brekaing this down:
-                # Get the underlying reference to the variant intance: self._impl[]
-                # Get a pointer to the specific type of node: ._get_ptr[T]()
-                # Cast the ptr to the mut and origin: .origin_cast[mut=mut, origin=origin]()
-                # Dereference the pointer: []
-                # Return the result of children: children()
-                return (
-                    self._impl[]
-                    ._get_ptr[T]()
-                    .origin_cast[mut=mut, origin=origin]()[]
-                    .children()
-                )
-        print(
-            "WARNING: to_string called on AstNode with no to_string method for"
-            " node: "
-            + self.__name__
-        )
-        # NOTE: this node does not have any children, so it will return an empty list
-        return UnsafePointer[mut=mut](to=List[AstNode]()).origin_cast[
+            alias Type = Self.type.Ts[i]
+            if self.isa[Type]():
+                return UnsafePointer[mut=mut](
+                    to=self[Type].children[Self]()
+                ).origin_cast[origin = __origin_of(self)]()[]
+
+        return UnsafePointer[mut=mut](to=List[Self]()).origin_cast[
             origin = __origin_of(self)
         ]()[]

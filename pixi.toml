@@ -24,6 +24,7 @@ pre-commit = ">=4.2.0,<5"
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 GEM_HOME="$HOME/.local/share/gem"
 PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/share/gem/bin:${PATH}"
+C_BINDER_INCLUDES = "-I firehose -I EmberJson"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -47,18 +48,18 @@ clone_firehose = { cmd = [
     "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
 ]}
 
-########################### EmberJson Configuration ############################
+########################### EmberJson Configuration ###########################
 clone_emberjson = { cmd = [
     "bash", "-c", 
     "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
 ]}
 
-######################### Pre-commit Configuration ##########################
+########################## Pre-commit Configuration ###########################
 install_pre_commit_hooks = { cmd = [
     "pre-commit", "install"
 ], outputs = [".git/hooks/pre-commit"]}
 
-######################### Documentation Configuration ##########################
+######################### Documentation Configuration #########################
 
 build_jekyll = { cmd = [
     "gem", "install", "jekyll", "bundler", "--user"
@@ -77,11 +78,11 @@ build_gems = { cmd = [
 
 build_mojo_docs_json = { cmd = [
     "mkdir", "-p", "docs/.jekyll-cache", "&&",
-    "pixi", "run", "mojo", "doc", "-o", "docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "-I", "firehose", "-I", "EmberJson"
+    "pixi", "run", "mojo", "doc", "-o", "docs/.jekyll-cache/c_binder_docs.json", "c_binder_mojo", "$C_BINDER_INCLUDES"
 ]}
 
 build_mojo_docs = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "firehose", "-I", "EmberJson", "docs_entrypoint.mojo"
+    "pixi", "run", "mojo", "run", "$C_BINDER_INCLUDES", "docs_entrypoint.mojo"
 ], depends-on = [ "build_mojo_docs_json" ]}
 
 build_jekyll_site = { cmd = [
@@ -93,7 +94,7 @@ build_docs = { cmd = [
 ], depends-on = [ "configure", "build_blank_docs", "build_gems", "build_jekyll_site" ]}
 
 
-######################### Core API ############################################
+############################### Core API ######################################
 # NOTE: If we want to use the stdlib, we need to run the update_stdlib during configure to make dev work convenient.
 # pixi supports overriding the default task, but then the user gets prompted on which task they are to run every time.
 configure = { cmd = [
@@ -102,11 +103,15 @@ configure = { cmd = [
 ], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
 
 generate_example_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "-I", "firehose", "-I", "EmberJson", "example_binding_gen.mojo"
-], depends-on = [ "configure" ]}
+    "mojo", "run", "-I", ".", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}"
+], depends-on = [ 
+    "configure" 
+], args = [
+    { arg = "input_header_path" }
+]}
 
 package = { cmd = [
-    "mojo", "package", "-I", "firehose", "-I", "EmberJson", "c_binder_mojo"
+    "mojo", "package", "$C_BINDER_INCLUDES", "c_binder_mojo"
 ], depends-on = [ "configure" ]}
 
 format = { cmd = [
@@ -117,17 +122,15 @@ docs = { cmd = [
     "cd", "docs", "&&", "bundle", "exec", "jekyll", "serve", "--livereload"
 ], depends-on = [ "build_docs" ]}
 
-######################### Git Ops #############################
-push = { cmd = [
-    "git", "push", "--force-with-lease"
-]}
+############################ Git Ops ##########################################
+push = "git push --force-with-lease"
 
 i_rebase = { cmd = [
     "git", "rebase", "-i", "HEAD~{{ n_commits}}"
 ], args = [{ arg = "n_commits", default = "1" }]}
 
 
-######################### Testing Configuration ###############################
+########################## Testing Configuration ##############################
 # Build the c bindings.
 build_test_c_project_bindings_simple_type_defs = { cmd = [
     "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/simple_type_defs.h"
@@ -153,16 +156,16 @@ build_test_c_project_bindings = { depends-on = [
 ]}
 
 test = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "-I", ".", "-I", "firehose", "-I", "EmberJson"
+    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "$C_BINDER_INCLUDES"
 ]}
 
 test_test_stdlib_ext = { cmd = [
     "pixi", "run", "test", "tests/test_stdlib_ext.mojo"
-], depends-on = [  ]}
+]}
 
 test_test_typing = { cmd = [
     "pixi", "run", "test", "tests/test_typing.mojo"
-], depends-on = [  ]}
+]}
 
 test_all = { depends-on = [ 
     "package",

@@ -26,7 +26,7 @@ fn generate_bindings(
 ) raises -> AstNode:
     logger.info("Outputing binded module to: " + String(output_path))
 
-    var module_name = input_header_path.path.split("/")[-1].split(".")[0]
+    var module_name = input_header_path.name().split(".")[0]
 
     # Path to the test header file
     var test_file_path = input_header_path
@@ -83,7 +83,7 @@ fn main() raises:
 
     var so_file_path: Path
     so_file_path = output_dir / (
-        "lib" + input_header_path.path.split("/")[-1].split(".")[0] + ".so"
+        "lib" + input_header_path.name().split(".")[0] + ".so"
     )
 
     if not so_file_path.exists():
@@ -104,18 +104,16 @@ fn main() raises:
     )
     print("Done generating bindings")
 
-    var handler_name = String(
-        input_header_path.path.split("/")[-1].split(".")[0]
-    )
+    var header_name = String(input_header_path.name().split(".")[0])
     var output_file_path = output_dir / (
-        input_header_path.path.split("/")[-1].split(".")[0] + ".mojo"
+        input_header_path.name().split(".")[0] + ".mojo"
     )
 
     append_to_mojo_file(
         root_node,
         output_file_path,
         so_file_path,
-        handler_name,
+        header_name,
         include_only_prefixes=List[String](),
     )
 

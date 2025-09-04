@@ -28,6 +28,7 @@ struct ElaboratedTypeNode(AstNodeLike):
             print("Error creating ElaboratedTypeNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         var s = String()
         for child in self.children_:
             s += child.to_string(just_code)

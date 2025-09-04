@@ -63,6 +63,7 @@ struct RecordTypeNode(AstNodeLike):
             print("Error creating RecordTypeNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         var s = String()
         # var indent = "\t" * self.level
         # We do not indent since this is part of more complex types.

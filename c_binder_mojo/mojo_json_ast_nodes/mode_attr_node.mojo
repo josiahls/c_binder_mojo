@@ -20,6 +20,7 @@ struct ModeAttrNode(AstNodeLike):
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         # NOTE: This is noop for now, however we need to change this to
         # surface unhandled properties in c just so we are aware of them.
         return ""

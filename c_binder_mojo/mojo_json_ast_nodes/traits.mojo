@@ -1,9 +1,12 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object
+from emberjson import Object, to_string
 
 # First Party Modules
+
+
+alias VERBOSE: Bool = False
 
 
 trait AstNodeLike(ExplicitlyCopyable & Copyable & Movable):
@@ -22,12 +25,26 @@ trait AstNodeLike(ExplicitlyCopyable & Copyable & Movable):
     fn create_from_json_object(
         read json_object: Object, read level: Int
     ) raises -> Self:
-        return Self(json_object, level)
+        @parameter
+        if VERBOSE:
+            print("creating " + String(Self.__name__) + " from json object")
+        obj = Self(json_object, level)
+
+        @parameter
+        if VERBOSE:
+            print("created " + String(Self.__name__) + " from json object: ")
+        return obj
 
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"
 
+    fn _to_string_hook(self):
+        @parameter
+        if VERBOSE:
+            print("to_string hook for " + String(Self.__name__))
+
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         return self.signature()
 
     fn children[

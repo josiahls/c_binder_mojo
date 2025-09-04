@@ -31,6 +31,7 @@ struct BuiltinTypeNode(AstNodeLike):
             print("Error creating BuiltinTypeNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         var s = String()
         var dtype = TypeMapper.convert_c_type_to_mojo_type(self.dtype)
         # Builtin doesn't indent since it is typically composed with large types.

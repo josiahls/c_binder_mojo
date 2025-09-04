@@ -30,6 +30,7 @@ struct PointerTypeNode(AstNodeLike):
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         var dtype = String()
         # NOTE: We don't indent since this is typically part of a more complex type.
         for child in self.children_:

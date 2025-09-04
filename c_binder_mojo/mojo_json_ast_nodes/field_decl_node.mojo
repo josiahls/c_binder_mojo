@@ -19,6 +19,7 @@ struct FieldDeclNode(AstNodeLike):
     var type: String
     var desugared_type: String
     var is_union: Bool
+    var is_anonomous_type: Bool
     var is_struct: Bool
 
     fn __init__(out self, object: Object, level: Int):
@@ -29,6 +30,7 @@ struct FieldDeclNode(AstNodeLike):
         self.desugared_type = ""
         self.is_union = False
         self.is_struct = False
+        self.is_anonomous_type = False
 
         try:
             if "name" in object:
@@ -41,10 +43,15 @@ struct FieldDeclNode(AstNodeLike):
                         self.is_union = True
                     if self.type.startswith("struct "):
                         self.is_struct = True
+                    if "anonymous at" in self.type:
+                        self.is_anonomous_type = True
                 if "desugaredQualType" in type_object:
                     self.desugared_type = type_object[
                         "desugaredQualType"
                     ].string()
+
+                    if "anonymous at" in self.desugared_type:
+                        self.is_anonomous_type = True
                 # else:
                 #     print("Error creating FieldDeclNode: ", to_string(type_object))
         except e:

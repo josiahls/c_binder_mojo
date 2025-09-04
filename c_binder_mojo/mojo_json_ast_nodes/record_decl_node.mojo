@@ -109,16 +109,26 @@ struct RecordDeclNode(AstNodeLike):
                         enum_type_queue.append(node[EnumDeclNode].name)
                     elif node.isa[FieldDeclNode]():
                         self.has_body = True
-                        if node[FieldDeclNode].is_union:
+                        if (
+                            node[FieldDeclNode].is_union
+                            and node[FieldDeclNode].is_anonomous_type
+                        ):
                             anonomous_record_increment += 1
                             node[
                                 FieldDeclNode
                             ].name = "union_placeholder_" + String(
                                 anonomous_record_increment
                             )
-                            node[
-                                FieldDeclNode
-                            ].desugared_type = struct_type_queue.pop()
+                            if len(struct_type_queue) == 0:
+                                print(
+                                    "FieldDeclNode has struct type queue for"
+                                    " unions is empty"
+                                )
+                            else:
+                                node[
+                                    FieldDeclNode
+                                ].desugared_type = struct_type_queue.pop()
+
                         elif struct_type_queue:
                             var desugared_type = struct_type_queue.pop()
                             node[FieldDeclNode].desugared_type = desugared_type
@@ -154,6 +164,7 @@ struct RecordDeclNode(AstNodeLike):
                 print("Error creating RecordDeclNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         var s = String()
         var indent = "\t" * 1  # structs must not be indented.
         if self.tag_used == "union":

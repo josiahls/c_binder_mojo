@@ -35,6 +35,7 @@ struct FullCommentNode(AstNodeLike):
             print("Error creating FullCommentNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
+        self._to_string_hook()
         var s: String = ""
         var indent: String = "\t" * self.level
         if not just_code:

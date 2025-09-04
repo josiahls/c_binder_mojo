@@ -12,7 +12,7 @@
 # ===----------------------------------------------------------------------=== #
 from os import abort
 from sys.intrinsics import _type_is_eq
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
+from c_binder_mojo.ast.traits import AstNodeLike
 
 
 struct Variant[*Ts: AstNodeLike](Copyable, ExplicitlyCopyable, Movable):

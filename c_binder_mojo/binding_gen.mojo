@@ -10,7 +10,7 @@ from firehose.logging import Logger, set_global_logger_settings
 
 # First Party Modules
 from c_binder_mojo.ast_parser import AstParser
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.nodes import AstNode
 
 
 fn generate_bindings(

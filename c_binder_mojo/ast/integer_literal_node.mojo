@@ -4,35 +4,33 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
 
 
-struct FullCommentNode(AstNodeLike):
-    alias __name__ = "FullComment"
+struct IntegerLiteralNode(AstNodeLike):
+    alias __name__ = "IntegerLiteral"
 
+    var value: String
     var children_: List[AstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
-        # NOTE: FullCommentNode's are typically children of an assicated node.
-        # These should be on the same level as the associated node.
         self.level = level
-        if self.level > 0:
-            self.level = self.level - 1
         self.children_ = List[AstNode]()
+        self.value = ""
         try:
-            if "inner" in object:
-                for inner_object in object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_from_json_object(
-                            # NOTE: level is not a concept in this node,
-                            inner_object.object(),
-                            self.level,
-                        )
-                    )
+            if "value" in object:
+                self.value = object["value"].string()
         except e:
-            print("Error creating FullCommentNode: ", e)
+            print("Error creating IntegerLiteralNode: ", e)
+
+    fn get_value(self) -> Optional[Int]:
+        try:
+            return Int(self.value)
+        except e:
+            print("Error getting value from IntegerLiteralNode: ", e)
+            return None
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

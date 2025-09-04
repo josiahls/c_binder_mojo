@@ -4,39 +4,41 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.typing import TypeMapper
 
 
-struct EnumTypeNode(AstNodeLike):
-    alias __name__ = "EnumType"
+struct PointerTypeNode(AstNodeLike):
+    alias __name__ = "PointerType"
 
-    var name: String
     var children_: List[AstNode]
-    var level: Int
 
     fn __init__(out self, object: Object, level: Int):
-        self.level = level
-        self.name = ""
         self.children_ = List[AstNode]()
+
         try:
-            if "type" in object:
-                type_object = object["type"].object()
-                if "qualType" in type_object:
-                    name = type_object["qualType"].string()
-                    self.name = String(name.removeprefix("enum "))
-                if "decl" in type_object:
+            if "inner" in object:
+                for child in object["inner"].array():
                     self.children_.append(
                         AstNode.accept_from_json_object(
-                            type_object["decl"].object(), level + 1
+                            child.object(), level + 1
                         )
                     )
         except e:
-            print("Error creating EnumTypeNode: ", e)
+            print("Error creating PointerTypeNode: ", e)
 
+    @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
-        return self.name
+        var dtype = String()
+        # NOTE: We don't indent since this is typically part of a more complex type.
+        for child in self.children_:
+            dtype += child.to_string(just_code)
+
+        # NOTE: decomposition of child types, the * is from right to left.
+        dtype += " *"
+        return TypeMapper.convert_c_type_to_mojo_type(dtype)
 
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant

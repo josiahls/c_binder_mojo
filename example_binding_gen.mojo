@@ -12,7 +12,7 @@ from c_binder_mojo.ast_parser import AstParser
 
 from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
 
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.binding_gen import generate_bindings
 
 

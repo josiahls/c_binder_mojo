@@ -5,10 +5,10 @@ from sys.ffi import _Global
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
 
-# from c_binder_mojo.mojo_json_ast_nodes.record_decl_node import (
+# from c_binder_mojo.ast.record_decl_node import (
 #     get_global_record_decl_node_queue,
 # )
 

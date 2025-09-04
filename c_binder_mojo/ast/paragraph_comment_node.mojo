@@ -4,42 +4,40 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
 
 
-struct TextCommentNode(AstNodeLike):
-    alias __name__ = "TextComment"
+struct ParagraphCommentNode(AstNodeLike):
+    alias __name__ = "ParagraphComment"
 
-    var text: String
     var children_: List[AstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.children_ = List[AstNode]()
-        self.text = ""
         try:
             if "inner" in object:
                 for inner_object in object["inner"].array():
                     self.children_.append(
                         AstNode.accept_from_json_object(
-                            inner_object.object(), level + 1
+                            # NOTE: level is not a concept in this node,
+                            inner_object.object(),
+                            level,
                         )
                     )
 
-            if "text" in object:
-                self.text = object["text"].string()
         except e:
-            print("Error creating TextCommentNode: ", e)
+            print("Error creating ParagraphCommentNode: ", e)
 
+    @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
         var s: String = ""
         var indent: String = "\t" * self.level
         if not just_code:
             s += indent + self.signature() + "\n"
-            s += indent + "# " + self.text + "\n"
         for child in self.children_:
             s += child.to_string(just_code)
         return s

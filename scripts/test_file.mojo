@@ -3,7 +3,7 @@ from sys.intrinsics import _type_is_eq
 from memory import ArcPointer
 
 
-# from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
+# from c_binder_mojo.ast.traits import AstNodeLike
 
 
 trait AstNodeLike(ExplicitlyCopyable & Copyable & Movable):

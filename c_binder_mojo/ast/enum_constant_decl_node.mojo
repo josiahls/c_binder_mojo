@@ -4,15 +4,15 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
-from c_binder_mojo.mojo_json_ast_nodes.integer_literal_node import (
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.integer_literal_node import (
     IntegerLiteralNode,
 )
-from c_binder_mojo.mojo_json_ast_nodes.binary_operator_node import (
+from c_binder_mojo.ast.binary_operator_node import (
     BinaryOperatorNode,
 )
-from c_binder_mojo.mojo_json_ast_nodes.constant_expr_node import (
+from c_binder_mojo.ast.constant_expr_node import (
     ConstantExprNode,
 )
 

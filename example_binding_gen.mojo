@@ -8,12 +8,10 @@ import sys
 from firehose.logging import Logger, set_global_logger_settings
 
 # First Party Modules
-from c_binder_mojo.ast_parser import AstParser
-
-from c_binder_mojo.lib_gen.lib_gen import append_to_mojo_file
-
+from c_binder_mojo.binding_tools.ast_parser import AstParser
+from c_binder_mojo.binding_tools.lib_gen import append_to_mojo_file
+from c_binder_mojo.binding_tools.binding_gen import generate_bindings
 from c_binder_mojo.ast.nodes import AstNode
-from c_binder_mojo.binding_gen import generate_bindings
 
 
 fn main() raises:

@@ -1,10 +1,10 @@
 from pathlib import Path
 
-from c_binder_mojo.mojo_json_ast_nodes.function_decl_node import (
+from c_binder_mojo.ast.function_decl_node import (
     FunctionDeclNode,
 )
-from c_binder_mojo.mojo_json_ast_nodes.typedef_decl_node import TypedefDeclNode
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.typedef_decl_node import TypedefDeclNode
+from c_binder_mojo.ast.nodes import AstNode
 
 
 fn _get_so_lib_path_function() -> String:

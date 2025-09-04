@@ -4,9 +4,9 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
-from c_binder_mojo.mojo_json_ast_nodes.enum_constant_decl_node import (
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.enum_constant_decl_node import (
     EnumConstantDeclNode,
 )
 

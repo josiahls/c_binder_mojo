@@ -10,8 +10,8 @@ from firehose.logging import Logger, set_global_logger_settings
 from emberjson import Object, to_string
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes import AstNodeVariant
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
+from c_binder_mojo.ast import AstNodeVariant
+from c_binder_mojo.ast.traits import AstNodeLike
 
 
 struct AstNode(Copyable & Movable):

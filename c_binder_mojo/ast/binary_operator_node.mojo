@@ -4,34 +4,27 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
 
 
-struct ParagraphCommentNode(AstNodeLike):
-    alias __name__ = "ParagraphComment"
+struct BinaryOperatorNode(AstNodeLike):
+    alias __name__ = "BinaryOperator"
 
+    var opcode: String
     var children_: List[AstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.children_ = List[AstNode]()
+        self.opcode = ""
         try:
-            if "inner" in object:
-                for inner_object in object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_from_json_object(
-                            # NOTE: level is not a concept in this node,
-                            inner_object.object(),
-                            level,
-                        )
-                    )
-
+            if "opcode" in object:
+                self.opcode = object["opcode"].string()
         except e:
-            print("Error creating ParagraphCommentNode: ", e)
+            print("Error creating BinaryOperatorNode: ", e)
 
-    @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
         var s: String = ""
@@ -41,6 +34,9 @@ struct ParagraphCommentNode(AstNodeLike):
         for child in self.children_:
             s += child.to_string(just_code)
         return s
+
+    fn signature(self) -> String:
+        return "# Node: " + self.__name__ + "(" + self.opcode + ")"
 
     fn children[
         T: ExplicitlyCopyable & Movable = AstNodeVariant

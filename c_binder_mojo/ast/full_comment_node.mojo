@@ -4,42 +4,44 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
 
 
-struct QualTypeNode(AstNodeLike):
-    alias __name__ = "QualType"
-
-    var level: Int
-    var qualifiers: String
+struct FullCommentNode(AstNodeLike):
+    alias __name__ = "FullComment"
 
     var children_: List[AstNode]
+    var level: Int
 
     fn __init__(out self, object: Object, level: Int):
+        # NOTE: FullCommentNode's are typically children of an assicated node.
+        # These should be on the same level as the associated node.
         self.level = level
-        self.qualifiers = ""
-        self.children_ = []
-
+        if self.level > 0:
+            self.level = self.level - 1
+        self.children_ = List[AstNode]()
         try:
-            if "qualifiers" in object:
-                self.qualifiers = object["qualifiers"].string()
             if "inner" in object:
                 for inner_object in object["inner"].array():
                     self.children_.append(
                         AstNode.accept_from_json_object(
-                            inner_object.object(), level + 1
+                            # NOTE: level is not a concept in this node,
+                            inner_object.object(),
+                            self.level,
                         )
                     )
         except e:
-            print("Error creating QualTypeNode: ", e)
+            print("Error creating FullCommentNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
         var s: String = ""
+        var indent: String = "\t" * self.level
+        if not just_code:
+            s += indent + self.signature() + "\n"
         for child in self.children_:
             s += child.to_string(just_code)
-        s += " # QualType: " + self.qualifiers
         return s
 
     fn children[

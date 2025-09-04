@@ -4,33 +4,34 @@
 from emberjson import Object
 
 # First Party Modules
-from c_binder_mojo.mojo_json_ast_nodes.traits import AstNodeLike
-from c_binder_mojo.mojo_json_ast_nodes.nodes import AstNode
+from c_binder_mojo.ast.traits import AstNodeLike
+from c_binder_mojo.ast.nodes import AstNode
 
 
-struct IntegerLiteralNode(AstNodeLike):
-    alias __name__ = "IntegerLiteral"
+struct TextCommentNode(AstNodeLike):
+    alias __name__ = "TextComment"
 
-    var value: String
+    var text: String
     var children_: List[AstNode]
     var level: Int
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.children_ = List[AstNode]()
-        self.value = ""
+        self.text = ""
         try:
-            if "value" in object:
-                self.value = object["value"].string()
-        except e:
-            print("Error creating IntegerLiteralNode: ", e)
+            if "inner" in object:
+                for inner_object in object["inner"].array():
+                    self.children_.append(
+                        AstNode.accept_from_json_object(
+                            inner_object.object(), level + 1
+                        )
+                    )
 
-    fn get_value(self) -> Optional[Int]:
-        try:
-            return Int(self.value)
+            if "text" in object:
+                self.text = object["text"].string()
         except e:
-            print("Error getting value from IntegerLiteralNode: ", e)
-            return None
+            print("Error creating TextCommentNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
@@ -38,6 +39,7 @@ struct IntegerLiteralNode(AstNodeLike):
         var indent: String = "\t" * self.level
         if not just_code:
             s += indent + self.signature() + "\n"
+            s += indent + "# " + self.text + "\n"
         for child in self.children_:
             s += child.to_string(just_code)
         return s

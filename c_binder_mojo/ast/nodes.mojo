@@ -17,16 +17,28 @@ from c_binder_mojo.ast.traits import AstNodeLike
 struct AstNode(Copyable & Movable):
     alias __name__ = "AstNode"
     alias type = AstNodeVariant
-    var _impl: ArcPointer[Self.type]
+    var _impl: OpaquePointer
 
-    fn __init__(out self, node: Self.type):
-        self._impl = ArcPointer[Self.type](node)
+    fn __init__(out self, var node: Self.type):
+        # Allocate heap storage for the variant to ensure it persists
+        var heap_ptr = UnsafePointer[Self.type].alloc(1)
+        heap_ptr.init_pointee_move(node^)
+        self._impl = heap_ptr.bitcast[NoneType]()
+
+    fn __copyinit__(out self, other: Self):
+        # Deep copy: allocate new heap memory and copy the variant
+        if not other._impl:
+            self._impl = OpaquePointer()
+            return
+        var heap_ptr = UnsafePointer[Self.type].alloc(1)
+        heap_ptr.init_pointee_move(other._impl.bitcast[Self.type]()[].copy())
+        self._impl = heap_ptr.bitcast[NoneType]()
 
     fn isa[T: AnyType](self) -> Bool:
-        return self._impl[].isa[T]()
+        return self._impl.bitcast[Self.type]()[].isa[T]()
 
     fn __getitem__[T: AnyType](ref self) -> ref [self._impl[]] T:
-        return self._impl[][T]
+        return self._impl.bitcast[Self.type]()[][T]
 
     @always_inline("nodebug")
     fn name(self) -> String:
@@ -55,6 +67,7 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_from_json_object(json_object, level):
+                # NOTE: A copy happens here likely because create_from_json_object returns a Self instead of a ref Self
                 return Self(T.create_from_json_object(json_object, level))
         print(
             "WARNING: none of the nodes accepted the json_object: "

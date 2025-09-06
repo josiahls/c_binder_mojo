@@ -1,0 +1,31 @@
+[project]
+authors = ["Test Author <test@example.com>"]
+channels = [
+    "https://conda.modular.com/max-nightly", 
+    "https://repo.prefix.dev/modular-community", 
+    "conda-forge"
+]
+name = "circular_import_test"
+platforms = ["linux-64", "linux-aarch64"]
+version = "0.1.0"
+license = "Apache-2.0"
+
+[dependencies]
+mojo = ">=25.6.0.dev2025090305"
+
+[tasks]
+# Test if the circular import module can be packaged
+package = { cmd = [
+    "mojo", "package", "circular_import_test"
+]}
+
+# Test if the circular import module can be run
+test_run = { cmd = [
+    "mojo", "run", "test_circular_imports.mojo"
+]}
+
+# Combined test - package and run
+test_all = { depends-on = [ 
+    "package",
+    "test_run"
+]}

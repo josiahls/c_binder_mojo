@@ -132,6 +132,10 @@ i_rebase = { cmd = [
 
 ########################## Testing Configuration ##############################
 # Build the c bindings.
+build_test_c_project_bindings_sanity = { cmd = [
+    "pixi", "run", "mojo", "run", "$C_BINDER_INCLUDES", "tests/test_simple_nodes.mojo"
+]}
+
 build_test_c_project_bindings_simple_type_defs = { cmd = [
     "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/simple_type_defs.h"
 ]}

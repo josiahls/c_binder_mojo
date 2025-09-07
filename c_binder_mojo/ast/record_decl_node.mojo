@@ -136,7 +136,7 @@ struct RecordDeclNode(AstNodeLike):
                             var desugared_type = enum_type_queue.pop()
                             node[FieldDeclNode].desugared_type = desugared_type
 
-                    self.children_.append(node)
+                    self.children_.append(node^)
         except e:
             print("Error creating RecordDeclNode: ", e)
 

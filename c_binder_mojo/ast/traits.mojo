@@ -28,12 +28,12 @@ trait AstNodeLike(Copyable & Movable):
         @parameter
         if VERBOSE:
             print("creating " + String(Self.__name__) + " from json object")
-        ref obj = Self(json_object, level)
+        var obj = Self(json_object, level)
 
         @parameter
         if VERBOSE:
             print("created " + String(Self.__name__) + " from json object: ")
-        return obj
+        return obj^
 
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"

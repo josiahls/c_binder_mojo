@@ -46,7 +46,7 @@ struct EnumConstantDeclNode(AstNodeLike):
                     #     self.value = node[BinaryOperatorNode].get_value()
                     elif node.isa[ConstantExprNode]():
                         self.value = node[ConstantExprNode].get_value()
-                    self.children_.append(node)
+                    self.children_.append(node^)
             # else:
             #     print("This enum constant has no children: ", self.name)
         except e:

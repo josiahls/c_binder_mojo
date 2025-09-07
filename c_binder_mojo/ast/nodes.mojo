@@ -17,6 +17,8 @@ from c_binder_mojo.ast.traits import AstNodeLike
 struct AstNode(Copyable & Movable):
     alias __name__ = "AstNode"
     alias type = AstNodeVariant
+    # FIXME: Ideally we shouldn't be doing c `void*` generics, however due to https://github.com/modular/modular/issues/5287
+    # We need to keep this for now to avoid recursive type compilation errors related to Variants.
     var _impl: OpaquePointer
 
     fn __init__(out self, var node: Self.type):

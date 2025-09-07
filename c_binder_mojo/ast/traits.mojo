@@ -24,7 +24,7 @@ trait AstNodeLike(Copyable & Movable):
     @staticmethod
     fn create_from_json_object(
         read json_object: Object, read level: Int
-    ) raises -> Self:  # TODO: This should be ref Self
+    ) raises -> Self:
         @parameter
         if VERBOSE:
             print("creating " + String(Self.__name__) + " from json object")

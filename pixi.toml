@@ -50,9 +50,10 @@ clone_firehose = { cmd = [
 
 ########################### EmberJson Configuration ###########################
 clone_emberjson = { cmd = [
-    "bash", "-c", 
-    "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
+    "bash", "-c",
+    "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git && cd EmberJson && git checkout fix/deprecated-explicitly-copyable-mojo-bump; else echo 'EmberJson directory already exists.'; fi"
 ]}
+
 
 ########################## Pre-commit Configuration ###########################
 install_pre_commit_hooks = { cmd = [

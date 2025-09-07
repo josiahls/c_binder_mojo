@@ -45,7 +45,7 @@ struct FullCommentNode(AstNodeLike):
         return s
 
     fn children[
-        T: ExplicitlyCopyable & Movable = AstNodeVariant
+        T: Copyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:
         return (
             UnsafePointer(to=self.children_)

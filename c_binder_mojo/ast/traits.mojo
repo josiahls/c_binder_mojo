@@ -9,7 +9,7 @@ from emberjson import Object, to_string
 alias VERBOSE: Bool = False
 
 
-trait AstNodeLike(ExplicitlyCopyable & Copyable & Movable):
+trait AstNodeLike(Copyable & Movable):
     alias __name__: String
 
     fn __init__(out self, json_object: Object, level: Int):
@@ -47,7 +47,5 @@ trait AstNodeLike(ExplicitlyCopyable & Copyable & Movable):
         self._to_string_hook()
         return self.signature()
 
-    fn children[
-        T: ExplicitlyCopyable & Movable
-    ](ref self) -> ref [self] List[T]:
+    fn children[T: Copyable & Movable](ref self) -> ref [self] List[T]:
         pass

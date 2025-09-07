@@ -130,8 +130,8 @@ fn _get_function_external_declarations(
                     continue
             external_function = ExternalFunctionBuilder(lib_name, name)
             if external_function.mojo_name not in function_names:
-                external_declarations.append(external_function)
                 function_names.append(external_function.mojo_name)
+                external_declarations.append(external_function^)
         # elif node.node.isa(TypedefDeclNode):
         #     external_declarations.append(String("alias {0} = {1}".format(node.node.name(), node.node.type())))
     return external_declarations

@@ -15,7 +15,7 @@ from sys.intrinsics import _type_is_eq
 from c_binder_mojo.ast.traits import AstNodeLike
 
 
-struct Variant[*Ts: AstNodeLike](Copyable, ExplicitlyCopyable, Movable):
+struct Variant[*Ts: AstNodeLike](Copyable, Copyable, Movable):
     # Fields
     alias _sentinel: Int = -1
     alias _mlir_type = __mlir_type[

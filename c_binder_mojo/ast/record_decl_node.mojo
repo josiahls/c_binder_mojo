@@ -187,11 +187,7 @@ struct RecordDeclNode(AstNodeLike):
             # structs must not be indented.
             # TODO(josiahls): Is there ever a case where we can't do this? Like struct size or something?
             # s += '@register_passable("trivial")\n'
-            s += (
-                "struct "
-                + self.record_name
-                + "(ExplicitlyCopyable & Copyable & Movable):\n"
-            )
+            s += "struct " + self.record_name + "(Copyable & Movable):\n"
 
             for child in self.children_:
                 s += child.to_string(just_code) + "\n"
@@ -204,7 +200,7 @@ struct RecordDeclNode(AstNodeLike):
         return s
 
     fn children[
-        T: ExplicitlyCopyable & Movable = AstNodeVariant
+        T: Copyable & Movable = AstNodeVariant
     ](ref self: Self) -> ref [self] List[T]:
         return (
             UnsafePointer(to=self.children_)

@@ -4,7 +4,7 @@ from utils import StaticTuple
 
 
 @always_inline("nodebug")
-fn build_union_mlir_type[*Ts: ExplicitlyCopyable & Movable]() -> Int:
+fn build_union_mlir_type[*Ts: Copyable & Movable]() -> Int:
     var max_size: Int = 0
 
     @parameter
@@ -17,9 +17,7 @@ fn build_union_mlir_type[*Ts: ExplicitlyCopyable & Movable]() -> Int:
 
 # TODO(josiahls): We absolutely can't do it this way as a long term thing.
 @register_passable("trivial")
-struct C_Union[*Ts: ExplicitlyCopyable & Movable](
-    Copyable, ExplicitlyCopyable, Movable
-):
+struct C_Union[*Ts: Copyable & Movable](Copyable, Copyable, Movable):
     """
     A union that can hold a runtime-variant value from a set of predefined
     types.

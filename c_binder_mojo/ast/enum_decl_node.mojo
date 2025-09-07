@@ -60,7 +60,7 @@ struct EnumDeclNode(AstNodeLike):
                             max_value += 1
                             node[EnumConstantDeclNode].set_value(max_value)
 
-                    self.children_.append(node)
+                    self.children_.append(node^)
         except e:
             print("Error creating EnumDeclNode: ", e)
 

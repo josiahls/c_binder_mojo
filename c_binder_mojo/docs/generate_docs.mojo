@@ -343,7 +343,7 @@ fn doc_dispatch(parent_path: Path, uri_path: String, object: Object) raises:
 fn generate_docs(json_path: Path) raises:
     print("Generating docs from " + String(json_path))
     var result = json_path.read_text()
-    var root_object = parse(result).object()["decl"].object()
+    ref root_object = parse(result).object()["decl"].object()
 
     for module in root_object["modules"].array():
         doc_dispatch(

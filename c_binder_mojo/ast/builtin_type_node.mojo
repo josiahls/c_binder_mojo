@@ -22,7 +22,7 @@ struct BuiltinTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
         try:
             if "type" in object:
-                var type_object = object["type"].object()
+                ref type_object = object["type"].object()
                 if "qualType" in type_object:
                     self.dtype = type_object["qualType"].string()
                 else:

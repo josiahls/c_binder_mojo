@@ -117,7 +117,7 @@ struct TranslationUnitDeclNode(AstNodeLike):
                 )
                 move_record_decls_to_top_level(self.children_, node)
                 move_enum_decls_to_top_level(self.children_, node)
-                self.children_.append(node)
+                self.children_.append(node^)
 
             prune_repeated_decls(self.children_)
         except e:

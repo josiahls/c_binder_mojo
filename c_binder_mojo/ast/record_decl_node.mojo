@@ -25,7 +25,7 @@ fn _init_global_anonomous_record_decl_type_registry() -> (
 
 
 @always_inline
-fn get_global_anonomous_record_decl_type_registry() -> (
+fn get_global_anonomous_record_decl_type_registry() raises -> (
     UnsafePointer[_GlobalAnonomousRecordDeclTypeRegistry]
 ):
     return GLOBAL_ANONOMOUS_RECORD_DECL_TYPE_REGISTRY.get_or_create_ptr()
@@ -33,7 +33,6 @@ fn get_global_anonomous_record_decl_type_registry() -> (
 
 alias GLOBAL_ANONOMOUS_RECORD_DECL_TYPE_REGISTRY = _Global[
     "GLOBAL_ANONOMOUS_RECORD_DECL_TYPE_REGISTRY",
-    _GlobalAnonomousRecordDeclTypeRegistry,
     _init_global_anonomous_record_decl_type_registry,
 ]
 
@@ -141,9 +140,8 @@ struct RecordDeclNode(AstNodeLike):
             print("Error creating RecordDeclNode: ", e)
 
         if self.record_name == "":
-            registry = get_global_anonomous_record_decl_type_registry()
-
             try:
+                registry = get_global_anonomous_record_decl_type_registry()
                 var record_id = 0
                 if self.mem_address not in registry[].record_decl_type_registry:
                     max_num = 0

@@ -45,12 +45,12 @@ fn _init_global_type_registry() -> _GlobalTypeRegistry:
 
 
 @always_inline
-fn get_global_type_registry() -> UnsafePointer[_GlobalTypeRegistry]:
+fn get_global_type_registry() raises -> UnsafePointer[_GlobalTypeRegistry]:
     return GLOBAL_TYPE_REGISTRY.get_or_create_ptr()
 
 
 alias GLOBAL_TYPE_REGISTRY = _Global[
-    "GLOBAL_TYPE_REGISTRY", _GlobalTypeRegistry, _init_global_type_registry
+    "GLOBAL_TYPE_REGISTRY", _init_global_type_registry
 ]
 
 

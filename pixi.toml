@@ -51,7 +51,7 @@ clone_firehose = { cmd = [
 ########################### EmberJson Configuration ###########################
 clone_emberjson = { cmd = [
     "bash", "-c",
-    "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
+    "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git && cd EmberJson && git checkout fix/array-implicit-copy; else echo 'EmberJson directory already exists.'; fi"
 ]}
 
 

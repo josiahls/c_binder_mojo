@@ -134,7 +134,7 @@ fn _get_function_external_declarations(
                 external_declarations.append(external_function^)
         # elif node.node.isa(TypedefDeclNode):
         #     external_declarations.append(String("alias {0} = {1}".format(node.node.name(), node.node.type())))
-    return external_declarations
+    return external_declarations^
 
 
 fn append_to_mojo_file(

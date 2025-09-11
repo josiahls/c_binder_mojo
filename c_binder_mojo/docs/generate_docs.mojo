@@ -59,7 +59,7 @@ struct DocFunction(Copyable & Movable):
                 )
                 for o in object["overloads"].array()
             ]
-        return Self(name=name, signature=signature, overloads=overloads)
+        return Self(name=name, signature=signature, overloads=overloads^)
 
     fn to_markdown(self) raises -> String:
         s: String = ""
@@ -179,9 +179,9 @@ struct DocStruct(Copyable & Movable):
             name=name,
             signature=signature,
             description=description,
-            aliases=aliases,
-            fields=fields,
-            functions=functions,
+            aliases=aliases^,
+            fields=fields^,
+            functions=functions^,
         )
 
     fn to_markdown(self) raises -> String:

@@ -6,6 +6,7 @@ import sys
 
 # Third Party Mojo Modules
 from firehose.logging import Logger, set_global_logger_settings
+from emberjson import to_string
 
 
 # First Party Modules
@@ -32,13 +33,18 @@ fn generate_bindings(
 
     # Tokenize the file
     var raw_ast: Optional[Path] = None
+    var modified_ast: Optional[Path] = None
     if debug_output:
         raw_ast = output_path / (module_name + "_raw_ast.json")
+        modified_ast = output_path / (module_name + "_modified_ast.json")
 
     var ast_parser = AstParser(verbose=debug_output)
     var json_value = ast_parser.parse(
         test_file_path, extra_args=extra_args, raw_ast=raw_ast
     )
+    AstNode.impute_json_object(json_value.object())
+    if modified_ast:
+        modified_ast[].write_text(to_string[pretty=True](json_value.object()))
     var root_node = AstNode.accept_from_json_object(
         json_value.object(), level=0
     )

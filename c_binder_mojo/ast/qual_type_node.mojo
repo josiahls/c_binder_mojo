@@ -39,7 +39,7 @@ struct QualTypeNode(AstNodeLike):
         var s: String = ""
         for child in self.children_:
             s += child.to_string(just_code)
-        s += " # QualType: " + self.qualifiers
+        # s += " # QualType: " + self.qualifiers
         return s
 
     fn children[

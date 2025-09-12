@@ -91,6 +91,7 @@ struct AstNode(Copyable & Movable):
             alias T = Self.type.Ts[i]
             if T.accept_from_json_object(json_object):
                 T.impute_json_object(json_object)
+                return  # Only call impute_json_object on the first matching type
 
     @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:

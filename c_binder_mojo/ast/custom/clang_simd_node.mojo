@@ -87,7 +87,7 @@ struct ClangSimdNode(AstNodeLike):
         var s = String()
         for child in self.children_:
             s += child.to_string(just_code)
-        return "SIMD[" + s + ".value, " + String(self.width) + "]"
+        return "SIMD[" + s + ".dtype, " + String(self.width) + "]"
 
     fn children[
         T: Copyable & Movable = AstNodeVariant

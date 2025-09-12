@@ -155,7 +155,7 @@ build_test_c_project_bindings_complex_unions = { cmd = [
 ]}
 
 build_test_c_project_bindings_complex_type_defs = { cmd = [
-    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_type_defs.h"
+    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_type_defs.h", "true"
 ]}
 
 build_test_c_project_bindings = { depends-on = [ 

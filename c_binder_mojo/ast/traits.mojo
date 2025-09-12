@@ -4,6 +4,7 @@
 from emberjson import Object, to_string
 
 # First Party Modules
+from c_binder_mojo.ast.nodes import AstNode
 
 
 alias VERBOSE: Bool = False
@@ -23,8 +24,7 @@ trait AstNodeLike(Copyable & Movable):
     fn impute_json_object(mut json_object: Object) raises:
         if "inner" in json_object:
             for ref inner_object in json_object["inner"].array():
-                Self.impute_json_object(inner_object.object())
-        return None
+                AstNode.impute_json_object(inner_object.object())
 
     @staticmethod
     fn create_from_json_object(

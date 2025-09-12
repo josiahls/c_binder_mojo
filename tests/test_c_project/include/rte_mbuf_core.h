@@ -15,6 +15,22 @@
 #include <stdalign.h>
 #include <stdint.h>
 
+// c_binder_note: Included since this is imported from one of the other headers.
+#include <limits.h>
+
+// c_binder_note: Copied from rte_stdatomic.h to keep everything in one file
+#include <stdatomic.h>
+#define RTE_ATOMIC(type) _Atomic(type)
+
+// c_binder_note: Copied from rte_build_config.h to keep everything in one file
+#define RTE_CACHE_LINE_SIZE 128
+
+// c_binder_note: Copied from rte_common.h to keep everything in one file
+#define __rte_cache_aligned __rte_aligned(RTE_CACHE_LINE_SIZE)
+#define __rte_aligned(a) __attribute__((__aligned__(a)))
+#define RTE_CACHE_LINE_MIN_SIZE 64
+
+
 // #include <rte_byteorder.h> // c_binder_note: Commented this out and any references to simplify the unit test
 // #include <rte_stdatomic.h>  // c_binder_note: Commented this out and any references to simplify the unit test
 

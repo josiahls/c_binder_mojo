@@ -104,11 +104,12 @@ configure = { cmd = [
 ], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
 
 generate_example_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}"
+    "mojo", "run", "-I", ".", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
 ], depends-on = [ 
     "configure" 
 ], args = [
-    { arg = "input_header_path" }
+    { arg = "input_header_path" },
+    { arg = "skip_so_file_and_module_bindings", default = "false" }
 ]}
 
 package = { cmd = [
@@ -135,6 +136,10 @@ i_rebase = { cmd = [
 # Build the c bindings.
 build_test_c_project_bindings_sanity = { cmd = [
     "pixi", "run", "mojo", "run", "$C_BINDER_INCLUDES", "tests/test_simple_nodes.mojo"
+]}
+
+build_test_c_project_bindings_rte_mbuf_core = { cmd = [
+    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/rte_mbuf_core.h", "true"
 ]}
 
 build_test_c_project_bindings_simple_type_defs = { cmd = [

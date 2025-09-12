@@ -13,18 +13,18 @@ struct PointerTypeNode(AstNodeLike):
     alias __name__ = "PointerType"
 
     var children_: List[AstNode]
+    var qualifiers: String
 
     fn __init__(out self, object: Object, level: Int):
         self.children_ = List[AstNode]()
-
+        self.qualifiers = ""
         try:
             if "inner" in object:
                 for child in object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_from_json_object(
-                            child.object(), level + 1
-                        )
-                    )
+                    node = AstNode.accept_from_json_object(child.object(), 0)
+                    if node.isa[QualTypeNode]():
+                        self.qualifiers = node[QualTypeNode].qualifiers
+                    self.children_.append(node^)
         except e:
             print("Error creating PointerTypeNode: ", e)
 
@@ -37,8 +37,11 @@ struct PointerTypeNode(AstNodeLike):
             dtype += child.to_string(just_code)
 
         # NOTE: decomposition of child types, the * is from right to left.
-        dtype += " *"
-        return TypeMapper.convert_c_type_to_mojo_type(dtype)
+        dtype = "UnsafePointer[" + dtype
+        if self.qualifiers == "const":
+            dtype += ", mut=False"
+        dtype += "]"
+        return dtype
 
     fn children[
         T: Copyable & Movable = AstNodeVariant

@@ -68,7 +68,7 @@ struct AstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept_from_json_object(json_object, level):
+            if T.accept_from_json_object(json_object):
                 # NOTE: A copy happens here likely because create_from_json_object returns a Self instead of a ref Self
                 return Self(T.create_from_json_object(json_object, level))
         print(
@@ -76,6 +76,22 @@ struct AstNode(Copyable & Movable):
             + String(json_object["kind"].string())
         )
         return Self(PlaceHolderNode.create_from_json_object(json_object, level))
+
+    @always_inline("nodebug")
+    @staticmethod
+    fn impute_json_object(mut json_object: Object) raises:
+        """
+        Iterates over each type in the variant at compile-time and calls impute_json_object.
+
+        Used for update the json ast with missing nodes or fleshing out the ast.
+        """
+
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if T.accept_from_json_object(json_object):
+                return T.impute_json_object(json_object)
+        return None
 
     @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:

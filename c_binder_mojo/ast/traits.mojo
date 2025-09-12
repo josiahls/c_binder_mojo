@@ -16,10 +16,15 @@ trait AstNodeLike(Copyable & Movable):
         pass
 
     @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
+    fn accept_from_json_object(read json_object: Object) raises -> Bool:
         return json_object["kind"].string() == Self.__name__
+
+    @staticmethod
+    fn impute_json_object(mut json_object: Object) raises:
+        if "inner" in json_object:
+            for ref inner_object in json_object["inner"].array():
+                Self.impute_json_object(inner_object.object())
+        return None
 
     @staticmethod
     fn create_from_json_object(

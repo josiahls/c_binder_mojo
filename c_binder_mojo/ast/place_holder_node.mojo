@@ -34,9 +34,7 @@ struct PlaceHolderNode(AstNodeLike):
                 print(to_string(object))
 
     @staticmethod
-    fn accept_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Bool:
+    fn accept_from_json_object(read json_object: Object) raises -> Bool:
         return True
 
     fn to_string(self, just_code: Bool) raises -> String:

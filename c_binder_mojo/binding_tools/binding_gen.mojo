@@ -16,7 +16,6 @@ from c_binder_mojo.ast.nodes import AstNode
 fn generate_bindings(
     input_header_path: Path,
     output_path: Path,
-    so_file_path: Path,
     mut logger: Logger,
     extra_args: String = "",
     debug_output: Bool = False,

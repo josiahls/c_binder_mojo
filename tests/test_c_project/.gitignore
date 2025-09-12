@@ -1,1 +1,10 @@
-build/
+build/*.txt
+build/CmakeFiles/
+build/*.json
+build/Make*
+build/*.tree
+build/*.so
+build/*.cmake*
+build/*.ast_entries
+build/*.raw*
+build/*.output

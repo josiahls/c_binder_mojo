@@ -19,6 +19,7 @@ from c_binder_mojo.ast.builtin_type_node import BuiltinTypeNode
 from c_binder_mojo.ast.record_type_node import RecordTypeNode
 from c_binder_mojo.ast.record_decl_node import RecordDeclNode
 from c_binder_mojo.ast.pointer_type_node import PointerTypeNode
+from c_binder_mojo.ast.constant_array_type_node import ConstantArrayTypeNode
 from c_binder_mojo.ast.elaborated_type_node import (
     ElaboratedTypeNode,
 )
@@ -62,6 +63,7 @@ alias AstNodeVariant = Variant[
     TypedefDeclNode,
     BuiltinTypeNode,
     RecordTypeNode,
+    ConstantArrayTypeNode,
     RecordDeclNode,
     PointerTypeNode,
     ElaboratedTypeNode,

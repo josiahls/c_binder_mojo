@@ -9,6 +9,35 @@ from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 
 
+# Can do `==` checking.
+alias DIRECT_TYPE_MAP: Dict[String, String] = {
+    "bool": "Bool",
+    "__SVBool_t": "Bool",
+    "void": "Void",
+    "char": "Int8",
+    "short": "Int16",
+    "int": "Int32",
+    "long": "ffi.c_long",
+    "long long": "ffi.c_long_long",
+    "long double": "Float64",
+    "float": "Float32",
+    "double": "Float64",
+}
+
+alias CONTAINS_TYPE_MAP: Dict[String, String] = {
+    "int8_t": "Int8",
+    "int16_t": "Int16",
+    "int32_t": "Int32",
+    "int64_t": "ffi.c_long",
+    "int128_t": "ffi.c_long_long",
+    "__int128": "ffi.c_long_long",
+    "bfloat16_t": "BFloat16",  # Check this before the other floats.
+    "float16_t": "Float16",
+    "float32_t": "Float32",
+    "float64_t": "Float64",
+}
+
+
 struct BuiltinTypeNode(AstNodeLike):
     alias __name__ = "BuiltinType"
 
@@ -32,11 +61,13 @@ struct BuiltinTypeNode(AstNodeLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
-        var s = String()
-        var dtype = TypeMapper.convert_c_type_to_mojo_type(self.dtype)
-        # Builtin doesn't indent since it is typically composed with large types.
-        s += dtype
-        return s
+        for dtype in DIRECT_TYPE_MAP:
+            if dtype == self.dtype:
+                return DIRECT_TYPE_MAP[dtype]
+        for item in CONTAINS_TYPE_MAP.items():
+            if item.key in self.dtype.lower():
+                return item.value.copy()
+        raise Error("BuiltinTypeNode: Unexpected dtype: " + self.dtype)
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "(" + self.dtype + ")"

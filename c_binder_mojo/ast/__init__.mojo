@@ -7,6 +7,7 @@ from c_binder_mojo.ast.variant import Variant
 
 # Custom Nodes
 from c_binder_mojo.ast.custom.sign_node import SignNode
+from c_binder_mojo.ast.custom.clang_simd_node import ClangSimdNode
 
 from c_binder_mojo.ast.translation_unit_decl_node import (
     TranslationUnitDeclNode,
@@ -56,6 +57,7 @@ alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
     # Custom nodes will have more advanced conditions.
     SignNode,
+    ClangSimdNode,
     # Native clang ast nodes.
     TypedefDeclNode,
     BuiltinTypeNode,

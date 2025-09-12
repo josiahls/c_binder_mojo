@@ -6,14 +6,13 @@ from emberjson import Object, to_string
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
-from c_binder_mojo.typing import TypeMapper
 
 
 # Can do `==` checking.
 alias DIRECT_TYPE_MAP: Dict[String, String] = {
     "bool": "Bool",
     "__SVBool_t": "Bool",
-    "void": "Void",
+    "void": "NoneType",
     "char": "Int8",
     "short": "Int16",
     "int": "Int32",

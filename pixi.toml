@@ -112,12 +112,26 @@ generate_example_bindings = { cmd = [
     { arg = "skip_so_file_and_module_bindings", default = "false" }
 ]}
 
+generate_example_bindings_debug = { cmd = [
+#    "gdb", "--args", "./example_binding_gen", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
+     "mojo", "debug", "-I", ".", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
+], depends-on = [ 
+    "configure" 
+], args = [
+    { arg = "input_header_path" },
+    { arg = "skip_so_file_and_module_bindings", default = "false" }
+]}
+
 package = { cmd = [
     "mojo", "package", "$C_BINDER_INCLUDES", "c_binder_mojo"
 ], depends-on = [ "configure" ]}
 
 format = { cmd = [
     "mojo", "format", "c_binder_mojo"
+]}
+
+build = { cmd = [
+    "mojo", "build", "-I", ".", "$C_BINDER_INCLUDES", "-g1", "example_binding_gen.mojo"
 ]}
 
 docs = { cmd = [

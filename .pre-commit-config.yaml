@@ -5,6 +5,7 @@ repos:
         name: mojo-format
         entry: pixi run format
         language: system
-        files: '\.(mojo|🔥)$'
+        files: '^(?!.*tests/test_c_project/build/).*\.(mojo|🔥)$'
+
         stages: [commit]
 

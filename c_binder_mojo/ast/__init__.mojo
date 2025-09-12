@@ -4,6 +4,10 @@
 
 # First Party Modules
 from c_binder_mojo.ast.variant import Variant
+
+# Custom Nodes
+from c_binder_mojo.ast.custom.sign_node import SignNode
+
 from c_binder_mojo.ast.translation_unit_decl_node import (
     TranslationUnitDeclNode,
 )
@@ -50,6 +54,9 @@ from c_binder_mojo.ast.indirect_field_decl_node import (
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
+    # Custom nodes will have more advanced conditions.
+    SignNode,
+    # Native clang ast nodes.
     TypedefDeclNode,
     BuiltinTypeNode,
     RecordTypeNode,

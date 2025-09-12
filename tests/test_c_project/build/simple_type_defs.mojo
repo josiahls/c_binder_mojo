@@ -8,78 +8,78 @@ from c_binder_mojo.stdlib_ext import C_Union
 from utils import StaticTuple
 
 # # Node: TranslationUnitDecl()
-alias __int128_t = Int128
-alias __uint128_t = UInt128
+alias __int128_t = # Node: Sign()
+alias __uint128_t = # Node: Sign()
 struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
 
-alias __SVInt8_t = Int8
-alias __SVInt16_t = Int16
-alias __SVInt32_t = Int32
-alias __SVInt64_t = Int64
-alias __SVUint8_t = UInt8
-alias __SVUint16_t = UInt16
-alias __SVUint32_t = UInt32
-alias __SVUint64_t = UInt64
-alias __SVFloat16_t = Float16
-alias __SVFloat32_t = Float32
-alias __SVFloat64_t = Float64
-alias __SVBFloat16_t = BFloat16
-alias __clang_svint8x2_t = UnsafePointer[Int8]
-alias __clang_svint16x2_t = UnsafePointer[Int16]
-alias __clang_svint32x2_t = UnsafePointer[Int32]
-alias __clang_svint64x2_t = UnsafePointer[Int64]
-alias __clang_svuint8x2_t = UnsafePointer[UInt8]
-alias __clang_svuint16x2_t = UnsafePointer[UInt16]
-alias __clang_svuint32x2_t = UnsafePointer[UInt32]
-alias __clang_svuint64x2_t = UnsafePointer[UInt64]
-alias __clang_svfloat16x2_t = UnsafePointer[Float16]
-alias __clang_svfloat32x2_t = UnsafePointer[Float32]
-alias __clang_svfloat64x2_t = UnsafePointer[Float64]
-alias __clang_svbfloat16x2_t = UnsafePointer[BFloat16]
-alias __clang_svint8x3_t = UnsafePointer[Int8]
-alias __clang_svint16x3_t = UnsafePointer[Int16]
-alias __clang_svint32x3_t = UnsafePointer[Int32]
-alias __clang_svint64x3_t = UnsafePointer[Int64]
-alias __clang_svuint8x3_t = UnsafePointer[UInt8]
-alias __clang_svuint16x3_t = UnsafePointer[UInt16]
-alias __clang_svuint32x3_t = UnsafePointer[UInt32]
-alias __clang_svuint64x3_t = UnsafePointer[UInt64]
-alias __clang_svfloat16x3_t = UnsafePointer[Float16]
-alias __clang_svfloat32x3_t = UnsafePointer[Float32]
-alias __clang_svfloat64x3_t = UnsafePointer[Float64]
-alias __clang_svbfloat16x3_t = UnsafePointer[BFloat16]
-alias __clang_svint8x4_t = UnsafePointer[Int8]
-alias __clang_svint16x4_t = UnsafePointer[Int16]
-alias __clang_svint32x4_t = UnsafePointer[Int32]
-alias __clang_svint64x4_t = UnsafePointer[Int64]
-alias __clang_svuint8x4_t = UnsafePointer[UInt8]
-alias __clang_svuint16x4_t = UnsafePointer[UInt16]
-alias __clang_svuint32x4_t = UnsafePointer[UInt32]
-alias __clang_svuint64x4_t = UnsafePointer[UInt64]
-alias __clang_svfloat16x4_t = UnsafePointer[Float16]
-alias __clang_svfloat32x4_t = UnsafePointer[Float32]
-alias __clang_svfloat64x4_t = UnsafePointer[Float64]
-alias __clang_svbfloat16x4_t = UnsafePointer[BFloat16]
-alias __SVBool_t = Bool
-alias __builtin_ms_va_list = UnsafePointer[Int8]
+alias __SVInt8_t = # Node: Sign()
+alias __SVInt16_t = # Node: Sign()
+alias __SVInt32_t = # Node: Sign()
+alias __SVInt64_t = # Node: Sign()
+alias __SVUint8_t = # Node: Sign()
+alias __SVUint16_t = # Node: Sign()
+alias __SVUint32_t = # Node: Sign()
+alias __SVUint64_t = # Node: Sign()
+alias __SVFloat16_t = # Node: Sign()
+alias __SVFloat32_t = # Node: Sign()
+alias __SVFloat64_t = # Node: Sign()
+alias __SVBFloat16_t = # Node: Sign()
+alias __clang_svint8x2_t = # Node: Sign()
+alias __clang_svint16x2_t = # Node: Sign()
+alias __clang_svint32x2_t = # Node: Sign()
+alias __clang_svint64x2_t = # Node: Sign()
+alias __clang_svuint8x2_t = # Node: Sign()
+alias __clang_svuint16x2_t = # Node: Sign()
+alias __clang_svuint32x2_t = # Node: Sign()
+alias __clang_svuint64x2_t = # Node: Sign()
+alias __clang_svfloat16x2_t = # Node: Sign()
+alias __clang_svfloat32x2_t = # Node: Sign()
+alias __clang_svfloat64x2_t = # Node: Sign()
+alias __clang_svbfloat16x2_t = # Node: Sign()
+alias __clang_svint8x3_t = # Node: Sign()
+alias __clang_svint16x3_t = # Node: Sign()
+alias __clang_svint32x3_t = # Node: Sign()
+alias __clang_svint64x3_t = # Node: Sign()
+alias __clang_svuint8x3_t = # Node: Sign()
+alias __clang_svuint16x3_t = # Node: Sign()
+alias __clang_svuint32x3_t = # Node: Sign()
+alias __clang_svuint64x3_t = # Node: Sign()
+alias __clang_svfloat16x3_t = # Node: Sign()
+alias __clang_svfloat32x3_t = # Node: Sign()
+alias __clang_svfloat64x3_t = # Node: Sign()
+alias __clang_svbfloat16x3_t = # Node: Sign()
+alias __clang_svint8x4_t = # Node: Sign()
+alias __clang_svint16x4_t = # Node: Sign()
+alias __clang_svint32x4_t = # Node: Sign()
+alias __clang_svint64x4_t = # Node: Sign()
+alias __clang_svuint8x4_t = # Node: Sign()
+alias __clang_svuint16x4_t = # Node: Sign()
+alias __clang_svuint32x4_t = # Node: Sign()
+alias __clang_svuint64x4_t = # Node: Sign()
+alias __clang_svfloat16x4_t = # Node: Sign()
+alias __clang_svfloat32x4_t = # Node: Sign()
+alias __clang_svfloat64x4_t = # Node: Sign()
+alias __clang_svbfloat16x4_t = # Node: Sign()
+alias __SVBool_t = # Node: Sign()
+alias __builtin_ms_va_list = # Node: Sign()UnsafePointer[]
 struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
-alias __u_char = UInt8
-alias __u_short = UInt16
-alias __u_int = UInt32
-alias __u_long = ffi.c_ulong
-alias __int8_t = Int8
-alias __uint8_t = UInt8
-alias __int16_t = Int16
-alias __uint16_t = UInt16
-alias __int32_t = Int32
-alias __uint32_t = UInt32
-alias __int64_t = ffi.c_long
-alias __uint64_t = ffi.c_ulong
+alias __u_char = # Node: Sign()
+alias __u_short = # Node: Sign()
+alias __u_int = # Node: Sign()
+alias __u_long = # Node: Sign()
+alias __int8_t = # Node: Sign()
+alias __uint8_t = # Node: Sign()
+alias __int16_t = # Node: Sign()
+alias __uint16_t = # Node: Sign()
+alias __int32_t = # Node: Sign()
+alias __uint32_t = # Node: Sign()
+alias __int64_t = # Node: Sign()
+alias __uint64_t = # Node: Sign()
 alias __int_least8_t = __int8_t
 alias __uint_least8_t = __uint8_t
 alias __int_least16_t = __int16_t
@@ -88,53 +88,53 @@ alias __int_least32_t = __int32_t
 alias __uint_least32_t = __uint32_t
 alias __int_least64_t = __int64_t
 alias __uint_least64_t = __uint64_t
-alias __quad_t = ffi.c_long
-alias __u_quad_t = ffi.c_ulong
-alias __intmax_t = ffi.c_long
-alias __uintmax_t = ffi.c_ulong
-alias __dev_t = ffi.c_ulong
-alias __uid_t = UInt32
-alias __gid_t = UInt32
-alias __ino_t = ffi.c_ulong
-alias __ino64_t = ffi.c_ulong
-alias __mode_t = UInt32
-alias __nlink_t = UInt32
-alias __off_t = ffi.c_long
-alias __off64_t = ffi.c_long
-alias __pid_t = Int32
+alias __quad_t = # Node: Sign()
+alias __u_quad_t = # Node: Sign()
+alias __intmax_t = # Node: Sign()
+alias __uintmax_t = # Node: Sign()
+alias __dev_t = # Node: Sign()
+alias __uid_t = # Node: Sign()
+alias __gid_t = # Node: Sign()
+alias __ino_t = # Node: Sign()
+alias __ino64_t = # Node: Sign()
+alias __mode_t = # Node: Sign()
+alias __nlink_t = # Node: Sign()
+alias __off_t = # Node: Sign()
+alias __off64_t = # Node: Sign()
+alias __pid_t = # Node: Sign()
 struct anonomous_record_1(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
 alias __fsid_t = anonomous_record_1
 
-alias __clock_t = ffi.c_long
-alias __rlim_t = ffi.c_ulong
-alias __rlim64_t = ffi.c_ulong
-alias __id_t = UInt32
-alias __time_t = ffi.c_long
-alias __useconds_t = UInt32
-alias __suseconds_t = ffi.c_long
-alias __suseconds64_t = ffi.c_long
-alias __daddr_t = Int32
-alias __key_t = Int32
-alias __clockid_t = Int32
-alias __timer_t = OpaquePointer
-alias __blksize_t = Int32
-alias __blkcnt_t = ffi.c_long
-alias __blkcnt64_t = ffi.c_long
-alias __fsblkcnt_t = ffi.c_ulong
-alias __fsblkcnt64_t = ffi.c_ulong
-alias __fsfilcnt_t = ffi.c_ulong
-alias __fsfilcnt64_t = ffi.c_ulong
-alias __fsword_t = ffi.c_long
-alias __ssize_t = ffi.c_long
-alias __syscall_slong_t = ffi.c_long
-alias __syscall_ulong_t = ffi.c_ulong
+alias __clock_t = # Node: Sign()
+alias __rlim_t = # Node: Sign()
+alias __rlim64_t = # Node: Sign()
+alias __id_t = # Node: Sign()
+alias __time_t = # Node: Sign()
+alias __useconds_t = # Node: Sign()
+alias __suseconds_t = # Node: Sign()
+alias __suseconds64_t = # Node: Sign()
+alias __daddr_t = # Node: Sign()
+alias __key_t = # Node: Sign()
+alias __clockid_t = # Node: Sign()
+alias __timer_t = # Node: Sign()UnsafePointer[]
+alias __blksize_t = # Node: Sign()
+alias __blkcnt_t = # Node: Sign()
+alias __blkcnt64_t = # Node: Sign()
+alias __fsblkcnt_t = # Node: Sign()
+alias __fsblkcnt64_t = # Node: Sign()
+alias __fsfilcnt_t = # Node: Sign()
+alias __fsfilcnt64_t = # Node: Sign()
+alias __fsword_t = # Node: Sign()
+alias __ssize_t = # Node: Sign()
+alias __syscall_slong_t = # Node: Sign()
+alias __syscall_ulong_t = # Node: Sign()
 alias __loff_t = __off64_t
-alias __caddr_t = UnsafePointer[Int8]
-alias __intptr_t = ffi.c_long
-alias __socklen_t = UInt32
-alias __sig_atomic_t = Int32
+alias __caddr_t = # Node: Sign()UnsafePointer[]
+alias __intptr_t = # Node: Sign()
+alias __socklen_t = # Node: Sign()
+alias __sig_atomic_t = # Node: Sign()
 alias int8_t = __int8_t
 alias int16_t = __int16_t
 alias int32_t = __int32_t
@@ -151,21 +151,21 @@ alias uint_least8_t = __uint_least8_t
 alias uint_least16_t = __uint_least16_t
 alias uint_least32_t = __uint_least32_t
 alias uint_least64_t = __uint_least64_t
-alias int_fast8_t = Int8
-alias int_fast16_t = ffi.c_long
-alias int_fast32_t = ffi.c_long
-alias int_fast64_t = ffi.c_long
-alias uint_fast8_t = UInt8
-alias uint_fast16_t = ffi.c_ulong
-alias uint_fast32_t = ffi.c_ulong
-alias uint_fast64_t = ffi.c_ulong
-alias intptr_t = ffi.c_long
-alias uintptr_t = ffi.c_ulong
+alias int_fast8_t = # Node: Sign()
+alias int_fast16_t = # Node: Sign()
+alias int_fast32_t = # Node: Sign()
+alias int_fast64_t = # Node: Sign()
+alias uint_fast8_t = # Node: Sign()
+alias uint_fast16_t = # Node: Sign()
+alias uint_fast32_t = # Node: Sign()
+alias uint_fast64_t = # Node: Sign()
+alias intptr_t = # Node: Sign()
+alias uintptr_t = # Node: Sign()
 alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
-alias ptrdiff_t = ffi.c_long
-alias size_t = ffi.c_ulong
-alias wchar_t = UInt32
+alias ptrdiff_t = # Node: Sign()
+alias size_t = # Node: Sign()
+alias wchar_t = # Node: Sign()
 struct anonomous_record_2(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
 
@@ -173,76 +173,76 @@ struct anonomous_record_2(Copyable & Movable):
 
 alias max_align_t = anonomous_record_2
 
-alias simple_type_byte = Int8
+alias simple_type_byte = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Byte types 
 
 alias get_simple_type_byte = fn (simple_type_byte) -> simple_type_byte
-alias simple_type_ubyte = UInt8
+alias simple_type_ubyte = # Node: Sign()
 alias get_simple_type_ubyte = fn (simple_type_ubyte) -> simple_type_ubyte
-alias simple_type_sbyte = Int8
+alias simple_type_sbyte = # Node: Sign()
 alias get_simple_type_sbyte = fn (simple_type_sbyte) -> simple_type_sbyte
-alias simple_type_short = Int16
+alias simple_type_short = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Short types 
 
 alias get_simple_type_short = fn (simple_type_short) -> simple_type_short
-alias simple_type_ushort = UInt16
+alias simple_type_ushort = # Node: Sign()
 alias get_simple_type_ushort = fn (simple_type_ushort) -> simple_type_ushort
-alias simple_type_sshort = Int16
+alias simple_type_sshort = # Node: Sign()
 alias get_simple_type_sshort = fn (simple_type_sshort) -> simple_type_sshort
-alias simple_type_int = Int32
+alias simple_type_int = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Int types 
 
 alias get_simple_type_int = fn (simple_type_int) -> simple_type_int
-alias simple_type_uint = UInt32
+alias simple_type_uint = # Node: Sign()
 alias get_simple_type_uint = fn (simple_type_uint) -> simple_type_uint
-alias simple_type_sint = Int32
+alias simple_type_sint = # Node: Sign()
 alias get_simple_type_sint = fn (simple_type_sint) -> simple_type_sint
-alias simple_type_long = ffi.c_long
+alias simple_type_long = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Long types 
 
 alias get_simple_type_long = fn (simple_type_long) -> simple_type_long
-alias simple_type_ulong = ffi.c_ulong
+alias simple_type_ulong = # Node: Sign()
 alias get_simple_type_ulong = fn (simple_type_ulong) -> simple_type_ulong
-alias simple_type_slong = ffi.c_long
+alias simple_type_slong = # Node: Sign()
 alias get_simple_type_slong = fn (simple_type_slong) -> simple_type_slong
-alias simple_type_long_long = ffi.c_long_long
+alias simple_type_long_long = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Long long types 
 
 alias get_simple_type_long_long = fn (simple_type_long_long) -> simple_type_long_long
-alias simple_type_ulong_long = ffi.c_ulong_long
+alias simple_type_ulong_long = # Node: Sign()
 alias get_simple_type_ulong_long = fn (simple_type_ulong_long) -> simple_type_ulong_long
-alias simple_type_slong_long = ffi.c_long_long
+alias simple_type_slong_long = # Node: Sign()
 alias get_simple_type_slong_long = fn (simple_type_slong_long) -> simple_type_slong_long
-alias simple_type_float = Float32
+alias simple_type_float = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Float types 
 
 alias get_simple_type_float = fn (simple_type_float) -> simple_type_float
-alias simple_type_double = Float64
+alias simple_type_double = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()
 #  Double types 
 
 alias get_simple_type_double = fn (simple_type_double) -> simple_type_double
-alias simple_type_long_double = Float64
+alias simple_type_long_double = # Node: Sign()
 # Node: FullComment()
 # Node: ParagraphComment()
 # Node: TextComment()

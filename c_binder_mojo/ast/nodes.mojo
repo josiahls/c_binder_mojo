@@ -90,8 +90,7 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_from_json_object(json_object):
-                return T.impute_json_object(json_object)
-        return None
+                T.impute_json_object(json_object)
 
     @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:

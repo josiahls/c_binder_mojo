@@ -122,7 +122,9 @@ struct FunctionDeclNode(AstNodeLike):
             parm_var_decl_type["loc"] = Object()
             parm_var_decl_type["range"] = Object()
             parm_var_decl_type["type"] = Object()
-            parm_var_decl_type["type"].object()["qualType"] = separated_parm_var
+            parm_var_decl_type["type"].object()["qualType"] = String(
+                separated_parm_var.strip()
+            )
             separated_parm_var_decl_types.append(parm_var_decl_type)
 
         return separated_parm_var_decl_types^

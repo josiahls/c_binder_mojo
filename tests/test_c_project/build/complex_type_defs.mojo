@@ -76,4 +76,11 @@ alias complex_typedef_1 = InlineArray[UnsafePointer[Int32, mut=False], 10]
 
 alias complex_typedef_2 = fn(read UnsafePointer[Int32], UnsafePointer[Int32]) -> UnsafePointer[Int32]
 alias complex_typedef_3 = fn(read *UnsafePointer[Int8]) -> NoneType
+alias complex_typedef_4 = UnsafePointer[Int8, mut=False]
+# Node: FullComment()
+# Node: ParagraphComment()
+# Node: TextComment()
+#  UnsafePointer[Int8, mut=False]
+
+alias complex_typedef_5 = fn(read UnsafePointer[Int8]) -> NoneType
 alias on_exit = fn (__func: fn (Int32, UnsafePointer[NoneType]) -> NoneType, UnsafePointer[NoneType]) -> Int32

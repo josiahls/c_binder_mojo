@@ -144,6 +144,10 @@ struct FunctionDeclNode(AstNodeLike):
                         return True
         elif json_object["kind"] == Self.__name__:
             return True
+        print(
+            "FunctionDeclNode: accept_impute_json_object: ",
+            json_object["kind"].string(),
+        )
         return False
 
     @staticmethod

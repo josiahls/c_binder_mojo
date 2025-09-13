@@ -6,6 +6,7 @@ from emberjson import Object, Array
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 
 
 struct ParmVarDeclNode(AstNodeLike):
@@ -31,10 +32,11 @@ struct ParmVarDeclNode(AstNodeLike):
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
         var unknown_type_object = json_object.copy()
-        unknown_type_object["kind"] = "AbstractType"
+        unknown_type_object["kind"] = UnprocessedTypeNode.__name__
         json_object["inner"] = Array()
         json_object["inner"].array().append(unknown_type_object)
-        AstNode.impute_json_object(unknown_type_object)
+        for ref inner_object in json_object["inner"].array():
+            AstNode.impute_json_object(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

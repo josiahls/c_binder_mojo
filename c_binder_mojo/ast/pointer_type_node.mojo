@@ -18,6 +18,7 @@ struct PointerTypeNode(AstNodeLike):
     fn __init__(out self, object: Object, level: Int):
         self.children_ = List[AstNode]()
         self.qualifiers = ""
+        # TODO: Handle restrict qualifiers.
         try:
             if "inner" in object:
                 for child in object["inner"].array():
@@ -34,7 +35,7 @@ struct PointerTypeNode(AstNodeLike):
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
                     ref s = json_object["type"].object()["qualType"].string()
-                    if s.endswith(" *"):
+                    if s.endswith("*"):
                         return True
         return False
 
@@ -48,12 +49,14 @@ struct PointerTypeNode(AstNodeLike):
         json_object["type"] = Object()
         json_object["type"].object()["_qualType"] = s.copy()
         json_object["type"].object()["qualType"] = "*"
-        s = String(s.removesuffix(" *"))
+        s = String(s.removesuffix("*"))
         if s.startswith("const "):
             s = String(s.removeprefix("const "))
             json_object["qualifiers"] = "const"
         var unprocessed_type_json_object = (
-            UnprocessedTypeNode.make_unprocessed_type_json_object(s)
+            UnprocessedTypeNode.make_unprocessed_type_json_object(
+                String(s.strip())
+            )
         )
         json_object["inner"].array().append(unprocessed_type_json_object)
         for ref inner_object in json_object["inner"].array():

@@ -8,14 +8,14 @@ from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
 
 
-struct AbstractTypeNode(AstNodeLike):
+struct UnprocessedTypeNode(AstNodeLike):
     """
-    Abstract type node that is used to represents an unknown type in the AST.
+    Unprocessed type node that is used to represents an unknown type in the AST.
 
     Used in order for other nodes to evaluate if they can be used to represent an unknown type.
     """
 
-    alias __name__ = "AbstractType"
+    alias __name__ = "UnprocessedType"
 
     var children_: List[AstNode]
 

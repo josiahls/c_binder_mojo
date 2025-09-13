@@ -76,10 +76,15 @@ alias complex_typedef_1 = InlineArray[UnsafePointer[Int32, mut=False], 10]
 
 alias complex_typedef_2 = fn(read UnsafePointer[Int32], UnsafePointer[Int32]) -> UnsafePointer[Int32]
 alias complex_typedef_3 = fn(read *UnsafePointer[Int8]) -> NoneType
-alias on_exit = fn (# # Node: PlaceHolder()
-# {"id":"0x30fa57b8","kind":"AbstractType","loc":{"col":28,"offset":463,"tokLen":6},"name":"__func","range":{"begin":{"col":21,"offset":456,"tokLen":4},"end":{"col":62,"offset":497,"tokLen":1}},"type":{"qualType":"void (*)(int, void *)"}}
+alias on_exit = fn (alias __func = fn (# # Node: PlaceHolder()
+# {"inner":[],"kind":"UnprocessedType","loc":{},"name":"","range":{},"type":{"qualType":"int"}}
 # # Node: PlaceHolder()
-# {"id":"0x30fa5838","kind":"AbstractType","loc":{"col":71,"offset":506,"tokLen":5},"name":"__arg","range":{"begin":{"col":65,"offset":500,"tokLen":4},"end":{"col":71,"offset":506,"tokLen":5}},"type":{"qualType":"void *"}}
+# {"inner":[],"kind":"UnprocessedType","loc":{},"name":"","range":{},"type":{"qualType":" void *"}}
 ) -> # # Node: PlaceHolder()
-# {"id":"1","kind":"AbstractType","type":{"qualType":"int"}}
+# {"id":"1","kind":"UnprocessedType","type":{"qualType":"void"}}
+
+# # Node: PlaceHolder()
+# {"id":"0x25944838","kind":"UnprocessedType","loc":{"col":71,"offset":506,"tokLen":5},"name":"__arg","range":{"begin":{"col":65,"offset":500,"tokLen":4},"end":{"col":71,"offset":506,"tokLen":5}},"type":{"qualType":"void *"}}
+) -> # # Node: PlaceHolder()
+# {"id":"1","kind":"UnprocessedType","type":{"qualType":"int"}}
 

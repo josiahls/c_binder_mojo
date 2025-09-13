@@ -6,6 +6,7 @@ from emberjson import Object, Array
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 
 
 struct ReturnDeclNode(AstNodeLike):
@@ -43,7 +44,7 @@ struct ReturnDeclNode(AstNodeLike):
         return_type = json_object["type"].object()["returnType"].string()
         return_type_object = Object()
         return_type_object["id"] = "1"
-        return_type_object["kind"] = "AbstractType"
+        return_type_object["kind"] = UnprocessedTypeNode.__name__
         return_type_object["type"] = Object()
         return_type_object["type"].object()["qualType"] = return_type
         json_object["inner"].array().append(return_type_object)

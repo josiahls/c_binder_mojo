@@ -10,6 +10,7 @@ from c_binder_mojo.ast.nodes import AstNode
 
 # from c_binder_mojo.typing import TypeMapper
 from c_binder_mojo.ast.custom.return_decl_node import ReturnDeclNode
+from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -59,23 +60,106 @@ struct FunctionDeclNode(AstNodeLike):
             print("Error creating FunctionDeclNode: ", e)
 
     @staticmethod
-    fn parse_return_type(read qual_type: String) raises -> String:
-        var outer_most_paran_begin = List[Int]()
-
+    fn outer_most_paren_begin(read qual_type: String) raises -> List[Int]:
+        var outer_most_paren_begin = List[Int]()
         var level = -1
         for i in range(len(qual_type)):
             if qual_type[i] == "(":
+                if level == -1:
+                    outer_most_paren_begin.append(i)
                 level += 1
             elif qual_type[i] == ")":
                 level -= 1
-            if level == 0:
-                outer_most_paran_begin.append(i)
-                break
 
-        return String(qual_type[: outer_most_paran_begin[-1]].strip())
+        return outer_most_paren_begin^
+
+    @staticmethod
+    fn outer_most_commas(read qual_type: String) raises -> List[Int]:
+        var outer_most_commas = List[Int]()
+        var level = -1
+        alias open_chars: List[String] = ["(", "[", "{"]
+        alias close_chars: List[String] = [")", "]", "}"]
+        for i in range(len(qual_type)):
+            if qual_type[i] == "," and level == -1:
+                outer_most_commas.append(i)
+
+            if String(qual_type[i]) in open_chars:
+                level += 1
+            elif String(qual_type[i]) in close_chars:
+                level -= 1
+        return outer_most_commas^
+
+    @staticmethod
+    fn parse_return_type(read qual_type: String) raises -> String:
+        var outer_most_paren_begin = Self.outer_most_paren_begin(qual_type)
+        return String(qual_type[: outer_most_paren_begin[0]].strip())
+
+    @staticmethod
+    fn parse_parm_var_decls(read qual_type: String) raises -> List[Object]:
+        var outer_most_paren_begin = Self.outer_most_paren_begin(qual_type)
+        # Get the last outer most (, and cut the last )
+        var parm_vars = qual_type[outer_most_paren_begin[-1] + 1 : -1]
+        var outer_most_commas = Self.outer_most_commas(parm_vars)
+
+        var separated_parm_vars = List[String]()
+        for i in range(len(outer_most_commas)):
+            if i == 0:
+                separated_parm_vars.append(parm_vars[: outer_most_commas[i]])
+            else:
+                separated_parm_vars.append(
+                    parm_vars[
+                        outer_most_commas[i - 1] + 1 : outer_most_commas[i]
+                    ]
+                )
+        separated_parm_vars.append(parm_vars[outer_most_commas[-1] + 1 :])
+
+        var separated_parm_var_decl_types = List[Object]()
+        for separated_parm_var in separated_parm_vars:
+            var parm_var_decl_type = Object()
+            parm_var_decl_type["name"] = ""
+            parm_var_decl_type["kind"] = "ParmVarDecl"
+            parm_var_decl_type["inner"] = Array()
+            parm_var_decl_type["loc"] = Object()
+            parm_var_decl_type["range"] = Object()
+            parm_var_decl_type["type"] = Object()
+            parm_var_decl_type["type"].object()["qualType"] = String(
+                separated_parm_var.strip()
+            )
+            separated_parm_var_decl_types.append(parm_var_decl_type)
+
+        return separated_parm_var_decl_types^
+
+    @staticmethod
+    fn accept_from_json_object(read json_object: Object) raises -> Bool:
+        if json_object["kind"] == Self.__name__:
+            return True
+
+        if json_object["kind"] == UnprocessedTypeNode.__name__:
+            if "type" in json_object:
+                if "qualType" in json_object["type"].object():
+                    if (
+                        " (*)"
+                        in json_object["type"].object()["qualType"].string()
+                    ):
+                        return True
+        return False
 
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
+        if json_object["kind"] == UnprocessedTypeNode.__name__:
+            print(
+                "imputing function decl node from UnprocessedType id: ",
+                json_object["id"],
+            )
+            json_object["kind"] = Self.__name__
+            json_object["inner"] = Array()
+            var parm_var_decls = Self.parse_parm_var_decls(
+                json_object["type"].object()["qualType"].string()
+            )
+            for parm_var_decl in parm_var_decls:
+                # TODO: Update the stdlib to use drain instead. We shouldn't need to copy here.
+                json_object["inner"].array().append(parm_var_decl.copy())
+
         function_qual_type = json_object["type"].object()["qualType"].string()
         var return_type = Self.parse_return_type(function_qual_type)
 
@@ -85,6 +169,8 @@ struct FunctionDeclNode(AstNodeLike):
         return_type_object["type"] = Object()
         return_type_object["type"].object()["returnType"] = return_type
         return_type_object["inner"] = Array()
+        if "inner" not in json_object:
+            raise Error("inner not found in json_object")
         json_object["inner"].array().append(return_type_object)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())

@@ -9,6 +9,7 @@ from c_binder_mojo.ast.variant import Variant
 from c_binder_mojo.ast.custom.sign_node import SignNode
 from c_binder_mojo.ast.custom.clang_simd_node import ClangSimdNode
 from c_binder_mojo.ast.custom.return_decl_node import ReturnDeclNode
+from c_binder_mojo.ast.custom.sugared_type_node import SugaredTypeNode
 
 from c_binder_mojo.ast.translation_unit_decl_node import (
     TranslationUnitDeclNode,
@@ -64,11 +65,11 @@ alias AstNodeVariant = Variant[
     ReturnDeclNode,
     # Native clang ast nodes.
     TypedefDeclNode,
+    PointerTypeNode,
     BuiltinTypeNode,
     RecordTypeNode,
     ConstantArrayTypeNode,
     RecordDeclNode,
-    PointerTypeNode,
     ElaboratedTypeNode,
     FunctionDeclNode,
     TypedefTypeNode,
@@ -87,6 +88,7 @@ alias AstNodeVariant = Variant[
     EnumTypeNode,
     FieldDeclNode,
     IndirectFieldDeclNode,
+    SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,
 ]

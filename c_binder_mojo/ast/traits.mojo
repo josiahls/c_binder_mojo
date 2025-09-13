@@ -21,9 +21,19 @@ trait AstNodeLike(Copyable & Movable):
         return json_object["kind"].string() == Self.__name__
 
     @staticmethod
+    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+        """Whether this node should accupt and update the json object.
+
+        Default is True assuming that the default `impute_json_object` is
+        being used, which allows for traversing the AST.
+        """
+        return json_object["kind"].string() == Self.__name__
+
+    @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
         if "inner" in json_object:
             for ref inner_object in json_object["inner"].array():
+                # print("impute_json_object for ", Self.__name__)
                 AstNode.impute_json_object(inner_object.object())
 
     @staticmethod

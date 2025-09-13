@@ -1,7 +1,7 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object
+from emberjson import Object, Array
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
@@ -21,6 +21,24 @@ struct UnprocessedTypeNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int):
         self.children_ = List[AstNode]()
+
+    @staticmethod
+    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+        """Other nodes must consume this node, so we return False."""
+        return False
+
+    @staticmethod
+    fn make_unprocessed_type_json_object(
+        var qual_type: String,
+    ) raises -> Object:
+        var json_object = Object()
+        json_object["id"] = ""
+        json_object["kind"] = Self.__name__
+        json_object["inner"] = Array()
+        json_object["qualifiers"] = ""
+        json_object["type"] = Object()
+        json_object["type"].object()["qualType"] = String(qual_type)
+        return json_object^
 
     fn children[
         T: Copyable & Movable = AstNodeVariant

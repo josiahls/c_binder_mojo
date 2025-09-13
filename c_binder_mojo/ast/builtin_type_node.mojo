@@ -1,11 +1,12 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object, to_string
+from emberjson import Object, to_string, Array
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 
 
 # Can do `==` checking.
@@ -23,7 +24,7 @@ alias DIRECT_TYPE_MAP: Dict[String, String] = {
     "double": "Float64",
 }
 
-alias CONTAINS_TYPE_MAP: Dict[String, String] = {
+alias LOWER_ENDSWITH_TYPE_MAP: Dict[String, String] = {
     "int8_t": "Int8",
     "int16_t": "Int16",
     "int32_t": "Int32",
@@ -58,13 +59,36 @@ struct BuiltinTypeNode(AstNodeLike):
         except e:
             print("Error creating BuiltinTypeNode: ", e)
 
+    @staticmethod
+    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+        if json_object["kind"] == UnprocessedTypeNode.__name__:
+            if "type" in json_object:
+                if "qualType" in json_object["type"].object():
+                    ref s = json_object["type"].object()["qualType"].string()
+                    if s in DIRECT_TYPE_MAP:
+                        return True
+                    for item in LOWER_ENDSWITH_TYPE_MAP.items():
+                        if s.lower().endswith(item.key):
+                            return True
+        return False
+
+    @staticmethod
+    fn impute_json_object(mut json_object: Object) raises:
+        json_object["kind"] = Self.__name__
+        json_object["inner"] = Array()
+        json_object["qualifiers"] = ""
+
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
         for dtype in DIRECT_TYPE_MAP:
             if dtype == self.dtype:
+                # print("BuiltinTypeNode: dtype: ", dtype)
+                # print("BuiltinTypeNode: DIRECT_TYPE_MAP[dtype]: ", DIRECT_TYPE_MAP[dtype])
                 return DIRECT_TYPE_MAP[dtype]
-        for item in CONTAINS_TYPE_MAP.items():
-            if item.key in self.dtype.lower():
+        for item in LOWER_ENDSWITH_TYPE_MAP.items():
+            if self.dtype.lower().endswith(item.key):
+                # print("BuiltinTypeNode: dtype: ", self.dtype)
+                # print("BuiltinTypeNode: LOWER_ENDSWITH_TYPE_MAP[dtype]: ", item.value)
                 return item.value.copy()
         raise Error("BuiltinTypeNode: Unexpected dtype: " + self.dtype)
 

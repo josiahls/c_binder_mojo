@@ -7,10 +7,9 @@ from emberjson import Object, to_string, Array
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
-
-# from c_binder_mojo.typing import TypeMapper
 from c_binder_mojo.ast.custom.return_decl_node import ReturnDeclNode
 from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
+from c_binder_mojo.ast.parm_var_decl_node import ParmVarDeclNode
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -21,6 +20,7 @@ struct FunctionDeclNode(AstNodeLike):
     var function_mangled_name: String
     var function_type: String
     var is_disabled: Bool
+    var is_parm_var_decl: Bool
     var level: Int
 
     var children_: List[AstNode]
@@ -34,6 +34,7 @@ struct FunctionDeclNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.is_disabled = False
         self.level = level
+        self.is_parm_var_decl = False
         try:
             if "storageClass" in object:
                 self.storage_class = object["storageClass"].string()
@@ -41,6 +42,10 @@ struct FunctionDeclNode(AstNodeLike):
                 self.function_name = object["name"].string()
             if "mangledName" in object:
                 self.function_mangled_name = object["mangledName"].string()
+            if "wrappingType" in object:
+                for wrapping_type in object["wrappingType"].array():
+                    if wrapping_type.string() == ParmVarDeclNode.__name__:
+                        self.is_parm_var_decl = True
             if "type" in object:
                 type_object = object["type"].object()
                 if "qualType" in type_object:
@@ -130,27 +135,20 @@ struct FunctionDeclNode(AstNodeLike):
         return separated_parm_var_decl_types^
 
     @staticmethod
-    fn accept_from_json_object(read json_object: Object) raises -> Bool:
-        if json_object["kind"] == Self.__name__:
-            return True
-
+    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
         if json_object["kind"] == UnprocessedTypeNode.__name__:
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
-                    if (
-                        " (*)"
-                        in json_object["type"].object()["qualType"].string()
-                    ):
+                    ref s = json_object["type"].object()["qualType"].string()
+                    if " (*)" in s or " *(*)" in s:
                         return True
+        elif json_object["kind"] == Self.__name__:
+            return True
         return False
 
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
         if json_object["kind"] == UnprocessedTypeNode.__name__:
-            print(
-                "imputing function decl node from UnprocessedType id: ",
-                json_object["id"],
-            )
             json_object["kind"] = Self.__name__
             json_object["inner"] = Array()
             var parm_var_decls = Self.parse_parm_var_decls(
@@ -181,20 +179,27 @@ struct FunctionDeclNode(AstNodeLike):
         var indent = "\t" * self.level
         if not just_code:
             s += indent + self.signature() + "\n"
-        s += indent + "alias " + self.function_name + " = "
-        # s += TypeMapper.convert_c_type_to_mojo_type(
-        #     self.function_type, is_fn_decl=True
-        # )
+
+        if self.is_parm_var_decl:
+            s += self.function_name + ": "
+        else:
+            s += indent + "alias " + self.function_name + " = "
+
         var return_type: String = ""
         s += "fn ("
+        var n_parm_var_decls = 0
         for child in self.children_:
             if child.isa[ReturnDeclNode]():
                 return_type = child.to_string(just_code)
             else:
+                if n_parm_var_decls > 0:
+                    s += ", "
                 s += child.to_string(just_code)
+                n_parm_var_decls += 1
         s += ")"
         s += " -> " + return_type
-        s += "\n"
+        if not self.is_parm_var_decl:
+            s += "\n"
 
         if self.is_disabled:
             comment = "# Forward declaration of " + self.function_name + "\n"

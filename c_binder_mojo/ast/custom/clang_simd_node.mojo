@@ -30,11 +30,7 @@ struct ClangSimdNode(AstNodeLike):
             print("Error creating ClangSimdNode: ", e)
 
     @staticmethod
-    fn accept_from_json_object(read json_object: Object) raises -> Bool:
-        if json_object["kind"].string() == Self.__name__:
-            return True
-
-        # Check if the builtin type has been imputed by the AstNode sign.
+    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
         if json_object["kind"].string() == "BuiltinType":
             qual_type = json_object["type"].object()["qualType"].string()
             if (
@@ -50,37 +46,34 @@ struct ClangSimdNode(AstNodeLike):
 
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
-        if json_object["kind"].string() == "BuiltinType":
-            var builtin_type_copy = json_object.copy()
-            var builtin_qual_type = (
-                builtin_type_copy["type"].object()["qualType"].string()
-            )
-            if "wrappingType" not in builtin_type_copy:
-                builtin_type_copy["wrappingType"] = Array()
-            builtin_type_copy["type"].object()[
-                "_qualType"
-            ] = builtin_qual_type.copy()
+        var builtin_type_copy = json_object.copy()
+        var builtin_qual_type = (
+            builtin_type_copy["type"].object()["qualType"].string()
+        )
+        if "wrappingType" not in builtin_type_copy:
+            builtin_type_copy["wrappingType"] = Array()
+        builtin_type_copy["type"].object()[
+            "_qualType"
+        ] = builtin_qual_type.copy()
 
-            builtin_qual_type = String(
-                builtin_qual_type.removeprefix("__clang_sv")
-            )
-            var x_loc = builtin_qual_type.rfind("x")
-            var under_t_loc = builtin_qual_type.rfind("_t")
-            var width_str = builtin_qual_type[x_loc + 1 : under_t_loc]
-            builtin_qual_type = builtin_qual_type.replace("x" + width_str, "")
-            width = Int64(width_str)
+        builtin_qual_type = String(builtin_qual_type.removeprefix("__clang_sv"))
+        var x_loc = builtin_qual_type.rfind("x")
+        var under_t_loc = builtin_qual_type.rfind("_t")
+        var width_str = builtin_qual_type[x_loc + 1 : under_t_loc]
+        builtin_qual_type = builtin_qual_type.replace("x" + width_str, "")
+        width = Int64(width_str)
 
-            builtin_type_copy["wrappingType"].array().append(Self.__name__)
-            builtin_type_copy["type"].object()["qualType"] = builtin_qual_type
-            json_object["kind"] = "ClangSimd"
-            json_object["type"].object()["width"] = width
-            json_object["type"].object()["qualType"] = builtin_qual_type
+        builtin_type_copy["wrappingType"].array().append(Self.__name__)
+        builtin_type_copy["type"].object()["qualType"] = builtin_qual_type
+        json_object["kind"] = "ClangSimd"
+        json_object["type"].object()["width"] = width
+        json_object["type"].object()["qualType"] = builtin_qual_type
 
-            if "inner" not in json_object:
-                json_object["inner"] = Array()
-            json_object["inner"].array().append(builtin_type_copy)
-            for ref inner_object in json_object["inner"].array():
-                AstNode.impute_json_object(inner_object.object())
+        if "inner" not in json_object:
+            json_object["inner"] = Array()
+        json_object["inner"].array().append(builtin_type_copy)
+        for ref inner_object in json_object["inner"].array():
+            AstNode.impute_json_object(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

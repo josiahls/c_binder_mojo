@@ -30,10 +30,7 @@ struct SignNode(AstNodeLike):
             print("Error creating SignNode: ", e)
 
     @staticmethod
-    fn accept_from_json_object(read json_object: Object) raises -> Bool:
-        if json_object["kind"].string() == Self.__name__:
-            return True
-
+    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
         # Check if the builtin type has been imputed by the AstNode sign.
         if json_object["kind"].string() == "BuiltinType":
             qual_type = json_object["type"].object()["qualType"].string()
@@ -56,40 +53,37 @@ struct SignNode(AstNodeLike):
 
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
-        if json_object["kind"].string() == "BuiltinType":
-            builtin_type_copy = json_object.copy()
-            builtin_qual_type = (
-                builtin_type_copy["type"].object()["qualType"].string()
-            )
-            if "wrappingType" not in builtin_type_copy:
-                builtin_type_copy["wrappingType"] = Array()
-            builtin_type_copy["type"].object()["_qualType"] = builtin_qual_type
+        builtin_type_copy = json_object.copy()
+        builtin_qual_type = (
+            builtin_type_copy["type"].object()["qualType"].string()
+        )
+        if "wrappingType" not in builtin_type_copy:
+            builtin_type_copy["wrappingType"] = Array()
+        builtin_type_copy["type"].object()["_qualType"] = builtin_qual_type
 
-            var sign: String
-            if builtin_qual_type.startswith("unsigned "):
-                sign = "unsigned"
-            elif builtin_qual_type.startswith("__SVU"):
-                sign = "unsigned"
-            elif builtin_qual_type.startswith("uint"):
-                sign = "unsigned"
-            else:
-                # If signed is missing, we assume signed.
-                sign = "signed"
+        var sign: String
+        if builtin_qual_type.startswith("unsigned "):
+            sign = "unsigned"
+        elif builtin_qual_type.startswith("__SVU"):
+            sign = "unsigned"
+        elif builtin_qual_type.startswith("uint"):
+            sign = "unsigned"
+        else:
+            # If signed is missing, we assume signed.
+            sign = "signed"
 
-            builtin_qual_type = String(
-                builtin_qual_type.removeprefix(sign + " ")
-            )
+        builtin_qual_type = String(builtin_qual_type.removeprefix(sign + " "))
 
-            builtin_type_copy["wrappingType"].array().append(Self.__name__)
-            builtin_type_copy["type"].object()["qualType"] = builtin_qual_type
-            json_object["kind"] = "Sign"
-            json_object["type"].object()["qualType"] = sign
+        builtin_type_copy["wrappingType"].array().append(Self.__name__)
+        builtin_type_copy["type"].object()["qualType"] = builtin_qual_type
+        json_object["kind"] = "Sign"
+        json_object["type"].object()["qualType"] = sign
 
-            if "inner" not in json_object:
-                json_object["inner"] = Array()
-            json_object["inner"].array().append(builtin_type_copy)
-            for ref inner_object in json_object["inner"].array():
-                AstNode.impute_json_object(inner_object.object())
+        if "inner" not in json_object:
+            json_object["inner"] = Array()
+        json_object["inner"].array().append(builtin_type_copy)
+        for ref inner_object in json_object["inner"].array():
+            AstNode.impute_json_object(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

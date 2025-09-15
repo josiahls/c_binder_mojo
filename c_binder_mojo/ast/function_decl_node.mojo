@@ -10,6 +10,45 @@ from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.ast.custom.return_decl_node import ReturnDeclNode
 from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 from c_binder_mojo.ast.parm_var_decl_node import ParmVarDeclNode
+from c_binder_mojo.ast.visibility_attr_node import VisibilityAttrNode
+from c_binder_mojo.ast.format_attr_node import FormatAttrNode
+from c_binder_mojo.ast.no_throw_attr_node import NoThrowAttrNode
+from c_binder_mojo.ast.pure_attr_node import PureAttrNode
+from c_binder_mojo.ast.non_null_attr_node import NonNullAttrNode
+from c_binder_mojo.ast.builtin_attr_node import BuiltinAttrNode
+from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
+from c_binder_mojo.ast.warn_unsed_result_attr_node import (
+    WarnUnusedResultAttrNode,
+)
+from c_binder_mojo.ast.restrict_attr_node import RestrictAttrNode
+from c_binder_mojo.ast.alloc_align_attr_node import AllocAlignAttrNode
+from c_binder_mojo.ast.const_attr_node import ConstAttrNode
+from c_binder_mojo.ast.full_comment_node import FullCommentNode
+
+
+"""TODO:
+             "offset": 69829,
+                                "tokLen": 7
+                            },
+                            "name": "cleanup",
+                            "range": {
+                                "begin": {
+                                    "col": 40,
+                                    "offset": 69822,
+                                    "tokLen": 4
+                                },
+                                "end": {
+                                    "col": 67,
+                                    "offset": 69849,
+                                    "tokLen": 1
+                                }
+                            },
+                                        "type": {
+                "qualType": "void (mjsElement *, const char *, const void *, void (*)(const void *))"
+`cleanup` is a function that needs to be declared separatedly. 
+
+Looks like you can do inline function_delcarations similar to structs.
+"""
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -194,13 +233,58 @@ struct FunctionDeclNode(AstNodeLike):
         s += "fn ("
         var n_parm_var_decls = 0
         for child in self.children_:
+            # TODO: Mvoe all attr nodes into a module and have an additional variant for them so we can just
+            # check if X node is an attr node.
             if child.isa[ReturnDeclNode]():
                 return_type = child.to_string(just_code)
-            else:
+            elif child.isa[VisibilityAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[FormatAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[NoThrowAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[PureAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[NonNullAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[BuiltinAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[CompoundStmtNode]():
+                # Skip this.
+                pass
+            elif child.isa[WarnUnusedResultAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[RestrictAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[AllocAlignAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[ConstAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[ParmVarDeclNode]():
                 if n_parm_var_decls > 0:
                     s += ", "
                 s += child.to_string(just_code)
                 n_parm_var_decls += 1
+            elif child.isa[FullCommentNode]():
+                # Skip this.
+                pass
+            else:
+                raise Error(
+                    "FunctionDeclNode: Unexpected child: "
+                    + child.to_string(just_code)
+                    + " name: "
+                    + child.name()
+                )
         s += ")"
         s += " -> " + return_type
         if not self.is_parm_var_decl:

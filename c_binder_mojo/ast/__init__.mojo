@@ -56,6 +56,19 @@ from c_binder_mojo.ast.indirect_field_decl_node import (
     IndirectFieldDeclNode,
 )
 from c_binder_mojo.ast.parm_var_decl_node import ParmVarDeclNode
+from c_binder_mojo.ast.visibility_attr_node import VisibilityAttrNode
+from c_binder_mojo.ast.format_attr_node import FormatAttrNode
+from c_binder_mojo.ast.no_throw_attr_node import NoThrowAttrNode
+from c_binder_mojo.ast.pure_attr_node import PureAttrNode
+from c_binder_mojo.ast.non_null_attr_node import NonNullAttrNode
+from c_binder_mojo.ast.builtin_attr_node import BuiltinAttrNode
+from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
+from c_binder_mojo.ast.warn_unsed_result_attr_node import (
+    WarnUnusedResultAttrNode,
+)
+from c_binder_mojo.ast.restrict_attr_node import RestrictAttrNode
+from c_binder_mojo.ast.alloc_align_attr_node import AllocAlignAttrNode
+from c_binder_mojo.ast.const_attr_node import ConstAttrNode
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
@@ -88,6 +101,17 @@ alias AstNodeVariant = Variant[
     EnumTypeNode,
     FieldDeclNode,
     IndirectFieldDeclNode,
+    VisibilityAttrNode,
+    FormatAttrNode,
+    NoThrowAttrNode,
+    PureAttrNode,
+    NonNullAttrNode,
+    BuiltinAttrNode,
+    CompoundStmtNode,
+    WarnUnusedResultAttrNode,
+    RestrictAttrNode,
+    AllocAlignAttrNode,
+    ConstAttrNode,
     SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,

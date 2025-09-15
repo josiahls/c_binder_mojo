@@ -38,6 +38,10 @@ struct SignNode(AstNodeLike):
         # print('checking sign node for json_object: ', to_string(json_object))
         if json_object["kind"].string() == "BuiltinType":
             qual_type = json_object["type"].object()["qualType"].string()
+            if "wrappingType" in json_object:
+                if Self.__name__ in json_object["wrappingType"].array():
+                    return False
+
             if "bool" in qual_type.lower():
                 return False
             elif "void" in qual_type.lower():
@@ -49,12 +53,13 @@ struct SignNode(AstNodeLike):
             elif "__clang_sv" in qual_type.lower():
                 # Handle via SIMD node.
                 return False
-            elif "wrappingType" not in json_object:
-                return True
-            elif Self.__name__ not in json_object["wrappingType"].array():
-                return True
         elif json_object["kind"] == UnprocessedTypeNode.__name__:
             qual_type = json_object["type"].object()["qualType"].string()
+            qual_type = json_object["type"].object()["qualType"].string()
+            if "wrappingType" in json_object:
+                if Self.__name__ in json_object["wrappingType"].array():
+                    return False
+
             if qual_type.startswith("unsigned "):
                 return True
             elif qual_type.startswith("signed "):
@@ -63,7 +68,6 @@ struct SignNode(AstNodeLike):
                 return True
             elif qual_type.startswith("__SVU"):
                 return True
-
         # print('sign node not accepted')
         return False
 

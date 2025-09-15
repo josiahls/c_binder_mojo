@@ -62,5 +62,9 @@ trait AstNodeLike(Copyable & Movable):
         self._to_string_hook()
         return self.signature()
 
+    @staticmethod
+    fn make_object_id(read object: Object) -> String:
+        return String(UnsafePointer(to=object))
+
     fn children[T: Copyable & Movable](ref self) -> ref [self] List[T]:
         pass

@@ -7,6 +7,7 @@ from emberjson import Object, Array, to_string
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
+from c_binder_mojo.ast.function_decl_node import FunctionDeclNode
 
 
 struct ParmVarDeclNode(AstNodeLike):
@@ -14,10 +15,12 @@ struct ParmVarDeclNode(AstNodeLike):
 
     var children_: List[AstNode]
     var name: String
+    var is_kwarg: Bool
 
     fn __init__(out self, json_object: Object, level: Int):
         self.children_ = List[AstNode]()
         self.name = ""
+        self.is_kwarg = False
         try:
             self.name = json_object["name"].string()
             if "inner" in json_object:
@@ -25,6 +28,9 @@ struct ParmVarDeclNode(AstNodeLike):
                     node = AstNode.accept_from_json_object(
                         inner_object.object(), level
                     )
+                    if node.isa[FunctionDeclNode]():
+                        if node[FunctionDeclNode].function_name != "":
+                            self.is_kwarg = True
                     self.children_.append(node^)
         except e:
             print(

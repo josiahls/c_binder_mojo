@@ -26,31 +26,6 @@ from c_binder_mojo.ast.const_attr_node import ConstAttrNode
 from c_binder_mojo.ast.full_comment_node import FullCommentNode
 
 
-"""TODO:
-             "offset": 69829,
-                                "tokLen": 7
-                            },
-                            "name": "cleanup",
-                            "range": {
-                                "begin": {
-                                    "col": 40,
-                                    "offset": 69822,
-                                    "tokLen": 4
-                                },
-                                "end": {
-                                    "col": 67,
-                                    "offset": 69849,
-                                    "tokLen": 1
-                                }
-                            },
-                                        "type": {
-                "qualType": "void (mjsElement *, const char *, const void *, void (*)(const void *))"
-`cleanup` is a function that needs to be declared separatedly. 
-
-Looks like you can do inline function_delcarations similar to structs.
-"""
-
-
 struct FunctionDeclNode(AstNodeLike):
     alias __name__ = "FunctionDecl"
 
@@ -212,7 +187,7 @@ struct FunctionDeclNode(AstNodeLike):
         return_type_object["type"].object()["returnType"] = return_type
         return_type_object["inner"] = Array()
         if "inner" not in json_object:
-            raise Error("inner not found in json_object")
+            json_object["inner"] = Array()
         json_object["inner"].array().append(return_type_object)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
@@ -232,6 +207,7 @@ struct FunctionDeclNode(AstNodeLike):
         var return_type: String = ""
         s += "fn ("
         var n_parm_var_decls = 0
+        var has_kwarg_pos_mix = False
         for child in self.children_:
             # TODO: Mvoe all attr nodes into a module and have an additional variant for them so we can just
             # check if X node is an attr node.
@@ -273,6 +249,9 @@ struct FunctionDeclNode(AstNodeLike):
             elif child.isa[ParmVarDeclNode]():
                 if n_parm_var_decls > 0:
                     s += ", "
+                if child[ParmVarDeclNode].is_kwarg and not has_kwarg_pos_mix:
+                    has_kwarg_pos_mix = True
+                    s += "/,"
                 s += child.to_string(just_code)
                 n_parm_var_decls += 1
             elif child.isa[FullCommentNode]():

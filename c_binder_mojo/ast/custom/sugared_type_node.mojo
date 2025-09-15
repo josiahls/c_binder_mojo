@@ -24,6 +24,17 @@ struct SugaredTypeNode(AstNodeLike):
                     self.qual_type = (
                         json_object["type"].object()["qualType"].string()
                     )
+                    if " " in self.qual_type:
+                        raise Error(
+                            "SugaredTypeNode: qual_type: ",
+                            self.qual_type,
+                            (
+                                " has a space in it, which is not allowed and"
+                                " implies that there is a new node that needs"
+                                " to be created to handle this."
+                            ),
+                            to_string(json_object),
+                        )
         except e:
             print("Error creating SugaredTypeNode: ", e)
 
@@ -41,16 +52,6 @@ struct SugaredTypeNode(AstNodeLike):
                     qual_type = (
                         json_object["type"].object()["qualType"].string()
                     )
-                    if " " in qual_type:
-                        raise Error(
-                            "SugaredTypeNode: qual_type: ",
-                            qual_type,
-                            (
-                                " has a space in it, which is not allowed and"
-                                " implies that there is a new node that needs"
-                                " to be created to handle this."
-                            ),
-                        )
                     return True
             raise Error(
                 "SugaredTypeNode: failed to consume: ",

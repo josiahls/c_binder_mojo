@@ -32,7 +32,7 @@ struct UnprocessedTypeNode(AstNodeLike):
         var qual_type: String,
     ) raises -> Object:
         var json_object = Object()
-        json_object["id"] = ""
+        json_object["id"] = Self.make_object_id(json_object)
         json_object["kind"] = Self.__name__
         json_object["inner"] = Array()
         json_object["qualifiers"] = ""

@@ -1,7 +1,7 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object, Array
+from emberjson import Object, Array, to_string
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
@@ -27,7 +27,12 @@ struct ParmVarDeclNode(AstNodeLike):
                     )
                     self.children_.append(node^)
         except e:
-            print("Error creating ParmVarDeclNode: ", e)
+            print(
+                "Error creating ParmVarDeclNode: ",
+                e,
+                " json_object: ",
+                to_string(json_object),
+            )
 
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
@@ -38,6 +43,7 @@ struct ParmVarDeclNode(AstNodeLike):
             ParmVarDeclNode.__name__
         )
         json_object["id"] = ""
+        json_object["name"] = ""
         json_object["kind"] = ParmVarDeclNode.__name__
         json_object["inner"] = Array()
         json_object["inner"].array().append(unknown_type_object)

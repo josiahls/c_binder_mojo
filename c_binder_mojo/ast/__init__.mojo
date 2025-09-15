@@ -60,20 +60,20 @@ from c_binder_mojo.ast.parm_var_decl_node import ParmVarDeclNode
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
     # Custom nodes will have more advanced conditions.
+    PointerTypeNode,
     SignNode,
     ClangSimdNode,
     ReturnDeclNode,
     # Native clang ast nodes.
     TypedefDeclNode,
-    PointerTypeNode,
     BuiltinTypeNode,
+    QualTypeNode,
     RecordTypeNode,
     ConstantArrayTypeNode,
     RecordDeclNode,
     ElaboratedTypeNode,
     FunctionDeclNode,
     TypedefTypeNode,
-    QualTypeNode,
     ModeAttrNode,
     VarDeclNode,
     EnumDeclNode,

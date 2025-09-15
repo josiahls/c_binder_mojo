@@ -104,19 +104,24 @@ struct FunctionDeclNode(AstNodeLike):
         var outer_most_paren_begin = Self.outer_most_paren_begin(qual_type)
         # Get the last outer most (, and cut the last )
         var parm_vars = qual_type[outer_most_paren_begin[-1] + 1 : -1]
-        var outer_most_commas = Self.outer_most_commas(parm_vars)
-
         var separated_parm_vars = List[String]()
-        for i in range(len(outer_most_commas)):
-            if i == 0:
-                separated_parm_vars.append(parm_vars[: outer_most_commas[i]])
-            else:
-                separated_parm_vars.append(
-                    parm_vars[
-                        outer_most_commas[i - 1] + 1 : outer_most_commas[i]
-                    ]
-                )
-        separated_parm_vars.append(parm_vars[outer_most_commas[-1] + 1 :])
+        if "," in parm_vars:
+            var outer_most_commas = Self.outer_most_commas(parm_vars)
+
+            for i in range(len(outer_most_commas)):
+                if i == 0:
+                    separated_parm_vars.append(
+                        parm_vars[: outer_most_commas[i]]
+                    )
+                else:
+                    separated_parm_vars.append(
+                        parm_vars[
+                            outer_most_commas[i - 1] + 1 : outer_most_commas[i]
+                        ]
+                    )
+            separated_parm_vars.append(parm_vars[outer_most_commas[-1] + 1 :])
+        else:
+            separated_parm_vars.append(parm_vars)
 
         var separated_parm_var_decl_types = List[Object]()
         for separated_parm_var in separated_parm_vars:
@@ -144,10 +149,6 @@ struct FunctionDeclNode(AstNodeLike):
                         return True
         elif json_object["kind"] == Self.__name__:
             return True
-        print(
-            "FunctionDeclNode: accept_impute_json_object: ",
-            json_object["kind"].string(),
-        )
         return False
 
     @staticmethod

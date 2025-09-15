@@ -1,11 +1,12 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object, Array
+from emberjson import Object, Array, to_string
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 
 
 struct SignNode(AstNodeLike):
@@ -13,13 +14,15 @@ struct SignNode(AstNodeLike):
 
     var children_: List[AstNode]
     var sign: String
+    var id: String
 
     fn __init__(out self, json_object: Object, level: Int):
         self.children_ = List[AstNode]()
         self.sign = ""
-
+        self.id = ""
         try:
             self.sign = json_object["type"].object()["qualType"].string()
+            self.id = json_object["id"].string()
             if "inner" in json_object:
                 for inner_object in json_object["inner"].array():
                     node = AstNode.accept_from_json_object(
@@ -32,6 +35,7 @@ struct SignNode(AstNodeLike):
     @staticmethod
     fn accept_impute_json_object(read json_object: Object) raises -> Bool:
         # Check if the builtin type has been imputed by the AstNode sign.
+        # print('checking sign node for json_object: ', to_string(json_object))
         if json_object["kind"].string() == "BuiltinType":
             qual_type = json_object["type"].object()["qualType"].string()
             if "bool" in qual_type.lower():
@@ -49,39 +53,51 @@ struct SignNode(AstNodeLike):
                 return True
             elif Self.__name__ not in json_object["wrappingType"].array():
                 return True
+        elif json_object["kind"] == UnprocessedTypeNode.__name__:
+            qual_type = json_object["type"].object()["qualType"].string()
+            if qual_type.startswith("unsigned "):
+                return True
+            elif qual_type.startswith("signed "):
+                return True
+            elif qual_type.startswith("uint"):
+                return True
+            elif qual_type.startswith("__SVU"):
+                return True
+
+        # print('sign node not accepted')
         return False
 
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
-        builtin_type_copy = json_object.copy()
-        builtin_qual_type = (
-            builtin_type_copy["type"].object()["qualType"].string()
-        )
-        if "wrappingType" not in builtin_type_copy:
-            builtin_type_copy["wrappingType"] = Array()
-        builtin_type_copy["type"].object()["_qualType"] = builtin_qual_type
+        new_json_object = json_object.copy()
+        new_json_object["id"] = String(UnsafePointer(to=new_json_object))
+
+        qual_type = new_json_object["type"].object()["qualType"].string()
+        if "wrappingType" not in new_json_object:
+            new_json_object["wrappingType"] = Array()
+        new_json_object["type"].object()["_qualType"] = qual_type
 
         var sign: String
-        if builtin_qual_type.startswith("unsigned "):
+        if qual_type.startswith("unsigned "):
             sign = "unsigned"
-        elif builtin_qual_type.startswith("__SVU"):
+        elif qual_type.startswith("__SVU"):
             sign = "unsigned"
-        elif builtin_qual_type.startswith("uint"):
+        elif qual_type.startswith("uint"):
             sign = "unsigned"
         else:
             # If signed is missing, we assume signed.
             sign = "signed"
 
-        builtin_qual_type = String(builtin_qual_type.removeprefix(sign + " "))
+        qual_type = String(qual_type.removeprefix(sign + " "))
 
-        builtin_type_copy["wrappingType"].array().append(Self.__name__)
-        builtin_type_copy["type"].object()["qualType"] = builtin_qual_type
+        new_json_object["wrappingType"].array().append(Self.__name__)
+        new_json_object["type"].object()["qualType"] = qual_type
         json_object["kind"] = "Sign"
         json_object["type"].object()["qualType"] = sign
 
         if "inner" not in json_object:
             json_object["inner"] = Array()
-        json_object["inner"].array().append(builtin_type_copy)
+        json_object["inner"].array().append(new_json_object)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 
@@ -96,7 +112,9 @@ struct SignNode(AstNodeLike):
             elif s.startswith("Int"):
                 s = s.replace("Int", "UInt")
             else:
-                raise Error("Unexpected dtype for unsigned: " + s)
+                raise Error(
+                    "Unexpected dtype for unsigned: " + s + " id: " + self.id
+                )
         return s
 
     fn children[

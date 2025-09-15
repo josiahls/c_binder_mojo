@@ -83,4 +83,4 @@ alias complex_typedef_4 = UnsafePointer[Int8, mut=False]
 #  UnsafePointer[Int8, mut=False]
 
 alias complex_typedef_5 = fn(read UnsafePointer[Int8]) -> NoneType
-alias on_exit = fn (__func: fn (Int32, UnsafePointer[NoneType]) -> NoneType, UnsafePointer[NoneType]) -> Int32
+alias complex_typedef_6 = fn (UnsafePointer[Int8], UnsafePointer[UnsafePointer[Int8]]) -> Float64

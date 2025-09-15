@@ -13,18 +13,19 @@ struct PointerTypeNode(AstNodeLike):
     alias __name__ = "PointerType"
 
     var children_: List[AstNode]
-    var qualifiers: String
+    var qualifiers: List[String]
 
     fn __init__(out self, object: Object, level: Int):
         self.children_ = List[AstNode]()
-        self.qualifiers = ""
+        self.qualifiers = List[String]()
         # TODO: Handle restrict qualifiers.
         try:
             if "inner" in object:
                 for child in object["inner"].array():
                     node = AstNode.accept_from_json_object(child.object(), 0)
                     if node.isa[QualTypeNode]():
-                        self.qualifiers = node[QualTypeNode].qualifiers
+                        for s in node[QualTypeNode].qualifiers.split(" "):
+                            self.qualifiers.append(String(s))
                     self.children_.append(node^)
         except e:
             print("Error creating PointerTypeNode: ", e)
@@ -52,7 +53,9 @@ struct PointerTypeNode(AstNodeLike):
         s = String(s.removesuffix("*"))
         if s.startswith("const "):
             s = String(s.removeprefix("const "))
-            json_object["qualifiers"] = "const"
+            json_object["qualifiers"] = (
+                json_object["qualifiers"].string() + "const"
+            )
         var unprocessed_type_json_object = (
             UnprocessedTypeNode.make_unprocessed_type_json_object(
                 String(s.strip())
@@ -72,7 +75,7 @@ struct PointerTypeNode(AstNodeLike):
 
         # NOTE: decomposition of child types, the * is from right to left.
         dtype = "UnsafePointer[" + dtype
-        if self.qualifiers == "const":
+        if "const" in self.qualifiers:
             dtype += ", mut=False"
         dtype += "]"
         return dtype

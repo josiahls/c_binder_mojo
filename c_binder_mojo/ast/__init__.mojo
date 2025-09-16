@@ -80,6 +80,13 @@ from c_binder_mojo.ast.aligned_attr_node import AlignedAttrNode
 from c_binder_mojo.ast.paren_type_node import ParenTypeNode
 from c_binder_mojo.ast.function_proto_type_node import FunctionProtoTypeNode
 from c_binder_mojo.ast.param_comment_node import ParamCommandCommentNode
+from c_binder_mojo.ast.verbatim_block_line_comment_node import (
+    VerbatimBlockLineCommentNode,
+)
+from c_binder_mojo.ast.verbatim_block_comment_node import (
+    VerbatimBlockCommentNode,
+)
+
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
@@ -134,6 +141,8 @@ alias AstNodeVariant = Variant[
     ParenTypeNode,
     AllocSizeAttrNode,
     AlignedAttrNode,
+    VerbatimBlockLineCommentNode,
+    VerbatimBlockCommentNode,
     SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,

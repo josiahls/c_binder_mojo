@@ -24,6 +24,13 @@ from c_binder_mojo.ast.restrict_attr_node import RestrictAttrNode
 from c_binder_mojo.ast.alloc_align_attr_node import AllocAlignAttrNode
 from c_binder_mojo.ast.const_attr_node import ConstAttrNode
 from c_binder_mojo.ast.full_comment_node import FullCommentNode
+from c_binder_mojo.ast.deprecated_attr_node import DeprecatedAttrNode
+from c_binder_mojo.ast.section_attr_node import SectionAttrNode
+from c_binder_mojo.ast.cold_attr_node import ColdAttrNode
+from c_binder_mojo.ast.asm_label_attr_node import AsmLabelAttrNode
+from c_binder_mojo.ast.always_inline_attr_node import AlwaysInlineAttrNode
+from c_binder_mojo.ast.error_attr_node import ErrorAttrNode
+from c_binder_mojo.ast.alloc_size_attr_node import AllocSizeAttrNode
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -240,10 +247,31 @@ struct FunctionDeclNode(AstNodeLike):
             elif child.isa[RestrictAttrNode]():
                 # Skip this.
                 pass
+            elif child.isa[AllocSizeAttrNode]():
+                # Skip this.
+                pass
             elif child.isa[AllocAlignAttrNode]():
                 # Skip this.
                 pass
             elif child.isa[ConstAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[DeprecatedAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[SectionAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[ColdAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[AsmLabelAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[AlwaysInlineAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[ErrorAttrNode]():
                 # Skip this.
                 pass
             elif child.isa[ParmVarDeclNode]():

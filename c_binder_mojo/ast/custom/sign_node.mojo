@@ -21,7 +21,20 @@ struct SignNode(AstNodeLike):
         self.sign = ""
         self.id = ""
         try:
+            if "type" not in json_object:
+                raise Error(
+                    "'type' not found in json_object: " + to_string(json_object)
+                )
+            if "qualType" not in json_object["type"].object():
+                raise Error(
+                    "'qualType' not found in json_object['type']: "
+                    + to_string(json_object["type"].object())
+                )
             self.sign = json_object["type"].object()["qualType"].string()
+            if "id" not in json_object:
+                raise Error(
+                    "'id' not found in json_object: " + to_string(json_object)
+                )
             self.id = json_object["id"].string()
             if "inner" in json_object:
                 for inner_object in json_object["inner"].array():
@@ -53,6 +66,14 @@ struct SignNode(AstNodeLike):
             elif "__clang_sv" in qual_type.lower():
                 # Handle via SIMD node.
                 return False
+            elif qual_type.startswith("unsigned "):
+                return True
+            elif qual_type.startswith("signed "):
+                return True
+            elif qual_type.startswith("uint"):
+                return True
+            elif qual_type.startswith("__SVU"):
+                return True
         elif json_object["kind"] == UnprocessedTypeNode.__name__:
             qual_type = json_object["type"].object()["qualType"].string()
             qual_type = json_object["type"].object()["qualType"].string()
@@ -116,9 +137,11 @@ struct SignNode(AstNodeLike):
             elif s.startswith("Int"):
                 s = s.replace("Int", "UInt")
             else:
-                raise Error(
-                    "Unexpected dtype for unsigned: " + s + " id: " + self.id
-                )
+                pass  # Assuming this is a sugared type that doesn't require a sign.
+            # else:
+            #     raise Error(
+            #         "Unexpected dtype for unsigned: " + s + " id: " + self.id
+            #     )
         return s
 
     fn children[

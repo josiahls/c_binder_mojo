@@ -93,7 +93,8 @@ from c_binder_mojo.ast.packed_attr_node import PackedAttrNode
 from c_binder_mojo.ast.inline_command_comment_node import (
     InlineCommandCommentNode,
 )
-
+from c_binder_mojo.ast.static_assert_decl_node import StaticAssertDeclNode
+from c_binder_mojo.ast.unused_attr_node import UnusedAttrNode
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
@@ -153,6 +154,8 @@ alias AstNodeVariant = Variant[
     VerbatimBlockCommentNode,
     PackedAttrNode,
     InlineCommandCommentNode,
+    StaticAssertDeclNode,
+    UnusedAttrNode,
     SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,

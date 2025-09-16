@@ -94,11 +94,13 @@ struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
     var index: Int
     var database: Array
     var length: Int
+    var consolidated_entry: CompilationDatabaseEntry
 
     fn __init__(out self, ref [origin]database: Array):
         self.index = 0
         self.database = database
         self.length = len(database)
+        self.consolidated_entry = CompilationDatabaseEntry()
 
     fn __iter__(var self) -> _CompilationDatabaseIter[origin]:
         return self^
@@ -109,8 +111,6 @@ struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
 
     @always_inline
     fn __next__(mut self) -> Self.Element:
-        var consolidated_entry = CompilationDatabaseEntry()
-
         while self.__has_next__():
             var value = self.database[self.index]
             var object = value.object()
@@ -122,20 +122,26 @@ struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
                     file=object["file"].string(),
                     output=object["output"].string(),
                 )
-                if consolidated_entry.is_empty():
-                    consolidated_entry = entry^
-                elif consolidated_entry.libname() == entry.libname():
-                    consolidated_entry.merge(entry^)
-                elif consolidated_entry.libname() != entry.libname():
-                    var tmp = consolidated_entry^
-                    consolidated_entry = entry^
+                if self.consolidated_entry.is_empty():
+                    self.consolidated_entry = entry^
+                elif self.consolidated_entry.libname() == entry.libname():
+                    self.consolidated_entry.merge(entry^)
+                elif self.consolidated_entry.libname() != entry.libname():
+                    var tmp = self.consolidated_entry^
+                    self.consolidated_entry = entry^
                     return tmp^
                 self.index += 1
             except e:
                 print("Error parsing compilation database: ", e)
                 return None
-        if not consolidated_entry.is_empty():
-            return consolidated_entry^
+
+        # Handle the final consolidated entry
+        if not self.consolidated_entry.is_empty():
+            var result = self.consolidated_entry^
+            self.consolidated_entry = (
+                CompilationDatabaseEntry()
+            )  # Reset to empty state
+            return result^
         return None
 
 

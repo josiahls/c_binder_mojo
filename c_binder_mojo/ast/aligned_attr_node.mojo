@@ -49,6 +49,8 @@ struct AlignedAttrNode(AstNodeLike):
         var s = String()
         for child in self.children_:
             s += child.to_string(just_code)
+
+        s = "# Alignment: " + s + "\n"
         return s
 
     fn children[

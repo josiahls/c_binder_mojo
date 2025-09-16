@@ -53,6 +53,12 @@ struct QualTypeNode(AstNodeLike):
                         # and self configure accordingly.
                         if s.endswith(qualifier):
                             return True
+
+                    # If it is not a pointer, then we need to check if the qualifier is at the beginning.
+                    if not s.endswith("*"):
+                        for qualifier in QUALIFIERS:
+                            if s.startswith(qualifier):
+                                return True
         return False
 
     @staticmethod
@@ -71,13 +77,23 @@ struct QualTypeNode(AstNodeLike):
                         json_object["qualifiers"].string() + qualifier + " "
                     )
                 s = String(s.removesuffix(qualifier))
+            elif s.startswith(qualifier):
+                if json_object["qualifiers"].string() == "":
+                    json_object["qualifiers"] = qualifier + " "
+                else:
+                    json_object["qualifiers"] = (
+                        json_object["qualifiers"].string() + qualifier + " "
+                    )
+                s = String(s.removeprefix(qualifier))
             # elif s.startswith(qualifier):
             #     json_object["qualifiers"] += qualifier + " "
         json_object["type"] = Object()
         json_object["type"].object()["_qualType"] = s.copy()
         json_object["type"].object()["qualType"] = s.copy()
         var unprocessed_type_json_object = (
-            UnprocessedTypeNode.make_unprocessed_type_json_object(s)
+            UnprocessedTypeNode.make_unprocessed_type_json_object(
+                String(s.strip())
+            )
         )
         json_object["inner"].array().append(unprocessed_type_json_object)
         for ref inner_object in json_object["inner"].array():

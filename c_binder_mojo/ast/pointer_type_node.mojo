@@ -78,6 +78,8 @@ struct PointerTypeNode(AstNodeLike):
         if "const" in self.qualifiers:
             dtype += ", mut=False"
         dtype += "]"
+        if dtype == "UnsafePointer[NoneType]":
+            dtype = "OpaquePointer"
         return dtype
 
     fn children[

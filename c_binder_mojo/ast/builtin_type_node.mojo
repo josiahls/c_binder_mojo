@@ -44,18 +44,26 @@ struct BuiltinTypeNode(AstNodeLike):
     var level: Int
     var dtype: String
     var children_: List[AstNode]
+    var object_id: String
 
     fn __init__(out self, object: Object, level: Int):
         self.level = level
         self.dtype = ""
         self.children_ = List[AstNode]()
+        self.object_id = ""
         try:
+            if "id" not in object:
+                raise Error("'id' not found in object: " + to_string(object))
+            self.object_id = object["id"].string()
             if "type" in object:
                 ref type_object = object["type"].object()
+                if "qualType" not in type_object:
+                    raise Error(
+                        "'qualType' not found in type_object: "
+                        + to_string(type_object)
+                    )
                 if "qualType" in type_object:
                     self.dtype = type_object["qualType"].string()
-                else:
-                    print("Error creating BuiltinTypeNode: ", to_string(object))
         except e:
             print("Error creating BuiltinTypeNode: ", e)
 
@@ -90,7 +98,12 @@ struct BuiltinTypeNode(AstNodeLike):
                 # print("BuiltinTypeNode: dtype: ", self.dtype)
                 # print("BuiltinTypeNode: LOWER_ENDSWITH_TYPE_MAP[dtype]: ", item.value)
                 return item.value.copy()
-        raise Error("BuiltinTypeNode: Unexpected dtype: " + self.dtype)
+        raise Error(
+            "BuiltinTypeNode: Unexpected dtype: "
+            + self.dtype
+            + " for object: "
+            + self.object_id
+        )
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "(" + self.dtype + ")"

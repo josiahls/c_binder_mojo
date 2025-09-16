@@ -69,6 +69,14 @@ from c_binder_mojo.ast.warn_unsed_result_attr_node import (
 from c_binder_mojo.ast.restrict_attr_node import RestrictAttrNode
 from c_binder_mojo.ast.alloc_align_attr_node import AllocAlignAttrNode
 from c_binder_mojo.ast.const_attr_node import ConstAttrNode
+from c_binder_mojo.ast.deprecated_attr_node import DeprecatedAttrNode
+from c_binder_mojo.ast.section_attr_node import SectionAttrNode
+from c_binder_mojo.ast.cold_attr_node import ColdAttrNode
+from c_binder_mojo.ast.asm_label_attr_node import AsmLabelAttrNode
+from c_binder_mojo.ast.always_inline_attr_node import AlwaysInlineAttrNode
+from c_binder_mojo.ast.error_attr_node import ErrorAttrNode
+from c_binder_mojo.ast.alloc_size_attr_node import AllocSizeAttrNode
+
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
@@ -105,13 +113,20 @@ alias AstNodeVariant = Variant[
     FormatAttrNode,
     NoThrowAttrNode,
     PureAttrNode,
+    ErrorAttrNode,
     NonNullAttrNode,
     BuiltinAttrNode,
     CompoundStmtNode,
     WarnUnusedResultAttrNode,
     RestrictAttrNode,
     AllocAlignAttrNode,
+    DeprecatedAttrNode,
     ConstAttrNode,
+    AsmLabelAttrNode,
+    SectionAttrNode,
+    ColdAttrNode,
+    AlwaysInlineAttrNode,
+    AllocSizeAttrNode,
     SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,

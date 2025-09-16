@@ -43,12 +43,13 @@ struct ParmVarDeclNode(AstNodeLike):
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
         var unknown_type_object = json_object.copy()
+        unknown_type_object["id"] = Self.make_object_id(unknown_type_object)
         unknown_type_object["kind"] = UnprocessedTypeNode.__name__
         unknown_type_object["wrappingType"] = Array()
         unknown_type_object["wrappingType"].array().append(
             ParmVarDeclNode.__name__
         )
-        json_object["id"] = ""
+        json_object["id"] = Self.make_object_id(json_object)
         json_object["name"] = ""
         json_object["kind"] = ParmVarDeclNode.__name__
         json_object["inner"] = Array()

@@ -5,7 +5,7 @@ https://clang.llvm.org/docs/JSONCompilationDatabase.html
 """
 # Native Mojo Modules
 import os
-from pathlib import Path
+from pathlib import Path, DIR_SEPARATOR
 from memory import UnsafePointer
 from sys.ffi import external_call
 from collections.list import _ListIter
@@ -30,6 +30,10 @@ struct CompilationDatabaseEntry(Copyable & Movable & Writable):
         self.command = ""
         self.file = ""
         self.output = ""
+
+    fn parent_path(self) -> Path:
+        var parent = Path(self.file).parts()[:-1]
+        return Path(DIR_SEPARATOR.join(parent))
 
     fn has_so_file(self) -> Bool:
         directory = Path(self.directory)

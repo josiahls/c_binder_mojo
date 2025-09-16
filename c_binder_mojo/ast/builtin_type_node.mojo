@@ -16,7 +16,7 @@ alias DIRECT_TYPE_MAP: Dict[String, String] = {
     "void": "NoneType",
     "char": "Int8",
     "short": "Int16",
-    "int": "Int32",
+    "int": "ffi.c_int",
     "long": "ffi.c_long",
     "long long": "ffi.c_long_long",
     "long double": "Float64",
@@ -27,8 +27,8 @@ alias DIRECT_TYPE_MAP: Dict[String, String] = {
 alias LOWER_ENDSWITH_TYPE_MAP: Dict[String, String] = {
     "int8_t": "Int8",
     "int16_t": "Int16",
-    "int32_t": "Int32",
-    "int64_t": "ffi.c_long",
+    "int32_t": "ffi.c_int",
+    "int64_t": "ffi.c_long_long",
     "int128_t": "ffi.c_long_long",
     "__int128": "ffi.c_long_long",
     "bfloat16_t": "BFloat16",  # Check this before the other floats.

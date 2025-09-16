@@ -16,48 +16,48 @@ alias __NSConstantString = __NSConstantString_tag
 
 alias __SVInt8_t = Int8
 alias __SVInt16_t = Int16
-alias __SVInt32_t = Int32
-alias __SVInt64_t = ffi.c_long
+alias __SVInt32_t = ffi.c_int
+alias __SVInt64_t = ffi.c_long_long
 alias __SVUint8_t = UInt8
 alias __SVUint16_t = UInt16
-alias __SVUint32_t = UInt32
-alias __SVUint64_t = ffi.c_ulong
+alias __SVUint32_t = ffi.c_int
+alias __SVUint64_t = ffi.c_ulong_long
 alias __SVFloat16_t = Float16
 alias __SVFloat32_t = Float32
 alias __SVFloat64_t = Float64
 alias __SVBFloat16_t = BFloat16
 alias __clang_svint8x2_t = SIMD[Int8.dtype, 2]
 alias __clang_svint16x2_t = SIMD[Int16.dtype, 2]
-alias __clang_svint32x2_t = SIMD[Int32.dtype, 2]
-alias __clang_svint64x2_t = SIMD[ffi.c_long.dtype, 2]
+alias __clang_svint32x2_t = SIMD[ffi.c_int.dtype, 2]
+alias __clang_svint64x2_t = SIMD[ffi.c_long_long.dtype, 2]
 alias __clang_svuint8x2_t = SIMD[UInt8.dtype, 2]
 alias __clang_svuint16x2_t = SIMD[UInt16.dtype, 2]
-alias __clang_svuint32x2_t = SIMD[UInt32.dtype, 2]
-alias __clang_svuint64x2_t = SIMD[ffi.c_ulong.dtype, 2]
+alias __clang_svuint32x2_t = SIMD[ffi.c_int.dtype, 2]
+alias __clang_svuint64x2_t = SIMD[ffi.c_ulong_long.dtype, 2]
 alias __clang_svfloat16x2_t = SIMD[Float16.dtype, 2]
 alias __clang_svfloat32x2_t = SIMD[Float32.dtype, 2]
 alias __clang_svfloat64x2_t = SIMD[Float64.dtype, 2]
 alias __clang_svbfloat16x2_t = SIMD[BFloat16.dtype, 2]
 alias __clang_svint8x3_t = SIMD[Int8.dtype, 3]
 alias __clang_svint16x3_t = SIMD[Int16.dtype, 3]
-alias __clang_svint32x3_t = SIMD[Int32.dtype, 3]
-alias __clang_svint64x3_t = SIMD[ffi.c_long.dtype, 3]
+alias __clang_svint32x3_t = SIMD[ffi.c_int.dtype, 3]
+alias __clang_svint64x3_t = SIMD[ffi.c_long_long.dtype, 3]
 alias __clang_svuint8x3_t = SIMD[UInt8.dtype, 3]
 alias __clang_svuint16x3_t = SIMD[UInt16.dtype, 3]
-alias __clang_svuint32x3_t = SIMD[UInt32.dtype, 3]
-alias __clang_svuint64x3_t = SIMD[ffi.c_ulong.dtype, 3]
+alias __clang_svuint32x3_t = SIMD[ffi.c_int.dtype, 3]
+alias __clang_svuint64x3_t = SIMD[ffi.c_ulong_long.dtype, 3]
 alias __clang_svfloat16x3_t = SIMD[Float16.dtype, 3]
 alias __clang_svfloat32x3_t = SIMD[Float32.dtype, 3]
 alias __clang_svfloat64x3_t = SIMD[Float64.dtype, 3]
 alias __clang_svbfloat16x3_t = SIMD[BFloat16.dtype, 3]
 alias __clang_svint8x4_t = SIMD[Int8.dtype, 4]
 alias __clang_svint16x4_t = SIMD[Int16.dtype, 4]
-alias __clang_svint32x4_t = SIMD[Int32.dtype, 4]
-alias __clang_svint64x4_t = SIMD[ffi.c_long.dtype, 4]
+alias __clang_svint32x4_t = SIMD[ffi.c_int.dtype, 4]
+alias __clang_svint64x4_t = SIMD[ffi.c_long_long.dtype, 4]
 alias __clang_svuint8x4_t = SIMD[UInt8.dtype, 4]
 alias __clang_svuint16x4_t = SIMD[UInt16.dtype, 4]
-alias __clang_svuint32x4_t = SIMD[UInt32.dtype, 4]
-alias __clang_svuint64x4_t = SIMD[ffi.c_ulong.dtype, 4]
+alias __clang_svuint32x4_t = SIMD[ffi.c_int.dtype, 4]
+alias __clang_svuint64x4_t = SIMD[ffi.c_ulong_long.dtype, 4]
 alias __clang_svfloat16x4_t = SIMD[Float16.dtype, 4]
 alias __clang_svfloat32x4_t = SIMD[Float32.dtype, 4]
 alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
@@ -70,14 +70,14 @@ alias __builtin_va_list = __va_list
 
 alias __u_char = UInt8
 alias __u_short = UInt16
-alias __u_int = UInt32
+alias __u_int = ffi.c_int
 alias __u_long = ffi.c_ulong
 alias __int8_t = Int8
 alias __uint8_t = UInt8
 alias __int16_t = Int16
 alias __uint16_t = UInt16
-alias __int32_t = Int32
-alias __uint32_t = UInt32
+alias __int32_t = ffi.c_int
+alias __uint32_t = ffi.c_int
 alias __int64_t = ffi.c_long
 alias __uint64_t = ffi.c_ulong
 alias __int_least8_t = __int8_t
@@ -93,15 +93,15 @@ alias __u_quad_t = ffi.c_ulong
 alias __intmax_t = ffi.c_long
 alias __uintmax_t = ffi.c_ulong
 alias __dev_t = ffi.c_ulong
-alias __uid_t = UInt32
-alias __gid_t = UInt32
+alias __uid_t = ffi.c_int
+alias __gid_t = ffi.c_int
 alias __ino_t = ffi.c_ulong
 alias __ino64_t = ffi.c_ulong
-alias __mode_t = UInt32
-alias __nlink_t = UInt32
+alias __mode_t = ffi.c_int
+alias __nlink_t = ffi.c_int
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
-alias __pid_t = Int32
+alias __pid_t = ffi.c_int
 struct anonomous_record_1(Copyable & Movable):
 	var __val : InlineArray[Int32, 2]
 
@@ -110,16 +110,16 @@ alias __fsid_t = anonomous_record_1
 alias __clock_t = ffi.c_long
 alias __rlim_t = ffi.c_ulong
 alias __rlim64_t = ffi.c_ulong
-alias __id_t = UInt32
+alias __id_t = ffi.c_int
 alias __time_t = ffi.c_long
-alias __useconds_t = UInt32
+alias __useconds_t = ffi.c_int
 alias __suseconds_t = ffi.c_long
 alias __suseconds64_t = ffi.c_long
-alias __daddr_t = Int32
-alias __key_t = Int32
-alias __clockid_t = Int32
+alias __daddr_t = ffi.c_int
+alias __key_t = ffi.c_int
+alias __clockid_t = ffi.c_int
 alias __timer_t = OpaquePointer
-alias __blksize_t = Int32
+alias __blksize_t = ffi.c_int
 alias __blkcnt_t = ffi.c_long
 alias __blkcnt64_t = ffi.c_long
 alias __fsblkcnt_t = ffi.c_ulong
@@ -133,8 +133,8 @@ alias __syscall_ulong_t = ffi.c_ulong
 alias __loff_t = __off64_t
 alias __caddr_t = UnsafePointer[Int8]
 alias __intptr_t = ffi.c_long
-alias __socklen_t = UInt32
-alias __sig_atomic_t = Int32
+alias __socklen_t = ffi.c_int
+alias __sig_atomic_t = ffi.c_int
 alias int8_t = __int8_t
 alias int16_t = __int16_t
 alias int32_t = __int32_t
@@ -165,7 +165,7 @@ alias intmax_t = __intmax_t
 alias uintmax_t = __uintmax_t
 alias ptrdiff_t = ffi.c_long
 alias size_t = ffi.c_ulong
-alias wchar_t = UInt32
+alias wchar_t = ffi.c_int
 struct anonomous_record_2(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
 
@@ -189,115 +189,115 @@ struct memory_order(Copyable & Movable):
 alias atomic_thread_fence = fn (memory_order) -> NoneType
 alias atomic_signal_fence = fn (memory_order) -> NoneType
 alias atomic_bool = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e0c20","inner":[{"id":"0x3f1b5fb0","kind":"BuiltinType","type":{"qualType":"_Bool"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(_Bool)"}}
+	# {"id":"0x1104cc20","inner":[{"id":"0x10f21fb0","kind":"BuiltinType","type":{"qualType":"_Bool"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(_Bool)"}}
 
 alias atomic_char = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e0cd0","inner":[{"id":"0x3f1b5fd0","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(char)"}}
+	# {"id":"0x1104ccd0","inner":[{"id":"0x10f21fd0","kind":"BuiltinType","type":{"qualType":"char"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(char)"}}
 
 alias atomic_schar = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e0d90","inner":[{"id":"0x3f1b5ff0","kind":"BuiltinType","type":{"qualType":"signed char"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(signed char)"}}
+	# {"id":"0x1104cd90","inner":[{"id":"0x10f21ff0","kind":"BuiltinType","type":{"qualType":"signed char"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(signed char)"}}
 
 alias atomic_uchar = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e0e50","inner":[{"id":"0x3f1b6090","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned char)"}}
+	# {"id":"0x1104ce50","inner":[{"id":"0x10f22090","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned char)"}}
 
 alias atomic_short = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e0f10","inner":[{"id":"0x3f1b6010","kind":"BuiltinType","type":{"qualType":"short"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(short)"}}
+	# {"id":"0x1104cf10","inner":[{"id":"0x10f22010","kind":"BuiltinType","type":{"qualType":"short"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(short)"}}
 
 alias atomic_ushort = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e0fd0","inner":[{"id":"0x3f1b60b0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned short)"}}
+	# {"id":"0x1104cfd0","inner":[{"id":"0x10f220b0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned short)"}}
 
 alias atomic_int = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1090","inner":[{"id":"0x3f1b6030","kind":"BuiltinType","type":{"qualType":"int"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int)"}}
+	# {"id":"0x1104d090","inner":[{"id":"0x10f22030","kind":"BuiltinType","type":{"qualType":"int"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int)"}}
 
 alias atomic_uint = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1150","inner":[{"id":"0x3f1b60d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned int)"}}
+	# {"id":"0x1104d150","inner":[{"id":"0x10f220d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned int)"}}
 
 alias atomic_long = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1210","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(long)"}}
+	# {"id":"0x1104d210","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(long)"}}
 
 alias atomic_ulong = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e12d0","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned long)"}}
+	# {"id":"0x1104d2d0","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned long)"}}
 
 alias atomic_llong = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1390","inner":[{"id":"0x3f1b6070","kind":"BuiltinType","type":{"qualType":"long long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(long long)"}}
+	# {"id":"0x1104d390","inner":[{"id":"0x10f22070","kind":"BuiltinType","type":{"qualType":"long long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(long long)"}}
 
 alias atomic_ullong = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1450","inner":[{"id":"0x3f1b6110","kind":"BuiltinType","type":{"qualType":"unsigned long long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned long long)"}}
+	# {"id":"0x1104d450","inner":[{"id":"0x10f22110","kind":"BuiltinType","type":{"qualType":"unsigned long long"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(unsigned long long)"}}
 
 alias atomic_char16_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1520","inner":[{"decl":{"id":"0x3f2b42a0","kind":"TypedefDecl","name":"uint_least16_t"},"id":"0x3f2e14f0","inner":[{"decl":{"id":"0x3f2a8920","kind":"TypedefDecl","name":"__uint_least16_t"},"id":"0x3f2b4270","inner":[{"decl":{"id":"0x3f25cc70","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x3f2a88f0","inner":[{"id":"0x3f1b60b0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least16_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least16_t)"}}
+	# {"id":"0x1104d520","inner":[{"decl":{"id":"0x110202a0","kind":"TypedefDecl","name":"uint_least16_t"},"id":"0x1104d4f0","inner":[{"decl":{"id":"0x11014920","kind":"TypedefDecl","name":"__uint_least16_t"},"id":"0x11020270","inner":[{"decl":{"id":"0x10fc8c70","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x110148f0","inner":[{"id":"0x10f220b0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least16_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least16_t)"}}
 
 alias atomic_char32_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e15f0","inner":[{"decl":{"id":"0x3f2b6fb0","kind":"TypedefDecl","name":"uint_least32_t"},"id":"0x3f2e15c0","inner":[{"decl":{"id":"0x3f2a8a40","kind":"TypedefDecl","name":"__uint_least32_t"},"id":"0x3f2b4300","inner":[{"decl":{"id":"0x3f25cd50","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x3f2a8a10","inner":[{"id":"0x3f1b60d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least32_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least32_t)"}}
+	# {"id":"0x1104d5f0","inner":[{"decl":{"id":"0x11022fb0","kind":"TypedefDecl","name":"uint_least32_t"},"id":"0x1104d5c0","inner":[{"decl":{"id":"0x11014a40","kind":"TypedefDecl","name":"__uint_least32_t"},"id":"0x11020300","inner":[{"decl":{"id":"0x10fc8d50","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x11014a10","inner":[{"id":"0x10f220d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least32_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least32_t)"}}
 
 alias atomic_wchar_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e16c0","inner":[{"decl":{"id":"0x3f2b7770","kind":"TypedefDecl","name":"wchar_t"},"id":"0x3f2e1690","inner":[{"id":"0x3f1b60d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"wchar_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(wchar_t)"}}
+	# {"id":"0x1104d6c0","inner":[{"decl":{"id":"0x11023770","kind":"TypedefDecl","name":"wchar_t"},"id":"0x1104d690","inner":[{"id":"0x10f220d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"wchar_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(wchar_t)"}}
 
 alias atomic_int_least8_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1790","inner":[{"decl":{"id":"0x3f2b3fd0","kind":"TypedefDecl","name":"int_least8_t"},"id":"0x3f2e1760","inner":[{"decl":{"id":"0x3f2a8770","kind":"TypedefDecl","name":"__int_least8_t"},"id":"0x3f2b3fa0","inner":[{"decl":{"id":"0x3f25cb20","kind":"TypedefDecl","name":"__int8_t"},"id":"0x3f25ce90","inner":[{"id":"0x3f1b5ff0","kind":"BuiltinType","type":{"qualType":"signed char"}}],"kind":"TypedefType","type":{"qualType":"__int8_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least8_t"}}],"kind":"TypedefType","type":{"qualType":"int_least8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least8_t)"}}
+	# {"id":"0x1104d790","inner":[{"decl":{"id":"0x1101ffd0","kind":"TypedefDecl","name":"int_least8_t"},"id":"0x1104d760","inner":[{"decl":{"id":"0x11014770","kind":"TypedefDecl","name":"__int_least8_t"},"id":"0x1101ffa0","inner":[{"decl":{"id":"0x10fc8b20","kind":"TypedefDecl","name":"__int8_t"},"id":"0x10fc8e90","inner":[{"id":"0x10f21ff0","kind":"BuiltinType","type":{"qualType":"signed char"}}],"kind":"TypedefType","type":{"qualType":"__int8_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least8_t"}}],"kind":"TypedefType","type":{"qualType":"int_least8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least8_t)"}}
 
 alias atomic_uint_least8_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e68a0","inner":[{"decl":{"id":"0x3f2b4210","kind":"TypedefDecl","name":"uint_least8_t"},"id":"0x3f2e6870","inner":[{"decl":{"id":"0x3f2a8800","kind":"TypedefDecl","name":"__uint_least8_t"},"id":"0x3f2b41e0","inner":[{"decl":{"id":"0x3f25cb90","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x3f2a87d0","inner":[{"id":"0x3f1b6090","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least8_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least8_t)"}}
+	# {"id":"0x110528a0","inner":[{"decl":{"id":"0x11020210","kind":"TypedefDecl","name":"uint_least8_t"},"id":"0x11052870","inner":[{"decl":{"id":"0x11014800","kind":"TypedefDecl","name":"__uint_least8_t"},"id":"0x110201e0","inner":[{"decl":{"id":"0x10fc8b90","kind":"TypedefDecl","name":"__uint8_t"},"id":"0x110147d0","inner":[{"id":"0x10f22090","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"__uint8_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least8_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least8_t)"}}
 
 alias atomic_int_least16_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e6970","inner":[{"decl":{"id":"0x3f2b4060","kind":"TypedefDecl","name":"int_least16_t"},"id":"0x3f2e6940","inner":[{"decl":{"id":"0x3f2a8890","kind":"TypedefDecl","name":"__int_least16_t"},"id":"0x3f2b4030","inner":[{"decl":{"id":"0x3f25cc00","kind":"TypedefDecl","name":"__int16_t"},"id":"0x3f2a8860","inner":[{"id":"0x3f1b6010","kind":"BuiltinType","type":{"qualType":"short"}}],"kind":"TypedefType","type":{"qualType":"__int16_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least16_t"}}],"kind":"TypedefType","type":{"qualType":"int_least16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least16_t)"}}
+	# {"id":"0x11052970","inner":[{"decl":{"id":"0x11020060","kind":"TypedefDecl","name":"int_least16_t"},"id":"0x11052940","inner":[{"decl":{"id":"0x11014890","kind":"TypedefDecl","name":"__int_least16_t"},"id":"0x11020030","inner":[{"decl":{"id":"0x10fc8c00","kind":"TypedefDecl","name":"__int16_t"},"id":"0x11014860","inner":[{"id":"0x10f22010","kind":"BuiltinType","type":{"qualType":"short"}}],"kind":"TypedefType","type":{"qualType":"__int16_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least16_t"}}],"kind":"TypedefType","type":{"qualType":"int_least16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least16_t)"}}
 
 alias atomic_uint_least16_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e1520","inner":[{"decl":{"id":"0x3f2b42a0","kind":"TypedefDecl","name":"uint_least16_t"},"id":"0x3f2e14f0","inner":[{"decl":{"id":"0x3f2a8920","kind":"TypedefDecl","name":"__uint_least16_t"},"id":"0x3f2b4270","inner":[{"decl":{"id":"0x3f25cc70","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x3f2a88f0","inner":[{"id":"0x3f1b60b0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least16_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least16_t)"}}
+	# {"id":"0x1104d520","inner":[{"decl":{"id":"0x110202a0","kind":"TypedefDecl","name":"uint_least16_t"},"id":"0x1104d4f0","inner":[{"decl":{"id":"0x11014920","kind":"TypedefDecl","name":"__uint_least16_t"},"id":"0x11020270","inner":[{"decl":{"id":"0x10fc8c70","kind":"TypedefDecl","name":"__uint16_t"},"id":"0x110148f0","inner":[{"id":"0x10f220b0","kind":"BuiltinType","type":{"qualType":"unsigned short"}}],"kind":"TypedefType","type":{"qualType":"__uint16_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least16_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least16_t)"}}
 
 alias atomic_int_least32_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e6ac0","inner":[{"decl":{"id":"0x3f2b40f0","kind":"TypedefDecl","name":"int_least32_t"},"id":"0x3f2e6a90","inner":[{"decl":{"id":"0x3f2a89b0","kind":"TypedefDecl","name":"__int_least32_t"},"id":"0x3f2b40c0","inner":[{"decl":{"id":"0x3f25cce0","kind":"TypedefDecl","name":"__int32_t"},"id":"0x3f2a8980","inner":[{"id":"0x3f1b6030","kind":"BuiltinType","type":{"qualType":"int"}}],"kind":"TypedefType","type":{"qualType":"__int32_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least32_t"}}],"kind":"TypedefType","type":{"qualType":"int_least32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least32_t)"}}
+	# {"id":"0x11052ac0","inner":[{"decl":{"id":"0x110200f0","kind":"TypedefDecl","name":"int_least32_t"},"id":"0x11052a90","inner":[{"decl":{"id":"0x110149b0","kind":"TypedefDecl","name":"__int_least32_t"},"id":"0x110200c0","inner":[{"decl":{"id":"0x10fc8ce0","kind":"TypedefDecl","name":"__int32_t"},"id":"0x11014980","inner":[{"id":"0x10f22030","kind":"BuiltinType","type":{"qualType":"int"}}],"kind":"TypedefType","type":{"qualType":"__int32_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least32_t"}}],"kind":"TypedefType","type":{"qualType":"int_least32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least32_t)"}}
 
 alias atomic_uint_least32_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e15f0","inner":[{"decl":{"id":"0x3f2b6fb0","kind":"TypedefDecl","name":"uint_least32_t"},"id":"0x3f2e15c0","inner":[{"decl":{"id":"0x3f2a8a40","kind":"TypedefDecl","name":"__uint_least32_t"},"id":"0x3f2b4300","inner":[{"decl":{"id":"0x3f25cd50","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x3f2a8a10","inner":[{"id":"0x3f1b60d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least32_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least32_t)"}}
+	# {"id":"0x1104d5f0","inner":[{"decl":{"id":"0x11022fb0","kind":"TypedefDecl","name":"uint_least32_t"},"id":"0x1104d5c0","inner":[{"decl":{"id":"0x11014a40","kind":"TypedefDecl","name":"__uint_least32_t"},"id":"0x11020300","inner":[{"decl":{"id":"0x10fc8d50","kind":"TypedefDecl","name":"__uint32_t"},"id":"0x11014a10","inner":[{"id":"0x10f220d0","kind":"BuiltinType","type":{"qualType":"unsigned int"}}],"kind":"TypedefType","type":{"qualType":"__uint32_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least32_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least32_t)"}}
 
 alias atomic_int_least64_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e6c10","inner":[{"decl":{"id":"0x3f2b4180","kind":"TypedefDecl","name":"int_least64_t"},"id":"0x3f2e6be0","inner":[{"decl":{"id":"0x3f2a8ad0","kind":"TypedefDecl","name":"__int_least64_t"},"id":"0x3f2b4150","inner":[{"decl":{"id":"0x3f25cdc0","kind":"TypedefDecl","name":"__int64_t"},"id":"0x3f2a8aa0","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"__int64_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least64_t"}}],"kind":"TypedefType","type":{"qualType":"int_least64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least64_t)"}}
+	# {"id":"0x11052c10","inner":[{"decl":{"id":"0x11020180","kind":"TypedefDecl","name":"int_least64_t"},"id":"0x11052be0","inner":[{"decl":{"id":"0x11014ad0","kind":"TypedefDecl","name":"__int_least64_t"},"id":"0x11020150","inner":[{"decl":{"id":"0x10fc8dc0","kind":"TypedefDecl","name":"__int64_t"},"id":"0x11014aa0","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"__int64_t"}}],"kind":"TypedefType","type":{"qualType":"__int_least64_t"}}],"kind":"TypedefType","type":{"qualType":"int_least64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_least64_t)"}}
 
 alias atomic_uint_least64_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e6ce0","inner":[{"decl":{"id":"0x3f2b7040","kind":"TypedefDecl","name":"uint_least64_t"},"id":"0x3f2e6cb0","inner":[{"decl":{"id":"0x3f2a8b60","kind":"TypedefDecl","name":"__uint_least64_t"},"id":"0x3f2b7010","inner":[{"decl":{"id":"0x3f25ce30","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x3f2a8b30","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least64_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least64_t)"}}
+	# {"id":"0x11052ce0","inner":[{"decl":{"id":"0x11023040","kind":"TypedefDecl","name":"uint_least64_t"},"id":"0x11052cb0","inner":[{"decl":{"id":"0x11014b60","kind":"TypedefDecl","name":"__uint_least64_t"},"id":"0x11023010","inner":[{"decl":{"id":"0x10fc8e30","kind":"TypedefDecl","name":"__uint64_t"},"id":"0x11014b30","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uint64_t"}}],"kind":"TypedefType","type":{"qualType":"__uint_least64_t"}}],"kind":"TypedefType","type":{"qualType":"uint_least64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_least64_t)"}}
 
 alias atomic_int_fast8_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e6db0","inner":[{"decl":{"id":"0x3f2b70b0","kind":"TypedefDecl","name":"int_fast8_t"},"id":"0x3f2e6d80","inner":[{"id":"0x3f1b5ff0","kind":"BuiltinType","type":{"qualType":"signed char"}}],"kind":"TypedefType","type":{"qualType":"int_fast8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast8_t)"}}
+	# {"id":"0x11052db0","inner":[{"decl":{"id":"0x110230b0","kind":"TypedefDecl","name":"int_fast8_t"},"id":"0x11052d80","inner":[{"id":"0x10f21ff0","kind":"BuiltinType","type":{"qualType":"signed char"}}],"kind":"TypedefType","type":{"qualType":"int_fast8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast8_t)"}}
 
 alias atomic_uint_fast8_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e6e80","inner":[{"decl":{"id":"0x3f2b7270","kind":"TypedefDecl","name":"uint_fast8_t"},"id":"0x3f2e6e50","inner":[{"id":"0x3f1b6090","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"uint_fast8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast8_t)"}}
+	# {"id":"0x11052e80","inner":[{"decl":{"id":"0x11023270","kind":"TypedefDecl","name":"uint_fast8_t"},"id":"0x11052e50","inner":[{"id":"0x10f22090","kind":"BuiltinType","type":{"qualType":"unsigned char"}}],"kind":"TypedefType","type":{"qualType":"uint_fast8_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast8_t)"}}
 
 alias atomic_int_fast16_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e6f50","inner":[{"decl":{"id":"0x3f2b7120","kind":"TypedefDecl","name":"int_fast16_t"},"id":"0x3f2e6f20","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"int_fast16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast16_t)"}}
+	# {"id":"0x11052f50","inner":[{"decl":{"id":"0x11023120","kind":"TypedefDecl","name":"int_fast16_t"},"id":"0x11052f20","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"int_fast16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast16_t)"}}
 
 alias atomic_uint_fast16_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e7020","inner":[{"decl":{"id":"0x3f2b72e0","kind":"TypedefDecl","name":"uint_fast16_t"},"id":"0x3f2e6ff0","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uint_fast16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast16_t)"}}
+	# {"id":"0x11053020","inner":[{"decl":{"id":"0x110232e0","kind":"TypedefDecl","name":"uint_fast16_t"},"id":"0x11052ff0","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uint_fast16_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast16_t)"}}
 
 alias atomic_int_fast32_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e70f0","inner":[{"decl":{"id":"0x3f2b7190","kind":"TypedefDecl","name":"int_fast32_t"},"id":"0x3f2e70c0","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"int_fast32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast32_t)"}}
+	# {"id":"0x110530f0","inner":[{"decl":{"id":"0x11023190","kind":"TypedefDecl","name":"int_fast32_t"},"id":"0x110530c0","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"int_fast32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast32_t)"}}
 
 alias atomic_uint_fast32_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e71c0","inner":[{"decl":{"id":"0x3f2b7350","kind":"TypedefDecl","name":"uint_fast32_t"},"id":"0x3f2e7190","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uint_fast32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast32_t)"}}
+	# {"id":"0x110531c0","inner":[{"decl":{"id":"0x11023350","kind":"TypedefDecl","name":"uint_fast32_t"},"id":"0x11053190","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uint_fast32_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast32_t)"}}
 
 alias atomic_int_fast64_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e7290","inner":[{"decl":{"id":"0x3f2b7200","kind":"TypedefDecl","name":"int_fast64_t"},"id":"0x3f2e7260","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"int_fast64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast64_t)"}}
+	# {"id":"0x11053290","inner":[{"decl":{"id":"0x11023200","kind":"TypedefDecl","name":"int_fast64_t"},"id":"0x11053260","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"int_fast64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(int_fast64_t)"}}
 
 alias atomic_uint_fast64_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e7360","inner":[{"decl":{"id":"0x3f2b73c0","kind":"TypedefDecl","name":"uint_fast64_t"},"id":"0x3f2e7330","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uint_fast64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast64_t)"}}
+	# {"id":"0x11053360","inner":[{"decl":{"id":"0x110233c0","kind":"TypedefDecl","name":"uint_fast64_t"},"id":"0x11053330","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uint_fast64_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uint_fast64_t)"}}
 
 alias atomic_intptr_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e7430","inner":[{"decl":{"id":"0x3f2b7430","kind":"TypedefDecl","name":"intptr_t"},"id":"0x3f2e7400","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"intptr_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(intptr_t)"}}
+	# {"id":"0x11053430","inner":[{"decl":{"id":"0x11023430","kind":"TypedefDecl","name":"intptr_t"},"id":"0x11053400","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"intptr_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(intptr_t)"}}
 
 alias atomic_uintptr_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e7500","inner":[{"decl":{"id":"0x3f2b74a0","kind":"TypedefDecl","name":"uintptr_t"},"id":"0x3f2e74d0","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uintptr_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uintptr_t)"}}
+	# {"id":"0x11053500","inner":[{"decl":{"id":"0x110234a0","kind":"TypedefDecl","name":"uintptr_t"},"id":"0x110534d0","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"uintptr_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uintptr_t)"}}
 
 alias atomic_size_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e75d0","inner":[{"decl":{"id":"0x3f2b7700","kind":"TypedefDecl","name":"size_t"},"id":"0x3f2e75a0","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"size_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(size_t)"}}
+	# {"id":"0x110535d0","inner":[{"decl":{"id":"0x11023700","kind":"TypedefDecl","name":"size_t"},"id":"0x110535a0","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"size_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(size_t)"}}
 
 alias atomic_ptrdiff_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e76a0","inner":[{"decl":{"id":"0x3f2b7690","kind":"TypedefDecl","name":"ptrdiff_t"},"id":"0x3f2e7670","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"ptrdiff_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(ptrdiff_t)"}}
+	# {"id":"0x110536a0","inner":[{"decl":{"id":"0x11023690","kind":"TypedefDecl","name":"ptrdiff_t"},"id":"0x11053670","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"ptrdiff_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(ptrdiff_t)"}}
 
 alias atomic_intmax_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e7770","inner":[{"decl":{"id":"0x3f2b7530","kind":"TypedefDecl","name":"intmax_t"},"id":"0x3f2e7740","inner":[{"decl":{"id":"0x3f2a8cb0","kind":"TypedefDecl","name":"__intmax_t"},"id":"0x3f2b7500","inner":[{"id":"0x3f1b6050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"__intmax_t"}}],"kind":"TypedefType","type":{"qualType":"intmax_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(intmax_t)"}}
+	# {"id":"0x11053770","inner":[{"decl":{"id":"0x11023530","kind":"TypedefDecl","name":"intmax_t"},"id":"0x11053740","inner":[{"decl":{"id":"0x11014cb0","kind":"TypedefDecl","name":"__intmax_t"},"id":"0x11023500","inner":[{"id":"0x10f22050","kind":"BuiltinType","type":{"qualType":"long"}}],"kind":"TypedefType","type":{"qualType":"__intmax_t"}}],"kind":"TypedefType","type":{"qualType":"intmax_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(intmax_t)"}}
 
 alias atomic_uintmax_t = 	# # Node: PlaceHolder()
-	# {"id":"0x3f2e8860","inner":[{"decl":{"id":"0x3f2b75c0","kind":"TypedefDecl","name":"uintmax_t"},"id":"0x3f2e8830","inner":[{"decl":{"id":"0x3f2a8d20","kind":"TypedefDecl","name":"__uintmax_t"},"id":"0x3f2b7590","inner":[{"id":"0x3f1b60f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uintmax_t"}}],"kind":"TypedefType","type":{"qualType":"uintmax_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uintmax_t)"}}
+	# {"id":"0x11054860","inner":[{"decl":{"id":"0x110235c0","kind":"TypedefDecl","name":"uintmax_t"},"id":"0x11054830","inner":[{"decl":{"id":"0x11014d20","kind":"TypedefDecl","name":"__uintmax_t"},"id":"0x11023590","inner":[{"id":"0x10f220f0","kind":"BuiltinType","type":{"qualType":"unsigned long"}}],"kind":"TypedefType","type":{"qualType":"__uintmax_t"}}],"kind":"TypedefType","type":{"qualType":"uintmax_t"}}],"kind":"AtomicType","type":{"qualType":"_Atomic(uintmax_t)"}}
 
 struct atomic_flag(Copyable & Movable):
 	var _Value : _Atomic(_Bool)

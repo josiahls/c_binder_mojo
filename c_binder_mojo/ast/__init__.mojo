@@ -77,7 +77,9 @@ from c_binder_mojo.ast.always_inline_attr_node import AlwaysInlineAttrNode
 from c_binder_mojo.ast.error_attr_node import ErrorAttrNode
 from c_binder_mojo.ast.alloc_size_attr_node import AllocSizeAttrNode
 from c_binder_mojo.ast.aligned_attr_node import AlignedAttrNode
-
+from c_binder_mojo.ast.paren_type_node import ParenTypeNode
+from c_binder_mojo.ast.function_proto_type_node import FunctionProtoTypeNode
+from c_binder_mojo.ast.param_comment_node import ParamCommandCommentNode
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
@@ -88,6 +90,7 @@ alias AstNodeVariant = Variant[
     ReturnDeclNode,
     # Native clang ast nodes.
     TypedefDeclNode,
+    FunctionProtoTypeNode,
     BuiltinTypeNode,
     QualTypeNode,
     RecordTypeNode,
@@ -110,6 +113,7 @@ alias AstNodeVariant = Variant[
     EnumTypeNode,
     FieldDeclNode,
     IndirectFieldDeclNode,
+    ParamCommandCommentNode,
     VisibilityAttrNode,
     FormatAttrNode,
     NoThrowAttrNode,
@@ -127,6 +131,7 @@ alias AstNodeVariant = Variant[
     SectionAttrNode,
     ColdAttrNode,
     AlwaysInlineAttrNode,
+    ParenTypeNode,
     AllocSizeAttrNode,
     AlignedAttrNode,
     SugaredTypeNode,  # Second to last node for json object imputation

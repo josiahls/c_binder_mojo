@@ -177,6 +177,7 @@ build_test_c_project_bindings = { depends-on = [
     "build_test_c_project_bindings_simple_type_defs",
     "build_test_c_project_bindings_complex_structs",
     "build_test_c_project_bindings_complex_unions",
+    "build_test_c_project_bindings_rte_mbuf_core"
 ]}
 
 test = { cmd = [

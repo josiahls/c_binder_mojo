@@ -24,6 +24,8 @@ struct AstParser:
         self, file_path: Path, extra_args: String = ""
     ) raises -> String:
         """Get the AST dump of the processed code."""
+        # TODO: Should this accept multiple main headers? DPDK would require this since there is no such thing
+        # as a single main header.
         cmd = (
             "clang -Xclang -ast-dump=json -fsyntax-only -fparse-all-comments"
             " -fno-color-diagnostics "

@@ -95,6 +95,7 @@ from c_binder_mojo.ast.inline_command_comment_node import (
 )
 from c_binder_mojo.ast.static_assert_decl_node import StaticAssertDeclNode
 from c_binder_mojo.ast.unused_attr_node import UnusedAttrNode
+from c_binder_mojo.ast.verbatim_line_comment_node import VerbatimLineCommentNode
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
@@ -152,6 +153,7 @@ alias AstNodeVariant = Variant[
     BlockCommandCommentNode,
     VerbatimBlockLineCommentNode,
     VerbatimBlockCommentNode,
+    VerbatimLineCommentNode,
     PackedAttrNode,
     InlineCommandCommentNode,
     StaticAssertDeclNode,

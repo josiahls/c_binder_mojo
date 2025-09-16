@@ -76,6 +76,7 @@ from c_binder_mojo.ast.asm_label_attr_node import AsmLabelAttrNode
 from c_binder_mojo.ast.always_inline_attr_node import AlwaysInlineAttrNode
 from c_binder_mojo.ast.error_attr_node import ErrorAttrNode
 from c_binder_mojo.ast.alloc_size_attr_node import AllocSizeAttrNode
+from c_binder_mojo.ast.aligned_attr_node import AlignedAttrNode
 
 
 alias AstNodeVariant = Variant[
@@ -127,6 +128,7 @@ alias AstNodeVariant = Variant[
     ColdAttrNode,
     AlwaysInlineAttrNode,
     AllocSizeAttrNode,
+    AlignedAttrNode,
     SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,

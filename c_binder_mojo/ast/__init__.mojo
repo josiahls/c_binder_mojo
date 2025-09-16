@@ -90,6 +90,9 @@ from c_binder_mojo.ast.block_command_comment_node import (
     BlockCommandCommentNode,
 )
 from c_binder_mojo.ast.packed_attr_node import PackedAttrNode
+from c_binder_mojo.ast.inline_command_comment_node import (
+    InlineCommandCommentNode,
+)
 
 
 alias AstNodeVariant = Variant[
@@ -149,6 +152,7 @@ alias AstNodeVariant = Variant[
     VerbatimBlockLineCommentNode,
     VerbatimBlockCommentNode,
     PackedAttrNode,
+    InlineCommandCommentNode,
     SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node
     ExampleNode,

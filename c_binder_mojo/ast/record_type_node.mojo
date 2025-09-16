@@ -110,6 +110,7 @@ struct RecordTypeNode(AstNodeLike):
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
         var s = String()
+        # TODO: Need to propagate whether this is inside a ParmVar so we don't newline this.
         # var indent = "\t" * self.level
         # We do not indent since this is part of more complex types.
         if self.children_:

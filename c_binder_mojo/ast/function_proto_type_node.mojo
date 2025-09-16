@@ -1,7 +1,7 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object
+from emberjson import Object, to_string
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
@@ -35,15 +35,17 @@ struct FunctionProtoTypeNode(AstNodeLike):
                     + to_string(json_object)
                 )
 
-            for child in json_object["inner"].object():
-                var node = AstNode.accept_from_json_object(child, level)
-                self.children_.append(node)
-        except Error as e:
-            raise Error(
+            for child in json_object["inner"].array():
+                var node = AstNode.accept_from_json_object(
+                    child.object(), level
+                )
+                self.children_.append(node^)
+        except e:
+            print(
                 "Error creating FunctionProtoTypeNode: "
                 + to_string(json_object)
                 + " "
-                + e.message()
+                + String(e)
             )
 
     fn to_string(self, just_code: Bool) raises -> String:

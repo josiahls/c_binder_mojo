@@ -112,9 +112,11 @@ struct RecordTypeNode(AstNodeLike):
         var s = String()
         # var indent = "\t" * self.level
         # We do not indent since this is part of more complex types.
-        s += self.record_name + "\n"
-        for child in self.children_:
-            s += child.to_string(just_code) + "\n"
+        if self.children_:
+            for child in self.children_:
+                s += child.to_string(just_code)  # + "\n"
+        else:
+            s += self.record_name + "\n"
         return s
 
     fn signature(self) -> String:

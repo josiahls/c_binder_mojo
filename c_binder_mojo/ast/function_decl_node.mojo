@@ -207,7 +207,8 @@ struct FunctionDeclNode(AstNodeLike):
             s += indent + self.signature() + "\n"
 
         if self.is_parm_var_decl:
-            s += self.function_name + ": "
+            # s += self.function_name + ": "
+            pass
         else:
             s += indent + "alias " + self.function_name + " = "
 
@@ -274,12 +275,15 @@ struct FunctionDeclNode(AstNodeLike):
             elif child.isa[ErrorAttrNode]():
                 # Skip this.
                 pass
+            elif child.isa[AlignedAttrNode]():
+                # Skip this.
+                pass
             elif child.isa[ParmVarDeclNode]():
                 if n_parm_var_decls > 0:
                     s += ", "
-                if child[ParmVarDeclNode].is_kwarg and not has_kwarg_pos_mix:
-                    has_kwarg_pos_mix = True
-                    s += "/,"
+                # if child[ParmVarDeclNode].is_kwarg and not has_kwarg_pos_mix:
+                #     has_kwarg_pos_mix = True
+                #     s += "/,"
                 s += child.to_string(just_code)
                 n_parm_var_decls += 1
             elif child.isa[FullCommentNode]():

@@ -64,7 +64,7 @@ struct FieldDeclNode(AstNodeLike):
             s += indent + self.signature() + "\n"
 
         name = self.name
-        if name in MOJO_KEYWORDS or name in MOJO_METHOD_KEYWORDS:
+        if name in ref MOJO_KEYWORDS or name in ref MOJO_METHOD_KEYWORDS:
             name = name + "_"
 
         s += indent + "var " + name + " : "

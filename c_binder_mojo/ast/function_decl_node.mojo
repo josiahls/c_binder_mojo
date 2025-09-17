@@ -109,9 +109,9 @@ struct FunctionDeclNode(AstNodeLike):
             if qual_type[i] == "," and level == -1:
                 outer_most_commas.append(i)
 
-            if String(qual_type[i]) in open_chars:
+            if String(qual_type[i]) in materialize[open_chars]():
                 level += 1
-            elif String(qual_type[i]) in close_chars:
+            elif String(qual_type[i]) in materialize[close_chars]():
                 level -= 1
         return outer_most_commas^
 

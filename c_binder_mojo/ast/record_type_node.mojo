@@ -46,7 +46,10 @@ struct RecordTypeNode(AstNodeLike):
                     if self.is_struct:
                         self.record_name = record_name.replace("struct ", "")
                 else:
-                    print("Error creating RecordTypeNode: ", to_string(object))
+                    print(
+                        "Error creating RecordTypeNode: ",
+                        to_string(object.copy()),
+                    )
             if "inner" in object:
                 for child in object["inner"].array():
                     self.children_.append(

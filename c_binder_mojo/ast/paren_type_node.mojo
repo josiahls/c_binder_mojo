@@ -27,7 +27,7 @@ struct ParenTypeNode(AstNodeLike):
             if "qualType" not in json_object["type"].object():
                 raise Error(
                     "'qualType' not found in json_object['type']: "
-                    + to_string(json_object["type"].object())
+                    + to_string(json_object["type"].object().copy())
                 )
             if "id" not in json_object:
                 raise Error(

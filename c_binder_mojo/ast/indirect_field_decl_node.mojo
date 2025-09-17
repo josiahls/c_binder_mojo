@@ -38,7 +38,9 @@ struct IndirectFieldDeclNode(AstNodeLike):
                     ].string()
         except e:
             print(
-                "Error creating IndirectFieldDeclNode: ", e, to_string(object)
+                "Error creating IndirectFieldDeclNode: ",
+                e,
+                to_string(object.copy()),
             )
 
     fn to_string(self, just_code: Bool) raises -> String:

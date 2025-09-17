@@ -359,4 +359,4 @@ fn generate_docs(json_path: Path) raises:
             package.object(),
         )
 
-    print(to_string[pretty=True](root_object))
+    print(to_string[pretty=True](root_object.copy()))

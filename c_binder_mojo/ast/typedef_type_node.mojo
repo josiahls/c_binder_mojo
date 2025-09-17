@@ -29,7 +29,7 @@ struct TypedefTypeNode(AstNodeLike):
                 else:
                     print(
                         "Error creating TypedefTypeNode: ",
-                        to_string(type_object),
+                        to_string(type_object.copy()),
                     )
         except e:
             print("Error creating TypedefTypeNode: ", e)

@@ -74,7 +74,7 @@ struct FunctionDeclNode(AstNodeLike):
                 else:
                     print(
                         "Error creating FunctionDeclNode: ",
-                        to_string(type_object),
+                        to_string(type_object.copy()),
                     )
             if "inner" in object:
                 for inner_object in object["inner"].array():

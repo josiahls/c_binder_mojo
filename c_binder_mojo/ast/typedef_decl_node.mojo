@@ -39,7 +39,7 @@ struct TypedefDeclNode(AstNodeLike):
                 else:
                     print(
                         "Error creating TypedefDeclNode: ",
-                        to_string(type_object),
+                        to_string(type_object.copy()),
                     )
             if "inner" in object:
                 for value in object["inner"].array():

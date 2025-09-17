@@ -55,7 +55,7 @@ struct FieldDeclNode(AstNodeLike):
                 # else:
                 #     print("Error creating FieldDeclNode: ", to_string(type_object))
         except e:
-            print("Error creating FieldDeclNode: ", e, to_string(object))
+            print("Error creating FieldDeclNode: ", e, to_string(object.copy()))
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

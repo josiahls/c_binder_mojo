@@ -29,7 +29,7 @@ struct SignNode(AstNodeLike):
             if "qualType" not in json_object["type"].object():
                 raise Error(
                     "'qualType' not found in json_object['type']: "
-                    + to_string(json_object["type"].object())
+                    + to_string(json_object["type"].object().copy())
                 )
             self.sign = json_object["type"].object()["qualType"].string()
             if "id" not in json_object:

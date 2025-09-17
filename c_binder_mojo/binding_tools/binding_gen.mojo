@@ -44,7 +44,9 @@ fn generate_bindings(
     )
     AstNode.impute_json_object(json_value.object())
     if modified_ast:
-        modified_ast[].write_text(to_string[pretty=True](json_value.object()))
+        modified_ast[].write_text(
+            to_string[pretty=True](json_value.object().copy())
+        )
     var root_node = AstNode.accept_from_json_object(
         json_value.object(), level=0
     )

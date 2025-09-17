@@ -35,7 +35,8 @@ struct VarDeclNode(AstNodeLike):
                     self.type = type_object["qualType"].string()
                 else:
                     print(
-                        "Error creating VarDeclNode: ", to_string(type_object)
+                        "Error creating VarDeclNode: ",
+                        to_string(type_object.copy()),
                     )
         except e:
             print("Error creating VarDeclNode: ", e)

@@ -42,12 +42,12 @@ struct ReturnDeclNode(AstNodeLike):
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
         return_type = json_object["type"].object()["returnType"].string()
-        return_type_object = Object()
+        var return_type_object = Object()
         return_type_object["id"] = Self.make_object_id(return_type_object)
         return_type_object["kind"] = UnprocessedTypeNode.__name__
         return_type_object["type"] = Object()
         return_type_object["type"].object()["qualType"] = return_type
-        json_object["inner"].array().append(return_type_object)
+        json_object["inner"].array().append(return_type_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

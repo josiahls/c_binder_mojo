@@ -31,7 +31,7 @@ struct TypedefDeclNode(AstNodeLike):
             if "name" in object:
                 self.name = object["name"].string()
             if "type" in object:
-                type_object = object["type"].object()
+                ref type_object = object["type"].object()
                 if "qualType" in type_object:
                     self.dtype = type_object["qualType"].string()
                     if "(*)" in self.dtype:

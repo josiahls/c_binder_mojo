@@ -96,7 +96,7 @@ struct SignNode(AstNodeLike):
 
     @staticmethod
     fn impute_json_object(mut json_object: Object) raises:
-        new_json_object = json_object.copy()
+        var new_json_object = json_object.copy()
         new_json_object["id"] = String(UnsafePointer(to=new_json_object))
 
         qual_type = new_json_object["type"].object()["qualType"].string()
@@ -124,7 +124,7 @@ struct SignNode(AstNodeLike):
 
         if "inner" not in json_object:
             json_object["inner"] = Array()
-        json_object["inner"].array().append(new_json_object)
+        json_object["inner"].array().append(new_json_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

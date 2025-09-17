@@ -12,6 +12,7 @@ from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 # Can do `==` checking.
 alias DIRECT_TYPE_MAP: Dict[String, String] = {
     "bool": "Bool",
+    "_Bool": "Bool",
     "__SVBool_t": "Bool",
     "void": "NoneType",
     "char": "Int8",

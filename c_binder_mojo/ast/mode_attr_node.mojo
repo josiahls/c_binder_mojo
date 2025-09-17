@@ -31,5 +31,5 @@ struct ModeAttrNode(AstNodeLike):
         return (
             UnsafePointer(to=self.children_)
             .bitcast[List[T]]()
-            .origin_cast[origin = __origin_of(self)]()[]
+            .origin_cast[target_origin = __origin_of(self)]()[]
         )

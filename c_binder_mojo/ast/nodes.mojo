@@ -116,8 +116,8 @@ struct AstNode(Copyable & Movable):
             if self.isa[Type]():
                 return UnsafePointer[mut=mut](
                     to=self[Type].children[Self]()
-                ).origin_cast[origin = __origin_of(self)]()[]
+                ).origin_cast[target_origin = __origin_of(self)]()[]
 
         return UnsafePointer[mut=mut](to=List[Self]()).origin_cast[
-            origin = __origin_of(self)
+            target_origin = __origin_of(self)
         ]()[]

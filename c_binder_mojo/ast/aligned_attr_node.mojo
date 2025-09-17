@@ -24,12 +24,13 @@ struct AlignedAttrNode(AstNodeLike):
         try:
             if "id" not in json_object:
                 raise Error(
-                    "'id' not found in json_object: " + to_string(json_object)
+                    "'id' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
             if "inner" not in json_object:
                 raise Error(
                     "'inner' not found in json_object: "
-                    + to_string(json_object)
+                    + to_string(json_object.copy())
                 )
             for child in json_object["inner"].array():
                 var node = AstNode.accept_from_json_object(
@@ -39,7 +40,7 @@ struct AlignedAttrNode(AstNodeLike):
         except e:
             print(
                 "Error creating AlignedAttrNode: "
-                + to_string(json_object)
+                + to_string(json_object.copy())
                 + " "
                 + String(e)
             )

@@ -23,7 +23,8 @@ struct SignNode(AstNodeLike):
         try:
             if "type" not in json_object:
                 raise Error(
-                    "'type' not found in json_object: " + to_string(json_object)
+                    "'type' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
             if "qualType" not in json_object["type"].object():
                 raise Error(
@@ -33,7 +34,8 @@ struct SignNode(AstNodeLike):
             self.sign = json_object["type"].object()["qualType"].string()
             if "id" not in json_object:
                 raise Error(
-                    "'id' not found in json_object: " + to_string(json_object)
+                    "'id' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
             self.id = json_object["id"].string()
             if "inner" in json_object:
@@ -48,7 +50,7 @@ struct SignNode(AstNodeLike):
     @staticmethod
     fn accept_impute_json_object(read json_object: Object) raises -> Bool:
         # Check if the builtin type has been imputed by the AstNode sign.
-        # print('checking sign node for json_object: ', to_string(json_object))
+        # print('checking sign node for json_object: ', to_string(json_object.copy()))
         if json_object["kind"].string() == "BuiltinType":
             qual_type = json_object["type"].object()["qualType"].string()
             if "wrappingType" in json_object:

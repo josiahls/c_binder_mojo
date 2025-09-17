@@ -37,7 +37,7 @@ struct ParmVarDeclNode(AstNodeLike):
                 "Error creating ParmVarDeclNode: ",
                 e,
                 " json_object: ",
-                to_string(json_object),
+                to_string(json_object.copy()),
             )
 
     @staticmethod

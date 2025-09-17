@@ -96,13 +96,13 @@ struct CompilationDatabaseEntry(Copyable & Movable & Writable):
 struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
     alias Element = Optional[CompilationDatabaseEntry]
     var index: Int
-    var database: Array
+    var database: Pointer[Array, origin]
     var length: Int
     var consolidated_entry: CompilationDatabaseEntry
 
     fn __init__(out self, ref [origin]database: Array):
         self.index = 0
-        self.database = database
+        self.database = Pointer(to=database)
         self.length = len(database)
         self.consolidated_entry = CompilationDatabaseEntry()
 
@@ -116,8 +116,8 @@ struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
     @always_inline
     fn __next__(mut self) -> Self.Element:
         while self.__has_next__():
-            var value = self.database[self.index]
-            var object = value.object()
+            ref value = self.database[][self.index]
+            ref object = value.object()
 
             try:
                 entry = CompilationDatabaseEntry(
@@ -158,7 +158,7 @@ struct CompilationDatabase:
         self.verbose = False
         try:
             var value = parse(file_path.read_text())
-            self.database = value.array()
+            self.database = value._data.take[Array]()
         except e:
             print("Error parsing compilation database: ", e)
             self.database = Array()

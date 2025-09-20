@@ -494,10 +494,10 @@ struct TypeMapper:
                 return Self._convert_restrict_type(stripped_type)
             elif Self._is_volatile_type(stripped_type) and not is_fn_param:
                 return Self._convert_volatile_type(stripped_type)
-            elif stripped_type in NON_NUMERIC_TYPES:
-                return NON_NUMERIC_TYPES[stripped_type]
-            elif stripped_type in NUMERIC_TYPES:
-                return NUMERIC_TYPES[stripped_type]
+            elif stripped_type in materialize[NON_NUMERIC_TYPES]():
+                return materialize[NON_NUMERIC_TYPES]()[stripped_type]
+            elif stripped_type in materialize[NUMERIC_TYPES]():
+                return materialize[NUMERIC_TYPES]()[stripped_type]
             elif Self._has_const_attribute(stripped_type) and not is_fn_param:
                 # NOTE: is_fn_param==True, const's currently get handled differently.
                 return Self._convert_const_attribute(stripped_type)

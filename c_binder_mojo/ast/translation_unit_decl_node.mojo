@@ -91,7 +91,7 @@ fn prune_repeated_decls(
 
         if name in names:
             indicies.append(i)
-        elif name in BANNED_TYPES:
+        elif name in materialize[BANNED_TYPES]():
             indicies.append(i)
         else:
             names.add(name)

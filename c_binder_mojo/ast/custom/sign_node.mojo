@@ -23,17 +23,19 @@ struct SignNode(AstNodeLike):
         try:
             if "type" not in json_object:
                 raise Error(
-                    "'type' not found in json_object: " + to_string(json_object)
+                    "'type' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
             if "qualType" not in json_object["type"].object():
                 raise Error(
                     "'qualType' not found in json_object['type']: "
-                    + to_string(json_object["type"].object())
+                    + to_string(json_object["type"].object().copy())
                 )
             self.sign = json_object["type"].object()["qualType"].string()
             if "id" not in json_object:
                 raise Error(
-                    "'id' not found in json_object: " + to_string(json_object)
+                    "'id' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
             self.id = json_object["id"].string()
             if "inner" in json_object:
@@ -122,7 +124,7 @@ struct SignNode(AstNodeLike):
 
         if "inner" not in json_object:
             json_object["inner"] = Array()
-        json_object["inner"].array().append(new_json_object)
+        json_object["inner"].array().append(new_json_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

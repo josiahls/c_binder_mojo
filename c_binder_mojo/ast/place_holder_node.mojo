@@ -19,7 +19,7 @@ struct PlaceHolderNode(AstNodeLike):
     fn __init__(out self, object: Object, level: Int):
         self.nodes = List[AstNode]()
         self.level = level
-        self.json_string = to_string(object)
+        self.json_string = to_string(object.copy())
         self.children_ = List[AstNode]()
         if "inner" in object:
             try:
@@ -31,7 +31,7 @@ struct PlaceHolderNode(AstNodeLike):
                     )
             except e:
                 print("Error creating PlaceHolderNode: ", e)
-                print(to_string(object))
+                print(to_string(object.copy()))
 
     @staticmethod
     fn accept_from_json_object(read json_object: Object) raises -> Bool:

@@ -47,7 +47,7 @@ struct ReturnDeclNode(AstNodeLike):
         return_type_object["kind"] = UnprocessedTypeNode.__name__
         return_type_object["type"] = Object()
         return_type_object["type"].object()["qualType"] = return_type
-        json_object["inner"].array().append(return_type_object)
+        json_object["inner"].array().append(return_type_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

@@ -61,7 +61,7 @@ struct PointerTypeNode(AstNodeLike):
                 String(s.strip())
             )
         )
-        json_object["inner"].array().append(unprocessed_type_json_object)
+        json_object["inner"].array().append(unprocessed_type_json_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

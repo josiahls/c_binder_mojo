@@ -71,7 +71,7 @@ struct ClangSimdNode(AstNodeLike):
 
         if "inner" not in json_object:
             json_object["inner"] = Array()
-        json_object["inner"].array().append(builtin_type_copy)
+        json_object["inner"].array().append(builtin_type_copy^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

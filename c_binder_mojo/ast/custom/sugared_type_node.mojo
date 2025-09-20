@@ -33,7 +33,7 @@ struct SugaredTypeNode(AstNodeLike):
                                 " implies that there is a new node that needs"
                                 " to be created to handle this."
                             ),
-                            to_string(json_object),
+                            to_string(json_object.copy()),
                         )
         except e:
             print("Error creating SugaredTypeNode: ", e)
@@ -55,7 +55,7 @@ struct SugaredTypeNode(AstNodeLike):
                     return True
             raise Error(
                 "SugaredTypeNode: failed to consume: ",
-                to_string(json_object),
+                to_string(json_object.copy()),
                 (
                     " there is likely a bug since this should be the last node,"
                     " before PlaceHolderNode "

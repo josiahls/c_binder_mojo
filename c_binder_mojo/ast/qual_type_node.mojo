@@ -44,7 +44,7 @@ struct QualTypeNode(AstNodeLike):
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
                     ref s = json_object["type"].object()["qualType"].string()
-                    for qualifier in QUALIFIERS:
+                    for qualifier in materialize[QUALIFIERS]():
                         # TODO: This is really only going to be true
                         # for restrict keyword since that appears at the end.
                         # const and volatile usually appear at the beginning.
@@ -56,7 +56,7 @@ struct QualTypeNode(AstNodeLike):
 
                     # If it is not a pointer, then we need to check if the qualifier is at the beginning.
                     if not s.endswith("*"):
-                        for qualifier in QUALIFIERS:
+                        for qualifier in materialize[QUALIFIERS]():
                             if s.startswith(qualifier):
                                 return True
         return False
@@ -68,7 +68,7 @@ struct QualTypeNode(AstNodeLike):
         json_object["kind"] = Self.__name__
         json_object["inner"] = Array()
         json_object["qualifiers"] = ""
-        for qualifier in QUALIFIERS:
+        for qualifier in materialize[QUALIFIERS]():
             if s.endswith(qualifier):
                 if json_object["qualifiers"].string() == "":
                     json_object["qualifiers"] = qualifier + " "

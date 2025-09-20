@@ -72,7 +72,7 @@ struct RecordTypeNode(AstNodeLike):
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
                     ref s = json_object["type"].object()["qualType"].string()
-                    for record_type in RECORD_TYPES:
+                    for record_type in materialize[RECORD_TYPES]():
                         if s.startswith(record_type):
                             return True
         return False
@@ -91,7 +91,7 @@ struct RecordTypeNode(AstNodeLike):
         json_object["type"] = Object()
         json_object["type"].object()["qualType"] = s
         var new_qual_type: String = s.copy()
-        for record_type in RECORD_TYPES:
+        for record_type in materialize[RECORD_TYPES]():
             if new_qual_type.startswith(record_type):
                 new_qual_type = String(new_qual_type.removeprefix(record_type))
                 if record_type == "struct":

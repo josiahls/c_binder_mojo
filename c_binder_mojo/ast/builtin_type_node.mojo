@@ -73,9 +73,9 @@ struct BuiltinTypeNode(AstNodeLike):
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
                     ref s = json_object["type"].object()["qualType"].string()
-                    if s in DIRECT_TYPE_MAP:
+                    if s in materialize[DIRECT_TYPE_MAP]():
                         return True
-                    for item in LOWER_ENDSWITH_TYPE_MAP.items():
+                    for item in materialize[LOWER_ENDSWITH_TYPE_MAP]().items():
                         if s.lower().endswith(item.key):
                             return True
         return False
@@ -88,12 +88,12 @@ struct BuiltinTypeNode(AstNodeLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
-        for dtype in DIRECT_TYPE_MAP:
+        for dtype in materialize[DIRECT_TYPE_MAP]():
             if dtype == self.dtype:
                 # print("BuiltinTypeNode: dtype: ", dtype)
                 # print("BuiltinTypeNode: DIRECT_TYPE_MAP[dtype]: ", DIRECT_TYPE_MAP[dtype])
-                return DIRECT_TYPE_MAP[dtype]
-        for item in LOWER_ENDSWITH_TYPE_MAP.items():
+                return materialize[DIRECT_TYPE_MAP]()[dtype]
+        for item in materialize[LOWER_ENDSWITH_TYPE_MAP]().items():
             if self.dtype.lower().endswith(item.key):
                 # print("BuiltinTypeNode: dtype: ", self.dtype)
                 # print("BuiltinTypeNode: LOWER_ENDSWITH_TYPE_MAP[dtype]: ", item.value)

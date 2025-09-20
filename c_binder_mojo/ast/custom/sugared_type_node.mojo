@@ -49,9 +49,6 @@ struct SugaredTypeNode(AstNodeLike):
         if json_object["kind"].string() == UnprocessedTypeNode.__name__:
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
-                    qual_type = (
-                        json_object["type"].object()["qualType"].string()
-                    )
                     return True
             raise Error(
                 "SugaredTypeNode: failed to consume: ",

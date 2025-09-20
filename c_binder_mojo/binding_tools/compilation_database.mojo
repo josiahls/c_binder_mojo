@@ -13,7 +13,7 @@ from subprocess import run
 
 # Third Party Mojo Modules
 from firehose.logging import Logger, set_global_logger_settings
-from emberjson import parse, to_string, Object, Value, Array
+from emberjson import parse, to_string, Object, Value, Array, JSON
 
 # First Party Modules
 
@@ -96,13 +96,13 @@ struct CompilationDatabaseEntry(Copyable & Movable & Writable):
 struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
     alias Element = Optional[CompilationDatabaseEntry]
     var index: Int
-    var database: Array
+    var database: Pointer[JSON, origin]
     var length: Int
     var consolidated_entry: CompilationDatabaseEntry
 
-    fn __init__(out self, ref [origin]database: Array):
+    fn __init__(out self, ref [origin]database: JSON):
         self.index = 0
-        self.database = database
+        self.database = Pointer(to=database)
         self.length = len(database)
         self.consolidated_entry = CompilationDatabaseEntry()
 
@@ -116,15 +116,16 @@ struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
     @always_inline
     fn __next__(mut self) -> Self.Element:
         while self.__has_next__():
-            var value = self.database[self.index]
-            var object = value.object()
+            ref array = self.database[].array()
+            ref value = array[self.index]
+            ref json_object = value.object()
 
             try:
                 entry = CompilationDatabaseEntry(
-                    directory=object["directory"].string(),
-                    command=object["command"].string(),
-                    file=object["file"].string(),
-                    output=object["output"].string(),
+                    directory=json_object["directory"].string(),
+                    command=json_object["command"].string(),
+                    file=json_object["file"].string(),
+                    output=json_object["output"].string(),
                 )
                 if self.consolidated_entry.is_empty():
                     self.consolidated_entry = entry^
@@ -152,16 +153,15 @@ struct _CompilationDatabaseIter[mut: Bool, //, origin: Origin[mut]](Iterator):
 @fieldwise_init
 struct CompilationDatabase:
     var verbose: Bool
-    var database: Array
+    var database: JSON
 
     fn __init__(out self, file_path: Path):
         self.verbose = False
         try:
-            var value = parse(file_path.read_text())
-            self.database = value.array()
+            self.database = parse(file_path.read_text())
         except e:
             print("Error parsing compilation database: ", e)
-            self.database = Array()
+            self.database = JSON()
 
     fn __iter__(
         ref self,

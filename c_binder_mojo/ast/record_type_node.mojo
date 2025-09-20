@@ -39,14 +39,17 @@ struct RecordTypeNode(AstNodeLike):
             if "id" in object:
                 self.mem_address = object["id"].string()
             if "type" in object:
-                var type_object = object["type"].object()
+                ref type_object = object["type"].object()
                 if "qualType" in type_object:
                     record_name = type_object["qualType"].string()
                     self.is_struct = record_name.startswith("struct")
                     if self.is_struct:
                         self.record_name = record_name.replace("struct ", "")
                 else:
-                    print("Error creating RecordTypeNode: ", to_string(object))
+                    print(
+                        "Error creating RecordTypeNode: ",
+                        to_string(object.copy()),
+                    )
             if "inner" in object:
                 for child in object["inner"].array():
                     self.children_.append(
@@ -103,7 +106,7 @@ struct RecordTypeNode(AstNodeLike):
                 String(new_qual_type.strip())
             )
         )
-        json_object["inner"].array().append(inner_json_object)
+        json_object["inner"].array().append(inner_json_object^)
         for ref child in json_object["inner"].array():
             AstNode.impute_json_object(child.object())
 

@@ -68,13 +68,13 @@ struct FunctionDeclNode(AstNodeLike):
                     if wrapping_type.string() == ParmVarDeclNode.__name__:
                         self.is_parm_var_decl = True
             if "type" in object:
-                type_object = object["type"].object()
+                ref type_object = object["type"].object()
                 if "qualType" in type_object:
                     self.function_type = type_object["qualType"].string()
                 else:
                     print(
                         "Error creating FunctionDeclNode: ",
-                        to_string(type_object),
+                        to_string(type_object.copy()),
                     )
             if "inner" in object:
                 for inner_object in object["inner"].array():
@@ -156,7 +156,7 @@ struct FunctionDeclNode(AstNodeLike):
             parm_var_decl_type["type"].object()["qualType"] = String(
                 separated_parm_var.strip()
             )
-            separated_parm_var_decl_types.append(parm_var_decl_type)
+            separated_parm_var_decl_types.append(parm_var_decl_type^)
 
         return separated_parm_var_decl_types^
 
@@ -195,7 +195,7 @@ struct FunctionDeclNode(AstNodeLike):
         return_type_object["inner"] = Array()
         if "inner" not in json_object:
             json_object["inner"] = Array()
-        json_object["inner"].array().append(return_type_object)
+        json_object["inner"].array().append(return_type_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

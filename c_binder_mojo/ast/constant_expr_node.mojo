@@ -27,13 +27,13 @@ struct ConstantExprNode(AstNodeLike):
             if "valueCategory" in object:
                 self.value_category = object["valueCategory"].string()
             if "type" in object:
-                type_object = object["type"].object()
+                ref type_object = object["type"].object()
                 if "qualType" in type_object:
                     self.type = type_object["qualType"].string()
                 else:
                     print(
                         "Error creating ConstantExprNode: ",
-                        to_string(type_object),
+                        to_string(type_object.copy()),
                     )
             if "inner" in object:
                 for inner_object in object["inner"].array():

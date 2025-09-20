@@ -53,14 +53,16 @@ struct BuiltinTypeNode(AstNodeLike):
         self.object_id = ""
         try:
             if "id" not in object:
-                raise Error("'id' not found in object: " + to_string(object))
+                raise Error(
+                    "'id' not found in object: " + to_string(object.copy())
+                )
             self.object_id = object["id"].string()
             if "type" in object:
                 ref type_object = object["type"].object()
                 if "qualType" not in type_object:
                     raise Error(
                         "'qualType' not found in type_object: "
-                        + to_string(type_object)
+                        + to_string(type_object.copy())
                     )
                 if "qualType" in type_object:
                     self.dtype = type_object["qualType"].string()

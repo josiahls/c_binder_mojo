@@ -37,7 +37,7 @@ struct ParmVarDeclNode(AstNodeLike):
                 "Error creating ParmVarDeclNode: ",
                 e,
                 " json_object: ",
-                to_string(json_object),
+                to_string(json_object.copy()),
             )
 
     @staticmethod
@@ -53,7 +53,7 @@ struct ParmVarDeclNode(AstNodeLike):
         json_object["name"] = ""
         json_object["kind"] = ParmVarDeclNode.__name__
         json_object["inner"] = Array()
-        json_object["inner"].array().append(unknown_type_object)
+        json_object["inner"].array().append(unknown_type_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute_json_object(inner_object.object())
 

@@ -31,7 +31,7 @@ struct TypedefDeclNode(AstNodeLike):
             if "name" in object:
                 self.name = object["name"].string()
             if "type" in object:
-                type_object = object["type"].object()
+                ref type_object = object["type"].object()
                 if "qualType" in type_object:
                     self.dtype = type_object["qualType"].string()
                     if "(*)" in self.dtype:
@@ -39,7 +39,7 @@ struct TypedefDeclNode(AstNodeLike):
                 else:
                     print(
                         "Error creating TypedefDeclNode: ",
-                        to_string(type_object),
+                        to_string(type_object.copy()),
                     )
             if "inner" in object:
                 for value in object["inner"].array():
@@ -49,7 +49,9 @@ struct TypedefDeclNode(AstNodeLike):
                         )
                     )
             else:
-                print("Error creating TypedefDeclNode: ", object)
+                print(
+                    "Error creating TypedefDeclNode: ", to_string(object.copy())
+                )
         except e:
             print("Error creating TypedefDeclNode: ", e)
 

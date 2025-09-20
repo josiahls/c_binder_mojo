@@ -21,7 +21,7 @@ struct EnumTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
         try:
             if "type" in object:
-                type_object = object["type"].object()
+                ref type_object = object["type"].object()
                 if "qualType" in type_object:
                     name = type_object["qualType"].string()
                     self.name = String(name.removeprefix("enum "))

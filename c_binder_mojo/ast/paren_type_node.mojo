@@ -21,21 +21,23 @@ struct ParenTypeNode(AstNodeLike):
         try:
             if "type" not in json_object:
                 raise Error(
-                    "'type' not found in json_object: " + to_string(json_object)
+                    "'type' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
             if "qualType" not in json_object["type"].object():
                 raise Error(
                     "'qualType' not found in json_object['type']: "
-                    + to_string(json_object["type"].object())
+                    + to_string(json_object["type"].object().copy())
                 )
             if "id" not in json_object:
                 raise Error(
-                    "'id' not found in json_object: " + to_string(json_object)
+                    "'id' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
             if "inner" not in json_object:
                 raise Error(
                     "'inner' not found in json_object: "
-                    + to_string(json_object)
+                    + to_string(json_object.copy())
                 )
 
             for child in json_object["inner"].array():
@@ -48,7 +50,7 @@ struct ParenTypeNode(AstNodeLike):
         except e:
             print(
                 "Error creating ParenTypeNode: "
-                + to_string(json_object)
+                + to_string(json_object.copy())
                 + " "
                 + String(e)
             )

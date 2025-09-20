@@ -77,7 +77,7 @@ struct SignNode(AstNodeLike):
             elif qual_type.startswith("__SVU"):
                 return True
         elif json_object["kind"] == UnprocessedTypeNode.__name__:
-            qual_type = json_object["type"].object()["qualType"].string()
+            ref qual_type = json_object["type"].object()["qualType"].string()
             if "wrappingType" in json_object:
                 if Self.__name__ in json_object["wrappingType"].array():
                     return False

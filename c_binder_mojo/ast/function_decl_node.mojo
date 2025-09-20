@@ -215,7 +215,6 @@ struct FunctionDeclNode(AstNodeLike):
         var return_type: String = ""
         s += "fn ("
         var n_parm_var_decls = 0
-        var has_kwarg_pos_mix = False
         for child in self.children_:
             # TODO: Mvoe all attr nodes into a module and have an additional variant for them so we can just
             # check if X node is an attr node.

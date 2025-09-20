@@ -40,13 +40,9 @@ struct ParamCommandCommentNode(AstNodeLike):
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()
         var s: String = ""
-        var indent: String = "\t" * self.level
         # TODO: Need to propagate in comments whether this is inside a
         # another comment.
         s += "#" + self.param + ": "
-        # if not just_code:
-        #     s += indent + self.signature() + "\n"
-        #     s += indent + "# " + self.text + "\n"
         for child in self.children_:
             s += child.to_string(just_code)
         return s

@@ -3,21 +3,14 @@ description: Mojo Langauge and my coding standards
 globs: *.mojo
 ---
 
-# Please follow these mojo standards (these change frequently):
-- Mojo list iterations look like this:
-for element in some_list:
-   element[].some_function # Note the [] is a dereference to access the underlying object.
-- Mojo's Movable and Copyable are functions for the formats:
-fn __moveinit__(out self, owned other:Self) -> None: 
-    self.some_field = other.some_field^
-fn __copyinit__(out self, other:Self) -> None: 
-    self.some_field = other.some_field # Implicit copy usually
-
 # My Coding Standards
-- All files shoudl have the heading imports with the comments in this format.
+- All files should have the heading imports with the comments in this format.
 # Native Mojo Modules
 import something
 # Third Party Mojo Modules
 import something
 # First Party Modules
 import something
+
+# Additional Guidance
+- For more detailed instructions and examples on coding in Mojo, refer to [modular/CLAUDE.md](mdc:modular/CLAUDE.md).

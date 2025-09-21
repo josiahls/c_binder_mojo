@@ -12,6 +12,9 @@ add_library(complex_unions SHARED src/complex_unions.c)
 add_library(complex_structs SHARED src/complex_structs.c)
 add_library(simple_type_defs SHARED src/simple_type_defs.c)
 
+add_library(example_node SHARED src/example_node.c)
+target_include_directories(example_node PUBLIC include/)
+
 # Make headers available to consumers
 target_include_directories(test_c_project PUBLIC include/)
 

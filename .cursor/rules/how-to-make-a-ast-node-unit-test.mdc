@@ -1,0 +1,25 @@
+---
+description: When asked to make a unit test for an ast node, here are a few things you need to do
+globs: *.mojo
+alwaysApply: false
+---
+
+- Use `pixi run test_all` for sanity and compilation checks.
+Reference [how-to-code-in-mojo.mdc](mdc:.cursor/rules/how-to-code-in-mojo.mdc) for extra details.
+
+# Creating Minimal Unit Test Rule Scripts
+- Keep it SIMPLE. For each node type, create a minimal setup:
+  - A C header file with ONE type/function only. Copy tests/test_c_project/include/example_node.h but remove comments
+  - A C file only if necessary for the node type. Copy tests/test_c_project/src/example_node.c but remove comments
+  - A Mojo test file with ONE function that does basic round-trip binding validation. Copy tests/test_c_project/mojo/test_example_node.mojo but remove comments
+  - **CRITICAL**: Add the new library to tests/test_c_project/CMakeLists.txt:
+    ```
+    add_library(example_node SHARED src/example_node.c)
+    target_include_directories(example_node PUBLIC include/)
+    ```
+- The unit test should have exactly 1 assertion and test the most basic functionality.
+- Don't test multiple types, attributes, or complex scenarios - just ONE simple case.
+- In scripts/run-tests.sh, add the test using the combined command:
+  - `run_cmd pixi run generate_example_bindings_and_test base_test_name`
+  - Where base_test_name matches the filename without extension (e.g., "builtin_type_node" for builtin_type_node.h/.c and test_[base_test_name].mojo files)
+- https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVydHljcnFvdHFsYnFwMGdldTFvMzlvYW96eXlrb3l6Z3VnZzR2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3JF8vzmeP1leO1rjEF/giphy.gif

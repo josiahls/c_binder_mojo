@@ -148,55 +148,14 @@ i_rebase = { cmd = [
 
 ########################## Testing Configuration ##############################
 # Build the c bindings.
-build_test_c_project_bindings_sanity = { cmd = [
-    "pixi", "run", "mojo", "run", "$C_BINDER_INCLUDES", "tests/test_simple_nodes.mojo"
-]}
 
-build_test_c_project_bindings_rte_mbuf_core = { cmd = [
-    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/rte_mbuf_core.h", "true"
-]}
-
-build_test_c_project_bindings_simple_type_defs = { cmd = [
-    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/simple_type_defs.h"
-]}
-
-build_test_c_project_bindings_complex_structs = { cmd = [
-    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_structs.h"
-]}
-
-build_test_c_project_bindings_complex_unions = { cmd = [
-    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_unions.h"
-]}
-
-build_test_c_project_bindings_complex_type_defs = { cmd = [
-    "pixi", "run", "generate_example_bindings", "tests/test_c_project/include/complex_type_defs.h", "true"
-]}
-
-build_test_c_project_bindings = { depends-on = [ 
-    "configure", 
-    "build_test_c_project_bindings_simple_type_defs",
-    "build_test_c_project_bindings_complex_structs",
-    "build_test_c_project_bindings_complex_unions",
-    "build_test_c_project_bindings_rte_mbuf_core"
-]}
-
-test = { cmd = [
-    "pixi", "run", "mojo", "run", "-I", "tests/test_c_project/build", "$C_BINDER_INCLUDES"
-]}
-
-test_test_stdlib_ext = { cmd = [
-    "pixi", "run", "test", "tests/test_stdlib_ext.mojo"
-]}
-
-test_test_typing = { cmd = [
-    "pixi", "run", "test", "tests/test_typing.mojo"
+run_tests = { cmd = [
+    "bash", "./scripts/run-tests.sh"
 ]}
 
 test_all = { depends-on = [ 
     "package",
-    "build_test_c_project_bindings",
-    "test_test_stdlib_ext",
-    "test_test_typing",
+    "run_tests"
 ]}
 
 [feature.stdlib-dev.activation.env]

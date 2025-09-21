@@ -9,12 +9,12 @@ run_cmd() {
 
 run_cmd pixi run mojo run -I . $C_BINDER_INCLUDES tests/test_simple_nodes.mojo
 
-run_cmd pixi run generate_example_bindings tests/test_c_project/include/rte_mbuf_core.h true
+run_cmd pixi run generate_example_bindings_and_test rte_mbuf_core true
 
-run_cmd pixi run generate_example_bindings tests/test_c_project/include/simple_type_defs.h
+run_cmd pixi run generate_example_bindings_and_test simple_type_defs
 
-run_cmd pixi run generate_example_bindings tests/test_c_project/include/complex_structs.h
+run_cmd pixi run generate_example_bindings_and_test complex_structs
 
-run_cmd pixi run generate_example_bindings tests/test_c_project/include/complex_unions.h
+run_cmd pixi run generate_example_bindings_and_test complex_unions
 
-run_cmd pixi run generate_example_bindings tests/test_c_project/include/complex_type_defs.h true
+run_cmd pixi run generate_example_bindings_and_test complex_type_defs true

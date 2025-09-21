@@ -7,7 +7,7 @@ run_cmd() {
 }
 
 
-run_cmd pixi run mojo run $C_BINDER_INCLUDES tests/test_simple_nodes.mojo
+run_cmd pixi run mojo run -I . $C_BINDER_INCLUDES tests/test_simple_nodes.mojo
 
 run_cmd pixi run generate_example_bindings tests/test_c_project/include/rte_mbuf_core.h true
 

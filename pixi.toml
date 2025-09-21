@@ -17,7 +17,7 @@ repository = "https://github.com/josiahls/c_binder_mojo"
 stdlib-dev = {features = ["stdlib-dev"]}
 
 [dependencies]
-mojo = ">=0.25.7.0.dev2025092005,<0.26.0.0"
+mojo = ">=0.25.7.0.dev2025092105,<0.26.0.0"
 pre-commit = ">=4.2.0,<5"
 
 [activation.env]

@@ -18,4 +18,4 @@ extern double complex_typedef_6 (const char *__restrict __nptr,
 #define __THROW
 #define __nonnull(params)
 
-extern int on_exit (void (*__func) (int __status, void *__arg), void *__arg)
+extern int on_exit (void (*__func) (int __status, void *__arg), void *__arg);

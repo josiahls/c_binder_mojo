@@ -169,6 +169,25 @@ generate_example_bindings_and_test = { cmd = [
     { arg = "skip_so_file_and_module_bindings", default = "false" }
 ]}
 
+run_test = { cmd = [
+    "mojo", "run", "-I", ".", "$C_BINDER_INCLUDES", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_{{ test_file_name }}.mojo"
+], depends-on = [ 
+    "configure",
+    "build_test_c_project"
+], args = [
+    { arg = "test_file_name" }
+]}
+
+run_test_debug = { cmd = [
+    "mojo", "debug", "-I", ".", "$C_BINDER_INCLUDES", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_{{ test_file_name }}.mojo"
+], depends-on = [ 
+    "configure",
+    "build_test_c_project"
+], args = [
+    { arg = "test_file_name" }
+]}
+
+
 run_tests = { cmd = [
     "bash", "./scripts/run-tests.sh"
 ]}

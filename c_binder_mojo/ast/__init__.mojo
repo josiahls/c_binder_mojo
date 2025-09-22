@@ -97,10 +97,12 @@ from c_binder_mojo.ast.static_assert_decl_node import StaticAssertDeclNode
 from c_binder_mojo.ast.unused_attr_node import UnusedAttrNode
 from c_binder_mojo.ast.verbatim_line_comment_node import VerbatimLineCommentNode
 from c_binder_mojo.ast.atomic_type_node import AtomicTypeNode
+from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
     # Custom nodes will have more advanced conditions.
+    VariadicArgsNode,
     PointerTypeNode,
     SignNode,
     ClangSimdNode,

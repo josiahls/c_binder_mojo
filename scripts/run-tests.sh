@@ -18,5 +18,7 @@ run_cmd pixi run generate_example_bindings_and_test complex_structs
 
 run_cmd pixi run generate_example_bindings_and_test complex_unions
 
+run_cmd pixi run generate_example_bindings_and_test variadic_args_node
+
 # We don't have a unit test to assert this.
-# run_cmd pixi run generate_example_bindings_and_test complex_type_defs true
+# run_cmd pixi run generate_example_bindings tests/test_c_project/include/complex_type_defs.h true

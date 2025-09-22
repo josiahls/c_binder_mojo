@@ -8,6 +8,7 @@ from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 from c_binder_mojo.ast.function_decl_node import FunctionDeclNode
+from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 
 
 struct ParmVarDeclNode(AstNodeLike):
@@ -49,6 +50,9 @@ struct ParmVarDeclNode(AstNodeLike):
         unknown_type_object["wrappingType"].array().append(
             ParmVarDeclNode.__name__
         )
+        if "variadic" in json_object:
+            if json_object["variadic"] == True:
+                unknown_type_object["variadic"] = True
         json_object["id"] = Self.make_object_id(json_object)
         json_object["name"] = ""
         json_object["kind"] = ParmVarDeclNode.__name__

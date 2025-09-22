@@ -121,6 +121,9 @@ fn _get_function_external_declarations(
             name = node[FunctionDeclNode].function_name
             if not include_private_methods and name.startswith("_"):
                 continue
+
+            if node[FunctionDeclNode].is_disabled:
+                continue
             if len(include_only_prefixes) != 0:
                 starts_with_prefix: Bool = False
                 for prefix in include_only_prefixes:

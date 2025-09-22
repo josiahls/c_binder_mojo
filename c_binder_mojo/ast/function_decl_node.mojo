@@ -1,3 +1,58 @@
+"""
+
+
+
+
+# Variadic Function Parameter Support
+
+Variadic argument bindings are not currently possible. The va_list is not part 
+of the function signature in C, but rather a compiler-specific pointer accessed 
+via va_list, va_start and related macros.
+
+For reference, other systems languages like Rust do not support variadic 
+arguments (see https://github.com/rust-lang/rust/issues/44930). While this would 
+be a useful feature, the lack of support in more mature systems languages 
+indicates significant technical challenges. 
+
+Related Rust RFC: https://github.com/rust-lang/rust/pull/57760
+
+Additional discussion of the technical challenges can be 
+found at: https://github.com/rust-lang/rust/issues/44930#issuecomment-374609300
+
+Example of desired variadic function binding syntax that is not currently possible:
+The va_list pointer in C cannot be directly accessed or manipulated from Mojo
+since it relies on compiler-specific implementation details.
+
+```mojo
+@export("count_variadic_args", ABI="C") # Not supported
+alias count_variadic_args = fn (n: ffi.c_int, *args: ffi.c_int) -> ffi.c_int
+alias variadic_args_node_count_variadic_args = ExternalFunction[
+    'count_variadic_args', 
+    count_variadic_args
+]
+
+@fieldwise_init
+struct variadic_args_node(Copyable, Movable):
+    var lib: DLHandle
+    var count_variadic_args: variadic_args_node_count_variadic_args.type
+
+    fn __init__(out self):
+...
+            self.lib = DLHandle(_get_lib_path('libvariadic_args_node.so'))
+...
+        self.count_variadic_args = variadic_args_node_count_variadic_args\
+            .load(self.lib)
+```
+Variadic functions are not currently supported in c_binder_mojo.
+This is because there is no reliable way to pass unnamed argument lists by value 
+in C. See: https://en.wikipedia.org/wiki/Stdarg.h
+Best practice is for C APIs to provide equivalent functions that accept va_list 
+arguments instead of variadic arguments. Since c_binder_mojo focuses on binding 
+to existing C code that cannot be modified, variadic functions must be disabled.
+A potential future solution could involve exposing the va_list pointer directly 
+through a C API, but this would only work for C code that can be modified.
+"""
+
 # Native Mojo Modules
 from sys.ffi import _Global
 
@@ -31,6 +86,7 @@ from c_binder_mojo.ast.asm_label_attr_node import AsmLabelAttrNode
 from c_binder_mojo.ast.always_inline_attr_node import AlwaysInlineAttrNode
 from c_binder_mojo.ast.error_attr_node import ErrorAttrNode
 from c_binder_mojo.ast.alloc_size_attr_node import AllocSizeAttrNode
+from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -42,6 +98,7 @@ struct FunctionDeclNode(AstNodeLike):
     var function_type: String
     var is_disabled: Bool
     var is_parm_var_decl: Bool
+    var is_variadic: Bool
     var level: Int
 
     var children_: List[AstNode]
@@ -56,6 +113,7 @@ struct FunctionDeclNode(AstNodeLike):
         self.is_disabled = False
         self.level = level
         self.is_parm_var_decl = False
+        self.is_variadic = False
         try:
             if "storageClass" in object:
                 self.storage_class = object["storageClass"].string()
@@ -67,6 +125,10 @@ struct FunctionDeclNode(AstNodeLike):
                 for wrapping_type in object["wrappingType"].array():
                     if wrapping_type.string() == ParmVarDeclNode.__name__:
                         self.is_parm_var_decl = True
+            if "variadic" in object:
+                self.is_variadic = object["variadic"].bool()
+                if self.is_variadic:
+                    self.is_disabled = True
             if "type" in object:
                 ref type_object = object["type"].object()
                 if "qualType" in type_object:
@@ -187,6 +249,15 @@ struct FunctionDeclNode(AstNodeLike):
         function_qual_type = json_object["type"].object()["qualType"].string()
         var return_type = Self.parse_return_type(function_qual_type)
 
+        if "variadic" in json_object:
+            var length = len(json_object["inner"].array())
+            var idx = 0
+            for ref inner_object in json_object["inner"].array():
+                # TODO: Fitler out non-parm var decls.
+                if idx == length - 1:
+                    inner_object.object()["variadic"] = True
+                idx += 1
+
         return_type_object = Object()
         return_type_object["id"] = "1"
         return_type_object["kind"] = "ReturnDecl"
@@ -277,7 +348,7 @@ struct FunctionDeclNode(AstNodeLike):
             elif child.isa[AlignedAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[ParmVarDeclNode]():
+            elif child.isa[ParmVarDeclNode]() or child.isa[VariadicArgsNode]():
                 if n_parm_var_decls > 0:
                     s += ", "
                 # if child[ParmVarDeclNode].is_kwarg and not has_kwarg_pos_mix:
@@ -300,10 +371,20 @@ struct FunctionDeclNode(AstNodeLike):
         if not self.is_parm_var_decl:
             s += "\n"
 
+        elif self.is_variadic:
+            comment = (
+                "# Note: Binding to c variadic function: "
+                + self.function_name
+                + "\n"
+            )
+            comment += (
+                "# is not supported yet. Reference `FunctionDeclNode` docs for"
+                " more details.\n"
+            )
+            s = comment + "# " + s.replace("\n", "\n# ") + "\n"
         if self.is_disabled:
             comment = "# Forward declaration of " + self.function_name + "\n"
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
-
         return s
 
     fn children[

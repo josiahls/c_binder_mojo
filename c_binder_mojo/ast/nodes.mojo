@@ -67,7 +67,6 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_from_json_object(json_object):
-                # NOTE: A copy happens here likely because create_from_json_object returns a Self instead of a ref Self
                 return Self(T.create_from_json_object(json_object, level))
         raise Error(
             "WARNING: none of the nodes accepted the json_object: ",

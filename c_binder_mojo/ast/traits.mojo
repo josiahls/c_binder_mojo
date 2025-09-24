@@ -21,7 +21,7 @@ trait AstNodeLike(Copyable & Movable):
         return json_object["kind"].string() == Self.__name__
 
     @staticmethod
-    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+    fn accept_impute(read json_object: Object) raises -> Bool:
         """Whether this node should accupt and update the json object.
 
         Default is True assuming that the default `impute_json_object` is

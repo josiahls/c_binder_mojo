@@ -23,7 +23,7 @@ struct UnprocessedTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
 
     @staticmethod
-    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+    fn accept_impute(read json_object: Object) raises -> Bool:
         """Other nodes must consume this node, so we return False."""
         return False
 

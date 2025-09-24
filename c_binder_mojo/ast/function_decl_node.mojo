@@ -223,7 +223,7 @@ struct FunctionDeclNode(AstNodeLike):
         return separated_parm_var_decl_types^
 
     @staticmethod
-    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+    fn accept_impute(read json_object: Object) raises -> Bool:
         if json_object["kind"] == UnprocessedTypeNode.__name__:
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():

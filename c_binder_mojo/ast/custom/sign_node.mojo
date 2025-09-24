@@ -48,7 +48,7 @@ struct SignNode(AstNodeLike):
             print("Error creating SignNode: ", e)
 
     @staticmethod
-    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+    fn accept_impute(read json_object: Object) raises -> Bool:
         # Check if the builtin type has been imputed by the AstNode sign.
         # print('checking sign node for json_object: ', to_string(json_object))
         if json_object["kind"].string() == "BuiltinType":

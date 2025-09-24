@@ -17,12 +17,6 @@ struct UnusedAttrNode(AstNodeLike):
         # TODO: We should at least have this as a commented string
         self.children_ = List[AstNode]()
 
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
-        return s
-
     fn children[
         T: Copyable & Movable = AstNode
     ](ref self: Self) -> ref [self] List[T]:

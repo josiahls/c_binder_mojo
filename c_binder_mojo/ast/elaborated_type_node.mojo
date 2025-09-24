@@ -25,12 +25,6 @@ struct ElaboratedTypeNode(AstNodeLike):
         except e:
             print("Error creating ElaboratedTypeNode: ", e)
 
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
-        return s
-
     fn children[
         T: Copyable & Movable = AstNode
     ](ref self: Self) -> ref [self] List[T]:

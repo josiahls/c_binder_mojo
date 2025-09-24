@@ -24,7 +24,8 @@ pre-commit = ">=4.2.0,<5"
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"
 GEM_HOME="$HOME/.local/share/gem"
 PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/share/gem/bin:${PATH}"
-C_BINDER_INCLUDES = "-I firehose -I EmberJson"
+C_BINDER_INCLUDES = " -I . -I firehose -I EmberJson"
+C_BINDER_TEST_INCLUDES = "$C_BINDER_INCLUDES -I tests/test_c_project/build"
 
 [tasks]
 ######################## Test C Project Configuration #########################
@@ -40,6 +41,10 @@ build_test_c_project = { cmd = [
     "make",
 ], depends-on = [
     "init_test_c_project"
+], inputs = [
+    "tests/test_c_project/include/*.h", 
+    "tests/test_c_project/src/*.c", 
+    "tests/test_c_project/CMakeLists.txt"
 ]}
 
 ########################### Firehose Configuration ############################
@@ -104,7 +109,7 @@ configure = { cmd = [
 ], depends-on = [ "clone_firehose", "clone_emberjson", "build_test_c_project", "install_pre_commit_hooks" ] }
 
 generate_example_bindings = { cmd = [
-    "mojo", "run", "-I", ".", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
+    "mojo", "run", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
 ], depends-on = [ 
     "configure" 
 ], args = [
@@ -114,7 +119,7 @@ generate_example_bindings = { cmd = [
 
 generate_example_bindings_debug = { cmd = [
 #    "gdb", "--args", "./example_binding_gen", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
-     "mojo", "debug", "-I", ".", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
+     "mojo", "debug", "$C_BINDER_INCLUDES", "example_binding_gen.mojo", "{{ input_header_path }}", "{{ skip_so_file_and_module_bindings }}"
 ], depends-on = [ 
     "configure" 
 ], args = [
@@ -123,7 +128,7 @@ generate_example_bindings_debug = { cmd = [
 ]}
 
 package = { cmd = [
-    "mojo", "package", "$C_BINDER_INCLUDES", "c_binder_mojo"
+    "mojo", "package", "$C_BINDER_INCLUDES", "c_binder_mojo",
 ], depends-on = [ "configure" ]}
 
 format = { cmd = [
@@ -131,7 +136,7 @@ format = { cmd = [
 ]}
 
 build = { cmd = [
-    "mojo", "build", "-I", ".", "$C_BINDER_INCLUDES", "-g1", "example_binding_gen.mojo"
+    "mojo", "build", "$C_BINDER_TEST_INCLUDES", "-g1", "example_binding_gen.mojo"
 ]}
 
 docs = { cmd = [
@@ -150,17 +155,11 @@ i_rebase = { cmd = [
 # Build the c bindings.
 
 generate_example_bindings_and_test = { cmd = [
-    "mojo", 
-    "run", 
-    "-I", ".", "$C_BINDER_INCLUDES", 
-    "example_binding_gen.mojo", 
+    "pixi", "run", "generate_example_bindings",
     "tests/test_c_project/include/{{ test_file_name }}.h", 
     "{{ skip_so_file_and_module_bindings }}",
     "&&",
-    "mojo", 
-    "run", 
-    "-I", ".", "$C_BINDER_INCLUDES", "-I", "tests/test_c_project/build",
-    "tests/test_c_project/mojo/test_{{ test_file_name }}.mojo"
+    "pixi", "run", "run_test", "{{ test_file_name }}"
 ], depends-on = [ 
     "configure",
     "build_test_c_project"
@@ -170,7 +169,7 @@ generate_example_bindings_and_test = { cmd = [
 ]}
 
 run_test = { cmd = [
-    "mojo", "run", "-I", ".", "$C_BINDER_INCLUDES", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_{{ test_file_name }}.mojo"
+    "mojo", "run", "$C_BINDER_TEST_INCLUDES", "tests/test_c_project/mojo/test_{{ test_file_name }}.mojo"
 ], depends-on = [ 
     "configure",
     "build_test_c_project"
@@ -179,7 +178,7 @@ run_test = { cmd = [
 ]}
 
 run_test_debug = { cmd = [
-    "mojo", "debug", "-I", ".", "$C_BINDER_INCLUDES", "-I", "tests/test_c_project/build", "tests/test_c_project/mojo/test_{{ test_file_name }}.mojo"
+    "mojo", "debug", "$C_BINDER_TEST_INCLUDES", "tests/test_c_project/mojo/test_{{ test_file_name }}.mojo"
 ], depends-on = [ 
     "configure",
     "build_test_c_project"

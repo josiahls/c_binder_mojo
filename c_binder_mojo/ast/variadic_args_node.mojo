@@ -40,7 +40,7 @@ struct VariadicArgsNode(AstNodeLike):
     fn accept_impute(read json_object: Object) raises -> Bool:
         """Whether this node should accupt and update the json object.
 
-        Default is True assuming that the default `impute_json_object` is
+        Default is True assuming that the default `impute` is
         being used, which allows for traversing the AST.
         """
         if json_object["kind"].string() == UnprocessedTypeNode.__name__:
@@ -58,7 +58,7 @@ struct VariadicArgsNode(AstNodeLike):
         return json_object^
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         var inner_copy = json_object.copy()
         json_object["variadic"] = True
         json_object["kind"] = Self.__name__
@@ -71,7 +71,7 @@ struct VariadicArgsNode(AstNodeLike):
         json_object["inner"].array().append(inner_copy^)
 
         for ref inner_object in json_object["inner"].array():
-            AstNode.impute_json_object(inner_object.object())
+            AstNode.impute(inner_object.object())
 
     fn signature(self) -> String:
         if self.is_variadic:

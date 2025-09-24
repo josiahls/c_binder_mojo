@@ -42,7 +42,7 @@ fn generate_bindings(
     var json_value = ast_parser.parse(
         test_file_path, extra_args=extra_args, raw_ast=raw_ast
     )
-    AstNode.impute_json_object(json_value.object())
+    AstNode.impute(json_value.object())
     if modified_ast:
         modified_ast[].write_text(
             to_string[pretty=True](json_value.object().copy())

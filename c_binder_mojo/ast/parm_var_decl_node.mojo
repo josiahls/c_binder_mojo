@@ -42,7 +42,7 @@ struct ParmVarDeclNode(AstNodeLike):
             )
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         var unknown_type_object = json_object.copy()
         unknown_type_object["id"] = Self.make_object_id(unknown_type_object)
         unknown_type_object["kind"] = UnprocessedTypeNode.__name__
@@ -59,7 +59,7 @@ struct ParmVarDeclNode(AstNodeLike):
         json_object["inner"] = Array()
         json_object["inner"].array().append(unknown_type_object^)
         for ref inner_object in json_object["inner"].array():
-            AstNode.impute_json_object(inner_object.object())
+            AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

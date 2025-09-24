@@ -79,7 +79,7 @@ struct RecordTypeNode(AstNodeLike):
         return False
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         var s = String(
             json_object["type"].object()["qualType"].string().strip()
         )
@@ -106,7 +106,7 @@ struct RecordTypeNode(AstNodeLike):
         )
         json_object["inner"].array().append(inner_json_object^)
         for ref child in json_object["inner"].array():
-            AstNode.impute_json_object(child.object())
+            AstNode.impute(child.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

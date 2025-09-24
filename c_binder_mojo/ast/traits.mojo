@@ -13,8 +13,20 @@ alias VERBOSE: Bool = False
 trait AstNodeLike(Copyable & Movable):
     alias __name__: String
 
+    # ==========================================================================
+    # Conbstructors
+    # ==========================================================================
+
     fn __init__(out self, json_object: Object, level: Int):
         pass
+
+    @staticmethod
+    fn create_from(read json_object: Object, read level: Int) raises -> Self:
+        return Self(json_object, level)
+
+    # ==========================================================================
+    # Acceptors
+    # ==========================================================================
 
     @staticmethod
     fn accept_create_from(read json_object: Object) raises -> Bool:
@@ -29,23 +41,9 @@ trait AstNodeLike(Copyable & Movable):
         """
         return json_object["kind"].string() == Self.__name__
 
-    @staticmethod
-    fn impute(mut json_object: Object) raises:
-        if "inner" in json_object:
-            for ref inner_object in json_object["inner"].array():
-                AstNode.impute(inner_object.object())
-
-    @staticmethod
-    fn create_from(read json_object: Object, read level: Int) raises -> Self:
-        @parameter
-        if VERBOSE:
-            print("creating " + String(Self.__name__) + " from json object")
-        var obj = Self(json_object, level)
-
-        @parameter
-        if VERBOSE:
-            print("created " + String(Self.__name__) + " from json object: ")
-        return obj^
+    # ==========================================================================
+    # Utilities and Fields
+    # ==========================================================================
 
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"
@@ -53,12 +51,22 @@ trait AstNodeLike(Copyable & Movable):
     fn to_string(self, just_code: Bool) raises -> String:
         return self.signature()
 
+    fn children[T: Copyable & Movable](ref self) -> ref [self] List[T]:
+        pass
+
+    # ==========================================================================
+    # Static Utilties
+    # ==========================================================================
+
+    @staticmethod
+    fn impute(mut json_object: Object) raises:
+        if "inner" in json_object:
+            for ref inner_object in json_object["inner"].array():
+                AstNode.impute(inner_object.object())
+
     @staticmethod
     fn make_object_id(read object: Object) -> String:
         return String(UnsafePointer(to=object))
-
-    fn children[T: Copyable & Movable](ref self) -> ref [self] List[T]:
-        pass
 
     # ==========================================================================
     # Hooks
@@ -69,3 +77,12 @@ trait AstNodeLike(Copyable & Movable):
         if VERBOSE:
             print("hook_to_string for " + String(Self.__name__))
         return self.to_string(just_code)
+
+    @staticmethod
+    fn hook_create_from(
+        read json_object: Object, read level: Int
+    ) raises -> Self:
+        @parameter
+        if VERBOSE:
+            print("hook_create_from for " + String(Self.__name__))
+        return Self.create_from(json_object, level)

@@ -64,7 +64,7 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_create_from(json_object):
-                return Self(T.create_from(json_object, level))
+                return Self(T.hook_create_from(json_object, level))
         raise Error("Missing accept_create_from method")
 
     @always_inline("nodebug")

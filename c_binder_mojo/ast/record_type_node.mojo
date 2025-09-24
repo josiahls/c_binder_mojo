@@ -114,7 +114,7 @@ struct RecordTypeNode(AstNodeLike):
         # var indent = "\t" * self.level
         # We do not indent since this is part of more complex types.
         if self.children_:
-            for child in self.children_:
+            for child in self.children():
                 s += child.to_string(just_code)  # + "\n"
         else:
             s += self.record_name + "\n"

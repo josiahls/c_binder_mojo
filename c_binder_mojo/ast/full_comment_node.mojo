@@ -39,7 +39,7 @@ struct FullCommentNode(AstNodeLike):
         var indent: String = "\t" * self.level
         if not just_code:
             s += indent + self.signature() + "\n"
-        for child in self.children_:
+        for child in self.children():
             s += child.to_string(just_code)
         return s
 

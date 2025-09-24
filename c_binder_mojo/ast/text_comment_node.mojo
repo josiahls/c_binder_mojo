@@ -39,7 +39,7 @@ struct TextCommentNode(AstNodeLike):
         if not just_code:
             s += indent + self.signature() + "\n"
             s += indent + "# " + self.text + "\n"
-        for child in self.children_:
+        for child in self.children():
             s += child.to_string(just_code)
         return s
 

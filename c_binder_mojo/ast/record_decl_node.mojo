@@ -168,7 +168,7 @@ struct RecordDeclNode(AstNodeLike):
             s += "alias " + self.record_name + " = C_Union["
             var overflow: String = ""
             iter_started = False
-            for child in self.children_:
+            for child in self.children():
                 if iter_started:
                     s += ", "
                 if child.isa[FieldDeclNode]():
@@ -186,7 +186,7 @@ struct RecordDeclNode(AstNodeLike):
             # s += '@register_passable("trivial")\n'
             s += "struct " + self.record_name + "(Copyable & Movable):\n"
 
-            for child in self.children_:
+            for child in self.children():
                 s += child.to_string(just_code) + "\n"
             if not self.has_body:
                 s += indent + "pass\n"

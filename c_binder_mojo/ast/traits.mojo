@@ -36,9 +36,7 @@ trait AstNodeLike(Copyable & Movable):
                 AstNode.impute(inner_object.object())
 
     @staticmethod
-    fn create_from_json_object(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
+    fn create_from(read json_object: Object, read level: Int) raises -> Self:
         @parameter
         if VERBOSE:
             print("creating " + String(Self.__name__) + " from json object")

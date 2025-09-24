@@ -99,5 +99,5 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
-                return self[T].children[Self]()
+                return self[T].children()
         raise Error("Missing children method")

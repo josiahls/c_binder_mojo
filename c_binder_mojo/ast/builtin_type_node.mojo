@@ -110,11 +110,7 @@ struct BuiltinTypeNode(AstNodeLike):
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "(" + self.dtype + ")"
 
-    fn children[
-        T: Copyable & Movable = AstNode
-    ](ref self: Self) -> ref [self] List[T]:
-        return (
-            UnsafePointer(to=self.children_)
-            .bitcast[List[T]]()
-            .origin_cast[target_origin = __origin_of(self)]()[]
-        )
+    fn children(ref self) -> ref [self] List[AstNode]:
+        return UnsafePointer(to=self.children_).origin_cast[
+            target_origin = __origin_of(self)
+        ]()[]

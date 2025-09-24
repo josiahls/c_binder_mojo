@@ -84,7 +84,7 @@ struct BuiltinTypeNode(AstNodeLike):
         return False
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         json_object["kind"] = Self.__name__
         json_object["inner"] = Array()
         json_object["qualifiers"] = ""

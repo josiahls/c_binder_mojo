@@ -40,7 +40,7 @@ struct ReturnDeclNode(AstNodeLike):
         return s
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         return_type = json_object["type"].object()["returnType"].string()
         return_type_object = Object()
         return_type_object["id"] = Self.make_object_id(return_type_object)
@@ -49,7 +49,7 @@ struct ReturnDeclNode(AstNodeLike):
         return_type_object["type"].object()["qualType"] = return_type
         json_object["inner"].array().append(return_type_object^)
         for ref inner_object in json_object["inner"].array():
-            AstNode.impute_json_object(inner_object.object())
+            AstNode.impute(inner_object.object())
 
     fn children[
         T: Copyable & Movable = AstNodeVariant

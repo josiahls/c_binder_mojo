@@ -94,7 +94,7 @@ struct SignNode(AstNodeLike):
         return False
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         new_json_object = json_object.copy()
         new_json_object["id"] = String(UnsafePointer(to=new_json_object))
 
@@ -125,7 +125,7 @@ struct SignNode(AstNodeLike):
             json_object["inner"] = Array()
         json_object["inner"].array().append(new_json_object^)
         for ref inner_object in json_object["inner"].array():
-            AstNode.impute_json_object(inner_object.object())
+            AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

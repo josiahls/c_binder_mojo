@@ -75,9 +75,9 @@ struct AstNode(Copyable & Movable):
 
     @always_inline("nodebug")
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         """
-        Iterates over each type in the variant at compile-time and calls impute_json_object.
+        Iterates over each type in the variant at compile-time and calls impute.
 
         Used for update the json ast with missing nodes or fleshing out the ast.
         """
@@ -86,8 +86,8 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_impute(json_object):
-                T.impute_json_object(json_object)
-                return  # Only call impute_json_object on the first matching type
+                T.impute(json_object)
+                return  # Only call impute on the first matching type
 
     @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:

@@ -62,7 +62,7 @@ struct QualTypeNode(AstNodeLike):
         return False
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         var s = json_object["type"].object()["qualType"].string().copy()
         json_object["id"] = ""
         json_object["kind"] = Self.__name__
@@ -97,7 +97,7 @@ struct QualTypeNode(AstNodeLike):
         )
         json_object["inner"].array().append(unprocessed_type_json_object^)
         for ref inner_object in json_object["inner"].array():
-            AstNode.impute_json_object(inner_object.object())
+            AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         self._to_string_hook()

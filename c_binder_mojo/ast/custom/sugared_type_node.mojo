@@ -61,7 +61,7 @@ struct SugaredTypeNode(AstNodeLike):
         return False
 
     @staticmethod
-    fn impute_json_object(mut json_object: Object) raises:
+    fn impute(mut json_object: Object) raises:
         json_object["kind"] = Self.__name__
 
     fn to_string(self, just_code: Bool) raises -> String:

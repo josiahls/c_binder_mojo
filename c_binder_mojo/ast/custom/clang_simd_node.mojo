@@ -81,11 +81,7 @@ struct ClangSimdNode(AstNodeLike):
             s += child.to_string(just_code)
         return "SIMD[" + s + ".dtype, " + String(self.width) + "]"
 
-    fn children[
-        T: Copyable & Movable = AstNode
-    ](ref self: Self) -> ref [self] List[T]:
-        return (
-            UnsafePointer(to=self.children_)
-            .bitcast[List[T]]()
-            .origin_cast[target_origin = __origin_of(self)]()[]
-        )
+    fn children(ref self) -> ref [self] List[AstNode]:
+        return UnsafePointer(to=self.children_).origin_cast[
+            target_origin = __origin_of(self)
+        ]()[]

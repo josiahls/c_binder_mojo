@@ -56,9 +56,28 @@ trait AstNodeLike(Copyable & Movable):
             s += child.to_string(just_code)
         return s
 
-    fn children[
-        T: Copyable & Movable = AstNode
-    ](ref self) -> ref [self] List[T]:
+    fn children(ref self) -> ref [self] List[AstNode]:
+        """Returns a List of AstNodes.
+
+        The concrete implementation should look identical to the following:
+
+        ```
+        fn children(ref self) -> ref [self] List[AstNode]:
+            return (
+                UnsafePointer(to=self.children_)
+                .origin_cast[target_origin = __origin_of(self)]()[]
+            )
+        ```
+        The `orgin_cast` is required since traits don't support `var fields`.
+        For example:
+
+        `-> ref [self.children_] List[AstNode]`
+
+        Would be the correct implementation however instead we cast the origin
+        of the returning `self.children_` to the origin of the `self` to void
+        requiring direct field access in trait implementations.
+        """
+
         pass
 
     # ==========================================================================

@@ -65,7 +65,6 @@ struct EnumDeclNode(AstNodeLike):
             print("Error creating EnumDeclNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s: String = ""
         if not just_code:
             s += self.signature() + "\n"

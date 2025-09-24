@@ -38,7 +38,6 @@ struct ParamCommandCommentNode(AstNodeLike):
             print("Error creating ParamCommandCommentNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s: String = ""
         # TODO: Need to propagate in comments whether this is inside a
         # another comment.

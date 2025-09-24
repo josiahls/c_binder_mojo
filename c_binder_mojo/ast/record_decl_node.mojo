@@ -162,7 +162,6 @@ struct RecordDeclNode(AstNodeLike):
                 print("Error creating RecordDeclNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s = String()
         var indent = "\t" * 1  # structs must not be indented.
         if self.tag_used == "union":

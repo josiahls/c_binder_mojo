@@ -24,7 +24,6 @@ struct CompoundStmtNode(AstNodeLike):
         self.children_ = List[AstNode]()
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         return ""
 
     fn children[

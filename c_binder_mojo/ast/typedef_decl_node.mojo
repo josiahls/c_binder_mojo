@@ -57,7 +57,6 @@ struct TypedefDeclNode(AstNodeLike):
         return "Node: " + self.__name__ + "(" + self.name + ")"
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s = String()
         var indent = "\t" * self.level
         if not just_code:

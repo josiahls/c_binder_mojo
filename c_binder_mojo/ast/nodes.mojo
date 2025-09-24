@@ -95,7 +95,7 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
-                return self[T].to_string(just_code)
+                return self[T].hook_to_string(just_code)
         raise Error(
             (
                 "WARNING: to_string called on AstNode with no to_string method"

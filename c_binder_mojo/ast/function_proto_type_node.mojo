@@ -49,7 +49,6 @@ struct FunctionProtoTypeNode(AstNodeLike):
             )
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s = "fn ("
         var return_type = self.children_[0].to_string(just_code)
         for i, child in enumerate(self.children_[1:]):

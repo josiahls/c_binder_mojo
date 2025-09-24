@@ -47,19 +47,20 @@ struct BuiltinTypeNode(AstNodeLike):
     var children_: List[AstNode]
     var object_id: String
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.dtype = ""
         self.children_ = List[AstNode]()
         self.object_id = ""
         try:
-            if "id" not in object:
+            if "id" not in json_object:
                 raise Error(
-                    "'id' not found in object: " + to_string(object.copy())
+                    "'id' not found in json_object: "
+                    + to_string(json_object.copy())
                 )
-            self.object_id = object["id"].string()
-            if "type" in object:
-                ref type_object = object["type"].object()
+            self.object_id = json_object["id"].string()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" not in type_object:
                     raise Error(
                         "'qualType' not found in type_object: "
@@ -103,7 +104,7 @@ struct BuiltinTypeNode(AstNodeLike):
         raise Error(
             "BuiltinTypeNode: Unexpected dtype: "
             + self.dtype
-            + " for object: "
+            + " for json_object: "
             + self.object_id
         )
 

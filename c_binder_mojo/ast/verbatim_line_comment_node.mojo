@@ -15,15 +15,15 @@ struct VerbatimLineCommentNode(AstNodeLike):
     var level: Int
     var text: String
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
         self.text = ""
         try:
-            if "text" in object:
-                self.text = object["text"].string()
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "text" in json_object:
+                self.text = json_object["text"].string()
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     self.children_.append(
                         AstNode.accept_create_from(
                             # NOTE: level is not a concept in this node,

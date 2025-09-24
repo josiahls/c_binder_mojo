@@ -15,7 +15,7 @@ struct ParenTypeNode(AstNodeLike):
     var children_: List[AstNode]
     var wraps_function_proto_type: Bool
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
         self.wraps_function_proto_type = False
         try:

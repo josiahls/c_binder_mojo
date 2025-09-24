@@ -103,7 +103,7 @@ struct FunctionDeclNode(AstNodeLike):
 
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.storage_class = ""
         self.function_name = ""
@@ -115,22 +115,22 @@ struct FunctionDeclNode(AstNodeLike):
         self.is_parm_var_decl = False
         self.is_variadic = False
         try:
-            if "storageClass" in object:
-                self.storage_class = object["storageClass"].string()
-            if "name" in object:
-                self.function_name = object["name"].string()
-            if "mangledName" in object:
-                self.function_mangled_name = object["mangledName"].string()
-            if "wrappingType" in object:
-                for wrapping_type in object["wrappingType"].array():
+            if "storageClass" in json_object:
+                self.storage_class = json_object["storageClass"].string()
+            if "name" in json_object:
+                self.function_name = json_object["name"].string()
+            if "mangledName" in json_object:
+                self.function_mangled_name = json_object["mangledName"].string()
+            if "wrappingType" in json_object:
+                for wrapping_type in json_object["wrappingType"].array():
                     if wrapping_type.string() == ParmVarDeclNode.__name__:
                         self.is_parm_var_decl = True
-            if "variadic" in object:
-                self.is_variadic = object["variadic"].bool()
+            if "variadic" in json_object:
+                self.is_variadic = json_object["variadic"].bool()
                 if self.is_variadic:
                     self.is_disabled = True
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     self.function_type = type_object["qualType"].string()
                 else:
@@ -138,8 +138,8 @@ struct FunctionDeclNode(AstNodeLike):
                         "Error creating FunctionDeclNode: ",
                         to_string(type_object.copy()),
                     )
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     node = AstNode.accept_create_from(
                         inner_object.object(), level
                     )

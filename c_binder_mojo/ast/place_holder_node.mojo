@@ -16,20 +16,20 @@ struct PlaceHolderNode(AstNodeLike):
     var json_string: String
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.nodes = List[AstNode]()
         self.level = level
-        self.json_string = to_string(object.copy())
+        self.json_string = to_string(json_object.copy())
         self.children_ = List[AstNode]()
-        if "inner" in object:
+        if "inner" in json_object:
             try:
-                for value in object["inner"].array():
+                for value in json_object["inner"].array():
                     self.nodes.append(
                         AstNode.accept_create_from(value.object(), level + 1)
                     )
             except e:
                 print("Error creating PlaceHolderNode: ", e)
-                print(to_string(object.copy()))
+                print(to_string(json_object.copy()))
 
     @staticmethod
     fn accept_create_from(read json_object: Object) raises -> Bool:

@@ -28,7 +28,7 @@ struct RecordTypeNode(AstNodeLike):
 
     var is_struct: Bool
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.mem_address = ""
         self.record_name = ""
@@ -36,10 +36,10 @@ struct RecordTypeNode(AstNodeLike):
         self.is_struct = False
 
         try:
-            if "id" in object:
-                self.mem_address = object["id"].string()
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "id" in json_object:
+                self.mem_address = json_object["id"].string()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     record_name = type_object["qualType"].string()
                     self.is_struct = record_name.startswith("struct")
@@ -48,16 +48,16 @@ struct RecordTypeNode(AstNodeLike):
                 else:
                     print(
                         "Error creating RecordTypeNode: ",
-                        to_string(object.copy()),
+                        to_string(json_object.copy()),
                     )
-            if "inner" in object:
-                for child in object["inner"].array():
+            if "inner" in json_object:
+                for child in json_object["inner"].array():
                     self.children_.append(
                         AstNode.accept_create_from(child.object(), level + 1)
                     )
-            if "decl" in object:
+            if "decl" in json_object:
                 decl_record_node = AstNode.accept_create_from(
-                    object["decl"].object(), 1
+                    json_object["decl"].object(), 1
                 )
                 if decl_record_node.isa[RecordDeclNode]():
                     self.record_name = decl_record_node[

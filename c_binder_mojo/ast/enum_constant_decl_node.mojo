@@ -26,17 +26,17 @@ struct EnumConstantDeclNode(AstNodeLike):
     var parent_is_anonymous: Bool
     var value: Optional[Int]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.name = ""
         self.level = level
         self.children_ = List[AstNode]()
         self.parent_is_anonymous = False
         self.value = None
         try:
-            if "name" in object:
-                self.name = object["name"].string()
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "name" in json_object:
+                self.name = json_object["name"].string()
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     node = AstNode.accept_create_from(
                         inner_object.object(), level + 1
                     )

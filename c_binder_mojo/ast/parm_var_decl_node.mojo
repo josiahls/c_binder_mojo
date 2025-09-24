@@ -18,7 +18,7 @@ struct ParmVarDeclNode(AstNodeLike):
     var name: String
     var is_kwarg: Bool
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
         self.name = ""
         self.is_kwarg = False

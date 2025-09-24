@@ -19,7 +19,7 @@ struct UnprocessedTypeNode(AstNodeLike):
 
     var children_: List[AstNode]
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
 
     @staticmethod

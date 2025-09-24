@@ -75,7 +75,7 @@ struct RecordDeclNode(AstNodeLike):
     var tag_used: String
     var has_body: Bool
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.record_name = ""
         self.children_ = List[AstNode]()
         self.level = level
@@ -89,14 +89,14 @@ struct RecordDeclNode(AstNodeLike):
         enum_type_queue = List[String]()
         anonomous_record_increment = 0
         try:
-            if "name" in object:
-                self.record_name = object["name"].string()
-            if "id" in object:
-                self.mem_address = object["id"].string()
-            if "tagUsed" in object:
-                self.tag_used = object["tagUsed"].string()
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "name" in json_object:
+                self.record_name = json_object["name"].string()
+            if "id" in json_object:
+                self.mem_address = json_object["id"].string()
+            if "tagUsed" in json_object:
+                self.tag_used = json_object["tagUsed"].string()
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     var node = AstNode.accept_create_from(
                         inner_object.object(), level + 1
                     )

@@ -18,7 +18,7 @@ struct IndirectFieldDeclNode(AstNodeLike):
     var desugared_type: String
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.name = ""
 
         self.level = 1  # Fields must always be at the top level + 1
@@ -26,10 +26,10 @@ struct IndirectFieldDeclNode(AstNodeLike):
         self.desugared_type = ""
         self.children_ = List[AstNode]()
         try:
-            if "name" in object:
-                self.name = object["name"].string()
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "name" in json_object:
+                self.name = json_object["name"].string()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     self.type = type_object["qualType"].string()
                 if "desugaredQualType" in type_object:
@@ -40,7 +40,7 @@ struct IndirectFieldDeclNode(AstNodeLike):
             print(
                 "Error creating IndirectFieldDeclNode: ",
                 e,
-                to_string(object.copy()),
+                to_string(json_object.copy()),
             )
 
     fn to_string(self, just_code: Bool) raises -> String:

@@ -16,7 +16,7 @@ struct SignNode(AstNodeLike):
     var sign: String
     var id: String
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
         self.sign = ""
         self.id = ""

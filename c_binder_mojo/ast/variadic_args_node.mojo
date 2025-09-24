@@ -18,7 +18,7 @@ struct VariadicArgsNode(AstNodeLike):
     var is_variadic: Bool
     var param_name: String
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
         self.is_variadic = False
 

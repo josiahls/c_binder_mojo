@@ -22,7 +22,7 @@ struct FieldDeclNode(AstNodeLike):
     var is_anonomous_type: Bool
     var is_struct: Bool
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.name = ""
         self.children_ = List[AstNode]()
         self.level = 1  # Fields must always be at the top level + 1
@@ -33,10 +33,10 @@ struct FieldDeclNode(AstNodeLike):
         self.is_anonomous_type = False
 
         try:
-            if "name" in object:
-                self.name = object["name"].string()
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "name" in json_object:
+                self.name = json_object["name"].string()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     self.type = type_object["qualType"].string()
                     if self.type.startswith("union "):
@@ -55,7 +55,11 @@ struct FieldDeclNode(AstNodeLike):
                 # else:
                 #     print("Error creating FieldDeclNode: ", to_string(type_object))
         except e:
-            print("Error creating FieldDeclNode: ", e, to_string(object.copy()))
+            print(
+                "Error creating FieldDeclNode: ",
+                e,
+                to_string(json_object.copy()),
+            )
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

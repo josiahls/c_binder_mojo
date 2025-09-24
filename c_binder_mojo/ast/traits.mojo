@@ -19,7 +19,7 @@ trait AstNodeLike(Copyable & Movable):
     # Conbstructors
     # ==========================================================================
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         pass
 
     @staticmethod
@@ -91,8 +91,8 @@ trait AstNodeLike(Copyable & Movable):
                 AstNode.impute(inner_object.object())
 
     @staticmethod
-    fn make_object_id(read object: Object) -> String:
-        return String(UnsafePointer(to=object))
+    fn make_object_id(read json_object: Object) -> String:
+        return String(UnsafePointer(to=json_object))
 
     # ==========================================================================
     # Hooks

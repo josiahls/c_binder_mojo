@@ -18,19 +18,19 @@ struct VarDeclNode(AstNodeLike):
     var type: String
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.name = ""
         self.mangled_name = ""
         self.type = ""
         self.children_ = List[AstNode]()
         try:
-            if "name" in object:
-                self.name = object["name"].string()
-            if "mangledName" in object:
-                self.mangled_name = object["mangledName"].string()
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "name" in json_object:
+                self.name = json_object["name"].string()
+            if "mangledName" in json_object:
+                self.mangled_name = json_object["mangledName"].string()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     self.type = type_object["qualType"].string()
                 else:

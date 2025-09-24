@@ -15,15 +15,15 @@ struct TypedefTypeNode(AstNodeLike):
     var level: Int
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.typedef_type = ""
         self.children_ = List[AstNode]()
         # TODO: May need to handle children here also.
 
         try:
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     self.typedef_type = type_object["qualType"].string()
                 else:

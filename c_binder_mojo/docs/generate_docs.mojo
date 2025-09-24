@@ -23,11 +23,13 @@ struct DocFunctionOverload(Copyable & Movable):
 
     @staticmethod
     fn from_object(
-        parent_path: Path, uri_path: String, object: Object
+        parent_path: Path, uri_path: String, json_object: Object
     ) raises -> Self:
-        var name = object["name"].string()
-        var signature = object["signature"].string()
-        var description = object["description"].string().replace("\\n", "\n")
+        var name = json_object["name"].string()
+        var signature = json_object["signature"].string()
+        var description = (
+            json_object["description"].string().replace("\\n", "\n")
+        )
         return Self(name=name, signature=signature, description=description)
 
     fn to_markdown(self) raises -> String:
@@ -45,19 +47,19 @@ struct DocFunction(Copyable & Movable):
 
     @staticmethod
     fn from_object(
-        parent_path: Path, uri_path: String, object: Object
+        parent_path: Path, uri_path: String, json_object: Object
     ) raises -> Self:
-        var name = object["name"].string()
+        var name = json_object["name"].string()
         var signature = ""
-        if "signature" in object:
-            signature = object["signature"].string()
+        if "signature" in json_object:
+            signature = json_object["signature"].string()
         var overloads: List[DocFunctionOverload] = []
-        if "overloads" in object:
+        if "overloads" in json_object:
             overloads = [
                 DocFunctionOverload.from_object(
                     parent_path, uri_path, o.object()
                 )
-                for o in object["overloads"].array()
+                for o in json_object["overloads"].array()
             ]
         return Self(name=name, signature=signature, overloads=overloads^)
 
@@ -87,11 +89,13 @@ struct DocField(Copyable & Movable):
 
     @staticmethod
     fn from_object(
-        parent_path: Path, uri_path: String, object: Object
+        parent_path: Path, uri_path: String, json_object: Object
     ) raises -> Self:
-        var name = object["name"].string()
-        var type = object["type"].string()
-        var description = object["description"].string().replace("\\n", "\n")
+        var name = json_object["name"].string()
+        var type = json_object["type"].string()
+        var description = (
+            json_object["description"].string().replace("\\n", "\n")
+        )
         return Self(name=name, type=type, description=description)
 
     fn to_markdown(self) raises -> String:
@@ -117,11 +121,11 @@ struct DocAlias(Copyable & Movable):
 
     @staticmethod
     fn from_object(
-        parent_path: Path, uri_path: String, object: Object
+        parent_path: Path, uri_path: String, json_object: Object
     ) raises -> Self:
-        var name = object["name"].string()
-        var signature = object["signature"].string()
-        var description = object["description"].string()
+        var name = json_object["name"].string()
+        var signature = json_object["signature"].string()
+        var description = json_object["description"].string()
         return Self(
             uri_path=uri_path,
             fs_path=parent_path / (name + ".md"),
@@ -154,24 +158,26 @@ struct DocStruct(Copyable & Movable):
 
     @staticmethod
     fn from_object(
-        parent_path: Path, uri_path: String, object: Object
+        parent_path: Path, uri_path: String, json_object: Object
     ) raises -> Self:
-        var name = object["name"].string()
-        var signature = object["signature"].string()
-        var description = object["description"].string().replace("\\n", "\n")
+        var name = json_object["name"].string()
+        var signature = json_object["signature"].string()
+        var description = (
+            json_object["description"].string().replace("\\n", "\n")
+        )
         var aliases = [
             DocAlias.from_object(parent_path, uri_path, a.object())
-            for a in object["aliases"].array()
+            for a in json_object["aliases"].array()
         ]
         var fields = [
             DocField.from_object(parent_path, uri_path, f.object())
-            for f in object["fields"].array()
+            for f in json_object["fields"].array()
         ]
         var functions: List[DocFunction] = []
-        if "functions" in object:
+        if "functions" in json_object:
             functions = [
                 DocFunction.from_object(parent_path, uri_path, f.object())
-                for f in object["functions"].array()
+                for f in json_object["functions"].array()
             ]
         return Self(
             uri_path=uri_path,
@@ -225,9 +231,11 @@ struct DocModule(Writable):
     var functions: List[DocFunction]
 
     @staticmethod
-    fn to_file(parent_path: Path, uri_path: String, object: Object) raises:
-        var name = object["name"].string()
-        var description = object["description"].string().replace("\\n", "\n")
+    fn to_file(parent_path: Path, uri_path: String, json_object: Object) raises:
+        var name = json_object["name"].string()
+        var description = (
+            json_object["description"].string().replace("\\n", "\n")
+        )
         var _uri_path = uri_path
         var uri_path_parts = uri_path.split("/")
         if name == "__init__":
@@ -247,15 +255,15 @@ struct DocModule(Writable):
             description=description,
             structs=[
                 DocStruct.from_object(parent_path, _uri_path, s.object())
-                for s in object["structs"].array()
+                for s in json_object["structs"].array()
             ],
             aliases=[
                 DocAlias.from_object(parent_path, _uri_path, a.object())
-                for a in object["aliases"].array()
+                for a in json_object["aliases"].array()
             ],
             functions=[
                 DocFunction.from_object(parent_path, _uri_path, f.object())
-                for f in object["functions"].array()
+                for f in json_object["functions"].array()
             ],
         )
         print(obj)
@@ -304,8 +312,8 @@ struct DocPackage(Writable):
     var name: String
 
     @staticmethod
-    fn to_file(parent_path: Path, uri_path: String, object: Object) raises:
-        name = object["name"].string()
+    fn to_file(parent_path: Path, uri_path: String, json_object: Object) raises:
+        name = json_object["name"].string()
         obj = DocPackage(
             uri_path=uri_path + "/" + name,
             fs_path=parent_path / name,
@@ -315,10 +323,10 @@ struct DocPackage(Writable):
         if not obj.fs_path.exists():
             mkdir(obj.fs_path)
 
-        for module in object["modules"].array():
+        for module in json_object["modules"].array():
             doc_dispatch(obj.fs_path, obj.uri_path, module.object())
 
-        for package in object["packages"].array():
+        for package in json_object["packages"].array():
             doc_dispatch(obj.fs_path, obj.uri_path, package.object())
 
     fn write_to[W: Writer](self, mut writer: W):
@@ -331,13 +339,15 @@ struct DocPackage(Writable):
             print(e)
 
 
-fn doc_dispatch(parent_path: Path, uri_path: String, object: Object) raises:
-    if object["kind"].string() == "module":
-        DocModule.to_file(parent_path, uri_path, object)
-    elif object["kind"].string() == "package":
-        DocPackage.to_file(parent_path, uri_path, object)
+fn doc_dispatch(
+    parent_path: Path, uri_path: String, json_object: Object
+) raises:
+    if json_object["kind"].string() == "module":
+        DocModule.to_file(parent_path, uri_path, json_object)
+    elif json_object["kind"].string() == "package":
+        DocPackage.to_file(parent_path, uri_path, json_object)
     else:
-        raise Error("Unknown object kind: " + object["kind"].string())
+        raise Error("Unknown object kind: " + json_object["kind"].string())
 
 
 fn generate_docs(json_path: Path) raises:

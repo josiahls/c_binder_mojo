@@ -15,13 +15,13 @@ struct EnumTypeNode(AstNodeLike):
     var children_: List[AstNode]
     var level: Int
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.name = ""
         self.children_ = List[AstNode]()
         try:
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     name = type_object["qualType"].string()
                     self.name = String(name.removeprefix("enum "))

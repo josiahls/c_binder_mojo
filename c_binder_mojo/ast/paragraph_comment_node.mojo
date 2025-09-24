@@ -14,12 +14,12 @@ struct ParagraphCommentNode(AstNodeLike):
     var children_: List[AstNode]
     var level: Int
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
         try:
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     self.children_.append(
                         AstNode.accept_create_from(
                             # NOTE: level is not a concept in this node,

@@ -20,7 +20,7 @@ struct TypedefDeclNode(AstNodeLike):
     var is_function_type_def: Bool
     var is_disabled: Bool
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.name = ""
         self.dtype = ""
@@ -28,10 +28,10 @@ struct TypedefDeclNode(AstNodeLike):
         self.is_function_type_def = False
         self.is_disabled = False
         try:
-            if "name" in object:
-                self.name = object["name"].string()
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "name" in json_object:
+                self.name = json_object["name"].string()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     self.dtype = type_object["qualType"].string()
                     if "(*)" in self.dtype:
@@ -41,14 +41,15 @@ struct TypedefDeclNode(AstNodeLike):
                         "Error creating TypedefDeclNode: ",
                         to_string(type_object.copy()),
                     )
-            if "inner" in object:
-                for value in object["inner"].array():
+            if "inner" in json_object:
+                for value in json_object["inner"].array():
                     self.children_.append(
                         AstNode.accept_create_from(value.object(), level + 1)
                     )
             else:
                 print(
-                    "Error creating TypedefDeclNode: ", to_string(object.copy())
+                    "Error creating TypedefDeclNode: ",
+                    to_string(json_object.copy()),
                 )
         except e:
             print("Error creating TypedefDeclNode: ", e)

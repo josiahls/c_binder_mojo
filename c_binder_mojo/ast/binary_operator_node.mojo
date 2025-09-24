@@ -15,13 +15,13 @@ struct BinaryOperatorNode(AstNodeLike):
     var children_: List[AstNode]
     var level: Int
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
         self.opcode = ""
         try:
-            if "opcode" in object:
-                self.opcode = object["opcode"].string()
+            if "opcode" in json_object:
+                self.opcode = json_object["opcode"].string()
         except e:
             print("Error creating BinaryOperatorNode: ", e)
 

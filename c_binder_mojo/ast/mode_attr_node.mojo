@@ -14,7 +14,7 @@ struct ModeAttrNode(AstNodeLike):
     var level: Int
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
 

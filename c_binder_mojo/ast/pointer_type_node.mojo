@@ -15,13 +15,13 @@ struct PointerTypeNode(AstNodeLike):
     var children_: List[AstNode]
     var qualifiers: List[String]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
         self.qualifiers = List[String]()
         # TODO: Handle restrict qualifiers.
         try:
-            if "inner" in object:
-                for child in object["inner"].array():
+            if "inner" in json_object:
+                for child in json_object["inner"].array():
                     node = AstNode.accept_create_from(child.object(), 0)
                     if node.isa[QualTypeNode]():
                         for s in node[QualTypeNode].qualifiers.split(" "):

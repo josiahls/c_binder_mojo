@@ -20,16 +20,16 @@ struct QualTypeNode(AstNodeLike):
 
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.qualifiers = ""
         self.children_ = []
 
         try:
-            if "qualifiers" in object:
-                self.qualifiers = object["qualifiers"].string()
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "qualifiers" in json_object:
+                self.qualifiers = json_object["qualifiers"].string()
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     self.children_.append(
                         AstNode.accept_create_from(
                             inner_object.object(), level + 1

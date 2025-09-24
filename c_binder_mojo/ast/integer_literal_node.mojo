@@ -15,13 +15,13 @@ struct IntegerLiteralNode(AstNodeLike):
     var children_: List[AstNode]
     var level: Int
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
         self.value = ""
         try:
-            if "value" in object:
-                self.value = object["value"].string()
+            if "value" in json_object:
+                self.value = json_object["value"].string()
         except e:
             print("Error creating IntegerLiteralNode: ", e)
 

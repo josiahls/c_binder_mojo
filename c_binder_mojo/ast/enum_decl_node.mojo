@@ -20,7 +20,7 @@ struct EnumDeclNode(AstNodeLike):
     var children_: List[AstNode]
     var is_anonymous: Bool
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.name = ""
         self.children_ = List[AstNode]()
@@ -29,12 +29,12 @@ struct EnumDeclNode(AstNodeLike):
         var max_value: Int = -1
 
         try:
-            if "name" in object:
-                self.name = object["name"].string()
+            if "name" in json_object:
+                self.name = json_object["name"].string()
             if self.name == "":
                 self.is_anonymous = True
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     child_level = level + 1
                     if self.is_anonymous:
                         # Anonymous enums are at the top level

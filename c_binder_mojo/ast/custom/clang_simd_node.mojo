@@ -14,7 +14,7 @@ struct ClangSimdNode(AstNodeLike):
     var children_: List[AstNode]
     var width: Int64
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
         self.width = 0
 

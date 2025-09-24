@@ -13,7 +13,7 @@ struct StaticAssertDeclNode(AstNodeLike):
 
     var children_: List[AstNode]
 
-    fn __init__(out self, json_object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         # TODO: We should at least have this as a commented string
         self.children_ = List[AstNode]()
 

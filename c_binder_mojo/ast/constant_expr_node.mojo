@@ -16,18 +16,18 @@ struct ConstantExprNode(AstNodeLike):
     var type: String
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.value = ""
         self.value_category = ""
         self.type = ""
         self.children_ = List[AstNode]()
         try:
-            if "value" in object:
-                self.value = object["value"].string()
-            if "valueCategory" in object:
-                self.value_category = object["valueCategory"].string()
-            if "type" in object:
-                ref type_object = object["type"].object()
+            if "value" in json_object:
+                self.value = json_object["value"].string()
+            if "valueCategory" in json_object:
+                self.value_category = json_object["valueCategory"].string()
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
                     self.type = type_object["qualType"].string()
                 else:
@@ -35,8 +35,8 @@ struct ConstantExprNode(AstNodeLike):
                         "Error creating ConstantExprNode: ",
                         to_string(type_object.copy()),
                     )
-            if "inner" in object:
-                for inner_object in object["inner"].array():
+            if "inner" in json_object:
+                for inner_object in json_object["inner"].array():
                     self.children_.append(
                         AstNode.accept_create_from(
                             inner_object.object(), level + 1

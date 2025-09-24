@@ -13,12 +13,12 @@ struct ElaboratedTypeNode(AstNodeLike):
 
     var children_: List[AstNode]
 
-    fn __init__(out self, object: Object, level: Int):
+    fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
 
         try:
-            if "inner" in object:
-                for child in object["inner"].array():
+            if "inner" in json_object:
+                for child in json_object["inner"].array():
                     self.children_.append(
                         AstNode.accept_create_from(child.object(), level + 1)
                     )

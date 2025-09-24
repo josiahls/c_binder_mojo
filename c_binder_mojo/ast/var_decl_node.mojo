@@ -50,7 +50,7 @@ struct VarDeclNode(AstNodeLike):
         return s
 
     fn children[
-        T: Copyable & Movable = AstNodeVariant
+        T: Copyable & Movable = AstNode
     ](ref self: Self) -> ref [self] List[T]:
         return (
             UnsafePointer(to=self.children_)

@@ -49,10 +49,7 @@ struct AstNode(Copyable & Movable):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
                 return T.__name__
-        raise Error(
-            "WARNING: name called on AstNode with unknown node type: "
-            + self.__name__
-        )
+        raise Error("Missing name method")
 
     @always_inline("nodebug")
     @staticmethod
@@ -68,10 +65,7 @@ struct AstNode(Copyable & Movable):
             alias T = Self.type.Ts[i]
             if T.accept_create_from(json_object):
                 return Self(T.create_from(json_object, level))
-        raise Error(
-            "WARNING: none of the nodes accepted the json_object: ",
-            String(json_object["kind"].string()),
-        )
+        raise Error("Missing accept_create_from method")
 
     @always_inline("nodebug")
     @staticmethod
@@ -96,13 +90,7 @@ struct AstNode(Copyable & Movable):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
                 return self[T].hook_to_string(just_code)
-        raise Error(
-            (
-                "WARNING: to_string called on AstNode with no to_string method"
-                " for node: "
-            ),
-            self.__name__,
-        )
+        raise Error("Missing to_string method")
 
     fn children[
         mut: Bool, //, origin: Origin[mut]
@@ -112,11 +100,4 @@ struct AstNode(Copyable & Movable):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
                 return self[T].children[Self]()
-
-        raise Error(
-            (
-                "WARNING: children called on AstNode with no children method"
-                " for node: "
-            ),
-            self.__name__,
-        )
+        raise Error("Missing children method")

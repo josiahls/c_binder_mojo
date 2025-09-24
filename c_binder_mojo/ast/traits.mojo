@@ -50,13 +50,7 @@ trait AstNodeLike(Copyable & Movable):
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"
 
-    fn _to_string_hook(self):
-        @parameter
-        if VERBOSE:
-            print("to_string hook for " + String(Self.__name__))
-
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         return self.signature()
 
     @staticmethod
@@ -65,3 +59,13 @@ trait AstNodeLike(Copyable & Movable):
 
     fn children[T: Copyable & Movable](ref self) -> ref [self] List[T]:
         pass
+
+    # ==========================================================================
+    # Hooks
+    # ==========================================================================
+
+    fn hook_to_string(self, just_code: Bool) raises -> String:
+        @parameter
+        if VERBOSE:
+            print("hook_to_string for " + String(Self.__name__))
+        return self.to_string(just_code)

@@ -37,7 +37,6 @@ struct InlineCommandCommentNode(AstNodeLike):
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s: String = ""
         s += "# " + self.text
         for child in self.children_:

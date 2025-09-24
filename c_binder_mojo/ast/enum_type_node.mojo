@@ -35,7 +35,6 @@ struct EnumTypeNode(AstNodeLike):
             print("Error creating EnumTypeNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         return self.name
 
     fn children[

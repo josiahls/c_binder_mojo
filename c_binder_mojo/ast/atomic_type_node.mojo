@@ -25,7 +25,6 @@ struct AtomicTypeNode(AstNodeLike):
             print("Error creating AtomicTypeNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s = String()
         # TODO: Implement mojo amotic wrapping
         for child in self.children_:

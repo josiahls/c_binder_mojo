@@ -62,7 +62,6 @@ struct ParmVarDeclNode(AstNodeLike):
             AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s = String()
 
         for child in self.children_:

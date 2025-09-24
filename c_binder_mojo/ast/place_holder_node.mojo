@@ -36,7 +36,6 @@ struct PlaceHolderNode(AstNodeLike):
         return True
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s = String()
         var indent = "\t" * self.level
         s += indent + "# " + self.signature() + "\n"

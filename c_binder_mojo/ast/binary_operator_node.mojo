@@ -26,7 +26,6 @@ struct BinaryOperatorNode(AstNodeLike):
             print("Error creating BinaryOperatorNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         var s: String = ""
         var indent: String = "\t" * self.level
         if not just_code:

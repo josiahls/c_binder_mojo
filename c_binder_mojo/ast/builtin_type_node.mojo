@@ -90,7 +90,6 @@ struct BuiltinTypeNode(AstNodeLike):
         json_object["qualifiers"] = ""
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         for dtype in materialize[DIRECT_TYPE_MAP]():
             if dtype == self.dtype:
                 # print("BuiltinTypeNode: dtype: ", dtype)

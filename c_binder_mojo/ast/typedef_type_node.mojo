@@ -35,7 +35,6 @@ struct TypedefTypeNode(AstNodeLike):
             print("Error creating TypedefTypeNode: ", e)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        self._to_string_hook()
         # NOTE: There is no indentation since this is typically
         # used in a typedef decl node or wrapping type node.
         return self.typedef_type

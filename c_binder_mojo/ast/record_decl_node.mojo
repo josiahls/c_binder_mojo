@@ -97,7 +97,7 @@ struct RecordDeclNode(AstNodeLike):
                 self.tag_used = object["tagUsed"].string()
             if "inner" in object:
                 for inner_object in object["inner"].array():
-                    var node = AstNode.accept_from_json_object(
+                    var node = AstNode.accept_create_from(
                         inner_object.object(), level + 1
                     )
                     if node.isa[Self]():

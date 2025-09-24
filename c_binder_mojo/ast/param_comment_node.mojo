@@ -25,7 +25,7 @@ struct ParamCommandCommentNode(AstNodeLike):
             if "inner" in object:
                 for inner_object in object["inner"].array():
                     self.children_.append(
-                        AstNode.accept_from_json_object(
+                        AstNode.accept_create_from(
                             inner_object.object(), level + 1
                         )
                     )

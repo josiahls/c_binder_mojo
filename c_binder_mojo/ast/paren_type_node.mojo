@@ -41,9 +41,7 @@ struct ParenTypeNode(AstNodeLike):
                 )
 
             for child in json_object["inner"].array():
-                var node = AstNode.accept_from_json_object(
-                    child.object(), level
-                )
+                var node = AstNode.accept_create_from(child.object(), level)
                 if node.isa[FunctionProtoTypeNode]():
                     self.wraps_function_proto_type = True
                 self.children_.append(node^)

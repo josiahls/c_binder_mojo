@@ -47,9 +47,7 @@ fn generate_bindings(
         modified_ast[].write_text(
             to_string[pretty=True](json_value.object().copy())
         )
-    var root_node = AstNode.accept_from_json_object(
-        json_value.object(), level=0
-    )
+    var root_node = AstNode.accept_create_from(json_value.object(), level=0)
 
     # Save Mojo AST for debugging
     (output_path / (module_name + ".mojo")).write_text(

@@ -25,7 +25,7 @@ struct FullCommentNode(AstNodeLike):
             if "inner" in object:
                 for inner_object in object["inner"].array():
                     self.children_.append(
-                        AstNode.accept_from_json_object(
+                        AstNode.accept_create_from(
                             # NOTE: level is not a concept in this node,
                             inner_object.object(),
                             self.level,

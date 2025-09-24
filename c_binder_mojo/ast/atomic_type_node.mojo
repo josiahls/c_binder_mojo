@@ -19,7 +19,7 @@ struct AtomicTypeNode(AstNodeLike):
             if "inner" in json_object:
                 for child in json_object["inner"].array():
                     self.children_.append(
-                        AstNode.accept_from_json_object(child.object(), level)
+                        AstNode.accept_create_from(child.object(), level)
                     )
         except e:
             print("Error creating AtomicTypeNode: ", e)

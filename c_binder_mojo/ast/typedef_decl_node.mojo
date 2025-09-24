@@ -44,9 +44,7 @@ struct TypedefDeclNode(AstNodeLike):
             if "inner" in object:
                 for value in object["inner"].array():
                     self.children_.append(
-                        AstNode.accept_from_json_object(
-                            value.object(), level + 1
-                        )
+                        AstNode.accept_create_from(value.object(), level + 1)
                     )
             else:
                 print(

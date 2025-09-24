@@ -56,7 +56,7 @@ struct AstNode(Copyable & Movable):
 
     @always_inline("nodebug")
     @staticmethod
-    fn accept_from_json_object(
+    fn accept_create_from(
         read json_object: Object, read level: Int
     ) raises -> Self:
         """
@@ -66,7 +66,7 @@ struct AstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept_from_json_object(json_object):
+            if T.accept_create_from(json_object):
                 return Self(T.create_from_json_object(json_object, level))
         raise Error(
             "WARNING: none of the nodes accepted the json_object: ",

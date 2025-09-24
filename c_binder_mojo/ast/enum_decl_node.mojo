@@ -40,7 +40,7 @@ struct EnumDeclNode(AstNodeLike):
                         # Anonymous enums are at the top level
                         child_level = 0
 
-                    node = AstNode.accept_from_json_object(
+                    node = AstNode.accept_create_from(
                         inner_object.object(), child_level
                     )
                     if node.isa[EnumConstantDeclNode]():

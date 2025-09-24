@@ -53,12 +53,10 @@ struct RecordTypeNode(AstNodeLike):
             if "inner" in object:
                 for child in object["inner"].array():
                     self.children_.append(
-                        AstNode.accept_from_json_object(
-                            child.object(), level + 1
-                        )
+                        AstNode.accept_create_from(child.object(), level + 1)
                     )
             if "decl" in object:
-                decl_record_node = AstNode.accept_from_json_object(
+                decl_record_node = AstNode.accept_create_from(
                     object["decl"].object(), 1
                 )
                 if decl_record_node.isa[RecordDeclNode]():

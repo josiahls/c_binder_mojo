@@ -27,7 +27,7 @@ struct EnumTypeNode(AstNodeLike):
                     self.name = String(name.removeprefix("enum "))
                 if "decl" in type_object:
                     self.children_.append(
-                        AstNode.accept_from_json_object(
+                        AstNode.accept_create_from(
                             type_object["decl"].object(), level + 1
                         )
                     )

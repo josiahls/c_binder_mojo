@@ -26,9 +26,7 @@ struct ConstantArrayTypeNode(AstNodeLike):
             if "inner" in json_object:
                 for inner_object in json_object["inner"].array():
                     self.children_.append(
-                        AstNode.accept_from_json_object(
-                            inner_object.object(), 0
-                        )
+                        AstNode.accept_create_from(inner_object.object(), 0)
                     )
         except e:
             print("Error creating ConstantArrayTypeNode: ", e)

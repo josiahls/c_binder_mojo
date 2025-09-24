@@ -26,7 +26,7 @@ struct ParmVarDeclNode(AstNodeLike):
             self.name = json_object["name"].string()
             if "inner" in json_object:
                 for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_from_json_object(
+                    node = AstNode.accept_create_from(
                         inner_object.object(), level
                     )
                     if node.isa[FunctionDeclNode]():

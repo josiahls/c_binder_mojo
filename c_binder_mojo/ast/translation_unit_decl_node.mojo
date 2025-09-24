@@ -112,9 +112,7 @@ struct TranslationUnitDeclNode(AstNodeLike):
         self.level = level
         try:
             for value in object["inner"].array():
-                var node = AstNode.accept_from_json_object(
-                    value.object(), level
-                )
+                var node = AstNode.accept_create_from(value.object(), level)
                 move_record_decls_to_top_level(self.children_, node)
                 move_enum_decls_to_top_level(self.children_, node)
                 self.children_.append(node^)

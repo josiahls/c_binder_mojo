@@ -17,7 +17,7 @@ trait AstNodeLike(Copyable & Movable):
         pass
 
     @staticmethod
-    fn accept_from_json_object(read json_object: Object) raises -> Bool:
+    fn accept_create_from(read json_object: Object) raises -> Bool:
         return json_object["kind"].string() == Self.__name__
 
     @staticmethod

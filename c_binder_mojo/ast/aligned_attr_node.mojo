@@ -33,9 +33,7 @@ struct AlignedAttrNode(AstNodeLike):
                     + to_string(json_object.copy())
                 )
             for child in json_object["inner"].array():
-                var node = AstNode.accept_from_json_object(
-                    child.object(), level
-                )
+                var node = AstNode.accept_create_from(child.object(), level)
                 self.children_.append(node^)
         except e:
             print(

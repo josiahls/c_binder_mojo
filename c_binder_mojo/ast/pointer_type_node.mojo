@@ -22,7 +22,7 @@ struct PointerTypeNode(AstNodeLike):
         try:
             if "inner" in object:
                 for child in object["inner"].array():
-                    node = AstNode.accept_from_json_object(child.object(), 0)
+                    node = AstNode.accept_create_from(child.object(), 0)
                     if node.isa[QualTypeNode]():
                         for s in node[QualTypeNode].qualifiers.split(" "):
                             self.qualifiers.append(String(s))

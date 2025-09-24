@@ -37,7 +37,7 @@ struct EnumConstantDeclNode(AstNodeLike):
                 self.name = object["name"].string()
             if "inner" in object:
                 for inner_object in object["inner"].array():
-                    node = AstNode.accept_from_json_object(
+                    node = AstNode.accept_create_from(
                         inner_object.object(), level + 1
                     )
                     if node.isa[IntegerLiteralNode]():

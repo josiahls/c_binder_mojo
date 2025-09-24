@@ -22,7 +22,7 @@ struct ClangSimdNode(AstNodeLike):
             self.width = json_object["type"].object()["width"].int()
             if "inner" in json_object:
                 for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_from_json_object(
+                    node = AstNode.accept_create_from(
                         inner_object.object(), level
                     )
                     self.children_.append(node^)

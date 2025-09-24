@@ -25,16 +25,14 @@ struct PlaceHolderNode(AstNodeLike):
             try:
                 for value in object["inner"].array():
                     self.nodes.append(
-                        AstNode.accept_from_json_object(
-                            value.object(), level + 1
-                        )
+                        AstNode.accept_create_from(value.object(), level + 1)
                     )
             except e:
                 print("Error creating PlaceHolderNode: ", e)
                 print(to_string(object.copy()))
 
     @staticmethod
-    fn accept_from_json_object(read json_object: Object) raises -> Bool:
+    fn accept_create_from(read json_object: Object) raises -> Bool:
         return True
 
     fn to_string(self, just_code: Bool) raises -> String:

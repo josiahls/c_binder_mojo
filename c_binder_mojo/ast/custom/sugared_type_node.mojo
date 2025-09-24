@@ -70,7 +70,7 @@ struct SugaredTypeNode(AstNodeLike):
         return self.qual_type
 
     fn children[
-        T: Copyable & Movable = AstNodeVariant
+        T: Copyable & Movable = AstNode
     ](ref self: Self) -> ref [self] List[T]:
         return (
             UnsafePointer(to=self.children_)

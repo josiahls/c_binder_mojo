@@ -32,12 +32,6 @@ struct ReturnDeclNode(AstNodeLike):
         except e:
             print("Error creating ReturnDeclNode: ", e)
 
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
-        return s
-
     @staticmethod
     fn impute(mut json_object: Object) raises:
         return_type = json_object["type"].object()["returnType"].string()

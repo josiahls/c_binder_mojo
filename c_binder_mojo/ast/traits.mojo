@@ -12,6 +12,8 @@ alias VERBOSE: Bool = False
 
 trait AstNodeLike(Copyable & Movable):
     alias __name__: String
+    """The name of the node as shown in the json. Example: 'EnumDecl' for the 
+    `EnumDeclNode` class."""
 
     # ==========================================================================
     # Conbstructors
@@ -49,9 +51,14 @@ trait AstNodeLike(Copyable & Movable):
         return "# Node: " + String(Self.__name__) + "()"
 
     fn to_string(self, just_code: Bool) raises -> String:
-        return self.signature()
+        var s = String()
+        for child in self.children():
+            s += child.to_string(just_code)
+        return s
 
-    fn children[T: Copyable & Movable](ref self) -> ref [self] List[T]:
+    fn children[
+        T: Copyable & Movable = AstNode
+    ](ref self) -> ref [self] List[T]:
         pass
 
     # ==========================================================================

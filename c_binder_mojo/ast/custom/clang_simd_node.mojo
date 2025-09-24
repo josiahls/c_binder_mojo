@@ -30,7 +30,7 @@ struct ClangSimdNode(AstNodeLike):
             print("Error creating ClangSimdNode: ", e)
 
     @staticmethod
-    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+    fn accept_impute(read json_object: Object) raises -> Bool:
         if json_object["kind"].string() == "BuiltinType":
             qual_type = json_object["type"].object()["qualType"].string()
             if (

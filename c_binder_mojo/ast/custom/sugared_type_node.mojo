@@ -39,7 +39,7 @@ struct SugaredTypeNode(AstNodeLike):
             print("Error creating SugaredTypeNode: ", e)
 
     @staticmethod
-    fn accept_impute_json_object(read json_object: Object) raises -> Bool:
+    fn accept_impute(read json_object: Object) raises -> Bool:
         """
         Assmes that BuiltinTypeNode or any of the other nodes have failed to consume the json object.
 

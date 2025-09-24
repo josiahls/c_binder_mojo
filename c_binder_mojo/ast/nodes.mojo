@@ -85,7 +85,7 @@ struct AstNode(Copyable & Movable):
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
-            if T.accept_impute_json_object(json_object):
+            if T.accept_impute(json_object):
                 T.impute_json_object(json_object)
                 return  # Only call impute_json_object on the first matching type
 

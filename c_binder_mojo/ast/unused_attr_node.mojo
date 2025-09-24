@@ -19,7 +19,7 @@ struct UnusedAttrNode(AstNodeLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
-        for child in self.children_:
+        for child in self.children():
             s += child.to_string(just_code)
         return s
 

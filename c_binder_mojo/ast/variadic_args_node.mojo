@@ -82,12 +82,14 @@ struct VariadicArgsNode(AstNodeLike):
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()
         s += "/,*" + self.param_name + ": "
-        for child in self.children_:
+        for child in self.children():
             # TODO: Filter out comments and other non-ast nodes.
             s += child.to_string(just_code)
         return s
 
-    fn children[T: Copyable & Movable](ref self: Self) -> ref [self] List[T]:
+    fn children[
+        T: Copyable & Movable = AstNode
+    ](ref self: Self) -> ref [self] List[T]:
         return (
             UnsafePointer(to=self.children_)
             .bitcast[List[T]]()

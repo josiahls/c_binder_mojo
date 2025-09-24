@@ -57,7 +57,7 @@ struct ConstantExprNode(AstNodeLike):
         if not just_code:
             s += self.signature() + "\n"
         s += self.value + " "
-        for child in self.children_:
+        for child in self.children():
             s += child.to_string(just_code)
         return s
 

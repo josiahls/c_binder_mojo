@@ -126,11 +126,11 @@ struct TranslationUnitDeclNode(AstNodeLike):
         s += String(HEADER) + "\n"
         var indent = "\t" * self.level
         if not just_code:
-            for child in self.children_:
+            for child in self.children():
                 s += child.to_string(just_code)
         else:
             s += indent + "# " + self.signature() + "\n"
-            for child in self.children_:
+            for child in self.children():
                 s += child.to_string(just_code)
         return s
 

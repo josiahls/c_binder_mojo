@@ -93,22 +93,3 @@ trait AstNodeLike(Copyable & Movable):
     @staticmethod
     fn make_object_id(read json_object: Object) -> String:
         return String(UnsafePointer(to=json_object))
-
-    # ==========================================================================
-    # Hooks
-    # ==========================================================================
-
-    fn hook_to_string(self, just_code: Bool) raises -> String:
-        @parameter
-        if VERBOSE:
-            print("hook_to_string for " + String(Self.__name__))
-        return self.to_string(just_code)
-
-    @staticmethod
-    fn hook_create_from(
-        read json_object: Object, read level: Int
-    ) raises -> Self:
-        @parameter
-        if VERBOSE:
-            print("hook_create_from for " + String(Self.__name__))
-        return Self.create_from(json_object, level)

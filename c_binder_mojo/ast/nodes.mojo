@@ -14,6 +14,43 @@ from c_binder_mojo.ast import AstNodeVariant
 from c_binder_mojo.ast.traits import AstNodeLike
 
 
+alias VERBOSE: Bool = False
+
+
+@fieldwise_init
+struct NodeExceptionHandler(Movable):
+    var node_name: String
+    var function_name: String
+
+    fn __enter__(mut self) -> ref [self] Self:
+        if VERBOSE:
+            print(
+                "Entering node: ",
+                self.node_name,
+                " function: ",
+                self.function_name,
+            )
+        return self
+
+    fn __exit__(mut self):
+        if VERBOSE:
+            print(
+                "Exiting node: ",
+                self.node_name,
+                " function: ",
+                self.function_name,
+            )
+
+    fn __exit__(mut self, e: Error) raises -> Bool:
+        print(
+            "Error occured in node: ",
+            self.node_name,
+            " function: ",
+            self.function_name,
+        )
+        return False
+
+
 struct AstNode(Copyable & Movable):
     alias __name__ = "AstNode"
     alias type = AstNodeVariant
@@ -64,7 +101,8 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_create_from(json_object):
-                return Self(T.hook_create_from(json_object, level))
+                with NodeExceptionHandler(T.__name__, "create_from"):
+                    return Self(T.create_from(json_object, level))
         raise Error("Missing accept_create_from method")
 
     @always_inline("nodebug")
@@ -80,8 +118,9 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if T.accept_impute(json_object):
-                T.impute(json_object)
-                return  # Only call impute on the first matching type
+                with NodeExceptionHandler(T.__name__, "impute"):
+                    T.impute(json_object)
+                    return  # Only call impute on the first matching type
 
     @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:
@@ -89,7 +128,8 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
-                return self[T].hook_to_string(just_code)
+                with NodeExceptionHandler(T.__name__, "to_string"):
+                    return self[T].to_string(just_code)
         raise Error("Missing to_string method")
 
     fn children[
@@ -99,5 +139,6 @@ struct AstNode(Copyable & Movable):
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
-                return self[T].children()
+                with NodeExceptionHandler(T.__name__, "children"):
+                    return self[T].children()
         raise Error("Missing children method")

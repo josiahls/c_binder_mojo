@@ -21,29 +21,24 @@ struct ConstantExprNode(AstNodeLike):
         self.value_category = ""
         self.type = ""
         self.children_ = List[AstNode]()
-        try:
-            if "value" in json_object:
-                self.value = json_object["value"].string()
-            if "valueCategory" in json_object:
-                self.value_category = json_object["valueCategory"].string()
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    self.type = type_object["qualType"].string()
-                else:
-                    print(
-                        "Error creating ConstantExprNode: ",
-                        to_string(type_object.copy()),
-                    )
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(
-                            inner_object.object(), level + 1
-                        )
-                    )
-        except e:
-            print("Error creating ConstantExprNode: ", e)
+        if "value" in json_object:
+            self.value = json_object["value"].string()
+        if "valueCategory" in json_object:
+            self.value_category = json_object["valueCategory"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                self.type = type_object["qualType"].string()
+            else:
+                print(
+                    "Error creating ConstantExprNode: ",
+                    to_string(type_object.copy()),
+                )
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(inner_object.object(), level + 1)
+                )
 
     fn get_value(self) -> Optional[Int]:
         try:

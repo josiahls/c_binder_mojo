@@ -19,21 +19,17 @@ struct InlineCommandCommentNode(AstNodeLike):
         self.level = level
         self.children_ = List[AstNode]()
         self.text = ""
-        try:
-            if "text" in json_object:
-                self.text = json_object["text"].string()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(
-                            # NOTE: level is not a concept in this node,
-                            inner_object.object(),
-                            level,
-                        )
+        if "text" in json_object:
+            self.text = json_object["text"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(
+                        # NOTE: level is not a concept in this node,
+                        inner_object.object(),
+                        level,
                     )
-
-        except e:
-            print("Error creating InlineCommandCommentNode: ", e)
+                )
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:

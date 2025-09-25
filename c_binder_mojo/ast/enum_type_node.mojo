@@ -19,20 +19,17 @@ struct EnumTypeNode(AstNodeLike):
         self.level = level
         self.name = ""
         self.children_ = List[AstNode]()
-        try:
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    name = type_object["qualType"].string()
-                    self.name = String(name.removeprefix("enum "))
-                if "decl" in type_object:
-                    self.children_.append(
-                        AstNode.accept_create_from(
-                            type_object["decl"].object(), level + 1
-                        )
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                name = type_object["qualType"].string()
+                self.name = String(name.removeprefix("enum "))
+            if "decl" in type_object:
+                self.children_.append(
+                    AstNode.accept_create_from(
+                        type_object["decl"].object(), level + 1
                     )
-        except e:
-            print("Error creating EnumTypeNode: ", e)
+                )
 
     fn to_string(self, just_code: Bool) raises -> String:
         return self.name

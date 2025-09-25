@@ -25,23 +25,14 @@ struct IndirectFieldDeclNode(AstNodeLike):
         self.type = ""
         self.desugared_type = ""
         self.children_ = List[AstNode]()
-        try:
-            if "name" in json_object:
-                self.name = json_object["name"].string()
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    self.type = type_object["qualType"].string()
-                if "desugaredQualType" in type_object:
-                    self.desugared_type = type_object[
-                        "desugaredQualType"
-                    ].string()
-        except e:
-            print(
-                "Error creating IndirectFieldDeclNode: ",
-                e,
-                to_string(json_object.copy()),
-            )
+        if "name" in json_object:
+            self.name = json_object["name"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                self.type = type_object["qualType"].string()
+            if "desugaredQualType" in type_object:
+                self.desugared_type = type_object["desugaredQualType"].string()
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

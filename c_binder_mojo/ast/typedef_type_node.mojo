@@ -21,18 +21,15 @@ struct TypedefTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
         # TODO: May need to handle children here also.
 
-        try:
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    self.typedef_type = type_object["qualType"].string()
-                else:
-                    print(
-                        "Error creating TypedefTypeNode: ",
-                        to_string(type_object.copy()),
-                    )
-        except e:
-            print("Error creating TypedefTypeNode: ", e)
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                self.typedef_type = type_object["qualType"].string()
+            else:
+                print(
+                    "Error creating TypedefTypeNode: ",
+                    to_string(type_object.copy()),
+                )
 
     fn to_string(self, just_code: Bool) raises -> String:
         # NOTE: There is no indentation since this is typically

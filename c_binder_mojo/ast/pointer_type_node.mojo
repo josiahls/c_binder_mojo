@@ -19,16 +19,13 @@ struct PointerTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.qualifiers = List[String]()
         # TODO: Handle restrict qualifiers.
-        try:
-            if "inner" in json_object:
-                for child in json_object["inner"].array():
-                    node = AstNode.accept_create_from(child.object(), 0)
-                    if node.isa[QualTypeNode]():
-                        for s in node[QualTypeNode].qualifiers.split(" "):
-                            self.qualifiers.append(String(s))
-                    self.children_.append(node^)
-        except e:
-            print("Error creating PointerTypeNode: ", e)
+        if "inner" in json_object:
+            for child in json_object["inner"].array():
+                node = AstNode.accept_create_from(child.object(), 0)
+                if node.isa[QualTypeNode]():
+                    for s in node[QualTypeNode].qualifiers.split(" "):
+                        self.qualifiers.append(String(s))
+                self.children_.append(node^)
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

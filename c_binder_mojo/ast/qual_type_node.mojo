@@ -25,18 +25,13 @@ struct QualTypeNode(AstNodeLike):
         self.qualifiers = ""
         self.children_ = []
 
-        try:
-            if "qualifiers" in json_object:
-                self.qualifiers = json_object["qualifiers"].string()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(
-                            inner_object.object(), level + 1
-                        )
-                    )
-        except e:
-            print("Error creating QualTypeNode: ", e)
+        if "qualifiers" in json_object:
+            self.qualifiers = json_object["qualifiers"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(inner_object.object(), level + 1)
+                )
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

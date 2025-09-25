@@ -19,11 +19,8 @@ struct IntegerLiteralNode(AstNodeLike):
         self.level = level
         self.children_ = List[AstNode]()
         self.value = ""
-        try:
-            if "value" in json_object:
-                self.value = json_object["value"].string()
-        except e:
-            print("Error creating IntegerLiteralNode: ", e)
+        if "value" in json_object:
+            self.value = json_object["value"].string()
 
     fn get_value(self) -> Optional[Int]:
         try:

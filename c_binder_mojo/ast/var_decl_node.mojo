@@ -24,22 +24,19 @@ struct VarDeclNode(AstNodeLike):
         self.mangled_name = ""
         self.type = ""
         self.children_ = List[AstNode]()
-        try:
-            if "name" in json_object:
-                self.name = json_object["name"].string()
-            if "mangledName" in json_object:
-                self.mangled_name = json_object["mangledName"].string()
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    self.type = type_object["qualType"].string()
-                else:
-                    print(
-                        "Error creating VarDeclNode: ",
-                        to_string(type_object.copy()),
-                    )
-        except e:
-            print("Error creating VarDeclNode: ", e)
+        if "name" in json_object:
+            self.name = json_object["name"].string()
+        if "mangledName" in json_object:
+            self.mangled_name = json_object["mangledName"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                self.type = type_object["qualType"].string()
+            else:
+                print(
+                    "Error creating VarDeclNode: ",
+                    to_string(type_object.copy()),
+                )
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

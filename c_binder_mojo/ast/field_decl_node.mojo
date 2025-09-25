@@ -32,34 +32,25 @@ struct FieldDeclNode(AstNodeLike):
         self.is_struct = False
         self.is_anonomous_type = False
 
-        try:
-            if "name" in json_object:
-                self.name = json_object["name"].string()
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    self.type = type_object["qualType"].string()
-                    if self.type.startswith("union "):
-                        self.is_union = True
-                    if self.type.startswith("struct "):
-                        self.is_struct = True
-                    if "anonymous at" in self.type:
-                        self.is_anonomous_type = True
-                if "desugaredQualType" in type_object:
-                    self.desugared_type = type_object[
-                        "desugaredQualType"
-                    ].string()
+        if "name" in json_object:
+            self.name = json_object["name"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                self.type = type_object["qualType"].string()
+                if self.type.startswith("union "):
+                    self.is_union = True
+                if self.type.startswith("struct "):
+                    self.is_struct = True
+                if "anonymous at" in self.type:
+                    self.is_anonomous_type = True
+            if "desugaredQualType" in type_object:
+                self.desugared_type = type_object["desugaredQualType"].string()
 
-                    if "anonymous at" in self.desugared_type:
-                        self.is_anonomous_type = True
-                # else:
-                #     print("Error creating FieldDeclNode: ", to_string(type_object))
-        except e:
-            print(
-                "Error creating FieldDeclNode: ",
-                e,
-                to_string(json_object.copy()),
-            )
+                if "anonymous at" in self.desugared_type:
+                    self.is_anonomous_type = True
+            # else:
+            #     print("Error creating FieldDeclNode: ", to_string(type_object))
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

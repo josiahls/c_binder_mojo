@@ -23,18 +23,15 @@ struct VariadicArgsNode(AstNodeLike):
         self.is_variadic = False
 
         self.param_name = ""
-        try:
-            if "name" in json_object:
-                self.param_name = json_object["name"].string()
-            if "variadic" in json_object:
-                self.is_variadic = json_object["variadic"].bool()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(inner_object.object(), level)
-                    )
-        except:
-            self.is_variadic = False
+        if "name" in json_object:
+            self.param_name = json_object["name"].string()
+        if "variadic" in json_object:
+            self.is_variadic = json_object["variadic"].bool()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(inner_object.object(), level)
+                )
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

@@ -114,38 +114,33 @@ struct FunctionDeclNode(AstNodeLike):
         self.level = level
         self.is_parm_var_decl = False
         self.is_variadic = False
-        try:
-            if "storageClass" in json_object:
-                self.storage_class = json_object["storageClass"].string()
-            if "name" in json_object:
-                self.function_name = json_object["name"].string()
-            if "mangledName" in json_object:
-                self.function_mangled_name = json_object["mangledName"].string()
-            if "wrappingType" in json_object:
-                for wrapping_type in json_object["wrappingType"].array():
-                    if wrapping_type.string() == ParmVarDeclNode.__name__:
-                        self.is_parm_var_decl = True
-            if "variadic" in json_object:
-                self.is_variadic = json_object["variadic"].bool()
-                if self.is_variadic:
-                    self.is_disabled = True
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    self.function_type = type_object["qualType"].string()
-                else:
-                    print(
-                        "Error creating FunctionDeclNode: ",
-                        to_string(type_object.copy()),
-                    )
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_create_from(
-                        inner_object.object(), level
-                    )
-                    self.children_.append(node^)
-        except e:
-            print("Error creating FunctionDeclNode: ", e)
+        if "storageClass" in json_object:
+            self.storage_class = json_object["storageClass"].string()
+        if "name" in json_object:
+            self.function_name = json_object["name"].string()
+        if "mangledName" in json_object:
+            self.function_mangled_name = json_object["mangledName"].string()
+        if "wrappingType" in json_object:
+            for wrapping_type in json_object["wrappingType"].array():
+                if wrapping_type.string() == ParmVarDeclNode.__name__:
+                    self.is_parm_var_decl = True
+        if "variadic" in json_object:
+            self.is_variadic = json_object["variadic"].bool()
+            if self.is_variadic:
+                self.is_disabled = True
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                self.function_type = type_object["qualType"].string()
+            else:
+                print(
+                    "Error creating FunctionDeclNode: ",
+                    to_string(type_object.copy()),
+                )
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                node = AstNode.accept_create_from(inner_object.object(), level)
+                self.children_.append(node^)
 
     @staticmethod
     fn outer_most_paren_begin(read qual_type: String) raises -> List[Int]:

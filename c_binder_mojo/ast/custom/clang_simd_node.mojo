@@ -18,16 +18,11 @@ struct ClangSimdNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.width = 0
 
-        try:
-            self.width = json_object["type"].object()["width"].int()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_create_from(
-                        inner_object.object(), level
-                    )
-                    self.children_.append(node^)
-        except e:
-            print("Error creating ClangSimdNode: ", e)
+        self.width = json_object["type"].object()["width"].int()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                node = AstNode.accept_create_from(inner_object.object(), level)
+                self.children_.append(node^)
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

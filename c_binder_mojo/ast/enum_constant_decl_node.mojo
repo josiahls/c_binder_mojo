@@ -32,25 +32,22 @@ struct EnumConstantDeclNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.parent_is_anonymous = False
         self.value = None
-        try:
-            if "name" in json_object:
-                self.name = json_object["name"].string()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_create_from(
-                        inner_object.object(), level + 1
-                    )
-                    if node.isa[IntegerLiteralNode]():
-                        self.value = node[IntegerLiteralNode].get_value()
-                    # elif node.isa[BinaryOperatorNode]():
-                    #     self.value = node[BinaryOperatorNode].get_value()
-                    elif node.isa[ConstantExprNode]():
-                        self.value = node[ConstantExprNode].get_value()
-                    self.children_.append(node^)
-            # else:
-            #     print("This enum constant has no children: ", self.name)
-        except e:
-            print("Error creating EnumConstantDeclNode: ", e)
+        if "name" in json_object:
+            self.name = json_object["name"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                node = AstNode.accept_create_from(
+                    inner_object.object(), level + 1
+                )
+                if node.isa[IntegerLiteralNode]():
+                    self.value = node[IntegerLiteralNode].get_value()
+                # elif node.isa[BinaryOperatorNode]():
+                #     self.value = node[BinaryOperatorNode].get_value()
+                elif node.isa[ConstantExprNode]():
+                    self.value = node[ConstantExprNode].get_value()
+                self.children_.append(node^)
+        # else:
+        #     print("This enum constant has no children: ", self.name)
 
     fn get_value(self) -> Optional[Int]:
         return self.value

@@ -35,37 +35,32 @@ struct RecordTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.is_struct = False
 
-        try:
-            if "id" in json_object:
-                self.mem_address = json_object["id"].string()
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    record_name = type_object["qualType"].string()
-                    self.is_struct = record_name.startswith("struct")
-                    if self.is_struct:
-                        self.record_name = record_name.replace("struct ", "")
-                else:
-                    print(
-                        "Error creating RecordTypeNode: ",
-                        to_string(json_object.copy()),
-                    )
-            if "inner" in json_object:
-                for child in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(child.object(), level + 1)
-                    )
-            if "decl" in json_object:
-                decl_record_node = AstNode.accept_create_from(
-                    json_object["decl"].object(), 1
+        if "id" in json_object:
+            self.mem_address = json_object["id"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                record_name = type_object["qualType"].string()
+                self.is_struct = record_name.startswith("struct")
+                if self.is_struct:
+                    self.record_name = record_name.replace("struct ", "")
+            else:
+                print(
+                    "Error creating RecordTypeNode: ",
+                    to_string(json_object.copy()),
                 )
-                if decl_record_node.isa[RecordDeclNode]():
-                    self.record_name = decl_record_node[
-                        RecordDeclNode
-                    ].record_name
-                self.children_.append(decl_record_node^)
-        except e:
-            print("Error creating RecordTypeNode: ", e)
+        if "inner" in json_object:
+            for child in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(child.object(), level + 1)
+                )
+        if "decl" in json_object:
+            decl_record_node = AstNode.accept_create_from(
+                json_object["decl"].object(), 1
+            )
+            if decl_record_node.isa[RecordDeclNode]():
+                self.record_name = decl_record_node[RecordDeclNode].record_name
+            self.children_.append(decl_record_node^)
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

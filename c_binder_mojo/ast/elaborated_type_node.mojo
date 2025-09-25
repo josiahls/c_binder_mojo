@@ -16,14 +16,11 @@ struct ElaboratedTypeNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
 
-        try:
-            if "inner" in json_object:
-                for child in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(child.object(), level + 1)
-                    )
-        except e:
-            print("Error creating ElaboratedTypeNode: ", e)
+        if "inner" in json_object:
+            for child in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(child.object(), level + 1)
+                )
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

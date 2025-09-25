@@ -88,78 +88,72 @@ struct RecordDeclNode(AstNodeLike):
         union_struct_type_queue = List[String]()
         enum_type_queue = List[String]()
         anonomous_record_increment = 0
-        try:
-            if "name" in json_object:
-                self.record_name = json_object["name"].string()
-            if "id" in json_object:
-                self.mem_address = json_object["id"].string()
-            if "tagUsed" in json_object:
-                self.tag_used = json_object["tagUsed"].string()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    var node = AstNode.accept_create_from(
-                        inner_object.object(), level + 1
-                    )
-                    if node.isa[Self]():
-                        self.has_body = True
-                        struct_type_queue.append(node[Self].record_name)
-                    elif node.isa[EnumDeclNode]():
-                        self.has_body = True
-                        enum_type_queue.append(node[EnumDeclNode].name)
-                    elif node.isa[FieldDeclNode]():
-                        self.has_body = True
-                        if (
-                            node[FieldDeclNode].is_union
-                            and node[FieldDeclNode].is_anonomous_type
-                        ):
-                            anonomous_record_increment += 1
+        if "name" in json_object:
+            self.record_name = json_object["name"].string()
+        if "id" in json_object:
+            self.mem_address = json_object["id"].string()
+        if "tagUsed" in json_object:
+            self.tag_used = json_object["tagUsed"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                var node = AstNode.accept_create_from(
+                    inner_object.object(), level + 1
+                )
+                if node.isa[Self]():
+                    self.has_body = True
+                    struct_type_queue.append(node[Self].record_name)
+                elif node.isa[EnumDeclNode]():
+                    self.has_body = True
+                    enum_type_queue.append(node[EnumDeclNode].name)
+                elif node.isa[FieldDeclNode]():
+                    self.has_body = True
+                    if (
+                        node[FieldDeclNode].is_union
+                        and node[FieldDeclNode].is_anonomous_type
+                    ):
+                        anonomous_record_increment += 1
+                        node[
+                            FieldDeclNode
+                        ].name = "union_placeholder_" + String(
+                            anonomous_record_increment
+                        )
+                        if len(struct_type_queue) == 0:
+                            print(
+                                "FieldDeclNode has struct type queue for"
+                                " unions is empty"
+                            )
+                        else:
                             node[
                                 FieldDeclNode
-                            ].name = "union_placeholder_" + String(
-                                anonomous_record_increment
-                            )
-                            if len(struct_type_queue) == 0:
-                                print(
-                                    "FieldDeclNode has struct type queue for"
-                                    " unions is empty"
-                                )
-                            else:
-                                node[
-                                    FieldDeclNode
-                                ].desugared_type = struct_type_queue.pop()
+                            ].desugared_type = struct_type_queue.pop()
 
-                        elif struct_type_queue:
-                            var desugared_type = struct_type_queue.pop()
-                            node[FieldDeclNode].desugared_type = desugared_type
-                        elif enum_type_queue:
-                            var desugared_type = enum_type_queue.pop()
-                            node[FieldDeclNode].desugared_type = desugared_type
+                    elif struct_type_queue:
+                        var desugared_type = struct_type_queue.pop()
+                        node[FieldDeclNode].desugared_type = desugared_type
+                    elif enum_type_queue:
+                        var desugared_type = enum_type_queue.pop()
+                        node[FieldDeclNode].desugared_type = desugared_type
 
-                    self.children_.append(node^)
-        except e:
-            print("Error creating RecordDeclNode: ", e)
+                self.children_.append(node^)
 
         if self.record_name == "":
-            try:
-                registry = get_global_anonomous_record_decl_type_registry()
-                var record_id = 0
-                if self.mem_address not in registry[].record_decl_type_registry:
-                    max_num = 0
-                    for value in registry[].record_decl_type_registry.values():
-                        if value > max_num:
-                            max_num = value
-                    record_id = max_num + 1
-                    registry[].record_decl_type_registry[
-                        self.mem_address
-                    ] = record_id
-                else:
-                    record_id = registry[].record_decl_type_registry[
-                        self.mem_address
-                    ]
-                    self.disabled = True
-                self.record_name = "anonomous_record_" + String(record_id)
-            except e:
-                print("Error creating RecordDeclNode: ", e)
+            registry = get_global_anonomous_record_decl_type_registry()
+            var record_id = 0
+            if self.mem_address not in registry[].record_decl_type_registry:
+                max_num = 0
+                for value in registry[].record_decl_type_registry.values():
+                    if value > max_num:
+                        max_num = value
+                record_id = max_num + 1
+                registry[].record_decl_type_registry[
+                    self.mem_address
+                ] = record_id
+            else:
+                record_id = registry[].record_decl_type_registry[
+                    self.mem_address
+                ]
+                self.disabled = True
+            self.record_name = "anonomous_record_" + String(record_id)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

@@ -110,16 +110,13 @@ struct TranslationUnitDeclNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
         self.level = level
-        try:
-            for value in json_object["inner"].array():
-                var node = AstNode.accept_create_from(value.object(), level)
-                move_record_decls_to_top_level(self.children_, node)
-                move_enum_decls_to_top_level(self.children_, node)
-                self.children_.append(node^)
+        for value in json_object["inner"].array():
+            var node = AstNode.accept_create_from(value.object(), level)
+            move_record_decls_to_top_level(self.children_, node)
+            move_enum_decls_to_top_level(self.children_, node)
+            self.children_.append(node^)
 
-            prune_repeated_decls(self.children_)
-        except e:
-            print("Error creating TranslationUnitDeclNode: ", e)
+        prune_repeated_decls(self.children_)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

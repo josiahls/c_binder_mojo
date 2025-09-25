@@ -19,18 +19,11 @@ struct ReturnDeclNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.return_type = ""
 
-        try:
-            self.return_type = (
-                json_object["type"].object()["returnType"].string()
-            )
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_create_from(
-                        inner_object.object(), level
-                    )
-                    self.children_.append(node^)
-        except e:
-            print("Error creating ReturnDeclNode: ", e)
+        self.return_type = json_object["type"].object()["returnType"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                node = AstNode.accept_create_from(inner_object.object(), level)
+                self.children_.append(node^)
 
     @staticmethod
     fn impute(mut json_object: Object) raises:

@@ -21,21 +21,16 @@ struct ParamCommandCommentNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.text = ""
         self.param = ""
-        try:
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(
-                            inner_object.object(), level + 1
-                        )
-                    )
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(inner_object.object(), level + 1)
+                )
 
-            if "text" in json_object:
-                self.text = json_object["text"].string()
-            if "param" in json_object:
-                self.param = json_object["param"].string()
-        except e:
-            print("Error creating ParamCommandCommentNode: ", e)
+        if "text" in json_object:
+            self.text = json_object["text"].string()
+        if "param" in json_object:
+            self.param = json_object["param"].string()
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

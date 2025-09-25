@@ -20,32 +20,27 @@ struct SignNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.sign = ""
         self.id = ""
-        try:
-            if "type" not in json_object:
-                raise Error(
-                    "'type' not found in json_object: "
-                    + to_string(json_object.copy())
-                )
-            if "qualType" not in json_object["type"].object():
-                raise Error(
-                    "'qualType' not found in json_object['type']: "
-                    + to_string(json_object["type"].object().copy())
-                )
-            self.sign = json_object["type"].object()["qualType"].string()
-            if "id" not in json_object:
-                raise Error(
-                    "'id' not found in json_object: "
-                    + to_string(json_object.copy())
-                )
-            self.id = json_object["id"].string()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_create_from(
-                        inner_object.object(), level
-                    )
-                    self.children_.append(node^)
-        except e:
-            print("Error creating SignNode: ", e)
+        if "type" not in json_object:
+            raise Error(
+                "'type' not found in json_object: "
+                + to_string(json_object.copy())
+            )
+        if "qualType" not in json_object["type"].object():
+            raise Error(
+                "'qualType' not found in json_object['type']: "
+                + to_string(json_object["type"].object().copy())
+            )
+        self.sign = json_object["type"].object()["qualType"].string()
+        if "id" not in json_object:
+            raise Error(
+                "'id' not found in json_object: "
+                + to_string(json_object.copy())
+            )
+        self.id = json_object["id"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                node = AstNode.accept_create_from(inner_object.object(), level)
+                self.children_.append(node^)
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

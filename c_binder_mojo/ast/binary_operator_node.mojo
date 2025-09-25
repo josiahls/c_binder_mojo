@@ -19,11 +19,8 @@ struct BinaryOperatorNode(AstNodeLike):
         self.level = level
         self.children_ = List[AstNode]()
         self.opcode = ""
-        try:
-            if "opcode" in json_object:
-                self.opcode = json_object["opcode"].string()
-        except e:
-            print("Error creating BinaryOperatorNode: ", e)
+        if "opcode" in json_object:
+            self.opcode = json_object["opcode"].string()
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

@@ -15,14 +15,11 @@ struct AtomicTypeNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
-        try:
-            if "inner" in json_object:
-                for child in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(child.object(), level)
-                    )
-        except e:
-            print("Error creating AtomicTypeNode: ", e)
+        if "inner" in json_object:
+            for child in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(child.object(), level)
+                )
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

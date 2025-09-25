@@ -27,32 +27,29 @@ struct TypedefDeclNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.is_function_type_def = False
         self.is_disabled = False
-        try:
-            if "name" in json_object:
-                self.name = json_object["name"].string()
-            if "type" in json_object:
-                ref type_object = json_object["type"].object()
-                if "qualType" in type_object:
-                    self.dtype = type_object["qualType"].string()
-                    if "(*)" in self.dtype:
-                        self.is_function_type_def = True
-                else:
-                    print(
-                        "Error creating TypedefDeclNode: ",
-                        to_string(type_object.copy()),
-                    )
-            if "inner" in json_object:
-                for value in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(value.object(), level + 1)
-                    )
+        if "name" in json_object:
+            self.name = json_object["name"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            if "qualType" in type_object:
+                self.dtype = type_object["qualType"].string()
+                if "(*)" in self.dtype:
+                    self.is_function_type_def = True
             else:
                 print(
                     "Error creating TypedefDeclNode: ",
-                    to_string(json_object.copy()),
+                    to_string(type_object.copy()),
                 )
-        except e:
-            print("Error creating TypedefDeclNode: ", e)
+        if "inner" in json_object:
+            for value in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(value.object(), level + 1)
+                )
+        else:
+            print(
+                "Error creating TypedefDeclNode: ",
+                to_string(json_object.copy()),
+            )
 
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "(" + self.name + ")"

@@ -22,24 +22,14 @@ struct ParmVarDeclNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.name = ""
         self.is_kwarg = False
-        try:
-            self.name = json_object["name"].string()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    node = AstNode.accept_create_from(
-                        inner_object.object(), level
-                    )
-                    if node.isa[FunctionDeclNode]():
-                        if node[FunctionDeclNode].function_name != "":
-                            self.is_kwarg = True
-                    self.children_.append(node^)
-        except e:
-            print(
-                "Error creating ParmVarDeclNode: ",
-                e,
-                " json_object: ",
-                to_string(json_object.copy()),
-            )
+        self.name = json_object["name"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                node = AstNode.accept_create_from(inner_object.object(), level)
+                if node.isa[FunctionDeclNode]():
+                    if node[FunctionDeclNode].function_name != "":
+                        self.is_kwarg = True
+                self.children_.append(node^)
 
     @staticmethod
     fn impute(mut json_object: Object) raises:

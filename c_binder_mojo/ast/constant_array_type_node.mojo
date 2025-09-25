@@ -20,16 +20,13 @@ struct ConstantArrayTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.size = 0
         self.type = ""
-        try:
-            self.size = json_object["size"].int()
-            self.type = json_object["type"].object()["qualType"].string()
-            if "inner" in json_object:
-                for inner_object in json_object["inner"].array():
-                    self.children_.append(
-                        AstNode.accept_create_from(inner_object.object(), 0)
-                    )
-        except e:
-            print("Error creating ConstantArrayTypeNode: ", e)
+        self.size = json_object["size"].int()
+        self.type = json_object["type"].object()["qualType"].string()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                self.children_.append(
+                    AstNode.accept_create_from(inner_object.object(), 0)
+                )
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

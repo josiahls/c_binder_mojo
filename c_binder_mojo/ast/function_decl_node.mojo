@@ -361,7 +361,7 @@ struct FunctionDeclNode(AstNodeLike):
         if not self.is_parm_var_decl:
             s += "\n"
 
-        elif self.is_variadic:
+        if self.is_variadic:
             comment = (
                 "# Note: Binding to c variadic function: "
                 + self.function_name
@@ -372,7 +372,7 @@ struct FunctionDeclNode(AstNodeLike):
                 " more details.\n"
             )
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
-        if self.is_disabled:
+        elif self.is_disabled:
             comment = "# Forward declaration of " + self.function_name + "\n"
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
         return s

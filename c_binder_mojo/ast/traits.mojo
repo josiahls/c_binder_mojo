@@ -47,11 +47,14 @@ trait AstNodeLike(Copyable & Movable):
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"
 
-    fn to_string(self, just_code: Bool) raises -> String:
+    fn children_to_string(self, just_code: Bool) raises -> String:
         var s = String()
         for child in self.children():
             s += child.to_string(just_code)
         return s
+
+    fn to_string(self, just_code: Bool) raises -> String:
+        return self.children_to_string(just_code)
 
     fn children(ref self) -> ref [self] List[AstNode]:
         """Returns a List of AstNodes.

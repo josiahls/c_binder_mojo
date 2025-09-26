@@ -18,14 +18,11 @@ struct ParamCommandCommentNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](
+            json_object, level + 1
+        )
         self.text = ""
         self.param = ""
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(inner_object.object(), level + 1)
-                )
 
         if "text" in json_object:
             self.text = json_object["text"].string()

@@ -29,23 +29,20 @@ struct EnumConstantDeclNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.name = ""
         self.level = level
-        self.children_ = List[AstNode]()
+        # TODO: Should this assert_in=True? EnumConstantDecl should have inners no?
+        self.children_ = self.make_children(json_object, level + 1)
         self.parent_is_anonymous = False
         self.value = None
         if "name" in json_object:
             self.name = json_object["name"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                node = AstNode.accept_create_from(
-                    inner_object.object(), level + 1
-                )
-                if node.isa[IntegerLiteralNode]():
-                    self.value = node[IntegerLiteralNode].get_value()
-                # elif node.isa[BinaryOperatorNode]():
-                #     self.value = node[BinaryOperatorNode].get_value()
-                elif node.isa[ConstantExprNode]():
-                    self.value = node[ConstantExprNode].get_value()
-                self.children_.append(node^)
+
+        for node in self.children():
+            if node.isa[IntegerLiteralNode]():
+                self.value = node[IntegerLiteralNode].get_value()
+            # elif node.isa[BinaryOperatorNode]():
+            #     self.value = node[BinaryOperatorNode].get_value()
+            elif node.isa[ConstantExprNode]():
+                self.value = node[ConstantExprNode].get_value()
         # else:
         #     print("This enum constant has no children: ", self.name)
 

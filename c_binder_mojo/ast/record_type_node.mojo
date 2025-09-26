@@ -32,7 +32,7 @@ struct RecordTypeNode(AstNodeLike):
         self.level = level
         self.mem_address = ""
         self.record_name = ""
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children(json_object, level + 1)
         self.is_struct = False
 
         if "id" in json_object:
@@ -49,11 +49,7 @@ struct RecordTypeNode(AstNodeLike):
                     "Error creating RecordTypeNode: ",
                     to_string(json_object.copy()),
                 )
-        if "inner" in json_object:
-            for child in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(child.object(), level + 1)
-                )
+
         if "decl" in json_object:
             decl_record_node = AstNode.accept_create_from(
                 json_object["decl"].object(), 1

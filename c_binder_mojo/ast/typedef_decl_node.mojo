@@ -22,13 +22,12 @@ struct TypedefDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.name = ""
+        self.name = json_object["name"].string()
         self.dtype = ""
         self.children_ = List[AstNode]()
         self.is_function_type_def = False
         self.is_disabled = False
-        if "name" in json_object:
-            self.name = json_object["name"].string()
+
         if "type" in json_object:
             ref type_object = json_object["type"].object()
             if "qualType" in type_object:

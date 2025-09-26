@@ -77,7 +77,8 @@ struct RecordDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.record_name = ""
-        self.children_ = List[AstNode]()
+        # TODO: Should this assert_in=True? RecordDecl should have inners no?
+        self.children_ = self.make_children(json_object, level + 1)
         self.level = level
         self.mem_address = ""
         self.disabled = False
@@ -94,47 +95,39 @@ struct RecordDeclNode(AstNodeLike):
             self.mem_address = json_object["id"].string()
         if "tagUsed" in json_object:
             self.tag_used = json_object["tagUsed"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                var node = AstNode.accept_create_from(
-                    inner_object.object(), level + 1
-                )
-                if node.isa[Self]():
-                    self.has_body = True
-                    struct_type_queue.append(node[Self].record_name)
-                elif node.isa[EnumDeclNode]():
-                    self.has_body = True
-                    enum_type_queue.append(node[EnumDeclNode].name)
-                elif node.isa[FieldDeclNode]():
-                    self.has_body = True
-                    if (
-                        node[FieldDeclNode].is_union
-                        and node[FieldDeclNode].is_anonomous_type
-                    ):
-                        anonomous_record_increment += 1
+        for ref node in self.children():
+            if node.isa[Self]():
+                self.has_body = True
+                struct_type_queue.append(node[Self].record_name)
+            elif node.isa[EnumDeclNode]():
+                self.has_body = True
+                enum_type_queue.append(node[EnumDeclNode].name)
+            elif node.isa[FieldDeclNode]():
+                self.has_body = True
+                if (
+                    node[FieldDeclNode].is_union
+                    and node[FieldDeclNode].is_anonomous_type
+                ):
+                    anonomous_record_increment += 1
+                    node[FieldDeclNode].name = "union_placeholder_" + String(
+                        anonomous_record_increment
+                    )
+                    if len(struct_type_queue) == 0:
+                        print(
+                            "FieldDeclNode has struct type queue for"
+                            " unions is empty"
+                        )
+                    else:
                         node[
                             FieldDeclNode
-                        ].name = "union_placeholder_" + String(
-                            anonomous_record_increment
-                        )
-                        if len(struct_type_queue) == 0:
-                            print(
-                                "FieldDeclNode has struct type queue for"
-                                " unions is empty"
-                            )
-                        else:
-                            node[
-                                FieldDeclNode
-                            ].desugared_type = struct_type_queue.pop()
+                        ].desugared_type = struct_type_queue.pop()
 
-                    elif struct_type_queue:
-                        var desugared_type = struct_type_queue.pop()
-                        node[FieldDeclNode].desugared_type = desugared_type
-                    elif enum_type_queue:
-                        var desugared_type = enum_type_queue.pop()
-                        node[FieldDeclNode].desugared_type = desugared_type
-
-                self.children_.append(node^)
+                elif struct_type_queue:
+                    var desugared_type = struct_type_queue.pop()
+                    node[FieldDeclNode].desugared_type = desugared_type
+                elif enum_type_queue:
+                    var desugared_type = enum_type_queue.pop()
+                    node[FieldDeclNode].desugared_type = desugared_type
 
         if self.record_name == "":
             registry = get_global_anonomous_record_decl_type_registry()

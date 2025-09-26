@@ -16,7 +16,7 @@ struct ParenTypeNode(AstNodeLike):
     var wraps_function_proto_type: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         self.wraps_function_proto_type = False
         if "type" not in json_object:
             raise Error(
@@ -33,17 +33,10 @@ struct ParenTypeNode(AstNodeLike):
                 "'id' not found in json_object: "
                 + to_string(json_object.copy())
             )
-        if "inner" not in json_object:
-            raise Error(
-                "'inner' not found in json_object: "
-                + to_string(json_object.copy())
-            )
 
-        for child in json_object["inner"].array():
-            var node = AstNode.accept_create_from(child.object(), level)
+        for node in self.children():
             if node.isa[FunctionProtoTypeNode]():
                 self.wraps_function_proto_type = True
-            self.children_.append(node^)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

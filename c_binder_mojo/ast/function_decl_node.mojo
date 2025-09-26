@@ -109,11 +109,11 @@ struct FunctionDeclNode(AstNodeLike):
         self.function_name = ""
         self.function_mangled_name = ""
         self.function_type = ""
-        self.children_ = List[AstNode]()
         self.is_disabled = False
         self.level = level
         self.is_parm_var_decl = False
         self.is_variadic = False
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         if "storageClass" in json_object:
             self.storage_class = json_object["storageClass"].string()
         if "name" in json_object:
@@ -137,10 +137,6 @@ struct FunctionDeclNode(AstNodeLike):
                     "Error creating FunctionDeclNode: ",
                     to_string(type_object.copy()),
                 )
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                node = AstNode.accept_create_from(inner_object.object(), level)
-                self.children_.append(node^)
 
     @staticmethod
     fn outer_most_paren_begin(read qual_type: String) raises -> List[Int]:

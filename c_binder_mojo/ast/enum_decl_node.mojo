@@ -23,41 +23,33 @@ struct EnumDeclNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.name = ""
-        self.children_ = List[AstNode]()
         self.is_anonymous = False
-
+        var child_level = level + 1
         var max_value: Int = -1
 
         if "name" in json_object:
             self.name = json_object["name"].string()
         if self.name == "":
             self.is_anonymous = True
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                child_level = level + 1
+            child_level = 0
+
+        self.children_ = self.make_children(json_object, child_level)
+        # TODO: Should this assert_in=True? EnumDecl should have inners no?
+        for ref node in self.children():
+            if node.isa[EnumConstantDeclNode]():
                 if self.is_anonymous:
-                    # Anonymous enums are at the top level
-                    child_level = 0
+                    node[EnumConstantDeclNode].parent_is_anonymous = True
 
-                node = AstNode.accept_create_from(
-                    inner_object.object(), child_level
-                )
-                if node.isa[EnumConstantDeclNode]():
-                    if self.is_anonymous:
-                        node[EnumConstantDeclNode].parent_is_anonymous = True
+                var value: Optional[Int] = node[
+                    EnumConstantDeclNode
+                ].get_value()
 
-                    var value: Optional[Int] = node[
-                        EnumConstantDeclNode
-                    ].get_value()
-
-                    if value:
-                        if value[] > max_value:
-                            max_value = value[]
-                    else:
-                        max_value += 1
-                        node[EnumConstantDeclNode].set_value(max_value)
-
-                self.children_.append(node^)
+                if value:
+                    if value[] > max_value:
+                        max_value = value[]
+                else:
+                    max_value += 1
+                    node[EnumConstantDeclNode].set_value(max_value)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

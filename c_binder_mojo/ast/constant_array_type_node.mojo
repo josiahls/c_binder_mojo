@@ -17,16 +17,11 @@ struct ConstantArrayTypeNode(AstNodeLike):
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, 0)
         self.size = 0
         self.type = ""
         self.size = json_object["size"].int()
         self.type = json_object["type"].object()["qualType"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(inner_object.object(), 0)
-                )
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

@@ -20,8 +20,11 @@ struct ConstantArrayTypeNode(AstNodeLike):
         self.children_ = self.make_children[assert_in=True](json_object, 0)
         self.size = 0
         self.type = ""
+        # TODO: Create get_field for Int type
         self.size = json_object["size"].int()
-        self.type = json_object["type"].object()["qualType"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            self.type = self.get_field[assert_in=True](type_object, "qualType")
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

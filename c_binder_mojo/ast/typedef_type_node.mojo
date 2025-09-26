@@ -23,13 +23,7 @@ struct TypedefTypeNode(AstNodeLike):
 
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                self.typedef_type = type_object["qualType"].string()
-            else:
-                print(
-                    "Error creating TypedefTypeNode: ",
-                    to_string(type_object.copy()),
-                )
+            self.typedef_type = self.get_field(type_object, "qualType")
 
     fn to_string(self, just_code: Bool) raises -> String:
         # NOTE: There is no indentation since this is typically

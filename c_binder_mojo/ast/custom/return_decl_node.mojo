@@ -19,7 +19,9 @@ struct ReturnDeclNode(AstNodeLike):
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.return_type = ""
 
-        self.return_type = json_object["type"].object()["returnType"].string()
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            self.return_type = self.get_field(type_object, "returnType")
 
     @staticmethod
     fn impute(mut json_object: Object) raises:

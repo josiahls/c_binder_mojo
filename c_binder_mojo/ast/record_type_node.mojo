@@ -35,20 +35,13 @@ struct RecordTypeNode(AstNodeLike):
         self.children_ = self.make_children(json_object, level + 1)
         self.is_struct = False
 
-        if "id" in json_object:
-            self.mem_address = json_object["id"].string()
+        self.mem_address = self.get_field(json_object, "id")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                record_name = type_object["qualType"].string()
-                self.is_struct = record_name.startswith("struct")
-                if self.is_struct:
-                    self.record_name = record_name.replace("struct ", "")
-            else:
-                print(
-                    "Error creating RecordTypeNode: ",
-                    to_string(json_object.copy()),
-                )
+            record_name = self.get_field(type_object, "qualType")
+            self.is_struct = record_name.startswith("struct")
+            if self.is_struct:
+                self.record_name = record_name.replace("struct ", "")
 
         if "decl" in json_object:
             decl_record_node = AstNode.accept_create_from(

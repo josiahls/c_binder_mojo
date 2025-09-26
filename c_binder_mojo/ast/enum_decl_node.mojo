@@ -22,13 +22,11 @@ struct EnumDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.name = ""
         self.is_anonymous = False
         var child_level = level + 1
         var max_value: Int = -1
 
-        if "name" in json_object:
-            self.name = json_object["name"].string()
+        self.name = self.get_field(json_object, "name")
         if self.name == "":
             self.is_anonymous = True
             child_level = 0

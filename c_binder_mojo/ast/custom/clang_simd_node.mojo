@@ -18,6 +18,7 @@ struct ClangSimdNode(AstNodeLike):
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.width = 0
 
+        # TODO: Create get_field for Int type
         self.width = json_object["type"].object()["width"].int()
 
     @staticmethod

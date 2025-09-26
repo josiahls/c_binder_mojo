@@ -89,12 +89,9 @@ struct RecordDeclNode(AstNodeLike):
         union_struct_type_queue = List[String]()
         enum_type_queue = List[String]()
         anonomous_record_increment = 0
-        if "name" in json_object:
-            self.record_name = json_object["name"].string()
-        if "id" in json_object:
-            self.mem_address = json_object["id"].string()
-        if "tagUsed" in json_object:
-            self.tag_used = json_object["tagUsed"].string()
+        self.record_name = self.get_field(json_object, "name")
+        self.mem_address = self.get_field(json_object, "id")
+        self.tag_used = self.get_field(json_object, "tagUsed")
         for ref node in self.children():
             if node.isa[Self]():
                 self.has_body = True

@@ -21,13 +21,8 @@ struct ParamCommandCommentNode(AstNodeLike):
         self.children_ = self.make_children[assert_in=True](
             json_object, level + 1
         )
-        self.text = ""
-        self.param = ""
-
-        if "text" in json_object:
-            self.text = json_object["text"].string()
-        if "param" in json_object:
-            self.param = json_object["param"].string()
+        self.text = self.get_field(json_object, "text")
+        self.param = self.get_field(json_object, "param")
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

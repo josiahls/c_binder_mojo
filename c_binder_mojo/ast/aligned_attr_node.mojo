@@ -20,11 +20,6 @@ struct AlignedAttrNode(AstNodeLike):
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        if "id" not in json_object:
-            raise Error(
-                "'id' not found in json_object: "
-                + to_string(json_object.copy())
-            )
         self.children_ = self.make_children[assert_in=True](json_object, level)
 
     fn to_string(self, just_code: Bool) raises -> String:

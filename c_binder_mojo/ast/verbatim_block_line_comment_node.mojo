@@ -18,9 +18,7 @@ struct VerbatimBlockLineCommentNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = self.make_children[assert_in=True](json_object, level)
-        self.text = ""
-        if "text" in json_object:
-            self.text = json_object["text"].string()
+        self.text = self.get_field(json_object, "text")
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:

@@ -27,8 +27,7 @@ struct QualTypeNode(AstNodeLike):
             json_object, level + 1
         )
 
-        if "qualifiers" in json_object:
-            self.qualifiers = json_object["qualifiers"].string()
+        self.qualifiers = self.get_field(json_object, "qualifiers")
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

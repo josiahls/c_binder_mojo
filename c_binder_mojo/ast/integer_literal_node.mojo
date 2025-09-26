@@ -18,9 +18,7 @@ struct IntegerLiteralNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
-        self.value = ""
-        if "value" in json_object:
-            self.value = json_object["value"].string()
+        self.value = self.get_field(json_object, "value")
 
     fn get_value(self) -> Optional[Int]:
         try:

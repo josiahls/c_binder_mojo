@@ -20,8 +20,7 @@ struct TextCommentNode(AstNodeLike):
         self.children_ = self.make_children(json_object, level + 1)
         self.text = ""
 
-        if "text" in json_object:
-            self.text = json_object["text"].string()
+        self.text = self.get_field(json_object, "text")
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

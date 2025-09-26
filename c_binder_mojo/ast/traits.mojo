@@ -82,6 +82,18 @@ trait AstNodeLike(Copyable & Movable):
     # ==========================================================================
 
     @staticmethod
+    fn get_field[
+        assert_in: Bool = False
+    ](read json_object: Object, read key: String) raises -> String:
+        if assert_in:
+            Self.assert_in(key, json_object)
+        else:
+            if key not in json_object:
+                return ""
+
+        return json_object[key].string()
+
+    @staticmethod
     fn assert_in(read key: String, read json_object: Object) raises:
         if key not in json_object:
             raise Error(

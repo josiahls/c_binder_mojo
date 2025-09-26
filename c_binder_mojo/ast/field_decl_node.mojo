@@ -32,25 +32,22 @@ struct FieldDeclNode(AstNodeLike):
         self.is_struct = False
         self.is_anonomous_type = False
 
-        if "name" in json_object:
-            self.name = json_object["name"].string()
+        self.name = self.get_field(json_object, "name")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                self.type = type_object["qualType"].string()
-                if self.type.startswith("union "):
-                    self.is_union = True
-                if self.type.startswith("struct "):
-                    self.is_struct = True
-                if "anonymous at" in self.type:
-                    self.is_anonomous_type = True
-            if "desugaredQualType" in type_object:
-                self.desugared_type = type_object["desugaredQualType"].string()
+            self.type = self.get_field(type_object, "qualType")
+            if self.type.startswith("union "):
+                self.is_union = True
+            if self.type.startswith("struct "):
+                self.is_struct = True
+            if "anonymous at" in self.type:
+                self.is_anonomous_type = True
+            self.desugared_type = self.get_field(
+                type_object, "desugaredQualType"
+            )
 
-                if "anonymous at" in self.desugared_type:
-                    self.is_anonomous_type = True
-            # else:
-            #     print("Error creating FieldDeclNode: ", to_string(type_object))
+            if "anonymous at" in self.desugared_type:
+                self.is_anonomous_type = True
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

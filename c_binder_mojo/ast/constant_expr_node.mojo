@@ -17,22 +17,12 @@ struct ConstantExprNode(AstNodeLike):
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.value = ""
-        self.value_category = ""
         self.type = ""
-        if "value" in json_object:
-            self.value = json_object["value"].string()
-        if "valueCategory" in json_object:
-            self.value_category = json_object["valueCategory"].string()
+        self.value = self.get_field(json_object, "value")
+        self.value_category = self.get_field(json_object, "valueCategory")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                self.type = type_object["qualType"].string()
-            else:
-                print(
-                    "Error creating ConstantExprNode: ",
-                    to_string(type_object.copy()),
-                )
+            self.type = self.get_field(type_object, "qualType")
         self.children_ = self.make_children[assert_in=True](
             json_object, level + 1
         )

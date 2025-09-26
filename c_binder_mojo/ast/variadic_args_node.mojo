@@ -21,11 +21,9 @@ struct VariadicArgsNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.is_variadic = False
-
-        self.param_name = ""
-        if "name" in json_object:
-            self.param_name = json_object["name"].string()
+        self.param_name = self.get_field(json_object, "name")
         if "variadic" in json_object:
+            # TODO: Create get_field for Bool type
             self.is_variadic = json_object["variadic"].bool()
 
     @staticmethod

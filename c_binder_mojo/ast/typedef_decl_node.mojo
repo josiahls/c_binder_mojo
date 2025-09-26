@@ -22,33 +22,18 @@ struct TypedefDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.name = json_object["name"].string()
+        self.name = self.get_field[assert_in=True](json_object, "name")
         self.dtype = ""
-        self.children_ = List[AstNode]()
         self.is_function_type_def = False
         self.is_disabled = False
 
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                self.dtype = type_object["qualType"].string()
-                if "(*)" in self.dtype:
-                    self.is_function_type_def = True
-            else:
-                print(
-                    "Error creating TypedefDeclNode: ",
-                    to_string(type_object.copy()),
-                )
-        if "inner" in json_object:
-            for value in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(value.object(), level + 1)
-                )
-        else:
-            print(
-                "Error creating TypedefDeclNode: ",
-                to_string(json_object.copy()),
-            )
+            self.dtype = self.get_field(type_object, "qualType")
+            if "(*)" in self.dtype:
+                self.is_function_type_def = True
+
+        self.children_ = self.make_children[assert_in=True](json_object, level)
 
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "(" + self.name + ")"

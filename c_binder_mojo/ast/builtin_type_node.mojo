@@ -51,22 +51,10 @@ struct BuiltinTypeNode(AstNodeLike):
         self.level = level
         self.dtype = ""
         self.children_ = List[AstNode]()
-        self.object_id = ""
-        if "id" not in json_object:
-            raise Error(
-                "'id' not found in json_object: "
-                + to_string(json_object.copy())
-            )
-        self.object_id = json_object["id"].string()
+        self.object_id = self.get_field[assert_in=True](json_object, "id")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" not in type_object:
-                raise Error(
-                    "'qualType' not found in type_object: "
-                    + to_string(type_object.copy())
-                )
-            if "qualType" in type_object:
-                self.dtype = type_object["qualType"].string()
+            self.dtype = self.get_field[assert_in=True](type_object, "qualType")
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

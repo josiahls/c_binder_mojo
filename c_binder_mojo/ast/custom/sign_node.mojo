@@ -25,18 +25,11 @@ struct SignNode(AstNodeLike):
                 "'type' not found in json_object: "
                 + to_string(json_object.copy())
             )
-        if "qualType" not in json_object["type"].object():
-            raise Error(
-                "'qualType' not found in json_object['type']: "
-                + to_string(json_object["type"].object().copy())
-            )
-        self.sign = json_object["type"].object()["qualType"].string()
-        if "id" not in json_object:
-            raise Error(
-                "'id' not found in json_object: "
-                + to_string(json_object.copy())
-            )
-        self.id = json_object["id"].string()
+
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            self.sign = self.get_field(type_object, "qualType")
+        self.id = self.get_field[assert_in=True](json_object, "id")
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

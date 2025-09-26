@@ -20,23 +20,13 @@ struct VarDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.name = ""
-        self.mangled_name = ""
         self.type = ""
         self.children_ = List[AstNode]()
-        if "name" in json_object:
-            self.name = json_object["name"].string()
-        if "mangledName" in json_object:
-            self.mangled_name = json_object["mangledName"].string()
+        self.name = self.get_field(json_object, "name")
+        self.mangled_name = self.get_field(json_object, "mangledName")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                self.type = type_object["qualType"].string()
-            else:
-                print(
-                    "Error creating VarDeclNode: ",
-                    to_string(type_object.copy()),
-                )
+            self.type = self.get_field(type_object, "qualType")
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

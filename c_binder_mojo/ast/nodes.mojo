@@ -14,16 +14,18 @@ from c_binder_mojo.ast import AstNodeVariant
 from c_binder_mojo.ast.traits import AstNodeLike
 
 
-alias VERBOSE: Bool = False
-
-
-@fieldwise_init
 struct NodeExceptionHandler(Movable):
     var node_name: String
     var function_name: String
+    var verbose: Bool
+
+    fn __init__(out self, node_name: String, function_name: String):
+        self.node_name = node_name
+        self.function_name = function_name
+        self.verbose = False
 
     fn __enter__(mut self) -> ref [self] Self:
-        if VERBOSE:
+        if self.verbose:
             print(
                 "Entering node: ",
                 self.node_name,
@@ -33,7 +35,7 @@ struct NodeExceptionHandler(Movable):
         return self
 
     fn __exit__(mut self):
-        if VERBOSE:
+        if self.verbose:
             print(
                 "Exiting node: ",
                 self.node_name,

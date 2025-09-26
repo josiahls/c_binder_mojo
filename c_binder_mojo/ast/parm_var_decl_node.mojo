@@ -19,17 +19,14 @@ struct ParmVarDeclNode(AstNodeLike):
     var is_kwarg: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         self.name = ""
         self.is_kwarg = False
         self.name = json_object["name"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                node = AstNode.accept_create_from(inner_object.object(), level)
-                if node.isa[FunctionDeclNode]():
-                    if node[FunctionDeclNode].function_name != "":
-                        self.is_kwarg = True
-                self.children_.append(node^)
+        for node in self.children():
+            if node.isa[FunctionDeclNode]():
+                if node[FunctionDeclNode].function_name != "":
+                    self.is_kwarg = True
 
     @staticmethod
     fn impute(mut json_object: Object) raises:
@@ -50,14 +47,6 @@ struct ParmVarDeclNode(AstNodeLike):
         json_object["inner"].array().append(unknown_type_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute(inner_object.object())
-
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-
-        for child in self.children():
-            var inner_s = child.to_string(just_code)
-            s += inner_s
-        return s
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

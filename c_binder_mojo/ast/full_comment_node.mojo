@@ -20,16 +20,9 @@ struct FullCommentNode(AstNodeLike):
         self.level = level
         if self.level > 0:
             self.level = self.level - 1
-        self.children_ = List[AstNode]()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(
-                        # NOTE: level is not a concept in this node,
-                        inner_object.object(),
-                        self.level,
-                    )
-                )
+        self.children_ = self.make_children[assert_in=True](
+            json_object, self.level
+        )
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""

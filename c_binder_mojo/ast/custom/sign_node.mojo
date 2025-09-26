@@ -17,7 +17,7 @@ struct SignNode(AstNodeLike):
     var id: String
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         self.sign = ""
         self.id = ""
         if "type" not in json_object:
@@ -37,10 +37,6 @@ struct SignNode(AstNodeLike):
                 + to_string(json_object.copy())
             )
         self.id = json_object["id"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                node = AstNode.accept_create_from(inner_object.object(), level)
-                self.children_.append(node^)
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

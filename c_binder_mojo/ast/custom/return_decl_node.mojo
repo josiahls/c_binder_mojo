@@ -16,14 +16,10 @@ struct ReturnDeclNode(AstNodeLike):
     var return_type: String
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         self.return_type = ""
 
         self.return_type = json_object["type"].object()["returnType"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                node = AstNode.accept_create_from(inner_object.object(), level)
-                self.children_.append(node^)
 
     @staticmethod
     fn impute(mut json_object: Object) raises:

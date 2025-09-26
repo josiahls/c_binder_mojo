@@ -78,13 +78,9 @@ struct BuiltinTypeNode(AstNodeLike):
     fn to_string(self, just_code: Bool) raises -> String:
         for dtype in materialize[DIRECT_TYPE_MAP]():
             if dtype == self.dtype:
-                # print("BuiltinTypeNode: dtype: ", dtype)
-                # print("BuiltinTypeNode: DIRECT_TYPE_MAP[dtype]: ", DIRECT_TYPE_MAP[dtype])
                 return materialize[DIRECT_TYPE_MAP]()[dtype]
         for item in materialize[LOWER_ENDSWITH_TYPE_MAP]().items():
             if self.dtype.lower().endswith(item.key):
-                # print("BuiltinTypeNode: dtype: ", self.dtype)
-                # print("BuiltinTypeNode: LOWER_ENDSWITH_TYPE_MAP[dtype]: ", item.value)
                 return item.value.copy()
         raise Error(
             "BuiltinTypeNode: Unexpected dtype: "

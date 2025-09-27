@@ -17,7 +17,7 @@ struct InlineCommandCommentNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.children_ = self.make_children[assert_in=True](json_object, level)
+        self.children_ = self.make_children(json_object, level)
         self.text = self.get_field(json_object, "text")
 
     @staticmethod

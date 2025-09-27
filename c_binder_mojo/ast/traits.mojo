@@ -119,6 +119,8 @@ trait AstNodeLike(Copyable & Movable):
 
         if "inner" in json_object:
             for inner_object in json_object["inner"].array():
+                if len(inner_object.object()) == 0:
+                    continue
                 var node = AstNode.accept_create_from(
                     inner_object.object(), level
                 )
@@ -133,6 +135,9 @@ trait AstNodeLike(Copyable & Movable):
     fn impute(mut json_object: Object) raises:
         if "inner" in json_object:
             for ref inner_object in json_object["inner"].array():
+                # Note: We don't process empty inner objects.
+                if len(inner_object.object()) == 0:
+                    continue
                 AstNode.impute(inner_object.object())
 
     @staticmethod

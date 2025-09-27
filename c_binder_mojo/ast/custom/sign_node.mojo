@@ -112,9 +112,7 @@ struct SignNode(AstNodeLike):
             AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
+        var s = self.children_to_string(just_code)
         if self.sign == "unsigned":
             if "c_long" in s:
                 s = s.replace("c_long", "c_ulong")

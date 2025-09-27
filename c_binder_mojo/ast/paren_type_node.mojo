@@ -18,30 +18,13 @@ struct ParenTypeNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.wraps_function_proto_type = False
-        if "type" not in json_object:
-            raise Error(
-                "'type' not found in json_object: "
-                + to_string(json_object.copy())
-            )
-        if "qualType" not in json_object["type"].object():
-            raise Error(
-                "'qualType' not found in json_object['type']: "
-                + to_string(json_object["type"].object().copy())
-            )
-        if "id" not in json_object:
-            raise Error(
-                "'id' not found in json_object: "
-                + to_string(json_object.copy())
-            )
 
         for node in self.children():
             if node.isa[FunctionProtoTypeNode]():
                 self.wraps_function_proto_type = True
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
+        var s = self.children_to_string(just_code)
         if self.wraps_function_proto_type:
             s = "UnsafePointer[" + s + "]"
         return s

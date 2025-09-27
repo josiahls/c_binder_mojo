@@ -22,10 +22,8 @@ struct VerbatimBlockLineCommentNode(AstNodeLike):
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        s += "# " + self.text
-        for child in self.children():
-            s += child.to_string(just_code)
+        var s: String = "# " + self.text + "\n"
+        s += self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

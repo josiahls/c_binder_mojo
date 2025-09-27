@@ -7,7 +7,6 @@ from pathlib import Path
 from c_binder_mojo.stdlib_ext import C_Union
 from utils import StaticTuple
 
-# # Node: TranslationUnitDecl()
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
 struct __NSConstantString_tag(Copyable & Movable):
@@ -174,9 +173,6 @@ struct anonomous_record_2(Copyable & Movable):
 alias max_align_t = anonomous_record_2
 
 alias simple_type_byte = Int8
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Byte types 
 
 alias get_simple_type_byte = fn (simple_type_byte) -> simple_type_byte
@@ -185,9 +181,6 @@ alias get_simple_type_ubyte = fn (simple_type_ubyte) -> simple_type_ubyte
 alias simple_type_sbyte = Int8
 alias get_simple_type_sbyte = fn (simple_type_sbyte) -> simple_type_sbyte
 alias simple_type_short = Int16
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Short types 
 
 alias get_simple_type_short = fn (simple_type_short) -> simple_type_short
@@ -196,9 +189,6 @@ alias get_simple_type_ushort = fn (simple_type_ushort) -> simple_type_ushort
 alias simple_type_sshort = Int16
 alias get_simple_type_sshort = fn (simple_type_sshort) -> simple_type_sshort
 alias simple_type_int = ffi.c_int
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Int types 
 
 alias get_simple_type_int = fn (simple_type_int) -> simple_type_int
@@ -207,9 +197,6 @@ alias get_simple_type_uint = fn (simple_type_uint) -> simple_type_uint
 alias simple_type_sint = ffi.c_int
 alias get_simple_type_sint = fn (simple_type_sint) -> simple_type_sint
 alias simple_type_long = ffi.c_long
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Long types 
 
 alias get_simple_type_long = fn (simple_type_long) -> simple_type_long
@@ -218,9 +205,6 @@ alias get_simple_type_ulong = fn (simple_type_ulong) -> simple_type_ulong
 alias simple_type_slong = ffi.c_long
 alias get_simple_type_slong = fn (simple_type_slong) -> simple_type_slong
 alias simple_type_long_long = ffi.c_long_long
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Long long types 
 
 alias get_simple_type_long_long = fn (simple_type_long_long) -> simple_type_long_long
@@ -229,23 +213,14 @@ alias get_simple_type_ulong_long = fn (simple_type_ulong_long) -> simple_type_ul
 alias simple_type_slong_long = ffi.c_long_long
 alias get_simple_type_slong_long = fn (simple_type_slong_long) -> simple_type_slong_long
 alias simple_type_float = Float32
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Float types 
 
 alias get_simple_type_float = fn (simple_type_float) -> simple_type_float
 alias simple_type_double = Float64
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Double types 
 
 alias get_simple_type_double = fn (simple_type_double) -> simple_type_double
 alias simple_type_long_double = Float64
-# Node: FullComment()
-# Node: ParagraphComment()
-# Node: TextComment()
 #  Long double types 
 
 alias get_simple_type_long_double = fn (simple_type_long_double) -> simple_type_long_double

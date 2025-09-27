@@ -7,7 +7,6 @@ from pathlib import Path
 from c_binder_mojo.stdlib_ext import C_Union
 from utils import StaticTuple
 
-# # Node: TranslationUnitDecl()
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
 struct __NSConstantString_tag(Copyable & Movable):

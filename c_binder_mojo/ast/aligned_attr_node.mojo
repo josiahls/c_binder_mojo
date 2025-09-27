@@ -23,11 +23,9 @@ struct AlignedAttrNode(AstNodeLike):
         self.children_ = self.make_children[assert_in=True](json_object, level)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
-
-        s = "# Alignment: " + s + "\n"
+        var s = String("# Alignment: ")
+        s += self.children_to_string(just_code)
+        s += "\n"
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

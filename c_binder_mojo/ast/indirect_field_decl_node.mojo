@@ -34,10 +34,8 @@ struct IndirectFieldDeclNode(AstNodeLike):
             )
 
     fn to_string(self, just_code: Bool) raises -> String:
+        # TODO: Implement
         var s: String = ""
-        var indent: String = "\t" * self.level
-        if not just_code:
-            s += indent + self.signature() + "\n"
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

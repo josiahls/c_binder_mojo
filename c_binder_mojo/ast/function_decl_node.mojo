@@ -330,6 +330,12 @@ struct FunctionDeclNode(AstNodeLike):
             elif child.isa[AlignedAttrNode]():
                 # Skip this.
                 pass
+            elif child.isa[ReturnsTwiceAttrNode]():
+                # Skip this.
+                pass
+            elif child.isa[WeakAttrNode]():
+                # Skip this.
+                pass
             elif child.isa[ParmVarDeclNode]() or child.isa[VariadicArgsNode]():
                 if n_parm_var_decls > 0:
                     s += ", "

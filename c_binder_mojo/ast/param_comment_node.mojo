@@ -29,8 +29,7 @@ struct ParamCommandCommentNode(AstNodeLike):
         # TODO: Need to propagate in comments whether this is inside a
         # another comment.
         s += "#" + self.param + ": "
-        for child in self.children():
-            s += child.to_string(just_code)
+        s += self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

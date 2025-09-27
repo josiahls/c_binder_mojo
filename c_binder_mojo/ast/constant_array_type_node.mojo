@@ -27,9 +27,7 @@ struct ConstantArrayTypeNode(AstNodeLike):
             self.type = self.get_field[assert_in=True](type_object, "qualType")
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        for child in self.children():
-            s += child.to_string(just_code)
+        var s: String = self.children_to_string(just_code)
         return "InlineArray[" + s + ", " + String(self.size) + "]"
 
     fn children(ref self) -> ref [self] List[AstNode]:

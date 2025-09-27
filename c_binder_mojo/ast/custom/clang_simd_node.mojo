@@ -68,9 +68,7 @@ struct ClangSimdNode(AstNodeLike):
             AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
+        var s = self.children_to_string(just_code)
         return "SIMD[" + s + ".dtype, " + String(self.width) + "]"
 
     fn children(ref self) -> ref [self] List[AstNode]:

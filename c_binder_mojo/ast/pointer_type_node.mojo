@@ -61,10 +61,8 @@ struct PointerTypeNode(AstNodeLike):
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:
-        var dtype = String()
         # NOTE: We don't indent since this is typically part of a more complex type.
-        for child in self.children():
-            dtype += child.to_string(just_code)
+        var dtype = self.children_to_string(just_code)
 
         # NOTE: decomposition of child types, the * is from right to left.
         dtype = "UnsafePointer[" + dtype

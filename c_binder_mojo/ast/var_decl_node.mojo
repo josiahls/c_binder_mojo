@@ -30,8 +30,6 @@ struct VarDeclNode(AstNodeLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""
-        if not just_code:
-            s += self.signature() + "\n"
         s += "alias " + self.name + " = "
         s += TypeMapper.convert_c_type_to_mojo_type(self.type) + "\n"
         return s

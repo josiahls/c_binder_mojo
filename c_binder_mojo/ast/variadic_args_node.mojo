@@ -70,11 +70,8 @@ struct VariadicArgsNode(AstNodeLike):
             return "# Node: VariadicArgs(variadic=false)"
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        s += "/,*" + self.param_name + ": "
-        for child in self.children():
-            # TODO: Filter out comments and other non-ast nodes.
-            s += child.to_string(just_code)
+        var s: String = "/,*" + self.param_name + ": "
+        s += self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

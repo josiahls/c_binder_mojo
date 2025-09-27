@@ -90,13 +90,6 @@ struct QualTypeNode(AstNodeLike):
         for ref inner_object in json_object["inner"].array():
             AstNode.impute(inner_object.object())
 
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        for child in self.children():
-            s += child.to_string(just_code)
-        # s += " # QualType: " + self.qualifiers
-        return s
-
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[
             target_origin = __origin_of(self)

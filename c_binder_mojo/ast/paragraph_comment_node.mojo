@@ -18,11 +18,6 @@ struct ParagraphCommentNode(AstNodeLike):
         self.level = level
         self.children_ = self.make_children[assert_in=True](json_object, level)
 
-    @staticmethod
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = self.children_to_string(just_code)
-        return s
-
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[
             target_origin = __origin_of(self)

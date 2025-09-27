@@ -18,9 +18,7 @@ struct IntegerLiteralNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
-        self.value = ""
-        if "value" in json_object:
-            self.value = json_object["value"].string()
+        self.value = self.get_field(json_object, "value")
 
     fn get_value(self) -> Optional[Int]:
         try:
@@ -30,12 +28,7 @@ struct IntegerLiteralNode(AstNodeLike):
             return None
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        var indent: String = "\t" * self.level
-        if not just_code:
-            s += indent + self.signature() + "\n"
-        for child in self.children():
-            s += child.to_string(just_code)
+        var s: String = self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

@@ -20,12 +20,9 @@ struct PlaceHolderNode(AstNodeLike):
         self.nodes = List[AstNode]()
         self.level = level
         self.json_string = to_string(json_object.copy())
-        self.children_ = List[AstNode]()
-        if "inner" in json_object:
-            for value in json_object["inner"].array():
-                self.nodes.append(
-                    AstNode.accept_create_from(value.object(), level + 1)
-                )
+        self.children_ = self.make_children[assert_in=True](
+            json_object, level + 1
+        )
 
     @staticmethod
     fn accept_create_from(read json_object: Object) raises -> Bool:

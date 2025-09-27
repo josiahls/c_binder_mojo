@@ -25,20 +25,17 @@ struct IndirectFieldDeclNode(AstNodeLike):
         self.type = ""
         self.desugared_type = ""
         self.children_ = List[AstNode]()
-        if "name" in json_object:
-            self.name = json_object["name"].string()
+        self.name = self.get_field(json_object, "name")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                self.type = type_object["qualType"].string()
-            if "desugaredQualType" in type_object:
-                self.desugared_type = type_object["desugaredQualType"].string()
+            self.type = self.get_field(type_object, "qualType")
+            self.desugared_type = self.get_field(
+                type_object, "desugaredQualType"
+            )
 
     fn to_string(self, just_code: Bool) raises -> String:
+        # TODO: Implement
         var s: String = ""
-        var indent: String = "\t" * self.level
-        if not just_code:
-            s += indent + self.signature() + "\n"
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

@@ -119,16 +119,8 @@ struct TranslationUnitDeclNode(AstNodeLike):
         prune_repeated_decls(self.children_)
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        s += String(HEADER) + "\n"
-        var indent = "\t" * self.level
-        if not just_code:
-            for child in self.children():
-                s += child.to_string(just_code)
-        else:
-            s += indent + "# " + self.signature() + "\n"
-            for child in self.children():
-                s += child.to_string(just_code)
+        var s = String(HEADER) + "\n"
+        s += self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

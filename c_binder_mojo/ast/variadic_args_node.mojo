@@ -19,19 +19,12 @@ struct VariadicArgsNode(AstNodeLike):
     var param_name: String
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         self.is_variadic = False
-
-        self.param_name = ""
-        if "name" in json_object:
-            self.param_name = json_object["name"].string()
+        self.param_name = self.get_field(json_object, "name")
         if "variadic" in json_object:
+            # TODO: Create get_field for Bool type
             self.is_variadic = json_object["variadic"].bool()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(inner_object.object(), level)
-                )
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:
@@ -77,11 +70,8 @@ struct VariadicArgsNode(AstNodeLike):
             return "# Node: VariadicArgs(variadic=false)"
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        s += "/,*" + self.param_name + ": "
-        for child in self.children():
-            # TODO: Filter out comments and other non-ast nodes.
-            s += child.to_string(just_code)
+        var s: String = "/,*" + self.param_name + ": "
+        s += self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

@@ -14,19 +14,7 @@ struct AtomicTypeNode(AstNodeLike):
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
-        if "inner" in json_object:
-            for child in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(child.object(), level)
-                )
-
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        # TODO: Implement mojo amotic wrapping
-        for child in self.children():
-            s += child.to_string(just_code)
-        return s
+        self.children_ = self.make_children[assert_in=True](json_object, level)
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

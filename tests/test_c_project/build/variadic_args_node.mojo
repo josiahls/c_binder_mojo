@@ -7,7 +7,6 @@ from pathlib import Path
 from c_binder_mojo.stdlib_ext import C_Union
 from utils import StaticTuple
 
-# # Node: TranslationUnitDecl()
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
 struct __NSConstantString_tag(Copyable & Movable):
@@ -68,7 +67,8 @@ struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
-# Forward declaration of count_variadic_args
+# Note: Binding to c variadic function: count_variadic_args
+# is not supported yet. Reference `FunctionDeclNode` docs for more details.
 # alias count_variadic_args = fn (/,*n: ffi.c_int) -> ffi.c_int
 # 
 

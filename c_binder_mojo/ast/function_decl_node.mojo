@@ -109,38 +109,26 @@ struct FunctionDeclNode(AstNodeLike):
         self.function_name = ""
         self.function_mangled_name = ""
         self.function_type = ""
-        self.children_ = List[AstNode]()
         self.is_disabled = False
         self.level = level
         self.is_parm_var_decl = False
         self.is_variadic = False
-        if "storageClass" in json_object:
-            self.storage_class = json_object["storageClass"].string()
-        if "name" in json_object:
-            self.function_name = json_object["name"].string()
-        if "mangledName" in json_object:
-            self.function_mangled_name = json_object["mangledName"].string()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
+        self.storage_class = self.get_field(json_object, "storageClass")
+        self.function_name = self.get_field(json_object, "name")
+        self.function_mangled_name = self.get_field(json_object, "mangledName")
         if "wrappingType" in json_object:
             for wrapping_type in json_object["wrappingType"].array():
                 if wrapping_type.string() == ParmVarDeclNode.__name__:
                     self.is_parm_var_decl = True
         if "variadic" in json_object:
+            # TODO: Create get_field for Bool type
             self.is_variadic = json_object["variadic"].bool()
             if self.is_variadic:
                 self.is_disabled = True
         if "type" in json_object:
             ref type_object = json_object["type"].object()
-            if "qualType" in type_object:
-                self.function_type = type_object["qualType"].string()
-            else:
-                print(
-                    "Error creating FunctionDeclNode: ",
-                    to_string(type_object.copy()),
-                )
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                node = AstNode.accept_create_from(inner_object.object(), level)
-                self.children_.append(node^)
+            self.function_type = self.get_field(type_object, "qualType")
 
     @staticmethod
     fn outer_most_paren_begin(read qual_type: String) raises -> List[Int]:
@@ -365,7 +353,7 @@ struct FunctionDeclNode(AstNodeLike):
         if not self.is_parm_var_decl:
             s += "\n"
 
-        elif self.is_variadic:
+        if self.is_variadic:
             comment = (
                 "# Note: Binding to c variadic function: "
                 + self.function_name
@@ -376,7 +364,7 @@ struct FunctionDeclNode(AstNodeLike):
                 " more details.\n"
             )
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
-        if self.is_disabled:
+        elif self.is_disabled:
             comment = "# Forward declaration of " + self.function_name + "\n"
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
         return s

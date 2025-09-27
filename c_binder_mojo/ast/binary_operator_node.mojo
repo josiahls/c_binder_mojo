@@ -18,18 +18,7 @@ struct BinaryOperatorNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
-        self.opcode = ""
-        if "opcode" in json_object:
-            self.opcode = json_object["opcode"].string()
-
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        var indent: String = "\t" * self.level
-        if not just_code:
-            s += indent + self.signature() + "\n"
-        for child in self.children():
-            s += child.to_string(just_code)
-        return s
+        self.opcode = self.get_field[assert_in=True](json_object, "opcode")
 
     fn signature(self) -> String:
         return "# Node: " + self.__name__ + "(" + self.opcode + ")"

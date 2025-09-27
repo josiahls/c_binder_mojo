@@ -23,15 +23,11 @@ struct QualTypeNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.qualifiers = ""
-        self.children_ = []
+        self.children_ = self.make_children[assert_in=True](
+            json_object, level + 1
+        )
 
-        if "qualifiers" in json_object:
-            self.qualifiers = json_object["qualifiers"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(inner_object.object(), level + 1)
-                )
+        self.qualifiers = self.get_field(json_object, "qualifiers")
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:
@@ -93,13 +89,6 @@ struct QualTypeNode(AstNodeLike):
         json_object["inner"].array().append(unprocessed_type_json_object^)
         for ref inner_object in json_object["inner"].array():
             AstNode.impute(inner_object.object())
-
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        for child in self.children():
-            s += child.to_string(just_code)
-        # s += " # QualType: " + self.qualifiers
-        return s
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

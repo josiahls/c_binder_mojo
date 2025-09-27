@@ -16,26 +16,7 @@ struct ParagraphCommentNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.children_ = List[AstNode]()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(
-                        # NOTE: level is not a concept in this node,
-                        inner_object.object(),
-                        level,
-                    )
-                )
-
-    @staticmethod
-    fn to_string(self, just_code: Bool) raises -> String:
-        var s: String = ""
-        var indent: String = "\t" * self.level
-        if not just_code:
-            s += indent + self.signature() + "\n"
-        for child in self.children():
-            s += child.to_string(just_code)
-        return s
+        self.children_ = self.make_children[assert_in=True](json_object, level)
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

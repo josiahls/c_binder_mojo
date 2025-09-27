@@ -14,7 +14,7 @@ struct FunctionProtoTypeNode(AstNodeLike):
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         if "type" not in json_object:
             raise Error(
                 "'type' not found in json_object: "
@@ -30,15 +30,6 @@ struct FunctionProtoTypeNode(AstNodeLike):
                 "'id' not found in json_object: "
                 + to_string(json_object.copy())
             )
-        if "inner" not in json_object:
-            raise Error(
-                "'inner' not found in json_object: "
-                + to_string(json_object.copy())
-            )
-
-        for child in json_object["inner"].array():
-            var node = AstNode.accept_create_from(child.object(), level)
-            self.children_.append(node^)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = "fn ("

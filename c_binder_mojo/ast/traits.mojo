@@ -7,9 +7,6 @@ from emberjson import Object, to_string
 from c_binder_mojo.ast.nodes import AstNode
 
 
-alias VERBOSE: Bool = False
-
-
 trait AstNodeLike(Copyable & Movable):
     alias __name__: String
     """The name of the node as shown in the json. Example: 'EnumDecl' for the 
@@ -50,11 +47,14 @@ trait AstNodeLike(Copyable & Movable):
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"
 
-    fn to_string(self, just_code: Bool) raises -> String:
+    fn children_to_string(self, just_code: Bool) raises -> String:
         var s = String()
         for child in self.children():
             s += child.to_string(just_code)
         return s
+
+    fn to_string(self, just_code: Bool) raises -> String:
+        return self.children_to_string(just_code)
 
     fn children(ref self) -> ref [self] List[AstNode]:
         """Returns a List of AstNodes.
@@ -79,6 +79,51 @@ trait AstNodeLike(Copyable & Movable):
         """
 
         pass
+
+    # ==========================================================================
+    # Static Utilties Json
+    # ==========================================================================
+
+    @staticmethod
+    fn get_field[
+        assert_in: Bool = False
+    ](read json_object: Object, read key: String) raises -> String:
+        if assert_in:
+            Self.assert_in(key, json_object)
+        else:
+            if key not in json_object:
+                return ""
+
+        return json_object[key].string()
+
+    @staticmethod
+    fn assert_in(read key: String, read json_object: Object) raises:
+        if key not in json_object:
+            raise Error(
+                Self.__name__,
+                ": `",
+                key,
+                "` not found in json_object: ",
+                to_string(json_object.copy()),
+            )
+
+    @staticmethod
+    fn make_children[
+        assert_in: Bool = False
+    ](read json_object: Object, level: Int,) raises -> List[AstNode]:
+        children_ = List[AstNode]()
+
+        @parameter
+        if assert_in:
+            Self.assert_in("inner", json_object)
+
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                var node = AstNode.accept_create_from(
+                    inner_object.object(), level
+                )
+                children_.append(node^)
+        return children_^
 
     # ==========================================================================
     # Static Utilties

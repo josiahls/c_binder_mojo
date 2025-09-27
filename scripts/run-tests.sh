@@ -4,6 +4,9 @@
 run_cmd() {
     echo "Running Test: $*"
     "$@"
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
 }
 
 

@@ -19,21 +19,19 @@ struct SugaredTypeNode(AstNodeLike):
         self.children_ = List[AstNode]()
         self.qual_type = ""
         if "type" in json_object:
-            if "qualType" in json_object["type"].object():
-                self.qual_type = (
-                    json_object["type"].object()["qualType"].string()
+            ref type_object = json_object["type"].object()
+            self.qual_type = self.get_field(type_object, "qualType")
+            if " " in self.qual_type:
+                raise Error(
+                    "SugaredTypeNode: qual_type: ",
+                    self.qual_type,
+                    (
+                        " has a space in it, which is not allowed and"
+                        " implies that there is a new node that needs"
+                        " to be created to handle this."
+                    ),
+                    to_string(json_object.copy()),
                 )
-                if " " in self.qual_type:
-                    raise Error(
-                        "SugaredTypeNode: qual_type: ",
-                        self.qual_type,
-                        (
-                            " has a space in it, which is not allowed and"
-                            " implies that there is a new node that needs"
-                            " to be created to handle this."
-                        ),
-                        to_string(json_object.copy()),
-                    )
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:

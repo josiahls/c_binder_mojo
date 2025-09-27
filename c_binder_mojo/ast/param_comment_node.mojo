@@ -18,27 +18,18 @@ struct ParamCommandCommentNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.children_ = List[AstNode]()
-        self.text = ""
-        self.param = ""
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                self.children_.append(
-                    AstNode.accept_create_from(inner_object.object(), level + 1)
-                )
-
-        if "text" in json_object:
-            self.text = json_object["text"].string()
-        if "param" in json_object:
-            self.param = json_object["param"].string()
+        self.children_ = self.make_children[assert_in=True](
+            json_object, level + 1
+        )
+        self.text = self.get_field(json_object, "text")
+        self.param = self.get_field(json_object, "param")
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""
         # TODO: Need to propagate in comments whether this is inside a
         # another comment.
         s += "#" + self.param + ": "
-        for child in self.children():
-            s += child.to_string(just_code)
+        s += self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

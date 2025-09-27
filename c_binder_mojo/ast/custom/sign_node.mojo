@@ -17,7 +17,7 @@ struct SignNode(AstNodeLike):
     var id: String
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         self.sign = ""
         self.id = ""
         if "type" not in json_object:
@@ -25,22 +25,11 @@ struct SignNode(AstNodeLike):
                 "'type' not found in json_object: "
                 + to_string(json_object.copy())
             )
-        if "qualType" not in json_object["type"].object():
-            raise Error(
-                "'qualType' not found in json_object['type']: "
-                + to_string(json_object["type"].object().copy())
-            )
-        self.sign = json_object["type"].object()["qualType"].string()
-        if "id" not in json_object:
-            raise Error(
-                "'id' not found in json_object: "
-                + to_string(json_object.copy())
-            )
-        self.id = json_object["id"].string()
-        if "inner" in json_object:
-            for inner_object in json_object["inner"].array():
-                node = AstNode.accept_create_from(inner_object.object(), level)
-                self.children_.append(node^)
+
+        if "type" in json_object:
+            ref type_object = json_object["type"].object()
+            self.sign = self.get_field(type_object, "qualType")
+        self.id = self.get_field[assert_in=True](json_object, "id")
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:
@@ -123,9 +112,7 @@ struct SignNode(AstNodeLike):
             AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = String()
-        for child in self.children():
-            s += child.to_string(just_code)
+        var s = self.children_to_string(just_code)
         if self.sign == "unsigned":
             if "c_long" in s:
                 s = s.replace("c_long", "c_ulong")

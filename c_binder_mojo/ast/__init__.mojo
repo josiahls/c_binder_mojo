@@ -98,6 +98,8 @@ from c_binder_mojo.ast.unused_attr_node import UnusedAttrNode
 from c_binder_mojo.ast.verbatim_line_comment_node import VerbatimLineCommentNode
 from c_binder_mojo.ast.atomic_type_node import AtomicTypeNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
+from c_binder_mojo.ast.returns_twice_attr_node import ReturnsTwiceAttrNode
+from c_binder_mojo.ast.weak_attr_node import WeakAttrNode
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
@@ -160,7 +162,9 @@ alias AstNodeVariant = Variant[
     PackedAttrNode,
     InlineCommandCommentNode,
     StaticAssertDeclNode,
+    ReturnsTwiceAttrNode,
     UnusedAttrNode,
+    WeakAttrNode,
     AtomicTypeNode,
     SugaredTypeNode,  # Second to last node for json object imputation
     PlaceHolderNode,  # Placeholder must be the last node

@@ -2,12 +2,13 @@
 from sys.ffi import _Global
 
 # Third Party Mojo Modules
-from emberjson import Object
+from emberjson import Object, Array
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
+from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 
 
 struct _GlobalAnonomousRecordDeclTypeRegistry(Movable):
@@ -76,22 +77,19 @@ struct RecordDeclNode(AstNodeLike):
     var has_body: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.record_name = ""
         # TODO: Should this assert_in=True? RecordDecl should have inners no?
         self.children_ = self.make_children(json_object, level + 1)
         self.level = level
-        self.mem_address = ""
         self.disabled = False
-        self.tag_used = ""
         self.has_body = False
+        self.record_name = self.get_field(json_object, "name")
+        self.mem_address = self.get_field(json_object, "id")
+        self.tag_used = self.get_field(json_object, "tagUsed")
 
         struct_type_queue = List[String]()
         union_struct_type_queue = List[String]()
         enum_type_queue = List[String]()
         anonomous_record_increment = 0
-        self.record_name = self.get_field(json_object, "name")
-        self.mem_address = self.get_field(json_object, "id")
-        self.tag_used = self.get_field(json_object, "tagUsed")
         for ref node in self.children():
             if node.isa[Self]():
                 self.has_body = True
@@ -144,6 +142,32 @@ struct RecordDeclNode(AstNodeLike):
                 ]
                 self.disabled = True
             self.record_name = "anonomous_record_" + String(record_id)
+
+    @staticmethod
+    fn accept_impute(read json_object: Object) raises -> Bool:
+        if json_object["kind"].string() == UnprocessedTypeNode.__name__:
+            if "type" in json_object:
+                ref type_object = json_object["type"].object()
+                if "qualType" in type_object:
+                    if (
+                        type_object["qualType"]
+                        .string()
+                        .startswith("(unnamed struct")
+                    ):
+                        return True
+                    return False
+        if json_object["kind"].string() == Self.__name__:
+            return True
+        return False
+
+    @staticmethod
+    fn impute(mut json_object: Object) raises:
+        json_object["kind"] = Self.__name__
+
+        if "inner" not in json_object:
+            json_object["inner"] = Array()
+        for ref inner_object in json_object["inner"].array():
+            AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

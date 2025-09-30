@@ -17,15 +17,19 @@ struct ParmVarDeclNode(AstNodeLike):
     var children_: List[AstNode]
     var name: String
     var is_kwarg: Bool
+    var is_pass_by_value_record: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.is_kwarg = False
+        self.is_pass_by_value_record = False
         self.name = self.get_field[assert_in=True](json_object, "name")
         for node in self.children():
             if node.isa[FunctionDeclNode]():
                 if node[FunctionDeclNode].function_name != "":
                     self.is_kwarg = True
+            if node.isa[RecordTypeNode]():
+                self.is_pass_by_value_record = True
 
     @staticmethod
     fn impute(mut json_object: Object) raises:

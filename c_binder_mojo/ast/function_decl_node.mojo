@@ -100,7 +100,7 @@ struct FunctionDeclNode(AstNodeLike):
     var is_parm_var_decl: Bool
     var is_variadic: Bool
     var level: Int
-
+    var has_pass_by_value_record: Bool
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
@@ -113,10 +113,16 @@ struct FunctionDeclNode(AstNodeLike):
         self.level = level
         self.is_parm_var_decl = False
         self.is_variadic = False
+        self.has_pass_by_value_record = False
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.storage_class = self.get_field(json_object, "storageClass")
         self.function_name = self.get_field(json_object, "name")
         self.function_mangled_name = self.get_field(json_object, "mangledName")
+        for child in self.children():
+            if child.isa[ParmVarDeclNode]():
+                if child[ParmVarDeclNode].is_pass_by_value_record:
+                    self.is_disabled = True
+                    self.has_pass_by_value_record = True
         if "wrappingType" in json_object:
             for wrapping_type in json_object["wrappingType"].array():
                 if wrapping_type.string() == ParmVarDeclNode.__name__:
@@ -369,6 +375,14 @@ struct FunctionDeclNode(AstNodeLike):
                 "# is not supported yet. Reference `FunctionDeclNode` docs for"
                 " more details.\n"
             )
+            s = comment + "# " + s.replace("\n", "\n# ") + "\n"
+        elif self.has_pass_by_value_record:
+            comment = "# Note: Binding to c function: " + self.function_name
+            comment += " with pass by value record\n"
+            comment += (
+                "# is not supported yet. Reference `FunctionDeclNode` docs"
+            )
+            comment += " for more details.\n"
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
         elif self.is_disabled:
             comment = "# Forward declaration of " + self.function_name + "\n"

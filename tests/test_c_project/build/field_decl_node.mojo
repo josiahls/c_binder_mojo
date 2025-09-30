@@ -9,6 +9,7 @@ from utils import StaticTuple
 
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
+@fieldwise_init
 struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
@@ -63,36 +64,23 @@ alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
 alias __clang_svbfloat16x4_t = SIMD[BFloat16.dtype, 4]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
+@fieldwise_init
 struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
+@fieldwise_init
 struct simple_field_struct(Copyable & Movable):
 	var a : Int32
 
-	var b : Int32
-
-	var c : Int32
-
-	var d : Int32
-
-	var e : Int32
-
-	var f : Int32
-
-	var g : Int32
-
-	var h : Int32
-
-	var i : Int32
-
 # Note: Binding to c function: identity_function with pass by value record
- is not supported yet. Reference `FunctionDeclNode` docs for more details.
+# is not supported yet. Reference `FunctionDeclNode` docs for more details.
 # alias identity_function = fn (simple_field_struct) -> simple_field_struct
 # 
+alias identity_function_pointer = fn (UnsafePointer[simple_field_struct]) -> UnsafePointer[simple_field_struct]
 
 
-alias field_decl_node_identity_function = ExternalFunction['identity_function', identity_function]
+alias field_decl_node_identity_function_pointer = ExternalFunction['identity_function_pointer', identity_function_pointer]
 
 @always_inline
 fn _get_lib_path(so_file_name: String) raises -> Path:
@@ -136,7 +124,7 @@ fn _get_lib_path(so_file_name: String) raises -> Path:
 struct field_decl_node(Copyable, Movable):
     var lib: DLHandle
     
-    var identity_function: field_decl_node_identity_function.type
+    var identity_function_pointer: field_decl_node_identity_function_pointer.type
 
     fn __init__(out self):
         try:
@@ -147,5 +135,5 @@ struct field_decl_node(Copyable, Movable):
             )
 
     
-        self.identity_function = field_decl_node_identity_function.load(self.lib)
+        self.identity_function_pointer = field_decl_node_identity_function_pointer.load(self.lib)
 

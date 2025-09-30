@@ -168,6 +168,7 @@ struct RecordDeclNode(AstNodeLike):
             # structs must not be indented.
             # TODO(josiahls): Is there ever a case where we can't do this? Like struct size or something?
             # s += '@register_passable("trivial")\n'
+            s += "@fieldwise_init\n"
             s += "struct " + self.record_name + "(Copyable & Movable):\n"
 
             for child in self.children():

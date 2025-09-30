@@ -15,3 +15,9 @@ struct {
     unsigned int __low;
   } __value32;
 } complex_field_struct;
+
+struct padded_field_struct {
+  int a;
+  int :32;
+  int b;
+};

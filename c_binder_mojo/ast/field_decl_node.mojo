@@ -1,13 +1,14 @@
 # Native Mojo Modules
 
 # Third Party Mojo Modules
-from emberjson import Object, to_string
+from emberjson import Object, to_string, Array
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
 from c_binder_mojo.common import MOJO_KEYWORDS, MOJO_METHOD_KEYWORDS
+from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
 
 
 struct FieldDeclNode(AstNodeLike):
@@ -24,7 +25,7 @@ struct FieldDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.name = ""
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children[assert_in=True](json_object, level)
         self.level = 1  # Fields must always be at the top level + 1
         self.type = ""
         self.desugared_type = ""
@@ -49,6 +50,22 @@ struct FieldDeclNode(AstNodeLike):
             if "anonymous at" in self.desugared_type:
                 self.is_anonomous_type = True
 
+    @staticmethod
+    fn impute(mut json_object: Object) raises:
+        var unknown_type_object = json_object.copy()
+        unknown_type_object["id"] = Self.make_object_id(unknown_type_object)
+        unknown_type_object["kind"] = UnprocessedTypeNode.__name__
+        if "inner" not in unknown_type_object:
+            unknown_type_object["inner"] = Array()
+        unknown_type_object["wrappingType"] = Array()
+        unknown_type_object["wrappingType"].array().append(Self.__name__)
+        json_object["id"] = Self.make_object_id(json_object)
+        json_object["kind"] = Self.__name__
+        json_object["inner"] = Array()
+        json_object["inner"].array().append(unknown_type_object^)
+        for ref inner_object in json_object["inner"].array():
+            AstNode.impute(inner_object.object())
+
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""
         var indent: String = "\t" * self.level
@@ -64,13 +81,7 @@ struct FieldDeclNode(AstNodeLike):
 
         s += indent + "var " + name + " : "
 
-        var dtype: String
-        if self.desugared_type != "":
-            dtype = self.desugared_type
-        else:
-            dtype = self.type
-
-        s += TypeMapper.convert_c_type_to_mojo_type(dtype) + "\n"
+        s += self.children_to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

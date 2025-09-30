@@ -62,6 +62,25 @@ fn move_enum_decls_to_top_level(
         children.append(node.children[mut=True]().pop(i))
 
 
+fn move_reassign_var_decls_to_top_level(
+    mut children: List[AstNode],
+) raises:
+    var name: String = ""
+    for ref child in children:
+        if child.isa[RecordDeclNode]():
+            name = child[RecordDeclNode].record_name
+
+        elif child.isa[EnumDeclNode]():
+            name = child[EnumDeclNode].name
+
+        elif child.isa[TypedefDeclNode]():
+            name = child[TypedefDeclNode].name
+
+        elif child.isa[VarDeclNode]():
+            if child[VarDeclNode].is_anonomous_record_type:
+                child[VarDeclNode].value = name.copy()
+
+
 fn prune_repeated_decls(
     mut children: List[AstNode],
 ) raises:
@@ -115,7 +134,7 @@ struct TranslationUnitDeclNode(AstNodeLike):
             move_record_decls_to_top_level(self.children_, node)
             move_enum_decls_to_top_level(self.children_, node)
             self.children_.append(node^)
-
+        move_reassign_var_decls_to_top_level(self.children_)
         prune_repeated_decls(self.children_)
 
     fn to_string(self, just_code: Bool) raises -> String:

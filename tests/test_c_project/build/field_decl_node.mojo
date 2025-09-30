@@ -71,13 +71,28 @@ alias __builtin_va_list = __va_list
 
 @fieldwise_init
 struct simple_field_struct(Copyable & Movable):
-	var a : Int32
-
+	var a : ffi.c_int
 # Note: Binding to c function: identity_function with pass by value record
 # is not supported yet. Reference `FunctionDeclNode` docs for more details.
 # alias identity_function = fn (simple_field_struct) -> simple_field_struct
 # 
 alias identity_function_pointer = fn (UnsafePointer[simple_field_struct]) -> UnsafePointer[simple_field_struct]
+@fieldwise_init
+struct anonomous_record_2(Copyable & Movable):
+	pass
+@fieldwise_init
+struct anonomous_record_1(Copyable & Movable):
+	var __low : ffi.c_int
+@fieldwise_init
+struct anonomous_record_3(Copyable & Movable):
+	var __value64 : ffi.c_ulong_long
+	var __value32 : anonomous_record_2
+
+alias complex_field_struct = anonomous_record_3@fieldwise_init
+struct padded_field_struct(Copyable & Movable):
+	var a : ffi.c_int
+	var  : ffi.c_int
+	var b : ffi.c_int
 
 
 alias field_decl_node_identity_function_pointer = ExternalFunction['identity_function_pointer', identity_function_pointer]

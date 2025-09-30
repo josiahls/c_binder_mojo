@@ -51,6 +51,10 @@ struct RecordTypeNode(AstNodeLike):
                 self.record_name = decl_record_node[RecordDeclNode].record_name
             self.children_.append(decl_record_node^)
 
+        for child in self.children():
+            if child.isa[RecordDeclNode]():
+                self.record_name = child[RecordDeclNode].record_name
+
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:
         if json_object["kind"] == UnprocessedTypeNode.__name__:

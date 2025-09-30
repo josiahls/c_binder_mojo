@@ -18,6 +18,9 @@ target_include_directories(example_node PUBLIC include/)
 add_library(variadic_args_node SHARED src/variadic_args_node.c)
 target_include_directories(variadic_args_node PUBLIC include/)
 
+add_library(field_decl_node SHARED src/field_decl_node.c)
+target_include_directories(field_decl_node PUBLIC include/)
+
 # Make headers available to consumers
 target_include_directories(test_c_project PUBLIC include/)
 

@@ -33,27 +33,33 @@ struct ConstantArrayTypeNode(AstNodeLike):
             ref type_object = json_object["type"].object()
             if type_object["qualType"].string().find("]") != -1:
                 return True
+        if json_object["kind"].string() == Self.__name__:
+            return True
         return False
 
     @staticmethod
     fn impute(mut json_object: Object) raises:
-        inner_json_object = json_object.copy()
-        json_object["id"] = Self.make_object_id(json_object)
-        json_object["kind"] = Self.__name__
-        json_object["inner"] = Array()
-        ref type_object = json_object["type"].object()
-        var qual_type = type_object["qualType"].string()
-        var l, r = Self.parse_bracket_pair(qual_type)
-        if l == -1 or r == -1:
-            raise Error(
-                "Failed to parse bracket pair", to_string(json_object.copy())
-            )
-        json_object["size"] = Int(qual_type[l + 1 : r])
-        var unwrapped_qual_type = qual_type[:l] + qual_type[r + 1 :]
-        inner_json_object["type"] = Object()
-        inner_json_object["type"].object()["qualType"] = unwrapped_qual_type
+        if json_object["kind"].string() == UnprocessedTypeNode.__name__:
+            inner_json_object = json_object.copy()
+            json_object["id"] = Self.make_object_id(json_object)
+            json_object["kind"] = Self.__name__
+            json_object["inner"] = Array()
+            ref type_object = json_object["type"].object()
+            var qual_type = type_object["qualType"].string()
+            var l, r = Self.parse_bracket_pair(qual_type)
+            if l == -1 or r == -1:
+                raise Error(
+                    "Failed to parse bracket pair",
+                    to_string(json_object.copy()),
+                )
+            json_object["size"] = Int(qual_type[l + 1 : r])
+            var unwrapped_qual_type = qual_type[:l] + qual_type[r + 1 :]
+            inner_json_object["type"] = Object()
+            inner_json_object["type"].object()["qualType"] = unwrapped_qual_type
 
-        json_object["inner"].array().append(inner_json_object^)
+            json_object["inner"].array().append(inner_json_object^)
+        if "inner" not in json_object:
+            raise Error("Inner array not found", to_string(json_object.copy()))
         for ref child in json_object["inner"].array():
             AstNode.impute(child.object())
 

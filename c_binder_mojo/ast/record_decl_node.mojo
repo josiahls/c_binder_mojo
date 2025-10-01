@@ -123,6 +123,12 @@ struct RecordDeclNode(AstNodeLike):
                 elif enum_type_queue:
                     var desugared_type = enum_type_queue.pop()
                     node[FieldDeclNode].desugared_type = desugared_type
+                if node.isa[FieldDeclNode]():
+                    if node[FieldDeclNode].is_bitfield:
+                        node[FieldDeclNode].name = self.bitfield_name(
+                            anonomous_record_increment
+                        )
+                        anonomous_record_increment += 1
 
         if self.record_name == "":
             registry = get_global_anonomous_record_decl_type_registry()
@@ -168,6 +174,9 @@ struct RecordDeclNode(AstNodeLike):
             json_object["inner"] = Array()
         for ref inner_object in json_object["inner"].array():
             AstNode.impute(inner_object.object())
+
+    fn bitfield_name(self, counter: Int) raises -> String:
+        return "__bitfield_" + String(counter)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

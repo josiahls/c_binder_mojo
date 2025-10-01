@@ -22,6 +22,7 @@ struct FieldDeclNode(AstNodeLike):
     var is_union: Bool
     var is_anonomous_type: Bool
     var is_struct: Bool
+    var is_bitfield: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.name = ""
@@ -32,8 +33,9 @@ struct FieldDeclNode(AstNodeLike):
         self.is_union = False
         self.is_struct = False
         self.is_anonomous_type = False
-
+        self.is_bitfield = False
         self.name = self.get_field(json_object, "name")
+        self.is_bitfield = self.get_field_bool(json_object, "isBitfield")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
             self.type = self.get_field(type_object, "qualType")

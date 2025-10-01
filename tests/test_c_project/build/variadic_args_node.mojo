@@ -9,6 +9,7 @@ from utils import StaticTuple
 
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
+@fieldwise_init
 struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
@@ -63,6 +64,7 @@ alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
 alias __clang_svbfloat16x4_t = SIMD[BFloat16.dtype, 4]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
+@fieldwise_init
 struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list

@@ -53,6 +53,23 @@ struct NodeExceptionHandler(Movable):
         return False
 
 
+struct NodeToStringContext(Copyable & Movable):
+    var node_name: String
+    var verbose: Bool
+
+    fn __init__(out self, node_name: String):
+        self.node_name = node_name
+        self.verbose = False
+
+    fn __enter__(mut self) -> ref [self] Self:
+        return self
+
+    fn write_context(self, var in_string: String, out new_string: String):
+        var begin: String = "# Begin " + self.node_name + "\n"
+        var end: String = "\n# End " + self.node_name + "\n"
+        new_string = begin + in_string + end
+
+
 struct AstNode(Copyable & Movable):
     alias __name__ = "AstNode"
     alias type = AstNodeVariant
@@ -131,7 +148,9 @@ struct AstNode(Copyable & Movable):
             alias T = Self.type.Ts[i]
             if self.isa[T]():
                 with NodeExceptionHandler(T.__name__, "to_string"):
-                    return self[T].to_string(just_code)
+                    with NodeToStringContext(T.__name__) as context:
+                        return self[T].to_string(just_code)
+                        # return context.write_context(self[T].to_string(just_code))
         raise Error("Missing to_string method")
 
     fn children[

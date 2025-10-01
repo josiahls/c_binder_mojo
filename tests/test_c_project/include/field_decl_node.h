@@ -16,8 +16,26 @@ struct {
   } __value32;
 } complex_field_struct;
 
+struct complex_field_struct* complex_field_struct_identity_function(struct complex_field_struct* input);
+
 struct padded_field_struct {
   int a;
   int :32;
   int b;
 };
+
+struct padded_field_struct* padded_field_struct_identity_function(struct padded_field_struct* input);
+
+struct union_field_struct {
+  int a;
+
+  union {
+    int b;
+    int c;
+  };
+
+  int d;
+};
+typedef struct union_field_struct union_field_struct;
+
+struct union_field_struct* union_field_struct_identity_function(struct union_field_struct* input);

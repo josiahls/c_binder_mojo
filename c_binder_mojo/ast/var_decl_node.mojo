@@ -25,7 +25,7 @@ struct VarDeclNode(AstNodeLike):
         self.level = level
         self.type = ""
         self.is_anonomous_record_type = False
-        self.children_ = List[AstNode]()
+        self.children_ = self.make_children(json_object, level)
         self.name = self.get_field(json_object, "name")
         self.mangled_name = self.get_field(json_object, "mangledName")
         self.value = ""
@@ -34,12 +34,24 @@ struct VarDeclNode(AstNodeLike):
             self.type = self.get_field(type_object, "qualType")
             if self.type.startswith("struct (unnamed struct"):
                 self.is_anonomous_record_type = True
+        for ref child in self.children():
+            if child.isa[FunctionDeclNode]():
+                child[FunctionDeclNode].is_parm_var_decl = True
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:
         if json_object["kind"].string() == Self.__name__:
             if "inner" not in json_object:
                 return True
+            if "inner" in json_object:
+                var is_all_comments_and_attrs = True
+                for ref inner_object in json_object["inner"].array():
+                    ref kind_str = inner_object.object()["kind"].string()
+                    if "Comment" not in kind_str and "Attr" not in kind_str:
+                        is_all_comments_and_attrs = False
+                        break
+                if is_all_comments_and_attrs:
+                    return True
         return False
 
     @staticmethod
@@ -59,10 +71,23 @@ struct VarDeclNode(AstNodeLike):
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""
         s += "alias " + self.name + " = "
-        s += self.children_to_string(just_code)
+        comment_string = String()
+        for ref child in self.children():
+            if child.isa[FullCommentNode]():
+                comment_string = (
+                    child.to_string(just_code) + "\n" + comment_string
+                )
+            elif child.isa[ParagraphCommentNode]():
+                comment_string = (
+                    child.to_string(just_code) + "\n" + comment_string
+                )
+            else:
+                s += child.to_string(just_code)
         if self.value != "":
-            s += self.value + "\n"
-        return s
+            s += self.value
+        if comment_string != "":
+            s += comment_string
+        return s + "\n"
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

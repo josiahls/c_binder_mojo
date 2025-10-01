@@ -27,6 +27,8 @@ struct RecordTypeNode(AstNodeLike):
     var children_: List[AstNode]
 
     var is_struct: Bool
+    var is_union: Bool
+    var is_anonymous: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
@@ -34,7 +36,8 @@ struct RecordTypeNode(AstNodeLike):
         self.record_name = ""
         self.children_ = self.make_children(json_object, level + 1)
         self.is_struct = False
-
+        self.is_union = self.get_field_bool(json_object, "is_union")
+        self.is_anonymous = self.get_field_bool(json_object, "is_anonymous")
         self.mem_address = self.get_field(json_object, "id")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
@@ -42,6 +45,8 @@ struct RecordTypeNode(AstNodeLike):
             self.is_struct = record_name.startswith("struct")
             if self.is_struct:
                 self.record_name = record_name.replace("struct ", "")
+            elif self.is_union:
+                self.record_name = record_name.replace("union ", "")
 
         if "decl" in json_object:
             decl_record_node = AstNode.accept_create_from(
@@ -58,6 +63,11 @@ struct RecordTypeNode(AstNodeLike):
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:
         if json_object["kind"] == UnprocessedTypeNode.__name__:
+            # Avoids recursive calls
+            if "wrappedBy" in json_object:
+                if Self.__name__ in json_object["wrappedBy"].array():
+                    return False
+
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
                     ref s = json_object["type"].object()["qualType"].string()
@@ -75,23 +85,30 @@ struct RecordTypeNode(AstNodeLike):
         json_object["kind"] = Self.__name__
         json_object["inner"] = Array()
         json_object["record_name"] = ""
-        json_object["children_"] = Array()
         json_object["is_struct"] = False
+        json_object["is_union"] = False
+        json_object["is_anonymous"] = False
         json_object["type"] = Object()
         json_object["type"].object()["qualType"] = s
         var new_qual_type: String = s.copy()
         for record_type in materialize[RECORD_TYPES]():
-            if new_qual_type.startswith(record_type):
+            if new_qual_type.startswith(record_type + " "):
                 new_qual_type = String(new_qual_type.removeprefix(record_type))
                 if record_type == "struct":
                     json_object["is_struct"] = True
+                elif record_type == "union":
+                    json_object["is_union"] = True
                 break
+        if "anonymous at" in new_qual_type:
+            json_object["is_anonymous"] = True
 
         inner_json_object = (
             UnprocessedTypeNode.make_unprocessed_type_json_object(
                 String(new_qual_type.strip())
             )
         )
+        inner_json_object["wrappedBy"] = Array()
+        inner_json_object["wrappedBy"].array().append(Self.__name__)
         json_object["inner"].array().append(inner_json_object^)
         for ref child in json_object["inner"].array():
             AstNode.impute(child.object())

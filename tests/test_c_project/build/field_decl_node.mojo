@@ -88,10 +88,11 @@ struct anonomous_record_3(Copyable & Movable):
 	var __value64 : ffi.c_ulong_long
 	var __value32 : anonomous_record_2
 
-alias complex_field_struct = anonomous_record_3@fieldwise_init
+alias complex_field_struct = anonomous_record_3
+@fieldwise_init
 struct padded_field_struct(Copyable & Movable):
 	var a : ffi.c_int
-	var  : ffi.c_int
+	var __bitfield_0 : ffi.c_int
 	var b : ffi.c_int
 
 

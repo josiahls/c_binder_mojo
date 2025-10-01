@@ -9,6 +9,7 @@ from utils import StaticTuple
 
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
+@fieldwise_init
 struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
@@ -63,6 +64,7 @@ alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
 alias __clang_svbfloat16x4_t = SIMD[BFloat16.dtype, 4]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
+@fieldwise_init
 struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
@@ -101,9 +103,9 @@ alias __nlink_t = ffi.c_int
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = ffi.c_int
+@fieldwise_init
 struct anonomous_record_1(Copyable & Movable):
-	var __val : InlineArray[Int32, 2]
-
+	var __val : InlineArray[ffi.c_int, 2]
 alias __fsid_t = anonomous_record_1
 
 alias __clock_t = ffi.c_long
@@ -165,11 +167,10 @@ alias uintmax_t = __uintmax_t
 alias ptrdiff_t = ffi.c_long
 alias size_t = ffi.c_ulong
 alias wchar_t = ffi.c_int
+@fieldwise_init
 struct anonomous_record_2(Copyable & Movable):
 	var __clang_max_align_nonce1 : ffi.c_long_long
-
 	var __clang_max_align_nonce2 : Float64
-
 alias max_align_t = anonomous_record_2
 
 alias simple_type_byte = Int8

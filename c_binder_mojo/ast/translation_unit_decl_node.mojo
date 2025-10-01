@@ -134,7 +134,7 @@ struct TranslationUnitDeclNode(AstNodeLike):
             move_record_decls_to_top_level(self.children_, node)
             move_enum_decls_to_top_level(self.children_, node)
             self.children_.append(node^)
-        move_reassign_var_decls_to_top_level(self.children_)
+        # move_reassign_var_decls_to_top_level(self.children_)
         prune_repeated_decls(self.children_)
 
     fn to_string(self, just_code: Bool) raises -> String:

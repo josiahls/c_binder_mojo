@@ -23,17 +23,23 @@ struct FieldDeclNode(AstNodeLike):
     var is_anonomous_type: Bool
     var is_struct: Bool
     var is_bitfield: Bool
+    var anonomous_record_memory_address: String
+    var override_type: String
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.name = ""
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.level = 1  # Fields must always be at the top level + 1
         self.type = ""
         self.desugared_type = ""
+        self.override_type = ""
         self.is_union = False
         self.is_struct = False
-        self.is_anonomous_type = False
-        self.is_bitfield = False
+        self.is_anonomous_type = self.get_field_bool(
+            json_object, "is_anonomous_type"
+        )
+        self.anonomous_record_memory_address = self.get_field(
+            json_object, "anonomous_record_memory_address"
+        )
         self.name = self.get_field(json_object, "name")
         self.is_bitfield = self.get_field_bool(json_object, "isBitfield")
         if "type" in json_object:
@@ -48,9 +54,12 @@ struct FieldDeclNode(AstNodeLike):
             self.desugared_type = self.get_field(
                 type_object, "desugaredQualType"
             )
-
             if "anonymous at" in self.desugared_type:
                 self.is_anonomous_type = True
+
+        for ref child in self.children():
+            if child.isa[FunctionDeclNode]():
+                child[FunctionDeclNode].in_field_decl = True
 
     @staticmethod
     fn impute(mut json_object: Object) raises:
@@ -83,7 +92,17 @@ struct FieldDeclNode(AstNodeLike):
 
         s += indent + "var " + name + " : "
 
-        s += self.children_to_string(just_code)
+        if self.override_type != "":
+            s += self.override_type
+        else:
+            for child in self.children():
+                if (
+                    child.isa[FullCommentNode]()
+                    or child.isa[ParagraphCommentNode]()
+                ):
+                    s = child.to_string(just_code) + "\n" + s
+                else:
+                    s += child.to_string(just_code)
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

@@ -112,7 +112,15 @@ struct SignNode(AstNodeLike):
             AstNode.impute(inner_object.object())
 
     fn to_string(self, just_code: Bool) raises -> String:
-        var s = self.children_to_string(just_code)
+        var s = String()
+        var comment_string = String()
+        for child in self.children():
+            if child.isa[FullCommentNode]():
+                comment_string = " " + child.to_string(just_code) + "\n"
+            elif child.isa[ParagraphCommentNode]():
+                comment_string = " " + child.to_string(just_code) + "\n"
+            else:
+                s += child.to_string(just_code)
         if self.sign == "unsigned":
             if "c_long" in s:
                 s = s.replace("c_long", "c_ulong")
@@ -124,7 +132,7 @@ struct SignNode(AstNodeLike):
             #     raise Error(
             #         "Unexpected dtype for unsigned: " + s + " id: " + self.id
             #     )
-        return s
+        return s + comment_string
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

@@ -19,8 +19,6 @@ struct IndirectFieldDeclNode(AstNodeLike):
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
-        self.name = ""
-
         self.level = 1  # Fields must always be at the top level + 1
         self.type = ""
         self.desugared_type = ""

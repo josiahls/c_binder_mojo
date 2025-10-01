@@ -9,6 +9,7 @@ from utils import StaticTuple
 
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
+@fieldwise_init
 struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
@@ -63,45 +64,35 @@ alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
 alias __clang_svbfloat16x4_t = SIMD[BFloat16.dtype, 4]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
+@fieldwise_init
 struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
+@fieldwise_init
 struct mjuiItemSingle_(Copyable & Movable):
-	var modifier : Int32
-
-	var shortcut : Int32
-
+	var modifier : ffi.c_int
+	var shortcut : ffi.c_int
+@fieldwise_init
 struct mjuiItemMulti_(Copyable & Movable):
-	var nelem : Int32
-
-	var name : InlineArray[Int8, 35]
-
+	var nelem : ffi.c_int
+	var name : InlineArray[InlineArray[Int8, 40], 35]
+@fieldwise_init
 struct mjuiItemSlider_(Copyable & Movable):
 	var range : InlineArray[Float64, 2]
-
 	var divisions : Float64
-
+@fieldwise_init
 struct mjuiItemEdit_(Copyable & Movable):
-	var nelem : Int32
-
-	var range : InlineArray[Float64, 7]
-
+	var nelem : ffi.c_int
+	var range : InlineArray[InlineArray[Float64, 2], 7]
 alias anonomous_record_1 = C_Union[mjuiItemSingle_, mjuiItemMulti_, mjuiItemSlider_, mjuiItemEdit_]
 
+@fieldwise_init
 struct mjuiItem_(Copyable & Movable):
-	var type : Int32
-
+	var type : ffi.c_int
 	var name : InlineArray[Int8, 40]
-
 	var union_placeholder_1 : anonomous_record_1
-
-
-
-
-
-	var skip : Int32
-
+	var skip : ffi.c_int
 alias mjuiItem = mjuiItem_
 
 alias __atomic_wide_counter = C_Union[ffi.c_ulong_long]

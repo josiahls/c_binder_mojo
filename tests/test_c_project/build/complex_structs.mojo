@@ -9,6 +9,7 @@ from utils import StaticTuple
 
 alias __int128_t = ffi.c_long_long
 alias __uint128_t = ffi.c_ulong_long
+@fieldwise_init
 struct __NSConstantString_tag(Copyable & Movable):
 	pass
 alias __NSConstantString = __NSConstantString_tag
@@ -63,46 +64,45 @@ alias __clang_svfloat64x4_t = SIMD[Float64.dtype, 4]
 alias __clang_svbfloat16x4_t = SIMD[BFloat16.dtype, 4]
 alias __SVBool_t = Bool
 alias __builtin_ms_va_list = UnsafePointer[Int8]
+@fieldwise_init
 struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
-struct anonomous_record_3(Copyable & Movable):
-	var ambient : InlineArray[Float32, 3]
-
+@fieldwise_init
 struct anonomous_record_2(Copyable & Movable):
-	var shadowsize : Int32
-
+	pass
+@fieldwise_init
+struct anonomous_record_4(Copyable & Movable):
+	var ambient : InlineArray[Float32, 3]
+@fieldwise_init
+struct anonomous_record_3(Copyable & Movable):
+	var shadowsize : ffi.c_int
+@fieldwise_init
 struct anonomous_record_1(Copyable & Movable):
-	var cameraid : Int32
-
+	var cameraid : ffi.c_int
+@fieldwise_init
 struct mjVisual_1_(Copyable & Movable):
 	var global_ : anonomous_record_1
-
-	var quality : anonomous_record_2
-
-	var headlight : anonomous_record_3
-
+	var quality : anonomous_record_3
+	var headlight : anonomous_record_4
 alias mjVisual_1 = mjVisual_1_
 
-struct anonomous_record_6(Copyable & Movable):
+@fieldwise_init
+struct anonomous_record_7(Copyable & Movable):
 	var fog : InlineArray[Float32, 4]
-
-struct anonomous_record_5(Copyable & Movable):
+@fieldwise_init
+struct anonomous_record_6(Copyable & Movable):
 	var forcewidth : Float32
-
-struct anonomous_record_4(Copyable & Movable):
+@fieldwise_init
+struct anonomous_record_5(Copyable & Movable):
 	var stiffness : Float32
-
+@fieldwise_init
 struct mjVisual_2_(Copyable & Movable):
-	var map : anonomous_record_4
-
-	var scale : anonomous_record_5
-
-	var rgba : anonomous_record_6
-
+	var map : anonomous_record_5
+	var scale : anonomous_record_6
+	var rgba : anonomous_record_7
 	var visual_1 : mjVisual_1_
-
 alias mjVisual_2 = mjVisual_2_
 
 

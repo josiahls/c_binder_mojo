@@ -101,6 +101,7 @@ struct FunctionDeclNode(AstNodeLike):
     var is_variadic: Bool
     var level: Int
     var has_pass_by_value_record: Bool
+    var in_field_decl: Bool
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
@@ -111,6 +112,7 @@ struct FunctionDeclNode(AstNodeLike):
         self.is_parm_var_decl = False
         self.is_variadic = False
         self.has_pass_by_value_record = False
+        self.in_field_decl = False
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.storage_class = self.get_field(json_object, "storageClass")
         self.function_name = self.get_field(json_object, "name")
@@ -265,6 +267,8 @@ struct FunctionDeclNode(AstNodeLike):
 
         if self.is_parm_var_decl:
             # s += self.function_name + ": "
+            pass
+        elif self.in_field_decl:
             pass
         else:
             s += indent + "alias " + self.function_name + " = "

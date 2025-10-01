@@ -78,7 +78,7 @@ struct RecordDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         # TODO: Should this assert_in=True? RecordDecl should have inners no?
-        self.children_ = self.make_children(json_object, level + 1)
+        self.children_ = List[AstNode]()
         self.level = level
         self.disabled = False
         self.has_body = False
@@ -90,45 +90,67 @@ struct RecordDeclNode(AstNodeLike):
         union_struct_type_queue = List[String]()
         enum_type_queue = List[String]()
         anonomous_record_increment = 0
-        for ref node in self.children():
-            if node.isa[Self]():
-                self.has_body = True
-                struct_type_queue.append(node[Self].record_name)
-            elif node.isa[EnumDeclNode]():
-                self.has_body = True
-                enum_type_queue.append(node[EnumDeclNode].name)
-            elif node.isa[FieldDeclNode]():
-                self.has_body = True
-                if (
-                    node[FieldDeclNode].is_union
-                    and node[FieldDeclNode].is_anonomous_type
-                ):
-                    anonomous_record_increment += 1
-                    node[FieldDeclNode].name = "union_placeholder_" + String(
-                        anonomous_record_increment
-                    )
-                    if len(struct_type_queue) == 0:
-                        print(
-                            "FieldDeclNode has struct type queue for"
-                            " unions is empty"
-                        )
+        record_decl_memory_address_to_name = Dict[String, String]()
+        if "inner" in json_object:
+            for inner_object in json_object["inner"].array():
+                var node = AstNode.accept_create_from(
+                    inner_object.object(), level + 1
+                )
+                if node.isa[Self]():
+                    self.has_body = True
+                    if self.tag_used == "union":
+                        union_struct_type_queue.append(node[Self].record_name)
                     else:
+                        struct_type_queue.append(node[Self].record_name)
+                    record_decl_memory_address_to_name[
+                        node[Self].mem_address
+                    ] = node[Self].record_name
+                elif node.isa[EnumDeclNode]():
+                    self.has_body = True
+                    enum_type_queue.append(node[EnumDeclNode].name)
+                elif node.isa[FieldDeclNode]():
+                    self.has_body = True
+                    if node[FieldDeclNode].is_anonomous_type:
                         node[
                             FieldDeclNode
-                        ].desugared_type = struct_type_queue.pop()
-
-                elif struct_type_queue:
-                    var desugared_type = struct_type_queue.pop()
-                    node[FieldDeclNode].desugared_type = desugared_type
-                elif enum_type_queue:
-                    var desugared_type = enum_type_queue.pop()
-                    node[FieldDeclNode].desugared_type = desugared_type
-                if node.isa[FieldDeclNode]():
-                    if node[FieldDeclNode].is_bitfield:
+                        ].override_type = record_decl_memory_address_to_name[
+                            node[FieldDeclNode].anonomous_record_memory_address
+                        ]
+                    if (
+                        node[FieldDeclNode].is_union
+                        and node[FieldDeclNode].is_anonomous_type
+                    ):
+                        anonomous_record_increment += 1
+                        node[
+                            FieldDeclNode
+                        ].name = "union_placeholder_" + String(
+                            anonomous_record_increment
+                        )
+                        if len(struct_type_queue) == 0:
+                            print(
+                                "FieldDeclNode has struct type queue for"
+                                " unions is empty"
+                            )
+                        else:
+                            node[
+                                FieldDeclNode
+                            ].desugared_type = struct_type_queue.pop()
+                    elif node[FieldDeclNode].is_bitfield:
                         node[FieldDeclNode].name = self.bitfield_name(
                             anonomous_record_increment
                         )
                         anonomous_record_increment += 1
+
+                    elif struct_type_queue:
+                        var desugared_type = struct_type_queue.pop()
+                        node[FieldDeclNode].desugared_type = desugared_type
+                    elif enum_type_queue:
+                        var desugared_type = enum_type_queue.pop()
+                        node[FieldDeclNode].desugared_type = desugared_type
+                    elif union_struct_type_queue:
+                        var desugared_type = union_struct_type_queue.pop()
+                        node[FieldDeclNode].desugared_type = desugared_type
+                self.children_.append(node^)
 
         if self.record_name == "":
             registry = get_global_anonomous_record_decl_type_registry()
@@ -177,8 +199,30 @@ struct RecordDeclNode(AstNodeLike):
 
         if "inner" not in json_object:
             json_object["inner"] = Array()
+
+        var anonomous_record_declared = False
+        var anonomous_record_memory_address = ""
         for ref inner_object in json_object["inner"].array():
+            if (
+                anonomous_record_declared
+                and inner_object.object()["kind"].string() == "FieldDecl"
+            ):
+                anonomous_record_declared = False
+                inner_object.object()["is_anonomous_type"] = True
+                inner_object.object()[
+                    "anonomous_record_memory_address"
+                ] = anonomous_record_memory_address
+                ref type_object = inner_object.object()["type"].object()
+                var qual_type = type_object["qualType"].string().copy()
+                type_object["_qualType"] = qual_type
+                qual_type = String(qual_type.split("::")[0])
+                type_object["qualType"] = qual_type
             AstNode.impute(inner_object.object())
+            if inner_object.object()["kind"].string() == Self.__name__:
+                anonomous_record_declared = True
+                anonomous_record_memory_address = inner_object.object()[
+                    "id"
+                ].string()
 
     fn bitfield_name(self, counter: Int) raises -> String:
         return "__bitfield_" + String(counter)
@@ -210,6 +254,9 @@ struct RecordDeclNode(AstNodeLike):
             s += "struct " + self.record_name + "(Copyable & Movable):\n"
 
             for child in self.children():
+                # Skip indirect field decls for now to avoid weird spacing.
+                if child.isa[IndirectFieldDeclNode]():
+                    continue
                 s += child.to_string(just_code) + "\n"
             if not self.has_body:
                 s += indent + "pass\n"

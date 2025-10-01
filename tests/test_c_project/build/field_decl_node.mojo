@@ -86,17 +86,33 @@ struct anonomous_record_1(Copyable & Movable):
 @fieldwise_init
 struct anonomous_record_3(Copyable & Movable):
 	var __value64 : ffi.c_ulong_long
-	var __value32 : anonomous_record_2
+	var __value32 : anonomous_record_1
+@fieldwise_init
+struct anonomous_record_4(Copyable & Movable):
+	pass
+alias complex_field_struct = anonomous_record_4
 
-alias complex_field_struct = anonomous_record_3
+alias complex_field_struct_identity_function = fn (UnsafePointer[complex_field_struct]) -> UnsafePointer[complex_field_struct]
 @fieldwise_init
 struct padded_field_struct(Copyable & Movable):
 	var a : ffi.c_int
 	var __bitfield_0 : ffi.c_int
 	var b : ffi.c_int
+alias padded_field_struct_identity_function = fn (UnsafePointer[padded_field_struct]) -> UnsafePointer[padded_field_struct]
+alias anonomous_record_5 = C_Union[Int32, Int32]
+
+@fieldwise_init
+struct union_field_struct(Copyable & Movable):
+	var a : ffi.c_int
+	var union_placeholder_1 : anonomous_record_5
+	var d : ffi.c_int
+alias union_field_struct_identity_function = fn (UnsafePointer[union_field_struct]) -> UnsafePointer[union_field_struct]
 
 
 alias field_decl_node_identity_function_pointer = ExternalFunction['identity_function_pointer', identity_function_pointer]
+alias field_decl_node_complex_field_struct_identity_function = ExternalFunction['complex_field_struct_identity_function', complex_field_struct_identity_function]
+alias field_decl_node_padded_field_struct_identity_function = ExternalFunction['padded_field_struct_identity_function', padded_field_struct_identity_function]
+alias field_decl_node_union_field_struct_identity_function = ExternalFunction['union_field_struct_identity_function', union_field_struct_identity_function]
 
 @always_inline
 fn _get_lib_path(so_file_name: String) raises -> Path:
@@ -141,6 +157,9 @@ struct field_decl_node(Copyable, Movable):
     var lib: DLHandle
     
     var identity_function_pointer: field_decl_node_identity_function_pointer.type
+    var complex_field_struct_identity_function: field_decl_node_complex_field_struct_identity_function.type
+    var padded_field_struct_identity_function: field_decl_node_padded_field_struct_identity_function.type
+    var union_field_struct_identity_function: field_decl_node_union_field_struct_identity_function.type
 
     fn __init__(out self):
         try:
@@ -152,4 +171,7 @@ struct field_decl_node(Copyable, Movable):
 
     
         self.identity_function_pointer = field_decl_node_identity_function_pointer.load(self.lib)
+        self.complex_field_struct_identity_function = field_decl_node_complex_field_struct_identity_function.load(self.lib)
+        self.padded_field_struct_identity_function = field_decl_node_padded_field_struct_identity_function.load(self.lib)
+        self.union_field_struct_identity_function = field_decl_node_union_field_struct_identity_function.load(self.lib)
 

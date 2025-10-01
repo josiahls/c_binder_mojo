@@ -105,9 +105,6 @@ struct FunctionDeclNode(AstNodeLike):
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.storage_class = ""
-        self.function_name = ""
-        self.function_mangled_name = ""
         self.function_type = ""
         self.is_disabled = False
         self.level = level
@@ -173,6 +170,7 @@ struct FunctionDeclNode(AstNodeLike):
 
     @staticmethod
     fn parse_parm_var_decls(read qual_type: String) raises -> List[Object]:
+        # TODO: Handle cases where we have (*const) e.g. a constant function pointer
         var outer_most_paren_begin = Self.outer_most_paren_begin(qual_type)
         # Get the last outer most (, and cut the last )
         var parm_vars = qual_type[outer_most_paren_begin[-1] + 1 : -1]
@@ -217,7 +215,7 @@ struct FunctionDeclNode(AstNodeLike):
             if "type" in json_object:
                 if "qualType" in json_object["type"].object():
                     ref s = json_object["type"].object()["qualType"].string()
-                    if " (*)" in s or " *(*)" in s:
+                    if " (*)" in s or " *(*)" in s or " (*const)" in s:
                         return True
         elif json_object["kind"] == Self.__name__:
             return True

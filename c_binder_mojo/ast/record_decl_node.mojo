@@ -155,12 +155,17 @@ struct RecordDeclNode(AstNodeLike):
             if "type" in json_object:
                 ref type_object = json_object["type"].object()
                 if "qualType" in type_object:
-                    if (
-                        type_object["qualType"]
-                        .string()
-                        .startswith("(unnamed struct")
-                    ):
-                        return True
+                    for unnamed_record in [
+                        "(unnamed struct",
+                        "(unnamed union",
+                        "(unnamed enum",
+                    ]:
+                        if (
+                            type_object["qualType"]
+                            .string()
+                            .startswith(unnamed_record)
+                        ):
+                            return True
                     return False
         if json_object["kind"].string() == Self.__name__:
             return True

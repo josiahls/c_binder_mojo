@@ -6,10 +6,10 @@
 from c_binder_mojo.ast.variant import Variant
 
 # Custom Nodes
-from c_binder_mojo.ast.custom.sign_node import SignNode
-from c_binder_mojo.ast.custom.clang_simd_node import ClangSimdNode
-from c_binder_mojo.ast.custom.return_decl_node import ReturnDeclNode
-from c_binder_mojo.ast.custom.sugared_type_node import SugaredTypeNode
+from c_binder_mojo.ast.extensions.sign_node import SignNode
+from c_binder_mojo.ast.extensions.clang_simd_node import ClangSimdNode
+from c_binder_mojo.ast.extensions.return_decl_node import ReturnDeclNode
+from c_binder_mojo.ast.extensions.sugared_type_node import SugaredTypeNode
 
 from c_binder_mojo.ast.translation_unit_decl_node import (
     TranslationUnitDeclNode,

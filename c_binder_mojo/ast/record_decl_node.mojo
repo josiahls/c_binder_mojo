@@ -8,7 +8,9 @@ from emberjson import Object, Array
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.typing import TypeMapper
-from c_binder_mojo.ast.custom.unprocessed_type_node import UnprocessedTypeNode
+from c_binder_mojo.ast.extensions.unprocessed_type_node import (
+    UnprocessedTypeNode,
+)
 
 
 struct _GlobalAnonomousRecordDeclTypeRegistry(Movable):

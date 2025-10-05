@@ -25,5 +25,7 @@ run_cmd pixi run generate_example_bindings_and_test variadic_args_node
 
 run_cmd pixi run generate_example_bindings_and_test field_decl_node
 
+run_cmd pixi run generate_example_bindings_and_test enum_decl_node
+
 # We don't have a unit test to assert this.
 # run_cmd pixi run generate_example_bindings tests/test_c_project/include/complex_type_defs.h true

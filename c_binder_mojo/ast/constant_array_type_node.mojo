@@ -14,6 +14,7 @@ struct ConstantArrayTypeNode(AstNodeLike):
 
     var size: Int64
     var type: String
+    var is_sized: Bool
 
     var children_: List[AstNode]
 
@@ -21,8 +22,10 @@ struct ConstantArrayTypeNode(AstNodeLike):
         self.children_ = self.make_children[assert_in=True](json_object, 0)
         self.size = 0
         self.type = ""
+        self.is_sized = self.get_field_bool(json_object, "isSized")
         # TODO: Create get_field for Int type
-        self.size = json_object["size"].int()
+        if self.is_sized:
+            self.size = json_object["size"].int()
         if "type" in json_object:
             ref type_object = json_object["type"].object()
             self.type = self.get_field[assert_in=True](type_object, "qualType")
@@ -44,6 +47,7 @@ struct ConstantArrayTypeNode(AstNodeLike):
             json_object["id"] = Self.make_object_id(json_object)
             json_object["kind"] = Self.__name__
             json_object["inner"] = Array()
+            json_object["isSized"] = False
             ref type_object = json_object["type"].object()
             var qual_type = type_object["qualType"].string()
             var l, r = Self.parse_bracket_pair(qual_type)
@@ -52,7 +56,10 @@ struct ConstantArrayTypeNode(AstNodeLike):
                     "Failed to parse bracket pair",
                     to_string(json_object.copy()),
                 )
-            json_object["size"] = Int(qual_type[l + 1 : r])
+            var size: String = qual_type[l + 1 : r]
+            if size != "":
+                json_object["isSized"] = True
+                json_object["size"] = Int(size)
             var unwrapped_qual_type = qual_type[:l] + qual_type[r + 1 :]
             inner_json_object["type"] = Object()
             inner_json_object["type"].object()["qualType"] = unwrapped_qual_type
@@ -71,7 +78,10 @@ struct ConstantArrayTypeNode(AstNodeLike):
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = self.children_to_string(just_code)
-        return "InlineArray[" + s + ", " + String(self.size) + "]"
+        if self.is_sized:
+            return "InlineArray[" + s + ", " + String(self.size) + "]"
+        # Maybe at least include a comment about the type being unsized?
+        return "OpaquePointer"
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).origin_cast[

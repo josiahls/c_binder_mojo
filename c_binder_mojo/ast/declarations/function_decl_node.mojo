@@ -67,27 +67,10 @@ from c_binder_mojo.ast.extensions.unprocessed_type_node import (
     UnprocessedTypeNode,
 )
 from c_binder_mojo.ast.declarations.parm_var_decl_node import ParmVarDeclNode
-from c_binder_mojo.ast.visibility_attr_node import VisibilityAttrNode
-from c_binder_mojo.ast.format_attr_node import FormatAttrNode
-from c_binder_mojo.ast.no_throw_attr_node import NoThrowAttrNode
-from c_binder_mojo.ast.pure_attr_node import PureAttrNode
-from c_binder_mojo.ast.non_null_attr_node import NonNullAttrNode
-from c_binder_mojo.ast.builtin_attr_node import BuiltinAttrNode
+from c_binder_mojo.ast import attributes
 from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
-from c_binder_mojo.ast.warn_unsed_result_attr_node import (
-    WarnUnusedResultAttrNode,
-)
-from c_binder_mojo.ast.restrict_attr_node import RestrictAttrNode
-from c_binder_mojo.ast.alloc_align_attr_node import AllocAlignAttrNode
-from c_binder_mojo.ast.const_attr_node import ConstAttrNode
+
 from c_binder_mojo.ast.full_comment_node import FullCommentNode
-from c_binder_mojo.ast.deprecated_attr_node import DeprecatedAttrNode
-from c_binder_mojo.ast.section_attr_node import SectionAttrNode
-from c_binder_mojo.ast.cold_attr_node import ColdAttrNode
-from c_binder_mojo.ast.asm_label_attr_node import AsmLabelAttrNode
-from c_binder_mojo.ast.always_inline_attr_node import AlwaysInlineAttrNode
-from c_binder_mojo.ast.error_attr_node import ErrorAttrNode
-from c_binder_mojo.ast.alloc_size_attr_node import AllocSizeAttrNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 
 
@@ -283,67 +266,67 @@ struct FunctionDeclNode(AstNodeLike):
             # check if X node is an attr node.
             if child.isa[ReturnDeclNode]():
                 return_type = child.to_string(just_code)
-            elif child.isa[VisibilityAttrNode]():
+            elif child.isa[attributes.VisibilityAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[FormatAttrNode]():
+            elif child.isa[attributes.FormatAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[NoThrowAttrNode]():
+            elif child.isa[attributes.NoThrowAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[PureAttrNode]():
+            elif child.isa[attributes.PureAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[NonNullAttrNode]():
+            elif child.isa[attributes.NonNullAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[BuiltinAttrNode]():
+            elif child.isa[attributes.BuiltinAttrNode]():
                 # Skip this.
                 pass
             elif child.isa[CompoundStmtNode]():
                 # Skip this.
                 pass
-            elif child.isa[WarnUnusedResultAttrNode]():
+            elif child.isa[attributes.WarnUnusedResultAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[RestrictAttrNode]():
+            elif child.isa[attributes.RestrictAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[AllocSizeAttrNode]():
+            elif child.isa[attributes.AllocSizeAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[AllocAlignAttrNode]():
+            elif child.isa[attributes.AllocAlignAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[ConstAttrNode]():
+            elif child.isa[attributes.ConstAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[DeprecatedAttrNode]():
+            elif child.isa[attributes.DeprecatedAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[SectionAttrNode]():
+            elif child.isa[attributes.SectionAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[ColdAttrNode]():
+            elif child.isa[attributes.ColdAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[AsmLabelAttrNode]():
+            elif child.isa[attributes.AsmLabelAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[AlwaysInlineAttrNode]():
+            elif child.isa[attributes.AlwaysInlineAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[ErrorAttrNode]():
+            elif child.isa[attributes.ErrorAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[AlignedAttrNode]():
+            elif child.isa[attributes.AlignedAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[ReturnsTwiceAttrNode]():
+            elif child.isa[attributes.ReturnsTwiceAttrNode]():
                 # Skip this.
                 pass
-            elif child.isa[WeakAttrNode]():
+            elif child.isa[attributes.WeakAttrNode]():
                 # Skip this.
                 pass
             elif child.isa[ParmVarDeclNode]() or child.isa[VariadicArgsNode]():

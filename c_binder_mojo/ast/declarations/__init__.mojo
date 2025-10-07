@@ -17,3 +17,20 @@ from c_binder_mojo.ast.declarations.static_assert_decl_node import (
 from c_binder_mojo.ast.declarations.indirect_field_decl_node import (
     IndirectFieldDeclNode,
 )
+
+
+from utils import Variant
+
+alias AstDeclarationVariant = Variant[
+    EnumDeclNode,
+    EnumConstantDeclNode,
+    TypedefDeclNode,
+    RecordDeclNode,
+    VarDeclNode,
+    FunctionDeclNode,
+    FieldDeclNode,
+    ParmVarDeclNode,
+    TranslationUnitDeclNode,
+    StaticAssertDeclNode,
+    IndirectFieldDeclNode,
+]

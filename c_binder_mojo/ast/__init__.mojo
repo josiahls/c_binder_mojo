@@ -63,15 +63,19 @@ from c_binder_mojo.ast.comments import (
     InlineCommandCommentNode,
 )
 
-from c_binder_mojo.ast.builtin_type_node import BuiltinTypeNode
-from c_binder_mojo.ast.record_type_node import RecordTypeNode
-from c_binder_mojo.ast.pointer_type_node import PointerTypeNode
-from c_binder_mojo.ast.constant_array_type_node import ConstantArrayTypeNode
-from c_binder_mojo.ast.elaborated_type_node import (
+from c_binder_mojo.ast.typing import (
+    BuiltinTypeNode,
+    RecordTypeNode,
+    PointerTypeNode,
+    ConstantArrayTypeNode,
     ElaboratedTypeNode,
+    TypedefTypeNode,
+    QualTypeNode,
+    EnumTypeNode,
+    ParenTypeNode,
+    FunctionProtoTypeNode,
+    AtomicTypeNode,
 )
-from c_binder_mojo.ast.typedef_type_node import TypedefTypeNode
-from c_binder_mojo.ast.qual_type_node import QualTypeNode
 from c_binder_mojo.ast.constant_expr_node import (
     ConstantExprNode,
 )
@@ -81,11 +85,7 @@ from c_binder_mojo.ast.binary_operator_node import (
 from c_binder_mojo.ast.integer_literal_node import (
     IntegerLiteralNode,
 )
-from c_binder_mojo.ast.enum_type_node import EnumTypeNode
 from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
-from c_binder_mojo.ast.paren_type_node import ParenTypeNode
-from c_binder_mojo.ast.function_proto_type_node import FunctionProtoTypeNode
-from c_binder_mojo.ast.atomic_type_node import AtomicTypeNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 
 alias AstNodeVariant = Variant[

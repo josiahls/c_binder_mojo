@@ -6,7 +6,9 @@ from emberjson import Object, to_string
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
-from c_binder_mojo.ast.function_proto_type_node import FunctionProtoTypeNode
+from c_binder_mojo.ast.typing.function_proto_type_node import (
+    FunctionProtoTypeNode,
+)
 
 
 struct ParenTypeNode(AstNodeLike):

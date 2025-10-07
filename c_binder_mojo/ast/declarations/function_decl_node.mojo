@@ -70,7 +70,7 @@ from c_binder_mojo.ast.declarations.parm_var_decl_node import ParmVarDeclNode
 from c_binder_mojo.ast import attributes
 from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
 
-from c_binder_mojo.ast.full_comment_node import FullCommentNode
+from c_binder_mojo.ast.comments.full_comment_node import FullCommentNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 
 

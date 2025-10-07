@@ -1,3 +1,23 @@
+"""
+TypedefDeclNode - C typedef declaration handling for Mojo bindings
+
+In C, you can have multiple record types with the same name differentiated by their tag:
+- `union RecordName { ... }`  
+- `struct RecordName { ... }`
+- `enum RecordName { ... }`
+
+To access these without the tag prefix, C uses typedef:
+- `typedef struct RecordName RecordName;` -> allows `RecordName` instead of `struct RecordName`
+- `typedef union RecordName RecordName;` -> allows `RecordName` instead of `union RecordName`  
+- `typedef enum RecordName RecordName;` -> allows `RecordName` instead of `enum RecordName`
+
+In Mojo, this concept doesn't exist. `struct MojoType` is immediately accessible as `MojoType`.
+Therefore, typedef declarations serve to create aliases that remove the C tag prefixing,
+making C types accessible in a Mojo-idiomatic way.
+
+The typedef also handles function pointer typedefs and other complex type aliases.
+"""
+
 # Native Mojo Modules
 from sys.ffi import _Global
 

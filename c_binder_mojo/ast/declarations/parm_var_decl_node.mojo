@@ -9,7 +9,7 @@ from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.ast.extensions.unprocessed_type_node import (
     UnprocessedTypeNode,
 )
-from c_binder_mojo.ast.function_decl_node import FunctionDeclNode
+from c_binder_mojo.ast.declarations.function_decl_node import FunctionDeclNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 
 

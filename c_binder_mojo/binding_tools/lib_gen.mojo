@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from c_binder_mojo.ast.function_decl_node import (
+from c_binder_mojo.ast.declarations.function_decl_node import (
     FunctionDeclNode,
 )
-from c_binder_mojo.ast.typedef_decl_node import TypedefDeclNode
+from c_binder_mojo.ast.declarations.typedef_decl_node import TypedefDeclNode
 from c_binder_mojo.ast.nodes import AstNode
 
 

@@ -6,7 +6,7 @@ from emberjson import Object
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
-from c_binder_mojo.ast.enum_constant_decl_node import (
+from c_binder_mojo.ast.declarations.enum_constant_decl_node import (
     EnumConstantDeclNode,
 )
 

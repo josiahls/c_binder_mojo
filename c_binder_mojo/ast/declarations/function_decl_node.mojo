@@ -66,7 +66,7 @@ from c_binder_mojo.ast.extensions.return_decl_node import ReturnDeclNode
 from c_binder_mojo.ast.extensions.unprocessed_type_node import (
     UnprocessedTypeNode,
 )
-from c_binder_mojo.ast.parm_var_decl_node import ParmVarDeclNode
+from c_binder_mojo.ast.declarations.parm_var_decl_node import ParmVarDeclNode
 from c_binder_mojo.ast.visibility_attr_node import VisibilityAttrNode
 from c_binder_mojo.ast.format_attr_node import FormatAttrNode
 from c_binder_mojo.ast.no_throw_attr_node import NoThrowAttrNode

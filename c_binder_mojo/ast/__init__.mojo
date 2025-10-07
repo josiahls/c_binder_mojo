@@ -11,12 +11,12 @@ from c_binder_mojo.ast.extensions.clang_simd_node import ClangSimdNode
 from c_binder_mojo.ast.extensions.return_decl_node import ReturnDeclNode
 from c_binder_mojo.ast.extensions.sugared_type_node import SugaredTypeNode
 
-from c_binder_mojo.ast.translation_unit_decl_node import (
-    TranslationUnitDeclNode,
-)
 from c_binder_mojo.ast.place_holder_node import PlaceHolderNode
 from c_binder_mojo.ast.example_node import ExampleNode
 from c_binder_mojo.ast.declarations import (
+    TranslationUnitDeclNode,
+    StaticAssertDeclNode,
+    IndirectFieldDeclNode,
     TypedefDeclNode,
     RecordDeclNode,
     FunctionDeclNode,
@@ -82,13 +82,9 @@ from c_binder_mojo.ast.integer_literal_node import (
     IntegerLiteralNode,
 )
 from c_binder_mojo.ast.enum_type_node import EnumTypeNode
-from c_binder_mojo.ast.indirect_field_decl_node import (
-    IndirectFieldDeclNode,
-)
 from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
 from c_binder_mojo.ast.paren_type_node import ParenTypeNode
 from c_binder_mojo.ast.function_proto_type_node import FunctionProtoTypeNode
-from c_binder_mojo.ast.static_assert_decl_node import StaticAssertDeclNode
 from c_binder_mojo.ast.atomic_type_node import AtomicTypeNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 

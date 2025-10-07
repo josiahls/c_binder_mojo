@@ -72,6 +72,7 @@ from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
 from c_binder_mojo.ast.comments.full_comment_node import FullCommentNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 from c_binder_mojo.ast.attributes import AstAttributeVariant
+from c_binder_mojo.ast.comments import AstCommentVariant
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -277,8 +278,8 @@ struct FunctionDeclNode(AstNodeLike):
                 #     s += "/,"
                 s += child.to_string(just_code)
                 n_parm_var_decls += 1
-            elif child.isa[FullCommentNode]():
-                # Skip this.
+            elif AstCommentVariant.is_type_supported[__type_of(child)]():
+                # Skip all comment nodes.
                 pass
             else:
                 raise Error(

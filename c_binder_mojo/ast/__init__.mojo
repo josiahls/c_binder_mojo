@@ -16,26 +16,26 @@ from c_binder_mojo.ast.translation_unit_decl_node import (
 )
 from c_binder_mojo.ast.place_holder_node import PlaceHolderNode
 from c_binder_mojo.ast.example_node import ExampleNode
-from c_binder_mojo.ast.typedef_decl_node import TypedefDeclNode
+from c_binder_mojo.ast.declarations import (
+    TypedefDeclNode,
+    RecordDeclNode,
+    FunctionDeclNode,
+    VarDeclNode,
+    EnumDeclNode,
+    EnumConstantDeclNode,
+    FieldDeclNode,
+    ParmVarDeclNode,
+)
 from c_binder_mojo.ast.builtin_type_node import BuiltinTypeNode
 from c_binder_mojo.ast.record_type_node import RecordTypeNode
-from c_binder_mojo.ast.record_decl_node import RecordDeclNode
 from c_binder_mojo.ast.pointer_type_node import PointerTypeNode
 from c_binder_mojo.ast.constant_array_type_node import ConstantArrayTypeNode
 from c_binder_mojo.ast.elaborated_type_node import (
     ElaboratedTypeNode,
 )
-from c_binder_mojo.ast.function_decl_node import (
-    FunctionDeclNode,
-)
 from c_binder_mojo.ast.typedef_type_node import TypedefTypeNode
 from c_binder_mojo.ast.mode_attr_node import ModeAttrNode
 from c_binder_mojo.ast.qual_type_node import QualTypeNode
-from c_binder_mojo.ast.var_decl_node import VarDeclNode
-from c_binder_mojo.ast.enum_decl_node import EnumDeclNode
-from c_binder_mojo.ast.enum_constant_decl_node import (
-    EnumConstantDeclNode,
-)
 from c_binder_mojo.ast.constant_expr_node import (
     ConstantExprNode,
 )
@@ -51,11 +51,9 @@ from c_binder_mojo.ast.integer_literal_node import (
     IntegerLiteralNode,
 )
 from c_binder_mojo.ast.enum_type_node import EnumTypeNode
-from c_binder_mojo.ast.field_decl_node import FieldDeclNode
 from c_binder_mojo.ast.indirect_field_decl_node import (
     IndirectFieldDeclNode,
 )
-from c_binder_mojo.ast.parm_var_decl_node import ParmVarDeclNode
 from c_binder_mojo.ast.visibility_attr_node import VisibilityAttrNode
 from c_binder_mojo.ast.format_attr_node import FormatAttrNode
 from c_binder_mojo.ast.no_throw_attr_node import NoThrowAttrNode

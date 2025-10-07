@@ -10,7 +10,7 @@ from c_binder_mojo.ast.extensions.unprocessed_type_node import (
     UnprocessedTypeNode,
 )
 
-from c_binder_mojo.ast.function_decl_node import ParmVarDeclNode
+from c_binder_mojo.ast.declarations.parm_var_decl_node import ParmVarDeclNode
 
 
 struct VariadicArgsNode(AstNodeLike):

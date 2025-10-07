@@ -67,11 +67,11 @@ from c_binder_mojo.ast.extensions.unprocessed_type_node import (
     UnprocessedTypeNode,
 )
 from c_binder_mojo.ast.declarations.parm_var_decl_node import ParmVarDeclNode
-from c_binder_mojo.ast import attributes
 from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
 
 from c_binder_mojo.ast.comments.full_comment_node import FullCommentNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
+from c_binder_mojo.ast.attributes import AstAttributeVariant
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -262,71 +262,11 @@ struct FunctionDeclNode(AstNodeLike):
         s += "fn ("
         var n_parm_var_decls = 0
         for child in self.children():
-            # TODO: Mvoe all attr nodes into a module and have an additional variant for them so we can just
-            # check if X node is an attr node.
             if child.isa[ReturnDeclNode]():
                 return_type = child.to_string(just_code)
-            elif child.isa[attributes.VisibilityAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.FormatAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.NoThrowAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.PureAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.NonNullAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.BuiltinAttrNode]():
-                # Skip this.
-                pass
+            elif AstAttributeVariant.is_type_supported[__type_of(child)]():
+                pass  # Skip all attribute nodes.
             elif child.isa[CompoundStmtNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.WarnUnusedResultAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.RestrictAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.AllocSizeAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.AllocAlignAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.ConstAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.DeprecatedAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.SectionAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.ColdAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.AsmLabelAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.AlwaysInlineAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.ErrorAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.AlignedAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.ReturnsTwiceAttrNode]():
-                # Skip this.
-                pass
-            elif child.isa[attributes.WeakAttrNode]():
                 # Skip this.
                 pass
             elif child.isa[ParmVarDeclNode]() or child.isa[VariadicArgsNode]():

@@ -32,6 +32,7 @@ from c_binder_mojo.typing import TypeMapper
 
 struct TypedefDeclNode(AstNodeLike):
     alias __name__ = "TypedefDecl"
+    alias MaybeRefersAnonymous = True
 
     var level: Int
     var children_: List[AstNode]
@@ -57,6 +58,15 @@ struct TypedefDeclNode(AstNodeLike):
 
     fn signature(self) -> String:
         return "Node: " + self.__name__ + "(" + self.name + ")"
+
+    fn get_symbol_name(self) raises -> String:
+        return self.name
+
+    fn set_disabled(mut self, disabled: Bool = True) raises:
+        self.is_disabled = disabled
+
+    fn get_disabled(ref self) raises -> Bool:
+        return self.is_disabled
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String()

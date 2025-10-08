@@ -13,29 +13,33 @@ from c_binder_mojo.ast.declarations.enum_constant_decl_node import (
 
 struct EnumDeclNode(AstNodeLike):
     alias __name__ = "EnumDecl"
+    alias MaybeAnonymous = True
 
     var level: Int
 
     var name: String
     var children_: List[AstNode]
-    var is_anonymous: Bool
+    var _is_anonymous: Bool
+    var _passthrough_fields: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
-        self.is_anonymous = False
+        self._is_anonymous = False
+        self._passthrough_fields = False
         var child_level = level + 1
         var max_value: Int = -1
 
         self.name = self.get_field(json_object, "name")
         if self.name == "":
-            self.is_anonymous = True
+            self._is_anonymous = True
+            self._passthrough_fields = True
             child_level = 0
 
         self.children_ = self.make_children(json_object, child_level)
         # TODO: Should this assert_in=True? EnumDecl should have inners no?
         for ref node in self.children():
             if node.isa[EnumConstantDeclNode]():
-                if self.is_anonymous:
+                if self._passthrough_fields:
                     node[EnumConstantDeclNode].parent_is_anonymous = True
 
                 var value: Optional[Int] = node[
@@ -49,12 +53,27 @@ struct EnumDeclNode(AstNodeLike):
                     max_value += 1
                     node[EnumConstantDeclNode].set_value(max_value)
 
+    fn set_symbol_name(mut self, symbol_name: String) raises:
+        self.name = symbol_name
+        self._passthrough_fields = False
+        for ref node in self.children():
+            if node.isa[EnumConstantDeclNode]():
+                if not self._passthrough_fields:
+                    node[EnumConstantDeclNode].parent_is_anonymous = False
+                    node[EnumConstantDeclNode].level = self.level + 1
+
+    @staticmethod
+    fn is_anonymous(read json_object: Object) raises -> Bool:
+        if "name" not in json_object:
+            return True
+        return json_object["name"].string() == ""
+
     fn to_string(self, just_code: Bool) raises -> String:
         var s: String = ""
         if not just_code:
             s += self.signature() + "\n"
         # TODO(josiahls): Are there cases where we need to actually assign an anonymous enum's name?
-        if not self.is_anonymous:
+        if not self._passthrough_fields:
             # TODO(josiahls): Is there ever a case where we can't do this? Like struct size or something?
             # s += '@register_passable("trivial")\n'
             s += "struct " + self.name + "(Copyable & Movable):\n"

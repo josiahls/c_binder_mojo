@@ -19,7 +19,7 @@ from c_binder_mojo.ast.declarations.indirect_field_decl_node import (
 )
 
 
-from utils import Variant
+from c_binder_mojo.ast.variant import Variant
 
 alias AstDeclarationVariant = Variant[
     EnumDeclNode,

@@ -69,13 +69,16 @@ struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
+struct AnonymousEnumType(Copyable & Movable):
 #  Anonymous enum in typedef - this should trigger AnonymousDeclarationNode
 
-alias ANON_VALUE_A = 0
+	alias ANON_VALUE_A = 0
 
-alias AnonymousEnumType = AnonymousEnumType
-#  Anonymous enum in typedef - this should trigger AnonymousDeclarationNode
-
+# Forward declaration of AnonymousEnumType
+# alias AnonymousEnumType = AnonymousEnumType
+# #  Anonymous enum in typedef - this should trigger AnonymousDeclarationNode
+# 
+# 
 
 
 

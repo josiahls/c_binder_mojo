@@ -30,7 +30,7 @@ struct RecordTypeNode(AstNodeLike):
 
     var is_struct: Bool
     var is_union: Bool
-    var is_anonymous: Bool
+    var _is_anonymous: Bool
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
@@ -39,7 +39,7 @@ struct RecordTypeNode(AstNodeLike):
         self.children_ = self.make_children(json_object, level + 1)
         self.is_struct = False
         self.is_union = self.get_field_bool(json_object, "is_union")
-        self.is_anonymous = self.get_field_bool(json_object, "is_anonymous")
+        self._is_anonymous = self.get_field_bool(json_object, "_is_anonymous")
         self.mem_address = self.get_field(json_object, "id")
         if "type" in json_object:
             ref type_object = json_object["type"].object()
@@ -89,7 +89,7 @@ struct RecordTypeNode(AstNodeLike):
         json_object["record_name"] = ""
         json_object["is_struct"] = False
         json_object["is_union"] = False
-        json_object["is_anonymous"] = False
+        json_object["_is_anonymous"] = False
         json_object["type"] = Object()
         json_object["type"].object()["qualType"] = s
         var new_qual_type: String = s.copy()
@@ -102,7 +102,7 @@ struct RecordTypeNode(AstNodeLike):
                     json_object["is_union"] = True
                 break
         if "anonymous at" in new_qual_type:
-            json_object["is_anonymous"] = True
+            json_object["_is_anonymous"] = True
 
         inner_json_object = (
             UnprocessedTypeNode.make_unprocessed_type_json_object(

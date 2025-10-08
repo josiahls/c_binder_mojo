@@ -122,6 +122,7 @@ fn prune_repeated_decls(
 
 struct TranslationUnitDeclNode(AstNodeLike):
     alias __name__ = "TranslationUnitDecl"
+    alias MaybeHasAnonymous = True
 
     var children_: List[AstNode]
     var level: Int

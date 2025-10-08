@@ -153,6 +153,48 @@ struct AstNode(Copyable & Movable):
                         # return context.write_context(self[T].to_string(just_code))
         raise Error("Missing to_string method")
 
+    @always_inline("nodebug")
+    fn set_symbol_name(self, symbol_name: String) raises:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.isa[T]():
+                with NodeExceptionHandler(T.__name__, "set_symbol_name"):
+                    with NodeToStringContext(T.__name__) as context:
+                        return self[T].set_symbol_name(symbol_name)
+                        # return context.write_context(self[T].to_string(just_code))
+        raise Error("Missing set_symbol_name method")
+
+    @always_inline("nodebug")
+    fn get_symbol_name(self) raises -> String:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.isa[T]():
+                with NodeExceptionHandler(T.__name__, "get_symbol_name"):
+                    return self[T].get_symbol_name()
+        raise Error("Missing get_symbol_name method")
+
+    @always_inline("nodebug")
+    fn set_disabled(self, disabled: Bool = True) raises:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.isa[T]():
+                with NodeExceptionHandler(T.__name__, "set_disabled"):
+                    return self[T].set_disabled(disabled)
+        raise Error("Missing set_disabled method")
+
+    @always_inline("nodebug")
+    fn get_disabled(self) raises -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.isa[T]():
+                with NodeExceptionHandler(T.__name__, "get_disabled"):
+                    return self[T].get_disabled()
+        raise Error("Missing get_disabled method")
+
     fn children[
         mut: Bool, //, origin: Origin[mut]
     ](ref [origin]self: Self) raises -> ref [self._impl[]] List[Self]:

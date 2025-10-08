@@ -87,9 +87,13 @@ from c_binder_mojo.ast.integer_literal_node import (
 )
 from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
+from c_binder_mojo.ast.anonymous_declaration_node import (
+    AnonymousDeclarationNode,
+)
 
 alias AstNodeVariant = Variant[
     TranslationUnitDeclNode,
+    AnonymousDeclarationNode,
     # Custom nodes will have more advanced conditions.
     VariadicArgsNode,
     PointerTypeNode,

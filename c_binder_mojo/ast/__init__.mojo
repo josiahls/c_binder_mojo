@@ -92,8 +92,8 @@ from c_binder_mojo.ast.anonymous_declaration_node import (
 )
 
 alias AstNodeVariant = Variant[
-    TranslationUnitDeclNode,
     AnonymousDeclarationNode,
+    TranslationUnitDeclNode,
     # Custom nodes will have more advanced conditions.
     VariadicArgsNode,
     PointerTypeNode,

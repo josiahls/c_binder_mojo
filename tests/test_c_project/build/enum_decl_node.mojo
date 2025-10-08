@@ -69,13 +69,17 @@ struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
-alias PYMEM_DOMAIN_RAW = 0
+struct PyMemAllocatorDomain(Copyable & Movable):
+	alias PYMEM_DOMAIN_RAW = 0
 
-alias PYMEM_DOMAIN_MEM = 1
+	alias PYMEM_DOMAIN_MEM = 1
 
-alias PYMEM_DOMAIN_OBJ = 2
+	alias PYMEM_DOMAIN_OBJ = 2
 
-alias PyMemAllocatorDomain = PyMemAllocatorDomain
+# Forward declaration of PyMemAllocatorDomain
+# alias PyMemAllocatorDomain = Int #PyMemAllocatorDomain
+# 
+# 
 alias use_enum_value = fn (PyMemAllocatorDomain) -> ffi.c_int
 
 

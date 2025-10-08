@@ -17,8 +17,8 @@ repository = "https://github.com/josiahls/c_binder_mojo"
 stdlib-dev = {features = ["stdlib-dev"]}
 
 [dependencies]
-mojo = "==0.25.7.0.dev2025092305,<0.26.0.0"
-pre-commit = ">=4.2.0,<5"
+mojo = ">=0.25.7.0.dev2025100705,<0.26"
+pre-commit = ">=4.3.0,<5"
 
 [activation.env]
 LD_LIBRARY_PATH="$PIXI_PROJECT_ROOT/tests/test_c_project/build:$LD_LIBRARY_PATH"

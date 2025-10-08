@@ -12,6 +12,15 @@ trait AstNodeLike(Copyable & Movable):
     """The name of the node as shown in the json. Example: 'EnumDecl' for the 
     `EnumDeclNode` class."""
 
+    alias MaybeAnonymous = False
+    """Whether a node can have an anonymous representation"""
+
+    alias MaybeHasAnonymous = False
+    """Whether a node can have an anonymous representations as children."""
+
+    alias MaybeRefersAnonymous = False
+    """Whether a node can refer to an anonymous representation"""
+
     # ==========================================================================
     # Conbstructors
     # ==========================================================================
@@ -43,6 +52,18 @@ trait AstNodeLike(Copyable & Movable):
     # ==========================================================================
     # Utilities and Fields
     # ==========================================================================
+
+    fn set_symbol_name(mut self, symbol_name: String) raises:
+        raise Error(Self.__name__, ": set_symbol_name is not implemented")
+
+    fn get_symbol_name(self) raises -> String:
+        raise Error(Self.__name__, ": get_symbol_name is not implemented")
+
+    fn set_disabled(mut self, disable: Bool = True) raises:
+        raise Error(Self.__name__, ": set_disabled is not implemented")
+
+    fn get_disabled(ref self) raises -> Bool:
+        raise Error(Self.__name__, ": get_disabled is not implemented")
 
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"
@@ -83,6 +104,17 @@ trait AstNodeLike(Copyable & Movable):
     # ==========================================================================
     # Static Utilties Json
     # ==========================================================================
+
+    @staticmethod
+    fn is_anonymous(read json_object: Object) raises -> Bool:
+        debug_assert(
+            json_object["kind"].string() == Self.__name__,
+            "json_object['kind'].string() == ",
+            json_object["kind"].string(),
+            " != ",
+            Self.__name__,
+        )
+        return False
 
     @staticmethod
     fn get_field[

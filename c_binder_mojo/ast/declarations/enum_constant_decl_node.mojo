@@ -44,6 +44,13 @@ struct EnumConstantDeclNode(AstNodeLike):
         # else:
         #     print("This enum constant has no children: ", self.name)
 
+    @staticmethod
+    fn get_enum_dtype() raises -> String:
+        # TODO: Is there a smarter way to handle this? I'm seeing that
+        # the to_string doesn't actually add any typing information. Probably
+        # not good.
+        return "Int64"
+
     fn get_value(self) -> Optional[Int]:
         return self.value
 

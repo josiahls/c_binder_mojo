@@ -73,6 +73,7 @@ from c_binder_mojo.ast.comments.full_comment_node import FullCommentNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
 from c_binder_mojo.ast.attributes import AstAttributeVariant
 from c_binder_mojo.ast.comments import AstCommentVariant
+from c_binder_mojo.ast.symbol_registry import SymbolRegistry, SymbolTypes
 
 
 struct FunctionDeclNode(AstNodeLike):
@@ -88,6 +89,7 @@ struct FunctionDeclNode(AstNodeLike):
     var level: Int
     var has_pass_by_value_record: Bool
     var in_field_decl: Bool
+    var _symbol_registry: SymbolRegistry.ResultType
     var children_: List[AstNode]
 
     fn __init__(out self, json_object: Object, level: Int) raises:
@@ -99,6 +101,7 @@ struct FunctionDeclNode(AstNodeLike):
         self.is_variadic = False
         self.has_pass_by_value_record = False
         self.in_field_decl = False
+        self._symbol_registry = SymbolRegistry.get_or_create_ptr()
         self.children_ = self.make_children[assert_in=True](json_object, level)
         self.storage_class = self.get_field(json_object, "storageClass")
         self.function_name = self.get_field(json_object, "name")
@@ -120,6 +123,15 @@ struct FunctionDeclNode(AstNodeLike):
         if "type" in json_object:
             ref type_object = json_object["type"].object()
             self.function_type = self.get_field(type_object, "qualType")
+
+    fn set_symbol_name(mut self, symbol_name: String) raises:
+        self.function_name = symbol_name
+        self._symbol_registry[].add_symbol(
+            self.function_name, SymbolTypes.Function
+        )
+
+    fn get_symbol_name(self) raises -> String:
+        return self.function_name
 
     @staticmethod
     fn outer_most_paren_begin(read qual_type: String) raises -> List[Int]:

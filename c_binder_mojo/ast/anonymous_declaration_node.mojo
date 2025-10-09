@@ -104,6 +104,8 @@ struct AnonymousDeclarationNode(AstNodeLike):
     fn impute(mut json_object: Object) raises:
         """`json_object` should be an object whose children may have anonymous
         representations."""
+        # TODO: There is way too much copying going on here.
+        # We need a more standard drain API to make this simpler.
         var anonymous_decl = Optional[Object]()
         var children = json_object["inner"].array().copy()
         json_object["inner"] = Array()
@@ -116,8 +118,10 @@ struct AnonymousDeclarationNode(AstNodeLike):
                 if not anonymous_decl:
                     anonymous_decl = Self.json_instance()
                 anonymous_decl[]["anonymous_decl"] = inner_object.copy()
+                AstNode.impute(anonymous_decl[]["anonymous_decl"].object())
             elif anonymous_decl:
                 anonymous_decl[]["named_decl"] = inner_object.copy()
+                AstNode.impute(anonymous_decl[]["named_decl"].object())
                 json_object["inner"].array().append(anonymous_decl.take())
             else:
                 json_object["inner"].array().append(inner_object.copy())

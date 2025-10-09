@@ -26,20 +26,15 @@ struct _LambdaRegistry(Movable):
         self.lambda_registry[s] = self.lambda_counter
         return s
 
+    @staticmethod
+    fn init_lambda_registry() -> Self:
+        return Self()
 
-fn _init_global_lambda_registry() -> _LambdaRegistry:
-    return _LambdaRegistry()
 
-
-alias GLOBAL_LAMBDA_REGISTRY = _Global[
-    "GLOBAL_LAMBDA_REGISTRY",
-    _init_global_lambda_registry,
+alias LambdaRegistry = _Global[
+    "LambdaRegistry",
+    _LambdaRegistry.init_lambda_registry,
 ]
-
-
-@always_inline
-fn get_global_lambda_registry() raises -> UnsafePointer[_LambdaRegistry]:
-    return GLOBAL_LAMBDA_REGISTRY.get_or_create_ptr()
 
 
 struct AnonymousDeclarationNode(AstNodeLike):
@@ -60,7 +55,7 @@ struct AnonymousDeclarationNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.children_ = List[AstNode]()
 
-        ref lambda_registry = get_global_lambda_registry()
+        ref lambda_registry = LambdaRegistry.get_or_create_ptr()
 
         var anonymous_decl = AstNode.accept_create_from(
             json_object["anonymous_decl"].object(), level

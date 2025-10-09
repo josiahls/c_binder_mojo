@@ -9,6 +9,7 @@ from c_binder_mojo.ast.nodes import AstNode
 from c_binder_mojo.ast.declarations.enum_constant_decl_node import (
     EnumConstantDeclNode,
 )
+from c_binder_mojo.ast.symbol_registry import SymbolRegistry, SymbolTypes
 
 
 struct EnumDeclNode(AstNodeLike):
@@ -21,11 +22,13 @@ struct EnumDeclNode(AstNodeLike):
     var children_: List[AstNode]
     var _is_anonymous: Bool
     var _passthrough_fields: Bool
+    var _symbol_registry: SymbolRegistry.ResultType
 
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self._is_anonymous = False
         self._passthrough_fields = False
+        self._symbol_registry = SymbolRegistry.get_or_create_ptr()
         var child_level = level + 1
         var max_value: Int = -1
 
@@ -34,6 +37,8 @@ struct EnumDeclNode(AstNodeLike):
             self._is_anonymous = True
             self._passthrough_fields = True
             child_level = 0
+        else:
+            self._symbol_registry[].add_symbol(self.name, SymbolTypes.Enum)
 
         self.children_ = self.make_children(json_object, child_level)
         # TODO: Should this assert_in=True? EnumDecl should have inners no?
@@ -55,6 +60,7 @@ struct EnumDeclNode(AstNodeLike):
 
     fn set_symbol_name(mut self, symbol_name: String) raises:
         self.name = symbol_name
+        self._symbol_registry[].add_symbol(self.name, SymbolTypes.Enum)
         self._passthrough_fields = False
         for ref node in self.children():
             if node.isa[EnumConstantDeclNode]():

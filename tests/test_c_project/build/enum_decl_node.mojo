@@ -77,10 +77,10 @@ struct PyMemAllocatorDomain(Copyable & Movable):
 	alias PYMEM_DOMAIN_OBJ = 2
 
 # Forward declaration of PyMemAllocatorDomain
-# alias PyMemAllocatorDomain = Int #PyMemAllocatorDomain
+# alias PyMemAllocatorDomain = PyMemAllocatorDomain
 # 
-# 
-alias use_enum_value = fn (PyMemAllocatorDomain) -> ffi.c_int
+alias use_enum_value = fn (Int64 # PyMemAllocatorDomain
+) -> ffi.c_int
 
 
 alias enum_decl_node_use_enum_value = ExternalFunction['use_enum_value', use_enum_value]

@@ -52,9 +52,16 @@ struct _SymbolRegistry(Movable):
                 " in SymbolTypes.",
             )
         if symbol in self._symbol_to_type:
-            raise Error(
-                "Symbol already exists: ", symbol, " in SymbolRegistry."
-            )
+            if self._symbol_to_type[symbol] != symbol_type:
+                raise Error(
+                    "Symbol already exists: ",
+                    symbol,
+                    " in SymbolRegistry and ",
+                    "Symbol type mismatch: ",
+                    self._symbol_to_type[symbol],
+                    " != ",
+                    symbol_type,
+                )
         self._symbol_to_type[symbol] = symbol_type
 
     fn is_in(self, symbol: String) raises -> Bool:

@@ -58,6 +58,9 @@ struct EnumDeclNode(AstNodeLike):
                     max_value += 1
                     node[EnumConstantDeclNode].set_value(max_value)
 
+    fn get_symbol_name(self) raises -> String:
+        return self.name
+
     fn set_symbol_name(mut self, symbol_name: String) raises:
         self.name = symbol_name
         self._symbol_registry[].add_symbol(self.name, SymbolTypes.Enum)

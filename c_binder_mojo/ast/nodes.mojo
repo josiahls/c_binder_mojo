@@ -99,10 +99,7 @@ struct AstNode(Copyable & Movable):
     fn __getitem__[T: AnyType](ref self) -> ref [self._impl[]] T:
         return self._impl.bitcast[Self.type]()[][T]
 
-    fn is_in[*V: AnyType](self) -> Bool:
-        return self._impl.bitcast[Self.type]()[].is_in[*V]()
-
-    fn is_in[*V: Self.type](self) -> Bool:
+    fn is_in[*V: Copyable & Movable](self) -> Bool:
         return self._impl.bitcast[Self.type]()[].is_in[*V]()
 
     @always_inline("nodebug")

@@ -32,6 +32,6 @@ struct ParenTypeNode(AstNodeLike):
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:
-        return UnsafePointer(to=self.children_).origin_cast[
+        return UnsafePointer(to=self.children_).unsafe_origin_cast[
             target_origin = __origin_of(self)
         ]()[]

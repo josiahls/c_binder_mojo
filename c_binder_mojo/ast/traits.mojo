@@ -86,7 +86,7 @@ trait AstNodeLike(Copyable & Movable):
         fn children(ref self) -> ref [self] List[AstNode]:
             return (
                 UnsafePointer(to=self.children_)
-                .origin_cast[target_origin = __origin_of(self)]()[]
+                .unsafe_origin_cast[target_origin = __origin_of(self)]()[]
             )
         ```
         The `orgin_cast` is required since traits don't support `var fields`.

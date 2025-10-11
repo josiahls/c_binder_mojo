@@ -333,7 +333,7 @@ struct Variant[*Ts: AstNodeLike](Copyable, Copyable, Movable):
         """
         return Self._check[T]() != Self._sentinel
 
-    fn is_in[*V: AnyType](self) -> Bool:
+    fn is_in[*V: Copyable & Movable](self) -> Bool:
         """Check if a variant instance's type also exists in another variant type.
 
         Parameters:

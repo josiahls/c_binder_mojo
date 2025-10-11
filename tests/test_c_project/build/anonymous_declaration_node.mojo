@@ -79,8 +79,24 @@ struct AnonymousEnumType(Copyable & Movable):
 # #  Anonymous enum in typedef - this should trigger AnonymousDeclarationNode
 # 
 # 
+struct AnonymousEnumType2(Copyable & Movable):
+#  Another anonymous enum - this should get lambda_2 if lambda naming increments properly
+
+	alias ANON_VALUE_B = 0
+
+	alias ANON_VALUE_C = 1
+
+# Forward declaration of AnonymousEnumType2
+# alias AnonymousEnumType2 = AnonymousEnumType2
+# #  Another anonymous enum - this should get lambda_2 if lambda naming increments properly
+# 
+# 
+ffi.c_int#  Function declaration that should NOT be paired with the enum above
+ffi.c_int
+alias some_function = fn () -> 
 
 
+alias anonymous_declaration_node_some_function = ExternalFunction['some_function', some_function]
 
 @always_inline
 fn _get_lib_path(so_file_name: String) raises -> Path:
@@ -124,6 +140,7 @@ fn _get_lib_path(so_file_name: String) raises -> Path:
 struct anonymous_declaration_node(Copyable, Movable):
     var lib: DLHandle
     
+    var some_function: anonymous_declaration_node_some_function.type
 
     fn __init__(out self):
         try:
@@ -134,4 +151,5 @@ struct anonymous_declaration_node(Copyable, Movable):
             )
 
     
+        self.some_function = anonymous_declaration_node_some_function.load(self.lib)
 

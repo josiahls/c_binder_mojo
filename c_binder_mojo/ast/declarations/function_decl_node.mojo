@@ -272,13 +272,18 @@ struct FunctionDeclNode(AstNodeLike):
             s += indent + "alias " + self.function_name + " = "
 
         var return_type: String = ""
+        var comment: String = ""
         s += "fn ("
         var n_parm_var_decls = 0
         for child in self.children():
+            if child.is_in[*AstCommentVariant.Ts]():
+                comment += child.to_string(just_code)
+                continue
+            if child.is_in[*AstAttributeVariant.Ts]():
+                continue
+
             if child.isa[ReturnDeclNode]():
                 return_type = child.to_string(just_code)
-            elif AstAttributeVariant.is_type_supported[__type_of(child)]():
-                pass  # Skip all attribute nodes.
             elif child.isa[CompoundStmtNode]():
                 # Skip this.
                 pass
@@ -290,9 +295,6 @@ struct FunctionDeclNode(AstNodeLike):
                 #     s += "/,"
                 s += child.to_string(just_code)
                 n_parm_var_decls += 1
-            elif AstCommentVariant.is_type_supported[__type_of(child)]():
-                # Skip all comment nodes.
-                pass
             else:
                 raise Error(
                     "FunctionDeclNode: Unexpected child: "
@@ -327,6 +329,9 @@ struct FunctionDeclNode(AstNodeLike):
         elif self.is_disabled:
             comment = "# Forward declaration of " + self.function_name + "\n"
             s = comment + "# " + s.replace("\n", "\n# ") + "\n"
+
+        if comment != "":
+            return comment + "\n" + s
         return s
 
     fn children(ref self) -> ref [self] List[AstNode]:

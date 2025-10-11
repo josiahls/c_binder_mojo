@@ -332,3 +332,32 @@ struct Variant[*Ts: AstNodeLike](Copyable, Copyable, Movable):
         For example, the `Variant[Int, Bool]` permits `Int` and `Bool`.
         """
         return Self._check[T]() != Self._sentinel
+
+    fn is_in[*V: AnyType](self) -> Bool:
+        """Check if a variant instance's type also exists in another variant type.
+
+        Parameters:
+            V: The variant type to check.
+
+        Returns:
+            True if `V` contains the requested type.
+
+        Example:
+        ```mojo
+        from utils import Variant
+
+        def main():
+            var x = Variant[Int, Float64](1)
+            alias OnlyFloats = Variant[Float64, Float32]
+            # Note the unpacked *VariantName.Ts syntax. This is required to
+            # see if x also belongs to OnlyFloats.
+            print(x.is_in[*OnlyFloats.Ts]())
+        ```
+        """
+
+        @parameter
+        for j in range(len(VariadicList(V))):
+            alias T = V[j]
+            if self.isa[T]():
+                return True
+        return False

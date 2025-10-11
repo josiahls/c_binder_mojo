@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from memory import UnsafePointer
 from memory import ArcPointer
+from utils import Variant
 import sys
 
 # Third Party Mojo Modules
@@ -97,6 +98,12 @@ struct AstNode(Copyable & Movable):
 
     fn __getitem__[T: AnyType](ref self) -> ref [self._impl[]] T:
         return self._impl.bitcast[Self.type]()[][T]
+
+    fn is_in[*V: AnyType](self) -> Bool:
+        return self._impl.bitcast[Self.type]()[].is_in[*V]()
+
+    fn is_in[*V: Self.type](self) -> Bool:
+        return self._impl.bitcast[Self.type]()[].is_in[*V]()
 
     @always_inline("nodebug")
     fn name(self) raises -> String:

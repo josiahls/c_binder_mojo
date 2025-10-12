@@ -71,6 +71,9 @@ alias __builtin_va_list = __va_list
 
 # Note: Binding to c variadic function: count_variadic_args
 # is not supported yet. Reference `FunctionDeclNode` docs for more details.
+
+# Note: Binding to c variadic function: count_variadic_args
+# is not supported yet. Reference `FunctionDeclNode` docs for more details.
 # alias count_variadic_args = fn (/,*n: ffi.c_int) -> ffi.c_int
 # 
 

@@ -74,6 +74,9 @@ struct simple_field_struct(Copyable & Movable):
 	var a : ffi.c_int
 # Note: Binding to c function: identity_function with pass by value record
 # is not supported yet. Reference `FunctionDeclNode` docs for more details.
+
+# Note: Binding to c function: identity_function with pass by value record
+# is not supported yet. Reference `FunctionDeclNode` docs for more details.
 # alias identity_function = fn (simple_field_struct) -> simple_field_struct
 # 
 alias identity_function_pointer = fn (UnsafePointer[simple_field_struct]) -> UnsafePointer[simple_field_struct]

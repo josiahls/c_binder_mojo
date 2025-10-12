@@ -6,6 +6,7 @@ from emberjson import Object
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.comments import CommentsSubsetName
 
 
 struct InlineCommandCommentNode(AstNodeLike):
@@ -19,6 +20,9 @@ struct InlineCommandCommentNode(AstNodeLike):
         self.level = level
         self.children_ = self.make_children(json_object, level)
         self.text = self.get_field(json_object, "text")
+
+    fn get_subset_name(self) raises -> StaticString:
+        return CommentsSubsetName
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:

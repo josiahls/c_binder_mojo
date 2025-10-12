@@ -6,6 +6,7 @@ from emberjson import Object
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.attributes import AttributesSubsetName
 
 
 struct ModeAttrNode(AstNodeLike):
@@ -17,6 +18,9 @@ struct ModeAttrNode(AstNodeLike):
     fn __init__(out self, json_object: Object, level: Int) raises:
         self.level = level
         self.children_ = List[AstNode]()
+
+    fn get_subset_name(self) raises -> StaticString:
+        return AttributesSubsetName
 
     @staticmethod
     fn to_string(self, just_code: Bool) raises -> String:

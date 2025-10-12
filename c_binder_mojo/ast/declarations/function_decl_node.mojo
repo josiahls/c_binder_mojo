@@ -71,8 +71,8 @@ from c_binder_mojo.ast.compound_stmt_node import CompoundStmtNode
 
 from c_binder_mojo.ast.comments.full_comment_node import FullCommentNode
 from c_binder_mojo.ast.variadic_args_node import VariadicArgsNode
-from c_binder_mojo.ast.attributes import AstAttributeVariant
-from c_binder_mojo.ast.comments import AstCommentVariant
+from c_binder_mojo.ast.attributes import AttributesSubsetName
+from c_binder_mojo.ast.comments import CommentsSubsetName
 from c_binder_mojo.ast.symbol_registry import SymbolRegistry, SymbolTypes
 
 
@@ -276,10 +276,10 @@ struct FunctionDeclNode(AstNodeLike):
         s += "fn ("
         var n_parm_var_decls = 0
         for child in self.children():
-            if child.is_in[*AstCommentVariant.Ts]():
+            if child.get_subset_name() == CommentsSubsetName:
                 comment += child.to_string(just_code)
                 continue
-            if child.is_in[*AstAttributeVariant.Ts]():
+            if child.get_subset_name() == AttributesSubsetName:
                 continue
 
             if child.isa[ReturnDeclNode]():

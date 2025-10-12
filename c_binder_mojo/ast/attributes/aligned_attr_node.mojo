@@ -6,6 +6,7 @@ from emberjson import Object, to_string
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
 from c_binder_mojo.ast.nodes import AstNode
+from c_binder_mojo.ast.attributes import AttributesSubsetName
 
 
 struct AlignedAttrNode(AstNodeLike):
@@ -27,6 +28,9 @@ struct AlignedAttrNode(AstNodeLike):
         s += self.children_to_string(just_code)
         s += "\n"
         return s
+
+    fn get_subset_name(self) raises -> StaticString:
+        return AttributesSubsetName
 
     fn children(ref self) -> ref [self] List[AstNode]:
         return UnsafePointer(to=self.children_).unsafe_origin_cast[

@@ -180,6 +180,16 @@ struct AstNode(Copyable & Movable):
         raise Error("Missing get_symbol_name method")
 
     @always_inline("nodebug")
+    fn get_subset_name(self) raises -> StaticString:
+        @parameter
+        for i in range(len(VariadicList(Self.type.Ts))):
+            alias T = Self.type.Ts[i]
+            if self.isa[T]():
+                with NodeExceptionHandler(T.__name__, "get_subset_name"):
+                    return self[T].get_subset_name()
+        raise Error("Missing get_subset_name method")
+
+    @always_inline("nodebug")
     fn set_disabled(self, disabled: Bool = True) raises:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):

@@ -65,6 +65,9 @@ trait AstNodeLike(Copyable & Movable):
     fn get_disabled(ref self) raises -> Bool:
         raise Error(Self.__name__, ": get_disabled is not implemented")
 
+    fn get_subset_name(self) raises -> StaticString:
+        return "default"
+
     fn signature(self) -> String:
         return "# Node: " + String(Self.__name__) + "()"
 

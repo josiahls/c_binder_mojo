@@ -204,7 +204,7 @@ MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
 ########################## Mojo Standard Library ##############################
 clone_stdlib = { cmd = [
     "bash", "-c", 
-    "if [ ! -d modular ]; then git clone https://github.com/max-lang/modular.git; else echo 'Modular directory already exists.'; fi"
+    "if [ ! -d modular ]; then git clone https://github.com/modular/modular.git; else echo 'Modular directory already exists.'; fi"
 ]}
 
 update_stdlib = { cmd = [
@@ -214,6 +214,7 @@ update_stdlib = { cmd = [
 
 clean_update_stdlib = { cmd = [
     "cd", "modular", "&&",
+    "git", "switch", "main", "&&",
     "git", "fetch", "origin", "&&",
     "git", "reset", "--hard", "origin/main", "&&",
     "./bazelw", "build", "//mojo/stdlib/..."

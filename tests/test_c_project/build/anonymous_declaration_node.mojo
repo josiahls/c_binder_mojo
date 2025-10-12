@@ -91,9 +91,9 @@ struct AnonymousEnumType2(Copyable & Movable):
 # #  Another anonymous enum - this should get lambda_2 if lambda naming increments properly
 # 
 # 
-ffi.c_int#  Function declaration that should NOT be paired with the enum above
-ffi.c_int
-alias some_function = fn () -> 
+#  Function declaration that should NOT be paired with the enum above
+
+alias some_function = fn (ffi.c_int) -> ffi.c_int
 
 
 alias anonymous_declaration_node_some_function = ExternalFunction['some_function', some_function]

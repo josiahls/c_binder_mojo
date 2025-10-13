@@ -27,6 +27,9 @@ target_include_directories(enum_decl_node PUBLIC include/)
 add_library(anonymous_declaration_node SHARED src/anonymous_declaration_node.c)
 target_include_directories(anonymous_declaration_node PUBLIC include/)
 
+add_library(record_decl_node SHARED src/record_decl_node.c)
+target_include_directories(record_decl_node PUBLIC include/)
+
 # Make headers available to consumers
 target_include_directories(test_c_project PUBLIC include/)
 

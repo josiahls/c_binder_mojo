@@ -15,6 +15,8 @@ run_cmd pixi run mojo run $C_BINDER_INCLUDES tests/test_simple_nodes.mojo
 # We don't have a unit test to assert this.
 # run_cmd pixi run generate_example_bindings_and_test rte_mbuf_core true
 
+run_cmd pixi run generate_example_bindings_and_test record_decl_node
+
 run_cmd pixi run generate_example_bindings_and_test simple_type_defs
 
 run_cmd pixi run generate_example_bindings_and_test complex_structs

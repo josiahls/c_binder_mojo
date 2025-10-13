@@ -6,10 +6,10 @@ typedef enum {
 } AnonymousEnumType;
 
 // Another anonymous enum - this should get lambda_2 if lambda naming increments properly
-typedef enum {
+enum {
     ANON_VALUE_B,
     ANON_VALUE_C,
-} AnonymousEnumType2;
+};
 
 // Function declaration that should NOT be paired with the enum above
 int some_function(int x);

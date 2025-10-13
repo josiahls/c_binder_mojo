@@ -16,12 +16,13 @@ fn test_forward_declared_struct_has_fields() raises:
     var dl = record_decl_node()
 
     # Create instance and set field values
-    var cs = CodecState()
-    cs.count = 10
-    cs.state = 1
-    cs.errcode = 0
-    cs.x = 5
-    cs.y = 7
+    var cs = CodecState(
+        count=10,
+        state=1,
+        errcode=0,
+        x=5,
+        y=7,
+    )
 
     # Verify we can read the values back
     assert_equal(cs.count, 10)

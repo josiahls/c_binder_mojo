@@ -69,13 +69,19 @@ struct __va_list(Copyable & Movable):
 	pass
 alias __builtin_va_list = __va_list
 
-@fieldwise_init
-struct CodecState(Copyable & Movable):
-	pass
 alias CodecStatePtr = UnsafePointer[CodecState
 ]
 #  Forward declaration with typedef (incomplete type)
 
+@fieldwise_init
+struct CodecState(Copyable & Movable):
+#  Full definition with fields - this should NOT be pruned!
+
+	var count : ffi.c_int
+	var state : ffi.c_int
+	var errcode : ffi.c_int
+	var x : ffi.c_int
+	var y : ffi.c_int
 #  Simple function to test the library loads
 
 alias test_codec_state = fn (UnsafePointer[CodecState]) -> ffi.c_int

@@ -86,9 +86,9 @@ fn prune_repeated_decls(
 ) raises:
     var names: Set[String] = Set[String]()
     var indicies: List[Int] = []
-    var i: Int = -1
-    for child in children:
-        i += 1
+    var i: Int = len(children)
+    for child in children.__reversed__():
+        i -= 1
         var name = ""
         if child.isa[RecordDeclNode]():
             name = child[RecordDeclNode].record_name
@@ -114,8 +114,9 @@ fn prune_repeated_decls(
             indicies.append(i)
         else:
             names.add(name)
+        if i < 0:
+            raise Error("i < 0")
 
-    indicies.reverse()
     for i in indicies:
         _ = children.pop(i)
 
@@ -136,7 +137,23 @@ struct TranslationUnitDeclNode(AstNodeLike):
             move_enum_decls_to_top_level(self.children_, node)
             self.children_.append(node^)
         # move_reassign_var_decls_to_top_level(self.children_)
+        print("Children count before pruning:", len(self.children_))
         prune_repeated_decls(self.children_)
+        print("Children count after pruning:", len(self.children_))
+
+        # Count CodecState structs
+        var codec_state_count = 0
+        for child in self.children_:
+            if (
+                child.isa[RecordDeclNode]()
+                and child[RecordDeclNode].record_name == "CodecState"
+            ):
+                codec_state_count += 1
+                print(
+                    "Found CodecState after pruning, has_body:",
+                    child[RecordDeclNode].has_body,
+                )
+        print("Total CodecState structs after pruning:", codec_state_count)
 
     fn to_string(self, just_code: Bool) raises -> String:
         var s = String(HEADER) + "\n"

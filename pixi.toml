@@ -29,18 +29,10 @@ C_BINDER_TEST_INCLUDES = "$C_BINDER_INCLUDES -I tests/test_c_project/build"
 
 [tasks]
 ######################## Test C Project Configuration #########################
-init_test_c_project = { cmd = [
-    "cd", "tests/test_c_project", "&&",
-    "mkdir", "-p", "build", "&&",
-    "cd", "build", "&&",
-    "cmake", ".."
-], outputs = ["tests/test_c_project/build"]}
-
 build_test_c_project = { cmd = [
-    "cd", "tests/test_c_project/build", "&&",
-    "make",
-], depends-on = [
-    "init_test_c_project"
+    "cd", "tests/test_c_project", "&&",
+    "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Release", "&&",
+    "cmake", "--build", "build",
 ], inputs = [
     "tests/test_c_project/include/*.h", 
     "tests/test_c_project/src/*.c", 

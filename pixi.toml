@@ -40,14 +40,20 @@ build_test_c_project = { cmd = [
 ]}
 
 ########################### Firehose Configuration ############################
-clone_firehose = { cmd = [
-    "pixi", "run", "clone_if_missing", "firehose", "https://github.com/josiahls/firehose.git"
-]}
+clone_firehose = { depends-on = [ 
+    { task = "clone_if_missing", args = [
+        { repo_name = "firehose" },
+        { repo_url = "https://github.com/josiahls/firehose.git" }
+    ]}
+ ]}
 
 ########################### EmberJson Configuration ###########################
-clone_emberjson = { cmd = [
-    "pixi", "run", "clone_if_missing", "EmberJson", "https://github.com/josiahls/EmberJson.git"
-]}
+clone_emberjson = { depends-on = [ 
+    { task = "clone_if_missing", args = [
+        { repo_name = "EmberJson" },
+        { repo_url = "https://github.com/josiahls/EmberJson.git" }
+    ]}
+ ]}
 
 
 ########################## Pre-commit Configuration ###########################
@@ -186,8 +192,13 @@ run_tests = { cmd = [
     "bash", "./scripts/run-tests.sh"
 ]}
 
+run_generate_example_bindings_tests = { cmd = [
+    "bash", "./scripts/run_c_binding_generation_tests.sh"
+]}
+
 test_all = { depends-on = [ 
     "package",
+    "run_generate_example_bindings_tests",
     "run_tests"
 ]}
 

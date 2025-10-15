@@ -53,7 +53,7 @@ struct ClangSimdNode(AstNodeLike):
         var under_t_loc = builtin_qual_type.rfind("_t")
         var width_str = builtin_qual_type[x_loc + 1 : under_t_loc]
         builtin_qual_type = builtin_qual_type.replace("x" + width_str, "")
-        width = Int64(width_str)
+        width = width_str.__int__()
 
         builtin_type_copy["wrappingType"].array().append(Self.__name__)
         builtin_type_copy["type"].object()["qualType"] = builtin_qual_type

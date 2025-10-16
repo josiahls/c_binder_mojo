@@ -200,9 +200,7 @@ struct AstNode(Copyable & Movable):
                     return self[T].get_disabled()
         raise Error("Missing get_disabled method")
 
-    fn children[
-        mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self: Self) raises -> ref [self._impl[]] List[Self]:
+    fn children(ref self: Self) raises -> ref [self._impl[]] List[Self]:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]

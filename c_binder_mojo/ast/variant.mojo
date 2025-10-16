@@ -361,3 +361,11 @@ struct Variant[*Ts: AstNodeLike](Copyable & Movable):
             if self.isa[T]():
                 return True
         return False
+
+    fn is_in[T: AnyType](self) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.Ts))):
+            alias T = Self.Ts[i]
+            if self.isa[T]():
+                return True
+        return False

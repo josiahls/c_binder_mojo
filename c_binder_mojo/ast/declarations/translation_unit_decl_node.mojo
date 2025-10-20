@@ -32,7 +32,7 @@ fn move_record_decls_to_top_level(
     var indicies: List[Int] = []
     var i: Int = 0
 
-    for ref child in node.children[mut=True]():
+    for ref child in node.children():
         if child.isa[RecordDeclNode]():
             indicies.append(i)
 
@@ -41,7 +41,7 @@ fn move_record_decls_to_top_level(
 
     indicies.reverse()
     for i in indicies:
-        children.append(node.children[mut=True]().pop(i))
+        children.append(node.children().pop(i))
 
 
 fn move_enum_decls_to_top_level(
@@ -50,7 +50,7 @@ fn move_enum_decls_to_top_level(
 ) raises:
     var indicies: List[Int] = []
     var i: Int = 0
-    for ref child in node.children[mut=True]():
+    for ref child in node.children():
         if child.isa[EnumDeclNode]():
             indicies.append(i)
 
@@ -59,7 +59,7 @@ fn move_enum_decls_to_top_level(
 
     indicies.reverse()
     for i in indicies:
-        children.append(node.children[mut=True]().pop(i))
+        children.append(node.children().pop(i))
 
 
 fn move_reassign_var_decls_to_top_level(

@@ -89,10 +89,7 @@ alias anonomous_record_1 = C_Union[mjuiItemSingle_, mjuiItemMulti_, mjuiItemSlid
 
 @fieldwise_init
 struct mjuiItem_(Copyable & Movable):
-	var type : ffi.c_int
-	var name : InlineArray[Int8, 40]
-	var union_placeholder_1 : anonomous_record_1
-	var skip : ffi.c_int
+	pass
 alias mjuiItem = mjuiItem_
 
 alias __atomic_wide_counter = C_Union[ffi.c_ulong_long]

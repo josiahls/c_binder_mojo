@@ -22,5 +22,16 @@ from c_binder_mojo.ast.comments.verbatim_line_comment_node import (
     VerbatimLineCommentNode,
 )
 
+from c_binder_mojo.stdlib_ext import Variant
 
-alias CommentsSubsetName = "comments"
+alias CommentVariant = Variant[
+    BlockCommandCommentNode,
+    FullCommentNode,
+    InlineCommandCommentNode,
+    ParagraphCommentNode,
+    ParamCommandCommentNode,
+    TextCommentNode,
+    VerbatimBlockCommentNode,
+    VerbatimBlockLineCommentNode,
+    VerbatimLineCommentNode,
+]

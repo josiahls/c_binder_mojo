@@ -15,7 +15,7 @@ from sys.intrinsics import _type_is_eq
 from c_binder_mojo.ast.traits import AstNodeLike
 
 
-struct Variant[*Ts: AstNodeLike](Copyable, Copyable, Movable):
+struct Variant[*Ts: AstNodeLike](Copyable & Movable):
     # Fields
     alias _sentinel: Int = -1
     alias _mlir_type = __mlir_type[
@@ -358,6 +358,14 @@ struct Variant[*Ts: AstNodeLike](Copyable, Copyable, Movable):
         @parameter
         for j in range(len(VariadicList(V))):
             alias T = V[j]
+            if self.isa[T]():
+                return True
+        return False
+
+    fn is_in[T: AnyType](self) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.Ts))):
+            alias T = Self.Ts[i]
             if self.isa[T]():
                 return True
         return False

@@ -102,7 +102,6 @@ struct AstNode(Copyable & Movable):
     fn is_in[*V: Copyable & Movable](self) -> Bool:
         return self._impl.bitcast[Self.type]()[].is_in[*V]()
 
-    @always_inline("nodebug")
     fn name(self) raises -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -111,7 +110,6 @@ struct AstNode(Copyable & Movable):
                 return T.__name__
         raise Error("Missing name method")
 
-    @always_inline("nodebug")
     @staticmethod
     fn accept_create_from(
         read json_object: Object, read level: Int
@@ -128,7 +126,6 @@ struct AstNode(Copyable & Movable):
                     return Self(T.create_from(json_object, level))
         raise Error("Missing accept_create_from method")
 
-    @always_inline("nodebug")
     @staticmethod
     fn impute(mut json_object: Object) raises:
         """
@@ -145,7 +142,6 @@ struct AstNode(Copyable & Movable):
                     T.impute(json_object)
                     return  # Only call impute on the first matching type
 
-    @always_inline("nodebug")
     fn to_string(self, just_code: Bool) raises -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -157,7 +153,6 @@ struct AstNode(Copyable & Movable):
                         # return context.write_context(self[T].to_string(just_code))
         raise Error("Missing to_string method")
 
-    @always_inline("nodebug")
     fn set_symbol_name(self, symbol_name: String) raises:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -169,7 +164,6 @@ struct AstNode(Copyable & Movable):
                         # return context.write_context(self[T].to_string(just_code))
         raise Error("Missing set_symbol_name method")
 
-    @always_inline("nodebug")
     fn get_symbol_name(self) raises -> String:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -179,7 +173,6 @@ struct AstNode(Copyable & Movable):
                     return self[T].get_symbol_name()
         raise Error("Missing get_symbol_name method")
 
-    @always_inline("nodebug")
     fn get_subset_name(self) raises -> StaticString:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -189,7 +182,6 @@ struct AstNode(Copyable & Movable):
                     return self[T].get_subset_name()
         raise Error("Missing get_subset_name method")
 
-    @always_inline("nodebug")
     fn set_disabled(self, disabled: Bool = True) raises:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -199,7 +191,6 @@ struct AstNode(Copyable & Movable):
                     return self[T].set_disabled(disabled)
         raise Error("Missing set_disabled method")
 
-    @always_inline("nodebug")
     fn get_disabled(self) raises -> Bool:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
@@ -209,9 +200,7 @@ struct AstNode(Copyable & Movable):
                     return self[T].get_disabled()
         raise Error("Missing get_disabled method")
 
-    fn children[
-        mut: Bool, //, origin: Origin[mut]
-    ](ref [origin]self: Self) raises -> ref [self._impl[]] List[Self]:
+    fn children(ref self: Self) raises -> ref [self._impl[]] List[Self]:
         @parameter
         for i in range(len(VariadicList(Self.type.Ts))):
             alias T = Self.type.Ts[i]

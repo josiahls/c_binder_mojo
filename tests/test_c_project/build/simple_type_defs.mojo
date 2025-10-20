@@ -103,9 +103,11 @@ alias __nlink_t = ffi.c_int
 alias __off_t = ffi.c_long
 alias __off64_t = ffi.c_long
 alias __pid_t = ffi.c_int
-@fieldwise_init
-struct anonomous_record_1(Copyable & Movable):
-	var __val : InlineArray[ffi.c_int, 2]
+# Forward declaration of anonomous_record_1
+# @fieldwise_init
+# struct anonomous_record_1(Copyable & Movable):
+# 	pass
+# 
 alias __fsid_t = anonomous_record_1
 
 alias __clock_t = ffi.c_long
@@ -167,10 +169,11 @@ alias uintmax_t = __uintmax_t
 alias ptrdiff_t = ffi.c_long
 alias size_t = ffi.c_ulong
 alias wchar_t = ffi.c_int
-@fieldwise_init
-struct anonomous_record_2(Copyable & Movable):
-	var __clang_max_align_nonce1 : ffi.c_long_long
-	var __clang_max_align_nonce2 : Float64
+# Forward declaration of anonomous_record_2
+# @fieldwise_init
+# struct anonomous_record_2(Copyable & Movable):
+# 	pass
+# 
 alias max_align_t = anonomous_record_2
 
 alias simple_type_byte = Int8

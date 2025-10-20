@@ -1,6 +1,7 @@
 from sys.intrinsics import _type_is_eq
 from sys.info import size_of
 from utils import StaticTuple
+from utils import Variant
 
 
 @always_inline("nodebug")
@@ -61,3 +62,13 @@ struct C_Union[*Ts: Copyable & Movable](Copyable, Copyable, Movable):
         var max_size = build_union_mlir_type[*Ts]()
         var ptr = UnsafePointer(to=self._impl).bitcast[T]()
         return ptr
+
+
+__extension Variant:
+    fn is_in[T: AnyType](self) -> Bool:
+        @parameter
+        for i in range(len(VariadicList(Self.Ts))):
+            alias T = Self.Ts[i]
+            if self.isa[T]():
+                return True
+        return False

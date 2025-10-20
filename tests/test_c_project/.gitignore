@@ -1,5 +1,5 @@
 build/*.txt
-build/CmakeFiles/
+build/CMakeFiles/
 build/*.json
 build/Make*
 build/*.tree

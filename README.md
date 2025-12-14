@@ -1,5 +1,17 @@
+The repo is archived. Some learnings from this:
+- In the same amount of time I could have spent on this, I would have gotten 5-6+ c (maybe even c++) libs binded manually, with nicer
+more readable bindings, and also better understood the inner workings of the libraries I have taken for granted over the years.
+- A proper c binding/FFI lib will likely just be embedded or plugged into the mojo compiler at the end of the day.
+- C ABI and especially C++ ABI is extremely complicated to connect automatically to, and even more horrible to debug.
+- If there is going to be a "c binding/FFI lib" it probably will just be additional FFI helper utilities.
+- Mojo bindings will always have the opportunity to improve the public facing side of the API they are connecting to.
+- Libraries that do FFI can easily and more directly fix bugs if they are manually maintained, and is more approachable to
+new contributers.
+- https://github.com/josiahls/ash_dynamics is the project I actually wanted to get started but was blocked by all of this.
+
+
 # C Binder Mojo
-> A generalized c beinding API for mojo.
+> A generalized c rebinding API for mojo.
 
 > Note: Mojo is a very new and changing langauge. Any and all libs being developed for it so far will be esentially Alpha builds. This means they very likely will break between versions. This project I am using for mujoco c binding. If you would like to use this for your project, I welcome contributions.
 

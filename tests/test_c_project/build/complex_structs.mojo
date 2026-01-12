@@ -70,9 +70,6 @@ struct __va_list(Copyable & Movable):
 alias __builtin_va_list = __va_list
 
 @fieldwise_init
-struct anonomous_record_2(Copyable & Movable):
-	pass
-@fieldwise_init
 struct anonomous_record_4(Copyable & Movable):
 	var ambient : InlineArray[Float32, 3]
 @fieldwise_init
@@ -83,11 +80,14 @@ struct anonomous_record_1(Copyable & Movable):
 	var cameraid : ffi.c_int
 @fieldwise_init
 struct mjVisual_1_(Copyable & Movable):
-	var global_ : anonomous_record_1
-	var quality : anonomous_record_3
-	var headlight : anonomous_record_4
+	pass
 alias mjVisual_1 = mjVisual_1_
 
+# Forward declaration of anonomous_record_2
+# @fieldwise_init
+# struct anonomous_record_2(Copyable & Movable):
+# 	pass
+# 
 @fieldwise_init
 struct anonomous_record_7(Copyable & Movable):
 	var fog : InlineArray[Float32, 4]
@@ -99,10 +99,7 @@ struct anonomous_record_5(Copyable & Movable):
 	var stiffness : Float32
 @fieldwise_init
 struct mjVisual_2_(Copyable & Movable):
-	var map : anonomous_record_5
-	var scale : anonomous_record_6
-	var rgba : anonomous_record_7
-	var visual_1 : mjVisual_1_
+	pass
 alias mjVisual_2 = mjVisual_2_
 
 

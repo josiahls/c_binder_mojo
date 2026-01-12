@@ -93,8 +93,9 @@ struct anonomous_record_3(Copyable & Movable):
 @fieldwise_init
 struct anonomous_record_4(Copyable & Movable):
 	pass
-alias complex_field_struct = anonomous_record_4
-
+@fieldwise_init
+struct complex_field_struct(Copyable & Movable):
+	pass
 alias complex_field_struct_identity_function = fn (UnsafePointer[complex_field_struct]) -> UnsafePointer[complex_field_struct]
 @fieldwise_init
 struct padded_field_struct(Copyable & Movable):
@@ -104,11 +105,8 @@ struct padded_field_struct(Copyable & Movable):
 alias padded_field_struct_identity_function = fn (UnsafePointer[padded_field_struct]) -> UnsafePointer[padded_field_struct]
 alias anonomous_record_5 = C_Union[Int32, Int32]
 
-@fieldwise_init
-struct union_field_struct(Copyable & Movable):
-	var a : ffi.c_int
-	var union_placeholder_1 : anonomous_record_5
-	var d : ffi.c_int
+alias union_field_struct = union_field_struct
+
 alias union_field_struct_identity_function = fn (UnsafePointer[union_field_struct]) -> UnsafePointer[union_field_struct]
 
 

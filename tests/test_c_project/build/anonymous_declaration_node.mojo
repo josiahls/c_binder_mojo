@@ -79,18 +79,12 @@ struct AnonymousEnumType(Copyable & Movable):
 # #  Anonymous enum in typedef - this should trigger AnonymousDeclarationNode
 # 
 # 
-struct AnonymousEnumType2(Copyable & Movable):
 #  Another anonymous enum - this should get lambda_2 if lambda naming increments properly
 
-	alias ANON_VALUE_B = 0
+alias ANON_VALUE_B = 0
 
-	alias ANON_VALUE_C = 1
+alias ANON_VALUE_C = 1
 
-# Forward declaration of AnonymousEnumType2
-# alias AnonymousEnumType2 = AnonymousEnumType2
-# #  Another anonymous enum - this should get lambda_2 if lambda naming increments properly
-# 
-# 
 #  Function declaration that should NOT be paired with the enum above
 
 alias some_function = fn (ffi.c_int) -> ffi.c_int

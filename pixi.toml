@@ -17,7 +17,7 @@ repository = "https://github.com/josiahls/c_binder_mojo"
 stdlib-dev = {features = ["stdlib-dev"]}
 
 [dependencies]
-mojo = ">=0.25.7.0.dev2025101105,<0.26"
+mojo = ">=0.25.7.0.dev2025101518,<0.26"
 pre-commit = ">=4.3.0,<5"
 
 [activation.env]
@@ -29,18 +29,10 @@ C_BINDER_TEST_INCLUDES = "$C_BINDER_INCLUDES -I tests/test_c_project/build"
 
 [tasks]
 ######################## Test C Project Configuration #########################
-init_test_c_project = { cmd = [
-    "cd", "tests/test_c_project", "&&",
-    "mkdir", "-p", "build", "&&",
-    "cd", "build", "&&",
-    "cmake", ".."
-], outputs = ["tests/test_c_project/build"]}
-
 build_test_c_project = { cmd = [
-    "cd", "tests/test_c_project/build", "&&",
-    "make",
-], depends-on = [
-    "init_test_c_project"
+    "cd", "tests/test_c_project", "&&",
+    "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Release", "&&",
+    "cmake", "--build", "build",
 ], inputs = [
     "tests/test_c_project/include/*.h", 
     "tests/test_c_project/src/*.c", 
@@ -48,16 +40,20 @@ build_test_c_project = { cmd = [
 ]}
 
 ########################### Firehose Configuration ############################
-clone_firehose = { cmd = [
-    "bash", "-c", 
-    "if [ ! -d firehose ]; then git clone https://github.com/josiahls/firehose.git; else echo 'Firehose directory already exists.'; fi"
-]}
+clone_firehose = { depends-on = [ 
+    { task = "clone_if_missing", args = [
+        { repo_name = "firehose" },
+        { repo_url = "https://github.com/josiahls/firehose.git" }
+    ]}
+ ]}
 
 ########################### EmberJson Configuration ###########################
-clone_emberjson = { cmd = [
-    "bash", "-c",
-    "if [ ! -d EmberJson ]; then git clone https://github.com/josiahls/EmberJson.git; else echo 'EmberJson directory already exists.'; fi"
-]}
+clone_emberjson = { depends-on = [ 
+    { task = "clone_if_missing", args = [
+        { repo_name = "EmberJson" },
+        { repo_url = "https://github.com/josiahls/EmberJson.git" }
+    ]}
+ ]}
 
 
 ########################## Pre-commit Configuration ###########################
@@ -150,6 +146,11 @@ i_rebase = { cmd = [
     "git", "rebase", "-i", "HEAD~{{ n_commits}}"
 ], args = [{ arg = "n_commits", default = "1" }]}
 
+clone_if_missing = { cmd = [
+    "bash", "-c",
+    "if [ ! -d {{ repo_name }} ]; then git clone {{ repo_url }}; else echo '{{ repo_name }} directory already exists.'; fi"
+], args = [{ arg = "repo_name" }, { arg = "repo_url" }]}
+
 
 ########################## Testing Configuration ##############################
 # Build the c bindings.
@@ -191,8 +192,13 @@ run_tests = { cmd = [
     "bash", "./scripts/run-tests.sh"
 ]}
 
+run_generate_example_bindings_tests = { cmd = [
+    "bash", "./scripts/run_c_binding_generation_tests.sh"
+]}
+
 test_all = { depends-on = [ 
     "package",
+    "run_generate_example_bindings_tests",
     "run_tests"
 ]}
 
@@ -203,8 +209,7 @@ MODULAR_MOJO_MAX_IMPORT_PATH="$PIXI_PROJECT_ROOT/modular/bazel-bin"
 [feature.stdlib-dev.tasks]
 ########################## Mojo Standard Library ##############################
 clone_stdlib = { cmd = [
-    "bash", "-c", 
-    "if [ ! -d modular ]; then git clone https://github.com/modular/modular.git; else echo 'Modular directory already exists.'; fi"
+    "pixi", "run", "clone_if_missing", "modular", "https://github.com/modular/modular.git"
 ]}
 
 update_stdlib = { cmd = [

@@ -30,5 +30,30 @@ from c_binder_mojo.ast.attributes.warn_unused_result_attr_node import (
 )
 from c_binder_mojo.ast.attributes.weak_attr_node import WeakAttrNode
 
+from c_binder_mojo.stdlib_ext import Variant
 
-alias AttributesSubsetName = "attributes"
+alias AttributeVariant = Variant[
+    AlignedAttrNode,
+    AllocAlignAttrNode,
+    AllocSizeAttrNode,
+    AlwaysInlineAttrNode,
+    AsmLabelAttrNode,
+    BuiltinAttrNode,
+    ColdAttrNode,
+    ConstAttrNode,
+    DeprecatedAttrNode,
+    ErrorAttrNode,
+    FormatAttrNode,
+    ModeAttrNode,
+    NoThrowAttrNode,
+    NonNullAttrNode,
+    PackedAttrNode,
+    PureAttrNode,
+    RestrictAttrNode,
+    ReturnsTwiceAttrNode,
+    SectionAttrNode,
+    UnusedAttrNode,
+    VisibilityAttrNode,
+    WarnUnusedResultAttrNode,
+    WeakAttrNode,
+]

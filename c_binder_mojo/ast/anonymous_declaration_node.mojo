@@ -2,7 +2,7 @@
 from sys.ffi import _Global
 
 # Third Party Mojo Modules
-from emberjson import Object, Array
+from emberjson import Object, Array, to_string
 
 # First Party Modules
 from c_binder_mojo.ast.traits import AstNodeLike
@@ -37,6 +37,13 @@ alias LambdaRegistry = _Global[
 ]
 
 
+fn _raise_failed_pairing(var anonymous_decl: Object) raises:
+    raise Error(
+        "not valid pairing target, failed to find pairing for : ",
+        to_string[pretty=True](anonymous_decl.copy()),
+    )
+
+
 struct AnonymousDeclarationNode(AstNodeLike):
     """AnonymousDeclarationNode - Handles anonymous declarations.
 
@@ -60,20 +67,21 @@ struct AnonymousDeclarationNode(AstNodeLike):
         var anonymous_decl = AstNode.accept_create_from(
             json_object["anonymous_decl"].object(), level
         )
-        var named_decl = AstNode.accept_create_from(
-            json_object["named_decl"].object(), level
-        )
-
-        if named_decl.isa[TypedefDeclNode]():
-            anonymous_decl.set_symbol_name(named_decl.get_symbol_name())
-            named_decl.set_disabled(True)
-        else:
-            anonymous_decl.set_symbol_name(
-                lambda_registry[].create_lambda_name()
+        if len(json_object["named_decl"].object()) > 0:
+            var named_decl = AstNode.accept_create_from(
+                json_object["named_decl"].object(), level
             )
-            named_decl.set_symbol_name(anonymous_decl.get_symbol_name())
+
+            if named_decl.isa[TypedefDeclNode]():
+                anonymous_decl.set_symbol_name(named_decl.get_symbol_name())
+                named_decl.set_disabled(True)
+            else:
+                anonymous_decl.set_symbol_name(
+                    lambda_registry[].create_lambda_name()
+                )
+                named_decl.set_symbol_name(anonymous_decl.get_symbol_name())
+            self.children_.append(named_decl^)
         self.children_.append(anonymous_decl^)
-        self.children_.append(named_decl^)
 
     @staticmethod
     fn accept_impute(read json_object: Object) raises -> Bool:
@@ -101,6 +109,22 @@ struct AnonymousDeclarationNode(AstNodeLike):
         return False
 
     @staticmethod
+    fn can_be_named_decl(read json_object: Object) raises -> Bool:
+        """Check if a declaration can be paired with an anonymous declaration.
+
+        Only TypedefDecl, VarDecl, FieldDecl, and ParmVarDecl can be paired with anonymous
+        declarations. FunctionDecl and other declarations should not be paired.
+        """
+        alias VALID_KINDS: List[String] = [
+            "TypedefDecl",
+            "VarDecl",
+            "FieldDecl",
+            "ParmVarDecl",
+        ]
+        var kind = json_object["kind"].string()
+        return String(kind) in materialize[VALID_KINDS]()
+
+    @staticmethod
     fn impute(mut json_object: Object) raises:
         """`json_object` should be an object whose children may have anonymous
         representations."""
@@ -120,11 +144,31 @@ struct AnonymousDeclarationNode(AstNodeLike):
                 anonymous_decl[]["anonymous_decl"] = inner_object.copy()
                 AstNode.impute(anonymous_decl[]["anonymous_decl"].object())
             elif anonymous_decl:
-                anonymous_decl[]["named_decl"] = inner_object.copy()
-                AstNode.impute(anonymous_decl[]["named_decl"].object())
-                json_object["inner"].array().append(anonymous_decl.take())
+                # Check if this declaration can be paired with the anonymous one
+                if Self.can_be_named_decl(inner_object.object()):
+                    anonymous_decl[]["named_decl"] = inner_object.copy()
+                    AstNode.impute(anonymous_decl[]["named_decl"].object())
+                    json_object["inner"].array().append(anonymous_decl.take())
+                elif (
+                    anonymous_decl[]["anonymous_decl"]["kind"].string()
+                    == "EnumDecl"
+                ):
+                    json_object["inner"].array().append(anonymous_decl.take())
+                    json_object["inner"].array().append(inner_object.copy())
+                else:
+                    _raise_failed_pairing(anonymous_decl[].copy())
             else:
                 json_object["inner"].array().append(inner_object.copy())
+
+        # If we still have an unpaired anonymous declaration, add it directly
+        if anonymous_decl:
+            if (
+                anonymous_decl[]["anonymous_decl"]["kind"].string()
+                == "EnumDecl"
+            ):
+                json_object["inner"].array().append(anonymous_decl.take())
+            else:
+                _raise_failed_pairing(anonymous_decl[].copy())
 
         for ref inner_object in json_object["inner"].array():
             AstNode.impute(inner_object.object())
